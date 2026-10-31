@@ -1,22 +1,22 @@
 {
-  "timestamp": "2026-10-31 10:40:58",
+  "timestamp": "2026-10-31 05:45:52",
   "total_tickers": 54,
   "macro_vietnam": {
     "DXY": {
-      "value": 101.96,
-      "change_pct": -0.07
+      "value": 101.88,
+      "change_pct": -0.16
     },
     "US10Y": {
       "value": 4.93,
       "change_pct": -1.2
     },
     "WTI_OIL": {
-      "value": 102.95,
-      "change_pct": 0.93
+      "value": 104.12,
+      "change_pct": 2.08
     },
     "GOLD": {
-      "value": 3884.9,
-      "change_pct": -3.63
+      "value": 3898.9,
+      "change_pct": -3.29
     },
     "S_AND_P500": {
       "value": 7580.07,
@@ -56,7 +56,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MegaCap",
       "weight_target": 0.04,
-      "pe": 11.54,
+      "pe": 11.48,
       "pb": 1.89,
       "roe_pct": 18.03,
       "market_cap_ty_vnd": 470424.5,
@@ -75,7 +75,7 @@
         "price_vs_ma200": -6.27,
         "price_vs_ma20": -0.55
       },
-      "last_updated": "2026-10-31 10:40:25",
+      "last_updated": "2026-10-31 05:45:20",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -86,7 +86,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MegaCap",
       "weight_target": 0.03,
-      "pe": 7.94,
+      "pe": 7.5,
       "pb": 1.35,
       "roe_pct": 18.12,
       "market_cap_ty_vnd": 259793.9,
@@ -105,7 +105,7 @@
         "price_vs_ma200": -12.45,
         "price_vs_ma20": -1.29
       },
-      "last_updated": "2026-10-31 10:40:25",
+      "last_updated": "2026-10-31 05:45:21",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -135,7 +135,7 @@
         "price_vs_ma200": -8.81,
         "price_vs_ma20": 0.59
       },
-      "last_updated": "2026-10-31 10:40:26",
+      "last_updated": "2026-10-31 05:45:21",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -165,7 +165,7 @@
         "price_vs_ma200": 0.79,
         "price_vs_ma20": -2.24
       },
-      "last_updated": "2026-10-31 10:40:27",
+      "last_updated": "2026-10-31 05:45:22",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -195,7 +195,7 @@
         "price_vs_ma200": -8.75,
         "price_vs_ma20": -0.94
       },
-      "last_updated": "2026-10-31 10:40:27",
+      "last_updated": "2026-10-31 05:45:23",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -206,7 +206,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.035,
-      "pe": 7.79,
+      "pe": 7.77,
       "pb": 1.17,
       "roe_pct": 16.47,
       "market_cap_ty_vnd": 121892.9,
@@ -225,7 +225,7 @@
         "price_vs_ma200": -1.04,
         "price_vs_ma20": 1.39
       },
-      "last_updated": "2026-10-31 10:40:28",
+      "last_updated": "2026-10-31 05:45:23",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -236,7 +236,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.03,
-      "pe": 7.54,
+      "pe": 7.44,
       "pb": 1.29,
       "roe_pct": null,
       "market_cap_ty_vnd": 229500.0,
@@ -255,7 +255,7 @@
         "price_vs_ma200": 7.14,
         "price_vs_ma20": -3.46
       },
-      "last_updated": "2026-10-31 10:40:28",
+      "last_updated": "2026-10-31 05:45:24",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -285,7 +285,7 @@
         "price_vs_ma200": 8.42,
         "price_vs_ma20": 0.18
       },
-      "last_updated": "2026-10-31 10:40:29",
+      "last_updated": "2026-10-31 05:45:25",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -315,7 +315,7 @@
         "price_vs_ma200": -3.84,
         "price_vs_ma20": 0.78
       },
-      "last_updated": "2026-10-31 10:40:29",
+      "last_updated": "2026-10-31 05:45:25",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -326,7 +326,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MegaCap",
       "weight_target": 0.035,
-      "pe": 6.6,
+      "pe": 6.45,
       "pb": 1.99,
       "roe_pct": 33.51,
       "market_cap_ty_vnd": 517533.9,
@@ -345,7 +345,7 @@
         "price_vs_ma200": -3.08,
         "price_vs_ma20": -0.82
       },
-      "last_updated": "2026-10-31 10:40:30",
+      "last_updated": "2026-10-31 05:45:26",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -356,8 +356,8 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.025,
-      "pe": 7.4,
-      "pb": 1.11,
+      "pe": 7.42,
+      "pb": 1.13,
       "roe_pct": 15.46,
       "market_cap_ty_vnd": 54649.3,
       "beta": 0.94,
@@ -375,7 +375,7 @@
         "price_vs_ma200": -10.41,
         "price_vs_ma20": 1.67
       },
-      "last_updated": "2026-10-31 10:40:31",
+      "last_updated": "2026-10-31 05:45:26",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -386,7 +386,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MidCap",
       "weight_target": 0.025,
-      "pe": 10.74,
+      "pe": 10.55,
       "pb": 0.92,
       "roe_pct": 12.14,
       "market_cap_ty_vnd": 17158.7,
@@ -405,7 +405,7 @@
         "price_vs_ma200": -29.45,
         "price_vs_ma20": -0.92
       },
-      "last_updated": "2026-10-31 10:40:32",
+      "last_updated": "2026-10-31 05:45:27",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -435,7 +435,7 @@
         "price_vs_ma200": -13.24,
         "price_vs_ma20": -0.53
       },
-      "last_updated": "2026-10-31 10:40:32",
+      "last_updated": "2026-10-31 05:45:27",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -465,7 +465,7 @@
         "price_vs_ma200": -21.37,
         "price_vs_ma20": -0.96
       },
-      "last_updated": "2026-10-31 10:40:33",
+      "last_updated": "2026-10-31 05:45:28",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -495,7 +495,7 @@
         "price_vs_ma200": -16.72,
         "price_vs_ma20": 0.25
       },
-      "last_updated": "2026-10-31 10:40:34",
+      "last_updated": "2026-10-31 05:45:29",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -506,7 +506,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.025,
-      "pe": 20.9,
+      "pe": 20.77,
       "pb": 1.75,
       "roe_pct": 9.05,
       "market_cap_ty_vnd": 39744.0,
@@ -525,7 +525,7 @@
         "price_vs_ma200": -23.15,
         "price_vs_ma20": -2.45
       },
-      "last_updated": "2026-10-31 10:40:34",
+      "last_updated": "2026-10-31 05:45:29",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -542,7 +542,7 @@
       "market_cap_ty_vnd": null,
       "beta": 1.0,
       "technical": {},
-      "last_updated": "2026-10-31 10:40:36",
+      "last_updated": "2026-10-31 05:45:30",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -553,7 +553,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.025,
-      "pe": 14.17,
+      "pe": 13.91,
       "pb": 0.94,
       "roe_pct": 6.83,
       "market_cap_ty_vnd": 24485.6,
@@ -572,7 +572,7 @@
         "price_vs_ma200": -13.59,
         "price_vs_ma20": -0.35
       },
-      "last_updated": "2026-10-31 10:40:36",
+      "last_updated": "2026-10-31 05:45:31",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -583,7 +583,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 24.39,
+      "pe": 23.54,
       "pb": 1.42,
       "roe_pct": 5.18,
       "market_cap_ty_vnd": 3473.7,
@@ -602,7 +602,7 @@
         "price_vs_ma200": -16.52,
         "price_vs_ma20": 5.74
       },
-      "last_updated": "2026-10-31 10:40:37",
+      "last_updated": "2026-10-31 05:45:31",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -613,7 +613,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 10.84,
+      "pe": 10.57,
       "pb": 2.13,
       "roe_pct": 20.95,
       "market_cap_ty_vnd": 18920.4,
@@ -632,7 +632,7 @@
         "price_vs_ma200": 0.37,
         "price_vs_ma20": -4.1
       },
-      "last_updated": "2026-10-31 10:40:38",
+      "last_updated": "2026-10-31 05:45:32",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -643,7 +643,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MegaCap",
       "weight_target": 0.045,
-      "pe": 7.55,
+      "pe": 7.71,
       "pb": 1.37,
       "roe_pct": 17.72,
       "market_cap_ty_vnd": 177302.3,
@@ -662,7 +662,7 @@
         "price_vs_ma200": -8.68,
         "price_vs_ma20": 1.19
       },
-      "last_updated": "2026-10-31 10:40:38",
+      "last_updated": "2026-10-31 05:45:32",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -673,7 +673,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 13.73,
+      "pe": 13.79,
       "pb": 0.74,
       "roe_pct": 5.68,
       "market_cap_ty_vnd": 8758.8,
@@ -692,7 +692,7 @@
         "price_vs_ma200": -4.72,
         "price_vs_ma20": 2.95
       },
-      "last_updated": "2026-10-31 10:40:39",
+      "last_updated": "2026-10-31 05:45:33",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -703,7 +703,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 36.35,
+      "pe": 36.2,
       "pb": 0.77,
       "roe_pct": 3.4,
       "market_cap_ty_vnd": 5858.7,
@@ -722,7 +722,7 @@
         "price_vs_ma200": -0.61,
         "price_vs_ma20": 10.56
       },
-      "last_updated": "2026-10-31 10:40:39",
+      "last_updated": "2026-10-31 05:45:33",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -733,7 +733,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.04,
-      "pe": 9.8,
+      "pe": 9.77,
       "pb": 3.33,
       "roe_pct": 30.07,
       "market_cap_ty_vnd": 109201.4,
@@ -752,7 +752,7 @@
         "price_vs_ma200": -4.31,
         "price_vs_ma20": -1.33
       },
-      "last_updated": "2026-10-31 10:40:40",
+      "last_updated": "2026-10-31 05:45:34",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -763,7 +763,7 @@
       "exchange": "HOSE",
       "tier": "LargeCap",
       "weight_target": 0.035,
-      "pe": 23.12,
+      "pe": 23.23,
       "pb": 5.54,
       "roe_pct": 30.82,
       "market_cap_ty_vnd": 26590.1,
@@ -782,7 +782,7 @@
         "price_vs_ma200": 7.62,
         "price_vs_ma20": 0.89
       },
-      "last_updated": "2026-10-31 10:40:40",
+      "last_updated": "2026-10-31 05:45:35",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -793,7 +793,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.03,
-      "pe": 11.88,
+      "pe": 11.55,
       "pb": 2.34,
       "roe_pct": 26.13,
       "market_cap_ty_vnd": 102226.2,
@@ -812,7 +812,7 @@
         "price_vs_ma200": -4.24,
         "price_vs_ma20": -3.79
       },
-      "last_updated": "2026-10-31 10:40:41",
+      "last_updated": "2026-10-31 05:45:35",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -823,7 +823,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MegaCap",
       "weight_target": 0.03,
-      "pe": 12.31,
+      "pe": 12.21,
       "pb": 3.73,
       "roe_pct": 30.78,
       "market_cap_ty_vnd": 118918.5,
@@ -842,7 +842,7 @@
         "price_vs_ma200": -5.27,
         "price_vs_ma20": -1.53
       },
-      "last_updated": "2026-10-31 10:40:41",
+      "last_updated": "2026-10-31 05:45:36",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -853,7 +853,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.03,
-      "pe": 3.23,
+      "pe": 3.03,
       "pb": 0.57,
       "roe_pct": 22.39,
       "market_cap_ty_vnd": 7931.7,
@@ -872,7 +872,7 @@
         "price_vs_ma200": -72.01,
         "price_vs_ma20": -15.8
       },
-      "last_updated": "2026-10-31 10:40:42",
+      "last_updated": "2026-10-31 05:45:36",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -883,7 +883,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 11.19,
+      "pe": 11.23,
       "pb": 2.64,
       "roe_pct": 24.44,
       "market_cap_ty_vnd": 9056.9,
@@ -902,7 +902,7 @@
         "price_vs_ma200": -2.94,
         "price_vs_ma20": -10.15
       },
-      "last_updated": "2026-10-31 10:40:43",
+      "last_updated": "2026-10-31 05:45:37",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -913,7 +913,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MegaCap",
       "weight_target": 0.05,
-      "pe": 11.49,
+      "pe": 11.21,
       "pb": 2.71,
       "roe_pct": 27.06,
       "market_cap_ty_vnd": 99377.8,
@@ -932,7 +932,7 @@
         "price_vs_ma200": -22.34,
         "price_vs_ma20": -7.82
       },
-      "last_updated": "2026-10-31 10:40:43",
+      "last_updated": "2026-10-31 05:45:37",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -943,7 +943,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 11.67,
+      "pe": 11.57,
       "pb": 1.29,
       "roe_pct": 12.3,
       "market_cap_ty_vnd": 4308.7,
@@ -962,7 +962,7 @@
         "price_vs_ma200": -31.46,
         "price_vs_ma20": -6.19
       },
-      "last_updated": "2026-10-31 10:40:44",
+      "last_updated": "2026-10-31 05:45:38",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -973,7 +973,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.035,
-      "pe": 11.12,
+      "pe": 11.29,
       "pb": 1.43,
       "roe_pct": 13.86,
       "market_cap_ty_vnd": 57925.1,
@@ -992,7 +992,7 @@
         "price_vs_ma200": -10.38,
         "price_vs_ma20": -1.32
       },
-      "last_updated": "2026-10-31 10:40:44",
+      "last_updated": "2026-10-31 05:45:39",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1003,7 +1003,7 @@
       "exchange": "HOSE",
       "tier": "LargeCap",
       "weight_target": 0.025,
-      "pe": 9.85,
+      "pe": 9.96,
       "pb": 0.94,
       "roe_pct": 9.92,
       "market_cap_ty_vnd": 20398.8,
@@ -1022,7 +1022,7 @@
         "price_vs_ma200": -17.78,
         "price_vs_ma20": -0.19
       },
-      "last_updated": "2026-10-31 10:40:45",
+      "last_updated": "2026-10-31 05:45:39",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1052,7 +1052,7 @@
         "price_vs_ma200": -22.46,
         "price_vs_ma20": -2.4
       },
-      "last_updated": "2026-10-31 10:40:45",
+      "last_updated": "2026-10-31 05:45:40",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1063,7 +1063,7 @@
       "exchange": "HOSE",
       "tier": "LargeCap",
       "weight_target": 0.025,
-      "pe": 21.46,
+      "pe": 21.09,
       "pb": 1.73,
       "roe_pct": 9.39,
       "market_cap_ty_vnd": 25055.0,
@@ -1082,7 +1082,7 @@
         "price_vs_ma200": -7.5,
         "price_vs_ma20": -1.68
       },
-      "last_updated": "2026-10-31 10:40:46",
+      "last_updated": "2026-10-31 05:45:40",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1099,7 +1099,7 @@
       "market_cap_ty_vnd": null,
       "beta": 1.0,
       "technical": {},
-      "last_updated": "2026-10-31 10:40:47",
+      "last_updated": "2026-10-31 05:45:41",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1110,7 +1110,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MegaCap",
       "weight_target": 0.03,
-      "pe": 14.85,
+      "pe": 14.52,
       "pb": 2.74,
       "roe_pct": 18.73,
       "market_cap_ty_vnd": 188210.1,
@@ -1129,7 +1129,7 @@
         "price_vs_ma200": -5.88,
         "price_vs_ma20": -0.34
       },
-      "last_updated": "2026-10-31 10:40:47",
+      "last_updated": "2026-10-31 05:45:42",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1146,7 +1146,7 @@
       "market_cap_ty_vnd": null,
       "beta": 1.0,
       "technical": {},
-      "last_updated": "2026-10-31 10:40:48",
+      "last_updated": "2026-10-31 05:45:43",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1176,7 +1176,7 @@
         "price_vs_ma200": -7.62,
         "price_vs_ma20": -1.35
       },
-      "last_updated": "2026-10-31 10:40:49",
+      "last_updated": "2026-10-31 05:45:43",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1187,7 +1187,7 @@
       "exchange": "UPCOM",
       "tier": "LargeCap_UPCOM",
       "weight_target": 0.025,
-      "pe": 7.32,
+      "pe": 7.04,
       "pb": 1.86,
       "roe_pct": 30.09,
       "market_cap_ty_vnd": 138201.5,
@@ -1206,7 +1206,7 @@
         "price_vs_ma200": 1.38,
         "price_vs_ma20": -6.45
       },
-      "last_updated": "2026-10-31 10:40:49",
+      "last_updated": "2026-10-31 05:45:44",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1217,7 +1217,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.02,
-      "pe": 6.32,
+      "pe": 6.24,
       "pb": 0.91,
       "roe_pct": 16.53,
       "market_cap_ty_vnd": 37427.7,
@@ -1236,7 +1236,7 @@
         "price_vs_ma200": -9.13,
         "price_vs_ma20": -2.13
       },
-      "last_updated": "2026-10-31 10:40:50",
+      "last_updated": "2026-10-31 05:45:44",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1247,7 +1247,7 @@
       "exchange": "HOSE",
       "tier": "LargeCap",
       "weight_target": 0.025,
-      "pe": 10.93,
+      "pe": 10.29,
       "pb": 1.35,
       "roe_pct": 13.49,
       "market_cap_ty_vnd": 28280.0,
@@ -1266,7 +1266,7 @@
         "price_vs_ma200": -9.93,
         "price_vs_ma20": -0.45
       },
-      "last_updated": "2026-10-31 10:40:50",
+      "last_updated": "2026-10-31 05:45:45",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1277,7 +1277,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 6.97,
+      "pe": 6.81,
       "pb": 1.14,
       "roe_pct": 17.91,
       "market_cap_ty_vnd": 7608.8,
@@ -1296,7 +1296,7 @@
         "price_vs_ma200": -16.82,
         "price_vs_ma20": -2.55
       },
-      "last_updated": "2026-10-31 10:40:51",
+      "last_updated": "2026-10-31 05:45:46",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1307,7 +1307,7 @@
       "exchange": "HOSE",
       "tier": "LargeCap",
       "weight_target": 0.035,
-      "pe": 6.12,
+      "pe": 6.2,
       "pb": 0.84,
       "roe_pct": 14.61,
       "market_cap_ty_vnd": 12646.6,
@@ -1326,7 +1326,7 @@
         "price_vs_ma200": -21.15,
         "price_vs_ma20": 0.02
       },
-      "last_updated": "2026-10-31 10:40:52",
+      "last_updated": "2026-10-31 05:45:46",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -1337,7 +1337,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.025,
-      "pe": 37.05,
+      "pe": 36.41,
       "pb": 1.64,
       "roe_pct": 24.05,
       "market_cap_ty_vnd": 17629.0,
@@ -1356,7 +1356,7 @@
         "price_vs_ma200": -8.48,
         "price_vs_ma20": -2.64
       },
-      "last_updated": "2026-10-31 10:40:52",
+      "last_updated": "2026-10-31 05:45:47",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -1367,7 +1367,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 13.25,
+      "pe": 13.0,
       "pb": 1.22,
       "roe_pct": 15.45,
       "market_cap_ty_vnd": 13870.5,
@@ -1386,7 +1386,7 @@
         "price_vs_ma200": -13.88,
         "price_vs_ma20": -4.93
       },
-      "last_updated": "2026-10-31 10:40:53",
+      "last_updated": "2026-10-31 05:45:47",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -1397,7 +1397,7 @@
       "exchange": "HOSE",
       "tier": "LargeCap",
       "weight_target": 0.03,
-      "pe": 15.01,
+      "pe": 14.48,
       "pb": 2.46,
       "roe_pct": 21.16,
       "market_cap_ty_vnd": 33714.4,
@@ -1416,7 +1416,7 @@
         "price_vs_ma200": 4.7,
         "price_vs_ma20": -2.41
       },
-      "last_updated": "2026-10-31 10:40:54",
+      "last_updated": "2026-10-31 05:45:48",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -1427,7 +1427,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.025,
-      "pe": 7.53,
+      "pe": 7.3,
       "pb": 1.77,
       "roe_pct": 26.77,
       "market_cap_ty_vnd": 9351.1,
@@ -1446,7 +1446,7 @@
         "price_vs_ma200": -3.47,
         "price_vs_ma20": -0.81
       },
-      "last_updated": "2026-10-31 10:40:54",
+      "last_updated": "2026-10-31 05:45:49",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -1457,7 +1457,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 8.83,
+      "pe": 8.23,
       "pb": 1.11,
       "roe_pct": 16.05,
       "market_cap_ty_vnd": 10984.5,
@@ -1476,7 +1476,7 @@
         "price_vs_ma200": 2.82,
         "price_vs_ma20": -10.96
       },
-      "last_updated": "2026-10-31 10:40:55",
+      "last_updated": "2026-10-31 05:45:49",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -1487,7 +1487,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 2.71,
+      "pe": 2.63,
       "pb": 0.91,
       "roe_pct": 33.84,
       "market_cap_ty_vnd": 11159.8,
@@ -1506,7 +1506,7 @@
         "price_vs_ma200": -13.53,
         "price_vs_ma20": 0.83
       },
-      "last_updated": "2026-10-31 10:40:55",
+      "last_updated": "2026-10-31 05:45:50",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -1517,7 +1517,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 8.28,
+      "pe": 8.11,
       "pb": 0.47,
       "roe_pct": 5.92,
       "market_cap_ty_vnd": 5343.1,
@@ -1536,7 +1536,7 @@
         "price_vs_ma200": -13.48,
         "price_vs_ma20": 0.17
       },
-      "last_updated": "2026-10-31 10:40:56",
+      "last_updated": "2026-10-31 05:45:50",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -1547,7 +1547,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.02,
-      "pe": 6.78,
+      "pe": 6.73,
       "pb": 0.76,
       "roe_pct": 12.16,
       "market_cap_ty_vnd": 6638.1,
@@ -1566,7 +1566,7 @@
         "price_vs_ma200": -18.42,
         "price_vs_ma20": -1.9
       },
-      "last_updated": "2026-10-31 10:40:56",
+      "last_updated": "2026-10-31 05:45:51",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -1577,7 +1577,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.025,
-      "pe": 8.26,
+      "pe": 8.25,
       "pb": 1.12,
       "roe_pct": 15.72,
       "market_cap_ty_vnd": 10535.5,
@@ -1596,7 +1596,7 @@
         "price_vs_ma200": -11.56,
         "price_vs_ma20": -2.04
       },
-      "last_updated": "2026-10-31 10:40:57",
+      "last_updated": "2026-10-31 05:45:51",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -1626,7 +1626,7 @@
         "price_vs_ma200": -3.59,
         "price_vs_ma20": -2.05
       },
-      "last_updated": "2026-10-31 10:40:58",
+      "last_updated": "2026-10-31 05:45:52",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     }

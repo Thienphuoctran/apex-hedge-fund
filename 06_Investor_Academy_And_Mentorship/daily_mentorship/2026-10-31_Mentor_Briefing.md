@@ -12,7 +12,7 @@
 - **Công thức / Quy tắc vàng**:
   > Quy tắc Phân Bổ Vốn Quỹ & Thuế Cổ Tức VN: (1) Không giải ngân mới vào mã có lịch BCTC <= 7 ngày; (2) Tính cổ tức thực nhận sau thuế khấu trừ tại nguồn 30% của Mỹ (WHT); (3) Luôn kiểm tra cả Stop 2xATR ban đầu và Chandelier Trailing Stop (Highest_22d - 2.5xATR).
 - **Thực tế thị trường hôm nay (2026-10-31)**: 
-  - VIX hiện tại: **19.42** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.93%** | Dầu WTI: **$102.95**.
+  - VIX hiện tại: **19.42** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.93%** | Dầu WTI: **$104.12**.
   - Độ rộng thị trường (`Market Breadth`): **62.9%** cổ phiếu giữ trên MA200.
 
 ---
@@ -24,11 +24,11 @@
   1. **Nội tại doanh nghiệp & Dòng tiền thực (Ban 2)**:
      - Forward P/E: **`21.62x`** | Dòng tiền tự do GAAP FCF: **`+$13.81B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$6.19B USD`**.
      - Hiệu suất sinh lời trên vốn đầu tư (`ROIC`): **`27.5%`** vs Chi phí vốn (`WACC`): **`9.39%`** -> Tạo giá trị kinh tế ròng **`EVA Spread = +18.11%`**.
-     - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.74%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.52%`**)*.
+     - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.7%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.49%`**)*.
   2. **Định lượng & Quản trị rủi ro 2 Tầng (Ban 4)**:
-     - Biến động `ATR(14)` = **$11.16**.
-     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$499.59** (`-4.28%`).
-     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$513.48**.
+     - Biến động `ATR(14)` = **$11.74**.
+     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$498.43** (`-4.28%`).
+     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$521.81**.
 - **Bài tập Paper Trading hôm nay**:
   - Chạy lệnh mô phỏng: `python scripts/paper_trading_simulator.py buy --symbol MSFT --shares 10 --type Core`.
 
