@@ -57,6 +57,9 @@ def main():
     print("=" * 80)
 
     if not args.cio_only:
+        # Bước 0: Quét Radar Công Bố Thông Tin BCTC & SEC EDGAR
+        run_cmd([sys.executable, str(SCRIPTS_DIR / "cbtt_filings_radar.py")], "Bước 0: Quét Radar Công Bố Thông Tin BCTC & SEC EDGAR Toàn Cầu & VN")
+
         # Bước 1: Chạy Hệ Thống Toàn Cầu (US Market)
         global_args = ["--fast"] if args.fast else []
         run_cmd([sys.executable, str(SCRIPTS_DIR / "run_daily_pipeline.py")] + global_args, "Chạy Hệ Thống 7 Phòng Ban Toàn Cầu & Alex")
