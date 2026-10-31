@@ -47,8 +47,8 @@
       "tp1_usd": 228.42,
       "tp2_usd": 328.95,
       "win_prob_pct": 79.0,
-      "reward_risk_ratio": 5.38,
-      "expected_value_pct": 23.48,
+      "reward_risk_ratio": 5.0,
+      "expected_value_pct": 23.91,
       "catalysts": "Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết công suất cả năm tới. Các tập đoàn siêu đám mây (Meta, Google, Microsoft) cam kết chi tiêu vốn (CapEx) vượt $200 tỷ USD cho hạ tầng AI.",
       "bctc_thesis": "Vị thế độc tôn tuyệt đối với 85%+ thị phần chip gia tốc AI toàn cầu. Doanh thu tăng trưởng +62.5% YoY, FCF khổng lồ +$60.8B USD, biên gộp 75.1%. Hôm qua tăng +0.58% ngay khi VIX dịu lại.",
       "execution_instruction": "Giữ 70% vị thế đang lãi; đặt Limit 30% tại $202.56 (-0.35x ATR). Chốt lời TP1 tại $228.42 (+11.6%) và TP2 tại $328.95 (+60.7%). Khóa rủi ro bằng Stop 2xATR tại $192.75 (-5.81%)."
@@ -74,8 +74,8 @@
       "tp1_usd": 372.74,
       "tp2_usd": 530.14,
       "win_prob_pct": 75.0,
-      "reward_risk_ratio": 4.7,
-      "expected_value_pct": 23.43,
+      "reward_risk_ratio": 4.34,
+      "expected_value_pct": 23.95,
       "catalysts": "Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưởng bùng nổ 3 con số. Việc sáp nhập VMware bắt đầu phát huy hiệu quả cắt giảm chi phí và gia tăng dòng tiền thuê bao phần mềm doanh nghiệp.",
       "bctc_thesis": "Cổ phiếu bị bán tháo quá đà lùi về vùng quá bán sâu (RSI chạm 33.9) tạo ra phân kỳ dương. Nội tại cực khỏe với FCF +$22.8B USD, biên gộp 76.2%. Hôm qua đã bật tăng mạnh +0.78% lên $326.08 xác nhận đáy ngắn hạn.",
       "execution_instruction": "Vào 60% tại $326.08 và 40% Limit tại $321.72. Tỷ lệ Reward/Risk đạt tới 4.70x với chốt lời TP1 tại $372.74 (+14.3%) và TP2 tại $530.14 (+62.6%). Cắt lỗ Stop 2xATR tại $302.75 (-7.15%)."
@@ -101,8 +101,8 @@
       "tp1_usd": 457.59,
       "tp2_usd": 584.39,
       "win_prob_pct": 80.0,
-      "reward_risk_ratio": 3.97,
-      "expected_value_pct": 18.86,
+      "reward_risk_ratio": 3.67,
+      "expected_value_pct": 19.44,
       "catalysts": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.",
       "bctc_thesis": "Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
       "execution_instruction": "Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%)."
@@ -128,8 +128,8 @@
       "tp1_usd": 322.96,
       "tp2_usd": 408.09,
       "win_prob_pct": 72.0,
-      "reward_risk_ratio": 3.58,
-      "expected_value_pct": 17.7,
+      "reward_risk_ratio": 3.54,
+      "expected_value_pct": 17.57,
       "catalysts": "Mảng Google Cloud đạt bước ngoặt mở rộng biên lợi nhuận hoạt động lên 11.2%. Mô hình AI Gemini 2.0 tích hợp sâu vào Workspace và hệ sinh thái Android. Cổ phiếu vừa trải qua nhịp rũ bỏ quá bán (RSI chạm 36.9) và hôm qua đã bật tăng +0.38% xác nhận lực cầu đảo chiều.",
       "bctc_thesis": "Đây là cơ hội khắc phục thiếu sót hôm qua (GAP-01): Alphabet là cổ phiếu định giá rẻ nhất trong nhóm Magnificent 7 với Forward P/E chỉ 20.9x trong khi sở hữu FCF khổng lồ +$52.4B USD. Đã qua mùa BCTC an toàn.",
       "execution_instruction": "Giải ngân 60% vùng $279.84 và đặt Limit 40% tại $276.21. Kỳ vọng toán học đạt EV = +17.0% với chốt lời TP1 tại $322.96 (+15.4%) và TP2 tại $408.09 (+45.8%). Cắt lỗ chặt Stop 2xATR tại $258.28 (-7.70%)."
