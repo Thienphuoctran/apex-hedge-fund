@@ -78,7 +78,7 @@ def send_telegram_message(bot_token: str, chat_id: str, text: str) -> bool:
 
 
 def build_morning_briefing(blotter: Dict[str, Any]) -> List[str]:
-    """Tạo 2 tin nhắn ngắn gọn, sắc bén để tránh vượt quá giới hạn 4096 ký tự của Telegram."""
+    """Tạo 3 tin nhắn ngắn gọn, sắc bén để tuyệt đối không vượt quá giới hạn 4096 ký tự của Telegram."""
     date_str = blotter.get("trading_date", datetime.now().strftime("%Y-%m-%d"))
     cap = blotter.get("capital_summary", {})
     metrics = blotter.get("portfolio_metrics", {})
@@ -100,17 +100,18 @@ def build_morning_briefing(blotter: Dict[str, Any]) -> List[str]:
         f"• *Xác Suất Thắng Bình Quân:* 🎯 *{metrics.get('weighted_win_probability_pct', 80.0):.1f}%*\n"
         f"• *Kỳ Vọng Toán Học (EV%):* 📈 *+{metrics.get('weighted_expected_value_pct', 5.8):.2f}% / lệnh*\n"
         f"• *Tỷ Lệ Risk/Reward:* ⚖️ *1 : {metrics.get('weighted_reward_risk_ratio', 2.3):.2f}*\n"
-        f"• *Rủi Ro Tối Đa / Vị Thế:* 🛡 *{metrics.get('maximum_single_trade_risk_nav_pct', 0.99):.2f}% NAV*\n\n"
+        f"• *Rủi Ro Tối Đa / Vị Thế:* 🛡 *{metrics.get('maximum_single_trade_risk_nav_pct', 0.99):.2f}% NAV*\n"
+        f"• *Khung Giờ Vàng:* ⏰ *14h00 – 14h25* (Sau khi hấp thụ xong hàng T+2)\n"
+        f"• *Mô Hình Đi Vốn:* 🏛 *Kim Tự Tháp 30% – 40% – 30%*\n\n"
         f"🔍 *2. ĐỒNG THUẬN ALEX (US) & MINH QUÂN (VN):*\n"
         f"• *Thị trường Mỹ:* Big Tech FCF cỗ máy in tiền vững chắc, không mua đuổi nhóm bán dẫn đã tăng nóng, ưu tiên gom Limit Pullback.\n"
-        f"• *Thị trường VN:* SBV duy trì môi trường tiền tệ nới lỏng ổn định, khối ngoại bán ròng hạ nhiệt. Áp dụng nghiêm ngặt chiến lược 60/40 (60% thăm dò + 40% vượt cản).\n"
+        f"• *Thị trường VN:* SBV duy trì môi trường tiền tệ nới lỏng ổn định, khối ngoại bán ròng hạ nhiệt. Áp dụng kỷ luật giải ngân Kim tự tháp 30-40-30 và chốt lời Scaling Out 50/50.\n"
     )
     
-    # TIN NHẮN 2: SỔ LỆNH THỰC THI CHI TIẾT
+    # TIN NHẮN 2: SỔ LỆNH THỰC THI MỸ (ALEX)
     msg_2 = (
-        f"🎯 *3. SỔ LỆNH MASTER BLOTTER HÔM NAY*\n"
+        f"🇺🇸 *3. SỔ LỆNH PHỐ WALL / MỸ (Alex — Ban 7 Global)*\n"
         f"━━━━━━━━━━━━━━━━━━━\n\n"
-        f"🇺🇸 *THỊ TRƯỜNG MỸ (Alex — Ban 7 Global):*\n"
     )
     for idx, o in enumerate(orders_us, 1):
         msg_2 += (
@@ -119,31 +120,38 @@ def build_morning_briefing(blotter: Dict[str, Any]) -> List[str]:
             f"   • Giá hiện tại: ${o.get('current_price_usd', 0):,.2f} | Chờ Limit: ${o.get('limit_pullback_price_usd', 0):,.2f}\n"
             f"   • *Stop Loss 2xATR:* ${o.get('stop_loss_2atr_usd', 0):,.2f} (-{o.get('stop_dist_pct', 0):.1f}%)\n"
             f"   • *Mục tiêu:* TP1: ${o.get('tp1_usd', 0):,.2f} | TP2: ${o.get('tp2_usd', 0):,.2f}\n"
-            f"   • *Chiến lược:* {o.get('execution_instruction', 'Chia nhịp 70/30')}\n\n"
+            f"   • *Chiến lược:* {o.get('execution_instruction', 'Chia nhịp 30-40-30')}\n\n"
         )
         
-    msg_2 += f"🇻🇳 *THỊ TRƯỜNG VIỆT NAM (Minh Quân — Ban 7 VN):*\n"
+    # TIN NHẮN 3: SỔ LỆNH THỰC THI VIỆT NAM (MINH QUÂN) + KỶ LUẬT THỰC THI
+    msg_3 = (
+        f"🇻🇳 *4. SỔ LỆNH TTCK VIỆT NAM (Minh Quân — Ban 7 VN)*\n"
+        f"━━━━━━━━━━━━━━━━━━━\n\n"
+    )
     for idx, o in enumerate(orders_vn, 1):
-        msg_2 += (
+        msg_3 += (
             f"*{idx}. {o.get('symbol')}* ({o.get('name')})\n"
             f"   • Tỷ trọng: {o.get('weight_nav_pct', 0)}% NAV ({o.get('allocated_capital_vnd', 0):,.0f} ₫)\n"
-            f"   • Khối lượng: {o.get('shares', 0):,} CP\n"
+            f"   • Khối lượng: {o.get('shares', 0):,} CP ({o.get('lot_standard', 'Lô 100')})\n"
             f"   • Giá tham chiếu: {o.get('current_price_vnd', 0):,.0f} ₫\n"
             f"   • *Stop Loss 2xATR:* {o.get('stop_loss_2atr_vnd', 0):,.0f} ₫ (-{o.get('stop_dist_pct', 0):.1f}%)\n"
             f"   • *Mục tiêu:* TP1: {o.get('tp1_vnd', 0):,.0f} ₫ | TP2: {o.get('tp2_vnd', 0):,.0f} ₫\n"
-            f"   • *Chiến lược:* {o.get('execution_instruction', 'Chia nhịp 60/40')}\n\n"
+            f"   • *Chiến lược:* {o.get('execution_instruction', 'Chia nhịp 30-40-30')}\n\n"
         )
         
-    msg_2 += (
+    msg_3 += (
         f"━━━━━━━━━━━━━━━━━━━\n"
-        f"🚨 *LƯU Ý KỶ LUẬT THỰC THI:*\n"
-        f"1. Tuyệt đối KHÔNG FOMO mua đuổi giá xanh/tím lúc mở phiên ATO.\n"
-        f"2. Luôn cài sẵn lệnh Stop Loss 2xATR để khóa rủi ro mất vốn <= 1% NAV.\n"
-        f"3. Ban 9 *Victor Sentinel* đang giám sát 24/7 và sẽ còi báo động ngay nếu có biến động bất thường!\n\n"
-        f"Chúc Nhà Đầu Tư Phước Trần một ngày giao dịch thành công và đắc thắng! 🚀"
+        f"🚨 *LƯU Ý KỶ LUẬT THỰC THI CHUYÊN GIA:*\n"
+        f"1. Tuyệt đối KHÔNG FOMO mua đuổi giá xanh/tím đầu ngày (09h00–10h00).\n"
+        f"2. Khung giờ vàng giải ngân: *14h00 – 14h25* chiều (hấp thụ xong hàng T+2).\n"
+        f"3. Đi vốn *Kim Tự Tháp 30% – 40% – 30%* (30% Thăm dò ➔ 40% Breakout ➔ 30% Retest).\n"
+        f"4. Chốt lời *Scaling Out*: Bán 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA20.\n"
+        f"5. Cắt lỗ dứt khoát ở mức 7%–8% để bảo vệ tài khoản trước toán học bất đối xứng của thua lỗ.\n"
+        f"6. Ban 9 *Victor Sentinel* đang trực chiến 24/7 để bảo vệ danh mục thời gian thực!\n\n"
+        f"Chúc Nhà Đầu Tư Phước Trần một ngày giao dịch đắc thắng và vững tâm lý! 🚀"
     )
     
-    return [msg_1, msg_2]
+    return [msg_1, msg_2, msg_3]
 
 
 def main():
