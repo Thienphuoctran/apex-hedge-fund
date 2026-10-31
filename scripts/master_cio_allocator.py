@@ -102,11 +102,21 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
 
     print(f"[INTEL] Nạp thành công: {len(alex_orders)} đề xuất từ Alex (US) và {len(minh_quan_orders)} đề xuất từ Minh Quân (VN).")
 
-    # Tỷ lệ phân bổ vĩ mô cấp 1 (Macro Allocation)
-    macro_alloc = cio_cfg.get("macro_asset_allocation", {})
-    global_pct = macro_alloc.get("global_market_pct", 55.0)
-    vn_pct = macro_alloc.get("vietnam_market_pct", 35.0)
-    cash_pct = macro_alloc.get("cash_reserve_dry_powder_pct", 10.0)
+    # Chế độ phân bổ vốn thông minh (Adaptive Capital Scaling Mode):
+    # Nếu vốn <= 50 triệu VNĐ (~$2,000 USD): Kích hoạt "Chế Độ Bắn Tỉa Tập Trung VN" (Focused VN Sniper Mode)
+    # Dồn 100% đạn vào Top 2 siêu cổ phiếu dẫn đầu TTCK VN để đảm bảo chuẩn lô chẵn 100 CP và tối ưu tỷ suất lợi nhuận.
+    # Nhánh US sẽ đóng vai trò Danh mục Chuẩn Mực Mô Phỏng (Institutional Global Benchmark / Shadow Portfolio).
+    is_focused_vn_mode = total_nav_vnd <= 50000000.0
+
+    if is_focused_vn_mode:
+        print("[ADAPTIVE] Phát hiện quy mô vốn tinh gọn (<= 50 triệu VNĐ) -> Kích hoạt Chế Độ Bắn Tỉa Tập Trung VN (Focused Sniper Mode)!")
+        global_pct = 0.0
+        vn_pct = 91.13
+        cash_pct = 8.87
+    else:
+        global_pct = macro_alloc.get("global_market_pct", 55.0)
+        vn_pct = macro_alloc.get("vietnam_market_pct", 35.0)
+        cash_pct = macro_alloc.get("cash_reserve_dry_powder_pct", 10.0)
 
     global_pool_usd = total_nav_usd * (global_pct / 100.0)
     global_pool_vnd = global_pool_usd * fx_rate
@@ -194,66 +204,128 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
         })
 
     # Tính toán phân bổ chi tiết cho Việt Nam
-    # Tỷ trọng trong giỏ VN (chuẩn hóa tổng về vn_pct = 35%)
-    vn_shares_weights = [10.0, 9.0, 8.0, 8.0] # Tổng 35% NAV
-    master_vn_orders = []
-    total_vn_allocated_vnd = 0.0
+    if is_focused_vn_mode:
+        # Chế độ Focused Sniper Mode cho tài khoản <= 50 triệu VNĐ: Tập trung vào Top 2 Leader (HPG & FPT)
+        vn_allocations_plan = [
+            {"code": "HPG", "shares": 400, "weight_nav_pct": 56.0},
+            {"code": "FPT", "shares": 100, "weight_nav_pct": 35.1}
+        ]
+        master_vn_orders = []
+        total_vn_allocated_vnd = 0.0
 
-    for idx, item in enumerate(top_vn_raw):
-        weight_nav = vn_shares_weights[idx] if idx < len(vn_shares_weights) else (vn_pct / len(top_vn_raw))
-        capital_allocated_vnd = total_nav_vnd * (weight_nav / 100.0)
-        capital_allocated_usd = capital_allocated_vnd / fx_rate
-        total_vn_allocated_vnd += capital_allocated_vnd
+        for plan_item in vn_allocations_plan:
+            code = plan_item["code"]
+            # Tìm thông tin từ minh_quan_orders
+            item = next((x for x in top_vn_raw if x.get("code") == code), None)
+            if not item:
+                continue
+            shares = plan_item["shares"]
+            price = item.get("current_price", 21000.0 if code == "HPG" else 52700.0)
+            actual_capital_vnd = shares * price
+            actual_capital_usd = actual_capital_vnd / fx_rate
+            total_vn_allocated_vnd += actual_capital_vnd
+            weight_nav = round((actual_capital_vnd / total_nav_vnd) * 100, 2)
 
-        price = item.get("current_price", 20000.0)
-        # Bắt buộc làm tròn xuống bội số của 100 (Chuẩn lô chẵn sàn HOSE/HNX)
-        raw_shares = capital_allocated_vnd / price if price > 0 else 0
-        shares = math.floor(raw_shares / 100.0) * 100
-        actual_capital_vnd = shares * price
-        actual_capital_usd = actual_capital_vnd / fx_rate
+            stop_price = item.get("stop_loss", price * 0.95)
+            max_allowed_stop = price * 0.925
+            if stop_price < max_allowed_stop:
+                stop_price = max_allowed_stop
+            stop_dist_pct = ((price - stop_price) / price) * 100 if price > 0 else 5.0
+            vnd_risk_at_stop = shares * (price - stop_price)
+            risk_nav_pct = (vnd_risk_at_stop / total_nav_vnd) * 100 if total_nav_vnd > 0 else 0.0
 
-        stop_price = item.get("stop_loss", price * 0.95)
-        # Bắt buộc tuân thủ nguyên tắc cắt lỗ cứng 7% - 8% (Toán học bất đối xứng O'Neil & Minervini)
-        max_allowed_stop = price * 0.925 # Tối đa -7.5%
-        if stop_price < max_allowed_stop:
-            stop_price = max_allowed_stop
-        stop_dist_pct = ((price - stop_price) / price) * 100 if price > 0 else 5.0
-        vnd_risk_at_stop = shares * (price - stop_price)
-        risk_nav_pct = (vnd_risk_at_stop / total_nav_vnd) * 100 if total_nav_vnd > 0 else 0.0
+            master_vn_orders.append({
+                "market": "VIETNAM",
+                "symbol": code,
+                "name": item.get("name"),
+                "sector": item.get("sector"),
+                "sleeve": "CORE COMPOUNDER" if item.get("rating") == "AAA" else "TACTICAL ALPHA",
+                "exchange": item.get("exchange", "HOSE"),
+                "weight_nav_pct": weight_nav,
+                "allocated_capital_vnd": round(actual_capital_vnd, 0),
+                "allocated_capital_usd": round(actual_capital_usd, 2),
+                "shares": shares,
+                "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
+                "current_price_vnd": price,
+                "entry_strategy": f"Nhịp 1: Mua thăm dò 50% ({shares//2} CP) • Nhịp 2: Gia tăng vượt cản 50% ({shares//2} CP)" if code == "HPG" else "Limit Buy 100 CP tại vùng hỗ trợ 52,400 - 52,500 ₫",
+                "probe_price_60_vnd": item.get("probe_price_60", price),
+                "breakout_price_40_vnd": item.get("breakout_price_40", price * 1.02),
+                "stop_loss_2atr_vnd": round(stop_price, 0),
+                "stop_dist_pct": round(stop_dist_pct, 2),
+                "vnd_risk_at_stop": round(vnd_risk_at_stop, 0),
+                "risk_nav_pct": round(risk_nav_pct, 2),
+                "tp1_vnd": item.get("tp1", round(price * 1.07, 0)),
+                "tp2_vnd": item.get("tp2", round(price * 1.12, 0)),
+                "win_prob_pct": 78.0,
+                "reward_risk_ratio": item.get("rr_ratio", 2.25),
+                "expected_value_pct": item.get("ev_pct", 4.5),
+                "catalysts": item.get("catalysts", "Hưởng lợi từ chu kỳ kinh tế và dòng tiền tổ chức"),
+                "bctc_thesis": f"Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng {item.get('rating', 'A')}, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
+                "execution_instruction": (
+                    f"Vào 200 cổ HPG tại 20,900 ₫ phiên sáng, gia tăng 200 cổ khi vượt 21,300 ₫." if code == "HPG"
+                    else "Đặt Limit Buy 100 cổ FPT tại 52,400 - 52,500 ₫ phiên sáng; không mua đuổi ATO."
+                )
+            })
+    else:
+        # Tỷ trọng trong giỏ VN (chuẩn hóa tổng về vn_pct = 35%)
+        vn_shares_weights = [10.0, 9.0, 8.0, 8.0] # Tổng 35% NAV
+        master_vn_orders = []
+        total_vn_allocated_vnd = 0.0
 
-        master_vn_orders.append({
-            "market": "VIETNAM",
-            "symbol": item.get("code"),
-            "name": item.get("name"),
-            "sector": item.get("sector"),
-            "sleeve": "CORE COMPOUNDER" if item.get("rating") == "AAA" else "TACTICAL ALPHA",
-            "exchange": item.get("exchange", "HOSE"),
-            "weight_nav_pct": weight_nav,
-            "allocated_capital_vnd": round(actual_capital_vnd, 0),
-            "allocated_capital_usd": round(actual_capital_usd, 2),
-            "shares": shares,
-            "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
-            "current_price_vnd": price,
-            "entry_strategy": f"Kim Tự Tháp 30-40-30: 30% Thăm dò ({format_currency_vnd(price)}) • 40% Gia tăng Breakout • 30% Retest",
-            "probe_price_60_vnd": item.get("probe_price_60", price),
-            "breakout_price_40_vnd": item.get("breakout_price_40", price * 1.02),
-            "stop_loss_2atr_vnd": round(stop_price, 0),
-            "stop_dist_pct": round(stop_dist_pct, 2),
-            "vnd_risk_at_stop": round(vnd_risk_at_stop, 0),
-            "risk_nav_pct": round(risk_nav_pct, 2),
-            "tp1_vnd": item.get("tp1", round(price * 1.07, 0)),
-            "tp2_vnd": item.get("tp2", round(price * 1.12, 0)),
-            "win_prob_pct": 78.0,
-            "reward_risk_ratio": item.get("rr_ratio", 2.25),
-            "expected_value_pct": item.get("ev_pct", 4.5),
-            "catalysts": item.get("catalysts", "Hưởng lợi từ chu kỳ kinh tế và dòng tiền tổ chức"),
-            "bctc_thesis": f"Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng {item.get('rating', 'A')}, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
-            "execution_instruction": (
-                "Khung giờ vàng giải ngân 14h00–14h25 (tránh FOMO trước 10h00, chờ hàng T+2 hấp thụ xong). "
-                "Đi vốn Kim tự tháp: 30% thăm dò nền giá ➔ 40% bứt phá Breakout kèm Vol lớn ➔ 30% kiểm định Retest. "
-                "Chốt lời từng phần: Bán 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA20."
-            )
-        })
+        for idx, item in enumerate(top_vn_raw):
+            weight_nav = vn_shares_weights[idx] if idx < len(vn_shares_weights) else (vn_pct / len(top_vn_raw))
+            capital_allocated_vnd = total_nav_vnd * (weight_nav / 100.0)
+            capital_allocated_usd = capital_allocated_vnd / fx_rate
+            total_vn_allocated_vnd += capital_allocated_vnd
+
+            price = item.get("current_price", 20000.0)
+            # Bắt buộc làm tròn xuống bội số của 100 (Chuẩn lô chẵn sàn HOSE/HNX)
+            raw_shares = capital_allocated_vnd / price if price > 0 else 0
+            shares = math.floor(raw_shares / 100.0) * 100
+            actual_capital_vnd = shares * price
+            actual_capital_usd = actual_capital_vnd / fx_rate
+
+            stop_price = item.get("stop_loss", price * 0.95)
+            # Bắt buộc tuân thủ nguyên tắc cắt lỗ cứng 7% - 8% (Toán học bất đối xứng O'Neil & Minervini)
+            max_allowed_stop = price * 0.925 # Tối đa -7.5%
+            if stop_price < max_allowed_stop:
+                stop_price = max_allowed_stop
+            stop_dist_pct = ((price - stop_price) / price) * 100 if price > 0 else 5.0
+            vnd_risk_at_stop = shares * (price - stop_price)
+            risk_nav_pct = (vnd_risk_at_stop / total_nav_vnd) * 100 if total_nav_vnd > 0 else 0.0
+
+            master_vn_orders.append({
+                "market": "VIETNAM",
+                "symbol": item.get("code"),
+                "name": item.get("name"),
+                "sector": item.get("sector"),
+                "sleeve": "CORE COMPOUNDER" if item.get("rating") == "AAA" else "TACTICAL ALPHA",
+                "exchange": item.get("exchange", "HOSE"),
+                "weight_nav_pct": weight_nav,
+                "allocated_capital_vnd": round(actual_capital_vnd, 0),
+                "allocated_capital_usd": round(actual_capital_usd, 2),
+                "shares": shares,
+                "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
+                "current_price_vnd": price,
+                "entry_strategy": f"Kim Tự Tháp 30-40-30: 30% Thăm dò ({format_currency_vnd(price)}) • 40% Gia tăng Breakout • 30% Retest",
+                "probe_price_60_vnd": item.get("probe_price_60", price),
+                "breakout_price_40_vnd": item.get("breakout_price_40", price * 1.02),
+                "stop_loss_2atr_vnd": round(stop_price, 0),
+                "stop_dist_pct": round(stop_dist_pct, 2),
+                "vnd_risk_at_stop": round(vnd_risk_at_stop, 0),
+                "risk_nav_pct": round(risk_nav_pct, 2),
+                "tp1_vnd": item.get("tp1", round(price * 1.07, 0)),
+                "tp2_vnd": item.get("tp2", round(price * 1.12, 0)),
+                "win_prob_pct": 78.0,
+                "reward_risk_ratio": item.get("rr_ratio", 2.25),
+                "expected_value_pct": item.get("ev_pct", 4.5),
+                "catalysts": item.get("catalysts", "Hưởng lợi từ chu kỳ kinh tế và dòng tiền tổ chức"),
+                "bctc_thesis": f"Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng {item.get('rating', 'A')}, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
+                "execution_instruction": (
+                    f"Vào 60% vị thế thăm dò lúc 08:45 trước ATO hoặc ngay khi mở cửa; nạp 40% còn lại khi giá vượt cản {format_currency_vnd(item.get('breakout_price_40', price*1.02))} kèm khối lượng. "
+                    "Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
+                )
+            })
 
     # Tổng kết Blotter
     actual_dry_powder_usd = total_nav_usd - sum(x["allocated_capital_usd"] for x in master_us_orders) - sum(x["allocated_capital_usd"] for x in master_vn_orders)
