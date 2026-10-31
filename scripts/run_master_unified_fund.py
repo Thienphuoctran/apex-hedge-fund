@@ -83,6 +83,9 @@ def main():
     if not args.no_telegram:
         run_cmd([sys.executable, str(SCRIPTS_DIR / "telegram_morning_reporter.py")], "Gửi Bản Tin Khai Sáng & Sổ Lệnh Master Blotter qua Telegram Bot")
 
+    # Bước 6: Phòng Tổng Hệ Thống Rà Soát Định Kỳ 4 Ngày
+    run_cmd([sys.executable, str(SCRIPTS_DIR / "system_health_audit.py"), "--check-due"], "Phòng Tổng Hệ Thống: Kiểm Tra Đợt Tổng Rà Soát Chất Lượng Định Kỳ 4 Ngày")
+
     elapsed = time.time() - start_time
     print("\n" + "=" * 80)
     print(f" [THỰC THI HOÀN TẤT TRONG {elapsed:.1f} GIÂY] KHẨU SÚNG ĐÃ SẴN SÀNG NẠP ĐẠN & BẤM CÒ!")

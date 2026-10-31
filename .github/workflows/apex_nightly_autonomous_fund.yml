@@ -51,7 +51,7 @@ jobs:
         run: |
           git config --global user.name "Apex CIO Autonomous Agent"
           git config --global user.email "autonomous-bot@apex-fund.internal"
-          git add 01_Macro_Geopolitics/ 02_Equity_Research/ 03_Synthesis_Memos/ 04_Investment_Committee/ 05_Learning_And_Evolution/ 06_Investor_Academy_And_Mentorship/ 07_Daily_Investment_Specialist/ 08_Master_Investment_CIO/ 09_Realtime_Portfolio_Sentinel/ VN_Market/
+          git add 01_Macro_Geopolitics/ 02_Equity_Research/ 03_Synthesis_Memos/ 04_Investment_Committee/ 05_Learning_And_Evolution/ 06_Investor_Academy_And_Mentorship/ 07_Daily_Investment_Specialist/ 08_Master_Investment_CIO/ 09_Realtime_Portfolio_Sentinel/ VN_Market/ data/
           if git diff --staged --quiet; then
             echo "No new changes to commit."
           else

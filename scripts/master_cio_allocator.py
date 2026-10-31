@@ -523,11 +523,11 @@ Theo quy chế vận hành chuẩn mực đúc kết từ 3 tài liệu cẩm na
 | :---: | :--- | :--- | :---: | :---: |
 | **01** | **Nguồn Vốn Đầu Tư** | Tiền nhàn rỗi 1–3 năm, không vay mượn, không xâm phạm Quỹ khẩn cấp 6 tháng, không dùng Margin đối với F0. | Đạt chuẩn an toàn tuyệt đối. Duy trì 10% Dry Powder dự phòng. | ✅ **CÓ (PASS)** |
 | **02** | **Xu Hướng Thị Trường (M)** | Chỉ số VN-Index / S&P500 đang trong Uptrend hoặc tích lũy an toàn trên đường MA20/MA50. | VIX hạ nhiệt (19.42), SBV giữ lãi suất ổn định 4.5%, VN-Index tích lũy trên MA50. | ✅ **CÓ (PASS)** |
-| **03** | **Sức Khỏe Doanh Nghiệp (FA)** | EPS tăng trưởng $\ge 15\% - 20\%$, $ROE \ge 15\%$, Dòng tiền kinh doanh OCF/FCF dương, BCTC minh bạch không xào nấu. | 100% doanh nghiệp được chọn sở hữu cỗ máy in tiền FCF thực, OCF > LNST, không có bẫy lợi nhuận giấy. | ✅ **CÓ (PASS)** |
+| **03** | **Sức Khỏe Doanh Nghiệp (FA)** | EPS tăng trưởng $\\ge 15\\% - 20\\%$, $ROE \\ge 15\\%$, Dòng tiền kinh doanh OCF/FCF dương, BCTC minh bạch không xào nấu. | 100% doanh nghiệp được chọn sở hữu cỗ máy in tiền FCF thực, OCF > LNST, không có bẫy lợi nhuận giấy. | ✅ **CÓ (PASS)** |
 | **04** | **Định Giá & Động Lực Mới (N)** | P/E, P/B hợp lý, $PEG < 1$, doanh nghiệp sở hữu động lực tăng trưởng mới (nhà máy mới, sản phẩm mới, vượt đỉnh). | HPG có Dung Quất 2; FPT có AI Factory; NVDA có chip Blackwell; VHM có đại đô thị. | ✅ **CÓ (PASS)** |
-| **05** | **Điểm Mua Kỹ Thuật (TA)** | Tích lũy tại nền giá tin cậy hoặc vừa bứt phá kèm khối lượng tăng vọt $\ge +50\%$ MA20 (không mua đuổi khi RSI > 70). | Tích lũy hộp Wyckoff chặt chẽ, xuất hiện nến Test Cung (No Supply) cạn kiệt thanh khoản. | ✅ **CÓ (PASS)** |
-| **06** | **Tỷ Lệ Risk/Reward (R:R)** | Khoảng cách đến giá chốt lời kỳ vọng cao gấp tối thiểu 2 lần khoảng cách đến điểm cắt lỗ ($R:R \ge 2:1$). | Tỷ lệ R:R bình quân danh mục đạt **1 : 2.31** (vượt xa ngưỡng chuẩn 1:2.0). | ✅ **CÓ (PASS)** |
-| **07** | **Quy Mô & Kỷ Luật Đi Vốn** | Tuân thủ công thức Position Sizing ($R_{{trade}} \le 1.5\%$ NAV), đi vốn Kim Tự Tháp 30-40-30, dùng lệnh LO kiểm soát giá. | Rủi ro tối đa mỗi vị thế $\le 0.99\%$ NAV; đi vốn Kim tự tháp 30% thăm dò ➔ 40% Breakout ➔ 30% Retest. | ✅ **CÓ (PASS)** |
+| **05** | **Điểm Mua Kỹ Thuật (TA)** | Tích lũy tại nền giá tin cậy hoặc vừa bứt phá kèm khối lượng tăng vọt $\\ge +50\\%$ MA20 (không mua đuổi khi RSI > 70). | Tích lũy hộp Wyckoff chặt chẽ, xuất hiện nến Test Cung (No Supply) cạn kiệt thanh khoản. | ✅ **CÓ (PASS)** |
+| **06** | **Tỷ Lệ Risk/Reward (R:R)** | Khoảng cách đến giá chốt lời kỳ vọng cao gấp tối thiểu 2 lần khoảng cách đến điểm cắt lỗ ($R:R \\ge 2:1$). | Tỷ lệ R:R bình quân danh mục đạt **1 : 2.31** (vượt xa ngưỡng chuẩn 1:2.0). | ✅ **CÓ (PASS)** |
+| **07** | **Quy Mô & Kỷ Luật Đi Vốn** | Tuân thủ công thức Position Sizing ($R_{{trade}} \\le 1.5\\%$ NAV), đi vốn Kim Tự Tháp 30-40-30, dùng lệnh LO kiểm soát giá. | Rủi ro tối đa mỗi vị thế $\\le 0.99\\%$ NAV; đi vốn Kim tự tháp 30% thăm dò ➔ 40% Breakout ➔ 30% Retest. | ✅ **CÓ (PASS)** |
 
 ---
 
@@ -540,7 +540,7 @@ Theo quy chế vận hành chuẩn mực đúc kết từ 3 tài liệu cẩm na
 > - **Dòng tiền tự do FCF thực dương vững như bàn thạch, triệt tiêu mọi bẫy gian lận BCTC**.
 > - **Khung giờ vàng giải ngân**: Ưu tiên theo dõi và quyết định trong khung **14h00 – 14h25** chiều sau khi thị trường đã hấp thụ hoàn tất lượng hàng T+2 về tài khoản.
 > - **Chiến lược chốt lời**: Thực thi Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20.
-> - **Khóa chặt rủi ro mất vốn**: Ngưỡng cắt lỗ dứt khoát $Stop \le 7.5\%$ (chặn đứng toán học bất đối xứng của thua lỗ).
+> - **Khóa chặt rủi ro mất vốn**: Ngưỡng cắt lỗ dứt khoát $Stop \\le 7.5\\%$ (chặn đứng toán học bất đối xứng của thua lỗ).
 >
 > 🎯 **LỆNH TỪ TỔNG TƯ LỆNH: CHÍNH THỨC PHÊ DUYỆT BẤM CÒ THỰC THI!**
 
