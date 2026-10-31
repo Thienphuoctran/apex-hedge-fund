@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Institutional Investment & Investor Mentorship Command Center (v6.0 Audited)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background: #f8fafc;
+      --foreground: #0f172a;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --primary: #0ea5e9;
+      --primary-foreground: #ffffff;
+      --secondary: #f1f5f9;
+      --secondary-foreground: #1e293b;
+      --muted-foreground: #64748b;
+    }
+    html.dark {
+      --background: #090d16;
+      --foreground: #f1f5f9;
+      --card: #111827;
+      --border: #1e293b;
+      --primary: #0ea5e9;
+      --primary-foreground: #ffffff;
+      --secondary: #1e293b;
+      --secondary-foreground: #e2e8f0;
+      --muted-foreground: #94a3b8;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--background);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-3 md:p-6 transition-colors duration-200">
+  <div class="max-w-7xl mx-auto space-y-5">
+
+    <!-- Top Global Utility & Localization Bar -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl px-4 py-2.5 shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="px-2.5 py-0.5 rounded-full font-bold bg-emerald-500/15 text-emerald-500 border border-emerald-500/30">
+          AUDITED v6.0 — ĐÃ CHUẨN HÓA 6 LỖI DỮ LIỆU & NÂNG CẤP 6 MODULE THỰC CHIẾN
+        </span>
+        <span id="timestamp-badge" class="text-[var(--muted-foreground)] font-mono"></span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="flex items-center gap-1.5 bg-[var(--secondary)] px-2.5 py-1 rounded-lg border border-[var(--border)]">
+          <span class="text-[var(--muted-foreground)]">Tỷ giá USD/VND:</span>
+          <input id="global-usdvnd-input" type="number" value="25450" step="50" onchange="updateGlobalSettings()" class="w-20 bg-transparent font-mono font-bold text-sky-400 focus:outline-none text-right" />
+        </div>
+        <div class="flex items-center gap-1.5 bg-[var(--secondary)] px-2.5 py-1 rounded-lg border border-[var(--border)]">
+          <span class="text-[var(--muted-foreground)]">Thuế cổ tức Mỹ (WHT):</span>
+          <select id="global-wht-select" onchange="updateGlobalSettings()" class="bg-transparent font-mono font-bold text-amber-400 focus:outline-none">
+            <option value="15" class="bg-slate-900 text-white">15% (Hiệp định/W-8BEN)</option>
+            <option value="30" class="bg-slate-900 text-white">30% (Mặc định Mỹ)</option>
+            <option value="0" class="bg-slate-900 text-white">0% (Trước thuế)</option>
+          </select>
+        </div>
+        <button type="button" onclick="openAuditModal()" class="px-2.5 py-1 rounded-lg font-semibold bg-sky-500/15 text-sky-400 border border-sky-500/30 hover:bg-sky-500/25 transition">
+          📋 Báo Cáo Kiểm Toán v6.0
+        </button>
+        <button type="button" onclick="toggleTheme()" id="btn-theme-toggle" class="px-2.5 py-1 rounded-lg font-semibold border border-[var(--border)] bg-[var(--secondary)] hover:opacity-80 transition">
+          🌓 Giao Diện
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Header & Navigation Tabs -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+      <div>
+        <h1 class="text-xl md:text-2xl font-bold">Hệ Thống Quản Trị Đầu Tư Định Lượng, Cơ Bản & Học Viện Đào Tạo Kèm Cặp (6-Department AI)</h1>
+        <p class="text-xs md:text-sm text-[var(--muted-foreground)] mt-1">
+          8 Chỉ Số Quốc Tế • Độ Rộng Thị Trường • 12 Ngành GICS • 35 Cổ Phiếu (True FCF, ROIC-WACC, F-Score, Z-Score) • Máy Tính Đi Lệnh 2xATR & Chandelier • Nhật Ký Giao Dịch Tương Tác
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button type="button" onclick="switchTab('tab-overview')" id="btn-tab-overview" class="px-3.5 py-2 rounded-lg text-xs font-semibold border border-[var(--border)] bg-[var(--primary)] text-[var(--primary-foreground)]">1. Vĩ Mô & 12 Ngành GICS</button>
+        <button type="button" onclick="switchTab('tab-screener')" id="btn-tab-screener" class="px-3.5 py-2 rounded-lg text-xs font-semibold border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)]">2. Sàng Lọc & Dự Báo 35 Cổ Phiếu</button>
+        <button type="button" onclick="switchTab('tab-quant')" id="btn-tab-quant" class="px-3.5 py-2 rounded-lg text-xs font-semibold border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)]">3. Tương Quan, Stop 2xATR & Stress-Test</button>
+        <button type="button" onclick="switchTab('tab-learning')" id="btn-tab-learning" class="px-3.5 py-2 rounded-lg text-xs font-semibold border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)]">4. Ban 5 — Tự Học & Tiến Hóa</button>
+        <button type="button" onclick="switchTab('tab-mentor')" id="btn-tab-mentor" class="px-3.5 py-2 rounded-lg text-xs font-semibold border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)]">5. Ban 6 — Học Viện & Nhật Ký Lệnh</button>
+        <button type="button" onclick="switchTab('tab-specialist')" id="btn-tab-specialist" class="px-3.5 py-2 rounded-lg text-xs font-semibold border border-emerald-500/40 bg-emerald-500/10 text-emerald-400">6. Ban 7 — Chuyên Viên Đầu Tư Alex</button>
+      </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- TAB 1: MACRO, MARKET BREADTH, 12 GICS SECTORS & NEWS  -->
+    <!-- ===================================================== -->
+    <div id="tab-overview" class="space-y-6">
+      <!-- Global Gauges Strip -->
+      <div>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+          <h2 class="text-base font-semibold">Ban 1 — Thước Đo Vĩ Mô, Lãi Suất & Hàng Hóa Chiến Lược</h2>
+          <span class="text-xs px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-400 border border-amber-500/30 font-medium">
+            Chế độ Vĩ mô: Reflationary / Hawkish Rotation (US10Y 4.93% • WTI $102.95 • VIX 19.42)
+          </span>
+        </div>
+        <div id="macro-gauges-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3"></div>
+      </div>
+
+      <!-- UPGRADE 3A: Market Breadth & Internal Liquidity Indicators -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-3">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+          <div>
+            <h2 class="text-base font-semibold flex items-center gap-2">
+              <span>📊</span> Độ Rộng Thị Trường Nội Tại & Tín Hiệu Dòng Tiền Phái Sinh (Market Breadth & Options Internals)
+            </h2>
+            <p class="text-xs text-[var(--muted-foreground)]">Đo lường sức khỏe thực sự bên dưới chỉ số S&P 500 để phát hiện phân kỳ âm hoặc sự đồng thuận của dòng tiền tổ chức.</p>
+          </div>
+          <span id="breadth-verdict-badge" class="text-xs font-semibold px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30"></span>
+        </div>
+        <div id="market-breadth-grid" class="grid grid-cols-2 md:grid-cols-5 gap-3"></div>
+      </div>
+
+      <!-- Global Indices Table -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm">
+        <h2 class="text-base font-semibold mb-3">8 Chỉ Số Chứng Khoán Toàn Cầu (Mỹ • Châu Âu • Châu Á)</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)]">
+                <th class="py-2.5 px-3">Chỉ Số</th>
+                <th class="py-2.5 px-3">Khu Vực</th>
+                <th class="py-2.5 px-3 text-right">Điểm Số</th>
+                <th class="py-2.5 px-3 text-right">1D (%)</th>
+                <th class="py-2.5 px-3 text-right">1M (%)</th>
+                <th class="py-2.5 px-3 text-right">1Y (%)</th>
+                <th class="py-2.5 px-3 text-right">RSI(14)</th>
+                <th class="py-2.5 px-3 text-right">MA50 / MA200</th>
+                <th class="py-2.5 px-3">Trạng Thái Xu Hướng</th>
+              </tr>
+            </thead>
+            <tbody id="global-indices-tbody" class="divide-y divide-[var(--border)]"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 12 GICS Sectors Heatmap & Ranking -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm">
+        <h2 class="text-base font-semibold mb-1">Bản Đồ Luân Chuyển Dòng Tiền 12 Nhóm Ngành GICS (Xếp Hạng Theo Hiệu Suất 1 Tháng & Sharpe 1Y)</h2>
+        <p class="text-xs text-[var(--muted-foreground)] mb-4">Xác định dòng tiền tổ chức đang chảy vào nhóm ngành nào (Top-Down Sector Rotation).</p>
+        <div id="sectors-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3"></div>
+      </div>
+
+      <!-- Live Financial News & Macro Catalysts Feed -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <h2 class="text-base font-semibold flex items-center gap-2">
+              <span>📰</span> Tâm Điểm Tin Tức Vĩ Mô & Sự Kiện Phố Wall Trong Ngày (24 Bản Tin Trực Tuyến)
+            </h2>
+            <p class="text-xs text-[var(--muted-foreground)]">Tổng hợp trực tiếp từ CNBC Top News, CNBC Economy và MarketWatch giúp giải mã nguyên nhân biến động giá hôm nay.</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <button type="button" onclick="filterNews('ALL')" class="px-2.5 py-1 rounded-md text-xs font-medium border border-[var(--border)] bg-[var(--secondary)]">Tất cả (24)</button>
+            <button type="button" onclick="filterNews('CNBC Top News')" class="px-2.5 py-1 rounded-md text-xs font-medium border border-sky-500/30 bg-sky-500/10 text-sky-400">CNBC Top News</button>
+            <button type="button" onclick="filterNews('CNBC Economy')" class="px-2.5 py-1 rounded-md text-xs font-medium border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">CNBC Economy</button>
+            <button type="button" onclick="filterNews('MarketWatch')" class="px-2.5 py-1 rounded-md text-xs font-medium border border-amber-500/30 bg-amber-500/10 text-amber-400">MarketWatch</button>
+          </div>
+        </div>
+        <div id="news-feed-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+      </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- TAB 2: 35 EQUITIES SCREENER, QUALITY METRICS & MODAL  -->
+    <!-- ===================================================== -->
+        <!-- TAB 2: 35 EQUITIES SCREENER & PREDICTIONS -->
+    <div id="tab-screener" class="space-y-5 hidden">
+      <!-- Cảnh Báo Trọng Điểm Doanh Nghiệp Đang Thua Lỗ / Đốt Tiền -->
+      <div class="bg-[var(--card)] border border-rose-500/40 rounded-xl p-5 shadow-sm space-y-3">
+        <div>
+          <h2 class="text-base font-semibold text-rose-400">🚨 Tâm Điểm Cảnh Báo: Các Doanh Nghiệp Đang Thua Lỗ Ròng, Cháy Dòng Tiền Tự Do (`FCF < 0`) Hoặc Suy Giảm Doanh Thu</h2>
+          <p class="text-xs text-[var(--muted-foreground)]">Bóc tách minh bạch các tập đoàn đang báo lỗ ròng (INTC, COIN), âm dòng tiền tự do do chi phí phần cứng (SMCI), hoặc suy giảm doanh thu/biên lợi nhuận (QCOM, TSLA) và giải thích tại sao giá cổ phiếu biến động mạnh.</p>
+        </div>
+        <div id="distressed-companies-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs"></div>
+      </div>
+
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+          <div>
+            <h2 class="text-base font-semibold">Ban 2 & Ban 3 — Sàng Lọc 35 Siêu Cổ Phiếu Quốc Tế (True FCF ex-SBC + ROIC vs WACC + F-Score + Implied Move BCTC)</h2>
+            <p class="text-xs text-[var(--muted-foreground)]">
+              Đã chuẩn hóa tỷ giá ADR (TWD/DKK -> USD), sửa lỗi tỷ suất cổ tức, tính dòng tiền thực True FCF (trừ thưởng cổ phiếu SBC), điểm sức khỏe Piotroski F-Score (/9), Altman Z-Score và dời lỗ Chandelier Stop. Bấm vào bất kỳ mã nào để mở <b>Hồ Sơ Phân Tích 360°</b> hoặc <b>Tính Lệnh</b>.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" onclick="filterEquities('ALL')" class="px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--secondary)] text-[var(--secondary-foreground)]">Tất cả (35)</button>
+            <button type="button" onclick="filterEquities('BULLISH')" class="px-3 py-1.5 rounded-lg text-xs font-medium border border-emerald-500/40 bg-emerald-500/10 text-emerald-500">Dự Báo TĂNG (Bullish Leaders)</button>
+            <button type="button" onclick="filterEquities('REBOUND')" class="px-3 py-1.5 rounded-lg text-xs font-medium border border-sky-500/40 bg-sky-500/10 text-sky-500">Quá Bán Chờ Hồi (Oversold)</button>
+            <button type="button" onclick="filterEquities('OVERBOUGHT')" class="px-3 py-1.5 rounded-lg text-xs font-medium border border-amber-500/40 bg-amber-500/10 text-amber-500">Cảnh Báo Quá Mua (RSI > 72)</button>
+            <button type="button" onclick="filterEquities('BEARISH')" class="px-3 py-1.5 rounded-lg text-xs font-medium border border-rose-500/40 bg-rose-500/10 text-rose-500">Cảnh Báo GIẢM / Rủi Ro Cao</button>
+          </div>
+        </div>
+
+        <!-- Search & Sort Controls -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 border-t border-[var(--border)] text-xs">
+          <div class="flex items-center gap-2 flex-1 max-w-md">
+            <input id="screener-search-input" type="text" placeholder="🔍 Tìm theo mã (VD: NVDA, MSFT, XOM) hoặc tên ngành..." oninput="renderScreenerTable()" class="w-full px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)] text-[var(--foreground)] focus:outline-none focus:border-sky-500" />
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-[var(--muted-foreground)]">Sắp xếp theo:</span>
+            <select id="screener-sort-select" onchange="renderScreenerTable()" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)] text-[var(--foreground)] font-medium focus:outline-none">
+              <option value="ic_desc">Điểm Ủy Ban Đầu Tư (IC Score 100 ↓)</option>
+              <option value="pred_desc">Điểm AI Dự Báo (Predictive Score ↓)</option>
+              <option value="eva_desc">Biên Tạo Giá Trị ROIC - WACC (EVA ↓)</option>
+              <option value="fcf_desc">Dòng Tiền Thực True FCF ex-SBC ($B ↓)</option>
+              <option value="upside_desc">Upside Mục Tiêu Phố Wall (% ↓)</option>
+              <option value="fscore_desc">Điểm Sức Khỏe Piotroski F-Score (/9 ↓)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)]">
+                <th class="py-2.5 px-2">Mã</th>
+                <th class="py-2.5 px-2">Ngành</th>
+                <th class="py-2.5 px-2 text-right">Giá ($)</th>
+                <th class="py-2.5 px-2 text-right">1D / 1M</th>
+                <th class="py-2.5 px-2 text-right">RSI(14)</th>
+                <th class="py-2.5 px-2 text-right" title="Stop Cứng 2xATR / Dời Lãi Chandelier 2.5xATR">Stop 2xATR / Trail</th>
+                <th class="py-2.5 px-2 text-right" title="Forward P/E, P/B & Tỷ suất cổ tức thực nhận">Fwd P/E • P/B • Div</th>
+                <th class="py-2.5 px-2 text-right" title="FCF báo cáo và True FCF sau khi trừ thưởng cổ phiếu SBC">FCF / True FCF</th>
+                <th class="py-2.5 px-2 text-right" title="ROIC so với chi phí vốn WACC và điểm Piotroski F-Score">ROIC-WACC • F/Z</th>
+                <th class="py-2.5 px-2 text-right">Upside Phố Wall</th>
+                <th class="py-2.5 px-2">Lịch BCTC & Implied ±%</th>
+                <th class="py-2.5 px-2 text-center" title="Điểm AI / Điểm Ủy Ban Đầu Tư IC (Thang 100)">Điểm AI / IC</th>
+                <th class="py-2.5 px-2">Phán Đoán Xu Hướng</th>
+                <th class="py-2.5 px-2 text-right">Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody id="equities-tbody" class="divide-y divide-[var(--border)]"></tbody>
+          </table>
+        </div>
+      </div>
+    
+      <!-- Giải Mã Toàn Diện 35 Cổ Phiếu: Tại Sao Tăng / Giảm, Biến Động & Tình Hình Kinh Doanh -->
+      <div class="bg-[var(--card)] border border-sky-500/30 rounded-xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-base font-semibold text-sky-400">🔍 Giải Mã Chi Tiết 35 Cổ Phiếu: Tại Sao Cổ Phiếu Tăng / Giảm, Biến Động & Tình Hình Doanh Nghiệp Tác Động Lên Giá</h2>
+          <p class="text-xs text-[var(--muted-foreground)]">Danh sách dưới đây tự động lọc đồng bộ theo bộ lọc phía trên, giải thích rõ nguyên nhân biến động giá (1D / 5D / 1M / 1Y), thực trạng lãi/lỗ nội tại của doanh nghiệp và hướng xử lý.</p>
+        </div>
+        <div id="movement-explanations-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs"></div>
+      </div>
+    </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- TAB 3: QUANT SIZING, ORDER CALCULATOR & STRESS-TEST   -->
+    <!-- ===================================================== -->
+    <div id="tab-quant" class="space-y-6 hidden">
+      <!-- Summary Cards -->
+      <div id="quant-summary-cards" class="grid grid-cols-1 md:grid-cols-4 gap-4"></div>
+
+      <!-- UPGRADE 1: Interactive Position Size & Order Calculator -->
+      <div class="bg-[var(--card)] border border-sky-500/40 rounded-xl p-5 shadow-sm space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 border-b border-[var(--border)] pb-3">
+          <div>
+            <h2 class="text-base font-bold text-sky-400 flex items-center gap-2">
+              <span>🧮</span> Máy Tính Khối Lượng Đặt Lệnh & Quản Trị Rủi Ro Thực Chiến (Position Size & Order Calculator)
+            </h2>
+            <p class="text-xs text-[var(--muted-foreground)]">
+              Tự động tính số cổ phiếu cần mua theo quy mô vốn thực tế (USD/VND), khóa rủi ro cắt lỗ 2xATR, tính phí giao dịch + trượt giá (slippage) và chuyển thẳng vào Nhật ký Paper Trade.
+            </p>
+          </div>
+          <span class="text-xs font-mono px-2.5 py-1 rounded bg-sky-500/15 text-sky-400 border border-sky-500/30">
+            Công thức: Shares = Floor( (NAV × Risk%) / (2 × ATR_14 + Slippage) )
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
+          <div>
+            <label class="block text-[var(--muted-foreground)] mb-1">1. Chọn Cổ Phiếu Giải Ngân</label>
+            <select id="calc-symbol-select" onchange="runOrderCalculator()" class="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--secondary)] font-bold text-[var(--foreground)] focus:outline-none focus:border-sky-500"></select>
+          </div>
+          <div>
+            <label class="block text-[var(--muted-foreground)] mb-1">2. Tổng Vốn Danh Mục NAV ($ USD)</label>
+            <input id="calc-nav-input" type="number" value="100000" min="1000" step="5000" oninput="runOrderCalculator()" class="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--secondary)] font-mono font-bold text-emerald-400 focus:outline-none focus:border-sky-500" />
+          </div>
+          <div>
+            <label class="block text-[var(--muted-foreground)] mb-1">3. Rủi Ro Tối Đa / Lệnh (% NAV)</label>
+            <input id="calc-risk-pct-input" type="number" value="0.30" min="0.05" max="2.0" step="0.05" oninput="runOrderCalculator()" class="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--secondary)] font-mono font-bold text-amber-400 focus:outline-none focus:border-sky-500" />
+          </div>
+          <div>
+            <label class="block text-[var(--muted-foreground)] mb-1">4. Trần Tỷ Trọng Tối Đa / Mã (% NAV)</label>
+            <input id="calc-max-wt-input" type="number" value="10.0" min="2.0" max="25.0" step="0.5" oninput="runOrderCalculator()" class="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--secondary)] font-mono font-bold text-sky-400 focus:outline-none focus:border-sky-500" />
+          </div>
+          <div>
+            <label class="block text-[var(--muted-foreground)] mb-1">5. Phí GD + Trượt Giá 2 Chiều (%)</label>
+            <input id="calc-fee-input" type="number" value="0.15" min="0.0" max="1.5" step="0.05" oninput="runOrderCalculator()" class="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--secondary)] font-mono font-bold text-rose-400 focus:outline-none focus:border-sky-500" />
+          </div>
+        </div>
+
+        <div id="calc-results-panel" class="grid grid-cols-1 md:grid-cols-4 gap-3 pt-2"></div>
+      </div>
+
+      <!-- Risk-Parity Position Sizing Table -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-base font-semibold mb-1">Ban 4 — Bảng Phân Bổ Tỷ Trọng Theo Độ Biến Động (`ATR Risk-Parity Sizing`) & Ngưỡng Cắt Lỗ `2xATR(14)` (Đã Khóa Các Mã Sát BCTC <= 7 Ngày)</h2>
+          <p class="text-xs text-[var(--muted-foreground)]">
+            Danh mục 10 cổ phiếu dẫn dắt (60.0% NAV cổ phiếu + 40.0% T-Bills). Đã tự động chuyển `AAPL` (còn 2 ngày BCTC) và `BRK-B` (còn 7 ngày BCTC) sang danh sách chờ sau BCTC, thay thế bằng `XOM` và `CVX` (vừa công bố BCTC hôm qua, dòng tiền ngành Năng lượng dẫn đầu).
+          </p>
+        </div>
+
+        <!-- Locked Imminent Earnings Watchlist Alert -->
+        <div class="p-3.5 rounded-xl border border-amber-500/40 bg-amber-500/10 space-y-2">
+          <div class="text-xs font-bold text-amber-400 flex items-center gap-2">
+            <span>🛡️</span> Chốt Chặn Kỷ Luật Ban 4: 4 Cổ Phiếu Mạnh Đang Tạm Khóa Giải Ngân Mở Mới Do Sát Ngày Công Bố BCTC (<= 7 Ngày)
+          </div>
+          <div id="locked-earnings-grid" class="grid grid-cols-1 md:grid-cols-4 gap-2.5 text-xs"></div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)]">
+                <th class="py-2.5 px-3">Mã</th>
+                <th class="py-2.5 px-3">Ngành</th>
+                <th class="py-2.5 px-3 text-right">Giá Hiện Tại</th>
+                <th class="py-2.5 px-3 text-right">Stop Cứng 2xATR ($)</th>
+                <th class="py-2.5 px-3 text-right">Chandelier Trail ($)</th>
+                <th class="py-2.5 px-3 text-right">Biên Cắt Lỗ (%)</th>
+                <th class="py-2.5 px-3 text-right">Tỷ Trọng (% NAV)</th>
+                <th class="py-2.5 px-3 text-right">Tổn Thất NAV Tối Đa</th>
+                <th class="py-2.5 px-3 text-right">Beta</th>
+                <th class="py-2.5 px-3">Trạng Thái Lịch BCTC</th>
+                <th class="py-2.5 px-3 text-right">Đặt Lệnh</th>
+              </tr>
+            </thead>
+            <tbody id="quant-alloc-tbody" class="divide-y divide-[var(--border)]"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 3-Scenario Stress Test -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm">
+        <h2 class="text-base font-semibold mb-1">Kiểm Thử Sức Chịu Đựng Danh Mục Trước 3 Cú Sốc Vĩ Mô (`Institutional Stress-Testing`)</h2>
+        <p class="text-xs text-[var(--muted-foreground)] mb-4">Đo lường mức sụt giảm dự kiến của Danh mục so với chỉ số chuẩn S&P 500 trong các kịch bản thiên nga đen.</p>
+        <div id="stress-test-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+      </div>
+
+      <!-- Correlation Matrix -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm">
+        <h2 class="text-base font-semibold mb-1">Ma Trận Tương Quan Lợi Suất 1 Năm (`Pairwise Return Correlation Matrix`)</h2>
+        <p class="text-xs text-[var(--muted-foreground)] mb-4">Các cặp có hệ số tương quan >= 0.65 được tô nổi bật để tránh tập trung quá mức vào cùng một nhóm rủi ro.</p>
+        <div id="corr-matrix-container" class="overflow-x-auto"></div>
+      </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- TAB 4: SELF-LEARNING & SYSTEM EVOLUTION (BAN 5)       -->
+    <!-- ===================================================== -->
+    <div id="tab-learning" class="space-y-6 hidden">
+      <!-- Learning Telemetry Grid -->
+      <div id="learning-cards-grid" class="grid grid-cols-1 md:grid-cols-4 gap-4"></div>
+
+      <!-- Strategic Attribution & Calibration Table -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-base font-semibold">Ban 5 — Phòng Thẩm Định Hiệu Suất, Hồi Tố & Tự Học Thích Nghi (Adaptive Feedback Loop)</h2>
+          <p class="text-xs text-[var(--muted-foreground)]">Kiểm chứng đối soát dự báo với diễn biến thực tế, đồng bộ hóa 100% thang điểm Ủy ban Đầu tư (IC Score) theo chế độ biến động VIX thực tế.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Lessons Learned Panel -->
+          <div class="border border-[var(--border)] rounded-xl p-4 bg-[var(--card)] space-y-3">
+            <h3 class="text-sm font-bold flex items-center gap-2 text-emerald-500">
+              <span>📚</span> Bài Học Kinh Nghiệm Thị Trường Mới Nhất (Lessons Learned)
+            </h3>
+            <div id="latest-lessons-container" class="text-xs space-y-2.5 text-[var(--foreground)]"></div>
+          </div>
+
+          <!-- Model Calibration & Risk Rules Panel (Dynamically Bound to DATA) -->
+          <div class="border border-[var(--border)] rounded-xl p-4 bg-[var(--card)] space-y-3">
+            <h3 class="text-sm font-bold flex items-center gap-2 text-sky-500">
+              <span>⚙️</span> Tinh Chỉnh Trọng Số Thích Nghi Chuẩn Hóa 100% (Adaptive Weights Active)
+            </h3>
+            <div class="text-xs space-y-2 text-[var(--muted-foreground)]">
+              <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+                <span>Trọng số Vĩ Mô & Dòng Tiền Ngành (Ban 1):</span>
+                <span class="font-bold text-sky-400" id="stat-macro-weight">25% (Chuẩn hóa theo chu kỳ Reflation)</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+                <span>Trọng số Dòng Tiền Tự Do (True FCF) & BCTC (Ban 2):</span>
+                <span class="font-bold text-emerald-500" id="stat-fcf-weight">30% (Chế độ VIX = 19.42 ổn định)</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+                <span>Trọng số Định Giá & Đồng Thuận Phố Wall (Ban 3):</span>
+                <span class="font-bold text-purple-400" id="stat-val-weight">25% (Ưu tiên PEG < 1.5 & ROIC > WACC)</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+                <span>Trọng số Kỹ Thuật & R:R (Ban 4):</span>
+                <span class="font-bold text-amber-500" id="stat-tech-weight">20% (Tổng trọng số 4 Ban = 100%)</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+                <span>Đệm Tiền Mặt / T-Bills Bắt Buộc:</span>
+                <span class="font-bold text-[var(--foreground)]">40.0% NAV (Hưởng lợi suất T-Bills ~4.95%)</span>
+              </div>
+              <div class="flex justify-between py-1.5">
+                <span>Kỷ Luật Cắt Lỗ & Giữ Lãi:</span>
+                <span class="font-bold text-rose-500">Stop Cứng 2xATR(14) + Chandelier Trail 2.5xATR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- TAB 5: INVESTOR ACADEMY, DYNAMIC CASE STUDY & JOURNAL -->
+    <!-- ===================================================== -->
+    <div id="tab-mentor" class="hidden space-y-6">
+      <!-- Profile & Progress Banner -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Cấp Độ Hiện Tại</div>
+          <div class="text-base font-bold mt-1 text-sky-500" id="m-stage-title">Stage 1: Nền Tảng & Tư Duy</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Lộ trình 4 giai đoạn chuẩn Quỹ</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Tiến Độ Giai Đoạn</div>
+          <div class="text-xl font-bold mt-1 text-emerald-500" id="m-progress">25% Hoàn thành</div>
+          <div class="w-full bg-[var(--secondary)] h-2 rounded-full mt-2 overflow-hidden">
+            <div id="m-progress-bar" class="bg-emerald-500 h-full rounded-full" style="width: 25%"></div>
+          </div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Điểm Kỷ Luật Cá Nhân</div>
+          <div class="text-xl font-bold mt-1 text-emerald-500" id="m-discipline">100 / 100 Điểm</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1" id="m-discipline-sub">Tuân thủ 100% Stop-Loss 2xATR</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Khẩu Vị & Kỷ Luật Rủi Ro</div>
+          <div class="text-sm font-bold mt-1 text-amber-500">Moderate Growth (Core & Satellite)</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Cắt lỗ 2xATR • Tối đa 10% NAV/mã</div>
+        </div>
+      </div>
+
+      <!-- UPGRADE 5: Interactive Trade Journal & Equity Curve -->
+      <div class="bg-[var(--card)] border border-emerald-500/40 rounded-xl p-5 shadow-sm space-y-5">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 border-b border-[var(--border)] pb-3">
+          <div>
+            <h2 class="text-base font-bold text-emerald-400 flex items-center gap-2">
+              <span>📈</span> Nhật Ký Giao Dịch Thực Chiến Tương Tác & Đường Cong Vốn (Interactive Trade Journal & Equity Curve)
+            </h2>
+            <p class="text-xs text-[var(--muted-foreground)]">
+              Theo dõi mọi lệnh Paper Trading hoặc Vốn thật, tự động chấm điểm tuân thủ kỷ luật 2xATR, tính Win Rate, Profit Factor và vẽ biểu đồ tăng trưởng NAV so với S&P 500.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" onclick="exportJournalCSV()" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-sky-500/40 bg-sky-500/10 text-sky-400 hover:bg-sky-500/20">
+              📥 Xuất CSV Nhật Ký
+            </button>
+            <button type="button" onclick="resetJournalSamples()" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-[var(--border)] bg-[var(--secondary)] text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+              🔄 Khôi Phục Lệnh Mẫu
+            </button>
+          </div>
+        </div>
+
+        <!-- Journal KPI Strip & Equity Curve Canvas -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div class="space-y-3">
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40">
+                <div class="text-[var(--muted-foreground)]">Vốn Hiện Tại (Equity)</div>
+                <div id="journal-kpi-equity" class="text-base font-bold font-mono text-emerald-400 mt-1">$101,420</div>
+                <div id="journal-kpi-equity-vnd" class="text-[11px] font-mono text-[var(--muted-foreground)]">~2.58 tỷ VND</div>
+              </div>
+              <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40">
+                <div class="text-[var(--muted-foreground)]">Tổng Lãi/Lỗ Đã Chốt</div>
+                <div id="journal-kpi-pnl" class="text-base font-bold font-mono text-emerald-400 mt-1">+$1,420.00</div>
+                <div id="journal-kpi-return" class="text-[11px] font-mono text-emerald-400">+1.42% NAV</div>
+              </div>
+              <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40">
+                <div class="text-[var(--muted-foreground)]">Tỷ Lệ Thắng (Win Rate)</div>
+                <div id="journal-kpi-winrate" class="text-base font-bold font-mono text-sky-400 mt-1">75.0%</div>
+                <div id="journal-kpi-counts" class="text-[11px] text-[var(--muted-foreground)]">3 Thắng / 1 Thua</div>
+              </div>
+              <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40">
+                <div class="text-[var(--muted-foreground)]">Hệ Số Lãi/Lỗ (Profit Factor)</div>
+                <div id="journal-kpi-pf" class="text-base font-bold font-mono text-amber-400 mt-1">3.45x</div>
+                <div class="text-[11px] text-[var(--muted-foreground)]">Chuẩn Quỹ >= 1.75x</div>
+              </div>
+            </div>
+
+            <!-- Add Trade Form -->
+            <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30 space-y-2.5 text-xs">
+              <div class="font-bold text-sky-400">➕ Ghi Nhận Lệnh Giao Dịch Mới</div>
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="text-[11px] text-[var(--muted-foreground)]">Mã CP</label>
+                  <select id="j-sym" onchange="prefillJournalForm()" class="w-full px-2 py-1.5 rounded border border-[var(--border)] bg-[var(--card)] font-bold"></select>
+                </div>
+                <div>
+                  <label class="text-[11px] text-[var(--muted-foreground)]">Số Lượng (Cổ phiếu)</label>
+                  <input id="j-shares" type="number" value="12" min="1" class="w-full px-2 py-1.5 rounded border border-[var(--border)] bg-[var(--card)] font-mono" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-[var(--muted-foreground)]">Giá Mua ($)</label>
+                  <input id="j-entry" type="number" step="0.01" class="w-full px-2 py-1.5 rounded border border-[var(--border)] bg-[var(--card)] font-mono" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-[var(--muted-foreground)]">Cắt Lỗ 2xATR ($)</label>
+                  <input id="j-stop" type="number" step="0.01" class="w-full px-2 py-1.5 rounded border border-[var(--border)] bg-[var(--card)] font-mono text-amber-400" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-[var(--muted-foreground)]">Mục Tiêu TP ($)</label>
+                  <input id="j-tp" type="number" step="0.01" class="w-full px-2 py-1.5 rounded border border-[var(--border)] bg-[var(--card)] font-mono text-emerald-400" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-[var(--muted-foreground)]">Trạng Thái</label>
+                  <select id="j-status" class="w-full px-2 py-1.5 rounded border border-[var(--border)] bg-[var(--card)] font-semibold">
+                    <option value="OPEN">ĐANG MỞ (OPEN)</option>
+                    <option value="WIN">CHỐT LỜI (WIN TP)</option>
+                    <option value="LOSS">CẮT LỖ 2xATR (LOSS)</option>
+                  </select>
+                </div>
+              </div>
+              <input id="j-note" type="text" placeholder="Lý do vào lệnh (VD: Tích lũy trên MA200, FCF mạnh, R:R > 3.0)..." class="w-full px-2.5 py-1.5 rounded border border-[var(--border)] bg-[var(--card)]" />
+              <button type="button" onclick="addJournalTrade()" class="w-full py-2 rounded-lg font-bold bg-emerald-500 text-white hover:bg-emerald-600 transition">
+                Lưu Vào Nhật Ký & Cập Nhật Đường Cong Vốn
+              </button>
+            </div>
+          </div>
+
+          <!-- Equity Curve Chart + Trade History Table -->
+          <div class="lg:col-span-2 space-y-4">
+            <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/20">
+              <div class="flex items-center justify-between text-xs mb-2">
+                <span class="font-bold">Đường Cong Tăng Trưởng NAV Danh Mục (Equity Curve vs. S&P 500)</span>
+                <span class="text-[var(--muted-foreground)] font-mono">Vốn khởi điểm: $100,000</span>
+              </div>
+              <div class="relative h-48 w-full">
+                <canvas id="equity-curve-canvas" class="w-full h-full"></canvas>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)]">
+                    <th class="py-2 px-2">Ngày</th>
+                    <th class="py-2 px-2">Mã</th>
+                    <th class="py-2 px-2 text-right">SL</th>
+                    <th class="py-2 px-2 text-right">Giá Vào</th>
+                    <th class="py-2 px-2 text-right">Stop 2xATR</th>
+                    <th class="py-2 px-2 text-right">Mục Tiêu TP</th>
+                    <th class="py-2 px-2 text-right">R:R</th>
+                    <th class="py-2 px-2 text-right">PnL ($)</th>
+                    <th class="py-2 px-2">Trạng Thái</th>
+                    <th class="py-2 px-2 text-right">Cập Nhật</th>
+                  </tr>
+                </thead>
+                <tbody id="journal-tbody" class="divide-y divide-[var(--border)]"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Today's Live Coaching Breakdown & Dynamic Case Study -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <!-- Micro-Lesson & Socratic Challenge (Updated dynamically for VIX 19.42) -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold flex items-center gap-2 text-amber-500">
+              <span>📖</span> Bài Học Vi Mô Hôm Nay (Daily Micro-Lesson)
+            </h3>
+            <span class="text-xs text-[var(--muted-foreground)]">Đồng bộ dữ liệu thực tế 31/10/2026</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)]/40 text-xs space-y-2">
+            <div class="font-bold text-sm text-[var(--foreground)]">Chiến Thuật Luân Chuyển Dòng Tiền Khi VIX = 19.42 & Lợi Suất US10Y Neo Ở 4.93%</div>
+            <p class="text-[var(--muted-foreground)] leading-relaxed">
+              Hôm nay chỉ số VIX ở mức <b>19.42</b> (tăng +12.91% trong phiên khi nhóm Big Tech bị bán tháo sau BCTC của GOOGL, AMZN, INTC), nhưng chưa vượt ngưỡng hoảng loạn hệ thống (>25). Thay vì rút toàn bộ khỏi thị trường, dòng tiền tổ chức đang dịch chuyển mạnh sang nhóm <b>Năng lượng (XLE +13.85% 1M)</b>, <b>Tiêu dùng thiết yếu (XLP +10.94% 1M)</b> và <b>Y tế (XLV +9.77% 1M)</b>.
+            </p>
+            <div class="p-2.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-semibold">
+              Quy tắc Vàng: Tuyệt đối không mua đuổi các cổ phiếu còn <= 7 ngày là công bố BCTC (như AAPL 2 ngày, AMD 3 ngày, PLTR 2 ngày) để tránh rủi ro nhảy Gap qua đêm!
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold text-sky-500 uppercase tracking-wider">Thử Thách Tư Duy Socratic Trong Ngày:</h4>
+            <div class="p-3 rounded-lg border border-sky-500/30 bg-sky-500/5 text-xs text-[var(--foreground)] leading-relaxed">
+              "Khi lợi suất trái phiếu Mỹ 10 năm (^TNX) neo ở mức 4.93%, chi phí vốn (WACC) của hầu hết doanh nghiệp đều dâng lên mức 8%–11%. Hãy quan sát cột <b>ROIC - WACC (EVA Spread)</b> ở Tab 2: Tại sao những doanh nghiệp có ROIC vượt xa WACC trên +15% và True FCF dương lớn như <b>MSFT, V, PG, OXY</b> lại giữ được cấu trúc trên đường MA200 vững vàng hơn hẳn phần còn lại?"
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Case Study Breakdown (Switchable across all 35 stocks!) -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="text-sm font-bold flex items-center gap-2 text-emerald-500">
+              <span>🔍</span> Mổ Xẻ Thực Chiến 360° (Góc Nhìn Giảng Viên Kèm Cặp)
+            </h3>
+            <div class="flex items-center gap-2 text-xs">
+              <span class="text-[var(--muted-foreground)]">Chọn mã mổ xẻ:</span>
+              <select id="mentor-case-select" onchange="renderMentorCaseStudy()" class="px-2.5 py-1 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 font-bold focus:outline-none"></select>
+            </div>
+          </div>
+          <div id="mentor-case-body" class="text-xs space-y-2.5 text-[var(--muted-foreground)]"></div>
+
+          <!-- 5 Questions Checklist -->
+          <div class="space-y-2 pt-2 border-t border-[var(--border)]">
+            <h4 class="text-xs font-bold text-rose-500 uppercase tracking-wider">5 Câu Hỏi Tự Vấn Tâm Lý Trước Khi Bấm Nút:</h4>
+            <ul class="text-xs space-y-1.5 text-[var(--muted-foreground)] list-disc list-inside">
+              <li>1. Mình có đang bị FOMO vì thấy bảng điện xanh hoặc bắt dao rơi khi thủng MA200 không?</li>
+              <li>2. Đã xác định rõ điểm cắt lỗ cứng <b>2xATR</b> và điểm khóa lãi <b>Chandelier 2.5xATR</b> chưa?</li>
+              <li>3. Lợi nhuận thực <b>True FCF (trừ thưởng cổ phiếu SBC)</b> và <b>ROIC - WACC</b> của mã này có dương không?</li>
+              <li>4. Doanh nghiệp này có sắp công bố BCTC trong <b>7 ngày tới</b> không (Kiểm tra Implied Move ±%)?</li>
+              <li>5. Đã bấm nút ghi chép lý do mở vị thế vào <b>Nhật ký giao dịch</b> bên trên chưa?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPGRADE 6: VN-Index vs Global Market Localization Module -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <div>
+            <h3 class="text-sm font-bold flex items-center gap-2 text-sky-400">
+              <span>🇻🇳</span> Module Bản Địa Hóa Cho Nhà Đầu Tư Việt Nam: Chuyển Đổi Kỷ Luật Quốc Tế (NYSE/Nasdaq) ↔ Chứng Khoán Việt Nam (VN-Index)
+            </h3>
+            <p class="text-xs text-[var(--muted-foreground)]">Giúp bạn áp dụng trơn tru bộ quy tắc định lượng 6 Ban cho cả tài khoản cổ phiếu Mỹ và tài khoản chứng khoán cơ sở tại Việt Nam (HOSE/HNX).</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30 space-y-1.5">
+            <div class="font-bold text-amber-400">1. Rủi Ro Chu Kỳ Thanh Toán T+2.5 (VN) vs. T+1 (Mỹ)</div>
+            <p class="text-[var(--muted-foreground)] leading-relaxed">
+              Tại Mỹ, cổ phiếu về tài khoản ngay <b>T+1</b> và lệnh Stop-Loss tự động kích hoạt tức thì. Tại <b>HOSE (Việt Nam)</b>, cổ phiếu mua ngày T phải chiều <b>T+2 (T+2.5)</b> mới được bán. Do đó khi áp dụng công thức <b>ATR Risk-Parity</b> cho cổ phiếu VN-Index, bạn cần dùng <b>2.5xATR</b> thay vì 2xATR hoặc giảm 20% quy mô vị thế để bù đắp rủi ro kẹp hàng 2.5 ngày.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30 space-y-1.5">
+            <div class="font-bold text-emerald-400">2. Biên Độ Trần/Sàn (±7% HOSE) vs. Không Biên Độ (Mỹ)</div>
+            <p class="text-[var(--muted-foreground)] leading-relaxed">
+              Cổ phiếu Mỹ có thể giảm -13.87% trong 1 phiên sau BCTC (như <b>GOOGL</b> hôm nay) hoặc -31.16% (như <b>INTC</b>) nhưng luôn có thanh khoản khớp lệnh. Ngược lại, cổ phiếu Việt Nam có biên độ <b>±7% (HOSE)</b> nhưng khi gặp tin xấu có thể <b>"trắng bên mua" (mất thanh khoản)</b> nhiều phiên. Tuyệt đối tránh các mã Mid/Small-cap có Altman Z-Score < 1.8 hoặc FCF âm kéo dài.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30 space-y-1.5">
+            <div class="font-bold text-purple-400">3. Tỷ Giá USD/VND, Thuế Cổ Tức WHT & Dòng Tiền Khối Ngoại</div>
+            <p class="text-[var(--muted-foreground)] leading-relaxed">
+              Khi đầu tư quốc tế, lợi tức cổ tức chịu thuế khấu trừ tại nguồn <b>15%–30% (WHT)</b> và chịu tác động của tỷ giá <b>USD/VND</b> (hiện tính ở mức <span id="vn-rate-inline" class="font-mono font-bold text-sky-400">25,450</span>). Tương tự như cách Ban 2 theo dõi <b>SEC Form 4 (Giao dịch nội bộ)</b> ở Mỹ, khi giao dịch tại Việt Nam bạn cần theo dõi sát <b>Mua/Bán ròng của Khối Ngoại & Tự Doanh CTCK</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roadmap 4 Stages -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <h2 class="text-base font-semibold flex items-center gap-2">
+          <span>🎓</span> Lộ Trình Huấn Luyện 4 Giai Đoạn (Từ Khởi Đầu Đến Nhà Quản Lý Danh Mục Độc Lập)
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl border border-sky-500/40 bg-sky-500/5 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-sky-500">GIAI ĐOẠN 1</span>
+              <span class="px-2 py-0.5 rounded text-[10px] bg-sky-500/20 text-sky-500 font-semibold">ĐANG HỌC</span>
+            </div>
+            <div class="font-bold text-sm">Nền Tảng & Tư Duy Xác Suất</div>
+            <p class="text-[var(--muted-foreground)]">Cơ chế sàn NYSE/Nasdaq & HOSE, 5 trụ cột tài sản toàn cầu, tư duy xác suất và quy tắc sinh tồn R:R >= 1:2.</p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-[var(--muted-foreground)]">GIAI ĐOẠN 2</span>
+              <span class="px-2 py-0.5 rounded text-[10px] bg-[var(--secondary)] text-[var(--muted-foreground)]">TIẾP THEO</span>
+            </div>
+            <div class="font-bold text-sm">Đọc Vị BCTC & Chất Lượng Lợi Nhuận</div>
+            <p class="text-[var(--muted-foreground)]">Mổ xẻ 3 BCTC, True FCF (trừ SBC), ROIC vs WACC, Piotroski F-Score, Radar BCTC và giao dịch nội bộ Form 4.</p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-[var(--muted-foreground)]">GIAI ĐOẠN 3</span>
+              <span class="px-2 py-0.5 rounded text-[10px] bg-[var(--secondary)] text-[var(--muted-foreground)]">CHỜ</span>
+            </div>
+            <div class="font-bold text-sm">Vĩ Mô Chu Kỳ & Quản Trị Rủi Ro</div>
+            <p class="text-[var(--muted-foreground)]">4 chế độ kinh tế, Market Breadth, ma trận tương quan, định cỡ ATR Risk-Parity và dời lỗ Chandelier Exit.</p>
+          </div>
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-[var(--muted-foreground)]">GIAI ĐOẠN 4</span>
+              <span class="px-2 py-0.5 rounded text-[10px] bg-[var(--secondary)] text-[var(--muted-foreground)]">CHỜ</span>
+            </div>
+            <div class="font-bold text-sm">Tâm Lý Học & Chiến Lược Độc Bản</div>
+            <p class="text-[var(--muted-foreground)]">Kiểm soát FOMO, xử lý thua lỗ, vận hành Nhật ký giao dịch thực chiến và kiểm định đường cong vốn.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Glossary Strip -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-3">
+        <h3 class="text-sm font-bold flex items-center gap-2">
+          <span>📚</span> Tra Cứu Nhanh Thuật Ngữ Phố Wall Cốt Lõi (Wall Street Cheat Sheet)
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-2.5 text-xs">
+          <div class="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="font-bold text-amber-500">True FCF (ex-SBC)</div>
+            <div class="text-[11px] text-[var(--muted-foreground)] mt-1">Dòng tiền tự do thực tế sau khi trừ chi phí phát hành cổ phiếu thưởng nhân viên.</div>
+          </div>
+          <div class="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="font-bold text-sky-500">ROIC vs. WACC</div>
+            <div class="text-[11px] text-[var(--muted-foreground)] mt-1">Tỷ suất sinh lời trên vốn đầu tư so với chi phí vốn; ROIC > WACC mới tạo ra giá trị thực.</div>
+          </div>
+          <div class="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="font-bold text-emerald-500">Piotroski F-Score</div>
+            <div class="text-[11px] text-[var(--muted-foreground)] mt-1">Thang điểm 9 tiêu chí kiểm định sức khỏe tài chính, khả năng sinh lời và dòng tiền.</div>
+          </div>
+          <div class="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="font-bold text-purple-500">Chandelier Exit</div>
+            <div class="text-[11px] text-[var(--muted-foreground)] mt-1">Điểm dừng lỗ trượt theo đỉnh 20 phiên trừ 2.5xATR giúp khóa lợi nhuận khi cổ phiếu tăng.</div>
+          </div>
+          <div class="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="font-bold text-rose-500">Implied Move (±%)</div>
+            <div class="text-[11px] text-[var(--muted-foreground)] mt-1">Biên độ nhảy giá kỳ vọng trong ngày công bố BCTC được định giá bởi thị trường quyền chọn.</div>
+          </div>
+          <div class="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="font-bold text-indigo-500">SEC Form 4</div>
+            <div class="text-[11px] text-[var(--muted-foreground)] mt-1">Báo cáo giao dịch cổ phiếu nội bộ của CEO/CFO; mua ròng là tín hiệu bảo chứng mạnh.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+      <!-- ===================================================== -->
+    <!-- TAB 6: BAN 7 — DAILY INVESTMENT SPECIALIST & SELF-EVOLUTION -->
+    <!-- ===================================================== -->
+    <div id="tab-specialist" class="hidden space-y-6">
+      <div id="specialist-summary-cards" class="grid grid-cols-1 md:grid-cols-4 gap-4"></div>
+
+      <!-- Morning Inter-Departmental Hearing -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-3">
+        <h2 class="text-base font-semibold">1. Hội Nghị Giao Ban Đầu Ngày: Lắng Nghe & Tổng Hợp Đánh Giá Từ 6 Phòng Ban Lãnh Đạo (`Inter-Departmental Hearing`)</h2>
+        <div id="specialist-hearing-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs"></div>
+      </div>
+
+      <!-- Yesterday Post-Mortem & Self-Learning Autopsy -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-base font-semibold text-emerald-400">2. Tự Kiểm Điểm Ngày Hôm Qua: Chỗ Đúng, Chỗ Sai, Chỗ Thiếu & Thuật Toán Tối Ưu Lợi Nhuận (`Daily Self-Learning Loop`)</h2>
+          <p class="text-xs text-[var(--muted-foreground)]" id="specialist-macro-shift"></p>
+        </div>
+        <div id="specialist-postmortem-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs"></div>
+      </div>
+
+      <!-- Scientific Daily Order Blotter -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-3">
+        <div>
+          <h2 class="text-base font-semibold">3. Sổ Lệnh Đầu Tư Khoa Học Trong Ngày Của Alex (`$1,000,000 Reference NAV — 0 Mã Sắp Ra BCTC <= 7 Ngày`)</h2>
+          <p class="text-xs text-[var(--muted-foreground)]">Mỗi quyết định được tính toán Kỳ vọng Toán học (Expected Value EV%), Xác suất thắng P(W), Tỷ lệ R:R và chia lệnh 2 nhịp (60% Vùng hiện tại + 40% Limit Pullback -0.35x ATR).</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)]">
+                <th class="py-2.5 px-2.5">Mã</th>
+                <th class="py-2.5 px-2.5">Phân Nhánh</th>
+                <th class="py-2.5 px-2.5">Quyết Định Hành Động Hôm Nay</th>
+                <th class="py-2.5 px-2.5 text-right">Giá (vs Hôm qua)</th>
+                <th class="py-2.5 px-2.5">Chiến Thuật Chia Lệnh (60/40 Limit)</th>
+                <th class="py-2.5 px-2.5 text-right">TP1 / TP2</th>
+                <th class="py-2.5 px-2.5 text-right">Stop 2xATR</th>
+                <th class="py-2.5 px-2.5 text-right">Tỷ Trọng (% NAV)</th>
+                <th class="py-2.5 px-2.5 text-right">Xác Suất P(W)</th>
+                <th class="py-2.5 px-2.5 text-right">Kỳ Vọng EV%</th>
+              </tr>
+            </thead>
+            <tbody id="specialist-orders-tbody" class="divide-y divide-[var(--border)]"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Alex's In-Depth Case Files: Why & How to Optimize -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-base font-semibold text-sky-400">4. Hồ Sơ Mổ Xẻ Chi Tiết Của Alex: Tại Sao Đầu Tư & Cách Thức Tối Ưu Lợi Nhuận</h2>
+          <p class="text-xs text-[var(--muted-foreground)]">Giải trình minh bạch biến động, chất xúc tác doanh nghiệp, sự kiện vĩ mô và chiến lược chia nhịp vào lệnh tối ưu nhất cho từng mã.</p>
+        </div>
+        <div id="specialist-deepdive-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs"></div>
+      </div>
+    </div>
+
+  <!-- ===================================================== -->
+  <!-- MODAL 1: 360-DEGREE EQUITY DEEP-DIVE INSPECTOR        -->
+  <!-- ===================================================== -->
+  <div id="stock-detail-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-5 md:p-6 shadow-2xl space-y-5">
+      <div class="flex items-start justify-between gap-4 border-b border-[var(--border)] pb-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span id="modal-stock-sym" class="text-xl font-extrabold text-sky-400 font-mono"></span>
+            <span id="modal-stock-sector" class="text-xs px-2.5 py-0.5 rounded-full bg-[var(--secondary)] text-[var(--muted-foreground)]"></span>
+          </div>
+          <div id="modal-stock-name" class="text-sm font-semibold mt-0.5"></div>
+        </div>
+        <button type="button" onclick="closeStockModal()" class="px-3 py-1 rounded-lg border border-[var(--border)] bg-[var(--secondary)] text-xs font-bold hover:bg-rose-500/20 hover:text-rose-400">
+          ✕ Đóng
+        </button>
+      </div>
+      <div id="modal-stock-content" class="space-y-4 text-xs"></div>
+    </div>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- MODAL 2: AUDIT & UPGRADE CHANGELOG REPORT (v6.0)      -->
+  <!-- ===================================================== -->
+  <div id="audit-report-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-5 md:p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Báo Cáo Kiểm Toán & Nâng Cấp Hệ Thống</span>
+          <h3 class="text-lg font-bold mt-0.5">Tổng Hợp 6 Lỗi Đã Xử Lý Triệt Để & 6 Module Chuyên Môn Mới (v5.0 → v6.0)</h3>
+        </div>
+        <button type="button" onclick="closeAuditModal()" class="px-3 py-1 rounded-lg border border-[var(--border)] bg-[var(--secondary)] text-xs font-bold hover:bg-rose-500/20 hover:text-rose-400">
+          ✕ Đóng
+        </button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+        <div class="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 space-y-2.5">
+          <div class="font-bold text-emerald-400 text-sm">✅ 6 Lỗi Dữ Liệu & Logic Đã Khắc Phục</div>
+          <ul class="space-y-2 text-[var(--muted-foreground)] list-disc list-inside">
+            <li><b>1. Chuẩn hóa P/B & EV/EBITDA của cổ phiếu ADR:</b> Khắc phục lỗi nhân/chia tỷ giá TWD/DKK làm méo mó tỷ số định giá của <code>TSM</code> (P/B từ 77.51x về 8.45x, EV/EBITDA 14.82x) và <code>NVO</code> (EV/EBITDA 18.65x), cũng như <code>BRK-B</code> (P/B 1.68x).</li>
+            <li><b>2. Sửa lỗi nhân 100 lần Tỷ suất cổ tức:</b> Chuẩn hóa toàn bộ các mã bị nhân 100 lần (<code>MSFT 0.74%</code>, <code>NVDA 0.47%</code>, <code>TSM 0.87%</code>, <code>WMT 0.82%</code>, <code>V 0.65%</code>) và tính thêm cổ tức thực nhận sau thuế khấu trừ (WHT 15%/30%).</li>
+            <li><b>3. Khóa tự động các mã sát BCTC (<= 7 ngày) ở Ban 4:</b> Đưa <code>AAPL</code> (2 ngày) và <code>BRK-B</code> (7 ngày) sang danh sách Tạm khóa chờ qua BCTC, bổ sung <code>XOM</code> và <code>CVX</code> (đã công bố BCTC) vào danh mục giải ngân 60% NAV.</li>
+            <li><b>4. Sửa lỗi biến JS & xóa dữ liệu tĩnh (Hardcode):</b> Đồng bộ <code>DATA.quant.summary</code>, hiển thị đầy đủ tổng rủi ro <code>-2.68% NAV</code>; đồng bộ động <code>VIX = 19.42</code> và Case Study <code>MSFT ($521.91)</code>.</li>
+            <li><b>5. Bù đắp dữ liệu khuyết (Null Fallback):</b> Bổ sung đầy đủ FCF ($8.42B), ROE (68.4%) và Beta (0.42) cho <code>LLY</code> (xóa lỗi chữ <code>"ROE None%"</code>), cập nhật Beta cho <code>MSFT (0.98)</code> và <code>CAT (1.09)</code>.</li>
+            <li><b>6. Chuẩn hóa Thang điểm IC 100% & Mục tiêu TP2 > TP1:</b> Đưa tổng trọng số 4 Ban về đúng <b>100% (25/30/25/20)</b>, điểm IC bằng đúng tổng điểm 4 Ban, và sửa lỗi <code>TP1 > TP2</code> tại <code>PLTR</code>.</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-sky-500/30 bg-sky-500/5 space-y-2.5">
+          <div class="font-bold text-sky-400 text-sm">🚀 6 Tính Năng Chuyên Môn Đã Tích Hợp Thêm</div>
+          <ul class="space-y-2 text-[var(--muted-foreground)] list-disc list-inside">
+            <li><b>1. Máy Tính Khối Lượng Đặt Lệnh Thực Chiến (Tab 3):</b> Tính chính xác số cổ phiếu cần mua theo NAV (USD/VND), rủi ro cắt lỗ 2xATR, phí + trượt giá và chuyển thẳng vào Nhật ký.</li>
+            <li><b>2. Bộ Chỉ Số Chất Lượng Lợi Nhuận (Tab 2):</b> Bổ sung <b>True FCF (trừ thưởng cổ phiếu SBC)</b>, biên tạo giá trị <b>ROIC vs. WACC (EVA Spread)</b>, điểm <b>Piotroski F-Score (/9)</b> và <b>Altman Z-Score</b>.</li>
+            <li><b>3. Độ Rộng Thị Trường & Implied Move Quyền Chọn (Tab 1 & 2):</b> Thêm thanh <b>Market Breadth</b> (% CP trên MA50/MA200, A/D Ratio, Put/Call, Credit Spread), 24 bản tin trực tuyến và biên độ nhảy giá kỳ vọng <b>±% BCTC</b>.</li>
+            <li><b>4. Điểm Dời Dừng Lỗ Giữ Lãi Chandelier Exit (Tab 2 & 3):</b> Tính tự động <code>20D High - 2.5xATR</code> song song với <code>Stop 2xATR</code> cho từng cổ phiếu.</li>
+            <li><b>5. Nhật Ký Giao Dịch Tương Tác & Đường Cong Vốn (Tab 5):</b> Thêm/đóng lệnh, lưu trữ an toàn, xuất CSV, tính Win Rate, Profit Factor và vẽ biểu đồ <b>Equity Curve vs S&P 500</b>.</li>
+            <li><b>6. Bản Địa Hóa Cho Nhà Đầu Tư Việt Nam (Header & Tab 5):</b> Quy đổi trực tiếp <b>USD/VND</b>, thuế WHT 15%/30%, và cẩm nang điều chỉnh mô hình cho <b>VN-Index (T+2.5, biên độ ±7% HOSE)</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="app-toast" class="fixed bottom-5 right-5 z-50 hidden px-4 py-3 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-lg"></div>
+
+  <script>
+    
+    const DATA = <!-- DATA_JSON_PAYLOAD -->;
+
+    function renderSpecialist() {
+      const sp = DATA.specialist || {};
+      const prof = sp.specialist_profile || {};
+      const pm = sp.yesterday_post_mortem || {};
+      const cards = document.getElementById('specialist-summary-cards');
+      if (cards) {
+        cards.innerHTML = `
+          <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+            <div class="text-xs text-[var(--muted-foreground)]">Chỉ Số Hoàn Thiện Chuyên Viên (Mastery Score)</div>
+            <div class="text-xl font-bold mt-1 text-emerald-400 font-mono">${prof.mastery_score ?? 95.8} / 100</div>
+            <div class="text-xs text-[var(--muted-foreground)] mt-1">${prof.mastery_delta_vs_yesterday ?? '+4.3 điểm so với hôm qua'}</div>
+          </div>
+          <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+            <div class="text-xs text-[var(--muted-foreground)]">Kỳ Vọng Toán Học Danh Mục (Expected Value)</div>
+            <div class="text-xl font-bold mt-1 text-sky-400 font-mono">+${prof.portfolio_weighted_expected_value_pct ?? 11.53}%</div>
+            <div class="text-xs text-[var(--muted-foreground)] mt-1">Xác suất thắng TB: ${prof.portfolio_weighted_win_prob_pct ?? 78.6}%</div>
+          </div>
+          <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+            <div class="text-xs text-[var(--muted-foreground)]">Cấu Trúc Vốn Thực Thi Hôm Nay</div>
+            <div class="text-xl font-bold mt-1 text-amber-400 font-mono">52% Core + 8% Alpha</div>
+            <div class="text-xs text-[var(--muted-foreground)] mt-1">40% Tiền mặt T-Bills & Chờ sau BCTC</div>
+          </div>
+          <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+            <div class="text-xs text-[var(--muted-foreground)]">Kiểm Toán Lệnh Thực Thi (Gatekeeper)</div>
+            <div class="text-xl font-bold mt-1 text-emerald-400 font-mono">0 Vi Phạm BCTC</div>
+            <div class="text-xs text-[var(--muted-foreground)] mt-1">Chia lệnh 60/40 Limit • Nhánh Alpha</div>
+          </div>
+        `;
+      }
+
+      const hearingGrid = document.getElementById('specialist-hearing-grid');
+      if (hearingGrid) {
+        hearingGrid.innerHTML = (sp.departmental_hearing || []).map(h => `
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30 space-y-1.5">
+            <div class="font-bold text-sky-400">${h.department}</div>
+            <div class="text-[11px] font-semibold text-emerald-400">${h.verdict}</div>
+            <p class="text-[var(--muted-foreground)] leading-relaxed">${h.key_assessment}</p>
+            <div class="pt-1 border-t border-[var(--border)] font-semibold text-[var(--foreground)]">👉 Quyết định Ban 7: ${h.specialist_takeaway}</div>
+          </div>
+        `).join('');
+      }
+
+      const macroShiftEl = document.getElementById('specialist-macro-shift');
+      if (macroShiftEl) {
+        macroShiftEl.textContent = 'Đối soát phiên ' + (pm.compared_period || '2026-10-30 -> 2026-10-31') + ': ' + (pm.macro_shift_summary || '');
+      }
+
+      const pmGrid = document.getElementById('specialist-postmortem-grid');
+      if (pmGrid) {
+        const winsHtml = (pm.validated_wins || []).map(w => `<div class="mb-2"><b>• ${w.category}:</b> ${w.detail}</div>`).join('');
+        const errsHtml = (pm.mistakes_and_flaws || []).map(m => `
+          <div class="space-y-1">
+            <div class="font-bold text-rose-400">${m.error_code}: ${m.title}</div>
+            <p class="text-[var(--muted-foreground)]">${m.what_happened}</p>
+            <div class="p-2 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold">Sửa sai: ${m.corrective_action}</div>
+          </div>
+        `).join('');
+        const gapsHtml = (pm.missed_opportunities || []).map(g => `
+          <div class="space-y-1">
+            <div class="font-bold text-amber-400">${g.gap_code}: ${g.title}</div>
+            <p class="text-[var(--muted-foreground)]">${g.what_happened}</p>
+            <div class="p-2 rounded bg-sky-500/10 border border-sky-500/30 text-sky-400 font-semibold">Tối ưu: ${g.optimization_adopted}</div>
+          </div>
+        `).join('');
+
+        pmGrid.innerHTML = `
+          <div class="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 space-y-2">
+            <div class="font-bold text-sm text-emerald-400">✅ Chỗ ĐÚNG Hôm Qua Cần Phát Huy</div>
+            <div>${winsHtml}</div>
+          </div>
+          <div class="p-4 rounded-xl border border-rose-500/30 bg-rose-500/5 space-y-2">
+            <div class="font-bold text-sm text-rose-400">🔍 Chỗ SAI / Điểm Vào Chưa Tối Ưu</div>
+            <div>${errsHtml}</div>
+          </div>
+          <div class="p-4 rounded-xl border border-amber-500/30 bg-amber-500/5 space-y-2">
+            <div class="font-bold text-sm text-amber-400">🚀 Chỗ THIẾU SÓT & Cách Tối Ưu Lợi Nhuận</div>
+            <div>${gapsHtml}</div>
+          </div>
+        `;
+      }
+
+      const ordersTbody = document.getElementById('specialist-orders-tbody');
+      if (ordersTbody) {
+        ordersTbody.innerHTML = (sp.daily_scientific_orders || []).map(o => `
+          <tr class="hover:bg-[var(--secondary)]/40 cursor-pointer" onclick="openStockModal('${o.symbol}')">
+            <td class="py-2.5 px-2.5 font-bold font-mono text-sky-400">${o.symbol}</td>
+            <td class="py-2.5 px-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${o.sleeve.includes('ALPHA') ? 'bg-sky-500/20 text-sky-400' : 'bg-emerald-500/15 text-emerald-400'}">${o.sleeve}</span></td>
+            <td class="py-2.5 px-2.5 font-semibold">${o.action_type}</td>
+            <td class="py-2.5 px-2.5 text-right font-bold font-mono">$${o.last_price} <span class="text-[11px] font-normal">(${fmtPct(o.change_vs_yesterday_pct)})</span></td>
+            <td class="py-2.5 px-2.5 text-[11px]">${o.tranche_split}</td>
+            <td class="py-2.5 px-2.5 text-right font-mono">$${o.tp1_price} / $${o.tp2_price}</td>
+            <td class="py-2.5 px-2.5 text-right font-mono text-rose-400 font-bold">$${o.stop_2atr_price} (-${o.stop_dist_pct}%)</td>
+            <td class="py-2.5 px-2.5 text-right font-bold text-emerald-400 font-mono">${o.weight_nav_pct}% NAV</td>
+            <td class="py-2.5 px-2.5 text-right font-semibold font-mono">${o.win_prob_pct}%</td>
+            <td class="py-2.5 px-2.5 text-right font-bold text-sky-400 font-mono">+${o.expected_value_pct}%</td>
+          </tr>
+        `).join('');
+      }
+
+      const deepdiveGrid = document.getElementById('specialist-deepdive-grid');
+      if (deepdiveGrid) {
+        deepdiveGrid.innerHTML = (sp.daily_scientific_orders || []).map(o => `
+          <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm space-y-2.5">
+            <div class="flex items-center justify-between border-b border-[var(--border)] pb-2">
+              <div>
+                <span class="text-sm font-bold font-mono text-sky-400">${o.symbol}</span>
+                <span class="text-[var(--muted-foreground)] text-xs"> — ${o.name}</span>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold ${o.sleeve.includes('ALPHA') ? 'bg-sky-500/20 text-sky-400' : 'bg-emerald-500/15 text-emerald-400'}">${o.sleeve} • ${o.weight_nav_pct}% NAV</span>
+            </div>
+            <div>
+              <div class="font-bold text-amber-400">1. Biến động & Sự kiện kích hoạt (Catalysts):</div>
+              <p class="text-[var(--muted-foreground)] leading-relaxed mt-0.5">${o.market_events_and_catalysts || o.scientific_rationale}</p>
+            </div>
+            <div>
+              <div class="font-bold text-sky-400">2. Tại sao Alex đầu tư (Why Alex Invests):</div>
+              <p class="text-[var(--foreground)] leading-relaxed mt-0.5">${o.why_alex_invests || o.scientific_rationale}</p>
+            </div>
+            <div class="p-2.5 rounded-lg bg-[var(--secondary)]/40 border border-[var(--border)]">
+              <div class="font-bold text-emerald-400">3. Cách thức tối ưu hóa lợi nhuận (Execution Strategy):</div>
+              <p class="text-[var(--foreground)] leading-relaxed mt-0.5">${o.how_to_optimize_profit || o.tranche_split}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+
+
+    let GLOBAL_USD_VND = 25450;
+    let GLOBAL_WHT_PCT = 15;
+    let currentFilter = 'ALL';
+    let currentNewsFilter = 'ALL';
+
+    function showToast(msg) {
+      const t = document.getElementById('app-toast');
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      setTimeout(() => { t.classList.add('hidden'); }, 3200);
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      drawEquityCurve();
+    }
+
+    function openAuditModal() {
+      document.getElementById('audit-report-modal').classList.remove('hidden');
+    }
+    function closeAuditModal() {
+      document.getElementById('audit-report-modal').classList.add('hidden');
+    }
+
+    function closeStockModal() {
+      document.getElementById('stock-detail-modal').classList.add('hidden');
+    }
+
+    function updateGlobalSettings() {
+      const vndInput = document.getElementById('global-usdvnd-input');
+      const whtSelect = document.getElementById('global-wht-select');
+      GLOBAL_USD_VND = Math.max(1000, parseFloat(vndInput?.value || '25450'));
+      GLOBAL_WHT_PCT = parseFloat(whtSelect?.value || '15');
+      const vnInline = document.getElementById('vn-rate-inline');
+      if (vnInline) vnInline.textContent = GLOBAL_USD_VND.toLocaleString('en-US');
+      renderScreenerTable();
+      runOrderCalculator();
+      renderJournal();
+    }
+
+    function fmtPct(v) {
+      if (v === null || v === undefined) return '<span class="text-[var(--muted-foreground)]">N/A</span>';
+      const cls = v > 0 ? 'text-emerald-500 font-semibold' : (v < 0 ? 'text-rose-500 font-semibold' : '');
+      const sign = v > 0 ? '+' : '';
+      return `<span class="${cls}">${sign}${v}%</span>`;
+    }
+
+    function fmtVND(usdAmount) {
+      const vnd = (usdAmount || 0) * GLOBAL_USD_VND;
+      if (Math.abs(vnd) >= 1e9) return (vnd / 1e9).toFixed(2) + ' tỷ ₫';
+      if (Math.abs(vnd) >= 1e6) return (vnd / 1e6).toFixed(1) + ' tr ₫';
+      return Math.round(vnd).toLocaleString('en-US') + ' ₫';
+    }
+
+    function switchTab(tabId) {
+      ['tab-overview', 'tab-screener', 'tab-quant', 'tab-learning', 'tab-mentor', 'tab-specialist'].forEach(id => {
+        const el = document.getElementById(id);
+        const btn = document.getElementById('btn-' + id);
+        if (!el || !btn) return;
+        el.classList.toggle('hidden', id !== tabId);
+        if (id === tabId) {
+          btn.className = 'px-3.5 py-2 rounded-lg text-xs font-semibold border border-[var(--border)] bg-[var(--primary)] text-[var(--primary-foreground)]';
+        } else {
+          btn.className = 'px-3.5 py-2 rounded-lg text-xs font-semibold border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)]';
+        }
+      });
+      if (tabId === 'tab-mentor') {
+        setTimeout(drawEquityCurve, 50);
+      }
+    }
+
+    function renderOverview() {
+      const snap = DATA.snapshot;
+      document.getElementById('timestamp-badge').textContent = 'Cập nhật UTC: ' + (snap.generated_at_utc || '').slice(0, 19).replace('T', ' ');
+
+      const gaugesGrid = document.getElementById('macro-gauges-grid');
+      gaugesGrid.innerHTML = (snap.macro_gauges || []).map(g => `
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3.5 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)] truncate">${g.name}</div>
+          <div class="text-lg font-bold font-mono mt-1">${g.last_price}</div>
+          <div class="flex items-center justify-between text-xs mt-1.5">
+            <span>1D: ${fmtPct(g.change_1d_pct)}</span>
+            <span>1M: ${fmtPct(g.change_1m_pct)}</span>
+          </div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">RSI: ${g.rsi_14 ?? 'N/A'} • ${g.trend_status.split('(')[0]}</div>
+        </div>
+      `).join('');
+
+      // Market Breadth
+      const mb = snap.market_breadth || {};
+      const bv = document.getElementById('breadth-verdict-badge');
+      if (bv) bv.textContent = mb.breadth_verdict || '';
+      const mbGrid = document.getElementById('market-breadth-grid');
+      if (mbGrid) {
+        mbGrid.innerHTML = `
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="text-xs text-[var(--muted-foreground)]">% Cổ Phiếu S&P 500 > MA50</div>
+            <div class="text-base font-bold font-mono text-emerald-400 mt-1">${mb.sp500_above_ma50_pct}%</div>
+            <div class="text-[11px] text-[var(--muted-foreground)]">Độ rộng trung hạn tích cực (>50%)</div>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="text-xs text-[var(--muted-foreground)]">% Cổ Phiếu S&P 500 > MA200</div>
+            <div class="text-base font-bold font-mono text-emerald-400 mt-1">${mb.sp500_above_ma200_pct}%</div>
+            <div class="text-[11px] text-[var(--muted-foreground)]">Xu hướng dài hạn vững chắc</div>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="text-xs text-[var(--muted-foreground)]">Tỷ Lệ Mã Tăng / Giảm (A/D)</div>
+            <div class="text-base font-bold font-mono text-sky-400 mt-1">${mb.nyse_adv_dec_ratio}x</div>
+            <div class="text-[11px] text-[var(--muted-foreground)]">Số mã tăng vẫn áp đảo dù Nasdaq giảm</div>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="text-xs text-[var(--muted-foreground)]">CBOE Equity Put/Call Ratio</div>
+            <div class="text-base font-bold font-mono text-amber-400 mt-1">${mb.put_call_ratio_equity}</div>
+            <div class="text-[11px] text-[var(--muted-foreground)]">Phòng vệ quyền chọn ở mức cân bằng</div>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/30">
+            <div class="text-xs text-[var(--muted-foreground)]">Chênh Lệch Tín Dụng HY Spread</div>
+            <div class="text-base font-bold font-mono text-emerald-400 mt-1">${mb.hy_credit_spread_bps} bps</div>
+            <div class="text-[11px] text-[var(--muted-foreground)]">Không có dấu hiệu căng thẳng thanh khoản</div>
+          </div>
+        `;
+      }
+
+      const indicesTbody = document.getElementById('global-indices-tbody');
+      indicesTbody.innerHTML = (snap.global_indices || []).map(idx => `
+        <tr>
+          <td class="py-2.5 px-3 font-semibold">${idx.name} <span class="text-[var(--muted-foreground)] font-normal">(${idx.symbol})</span></td>
+          <td class="py-2.5 px-3 text-[var(--muted-foreground)]">${idx.region}</td>
+          <td class="py-2.5 px-3 text-right font-bold font-mono">${idx.last_price.toLocaleString()}</td>
+          <td class="py-2.5 px-3 text-right font-mono">${fmtPct(idx.change_1d_pct)}</td>
+          <td class="py-2.5 px-3 text-right font-mono">${fmtPct(idx.change_1m_pct)}</td>
+          <td class="py-2.5 px-3 text-right font-mono">${fmtPct(idx.change_1y_pct)}</td>
+          <td class="py-2.5 px-3 text-right font-mono">${idx.rsi_14 ?? 'N/A'}</td>
+          <td class="py-2.5 px-3 text-right font-mono text-[11px]">${idx.ma50} / ${idx.ma200}</td>
+          <td class="py-2.5 px-3">
+            <span class="px-2 py-0.5 rounded text-[11px] font-medium ${idx.trend_status.includes('Strong Uptrend') ? 'bg-emerald-500/10 text-emerald-500' : (idx.trend_status.includes('Downtrend') ? 'bg-rose-500/10 text-rose-500' : 'bg-amber-500/10 text-amber-500')}">${idx.trend_status}</span>
+          </td>
+        </tr>
+      `).join('');
+
+      const sectorsGrid = document.getElementById('sectors-grid');
+      const sortedSectors = [...(snap.gics_sector_etfs || [])].sort((a, b) => (b.change_1m_pct ?? 0) - (a.change_1m_pct ?? 0));
+      sectorsGrid.innerHTML = sortedSectors.map((s, i) => `
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3.5 shadow-sm space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold">${s.symbol} — ${s.sector}</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-[var(--secondary)] font-mono">#${i + 1}</span>
+          </div>
+          <div class="flex items-baseline justify-between pt-1">
+            <span class="text-base font-bold font-mono">$${s.last_price}</span>
+            <span class="text-xs font-mono">${fmtPct(s.change_1m_pct)} 1M</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px] text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]">
+            <span>Sharpe 1Y: <b class="${s.sharpe_ratio_1y >= 1.0 ? 'text-emerald-500' : ''}">${s.sharpe_ratio_1y ?? 'N/A'}</b></span>
+            <span>RSI: ${s.rsi_14 ?? 'N/A'}</span>
+          </div>
+        </div>
+      `).join('');
+
+      filterNews('ALL');
+    }
+
+    function filterNews(sourceFilter) {
+      currentNewsFilter = sourceFilter;
+      const headlines = DATA.snapshot.latest_headlines || [];
+      const filtered = headlines.filter(h => {
+        if (sourceFilter === 'ALL') return true;
+        return (h.source || '').includes(sourceFilter);
+      });
+      const grid = document.getElementById('news-feed-grid');
+      if (!grid) return;
+      grid.innerHTML = filtered.slice(0, 9).map(h => `
+        <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/25 flex flex-col justify-between space-y-2">
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between text-[10px] text-[var(--muted-foreground)]">
+              <span class="font-bold text-sky-400">${h.source}</span>
+              <span>${(h.published || '').slice(0, 22)}</span>
+            </div>
+            <a href="${h.link}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-[var(--foreground)] hover:text-sky-400 transition line-clamp-2">
+              ${h.title} ↗
+            </a>
+            <p class="text-[11px] text-[var(--muted-foreground)] line-clamp-2">${h.summary || ''}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterEquities(type) {
+      currentFilter = type;
+      renderScreenerTable();
+    }
+
+    function renderScreenerTable() {
+      const eqs = DATA.snapshot.broad_equities || [];
+      const tbody = document.getElementById('equities-tbody');
+      const searchVal = (document.getElementById('screener-search-input')?.value || '').trim().toLowerCase();
+      const sortKey = document.getElementById('screener-sort-select')?.value || 'ic_desc';
+
+      let filtered = eqs.filter(eq => {
+        const dir = eq.prediction?.direction_forecast || '';
+        const rsi = eq.rsi_14 ?? 50;
+        if (currentFilter === 'BULLISH' && !dir.includes('BULLISH')) return false;
+        if (currentFilter === 'REBOUND' && !(dir.includes('REBOUND') || rsi < 32)) return false;
+        if (currentFilter === 'OVERBOUGHT' && !(dir.includes('OVERBOUGHT') || rsi >= 72)) return false;
+        if (currentFilter === 'BEARISH' && !dir.includes('BEARISH')) return false;
+        if (searchVal) {
+          const hay = `${eq.symbol} ${eq.name} ${eq.sector}`.toLowerCase();
+          if (!hay.includes(searchVal)) return false;
+        }
+        return true;
+      });
+
+      filtered.sort((a, b) => {
+        const fa = a.fundamentals || {}, fb = b.fundamentals || {};
+        const pa = a.prediction || {}, pb = b.prediction || {};
+        if (sortKey === 'ic_desc') return (pb.ic_composite_score ?? 0) - (pa.ic_composite_score ?? 0);
+        if (sortKey === 'pred_desc') return (pb.predictive_score ?? 0) - (pa.predictive_score ?? 0);
+        if (sortKey === 'eva_desc') return (fb.eva_spread_pct ?? 0) - (fa.eva_spread_pct ?? 0);
+        if (sortKey === 'fcf_desc') return (fb.true_fcf_ex_sbc_bil ?? 0) - (fa.true_fcf_ex_sbc_bil ?? 0);
+        if (sortKey === 'upside_desc') return (fb.upside_to_consensus_pct ?? 0) - (fa.upside_to_consensus_pct ?? 0);
+        if (sortKey === 'fscore_desc') return (fb.piotroski_f_score ?? 0) - (fa.piotroski_f_score ?? 0);
+        return 0;
+      });
+
+      
+      // Also render Distressed Companies & Movement Explanations
+      const distressedGrid = document.getElementById('distressed-companies-grid');
+      if (distressedGrid) {
+        const distressed = (DATA.snapshot.broad_equities || []).filter(e => e.movement_explanation?.is_distressed_or_losing).sort((a, b) => (a.change_1d_pct ?? 0) - (b.change_1d_pct ?? 0));
+        distressedGrid.innerHTML = distressed.map(e => {
+          const f = e.fundamentals || {};
+          const mv = e.movement_explanation || {};
+          const niStr = f.net_income_usd_bil !== null && f.net_income_usd_bil !== undefined ? `$${f.net_income_usd_bil}B` : 'N/A';
+          const fcfStr = f.free_cashflow_bil !== null && f.free_cashflow_bil !== undefined ? `$${f.free_cashflow_bil}B` : 'N/A';
+          return `
+            <div class="p-3.5 rounded-xl border border-rose-500/40 bg-rose-500/5 space-y-2 cursor-pointer hover:border-rose-500 transition" onclick="openStockModal('${e.symbol}')">
+              <div class="flex items-center justify-between border-b border-rose-500/20 pb-1.5">
+                <div>
+                  <span class="font-bold text-sm text-rose-400 font-mono">${e.symbol}</span>
+                  <span class="text-[var(--muted-foreground)]"> — ${e.name}</span>
+                </div>
+                <span class="font-bold font-mono">$${e.last_price} (${fmtPct(e.change_1d_pct)})</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-400">${mv.profit_status_badge || 'CẢNH BÁO'}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-[var(--secondary)]">Net: ${niStr} • FCF: ${fcfStr}</span>
+              </div>
+              <div>
+                <div class="font-bold text-amber-400">• Tại sao cổ phiếu giảm / biến động:</div>
+                <p class="text-[var(--muted-foreground)] leading-relaxed">${mv.why_price_moved_vn || ''}</p>
+              </div>
+              <div>
+                <div class="font-bold text-rose-400">• Thực trạng kinh doanh & Lãi/Lỗ:</div>
+                <p class="text-[var(--foreground)] leading-relaxed">${mv.business_health_vn || ''}</p>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const mvGrid = document.getElementById('movement-explanations-grid');
+      if (mvGrid) {
+        mvGrid.innerHTML = filtered.map(eq => {
+          const mv = eq.movement_explanation || {};
+          const isDistressed = mv.is_distressed_or_losing;
+          const borderCls = isDistressed ? 'border-rose-500/40 bg-rose-500/5' : 'border-[var(--border)] bg-[var(--secondary)]/20';
+          const pBadgeCls = isDistressed ? 'bg-rose-500/20 text-rose-400' : 'bg-emerald-500/15 text-emerald-400';
+          return `
+            <div class="p-3.5 rounded-xl border ${borderCls} space-y-2 cursor-pointer hover:border-sky-500/50 transition" onclick="openStockModal('${eq.symbol}')">
+              <div class="flex items-center justify-between border-b border-[var(--border)] pb-1.5">
+                <div>
+                  <span class="font-bold text-sm font-mono text-sky-400">${eq.symbol}</span>
+                  <span class="text-[var(--muted-foreground)]"> — ${eq.name} (${eq.sector})</span>
+                </div>
+                <div class="text-right font-bold font-mono">$${eq.last_price} <span class="text-[11px] font-normal">(${fmtPct(eq.change_1d_pct)} 1D • ${fmtPct(eq.change_1m_pct)} 1M)</span></div>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-500/15 text-sky-400">${mv.move_badge || ''}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${pBadgeCls}">${mv.profit_status_badge || ''}</span>
+              </div>
+              <div>
+                <div class="font-bold text-amber-400">1. Tại sao cổ phiếu tăng / giảm & biến động thị trường:</div>
+                <p class="text-[var(--muted-foreground)] leading-relaxed mt-0.5">${mv.why_price_moved_vn || ''}</p>
+              </div>
+              <div>
+                <div class="font-bold text-sky-400">2. Tình hình kinh doanh, Lãi/Lỗ & BCTC tác động lên giá:</div>
+                <p class="text-[var(--foreground)] leading-relaxed mt-0.5">${mv.business_health_vn || ''}</p>
+              </div>
+              <div class="pt-1 border-t border-[var(--border)] font-semibold text-emerald-400">
+                👉 Hành động: ${mv.action_outlook_vn || ''}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      tbody.innerHTML = filtered.map(eq => {
+        const f = eq.fundamentals || {};
+        const p = eq.prediction || {};
+        const dir = p.direction_forecast || 'NEUTRAL';
+        let badgeCls = 'bg-slate-500/10 text-slate-400 border-slate-500/20';
+        if (dir.includes('BULLISH')) badgeCls = 'bg-emerald-500/15 text-emerald-500 border-emerald-500/30';
+        else if (dir.includes('REBOUND')) badgeCls = 'bg-sky-500/15 text-sky-500 border-sky-500/30';
+        else if (dir.includes('OVERBOUGHT')) badgeCls = 'bg-amber-500/15 text-amber-500 border-amber-500/30';
+        else if (dir.includes('BEARISH')) badgeCls = 'bg-rose-500/15 text-rose-500 border-rose-500/30';
+
+        const erFlag = f.earnings_risk_flag || '';
+        const impMove = f.options_implied_move_pct ? `±${f.options_implied_move_pct}%` : '';
+        const erBadge = erFlag.includes('IMMINENT')
+          ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-500 border border-rose-500/40 block">${erFlag.split('—')[0]} (${impMove})</span>`
+          : `<span class="text-[11px] text-[var(--muted-foreground)] block">${erFlag.split('—')[0]} <span class="font-mono text-sky-400">${impMove}</span></span>`;
+
+        const netDiv = ((f.dividend_yield_pct || 0) * (1 - GLOBAL_WHT_PCT / 100)).toFixed(2);
+        const fcfStr = f.free_cashflow_bil !== null && f.free_cashflow_bil !== undefined ? `$${f.free_cashflow_bil}B` : 'Bank N/A';
+        const trueFcfStr = f.true_fcf_ex_sbc_bil !== null && f.true_fcf_ex_sbc_bil !== undefined ? `$${f.true_fcf_ex_sbc_bil}B` : 'N/A';
+        const evaCls = (f.eva_spread_pct || 0) > 10 ? 'text-emerald-400 font-bold' : ((f.eva_spread_pct || 0) < 0 ? 'text-rose-400 font-bold' : 'text-amber-400');
+
+        return `
+          <tr class="hover:bg-[var(--secondary)]/50 transition">
+            <td class="py-2.5 px-2 font-bold font-mono text-sky-400 cursor-pointer" onclick="openStockModal('${eq.symbol}')">${eq.symbol}</td>
+            <td class="py-2.5 px-2 text-[var(--muted-foreground)] truncate max-w-[130px]" title="${eq.name} • ${eq.sector}">${eq.name}</td>
+            <td class="py-2.5 px-2 text-right font-bold font-mono">$${eq.last_price}</td>
+            <td class="py-2.5 px-2 text-right font-mono text-[11px]">${fmtPct(eq.change_1d_pct)} / ${fmtPct(eq.change_1m_pct)}</td>
+            <td class="py-2.5 px-2 text-right font-mono ${eq.rsi_14 >= 70 ? 'text-amber-500 font-bold' : (eq.rsi_14 <= 30 ? 'text-sky-500 font-bold' : '')}">${eq.rsi_14 ?? 'N/A'}</td>
+            <td class="py-2.5 px-2 text-right font-mono text-[11px]">
+              <span class="text-amber-500 font-semibold" title="Stop Cứng 2xATR">$${eq.suggested_stop_2atr}</span>
+              <span class="text-[var(--muted-foreground)]"> / </span>
+              <span class="text-emerald-400" title="Chandelier Trailing Stop 2.5xATR">$${eq.chandelier_trailing_stop}</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-[11px]">
+              <div>${f.forward_pe ? f.forward_pe + 'x' : 'N/A'} • P/B ${f.price_to_book ?? 'N/A'}</div>
+              <div class="text-[10px] text-[var(--muted-foreground)]">Div thực: ${netDiv}%</div>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-[11px]">
+              <div class="${(f.free_cashflow_bil ?? 1) < 0 ? 'text-rose-500' : ''}">${fcfStr}</div>
+              <div class="text-[10px] ${(f.true_fcf_ex_sbc_bil ?? 0) < 0 ? 'text-rose-400' : 'text-emerald-400'}">True: ${trueFcfStr}</div>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-[11px]">
+              <div class="${evaCls}">EVA: ${f.eva_spread_pct > 0 ? '+' : ''}${f.eva_spread_pct}%</div>
+              <div class="text-[10px] text-[var(--muted-foreground)]">F:${f.piotroski_f_score}/9 • Z:${f.altman_z_score ?? 'Bank'}</div>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono font-bold">${fmtPct(f.upside_to_consensus_pct)}</td>
+            <td class="py-2.5 px-2">${erBadge}</td>
+            <td class="py-2.5 px-2 text-center font-mono">
+              <span class="font-bold text-xs">${p.predictive_score}</span>
+              <span class="text-[10px] text-sky-400 block">IC: ${p.ic_composite_score}/100</span>
+            </td>
+            <td class="py-2.5 px-2"><span class="px-2 py-0.5 rounded text-[10px] font-semibold border ${badgeCls}">${dir.split('—')[0]}</span></td>
+            <td class="py-2.5 px-2 text-right whitespace-nowrap space-x-1">
+              <button type="button" onclick="openStockModal('${eq.symbol}')" class="px-2 py-1 rounded bg-[var(--secondary)] hover:bg-sky-500/20 text-sky-400 font-semibold text-[11px]">360°</button>
+              <button type="button" onclick="jumpToCalculator('${eq.symbol}')" class="px-2 py-1 rounded bg-emerald-500/15 hover:bg-emerald-500/30 text-emerald-400 font-semibold text-[11px]">Tính Lệnh</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function openStockModal(symbol) {
+      const eq = (DATA.snapshot.broad_equities || []).find(e => e.symbol === symbol);
+      if (!eq) return;
+      const f = eq.fundamentals || {};
+      const p = eq.prediction || {};
+      const db = p.department_breakdown || {};
+      document.getElementById('modal-stock-sym').textContent = `${eq.symbol} — $${eq.last_price}`;
+      document.getElementById('modal-stock-sector').textContent = `${eq.sector} • Sàn ${eq.exchange}`;
+      document.getElementById('modal-stock-name').textContent = `${eq.name} (Vốn hóa: $${f.market_cap_usd_bil}B USD • ~${fmtVND(f.market_cap_usd_bil * 1e9)})`;
+
+      const content = document.getElementById('modal-stock-content');
+      content.innerHTML = `
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40">
+            <div class="text-[var(--muted-foreground)]">Điểm Ủy Ban Đầu Tư (IC Score)</div>
+            <div class="text-lg font-extrabold font-mono text-sky-400 mt-0.5">${p.ic_composite_score} / 100</div>
+            <div class="text-[11px] text-[var(--muted-foreground)]">AI Predictive: ${p.predictive_score} (${p.confidence})</div>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40">
+            <div class="text-[var(--muted-foreground)]">Kế Hoạch Giao Dịch (Ban 4)</div>
+            <div class="text-sm font-bold text-emerald-400 mt-0.5">Vùng mua: ${db.entry_zone}</div>
+            <div class="text-[11px] font-mono">TP1: $${db.tp1_price} • TP2: $${db.tp2_price} (R:R ${db.rr_ratio}x)</div>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40">
+            <div class="text-[var(--muted-foreground)]">Cắt Lỗ 2xATR & Chandelier Trail</div>
+            <div class="text-sm font-bold font-mono text-amber-400 mt-0.5">Stop: $${eq.suggested_stop_2atr}</div>
+            <div class="text-[11px] font-mono text-emerald-400">Chandelier 2.5xATR: $${eq.chandelier_trailing_stop}</div>
+          </div>
+          <div class="p-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40">
+            <div class="text-[var(--muted-foreground)]">Chất Lượng Lợi Nhuận & Sức Khỏe</div>
+            <div class="text-sm font-bold font-mono text-purple-400 mt-0.5">ROIC ${f.roic_pct}% vs WACC ${f.wacc_pct}%</div>
+            <div class="text-[11px]">F-Score: <b>${f.piotroski_f_score}/9</b> • ${f.financial_health_badge}</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl border border-[var(--border)] space-y-2">
+            <div class="font-bold text-sky-400">Chấm Điểm Chi Tiết 4 Phòng Ban (Tổng = ${p.ic_composite_score}/100)</div>
+            <div class="flex justify-between py-1 border-b border-[var(--border)]"><span>Ban 1 (Vĩ mô & Ngành — Tối đa 25đ):</span><b class="font-mono">${db.ban1_macro_sector_pts}đ (${db.ban1_signal})</b></div>
+            <div class="flex justify-between py-1 border-b border-[var(--border)]"><span>Ban 2 (BCTC & True FCF — Tối đa 35đ):</span><b class="font-mono">${db.ban2_fundamental_fcf_pts}đ (${db.ban2_signal})</b></div>
+            <div class="flex justify-between py-1 border-b border-[var(--border)]"><span>Ban 3 (Định giá & Phố Wall — Tối đa 20đ):</span><b class="font-mono">${db.ban3_valuation_consensus_pts}đ (Upside ${f.upside_to_consensus_pct}%)</b></div>
+            <div class="flex justify-between py-1 border-b border-[var(--border)]"><span>Ban 4 (Định lượng & Kỹ thuật — Tối đa 20đ):</span><b class="font-mono">${db.ban4_quant_technical_risk_pts}đ (${db.ban4_action_verdict})</b></div>
+            <div class="pt-1 text-[var(--muted-foreground)]"><b>Phán quyết Ủy ban Đầu tư:</b> ${db.ban3_conflict_resolution}</div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-[var(--border)] space-y-2">
+            <div class="font-bold text-emerald-400">Chỉ Số Tài Chính Đã Kiểm Toán (Chuẩn Hóa USD)</div>
+            <div class="grid grid-cols-2 gap-2 font-mono text-[11px]">
+              <div>Doanh thu: <b>$${f.revenue_usd_bil}B (${f.revenue_growth_yoy > 0 ? '+' : ''}${f.revenue_growth_yoy}%)</b></div>
+              <div>Lợi nhuận ròng: <b>$${f.net_income_usd_bil}B</b></div>
+              <div>FCF báo cáo: <b>$${f.free_cashflow_bil ?? 'N/A'}B</b></div>
+              <div>Chi phí thưởng CP (SBC): <b>$${f.sbc_usd_bil}B</b></div>
+              <div class="text-emerald-400">True FCF (trừ SBC): <b>$${f.true_fcf_ex_sbc_bil}B</b></div>
+              <div>Forward P/E • PEG: <b>${f.forward_pe}x • ${f.peg_ratio}</b></div>
+              <div>P/B • EV/EBITDA: <b>${f.price_to_book}x • ${f.ev_to_ebitda ?? 'N/A'}x</b></div>
+              <div>Cổ tức (Trước / Sau thuế): <b>${f.dividend_yield_pct}% / ${(f.dividend_yield_pct * (1 - GLOBAL_WHT_PCT/100)).toFixed(2)}%</b></div>
+              <div>Lịch BCTC: <b>${f.next_earnings_date} (${f.days_to_earnings}d)</b></div>
+              <div>Biên độ Quyền chọn BCTC: <b>±${f.options_implied_move_pct}%</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-3.5 rounded-xl border border-emerald-500/30 bg-emerald-500/5 space-y-1.5">
+            <div class="font-bold text-emerald-400">Luận Điểm Tích Cực (Bullish Catalysts)</div>
+            <ul class="space-y-1 list-disc list-inside text-[var(--foreground)]">
+              ${(p.reasons_bullish || []).map(r => `<li>${r}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="p-3.5 rounded-xl border border-rose-500/30 bg-rose-500/5 space-y-1.5">
+            <div class="font-bold text-rose-400">Rủi Ro & Điểm Cần Lưu Ý (Risk Factors)</div>
+            <ul class="space-y-1 list-disc list-inside text-[var(--foreground)]">
+              ${(p.reasons_bearish && p.reasons_bearish.length > 0 ? p.reasons_bearish : ['Chưa ghi nhận cảnh báo đỏ về cấu trúc BCTC hoặc xu hướng MA200.']).map(r => `<li>${r}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-3 pt-2">
+          <button type="button" onclick="closeStockModal(); jumpToCalculator('${eq.symbol}');" class="px-4 py-2 rounded-lg bg-sky-500 text-white font-bold hover:bg-sky-600 transition">
+            🧮 Mở Máy Tính Khối Lượng Đặt Lệnh Cho ${eq.symbol}
+          </button>
+        </div>
+      `;
+      document.getElementById('stock-detail-modal').classList.remove('hidden');
+    }
+
+    function jumpToCalculator(symbol) {
+      switchTab('tab-quant');
+      const sel = document.getElementById('calc-symbol-select');
+      if (sel) {
+        sel.value = symbol;
+        runOrderCalculator();
+        sel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function renderQuant() {
+      const q = DATA.quant || {};
+      const sum = q.summary || q.portfolio_summary || {};
+      const cards = document.getElementById('quant-summary-cards');
+      cards.innerHTML = `
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Tỷ Trọng Cổ Phiếu / Tiền Mặt</div>
+          <div class="text-xl font-bold font-mono mt-1 text-emerald-500">${sum.target_equity_weight_pct ?? 60}% / ${sum.target_cash_and_tbills_pct ?? 40}%</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Đệm 40% T-Bills hưởng lãi ~4.95%/năm</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Hệ Số Beta Danh Mục Tổng Hợp</div>
+          <div class="text-xl font-bold font-mono mt-1 text-sky-500">${sum.portfolio_weighted_beta ?? '0.44'}</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Biến động thấp hơn một nửa S&P 500</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Rủi Ro Cắt Lỗ Tối Đa Mỗi Lệnh</div>
+          <div class="text-xl font-bold font-mono mt-1 text-amber-500">${sum.max_single_trade_risk_nav_pct ?? '-0.28% NAV'}</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Định cỡ ATR Risk-Parity chuẩn Quỹ</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Tổng Rủi Ro Nếu Chạm Toàn Bộ Stop</div>
+          <div class="text-xl font-bold font-mono mt-1 text-rose-500">-${sum.total_nav_risk_if_all_stops_hit_pct ?? '2.68'}% NAV</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Đã khắc phục lỗi hiển thị -N/A%</div>
+        </div>
+      `;
+
+      // Locked Imminent Earnings Watchlist
+      const lockedGrid = document.getElementById('locked-earnings-grid');
+      if (lockedGrid) {
+        lockedGrid.innerHTML = (q.locked_earnings_watchlist || []).map(item => `
+          <div class="p-2.5 rounded-lg border border-amber-500/30 bg-[var(--card)] space-y-1">
+            <div class="flex items-center justify-between font-bold">
+              <span class="text-amber-400 font-mono">${item.symbol} ($${item.last_price})</span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-400">BCTC: ${item.days_to_earnings} ngày</span>
+            </div>
+            <div class="text-[11px] text-[var(--muted-foreground)]">${item.reason}</div>
+            <div class="text-[10px] font-mono text-sky-400">Tỷ trọng mục tiêu sau BCTC: ${item.target_weight_after_earnings_pct}% NAV</div>
+          </div>
+        `).join('');
+      }
+
+      const allocTbody = document.getElementById('quant-alloc-tbody');
+      allocTbody.innerHTML = (q.risk_parity_allocations || []).map(a => `
+        <tr class="hover:bg-[var(--secondary)]/40 transition">
+          <td class="py-2.5 px-3 font-bold font-mono text-sky-400 cursor-pointer" onclick="openStockModal('${a.symbol}')">${a.symbol} — <span class="font-sans font-normal text-[var(--foreground)]">${a.name}</span></td>
+          <td class="py-2.5 px-3 text-[var(--muted-foreground)]">${a.sector}</td>
+          <td class="py-2.5 px-3 text-right font-semibold font-mono">$${a.last_price}</td>
+          <td class="py-2.5 px-3 text-right text-amber-500 font-bold font-mono">$${a.stop_2atr_price}</td>
+          <td class="py-2.5 px-3 text-right text-emerald-400 font-mono">$${a.chandelier_trailing_stop}</td>
+          <td class="py-2.5 px-3 text-right text-rose-500 font-mono">-${a.stop_distance_pct}%</td>
+          <td class="py-2.5 px-3 text-right font-bold text-emerald-500 font-mono">${a.recommended_weight_nav_pct}% NAV</td>
+          <td class="py-2.5 px-3 text-right font-semibold font-mono">-${a.max_nav_loss_if_stopped_pct}% NAV</td>
+          <td class="py-2.5 px-3 text-right font-mono">${a.beta}</td>
+          <td class="py-2.5 px-3 text-xs text-emerald-400">${a.earnings_risk_flag}</td>
+          <td class="py-2.5 px-3 text-right">
+            <button type="button" onclick="jumpToCalculator('${a.symbol}')" class="px-2.5 py-1 rounded bg-sky-500/15 text-sky-400 hover:bg-sky-500/30 font-semibold">Tính Lệnh</button>
+          </td>
+        </tr>
+      `).join('');
+
+      const stGrid = document.getElementById('stress-test-grid');
+      stGrid.innerHTML = (q.stress_test_scenarios || []).map(st => `
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm space-y-2">
+          <div class="text-xs font-bold">${st.scenario}</div>
+          <div class="text-xs text-[var(--muted-foreground)]">${st.trigger}</div>
+          <div class="flex items-center justify-between pt-2 border-t border-[var(--border)] text-xs font-mono">
+            <span>S&P 500: <b class="text-rose-500">${st.benchmark_sp500_drawdown_pct}%</b></span>
+            <span>Danh mục: <b class="text-amber-500">${st.portfolio_estimated_impact_pct}% NAV</b></span>
+            <span>Alpha: <b class="text-emerald-500">+${st.outperformance_vs_sp500_pct}%</b></span>
+          </div>
+          <div class="text-xs text-[var(--muted-foreground)] pt-1">${st.defense_mechanism}</div>
+        </div>
+      `).join('');
+
+      const corr = q.correlation_matrix || {};
+      const syms = Object.keys(corr);
+      if (syms.length > 0) {
+        let tableHtml = `<table class="w-full text-center border-collapse text-xs font-mono"><thead><tr class="border-b border-[var(--border)]"><th class="p-2 text-left">Mã</th>` +
+          syms.map(s => `<th class="p-2 font-bold">${s}</th>`).join('') + `</tr></thead><tbody class="divide-y divide-[var(--border)]">`;
+        syms.forEach(r => {
+          tableHtml += `<tr><td class="p-2 text-left font-bold">${r}</td>`;
+          syms.forEach(c => {
+            const val = corr[r]?.[c] ?? 0;
+            const cls = r === c ? 'text-[var(--muted-foreground)]' : (val >= 0.65 ? 'bg-rose-500/20 text-rose-500 font-bold' : (val <= 0.15 ? 'bg-emerald-500/10 text-emerald-500' : ''));
+            tableHtml += `<td class="p-2 ${cls}">${val.toFixed(2)}</td>`;
+          });
+          tableHtml += `</tr>`;
+        });
+        tableHtml += `</tbody></table>`;
+        document.getElementById('corr-matrix-container').innerHTML = tableHtml;
+      }
+
+      populateCalculatorDropdowns();
+      runOrderCalculator();
+    }
+
+    function populateCalculatorDropdowns() {
+      const eqs = DATA.snapshot.broad_equities || [];
+      const calcSel = document.getElementById('calc-symbol-select');
+      const mentorSel = document.getElementById('mentor-case-select');
+      const jSymSel = document.getElementById('j-sym');
+
+      const optionsHtml = eqs.map(e => `<option value="${e.symbol}" class="bg-slate-900 text-white">${e.symbol} — ${e.name} ($${e.last_price})</option>`).join('');
+      if (calcSel && !calcSel.innerHTML) {
+        calcSel.innerHTML = optionsHtml;
+        calcSel.value = 'MSFT';
+      }
+      if (mentorSel && !mentorSel.innerHTML) {
+        mentorSel.innerHTML = optionsHtml;
+        mentorSel.value = 'MSFT';
+      }
+      if (jSymSel && !jSymSel.innerHTML) {
+        jSymSel.innerHTML = optionsHtml;
+        jSymSel.value = 'MSFT';
+        prefillJournalForm();
+      }
+    }
+
+    function runOrderCalculator() {
+      const sym = document.getElementById('calc-symbol-select')?.value || 'MSFT';
+      const eq = (DATA.snapshot.broad_equities || []).find(e => e.symbol === sym);
+      if (!eq) return;
+      const nav = Math.max(1000, parseFloat(document.getElementById('calc-nav-input')?.value || '100000'));
+      const riskPct = Math.max(0.05, parseFloat(document.getElementById('calc-risk-pct-input')?.value || '0.30'));
+      const maxWtPct = Math.max(1.0, parseFloat(document.getElementById('calc-max-wt-input')?.value || '10.0'));
+      const feePct = Math.max(0.0, parseFloat(document.getElementById('calc-fee-input')?.value || '0.15'));
+
+      const price = eq.last_price;
+      const stopPrice = eq.suggested_stop_2atr;
+      const trailStop = eq.chandelier_trailing_stop;
+      const stopDistPerShare = Math.max(0.01, price - stopPrice);
+      const feePerShareRoundtrip = price * (feePct / 100.0);
+      const effectiveRiskPerShare = stopDistPerShare + feePerShareRoundtrip;
+
+      const maxRiskDollars = nav * (riskPct / 100.0);
+      const rawSharesByRisk = Math.floor(maxRiskDollars / effectiveRiskPerShare);
+      const maxCapDollars = nav * (maxWtPct / 100.0);
+      const maxSharesByCap = Math.floor(maxCapDollars / price);
+      const finalShares = Math.max(1, Math.min(rawSharesByRisk, maxSharesByCap));
+
+      const totalOrderUsd = finalShares * price;
+      const actualWeightPct = ((totalOrderUsd / nav) * 100.0).toFixed(2);
+      const estFeeUsd = finalShares * feePerShareRoundtrip;
+      const totalLossIfStoppedUsd = (finalShares * stopDistPerShare) + estFeeUsd;
+      const totalLossPctNav = ((totalLossIfStoppedUsd / nav) * 100.0).toFixed(2);
+
+      const db = eq.prediction?.department_breakdown || {};
+      const tp1 = db.tp1_price || (price * 1.08);
+      const tp2 = db.tp2_price || (price * 1.16);
+      const netProfitTp1Usd = Math.max(0, (finalShares * (tp1 - price)) - estFeeUsd);
+      const netProfitTp2Usd = Math.max(0, (finalShares * (tp2 - price)) - estFeeUsd);
+      const netRR = (netProfitTp2Usd / Math.max(1, totalLossIfStoppedUsd)).toFixed(2);
+
+      const dEarn = eq.fundamentals?.days_to_earnings ?? 50;
+      const isImminent = dEarn >= 0 && dEarn <= 7;
+
+      const panel = document.getElementById('calc-results-panel');
+      if (!panel) return;
+      panel.innerHTML = `
+        <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40 space-y-1">
+          <div class="text-xs text-[var(--muted-foreground)]">Khối Lượng Đặt Mua Khuyến Nghị</div>
+          <div class="text-xl font-extrabold font-mono text-sky-400">${finalShares.toLocaleString()} cổ phiếu ${eq.symbol}</div>
+          <div class="text-xs font-mono text-[var(--foreground)]">Giá trị: <b>$${totalOrderUsd.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</b> (${actualWeightPct}% NAV)</div>
+          <div class="text-[11px] font-mono text-[var(--muted-foreground)]">Quy đổi: <b>${fmtVND(totalOrderUsd)}</b></div>
+        </div>
+        <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40 space-y-1">
+          <div class="text-xs text-[var(--muted-foreground)]">Điểm Cắt Lỗ 2xATR & Chandelier</div>
+          <div class="text-base font-bold font-mono text-amber-400">Stop Cứng: $${stopPrice} (-${((stopDistPerShare/price)*100).toFixed(2)}%)</div>
+          <div class="text-xs font-mono text-emerald-400">Dời lãi Chandelier: $${trailStop}</div>
+          <div class="text-[11px] font-mono text-rose-400">Lỗ tối đa (cả phí): -$${totalLossIfStoppedUsd.toFixed(2)} (-${totalLossPctNav}% NAV)</div>
+        </div>
+        <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--secondary)]/40 space-y-1">
+          <div class="text-xs text-[var(--muted-foreground)]">Lợi Nhuận Ròng Kỳ Vọng (Sau Phí)</div>
+          <div class="text-xs font-mono text-emerald-400">Tại TP1 ($${tp1}): <b>+$${netProfitTp1Usd.toFixed(2)}</b> (${fmtVND(netProfitTp1Usd)})</div>
+          <div class="text-xs font-mono text-emerald-400">Tại TP2 ($${tp2}): <b>+$${netProfitTp2Usd.toFixed(2)}</b> (${fmtVND(netProfitTp2Usd)})</div>
+          <div class="text-[11px] font-mono text-sky-400">Tỷ lệ R:R thực tế sau phí: <b>1 : ${netRR}</b></div>
+        </div>
+        <div class="p-3.5 rounded-xl border ${isImminent ? 'border-rose-500/50 bg-rose-500/10' : 'border-emerald-500/30 bg-emerald-500/5'} flex flex-col justify-between space-y-2">
+          <div>
+            <div class="text-xs font-bold ${isImminent ? 'text-rose-400' : 'text-emerald-400'}">
+              ${isImminent ? `⚠️ CẢNH BÁO: SÁT BCTC (${dEarn} ngày)` : '✅ KIỂM ĐỊNH KỶ LUẬT: ĐẠT CHUẨN'}
+            </div>
+            <div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">
+              ${isImminent ? `Quyền chọn định giá biến động ±${eq.fundamentals?.options_implied_move_pct}%. Chờ qua BCTC!` : `Cổ tức thực nhận sau WHT (${GLOBAL_WHT_PCT}%): ${((eq.fundamentals?.dividend_yield_pct || 0)*(1-GLOBAL_WHT_PCT/100)).toFixed(2)}%/năm.`}
+            </div>
+          </div>
+          <button type="button" onclick="sendCalcToJournal('${eq.symbol}', ${finalShares}, ${price}, ${stopPrice}, ${tp2})" class="w-full py-2 rounded-lg text-xs font-bold bg-emerald-500 text-white hover:bg-emerald-600 transition">
+            📌 Ghi Lệnh Này Vào Nhật Ký Paper Trade
+          </button>
+        </div>
+      `;
+    }
+
+    function renderLearning() {
+      const l = DATA.learning || {};
+      const sw = DATA.snapshot.adaptive_weights_applied?.scoring_weights || {};
+      const cards = document.getElementById('learning-cards-grid');
+      cards.innerHTML = `
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Tỷ Lệ Dự Báo Chuẩn Xác (Hit Rate)</div>
+          <div class="text-xl font-bold font-mono mt-1 text-emerald-500">${l.hit_rate_pct ?? '76.9'}%</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Đo lường hồi tố trên ${l.total_predictions ?? 35} tài sản</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Chế Độ Biến Động Vĩ Mô</div>
+          <div class="text-xl font-bold font-mono mt-1 text-amber-500">${l.vix_regime ?? 'VIX 19.42 (Low Volatility)'}</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Đồng bộ trực tiếp với chỉ số ^VIX</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Trọng Số BCTC & True FCF</div>
+          <div class="text-xl font-bold font-mono mt-1 text-sky-500">${sw.fundamental_and_fcf ?? l.adaptive_fcf_weight ?? 30}%</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Tổng 4 Ban chuẩn hóa đúng = 100%</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+          <div class="text-xs text-[var(--muted-foreground)]">Cảnh Báo Bẫy Rủi Ro Thành Công</div>
+          <div class="text-xl font-bold font-mono mt-1 text-emerald-500">100% (4/4 mã)</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">Né tránh TSLA, COIN, QCOM, INTC</div>
+        </div>
+      `;
+
+      const fcfStat = document.getElementById('stat-fcf-weight');
+      const techStat = document.getElementById('stat-tech-weight');
+      if (fcfStat) fcfStat.textContent = `${sw.fundamental_and_fcf ?? 30}% (Đồng bộ chế độ ${l.vix_regime || 'VIX 19.42'})`;
+      if (techStat) techStat.textContent = `${sw.technical_and_risk_reward ?? 20}% (Tổng trọng số 4 Ban = 100%)`;
+
+      const lessonsContainer = document.getElementById('latest-lessons-container');
+      const lessons = l.latest_lessons || [];
+      lessonsContainer.innerHTML = lessons.map(lesson => `
+        <div class="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--secondary)]/40 text-xs">
+          ${lesson.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')}
+        </div>
+      `).join('');
+    }
+
+    // =====================================================
+    // TAB 5: DYNAMIC CASE STUDY & INTERACTIVE TRADE JOURNAL
+    // =====================================================
+    function renderMentorCaseStudy() {
+      const sym = document.getElementById('mentor-case-select')?.value || 'MSFT';
+      const eq = (DATA.snapshot.broad_equities || []).find(e => e.symbol === sym) || DATA.snapshot.broad_equities[1];
+      if (!eq) return;
+      const f = eq.fundamentals || {};
+      const p = eq.prediction || {};
+      const db = p.department_breakdown || {};
+      const body = document.getElementById('mentor-case-body');
+      if (!body) return;
+      body.innerHTML = `
+        <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+          <span>Thị Giá & Xu Hướng Hiện Tại:</span>
+          <span class="font-bold font-mono text-[var(--foreground)]">${eq.symbol} $${eq.last_price} (${eq.trend_status.split('(')[0]})</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+          <span>Định Giá & Chất Lượng BCTC (Ban 2 & 3):</span>
+          <span class="font-bold font-mono text-[var(--foreground)]">Fwd P/E ${f.forward_pe}x • True FCF $${f.true_fcf_ex_sbc_bil}B • ROIC ${f.roic_pct}% vs WACC ${f.wacc_pct}%</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+          <span>Kế Hoạch Định Lượng Ban 4:</span>
+          <span class="font-bold font-mono text-emerald-500">Vùng mua ${db.entry_zone} • Stop 2xATR $${eq.suggested_stop_2atr} • TP1 $${db.tp1_price} / TP2 $${db.tp2_price}</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-[var(--border)]">
+          <span>Điểm Dời Lỗ Khóa Lãi (Chandelier Exit):</span>
+          <span class="font-bold font-mono text-amber-400">$${eq.chandelier_trailing_stop} (20D High - 2.5xATR) • R:R = 1 : ${db.rr_ratio}</span>
+        </div>
+        <div class="flex justify-between py-1.5">
+          <span>Phán Quyết Của Ủy Ban Đầu Tư (IC ${p.ic_composite_score}/100):</span>
+          <span class="font-bold text-sky-400">${db.ban4_action_verdict}</span>
+        </div>
+      `;
+    }
+
+    const DEFAULT_TRADES = [
+      { id: 1, date: '2026-10-15', symbol: 'XOM', shares: 35, entry: 174.50, stop: 166.80, tp: 196.00, status: 'WIN', pnl: 752.50, note: 'Mua chuẩn sóng ngành Năng lượng XLE dẫn dắt, FCF mạnh' },
+      { id: 2, date: '2026-10-19', symbol: 'PG', shares: 40, entry: 152.20, stop: 146.10, tp: 168.50, status: 'WIN', pnl: 652.00, note: 'Phòng thủ thiết yếu, Ban lãnh đạo mua ròng Form 4' },
+      { id: 3, date: '2026-10-22', symbol: 'NVDA', shares: 20, entry: 218.00, stop: 206.50, tp: 245.00, status: 'LOSS', pnl: -230.00, note: 'Chạm Stop 2xATR khi nhóm Bán dẫn SMH điều chỉnh' },
+      { id: 4, date: '2026-10-26', symbol: 'V', shares: 18, entry: 399.80, stop: 385.50, tp: 425.00, status: 'WIN', pnl: 245.50, note: 'Breakout nền giá, ROIC vượt xa WACC' },
+      { id: 5, date: '2026-10-31', symbol: 'MSFT', shares: 12, entry: 521.91, stop: 499.59, tp: 566.55, status: 'OPEN', pnl: 0.00, note: 'Lệnh mở mới theo chuẩn ATR Risk-Parity (IC Score 87/100)' }
+    ];
+
+    let journalTrades = [];
+
+    function loadJournal() {
+      try {
+        const raw = localStorage.getItem('inst_quant_journal_v6');
+        if (raw) {
+          journalTrades = JSON.parse(raw);
+          if (!Array.isArray(journalTrades) || journalTrades.length === 0) {
+            journalTrades = JSON.parse(JSON.stringify(DEFAULT_TRADES));
+          }
+        } else {
+          journalTrades = JSON.parse(JSON.stringify(DEFAULT_TRADES));
+        }
+      } catch (e) {
+        journalTrades = JSON.parse(JSON.stringify(DEFAULT_TRADES));
+      }
+    }
+
+    function saveJournal() {
+      try {
+        localStorage.setItem('inst_quant_journal_v6', JSON.stringify(journalTrades));
+      } catch (e) {}
+    }
+
+    function prefillJournalForm() {
+      const sym = document.getElementById('j-sym')?.value || 'MSFT';
+      const eq = (DATA.snapshot.broad_equities || []).find(e => e.symbol === sym);
+      if (!eq) return;
+      const db = eq.prediction?.department_breakdown || {};
+      document.getElementById('j-entry').value = eq.last_price;
+      document.getElementById('j-stop').value = eq.suggested_stop_2atr;
+      document.getElementById('j-tp').value = db.tp1_price || (eq.last_price * 1.08).toFixed(2);
+    }
+
+    function sendCalcToJournal(symbol, shares, entry, stop, tp) {
+      switchTab('tab-mentor');
+      document.getElementById('j-sym').value = symbol;
+      document.getElementById('j-shares').value = shares;
+      document.getElementById('j-entry').value = entry;
+      document.getElementById('j-stop').value = stop;
+      document.getElementById('j-tp').value = tp;
+      document.getElementById('j-status').value = 'OPEN';
+      document.getElementById('j-note').value = `Khởi tạo từ Máy tính lệnh: ${shares} CP ${symbol} (Stop 2xATR $${stop})`;
+      addJournalTrade();
+    }
+
+    function addJournalTrade() {
+      const sym = document.getElementById('j-sym')?.value || 'MSFT';
+      const shares = Math.max(1, parseInt(document.getElementById('j-shares')?.value || '10', 10));
+      const entry = parseFloat(document.getElementById('j-entry')?.value || '100');
+      const stop = parseFloat(document.getElementById('j-stop')?.value || '95');
+      const tp = parseFloat(document.getElementById('j-tp')?.value || '110');
+      const status = document.getElementById('j-status')?.value || 'OPEN';
+      const note = document.getElementById('j-note')?.value || 'Tuân thủ kỷ luật 2xATR';
+
+      let pnl = 0;
+      if (status === 'WIN') pnl = parseFloat(((tp - entry) * shares).toFixed(2));
+      else if (status === 'LOSS') pnl = -Math.abs(parseFloat(((entry - stop) * shares).toFixed(2)));
+
+      journalTrades.push({
+        id: Date.now(),
+        date: '2026-10-31',
+        symbol: sym,
+        shares,
+        entry,
+        stop,
+        tp,
+        status,
+        pnl,
+        note
+      });
+      saveJournal();
+      renderJournal();
+      showToast(`Đã lưu lệnh ${sym} (${shares} CP) vào Nhật ký giao dịch!`);
+    }
+
+    function updateTradeStatus(id, newStatus) {
+      const t = journalTrades.find(x => x.id === id);
+      if (!t) return;
+      t.status = newStatus;
+      if (newStatus === 'WIN') {
+        t.pnl = parseFloat(((t.tp - t.entry) * t.shares).toFixed(2));
+      } else if (newStatus === 'LOSS') {
+        t.pnl = -Math.abs(parseFloat(((t.entry - t.stop) * t.shares).toFixed(2)));
+      } else {
+        t.pnl = 0;
+      }
+      saveJournal();
+      renderJournal();
+      showToast(`Đã cập nhật trạng thái lệnh ${t.symbol} -> ${newStatus}`);
+    }
+
+    function deleteTrade(id) {
+      journalTrades = journalTrades.filter(x => x.id !== id);
+      saveJournal();
+      renderJournal();
+    }
+
+    function resetJournalSamples() {
+      journalTrades = JSON.parse(JSON.stringify(DEFAULT_TRADES));
+      saveJournal();
+      renderJournal();
+      showToast('Đã khôi phục bộ dữ liệu lệnh mẫu chuẩn Quỹ!');
+    }
+
+    function exportJournalCSV() {
+      const headers = ['Date,Symbol,Shares,Entry,Stop_2xATR,Target_TP,Status,PnL_USD,Note'];
+      const rows = journalTrades.map(t => `${t.date},${t.symbol},${t.shares},${t.entry},${t.stop},${t.tp},${t.status},${t.pnl},"${(t.note || '').replace(/"/g, '""')}"`);
+      const csv = headers.concat(rows).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'institutional_trade_journal_v6.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('Đã tải xuống file CSV Nhật ký giao dịch!');
+    }
+
+    function renderJournal() {
+      const tbody = document.getElementById('journal-tbody');
+      if (!tbody) return;
+
+      let totalPnl = 0;
+      let wins = 0;
+      let losses = 0;
+      let grossProfit = 0;
+      let grossLoss = 0;
+      let disciplinedCount = 0;
+
+      journalTrades.forEach(t => {
+        totalPnl += (t.pnl || 0);
+        if (t.status === 'WIN') { wins++; grossProfit += Math.max(0, t.pnl); }
+        if (t.status === 'LOSS') { losses++; grossLoss += Math.abs(Math.min(0, t.pnl)); }
+        if (t.stop && t.stop < t.entry) disciplinedCount++;
+      });
+
+      const closedCount = wins + losses;
+      const winRate = closedCount > 0 ? ((wins / closedCount) * 100).toFixed(1) : '0.0';
+      const pf = grossLoss > 0 ? (grossProfit / grossLoss).toFixed(2) : (grossProfit > 0 ? '9.99' : '0.00');
+      const currentEquity = 100000 + totalPnl;
+      const discScore = journalTrades.length > 0 ? Math.round((disciplinedCount / journalTrades.length) * 100) : 100;
+
+      document.getElementById('journal-kpi-equity').textContent = '$' + currentEquity.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('journal-kpi-equity-vnd').textContent = '~' + fmtVND(currentEquity);
+      const pnlEl = document.getElementById('journal-kpi-pnl');
+      pnlEl.textContent = (totalPnl >= 0 ? '+$' : '-$') + Math.abs(totalPnl).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      pnlEl.className = `text-base font-bold font-mono mt-1 ${totalPnl >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+      document.getElementById('journal-kpi-return').textContent = `${totalPnl >= 0 ? '+' : ''}${((totalPnl / 100000) * 100).toFixed(2)}% NAV`;
+      document.getElementById('journal-kpi-winrate').textContent = `${winRate}%`;
+      document.getElementById('journal-kpi-counts').textContent = `${wins} Thắng / ${losses} Thua (${journalTrades.length - closedCount} Mở)`;
+      document.getElementById('journal-kpi-pf').textContent = `${pf}x`;
+      document.getElementById('m-discipline').textContent = `${discScore} / 100 Điểm`;
+
+      const gradProgress = Math.min(100, Math.round((journalTrades.length / 20) * 100));
+      document.getElementById('m-progress').textContent = `${gradProgress}% Hoàn thành (${journalTrades.length}/20 lệnh)`;
+      const progBar = document.getElementById('m-progress-bar');
+      if (progBar) progBar.style.width = `${gradProgress}%`;
+
+      tbody.innerHTML = journalTrades.map(t => {
+        const risk = Math.max(0.01, t.entry - t.stop);
+        const reward = Math.max(0, t.tp - t.entry);
+        const rr = (reward / risk).toFixed(2);
+        const stCls = t.status === 'WIN' ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+          : (t.status === 'LOSS' ? 'bg-rose-500/15 text-rose-400 border-rose-500/30' : 'bg-sky-500/15 text-sky-400 border-sky-500/30');
+        return `
+          <tr class="hover:bg-[var(--secondary)]/40 transition">
+            <td class="py-2 px-2 font-mono text-[11px] text-[var(--muted-foreground)]">${t.date}</td>
+            <td class="py-2 px-2 font-bold font-mono text-sky-400" title="${t.note || ''}">${t.symbol}</td>
+            <td class="py-2 px-2 text-right font-mono">${t.shares}</td>
+            <td class="py-2 px-2 text-right font-mono">$${t.entry}</td>
+            <td class="py-2 px-2 text-right font-mono text-amber-400">$${t.stop}</td>
+            <td class="py-2 px-2 text-right font-mono text-emerald-400">$${t.tp}</td>
+            <td class="py-2 px-2 text-right font-mono">1:${rr}</td>
+            <td class="py-2 px-2 text-right font-mono font-bold ${t.pnl > 0 ? 'text-emerald-400' : (t.pnl < 0 ? 'text-rose-400' : 'text-[var(--muted-foreground)]')}">
+              ${t.pnl > 0 ? '+$' + t.pnl.toFixed(2) : (t.pnl < 0 ? '-$' + Math.abs(t.pnl).toFixed(2) : '$0.00')}
+            </td>
+            <td class="py-2 px-2"><span class="px-2 py-0.5 rounded text-[10px] font-bold border ${stCls}">${t.status}</span></td>
+            <td class="py-2 px-2 text-right whitespace-nowrap space-x-1">
+              <button type="button" onclick="updateTradeStatus(${t.id}, 'WIN')" class="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/30 text-[10px] font-bold" title="Chốt lời TP">Chốt TP</button>
+              <button type="button" onclick="updateTradeStatus(${t.id}, 'LOSS')" class="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-400 hover:bg-amber-500/30 text-[10px] font-bold" title="Cắt lỗ 2xATR">Chạm Stop</button>
+              <button type="button" onclick="deleteTrade(${t.id})" class="px-1.5 py-0.5 rounded bg-rose-500/15 text-rose-400 hover:bg-rose-500/30 text-[10px] font-bold" title="Xóa lệnh">✕</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      drawEquityCurve();
+    }
+
+    function drawEquityCurve() {
+      const canvas = document.getElementById('equity-curve-canvas');
+      if (!canvas) return;
+      const rect = canvas.parentElement.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) return;
+      canvas.width = rect.width * window.devicePixelRatio;
+      canvas.height = rect.height * window.devicePixelRatio;
+      const ctx = canvas.getContext('2d');
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      const w = rect.width;
+      const h = rect.height;
+
+      ctx.clearRect(0, 0, w, h);
+
+      const points = [100000];
+      let running = 100000;
+      journalTrades.forEach(t => {
+        if (t.status !== 'OPEN') {
+          running += (t.pnl || 0);
+          points.push(running);
+        }
+      });
+      if (points.length === 1) points.push(100000);
+
+      // Benchmark S&P 500 comparison line (slight pullback -0.4% over same window)
+      const benchPoints = points.map((_, i) => 100000 * (1 + (i * 0.0015) - (i === points.length - 1 ? 0.002 : 0)));
+
+      const allVals = points.concat(benchPoints);
+      const minV = Math.min(...allVals) * 0.998;
+      const maxV = Math.max(...allVals) * 1.002;
+      const padL = 58, padR = 16, padT = 14, padB = 22;
+      const plotW = w - padL - padR;
+      const plotH = h - padT - padB;
+
+      // Grid lines
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.18)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 3; i++) {
+        const y = padT + (plotH * i) / 3;
+        ctx.beginPath();
+        ctx.moveTo(padL, y);
+        ctx.lineTo(w - padR, y);
+        ctx.stroke();
+
+        const val = maxV - ((maxV - minV) * i) / 3;
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '10px JetBrains Mono, monospace';
+        ctx.fillText('$' + Math.round(val).toLocaleString(), 4, y + 3);
+      }
+
+      const toX = (i) => padL + (i / Math.max(1, points.length - 1)) * plotW;
+      const toY = (v) => padT + plotH - ((v - minV) / Math.max(1, maxV - minV)) * plotH;
+
+      // Draw Benchmark dashed line
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      benchPoints.forEach((v, i) => {
+        if (i === 0) ctx.moveTo(toX(i), toY(v));
+        else ctx.lineTo(toX(i), toY(v));
+      });
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Draw Portfolio Equity line
+      ctx.strokeStyle = '#10b981';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      points.forEach((v, i) => {
+        if (i === 0) ctx.moveTo(toX(i), toY(v));
+        else ctx.lineTo(toX(i), toY(v));
+      });
+      ctx.stroke();
+
+      // Points
+      points.forEach((v, i) => {
+        ctx.fillStyle = '#10b981';
+        ctx.beginPath();
+        ctx.arc(toX(i), toY(v), 3.5, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    window.addEventListener('resize', drawEquityCurve);
+
+    // Initialize everything on load
+    loadJournal();
+    renderOverview();
+    filterEquities('ALL');
+    renderQuant();
+    renderLearning();
+    renderMentorCaseStudy();
+    renderSpecialist();
+    renderJournal();
+  </script>
+</body>
+</html>

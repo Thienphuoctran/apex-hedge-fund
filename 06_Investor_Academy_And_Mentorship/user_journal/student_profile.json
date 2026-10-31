@@ -1,0 +1,66 @@
+{
+  "student_name": "Nhà Đầu Tư Cá Nhân",
+  "program": "Chương Trình Huấn Luyện & Đồng Hành Đầu Tư Quốc Tế Thực Chiến (Executive Mentorship v1.0)",
+  "joined_date": "2026-10-31",
+  "current_stage": "Stage 1 — Financial Market Foundations & First Principles",
+  "stage_progress_percent": 15,
+  "daily_time_commitment_hours": 4.0,
+  "time_allocation_schedule": {
+    "block_1_morning": "07:30 - 08:00 (30 phút): Khai sáng buổi sáng (Morning Mentor Briefing, quét dữ liệu 6 ban, giải bài toán Socratic)",
+    "block_2_deep_study": "14:00 - 15:30 (90 phút): Học sâu giáo trình, mổ xẻ BCTC 10-K, phân tích FCF & Định giá cổ phiếu mục tiêu",
+    "block_3_us_session": "20:30 - 22:30 (120 phút): Quan sát phiên Mỹ mở cửa, thực hành Paper Trading, ghi chép nhật ký lệnh & soi gương kỷ luật"
+  },
+  "strategy_framework": {
+    "model_name": "Core & Satellite Dual-Engine (Mô hình Quỹ 2 Động Cơ)",
+    "core_allocation_percent": 65.0,
+    "core_strategy_focus": "Buy & Hold Quality Growth Compounders (Cổ phiếu dẫn đầu ngành, Moat lớn, FCF dương dồi dào, tích sản dài hạn)",
+    "satellite_allocation_percent": 35.0,
+    "satellite_strategy_focus": "Tactical Swing & Momentum (Giao dịch theo sóng trung hạn 2-8 tuần, tận dụng điểm Breakout / Pullback MA20 và Stop 2xATR của Ban 4)"
+  },
+  "trading_mode": {
+    "current_mode": "Paper Trading Simulation (Mô Phỏng Thực Chiến Chuẩn Quỹ)",
+    "virtual_capital_usd": 100000.0,
+    "graduation_criteria": "Hoàn thành 15 - 20 lệnh mô phỏng với Điểm kỷ luật >= 85%, tuân thủ 100% ngưỡng cắt lỗ Stop 2xATR và R:R >= 1:2 trước khi chuyển sang vốn thật"
+  },
+  "risk_profile": {
+    "risk_tolerance": "Moderate-Growth (Tăng trưởng bền vững kiểm soát rủi ro)",
+    "max_drawdown_tolerance_percent": 12.0,
+    "max_single_position_allocation_percent": 10.0,
+    "mandatory_stop_loss_rule": "2xATR(14) - Không ngoại lệ, tự động kích hoạt"
+  },
+  "learning_metrics": {
+    "daily_lessons_completed": 5,
+    "paper_trades_executed": 1,
+    "discipline_compliance_score": 100.0,
+    "fomo_incidents_recorded": 0,
+    "post_mortem_completed": 0
+  },
+  "milestones": [
+    {
+      "stage": "Stage 1",
+      "title": "Nền Tảng Thị Trường & Làm Quen Tài Khoản Mô Phỏng Paper Trading",
+      "status": "In Progress",
+      "target_date": "2026-11-07"
+    },
+    {
+      "stage": "Stage 2",
+      "title": "Đọc Vị BCTC, Định Giá Doanh Nghiệp & Chọn Danh Mục Core Tích Sản",
+      "status": "Pending",
+      "target_date": "2026-11-14"
+    },
+    {
+      "stage": "Stage 3",
+      "title": "Vĩ Mô Chu Kỳ, Quản Trị Rủi Ro ATR Risk-Parity & Vận Hành Danh Mục Satellite",
+      "status": "Pending",
+      "target_date": "2026-11-21"
+    },
+    {
+      "stage": "Stage 4",
+      "title": "Thực Chiến Đỉnh Cao, Kiểm Soát Tâm Lý & Tốt Nghiệp Chuyển Sang Vốn Thật",
+      "status": "Pending",
+      "target_date": "2026-11-30"
+    }
+  ],
+  "mentor_notes": "Học viên dành 4 tiếng/ngày — thời lượng lý tưởng để bứt phá nhanh. Chiến lược chọn lựa là Core & Satellite kết hợp mô phỏng Paper Trading giúp học viên vừa làm chủ nghệ thuật tích sản vừa rèn luyện kỹ năng lướt sóng kỷ luật mà không sợ mất vốn ban đầu.",
+  "last_briefing_date": "2026-10-31"
+}

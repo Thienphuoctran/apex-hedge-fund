@@ -1,0 +1,30 @@
+name: Victor 24/7 Intraday Portfolio Sentinel
+
+on:
+  schedule:
+    # Chạy mỗi 10 phút trong giờ giao dịch Việt Nam (UTC 02:00 - 08:00 tức 09:00 - 15:00 VN) Thứ 2 - Thứ 6
+    - cron: '*/10 2-8 * * 1-5'
+    # Chạy mỗi 10 phút trong giờ giao dịch Mỹ (UTC 13:30 - 20:30 tức 20:30 - 03:30 VN) Thứ 2 - Thứ 6
+    - cron: '*/10 13-20 * * 1-5'
+  workflow_dispatch: # Cho phép bấm nút quét thủ công trên GitHub bất cứ lúc nào
+
+jobs:
+  sentinel_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install yfinance
+
+      - name: Run Victor Sentinel Scan
+        run: |
+          python scripts/intraday_portfolio_sentinel.py --scan-once

@@ -1,0 +1,54 @@
+name: Apex Overnight Autonomous Quantitative Fund & Morning Briefing
+
+on:
+  schedule:
+    # 00:30 UTC = 07:30 Sáng VN (Thứ 2 đến Thứ 6)
+    # Tự động nghiên cứu đêm, thẩm định BCTC US/VN, kích hoạt Master CIO & gửi Telegram sáng sớm
+    - cron: '30 0 * * 1-5'
+    # 08:15 UTC = 15:15 Chiều VN (Thứ 2 đến Thứ 6)
+    # Tự động chốt phiên HOSE/HNX, đối soát hiệu suất Walk-Forward Hit Rate % & tự học thích nghi
+    - cron: '15 8 * * 1-5'
+  workflow_dispatch: # Cho phép bấm nút chạy thủ công bất cứ lúc nào từ điện thoại hoặc máy tính
+
+permissions:
+  contents: write
+
+jobs:
+  run_autonomous_fund:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Quantitative Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install yfinance pandas requests numpy
+
+      - name: Run Overnight Autonomous Master Fund Pipeline
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/run_master_unified_fund.py
+
+      - name: Commit & Push Updated Research, BCTC Reports & Blotters
+        run: |
+          git config --global user.name "Apex CIO Autonomous Agent"
+          git config --global user.email "autonomous-bot@apex-fund.internal"
+          git add 01_Macro_Geopolitics/ 02_Equity_Research/ 03_Synthesis_Memos/ 04_Investment_Committee/ 05_Learning_And_Evolution/ 06_Investor_Academy_And_Mentorship/ 07_Daily_Investment_Specialist/ 08_Master_Investment_CIO/ 09_Realtime_Portfolio_Sentinel/ VN_Market/
+          if git diff --staged --quiet; then
+            echo "No new changes to commit."
+          else
+            git commit -m "chore(auto): Nightly Autonomous Investment Research & Master Blotter Sync [skip ci]"
+            git push origin HEAD || echo "Push failed or no upstream configured."
+          fi

@@ -1,0 +1,593 @@
+{
+  "last_scan_utc": "2026-10-31T11:55:41.432684",
+  "total_positions_monitored": 22,
+  "emergency_alerts_active": 0,
+  "status": "ALL_NORMAL",
+  "positions": [
+    {
+      "symbol": "NVDA",
+      "market": "US_GLOBAL",
+      "name": "NVIDIA Corp.",
+      "current_price": 204.63999938964844,
+      "prev_close": 210.1468,
+      "change_pct": -2.62,
+      "stop_loss_2atr": 192.75,
+      "stop_dist_pct": 5.81,
+      "volume_surge_ratio": 1.47,
+      "vwap_est": 204.87,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -2.62% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 14938.72,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 73,
+      "allocated_capital": 14938.72,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế độc tôn tuyệt đối với 85%+ thị phần chip gia tốc AI toàn cầu. Doanh thu tăng trưởng +62.5% YoY, FCF khổng lồ +$60.8B USD, biên gộp 75.1%. Hôm qua tăng +0.58% ngay khi VIX dịu lại.",
+      "catalysts": "Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết công suất cả năm tới. Các tập đoàn siêu đám mây (Meta, Google, Microsoft) cam kết chi tiêu vốn (CapEx) vượt $200 tỷ USD cho hạ tầng AI."
+    },
+    {
+      "symbol": "AVGO",
+      "market": "US_GLOBAL",
+      "name": "Broadcom Inc.",
+      "current_price": 326.0799865722656,
+      "prev_close": 335.13,
+      "change_pct": -2.7,
+      "stop_loss_2atr": 302.75,
+      "stop_dist_pct": 7.15,
+      "volume_surge_ratio": 1.59,
+      "vwap_est": 325.79,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -2.70% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 13695.36,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 42,
+      "allocated_capital": 13695.36,
+      "currency": "USD",
+      "bctc_thesis": "Cổ phiếu bị bán tháo quá đà lùi về vùng quá bán sâu (RSI chạm 33.9) tạo ra phân kỳ dương. Nội tại cực khỏe với FCF +$22.8B USD, biên gộp 76.2%. Hôm qua đã bật tăng mạnh +0.78% lên $326.08 xác nhận đáy ngắn hạn.",
+      "catalysts": "Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưởng bùng nổ 3 con số. Việc sáp nhập VMware bắt đầu phát huy hiệu quả cắt giảm chi phí và gia tăng dòng tiền thuê bao phần mềm doanh nghiệp."
+    },
+    {
+      "symbol": "TSM",
+      "market": "US_GLOBAL",
+      "name": "Taiwan Semiconductor (TSMC)",
+      "current_price": 406.1300048828125,
+      "prev_close": 419.5,
+      "change_pct": -3.19,
+      "stop_loss_2atr": 380.4,
+      "stop_dist_pct": 6.34,
+      "volume_surge_ratio": 2.07,
+      "vwap_est": 408.11,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -3.19% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 12996.16,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 32,
+      "allocated_capital": 12996.16,
+      "currency": "USD",
+      "bctc_thesis": "Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
+      "catalysts": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia."
+    },
+    {
+      "symbol": "GOOGL",
+      "market": "US_GLOBAL",
+      "name": "Alphabet Inc.",
+      "current_price": 279.8399963378906,
+      "prev_close": 280.66,
+      "change_pct": -0.29,
+      "stop_loss_2atr": 258.28,
+      "stop_dist_pct": 7.7,
+      "volume_surge_ratio": 2.31,
+      "vwap_est": 279.97,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 12872.64,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 46,
+      "allocated_capital": 12872.64,
+      "currency": "USD",
+      "bctc_thesis": "Đây là cơ hội khắc phục thiếu sót hôm qua (GAP-01): Alphabet là cổ phiếu định giá rẻ nhất trong nhóm Magnificent 7 với Forward P/E chỉ 20.9x trong khi sở hữu FCF khổng lồ +$52.4B USD. Đã qua mùa BCTC an toàn.",
+      "catalysts": "Mảng Google Cloud đạt bước ngoặt mở rộng biên lợi nhuận hoạt động lên 11.2%. Mô hình AI Gemini 2.0 tích hợp sâu vào Workspace và hệ sinh thái Android. Cổ phiếu vừa trải qua nhịp rũ bỏ quá bán (RSI chạm 36.9) và hôm qua đã bật tăng +0.38% xác nhận lực cầu đảo chiều."
+    },
+    {
+      "symbol": "FPT",
+      "market": "VIETNAM",
+      "name": "Tập Đoàn FPT",
+      "current_price": 52700.0,
+      "prev_close": 52700.0,
+      "change_pct": 0.0,
+      "stop_loss_2atr": 49870.0,
+      "stop_dist_pct": 5.37,
+      "volume_surge_ratio": 0.9,
+      "vwap_est": 52933.33,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 2 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 264000000.0,
+        "hedge_ratio_pct": 104.4
+      },
+      "shares": 4800,
+      "allocated_capital": 252960000.0,
+      "currency": "VND",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
+      "catalysts": "Hợp đồng IT dịch vụ toàn cầu đạt mốc >1 tỷ USD, liên minh chip bán dẫn và AI Factory hợp tác cùng NVIDIA, mảng giáo dục tăng trưởng >30%."
+    },
+    {
+      "symbol": "HPG",
+      "market": "VIETNAM",
+      "name": "Tập Đoàn Hòa Phát",
+      "current_price": 21000.0,
+      "prev_close": 21200.0,
+      "change_pct": -0.94,
+      "stop_loss_2atr": 20120.0,
+      "stop_dist_pct": 4.19,
+      "volume_surge_ratio": 1.37,
+      "vwap_est": 21166.67,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 2 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 264000000.0,
+        "hedge_ratio_pct": 116.4
+      },
+      "shares": 10800,
+      "allocated_capital": 226800000.0,
+      "currency": "VND",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng A, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
+      "catalysts": "Khu liên hợp Dung Quất 2 chạy thử lò cao số 1, nâng công suất thép thô thêm 5.6 triệu tấn/năm, hưởng lợi từ thuế chống bán phá giá HRC."
+    },
+    {
+      "symbol": "SSI",
+      "market": "VIETNAM",
+      "name": "Chứng Khoán SSI",
+      "current_price": 19300.0,
+      "prev_close": 19600.0,
+      "change_pct": -1.53,
+      "stop_loss_2atr": 18500.0,
+      "stop_dist_pct": 4.15,
+      "volume_surge_ratio": 0.74,
+      "vwap_est": 19433.33,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 2 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 264000000.0,
+        "hedge_ratio_pct": 130.3
+      },
+      "shares": 10500,
+      "allocated_capital": 202650000.0,
+      "currency": "VND",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng A, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
+      "catalysts": "Thanh khoản TTCK phục hồi, room margin lớn sau tăng vốn, hưởng lợi trực tiếp từ việc triển khai Non-prefunding cho khối ngoại và nâng hạng FTSE."
+    },
+    {
+      "symbol": "MWG",
+      "market": "VIETNAM",
+      "name": "Thế Giới Di Động",
+      "current_price": 74000.0,
+      "prev_close": 75800.0,
+      "change_pct": -2.37,
+      "stop_loss_2atr": 71360.0,
+      "stop_dist_pct": 3.57,
+      "volume_surge_ratio": 0.84,
+      "vwap_est": 74566.67,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -2.37% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 2 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 264000000.0,
+        "hedge_ratio_pct": 132.1
+      },
+      "shares": 2700,
+      "allocated_capital": 199800000.0,
+      "currency": "VND",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
+      "catalysts": "Bách Hóa Xanh chính thức có lãi ròng và chuẩn bị kế hoạch IPO/bán vốn ngoại, tái cơ cấu chuỗi Thế Giới Di Động & Điện Máy Xanh thành công."
+    },
+    {
+      "symbol": "JPM",
+      "market": "US_GLOBAL",
+      "name": "JPM",
+      "current_price": 337.0400085449219,
+      "prev_close": 345.25,
+      "change_pct": -2.38,
+      "stop_loss_2atr": 325.02,
+      "stop_dist_pct": 3.57,
+      "volume_surge_ratio": 1.15,
+      "vwap_est": 339.15,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -2.38% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 3370.4,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 10,
+      "allocated_capital": 3370.4,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế danh mục IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "V",
+      "market": "US_GLOBAL",
+      "name": "V",
+      "current_price": 413.5899963378906,
+      "prev_close": 416.25,
+      "change_pct": -0.64,
+      "stop_loss_2atr": 394.89,
+      "stop_dist_pct": 4.52,
+      "volume_surge_ratio": 1.11,
+      "vwap_est": 414.14,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 4135.9,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 10,
+      "allocated_capital": 4135.9,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế danh mục IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "PG",
+      "market": "US_GLOBAL",
+      "name": "PG",
+      "current_price": 161.57000732421875,
+      "prev_close": 162.907,
+      "change_pct": -0.82,
+      "stop_loss_2atr": 153.44,
+      "stop_dist_pct": 5.03,
+      "volume_surge_ratio": 1.29,
+      "vwap_est": 162.65,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 1615.6999999999998,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 10,
+      "allocated_capital": 1615.6999999999998,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế danh mục IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "MSFT",
+      "market": "US_GLOBAL",
+      "name": "MSFT",
+      "current_price": 521.9099731445312,
+      "prev_close": 529.0521,
+      "change_pct": -1.35,
+      "stop_loss_2atr": 513.48,
+      "stop_dist_pct": 1.62,
+      "volume_surge_ratio": 1.46,
+      "vwap_est": 520.75,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 5219.099999999999,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 10,
+      "allocated_capital": 5219.099999999999,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế danh mục IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "COST",
+      "market": "US_GLOBAL",
+      "name": "COST",
+      "current_price": 1012.280029296875,
+      "prev_close": 1011.0,
+      "change_pct": 0.13,
+      "stop_loss_2atr": 970.53,
+      "stop_dist_pct": 4.12,
+      "volume_surge_ratio": 1.65,
+      "vwap_est": 1013.38,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 10122.8,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 10,
+      "allocated_capital": 10122.8,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế danh mục IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "OXY",
+      "market": "US_GLOBAL",
+      "name": "OXY",
+      "current_price": 64.0,
+      "prev_close": 63.43,
+      "change_pct": 0.9,
+      "stop_loss_2atr": 60.2,
+      "stop_dist_pct": 5.94,
+      "volume_surge_ratio": 1.08,
+      "vwap_est": 63.8,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 640.0,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 10,
+      "allocated_capital": 640.0,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế danh mục IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "ABBV",
+      "market": "US_GLOBAL",
+      "name": "ABBV",
+      "current_price": 294.8900146484375,
+      "prev_close": 293.48,
+      "change_pct": 0.48,
+      "stop_loss_2atr": 278.12,
+      "stop_dist_pct": 5.69,
+      "volume_surge_ratio": 1.45,
+      "vwap_est": 294.88,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 2948.8999999999996,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 10,
+      "allocated_capital": 2948.8999999999996,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế danh mục IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "JNJ",
+      "market": "US_GLOBAL",
+      "name": "JNJ",
+      "current_price": 273.20001220703125,
+      "prev_close": 278.97,
+      "change_pct": -2.07,
+      "stop_loss_2atr": 254.72,
+      "stop_dist_pct": 6.76,
+      "volume_surge_ratio": 1.3,
+      "vwap_est": 276.12,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -2.07% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
+      "hedging_solution": {
+        "instrument": "SPY / QQQ Put Options Protective Collar",
+        "action": "BUY 1 PUT CONTRACT(S) AT-THE-MONEY",
+        "notional_hedged_usd": 2732.0,
+        "hedge_ratio_pct": 100.0
+      },
+      "shares": 10,
+      "allocated_capital": 2732.0,
+      "currency": "USD",
+      "bctc_thesis": "Vị thế danh mục IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "VHM",
+      "market": "VIETNAM",
+      "name": "VHM",
+      "current_price": 63000.0,
+      "prev_close": 62100.0,
+      "change_pct": 1.45,
+      "stop_loss_2atr": 58590.0,
+      "stop_dist_pct": 7.0,
+      "volume_surge_ratio": 1.67,
+      "vwap_est": 62366.67,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 209.5
+      },
+      "shares": 1000,
+      "allocated_capital": 63000000.0,
+      "currency": "VND",
+      "bctc_thesis": "Vị thế danh mục VN IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "BID",
+      "market": "VIETNAM",
+      "name": "BID",
+      "current_price": 33400.0,
+      "prev_close": 33850.0,
+      "change_pct": -1.33,
+      "stop_loss_2atr": 32071.0,
+      "stop_dist_pct": 3.98,
+      "volume_surge_ratio": 0.94,
+      "vwap_est": 33566.67,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 395.2
+      },
+      "shares": 1000,
+      "allocated_capital": 33400000.0,
+      "currency": "VND",
+      "bctc_thesis": "Vị thế danh mục VN IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "VCG",
+      "market": "VIETNAM",
+      "name": "VCG",
+      "current_price": 14800.0,
+      "prev_close": 15300.0,
+      "change_pct": -3.27,
+      "stop_loss_2atr": 13800.0,
+      "stop_dist_pct": 6.76,
+      "volume_surge_ratio": 1.59,
+      "vwap_est": 15050.0,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -3.27% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 891.9
+      },
+      "shares": 1000,
+      "allocated_capital": 14800000.0,
+      "currency": "VND",
+      "bctc_thesis": "Vị thế danh mục VN IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "DGC",
+      "market": "VIETNAM",
+      "name": "DGC",
+      "current_price": 33300.0,
+      "prev_close": 33300.0,
+      "change_pct": 0.0,
+      "stop_loss_2atr": 31986.0,
+      "stop_dist_pct": 3.95,
+      "volume_surge_ratio": 0.44,
+      "vwap_est": 33450.0,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 396.4
+      },
+      "shares": 1000,
+      "allocated_capital": 33300000.0,
+      "currency": "VND",
+      "bctc_thesis": "Vị thế danh mục VN IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "KBC",
+      "market": "VIETNAM",
+      "name": "KBC",
+      "current_price": 26000.0,
+      "prev_close": 26500.0,
+      "change_pct": -1.89,
+      "stop_loss_2atr": 24964.0,
+      "stop_dist_pct": 3.98,
+      "volume_surge_ratio": 1.06,
+      "vwap_est": 26166.67,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 507.7
+      },
+      "shares": 1000,
+      "allocated_capital": 26000000.0,
+      "currency": "VND",
+      "bctc_thesis": "Vị thế danh mục VN IC Tracker",
+      "catalysts": ""
+    },
+    {
+      "symbol": "SZC",
+      "market": "VIETNAM",
+      "name": "SZC",
+      "current_price": 19300.0,
+      "prev_close": 19400.0,
+      "change_pct": -0.52,
+      "stop_loss_2atr": 18057.0,
+      "stop_dist_pct": 6.44,
+      "volume_surge_ratio": 2.09,
+      "vwap_est": 19416.67,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 683.9
+      },
+      "shares": 1000,
+      "allocated_capital": 19300000.0,
+      "currency": "VND",
+      "bctc_thesis": "Vị thế danh mục VN IC Tracker",
+      "catalysts": ""
+    }
+  ]
+}

@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống AI Multi-Agent Đầu Tư Chứng Khoán Việt Nam</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #182234;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-green: #22c55e;
+            --accent-red: #ef4444;
+            --accent-yellow: #eab308;
+            --border-color: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background: var(--bg-primary); color: var(--text-primary); padding: 24px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+        .header h1 { font-size: 24px; color: var(--accent-blue); }
+        .header p { color: var(--text-secondary); font-size: 14px; margin-top: 4px; }
+        
+        .macro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; }
+        .card h4 { color: var(--text-secondary); font-size: 13px; font-weight: normal; margin-bottom: 6px; }
+        .card .value { font-size: 20px; font-weight: bold; color: var(--text-primary); }
+        .card .sub { font-size: 12px; color: var(--accent-blue); margin-top: 4px; }
+
+        .section-title { font-size: 18px; margin: 24px 0 16px 0; color: var(--accent-blue); display: flex; align-items: center; gap: 8px; }
+        
+        .orders-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .order-card { border-left: 4px solid var(--accent-green); }
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .stock-title { font-size: 18px; font-weight: bold; margin-right: 8px; color: #fff; }
+        .stock-sub { font-size: 13px; color: var(--text-secondary); }
+        .order-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+        .order-metric { background: var(--bg-secondary); padding: 8px 12px; border-radius: 6px; }
+        .metric-label { display: block; font-size: 11px; color: var(--text-secondary); }
+        .metric-val { display: block; font-size: 14px; font-weight: bold; margin-top: 2px; }
+        .order-footer { font-size: 12px; color: var(--text-secondary); line-height: 1.4; border-top: 1px solid var(--border-color); padding-top: 8px; }
+
+        table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); }
+        th, td { padding: 12px 14px; text-align: left; font-size: 13px; border-bottom: 1px solid var(--border-color); }
+        th { background: var(--bg-secondary); color: var(--text-secondary); font-weight: 600; text-transform: uppercase; font-size: 11px; }
+        tr:hover { background: rgba(56, 189, 248, 0.05); }
+        
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+        .badge-aaa { background: rgba(34, 197, 94, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }
+        .badge-a { background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); }
+        .badge-warn { background: rgba(234, 179, 8, 0.2); color: var(--accent-yellow); }
+        .badge-bull { background: rgba(34, 197, 94, 0.2); color: var(--accent-green); }
+        .badge-neut { background: rgba(148, 163, 184, 0.2); color: var(--text-secondary); }
+        .exchange-tag { background: #334155; padding: 2px 6px; border-radius: 4px; font-size: 10px; }
+
+        .text-green { color: var(--accent-green); }
+        .text-red { color: var(--accent-red); }
+        .text-yellow { color: var(--accent-yellow); }
+        .text-blue { color: var(--accent-blue); }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h1>🏛️ HỆ THỐNG AI ĐẦU TƯ ĐỊNH LƯỢNG & MỔ XẺ BCTC CHỨNG KHOÁN VIỆT NAM</h1>
+            <p>Phiên giao dịch: 2026-10-31 | Chu kỳ thanh toán: T+2.5 | Quản trị biên độ: HOSE 7% - HNX 10% | Độc lập 100%</p>
+        </div>
+        <div>
+            <span class="badge badge-aaa">Trạng thái: Hoạt động đồng bộ 7 Ban</span>
+        </div>
+    </div>
+
+    <div class="macro-grid">
+        <div class="card">
+            <h4>Lãi Suất Tái Cấp Vốn SBV</h4>
+            <div class="value">4.5%</div>
+            <div class="sub">Hỗ trợ thanh khoản</div>
+        </div>
+        <div class="card">
+            <h4>Tỷ Giá USD / VND</h4>
+            <div class="value">25,420 đ</div>
+            <div class="sub">Đi ngang quanh đỉnh biên độ</div>
+        </div>
+        <div class="card">
+            <h4>Tăng Trưởng Tín Dụng YTD</h4>
+            <div class="value">9.2%</div>
+            <div class="sub">Mục tiêu: 15.0%</div>
+        </div>
+        <div class="card">
+            <h4>Giải Ngân Đầu Tư Công</h4>
+            <div class="value">52.8%</div>
+            <div class="sub">Thúc đẩy hạ tầng giao thông</div>
+        </div>
+        <div class="card">
+            <h4>Chỉ Số DXY Quốc Tế</h4>
+            <div class="value">101.96</div>
+            <div class="sub">Lợi suất US10Y: 4.93%</div>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <span>⚡ SỔ LỆNH THỰC THI TRONG NGÀY CỦA CHUYÊN VIÊN MINH QUÂN (BAN 7 — 8H30 AM)</span>
+    </div>
+
+    <div class="orders-container">
+        
+        <div class="card order-card">
+            <div class="card-header">
+                <div>
+                    <span class="stock-title">HPG</span>
+                    <span class="stock-sub">Tập Đoàn Hòa Phát (HOSE)</span>
+                </div>
+                <span class="badge badge-aaa">EV: +4.11%</span>
+            </div>
+            <div class="order-grid">
+                <div class="order-metric">
+                    <span class="metric-label">Thị giá hiện tại</span>
+                    <span class="metric-val">21,000 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Vùng mua thăm dò (60%)</span>
+                    <span class="metric-val text-blue">20,900 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Vùng mua gia tăng (40%)</span>
+                    <span class="metric-val text-green">21,310 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Cắt lỗ (Stop 2xATR)</span>
+                    <span class="metric-val text-red">20,120 đ (-4.19%)</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Mục tiêu chốt lời TP1</span>
+                    <span class="metric-val text-green">22,100 đ (+5.24%)</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Tỷ lệ Risk / Reward</span>
+                    <span class="metric-val">1:2.25</span>
+                </div>
+            </div>
+            <div class="order-footer">
+                <small><strong>Chất xúc tác BCTC:</strong> Khu liên hợp Dung Quất 2 chạy thử lò cao số 1, nâng công suất thép thô thêm 5.6 triệu tấn/năm, hưởng lợi từ thuế chống bán phá giá HRC.</small>
+            </div>
+        </div>
+        
+        <div class="card order-card">
+            <div class="card-header">
+                <div>
+                    <span class="stock-title">MWG</span>
+                    <span class="stock-sub">Thế Giới Di Động (HOSE)</span>
+                </div>
+                <span class="badge badge-aaa">EV: +3.5%</span>
+            </div>
+            <div class="order-grid">
+                <div class="order-metric">
+                    <span class="metric-label">Thị giá hiện tại</span>
+                    <span class="metric-val">74,000 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Vùng mua thăm dò (60%)</span>
+                    <span class="metric-val text-blue">73,630 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Vùng mua gia tăng (40%)</span>
+                    <span class="metric-val text-green">75,110 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Cắt lỗ (Stop 2xATR)</span>
+                    <span class="metric-val text-red">71,360 đ (-3.57%)</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Mục tiêu chốt lời TP1</span>
+                    <span class="metric-val text-green">77,300 đ (+4.46%)</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Tỷ lệ Risk / Reward</span>
+                    <span class="metric-val">1:2.25</span>
+                </div>
+            </div>
+            <div class="order-footer">
+                <small><strong>Chất xúc tác BCTC:</strong> Bách Hóa Xanh chính thức có lãi ròng và chuẩn bị kế hoạch IPO/bán vốn ngoại, tái cơ cấu chuỗi Thế Giới Di Động & Điện Máy Xanh thành công.</small>
+            </div>
+        </div>
+        
+        <div class="card order-card">
+            <div class="card-header">
+                <div>
+                    <span class="stock-title">FPT</span>
+                    <span class="stock-sub">Tập Đoàn FPT (HOSE)</span>
+                </div>
+                <span class="badge badge-aaa">EV: +5.26%</span>
+            </div>
+            <div class="order-grid">
+                <div class="order-metric">
+                    <span class="metric-label">Thị giá hiện tại</span>
+                    <span class="metric-val">52,700 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Vùng mua thăm dò (60%)</span>
+                    <span class="metric-val text-blue">52,440 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Vùng mua gia tăng (40%)</span>
+                    <span class="metric-val text-green">53,490 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Cắt lỗ (Stop 2xATR)</span>
+                    <span class="metric-val text-red">49,870 đ (-5.37%)</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Mục tiêu chốt lời TP1</span>
+                    <span class="metric-val text-green">56,240 đ (+6.72%)</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Tỷ lệ Risk / Reward</span>
+                    <span class="metric-val">1:2.25</span>
+                </div>
+            </div>
+            <div class="order-footer">
+                <small><strong>Chất xúc tác BCTC:</strong> Hợp đồng IT dịch vụ toàn cầu đạt mốc >1 tỷ USD, liên minh chip bán dẫn và AI Factory hợp tác cùng NVIDIA, mảng giáo dục tăng trưởng >30%.</small>
+            </div>
+        </div>
+        
+        <div class="card order-card">
+            <div class="card-header">
+                <div>
+                    <span class="stock-title">SSI</span>
+                    <span class="stock-sub">Chứng Khoán SSI (HOSE)</span>
+                </div>
+                <span class="badge badge-aaa">EV: +4.06%</span>
+            </div>
+            <div class="order-grid">
+                <div class="order-metric">
+                    <span class="metric-label">Thị giá hiện tại</span>
+                    <span class="metric-val">19,300 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Vùng mua thăm dò (60%)</span>
+                    <span class="metric-val text-blue">19,200 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Vùng mua gia tăng (40%)</span>
+                    <span class="metric-val text-green">19,590 đ</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Cắt lỗ (Stop 2xATR)</span>
+                    <span class="metric-val text-red">18,500 đ (-4.15%)</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Mục tiêu chốt lời TP1</span>
+                    <span class="metric-val text-green">20,300 đ (+5.18%)</span>
+                </div>
+                <div class="order-metric">
+                    <span class="metric-label">Tỷ lệ Risk / Reward</span>
+                    <span class="metric-val">1:2.25</span>
+                </div>
+            </div>
+            <div class="order-footer">
+                <small><strong>Chất xúc tác BCTC:</strong> Thanh khoản TTCK phục hồi, room margin lớn sau tăng vốn, hưởng lợi trực tiếp từ việc triển khai Non-prefunding cho khối ngoại và nâng hạng FTSE.</small>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="section-title">
+        <span>📊 BẢNG THEO DÕI TOÀN DIỆN 46 SIÊU CỔ PHIẾU ĐẦU NGÀNH (BCTC & DÒNG TIỀN)</span>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Sàn</th>
+                <th>Nhóm Ngành</th>
+                <th>Thị Giá</th>
+                <th>Biến Động 1D</th>
+                <th>P/E</th>
+                <th>P/B</th>
+                <th>Tiền Thật (OCF/LNST)</th>
+                <th>Đòn Bẩy (D/E)</th>
+                <th>Xếp Hạng BCTC</th>
+                <th>Dự Báo Xu Hướng</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <td><strong>VCB</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>56,300 đ</strong></td>
+            <td class="text-red"><strong>-1.57%</strong></td>
+            <td>11.54</td>
+            <td>1.89</td>
+            <td>0.81x</td>
+            <td>9.45x</td>
+            <td><span class="badge badge-warn">RED_FLAG</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>BID</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>33,400 đ</strong></td>
+            <td class="text-red"><strong>-1.33%</strong></td>
+            <td>7.94</td>
+            <td>1.35</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>CTG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>30,300 đ</strong></td>
+            <td class="text-red"><strong>-1.30%</strong></td>
+            <td>5.86</td>
+            <td>1.18</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>TCB</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>21,600 đ</strong></td>
+            <td class="text-red"><strong>-3.36%</strong></td>
+            <td>8.29</td>
+            <td>1.23</td>
+            <td>0.87x</td>
+            <td>5.14x</td>
+            <td><span class="badge badge-warn">RED_FLAG</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>MBB</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>19,300 đ</strong></td>
+            <td class="text-red"><strong>-2.03%</strong></td>
+            <td>6.07</td>
+            <td>1.2</td>
+            <td>0.83x</td>
+            <td>6.83x</td>
+            <td><span class="badge badge-warn">RED_FLAG</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>ACB</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>21,000 đ</strong></td>
+            <td class="text-red"><strong>-1.41%</strong></td>
+            <td>7.79</td>
+            <td>1.17</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VPB</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>22,950 đ</strong></td>
+            <td class="text-red"><strong>-1.08%</strong></td>
+            <td>7.54</td>
+            <td>1.29</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>HDB</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>22,400 đ</strong></td>
+            <td class="text-red"><strong>-1.32%</strong></td>
+            <td>10.05</td>
+            <td>1.7</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>STB</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Ngân Hàng & Dịch Vụ Tài Chính</td>
+            <td><strong>66,300 đ</strong></td>
+            <td class="text-red"><strong>-0.90%</strong></td>
+            <td>9.97</td>
+            <td>12.5</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VHM</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Dân Cư</td>
+            <td><strong>63,000 đ</strong></td>
+            <td class="text-green"><strong>+1.45%</strong></td>
+            <td>6.6</td>
+            <td>1.99</td>
+            <td>0.75x</td>
+            <td>0.32x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VRE</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Dân Cư</td>
+            <td><strong>24,050 đ</strong></td>
+            <td class="text-red"><strong>-0.41%</strong></td>
+            <td>7.4</td>
+            <td>1.11</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>KDH</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Dân Cư</td>
+            <td><strong>13,900 đ</strong></td>
+            <td class="text-red"><strong>-0.71%</strong></td>
+            <td>10.74</td>
+            <td>0.92</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>NLG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Dân Cư</td>
+            <td><strong>22,000 đ</strong></td>
+            <td class="text-red"><strong>-4.35%</strong></td>
+            <td>18.47</td>
+            <td>0.85</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>PDR</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Dân Cư</td>
+            <td><strong>11,300 đ</strong></td>
+            <td class="text-red"><strong>-0.88%</strong></td>
+            <td>19.15</td>
+            <td>0.9</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>DXG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Dân Cư</td>
+            <td><strong>10,100 đ</strong></td>
+            <td class="text-green"><strong>+2.23%</strong></td>
+            <td>129.4</td>
+            <td>0.9</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>BCM</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Khu Công Nghiệp</td>
+            <td><strong>38,400 đ</strong></td>
+            <td class="text-red"><strong>-2.91%</strong></td>
+            <td>20.9</td>
+            <td>1.75</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>IDC</strong></td>
+            <td><span class="exchange-tag">HNX</span></td>
+            <td>Bất Động Sản Khu Công Nghiệp</td>
+            <td><strong>0 đ</strong></td>
+            <td class="text-yellow"><strong>0.00%</strong></td>
+            <td>-</td>
+            <td>-</td>
+            <td>1.28x</td>
+            <td>0.53x</td>
+            <td><span class="badge badge-aaa">AAA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>KBC</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Khu Công Nghiệp</td>
+            <td><strong>26,000 đ</strong></td>
+            <td class="text-red"><strong>-1.89%</strong></td>
+            <td>14.17</td>
+            <td>0.94</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>SZC</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Khu Công Nghiệp</td>
+            <td><strong>19,300 đ</strong></td>
+            <td class="text-red"><strong>-0.52%</strong></td>
+            <td>24.39</td>
+            <td>1.42</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VGC</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bất Động Sản Khu Công Nghiệp</td>
+            <td><strong>42,200 đ</strong></td>
+            <td class="text-red"><strong>-0.24%</strong></td>
+            <td>10.84</td>
+            <td>2.13</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>HPG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Thép & Vật Liệu Xây Dựng</td>
+            <td><strong>21,000 đ</strong></td>
+            <td class="text-red"><strong>-0.94%</strong></td>
+            <td>7.55</td>
+            <td>1.37</td>
+            <td>1.29x</td>
+            <td>0.61x</td>
+            <td><span class="badge badge-a">A</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>HSG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Thép & Vật Liệu Xây Dựng</td>
+            <td><strong>10,850 đ</strong></td>
+            <td class="text-red"><strong>-2.69%</strong></td>
+            <td>13.73</td>
+            <td>0.74</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>NKG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Thép & Vật Liệu Xây Dựng</td>
+            <td><strong>11,900 đ</strong></td>
+            <td class="text-red"><strong>-1.65%</strong></td>
+            <td>36.35</td>
+            <td>0.77</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-warn">OVERBOUGHT_PULLBACK</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>MWG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bán Lẻ & Tiêu Dùng Thiết Yếu</td>
+            <td><strong>74,000 đ</strong></td>
+            <td class="text-red"><strong>-2.37%</strong></td>
+            <td>9.8</td>
+            <td>3.33</td>
+            <td>2.12x</td>
+            <td>0.89x</td>
+            <td><span class="badge badge-aaa">AAA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>FRT</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bán Lẻ & Tiêu Dùng Thiết Yếu</td>
+            <td><strong>148,700 đ</strong></td>
+            <td class="text-green"><strong>+0.68%</strong></td>
+            <td>23.12</td>
+            <td>5.54</td>
+            <td>5.0x</td>
+            <td>3.42x</td>
+            <td><span class="badge badge-warn">RED_FLAG</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>MSN</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bán Lẻ & Tiêu Dùng Thiết Yếu</td>
+            <td><strong>70,000 đ</strong></td>
+            <td class="text-red"><strong>-2.91%</strong></td>
+            <td>11.88</td>
+            <td>2.34</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VNM</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bán Lẻ & Tiêu Dùng Thiết Yếu</td>
+            <td><strong>56,900 đ</strong></td>
+            <td class="text-red"><strong>-1.39%</strong></td>
+            <td>12.31</td>
+            <td>3.73</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>PNJ</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bán Lẻ & Tiêu Dùng Thiết Yếu</td>
+            <td><strong>15,500 đ</strong></td>
+            <td class="text-red"><strong>-3.43%</strong></td>
+            <td>3.23</td>
+            <td>0.57</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">TACTICAL_REBOUND</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>DGW</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Bán Lẻ & Tiêu Dùng Thiết Yếu</td>
+            <td><strong>40,950 đ</strong></td>
+            <td class="text-red"><strong>-3.65%</strong></td>
+            <td>11.19</td>
+            <td>2.64</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">TACTICAL_REBOUND</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>FPT</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Công Nghệ Thông Tin & Viễn Thông</td>
+            <td><strong>52,700 đ</strong></td>
+            <td class="text-yellow"><strong>0.00%</strong></td>
+            <td>11.49</td>
+            <td>2.71</td>
+            <td>1.15x</td>
+            <td>0.41x</td>
+            <td><span class="badge badge-aaa">AAA</span></td>
+            <td><span class="badge badge-neut">TACTICAL_REBOUND</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>CMG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Công Nghệ Thông Tin & Viễn Thông</td>
+            <td><strong>18,500 đ</strong></td>
+            <td class="text-red"><strong>-2.12%</strong></td>
+            <td>11.67</td>
+            <td>1.29</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">TACTICAL_REBOUND</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>SSI</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dịch Vụ Chứng Khoán & Môi Giới</td>
+            <td><strong>19,300 đ</strong></td>
+            <td class="text-red"><strong>-1.53%</strong></td>
+            <td>11.12</td>
+            <td>1.43</td>
+            <td>1.05x</td>
+            <td>1.46x</td>
+            <td><span class="badge badge-a">A</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VND</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dịch Vụ Chứng Khoán & Môi Giới</td>
+            <td><strong>13,400 đ</strong></td>
+            <td class="text-red"><strong>-1.47%</strong></td>
+            <td>9.85</td>
+            <td>0.94</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VCI</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dịch Vụ Chứng Khoán & Môi Giới</td>
+            <td><strong>18,500 đ</strong></td>
+            <td class="text-red"><strong>-2.63%</strong></td>
+            <td>14.86</td>
+            <td>1.26</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>HCM</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dịch Vụ Chứng Khoán & Môi Giới</td>
+            <td><strong>23,200 đ</strong></td>
+            <td class="text-green"><strong>+0.65%</strong></td>
+            <td>21.46</td>
+            <td>1.73</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>MBS</strong></td>
+            <td><span class="exchange-tag">HNX</span></td>
+            <td>Dịch Vụ Chứng Khoán & Môi Giới</td>
+            <td><strong>0 đ</strong></td>
+            <td class="text-yellow"><strong>0.00%</strong></td>
+            <td>-</td>
+            <td>-</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>GAS</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dầu Khí & Tiện Ích Năng Lượng</td>
+            <td><strong>78,000 đ</strong></td>
+            <td class="text-green"><strong>+2.63%</strong></td>
+            <td>14.85</td>
+            <td>2.74</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>PVS</strong></td>
+            <td><span class="exchange-tag">HNX</span></td>
+            <td>Dầu Khí & Tiện Ích Năng Lượng</td>
+            <td><strong>0 đ</strong></td>
+            <td class="text-yellow"><strong>0.00%</strong></td>
+            <td>-</td>
+            <td>-</td>
+            <td>1.44x</td>
+            <td>0.13x</td>
+            <td><span class="badge badge-aaa">AAA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>PVD</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dầu Khí & Tiện Ích Năng Lượng</td>
+            <td><strong>17,950 đ</strong></td>
+            <td class="text-red"><strong>-2.18%</strong></td>
+            <td>23.7</td>
+            <td>0.96</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>BSR</strong></td>
+            <td><span class="exchange-tag">UPCOM</span></td>
+            <td>Dầu Khí & Tiện Ích Năng Lượng</td>
+            <td><strong>27,600 đ</strong></td>
+            <td class="text-red"><strong>-0.18%</strong></td>
+            <td>7.32</td>
+            <td>1.86</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>POW</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dầu Khí & Tiện Ích Năng Lượng</td>
+            <td><strong>12,200 đ</strong></td>
+            <td class="text-red"><strong>-1.61%</strong></td>
+            <td>6.32</td>
+            <td>0.91</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>REE</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dầu Khí & Tiện Ích Năng Lượng</td>
+            <td><strong>45,400 đ</strong></td>
+            <td class="text-red"><strong>-0.22%</strong></td>
+            <td>10.93</td>
+            <td>1.35</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>PC1</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Dầu Khí & Tiện Ích Năng Lượng</td>
+            <td><strong>18,500 đ</strong></td>
+            <td class="text-red"><strong>-1.86%</strong></td>
+            <td>6.97</td>
+            <td>1.14</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>DGC</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Hóa Chất & Phân Bón</td>
+            <td><strong>33,300 đ</strong></td>
+            <td class="text-yellow"><strong>0.00%</strong></td>
+            <td>6.12</td>
+            <td>0.84</td>
+            <td>1.04x</td>
+            <td>0.07x</td>
+            <td><span class="badge badge-aaa">AAA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>DCM</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Hóa Chất & Phân Bón</td>
+            <td><strong>33,300 đ</strong></td>
+            <td class="text-red"><strong>-2.63%</strong></td>
+            <td>37.05</td>
+            <td>1.64</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>DPM</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Hóa Chất & Phân Bón</td>
+            <td><strong>20,400 đ</strong></td>
+            <td class="text-red"><strong>-2.39%</strong></td>
+            <td>13.25</td>
+            <td>1.22</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">TACTICAL_REBOUND</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>GMD</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Cảng Biển & Logistics Vận Tải</td>
+            <td><strong>52,700 đ</strong></td>
+            <td class="text-green"><strong>+1.15%</strong></td>
+            <td>15.01</td>
+            <td>2.46</td>
+            <td>1.12x</td>
+            <td>0.23x</td>
+            <td><span class="badge badge-aaa">AAA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>HAH</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Cảng Biển & Logistics Vận Tải</td>
+            <td><strong>49,650 đ</strong></td>
+            <td class="text-green"><strong>+1.22%</strong></td>
+            <td>7.53</td>
+            <td>1.77</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">NEUTRAL_ACCUMULATE</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>PVT</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Cảng Biển & Logistics Vận Tải</td>
+            <td><strong>21,250 đ</strong></td>
+            <td class="text-red"><strong>-0.23%</strong></td>
+            <td>8.83</td>
+            <td>1.11</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-bull">BULLISH</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VCG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Hạ Tầng Xây Dựng & Đầu Tư Công</td>
+            <td><strong>14,800 đ</strong></td>
+            <td class="text-red"><strong>-3.27%</strong></td>
+            <td>2.71</td>
+            <td>0.91</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>HHV</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Hạ Tầng Xây Dựng & Đầu Tư Công</td>
+            <td><strong>9,300 đ</strong></td>
+            <td class="text-red"><strong>-1.69%</strong></td>
+            <td>8.28</td>
+            <td>0.47</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>DBC</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Thủy Sản, Nông Nghiệp & Dược Phẩm</td>
+            <td><strong>15,400 đ</strong></td>
+            <td class="text-red"><strong>-2.53%</strong></td>
+            <td>6.78</td>
+            <td>0.76</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>VHC</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Thủy Sản, Nông Nghiệp & Dược Phẩm</td>
+            <td><strong>50,300 đ</strong></td>
+            <td class="text-red"><strong>-2.33%</strong></td>
+            <td>8.26</td>
+            <td>1.12</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">BEARISH_TRAP</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>DHG</strong></td>
+            <td><span class="exchange-tag">HOSE</span></td>
+            <td>Thủy Sản, Nông Nghiệp & Dược Phẩm</td>
+            <td><strong>86,900 đ</strong></td>
+            <td class="text-red"><strong>-0.46%</strong></td>
+            <td>13.06</td>
+            <td>3.23</td>
+            <td>1.17x</td>
+            <td>0.55x</td>
+            <td><span class="badge badge-aaa">AA</span></td>
+            <td><span class="badge badge-neut">TACTICAL_REBOUND</span></td>
+        </tr>
+        
+        </tbody>
+    </table>
+
+</body>
+</html>
