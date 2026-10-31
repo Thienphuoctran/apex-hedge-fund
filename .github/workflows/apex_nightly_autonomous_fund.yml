@@ -2,13 +2,18 @@ name: Apex Overnight Autonomous Quantitative Fund & Morning Briefing
 
 on:
   schedule:
-    # 00:30 UTC = 07:30 Sáng VN (Thứ 2 đến Thứ 6)
-    # Tự động nghiên cứu đêm, thẩm định BCTC US/VN, kích hoạt Master CIO & gửi Telegram sáng sớm
+    # 13:00 UTC = 20:00 Tối Chủ Nhật VN: Ban Đầu Tư Tối Cao Master CIO họp tổng duyệt BCTC & lập Sổ lệnh tuần mới
+    - cron: '0 13 * * 0'
+    # 00:30 UTC = 07:30 Sáng VN (Thứ 2 đến Thứ 6): Tự động nghiên cứu đêm, thẩm định BCTC US/VN, kích hoạt Master CIO & gửi Telegram sáng sớm
     - cron: '30 0 * * 1-5'
-    # 08:15 UTC = 15:15 Chiều VN (Thứ 2 đến Thứ 6)
-    # Tự động chốt phiên HOSE/HNX, đối soát hiệu suất Walk-Forward Hit Rate % & tự học thích nghi
+    # 08:15 UTC = 15:15 Chiều VN (Thứ 2 đến Thứ 6): Tự động chốt phiên HOSE/HNX, đối soát hiệu suất Walk-Forward Hit Rate % & tự học thích nghi
     - cron: '15 8 * * 1-5'
   workflow_dispatch: # Cho phép bấm nút chạy thủ công bất cứ lúc nào từ điện thoại hoặc máy tính
+    inputs:
+      capital_vnd:
+        description: 'Vốn đầu tư giải ngân (VNĐ)'
+        required: false
+        default: '15000000'
 
 permissions:
   contents: write
@@ -38,8 +43,9 @@ jobs:
       - name: Run Overnight Autonomous Master Fund Pipeline
         env:
           PYTHONIOENCODING: utf-8
+          CAPITAL_VND: ${{ github.event.inputs.capital_vnd || '15000000' }}
         run: |
-          python scripts/run_master_unified_fund.py
+          python scripts/run_master_unified_fund.py --capital-vnd $CAPITAL_VND
 
       - name: Commit & Push Updated Research, BCTC Reports & Blotters
         run: |
