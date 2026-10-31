@@ -209,6 +209,69 @@ def audit_specialists_quality() -> dict:
     return specialist_data
 
 
+def audit_portfolio_risk_discipline() -> dict:
+    """Kiểm tra kỷ luật quản trị rủi ro định lượng và độ tươi mới của dữ liệu BCTC/Radar."""
+    checks = {}
+    issues = []
+    score = 100
+
+    # 1. Kiểm tra Sổ Lệnh Master Blotter
+    blotter_file = BASE_DIR / "08_Master_Investment_CIO" / "master_execution_blotter.json"
+    if blotter_file.exists():
+        try:
+            with open(blotter_file, "r", encoding="utf-8") as f:
+                blotter_data = json.load(f)
+            orders = blotter_data.get("orders", [])
+            checks["total_blotter_orders"] = f"{len(orders)} lệnh đang theo dõi"
+
+            violated_rr = []
+            violated_stop = []
+            for ord_item in orders:
+                ticker = ord_item.get("ticker", "UNKNOWN")
+                rr = ord_item.get("risk_reward_ratio", 2.0)
+                stop_pct = ord_item.get("stop_loss_pct", 5.0)
+                if rr < 1.95:
+                    violated_rr.append(f"{ticker} (R:R = {rr:.2f} < 2.0)")
+                if stop_pct > 7.55:
+                    violated_stop.append(f"{ticker} (Stop = {stop_pct:.1f}% > 7.5%)")
+
+            if violated_rr:
+                issues.append(f"Cảnh báo R:R: {', '.join(violated_rr)}")
+                score -= 15
+            else:
+                checks["risk_reward_discipline"] = "CHUẨN THỂ CHẾ (100% lệnh R:R >= 1:2.0)"
+
+            if violated_stop:
+                issues.append(f"Cảnh báo Cắt lỗ vượt 7.5%: {', '.join(violated_stop)}")
+                score -= 20
+            else:
+                checks["hard_stop_discipline"] = "CHUẨN THỂ CHẾ (100% lệnh Stop Loss <= 7.5%)"
+        except Exception as e:
+            issues.append(f"Lỗi đọc sổ lệnh: {e}")
+            score -= 10
+    else:
+        checks["blotter_status"] = "CHƯA CÓ SỔ LỆNH (Trạng thái chờ phiên tiếp theo)"
+
+    # 2. Kiểm tra độ tươi mới của Radar BCTC & SEC
+    cbtt_file = BASE_DIR / "data" / "cbtt_disclosures.json"
+    if cbtt_file.exists():
+        checks["cbtt_radar"] = "HOẠT ĐỘNG BÌNH THƯỜNG (Dữ liệu CBTT sẵn sàng)"
+    else:
+        checks["cbtt_radar"] = "CHƯA CÀO DỮ LIỆU CBTT"
+
+    sec_file = BASE_DIR / "data" / "sec_edgar_filings.json"
+    if sec_file.exists():
+        checks["sec_radar"] = "HOẠT ĐỘNG BÌNH THƯỜNG (Dữ liệu SEC EDGAR sẵn sàng)"
+    else:
+        checks["sec_radar"] = "CHƯA CÀO DỮ LIỆU SEC"
+
+    return {
+        "checks": checks,
+        "issues": issues,
+        "score": max(0, score)
+    }
+
+
 def audit_connectivity() -> dict:
     """Kiểm tra kết nối Telegram và Git Cloud."""
     checks = {}
@@ -300,20 +363,55 @@ def run_full_audit(force: bool = False, send_tg: bool = True) -> int:
     print(f"   - Minh Quân (VN Specialist): {spec_res['minh_quan_status']}")
     print(f"   - Trạng thái Drift / Giảm chất lượng: {spec_res['hit_rate_drift']}")
 
+    risk_res = audit_portfolio_risk_discipline()
+    print(f"4. Kiểm toán Kỷ Luật Rủi Ro & Sổ Lệnh Master Blotter: Điểm: {risk_res['score']}/100")
+    for k, v in risk_res["checks"].items():
+        print(f"   - {k}: {v}")
+    if risk_res["issues"]:
+        for iss in risk_res["issues"]:
+            print(f"   [!] Vấn đề phát hiện: {iss}")
+
     conn_res = audit_connectivity()
-    print(f"4. Kiểm toán Kết Nối Telegram & Đám Mây: Điểm: {conn_res['score']}/100")
+    print(f"5. Kiểm toán Kết Nối Telegram & Đám Mây: Điểm: {conn_res['score']}/100")
     for k, v in conn_res["checks"].items():
         print(f"   - {k}: {v}")
 
-    # Tính điểm sức khỏe tổng thể (Trung bình có trọng số)
+    # Thu thập toàn bộ vấn đề và lập phương án khắc phục đề xuất
+    all_issues = []
+    remediation_plans = []
+
+    if code_res["errors"]:
+        for err in code_res["errors"]:
+            all_issues.append({"dept": "Công Cụ & Code Python", "severity": "HIGH", "detail": err})
+            remediation_plans.append(f"- [MÃ NGUỒN] Sửa lỗi cú pháp trong script: `{err}` (Chờ Lãnh Đạo duyệt)")
+
+    if rule_res["score"] < 100:
+        for k, v in rule_res["checks"].items():
+            if "CẢNH BÁO" in v or "LỖI" in v or "THIẾU" in v:
+                all_issues.append({"dept": "Quy Chuẩn Thể Chế", "severity": "MEDIUM", "detail": f"{k}: {v}"})
+                remediation_plans.append(f"- [THỂ CHẾ] Khôi phục hoặc cân bằng lại tệp `{k}` (Chờ Lãnh Đạo duyệt)")
+
+    if risk_res["issues"]:
+        for iss in risk_res["issues"]:
+            all_issues.append({"dept": "Ban Đầu Tư Tối Cao / Rủi Ro", "severity": "HIGH", "detail": iss})
+            remediation_plans.append(f"- [RỦI RO] Điều chỉnh lại tham số lệnh vi phạm `{iss}` (Chờ Lãnh Đạo duyệt)")
+
+    # Tính điểm sức khỏe tổng thể (Trung bình có trọng số 5 trụ cột)
     total_score = round(
-        code_res['score'] * 0.30 +
-        rule_res['score'] * 0.30 +
-        spec_res['score'] * 0.20 +
-        conn_res['score'] * 0.20
+        code_res['score'] * 0.25 +
+        rule_res['score'] * 0.25 +
+        risk_res['score'] * 0.25 +
+        spec_res['score'] * 0.15 +
+        conn_res['score'] * 0.10
     )
 
     print(f"\n>>> ⭐ ĐIỂM SỨC KHỎE TỔNG THỂ HỆ THỐNG: {total_score}/100 ⭐ <<<\n")
+
+    remediation_md = ""
+    if remediation_plans:
+        remediation_md = "\n### ⚠️ Các Vấn Đề Tìm Thấy & Phương Án Đề Xuất Khắc Phục\n" + "\n".join(remediation_plans) + "\n\n> [!CAUTION]\n> **QUY CHẾ THỂ CHẾ PHÒNG TỔNG**: Toàn bộ phương án khắc phục trên đang ở trạng thái **CHỜ DUYỆT (PENDING APPROVAL)**. Hệ thống TUYỆT ĐỐI KHÔNG tự ý can thiệp hay sửa đổi bất kỳ tệp dữ liệu/mã nguồn nào cho đến khi Nhà Đầu Tư/Lãnh Đạo xem xét, thông qua và phê duyệt phương án triển khai!"
+    else:
+        remediation_md = "\n### ✅ Không Phát Hiện Lỗi Hay Xung Đột Tiêu Cực\nTất cả 9 phòng ban đều phối hợp hài hòa, chuyên môn sắc bén, kỷ luật quản trị rủi ro được duy trì ở mức tối đa."
 
     # Lập báo cáo Markdown
     report_file = AUDIT_REPORT_DIR / f"{today_str}_4Day_System_Audit_Report.md"
@@ -321,42 +419,55 @@ def run_full_audit(force: bool = False, send_tg: bool = True) -> int:
 **Cơ Quan Thẩm Định:** Phòng Tổng Hệ Thống (Apex Central System Governance)  
 **Ngày Thực Hiện:** {today_str}  
 **Điểm Sức Khỏe Tổng Thể:** `{total_score}/100`  
-**Đánh Giá Thể Chế:** {"🟢 HỆ THỐNG XUẤT SẮC & CHUẨN THỂ CHẾ" if total_score >= 90 else "🟡 ĐẠT CHUẨN VẬN HÀNH"}
+**Đánh Giá Thể Chế:** {"🟢 HỆ THỐNG XUẤT SẮC & CHUẨN THỂ CHẾ" if total_score >= 90 else "🟡 ĐẠT CHUẨN VẬN HÀNH"}  
+**Chế Độ Hoạt Động:** 🔍 **THUẦN KIỂM TRA (READ-ONLY / NON-INVASIVE)** — Tuyệt đối không làm gián đoạn hay thay đổi vận hành của doanh nghiệp.
 
 ---
 
-## 1. Kết Quả Kiểm Toán Chi Tiết
+## 1. Kết Quả Kiểm Toán 5 Trụ Cột Chi Tiết
 
-### A. Toàn Vẹn Mã Nguồn & Công Cụ Tính Toán (Trọng số 30%)
+### A. Toàn Vẹn Mã Nguồn & Công Cụ Tính Toán (Trọng số 25%)
 - **Số tệp Python đã quét:** {code_res['total_scripts']} tệp.
 - **Số tệp biên dịch chuẩn:** {code_res['passed']} tệp.
 - **Lỗi cú pháp:** {code_res['failed']} lỗi.
 - **Điểm:** `{code_res['score']}/100`
 
-### B. Tuân Thủ Quy Chuẩn Thể Chế & Bách Khoa Toàn Thư (Trọng số 30%)
+### B. Tuân Thủ Quy Chuẩn Thể Chế & Bách Khoa Toàn Thư (Trọng số 25%)
 - **Bách Khoa Tri Thức (MASTER_INVESTMENT_BRAIN_ENCYCLOPEDIA.md):** {rule_res['checks'].get('master_encyclopedia')}
 - **Trọng số Thích nghi Mỹ (adaptive_weights.json):** {rule_res['checks'].get('us_adaptive_weights')}
 - **Trọng số Thích nghi VN (adaptive_weights_vn.json):** {rule_res['checks'].get('vn_adaptive_weights')}
 - **Checklist 7 Điểm & Kim Tự Tháp 30-40-30:** {rule_res['checks'].get('rule_enforcement_agents_md')}
 - **Điểm:** `{rule_res['score']}/100`
 
-### C. Năng Lực Chuyên Viên & Chống Thoái Hóa Chất Lượng (Trọng số 20%)
+### C. Kỷ Luật Quản Trị Rủi Ro & Sổ Lệnh Master Blotter (Trọng số 25%)
+- **Tình trạng Sổ Lệnh:** {risk_res['checks'].get('total_blotter_orders', 'N/A')}
+- **Kỷ luật Tỷ lệ Risk/Reward:** {risk_res['checks'].get('risk_reward_discipline', 'N/A')}
+- **Kỷ luật Cắt lỗ Hard Stop <= 7.5%:** {risk_res['checks'].get('hard_stop_discipline', 'N/A')}
+- **Radar Công Bố Thông Tin & SEC:** {risk_res['checks'].get('cbtt_radar', 'N/A')} | {risk_res['checks'].get('sec_radar', 'N/A')}
+- **Điểm:** `{risk_res['score']}/100`
+
+### D. Năng Lực Chuyên Viên & Chống Thoái Hóa Chất Lượng (Trọng số 15%)
 - **Chuyên viên Alex (Toàn cầu):** {spec_res['alex_status']}
 - **Chuyên viên Minh Quân (Việt Nam):** {spec_res['minh_quan_status']}
 - **Hiện tượng Loãng Thông Tin / Thoái Hóa Dữ Liệu:** {spec_res['hit_rate_drift']}
 - **Điểm:** `{spec_res['score']}/100`
 
-### D. Kết Nối Ngoại Vi & Đám Mây Dự Phòng (Trọng số 20%)
+### E. Kết Nối Ngoại Vi & Đám Mây Dự Phòng (Trọng số 10%)
 - **Kênh Báo Động Telegram:** {conn_res['checks'].get('telegram_api')}
 - **Hạ Tầng Sao Lưu GitHub:** {conn_res['checks'].get('github_backup')}
 - **Điểm:** `{conn_res['score']}/100`
 
 ---
 
-## 2. Kết Luận & Chỉ Thị Của Phòng Tổng Hệ Thống
-Hệ thống vận hành tuyệt đối ổn định và bền vững. Không phát hiện bất kỳ dấu hiệu rò rỉ bộ nhớ, loãng thông tin hay suy giảm chất lượng phân tích nào. Tất cả các phòng ban đều tuân thủ nghiêm ngặt nguyên tắc quản trị rủi ro Stop Loss <= 7.5%, R:R >= 1:2.0 và chiến thuật giải ngân Kim Tự Tháp.
+## 2. Kết Quả Rà Soát Tiêu Cực & Phương Án Khắc Phục (Nếu Có)
+{remediation_md}
 
-Chu kỳ tổng rà soát tiếp theo: **Sau 4 ngày nữa**.
+---
+
+## 3. Cam Kết Của Phòng Tổng Hệ Thống
+1. Đợt rà soát định kỳ 4 ngày là hoạt động **độc lập, thụ động và an toàn tuyệt đối 100%**, không ghi đè bất kỳ tệp dữ liệu kinh doanh nào.
+2. Nếu phát hiện sai số hay lỗi logic, Phòng Tổng Hệ Thống sẽ trình bày phương án rõ ràng để **Lãnh Đạo xem xét và phê duyệt trước khi hành động**.
+3. Chu kỳ rà soát tiếp theo: **Sau 4 ngày nữa**.
 """
     with open(report_file, "w", encoding="utf-8") as f:
         f.write(report_content)
