@@ -14,10 +14,13 @@ description: Ban 7 VN — Chuyên Viên Đầu Tư Trưởng & Thực Thi Tự T
    - **Tự Học & Tiến Hóa Độc Lập**: Ghi nhận bài học vào `VN_Market/07_Daily_Specialist/vn_specialist_evolution_journal.md`.
    - **Ra Quyết Định Lệnh Thực Thi Khoa Học Trong Ngày (Pre-ATO Execution Blotter)**:
      * Tính toán Kỳ vọng Toán học $EV\% = (P(W) \times R) - ((1 - P(W)) \times L) > 0$.
-     * Tỷ lệ $Risk/Reward \ge 1:2$.
-     * Chiến lược chia nhịp lệnh: **60% Limit Thăm Dò + 40% Vượt Cản Gia Tăng**.
-     * Ngưỡng Cắt Lỗ chặt chẽ: $Stop = 2 \times ATR(14)$ (Phù hợp biên độ sàn HOSE/HNX).
-     * Mốc Chốt Lời từng phần: TP1 (Bán 50%) và TP2 (Gồng lãi).
+     * Tỷ lệ $Risk/Reward \ge 1:2.0$.
+     * **Khung Giờ Vàng Tác Chiến**: Tuyệt đối không FOMO mua đuổi giá xanh trước 10h00; kiên nhẫn quan sát áp lực xả hàng T+2 (13h00–13h45); giải ngân quyết định trong **Khung Giờ Vàng 14h00 – 14h25** khi nhìn rõ 90% hình dáng nến ngày.
+     * **Chiến Lược Đi Vốn Kim Tự Tháp 30% – 40% – 30%**: 30% Thăm dò tại nền giá cạn cung ➔ 40% Gia tăng khi Breakout kèm Vol $\ge +50\%$ ➔ 30% Hoàn tất khi Retest thành công.
+     * **Kỹ Thuật Lướt Sóng T+0 / T+1 Hạ Giá Vốn**: Tận dụng lượng hàng có sẵn trong kho để lướt sóng hạ giá vốn khi cổ phiếu nhúng về hỗ trợ mà không làm tăng rủi ro qua đêm.
+     * **Ngưỡng Cắt Lỗ Cứng 7% – 8%**: Cắt lỗ dứt khoát theo toán học bất đối xứng của thua lỗ (khóa rủi ro $Stop \le 7.5\%$ từ giá mua chuẩn).
+     * **Chiến Thuật Chốt Lời Scaling Out 50/50 & Trailing Stop**: Bán chốt lời 50% tại TP1 (+15% đến +20% / RSI > 75), nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA20; cài đặt Trailing Stop động 5%.
+     * **Kỷ Luật Lệnh LO**: Dùng lệnh LO 95% thời gian để kiểm soát giá khớp, tránh bị trượt giá.
 
 ## Đầu Ra Bắt Buộc
 - Quyết định tại: `VN_Market/07_Daily_Specialist/YYYY-MM-DD_VN_Specialist_Decision.md`.

@@ -83,38 +83,51 @@ Hệ thống được thiết lập song hành độc lập 100%, quy hoạch tr
    - Đầu ra: `VN_Market/01_Macro_Monetary_Vietnam/YYYY-MM-DD_VN_Macro_Report.md`.
 
 2. **Ban 2 VN — Thẩm Định BCTC, Kiểm Toán Chất Lượng Lợi Nhuận & Mô Hình Doanh Nghiệp VN (`vn-equity-bctc-agent`)**:
-   - Mổ xẻ 3 BCTC theo chuẩn VAS/TT 200: Đo lường tiền thật qua tỷ lệ $OCF / LNST$, Dòng tiền tự do $FCF$, Đòn bẩy $D/E$, Phải thu / Doanh thu, Vòng quay tồn kho, Chi phí xây dựng dở dang.
-   - Bộ chỉ số cảnh báo xào nấu: Modified Beneish M-Score, Altman Z''-Score, Sloan Accrual Ratio.
+   - Mổ xẻ 3 BCTC theo chuẩn VAS/TT 200: Đo lường tiền thật qua tỷ lệ $OCF / LNST > 1$, Dòng tiền tự do $FCF$, Đòn bẩy $D/E < 1.0$, Phải thu / Doanh thu, Vòng quay tồn kho, Chi phí xây dựng dở dang.
+   - Radar 5 Cảnh báo Rủi ro Kế toán (Red Flags):
+     1. Lệch pha LNST vs OCF (LNST tăng nhưng OCF âm dồn dập $\ge 2$ quý ➔ Lợi nhuận giấy).
+     2. Ghi nhận doanh thu ảo qua công ty liên kết ma (vụ DVD) hoặc không trích lập dự phòng tồn kho (vụ TTF 1.000 tỷ).
+     3. Chiêu trò "Take a big bath" dồn lỗ & chuyển nợ vay thành đầu tư dài hạn (vụ HAGL).
+     4. Phải thu ngắn hạn và hàng tồn kho phình to bất thường.
+     5. Thay đổi công ty kiểm toán và kế toán trưởng liên tục.
+   - Bộ chỉ số định lượng: Modified Beneish M-Score ($M > -1.78$), Altman Z''-Score ($Z'' < 1.10$), Sloan Accrual Ratio ($> 10\%$).
    - Thẩm định độ tin cậy Kế hoạch ĐHCĐ, chính sách pha loãng ESOP, tiến độ pháp lý dự án BĐS & mở rộng nhà máy.
    - Đầu ra: `VN_Market/02_BCTC_Equity_Research/YYYY-MM-DD_VN_Equity_Analysis.md`.
 
 3. **Ban 3 VN — Phòng Tổng Hợp & Sàng Lọc Phân Hạng TTCK Việt Nam (`vn-synthesis-hub-agent`)**:
-   - Đối soát chéo Top-Down & Bottom-Up.
-   - Thiết lập 2 bảng sàng lọc: Top Cổ Phiếu Tăng Trưởng Dẫn Dắt (AAA/AA) vs Top Cảnh Báo Bẫy Tài Chính / Lợi Nhuận Giấy.
-   - Định giá bản địa hóa: P/B & PB-ROE (Ngân hàng), P/E & PEG (Bán lẻ/Công nghệ), RNAV (BĐS), EV/EBITDA (Thép).
+   - Đối soát chéo Top-Down & Bottom-Up theo 7 tiêu chí CANSLIM và 4 pha Wyckoff (Tích lũy ➔ Đẩy giá ➔ Phân phối ➔ Đè giá).
+   - Đọc vị dòng tiền VSA: Nhận diện nến "No Supply / Test Cung" (biên hẹp, Vol cạn 30%–50% MA20 tại nền hỗ trợ), bẫy giá giả Bull-Trap / Upthrust kéo xanh đầu phiên sáng.
+   - Bảng điện chuyên sâu: Đo lường tỷ lệ Mua chủ động (Buy Up) $\ge 60\% - 70\%$, bóc trần chiêu trò kê lệnh mua ảo ở Giá 2/Giá 3.
+   - Thiết lập 2 bảng sàng lọc: Top Cổ Phiếu Tăng Trưởng Dẫn Dắt (Leader có $RS \ge 80$) vs Top Cảnh Báo Bẫy Tài Chính / Lợi Nhuận Giấy.
    - Đầu ra: `VN_Market/03_Synthesis_Memos/YYYY-MM-DD_VN_Investment_Memo.md`.
 
 4. **Ban 4 VN — Hội Đồng Đầu Tư & Quản Trị Rủi Ro Định Lượng VN (`vn-investment-committee-agent`)**:
    - Chấm điểm 100 điểm, ra quyết định phê duyệt hành động (`ACCUMULATE / STRONG BUY / WATCH / AVOID`).
-   - Định cỡ vị thế `ATR Risk-Parity` thích ứng chu kỳ T+2.5, kiểm soát biên độ trần/sàn HOSE (+/-7%), HNX (+/-10%).
-   - Cắt lỗ bắt buộc $Stop = 2 \times ATR(14)$. Kiểm thử Stress-Testing 3 kịch bản khủng hoảng.
+   - Định cỡ vị thế theo công thức Position Sizing chuẩn hóa: $N = \frac{C \times R_{trade}}{P_{entry} - P_{stop}}$ với rủi ro khống chế $R_{trade} \le 1.0\% - 1.5\%$ NAV.
+   - Bắt buộc tuân thủ nguyên tắc cắt lỗ cứng $Stop \le 7\% - 8\%$ (dựa trên toán học bất đối xứng của thua lỗ: lỗ 50% phải lãi +100% mới hòa vốn).
+   - Kiểm soát biên độ sàn HOSE ($\pm 7\%$), HNX ($\pm 10\%$), UPCoM ($\pm 15\%$) và quy chuẩn bắt buộc lô chẵn 100 CP.
    - Đầu ra: `VN_Market/04_Investment_Committee/YYYY-MM-DD_VN_IC_Decision.md` và `vn_portfolio_tracker.md`.
 
 5. **Ban 5 VN — Phòng Thẩm Định Hiệu Suất, Hồi Tố Lịch Sử & Tự Học Thích Nghi VN (`vn-performance-learning-agent`)**:
    - Lưu trữ Snapshot lịch sử mỗi phiên vào `VN_Market/05_Learning_And_Evolution/historical_archive/`.
-   - Hồi tố Walk-Forward Hit Rate % (T+3, T+5, T+10, T+20).
-   - Bóc tách căn nguyên (Alpha vs Beta vs Timing), tự động tinh chỉnh `adaptive_weights_vn.json`.
+   - Hồi tố Walk-Forward Hit Rate % theo các chu kỳ (T+3, T+5, T+10, T+20).
+   - Kiểm toán bóc tách 5 bẫy tâm lý chết người: FOMO (mua khi RSI > 75), Gồng lỗ & Chốt non, Trung bình giá xuống (Averaging Down), Mỏ neo (Anchoring Bias), Thiên kiến xác nhận.
+   - Tự động tinh chỉnh trọng số `adaptive_weights_vn.json`.
    - Đầu ra: `VN_Market/05_Learning_And_Evolution/YYYY-MM-DD_VN_Learning_Report.md` và `vn_system_evolution_journal.md`.
 
 6. **Ban 6 VN — Học Viện Huấn Luyện & Đào Tạo Thực Chiến NĐT Việt Nam (`vn-investor-mentorship-coach`)**:
    - Phát hành Bản Tin Khai Sáng Buổi Sáng lúc **7h30 Sáng**: `VN_Market/06_Investor_Academy/daily_mentorship/YYYY-MM-DD_VN_Mentor_Briefing.md`.
-   - Đào tạo đọc BCTC, phát hiện xào nấu số liệu, kèm cặp tâm lý tránh FOMO đua trần ATO, quản lý nhật ký giao dịch.
+   - Dẫn dắt Lộ trình 5 Giai đoạn 90 ngày (Cấu trúc sàn ➔ Bảng điện & Lệnh ➔ FA & TA ➔ Quản trị rủi ro & Nhật ký ➔ Thực chiến vốn nhỏ 5%-10%).
+   - Đào tạo phân biệt rạch ròi Investing (Đầu tư giá trị dài hạn) vs Trading (Lướt sóng ngắn hạn), cấm biến tướng gồng lỗ thành đầu tư dài hạn.
+   - Huấn luyện thẩm định **Checklist 7 Điểm Bắt Buộc Trước Khi Bấm Nút Mua**.
 
 7. **Ban 7 VN — Chuyên Viên Đầu Tư Trưởng & Thực Thi Tự Tiến Hóa Mỗi Ngày — "Minh Quân" (`vn-daily-specialist-agent`)**:
    - **Tên Định Danh**: **Minh Quân** (Kích hoạt lúc **8h30 Sáng Hàng Ngày** trước giờ mở phiên ATO lúc 9h00).
-   - Hội nghị giao ban 8h30: Lắng nghe đánh giá Ban 1-6 và ý kiến BCTC của Nhà đầu tư.
-   - Tự kiểm điểm phiên hôm qua (Yesterday Autopsy), ghi nhật ký tiến hóa độc lập vào `vn_specialist_evolution_journal.md`.
-   - Ban hành Sổ Lệnh Thực Thi Khoa Học Trong Ngày (Pre-ATO Blotter): Kỳ vọng toán học $EV\% > 0$, tỷ lệ $R:R \ge 1:2$, chiến lược chia nhịp lệnh 60/40 (60% thăm dò + 40% vượt cản gia tăng).
+   - **Khung Giờ Vàng Tác Chiến**: Tuyệt đối không FOMO mua đuổi giá xanh trước 10h00 sáng; kiên nhẫn quan sát nhịp hấp thụ hàng T+2 về tài khoản (13h00–13h45); giải ngân quyết định trong **Khung Giờ Vàng 14h00 – 14h25** khi nhìn rõ 90% hình dáng nến ngày.
+   - **Chiến Lược Đi Vốn Kim Tự Tháp (30% – 40% – 30%)**: 30% Thăm dò tại nền giá cạn cung ➔ 40% Gia tăng khi Breakout kèm Vol $\ge +50\%$ ➔ 30% Hoàn tất khi Retest thành công.
+   - **Kỹ Thuật Lướt Sóng T+0 / T+1 Hạ Giá Vốn**: Tận dụng lượng hàng có sẵn trong kho để lướt sóng hạ giá vốn khi cổ phiếu nhúng về hỗ trợ mà không làm tăng rủi ro qua đêm.
+   - **Chiến Thuật Chốt Lời Scaling Out 50/50 & Trailing Stop**: Chốt lời 50% tại mục tiêu +15% đến +20% (RSI > 75), nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA20; áp dụng Trailing Stop 5%.
+   - Kỷ luật sử dụng lệnh LO (Limit Order) 95% thời gian để làm chủ giá khớp.
    - Đầu ra: `VN_Market/07_Daily_Specialist/YYYY-MM-DD_VN_Specialist_Decision.md` và `vn_daily_ledger.json`.
 
 ## 2. Trình Điều Khiển 1-Click Hệ Thống Việt Nam
@@ -144,8 +157,9 @@ Ban 8 đóng vai trò là **"Khẩu Súng Thực Thi Tối Thượng"** — tổ
 4. **Tuyển Lựa Top Siêu Cổ Phiếu Tối Thượng (Apex Alpha Selection)**:
    - Chấm điểm **Apex Multi-Factor Score (0 - 100)** kết hợp BCTC, định lượng, dòng tiền tổ chức và khuyến nghị của 2 chuyên viên.
    - Đảm bảo tỷ lệ $Risk/Reward \ge 1:2.0$ và Kỳ vọng toán học $EV\% > 0$.
-5. **Sổ Lệnh Thực Thi Master Blotter**:
-   - Ban hành danh sách lệnh chi tiết gồm mã, sàn, số cổ phiếu, giá gom chia nhịp 60/40, ngưỡng cắt lỗ Stop 2xATR và mốc chốt lời TP1 / TP2.
+5. **Thẩm Định Checklist 7 Điểm Khắt Khe & Sổ Lệnh Master Blotter**:
+   - Kiểm tra 100% **Checklist 7 Điểm Bắt Buộc Trước Khi Bấm Nút Mua** (Nguồn vốn nhàn rỗi, Xu hướng Uptrend M, Sức khỏe FA tăng trưởng OCF > 0, Định giá & N, Điểm mua TA bứt phá Vol, Tỷ lệ $R:R \ge 2:1$, Position Sizing rủi ro $\le 1.5\%$ NAV).
+   - Ban hành danh sách lệnh chi tiết gồm mã, sàn, số cổ phiếu (lô chẵn 100 cho VN), giá gom Kim Tự Tháp 30%–40%–30%, ngưỡng cắt lỗ Stop 2xATR (khóa cứng $\le 7.5\%$) và mốc chốt lời TP1 / TP2 (Chiến thuật Scaling Out 50/50).
 
 ## 2. Trình Điều Khiển 1-Click Master CIO Allocation Engine
 Thực thi tính toán phân bổ vốn ban đầu và lập sổ lệnh Master:
@@ -169,11 +183,13 @@ Ban 9 là **"Lá Chắn Phòng Thủ Thời Gian Thực"** — do chuyên viên 
    - Tự động nạp danh mục từ `08_Master_Investment_CIO/master_execution_blotter.json`, `portfolio_tracker.md` và `vn_portfolio_tracker.md`.
    - Streaming/polling dữ liệu giá, khối lượng và biến động mỗi 60 giây trong suốt thời gian thị trường mở cửa.
 2. **Bộ Radar 5 Cấp Độ Kích Hoạt Báo Động Khẩn Cấp**:
-   - Level 1: Sụt giảm nhanh trong phiên $\ge 2.0\% - 3.5\%$ hoặc thủng VWAP.
+   - Level 1: Sụt giảm nhanh trong phiên $\ge 2.0\% - 3.5\%$ hoặc thủng VWAP; cảnh giác áp lực xả hàng T+2 trong khung 13h00 – 13h45.
    - Level 2: Cận kề Stop Loss $2xATR$ (cách dưới $1.5\%$).
-   - Level 3: Khối lượng xả hàng dồn dập $\ge 2.5x$ trung bình 20 phiên.
+   - Level 3: Khối lượng xả hàng dồn dập $\ge 2.5x$ trung bình 20 phiên hoặc xuất hiện nến Phân phối đỉnh (Upthrust / Shooting Star).
    - Level 4: Nguy cơ kẹt sàn / Trắng bên mua $\le -6.5\%$ (HOSE -7%).
    - Level 5: Tin tức thiên nga đen đột xuất (Black Swan Breaking News).
+   - **Radar Săn Điểm Đảo Chiều Washout / Selling Climax**: Phát hiện lực cầu tổ chức nuốt sạch sàn kéo xanh/trần biên độ 10–14% xác nhận bằng cụm nến Hammer, Bullish Engulfing, Morning Star.
+   - **Bảo Toàn Lợi Nhuận Bằng Trailing Stop Động**: Tự động trượt điểm chặn bán theo biên độ 5% mỗi khi cổ phiếu tạo đỉnh mới.
 3. **Chiến Hạm 4 Phương Án Khắc Phục Tức Thời Trong Ngày (Live War-Room)**:
    - **Phương án A (Synthetic Short Hedge)**: Mở lệnh Short Hợp đồng Tương lai VN30F1M (TTCK VN) hoặc mua Options Put SPY (Mỹ) để khóa lỗ danh mục 100% tức thì mà không sợ kẹt T+2.5.
    - **Phương án B (Partial De-risking)**: Hạ ngay 30% - 50% vị thế tại nhịp nảy kỹ thuật VWAP để giải phóng sức mua.
