@@ -9,6 +9,7 @@ $PythonExe = "python.exe"
 
 if ($Uninstall) {
     Write-Host "Unregistering Apex Fund scheduled tasks..."
+    Unregister-ScheduledTask -TaskName "ApexFund_Morning_PreMarket_Audit_0700" -Confirm:$false -ErrorAction SilentlyContinue
     Unregister-ScheduledTask -TaskName "ApexFund_Sunday_CIO_Summit" -Confirm:$false -ErrorAction SilentlyContinue
     Unregister-ScheduledTask -TaskName "ApexFund_Morning_PreATO" -Confirm:$false -ErrorAction SilentlyContinue
     Unregister-ScheduledTask -TaskName "ApexFund_Evening_PreUS" -Confirm:$false -ErrorAction SilentlyContinue
@@ -21,6 +22,12 @@ Write-Host "  APEX FUND: 100% AUTOMATED BACKGROUND PIPELINE SCHEDULER"
 Write-Host "============================================================"
 
 $Settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -WakeToRun -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+
+# 0. Morning 07:00 Mon-Fri - Palmer Pre-Market Total Audit (Rà Soát Tổng Hệ Thống)
+$AuditAction = New-ScheduledTaskAction -Execute $PythonExe -Argument "scripts\pre_market_readiness_audit.py --send-telegram" -WorkingDirectory $WorkspaceDir
+$AuditTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Tuesday,Wednesday,Thursday,Friday -At "07:00"
+Register-ScheduledTask -TaskName "ApexFund_Morning_PreMarket_Audit_0700" -Action $AuditAction -Trigger $AuditTrigger -Settings $Settings -Description "Palmer 07:00 AM Pre-Market System Audit" -Force | Out-Null
+Write-Host "[OK] Task 0 registered: ApexFund_Morning_PreMarket_Audit_0700 (Mon-Fri at 07:00)"
 
 # 1. Sunday 20:00 - Master CIO Summit
 $SundayAction = New-ScheduledTaskAction -Execute $PythonExe -Argument "scripts\run_master_unified_fund.py --capital-vnd $CapitalVnd" -WorkingDirectory $WorkspaceDir
