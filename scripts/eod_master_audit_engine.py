@@ -227,6 +227,15 @@ def run_eod_master_audit(audit_date: str = None) -> dict:
     # Dispatch: Tự động ghi nhận lỗi vào Evolution Journal của Alex và Minh Quân
     append_audit_to_journals(today_str, audit_findings)
 
+    # Broadcast: Tự động gửi 2 Bản Đánh Giá Phúc Tra (VN & Mỹ) tới Telegram Nhà đầu tư
+    try:
+        import subprocess
+        sub_env = os.environ.copy()
+        sub_env["PYTHONIOENCODING"] = "utf-8"
+        subprocess.run([sys.executable, str(BASE_DIR / "scripts" / "telegram_eod_audit_reporter.py")], cwd=str(BASE_DIR), env=sub_env)
+    except Exception as e:
+        print(f"[!] Warning khi tự động gửi Telegram: {e}")
+
     print(f"[SUCCESS] Đã lập Biên bản Phúc tra: {memo_md_path.name}")
     print(f"[DISPATCH] Đã gửi chỉ thị sửa đổi ngược lại cho Alex, Minh Quân và các Phòng ban!")
     print("=" * 80 + "\n")
