@@ -86,6 +86,9 @@ def main():
     # Bước 6: Phòng Tổng Hệ Thống Rà Soát Định Kỳ 4 Ngày
     run_cmd([sys.executable, str(SCRIPTS_DIR / "system_health_audit.py"), "--check-due"], "Phòng Tổng Hệ Thống: Kiểm Tra Đợt Tổng Rà Soát Chất Lượng Định Kỳ 4 Ngày")
 
+    # Bước 7: Ban Đầu Tư Tối Cao — Kiểm Toán Phúc Tra Cuối Ngày & Phản Hồi Tự Tiến Hóa (EOD Master Audit)
+    run_cmd([sys.executable, str(SCRIPTS_DIR / "eod_master_audit_engine.py")], "Ban Đầu Tư Tối Cao: Kiểm Toán Phúc Tra Cuối Ngày & Phản Hồi Tự Tiến Hóa")
+
     elapsed = time.time() - start_time
     print("\n" + "=" * 80)
     print(f" [THỰC THI HOÀN TẤT TRONG {elapsed:.1f} GIÂY] KHẨU SÚNG ĐÃ SẴN SÀNG NẠP ĐẠN & BẤM CÒ!")
