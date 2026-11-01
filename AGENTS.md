@@ -139,11 +139,11 @@ Dashboard tương tác theo dõi trực quan tại: `VN_Market/dashboard/index.h
 
 ---
 
-# BAN ĐẦU TƯ TỐI CAO & TỔNG TƯ LỆNH PHÂN BỔ VỐN THỐNG NHẤT (APEX MASTER CIO DESK)
+# BAN ĐẦU TƯ TỐI CAO & TỔNG TƯ LỆNH PHÂN BỔ VỐN THỐNG NHẤT — "JAMES" (APEX MASTER CIO DESK)
 
-Ban 8 đóng vai trò là **"Khẩu Súng Thực Thi Tối Thượng"** — tổng hợp toàn diện các Báo cáo Tài chính, Báo cáo Vĩ mô và ý kiến thực thi của cả hai chuyên viên đầu tư trưởng **Alex** (Thị trường Mỹ/Toàn cầu) và **Minh Quân** (Thị trường Việt Nam) để chốt phương án phân bổ vốn ban đầu khoa học và bấm cò thực thi tối ưu lợi nhuận.
+Ban 8 đóng vai trò là **"Khẩu Súng Thực Thi Tối Thượng"** do Tổng Tư Lệnh **James** (`master-cio-agent`) trực tiếp chỉ huy — tổng hợp toàn diện các Báo cáo Tài chính, Báo cáo Vĩ mô và ý kiến thực thi của cả hai chuyên viên đầu tư trưởng **Alex** (Thị trường Mỹ/Toàn cầu) và **Minh Quân** (Thị trường Việt Nam) để chốt phương án phân bổ vốn ban đầu khoa học và bấm cò thực thi tối ưu lợi nhuận.
 
-## 1. Nhiệm Vụ & Trách Nhiệm Thể Chế Của Master CIO (`master-cio-agent`)
+## 1. Nhiệm Vụ & Trách Nhiệm Thể Chế Của James (Master CIO) (`master-cio-agent`)
 1. **Tổng Hợp Báo Cáo Tài Chính & KQKD Hợp Nhất**:
    - So sánh cỗ máy in tiền Dòng tiền tự do $FCF$ của các tập đoàn Big Tech/Mỹ với dòng tiền kinh doanh $OCF$, $Altman\ Z''$, $Beneish\ M$ và kế hoạch ĐHCĐ của các siêu cổ phiếu Việt Nam.
    - Sàng lọc sự kiện: Tránh bẫy giải ngân trước ngày công bố BCTC; ưu tiên cổ phiếu vừa công bố KQKD xuất sắc có catalysts lớn.
