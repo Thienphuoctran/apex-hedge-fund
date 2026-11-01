@@ -1,14 +1,15 @@
 {
-  "department_name": "Ban 9 — Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Biến Động Khẩn Cấp",
-  "agent_codename": "Victor",
-  "institutional_title": "Apex Live Portfolio Sentinel & Intraday Tactical Incident Commander",
+  "department_name": "Ban 9 & Phòng Tổng Hệ Thống — Giám Sát Thời Gian Thực 24/7 & Radar Săn Sóng Tự Động",
+  "agent_codename": "Palmer & Victor",
+  "institutional_title": "Palmer Always-On Apex Sentinel, Two-Way Target Alert & Realtime Wave Radar 24/7",
   "poll_interval_seconds": 60,
   "market_hours": {
     "vietnam": {
       "timezone": "Asia/Ho_Chi_Minh",
       "morning_session": ["09:00", "11:30"],
       "afternoon_session": ["13:00", "14:45"],
-      "critical_danger_window": ["14:00", "14:30"]
+      "golden_execution_window": ["14:00", "14:25"],
+      "t0_safety_fuse_deadline": "14:25"
     },
     "us_global": {
       "timezone": "America/New_York",
@@ -23,12 +24,33 @@
     "stop_loss_proximity_pct": 1.5,
     "volume_surge_multiplier": 2.5,
     "circuit_breaker_threat_pct_vn": -6.5,
-    "circuit_breaker_threat_pct_us": -7.0
+    "circuit_breaker_threat_pct_us": -7.0,
+    "tp1_proximity_pct": 0.3,
+    "tp2_proximity_pct": 0.3,
+    "intraday_upside_breakout_pct": 2.5
   },
   "t0_safety_fuse": {
     "enabled": true,
     "deadline_time_vn": "14:25",
     "alert_message": "🚨 BÁO ĐỘNG CẦU CHÌ AN TOÀN T+0: ĐÃ ĐẾN 14H25! YÊU CẦU KIỂM TRA BÁN LƯỢNG HÀNG T+0 ĐÃ MUA PHIÊN SÁNG ĐỂ CÂN BẰNG TRẠNG THÁI, TRIỆT TIÊU 100% RỦI RO QUA ĐÊM!"
+  },
+  "realtime_wave_hunter": {
+    "enabled": true,
+    "vn_lead_specialist": "Minh Quân (Ban 7 VN)",
+    "us_lead_specialist": "Alex (Ban 7 Global)",
+    "quality_guardrails": {
+      "allowed_bctc_ratings": ["AAA", "AA", "A"],
+      "min_master_legends_score": 80.0,
+      "min_ocf_to_profit_ratio": 1.0,
+      "require_safe_beneish_m": true,
+      "min_reward_risk_ratio": 2.0
+    },
+    "wave_triggers": {
+      "pocket_pivot_vol_ratio": 1.25,
+      "active_buy_threshold_pct": 58.0,
+      "breakout_gain_pct": 1.2,
+      "oversold_rsi_threshold": 42.0
+    }
   },
   "notification_channels": {
     "terminal_banner": true,
@@ -38,7 +60,7 @@
       "enabled": true,
       "bot_token": "9113394586:AAEV3JfSShG3Sl6YEIeqwIky7cTT0XYYccw",
       "chat_id": "8332675283",
-      "description": "Telegram Bot đã kết nối trực tiếp với Nhà Đầu Tư Phước Trần"
+      "description": "Telegram Bot kết nối trực tiếp 24/7 với Chủ tịch Phước Trần (Báo động Chốt lời TP1/TP2, Cắt lỗ Stop 2xATR, Săn sóng mới & Tin CBTT/SEC)"
     },
     "discord_webhook": {
       "enabled": false,

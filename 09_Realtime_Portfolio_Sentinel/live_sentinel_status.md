@@ -1,7 +1,7 @@
 # BẢNG THEO DÕI DANH MỤC THỜI GIAN THỰC (LIVE SENTINEL STATUS)
 *Cập nhật gần nhất*: `2026-11-01 13:39:19`  
 *Trạng thái hệ thống*: **`🚨 CÓ BIẾN ĐỘNG KHẨN CẤP`**  
-*Tổng số mã đang bảo vệ*: **`21 mã`**
+*Tổng số mã đang bảo vệ 2 đầu*: **`15 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
 | Mã CP | Thị Trường | Giá Hiện Tại | Biến Động Hôm Nay | Ngưỡng Stop 2xATR | Cách Stop (%) | Vol Surge | Trạng Thái Rủi Ro |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |

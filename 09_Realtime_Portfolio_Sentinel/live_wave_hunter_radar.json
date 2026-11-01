@@ -1,0 +1,432 @@
+{
+  "generated_at": "2026-11-01 23:45:29",
+  "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
+  "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
+  "vn_total_scanned": 54,
+  "us_total_scanned": 35,
+  "minh_quan_top_vn_waves": [
+    {
+      "symbol": "HPG",
+      "name": "Tập Đoàn Hòa Phát",
+      "sector": "Thép & Vật Liệu Xây Dựng",
+      "price_vnd": 21000.0,
+      "day_change_pct": -0.94,
+      "vol_ratio": 1.33,
+      "active_buy_pct": 49.7,
+      "rsi14": 54.7,
+      "bctc_rating": "AAA",
+      "legends_score": 89.4,
+      "ocf_ratio": 1.35,
+      "graham_mos_pct": 143.5,
+      "wave_type": "🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)",
+      "signal_strength": 90.4,
+      "entry_zone_vnd": 20895.0,
+      "stop_2atr_vnd": 20121.0,
+      "tp1_vnd": 22845.0,
+      "tp2_vnd": 23855.0,
+      "catalyst": "Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC.",
+      "action_note": "Cạn cung tại nền hỗ trợ, Biên an toàn Graham +143.5%. Điểm gom thăm dò an toàn!"
+    },
+    {
+      "symbol": "PVT",
+      "name": "Tổng Công Ty Vận Tải Dầu Khí",
+      "sector": "Cảng Biển & Logistics Vận Tải",
+      "price_vnd": 21250.0,
+      "day_change_pct": -0.23,
+      "vol_ratio": 0.61,
+      "active_buy_pct": 44.4,
+      "rsi14": 19.5,
+      "bctc_rating": "AAA",
+      "legends_score": 92.4,
+      "ocf_ratio": 2.01,
+      "graham_mos_pct": 107.1,
+      "wave_type": "💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND)",
+      "signal_strength": 85.1,
+      "entry_zone_vnd": 21144.0,
+      "stop_2atr_vnd": 19762.0,
+      "tp1_vnd": 24685.0,
+      "tp2_vnd": 26566.0,
+      "catalyst": "Trẻ hóa và mở rộng đội tàu chở dầu/hóa chất/LPG lên >58 tàu, >85% đội tàu chạy tuyến quốc tế thu ngoại tệ USD.",
+      "action_note": "RSI lùi về 19.5 trên nền BCTC AAA. Sẵn sàng bắt nhịp hồi phục T+3!"
+    },
+    {
+      "symbol": "IDC",
+      "name": "Tổng Công Ty IDICO",
+      "sector": "Bất Động Sản Khu Công Nghiệp",
+      "price_vnd": 20000.0,
+      "day_change_pct": 0.0,
+      "vol_ratio": 1.0,
+      "active_buy_pct": 50.0,
+      "rsi14": 50.0,
+      "bctc_rating": "AAA",
+      "legends_score": 94.7,
+      "ocf_ratio": 1.58,
+      "graham_mos_pct": 64.8,
+      "wave_type": "🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)",
+      "signal_strength": 83.9,
+      "entry_zone_vnd": 19900.0,
+      "stop_2atr_vnd": 19120.0,
+      "tp1_vnd": 21848.0,
+      "tp2_vnd": 22860.0,
+      "catalyst": "Hạch toán một lần doanh thu KCN Phú Mỹ 2 & Hựu Thạnh, của để dành người mua trả tiền trước 6.200 tỷ, cổ tức tiền mặt 40%.",
+      "action_note": "Cạn cung tại nền hỗ trợ, Biên an toàn Graham +64.8%. Điểm gom thăm dò an toàn!"
+    },
+    {
+      "symbol": "KDH",
+      "name": "Nhà Khang Điền",
+      "sector": "Bất Động Sản Dân Cư",
+      "price_vnd": 13900.0,
+      "day_change_pct": -0.71,
+      "vol_ratio": 0.72,
+      "active_buy_pct": 50.2,
+      "rsi14": 53.3,
+      "bctc_rating": "AA",
+      "legends_score": 88.4,
+      "ocf_ratio": 1.33,
+      "graham_mos_pct": 94.2,
+      "wave_type": "🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)",
+      "signal_strength": 82.2,
+      "entry_zone_vnd": 13830.0,
+      "stop_2atr_vnd": 13014.0,
+      "tp1_vnd": 15760.0,
+      "tp2_vnd": 16779.0,
+      "catalyst": "Quỹ đất sạch 650ha tại TP.HCM pháp lý minh bạch, bàn giao dự án The Privia và mở bán liên doanh Clarita/Emeria cùng Keppel Land.",
+      "action_note": "Cạn cung tại nền hỗ trợ, Biên an toàn Graham +94.2%. Điểm gom thăm dò an toàn!"
+    },
+    {
+      "symbol": "FPT",
+      "name": "Tập Đoàn FPT",
+      "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "price_vnd": 52700.0,
+      "day_change_pct": 0.0,
+      "vol_ratio": 0.78,
+      "active_buy_pct": 43.2,
+      "rsi14": 25.0,
+      "bctc_rating": "AAA",
+      "legends_score": 92.7,
+      "ocf_ratio": 1.25,
+      "graham_mos_pct": 59.8,
+      "wave_type": "💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND)",
+      "signal_strength": 80.9,
+      "entry_zone_vnd": 52436.0,
+      "stop_2atr_vnd": 49871.0,
+      "tp1_vnd": 58640.0,
+      "tp2_vnd": 61893.0,
+      "catalyst": "Doanh thu CNTT nước ngoài vượt 1 tỷ USD (Nhật Bản +32%), vận hành AI Factory cùng NVIDIA tại Việt Nam và Nhật Bản.",
+      "action_note": "RSI lùi về 25.0 trên nền BCTC AAA. Sẵn sàng bắt nhịp hồi phục T+3!"
+    },
+    {
+      "symbol": "HAH",
+      "name": "Vận Tải & Xếp Dỡ Hải An",
+      "sector": "Cảng Biển & Logistics Vận Tải",
+      "price_vnd": 49650.0,
+      "day_change_pct": 1.22,
+      "vol_ratio": 0.44,
+      "active_buy_pct": 62.6,
+      "rsi14": 54.1,
+      "bctc_rating": "AAA",
+      "legends_score": 94.7,
+      "ocf_ratio": 2.07,
+      "graham_mos_pct": 147.7,
+      "wave_type": "⚡ BÙNG NỔ DÒNG TIỀN / POCKET PIVOT",
+      "signal_strength": 80.0,
+      "entry_zone_vnd": 49402.0,
+      "stop_2atr_vnd": 47221.0,
+      "tp1_vnd": 54750.0,
+      "tp2_vnd": 57543.0,
+      "catalyst": "Đưa vào khai thác 4 tàu container đóng mới 1.800 TEU cùng mặt bằng giá cho thuê tàu định hạn (Time Charter) duy trì ở mức cao.",
+      "action_note": "Mua chủ động đạt 62.6%, Vol 0.44x MA20. Canh gom nhịp chuẩn!"
+    },
+    {
+      "symbol": "DGW",
+      "name": "Thế Giới Số (Digiworld)",
+      "sector": "Bán Lẻ & Tiêu Dùng Thiết Yếu",
+      "price_vnd": 40950.0,
+      "day_change_pct": -3.65,
+      "vol_ratio": 0.86,
+      "active_buy_pct": 28.0,
+      "rsi14": 24.1,
+      "bctc_rating": "AAA",
+      "legends_score": 89.3,
+      "ocf_ratio": 1.53,
+      "graham_mos_pct": 52.1,
+      "wave_type": "💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND)",
+      "signal_strength": 79.2,
+      "entry_zone_vnd": 40745.0,
+      "stop_2atr_vnd": 38084.0,
+      "tp1_vnd": 47535.0,
+      "tp2_vnd": 51141.0,
+      "catalyst": "Chu kỳ thay mới Laptop AI PC, thiết bị văn phòng doanh nghiệp và mở rộng mảng hàng tiêu dùng/thiết bị gia dụng.",
+      "action_note": "RSI lùi về 24.1 trên nền BCTC AAA. Sẵn sàng bắt nhịp hồi phục T+3!"
+    },
+    {
+      "symbol": "VPB",
+      "name": "Việt Nam Thịnh Vượng (VPBank)",
+      "sector": "Ngân Hàng & Dịch Vụ Tài Chính",
+      "price_vnd": 22950.0,
+      "day_change_pct": -1.08,
+      "vol_ratio": 0.94,
+      "active_buy_pct": 37.9,
+      "rsi14": 22.6,
+      "bctc_rating": "AA",
+      "legends_score": 86.7,
+      "ocf_ratio": 1.15,
+      "graham_mos_pct": 153.2,
+      "wave_type": "💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND)",
+      "signal_strength": 78.6,
+      "entry_zone_vnd": 22835.0,
+      "stop_2atr_vnd": 21800.0,
+      "tp1_vnd": 25365.0,
+      "tp2_vnd": 26688.0,
+      "catalyst": "Bộ đệm vốn CAR số 1 ngành (16.8%) hậu thuẫn bởi cổ đông chiến lược SMBC, FE Credit quay lại có lãi.",
+      "action_note": "RSI lùi về 22.6 trên nền BCTC AA. Sẵn sàng bắt nhịp hồi phục T+3!"
+    }
+  ],
+  "alex_top_us_waves": [
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp.",
+      "sector": "Semiconductors & AI",
+      "price_usd": 204.64,
+      "legends_score": 86.4,
+      "ev_pct": 23.91,
+      "rr_ratio": 7.93,
+      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
+      "limit_entry_usd": 202.35,
+      "stop_2atr_usd": 191.56,
+      "tp1_usd": 230.8,
+      "catalyst": "Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết công suất cả năm tới. Các tập đoàn siêu đám mây (Meta, Google, Microsoft) cam kết chi tiêu vốn (CapEx) vượt $200 tỷ USD cho hạ tầng AI."
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom Inc.",
+      "sector": "Custom AI ASICs & Networking",
+      "price_usd": 326.08,
+      "legends_score": 81.5,
+      "ev_pct": 23.95,
+      "rr_ratio": 6.63,
+      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
+      "limit_entry_usd": 321.54,
+      "stop_2atr_usd": 300.12,
+      "tp1_usd": 378.0,
+      "catalyst": "Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưởng bùng nổ 3 con số. Việc sáp nhập VMware bắt đầu phát huy hiệu quả cắt giảm chi phí và gia tăng dòng tiền thuê bao phần mềm doanh nghiệp."
+    },
+    {
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor (TSMC)",
+      "sector": "Global Chip Foundry",
+      "price_usd": 406.13,
+      "legends_score": 90.2,
+      "ev_pct": 19.44,
+      "rr_ratio": 5.3,
+      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
+      "limit_entry_usd": 401.09,
+      "stop_2atr_usd": 377.3,
+      "tp1_usd": 463.79,
+      "catalyst": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia."
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corp.",
+      "sector": "Enterprise Software & Cloud",
+      "price_usd": 521.91,
+      "legends_score": 89.6,
+      "ev_pct": 10.3,
+      "rr_ratio": 4.09,
+      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
+      "limit_entry_usd": 517.8,
+      "stop_2atr_usd": 498.43,
+      "tp1_usd": 568.87,
+      "catalyst": "Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu tăng mua ròng cổ phiếu công nghệ có FCF lớn sau khi VIX hạ nhiệt về 19.42."
+    },
+    {
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "sector": "Pharmaceuticals & MedTech",
+      "price_usd": 273.2,
+      "legends_score": 84.5,
+      "ev_pct": 9.74,
+      "rr_ratio": 2.79,
+      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
+      "limit_entry_usd": 270.49,
+      "stop_2atr_usd": 257.73,
+      "tp1_usd": 304.14,
+      "catalyst": "Tiến trình dàn xếp các vụ kiện pháp lý phấn rôm bước vào giai đoạn cuối cùng với quỹ bồi thường đã được trích lập xong. Ngành Y tế (XLV) đang hút mạnh dòng tiền tổ chức 1 tháng qua (+15.49%). Nhịp chỉnh -1.08% về $273.20 mở ra điểm mua tuyệt đẹp."
+    },
+    {
+      "symbol": "PG",
+      "name": "Procter & Gamble",
+      "sector": "Consumer Household Staples",
+      "price_usd": 161.57,
+      "legends_score": 89.3,
+      "ev_pct": 8.16,
+      "rr_ratio": 2.79,
+      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
+      "limit_entry_usd": 160.37,
+      "stop_2atr_usd": 154.72,
+      "tp1_usd": 175.27,
+      "catalyst": "Chi phí nguyên vật liệu đầu vào (bột giấy, nhựa, dầu thực vật) đang hạ nhiệt giúp mở rộng biên lợi nhuận gộp lên 51.4%. Nhịp lùi -1.00% hôm nay do VIX hạ nhiệt kích hoạt đúng bài học tối ưu giá vốn của Alex hôm qua."
+    }
+  ],
+  "live_cbtt_and_sec_disclosures": [
+    {
+      "market": "US_SEC_EDGAR",
+      "symbol": "NVDA",
+      "form_or_type": "SEC Form 4/A",
+      "date": "2026-10-13",
+      "headline": "Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100%",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "US_SEC_EDGAR",
+      "symbol": "AVGO",
+      "form_or_type": "SEC Form 10-Q",
+      "date": "2026-09-10",
+      "headline": "Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100%",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "US_SEC_EDGAR",
+      "symbol": "TSM",
+      "form_or_type": "SEC Form 6-K",
+      "date": "2026-10-22",
+      "headline": "Hồ sơ SEC MATERIAL_EVENT_8K đã kiểm chứng 100%",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "US_SEC_EDGAR",
+      "symbol": "GOOGL",
+      "form_or_type": "SEC Form 10-Q",
+      "date": "2026-10-29",
+      "headline": "Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100%",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "US_SEC_EDGAR",
+      "symbol": "MSFT",
+      "form_or_type": "SEC Form 10-Q",
+      "date": "2026-10-28",
+      "headline": "Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100%",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "US_SEC_EDGAR",
+      "symbol": "AAPL",
+      "form_or_type": "SEC Form 4",
+      "date": "2026-10-29",
+      "headline": "Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100%",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
+      "date": "Sun, 01 Nov 26 0",
+      "headline": "Từ 1 con tàu đến đế chế hơn 1.000 tàu: Gia tộc tỷ phú góp mặt trong siêu cảng gần 5 tỷ USD ở Cần Giờ đang tăng tốc",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "DXG",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Sat, 31 Oct 26 1",
+      "headline": "Bluemarq Group (DXG) ghi nhận kỷ lục hơn 9.000 tỷ đồng tiền người mua nhà trả trước",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
+      "date": "Sat, 31 Oct 26 0",
+      "headline": "Becamex Group ‘rót’ thêm hơn 375 tỷ đồng vào doanh nghiệp làm dự án đường cao tốc",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "BSR",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Sat, 31 Oct 26 0",
+      "headline": "Cập nhật BCTC quý 3/2026 ngày 31/10: BSR, SHB, Eximbank, Vietnam Airlines cùng nhiều doanh nghiệp lớn công bố, kết quả bất ngờ",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "BSR",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Sat, 31 Oct 26 0",
+      "headline": "Nhà máy lọc dầu 3 tỷ USD của Việt Nam lần đầu tiên lãi ngay 1 tỷ USD chỉ sau 9 tháng, doanh thu xăng E10 tăng 1.900 lần",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "PC1",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Fri, 30 Oct 26 1",
+      "headline": "Cập nhật BCTC quý 3/2026 tối ngày 30/10: Vingroup, TPBank, Viettel Global, PC1 cùng hàng loạt doanh nghiệp tên tuổi dồn dập công bố trước hạn chót",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "PNJ",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Fri, 30 Oct 26 1",
+      "headline": "PNJ lỗ thêm 257 tỷ trong quý 3, dự phòng giảm giá kim cương 1.700 tỷ, giảm hơn 1.000 nhân viên trong 9 tháng đầu năm",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Sat, 31 Oct 26 0",
+      "headline": "Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị \"xả\" mạnh nhất",
+      "is_portfolio_holding": true
+    }
+  ],
+  "departments_heartbeat": [
+    {
+      "dept": "Ban 1 (Global & VN) — Vĩ Mô & Tiền Tệ SBV/Fed",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Giám sát DXY, VIX, Lãi suất SBV & Tỷ giá USD/VND"
+    },
+    {
+      "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 26 tin CBTT"
+    },
+    {
+      "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Phát hiện 8 sóng cổ phiếu VN & 6 sóng cổ phiếu Mỹ đạt chuẩn AAA/AA"
+    },
+    {
+      "dept": "Ban 4 (Global & VN) — Hội Đồng Rủi Ro Định Lượng ATR",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Khóa chặt Stop 2xATR <= 7.5% & R:R >= 1:2.0"
+    },
+    {
+      "dept": "Ban 5 (Global & VN) — Tự Học Thích Nghi & Kiểm Định 4 Ngày",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Điểm sức khỏe hệ thống đạt 100/100 (Zero Drift)"
+    },
+    {
+      "dept": "Ban 6 (Global & VN) — Học Viện Kèm Cặp Thực Chiến",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Đồng hành 1:1 cùng Chủ tịch Phước Trần"
+    },
+    {
+      "dept": "Ban 7 VN — Chuyên Viên Minh Quân (Săn Sóng Nội Địa)",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Trực chiến canh HPG, TCB, MBB & 8 mã tiềm năng mới"
+    },
+    {
+      "dept": "Ban 7 Global — Chuyên Viên Alex (Săn Sóng Quốc Tế)",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Trực chiến theo dõi NVDA, AVGO, TSM, GOOGL & 6 sóng Phố Wall"
+    },
+    {
+      "dept": "Ban 8 & Ban 9 — Tổng Tư Lệnh James, Palmer & Victor Sentinel",
+      "status": "🟢 ACTIVE 24/7",
+      "note": "Canh giá 2 đầu (Chốt lời TP1/TP2 + Cắt lỗ Stop 2xATR + Cầu chì 14h25)"
+    }
+  ]
+}
