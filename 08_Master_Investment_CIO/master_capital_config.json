@@ -1,37 +1,98 @@
 {
   "system_title": "Global & VN Unified Master Investment CIO Suite",
-  "version": "1.0-Institutional",
+  "version": "2.0-Adaptive-Hybrid",
   "currency_settings": {
-    "base_reporting_currency": "USD",
-    "secondary_currency": "VND",
+    "base_reporting_currency": "VND",
+    "secondary_currency": "USD",
     "exchange_rate_usd_vnd": 25400.0,
     "default_total_nav_usd": 100000.0,
-    "default_total_nav_vnd": 2540000000.0
+    "default_total_nav_vnd": 20000000.0
+  },
+  "active_deployment": {
+    "account_id": "105C307855",
+    "account_owner": "Trần Quốc Thiên Phước",
+    "broker": "TCBS (Techcom Securities)",
+    "approval_status": "APPROVED_BY_CHAIRMAN",
+    "approval_timestamp": "2026-11-01T18:25:00+07:00",
+    "strategy_name": "CHIẾN LƯỢC LAI TẠO TIẾN HÓA 2 GIAI ĐOẠN (THE 2-PHASE ADAPTIVE HYBRID STRATEGY)",
+    "initial_nav_vnd": 20000000.0,
+    "core_pool_vnd": 15000000.0,
+    "core_pool_pct": 75.0,
+    "tactical_swing_pool_vnd": 5000000.0,
+    "tactical_swing_pool_pct": 25.0,
+    "two_stage_roadmap": {
+      "stage_1_month_1": {
+        "title": "Giai Đoạn 1 (Tháng 1) - Xây Kho Hàng & Thiết Lập Thành Lũy Thép",
+        "target_profit_vnd": 1500000.0,
+        "target_monthly_return_pct": 7.5,
+        "execution_mode": "Phương Án Cơ Bản (15tr Core Sniper + 5tr Tactical Swing)",
+        "core_picks": [
+          {
+            "symbol": "HPG",
+            "target_shares": 500,
+            "approx_capital_vnd": 10500000.0,
+            "role": "Vua Thép • Dung Quất 2 • HRC • Biên an toàn BCTC AAA"
+          },
+          {
+            "symbol": "TCB",
+            "target_shares": 200,
+            "approx_capital_vnd": 4550000.0,
+            "role": "Vua Ngân Hàng Tư Nhân • CASA top 1 & Tech • Động lực tăng trưởng"
+          }
+        ],
+        "tactical_swing_picks": [
+          {
+            "symbol": "SSI",
+            "target_shares": 200,
+            "approx_capital_vnd": 5000000.0,
+            "role": "Đầu Ngành Chứng Khoán • Hưởng Lợi Nâng Hạng FTSE & Hệ thống KRX"
+          }
+        ],
+        "key_deliverable": "Tích lũy trọn vẹn 500 cổ HPG + 200 cổ TCB khả dụng 100% trong tài khoản sau T+2.5 để làm kho hàng T+0 cho Tháng 2."
+      },
+      "stage_2_month_2": {
+        "title": "Giai Đoạn 2 (Tháng 2) - Kích Hoạt Vũ Khí T+0 Đột Phá Lợi Nhuận",
+        "target_profit_vnd": 2700000.0,
+        "target_cumulative_profit_vnd": 4200000.0,
+        "target_cumulative_return_pct": 21.0,
+        "execution_mode": "Nâng Cấp A (Thêm Lướt T+0 Kho Hàng Sẵn) + Chốt Lời Core Scaling Out 50% TP1",
+        "weapons": [
+          "Lướt T+0 kho hàng sẵn trên 500 cổ HPG: 1-2 nhịp/tuần, biên lợi nhuận +2% đến +3%/nhịp trên lô 200 CP, rủi ro qua đêm bằng 0.",
+          "Chốt lời từng phần Scaling Out 50% danh mục Core khi chạm TP1 (+8% đến +10%), nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA20.",
+          "Tiếp tục xoay vòng 5tr Tactical Swing theo sóng ngắn T+3/T+5 cùng Minh Quân."
+        ],
+        "safety_fuse_rules": [
+          "Quy tắc Cân Bằng Số Lượng Trước 14h25: Luôn bán đúng số lượng đã mua T+0 trước 14h25, tuyệt đối không ôm thêm cổ phiếu qua đêm.",
+          "Chỉ thực hiện T+0 trên siêu cổ phiếu điểm A (HPG/TCB), không lướt hàng rác.",
+          "Minh Quân phát tín hiệu giờ giấc chuẩn xác, không đoán đỉnh đáy."
+        ]
+      }
+    }
   },
   "macro_asset_allocation": {
-    "global_market_pct": 55.0,
-    "vietnam_market_pct": 35.0,
-    "cash_reserve_dry_powder_pct": 10.0,
-    "rationale": "55% Thị trường Mỹ/Toàn cầu (Cỗ máy FCF khổng lồ, công nghệ bán dẫn dẫn dắt toàn cầu), 35% Thị trường Việt Nam (Hưởng lợi chu kỳ nới lỏng SBV, nâng hạng thị trường, đầu tư công và FDI), 10% Tiền mặt dự phòng săn hàng chiết khấu sau BCTC."
+    "global_market_pct": 0.0,
+    "vietnam_market_pct": 97.5,
+    "cash_reserve_dry_powder_pct": 2.5,
+    "rationale": "Chế độ Bắn Tỉa Tập Trung VN (Focused VN Sniper Mode) tối ưu hóa cho quy mô vốn 20 triệu VNĐ nhằm đảm bảo chuẩn lô chẵn 100 CP và tối ưu tỷ suất lợi nhuận. Thị trường Quốc tế (Alex) đóng vai trò Benchmark mô phỏng thể chế."
   },
   "risk_governance": {
-    "max_position_weight_pct": 15.0,
-    "min_position_weight_pct": 4.0,
-    "max_loss_per_trade_nav_pct": 0.35,
-    "stop_loss_standard": "Hard Stop 2xATR(14)",
+    "max_position_weight_pct": 55.0,
+    "min_position_weight_pct": 20.0,
+    "max_loss_per_trade_nav_pct": 0.75,
+    "stop_loss_standard": "Hard Stop 2xATR(14) (Khóa cứng <= 7.5% bảo vệ toán học bất đối xứng)",
     "min_reward_risk_ratio": 2.0,
     "min_expected_value_pct": 3.0,
-    "sector_concentration_cap_pct": 30.0
+    "sector_concentration_cap_pct": 60.0
   },
   "strategic_sleeves": {
-    "core_compounder_target_pct": 65.0,
-    "tactical_alpha_target_pct": 35.0
+    "core_compounder_target_pct": 75.0,
+    "tactical_alpha_target_pct": 25.0
   },
   "cross_market_coordination": {
     "us_lead_specialist": "Alex (Ban 7 Global)",
     "vn_lead_specialist": "Minh Quân (Ban 7 VN)",
-    "execution_time_vn": "08:45 AM (15 phút trước giờ mở phiên ATO 09:00)",
-    "execution_time_us": "08:30 PM (60 phút trước giờ mở phiên US 21:30)",
-    "cross_currency_settlement": "Chuyển đổi USD/VND theo tỷ giá liên ngân hàng an toàn"
+    "execution_time_vn": "Khung Giờ Vàng 14h00 – 14h25 (Kiểm tra hấp thụ T+2)",
+    "pre_session_briefing": "08:30 AM (Trước giờ mở phiên ATO 09:00)",
+    "t0_fuse_deadline": "14:25 PM (Hạn chót cân bằng trạng thái T+0)"
   }
 }

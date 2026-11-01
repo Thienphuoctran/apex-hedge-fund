@@ -23,7 +23,7 @@
 - **Điểm:** `100/100`
 
 ### C. Kỷ Luật Quản Trị Rủi Ro & Sổ Lệnh Master Blotter (Trọng số 25%)
-- **Tình trạng Sổ Lệnh:** 8 lệnh hợp nhất US & VN đang theo dõi
+- **Tình trạng Sổ Lệnh:** 7 lệnh hợp nhất US & VN đang theo dõi
 - **Kỷ luật Tỷ lệ Risk/Reward:** CHUẨN THỂ CHẾ (100% lệnh R:R >= 1:2.0)
 - **Kỷ luật Cắt lỗ Hard Stop <= 7.5%:** CHUẨN THỂ CHẾ (100% lệnh Stop Loss <= 7.5%)
 - **Radar Công Bố Thông Tin & SEC:** N/A | N/A
