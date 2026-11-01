@@ -1,5 +1,5 @@
 # BẢNG THEO DÕI DANH MỤC THỜI GIAN THỰC (LIVE SENTINEL STATUS)
-*Cập nhật gần nhất*: `2026-11-01 13:24:04`  
+*Cập nhật gần nhất*: `2026-11-01 13:39:19`  
 *Trạng thái hệ thống*: **`🚨 CÓ BIẾN ĐỘNG KHẨN CẤP`**  
 *Tổng số mã đang bảo vệ*: **`21 mã`**
 
@@ -10,7 +10,8 @@
 | **`TSM`** | US_GLOBAL | `406.13 USD` | `-3.19%` | `377.30 USD` | `+7.10%` | `2.1x` | ⚠️ Cảnh giác |
 | **`GOOGL`** | US_GLOBAL | `279.84 USD` | `-0.29%` | `258.85 USD` | `+7.50%` | `2.3x` | ✅ Bình thường |
 | **`HPG`** | VIETNAM | `21,000.00 VND` | `-0.94%` | `20,120.00 VND` | `+4.19%` | `1.4x` | ✅ Bình thường |
-| **`FPT`** | VIETNAM | `52,700.00 VND` | `+0.00%` | `49,870.00 VND` | `+5.37%` | `0.9x` | ✅ Bình thường |
+| **`TCB`** | VIETNAM | `21,600.00 VND` | `-3.36%` | `20,750.00 VND` | `+3.94%` | `0.7x` | ⚠️ Cảnh giác |
+| **`MBB`** | VIETNAM | `19,300.00 VND` | `-2.03%` | `18,660.00 VND` | `+3.32%` | `0.8x` | ⚠️ Cảnh giác |
 | **`V`** | US_GLOBAL | `413.59 USD` | `-0.64%` | `398.42 USD` | `+3.67%` | `1.1x` | ✅ Bình thường |
 | **`JPM`** | US_GLOBAL | `337.04 USD` | `-2.38%` | `328.31 USD` | `+2.59%` | `1.1x` | ⚠️ Cảnh giác |
 | **`PG`** | US_GLOBAL | `161.57 USD` | `-0.82%` | `158.29 USD` | `+2.03%` | `1.3x` | ✅ Bình thường |
@@ -23,6 +24,5 @@
 | **`HAH`** | VIETNAM | `49,650.00 VND` | `+1.22%` | `47,221.00 VND` | `+4.89%` | `0.5x` | ✅ Bình thường |
 | **`HDB`** | VIETNAM | `22,400.00 VND` | `-1.32%` | `21,143.00 VND` | `+5.61%` | `0.9x` | ✅ Bình thường |
 | **`GMD`** | VIETNAM | `52,700.00 VND` | `+1.15%` | `49,229.00 VND` | `+6.59%` | `0.7x` | ✅ Bình thường |
-| **`TCB`** | VIETNAM | `21,600.00 VND` | `-3.36%` | `20,755.00 VND` | `+3.91%` | `0.7x` | ⚠️ Cảnh giác |
 | **`MBS`** | VIETNAM | `0.00 VND` | `+0.00%` | `23,750.00 VND` | `+999.00%` | `1.0x` | ✅ Bình thường |
 | **`MWG`** | VIETNAM | `74,000.00 VND` | `-2.37%` | `71,357.00 VND` | `+3.57%` | `0.8x` | ⚠️ Cảnh giác |

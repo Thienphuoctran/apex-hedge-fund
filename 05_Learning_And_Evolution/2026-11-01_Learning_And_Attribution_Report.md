@@ -29,7 +29,7 @@
 | :--- | :--- | :--- | :--- |
 | **1. Radar Lịch BCTC (`Earnings Radar <= 7d`)** | Tự động khóa mua mới & loại khỏi `risk_parity_allocations` các mã có lịch BCTC `0..7 ngày` | Đã khóa tự động **`AAPL (1d), AMD (2d), QCOM (3d), ARM (3d), PLTR (1d), SMCI (2d), BRK-B (6d), NVO (3d), MCD (3d)`** (đưa vào `Locked Watchlist`); xác nhận **`GOOGL (4d ago), AMZN (3d ago), COIN (3d ago), LLY (3d ago), ABBV (2d ago)`** đã qua kỳ công bố BCTC an toàn | **TUÂN THỦ 100% — 0 VI PHẠM** |
 | **2. Tín Hiệu SEC Form 4 & `True FCF ex-SBC`** | Lọc cổ phiếu có dòng tiền thực dương sau trừ SBC & Ban lãnh đạo mua ròng | `MSFT`, `JPM`, `PG`, `TSM` duy trì sức mạnh giá và dòng tiền định chế vượt trội | **TÍN HIỆU ĐỘ TIN CẬY CAO** |
-| **3. Định Cỡ `ATR Risk-Parity`** | Khống chế rủi ro mất vốn mỗi vị thế và trần cụm Bán dẫn `<= 14% NAV` | Tổng rủi ro toàn danh mục được khóa ở mức **`-2.78% NAV`**, Beta danh mục **`0.54`** | **TỐI ƯU HÓA RỦI RO** |
+| **3. Định Cỡ `ATR Risk-Parity`** | Khống chế rủi ro mất vốn mỗi vị thế và trần cụm Bán dẫn `<= 14% NAV` | Tổng rủi ro toàn danh mục được khóa ở mức **`-2.78% NAV`**, Beta danh mục **`0.47`** | **TỐI ƯU HÓA RỦI RO** |
 | **4. Ngưỡng Cắt Lỗ `2xATR` & `Chandelier Stop`** | Kết hợp cắt lỗ ban đầu `2xATR(14)` và chặn lãi động `Highest_22d - 2.5xATR` | Bảo vệ trọn vẹn lợi nhuận các mã dẫn sóng mà không bị rung rũ sớm | **KỶ LUẬT ĐỊNH LƯỢNG** |
 
 ---

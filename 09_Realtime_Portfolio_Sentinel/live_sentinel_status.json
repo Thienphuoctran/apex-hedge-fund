@@ -1,5 +1,5 @@
 {
-  "last_scan_utc": "2026-11-01T13:24:04.326369",
+  "last_scan_utc": "2026-11-01T13:39:19.752786",
   "total_positions_monitored": 21,
   "emergency_alerts_active": 1,
   "status": "ALERT_ACTIVE",
@@ -136,38 +136,73 @@
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
         "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
         "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 1571.4
+        "hedge_ratio_pct": 1257.1
       },
-      "shares": 400,
-      "allocated_capital": 8400000.0,
+      "shares": 500,
+      "allocated_capital": 10500000.0,
       "currency": "VND",
-      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng A, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.35x), Altman Z'' (7.48), không có dấu hiệu gian lận Beneish M.",
       "catalysts": "Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC."
     },
     {
-      "symbol": "FPT",
+      "symbol": "TCB",
       "market": "VIETNAM",
-      "name": "Tập Đoàn FPT",
-      "current_price": 52700.0,
-      "prev_close": 52700.0,
-      "change_pct": 0.0,
-      "stop_loss_2atr": 49870.0,
-      "stop_dist_pct": 5.37,
-      "volume_surge_ratio": 0.9,
-      "vwap_est": 52933.33,
-      "severity": "NORMAL",
-      "triggers_hit": [],
+      "name": "Kỹ Thương Việt Nam (Techcombank)",
+      "current_price": 21600.0,
+      "prev_close": 22350.0,
+      "change_pct": -3.36,
+      "stop_loss_2atr": 20750.0,
+      "stop_dist_pct": 3.94,
+      "volume_surge_ratio": 0.73,
+      "vwap_est": 21816.67,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -3.36% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
       "hedging_solution": {
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
         "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
         "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 2504.7
+        "hedge_ratio_pct": 3055.6
       },
-      "shares": 100,
-      "allocated_capital": 5270000.0,
+      "shares": 200,
+      "allocated_capital": 4320000.0,
       "currency": "VND",
-      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng A, OCF thực dương, không có dấu hiệu xào nấu Beneish M-Score.",
-      "catalysts": "Doanh thu CNTT nước ngoài vượt 1 tỷ USD (Nhật Bản +32%), vận hành AI Factory cùng NVIDIA tại Việt Nam và Nhật Bản."
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.16x), Altman Z'' (3.51), không có dấu hiệu gian lận Beneish M.",
+      "catalysts": "Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS."
+    },
+    {
+      "symbol": "MBB",
+      "market": "VIETNAM",
+      "name": "Quân Đội (MBBank)",
+      "current_price": 19300.0,
+      "prev_close": 19700.0,
+      "change_pct": -2.03,
+      "stop_loss_2atr": 18660.0,
+      "stop_dist_pct": 3.32,
+      "volume_surge_ratio": 0.84,
+      "vwap_est": 19400.0,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -2.03% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 3419.7
+      },
+      "shares": 200,
+      "allocated_capital": 3860000.0,
+      "currency": "VND",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.14x), Altman Z'' (3.44), không có dấu hiệu gian lận Beneish M.",
+      "catalysts": "Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời."
     },
     {
       "symbol": "V",
@@ -472,36 +507,6 @@
       "vwap_est": 52600.0,
       "severity": "NORMAL",
       "triggers_hit": [],
-      "hedging_solution": {
-        "instrument": "Hợp Đồng Tương Lai VN30F1M",
-        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
-        "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 100.0
-      },
-      "shares": 1000,
-      "allocated_capital": 0.0,
-      "currency": "VND",
-      "bctc_thesis": "Vị thế danh mục VN IC Tracker",
-      "catalysts": ""
-    },
-    {
-      "symbol": "TCB",
-      "market": "VIETNAM",
-      "name": "TCB",
-      "current_price": 21600.0,
-      "prev_close": 22350.0,
-      "change_pct": -3.36,
-      "stop_loss_2atr": 20755.0,
-      "stop_dist_pct": 3.91,
-      "volume_surge_ratio": 0.73,
-      "vwap_est": 21816.67,
-      "severity": "WARNING",
-      "triggers_hit": [
-        {
-          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
-          "desc": "Giá giảm -3.36% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
-        }
-      ],
       "hedging_solution": {
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
         "action": "SHORT 1 HỢP ĐỒNG VN30F1M",

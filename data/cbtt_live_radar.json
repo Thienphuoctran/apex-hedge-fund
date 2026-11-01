@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-01T06:22:01.412283+00:00",
+  "timestamp_utc": "2026-11-01T13:38:24.970780+00:00",
   "scan_date": "2026-11-01",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 26,
+  "total_vn_announcements_count": 25,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -285,12 +285,12 @@
       "total_recent_filings": 9
     },
     "HCM": {
-      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "latest_title": "Từ 1 con tàu đến đế chế hơn 1.000 tàu: Gia tộc tỷ phú góp mặt trong siêu cảng gần 5 tỷ USD ở Cần Giờ đang tăng tốc",
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan",
       "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 09:41:00 +0700",
-      "source_url": "https://cafef.vn/tu-1-con-tau-den-de-che-hon-1000-tau-gia-toc-ty-phu-gop-mat-trong-sieu-cang-gan-5-ty-usd-o-can-gio-dang-tang-toc-188261101090831232.chn",
-      "total_announcements": 10
+      "published_at": "Sun, 01 Nov 26 13:54:00 +0700",
+      "source_url": "https://cafef.vn/ly-do-chuyen-bay-cua-vna-ha-canh-khan-cap-tai-pakistan-188261101135436257.chn",
+      "total_announcements": 9
     },
     "DXG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -306,7 +306,7 @@
       "severity": "CRITICAL",
       "published_at": "Sat, 31 Oct 26 00:23:00 +0700",
       "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-ngay-31-10-bsr-shb-eximbank-vietnam-airlines-cung-nhieu-doanh-nghiep-lon-cong-bo-ket-qua-bat-ngo-188261031002348599.chn",
-      "total_announcements": 2
+      "total_announcements": 3
     },
     "PC1": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -315,14 +315,6 @@
       "published_at": "Fri, 30 Oct 26 17:52:00 +0700",
       "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-sang-ngay-30-10-loat-doanh-nghiep-lon-don-dap-cong-bo-tch-bao-lai-tang-1233-pv-oil-lai-hon-900-ty-dong-gap-hon-5-lan-cung-ky-18826102923433041.chn",
       "total_announcements": 1
-    },
-    "PNJ": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "PNJ lỗ thêm 257 tỷ trong quý 3, dự phòng giảm giá kim cương 1.700 tỷ, giảm hơn 1.000 nhân viên trong 9 tháng đầu năm",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 17:11:00 +0700",
-      "source_url": "https://cafef.vn/pnj-lo-gan-1000-ty-trong-2-quy-giam-hon-1000-nhan-vien-trong-9-thang-dau-nam-188261030171129015.chn",
-      "total_announcements": 6
     },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -356,6 +348,14 @@
       "source_url": "https://cafef.vn/chua-tung-co-vinhomes-lai-9-thang-ky-luc-hon-75000-ty-dong-vuot-25-ke-hoach-ca-nam-188261030130647614.chn",
       "total_announcements": 1
     },
+    "PNJ": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,...",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 15:38:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn",
+      "total_announcements": 5
+    },
     "ACB": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "ACB cảnh báo nguy cơ mã độc trên iPhone, khuyến nghị cập nhật iOS mới để tăng cường bảo mật",
@@ -363,14 +363,6 @@
       "published_at": "Fri, 30 Oct 26 10:04:00 +0700",
       "source_url": "https://cafef.vn/acb-canh-bao-nguy-co-ma-doc-tren-iphone-khuyen-nghi-cap-nhat-ios-moi-de-tang-cuong-bao-mat-188261030100316697.chn",
       "total_announcements": 2
-    },
-    "PVT": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Nhà đầu tư xả cổ phiếu dầu khí",
-      "severity": "INFO",
-      "published_at": "Thu, 29 Oct 2026 16:11:29 +0700",
-      "source_url": "https://vnexpress.net/nha-dau-tu-xa-co-phieu-dau-khi-5138428.html",
-      "total_announcements": 1
     }
   },
   "us_filings": [
@@ -4821,6 +4813,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan",
+      "summary": "Chuyến bay Vietnam Airlines từ TP.HCM đi Munich (Đức) đã phải hạ cánh khẩn cấp tại Pakistan để hỗ trợ hành khách gặp vấn đề sức khỏe....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 13:54:00 +0700",
+      "source_url": "https://cafef.vn/ly-do-chuyen-bay-cua-vna-ha-canh-khan-cap-tai-pakistan-188261101135436257.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Từ 1 con tàu đến đế chế hơn 1.000 tàu: Gia tộc tỷ phú góp mặt trong siêu cảng gần 5 tỷ USD ở Cần Giờ đang tăng tốc",
       "summary": "Khởi nghiệp với một con tàu nhỏ vào năm 1970, gia tộc Aponte đã xây dựng MSC thành hãng vận tải container hàng đầu thế giới, vận hành hơn 1.000 tàu. Thông qua công ty thành viên Terminal Investment Limited, đế chế hàng h...",
       "event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -4891,18 +4895,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PNJ"
-      ],
-      "title": "PNJ lỗ thêm 257 tỷ trong quý 3, dự phòng giảm giá kim cương 1.700 tỷ, giảm hơn 1.000 nhân viên trong 9 tháng đầu năm",
-      "summary": "Lũy kế 9 tháng, doanh thu thuần đạt 32.704 tỷ đồng, tăng 29%. Lợi nhuận trước thuế đạt 535 tỷ đồng, giảm 74%; lợi nhuận sau thuế đạt 471 tỷ đồng, giảm 71%....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 17:11:00 +0700",
-      "source_url": "https://cafef.vn/pnj-lo-gan-1000-ty-trong-2-quy-giam-hon-1000-nhan-vien-trong-9-thang-dau-nam-188261030171129015.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "FPT"
       ],
       "title": "Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị \"xả\" mạnh nhất",
@@ -4953,12 +4945,12 @@
       "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng miếng, vàng nhẫn hôm nay (1/11) tại SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,...: Bao nhiêu tiền một chỉ?",
+      "title": "Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,...",
       "summary": "Các thương hiệu tiếp tục giữ nguyên giá mua vào và bán ra sau đợt điều chỉnh giảm mạnh trong phiên 31/10....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 07:45:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-hom-nay-1-11-tai-sjc-doji-bao-tin-manh-hai-pnj-bao-nhieu-tien-mot-chi-188261101074602212.chn"
+      "published_at": "Sun, 01 Nov 26 15:38:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn"
     },
     {
       "market": "VIETNAM",
@@ -5025,6 +5017,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Người dân TP.HCM tháo dỡ nhà, bàn giao mặt bằng dự án sau hơn 10 năm",
+      "summary": "Sau hơn 10 năm triển khai, dự án mở rộng đường Lương Định Của (TP.HCM) ghi nhận chuyển động mới khi nhiều hộ dân tháo dỡ nhà, bàn giao mặt bằng....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 14:48:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-dan-tphcm-thao-do-nha-ban-giao-mat-bang-du-an-sau-hon-10-nam-188261101100634184.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Vinhomes Green Paradise chính thức bước vào vòng bình chọn toàn cầu “7 kỳ quan đô thị tương lai”",
       "summary": "Ngày 31/10/2026 – Dự án Vinhomes Green Paradise (Cần Giờ, TP.HCM) chính thức bước vào vòng bình chọn toàn cầu của chiến dịch \"7 Kỳ quan Đô thị Tương lai\" do New7Wonders khởi xướng....",
       "event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -5037,36 +5041,24 @@
       "symbols": [
         "HCM"
       ],
-      "title": "Cách chọn nhà của người dân thay đổi 'chóng mặt'",
-      "summary": "Đó là nhận định của các chuyên gia, nhà quản lý tại Diễn đàn phát triển chuỗi giá trị bất động sản Việt Nam 2026 diễn ra tại TP.HCM chiều 30/10....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sat, 31 Oct 26 08:51:00 +0700",
-      "source_url": "https://cafef.vn/cach-chon-nha-cua-nguoi-dan-thay-doi-chong-mat-188261031075151735.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "“Thành phố cuối tuần” Qtopia: Đủ gần để đi mỗi tuần, đủ vui để quay lại nhiều lần",
-      "summary": "Kết hợp mô hình đô thị nghỉ dưỡng với tổ hợp vui chơi, giải trí và ẩm thực ngày đêm, Qtopia được phát triển theo định vị “Thành phố cuối tuần” của siêu đô thị TP.HCM. Dự án đón đầu nhu cầu về biển cuối tuần của người dân...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Sat, 31 Oct 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/thanh-pho-cuoi-tuan-qtopia-du-gan-de-di-moi-tuan-du-vui-de-quay-lai-nhieu-lan-188261030155445041.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
       "title": "Trung tâm Tài chính quốc tế TP.HCM công bố 10 thành viên đầu tiên",
       "summary": "VIFC-HCMC công bố 10 thành viên đầu tiên với tổng vốn điều lệ đăng ký và cam kết góp 33,63 triệu USD, cùng kế hoạch huy động và đầu tư khoảng 2,7 tỷ USD đến năm 2027, tập trung vào các lĩnh vực hạ tầng, giáo dục, năng lư...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
       "published_at": "Thu, 29 Oct 2026 03:27:00 GMT",
       "source_url": "https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "BSR"
+      ],
+      "title": "Chủ nhà máy lọc dầu Dung Quất gửi ngân hàng hơn 2 tỷ USD",
+      "summary": "Tổng công ty Lọc hóa dầu Việt Nam (BSR) gửi ngân hàng hơn 58.000 tỷ đồng, tức gần một nửa giá trị tài sản, trong giai đoạn lãi suất huy động neo cao....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 2026 15:15:00 +0700",
+      "source_url": "https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-gui-ngan-hang-hon-2-ty-usd-5139328.html"
     },
     {
       "market": "VIETNAM",
@@ -5115,19 +5107,6 @@
       "severity": "WARNING",
       "published_at": "Fri, 30 Oct 2026 12:32:50 +0700",
       "source_url": "https://vnexpress.net/tp-hcm-phat-hanh-trai-phieu-de-huy-dong-von-cho-cac-du-an-trong-diem-5138747.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM",
-        "PVT"
-      ],
-      "title": "Nhà đầu tư xả cổ phiếu dầu khí",
-      "summary": "Toàn bộ cổ phiếu dầu khí trên sàn TP HCM bị bán mạnh, trong đó PVT mất hết biên độ, khi giá dầu thế giới đi xuống....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 29 Oct 2026 16:11:29 +0700",
-      "source_url": "https://vnexpress.net/nha-dau-tu-xa-co-phieu-dau-khi-5138428.html"
     }
   ]
 }

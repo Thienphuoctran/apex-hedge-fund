@@ -236,7 +236,7 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Cổ phiếu DGC giao dịch tại 33,300 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Pháo đài tiền mặt ròng >10.500 tỷ (77% tổng tài sản), khởi công Tổ hợp Hóa chất Đức Giang Nghi Sơn và cung ứng phốt pho bán dẫn. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `85.5/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `63,723 đ` (MoS `+91.4%`) • Lynch PEG: `1.03x` • EVA Spread: `+10.0%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+  **[Hội Đồng 10 Đại Danh Thủ: `85.5/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `64,580 đ` (MoS `+93.9%`) • Lynch PEG: `1.03x` • EVA Spread: `+10.7%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
 
 **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Nhà sản xuất và xuất khẩu Phốt Pho Vàng (P4) số 1 châu Á, chiếm gần 50% thị phần xuất khẩu toàn quốc. P4 của DGC là nguyên liệu tối quan trọng không thể thay thế trong quy trình sản xuất chip bán dẫn AI và pin xe điện LFP. Sở hữu công nghệ tinh chế phốt pho điện tử đạt độ tinh khiết 99.999%.
 

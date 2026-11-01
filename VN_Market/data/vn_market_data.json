@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-01 13:23:36",
+  "timestamp": "2026-11-01 13:39:13",
   "total_tickers": 54,
   "macro_vietnam": {
     "DXY": {
@@ -57,24 +57,24 @@
       "tier": "VN30_MegaCap",
       "weight_target": 0.04,
       "pe": 11.48,
-      "pb": 2.1,
-      "roe_pct": 18.03,
+      "pb": 1.85,
+      "roe_pct": 17.5,
       "market_cap_ty_vnd": 470424.5,
-      "beta": 0.48,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 80247.1,
-        "net_income_ty_vnd": 38672.6,
-        "ocf_ty_vnd": -66047.1,
+        "revenue_ty_vnd": 82217.6,
+        "net_income_ty_vnd": 38685.4,
+        "ocf_ty_vnd": -131452.5,
         "fcf_ty_vnd": null,
-        "total_cash_ty_vnd": 656233.7,
-        "total_debt_ty_vnd": 32296.2,
-        "revenue_growth_pct": 51.6,
-        "earnings_growth_pct": 44.4,
+        "total_cash_ty_vnd": 609793.1,
+        "total_debt_ty_vnd": 246124.1,
+        "revenue_growth_pct": 11.4,
+        "earnings_growth_pct": 0.1,
         "gross_margin_pct": 0.0,
-        "operating_margin_pct": 67.34,
-        "profit_margin_pct": 51.9,
+        "operating_margin_pct": 58.28,
+        "profit_margin_pct": 50.67,
         "eps_vnd": 4906.0,
-        "bvps_vnd": 26866.0
+        "bvps_vnd": 30356.0
       },
       "technical": {
         "price": 56300.0,
@@ -104,7 +104,7 @@
         "chandelier_stop": 55245.0,
         "rs_rating": 62
       },
-      "last_updated": "2026-11-01 13:23:03",
+      "last_updated": "2026-11-01 13:38:49",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -163,7 +163,7 @@
         "chandelier_stop": 32682.0,
         "rs_rating": 56
       },
-      "last_updated": "2026-11-01 13:23:04",
+      "last_updated": "2026-11-01 13:38:50",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -176,21 +176,21 @@
       "weight_target": 0.035,
       "pe": 5.86,
       "pb": 1.18,
-      "roe_pct": 22.17,
+      "roe_pct": 22.64,
       "market_cap_ty_vnd": 235338.4,
-      "beta": 0.65,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 78194.9,
-        "net_income_ty_vnd": 40172.8,
-        "ocf_ty_vnd": -180627.7,
+        "revenue_ty_vnd": 82432.6,
+        "net_income_ty_vnd": 42558.8,
+        "ocf_ty_vnd": -120841.0,
         "fcf_ty_vnd": null,
-        "total_cash_ty_vnd": 550015.2,
-        "total_debt_ty_vnd": 177654.6,
-        "revenue_growth_pct": 17.5,
-        "earnings_growth_pct": 21.4,
+        "total_cash_ty_vnd": 548163.0,
+        "total_debt_ty_vnd": 322164.1,
+        "revenue_growth_pct": 25.5,
+        "earnings_growth_pct": null,
         "gross_margin_pct": 0.0,
-        "operating_margin_pct": 69.86,
-        "profit_margin_pct": 51.38,
+        "operating_margin_pct": 65.58,
+        "profit_margin_pct": 51.63,
         "eps_vnd": 5170.0,
         "bvps_vnd": 25616.0
       },
@@ -222,7 +222,7 @@
         "chandelier_stop": 29244.0,
         "rs_rating": 54
       },
-      "last_updated": "2026-11-01 13:23:04",
+      "last_updated": "2026-11-01 13:38:50",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -281,7 +281,7 @@
         "chandelier_stop": 21371.0,
         "rs_rating": 84
       },
-      "last_updated": "2026-11-01 13:23:05",
+      "last_updated": "2026-11-01 13:38:50",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -294,21 +294,21 @@
       "weight_target": 0.035,
       "pe": 6.07,
       "pb": 1.31,
-      "roe_pct": 21.68,
+      "roe_pct": 22.41,
       "market_cap_ty_vnd": 194326.9,
-      "beta": 0.55,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 59769.5,
-        "net_income_ty_vnd": 30078.2,
-        "ocf_ty_vnd": -114714.3,
+        "revenue_ty_vnd": 65389.6,
+        "net_income_ty_vnd": 32546.6,
+        "ocf_ty_vnd": -119461.5,
         "fcf_ty_vnd": null,
-        "total_cash_ty_vnd": 171001.8,
-        "total_debt_ty_vnd": 335333.8,
-        "revenue_growth_pct": 29.9,
-        "earnings_growth_pct": 40.0,
+        "total_cash_ty_vnd": 62110.6,
+        "total_debt_ty_vnd": 343091.3,
+        "revenue_growth_pct": 34.4,
+        "earnings_growth_pct": null,
         "gross_margin_pct": 0.0,
-        "operating_margin_pct": 65.24,
-        "profit_margin_pct": 50.32,
+        "operating_margin_pct": 65.17,
+        "profit_margin_pct": 49.77,
         "eps_vnd": 3181.0,
         "bvps_vnd": 14696.0
       },
@@ -340,7 +340,7 @@
         "chandelier_stop": 18980.0,
         "rs_rating": 57
       },
-      "last_updated": "2026-11-01 13:23:05",
+      "last_updated": "2026-11-01 13:38:51",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -399,7 +399,7 @@
         "chandelier_stop": 20077.0,
         "rs_rating": 74
       },
-      "last_updated": "2026-11-01 13:23:06",
+      "last_updated": "2026-11-01 13:38:51",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -458,7 +458,7 @@
         "chandelier_stop": 22692.0,
         "rs_rating": 89
       },
-      "last_updated": "2026-11-01 13:23:06",
+      "last_updated": "2026-11-01 13:38:52",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -517,7 +517,7 @@
         "chandelier_stop": 21124.0,
         "rs_rating": 93
       },
-      "last_updated": "2026-11-01 13:23:07",
+      "last_updated": "2026-11-01 13:38:52",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -576,7 +576,7 @@
         "chandelier_stop": 61830.0,
         "rs_rating": 83
       },
-      "last_updated": "2026-11-01 13:23:08",
+      "last_updated": "2026-11-01 13:38:53",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -588,24 +588,24 @@
       "tier": "VN30_MegaCap",
       "weight_target": 0.035,
       "pe": 6.45,
-      "pb": 2.17,
-      "roe_pct": 33.51,
+      "pb": 2.02,
+      "roe_pct": 37.99,
       "market_cap_ty_vnd": 517533.9,
-      "beta": 1.33,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 235823.0,
-        "net_income_ty_vnd": 79833.4,
-        "ocf_ty_vnd": 89563.3,
-        "fcf_ty_vnd": 25328.7,
-        "total_cash_ty_vnd": 59470.5,
-        "total_debt_ty_vnd": 215453.5,
-        "revenue_growth_pct": 187.9,
-        "earnings_growth_pct": 200.8,
-        "gross_margin_pct": 43.81,
-        "operating_margin_pct": 63.88,
-        "profit_margin_pct": 33.85,
+        "revenue_ty_vnd": 305423.4,
+        "net_income_ty_vnd": 98895.5,
+        "ocf_ty_vnd": 188715.6,
+        "fcf_ty_vnd": -38973.9,
+        "total_cash_ty_vnd": 55451.8,
+        "total_debt_ty_vnd": 240622.3,
+        "revenue_growth_pct": 419.9,
+        "earnings_growth_pct": 395.4,
+        "gross_margin_pct": 50.27,
+        "operating_margin_pct": 57.36,
+        "profit_margin_pct": 32.38,
         "eps_vnd": 9762.0,
-        "bvps_vnd": 28982.0
+        "bvps_vnd": 31256.0
       },
       "technical": {
         "price": 63000.0,
@@ -635,7 +635,7 @@
         "chandelier_stop": 58009.0,
         "rs_rating": 66
       },
-      "last_updated": "2026-11-01 13:23:08",
+      "last_updated": "2026-11-01 13:38:53",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -694,7 +694,7 @@
         "chandelier_stop": 22372.0,
         "rs_rating": 33
       },
-      "last_updated": "2026-11-01 13:23:09",
+      "last_updated": "2026-11-01 13:38:53",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -706,24 +706,24 @@
       "tier": "VN30_MidCap",
       "weight_target": 0.025,
       "pe": 10.55,
-      "pb": 0.93,
-      "roe_pct": 12.14,
+      "pb": 1.0,
+      "roe_pct": 10.13,
       "market_cap_ty_vnd": 17158.7,
-      "beta": 0.77,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 3333.9,
-        "net_income_ty_vnd": 1632.8,
-        "ocf_ty_vnd": -922.5,
-        "fcf_ty_vnd": -5800.8,
-        "total_cash_ty_vnd": 2889.8,
-        "total_debt_ty_vnd": 16659.0,
-        "revenue_growth_pct": -84.7,
-        "earnings_growth_pct": 278.9,
-        "gross_margin_pct": 69.18,
-        "operating_margin_pct": -33.19,
-        "profit_margin_pct": 52.66,
+        "revenue_ty_vnd": 2277.1,
+        "net_income_ty_vnd": 1646.7,
+        "ocf_ty_vnd": 1744.5,
+        "fcf_ty_vnd": -3005.4,
+        "total_cash_ty_vnd": 6483.7,
+        "total_debt_ty_vnd": 17776.5,
+        "revenue_growth_pct": -96.2,
+        "earnings_growth_pct": -28.5,
+        "gross_margin_pct": 67.52,
+        "operating_margin_pct": -146.76,
+        "profit_margin_pct": 74.54,
         "eps_vnd": 1318.0,
-        "bvps_vnd": 15005.0
+        "bvps_vnd": 13902.0
       },
       "technical": {
         "price": 13900.0,
@@ -753,7 +753,7 @@
         "chandelier_stop": 13132.0,
         "rs_rating": 21
       },
-      "last_updated": "2026-11-01 13:23:09",
+      "last_updated": "2026-11-01 13:38:54",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -765,24 +765,24 @@
       "tier": "VN30_MidCap",
       "weight_target": 0.025,
       "pe": 18.47,
-      "pb": 0.84,
-      "roe_pct": 6.36,
+      "pb": 2.08,
+      "roe_pct": 4.59,
       "market_cap_ty_vnd": 10672.1,
-      "beta": 0.9,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 5275.9,
-        "net_income_ty_vnd": 583.8,
-        "ocf_ty_vnd": -1153.1,
-        "fcf_ty_vnd": 9855.5,
-        "total_cash_ty_vnd": 6298.0,
-        "total_debt_ty_vnd": 5195.7,
-        "revenue_growth_pct": -46.3,
-        "earnings_growth_pct": -57.1,
-        "gross_margin_pct": 42.28,
-        "operating_margin_pct": 10.1,
-        "profit_margin_pct": 11.7,
+        "revenue_ty_vnd": 3726.4,
+        "net_income_ty_vnd": 451.3,
+        "ocf_ty_vnd": -1079.1,
+        "fcf_ty_vnd": 9534.2,
+        "total_cash_ty_vnd": 6130.6,
+        "total_debt_ty_vnd": 5052.1,
+        "revenue_growth_pct": -82.5,
+        "earnings_growth_pct": -98.9,
+        "gross_margin_pct": 41.71,
+        "operating_margin_pct": 5.74,
+        "profit_margin_pct": 12.77,
         "eps_vnd": 1191.0,
-        "bvps_vnd": 26102.0
+        "bvps_vnd": 10587.0
       },
       "technical": {
         "price": 22000.0,
@@ -812,7 +812,7 @@
         "chandelier_stop": 20655.0,
         "rs_rating": 41
       },
-      "last_updated": "2026-11-01 13:23:10",
+      "last_updated": "2026-11-01 13:38:54",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -825,21 +825,21 @@
       "weight_target": 0.02,
       "pe": 19.06,
       "pb": 0.9,
-      "roe_pct": 5.04,
+      "roe_pct": 4.44,
       "market_cap_ty_vnd": 11275.2,
-      "beta": 0.04,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 1024.9,
-        "net_income_ty_vnd": 591.9,
-        "ocf_ty_vnd": -2279.5,
-        "fcf_ty_vnd": 5114.1,
-        "total_cash_ty_vnd": 3115.0,
-        "total_debt_ty_vnd": 4151.3,
-        "revenue_growth_pct": 168.5,
-        "earnings_growth_pct": 22.1,
-        "gross_margin_pct": 62.88,
-        "operating_margin_pct": -435.6,
-        "profit_margin_pct": 59.76,
+        "revenue_ty_vnd": 542.4,
+        "net_income_ty_vnd": 516.3,
+        "ocf_ty_vnd": 1502.0,
+        "fcf_ty_vnd": 6276.2,
+        "total_cash_ty_vnd": 1653.8,
+        "total_debt_ty_vnd": 13638.3,
+        "revenue_growth_pct": -95.3,
+        "earnings_growth_pct": -89.0,
+        "gross_margin_pct": 73.19,
+        "operating_margin_pct": -1049.0,
+        "profit_margin_pct": 98.99,
         "eps_vnd": 593.0,
         "bvps_vnd": 12601.0
       },
@@ -871,7 +871,7 @@
         "chandelier_stop": 10733.0,
         "rs_rating": 24
       },
-      "last_updated": "2026-11-01 13:23:11",
+      "last_updated": "2026-11-01 13:38:55",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -884,21 +884,21 @@
       "weight_target": 0.02,
       "pe": 129.4,
       "pb": 0.9,
-      "roe_pct": 2.48,
+      "roe_pct": 1.68,
       "market_cap_ty_vnd": 12808.0,
-      "beta": 0.79,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 4673.1,
-        "net_income_ty_vnd": 187.5,
-        "ocf_ty_vnd": 1389.9,
-        "fcf_ty_vnd": 1493.1,
-        "total_cash_ty_vnd": 4810.8,
-        "total_debt_ty_vnd": 5166.8,
-        "revenue_growth_pct": 7.3,
-        "earnings_growth_pct": -33.6,
-        "gross_margin_pct": 49.39,
-        "operating_margin_pct": 0.85,
-        "profit_margin_pct": 4.11,
+        "revenue_ty_vnd": 4287.4,
+        "net_income_ty_vnd": 109.9,
+        "ocf_ty_vnd": 234.8,
+        "fcf_ty_vnd": 1334.6,
+        "total_cash_ty_vnd": 5107.1,
+        "total_debt_ty_vnd": 5575.8,
+        "revenue_growth_pct": -36.1,
+        "earnings_growth_pct": -86.2,
+        "gross_margin_pct": 47.53,
+        "operating_margin_pct": 6.32,
+        "profit_margin_pct": 2.67,
         "eps_vnd": 78.0,
         "bvps_vnd": 11281.0
       },
@@ -930,7 +930,7 @@
         "chandelier_stop": 9465.0,
         "rs_rating": 30
       },
-      "last_updated": "2026-11-01 13:23:11",
+      "last_updated": "2026-11-01 13:38:55",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -989,7 +989,7 @@
         "chandelier_stop": 36810.0,
         "rs_rating": 35
       },
-      "last_updated": "2026-11-01 13:23:12",
+      "last_updated": "2026-11-01 13:38:56",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1024,7 +1024,7 @@
         "raw_rs_score": 0.0,
         "rs_rating": 78
       },
-      "last_updated": "2026-11-01 13:23:13",
+      "last_updated": "2026-11-01 13:38:56",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1083,7 +1083,7 @@
         "chandelier_stop": 25189.0,
         "rs_rating": 39
       },
-      "last_updated": "2026-11-01 13:23:14",
+      "last_updated": "2026-11-01 13:38:57",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1142,7 +1142,7 @@
         "chandelier_stop": 17746.0,
         "rs_rating": 42
       },
-      "last_updated": "2026-11-01 13:23:14",
+      "last_updated": "2026-11-01 13:38:57",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1201,7 +1201,7 @@
         "chandelier_stop": 40627.0,
         "rs_rating": 87
       },
-      "last_updated": "2026-11-01 13:23:15",
+      "last_updated": "2026-11-01 13:38:57",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1260,7 +1260,7 @@
         "chandelier_stop": 19966.0,
         "rs_rating": 53
       },
-      "last_updated": "2026-11-01 13:23:16",
+      "last_updated": "2026-11-01 13:38:58",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1319,7 +1319,7 @@
         "chandelier_stop": 9961.0,
         "rs_rating": 59
       },
-      "last_updated": "2026-11-01 13:23:16",
+      "last_updated": "2026-11-01 13:38:58",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1378,7 +1378,7 @@
         "chandelier_stop": 10682.0,
         "rs_rating": 69
       },
-      "last_updated": "2026-11-01 13:23:17",
+      "last_updated": "2026-11-01 13:38:59",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1437,7 +1437,7 @@
         "chandelier_stop": 72818.0,
         "rs_rating": 72
       },
-      "last_updated": "2026-11-01 13:23:18",
+      "last_updated": "2026-11-01 13:38:59",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1449,24 +1449,24 @@
       "tier": "LargeCap",
       "weight_target": 0.035,
       "pe": 23.23,
-      "pb": 6.37,
-      "roe_pct": 30.82,
+      "pb": 5.07,
+      "roe_pct": 34.08,
       "market_cap_ty_vnd": 26589.8,
-      "beta": 0.15,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 58765.6,
-        "net_income_ty_vnd": 1134.6,
-        "ocf_ty_vnd": -1494.3,
-        "fcf_ty_vnd": -2322.3,
-        "total_cash_ty_vnd": 9204.6,
-        "total_debt_ty_vnd": 13075.1,
-        "revenue_growth_pct": 37.2,
-        "earnings_growth_pct": 187.7,
-        "gross_margin_pct": 19.69,
-        "operating_margin_pct": 3.83,
-        "profit_margin_pct": 1.93,
+        "revenue_ty_vnd": 63185.8,
+        "net_income_ty_vnd": 1356.2,
+        "ocf_ty_vnd": -1153.1,
+        "fcf_ty_vnd": -1850.9,
+        "total_cash_ty_vnd": 11783.8,
+        "total_debt_ty_vnd": 14228.6,
+        "revenue_growth_pct": 33.7,
+        "earnings_growth_pct": 101.3,
+        "gross_margin_pct": 19.83,
+        "operating_margin_pct": 4.03,
+        "profit_margin_pct": 2.15,
         "eps_vnd": 6402.0,
-        "bvps_vnd": 23328.0
+        "bvps_vnd": 29303.0
       },
       "technical": {
         "price": 148700.0,
@@ -1496,7 +1496,7 @@
         "chandelier_stop": 136297.0,
         "rs_rating": 92
       },
-      "last_updated": "2026-11-01 13:23:18",
+      "last_updated": "2026-11-01 13:38:59",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1555,7 +1555,7 @@
         "chandelier_stop": 70007.0,
         "rs_rating": 63
       },
-      "last_updated": "2026-11-01 13:23:19",
+      "last_updated": "2026-11-01 13:39:00",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1567,24 +1567,24 @@
       "tier": "VN30_MegaCap",
       "weight_target": 0.03,
       "pe": 12.21,
-      "pb": 3.88,
-      "roe_pct": 30.78,
+      "pb": 3.87,
+      "roe_pct": 30.0,
       "market_cap_ty_vnd": 118918.5,
-      "beta": 0.36,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 68936.0,
-        "net_income_ty_vnd": 9880.4,
-        "ocf_ty_vnd": 8321.6,
-        "fcf_ty_vnd": 10961.4,
-        "total_cash_ty_vnd": 26544.5,
-        "total_debt_ty_vnd": 8454.9,
-        "revenue_growth_pct": 12.5,
-        "earnings_growth_pct": 30.9,
-        "gross_margin_pct": 42.23,
-        "operating_margin_pct": 18.99,
-        "profit_margin_pct": 15.9,
+        "revenue_ty_vnd": 70447.9,
+        "net_income_ty_vnd": 10855.2,
+        "ocf_ty_vnd": 9436.6,
+        "fcf_ty_vnd": 8248.6,
+        "total_cash_ty_vnd": 26538.0,
+        "total_debt_ty_vnd": 8482.1,
+        "revenue_growth_pct": 8.9,
+        "earnings_growth_pct": 16.7,
+        "gross_margin_pct": 42.1,
+        "operating_margin_pct": 17.4,
+        "profit_margin_pct": 16.18,
         "eps_vnd": 4661.0,
-        "bvps_vnd": 14682.0
+        "bvps_vnd": 14711.0
       },
       "technical": {
         "price": 56900.0,
@@ -1614,7 +1614,7 @@
         "chandelier_stop": 56920.0,
         "rs_rating": 65
       },
-      "last_updated": "2026-11-01 13:23:19",
+      "last_updated": "2026-11-01 13:39:00",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1626,24 +1626,24 @@
       "tier": "VN30_LargeCap",
       "weight_target": 0.03,
       "pe": 3.03,
-      "pb": 0.6,
-      "roe_pct": 22.39,
+      "pb": 0.53,
+      "roe_pct": 13.41,
       "market_cap_ty_vnd": 7931.7,
-      "beta": 0.77,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 43487.5,
-        "net_income_ty_vnd": 2661.6,
-        "ocf_ty_vnd": 2116.8,
-        "fcf_ty_vnd": 1804.5,
-        "total_cash_ty_vnd": 4002.0,
-        "total_debt_ty_vnd": 3989.1,
-        "revenue_growth_pct": 11.9,
+        "revenue_ty_vnd": 42326.9,
+        "net_income_ty_vnd": 1453.1,
+        "ocf_ty_vnd": -2479.1,
+        "fcf_ty_vnd": -2936.1,
+        "total_cash_ty_vnd": 1324.8,
+        "total_debt_ty_vnd": 4320.6,
+        "revenue_growth_pct": -14.0,
         "earnings_growth_pct": null,
-        "gross_margin_pct": 20.72,
-        "operating_margin_pct": -3.02,
-        "profit_margin_pct": 6.67,
+        "gross_margin_pct": 13.66,
+        "operating_margin_pct": -3.72,
+        "profit_margin_pct": 3.99,
         "eps_vnd": 5120.0,
-        "bvps_vnd": 25942.0
+        "bvps_vnd": 29201.0
       },
       "technical": {
         "price": 15500.0,
@@ -1673,7 +1673,7 @@
         "chandelier_stop": 16157.0,
         "rs_rating": 18
       },
-      "last_updated": "2026-11-01 13:23:20",
+      "last_updated": "2026-11-01 13:39:01",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1685,16 +1685,16 @@
       "tier": "MidCap",
       "weight_target": 0.02,
       "pe": 11.23,
-      "pb": 2.71,
+      "pb": 2.73,
       "roe_pct": 28.47,
       "market_cap_ty_vnd": 9146.6,
-      "beta": 1.0,
+      "beta": 0.47,
       "yf_fundamentals": {
         "revenue_ty_vnd": 34785.9,
         "net_income_ty_vnd": 944.9,
-        "ocf_ty_vnd": 337.3,
-        "fcf_ty_vnd": 804.0,
-        "total_cash_ty_vnd": 1565.7,
+        "ocf_ty_vnd": 37.0,
+        "fcf_ty_vnd": 787.5,
+        "total_cash_ty_vnd": 1581.4,
         "total_debt_ty_vnd": 3866.4,
         "revenue_growth_pct": 49.1,
         "earnings_growth_pct": 64.4,
@@ -1702,7 +1702,7 @@
         "operating_margin_pct": 3.32,
         "profit_margin_pct": 2.72,
         "eps_vnd": 3647.0,
-        "bvps_vnd": 15133.0
+        "bvps_vnd": 14994.0
       },
       "technical": {
         "price": 40950.0,
@@ -1732,7 +1732,7 @@
         "chandelier_stop": 42339.0,
         "rs_rating": 86
       },
-      "last_updated": "2026-11-01 13:23:21",
+      "last_updated": "2026-11-01 13:39:01",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1791,7 +1791,7 @@
         "chandelier_stop": 54492.0,
         "rs_rating": 23
       },
-      "last_updated": "2026-11-01 13:23:21",
+      "last_updated": "2026-11-01 13:39:02",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -1850,7 +1850,7 @@
         "chandelier_stop": 18793.0,
         "rs_rating": 20
       },
-      "last_updated": "2026-11-01 13:23:22",
+      "last_updated": "2026-11-01 13:39:02",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -1909,7 +1909,7 @@
         "chandelier_stop": 18851.0,
         "rs_rating": 51
       },
-      "last_updated": "2026-11-01 13:23:22",
+      "last_updated": "2026-11-01 13:39:03",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1968,7 +1968,7 @@
         "chandelier_stop": 12760.0,
         "rs_rating": 27
       },
-      "last_updated": "2026-11-01 13:23:23",
+      "last_updated": "2026-11-01 13:39:03",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2027,7 +2027,7 @@
         "chandelier_stop": 18034.0,
         "rs_rating": 26
       },
-      "last_updated": "2026-11-01 13:23:23",
+      "last_updated": "2026-11-01 13:39:03",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2086,7 +2086,7 @@
         "chandelier_stop": 22434.0,
         "rs_rating": 60
       },
-      "last_updated": "2026-11-01 13:23:24",
+      "last_updated": "2026-11-01 13:39:04",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2121,7 +2121,7 @@
         "raw_rs_score": 0.0,
         "rs_rating": 80
       },
-      "last_updated": "2026-11-01 13:23:25",
+      "last_updated": "2026-11-01 13:39:05",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2180,7 +2180,7 @@
         "chandelier_stop": 73748.0,
         "rs_rating": 95
       },
-      "last_updated": "2026-11-01 13:23:26",
+      "last_updated": "2026-11-01 13:39:05",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2215,7 +2215,7 @@
         "raw_rs_score": 0.0,
         "rs_rating": 81
       },
-      "last_updated": "2026-11-01 13:23:27",
+      "last_updated": "2026-11-01 13:39:06",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2274,7 +2274,7 @@
         "chandelier_stop": 17120.0,
         "rs_rating": 77
       },
-      "last_updated": "2026-11-01 13:23:27",
+      "last_updated": "2026-11-01 13:39:06",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2286,24 +2286,24 @@
       "tier": "LargeCap_UPCOM",
       "weight_target": 0.025,
       "pe": 7.04,
-      "pb": 2.29,
-      "roe_pct": 30.09,
+      "pb": 1.66,
+      "roe_pct": 39.67,
       "market_cap_ty_vnd": 138201.5,
       "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 177551.6,
-        "net_income_ty_vnd": 19876.4,
-        "ocf_ty_vnd": 9081.2,
-        "fcf_ty_vnd": 5107.5,
-        "total_cash_ty_vnd": 53776.0,
-        "total_debt_ty_vnd": 12766.3,
-        "revenue_growth_pct": 59.7,
-        "earnings_growth_pct": 893.3,
-        "gross_margin_pct": 12.86,
-        "operating_margin_pct": 13.87,
-        "profit_margin_pct": 11.09,
+        "revenue_ty_vnd": 201841.9,
+        "net_income_ty_vnd": 28145.5,
+        "ocf_ty_vnd": 19474.5,
+        "fcf_ty_vnd": 6453.0,
+        "total_cash_ty_vnd": 58651.2,
+        "total_debt_ty_vnd": 13525.0,
+        "revenue_growth_pct": 68.8,
+        "earnings_growth_pct": 886.6,
+        "gross_margin_pct": 15.69,
+        "operating_margin_pct": 15.44,
+        "profit_margin_pct": 13.85,
         "eps_vnd": 3920.0,
-        "bvps_vnd": 12079.0
+        "bvps_vnd": 16665.0
       },
       "technical": {
         "price": 27600.0,
@@ -2333,7 +2333,7 @@
         "chandelier_stop": 27356.0,
         "rs_rating": 98
       },
-      "last_updated": "2026-11-01 13:23:28",
+      "last_updated": "2026-11-01 13:39:07",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2345,24 +2345,24 @@
       "tier": "VN30_LargeCap",
       "weight_target": 0.02,
       "pe": 6.24,
-      "pb": 0.99,
-      "roe_pct": 16.53,
+      "pb": 0.87,
+      "roe_pct": 18.64,
       "market_cap_ty_vnd": 37427.7,
-      "beta": 0.69,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 49390.4,
-        "net_income_ty_vnd": 6084.5,
-        "ocf_ty_vnd": -1710.0,
-        "fcf_ty_vnd": -6955.1,
-        "total_cash_ty_vnd": 26553.2,
-        "total_debt_ty_vnd": 38200.2,
-        "revenue_growth_pct": 116.1,
-        "earnings_growth_pct": 549.7,
-        "gross_margin_pct": 17.99,
-        "operating_margin_pct": 20.59,
-        "profit_margin_pct": 12.06,
+        "revenue_ty_vnd": 58307.4,
+        "net_income_ty_vnd": 7134.8,
+        "ocf_ty_vnd": 1308.9,
+        "fcf_ty_vnd": -6040.9,
+        "total_cash_ty_vnd": 30157.6,
+        "total_debt_ty_vnd": 37525.4,
+        "revenue_growth_pct": 113.5,
+        "earnings_growth_pct": 108.4,
+        "gross_margin_pct": 16.99,
+        "operating_margin_pct": 14.24,
+        "profit_margin_pct": 12.01,
         "eps_vnd": 1955.0,
-        "bvps_vnd": 12277.0
+        "bvps_vnd": 14057.0
       },
       "technical": {
         "price": 12200.0,
@@ -2392,7 +2392,7 @@
         "chandelier_stop": 12080.0,
         "rs_rating": 50
       },
-      "last_updated": "2026-11-01 13:23:29",
+      "last_updated": "2026-11-01 13:39:07",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2451,7 +2451,7 @@
         "chandelier_stop": 44709.0,
         "rs_rating": 45
       },
-      "last_updated": "2026-11-01 13:23:29",
+      "last_updated": "2026-11-01 13:39:07",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2463,24 +2463,24 @@
       "tier": "MidCap",
       "weight_target": 0.02,
       "pe": 6.81,
-      "pb": 1.17,
-      "roe_pct": 17.91,
+      "pb": 1.66,
+      "roe_pct": 17.28,
       "market_cap_ty_vnd": 7608.8,
-      "beta": 0.37,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 12495.5,
-        "net_income_ty_vnd": 1016.5,
-        "ocf_ty_vnd": 2013.9,
-        "fcf_ty_vnd": -1114.7,
-        "total_cash_ty_vnd": 5045.8,
-        "total_debt_ty_vnd": 12216.2,
-        "revenue_growth_pct": -30.6,
-        "earnings_growth_pct": -6.5,
-        "gross_margin_pct": 21.49,
-        "operating_margin_pct": 17.34,
-        "profit_margin_pct": 9.25,
+        "revenue_ty_vnd": 11836.7,
+        "net_income_ty_vnd": 1017.7,
+        "ocf_ty_vnd": 2763.1,
+        "fcf_ty_vnd": -81.6,
+        "total_cash_ty_vnd": 5000.9,
+        "total_debt_ty_vnd": 10880.0,
+        "revenue_growth_pct": -20.1,
+        "earnings_growth_pct": -43.4,
+        "gross_margin_pct": 23.04,
+        "operating_margin_pct": 22.51,
+        "profit_margin_pct": 9.4,
         "eps_vnd": 2718.0,
-        "bvps_vnd": 15828.0
+        "bvps_vnd": 11137.0
       },
       "technical": {
         "price": 18500.0,
@@ -2510,7 +2510,7 @@
         "chandelier_stop": 18252.0,
         "rs_rating": 44
       },
-      "last_updated": "2026-11-01 13:23:30",
+      "last_updated": "2026-11-01 13:39:08",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2522,15 +2522,15 @@
       "tier": "LargeCap",
       "weight_target": 0.035,
       "pe": 6.2,
-      "pb": 1.03,
+      "pb": 0.97,
       "roe_pct": 13.51,
       "market_cap_ty_vnd": 12646.6,
-      "beta": 1.0,
+      "beta": 0.42,
       "yf_fundamentals": {
         "revenue_ty_vnd": 9750.4,
-        "net_income_ty_vnd": 1773.9,
-        "ocf_ty_vnd": 1314.5,
-        "fcf_ty_vnd": 659.2,
+        "net_income_ty_vnd": 1743.0,
+        "ocf_ty_vnd": 1354.4,
+        "fcf_ty_vnd": 652.2,
         "total_cash_ty_vnd": 9761.2,
         "total_debt_ty_vnd": 1391.0,
         "revenue_growth_pct": -12.3,
@@ -2539,7 +2539,7 @@
         "operating_margin_pct": 15.44,
         "profit_margin_pct": 19.02,
         "eps_vnd": 5373.0,
-        "bvps_vnd": 32373.0
+        "bvps_vnd": 34425.0
       },
       "technical": {
         "price": 33300.0,
@@ -2569,7 +2569,7 @@
         "chandelier_stop": 32149.0,
         "rs_rating": 29
       },
-      "last_updated": "2026-11-01 13:23:31",
+      "last_updated": "2026-11-01 13:39:08",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2628,7 +2628,7 @@
         "chandelier_stop": 32457.0,
         "rs_rating": 75
       },
-      "last_updated": "2026-11-01 13:23:31",
+      "last_updated": "2026-11-01 13:39:09",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2641,21 +2641,21 @@
       "weight_target": 0.02,
       "pe": 13.0,
       "pb": 1.22,
-      "roe_pct": 15.45,
+      "roe_pct": 14.03,
       "market_cap_ty_vnd": 13870.5,
-      "beta": 0.32,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 19752.1,
-        "net_income_ty_vnd": 1670.2,
-        "ocf_ty_vnd": -1204.6,
-        "fcf_ty_vnd": -575.9,
-        "total_cash_ty_vnd": 10230.2,
-        "total_debt_ty_vnd": 3231.7,
-        "revenue_growth_pct": 31.8,
-        "earnings_growth_pct": 160.1,
-        "gross_margin_pct": 20.21,
-        "operating_margin_pct": 13.44,
-        "profit_margin_pct": 8.98,
+        "revenue_ty_vnd": 20151.3,
+        "net_income_ty_vnd": 1474.2,
+        "ocf_ty_vnd": 1928.9,
+        "fcf_ty_vnd": 1543.6,
+        "total_cash_ty_vnd": 10434.8,
+        "total_debt_ty_vnd": 3648.7,
+        "revenue_growth_pct": 10.7,
+        "earnings_growth_pct": null,
+        "gross_margin_pct": 19.13,
+        "operating_margin_pct": 1.92,
+        "profit_margin_pct": 7.83,
         "eps_vnd": 1569.0,
         "bvps_vnd": 16696.0
       },
@@ -2687,7 +2687,7 @@
         "chandelier_stop": 20833.0,
         "rs_rating": 48
       },
-      "last_updated": "2026-11-01 13:23:32",
+      "last_updated": "2026-11-01 13:39:09",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2746,7 +2746,7 @@
         "chandelier_stop": 50474.0,
         "rs_rating": 90
       },
-      "last_updated": "2026-11-01 13:23:32",
+      "last_updated": "2026-11-01 13:39:10",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -2805,7 +2805,7 @@
         "chandelier_stop": 47773.0,
         "rs_rating": 71
       },
-      "last_updated": "2026-11-01 13:23:33",
+      "last_updated": "2026-11-01 13:39:10",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -2864,7 +2864,7 @@
         "chandelier_stop": 22178.0,
         "rs_rating": 96
       },
-      "last_updated": "2026-11-01 13:23:34",
+      "last_updated": "2026-11-01 13:39:10",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -2923,7 +2923,7 @@
         "chandelier_stop": 13648.0,
         "rs_rating": 36
       },
-      "last_updated": "2026-11-01 13:23:34",
+      "last_updated": "2026-11-01 13:39:11",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -2982,7 +2982,7 @@
         "chandelier_stop": 8832.0,
         "rs_rating": 38
       },
-      "last_updated": "2026-11-01 13:23:35",
+      "last_updated": "2026-11-01 13:39:11",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -3002,16 +3002,16 @@
         "revenue_ty_vnd": 17244.1,
         "net_income_ty_vnd": 1011.9,
         "ocf_ty_vnd": 1767.1,
-        "fcf_ty_vnd": 665.7,
-        "total_cash_ty_vnd": 4292.6,
+        "fcf_ty_vnd": 670.7,
+        "total_cash_ty_vnd": 4297.6,
         "total_debt_ty_vnd": 7622.3,
-        "revenue_growth_pct": 6.1,
+        "revenue_growth_pct": 37.4,
         "earnings_growth_pct": -41.7,
         "gross_margin_pct": 13.83,
         "operating_margin_pct": 5.76,
         "profit_margin_pct": 5.87,
         "eps_vnd": 2287.0,
-        "bvps_vnd": 20214.0
+        "bvps_vnd": 20231.0
       },
       "technical": {
         "price": 15400.0,
@@ -3041,7 +3041,7 @@
         "chandelier_stop": 14951.0,
         "rs_rating": 32
       },
-      "last_updated": "2026-11-01 13:23:35",
+      "last_updated": "2026-11-01 13:39:12",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -3053,24 +3053,24 @@
       "tier": "MidCap",
       "weight_target": 0.025,
       "pe": 8.25,
-      "pb": 1.17,
-      "roe_pct": 15.72,
+      "pb": 1.07,
+      "roe_pct": 13.0,
       "market_cap_ty_vnd": 10535.5,
-      "beta": 0.4,
+      "beta": 1.0,
       "yf_fundamentals": {
-        "revenue_ty_vnd": 12579.6,
-        "net_income_ty_vnd": 1479.5,
-        "ocf_ty_vnd": 1460.0,
-        "fcf_ty_vnd": 63.7,
-        "total_cash_ty_vnd": 3193.6,
-        "total_debt_ty_vnd": 2469.9,
-        "revenue_growth_pct": 7.9,
-        "earnings_growth_pct": -2.3,
-        "gross_margin_pct": 17.57,
-        "operating_margin_pct": 16.08,
-        "profit_margin_pct": 11.49,
+        "revenue_ty_vnd": 12375.0,
+        "net_income_ty_vnd": 1265.7,
+        "ocf_ty_vnd": 471.5,
+        "fcf_ty_vnd": -699.3,
+        "total_cash_ty_vnd": 3928.4,
+        "total_debt_ty_vnd": 3169.2,
+        "revenue_growth_pct": -4.4,
+        "earnings_growth_pct": -45.9,
+        "gross_margin_pct": 16.97,
+        "operating_margin_pct": 9.25,
+        "profit_margin_pct": 9.96,
         "eps_vnd": 6100.0,
-        "bvps_vnd": 42820.0
+        "bvps_vnd": 47080.0
       },
       "technical": {
         "price": 50300.0,
@@ -3100,7 +3100,7 @@
         "chandelier_stop": 49312.0,
         "rs_rating": 47
       },
-      "last_updated": "2026-11-01 13:23:36",
+      "last_updated": "2026-11-01 13:39:12",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -3159,7 +3159,7 @@
         "chandelier_stop": 88278.0,
         "rs_rating": 68
       },
-      "last_updated": "2026-11-01 13:23:36",
+      "last_updated": "2026-11-01 13:39:13",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     }

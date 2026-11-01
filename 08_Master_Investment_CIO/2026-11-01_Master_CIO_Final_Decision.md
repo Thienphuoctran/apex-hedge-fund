@@ -4,7 +4,7 @@
 > **CƠ QUAN PHÊ DUYỆT**: VĂN PHÒNG TỔNG TƯ LỆNH ĐẦU TƯ (UNIFIED CHIEF INVESTMENT OFFICER DESK - BAN 8)  
 > **PHIÊN GIAO DỊCH**: Ngày 2026-11-01  
 > **TÌNH TRẠNG THỰC THI**: **PHÊ DUYỆT BẤM CÒ THỰC THI (AUTHORIZED TO PULL THE TRIGGER)**  
-> **TỔNG VỐN QUẢN LÝ (NAV)**: **$787.40 USD** tương đương **20,000,000 VNĐ** (Tỷ giá USD/VND: 25,400)
+> **TỔNG VỐN QUẢN LÝ (NAV)**: **$590.55 USD** tương đương **15,000,000 VNĐ** (Tỷ giá USD/VND: 25,400)
 
 ---
 
@@ -15,15 +15,15 @@ Dưới sự điều phối tối cao của Master CIO, dòng vốn được gi�
 | Hạng Mục Danh Mục | Tỷ Trọng (% NAV) | Giá Trị Quy Đổi (USD) | Giá Trị Quy Đổi (VNĐ) | Trạng Thái Phân Bổ & Chiến Lược |
 | :--- | :---: | :---: | :---: | :--- |
 | **Thị Trường Toàn Cầu / Mỹ (US Equities)** | **0.0%** | **$0.00** | **0 ₫** | 4 Siêu cổ phiếu FCF khổng lồ, độc quyền thị phần thế giới. |
-| **Thị Trường Việt Nam (VN Equities)** | **93.4%** | **$735.44** | **18,680,000 ₫** | 4 Siêu cổ phiếu dẫn đầu ngành, hưởng lợi đầu tư công & SBV. |
-| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **6.6%** | **$51.96** | **1,319,824 ₫** | Dự phòng thanh khoản, săn hàng chiết khấu sau mùa BCTC. |
-| **TỔNG CỘNG (100% NAV)** | **100.0%** | **$787.40** | **20,000,000 ₫** | **Danh mục cân bằng Volatility Risk-Parity** |
+| **Thị Trường Việt Nam (VN Equities)** | **124.5%** | **$735.44** | **18,680,000 ₫** | 4 Siêu cổ phiếu dẫn đầu ngành, hưởng lợi đầu tư công & SBV. |
+| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **-24.5%** | **$-144.89** | **-3,680,176 ₫** | Dự phòng thanh khoản, săn hàng chiết khấu sau mùa BCTC. |
+| **TỔNG CỘNG (100% NAV)** | **100.0%** | **$590.55** | **15,000,000 ₫** | **Danh mục cân bằng Volatility Risk-Parity** |
 
 ### Chỉ Số Định Lượng Danh Mục Hợp Nhất (Unified Quant Health)
 - **Kỳ vọng Toán học Danh mục (EV%)**: **+5.84% / lệnh** (Chứng minh tính toán xác suất dương).
 - **Xác suất Thắng Bình quân (P(W))**: **80.2%** (Đạt chuẩn Super-Forecasting).
 - **Tỷ lệ Lợi Nhuận / Rủi Ro Trung Bình (R:R)**: **1 : 2.31** (Vượt ngưỡng tối thiểu 1:2.0).
-- **Mức Rủi Ro Mất Vốn Tối Đa Trên 1 Vị Thế**: **2.20% NAV** (Khóa chặt bằng ngưỡng Stop Loss cứng 2xATR(14)).
+- **Mức Rủi Ro Mất Vốn Tối Đa Trên 1 Vị Thế**: **2.93% NAV** (Khóa chặt bằng ngưỡng Stop Loss cứng 2xATR(14)).
 - **Hệ Số Beta Danh Mục (Portfolio Beta)**: **0.58** (Thấp hơn thị trường chung ~42%, biến động êm đềm nhưng sinh lời vượt trội).
 
 ---
@@ -128,7 +128,7 @@ sequenceDiagram
 ---
 
 ## 4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)
-**Tổng Vốn Phân Bổ: 18,680,000 VNĐ ($735.44 USD - 93.4% NAV) | Chuyên Viên Thực Thi: Minh Quân**
+**Tổng Vốn Phân Bổ: 18,680,000 VNĐ ($735.44 USD - 124.5% NAV) | Chuyên Viên Thực Thi: Minh Quân**
 
 | Mã CP | Sàn / Ngành | Vốn Phân Bổ (VNĐ / USD) | Số Cổ Phiếu (Lô Chẵn 100) | Thị Giá Hiện Tại | Chiến Lược Vào Lệnh (60/40) | Ngưỡng Cắt Lỗ Bắt Buộc | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
@@ -142,19 +142,19 @@ sequenceDiagram
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.35x), Altman Z'' (7.48), không có dấu hiệu gian lận Beneish M.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Vào 300 cổ HPG tại 20,850 - 21,000 ₫ phiên sáng; nạp tiếp 200 cổ trong Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong T+2. Gom 500 CP làm kho hàng T+0 cốt lõi cho Tháng 2
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **440,000 VNĐ** (chỉ chiếm **2.20% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **440,000 VNĐ** (chỉ chiếm **2.93% Tổng NAV**).
 
 #### 🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.16x), Altman Z'' (3.51), không có dấu hiệu gian lận Beneish M.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Đặt Limit Buy 200 cổ TCB tại 21,450 - 21,600 ₫ phiên sáng. Gom 200 CP tích lũy giá trị, CASA 40.5% & IPO TCBS
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **170,000 VNĐ** (chỉ chiếm **0.85% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **170,000 VNĐ** (chỉ chiếm **1.13% Tổng NAV**).
 
 #### 🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.14x), Altman Z'' (3.44), không có dấu hiệu gian lận Beneish M.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Đặt Limit Buy 200 cổ MBB tại 19,190 - 19,300 ₫ phiên sáng. 200 CP lướt sóng ngắn T+3/T+5 đón đầu dòng tiền tín dụng
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **128,000 VNĐ** (chỉ chiếm **0.64% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **128,000 VNĐ** (chỉ chiếm **0.85% Tổng NAV**).
 
 ---
 
@@ -178,7 +178,7 @@ graph LR
 2. **Kịch bản 2: Giá Dầu Vọt > $110/thùng Do Leo Thang Địa Chính Trị**:
    - *Tác động*: Vị thế **OXY (Occidental Petroleum)** bùng nổ lợi nhuận, đóng vai trò tấm khiên phòng hộ năng lượng hoàn hảo cho toàn danh mục.
 3. **Kịch bản 3: Sàn HOSE Rung Lắc Nghẽn Lệnh ATO / Khối Ngoại Bán Ròng**:
-   - *Tác động*: Tỷ lệ tiền mặt dự phòng **10% Dry Powder ($51.96 USD)** sẵn sàng giải ngân gom thêm cổ phiếu AAA (FPT, MWG) tại vùng sàn chiết khấu sâu.
+   - *Tác động*: Tỷ lệ tiền mặt dự phòng **10% Dry Powder ($-144.89 USD)** sẵn sàng giải ngân gom thêm cổ phiếu AAA (FPT, MWG) tại vùng sàn chiết khấu sâu.
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-01T06:22:59.019056+00:00",
+  "generated_at_utc": "2026-11-01T13:38:47.866990+00:00",
   "trading_date": "2026-11-01",
   "previous_date_compared": "2026-10-31",
   "specialist_profile": {
@@ -13,7 +13,7 @@
     "core_compounder_allocation_pct": 52.0,
     "tactical_alpha_allocation_pct": 8.0,
     "cash_and_post_earnings_reserve_pct": 40.0,
-    "portfolio_weighted_expected_value_pct": 11.87,
+    "portfolio_weighted_expected_value_pct": 11.88,
     "portfolio_weighted_win_prob_pct": 79.3
   },
   "departmental_hearing": [
@@ -122,7 +122,7 @@
       "limit_pullback_price": 517.8,
       "tranche_split": "Đã khớp 80% • Chờ mua thêm 20% tại Limit $518.00",
       "tp1_price": 568.87,
-      "tp2_price": 631.09,
+      "tp2_price": 632.9,
       "stop_2atr_price": 498.43,
       "chandelier_trailing_stop": 521.81,
       "stop_dist_pct": 4.5,
@@ -137,9 +137,9 @@
       "true_fcf_ex_sbc_bil": -4.63,
       "sec_edgar_badge": "SEC EDGAR: Form 10-Q (2026-10-28)",
       "win_prob_pct": 81.0,
-      "reward_risk_ratio": 4.09,
-      "tp2_reward_risk_ratio": 4.65,
-      "expected_value_pct": 10.3,
+      "reward_risk_ratio": 4.16,
+      "tp2_reward_risk_ratio": 4.73,
+      "expected_value_pct": 10.41,
       "days_to_earnings": 87,
       "market_events_and_catalysts": "Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu tăng mua ròng cổ phiếu công nghệ có FCF lớn sau khi VIX hạ nhiệt về 19.42.",
       "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `89.6/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+14.33%` • True FCF ex-SBC: `$-4.63B` • Altman Z: `12.18` • Lynch PEG: `1.69x` • SEC EDGAR: Form 10-Q (2026-10-28)]** — MSFT là cỗ máy in tiền mặt vĩ đại nhất thế giới với FCF đạt +$74.1B USD, biên hoạt động trên 44%. Ban lãnh đạo (CEO & Giám đốc cấp cao) mua ròng +263,400 cổ phiếu theo SEC Form 4. Cổ phiếu giữ vững trên đường MA200 ($485.20) và vừa tăng +0.19%.",
@@ -547,7 +547,7 @@
     "total_orders_evaluated": 10,
     "orders_passed_100pct": 9,
     "max_single_trade_nav_risk_pct": 0.36,
-    "total_portfolio_stop_loss_risk_pct": 3.17,
+    "total_portfolio_stop_loss_risk_pct": 3.18,
     "strict_rules_enforced": [
       "Stop Loss < Entry Price (100% Enforced)",
       "Effective Reward/Risk >= 2.0x (100% Enforced)",

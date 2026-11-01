@@ -6,7 +6,7 @@
 
 ## 1. Tổng Quan Chỉ Số Rủi Ro Danh Mục (Portfolio Risk Telemetry)
 - **Tỷ trọng Cổ phiếu / Tiền mặt (T-Bills ~5%)**: **`60.0% Cổ phiếu` / `40.0% Tiền mặt`**
-- **Hệ số Beta Danh mục Tổng hợp (Portfolio Weighted Beta vs S&P 500)**: **`0.54`** *(Thấp hơn đáng kể so với biến động thị trường chung 1.00)*
+- **Hệ số Beta Danh mục Tổng hợp (Portfolio Weighted Beta vs S&P 500)**: **`0.47`** *(Thấp hơn đáng kể so với biến động thị trường chung 1.00)*
 - **Kiểm soát Cụm Bán dẫn (`NVDA + TSM`)**: **`8.3% NAV`** *(Tuân thủ trần `<= 14.0% NAV`)*
 - **Tổng rủi ro danh mục nếu toàn bộ 10 vị thế đồng loạt chạm Stop-Loss `2xATR(14)`**: **`-2.78% NAV`**
 - **Số mã bị khóa mua mới do sát lịch BCTC (`0 <= days_to_earnings <= 7`)**: **`9 mã`** (`AAPL, PLTR, AMD, SMCI, QCOM, ARM, NVO, MCD, BRK-B`)
@@ -40,7 +40,7 @@
 | **`COST`** | Membership Warehouse Retail | $1012.28 | **$977.28** | $977.71 | -3.46% | **6.9% NAV** | `-0.24% NAV` | **75/100** | CLEAR (2026-12-10 AMC) |
 | **`MSFT`** | Enterprise Software & Cloud | $521.91 | **$498.43** | $521.81 | -4.5% | **6.7% NAV** | `-0.3% NAV` | **85/100** | CLEAR (2027-01-27 AMC) |
 | **`OXY`** | Upstream Oil & Carbon Capture | $64.0 | **$61.0** | $61.21 | -4.68% | **6.4% NAV** | `-0.3% NAV` | **91/100** | UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động |
-| **`ABBV`** | Biotech & Immunology | $294.89 | **$281.08** | $281.48 | -4.68% | **5.1% NAV** | `-0.24% NAV` | **75/100** | JUST REPORTED (2d ago) — Đã qua rủi ro BCTC |
+| **`ABBV`** | Biotech & Immunology | $294.89 | **$281.08** | $281.48 | -4.68% | **5.1% NAV** | `-0.24% NAV` | **79/100** | JUST REPORTED (2d ago) — Đã qua rủi ro BCTC |
 | **`JNJ`** | Pharmaceuticals & MedTech | $273.2 | **$257.73** | $262.68 | -5.66% | **4.8% NAV** | `-0.27% NAV` | **82/100** | CLEAR (2027-01-26 BMO) |
 | **`NVDA`** | Semiconductors & AI | $204.64 | **$191.56** | $227.02 | -6.4% | **4.3% NAV** | `-0.28% NAV` | **81/100** | UPCOMING EARNINGS (16d, AMC) — Lưu ý biến động |
 | **`TSM`** | Global Chip Foundry | $406.13 | **$377.3** | $451.44 | -7.1% | **4.0% NAV** | `-0.28% NAV` | **83/100** | CLEAR (2027-01-14 BMO) |
@@ -64,7 +64,7 @@
 
 | Kịch bản Cú sốc Vĩ mô / Địa chính trị | Giả định S&P 500 | Tác động Dự kiến lên Danh mục | Mức Vượt trội (Alpha Bảo vệ) | Cơ chế Phòng vệ Tự động của Danh mục |
 | :--- | :---: | :---: | :---: | :--- |
-| **Kịch bản 1: Cú sốc Bán tháo Thị trường (S&P 500 sập -10.0%)**<br>*(Kích hoạt: Khủng hoảng thanh khoản hoặc dữ liệu kinh tế xấu đột biến)* | `-10.0%` | **`-5.22% NAV`** | **`+4.78%`** | Beta danh mục thấp (0.54) + Đệm 40.0% Tiền mặt/T-Bills + Kích hoạt Stop-Loss 2xATR & Chandelier Stop tự động |
+| **Kịch bản 1: Cú sốc Bán tháo Thị trường (S&P 500 sập -10.0%)**<br>*(Kích hoạt: Khủng hoảng thanh khoản hoặc dữ liệu kinh tế xấu đột biến)* | `-10.0%` | **`-4.58% NAV`** | **`+5.42%`** | Beta danh mục thấp (0.47) + Đệm 40.0% Tiền mặt/T-Bills + Kích hoạt Stop-Loss 2xATR & Chandelier Stop tự động |
 | **Kịch bản 2: Cú sốc Lãi suất Fed Diều hâu (US 10Y Yield vọt lên 5.45%)**<br>*(Kích hoạt: PCE/CPI vượt 4.0% buộc Fed tăng lãi suất thêm +25–50 bps)* | `-6.5%` | **`-1.57% NAV`** | **`+4.93%`** | Nhóm Ngân hàng/Tài chính (JPM, V) và 40.0% T-Bills hưởng lợi trực tiếp bù đắp cho nhóm Công nghệ |
 | **Kịch bản 3: Cú sốc Giá Dầu Địa chính trị (WTI Crude vọt lên $125/thùng)**<br>*(Kích hoạt: Gián đoạn nghiêm trọng eo biển Hormuz hoặc cơ sở lọc dầu toàn cầu)* | `-5.5%` | **`-0.52% NAV`** | **`+4.98%`** | Vị thế Dầu khí (OXY) và Phòng thủ Thiết yếu/Y tế (PG, JNJ, ABBV, COST) đóng vai trò Natural Hedge bảo vệ NAV |
 
@@ -79,7 +79,7 @@
 | **`COST`** | FCF chuẩn hóa đạt +$6.75B USD, tăng trưởng doanh thu +11.1% YoY, giá ($1012.28) giữ cấu trúc trên MA200 ($970.91), điểm IC 75/100. | CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: Định giá Fwd P/E cao (40.45x) — Cần tránh mua đuổi giá xanh. | **APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)** | **`84.5/100`** |
 | **`MSFT`** | FCF chuẩn hóa đạt +$2.99B USD, tăng trưởng doanh thu +18.8% YoY, giá ($521.91) giữ cấu trúc trên MA200 ($437.93), điểm IC 85/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`OXY`** | FCF chuẩn hóa đạt +$3.79B USD, tăng trưởng doanh thu +53.4% YoY, giá ($64.0) giữ cấu trúc trên MA200 ($56.07), điểm IC 91/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
-| **`ABBV`** | FCF chuẩn hóa đạt +$0.0B USD, tăng trưởng doanh thu +10.3% YoY, giá ($294.89) giữ cấu trúc trên MA200 ($237.1), điểm IC 75/100. | CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: RSI tiệm cận vùng nóng (72.78) — Cần tránh mua đuổi giá xanh. | **APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)** | **`84.5/100`** |
+| **`ABBV`** | FCF chuẩn hóa đạt +$0.0B USD, tăng trưởng doanh thu +10.3% YoY, giá ($294.89) giữ cấu trúc trên MA200 ($237.1), điểm IC 79/100. | CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: RSI tiệm cận vùng nóng (72.78) — Cần tránh mua đuổi giá xanh. | **APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)** | **`84.5/100`** |
 | **`JNJ`** | FCF chuẩn hóa đạt +$18.5B USD, tăng trưởng doanh thu +5.9% YoY, giá ($273.2) giữ cấu trúc trên MA200 ($246.99), điểm IC 82/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`NVDA`** | FCF chuẩn hóa đạt +$41.81B USD, tăng trưởng doanh thu +105.9% YoY, giá ($204.64) giữ cấu trúc trên MA200 ($204.38), điểm IC 81/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`TSM`** | FCF chuẩn hóa đạt +$36.93B USD, tăng trưởng doanh thu +50.9% YoY, giá ($406.13) giữ cấu trúc trên MA200 ($400.16), điểm IC 83/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |

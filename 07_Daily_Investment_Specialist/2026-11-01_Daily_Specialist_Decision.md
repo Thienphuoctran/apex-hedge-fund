@@ -1,9 +1,9 @@
 # [BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX
 **Chuyên viên phụ trách**: **`Alex`** (Chuyên Viên Đầu Tư Trưởng & Quản Lý Thực Thi Danh Mục Hàng Ngày)  
 **Khung giờ hoạt động định kỳ**: `08:30 AM Mỗi Ngày` *(Sau khoảng đệm 1 tiếng để Nhà đầu tư đọc kỹ BCTC từ 07:30 – 08:30)*  
-**Ngày giao dịch**: `2026-11-01` (`2026-11-01 06:22:15 UTC`)  
+**Ngày giao dịch**: `2026-11-01` (`2026-11-01 13:38:26 UTC`)  
 **Chỉ số Hoàn thiện Của Alex (`Specialist Mastery Score`)**: **`95.8 / 100`** *(Tăng `+4.3 điểm` nhờ hồ sơ mổ xẻ sự kiện chi tiết và chiến lược tối ưu lợi nhuận đa nhịp)*  
-**Kỳ vọng Toán học Danh mục (`Portfolio Weighted Expected Value`)**: **`+11.87%`** | **Xác suất Thắng Trung bình (`Win Probability`)**: **`79.3%`**
+**Kỳ vọng Toán học Danh mục (`Portfolio Weighted Expected Value`)**: **`+11.88%`** | **Xác suất Thắng Trung bình (`Win Probability`)**: **`79.3%`**
 
 ---
 
@@ -54,7 +54,7 @@
 
 | Mã | Phân Nhánh | Hành Động Thực Thi Của Alex | Giá Hiện Tại (vs Hôm Qua) | Chiến Thuật Chia Lệnh (`60% Hiện tại + 40% Limit -0.35xATR`) | Chốt Lời `TP1 / TP2` | Cắt Lỗ `Stop 2xATR` | Tỷ Trọng (% NAV) | Xác Suất Thắng `P(W)` | Tỷ Lệ `R:R` | Kỳ Vọng Toán Học (`EV%`) | Van An Toàn Toán Học |
 | :--- | :--- | :--- | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`MSFT`** | `CORE COMPOUNDER` | **HOLD & TRAIL WINNER (Giữ & Gồng lãi chủ lực)** | **$521.91** *(+0.00%)* | Đã khớp 80% • Chờ mua thêm 20% tại Limit $518.00 | $568.87 / $631.09 | **$498.43** *(-4.5%)* | **8.0% NAV** *($80,000)* | `81.0%` | `4.09x` | **`+10.3%`** | `PASSED (-0.36% NAV)` |
+| **`MSFT`** | `CORE COMPOUNDER` | **HOLD & TRAIL WINNER (Giữ & Gồng lãi chủ lực)** | **$521.91** *(+0.00%)* | Đã khớp 80% • Chờ mua thêm 20% tại Limit $518.00 | $568.87 / $632.9 | **$498.43** *(-4.5%)* | **8.0% NAV** *($80,000)* | `81.0%` | `4.16x` | **`+10.41%`** | `PASSED (-0.36% NAV)` |
 | **`V`** | `CORE COMPOUNDER` | **SCALE-IN AT DISCOUNT (Khớp thêm nhịp chỉnh -0.62%)** | **$413.59** *(+0.00%)* | 60% vùng $413.59 • 40% khớp Limit chiết khấu $410.99 | $443.33 / $458.2 | **$398.72** *(-3.6%)* | **7.5% NAV** *($75,000)* | `79.0%` | `2.79x` | **`+6.06%`** | `PASSED (-0.27% NAV)` |
 | **`JPM`** | `CORE COMPOUNDER` | **ACCUMULATE AT MA200 (Tích lũy sát hỗ trợ)** | **$337.04** *(+0.00%)* | 60% tại $337.04 • 40% Limit tại $334.77 (-0.35x ATR) | $364.94 / $373.26 | **$323.09** *(-4.14%)* | **7.0% NAV** *($70,000)* | `83.0%` | `2.47x` | **`+6.99%`** | `PASSED (-0.29% NAV)` |
 | **`PG`** | `CORE COMPOUNDER` | **SCALE-IN AT DISCOUNT (Mua gom nhịp lùi -1.00%)** | **$161.57** *(+0.00%)* | 60% đã giữ • 40% khớp Limit giá rẻ tại $160.43 | $175.27 / $182.12 | **$154.72** *(-4.24%)* | **6.5% NAV** *($65,000)* | `86.0%` | `2.79x` | **`+8.16%`** | `PASSED (-0.276% NAV)` |
@@ -72,7 +72,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 
 ### 4.1. MSFT — Microsoft Corp. (Enterprise Software & Cloud)
 - **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng phân bổ**: **`8.0% NAV`** (`$80,000` ~ 153 cổ phiếu)
-- **Kỳ vọng Toán học (`Expected Value`)**: **`+10.3%`** | **Xác suất Thắng `P(W)`**: **`81.0%`** | **Tỷ lệ `Reward/Risk`**: **`4.09x`**
+- **Kỳ vọng Toán học (`Expected Value`)**: **`+10.41%`** | **Xác suất Thắng `P(W)`**: **`81.0%`** | **Tỷ lệ `Reward/Risk`**: **`4.16x`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu tăng mua ròng cổ phiếu công nghệ có FCF lớn sau khi VIX hạ nhiệt về 19.42.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
