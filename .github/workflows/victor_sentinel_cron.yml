@@ -1,12 +1,15 @@
-name: Victor 24/7 Intraday Portfolio Sentinel
+name: Victor 24/7 Intraday Portfolio Sentinel & CBTT Radar
 
 on:
   schedule:
-    # Chạy mỗi 10 phút trong giờ giao dịch Việt Nam (UTC 02:00 - 08:00 tức 09:00 - 15:00 VN) Thứ 2 - Thứ 6
-    - cron: '*/10 2-8 * * 1-5'
-    # Chạy mỗi 10 phút trong giờ giao dịch Mỹ (UTC 13:30 - 20:30 tức 20:30 - 03:30 VN) Thứ 2 - Thứ 6
-    - cron: '*/10 13-20 * * 1-5'
+    # Quét mỗi 15 phút trong giờ giao dịch Việt Nam (UTC 02:00 - 08:00 tức 09:00 - 15:00 VN) Thứ 2 - Thứ 6
+    - cron: '*/15 2-8 * * 1-5'
+    # Quét mỗi 15 phút trong giờ giao dịch Mỹ (UTC 13:30 - 20:30 tức 20:30 - 03:30 VN) Thứ 2 - Thứ 6
+    - cron: '*/15 13-20 * * 1-5'
   workflow_dispatch: # Cho phép bấm nút quét thủ công trên GitHub bất cứ lúc nào
+
+permissions:
+  contents: write
 
 jobs:
   sentinel_scan:
@@ -23,8 +26,24 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install yfinance
+          pip install yfinance requests pandas
 
-      - name: Run Victor Sentinel Scan
+      - name: Run CBTT Filings & SEC Radar 24/7
+        run: |
+          python scripts/cbtt_filings_radar.py || echo "CBTT radar completed with warnings"
+
+      - name: Run Victor Sentinel Intraday Scan
         run: |
           python scripts/intraday_portfolio_sentinel.py --scan-once
+
+      - name: Commit & Push New Disclosures
+        run: |
+          git config --global user.name "Apex Cloud Sentinel"
+          git config --global user.email "cloud-sentinel@apex-fund.internal"
+          git add data/cbtt_live_radar.json 02_Equity_Research/ VN_Market/02_BCTC_Equity_Research/ 09_Realtime_Portfolio_Sentinel/
+          if git diff --staged --quiet; then
+            echo "No new filings."
+          else
+            git commit -m "chore(radar): Live CBTT filings & Victor scan sync [skip ci]"
+            git push origin HEAD || echo "Push failed or no upstream"
+          fi
