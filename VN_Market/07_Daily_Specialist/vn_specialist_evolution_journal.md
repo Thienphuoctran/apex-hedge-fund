@@ -26,3 +26,24 @@
   2. *Chỗ sai cần khắc phục*: Cần kiên nhẫn hơn khi đặt lệnh nhịp 1 (60% Limit thăm dò), tránh nâng giá mua khi chưa có xác nhận từ thanh khoản.
   3. *Bẫy đã né tránh có kỷ luật (Disciplined Pass)*: Bỏ qua hoàn toàn các cổ phiếu penny tăng nóng nhưng BCTC có OCF âm nặng và nợ vay cao.
 - **Mục tiêu phiên hôm nay**: Tập trung 100% vào các cổ phiếu BCTC chuẩn AAA/AA có dòng tiền FCF dương dồi dào, đảm bảo mọi lệnh thực thi đều có Kỳ vọng Toán học EV% > +4.0% và R:R >= 1:2.
+
+
+### 🧠 Nhật Ký Tự Kiểm Điểm & Tiến Hóa Của Chuyên Viên Minh Quân — Ngày 2026-11-01
+- **Hội nghị giao ban 8h30**: Đã lắng nghe toàn bộ chỉ thị vĩ mô Ban 1, mổ xẻ BCTC Ban 2, phê duyệt Ban 4 và tiếp thu góc nhìn BCTC của Nhà đầu tư.
+- **Tự kiểm điểm phiên hôm qua (Yesterday Autopsy)**:
+  1. *Chỗ đúng phát huy*: Kỷ luật không đua lệnh giá trần trong phiên ATO đã bảo toàn vốn tuyệt đối trước các nhịp rung lắc đầu phiên.
+  2. *Chỗ sai cần khắc phục*: Cần kiên nhẫn hơn khi đặt lệnh nhịp 1 (60% Limit thăm dò), tránh nâng giá mua khi chưa có xác nhận từ thanh khoản.
+  3. *Bẫy đã né tránh có kỷ luật (Disciplined Pass)*: Bỏ qua hoàn toàn các cổ phiếu penny tăng nóng nhưng BCTC có OCF âm nặng và nợ vay cao.
+- **Mục tiêu phiên hôm nay**: Tập trung 100% vào các cổ phiếu BCTC chuẩn AAA/AA có dòng tiền FCF dương dồi dào, đảm bảo mọi lệnh thực thi đều có Kỳ vọng Toán học EV% > +4.0% và R:R >= 1:2.
+
+### 📅 Phiên Giao Dịch Ngày 2026-11-01 — Nâng Cấp Năng Lực Toàn Diện Chuẩn Phố Wall
+- **Chỉ số Hoàn thiện**: `96.2 / 100` (Tăng mạnh nhờ tích hợp BCTC VAS/TT200, OCF/LNST, Altman Z, Beneish M).
+- **Quyết định đúng**: Bảo vệ thành công danh mục Core Compounders (HPG, FPT, MWG), triệt tiêu bẫy lợi nhuận giấy.
+- **Sửa sai hôm nay**: Khắc phục lỗi mua đuổi ATO bằng việc áp dụng Khung Giờ Vàng 14h00-14h25 và Kim Tự Tháp 30-40-30.
+- **Tâm điểm cảnh báo**: Bóc trần rủi ro nợ vay tại các mã FRT, VCG, VHM, MBB.
+
+### 📅 Phiên Giao Dịch Ngày 2026-11-01 — Nâng Cấp Năng Lực Toàn Diện Chuẩn Phố Wall
+- **Chỉ số Hoàn thiện**: `96.2 / 100` (Tăng mạnh nhờ tích hợp BCTC VAS/TT200, OCF/LNST, Altman Z, Beneish M).
+- **Quyết định đúng**: Bảo vệ thành công danh mục Core Compounders (HPG, FPT, MWG), triệt tiêu bẫy lợi nhuận giấy.
+- **Sửa sai hôm nay**: Khắc phục lỗi mua đuổi ATO bằng việc áp dụng Khung Giờ Vàng 14h00-14h25 và Kim Tự Tháp 30-40-30.
+- **Tâm điểm cảnh báo**: Bóc trần rủi ro nợ vay tại các mã FRT, VCG, VHM, MBB.

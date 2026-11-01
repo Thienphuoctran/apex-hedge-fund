@@ -1,5 +1,5 @@
 # SỔ THEO DÕI DANH MỤC ĐẦU TƯ TTCK VIỆT NAM (VN PORTFOLIO TRACKER)
-*Cập nhật tự động: 2026-10-31*
+*Cập nhật tự động: 2026-11-01*
 
 | Mã CK | Tỷ Trọng | Giá Vốn Thăm Dò | Giá Hiện Tại | Ngưỡng Cắt Lỗ | Chốt Lời TP1 | Chốt Lời TP2 | Trạng Thái Vị Thế |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |

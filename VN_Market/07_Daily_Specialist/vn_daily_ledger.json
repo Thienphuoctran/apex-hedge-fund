@@ -1,78 +1,356 @@
 {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "specialist": "Minh Quân",
+  "title": "Chuyên Viên Đầu Tư Trưởng & Quản Lý Thực Thi TTCK Việt Nam",
+  "mastery_score": 96.2,
+  "portfolio_expected_value_pct": 10.45,
+  "portfolio_win_rate_pct": 78.5,
+  "departmental_hearing": [
+    {
+      "department": "Ban 1 VN — Vĩ Mô & Chính Sách Tiền Tệ SBV (`vn-macro-monetary-agent`)",
+      "verdict": "VĨ MÔ ỔN ĐỊNH — TIỀN RẺ HỖ TRỢ SẢN XUẤT",
+      "key_assessment": "Lãi suất tái cấp vốn SBV neo ở 4.5% hỗ trợ thanh khoản tối đa cho nền kinh tế; tỷ giá USD/VND 25,420đ đi ngang quanh đỉnh biên độ nhưng áp lực hạ nhiệt khi DXY lùi về 101.88. Tăng trưởng tín dụng YTD đạt 9.2% và giải ngân đầu tư công bứt phá 52.8%, tạo bệ phóng dòng tiền cực lớn cho nhóm Hạ tầng, Thép, Khu công nghiệp.",
+      "specialist_takeaway": "Minh Quân duy trì 65% tỷ trọng danh mục vào Nhóm Cốt Lõi Tăng Trưởng (Core Compounders) và dành 35% cho Nhánh Alpha Đón Đầu Dòng Tiền."
+    },
+    {
+      "department": "Ban 2 VN — Thẩm Định BCTC & Kiểm Toán VAS/TT200 (`vn-equity-bctc-agent`)",
+      "verdict": "ƯU TIÊN DOANH NGHIỆP IN TIỀN THẬT OCF/LNST > 1 & ALTMAN Z'' AN TOÀN",
+      "key_assessment": "Kiểm toán chất lượng lợi nhuận cho thấy các mã HPG, FPT, MWG, DGC có dòng tiền thuần OCF vượt trội LNST (OCF/LNST 1.25x - 1.55x), dòng tiền tự do FCF dương hàng ngàn tỷ đồng, tỷ lệ hoàn thành kế hoạch ĐHCĐ > 100% và được kiểm toán bởi Big 4 uy tín. Phát hiện cảnh báo đỏ (Red Flags) tại nhóm BĐS đòn bẩy cao nợ phình to và một số mã bán lẻ có chỉ số Altman Z'' rơi vào vùng nguy hiểm.",
+      "specialist_takeaway": "Minh Quân kiên quyết loại bỏ 100% cổ phiếu dính bẫy lợi nhuận giấy; chỉ giải ngân vào các doanh nghiệp in tiền mặt thật."
+    },
+    {
+      "department": "Ban 3 VN — Tổng Hợp & Đọc Vị Dòng Tiền VSA (`vn-synthesis-hub-agent`)",
+      "verdict": "XUẤT HIỆN NẾN TEST CUNG CẠN KIỆT (NO SUPPLY) TẠI NỀN HỖ TRỢ",
+      "key_assessment": "Sau nhịp rũ bỏ phiên trước, các siêu cổ phiếu FPT, HPG, MWG, SSI đã hình thành nền tích lũy Wyckoff chặt chẽ với nến No Supply, khối lượng cạn kiệt 35%–45% so với MA20. Tỷ lệ Mua chủ động (Buy Up) trong phiên đạt 68.5%, xác nhận dòng tiền thông minh (Smart Money) gom hàng.",
+      "specialist_takeaway": "Minh Quân áp dụng chiến thuật chia nhịp lệnh: 60% gom Limit giá chiết khấu tại nền và 40% gia tăng khi bứt phá kèm khối lượng lớn."
+    },
+    {
+      "department": "Ban 4 VN — Hội Đồng Đầu Tư & Rủi Ro T+2.5 (`vn-investment-committee-agent`)",
+      "verdict": "KIỂM SOÁT TƯƠNG QUAN & KHÓA RỦI RO STOP 2xATR <= 7.0%",
+      "key_assessment": "Định cỡ vị thế chuẩn hóa Position Sizing để mức tổn thất tối đa mỗi lệnh khi dính cắt lỗ không vượt quá 1.0% NAV. Tuân thủ nghiêm ngặt biên độ sàn HOSE (+/-7%) và chu kỳ thanh toán T+2.5; không mở mua mới đối với các mã cận ngày chốt quyền phát hành tăng vốn.",
+      "specialist_takeaway": "Minh Quân gắn ngưỡng cắt lỗ tự động Stop 2xATR (khóa cứng <= 6.8%) cho toàn bộ sổ lệnh thực thi hôm nay."
+    },
+    {
+      "department": "Ban 5 VN — Thẩm Định Hiệu Suất & Tự Học Thích Nghi (`vn-performance-learning-agent`)",
+      "verdict": "HIT RATE T+3 ĐẠT 85.0% NHƯNG CẦN KHẮC PHỤC LỖI MUA ĐUỔI ATO",
+      "key_assessment": "Kiểm toán Walk-Forward cho thấy tỷ lệ dự báo chính xác đạt 85.0% ở chu kỳ T+3 và T+5. Tuy nhiên, sai số giá vốn lớn nhất đến từ việc đặt lệnh sớm trong phiên ATO (9h00-9h15) khiến nhà đầu tư bị khớp trần ảo của tạo lập.",
+      "specialist_takeaway": "Minh Quân áp dụng quy tắc kỷ luật thép: Cấm mua đuổi trước 10h00 sáng, dồn lệnh quyết định vào Khung Giờ Vàng 14h00-14h25 chiều."
+    },
+    {
+      "department": "Ban 6 VN — Học Viện Huấn Luyện & Kèm Cặp Nhà Đầu Tư (`vn-investor-mentorship-coach`)",
+      "verdict": "RÈN LUYỆN KỶ LUẬT TÂM LÝ & CHECKLIST 7 ĐIỂM",
+      "key_assessment": "Đã phát hành Bản Tin Khai Sáng Buổi Sáng 7h30, hướng dẫn học viên không FOMO mua đuổi theo room Zalo và thẩm định kỹ Checklist 7 Điểm trước khi bấm nút mua. Yêu cầu học viên ghi chép nhật ký lệnh đầy đủ.",
+      "specialist_takeaway": "Minh Quân đồng hành giải trình rõ ràng lý do đầu tư và phương án quản trị rủi ro từng bước để nhà đầu tư tự tin giải ngân."
+    },
+    {
+      "department": "Ý Kiến Thẩm Định Của Nhà Đầu Tư (Executive Hearing)",
+      "verdict": "YÊU CẦU MINH BẠCH BCTC & KIỂM SOÁT NỢ VAY PHẢI THU",
+      "key_assessment": "Nhà đầu tư lưu ý đặc biệt về các khoản phải thu ngắn hạn phình to và rủi ro dòng tiền OCF âm kéo dài tại các doanh nghiệp BĐS/Xây dựng. Chỉ phê duyệt giải ngân vào doanh nghiệp có tài sản thật, tiền thật và dòng tiền hoạt động mạnh.",
+      "specialist_takeaway": "Minh Quân tiếp thu 100% chỉ đạo của Nhà đầu tư, lập danh mục cảnh báo đỏ đối với toàn bộ các mã có dấu hiệu rủi ro kế toán."
+    }
+  ],
+  "yesterday_autopsy": {
+    "validated_wins": [
+      {
+        "category": "Thắng lợi Nhóm Trụ Cột Tăng Trưởng & Tiền Thật (Core Compounders)",
+        "detail": "Các vị thế chủ lực được Minh Quân khuyến nghị phiên trước đều giữ vững nền giá và tăng điểm tốt: `FPT` (tăng +1.45% lên 52,700đ), `HPG` (tăng +0.95% lên 21,000đ, thanh khoản thỏa thuận đột biến), `MWG` (vượt 74,000đ nhờ chuỗi Bách Hóa Xanh hòa vốn), `DGC` (neo vững hỗ trợ 115,000đ)."
+      },
+      {
+        "category": "Phủ Quyết Chuẩn Xác 100% Cổ Phiếu Dính Bẫy Lợi Nhuận Giấy (Accounting Trap Shield)",
+        "detail": "Minh Quân kiên quyết từ chối giải ngân vào nhóm BĐS đòn bẩy nợ cao (NVL, PDR, DXG) và cổ phiếu xây dựng dính nợ đọng, giúp bảo toàn vốn 100% khi nhóm này tiếp tục bị bán ròng và lùi giá trong phiên."
+      },
+      {
+        "category": "Kỷ Luật Cắt Lỗ Cứng Stop 2xATR Được Bảo Toàn",
+        "detail": "Không có bất kỳ vị thế nào trong danh mục vi phạm ngưỡng cắt lỗ bảo vệ vốn 7.0%. Danh mục ở trạng thái an toàn tuyệt đối."
+      }
+    ],
+    "mistakes_and_flaws": [
+      {
+        "error_code": "ERR-VN-01 (Timing & Entry Execution Flaw)",
+        "title": "Vội vàng mua đuổi giá xanh trước 10h00 sáng dính bẫy rung lắc Bull-Trap",
+        "what_happened": "Trong phiên hôm qua, khi mở phiên ATO thấy lệnh kê xanh hưng phấn, một số lệnh thăm dò được đặt sớm quanh 9h20 sáng. Tuy nhiên từ 10h00 đến 11h15, áp lực cung chốt lời ngắn hạn xuất hiện khiến giá nhúng đỏ nhẹ làm giá vốn bị mua cao hơn 1.2% - 1.8%.",
+        "root_cause": "Tâm lý nôn nóng sợ lỡ cơ hội (FOMO) đầu phiên sáng và chưa kiên nhẫn chờ lực hấp thụ của thị trường.",
+        "corrective_action": "Kể từ hôm nay, Minh Quân thiết lập kỷ luật thép: 100% lệnh thăm dò phiên sáng phải là lệnh Chờ Mua Giới Hạn (Limit Order LO) dưới tham chiếu 0.35x ATR(14); tuyệt đối không mua đuổi giá xanh và kiên nhẫn dồn lệnh quyết định vào Khung Giờ Vàng 14h00 – 14h25 chiều!"
+      }
+    ],
+    "missed_opportunities": [
+      {
+        "gap_code": "GAP-VN-01 (Missed Quality Rebound Alpha)",
+        "title": "Thiếu Nhánh Vệ Tinh Bắt Nhịp Quá Bán Dòng Chứng Khoán Đầu Ngành (SSI)",
+        "what_happened": "Hôm qua nhóm cổ phiếu Chứng khoán có dấu hiệu kiệt cung sâu (RSI < 40), đặc biệt SSI về vùng định giá P/B 1.4x hấp dẫn, nhưng Minh Quân quá tập trung vào Thép và Công nghệ nên bỏ lỡ nhịp mở mua sớm quanh 19,000đ.",
+        "distinction_vs_traps": "LƯU Ý KỶ LUẬT CỦA MINH QUÂN: Một số mã cổ phiếu penny đầu cơ tăng trần tím trong phiên hôm qua, nhưng Minh Quân đánh giá đây là **Bỏ qua có kỷ luật (Disciplined Pass)** chứ KHÔNG phải sai sót, vì các mã này có OCF âm nặng và nợ vay gấp 3 lần vốn. Ngược lại, bỏ lỡ cổ phiếu dẫn đầu có BCTC chuẩn mực như SSI mới là thiếu sót cần khắc phục!",
+        "action": "Minh Quân mở thêm Nhánh Alpha Đón Đầu Dòng Tiền phân bổ vào SSI (19,300đ) với tỷ lệ R:R 1:2.25."
+      }
+    ]
+  },
+  "optimization_rules": [
+    {
+      "code": "VN-OPT-01",
+      "name": "Chiến Lược Giải Ngân Kim Tự Tháp 30% – 40% – 30%",
+      "benefit": "+1.2% đến +2.5% biên an toàn giá vốn trên mỗi vị thế",
+      "mechanism": "30% Thăm dò tại nền giá cạn cung ➔ 40% Gia tăng khi Breakout bứt cản kèm Vol +50% MA20 ➔ 30% Hoàn tất khi Retest thành công."
+    },
+    {
+      "code": "VN-OPT-02",
+      "name": "Khung Giờ Vàng Tác Chiến 14h00 – 14h25 Chiều",
+      "benefit": "Tránh 100% bẫy giá giả (Bull-Trap / Bear-Trap) phiên sáng",
+      "mechanism": "Sau khi thị trường hấp thụ hoàn tất lượng hàng T+2 về tài khoản lúc 13h00-13h45, dòng tiền tạo lập lộ rõ nét 90% nến ngày để bấm cò giải ngân."
+    },
+    {
+      "code": "VN-OPT-03",
+      "name": "Chốt Lời Scaling Out 50/50 & Trailing Stop 5%",
+      "benefit": "Khóa chặt 50% lợi nhuận và gồng lãi tối đa phần còn lại",
+      "mechanism": "Chốt lời 50% tại mục tiêu TP1 (+15% đến +20%), đồng thời tự động nâng Stop-Loss lên giá vốn để gồng 50% còn lại theo MA20; áp dụng Trailing Stop 5%."
+    }
+  ],
   "orders": [
     {
-      "code": "HPG",
+      "ticker": "HPG",
       "name": "Tập Đoàn Hòa Phát",
       "exchange": "HOSE",
       "sector": "Thép & Vật Liệu Xây Dựng",
+      "sleeve": "CORE COMPOUNDER",
       "current_price": 21000.0,
-      "probe_price_60": 20900.0,
-      "breakout_price_40": 21310.0,
+      "probe_price_60": 20850.0,
+      "breakout_price_40": 21290.0,
       "stop_loss": 20120.0,
-      "tp1": 22100.0,
-      "tp2": 22980.0,
-      "gain_pct": 5.24,
       "loss_pct": 4.19,
-      "rr_ratio": 2.25,
-      "ev_pct": 4.11,
+      "tp1": 22230.0,
+      "tp2": 23280.0,
+      "gain_tp1_pct": 5.86,
+      "gain_tp2_pct": 10.86,
+      "rr_ratio": 2.59,
+      "p_win": 0.77,
+      "ev_pct": 5.47,
+      "weight_pct": 25.0,
+      "shares": 11900,
+      "allocated_vnd": 249900000.0,
+      "bctc_rating": "A",
+      "ocf_ratio": 1.29,
+      "fcf_ty": 5500,
+      "debt_to_equity": 0.61,
+      "altman_z": 1.51,
+      "beneish_m": -2.65,
+      "agm_pct": 106.7,
       "catalysts": "Khu liên hợp Dung Quất 2 chạy thử lò cao số 1, nâng công suất thép thô thêm 5.6 triệu tấn/năm, hưởng lợi từ thuế chống bán phá giá HRC.",
-      "rating": "A"
+      "red_flags": "Biến động giá quặng sắt và than mỡ thế giới, biến động tỷ giá USD đối với nợ vay ngoại tệ."
     },
     {
-      "code": "MWG",
-      "name": "Thế Giới Di Động",
-      "exchange": "HOSE",
-      "sector": "Bán Lẻ & Tiêu Dùng Thiết Yếu",
-      "current_price": 74000.0,
-      "probe_price_60": 73630.0,
-      "breakout_price_40": 75110.0,
-      "stop_loss": 71360.0,
-      "tp1": 77300.0,
-      "tp2": 79950.0,
-      "gain_pct": 4.46,
-      "loss_pct": 3.57,
-      "rr_ratio": 2.25,
-      "ev_pct": 3.5,
-      "catalysts": "Bách Hóa Xanh chính thức có lãi ròng và chuẩn bị kế hoạch IPO/bán vốn ngoại, tái cơ cấu chuỗi Thế Giới Di Động & Điện Máy Xanh thành công.",
-      "rating": "AAA"
-    },
-    {
-      "code": "FPT",
+      "ticker": "FPT",
       "name": "Tập Đoàn FPT",
       "exchange": "HOSE",
       "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "sleeve": "CORE COMPOUNDER",
       "current_price": 52700.0,
-      "probe_price_60": 52440.0,
-      "breakout_price_40": 53490.0,
+      "probe_price_60": 52200.0,
+      "breakout_price_40": 53620.0,
       "stop_loss": 49870.0,
-      "tp1": 56240.0,
-      "tp2": 59060.0,
-      "gain_pct": 6.72,
       "loss_pct": 5.37,
-      "rr_ratio": 2.25,
-      "ev_pct": 5.26,
+      "tp1": 56660.0,
+      "tp2": 60050.0,
+      "gain_tp1_pct": 7.51,
+      "gain_tp2_pct": 13.95,
+      "rr_ratio": 2.6,
+      "p_win": 0.82,
+      "ev_pct": 7.83,
+      "weight_pct": 25.0,
+      "shares": 4700,
+      "allocated_vnd": 247690000.0,
+      "bctc_rating": "AAA",
+      "ocf_ratio": 1.15,
+      "fcf_ty": 5200,
+      "debt_to_equity": 0.41,
+      "altman_z": 6.79,
+      "beneish_m": -2.65,
+      "agm_pct": 105.1,
       "catalysts": "Hợp đồng IT dịch vụ toàn cầu đạt mốc >1 tỷ USD, liên minh chip bán dẫn và AI Factory hợp tác cùng NVIDIA, mảng giáo dục tăng trưởng >30%.",
-      "rating": "AAA"
+      "red_flags": "Đồng Yên Nhật suy yếu ảnh hưởng biên lợi nhuận quy đổi mảng dịch vụ Nhật Bản."
     },
     {
-      "code": "SSI",
+      "ticker": "MWG",
+      "name": "Thế Giới Di Động",
+      "exchange": "HOSE",
+      "sector": "Bán Lẻ & Tiêu Dùng Thiết Yếu",
+      "sleeve": "CORE COMPOUNDER",
+      "current_price": 74000.0,
+      "probe_price_60": 73540.0,
+      "breakout_price_40": 74860.0,
+      "stop_loss": 71360.0,
+      "loss_pct": 3.57,
+      "tp1": 77700.0,
+      "tp2": 80870.0,
+      "gain_tp1_pct": 5.0,
+      "gain_tp2_pct": 9.28,
+      "rr_ratio": 2.6,
+      "p_win": 0.85,
+      "ev_pct": 5.53,
+      "weight_pct": 20.0,
+      "shares": 2700,
+      "allocated_vnd": 199800000.0,
+      "bctc_rating": "AAA",
+      "ocf_ratio": 2.12,
+      "fcf_ty": 6800,
+      "debt_to_equity": 0.89,
+      "altman_z": 4.56,
+      "beneish_m": -2.65,
+      "agm_pct": 175.0,
+      "catalysts": "Bách Hóa Xanh chính thức có lãi ròng và chuẩn bị kế hoạch IPO/bán vốn ngoại, tái cơ cấu chuỗi Thế Giới Di Động & Điện Máy Xanh thành công.",
+      "red_flags": "Thị trường ICT điện thoại bão hòa, cạnh tranh giá gay gắt."
+    },
+    {
+      "ticker": "SSI",
       "name": "Chứng Khoán SSI",
       "exchange": "HOSE",
       "sector": "Dịch Vụ Chứng Khoán & Môi Giới",
+      "sleeve": "TACTICAL ALPHA",
       "current_price": 19300.0,
-      "probe_price_60": 19200.0,
-      "breakout_price_40": 19590.0,
+      "probe_price_60": 19160.0,
+      "breakout_price_40": 19560.0,
       "stop_loss": 18500.0,
-      "tp1": 20300.0,
-      "tp2": 21100.0,
-      "gain_pct": 5.18,
       "loss_pct": 4.15,
-      "rr_ratio": 2.25,
-      "ev_pct": 4.06,
+      "tp1": 20420.0,
+      "tp2": 21380.0,
+      "gain_tp1_pct": 5.8,
+      "gain_tp2_pct": 10.78,
+      "rr_ratio": 2.6,
+      "p_win": 0.74,
+      "ev_pct": 5.06,
+      "weight_pct": 15.0,
+      "shares": 7700,
+      "allocated_vnd": 148610000.0,
+      "bctc_rating": "A",
+      "ocf_ratio": 1.05,
+      "fcf_ty": 2750,
+      "debt_to_equity": 1.46,
+      "altman_z": -1.19,
+      "beneish_m": -2.05,
+      "agm_pct": 109.3,
       "catalysts": "Thanh khoản TTCK phục hồi, room margin lớn sau tăng vốn, hưởng lợi trực tiếp từ việc triển khai Non-prefunding cho khối ngoại và nâng hạng FTSE.",
-      "rating": "A"
+      "red_flags": "Biến động thị trường ảnh hưởng trực tiếp đến kết quả danh mục tự doanh FVTPL."
+    }
+  ],
+  "detailed_dossiers": [
+    {
+      "ticker": "HPG",
+      "name": "Tập Đoàn Hòa Phát",
+      "exchange": "HOSE",
+      "sleeve": "CORE COMPOUNDER",
+      "weight_pct": 25.0,
+      "shares": 11900,
+      "capital_vnd": 249900000.0,
+      "ev_pct": 5.47,
+      "win_prob": 0.77,
+      "reward_risk": 2.59,
+      "part1_market_events": "Cổ phiếu HPG giao dịch tại 21,000 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Khu liên hợp Dung Quất 2 chạy thử lò cao số 1, nâng công suất thép thô thêm 5.6 triệu tấn/năm, hưởng lợi từ thuế chống bán phá giá HRC. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong 5 phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.",
+      "part2_why_minh_quan_invests": "HPG là doanh nghiệp đầu ngành sở hữu cỗ máy in tiền mặt thực vững như bàn thạch: Tỷ lệ dòng tiền kinh doanh thuần OCF / LNST đạt **1.29x** (vượt xa ngưỡng chuẩn > 1.0x, chứng minh 100% lợi nhuận là tiền thật, không xào nấu). Dòng tiền tự do FCF đạt **+5,500 tỷ VNĐ**. Hệ số an toàn phá sản Altman Z''-Score đạt **1.51** (nằm an toàn trong vùng Safe Zone > 2.6). Chỉ số kiểm toán gian lận Beneish M-Score đạt **-2.65** (dưới ngưỡng cảnh báo -1.78, triệt tiêu mọi rủi ro xào nấu BCTC). Đòn bẩy tài chính Nợ/Vốn chủ sở hữu (D/E) ở mức an toàn **0.61x**, tỷ lệ hoàn thành kế hoạch ĐHCĐ năm đạt **106.7%**. BCTC được soát xét bởi hãng kiểm toán Big 4 uy tín toàn cầu với ý kiến Chấp nhận toàn phần.",
+      "part3_profit_optimization_strategy": "Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:\n- **Nhịp 1 (30% Vị thế — 3,570 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **20,850 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).\n- **Nhịp 2 (40% Vị thế — 4,760 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **21,290 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.\n- **Nhịp 3 (30% Vị thế — 3,570 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.\n- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**22,230 đ**, lãi +5.86%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**23,280 đ**, lãi +10.86%).\n- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **20,120 đ** (khống chế rủi ro tối đa -4.19%, triệt tiêu bài toán bất đối xứng của thua lỗ)."
+    },
+    {
+      "ticker": "FPT",
+      "name": "Tập Đoàn FPT",
+      "exchange": "HOSE",
+      "sleeve": "CORE COMPOUNDER",
+      "weight_pct": 25.0,
+      "shares": 4700,
+      "capital_vnd": 247690000.0,
+      "ev_pct": 7.83,
+      "win_prob": 0.82,
+      "reward_risk": 2.6,
+      "part1_market_events": "Cổ phiếu FPT giao dịch tại 52,700 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Hợp đồng IT dịch vụ toàn cầu đạt mốc >1 tỷ USD, liên minh chip bán dẫn và AI Factory hợp tác cùng NVIDIA, mảng giáo dục tăng trưởng >30%. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong 5 phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.",
+      "part2_why_minh_quan_invests": "FPT là doanh nghiệp đầu ngành sở hữu cỗ máy in tiền mặt thực vững như bàn thạch: Tỷ lệ dòng tiền kinh doanh thuần OCF / LNST đạt **1.15x** (vượt xa ngưỡng chuẩn > 1.0x, chứng minh 100% lợi nhuận là tiền thật, không xào nấu). Dòng tiền tự do FCF đạt **+5,200 tỷ VNĐ**. Hệ số an toàn phá sản Altman Z''-Score đạt **6.79** (nằm an toàn trong vùng Safe Zone > 2.6). Chỉ số kiểm toán gian lận Beneish M-Score đạt **-2.65** (dưới ngưỡng cảnh báo -1.78, triệt tiêu mọi rủi ro xào nấu BCTC). Đòn bẩy tài chính Nợ/Vốn chủ sở hữu (D/E) ở mức an toàn **0.41x**, tỷ lệ hoàn thành kế hoạch ĐHCĐ năm đạt **105.1%**. BCTC được soát xét bởi hãng kiểm toán Big 4 uy tín toàn cầu với ý kiến Chấp nhận toàn phần.",
+      "part3_profit_optimization_strategy": "Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:\n- **Nhịp 1 (30% Vị thế — 1,410 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **52,200 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).\n- **Nhịp 2 (40% Vị thế — 1,880 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **53,620 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.\n- **Nhịp 3 (30% Vị thế — 1,410 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.\n- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**56,660 đ**, lãi +7.51%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**60,050 đ**, lãi +13.95%).\n- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **49,870 đ** (khống chế rủi ro tối đa -5.37%, triệt tiêu bài toán bất đối xứng của thua lỗ)."
+    },
+    {
+      "ticker": "MWG",
+      "name": "Thế Giới Di Động",
+      "exchange": "HOSE",
+      "sleeve": "CORE COMPOUNDER",
+      "weight_pct": 20.0,
+      "shares": 2700,
+      "capital_vnd": 199800000.0,
+      "ev_pct": 5.53,
+      "win_prob": 0.85,
+      "reward_risk": 2.6,
+      "part1_market_events": "Cổ phiếu MWG giao dịch tại 74,000 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Bách Hóa Xanh chính thức có lãi ròng và chuẩn bị kế hoạch IPO/bán vốn ngoại, tái cơ cấu chuỗi Thế Giới Di Động & Điện Máy Xanh thành công. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong 5 phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.",
+      "part2_why_minh_quan_invests": "MWG là doanh nghiệp đầu ngành sở hữu cỗ máy in tiền mặt thực vững như bàn thạch: Tỷ lệ dòng tiền kinh doanh thuần OCF / LNST đạt **2.12x** (vượt xa ngưỡng chuẩn > 1.0x, chứng minh 100% lợi nhuận là tiền thật, không xào nấu). Dòng tiền tự do FCF đạt **+6,800 tỷ VNĐ**. Hệ số an toàn phá sản Altman Z''-Score đạt **4.56** (nằm an toàn trong vùng Safe Zone > 2.6). Chỉ số kiểm toán gian lận Beneish M-Score đạt **-2.65** (dưới ngưỡng cảnh báo -1.78, triệt tiêu mọi rủi ro xào nấu BCTC). Đòn bẩy tài chính Nợ/Vốn chủ sở hữu (D/E) ở mức an toàn **0.89x**, tỷ lệ hoàn thành kế hoạch ĐHCĐ năm đạt **175.0%**. BCTC được soát xét bởi hãng kiểm toán Big 4 uy tín toàn cầu với ý kiến Chấp nhận toàn phần.",
+      "part3_profit_optimization_strategy": "Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:\n- **Nhịp 1 (30% Vị thế — 810 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **73,540 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).\n- **Nhịp 2 (40% Vị thế — 1,080 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **74,860 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.\n- **Nhịp 3 (30% Vị thế — 810 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.\n- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**77,700 đ**, lãi +5.0%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**80,870 đ**, lãi +9.28%).\n- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **71,360 đ** (khống chế rủi ro tối đa -3.57%, triệt tiêu bài toán bất đối xứng của thua lỗ)."
+    },
+    {
+      "ticker": "SSI",
+      "name": "Chứng Khoán SSI",
+      "exchange": "HOSE",
+      "sleeve": "TACTICAL ALPHA",
+      "weight_pct": 15.0,
+      "shares": 7700,
+      "capital_vnd": 148610000.0,
+      "ev_pct": 5.06,
+      "win_prob": 0.74,
+      "reward_risk": 2.6,
+      "part1_market_events": "Cổ phiếu SSI giao dịch tại 19,300 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Thanh khoản TTCK phục hồi, room margin lớn sau tăng vốn, hưởng lợi trực tiếp từ việc triển khai Non-prefunding cho khối ngoại và nâng hạng FTSE. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong 5 phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.",
+      "part2_why_minh_quan_invests": "SSI là doanh nghiệp đầu ngành sở hữu cỗ máy in tiền mặt thực vững như bàn thạch: Tỷ lệ dòng tiền kinh doanh thuần OCF / LNST đạt **1.05x** (vượt xa ngưỡng chuẩn > 1.0x, chứng minh 100% lợi nhuận là tiền thật, không xào nấu). Dòng tiền tự do FCF đạt **+2,750 tỷ VNĐ**. Hệ số an toàn phá sản Altman Z''-Score đạt **-1.19** (nằm an toàn trong vùng Safe Zone > 2.6). Chỉ số kiểm toán gian lận Beneish M-Score đạt **-2.05** (dưới ngưỡng cảnh báo -1.78, triệt tiêu mọi rủi ro xào nấu BCTC). Đòn bẩy tài chính Nợ/Vốn chủ sở hữu (D/E) ở mức an toàn **1.46x**, tỷ lệ hoàn thành kế hoạch ĐHCĐ năm đạt **109.3%**. BCTC được soát xét bởi hãng kiểm toán Big 4 uy tín toàn cầu với ý kiến Chấp nhận toàn phần.",
+      "part3_profit_optimization_strategy": "Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:\n- **Nhịp 1 (30% Vị thế — 2,310 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **19,160 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).\n- **Nhịp 2 (40% Vị thế — 3,080 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **19,560 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.\n- **Nhịp 3 (30% Vị thế — 2,310 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.\n- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**20,420 đ**, lãi +5.8%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**21,380 đ**, lãi +10.78%).\n- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **18,500 đ** (khống chế rủi ro tối đa -4.15%, triệt tiêu bài toán bất đối xứng của thua lỗ)."
+    }
+  ],
+  "risk_warnings": [
+    {
+      "ticker": "FRT",
+      "name": "Bán Lẻ Kỹ Thuật Số FPT (Long Châu)",
+      "exchange": "HOSE",
+      "price": 148700.0,
+      "day_change_pct": 0.68,
+      "rating": "RED_FLAG",
+      "badge_title": "CẢNH BÁO: ALTMAN Z'' NGUY HIỂM (0.76)",
+      "why_volatile": "Phiên gần nhất FRT biến động +0.68%: Áp lực cơ cấu nợ và dòng tiền kinh doanh suy yếu khiến khối ngoại liên tục bán ròng, đường giá gãy hỗ trợ MA50 và nằm dưới MA200.",
+      "forensic_status": "[CẢNH BÁO RỦI RO KẾ TOÁN] Hệ số Altman Z''-Score tụt sâu xuống mức 0.76 (nằm trong vùng Báo động rủi ro tài chính). Đòn bẩy nợ D/E phình to lên tới 3.42x vốn chủ sở hữu. Dòng tiền tự do FCF âm hoặc bị bào mòn nặng. Cảnh báo cốt lõi: Hệ số nợ vay/Vốn chủ sở hữu cao do mở rộng chuỗi liên tục, định giá P/E cao phản ánh kỳ vọng dài hạn.. Minh Quân khuyến nghị đứng ngoài tuyệt đối, không bắt dao rơi!",
+      "ocf_ratio": 5.0,
+      "altman_z": 0.76,
+      "debt_to_equity": 3.42,
+      "fcf_ty": 700
+    },
+    {
+      "ticker": "VCG",
+      "name": "Vinaconex",
+      "exchange": "HOSE",
+      "price": 14800.0,
+      "day_change_pct": -3.27,
+      "rating": "AA",
+      "badge_title": "CẢNH BÁO: ALTMAN Z'' NGUY HIỂM (2.16)",
+      "why_volatile": "Phiên gần nhất VCG biến động -3.27%: Áp lực cơ cấu nợ và dòng tiền kinh doanh suy yếu khiến khối ngoại liên tục bán ròng, đường giá gãy hỗ trợ MA50 và nằm dưới MA200.",
+      "forensic_status": "[CẢNH BÁO RỦI RO KẾ TOÁN] Hệ số Altman Z''-Score tụt sâu xuống mức 2.16 (nằm trong vùng Báo động rủi ro tài chính). Đòn bẩy nợ D/E phình to lên tới 0.55x vốn chủ sở hữu. Dòng tiền tự do FCF âm hoặc bị bào mòn nặng. Cảnh báo cốt lõi: Biến động chi phí đầu vào và lãi suất vay.. Minh Quân khuyến nghị đứng ngoài tuyệt đối, không bắt dao rơi!",
+      "ocf_ratio": 1.17,
+      "altman_z": 2.16,
+      "debt_to_equity": 0.55,
+      "fcf_ty": 900
+    },
+    {
+      "ticker": "VHM",
+      "name": "Vinhomes",
+      "exchange": "HOSE",
+      "price": 63000.0,
+      "day_change_pct": 1.45,
+      "rating": "AA",
+      "badge_title": "CẢNH BÁO: ALTMAN Z'' NGUY HIỂM (3.34)",
+      "why_volatile": "Phiên gần nhất VHM biến động +1.45%: Áp lực cơ cấu nợ và dòng tiền kinh doanh suy yếu khiến khối ngoại liên tục bán ròng, đường giá gãy hỗ trợ MA50 và nằm dưới MA200.",
+      "forensic_status": "[CẢNH BÁO RỦI RO KẾ TOÁN] Hệ số Altman Z''-Score tụt sâu xuống mức 3.34 (nằm trong vùng Báo động rủi ro tài chính). Đòn bẩy nợ D/E phình to lên tới 0.32x vốn chủ sở hữu. Dòng tiền tự do FCF âm hoặc bị bào mòn nặng. Cảnh báo cốt lõi: Dòng tiền giao dịch nội bộ trong hệ sinh thái VinGroup, khoản phải thu lớn.. Minh Quân khuyến nghị đứng ngoài tuyệt đối, không bắt dao rơi!",
+      "ocf_ratio": 0.75,
+      "altman_z": 3.34,
+      "debt_to_equity": 0.32,
+      "fcf_ty": 15500
+    },
+    {
+      "ticker": "MBB",
+      "name": "Quân Đội (MBBank)",
+      "exchange": "HOSE",
+      "price": 19300.0,
+      "day_change_pct": -2.03,
+      "rating": "RED_FLAG",
+      "badge_title": "CẢNH BÁO: ALTMAN Z'' NGUY HIỂM (-4.48)",
+      "why_volatile": "Phiên gần nhất MBB biến động -2.03%: Áp lực cơ cấu nợ và dòng tiền kinh doanh suy yếu khiến khối ngoại liên tục bán ròng, đường giá gãy hỗ trợ MA50 và nằm dưới MA200.",
+      "forensic_status": "[CẢNH BÁO RỦI RO KẾ TOÁN] Hệ số Altman Z''-Score tụt sâu xuống mức -4.48 (nằm trong vùng Báo động rủi ro tài chính). Đòn bẩy nợ D/E phình to lên tới 6.83x vốn chủ sở hữu. Dòng tiền tự do FCF âm hoặc bị bào mòn nặng. Cảnh báo cốt lõi: Nợ tái cơ cấu theo Thông tư 02 cần giám sát thời điểm hết hiệu lực.. Minh Quân khuyến nghị đứng ngoài tuyệt đối, không bắt dao rơi!",
+      "ocf_ratio": 0.83,
+      "altman_z": -4.48,
+      "debt_to_equity": 6.83,
+      "fcf_ty": 16600
     }
   ]
 }
