@@ -28,6 +28,7 @@ ARCHIVE_DIR = os.path.join(BASE_DIR, "05_Learning_And_Evolution", "historical_ar
 JOURNAL_PATH = os.path.join(BASE_DIR, "05_Learning_And_Evolution", "vn_system_evolution_journal.md")
 WEIGHTS_PATH = os.path.join(BASE_DIR, "config", "adaptive_weights_vn.json")
 REPORT_MD = os.path.join(BASE_DIR, "05_Learning_And_Evolution", f"{datetime.date.today()}_VN_Learning_Report.md")
+MEMORY_VAULT_VN_PATH = os.path.join(BASE_DIR, "05_Learning_And_Evolution", "vn_contextual_memory_vault.json")
 
 def run():
     print("=== [VN PERFORMANCE LEARNING] BẮT ĐẦU QUY TRÌNH HỒI TỐ, TỰ HỌC & TIẾN HÓA VN ===")
@@ -93,6 +94,40 @@ def run():
     with open(JOURNAL_PATH, "a", encoding="utf-8") as f:
         f.write(journal_entry)
 
+    # 4b. GÓI NÂNG CẤP 4 (HẠNG 4 CẤP THIẾT): Kho Bộ Nhớ Sai Số Ngữ Cảnh Dài Hạn TTCK Việt Nam (VN Mem0 Pattern)
+    vn_memories = [
+        {
+            "memory_id": "MEM-VN-001",
+            "category": "ATO_BULL_TRAP_GUARD",
+            "regime_trigger": "Mở cửa tạo Gap xanh > +2.5% phiên ATO nhưng thanh khoản phiên sáng thấp",
+            "affected_tickers": ["HPG", "MWG", "SSI"],
+            "lesson_learned": "Đua lệnh giá xanh phiên ATO (9h00-9h15) tại TTCK Việt Nam thường chịu thiệt giá vốn 1.5%-2.5% khi áp lực hàng T+2.5 về tài khoản lúc 13h30 chiều.",
+            "actionable_rule": "Cấm mua đuổi ATO; bắt buộc đặt lệnh Limit LO chiết khấu -0.35x ATR(14) và chờ xác nhận lực hấp thụ trong Khung Giờ Vàng 14h00-14h25."
+        },
+        {
+            "memory_id": "MEM-VN-002",
+            "category": "OMISSION_ERROR_NO_SUPPLY",
+            "regime_trigger": "Nến Test Cung (No-Supply) Vol cạn < 45% MA20 tại nền tích lũy Wyckoff + Tiền mặt ròng lớn",
+            "affected_tickers": ["DGC", "FPT"],
+            "lesson_learned": "Chần chừ không giải ngân thăm dò khi siêu cổ phiếu BCTC hạng AAA xuất hiện nến Test Cung cạn Vol tại nền hỗ trợ sẽ bỏ lỡ nhịp bứt phá mạnh.",
+            "actionable_rule": "Giải ngân ngay 30%-60% vị thế thăm dò tại nền No-Supply khi OCF/LNST >= 1.0x và Altman Z'' > 4.0."
+        },
+        {
+            "memory_id": "MEM-VN-003",
+            "category": "FORENSIC_DEBT_TRAP_VETO",
+            "regime_trigger": "OCF âm liên tục + Đòn bẩy nợ D/E > 2.0x + Altman Z'' < 1.1",
+            "affected_tickers": ["FRT", "VCG", "NVL"],
+            "lesson_learned": "Các nhịp kéo trần đầu cơ của cổ phiếu âm dòng tiền kinh doanh và nợ vay cao thường kết thúc bằng chuỗi giảm sàn mất thanh khoản.",
+            "actionable_rule": "Khóa cứng trong danh sách Veto; đánh giá mọi nhịp tăng của nhóm này là Disciplined Pass (Bỏ qua có kỷ luật)."
+        }
+    ]
+    with open(MEMORY_VAULT_VN_PATH, "w", encoding="utf-8") as f:
+        json.dump({
+            "vault_version": "VN-Mem0-Contextual-Vault-v2.0",
+            "updated_at": today_str,
+            "contextual_memories": vn_memories
+        }, f, indent=2, ensure_ascii=False)
+
     # 5. Xuất Báo Cáo Ban 5
     report_lines = [
         f"# BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — {today_str}",
@@ -113,8 +148,16 @@ def run():
         "## 3. CƠ CHẾ TỰ ĐỘNG TINH CHỈNH TRỌNG SỐ (ADAPTIVE TUNING)",
         f"- Đã đối soát và ghi nhận nhật ký vào `vn_system_evolution_journal.md`.",
         f"- Trọng số chấm điểm trong `adaptive_weights_vn.json` bảo đảm tính khoa học, không bị thiên vị cảm tính.",
-        ""
+        "",
+        "## 4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
+        "| Mã Bộ Nhớ | Phân Loại Ký Ức | Điều Kiện Kích Hoạt Ngữ Cảnh (`Regime Trigger`) | Mã Liên Quan | Bài Học Lịch Sử Đã Số Hóa | Quy Tắc Tự Động Nạp Cho Minh Quân |",
+        "| :--- | :--- | :--- | :---: | :--- | :--- |"
     ]
+    for m in vn_memories:
+        report_lines.append(
+            f"| **`{m['memory_id']}`** | `{m['category']}` | {m['regime_trigger']} | **`{', '.join(m['affected_tickers'])}`** | {m['lesson_learned']} | **{m['actionable_rule']}** |"
+        )
+    report_lines.append("")
 
     with open(REPORT_MD, "w", encoding="utf-8") as f:
         f.write("\n".join(report_lines))

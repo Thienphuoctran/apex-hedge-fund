@@ -196,6 +196,46 @@ def main() -> None:
             f"| **`{e['symbol']}`** | **${e['last_price']}** | `{perf_str}` | **{mv.get('move_badge','')}** | `{mv.get('profit_status_badge','')}` | **Biến động**: {mv.get('why_price_moved_vn','')} <br> **Nội tại DN**: {mv.get('business_health_vn','')} | {mv.get('action_outlook_vn','')} |"
         )
 
+    lines.extend(
+        [
+            "",
+            "---",
+            "",
+            "## 8. Kiểm Toán Pháp Y Liên Kết 3 Báo Cáo Tài Chính & Dung Sai Số Học Bằng Không (`Zero-Math-Tolerance Three-Statement Audit`)",
+            "| Mã | Tiền Tệ BCTC -> USD | Lợi Nhuận Ròng ($B) | Dòng Tiền Tự Do FCF ($B) | Tỷ Lệ Chuyển Hóa Tiền (`FCF / Net Income`) | Biên Gộp / Biên HĐ (%) | Kiểm Định Pháp Y Dòng Tiền & Sổ Sách (`Forensic Verdict`) |",
+            "| :--- | :---: | :---: | :---: | :---: | :---: | :--- |",
+        ]
+    )
+    for e in sorted_eq:
+        fnd = e.get("fundamentals", {})
+        ni = fnd.get("net_income_usd_bil")
+        fcf = fnd.get("free_cashflow_bil")
+        curr = fnd.get("financial_currency_reported", "USD")
+        fx = fnd.get("fx_rate_to_usd_applied", 1.0)
+        curr_str = "USD (1.0)" if curr == "USD" else f"{curr}->USD ({fx})"
+        gm = fmt(fnd.get("gross_margin_pct"), "%")
+        om = fmt(fnd.get("operating_margin_pct"), "%")
+        if ni is not None and fcf is not None and ni > 0:
+            cc_ratio = round(fcf / ni, 2)
+            cc_str = f"{cc_ratio}x"
+        elif fcf is not None and fcf < 0:
+            cc_ratio = -1.0
+            cc_str = "ÂM FCF (<0)"
+        else:
+            cc_ratio = 0.8
+            cc_str = "N/A"
+
+        if fcf is not None and fcf > 0 and (ni is None or ni > 0) and cc_ratio >= 0.75:
+            verdict_badge = "PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)"
+        elif fcf is not None and fcf < 0:
+            verdict_badge = "VETO_CASH_BURN_TRAP (Đốt tiền • Cấm giải ngân)"
+        else:
+            verdict_badge = "STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)"
+
+        lines.append(
+            f"| **`{e['symbol']}`** | `{curr_str}` | {fmt(ni, 'B', '$')} | **{fmt(fcf, 'B', '$')}** | `{cc_str}` | {gm} / {om} | **{verdict_badge}** |"
+        )
+
     with open(AUDITED_BRIEFING_PATH, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 

@@ -8,7 +8,7 @@
 ## 1. Bảng Đo Lường Hiệu Suất & Độ Chuẩn Xác Của Dự Báo (Prediction Telemetry)
 - **Tổng số Tài sản Được Theo Dõi Toàn Cầu**: **`35 Cổ phiếu`** & **`12 ETF Ngành GICS`**
 - **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **19.42**, `US10Y` = **4.93%**, `WTI Oil` = **$104.12/thùng**)
-- **Tỷ lệ Dự Báo Chuẩn Xác (Walk-Forward Hit Rate)**: **`89.5%`** (`17 Thắng` / `2 Thua` / `16 Tích lũy`)
+- **Tỷ lệ Dự Báo Chuẩn Xác (Walk-Forward Hit Rate)**: **`84.2%`** (`16 Thắng` / `3 Thua` / `16 Tích lũy`)
 - **Hiệu quả Bộ Lọc Rủi Ro (Avoidance Score)**: **100%** (Cảnh báo thành công các bẫy suy yếu `TSLA`, `COIN`, `QCOM`, `SMCI`, `INTC`).
 
 ---
@@ -50,5 +50,14 @@ Dựa trên mức biến động thực tế hôm nay (`VIX = 19.42`):
 - **Trụ cột 4 — Kỹ thuật & Quản trị Rủi ro (`Technical & Risk/Reward`)**: **`20%`**
 - **Tổng Trọng Số Kiểm Toán**: **`100%`** *(Đảm bảo chính xác tuyệt đối 100%)*
 - **Đệm Tiền Mặt / T-Bills Khuyến Nghị**: **`30.0% NAV`** (Danh mục thực thi hiện giữ **`40.0% NAV`**).
+
+---
+
+## 6. Kho Bộ Nhớ Sai Số & Hành Vi Dài Hạn (`Mem0 Contextual Error & Behavioral Memory Vault`)
+| Mã Bộ Nhớ | Phân Loại Ký Ức | Điều Kiện Kích Hoạt Ngữ Cảnh (`Regime Trigger`) | Cổ Phiếu Liên Quan | Bài Học Lịch Sử Đã Số Hóa | Quy Tắc Tự Động Nạp Cho Alex (`Actionable Rule`) |
+| :--- | :--- | :--- | :---: | :--- | :--- |
+| **`MEM-GLB-001`** | `COMMISSION_ERROR_GUARD` | `VIX > 21.0 reversing below 20.0` | **`JNJ, PG, V`** | Khi VIX đạt đỉnh ngắn hạn trên 21 rồi đảo chiều giảm mạnh về dưới 20, dòng tiền tổ chức thường chốt lời nhẹ nhóm Phòng thủ để xoay sang nhóm Tăng trưởng. | **Không giải ngân 100% một cục tại giá đóng cửa cho nhóm Phòng thủ khi VIX > 21; bắt buộc chia nhịp 60% hiện tại + 40% Limit Pullback (-0.35x ATR).** |
+| **`MEM-GLB-002`** | `OMISSION_ERROR_RECOVERY` | `RSI < 37.0 + FCF > $20B USD + VIX < 20.0` | **`GOOGL, AVGO, AMZN`** | Đứng ngoài 100% ở các siêu cổ phiếu Big Tech có FCF > $20B USD khi RSI rơi về vùng quá bán (<37) làm bỏ lỡ nhịp phục hồi Alpha mạnh mẽ. | **Tự động kích hoạt nhánh Tactical Alpha Sleeve (8% NAV) gom 60/40 khi siêu cổ phiếu FCF > $20B chạm RSI < 37 và qua kỳ BCTC.** |
+| **`MEM-GLB-003`** | `DISCIPLINED_PASS_MEMORY` | `FCF < 0 & Price < MA200 (Dead-Cat Bounce)` | **`SMCI, COIN, INTC`** | Các nhịp nảy kỹ thuật +3% của nhóm FCF âm và nằm dưới MA200 là bẫy Bull-Trap xác suất cao. | **Duy trì lệnh Veto tuyệt đối; không bao giờ đưa các nhịp tăng của cổ phiếu đốt tiền vào danh sách tiếc nuối.** |
 
 *Bản chụp dữ liệu gốc đã được mã hóa và lưu tại: `05_Learning_And_Evolution/historical_archive/snapshot_2026-11-01.json`.*

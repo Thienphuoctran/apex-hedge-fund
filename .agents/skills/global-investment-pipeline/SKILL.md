@@ -60,3 +60,10 @@ python "c:\Users\phuoc\Downloads\antigravity\Chứng khoán\scripts\generate_das
 - **Hội Nghị Giao Ban Đầu Ngày (`Inter-Departmental Hearing lúc 8h30`)**: Lắng nghe và tổng hợp nhận xét từ cả 6 Phòng ban (Ban 1 -> Ban 6) kết hợp ý kiến phản hồi của Nhà đầu tư sau khi đọc BCTC.
 - **Tự Kiểm Điểm Ngày Hôm Qua & Tối Ưu Hóa Lợi Nhuận (`Yesterday Post-Mortem & Profit Optimization`)**: Chạy `scripts/daily_investment_specialist.py` để đối soát phiên hôm qua với phiên hôm nay, chỉ rõ chỗ đúng, chỗ sai (`Commission Errors`), chỗ còn thiếu sót (`Omission Errors vs Disciplined Pass`), và nạp các quy tắc tối ưu lợi nhuận mới (`60/40 ATR Pullback Limit`, `Tactical Alpha Sleeve`, `Dynamic Profit Ratchet`).
 - **Quyết Định Đầu Tư Khoa Học Trong Ngày (`Scientific Daily Order Blotter`)**: Tính toán Kỳ vọng Toán học (`Expected Value EV%`), Xác suất thắng `P(W)` và xuất báo cáo tại `07_Daily_Investment_Specialist/YYYY-MM-DD_Daily_Specialist_Decision.md`, cập nhật `specialist_evolution_journal.md` và `daily_specialist_ledger.json`.
+
+
+---
+
+## Quy Chuẩn Tối Ưu Token & Bảo Toàn 100% Chất Lượng (Titan Zero-Loss Protocol)
+- **Khi cần đọc tổng quan toàn hệ thống**: Đọc tệp `data/titan_executive_digest.md` (~1,500 tokens, tiết kiệm 97% token so với đọc thô toàn bộ file JSON/Markdown).
+- **Khi cần soi sâu BCTC và luận điểm nguyên văn 100% của một mã cụ thể**: Chạy `python scripts/titan_token_optimizer.py --ticker <MÃ_CP>` hoặc dùng `StartLine`/`EndLine` từ `data/titan_line_index.json`. Tuyệt đối không cắt giảm độ sâu hay chất lượng của báo cáo xuất bản.

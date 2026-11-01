@@ -65,3 +65,10 @@ Bộ script sẽ tuần tự thực thi 8 công đoạn:
 - **Tự kiểm điểm phiên hôm qua (Yesterday Autopsy)**: Ghi nhật ký tiến hóa vào `vn_specialist_evolution_journal.md`.
 - **Ra quyết định đầu tư khoa học**: Lập sổ lệnh thực thi với Kỳ vọng Toán học $EV\% > 0$, tỷ lệ $R:R \ge 1:2$, chiến lược chia nhịp 60/40.
 - Báo cáo tại: `VN_Market/07_Daily_Specialist/YYYY-MM-DD_VN_Specialist_Decision.md`.
+
+
+---
+
+## Quy Chuẩn Tối Ưu Token & Bảo Toàn 100% Chất Lượng (Titan Zero-Loss Protocol)
+- **Khi cần đọc tổng quan toàn hệ thống**: Đọc tệp `data/titan_executive_digest.md` (~1,500 tokens, tiết kiệm 97% token so với đọc thô toàn bộ file JSON/Markdown).
+- **Khi cần soi sâu BCTC VAS/TT200 và luận điểm nguyên văn 100% của một mã VN cụ thể**: Chạy `python scripts/titan_token_optimizer.py --ticker <MÃ_CP>` (VD: `FPT`, `HPG`, `MWG`, `DGC`) hoặc dùng `StartLine`/`EndLine` từ `data/titan_line_index.json`. Tuyệt đối không cắt giảm độ sâu hay chất lượng của báo cáo xuất bản.

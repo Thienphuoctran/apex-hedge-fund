@@ -10,8 +10,8 @@
 ## 1. Kết Quả Kiểm Toán 5 Trụ Cột Chi Tiết
 
 ### A. Toàn Vẹn Mã Nguồn & Công Cụ Tính Toán (Trọng số 25%)
-- **Số tệp Python đã quét:** 28 tệp.
-- **Số tệp biên dịch chuẩn:** 28 tệp.
+- **Số tệp Python đã quét:** 30 tệp.
+- **Số tệp biên dịch chuẩn:** 30 tệp.
 - **Lỗi cú pháp:** 0 lỗi.
 - **Điểm:** `100/100`
 
@@ -23,10 +23,10 @@
 - **Điểm:** `100/100`
 
 ### C. Kỷ Luật Quản Trị Rủi Ro & Sổ Lệnh Master Blotter (Trọng số 25%)
-- **Tình trạng Sổ Lệnh:** 0 lệnh đang theo dõi
+- **Tình trạng Sổ Lệnh:** 8 lệnh hợp nhất US & VN đang theo dõi
 - **Kỷ luật Tỷ lệ Risk/Reward:** CHUẨN THỂ CHẾ (100% lệnh R:R >= 1:2.0)
 - **Kỷ luật Cắt lỗ Hard Stop <= 7.5%:** CHUẨN THỂ CHẾ (100% lệnh Stop Loss <= 7.5%)
-- **Radar Công Bố Thông Tin & SEC:** CHƯA CÀO DỮ LIỆU CBTT | CHƯA CÀO DỮ LIỆU SEC
+- **Radar Công Bố Thông Tin & SEC:** N/A | N/A
 - **Điểm:** `100/100`
 
 ### D. Năng Lực Chuyên Viên & Chống Thoái Hóa Chất Lượng (Trọng số 15%)

@@ -214,3 +214,23 @@ Ban 9 là **"Lá Chắn Phòng Thủ Thời Gian Thực"** — do chuyên viên 
   ```
 
 
+---
+
+# QUY CHUẨN TỐI ƯU TOKEN & BẢO TOÀN 100% CHẤT LƯỢNG TITAN (TITAN ZERO-LOSS PROTOCOL)
+
+Nhằm triệt tiêu hiện tượng phình to ngữ cảnh $O(N^2)$ khi vận hành **Gemini 4 Argon** mà **vẫn bảo toàn 100% độ sâu, tính chính xác của BCTC và chất lượng khuyến nghị của cả 9 Phòng Ban**:
+
+1. **Nguyên Tắc Bảo Toàn Nguyên Văn 100% (Zero Quality Degradation)**:
+   - Toàn bộ các báo cáo phân tích của 9 Phòng Ban (`01_Macro` đến `09_Realtime_Portfolio_Sentinel` cả Global và VN) bắt buộc giữ nguyên 100% độ dài, chi tiết Thuyết minh BCTC, chỉ số $OCF/LNST$, $FCF$, $Altman\ Z''$, $Beneish\ M$, mô hình CANSLIM, Wyckoff và chiến lược đi vốn Kim Tự Tháp (30% – 40% – 30%).
+   - Tuyệt đối nghiêm cấm cắt xén hay tóm tắt chủ quan làm mất dữ liệu kế toán gốc trong báo cáo xuất bản.
+
+2. **Cơ Chế Truy Xuất Trúng Đích Tiết Kiệm 97% Token Cho Agent (`titan_token_optimizer.py`)**:
+   - **Bước 1 (Đọc Bản Tóm Lược Điều Hành Trước)**: Khi cần nắm toàn cảnh 9 Phòng Ban, Agent đọc tệp `data/titan_executive_digest.md` (~1,500 tokens) thay vì nạp đồng loạt toàn bộ các tệp JSON/Markdown thô (~60,000 tokens).
+   - **Bước 2 (Truy Xuất Nguyên Văn Theo Mã Cổ Phiếu)**: Khi cần mổ xẻ sâu BCTC hoặc luận điểm của bất kỳ mã cổ phiếu nào (ví dụ `FPT`, `HPG`, `MWG`, `NVDA`), chạy lệnh:
+     ```powershell
+     python scripts\titan_token_optimizer.py --ticker FPT
+     ```
+     Hoặc tra cứu `start_line` và `end_line` trong `data/titan_line_index.json` để dùng `read_file(Path, StartLine, EndLine)` lấy **nguyên văn 100%** phân tích của mã đó mà không tốn token cho 45 mã không liên quan.
+   - **Bước 3 (Phân Tầng Mô Hình Thông Minh)**:
+     - **Gemini Flash High**: Dùng cho hỏi đáp nhanh, tra cứu bảng lệnh trong ngày, kiểm tra trạng thái hệ thống.
+     - **Gemini 4 Argon**: Độc quyền thẩm định sâu BCTC, phát hiện thủ thuật kế toán, phản biện chiến lược giữa Alex và Minh Quân, và ra quyết định phân bổ vốn Master CIO.

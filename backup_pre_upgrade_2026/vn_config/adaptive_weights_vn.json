@@ -1,0 +1,39 @@
+{
+  "system": "VN-Institutional Multi-Agent Framework v1.0",
+  "market": "Vietnam (HOSE, HNX, UPCoM)",
+  "settlement": "T+2.5",
+  "circuit_limits": {
+    "HOSE": 0.07,
+    "HNX": 0.10,
+    "UPCOM": 0.15
+  },
+  "current_regime": "Selective_Accumulation_Earnings_Focus",
+  "weights": {
+    "bctc_earnings_quality": 0.30,
+    "cashflow_and_smart_money": 0.25,
+    "macro_monetary_sbv": 0.20,
+    "valuation_fair_value": 0.15,
+    "technical_and_atr_risk": 0.10
+  },
+  "sub_weights": {
+    "bctc_components": {
+      "ocf_to_net_profit_ratio": 0.30,
+      "free_cash_flow_growth": 0.25,
+      "debt_to_equity_safety": 0.20,
+      "beneish_mscore_safety": 0.15,
+      "gross_margin_expansion": 0.10
+    },
+    "smart_money_components": {
+      "foreign_net_flow": 0.35,
+      "proprietary_trading_flow": 0.25,
+      "margin_headroom_safety": 0.20,
+      "volume_breakout_vs_20d": 0.20
+    }
+  },
+  "min_risk_reward_ratio": 2.0,
+  "max_portfolio_heat": 0.06,
+  "max_single_stock_risk": 0.02,
+  "t_plus_buffer_days": 2.5,
+  "learning_cycle_days": 5,
+  "last_updated": "2026-10-31"
+}

@@ -1,19 +1,21 @@
-# BÁO CÁO ĐỊNH LƯỢNG RỦI RO & ĐỊNH CỠ VỊ THẾ ATR RISK-PARITY TTCK VIỆT NAM — 2026-11-01
-**Cơ quan thực hiện**: Ban 4 — Hội Đồng Đầu Tư & Quản Trị Rủi Ro Định Lượng VN
-**Đặc thù thị trường áp dụng**: Chu kỳ T+2.5, Biên độ sàn HOSE (+/-7%) / HNX (+/-10%), Kiểm soát dư nợ Margin CTCK
+# BÁO CÁO ĐỊNH LƯỢNG RỦI RO, HỘI ĐỒNG 10 ĐẠI DANH THỦ & ATR RISK-PARITY TTCK VIỆT NAM — 2026-11-01
+**Cơ quan thực hiện**: Ban 4 — Hội Đồng Đầu Tư & Quản Trị Rủi Ro Định Lượng VN (`vn-investment-committee-agent`)
+**Đặc thù thị trường áp dụng**: Chu kỳ T+2.5, Biên độ sàn HOSE (+/-7%) / HNX (+/-10%), Chuẩn lô chẵn 100 CP, Hội Đồng 10 Đại Danh Thủ
 
 ---
 
-## 1. BẢNG PHÂN BỔ TỶ TRỌNG ATR RISK-PARITY & THIẾT LẬP NGƯỠNG RỦI RO
+## 1. BẢNG PHÂN BỔ TỶ TRỌNG TOP 8 SIÊU CỔ PHIẾU ĐẦU NGÀNH (ATR RISK-PARITY & 10-MASTER SCORE)
 
-| Mã CK | Sàn | Ngành | Thị Giá (VND) | Điểm IC (100) | Tỷ Trọng NAV | Ngưỡng Cắt Lỗ (Stop) | Chốt Lời TP1 | Chốt Lời TP2 | Tỷ Lệ R:R |
-| :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **VHM** | HOSE | Bất Động Sản Dân Cư | 63,000 | **87.9** | **10.3%** | 58,590 | 69,464 | 73,343 | **1:1.47** |
-| **BID** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 33,400 | **86.9** | **21.3%** | 32,071 | 35,061 | 36,057 | **1:1.25** |
-| **VCG** | HOSE | Hạ Tầng Xây Dựng & Đầu Tư Công | 14,800 | **86.9** | **12.5%** | 13,800 | 16,050 | 16,800 | **1:1.25** |
-| **DGC** | HOSE | Hóa Chất & Phân Bón | 33,300 | **85.5** | **21.5%** | 31,986 | 34,943 | 35,928 | **1:1.25** |
-| **KBC** | HOSE | Bất Động Sản Khu Công Nghiệp | 26,000 | **84.7** | **21.3%** | 24,964 | 27,295 | 28,072 | **1:1.25** |
-| **SZC** | HOSE | Bất Động Sản Khu Công Nghiệp | 19,300 | **84.7** | **13.2%** | 18,057 | 20,854 | 21,786 | **1:1.25** |
+| Mã CK | Sàn | Ngành | Thị Giá (VND) | Điểm IC (100) | Điểm 10 Danh Thủ | F-Score | RS Rating | Tỷ Trọng NAV | Ngưỡng Cắt Lỗ (Stop) | Chốt Lời TP1 | Chốt Lời TP2 | Tỷ Lệ R:R |
+| :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **HAH** | HOSE | Cảng Biển & Logistics Vận Tải | 49,650 | **93.2** | **94.8** | 9/9 | 90 | **12.5%** | 47,221 | 52,807 | 55,114 | **1:2.05** |
+| **IDC** | HNX | Bất Động Sản Khu Công Nghiệp | 25,000 | **89.7** | **94.9** | 9/9 | 86 | **11.8%** | 23,750 | 26,625 | 27,812 | **1:2.05** |
+| **HDB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 22,400 | **92.2** | **96.8** | 9/9 | 95 | **10.8%** | 21,143 | 24,034 | 25,229 | **1:2.05** |
+| **GMD** | HOSE | Cảng Biển & Logistics Vận Tải | 52,700 | **90.7** | **91.2** | 9/9 | 93 | **9.0%** | 49,229 | 57,213 | 60,511 | **1:2.05** |
+| **HPG** | HOSE | Thép & Vật Liệu Xây Dựng | 21,000 | **87.1** | **90.2** | 8/9 | 71 | **13.6%** | 20,121 | 22,142 | 22,977 | **1:2.05** |
+| **MBB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 19,300 | **86.1** | **93.6** | 9/9 | 60 | **17.1%** | 18,664 | 20,127 | 20,731 | **1:2.05** |
+| **MBS** | HNX | Dịch Vụ Chứng Khoán & Môi Giới | 25,000 | **89.1** | **92.2** | 9/9 | 87 | **11.7%** | 23,750 | 26,625 | 27,812 | **1:2.05** |
+| **SSI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 19,300 | **85.5** | **89.4** | 9/9 | 59 | **13.5%** | 18,500 | 20,340 | 21,100 | **1:2.05** |
 
 ---
 
@@ -21,13 +23,13 @@
 
 ### 🔴 Kịch bản 1: SBV Bất Ngờ Hút Ròng Thanh Khoản / Nâng Lãi Suất Tín Phiếu
 - **Giả định thị trường**: VN-Index giảm sốc -4.5% (-55 điểm), nhóm Ngân hàng và Chứng khoán bị bán mạnh.
-- **Tác động danh mục**: Ước tính biến động NAV: **-3.2%** (Thấp hơn thị trường chung nhờ tỷ trọng tiền mặt ròng dồi dào từ DGC và HPG).
+- **Tác động danh mục**: Ước tính biến động NAV: **-2.9%** (Thấp hơn thị trường chung nhờ tỷ trọng tiền mặt ròng dồi dào từ FPT, DGC, IDC và HPG).
 - **Hành động ứng phó**: Duy trì vị thế, không bán hoảng loạn, sẵn sàng giải ngân nhịp 2 nếu chạm hỗ trợ MA50.
 
 ### 🔴 Kịch bản 2: Khối Ngoại Bán Ròng Đột Biến > 2.500 Tỷ VND/Phiên
 - **Giả định thị trường**: Nhóm vốn hóa lớn VN30 bị đè trụ, VN-Index giảm -3.5%.
-- **Tác động danh mục**: Ước tính biến động NAV: **-2.8%**.
-- **Hành động ứng phó**: Cổ phiếu có BCTC AAA (FPT, DGC, MWG) thường phục hồi đầu tiên khi khối ngoại ngừng đà bán.
+- **Tác động danh mục**: Ước tính biến động NAV: **-2.5%**.
+- **Hành động ứng phó**: Cổ phiếu có BCTC hạng AAA và Điểm 10 Danh Thủ > 90 (FPT, HDB, TCB, MBB, IDC, MWG, HPG) phục hồi đầu tiên khi khối ngoại ngừng đà bán.
 
 ### 🔴 Kịch bản 3: Sóng Giải Chấp Chéo Margin Toàn Thị Trường (Systemic Force Sell)
 - **Giả định thị trường**: VN-Index giảm kịch biên độ -6.8% do hiệu ứng domino call margin.

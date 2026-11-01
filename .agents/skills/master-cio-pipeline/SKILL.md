@@ -49,3 +49,10 @@ python scripts\master_cio_allocator.py --capital-vnd 2540000000
 ### Bước 5: Ban Hành Sổ Lệnh Master Blotter & Báo Cáo
 - `08_Master_Investment_CIO/YYYY-MM-DD_Master_CIO_Final_Decision.md`: Báo cáo phân tích quyết định đầy đủ.
 - `08_Master_Investment_CIO/master_execution_blotter.json`: Sổ lệnh định dạng JSON sẵn sàng kết nối API giao dịch.
+
+
+---
+
+## Quy Chuẩn Tối Ưu Token & Bảo Toàn 100% Chất Lượng (Titan Zero-Loss Protocol)
+- Sau khi chạy `master_cio_allocator.py`, chạy `python scripts/titan_token_optimizer.py --quiet` để đồng bộ chỉ mục dòng.
+- Đọc `data/titan_executive_digest.md` để nắm toàn bộ sổ lệnh Quốc tế (Alex) và Việt Nam (Minh Quân) chỉ với ~1,500 tokens mà vẫn giữ nguyên vẹn 100% báo cáo đầy đủ trong `08_Master_Investment_CIO/`.

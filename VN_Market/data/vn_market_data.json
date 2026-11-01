@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-01 08:37:59",
+  "timestamp": "2026-11-01 11:31:39",
   "total_tickers": 54,
   "macro_vietnam": {
     "DXY": {
@@ -73,9 +73,16 @@
         "vol20": 3239315,
         "vol_ratio": 1.12,
         "price_vs_ma200": -6.27,
-        "price_vs_ma20": -0.55
+        "price_vs_ma20": -0.55,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 44.4,
+        "chandelier_stop": 55245.0,
+        "raw_rs_score": -5.47,
+        "rs_rating": 63
       },
-      "last_updated": "2026-11-01 08:37:13",
+      "last_updated": "2026-11-01 08:48:53",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -103,9 +110,16 @@
         "vol20": 3266820,
         "vol_ratio": 1.01,
         "price_vs_ma200": -12.45,
-        "price_vs_ma20": -1.29
+        "price_vs_ma20": -1.29,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 44.6,
+        "chandelier_stop": 32682.0,
+        "raw_rs_score": -8.98,
+        "rs_rating": 41
       },
-      "last_updated": "2026-11-01 08:37:15",
+      "last_updated": "2026-11-01 08:48:54",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -133,9 +147,16 @@
         "vol20": 7047615,
         "vol_ratio": 0.58,
         "price_vs_ma200": -8.81,
-        "price_vs_ma20": 0.59
+        "price_vs_ma20": 0.59,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 50.1,
+        "chandelier_stop": 29244.0,
+        "raw_rs_score": -3.47,
+        "rs_rating": 74
       },
-      "last_updated": "2026-11-01 08:37:20",
+      "last_updated": "2026-11-01 08:48:54",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -163,9 +184,16 @@
         "vol20": 27008877,
         "vol_ratio": 0.65,
         "price_vs_ma200": 0.79,
-        "price_vs_ma20": -2.24
+        "price_vs_ma20": -2.24,
+        "wyckoff_phase": "Phase C/D — RE-ACCUMULATION (Tích lũy lại / Test cung trên MA200)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 37.0,
+        "chandelier_stop": 21371.0,
+        "raw_rs_score": -4.12,
+        "rs_rating": 68
       },
-      "last_updated": "2026-11-01 08:37:22",
+      "last_updated": "2026-11-01 08:48:55",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -193,9 +221,16 @@
         "vol20": 11350770,
         "vol_ratio": 0.83,
         "price_vs_ma200": -8.75,
-        "price_vs_ma20": -0.94
+        "price_vs_ma20": -0.94,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 44.5,
+        "chandelier_stop": 18980.0,
+        "raw_rs_score": -6.11,
+        "rs_rating": 60
       },
-      "last_updated": "2026-11-01 08:37:24",
+      "last_updated": "2026-11-01 08:48:55",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -223,9 +258,16 @@
         "vol20": 9218340,
         "vol_ratio": 0.88,
         "price_vs_ma200": -1.04,
-        "price_vs_ma20": 1.39
+        "price_vs_ma20": 1.39,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 51.0,
+        "chandelier_stop": 20077.0,
+        "raw_rs_score": 1.31,
+        "rs_rating": 92
       },
-      "last_updated": "2026-11-01 08:37:30",
+      "last_updated": "2026-11-01 08:48:56",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -253,9 +295,16 @@
         "vol20": 15646965,
         "vol_ratio": 0.94,
         "price_vs_ma200": 7.14,
-        "price_vs_ma20": -3.46
+        "price_vs_ma20": -3.46,
+        "wyckoff_phase": "Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)",
+        "vsa_signal": "DRY_VOLUME_BASE (Siết nền biên độ hẹp VCP — Chờ điểm nổ Volume)",
+        "vsa_code": "VCP_BASE",
+        "active_buy_pct": 37.9,
+        "chandelier_stop": 22692.0,
+        "raw_rs_score": -4.03,
+        "rs_rating": 69
       },
-      "last_updated": "2026-11-01 08:37:31",
+      "last_updated": "2026-11-01 08:48:57",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -283,9 +332,16 @@
         "vol20": 17951467,
         "vol_ratio": 0.72,
         "price_vs_ma200": 8.42,
-        "price_vs_ma20": 0.18
+        "price_vs_ma20": 0.18,
+        "wyckoff_phase": "Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)",
+        "vsa_signal": "NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)",
+        "vsa_code": "NO_SUPPLY",
+        "active_buy_pct": 49.6,
+        "chandelier_stop": 21124.0,
+        "raw_rs_score": 2.44,
+        "rs_rating": 95
       },
-      "last_updated": "2026-11-01 08:37:31",
+      "last_updated": "2026-11-01 08:48:57",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -313,9 +369,16 @@
         "vol20": 3245505,
         "vol_ratio": 0.81,
         "price_vs_ma200": -3.84,
-        "price_vs_ma20": 0.78
+        "price_vs_ma20": 0.78,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 47.5,
+        "chandelier_stop": 61830.0,
+        "raw_rs_score": -2.99,
+        "rs_rating": 77
       },
-      "last_updated": "2026-11-01 08:37:32",
+      "last_updated": "2026-11-01 08:48:58",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -343,9 +406,16 @@
         "vol20": 8208965,
         "vol_ratio": 1.64,
         "price_vs_ma200": -3.08,
-        "price_vs_ma20": -0.82
+        "price_vs_ma20": -0.82,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 57.3,
+        "chandelier_stop": 58009.0,
+        "raw_rs_score": -0.78,
+        "rs_rating": 84
       },
-      "last_updated": "2026-11-01 08:37:32",
+      "last_updated": "2026-11-01 08:48:58",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -373,9 +443,16 @@
         "vol20": 3279265,
         "vol_ratio": 0.77,
         "price_vs_ma200": -10.41,
-        "price_vs_ma20": 1.67
+        "price_vs_ma20": 1.67,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 55.0,
+        "chandelier_stop": 22372.0,
+        "raw_rs_score": -2.41,
+        "rs_rating": 80
       },
-      "last_updated": "2026-11-01 08:37:33",
+      "last_updated": "2026-11-01 08:48:59",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -403,9 +480,16 @@
         "vol20": 4652633,
         "vol_ratio": 0.72,
         "price_vs_ma200": -29.45,
-        "price_vs_ma20": -0.92
+        "price_vs_ma20": -0.92,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 50.2,
+        "chandelier_stop": 13132.0,
+        "raw_rs_score": -15.05,
+        "rs_rating": 24
       },
-      "last_updated": "2026-11-01 08:37:34",
+      "last_updated": "2026-11-01 08:48:59",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -433,9 +517,16 @@
         "vol20": 1334415,
         "vol_ratio": 0.78,
         "price_vs_ma200": -13.24,
-        "price_vs_ma20": -0.53
+        "price_vs_ma20": -0.53,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 33.9,
+        "chandelier_stop": 20655.0,
+        "raw_rs_score": -11.03,
+        "rs_rating": 36
       },
-      "last_updated": "2026-11-01 08:37:34",
+      "last_updated": "2026-11-01 08:49:00",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -463,9 +554,16 @@
         "vol20": 5281195,
         "vol_ratio": 0.75,
         "price_vs_ma200": -21.37,
-        "price_vs_ma20": -0.96
+        "price_vs_ma20": -0.96,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 48.7,
+        "chandelier_stop": 10733.0,
+        "raw_rs_score": -11.63,
+        "rs_rating": 33
       },
-      "last_updated": "2026-11-01 08:37:35",
+      "last_updated": "2026-11-01 08:49:01",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -493,9 +591,16 @@
         "vol20": 10155975,
         "vol_ratio": 1.33,
         "price_vs_ma200": -16.72,
-        "price_vs_ma20": 0.25
+        "price_vs_ma20": 0.25,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "POCKET_PIVOT_BREAKOUT (Dòng tiền thông minh gom chủ động Vol lớn vượt nền)",
+        "vsa_code": "POCKET_PIVOT",
+        "active_buy_pct": 69.8,
+        "chandelier_stop": 9465.0,
+        "raw_rs_score": -4.97,
+        "rs_rating": 65
       },
-      "last_updated": "2026-11-01 08:37:35",
+      "last_updated": "2026-11-01 08:49:01",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -523,9 +628,16 @@
         "vol20": 580670,
         "vol_ratio": 0.85,
         "price_vs_ma200": -23.15,
-        "price_vs_ma20": -2.45
+        "price_vs_ma20": -2.45,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 39.8,
+        "chandelier_stop": 36810.0,
+        "raw_rs_score": -15.22,
+        "rs_rating": 23
       },
-      "last_updated": "2026-11-01 08:37:36",
+      "last_updated": "2026-11-01 08:49:02",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -541,8 +653,16 @@
       "roe_pct": null,
       "market_cap_ty_vnd": null,
       "beta": 1.0,
-      "technical": {},
-      "last_updated": "2026-11-01 08:37:37",
+      "technical": {
+        "wyckoff_phase": "Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)",
+        "vsa_signal": "DRY_VOLUME_BASE (Siết nền biên độ hẹp VCP — Chờ điểm nổ Volume)",
+        "vsa_code": "VCP_BASE",
+        "active_buy_pct": 52.0,
+        "chandelier_stop": 19050.0,
+        "raw_rs_score": 0.0,
+        "rs_rating": 86
+      },
+      "last_updated": "2026-11-01 08:49:03",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -570,9 +690,16 @@
         "vol20": 1235445,
         "vol_ratio": 1.03,
         "price_vs_ma200": -13.59,
-        "price_vs_ma20": -0.35
+        "price_vs_ma20": -0.35,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 47.4,
+        "chandelier_stop": 25189.0,
+        "raw_rs_score": -6.91,
+        "rs_rating": 53
       },
-      "last_updated": "2026-11-01 08:37:38",
+      "last_updated": "2026-11-01 08:49:04",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -600,9 +727,16 @@
         "vol20": 595270,
         "vol_ratio": 1.53,
         "price_vs_ma200": -16.52,
-        "price_vs_ma20": 5.74
+        "price_vs_ma20": 5.74,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 56.9,
+        "chandelier_stop": 17746.0,
+        "raw_rs_score": -3.0,
+        "rs_rating": 75
       },
-      "last_updated": "2026-11-01 08:37:38",
+      "last_updated": "2026-11-01 08:49:04",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -630,9 +764,16 @@
         "vol20": 834080,
         "vol_ratio": 0.67,
         "price_vs_ma200": 0.37,
-        "price_vs_ma20": -4.1
+        "price_vs_ma20": -4.1,
+        "wyckoff_phase": "Phase C/D — RE-ACCUMULATION (Tích lũy lại / Test cung trên MA200)",
+        "vsa_signal": "NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)",
+        "vsa_code": "NO_SUPPLY",
+        "active_buy_pct": 52.9,
+        "chandelier_stop": 40627.0,
+        "raw_rs_score": -2.46,
+        "rs_rating": 78
       },
-      "last_updated": "2026-11-01 08:37:39",
+      "last_updated": "2026-11-01 08:49:05",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -660,9 +801,16 @@
         "vol20": 18565045,
         "vol_ratio": 1.33,
         "price_vs_ma200": -8.68,
-        "price_vs_ma20": 1.19
+        "price_vs_ma20": 1.19,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 49.7,
+        "chandelier_stop": 19966.0,
+        "raw_rs_score": -3.98,
+        "rs_rating": 71
       },
-      "last_updated": "2026-11-01 08:37:39",
+      "last_updated": "2026-11-01 08:49:05",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -690,9 +838,16 @@
         "vol20": 3484820,
         "vol_ratio": 0.77,
         "price_vs_ma200": -4.72,
-        "price_vs_ma20": 2.95
+        "price_vs_ma20": 2.95,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 46.2,
+        "chandelier_stop": 9961.0,
+        "raw_rs_score": -1.01,
+        "rs_rating": 83
       },
-      "last_updated": "2026-11-01 08:37:40",
+      "last_updated": "2026-11-01 08:49:06",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -720,9 +875,16 @@
         "vol20": 4780715,
         "vol_ratio": 1.29,
         "price_vs_ma200": -0.61,
-        "price_vs_ma20": 10.56
+        "price_vs_ma20": 10.56,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "UPTHRUST_WARNING (Cảnh báo kéo xả vùng quá mua — Không FOMO)",
+        "vsa_code": "UPTHRUST",
+        "active_buy_pct": 55.6,
+        "chandelier_stop": 10682.0,
+        "raw_rs_score": 7.23,
+        "rs_rating": 98
       },
-      "last_updated": "2026-11-01 08:37:41",
+      "last_updated": "2026-11-01 08:49:07",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -750,9 +912,16 @@
         "vol20": 2942205,
         "vol_ratio": 0.78,
         "price_vs_ma200": -4.31,
-        "price_vs_ma20": -1.33
+        "price_vs_ma20": -1.33,
+        "wyckoff_phase": "Phase B — CONSOLIDATION (Tích lũy hấp thụ nguồn cung T+2.5)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 39.4,
+        "chandelier_stop": 72818.0,
+        "raw_rs_score": -6.46,
+        "rs_rating": 56
       },
-      "last_updated": "2026-11-01 08:37:41",
+      "last_updated": "2026-11-01 08:49:07",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -780,9 +949,16 @@
         "vol20": 565505,
         "vol_ratio": 1.04,
         "price_vs_ma200": 7.62,
-        "price_vs_ma20": 0.89
+        "price_vs_ma20": 0.89,
+        "wyckoff_phase": "Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)",
+        "vsa_signal": "SOS_ABSORPTION (Hấp thụ hàng T+2.5 về tài khoản tích cực trên MA20)",
+        "vsa_code": "SOS_ABSORPTION",
+        "active_buy_pct": 60.9,
+        "chandelier_stop": 136297.0,
+        "raw_rs_score": 4.48,
+        "rs_rating": 96
       },
-      "last_updated": "2026-11-01 08:37:42",
+      "last_updated": "2026-11-01 08:49:08",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -810,9 +986,16 @@
         "vol20": 5384945,
         "vol_ratio": 0.99,
         "price_vs_ma200": -4.24,
-        "price_vs_ma20": -3.79
+        "price_vs_ma20": -3.79,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 36.0,
+        "chandelier_stop": 70007.0,
+        "raw_rs_score": -8.33,
+        "rs_rating": 45
       },
-      "last_updated": "2026-11-01 08:37:42",
+      "last_updated": "2026-11-01 08:49:08",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -840,9 +1023,16 @@
         "vol20": 1799760,
         "vol_ratio": 1.66,
         "price_vs_ma200": -5.27,
-        "price_vs_ma20": -1.53
+        "price_vs_ma20": -1.53,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 41.4,
+        "chandelier_stop": 56920.0,
+        "raw_rs_score": -7.2,
+        "rs_rating": 51
       },
-      "last_updated": "2026-11-01 08:37:43",
+      "last_updated": "2026-11-01 08:49:09",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -870,9 +1060,16 @@
         "vol20": 13568390,
         "vol_ratio": 0.69,
         "price_vs_ma200": -72.01,
-        "price_vs_ma20": -15.8
+        "price_vs_ma20": -15.8,
+        "wyckoff_phase": "Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 32.2,
+        "chandelier_stop": 16157.0,
+        "raw_rs_score": -47.24,
+        "rs_rating": 18
       },
-      "last_updated": "2026-11-01 08:37:43",
+      "last_updated": "2026-11-01 08:49:09",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -900,9 +1097,16 @@
         "vol20": 1673720,
         "vol_ratio": 0.86,
         "price_vs_ma200": -2.94,
-        "price_vs_ma20": -10.15
+        "price_vs_ma20": -10.15,
+        "wyckoff_phase": "Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 28.0,
+        "chandelier_stop": 42339.0,
+        "raw_rs_score": -13.35,
+        "rs_rating": 29
       },
-      "last_updated": "2026-11-01 08:37:44",
+      "last_updated": "2026-11-01 08:49:10",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -930,9 +1134,16 @@
         "vol20": 7297445,
         "vol_ratio": 0.78,
         "price_vs_ma200": -22.34,
-        "price_vs_ma20": -7.82
+        "price_vs_ma20": -7.82,
+        "wyckoff_phase": "Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 43.2,
+        "chandelier_stop": 54492.0,
+        "raw_rs_score": -18.52,
+        "rs_rating": 21
       },
-      "last_updated": "2026-11-01 08:37:45",
+      "last_updated": "2026-11-01 08:49:11",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -960,9 +1171,16 @@
         "vol20": 271830,
         "vol_ratio": 0.68,
         "price_vs_ma200": -31.46,
-        "price_vs_ma20": -6.19
+        "price_vs_ma20": -6.19,
+        "wyckoff_phase": "Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 36.4,
+        "chandelier_stop": 18793.0,
+        "raw_rs_score": -23.53,
+        "rs_rating": 20
       },
-      "last_updated": "2026-11-01 08:37:45",
+      "last_updated": "2026-11-01 08:49:11",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -990,9 +1208,16 @@
         "vol20": 17636165,
         "vol_ratio": 0.81,
         "price_vs_ma200": -10.38,
-        "price_vs_ma20": -1.32
+        "price_vs_ma20": -1.32,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 47.1,
+        "chandelier_stop": 18851.0,
+        "raw_rs_score": -6.22,
+        "rs_rating": 59
       },
-      "last_updated": "2026-11-01 08:37:46",
+      "last_updated": "2026-11-01 08:49:12",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1020,9 +1245,16 @@
         "vol20": 9299035,
         "vol_ratio": 0.55,
         "price_vs_ma200": -17.78,
-        "price_vs_ma20": -0.19
+        "price_vs_ma20": -0.19,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 47.8,
+        "chandelier_stop": 12760.0,
+        "raw_rs_score": -9.3,
+        "rs_rating": 39
       },
-      "last_updated": "2026-11-01 08:37:46",
+      "last_updated": "2026-11-01 08:49:12",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1050,9 +1282,16 @@
         "vol20": 7557350,
         "vol_ratio": 0.78,
         "price_vs_ma200": -22.46,
-        "price_vs_ma20": -2.4
+        "price_vs_ma20": -2.4,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 41.3,
+        "chandelier_stop": 18034.0,
+        "raw_rs_score": -14.4,
+        "rs_rating": 27
       },
-      "last_updated": "2026-11-01 08:37:47",
+      "last_updated": "2026-11-01 08:49:13",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1080,9 +1319,16 @@
         "vol20": 2724285,
         "vol_ratio": 1.14,
         "price_vs_ma200": -7.5,
-        "price_vs_ma20": -1.68
+        "price_vs_ma20": -1.68,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 54.7,
+        "chandelier_stop": 22434.0,
+        "raw_rs_score": -3.6,
+        "rs_rating": 72
       },
-      "last_updated": "2026-11-01 08:37:47",
+      "last_updated": "2026-11-01 08:49:13",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1098,8 +1344,16 @@
       "roe_pct": null,
       "market_cap_ty_vnd": null,
       "beta": 1.0,
-      "technical": {},
-      "last_updated": "2026-11-01 08:37:48",
+      "technical": {
+        "wyckoff_phase": "Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)",
+        "vsa_signal": "DRY_VOLUME_BASE (Siết nền biên độ hẹp VCP — Chờ điểm nổ Volume)",
+        "vsa_code": "VCP_BASE",
+        "active_buy_pct": 52.0,
+        "chandelier_stop": 19050.0,
+        "raw_rs_score": 0.0,
+        "rs_rating": 87
+      },
+      "last_updated": "2026-11-01 08:49:15",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1127,9 +1381,16 @@
         "vol20": 964820,
         "vol_ratio": 1.02,
         "price_vs_ma200": -5.88,
-        "price_vs_ma20": -0.34
+        "price_vs_ma20": -0.34,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 61.9,
+        "chandelier_stop": 73748.0,
+        "raw_rs_score": -1.09,
+        "rs_rating": 81
       },
-      "last_updated": "2026-11-01 08:37:49",
+      "last_updated": "2026-11-01 08:49:15",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1145,8 +1406,16 @@
       "roe_pct": null,
       "market_cap_ty_vnd": null,
       "beta": 1.0,
-      "technical": {},
-      "last_updated": "2026-11-01 08:37:50",
+      "technical": {
+        "wyckoff_phase": "Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)",
+        "vsa_signal": "DRY_VOLUME_BASE (Siết nền biên độ hẹp VCP — Chờ điểm nổ Volume)",
+        "vsa_code": "VCP_BASE",
+        "active_buy_pct": 52.0,
+        "chandelier_stop": 19050.0,
+        "raw_rs_score": 0.0,
+        "rs_rating": 89
+      },
+      "last_updated": "2026-11-01 08:49:16",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1174,9 +1443,16 @@
         "vol20": 3790075,
         "vol_ratio": 0.6,
         "price_vs_ma200": -7.62,
-        "price_vs_ma20": -1.35
+        "price_vs_ma20": -1.35,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 43.1,
+        "chandelier_stop": 17120.0,
+        "raw_rs_score": -6.25,
+        "rs_rating": 57
       },
-      "last_updated": "2026-11-01 08:37:51",
+      "last_updated": "2026-11-01 08:49:17",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1204,9 +1480,16 @@
         "vol20": 8578150,
         "vol_ratio": 0.65,
         "price_vs_ma200": 1.38,
-        "price_vs_ma20": -6.45
+        "price_vs_ma20": -6.45,
+        "wyckoff_phase": "Phase C/D — RE-ACCUMULATION (Tích lũy lại / Test cung trên MA200)",
+        "vsa_signal": "NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)",
+        "vsa_code": "NO_SUPPLY",
+        "active_buy_pct": 48.0,
+        "chandelier_stop": 27356.0,
+        "raw_rs_score": -5.58,
+        "rs_rating": 62
       },
-      "last_updated": "2026-11-01 08:37:51",
+      "last_updated": "2026-11-01 08:49:17",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1234,9 +1517,16 @@
         "vol20": 4793415,
         "vol_ratio": 0.79,
         "price_vs_ma200": -9.13,
-        "price_vs_ma20": -2.13
+        "price_vs_ma20": -2.13,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 42.6,
+        "chandelier_stop": 12080.0,
+        "raw_rs_score": -8.33,
+        "rs_rating": 47
       },
-      "last_updated": "2026-11-01 08:37:52",
+      "last_updated": "2026-11-01 08:49:18",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1264,9 +1554,16 @@
         "vol20": 340255,
         "vol_ratio": 0.72,
         "price_vs_ma200": -9.93,
-        "price_vs_ma20": -0.45
+        "price_vs_ma20": -0.45,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 52.4,
+        "chandelier_stop": 44709.0,
+        "raw_rs_score": -4.54,
+        "rs_rating": 66
       },
-      "last_updated": "2026-11-01 08:37:53",
+      "last_updated": "2026-11-01 08:49:19",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1294,9 +1591,16 @@
         "vol20": 811025,
         "vol_ratio": 0.76,
         "price_vs_ma200": -16.82,
-        "price_vs_ma20": -2.55
+        "price_vs_ma20": -2.55,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 42.1,
+        "chandelier_stop": 18252.0,
+        "raw_rs_score": -12.26,
+        "rs_rating": 30
       },
-      "last_updated": "2026-11-01 08:37:53",
+      "last_updated": "2026-11-01 08:49:19",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -1324,9 +1628,16 @@
         "vol20": 416160,
         "vol_ratio": 0.61,
         "price_vs_ma200": -21.15,
-        "price_vs_ma20": 0.02
+        "price_vs_ma20": 0.02,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 53.0,
+        "chandelier_stop": 32149.0,
+        "raw_rs_score": -10.01,
+        "rs_rating": 38
       },
-      "last_updated": "2026-11-01 08:37:54",
+      "last_updated": "2026-11-01 08:49:20",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -1354,9 +1665,16 @@
         "vol20": 2071710,
         "vol_ratio": 0.44,
         "price_vs_ma200": -8.48,
-        "price_vs_ma20": -2.64
+        "price_vs_ma20": -2.64,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 39.7,
+        "chandelier_stop": 32457.0,
+        "raw_rs_score": -8.38,
+        "rs_rating": 44
       },
-      "last_updated": "2026-11-01 08:37:54",
+      "last_updated": "2026-11-01 08:49:20",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -1384,9 +1702,16 @@
         "vol20": 2028445,
         "vol_ratio": 1.57,
         "price_vs_ma200": -13.88,
-        "price_vs_ma20": -4.93
+        "price_vs_ma20": -4.93,
+        "wyckoff_phase": "Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)",
+        "vsa_signal": "SUPPLY_OVERCOMING_DEMAND (Áp lực cung bán ròng khối lượng lớn)",
+        "vsa_code": "HIGH_SUPPLY",
+        "active_buy_pct": 34.7,
+        "chandelier_stop": 20833.0,
+        "raw_rs_score": -14.95,
+        "rs_rating": 26
       },
-      "last_updated": "2026-11-01 08:37:55",
+      "last_updated": "2026-11-01 08:49:21",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -1414,9 +1739,16 @@
         "vol20": 1908767,
         "vol_ratio": 0.58,
         "price_vs_ma200": 4.7,
-        "price_vs_ma20": -2.41
+        "price_vs_ma20": -2.41,
+        "wyckoff_phase": "Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)",
+        "vsa_signal": "NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)",
+        "vsa_code": "NO_SUPPLY",
+        "active_buy_pct": 59.0,
+        "chandelier_stop": 50474.0,
+        "raw_rs_score": 1.76,
+        "rs_rating": 93
       },
-      "last_updated": "2026-11-01 08:37:55",
+      "last_updated": "2026-11-01 08:49:21",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -1444,9 +1776,16 @@
         "vol20": 838375,
         "vol_ratio": 0.44,
         "price_vs_ma200": -3.47,
-        "price_vs_ma20": -0.81
+        "price_vs_ma20": -0.81,
+        "wyckoff_phase": "Phase B — CONSOLIDATION (Tích lũy hấp thụ nguồn cung T+2.5)",
+        "vsa_signal": "NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)",
+        "vsa_code": "NO_SUPPLY",
+        "active_buy_pct": 62.6,
+        "chandelier_stop": 47773.0,
+        "raw_rs_score": 0.06,
+        "rs_rating": 90
       },
-      "last_updated": "2026-11-01 08:37:56",
+      "last_updated": "2026-11-01 08:49:22",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -1474,9 +1813,16 @@
         "vol20": 7615810,
         "vol_ratio": 0.61,
         "price_vs_ma200": 2.82,
-        "price_vs_ma20": -10.96
+        "price_vs_ma20": -10.96,
+        "wyckoff_phase": "Phase C/D — RE-ACCUMULATION (Tích lũy lại / Test cung trên MA200)",
+        "vsa_signal": "NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)",
+        "vsa_code": "NO_SUPPLY",
+        "active_buy_pct": 44.4,
+        "chandelier_stop": 22178.0,
+        "raw_rs_score": -8.21,
+        "rs_rating": 48
       },
-      "last_updated": "2026-11-01 08:37:57",
+      "last_updated": "2026-11-01 08:49:23",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -1504,9 +1850,16 @@
         "vol20": 2544810,
         "vol_ratio": 1.29,
         "price_vs_ma200": -13.53,
-        "price_vs_ma20": 0.83
+        "price_vs_ma20": 0.83,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "SUPPLY_OVERCOMING_DEMAND (Áp lực cung bán ròng khối lượng lớn)",
+        "vsa_code": "HIGH_SUPPLY",
+        "active_buy_pct": 41.6,
+        "chandelier_stop": 13648.0,
+        "raw_rs_score": -7.89,
+        "rs_rating": 50
       },
-      "last_updated": "2026-11-01 08:37:57",
+      "last_updated": "2026-11-01 08:49:23",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -1534,9 +1887,16 @@
         "vol20": 3144285,
         "vol_ratio": 0.85,
         "price_vs_ma200": -13.48,
-        "price_vs_ma20": 0.17
+        "price_vs_ma20": 0.17,
+        "wyckoff_phase": "Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 47.5,
+        "chandelier_stop": 8832.0,
+        "raw_rs_score": -6.9,
+        "rs_rating": 54
       },
-      "last_updated": "2026-11-01 08:37:58",
+      "last_updated": "2026-11-01 08:49:24",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -1564,9 +1924,16 @@
         "vol20": 1719450,
         "vol_ratio": 0.65,
         "price_vs_ma200": -18.42,
-        "price_vs_ma20": -1.9
+        "price_vs_ma20": -1.9,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 42.0,
+        "chandelier_stop": 14951.0,
+        "raw_rs_score": -11.93,
+        "rs_rating": 32
       },
-      "last_updated": "2026-11-01 08:37:58",
+      "last_updated": "2026-11-01 08:49:25",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -1594,9 +1961,16 @@
         "vol20": 287610,
         "vol_ratio": 0.9,
         "price_vs_ma200": -11.56,
-        "price_vs_ma20": -2.04
+        "price_vs_ma20": -2.04,
+        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
+        "vsa_code": "NEUTRAL_TEST",
+        "active_buy_pct": 37.5,
+        "chandelier_stop": 49312.0,
+        "raw_rs_score": -11.42,
+        "rs_rating": 35
       },
-      "last_updated": "2026-11-01 08:37:59",
+      "last_updated": "2026-11-01 08:49:25",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -1624,9 +1998,16 @@
         "vol20": 8430,
         "vol_ratio": 0.68,
         "price_vs_ma200": -3.59,
-        "price_vs_ma20": -2.05
+        "price_vs_ma20": -2.05,
+        "wyckoff_phase": "Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)",
+        "vsa_signal": "NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)",
+        "vsa_code": "NO_SUPPLY",
+        "active_buy_pct": 43.7,
+        "chandelier_stop": 88278.0,
+        "raw_rs_score": -8.77,
+        "rs_rating": 42
       },
-      "last_updated": "2026-11-01 08:37:59",
+      "last_updated": "2026-11-01 08:49:26",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     }

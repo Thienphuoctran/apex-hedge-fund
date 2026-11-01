@@ -52,14 +52,17 @@
 
 ## 📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN
 *Quy mô danh mục tham chiếu: **1,000,000,000 VNĐ** (Cấu trúc: **90% Core Compounders** + **10% Tiền mặt dự phòng Dry Powder**).*  
-*Tuân thủ 100% quy chuẩn khớp lệnh LO, lô chẵn 100 CP, biên độ sàn HOSE (+/-7%) / HNX (+/-10%) và chu kỳ thanh toán T+2.5.*
+*Tuân thủ 100% quy chuẩn khớp lệnh LO, lô chẵn 100 CP, biên độ sàn HOSE (+/-7%) / HNX (+/-10%) và chu kỳ thanh toán T+2.5.*  
+*Chốt chặn Van An Toàn Toán Học Dual-Engine (`VN Inviolable Gate v2.0`): Đạt chuẩn **6/6 vị thế** (`Stop <= 7%`, `Blended R:R >= 2.0x`, `EV% >= +3.5%`, `OCF/LNST >= 1.0x`).*
 
-| Mã | Sàn | Phân Nhánh | Giá Hiện Tại | Khối Lượng (Lô 100) | Giá Trị (VNĐ) | Nhịp Gom 1 (60% Limit) | Nhịp Gom 2 (40% Breakout) | Cắt Lỗ (Stop 2xATR) | Chốt Lời TP1 / TP2 | Xác Suất P(W) | R:R | Kỳ Vọng EV% |
-| :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`HPG`** | HOSE | `CORE COMPOUNDER` | **21,000 đ** | **11,900 CP** | 249,900,000 đ | **20,850 đ** | **21,290 đ** | **20,120 đ** *(-4.19%)* | 22,230 đ / 23,280 đ | `78%` | `1:2.59` | **`+5.6%`** |
-| **`FPT`** | HOSE | `CORE COMPOUNDER` | **52,700 đ** | **4,700 CP** | 247,690,000 đ | **52,200 đ** | **53,620 đ** | **49,870 đ** *(-5.37%)* | 56,660 đ / 60,050 đ | `86%` | `1:2.6` | **`+8.48%`** |
-| **`MWG`** | HOSE | `CORE COMPOUNDER` | **74,000 đ** | **2,700 CP** | 199,800,000 đ | **73,540 đ** | **74,860 đ** | **71,360 đ** *(-3.57%)* | 77,700 đ / 80,870 đ | `89%` | `1:2.6` | **`+5.96%`** |
-| **`DGC`** | HOSE | `CORE COMPOUNDER` | **33,300 đ** | **6,000 CP** | 199,800,000 đ | **33,070 đ** | **33,730 đ** | **31,990 đ** *(-3.93%)* | 35,140 đ / 36,720 đ | `86%` | `1:2.61` | **`+6.24%`** |
+| Mã | Sàn | Phân Nhánh | Giá Hiện Tại | Khối Lượng (Lô 100) | Giá Trị (VNĐ) | Nhịp Gom 1 (60% Limit) | Nhịp Gom 2 (40% Breakout) | Cắt Lỗ (Stop 2xATR) | Chốt Lời TP1 / TP2 | Xác Suất P(W) | R:R | Kỳ Vọng EV% | Van An Toàn Toán Học |
+| :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **`HPG`** | HOSE | `CORE COMPOUNDER` | **21,000 đ** | **8,500 CP** | 178,500,000 đ | **20,850 đ** | **21,290 đ** | **20,120 đ** *(-4.19%)* | 22,230 đ / 23,280 đ | `89%` | `1:2.59` | **`+6.98%`** | `PASSED (-0.75% NAV)` |
+| **`FPT`** | HOSE | `CORE COMPOUNDER` | **52,700 đ** | **3,400 CP** | 179,180,000 đ | **52,200 đ** | **53,620 đ** | **49,870 đ** *(-5.37%)* | 56,660 đ / 60,050 đ | `89%` | `1:2.6` | **`+8.96%`** | `PASSED (-0.97% NAV)` |
+| **`MWG`** | HOSE | `CORE COMPOUNDER` | **74,000 đ** | **2,000 CP** | 148,000,000 đ | **73,540 đ** | **74,860 đ** | **71,360 đ** *(-3.57%)* | 77,700 đ / 80,870 đ | `89%` | `1:2.6` | **`+5.96%`** | `PASSED (-0.54% NAV)` |
+| **`TCB`** | HOSE | `CORE COMPOUNDER (BANK LEADER)` | **21,600 đ** | **6,400 CP** | 138,240,000 đ | **21,450 đ** | **21,870 đ** | **20,750 đ** *(-3.94%)* | 22,780 đ / 23,800 đ | `87%` | `1:2.59` | **`+6.29%`** | `PASSED (-0.55% NAV)` |
+| **`MBB`** | HOSE | `TACTICAL ALPHA (CASA & ROE LEADER)` | **19,300 đ** | **6,700 CP** | 129,310,000 đ | **19,190 đ** | **19,510 đ** | **18,660 đ** *(-3.32%)* | 20,190 đ / 20,950 đ | `84%` | `1:2.58` | **`+5.0%`** | `PASSED (-0.43% NAV)` |
+| **`DGC`** | HOSE | `CORE COMPOUNDER (NET CASH FORTRESS)` | **33,300 đ** | **3,600 CP** | 119,880,000 đ | **33,070 đ** | **33,730 đ** | **31,990 đ** *(-3.93%)* | 35,140 đ / 36,720 đ | `86%` | `1:2.61` | **`+6.24%`** | `PASSED (-0.47% NAV)` |
 
 ---
 
@@ -67,12 +70,14 @@
 Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC Hợp Nhất Kiểm Toán và 5 Bậc Thầy Đầu Tư Thế Giới:
 
 ### 💎 4.1. Cổ Phiếu **`HPG`** — Tập Đoàn Hòa Phát (HOSE)
-- **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng**: **`25.0% NAV`** (`249,900,000 VNĐ` ~ **11,900 CP**)
-- **Kỳ vọng Toán học (`EV%`)**: **`+5.6%`** | **Xác suất Thắng `P(W)`**: **`78%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
+- **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng**: **`18.0% NAV`** (`178,500,000 VNĐ` ~ **8,500 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+6.98%`** | **Xác suất Thắng `P(W)`**: **`89%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu HPG giao dịch tại 21,000 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Khu liên hợp Dung Quất 2 chạy thử lò cao số 1, nâng công suất thép thô thêm 5.6 triệu tấn/năm, hưởng lợi từ thuế chống bán phá giá HRC. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu HPG giao dịch tại 21,000 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Nhà sản xuất thép lò cao khép kín quy mô lớn nhất Đông Nam Á với công suất vượt trội, chi phí biến đổi trên mỗi tấn thép rẻ hơn đối thủ 15%–20%. Được bảo hộ chiến lược bởi chính sách thuế chống bán phá giá HRC và sở hữu hệ sinh thái cảng nước sâu riêng giúp tối ưu hóa chi phí vận chuyển than/quặng.
+  **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `8/9` • Graham Intrinsic: `51,144 đ` (MoS `+143.5%`) • Lynch PEG: `0.17x` • EVA Spread: `-1.4%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+
+**Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Nhà sản xuất thép lò cao khép kín quy mô lớn nhất Đông Nam Á với công suất vượt trội, chi phí biến đổi trên mỗi tấn thép rẻ hơn đối thủ 15%–20%. Được bảo hộ chiến lược bởi chính sách thuế chống bán phá giá HRC và sở hữu hệ sinh thái cảng nước sâu riêng giúp tối ưu hóa chi phí vận chuyển than/quặng.
 
 **Bộ Tiêu Chí CANSLIM (William O'Neil)**:
 - **C (Current Earnings)**: LNST tăng tốc **+42.0% YoY** (12,800 tỷ VNĐ) chứng minh đà bứt phá chu kỳ ngành.
@@ -91,19 +96,21 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - Đơn vị kiểm toán: **KPMG (Big 4 Toàn Cầu)** xác nhận ý kiến Chấp nhận toàn phần, hoàn thành **106.7%** kế hoạch ĐHCĐ.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 3,570 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **20,850 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 4,760 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **21,290 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
-- **Nhịp 3 (30% Vị thế — 3,570 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
+- **Nhịp 1 (30% Vị thế — 2,550 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **20,850 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 3,400 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **21,290 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 3 (30% Vị thế — 2,550 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
 - **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**22,230 đ**, lãi +5.86%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**23,280 đ**, lãi +10.86%).
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **20,120 đ** (khống chế rủi ro tối đa -4.19%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.2. Cổ Phiếu **`FPT`** — Tập Đoàn FPT (HOSE)
-- **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng**: **`25.0% NAV`** (`247,690,000 VNĐ` ~ **4,700 CP**)
-- **Kỳ vọng Toán học (`EV%`)**: **`+8.48%`** | **Xác suất Thắng `P(W)`**: **`86%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.6`**
+- **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng**: **`18.0% NAV`** (`179,180,000 VNĐ` ~ **3,400 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+8.96%`** | **Xác suất Thắng `P(W)`**: **`89%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.6`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu FPT giao dịch tại 52,700 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Hợp đồng IT dịch vụ toàn cầu đạt mốc >1 tỷ USD, liên minh chip bán dẫn và AI Factory hợp tác cùng NVIDIA, mảng giáo dục tăng trưởng >30%. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu FPT giao dịch tại 52,700 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Doanh thu CNTT nước ngoài vượt 1 tỷ USD (Nhật Bản +32%), vận hành AI Factory cùng NVIDIA tại Việt Nam và Nhật Bản. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Tập đoàn công nghệ thông tin số 1 Việt Nam sở hữu chi phí chuyển đổi (Switching Costs) cực cao từ hàng ngàn khách hàng trong danh sách Fortune 500. Năng lực định giá (Pricing Power) vượt trội nhờ biên lợi nhuận gộp lên tới 39.5% và thương hiệu công nghệ quốc tế uy tín.
+  **[Hội Đồng 10 Đại Danh Thủ: `92.7/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `84,209 đ` (MoS `+59.8%`) • Lynch PEG: `0.51x` • EVA Spread: `+18.7%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+
+**Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Tập đoàn công nghệ thông tin số 1 Việt Nam sở hữu chi phí chuyển đổi (Switching Costs) cực cao từ hàng ngàn khách hàng trong danh sách Fortune 500. Năng lực định giá (Pricing Power) vượt trội nhờ biên lợi nhuận gộp lên tới 39.5% và thương hiệu công nghệ quốc tế uy tín.
 
 **Bộ Tiêu Chí CANSLIM (William O'Neil)**:
 - **C (Current Earnings)**: LNST tăng trưởng ổn định **+21.5% YoY** (8,200 tỷ VNĐ), duy trì mạch tăng trưởng 2 con số liên tục 15 quý.
@@ -122,19 +129,21 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - Đơn vị kiểm toán: **PwC (Big 4 Toàn Cầu)** kiểm toán Chấp nhận toàn phần, hoàn thành **105.1%** kế hoạch ĐHCĐ.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 1,410 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **52,200 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 1,880 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **53,620 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
-- **Nhịp 3 (30% Vị thế — 1,410 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
+- **Nhịp 1 (30% Vị thế — 1,020 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **52,200 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 1,360 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **53,620 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 3 (30% Vị thế — 1,020 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
 - **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**56,660 đ**, lãi +7.51%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**60,050 đ**, lãi +13.95%).
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **49,870 đ** (khống chế rủi ro tối đa -5.37%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.3. Cổ Phiếu **`MWG`** — Thế Giới Di Động (HOSE)
-- **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng**: **`20.0% NAV`** (`199,800,000 VNĐ` ~ **2,700 CP**)
+- **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng**: **`15.0% NAV`** (`148,000,000 VNĐ` ~ **2,000 CP**)
 - **Kỳ vọng Toán học (`EV%`)**: **`+5.96%`** | **Xác suất Thắng `P(W)`**: **`89%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.6`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu MWG giao dịch tại 74,000 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Bách Hóa Xanh chính thức có lãi ròng và chuẩn bị kế hoạch IPO/bán vốn ngoại, tái cơ cấu chuỗi Thế Giới Di Động & Điện Máy Xanh thành công. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu MWG giao dịch tại 74,000 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Bách Hóa Xanh chính thức có lãi ròng bền vững 4 quý liên tiếp, hoàn tất tái cấu trúc TGDĐ/ĐMX và mở rộng chuỗi EraBlue tại Indonesia. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Mạng lưới bán lẻ phủ sóng rộng khắp hơn 5,000 điểm bán hàng trên 63 tỉnh thành. Lợi thế kinh tế nhờ quy mô mua sắm (Economies of Scale) giúp MWG luôn nhận được chiết khấu độc quyền từ các hãng điện thoại, điện máy và thực phẩm tiêu dùng.
+  **[Hội Đồng 10 Đại Danh Thủ: `92.0/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `137,117 đ` (MoS `+85.3%`) • Lynch PEG: `0.22x` • EVA Spread: `+8.4%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+
+**Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Mạng lưới bán lẻ phủ sóng rộng khắp hơn 5,000 điểm bán hàng trên 63 tỉnh thành. Lợi thế kinh tế nhờ quy mô mua sắm (Economies of Scale) giúp MWG luôn nhận được chiết khấu độc quyền từ các hãng điện thoại, điện máy và thực phẩm tiêu dùng.
 
 **Bộ Tiêu Chí CANSLIM (William O'Neil)**:
 - **C (Current Earnings)**: LNST phục hồi bùng nổ **+840.0% YoY** (4,200 tỷ VNĐ so với mức nền thấp của năm tái cơ cấu).
@@ -153,19 +162,83 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - Đơn vị kiểm toán: **EY (Big 4 Toàn Cầu)** xác nhận ý kiến Chấp nhận toàn phần.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 810 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **73,540 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 1,080 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **74,860 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
-- **Nhịp 3 (30% Vị thế — 810 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
+- **Nhịp 1 (30% Vị thế — 600 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **73,540 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 800 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **74,860 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 3 (30% Vị thế — 600 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
 - **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**77,700 đ**, lãi +5.0%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**80,870 đ**, lãi +9.28%).
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **71,360 đ** (khống chế rủi ro tối đa -3.57%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
-### 💎 4.4. Cổ Phiếu **`DGC`** — Hóa Chất Đức Giang (HOSE)
-- **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng**: **`20.0% NAV`** (`199,800,000 VNĐ` ~ **6,000 CP**)
+### 💎 4.4. Cổ Phiếu **`TCB`** — Kỹ Thương Việt Nam (Techcombank) (HOSE)
+- **Phân nhánh danh mục**: `CORE COMPOUNDER (BANK LEADER)` | **Tỷ trọng**: **`14.0% NAV`** (`138,240,000 VNĐ` ~ **6,400 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+6.29%`** | **Xác suất Thắng `P(W)`**: **`87%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
+- **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
+  Cổ phiếu TCB giao dịch tại 21,600 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+- **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
+  **[Hội Đồng 10 Đại Danh Thủ: `92.1/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `50,169 đ` (MoS `+132.3%`) • Lynch PEG: `0.34x` • EVA Spread: `+7.0%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+
+**Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Ngân hàng TMCP tư nhân số 1 Việt Nam về lợi thế huy động vốn giá rẻ với tỷ lệ **CASA đạt 40.5%** nhờ tính năng Sinh lời tự động (Auto-earning) và hệ sinh thái khách hàng thu nhập cao (Affluent). Bộ đệm an toàn vốn **CAR Basel II đạt 15.2%** cao nhất toàn hệ thống ngân hàng.
+
+**Bộ Tiêu Chí CANSLIM (William O'Neil)**:
+- **C (Current Earnings)**: LNST TTM đạt **22,850 tỷ VNĐ (+26.4% YoY)**, dẫn đầu tốc độ tăng trưởng nhóm ngân hàng vốn hóa lớn.
+- **A (Annual Growth)**: Thu nhập hoạt động TOI đạt **48,600 tỷ VNĐ (+21.5% YoY)**, NIM duy trì mức cao **4.28%**.
+- **N (New Catalyst)**: Chia cổ tức tiền mặt đều đặn kết hợp lộ trình IPO Công ty Chứng khoán Kỹ Thương (TCBS) định giá hàng tỷ USD.
+- **S (Supply & Demand)**: Nền giá siết chặt với nến No Supply cạn cung, lực mua chủ động tổ chức hấp thụ toàn bộ cung chốt lời T+2.5.
+- **L (Leader)**: Cổ phiếu dẫn dắt dòng Ngân hàng TMCP tư nhân, Điểm 10 Đại Danh Thủ đạt **92.1/100**.
+- **I (Institutional)**: Kín room ngoại 100%, được các quỹ ETF Diamond và quỹ ngoại nắm giữ dài hạn.
+- **M (Market)**: Hưởng lợi trực tiếp từ đà tăng trưởng tín dụng toàn ngành và chu kỳ phục hồi BĐS Hà Nội/TP.HCM.
+
+**Kiểm Toán Sức Khỏe Ngân Hàng CAMELS & 10 Đại Danh Thủ**:
+- Chất lượng Tài sản CAMELS: Tỷ lệ nợ xấu **NPL kiểm soát ở 1.22% (< 1.5%)**, tỷ lệ bao phủ nợ xấu **LLR đạt 106.0%**, chỉ số CAMELS Z-Score = **3.51 (SAFE)**.
+- Định giá Graham & Lynch: Giá trị nội tại Graham đạt **50,169 ₫** (Biên an toàn MoS **+132.3%**), hệ số **PEG = 0.34x** (Siêu rẻ chuẩn Peter Lynch).
+- Điểm số Piotroski F-Score = **9/9**; Đơn vị kiểm toán: **Ernst & Young (Big 4 Toàn Cầu)** chấp thuận toàn phần.
+- **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
+  Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
+- **Nhịp 1 (30% Vị thế — 1,920 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **21,450 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 2,560 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **21,870 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 3 (30% Vị thế — 1,920 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
+- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**22,780 đ**, lãi +5.46%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**23,800 đ**, lãi +10.19%).
+- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **20,750 đ** (khống chế rủi ro tối đa -3.94%, triệt tiêu bài toán bất đối xứng của thua lỗ).
+
+### 💎 4.5. Cổ Phiếu **`MBB`** — Quân Đội (MBBank) (HOSE)
+- **Phân nhánh danh mục**: `TACTICAL ALPHA (CASA & ROE LEADER)` | **Tỷ trọng**: **`13.0% NAV`** (`129,310,000 VNĐ` ~ **6,700 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+5.0%`** | **Xác suất Thắng `P(W)`**: **`84%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.58`**
+- **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
+  Cổ phiếu MBB giao dịch tại 19,300 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+- **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
+  **[Hội Đồng 10 Đại Danh Thủ: `93.6/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `48,033 đ` (MoS `+148.9%`) • Lynch PEG: `0.42x` • EVA Spread: `+13.2%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+
+**Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Sở hữu hệ sinh thái tài chính toàn diện nhất (Ngân hàng - Chứng khoán MBS - Bảo hiểm MIC/MB Ageas) cùng tệp **30 triệu khách hàng số** giúp duy trì tỷ lệ tiền gửi không kỳ hạn **CASA đạt 38.6%** (Top 2 toàn ngành) và **ROE đạt 20.8%**.
+
+**Bộ Tiêu Chí CANSLIM (William O'Neil)**:
+- **C (Current Earnings)**: LNST TTM đạt **22,600 tỷ VNĐ (+14.2% YoY)**, biên lợi nhuận hoạt động đạt 55.2%.
+- **A (Annual Growth)**: Tổng thu nhập hoạt động đạt **51,200 tỷ VNĐ (+14.8% YoY)**, NIM đạt **4.55%** thuộc nhóm cao nhất ngành.
+- **N (New Catalyst)**: Nhận chuyển giao ngân hàng 0 đồng giúp MBB được cấp hạn mức tăng trưởng tín dụng (Room tín dụng) cao vượt trội (>18%/năm).
+- **S (Supply & Demand)**: Khối lượng giao dịch cạn cung tại vùng hỗ trợ MA20, dòng tiền khối nội và tự doanh gom ròng liên tục.
+- **L (Leader)**: Điểm Hội Đồng 10 Đại Danh Thủ đạt **93.6/100 (Hạng AAA)**, Piotroski F-Score đạt tuyệt đối **9/9**.
+- **I (Institutional)**: Cổ đông nhà nước (Viettel, SCIC) và các quỹ ngoại nắm giữ chặt chẽ, kín room ngoại.
+- **M (Market)**: Dẫn sóng tín dụng bán lẻ, doanh nghiệp quân đội và giải ngân đầu tư công.
+
+**Kiểm Toán Sức Khỏe Ngân Hàng CAMELS & 10 Đại Danh Thủ**:
+- Chất lượng Tài sản CAMELS: Tỷ lệ nợ xấu **NPL = 1.62%**, tỷ lệ bao phủ nợ xấu **LLR = 112.0%**, hệ số CAR Basel II đạt **11.9%**, CAMELS Z-Score = **3.44 (SAFE)**.
+- Định giá Graham & Lynch: Giá trị nội tại Graham đạt **48,033 ₫** (Biên an toàn MoS **+148.9%**), hệ số **PEG = 0.42x**, EVA Spread **+13.2%**.
+- Đơn vị kiểm toán: **KPMG (Big 4 Toàn Cầu)** xác nhận ý kiến Chấp nhận toàn phần, hoàn thành **100.0%** kế hoạch ĐHCĐ.
+- **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
+  Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
+- **Nhịp 1 (30% Vị thế — 2,010 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **19,190 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 2,680 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **19,510 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 3 (30% Vị thế — 2,010 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
+- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**20,190 đ**, lãi +4.61%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**20,950 đ**, lãi +8.55%).
+- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **18,660 đ** (khống chế rủi ro tối đa -3.32%, triệt tiêu bài toán bất đối xứng của thua lỗ).
+
+### 💎 4.6. Cổ Phiếu **`DGC`** — Hóa Chất Đức Giang (HOSE)
+- **Phân nhánh danh mục**: `CORE COMPOUNDER (NET CASH FORTRESS)` | **Tỷ trọng**: **`12.0% NAV`** (`119,880,000 VNĐ` ~ **3,600 CP**)
 - **Kỳ vọng Toán học (`EV%`)**: **`+6.24%`** | **Xác suất Thắng `P(W)`**: **`86%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.61`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu DGC giao dịch tại 33,300 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Doanh nghiệp tiền mặt ròng khổng lồ (>9.000 tỷ gửi ngân hàng, nợ vay gần như bằng 0), dự án Tổ hợp hóa chất Nghi Sơn khởi công quý 4, nhu cầu phốt pho vàng cho chip bán dẫn và pin xe điện phục hồi. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu DGC giao dịch tại 33,300 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Pháo đài tiền mặt ròng >10.500 tỷ (77% tổng tài sản), khởi công Tổ hợp Hóa chất Đức Giang Nghi Sơn và cung ứng phốt pho bán dẫn. Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Nhà sản xuất và xuất khẩu Phốt Pho Vàng (P4) số 1 châu Á, chiếm gần 50% thị phần xuất khẩu toàn quốc. P4 của DGC là nguyên liệu tối quan trọng không thể thay thế trong quy trình sản xuất chip bán dẫn AI và pin xe điện LFP. Sở hữu công nghệ tinh chế phốt pho điện tử đạt độ tinh khiết 99.999%.
+  **[Hội Đồng 10 Đại Danh Thủ: `85.5/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `63,723 đ` (MoS `+91.4%`) • Lynch PEG: `1.03x` • EVA Spread: `+10.0%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+
+**Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Nhà sản xuất và xuất khẩu Phốt Pho Vàng (P4) số 1 châu Á, chiếm gần 50% thị phần xuất khẩu toàn quốc. P4 của DGC là nguyên liệu tối quan trọng không thể thay thế trong quy trình sản xuất chip bán dẫn AI và pin xe điện LFP. Sở hữu công nghệ tinh chế phốt pho điện tử đạt độ tinh khiết 99.999%.
 
 **Bộ Tiêu Chí CANSLIM (William O'Neil)**:
 - **C (Current Earnings)**: LNST quý duy trì trên 1,000 tỷ VNĐ, tăng trưởng ổn định trong bối cảnh giá bán P4 thế giới phục hồi.
@@ -178,15 +251,15 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 
 **Kế Toán Pháp Y & Tiền Thật (Graham & Sloan Forensic Audit)**:
 - Bảng Cân Đối Tiền Mặt Đỉnh Cao: Nắm giữ **>9,250 tỷ VNĐ tiền gửi tiết kiệm ngân hàng**, thu về hàng trăm tỷ tiền lãi mỗi quý. Nợ vay ngân hàng gần như bằng 0 (D/E chỉ **0.07x**).
-- Hệ số an toàn vỡ nợ: **Altman Z''-Score = 21.57** (Thuộc top cao nhất toàn bộ thị trường chứng khoán Việt Nam, an toàn tuyệt đối 100%).
-- Tỷ lệ Tiền Thật: **OCF / LNST = 1.04x**, Dòng tiền tự do **FCF = +2,700 tỷ VNĐ**.
-- Chỉ số kiểm toán gian lận: **Beneish M-Score = -2.65**; Sloan Accruals = **-0.95%**.
-- Đơn vị kiểm toán: **A&C Baker Tilly** xác nhận Chấp nhận toàn phần, hoàn thành **107.8%** kế hoạch ĐHCĐ.
+- Hệ số an toàn vỡ nợ: **Altman Z''-Score = 15.49** (Thuộc top cao nhất toàn bộ thị trường chứng khoán Việt Nam, an toàn tuyệt đối 100%).
+- Tỷ lệ Tiền Thật: **OCF / LNST = 1.15x**, Dòng tiền tự do **FCF = +3,100 tỷ VNĐ**.
+- Chỉ số kiểm toán gian lận: **Beneish M-Score = -2.75**; Sloan Accruals = **-3.25%**.
+- Đơn vị kiểm toán: **A&C / Big4 Review** xác nhận Chấp nhận toàn phần, hoàn thành **102.6%** kế hoạch ĐHCĐ.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 1,800 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **33,070 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 2,400 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **33,730 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
-- **Nhịp 3 (30% Vị thế — 1,800 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
+- **Nhịp 1 (30% Vị thế — 1,080 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **33,070 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 1,440 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **33,730 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 3 (30% Vị thế — 1,080 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
 - **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**35,140 đ**, lãi +5.53%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**36,720 đ**, lãi +10.27%).
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **31,990 đ** (khống chế rủi ro tối đa -3.93%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
@@ -195,29 +268,29 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 ## 🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC
 Bóc tách minh bạch các mã cổ phiếu đang suy giảm dòng tiền, đòn bẩy nợ cao hoặc có dấu hiệu xào nấu số liệu kế toán tại TTCK Việt Nam:
 
-### ⚠️ Cổ Phiếu **`FRT`** — Bán Lẻ Kỹ Thuật Số FPT (Long Châu) (HOSE) | Thị giá: 148,700 đ (+0.68%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: ALTMAN Z'' NGUY HIỂM (0.76)` | **Xếp hạng BCTC**: `RED_FLAG`
-- **Chỉ số Kế toán Pháp y**: OCF/LNST: `5.0x` | Altman Z'': `0.76` | Nợ/Vốn chủ D/E: `3.42x` | FCF: `700 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất FRT biến động +0.68%: Áp lực cơ cấu nợ và dòng tiền kinh doanh suy yếu khiến khối ngoại liên tục bán ròng, đường giá gãy hỗ trợ MA50 và nằm dưới MA200.
-- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN] Hệ số Altman Z''-Score tụt sâu xuống mức 0.76 (nằm trong vùng Báo động rủi ro tài chính). Đòn bẩy nợ D/E phình to lên tới 3.42x vốn chủ sở hữu. Dòng tiền tự do FCF âm hoặc bị bào mòn nặng. Cảnh báo cốt lõi: Hệ số nợ vay/Vốn chủ sở hữu cao do mở rộng chuỗi liên tục, định giá P/E cao phản ánh kỳ vọng dài hạn.. Minh Quân khuyến nghị đứng ngoài tuyệt đối, không bắt dao rơi!
+### ⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,300 đ (-0.88%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-570 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
+- **Chỉ số Kế toán Pháp y**: OCF/LNST: `-0.62x` | Altman Z'': `10.06` | Nợ/Vốn chủ D/E: `0.38x` | FCF: `-570 tỷ VNĐ`
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất PDR biến động -0.88%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 59.6/100.
+- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -0.62x, Dòng tiền tự do FCF = -570 tỷ VNĐ, Chỉ số Beneish M-Score = 0.41 (HIGH_RISK). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-320 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (469.0% doanh thu); CẢNH BÁO BENEISH M-SCORE (0.41 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`VCG`** — Vinaconex (HOSE) | Thị giá: 14,800 đ (-3.27%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: ALTMAN Z'' NGUY HIỂM (2.16)` | **Xếp hạng BCTC**: `AA`
-- **Chỉ số Kế toán Pháp y**: OCF/LNST: `1.17x` | Altman Z'': `2.16` | Nợ/Vốn chủ D/E: `0.55x` | FCF: `900 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất VCG biến động -3.27%: Áp lực cơ cấu nợ và dòng tiền kinh doanh suy yếu khiến khối ngoại liên tục bán ròng, đường giá gãy hỗ trợ MA50 và nằm dưới MA200.
-- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN] Hệ số Altman Z''-Score tụt sâu xuống mức 2.16 (nằm trong vùng Báo động rủi ro tài chính). Đòn bẩy nợ D/E phình to lên tới 0.55x vốn chủ sở hữu. Dòng tiền tự do FCF âm hoặc bị bào mòn nặng. Cảnh báo cốt lõi: Biến động chi phí đầu vào và lãi suất vay.. Minh Quân khuyến nghị đứng ngoài tuyệt đối, không bắt dao rơi!
+### ⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 10,100 đ (+2.23%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-660 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
+- **Chỉ số Kế toán Pháp y**: OCF/LNST: `-1.81x` | Altman Z'': `10.01` | Nợ/Vốn chủ D/E: `0.36x` | FCF: `-660 tỷ VNĐ`
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất DXG biến động +2.23%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 64.6/100.
+- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -1.81x, Dòng tiền tự do FCF = -660 tỷ VNĐ, Chỉ số Beneish M-Score = -0.9 (HIGH_RISK). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-480 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (276.7% doanh thu); CẢNH BÁO BENEISH M-SCORE (-0.9 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`VHM`** — Vinhomes (HOSE) | Thị giá: 63,000 đ (+1.45%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: ALTMAN Z'' NGUY HIỂM (3.34)` | **Xếp hạng BCTC**: `AA`
-- **Chỉ số Kế toán Pháp y**: OCF/LNST: `0.75x` | Altman Z'': `3.34` | Nợ/Vốn chủ D/E: `0.32x` | FCF: `15,500 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất VHM biến động +1.45%: Áp lực cơ cấu nợ và dòng tiền kinh doanh suy yếu khiến khối ngoại liên tục bán ròng, đường giá gãy hỗ trợ MA50 và nằm dưới MA200.
-- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN] Hệ số Altman Z''-Score tụt sâu xuống mức 3.34 (nằm trong vùng Báo động rủi ro tài chính). Đòn bẩy nợ D/E phình to lên tới 0.32x vốn chủ sở hữu. Dòng tiền tự do FCF âm hoặc bị bào mòn nặng. Cảnh báo cốt lõi: Dòng tiền giao dịch nội bộ trong hệ sinh thái VinGroup, khoản phải thu lớn.. Minh Quân khuyến nghị đứng ngoài tuyệt đối, không bắt dao rơi!
+### ⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,000 đ (-1.89%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: BENEISH M-SCORE RỦI RO (-1.19)` | **Xếp hạng BCTC**: `BB (WATCH)`
+- **Chỉ số Kế toán Pháp y**: OCF/LNST: `1.23x` | Altman Z'': `11.74` | Nợ/Vốn chủ D/E: `0.24x` | FCF: `570 tỷ VNĐ`
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất KBC biến động -1.89%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 70.5/100.
+- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = 1.23x, Dòng tiền tự do FCF = 570 tỷ VNĐ, Chỉ số Beneish M-Score = -1.19 (HIGH_RISK). Chi tiết Red Flags: Khoản phải thu chiếm tỷ trọng cao (254.1% doanh thu); CẢNH BÁO BENEISH M-SCORE (-1.19 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`MBB`** — Quân Đội (MBBank) (HOSE) | Thị giá: 19,300 đ (-2.03%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: ALTMAN Z'' NGUY HIỂM (-4.48)` | **Xếp hạng BCTC**: `RED_FLAG`
-- **Chỉ số Kế toán Pháp y**: OCF/LNST: `0.83x` | Altman Z'': `-4.48` | Nợ/Vốn chủ D/E: `6.83x` | FCF: `16,600 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất MBB biến động -2.03%: Áp lực cơ cấu nợ và dòng tiền kinh doanh suy yếu khiến khối ngoại liên tục bán ròng, đường giá gãy hỗ trợ MA50 và nằm dưới MA200.
-- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN] Hệ số Altman Z''-Score tụt sâu xuống mức -4.48 (nằm trong vùng Báo động rủi ro tài chính). Đòn bẩy nợ D/E phình to lên tới 6.83x vốn chủ sở hữu. Dòng tiền tự do FCF âm hoặc bị bào mòn nặng. Cảnh báo cốt lõi: Nợ tái cơ cấu theo Thông tư 02 cần giám sát thời điểm hết hiệu lực.. Minh Quân khuyến nghị đứng ngoài tuyệt đối, không bắt dao rơi!
+### ⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 13,400 đ (-1.47%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: BENEISH M-SCORE RỦI RO (-2.65)` | **Xếp hạng BCTC**: `AA`
+- **Chỉ số Kế toán Pháp y**: OCF/LNST: `0.91x` | Altman Z'': `2.70` | Nợ/Vốn chủ D/E: `1.12x` | FCF: `1,470 tỷ VNĐ`
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất VND biến động -1.47%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 74.0/100.
+- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = 0.91x, Dòng tiền tự do FCF = 1,470 tỷ VNĐ, Chỉ số Beneish M-Score = -2.65 (SAFE). Chi tiết Red Flags: Beneish M-Score = -2.65 (Cảnh báo chất lượng khoản phải thu / OCF). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
 ---
 

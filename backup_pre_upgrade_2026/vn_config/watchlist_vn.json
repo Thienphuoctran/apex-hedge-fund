@@ -1,0 +1,150 @@
+{
+  "market": "Vietnam Stock Market (HOSE / HNX / UPCoM)",
+  "benchmark": "^VNINDEX",
+  "settlement_cycle": "T+2.5",
+  "circuit_breakers": {
+    "HOSE": 0.07,
+    "HNX": 0.10,
+    "UPCOM": 0.15
+  },
+  "sectors": {
+    "Ngan_Hang": {
+      "name": "Ngân Hàng & Dịch Vụ Tài Chính",
+      "gics_equivalent": "Financials",
+      "bctc_focus": ["NIM", "CASA", "NPL_Ratio", "LLR_Coverage", "Credit_Growth", "CAR_Basel_II_III"],
+      "tickers": [
+        {"symbol": "VCB.VN", "code": "VCB", "name": "Ngoại Thương Việt Nam (Vietcombank)", "exchange": "HOSE", "tier": "VN30_MegaCap", "weight_target": 0.04},
+        {"symbol": "BID.VN", "code": "BID", "name": "Đầu Tư & Phát Triển Việt Nam (BIDV)", "exchange": "HOSE", "tier": "VN30_MegaCap", "weight_target": 0.03},
+        {"symbol": "CTG.VN", "code": "CTG", "name": "Công Thương Việt Nam (VietinBank)", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.035},
+        {"symbol": "TCB.VN", "code": "TCB", "name": "Kỹ Thương Việt Nam (Techcombank)", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.04},
+        {"symbol": "MBB.VN", "code": "MBB", "name": "Quân Đội (MBBank)", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.035},
+        {"symbol": "ACB.VN", "code": "ACB", "name": "Á Châu (ACB)", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.035},
+        {"symbol": "VPB.VN", "code": "VPB", "name": "Việt Nam Thịnh Vượng (VPBank)", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.03},
+        {"symbol": "HDB.VN", "code": "HDB", "name": "Phát Triển TP.HCM (HDBank)", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.025},
+        {"symbol": "STB.VN", "code": "STB", "name": "Sài Gòn Thương Tín (Sacombank)", "exchange": "HOSE", "tier": "VN30_MidCap", "weight_target": 0.03}
+      ]
+    },
+    "Bat_Dong_San_Dan_Cu": {
+      "name": "Bất Động Sản Dân Cư",
+      "gics_equivalent": "Real Estate",
+      "bctc_focus": ["Unearned_Revenue_Prepayments", "Project_Inventory", "Debt_to_Equity", "Bond_Maturity_Schedule", "Operating_Cash_Flow"],
+      "tickers": [
+        {"symbol": "VHM.VN", "code": "VHM", "name": "Vinhomes", "exchange": "HOSE", "tier": "VN30_MegaCap", "weight_target": 0.035},
+        {"symbol": "VRE.VN", "code": "VRE", "name": "Vincom Retail", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.025},
+        {"symbol": "KDH.VN", "code": "KDH", "name": "Nhà Khang Điền", "exchange": "HOSE", "tier": "VN30_MidCap", "weight_target": 0.025},
+        {"symbol": "NLG.VN", "code": "NLG", "name": "Nam Long Group", "exchange": "HOSE", "tier": "VN30_MidCap", "weight_target": 0.025},
+        {"symbol": "PDR.VN", "code": "PDR", "name": "Bất Động Sản Phát Đạt", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02},
+        {"symbol": "DXG.VN", "code": "DXG", "name": "Tập Đoàn Đất Xanh", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Bat_Dong_San_KCN": {
+      "name": "Bất Động Sản Khu Công Nghiệp",
+      "gics_equivalent": "Real Estate / Industrials",
+      "bctc_focus": ["Long_term_Unearned_Revenue", "Clean_Land_Bank", "FDI_Inflow", "Operating_Cash_Flow"],
+      "tickers": [
+        {"symbol": "BCM.VN", "code": "BCM", "name": "Becamex IDC", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.025},
+        {"symbol": "IDC.VN", "code": "IDC", "name": "Tổng Công Ty IDICO", "exchange": "HNX", "tier": "LargeCap_HNX", "weight_target": 0.03},
+        {"symbol": "KBC.VN", "code": "KBC", "name": "Phát Triển Đô Thị Kinh Bắc", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.025},
+        {"symbol": "SZC.VN", "code": "SZC", "name": "Sonadezi Châu Đức", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02},
+        {"symbol": "VGC.VN", "code": "VGC", "name": "Viglacera", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Thep_Vat_Lieu": {
+      "name": "Thép & Vật Liệu Xây Dựng",
+      "gics_equivalent": "Materials",
+      "bctc_focus": ["Gross_Margin_Spread", "Raw_Material_Inventory", "Capex_Progress", "Dung_Quat_2_Timeline"],
+      "tickers": [
+        {"symbol": "HPG.VN", "code": "HPG", "name": "Tập Đoàn Hòa Phát", "exchange": "HOSE", "tier": "VN30_MegaCap", "weight_target": 0.045},
+        {"symbol": "HSG.VN", "code": "HSG", "name": "Tập Đoàn Hoa Sen", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02},
+        {"symbol": "NKG.VN", "code": "NKG", "name": "Thép Nam Kim", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Ban_Le_Tieu_Dung": {
+      "name": "Bán Lẻ & Tiêu Dùng Thiết Yếu",
+      "gics_equivalent": "Consumer Discretionary / Staples",
+      "bctc_focus": ["SSSG_Growth", "Store_Expansion_Pace", "Gross_Margin", "Inventory_Turnover", "Free_Cash_Flow"],
+      "tickers": [
+        {"symbol": "MWG.VN", "code": "MWG", "name": "Thế Giới Di Động", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.04},
+        {"symbol": "FRT.VN", "code": "FRT", "name": "Bán Lẻ Kỹ Thuật Số FPT (Long Châu)", "exchange": "HOSE", "tier": "LargeCap", "weight_target": 0.035},
+        {"symbol": "MSN.VN", "code": "MSN", "name": "Tập Đoàn Masan", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.03},
+        {"symbol": "VNM.VN", "code": "VNM", "name": "Vinamilk", "exchange": "HOSE", "tier": "VN30_MegaCap", "weight_target": 0.03},
+        {"symbol": "PNJ.VN", "code": "PNJ", "name": "Vàng Bạc Đá Quý Phú Nhuận", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.03},
+        {"symbol": "DGW.VN", "code": "DGW", "name": "Thế Giới Số (Digiworld)", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Cong_Nghe_Vien_Thong": {
+      "name": "Công Nghệ Thông Tin & Viễn Thông",
+      "gics_equivalent": "Information Technology",
+      "bctc_focus": ["Global_IT_Contract_Value", "Digital_Transformation_Revenue", "EBITDA_Margin", "Cash_Rich_Balance"],
+      "tickers": [
+        {"symbol": "FPT.VN", "code": "FPT", "name": "Tập Đoàn FPT", "exchange": "HOSE", "tier": "VN30_MegaCap", "weight_target": 0.05},
+        {"symbol": "CMG.VN", "code": "CMG", "name": "Tập Đoàn Công Nghệ CMC", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Chung_Khoan": {
+      "name": "Dịch Vụ Chứng Khoán & Môi Giới",
+      "gics_equivalent": "Financials - Capital Markets",
+      "bctc_focus": ["Margin_Lending_Balance", "Brokerage_Market_Share", "FVTPL_Proprietary_Portfolio", "KRX_Readiness"],
+      "tickers": [
+        {"symbol": "SSI.VN", "code": "SSI", "name": "Chứng Khoán SSI", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.035},
+        {"symbol": "VND.VN", "code": "VND", "name": "Chứng Khoán VNDIRECT", "exchange": "HOSE", "tier": "LargeCap", "weight_target": 0.025},
+        {"symbol": "VCI.VN", "code": "VCI", "name": "Chứng Khoán Vietcap", "exchange": "HOSE", "tier": "LargeCap", "weight_target": 0.03},
+        {"symbol": "HCM.VN", "code": "HCM", "name": "Chứng Khoán TP.HCM (HSC)", "exchange": "HOSE", "tier": "LargeCap", "weight_target": 0.025},
+        {"symbol": "MBS.VN", "code": "MBS", "name": "Chứng Khoán MB", "exchange": "HNX", "tier": "LargeCap_HNX", "weight_target": 0.025}
+      ]
+    },
+    "Dau_Khi_Nang_Luong": {
+      "name": "Dầu Khí & Tiện Ích Năng Lượng",
+      "gics_equivalent": "Energy / Utilities",
+      "bctc_focus": ["Block_B_O_Mon_Capex", "Offshore_Rig_Dayrates", "Crack_Spreads", "Cash_Flow_Stability"],
+      "tickers": [
+        {"symbol": "GAS.VN", "code": "GAS", "name": "Tổng Công Ty Khí Việt Nam (PV GAS)", "exchange": "HOSE", "tier": "VN30_MegaCap", "weight_target": 0.03},
+        {"symbol": "PVS.VN", "code": "PVS", "name": "Dịch Vụ Kỹ Thuật Dầu Khí (PTSC)", "exchange": "HNX", "tier": "LargeCap_HNX", "weight_target": 0.03},
+        {"symbol": "PVD.VN", "code": "PVD", "name": "Khoan & Dịch Vụ Khoan Dầu Khí", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.025},
+        {"symbol": "BSR.VN", "code": "BSR", "name": "Lọc Hóa Dầu Bình Sơn", "exchange": "UPCOM", "tier": "LargeCap_UPCOM", "weight_target": 0.025},
+        {"symbol": "POW.VN", "code": "POW", "name": "Điện Lực Dầu Khí Việt Nam (PV Power)", "exchange": "HOSE", "tier": "VN30_LargeCap", "weight_target": 0.02},
+        {"symbol": "REE.VN", "code": "REE", "name": "Cơ Điện Lạnh (REE Corp)", "exchange": "HOSE", "tier": "LargeCap", "weight_target": 0.025},
+        {"symbol": "PC1.VN", "code": "PC1", "name": "Tập Đoàn PC1 (Xây lắp điện & KCN)", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Hoa_Chat_Phan_Bon": {
+      "name": "Hóa Chất & Phân Bón",
+      "gics_equivalent": "Materials - Chemicals",
+      "bctc_focus": ["Yellow_Phosphorus_Export_Price", "Urea_Global_Price", "Nghi_Son_Complex_Progress", "Net_Cash_Position"],
+      "tickers": [
+        {"symbol": "DGC.VN", "code": "DGC", "name": "Hóa Chất Đức Giang", "exchange": "HOSE", "tier": "LargeCap", "weight_target": 0.035},
+        {"symbol": "DCM.VN", "code": "DCM", "name": "Phân Bón Dầu Khí Cà Mau", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.025},
+        {"symbol": "DPM.VN", "code": "DPM", "name": "Tổng Công Ty Phân Bón & Hóa Chất Dầu Khí", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Cang_Bien_Van_Tai": {
+      "name": "Cảng Biển & Logistics Vận Tải",
+      "gics_equivalent": "Industrials - Marine Transport",
+      "bctc_focus": ["Container_Throughput_TEU", "Shipping_Freight_Rates", "Port_Gross_Margin", "Operating_Cash_Flow"],
+      "tickers": [
+        {"symbol": "GMD.VN", "code": "GMD", "name": "Gemadept (Cảng nước sâu Gemalink)", "exchange": "HOSE", "tier": "LargeCap", "weight_target": 0.03},
+        {"symbol": "HAH.VN", "code": "HAH", "name": "Vận Tải & Xếp Dỡ Hải An", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.025},
+        {"symbol": "PVT.VN", "code": "PVT", "name": "Tổng Công Ty Vận Tải Dầu Khí", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Xay_Dung_Ha_Tang_Dau_Tu_Cong": {
+      "name": "Hạ Tầng Xây Dựng & Đầu Tư Công",
+      "gics_equivalent": "Industrials - Construction",
+      "bctc_focus": ["Public_Investment_Disbursement", "Backlog_Order_Book", "Short_term_Receivables_Quality", "Interest_Coverage_Ratio"],
+      "tickers": [
+        {"symbol": "VCG.VN", "code": "VCG", "name": "Vinaconex", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02},
+        {"symbol": "HHV.VN", "code": "HHV", "name": "Đầu Tư Hạ Tầng Đèo Cả", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02}
+      ]
+    },
+    "Nong_Nghiep_Duoc_Pham": {
+      "name": "Thủy Sản, Nông Nghiệp & Dược Phẩm",
+      "gics_equivalent": "Consumer Staples / Healthcare",
+      "bctc_focus": ["Pork_Price_Cycle", "Feed_Cost", "Pangasius_Export_Price", "FDA_EU_GMP_Pharma_Certification"],
+      "tickers": [
+        {"symbol": "DBC.VN", "code": "DBC", "name": "Tập Đoàn Dabaco Việt Nam", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.02},
+        {"symbol": "VHC.VN", "code": "VHC", "name": "Vĩnh Hoàn (Cá tra xuất khẩu)", "exchange": "HOSE", "tier": "MidCap", "weight_target": 0.025},
+        {"symbol": "DHG.VN", "code": "DHG", "name": "Dược Hậu Giang", "exchange": "HOSE", "tier": "LargeCap", "weight_target": 0.02}
+      ]
+    }
+  }
+}

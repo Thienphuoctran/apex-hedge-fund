@@ -48,6 +48,9 @@ def run_pipeline():
         else:
             print(f"✅ Hoàn thành: {script_name}")
 
+    optimizer_path = os.path.join(os.path.dirname(os.path.dirname(SCRIPTS_DIR)), "scripts", "titan_token_optimizer.py")
+    if os.path.exists(optimizer_path):
+        subprocess.run([sys.executable, optimizer_path, "--quiet"], env=sub_env, capture_output=False)
     elapsed = round(time.time() - start_time, 2)
     print("\n" + "=" * 70)
     print(f"🎉 TOÀN BỘ CHU TRÌNH 7 PHÒNG BAN VIỆT NAM ĐÃ VẬN HÀNH THÀNH CÔNG! ({elapsed} giây)")

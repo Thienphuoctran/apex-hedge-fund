@@ -57,6 +57,65 @@ def is_imminent_earnings(equity_item: dict) -> bool:
     return bool(dte is not None and 0 <= dte <= 7)
 
 
+def evaluate_adversarial_debate_global(sym: str, e: dict) -> dict:
+    """
+    GÓI NÂNG CẤP 3 (HẠNG 3 CẤP THIẾT): Cơ Chế Tranh Biện Đối Kháng (Adversarial Bull vs Bear Debate)
+    áp dụng Quy tắc Chống Tê Liệt Phân Tích (Anti-Paralysis Resolution) của Master CIO:
+    - Bear Agent chỉ có quyền VETO tuyệt đối nếu vi phạm 3 lằn ranh đỏ cấu trúc:
+      (1) FCF âm / đốt tiền, (2) Sát lịch BCTC <= 7 ngày, (3) Gãy sâu dưới MA200.
+    - Nếu chỉ là P/E cao hoặc RSI tiệm cận quá mua ở siêu cổ phiếu có FCF lớn: Chỉ gắn 'VALUATION_RISK_FLAG' và cho phép giải ngân chia nhịp 60/40.
+    """
+    fnd = e.get("fundamentals", {})
+    prd = e.get("prediction", {})
+    fcf = fnd.get("free_cashflow_bil") or 0.0
+    pe = fnd.get("forward_pe") or 20.0
+    rev_g = fnd.get("revenue_growth_yoy") or 10.0
+    rsi = e.get("rsi_14") or 50.0
+    price = e.get("last_price") or 100.0
+    ma200 = e.get("ma200") or price
+    dte = fnd.get("days_to_earnings")
+
+    bull_thesis = (
+        f"FCF chuẩn hóa đạt +${fcf}B USD, tăng trưởng doanh thu +{rev_g}% YoY, "
+        f"giá (${price}) giữ cấu trúc trên MA200 (${ma200}), điểm IC {prd.get('ic_composite_score', 75)}/100."
+    )
+
+    structural_breaches = []
+    if fcf < 0:
+        structural_breaches.append(f"FCF âm (${fcf}B USD)")
+    if dte is not None and 0 <= dte <= 7:
+        structural_breaches.append(f"Sát lịch BCTC ({dte} ngày)")
+    if price < ma200 * 0.92:
+        structural_breaches.append(f"Gãy cấu trúc MA200 (${price} < ${ma200})")
+
+    valuation_flags = []
+    if pe > 28.0:
+        valuation_flags.append(f"Định giá Fwd P/E cao ({pe}x)")
+    if rsi > 68.0:
+        valuation_flags.append(f"RSI tiệm cận vùng nóng ({rsi})")
+
+    if structural_breaches:
+        bear_critique = "VI PHẠM CẤU TRÚC: " + "; ".join(structural_breaches)
+        cio_verdict = "ABSOLUTE_VETO (Từ chối giải ngân do vi phạm lằn ranh đỏ cấu trúc)"
+        debate_score = 35.0
+    elif valuation_flags:
+        bear_critique = "CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: " + "; ".join(valuation_flags) + " — Cần tránh mua đuổi giá xanh."
+        cio_verdict = "APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)"
+        debate_score = 84.5
+    else:
+        bear_critique = "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC."
+        cio_verdict = "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)"
+        debate_score = 92.0
+
+    return {
+        "symbol": sym,
+        "bull_agent_thesis": bull_thesis,
+        "bear_agent_critique": bear_critique,
+        "cio_debate_resolution": cio_verdict,
+        "debate_consensus_score": debate_score,
+    }
+
+
 def main() -> None:
     os.makedirs(IC_DIR, exist_ok=True)
     with open(SNAPSHOT_PATH, "r", encoding="utf-8") as f:
@@ -224,6 +283,7 @@ def main() -> None:
         nav_risk_if_stopped = round((norm_weight * stop_dist) / 100.0, 2)
         total_portfolio_stop_risk_pct += nav_risk_if_stopped
 
+        debate_res = evaluate_adversarial_debate_global(sym, e)
         allocations.append(
             {
                 "symbol": sym,
@@ -249,6 +309,7 @@ def main() -> None:
                 "options_implied_move_pct": fnd.get("options_implied_move_pct", 3.5),
                 "institutional_ownership_pct": fnd.get("institutional_ownership_pct"),
                 "insider_sentiment": fnd.get("insider_sentiment", "Neutral"),
+                "adversarial_debate": debate_res,
             }
         )
 
@@ -436,6 +497,22 @@ def main() -> None:
     for st in stress_tests:
         md_lines.append(
             f"| **{st['scenario']}**<br>*(Kích hoạt: {st['trigger']})* | `{st['benchmark_sp500_drawdown_pct']}%` | **`{st['portfolio_estimated_impact_pct']}% NAV`** | **`+{st['outperformance_vs_sp500_pct']}%`** | {st['defense_mechanism']} |"
+        )
+
+    md_lines.extend(
+        [
+            "",
+            "---",
+            "",
+            "## 5. Phiên Tranh Biện Đối Kháng Đa Tác Tử (`Adversarial Bull vs Bear Debate — CIO Anti-Paralysis Protocol`)",
+            "| Mã | Luận Điểm Bảo Vệ Của `Bull Agent` | Phản Biện Đào Bới Rủi Ro Của `Bear Agent` | Phán Quyết Hòa Giải Của `Master CIO` | Điểm Đồng Thuận |",
+            "| :--- | :--- | :--- | :--- | :---: |",
+        ]
+    )
+    for a in allocations:
+        deb = a.get("adversarial_debate", {})
+        md_lines.append(
+            f"| **`{a['symbol']}`** | {deb.get('bull_agent_thesis', '')} | {deb.get('bear_agent_critique', '')} | **{deb.get('cio_debate_resolution', '')}** | **`{deb.get('debate_consensus_score', 90)}/100`** |"
         )
 
     with open(md_path, "w", encoding="utf-8") as f:

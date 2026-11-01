@@ -1,0 +1,43 @@
+{
+  "vault_version": "Mem0-Contextual-Vault-v2.0",
+  "created_at": "2026-11-01T01:17:38.684514+00:00",
+  "contextual_memories": [
+    {
+      "memory_id": "MEM-GLB-001",
+      "category": "COMMISSION_ERROR_GUARD",
+      "regime_trigger": "VIX > 21.0 reversing below 20.0",
+      "affected_tickers": [
+        "JNJ",
+        "PG",
+        "V"
+      ],
+      "lesson_learned": "Khi VIX đạt đỉnh ngắn hạn trên 21 rồi đảo chiều giảm mạnh về dưới 20, dòng tiền tổ chức thường chốt lời nhẹ nhóm Phòng thủ để xoay sang nhóm Tăng trưởng.",
+      "actionable_rule": "Không giải ngân 100% một cục tại giá đóng cửa cho nhóm Phòng thủ khi VIX > 21; bắt buộc chia nhịp 60% hiện tại + 40% Limit Pullback (-0.35x ATR)."
+    },
+    {
+      "memory_id": "MEM-GLB-002",
+      "category": "OMISSION_ERROR_RECOVERY",
+      "regime_trigger": "RSI < 37.0 + FCF > $20B USD + VIX < 20.0",
+      "affected_tickers": [
+        "GOOGL",
+        "AVGO",
+        "AMZN"
+      ],
+      "lesson_learned": "Đứng ngoài 100% ở các siêu cổ phiếu Big Tech có FCF > $20B USD khi RSI rơi về vùng quá bán (<37) làm bỏ lỡ nhịp phục hồi Alpha mạnh mẽ.",
+      "actionable_rule": "Tự động kích hoạt nhánh Tactical Alpha Sleeve (8% NAV) gom 60/40 khi siêu cổ phiếu FCF > $20B chạm RSI < 37 và qua kỳ BCTC."
+    },
+    {
+      "memory_id": "MEM-GLB-003",
+      "category": "DISCIPLINED_PASS_MEMORY",
+      "regime_trigger": "FCF < 0 & Price < MA200 (Dead-Cat Bounce)",
+      "affected_tickers": [
+        "SMCI",
+        "COIN",
+        "INTC"
+      ],
+      "lesson_learned": "Các nhịp nảy kỹ thuật +3% của nhóm FCF âm và nằm dưới MA200 là bẫy Bull-Trap xác suất cao.",
+      "actionable_rule": "Duy trì lệnh Veto tuyệt đối; không bao giờ đưa các nhịp tăng của cổ phiếu đốt tiền vào danh sách tiếc nuối."
+    }
+  ],
+  "updated_at": "2026-11-01T01:17:38.684514+00:00"
+}

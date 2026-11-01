@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-01T01:18:32.961653+00:00",
+  "generated_at_utc": "2026-11-01T04:04:09.803234+00:00",
   "portfolio_summary": {
     "target_equity_allocation_pct": 60.0,
     "target_cash_tbills_allocation_pct": 40.0,
@@ -185,7 +185,14 @@
       "earnings_risk_flag": "CLEAR (2027-01-26 AMC)",
       "options_implied_move_pct": 4.23,
       "institutional_ownership_pct": 88.73,
-      "insider_sentiment": "Neutral / Routine"
+      "insider_sentiment": "Neutral / Routine",
+      "adversarial_debate": {
+        "symbol": "V",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$21.12B USD, tăng trưởng doanh thu +13.2% YoY, giá ($413.59) giữ cấu trúc trên MA200 ($342.2), điểm IC 81/100.",
+        "bear_agent_critique": "CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: RSI tiệm cận vùng nóng (69.44) — Cần tránh mua đuổi giá xanh.",
+        "cio_debate_resolution": "APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)",
+        "debate_consensus_score": 84.5
+      }
     },
     {
       "symbol": "JPM",
@@ -210,7 +217,14 @@
       "earnings_risk_flag": "CLEAR (2027-01-14 BMO)",
       "options_implied_move_pct": 4.86,
       "institutional_ownership_pct": 75.6,
-      "insider_sentiment": "Net Insider Buying (Tích cực)"
+      "insider_sentiment": "Net Insider Buying (Tích cực)",
+      "adversarial_debate": {
+        "symbol": "JPM",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$0.0B USD, tăng trưởng doanh thu +10.2% YoY, giá ($337.04) giữ cấu trúc trên MA200 ($322.95), điểm IC 90/100.",
+        "bear_agent_critique": "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC.",
+        "cio_debate_resolution": "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)",
+        "debate_consensus_score": 92.0
+      }
     },
     {
       "symbol": "PG",
@@ -235,7 +249,14 @@
       "earnings_risk_flag": "CLEAR (2027-01-21 BMO)",
       "options_implied_move_pct": 4.98,
       "institutional_ownership_pct": 71.84,
-      "insider_sentiment": "Net Insider Buying (Tích cực)"
+      "insider_sentiment": "Net Insider Buying (Tích cực)",
+      "adversarial_debate": {
+        "symbol": "PG",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$12.65B USD, tăng trưởng doanh thu +4.0% YoY, giá ($161.57) giữ cấu trúc trên MA200 ($148.92), điểm IC 89/100.",
+        "bear_agent_critique": "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC.",
+        "cio_debate_resolution": "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)",
+        "debate_consensus_score": 92.0
+      }
     },
     {
       "symbol": "COST",
@@ -260,7 +281,14 @@
       "earnings_risk_flag": "CLEAR (2026-12-10 AMC)",
       "options_implied_move_pct": 4.07,
       "institutional_ownership_pct": 74.31,
-      "insider_sentiment": "Net Insider Buying (Tích cực)"
+      "insider_sentiment": "Net Insider Buying (Tích cực)",
+      "adversarial_debate": {
+        "symbol": "COST",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$6.75B USD, tăng trưởng doanh thu +11.1% YoY, giá ($1012.28) giữ cấu trúc trên MA200 ($970.91), điểm IC 75/100.",
+        "bear_agent_critique": "CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: Định giá Fwd P/E cao (40.45x) — Cần tránh mua đuổi giá xanh.",
+        "cio_debate_resolution": "APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)",
+        "debate_consensus_score": 84.5
+      }
     },
     {
       "symbol": "MSFT",
@@ -285,7 +313,14 @@
       "earnings_risk_flag": "CLEAR (2027-01-27 AMC)",
       "options_implied_move_pct": 5.29,
       "institutional_ownership_pct": 75.8,
-      "insider_sentiment": "Net Insider Buying (Tích cực)"
+      "insider_sentiment": "Net Insider Buying (Tích cực)",
+      "adversarial_debate": {
+        "symbol": "MSFT",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$2.99B USD, tăng trưởng doanh thu +18.8% YoY, giá ($521.91) giữ cấu trúc trên MA200 ($437.93), điểm IC 85/100.",
+        "bear_agent_critique": "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC.",
+        "cio_debate_resolution": "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)",
+        "debate_consensus_score": 92.0
+      }
     },
     {
       "symbol": "OXY",
@@ -310,7 +345,14 @@
       "earnings_risk_flag": "UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động",
       "options_implied_move_pct": 5.5,
       "institutional_ownership_pct": 58.29,
-      "insider_sentiment": "Neutral / Routine"
+      "insider_sentiment": "Neutral / Routine",
+      "adversarial_debate": {
+        "symbol": "OXY",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$3.79B USD, tăng trưởng doanh thu +53.4% YoY, giá ($64.0) giữ cấu trúc trên MA200 ($56.07), điểm IC 91/100.",
+        "bear_agent_critique": "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC.",
+        "cio_debate_resolution": "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)",
+        "debate_consensus_score": 92.0
+      }
     },
     {
       "symbol": "ABBV",
@@ -335,7 +377,14 @@
       "earnings_risk_flag": "JUST REPORTED (2d ago) — Đã qua rủi ro BCTC",
       "options_implied_move_pct": 5.5,
       "institutional_ownership_pct": 77.39,
-      "insider_sentiment": "Neutral / Routine"
+      "insider_sentiment": "Neutral / Routine",
+      "adversarial_debate": {
+        "symbol": "ABBV",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$0.0B USD, tăng trưởng doanh thu +10.3% YoY, giá ($294.89) giữ cấu trúc trên MA200 ($237.1), điểm IC 75/100.",
+        "bear_agent_critique": "CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: RSI tiệm cận vùng nóng (72.78) — Cần tránh mua đuổi giá xanh.",
+        "cio_debate_resolution": "APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)",
+        "debate_consensus_score": 84.5
+      }
     },
     {
       "symbol": "JNJ",
@@ -360,7 +409,14 @@
       "earnings_risk_flag": "CLEAR (2027-01-26 BMO)",
       "options_implied_move_pct": 6.65,
       "institutional_ownership_pct": 76.78,
-      "insider_sentiment": "Neutral / Routine"
+      "insider_sentiment": "Neutral / Routine",
+      "adversarial_debate": {
+        "symbol": "JNJ",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$18.5B USD, tăng trưởng doanh thu +5.9% YoY, giá ($273.2) giữ cấu trúc trên MA200 ($246.99), điểm IC 82/100.",
+        "bear_agent_critique": "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC.",
+        "cio_debate_resolution": "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)",
+        "debate_consensus_score": 92.0
+      }
     },
     {
       "symbol": "NVDA",
@@ -385,7 +441,14 @@
       "earnings_risk_flag": "UPCOMING EARNINGS (16d, AMC) — Lưu ý biến động",
       "options_implied_move_pct": 7.52,
       "institutional_ownership_pct": 71.52,
-      "insider_sentiment": "Net Insider Selling (Chốt lời nội bộ)"
+      "insider_sentiment": "Net Insider Selling (Chốt lời nội bộ)",
+      "adversarial_debate": {
+        "symbol": "NVDA",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$41.81B USD, tăng trưởng doanh thu +105.9% YoY, giá ($204.64) giữ cấu trúc trên MA200 ($204.38), điểm IC 81/100.",
+        "bear_agent_critique": "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC.",
+        "cio_debate_resolution": "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)",
+        "debate_consensus_score": 92.0
+      }
     },
     {
       "symbol": "TSM",
@@ -410,7 +473,14 @@
       "earnings_risk_flag": "CLEAR (2027-01-14 BMO)",
       "options_implied_move_pct": 8.34,
       "institutional_ownership_pct": 15.52,
-      "insider_sentiment": "Neutral / Routine"
+      "insider_sentiment": "Neutral / Routine",
+      "adversarial_debate": {
+        "symbol": "TSM",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$36.93B USD, tăng trưởng doanh thu +50.9% YoY, giá ($406.13) giữ cấu trúc trên MA200 ($400.16), điểm IC 83/100.",
+        "bear_agent_critique": "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC.",
+        "cio_debate_resolution": "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)",
+        "debate_consensus_score": 92.0
+      }
     }
   ],
   "locked_earnings_watchlist": [

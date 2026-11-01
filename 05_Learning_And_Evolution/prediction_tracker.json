@@ -1639,10 +1639,10 @@
     {
       "evaluation_date": "2026-11-01",
       "evaluated_count": 35,
-      "wins": 17,
-      "losses": 2,
+      "wins": 16,
+      "losses": 3,
       "neutral_holds": 16,
-      "hit_rate_pct": 89.5,
+      "hit_rate_pct": 84.2,
       "walk_forward_horizons": {
         "T_minus_1d": {
           "horizon": "T-1 (1 Phiên)",
@@ -1720,34 +1720,34 @@
           "name": "Alphabet Inc.",
           "sector": "Search & Hyperscale Cloud",
           "prediction_date": "2026-10-30",
-          "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
+          "prediction_direction": "BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim)",
           "entry_price": 278.79,
           "current_price": 279.84,
           "stop_2atr": 258.16,
           "tp1_price": 323.2,
           "pnl_pct": 0.38,
           "alpha_vs_sp500_pct": 0.95,
-          "status_tag": "STABLE_HOLD",
+          "status_tag": "RISK_AVOIDED",
           "is_win": true,
           "hit_stop": false,
-          "evaluation_note": "Giữ nhịp ổn định hơn thị trường chung (+0.38%)"
+          "evaluation_note": "Phòng vệ thành công — Tránh được nhịp sụt giảm (+0.38%)"
         },
         {
           "symbol": "AMZN",
           "name": "Amazon.com Inc.",
           "sector": "E-Commerce & AWS Cloud",
           "prediction_date": "2026-10-30",
-          "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
+          "prediction_direction": "BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim)",
           "entry_price": 238.13,
           "current_price": 240.35,
           "stop_2atr": 224.92,
           "tp1_price": 271.21,
           "pnl_pct": 0.93,
           "alpha_vs_sp500_pct": 1.5,
-          "status_tag": "STABLE_HOLD",
-          "is_win": true,
+          "status_tag": "FALSE_ALARM",
+          "is_win": false,
           "hit_stop": false,
-          "evaluation_note": "Giữ nhịp ổn định hơn thị trường chung (+0.93%)"
+          "evaluation_note": "Phục hồi kỹ thuật ngắn hạn (+0.93%)"
         },
         {
           "symbol": "META",

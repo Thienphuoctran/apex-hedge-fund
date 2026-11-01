@@ -15,7 +15,7 @@
   },
   "learning_telemetry": {
     "total_tracked_assets": 35,
-    "estimated_hit_rate_pct": 89.5,
+    "estimated_hit_rate_pct": 84.2,
     "avoided_high_risk_assets_count": 5,
     "model_confidence_score": 94.5,
     "realized_alpha_1d_pct": 1.52,

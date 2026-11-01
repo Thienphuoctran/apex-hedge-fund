@@ -109,3 +109,36 @@ Chỉ được phép kích hoạt giải ngân trong Sổ Lệnh Master Blotter 
 ---
 
 *Hồ sơ này đóng vai trò kim chỉ nam lý thuyết và thuật toán xuyên suốt cho Ban Đầu Tư Tối Cao Apex Master CIO.*
+
+
+---
+
+## KHỐI TRI THỨC 7: HỘI ĐỒNG 10 ĐẠI DANH THỦ ĐẦU TƯ THẾ GIỚI (`10-MASTER LEGENDS COMPOSITE ENGINE`)
+*Nâng cấp Toàn Diện Doanh Nghiệp bởi Phòng Tổng Hệ Thống (`Apex Central System Governance`) — Ngày 01/11/2026*
+
+Mọi cổ phiếu thuộc cả hai chiến trường (35+ Siêu cổ phiếu Mỹ/Toàn cầu và 54+ Siêu cổ phiếu Việt Nam) bắt buộc phải đi qua lăng kính thẩm định định lượng của **10 Huyền Thoại Đầu Tư Thế Giới** để tạo thành điểm số **`Master Legends Composite Score (0 - 100)`**:
+
+1. **Warren Buffett (Economic Moat & Owner Earnings)**:
+   - Chấm điểm con hào kinh tế thông qua `ROE >= 15%` duy trì nhiều năm, biên lợi nhuận gộp (`Gross Margin`) cao và dòng tiền chủ sở hữu thực (`Owner Earnings / True FCF ex-SBC > 0`).
+2. **Charlie Munger & Stern Stewart (ROIC vs. WACC — EVA Spread %)**:
+   - Doanh nghiệp chỉ thực sự kiến tạo giá trị cho cổ đông khi tỷ suất sinh lời trên vốn đầu tư vượt chi phí sử dụng vốn: $EVA\ Spread = ROIC - WACC > 0\%$.
+3. **Benjamin Graham (Intrinsic Value & Margin of Safety)**:
+   - Định giá nội tại theo công thức Graham cải tiến: $V_{Graham} = \sqrt{22.5 \times EPS \times BVPS}$ kết hợp hệ số tăng trưởng bền vững $(8.5 + 0.85g)$, chỉ ưu tiên giải ngân mạnh khi có Biên an toàn (`Margin of Safety % > 0%`).
+4. **Peter Lynch (GARP & PEG Ratio)**:
+   - Săn tìm cổ phiếu tăng trưởng ở mức giá hợp lý (`Growth at a Reasonable Price`) với hệ số $PEG = \frac{P/E}{EPS\ Growth} \le 1.2x$; kiểm soát tốc độ tăng hàng tồn kho không vượt quá tốc độ tăng doanh thu.
+5. **William O'Neil (7 Tiêu Chí CANSLIM & RS Rating 1–99)**:
+   - Xếp hạng phân vị sức mạnh giá tương đối (`RS Rating` từ 1 đến 99) trên toàn bộ rổ cổ phiếu; ưu tiên cổ phiếu dẫn dắt có `RS Rating >= 75` và tăng trưởng EPS quý/năm bứt phá kèm chất xúc tác mới.
+6. **Richard Wyckoff & Anna Coulling (4 Pha Chu Kỳ & Dòng Tiền VSA)**:
+   - Nhận diện tự động 4 pha Wyckoff (`Accumulation`, `Markup`, `Distribution`, `Markdown`) và tín hiệu nến VSA (`No Supply / Test Cung` Vol cạn < 0.8x MA20 tại nền, `Pocket Pivot Breakout`, `SOS Absorption` hấp thụ hàng T+2.5, hoặc cảnh báo `Upthrust`).
+7. **Joseph Piotroski (Piotroski F-Score 0–9)**:
+   - Kiểm định 9 tiêu chí sức khỏe tài chính thực chất: Khả năng sinh lời (ROA > 0, OCF > 0, $\Delta ROA > 0$, $OCF > LNST$), Đòn bẩy & Thanh khoản (Nợ giảm, Thanh khoản tăng, Không pha loãng cổ phiếu ESOP/phát hành rác), Hiệu suất hoạt động ($\Delta Gross\ Margin > 0$, $\Delta Asset\ Turnover > 0$).
+8. **Messod Beneish (Modified Beneish M-Score)**:
+   - Kiểm toán pháp y phát hiện sớm hành vi xào nấu BCTC: Khóa cứng điều kiện $M\text{-Score} < -1.78$ (`SAFE`).
+9. **Richard Sloan (Sloan Accrual Ratio)**:
+   - Đo lường tỷ lệ lợi nhuận dồn tích: $Accrual\ Ratio = \frac{LNST - OCF}{Total\ Assets} < 10\%$ để loại bỏ hoàn toàn "lợi nhuận giấy".
+10. **Edward Altman & Ed Thorp (Sector-Adjusted Solvency Z''/CAMELS & Fractional Kelly Sizing)**:
+    - Tách biệt 3 chế độ kế toán chuyên biệt:
+      * **`BANK_CAMELS_BASEL`** (Ngân hàng TMCP): Thẩm định qua `CASA %`, `NIM %`, `NPL < 2%`, `LLR Coverage > 95%`, `CAR Basel II/III`, `ROE`. Tuyệt đối không áp dụng công thức nợ vay sản xuất cho Ngân hàng.
+      * **`BROKERAGE_FVTPL_MARGIN`** (Công ty Chứng khoán): Thẩm định qua `Dư nợ Margin / VCSH`, chất lượng danh mục tự doanh `FVTPL`, thị phần môi giới và khoản phải thu ký quỹ có tài sản đảm bảo.
+      * **`CORPORATE_VAS_TT200 / US_GAAP`** (Doanh nghiệp Phi tài chính): Thẩm định qua `Altman Z''-Score > 2.60`, `OCF / LNST >= 1.0x`, `True FCF`, `D/E` và `Người mua trả tiền trước`.
+    - Định cỡ vị thế theo **ATR Risk-Parity & Fractional Kelly**, khóa rủi ro tối đa mỗi lệnh $\le 0.35\% - 1.25\%$ NAV với ngưỡng cắt lỗ cứng **Stop 2xATR(14) $\le 7.0\%$**.

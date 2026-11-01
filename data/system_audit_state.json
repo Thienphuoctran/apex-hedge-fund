@@ -3,7 +3,7 @@
   "last_audit_date": "2026-11-01",
   "next_audit_date": "2026-11-05",
   "interval_days": 4,
-  "total_audits_conducted": 3,
+  "total_audits_conducted": 6,
   "last_health_score": 100,
   "status": "HEALTHY",
   "schedule_note": "Kỳ rà soát tiếp theo kích hoạt vào ngày mai 01/11/2026, sau đó tự động lặp lại mỗi 4 ngày (05/11, 09/11, 13/11, 17/11...)"

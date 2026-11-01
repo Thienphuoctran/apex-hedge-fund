@@ -1,6 +1,7 @@
 # [BAN 1 — MACRO & GEOPOLITICS] BÁO CÁO VĨ MÔ, ĐỘ RỘNG THỊ TRƯỜNG, TÍN DỤNG, 12 NGÀNH GICS & 24 BẢN TIN PHỐ WALL TRỰC TUYẾN
 **Ngày kiểm toán**: `2026-11-01` | **Phiên bản**: `v6.0 Audited Zero-Defect`  
-**Chế độ Vĩ mô (`Market Regime`)**: **`Reflationary / Hawkish Rotation`** (`VIX = 19.42`, `US10Y = 4.93%`, `WTI = $104.12`)
+**Chế độ Vĩ mô (`Market Regime`)**: **`Reflationary / Hawkish Rotation`** (`VIX = 19.42`, `US10Y = 4.93%`, `WTI = $104.12`)  
+**Chỉ Số Định Lượng Chính Sách Tiền Tệ Fed (`Hawkish/Dovish Score`)**: **`HAWKISH / HIGHER-FOR-LONGER (+0.61 / +1.00)`** *(Tổng hợp định lượng từ US10Y Yield, DXY & Áp lực Lạm phát Năng lượng)*
 
 ---
 

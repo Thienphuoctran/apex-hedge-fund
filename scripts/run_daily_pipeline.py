@@ -45,9 +45,10 @@ def main() -> None:
     run_step("daily_investment_specialist.py")
     run_step("pipeline_gatekeeper.py")
     run_step("generate_dashboard.py")
+    run_step("titan_token_optimizer.py", ["--quiet"])
 
     print("=" * 78)
-    print(" [HOÀN TẤT 100%] CẢ 7 PHÒNG BAN & GATEKEEPER ĐÃ ĐỒNG BỘ DỮ LIỆU, BÁO CÁO & DASHBOARD v6.0!")
+    print(" [HOÀN TẤT 100%] CẢ 7 PHÒNG BAN, TITAN INDEXER & GATEKEEPER ĐÃ ĐỒNG BỘ v6.0!")
     print("=" * 78)
 
 

@@ -206,3 +206,44 @@
 | **`TSLA`** | **$399.81** | `-0.87% / 7.41% / 12.91% / -12.43%` | **RUNG LẮC NHẸ (-0.87% 1D | +12.91% 1M)** | `SUY GIẢM DOANH THU (-0.2% YoY)` | **Biến động**: Phiên hôm nay TSLA biến động -0.87% (5 ngày: +7.41%, 1 tháng: +12.91%, 1 năm: -12.43%): Giảm nhẹ -1.09% 1D (nhưng hồi +12.68% 1M) trong bối cảnh cuộc chiến giảm giá xe điện toàn cầu làm suy giảm tăng trưởng doanh thu. <br> **Nội tại DN**: [SUY GIẢM DOANH THU (-0.2% YoY)] Doanh thu suy giảm nhẹ -0.2% YoY ($103.57B), biên lợi nhuận hoạt động bị nén mạnh chỉ còn 5.36%, Lợi nhuận ròng chỉ đạt +$3.22B trong khi định giá EV/EBITDA quá đắt ở mức 157.78x. GAAP FCF đạt $4.97B USD (True FCF sau trừ thưởng cổ phiếu SBC: $2.69B USD). Biên tạo giá trị kinh tế EVA Spread = -7.97% (ROIC 5.28% vs WACC 13.25%), Điểm sức khỏe Piotroski F-Score = 5/9, Altman Z-Score = 18.36. | Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $391.81 – $401.81 | Cắt lỗ cứng Stop 2xATR: $371.04 | Chặn lãi Chandelier: $374.89 | Mục tiêu TP1: $457.35 / TP2: $486.12. Lịch BCTC: CLEAR (2027-01-27 AMC) (Biên độ dự kiến ±8.46%). |
 | **`COIN`** | **$143.54** | `-10.62% / -12.72% / -24.17% / -58.25%` | **BÁN THÁO MẠNH (-10.62% 1D | -24.17% 1M)** | `THUA LỖ RÒNG (-$0.70B USD)` | **Biến động**: Phiên hôm nay COIN biến động -10.62% (5 ngày: -12.72%, 1 tháng: -24.17%, 1 năm: -58.25%): Bị bán tháo -11.57% 1D (-23.00% 1M, -58.25% 1Y) khi thanh khoản giao dịch tài sản số sụt giảm và lãi suất USD neo cao. <br> **Nội tại DN**: [THUA LỖ RÒNG (-$0.70B USD)] DOANH NGHIỆP ĐANG THUA LỖ & SUY GIẢM: Doanh thu sụt giảm -17.3% YoY ($6.04B), biên lợi nhuận hoạt động âm -13.92%, Lỗ ròng -$0.99 tỷ USD và ROE âm -7.85%. GAAP FCF đạt $3.68B USD (True FCF sau trừ thưởng cổ phiếu SBC: $3.22B USD). Biên tạo giá trị kinh tế EVA Spread = -14.17% (ROIC -0.37% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 2.85. | Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $140.67 – $144.26 | Cắt lỗ cứng Stop 2xATR: $122.89 | Chặn lãi Chandelier: $174.53 | Mục tiêu TP1: $184.84 / TP2: $206.03. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±14.5%). |
 | **`QCOM`** | **$164.79** | `-11.12% / -6.32% / -9.5% / -8.91%` | **BÁN THÁO MẠNH (-11.12% 1D | -9.50% 1M)** | `SUY GIẢM DOANH THU (-4.0% YoY)` | **Biến động**: Phiên hôm nay QCOM biến động -11.12% (5 ngày: -6.32%, 1 tháng: -9.50%, 1 năm: -8.91%): Giảm sâu -9.94% 1D (-10.46% 1M) do chu kỳ nâng cấp điện thoại thông minh toàn cầu phục hồi chậm và sát kỳ công bố BCTC (còn 4 ngày). <br> **Nội tại DN**: [SUY GIẢM DOANH THU (-4.0% YoY)] Doanh thu đang suy giảm -4.0% YoY ($44.07B) dù vẫn duy trì Lợi nhuận ròng +$9.26B và FCF +$10.24B; cấu trúc giá đang suy yếu dưới đường trung bình. GAAP FCF đạt $10.24B USD (True FCF sau trừ thưởng cổ phiếu SBC: $9.27B USD). Biên tạo giá trị kinh tế EVA Spread = +4.51% (ROIC 16.52% vs WACC 12.01%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 5.16. | Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 44/100). Vùng mua chuẩn: $161.49 – $165.61 | Cắt lỗ cứng Stop 2xATR: $149.85 | Chặn lãi Chandelier: $170.28 | Mục tiêu TP1: $194.67 / TP2: $196.3. Lịch BCTC: IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±10.65%). |
+
+---
+
+## 8. Kiểm Toán Pháp Y Liên Kết 3 Báo Cáo Tài Chính & Dung Sai Số Học Bằng Không (`Zero-Math-Tolerance Three-Statement Audit`)
+| Mã | Tiền Tệ BCTC -> USD | Lợi Nhuận Ròng ($B) | Dòng Tiền Tự Do FCF ($B) | Tỷ Lệ Chuyển Hóa Tiền (`FCF / Net Income`) | Biên Gộp / Biên HĐ (%) | Kiểm Định Pháp Y Dòng Tiền & Sổ Sách (`Forensic Verdict`) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`MSFT`** | `USD (1.0)` | $142.63B | **$2.99B** | `0.02x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`OXY`** | `USD (1.0)` | $3.4B | **$3.79B** | `1.11x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`PG`** | `USD (1.0)` | $15.74B | **$12.65B** | `0.8x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`JPM`** | `USD (1.0)` | $64.53B | **N/A** | `N/A` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`TSM`** | `TWD->USD (0.0307)` | $77.6B | **$36.93B** | `0.48x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`AMD`** | `USD (1.0)` | $6.47B | **$8.84B** | `1.37x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`NVDA`** | `USD (1.0)` | $192.88B | **$41.81B** | `0.22x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`V`** | `USD (1.0)` | $23.5B | **$21.12B** | `0.9x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`PLTR`** | `USD (1.0)` | $3.02B | **$2.16B** | `0.72x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`JNJ`** | `USD (1.0)` | $16.09B | **$18.5B** | `1.15x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`BRK-B`** | `USD (1.0)` | $85.77B | **$71.98B** | `0.84x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`AAPL`** | `USD (1.0)` | $128.93B | **$107.72B** | `0.84x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`XOM`** | `USD (1.0)` | $40.62B | **$28.36B** | `0.7x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`LLY`** | `USD (1.0)` | $27.58B | **$9.34B** | `0.34x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`CVX`** | `USD (1.0)` | $26.98B | **N/A** | `N/A` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`SMCI`** | `USD (1.0)` | $2.2B | **$-8.25B** | `-3.75x` | N/A / N/A | **VETO_CASH_BURN_TRAP (Đốt tiền • Cấm giải ngân)** |
+| **`RTX`** | `USD (1.0)` | $8.4B | **$8.3B** | `0.99x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`COST`** | `USD (1.0)` | $9.23B | **$6.75B** | `0.73x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`META`** | `USD (1.0)` | $75.25B | **$16.85B** | `0.22x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`GS`** | `USD (1.0)` | $21.25B | **N/A** | `N/A` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`BAC`** | `USD (1.0)` | $30.76B | **N/A** | `N/A` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`AVGO`** | `USD (1.0)` | $38.26B | **$30.6B** | `0.8x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`ABBV`** | `USD (1.0)` | $10.3B | **N/A** | `N/A` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`CAT`** | `USD (1.0)` | $11.83B | **$4.13B** | `0.35x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`INTC`** | `USD (1.0)` | $-12.03B | **$0.67B** | `N/A` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`ARM`** | `USD (1.0)` | $1.04B | **$1.33B** | `1.28x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`NVO`** | `DKK->USD (0.1493)` | $17.38B | **$5.62B** | `0.32x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`LMT`** | `USD (1.0)` | $6.51B | **$5.65B** | `0.87x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`WMT`** | `USD (1.0)` | $22.08B | **$7.13B** | `0.32x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`MCD`** | `USD (1.0)` | $8.79B | **$6.26B** | `0.71x` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`GOOGL`** | `USD (1.0)` | $235.69B | **$-1.16B** | `-0.0x` | N/A / N/A | **VETO_CASH_BURN_TRAP (Đốt tiền • Cấm giải ngân)** |
+| **`AMZN`** | `USD (1.0)` | $134.78B | **$-11.55B** | `-0.09x` | N/A / N/A | **VETO_CASH_BURN_TRAP (Đốt tiền • Cấm giải ngân)** |
+| **`TSLA`** | `USD (1.0)` | $3.22B | **$4.97B** | `1.54x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |
+| **`COIN`** | `USD (1.0)` | $-0.7B | **$3.68B** | `N/A` | N/A / N/A | **STANDARD_ACCRUAL_VERIFIED (Dồn tích trong ngưỡng an toàn)** |
+| **`QCOM`** | `USD (1.0)` | $9.26B | **$10.24B** | `1.11x` | N/A / N/A | **PASS_ZERO_TOLERANCE (Tiền thật • FCF dồi dào)** |

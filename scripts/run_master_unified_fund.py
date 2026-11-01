@@ -88,6 +88,7 @@ def main():
 
     # Bước 7: Ban Đầu Tư Tối Cao — Kiểm Toán Phúc Tra Cuối Ngày & Phản Hồi Tự Tiến Hóa (EOD Master Audit)
     run_cmd([sys.executable, str(SCRIPTS_DIR / "eod_master_audit_engine.py")], "Ban Đầu Tư Tối Cao: Kiểm Toán Phúc Tra Cuối Ngày & Phản Hồi Tự Tiến Hóa")
+    run_cmd([sys.executable, str(SCRIPTS_DIR / "titan_token_optimizer.py"), "--quiet"], "Titan Token Optimizer: Lập Chỉ Mục Dòng BCTC & Bản Tóm Lược Không Mất Dữ Liệu")
 
     elapsed = time.time() - start_time
     print("\n" + "=" * 80)

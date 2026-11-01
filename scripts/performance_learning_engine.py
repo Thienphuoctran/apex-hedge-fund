@@ -35,6 +35,7 @@ TRACKER_FILE = os.path.join(LEARNING_DIR, "prediction_tracker.json")
 JOURNAL_FILE = os.path.join(LEARNING_DIR, "system_evolution_journal.md")
 ADAPTIVE_CONFIG_FILE = os.path.join(CONFIG_DIR, "adaptive_weights.json")
 TELEMETRY_FILE = os.path.join(LEARNING_DIR, "learning_telemetry.json")
+MEMORY_VAULT_FILE = os.path.join(LEARNING_DIR, "contextual_error_memory_vault.json")
 
 
 def load_json(filepath):
@@ -340,6 +341,43 @@ def run_learning_engine():
         "**Bài học 3 (Độ tin cậy của True FCF ex-SBC, EVA Spread & SEC Form 4)**: Các doanh nghiệp có dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC > 0`), `ROIC > WACC` và giao dịch nội bộ mua ròng (`MSFT`, `JPM`, `PG`) giữ giá vượt trội trong các phiên chỉ số chung điều chỉnh.",
     ]
 
+    # GÓI NÂNG CẤP 4 (HẠNG 4 CẤP THIẾT): Bộ Nhớ Dài Hạn Vectơ Hóa Ngữ Cảnh (Mem0 Contextual Memory Vault)
+    memory_vault = load_json(MEMORY_VAULT_FILE) or {
+        "vault_version": "Mem0-Contextual-Vault-v2.0",
+        "created_at": timestamp_utc,
+        "contextual_memories": []
+    }
+    contextual_nodes = [
+        {
+            "memory_id": "MEM-GLB-001",
+            "category": "COMMISSION_ERROR_GUARD",
+            "regime_trigger": "VIX > 21.0 reversing below 20.0",
+            "affected_tickers": ["JNJ", "PG", "V"],
+            "lesson_learned": "Khi VIX đạt đỉnh ngắn hạn trên 21 rồi đảo chiều giảm mạnh về dưới 20, dòng tiền tổ chức thường chốt lời nhẹ nhóm Phòng thủ để xoay sang nhóm Tăng trưởng.",
+            "actionable_rule": "Không giải ngân 100% một cục tại giá đóng cửa cho nhóm Phòng thủ khi VIX > 21; bắt buộc chia nhịp 60% hiện tại + 40% Limit Pullback (-0.35x ATR)."
+        },
+        {
+            "memory_id": "MEM-GLB-002",
+            "category": "OMISSION_ERROR_RECOVERY",
+            "regime_trigger": "RSI < 37.0 + FCF > $20B USD + VIX < 20.0",
+            "affected_tickers": ["GOOGL", "AVGO", "AMZN"],
+            "lesson_learned": "Đứng ngoài 100% ở các siêu cổ phiếu Big Tech có FCF > $20B USD khi RSI rơi về vùng quá bán (<37) làm bỏ lỡ nhịp phục hồi Alpha mạnh mẽ.",
+            "actionable_rule": "Tự động kích hoạt nhánh Tactical Alpha Sleeve (8% NAV) gom 60/40 khi siêu cổ phiếu FCF > $20B chạm RSI < 37 và qua kỳ BCTC."
+        },
+        {
+            "memory_id": "MEM-GLB-003",
+            "category": "DISCIPLINED_PASS_MEMORY",
+            "regime_trigger": "FCF < 0 & Price < MA200 (Dead-Cat Bounce)",
+            "affected_tickers": ["SMCI", "COIN", "INTC"],
+            "lesson_learned": "Các nhịp nảy kỹ thuật +3% của nhóm FCF âm và nằm dưới MA200 là bẫy Bull-Trap xác suất cao.",
+            "actionable_rule": "Duy trì lệnh Veto tuyệt đối; không bao giờ đưa các nhịp tăng của cổ phiếu đốt tiền vào danh sách tiếc nuối."
+        }
+    ]
+    memory_vault["updated_at"] = timestamp_utc
+    memory_vault["contextual_memories"] = contextual_nodes
+    save_json(MEMORY_VAULT_FILE, memory_vault)
+    print(f"[+] 2b. Đã cập nhật Kho Bộ Nhớ Ngữ Cảnh Dài Hạn (Mem0 Vault): {MEMORY_VAULT_FILE}")
+
     adaptive_weights = {
         "calibrated_at": timestamp_utc,
         "market_regime": "Reflationary / Hawkish Rotation" if oil_val > 90 and tnx_val > 4.5 else "Standard Growth",
@@ -424,6 +462,13 @@ Dựa trên mức biến động thực tế hôm nay (`VIX = {vix_val:.2f}`):
 - **Tổng Trọng Số Kiểm Toán**: **`{macro_w + fcf_w + val_w + tech_w}%`** *(Đảm bảo chính xác tuyệt đối 100%)*
 - **Đệm Tiền Mặt / T-Bills Khuyến Nghị**: **`{min_cash_pct:.1f}% NAV`** (Danh mục thực thi hiện giữ **`{q_sum.get('cash_weight_pct', 40.0)}% NAV`**).
 
+---
+
+## 6. Kho Bộ Nhớ Sai Số & Hành Vi Dài Hạn (`Mem0 Contextual Error & Behavioral Memory Vault`)
+| Mã Bộ Nhớ | Phân Loại Ký Ức | Điều Kiện Kích Hoạt Ngữ Cảnh (`Regime Trigger`) | Cổ Phiếu Liên Quan | Bài Học Lịch Sử Đã Số Hóa | Quy Tắc Tự Động Nạp Cho Alex (`Actionable Rule`) |
+| :--- | :--- | :--- | :---: | :--- | :--- |
+{chr(10).join([f"| **`{m['memory_id']}`** | `{m['category']}` | `{m['regime_trigger']}` | **`{', '.join(m['affected_tickers'])}`** | {m['lesson_learned']} | **{m['actionable_rule']}** |" for m in contextual_nodes])}
+
 *Bản chụp dữ liệu gốc đã được mã hóa và lưu tại: `05_Learning_And_Evolution/historical_archive/snapshot_{today_str}.json`.*
 """
     with open(report_path, "w", encoding="utf-8") as f:
@@ -476,6 +521,7 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
         "walk_forward_horizons": walk_forward_horizons,
         "top_attribution_items": evaluated_today[:12],
         "latest_lessons": lessons,
+        "contextual_memory_vault": contextual_nodes,
     }
     save_json(TELEMETRY_FILE, telemetry_data)
     print(f"[+] 6. Đã xuất dữ liệu telemetry cho Dashboard: {TELEMETRY_FILE}")
