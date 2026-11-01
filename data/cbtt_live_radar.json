@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-01T13:38:24.970780+00:00",
-  "scan_date": "2026-11-01",
-  "total_us_filings_count": 370,
-  "total_vn_announcements_count": 25,
+  "timestamp_utc": "2026-11-01T17:00:18.499473+00:00",
+  "scan_date": "2026-11-02",
+  "total_us_filings_count": 351,
+  "total_vn_announcements_count": 28,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -84,14 +84,6 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617",
       "total_recent_filings": 12
     },
-    "TSM": {
-      "latest_form": "6-K",
-      "latest_filing_date": "2026-10-22",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179",
-      "total_recent_filings": 11
-    },
     "AMD": {
       "latest_form": "4",
       "latest_filing_date": "2026-10-19",
@@ -163,14 +155,6 @@
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161",
       "total_recent_filings": 12
-    },
-    "BRK-B": {
-      "latest_form": "4",
-      "latest_filing_date": "2026-10-29",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983",
-      "total_recent_filings": 8
     },
     "LLY": {
       "latest_form": "10-Q",
@@ -286,11 +270,11 @@
     },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan",
+      "latest_title": "Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM",
       "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 13:54:00 +0700",
-      "source_url": "https://cafef.vn/ly-do-chuyen-bay-cua-vna-ha-canh-khan-cap-tai-pakistan-188261101135436257.chn",
-      "total_announcements": 9
+      "published_at": "Sun, 01 Nov 26 21:35:00 +0700",
+      "source_url": "https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn",
+      "total_announcements": 11
     },
     "DXG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -346,6 +330,30 @@
       "severity": "CRITICAL",
       "published_at": "Fri, 30 Oct 26 13:05:00 +0700",
       "source_url": "https://cafef.vn/chua-tung-co-vinhomes-lai-9-thang-ky-luc-hon-75000-ty-dong-vuot-25-ke-hoach-ca-nam-188261030130647614.chn",
+      "total_announcements": 1
+    },
+    "HDB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 20:58:00 +0700",
+      "source_url": "https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn",
+      "total_announcements": 1
+    },
+    "TCB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 20:58:00 +0700",
+      "source_url": "https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn",
+      "total_announcements": 1
+    },
+    "VPB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 20:58:00 +0700",
+      "source_url": "https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn",
       "total_announcements": 1
     },
     "PNJ": {
@@ -1664,138 +1672,6 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "6-K",
-      "filing_date": "2026-10-22",
-      "description": "6-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001046179-26-000728",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "6-K",
-      "filing_date": "2026-10-15",
-      "description": "6-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001046179-26-000726",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000724",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000723",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000722",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000721",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000716",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000715",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000714",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000710",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "TSM",
-      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001046179-26-000709",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
-    },
-    {
-      "market": "US_GLOBAL",
       "symbol": "AMD",
       "company_name": "ADVANCED MICRO DEVICES INC",
       "form": "4",
@@ -2969,102 +2845,6 @@
       "severity": "INFO",
       "accession_number": "0001403161-26-000113",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-10-29",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-438090",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-10-23",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001728451-26-000005",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-10-05",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-414744",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-09-30",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-409451",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-09-29",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001728451-26-000004",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-09-25",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-403089",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-09-21",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-397059",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-09-04",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001728451-26-000003",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
     },
     {
       "market": "US_GLOBAL",
@@ -4813,6 +4593,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM",
+      "summary": "Một cú sét đánh vào cụm van, bồn chứa phát nổ, công nhân mắc kẹt, tàu chở nguyên liệu bốc cháy ngoài cầu cảng. Chuỗi tình huống giả định tại Hóa dầu Long Sơn đòi hỏi lực lượng ứng cứu triển khai đồng thời trên bờ và dưới...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 21:35:00 +0700",
+      "source_url": "https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan",
       "summary": "Chuyến bay Vietnam Airlines từ TP.HCM đi Munich (Đức) đã phải hạ cánh khẩn cấp tại Pakistan để hỗ trợ hành khách gặp vấn đề sức khỏe....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -4943,6 +4735,20 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HDB",
+        "TCB",
+        "VPB"
+      ],
+      "title": "Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành",
+      "summary": "Nhóm cổ phiếu ngân hàng trải qua tuần giao dịch 26–30/10 với sắc đỏ áp đảo khi có tới 24/28 mã giảm giá. Cổ phiếu LPBank, Eximbank và SeABank nằm trong nhóm giảm mạnh nhất, trong khi SHB, Techcombank và TPBank dẫn đầu về...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 20:58:00 +0700",
+      "source_url": "https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PNJ"
       ],
       "title": "Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,...",
@@ -5011,6 +4817,18 @@
       "severity": "INFO",
       "published_at": "Thu, 29 Oct 26 18:33:00 +0700",
       "source_url": "https://cafef.vn/dan-phan-anh-ban-dat-xong-van-mang-no-thue-thue-tphcm-thong-tin-1882610291734172.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "4 lô 'đất vàng' Thủ Thiêm sắp được đấu giá trở lại, chốt ngày 27/11 trên hệ thống của Bộ Công an",
+      "summary": "TP.HCM sẽ tổ chức đấu giá 4 lô đất ở Khu đô thị mới Thủ Thiêm vào ngày 27/11 trên Hệ thống đấu giá trực tuyến của Bộ Công an, theo phương thức trả giá lên....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 26 20:53:00 +0700",
+      "source_url": "https://cafef.vn/4-lo-dat-vang-thu-thiem-sap-duoc-dau-gia-tro-lai-chot-ngay-27-11-tren-he-thong-cua-bo-cong-an-188261101202752066.chn"
     },
     {
       "market": "VIETNAM",

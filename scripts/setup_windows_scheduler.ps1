@@ -1,7 +1,7 @@
 # Windows Task Scheduler Setup for Apex Quantitative Fund
 param (
     [switch]$Uninstall,
-    [string]$CapitalVnd = "15000000"
+    [string]$CapitalVnd = "20000000"
 )
 
 $WorkspaceDir = "C:\Users\phuoc\Downloads\antigravity\Chứng khoán"

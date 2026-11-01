@@ -13,7 +13,7 @@ on:
       capital_vnd:
         description: 'Vốn đầu tư giải ngân (VNĐ)'
         required: false
-        default: '15000000'
+        default: '20000000'
 
 permissions:
   contents: write
@@ -43,7 +43,7 @@ jobs:
       - name: Run Overnight Autonomous Master Fund Pipeline
         env:
           PYTHONIOENCODING: utf-8
-          CAPITAL_VND: ${{ github.event.inputs.capital_vnd || '15000000' }}
+          CAPITAL_VND: ${{ github.event.inputs.capital_vnd || '20000000' }}
         run: |
           python scripts/run_master_unified_fund.py --capital-vnd $CAPITAL_VND
 
