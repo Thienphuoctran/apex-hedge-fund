@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-01 11:39:18  
+> **Thời gian quét:** 2026-11-01 13:22:01  
 > **Số sự kiện ghi nhận:** 26 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
@@ -11,7 +11,6 @@
 | **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Nhà máy lọc dầu 3 tỷ USD của Việt Nam lần đầu tiên lãi ngay 1 tỷ USD chỉ sau 9 tháng, doanh thu xăng E10 tăng 1.900 lần | [Xem Link](https://cafef.vn/nha-may-loc-dau-3-ty-usd-cua-viet-nam-lan-dau-tien-lai-ngay-1-ty-usd-chi-sau-9-thang-doanh-thu-xang-e10-tang-1900-lan-188261030225946407.chn) |
 | **PC1** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Cập nhật BCTC quý 3/2026 tối ngày 30/10: Vingroup, TPBank, Viettel Global, PC1 cùng hàng loạt doanh nghiệp tên tuổi dồn dập công bố trước hạn chót | [Xem Link](https://cafef.vn/cap-nhat-bctc-quy-3-2026-sang-ngay-30-10-loat-doanh-nghiep-lon-don-dap-cong-bo-tch-bao-lai-tang-1233-pv-oil-lai-hon-900-ty-dong-gap-hon-5-lan-cung-ky-18826102923433041.chn) |
 | **PNJ** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | PNJ lỗ thêm 257 tỷ trong quý 3, dự phòng giảm giá kim cương 1.700 tỷ, giảm hơn 1.000 nhân viên trong 9 tháng đầu năm | [Xem Link](https://cafef.vn/pnj-lo-gan-1000-ty-trong-2-quy-giam-hon-1000-nhan-vien-trong-9-thang-dau-nam-188261030171129015.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VinSpeed huy động 10.000 nhân sự, 1.300 dầm bê tông, máy đào hầm 13 m trên đại công trường đường sắt 350 km/h TP.HCM - Cần Giờ | [Xem Link](https://cafef.vn/vinspeed-huy-dong-10000-nhan-su-1300-dam-be-tong-may-dao-ham-13-m-tren-dai-cong-truong-duong-sat-350-km-h-tphcm-can-gio-188261030134649898.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị "xả" mạnh nhất | [Xem Link](https://cafef.vn/khoi-ngoai-ban-rong-gan-3000-ty-trong-tuan-cuoi-thang-10-fpt-bi-xa-manh-nhat-188261031001137094.chn) |
 | **HPG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thành viên HĐQT Hòa Phát muốn bán bớt cổ phiếu HPG | [Xem Link](https://cafef.vn/thanh-vien-hdqt-hoa-phat-muon-ban-bot-co-phieu-hpg-18826103017051392.chn) |
 | **HSG** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Tập đoàn Hoa Sen đạt 623 tỷ đồng lợi nhuận sau thuế trong NĐTC 2025 - 2026, hoàn thành 104% kế hoạch ở phương án cao | [Xem Link](https://cafef.vn/tap-doan-hoa-sen-dat-623-ty-dong-loi-nhuan-sau-thue-trong-ndtc-2025-2026-hoan-thanh-104-ke-hoach-o-phuong-an-cao-188261030181042245.chn) |
@@ -25,6 +24,7 @@
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Vinhomes Green Paradise chính thức bước vào vòng bình chọn toàn cầu “7 kỳ quan đô thị tương lai” | [Xem Link](https://cafef.vn/vinhomes-green-paradise-chinh-thuc-buoc-vao-vong-binh-chon-toan-cau-7-ky-quan-do-thi-tuong-lai-18826103119572592.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cách chọn nhà của người dân thay đổi 'chóng mặt' | [Xem Link](https://cafef.vn/cach-chon-nha-cua-nguoi-dan-thay-doi-chong-mat-188261031075151735.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | “Thành phố cuối tuần” Qtopia: Đủ gần để đi mỗi tuần, đủ vui để quay lại nhiều lần | [Xem Link](https://cafef.vn/thanh-pho-cuoi-tuan-qtopia-du-gan-de-di-moi-tuan-du-vui-de-quay-lai-nhieu-lan-188261030155445041.chn) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Trung tâm Tài chính quốc tế TP.HCM công bố 10 thành viên đầu tiên | [Xem Link](https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP HCM định hình mạng lưới trung tâm logistics tại 10 đầu mối lớn | [Xem Link](https://vnexpress.net/tp-hcm-dinh-hinh-mang-luoi-trung-tam-logistics-tai-10-dau-moi-lon-5139061.html) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng tồn kho của PNJ tăng lên hơn 16.600 tỷ đồng | [Xem Link](https://vnexpress.net/hang-ton-kho-cua-pnj-tang-len-hon-16-600-ty-dong-5138903.html) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái bà Cao Thị Ngọc Dung có thể phải bán hơn 2 triệu cổ phiếu PNJ | [Xem Link](https://vnexpress.net/con-gai-ba-cao-thi-ngoc-dung-co-the-phai-ban-hon-2-trieu-co-phieu-pnj-5138856.html) |

@@ -1,5 +1,5 @@
 # BẢN KIỂM TOÁN DỮ LIỆU ĐỊNH LƯỢNG TOÀN DIỆN (AUDITED BRIEFING v3.0 — ZERO HALLUCINATION)
-- **Thời điểm trích xuất (UTC)**: `2026-11-01T01:17:38.684514+00:00`
+- **Thời điểm trích xuất (UTC)**: `2026-11-01T06:22:15.432321+00:00`
 - **Phiên bản Kiểm toán**: `5.0-audited-zero-defect-multi-agent`
 - **Tổng số Chỉ số Thế giới**: `8/8` hợp lệ
 - **Tổng số ETF Ngành GICS**: `12/12` hợp lệ
@@ -25,10 +25,10 @@
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | `^VIX` | CBOE Volatility Index (VIX) | Volatility / Fear | **19.42** | 12.91% | 18.49% | 13.1% | 59.35 | 16.18 | 18.26 | Neutral |
 | `^TNX` | US 10-Year Treasury Yield | Rates & Cost of Capital | **4.93** | -1.2% | -5.88% | 20.43% | 37.99 | 5.01 | 4.55 | Pullback in Uptrend (Below MA50, Above MA200) |
-| `DX-Y.NYB` | US Dollar Index (DXY) | Global Currency Benchmark | **101.96** | -0.07% | -0.13% | 2.17% | 53.41 | 100.81 | 99.63 | Strong Uptrend (Above MA50 & MA200) |
-| `GC=F` | Gold Futures | Safe Haven / Real Assets | **3898.9** | -3.29% | -7.22% | -2.44% | 27.89 | 4294.8 | 4519.32 | Downtrend / Weak (Below MA200) |
-| `CL=F` | WTI Crude Oil | Energy & Inflation | **104.12** | 2.08% | 12.11% | 70.74% | 61.62 | 94.63 | 86.34 | Strong Uptrend (Above MA50 & MA200) |
-| `BTC-USD` | Bitcoin (USD) | Global Liquidity Appetite | **77567.55** | 0.48% | -6.45% | 14.64% | 36.19 | 81899.01 | 73132.34 | Pullback in Uptrend (Below MA50, Above MA200) |
+| `DX-Y.NYB` | US Dollar Index (DXY) | Global Currency Benchmark | **101.96** | -0.07% | -0.13% | 2.1% | 53.41 | 100.81 | 99.63 | Strong Uptrend (Above MA50 & MA200) |
+| `GC=F` | Gold Futures | Safe Haven / Real Assets | **3898.9** | -3.29% | -7.22% | -2.87% | 27.89 | 4294.8 | 4519.32 | Downtrend / Weak (Below MA200) |
+| `CL=F` | WTI Crude Oil | Energy & Inflation | **104.12** | 2.08% | 12.11% | 70.55% | 61.62 | 94.63 | 86.34 | Strong Uptrend (Above MA50 & MA200) |
+| `BTC-USD` | Bitcoin (USD) | Global Liquidity Appetite | **77799.97** | 0.78% | -6.17% | 14.99% | 37.31 | 81903.66 | 73133.5 | Pullback in Uptrend (Below MA50, Above MA200) |
 
 ## 3. Xếp Hạng Dòng Tiền 12 Nhóm Ngành GICS (Xếp theo Hiệu suất 1 Tháng)
 | ETF | Nhóm Ngành | Giá ($) | 1D (%) | 5D (%) | 1M (%) | 3M (%) | 1Y (%) | RSI(14) | Sharpe 1Y | Trạng thái Xu hướng |
@@ -49,7 +49,7 @@
 ## 4. Bảng Kiểm Toán Toàn Bộ 35 Cổ Phiếu Quốc Tế (Kèm Radar BCTC & Dòng Tiền Tổ Chức/Nội Bộ)
 | Mã | Ngành | Giá ($) | 1D (%) | RSI(14) | MA50 / MA200 | Stop 2xATR | Fwd P/E | Rev YoY | FCF ($B) | Upside Phố Wall | Tổ chức nắm (%) | Tín hiệu Nội bộ (Form 4) | Lịch BCTC (`Earnings Radar`) | Điểm AI | Phán Đoán |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- | :--- | :---: | :--- |
-| **`MSFT`** | Enterprise Software & Cloud | **$521.91** | -1.55% | 49.02 | $512.91 / $437.93 | $498.43 | 21.63x | 18.8% | $2.99B | **20.92%** | 75.8% | Net Insider Buying (Tích cực) | CLEAR (2027-01-27 AMC) | **90** | BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader) |
+| **`MSFT`** | Enterprise Software & Cloud | **$521.91** | -1.55% | 49.02 | $512.91 / $437.93 | $498.43 | 21.62x | 18.8% | $2.99B | **20.92%** | 75.8% | Net Insider Buying (Tích cực) | CLEAR (2027-01-27 AMC) | **90** | BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader) |
 | **`OXY`** | Upstream Oil & Carbon Capture | **$64.0** | 1.57% | 64.42 | $60.18 / $56.07 | $61.0 | 12.76x | 53.4% | $3.79B | **10.53%** | 58.29% | Neutral / Routine | UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động | **90** | BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader) |
 | **`PG`** | Consumer Household Staples | **$161.57** | 0.61% | 62.68 | $149.99 / $148.92 | $154.72 | 21.85x | 4.0% | $12.65B | **7.48%** | 71.84% | Net Insider Buying (Tích cực) | CLEAR (2027-01-21 BMO) | **90** | BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader) |
 | **`JPM`** | Global Diversified Banking | **$337.04** | -1.9% | 49.05 | $343.29 / $322.95 | $323.09 | 13.2x | 10.2% | N/A | **10.75%** | 75.6% | Net Insider Buying (Tích cực) | CLEAR (2027-01-14 BMO) | **85** | BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader) |
@@ -76,13 +76,13 @@
 | **`INTC`** | Legacy CPU & Foundry Turnaround | **$65.76** | -28.58% | 25.1 | $101.11 / $86.86 | $52.04 | 33.69x | 20.9% | $0.67B | **53.62%** | 62.81% | Neutral / Routine | CLEAR (2027-01-28 AMC) | **20** | TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value) |
 | **`ARM`** | Semiconductor IP Architecture | **$205.97** | -9.97% | 34.86 | $258.73 / $228.93 | $177.37 | 67.17x | 22.4% | $1.33B | **41.14%** | 96.25% | Net Insider Buying (Tích cực) | IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC | **20** | NEUTRAL — ĐI NGANG / QUAN SÁT (Hold & Watch) |
 | **`NVO`** | Biopharma GLP-1 Leader | **$40.0** | 2.2% | 53.9 | $41.23 / $44.19 | $38.46 | 11.63x | 2.1% | $5.62B | **12.42%** | 9.83% | Neutral / Routine | IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC | **5** | NEUTRAL — ĐI NGANG / QUAN SÁT (Hold & Watch) |
-| **`LMT`** | Aerospace & Defense | **$636.95** | -1.03% | 75.5 | $544.1 / $568.41 | $595.2 | 19.14x | 11.3% | $5.65B | **2.45%** | 76.77% | Neutral / Routine | CLEAR (2027-01-26 BMO) | **5** | OVERBOUGHT — QUÁ MUA / CHỜ ĐIỀU CHỈNH VỀ MA20 |
+| **`LMT`** | Aerospace & Defense | **$636.95** | -1.03% | 75.5 | $544.1 / $568.41 | $595.2 | 19.12x | 11.3% | $5.65B | **2.45%** | 76.77% | Neutral / Routine | CLEAR (2027-01-26 BMO) | **5** | OVERBOUGHT — QUÁ MUA / CHỜ ĐIỀU CHỈNH VỀ MA20 |
 | **`WMT`** | Discount Retail & Grocery | **$123.51** | 1.86% | 72.71 | $110.23 / $118.51 | $118.22 | 38.28x | 5.9% | $7.13B | **3.21%** | 38.34% | Net Insider Selling (Chốt lời nội bộ) | UPCOMING EARNINGS (18d, BMO) — Lưu ý biến động | **0** | OVERBOUGHT — QUÁ MUA / CHỜ ĐIỀU CHỈNH VỀ MA20 |
-| **`MCD`** | Global Quick Service Restaurants | **$258.12** | 0.29% | 68.03 | $248.28 / $283.18 | $248.49 | 18.78x | 3.7% | $6.26B | **13.01%** | 76.53% | Neutral / Routine | IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC | **0** | NEUTRAL — ĐI NGANG / QUAN SÁT (Hold & Watch) |
+| **`MCD`** | Global Quick Service Restaurants | **$258.12** | 0.29% | 68.03 | $248.28 / $283.18 | $248.49 | 18.8x | 3.7% | $6.26B | **13.01%** | 76.53% | Neutral / Routine | IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC | **0** | NEUTRAL — ĐI NGANG / QUAN SÁT (Hold & Watch) |
 | **`GOOGL`** | Search & Hyperscale Cloud | **$279.84** | -1.4% | 21.38 | $339.07 / $340.66 | $258.16 | 18.49x | 24.7% | $-1.16B | **45.28%** | 80.76% | Neutral / Routine | JUST REPORTED (4d ago) — Đã qua rủi ro BCTC | **-15** | BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim) |
-| **`AMZN`** | E-Commerce & AWS Cloud | **$240.35** | -1.41% | 38.26 | $254.28 / $243.4 | $224.92 | 22.57x | 12.1% | $-11.55B | **36.34%** | 68.78% | Net Insider Buying (Tích cực) | JUST REPORTED (3d ago) — Đã qua rủi ro BCTC | **-15** | BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim) |
+| **`AMZN`** | E-Commerce & AWS Cloud | **$240.35** | -1.41% | 38.26 | $254.28 / $243.4 | $224.92 | 22.39x | 12.1% | $-11.55B | **36.34%** | 68.78% | Net Insider Buying (Tích cực) | JUST REPORTED (3d ago) — Đã qua rủi ro BCTC | **-15** | BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim) |
 | **`TSLA`** | EV, Autonomy & Robotics | **$399.81** | -0.87% | 60.86 | $369.6 / $385.3 | $371.04 | 185.5x | -0.2% | $4.97B | **3.0%** | 43.73% | Net Insider Buying (Tích cực) | CLEAR (2027-01-27 AMC) | **-15** | BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim) |
-| **`COIN`** | Crypto Asset Exchange | **$143.54** | -10.62% | 31.91 | $179.74 / $178.25 | $122.89 | 49.74x | -34.2% | $3.68B | **43.53%** | 68.51% | Neutral / Routine | JUST REPORTED (3d ago) — Đã qua rủi ro BCTC | **-15** | BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim) |
+| **`COIN`** | Crypto Asset Exchange | **$143.54** | -10.62% | 31.91 | $179.74 / $178.25 | $122.89 | 50.17x | -34.2% | $3.68B | **43.53%** | 68.51% | Neutral / Routine | JUST REPORTED (3d ago) — Đã qua rủi ro BCTC | **-15** | BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim) |
 | **`QCOM`** | Mobile & Edge AI Processors | **$164.79** | -11.12% | 38.84 | $177.83 / $169.52 | $149.85 | 16.18x | -4.0% | $10.24B | **19.12%** | 83.47% | Neutral / Routine | IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC | **-30** | BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim) |
 
 ## 5. Ma Trận Đồng Thuận & Giải Quyết Xung Đột Liên Phòng Ban (5-Department Closed-Loop Consensus)

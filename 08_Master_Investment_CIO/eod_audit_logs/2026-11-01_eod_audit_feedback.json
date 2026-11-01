@@ -7,10 +7,10 @@
     "specialist": "Alex (Ban 7 Global)",
     "score": 79.0,
     "strengths": [
-      "Kỳ vọng [MSFT]: R:R = 1:3.06, EV = +10.3%.",
-      "Kỳ vọng [V]: R:R = 1:2.40, EV = +6.1%.",
-      "Kỳ vọng [JPM]: R:R = 1:2.24, EV = +7.0%.",
-      "Kỳ vọng [PG]: R:R = 1:2.40, EV = +8.2%."
+      "Kỳ vọng [MSFT]: R:R = 1:4.09, EV = +10.3%.",
+      "Kỳ vọng [V]: R:R = 1:2.79, EV = +6.1%.",
+      "Kỳ vọng [JPM]: R:R = 1:2.47, EV = +7.0%.",
+      "Kỳ vọng [PG]: R:R = 1:2.79, EV = +8.2%."
     ],
     "critical_flaws_caught": [
       "LỖI TƯƠNG QUAN BÁN DẪN (SECTOR CONCENTRATION): Alex đề xuất cả NVDA (15%), AVGO (14%), TSM (13%) tổng cộng chiếm tới 42% danh mục US. Mặc dù đây là các siêu cổ phiếu FCF khủng, nhưng mức độ tương quan cụm (Cluster Correlation) lên tới 0.78, khuếch đại rủi ro khi có tin xấu về kiểm soát xuất khẩu chip.",
@@ -24,12 +24,12 @@
     "strengths": [
       "Chuẩn hóa lô [HPG]: 400 CP tuân thủ 100% quy định sàn HOSE.",
       "Kỷ luật cắt lỗ [HPG]: Stop 4.19% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.",
-      "Tỷ lệ R:R [HPG]: 1:2.25 đạt chuẩn kỳ vọng toán học dương.",
-      "Chất lượng BCTC [HPG]: OCF/LNST = 1.29 tiền thật dồi dào, Beneish = SAFE.",
+      "Tỷ lệ R:R [HPG]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.",
+      "Chất lượng BCTC [HPG]: OCF/LNST = 1.35 tiền thật dồi dào, Beneish = SAFE.",
       "Chuẩn hóa lô [FPT]: 100 CP tuân thủ 100% quy định sàn HOSE.",
       "Kỷ luật cắt lỗ [FPT]: Stop 5.37% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.",
-      "Tỷ lệ R:R [FPT]: 1:2.25 đạt chuẩn kỳ vọng toán học dương.",
-      "Chất lượng BCTC [FPT]: OCF/LNST = 1.15 tiền thật dồi dào, Beneish = SAFE."
+      "Tỷ lệ R:R [FPT]: 1:2.60 đạt chuẩn kỳ vọng toán học dương.",
+      "Chất lượng BCTC [FPT]: OCF/LNST = 1.25 tiền thật dồi dào, Beneish = SAFE."
     ],
     "critical_flaws_caught": [
       "LỖI THỜI ĐIỂM (TIMING RISK): Minh Quân để ngỏ khả năng khớp FPT ngay đầu phiên ATO lúc 9h00. Master CIO bắt lỗi: Lực cầu ATO thường bị kéo giá ảo (Upthrust). Bắt buộc phải chuyển sang Lệnh Limit chờ rung lắc sau 9h30 quanh 52,400 - 52,500 ₫.",

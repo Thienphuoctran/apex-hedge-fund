@@ -14,12 +14,12 @@
 ### ✅ Những Điểm Làm Đúng & Kỷ Luật Được Khen Ngợi:
 - **ĐẠT CHUẨN**: Chuẩn hóa lô [HPG]: 400 CP tuân thủ 100% quy định sàn HOSE.
 - **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [HPG]: Stop 4.19% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
-- **ĐẠT CHUẨN**: Tỷ lệ R:R [HPG]: 1:2.25 đạt chuẩn kỳ vọng toán học dương.
-- **ĐẠT CHUẨN**: Chất lượng BCTC [HPG]: OCF/LNST = 1.29 tiền thật dồi dào, Beneish = SAFE.
+- **ĐẠT CHUẨN**: Tỷ lệ R:R [HPG]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.
+- **ĐẠT CHUẨN**: Chất lượng BCTC [HPG]: OCF/LNST = 1.35 tiền thật dồi dào, Beneish = SAFE.
 - **ĐẠT CHUẨN**: Chuẩn hóa lô [FPT]: 100 CP tuân thủ 100% quy định sàn HOSE.
 - **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [FPT]: Stop 5.37% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
-- **ĐẠT CHUẨN**: Tỷ lệ R:R [FPT]: 1:2.25 đạt chuẩn kỳ vọng toán học dương.
-- **ĐẠT CHUẨN**: Chất lượng BCTC [FPT]: OCF/LNST = 1.15 tiền thật dồi dào, Beneish = SAFE.
+- **ĐẠT CHUẨN**: Tỷ lệ R:R [FPT]: 1:2.60 đạt chuẩn kỳ vọng toán học dương.
+- **ĐẠT CHUẨN**: Chất lượng BCTC [FPT]: OCF/LNST = 1.25 tiền thật dồi dào, Beneish = SAFE.
 
 ### ⚠️ LỖI SAI LỆCH VÀ THIẾU SÓT BỊ MASTER CIO BẮT LỖI:
 > [!WARNING]
@@ -39,10 +39,10 @@
 *Chấm điểm chất lượng báo cáo & sổ lệnh: **79.0/100***
 
 ### ✅ Những Điểm Làm Đúng & Kỷ Luật Được Khen Ngợi:
-- **ĐẠT CHUẨN**: Kỳ vọng [MSFT]: R:R = 1:3.06, EV = +10.3%.
-- **ĐẠT CHUẨN**: Kỳ vọng [V]: R:R = 1:2.40, EV = +6.1%.
-- **ĐẠT CHUẨN**: Kỳ vọng [JPM]: R:R = 1:2.24, EV = +7.0%.
-- **ĐẠT CHUẨN**: Kỳ vọng [PG]: R:R = 1:2.40, EV = +8.2%.
+- **ĐẠT CHUẨN**: Kỳ vọng [MSFT]: R:R = 1:4.09, EV = +10.3%.
+- **ĐẠT CHUẨN**: Kỳ vọng [V]: R:R = 1:2.79, EV = +6.1%.
+- **ĐẠT CHUẨN**: Kỳ vọng [JPM]: R:R = 1:2.47, EV = +7.0%.
+- **ĐẠT CHUẨN**: Kỳ vọng [PG]: R:R = 1:2.79, EV = +8.2%.
 
 ### ⚠️ LỖI SAI LỆCH VÀ RỦI RO BỊ MASTER CIO BẮT LỖI:
 > [!WARNING]

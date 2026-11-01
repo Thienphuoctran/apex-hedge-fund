@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-01T04:39:18.627977+00:00",
+  "timestamp_utc": "2026-11-01T06:22:01.412283+00:00",
   "scan_date": "2026-11-01",
   "total_us_filings_count": 370,
   "total_vn_announcements_count": 26,
@@ -4903,18 +4903,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "VinSpeed huy động 10.000 nhân sự, 1.300 dầm bê tông, máy đào hầm 13 m trên đại công trường đường sắt 350 km/h TP.HCM - Cần Giờ",
-      "summary": "VinSpeed đang tăng tốc thi công tuyến đường sắt tốc độ cao Bến Thành - Cần Giờ dài 54 km, dự kiến huy động tới 10.000 công nhân, kỹ sư trong giai đoạn cao điểm, hướng tới hoàn thành và chạy thử vào quý IV/2028....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 30 Oct 26 13:50:00 +0700",
-      "source_url": "https://cafef.vn/vinspeed-huy-dong-10000-nhan-su-1300-dam-be-tong-may-dao-ham-13-m-tren-dai-cong-truong-duong-sat-350-km-h-tphcm-can-gio-188261030134649898.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "FPT"
       ],
       "title": "Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị \"xả\" mạnh nhất",
@@ -5067,6 +5055,18 @@
       "severity": "INFO",
       "published_at": "Sat, 31 Oct 26 08:00:00 +0700",
       "source_url": "https://cafef.vn/thanh-pho-cuoi-tuan-qtopia-du-gan-de-di-moi-tuan-du-vui-de-quay-lai-nhieu-lan-188261030155445041.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Trung tâm Tài chính quốc tế TP.HCM công bố 10 thành viên đầu tiên",
+      "summary": "VIFC-HCMC công bố 10 thành viên đầu tiên với tổng vốn điều lệ đăng ký và cam kết góp 33,63 triệu USD, cùng kế hoạch huy động và đầu tư khoảng 2,7 tỷ USD đến năm 2027, tập trung vào các lĩnh vực hạ tầng, giáo dục, năng lư...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 29 Oct 2026 03:27:00 GMT",
+      "source_url": "https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm"
     },
     {
       "market": "VIETNAM",

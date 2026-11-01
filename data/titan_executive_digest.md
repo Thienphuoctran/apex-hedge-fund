@@ -1,5 +1,5 @@
 # TITAN EXECUTIVE STATE DIGEST & LOSSLESS INDEX (2026-11-01)
-> **Cơ chế Titan Pipeline:** File này giúp Agent nắm bắt **100% quyết định cốt lõi của 9 Phòng Ban** chỉ với **~1,500 tokens** (tiết kiệm **~85% token** so với đọc thô `73,905` tokens).
+> **Cơ chế Titan Pipeline:** File này giúp Agent nắm bắt **100% quyết định cốt lõi của 9 Phòng Ban** chỉ với **~1,500 tokens** (tiết kiệm **~85% token** so với đọc thô `72,716` tokens).
 > **Quy tắc Bảo toàn Chất lượng 100%:** Khi cần phân tích sâu BCTC hoặc chi tiết cổ phiếu nào, Agent dùng `read_file` với `StartLine` và `EndLine` tra cứu trong `data/titan_line_index.json` hoặc chạy `python scripts/titan_token_optimizer.py --ticker <MÃ_CP>` để lấy **nguyên văn 100%** phân tích của mã đó.
 
 ---
@@ -13,7 +13,7 @@
 ---
 
 ## 2. SỔ LỆNH THỰC THI QUỐC TẾ — CHUYÊN VIÊN ALEX & BAN 8 MASTER CIO
-- **Ngày hiệu lực:** `2026-11-01` | **Vốn tham chiếu:** `$100,000.0` (`2,540,000,000` VNĐ)
+- **Ngày hiệu lực:** `2026-11-01` | **Vốn tham chiếu:** `$590.5` (`15,000,000` VNĐ)
 
 | Mã CP | Sàn | Nhánh Chiến Lược | Giá Hiện Tại & Điểm Mua Limit | Cắt Lỗ Cứng (Stop 2xATR) | Chốt Lời (TP1 / TP2) | Tỷ Lệ R:R | Kỳ Vọng EV% |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -42,14 +42,14 @@
 | `global_mentor_ban6` | `06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-01_Mentor_Briefing.md` | 47 dòng | 4.9 KB | ~1,442 tokens |
 | `global_alex_ban7` | `07_Daily_Investment_Specialist/2026-11-01_Daily_Specialist_Decision.md` | 181 dòng | 32.4 KB | ~9,490 tokens |
 | `vn_macro_ban1` | `VN_Market/01_Macro_Monetary_Vietnam/2026-11-01_VN_Macro_Report.md` | 20 dòng | 2.1 KB | ~619 tokens |
-| `vn_bctc_ban2` | `VN_Market/02_BCTC_Equity_Research/2026-11-01_VN_Equity_Analysis.md` | 303 dòng | 47.7 KB | ~13,969 tokens |
-| `vn_synthesis_ban3` | `VN_Market/03_Synthesis_Memos/2026-11-01_VN_Investment_Memo.md` | 34 dòng | 5.5 KB | ~1,602 tokens |
-| `vn_ic_ban4` | `VN_Market/04_Investment_Committee/2026-11-01_VN_IC_Decision.md` | 95 dòng | 11.3 KB | ~3,295 tokens |
+| `vn_bctc_ban2` | `VN_Market/02_BCTC_Equity_Research/2026-11-01_VN_Equity_Analysis.md` | 303 dòng | 47.4 KB | ~13,868 tokens |
+| `vn_synthesis_ban3` | `VN_Market/03_Synthesis_Memos/2026-11-01_VN_Investment_Memo.md` | 34 dòng | 5.5 KB | ~1,608 tokens |
+| `vn_ic_ban4` | `VN_Market/04_Investment_Committee/2026-11-01_VN_IC_Decision.md` | 95 dòng | 11.2 KB | ~3,263 tokens |
 | `vn_learning_ban5` | `VN_Market/05_Learning_And_Evolution/2026-11-01_VN_Learning_Report.md` | 25 dòng | 3.1 KB | ~910 tokens |
 | `vn_mentor_ban6` | `VN_Market/06_Investor_Academy/daily_mentorship/2026-11-01_VN_Mentor_Briefing.md` | 43 dòng | 3.9 KB | ~1,149 tokens |
 | `vn_minh_quan_ban7` | `VN_Market/07_Daily_Specialist/2026-11-01_VN_Specialist_Decision.md` | 300 dòng | 47.9 KB | ~14,010 tokens |
-| `master_cio_ban8` | `08_Master_Investment_CIO/2026-11-01_Master_CIO_Final_Decision.md` | 201 dòng | 26.3 KB | ~7,698 tokens |
-| `victor_sentinel_ban9` | `09_Realtime_Portfolio_Sentinel/live_sentinel_status.md` | 29 dòng | 2.9 KB | ~841 tokens |
+| `master_cio_ban8` | `08_Master_Investment_CIO/2026-11-01_Master_CIO_Final_Decision.md` | 187 dòng | 22.8 KB | ~6,670 tokens |
+| `victor_sentinel_ban9` | `09_Realtime_Portfolio_Sentinel/live_sentinel_status.md` | 28 dòng | 2.8 KB | ~807 tokens |
 
 ---
 
