@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T00:25:02.353625+00:00",
+  "updated_at": "2026-11-02T00:32:55.514311+00:00",
   "briefing_date": "2026-11-02",
   "vix_value": 19.42,
   "vn_localization": {
@@ -910,8 +910,8 @@
       "ban4_verdict": "HOLD & WATCH (Quan sát)",
       "entry_zone": "$39.2 – $40.2",
       "tp1_price": 43.08,
-      "tp2_price": 44.98,
-      "rr_ratio": 3.23,
+      "tp2_price": 44.99,
+      "rr_ratio": 3.24,
       "socratic_question": "Cổ phiếu NVO có điểm IC đạt 65/100 nhưng chỉ còn 2 ngày nữa là công bố BCTC (Biên độ nhảy gap quyền chọn dự kiến ±4.51%). Tại sao Quỹ Định Lượng lại khóa lệnh mua mới lúc này thay vì đánh cược trước giờ ra tin?",
       "paper_trade_cmd": "python scripts/paper_trading_simulator.py buy --symbol NVO --shares 10 --type Core"
     },

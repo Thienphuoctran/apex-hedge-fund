@@ -42,8 +42,15 @@ TELEGRAM_BOT_TOKEN = "9113394586:AAEV3JfSShG3Sl6YEIeqwIky7cTT0XYYccw"
 TELEGRAM_CHAT_ID = "8332675283"
 
 
+try:
+    from scripts.telegram_dispatcher import dispatch_message
+except ImportError:
+    dispatch_message = None
+
 def send_telegram(text: str) -> bool:
     """Gửi thông báo Telegram tới Chủ tịch Phước Trần."""
+    if dispatch_message:
+        return dispatch_message(topic_key="morning_blotter", text=text)
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
         return False
     

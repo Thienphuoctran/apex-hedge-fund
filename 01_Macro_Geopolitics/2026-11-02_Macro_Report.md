@@ -1,6 +1,6 @@
 # [BAN 1 — MACRO & GEOPOLITICS] BÁO CÁO VĨ MÔ, ĐỘ RỘNG THỊ TRƯỜNG, TÍN DỤNG, 12 NGÀNH GICS & 24 BẢN TIN PHỐ WALL TRỰC TUYẾN
 **Ngày kiểm toán**: `2026-11-02` | **Phiên bản**: `v6.0 Audited Zero-Defect`  
-**Chế độ Vĩ mô (`Market Regime`)**: **`Reflationary / Hawkish Rotation`** (`VIX = 19.42`, `US10Y = 4.93%`, `WTI = $102.53`)  
+**Chế độ Vĩ mô (`Market Regime`)**: **`Reflationary / Hawkish Rotation`** (`VIX = 19.42`, `US10Y = 4.93%`, `WTI = $102.48`)  
 **Chỉ Số Định Lượng Chính Sách Tiền Tệ Fed (`Hawkish/Dovish Score`)**: **`HAWKISH / HIGHER-FOR-LONGER (+0.59 / +1.00)`** *(Tổng hợp định lượng từ US10Y Yield, DXY & Áp lực Lạm phát Năng lượng)*
 
 ---
@@ -19,7 +19,7 @@
 | **`^IXIC`** | NASDAQ Composite | US Tech | **25437.0** | -2.86% | -5.34% | +7.22% | 34.74 | 26574.14 / 25055.75 | Pullback in Uptrend (Below MA50, Above MA200) |
 | **`^DJI`** | Dow Jones Industrial | US Blue-Chip | **51770.31** | -1.09% | +1.66% | +8.85% | 45.17 | 52211.42 / 50605.44 | Pullback in Uptrend (Below MA50, Above MA200) |
 | **`^RUT`** | Russell 2000 | US Small-Cap | **2811.84** | -1.66% | +0.19% | +13.41% | 49.61 | 2859.57 / 2805.16 | Pullback in Uptrend (Below MA50, Above MA200) |
-| **`^N225`** | Nikkei 225 | Japan / Asia | **62860.86** | -0.68% | -8.84% | +22.07% | 40.32 | 65613.75 / 61834.63 | Pullback in Uptrend (Below MA50, Above MA200) |
+| **`^N225`** | Nikkei 225 | Japan / Asia | **62881.6** | -0.65% | -8.81% | +22.11% | 40.39 | 65614.16 / 61834.73 | Pullback in Uptrend (Below MA50, Above MA200) |
 | **`^GDAXI`** | DAX Performance Index | Germany / Europe | **25818.21** | -0.85% | +3.52% | +6.99% | 56.44 | 25578.95 / 24893.66 | Strong Uptrend (Above MA50 & MA200) |
 | **`^FTSE`** | FTSE 100 | UK / Europe | **10729.78** | +0.07% | +2.89% | +10.60% | 52.69 | 10704.01 / 10522.77 | Strong Uptrend (Above MA50 & MA200) |
 | **`^HSI`** | Hang Seng Index | Hong Kong / China | **23294.42** | +1.46% | -5.01% | -11.37% | 39.23 | 24575.92 / 25346.66 | Downtrend / Weak (Below MA200) |

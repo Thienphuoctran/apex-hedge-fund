@@ -515,6 +515,13 @@ def compute_anomaly_metrics(position: Dict[str, Any], quote: Dict[str, Any], con
 
 
 def send_telegram_alert(config: Dict[str, Any], text: str):
+    try:
+        from scripts.telegram_dispatcher import dispatch_message
+        if dispatch_message("alerts", text):
+            print("  [+] Đã gửi tin nhắn cảnh báo qua Telegram Dispatcher!")
+            return
+    except Exception:
+        pass
     """Sends message to Telegram Bot if enabled."""
     tg_cfg = config.get("notification_channels", {}).get("telegram", {})
     if not tg_cfg.get("enabled", False):

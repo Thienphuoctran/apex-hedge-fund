@@ -472,7 +472,8 @@ def run_full_audit(force: bool = False, send_tg: bool = True) -> int:
 - **Tình trạng Sổ Lệnh:** {risk_res['checks'].get('total_blotter_orders', 'N/A')}
 - **Kỷ luật Tỷ lệ Risk/Reward:** {risk_res['checks'].get('risk_reward_discipline', 'N/A')}
 - **Kỷ luật Cắt lỗ Hard Stop <= 7.5%:** {risk_res['checks'].get('hard_stop_discipline', 'N/A')}
-- **Radar Công Bố Thông Tin & SEC:** {risk_res['checks'].get('cbtt_radar', 'N/A')} | {risk_res['checks'].get('sec_radar', 'N/A')}
+- **Radar Công Bố Thông Tin & SEC:** {risk_res['checks'].get('cbtt_and_sec_live_radar', 'N/A')}
+- **Xác Thực BCTC 54 Mã VN & Hội Đồng 10 Đại Danh Thủ:** {risk_res['checks'].get('vn_bctc_authenticity', 'N/A')}
 - **Điểm:** `{risk_res['score']}/100`
 
 ### D. Năng Lực Chuyên Viên & Chống Thoái Hóa Chất Lượng (Trọng số 15%)
@@ -507,8 +508,9 @@ def run_full_audit(force: bool = False, send_tg: bool = True) -> int:
         details_txt = (
             f"1. Mã nguồn & Tính toán: {code_res['score']}/100\n"
             f"2. Thể chế & Bách khoa tri thức: {rule_res['score']}/100\n"
-            f"3. Năng lực Alex & Minh Quân: {spec_res['score']}/100\n"
-            f"4. Kết nối Đám mây & Báo động: {conn_res['score']}/100"
+            f"3. Sổ lệnh & Kỷ luật Rủi ro: {risk_res['score']}/100\n"
+            f"4. Năng lực Alex & Minh Quân: {spec_res['score']}/100\n"
+            f"5. Kết nối Đám mây & Báo động: {conn_res['score']}/100"
         )
         sent = send_telegram_audit(today_str, total_score, details_txt)
         if sent:

@@ -1,0 +1,41 @@
+{
+  "system_title": "Apex Hedge Fund — Telegram Multi-Topic & Bidirectional AI Co-Pilot Architecture",
+  "architect": "Palmer — Apex Central System Governance",
+  "bot_username": "Chuyenvienvictor_bot",
+  "bot_token": "9113394586:AAEV3JfSShG3Sl6YEIeqwIky7cTT0XYYccw",
+  "chairman_user_id": "8332675283",
+  "private_chat_id": "8332675283",
+  "group_chat_id": null,
+  "topics_enabled": true,
+  "fallback_to_private_if_unconfigured": true,
+  "topics": {
+    "alerts": {
+      "key": "alerts",
+      "name": "🚨 BÁO ĐỘNG ĐỎ & CANH 2 ĐẦU",
+      "description": "Victor Sentinel: Chốt lời TP1/TP2, Cắt lỗ Stop 2xATR, Rung lắc khẩn cấp",
+      "thread_id": null,
+      "icon_color": 16478046
+    },
+    "morning_blotter": {
+      "key": "morning_blotter",
+      "name": "☀️ BẢN TIN SÁNG & SỔ LỆNH MASTER",
+      "description": "Nghiệm thu 07:00, Khai sáng 07:30, Sổ lệnh Pre-ATO 08:30 & Khung 14:00",
+      "thread_id": null,
+      "icon_color": 16766590
+    },
+    "radar_filings": {
+      "key": "radar_filings",
+      "name": "📡 RADAR SĂN SÓNG & CÔNG BỐ BCTC",
+      "description": "CBTT HOSE/HNX, SEC Edgar Mỹ, Radar cổ phiếu bứt phá dòng tiền mới",
+      "thread_id": null,
+      "icon_color": 7322352
+    },
+    "copilot_chat": {
+      "key": "copilot_chat",
+      "name": "💬 PHÒNG ĐIỀU HÀNH CHAT VỚI PALMER",
+      "description": "Kênh tương tác 2 chiều: Yêu cầu tóm tắt, tổng hợp danh mục, hỏi đáp tư vấn",
+      "thread_id": null,
+      "icon_color": 9367192
+    }
+  }
+}

@@ -47,7 +47,14 @@ def load_telegram_credentials() -> tuple[str, str]:
     return bot_token, chat_id
 
 
+try:
+    from scripts.telegram_dispatcher import dispatch_message
+except ImportError:
+    dispatch_message = None
+
 def send_telegram_message(bot_token: str, chat_id: str, text: str) -> bool:
+    if dispatch_message:
+        return dispatch_message(topic_key="morning_blotter", text=text)
     if not bot_token or not chat_id:
         print("[!] Lỗi: Thiếu Telegram bot_token hoặc chat_id.")
         return False

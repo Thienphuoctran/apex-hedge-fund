@@ -11,7 +11,7 @@
 - **Tỷ giá trung tâm / Thị trường USD/VND**: 25,420 VND/USD
 - **Tăng trưởng tín dụng toàn ngành**: 9.2% (Mục tiêu cả năm: 15.0%)
 - **Tiến độ giải ngân Đầu tư công**: 52.8%
-- **Chỉ số DXY thế giới**: 101.96 | **Lợi suất US10Y**: 4.93% | **Dầu WTI**: $102.56/thùng
+- **Chỉ số DXY thế giới**: 101.94 | **Lợi suất US10Y**: 4.93% | **Dầu WTI**: $102.5/thùng
 
 ---
 
