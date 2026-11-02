@@ -1,31 +1,31 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-02 16:08:21`  
+*Cập nhật gần nhất*: `2026-11-02 17:11:52`  
 *Trạng thái hệ thống*: **`✅ TOÀN BỘ 9 PHÒNG BAN TRỰC CHIẾN 24/7 ỔN ĐỊNH`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`20 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
 ## 1. Giám Sát Cổ Phiếu Đang Đầu Tư (Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR)
 | Mã CP | Thị Trường | Giá Hiện Tại | Biến Động | Ngưỡng Stop 2xATR | Cách Stop | Mục Tiêu TP1 | Cách TP1 | Vol Surge | Trạng Thái Tác Chiến |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`NVDA`** | US_GLOBAL | `207.48 USD` | `+1.39%` | `191.56 USD` | `+7.67%` | `230.80 USD` | `+11.24%` | `0.4x` | ✅ Đang canh 2 đầu |
-| **`AVGO`** | US_GLOBAL | `332.55 USD` | `+1.98%` | `301.62 USD` | `+9.30%` | `378.00 USD` | `+13.67%` | `0.2x` | ✅ Đang canh 2 đầu |
-| **`TSM`** | US_GLOBAL | `409.39 USD` | `+0.80%` | `377.30 USD` | `+7.84%` | `463.79 USD` | `+13.29%` | `0.5x` | ✅ Đang canh 2 đầu |
-| **`GOOGL`** | US_GLOBAL | `283.30 USD` | `+1.24%` | `258.85 USD` | `+8.63%` | `323.20 USD` | `+14.08%` | `0.2x` | ✅ Đang canh 2 đầu |
-| **`HPG`** | VIETNAM | `20,400.00 VND` | `-2.86%` | `19,460.00 VND` | `+4.61%` | `21,710.00 VND` | `+6.42%` | `1.3x` | ⚠️ Cảnh giác giảm |
-| **`TCB`** | VIETNAM | `21,400.00 VND` | `-0.93%` | `20,490.00 VND` | `+4.25%` | `22,680.00 VND` | `+5.98%` | `1.0x` | ✅ Đang canh 2 đầu |
-| **`MBB`** | VIETNAM | `18,750.00 VND` | `-2.85%` | `18,040.00 VND` | `+3.79%` | `19,750.00 VND` | `+5.33%` | `2.3x` | ⚠️ Cảnh giác giảm |
-| **`V`** | US_GLOBAL | `424.86 USD` | `+2.73%` | `398.72 USD` | `+6.15%` | `443.33 USD` | `+4.35%` | `0.3x` | ⚡ **Đang bứt phá mạnh** |
-| **`JPM`** | US_GLOBAL | `341.60 USD` | `+1.35%` | `323.09 USD` | `+5.42%` | `364.94 USD` | `+6.83%` | `0.3x` | ✅ Đang canh 2 đầu |
-| **`PG`** | US_GLOBAL | `162.76 USD` | `+0.74%` | `154.72 USD` | `+4.94%` | `175.27 USD` | `+7.69%` | `0.3x` | ✅ Đang canh 2 đầu |
-| **`COST`** | US_GLOBAL | `1,025.89 USD` | `+1.34%` | `977.28 USD` | `+4.74%` | `1,082.28 USD` | `+5.50%` | `0.3x` | ✅ Đang canh 2 đầu |
-| **`MSFT`** | US_GLOBAL | `523.93 USD` | `+0.39%` | `498.43 USD` | `+4.87%` | `568.87 USD` | `+8.58%` | `0.3x` | ✅ Đang canh 2 đầu |
-| **`XOM`** | US_GLOBAL | `182.01 USD` | `-2.80%` | `178.98 USD` | `+1.67%` | `203.79 USD` | `+11.96%` | `0.3x` | ⚠️ Cảnh giác giảm |
-| **`ABBV`** | US_GLOBAL | `288.50 USD` | `-2.17%` | `281.08 USD` | `+2.57%` | `322.51 USD` | `+11.79%` | `0.6x` | ⚠️ Cảnh giác giảm |
-| **`JNJ`** | US_GLOBAL | `268.53 USD` | `-1.71%` | `257.73 USD` | `+4.02%` | `304.14 USD` | `+13.26%` | `0.3x` | ✅ Đang canh 2 đầu |
+| **`NVDA`** | US_GLOBAL | `206.85 USD` | `+1.08%` | `191.56 USD` | `+7.39%` | `230.80 USD` | `+11.58%` | `0.5x` | ✅ Đang canh 2 đầu |
+| **`AVGO`** | US_GLOBAL | `330.39 USD` | `+1.32%` | `301.62 USD` | `+8.71%` | `378.00 USD` | `+14.41%` | `0.3x` | ✅ Đang canh 2 đầu |
+| **`TSM`** | US_GLOBAL | `406.32 USD` | `+0.05%` | `377.30 USD` | `+7.14%` | `463.79 USD` | `+14.14%` | `0.5x` | ✅ Đang canh 2 đầu |
+| **`GOOGL`** | US_GLOBAL | `283.44 USD` | `+1.29%` | `258.85 USD` | `+8.68%` | `323.20 USD` | `+14.03%` | `0.3x` | ✅ Đang canh 2 đầu |
+| **`HPG`** | VIETNAM | `nan VND` | `+nan%` | `19,460.00 VND` | `+999.00%` | `21,710.00 VND` | `+999.00%` | `1.3x` | ✅ Đang canh 2 đầu |
+| **`TCB`** | VIETNAM | `nan VND` | `+nan%` | `20,490.00 VND` | `+999.00%` | `22,680.00 VND` | `+999.00%` | `1.0x` | ✅ Đang canh 2 đầu |
+| **`MBB`** | VIETNAM | `nan VND` | `+nan%` | `18,040.00 VND` | `+999.00%` | `19,750.00 VND` | `+999.00%` | `2.3x` | ✅ Đang canh 2 đầu |
+| **`V`** | US_GLOBAL | `425.59 USD` | `+2.90%` | `398.72 USD` | `+6.31%` | `443.33 USD` | `+4.17%` | `0.5x` | ⚡ **Đang bứt phá mạnh** |
+| **`JPM`** | US_GLOBAL | `340.81 USD` | `+1.12%` | `323.09 USD` | `+5.20%` | `364.94 USD` | `+7.08%` | `0.4x` | ✅ Đang canh 2 đầu |
+| **`PG`** | US_GLOBAL | `162.97 USD` | `+0.87%` | `154.72 USD` | `+5.06%` | `175.27 USD` | `+7.55%` | `0.4x` | ✅ Đang canh 2 đầu |
+| **`COST`** | US_GLOBAL | `1,033.34 USD` | `+2.08%` | `977.28 USD` | `+5.43%` | `1,082.28 USD` | `+4.74%` | `0.5x` | ✅ Đang canh 2 đầu |
+| **`MSFT`** | US_GLOBAL | `521.42 USD` | `-0.09%` | `498.43 USD` | `+4.41%` | `568.87 USD` | `+9.10%` | `0.4x` | ✅ Đang canh 2 đầu |
+| **`XOM`** | US_GLOBAL | `181.90 USD` | `-2.86%` | `178.98 USD` | `+1.61%` | `203.79 USD` | `+12.03%` | `0.4x` | ⚠️ Cảnh giác giảm |
+| **`ABBV`** | US_GLOBAL | `289.07 USD` | `-1.98%` | `281.08 USD` | `+2.76%` | `322.51 USD` | `+11.57%` | `0.8x` | ✅ Đang canh 2 đầu |
+| **`JNJ`** | US_GLOBAL | `269.20 USD` | `-1.46%` | `257.73 USD` | `+4.26%` | `304.14 USD` | `+12.98%` | `0.4x` | ✅ Đang canh 2 đầu |
 | **`IDC`** | VIETNAM | `25,000.00 VND` | `+0.00%` | `23,750.00 VND` | `+5.00%` | `26,625.00 VND` | `+6.50%` | `1.0x` | ✅ Đang canh 2 đầu |
-| **`MWG`** | VIETNAM | `72,400.00 VND` | `-2.16%` | `69,557.00 VND` | `+3.93%` | `76,096.00 VND` | `+5.10%` | `1.8x` | ⚠️ Cảnh giác giảm |
+| **`MWG`** | VIETNAM | `nan VND` | `+nan%` | `69,557.00 VND` | `+999.00%` | `76,096.00 VND` | `+999.00%` | `1.8x` | ✅ Đang canh 2 đầu |
 | **`MBS`** | VIETNAM | `25,000.00 VND` | `+0.00%` | `23,750.00 VND` | `+5.00%` | `26,625.00 VND` | `+6.50%` | `1.0x` | ✅ Đang canh 2 đầu |
-| **`VCG`** | VIETNAM | `15,100.00 VND` | `+2.03%` | `14,043.00 VND` | `+7.00%` | `16,521.00 VND` | `+9.41%` | `1.3x` | ✅ Đang canh 2 đầu |
-| **`SSI`** | VIETNAM | `18,850.00 VND` | `-2.33%` | `17,971.00 VND` | `+4.66%` | `19,992.00 VND` | `+6.06%` | `1.8x` | ⚠️ Cảnh giác giảm |
+| **`VCG`** | VIETNAM | `nan VND` | `+nan%` | `14,043.00 VND` | `+999.00%` | `16,521.00 VND` | `+999.00%` | `1.3x` | ✅ Đang canh 2 đầu |
+| **`SSI`** | VIETNAM | `nan VND` | `+nan%` | `17,971.00 VND` | `+999.00%` | `19,992.00 VND` | `+999.00%` | `1.8x` | ✅ Đang canh 2 đầu |
 
 ## 2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực
 | Chuyên Viên | Mã CP | Giá Hiện Tại | Tín Hiệu Sóng | Chất Lượng BCTC | Điểm Mua Chuẩn | Cắt Lỗ 2xATR | Chốt Lời TP1 |
