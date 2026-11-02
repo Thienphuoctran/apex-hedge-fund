@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-02 14:01:34  
+> **Thời gian quét:** 2026-11-02 15:01:23  
 > **Số sự kiện ghi nhận:** 29 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
@@ -14,7 +14,7 @@
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Từ 1 con tàu đến đế chế hơn 1.000 tàu: Gia tộc tỷ phú góp mặt trong siêu cảng gần 5 tỷ USD ở Cần Giờ đang tăng tốc | [Xem Link](https://cafef.vn/tu-1-con-tau-den-de-che-hon-1000-tau-gia-toc-ty-phu-gop-mat-trong-sieu-cang-gan-5-ty-usd-o-can-gio-dang-tang-toc-188261101090831232.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK hé lộ 8 doanh nghiệp đáng chú ý, phù hợp để "xuống tiền" trong tháng 11 | [Xem Link](https://cafef.vn/ctck-he-lo-8-doanh-nghiep-dang-chu-y-phu-hop-de-xuong-tien-trong-thang-11-188261102104310284.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu | [Xem Link](https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-188261102192903264.chn) |
-| **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT mất 120.000 tỷ vốn hóa từ màn hát "Tái sinh" của ông Trương Gia Bình | [Xem Link](https://cafef.vn/fpt-mat-120000-ty-von-hoa-tu-man-hat-tai-sinh-cua-ong-truong-gia-binh-188261102164752939.chn) |
+| **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT mất 120.000 tỷ vốn hóa | [Xem Link](https://cafef.vn/fpt-mat-120000-ty-von-hoa-188261102164752939.chn) |
 | **BID, VCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chứng khoán 'đỏ lửa', loạt cổ phiếu nằm sàn | [Xem Link](https://cafef.vn/chung-khoan-do-lua-loat-co-phieu-nam-san-188261102164122062.chn) |
 | **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán | [Xem Link](https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều tối 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn) |
