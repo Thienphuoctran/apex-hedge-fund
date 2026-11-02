@@ -10,8 +10,8 @@
 
 | STT | Trụ Cột Nghiệm Thu | Cơ Quan Chịu Trách Nhiệm | Kết Quả Rà Soát | Đánh Giá |
 |:---:|:---|:---|:---|:---:|
-| **1** | **Toàn Vẹn Mã Nguồn & Hạ Tầng** | Palmer / System HQ | Đã biên dịch `31` scripts Python: **0 Lỗi Syntax (Zero Error)** | **100/100 (Pass)** |
-| **2** | **Rà Soát Tin Tức CBTT & SEC Đêm Qua** | Ban 1 VN & Ban 2 VN | Quét `28` CBTT HOSE/HNX + `351` SEC EDGAR Filings | **Hoàn Tất 100%** |
+| **1** | **Toàn Vẹn Mã Nguồn & Hạ Tầng** | Palmer / System HQ | Đã biên dịch `33` scripts Python: **0 Lỗi Syntax (Zero Error)** | **100/100 (Pass)** |
+| **2** | **Rà Soát Tin Tức CBTT & SEC Đêm Qua** | Ban 1 VN & Ban 2 VN | Quét `27` CBTT HOSE/HNX + `370` SEC EDGAR Filings | **Hoàn Tất 100%** |
 | **3** | **Thẩm Định BCTC & Sổ Lệnh Master** | Ban 8 Master CIO (James) | Đầy đủ 3 siêu cổ phiếu: HPG, TCB, MBB (Tổng vốn: 18,680,000 ₫) | **100/100 (Pass)** |
 | **4** | **Lá Chắn Sentinel Canh 2 Đầu** | Ban 9 Victor Sentinel | Nạp sẵn sàng: TP1/TP2 Scaling Out + Cắt lỗ Stop 2xATR $\le 7.5\%$ | **100/100 (Pass)** |
 | **5** | **Radar Săn Sóng Tự Động Minh Quân & Alex** | Ban 7 VN & Ban 7 US | Quét 54 mã VN + 35 mã US, lọc sạch BCTC OCF/LNST $\ge 1.0\times$ | **100/100 (Pass)** |
