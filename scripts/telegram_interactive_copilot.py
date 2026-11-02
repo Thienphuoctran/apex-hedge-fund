@@ -421,11 +421,12 @@ def save_last_update_id(last_id: int) -> None:
 
 
 def poll_and_respond_once(bot_token: str, offset: int) -> int:
-    """Lấy các tin nhắn mới từ Telegram và phản hồi ngay lập tức."""
-    url = f"https://api.telegram.org/bot{bot_token}/getUpdates?offset={offset}&timeout=5"
+    """Lấy các tin nhắn mới từ Telegram với cơ chế Short Polling & Connection Close chống 409 Conflict."""
+    url = f"https://api.telegram.org/bot{bot_token}/getUpdates?offset={offset}&timeout=0"
+    req = urllib.request.Request(url, headers={"Connection": "close", "User-Agent": "ApexCopilotBot/1.0"})
     
     try:
-        with urllib.request.urlopen(url, timeout=10) as resp:
+        with urllib.request.urlopen(req, timeout=8) as resp:
             data = json.loads(resp.read().decode("utf-8"))
             if not data.get("ok"):
                 return offset
@@ -442,7 +443,7 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                     chat_type = chat.get("type", "")
                     if chat_type in ["group", "supergroup"]:
                         group_id = str(chat.get("id"))
-                        print(f"[!] PHÁT HIỆN BOT ĐƯỢC THÊM VÀO GROUP: {chat.get('title')} (ID: {group_id})")
+                        log_daemon(f"[!] PHÁT HIỆN BOT ĐƯỢC THÊM VÀO GROUP: {chat.get('title')} (ID: {group_id})")
                         provision_all_topics_for_group(group_id)
                         send_raw_telegram(
                             bot_token=bot_token,
@@ -459,7 +460,7 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                 if not text:
                     continue
                     
-                print(f"[+] Nhận tin nhắn từ {chat_id}: '{text}'")
+                log_daemon(f"[+] Nhận tin nhắn từ {chat_id}: '{text}'")
                 
                 # Nếu gõ /start hoặc /menu: Gửi lời chào kèm bàn phím ảo
                 if text in ["/start", "/menu", "menu", "bắt đầu"]:
@@ -488,8 +489,19 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                     reply_markup=get_interactive_keyboard()
                 )
                 
+    except urllib.error.HTTPError as e:
+        if e.code == 409:
+            log_daemon("[BACKOFF 409] Kết nối Telegram cũ đang giải phóng. Tạm nghỉ 5 giây...")
+            time.sleep(5)
+        elif e.code == 429:
+            log_daemon("[BACKOFF 429 Rate Limit] Bị hạn chế tốc độ Telegram. Tạm nghỉ 15 giây...")
+            time.sleep(15)
+        else:
+            log_daemon(f"[!] HTTP Error {e.code}: {e}")
+            time.sleep(2)
     except Exception as e:
-        print(f"[!] Lỗi khi poll tin nhắn Telegram: {e}")
+        log_daemon(f"[!] Ngoại lệ kết nối Telegram: {e}")
+        time.sleep(2)
         
     return offset
 
@@ -551,7 +563,7 @@ def run_daemon():
                 log_daemon(f"[ALIVE KEEP-ALIVE] Palmer Co-Pilot Daemon đang trực chiến 24/7. Offset: {offset}")
                 last_heartbeat = now
                 
-            time.sleep(1)
+            time.sleep(2)
         except KeyboardInterrupt:
             log_daemon("[*] Dừng dịch vụ Co-Pilot Daemon theo yêu cầu.")
             break
