@@ -1,16 +1,16 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-02 01:40:52  
+> **Thời gian quét:** 2026-11-02 02:41:30  
 > **Số sự kiện ghi nhận:** 28 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **IDC** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Loạt đại gia bất động sản báo lợi nhuận lao dốc 35-99% sau 9 tháng | [Xem Link](https://cafef.vn/loat-dai-gia-bat-dong-san-bao-loi-nhuan-lao-doc-35-99-sau-9-thang-188261102090527403.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM | [Xem Link](https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan | [Xem Link](https://cafef.vn/ly-do-chuyen-bay-cua-vna-ha-canh-khan-cap-tai-pakistan-188261101135436257.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Từ 1 con tàu đến đế chế hơn 1.000 tàu: Gia tộc tỷ phú góp mặt trong siêu cảng gần 5 tỷ USD ở Cần Giờ đang tăng tốc | [Xem Link](https://cafef.vn/tu-1-con-tau-den-de-che-hon-1000-tau-gia-toc-ty-phu-gop-mat-trong-sieu-cang-gan-5-ty-usd-o-can-gio-dang-tang-toc-188261101090831232.chn) |
 | **DXG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bluemarq Group (DXG) ghi nhận kỷ lục hơn 9.000 tỷ đồng tiền người mua nhà trả trước | [Xem Link](https://cafef.vn/bluemarq-group-dxg-ghi-nhan-ky-luc-hon-9000-ty-dong-tien-nguoi-mua-nha-tra-truoc-188261031182126111.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Becamex Group ‘rót’ thêm hơn 375 tỷ đồng vào doanh nghiệp làm dự án đường cao tốc | [Xem Link](https://cafef.vn/becamex-group-rot-them-hon-375-ty-dong-vao-doanh-nghiep-lam-du-an-duong-cao-toc-188261031071650337.chn) |
 | **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Cập nhật BCTC quý 3/2026 ngày 31/10: BSR, SHB, Eximbank, Vietnam Airlines cùng nhiều doanh nghiệp lớn công bố, kết quả bất ngờ | [Xem Link](https://cafef.vn/cap-nhat-bctc-quy-3-2026-ngay-31-10-bsr-shb-eximbank-vietnam-airlines-cung-nhieu-doanh-nghiep-lon-cong-bo-ket-qua-bat-ngo-188261031002348599.chn) |
-| **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Nhà máy lọc dầu 3 tỷ USD của Việt Nam lần đầu tiên lãi ngay 1 tỷ USD chỉ sau 9 tháng, doanh thu xăng E10 tăng 1.900 lần | [Xem Link](https://cafef.vn/nha-may-loc-dau-3-ty-usd-cua-viet-nam-lan-dau-tien-lai-ngay-1-ty-usd-chi-sau-9-thang-doanh-thu-xang-e10-tang-1900-lan-188261030225946407.chn) |
 | **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán | [Xem Link](https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị "xả" mạnh nhất | [Xem Link](https://cafef.vn/khoi-ngoai-ban-rong-gan-3000-ty-trong-tuan-cuoi-thang-10-fpt-bi-xa-manh-nhat-188261031001137094.chn) |
 | **HPG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thành viên HĐQT Hòa Phát muốn bán bớt cổ phiếu HPG | [Xem Link](https://cafef.vn/thanh-vien-hdqt-hoa-phat-muon-ban-bot-co-phieu-hpg-18826103017051392.chn) |

@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-02T01:40:52.484457+00:00",
+  "timestamp_utc": "2026-11-02T02:41:30.574941+00:00",
   "scan_date": "2026-11-02",
   "total_us_filings_count": 370,
   "total_vn_announcements_count": 28,
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "IDC": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Loạt đại gia bất động sản báo lợi nhuận lao dốc 35-99% sau 9 tháng",
+      "severity": "CRITICAL",
+      "published_at": "Mon, 02 Nov 26 09:03:00 +0700",
+      "source_url": "https://cafef.vn/loat-dai-gia-bat-dong-san-bao-loi-nhuan-lao-doc-35-99-sau-9-thang-188261102090527403.chn",
+      "total_announcements": 1
+    },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM",
@@ -306,7 +314,7 @@
       "severity": "CRITICAL",
       "published_at": "Sat, 31 Oct 26 00:23:00 +0700",
       "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-ngay-31-10-bsr-shb-eximbank-vietnam-airlines-cung-nhieu-doanh-nghiep-lon-cong-bo-ket-qua-bat-ngo-188261031002348599.chn",
-      "total_announcements": 3
+      "total_announcements": 2
     },
     "REE": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4827,6 +4835,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "IDC"
+      ],
+      "title": "Loạt đại gia bất động sản báo lợi nhuận lao dốc 35-99% sau 9 tháng",
+      "summary": "Hàng loạt doanh nghiệp bất động sản ghi nhận lợi nhuận trước thuế 9 tháng đầu năm 2026 sụt giảm mạnh so với cùng kỳ, trong đó nhiều tên tuổi lớn như Becamex IDC, Nam Long, Đất Xanh, Sonadezi......",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Mon, 02 Nov 26 09:03:00 +0700",
+      "source_url": "https://cafef.vn/loat-dai-gia-bat-dong-san-bao-loi-nhuan-lao-doc-35-99-sau-9-thang-188261102090527403.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
       "title": "Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM",
@@ -4895,18 +4915,6 @@
       "severity": "CRITICAL",
       "published_at": "Sat, 31 Oct 26 00:23:00 +0700",
       "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-ngay-31-10-bsr-shb-eximbank-vietnam-airlines-cung-nhieu-doanh-nghiep-lon-cong-bo-ket-qua-bat-ngo-188261031002348599.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "BSR"
-      ],
-      "title": "Nhà máy lọc dầu 3 tỷ USD của Việt Nam lần đầu tiên lãi ngay 1 tỷ USD chỉ sau 9 tháng, doanh thu xăng E10 tăng 1.900 lần",
-      "summary": "Lợi nhuận 9 tháng của BSR lên sát mốc 25.000 tỷ đồng. Dầu diesel đang là nguồn lợi nhuận chủ lực, trong khi doanh thu xăng sinh học tăng mạnh....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sat, 31 Oct 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/nha-may-loc-dau-3-ty-usd-cua-viet-nam-lan-dau-tien-lai-ngay-1-ty-usd-chi-sau-9-thang-doanh-thu-xang-e10-tang-1900-lan-188261030225946407.chn"
     },
     {
       "market": "VIETNAM",

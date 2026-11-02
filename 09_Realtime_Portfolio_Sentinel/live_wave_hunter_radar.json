@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 01:41:43",
+  "generated_at": "2026-11-02 02:41:40",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "IDC",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Mon, 02 Nov 26 0",
+      "headline": "Loạt đại gia bất động sản báo lợi nhuận lao dốc 35-99% sau 9 tháng",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Sun, 01 Nov 26 2",
@@ -363,14 +371,6 @@
       "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
       "date": "Sat, 31 Oct 26 0",
       "headline": "Cập nhật BCTC quý 3/2026 ngày 31/10: BSR, SHB, Eximbank, Vietnam Airlines cùng nhiều doanh nghiệp lớn công bố, kết quả bất ngờ",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "BSR",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Sat, 31 Oct 26 0",
-      "headline": "Nhà máy lọc dầu 3 tỷ USD của Việt Nam lần đầu tiên lãi ngay 1 tỷ USD chỉ sau 9 tháng, doanh thu xăng E10 tăng 1.900 lần",
       "is_portfolio_holding": false
     },
     {
