@@ -10,8 +10,8 @@
 ## 1. Kết Quả Kiểm Toán 5 Trụ Cột Chi Tiết
 
 ### A. Toàn Vẹn Mã Nguồn & Công Cụ Tính Toán (Trọng số 25%)
-- **Số tệp Python đã quét:** 33 tệp.
-- **Số tệp biên dịch chuẩn:** 33 tệp.
+- **Số tệp Python đã quét:** 35 tệp.
+- **Số tệp biên dịch chuẩn:** 35 tệp.
 - **Lỗi cú pháp:** 0 lỗi.
 - **Điểm:** `100/100`
 
@@ -26,7 +26,7 @@
 - **Tình trạng Sổ Lệnh:** 7 lệnh hợp nhất US & VN đang theo dõi
 - **Kỷ luật Tỷ lệ Risk/Reward:** CHUẨN THỂ CHẾ (100% lệnh R:R >= 1:2.0)
 - **Kỷ luật Cắt lỗ Hard Stop <= 7.5%:** CHUẨN THỂ CHẾ (100% lệnh Stop Loss <= 7.5%)
-- **Radar Công Bố Thông Tin & SEC:** HOẠT ĐỘNG 24/7 (370 hồ sơ SEC EDGAR Mỹ • 27 công bố thông tin CBTT Việt Nam)
+- **Radar Công Bố Thông Tin & SEC:** HOẠT ĐỘNG 24/7 (370 hồ sơ SEC EDGAR Mỹ • 28 công bố thông tin CBTT Việt Nam)
 - **Xác Thực BCTC 54 Mã VN & Hội Đồng 10 Đại Danh Thủ:** XÁC THỰC 100% (54/54 mã BCTC thật • 54/54 mã có Điểm 10 Đại Danh Thủ)
 - **Điểm:** `100/100`
 
