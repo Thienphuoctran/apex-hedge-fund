@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T13:38:26.391796+00:00",
+  "updated_at": "2026-11-02T00:25:02.353625+00:00",
   "hit_rate_pct": 84.2,
   "wins_count": 16,
   "losses_count": 3,
@@ -19,41 +19,42 @@
   "adaptive_tech_weight": 20,
   "min_cash_reserve_pct": 30.0,
   "imminent_earnings_locked": [
-    "AAPL (1d)",
-    "AMD (2d)",
-    "QCOM (3d)",
-    "ARM (3d)",
-    "PLTR (1d)",
-    "SMCI (2d)",
-    "BRK-B (6d)",
-    "NVO (3d)",
-    "MCD (3d)"
+    "AAPL (0d)",
+    "AMD (1d)",
+    "QCOM (2d)",
+    "ARM (2d)",
+    "PLTR (0d)",
+    "SMCI (1d)",
+    "BRK-B (5d)",
+    "NVO (2d)",
+    "OXY (7d)",
+    "MCD (2d)"
   ],
   "just_reported_cleared": [
-    "GOOGL (4d ago)",
-    "AMZN (3d ago)",
-    "COIN (3d ago)",
-    "LLY (3d ago)",
-    "ABBV (2d ago)"
+    "GOOGL (5d ago)",
+    "AMZN (4d ago)",
+    "COIN (4d ago)",
+    "LLY (4d ago)",
+    "ABBV (3d ago)"
   ],
   "walk_forward_horizons": {
     "T_minus_1d": {
       "horizon": "T-1 (1 Phiên)",
-      "portfolio_return_pct": -0.3,
+      "portfolio_return_pct": -0.29,
       "sp500_benchmark_pct": -1.82,
-      "realized_alpha_pct": 1.52
+      "realized_alpha_pct": 1.53
     },
     "T_minus_5d": {
       "horizon": "T-5 (1 Tuần)",
-      "portfolio_return_pct": 0.38,
+      "portfolio_return_pct": 0.52,
       "sp500_benchmark_pct": -0.57,
-      "realized_alpha_pct": 0.95
+      "realized_alpha_pct": 1.09
     },
     "T_minus_20d": {
       "horizon": "T-20 (1 Tháng)",
-      "portfolio_return_pct": 3.79,
+      "portfolio_return_pct": 3.94,
       "sp500_benchmark_pct": -1.13,
-      "realized_alpha_pct": 4.92
+      "realized_alpha_pct": 5.07
     }
   },
   "top_attribution_items": [
@@ -263,8 +264,8 @@
     }
   ],
   "latest_lessons": [
-    "**Bài học 1 (Thích nghi Chế độ Biến động VIX = 19.42 < 20)**: Khi VIX lùi xuống dưới 20 (`19.42`), hệ thống tự động phân bổ trọng số chuẩn xác **100%** (`Vĩ mô 25% + BCTC/FCF 30% + Định giá 25% + Kỹ thuật 20% = 100%`), đồng thời duy trì kỷ luật ATR Risk-Parity giúp danh mục tạo Alpha `+1.52%` so với S&P 500.",
-    "**Bài học 2 (Kỷ luật Khóa Mua Mới Trước BCTC <= 7 Ngày)**: Hệ thống đã tự động khóa giải ngân mới và loại khỏi bảng phân bổ Risk-Parity đối với 4 mã sắp công bố BCTC (`AAPL (1d), AMD (2d), QCOM (3d), ARM (3d), PLTR (1d), SMCI (2d), BRK-B (6d), NVO (3d), MCD (3d)`), trong khi các mã vừa công bố xong (`GOOGL (4d ago), AMZN (3d ago), COIN (3d ago), LLY (3d ago), ABBV (2d ago)`) đã thoát rủi ro nhảy gap sự kiện.",
+    "**Bài học 1 (Thích nghi Chế độ Biến động VIX = 19.42 < 20)**: Khi VIX lùi xuống dưới 20 (`19.42`), hệ thống tự động phân bổ trọng số chuẩn xác **100%** (`Vĩ mô 25% + BCTC/FCF 30% + Định giá 25% + Kỹ thuật 20% = 100%`), đồng thời duy trì kỷ luật ATR Risk-Parity giúp danh mục tạo Alpha `+1.53%` so với S&P 500.",
+    "**Bài học 2 (Kỷ luật Khóa Mua Mới Trước BCTC <= 7 Ngày)**: Hệ thống đã tự động khóa giải ngân mới và loại khỏi bảng phân bổ Risk-Parity đối với 4 mã sắp công bố BCTC (`AAPL (0d), AMD (1d), QCOM (2d), ARM (2d), PLTR (0d), SMCI (1d), BRK-B (5d), NVO (2d), OXY (7d), MCD (2d)`), trong khi các mã vừa công bố xong (`GOOGL (5d ago), AMZN (4d ago), COIN (4d ago), LLY (4d ago), ABBV (3d ago)`) đã thoát rủi ro nhảy gap sự kiện.",
     "**Bài học 3 (Độ tin cậy của True FCF ex-SBC, EVA Spread & SEC Form 4)**: Các doanh nghiệp có dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC > 0`), `ROIC > WACC` và giao dịch nội bộ mua ròng (`MSFT`, `JPM`, `PG`) giữ giá vượt trội trong các phiên chỉ số chung điều chỉnh."
   ],
   "contextual_memory_vault": [

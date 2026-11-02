@@ -2794,8 +2794,8 @@
       "roic_pct": 17.02,
       "wacc_pct": 8.81,
       "eva_spread_pct": 8.21,
-      "graham_intrinsic_value_vnd": 61491.0,
-      "graham_margin_of_safety_pct": -21.2,
+      "graham_intrinsic_value_vnd": 61022.0,
+      "graham_margin_of_safety_pct": -21.8,
       "graham_score": 60.0,
       "lynch_peg_ratio": 1.91,
       "lynch_verdict": "PREMIUM / CYCLICAL (PEG = 1.91x — Cần theo dõi tốc độ bứt phá lợi nhuận quý tới)",
@@ -2809,8 +2809,8 @@
     },
     "master_composite_score": 80.0,
     "piotroski_f_score": 8,
-    "graham_intrinsic_value_vnd": 61491.0,
-    "graham_margin_of_safety_pct": -21.2,
+    "graham_intrinsic_value_vnd": 61022.0,
+    "graham_margin_of_safety_pct": -21.8,
     "lynch_peg_ratio": 1.91,
     "oneil_canslim_score": 88.0,
     "oneil_rs_rating": 95,
@@ -2820,7 +2820,7 @@
     "sector_name": "Dầu Khí & Tiện Ích Năng Lượng",
     "current_price": 78000.0,
     "pe": 14.52,
-    "pb": 2.74
+    "pb": 2.84
   },
   "PVS": {
     "code": "PVS",

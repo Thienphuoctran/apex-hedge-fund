@@ -1,4 +1,4 @@
-# BẢN KIỂM TOÁN SỐ LIỆU TÀI CHÍNH & THỊ TRƯỜNG CHỨNG KHOÁN VIỆT NAM (54/54 MÃ) — 2026-11-01
+# BẢN KIỂM TOÁN SỐ LIỆU TÀI CHÍNH & THỊ TRƯỜNG CHỨNG KHOÁN VIỆT NAM (54/54 MÃ) — 2026-11-02
 **Trạng thái kiểm toán**: ĐÃ ĐỐI SOÁT TOÀN DIỆN (AUDITED & VERIFIED — 100% REAL DATA, ZERO HALLUCINATION)
 **Cơ chế bảo đảm**: 100% số liệu thị giá khớp lệnh từ sở giao dịch HOSE/HNX/UPCoM, số liệu BCTC kiểm toán đối soát 3 báo cáo theo chuẩn VAS/TT200 + Hội Đồng 10 Đại Danh Thủ.
 
@@ -11,7 +11,7 @@
 - **Tỷ giá trung tâm / Thị trường USD/VND**: 25,420 VND/USD
 - **Tăng trưởng tín dụng toàn ngành**: 9.2% (Mục tiêu cả năm: 15.0%)
 - **Tiến độ giải ngân Đầu tư công**: 52.8%
-- **Chỉ số DXY thế giới**: 101.88 | **Lợi suất US10Y**: 4.93% | **Dầu WTI**: $104.12/thùng
+- **Chỉ số DXY thế giới**: 101.96 | **Lợi suất US10Y**: 4.93% | **Dầu WTI**: $102.56/thùng
 
 ---
 
@@ -55,7 +55,7 @@
 | **VCI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 18,500 | -2.63% | 14.86 | 1.26 | **88.0/100** | 9/9 | 26 | `NEUTRAL_TEST` | 1.25x | **AAA** |
 | **HCM** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 23,200 | +0.65% | 21.09 | 1.73 | **86.3/100** | 9/9 | 60 | `NEUTRAL_TEST` | 1.23x | **AAA** |
 | **MBS** | HNX | Dịch Vụ Chứng Khoán & Môi Giới | 0 | +0.00% | N/A | N/A | **92.2/100** | 9/9 | 80 | `NEUTRAL` | 1.21x | **AAA** |
-| **GAS** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | 78,000 | +2.63% | 14.52 | 2.74 | **80.0/100** | 8/9 | 95 | `NEUTRAL_TEST` | 1.24x | **AA** |
+| **GAS** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | 78,000 | +2.63% | 14.52 | 2.84 | **80.0/100** | 8/9 | 95 | `NEUTRAL_TEST` | 1.24x | **AA** |
 | **PVS** | HNX | Dầu Khí & Tiện Ích Năng Lượng | 0 | +0.00% | N/A | N/A | **84.5/100** | 8/9 | 81 | `NEUTRAL` | 1.65x | **AAA** |
 | **PVD** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | 17,950 | -2.18% | 23.13 | 0.99 | **86.2/100** | 9/9 | 77 | `NEUTRAL_TEST` | 2.12x | **AAA** |
 | **BSR** | UPCOM | Dầu Khí & Tiện Ích Năng Lượng | 27,600 | -0.18% | 7.04 | 1.66 | **86.6/100** | 6/9 | 98 | `NO_SUPPLY` | 1.61x | **AAA** |

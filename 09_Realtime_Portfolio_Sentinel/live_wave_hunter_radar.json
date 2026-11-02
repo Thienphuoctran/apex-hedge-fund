@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 07:18:16",
+  "generated_at": "2026-11-02 07:30:04",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -287,6 +287,14 @@
     },
     {
       "market": "US_SEC_EDGAR",
+      "symbol": "TSM",
+      "form_or_type": "SEC Form 6-K",
+      "date": "2026-10-22",
+      "headline": "Hồ sơ SEC MATERIAL_EVENT_8K đã kiểm chứng 100%",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "US_SEC_EDGAR",
       "symbol": "GOOGL",
       "form_or_type": "SEC Form 10-Q",
       "date": "2026-10-29",
@@ -367,10 +375,10 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "PC1",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Fri, 30 Oct 26 1",
-      "headline": "Cập nhật BCTC quý 3/2026 tối ngày 30/10: Vingroup, TPBank, Viettel Global, PC1 cùng hàng loạt doanh nghiệp tên tuổi dồn dập công bố trước hạn chót",
+      "symbol": "REE",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Mon, 02 Nov 26 0",
+      "headline": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
       "is_portfolio_holding": false
     }
   ],
@@ -383,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 351 hồ sơ SEC & 28 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 27 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

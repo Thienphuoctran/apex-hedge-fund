@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-01T13:38:26.391796+00:00",
+  "generated_at_utc": "2026-11-02T00:25:02.353625+00:00",
   "data_integrity_version": "5.0-audited-zero-defect-multi-agent",
   "market_focus": "Global & US Institutional Equities (Comprehensive Market Scope)",
   "adaptive_weights_applied": {
@@ -180,35 +180,35 @@
       "symbol": "^N225",
       "currency": "JPY",
       "exchange": "OSA",
-      "last_price": 63290.11,
-      "change_1d_pct": -2.12,
-      "change_5d_pct": 0.95,
-      "change_1m_pct": -5.19,
-      "change_3m_pct": 1.48,
-      "change_1y_pct": 23.31,
-      "ma20": 65944.86,
-      "ma50": 65705.74,
-      "ma200": 61782.91,
-      "rsi_14": 41.83,
-      "macd_line": -851.12,
-      "macd_signal": -599.92,
-      "macd_hist": -251.2,
-      "bb_upper": 71550.05,
-      "bb_lower": 60339.67,
-      "atr_14": 1535.32,
-      "atr_pct": 2.43,
-      "suggested_stop_2atr": 60219.46,
-      "chandelier_trailing_stop": 66960.31,
-      "volatility_1y_pct": 29.22,
+      "last_price": 62860.86,
+      "change_1d_pct": -0.68,
+      "change_5d_pct": 1.08,
+      "change_1m_pct": -8.84,
+      "change_3m_pct": 2.32,
+      "change_1y_pct": 22.07,
+      "ma20": 65672.43,
+      "ma50": 65613.75,
+      "ma200": 61834.63,
+      "rsi_14": 40.32,
+      "macd_line": -900.78,
+      "macd_signal": -660.09,
+      "macd_hist": -240.69,
+      "bb_upper": 71323.17,
+      "bb_lower": 60021.69,
+      "atr_14": 1435.67,
+      "atr_pct": 2.28,
+      "suggested_stop_2atr": 59989.52,
+      "chandelier_trailing_stop": 67209.45,
+      "volatility_1y_pct": 29.16,
       "max_drawdown_1y_pct": -15.11,
-      "sharpe_ratio_1y": 0.63,
+      "sharpe_ratio_1y": 0.59,
       "empirical_beta_1y": null,
       "high_52w": 72831.73,
       "low_52w": 48235.3,
-      "pct_from_52w_high": -13.1,
-      "last_volume": 175100000,
-      "avg_volume_20d": 170780000,
-      "volume_vs_20d_avg": 1.03,
+      "pct_from_52w_high": -13.69,
+      "last_volume": 0,
+      "avg_volume_20d": 161810000,
+      "volume_vs_20d_avg": null,
       "trend_status": "Pullback in Uptrend (Below MA50, Above MA200)",
       "name": "Nikkei 225",
       "region": "Japan / Asia"
@@ -404,32 +404,32 @@
       "symbol": "DX-Y.NYB",
       "currency": "USD",
       "exchange": "NYB",
-      "last_price": 101.96,
-      "change_1d_pct": -0.07,
-      "change_5d_pct": 0.15,
-      "change_1m_pct": -0.13,
-      "change_3m_pct": 2.0,
-      "change_1y_pct": 2.1,
-      "ma20": 102.05,
-      "ma50": 100.81,
-      "ma200": 99.63,
-      "rsi_14": 53.41,
-      "macd_line": 0.27,
-      "macd_signal": 0.35,
+      "last_price": 101.95,
+      "change_1d_pct": 0.07,
+      "change_5d_pct": -0.0,
+      "change_1m_pct": 0.02,
+      "change_3m_pct": 2.07,
+      "change_1y_pct": 2.09,
+      "ma20": 102.04,
+      "ma50": 100.88,
+      "ma200": 99.64,
+      "rsi_14": 54.56,
+      "macd_line": 0.25,
+      "macd_signal": 0.33,
       "macd_hist": -0.08,
-      "bb_upper": 102.57,
-      "bb_lower": 101.53,
-      "atr_14": 0.48,
-      "atr_pct": 0.47,
-      "suggested_stop_2atr": 101.0,
-      "chandelier_trailing_stop": 101.74,
-      "volatility_1y_pct": 5.13,
+      "bb_upper": 102.56,
+      "bb_lower": 101.52,
+      "atr_14": 0.46,
+      "atr_pct": 0.45,
+      "suggested_stop_2atr": 101.03,
+      "chandelier_trailing_stop": 101.8,
+      "volatility_1y_pct": 5.12,
       "max_drawdown_1y_pct": -4.0,
-      "sharpe_ratio_1y": -0.57,
+      "sharpe_ratio_1y": -0.56,
       "empirical_beta_1y": null,
       "high_52w": 102.95,
       "low_52w": 95.55,
-      "pct_from_52w_high": -0.96,
+      "pct_from_52w_high": -0.97,
       "last_volume": 0,
       "avg_volume_20d": 0,
       "volume_vs_20d_avg": null,
@@ -441,35 +441,35 @@
       "symbol": "GC=F",
       "currency": "USD",
       "exchange": "CMX",
-      "last_price": 3898.9,
-      "change_1d_pct": -3.29,
-      "change_5d_pct": -2.72,
-      "change_1m_pct": -7.22,
-      "change_3m_pct": -4.68,
-      "change_1y_pct": -2.87,
-      "ma20": 4115.04,
-      "ma50": 4294.8,
-      "ma200": 4519.32,
-      "rsi_14": 27.89,
-      "macd_line": -76.15,
-      "macd_signal": -64.91,
-      "macd_hist": -11.24,
-      "bb_upper": 4274.22,
-      "bb_lower": 3955.86,
-      "atr_14": 74.95,
-      "atr_pct": 1.92,
-      "suggested_stop_2atr": 3749.0,
-      "chandelier_trailing_stop": 4071.63,
-      "volatility_1y_pct": 27.95,
+      "last_price": 3910.0,
+      "change_1d_pct": 0.28,
+      "change_5d_pct": -3.18,
+      "change_1m_pct": -6.06,
+      "change_3m_pct": -5.84,
+      "change_1y_pct": -2.59,
+      "ma20": 4102.7,
+      "ma50": 4279.39,
+      "ma200": 4515.75,
+      "rsi_14": 29.31,
+      "macd_line": -82.59,
+      "macd_signal": -68.44,
+      "macd_hist": -14.15,
+      "bb_upper": 4284.86,
+      "bb_lower": 3920.54,
+      "atr_14": 72.69,
+      "atr_pct": 1.86,
+      "suggested_stop_2atr": 3764.61,
+      "chandelier_trailing_stop": 4077.27,
+      "volatility_1y_pct": 27.89,
       "max_drawdown_1y_pct": -26.69,
-      "sharpe_ratio_1y": -0.28,
+      "sharpe_ratio_1y": -0.27,
       "empirical_beta_1y": null,
       "high_52w": 5586.2,
       "low_52w": 3879.3,
-      "pct_from_52w_high": -30.2,
-      "last_volume": 230038,
-      "avg_volume_20d": 150763,
-      "volume_vs_20d_avg": 1.53,
+      "pct_from_52w_high": -30.01,
+      "last_volume": 7170,
+      "avg_volume_20d": 141110,
+      "volume_vs_20d_avg": 0.05,
       "trend_status": "Downtrend / Weak (Below MA200)",
       "name": "Gold Futures",
       "category": "Safe Haven / Real Assets"
@@ -478,35 +478,35 @@
       "symbol": "CL=F",
       "currency": "USD",
       "exchange": "NYM",
-      "last_price": 104.12,
-      "change_1d_pct": 2.08,
-      "change_5d_pct": 0.82,
-      "change_1m_pct": 12.11,
-      "change_3m_pct": 29.6,
-      "change_1y_pct": 70.55,
-      "ma20": 97.44,
-      "ma50": 94.63,
-      "ma200": 86.34,
-      "rsi_14": 61.62,
-      "macd_line": 2.7,
-      "macd_signal": 2.28,
-      "macd_hist": 0.42,
-      "bb_upper": 108.1,
-      "bb_lower": 86.78,
-      "atr_14": 4.26,
-      "atr_pct": 4.09,
-      "suggested_stop_2atr": 95.6,
-      "chandelier_trailing_stop": 99.83,
-      "volatility_1y_pct": 55.86,
+      "last_price": 102.53,
+      "change_1d_pct": -1.53,
+      "change_5d_pct": 0.76,
+      "change_1m_pct": 12.53,
+      "change_3m_pct": 35.32,
+      "change_1y_pct": 67.94,
+      "ma20": 98.09,
+      "ma50": 94.94,
+      "ma200": 86.56,
+      "rsi_14": 58.25,
+      "macd_line": 2.66,
+      "macd_signal": 2.35,
+      "macd_hist": 0.3,
+      "bb_upper": 108.27,
+      "bb_lower": 87.91,
+      "atr_14": 4.15,
+      "atr_pct": 4.05,
+      "suggested_stop_2atr": 94.23,
+      "chandelier_trailing_stop": 100.11,
+      "volatility_1y_pct": 55.78,
       "max_drawdown_1y_pct": -39.31,
-      "sharpe_ratio_1y": 1.17,
+      "sharpe_ratio_1y": 1.13,
       "empirical_beta_1y": null,
       "high_52w": 119.48,
       "low_52w": 54.98,
-      "pct_from_52w_high": -12.86,
-      "last_volume": 248668,
-      "avg_volume_20d": 262036,
-      "volume_vs_20d_avg": 0.95,
+      "pct_from_52w_high": -14.19,
+      "last_volume": 4787,
+      "avg_volume_20d": 249220,
+      "volume_vs_20d_avg": 0.02,
       "trend_status": "Strong Uptrend (Above MA50 & MA200)",
       "name": "WTI Crude Oil",
       "category": "Energy & Inflation"
@@ -515,35 +515,35 @@
       "symbol": "BTC-USD",
       "currency": "USD",
       "exchange": "CCC",
-      "last_price": 77840.9,
-      "change_1d_pct": 0.52,
-      "change_5d_pct": -3.67,
-      "change_1m_pct": -6.98,
-      "change_3m_pct": 0.22,
-      "change_1y_pct": 20.47,
-      "ma20": 80801.77,
-      "ma50": 81907.76,
-      "ma200": 73146.86,
-      "rsi_14": 37.64,
-      "macd_line": -1151.34,
-      "macd_signal": -673.37,
-      "macd_hist": -477.97,
-      "bb_upper": 84639.62,
-      "bb_lower": 76963.92,
-      "atr_14": 1899.68,
-      "atr_pct": 2.44,
-      "suggested_stop_2atr": 74041.54,
-      "chandelier_trailing_stop": 80090.85,
-      "volatility_1y_pct": 36.73,
+      "last_price": 77959.48,
+      "change_1d_pct": 0.68,
+      "change_5d_pct": -3.52,
+      "change_1m_pct": -6.84,
+      "change_3m_pct": 0.38,
+      "change_1y_pct": 20.65,
+      "ma20": 80807.7,
+      "ma50": 81910.13,
+      "ma200": 73147.45,
+      "rsi_14": 38.24,
+      "macd_line": -1141.88,
+      "macd_signal": -671.47,
+      "macd_hist": -470.4,
+      "bb_upper": 84626.61,
+      "bb_lower": 76988.79,
+      "atr_14": 1912.73,
+      "atr_pct": 2.45,
+      "suggested_stop_2atr": 74134.03,
+      "chandelier_trailing_stop": 80058.23,
+      "volatility_1y_pct": 36.78,
       "max_drawdown_1y_pct": -47.07,
-      "sharpe_ratio_1y": -0.93,
+      "sharpe_ratio_1y": -0.94,
       "empirical_beta_1y": null,
       "high_52w": 111167.31,
       "low_52w": 57747.77,
-      "pct_from_52w_high": -29.98,
-      "last_volume": 12384720896,
-      "avg_volume_20d": 26064781470,
-      "volume_vs_20d_avg": 0.48,
+      "pct_from_52w_high": -29.87,
+      "last_volume": 12814908416,
+      "avg_volume_20d": 26086290846,
+      "volume_vs_20d_avg": 0.49,
       "trend_status": "Pullback in Uptrend (Below MA50, Above MA200)",
       "name": "Bitcoin (USD)",
       "category": "Global Liquidity Appetite"
@@ -1063,8 +1063,8 @@
         "short_ratio_days": 2.84,
         "next_earnings_date": "2026-11-17",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 16,
-        "earnings_risk_flag": "UPCOMING EARNINGS (16d, AMC) — Lưu ý biến động",
+        "days_to_earnings": 15,
+        "earnings_risk_flag": "UPCOMING EARNINGS (15d, AMC) — Lưu ý biến động",
         "insider_net_shares_6m": -3585082,
         "insider_sentiment": "Net Insider Selling (Chốt lời nội bộ)",
         "target_mean_price": 328.95,
@@ -1126,7 +1126,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay NVDA biến động -4.22% (5 ngày: -3.00%, 1 tháng: -11.36%, 1 năm: +1.06%): Điều chỉnh kỹ thuật ngắn hạn theo làn sóng chốt lời nhóm Bán dẫn (Nasdaq -2.86%) dù siêu chu kỳ chip AI Blackwell vẫn độc quyền tuyệt đối.",
         "business_health_vn": "[CÓ LÃI VỮNG (+$192.88B Net | F-Score 8/9)] Doanh thu bùng nổ +105.9% YoY đạt $302.97B, Lợi nhuận ròng kỷ lục +$192.88B, biên hoạt động 66.24% — giữ vị thế độc tôn 85%+ thị phần GPU AI toàn cầu. GAAP FCF đạt $41.81B USD (True FCF sau trừ thưởng cổ phiếu SBC: $16.06B USD). Biên tạo giá trị kinh tế EVA Spread = +51.20% (ROIC 65.0% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 18.5.",
-        "action_outlook_vn": "Phán quyết Ban 4: ACCUMULATE AT MA200 (Tích lũy tại hỗ trợ) (Điểm IC: 81/100). Vùng mua chuẩn: $200.55 – $205.66 | Cắt lỗ cứng Stop 2xATR: $191.56 | Chặn lãi Chandelier: $227.02 | Mục tiêu TP1: $230.8 / TP2: $328.95. Lịch BCTC: UPCOMING EARNINGS (16d, AMC) — Lưu ý biến động (Biên độ dự kiến ±7.52%)."
+        "action_outlook_vn": "Phán quyết Ban 4: ACCUMULATE AT MA200 (Tích lũy tại hỗ trợ) (Điểm IC: 81/100). Vùng mua chuẩn: $200.55 – $205.66 | Cắt lỗ cứng Stop 2xATR: $191.56 | Chặn lãi Chandelier: $227.02 | Mục tiêu TP1: $230.8 / TP2: $328.95. Lịch BCTC: UPCOMING EARNINGS (15d, AMC) — Lưu ý biến động (Biên độ dự kiến ±7.52%)."
       }
     },
     {
@@ -1196,7 +1196,7 @@
         "short_ratio_days": 2.94,
         "next_earnings_date": "2027-01-27",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 87,
+        "days_to_earnings": 86,
         "earnings_risk_flag": "CLEAR (2027-01-27 AMC)",
         "insider_net_shares_6m": 263995,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -1328,8 +1328,8 @@
         "short_ratio_days": 3.48,
         "next_earnings_date": "2026-11-02",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 1,
-        "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 0,
+        "earnings_risk_flag": "IMMINENT EARNINGS (0d, AMC) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": 257744,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
         "target_mean_price": 332.39,
@@ -1364,7 +1364,7 @@
           "ban4_quant_technical_risk_pts": 16,
           "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (XLK -9.25% 1M)",
           "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±4.56%).",
+          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (0 ngày, biên độ dự kiến ±4.56%).",
           "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
           "entry_zone": "$337.74 – $346.35",
           "tp1_price": 371.41,
@@ -1380,7 +1380,7 @@
         ],
         "reasons_bearish": [
           "[Ban 3 Định giá] Thị giá đã vượt mục tiêu trung bình của Phố Wall (-3.55%)",
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-02 AMC) — Khóa lệnh mua đuổi (Implied Move ±4.56%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 0 ngày (2026-11-02 AMC) — Khóa lệnh mua đuổi (Implied Move ±4.56%)"
         ]
       },
       "movement_explanation": {
@@ -1392,7 +1392,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay AAPL biến động -1.23% (5 ngày: -0.89%, 1 tháng: +4.33%, 1 năm: +27.47%): Đi ngang giữ sắc xanh (+0.23% 1D, +3.49% 1M, +27.47% 1Y) trước thềm công bố BCTC trong 2 ngày tới nhờ vị thế trú ẩn tiền mặt.",
         "business_health_vn": "[CÓ LÃI VỮNG (+$128.93B Net | F-Score 9/9)] Doanh thu $466.82B (+16.4% YoY), Lợi nhuận ròng +$128.93B, FCF lớn nhất thế giới +$107.72B USD (True FCF ex-SBC +$97.45B) và chương trình mua lại cổ phiếu quỹ khổng lồ. GAAP FCF đạt $107.72B USD (True FCF sau trừ thưởng cổ phiếu SBC: $97.45B USD). Biên tạo giá trị kinh tế EVA Spread = +55.66% (ROIC 65.0% vs WACC 9.34%), Điểm sức khỏe Piotroski F-Score = 9/9, Altman Z-Score = 15.32.",
-        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 68/100). Vùng mua chuẩn: $337.74 – $346.35 | Cắt lỗ cứng Stop 2xATR: $331.24 | Chặn lãi Chandelier: $334.99 | Mục tiêu TP1: $371.41 / TP2: $384.8. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.56%)."
+        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 68/100). Vùng mua chuẩn: $337.74 – $346.35 | Cắt lỗ cứng Stop 2xATR: $331.24 | Chặn lãi Chandelier: $334.99 | Mục tiêu TP1: $371.41 / TP2: $384.8. Lịch BCTC: IMMINENT EARNINGS (0d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.56%)."
       }
     },
     {
@@ -1435,7 +1435,7 @@
         "financial_currency_reported": "USD",
         "fx_rate_to_usd_applied": 1.0,
         "market_cap_usd_bil": 3440.35,
-        "forward_pe": 18.49,
+        "forward_pe": 18.44,
         "trailing_pe": 14.61,
         "peg_ratio": 0.98,
         "price_to_book": 5.22,
@@ -1462,8 +1462,8 @@
         "short_ratio_days": 3.1,
         "next_earnings_date": "2026-10-28",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": -4,
-        "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
+        "days_to_earnings": -5,
+        "earnings_risk_flag": "JUST REPORTED (5d ago) — Đã qua rủi ro BCTC",
         "insider_net_shares_6m": null,
         "insider_sentiment": "Neutral / Routine",
         "target_mean_price": 406.55,
@@ -1524,7 +1524,7 @@
         "is_distressed_or_losing": true,
         "why_price_moved_vn": "Phiên hôm nay GOOGL biến động -1.40% (5 ngày: -12.61%, 1 tháng: -17.27%, 1 năm: -0.48%): Bị bán tháo mạnh ngắn hạn (-13.87% 1D, RSI rơi về quá bán sâu 22.32) do lo ngại chi phí đầu tư máy chủ AI (CapEx) nén dòng tiền tự do ngắn hạn.",
         "business_health_vn": "[CHÁY DÒNG TIỀN FCF (-$1.16B USD)] Nội tại kinh doanh cốt lõi vẫn cực khỏe với Doanh thu $471.10B (+24.7% YoY) và Lợi nhuận ròng +$235.31B, nhưng việc chi tới ~$174B CapEx khiến GAAP FCF ngắn hạn giảm còn +$5.52B (so với OCF $179.55B). GAAP FCF đạt $-1.16B USD (True FCF sau trừ thưởng cổ phiếu SBC: $-41.2B USD). Biên tạo giá trị kinh tế EVA Spread = +5.39% (ROIC 15.38% vs WACC 9.99%), Điểm sức khỏe Piotroski F-Score = 6/9, Altman Z-Score = 8.39.",
-        "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $274.24 – $281.24 | Cắt lỗ cứng Stop 2xATR: $258.16 | Chặn lãi Chandelier: $332.29 | Mục tiêu TP1: $323.2 / TP2: $406.55. Lịch BCTC: JUST REPORTED (4d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±9.09%)."
+        "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $274.24 – $281.24 | Cắt lỗ cứng Stop 2xATR: $258.16 | Chặn lãi Chandelier: $332.29 | Mục tiêu TP1: $323.2 / TP2: $406.55. Lịch BCTC: JUST REPORTED (5d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±9.09%)."
       }
     },
     {
@@ -1567,7 +1567,7 @@
         "financial_currency_reported": "USD",
         "fx_rate_to_usd_applied": 1.0,
         "market_cap_usd_bil": 2598.94,
-        "forward_pe": 22.39,
+        "forward_pe": 22.07,
         "trailing_pe": 19.43,
         "peg_ratio": 1.39,
         "price_to_book": 4.23,
@@ -1594,8 +1594,8 @@
         "short_ratio_days": 2.6,
         "next_earnings_date": "2026-10-29",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": -3,
-        "earnings_risk_flag": "JUST REPORTED (3d ago) — Đã qua rủi ro BCTC",
+        "days_to_earnings": -4,
+        "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
         "insider_net_shares_6m": 912718,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
         "target_mean_price": 326.92,
@@ -1656,7 +1656,7 @@
         "is_distressed_or_losing": true,
         "why_price_moved_vn": "Phiên hôm nay AMZN biến động -1.41% (5 ngày: -3.08%, 1 tháng: -3.17%, 1 năm: -1.58%): Điều chỉnh -5.60% 1D theo áp lực chung của nhóm Hyperscalers khi Phố Wall soi xét gắt gao hiệu suất vốn đầu tư hạ tầng AWS AI.",
         "business_health_vn": "[CHÁY DÒNG TIỀN FCF (-$11.14B USD)] Doanh thu khổng lồ $775.68B (+19.6% YoY), Lợi nhuận ròng +$135.28B và dòng tiền hoạt động OCF đạt $161.40B, nhưng CapEx trung tâm dữ liệu & logistics lớn làm FCF tự do còn +$3.22B. GAAP FCF đạt $-11.14B USD (True FCF sau trừ thưởng cổ phiếu SBC: $-78.92B USD). Biên tạo giá trị kinh tế EVA Spread = -0.79% (ROIC 10.35% vs WACC 11.14%), Điểm sức khỏe Piotroski F-Score = 6/9, Altman Z-Score = 4.38.",
-        "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $235.54 – $241.55 | Cắt lỗ cứng Stop 2xATR: $224.92 | Chặn lãi Chandelier: $246.05 | Mục tiêu TP1: $271.21 / TP2: $326.92. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±7.54%)."
+        "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $235.54 – $241.55 | Cắt lỗ cứng Stop 2xATR: $224.92 | Chặn lãi Chandelier: $246.05 | Mục tiêu TP1: $271.21 / TP2: $326.92. Lịch BCTC: JUST REPORTED (4d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±7.54%)."
       }
     },
     {
@@ -1726,7 +1726,7 @@
         "short_ratio_days": 1.32,
         "next_earnings_date": "2027-01-27",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 87,
+        "days_to_earnings": 86,
         "earnings_risk_flag": "CLEAR (2027-01-27 AMC)",
         "insider_net_shares_6m": 1163626,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -1831,7 +1831,7 @@
         "financial_currency_reported": "USD",
         "fx_rate_to_usd_applied": 1.0,
         "market_cap_usd_bil": 1580.34,
-        "forward_pe": 185.5,
+        "forward_pe": 185.16,
         "trailing_pe": 439.35,
         "peg_ratio": 4.66,
         "price_to_book": 17.7,
@@ -1858,7 +1858,7 @@
         "short_ratio_days": 2.04,
         "next_earnings_date": "2027-01-27",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 87,
+        "days_to_earnings": 86,
         "earnings_risk_flag": "CLEAR (2027-01-27 AMC)",
         "insider_net_shares_6m": 303981185,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -1908,7 +1908,7 @@
         ],
         "reasons_bearish": [
           "[Ban 2 BCTC] Doanh thu suy giảm (-0.2% YoY)",
-          "[Ban 3 Định giá] Forward P/E quá đắt (185.5x), rủi ro nén định giá cao"
+          "[Ban 3 Định giá] Forward P/E quá đắt (185.16x), rủi ro nén định giá cao"
         ]
       },
       "movement_explanation": {
@@ -1990,7 +1990,7 @@
         "short_ratio_days": 2.79,
         "next_earnings_date": "2027-01-14",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 74,
+        "days_to_earnings": 73,
         "earnings_risk_flag": "CLEAR (2027-01-14 BMO)",
         "insider_net_shares_6m": null,
         "insider_sentiment": "Neutral / Routine",
@@ -2121,7 +2121,7 @@
         "short_ratio_days": 2.31,
         "next_earnings_date": "2026-12-09",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 38,
+        "days_to_earnings": 37,
         "earnings_risk_flag": "CLEAR (2026-12-09 AMC)",
         "insider_net_shares_6m": -352492,
         "insider_sentiment": "Neutral / Routine",
@@ -2225,7 +2225,7 @@
         "financial_currency_reported": "USD",
         "fx_rate_to_usd_applied": 1.0,
         "market_cap_usd_bil": 824.07,
-        "forward_pe": 31.66,
+        "forward_pe": 31.7,
         "trailing_pe": 128.78,
         "peg_ratio": 0.5,
         "price_to_book": 12.26,
@@ -2252,8 +2252,8 @@
         "short_ratio_days": 1.74,
         "next_earnings_date": "2026-11-03",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 2,
-        "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 1,
+        "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": 614124,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
         "target_mean_price": 640.21,
@@ -2288,7 +2288,7 @@
           "ban4_quant_technical_risk_pts": 14,
           "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (SMH -15.43% 1M)",
           "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (2 ngày, biên độ dự kiến ±14.5%).",
+          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±14.5%).",
           "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
           "entry_zone": "$494.7 – $507.32",
           "tp1_price": 633.58,
@@ -2304,7 +2304,7 @@
           "[Ban 4 Kỹ thuật] RSI(39.67) ở vùng tích lũy tối ưu, dư địa tăng rộng"
         ],
         "reasons_bearish": [
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
         ]
       },
       "movement_explanation": {
@@ -2316,7 +2316,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay AMD biến động -10.88% (5 ngày: -2.32%, 1 tháng: -18.02%, 1 năm: +97.10%): Rơi mạnh -12.73% 1D (-17.48% 1M) khi giới đầu tư bán giảm tỷ trọng trước thềm công bố BCTC (còn 3 ngày) và lo ngại cạnh tranh từ Blackwell của NVDA.",
         "business_health_vn": "[CÓ LÃI VỮNG (+$6.47B Net | F-Score 8/9)] Doanh thu tăng +50.1% YoY ($41.31B), Lợi nhuận ròng +$6.47B, FCF +$8.84B, nhưng định giá EV/EBITDA ở mức rất cao 85.26x và biên độ nhảy gap quyền chọn BCTC lên tới ±13.23%. GAAP FCF đạt $8.84B USD (True FCF sau trừ thưởng cổ phiếu SBC: $5.33B USD). Biên tạo giá trị kinh tế EVA Spread = -5.13% (ROIC 8.67% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 18.5.",
-        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 77/100). Vùng mua chuẩn: $494.7 – $507.32 | Cắt lỗ cứng Stop 2xATR: $440.41 | Chặn lãi Chandelier: $578.03 | Mục tiêu TP1: $633.58 / TP2: $640.21. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
+        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 77/100). Vùng mua chuẩn: $494.7 – $507.32 | Cắt lỗ cứng Stop 2xATR: $440.41 | Chặn lãi Chandelier: $578.03 | Mục tiêu TP1: $633.58 / TP2: $640.21. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
       }
     },
     {
@@ -2359,7 +2359,7 @@
         "financial_currency_reported": "USD",
         "fx_rate_to_usd_applied": 1.0,
         "market_cap_usd_bil": 349.51,
-        "forward_pe": 35.5,
+        "forward_pe": 36.3,
         "trailing_pe": null,
         "peg_ratio": 1.36,
         "price_to_book": 3.04,
@@ -2386,7 +2386,7 @@
         "short_ratio_days": 1.36,
         "next_earnings_date": "2027-01-28",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 88,
+        "days_to_earnings": 87,
         "earnings_risk_flag": "CLEAR (2027-01-28 AMC)",
         "insider_net_shares_6m": null,
         "insider_sentiment": "Neutral / Routine",
@@ -2517,8 +2517,8 @@
         "short_ratio_days": 2.29,
         "next_earnings_date": "2026-11-04",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 3,
-        "earnings_risk_flag": "IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 2,
+        "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": -49161,
         "insider_sentiment": "Neutral / Routine",
         "target_mean_price": 196.3,
@@ -2567,7 +2567,7 @@
         "reasons_bearish": [
           "[Ban 2 BCTC] Doanh thu suy giảm (-4.0% YoY)",
           "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($169.52)",
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±10.65%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±10.65%)"
         ]
       },
       "movement_explanation": {
@@ -2579,7 +2579,7 @@
         "is_distressed_or_losing": true,
         "why_price_moved_vn": "Phiên hôm nay QCOM biến động -11.12% (5 ngày: -6.32%, 1 tháng: -9.50%, 1 năm: -8.91%): Giảm sâu -9.94% 1D (-10.46% 1M) do chu kỳ nâng cấp điện thoại thông minh toàn cầu phục hồi chậm và sát kỳ công bố BCTC (còn 4 ngày).",
         "business_health_vn": "[SUY GIẢM DOANH THU (-4.0% YoY)] Doanh thu đang suy giảm -4.0% YoY ($44.07B) dù vẫn duy trì Lợi nhuận ròng +$9.26B và FCF +$10.24B; cấu trúc giá đang suy yếu dưới đường trung bình. GAAP FCF đạt $10.24B USD (True FCF sau trừ thưởng cổ phiếu SBC: $9.27B USD). Biên tạo giá trị kinh tế EVA Spread = +4.51% (ROIC 16.52% vs WACC 12.01%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 5.16.",
-        "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 44/100). Vùng mua chuẩn: $161.49 – $165.61 | Cắt lỗ cứng Stop 2xATR: $149.85 | Chặn lãi Chandelier: $170.28 | Mục tiêu TP1: $194.67 / TP2: $196.3. Lịch BCTC: IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±10.65%)."
+        "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 44/100). Vùng mua chuẩn: $161.49 – $165.61 | Cắt lỗ cứng Stop 2xATR: $149.85 | Chặn lãi Chandelier: $170.28 | Mục tiêu TP1: $194.67 / TP2: $196.3. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±10.65%)."
       }
     },
     {
@@ -2649,8 +2649,8 @@
         "short_ratio_days": 3.0,
         "next_earnings_date": "2026-11-04",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 3,
-        "earnings_risk_flag": "IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 2,
+        "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": 304842,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
         "target_mean_price": 290.7,
@@ -2699,7 +2699,7 @@
         ],
         "reasons_bearish": [
           "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($228.93)",
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
         ]
       },
       "movement_explanation": {
@@ -2711,7 +2711,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay ARM biến động -9.97% (5 ngày: -2.07%, 1 tháng: -29.54%, 1 năm: +21.29%): Bị bán tháo -12.69% 1D (-28.89% 1M) khi làn sóng xả cổ phiếu công nghệ định giá siêu đắt diễn ra trên Nasdaq (Headline #17).",
         "business_health_vn": "[CÓ LÃI VỮNG (+$1.04B Net | F-Score 8/9)] Quy mô doanh thu còn nhỏ ($5.16B, +22.4% YoY) và Lợi nhuận ròng chỉ +$1.04B (biên hoạt động mỏng 7.60%), nhưng vốn hóa lại bị đẩy lên $219.98B khiến EV/EBITDA lên tới 203.60x. GAAP FCF đạt $1.33B USD (True FCF sau trừ thưởng cổ phiếu SBC: $0.89B USD). Biên tạo giá trị kinh tế EVA Spread = -11.73% (ROIC 2.07% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 18.5.",
-        "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 60/100). Vùng mua chuẩn: $201.85 – $207.0 | Cắt lỗ cứng Stop 2xATR: $177.37 | Chặn lãi Chandelier: $282.61 | Mục tiêu TP1: $263.17 / TP2: $290.7. Lịch BCTC: IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
+        "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 60/100). Vùng mua chuẩn: $201.85 – $207.0 | Cắt lỗ cứng Stop 2xATR: $177.37 | Chặn lãi Chandelier: $282.61 | Mục tiêu TP1: $263.17 / TP2: $290.7. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
       }
     },
     {
@@ -2781,8 +2781,8 @@
         "short_ratio_days": 2.37,
         "next_earnings_date": "2026-11-02",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 1,
-        "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 0,
+        "earnings_risk_flag": "IMMINENT EARNINGS (0d, AMC) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": 238296,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
         "target_mean_price": 212.5,
@@ -2817,7 +2817,7 @@
           "ban4_quant_technical_risk_pts": 14,
           "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (XLK -9.25% 1M)",
           "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±11.75%).",
+          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (0 ngày, biên độ dự kiến ±11.75%).",
           "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
           "entry_zone": "$180.43 – $185.03",
           "tp1_price": 220.91,
@@ -2833,7 +2833,7 @@
           "[Ban 4 Kỹ thuật] RSI(41.86) ở vùng tích lũy tối ưu, dư địa tăng rộng"
         ],
         "reasons_bearish": [
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-02 AMC) — Khóa lệnh mua đuổi (Implied Move ±11.75%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 0 ngày (2026-11-02 AMC) — Khóa lệnh mua đuổi (Implied Move ±11.75%)"
         ]
       },
       "movement_explanation": {
@@ -2845,7 +2845,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay PLTR biến động -6.27% (5 ngày: -6.42%, 1 tháng: -3.12%, 1 năm: -8.16%): Điều chỉnh -6.45% 1D khi nhà đầu tư chốt lời bảo vệ thành quả ngay trước ngày công bố BCTC (còn 2 ngày, Implied Move ±10.95%).",
         "business_health_vn": "[CÓ LÃI VỮNG (+$3.02B Net | F-Score 9/9)] Tăng trưởng doanh thu phần mềm AI Quốc phòng & Doanh nghiệp cực nhanh +92.8% YoY ($6.16B), Lợi nhuận ròng +$3.02B, biên hoạt động 47.12%, nhưng EV/EBITDA đang rất đắt ở 162.74x. GAAP FCF đạt $2.16B USD (True FCF sau trừ thưởng cổ phiếu SBC: $1.64B USD). Biên tạo giá trị kinh tế EVA Spread = +3.51% (ROIC 15.29% vs WACC 11.78%), Điểm sức khỏe Piotroski F-Score = 9/9, Altman Z-Score = 18.5.",
-        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 74/100). Vùng mua chuẩn: $180.43 – $185.03 | Cắt lỗ cứng Stop 2xATR: $165.71 | Chặn lãi Chandelier: $189.94 | Mục tiêu TP1: $220.91 / TP2: $239.31. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±11.75%)."
+        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 74/100). Vùng mua chuẩn: $180.43 – $185.03 | Cắt lỗ cứng Stop 2xATR: $165.71 | Chặn lãi Chandelier: $189.94 | Mục tiêu TP1: $220.91 / TP2: $239.31. Lịch BCTC: IMMINENT EARNINGS (0d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±11.75%)."
       }
     },
     {
@@ -2915,8 +2915,8 @@
         "short_ratio_days": 2.28,
         "next_earnings_date": "2026-11-03",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 2,
-        "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 1,
+        "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": 421787,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
         "target_mean_price": 43.27,
@@ -2951,7 +2951,7 @@
           "ban4_quant_technical_risk_pts": 14,
           "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (XLK -9.25% 1M)",
           "ban2_signal": "SUY YẾU / RỦI RO BCTC (Weak Cashflow/Growth)",
-          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (2 ngày, biên độ dự kiến ±14.5%).",
+          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±14.5%).",
           "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
           "entry_zone": "$32.29 – $33.11",
           "tp1_price": 42.91,
@@ -2967,7 +2967,7 @@
         ],
         "reasons_bearish": [
           "[Ban 2 BCTC] Dòng tiền tự do FCF âm ($-8.25B USD)",
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
         ]
       },
       "movement_explanation": {
@@ -2979,7 +2979,7 @@
         "is_distressed_or_losing": true,
         "why_price_moved_vn": "Phiên hôm nay SMCI biến động -4.30% (5 ngày: +0.03%, 1 tháng: -21.40%, 1 năm: -36.59%): Lao dốc -7.99% 1D (-19.77% 1M, -36.59% 1Y) do áp lực cháy dòng tiền mặt nghiêm trọng và rủi ro trước kỳ BCTC (còn 3 ngày).",
         "business_health_vn": "[CHÁY DÒNG TIỀN FCF (-$8.25B USD)] CẢNH BÁO ĐỐT TIỀN MẶT: Dù doanh thu lắp ráp máy chủ tăng +93.2% YoY ($39.06B), biên lợi nhuận mỏng khiến dòng tiền hoạt động âm -$6.81B và dòng tiền tự do FCF âm nặng -$8.25 tỷ USD (True FCF -$11.57B). GAAP FCF đạt $-8.25B USD (True FCF sau trừ thưởng cổ phiếu SBC: $-11.57B USD). Biên tạo giá trị kinh tế EVA Spread = +12.54% (ROIC 26.21% vs WACC 13.67%), Điểm sức khỏe Piotroski F-Score = 5/9, Altman Z-Score = 1.73.",
-        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 62/100). Vùng mua chuẩn: $32.29 – $33.11 | Cắt lỗ cứng Stop 2xATR: $27.97 | Chặn lãi Chandelier: $39.55 | Mục tiêu TP1: $42.91 / TP2: $43.27. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
+        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 62/100). Vùng mua chuẩn: $32.29 – $33.11 | Cắt lỗ cứng Stop 2xATR: $27.97 | Chặn lãi Chandelier: $39.55 | Mục tiêu TP1: $42.91 / TP2: $43.27. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
       }
     },
     {
@@ -3022,7 +3022,7 @@
         "financial_currency_reported": "USD",
         "fx_rate_to_usd_applied": 1.0,
         "market_cap_usd_bil": 38.0,
-        "forward_pe": 50.17,
+        "forward_pe": 53.87,
         "trailing_pe": null,
         "peg_ratio": 2.1,
         "price_to_book": 2.73,
@@ -3049,14 +3049,14 @@
         "short_ratio_days": 2.48,
         "next_earnings_date": "2026-10-29",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": -3,
-        "earnings_risk_flag": "JUST REPORTED (3d ago) — Đã qua rủi ro BCTC",
+        "days_to_earnings": -4,
+        "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
         "insider_net_shares_6m": -21643,
         "insider_sentiment": "Neutral / Routine",
-        "target_mean_price": 206.03,
+        "target_mean_price": 205.49,
         "target_high_price": 280.0,
         "target_low_price": 110.0,
-        "upside_to_consensus_pct": 43.53,
+        "upside_to_consensus_pct": 43.16,
         "recommendation_key": "buy",
         "num_analysts": 33,
         "net_dividend_yield_vn_pct": 0.0,
@@ -3089,12 +3089,12 @@
           "ban4_action_verdict": "AVOID (Đứng ngoài hoàn toàn)",
           "entry_zone": "$140.67 – $144.26",
           "tp1_price": 184.84,
-          "tp2_price": 206.03,
-          "rr_ratio": 3.03
+          "tp2_price": 205.49,
+          "rr_ratio": 3.0
         },
         "reasons_bullish": [
           "[Ban 2 BCTC] Dòng tiền tự do FCF dương vững chắc (+$3.68B USD, Piotroski 7/9)",
-          "[Ban 3 Định giá] Mục tiêu Phố Wall ($206.03) cao hơn thị giá +43.53%"
+          "[Ban 3 Định giá] Mục tiêu Phố Wall ($205.49) cao hơn thị giá +43.16%"
         ],
         "reasons_bearish": [
           "[Ban 2 BCTC] Doanh thu suy giảm (-34.2% YoY)",
@@ -3110,7 +3110,7 @@
         "is_distressed_or_losing": true,
         "why_price_moved_vn": "Phiên hôm nay COIN biến động -10.62% (5 ngày: -12.72%, 1 tháng: -24.17%, 1 năm: -58.25%): Bị bán tháo -11.57% 1D (-23.00% 1M, -58.25% 1Y) khi thanh khoản giao dịch tài sản số sụt giảm và lãi suất USD neo cao.",
         "business_health_vn": "[THUA LỖ RÒNG (-$0.70B USD)] DOANH NGHIỆP ĐANG THUA LỖ & SUY GIẢM: Doanh thu sụt giảm -17.3% YoY ($6.04B), biên lợi nhuận hoạt động âm -13.92%, Lỗ ròng -$0.99 tỷ USD và ROE âm -7.85%. GAAP FCF đạt $3.68B USD (True FCF sau trừ thưởng cổ phiếu SBC: $3.22B USD). Biên tạo giá trị kinh tế EVA Spread = -14.17% (ROIC -0.37% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 2.85.",
-        "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $140.67 – $144.26 | Cắt lỗ cứng Stop 2xATR: $122.89 | Chặn lãi Chandelier: $174.53 | Mục tiêu TP1: $184.84 / TP2: $206.03. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±14.5%)."
+        "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $140.67 – $144.26 | Cắt lỗ cứng Stop 2xATR: $122.89 | Chặn lãi Chandelier: $174.53 | Mục tiêu TP1: $184.84 / TP2: $205.49. Lịch BCTC: JUST REPORTED (4d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±14.5%)."
       }
     },
     {
@@ -3180,7 +3180,7 @@
         "short_ratio_days": 2.91,
         "next_earnings_date": "2027-01-14",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 74,
+        "days_to_earnings": 73,
         "earnings_risk_flag": "CLEAR (2027-01-14 BMO)",
         "insider_net_shares_6m": 86765,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -3312,7 +3312,7 @@
         "short_ratio_days": 0.0,
         "next_earnings_date": "2027-01-15",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 75,
+        "days_to_earnings": 74,
         "earnings_risk_flag": "CLEAR (2027-01-15 BMO)",
         "insider_net_shares_6m": null,
         "insider_sentiment": "Neutral / Routine",
@@ -3444,7 +3444,7 @@
         "short_ratio_days": 2.84,
         "next_earnings_date": "2027-01-19",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 79,
+        "days_to_earnings": 78,
         "earnings_risk_flag": "CLEAR (2027-01-19 BMO)",
         "insider_net_shares_6m": 371452,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -3576,7 +3576,7 @@
         "short_ratio_days": 3.17,
         "next_earnings_date": "2027-01-26",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 86,
+        "days_to_earnings": 85,
         "earnings_risk_flag": "CLEAR (2027-01-26 AMC)",
         "insider_net_shares_6m": -29098,
         "insider_sentiment": "Neutral / Routine",
@@ -3706,8 +3706,8 @@
         "short_ratio_days": 2.67,
         "next_earnings_date": "2026-11-07",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 6,
-        "earnings_risk_flag": "IMMINENT EARNINGS (6d, BMO) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 5,
+        "earnings_risk_flag": "IMMINENT EARNINGS (5d, BMO) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": null,
         "insider_sentiment": "Neutral / Routine",
         "target_mean_price": 555.67,
@@ -3742,7 +3742,7 @@
           "ban4_quant_technical_risk_pts": 14,
           "ban1_signal": "THUẬN LỢI (XLF +5.71% 1M)",
           "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (6 ngày, biên độ dự kiến ±3.15%).",
+          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (5 ngày, biên độ dự kiến ±3.15%).",
           "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
           "entry_zone": "$531.64 – $545.2",
           "tp1_price": 571.61,
@@ -3755,7 +3755,7 @@
           "[Ban 4 Kỹ thuật] Uptrend dài hạn vững chắc (Giá $542.49 > MA50 $515.11 > MA200 $495.74)"
         ],
         "reasons_bearish": [
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 6 ngày (2026-11-07 BMO) — Khóa lệnh mua đuổi (Implied Move ±3.15%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 5 ngày (2026-11-07 BMO) — Khóa lệnh mua đuổi (Implied Move ±3.15%)"
         ]
       },
       "movement_explanation": {
@@ -3767,7 +3767,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay BRK-B biến động +0.10% (5 ngày: +0.06%, 1 tháng: +8.39%, 1 năm: +13.60%): Tăng +0.40% 1D (+8.94% 1M, +13.60% 1Y) thể hiện bản lĩnh pháo đài phòng thủ của Warren Buffett trong phiên Nasdaq đỏ lửa.",
         "business_health_vn": "[CÓ LÃI VỮNG (+$85.77B Net | F-Score 7/9)] Doanh thu hợp nhất $384.69B (+10.0% YoY), Lợi nhuận ròng +$85.77B, dòng tiền tự do FCF đạt +$71.98 tỷ USD; tuy nhiên còn 7 ngày tới kỳ công bố BCTC nên tạm khóa mua đuổi mới. GAAP FCF đạt $71.98B USD (True FCF sau trừ thưởng cổ phiếu SBC: $63.52B USD). Biên tạo giá trị kinh tế EVA Spread = +5.29% (ROIC 12.42% vs WACC 7.13%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 3.91.",
-        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 72/100). Vùng mua chuẩn: $531.64 – $545.2 | Cắt lỗ cứng Stop 2xATR: $527.93 | Chặn lãi Chandelier: $532.27 | Mục tiêu TP1: $571.61 / TP2: $586.17. Lịch BCTC: IMMINENT EARNINGS (6d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±3.15%)."
+        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 72/100). Vùng mua chuẩn: $531.64 – $545.2 | Cắt lỗ cứng Stop 2xATR: $527.93 | Chặn lãi Chandelier: $532.27 | Mục tiêu TP1: $571.61 / TP2: $586.17. Lịch BCTC: IMMINENT EARNINGS (5d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±3.15%)."
       }
     },
     {
@@ -3810,7 +3810,7 @@
         "financial_currency_reported": "USD",
         "fx_rate_to_usd_applied": 1.0,
         "market_cap_usd_bil": 1262.67,
-        "forward_pe": 28.66,
+        "forward_pe": 28.5,
         "trailing_pe": 46.01,
         "peg_ratio": 1.36,
         "price_to_book": 31.37,
@@ -3837,8 +3837,8 @@
         "short_ratio_days": 3.0,
         "next_earnings_date": "2026-10-29",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": -3,
-        "earnings_risk_flag": "JUST REPORTED (3d ago) — Đã qua rủi ro BCTC",
+        "days_to_earnings": -4,
+        "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
         "insider_net_shares_6m": -306748,
         "insider_sentiment": "Neutral / Routine",
         "target_mean_price": 1403.64,
@@ -3899,7 +3899,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay LLY biến động +3.19% (5 ngày: +11.31%, 1 tháng: +23.28%, 1 năm: +64.28%): TĂNG BÙNG NỔ MẠNH NHẤT PHỐ WALL +10.03% 1D (+22.51% 1M, +64.28% 1Y) nhờ cơn sốt thuốc điều trị béo phì & tiểu đường GLP-1 (Mounjaro / Zepbound).",
         "business_health_vn": "[CÓ LÃI VỮNG (+$27.58B Net | F-Score 8/9)] Doanh thu tăng vọt +38.6% YoY ($86.46B), biên lợi nhuận hoạt động cực cao 53.66%, Lợi nhuận ròng +$27.58B, EVA Spread +57.27%; tuy nhiên RSI(14) đã chạm 74.44 (Quá mua — canh chỉnh về MA20). GAAP FCF đạt $9.34B USD (True FCF sau trừ thưởng cổ phiếu SBC: $7.44B USD). Biên tạo giá trị kinh tế EVA Spread = +35.49% (ROIC 41.98% vs WACC 6.49%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 12.74.",
-        "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 77/100). Vùng mua chuẩn: $1233.55 – $1258.47 | Cắt lỗ cứng Stop 2xATR: $1321.06 | Chặn lãi Chandelier: $1329.08 | Mục tiêu TP1: $1610.5 / TP2: $1706.98. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±7.99%)."
+        "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 77/100). Vùng mua chuẩn: $1233.55 – $1258.47 | Cắt lỗ cứng Stop 2xATR: $1321.06 | Chặn lãi Chandelier: $1329.08 | Mục tiêu TP1: $1610.5 / TP2: $1706.98. Lịch BCTC: JUST REPORTED (4d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±7.99%)."
       }
     },
     {
@@ -3940,15 +3940,15 @@
       "sector": "Biopharma GLP-1 Leader",
       "fundamentals": {
         "financial_currency_reported": "DKK",
-        "fx_rate_to_usd_applied": 0.1493,
+        "fx_rate_to_usd_applied": 0.1494,
         "market_cap_usd_bil": 176.43,
         "forward_pe": 11.63,
         "trailing_pe": 9.78,
         "peg_ratio": 4.5,
         "price_to_book": 5.33,
-        "ev_to_ebitda": 8.14,
-        "revenue_usd_bil": 49.18,
-        "net_income_usd_bil": 17.38,
+        "ev_to_ebitda": 8.13,
+        "revenue_usd_bil": 49.22,
+        "net_income_usd_bil": 17.4,
         "revenue_growth_yoy": 2.1,
         "earnings_growth_yoy": -20.6,
         "gross_margin": 81.99,
@@ -3956,10 +3956,10 @@
         "profit_margin": 35.35,
         "roe_pct": 59.81,
         "roa_pct": 18.73,
-        "free_cashflow_bil": 5.62,
-        "operating_cashflow_bil": 19.69,
+        "free_cashflow_bil": 5.63,
+        "operating_cashflow_bil": 19.7,
         "total_cash_bil": 6.72,
-        "total_debt_bil": 20.92,
+        "total_debt_bil": 20.93,
         "debt_to_equity": 63.33,
         "dividend_yield_pct": 4.49,
         "beta": 0.38,
@@ -3969,24 +3969,24 @@
         "short_ratio_days": 2.52,
         "next_earnings_date": "2026-11-04",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 3,
-        "earnings_risk_flag": "IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 2,
+        "earnings_risk_flag": "IMMINENT EARNINGS (2d, BMO) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": null,
         "insider_sentiment": "Neutral / Routine",
-        "target_mean_price": 44.97,
-        "target_high_price": 61.61,
-        "target_low_price": 39.63,
-        "upside_to_consensus_pct": 12.42,
+        "target_mean_price": 44.98,
+        "target_high_price": 61.63,
+        "target_low_price": 39.65,
+        "upside_to_consensus_pct": 12.45,
         "recommendation_key": "hold",
         "num_analysts": 12,
         "net_dividend_yield_vn_pct": 3.55,
         "price_to_book_note": "Standard GAAP Equity",
         "accounting_regime": "STANDARD_CORPORATE (FCF & EVA)",
         "sbc_usd_bil": 1.08,
-        "true_fcf_ex_sbc_bil": 4.54,
+        "true_fcf_ex_sbc_bil": 4.55,
         "wacc_pct": 6.2,
-        "roic_pct": 32.62,
-        "eva_spread_pct": 26.42,
+        "roic_pct": 32.64,
+        "eva_spread_pct": 26.44,
         "piotroski_f_score": 7,
         "altman_z_score": 5.33,
         "solvency_zone": "SAFE ZONE (>3.0)",
@@ -4009,17 +4009,17 @@
           "ban4_action_verdict": "HOLD & WATCH (Quan sát)",
           "entry_zone": "$39.2 – $40.2",
           "tp1_price": 43.08,
-          "tp2_price": 44.97,
+          "tp2_price": 44.98,
           "rr_ratio": 3.23
         },
         "reasons_bullish": [
           "[Ban 1 Vĩ mô] Thuộc ngành dẫn sóng dòng tiền (XLV tăng +11.23% 1M, Sharpe 1.41)",
-          "[Ban 2 BCTC] Dòng tiền tự do FCF dương vững chắc (+$5.62B USD, Piotroski 7/9)",
-          "[Ban 3 Định giá] Còn dư địa tăng +12.42% tới mục tiêu Phố Wall ($44.97)"
+          "[Ban 2 BCTC] Dòng tiền tự do FCF dương vững chắc (+$5.63B USD, Piotroski 7/9)",
+          "[Ban 3 Định giá] Còn dư địa tăng +12.45% tới mục tiêu Phố Wall ($44.98)"
         ],
         "reasons_bearish": [
           "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($44.19)",
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 BMO) — Khóa lệnh mua đuổi (Implied Move ±4.51%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 BMO) — Khóa lệnh mua đuổi (Implied Move ±4.51%)"
         ]
       },
       "movement_explanation": {
@@ -4027,11 +4027,11 @@
         "name": "Novo Nordisk",
         "sector": "Biopharma GLP-1 Leader",
         "move_badge": "GIỮ SẮC XANH (+2.20% 1D | +6.95% 1M)",
-        "profit_status_badge": "CÓ LÃI VỮNG (+$17.38B Net | F-Score 7/9)",
+        "profit_status_badge": "CÓ LÃI VỮNG (+$17.4B Net | F-Score 7/9)",
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay NVO biến động +2.20% (5 ngày: +2.43%, 1 tháng: +6.95%, 1 năm: -19.13%): Bật tăng mạnh +4.47% 1D (+5.51% 1M) hưởng ứng sóng ngành Dược phẩm GLP-1 cùng với Eli Lilly và dòng tiền trú ẩn vào Y tế.",
-        "business_health_vn": "[CÓ LÃI VỮNG (+$17.38B Net | F-Score 7/9)] Sở hữu thuốc Ozempic/Wegovy với biên hoạt động 42.54%, Lợi nhuận ròng +$17.38B USD, ROE 59.81% và FCF +$5.62B; lưu ý còn 4 ngày tới kỳ công bố BCTC. GAAP FCF đạt $5.62B USD (True FCF sau trừ thưởng cổ phiếu SBC: $4.54B USD). Biên tạo giá trị kinh tế EVA Spread = +26.42% (ROIC 32.62% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 5.33.",
-        "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 65/100). Vùng mua chuẩn: $39.2 – $40.2 | Cắt lỗ cứng Stop 2xATR: $38.46 | Chặn lãi Chandelier: $38.18 | Mục tiêu TP1: $43.08 / TP2: $44.97. Lịch BCTC: IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.51%)."
+        "business_health_vn": "[CÓ LÃI VỮNG (+$17.4B Net | F-Score 7/9)] Sở hữu thuốc Ozempic/Wegovy với biên hoạt động 42.54%, Lợi nhuận ròng +$17.38B USD, ROE 59.81% và FCF +$5.62B; lưu ý còn 4 ngày tới kỳ công bố BCTC. GAAP FCF đạt $5.63B USD (True FCF sau trừ thưởng cổ phiếu SBC: $4.55B USD). Biên tạo giá trị kinh tế EVA Spread = +26.44% (ROIC 32.64% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 5.33.",
+        "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 65/100). Vùng mua chuẩn: $39.2 – $40.2 | Cắt lỗ cứng Stop 2xATR: $38.46 | Chặn lãi Chandelier: $38.18 | Mục tiêu TP1: $43.08 / TP2: $44.98. Lịch BCTC: IMMINENT EARNINGS (2d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.51%)."
       }
     },
     {
@@ -4101,7 +4101,7 @@
         "short_ratio_days": 2.23,
         "next_earnings_date": "2027-01-26",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 86,
+        "days_to_earnings": 85,
         "earnings_risk_flag": "CLEAR (2027-01-26 BMO)",
         "insider_net_shares_6m": -29799,
         "insider_sentiment": "Neutral / Routine",
@@ -4231,8 +4231,8 @@
         "short_ratio_days": 3.22,
         "next_earnings_date": "2026-10-30",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": -2,
-        "earnings_risk_flag": "JUST REPORTED (2d ago) — Đã qua rủi ro BCTC",
+        "days_to_earnings": -3,
+        "earnings_risk_flag": "JUST REPORTED (3d ago) — Đã qua rủi ro BCTC",
         "insider_net_shares_6m": 12298,
         "insider_sentiment": "Neutral / Routine",
         "target_mean_price": 290.42,
@@ -4294,7 +4294,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay ABBV biến động +1.41% (5 ngày: +3.24%, 1 tháng: +13.45%, 1 năm: +35.25%): Bứt phá +3.11% 1D (+12.73% 1M, +35.25% 1Y) ngay sau khi công bố BCTC vượt kỳ vọng (JUST REPORTED 1 ngày trước) nhờ bộ đôi thuốc miễn dịch Skyrizi & Rinvoq.",
         "business_health_vn": "[CÓ LÃI VỮNG (+$10.3B Net | F-Score 6/9)] Doanh thu $64.39B (+10.2% YoY), biên hoạt động 40.03%, dòng tiền tự do FCF cực mạnh +$16.87B USD (True FCF +$15.45B) và điểm sức khỏe Piotroski đạt 9/9. Định chế Ngân hàng (ROE đạt 48.0%, P/B 24.28x). Biên tạo giá trị kinh tế EVA Spread = +16.95% (ROIC 23.15% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 6/9, Altman Z-Score = 5.21.",
-        "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 79/100). Vùng mua chuẩn: $278.81 – $284.45 | Cắt lỗ cứng Stop 2xATR: $281.08 | Chặn lãi Chandelier: $281.48 | Mục tiêu TP1: $322.51 / TP2: $336.32. Lịch BCTC: JUST REPORTED (2d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±5.5%)."
+        "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 79/100). Vùng mua chuẩn: $278.81 – $284.45 | Cắt lỗ cứng Stop 2xATR: $281.08 | Chặn lãi Chandelier: $281.48 | Mục tiêu TP1: $322.51 / TP2: $336.32. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±5.5%)."
       }
     },
     {
@@ -4340,7 +4340,7 @@
         "forward_pe": 15.59,
         "trailing_pe": 19.26,
         "peg_ratio": 1.52,
-        "price_to_book": 2.9,
+        "price_to_book": 2.87,
         "ev_to_ebitda": 10.05,
         "revenue_usd_bil": 388.23,
         "net_income_usd_bil": 40.62,
@@ -4356,7 +4356,7 @@
         "total_cash_bil": 12.15,
         "total_debt_bil": 34.25,
         "debt_to_equity": 12.57,
-        "dividend_yield_pct": 0.55,
+        "dividend_yield_pct": 2.2,
         "beta": 0.21,
         "institutional_ownership_pct": 68.09,
         "insider_ownership_pct": 0.08,
@@ -4364,7 +4364,7 @@
         "short_ratio_days": 3.28,
         "next_earnings_date": "2027-01-29",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 89,
+        "days_to_earnings": 88,
         "earnings_risk_flag": "CLEAR (2027-01-29 BMO)",
         "insider_net_shares_6m": 6914499,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -4374,14 +4374,14 @@
         "upside_to_consensus_pct": -4.03,
         "recommendation_key": "buy",
         "num_analysts": 21,
-        "net_dividend_yield_vn_pct": 0.39,
+        "net_dividend_yield_vn_pct": 1.54,
         "price_to_book_note": "Standard GAAP Equity",
         "accounting_regime": "STANDARD_CORPORATE (FCF & EVA)",
         "sbc_usd_bil": 8.54,
         "true_fcf_ex_sbc_bil": 20.36,
         "wacc_pct": 6.2,
-        "roic_pct": 17.86,
-        "eva_spread_pct": 11.66,
+        "roic_pct": 17.7,
+        "eva_spread_pct": 11.5,
         "piotroski_f_score": 8,
         "altman_z_score": 4.51,
         "solvency_zone": "SAFE ZONE (>3.0)",
@@ -4427,7 +4427,7 @@
         "profit_status_badge": "CÓ LÃI VỮNG (+$40.62B Net | F-Score 8/9)",
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay XOM biến động +2.16% (5 ngày: +2.21%, 1 tháng: +14.30%, 1 năm: +63.74%): Tăng mạnh +2.87% 1D (+15.05% 1M, +63.74% 1Y) nhờ KQKD vừa công bố vượt dự báo và giá dầu WTI neo cao ở $99.64/thùng (Headline #19).",
-        "business_health_vn": "[CÓ LÃI VỮNG (+$40.62B Net | F-Score 8/9)] Gã khổng lồ dầu khí số 1 phương Tây với Doanh thu $361.06B (+44.1% YoY), Lợi nhuận ròng +$32.76B, dòng tiền hoạt động OCF $59.73B và FCF +$20.67B USD. GAAP FCF đạt $28.9B USD (True FCF sau trừ thưởng cổ phiếu SBC: $20.36B USD). Biên tạo giá trị kinh tế EVA Spread = +11.66% (ROIC 17.86% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 4.51.",
+        "business_health_vn": "[CÓ LÃI VỮNG (+$40.62B Net | F-Score 8/9)] Gã khổng lồ dầu khí số 1 phương Tây với Doanh thu $361.06B (+44.1% YoY), Lợi nhuận ròng +$32.76B, dòng tiền hoạt động OCF $59.73B và FCF +$20.67B USD. GAAP FCF đạt $28.9B USD (True FCF sau trừ thưởng cổ phiếu SBC: $20.36B USD). Biên tạo giá trị kinh tế EVA Spread = +11.50% (ROIC 17.7% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 4.51.",
         "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 81/100). Vùng mua chuẩn: $174.22 – $177.74 | Cắt lỗ cứng Stop 2xATR: $178.98 | Chặn lãi Chandelier: $178.16 | Mục tiêu TP1: $203.79 / TP2: $212.06. Lịch BCTC: CLEAR (2027-01-29 BMO) (Biên độ dự kiến ±5.19%)."
       }
     },
@@ -4498,7 +4498,7 @@
         "short_ratio_days": 2.77,
         "next_earnings_date": "2027-01-29",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 89,
+        "days_to_earnings": 88,
         "earnings_risk_flag": "CLEAR (2027-01-29 BMO)",
         "insider_net_shares_6m": -669198,
         "insider_sentiment": "Net Insider Selling (Chốt lời nội bộ)",
@@ -4631,8 +4631,8 @@
         "short_ratio_days": 0.01,
         "next_earnings_date": "2026-11-09",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 8,
-        "earnings_risk_flag": "UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động",
+        "days_to_earnings": 7,
+        "earnings_risk_flag": "IMMINENT EARNINGS (7d, AMC) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": null,
         "insider_sentiment": "Neutral / Routine",
         "target_mean_price": 70.74,
@@ -4656,7 +4656,7 @@
       },
       "prediction": {
         "predictive_score": 90,
-        "ic_composite_score": 91,
+        "ic_composite_score": 88,
         "above_ma200": true,
         "direction_forecast": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
         "confidence": "Cao",
@@ -4664,11 +4664,11 @@
           "ban1_macro_sector_pts": 24,
           "ban2_fundamental_fcf_pts": 30,
           "ban3_valuation_consensus_pts": 17,
-          "ban4_quant_technical_risk_pts": 20,
+          "ban4_quant_technical_risk_pts": 17,
           "ban1_signal": "TAILWIND MẠNH (XLE +11.67% 1M, Sharpe 2.42)",
           "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-          "ban3_conflict_resolution": "Đồng thuận tuyệt đối cả 5 Phòng ban (Vĩ mô thuận lợi + BCTC mạnh + Lịch BCTC an toàn).",
-          "ban4_action_verdict": "STRONG BUY / ACCUMULATE (Giải ngân chủ lực)",
+          "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (7 ngày, biên độ dự kiến ±5.5%).",
+          "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
           "entry_zone": "$62.72 – $64.32",
           "tp1_price": 70.0,
           "tp2_price": 70.74,
@@ -4682,7 +4682,9 @@
           "[Ban 4 Kỹ thuật] Uptrend dài hạn vững chắc (Giá $64.0 > MA50 $60.18 > MA200 $56.07)",
           "[Ban 4 Kỹ thuật] RSI(64.42) ở vùng tích lũy tối ưu, dư địa tăng rộng"
         ],
-        "reasons_bearish": []
+        "reasons_bearish": [
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 7 ngày (2026-11-09 AMC) — Khóa lệnh mua đuổi (Implied Move ±5.5%)"
+        ]
       },
       "movement_explanation": {
         "symbol": "OXY",
@@ -4693,7 +4695,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay OXY biến động +1.57% (5 ngày: -0.26%, 1 tháng: +10.65%, 1 năm: +55.34%): Tăng +1.81% 1D (+15.69% 1M, +55.34% 1Y) hưởng lợi trực tiếp từ mặt bằng giá dầu WTI ~$100 và sự hậu thuẫn của Berkshire Hathaway.",
         "business_health_vn": "[CÓ LÃI VỮNG (+$3.4B Net | F-Score 9/9)] Doanh thu tăng +53.4% YoY ($23.93B), biên lợi nhuận hoạt động cực cao 45.44%, Lợi nhuận ròng +$3.40B và FCF dương +$3.79B USD. GAAP FCF đạt $3.79B USD (True FCF sau trừ thưởng cổ phiếu SBC: $3.26B USD). Biên tạo giá trị kinh tế EVA Spread = +12.45% (ROIC 18.65% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 9/9, Altman Z-Score = 3.65.",
-        "action_outlook_vn": "Phán quyết Ban 4: STRONG BUY / ACCUMULATE (Giải ngân chủ lực) (Điểm IC: 91/100). Vùng mua chuẩn: $62.72 – $64.32 | Cắt lỗ cứng Stop 2xATR: $61.0 | Chặn lãi Chandelier: $61.21 | Mục tiêu TP1: $70.0 / TP2: $70.74. Lịch BCTC: UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động (Biên độ dự kiến ±5.5%)."
+        "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 88/100). Vùng mua chuẩn: $62.72 – $64.32 | Cắt lỗ cứng Stop 2xATR: $61.0 | Chặn lãi Chandelier: $61.21 | Mục tiêu TP1: $70.0 / TP2: $70.74. Lịch BCTC: IMMINENT EARNINGS (7d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±5.5%)."
       }
     },
     {
@@ -4763,7 +4765,7 @@
         "short_ratio_days": 2.21,
         "next_earnings_date": "2027-01-26",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 86,
+        "days_to_earnings": 85,
         "earnings_risk_flag": "CLEAR (2027-01-26 BMO)",
         "insider_net_shares_6m": -7719,
         "insider_sentiment": "Neutral / Routine",
@@ -4893,7 +4895,7 @@
         "short_ratio_days": 3.3,
         "next_earnings_date": "2027-01-26",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 86,
+        "days_to_earnings": 85,
         "earnings_risk_flag": "CLEAR (2027-01-26 BMO)",
         "insider_net_shares_6m": 1379,
         "insider_sentiment": "Neutral / Routine",
@@ -5023,7 +5025,7 @@
         "short_ratio_days": 2.92,
         "next_earnings_date": "2027-01-28",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 88,
+        "days_to_earnings": 87,
         "earnings_risk_flag": "CLEAR (2027-01-28 BMO)",
         "insider_net_shares_6m": 41072,
         "insider_sentiment": "Neutral / Routine",
@@ -5155,8 +5157,8 @@
         "short_ratio_days": 3.38,
         "next_earnings_date": "2026-11-19",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 18,
-        "earnings_risk_flag": "UPCOMING EARNINGS (18d, BMO) — Lưu ý biến động",
+        "days_to_earnings": 17,
+        "earnings_risk_flag": "UPCOMING EARNINGS (17d, BMO) — Lưu ý biến động",
         "insider_net_shares_6m": -8890085,
         "insider_sentiment": "Net Insider Selling (Chốt lời nội bộ)",
         "target_mean_price": 127.47,
@@ -5216,7 +5218,7 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay WMT biến động +1.86% (5 ngày: +3.02%, 1 tháng: +18.46%, 1 năm: +22.07%): TĂNG MẠNH +3.99% 1D (+18.85% 1M, +22.07% 1Y) khi lạm phát thực phẩm tăng cao (Headline #5 & #11) thúc đẩy người tiêu dùng Mỹ đổ về đại siêu thị giá rẻ Walmart.",
         "business_health_vn": "[CÓ LÃI VỮNG (+$22.08B Net | F-Score 7/9)] Doanh thu lớn nhất thế giới $735.84B (+5.9% YoY), Lợi nhuận ròng +$22.08B, dòng tiền hoạt động OCF $42.92B, FCF +$7.13B và ROE 22.31%. GAAP FCF đạt $7.13B USD (True FCF sau trừ thưởng cổ phiếu SBC: $-9.06B USD). Biên tạo giá trị kinh tế EVA Spread = +4.87% (ROIC 11.96% vs WACC 7.09%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 2.93.",
-        "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 59/100). Vùng mua chuẩn: $114.79 – $117.11 | Cắt lỗ cứng Stop 2xATR: $118.22 | Chặn lãi Chandelier: $117.9 | Mục tiêu TP1: $134.09 / TP2: $139.38. Lịch BCTC: UPCOMING EARNINGS (18d, BMO) — Lưu ý biến động (Biên độ dự kiến ±5.03%)."
+        "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 59/100). Vùng mua chuẩn: $114.79 – $117.11 | Cắt lỗ cứng Stop 2xATR: $118.22 | Chặn lãi Chandelier: $117.9 | Mục tiêu TP1: $134.09 / TP2: $139.38. Lịch BCTC: UPCOMING EARNINGS (17d, BMO) — Lưu ý biến động (Biên độ dự kiến ±5.03%)."
       }
     },
     {
@@ -5286,7 +5288,7 @@
         "short_ratio_days": 3.21,
         "next_earnings_date": "2026-12-10",
         "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-        "days_to_earnings": 39,
+        "days_to_earnings": 38,
         "earnings_risk_flag": "CLEAR (2026-12-10 AMC)",
         "insider_net_shares_6m": 63166,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -5416,7 +5418,7 @@
         "short_ratio_days": 2.64,
         "next_earnings_date": "2027-01-21",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 81,
+        "days_to_earnings": 80,
         "earnings_risk_flag": "CLEAR (2027-01-21 BMO)",
         "insider_net_shares_6m": 99030,
         "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -5548,8 +5550,8 @@
         "short_ratio_days": 2.05,
         "next_earnings_date": "2026-11-04",
         "earnings_release_session": "BMO (Trước giờ mở cửa)",
-        "days_to_earnings": 3,
-        "earnings_risk_flag": "IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC",
+        "days_to_earnings": 2,
+        "earnings_risk_flag": "IMMINENT EARNINGS (2d, BMO) — Cấm mua đuổi sát BCTC",
         "insider_net_shares_6m": -2058,
         "insider_sentiment": "Neutral / Routine",
         "target_mean_price": 291.75,
@@ -5598,7 +5600,7 @@
         ],
         "reasons_bearish": [
           "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($283.18)",
-          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 BMO) — Khóa lệnh mua đuổi (Implied Move ±4.39%)"
+          "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 BMO) — Khóa lệnh mua đuổi (Implied Move ±4.39%)"
         ]
       },
       "movement_explanation": {
@@ -5610,144 +5612,12 @@
         "is_distressed_or_losing": false,
         "why_price_moved_vn": "Phiên hôm nay MCD biến động +0.29% (5 ngày: +3.89%, 1 tháng: +11.34%, 1 năm: -13.51%): Tăng +3.04% 1D (+11.77% 1M) khi các chương trình suất ăn tiết kiệm (Value Meals) thu hút khách hàng quay trở lại trong môi trường lạm phát.",
         "business_health_vn": "[CÓ LÃI VỮNG (+$8.79B Net | F-Score 8/9)] Mô hình nhượng quyền tạo biên hoạt động siêu cao 46.48%, Doanh thu $27.70B, Lợi nhuận ròng +$8.79B, FCF +$6.26B; lưu ý còn 4 ngày tới kỳ công bố BCTC. GAAP FCF đạt $6.26B USD (True FCF sau trừ thưởng cổ phiếu SBC: $5.65B USD). Biên tạo giá trị kinh tế EVA Spread = +7.54% (ROIC 14.03% vs WACC 6.49%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 3.91.",
-        "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 61/100). Vùng mua chuẩn: $252.96 – $259.41 | Cắt lỗ cứng Stop 2xATR: $248.49 | Chặn lãi Chandelier: $250.84 | Mục tiêu TP1: $277.38 / TP2: $291.75. Lịch BCTC: IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.39%)."
+        "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 61/100). Vùng mua chuẩn: $252.96 – $259.41 | Cắt lỗ cứng Stop 2xATR: $248.49 | Chặn lãi Chandelier: $250.84 | Mục tiêu TP1: $277.38 / TP2: $291.75. Lịch BCTC: IMMINENT EARNINGS (2d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.39%)."
       }
     }
   ],
   "screeners": {
     "top_bullish_uptrend_leaders": [
-      {
-        "symbol": "OXY",
-        "currency": "USD",
-        "exchange": "NYQ",
-        "last_price": 64.0,
-        "change_1d_pct": 1.57,
-        "change_5d_pct": -0.26,
-        "change_1m_pct": 10.65,
-        "change_3m_pct": 15.38,
-        "change_1y_pct": 55.34,
-        "ma20": 61.71,
-        "ma50": 60.18,
-        "ma200": 56.07,
-        "rsi_14": 64.42,
-        "macd_line": 1.23,
-        "macd_signal": 1.11,
-        "macd_hist": 0.12,
-        "bb_upper": 65.46,
-        "bb_lower": 57.96,
-        "atr_14": 1.5,
-        "atr_pct": 2.34,
-        "suggested_stop_2atr": 61.0,
-        "chandelier_trailing_stop": 61.21,
-        "volatility_1y_pct": 34.87,
-        "max_drawdown_1y_pct": -27.63,
-        "sharpe_ratio_1y": 1.45,
-        "empirical_beta_1y": null,
-        "high_52w": 67.45,
-        "low_52w": 38.8,
-        "pct_from_52w_high": -5.11,
-        "last_volume": 9112500,
-        "avg_volume_20d": 8406065,
-        "volume_vs_20d_avg": 1.08,
-        "trend_status": "Strong Uptrend (Above MA50 & MA200)",
-        "name": "Occidental Petroleum",
-        "sector": "Upstream Oil & Carbon Capture",
-        "fundamentals": {
-          "financial_currency_reported": "USD",
-          "fx_rate_to_usd_applied": 1.0,
-          "market_cap_usd_bil": 63.98,
-          "forward_pe": 12.76,
-          "trailing_pe": 18.18,
-          "peg_ratio": 0.96,
-          "price_to_book": 1.91,
-          "ev_to_ebitda": 6.08,
-          "revenue_usd_bil": 23.93,
-          "net_income_usd_bil": 3.4,
-          "revenue_growth_yoy": 53.4,
-          "earnings_growth_yoy": 964.9,
-          "gross_margin": 73.32,
-          "operating_margin": 45.44,
-          "profit_margin": 30.32,
-          "roe_pct": 10.63,
-          "roa_pct": 4.68,
-          "free_cashflow_bil": 3.79,
-          "operating_cashflow_bil": 10.98,
-          "total_cash_bil": 4.15,
-          "total_debt_bil": 14.63,
-          "debt_to_equity": 34.51,
-          "dividend_yield_pct": 1.56,
-          "beta": 0.24,
-          "institutional_ownership_pct": 58.29,
-          "insider_ownership_pct": 26.81,
-          "short_float_pct": 0.02,
-          "short_ratio_days": 0.01,
-          "next_earnings_date": "2026-11-09",
-          "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 8,
-          "earnings_risk_flag": "UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động",
-          "insider_net_shares_6m": null,
-          "insider_sentiment": "Neutral / Routine",
-          "target_mean_price": 70.74,
-          "target_high_price": 82.0,
-          "target_low_price": 60.0,
-          "upside_to_consensus_pct": 10.53,
-          "recommendation_key": "buy",
-          "num_analysts": 27,
-          "net_dividend_yield_vn_pct": 1.09,
-          "price_to_book_note": "Standard GAAP Equity",
-          "accounting_regime": "STANDARD_CORPORATE (FCF & EVA)",
-          "sbc_usd_bil": 0.53,
-          "true_fcf_ex_sbc_bil": 3.26,
-          "wacc_pct": 6.2,
-          "roic_pct": 18.65,
-          "eva_spread_pct": 12.45,
-          "piotroski_f_score": 9,
-          "altman_z_score": 3.65,
-          "solvency_zone": "SAFE ZONE (>3.0)",
-          "options_implied_move_pct": 5.5
-        },
-        "prediction": {
-          "predictive_score": 90,
-          "ic_composite_score": 91,
-          "above_ma200": true,
-          "direction_forecast": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
-          "confidence": "Cao",
-          "department_breakdown": {
-            "ban1_macro_sector_pts": 24,
-            "ban2_fundamental_fcf_pts": 30,
-            "ban3_valuation_consensus_pts": 17,
-            "ban4_quant_technical_risk_pts": 20,
-            "ban1_signal": "TAILWIND MẠNH (XLE +11.67% 1M, Sharpe 2.42)",
-            "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-            "ban3_conflict_resolution": "Đồng thuận tuyệt đối cả 5 Phòng ban (Vĩ mô thuận lợi + BCTC mạnh + Lịch BCTC an toàn).",
-            "ban4_action_verdict": "STRONG BUY / ACCUMULATE (Giải ngân chủ lực)",
-            "entry_zone": "$62.72 – $64.32",
-            "tp1_price": 70.0,
-            "tp2_price": 70.74,
-            "rr_ratio": 2.25
-          },
-          "reasons_bullish": [
-            "[Ban 1 Vĩ mô] Thuộc ngành dẫn sóng dòng tiền (XLE tăng +11.67% 1M, Sharpe 2.42)",
-            "[Ban 2 BCTC] Tăng trưởng doanh thu bứt phá (+53.4% YoY)",
-            "[Ban 2 BCTC] Dòng tiền tự do FCF dương vững chắc (+$3.79B USD, Piotroski 9/9)",
-            "[Ban 3 Định giá] Còn dư địa tăng +10.53% tới mục tiêu Phố Wall ($70.74)",
-            "[Ban 4 Kỹ thuật] Uptrend dài hạn vững chắc (Giá $64.0 > MA50 $60.18 > MA200 $56.07)",
-            "[Ban 4 Kỹ thuật] RSI(64.42) ở vùng tích lũy tối ưu, dư địa tăng rộng"
-          ],
-          "reasons_bearish": []
-        },
-        "movement_explanation": {
-          "symbol": "OXY",
-          "name": "Occidental Petroleum",
-          "sector": "Upstream Oil & Carbon Capture",
-          "move_badge": "GIỮ SẮC XANH (+1.57% 1D | +10.65% 1M)",
-          "profit_status_badge": "CÓ LÃI VỮNG (+$3.4B Net | F-Score 9/9)",
-          "is_distressed_or_losing": false,
-          "why_price_moved_vn": "Phiên hôm nay OXY biến động +1.57% (5 ngày: -0.26%, 1 tháng: +10.65%, 1 năm: +55.34%): Tăng +1.81% 1D (+15.69% 1M, +55.34% 1Y) hưởng lợi trực tiếp từ mặt bằng giá dầu WTI ~$100 và sự hậu thuẫn của Berkshire Hathaway.",
-          "business_health_vn": "[CÓ LÃI VỮNG (+$3.4B Net | F-Score 9/9)] Doanh thu tăng +53.4% YoY ($23.93B), biên lợi nhuận hoạt động cực cao 45.44%, Lợi nhuận ròng +$3.40B và FCF dương +$3.79B USD. GAAP FCF đạt $3.79B USD (True FCF sau trừ thưởng cổ phiếu SBC: $3.26B USD). Biên tạo giá trị kinh tế EVA Spread = +12.45% (ROIC 18.65% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 9/9, Altman Z-Score = 3.65.",
-          "action_outlook_vn": "Phán quyết Ban 4: STRONG BUY / ACCUMULATE (Giải ngân chủ lực) (Điểm IC: 91/100). Vùng mua chuẩn: $62.72 – $64.32 | Cắt lỗ cứng Stop 2xATR: $61.0 | Chặn lãi Chandelier: $61.21 | Mục tiêu TP1: $70.0 / TP2: $70.74. Lịch BCTC: UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động (Biên độ dự kiến ±5.5%)."
-        }
-      },
       {
         "symbol": "JPM",
         "currency": "USD",
@@ -5815,7 +5685,7 @@
           "short_ratio_days": 2.91,
           "next_earnings_date": "2027-01-14",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 74,
+          "days_to_earnings": 73,
           "earnings_risk_flag": "CLEAR (2027-01-14 BMO)",
           "insider_net_shares_6m": 86765,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -5947,7 +5817,7 @@
           "short_ratio_days": 2.64,
           "next_earnings_date": "2027-01-21",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 81,
+          "days_to_earnings": 80,
           "earnings_risk_flag": "CLEAR (2027-01-21 BMO)",
           "insider_net_shares_6m": 99030,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -6010,6 +5880,140 @@
           "why_price_moved_vn": "Phiên hôm nay PG biến động +0.61% (5 ngày: +0.34%, 1 tháng: +12.24%, 1 năm: +7.45%): Tăng +2.09% 1D (+11.21% 1M) đóng vai trò vị thế trú ẩn an toàn hàng đầu khi Nasdaq biến động mạnh.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$15.74B Net | F-Score 8/9)] Sở hữu quyền năng tăng giá bán lẻ giúp biên hoạt động đạt 26.87%, Doanh thu $87.92B, Lợi nhuận ròng +$15.74B, FCF +$12.65B và Ban lãnh đạo mua ròng cổ phiếu nội bộ. GAAP FCF đạt $12.65B USD (True FCF sau trừ thưởng cổ phiếu SBC: $10.72B USD). Biên tạo giá trị kinh tế EVA Spread = +15.60% (ROIC 21.8% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 5.02.",
           "action_outlook_vn": "Phán quyết Ban 4: STRONG BUY / ACCUMULATE (Giải ngân chủ lực) (Điểm IC: 89/100). Vùng mua chuẩn: $158.34 – $162.38 | Cắt lỗ cứng Stop 2xATR: $154.72 | Chặn lãi Chandelier: $158.29 | Mục tiêu TP1: $175.27 / TP2: $182.12. Lịch BCTC: CLEAR (2027-01-21 BMO) (Biên độ dự kiến ±4.98%)."
+        }
+      },
+      {
+        "symbol": "OXY",
+        "currency": "USD",
+        "exchange": "NYQ",
+        "last_price": 64.0,
+        "change_1d_pct": 1.57,
+        "change_5d_pct": -0.26,
+        "change_1m_pct": 10.65,
+        "change_3m_pct": 15.38,
+        "change_1y_pct": 55.34,
+        "ma20": 61.71,
+        "ma50": 60.18,
+        "ma200": 56.07,
+        "rsi_14": 64.42,
+        "macd_line": 1.23,
+        "macd_signal": 1.11,
+        "macd_hist": 0.12,
+        "bb_upper": 65.46,
+        "bb_lower": 57.96,
+        "atr_14": 1.5,
+        "atr_pct": 2.34,
+        "suggested_stop_2atr": 61.0,
+        "chandelier_trailing_stop": 61.21,
+        "volatility_1y_pct": 34.87,
+        "max_drawdown_1y_pct": -27.63,
+        "sharpe_ratio_1y": 1.45,
+        "empirical_beta_1y": null,
+        "high_52w": 67.45,
+        "low_52w": 38.8,
+        "pct_from_52w_high": -5.11,
+        "last_volume": 9112500,
+        "avg_volume_20d": 8406065,
+        "volume_vs_20d_avg": 1.08,
+        "trend_status": "Strong Uptrend (Above MA50 & MA200)",
+        "name": "Occidental Petroleum",
+        "sector": "Upstream Oil & Carbon Capture",
+        "fundamentals": {
+          "financial_currency_reported": "USD",
+          "fx_rate_to_usd_applied": 1.0,
+          "market_cap_usd_bil": 63.98,
+          "forward_pe": 12.76,
+          "trailing_pe": 18.18,
+          "peg_ratio": 0.96,
+          "price_to_book": 1.91,
+          "ev_to_ebitda": 6.08,
+          "revenue_usd_bil": 23.93,
+          "net_income_usd_bil": 3.4,
+          "revenue_growth_yoy": 53.4,
+          "earnings_growth_yoy": 964.9,
+          "gross_margin": 73.32,
+          "operating_margin": 45.44,
+          "profit_margin": 30.32,
+          "roe_pct": 10.63,
+          "roa_pct": 4.68,
+          "free_cashflow_bil": 3.79,
+          "operating_cashflow_bil": 10.98,
+          "total_cash_bil": 4.15,
+          "total_debt_bil": 14.63,
+          "debt_to_equity": 34.51,
+          "dividend_yield_pct": 1.56,
+          "beta": 0.24,
+          "institutional_ownership_pct": 58.29,
+          "insider_ownership_pct": 26.81,
+          "short_float_pct": 0.02,
+          "short_ratio_days": 0.01,
+          "next_earnings_date": "2026-11-09",
+          "earnings_release_session": "AMC (Sau giờ đóng cửa)",
+          "days_to_earnings": 7,
+          "earnings_risk_flag": "IMMINENT EARNINGS (7d, AMC) — Cấm mua đuổi sát BCTC",
+          "insider_net_shares_6m": null,
+          "insider_sentiment": "Neutral / Routine",
+          "target_mean_price": 70.74,
+          "target_high_price": 82.0,
+          "target_low_price": 60.0,
+          "upside_to_consensus_pct": 10.53,
+          "recommendation_key": "buy",
+          "num_analysts": 27,
+          "net_dividend_yield_vn_pct": 1.09,
+          "price_to_book_note": "Standard GAAP Equity",
+          "accounting_regime": "STANDARD_CORPORATE (FCF & EVA)",
+          "sbc_usd_bil": 0.53,
+          "true_fcf_ex_sbc_bil": 3.26,
+          "wacc_pct": 6.2,
+          "roic_pct": 18.65,
+          "eva_spread_pct": 12.45,
+          "piotroski_f_score": 9,
+          "altman_z_score": 3.65,
+          "solvency_zone": "SAFE ZONE (>3.0)",
+          "options_implied_move_pct": 5.5
+        },
+        "prediction": {
+          "predictive_score": 90,
+          "ic_composite_score": 88,
+          "above_ma200": true,
+          "direction_forecast": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
+          "confidence": "Cao",
+          "department_breakdown": {
+            "ban1_macro_sector_pts": 24,
+            "ban2_fundamental_fcf_pts": 30,
+            "ban3_valuation_consensus_pts": 17,
+            "ban4_quant_technical_risk_pts": 17,
+            "ban1_signal": "TAILWIND MẠNH (XLE +11.67% 1M, Sharpe 2.42)",
+            "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
+            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (7 ngày, biên độ dự kiến ±5.5%).",
+            "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
+            "entry_zone": "$62.72 – $64.32",
+            "tp1_price": 70.0,
+            "tp2_price": 70.74,
+            "rr_ratio": 2.25
+          },
+          "reasons_bullish": [
+            "[Ban 1 Vĩ mô] Thuộc ngành dẫn sóng dòng tiền (XLE tăng +11.67% 1M, Sharpe 2.42)",
+            "[Ban 2 BCTC] Tăng trưởng doanh thu bứt phá (+53.4% YoY)",
+            "[Ban 2 BCTC] Dòng tiền tự do FCF dương vững chắc (+$3.79B USD, Piotroski 9/9)",
+            "[Ban 3 Định giá] Còn dư địa tăng +10.53% tới mục tiêu Phố Wall ($70.74)",
+            "[Ban 4 Kỹ thuật] Uptrend dài hạn vững chắc (Giá $64.0 > MA50 $60.18 > MA200 $56.07)",
+            "[Ban 4 Kỹ thuật] RSI(64.42) ở vùng tích lũy tối ưu, dư địa tăng rộng"
+          ],
+          "reasons_bearish": [
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 7 ngày (2026-11-09 AMC) — Khóa lệnh mua đuổi (Implied Move ±5.5%)"
+          ]
+        },
+        "movement_explanation": {
+          "symbol": "OXY",
+          "name": "Occidental Petroleum",
+          "sector": "Upstream Oil & Carbon Capture",
+          "move_badge": "GIỮ SẮC XANH (+1.57% 1D | +10.65% 1M)",
+          "profit_status_badge": "CÓ LÃI VỮNG (+$3.4B Net | F-Score 9/9)",
+          "is_distressed_or_losing": false,
+          "why_price_moved_vn": "Phiên hôm nay OXY biến động +1.57% (5 ngày: -0.26%, 1 tháng: +10.65%, 1 năm: +55.34%): Tăng +1.81% 1D (+15.69% 1M, +55.34% 1Y) hưởng lợi trực tiếp từ mặt bằng giá dầu WTI ~$100 và sự hậu thuẫn của Berkshire Hathaway.",
+          "business_health_vn": "[CÓ LÃI VỮNG (+$3.4B Net | F-Score 9/9)] Doanh thu tăng +53.4% YoY ($23.93B), biên lợi nhuận hoạt động cực cao 45.44%, Lợi nhuận ròng +$3.40B và FCF dương +$3.79B USD. GAAP FCF đạt $3.79B USD (True FCF sau trừ thưởng cổ phiếu SBC: $3.26B USD). Biên tạo giá trị kinh tế EVA Spread = +12.45% (ROIC 18.65% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 9/9, Altman Z-Score = 3.65.",
+          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 88/100). Vùng mua chuẩn: $62.72 – $64.32 | Cắt lỗ cứng Stop 2xATR: $61.0 | Chặn lãi Chandelier: $61.21 | Mục tiêu TP1: $70.0 / TP2: $70.74. Lịch BCTC: IMMINENT EARNINGS (7d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±5.5%)."
         }
       },
       {
@@ -6079,7 +6083,7 @@
           "short_ratio_days": 2.94,
           "next_earnings_date": "2027-01-27",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 87,
+          "days_to_earnings": 86,
           "earnings_risk_flag": "CLEAR (2027-01-27 AMC)",
           "insider_net_shares_6m": 263995,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -6211,7 +6215,7 @@
           "short_ratio_days": 2.79,
           "next_earnings_date": "2027-01-14",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 74,
+          "days_to_earnings": 73,
           "earnings_risk_flag": "CLEAR (2027-01-14 BMO)",
           "insider_net_shares_6m": null,
           "insider_sentiment": "Neutral / Routine",
@@ -6342,7 +6346,7 @@
           "short_ratio_days": 2.23,
           "next_earnings_date": "2027-01-26",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 86,
+          "days_to_earnings": 85,
           "earnings_risk_flag": "CLEAR (2027-01-26 BMO)",
           "insider_net_shares_6m": -29799,
           "insider_sentiment": "Neutral / Routine",
@@ -6472,8 +6476,8 @@
           "short_ratio_days": 2.84,
           "next_earnings_date": "2026-11-17",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 16,
-          "earnings_risk_flag": "UPCOMING EARNINGS (16d, AMC) — Lưu ý biến động",
+          "days_to_earnings": 15,
+          "earnings_risk_flag": "UPCOMING EARNINGS (15d, AMC) — Lưu ý biến động",
           "insider_net_shares_6m": -3585082,
           "insider_sentiment": "Net Insider Selling (Chốt lời nội bộ)",
           "target_mean_price": 328.95,
@@ -6535,7 +6539,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay NVDA biến động -4.22% (5 ngày: -3.00%, 1 tháng: -11.36%, 1 năm: +1.06%): Điều chỉnh kỹ thuật ngắn hạn theo làn sóng chốt lời nhóm Bán dẫn (Nasdaq -2.86%) dù siêu chu kỳ chip AI Blackwell vẫn độc quyền tuyệt đối.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$192.88B Net | F-Score 8/9)] Doanh thu bùng nổ +105.9% YoY đạt $302.97B, Lợi nhuận ròng kỷ lục +$192.88B, biên hoạt động 66.24% — giữ vị thế độc tôn 85%+ thị phần GPU AI toàn cầu. GAAP FCF đạt $41.81B USD (True FCF sau trừ thưởng cổ phiếu SBC: $16.06B USD). Biên tạo giá trị kinh tế EVA Spread = +51.20% (ROIC 65.0% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 18.5.",
-          "action_outlook_vn": "Phán quyết Ban 4: ACCUMULATE AT MA200 (Tích lũy tại hỗ trợ) (Điểm IC: 81/100). Vùng mua chuẩn: $200.55 – $205.66 | Cắt lỗ cứng Stop 2xATR: $191.56 | Chặn lãi Chandelier: $227.02 | Mục tiêu TP1: $230.8 / TP2: $328.95. Lịch BCTC: UPCOMING EARNINGS (16d, AMC) — Lưu ý biến động (Biên độ dự kiến ±7.52%)."
+          "action_outlook_vn": "Phán quyết Ban 4: ACCUMULATE AT MA200 (Tích lũy tại hỗ trợ) (Điểm IC: 81/100). Vùng mua chuẩn: $200.55 – $205.66 | Cắt lỗ cứng Stop 2xATR: $191.56 | Chặn lãi Chandelier: $227.02 | Mục tiêu TP1: $230.8 / TP2: $328.95. Lịch BCTC: UPCOMING EARNINGS (15d, AMC) — Lưu ý biến động (Biên độ dự kiến ±7.52%)."
         }
       },
       {
@@ -6605,7 +6609,7 @@
           "short_ratio_days": 3.17,
           "next_earnings_date": "2027-01-26",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 86,
+          "days_to_earnings": 85,
           "earnings_risk_flag": "CLEAR (2027-01-26 AMC)",
           "insider_net_shares_6m": -29098,
           "insider_sentiment": "Neutral / Routine",
@@ -6708,7 +6712,7 @@
           "financial_currency_reported": "USD",
           "fx_rate_to_usd_applied": 1.0,
           "market_cap_usd_bil": 824.07,
-          "forward_pe": 31.66,
+          "forward_pe": 31.7,
           "trailing_pe": 128.78,
           "peg_ratio": 0.5,
           "price_to_book": 12.26,
@@ -6735,8 +6739,8 @@
           "short_ratio_days": 1.74,
           "next_earnings_date": "2026-11-03",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 2,
-          "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 1,
+          "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": 614124,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
           "target_mean_price": 640.21,
@@ -6771,7 +6775,7 @@
             "ban4_quant_technical_risk_pts": 14,
             "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (SMH -15.43% 1M)",
             "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (2 ngày, biên độ dự kiến ±14.5%).",
+            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±14.5%).",
             "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
             "entry_zone": "$494.7 – $507.32",
             "tp1_price": 633.58,
@@ -6787,7 +6791,7 @@
             "[Ban 4 Kỹ thuật] RSI(39.67) ở vùng tích lũy tối ưu, dư địa tăng rộng"
           ],
           "reasons_bearish": [
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
           ]
         },
         "movement_explanation": {
@@ -6799,7 +6803,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay AMD biến động -10.88% (5 ngày: -2.32%, 1 tháng: -18.02%, 1 năm: +97.10%): Rơi mạnh -12.73% 1D (-17.48% 1M) khi giới đầu tư bán giảm tỷ trọng trước thềm công bố BCTC (còn 3 ngày) và lo ngại cạnh tranh từ Blackwell của NVDA.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$6.47B Net | F-Score 8/9)] Doanh thu tăng +50.1% YoY ($41.31B), Lợi nhuận ròng +$6.47B, FCF +$8.84B, nhưng định giá EV/EBITDA ở mức rất cao 85.26x và biên độ nhảy gap quyền chọn BCTC lên tới ±13.23%. GAAP FCF đạt $8.84B USD (True FCF sau trừ thưởng cổ phiếu SBC: $5.33B USD). Biên tạo giá trị kinh tế EVA Spread = -5.13% (ROIC 8.67% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 18.5.",
-          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 77/100). Vùng mua chuẩn: $494.7 – $507.32 | Cắt lỗ cứng Stop 2xATR: $440.41 | Chặn lãi Chandelier: $578.03 | Mục tiêu TP1: $633.58 / TP2: $640.21. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
+          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 77/100). Vùng mua chuẩn: $494.7 – $507.32 | Cắt lỗ cứng Stop 2xATR: $440.41 | Chặn lãi Chandelier: $578.03 | Mục tiêu TP1: $633.58 / TP2: $640.21. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
         }
       },
       {
@@ -6869,7 +6873,7 @@
           "short_ratio_days": 3.21,
           "next_earnings_date": "2026-12-10",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 39,
+          "days_to_earnings": 38,
           "earnings_risk_flag": "CLEAR (2026-12-10 AMC)",
           "insider_net_shares_6m": 63166,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -7001,7 +7005,7 @@
           "short_ratio_days": 1.32,
           "next_earnings_date": "2027-01-27",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 87,
+          "days_to_earnings": 86,
           "earnings_risk_flag": "CLEAR (2027-01-27 AMC)",
           "insider_net_shares_6m": 1163626,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -7133,7 +7137,7 @@
           "short_ratio_days": 0.0,
           "next_earnings_date": "2027-01-15",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 75,
+          "days_to_earnings": 74,
           "earnings_risk_flag": "CLEAR (2027-01-15 BMO)",
           "insider_net_shares_6m": null,
           "insider_sentiment": "Neutral / Routine",
@@ -7265,7 +7269,7 @@
           "short_ratio_days": 2.92,
           "next_earnings_date": "2027-01-28",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 88,
+          "days_to_earnings": 87,
           "earnings_risk_flag": "CLEAR (2027-01-28 BMO)",
           "insider_net_shares_6m": 41072,
           "insider_sentiment": "Neutral / Routine",
@@ -7397,8 +7401,8 @@
           "short_ratio_days": 3.0,
           "next_earnings_date": "2026-11-04",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 3,
-          "earnings_risk_flag": "IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 2,
+          "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": 304842,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
           "target_mean_price": 290.7,
@@ -7447,7 +7451,7 @@
           ],
           "reasons_bearish": [
             "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($228.93)",
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
           ]
         },
         "movement_explanation": {
@@ -7459,7 +7463,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay ARM biến động -9.97% (5 ngày: -2.07%, 1 tháng: -29.54%, 1 năm: +21.29%): Bị bán tháo -12.69% 1D (-28.89% 1M) khi làn sóng xả cổ phiếu công nghệ định giá siêu đắt diễn ra trên Nasdaq (Headline #17).",
           "business_health_vn": "[CÓ LÃI VỮNG (+$1.04B Net | F-Score 8/9)] Quy mô doanh thu còn nhỏ ($5.16B, +22.4% YoY) và Lợi nhuận ròng chỉ +$1.04B (biên hoạt động mỏng 7.60%), nhưng vốn hóa lại bị đẩy lên $219.98B khiến EV/EBITDA lên tới 203.60x. GAAP FCF đạt $1.33B USD (True FCF sau trừ thưởng cổ phiếu SBC: $0.89B USD). Biên tạo giá trị kinh tế EVA Spread = -11.73% (ROIC 2.07% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 18.5.",
-          "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 60/100). Vùng mua chuẩn: $201.85 – $207.0 | Cắt lỗ cứng Stop 2xATR: $177.37 | Chặn lãi Chandelier: $282.61 | Mục tiêu TP1: $263.17 / TP2: $290.7. Lịch BCTC: IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
+          "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 60/100). Vùng mua chuẩn: $201.85 – $207.0 | Cắt lỗ cứng Stop 2xATR: $177.37 | Chặn lãi Chandelier: $282.61 | Mục tiêu TP1: $263.17 / TP2: $290.7. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
         }
       },
       {
@@ -7502,7 +7506,7 @@
           "financial_currency_reported": "USD",
           "fx_rate_to_usd_applied": 1.0,
           "market_cap_usd_bil": 349.51,
-          "forward_pe": 35.5,
+          "forward_pe": 36.3,
           "trailing_pe": null,
           "peg_ratio": 1.36,
           "price_to_book": 3.04,
@@ -7529,7 +7533,7 @@
           "short_ratio_days": 1.36,
           "next_earnings_date": "2027-01-28",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 88,
+          "days_to_earnings": 87,
           "earnings_risk_flag": "CLEAR (2027-01-28 AMC)",
           "insider_net_shares_6m": null,
           "insider_sentiment": "Neutral / Routine",
@@ -7635,7 +7639,7 @@
           "financial_currency_reported": "USD",
           "fx_rate_to_usd_applied": 1.0,
           "market_cap_usd_bil": 1262.67,
-          "forward_pe": 28.66,
+          "forward_pe": 28.5,
           "trailing_pe": 46.01,
           "peg_ratio": 1.36,
           "price_to_book": 31.37,
@@ -7662,8 +7666,8 @@
           "short_ratio_days": 3.0,
           "next_earnings_date": "2026-10-29",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": -3,
-          "earnings_risk_flag": "JUST REPORTED (3d ago) — Đã qua rủi ro BCTC",
+          "days_to_earnings": -4,
+          "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
           "insider_net_shares_6m": -306748,
           "insider_sentiment": "Neutral / Routine",
           "target_mean_price": 1403.64,
@@ -7724,7 +7728,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay LLY biến động +3.19% (5 ngày: +11.31%, 1 tháng: +23.28%, 1 năm: +64.28%): TĂNG BÙNG NỔ MẠNH NHẤT PHỐ WALL +10.03% 1D (+22.51% 1M, +64.28% 1Y) nhờ cơn sốt thuốc điều trị béo phì & tiểu đường GLP-1 (Mounjaro / Zepbound).",
           "business_health_vn": "[CÓ LÃI VỮNG (+$27.58B Net | F-Score 8/9)] Doanh thu tăng vọt +38.6% YoY ($86.46B), biên lợi nhuận hoạt động cực cao 53.66%, Lợi nhuận ròng +$27.58B, EVA Spread +57.27%; tuy nhiên RSI(14) đã chạm 74.44 (Quá mua — canh chỉnh về MA20). GAAP FCF đạt $9.34B USD (True FCF sau trừ thưởng cổ phiếu SBC: $7.44B USD). Biên tạo giá trị kinh tế EVA Spread = +35.49% (ROIC 41.98% vs WACC 6.49%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 12.74.",
-          "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 77/100). Vùng mua chuẩn: $1233.55 – $1258.47 | Cắt lỗ cứng Stop 2xATR: $1321.06 | Chặn lãi Chandelier: $1329.08 | Mục tiêu TP1: $1610.5 / TP2: $1706.98. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±7.99%)."
+          "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 77/100). Vùng mua chuẩn: $1233.55 – $1258.47 | Cắt lỗ cứng Stop 2xATR: $1321.06 | Chặn lãi Chandelier: $1329.08 | Mục tiêu TP1: $1610.5 / TP2: $1706.98. Lịch BCTC: JUST REPORTED (4d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±7.99%)."
         }
       },
       {
@@ -7794,7 +7798,7 @@
           "short_ratio_days": 2.21,
           "next_earnings_date": "2027-01-26",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 86,
+          "days_to_earnings": 85,
           "earnings_risk_flag": "CLEAR (2027-01-26 BMO)",
           "insider_net_shares_6m": -7719,
           "insider_sentiment": "Neutral / Routine",
@@ -7900,7 +7904,7 @@
           "forward_pe": 15.59,
           "trailing_pe": 19.26,
           "peg_ratio": 1.52,
-          "price_to_book": 2.9,
+          "price_to_book": 2.87,
           "ev_to_ebitda": 10.05,
           "revenue_usd_bil": 388.23,
           "net_income_usd_bil": 40.62,
@@ -7916,7 +7920,7 @@
           "total_cash_bil": 12.15,
           "total_debt_bil": 34.25,
           "debt_to_equity": 12.57,
-          "dividend_yield_pct": 0.55,
+          "dividend_yield_pct": 2.2,
           "beta": 0.21,
           "institutional_ownership_pct": 68.09,
           "insider_ownership_pct": 0.08,
@@ -7924,7 +7928,7 @@
           "short_ratio_days": 3.28,
           "next_earnings_date": "2027-01-29",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 89,
+          "days_to_earnings": 88,
           "earnings_risk_flag": "CLEAR (2027-01-29 BMO)",
           "insider_net_shares_6m": 6914499,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -7934,14 +7938,14 @@
           "upside_to_consensus_pct": -4.03,
           "recommendation_key": "buy",
           "num_analysts": 21,
-          "net_dividend_yield_vn_pct": 0.39,
+          "net_dividend_yield_vn_pct": 1.54,
           "price_to_book_note": "Standard GAAP Equity",
           "accounting_regime": "STANDARD_CORPORATE (FCF & EVA)",
           "sbc_usd_bil": 8.54,
           "true_fcf_ex_sbc_bil": 20.36,
           "wacc_pct": 6.2,
-          "roic_pct": 17.86,
-          "eva_spread_pct": 11.66,
+          "roic_pct": 17.7,
+          "eva_spread_pct": 11.5,
           "piotroski_f_score": 8,
           "altman_z_score": 4.51,
           "solvency_zone": "SAFE ZONE (>3.0)",
@@ -7987,7 +7991,7 @@
           "profit_status_badge": "CÓ LÃI VỮNG (+$40.62B Net | F-Score 8/9)",
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay XOM biến động +2.16% (5 ngày: +2.21%, 1 tháng: +14.30%, 1 năm: +63.74%): Tăng mạnh +2.87% 1D (+15.05% 1M, +63.74% 1Y) nhờ KQKD vừa công bố vượt dự báo và giá dầu WTI neo cao ở $99.64/thùng (Headline #19).",
-          "business_health_vn": "[CÓ LÃI VỮNG (+$40.62B Net | F-Score 8/9)] Gã khổng lồ dầu khí số 1 phương Tây với Doanh thu $361.06B (+44.1% YoY), Lợi nhuận ròng +$32.76B, dòng tiền hoạt động OCF $59.73B và FCF +$20.67B USD. GAAP FCF đạt $28.9B USD (True FCF sau trừ thưởng cổ phiếu SBC: $20.36B USD). Biên tạo giá trị kinh tế EVA Spread = +11.66% (ROIC 17.86% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 4.51.",
+          "business_health_vn": "[CÓ LÃI VỮNG (+$40.62B Net | F-Score 8/9)] Gã khổng lồ dầu khí số 1 phương Tây với Doanh thu $361.06B (+44.1% YoY), Lợi nhuận ròng +$32.76B, dòng tiền hoạt động OCF $59.73B và FCF +$20.67B USD. GAAP FCF đạt $28.9B USD (True FCF sau trừ thưởng cổ phiếu SBC: $20.36B USD). Biên tạo giá trị kinh tế EVA Spread = +11.50% (ROIC 17.7% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 4.51.",
           "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 81/100). Vùng mua chuẩn: $174.22 – $177.74 | Cắt lỗ cứng Stop 2xATR: $178.98 | Chặn lãi Chandelier: $178.16 | Mục tiêu TP1: $203.79 / TP2: $212.06. Lịch BCTC: CLEAR (2027-01-29 BMO) (Biên độ dự kiến ±5.19%)."
         }
       },
@@ -8058,7 +8062,7 @@
           "short_ratio_days": 2.77,
           "next_earnings_date": "2027-01-29",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 89,
+          "days_to_earnings": 88,
           "earnings_risk_flag": "CLEAR (2027-01-29 BMO)",
           "insider_net_shares_6m": -669198,
           "insider_sentiment": "Net Insider Selling (Chốt lời nội bộ)",
@@ -8191,8 +8195,8 @@
           "short_ratio_days": 3.22,
           "next_earnings_date": "2026-10-30",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": -2,
-          "earnings_risk_flag": "JUST REPORTED (2d ago) — Đã qua rủi ro BCTC",
+          "days_to_earnings": -3,
+          "earnings_risk_flag": "JUST REPORTED (3d ago) — Đã qua rủi ro BCTC",
           "insider_net_shares_6m": 12298,
           "insider_sentiment": "Neutral / Routine",
           "target_mean_price": 290.42,
@@ -8254,7 +8258,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay ABBV biến động +1.41% (5 ngày: +3.24%, 1 tháng: +13.45%, 1 năm: +35.25%): Bứt phá +3.11% 1D (+12.73% 1M, +35.25% 1Y) ngay sau khi công bố BCTC vượt kỳ vọng (JUST REPORTED 1 ngày trước) nhờ bộ đôi thuốc miễn dịch Skyrizi & Rinvoq.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$10.3B Net | F-Score 6/9)] Doanh thu $64.39B (+10.2% YoY), biên hoạt động 40.03%, dòng tiền tự do FCF cực mạnh +$16.87B USD (True FCF +$15.45B) và điểm sức khỏe Piotroski đạt 9/9. Định chế Ngân hàng (ROE đạt 48.0%, P/B 24.28x). Biên tạo giá trị kinh tế EVA Spread = +16.95% (ROIC 23.15% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 6/9, Altman Z-Score = 5.21.",
-          "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 79/100). Vùng mua chuẩn: $278.81 – $284.45 | Cắt lỗ cứng Stop 2xATR: $281.08 | Chặn lãi Chandelier: $281.48 | Mục tiêu TP1: $322.51 / TP2: $336.32. Lịch BCTC: JUST REPORTED (2d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±5.5%)."
+          "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 79/100). Vùng mua chuẩn: $278.81 – $284.45 | Cắt lỗ cứng Stop 2xATR: $281.08 | Chặn lãi Chandelier: $281.48 | Mục tiêu TP1: $322.51 / TP2: $336.32. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±5.5%)."
         }
       },
       {
@@ -8324,8 +8328,8 @@
           "short_ratio_days": 3.38,
           "next_earnings_date": "2026-11-19",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 18,
-          "earnings_risk_flag": "UPCOMING EARNINGS (18d, BMO) — Lưu ý biến động",
+          "days_to_earnings": 17,
+          "earnings_risk_flag": "UPCOMING EARNINGS (17d, BMO) — Lưu ý biến động",
           "insider_net_shares_6m": -8890085,
           "insider_sentiment": "Net Insider Selling (Chốt lời nội bộ)",
           "target_mean_price": 127.47,
@@ -8385,7 +8389,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay WMT biến động +1.86% (5 ngày: +3.02%, 1 tháng: +18.46%, 1 năm: +22.07%): TĂNG MẠNH +3.99% 1D (+18.85% 1M, +22.07% 1Y) khi lạm phát thực phẩm tăng cao (Headline #5 & #11) thúc đẩy người tiêu dùng Mỹ đổ về đại siêu thị giá rẻ Walmart.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$22.08B Net | F-Score 7/9)] Doanh thu lớn nhất thế giới $735.84B (+5.9% YoY), Lợi nhuận ròng +$22.08B, dòng tiền hoạt động OCF $42.92B, FCF +$7.13B và ROE 22.31%. GAAP FCF đạt $7.13B USD (True FCF sau trừ thưởng cổ phiếu SBC: $-9.06B USD). Biên tạo giá trị kinh tế EVA Spread = +4.87% (ROIC 11.96% vs WACC 7.09%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 2.93.",
-          "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 59/100). Vùng mua chuẩn: $114.79 – $117.11 | Cắt lỗ cứng Stop 2xATR: $118.22 | Chặn lãi Chandelier: $117.9 | Mục tiêu TP1: $134.09 / TP2: $139.38. Lịch BCTC: UPCOMING EARNINGS (18d, BMO) — Lưu ý biến động (Biên độ dự kiến ±5.03%)."
+          "action_outlook_vn": "Phán quyết Ban 4: BUY ON DIP TO MA20 (Chỉ canh mua khi chỉnh) (Điểm IC: 59/100). Vùng mua chuẩn: $114.79 – $117.11 | Cắt lỗ cứng Stop 2xATR: $118.22 | Chặn lãi Chandelier: $117.9 | Mục tiêu TP1: $134.09 / TP2: $139.38. Lịch BCTC: UPCOMING EARNINGS (17d, BMO) — Lưu ý biến động (Biên độ dự kiến ±5.03%)."
         }
       }
     ],
@@ -8457,8 +8461,8 @@
           "short_ratio_days": 2.29,
           "next_earnings_date": "2026-11-04",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 3,
-          "earnings_risk_flag": "IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 2,
+          "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": -49161,
           "insider_sentiment": "Neutral / Routine",
           "target_mean_price": 196.3,
@@ -8507,7 +8511,7 @@
           "reasons_bearish": [
             "[Ban 2 BCTC] Doanh thu suy giảm (-4.0% YoY)",
             "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($169.52)",
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±10.65%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±10.65%)"
           ]
         },
         "movement_explanation": {
@@ -8519,7 +8523,7 @@
           "is_distressed_or_losing": true,
           "why_price_moved_vn": "Phiên hôm nay QCOM biến động -11.12% (5 ngày: -6.32%, 1 tháng: -9.50%, 1 năm: -8.91%): Giảm sâu -9.94% 1D (-10.46% 1M) do chu kỳ nâng cấp điện thoại thông minh toàn cầu phục hồi chậm và sát kỳ công bố BCTC (còn 4 ngày).",
           "business_health_vn": "[SUY GIẢM DOANH THU (-4.0% YoY)] Doanh thu đang suy giảm -4.0% YoY ($44.07B) dù vẫn duy trì Lợi nhuận ròng +$9.26B và FCF +$10.24B; cấu trúc giá đang suy yếu dưới đường trung bình. GAAP FCF đạt $10.24B USD (True FCF sau trừ thưởng cổ phiếu SBC: $9.27B USD). Biên tạo giá trị kinh tế EVA Spread = +4.51% (ROIC 16.52% vs WACC 12.01%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 5.16.",
-          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 44/100). Vùng mua chuẩn: $161.49 – $165.61 | Cắt lỗ cứng Stop 2xATR: $149.85 | Chặn lãi Chandelier: $170.28 | Mục tiêu TP1: $194.67 / TP2: $196.3. Lịch BCTC: IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±10.65%)."
+          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 44/100). Vùng mua chuẩn: $161.49 – $165.61 | Cắt lỗ cứng Stop 2xATR: $149.85 | Chặn lãi Chandelier: $170.28 | Mục tiêu TP1: $194.67 / TP2: $196.3. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±10.65%)."
         }
       },
       {
@@ -8562,7 +8566,7 @@
           "financial_currency_reported": "USD",
           "fx_rate_to_usd_applied": 1.0,
           "market_cap_usd_bil": 3440.35,
-          "forward_pe": 18.49,
+          "forward_pe": 18.44,
           "trailing_pe": 14.61,
           "peg_ratio": 0.98,
           "price_to_book": 5.22,
@@ -8589,8 +8593,8 @@
           "short_ratio_days": 3.1,
           "next_earnings_date": "2026-10-28",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": -4,
-          "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
+          "days_to_earnings": -5,
+          "earnings_risk_flag": "JUST REPORTED (5d ago) — Đã qua rủi ro BCTC",
           "insider_net_shares_6m": null,
           "insider_sentiment": "Neutral / Routine",
           "target_mean_price": 406.55,
@@ -8651,7 +8655,7 @@
           "is_distressed_or_losing": true,
           "why_price_moved_vn": "Phiên hôm nay GOOGL biến động -1.40% (5 ngày: -12.61%, 1 tháng: -17.27%, 1 năm: -0.48%): Bị bán tháo mạnh ngắn hạn (-13.87% 1D, RSI rơi về quá bán sâu 22.32) do lo ngại chi phí đầu tư máy chủ AI (CapEx) nén dòng tiền tự do ngắn hạn.",
           "business_health_vn": "[CHÁY DÒNG TIỀN FCF (-$1.16B USD)] Nội tại kinh doanh cốt lõi vẫn cực khỏe với Doanh thu $471.10B (+24.7% YoY) và Lợi nhuận ròng +$235.31B, nhưng việc chi tới ~$174B CapEx khiến GAAP FCF ngắn hạn giảm còn +$5.52B (so với OCF $179.55B). GAAP FCF đạt $-1.16B USD (True FCF sau trừ thưởng cổ phiếu SBC: $-41.2B USD). Biên tạo giá trị kinh tế EVA Spread = +5.39% (ROIC 15.38% vs WACC 9.99%), Điểm sức khỏe Piotroski F-Score = 6/9, Altman Z-Score = 8.39.",
-          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $274.24 – $281.24 | Cắt lỗ cứng Stop 2xATR: $258.16 | Chặn lãi Chandelier: $332.29 | Mục tiêu TP1: $323.2 / TP2: $406.55. Lịch BCTC: JUST REPORTED (4d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±9.09%)."
+          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $274.24 – $281.24 | Cắt lỗ cứng Stop 2xATR: $258.16 | Chặn lãi Chandelier: $332.29 | Mục tiêu TP1: $323.2 / TP2: $406.55. Lịch BCTC: JUST REPORTED (5d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±9.09%)."
         }
       },
       {
@@ -8694,7 +8698,7 @@
           "financial_currency_reported": "USD",
           "fx_rate_to_usd_applied": 1.0,
           "market_cap_usd_bil": 2598.94,
-          "forward_pe": 22.39,
+          "forward_pe": 22.07,
           "trailing_pe": 19.43,
           "peg_ratio": 1.39,
           "price_to_book": 4.23,
@@ -8721,8 +8725,8 @@
           "short_ratio_days": 2.6,
           "next_earnings_date": "2026-10-29",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": -3,
-          "earnings_risk_flag": "JUST REPORTED (3d ago) — Đã qua rủi ro BCTC",
+          "days_to_earnings": -4,
+          "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
           "insider_net_shares_6m": 912718,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
           "target_mean_price": 326.92,
@@ -8783,7 +8787,7 @@
           "is_distressed_or_losing": true,
           "why_price_moved_vn": "Phiên hôm nay AMZN biến động -1.41% (5 ngày: -3.08%, 1 tháng: -3.17%, 1 năm: -1.58%): Điều chỉnh -5.60% 1D theo áp lực chung của nhóm Hyperscalers khi Phố Wall soi xét gắt gao hiệu suất vốn đầu tư hạ tầng AWS AI.",
           "business_health_vn": "[CHÁY DÒNG TIỀN FCF (-$11.14B USD)] Doanh thu khổng lồ $775.68B (+19.6% YoY), Lợi nhuận ròng +$135.28B và dòng tiền hoạt động OCF đạt $161.40B, nhưng CapEx trung tâm dữ liệu & logistics lớn làm FCF tự do còn +$3.22B. GAAP FCF đạt $-11.14B USD (True FCF sau trừ thưởng cổ phiếu SBC: $-78.92B USD). Biên tạo giá trị kinh tế EVA Spread = -0.79% (ROIC 10.35% vs WACC 11.14%), Điểm sức khỏe Piotroski F-Score = 6/9, Altman Z-Score = 4.38.",
-          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $235.54 – $241.55 | Cắt lỗ cứng Stop 2xATR: $224.92 | Chặn lãi Chandelier: $246.05 | Mục tiêu TP1: $271.21 / TP2: $326.92. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±7.54%)."
+          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $235.54 – $241.55 | Cắt lỗ cứng Stop 2xATR: $224.92 | Chặn lãi Chandelier: $246.05 | Mục tiêu TP1: $271.21 / TP2: $326.92. Lịch BCTC: JUST REPORTED (4d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±7.54%)."
         }
       },
       {
@@ -8826,7 +8830,7 @@
           "financial_currency_reported": "USD",
           "fx_rate_to_usd_applied": 1.0,
           "market_cap_usd_bil": 1580.34,
-          "forward_pe": 185.5,
+          "forward_pe": 185.16,
           "trailing_pe": 439.35,
           "peg_ratio": 4.66,
           "price_to_book": 17.7,
@@ -8853,7 +8857,7 @@
           "short_ratio_days": 2.04,
           "next_earnings_date": "2027-01-27",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 87,
+          "days_to_earnings": 86,
           "earnings_risk_flag": "CLEAR (2027-01-27 AMC)",
           "insider_net_shares_6m": 303981185,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
@@ -8903,7 +8907,7 @@
           ],
           "reasons_bearish": [
             "[Ban 2 BCTC] Doanh thu suy giảm (-0.2% YoY)",
-            "[Ban 3 Định giá] Forward P/E quá đắt (185.5x), rủi ro nén định giá cao"
+            "[Ban 3 Định giá] Forward P/E quá đắt (185.16x), rủi ro nén định giá cao"
           ]
         },
         "movement_explanation": {
@@ -8958,7 +8962,7 @@
           "financial_currency_reported": "USD",
           "fx_rate_to_usd_applied": 1.0,
           "market_cap_usd_bil": 38.0,
-          "forward_pe": 50.17,
+          "forward_pe": 53.87,
           "trailing_pe": null,
           "peg_ratio": 2.1,
           "price_to_book": 2.73,
@@ -8985,14 +8989,14 @@
           "short_ratio_days": 2.48,
           "next_earnings_date": "2026-10-29",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": -3,
-          "earnings_risk_flag": "JUST REPORTED (3d ago) — Đã qua rủi ro BCTC",
+          "days_to_earnings": -4,
+          "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
           "insider_net_shares_6m": -21643,
           "insider_sentiment": "Neutral / Routine",
-          "target_mean_price": 206.03,
+          "target_mean_price": 205.49,
           "target_high_price": 280.0,
           "target_low_price": 110.0,
-          "upside_to_consensus_pct": 43.53,
+          "upside_to_consensus_pct": 43.16,
           "recommendation_key": "buy",
           "num_analysts": 33,
           "net_dividend_yield_vn_pct": 0.0,
@@ -9025,12 +9029,12 @@
             "ban4_action_verdict": "AVOID (Đứng ngoài hoàn toàn)",
             "entry_zone": "$140.67 – $144.26",
             "tp1_price": 184.84,
-            "tp2_price": 206.03,
-            "rr_ratio": 3.03
+            "tp2_price": 205.49,
+            "rr_ratio": 3.0
           },
           "reasons_bullish": [
             "[Ban 2 BCTC] Dòng tiền tự do FCF dương vững chắc (+$3.68B USD, Piotroski 7/9)",
-            "[Ban 3 Định giá] Mục tiêu Phố Wall ($206.03) cao hơn thị giá +43.53%"
+            "[Ban 3 Định giá] Mục tiêu Phố Wall ($205.49) cao hơn thị giá +43.16%"
           ],
           "reasons_bearish": [
             "[Ban 2 BCTC] Doanh thu suy giảm (-34.2% YoY)",
@@ -9046,7 +9050,7 @@
           "is_distressed_or_losing": true,
           "why_price_moved_vn": "Phiên hôm nay COIN biến động -10.62% (5 ngày: -12.72%, 1 tháng: -24.17%, 1 năm: -58.25%): Bị bán tháo -11.57% 1D (-23.00% 1M, -58.25% 1Y) khi thanh khoản giao dịch tài sản số sụt giảm và lãi suất USD neo cao.",
           "business_health_vn": "[THUA LỖ RÒNG (-$0.70B USD)] DOANH NGHIỆP ĐANG THUA LỖ & SUY GIẢM: Doanh thu sụt giảm -17.3% YoY ($6.04B), biên lợi nhuận hoạt động âm -13.92%, Lỗ ròng -$0.99 tỷ USD và ROE âm -7.85%. GAAP FCF đạt $3.68B USD (True FCF sau trừ thưởng cổ phiếu SBC: $3.22B USD). Biên tạo giá trị kinh tế EVA Spread = -14.17% (ROIC -0.37% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 2.85.",
-          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $140.67 – $144.26 | Cắt lỗ cứng Stop 2xATR: $122.89 | Chặn lãi Chandelier: $174.53 | Mục tiêu TP1: $184.84 / TP2: $206.03. Lịch BCTC: JUST REPORTED (3d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±14.5%)."
+          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 45/100). Vùng mua chuẩn: $140.67 – $144.26 | Cắt lỗ cứng Stop 2xATR: $122.89 | Chặn lãi Chandelier: $174.53 | Mục tiêu TP1: $184.84 / TP2: $205.49. Lịch BCTC: JUST REPORTED (4d ago) — Đã qua rủi ro BCTC (Biên độ dự kiến ±14.5%)."
         }
       }
     ],
@@ -9118,8 +9122,8 @@
           "short_ratio_days": 3.48,
           "next_earnings_date": "2026-11-02",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 1,
-          "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 0,
+          "earnings_risk_flag": "IMMINENT EARNINGS (0d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": 257744,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
           "target_mean_price": 332.39,
@@ -9154,7 +9158,7 @@
             "ban4_quant_technical_risk_pts": 16,
             "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (XLK -9.25% 1M)",
             "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±4.56%).",
+            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (0 ngày, biên độ dự kiến ±4.56%).",
             "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
             "entry_zone": "$337.74 – $346.35",
             "tp1_price": 371.41,
@@ -9170,7 +9174,7 @@
           ],
           "reasons_bearish": [
             "[Ban 3 Định giá] Thị giá đã vượt mục tiêu trung bình của Phố Wall (-3.55%)",
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-02 AMC) — Khóa lệnh mua đuổi (Implied Move ±4.56%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 0 ngày (2026-11-02 AMC) — Khóa lệnh mua đuổi (Implied Move ±4.56%)"
           ]
         },
         "movement_explanation": {
@@ -9182,7 +9186,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay AAPL biến động -1.23% (5 ngày: -0.89%, 1 tháng: +4.33%, 1 năm: +27.47%): Đi ngang giữ sắc xanh (+0.23% 1D, +3.49% 1M, +27.47% 1Y) trước thềm công bố BCTC trong 2 ngày tới nhờ vị thế trú ẩn tiền mặt.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$128.93B Net | F-Score 9/9)] Doanh thu $466.82B (+16.4% YoY), Lợi nhuận ròng +$128.93B, FCF lớn nhất thế giới +$107.72B USD (True FCF ex-SBC +$97.45B) và chương trình mua lại cổ phiếu quỹ khổng lồ. GAAP FCF đạt $107.72B USD (True FCF sau trừ thưởng cổ phiếu SBC: $97.45B USD). Biên tạo giá trị kinh tế EVA Spread = +55.66% (ROIC 65.0% vs WACC 9.34%), Điểm sức khỏe Piotroski F-Score = 9/9, Altman Z-Score = 15.32.",
-          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 68/100). Vùng mua chuẩn: $337.74 – $346.35 | Cắt lỗ cứng Stop 2xATR: $331.24 | Chặn lãi Chandelier: $334.99 | Mục tiêu TP1: $371.41 / TP2: $384.8. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.56%)."
+          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 68/100). Vùng mua chuẩn: $337.74 – $346.35 | Cắt lỗ cứng Stop 2xATR: $331.24 | Chặn lãi Chandelier: $334.99 | Mục tiêu TP1: $371.41 / TP2: $384.8. Lịch BCTC: IMMINENT EARNINGS (0d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.56%)."
         }
       },
       {
@@ -9225,7 +9229,7 @@
           "financial_currency_reported": "USD",
           "fx_rate_to_usd_applied": 1.0,
           "market_cap_usd_bil": 824.07,
-          "forward_pe": 31.66,
+          "forward_pe": 31.7,
           "trailing_pe": 128.78,
           "peg_ratio": 0.5,
           "price_to_book": 12.26,
@@ -9252,8 +9256,8 @@
           "short_ratio_days": 1.74,
           "next_earnings_date": "2026-11-03",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 2,
-          "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 1,
+          "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": 614124,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
           "target_mean_price": 640.21,
@@ -9288,7 +9292,7 @@
             "ban4_quant_technical_risk_pts": 14,
             "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (SMH -15.43% 1M)",
             "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (2 ngày, biên độ dự kiến ±14.5%).",
+            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±14.5%).",
             "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
             "entry_zone": "$494.7 – $507.32",
             "tp1_price": 633.58,
@@ -9304,7 +9308,7 @@
             "[Ban 4 Kỹ thuật] RSI(39.67) ở vùng tích lũy tối ưu, dư địa tăng rộng"
           ],
           "reasons_bearish": [
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
           ]
         },
         "movement_explanation": {
@@ -9316,7 +9320,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay AMD biến động -10.88% (5 ngày: -2.32%, 1 tháng: -18.02%, 1 năm: +97.10%): Rơi mạnh -12.73% 1D (-17.48% 1M) khi giới đầu tư bán giảm tỷ trọng trước thềm công bố BCTC (còn 3 ngày) và lo ngại cạnh tranh từ Blackwell của NVDA.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$6.47B Net | F-Score 8/9)] Doanh thu tăng +50.1% YoY ($41.31B), Lợi nhuận ròng +$6.47B, FCF +$8.84B, nhưng định giá EV/EBITDA ở mức rất cao 85.26x và biên độ nhảy gap quyền chọn BCTC lên tới ±13.23%. GAAP FCF đạt $8.84B USD (True FCF sau trừ thưởng cổ phiếu SBC: $5.33B USD). Biên tạo giá trị kinh tế EVA Spread = -5.13% (ROIC 8.67% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 18.5.",
-          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 77/100). Vùng mua chuẩn: $494.7 – $507.32 | Cắt lỗ cứng Stop 2xATR: $440.41 | Chặn lãi Chandelier: $578.03 | Mục tiêu TP1: $633.58 / TP2: $640.21. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
+          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 77/100). Vùng mua chuẩn: $494.7 – $507.32 | Cắt lỗ cứng Stop 2xATR: $440.41 | Chặn lãi Chandelier: $578.03 | Mục tiêu TP1: $633.58 / TP2: $640.21. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
         }
       },
       {
@@ -9386,8 +9390,8 @@
           "short_ratio_days": 2.29,
           "next_earnings_date": "2026-11-04",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 3,
-          "earnings_risk_flag": "IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 2,
+          "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": -49161,
           "insider_sentiment": "Neutral / Routine",
           "target_mean_price": 196.3,
@@ -9436,7 +9440,7 @@
           "reasons_bearish": [
             "[Ban 2 BCTC] Doanh thu suy giảm (-4.0% YoY)",
             "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($169.52)",
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±10.65%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±10.65%)"
           ]
         },
         "movement_explanation": {
@@ -9448,7 +9452,7 @@
           "is_distressed_or_losing": true,
           "why_price_moved_vn": "Phiên hôm nay QCOM biến động -11.12% (5 ngày: -6.32%, 1 tháng: -9.50%, 1 năm: -8.91%): Giảm sâu -9.94% 1D (-10.46% 1M) do chu kỳ nâng cấp điện thoại thông minh toàn cầu phục hồi chậm và sát kỳ công bố BCTC (còn 4 ngày).",
           "business_health_vn": "[SUY GIẢM DOANH THU (-4.0% YoY)] Doanh thu đang suy giảm -4.0% YoY ($44.07B) dù vẫn duy trì Lợi nhuận ròng +$9.26B và FCF +$10.24B; cấu trúc giá đang suy yếu dưới đường trung bình. GAAP FCF đạt $10.24B USD (True FCF sau trừ thưởng cổ phiếu SBC: $9.27B USD). Biên tạo giá trị kinh tế EVA Spread = +4.51% (ROIC 16.52% vs WACC 12.01%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 5.16.",
-          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 44/100). Vùng mua chuẩn: $161.49 – $165.61 | Cắt lỗ cứng Stop 2xATR: $149.85 | Chặn lãi Chandelier: $170.28 | Mục tiêu TP1: $194.67 / TP2: $196.3. Lịch BCTC: IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±10.65%)."
+          "action_outlook_vn": "Phán quyết Ban 4: AVOID (Đứng ngoài hoàn toàn) (Điểm IC: 44/100). Vùng mua chuẩn: $161.49 – $165.61 | Cắt lỗ cứng Stop 2xATR: $149.85 | Chặn lãi Chandelier: $170.28 | Mục tiêu TP1: $194.67 / TP2: $196.3. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±10.65%)."
         }
       },
       {
@@ -9518,8 +9522,8 @@
           "short_ratio_days": 3.0,
           "next_earnings_date": "2026-11-04",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 3,
-          "earnings_risk_flag": "IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 2,
+          "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": 304842,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
           "target_mean_price": 290.7,
@@ -9568,7 +9572,7 @@
           ],
           "reasons_bearish": [
             "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($228.93)",
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
           ]
         },
         "movement_explanation": {
@@ -9580,7 +9584,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay ARM biến động -9.97% (5 ngày: -2.07%, 1 tháng: -29.54%, 1 năm: +21.29%): Bị bán tháo -12.69% 1D (-28.89% 1M) khi làn sóng xả cổ phiếu công nghệ định giá siêu đắt diễn ra trên Nasdaq (Headline #17).",
           "business_health_vn": "[CÓ LÃI VỮNG (+$1.04B Net | F-Score 8/9)] Quy mô doanh thu còn nhỏ ($5.16B, +22.4% YoY) và Lợi nhuận ròng chỉ +$1.04B (biên hoạt động mỏng 7.60%), nhưng vốn hóa lại bị đẩy lên $219.98B khiến EV/EBITDA lên tới 203.60x. GAAP FCF đạt $1.33B USD (True FCF sau trừ thưởng cổ phiếu SBC: $0.89B USD). Biên tạo giá trị kinh tế EVA Spread = -11.73% (ROIC 2.07% vs WACC 13.8%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 18.5.",
-          "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 60/100). Vùng mua chuẩn: $201.85 – $207.0 | Cắt lỗ cứng Stop 2xATR: $177.37 | Chặn lãi Chandelier: $282.61 | Mục tiêu TP1: $263.17 / TP2: $290.7. Lịch BCTC: IMMINENT EARNINGS (3d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
+          "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 60/100). Vùng mua chuẩn: $201.85 – $207.0 | Cắt lỗ cứng Stop 2xATR: $177.37 | Chặn lãi Chandelier: $282.61 | Mục tiêu TP1: $263.17 / TP2: $290.7. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
         }
       },
       {
@@ -9650,8 +9654,8 @@
           "short_ratio_days": 2.37,
           "next_earnings_date": "2026-11-02",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 1,
-          "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 0,
+          "earnings_risk_flag": "IMMINENT EARNINGS (0d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": 238296,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
           "target_mean_price": 212.5,
@@ -9686,7 +9690,7 @@
             "ban4_quant_technical_risk_pts": 14,
             "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (XLK -9.25% 1M)",
             "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±11.75%).",
+            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (0 ngày, biên độ dự kiến ±11.75%).",
             "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
             "entry_zone": "$180.43 – $185.03",
             "tp1_price": 220.91,
@@ -9702,7 +9706,7 @@
             "[Ban 4 Kỹ thuật] RSI(41.86) ở vùng tích lũy tối ưu, dư địa tăng rộng"
           ],
           "reasons_bearish": [
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-02 AMC) — Khóa lệnh mua đuổi (Implied Move ±11.75%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 0 ngày (2026-11-02 AMC) — Khóa lệnh mua đuổi (Implied Move ±11.75%)"
           ]
         },
         "movement_explanation": {
@@ -9714,7 +9718,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay PLTR biến động -6.27% (5 ngày: -6.42%, 1 tháng: -3.12%, 1 năm: -8.16%): Điều chỉnh -6.45% 1D khi nhà đầu tư chốt lời bảo vệ thành quả ngay trước ngày công bố BCTC (còn 2 ngày, Implied Move ±10.95%).",
           "business_health_vn": "[CÓ LÃI VỮNG (+$3.02B Net | F-Score 9/9)] Tăng trưởng doanh thu phần mềm AI Quốc phòng & Doanh nghiệp cực nhanh +92.8% YoY ($6.16B), Lợi nhuận ròng +$3.02B, biên hoạt động 47.12%, nhưng EV/EBITDA đang rất đắt ở 162.74x. GAAP FCF đạt $2.16B USD (True FCF sau trừ thưởng cổ phiếu SBC: $1.64B USD). Biên tạo giá trị kinh tế EVA Spread = +3.51% (ROIC 15.29% vs WACC 11.78%), Điểm sức khỏe Piotroski F-Score = 9/9, Altman Z-Score = 18.5.",
-          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 74/100). Vùng mua chuẩn: $180.43 – $185.03 | Cắt lỗ cứng Stop 2xATR: $165.71 | Chặn lãi Chandelier: $189.94 | Mục tiêu TP1: $220.91 / TP2: $239.31. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±11.75%)."
+          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 74/100). Vùng mua chuẩn: $180.43 – $185.03 | Cắt lỗ cứng Stop 2xATR: $165.71 | Chặn lãi Chandelier: $189.94 | Mục tiêu TP1: $220.91 / TP2: $239.31. Lịch BCTC: IMMINENT EARNINGS (0d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±11.75%)."
         }
       },
       {
@@ -9784,8 +9788,8 @@
           "short_ratio_days": 2.28,
           "next_earnings_date": "2026-11-03",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 2,
-          "earnings_risk_flag": "IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 1,
+          "earnings_risk_flag": "IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": 421787,
           "insider_sentiment": "Net Insider Buying (Tích cực)",
           "target_mean_price": 43.27,
@@ -9820,7 +9824,7 @@
             "ban4_quant_technical_risk_pts": 14,
             "ban1_signal": "NGƯỢC GIÓ NGẮN HẠN (XLK -9.25% 1M)",
             "ban2_signal": "SUY YẾU / RỦI RO BCTC (Weak Cashflow/Growth)",
-            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (2 ngày, biên độ dự kiến ±14.5%).",
+            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (1 ngày, biên độ dự kiến ±14.5%).",
             "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
             "entry_zone": "$32.29 – $33.11",
             "tp1_price": 42.91,
@@ -9836,7 +9840,7 @@
           ],
           "reasons_bearish": [
             "[Ban 2 BCTC] Dòng tiền tự do FCF âm ($-8.25B USD)",
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 1 ngày (2026-11-03 AMC) — Khóa lệnh mua đuổi (Implied Move ±14.5%)"
           ]
         },
         "movement_explanation": {
@@ -9848,7 +9852,7 @@
           "is_distressed_or_losing": true,
           "why_price_moved_vn": "Phiên hôm nay SMCI biến động -4.30% (5 ngày: +0.03%, 1 tháng: -21.40%, 1 năm: -36.59%): Lao dốc -7.99% 1D (-19.77% 1M, -36.59% 1Y) do áp lực cháy dòng tiền mặt nghiêm trọng và rủi ro trước kỳ BCTC (còn 3 ngày).",
           "business_health_vn": "[CHÁY DÒNG TIỀN FCF (-$8.25B USD)] CẢNH BÁO ĐỐT TIỀN MẶT: Dù doanh thu lắp ráp máy chủ tăng +93.2% YoY ($39.06B), biên lợi nhuận mỏng khiến dòng tiền hoạt động âm -$6.81B và dòng tiền tự do FCF âm nặng -$8.25 tỷ USD (True FCF -$11.57B). GAAP FCF đạt $-8.25B USD (True FCF sau trừ thưởng cổ phiếu SBC: $-11.57B USD). Biên tạo giá trị kinh tế EVA Spread = +12.54% (ROIC 26.21% vs WACC 13.67%), Điểm sức khỏe Piotroski F-Score = 5/9, Altman Z-Score = 1.73.",
-          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 62/100). Vùng mua chuẩn: $32.29 – $33.11 | Cắt lỗ cứng Stop 2xATR: $27.97 | Chặn lãi Chandelier: $39.55 | Mục tiêu TP1: $42.91 / TP2: $43.27. Lịch BCTC: IMMINENT EARNINGS (2d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
+          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 62/100). Vùng mua chuẩn: $32.29 – $33.11 | Cắt lỗ cứng Stop 2xATR: $27.97 | Chặn lãi Chandelier: $39.55 | Mục tiêu TP1: $42.91 / TP2: $43.27. Lịch BCTC: IMMINENT EARNINGS (1d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±14.5%)."
         }
       },
       {
@@ -9918,8 +9922,8 @@
           "short_ratio_days": 2.67,
           "next_earnings_date": "2026-11-07",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 6,
-          "earnings_risk_flag": "IMMINENT EARNINGS (6d, BMO) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 5,
+          "earnings_risk_flag": "IMMINENT EARNINGS (5d, BMO) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": null,
           "insider_sentiment": "Neutral / Routine",
           "target_mean_price": 555.67,
@@ -9954,7 +9958,7 @@
             "ban4_quant_technical_risk_pts": 14,
             "ban1_signal": "THUẬN LỢI (XLF +5.71% 1M)",
             "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (6 ngày, biên độ dự kiến ±3.15%).",
+            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (5 ngày, biên độ dự kiến ±3.15%).",
             "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
             "entry_zone": "$531.64 – $545.2",
             "tp1_price": 571.61,
@@ -9967,7 +9971,7 @@
             "[Ban 4 Kỹ thuật] Uptrend dài hạn vững chắc (Giá $542.49 > MA50 $515.11 > MA200 $495.74)"
           ],
           "reasons_bearish": [
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 6 ngày (2026-11-07 BMO) — Khóa lệnh mua đuổi (Implied Move ±3.15%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 5 ngày (2026-11-07 BMO) — Khóa lệnh mua đuổi (Implied Move ±3.15%)"
           ]
         },
         "movement_explanation": {
@@ -9979,7 +9983,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay BRK-B biến động +0.10% (5 ngày: +0.06%, 1 tháng: +8.39%, 1 năm: +13.60%): Tăng +0.40% 1D (+8.94% 1M, +13.60% 1Y) thể hiện bản lĩnh pháo đài phòng thủ của Warren Buffett trong phiên Nasdaq đỏ lửa.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$85.77B Net | F-Score 7/9)] Doanh thu hợp nhất $384.69B (+10.0% YoY), Lợi nhuận ròng +$85.77B, dòng tiền tự do FCF đạt +$71.98 tỷ USD; tuy nhiên còn 7 ngày tới kỳ công bố BCTC nên tạm khóa mua đuổi mới. GAAP FCF đạt $71.98B USD (True FCF sau trừ thưởng cổ phiếu SBC: $63.52B USD). Biên tạo giá trị kinh tế EVA Spread = +5.29% (ROIC 12.42% vs WACC 7.13%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 3.91.",
-          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 72/100). Vùng mua chuẩn: $531.64 – $545.2 | Cắt lỗ cứng Stop 2xATR: $527.93 | Chặn lãi Chandelier: $532.27 | Mục tiêu TP1: $571.61 / TP2: $586.17. Lịch BCTC: IMMINENT EARNINGS (6d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±3.15%)."
+          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 72/100). Vùng mua chuẩn: $531.64 – $545.2 | Cắt lỗ cứng Stop 2xATR: $527.93 | Chặn lãi Chandelier: $532.27 | Mục tiêu TP1: $571.61 / TP2: $586.17. Lịch BCTC: IMMINENT EARNINGS (5d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±3.15%)."
         }
       },
       {
@@ -10020,15 +10024,15 @@
         "sector": "Biopharma GLP-1 Leader",
         "fundamentals": {
           "financial_currency_reported": "DKK",
-          "fx_rate_to_usd_applied": 0.1493,
+          "fx_rate_to_usd_applied": 0.1494,
           "market_cap_usd_bil": 176.43,
           "forward_pe": 11.63,
           "trailing_pe": 9.78,
           "peg_ratio": 4.5,
           "price_to_book": 5.33,
-          "ev_to_ebitda": 8.14,
-          "revenue_usd_bil": 49.18,
-          "net_income_usd_bil": 17.38,
+          "ev_to_ebitda": 8.13,
+          "revenue_usd_bil": 49.22,
+          "net_income_usd_bil": 17.4,
           "revenue_growth_yoy": 2.1,
           "earnings_growth_yoy": -20.6,
           "gross_margin": 81.99,
@@ -10036,10 +10040,10 @@
           "profit_margin": 35.35,
           "roe_pct": 59.81,
           "roa_pct": 18.73,
-          "free_cashflow_bil": 5.62,
-          "operating_cashflow_bil": 19.69,
+          "free_cashflow_bil": 5.63,
+          "operating_cashflow_bil": 19.7,
           "total_cash_bil": 6.72,
-          "total_debt_bil": 20.92,
+          "total_debt_bil": 20.93,
           "debt_to_equity": 63.33,
           "dividend_yield_pct": 4.49,
           "beta": 0.38,
@@ -10049,24 +10053,24 @@
           "short_ratio_days": 2.52,
           "next_earnings_date": "2026-11-04",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 3,
-          "earnings_risk_flag": "IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 2,
+          "earnings_risk_flag": "IMMINENT EARNINGS (2d, BMO) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": null,
           "insider_sentiment": "Neutral / Routine",
-          "target_mean_price": 44.97,
-          "target_high_price": 61.61,
-          "target_low_price": 39.63,
-          "upside_to_consensus_pct": 12.42,
+          "target_mean_price": 44.98,
+          "target_high_price": 61.63,
+          "target_low_price": 39.65,
+          "upside_to_consensus_pct": 12.45,
           "recommendation_key": "hold",
           "num_analysts": 12,
           "net_dividend_yield_vn_pct": 3.55,
           "price_to_book_note": "Standard GAAP Equity",
           "accounting_regime": "STANDARD_CORPORATE (FCF & EVA)",
           "sbc_usd_bil": 1.08,
-          "true_fcf_ex_sbc_bil": 4.54,
+          "true_fcf_ex_sbc_bil": 4.55,
           "wacc_pct": 6.2,
-          "roic_pct": 32.62,
-          "eva_spread_pct": 26.42,
+          "roic_pct": 32.64,
+          "eva_spread_pct": 26.44,
           "piotroski_f_score": 7,
           "altman_z_score": 5.33,
           "solvency_zone": "SAFE ZONE (>3.0)",
@@ -10089,17 +10093,17 @@
             "ban4_action_verdict": "HOLD & WATCH (Quan sát)",
             "entry_zone": "$39.2 – $40.2",
             "tp1_price": 43.08,
-            "tp2_price": 44.97,
+            "tp2_price": 44.98,
             "rr_ratio": 3.23
           },
           "reasons_bullish": [
             "[Ban 1 Vĩ mô] Thuộc ngành dẫn sóng dòng tiền (XLV tăng +11.23% 1M, Sharpe 1.41)",
-            "[Ban 2 BCTC] Dòng tiền tự do FCF dương vững chắc (+$5.62B USD, Piotroski 7/9)",
-            "[Ban 3 Định giá] Còn dư địa tăng +12.42% tới mục tiêu Phố Wall ($44.97)"
+            "[Ban 2 BCTC] Dòng tiền tự do FCF dương vững chắc (+$5.63B USD, Piotroski 7/9)",
+            "[Ban 3 Định giá] Còn dư địa tăng +12.45% tới mục tiêu Phố Wall ($44.98)"
           ],
           "reasons_bearish": [
             "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($44.19)",
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 BMO) — Khóa lệnh mua đuổi (Implied Move ±4.51%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 BMO) — Khóa lệnh mua đuổi (Implied Move ±4.51%)"
           ]
         },
         "movement_explanation": {
@@ -10107,11 +10111,11 @@
           "name": "Novo Nordisk",
           "sector": "Biopharma GLP-1 Leader",
           "move_badge": "GIỮ SẮC XANH (+2.20% 1D | +6.95% 1M)",
-          "profit_status_badge": "CÓ LÃI VỮNG (+$17.38B Net | F-Score 7/9)",
+          "profit_status_badge": "CÓ LÃI VỮNG (+$17.4B Net | F-Score 7/9)",
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay NVO biến động +2.20% (5 ngày: +2.43%, 1 tháng: +6.95%, 1 năm: -19.13%): Bật tăng mạnh +4.47% 1D (+5.51% 1M) hưởng ứng sóng ngành Dược phẩm GLP-1 cùng với Eli Lilly và dòng tiền trú ẩn vào Y tế.",
-          "business_health_vn": "[CÓ LÃI VỮNG (+$17.38B Net | F-Score 7/9)] Sở hữu thuốc Ozempic/Wegovy với biên hoạt động 42.54%, Lợi nhuận ròng +$17.38B USD, ROE 59.81% và FCF +$5.62B; lưu ý còn 4 ngày tới kỳ công bố BCTC. GAAP FCF đạt $5.62B USD (True FCF sau trừ thưởng cổ phiếu SBC: $4.54B USD). Biên tạo giá trị kinh tế EVA Spread = +26.42% (ROIC 32.62% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 5.33.",
-          "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 65/100). Vùng mua chuẩn: $39.2 – $40.2 | Cắt lỗ cứng Stop 2xATR: $38.46 | Chặn lãi Chandelier: $38.18 | Mục tiêu TP1: $43.08 / TP2: $44.97. Lịch BCTC: IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.51%)."
+          "business_health_vn": "[CÓ LÃI VỮNG (+$17.4B Net | F-Score 7/9)] Sở hữu thuốc Ozempic/Wegovy với biên hoạt động 42.54%, Lợi nhuận ròng +$17.38B USD, ROE 59.81% và FCF +$5.62B; lưu ý còn 4 ngày tới kỳ công bố BCTC. GAAP FCF đạt $5.63B USD (True FCF sau trừ thưởng cổ phiếu SBC: $4.55B USD). Biên tạo giá trị kinh tế EVA Spread = +26.44% (ROIC 32.64% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 7/9, Altman Z-Score = 5.33.",
+          "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 65/100). Vùng mua chuẩn: $39.2 – $40.2 | Cắt lỗ cứng Stop 2xATR: $38.46 | Chặn lãi Chandelier: $38.18 | Mục tiêu TP1: $43.08 / TP2: $44.98. Lịch BCTC: IMMINENT EARNINGS (2d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.51%)."
         }
       },
       {
@@ -10181,8 +10185,8 @@
           "short_ratio_days": 0.01,
           "next_earnings_date": "2026-11-09",
           "earnings_release_session": "AMC (Sau giờ đóng cửa)",
-          "days_to_earnings": 8,
-          "earnings_risk_flag": "UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động",
+          "days_to_earnings": 7,
+          "earnings_risk_flag": "IMMINENT EARNINGS (7d, AMC) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": null,
           "insider_sentiment": "Neutral / Routine",
           "target_mean_price": 70.74,
@@ -10206,7 +10210,7 @@
         },
         "prediction": {
           "predictive_score": 90,
-          "ic_composite_score": 91,
+          "ic_composite_score": 88,
           "above_ma200": true,
           "direction_forecast": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
           "confidence": "Cao",
@@ -10214,11 +10218,11 @@
             "ban1_macro_sector_pts": 24,
             "ban2_fundamental_fcf_pts": 30,
             "ban3_valuation_consensus_pts": 17,
-            "ban4_quant_technical_risk_pts": 20,
+            "ban4_quant_technical_risk_pts": 17,
             "ban1_signal": "TAILWIND MẠNH (XLE +11.67% 1M, Sharpe 2.42)",
             "ban2_signal": "PHÁO ĐÀI TÀI CHÍNH (Fortress BCTC & FCF)",
-            "ban3_conflict_resolution": "Đồng thuận tuyệt đối cả 5 Phòng ban (Vĩ mô thuận lợi + BCTC mạnh + Lịch BCTC an toàn).",
-            "ban4_action_verdict": "STRONG BUY / ACCUMULATE (Giải ngân chủ lực)",
+            "ban3_conflict_resolution": "Đồng thuận Cơ bản & Kỹ thuật TỐT, nhưng Ban 4 phủ quyết mua đuổi do sát lịch BCTC (7 ngày, biên độ dự kiến ±5.5%).",
+            "ban4_action_verdict": "WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân)",
             "entry_zone": "$62.72 – $64.32",
             "tp1_price": 70.0,
             "tp2_price": 70.74,
@@ -10232,7 +10236,9 @@
             "[Ban 4 Kỹ thuật] Uptrend dài hạn vững chắc (Giá $64.0 > MA50 $60.18 > MA200 $56.07)",
             "[Ban 4 Kỹ thuật] RSI(64.42) ở vùng tích lũy tối ưu, dư địa tăng rộng"
           ],
-          "reasons_bearish": []
+          "reasons_bearish": [
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 7 ngày (2026-11-09 AMC) — Khóa lệnh mua đuổi (Implied Move ±5.5%)"
+          ]
         },
         "movement_explanation": {
           "symbol": "OXY",
@@ -10243,7 +10249,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay OXY biến động +1.57% (5 ngày: -0.26%, 1 tháng: +10.65%, 1 năm: +55.34%): Tăng +1.81% 1D (+15.69% 1M, +55.34% 1Y) hưởng lợi trực tiếp từ mặt bằng giá dầu WTI ~$100 và sự hậu thuẫn của Berkshire Hathaway.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$3.4B Net | F-Score 9/9)] Doanh thu tăng +53.4% YoY ($23.93B), biên lợi nhuận hoạt động cực cao 45.44%, Lợi nhuận ròng +$3.40B và FCF dương +$3.79B USD. GAAP FCF đạt $3.79B USD (True FCF sau trừ thưởng cổ phiếu SBC: $3.26B USD). Biên tạo giá trị kinh tế EVA Spread = +12.45% (ROIC 18.65% vs WACC 6.2%), Điểm sức khỏe Piotroski F-Score = 9/9, Altman Z-Score = 3.65.",
-          "action_outlook_vn": "Phán quyết Ban 4: STRONG BUY / ACCUMULATE (Giải ngân chủ lực) (Điểm IC: 91/100). Vùng mua chuẩn: $62.72 – $64.32 | Cắt lỗ cứng Stop 2xATR: $61.0 | Chặn lãi Chandelier: $61.21 | Mục tiêu TP1: $70.0 / TP2: $70.74. Lịch BCTC: UPCOMING EARNINGS (8d, AMC) — Lưu ý biến động (Biên độ dự kiến ±5.5%)."
+          "action_outlook_vn": "Phán quyết Ban 4: WAIT POST-EARNINGS (Chờ qua BCTC mới giải ngân) (Điểm IC: 88/100). Vùng mua chuẩn: $62.72 – $64.32 | Cắt lỗ cứng Stop 2xATR: $61.0 | Chặn lãi Chandelier: $61.21 | Mục tiêu TP1: $70.0 / TP2: $70.74. Lịch BCTC: IMMINENT EARNINGS (7d, AMC) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±5.5%)."
         }
       },
       {
@@ -10313,8 +10319,8 @@
           "short_ratio_days": 2.05,
           "next_earnings_date": "2026-11-04",
           "earnings_release_session": "BMO (Trước giờ mở cửa)",
-          "days_to_earnings": 3,
-          "earnings_risk_flag": "IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC",
+          "days_to_earnings": 2,
+          "earnings_risk_flag": "IMMINENT EARNINGS (2d, BMO) — Cấm mua đuổi sát BCTC",
           "insider_net_shares_6m": -2058,
           "insider_sentiment": "Neutral / Routine",
           "target_mean_price": 291.75,
@@ -10363,7 +10369,7 @@
           ],
           "reasons_bearish": [
             "[Ban 4 Kỹ thuật] Cấu trúc giá gãy dưới đường MA200 ($283.18)",
-            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 3 ngày (2026-11-04 BMO) — Khóa lệnh mua đuổi (Implied Move ±4.39%)"
+            "[Ban 4 Radar BCTC] CẢNH BÁO: Sắp công bố BCTC trong 2 ngày (2026-11-04 BMO) — Khóa lệnh mua đuổi (Implied Move ±4.39%)"
           ]
         },
         "movement_explanation": {
@@ -10375,7 +10381,7 @@
           "is_distressed_or_losing": false,
           "why_price_moved_vn": "Phiên hôm nay MCD biến động +0.29% (5 ngày: +3.89%, 1 tháng: +11.34%, 1 năm: -13.51%): Tăng +3.04% 1D (+11.77% 1M) khi các chương trình suất ăn tiết kiệm (Value Meals) thu hút khách hàng quay trở lại trong môi trường lạm phát.",
           "business_health_vn": "[CÓ LÃI VỮNG (+$8.79B Net | F-Score 8/9)] Mô hình nhượng quyền tạo biên hoạt động siêu cao 46.48%, Doanh thu $27.70B, Lợi nhuận ròng +$8.79B, FCF +$6.26B; lưu ý còn 4 ngày tới kỳ công bố BCTC. GAAP FCF đạt $6.26B USD (True FCF sau trừ thưởng cổ phiếu SBC: $5.65B USD). Biên tạo giá trị kinh tế EVA Spread = +7.54% (ROIC 14.03% vs WACC 6.49%), Điểm sức khỏe Piotroski F-Score = 8/9, Altman Z-Score = 3.91.",
-          "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 61/100). Vùng mua chuẩn: $252.96 – $259.41 | Cắt lỗ cứng Stop 2xATR: $248.49 | Chặn lãi Chandelier: $250.84 | Mục tiêu TP1: $277.38 / TP2: $291.75. Lịch BCTC: IMMINENT EARNINGS (3d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.39%)."
+          "action_outlook_vn": "Phán quyết Ban 4: HOLD & WATCH (Quan sát) (Điểm IC: 61/100). Vùng mua chuẩn: $252.96 – $259.41 | Cắt lỗ cứng Stop 2xATR: $248.49 | Chặn lãi Chandelier: $250.84 | Mục tiêu TP1: $277.38 / TP2: $291.75. Lịch BCTC: IMMINENT EARNINGS (2d, BMO) — Cấm mua đuổi sát BCTC (Biên độ dự kiến ±4.39%)."
         }
       }
     ]
@@ -10383,10 +10389,10 @@
   "latest_headlines": [
     {
       "source": "CNBC Top News",
-      "title": "Binance resumes withdrawals following $6.3 billion hack, says 90% of stolen user assets are covered",
-      "published": "Sun, 01 Nov 2026 12:19:33 GMT",
-      "summary": "Binance says it has restored backing for 90% of assets affected by its $6.3 billion hack and resumed phased withdrawals.",
-      "link": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html",
+      "title": "Stock futures tick higher ahead of busy week of earnings, jobs data and the midterm elections: Live updates",
+      "published": "Mon, 02 Nov 2026 00:10:21 GMT",
+      "summary": "Investors geared up for another batch of earnings results and the upcoming midterm elections.",
+      "link": "https://www.cnbc.com/2026/11/01/stock-market-today-live-updates.html",
       "news_index": 1,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
@@ -10394,33 +10400,33 @@
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #01] Binance resumes withdrawals following $6.3 billion hack, says 90% of stolen user assets are covered",
+      "vn_title": "[Bản tin Phố Wall #01] Stock futures tick higher ahead of busy week of earnings, jobs data and the midterm elections: Live updates",
       "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
     },
     {
       "source": "CNBC Top News",
-      "title": "Why AI is boosting Meta's ad business while hurting Google search",
-      "published": "Sun, 01 Nov 2026 12:00:01 GMT",
-      "summary": "The gap between Meta's ad revenue growth and Google's search expansion was the widest it's been since 2021 in the latest quarter.",
-      "link": "https://www.cnbc.com/2026/11/01/ai-meta-ads-google-search.html",
+      "title": "Binance sees $3.64 billion in net outflows as withdrawals resume after massive hack",
+      "published": "Mon, 02 Nov 2026 00:11:37 GMT",
+      "summary": "Binance recorded $3.64 billion in net outflows after resuming withdrawals following a $6.3 billion hack, representing 2.1% of its total assets.",
+      "link": "https://www.cnbc.com/2026/11/02/binance-outflow-hack-bitcoin.html",
       "news_index": 2,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
       "related_tickers": [
-        "GOOGL",
-        "META"
+        "^GSPC",
+        "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #02] Why AI is boosting Meta's ad business while hurting Google search",
-      "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm GOOGL, META. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
+      "vn_title": "[Bản tin Phố Wall #02] Binance sees $3.64 billion in net outflows as withdrawals resume after massive hack",
+      "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
     },
     {
       "source": "CNBC Top News",
-      "title": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
-      "published": "Sat, 31 Oct 2026 23:56:40 GMT",
-      "summary": "President Donald Trump denied writing a birthday letter to sex offender Jeffrey Epstein, which was the subject of a 2025 Wall Street Journal article.",
-      "link": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html",
+      "title": "Democratic Rep. Stevens endorses Republican Rogers over rival El-Sayed in Michigan Senate election",
+      "published": "Sun, 01 Nov 2026 21:06:42 GMT",
+      "summary": "Haley Stevens had lost the Democratic nomination for Senate in Michigan to Abdul El-Sayed earlier this year.",
+      "link": "https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html",
       "news_index": 3,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
@@ -10428,43 +10434,61 @@
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #03] Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
+      "vn_title": "[Bản tin Phố Wall #03] Democratic Rep. Stevens endorses Republican Rogers over rival El-Sayed in Michigan Senate election",
       "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
     },
     {
       "source": "CNBC Top News",
-      "title": "‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
-      "published": "Sat, 31 Oct 2026 12:00:01 GMT",
-      "summary": "Twenty-two late-forming super PACs spent about $637 million in 2026 congressional races, sometimes before voters could see their donors.",
-      "link": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
+      "title": "Judge dismisses Alaska Senate election lawsuit; DOJ vows appeal",
+      "published": "Sun, 01 Nov 2026 23:17:57 GMT",
+      "summary": "Democratic nominee Mary Peltola is facing two candidates named Dan Sullivan in the Alaska Senate election, one of whom is the Republican incumbent.",
+      "link": "https://www.cnbc.com/2026/11/01/alaska-senate-doj-lawsuit-dismissed-sullivan-peltola.html",
       "news_index": 4,
+      "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
+      "sentiment_tag": "NEUTRAL / POLICY WATCH",
+      "related_tickers": [
+        "SPY",
+        "XLE",
+        "XLI"
+      ],
+      "vn_title": "Bộ Tư pháp Mỹ (DOJ) yêu cầu tách biệt phiếu bầu trong cuộc đua Thượng viện tại Alaska",
+      "vn_deep_analysis": "Các tranh chấp pháp lý quanh bầu cử Thượng viện Mỹ làm gia tăng sự chú ý của Phố Wall vào cán cân quyền lực tại Quốc hội, yếu tố quyết định tới chính sách thuế doanh nghiệp, trần nợ công và giấy phép khai thác dầu khí tại Bắc Mỹ (XOM, CVX, OXY).",
+      "impact_level": "MEDIUM"
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Why AI is boosting Meta's ad business while hurting Google search",
+      "published": "Sun, 01 Nov 2026 14:31:29 GMT",
+      "summary": "The gap between Meta's ad revenue growth and Google's search expansion was the widest it's been since 2021 in the latest quarter.",
+      "link": "https://www.cnbc.com/2026/11/01/ai-meta-ads-google-search.html",
+      "news_index": 5,
+      "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
+      "sentiment_tag": "NEUTRAL / MARKET UPDATE",
+      "related_tickers": [
+        "GOOGL",
+        "META"
+      ],
+      "vn_title": "[Bản tin Phố Wall #05] Why AI is boosting Meta's ad business while hurting Google search",
+      "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm GOOGL, META. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
+      "impact_level": "MEDIUM"
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Connecticut Sen. Chris Murphy has stroke and is in the hospital, office says",
+      "published": "Sun, 01 Nov 2026 19:10:12 GMT",
+      "summary": "Sen. Chris Murphy's office announced Sunday that he suffered a stroke and was hospitalized the day prior, though they say he is 'awake and alert.'",
+      "link": "https://www.cnbc.com/2026/11/01/chris-murphy-stroke-senate-hospital.html",
+      "news_index": 6,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
       "related_tickers": [
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #04] ‘Pop-up’ super PACs pour $637 million into 2026 midterm races",
+      "vn_title": "[Bản tin Phố Wall #06] Connecticut Sen. Chris Murphy has stroke and is in the hospital, office says",
       "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
-    },
-    {
-      "source": "CNBC Top News",
-      "title": "The midterm election could reshape the muni bond market. Here’s what investors need to know",
-      "published": "Sun, 01 Nov 2026 12:30:48 GMT",
-      "summary": "The 2026 election could affect municipal bonds through state tax measures, new bond supply and the makeup of Congress.",
-      "link": "https://www.cnbc.com/2026/11/01/election-municipal-bonds.html",
-      "news_index": 5,
-      "category_vn": "TRỌNG ĐIỂM KINH TẾ, LẠM PHÁT & LÃI SUẤT FED/ECB",
-      "sentiment_tag": "HAWKISH / MACRO RATE WATCH",
-      "related_tickers": [
-        "^GSPC",
-        "^IXIC"
-      ],
-      "vn_title": "[Bản tin Phố Wall #05] The midterm election could reshape the muni bond market. Here’s what investors need to know",
-      "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
-      "impact_level": "HIGH"
     },
     {
       "source": "CNBC Top News",
@@ -10472,49 +10496,33 @@
       "published": "Sun, 01 Nov 2026 12:32:09 GMT",
       "summary": "Since CNBC flagged Crocs' depressed valuation on Oct. 13, the stock has surged 30%, fueled by a massive 25.5% post-earnings rally on Thursday.",
       "link": "https://www.cnbc.com/2026/11/01/crocs-stock-valuation-3q-earnings.html",
-      "news_index": 6,
+      "news_index": 7,
       "category_vn": "DÒNG TIỀN PHỐ WALL & CỔ PHIẾU DẪN SÓNG",
       "sentiment_tag": "BULLISH / CATALYST",
       "related_tickers": [
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #06] Crocs stock jumped 25% after earnings. Here's why that might be just the beginning",
+      "vn_title": "[Bản tin Phố Wall #07] Crocs stock jumped 25% after earnings. Here's why that might be just the beginning",
       "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "HIGH"
     },
     {
       "source": "CNBC Top News",
-      "title": "Top Wall Street analysts are bullish on these 3 stocks for the long haul",
-      "published": "Sun, 01 Nov 2026 12:33:53 GMT",
-      "summary": "Investors looking beyond short-term noise and focusing on long-term returns can track top analysts to pick the right stocks, backed by strong research.",
-      "link": "https://www.cnbc.com/2026/11/01/top-analysts-are-bullish-on-these-3-stocks-for-the-long-haul.html",
-      "news_index": 7,
-      "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
-      "sentiment_tag": "NEUTRAL / MARKET UPDATE",
-      "related_tickers": [
-        "^GSPC",
-        "^IXIC"
-      ],
-      "vn_title": "[Bản tin Phố Wall #07] Top Wall Street analysts are bullish on these 3 stocks for the long haul",
-      "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
-      "impact_level": "MEDIUM"
-    },
-    {
-      "source": "CNBC Top News",
-      "title": "Companies promised AI gains — here's how the payoff showed up in earnings",
-      "published": "Sun, 01 Nov 2026 12:34:06 GMT",
-      "summary": "Santander, Novartis and other companies say AI is beginning to boost revenue, cut costs or improve profitability as investors seek returns.",
-      "link": "https://www.cnbc.com/2026/11/01/ai-investments-company-earnings.html",
+      "title": "For JPMorgan, Amazon, fighting AI bots like Meta Muse may not be a winning long-term strategy",
+      "published": "Sun, 01 Nov 2026 16:34:43 GMT",
+      "summary": "As companies from Amazon to JPMorgan block AI personal agents like Meta's Muse, retail experts warn that technology that removes customer friction usually wins.",
+      "link": "https://www.cnbc.com/2026/11/01/jpmorgan-amazon-ai-agents-meta-muse.html",
       "news_index": 8,
       "category_vn": "DÒNG TIỀN PHỐ WALL & CỔ PHIẾU DẪN SÓNG",
       "sentiment_tag": "BULLISH / CATALYST",
       "related_tickers": [
-        "^GSPC",
-        "^IXIC"
+        "AMZN",
+        "META",
+        "JPM"
       ],
-      "vn_title": "[Bản tin Phố Wall #08] Companies promised AI gains — here's how the payoff showed up in earnings",
-      "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
+      "vn_title": "[Bản tin Phố Wall #08] For JPMorgan, Amazon, fighting AI bots like Meta Muse may not be a winning long-term strategy",
+      "vn_deep_analysis": "Diễn biến từ CNBC Top News tác động trực tiếp tới nhóm AMZN, META, JPM. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "HIGH"
     },
     {
@@ -10672,10 +10680,10 @@
     },
     {
       "source": "MarketWatch Top Stories",
-      "title": "America is doing better than you think. Your algorithm is just hiding it.",
-      "published": "Sun, 01 Nov 2026 13:00:00 GMT",
-      "summary": "The bottom half of Americans has more than doubled its net worth since 2019. You wouldn’t know it from scrolling social media.",
-      "link": "https://www.marketwatch.com/story/america-is-doing-better-than-you-think-your-algorithm-is-just-hiding-it-7dbdecff?mod=mw_rss_topstories",
+      "title": "This is the biggest threat to the AI-powered bull market",
+      "published": "Mon, 02 Nov 2026 00:22:00 GMT",
+      "summary": "Blockbuster earnings growth has helped to power the stock market higher in 2026. In 2027, that engine might stall.",
+      "link": "https://www.marketwatch.com/story/this-is-the-biggest-threat-to-the-ai-powered-bull-market-e757ca37?mod=mw_rss_topstories",
       "news_index": 17,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
@@ -10683,33 +10691,32 @@
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #17] America is doing better than you think. Your algorithm is just hiding it.",
+      "vn_title": "[Bản tin Phố Wall #17] This is the biggest threat to the AI-powered bull market",
       "vn_deep_analysis": "Diễn biến từ MarketWatch Top Stories tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
     },
     {
       "source": "MarketWatch Top Stories",
-      "title": "Who really wins under Trump’s economy? Coastal liberal elites who hate him.",
-      "published": "Sun, 01 Nov 2026 13:00:00 GMT",
-      "summary": "In other words, not the people Republicans likely intended.",
-      "link": "https://www.marketwatch.com/story/who-really-wins-under-trumps-economy-coastal-liberal-elites-who-hate-him-d74c63cb?mod=mw_rss_topstories",
+      "title": "Apple’s new earnings era begins at a critical time for Big Tech",
+      "published": "Mon, 02 Nov 2026 00:21:00 GMT",
+      "summary": "A rare Monday earnings report for Apple will give investors a glimpse into how new CEO John Ternus is managing inflated memory prices and a tougher backdrop for consumer spending.",
+      "link": "https://www.marketwatch.com/story/apples-new-earnings-era-begins-at-a-critical-time-for-big-tech-2236a44e?mod=mw_rss_topstories",
       "news_index": 18,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
       "related_tickers": [
-        "^GSPC",
-        "^IXIC"
+        "AAPL"
       ],
-      "vn_title": "[Bản tin Phố Wall #18] Who really wins under Trump’s economy? Coastal liberal elites who hate him.",
-      "vn_deep_analysis": "Diễn biến từ MarketWatch Top Stories tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
+      "vn_title": "[Bản tin Phố Wall #18] Apple’s new earnings era begins at a critical time for Big Tech",
+      "vn_deep_analysis": "Diễn biến từ MarketWatch Top Stories tác động trực tiếp tới nhóm AAPL. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
     },
     {
       "source": "MarketWatch Top Stories",
-      "title": "My abusive ex-husband promised $20,000 for our kids’ education. Now he refuses to pay. Is he legally obligated?",
-      "published": "Sat, 31 Oct 2026 20:15:00 GMT",
-      "summary": "“Before our divorce, my former mother-in-law entrusted him with $20,000 for each of our daughters to invest on their behalf.”",
-      "link": "https://www.marketwatch.com/story/my-abusive-ex-husband-promised-20-000-for-our-kids-education-now-he-refuses-to-pay-is-he-legally-obligated-325ef50f?mod=mw_rss_topstories",
+      "title": "My wife cried when I found out she had only $80,000 in her 401(k). I have $2.2 million. Am I wrong to be shocked?",
+      "published": "Sun, 01 Nov 2026 20:00:00 GMT",
+      "summary": "“When I brought up retiring last spring, she said she was ready whenever I was, and I took that to mean we were in good shape.”",
+      "link": "https://www.marketwatch.com/story/my-wife-has-only-80-000-saved-for-retirement-i-have-2-2-million-am-i-wrong-to-be-shocked-3e27b490?mod=mw_rss_topstories",
       "news_index": 19,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
@@ -10717,14 +10724,14 @@
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #19] My abusive ex-husband promised $20,000 for our kids’ education. Now he refuses to pay. Is he legally obligated?",
+      "vn_title": "[Bản tin Phố Wall #19] My wife cried when I found out she had only $80,000 in her 401(k). I have $2.2 million. Am I wrong to be shocked?",
       "vn_deep_analysis": "Diễn biến từ MarketWatch Top Stories tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
     },
     {
       "source": "MarketWatch Top Stories",
       "title": "‘Showy jewelry and fancy cars hold no appeal’: We have a 99% chance of outliving our life savings. Why not spend it all?",
-      "published": "Sat, 31 Oct 2026 19:30:00 GMT",
+      "published": "Sun, 01 Nov 2026 19:20:00 GMT",
       "summary": "“I’m 68, she’s 74, and we’re both in good health. We married later in life and have no children.”",
       "link": "https://www.marketwatch.com/story/fancy-cars-hold-no-appeal-my-wife-and-i-have-a-99-chance-of-outliving-our-savings-why-dont-we-spend-it-all-932a2166?mod=mw_rss_topstories",
       "news_index": 20,
@@ -10740,10 +10747,10 @@
     },
     {
       "source": "MarketWatch Top Stories",
-      "title": "This is where most people go wrong in their 30s and 40s",
-      "published": "Sat, 31 Oct 2026 19:02:00 GMT",
-      "summary": "These big life decisions will determine just how well you retire.",
-      "link": "https://www.marketwatch.com/story/the-house-the-kids-college-and-the-raise-where-people-in-their-30s-and-40s-go-wrong-69ec6c90?mod=mw_rss_topstories",
+      "title": "My father has Alzheimer’s and his caregiver is using his debit card for DoorDash. Do I intervene?",
+      "published": "Sun, 01 Nov 2026 17:30:00 GMT",
+      "summary": "“I suspect the live-in caregiver is benefiting from my parent’s generosity.”",
+      "link": "https://www.marketwatch.com/story/theres-a-lot-of-hurt-between-us-my-fathers-caregiver-is-using-his-debit-card-for-doordash-orders-what-can-i-do-714de7a5?mod=mw_rss_topstories",
       "news_index": 21,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
@@ -10751,33 +10758,33 @@
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #21] This is where most people go wrong in their 30s and 40s",
+      "vn_title": "[Bản tin Phố Wall #21] My father has Alzheimer’s and his caregiver is using his debit card for DoorDash. Do I intervene?",
       "vn_deep_analysis": "Diễn biến từ MarketWatch Top Stories tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
     },
     {
       "source": "MarketWatch Top Stories",
-      "title": "We’re in our 70s. Should we pay off our 2.5% mortgage — or put the money in a high-yield savings account?",
-      "published": "Sat, 31 Oct 2026 19:00:00 GMT",
-      "summary": "“Let’s say 10 years from now, when I’m 84, we need a substantial amount of cash.”",
-      "link": "https://www.marketwatch.com/story/we-are-in-our-70s-should-we-pay-off-our-2-5-mortgage-or-build-up-our-savings-5a35e9c1?mod=mw_rss_topstories",
+      "title": "‘He was heartbroken’: My husband’s kids abandoned him when he was dying. Was he right to leave everything to me?",
+      "published": "Sun, 01 Nov 2026 17:05:00 GMT",
+      "summary": "“In the end, he left them a few sentimental mementos, some collectibles and old photographs.”",
+      "link": "https://www.marketwatch.com/story/he-was-heartbroken-my-husbands-kids-never-helped-when-he-was-gravely-ill-was-he-right-to-leave-everything-to-me-1ad0616b?mod=mw_rss_topstories",
       "news_index": 22,
-      "category_vn": "TRỌNG ĐIỂM KINH TẾ, LẠM PHÁT & LÃI SUẤT FED/ECB",
-      "sentiment_tag": "HAWKISH / MACRO RATE WATCH",
+      "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
+      "sentiment_tag": "NEUTRAL / MARKET UPDATE",
       "related_tickers": [
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #22] We’re in our 70s. Should we pay off our 2.5% mortgage — or put the money in a high-yield savings account?",
+      "vn_title": "[Bản tin Phố Wall #22] ‘He was heartbroken’: My husband’s kids abandoned him when he was dying. Was he right to leave everything to me?",
       "vn_deep_analysis": "Diễn biến từ MarketWatch Top Stories tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
-      "impact_level": "HIGH"
+      "impact_level": "MEDIUM"
     },
     {
       "source": "MarketWatch Top Stories",
-      "title": "‘He was heartbroken’: My husband’s kids abandoned him when he was dying. Was he right to leave everything to me?",
-      "published": "Sat, 31 Oct 2026 18:50:00 GMT",
-      "summary": "“In the end, he left them a few sentimental mementos, some collectibles and old photographs.”",
-      "link": "https://www.marketwatch.com/story/he-was-heartbroken-my-husbands-kids-never-helped-when-he-was-gravely-ill-was-he-right-to-leave-everything-to-me-1ad0616b?mod=mw_rss_topstories",
+      "title": "Grand Theft Callout: ‘GTA 6’ fans are missing work on the game’s release day because they ‘don’t want to wait’ anymore",
+      "published": "Sun, 01 Nov 2026 16:35:00 GMT",
+      "summary": "After waiting 13 years for this videogame, almost one-fifth of workers plan to take the day off to play ‘Grand Theft Auto VI’ when it drops on Nov. 19",
+      "link": "https://www.marketwatch.com/story/grand-theft-callout-gta-6-fans-are-missing-work-on-the-games-release-day-because-they-dont-want-to-wait-anymore-5f2fa2e3?mod=mw_rss_topstories",
       "news_index": 23,
       "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
       "sentiment_tag": "NEUTRAL / MARKET UPDATE",
@@ -10785,26 +10792,26 @@
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #23] ‘He was heartbroken’: My husband’s kids abandoned him when he was dying. Was he right to leave everything to me?",
+      "vn_title": "[Bản tin Phố Wall #23] Grand Theft Callout: ‘GTA 6’ fans are missing work on the game’s release day because they ‘don’t want to wait’ anymore",
       "vn_deep_analysis": "Diễn biến từ MarketWatch Top Stories tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
       "impact_level": "MEDIUM"
     },
     {
       "source": "MarketWatch Top Stories",
-      "title": "Is it curtains for COLA? Saving Social Security could mean changing the cost-of-living adjustment.",
-      "published": "Sat, 31 Oct 2026 18:33:00 GMT",
-      "summary": "Several proposals consider changing the way retirees receive inflation protection. Here’s what it could cost you.",
-      "link": "https://www.marketwatch.com/story/is-it-curtains-for-cola-saving-social-security-could-mean-changing-the-cost-of-living-adjustment-867c6bd8?mod=mw_rss_topstories",
+      "title": "America is doing better than you think. Your algorithm is just hiding it.",
+      "published": "Sun, 01 Nov 2026 13:00:00 GMT",
+      "summary": "The bottom half of Americans has more than doubled its net worth since 2019. You wouldn’t know it from scrolling social media.",
+      "link": "https://www.marketwatch.com/story/america-is-doing-better-than-you-think-your-algorithm-is-just-hiding-it-7dbdecff?mod=mw_rss_topstories",
       "news_index": 24,
-      "category_vn": "TRỌNG ĐIỂM KINH TẾ, LẠM PHÁT & LÃI SUẤT FED/ECB",
-      "sentiment_tag": "HAWKISH / MACRO RATE WATCH",
+      "category_vn": "ĐỊA CHÍNH TRỊ, NĂNG LƯỢNG & CHÍNH SÁCH CÔNG",
+      "sentiment_tag": "NEUTRAL / MARKET UPDATE",
       "related_tickers": [
         "^GSPC",
         "^IXIC"
       ],
-      "vn_title": "[Bản tin Phố Wall #24] Is it curtains for COLA? Saving Social Security could mean changing the cost-of-living adjustment.",
+      "vn_title": "[Bản tin Phố Wall #24] America is doing better than you think. Your algorithm is just hiding it.",
       "vn_deep_analysis": "Diễn biến từ MarketWatch Top Stories tác động trực tiếp tới nhóm ^GSPC, ^IXIC. Nhà đầu tư cần đối chiếu chặt chẽ với ngưỡng cắt lỗ 2xATR(14) và dòng tiền tự do thực (True FCF ex-SBC).",
-      "impact_level": "HIGH"
+      "impact_level": "MEDIUM"
     }
   ],
   "market_breadth": {

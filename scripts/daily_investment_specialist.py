@@ -453,7 +453,7 @@ def main() -> int:
             )
         },
         {
-            "symbol": "OXY",
+            "symbol": "XOM",
             "sleeve": "CORE COMPOUNDER",
             "weight_nav_pct": 6.5,
             "action_type": "HOLD & TRAIL WINNER (Giữ & Hưởng lợi Dầu > $102)",

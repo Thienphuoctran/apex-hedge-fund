@@ -1,5 +1,5 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-02 07:18:16`  
+*Cập nhật gần nhất*: `2026-11-02 07:30:04`  
 *Trạng thái hệ thống*: **`🚨 CÓ BIẾN ĐỘNG KHẨN CẤP`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`21 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
@@ -18,7 +18,7 @@
 | **`PG`** | US_GLOBAL | `161.57 USD` | `+0.61%` | `154.72 USD` | `+4.24%` | `175.27 USD` | `+8.48%` | `1.4x` | ✅ Đang canh 2 đầu |
 | **`COST`** | US_GLOBAL | `1,012.28 USD` | `+1.78%` | `977.28 USD` | `+3.46%` | `1,082.28 USD` | `+6.92%` | `1.5x` | ✅ Đang canh 2 đầu |
 | **`MSFT`** | US_GLOBAL | `521.91 USD` | `-1.55%` | `498.43 USD` | `+4.50%` | `568.87 USD` | `+9.00%` | `1.2x` | ✅ Đang canh 2 đầu |
-| **`OXY`** | US_GLOBAL | `64.00 USD` | `+1.57%` | `61.00 USD` | `+4.69%` | `70.00 USD` | `+9.38%` | `1.2x` | ✅ Đang canh 2 đầu |
+| **`XOM`** | US_GLOBAL | `187.25 USD` | `+2.16%` | `178.98 USD` | `+4.42%` | `203.79 USD` | `+8.83%` | `1.6x` | ✅ Đang canh 2 đầu |
 | **`ABBV`** | US_GLOBAL | `294.89 USD` | `+1.41%` | `281.08 USD` | `+4.68%` | `322.51 USD` | `+9.37%` | `1.6x` | ✅ Đang canh 2 đầu |
 | **`JNJ`** | US_GLOBAL | `273.20 USD` | `-0.73%` | `257.73 USD` | `+5.66%` | `304.14 USD` | `+11.33%` | `1.4x` | ✅ Đang canh 2 đầu |
 | **`IDC`** | VIETNAM | `25,000.00 VND` | `+0.00%` | `23,750.00 VND` | `+5.00%` | `26,625.00 VND` | `+6.50%` | `1.0x` | ✅ Đang canh 2 đầu |

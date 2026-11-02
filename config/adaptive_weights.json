@@ -1,5 +1,5 @@
 {
-  "calibrated_at": "2026-11-01T06:22:15.432321+00:00",
+  "calibrated_at": "2026-11-02T00:25:02.353625+00:00",
   "market_regime": "Reflationary / Hawkish Rotation",
   "scoring_weights": {
     "macro_sector_fit": 25,
@@ -18,8 +18,8 @@
     "estimated_hit_rate_pct": 84.2,
     "avoided_high_risk_assets_count": 5,
     "model_confidence_score": 94.5,
-    "realized_alpha_1d_pct": 1.52,
-    "realized_alpha_5d_pct": 0.95,
-    "realized_alpha_20d_pct": 4.92
+    "realized_alpha_1d_pct": 1.53,
+    "realized_alpha_5d_pct": 1.09,
+    "realized_alpha_20d_pct": 5.07
   }
 }

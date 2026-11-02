@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "total_evaluated": 54,
   "top_allocations": [
     {
@@ -1184,8 +1184,8 @@
       "score": 81.2,
       "master_composite_score": 80.0,
       "piotroski_f_score": 8,
-      "graham_intrinsic_value_vnd": 61491.0,
-      "graham_margin_of_safety_pct": -21.2,
+      "graham_intrinsic_value_vnd": 61022.0,
+      "graham_margin_of_safety_pct": -21.8,
       "lynch_peg_ratio": 1.91,
       "eva_spread_pct": 8.21,
       "rating": "AA",

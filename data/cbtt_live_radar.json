@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-01T17:00:18.499473+00:00",
+  "timestamp_utc": "2026-11-02T00:24:59.646809+00:00",
   "scan_date": "2026-11-02",
-  "total_us_filings_count": 351,
-  "total_vn_announcements_count": 28,
+  "total_us_filings_count": 370,
+  "total_vn_announcements_count": 27,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -84,6 +84,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617",
       "total_recent_filings": 12
     },
+    "TSM": {
+      "latest_form": "6-K",
+      "latest_filing_date": "2026-10-22",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179",
+      "total_recent_filings": 11
+    },
     "AMD": {
       "latest_form": "4",
       "latest_filing_date": "2026-10-19",
@@ -155,6 +163,14 @@
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161",
       "total_recent_filings": 12
+    },
+    "BRK-B": {
+      "latest_form": "4",
+      "latest_filing_date": "2026-10-29",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983",
+      "total_recent_filings": 8
     },
     "LLY": {
       "latest_form": "10-Q",
@@ -292,12 +308,12 @@
       "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-ngay-31-10-bsr-shb-eximbank-vietnam-airlines-cung-nhieu-doanh-nghiep-lon-cong-bo-ket-qua-bat-ngo-188261031002348599.chn",
       "total_announcements": 3
     },
-    "PC1": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Cập nhật BCTC quý 3/2026 tối ngày 30/10: Vingroup, TPBank, Viettel Global, PC1 cùng hàng loạt doanh nghiệp tên tuổi dồn dập công bố trước hạn chót",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 17:52:00 +0700",
-      "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-sang-ngay-30-10-loat-doanh-nghiep-lon-don-dap-cong-bo-tch-bao-lai-tang-1233-pv-oil-lai-hon-900-ty-dong-gap-hon-5-lan-cung-ky-18826102923433041.chn",
+    "REE": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn",
       "total_announcements": 1
     },
     "FPT": {
@@ -322,14 +338,6 @@
       "severity": "CRITICAL",
       "published_at": "Fri, 30 Oct 26 18:10:00 +0700",
       "source_url": "https://cafef.vn/tap-doan-hoa-sen-dat-623-ty-dong-loi-nhuan-sau-thue-trong-ndtc-2025-2026-hoan-thanh-104-ke-hoach-o-phuong-an-cao-188261030181042245.chn",
-      "total_announcements": 1
-    },
-    "VHM": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Chưa từng có: Vinhomes lãi 9 tháng kỷ lục hơn 75.000 tỷ đồng, vượt 25% kế hoạch cả năm",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 13:05:00 +0700",
-      "source_url": "https://cafef.vn/chua-tung-co-vinhomes-lai-9-thang-ky-luc-hon-75000-ty-dong-vuot-25-ke-hoach-ca-nam-188261030130647614.chn",
       "total_announcements": 1
     },
     "HDB": {
@@ -1672,6 +1680,138 @@
     },
     {
       "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "6-K",
+      "filing_date": "2026-10-22",
+      "description": "6-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001046179-26-000728",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "6-K",
+      "filing_date": "2026-10-15",
+      "description": "6-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001046179-26-000726",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000724",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000723",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000722",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000721",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000716",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000715",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000714",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000710",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "TSM",
+      "company_name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "form": "4",
+      "filing_date": "2026-10-08",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001046179-26-000709",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001046179"
+    },
+    {
+      "market": "US_GLOBAL",
       "symbol": "AMD",
       "company_name": "ADVANCED MICRO DEVICES INC",
       "form": "4",
@@ -2845,6 +2985,102 @@
       "severity": "INFO",
       "accession_number": "0001403161-26-000113",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-10-29",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-438090",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-10-23",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001728451-26-000005",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-10-05",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-414744",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-09-30",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-409451",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-09-29",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001728451-26-000004",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-09-25",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-403089",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-09-21",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-397059",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-09-04",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001728451-26-000003",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
     },
     {
       "market": "US_GLOBAL",
@@ -4675,14 +4911,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PC1"
+        "REE"
       ],
-      "title": "Cập nhật BCTC quý 3/2026 tối ngày 30/10: Vingroup, TPBank, Viettel Global, PC1 cùng hàng loạt doanh nghiệp tên tuổi dồn dập công bố trước hạn chót",
-      "summary": "PV OIL ghi nhận lợi nhuận trước thuế quý 3/2026 đạt 902 tỷ đồng, còn Vinpearl báo lãi 766 tỷ đồng. VIB và Vincom Retail cùng ghi nhận lợi nhuận trên nghìn tỷ đồng....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 17:52:00 +0700",
-      "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-sang-ngay-30-10-loat-doanh-nghiep-lon-don-dap-cong-bo-tch-bao-lai-tang-1233-pv-oil-lai-hon-900-ty-dong-gap-hon-5-lan-cung-ky-18826102923433041.chn"
+      "title": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
+      "summary": "Từ hai cổ phiếu đầu tiên khai mở thị trường chứng khoán Việt Nam, REE và SAM đã trải qua 26 năm với những bước ngoặt và chiến lược phát triển khác biệt. Hành trình của hai doanh nghiệp tiên phong không chỉ cho thấy sức m...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn"
     },
     {
       "market": "VIETNAM",
@@ -4719,18 +4955,6 @@
       "severity": "CRITICAL",
       "published_at": "Fri, 30 Oct 26 18:10:00 +0700",
       "source_url": "https://cafef.vn/tap-doan-hoa-sen-dat-623-ty-dong-loi-nhuan-sau-thue-trong-ndtc-2025-2026-hoan-thanh-104-ke-hoach-o-phuong-an-cao-188261030181042245.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "VHM"
-      ],
-      "title": "Chưa từng có: Vinhomes lãi 9 tháng kỷ lục hơn 75.000 tỷ đồng, vượt 25% kế hoạch cả năm",
-      "summary": "Công ty Cổ phần Vinhomes (mã chứng khoán: VHM) công bố Báo cáo tài chính hợp nhất Quý III/2026 theo Chuẩn mực kế toán Việt Nam (VAS). Kết quả nổi bật là lợi nhuận sau thuế 9 tháng đã vượt kế hoạch cả năm, cùng mức tăng t...",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 13:05:00 +0700",
-      "source_url": "https://cafef.vn/chua-tung-co-vinhomes-lai-9-thang-ky-luc-hon-75000-ty-dong-vuot-25-ke-hoach-ca-nam-188261030130647614.chn"
     },
     {
       "market": "VIETNAM",
