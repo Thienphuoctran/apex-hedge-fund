@@ -33,6 +33,18 @@ from typing import Dict, Any, List, Optional
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
+def global_excepthook(exc_type, exc_val, exc_tb):
+    import traceback
+    msg = "".join(traceback.format_exception(exc_type, exc_val, exc_tb))
+    try:
+        log_daemon(f"[FATAL UNCAUGHT] {msg}")
+    except Exception:
+        print(f"[FATAL UNCAUGHT] {msg}", flush=True)
+
+sys.excepthook = global_excepthook
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
@@ -535,8 +547,8 @@ def run_daemon():
             
             # Ghi heartbeat mỗi 30 phút
             now = time.time()
-            if now - last_heartbeat > 1800:
-                log_daemon(f"[HEARTBEAT] Palmer Co-Pilot Daemon đang trực chiến bình thường. Offset: {offset}")
+            if now - last_heartbeat >= 60:
+                log_daemon(f"[ALIVE KEEP-ALIVE] Palmer Co-Pilot Daemon đang trực chiến 24/7. Offset: {offset}")
                 last_heartbeat = now
                 
             time.sleep(1)
