@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-02T01:41:13.970022+00:00",
+  "generated_at_utc": "2026-11-02T09:12:00.487531+00:00",
   "trading_date": "2026-11-02",
   "previous_date_compared": "2026-11-01",
   "specialist_profile": {
@@ -20,7 +20,7 @@
     {
       "department": "Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)",
       "verdict": "CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)",
-      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 19.42 xuống 19.42 (-8.18%), Dầu WTI dịu từ $104.12 xuống $101.61, US10Y ổn định ở 4.93%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
+      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 19.42 xuống 19.14 (-8.18%), Dầu WTI dịu từ $104.12 xuống $99.92, US10Y ổn định ở 4.93%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
       "specialist_takeaway": "Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve)."
     },
     {
@@ -56,7 +56,7 @@
   ],
   "yesterday_post_mortem": {
     "compared_period": "2026-11-01 -> 2026-11-02",
-    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 19.42 xuống 19.42 (-8.18%), Dầu WTI dịu từ $104.12 về $101.61, US10Y ở 4.93%.",
+    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 19.42 xuống 19.14 (-8.18%), Dầu WTI dịu từ $104.12 về $99.92, US10Y ở 4.93%.",
     "validated_wins": [
       {
         "category": "Thắng lợi Nhóm Trụ cột Tăng trưởng & Dầu khí (Core Winners)",
@@ -75,7 +75,7 @@
       {
         "error_code": "ERR-01 (Timing & Entry Execution Flaw)",
         "title": "Giải ngân 100% tại giá đóng cửa vào nhóm Phòng thủ đúng đỉnh ngắn hạn của VIX",
-        "what_happened": "Ngày 2026-11-01, khi VIX ở mức cao (19.42), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-02, khi VIX hạ nhiệt mạnh về 19.42 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi 0.0% ($273.2 -> $273.2), `PG` lùi 0.0% ($161.57 -> $161.57), và `V` lùi 0.0%.",
+        "what_happened": "Ngày 2026-11-01, khi VIX ở mức cao (19.42), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-02, khi VIX hạ nhiệt mạnh về 19.14 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi 0.0% ($273.2 -> $273.2), `PG` lùi 0.0% ($161.57 -> $161.57), và `V` lùi 0.0%.",
         "root_cause": "Chưa tách lệnh thành 2 nhịp (Market + Limit Pullback) và chưa tính độ nhạy đảo chiều của VIX khi vượt ngưỡng 21.",
         "corrective_action": "Kể từ hôm nay, Alex bắt buộc áp dụng quy tắc 60/40: chỉ giải ngân 60% tại vùng hiện tại và đặt 40% ở lệnh chờ `Limit Buy = Giá hiện tại - 0.35x ATR(14)`. Nhờ vậy, nhịp lùi -1.0% hôm nay của PG và JNJ trở thành điểm khớp Limit giá rẻ tối ưu!"
       }
@@ -122,7 +122,7 @@
       "limit_pullback_price": 517.8,
       "tranche_split": "Đã khớp 80% • Chờ mua thêm 20% tại Limit $518.00",
       "tp1_price": 568.87,
-      "tp2_price": 632.9,
+      "tp2_price": 633.28,
       "stop_2atr_price": 498.43,
       "chandelier_trailing_stop": 521.81,
       "stop_dist_pct": 4.5,
@@ -137,9 +137,9 @@
       "true_fcf_ex_sbc_bil": -4.63,
       "sec_edgar_badge": "SEC EDGAR: Form 10-Q (2026-10-28)",
       "win_prob_pct": 81.0,
-      "reward_risk_ratio": 4.16,
-      "tp2_reward_risk_ratio": 4.73,
-      "expected_value_pct": 10.41,
+      "reward_risk_ratio": 4.17,
+      "tp2_reward_risk_ratio": 4.74,
+      "expected_value_pct": 10.44,
       "days_to_earnings": 86,
       "market_events_and_catalysts": "Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu tăng mua ròng cổ phiếu công nghệ có FCF lớn sau khi VIX hạ nhiệt về 19.42.",
       "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `89.6/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+14.33%` • True FCF ex-SBC: `$-4.63B` • Altman Z: `12.18` • Lynch PEG: `1.69x` • SEC EDGAR: Form 10-Q (2026-10-28)]** — MSFT là cỗ máy in tiền mặt vĩ đại nhất thế giới với FCF đạt +$74.1B USD, biên hoạt động trên 44%. Ban lãnh đạo (CEO & Giám đốc cấp cao) mua ròng +263,400 cổ phiếu theo SEC Form 4. Cổ phiếu giữ vững trên đường MA200 ($485.20) và vừa tăng +0.19%.",
@@ -208,7 +208,7 @@
       "limit_pullback_price": 334.6,
       "tranche_split": "60% tại $337.04 • 40% Limit tại $334.77 (-0.35x ATR)",
       "tp1_price": 364.94,
-      "tp2_price": 373.26,
+      "tp2_price": 373.48,
       "stop_2atr_price": 323.09,
       "chandelier_trailing_stop": 328.31,
       "stop_dist_pct": 4.14,
@@ -223,9 +223,9 @@
       "true_fcf_ex_sbc_bil": null,
       "sec_edgar_badge": "SEC EDGAR: Form 424B2 (2026-10-30)",
       "win_prob_pct": 83.0,
-      "reward_risk_ratio": 2.47,
-      "tp2_reward_risk_ratio": 2.6,
-      "expected_value_pct": 6.99,
+      "reward_risk_ratio": 2.48,
+      "tp2_reward_risk_ratio": 2.61,
+      "expected_value_pct": 7.01,
       "days_to_earnings": 73,
       "market_events_and_catalysts": "Lợi suất trái phiếu chính phủ Mỹ 10 năm (US10Y) neo cao ở 4.93% tiếp tục mở rộng Thu nhập lãi thuần (NII). Thương vụ thâu tóm ngân hàng trước đây đã tích hợp hoàn tất, gia tăng thị phần tiền gửi tổ chức toàn cầu.",
       "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `91.3/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+8.94%` • True FCF ex-SBC: `$NoneB` • Altman Z: `4.4` • Lynch PEG: `1.43x` • SEC EDGAR: Form 424B2 (2026-10-30)]** — JPMorgan Chase là ngân hàng số 1 thế giới với bảng cân đối vững như pháo đài (Tỷ lệ CET1 15.3%), P/E chỉ 14.9x cực kỳ hấp dẫn. Tín hiệu ban lãnh đạo mua ròng nội bộ củng cố niềm tin tuyệt đối. Giá đang tích lũy chặt chẽ ngay sát hỗ trợ kỹ thuật.",

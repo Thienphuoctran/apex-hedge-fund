@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-02 01:41:46",
+  "generated_at": "2026-11-02 09:12:44",
   "token_metrics": {
-    "total_raw_report_tokens": 74084,
+    "total_raw_report_tokens": 73872,
     "titan_digest_tokens": 1541,
     "token_savings_percent": 97.9,
     "quality_preservation": "100% LOSSLESS (Full reports intact on disk)"
   },
   "deterministic_audit": {
-    "timestamp": "2026-11-02 01:41:46",
+    "timestamp": "2026-11-02 09:12:44",
     "bctc_vn_verified": 54,
     "bctc_red_flags_detected": [
       "UNKNOWN (M-Score=0.41, OCF/LNST=1.2)",
@@ -24,9 +24,9 @@
     "global_macro_ban1": {
       "exists": true,
       "path": "01_Macro_Geopolitics/2026-11-02_Macro_Report.md",
-      "size_kb": 23.1,
+      "size_kb": 22.8,
       "total_lines": 69,
-      "estimated_raw_tokens": 6761,
+      "estimated_raw_tokens": 6684,
       "sections_count": 5,
       "sections": [
         {
@@ -340,7 +340,7 @@
       "path": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-02_Mentor_Briefing.md",
       "size_kb": 4.9,
       "total_lines": 47,
-      "estimated_raw_tokens": 1429,
+      "estimated_raw_tokens": 1428,
       "sections_count": 7,
       "sections": [
         {
@@ -830,9 +830,9 @@
     "vn_bctc_ban2": {
       "exists": true,
       "path": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-      "size_kb": 47.1,
+      "size_kb": 47.2,
       "total_lines": 303,
-      "estimated_raw_tokens": 13780,
+      "estimated_raw_tokens": 13803,
       "sections_count": 21,
       "sections": [
         {
@@ -861,55 +861,55 @@
         },
         {
           "level": 3,
-          "title": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
+          "title": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
           "start_line": 84,
           "end_line": 96
         },
         {
           "level": 3,
-          "title": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
+          "title": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
           "start_line": 97,
           "end_line": 109
         },
         {
           "level": 3,
-          "title": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
+          "title": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.6/100**",
           "start_line": 110,
           "end_line": 122
         },
         {
           "level": 3,
-          "title": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
+          "title": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.1/100**",
           "start_line": 123,
           "end_line": 135
         },
         {
           "level": 3,
-          "title": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.8/100**",
+          "title": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.9/100**",
           "start_line": 136,
           "end_line": 148
         },
         {
           "level": 3,
-          "title": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.7/100**",
+          "title": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
           "start_line": 149,
           "end_line": 161
         },
         {
           "level": 3,
-          "title": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.4/100**",
+          "title": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.4/100**",
           "start_line": 162,
           "end_line": 174
         },
         {
           "level": 3,
-          "title": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
+          "title": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
           "start_line": 175,
           "end_line": 187
         },
         {
           "level": 3,
-          "title": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
+          "title": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
           "start_line": 188,
           "end_line": 200
         },
@@ -921,43 +921,43 @@
         },
         {
           "level": 3,
-          "title": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
+          "title": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
           "start_line": 214,
           "end_line": 226
         },
         {
           "level": 3,
-          "title": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
+          "title": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.1/100**",
           "start_line": 227,
           "end_line": 239
         },
         {
           "level": 3,
-          "title": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
+          "title": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
           "start_line": 240,
           "end_line": 252
         },
         {
           "level": 3,
-          "title": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.9/100**",
+          "title": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
           "start_line": 253,
           "end_line": 265
         },
         {
           "level": 3,
-          "title": "🏛️ HPG — Tập Đoàn Hòa Phát (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+          "title": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.6/100**",
           "start_line": 266,
           "end_line": 278
         },
         {
           "level": 3,
-          "title": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+          "title": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.8/100**",
           "start_line": 279,
           "end_line": 291
         },
         {
           "level": 3,
-          "title": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.3/100**",
+          "title": "🏛️ KDH — Nhà Khang Điền (HOSE) | Xếp hạng: **AA** | Điểm 10 Danh Thủ: **89.7/100**",
           "start_line": 292,
           "end_line": 303
         }
@@ -1031,55 +1031,55 @@
             "end_line": 83
           },
           {
-            "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
+            "section": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
             "start_line": 84,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 96
           },
           {
-            "section": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
+            "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
             "start_line": 97,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 109
           },
           {
-            "section": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
+            "section": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.6/100**",
             "start_line": 110,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 122
           },
           {
-            "section": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
+            "section": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.1/100**",
             "start_line": 123,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 135
           },
           {
-            "section": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.8/100**",
+            "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.9/100**",
             "start_line": 136,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 148
           },
           {
-            "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.7/100**",
+            "section": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
             "start_line": 149,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 161
           },
           {
-            "section": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.4/100**",
+            "section": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.4/100**",
             "start_line": 162,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 174
           },
           {
-            "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
+            "section": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
             "start_line": 175,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 187
           },
           {
-            "section": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
+            "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
             "start_line": 188,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 200
@@ -1091,137 +1091,131 @@
             "end_line": 213
           },
           {
-            "section": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
+            "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
             "start_line": 214,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 226
           },
           {
-            "section": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
+            "section": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.1/100**",
             "start_line": 227,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 239
           },
           {
-            "section": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
+            "section": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
             "start_line": 240,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 252
           },
           {
-            "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.9/100**",
+            "section": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
             "start_line": 253,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 265
           },
           {
-            "section": "🏛️ HPG — Tập Đoàn Hòa Phát (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+            "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.6/100**",
             "start_line": 266,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 278
           },
           {
-            "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+            "section": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.8/100**",
             "start_line": 279,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 291
-          },
+          }
+        ],
+        "MBB": [
           {
-            "section": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.3/100**",
-            "start_line": 292,
+            "section": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
+            "start_line": 84,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-            "end_line": 303
+            "end_line": 96
           }
         ],
         "IDC": [
           {
-            "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
-            "start_line": 84,
-            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-            "end_line": 96
-          }
-        ],
-        "IDICO": [
-          {
-            "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
-            "start_line": 84,
-            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-            "end_line": 96
-          }
-        ],
-        "HAH": [
-          {
-            "section": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
+            "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
             "start_line": 97,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 109
           }
         ],
-        "MBB": [
+        "IDICO": [
           {
-            "section": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
+            "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
+            "start_line": 97,
+            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+            "end_line": 109
+          }
+        ],
+        "GMD": [
+          {
+            "section": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.6/100**",
             "start_line": 110,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 122
           }
         ],
-        "TCB": [
+        "MWG": [
           {
-            "section": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
+            "section": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.1/100**",
             "start_line": 123,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 135
           }
         ],
-        "MWG": [
+        "FPT": [
           {
-            "section": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.8/100**",
+            "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.9/100**",
+            "start_line": 136,
+            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+            "end_line": 148
+          },
+          {
+            "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.9/100**",
             "start_line": 136,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 148
           }
         ],
-        "FPT": [
+        "CTG": [
           {
-            "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.7/100**",
-            "start_line": 149,
-            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-            "end_line": 161
-          },
-          {
-            "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.7/100**",
+            "section": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
             "start_line": 149,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 161
           }
         ],
-        "PVT": [
+        "HAH": [
           {
-            "section": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.4/100**",
+            "section": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.4/100**",
             "start_line": 162,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 174
           }
         ],
-        "BID": [
+        "TCB": [
           {
-            "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
+            "section": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
             "start_line": 175,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 187
+          }
+        ],
+        "BID": [
+          {
+            "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
+            "start_line": 188,
+            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+            "end_line": 200
           }
         ],
         "BIDV": [
           {
             "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
-            "start_line": 175,
-            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-            "end_line": 187
-          }
-        ],
-        "CTG": [
-          {
-            "section": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
             "start_line": 188,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 200
@@ -1243,69 +1237,77 @@
             "end_line": 213
           }
         ],
-        "GMD": [
+        "ACB": [
           {
-            "section": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
+            "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
+            "start_line": 214,
+            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+            "end_line": 226
+          },
+          {
+            "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
             "start_line": 214,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 226
           }
         ],
-        "VCG": [
+        "PVT": [
           {
-            "section": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
+            "section": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.1/100**",
             "start_line": 227,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 239
           }
         ],
-        "VCB": [
+        "VCG": [
           {
-            "section": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
+            "section": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
             "start_line": 240,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 252
           }
         ],
-        "ACB": [
+        "VCB": [
           {
-            "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.9/100**",
-            "start_line": 253,
-            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-            "end_line": 265
-          },
-          {
-            "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.9/100**",
+            "section": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
             "start_line": 253,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 265
           }
         ],
-        "HPG": [
+        "SSI": [
           {
-            "section": "🏛️ HPG — Tập Đoàn Hòa Phát (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+            "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.6/100**",
+            "start_line": 266,
+            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+            "end_line": 278
+          },
+          {
+            "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.6/100**",
             "start_line": 266,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 278
           }
         ],
-        "SSI": [
+        "DGW": [
           {
-            "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
-            "start_line": 279,
-            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-            "end_line": 291
-          },
-          {
-            "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+            "section": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.8/100**",
             "start_line": 279,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 291
           }
         ],
-        "DGW": [
+        "KDH": [
           {
-            "section": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.3/100**",
+            "section": "🏛️ KDH — Nhà Khang Điền (HOSE) | Xếp hạng: **AA** | Điểm 10 Danh Thủ: **89.7/100**",
+            "start_line": 292,
+            "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+            "end_line": 303
+          }
+        ],
+        "AA": [
+          {
+            "section": "🏛️ KDH — Nhà Khang Điền (HOSE) | Xếp hạng: **AA** | Điểm 10 Danh Thủ: **89.7/100**",
             "start_line": 292,
             "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
             "end_line": 303
@@ -1316,9 +1318,9 @@
     "vn_synthesis_ban3": {
       "exists": true,
       "path": "VN_Market/03_Synthesis_Memos/2026-11-02_VN_Investment_Memo.md",
-      "size_kb": 5.5,
+      "size_kb": 5.4,
       "total_lines": 34,
-      "estimated_raw_tokens": 1599,
+      "estimated_raw_tokens": 1582,
       "sections_count": 3,
       "sections": [
         {
@@ -1394,9 +1396,9 @@
     "vn_ic_ban4": {
       "exists": true,
       "path": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-      "size_kb": 11.1,
+      "size_kb": 10.9,
       "total_lines": 95,
-      "estimated_raw_tokens": 3236,
+      "estimated_raw_tokens": 3200,
       "sections_count": 10,
       "sections": [
         {
@@ -1419,43 +1421,43 @@
         },
         {
           "level": 3,
-          "title": "🎯 **HAH** — Vận Tải & Xếp Dỡ Hải An (HOSE)",
+          "title": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
           "start_line": 20,
           "end_line": 30
         },
         {
           "level": 3,
-          "title": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
+          "title": "🎯 **MBB** — Quân Đội (MBBank) (HOSE)",
           "start_line": 31,
           "end_line": 41
         },
         {
           "level": 3,
-          "title": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
+          "title": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
           "start_line": 42,
           "end_line": 52
         },
         {
           "level": 3,
-          "title": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
+          "title": "🎯 **MBS** — Chứng Khoán MB (HNX)",
           "start_line": 53,
           "end_line": 63
         },
         {
           "level": 3,
-          "title": "🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)",
+          "title": "🎯 **VCG** — Vinaconex (HOSE)",
           "start_line": 64,
           "end_line": 74
         },
         {
           "level": 3,
-          "title": "🎯 **MBS** — Chứng Khoán MB (HNX)",
+          "title": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
           "start_line": 75,
           "end_line": 85
         },
         {
           "level": 3,
-          "title": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
+          "title": "🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)",
           "start_line": 86,
           "end_line": 95
         }
@@ -1509,81 +1511,71 @@
             "end_line": 19
           }
         ],
-        "HAH": [
+        "TCB": [
           {
-            "section": "🎯 **HAH** — Vận Tải & Xếp Dỡ Hải An (HOSE)",
+            "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
             "start_line": 20,
             "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
             "end_line": 30
           }
         ],
-        "HDB": [
+        "MBB": [
           {
-            "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
+            "section": "🎯 **MBB** — Quân Đội (MBBank) (HOSE)",
             "start_line": 31,
             "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
             "end_line": 41
-          }
-        ],
-        "TP": [
-          {
-            "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-            "start_line": 31,
-            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-            "end_line": 41
-          }
-        ],
-        "HCM": [
-          {
-            "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-            "start_line": 31,
-            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-            "end_line": 41
-          }
-        ],
-        "GMD": [
-          {
-            "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
-            "start_line": 42,
-            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-            "end_line": 52
-          }
-        ],
-        "TCB": [
-          {
-            "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
-            "start_line": 53,
-            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-            "end_line": 63
-          }
-        ],
-        "HPG": [
-          {
-            "section": "🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)",
-            "start_line": 64,
-            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-            "end_line": 74
-          }
-        ],
-        "MBS": [
-          {
-            "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
-            "start_line": 75,
-            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-            "end_line": 85
-          }
-        ],
-        "MB": [
-          {
-            "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
-            "start_line": 75,
-            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-            "end_line": 85
           }
         ],
         "MWG": [
           {
             "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
+            "start_line": 42,
+            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+            "end_line": 52
+          }
+        ],
+        "MBS": [
+          {
+            "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
+            "start_line": 53,
+            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+            "end_line": 63
+          }
+        ],
+        "MB": [
+          {
+            "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
+            "start_line": 53,
+            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+            "end_line": 63
+          }
+        ],
+        "VCG": [
+          {
+            "section": "🎯 **VCG** — Vinaconex (HOSE)",
+            "start_line": 64,
+            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+            "end_line": 74
+          }
+        ],
+        "SSI": [
+          {
+            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+            "start_line": 75,
+            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+            "end_line": 85
+          },
+          {
+            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+            "start_line": 75,
+            "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+            "end_line": 85
+          }
+        ],
+        "HPG": [
+          {
+            "section": "🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)",
             "start_line": 86,
             "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
             "end_line": 95
@@ -1596,7 +1588,7 @@
       "path": "VN_Market/05_Learning_And_Evolution/2026-11-02_VN_Learning_Report.md",
       "size_kb": 3.1,
       "total_lines": 25,
-      "estimated_raw_tokens": 903,
+      "estimated_raw_tokens": 902,
       "sections_count": 5,
       "sections": [
         {
@@ -1880,7 +1872,7 @@
       "path": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
       "size_kb": 47.6,
       "total_lines": 300,
-      "estimated_raw_tokens": 13925,
+      "estimated_raw_tokens": 13919,
       "sections_count": 21,
       "sections": [
         {
@@ -1981,25 +1973,25 @@
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,300 đ (-0.88%)",
+          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,150 đ (-1.33%)",
           "start_line": 271,
           "end_line": 276
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 10,100 đ (+2.23%)",
+          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 9,860 đ (-2.38%)",
           "start_line": 277,
           "end_line": 282
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,000 đ (-1.89%)",
+          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 25,950 đ (-0.19%)",
           "start_line": 283,
           "end_line": 288
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 13,400 đ (-1.47%)",
+          "title": "⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 13,100 đ (-2.24%)",
           "start_line": 289,
           "end_line": 296
         },
@@ -2235,7 +2227,7 @@
         ],
         "PDR": [
           {
-            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,300 đ (-0.88%)",
+            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,150 đ (-1.33%)",
             "start_line": 271,
             "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
             "end_line": 276
@@ -2243,7 +2235,7 @@
         ],
         "DXG": [
           {
-            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 10,100 đ (+2.23%)",
+            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 9,860 đ (-2.38%)",
             "start_line": 277,
             "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
             "end_line": 282
@@ -2251,7 +2243,7 @@
         ],
         "KBC": [
           {
-            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,000 đ (-1.89%)",
+            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 25,950 đ (-0.19%)",
             "start_line": 283,
             "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
             "end_line": 288
@@ -2262,9 +2254,9 @@
     "master_cio_ban8": {
       "exists": true,
       "path": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-      "size_kb": 25.9,
+      "size_kb": 25.8,
       "total_lines": 225,
-      "estimated_raw_tokens": 7587,
+      "estimated_raw_tokens": 7538,
       "sections_count": 24,
       "sections": [
         {
@@ -2742,9 +2734,9 @@
     "victor_sentinel_ban9": {
       "exists": true,
       "path": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-      "size_kb": 5.4,
-      "total_lines": 41,
-      "estimated_raw_tokens": 1568,
+      "size_kb": 5.2,
+      "total_lines": 40,
+      "estimated_raw_tokens": 1520,
       "sections_count": 3,
       "sections": [
         {
@@ -2757,13 +2749,13 @@
           "level": 2,
           "title": "1. Giám Sát Cổ Phiếu Đang Đầu Tư (Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR)",
           "start_line": 6,
-          "end_line": 30
+          "end_line": 29
         },
         {
           "level": 2,
           "title": "2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực",
-          "start_line": 31,
-          "end_line": 41
+          "start_line": 30,
+          "end_line": 40
         }
       ],
       "tickers": {
@@ -3437,12 +3429,6 @@
         "start_line": 71,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 83
-      },
-      {
-        "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-        "start_line": 31,
-        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 41
       }
     ],
     "TP": [
@@ -3451,12 +3437,6 @@
         "start_line": 71,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 83
-      },
-      {
-        "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-        "start_line": 31,
-        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 41
       }
     ],
     "HCM": [
@@ -3465,12 +3445,6 @@
         "start_line": 71,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 83
-      },
-      {
-        "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-        "start_line": 31,
-        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 41
       }
     ],
     "AAA": [
@@ -3481,55 +3455,55 @@
         "end_line": 83
       },
       {
-        "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
+        "section": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
         "start_line": 84,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 96
       },
       {
-        "section": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
+        "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
         "start_line": 97,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 109
       },
       {
-        "section": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
+        "section": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.6/100**",
         "start_line": 110,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 122
       },
       {
-        "section": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
+        "section": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.1/100**",
         "start_line": 123,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 135
       },
       {
-        "section": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.8/100**",
+        "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.9/100**",
         "start_line": 136,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 148
       },
       {
-        "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.7/100**",
+        "section": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
         "start_line": 149,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 161
       },
       {
-        "section": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.4/100**",
+        "section": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.4/100**",
         "start_line": 162,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 174
       },
       {
-        "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
+        "section": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
         "start_line": 175,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 187
       },
       {
-        "section": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
+        "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
         "start_line": 188,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 200
@@ -3541,96 +3515,54 @@
         "end_line": 213
       },
       {
-        "section": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
+        "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
         "start_line": 214,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 226
       },
       {
-        "section": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
+        "section": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.1/100**",
         "start_line": 227,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 239
       },
       {
-        "section": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
+        "section": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
         "start_line": 240,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 252
       },
       {
-        "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.9/100**",
+        "section": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
         "start_line": 253,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 265
       },
       {
-        "section": "🏛️ HPG — Tập Đoàn Hòa Phát (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+        "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.6/100**",
         "start_line": 266,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 278
       },
       {
-        "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+        "section": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.8/100**",
         "start_line": 279,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 291
-      },
-      {
-        "section": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.3/100**",
-        "start_line": 292,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 303
-      }
-    ],
-    "IDC": [
-      {
-        "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
-        "start_line": 84,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 96
-      },
-      {
-        "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
-        "start_line": 9,
-        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 19
-      }
-    ],
-    "IDICO": [
-      {
-        "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
-        "start_line": 84,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 96
-      },
-      {
-        "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
-        "start_line": 9,
-        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 19
-      }
-    ],
-    "HAH": [
-      {
-        "section": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.7/100**",
-        "start_line": 97,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 109
-      },
-      {
-        "section": "🎯 **HAH** — Vận Tải & Xếp Dỡ Hải An (HOSE)",
-        "start_line": 20,
-        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 30
       }
     ],
     "MBB": [
       {
-        "section": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
-        "start_line": 110,
+        "section": "🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
+        "start_line": 84,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 122
+        "end_line": 96
+      },
+      {
+        "section": "🎯 **MBB** — Quân Đội (MBBank) (HOSE)",
+        "start_line": 31,
+        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+        "end_line": 41
       },
       {
         "section": "💎 4.5. Cổ Phiếu **`MBB`** — Quân Đội (MBBank) (HOSE)",
@@ -3645,18 +3577,116 @@
         "end_line": 160
       }
     ],
-    "TCB": [
+    "IDC": [
       {
-        "section": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
+        "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
+        "start_line": 97,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 109
+      },
+      {
+        "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
+        "start_line": 9,
+        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+        "end_line": 19
+      }
+    ],
+    "IDICO": [
+      {
+        "section": "🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**",
+        "start_line": 97,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 109
+      },
+      {
+        "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
+        "start_line": 9,
+        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+        "end_line": 19
+      }
+    ],
+    "GMD": [
+      {
+        "section": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.6/100**",
+        "start_line": 110,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 122
+      }
+    ],
+    "MWG": [
+      {
+        "section": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.1/100**",
         "start_line": 123,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 135
       },
       {
-        "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
-        "start_line": 53,
+        "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
+        "start_line": 42,
         "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 63
+        "end_line": 52
+      },
+      {
+        "section": "💎 4.3. Cổ Phiếu **`MWG`** — Thế Giới Di Động (HOSE)",
+        "start_line": 138,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
+        "end_line": 170
+      }
+    ],
+    "FPT": [
+      {
+        "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.9/100**",
+        "start_line": 136,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 148
+      },
+      {
+        "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.9/100**",
+        "start_line": 136,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 148
+      },
+      {
+        "section": "💎 4.2. Cổ Phiếu **`FPT`** — Tập Đoàn FPT (HOSE)",
+        "start_line": 105,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
+        "end_line": 137
+      },
+      {
+        "section": "💎 4.2. Cổ Phiếu **`FPT`** — Tập Đoàn FPT (HOSE)",
+        "start_line": 105,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
+        "end_line": 137
+      }
+    ],
+    "CTG": [
+      {
+        "section": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**",
+        "start_line": 149,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 161
+      }
+    ],
+    "HAH": [
+      {
+        "section": "🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.4/100**",
+        "start_line": 162,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 174
+      }
+    ],
+    "TCB": [
+      {
+        "section": "🏛️ TCB — Kỹ Thương Việt Nam (Techcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.9/100**",
+        "start_line": 175,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 187
+      },
+      {
+        "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
+        "start_line": 20,
+        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+        "end_line": 30
       },
       {
         "section": "💎 4.4. Cổ Phiếu **`TCB`** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
@@ -3671,79 +3701,17 @@
         "end_line": 152
       }
     ],
-    "MWG": [
-      {
-        "section": "🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.8/100**",
-        "start_line": 136,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 148
-      },
-      {
-        "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
-        "start_line": 86,
-        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 95
-      },
-      {
-        "section": "💎 4.3. Cổ Phiếu **`MWG`** — Thế Giới Di Động (HOSE)",
-        "start_line": 138,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
-        "end_line": 170
-      }
-    ],
-    "FPT": [
-      {
-        "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.7/100**",
-        "start_line": 149,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 161
-      },
-      {
-        "section": "🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.7/100**",
-        "start_line": 149,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 161
-      },
-      {
-        "section": "💎 4.2. Cổ Phiếu **`FPT`** — Tập Đoàn FPT (HOSE)",
-        "start_line": 105,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
-        "end_line": 137
-      },
-      {
-        "section": "💎 4.2. Cổ Phiếu **`FPT`** — Tập Đoàn FPT (HOSE)",
-        "start_line": 105,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
-        "end_line": 137
-      }
-    ],
-    "PVT": [
-      {
-        "section": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.4/100**",
-        "start_line": 162,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 174
-      }
-    ],
     "BID": [
       {
         "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
-        "start_line": 175,
+        "start_line": 188,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 187
+        "end_line": 200
       }
     ],
     "BIDV": [
       {
         "section": "🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
-        "start_line": 175,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 187
-      }
-    ],
-    "CTG": [
-      {
-        "section": "🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**",
         "start_line": 188,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 200
@@ -3758,9 +3726,9 @@
       },
       {
         "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
-        "start_line": 75,
+        "start_line": 53,
         "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 85
+        "end_line": 63
       }
     ],
     "MB": [
@@ -3772,98 +3740,100 @@
       },
       {
         "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
-        "start_line": 75,
+        "start_line": 53,
         "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 85
+        "end_line": 63
       }
     ],
-    "GMD": [
+    "ACB": [
       {
-        "section": "🏛️ GMD — Gemadept (Cảng nước sâu Gemalink) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
+        "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
         "start_line": 214,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 226
       },
       {
-        "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
-        "start_line": 42,
-        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 52
+        "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.2/100**",
+        "start_line": 214,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 226
       }
     ],
-    "VCG": [
+    "PVT": [
       {
-        "section": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
+        "section": "🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.1/100**",
         "start_line": 227,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 239
       }
     ],
-    "VCB": [
+    "VCG": [
       {
-        "section": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
+        "section": "🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**",
         "start_line": 240,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 252
-      }
-    ],
-    "ACB": [
-      {
-        "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.9/100**",
-        "start_line": 253,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 265
       },
       {
-        "section": "🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.9/100**",
+        "section": "🎯 **VCG** — Vinaconex (HOSE)",
+        "start_line": 64,
+        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+        "end_line": 74
+      }
+    ],
+    "VCB": [
+      {
+        "section": "🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**",
         "start_line": 253,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 265
       }
     ],
-    "HPG": [
+    "SSI": [
       {
-        "section": "🏛️ HPG — Tập Đoàn Hòa Phát (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
+        "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.6/100**",
         "start_line": 266,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 278
       },
       {
-        "section": "🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)",
-        "start_line": 64,
+        "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.6/100**",
+        "start_line": 266,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 278
+      },
+      {
+        "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+        "start_line": 75,
         "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-        "end_line": 74
+        "end_line": 85
       },
       {
-        "section": "💎 4.1. Cổ Phiếu **`HPG`** — Tập Đoàn Hòa Phát (HOSE)",
-        "start_line": 72,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
-        "end_line": 104
-      },
-      {
-        "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
-        "start_line": 141,
-        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 146
-      }
-    ],
-    "SSI": [
-      {
-        "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
-        "start_line": 279,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 291
-      },
-      {
-        "section": "🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**",
-        "start_line": 279,
-        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-        "end_line": 291
+        "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+        "start_line": 75,
+        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+        "end_line": 85
       }
     ],
     "DGW": [
       {
-        "section": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.3/100**",
+        "section": "🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.8/100**",
+        "start_line": 279,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 291
+      }
+    ],
+    "KDH": [
+      {
+        "section": "🏛️ KDH — Nhà Khang Điền (HOSE) | Xếp hạng: **AA** | Điểm 10 Danh Thủ: **89.7/100**",
+        "start_line": 292,
+        "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
+        "end_line": 303
+      }
+    ],
+    "AA": [
+      {
+        "section": "🏛️ KDH — Nhà Khang Điền (HOSE) | Xếp hạng: **AA** | Điểm 10 Danh Thủ: **89.7/100**",
         "start_line": 292,
         "file": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
         "end_line": 303
@@ -3917,6 +3887,26 @@
         "start_line": 1,
         "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
         "end_line": 6
+      }
+    ],
+    "HPG": [
+      {
+        "section": "🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)",
+        "start_line": 86,
+        "file": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
+        "end_line": 95
+      },
+      {
+        "section": "💎 4.1. Cổ Phiếu **`HPG`** — Tập Đoàn Hòa Phát (HOSE)",
+        "start_line": 72,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
+        "end_line": 104
+      },
+      {
+        "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
+        "start_line": 141,
+        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+        "end_line": 146
       }
     ],
     "VS": [
@@ -4139,7 +4129,7 @@
     ],
     "PDR": [
       {
-        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,300 đ (-0.88%)",
+        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,150 đ (-1.33%)",
         "start_line": 271,
         "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
         "end_line": 276
@@ -4147,7 +4137,7 @@
     ],
     "DXG": [
       {
-        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 10,100 đ (+2.23%)",
+        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 9,860 đ (-2.38%)",
         "start_line": 277,
         "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
         "end_line": 282
@@ -4155,7 +4145,7 @@
     ],
     "KBC": [
       {
-        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,000 đ (-1.89%)",
+        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 25,950 đ (-0.19%)",
         "start_line": 283,
         "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
         "end_line": 288

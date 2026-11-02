@@ -1,6 +1,6 @@
 # 🚨 [RED ALERT] BÁO CÁO BIẾN ĐỘNG KHẨN CẤP DANH MỤC & LIVE WAR-ROOM
 **Phòng Ban 9**: Ban Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Khẩn Cấp ("Victor")  
-**Thời gian phát hiện**: `2026-11-02 09:10:25` | **Mã Cổ Phiếu Báo Động**: **`MBB`** (VIETNAM)  
+**Thời gian phát hiện**: `2026-11-02 09:12:40` | **Mã Cổ Phiếu Báo Động**: **`TSM`** (US_GLOBAL)  
 **Mức độ khẩn cấp**: **`CRITICAL`** | **Trạng thái**: YÊU CẦU PHẢN ỨNG TỨC THỜI TRONG PHIÊN
 
 ---
@@ -8,24 +8,23 @@
 ## 1. Dữ Liệu Biến Động Thực Tế (Intraday Telemetry)
 | Chỉ Số Đo Lường | Giá Trị Thực Tế | Ngưỡng Cảnh Báo An Toàn | Đánh Giá Tình Trạng |
 | :--- | :---: | :---: | :--- |
-| **Giá Hiện Tại** | **`18,750.00 VND`** | — | Giảm **`-2.85%`** so với tham chiếu |
-| **Khoảng Cách Đến Stop 2xATR** | **`+0.48%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`18,660.00 VND`** |
-| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`2.26x`** | `< 2.5x` | ⚠️ Cá mập xả hàng bất thường |
-| **Quy Mô Vốn Đang Rủi Ro** | **`3,860,000.00 VND`** | — | Số lượng đang nắm: `200 cổ phiếu` |
-| **Giá Trị Trung Bình VWAP** | **`18,883.33 VND`** | — | Vùng kháng cự ngắn hạn trong phiên |
+| **Giá Hiện Tại** | **`406.13 USD`** | — | Giảm **`-5.95%`** so với tham chiếu |
+| **Khoảng Cách Đến Stop 2xATR** | **`+7.10%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`377.30 USD`** |
+| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`1.92x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
+| **Quy Mô Vốn Đang Rủi Ro** | **`0.00 USD`** | — | Số lượng đang nắm: `0 cổ phiếu` |
+| **Giá Trị Trung Bình VWAP** | **`408.11 USD`** | — | Vùng kháng cự ngắn hạn trong phiên |
 
 ### Các Dị Thường Kích Hoạt Còi Báo Động:
-- **LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR**: Giá hiện tại 18750.0 chỉ còn cách Stop Loss (18660.0) 0.48% (Ngưỡng cảnh báo <= 1.5%).
-- **LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)**: Giá giảm -2.85% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%).
+- **LEVEL 1B — BIẾN ĐỘNG SỤT GIẢM CỰC MẠNH (CRITICAL FLASH DROP)**: Giá sụt giảm -5.95% trong phiên (Vượt ngưỡng cảnh báo đỏ -3.5%).
 
 
 ---
 
 ## 2. Thẩm Tra Căn Nguyên & Luận Điểm Doanh Nghiệp (Root-Cause Audit)
 * **Luận điểm BCTC cốt lõi đã phê duyệt**:
-  > *"Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +58.8/100, MoS +59.8%."*
+  > *"**[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.13%` • True FCF ex-SBC: `$33.59B` • Altman Z: `16.25` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%."*
 * **Chất xúc tác & Nguy cơ**:
-  > *"Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời."*
+  > *"Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia."*
 * **Nhận định sơ bộ của Victor**:
   - Biến động này do **áp lực bán tháo kỹ thuật toàn thị trường (Contagion)** hay do **tin đồn thiên nga đen ảnh hưởng trực tiếp tới nội tại doanh nghiệp**?
   - Dòng tiền tự do FCF / Dòng tiền hoạt động OCF của doanh nghiệp không thay đổi trong vài giờ. Đây là bài test bản lĩnh và kỷ luật thể chế!
@@ -39,8 +38,8 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 ### 🛡️ PHƯƠNG ÁN A: SYNTHETIC SHORT HEDGE (VŨ KHÍ PHÒNG VỆ KHÓA LỖ T+2.5) — *[KHUYẾN NGHỊ CAO KHI KẸT HÀNG T+]*
 * **Bản chất**: Cổ phiếu cơ sở bị giảm nhưng chưa về tài khoản hoặc không muốn bán tháo giá đáy.
 * **Lệnh thực thi ngay**:
-  - **Hành động**: **`SHORT 1 HỢP ĐỒNG VN30F1M`**
-  - **Quy mô danh mục được bảo vệ**: `132,000,000.00 VND` (Bảo hộ **`3419.7%`** giá trị vị thế).
+  - **Hành động**: **`BUY 1 PUT CONTRACT(S) AT-THE-MONEY`**
+  - **Quy mô danh mục được bảo vệ**: `0.00 USD` (Bảo hộ **`100.0%`** giá trị vị thế).
 * **Kết quả**: Vị thế phái sinh Short sẽ sinh lời tương đương mức lỗ của cổ phiếu cơ sở, **khóa băng mức lỗ danh mục 100% tức thì**!
 
 ---
@@ -48,22 +47,22 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 ### ✂️ PHƯƠNG ÁN B: PARTIAL TACTICAL DE-RISKING (HẠ TỶ TRỌNG CHỦ ĐỘNG 50%)
 * **Bản chất**: Giảm áp lực Margin và hạ rủi ro danh mục nếu hàng đã về tài khoản.
 * **Lệnh thực thi ngay**:
-  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`18,883.33 VND`), đặt bán **`100 cổ phiếu`** (50% vị thế).
-  - Thu hồi ngay dòng tiền mặt: **`~1,875,000.00 VND`** bổ sung vào quỹ Dry Powder.
+  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`408.11 USD`), đặt bán **`500 cổ phiếu`** (50% vị thế).
+  - Thu hồi ngay dòng tiền mặt: **`~203,065.00 USD`** bổ sung vào quỹ Dry Powder.
 
 ---
 
 ### ⚡ PHƯƠNG ÁN C: T+0 INTRA-DAY SCALP (LƯỚT SÓNG ĐẢO HÀNG HẠ GIÁ VỐN)
 * **Bản chất**: Dành cho trường hợp rũ bỏ kỹ thuật do tin giả (Washout), tài khoản đã có sẵn lượng hàng cũ.
 * **Lệnh thực thi ngay**:
-  - Trích một phần Dry Powder gom thêm một lượng cổ phiếu tại vùng giá quá bán: **`18,188.00 VND`** (-3% dưới giá hiện tại).
-  - Ngay khi lực cầu hồi phục kéo giá lên: **`19,219.00 VND`**, bán trả ngay số lượng hàng tương ứng có sẵn.
+  - Trích một phần Dry Powder gom thêm một lượng cổ phiếu tại vùng giá quá bán: **`393.95 USD`** (-3% dưới giá hiện tại).
+  - Ngay khi lực cầu hồi phục kéo giá lên: **`416.28 USD`**, bán trả ngay số lượng hàng tương ứng có sẵn.
   - Số cổ phiếu giữ nguyên nhưng hạ được giá vốn ngay trong ngày mà **không bị kẹt thêm vòng T+ mới**.
 
 ---
 
 ### 🧘 PHƯƠNG ÁN D: DISCIPLINED HOLD & RE-AFFIRM THESIS (GIỮ VỮNG TÂM LÝ KỶ LUẬT)
-* **Bản chất**: Nếu giá vẫn chưa chạm $Stop 2xATR$ (`18,660.00 VND`) và BCTC doanh nghiệp vẫn siêu tăng trưởng, không manh động bán tháo hoảng loạn cùng đám đông.
+* **Bản chất**: Nếu giá vẫn chưa chạm $Stop 2xATR$ (`377.30 USD`) và BCTC doanh nghiệp vẫn siêu tăng trưởng, không manh động bán tháo hoảng loạn cùng đám đông.
 * **Hành động**: Giữ nguyên trạng thái, tiếp tục để Victor giám sát sát sao mỗi 60 giây.
 
 ---

@@ -7,7 +7,7 @@
 
 ## 1. Bảng Đo Lường Hiệu Suất & Độ Chuẩn Xác Của Dự Báo (Prediction Telemetry)
 - **Tổng số Tài sản Được Theo Dõi Toàn Cầu**: **`35 Cổ phiếu`** & **`12 ETF Ngành GICS`**
-- **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **19.42**, `US10Y` = **4.93%**, `WTI Oil` = **$101.61/thùng**)
+- **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **19.14**, `US10Y` = **4.93%**, `WTI Oil` = **$99.92/thùng**)
 - **Tỷ lệ Dự Báo Chuẩn Xác (Walk-Forward Hit Rate)**: **`84.2%`** (`16 Thắng` / `3 Thua` / `16 Tích lũy`)
 - **Hiệu quả Bộ Lọc Rủi Ro (Avoidance Score)**: **100%** (Cảnh báo thành công các bẫy suy yếu `TSLA`, `COIN`, `QCOM`, `SMCI`, `INTC`).
 
@@ -36,14 +36,14 @@
 
 ## 4. Nhật Ký Bài Học Thị Trường Tích Lũy Ngày Hôm Nay (Market Lessons Learned)
 
-- **Bài học 1 (Thích nghi Chế độ Biến động VIX = 19.42 < 20)**: Khi VIX lùi xuống dưới 20 (`19.42`), hệ thống tự động phân bổ trọng số chuẩn xác **100%** (`Vĩ mô 25% + BCTC/FCF 30% + Định giá 25% + Kỹ thuật 20% = 100%`), đồng thời duy trì kỷ luật ATR Risk-Parity giúp danh mục tạo Alpha `+1.53%` so với S&P 500.
+- **Bài học 1 (Thích nghi Chế độ Biến động VIX = 19.14 < 20)**: Khi VIX lùi xuống dưới 20 (`19.14`), hệ thống tự động phân bổ trọng số chuẩn xác **100%** (`Vĩ mô 25% + BCTC/FCF 30% + Định giá 25% + Kỹ thuật 20% = 100%`), đồng thời duy trì kỷ luật ATR Risk-Parity giúp danh mục tạo Alpha `+1.53%` so với S&P 500.
 - **Bài học 2 (Kỷ luật Khóa Mua Mới Trước BCTC <= 7 Ngày)**: Hệ thống đã tự động khóa giải ngân mới và loại khỏi bảng phân bổ Risk-Parity đối với 4 mã sắp công bố BCTC (`AAPL (0d), AMD (1d), QCOM (2d), ARM (2d), PLTR (0d), SMCI (1d), BRK-B (5d), NVO (2d), OXY (7d), MCD (2d)`), trong khi các mã vừa công bố xong (`GOOGL (5d ago), AMZN (4d ago), COIN (4d ago), LLY (4d ago), ABBV (3d ago)`) đã thoát rủi ro nhảy gap sự kiện.
 - **Bài học 3 (Độ tin cậy của True FCF ex-SBC, EVA Spread & SEC Form 4)**: Các doanh nghiệp có dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC > 0`), `ROIC > WACC` và giao dịch nội bộ mua ròng (`MSFT`, `JPM`, `PG`) giữ giá vượt trội trong các phiên chỉ số chung điều chỉnh.
 
 ---
 
 ## 5. Tinh Chỉnh Thích Nghi Trọng Số Chấm Điểm (`Adaptive Weight Tuning — Tổng = 100%`)
-Dựa trên mức biến động thực tế hôm nay (`VIX = 19.42`):
+Dựa trên mức biến động thực tế hôm nay (`VIX = 19.14`):
 - **Trụ cột 1 — Vĩ mô & Chu kỳ Ngành (`Macro & Sector Fit`)**: **`25%`**
 - **Trụ cột 2 — Sức khỏe BCTC & Dòng tiền (`Fundamental & True FCF`)**: **`30%`**
 - **Trụ cột 3 — Định giá & Dư địa Tăng giá (`Valuation & Consensus Upside`)**: **`25%`**
