@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-02T00:33:34.412032+00:00",
+  "generated_at_utc": "2026-11-02T01:41:13.773259+00:00",
   "portfolio_summary": {
     "target_equity_allocation_pct": 60.0,
     "target_cash_tbills_allocation_pct": 40.0,
@@ -285,7 +285,7 @@
       "adversarial_debate": {
         "symbol": "COST",
         "bull_agent_thesis": "FCF chuẩn hóa đạt +$6.75B USD, tăng trưởng doanh thu +11.1% YoY, giá ($1012.28) giữ cấu trúc trên MA200 ($970.91), điểm IC 75/100.",
-        "bear_agent_critique": "CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: Định giá Fwd P/E cao (40.45x) — Cần tránh mua đuổi giá xanh.",
+        "bear_agent_critique": "CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: Định giá Fwd P/E cao (40.48x) — Cần tránh mua đuổi giá xanh.",
         "cio_debate_resolution": "APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)",
         "debate_consensus_score": 84.5
       }

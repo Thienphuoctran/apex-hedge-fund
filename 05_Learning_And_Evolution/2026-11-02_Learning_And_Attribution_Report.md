@@ -7,7 +7,7 @@
 
 ## 1. Bảng Đo Lường Hiệu Suất & Độ Chuẩn Xác Của Dự Báo (Prediction Telemetry)
 - **Tổng số Tài sản Được Theo Dõi Toàn Cầu**: **`35 Cổ phiếu`** & **`12 ETF Ngành GICS`**
-- **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **19.42**, `US10Y` = **4.93%**, `WTI Oil` = **$102.48/thùng**)
+- **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **19.42**, `US10Y` = **4.93%**, `WTI Oil` = **$101.61/thùng**)
 - **Tỷ lệ Dự Báo Chuẩn Xác (Walk-Forward Hit Rate)**: **`84.2%`** (`16 Thắng` / `3 Thua` / `16 Tích lũy`)
 - **Hiệu quả Bộ Lọc Rủi Ro (Avoidance Score)**: **100%** (Cảnh báo thành công các bẫy suy yếu `TSLA`, `COIN`, `QCOM`, `SMCI`, `INTC`).
 

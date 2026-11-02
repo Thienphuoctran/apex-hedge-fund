@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-02T00:33:35.002340+00:00",
+  "generated_at_utc": "2026-11-02T01:41:13.970022+00:00",
   "trading_date": "2026-11-02",
   "previous_date_compared": "2026-11-01",
   "specialist_profile": {
@@ -20,7 +20,7 @@
     {
       "department": "Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)",
       "verdict": "CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)",
-      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 19.42 xuống 19.42 (-8.18%), Dầu WTI dịu từ $104.12 xuống $102.48, US10Y ổn định ở 4.93%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
+      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 19.42 xuống 19.42 (-8.18%), Dầu WTI dịu từ $104.12 xuống $101.61, US10Y ổn định ở 4.93%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
       "specialist_takeaway": "Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve)."
     },
     {
@@ -56,7 +56,7 @@
   ],
   "yesterday_post_mortem": {
     "compared_period": "2026-11-01 -> 2026-11-02",
-    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 19.42 xuống 19.42 (-8.18%), Dầu WTI dịu từ $104.12 về $102.48, US10Y ở 4.93%.",
+    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 19.42 xuống 19.42 (-8.18%), Dầu WTI dịu từ $104.12 về $101.61, US10Y ở 4.93%.",
     "validated_wins": [
       {
         "category": "Thắng lợi Nhóm Trụ cột Tăng trưởng & Dầu khí (Core Winners)",

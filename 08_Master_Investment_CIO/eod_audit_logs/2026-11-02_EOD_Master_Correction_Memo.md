@@ -12,22 +12,18 @@
 *Chấm điểm chất lượng báo cáo & sổ lệnh: **95.0/100***
 
 ### ✅ Những Điểm Làm Đúng & Kỷ Luật Được Khen Ngợi:
-- **ĐẠT CHUẨN**: Chuẩn hóa lô [FPT]: 4800 CP tuân thủ 100% quy định sàn HOSE.
-- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [FPT]: Stop 5.37% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
-- **ĐẠT CHUẨN**: Tỷ lệ R:R [FPT]: 1:2.60 đạt chuẩn kỳ vọng toán học dương.
-- **ĐẠT CHUẨN**: Chất lượng BCTC [FPT]: OCF/LNST = 1.25 tiền thật dồi dào, Beneish = SAFE.
-- **ĐẠT CHUẨN**: Chuẩn hóa lô [HPG]: 10800 CP tuân thủ 100% quy định sàn HOSE.
+- **ĐẠT CHUẨN**: Chuẩn hóa lô [HPG]: 500 CP tuân thủ 100% quy định sàn HOSE.
 - **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [HPG]: Stop 4.19% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
 - **ĐẠT CHUẨN**: Tỷ lệ R:R [HPG]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.
 - **ĐẠT CHUẨN**: Chất lượng BCTC [HPG]: OCF/LNST = 1.35 tiền thật dồi dào, Beneish = SAFE.
-- **ĐẠT CHUẨN**: Chuẩn hóa lô [TCB]: 9400 CP tuân thủ 100% quy định sàn HOSE.
+- **ĐẠT CHUẨN**: Chuẩn hóa lô [TCB]: 200 CP tuân thủ 100% quy định sàn HOSE.
 - **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [TCB]: Stop 3.94% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
 - **ĐẠT CHUẨN**: Tỷ lệ R:R [TCB]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.
 - **ĐẠT CHUẨN**: Chất lượng BCTC [TCB]: OCF/LNST = 1.16 tiền thật dồi dào, Beneish = SAFE.
-- **ĐẠT CHUẨN**: Chuẩn hóa lô [MWG]: 2700 CP tuân thủ 100% quy định sàn HOSE.
-- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [MWG]: Stop 3.57% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
-- **ĐẠT CHUẨN**: Tỷ lệ R:R [MWG]: 1:2.60 đạt chuẩn kỳ vọng toán học dương.
-- **ĐẠT CHUẨN**: Chất lượng BCTC [MWG]: OCF/LNST = 2.22 tiền thật dồi dào, Beneish = SAFE.
+- **ĐẠT CHUẨN**: Chuẩn hóa lô [MBB]: 200 CP tuân thủ 100% quy định sàn HOSE.
+- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [MBB]: Stop 3.32% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
+- **ĐẠT CHUẨN**: Tỷ lệ R:R [MBB]: 1:2.58 đạt chuẩn kỳ vọng toán học dương.
+- **ĐẠT CHUẨN**: Chất lượng BCTC [MBB]: OCF/LNST = 1.14 tiền thật dồi dào, Beneish = SAFE.
 
 ### ⚠️ LỖI SAI LỆCH VÀ THIẾU SÓT BỊ MASTER CIO BẮT LỖI:
 > [!WARNING]

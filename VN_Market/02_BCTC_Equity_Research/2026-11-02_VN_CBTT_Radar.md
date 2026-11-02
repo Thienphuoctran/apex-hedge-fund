@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-02 07:32:52  
-> **Số sự kiện ghi nhận:** 27 thông báo  
+> **Thời gian quét:** 2026-11-02 01:40:52  
+> **Số sự kiện ghi nhận:** 28 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -15,13 +15,14 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị "xả" mạnh nhất | [Xem Link](https://cafef.vn/khoi-ngoai-ban-rong-gan-3000-ty-trong-tuan-cuoi-thang-10-fpt-bi-xa-manh-nhat-188261031001137094.chn) |
 | **HPG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thành viên HĐQT Hòa Phát muốn bán bớt cổ phiếu HPG | [Xem Link](https://cafef.vn/thanh-vien-hdqt-hoa-phat-muon-ban-bot-co-phieu-hpg-18826103017051392.chn) |
 | **HSG** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Tập đoàn Hoa Sen đạt 623 tỷ đồng lợi nhuận sau thuế trong NĐTC 2025 - 2026, hoàn thành 104% kế hoạch ở phương án cao | [Xem Link](https://cafef.vn/tap-doan-hoa-sen-dat-623-ty-dong-loi-nhuan-sau-thue-trong-ndtc-2025-2026-hoan-thanh-104-ke-hoach-o-phuong-an-cao-188261030181042245.chn) |
+| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng sáng 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn) |
+| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ? | [Xem Link](https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn) |
 | **HDB, TCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành | [Xem Link](https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn hôm nay (31/10) tại SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... tiếp tục giảm mạnh tới 2,6 triệu đồng/lượng: Bao nhiêu tiền một chỉ? | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-hom-nay-31-10-tai-sjc-doji-bao-tin-manh-hai-pnj-bao-nhieu-tien-mot-chi-188261031073825033.chn) |
 | **ACB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | ACB cảnh báo nguy cơ mã độc trên iPhone, khuyến nghị cập nhật iOS mới để tăng cường bảo mật | [Xem Link](https://cafef.vn/acb-canh-bao-nguy-co-ma-doc-tren-iphone-khuyen-nghi-cap-nhat-ios-moi-de-tang-cuong-bao-mat-188261030100316697.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn hôm nay (30/10) tại SJC, DOJI, Phú Quý, PNJ, Bảo Tín Minh Châu,.... quay đầu giảm mạnh: Bao nhiêu một chỉ? | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-hom-nay-30-10-tai-sjc-doji-phu-quy-pnj-bao-tin-minh-chau-bao-nhieu-mot-chi-188261030064119129.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 29/10, gửi dưới 1 tỷ đồng kỳ hạn 24 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB được hưởng lãi suất bao nhiêu? | [Xem Link](https://cafef.vn/ngay-29-10-gui-duoi-1-ty-dong-ky-han-24-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-duoc-huong-lai-suat-bao-nhieu-18826102921181167.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Dân phản ánh bán đất xong vẫn mang nợ thuế: Thuế TP.HCM thông tin | [Xem Link](https://cafef.vn/dan-phan-anh-ban-dat-xong-van-mang-no-thue-thue-tphcm-thong-tin-1882610291734172.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 4 lô 'đất vàng' Thủ Thiêm sắp được đấu giá trở lại, chốt ngày 27/11 trên hệ thống của Bộ Công an | [Xem Link](https://cafef.vn/4-lo-dat-vang-thu-thiem-sap-duoc-dau-gia-tro-lai-chot-ngay-27-11-tren-he-thong-cua-bo-cong-an-188261101202752066.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Người dân TP.HCM tháo dỡ nhà, bàn giao mặt bằng dự án sau hơn 10 năm | [Xem Link](https://cafef.vn/nguoi-dan-tphcm-thao-do-nha-ban-giao-mat-bang-du-an-sau-hon-10-nam-188261101100634184.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Vinhomes Green Paradise chính thức bước vào vòng bình chọn toàn cầu “7 kỳ quan đô thị tương lai” | [Xem Link](https://cafef.vn/vinhomes-green-paradise-chinh-thuc-buoc-vao-vong-binh-chon-toan-cau-7-ky-quan-do-thi-tuong-lai-18826103119572592.chn) |

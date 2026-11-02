@@ -11,7 +11,7 @@
 - **Tỷ giá trung tâm / Thị trường USD/VND**: 25,420 VND/USD
 - **Tăng trưởng tín dụng toàn ngành**: 9.2% (Mục tiêu cả năm: 15.0%)
 - **Tiến độ giải ngân Đầu tư công**: 52.8%
-- **Chỉ số DXY thế giới**: 101.94 | **Lợi suất US10Y**: 4.93% | **Dầu WTI**: $102.5/thùng
+- **Chỉ số DXY thế giới**: 101.93 | **Lợi suất US10Y**: 4.93% | **Dầu WTI**: $101.65/thùng
 
 ---
 
@@ -32,8 +32,8 @@
 | **VRE** | HOSE | Bất Động Sản Dân Cư | 24,050 | -0.41% | 7.42 | 1.07 | **86.2/100** | 9/9 | 33 | `NEUTRAL_TEST` | 1.13x | **AAA** |
 | **KDH** | HOSE | Bất Động Sản Dân Cư | 13,900 | -0.71% | 10.55 | 1.0 | **88.4/100** | 9/9 | 21 | `NEUTRAL_TEST` | 1.33x | **AA** |
 | **NLG** | HOSE | Bất Động Sản Dân Cư | 22,000 | -4.35% | 18.47 | 2.08 | **78.9/100** | 9/9 | 41 | `NEUTRAL_TEST` | 1.44x | **AA** |
-| **PDR** | HOSE | Bất Động Sản Dân Cư | 11,300 | -0.88% | 19.06 | 0.9 | **59.6/100** | 4/9 | 24 | `NEUTRAL_TEST` | -0.62x | **BB (WATCH)** |
-| **DXG** | HOSE | Bất Động Sản Dân Cư | 10,100 | +2.23% | 129.4 | 0.9 | **63.8/100** | 5/9 | 30 | `POCKET_PIVOT` | -1.81x | **BB (WATCH)** |
+| **PDR** | HOSE | Bất Động Sản Dân Cư | 11,300 | -0.88% | 19.06 | 0.91 | **59.6/100** | 4/9 | 24 | `NEUTRAL_TEST` | -0.62x | **BB (WATCH)** |
+| **DXG** | HOSE | Bất Động Sản Dân Cư | 10,100 | +2.23% | 126.46 | 0.9 | **63.8/100** | 5/9 | 30 | `POCKET_PIVOT` | -1.81x | **BB (WATCH)** |
 | **BCM** | HOSE | Bất Động Sản Khu Công Nghiệp | 38,400 | -2.91% | 20.77 | 1.88 | **77.3/100** | 8/9 | 35 | `NEUTRAL_TEST` | 1.18x | **AA** |
 | **IDC** | HNX | Bất Động Sản Khu Công Nghiệp | 0 | +0.00% | N/A | N/A | **94.7/100** | 9/9 | 78 | `NEUTRAL` | 1.58x | **AAA** |
 | **KBC** | HOSE | Bất Động Sản Khu Công Nghiệp | 26,000 | -1.89% | 13.91 | 0.94 | **70.5/100** | 7/9 | 39 | `NEUTRAL_TEST` | 1.23x | **BB (WATCH)** |
@@ -50,7 +50,7 @@
 | **DGW** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 40,950 | -3.65% | 11.23 | 2.73 | **89.3/100** | 8/9 | 86 | `NEUTRAL_TEST` | 1.53x | **AAA** |
 | **FPT** | HOSE | Công Nghệ Thông Tin & Viễn Thông | 52,700 | +0.00% | 11.21 | 2.85 | **92.7/100** | 9/9 | 23 | `NEUTRAL_TEST` | 1.25x | **AAA** |
 | **CMG** | HOSE | Công Nghệ Thông Tin & Viễn Thông | 18,500 | -2.12% | 11.57 | 1.29 | **83.3/100** | 9/9 | 20 | `NEUTRAL_TEST` | 1.72x | **AAA** |
-| **SSI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 19,300 | -1.53% | 11.21 | 1.43 | **89.4/100** | 9/9 | 51 | `NEUTRAL_TEST` | 1.11x | **AAA** |
+| **SSI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 19,300 | -1.53% | 11.06 | 1.43 | **89.4/100** | 9/9 | 51 | `NEUTRAL_TEST` | 1.11x | **AAA** |
 | **VND** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 13,400 | -1.47% | 9.96 | 0.94 | **74.0/100** | 6/9 | 27 | `NEUTRAL_TEST` | 0.91x | **AA** |
 | **VCI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 18,500 | -2.63% | 14.86 | 1.26 | **88.0/100** | 9/9 | 26 | `NEUTRAL_TEST` | 1.25x | **AAA** |
 | **HCM** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 23,200 | +0.65% | 21.09 | 1.73 | **86.3/100** | 9/9 | 60 | `NEUTRAL_TEST` | 1.23x | **AAA** |
@@ -72,7 +72,7 @@
 | **HHV** | HOSE | Hạ Tầng Xây Dựng & Đầu Tư Công | 9,300 | -1.69% | 8.11 | 0.47 | **84.7/100** | 7/9 | 38 | `NEUTRAL_TEST` | 3.26x | **AA** |
 | **DBC** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | 15,400 | -2.53% | 6.73 | 0.76 | **83.8/100** | 7/9 | 32 | `NEUTRAL_TEST` | 1.63x | **AAA** |
 | **VHC** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | 50,300 | -2.33% | 8.25 | 1.07 | **87.2/100** | 9/9 | 47 | `NEUTRAL_TEST` | 1.29x | **AAA** |
-| **DHG** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | 86,900 | -0.46% | 13.12 | 3.23 | **81.4/100** | 8/9 | 68 | `NO_SUPPLY` | 1.11x | **AA** |
+| **DHG** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | 86,900 | -0.46% | 13.09 | 3.23 | **81.4/100** | 8/9 | 68 | `NO_SUPPLY` | 1.11x | **AA** |
 
 ---
 

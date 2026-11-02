@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-02 07:34:26",
+  "generated_at": "2026-11-02 01:41:46",
   "token_metrics": {
-    "total_raw_report_tokens": 75144,
-    "titan_digest_tokens": 1560,
+    "total_raw_report_tokens": 74084,
+    "titan_digest_tokens": 1541,
     "token_savings_percent": 97.9,
     "quality_preservation": "100% LOSSLESS (Full reports intact on disk)"
   },
   "deterministic_audit": {
-    "timestamp": "2026-11-02 07:34:26",
+    "timestamp": "2026-11-02 01:41:46",
     "bctc_vn_verified": 54,
     "bctc_red_flags_detected": [
       "UNKNOWN (M-Score=0.41, OCF/LNST=1.2)",
       "UNKNOWN (M-Score=-0.9, OCF/LNST=1.2)",
       "UNKNOWN (M-Score=-1.19, OCF/LNST=1.2)"
     ],
-    "master_blotter_orders": 8,
+    "master_blotter_orders": 7,
     "vn_specialist_orders": 6,
     "risk_compliance_100pct": true,
     "violations": [],
@@ -24,9 +24,9 @@
     "global_macro_ban1": {
       "exists": true,
       "path": "01_Macro_Geopolitics/2026-11-02_Macro_Report.md",
-      "size_kb": 23.2,
+      "size_kb": 23.1,
       "total_lines": 69,
-      "estimated_raw_tokens": 6779,
+      "estimated_raw_tokens": 6761,
       "sections_count": 5,
       "sections": [
         {
@@ -100,7 +100,7 @@
       "path": "02_Equity_Research/2026-11-02_SEC_Filings_Radar.md",
       "size_kb": 5.1,
       "total_lines": 46,
-      "estimated_raw_tokens": 1491,
+      "estimated_raw_tokens": 1478,
       "sections_count": 1,
       "sections": [
         {
@@ -148,9 +148,9 @@
     "global_synthesis_ban3": {
       "exists": true,
       "path": "03_Synthesis_Memos/2026-11-02_Investment_Memo.md",
-      "size_kb": 20.2,
+      "size_kb": 20.1,
       "total_lines": 73,
-      "estimated_raw_tokens": 5899,
+      "estimated_raw_tokens": 5878,
       "sections_count": 4,
       "sections": [
         {
@@ -210,7 +210,7 @@
       "path": "04_Investment_Committee/2026-11-02_IC_Decision.md",
       "size_kb": 8.8,
       "total_lines": 47,
-      "estimated_raw_tokens": 2588,
+      "estimated_raw_tokens": 2575,
       "sections_count": 4,
       "sections": [
         {
@@ -260,9 +260,9 @@
     "global_learning_ban5": {
       "exists": true,
       "path": "05_Learning_And_Evolution/2026-11-02_Learning_And_Attribution_Report.md",
-      "size_kb": 7.5,
+      "size_kb": 7.4,
       "total_lines": 63,
-      "estimated_raw_tokens": 2197,
+      "estimated_raw_tokens": 2179,
       "sections_count": 7,
       "sections": [
         {
@@ -340,7 +340,7 @@
       "path": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-02_Mentor_Briefing.md",
       "size_kb": 4.9,
       "total_lines": 47,
-      "estimated_raw_tokens": 1442,
+      "estimated_raw_tokens": 1429,
       "sections_count": 7,
       "sections": [
         {
@@ -526,9 +526,9 @@
     "global_alex_ban7": {
       "exists": true,
       "path": "07_Daily_Investment_Specialist/2026-11-02_Daily_Specialist_Decision.md",
-      "size_kb": 32.4,
+      "size_kb": 32.3,
       "total_lines": 181,
-      "estimated_raw_tokens": 9489,
+      "estimated_raw_tokens": 9437,
       "sections_count": 20,
       "sections": [
         {
@@ -786,7 +786,7 @@
       "path": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-02_VN_Macro_Report.md",
       "size_kb": 2.1,
       "total_lines": 20,
-      "estimated_raw_tokens": 619,
+      "estimated_raw_tokens": 613,
       "sections_count": 3,
       "sections": [
         {
@@ -830,9 +830,9 @@
     "vn_bctc_ban2": {
       "exists": true,
       "path": "VN_Market/02_BCTC_Equity_Research/2026-11-02_VN_Equity_Analysis.md",
-      "size_kb": 47.4,
+      "size_kb": 47.1,
       "total_lines": 303,
-      "estimated_raw_tokens": 13866,
+      "estimated_raw_tokens": 13780,
       "sections_count": 21,
       "sections": [
         {
@@ -1318,7 +1318,7 @@
       "path": "VN_Market/03_Synthesis_Memos/2026-11-02_VN_Investment_Memo.md",
       "size_kb": 5.5,
       "total_lines": 34,
-      "estimated_raw_tokens": 1608,
+      "estimated_raw_tokens": 1599,
       "sections_count": 3,
       "sections": [
         {
@@ -1394,9 +1394,9 @@
     "vn_ic_ban4": {
       "exists": true,
       "path": "VN_Market/04_Investment_Committee/2026-11-02_VN_IC_Decision.md",
-      "size_kb": 11.2,
+      "size_kb": 11.1,
       "total_lines": 95,
-      "estimated_raw_tokens": 3263,
+      "estimated_raw_tokens": 3236,
       "sections_count": 10,
       "sections": [
         {
@@ -1596,7 +1596,7 @@
       "path": "VN_Market/05_Learning_And_Evolution/2026-11-02_VN_Learning_Report.md",
       "size_kb": 3.1,
       "total_lines": 25,
-      "estimated_raw_tokens": 910,
+      "estimated_raw_tokens": 903,
       "sections_count": 5,
       "sections": [
         {
@@ -1718,7 +1718,7 @@
       "path": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-02_VN_Mentor_Briefing.md",
       "size_kb": 3.9,
       "total_lines": 43,
-      "estimated_raw_tokens": 1148,
+      "estimated_raw_tokens": 1136,
       "sections_count": 8,
       "sections": [
         {
@@ -1878,9 +1878,9 @@
     "vn_minh_quan_ban7": {
       "exists": true,
       "path": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
-      "size_kb": 47.9,
+      "size_kb": 47.6,
       "total_lines": 300,
-      "estimated_raw_tokens": 14010,
+      "estimated_raw_tokens": 13925,
       "sections_count": 21,
       "sections": [
         {
@@ -2262,10 +2262,10 @@
     "master_cio_ban8": {
       "exists": true,
       "path": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-      "size_kb": 28.2,
-      "total_lines": 232,
-      "estimated_raw_tokens": 8256,
-      "sections_count": 25,
+      "size_kb": 25.9,
+      "total_lines": 225,
+      "estimated_raw_tokens": 7587,
+      "sections_count": 24,
       "sections": [
         {
           "level": 1,
@@ -2355,67 +2355,61 @@
           "level": 2,
           "title": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
           "start_line": 130,
-          "end_line": 139
+          "end_line": 138
         },
         {
           "level": 3,
           "title": "Giải Trình Chi Tiết Từng Mã Việt Nam Của Master CIO & Minh Quân:",
-          "start_line": 140,
-          "end_line": 141
+          "start_line": 139,
+          "end_line": 140
         },
         {
           "level": 4,
-          "title": "🔹 FPT — Tập Đoàn FPT (CORE COMPOUNDER)",
-          "start_line": 142,
-          "end_line": 147
-        },
-        {
-          "level": 4,
-          "title": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER)",
-          "start_line": 148,
-          "end_line": 153
+          "title": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
+          "start_line": 141,
+          "end_line": 146
         },
         {
           "level": 4,
           "title": "🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))",
-          "start_line": 154,
-          "end_line": 159
+          "start_line": 147,
+          "end_line": 152
         },
         {
           "level": 4,
-          "title": "🔹 MWG — Thế Giới Di Động (CORE COMPOUNDER)",
-          "start_line": 160,
-          "end_line": 167
+          "title": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+          "start_line": 153,
+          "end_line": 160
         },
         {
           "level": 2,
           "title": "5. MA TRẬN TƯƠNG QUAN & KIỂM THỬ SỨC CHỊU ĐỰNG KHỦNG HOẢNG (STRESS-TESTING)",
-          "start_line": 168,
-          "end_line": 181
+          "start_line": 161,
+          "end_line": 174
         },
         {
           "level": 3,
           "title": "Kiểm Thử 3 Kịch Bản Khủng Hoảng (Stress-Testing 3 Scenarios):",
-          "start_line": 182,
-          "end_line": 191
+          "start_line": 175,
+          "end_line": 184
         },
         {
           "level": 2,
           "title": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-          "start_line": 192,
-          "end_line": 205
+          "start_line": 185,
+          "end_line": 198
         },
         {
           "level": 3,
           "title": "6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)",
-          "start_line": 206,
-          "end_line": 217
+          "start_line": 199,
+          "end_line": 210
         },
         {
           "level": 2,
           "title": "7. LỜI KẾT VÀ CHỈ THỊ BẤM CÒ THỰC THI TỪ TỔNG TƯ LỆNH",
-          "start_line": 218,
-          "end_line": 232
+          "start_line": 211,
+          "end_line": 225
         }
       ],
       "tickers": {
@@ -2444,13 +2438,13 @@
             "section": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
             "start_line": 130,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 139
+            "end_line": 138
           },
           {
             "section": "7. LỜI KẾT VÀ CHỈ THỊ BẤM CÒ THỰC THI TỪ TỔNG TƯ LỆNH",
-            "start_line": 218,
+            "start_line": 211,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 232
+            "end_line": 225
           }
         ],
         "QUAN": [
@@ -2462,9 +2456,9 @@
           },
           {
             "section": "5. MA TRẬN TƯƠNG QUAN & KIỂM THỬ SỨC CHỊU ĐỰNG KHỦNG HOẢNG (STRESS-TESTING)",
-            "start_line": 168,
+            "start_line": 161,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 181
+            "end_line": 174
           }
         ],
         "LAI": [
@@ -2526,7 +2520,7 @@
             "section": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
             "start_line": 130,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 139
+            "end_line": 138
           }
         ],
         "WALL": [
@@ -2567,28 +2561,16 @@
             "end_line": 121
           },
           {
-            "section": "🔹 FPT — Tập Đoàn FPT (CORE COMPOUNDER)",
-            "start_line": 142,
+            "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
+            "start_line": 141,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 147
-          },
-          {
-            "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER)",
-            "start_line": 148,
-            "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 153
+            "end_line": 146
           },
           {
             "section": "🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))",
-            "start_line": 154,
+            "start_line": 147,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 159
-          },
-          {
-            "section": "🔹 MWG — Thế Giới Di Động (CORE COMPOUNDER)",
-            "start_line": 160,
-            "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 167
+            "end_line": 152
           }
         ],
         "AVGO": [
@@ -2611,6 +2593,12 @@
             "start_line": 122,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
             "end_line": 129
+          },
+          {
+            "section": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+            "start_line": 153,
+            "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+            "end_line": 160
           }
         ],
         "TSM": [
@@ -2637,106 +2625,116 @@
             "end_line": 129
           }
         ],
-        "FPT": [
-          {
-            "section": "🔹 FPT — Tập Đoàn FPT (CORE COMPOUNDER)",
-            "start_line": 142,
-            "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 147
-          },
-          {
-            "section": "🔹 FPT — Tập Đoàn FPT (CORE COMPOUNDER)",
-            "start_line": 142,
-            "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 147
-          }
-        ],
         "HPG": [
           {
-            "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER)",
-            "start_line": 148,
+            "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
+            "start_line": 141,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 153
+            "end_line": 146
+          }
+        ],
+        "VUA": [
+          {
+            "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
+            "start_line": 141,
+            "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+            "end_line": 146
           }
         ],
         "TCB": [
           {
             "section": "🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))",
-            "start_line": 154,
+            "start_line": 147,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 159
+            "end_line": 152
           }
         ],
         "BANK": [
           {
             "section": "🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))",
-            "start_line": 154,
+            "start_line": 147,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 159
+            "end_line": 152
           }
         ],
-        "MWG": [
+        "MBB": [
           {
-            "section": "🔹 MWG — Thế Giới Di Động (CORE COMPOUNDER)",
-            "start_line": 160,
+            "section": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+            "start_line": 153,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 167
+            "end_line": 160
+          }
+        ],
+        "FAST": [
+          {
+            "section": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+            "start_line": 153,
+            "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+            "end_line": 160
+          }
+        ],
+        "SWING": [
+          {
+            "section": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+            "start_line": 153,
+            "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+            "end_line": 160
           }
         ],
         "TRA": [
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-            "start_line": 192,
+            "start_line": 185,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 205
+            "end_line": 198
           }
         ],
         "KHI": [
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-            "start_line": 192,
+            "start_line": 185,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 205
+            "end_line": 198
           }
         ],
         "MUA": [
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-            "start_line": 192,
+            "start_line": 185,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 205
+            "end_line": 198
           }
         ],
         "PRE": [
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-            "start_line": 192,
+            "start_line": 185,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 205
+            "end_line": 198
           }
         ],
         "ORDER": [
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-            "start_line": 192,
+            "start_line": 185,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 205
+            "end_line": 198
           }
         ],
         "AUDIT": [
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-            "start_line": 192,
+            "start_line": 185,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 205
+            "end_line": 198
           }
         ],
         "AI": [
           {
             "section": "6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)",
-            "start_line": 206,
+            "start_line": 199,
             "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-            "end_line": 217
+            "end_line": 210
           }
         ]
       }
@@ -2746,7 +2744,7 @@
       "path": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
       "size_kb": 5.4,
       "total_lines": 41,
-      "estimated_raw_tokens": 1579,
+      "estimated_raw_tokens": 1568,
       "sections_count": 3,
       "sections": [
         {
@@ -3178,7 +3176,7 @@
         "section": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
         "start_line": 130,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 139
+        "end_line": 138
       }
     ],
     "LAYER": [
@@ -3344,9 +3342,9 @@
       },
       {
         "section": "6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)",
-        "start_line": 206,
+        "start_line": 199,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 217
+        "end_line": 210
       }
     ],
     "TSM": [
@@ -3639,6 +3637,12 @@
         "start_line": 202,
         "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
         "end_line": 232
+      },
+      {
+        "section": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+        "start_line": 153,
+        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+        "end_line": 160
       }
     ],
     "TCB": [
@@ -3662,9 +3666,9 @@
       },
       {
         "section": "🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))",
-        "start_line": 154,
+        "start_line": 147,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 159
+        "end_line": 152
       }
     ],
     "MWG": [
@@ -3685,12 +3689,6 @@
         "start_line": 138,
         "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
         "end_line": 170
-      },
-      {
-        "section": "🔹 MWG — Thế Giới Di Động (CORE COMPOUNDER)",
-        "start_line": 160,
-        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 167
       }
     ],
     "FPT": [
@@ -3717,18 +3715,6 @@
         "start_line": 105,
         "file": "VN_Market/07_Daily_Specialist/2026-11-02_VN_Specialist_Decision.md",
         "end_line": 137
-      },
-      {
-        "section": "🔹 FPT — Tập Đoàn FPT (CORE COMPOUNDER)",
-        "start_line": 142,
-        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 147
-      },
-      {
-        "section": "🔹 FPT — Tập Đoàn FPT (CORE COMPOUNDER)",
-        "start_line": 142,
-        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 147
       }
     ],
     "PVT": [
@@ -3855,10 +3841,10 @@
         "end_line": 104
       },
       {
-        "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER)",
-        "start_line": 148,
+        "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
+        "start_line": 141,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 153
+        "end_line": 146
       }
     ],
     "SSI": [
@@ -4002,9 +3988,9 @@
       },
       {
         "section": "5. MA TRẬN TƯƠNG QUAN & KIỂM THỬ SỨC CHỊU ĐỰNG KHỦNG HOẢNG (STRESS-TESTING)",
-        "start_line": 168,
+        "start_line": 161,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 181
+        "end_line": 174
       }
     ],
     "QUA": [
@@ -4200,13 +4186,13 @@
         "section": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
         "start_line": 130,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 139
+        "end_line": 138
       },
       {
         "section": "7. LỜI KẾT VÀ CHỈ THỊ BẤM CÒ THỰC THI TỪ TỔNG TƯ LỆNH",
-        "start_line": 218,
+        "start_line": 211,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 232
+        "end_line": 225
       }
     ],
     "LAI": [
@@ -4239,28 +4225,16 @@
         "end_line": 121
       },
       {
-        "section": "🔹 FPT — Tập Đoàn FPT (CORE COMPOUNDER)",
-        "start_line": 142,
+        "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
+        "start_line": 141,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 147
-      },
-      {
-        "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER)",
-        "start_line": 148,
-        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 153
+        "end_line": 146
       },
       {
         "section": "🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))",
-        "start_line": 154,
+        "start_line": 147,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 159
-      },
-      {
-        "section": "🔹 MWG — Thế Giới Di Động (CORE COMPOUNDER)",
-        "start_line": 160,
-        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 167
+        "end_line": 152
       }
     ],
     "ALPHA": [
@@ -4275,62 +4249,92 @@
         "start_line": 122,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
         "end_line": 129
+      },
+      {
+        "section": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+        "start_line": 153,
+        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+        "end_line": 160
+      }
+    ],
+    "VUA": [
+      {
+        "section": "🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))",
+        "start_line": 141,
+        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+        "end_line": 146
       }
     ],
     "BANK": [
       {
         "section": "🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))",
-        "start_line": 154,
+        "start_line": 147,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 159
+        "end_line": 152
+      }
+    ],
+    "FAST": [
+      {
+        "section": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+        "start_line": 153,
+        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+        "end_line": 160
+      }
+    ],
+    "SWING": [
+      {
+        "section": "🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))",
+        "start_line": 153,
+        "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
+        "end_line": 160
       }
     ],
     "TRA": [
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-        "start_line": 192,
+        "start_line": 185,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 205
+        "end_line": 198
       }
     ],
     "KHI": [
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-        "start_line": 192,
+        "start_line": 185,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 205
+        "end_line": 198
       }
     ],
     "MUA": [
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-        "start_line": 192,
+        "start_line": 185,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 205
+        "end_line": 198
       }
     ],
     "PRE": [
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-        "start_line": 192,
+        "start_line": 185,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 205
+        "end_line": 198
       }
     ],
     "ORDER": [
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-        "start_line": 192,
+        "start_line": 185,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 205
+        "end_line": 198
       }
     ],
     "AUDIT": [
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
-        "start_line": 192,
+        "start_line": 185,
         "file": "08_Master_Investment_CIO/2026-11-02_Master_CIO_Final_Decision.md",
-        "end_line": 205
+        "end_line": 198
       }
     ],
     "GIAN": [

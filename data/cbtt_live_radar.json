@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-02T00:32:52.746513+00:00",
+  "timestamp_utc": "2026-11-02T01:40:52.484457+00:00",
   "scan_date": "2026-11-02",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 27,
+  "total_vn_announcements_count": 28,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -290,7 +290,7 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 21:35:00 +0700",
       "source_url": "https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn",
-      "total_announcements": 11
+      "total_announcements": 10
     },
     "DXG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -340,6 +340,22 @@
       "source_url": "https://cafef.vn/tap-doan-hoa-sen-dat-623-ty-dong-loi-nhuan-sau-thue-trong-ndtc-2025-2026-hoan-thanh-104-ke-hoach-o-phuong-an-cao-188261030181042245.chn",
       "total_announcements": 1
     },
+    "PNJ": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Giá vàng nhẫn trơn, vàng miếng sáng 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 07:36:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn",
+      "total_announcements": 6
+    },
+    "ACB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ?",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 07:31:00 +0700",
+      "source_url": "https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn",
+      "total_announcements": 3
+    },
     "HDB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành",
@@ -363,22 +379,6 @@
       "published_at": "Sun, 01 Nov 26 20:58:00 +0700",
       "source_url": "https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn",
       "total_announcements": 1
-    },
-    "PNJ": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,...",
-      "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 15:38:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn",
-      "total_announcements": 5
-    },
-    "ACB": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "ACB cảnh báo nguy cơ mã độc trên iPhone, khuyến nghị cập nhật iOS mới để tăng cường bảo mật",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 10:04:00 +0700",
-      "source_url": "https://cafef.vn/acb-canh-bao-nguy-co-ma-doc-tren-iphone-khuyen-nghi-cap-nhat-ios-moi-de-tang-cuong-bao-mat-188261030100316697.chn",
-      "total_announcements": 2
     }
   },
   "us_filings": [
@@ -4959,6 +4959,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng trong nước mở đầu phiên sáng 2/11 ở mức thấp với vàng miếng SJC được bán ra ở mức 139 triệu đồng/lượng, trong khi giá vàng nhẫn tại các thương hiệu dao động từ 135,8 đến 138 triệu đồng/lượng...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 07:36:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ?",
+      "summary": "Mỗi giao dịch chỉ chênh lệch vài đồng tỷ giá có thể trở thành khoản chi phí đáng kể khi cộng dồn qua hàng chục đơn hàng nhỏ. Đó là một trong những lý do ACB triển khai ưu đãi lên đến 30 đồng/CNY cho cả chiều mua và bán. ...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 07:31:00 +0700",
+      "source_url": "https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HDB",
         "TCB",
         "VPB"
@@ -5029,18 +5053,6 @@
       "severity": "INFO",
       "published_at": "Thu, 29 Oct 26 21:17:00 +0700",
       "source_url": "https://cafef.vn/ngay-29-10-gui-duoi-1-ty-dong-ky-han-24-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-duoc-huong-lai-suat-bao-nhieu-18826102921181167.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Dân phản ánh bán đất xong vẫn mang nợ thuế: Thuế TP.HCM thông tin",
-      "summary": "Thuế TP.HCM tiếp nhận phản ánh người dân đã bán đất từ lâu vẫn bị báo nợ thuế, đồng thời rà soát, làm sạch hàng trăm nghìn dữ liệu thuế đất....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 29 Oct 26 18:33:00 +0700",
-      "source_url": "https://cafef.vn/dan-phan-anh-ban-dat-xong-van-mang-no-thue-thue-tphcm-thong-tin-1882610291734172.chn"
     },
     {
       "market": "VIETNAM",

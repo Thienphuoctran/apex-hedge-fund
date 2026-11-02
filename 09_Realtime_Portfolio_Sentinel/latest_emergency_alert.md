@@ -1,6 +1,6 @@
 # 🚨 [RED ALERT] BÁO CÁO BIẾN ĐỘNG KHẨN CẤP DANH MỤC & LIVE WAR-ROOM
 **Phòng Ban 9**: Ban Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Khẩn Cấp ("Victor")  
-**Thời gian phát hiện**: `2026-11-02 07:34:18` | **Mã Cổ Phiếu Báo Động**: **`TSM`** (US_GLOBAL)  
+**Thời gian phát hiện**: `2026-11-02 01:41:42` | **Mã Cổ Phiếu Báo Động**: **`TSM`** (US_GLOBAL)  
 **Mức độ khẩn cấp**: **`CRITICAL`** | **Trạng thái**: YÊU CẦU PHẢN ỨNG TỨC THỜI TRONG PHIÊN
 
 ---
@@ -11,7 +11,7 @@
 | **Giá Hiện Tại** | **`406.13 USD`** | — | Giảm **`-5.95%`** so với tham chiếu |
 | **Khoảng Cách Đến Stop 2xATR** | **`+7.10%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`377.30 USD`** |
 | **Tỷ Lệ Bùng Nổ Khối Lượng** | **`1.92x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
-| **Quy Mô Vốn Đang Rủi Ro** | **`12,996.16 USD`** | — | Số lượng đang nắm: `32 cổ phiếu` |
+| **Quy Mô Vốn Đang Rủi Ro** | **`0.00 USD`** | — | Số lượng đang nắm: `0 cổ phiếu` |
 | **Giá Trị Trung Bình VWAP** | **`408.11 USD`** | — | Vùng kháng cự ngắn hạn trong phiên |
 
 ### Các Dị Thường Kích Hoạt Còi Báo Động:
@@ -39,7 +39,7 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 * **Bản chất**: Cổ phiếu cơ sở bị giảm nhưng chưa về tài khoản hoặc không muốn bán tháo giá đáy.
 * **Lệnh thực thi ngay**:
   - **Hành động**: **`BUY 1 PUT CONTRACT(S) AT-THE-MONEY`**
-  - **Quy mô danh mục được bảo vệ**: `12,996.16 USD` (Bảo hộ **`100.0%`** giá trị vị thế).
+  - **Quy mô danh mục được bảo vệ**: `0.00 USD` (Bảo hộ **`100.0%`** giá trị vị thế).
 * **Kết quả**: Vị thế phái sinh Short sẽ sinh lời tương đương mức lỗ của cổ phiếu cơ sở, **khóa băng mức lỗ danh mục 100% tức thì**!
 
 ---
@@ -47,8 +47,8 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 ### ✂️ PHƯƠNG ÁN B: PARTIAL TACTICAL DE-RISKING (HẠ TỶ TRỌNG CHỦ ĐỘNG 50%)
 * **Bản chất**: Giảm áp lực Margin và hạ rủi ro danh mục nếu hàng đã về tài khoản.
 * **Lệnh thực thi ngay**:
-  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`408.11 USD`), đặt bán **`16 cổ phiếu`** (50% vị thế).
-  - Thu hồi ngay dòng tiền mặt: **`~6,498.08 USD`** bổ sung vào quỹ Dry Powder.
+  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`408.11 USD`), đặt bán **`500 cổ phiếu`** (50% vị thế).
+  - Thu hồi ngay dòng tiền mặt: **`~203,065.00 USD`** bổ sung vào quỹ Dry Powder.
 
 ---
 

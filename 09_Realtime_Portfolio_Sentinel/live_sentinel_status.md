@@ -1,5 +1,5 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-02 07:34:19`  
+*Cập nhật gần nhất*: `2026-11-02 01:41:43`  
 *Trạng thái hệ thống*: **`🚨 CÓ BIẾN ĐỘNG KHẨN CẤP`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`21 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
@@ -10,10 +10,9 @@
 | **`AVGO`** | US_GLOBAL | `326.08 USD` | `-5.48%` | `301.62 USD` | `+7.50%` | `378.00 USD` | `+15.92%` | `1.5x` | 🚨 **Báo động cắt lỗ** |
 | **`TSM`** | US_GLOBAL | `406.13 USD` | `-5.95%` | `377.30 USD` | `+7.10%` | `463.79 USD` | `+14.20%` | `1.9x` | 🚨 **Báo động cắt lỗ** |
 | **`GOOGL`** | US_GLOBAL | `279.84 USD` | `-1.40%` | `258.85 USD` | `+7.50%` | `323.20 USD` | `+15.49%` | `1.0x` | ✅ Đang canh 2 đầu |
-| **`FPT`** | VIETNAM | `52,700.00 VND` | `+0.00%` | `49,870.00 VND` | `+5.37%` | `56,660.00 VND` | `+7.51%` | `0.6x` | ✅ Đang canh 2 đầu |
 | **`HPG`** | VIETNAM | `21,000.00 VND` | `-0.94%` | `20,120.00 VND` | `+4.19%` | `22,230.00 VND` | `+5.86%` | `1.3x` | ✅ Đang canh 2 đầu |
 | **`TCB`** | VIETNAM | `21,600.00 VND` | `-3.36%` | `20,750.00 VND` | `+3.94%` | `22,780.00 VND` | `+5.46%` | `0.7x` | ⚠️ Cảnh giác giảm |
-| **`MWG`** | VIETNAM | `74,000.00 VND` | `-2.37%` | `71,360.00 VND` | `+3.57%` | `77,700.00 VND` | `+5.00%` | `0.8x` | ⚠️ Cảnh giác giảm |
+| **`MBB`** | VIETNAM | `19,300.00 VND` | `-2.03%` | `18,660.00 VND` | `+3.32%` | `20,190.00 VND` | `+4.61%` | `1.2x` | ⚠️ Cảnh giác giảm |
 | **`V`** | US_GLOBAL | `413.59 USD` | `+0.74%` | `398.72 USD` | `+3.60%` | `443.33 USD` | `+7.19%` | `1.0x` | ✅ Đang canh 2 đầu |
 | **`JPM`** | US_GLOBAL | `337.04 USD` | `-1.90%` | `323.09 USD` | `+4.14%` | `364.94 USD` | `+8.28%` | `1.3x` | ✅ Đang canh 2 đầu |
 | **`PG`** | US_GLOBAL | `161.57 USD` | `+0.61%` | `154.72 USD` | `+4.24%` | `175.27 USD` | `+8.48%` | `1.4x` | ✅ Đang canh 2 đầu |
@@ -27,6 +26,7 @@
 | **`HDB`** | VIETNAM | `22,400.00 VND` | `-1.32%` | `21,143.00 VND` | `+5.61%` | `24,034.00 VND` | `+7.29%` | `0.9x` | ✅ Đang canh 2 đầu |
 | **`GMD`** | VIETNAM | `52,700.00 VND` | `+1.15%` | `49,229.00 VND` | `+6.59%` | `57,213.00 VND` | `+8.56%` | `0.5x` | ✅ Đang canh 2 đầu |
 | **`MBS`** | VIETNAM | `25,000.00 VND` | `+0.00%` | `23,750.00 VND` | `+5.00%` | `26,625.00 VND` | `+6.50%` | `1.0x` | ✅ Đang canh 2 đầu |
+| **`MWG`** | VIETNAM | `74,000.00 VND` | `-2.37%` | `71,357.00 VND` | `+3.57%` | `77,436.00 VND` | `+4.64%` | `0.8x` | ⚠️ Cảnh giác giảm |
 
 ## 2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực
 | Chuyên Viên | Mã CP | Giá Hiện Tại | Tín Hiệu Sóng | Chất Lượng BCTC | Điểm Mua Chuẩn | Cắt Lỗ 2xATR | Chốt Lời TP1 |
