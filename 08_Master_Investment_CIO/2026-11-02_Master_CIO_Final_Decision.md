@@ -130,28 +130,28 @@ sequenceDiagram
 ## 4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)
 **Tổng Vốn Phân Bổ: 18,680,000 VNĐ ($735.44 USD - 93.4% NAV) | Chuyên Viên Thực Thi: Minh Quân**
 
-| Mã CP | Sàn / Ngành | Vốn Phân Bổ (VNĐ / USD) | Số Cổ Phiếu (Lô Chẵn 100) | Thị Giá Hiện Tại | Chiến Lược Vào Lệnh (60/40) | Ngưỡng Cắt Lỗ Bắt Buộc | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
+| Mã CP | Sàn / Ngành | Vốn Phân Bổ (VNĐ / USD) | Số Cổ Phiếu (Lô Chẵn 100) | Thị Giá Hiện Tại | Pháp Y & Net Conviction (Bước 1 & 2) | Ngưỡng Cắt Lỗ Bắt Buộc | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **HPG** | HOSE • Thép & Vật Liệu Xây Dựng | **10,500,000 ₫**<br/>($413.39) | **500 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 21,000 ₫ | Nhịp 1: Mua thăm dò 60% (300 CP) tại 21,000 ₫ phiên sáng • Nhịp 2: Khung 14h00-14h25 gia tăng 40% (200 CP) | **20,120 ₫**<br/>(-4.19%) | TP1: **22,230 ₫**<br/>TP2: **23,280 ₫** | +6.98%<br/>(1:2.59) |
-| **TCB** | HOSE • Ngân Hàng & Dịch Vụ Tài Chính | **4,320,000 ₫**<br/>($170.08) | **200 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 21,600 ₫ | Limit Buy LO 200 CP tại vùng giá hỗ trợ quanh 21,600 ₫ (Khung Giờ Vàng 14h00-14h25) | **20,750 ₫**<br/>(-3.94%) | TP1: **22,780 ₫**<br/>TP2: **23,800 ₫** | +6.29%<br/>(1:2.59) |
-| **MBB** | HOSE • Ngân Hàng & Dịch Vụ Tài Chính | **3,860,000 ₫**<br/>($151.97) | **200 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 19,300 ₫ | Limit Buy LO 200 CP tại vùng giá hỗ trợ quanh 19,300 ₫ (Khung Giờ Vàng 14h00-14h25) | **18,660 ₫**<br/>(-3.32%) | TP1: **20,190 ₫**<br/>TP2: **20,950 ₫** | +5.00%<br/>(1:2.58) |
+| **HPG** | HOSE • Thép & Vật Liệu Xây Dựng | **10,500,000 ₫**<br/>($413.39) | **500 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 21,000 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+62.2`<br/>**MoS:** `+58.9%` | **20,120 ₫**<br/>(-4.19%) | TP1: **22,230 ₫**<br/>TP2: **23,280 ₫** | +6.98%<br/>(1:2.59) |
+| **TCB** | HOSE • Ngân Hàng & Dịch Vụ Tài Chính | **4,320,000 ₫**<br/>($170.08) | **200 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 21,600 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+60.8`<br/>**MoS:** `+57.0%` | **20,750 ₫**<br/>(-3.94%) | TP1: **22,780 ₫**<br/>TP2: **23,800 ₫** | +6.29%<br/>(1:2.59) |
+| **MBB** | HOSE • Ngân Hàng & Dịch Vụ Tài Chính | **3,860,000 ₫**<br/>($151.97) | **200 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 19,300 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+58.8`<br/>**MoS:** `+59.8%` | **18,660 ₫**<br/>(-3.32%) | TP1: **20,190 ₫**<br/>TP2: **20,950 ₫** | +5.00%<br/>(1:2.58) |
 
 ### Giải Trình Chi Tiết Từng Mã Việt Nam Của Master CIO & Minh Quân:
 
 #### 🔹 HPG — Tập Đoàn Hòa Phát (CORE COMPOUNDER (VUA THÉP))
-- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.35x), Altman Z'' (7.48), không có dấu hiệu gian lận Beneish M.
+- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +62.2/100, MoS +58.9%.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Vào 300 cổ HPG tại 20,850 - 21,000 ₫ phiên sáng; nạp tiếp 200 cổ trong Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong T+2. Gom 500 CP làm kho hàng T+0 cốt lõi cho Tháng 2
 - **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **440,000 VNĐ** (chỉ chiếm **2.20% Tổng NAV**).
 
 #### 🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))
-- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.16x), Altman Z'' (3.51), không có dấu hiệu gian lận Beneish M.
+- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +60.8/100, MoS +57.0%.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Đặt Limit Buy 200 cổ TCB tại 21,450 - 21,600 ₫ phiên sáng. Gom 200 CP tích lũy giá trị, CASA 40.5% & IPO TCBS
 - **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **170,000 VNĐ** (chỉ chiếm **0.85% Tổng NAV**).
 
 #### 🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))
-- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.14x), Altman Z'' (3.44), không có dấu hiệu gian lận Beneish M.
+- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +58.8/100, MoS +59.8%.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Đặt Limit Buy 200 cổ MBB tại 19,190 - 19,300 ₫ phiên sáng. 200 CP lướt sóng ngắn T+3/T+5 đón đầu dòng tiền tín dụng
 - **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **128,000 VNĐ** (chỉ chiếm **0.64% Tổng NAV**).

@@ -1,6 +1,6 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-02T01:41:36.984507+00:00",
+  "generated_at_utc": "2026-11-02T03:13:06.919688+00:00",
   "trading_date": "2026-11-02",
   "cio_desk_verdict": "PHÊ DUYỆT BẤM CÒ THỰC THI (AUTHORIZED TO PULL THE TRIGGER)",
   "capital_summary": {
@@ -149,6 +149,11 @@
       "shares": 500,
       "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
       "current_price_vnd": 21000.0,
+      "forensic_score": 100.0,
+      "forensic_verdict": "CLEAN",
+      "net_conviction_score": 62.2,
+      "adversarial_verdict": "STRONG_BUY",
+      "margin_of_safety_pct": 58.94,
       "entry_strategy": "Nhịp 1: Mua thăm dò 60% (300 CP) tại 21,000 ₫ phiên sáng • Nhịp 2: Khung 14h00-14h25 gia tăng 40% (200 CP)",
       "probe_price_60_vnd": 20850.0,
       "breakout_price_40_vnd": 21290.0,
@@ -162,7 +167,7 @@
       "reward_risk_ratio": 2.59,
       "expected_value_pct": 6.98,
       "catalysts": "Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC.",
-      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.35x), Altman Z'' (7.48), không có dấu hiệu gian lận Beneish M.",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +62.2/100, MoS +58.9%.",
       "execution_instruction": "Vào 300 cổ HPG tại 20,850 - 21,000 ₫ phiên sáng; nạp tiếp 200 cổ trong Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong T+2. Gom 500 CP làm kho hàng T+0 cốt lõi cho Tháng 2"
     },
     {
@@ -178,6 +183,11 @@
       "shares": 200,
       "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
       "current_price_vnd": 21600.0,
+      "forensic_score": 100.0,
+      "forensic_verdict": "CLEAN",
+      "net_conviction_score": 60.8,
+      "adversarial_verdict": "STRONG_BUY",
+      "margin_of_safety_pct": 56.95,
       "entry_strategy": "Limit Buy LO 200 CP tại vùng giá hỗ trợ quanh 21,600 ₫ (Khung Giờ Vàng 14h00-14h25)",
       "probe_price_60_vnd": 21450.0,
       "breakout_price_40_vnd": 21870.0,
@@ -191,7 +201,7 @@
       "reward_risk_ratio": 2.59,
       "expected_value_pct": 6.29,
       "catalysts": "Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS.",
-      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.16x), Altman Z'' (3.51), không có dấu hiệu gian lận Beneish M.",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +60.8/100, MoS +57.0%.",
       "execution_instruction": "Đặt Limit Buy 200 cổ TCB tại 21,450 - 21,600 ₫ phiên sáng. Gom 200 CP tích lũy giá trị, CASA 40.5% & IPO TCBS"
     },
     {
@@ -207,6 +217,11 @@
       "shares": 200,
       "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
       "current_price_vnd": 19300.0,
+      "forensic_score": 100.0,
+      "forensic_verdict": "CLEAN",
+      "net_conviction_score": 58.8,
+      "adversarial_verdict": "STRONG_BUY",
+      "margin_of_safety_pct": 59.82,
       "entry_strategy": "Limit Buy LO 200 CP tại vùng giá hỗ trợ quanh 19,300 ₫ (Khung Giờ Vàng 14h00-14h25)",
       "probe_price_60_vnd": 19190.0,
       "breakout_price_40_vnd": 19510.0,
@@ -220,7 +235,7 @@
       "reward_risk_ratio": 2.58,
       "expected_value_pct": 5.0,
       "catalysts": "Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời.",
-      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, OCF thực dương (1.14x), Altman Z'' (3.44), không có dấu hiệu gian lận Beneish M.",
+      "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +58.8/100, MoS +59.8%.",
       "execution_instruction": "Đặt Limit Buy 200 cổ MBB tại 19,190 - 19,300 ₫ phiên sáng. 200 CP lướt sóng ngắn T+3/T+5 đón đầu dòng tiền tín dụng"
     }
   ]

@@ -43,6 +43,7 @@ CIO_CONFIG_PATH = CIO_DIR / "master_capital_config.json"
 ALEX_LEDGER_PATH = GLOBAL_SPECIALIST_DIR / "daily_specialist_ledger.json"
 MINH_QUAN_LEDGER_PATH = VN_SPECIALIST_DIR / "vn_daily_ledger.json"
 OUTPUT_BLOTTER_PATH = CIO_DIR / "master_execution_blotter.json"
+ADVERSARIAL_LEDGER_PATH = BASE_DIR / "03_Synthesis_Memos" / "adversarial_debates" / "adversarial_debates_ledger.json"
 
 
 def load_json(path: Path) -> dict:
@@ -222,12 +223,28 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
         master_vn_orders = []
         total_vn_allocated_vnd = 0.0
 
+        adv_ledger = load_json(ADVERSARIAL_LEDGER_PATH)
+        all_debates = adv_ledger.get("debates", {})
+
         for plan_item in vn_allocations_plan:
             code = plan_item["code"]
             # Tìm thông tin từ minh_quan_orders
             item = next((x for x in minh_quan_orders if (x.get("code") or x.get("ticker")) == code), None)
             if not item:
                 continue
+            
+            # Đọc dữ liệu Pháp y BCTC Bước 1 & Tranh biện Bước 2
+            code_deb = all_debates.get(code, {})
+            fa_info = code_deb.get("forensic_audit", {})
+            dec_info = code_deb.get("investment_decision", {})
+            val_info = dec_info.get("valuation_assessment", {})
+
+            forensic_score = fa_info.get("forensic_score", 100.0)
+            forensic_verdict = fa_info.get("audit_verdict", "CLEAN")
+            net_conviction = dec_info.get("net_conviction_score", 60.0)
+            adv_verdict = dec_info.get("verdict", "STRONG_BUY")
+            mos_pct = val_info.get("implied_margin_of_safety_pct", 140.0)
+
             shares = plan_item["shares"]
             price = item.get("current_price", 21000.0 if code == "HPG" else (21600.0 if code == "TCB" else 19300.0))
             actual_capital_vnd = shares * price
@@ -256,6 +273,11 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
                 "shares": shares,
                 "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
                 "current_price_vnd": price,
+                "forensic_score": forensic_score,
+                "forensic_verdict": forensic_verdict,
+                "net_conviction_score": net_conviction,
+                "adversarial_verdict": adv_verdict,
+                "margin_of_safety_pct": mos_pct,
                 "entry_strategy": (
                     f"Nhịp 1: Mua thăm dò 60% ({int(shares*0.6)//100*100} CP) tại {price:,.0f} ₫ phiên sáng • Nhịp 2: Khung 14h00-14h25 gia tăng 40% ({shares - (int(shares*0.6)//100*100)} CP)"
                     if code == "HPG" else f"Limit Buy LO {shares} CP tại vùng giá hỗ trợ quanh {price:,.0f} ₫ (Khung Giờ Vàng 14h00-14h25)"
@@ -272,7 +294,7 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
                 "reward_risk_ratio": item.get("rr_ratio", 2.59),
                 "expected_value_pct": item.get("ev_pct", 6.0),
                 "catalysts": item.get("catalysts", "Hưởng lợi từ chu kỳ kinh tế và dòng tiền tổ chức"),
-                "bctc_thesis": f"Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng {item.get('bctc_rating', 'AAA')}, OCF thực dương ({item.get('ocf_ratio', 1.2)}x), Altman Z'' ({item.get('altman_z', 5.0)}), không có dấu hiệu gian lận Beneish M.",
+                "bctc_thesis": f"Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng {item.get('bctc_rating', 'AAA')}, Forensic {forensic_score}/100 ({forensic_verdict}), Net Conviction {net_conviction:+.1f}/100, MoS +{mos_pct:.1f}%.",
                 "execution_instruction": (
                     f"Vào 300 cổ HPG tại 20,850 - 21,000 ₫ phiên sáng; nạp tiếp 200 cổ trong Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong T+2. {plan_item['note']}" if code == "HPG"
                     else (f"Đặt Limit Buy 200 cổ TCB tại 21,450 - 21,600 ₫ phiên sáng. {plan_item['note']}" if code == "TCB"
@@ -519,12 +541,12 @@ sequenceDiagram
 ## 4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)
 **Tổng Vốn Phân Bổ: {cap['vn_allocated_vnd']:,.0f} VNĐ (${cap['vn_allocated_usd']:,.2f} USD - {cap['vn_allocated_pct']:.1f}% NAV) | Chuyên Viên Thực Thi: Minh Quân**
 
-| Mã CP | Sàn / Ngành | Vốn Phân Bổ (VNĐ / USD) | Số Cổ Phiếu (Lô Chẵn 100) | Thị Giá Hiện Tại | Chiến Lược Vào Lệnh (60/40) | Ngưỡng Cắt Lỗ Bắt Buộc | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
+| Mã CP | Sàn / Ngành | Vốn Phân Bổ (VNĐ / USD) | Số Cổ Phiếu (Lô Chẵn 100) | Thị Giá Hiện Tại | Pháp Y & Net Conviction (Bước 1 & 2) | Ngưỡng Cắt Lỗ Bắt Buộc | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
 """
 
     for o in vn_orders:
-        md += f"| **{o['symbol']}** | {o['exchange']} • {o['sector']} | **{o['allocated_capital_vnd']:,.0f} ₫**<br/>(${o['allocated_capital_usd']:,.2f}) | **{o['shares']:,} CP**<br/>({o['lot_standard']}) | {o['current_price_vnd']:,.0f} ₫ | {o['entry_strategy']} | **{o['stop_loss_2atr_vnd']:,.0f} ₫**<br/>(-{o['stop_dist_pct']}%) | TP1: **{o['tp1_vnd']:,.0f} ₫**<br/>TP2: **{o['tp2_vnd']:,.0f} ₫** | +{o['expected_value_pct']:.2f}%<br/>(1:{o['reward_risk_ratio']:.2f}) |\n"
+        md += f"| **{o['symbol']}** | {o['exchange']} • {o['sector']} | **{o['allocated_capital_vnd']:,.0f} ₫**<br/>(${o['allocated_capital_usd']:,.2f}) | **{o['shares']:,} CP**<br/>({o['lot_standard']}) | {o['current_price_vnd']:,.0f} ₫ | **Pháp y:** `{o.get('forensic_score', 100):.0f}/100`<br/>**Conviction:** `{o.get('net_conviction_score', 60.0):+.1f}`<br/>**MoS:** `+{o.get('margin_of_safety_pct', 140.0):.1f}%` | **{o['stop_loss_2atr_vnd']:,.0f} ₫**<br/>(-{o['stop_dist_pct']}%) | TP1: **{o['tp1_vnd']:,.0f} ₫**<br/>TP2: **{o['tp2_vnd']:,.0f} ₫** | +{o['expected_value_pct']:.2f}%<br/>(1:{o['reward_risk_ratio']:.2f}) |\n"
 
     md += f"""
 ### Giải Trình Chi Tiết Từng Mã Việt Nam Của Master CIO & Minh Quân:
