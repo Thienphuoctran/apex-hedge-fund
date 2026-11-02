@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 10:13:25",
+  "generated_at": "2026-11-02 03:32:11",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,11 +319,11 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "IDC",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Mon, 02 Nov 26 0",
-      "headline": "Loạt đại gia bất động sản báo lợi nhuận lao dốc 35-99% sau 9 tháng",
-      "is_portfolio_holding": false
+      "symbol": "FPT",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Mon, 02 Nov 26 1",
+      "headline": "Vì sao cổ phiếu FPT bị bán ròng?",
+      "is_portfolio_holding": true
     },
     {
       "market": "VIETNAM_CBTT",
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 28 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 29 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
