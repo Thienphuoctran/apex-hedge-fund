@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 09:12:41",
+  "generated_at": "2026-11-02 14:01:45",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -321,6 +321,22 @@
       "market": "VIETNAM_CBTT",
       "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Mon, 02 Nov 26 2",
+      "headline": "Siêu đô thị 200.000 tỷ đồng của tỷ phú Phạm Nhật Vượng vào vòng bình chọn “7 Kỳ quan Đô thị Tương lai”",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Mon, 02 Nov 26 1",
+      "headline": "Thu giữ hơn 2.100 tấn phân bón trong đường dây do Nguyễn Hồng Lam cầm đầu: 11 người bị bắt, thu lợi hàng chục tỷ đồng",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Mon, 02 Nov 26 1",
       "headline": "Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ",
       "is_portfolio_holding": false
@@ -364,22 +380,6 @@
       "date": "Sun, 01 Nov 26 0",
       "headline": "Từ 1 con tàu đến đế chế hơn 1.000 tàu: Gia tộc tỷ phú góp mặt trong siêu cảng gần 5 tỷ USD ở Cần Giờ đang tăng tốc",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "DXG",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Sat, 31 Oct 26 1",
-      "headline": "Bluemarq Group (DXG) ghi nhận kỷ lục hơn 9.000 tỷ đồng tiền người mua nhà trả trước",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "REE",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Mon, 02 Nov 26 0",
-      "headline": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 23 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 29 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
