@@ -1,9 +1,11 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-02 06:40:30  
-> **Số sự kiện ghi nhận:** 22 thông báo  
+> **Thời gian quét:** 2026-11-02 08:01:18  
+> **Số sự kiện ghi nhận:** 25 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ | [Xem Link](https://cafef.vn/sieu-tau-tuan-tra-hien-dai-nhat-cua-my-tri-gia-670-trieu-usd-vua-cap-cang-tphcm-lan-dau-tien-sau-20-nam-mang-theo-uav-ung-dung-ai-co-the-bay-12-gio-188261102113324323.chn) |
+| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm | [Xem Link](https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vì sao cổ phiếu FPT bị bán ròng? | [Xem Link](https://cafef.vn/vi-sao-co-phieu-fpt-bi-ban-rong-188261102101138474.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM | [Xem Link](https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan | [Xem Link](https://cafef.vn/ly-do-chuyen-bay-cua-vna-ha-canh-khan-cap-tai-pakistan-188261101135436257.chn) |
@@ -17,6 +19,7 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn hôm nay (31/10) tại SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... tiếp tục giảm mạnh tới 2,6 triệu đồng/lượng: Bao nhiêu tiền một chỉ? | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-hom-nay-31-10-tai-sjc-doji-bao-tin-manh-hai-pnj-bao-nhieu-tien-mot-chi-188261031073825033.chn) |
 | **ACB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | ACB cảnh báo nguy cơ mã độc trên iPhone, khuyến nghị cập nhật iOS mới để tăng cường bảo mật | [Xem Link](https://cafef.vn/acb-canh-bao-nguy-co-ma-doc-tren-iphone-khuyen-nghi-cap-nhat-ios-moi-de-tang-cuong-bao-mat-188261030100316697.chn) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Sau nhiều lần 'trễ hẹn', nút giao hiện đại bậc nhất TP.HCM hiện thi công ra sao? | [Xem Link](https://cafef.vn/sau-nhieu-lan-tre-hen-nut-giao-hien-dai-bac-nhat-tphcm-hien-thi-cong-ra-sao-18826110213211429.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tuyến cao tốc gần 19.000 tỷ đồng do liên danh T&T đầu tư tại tỉnh rộng nhất Việt Nam, rút ngắn thời gian đi từ TP.HCM đến Đà Lạt còn 3 giờ, nhận chỉ đạo nóng | [Xem Link](https://cafef.vn/tuyen-cao-toc-gan-19000-ty-dong-do-lien-danh-tt-dau-tu-tai-tinh-rong-nhat-viet-nam-rut-ngan-thoi-gian-di-tu-tphcm-den-da-lat-con-3-gio-nhan-chi-dao-nong-18826110210051887.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 4 lô 'đất vàng' Thủ Thiêm sắp được đấu giá trở lại, chốt ngày 27/11 trên hệ thống của Bộ Công an | [Xem Link](https://cafef.vn/4-lo-dat-vang-thu-thiem-sap-duoc-dau-gia-tro-lai-chot-ngay-27-11-tren-he-thong-cua-bo-cong-an-188261101202752066.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Người dân TP.HCM tháo dỡ nhà, bàn giao mặt bằng dự án sau hơn 10 năm | [Xem Link](https://cafef.vn/nguoi-dan-tphcm-thao-do-nha-ban-giao-mat-bang-du-an-sau-hon-10-nam-188261101100634184.chn) |

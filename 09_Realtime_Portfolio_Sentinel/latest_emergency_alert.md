@@ -1,6 +1,6 @@
 # 🚨 [RED ALERT] BÁO CÁO BIẾN ĐỘNG KHẨN CẤP DANH MỤC & LIVE WAR-ROOM
 **Phòng Ban 9**: Ban Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Khẩn Cấp ("Victor")  
-**Thời gian phát hiện**: `2026-11-02 06:40:37` | **Mã Cổ Phiếu Báo Động**: **`MBB`** (VIETNAM)  
+**Thời gian phát hiện**: `2026-11-02 08:01:24` | **Mã Cổ Phiếu Báo Động**: **`MBB`** (VIETNAM)  
 **Mức độ khẩn cấp**: **`CRITICAL`** | **Trạng thái**: YÊU CẦU PHẢN ỨNG TỨC THỜI TRONG PHIÊN
 
 ---
@@ -8,15 +8,15 @@
 ## 1. Dữ Liệu Biến Động Thực Tế (Intraday Telemetry)
 | Chỉ Số Đo Lường | Giá Trị Thực Tế | Ngưỡng Cảnh Báo An Toàn | Đánh Giá Tình Trạng |
 | :--- | :---: | :---: | :--- |
-| **Giá Hiện Tại** | **`18,800.00 VND`** | — | Giảm **`-2.59%`** so với tham chiếu |
-| **Khoảng Cách Đến Stop 2xATR** | **`+0.74%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`18,660.00 VND`** |
-| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`1.46x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
+| **Giá Hiện Tại** | **`18,750.00 VND`** | — | Giảm **`-2.85%`** so với tham chiếu |
+| **Khoảng Cách Đến Stop 2xATR** | **`+0.48%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`18,660.00 VND`** |
+| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`2.26x`** | `< 2.5x` | ⚠️ Cá mập xả hàng bất thường |
 | **Quy Mô Vốn Đang Rủi Ro** | **`3,860,000.00 VND`** | — | Số lượng đang nắm: `200 cổ phiếu` |
-| **Giá Trị Trung Bình VWAP** | **`18,933.33 VND`** | — | Vùng kháng cự ngắn hạn trong phiên |
+| **Giá Trị Trung Bình VWAP** | **`18,883.33 VND`** | — | Vùng kháng cự ngắn hạn trong phiên |
 
 ### Các Dị Thường Kích Hoạt Còi Báo Động:
-- **LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR**: Giá hiện tại 18800.0 chỉ còn cách Stop Loss (18660.0) 0.74% (Ngưỡng cảnh báo <= 1.5%).
-- **LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)**: Giá giảm -2.59% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%).
+- **LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR**: Giá hiện tại 18750.0 chỉ còn cách Stop Loss (18660.0) 0.48% (Ngưỡng cảnh báo <= 1.5%).
+- **LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)**: Giá giảm -2.85% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%).
 
 
 ---
@@ -48,16 +48,16 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 ### ✂️ PHƯƠNG ÁN B: PARTIAL TACTICAL DE-RISKING (HẠ TỶ TRỌNG CHỦ ĐỘNG 50%)
 * **Bản chất**: Giảm áp lực Margin và hạ rủi ro danh mục nếu hàng đã về tài khoản.
 * **Lệnh thực thi ngay**:
-  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`18,933.33 VND`), đặt bán **`100 cổ phiếu`** (50% vị thế).
-  - Thu hồi ngay dòng tiền mặt: **`~1,880,000.00 VND`** bổ sung vào quỹ Dry Powder.
+  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`18,883.33 VND`), đặt bán **`100 cổ phiếu`** (50% vị thế).
+  - Thu hồi ngay dòng tiền mặt: **`~1,875,000.00 VND`** bổ sung vào quỹ Dry Powder.
 
 ---
 
 ### ⚡ PHƯƠNG ÁN C: T+0 INTRA-DAY SCALP (LƯỚT SÓNG ĐẢO HÀNG HẠ GIÁ VỐN)
 * **Bản chất**: Dành cho trường hợp rũ bỏ kỹ thuật do tin giả (Washout), tài khoản đã có sẵn lượng hàng cũ.
 * **Lệnh thực thi ngay**:
-  - Trích một phần Dry Powder gom thêm một lượng cổ phiếu tại vùng giá quá bán: **`18,236.00 VND`** (-3% dưới giá hiện tại).
-  - Ngay khi lực cầu hồi phục kéo giá lên: **`19,270.00 VND`**, bán trả ngay số lượng hàng tương ứng có sẵn.
+  - Trích một phần Dry Powder gom thêm một lượng cổ phiếu tại vùng giá quá bán: **`18,188.00 VND`** (-3% dưới giá hiện tại).
+  - Ngay khi lực cầu hồi phục kéo giá lên: **`19,219.00 VND`**, bán trả ngay số lượng hàng tương ứng có sẵn.
   - Số cổ phiếu giữ nguyên nhưng hạ được giá vốn ngay trong ngày mà **không bị kẹt thêm vòng T+ mới**.
 
 ---

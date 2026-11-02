@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-02T06:40:30.458217+00:00",
+  "timestamp_utc": "2026-11-02T08:01:18.069924+00:00",
   "scan_date": "2026-11-02",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 22,
+  "total_vn_announcements_count": 25,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -284,6 +284,22 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 13:54:00 +0700",
+      "source_url": "https://cafef.vn/sieu-tau-tuan-tra-hien-dai-nhat-cua-my-tri-gia-670-trieu-usd-vua-cap-cang-tphcm-lan-dau-tien-sau-20-nam-mang-theo-uav-ung-dung-ai-co-the-bay-12-gio-188261102113324323.chn",
+      "total_announcements": 11
+    },
+    "PNJ": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 13:39:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn",
+      "total_announcements": 6
+    },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Vì sao cổ phiếu FPT bị bán ròng?",
@@ -291,14 +307,6 @@
       "published_at": "Mon, 02 Nov 26 10:11:00 +0700",
       "source_url": "https://cafef.vn/vi-sao-co-phieu-fpt-bi-ban-rong-188261102101138474.chn",
       "total_announcements": 2
-    },
-    "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM",
-      "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 21:35:00 +0700",
-      "source_url": "https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn",
-      "total_announcements": 9
     },
     "DXG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -315,14 +323,6 @@
       "published_at": "Mon, 02 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn",
       "total_announcements": 1
-    },
-    "PNJ": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giá vàng nhẫn trơn, vàng miếng sáng 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 10:21:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn",
-      "total_announcements": 5
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4811,6 +4811,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ",
+      "summary": "Tàu tuần tra USCGC Bertholf thuộc lớp Legend hiện đại nhất của Lực lượng Tuần duyên Mỹ vừa cập cảng TP.HCM. Dòng tàu này có chi phí mua sắm bình quân khoảng 670 triệu USD, có khả năng triển khai UAV tích hợp trí tuệ nhân...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 13:54:00 +0700",
+      "source_url": "https://cafef.vn/sieu-tau-tuan-tra-hien-dai-nhat-cua-my-tri-gia-670-trieu-usd-vua-cap-cang-tphcm-lan-dau-tien-sau-20-nam-mang-theo-uav-ung-dung-ai-co-the-bay-12-gio-188261102113324323.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm",
+      "summary": "PNJ lần đầu ghi nhận khoản vay 700 tỷ đồng từ Chủ tịch HĐQT Cao Thị Ngọc Dung với lãi suất 10%/năm, cao hơn mức lãi suất 6-9%/năm tại các ngân hàng mà doanh nghiệp đang vay....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 13:39:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "FPT"
       ],
       "title": "Vì sao cổ phiếu FPT bị bán ròng?",
@@ -4965,6 +4989,18 @@
       "severity": "CRITICAL",
       "published_at": "Fri, 30 Oct 26 10:04:00 +0700",
       "source_url": "https://cafef.vn/acb-canh-bao-nguy-co-ma-doc-tren-iphone-khuyen-nghi-cap-nhat-ios-moi-de-tang-cuong-bao-mat-188261030100316697.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Sau nhiều lần 'trễ hẹn', nút giao hiện đại bậc nhất TP.HCM hiện thi công ra sao?",
+      "summary": "Sau nhiều lần điều chỉnh tiến độ, nút giao An Phú vẫn còn hạng mục dang dở; một số nhánh cầu chưa thể thi công đồng bộ do vướng bàn giao mặt bằng ở Lương Định Của....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 02 Nov 26 13:59:00 +0700",
+      "source_url": "https://cafef.vn/sau-nhieu-lan-tre-hen-nut-giao-hien-dai-bac-nhat-tphcm-hien-thi-cong-ra-sao-18826110213211429.chn"
     },
     {
       "market": "VIETNAM",

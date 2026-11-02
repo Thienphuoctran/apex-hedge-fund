@@ -1,5 +1,5 @@
 {
-  "last_scan_utc": "2026-11-02T06:40:38.236897",
+  "last_scan_utc": "2026-11-02T08:01:25.324975",
   "total_positions_monitored": 16,
   "emergency_alerts_active": 5,
   "take_profit_alerts_active": 0,
@@ -144,22 +144,26 @@
       "symbol": "HPG",
       "market": "VIETNAM",
       "name": "Tập Đoàn Hòa Phát",
-      "current_price": 20450.0,
+      "current_price": 20400.0,
       "prev_close": 21000.0,
-      "change_pct": -2.62,
+      "change_pct": -2.86,
       "stop_loss_2atr": 20120.0,
-      "stop_dist_pct": 1.61,
+      "stop_dist_pct": 1.37,
       "tp1": 22230.0,
       "tp2": 23280.0,
-      "tp1_dist_pct": 8.7,
-      "tp2_dist_pct": 13.84,
-      "volume_surge_ratio": 0.76,
-      "vwap_est": 20650.0,
-      "severity": "WARNING",
+      "tp1_dist_pct": 8.97,
+      "tp2_dist_pct": 14.12,
+      "volume_surge_ratio": 1.26,
+      "vwap_est": 20616.67,
+      "severity": "CRITICAL",
       "triggers_hit": [
         {
+          "level": "LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR",
+          "desc": "Giá hiện tại 20400.0 chỉ còn cách Stop Loss (20120.0) 1.37% (Ngưỡng cảnh báo <= 1.5%)."
+        },
+        {
           "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
-          "desc": "Giá giảm -2.62% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+          "desc": "Giá giảm -2.86% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
         }
       ],
       "upside_triggers_hit": [],
@@ -179,28 +183,19 @@
       "symbol": "TCB",
       "market": "VIETNAM",
       "name": "Kỹ Thương Việt Nam (Techcombank)",
-      "current_price": 20700.0,
+      "current_price": 21400.0,
       "prev_close": 21600.0,
-      "change_pct": -4.17,
+      "change_pct": -0.93,
       "stop_loss_2atr": 20750.0,
-      "stop_dist_pct": -0.24,
+      "stop_dist_pct": 3.04,
       "tp1": 22780.0,
       "tp2": 23800.0,
-      "tp1_dist_pct": 10.05,
-      "tp2_dist_pct": 14.98,
-      "volume_surge_ratio": 0.65,
-      "vwap_est": 20966.67,
-      "severity": "CRITICAL",
-      "triggers_hit": [
-        {
-          "level": "LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR",
-          "desc": "Giá hiện tại 20700.0 chỉ còn cách Stop Loss (20750.0) -0.24% (Ngưỡng cảnh báo <= 1.5%)."
-        },
-        {
-          "level": "LEVEL 1B — BIẾN ĐỘNG SỤT GIẢM CỰC MẠNH (CRITICAL FLASH DROP)",
-          "desc": "Giá sụt giảm -4.17% trong phiên (Vượt ngưỡng cảnh báo đỏ -3.5%)."
-        }
-      ],
+      "tp1_dist_pct": 6.45,
+      "tp2_dist_pct": 11.21,
+      "volume_surge_ratio": 0.98,
+      "vwap_est": 21183.33,
+      "severity": "NORMAL",
+      "triggers_hit": [],
       "upside_triggers_hit": [],
       "hedging_solution": {
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
@@ -218,26 +213,26 @@
       "symbol": "MBB",
       "market": "VIETNAM",
       "name": "Quân Đội (MBBank)",
-      "current_price": 18800.0,
+      "current_price": 18750.0,
       "prev_close": 19300.0,
-      "change_pct": -2.59,
+      "change_pct": -2.85,
       "stop_loss_2atr": 18660.0,
-      "stop_dist_pct": 0.74,
+      "stop_dist_pct": 0.48,
       "tp1": 20190.0,
       "tp2": 20950.0,
-      "tp1_dist_pct": 7.39,
-      "tp2_dist_pct": 11.44,
-      "volume_surge_ratio": 1.46,
-      "vwap_est": 18933.33,
+      "tp1_dist_pct": 7.68,
+      "tp2_dist_pct": 11.73,
+      "volume_surge_ratio": 2.26,
+      "vwap_est": 18883.33,
       "severity": "CRITICAL",
       "triggers_hit": [
         {
           "level": "LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR",
-          "desc": "Giá hiện tại 18800.0 chỉ còn cách Stop Loss (18660.0) 0.74% (Ngưỡng cảnh báo <= 1.5%)."
+          "desc": "Giá hiện tại 18750.0 chỉ còn cách Stop Loss (18660.0) 0.48% (Ngưỡng cảnh báo <= 1.5%)."
         },
         {
           "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
-          "desc": "Giá giảm -2.59% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+          "desc": "Giá giảm -2.85% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
         }
       ],
       "upside_triggers_hit": [],

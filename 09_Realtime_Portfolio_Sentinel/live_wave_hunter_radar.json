@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 06:40:38",
+  "generated_at": "2026-11-02 08:01:25",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,22 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Mon, 02 Nov 26 1",
+      "headline": "Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "PNJ",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Mon, 02 Nov 26 1",
+      "headline": "Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "FPT",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Mon, 02 Nov 26 1",
@@ -364,22 +380,6 @@
       "date": "Mon, 02 Nov 26 0",
       "headline": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Sat, 31 Oct 26 0",
-      "headline": "Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị \"xả\" mạnh nhất",
-      "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "PNJ",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Mon, 02 Nov 26 1",
-      "headline": "Giá vàng nhẫn trơn, vàng miếng sáng 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 22 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 25 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
