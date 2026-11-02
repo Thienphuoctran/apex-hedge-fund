@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 03:32:11",
+  "generated_at": "2026-11-02 04:39:25",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -367,19 +367,19 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "BSR",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Sat, 31 Oct 26 0",
-      "headline": "Cập nhật BCTC quý 3/2026 ngày 31/10: BSR, SHB, Eximbank, Vietnam Airlines cùng nhiều doanh nghiệp lớn công bố, kết quả bất ngờ",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
       "symbol": "REE",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Mon, 02 Nov 26 0",
       "headline": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
       "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Sat, 31 Oct 26 0",
+      "headline": "Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị \"xả\" mạnh nhất",
+      "is_portfolio_holding": true
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 29 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 25 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

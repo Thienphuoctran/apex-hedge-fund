@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-02 03:32:04  
-> **Số sự kiện ghi nhận:** 29 thông báo  
+> **Thời gian quét:** 2026-11-02 04:39:17  
+> **Số sự kiện ghi nhận:** 25 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -10,7 +10,6 @@
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Từ 1 con tàu đến đế chế hơn 1.000 tàu: Gia tộc tỷ phú góp mặt trong siêu cảng gần 5 tỷ USD ở Cần Giờ đang tăng tốc | [Xem Link](https://cafef.vn/tu-1-con-tau-den-de-che-hon-1000-tau-gia-toc-ty-phu-gop-mat-trong-sieu-cang-gan-5-ty-usd-o-can-gio-dang-tang-toc-188261101090831232.chn) |
 | **DXG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bluemarq Group (DXG) ghi nhận kỷ lục hơn 9.000 tỷ đồng tiền người mua nhà trả trước | [Xem Link](https://cafef.vn/bluemarq-group-dxg-ghi-nhan-ky-luc-hon-9000-ty-dong-tien-nguoi-mua-nha-tra-truoc-188261031182126111.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Becamex Group ‘rót’ thêm hơn 375 tỷ đồng vào doanh nghiệp làm dự án đường cao tốc | [Xem Link](https://cafef.vn/becamex-group-rot-them-hon-375-ty-dong-vao-doanh-nghiep-lam-du-an-duong-cao-toc-188261031071650337.chn) |
-| **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Cập nhật BCTC quý 3/2026 ngày 31/10: BSR, SHB, Eximbank, Vietnam Airlines cùng nhiều doanh nghiệp lớn công bố, kết quả bất ngờ | [Xem Link](https://cafef.vn/cap-nhat-bctc-quy-3-2026-ngay-31-10-bsr-shb-eximbank-vietnam-airlines-cung-nhieu-doanh-nghiep-lon-cong-bo-ket-qua-bat-ngo-188261031002348599.chn) |
 | **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán | [Xem Link](https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị "xả" mạnh nhất | [Xem Link](https://cafef.vn/khoi-ngoai-ban-rong-gan-3000-ty-trong-tuan-cuoi-thang-10-fpt-bi-xa-manh-nhat-188261031001137094.chn) |
 | **HPG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thành viên HĐQT Hòa Phát muốn bán bớt cổ phiếu HPG | [Xem Link](https://cafef.vn/thanh-vien-hdqt-hoa-phat-muon-ban-bot-co-phieu-hpg-18826103017051392.chn) |
@@ -21,12 +20,9 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn hôm nay (31/10) tại SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... tiếp tục giảm mạnh tới 2,6 triệu đồng/lượng: Bao nhiêu tiền một chỉ? | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-hom-nay-31-10-tai-sjc-doji-bao-tin-manh-hai-pnj-bao-nhieu-tien-mot-chi-188261031073825033.chn) |
 | **ACB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | ACB cảnh báo nguy cơ mã độc trên iPhone, khuyến nghị cập nhật iOS mới để tăng cường bảo mật | [Xem Link](https://cafef.vn/acb-canh-bao-nguy-co-ma-doc-tren-iphone-khuyen-nghi-cap-nhat-ios-moi-de-tang-cuong-bao-mat-188261030100316697.chn) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn hôm nay (30/10) tại SJC, DOJI, Phú Quý, PNJ, Bảo Tín Minh Châu,.... quay đầu giảm mạnh: Bao nhiêu một chỉ? | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-hom-nay-30-10-tai-sjc-doji-phu-quy-pnj-bao-tin-minh-chau-bao-nhieu-mot-chi-188261030064119129.chn) |
-| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 29/10, gửi dưới 1 tỷ đồng kỳ hạn 24 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB được hưởng lãi suất bao nhiêu? | [Xem Link](https://cafef.vn/ngay-29-10-gui-duoi-1-ty-dong-ky-han-24-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-duoc-huong-lai-suat-bao-nhieu-18826102921181167.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tuyến cao tốc gần 19.000 tỷ đồng do liên danh T&T đầu tư tại tỉnh rộng nhất Việt Nam, rút ngắn thời gian đi từ TP.HCM đến Đà Lạt còn 3 giờ, nhận chỉ đạo nóng | [Xem Link](https://cafef.vn/tuyen-cao-toc-gan-19000-ty-dong-do-lien-danh-tt-dau-tu-tai-tinh-rong-nhat-viet-nam-rut-ngan-thoi-gian-di-tu-tphcm-den-da-lat-con-3-gio-nhan-chi-dao-nong-18826110210051887.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 4 lô 'đất vàng' Thủ Thiêm sắp được đấu giá trở lại, chốt ngày 27/11 trên hệ thống của Bộ Công an | [Xem Link](https://cafef.vn/4-lo-dat-vang-thu-thiem-sap-duoc-dau-gia-tro-lai-chot-ngay-27-11-tren-he-thong-cua-bo-cong-an-188261101202752066.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Người dân TP.HCM tháo dỡ nhà, bàn giao mặt bằng dự án sau hơn 10 năm | [Xem Link](https://cafef.vn/nguoi-dan-tphcm-thao-do-nha-ban-giao-mat-bang-du-an-sau-hon-10-nam-188261101100634184.chn) |
-| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Vinhomes Green Paradise chính thức bước vào vòng bình chọn toàn cầu “7 kỳ quan đô thị tương lai” | [Xem Link](https://cafef.vn/vinhomes-green-paradise-chinh-thuc-buoc-vao-vong-binh-chon-toan-cau-7-ky-quan-do-thi-tuong-lai-18826103119572592.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Trung tâm Tài chính quốc tế TP.HCM công bố 10 thành viên đầu tiên | [Xem Link](https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm) |
 | **BSR** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ nhà máy lọc dầu Dung Quất gửi ngân hàng hơn 2 tỷ USD | [Xem Link](https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-gui-ngan-hang-hon-2-ty-usd-5139328.html) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP HCM định hình mạng lưới trung tâm logistics tại 10 đầu mối lớn | [Xem Link](https://vnexpress.net/tp-hcm-dinh-hinh-mang-luoi-trung-tam-logistics-tai-10-dau-moi-lon-5139061.html) |

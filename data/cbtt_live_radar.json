@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-02T03:32:04.585079+00:00",
+  "timestamp_utc": "2026-11-02T04:39:17.047209+00:00",
   "scan_date": "2026-11-02",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 29,
+  "total_vn_announcements_count": 25,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -298,7 +298,7 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 21:35:00 +0700",
       "source_url": "https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn",
-      "total_announcements": 11
+      "total_announcements": 10
     },
     "DXG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -307,14 +307,6 @@
       "published_at": "Sat, 31 Oct 26 18:21:00 +0700",
       "source_url": "https://cafef.vn/bluemarq-group-dxg-ghi-nhan-ky-luc-hon-9000-ty-dong-tien-nguoi-mua-nha-tra-truoc-188261031182126111.chn",
       "total_announcements": 1
-    },
-    "BSR": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Cập nhật BCTC quý 3/2026 ngày 31/10: BSR, SHB, Eximbank, Vietnam Airlines cùng nhiều doanh nghiệp lớn công bố, kết quả bất ngờ",
-      "severity": "CRITICAL",
-      "published_at": "Sat, 31 Oct 26 00:23:00 +0700",
-      "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-ngay-31-10-bsr-shb-eximbank-vietnam-airlines-cung-nhieu-doanh-nghiep-lon-cong-bo-ket-qua-bat-ngo-188261031002348599.chn",
-      "total_announcements": 2
     },
     "REE": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -346,7 +338,7 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 10:21:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn",
-      "total_announcements": 6
+      "total_announcements": 5
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -354,7 +346,7 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 07:31:00 +0700",
       "source_url": "https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn",
-      "total_announcements": 3
+      "total_announcements": 2
     },
     "HDB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -378,6 +370,14 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 20:58:00 +0700",
       "source_url": "https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn",
+      "total_announcements": 1
+    },
+    "BSR": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Chủ nhà máy lọc dầu Dung Quất gửi ngân hàng hơn 2 tỷ USD",
+      "severity": "INFO",
+      "published_at": "Sun, 01 Nov 2026 15:15:00 +0700",
+      "source_url": "https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-gui-ngan-hang-hon-2-ty-usd-5139328.html",
       "total_announcements": 1
     }
   },
@@ -4899,18 +4899,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "BSR"
-      ],
-      "title": "Cập nhật BCTC quý 3/2026 ngày 31/10: BSR, SHB, Eximbank, Vietnam Airlines cùng nhiều doanh nghiệp lớn công bố, kết quả bất ngờ",
-      "summary": "BSR và EVN Genco3 ghi nhận lợi nhuận trước thuế quý 3/2026 tăng lần lượt 858% và 778%. Trong khi đó, Vietnam Airlines và Eximbank báo lợi nhuận giảm so với cùng kỳ....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sat, 31 Oct 26 00:23:00 +0700",
-      "source_url": "https://cafef.vn/cap-nhat-bctc-quy-3-2026-ngay-31-10-bsr-shb-eximbank-vietnam-airlines-cung-nhieu-doanh-nghiep-lon-cong-bo-ket-qua-bat-ngo-188261031002348599.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "REE"
       ],
       "title": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
@@ -5033,30 +5021,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng miếng, vàng nhẫn hôm nay (30/10) tại SJC, DOJI, Phú Quý, PNJ, Bảo Tín Minh Châu,.... quay đầu giảm mạnh: Bao nhiêu một chỉ?",
-      "summary": "Giá vàng trong nước chưa có sự thay đổi so với mức chốt phiên hôm trước....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 30 Oct 26 06:41:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-hom-nay-30-10-tai-sjc-doji-phu-quy-pnj-bao-tin-minh-chau-bao-nhieu-mot-chi-188261030064119129.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Ngày 29/10, gửi dưới 1 tỷ đồng kỳ hạn 24 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB được hưởng lãi suất bao nhiêu?",
-      "summary": "Ngày 29/10, gửi dưới 1 tỷ đồng kỳ hạn 24 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB được hưởng lãi suất bao nhiêu?...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 29 Oct 26 21:17:00 +0700",
-      "source_url": "https://cafef.vn/ngay-29-10-gui-duoi-1-ty-dong-ky-han-24-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-duoc-huong-lai-suat-bao-nhieu-18826102921181167.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "HCM"
       ],
       "title": "Tuyến cao tốc gần 19.000 tỷ đồng do liên danh T&T đầu tư tại tỉnh rộng nhất Việt Nam, rút ngắn thời gian đi từ TP.HCM đến Đà Lạt còn 3 giờ, nhận chỉ đạo nóng",
@@ -5089,18 +5053,6 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 14:48:00 +0700",
       "source_url": "https://cafef.vn/nguoi-dan-tphcm-thao-do-nha-ban-giao-mat-bang-du-an-sau-hon-10-nam-188261101100634184.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Vinhomes Green Paradise chính thức bước vào vòng bình chọn toàn cầu “7 kỳ quan đô thị tương lai”",
-      "summary": "Ngày 31/10/2026 – Dự án Vinhomes Green Paradise (Cần Giờ, TP.HCM) chính thức bước vào vòng bình chọn toàn cầu của chiến dịch \"7 Kỳ quan Đô thị Tương lai\" do New7Wonders khởi xướng....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Sat, 31 Oct 26 21:00:00 +0700",
-      "source_url": "https://cafef.vn/vinhomes-green-paradise-chinh-thuc-buoc-vao-vong-binh-chon-toan-cau-7-ky-quan-do-thi-tuong-lai-18826103119572592.chn"
     },
     {
       "market": "VIETNAM",

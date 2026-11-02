@@ -1,7 +1,7 @@
 {
-  "last_scan_utc": "2026-11-02T03:32:11.390026",
+  "last_scan_utc": "2026-11-02T04:39:25.290782",
   "total_positions_monitored": 16,
-  "emergency_alerts_active": 3,
+  "emergency_alerts_active": 4,
   "take_profit_alerts_active": 0,
   "status": "EMERGENCY_ALERT",
   "positions": [
@@ -153,8 +153,8 @@
       "tp2": 23280.0,
       "tp1_dist_pct": 6.36,
       "tp2_dist_pct": 11.39,
-      "volume_surge_ratio": 0.36,
-      "vwap_est": 20950.0,
+      "volume_surge_ratio": 0.52,
+      "vwap_est": 20916.67,
       "severity": "NORMAL",
       "triggers_hit": [],
       "upside_triggers_hit": [],
@@ -174,22 +174,26 @@
       "symbol": "TCB",
       "market": "VIETNAM",
       "name": "Kỹ Thương Việt Nam (Techcombank)",
-      "current_price": 21100.0,
+      "current_price": 20800.0,
       "prev_close": 21600.0,
-      "change_pct": -2.31,
+      "change_pct": -3.7,
       "stop_loss_2atr": 20750.0,
-      "stop_dist_pct": 1.66,
+      "stop_dist_pct": 0.24,
       "tp1": 22780.0,
       "tp2": 23800.0,
-      "tp1_dist_pct": 7.96,
-      "tp2_dist_pct": 12.8,
-      "volume_surge_ratio": 0.27,
-      "vwap_est": 21233.33,
-      "severity": "WARNING",
+      "tp1_dist_pct": 9.52,
+      "tp2_dist_pct": 14.42,
+      "volume_surge_ratio": 0.52,
+      "vwap_est": 21033.33,
+      "severity": "CRITICAL",
       "triggers_hit": [
         {
-          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
-          "desc": "Giá giảm -2.31% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+          "level": "LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR",
+          "desc": "Giá hiện tại 20800.0 chỉ còn cách Stop Loss (20750.0) 0.24% (Ngưỡng cảnh báo <= 1.5%)."
+        },
+        {
+          "level": "LEVEL 1B — BIẾN ĐỘNG SỤT GIẢM CỰC MẠNH (CRITICAL FLASH DROP)",
+          "desc": "Giá sụt giảm -3.70% trong phiên (Vượt ngưỡng cảnh báo đỏ -3.5%)."
         }
       ],
       "upside_triggers_hit": [],
@@ -218,8 +222,8 @@
       "tp2": 20950.0,
       "tp1_dist_pct": 6.26,
       "tp2_dist_pct": 10.26,
-      "volume_surge_ratio": 0.65,
-      "vwap_est": 19100.0,
+      "volume_surge_ratio": 1.05,
+      "vwap_est": 19083.33,
       "severity": "NORMAL",
       "triggers_hit": [],
       "upside_triggers_hit": [],
