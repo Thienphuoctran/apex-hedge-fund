@@ -10,8 +10,8 @@
 ## 1. Kết Quả Kiểm Toán 5 Trụ Cột Chi Tiết
 
 ### A. Toàn Vẹn Mã Nguồn & Công Cụ Tính Toán (Trọng số 25%)
-- **Số tệp Python đã quét:** 35 tệp.
-- **Số tệp biên dịch chuẩn:** 35 tệp.
+- **Số tệp Python đã quét:** 37 tệp.
+- **Số tệp biên dịch chuẩn:** 37 tệp.
 - **Lỗi cú pháp:** 0 lỗi.
 - **Điểm:** `100/100`
 

@@ -1,0 +1,97 @@
+{
+  "ticker": "TCB",
+  "company_name": "Kỹ Thương Việt Nam (Techcombank)",
+  "exchange": "HOSE",
+  "sector": "Ngân Hàng & Dịch Vụ Tài Chính",
+  "timestamp": "2026-11-02T09:59:06.260654",
+  "forensic_audit": {
+    "auditor_role": "Senior Forensic Accounting Specialist (Thanh Tra Pháp Y Kế Toán)",
+    "forensic_score": 100.0,
+    "red_flags_detected": [],
+    "beneish_m_score": {
+      "score": -2.68,
+      "manipulation_risk": "LOW",
+      "primary_driver": "DSRI và OCF/LNST duy trì thặng dư lành mạnh"
+    },
+    "piotroski_f_score": 9,
+    "audit_verdict": "CLEAN",
+    "forensic_summary": "Điểm Pháp Y Kế Toán: 100.0/100. Đánh giá: BCTC SẠCH BÓNG — CHẤT LƯỢNG LỢI NHUẬN KIM CƯƠNG."
+  },
+  "bull_thesis": {
+    "analyst_role": "Senior Buy-Side Equity Analyst (Chuyên Gia Tăng Trưởng & Moat)",
+    "core_drivers": [
+      {
+        "pillar": "Cost of Funds Advantage (Quán Quân Tiền Rẻ CASA)",
+        "rationale": "Tỷ lệ CASA top 1 ngành (40.5%) nhờ nền tảng số Auto-earning, biên lãi thuần NIM mở rộng. CAR Basel II đạt 15.2% cao nhất toàn hệ thống ngân hàng.",
+        "supporting_metrics": {
+          "metric_name": "CASA Ratio",
+          "historical_value": "40.5%",
+          "trend": "System Leader"
+        }
+      },
+      {
+        "pillar": "Catalyst Tăng Vốn & IPO TCBS",
+        "rationale": "Lộ trình IPO công ty con TCBS định giá hàng tỷ USD tạo thặng dư vốn đột biến và mở rộng định giá toàn ngân hàng.",
+        "supporting_metrics": {
+          "metric_name": "CAR Basel II",
+          "historical_value": "15.2%",
+          "trend": "Top 1 Solvency"
+        }
+      }
+    ],
+    "reinvestment_efficiency": "Tỷ lệ tái đầu tư thặng dư cao với chênh lệch EVA Spread dương bền vững",
+    "growth_conviction_score": 0.89,
+    "catalyst_summary": "Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS."
+  },
+  "bear_counter_thesis": {
+    "analyst_role": "Short-Seller & Risk Management Director (Chuyên Gia Bán Khống & Red Team)",
+    "points_of_attack": [
+      {
+        "target_bull_point": "CASA 40.5% tối ưu chi phí vốn rẻ",
+        "counter_argument": "Tỷ trọng cho vay bất động sản và trái phiếu doanh nghiệp của Techcombank vẫn thuộc nhóm cao nhất hệ thống. Nếu thị trường BĐS cao cấp thanh khoản yếu, áp lực chuyển nhóm nợ tiềm ẩn rủi ro nợ xấu gia tăng.",
+        "risk_metric": "Độ tập trung danh mục tín dụng vào nhóm BĐS & Xây dựng > 30% tổng dư nợ."
+      },
+      {
+        "target_bull_point": "Lộ trình IPO TCBS tạo thặng dư đột biến",
+        "counter_argument": "Thị trường IPO phụ thuộc lớn vào thanh khoản VN-Index. Nếu chỉ số đi ngang dưới 1.300 điểm, thương vụ IPO có thể bị trì hoãn kéo dài.",
+        "risk_metric": "Định giá P/B hiện tại 1.23x đã phản ánh một phần kỳ vọng IPO."
+      }
+    ],
+    "downside_triggers": [
+      "Nợ cần chú ý (Nhóm 2) tăng nhanh trong mùa BCTC quý 4.",
+      "Áp lực thanh khoản thị trường trái phiếu doanh nghiệp cuối năm."
+    ],
+    "structural_threat_level": "MODERATE",
+    "threat_penalty_score": 0.35,
+    "bear_verdict": "Không khuyến nghị Bán Khống (Short) vì BCTC quá sạch, nhưng CẢNH BÁO: Phải gắn chặt Stop Loss 2xATR và chỉ mua ở vùng giá chiết khấu, tuyệt đối không FOMO đu đỉnh!"
+  },
+  "bull_rebuttal": {
+    "analyst_role": "Senior Buy-Side Equity Analyst (Phản Pháo & Bảo Vệ Luận Điểm)",
+    "counter_rebuttals": [
+      {
+        "counter_bear_point": "Dư nợ BĐS cao và rủi ro chậm IPO TCBS",
+        "rebuttal_argument": "90% dư nợ BĐS của TCB tập trung vào các chủ đầu tư hàng đầu (Vingroup, Masterise, Sun Group) với pháp lý chuẩn mực và tỷ lệ tài sản bảo đảm trên 180%. Tỷ lệ nợ xấu NPL chỉ 1.22% và tỷ lệ bao phủ nợ xấu LLR đạt 118.5%, tấm đệm dự phòng rủi ro vững như bàn thạch.",
+        "defense_strength": "STRONG"
+      }
+    ],
+    "net_defense_verdict": "Luận điểm của Bear đã được phản bác thuyết phục bằng số liệu thực chứng BCTC."
+  },
+  "investment_decision": {
+    "symbol": "TCB",
+    "verdict": "STRONG_BUY",
+    "action_directive": "GIAI NGÂN MẠNH THEO KIM TỰ THÁP (30-40-30)",
+    "net_conviction_score": 60.8,
+    "confidence_level": "VERY_HIGH",
+    "valuation_assessment": {
+      "current_market_price": 21600.0,
+      "intrinsic_value_estimate": 50169.0,
+      "implied_margin_of_safety_pct": 56.95
+    },
+    "synthesis_summary": "Tổng Tư Lệnh James phân xử: Forensic Auditor xác nhận BCTC đạt chuẩn 100/100 sạch bóng. Luận điểm của Bull Agent về Moat và Cỗ máy OCF vững như bàn thạch. Các đòn tấn công của Bear Agent đã được phản pháo thuyết phục tại Vòng 4, kết hợp Biên An Toàn Graham MoS đạt +56.9% và bảo vệ cứng bằng Stop 2xATR. Net Conviction Score đạt +60.8/100. Phê duyệt: STRONG_BUY — GIAI NGÂN MẠNH THEO KIM TỰ THÁP (30-40-30)!",
+    "execution_rules": [
+      "Khung Giờ Vàng (14h00 – 14h25): Chờ hấp thụ xong hàng T+2 mới bấm cò giải ngân chính thức.",
+      "Kỷ luật lệnh LO: Đặt lệnh mua Limit Order, tuyệt đối không dùng MP mua đuổi giá xanh trước 10h00 sáng.",
+      "Khoá cứng rủi ro Stop 2xATR: Cắt lỗ dứt khoát nếu thủng hỗ trợ, không bình quân giá xuống."
+    ]
+  }
+}

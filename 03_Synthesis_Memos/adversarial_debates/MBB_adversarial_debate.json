@@ -1,0 +1,97 @@
+{
+  "ticker": "MBB",
+  "company_name": "Quân Đội (MBBank)",
+  "exchange": "HOSE",
+  "sector": "Ngân Hàng & Dịch Vụ Tài Chính",
+  "timestamp": "2026-11-02T09:59:06.266996",
+  "forensic_audit": {
+    "auditor_role": "Senior Forensic Accounting Specialist (Thanh Tra Pháp Y Kế Toán)",
+    "forensic_score": 100.0,
+    "red_flags_detected": [],
+    "beneish_m_score": {
+      "score": -2.69,
+      "manipulation_risk": "LOW",
+      "primary_driver": "DSRI và OCF/LNST duy trì thặng dư lành mạnh"
+    },
+    "piotroski_f_score": 9,
+    "audit_verdict": "CLEAN",
+    "forensic_summary": "Điểm Pháp Y Kế Toán: 100.0/100. Đánh giá: BCTC SẠCH BÓNG — CHẤT LƯỢNG LỢI NHUẬN KIM CƯƠNG."
+  },
+  "bull_thesis": {
+    "analyst_role": "Senior Buy-Side Equity Analyst (Chuyên Gia Tăng Trưởng & Moat)",
+    "core_drivers": [
+      {
+        "pillar": "Digital Banking Scale & Credit Quota",
+        "rationale": "Hệ sinh thái số 30 triệu khách hàng, tăng trưởng tín dụng thuộc top cao nhất ngành, CASA bền vững 38.6% cung cấp nguồn vốn siêu rẻ.",
+        "supporting_metrics": {
+          "metric_name": "ROE",
+          "historical_value": "22.4%",
+          "trend": "Consistently > 20%"
+        }
+      },
+      {
+        "pillar": "Tactical Valuation Discount (Chiết Khấu Sâu)",
+        "rationale": "P/B chỉ ~1.1x trong khi ROE duy trì >21%, biên an toàn lớn để lướt sóng ngắn T+3/T+5 đón đầu dòng tiền tín dụng quý 4.",
+        "supporting_metrics": {
+          "metric_name": "P/B vs ROE",
+          "historical_value": "P/B 1.1x vs ROE 21%",
+          "trend": "Severely Undervalued"
+        }
+      }
+    ],
+    "reinvestment_efficiency": "Tỷ lệ tái đầu tư thặng dư cao với chênh lệch EVA Spread dương bền vững",
+    "growth_conviction_score": 0.85,
+    "catalyst_summary": "Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời."
+  },
+  "bear_counter_thesis": {
+    "analyst_role": "Short-Seller & Risk Management Director (Chuyên Gia Bán Khống & Red Team)",
+    "points_of_attack": [
+      {
+        "target_bull_point": "P/B 1.1x định giá siêu rẻ đón sóng lướt nhanh",
+        "counter_argument": "Định giá rẻ là do thị trường đang chiết khấu rủi ro nợ xấu từ các gói tín dụng lớn của một số tập đoàn năng lượng tái tạo và tiêu dùng. Biên lãi ròng NIM có xu hướng đi ngang do cạnh tranh lãi suất cho vay khốc liệt.",
+        "risk_metric": "NIM bị co hẹp 15-20 bps do các gói kích cầu lãi suất ưu đãi."
+      },
+      {
+        "target_bull_point": "Lướt sóng ngắn T+3 sinh lời nhanh",
+        "counter_argument": "Khối lượng cổ phiếu lưu hành lớn (>5.2 tỷ cổ phiếu) khiến MBB có độ ì cao (Heavy stock), cần lượng tiền rất lớn của tạo lập mới kéo tăng trần được.",
+        "risk_metric": "Thanh khoản bình quân 25-35 triệu CP/phiên đòi hỏi dòng tiền F0 mạnh mẽ."
+      }
+    ],
+    "downside_triggers": [
+      "Thanh khoản HOSE sụt giảm dưới 15.000 tỷ/phiên làm nghẽn sóng Bank.",
+      "Tỷ lệ nợ xấu hợp nhất tăng nhẹ do công ty tài chính tiêu dùng MCredit."
+    ],
+    "structural_threat_level": "MODERATE",
+    "threat_penalty_score": 0.35,
+    "bear_verdict": "Không khuyến nghị Bán Khống (Short) vì BCTC quá sạch, nhưng CẢNH BÁO: Phải gắn chặt Stop Loss 2xATR và chỉ mua ở vùng giá chiết khấu, tuyệt đối không FOMO đu đỉnh!"
+  },
+  "bull_rebuttal": {
+    "analyst_role": "Senior Buy-Side Equity Analyst (Phản Pháo & Bảo Vệ Luận Điểm)",
+    "counter_rebuttals": [
+      {
+        "counter_bear_point": "Cổ phiếu lưu hành lớn 5.2 tỷ CP và biên NIM co hẹp",
+        "rebuttal_argument": "MBB đã xử lý trọn vẹn ngân hàng chuyển giao bắt buộc (OceanBank), được Ngân hàng Nhà nước cấp room tín dụng thuộc top cao nhất ngành (>18%). Lợi nhuận trước thuế trên 28.000 tỷ và ROE 22.4% là bằng chứng thép về hiệu quả sinh lời trên mỗi đồng vốn.",
+        "defense_strength": "STRONG"
+      }
+    ],
+    "net_defense_verdict": "Luận điểm của Bear đã được phản bác thuyết phục bằng số liệu thực chứng BCTC."
+  },
+  "investment_decision": {
+    "symbol": "MBB",
+    "verdict": "STRONG_BUY",
+    "action_directive": "GIAI NGÂN MẠNH THEO KIM TỰ THÁP (30-40-30)",
+    "net_conviction_score": 58.8,
+    "confidence_level": "HIGH",
+    "valuation_assessment": {
+      "current_market_price": 19300.0,
+      "intrinsic_value_estimate": 48033.0,
+      "implied_margin_of_safety_pct": 59.82
+    },
+    "synthesis_summary": "Tổng Tư Lệnh James phân xử: Forensic Auditor xác nhận BCTC đạt chuẩn 100/100 sạch bóng. Luận điểm của Bull Agent về Moat và Cỗ máy OCF vững như bàn thạch. Các đòn tấn công của Bear Agent đã được phản pháo thuyết phục tại Vòng 4, kết hợp Biên An Toàn Graham MoS đạt +59.8% và bảo vệ cứng bằng Stop 2xATR. Net Conviction Score đạt +58.8/100. Phê duyệt: STRONG_BUY — GIAI NGÂN MẠNH THEO KIM TỰ THÁP (30-40-30)!",
+    "execution_rules": [
+      "Khung Giờ Vàng (14h00 – 14h25): Chờ hấp thụ xong hàng T+2 mới bấm cò giải ngân chính thức.",
+      "Kỷ luật lệnh LO: Đặt lệnh mua Limit Order, tuyệt đối không dùng MP mua đuổi giá xanh trước 10h00 sáng.",
+      "Khoá cứng rủi ro Stop 2xATR: Cắt lỗ dứt khoát nếu thủng hỗ trợ, không bình quân giá xuống."
+    ]
+  }
+}
