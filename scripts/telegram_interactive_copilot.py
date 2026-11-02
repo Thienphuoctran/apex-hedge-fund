@@ -482,30 +482,49 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
     return offset
 
 
+DAEMON_LOG_PATH = BASE_DIR / "data" / "telegram_copilot_daemon.log"
+
+
+def log_daemon(msg: str):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    formatted = f"[{timestamp}] {msg}"
+    print(formatted, flush=True)
+    try:
+        DAEMON_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(DAEMON_LOG_PATH, "a", encoding="utf-8") as f:
+            f.write(formatted + "\n")
+    except Exception:
+        pass
+
+
 def run_daemon():
-    """Chạy liên tục nền lắng nghe 24/7."""
+    """Chạy liên tục nền lắng nghe 24/7 với cơ chế Tự Phục Hồi Vĩnh Cửu (Bulletproof Self-Healing)."""
     cfg = load_config()
     bot_token = cfg.get("bot_token", "")
     offset = load_last_update_id()
     
-    print("========================================================================")
-    print(" 🤖 PALMER TELEGRAM AI CO-PILOT DAEMON — TRỰC CHIẾN TƯƠNG TÁC 2 CHIỀU")
-    print("========================================================================")
-    print(f"[*] Đang lắng nghe tin nhắn từ Chủ tịch Phước Trần (Offset: {offset})...")
+    log_daemon("="*72)
+    log_daemon(" 🤖 PALMER TELEGRAM AI CO-PILOT DAEMON — TRỰC CHIẾN TƯƠNG TÁC 2 CHIỀU")
+    log_daemon("="*72)
+    log_daemon(f"[*] Đang lắng nghe tin nhắn từ Chủ tịch Phước Trần (Offset: {offset})...")
     
     # Gửi thông báo khởi động và kích hoạt bàn phím ảo tới Chủ tịch
     init_msg = (
-        "🚀 *[PALMER AI CO-PILOT ĐÃ KÍCH HOẠT CHẾ ĐỘ CHAT 2 CHIỀU]*\n"
+        "🚀 *[PALMER AI CO-PILOT ĐÃ SẴN SÀNG TRỰC CHIẾN 24/7]*\n"
         "Kính gửi: Chủ tịch Phước Trần\n\n"
-        "Bàn phím ảo tương tác 1-chạm đã sẵn sàng dưới màn hình.\n"
-        "Chủ tịch có thể nhắn tin yêu cầu: *Tổng hợp thị trường, Tóm tắt danh mục, Soi mã HPG/TCB/MBB, hoặc Kiểm tra chốt lời* bất kỳ lúc nào!"
+        "Palmer luôn thường trực lắng nghe. Chủ tịch có thể nhấn các nút bên dưới hoặc chat bất kỳ câu hỏi nào về thị trường, danh mục và sổ lệnh nhé!"
     )
-    send_raw_telegram(
-        bot_token=bot_token,
-        chat_id=cfg.get("private_chat_id", ""),
-        text=init_msg,
-        reply_markup=get_interactive_keyboard()
-    )
+    try:
+        send_raw_telegram(
+            bot_token=bot_token,
+            chat_id=cfg.get("private_chat_id", ""),
+            text=init_msg,
+            reply_markup=get_interactive_keyboard()
+        )
+    except Exception as e:
+        log_daemon(f"[!] Warning khi gửi init_msg: {e}")
+    
+    last_heartbeat = time.time()
     
     while True:
         try:
@@ -513,13 +532,23 @@ def run_daemon():
             if new_offset != offset:
                 offset = new_offset
                 save_last_update_id(offset)
+            
+            # Ghi heartbeat mỗi 30 phút
+            now = time.time()
+            if now - last_heartbeat > 1800:
+                log_daemon(f"[HEARTBEAT] Palmer Co-Pilot Daemon đang trực chiến bình thường. Offset: {offset}")
+                last_heartbeat = now
+                
             time.sleep(1)
         except KeyboardInterrupt:
-            print("\n[*] Dừng dịch vụ Co-Pilot Daemon theo yêu cầu.")
+            log_daemon("[*] Dừng dịch vụ Co-Pilot Daemon theo yêu cầu.")
             break
         except Exception as e:
-            print(f"[!] Daemon loop error: {e}")
+            log_daemon(f"[!] Ngoại lệ trong vòng lặp Daemon: {e}")
             time.sleep(3)
+        except BaseException as be:
+            log_daemon(f"[!] BaseException bắt được: {be}")
+            time.sleep(5)
 
 
 def main():
