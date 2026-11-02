@@ -1,6 +1,6 @@
 # 🚨 [RED ALERT] BÁO CÁO BIẾN ĐỘNG KHẨN CẤP DANH MỤC & LIVE WAR-ROOM
 **Phòng Ban 9**: Ban Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Khẩn Cấp ("Victor")  
-**Thời gian phát hiện**: `2026-11-02 04:39:24` | **Mã Cổ Phiếu Báo Động**: **`TCB`** (VIETNAM)  
+**Thời gian phát hiện**: `2026-11-02 05:39:21` | **Mã Cổ Phiếu Báo Động**: **`TCB`** (VIETNAM)  
 **Mức độ khẩn cấp**: **`CRITICAL`** | **Trạng thái**: YÊU CẦU PHẢN ỨNG TỨC THỜI TRONG PHIÊN
 
 ---
@@ -10,7 +10,7 @@
 | :--- | :---: | :---: | :--- |
 | **Giá Hiện Tại** | **`20,800.00 VND`** | — | Giảm **`-3.70%`** so với tham chiếu |
 | **Khoảng Cách Đến Stop 2xATR** | **`+0.24%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`20,750.00 VND`** |
-| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`0.52x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
+| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`0.54x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
 | **Quy Mô Vốn Đang Rủi Ro** | **`4,320,000.00 VND`** | — | Số lượng đang nắm: `200 cổ phiếu` |
 | **Giá Trị Trung Bình VWAP** | **`21,033.33 VND`** | — | Vùng kháng cự ngắn hạn trong phiên |
 

@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-02T04:39:17.047209+00:00",
+  "timestamp_utc": "2026-11-02T05:39:15.383254+00:00",
   "scan_date": "2026-11-02",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 25,
+  "total_vn_announcements_count": 22,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -298,7 +298,7 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 21:35:00 +0700",
       "source_url": "https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn",
-      "total_announcements": 10
+      "total_announcements": 9
     },
     "DXG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -314,22 +314,6 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn",
-      "total_announcements": 1
-    },
-    "HPG": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Thành viên HĐQT Hòa Phát muốn bán bớt cổ phiếu HPG",
-      "severity": "INFO",
-      "published_at": "Fri, 30 Oct 26 18:11:00 +0700",
-      "source_url": "https://cafef.vn/thanh-vien-hdqt-hoa-phat-muon-ban-bot-co-phieu-hpg-18826103017051392.chn",
-      "total_announcements": 1
-    },
-    "HSG": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Tập đoàn Hoa Sen đạt 623 tỷ đồng lợi nhuận sau thuế trong NĐTC 2025 - 2026, hoàn thành 104% kế hoạch ở phương án cao",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 18:10:00 +0700",
-      "source_url": "https://cafef.vn/tap-doan-hoa-sen-dat-623-ty-dong-loi-nhuan-sau-thue-trong-ndtc-2025-2026-hoan-thanh-104-ke-hoach-o-phuong-an-cao-188261030181042245.chn",
       "total_announcements": 1
     },
     "PNJ": {
@@ -4887,18 +4871,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Becamex Group ‘rót’ thêm hơn 375 tỷ đồng vào doanh nghiệp làm dự án đường cao tốc",
-      "summary": "Becamex Group dự kiến góp thêm gần 375,5 tỷ đồng vào CTCP Đường Cao tốc TP.HCM - Thủ Dầu Một - Chơn Thành, qua đó giữ nguyên tỷ lệ sở hữu 49% tại doanh nghiệp này....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Sat, 31 Oct 26 07:16:00 +0700",
-      "source_url": "https://cafef.vn/becamex-group-rot-them-hon-375-ty-dong-vao-doanh-nghiep-lam-du-an-duong-cao-toc-188261031071650337.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "REE"
       ],
       "title": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
@@ -4919,30 +4891,6 @@
       "severity": "INFO",
       "published_at": "Sat, 31 Oct 26 00:11:00 +0700",
       "source_url": "https://cafef.vn/khoi-ngoai-ban-rong-gan-3000-ty-trong-tuan-cuoi-thang-10-fpt-bi-xa-manh-nhat-188261031001137094.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HPG"
-      ],
-      "title": "Thành viên HĐQT Hòa Phát muốn bán bớt cổ phiếu HPG",
-      "summary": "Mục đích bán cổ phiếu là phục vụ nhu cầu tài chính cá nhân....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 30 Oct 26 18:11:00 +0700",
-      "source_url": "https://cafef.vn/thanh-vien-hdqt-hoa-phat-muon-ban-bot-co-phieu-hpg-18826103017051392.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HSG"
-      ],
-      "title": "Tập đoàn Hoa Sen đạt 623 tỷ đồng lợi nhuận sau thuế trong NĐTC 2025 - 2026, hoàn thành 104% kế hoạch ở phương án cao",
-      "summary": "Bên cạnh hoạt động sản xuất tôn thép truyền thống, HSG đang tập trung phát triển Hệ thống Siêu thị Vật liệu xây dựng & Nội thất Hoa Sen Home....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 18:10:00 +0700",
-      "source_url": "https://cafef.vn/tap-doan-hoa-sen-dat-623-ty-dong-loi-nhuan-sau-thue-trong-ndtc-2025-2026-hoan-thanh-104-ke-hoach-o-phuong-an-cao-188261030181042245.chn"
     },
     {
       "market": "VIETNAM",

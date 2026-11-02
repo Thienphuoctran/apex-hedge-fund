@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 04:39:25",
+  "generated_at": "2026-11-02 05:39:21",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -359,14 +359,6 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
-      "date": "Sat, 31 Oct 26 0",
-      "headline": "Becamex Group ‘rót’ thêm hơn 375 tỷ đồng vào doanh nghiệp làm dự án đường cao tốc",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
       "symbol": "REE",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Mon, 02 Nov 26 0",
@@ -380,6 +372,14 @@
       "date": "Sat, 31 Oct 26 0",
       "headline": "Khối ngoại bán ròng gần 3.000 tỷ trong tuần cuối tháng 10, FPT bị \"xả\" mạnh nhất",
       "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "PNJ",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Mon, 02 Nov 26 1",
+      "headline": "Giá vàng nhẫn trơn, vàng miếng sáng 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng",
+      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 25 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 22 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
