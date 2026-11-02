@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-02T08:01:18.069924+00:00",
+  "timestamp_utc": "2026-11-02T09:10:16.769654+00:00",
   "scan_date": "2026-11-02",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 25,
+  "total_vn_announcements_count": 23,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -290,7 +290,7 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 13:54:00 +0700",
       "source_url": "https://cafef.vn/sieu-tau-tuan-tra-hien-dai-nhat-cua-my-tri-gia-670-trieu-usd-vua-cap-cang-tphcm-lan-dau-tien-sau-20-nam-mang-theo-uav-ung-dung-ai-co-the-bay-12-gio-188261102113324323.chn",
-      "total_announcements": 11
+      "total_announcements": 10
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -330,7 +330,7 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 07:31:00 +0700",
       "source_url": "https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn",
-      "total_announcements": 2
+      "total_announcements": 1
     },
     "HDB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4981,18 +4981,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
-      ],
-      "title": "ACB cảnh báo nguy cơ mã độc trên iPhone, khuyến nghị cập nhật iOS mới để tăng cường bảo mật",
-      "summary": "Mã độc Coruna, DarkSword khai thác lỗ hổng bảo mật trên iPhone chưa cập nhật hệ điều hành mới, trong khi các thủ đoạn chiếm SIM, kiểm soát điện thoại tiếp tục đe dọa an toàn tài khoản ngân hàng. ACB khuyến cáo người dùng...",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 30 Oct 26 10:04:00 +0700",
-      "source_url": "https://cafef.vn/acb-canh-bao-nguy-co-ma-doc-tren-iphone-khuyen-nghi-cap-nhat-ios-moi-de-tang-cuong-bao-mat-188261030100316697.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "HCM"
       ],
       "title": "Sau nhiều lần 'trễ hẹn', nút giao hiện đại bậc nhất TP.HCM hiện thi công ra sao?",
@@ -5025,18 +5013,6 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 20:53:00 +0700",
       "source_url": "https://cafef.vn/4-lo-dat-vang-thu-thiem-sap-duoc-dau-gia-tro-lai-chot-ngay-27-11-tren-he-thong-cua-bo-cong-an-188261101202752066.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Người dân TP.HCM tháo dỡ nhà, bàn giao mặt bằng dự án sau hơn 10 năm",
-      "summary": "Sau hơn 10 năm triển khai, dự án mở rộng đường Lương Định Của (TP.HCM) ghi nhận chuyển động mới khi nhiều hộ dân tháo dỡ nhà, bàn giao mặt bằng....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 14:48:00 +0700",
-      "source_url": "https://cafef.vn/nguoi-dan-tphcm-thao-do-nha-ban-giao-mat-bang-du-an-sau-hon-10-nam-188261101100634184.chn"
     },
     {
       "market": "VIETNAM",
