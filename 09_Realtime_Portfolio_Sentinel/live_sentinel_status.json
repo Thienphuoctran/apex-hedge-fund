@@ -1,5 +1,5 @@
 {
-  "last_scan_utc": "2026-11-03T04:26:15.499905",
+  "last_scan_utc": "2026-11-03T05:22:47.192159",
   "total_positions_monitored": 3,
   "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
@@ -18,14 +18,14 @@
       "tp2": 23200.0,
       "tp1_dist_pct": 5.46,
       "tp2_dist_pct": 10.21,
-      "volume_surge_ratio": 1.25,
+      "volume_surge_ratio": 1.27,
       "vwap_est": 20950.0,
       "severity": "UPSIDE_SURGE",
       "triggers_hit": [],
       "upside_triggers_hit": [
         {
           "level": "⚡ [SÓNG TĂNG MẠNH TRONG PHIÊN] BREAKOUT BỨT PHÁ",
-          "desc": "Giá tăng vọt +3.19% trong phiên (Vol 1.25x). Tiến sát mục tiêu TP1 (22,200.00, còn cách +5.46%)."
+          "desc": "Giá tăng vọt +3.19% trong phiên (Vol 1.27x). Tiến sát mục tiêu TP1 (22,200.00, còn cách +5.46%)."
         }
       ],
       "hedging_solution": {
@@ -53,7 +53,7 @@
       "tp2": 24800.0,
       "tp1_dist_pct": 7.41,
       "tp2_dist_pct": 14.81,
-      "volume_surge_ratio": 1.1,
+      "volume_surge_ratio": 1.12,
       "vwap_est": 21466.67,
       "severity": "NORMAL",
       "triggers_hit": [],
@@ -83,7 +83,7 @@
       "tp2": 20800.0,
       "tp1_dist_pct": 6.17,
       "tp2_dist_pct": 11.53,
-      "volume_surge_ratio": 1.13,
+      "volume_surge_ratio": 1.14,
       "vwap_est": 18700.0,
       "severity": "NORMAL",
       "triggers_hit": [],

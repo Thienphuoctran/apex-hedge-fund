@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-03T04:26:03.016747+00:00",
+  "timestamp_utc": "2026-11-03T05:22:35.320168+00:00",
   "scan_date": "2026-11-03",
   "total_us_filings_count": 369,
-  "total_vn_announcements_count": 32,
+  "total_vn_announcements_count": 31,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Công ty giày ở TP.HCM giải thể trước Tết, 1.400 công nhân được hỗ trợ ra sao?",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 11:38:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-giay-o-tphcm-giai-the-truoc-tet-1400-cong-nhan-duoc-ho-tro-ra-sao-188261103110047035.chn",
+      "total_announcements": 11
+    },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm",
@@ -291,14 +299,6 @@
       "published_at": "Tue, 03 Nov 26 10:32:00 +0700",
       "source_url": "https://cafef.vn/fpt-van-hanh-thu-nha-may-kiem-thu-chip-cong-suat-300-trieu-san-pham-moi-nam-188261103102956893.chn",
       "total_announcements": 5
-    },
-    "HCM": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 03 Nov 26 09:09:00 +0700",
-      "source_url": "https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn",
-      "total_announcements": 11
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -339,14 +339,6 @@
       "published_at": "Mon, 02 Nov 26 17:09:00 +0700",
       "source_url": "https://cafef.vn/chung-khoan-do-lua-loat-co-phieu-nam-san-188261102164122062.chn",
       "total_announcements": 2
-    },
-    "REE": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn",
-      "total_announcements": 1
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4823,6 +4815,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "Công ty giày ở TP.HCM giải thể trước Tết, 1.400 công nhân được hỗ trợ ra sao?",
+      "summary": "Khoảng 1.400 công nhân Công ty ECCO Việt Nam phải nghỉ việc khi doanh nghiệp giải thể, ngoài các chế độ theo quy định, họ được hỗ trợ thêm tiền và lương tháng 13....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 11:38:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-giay-o-tphcm-giai-the-truoc-tet-1400-cong-nhan-duoc-ho-tro-ra-sao-188261103110047035.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "FPT"
       ],
       "title": "FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm",
@@ -4943,18 +4947,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM",
-      "summary": "Một cú sét đánh vào cụm van, bồn chứa phát nổ, công nhân mắc kẹt, tàu chở nguyên liệu bốc cháy ngoài cầu cảng. Chuỗi tình huống giả định tại Hóa dầu Long Sơn đòi hỏi lực lượng ứng cứu triển khai đồng thời trên bờ và dưới...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 21:35:00 +0700",
-      "source_url": "https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "FPT"
       ],
       "title": "Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành",
@@ -5013,18 +5005,6 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 17:09:00 +0700",
       "source_url": "https://cafef.vn/chung-khoan-do-lua-loat-co-phieu-nam-san-188261102164122062.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "REE"
-      ],
-      "title": "Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán",
-      "summary": "Từ hai cổ phiếu đầu tiên khai mở thị trường chứng khoán Việt Nam, REE và SAM đã trải qua 26 năm với những bước ngoặt và chiến lược phát triển khác biệt. Hành trình của hai doanh nghiệp tiên phong không chỉ cho thấy sức m...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn"
     },
     {
       "market": "VIETNAM",

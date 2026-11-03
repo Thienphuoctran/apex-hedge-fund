@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03 04:26:15",
+  "generated_at": "2026-11-03 05:22:47",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Tue, 03 Nov 26 1",
+      "headline": "Công ty giày ở TP.HCM giải thể trước Tết, 1.400 công nhân được hỗ trợ ra sao?",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "FPT",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 03 Nov 26 1",
@@ -372,14 +380,6 @@
       "date": "Mon, 02 Nov 26 1",
       "headline": "Thu giữ hơn 2.100 tấn phân bón trong đường dây do Nguyễn Hồng Lam cầm đầu: 11 người bị bắt, thu lợi hàng chục tỷ đồng",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Mon, 02 Nov 26 1",
-      "headline": "Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 32 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 31 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

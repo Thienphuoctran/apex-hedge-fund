@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-03 04:26:03  
-> **Số sự kiện ghi nhận:** 32 thông báo  
+> **Thời gian quét:** 2026-11-03 05:22:35  
+> **Số sự kiện ghi nhận:** 31 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Công ty giày ở TP.HCM giải thể trước Tết, 1.400 công nhân được hỗ trợ ra sao? | [Xem Link](https://cafef.vn/cong-ty-giay-o-tphcm-giai-the-truoc-tet-1400-cong-nhan-duoc-ho-tro-ra-sao-188261103110047035.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm | [Xem Link](https://cafef.vn/fpt-van-hanh-thu-nha-may-kiem-thu-chip-cong-suat-300-trieu-san-pham-moi-nam-188261103102956893.chn) |
 | **HCM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp | [Xem Link](https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ | [Xem Link](https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn) |
@@ -14,13 +15,11 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ | [Xem Link](https://cafef.vn/sieu-tau-tuan-tra-hien-dai-nhat-cua-my-tri-gia-670-trieu-usd-vua-cap-cang-tphcm-lan-dau-tien-sau-20-nam-mang-theo-uav-ung-dung-ai-co-the-bay-12-gio-188261102113324323.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm | [Xem Link](https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vì sao cổ phiếu FPT bị bán ròng? | [Xem Link](https://cafef.vn/vi-sao-co-phieu-fpt-bi-ban-rong-188261102101138474.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM | [Xem Link](https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành | [Xem Link](https://cafef.vn/ben-trong-nha-may-kiem-thu-va-dong-goi-chip-ban-dan-fpt-vua-dua-vao-van-hanh-188261103103904204.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK hé lộ 8 doanh nghiệp đáng chú ý, phù hợp để "xuống tiền" trong tháng 11 | [Xem Link](https://cafef.vn/ctck-he-lo-8-doanh-nghiep-dang-chu-y-phu-hop-de-xuong-tien-trong-thang-11-188261102104310284.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu | [Xem Link](https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-188261102192903264.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT mất 120.000 tỷ vốn hóa | [Xem Link](https://cafef.vn/fpt-mat-120000-ty-von-hoa-188261102164752939.chn) |
 | **BID, VCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chứng khoán 'đỏ lửa', loạt cổ phiếu nằm sàn | [Xem Link](https://cafef.vn/chung-khoan-do-lua-loat-co-phieu-nam-san-188261102164122062.chn) |
-| **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán | [Xem Link](https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng sáng 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng tới 1,5 triệu đồng/lượng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-toi-15-trieu-dong-luong-188261103075423102.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều tối 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ? | [Xem Link](https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn) |
