@@ -100,6 +100,13 @@ def send_raw_telegram(
                 res = json.loads(resp.read().decode("utf-8"))
                 if res.get("ok"):
                     sent = True
+                    msg_id = res.get("result", {}).get("message_id")
+                    if msg_id:
+                        try:
+                            from scripts.telegram_cleaner_and_pin import record_message
+                            record_message(msg_id, chat_id, message_thread_id, getattr(send_raw_telegram, "_current_topic_key", "general"))
+                        except Exception:
+                            pass
         except Exception:
             # Fallback gửi không dùng parse_mode nếu có lỗi format markdown
             if parse_mode:
@@ -147,6 +154,7 @@ def dispatch_message(
     if header_badge:
         formatted_text = f"{header_badge}\n{text}"
 
+    send_raw_telegram._current_topic_key = topic_key
     # Nếu có Group và có thread_id và không ép gửi private
     if group_chat_id and thread_id and not force_private:
         ok = send_raw_telegram(

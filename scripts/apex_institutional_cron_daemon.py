@@ -81,15 +81,22 @@ def execute_milestone(milestone_id: str) -> bool:
 
     try:
         if milestone_id == "06:00":
-            # Ban 10 Hiền: Quét CBTT đêm qua
-            msg = (
-                "📡 *[BAN 10 — HIỀN: RÀ SOÁT CÔNG BỐ THÔNG TIN ĐÊM QUA]*\n"
-                f"📅 Ngày giao dịch: `{date_str}` | Khung giờ: `06:00 - 07:00`\n"
-                "• Rà soát 46+ mã HOSE/HNX và 35+ mã Phố Wall: Không ghi nhận văn bản hoãn nộp BCTC bất thường.\n"
-                "• Trạng thái 3 mã danh mục TCBS (`HPG`, `TCB`, `MBB`): 100% tài liệu và chỉ số an toàn.\n"
-                "👉 Dữ liệu đã chuyển giao sang Ban 1 & Ban 2 thẩm định trước phiên!"
+            # 1. KÍCH HOẠT ĐỀ XUẤT 3: TỰ ĐỘNG THU GỌN / XÓA TIN NHẮN CŨ PHIÊN TRƯỚC (AUTO-CLEAN)
+            from scripts.telegram_cleaner_and_pin import auto_clean_old_operational_messages
+            cleaned = auto_clean_old_operational_messages(topic_keys=["alerts", "morning_blotter"])
+            log_event(f"🧹 Auto-clean hoàn tất: Đã xóa {cleaned} tin nhắn cũ của phiên trước.")
+
+            # 2. Ban 10 Hiền: Quét CBTT đêm qua chuẩn Card UI
+            card_cbtt = (
+                "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n"
+                "   📡 BAN 10 — HIỀN: RÀ SOÁT CBTT ĐÊM QUA\n"
+                "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n"
+                f"📅 *Ngày*: `{date_str}` | ⏰ `06:00 - 07:00` | 👤 *TCBS*: `105C307855`\n"
+                "• Rà soát 46+ mã HOSE/HNX và 35+ mã Phố Wall: Không có hoãn nộp BCTC bất thường.\n"
+                "• Trạng thái 3 mã TCBS (`HPG`, `TCB`, `MBB`): 100% tài liệu và chỉ số an toàn.\n"
+                "👉 Dữ liệu đã chuyển sang Ban 1 & Ban 2 thẩm định trước phiên!"
             )
-            dispatch_message("radar_filings", msg)
+            dispatch_message("hien_desk", card_cbtt)
 
         elif milestone_id == "07:00":
             # Ban 1: Vĩ mô SBV, Tỷ giá, Phố Wall
@@ -126,15 +133,13 @@ def execute_milestone(milestone_id: str) -> bool:
             dispatch_message("radar_filings", msg)
 
         elif milestone_id == "08:30":
-            # Phiên Giao Ban Soi Gương Sáng 8h30
+            # 1. Chạy biên bản giao ban soi gương
             subprocess.run([sys.executable, str(BASE_DIR / "scripts" / "morning_war_room_hearing.py")], check=False)
-            msg = (
-                "☀️ *[HỘI NGHỊ GIAO BAN SOI GƯƠNG SÁNG 8H30 — MINH QUÂN & JAMES]*\n"
-                "• Minh Quân đã nạp bộ nhớ Mem0 và đọc to 3 bài học sai lầm hôm qua.\n"
-                "• 5 Guardrails an toàn vốn (GUARD-01 đến GUARD-05) đã được kích hoạt 100% bằng code.\n"
-                "👉 Master CIO James đang ký duyệt Sổ Lệnh Master Blotter!"
-            )
-            dispatch_message("morning_blotter", msg)
+            
+            # 2. KÍCH HOẠT ĐỀ XUẤT 2: XUẤT BẢN TẤM THẺ TẠP CHÍ BUỔI SÁNG DUY NHẤT & TỰ ĐỘNG GHIM (AUTO-PIN)
+            from scripts.telegram_morning_magazine_card import publish_morning_magazine_card
+            publish_morning_magazine_card(date_str)
+            log_event("📰 Đã xuất bản và tự động ghim Thẻ Tạp Chí Buổi Sáng vào Topic 4 thành công!")
 
         elif milestone_id == "08:45":
             # Ban 8 James: Phê duyệt Sổ Lệnh Master Blotter

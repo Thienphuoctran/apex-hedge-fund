@@ -1,6 +1,6 @@
 {
   "job_id": "JOB-2026-11-03-HPG",
-  "created_at": "03/11/2026 lúc 21:10",
+  "created_at": "03/11/2026 lúc 21:15",
   "assigned_to": "Bảo — Chuyên Viên Dựng Phim & Render Video AI (Desktop Studio)",
   "chief_strategist": "Khánh — Trưởng Ban 11 (Laptop HQ)",
   "status": "PENDING_DESKTOP_RENDER",
@@ -99,7 +99,7 @@
   },
   "hien_data": {
     "responder": "Hiền — Trưởng Ban 10 (Rà Soát BCTC & Quan Hệ Cổ Đông)",
-    "timestamp": "2026-11-03 21:10:50",
+    "timestamp": "2026-11-03 21:15:02",
     "ticker": "HPG",
     "company_name": "CTCP Tập đoàn Hòa Phát",
     "exchange": "HOSE",
