@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)
-> **Thời gian quét:** 2026-11-03 15:00:06  
-> **Số lượng hồ sơ ghi nhận:** 370 hồ sơ SEC chính thức  
+> **Thời gian quét:** 2026-11-03 15:49:37  
+> **Số lượng hồ sơ ghi nhận:** 371 hồ sơ SEC chính thức  
 
 | Ticker | Loại Form | Mức Độ | Ngày Nộp | Mô Tả Hồ Sơ | Đường Dẫn SEC |
 | :--- | :---: | :---: | :---: | :--- | :---: |
