@@ -47,6 +47,24 @@ $EveningTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Tuesday,We
 Register-ScheduledTask -TaskName "ApexFund_Evening_PreUS" -Action $EveningAction -Trigger $EveningTrigger -Settings $Settings -Description "Alex US Pre-Market Live Data Pipeline" -Force | Out-Null
 Write-Host "[OK] Task 3 registered: ApexFund_Evening_PreUS (Mon-Fri at 20:30 -> run_daily_pipeline.py live)"
 
+# 4. Evening 21:00 Daily - Ban 10 Hien BCTC & IR Scout Report
+$HienAction = New-ScheduledTaskAction -Execute $PythonExe -Argument "scripts\apex_institutional_cron_daemon.py --at=21:00" -WorkingDirectory $WorkspaceDir
+$HienTrigger = New-ScheduledTaskTrigger -Daily -At "21:00"
+Register-ScheduledTask -TaskName "ApexFund_Hien_BCTC_2100" -Action $HienAction -Trigger $HienTrigger -Settings $Settings -Description "Ban 10 Hien 21:00 PM BCTC & IR Scout Report" -Force | Out-Null
+Write-Host "[OK] Task 4 registered: ApexFund_Hien_BCTC_2100 (Daily at 21:00 -> Hien BCTC Review)"
+
+# 5. Evening 21:15 Daily - Ban 11 Khanh Viral Video 60s Script
+$KhanhAction = New-ScheduledTaskAction -Execute $PythonExe -Argument "scripts\apex_institutional_cron_daemon.py --at=21:15" -WorkingDirectory $WorkspaceDir
+$KhanhTrigger = New-ScheduledTaskTrigger -Daily -At "21:15"
+Register-ScheduledTask -TaskName "ApexFund_Khanh_Viral_2115" -Action $KhanhAction -Trigger $KhanhTrigger -Settings $Settings -Description "Ban 11 Khanh 21:15 PM Viral 60s Script" -Force | Out-Null
+Write-Host "[OK] Task 5 registered: ApexFund_Khanh_Viral_2115 (Daily at 21:15 -> Khanh Viral Script)"
+
+# 6. Night 23:00 Daily - Apex EOD 23h00 Executive Council Meeting
+$CouncilAction = New-ScheduledTaskAction -Execute $PythonExe -Argument "scripts\apex_institutional_cron_daemon.py --at=23:00" -WorkingDirectory $WorkspaceDir
+$CouncilTrigger = New-ScheduledTaskTrigger -Daily -At "23:00"
+Register-ScheduledTask -TaskName "ApexFund_EOD_Council_2300" -Action $CouncilAction -Trigger $CouncilTrigger -Settings $Settings -Description "Apex 23:00 EOD Executive Council Meeting" -Force | Out-Null
+Write-Host "[OK] Task 6 registered: ApexFund_EOD_Council_2300 (Daily at 23:00 -> EOD Council Meeting)"
+
 Write-Host "============================================================"
 Write-Host " AUTOMATION ACTIVE: Computer does NOT need to run 24/24!"
 Write-Host " If machine is OFF at schedule, it will auto-run on boot."

@@ -37,6 +37,12 @@ DAEMON_LOG = BASE_DIR / "data" / "apex_cron_daemon.log"
 DAEMON_STATE = BASE_DIR / "data" / "apex_cron_daemon_state.json"
 DAEMON_LOG.parent.mkdir(parents=True, exist_ok=True)
 
+SCHEDULED_MILESTONES = [
+    "06:00", "07:00", "07:30", "08:00", "08:30", "08:45",
+    "09:00", "11:45", "13:00", "14:00", "14:25", "15:15",
+    "18:00", "21:00", "21:15", "22:00", "23:00"
+]
+
 
 def log_event(msg: str):
     ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -47,6 +53,24 @@ def log_event(msg: str):
             f.write(line + "\n")
     except Exception:
         pass
+
+
+def load_state() -> Dict[str, Any]:
+    if DAEMON_STATE.exists():
+        try:
+            with open(DAEMON_STATE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"executed_milestones": {}}
+
+
+def save_state(state: Dict[str, Any]):
+    try:
+        with open(DAEMON_STATE, "w", encoding="utf-8") as f:
+            json.dump(state, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        log_event(f"[!] Lỗi ghi state: {e}")
 
 
 def execute_milestone(milestone_id: str) -> bool:
@@ -255,6 +279,50 @@ def execute_milestone(milestone_id: str) -> bool:
         return False
 
 
+def run_daemon(poll_interval: int = 15):
+    """Vòng lặp tự động hóa vĩnh viễn 24/7 kiểm tra từng phút"""
+    log_event("🌟 KHỞI ĐỘNG APEX INSTITUTIONAL CRON DAEMON (CHẾ ĐỘ NỀN TỰ ĐỘNG 24/7)...")
+    state = load_state()
+
+    init_msg = (
+        "🚀 *[HỆ THỐNG APEX CRON DAEMON ĐÃ CHÍNH THỨC KÍCH HOẠT 24/7]*\n"
+        f"Kính trình: **Chủ tịch Phước Trần** (*TCBS: `105C307855`*)\n"
+        f"Chủ tọa phê duyệt: **Master CIO James**\n\n"
+        "• *Trạng thái*: Chế độ tự động chạy ngầm 100% không gián đoạn.\n"
+        "• *Số lượng cột mốc*: 17 cột mốc khép kín từ 06:00 sáng đến 23:00 đêm.\n"
+        "• *Cam kết thể chế*: Toàn bộ 11 phòng ban làm thật, số liệu thật, báo cáo thật!\n"
+        "👉 Hệ thống đang tự động canh giờ và sẵn sàng tác chiến cho từng ca trực!"
+    )
+    dispatch_message("james_hq", init_msg)
+
+    while True:
+        try:
+            now = datetime.datetime.now()
+            today_str = now.strftime("%Y-%m-%d")
+            current_hm = now.strftime("%H:%M")
+
+            if today_str not in state.get("executed_milestones", {}):
+                state.setdefault("executed_milestones", {})[today_str] = []
+
+            executed_today = state["executed_milestones"][today_str]
+
+            if current_hm in SCHEDULED_MILESTONES and current_hm not in executed_today:
+                log_event(f"⏰ ĐẾN GIỜ TÁC CHIẾN CỦA CỘT MỐC: {current_hm}")
+                success = execute_milestone(current_hm)
+                if success:
+                    executed_today.append(current_hm)
+                    state["last_active"] = now.strftime("%Y-%m-%d %H:%M:%S")
+                    save_state(state)
+
+            time.sleep(poll_interval)
+        except KeyboardInterrupt:
+            log_event("🛑 DỪNG DAEMON DO LỆNH BÀN PHÍM.")
+            break
+        except Exception as e:
+            log_event(f"[!] LỖI TRONG VÒNG LẶP DAEMON: {e}")
+            time.sleep(30)
+
+
 def run_single_milestone_cli():
     """Hỗ trợ chạy thử nghiệm một cột mốc bất kỳ từ dòng lệnh"""
     if len(sys.argv) > 1 and sys.argv[1].startswith("--at="):
@@ -265,8 +333,11 @@ def run_single_milestone_cli():
         for m in ["21:00", "21:15", "23:00"]:
             execute_milestone(m)
         sys.exit(0)
+    elif len(sys.argv) > 1 and (sys.argv[1] == "--daemon" or sys.argv[1] == "-d"):
+        run_daemon()
+        sys.exit(0)
 
 
 if __name__ == "__main__":
     run_single_milestone_cli()
-    print("Apex Institutional Cron Daemon Ready. Use --at=HH:MM to execute a milestone.")
+    print("Apex Institutional Cron Daemon Ready. Use --daemon to start 24/7 background mode, or --at=HH:MM to run milestone.")
