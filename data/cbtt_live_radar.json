@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-03T05:22:35.320168+00:00",
+  "timestamp_utc": "2026-11-03T06:20:09.101224+00:00",
   "scan_date": "2026-11-03",
   "total_us_filings_count": 369,
-  "total_vn_announcements_count": 31,
+  "total_vn_announcements_count": 30,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -306,7 +306,7 @@
       "severity": "INFO",
       "published_at": "Tue, 03 Nov 26 07:58:00 +0700",
       "source_url": "https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn",
-      "total_announcements": 9
+      "total_announcements": 8
     },
     "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -5175,18 +5175,6 @@
       "severity": "INFO",
       "published_at": "Fri, 30 Oct 2026 19:30:00 +0700",
       "source_url": "https://vnexpress.net/hang-ton-kho-cua-pnj-tang-len-hon-16-600-ty-dong-5138903.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Con gái bà Cao Thị Ngọc Dung có thể phải bán hơn 2 triệu cổ phiếu PNJ",
-      "summary": "Bà Trần Phương Ngọc Giao, con gái Chủ tịch Cao Thị Ngọc Dung, nhiều khả năng phải bán giải chấp 2,17 triệu cổ phiếu PNJ theo lệnh gọi ký quỹ....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 30 Oct 2026 16:26:09 +0700",
-      "source_url": "https://vnexpress.net/con-gai-ba-cao-thi-ngoc-dung-co-the-phai-ban-hon-2-trieu-co-phieu-pnj-5138856.html"
     }
   ]
 }
