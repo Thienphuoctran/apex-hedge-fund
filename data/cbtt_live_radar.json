@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-03T00:32:03.733596+00:00",
+  "timestamp_utc": "2026-11-03T02:39:39.825784+00:00",
   "scan_date": "2026-11-03",
   "total_us_filings_count": 369,
-  "total_vn_announcements_count": 30,
+  "total_vn_announcements_count": 33,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -285,28 +285,28 @@
       "total_recent_filings": 9
     },
     "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Một công ty giày ở TP.HCM giải thể, hàng nghìn công nhân nghỉ việc từ ngày 3/11",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 07:20:00 +0700",
-      "source_url": "https://cafef.vn/mot-cong-ty-giay-o-tphcm-giai-the-hang-nghin-cong-nhan-nghi-viec-tu-ngay-3-11-188261103055550405.chn",
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
+      "severity": "CRITICAL",
+      "published_at": "Tue, 03 Nov 26 09:09:00 +0700",
+      "source_url": "https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn",
       "total_announcements": 14
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm",
+      "latest_title": "Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ",
       "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 13:39:00 +0700",
-      "source_url": "https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn",
-      "total_announcements": 7
+      "published_at": "Tue, 03 Nov 26 07:58:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn",
+      "total_announcements": 9
     },
     "FPT": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Vì sao cổ phiếu FPT bị bán ròng?",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 10:11:00 +0700",
-      "source_url": "https://cafef.vn/vi-sao-co-phieu-fpt-bi-ban-rong-188261102101138474.chn",
-      "total_announcements": 2
+      "latest_event_type": "CO_TUC",
+      "latest_title": "FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20%",
+      "severity": "WARNING",
+      "published_at": "Tue, 03 Nov 26 07:36:00 +0700",
+      "source_url": "https://cafef.vn/fpt-telecom-sap-tra-co-tuc-tien-mat-ty-le-20-188261103071445257.chn",
+      "total_announcements": 3
     },
     "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4825,6 +4825,42 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
+      "summary": "Không chỉ tại Việt Nam, ông lớn giày dép châu Âu còn đóng cửa nhà máy lâu đời ở Bồ Đào Nha, giữa lúc tập đoàn mẹ liên tiếp kinh doanh thua lỗ....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Tue, 03 Nov 26 09:09:00 +0700",
+      "source_url": "https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ",
+      "summary": "Trong phiên 30/10/2026, bà Trần Phương Ngọc Giao, con gái Chủ tịch Cao Thị Ngọc Dung, bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 07:58:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20%",
+      "summary": "Ngày 10/12/2026 tới đây, FPT Telecom sẽ chốt danh cổ đông để trả cổ tức năm 2025 cho cổ đông bằng tiền mặt tỷ lệ 20%....",
+      "event_type": "CO_TUC",
+      "severity": "WARNING",
+      "published_at": "Tue, 03 Nov 26 07:36:00 +0700",
+      "source_url": "https://cafef.vn/fpt-telecom-sap-tra-co-tuc-tien-mat-ty-le-20-188261103071445257.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Một công ty giày ở TP.HCM giải thể, hàng nghìn công nhân nghỉ việc từ ngày 3/11",
       "summary": "Công ty TNHH ECCO Việt Nam quyết định giải thể, chấm dứt hoạt động sản xuất tại nhà máy ở Khu công nghiệp Bàu Bàng, TPHCM từ ngày 30/11/2026, khiến hàng nghìn lao động bị ảnh hưởng....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -4919,18 +4955,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Từ 1 con tàu đến đế chế hơn 1.000 tàu: Gia tộc tỷ phú góp mặt trong siêu cảng gần 5 tỷ USD ở Cần Giờ đang tăng tốc",
-      "summary": "Khởi nghiệp với một con tàu nhỏ vào năm 1970, gia tộc Aponte đã xây dựng MSC thành hãng vận tải container hàng đầu thế giới, vận hành hơn 1.000 tàu. Thông qua công ty thành viên Terminal Investment Limited, đế chế hàng h...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 09:41:00 +0700",
-      "source_url": "https://cafef.vn/tu-1-con-tau-den-de-che-hon-1000-tau-gia-toc-ty-phu-gop-mat-trong-sieu-cang-gan-5-ty-usd-o-can-gio-dang-tang-toc-188261101090831232.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "MBS"
       ],
       "title": "CTCK hé lộ 8 doanh nghiệp đáng chú ý, phù hợp để \"xuống tiền\" trong tháng 11",
@@ -4989,6 +5013,18 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng trong nước sáng 3/11 đi ngang, với vàng miếng SJC duy trì mức bán ra 140 triệu đồng/lượng, trong khi giá vàng nhẫn tại các thương hiệu dao động từ 136,8 đến 139 triệu đồng/lượng. Trên thị trường quốc tế, giá vàn...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 07:53:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn"
     },
     {
       "market": "VIETNAM",
@@ -5057,6 +5093,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Khai trương không gian trải nghiệm 1 ha tại đô thị One Era",
+      "summary": "Ngày 31/10/2026, Kim Oanh Group và Kinera chính thức khai trương văn phòng dự án One Era Galleria cùng không gian trải nghiệm rộng 1 ha tại phường Thuận Giao, TP.HCM. Sự kiện khai mở khu đô thị One Era quy mô gần 50 ha, ...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/khai-truong-khong-gian-trai-nghiem-1-ha-tai-do-thi-one-era-188261102163517491.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "TP.HCM chốt giá đất và 3.790 căn hộ chung cư tại Thủ Thiêm hơn 18.200 tỷ đồng",
       "summary": "UBND TP.HCM đã phê duyệt giá đất cụ thể để xác định giá khởi điểm đấu giá 5 lô đất kèm 3.790 căn hộ chung cư tại Thủ Thiêm; tổng giá trị là hơn 18.253 tỷ đồng....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5087,18 +5135,6 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 10:12:00 +0700",
       "source_url": "https://cafef.vn/tuyen-cao-toc-gan-19000-ty-dong-do-lien-danh-tt-dau-tu-tai-tinh-rong-nhat-viet-nam-rut-ngan-thoi-gian-di-tu-tphcm-den-da-lat-con-3-gio-nhan-chi-dao-nong-18826110210051887.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "4 lô 'đất vàng' Thủ Thiêm sắp được đấu giá trở lại, chốt ngày 27/11 trên hệ thống của Bộ Công an",
-      "summary": "TP.HCM sẽ tổ chức đấu giá 4 lô đất ở Khu đô thị mới Thủ Thiêm vào ngày 27/11 trên Hệ thống đấu giá trực tuyến của Bộ Công an, theo phương thức trả giá lên....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 20:53:00 +0700",
-      "source_url": "https://cafef.vn/4-lo-dat-vang-thu-thiem-sap-duoc-dau-gia-tro-lai-chot-ngay-27-11-tren-he-thong-cua-bo-cong-an-188261101202752066.chn"
     },
     {
       "market": "VIETNAM",

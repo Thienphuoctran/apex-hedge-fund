@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03 09:37:43",
+  "generated_at": "2026-11-03 02:39:42",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -320,6 +320,30 @@
     {
       "market": "VIETNAM_CBTT",
       "symbol": "HCM",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Tue, 03 Nov 26 0",
+      "headline": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "PNJ",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Tue, 03 Nov 26 0",
+      "headline": "Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "CO_TUC",
+      "date": "Tue, 03 Nov 26 0",
+      "headline": "FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20%",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 03 Nov 26 0",
       "headline": "Một công ty giày ở TP.HCM giải thể, hàng nghìn công nhân nghỉ việc từ ngày 3/11",
@@ -356,30 +380,6 @@
       "date": "Mon, 02 Nov 26 1",
       "headline": "Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Mon, 02 Nov 26 1",
-      "headline": "Vì sao cổ phiếu FPT bị bán ròng?",
-      "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Sun, 01 Nov 26 2",
-      "headline": "Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Sun, 01 Nov 26 1",
-      "headline": "Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 30 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 33 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
