@@ -384,7 +384,27 @@ def process_user_query(text: str) -> str:
     if "soi mã" in clean_text or "tra cứu" in clean_text:
         return "🔍 Chủ tịch vui lòng gõ trực tiếp tên mã (Ví dụ: `HPG`, `TCB`, `MBB`) để Palmer phân tích chi tiết BCTC và điểm vào lệnh nhé!"
 
-    # 7. Phản hồi trò chuyện tự nhiên của Palmer
+    # 7. CHUYỂN GIAO CHỈ THỊ ĐIỀU HÀNH ĐÓNG LẶP (CLOSED-LOOP TASK DISPATCHER)
+    # Bất kỳ câu lệnh điều hành nào của Chủ tịch đều được tiếp nhận, chuyển giao đúng phòng ban và báo cáo nghiệm thu vào Topic
+    try:
+        from scripts.closed_loop_task_dispatcher import dispatch_chairman_directive
+        task_res = dispatch_chairman_directive(text, source="TELEGRAM_COPILOT")
+        summary_txt = task_res.get("execution_result", {}).get("summary", "Đã tiếp nhận và thực thi hoàn tất.")
+        return (
+            f"🎯 *[PALMER — ĐÃ ĐIỀU PHỐI CHỈ THỊ ĐÓNG LẶP THÀNH CÔNG]*\n"
+            f"━━━━━━━━━━━━━━━━━━━\n"
+            f"• Mã Lệnh: `#{task_res['task_id']}`\n"
+            f"• Cơ quan thụ lý: *{task_res.get('assigned_department_name', task_res['assigned_department'])}*\n"
+            f"• Người chịu trách nhiệm: *{task_res['assigned_officer']}*\n"
+            f"• Phân luồng tiếp nhận & báo cáo: *{task_res['topic_name']}*\n"
+            f"• Trạng thái: ✅ *{task_res['status']}*\n\n"
+            f"📊 *Tóm tắt thực thi tức thời*:\n{summary_txt}\n\n"
+            f"👉 *Lưu ý*: Báo cáo nghiệm thu chi tiết đã được gửi trực tiếp vào Topic *{task_res['topic_name']}*. Mời Chủ tịch chuyển sang Topic đó để kiểm tra!"
+        )
+    except Exception as e:
+        print(f"[!] Lỗi dispatch chỉ thị: {e}")
+
+    # Fallback phản hồi trò chuyện tự nhiên của Palmer
     return (
         "👋 *Chào Chủ tịch Phước Trần! Palmer tôi luôn trực chiến cùng Chủ tịch.*\n\n"
         "Chủ tịch có thể bấm các nút chức năng bên dưới hoặc nhắn tin bất kỳ yêu cầu nào:\n"

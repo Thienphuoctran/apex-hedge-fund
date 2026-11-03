@@ -143,12 +143,12 @@
       "sector": "Thép & Vật Liệu Xây Dựng",
       "sleeve": "CORE COMPOUNDER (VUA THÉP)",
       "exchange": "HOSE",
-      "weight_nav_pct": 52.5,
-      "allocated_capital_vnd": 10500000.0,
+      "weight_nav_pct": 20.4,
+      "allocated_capital_vnd": 4080000.0,
       "allocated_capital_usd": 413.39,
-      "shares": 500,
+      "shares": 200,
       "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
-      "current_price_vnd": 21000.0,
+      "current_price_vnd": 20400.0,
       "forensic_score": 100.0,
       "forensic_verdict": "CLEAN",
       "net_conviction_score": 62.2,
@@ -158,7 +158,7 @@
       "probe_price_60_vnd": 20850.0,
       "breakout_price_40_vnd": 21270.0,
       "stop_loss_2atr_vnd": 19400.0,
-      "stop_dist_pct": 3.95,
+      "stop_dist_pct": 4.9,
       "vnd_risk_at_stop": 415000.0,
       "risk_nav_pct": 2.08,
       "tp1_vnd": 22200.0,
@@ -168,7 +168,8 @@
       "expected_value_pct": 6.58,
       "catalysts": "Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC.",
       "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +62.2/100, MoS +58.9%.",
-      "execution_instruction": "Vào 300 cổ HPG tại 20,850 - 21,000 ₫ phiên sáng; nạp tiếp 200 cổ trong Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong T+2. Gom 500 CP làm kho hàng T+0 cốt lõi cho Tháng 2"
+      "execution_instruction": "Vào 300 cổ HPG tại 20,850 - 21,000 ₫ phiên sáng; nạp tiếp 200 cổ trong Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong T+2. Gom 500 CP làm kho hàng T+0 cốt lõi cho Tháng 2",
+      "execution_status": "FILLED_TRANCHE_1"
     },
     {
       "market": "VIETNAM",
@@ -212,12 +213,12 @@
       "sector": "Ngân Hàng & Dịch Vụ Tài Chính",
       "sleeve": "TACTICAL ALPHA (FAST SWING)",
       "exchange": "HOSE",
-      "weight_nav_pct": 19.3,
-      "allocated_capital_vnd": 3860000.0,
+      "weight_nav_pct": 9.33,
+      "allocated_capital_vnd": 1865000.0,
       "allocated_capital_usd": 151.97,
-      "shares": 200,
+      "shares": 100,
       "lot_standard": "Lô chẵn 100 CP (Chuẩn HOSE/HNX)",
-      "current_price_vnd": 19300.0,
+      "current_price_vnd": 18650.0,
       "forensic_score": 100.0,
       "forensic_verdict": "CLEAN",
       "net_conviction_score": 58.8,
@@ -227,7 +228,7 @@
       "probe_price_60_vnd": 19190.0,
       "breakout_price_40_vnd": 19500.0,
       "stop_loss_2atr_vnd": 17900.0,
-      "stop_dist_pct": 3.16,
+      "stop_dist_pct": 4.02,
       "vnd_risk_at_stop": 122000.0,
       "risk_nav_pct": 0.61,
       "tp1_vnd": 19800.0,
@@ -237,7 +238,8 @@
       "expected_value_pct": 4.85,
       "catalysts": "Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời.",
       "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +58.8/100, MoS +59.8%.",
-      "execution_instruction": "Đặt Limit Buy 200 cổ MBB tại 19,190 - 19,300 ₫ phiên sáng. 200 CP lướt sóng ngắn T+3/T+5 đón đầu dòng tiền tín dụng"
+      "execution_instruction": "Đặt Limit Buy 200 cổ MBB tại 19,190 - 19,300 ₫ phiên sáng. 200 CP lướt sóng ngắn T+3/T+5 đón đầu dòng tiền tín dụng",
+      "execution_status": "FILLED_TRANCHE_1"
     }
   ]
 }

@@ -287,3 +287,29 @@
 [2026-11-03 09:29:33] [WARN loop] HTTP Error 409: Conflict
 [2026-11-03 09:30:32] [WARN loop] HTTP Error 409: Conflict
 [2026-11-03 09:31:19] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 09:47:35] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 09:49:26] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 09:50:23] [WARN loop] The read operation timed out
+[2026-11-03 09:51:01] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 09:51:49] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 09:52:51] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 09:55:23] [HEARTBEAT] Unified Omni-Copilot V4.0 trực chiến ổn định. Offset: 698824927
+[2026-11-03 10:06:19] [WARN loop] The read operation timed out
+[2026-11-03 10:09:21] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 10:10:11] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 10:13:40] [WARN loop] The read operation timed out
+[2026-11-03 10:14:30] [WARN loop] The read operation timed out
+[2026-11-03 10:25:30] [HEARTBEAT] Unified Omni-Copilot V4.0 trực chiến ổn định. Offset: 698824927
+[2026-11-03 10:26:08] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 10:27:11] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 10:27:59] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 10:28:47] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 10:41:33] [*] Chuyển tiếp sang Unified Omni-Copilot V4.0 (Palmer + Long + Nam + Watchdog)...
+[2026-11-03 10:41:34] ============================================================
+[2026-11-03 10:41:34]   UNIFIED OMNI-COPILOT & SENTINEL ENGINE V4.0 (PALMER + LONG + NAM)
+[2026-11-03 10:41:34]   Whitelist Chat ID: 8332675283
+[2026-11-03 10:41:34] ============================================================
+[2026-11-03 10:41:34] [+] Đã kích hoạt luồng ngầm Market-Hours Sentinel Watchdog trong cùng tiến trình.
+[2026-11-03 10:41:36] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 10:41:40] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 10:41:44] [WARN loop] HTTP Error 409: Conflict

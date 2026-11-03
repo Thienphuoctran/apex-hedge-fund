@@ -1,0 +1,55 @@
+{
+  "updated_at": "2026-11-03 10:41:42",
+  "quotes": {
+    "TCB": {
+      "price": 21300.0,
+      "high": 21450.0,
+      "low": 21150.0,
+      "volume": 1855767
+    },
+    "MBB": {
+      "price": 18650.0,
+      "high": 18900.0,
+      "low": 18550.0,
+      "volume": 5083013
+    },
+    "HPG": {
+      "price": 21100.0,
+      "high": 21150.0,
+      "low": 20400.0,
+      "volume": 10936678
+    }
+  },
+  "config": {
+    "TCB": {
+      "status": "HOLDING",
+      "shares": 100,
+      "entry_price": 21250.0,
+      "stop_loss": 20400.0,
+      "stop_warning": 20700.0,
+      "tp1": 23200.0,
+      "tp2": 24800.0,
+      "name": "Techcombank"
+    },
+    "MBB": {
+      "status": "HOLDING",
+      "shares": 100,
+      "entry_price": 18650.0,
+      "stop_loss": 17900.0,
+      "stop_warning": 18150.0,
+      "tp1": 19800.0,
+      "tp2": 20800.0,
+      "name": "Ngân hàng Quân Đội"
+    },
+    "HPG": {
+      "status": "HOLDING",
+      "shares": 200,
+      "entry_price": 20400.0,
+      "stop_loss": 19400.0,
+      "stop_warning": 19700.0,
+      "tp1": 22200.0,
+      "tp2": 23200.0,
+      "name": "Tập đoàn Hòa Phát"
+    }
+  }
+}
