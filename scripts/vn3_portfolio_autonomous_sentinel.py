@@ -70,7 +70,7 @@ CONFIG = {
     "MBB": {
         "status": "HOLDING",
         "shares": 100,
-        "entry_price": 18650.0,
+        "entry_price": 18600.0,
         "stop_loss": 17900.0,
         "stop_warning": 18150.0,
         "tp1": 19800.0,
@@ -80,7 +80,7 @@ CONFIG = {
     "HPG": {
         "status": "HOLDING",
         "shares": 200,
-        "entry_price": 20400.0,
+        "entry_price": 21050.0,
         "stop_loss": 19400.0,
         "stop_warning": 19700.0,
         "tp1": 22200.0,

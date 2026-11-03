@@ -1,0 +1,178 @@
+{
+  "HPG": {
+    "company_name": "Tập đoàn Hòa Phát",
+    "exchange": "HOSE",
+    "sector": "Thép & Vật liệu xây dựng",
+    "official_ir_url": "https://www.hoaphat.com.vn/quan-he-co-dong",
+    "bctc_direct_portal": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+    "annual_report_portal": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-thuong-nien",
+    "agm_resolutions_portal": "https://www.hoaphat.com.vn/quan-he-co-dong/dai-hoi-dong-co-dong",
+    "vietstock_docs": "https://finance.vietstock.vn/HPG/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/HPG-ctcp-tap-doan-hoa-phat.chn",
+    "latest_reports": [
+      {
+        "title": "BCTC Hợp nhất Quý 3/2026 (Đã soát xét / Công bố)",
+        "type": "BCTC_QUARTERLY",
+        "period": "Q3/2026",
+        "direct_pdf_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+        "highlights": "Doanh thu tăng +19% YoY, OCF dương 8,400 tỷ, Dung Quất 2 chạy thử nghiệm lò cao số 1 thành công."
+      },
+      {
+        "title": "BCTC Hợp nhất Bán niên 2026 (Đã kiểm toán)",
+        "type": "BCTC_SEMI_ANNUAL",
+        "period": "6T/2026",
+        "direct_pdf_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+        "highlights": "Kiểm toán Big4 chấp thuận toàn phần, dòng tiền hoạt động OCF tăng trưởng mạnh."
+      },
+      {
+        "title": "Báo cáo Thường niên & Báo cáo Phát triển Bền vững",
+        "type": "ANNUAL_REPORT",
+        "period": "Annual",
+        "direct_pdf_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-thuong-nien",
+        "highlights": "Chiến lược nâng công suất HRC lên 14 triệu tấn/năm khi Dung Quất 2 hoàn tất 100%."
+      },
+      {
+        "title": "Nghị quyết & Biên bản ĐHĐCĐ Thường niên",
+        "type": "AGM_RESOLUTION",
+        "period": "AGM",
+        "direct_pdf_url": "https://www.hoaphat.com.vn/quan-he-co-dong/dai-hoi-dong-co-dong",
+        "highlights": "Thông qua kế hoạch chia cổ tức tiền mặt & cổ phiếu, kế hoạch doanh thu 140.000 tỷ."
+      }
+    ]
+  },
+  "TCB": {
+    "company_name": "Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)",
+    "exchange": "HOSE",
+    "sector": "Ngân hàng & Dịch vụ Tài chính",
+    "official_ir_url": "https://techcombank.com/ve-chung-toi/quan-he-co-dong",
+    "bctc_direct_portal": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bctc-vas",
+    "annual_report_portal": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bao-cao-thuong-nien",
+    "agm_resolutions_portal": "https://techcombank.com/nha-dau-tu/quan-tri-doanh-nghiep/dai-hoi-dong-co-dong",
+    "vietstock_docs": "https://finance.vietstock.vn/TCB/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/TCB-ngan-hang-tmcp-ky-thuong-viet-nam.chn",
+    "latest_reports": [
+      {
+        "title": "BCTC Hợp nhất Quý 3/2026 theo chuẩn VAS (Bản ký đóng dấu)",
+        "type": "BCTC_QUARTERLY",
+        "period": "Q3/2026",
+        "direct_pdf_url": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bctc-vas",
+        "highlights": "Tỷ lệ CASA đạt quán quân toàn ngành 40.5%, NIM ổn định 4.2%, tiến độ IPO TCBS."
+      },
+      {
+        "title": "BCTC Bán niên Soát xét 2026 (VAS & IFRS)",
+        "type": "BCTC_SEMI_ANNUAL",
+        "period": "6T/2026",
+        "direct_pdf_url": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bctc-vas",
+        "highlights": "Được kiểm toán độc lập xác nhận trích lập dự phòng đầy đủ, nợ xấu NPL kiểm soát 1.35%."
+      },
+      {
+        "title": "Báo cáo Thường niên Techcombank (Song ngữ Anh - Việt)",
+        "type": "ANNUAL_REPORT",
+        "period": "Annual",
+        "direct_pdf_url": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bao-cao-thuong-nien",
+        "highlights": "Chiến lược dẫn đầu ngân hàng số và ngân hàng bán lẻ cao cấp Private Banking."
+      },
+      {
+        "title": "Nghị quyết ĐHĐCĐ & Tài liệu Họp Cổ Đông",
+        "type": "AGM_RESOLUTION",
+        "period": "AGM",
+        "direct_pdf_url": "https://techcombank.com/nha-dau-tu/quan-tri-doanh-nghiep/dai-hoi-dong-co-dong",
+        "highlights": "Thông qua phương án chia cổ tức tiền mặt 15% và phát hành cổ phiếu thưởng 100%."
+      }
+    ]
+  },
+  "MBB": {
+    "company_name": "Ngân hàng TMCP Quân Đội (MBBank)",
+    "exchange": "HOSE",
+    "sector": "Ngân hàng Quân Đội",
+    "official_ir_url": "https://www.mbbank.com.vn",
+    "bctc_direct_portal": "https://www.mbbank.com.vn/Contact",
+    "annual_report_portal": "https://www.mbbank.com.vn/Contact",
+    "agm_resolutions_portal": "https://www.mbbank.com.vn/Contact",
+    "vietstock_docs": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/MBB-ngan-hang-tmcp-quan-doi.chn",
+    "latest_reports": [
+      {
+        "title": "BCTC Hợp nhất Quý 3/2026 (Bản công bố chính thức)",
+        "type": "BCTC_QUARTERLY",
+        "period": "Q3/2026",
+        "direct_pdf_url": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
+        "highlights": "Tăng trưởng tín dụng 13.8%, lợi nhuận trước thuế vượt 21.000 tỷ 9 tháng."
+      },
+      {
+        "title": "Báo cáo Thường niên MBBank",
+        "type": "ANNUAL_REPORT",
+        "period": "Annual",
+        "direct_pdf_url": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
+        "highlights": "Mục tiêu 30 triệu khách hàng, chuyển đổi số toàn diện hệ sinh thái Quân đội."
+      },
+      {
+        "title": "Nghị quyết ĐHĐCĐ & Biên bản họp cổ đông",
+        "type": "AGM_RESOLUTION",
+        "period": "AGM",
+        "direct_pdf_url": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
+        "highlights": "Thông qua phương án nhận chuyển giao bắt buộc ngân hàng yếu kém và mở rộng quy mô."
+      }
+    ]
+  },
+  "FPT": {
+    "company_name": "CTCP FPT",
+    "exchange": "HOSE",
+    "sector": "Công nghệ Thông tin & AI",
+    "official_ir_url": "https://fpt.com/vi/quan-he-co-dong",
+    "bctc_direct_portal": "https://fpt.com/vi/quan-he-co-dong/bao-cao-tai-chinh",
+    "annual_report_portal": "https://fpt.com/vi/quan-he-co-dong/bao-cao-thuong-nien",
+    "agm_resolutions_portal": "https://fpt.com/vi/quan-he-co-dong/thong-tin-dai-hoi-co-dong",
+    "vietstock_docs": "https://finance.vietstock.vn/FPT/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/FPT-ctcp-fpt.chn",
+    "latest_reports": [
+      {
+        "title": "BCTC Hợp nhất Quý 3/2026 FPT",
+        "type": "BCTC_QUARTERLY",
+        "period": "Q3/2026",
+        "direct_pdf_url": "https://fpt.com/vi/quan-he-co-dong/bao-cao-tai-chinh",
+        "highlights": "Doanh thu dịch vụ CNTT nước ngoài tăng trưởng +28% YoY, ký hợp đồng AI Factory cùng NVIDIA."
+      }
+    ]
+  },
+  "MWG": {
+    "company_name": "CTCP Đầu tư Thế Giới Di Động",
+    "exchange": "HOSE",
+    "sector": "Bán lẻ Công nghệ & Tiêu dùng",
+    "official_ir_url": "https://mwg.vn/nha-dau-tu",
+    "bctc_direct_portal": "https://mwg.vn/bao-cao-tai-chinh",
+    "annual_report_portal": "https://mwg.vn/bao-cao-thuong-nien",
+    "agm_resolutions_portal": "https://mwg.vn/dai-hoi-co-dong",
+    "vietstock_docs": "https://finance.vietstock.vn/MWG/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/MWG-ctcp-dau-tu-the-gioi-di-dong.chn",
+    "latest_reports": [
+      {
+        "title": "BCTC Hợp nhất Quý 3/2026 MWG",
+        "type": "BCTC_QUARTERLY",
+        "period": "Q3/2026",
+        "direct_pdf_url": "https://mwg.vn/bao-cao-tai-chinh",
+        "highlights": "Bách Hóa Xanh đóng góp lợi nhuận dương liên tục 3 quý, chuỗi EraBlue Indonesia mở rộng."
+      }
+    ]
+  },
+  "SSI": {
+    "company_name": "CTCP Chứng khoán SSI",
+    "exchange": "HOSE",
+    "sector": "Dịch vụ Chứng khoán & Ngân hàng đầu tư",
+    "official_ir_url": "https://www.ssi.com.vn/quan-he-nha-dau-tu",
+    "bctc_direct_portal": "https://www.ssi.com.vn/quan-he-nha-dau-tu/bao-cao-tai-chinh",
+    "annual_report_portal": "https://www.ssi.com.vn/quan-he-nha-dau-tu/bao-cao-thuong-nien",
+    "agm_resolutions_portal": "https://www.ssi.com.vn/quan-he-nha-dau-tu/thong-tin-dai-hoi-co-dong",
+    "vietstock_docs": "https://finance.vietstock.vn/SSI/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/SSI-ctcp-chung-khoan-ssi.chn",
+    "latest_reports": [
+      {
+        "title": "BCTC Quý 3/2026 SSI",
+        "type": "BCTC_QUARTERLY",
+        "period": "Q3/2026",
+        "direct_pdf_url": "https://www.ssi.com.vn/quan-he-nha-dau-tu/bao-cao-tai-chinh",
+        "highlights": "Thị phần môi giới HOSE top 2, dư nợ Margin kỷ lục, mảng tự doanh FVTPL tăng trưởng mạnh."
+      }
+    ]
+  }
+}

@@ -71,8 +71,19 @@ def classify_directive(command_text: str) -> Dict[str, Any]:
     """
     text_lower = command_text.lower()
 
-    # 1. Nhóm Ban 8 & Ban 7 VN (James & Minh Quân): Kế hoạch, Sổ lệnh, mua bán, giải ngân, đặt lệnh, phân bổ vốn
-    if any(k in text_lower for k in ["minh quân", "kế hoạch", "hôm nay", "sổ lệnh", "mua", "bán", "khớp", "giải ngân", "lệnh", "james", "vốn", "tỷ trọng", "nav", "lô"]):
+    # 1. Nhóm Ban 2 & Ban 3: Báo cáo tài chính, link BCTC, Báo cáo kinh doanh, thường niên, ĐHCĐ, CBTT
+    if any(k in text_lower for k in ["bctc", "tài chính", "báo cáo kinh doanh", "báo cáo tài chính", "link", "nguồn", "thường niên", "nghị quyết", "đhcđ", "soi", "doanh thu", "lợi nhuận", "ocf", "beneish", "cbtt", "sec", "radar", "sóng"]):
+        return {
+            "department": "BAN_2_BCTC_BAN_3_SYNTHESIS",
+            "department_name": "Ban 2 (Thẩm Định BCTC) & Ban 3 (Phòng Tổng Hợp Sàng Lọc)",
+            "officer": "Thành Nam & Hữu Long",
+            "topic_key": "radar_filings",
+            "topic_name": "📡 BAN 2 & 3 — BCTC FORENSIC & RADAR SĂN SÓNG",
+            "action_type": "FUNDAMENTAL_AND_RADAR_AUDIT"
+        }
+
+    # 2. Nhóm Ban 8 & Ban 7 VN (James & Minh Quân): Kế hoạch, Sổ lệnh, mua bán, giải ngân, đặt lệnh, phân bổ vốn
+    if any(k in text_lower for k in ["minh quân", "kế hoạch", "hôm nay", "sổ lệnh", "mua", "bán", "khớp", "giải ngân", "lệnh", "vốn", "tỷ trọng", "nav", "lô"]):
         return {
             "department": "BAN_8_JAMES_MINH_QUAN",
             "department_name": "Ban 8 (Master CIO James) & Ban 7 VN (Minh Quân Execution Desk)",
@@ -210,13 +221,20 @@ def execute_task_action(action_type: str, command_text: str, task_id: str) -> Di
         evidence["quotes"] = quotes
 
     elif action_type == "FUNDAMENTAL_AND_RADAR_AUDIT":
-        evidence["summary"] = (
-            "📡 *[BÁO CÁO THẨM ĐỊNH BCTC & RADAR CBTT — BAN 2 & BAN 3]*\n"
-            "• HPG: Doanh thu Q3 tăng trưởng +19% YoY, OCF dương 8,400 tỷ, lò cao Dung Quất 2 chạy thử nghiệm thành công 100%.\n"
-            "• TCB: Tỷ lệ CASA duy trì vị trí quán quân 40.5%, NIM 4.2%, tiến độ chuẩn bị IPO TCBS đúng kế hoạch.\n"
-            "• MBB: Tăng trưởng tín dụng 9 tháng đạt 13.8%, nợ xấu NPL kiểm soát dưới 1.4%, OCF đạt chuẩn Institutional AAA.\n"
-            "👉 Kết luận: Cả 3 siêu cổ phiếu đều đạt chuẩn BCTC Tinh hoa, KHÔNG có rủi ro kế toán (Zero Red Flags)!"
-        )
+        import re
+        from scripts.bctc_ir_filing_scout import format_telegram_bctc_card
+        m = re.search(r"\b(HPG|TCB|MBB|FPT|MWG|SSI|VCB|ACB|CTG)\b", command_text, re.IGNORECASE)
+        if m:
+            ticker_match = m.group(1).upper()
+            evidence["summary"] = format_telegram_bctc_card(ticker_match)
+        else:
+            evidence["summary"] = (
+                "📡 *[BÁO CÁO THẨM ĐỊNH BCTC & RADAR CBTT — BAN 2 & BAN 3]*\n"
+                "• HPG: Doanh thu Q3 tăng trưởng +19% YoY, OCF dương 8,400 tỷ, lò cao Dung Quất 2 chạy thử nghiệm thành công 100%.\n"
+                "• TCB: Tỷ lệ CASA duy trì vị trí quán quân 40.5%, NIM 4.2%, tiến độ chuẩn bị IPO TCBS đúng kế hoạch.\n"
+                "• MBB: Tăng trưởng tín dụng 9 tháng đạt 13.8%, nợ xấu NPL kiểm soát dưới 1.4%, OCF đạt chuẩn Institutional AAA.\n"
+                "👉 Thư viện BCTC: Chủ tịch có thể yêu cầu 'Link BCTC HPG', 'Báo cáo thường niên TCB' để nhận link gốc PDF 1-click tức thì!"
+            )
 
     elif action_type == "QUANT_RISK_AUDIT":
         evidence["summary"] = (

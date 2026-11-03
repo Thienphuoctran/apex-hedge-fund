@@ -1,7 +1,7 @@
 # 🛡️ BẢNG TELEMETRY GIÁM SÁT THỜI GIAN THỰC 3 SIÊU CỔ PHIẾU (TCB - MBB - HPG)
 **Đầu mối chỉ huy chuyên trách**: **Victor** — Trưởng Ban Giám Sát Rủi Ro Trong Phiên & Chỉ Huy Tác Chiến Khẩn Cấp (Ban 9)  
 **Tài khoản giao dịch**: **Chủ tịch Trần Quốc Thiên Phước** (TCBS: `105C307855`)  
-**Cập nhật gần nhất**: `2026-11-03 11:19:52` (Chu kỳ quét: `15 giây/lần`)  
+**Cập nhật gần nhất**: `2026-11-03 14:49:05` (Chu kỳ quét: `15 giây/lần`)  
 **Tình trạng rủi ro danh mục**: **`🟢 TOÀN BỘ 3 VỊ THẾ NẰM TRONG VÙNG AN TOÀN TUYỆT ĐỐI`**  
 
 ---
@@ -10,8 +10,8 @@
 | Chỉ Số Đo Lường | Giá Trị Thực Tế | Ghi Chú Tác Chiến |
 | :--- | :---: | :--- |
 | **Tổng Vốn Đã Giải Ngân** | **`8,070,000 VNĐ`** | TCB (100 CP) + MBB (100 CP) + HPG (200 CP) |
-| **Giá Trị Thị Trường Hiện Tại** | **`8,230,000 VNĐ`** | Định giá theo thị giá khớp lệnh thời gian thực |
-| **Lợi Nhuận / Thua Lỗ Tạm Tính (PnL)** | **`+160,000 ₫ (+1.98%)`** | Bảo toàn vốn, vượt qua áp lực điều chỉnh đầu phiên |
+| **Giá Trị Thị Trường Hiện Tại** | **`8,240,000 VNĐ`** | Định giá theo thị giá khớp lệnh thời gian thực |
+| **Lợi Nhuận / Thua Lỗ Tạm Tính (PnL)** | **`+170,000 ₫ (+2.11%)`** | Bảo toàn vốn, vượt qua áp lực điều chỉnh đầu phiên |
 | **Tiền Mặt Dry Powder Dự Phòng** | **`1,670,000 VNĐ`** | Sẵn sàng ứng cứu kịch bản khẩn cấp hoặc lướt sóng T+0 |
 
 ---
@@ -19,9 +19,9 @@
 ## 2. MA TRẬN GIÁM SÁT CHI TIẾT 3 VỊ THẾ ACTIVE (BẢO VỆ 2 ĐẦU 24/7)
 | Mã CP | Doanh Nghiệp | Khối Lượng | Giá Vốn | Thị Giá Hiện Tại | PnL Tạm Tính | Cắt Lỗ Stop 2xATR (Khoảng Cách) | Mục Tiêu TP1 | Mục Tiêu TP2 | Khối Lượng Khớp | Trạng Thái Trực Chiến |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`TCB`** | Techcombank | `100` CP | `21,250 ₫` | **`21,400 ₫`** | `+15,000 ₫ (+0.71%)` | `20,400 ₫` (`+4.67%`) | `23,200 ₫` (`+8.41%`) | `24,800 ₫` | `3,468,735` | 🟢 AN TOÀN |
-| **`MBB`** | Ngân hàng Quân Đội | `100` CP | `18,650 ₫` | **`18,700 ₫`** | `+5,000 ₫ (+0.27%)` | `17,900 ₫` (`+4.28%`) | `19,800 ₫` (`+5.88%`) | `20,800 ₫` | `7,828,869` | 🟢 AN TOÀN |
-| **`HPG`** | Tập đoàn Hòa Phát | `200` CP | `20,400 ₫` | **`21,100 ₫`** | `+140,000 ₫ (+3.43%)` | `19,400 ₫` (`+8.06%`) | `22,200 ₫` (`+5.21%`) | `23,200 ₫` | `17,059,214` | 🟢 ĐANG LÃI TÍCH CỰC |
+| **`TCB`** | Techcombank | `100` CP | `21,250 ₫` | **`21,450 ₫`** | `+20,000 ₫ (+0.94%)` | `20,400 ₫` (`+4.90%`) | `23,200 ₫` (`+8.16%`) | `24,800 ₫` | `11,570,139` | 🟢 AN TOÀN |
+| **`MBB`** | Ngân hàng Quân Đội | `100` CP | `18,650 ₫` | **`18,650 ₫`** | `+0 ₫ (+0.00%)` | `17,900 ₫` (`+4.02%`) | `19,800 ₫` (`+6.17%`) | `20,800 ₫` | `18,821,686` | 🟢 AN TOÀN |
+| **`HPG`** | Tập đoàn Hòa Phát | `200` CP | `20,400 ₫` | **`21,150 ₫`** | `+150,000 ₫ (+3.68%)` | `19,400 ₫` (`+8.27%`) | `22,200 ₫` (`+4.96%`) | `23,200 ₫` | `30,080,424` | 🟢 ĐANG LÃI TÍCH CỰC |
 
 
 ---
