@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-03 01:37:47`  
+*Cập nhật thời gian thực*: `2026-11-03 09:36:38`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -10,7 +10,7 @@
 | Phòng Ban Chuyên Trách | Trạng Thái Hoạt Động | Báo Cáo Tác Chiến Thời Gian Thực |
 | :--- | :---: | :--- |
 | **Ban 1 (Global & VN) — Vĩ Mô & Tiền Tệ SBV/Fed** | **🟢 ACTIVE 24/7** | Giám sát DXY, VIX, Lãi suất SBV & Tỷ giá USD/VND |
-| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 33 tin CBTT |
+| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 30 tin CBTT |
 | **Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff** | **🟢 ACTIVE 24/7** | Phát hiện 8 sóng cổ phiếu VN & 6 sóng cổ phiếu Mỹ đạt chuẩn AAA/AA |
 | **Ban 4 (Global & VN) — Hội Đồng Rủi Ro Định Lượng ATR** | **🟢 ACTIVE 24/7** | Khóa chặt Stop 2xATR <= 7.5% & R:R >= 1:2.0 |
 | **Ban 5 (Global & VN) — Tự Học Thích Nghi & Kiểm Định 4 Ngày** | **🟢 ACTIVE 24/7** | Điểm sức khỏe hệ thống đạt 100/100 (Zero Drift) |
@@ -42,12 +42,12 @@
 
 | Mã CP | Ngành | Giá Hiện Tại | Điểm 10 Danh Thủ | Kỳ Vọng EV% & R:R | Điểm Mua Pullback | Cắt Lỗ 2xATR | Mục Tiêu TP1 | Chất Xúc Tác Cốt Lõi |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`AVGO`** | Custom AI ASICs & Networking | `$322.23` | **`81.4/100`** | `+23.7%` (`1:6.74`) | `$317.69` | `$296.27` | `$374.15` | Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưở... |
-| **`TSM`** | Global Chip Foundry | `$398.63` | **`90.2/100`** | `+19.7%` (`1:5.52`) | `$393.59` | `$369.80` | `$456.29` | Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói ... |
-| **`NVDA`** | Semiconductors & AI | `$202.06` | **`79.2/100`** | `+21.9%` (`1:8.09`) | `$199.77` | `$188.98` | `$228.22` | Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết c... |
-| **`MSFT`** | Enterprise Software & Cloud | `$507.12` | **`88.6/100`** | `+11.1%` (`1:4.66`) | `$503.01` | `$483.64` | `$554.08` | Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quy... |
-| **`JNJ`** | Pharmaceuticals & MedTech | `$270.56` | **`84.5/100`** | `+9.4%` (`1:2.79`) | `$267.85` | `$255.09` | `$301.50` | Tiến trình dàn xếp các vụ kiện pháp lý phấn rôm bước vào giai đoạn cuối cùng với quỹ bồi t... |
-| **`PG`** | Consumer Household Staples | `$163.56` | **`89.3/100`** | `+7.8%` (`1:2.79`) | `$162.36` | `$156.71` | `$177.26` | Chi phí nguyên vật liệu đầu vào (bột giấy, nhựa, dầu thực vật) đang hạ nhiệt giúp mở rộng ... |
+| **`AVGO`** | Custom AI ASICs & Networking | `$322.23` | **`81.4/100`** | `+23.7%` (`1:6.73`) | `$317.67` | `$296.20` | `$374.29` | Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưở... |
+| **`TSM`** | Global Chip Foundry | `$398.63` | **`90.2/100`** | `+19.9%` (`1:5.31`) | `$393.38` | `$368.61` | `$458.67` | Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói ... |
+| **`NVDA`** | Semiconductors & AI | `$202.06` | **`79.2/100`** | `+22.0%` (`1:7.86`) | `$199.70` | `$188.59` | `$229.00` | Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết c... |
+| **`MSFT`** | Enterprise Software & Cloud | `$507.12` | **`88.6/100`** | `+11.4%` (`1:4.31`) | `$502.64` | `$481.55` | `$558.26` | Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quy... |
+| **`XOM`** | Integrated Oil & Gas | `$179.67` | **`87.9/100`** | `+9.1%` (`1:2.79`) | `$178.10` | `$170.71` | `$197.59` | Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông ch... |
+| **`JNJ`** | Pharmaceuticals & MedTech | `$270.56` | **`84.5/100`** | `+8.3%` (`1:2.79`) | `$268.17` | `$256.92` | `$297.84` | Tiến trình dàn xếp các vụ kiện pháp lý phấn rôm bước vào giai đoạn cuối cùng với quỹ bồi t... |
 
 ---
 
@@ -60,7 +60,7 @@
 | `US_SEC_EDGAR` | **`GOOGL`** ⭐ **(ĐANG THEO DÕI)** | `SEC Form 10-Q` | `2026-10-29` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`MSFT`** | `SEC Form 10-Q` | `2026-10-28` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`AAPL`** | `SEC Form 8-K` | `2026-11-02` | Hồ sơ SEC MATERIAL_EVENT_8K đã kiểm chứng 100% |
-| `VIETNAM_CBTT` | **`PNJ`** | `TIN_DOANH_NGHIEP` | `Tue, 03 Nov 26 0` | Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ |
-| `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `CO_TUC` | `Tue, 03 Nov 26 0` | FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20% |
 | `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Tue, 03 Nov 26 0` | Một công ty giày ở TP.HCM giải thể, hàng nghìn công nhân nghỉ việc từ ngày 3/11 |
 | `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Mon, 02 Nov 26 2` | Siêu đô thị 200.000 tỷ đồng của tỷ phú Phạm Nhật Vượng vào vòng bình chọn “7 Kỳ quan Đô thị Tương lai” |
+| `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Mon, 02 Nov 26 1` | Thu giữ hơn 2.100 tấn phân bón trong đường dây do Nguyễn Hồng Lam cầm đầu: 11 người bị bắt, thu lợi hàng chục tỷ đồng |
+| `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Mon, 02 Nov 26 1` | Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ |

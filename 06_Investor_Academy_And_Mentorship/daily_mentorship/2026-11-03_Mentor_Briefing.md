@@ -12,7 +12,7 @@
 - **Công thức / Quy tắc vàng**:
   > Quy tắc Kỷ luật Thép: Khi VIX >= 20, phần Satellite tuyệt đối KHÔNG sử dụng Margin, giữ tối thiểu 40% tiền mặt/T-Bills.
 - **Thực tế thị trường hôm nay (2026-11-03)**: 
-  - VIX hiện tại: **21.15** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.89%** | Dầu WTI: **$96.62**.
+  - VIX hiện tại: **21.15** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.89%** | Dầu WTI: **$96.25**.
   - Độ rộng thị trường (`Market Breadth`): **57.1%** cổ phiếu giữ trên MA200.
 
 ---
@@ -22,13 +22,13 @@
 - **Phân loại chiến lược**: Trụ cột **Danh Mục Core (`8.0% NAV`)** — Đã qua kỳ BCTC an toàn.
 - **Góc nhìn Quỹ Đầu Tư (Số liệu Kiểm toán v5.0)**:
   1. **Nội tại doanh nghiệp & Dòng tiền thực (Ban 2)**:
-     - Forward P/E: **`20.98x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
+     - Forward P/E: **`20.97x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
      - Hiệu suất sinh lời trên vốn đầu tư (`ROIC`): **`23.79%`** vs Chi phí vốn (`WACC`): **`9.2%`** -> Tạo giá trị kinh tế ròng **`EVA Spread = +14.59%`**.
      - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.73%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.51%`**)*.
   2. **Định lượng & Quản trị rủi ro 2 Tầng (Ban 4)**:
-     - Biến động `ATR(14)` = **$11.74**.
-     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$483.64** (`-4.28%`).
-     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$521.81**.
+     - Biến động `ATR(14)` = **$12.79**.
+     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$481.55** (`-4.28%`).
+     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$519.19**.
 - **Bài tập Paper Trading hôm nay**:
   - Chạy lệnh mô phỏng: `python scripts/paper_trading_simulator.py buy --symbol MSFT --shares 10 --type Core`.
 

@@ -1,6 +1,6 @@
 # 🚨 [RED ALERT] BÁO CÁO BIẾN ĐỘNG KHẨN CẤP DANH MỤC & LIVE WAR-ROOM
 **Phòng Ban 9**: Ban Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Khẩn Cấp ("Victor")  
-**Thời gian phát hiện**: `2026-11-02 21:24:54` | **Mã Cổ Phiếu Báo Động**: **`XOM`** (US_GLOBAL)  
+**Thời gian phát hiện**: `2026-11-03 09:36:07` | **Mã Cổ Phiếu Báo Động**: **`XOM`** (US_GLOBAL)  
 **Mức độ khẩn cấp**: **`CRITICAL`** | **Trạng thái**: YÊU CẦU PHẢN ỨNG TỨC THỜI TRONG PHIÊN
 
 ---
@@ -9,13 +9,12 @@
 | Chỉ Số Đo Lường | Giá Trị Thực Tế | Ngưỡng Cảnh Báo An Toàn | Đánh Giá Tình Trạng |
 | :--- | :---: | :---: | :--- |
 | **Giá Hiện Tại** | **`179.67 USD`** | — | Giảm **`-4.05%`** so với tham chiếu |
-| **Khoảng Cách Đến Stop 2xATR** | **`+0.38%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`178.98 USD`** |
-| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`1.02x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
-| **Quy Mô Vốn Đang Rủi Ro** | **`1,872.50 USD`** | — | Số lượng đang nắm: `10 cổ phiếu` |
+| **Khoảng Cách Đến Stop 2xATR** | **`+4.99%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`170.71 USD`** |
+| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`1.08x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
+| **Quy Mô Vốn Đang Rủi Ro** | **`1,796.70 USD`** | — | Số lượng đang nắm: `10 cổ phiếu` |
 | **Giá Trị Trung Bình VWAP** | **`181.31 USD`** | — | Vùng kháng cự ngắn hạn trong phiên |
 
 ### Các Dị Thường Kích Hoạt Còi Báo Động:
-- **LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR**: Giá hiện tại 179.6699981689453 chỉ còn cách Stop Loss (178.98) 0.38% (Ngưỡng cảnh báo <= 1.5%).
 - **LEVEL 1B — BIẾN ĐỘNG SỤT GIẢM CỰC MẠNH (CRITICAL FLASH DROP)**: Giá sụt giảm -4.05% trong phiên (Vượt ngưỡng cảnh báo đỏ -3.5%).
 
 
@@ -40,7 +39,7 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 * **Bản chất**: Cổ phiếu cơ sở bị giảm nhưng chưa về tài khoản hoặc không muốn bán tháo giá đáy.
 * **Lệnh thực thi ngay**:
   - **Hành động**: **`BUY 1 PUT CONTRACT(S) AT-THE-MONEY`**
-  - **Quy mô danh mục được bảo vệ**: `1,872.50 USD` (Bảo hộ **`100.0%`** giá trị vị thế).
+  - **Quy mô danh mục được bảo vệ**: `1,796.70 USD` (Bảo hộ **`100.0%`** giá trị vị thế).
 * **Kết quả**: Vị thế phái sinh Short sẽ sinh lời tương đương mức lỗ của cổ phiếu cơ sở, **khóa băng mức lỗ danh mục 100% tức thì**!
 
 ---
@@ -63,7 +62,7 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 ---
 
 ### 🧘 PHƯƠNG ÁN D: DISCIPLINED HOLD & RE-AFFIRM THESIS (GIỮ VỮNG TÂM LÝ KỶ LUẬT)
-* **Bản chất**: Nếu giá vẫn chưa chạm $Stop 2xATR$ (`178.98 USD`) và BCTC doanh nghiệp vẫn siêu tăng trưởng, không manh động bán tháo hoảng loạn cùng đám đông.
+* **Bản chất**: Nếu giá vẫn chưa chạm $Stop 2xATR$ (`170.71 USD`) và BCTC doanh nghiệp vẫn siêu tăng trưởng, không manh động bán tháo hoảng loạn cùng đám đông.
 * **Hành động**: Giữ nguyên trạng thái, tiếp tục để Victor giám sát sát sao mỗi 60 giây.
 
 ---

@@ -18,7 +18,7 @@
 | **MWG** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **92.8/100** | 9/9 | 71 | 0.21x | +8.4% | 2.22x | 10.78 (SAFE) | -2.99 (SAFE) | 143,165 ₫ (+93.5%) |
 | **FPT** | HOSE | Công Nghệ Thông Tin & Viễn Thông | **AAA** | **92.7/100** | 9/9 | 24 | 0.44x | +19.4% | 1.25x | 12.94 (SAFE) | -2.8 (SAFE) | 99,062 ₫ (+88.0%) |
 | **PVT** | HOSE | Cảng Biển & Logistics Vận Tải | **AAA** | **92.4/100** | 9/9 | 96 | 0.46x | +1.4% | 2.01x | 8.08 (SAFE) | -2.93 (SAFE) | 49,296 ₫ (+132.0%) |
-| **CTG** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **92.3/100** | 9/9 | 56 | 0.38x | +13.4% | CASA 22.6% | 3.24 (SAFE) | -2.69 (SAFE) | 80,098 ₫ (+164.3%) |
+| **CTG** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **92.3/100** | 9/9 | 56 | 0.38x | +13.4% | CASA 22.6% | 3.24 (SAFE) | -2.69 (SAFE) | 78,803 ₫ (+160.1%) |
 | **MBS** | HNX | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **91.4/100** | 9/9 | 78 | 0.37x | +2.6% | 1.21x | 2.77 (SAFE) | -2.68 (SAFE) | 35,745 ₫ (+43.0%) |
 | **ACB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **91.2/100** | 9/9 | 75 | 0.68x | +8.0% | CASA 23.2% | 3.26 (SAFE) | -2.69 (SAFE) | 41,064 ₫ (+95.5%) |
 | **BID** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **91.0/100** | 9/9 | 54 | 0.62x | +9.1% | CASA 19.8% | 3.21 (SAFE) | -2.68 (SAFE) | 65,999 ₫ (+97.6%) |
@@ -56,13 +56,13 @@
 | **REE** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AA** | **81.7/100** | 9/9 | 45 | 1.7x | -0.9% | 1.58x | 7.58 (SAFE) | -2.68 (SAFE) | 60,642 ₫ (+33.6%) |
 | **NLG** | HOSE | Bất Động Sản Dân Cư | **AA** | **81.5/100** | 9/9 | 41 | 1.29x | -5.5% | 1.44x | 9.99 (SAFE) | -2.3 (SAFE) | 21,248 ₫ (-3.4%) |
 | **NKG** | HOSE | Thép & Vật Liệu Xây Dựng | **AA** | **81.5/100** | 7/9 | 68 | 0.53x | -2.4% | 1.71x | 7.39 (SAFE) | -2.76 (SAFE) | 13,428 ₫ (+12.8%) |
-| **DHG** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | **AA** | **81.4/100** | 8/9 | 65 | 2.13x | +8.1% | 1.11x | 13.57 (SAFE) | -2.71 (SAFE) | 64,916 ₫ (-25.3%) |
+| **DHG** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | **AA** | **81.4/100** | 8/9 | 65 | 2.12x | +8.1% | 1.11x | 13.57 (SAFE) | -2.71 (SAFE) | 65,069 ₫ (-25.1%) |
 | **GAS** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AA** | **78.7/100** | 8/9 | 95 | 1.94x | +8.2% | 1.24x | 14.1 (SAFE) | -2.77 (SAFE) | 60,585 ₫ (-22.3%) |
 | **BCM** | HOSE | Bất Động Sản Khu Công Nghiệp | **AA** | **77.3/100** | 8/9 | 35 | 1.41x | -3.0% | 1.18x | 6.54 (SAFE) | -2.29 (SAFE) | 34,026 ₫ (-11.4%) |
 | **VND** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AA** | **74.0/100** | 6/9 | 27 | 1.6x | +0.3% | 0.91x | 2.7 (SAFE) | -2.65 (SAFE) | 21,388 ₫ (+59.6%) |
 | **KBC** | HOSE | Bất Động Sản Khu Công Nghiệp | **BB (WATCH)** | **69.2/100** | 7/9 | 39 | 2.27x | -3.9% | 1.23x | 11.74 (SAFE) | -1.19 (HIGH_RISK) | 34,468 ₫ (+32.6%) |
-| **DXG** | HOSE | Bất Động Sản Dân Cư | **BB (WATCH)** | **62.6/100** | 5/9 | 30 | 3.49x | -6.8% | -1.81x | 10.01 (SAFE) | -0.9 (HIGH_RISK) | 4,596 ₫ (-54.5%) |
-| **PDR** | HOSE | Bất Động Sản Dân Cư | **BB (WATCH)** | **61.4/100** | 4/9 | 23 | 3.13x | -7.0% | -0.62x | 10.06 (SAFE) | 0.41 (HIGH_RISK) | 13,027 ₫ (+15.3%) |
+| **DXG** | HOSE | Bất Động Sản Dân Cư | **BB (WATCH)** | **62.6/100** | 5/9 | 30 | 3.56x | -6.8% | -1.81x | 10.01 (SAFE) | -0.9 (HIGH_RISK) | 4,572 ₫ (-54.7%) |
+| **PDR** | HOSE | Bất Động Sản Dân Cư | **BB (WATCH)** | **61.4/100** | 4/9 | 23 | 3.11x | -7.0% | -0.62x | 10.06 (SAFE) | 0.41 (HIGH_RISK) | 13,083 ₫ (+15.8%) |
 
 ---
 
@@ -191,7 +191,7 @@
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **26,100 tỷ VND** (OCF/LNST = `1.17x`) | FCF = **24,750 tỷ VND** | Tiền mặt = **198,000 tỷ** | D/E = `1.27x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **22.64%** vs WACC = **9.2%** (EVA Spread = **+13.44%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **80,098 ₫** (Biên an toàn MoS = **+164.3%**) | GARP SWEET SPOT (PEG = 0.38x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **78,803 ₫** (Biên an toàn MoS = **+160.1%**) | GARP SWEET SPOT (PEG = 0.38x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
   * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **70.0/100** | Sức mạnh giá RS Rating = **56/99** | `Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.69` (SAFE) | Sloan Accrual = `-0.89%` | Altman/CAMELS Z = `3.24` (SAFE (CAMELS Vững mạnh)).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **23,000 tỷ** (Ước đạt **97.4%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Chu kỳ giảm mạnh chi phí trích lập dự phòng sau khi làm sạch bảng cân đối, thúc đẩy lợi nhuận bứt tốc.

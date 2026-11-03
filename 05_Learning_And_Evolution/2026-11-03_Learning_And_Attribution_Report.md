@@ -7,8 +7,8 @@
 
 ## 1. Bảng Đo Lường Hiệu Suất & Độ Chuẩn Xác Của Dự Báo (Prediction Telemetry)
 - **Tổng số Tài sản Được Theo Dõi Toàn Cầu**: **`35 Cổ phiếu`** & **`12 ETF Ngành GICS`**
-- **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **21.15**, `US10Y` = **4.89%**, `WTI Oil` = **$96.62/thùng**)
-- **Tỷ lệ Dự Báo Chuẩn Xác (Walk-Forward Hit Rate)**: **`82.6%`** (`19 Thắng` / `4 Thua` / `12 Tích lũy`)
+- **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **21.15**, `US10Y` = **4.89%**, `WTI Oil` = **$96.25/thùng**)
+- **Tỷ lệ Dự Báo Chuẩn Xác (Walk-Forward Hit Rate)**: **`77.8%`** (`14 Thắng` / `4 Thua` / `17 Tích lũy`)
 - **Hiệu quả Bộ Lọc Rủi Ro (Avoidance Score)**: **100%** (Cảnh báo thành công các bẫy suy yếu `TSLA`, `COIN`, `QCOM`, `SMCI`, `INTC`).
 
 ---
@@ -17,9 +17,9 @@
 
 | Khung Thời Gian Hồi Tố | Lợi Suất Danh Mục Chuẩn Hóa (`60% Equity / 40% T-Bills`) | Lợi Suất Benchmark `S&P 500 (^GSPC)` | **Alpha Thực Tế Tạo Ra (`Realized Alpha`)** | Đánh Giá Hồi Tố Của Ban 5 |
 | :--- | :---: | :---: | :---: | :--- |
-| **`T-1` (1 Phiên Gần Nhất)** | `-0.35%` | `-0.51%` | **`+0.16%`** | Bảo vệ NAV xuất sắc khi S&P 500 & Nasdaq điều chỉnh giảm |
-| **`T-5` (1 Tuần Giao Dịch)** | `+0.45%` | `-1.76%` | **`+2.21%`** | Nhóm Dầu khí (`OXY`), Y tế (`JNJ`, `ABBV`) & Bán dẫn (`TSM`) giữ nhịp tăng |
-| **`T-20` (1 Tháng Giao Dịch)** | `+4.02%` | `-2.35%` | **`+6.37%`** | Vượt trội nhờ né đợt rút vốn khỏi nhóm P/E cao và giữ 40% T-Bills |
+| **`T-1` (1 Phiên Gần Nhất)** | `-0.17%` | `-0.51%` | **`+0.34%`** | Bảo vệ NAV xuất sắc khi S&P 500 & Nasdaq điều chỉnh giảm |
+| **`T-5` (1 Tuần Giao Dịch)** | `+0.14%` | `-1.76%` | **`+1.90%`** | Nhóm Dầu khí (`OXY`), Y tế (`JNJ`, `ABBV`) & Bán dẫn (`TSM`) giữ nhịp tăng |
+| **`T-20` (1 Tháng Giao Dịch)** | `+3.63%` | `-2.35%` | **`+5.98%`** | Vượt trội nhờ né đợt rút vốn khỏi nhóm P/E cao và giữ 40% T-Bills |
 
 ---
 
@@ -29,7 +29,7 @@
 | :--- | :--- | :--- | :--- |
 | **1. Radar Lịch BCTC (`Earnings Radar <= 7d`)** | Tự động khóa mua mới & loại khỏi `risk_parity_allocations` các mã có lịch BCTC `0..7 ngày` | Đã khóa tự động **`AMD (0d), QCOM (1d), ARM (1d), SMCI (0d), BRK-B (4d), NVO (1d), OXY (6d), MCD (1d)`** (đưa vào `Locked Watchlist`); xác nhận **`AAPL (1d ago), AMZN (5d ago), PLTR (1d ago), COIN (5d ago), LLY (5d ago), ABBV (4d ago)`** đã qua kỳ công bố BCTC an toàn | **TUÂN THỦ 100% — 0 VI PHẠM** |
 | **2. Tín Hiệu SEC Form 4 & `True FCF ex-SBC`** | Lọc cổ phiếu có dòng tiền thực dương sau trừ SBC & Ban lãnh đạo mua ròng | `MSFT`, `JPM`, `PG`, `TSM` duy trì sức mạnh giá và dòng tiền định chế vượt trội | **TÍN HIỆU ĐỘ TIN CẬY CAO** |
-| **3. Định Cỡ `ATR Risk-Parity`** | Khống chế rủi ro mất vốn mỗi vị thế và trần cụm Bán dẫn `<= 14% NAV` | Tổng rủi ro toàn danh mục được khóa ở mức **`-2.77% NAV`**, Beta danh mục **`0.46`** | **TỐI ƯU HÓA RỦI RO** |
+| **3. Định Cỡ `ATR Risk-Parity`** | Khống chế rủi ro mất vốn mỗi vị thế và trần cụm Bán dẫn `<= 14% NAV` | Tổng rủi ro toàn danh mục được khóa ở mức **`-2.81% NAV`**, Beta danh mục **`0.44`** | **TỐI ƯU HÓA RỦI RO** |
 | **4. Ngưỡng Cắt Lỗ `2xATR` & `Chandelier Stop`** | Kết hợp cắt lỗ ban đầu `2xATR(14)` và chặn lãi động `Highest_22d - 2.5xATR` | Bảo vệ trọn vẹn lợi nhuận các mã dẫn sóng mà không bị rung rũ sớm | **KỶ LUẬT ĐỊNH LƯỢNG** |
 
 ---

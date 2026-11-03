@@ -94,10 +94,10 @@ sequenceDiagram
 
 | Mã CP | Sàn / Ngành | Vốn Phân Bổ (USD / VNĐ) | Số Cổ Phiếu | Giá Hiện Tại | Điểm Vào Lệnh Tối Ưu (Chia Nhịp) | Ngưỡng Cắt Lỗ Stop 2xATR | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **AVGO** | Custom AI ASICs & Networking | **$0.00**<br/>(0 ₫) | **0 CP** | $322.23 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($322.23) • 40% Gia tăng Breakout • 30% Retest | **$298.06**<br/>(-7.5%) | TP1: **$374.15**<br/>TP2: **$530.14** | +23.7%<br/>(1:6.74) |
-| **NVDA** | Semiconductors & AI | **$0.00**<br/>(0 ₫) | **0 CP** | $202.06 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($202.06) • 40% Gia tăng Breakout • 30% Retest | **$188.98**<br/>(-6.47%) | TP1: **$228.22**<br/>TP2: **$328.95** | +21.9%<br/>(1:8.09) |
-| **TSM** | Global Chip Foundry | **$0.00**<br/>(0 ₫) | **0 CP** | $398.63 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($398.63) • 40% Gia tăng Breakout • 30% Retest | **$369.80**<br/>(-7.23%) | TP1: **$456.29**<br/>TP2: **$584.39** | +19.7%<br/>(1:5.52) |
-| **GOOGL** | Search & Hyperscale Cloud | **$0.00**<br/>(0 ₫) | **0 CP** | $278.99 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($278.99) • 40% Gia tăng Breakout • 30% Retest | **$258.07**<br/>(-7.5%) | TP1: **$322.35**<br/>TP2: **$402.73** | +13.1%<br/>(1:4.93) |
+| **AVGO** | Custom AI ASICs & Networking | **$0.00**<br/>(0 ₫) | **0 CP** | $322.23 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($322.23) • 40% Gia tăng Breakout • 30% Retest | **$298.06**<br/>(-7.5%) | TP1: **$374.29**<br/>TP2: **$530.14** | +23.7%<br/>(1:6.73) |
+| **NVDA** | Semiconductors & AI | **$0.00**<br/>(0 ₫) | **0 CP** | $202.06 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($202.06) • 40% Gia tăng Breakout • 30% Retest | **$188.59**<br/>(-6.67%) | TP1: **$229.00**<br/>TP2: **$328.95** | +22.0%<br/>(1:7.86) |
+| **TSM** | Global Chip Foundry | **$0.00**<br/>(0 ₫) | **0 CP** | $398.63 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($398.63) • 40% Gia tăng Breakout • 30% Retest | **$368.73**<br/>(-7.5%) | TP1: **$458.67**<br/>TP2: **$584.39** | +19.9%<br/>(1:5.31) |
+| **GOOGL** | Search & Hyperscale Cloud | **$0.00**<br/>(0 ₫) | **0 CP** | $278.99 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($278.99) • 40% Gia tăng Breakout • 30% Retest | **$258.07**<br/>(-7.5%) | TP1: **$322.69**<br/>TP2: **$402.73** | +13.2%<br/>(1:4.89) |
 
 ### Giải Trình Chi Tiết Từng Mã Mỹ Của Master CIO & Alex:
 
@@ -114,7 +114,7 @@ sequenceDiagram
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
 
 #### 🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)
-- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.21%` • True FCF ex-SBC: `$33.48B` • Altman Z: `16.04` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
+- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.17%` • True FCF ex-SBC: `$33.59B` • Altman Z: `15.99` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
 - **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.
 - **Cách thức thực thi tối ưu lợi nhuận (The "How")**: Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO.
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).

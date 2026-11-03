@@ -522,6 +522,13 @@ def log_daemon(msg: str):
 
 
 def run_daemon():
+    """[UNIFIED OMNI-COPILOT V4.0 GATEWAY] Tự động ủy quyền sang Engine Hợp Nhất V4.0 để chống xung đột 409."""
+    unified_script = Path(r"c:\Users\phuoc\Downloads\antigravity\Trợ lí cá nhân\scripts\telegram_ai_copilot.py")
+    if unified_script.exists():
+        log_daemon("[*] Chuyển tiếp sang Unified Omni-Copilot V4.0 (Palmer + Long + Nam + Watchdog)...")
+        import subprocess
+        subprocess.run([sys.executable, "-u", str(unified_script)], check=False)
+        return
     """Chạy liên tục nền lắng nghe 24/7 với cơ chế Tự Phục Hồi Vĩnh Cửu (Bulletproof Self-Healing)."""
     cfg = load_config()
     bot_token = cfg.get("bot_token", "")

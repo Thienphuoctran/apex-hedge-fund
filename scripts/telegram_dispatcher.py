@@ -125,7 +125,8 @@ def dispatch_message(
     text: str,
     header_badge: Optional[str] = None,
     reply_markup: Optional[Dict[str, Any]] = None,
-    force_private: bool = False
+    force_private: bool = False,
+    parse_mode: Optional[str] = "Markdown"
 ) -> bool:
     """
     Định tuyến tin nhắn vào đúng Forum Topic trên Supergroup.
@@ -153,7 +154,8 @@ def dispatch_message(
             chat_id=str(group_chat_id),
             text=formatted_text,
             message_thread_id=int(thread_id),
-            reply_markup=reply_markup
+            reply_markup=reply_markup,
+            parse_mode=parse_mode
         )
         if ok:
             return True
@@ -168,7 +170,8 @@ def dispatch_message(
         bot_token=bot_token,
         chat_id=str(private_chat_id),
         text=formatted_text,
-        reply_markup=reply_markup
+        reply_markup=reply_markup,
+        parse_mode=parse_mode
     )
 
 

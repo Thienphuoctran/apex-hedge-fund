@@ -7,12 +7,12 @@
 ---
 
 ### PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)
-- **Chủ đề**: **Chiến Thuật Chia Lệnh 60/40 & Lọc Siêu Cổ Phiếu Tạo Giá Trị Thực (EVA Spread > 0) Khi VIX = 19.14 (< 20)**
-- **Bản chất chiến lược**: Khi VIX hạ nhiệt xuống dưới 20 (19.14), Ban 5 đã cân bằng trọng số chấm điểm chuẩn 100% (Vĩ mô 25% / BCTC-FCF 30% / Định giá 25% / Kỹ thuật 20%). Danh mục Core (65%) tập trung tích sản các doanh nghiệp có ROIC > WACC (EVA dương) và Piotroski F-Score >= 7/9; trong khi phần Satellite (35%) tận dụng quy tắc chia lệnh 60/40 (40% đặt Limit tại Giá - 0.35xATR) để tối ưu giá vốn.
+- **Chủ đề**: **Chiến Thuật Chia Lệnh 60/40 & Lọc Siêu Cổ Phiếu Tạo Giá Trị Thực (EVA Spread > 0) Khi VIX = 19.42 (< 20)**
+- **Bản chất chiến lược**: Khi VIX hạ nhiệt xuống dưới 20 (19.42), Ban 5 đã cân bằng trọng số chấm điểm chuẩn 100% (Vĩ mô 25% / BCTC-FCF 30% / Định giá 25% / Kỹ thuật 20%). Danh mục Core (65%) tập trung tích sản các doanh nghiệp có ROIC > WACC (EVA dương) và Piotroski F-Score >= 7/9; trong khi phần Satellite (35%) tận dụng quy tắc chia lệnh 60/40 (40% đặt Limit tại Giá - 0.35xATR) để tối ưu giá vốn.
 - **Công thức / Quy tắc vàng**:
   > Quy tắc Phân Bổ Vốn Quỹ & Thuế Cổ Tức VN: (1) Không giải ngân mới vào mã có lịch BCTC <= 7 ngày; (2) Tính cổ tức thực nhận sau thuế khấu trừ tại nguồn 30% của Mỹ (WHT); (3) Luôn kiểm tra cả Stop 2xATR ban đầu và Chandelier Trailing Stop (Highest_22d - 2.5xATR).
 - **Thực tế thị trường hôm nay (2026-11-02)**: 
-  - VIX hiện tại: **19.14** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.93%** | Dầu WTI: **$99.92**.
+  - VIX hiện tại: **19.42** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.93%** | Dầu WTI: **$101.61**.
   - Độ rộng thị trường (`Market Breadth`): **62.9%** cổ phiếu giữ trên MA200.
 
 ---
@@ -22,7 +22,7 @@
 - **Phân loại chiến lược**: Trụ cột **Danh Mục Core (`8.0% NAV`)** — Đã qua kỳ BCTC an toàn.
 - **Góc nhìn Quỹ Đầu Tư (Số liệu Kiểm toán v5.0)**:
   1. **Nội tại doanh nghiệp & Dòng tiền thực (Ban 2)**:
-     - Forward P/E: **`21.57x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
+     - Forward P/E: **`21.62x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
      - Hiệu suất sinh lời trên vốn đầu tư (`ROIC`): **`23.81%`** vs Chi phí vốn (`WACC`): **`9.48%`** -> Tạo giá trị kinh tế ròng **`EVA Spread = +14.33%`**.
      - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.71%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.5%`**)*.
   2. **Định lượng & Quản trị rủi ro 2 Tầng (Ban 4)**:

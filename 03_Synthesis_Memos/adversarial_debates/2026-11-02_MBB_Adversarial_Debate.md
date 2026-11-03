@@ -3,7 +3,7 @@
 
 > **CƠ QUAN TỔ CHỨC**: BAN 3 VN (`vn-synthesis-hub-agent`) & BAN ĐẦU TƯ TỐI CAO (BAN 8)  
 > **CHỦ TỌA PHÂN XỬ**: Palmer (Cố Vấn Tối Cao) & James (Tổng Tư Lệnh Master CIO)  
-> **THỜI GIAN TRANH TỤNG**: `2026-11-02T10:13:05.744392`  
+> **THỜI GIAN TRANH TỤNG**: `2026-11-02T16:18:06.987133`  
 > **CỔ PHIẾU**: **`MBB`** (Quân Đội (MBBank) — Sàn HOSE)  
 > **THỊ GIÁ HIỆN TẠI**: `19,300 ₫` | **ĐỊNH GIÁ GRAHAM**: `48,033 ₫`  
 > **BIÊN AN TOÀN GRAHAM (MoS)**: `+59.82%`  

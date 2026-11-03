@@ -79,8 +79,8 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 - **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **84.2%**
 
 ## [Phiên Giao Dịch: 2026-11-03] — Tiến Hóa Mô Hình v5.0 & Kiểm Toán Walk-Forward
-- **Chế độ Vĩ mô**: VIX = 21.15 | Dầu WTI = $96.62 | US10Y = 4.89%.
+- **Chế độ Vĩ mô**: VIX = 21.15 | Dầu WTI = $96.25 | US10Y = 4.89%.
 - **Trọng số Chấm điểm Thích nghi (Tổng 100%)**: Vĩ mô `25%` | BCTC/FCF `35%` | Định giá `20%` | Kỹ thuật `20%`.
 - **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `AMD (0d), QCOM (1d), ARM (1d), SMCI (0d), BRK-B (4d), NVO (1d), OXY (6d), MCD (1d)` (chuyển sang `Locked Earnings Watchlist`).
-- **Realized Alpha vs S&P 500**: 1D `+0.16%` | 5D `+2.21%` | 20D `+6.37%`.
+- **Realized Alpha vs S&P 500**: 1D `+0.34%` | 5D `+1.90%` | 20D `+5.98%`.
 - **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **82.6%**

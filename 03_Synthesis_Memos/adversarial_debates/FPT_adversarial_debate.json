@@ -1,0 +1,92 @@
+{
+  "ticker": "FPT",
+  "company_name": "Tập Đoàn FPT",
+  "exchange": "HOSE",
+  "sector": "Công Nghệ Thông Tin & Viễn Thông",
+  "timestamp": "2026-11-02T16:18:06.995073",
+  "forensic_audit": {
+    "auditor_role": "Senior Forensic Accounting Specialist (Thanh Tra Pháp Y Kế Toán)",
+    "forensic_score": 100.0,
+    "red_flags_detected": [],
+    "beneish_m_score": {
+      "score": -2.8,
+      "manipulation_risk": "LOW",
+      "primary_driver": "DSRI và OCF/LNST duy trì thặng dư lành mạnh"
+    },
+    "piotroski_f_score": 9,
+    "audit_verdict": "CLEAN",
+    "forensic_summary": "Điểm Pháp Y Kế Toán: 100.0/100. Đánh giá: BCTC SẠCH BÓNG — CHẤT LƯỢNG LỢI NHUẬN KIM CƯƠNG."
+  },
+  "bull_thesis": {
+    "analyst_role": "Senior Buy-Side Equity Analyst (Chuyên Gia Tăng Trưởng & Moat)",
+    "core_drivers": [
+      {
+        "pillar": "Durable Industry Moat & Growth",
+        "rationale": "Doanh nghiệp đầu ngành Công Nghệ Thông Tin & Viễn Thông, tăng trưởng doanh thu YoY 21.2%, ROE duy trì 24.8%.",
+        "supporting_metrics": {
+          "metric_name": "ROE & P/E",
+          "historical_value": "ROE 24.8% | P/E 11.2x",
+          "trend": "Attractive"
+        }
+      },
+      {
+        "pillar": "Cash Flow Quality",
+        "rationale": "Dòng tiền OCF thặng dư lành mạnh 1.25x LNST, thanh khoản bảng cân đối vững vàng.",
+        "supporting_metrics": {
+          "metric_name": "OCF/LNST",
+          "historical_value": "1.25x",
+          "trend": "Positive"
+        }
+      }
+    ],
+    "reinvestment_efficiency": "Tỷ lệ tái đầu tư thặng dư cao với chênh lệch EVA Spread dương bền vững",
+    "growth_conviction_score": 0.8,
+    "catalyst_summary": "Doanh thu CNTT nước ngoài vượt 1 tỷ USD (Nhật Bản +32%), vận hành AI Factory cùng NVIDIA tại Việt Nam và Nhật Bản."
+  },
+  "bear_counter_thesis": {
+    "analyst_role": "Short-Seller & Risk Management Director (Chuyên Gia Bán Khống & Red Team)",
+    "points_of_attack": [
+      {
+        "target_bull_point": "Kỳ vọng định giá mở rộng",
+        "counter_argument": "Mức P/E 11.2x có thể bị bẫy định giá Value Trap nếu ngành Công Nghệ Thông Tin & Viễn Thông bước vào chu kỳ chậm lại.",
+        "risk_metric": "Đòn bẩy D/E 0.45x tạo chi phí lãi vay cố định ăn mòn biên lợi nhuận ròng."
+      }
+    ],
+    "downside_triggers": [
+      "Dòng tiền thị trường chung suy yếu hoặc rút khỏi nhóm cổ phiếu vốn hóa lớn.",
+      "Lợi nhuận quý tới không đạt kỳ vọng của các công ty chứng khoán."
+    ],
+    "structural_threat_level": "MODERATE",
+    "threat_penalty_score": 0.35,
+    "bear_verdict": "Không khuyến nghị Bán Khống (Short) vì BCTC quá sạch, nhưng CẢNH BÁO: Phải gắn chặt Stop Loss 2xATR và chỉ mua ở vùng giá chiết khấu, tuyệt đối không FOMO đu đỉnh!"
+  },
+  "bull_rebuttal": {
+    "analyst_role": "Senior Buy-Side Equity Analyst (Phản Pháo & Bảo Vệ Luận Điểm)",
+    "counter_rebuttals": [
+      {
+        "counter_bear_point": "Rủi ro chu kỳ và định giá",
+        "rebuttal_argument": "Doanh nghiệp sở hữu vị thế dẫn đầu ngành và dòng tiền kinh doanh OCF dương lớn, hoàn toàn có khả năng vượt qua các biến động chu kỳ ngắn hạn.",
+        "defense_strength": "MODERATE"
+      }
+    ],
+    "net_defense_verdict": "Luận điểm của Bear đã được phản bác thuyết phục bằng số liệu thực chứng BCTC."
+  },
+  "investment_decision": {
+    "symbol": "FPT",
+    "verdict": "STRONG_BUY",
+    "action_directive": "GIAI NGÂN MẠNH THEO KIM TỰ THÁP (30-40-30)",
+    "net_conviction_score": 56.2,
+    "confidence_level": "HIGH",
+    "valuation_assessment": {
+      "current_market_price": 52700.0,
+      "intrinsic_value_estimate": 84209.0,
+      "implied_margin_of_safety_pct": 37.42
+    },
+    "synthesis_summary": "Tổng Tư Lệnh James phân xử: Forensic Auditor xác nhận BCTC đạt chuẩn 100/100 sạch bóng. Luận điểm của Bull Agent về Moat và Cỗ máy OCF vững như bàn thạch. Các đòn tấn công của Bear Agent đã được phản pháo thuyết phục tại Vòng 4, kết hợp Biên An Toàn Graham MoS đạt +37.4% và bảo vệ cứng bằng Stop 2xATR. Net Conviction Score đạt +56.2/100. Phê duyệt: STRONG_BUY — GIAI NGÂN MẠNH THEO KIM TỰ THÁP (30-40-30)!",
+    "execution_rules": [
+      "Khung Giờ Vàng (14h00 – 14h25): Chờ hấp thụ xong hàng T+2 mới bấm cò giải ngân chính thức.",
+      "Kỷ luật lệnh LO: Đặt lệnh mua Limit Order, tuyệt đối không dùng MP mua đuổi giá xanh trước 10h00 sáng.",
+      "Khoá cứng rủi ro Stop 2xATR: Cắt lỗ dứt khoát nếu thủng hỗ trợ, không bình quân giá xuống."
+    ]
+  }
+}

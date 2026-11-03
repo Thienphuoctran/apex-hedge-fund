@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03 01:37:47",
+  "generated_at": "2026-11-03 09:36:38",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -189,12 +189,12 @@
       "sector": "Custom AI ASICs & Networking",
       "price_usd": 322.23,
       "legends_score": 81.4,
-      "ev_pct": 23.72,
-      "rr_ratio": 6.74,
+      "ev_pct": 23.73,
+      "rr_ratio": 6.73,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 317.69,
-      "stop_2atr_usd": 296.27,
-      "tp1_usd": 374.15,
+      "limit_entry_usd": 317.67,
+      "stop_2atr_usd": 296.2,
+      "tp1_usd": 374.29,
       "catalyst": "Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưởng bùng nổ 3 con số. Việc sáp nhập VMware bắt đầu phát huy hiệu quả cắt giảm chi phí và gia tăng dòng tiền thuê bao phần mềm doanh nghiệp."
     },
     {
@@ -203,12 +203,12 @@
       "sector": "Global Chip Foundry",
       "price_usd": 398.63,
       "legends_score": 90.2,
-      "ev_pct": 19.72,
-      "rr_ratio": 5.52,
+      "ev_pct": 19.93,
+      "rr_ratio": 5.31,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 393.59,
-      "stop_2atr_usd": 369.8,
-      "tp1_usd": 456.29,
+      "limit_entry_usd": 393.38,
+      "stop_2atr_usd": 368.61,
+      "tp1_usd": 458.67,
       "catalyst": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia."
     },
     {
@@ -217,12 +217,12 @@
       "sector": "Semiconductors & AI",
       "price_usd": 202.06,
       "legends_score": 79.2,
-      "ev_pct": 21.87,
-      "rr_ratio": 8.09,
+      "ev_pct": 21.98,
+      "rr_ratio": 7.86,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 199.77,
-      "stop_2atr_usd": 188.98,
-      "tp1_usd": 228.22,
+      "limit_entry_usd": 199.7,
+      "stop_2atr_usd": 188.59,
+      "tp1_usd": 229.0,
       "catalyst": "Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết công suất cả năm tới. Các tập đoàn siêu đám mây (Meta, Google, Microsoft) cam kết chi tiêu vốn (CapEx) vượt $200 tỷ USD cho hạ tầng AI."
     },
     {
@@ -231,13 +231,27 @@
       "sector": "Enterprise Software & Cloud",
       "price_usd": 507.12,
       "legends_score": 88.6,
-      "ev_pct": 11.07,
-      "rr_ratio": 4.66,
+      "ev_pct": 11.36,
+      "rr_ratio": 4.31,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 503.01,
-      "stop_2atr_usd": 483.64,
-      "tp1_usd": 554.08,
+      "limit_entry_usd": 502.64,
+      "stop_2atr_usd": 481.55,
+      "tp1_usd": 558.26,
       "catalyst": "Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu tăng mua ròng cổ phiếu công nghệ có FCF lớn sau khi VIX hạ nhiệt về 19.42."
+    },
+    {
+      "symbol": "XOM",
+      "name": "Exxon Mobil Corp.",
+      "sector": "Integrated Oil & Gas",
+      "price_usd": 179.67,
+      "legends_score": 87.9,
+      "ev_pct": 9.09,
+      "rr_ratio": 2.79,
+      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
+      "limit_entry_usd": 178.1,
+      "stop_2atr_usd": 170.71,
+      "tp1_usd": 197.59,
+      "catalyst": "Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông chưa giải tỏa. Dự án thu giữ carbon trực tiếp (DAC STRATOS) tiến gần ngày vận hành thương mại, mở ra nguồn tín chỉ carbon khổng lồ."
     },
     {
       "symbol": "JNJ",
@@ -245,27 +259,13 @@
       "sector": "Pharmaceuticals & MedTech",
       "price_usd": 270.56,
       "legends_score": 84.5,
-      "ev_pct": 9.44,
+      "ev_pct": 8.33,
       "rr_ratio": 2.79,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 267.85,
-      "stop_2atr_usd": 255.09,
-      "tp1_usd": 301.5,
+      "limit_entry_usd": 268.17,
+      "stop_2atr_usd": 256.92,
+      "tp1_usd": 297.84,
       "catalyst": "Tiến trình dàn xếp các vụ kiện pháp lý phấn rôm bước vào giai đoạn cuối cùng với quỹ bồi thường đã được trích lập xong. Ngành Y tế (XLV) đang hút mạnh dòng tiền tổ chức 1 tháng qua (+15.49%). Nhịp chỉnh -1.08% về $273.20 mở ra điểm mua tuyệt đẹp."
-    },
-    {
-      "symbol": "PG",
-      "name": "Procter & Gamble",
-      "sector": "Consumer Household Staples",
-      "price_usd": 163.56,
-      "legends_score": 89.3,
-      "ev_pct": 7.77,
-      "rr_ratio": 2.79,
-      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 162.36,
-      "stop_2atr_usd": 156.71,
-      "tp1_usd": 177.26,
-      "catalyst": "Chi phí nguyên vật liệu đầu vào (bột giấy, nhựa, dầu thực vật) đang hạ nhiệt giúp mở rộng biên lợi nhuận gộp lên 51.4%. Nhịp lùi -1.00% hôm nay do VIX hạ nhiệt kích hoạt đúng bài học tối ưu giá vốn của Alex hôm qua."
     }
   ],
   "live_cbtt_and_sec_disclosures": [
@@ -319,22 +319,6 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "PNJ",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 03 Nov 26 0",
-      "headline": "Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "CO_TUC",
-      "date": "Tue, 03 Nov 26 0",
-      "headline": "FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20%",
-      "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
       "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 03 Nov 26 0",
@@ -380,6 +364,22 @@
       "date": "Mon, 02 Nov 26 1",
       "headline": "Vì sao cổ phiếu FPT bị bán ròng?",
       "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Sun, 01 Nov 26 2",
+      "headline": "Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Sun, 01 Nov 26 1",
+      "headline": "Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan",
+      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 33 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 30 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
