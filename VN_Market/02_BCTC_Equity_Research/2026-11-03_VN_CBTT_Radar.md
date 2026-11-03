@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-03 03:30:37  
-> **Số sự kiện ghi nhận:** 31 thông báo  
+> **Thời gian quét:** 2026-11-03 04:26:03  
+> **Số sự kiện ghi nhận:** 32 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm | [Xem Link](https://cafef.vn/fpt-van-hanh-thu-nha-may-kiem-thu-chip-cong-suat-300-trieu-san-pham-moi-nam-188261103102956893.chn) |
 | **HCM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp | [Xem Link](https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ | [Xem Link](https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn) |
 | **FPT** | `CO_TUC` | ⚠️ CHÚ Ý | FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20% | [Xem Link](https://cafef.vn/fpt-telecom-sap-tra-co-tuc-tien-mat-ty-le-20-188261103071445257.chn) |
@@ -14,6 +15,7 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm | [Xem Link](https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vì sao cổ phiếu FPT bị bán ròng? | [Xem Link](https://cafef.vn/vi-sao-co-phieu-fpt-bi-ban-rong-188261102101138474.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM | [Xem Link](https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn) |
+| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành | [Xem Link](https://cafef.vn/ben-trong-nha-may-kiem-thu-va-dong-goi-chip-ban-dan-fpt-vua-dua-vao-van-hanh-188261103103904204.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK hé lộ 8 doanh nghiệp đáng chú ý, phù hợp để "xuống tiền" trong tháng 11 | [Xem Link](https://cafef.vn/ctck-he-lo-8-doanh-nghiep-dang-chu-y-phu-hop-de-xuong-tien-trong-thang-11-188261102104310284.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu | [Xem Link](https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-188261102192903264.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT mất 120.000 tỷ vốn hóa | [Xem Link](https://cafef.vn/fpt-mat-120000-ty-von-hoa-188261102164752939.chn) |
@@ -28,7 +30,6 @@
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Khai trương không gian trải nghiệm 1 ha tại đô thị One Era | [Xem Link](https://cafef.vn/khai-truong-khong-gian-trai-nghiem-1-ha-tai-do-thi-one-era-188261102163517491.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP.HCM chốt giá đất và 3.790 căn hộ chung cư tại Thủ Thiêm hơn 18.200 tỷ đồng | [Xem Link](https://cafef.vn/tphcm-chot-gia-dat-va-3790-can-ho-chung-cu-tai-thu-thiem-hon-18200-ty-dong-188261102165857291.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Sau nhiều lần 'trễ hẹn', nút giao hiện đại bậc nhất TP.HCM hiện thi công ra sao? | [Xem Link](https://cafef.vn/sau-nhieu-lan-tre-hen-nut-giao-hien-dai-bac-nhat-tphcm-hien-thi-cong-ra-sao-18826110213211429.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tuyến cao tốc gần 19.000 tỷ đồng do liên danh T&T đầu tư tại tỉnh rộng nhất Việt Nam, rút ngắn thời gian đi từ TP.HCM đến Đà Lạt còn 3 giờ, nhận chỉ đạo nóng | [Xem Link](https://cafef.vn/tuyen-cao-toc-gan-19000-ty-dong-do-lien-danh-tt-dau-tu-tai-tinh-rong-nhat-viet-nam-rut-ngan-thoi-gian-di-tu-tphcm-den-da-lat-con-3-gio-nhan-chi-dao-nong-18826110210051887.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép | [Xem Link](https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Trung tâm Tài chính quốc tế TP.HCM công bố 10 thành viên đầu tiên | [Xem Link](https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm) |
 | **BSR** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ nhà máy lọc dầu Dung Quất gửi ngân hàng hơn 2 tỷ USD | [Xem Link](https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-gui-ngan-hang-hon-2-ty-usd-5139328.html) |

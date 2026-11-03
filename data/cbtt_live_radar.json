@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-03T03:30:37.602480+00:00",
+  "timestamp_utc": "2026-11-03T04:26:03.016747+00:00",
   "scan_date": "2026-11-03",
   "total_us_filings_count": 369,
-  "total_vn_announcements_count": 31,
+  "total_vn_announcements_count": 32,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -284,13 +284,21 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "FPT": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 10:32:00 +0700",
+      "source_url": "https://cafef.vn/fpt-van-hanh-thu-nha-may-kiem-thu-chip-cong-suat-300-trieu-san-pham-moi-nam-188261103102956893.chn",
+      "total_announcements": 5
+    },
     "HCM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
       "severity": "CRITICAL",
       "published_at": "Tue, 03 Nov 26 09:09:00 +0700",
       "source_url": "https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn",
-      "total_announcements": 12
+      "total_announcements": 11
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -299,14 +307,6 @@
       "published_at": "Tue, 03 Nov 26 07:58:00 +0700",
       "source_url": "https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn",
       "total_announcements": 9
-    },
-    "FPT": {
-      "latest_event_type": "CO_TUC",
-      "latest_title": "FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20%",
-      "severity": "WARNING",
-      "published_at": "Tue, 03 Nov 26 07:36:00 +0700",
-      "source_url": "https://cafef.vn/fpt-telecom-sap-tra-co-tuc-tien-mat-ty-le-20-188261103071445257.chn",
-      "total_announcements": 3
     },
     "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4823,6 +4823,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "FPT"
+      ],
+      "title": "FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm",
+      "summary": "FPT vừa đưa nhà máy kiểm thử và đóng gói chip bán dẫn tại Bắc Ninh vào vận hành thử nghiệm. Nhà máy có 6 dây chuyền, công suất thiết kế tối đa 300 triệu chip mỗi năm và dự kiến thực hiện đơn hàng đầu tiên cho đối tác Hàn...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 10:32:00 +0700",
+      "source_url": "https://cafef.vn/fpt-van-hanh-thu-nha-may-kiem-thu-chip-cong-suat-300-trieu-san-pham-moi-nam-188261103102956893.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
       "title": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
@@ -4939,6 +4951,18 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 21:35:00 +0700",
       "source_url": "https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành",
+      "summary": "Nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT (FPT Analysis Technologies Joint Stock Company) có diện tích 1.600 m² đặt tại Khu công nghiệp Yên Phong II-C, tỉnh Bắc Ninh....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 10:38:00 +0700",
+      "source_url": "https://cafef.vn/ben-trong-nha-may-kiem-thu-va-dong-goi-chip-ban-dan-fpt-vua-dua-vao-van-hanh-188261103103904204.chn"
     },
     {
       "market": "VIETNAM",
@@ -5111,18 +5135,6 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 13:59:00 +0700",
       "source_url": "https://cafef.vn/sau-nhieu-lan-tre-hen-nut-giao-hien-dai-bac-nhat-tphcm-hien-thi-cong-ra-sao-18826110213211429.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Tuyến cao tốc gần 19.000 tỷ đồng do liên danh T&T đầu tư tại tỉnh rộng nhất Việt Nam, rút ngắn thời gian đi từ TP.HCM đến Đà Lạt còn 3 giờ, nhận chỉ đạo nóng",
-      "summary": "Dù đã bàn giao khoảng 94% mặt bằng, cao tốc Bảo Lộc - Liên Khương vẫn thi công chậm. Tỉnh Lâm Đồng yêu cầu nhà đầu tư huy động tối đa nguồn lực, phấn đấu tăng thêm 30% khối lượng so với kế hoạch từ nay đến cuối năm 2026....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 10:12:00 +0700",
-      "source_url": "https://cafef.vn/tuyen-cao-toc-gan-19000-ty-dong-do-lien-danh-tt-dau-tu-tai-tinh-rong-nhat-viet-nam-rut-ngan-thoi-gian-di-tu-tphcm-den-da-lat-con-3-gio-nhan-chi-dao-nong-18826110210051887.chn"
     },
     {
       "market": "VIETNAM",
