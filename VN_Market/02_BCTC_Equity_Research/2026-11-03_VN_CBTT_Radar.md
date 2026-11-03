@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-03 08:59:04  
-> **Số sự kiện ghi nhận:** 31 thông báo  
+> **Thời gian quét:** 2026-11-03 09:32:30  
+> **Số sự kiện ghi nhận:** 30 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -27,11 +27,10 @@
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ? | [Xem Link](https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn) |
 | **HDB, TCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành | [Xem Link](https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Đấu giá 5 lô đất tại Khu đô thị mới Thủ Thiêm, khởi điểm hơn 18.250 tỷ đồng | [Xem Link](https://cafef.vn/dau-gia-5-lo-dat-tai-khu-do-thi-moi-thu-thiem-khoi-diem-hon-18250-ty-dong-188261103153037972.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Khai trương không gian trải nghiệm 1 ha tại đô thị One Era | [Xem Link](https://cafef.vn/khai-truong-khong-gian-trai-nghiem-1-ha-tai-do-thi-one-era-188261102163517491.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP.HCM chốt giá đất và 3.790 căn hộ chung cư tại Thủ Thiêm hơn 18.200 tỷ đồng | [Xem Link](https://cafef.vn/tphcm-chot-gia-dat-va-3790-can-ho-chung-cu-tai-thu-thiem-hon-18200-ty-dong-188261102165857291.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép | [Xem Link](https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Trung tâm Tài chính quốc tế TP.HCM công bố 10 thành viên đầu tiên | [Xem Link](https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Sun PhuQuoc Airways mở thêm đường bay đến Thượng Hải | [Xem Link](https://vnexpress.net/sun-phuquoc-airways-mo-them-duong-bay-den-thuong-hai-5140166.html) |
 | **BSR** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ nhà máy lọc dầu Dung Quất gửi ngân hàng hơn 2 tỷ USD | [Xem Link](https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-gui-ngan-hang-hon-2-ty-usd-5139328.html) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP HCM định hình mạng lưới trung tâm logistics tại 10 đầu mối lớn | [Xem Link](https://vnexpress.net/tp-hcm-dinh-hinh-mang-luoi-trung-tam-logistics-tai-10-dau-moi-lon-5139061.html) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng tồn kho của PNJ tăng lên hơn 16.600 tỷ đồng | [Xem Link](https://vnexpress.net/hang-ton-kho-cua-pnj-tang-len-hon-16-600-ty-dong-5138903.html) |

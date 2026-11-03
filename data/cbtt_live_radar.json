@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-03T08:59:04.579947+00:00",
+  "timestamp_utc": "2026-11-03T09:32:30.155923+00:00",
   "scan_date": "2026-11-03",
   "total_us_filings_count": 369,
-  "total_vn_announcements_count": 31,
+  "total_vn_announcements_count": 30,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -306,7 +306,7 @@
       "severity": "INFO",
       "published_at": "Tue, 03 Nov 26 07:58:00 +0700",
       "source_url": "https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn",
-      "total_announcements": 7
+      "total_announcements": 6
     },
     "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -5097,24 +5097,24 @@
       "symbols": [
         "HCM"
       ],
-      "title": "Khai trương không gian trải nghiệm 1 ha tại đô thị One Era",
-      "summary": "Ngày 31/10/2026, Kim Oanh Group và Kinera chính thức khai trương văn phòng dự án One Era Galleria cùng không gian trải nghiệm rộng 1 ha tại phường Thuận Giao, TP.HCM. Sự kiện khai mở khu đô thị One Era quy mô gần 50 ha, ...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "title": "Đấu giá 5 lô đất tại Khu đô thị mới Thủ Thiêm, khởi điểm hơn 18.250 tỷ đồng",
+      "summary": "UBND TP.HCM đã phê duyệt giá khởi điểm đấu giá 5 lô đất tại Khu đô thị mới Thủ Thiêm với tổng giá trị tại thời điểm tháng 10/2026 hơn 18.253 tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/khai-truong-khong-gian-trai-nghiem-1-ha-tai-do-thi-one-era-188261102163517491.chn"
+      "published_at": "Tue, 03 Nov 26 15:59:00 +0700",
+      "source_url": "https://cafef.vn/dau-gia-5-lo-dat-tai-khu-do-thi-moi-thu-thiem-khoi-diem-hon-18250-ty-dong-188261103153037972.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "HCM"
       ],
-      "title": "TP.HCM chốt giá đất và 3.790 căn hộ chung cư tại Thủ Thiêm hơn 18.200 tỷ đồng",
-      "summary": "UBND TP.HCM đã phê duyệt giá đất cụ thể để xác định giá khởi điểm đấu giá 5 lô đất kèm 3.790 căn hộ chung cư tại Thủ Thiêm; tổng giá trị là hơn 18.253 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
+      "title": "Khai trương không gian trải nghiệm 1 ha tại đô thị One Era",
+      "summary": "Ngày 31/10/2026, Kim Oanh Group và Kinera chính thức khai trương văn phòng dự án One Era Galleria cùng không gian trải nghiệm rộng 1 ha tại phường Thuận Giao, TP.HCM. Sự kiện khai mở khu đô thị One Era quy mô gần 50 ha, ...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
       "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 18:30:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-chot-gia-dat-va-3790-can-ho-chung-cu-tai-thu-thiem-hon-18200-ty-dong-188261102165857291.chn"
+      "published_at": "Tue, 03 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/khai-truong-khong-gian-trai-nghiem-1-ha-tai-do-thi-one-era-188261102163517491.chn"
     },
     {
       "market": "VIETNAM",
@@ -5175,18 +5175,6 @@
       "severity": "INFO",
       "published_at": "Sat, 31 Oct 2026 11:11:14 +0700",
       "source_url": "https://vnexpress.net/tp-hcm-dinh-hinh-mang-luoi-trung-tam-logistics-tai-10-dau-moi-lon-5139061.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Hàng tồn kho của PNJ tăng lên hơn 16.600 tỷ đồng",
-      "summary": "Hàng tồn kho của PNJ đạt hơn 16.600 tỷ đồng tính tới cuối tháng 9, chiếm gần 83% tổng tài sản sau khi công ty đối mặt làn sóng đổi trả sản phẩm....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 30 Oct 2026 19:30:00 +0700",
-      "source_url": "https://vnexpress.net/hang-ton-kho-cua-pnj-tang-len-hon-16-600-ty-dong-5138903.html"
     }
   ]
 }
