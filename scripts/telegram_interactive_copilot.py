@@ -482,13 +482,21 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                     
                 log_daemon(f"[+] Nhận tin nhắn từ {chat_id}: '{text}'")
                 
-                # Nếu gõ /start hoặc /menu: Gửi lời chào kèm bàn phím ảo
+                # Nếu gõ /start hoặc /menu: Gửi thông điệp chào mừng cơ cấu Tập đoàn Doanh nghiệp
                 if text in ["/start", "/menu", "menu", "bắt đầu"]:
                     welcome = (
-                        "🎖 *[TRỢ LÝ ĐIỀU HÀNH TỐI CAO APEX FUND — PALMER CO-PILOT]*\n"
-                        "Xin kính chào Chủ tịch Phước Trần!\n\n"
-                        "Tôi đã kết nối trực tiếp và kích hoạt Bàn Phím Ảo Tương Tác 1-Chạm bên dưới.\n"
-                        "Chủ tịch có thể bấm nút bất kỳ hoặc chat trực tiếp để yêu cầu tóm tắt, tổng hợp và soi cổ phiếu!"
+                        "🎖️ *[BỘ CHỈ HUY TỔNG TƯ LỆNH MASTER CIO JAMES — APEX ENTERPRISE]*\n\n"
+                        "Xin kính chào Chủ tịch Phước Trần!\n"
+                        "Tôi là James — Master CIO trực tiếp chỉ huy toàn bộ hệ thống Quỹ và các phòng ban trực thuộc.\n\n"
+                        "🏛️ *Cơ Cấu 7 Phân Luồng Phòng Ban Đã Thiết Lập Hoàn Chỉnh*:\n"
+                        "1. `🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES`: Chỉ huy tác chiến, bàn bạc chiến lược & giao việc trực tiếp cho James.\n"
+                        "2. `💼 VĂN PHÒNG TRỢ LÝ NAM`: Trợ lý cá nhân trang bị Gemini 3.8 Flash cho câu hỏi thường ngày & đời sống.\n"
+                        "3. `🚨 BAN 9 — GIÁM SÁT REALTIME & BÁO ĐỘNG ĐỎ`: Victor trực chiến giá live HOSE 73ms, Stop Loss & Take-Profit.\n"
+                        "4. `☀️ BAN 7 VN — MINH QUÂN EXECUTION DESK`: Sổ Lệnh Master, Khung Giờ Vàng 14h00, Kim Tự Tháp.\n"
+                        "5. `📡 BAN 2 & 3 — BCTC FORENSIC & RADAR SĂN SÓNG`: Kiểm toán BCTC OCF/LNST, Beneish M & CBTT.\n"
+                        "6. `⚖️ BAN 4 — QUẢN TRỊ RỦI RO & HỘI ĐỒNG ĐẦU TƯ`: ATR Risk-Parity & Stress-Test.\n"
+                        "7. `🏛️ BAN 6 & 5 — HỌC VIỆN HUẤN LUYỆN & TIẾN HÓA`: Khai sáng 7h30 & Hồi tố Hit Rate.\n\n"
+                        "Chủ tịch có thể giao việc trực tiếp cho tôi tại đây, tôi sẽ phân công và bắt buộc các phòng ban làm thật việc thật!"
                     )
                     send_raw_telegram(
                         bot_token=bot_token,
@@ -499,8 +507,33 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                     )
                     continue
                     
-                # Xử lý câu hỏi tự nhiên
-                reply_text = process_user_query(text)
+                # 3. Phân luồng thông minh theo từng Phòng Ban (Topic Thread ID):
+                if thread_id == 106:
+                    # VĂN PHÒNG TRỢ LÝ NAM (GEMINI 3.8 FLASH)
+                    from scripts.assistant_nam_agent import handle_nam_chat
+                    reply_text = handle_nam_chat(text)
+                elif thread_id == 6:
+                    # BỘ CHỈ HUY TỔNG TƯ LỆNH MASTER CIO JAMES
+                    from scripts.master_cio_james_agent import handle_james_chat
+                    reply_text = handle_james_chat(text)
+                elif thread_id == 3:
+                    # BAN 9 — VICTOR SENTINEL
+                    reply_text = process_user_query(text)
+                elif thread_id == 4:
+                    # BAN 7 VN — MINH QUÂN EXECUTION DESK
+                    reply_text = handle_order_blotter() if any(k in text.lower() for k in ["sổ lệnh", "mua", "lệnh"]) else process_user_query(text)
+                elif thread_id == 5:
+                    # BAN 2 & BAN 3 — BCTC & RADAR
+                    reply_text = handle_wave_hunter_radar() if any(k in text.lower() for k in ["radar", "sóng", "mã mới"]) else process_user_query(text)
+                else:
+                    # Phân luồng mặc định (hoặc Private Chat 1:1)
+                    if any(k in text.lower() for k in ["nam", "trợ lý nam", "em nam"]):
+                        from scripts.assistant_nam_agent import handle_nam_chat
+                        reply_text = handle_nam_chat(text)
+                    else:
+                        from scripts.master_cio_james_agent import handle_james_chat
+                        reply_text = handle_james_chat(text)
+
                 send_raw_telegram(
                     bot_token=bot_token,
                     chat_id=chat_id,

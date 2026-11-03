@@ -9,32 +9,53 @@
   "topics_enabled": true,
   "fallback_to_private_if_unconfigured": true,
   "topics": {
+    "james_hq": {
+      "key": "james_hq",
+      "name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+      "description": "Kênh tương tác trực tiếp 1:1 giữa Chủ tịch Phước Trần & Master CIO James: Chỉ huy tác chiến toàn diện, giao việc và nghiệm thu",
+      "thread_id": 6,
+      "icon_color": 16766590
+    },
+    "assistant_nam": {
+      "key": "assistant_nam",
+      "name": "💼 VĂN PHÒNG TRỢ LÝ NAM",
+      "description": "Trợ lý cá nhân đắc lực trang bị Gemini 3.8 Flash: Giải đáp thường ngày, sắp xếp công việc, email, lịch trình và trao đổi 24/7",
+      "thread_id": 106,
+      "icon_color": 7322352
+    },
     "alerts": {
       "key": "alerts",
-      "name": "🚨 BÁO ĐỘNG ĐỎ & CANH 2 ĐẦU",
-      "description": "Victor Sentinel: Chốt lời TP1/TP2, Cắt lỗ Stop 2xATR, Rung lắc khẩn cấp",
+      "name": "🚨 BAN 9 — GIÁM SÁT REALTIME & BÁO ĐỘNG ĐỎ",
+      "description": "Victor Sentinel: Giám sát bảng điện HOSE 73ms, Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR cho HPG, TCB, MBB",
       "thread_id": 3,
       "icon_color": 16478046
     },
     "morning_blotter": {
       "key": "morning_blotter",
-      "name": "☀️ BẢN TIN SÁNG & SỔ LỆNH MASTER",
-      "description": "Nghiệm thu 07:00, Khai sáng 07:30, Sổ lệnh Pre-ATO 08:30 & Khung 14:00",
+      "name": "☀️ BAN 7 VN — MINH QUÂN EXECUTION DESK",
+      "description": "Minh Quân: Quản lý Sổ Lệnh Master Blotter, Khung Giờ Vàng 14h00-14h25, Đi lệnh Kim Tự Tháp 30-40-30 & Kỹ thuật T+0",
       "thread_id": 4,
       "icon_color": 16766590
     },
     "radar_filings": {
       "key": "radar_filings",
-      "name": "📡 RADAR SĂN SÓNG & CÔNG BỐ BCTC",
-      "description": "CBTT HOSE/HNX, SEC Edgar Mỹ, Radar cổ phiếu bứt phá dòng tiền mới",
+      "name": "📡 BAN 2 & 3 — BCTC FORENSIC & RADAR SĂN SÓNG",
+      "description": "Ban 2 & Ban 3: Kiểm toán chất lượng lợi nhuận OCF/LNST, Beneish M-Score, CBTT HOSE/HNX và SEC EDGAR",
       "thread_id": 5,
       "icon_color": 7322352
     },
-    "copilot_chat": {
-      "key": "copilot_chat",
-      "name": "💬 BỘ CHỈ HUY MASTER CIO JAMES",
-      "description": "Kênh tương tác trực tiếp Chủ tịch Phước Trần & Tổng Tư Lệnh James: Chỉ huy tác chiến, phân công nhiệm vụ và nghiệm thu thực tế",
-      "thread_id": 6,
+    "quant_risk": {
+      "key": "quant_risk",
+      "name": "⚖️ BAN 4 — QUẢN TRỊ RỦI RO & HỘI ĐỒNG ĐẦU TƯ",
+      "description": "Ban 4: Định cỡ vị thế ATR Risk-Parity, Ma trận tương quan danh mục, Kiểm thử Stress-Test 3 kịch bản khủng hoảng",
+      "thread_id": 111,
+      "icon_color": 16766590
+    },
+    "academy_learning": {
+      "key": "academy_learning",
+      "name": "🏛️ BAN 6 & 5 — HỌC VIỆN HUẤN LUYỆN & TIẾN HÓA",
+      "description": "Ban 6 & Ban 5: Bản tin khai sáng 7h30, Kèm cặp tâm lý tránh FOMO ATO, Nhật ký học viên và Hồi tố Hit Rate %",
+      "thread_id": 112,
       "icon_color": 9367192
     }
   }
