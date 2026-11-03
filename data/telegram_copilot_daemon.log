@@ -813,3 +813,21 @@
 [2026-11-03 14:47:10] [WARN loop] HTTP Error 409: Conflict
 [2026-11-03 14:48:08] [WARN loop] The read operation timed out
 [2026-11-03 14:48:47] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 14:49:34] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 14:50:26] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 14:50:51] [HEARTBEAT] Unified Omni-Copilot V4.0 trực chiến ổn định. Offset: 698824940
+[2026-11-03 14:51:15] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 14:52:13] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 14:53:16] [WARN loop] <urlopen error [Errno 11001] getaddrinfo failed>
+[2026-11-03 14:53:19] [WARN loop] <urlopen error [Errno 11001] getaddrinfo failed>
+[2026-11-03 18:03:05] [WARN loop] <urlopen error [Errno 11001] getaddrinfo failed>
+[2026-11-03 18:03:32] [HEARTBEAT] Unified Omni-Copilot V4.0 trực chiến ổn định. Offset: 698824940
+[2026-11-03 18:03:46] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 18:05:29] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 18:06:36] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 18:07:47] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 18:09:39] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 18:11:03] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 18:11:54] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 18:12:53] [WARN loop] HTTP Error 409: Conflict
+[2026-11-03 18:16:16] [WARN loop] HTTP Error 409: Conflict

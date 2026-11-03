@@ -1,0 +1,30 @@
+{
+  "current_date": "2026-11-03",
+  "current_month": 11,
+  "is_active_earnings_season": true,
+  "active_season_name": "MÙA BÁO CÁO TÀI CHÍNH QUÝ 3 (Q3 EARNINGS SEASON)",
+  "deadline_note": "Hạn chót công bố BCTC Q3 hợp nhất là 30/10 hàng năm (hoặc 15/11 nếu gia hạn). Toàn bộ 54 siêu cổ phiếu VN đã hoàn tất công bố.",
+  "radar_scan_priority": "HIGH",
+  "upcoming_milestones": [
+    {
+      "milestone": "Công bố KQKD & BCTC Quý 4",
+      "timeline": "Tháng 01/2027",
+      "regulation": "Thông tư 96/2020/TT-BTC Điều 14"
+    },
+    {
+      "milestone": "BCTC Kiểm toán Năm Toàn Diện",
+      "timeline": "Tháng 03/2027 (Hạn chót 31/03)",
+      "regulation": "Thông tư 96/2020/TT-BTC Điều 10"
+    },
+    {
+      "milestone": "Báo cáo Thường niên (Annual Report)",
+      "timeline": "Tháng 04/2027 (Hạn chót 20/04)",
+      "regulation": "Thông tư 96/2020/TT-BTC Điều 11"
+    },
+    {
+      "milestone": "Đại hội đồng Cổ đông Thường niên (AGM)",
+      "timeline": "Tháng 04/2027 (Hạn chót 30/04)",
+      "regulation": "Luật Doanh nghiệp 2020"
+    }
+  ]
+}

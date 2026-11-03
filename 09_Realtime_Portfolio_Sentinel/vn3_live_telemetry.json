@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-03 14:49:05",
+  "updated_at": "2026-11-03 18:18:10",
   "portfolio_summary": {
     "total_cost_vnd": 8070000.0,
-    "total_market_value_vnd": 8240000.0,
-    "total_unrealized_pnl_vnd": 170000.0,
-    "total_unrealized_pnl_pct": 2.1065675340768277,
+    "total_market_value_vnd": 8280000.0,
+    "total_unrealized_pnl_vnd": 210000.0,
+    "total_unrealized_pnl_pct": 2.6022304832713754,
     "total_shares": 400
   },
   "positions": [
@@ -13,21 +13,21 @@
       "name": "Techcombank",
       "shares": 100,
       "entry_price": 21250.0,
-      "current_price": 21450.0,
+      "current_price": 21400.0,
       "high": 21650.0,
       "low": 21150.0,
-      "volume": 11570139,
+      "volume": 12298994,
       "cost_vnd": 2125000.0,
-      "market_value_vnd": 2145000.0,
-      "pnl_vnd": 20000.0,
-      "pnl_pct": 0.9411764705882352,
+      "market_value_vnd": 2140000.0,
+      "pnl_vnd": 15000.0,
+      "pnl_pct": 0.7058823529411765,
       "stop_loss_2atr": 20400.0,
       "stop_warning": 20700.0,
-      "stop_dist_pct": 4.895104895104895,
+      "stop_dist_pct": 4.672897196261682,
       "tp1": 23200.0,
-      "tp1_dist_pct": 8.158508158508159,
+      "tp1_dist_pct": 8.411214953271028,
       "tp2": 24800.0,
-      "tp2_dist_pct": 15.61771561771562,
+      "tp2_dist_pct": 15.887850467289718,
       "status": "🟢 AN TOÀN"
     },
     {
@@ -35,64 +35,64 @@
       "name": "Ngân hàng Quân Đội",
       "shares": 100,
       "entry_price": 18650.0,
-      "current_price": 18650.0,
+      "current_price": 18900.0,
       "high": 18900.0,
       "low": 18550.0,
-      "volume": 18821686,
+      "volume": 20663236,
       "cost_vnd": 1865000.0,
-      "market_value_vnd": 1865000.0,
-      "pnl_vnd": 0.0,
-      "pnl_pct": 0.0,
+      "market_value_vnd": 1890000.0,
+      "pnl_vnd": 25000.0,
+      "pnl_pct": 1.3404825737265416,
       "stop_loss_2atr": 17900.0,
       "stop_warning": 18150.0,
-      "stop_dist_pct": 4.021447721179625,
+      "stop_dist_pct": 5.291005291005291,
       "tp1": 19800.0,
-      "tp1_dist_pct": 6.166219839142091,
+      "tp1_dist_pct": 4.761904761904762,
       "tp2": 20800.0,
-      "tp2_dist_pct": 11.528150134048257,
-      "status": "🟢 AN TOÀN"
+      "tp2_dist_pct": 10.052910052910052,
+      "status": "🟢 ĐANG LÃI TÍCH CỰC"
     },
     {
       "symbol": "HPG",
       "name": "Tập đoàn Hòa Phát",
       "shares": 200,
       "entry_price": 20400.0,
-      "current_price": 21150.0,
+      "current_price": 21250.0,
       "high": 21400.0,
       "low": 20400.0,
-      "volume": 30080424,
+      "volume": 32496216,
       "cost_vnd": 4080000.0,
-      "market_value_vnd": 4230000.0,
-      "pnl_vnd": 150000.0,
-      "pnl_pct": 3.6764705882352944,
+      "market_value_vnd": 4250000.0,
+      "pnl_vnd": 170000.0,
+      "pnl_pct": 4.166666666666666,
       "stop_loss_2atr": 19400.0,
       "stop_warning": 19700.0,
-      "stop_dist_pct": 8.274231678486997,
+      "stop_dist_pct": 8.705882352941176,
       "tp1": 22200.0,
-      "tp1_dist_pct": 4.964539007092199,
+      "tp1_dist_pct": 4.470588235294118,
       "tp2": 23200.0,
-      "tp2_dist_pct": 9.692671394799055,
+      "tp2_dist_pct": 9.176470588235293,
       "status": "🟢 ĐANG LÃI TÍCH CỰC"
     }
   ],
   "quotes": {
     "TCB": {
-      "price": 21450.0,
+      "price": 21400.0,
       "high": 21650.0,
       "low": 21150.0,
-      "volume": 11570139
+      "volume": 12298994
     },
     "MBB": {
-      "price": 18650.0,
+      "price": 18900.0,
       "high": 18900.0,
       "low": 18550.0,
-      "volume": 18821686
+      "volume": 20663236
     },
     "HPG": {
-      "price": 21150.0,
+      "price": 21250.0,
       "high": 21400.0,
       "low": 20400.0,
-      "volume": 30080424
+      "volume": 32496216
     }
   },
   "config": {
