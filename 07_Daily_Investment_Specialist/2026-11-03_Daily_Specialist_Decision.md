@@ -20,6 +20,24 @@
 
 ---
 
+## 🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)
+*Alex tự động nạp 5 quy tắc bài học từ `contextual_error_memory_vault.json` kết hợp kết quả kiểm toán danh mục Phố Wall:*
+
+| Mã Bộ Nhớ | Phân Loại Cảnh Báo | Điều Kiện Kích Hoạt | Cổ Phiếu Liên Quan | Kỷ Luật Thép Bắt Buộc Tuân Thủ | Mức Độ Ưu Tiên |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`MEM-GLB-001`** | `COMMISSION_ERROR_GUARD` | VIX > 21.0 reversing below 20.0 | **JNJ, PG, V** | Không giải ngân 100% một cục tại giá đóng cửa cho nhóm Phòng thủ khi VIX > 21; bắt buộc chia nhịp 60% hiện tại + 40% Limit Pullback (-0.35x ATR). | **🔥 BẮT BUỘC (MANDATORY)** |
+| **`MEM-GLB-002`** | `OMISSION_ERROR_RECOVERY` | RSI < 37.0 + FCF > $20B USD + VIX < 20.0 | **GOOGL, AVGO, AMZN** | Tự động kích hoạt nhánh Tactical Alpha Sleeve (8% NAV) gom 60/40 khi siêu cổ phiếu FCF > $20B chạm RSI < 37 và qua kỳ BCTC. | **🛡️ PHÒNG VỆ (GUARD)** |
+| **`MEM-GLB-003`** | `DISCIPLINED_PASS_MEMORY` | FCF < 0 & Price < MA200 (Dead-Cat Bounce) | **SMCI, COIN, INTC** | Duy trì lệnh Veto tuyệt đối; không bao giờ đưa các nhịp tăng của cổ phiếu đốt tiền vào danh sách tiếc nuối. | **🛡️ PHÒNG VỆ (GUARD)** |
+| **`MEM-GLB-004`** | `SECTOR_CONCENTRATION_CAP` | Tỷ trọng danh mục Bán dẫn (Semiconductors) > 30% NAV | **NVDA, TSM, AVGO** | Áp trần tỷ trọng tối đa toàn ngành Bán dẫn <= 28% NAV; phân bổ sang Năng lượng (OXY) và Tài chính (V) để đa dạng hóa rủi ro. | **🔥 BẮT BUỘC (MANDATORY)** |
+| **`MEM-GLB-005`** | `LIMIT_PULLBACK_CALIBRATION` | Cổ phiếu độc quyền công nghệ cao có lực cầu đúc chip vượt trội | **TSM, NVDA** | Hiệu chỉnh biên độ Limit Pullback cho nhóm siêu độc quyền từ -0.35x ATR về -0.20x ATR để bảo đảm tỷ lệ khớp lệnh thành công trên 85%. | **🔥 BẮT BUỘC (MANDATORY)** |
+
+> [!IMPORTANT]
+> **KẾT QUẢ KIỂM TOÁN DANH MỤC PHỐ WALL ĐƯỢC TỰ ĐỘNG LIÊN KẾT**:  
+> - **Chuyên viên**: `Alex (Ban 7 Global)` | **Hit Rate**: `100.0%` | **Tiết kiệm trượt giá (Quy tắc 60/40)**: `+$2,250.47 USD` | **Alpha 5D vs S&P 500**: `+1.90%`.  
+> - **Sẵn sàng Lộ trình Phố Wall (6 Tháng)**: Alex cam kết áp trần rủi ro Bán dẫn <= 28% NAV và chuẩn hóa điểm vào lệnh Limit Pullback để bảo toàn tuyệt đối dòng vốn của Chủ tịch Phước Trần!
+
+---
+
 ## 2. Alex Tự Soi Gương & Kiểm Điểm Ngày Hôm Qua (`2026-11-02 -> 2026-11-03`)
 
 ### 2.1. Những Quyết Định ĐÚNG ĐẮN Của Alex Cần Phát Huy (`Validated Strengths`)

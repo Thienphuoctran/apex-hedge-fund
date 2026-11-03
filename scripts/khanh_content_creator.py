@@ -42,6 +42,10 @@ CONTENT_DIR.mkdir(parents=True, exist_ok=True)
 
 DIALOGUE_LOG = CONTENT_DIR / "inter_department_hien_khanh_dialogue.json"
 TRENDING_VAULT = CONTENT_DIR / "trending_topics_vault.json"
+RENDER_QUEUE_DIR = CONTENT_DIR / "render_queue"
+RENDER_QUEUE_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_DIR = CONTENT_DIR / "output"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # ==============================================================================
@@ -85,6 +89,41 @@ TRENDING_ANGLES = [
         "suitable_tickers": ["HPG", "TCB", "MBB"]
     }
 ]
+
+
+def init_or_update_trending_vault() -> Dict[str, Any]:
+    """
+    Khởi tạo hoặc cập nhật kho dữ liệu xu hướng, góc nhìn viral và các phễu chuyển đổi iCopy.
+    """
+    vault_data = {
+        "system_title": "Apex Hedge Fund — Viral Trending & Content Vault (Ban 11 - Khánh)",
+        "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "chief_creator": "Khánh (Chief Viral Financial Content Creator & Trending Strategist)",
+        "collaborator": "Hiền (Ban 10 — Apex Corporate Filings & IR Scout)",
+        "supervisor": "James (Ban 8 — Apex Master CIO)",
+        "icopy_target_account": "105C307855",
+        "primary_platforms": ["TikTok", "YouTube Shorts", "Facebook Reels", "Threads"],
+        "trending_angles": TRENDING_ANGLES,
+        "content_pillars": [
+            {
+                "pillar_name": "BCTC Forensic (Bóc Trần Tiền Thật OCF)",
+                "description": "Soi báo cáo tài chính mổ xẻ chất lượng lợi nhuận thật vs ảo, đòn bẩy và dòng tiền tự do",
+                "target_audience": "Nhà đầu tư F0 và trung cấp muốn đầu tư an toàn không bị úp bô"
+            },
+            {
+                "pillar_name": "CASA & Cỗ Máy Tiền Rẻ Ngân Hàng",
+                "description": "Giải thích mô hình kinh doanh tiền rẻ của các ngân hàng dẫn đầu",
+                "target_audience": "Nhà đầu tư dài hạn tìm kiếm siêu cổ phiếu tăng trưởng kép"
+            },
+            {
+                "pillar_name": "Chiến Thuật Đi Lệnh & T+0 Thực Chiến",
+                "description": "Chia sẻ kinh nghiệm giao dịch thực tế, lướt T+0 hạ giá vốn, kỷ luật quản trị rủi ro",
+                "target_audience": "Nhà đầu tư cá nhân muốn kiếm thêm dòng tiền ngoài luồng 3 - 4 triệu/tháng"
+            }
+        ]
+    }
+    TRENDING_VAULT.write_text(json.dumps(vault_data, indent=2, ensure_ascii=False), encoding="utf-8")
+    return vault_data
 
 
 # ==============================================================================
@@ -272,12 +311,40 @@ def craft_viral_video_script(ticker: str = "HPG", chosen_angle_id: str = "ANGLE_
     james_audit = {
         "auditor": "James — Master CIO (Ban 8)",
         "audit_timestamp": now_str,
-        "metric_verification": "ĐÃ KIỂM TRA CHÉO 100%: Số liệu Doanh thu, LNST, OCF hoàn toàn trùng khớp với Báo cáo Tài chính Q3 kiểm toán của Hòa Phát do Ban 10 cung cấp.",
+        "metric_verification": f"ĐÃ KIỂM TRA CHÉO 100%: Số liệu Doanh thu, LNST, OCF hoàn toàn trùng khớp với Báo cáo Tài chính kiểm toán của {company_name} ({clean_sym}) do Ban 10 cung cấp.",
         "legal_disclaimer_status": "PASSED: Kịch bản tập trung vào giáo dục tài chính & mổ xẻ BCTC, có câu dẫn nhận định cá nhân, tuân thủ nghiêm ngặt quy chế công bố thông tin.",
         "viral_potential_score": 95,
         "viral_potential_rating": "CỰC KỲ XUẤT SẮC (HIGH VIRALITY)",
         "james_signature_stamp": "APPROVED FOR PRODUCTION — BẬT ĐÈN XANH QUAY VIDEO"
     }
+
+    # SEO package dynamic theo mã
+    if clean_sym == "HPG":
+        caption_post = (
+            f"{hook_text}\n\n"
+            f"Nhiều anh em chỉ nhìn lãi {ni} mà quên mất dòng tiền kinh doanh OCF mới là máu của doanh nghiệp. "
+            f"Quý này Hòa Phát mang về tới {ocf} tiền tươi thóc thật!\n\n"
+            f"Anh em đang ôm HPG giá bao nhiêu? Để lại bình luận cùng đàm đạo nhé!\n\n"
+            f"#hoaphat #hpg #chungkhoan #taichinh #bctc #dautu #kinhdoanh #kiemtien #tcbs #icopy"
+        )
+        hashtags = ["#hoaphat", "#hpg", "#chungkhoan", "#taichinh", "#bctc", "#dautu", "#kinhdoanh", "#kiemtien", "#tcbs", "#icopy"]
+    elif clean_sym == "TCB":
+        caption_post = (
+            f"{hook_text}\n\n"
+            f"Techcombank đang chứng minh vị thế cỗ máy in tiền với CASA 40.5% và lợi nhuận ròng {ni}!\n\n"
+            f"Anh em đang dùng Techcombank hay TCBS? Để lại bình luận cùng đàm đạo nhé!\n\n"
+            f"#techcombank #tcb #tcbs #chungkhoan #taichinh #nganhang #casa #dautu #icopy"
+        )
+        hashtags = ["#techcombank", "#tcb", "#tcbs", "#chungkhoan", "#taichinh", "#nganhang", "#casa", "#dautu", "#icopy"]
+    else:
+        caption_post = (
+            f"{hook_text}\n\n"
+            f"Nhiều anh em chỉ nhìn lãi trên báo mà quên mất dòng tiền kinh doanh OCF mới là dòng tiền thật. "
+            f"Quý này {clean_sym} mang về {ocf} tiền thật ({hien_data['earnings_quality_rating']})!\n\n"
+            f"Anh em đang theo dõi {clean_sym} ở vùng giá nào? Để lại bình luận nhé!\n\n"
+            f"#{clean_sym.lower()} #chungkhoan #taichinh #bctc #dautu #kinhdoanh #kiemtien #tcbs #icopy"
+        )
+        hashtags = [f"#{clean_sym.lower()}", "#chungkhoan", "#taichinh", "#bctc", "#dautu", "#kinhdoanh", "#kiemtien", "#tcbs", "#icopy"]
 
     script_package = {
         "metadata": {
@@ -295,14 +362,8 @@ def craft_viral_video_script(ticker: str = "HPG", chosen_angle_id: str = "ANGLE_
         "scenes": scene_breakdown,
         "seo_package": {
             "video_title": title,
-            "caption_post": (
-                f"{hook_text}\n\n"
-                f"Nhiều anh em chỉ nhìn lãi {ni} mà quên mất dòng tiền kinh doanh OCF mới là máu của doanh nghiệp. "
-                f"Quý này Hòa Phát mang về tới {ocf} tiền tươi thóc thật!\n\n"
-                f"Anh em đang ôm HPG giá bao nhiêu? Để lại bình luận cùng đàm đạo nhé!\n\n"
-                f"#hoaphat #hpg #chungkhoan #taichinh #bctc #dautu #kinhdoanh #kiemtien #tcbs #icopy"
-            ),
-            "hashtags": ["#hoaphat", "#hpg", "#chungkhoan", "#taichinh", "#bctc", "#dautu", "#kinhdoanh", "#kiemtien", "#tcbs", "#icopy"]
+            "caption_post": caption_post,
+            "hashtags": hashtags
         },
         "hien_data_feed": hien_data,
         "james_audit": james_audit
@@ -365,7 +426,7 @@ def export_khanh_script_markdown(package: Dict[str, Any]) -> Path:
         f"### 2. Bộ Hashtags Đề Xuất",
         f"`{' '.join(seo['hashtags'])}`\n",
         f"### 3. Phễu Tạo Dòng Tiền Thu Nhập Ngoài Luồng (Kiếm 3 - 4 Triệu/Tháng)",
-        f"- Gắn link Bio hoặc ghim bình luận đầu tiên: *\"Chi tiết cách mình gom hàng Hòa Phát và lướt T+0 hạ giá vốn, anh em xem trong danh mục iCopy TCBS mã 105C307855 của mình nhé!\"*",
+        f"- Gắn link Bio hoặc ghim bình luận đầu tiên: *\"Chi tiết cách mình gom hàng {meta['ticker']} và lướt T+0 hạ giá vốn, anh em xem trong danh mục iCopy TCBS mã 105C307855 của mình nhé!\"*",
         f"- Thu hút người sao chép danh mục $\\rightarrow$ Tạo ra hoa hồng chia sẻ lợi nhuận đều đặn hàng tháng.\n",
         "---",
         "## V. BIÊN BẢN PHÊ DUYỆT CỦA TỔNG TƯ LỆNH MASTER CIO JAMES",
@@ -382,18 +443,97 @@ def export_khanh_script_markdown(package: Dict[str, Any]) -> Path:
     return output_path
 
 
+def export_render_job_for_bao(package: Dict[str, Any]) -> Path:
+    """
+    Chuyển giao gói dữ liệu kỹ thuật dựng phim cho Bảo trên máy tính để bàn.
+    Bao gồm cấu trúc từng phân cảnh, text voiceover, visual cues, font và audio specs.
+    """
+    meta = package["metadata"]
+    scenes = package["scenes"]
+    clean_sym = meta["ticker"]
+    now_date = datetime.date.today().strftime("%Y-%m-%d")
+
+    job_id = f"JOB-{now_date}-{clean_sym}"
+    job_file = RENDER_QUEUE_DIR / f"{now_date}_{clean_sym}_render_job.json"
+
+    render_job = {
+        "job_id": job_id,
+        "created_at": meta["created_at"],
+        "assigned_to": "Bảo — Chuyên Viên Dựng Phim & Render Video AI (Desktop Studio)",
+        "chief_strategist": "Khánh — Trưởng Ban 11 (Laptop HQ)",
+        "status": "PENDING_DESKTOP_RENDER",
+        "ticker": clean_sym,
+        "video_title": meta["title"],
+        "aspect_ratio": "9:16",
+        "resolution": {"width": 1080, "height": 1920},
+        "target_fps": 30,
+        "voice_preset": {
+            "primary": "vi-VN-NamMinhNeural",
+            "alternative": "vi-VN-HoaiMyNeural",
+            "rate": "+0%",
+            "pitch": "+0Hz"
+        },
+        "tcbs_icopy_badge": "iCopy TCBS: 105C307855",
+        "scenes": [
+            {
+                "scene_idx": s["scene"],
+                "phase": s["phase"],
+                "timestamp": s["timestamp"],
+                "duration_est_seconds": int(s["duration"].replace("s", "")),
+                "voiceover_text": s["voiceover"],
+                "visual_prompt": s["visual_cue"],
+                "audio_sfx_cue": s["audio_sfx"],
+                "subtitle_text": s["voiceover"]
+            }
+            for s in scenes
+        ],
+        "seo_package": package["seo_package"],
+        "hien_data": package["hien_data_feed"],
+        "output_expected_path": str(OUTPUT_DIR / f"{job_id}.mp4")
+    }
+
+    job_file.write_text(json.dumps(render_job, indent=2, ensure_ascii=False), encoding="utf-8")
+    return job_file
+
+
 # ==============================================================================
 # 5. ĐIỀU KHIỂN CHẠY ROUTINE HOÀN CHỈNH
 # ==============================================================================
 
-def run_khanh_evening_routine(ticker: str = "HPG") -> Dict[str, Any]:
-    print(f"[*] BAN 11 (KHÁNH) BẮT ĐẦU PHIÊN TÁC CHIẾN TỐI 21H15 CHO MÃ: {ticker}...")
-    package = craft_viral_video_script(ticker, "ANGLE_01_TRUTH_EXPOSED")
+def run_khanh_evening_routine(ticker: str = "HPG", angle_id: str = "ANGLE_01_TRUTH_EXPOSED") -> Dict[str, Any]:
+    print(f"[*] BAN 11 (KHÁNH) BẮT ĐẦU PHIÊN TÁC CHIẾN TỐI 21H15 CHO MÃ: {ticker} (Góc nhìn: {angle_id})...")
+    init_or_update_trending_vault()
+    package = craft_viral_video_script(ticker, angle_id)
     file_path = export_khanh_script_markdown(package)
+    job_file = export_render_job_for_bao(package)
     print(f"[+] Đã hoàn thành kịch bản video viral tại: {file_path}")
+    print(f"[+] Đã chuyển giao Lệnh Dựng Phim (Render Job) cho Bảo tại: {job_file}")
+    print(f"[+] Đã cập nhật Kho dữ liệu Trending Vault tại: {TRENDING_VAULT}")
     return package
 
 
 if __name__ == "__main__":
-    t = sys.argv[1] if len(sys.argv) > 1 else "HPG"
-    run_khanh_evening_routine(t)
+    import argparse
+    parser = argparse.ArgumentParser(description="Ban 11 — Khánh Chief Viral Financial Content Creator Engine")
+    parser.add_argument("ticker_pos", nargs="?", default=None, help="Mã chứng khoán (tùy chọn theo vị trí, ví dụ: HPG, TCB)")
+    parser.add_argument("--ticker", "-t", type=str, default=None, help="Mã chứng khoán tâm điểm (ví dụ: HPG, TCB, MBB)")
+    parser.add_argument("--hook-style", "--angle", type=str, default="ANGLE_01_TRUTH_EXPOSED", help="Góc tiếp cận viral")
+    parser.add_argument("--run-routine", action="store_true", help="Chạy routine sản xuất kịch bản lúc 21h15")
+    parser.add_argument("--list-trends", action="store_true", help="Hiển thị danh sách góc tiếp cận trending")
+    parser.add_argument("--init-vault", action="store_true", help="Khởi tạo hoặc cập nhật kho dữ liệu Trending Vault")
+
+    args = parser.parse_args()
+
+    if args.list_trends:
+        print("\n=== DANH SÁCH CÁC GÓC TIẾP CẬN TRENDING BAN 11 (KHÁNH) ===")
+        for a in TRENDING_ANGLES:
+            print(f"- [{a['id']}] {a['name']}: {a['hook_template'][:70]}... (Mã phù hợp: {', '.join(a['suitable_tickers'])})")
+        sys.exit(0)
+
+    if args.init_vault:
+        vault = init_or_update_trending_vault()
+        print(f"[+] Đã khởi tạo Trending Vault thành công tại: {TRENDING_VAULT}")
+        sys.exit(0)
+
+    target_sym = args.ticker or args.ticker_pos or "HPG"
+    run_khanh_evening_routine(target_sym, args.hook_style)

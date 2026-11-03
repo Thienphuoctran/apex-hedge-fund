@@ -1,6 +1,6 @@
 # 🌸 BAN 10: BÁO CÁO RÀ SOÁT & PHÂN TÍCH CHỌN LỌC BCTC DOANH NGHIỆP TIỀM NĂNG (VỪA & LỚN)
 
-**Thời gian phát hành**: `2026-11-03 18:48:47` (Khung giờ 21h00 tối)
+**Thời gian phát hành**: `2026-11-03 19:01:33` (Khung giờ 21h00 tối)
 **Chuyên viên thẩm định**: **Hiền** — Trưởng Ban Rà Soát BCTC & Quan Hệ Cổ Đông (IR) — Ban 10
 **Báo cáo trực tiếp cho**: **Chủ tịch Phước Trần** *(Tài khoản TCBS: `105C307855`)*
 **Định hướng chọn lọc**: *Tập trung 100% Doanh nghiệp Vừa & Lớn, sàng lọc tiềm năng thực chất, bài trừ SmallCap rủi ro, Tiền thật $OCF/LNST \ge 1.0x$.*
@@ -95,6 +95,29 @@
 1. **HPG (LargeCap)**: Tỷ lệ tiền thật 1.08x chứng minh doanh thu hơn 62.000 tỷ/quý là dòng tiền thực. Catalyst Dung Quất 2 sắp vận hành thương mại sẽ mở rộng công suất HRC thêm 5.6 triệu tấn/năm, đưa Hòa Phát vào Top 30 nhà sản xuất thép lớn nhất hành tinh.
 2. **GMD (LargeCap)**: Tiền thật 1.42x, FCF thặng dư 1.441 tỷ. Vị thế độc quyền cảng nước sâu Gemalink đón các liên minh tàu mẹ quốc tế lớn nhất thế giới, hưởng trọn làn sóng dịch chuyển chuỗi cung ứng FDI sang Việt Nam.
 3. **DGC (MidCap)**: Tiền thật 2.79x (OCF gấp gần 3 lần LNST), lượng tiền mặt ròng khổng lồ và nợ vay siêu thấp. Hưởng lợi chu kỳ bùng nổ chip bán dẫn và AI toàn cầu cần nguồn Phốt pho vàng tinh chế cao cấp, xúc tiến cấp phép Tổ hợp Nghi Sơn.
+
+---
+
+## 🌦️ RADAR TÁC ĐỘNG VĨ MÔ, KHÍ HẬU & THIÊN TAI TỚI GIÁ CỔ PHIẾU (CLIMATE & MACRO RADAR):
+*(Chuyên mục chiến lược nghiên cứu độc quyền phục vụ trực tiếp Chủ tịch Phước Trần)*
+
+### ☀️ 1. KỊCH BẢN SIÊU EL NIÑO (HẠN HÁN & NẮNG NÓNG GAY GẮT):
+• **Cơ chế truyền dẫn**: Thiếu hụt lượng mưa trầm trọng $\rightarrow$ Mực nước các hồ thủy điện về mực nước chết.
+• 📉 **Nhóm Chịu Rủi Ro Lớn (Headwind)**: Các cổ phiếu Thủy điện (`REE`, `VSH`, `HDG`, `CHP`) sản lượng phát điện sụt giảm 30%-50%, doanh thu và lợi nhuận lao dốc.
+• 📈 **Nhóm Hưởng Lợi Đột Biến (Tailwind)**:
+  - **Nhiệt điện than & Điện khí** (`POW`, `QTP`, `HND`): EVN bắt buộc phải huy động tối đa công suất phát điện nền để chống thiếu điện $\rightarrow$ Sản lượng Qc và doanh thu bùng nổ.
+  - **Nước sạch & Tiện ích hạ tầng** (`BWE`, `TDM`): Nhu cầu dùng nước công nghiệp và dân dụng tăng vọt tại các vùng hạn mặn.
+  - **Nông sản & Lương thực thế giới** (`QNS`, `DBC`): Hạn hán toàn cầu làm co hẹp nguồn cung đường và ngũ cốc $\rightarrow$ Giá đường và giá nông sản tăng vọt giúp biên lợi nhuận mở rộng.
+
+### 🌪️ 2. KỊCH BẢN SIÊU BÃO & THIÊN TAI CỰC ĐOAN (BÃO NHIỆT ĐỚI ĐỔ BỘ):
+• **Cơ chế truyền dẫn**: Tàn phá cơ sở hạ tầng, gián đoạn chuỗi cung ứng tạm thời nhưng kích hoạt làn sóng Tái thiết thần tốc sau bão.
+• 📈 **Nhóm Hưởng Lợi Dài Hạn Sau Bão (Post-Disaster Reconstruction)**:
+  - **Hạ tầng, Xây lắp & Đầu tư công** (`HHV`, `VCG`): Chính phủ cấp tốc giải ngân ngân sách dự phòng để khắc phục sạt lở, sửa chữa cầu đường, gia cố đê điều $\rightarrow$ Khối lượng thi công (Backlog) tăng vọt.
+  - **Vật liệu xây dựng & Tôn thép** (`HPG`, `HSG`): Nhu cầu tôn lợp, ống thép mạ kẽm và thép xây dựng sửa chữa nhà xưởng công nghiệp và nhà dân tăng đột biến sau bão.
+  - **Chăn nuôi an toàn sinh học** (`DBC`): Bão lũ gây ngập úng và dịch bệnh chuồng trại nhỏ lẻ của nông dân $\rightarrow$ Nguồn cung heo ngoài thị trường sụt giảm làm giá heo hơi tăng vọt; trong khi mô hình chuồng trại công nghệ cao khép kín 3F của Dabaco không bị tổn thương và hưởng trọn mức giá bán cao.
+• 📉 **Nhóm Gặp Rủi Ro Ngắn Hạn**:
+  - **Bảo hiểm phi nhân thọ** (`BVH`, `PVI`, `BMI`): Chi phí bồi thường tài sản, tàu bè, nhà xưởng bị bão tàn phá tăng vọt làm sụt giảm lợi nhuận quý.
+  - **Logistics & Cảng biển** (`GMD`, `HAH`): Đình trệ tàu cập cảng trong 3-5 ngày bão đổ bộ (tuy nhiên sau bão sẽ hồi phục rất nhanh do áp lực giải phóng hàng hóa dồn ứ).
 
 ---
 📁 *Báo cáo này đã được em lưu trữ vĩnh viễn vào hệ thống tại: `VN_Market/02_BCTC_Equity_Research/2026-11-03_Hien_Daily_Review.md` phục vụ Chủ tịch và Hội đồng tra cứu bất cứ lúc nào ạ!*

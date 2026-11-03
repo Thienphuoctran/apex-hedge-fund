@@ -1,0 +1,106 @@
+{
+  "meeting_time": "23:00:00",
+  "meeting_date": "2026-11-03",
+  "chairman_observed": "Trần Quốc Thiên Phước",
+  "presiding_officer": "Master CIO James (Ban 8)",
+  "council_status": "CONCLUDED_AND_RATIFIED",
+  "financial_snapshot": {
+    "account_tcbs": "105C307855",
+    "total_nav_vnd": 20115000,
+    "realized_pnl_vnd": 115000,
+    "realized_pnl_pct": 0.58,
+    "cash_dry_powder_vnd": 1415000,
+    "cash_dry_powder_pct": 7.0,
+    "leverage_margin_pct": 0.0,
+    "hit_rate_vn_pct": 100.0,
+    "alex_slippage_saved_usd": 2250.47,
+    "alex_alpha_5d_pct": 1.9
+  },
+  "attendance_roster": [
+    {
+      "dept": "Ban 8",
+      "representative": "Master CIO James",
+      "role": "Chủ Tọa & Tổng Tư Lệnh Điều Hành"
+    },
+    {
+      "dept": "Ban 1 VN",
+      "representative": "Trưởng Ban Vĩ Mô SBV",
+      "role": "Giám Sát Thanh Khoản & Tỷ Giá"
+    },
+    {
+      "dept": "Ban 1 Global",
+      "representative": "Trưởng Ban Vĩ Mô Toàn Cầu",
+      "role": "Giám Sát Fed, DXY, VIX, WTI"
+    },
+    {
+      "dept": "Ban 2 VN",
+      "representative": "Trưởng Ban Thẩm Định BCTC VN",
+      "role": "Kiểm Toán VAS/TT200 & Dòng Tiền Thật OCF"
+    },
+    {
+      "dept": "Ban 2 Global",
+      "representative": "Trưởng Ban Nghiên Cứu Quốc Tế",
+      "role": "Mổ Xẻ FCF, SEC Form 4, BCTC Phố Wall"
+    },
+    {
+      "dept": "Ban 3 VN",
+      "representative": "Trưởng Ban VSA & Wyckoff VN",
+      "role": "Đọc Vị Dòng Tiền & Cung Cầu Nội Phiên"
+    },
+    {
+      "dept": "Ban 3 Global",
+      "representative": "Trưởng Ban Tổng Hợp Phố Wall",
+      "role": "Định Giá Đồng Thuận & Alpha Ranking"
+    },
+    {
+      "dept": "Ban 4 VN",
+      "representative": "Hội Đồng Quản Trị Rủi Ro VN",
+      "role": "Khóa Rủi Ro T+2.5 & Biên Độ Sàn HOSE"
+    },
+    {
+      "dept": "Ban 4 Global",
+      "representative": "Hội Đồng Rủi Ro Định Lượng",
+      "role": "ATR Risk-Parity & Ma Trận Tương Quan 1Y"
+    },
+    {
+      "dept": "Ban 5 VN",
+      "representative": "Trưởng Ban Tự Học & Hồi Tố VN",
+      "role": "Kiểm Toán Thực Thi & Adaptive Tuning"
+    },
+    {
+      "dept": "Ban 5 Global",
+      "representative": "Trưởng Ban Thẩm Định Hiệu Suất",
+      "role": "Hồi Tố Walk-Forward & Đo Lường Trượt Giá"
+    },
+    {
+      "dept": "Ban 6 VN & Global",
+      "representative": "Huấn Luyện Viên Trưởng",
+      "role": "Giám Sát Kỷ Luật & Tâm Lý Nhà Đầu Tư"
+    },
+    {
+      "dept": "Ban 7 VN",
+      "representative": "Minh Quân",
+      "role": "Chuyên Viên Đầu Tư Trưởng TTCK VN"
+    },
+    {
+      "dept": "Ban 7 Global",
+      "representative": "Alex",
+      "role": "Chuyên Viên Đầu Tư Trưởng Phố Wall"
+    },
+    {
+      "dept": "Ban 9",
+      "representative": "Victor",
+      "role": "Chỉ Huy Trưởng Sentinel Thời Gian Thực"
+    },
+    {
+      "dept": "Ban 10",
+      "representative": "Hiền",
+      "role": "Chuyên Viên Rà Soát BCTC & Quan Hệ Cổ Đông"
+    },
+    {
+      "dept": "Ban 11",
+      "representative": "Khánh",
+      "role": "Giám Đốc Sáng Tạo Nội Dung & Video Viral"
+    }
+  ]
+}

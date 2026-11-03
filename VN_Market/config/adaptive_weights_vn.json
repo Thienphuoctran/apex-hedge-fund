@@ -4,30 +4,30 @@
   "settlement": "T+2.5",
   "circuit_limits": {
     "HOSE": 0.07,
-    "HNX": 0.10,
+    "HNX": 0.1,
     "UPCOM": 0.15
   },
   "current_regime": "Selective_Accumulation_Earnings_Focus",
   "weights": {
-    "bctc_earnings_quality": 0.30,
+    "bctc_earnings_quality": 0.35,
     "cashflow_and_smart_money": 0.25,
-    "macro_monetary_sbv": 0.20,
+    "macro_monetary_sbv": 0.15,
     "valuation_fair_value": 0.15,
-    "technical_and_atr_risk": 0.10
+    "technical_and_atr_risk": 0.1
   },
   "sub_weights": {
     "bctc_components": {
-      "ocf_to_net_profit_ratio": 0.30,
+      "ocf_to_net_profit_ratio": 0.3,
       "free_cash_flow_growth": 0.25,
-      "debt_to_equity_safety": 0.20,
+      "debt_to_equity_safety": 0.2,
       "beneish_mscore_safety": 0.15,
-      "gross_margin_expansion": 0.10
+      "gross_margin_expansion": 0.1
     },
     "smart_money_components": {
       "foreign_net_flow": 0.35,
       "proprietary_trading_flow": 0.25,
-      "margin_headroom_safety": 0.20,
-      "volume_breakout_vs_20d": 0.20
+      "margin_headroom_safety": 0.2,
+      "volume_breakout_vs_20d": 0.2
     }
   },
   "min_risk_reward_ratio": 2.0,
@@ -35,5 +35,13 @@
   "max_single_stock_risk": 0.02,
   "t_plus_buffer_days": 2.5,
   "learning_cycle_days": 5,
-  "last_updated": "2026-10-31"
+  "last_updated": "2026-11-03",
+  "tuning_audit": {
+    "updated_at": "2026-11-03 19:55:48",
+    "bctc_hit_rate": 100.0,
+    "reasoning": [
+      "Ban 2 (BCTC & Dòng tiền thật OCF) duy trì Hit Rate 100% trên 3 mã HPG, TCB, MBB -> Thưởng quyền biểu quyết lên 35.0%.",
+      "Ban 1 (Vĩ mô chung) điều chỉnh về 15.0% để ưu tiên sức mạnh nội tại doanh nghiệp."
+    ]
+  }
 }

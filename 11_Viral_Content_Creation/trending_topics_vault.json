@@ -1,0 +1,88 @@
+{
+  "system_title": "Apex Hedge Fund — Viral Trending & Content Vault (Ban 11 - Khánh)",
+  "last_updated": "2026-11-03 19:40:21",
+  "chief_creator": "Khánh (Chief Viral Financial Content Creator & Trending Strategist)",
+  "collaborator": "Hiền (Ban 10 — Apex Corporate Filings & IR Scout)",
+  "supervisor": "James (Ban 8 — Apex Master CIO)",
+  "icopy_target_account": "105C307855",
+  "primary_platforms": [
+    "TikTok",
+    "YouTube Shorts",
+    "Facebook Reels",
+    "Threads"
+  ],
+  "trending_angles": [
+    {
+      "id": "ANGLE_01_TRUTH_EXPOSED",
+      "name": "Bóc Trần Tiền Thật vs Tiền Giấy",
+      "hook_template": "Đừng vội mừng khi thấy doanh nghiệp báo lãi nghìn tỷ! 90% F0 không hề biết bí mật chết người này trên Báo Cáo Tài Chính...",
+      "target_emotion": "Tò mò, sợ bị lừa (Fear of being scammed), muốn biết sự thật",
+      "suitable_tickers": [
+        "HPG",
+        "MWG",
+        "NVL",
+        "HAG"
+      ]
+    },
+    {
+      "id": "ANGLE_02_BANK_WARFARE",
+      "name": "Cuộc Chiến Tiền Rẻ CASA Ngân Hàng",
+      "hook_template": "Tại sao Techcombank và MBBank cho vay lãi suất cực thấp mà tiền vẫn đổ về như thác lũ? Đây là cỗ máy in tiền CASA...",
+      "target_emotion": "Khao khát kiếm tiền, hiểu quy luật tài chính của giới tinh hoa",
+      "suitable_tickers": [
+        "TCB",
+        "MBB",
+        "VCB",
+        "ACB"
+      ]
+    },
+    {
+      "id": "ANGLE_03_MEGA_PROJECT_CATALYST",
+      "name": "Đại Dự Án Dung Quất 2 — Cú Hích Vua Thép",
+      "hook_template": "Lò cao Dung Quất 2 của Hòa Phát đã chạy thật hay chỉ là tin đồn thổi giá cổ phiếu? Xem ngay số tiền thật 8.800 tỷ!",
+      "target_emotion": "Hào hứng, kỳ vọng bùng nổ, đón đầu siêu sóng chu kỳ",
+      "suitable_tickers": [
+        "HPG"
+      ]
+    },
+    {
+      "id": "ANGLE_04_DIVIDEND_TRAP",
+      "name": "Bẫy Chia Cổ Tức Bằng Cổ Phiếu",
+      "hook_template": "Được chia cổ tức 30% bằng cổ phiếu là giàu to hay bị mất trắng một phần vốn? Sự thật phũ phàng ngày giao dịch không hưởng quyền...",
+      "target_emotion": "Vỡ òa, tránh mất tiền oan, nâng cao tư duy thực chiến",
+      "suitable_tickers": [
+        "SSI",
+        "HPG",
+        "TCB"
+      ]
+    },
+    {
+      "id": "ANGLE_05_SMART_MONEY_T0",
+      "name": "Chiến Thuật Lướt T+0 Hạ Giá Vốn Của Quỹ Lớn",
+      "hook_template": "Thị trường đỏ lửa nhưng tài khoản vẫn sinh lời đều đặn? Tiết lộ cách quỹ đầu tư lướt T+0 ngay trên kho hàng có sẵn...",
+      "target_emotion": "Thích thú, muốn áp dụng giải pháp kiếm thêm thu nhập ngay lập tức",
+      "suitable_tickers": [
+        "HPG",
+        "TCB",
+        "MBB"
+      ]
+    }
+  ],
+  "content_pillars": [
+    {
+      "pillar_name": "BCTC Forensic (Bóc Trần Tiền Thật OCF)",
+      "description": "Soi báo cáo tài chính mổ xẻ chất lượng lợi nhuận thật vs ảo, đòn bẩy và dòng tiền tự do",
+      "target_audience": "Nhà đầu tư F0 và trung cấp muốn đầu tư an toàn không bị úp bô"
+    },
+    {
+      "pillar_name": "CASA & Cỗ Máy Tiền Rẻ Ngân Hàng",
+      "description": "Giải thích mô hình kinh doanh tiền rẻ của các ngân hàng dẫn đầu",
+      "target_audience": "Nhà đầu tư dài hạn tìm kiếm siêu cổ phiếu tăng trưởng kép"
+    },
+    {
+      "pillar_name": "Chiến Thuật Đi Lệnh & T+0 Thực Chiến",
+      "description": "Chia sẻ kinh nghiệm giao dịch thực tế, lướt T+0 hạ giá vốn, kỷ luật quản trị rủi ro",
+      "target_audience": "Nhà đầu tư cá nhân muốn kiếm thêm dòng tiền ngoài luồng 3 - 4 triệu/tháng"
+    }
+  ]
+}

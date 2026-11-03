@@ -594,5 +594,13 @@
       "debt_to_equity": 1.12,
       "fcf_ty": 1470
     }
-  ]
+  ],
+  "injected_contextual_memories": [
+    "MEM-VN-001",
+    "MEM-VN-002",
+    "MEM-VN-003",
+    "MEM-VN-004",
+    "MEM-VN-005"
+  ],
+  "memory_vault_version": "VN-Mem0-Contextual-Vault-v2.1"
 }

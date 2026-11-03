@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-03T08:59:32.159001+00:00",
+  "generated_at_utc": "2026-11-03T12:13:07.173709+00:00",
   "trading_date": "2026-11-03",
   "previous_date_compared": "2026-11-02",
   "specialist_profile": {
@@ -589,5 +589,13 @@
       "planned_weight_pct": 0.0,
       "limit_order_plan": "Alex kiên quyết đứng ngoài dù giá bật tăng kỹ thuật (+3.81% / +3.34%) để bảo vệ tính toàn vẹn khoa học của danh mục."
     }
-  ]
+  ],
+  "injected_contextual_memories": [
+    "MEM-GLB-001",
+    "MEM-GLB-002",
+    "MEM-GLB-003",
+    "MEM-GLB-004",
+    "MEM-GLB-005"
+  ],
+  "memory_vault_version": "Mem0-Contextual-Vault-v2.1"
 }

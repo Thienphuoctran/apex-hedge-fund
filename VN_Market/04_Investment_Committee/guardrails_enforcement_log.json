@@ -1,0 +1,43 @@
+[
+  {
+    "timestamp": "2026-11-03 19:54:38",
+    "ticker": "HPG",
+    "action": "BUY",
+    "is_passed": false,
+    "verdict": "REJECTED BY GUARDRAIL (BỊ KHÓA BỞI CODE)",
+    "violations_count": 1,
+    "violations": [
+      {
+        "guard_id": "GUARD_01_ATO_FOMO_VETO",
+        "reason": "Lệnh Mua HPG vào lúc 09:15:30 khi giá đã tăng +3.20% (Bẫy Gap xanh ATO).",
+        "enforced_action": "TỪ CHỐI LỆNH MUA ĐUỔI. Yêu cầu Minh Quân chuyển sang Lệnh Limit (LO) chiết khấu hoặc chờ Khung Giờ Vàng 14h00-14h25.",
+        "historical_lesson": "MEM-VN-001 (Mistake Autopsy: F0 thường đu đỉnh ATO khi tạo Gap xanh ảo, bị xả T+2 lúc 13h30)"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-11-03 19:54:38",
+    "ticker": "NVL",
+    "action": "BUY",
+    "is_passed": false,
+    "verdict": "REJECTED BY GUARDRAIL (BỊ KHÓA BỞI CODE)",
+    "violations_count": 1,
+    "violations": [
+      {
+        "guard_id": "GUARD_02_OCF_DEBT_TRAP_VETO",
+        "reason": "Mã NVL vi phạm chỉ số an toàn tài chính: OCF/LNST = -0.50x (<=0) hoặc D/E = 3.50x (>2.0).",
+        "enforced_action": "KHÓA QUYỀN MUA VĨNH VIỄN. Đưa vào danh sách VETO (Disciplined Pass). Tiền của Chủ tịch chỉ đầu tư vào doanh nghiệp Tiền Thật!",
+        "historical_lesson": "MEM-VN-003 (Vụ án DVD, TTF, NVL: Lãi kế toán nhưng OCF âm dồn dập và nợ đầm đìa)"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-11-03 19:54:38",
+    "ticker": "HPG",
+    "action": "BUY",
+    "is_passed": true,
+    "verdict": "PASSED (ĐƯỢC PHÉP THỰC THI)",
+    "violations_count": 0,
+    "violations": []
+  }
+]

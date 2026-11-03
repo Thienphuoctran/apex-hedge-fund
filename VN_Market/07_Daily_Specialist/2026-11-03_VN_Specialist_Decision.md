@@ -21,6 +21,24 @@
 
 ---
 
+## 🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)
+*Minh Quân tự động nạp 5 quy tắc bài học từ `vn_contextual_memory_vault.json` kết hợp kết quả kiểm toán tài khoản thực tế của Chủ tịch:*
+
+| Mã Bộ Nhớ | Phân Loại Cảnh Báo | Điều Kiện Kích Hoạt | Cổ Phiếu Liên Quan | Kỷ Luật Thép Bắt Buộc Tuân Thủ | Mức Độ Ưu Tiên |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`MEM-VN-001`** | `ATO_BULL_TRAP_GUARD` | Mở cửa tạo Gap xanh > +2.5% phiên ATO nhưng thanh khoản phiên sáng thấp | **HPG, MWG, SSI** | Cấm mua đuổi ATO; bắt buộc đặt lệnh Limit LO chiết khấu -0.35x ATR(14) và chờ xác nhận lực hấp thụ trong Khung Giờ Vàng 14h00-14h25. | **🔥 BẮT BUỘC (MANDATORY)** |
+| **`MEM-VN-002`** | `OMISSION_ERROR_NO_SUPPLY` | Nến Test Cung (No-Supply) Vol cạn < 45% MA20 tại nền tích lũy Wyckoff + Tiền mặt ròng lớn | **DGC, FPT** | Giải ngân ngay 30%-60% vị thế thăm dò tại nền No-Supply khi OCF/LNST >= 1.0x và Altman Z'' > 4.0. | **🛡️ PHÒNG VỆ (GUARD)** |
+| **`MEM-VN-003`** | `FORENSIC_DEBT_TRAP_VETO` | OCF âm liên tục + Đòn bẩy nợ D/E > 2.0x + Altman Z'' < 1.1 | **FRT, VCG, NVL** | Khóa cứng trong danh sách Veto; đánh giá mọi nhịp tăng của nhóm này là Disciplined Pass (Bỏ qua có kỷ luật). | **🛡️ PHÒNG VỆ (GUARD)** |
+| **`MEM-VN-004`** | `INTRADAY_LIMIT_ORDER_CALIBRATION` | Dòng tiền lớn mua chủ động bứt phá cản (Breakout Volume > +40% MA20) | **HPG, TCB, MBB** | Linh hoạt nâng giá đặt Limit LO lên sát bước giá khớp thực tế trong Khung Giờ Vàng 14h00-14h25 khi đã xác nhận lực hấp thụ của khối ngoại/tổ chức, khóa chặt mức trượt giá tối đa <= 0.5%. | **🔥 BẮT BUỘC (MANDATORY)** |
+| **`MEM-VN-005`** | `POSITION_SIZING_AND_CASH_PRESERVATION` | Tác chiến danh mục tài khoản thực tế chuẩn lô chẵn 100 CP | **HPG, MBB, TCB** | Luôn bảo đảm tỷ lệ phân bổ lô chẵn 100 CP chuẩn xác và giữ tỷ lệ tiền mặt dự phòng (Dry Powder >= 7% NAV), tuyệt đối không dùng margin để triệt tiêu mọi rủi ro tài khoản. | **🔥 BẮT BUỘC (MANDATORY)** |
+
+> [!IMPORTANT]
+> **KẾT QUẢ KIỂM TOÁN TÀI KHOẢN GẦN NHẤT ĐƯỢC TỰ ĐỘNG LIÊN KẾT**:  
+> - **Tài khoản TCBS**: `105C307855` | **Tổng NAV**: `20,115,000 ₫` | **Lợi nhuận ngày**: `+115,000 ₫ (+0.58%)` | **Hit Rate**: `100.0%` (3/3 mã xanh ngát).  
+> - **Kỷ luật thực thi**: Đã bảo toàn tiền mặt dự phòng 7.1% (Dry Powder), khống chế 0% margin. Minh Quân cam kết thực thi nghiêm 100% các quy tắc bộ nhớ trên vào sổ lệnh hôm nay!
+
+---
+
 ## 🔍 2. MINH QUÂN TỰ SOI GƯƠNG & KIỂM ĐIỂM NGÀY HÔM QUA (`Yesterday Autopsy & Evolution`)
 
 ### 2.1. Những Quyết Định ĐÚNG ĐẮN Của Minh Quân Cần Phát Huy (`Validated Strengths`)

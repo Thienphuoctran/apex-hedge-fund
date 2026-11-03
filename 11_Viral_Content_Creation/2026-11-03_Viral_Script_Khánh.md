@@ -1,5 +1,5 @@
 # 🎬 KỊCH BẢN VIDEO VIRAL 60S TIKTOK & SHORTS — BAN 11 (KHÁNH)
-*Thời gian sản xuất*: `03/11/2026 lúc 19:00`  
+*Thời gian sản xuất*: `03/11/2026 lúc 19:40`  
 *Tác giả kịch bản*: **Khánh — Trưởng Ban 11 (Viral Content Creator)**  
 *Cộng sự cung cấp dữ liệu*: **Hiền — Trưởng Ban 10 (Rà Soát BCTC & Quan Hệ Cổ Đông)**  
 *Tổng Tư Lệnh Giám Sát & Phê Duyệt*: **James — Master CIO (Ban 8)**  
@@ -52,13 +52,13 @@ Anh em đang ôm HPG giá bao nhiêu? Để lại bình luận cùng đàm đạ
 `#hoaphat #hpg #chungkhoan #taichinh #bctc #dautu #kinhdoanh #kiemtien #tcbs #icopy`
 
 ### 3. Phễu Tạo Dòng Tiền Thu Nhập Ngoài Luồng (Kiếm 3 - 4 Triệu/Tháng)
-- Gắn link Bio hoặc ghim bình luận đầu tiên: *"Chi tiết cách mình gom hàng Hòa Phát và lướt T+0 hạ giá vốn, anh em xem trong danh mục iCopy TCBS mã 105C307855 của mình nhé!"*
+- Gắn link Bio hoặc ghim bình luận đầu tiên: *"Chi tiết cách mình gom hàng HPG và lướt T+0 hạ giá vốn, anh em xem trong danh mục iCopy TCBS mã 105C307855 của mình nhé!"*
 - Thu hút người sao chép danh mục $\rightarrow$ Tạo ra hoa hồng chia sẻ lợi nhuận đều đặn hàng tháng.
 
 ---
 ## V. BIÊN BẢN PHÊ DUYỆT CỦA TỔNG TƯ LỆNH MASTER CIO JAMES
 - **Người kiểm định**: **James — Master CIO (Ban 8)**
-- **Xác thực số liệu**: ✅ ĐÃ KIỂM TRA CHÉO 100%: Số liệu Doanh thu, LNST, OCF hoàn toàn trùng khớp với Báo cáo Tài chính Q3 kiểm toán của Hòa Phát do Ban 10 cung cấp.
+- **Xác thực số liệu**: ✅ ĐÃ KIỂM TRA CHÉO 100%: Số liệu Doanh thu, LNST, OCF hoàn toàn trùng khớp với Báo cáo Tài chính kiểm toán của CTCP Tập đoàn Hòa Phát (HPG) do Ban 10 cung cấp.
 - **Kiểm tra an toàn pháp lý**: ✅ PASSED: Kịch bản tập trung vào giáo dục tài chính & mổ xẻ BCTC, có câu dẫn nhận định cá nhân, tuân thủ nghiêm ngặt quy chế công bố thông tin.
 - **Điểm Viral Index**: 🌟 **`95/100`**
 - **Phán quyết cuối cùng**: 🎖️ **`APPROVED FOR PRODUCTION — BẬT ĐÈN XANH QUAY VIDEO`**

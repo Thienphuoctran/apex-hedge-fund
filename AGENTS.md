@@ -306,3 +306,50 @@ Mỗi ngày vào đúng **21h15 tối** (ngay sau khi Hiền gửi báo cáo tà
   ```
 - Thư viện kịch bản xuất bản: `11_Viral_Content_Creation/YYYY-MM-DD_Viral_Script_Khánh.md`
 - Sổ kho ý tưởng trending: `11_Viral_Content_Creation/trending_topics_vault.json`
+
+## 4. Bộ Phận Kỹ Thuật Dựng Video Trực Thuộc Ban 11 — "Bảo" (Desktop Studio Desk)
+Bộ phận kỹ thuật dựng phim do chuyên viên **"Bảo"** (`bao`) trực tiếp phụ trách, đóng quân tại **Máy tính để bàn cấu hình cao** của Chủ tịch Phước Trần nhằm tận dụng tối đa sức mạnh vi xử lý đa nhân, RAM lớn và card đồ họa chuyên dụng:
+1. **Tiếp nhận lệnh Render (Render Job)**: Tự động quét và nạp các tệp chỉ thị kỹ thuật tại `11_Viral_Content_Creation/render_queue/*_render_job.json` do Khánh chuyển giao sau khi Chủ tịch duyệt kịch bản.
+2. **Sinh âm thanh lồng tiếng AI**: Sử dụng Microsoft Edge-TTS (`vi-VN-NamMinhNeural` / `vi-VN-HoaiMyNeural`) sinh giọng đọc truyền cảm tự nhiên chuẩn xác từng giây.
+3. **Sản xuất Asset hình ảnh & B-Roll 9:16**: Tự động vẽ khung hình tài chính 1080x1920 (9:16) sắc nét, bảng đối soát OCF/LNST trực quan và gắn badge chuyển đổi `iCopy TCBS: 105C307855`.
+4. **Biên tập & Render video hoàn thiện**: Tận dụng GPU và CPU máy bàn để xuất bản video MP4 tốc độ cao tại `11_Viral_Content_Creation/output/`.
+- Lệnh chạy của Bảo trên máy bàn:
+  ```powershell
+  python scripts\bao_video_renderer.py --run-queue
+  ```
+
+
+---
+
+# QUY CHẾ HỘI NGHỊ ĐIỀU HÀNH TỐI CẤP CAO 23H00 HÀNG NGÀY (APEX 23:00 EOD EXECUTIVE COUNCIL & ADVERSARIAL AUTOPSY PROTOCOL)
+
+Hội nghị 23h00 mỗi tối là **"Tòa Án Tối Cao Tự Soi Gương & Chiến Lược Cải Tiến Hệ Thống"** do Tổng Tư Lệnh Master CIO James trực tiếp triệu tập và chủ trì theo sắc lệnh của Chủ tịch Trần Quốc Thiên Phước.
+
+## 1. Nguyên Tắc Thể Chế Bắt Buộc (Inviolable Council Rules)
+1. **Tuyệt Đối Không Tự Biên Tự Diễn (No Echo-Chamber / Zero Monologue)**:
+   - Nghiêm cấm Master CIO James tự lập báo cáo rỗng một mình.
+   - Bắt buộc phải có sự hiện diện và tiếng nói phản biện, tranh luận nảy lửa của đại diện đầy đủ các phòng ban:
+     * **Ban 1 (Vĩ mô VN & Global)**: Phản biện dòng tiền liên thị trường, tỷ giá USD/VND, SBV, DXY, VIX.
+     * **Ban 2 (BCTC & Pháp y dòng tiền)**: Kiểm tra chất lượng tiền thật OCF/FCF, cảnh báo nợ vay và tồn kho.
+     * **Ban 3 (Tổng hợp & Đọc vị VSA)**: Mổ xẻ cung cầu, nến Test Cung, hành vi tạo lập nội phiên.
+     * **Ban 4 (Hội đồng Quản trị rủi ro & Định lượng)**: Rà soát rủi ro T+2.5, khóa Stop Loss, Stress-Test.
+     * **Ban 5 (Adaptive Learning & Hồi tố)**: Đo lường Walk-Forward Hit Rate, sai số trượt giá, tinh chỉnh weights.
+     * **Ban 6 (Investor Academy Coach)**: Báo cáo tâm lý giao dịch, kỷ luật Checklist 7 Điểm của Chủ tịch.
+     * **Ban 7 VN (Minh Quân)**: Tự kiểm điểm điểm vào lệnh, giá khớp, tối ưu hóa lợi nhuận danh mục VN.
+     * **Ban 7 Global (Alex)**: Tự kiểm điểm danh mục Phố Wall, trần rủi ro Bán dẫn 28%, chuẩn bị lộ trình 6 tháng.
+     * **Ban 9 (Victor Sentinel)**: Trực ban báo cáo các cảnh báo đỏ nội phiên, nhịp rung lắc 14h00-14h25.
+     * **Ban 10 (Hiền IR Scout)**: Báo cáo CBTT sau giờ giao dịch, xác thực văn bản BCTC chính thống.
+     * **Ban 11 (Khánh Creator)**: Báo cáo kịch bản truyền thông BCTC viral, đo lường phản ứng dư luận.
+2. **Bốn Trụ Cột Nội Dung Bắt Buộc Của Nghị Quyết 23h00**:
+   - **Trụ cột 1 — Thảo luận, phản biện & Đánh giá Sai lầm / Sai phạm trong ngày**: Chỉ rõ từng sai sót (thời điểm vào lệnh, giá vốn, trượt giá, cơ hội bỏ lỡ hoặc nhận định chủ quan), đo lường chính xác tác động tiêu cực đến lợi nhuận danh mục và vận hành hệ thống.
+   - **Trụ cột 2 — Báo cáo Điểm tích cực & Thắng lợi trong ngày**: Tổng kết các quyết định đúng đắn, kỷ luật đã giữ được, tỷ suất sinh lời thực nhận, bảo toàn dòng tiền.
+   - **Trụ cột 3 — Bản Kế Hoạch Khắc Phục, Sửa Lỗi Toàn Diện**: Phương án hành động sửa sai cụ thể cho từng phòng ban để cải tiến quy trình, nâng cao chỉ số trưởng thành của hệ thống.
+   - **Trụ cột 4 — Bản Kế Hoạch Dự Đoán & Chuẩn Bị Tác Chiến Cho Ngày Mai**: Phân công chi tiết đầu việc cho từng phòng ban từ 06h00 sáng đến phiên giao dịch kế tiếp.
+
+## 2. Đầu Ra & Trình Điều Khiển 23h00
+- **Lưu trữ văn bản nghị quyết**: `08_Master_Investment_CIO/YYYY-MM-DD_23h00_EOD_Executive_Council_Meeting.md`
+- **Lưu trữ dữ liệu cấu trúc**: `08_Master_Investment_CIO/23h00_council_ledger.json`
+- **Lệnh thực thi tự động**:
+  ```powershell
+  python scripts\eod_late_night_executive_council.py
+  ```
