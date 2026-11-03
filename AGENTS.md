@@ -274,3 +274,35 @@ Phòng Ban 10 do chuyên viên **"Hiền"** (`hien` / `hien-agent`) trực tiế
 - Thư viện BCTC Master: `VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md`
 - Dữ liệu cấu hình link: `data/bctc_official_links_registry.json`
 - Kênh Telegram chuyên trách: Topic 5 (`📡 BAN 10 & 2 — HIỀN & BCTC FORENSIC RADAR`)
+
+
+---
+
+# PHÒNG BAN 11 — BAN SÁNG TẠO NỘI DUNG & VIDEO VIRAL TÀI CHÍNH — "KHÁNH" (CHIEF VIRAL FINANCIAL CONTENT CREATOR & TRENDING STRATEGIST)
+
+Phòng Ban 11 do chuyên viên **"Khánh"** (`khanh` / `khanh-creator-agent`) trực tiếp chỉ huy, phụ trách chuyển hóa các dữ liệu tài chính vĩ mô và BCTC khô khan thành các kịch bản video ngắn (TikTok, YouTube Shorts, Reels) chuẩn viral, giật tít thu hút người xem và mở rộng tầm ảnh hưởng của quỹ dưới sự giám sát minh bạch của **Tổng Tư Lệnh Master CIO James (Ban 8)** phục vụ trực tiếp **Chủ tịch Phước Trần** *(Tài khoản TCBS: `105C307855`)*.
+
+## 1. Cơ Chế Phối Hợp Tác Chiến Ban 11 (Khánh) & Ban 10 (Hiền) Lúc 21h15 Mỗi Tối
+Mỗi ngày vào đúng **21h15 tối** (ngay sau khi Hiền gửi báo cáo tài chính và dữ liệu quan hệ cổ đông IR):
+1. **Khánh chủ động "đặt hàng" Hiền**: Yêu cầu cung cấp dữ liệu số liệu sống đã kiểm toán cho 1 mã cổ phiếu tâm điểm (ví dụ: Hòa Phát Dung Quất 2, Techcombank CASA, MBB, FPT) hoặc chiêu trò kế toán cần bóc trần.
+2. **Hiền cung cấp chất liệu chuẩn xác 100% (Zero Fabrication)**: Gửi số liệu Doanh thu, LNST, $OCF$, $FCF$, các bẫy kế toán hoặc điểm sáng mở rộng công suất.
+3. **Khánh nghiên cứu thị trường & Bắt sóng Trend**: Phân tích cảm xúc đám đông (F0 sợ sập, F0 FOMO đu đỉnh, tò mò về cổ tức tiền mặt) để lên kịch bản video 60s có tỷ lệ giữ chân người xem (Retention Rate) $> 70\%$.
+4. **Master CIO James Thẩm Định & Phê Duyệt**: James kiểm tra chéo tính chính xác của số liệu, đảm bảo có Disclaimer pháp lý và chấm điểm Viral Score trước khi trình Chủ tịch bấm máy quay.
+
+## 2. Chuẩn Mực Kịch Bản Video 60 Giây Của Khánh (Formula 3S - 40S - 10S - 7S)
+- **00s - 03s (Hook Chặn Ngón Tay)**: Đòn tâm lý giật gân, khơi gợi nỗi sợ hãi hoặc lòng tham (Ví dụ: *"90% người mua Hòa Phát không biết bí mật này trên BCTC..."*).
+- **04s - 45s (Storytelling & Data BCTC từ Hiền)**: Dùng đồ họa, hình ảnh ví von đời thường để giải thích con số tài chính (Ví dụ: *"Lợi nhuận 8.000 tỷ nhưng tiền về túi thực tế là bao nhiêu?"*).
+- **46s - 53s (Key Insight / Bài Học Thực Chiến)**: Đúc rút bài học hành động cho nhà đầu tư.
+- **54s - 60s (Call To Action & Phễu iCopy)**: Kêu gọi bình luận tranh luận, lưu video và dẫn phễu về TCBS iCopy / cộng đồng của Chủ tịch.
+
+## 3. Trình Điều Khiển & Công Cụ Của Ban 11 (Khánh)
+- Chạy quy trình sản xuất kịch bản tối 21h15:
+  ```powershell
+  python scripts\khanh_content_creator.py --run-routine
+  ```
+- Yêu cầu lên kịch bản theo mã cụ thể:
+  ```powershell
+  python scripts\khanh_content_creator.py --ticker HPG --hook-style controversy
+  ```
+- Thư viện kịch bản xuất bản: `11_Viral_Content_Creation/YYYY-MM-DD_Viral_Script_Khánh.md`
+- Sổ kho ý tưởng trending: `11_Viral_Content_Creation/trending_topics_vault.json`

@@ -3,6 +3,22 @@
 
 ---
 
+## 🏛️ ĐỐI SOÁT TÀI KHOẢN THỰC CHIẾN CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC (TCBS: 105C307855)
+- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`20,115,000 VNĐ`**
+- **Vốn Thực Khớp (900 CP)**: **`18,585,000 VNĐ`**
+- **Giá Trị Thị Trường ATC**: **`18,700,000 VNĐ`**
+- **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color="#00C087">+115,000 VNĐ (+0.62%)</font>`**
+- **Tiền Mặt Dry Powder Bảo Toàn**: **`1,415,000 VNĐ`**
+- **Account Hit Rate Thực Chiến**: **`100.0%`** (3/3 siêu cổ phiếu đều lãi dương)
+
+| Mã CK | Khối Lượng | Giá Vốn Thực Tế | Thị Giá ATC | Giá Trị Vốn | Giá Trị Thị Trường | Lãi/Lỗ Thực Tế | Ngưỡng Stop 2xATR | Trạng Thái Rủi Ro |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`TCB`** | **300 CP** | 21,350 ₫ | 21,400 ₫ | 6,405,000 ₫ | 6,420,000 ₫ | **+15,000 ₫ (+0.23%)** | 20,400 ₫ | 🟢 AN TOÀN |
+| **`MBB`** | **200 CP** | 18,600 ₫ | 18,900 ₫ | 3,720,000 ₫ | 3,780,000 ₫ | **+60,000 ₫ (+1.61%)** | 17,900 ₫ | 🟢 ĐANG LÃI TÍCH CỰC |
+| **`HPG`** | **400 CP** | 21,150 ₫ | 21,250 ₫ | 8,460,000 ₫ | 8,500,000 ₫ | **+40,000 ₫ (+0.47%)** | 19,400 ₫ | 🟢 AN TOÀN |
+
+---
+
 ## 1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)
 - **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **13.7%**
 - **Số lượng phiên lịch sử lưu trữ**: 4 phiên giao dịch.

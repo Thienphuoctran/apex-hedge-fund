@@ -59,8 +59,8 @@ TELEMETRY_MD = SENTINEL_DIR / "vn3_live_telemetry.md"
 CONFIG = {
     "TCB": {
         "status": "HOLDING",
-        "shares": 100,
-        "entry_price": 21250.0,
+        "shares": 300,
+        "entry_price": 21350.0,
         "stop_loss": 20400.0,
         "stop_warning": 20700.0,
         "tp1": 23200.0,
@@ -69,7 +69,7 @@ CONFIG = {
     },
     "MBB": {
         "status": "HOLDING",
-        "shares": 100,
+        "shares": 200,
         "entry_price": 18600.0,
         "stop_loss": 17900.0,
         "stop_warning": 18150.0,
@@ -79,8 +79,8 @@ CONFIG = {
     },
     "HPG": {
         "status": "HOLDING",
-        "shares": 200,
-        "entry_price": 21050.0,
+        "shares": 400,
+        "entry_price": 21150.0,
         "stop_loss": 19400.0,
         "stop_warning": 19700.0,
         "tp1": 22200.0,

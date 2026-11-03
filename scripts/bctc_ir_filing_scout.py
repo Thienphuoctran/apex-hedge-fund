@@ -172,6 +172,102 @@ OFFICIAL_IR_DATABASE: Dict[str, Dict[str, Any]] = {
         "vietstock_docs": "https://finance.vietstock.vn/DGC/tai-lieu.htm",
         "cafef_docs": "https://s.cafef.vn/hose/DGC-ctcp-tap-doan-hoa-chat-duc-giang.chn",
         "notes": "Hưởng lợi chu kỳ siêu chuỗi cung ứng chip bán dẫn; Dự án Nghi Sơn xúc tiến cấp phép."
+    },
+    "HAH": {
+        "company_name": "CTCP Vận tải và Xếp dỡ Hải An",
+        "exchange": "HOSE",
+        "sector": "Cảng biển & Vận tải Container Biển (MidCap)",
+        "official_ir_url": "https://haiants.vn/quan-he-co-dong",
+        "bctc_direct_portal": "https://haiants.vn/bao-cao-tai-chinh",
+        "annual_report_portal": "https://haiants.vn/bao-cao-thuong-nien",
+        "agm_resolutions_portal": "https://haiants.vn/dai-hoi-dong-co-dong",
+        "vietstock_docs": "https://finance.vietstock.vn/HAH/tai-lieu.htm",
+        "cafef_docs": "https://s.cafef.vn/hose/HAH-ctcp-van-tai-va-xep-do-hai-an.chn",
+        "notes": "Đội tàu container tự vận hành lớn nhất Việt Nam; Cước vận tải biển nội địa & nội Á neo cao."
+    },
+    "SZC": {
+        "company_name": "CTCP Sonadezi Châu Đức",
+        "exchange": "HOSE",
+        "sector": "Bất động sản Khu công nghiệp & Đô thị (SmallCap)",
+        "official_ir_url": "https://sonadezichauduc.com.vn/quan-he-co-dong",
+        "bctc_direct_portal": "https://sonadezichauduc.com.vn/bao-cao-tai-chinh",
+        "annual_report_portal": "https://sonadezichauduc.com.vn/bao-cao-thuong-nien",
+        "agm_resolutions_portal": "https://sonadezichauduc.com.vn/dai-hoi-dong-co-dong",
+        "vietstock_docs": "https://finance.vietstock.vn/SZC/tai-lieu.htm",
+        "cafef_docs": "https://s.cafef.vn/hose/SZC-ctcp-sonadezi-chau-duc.chn",
+        "notes": "Quỹ đất sạch hơn 1.500 ha tại Bà Rịa - Vũng Tàu; Hưởng lợi siêu cảng Cái Mép & Cao tốc Biên Hòa - Vũng Tàu."
+    },
+    "HHV": {
+        "company_name": "CTCP Đầu tư Hạ tầng Giao thông Đèo Cả",
+        "exchange": "HOSE",
+        "sector": "Hạ tầng Giao thông & Xây dựng Đầu tư Công (SmallCap)",
+        "official_ir_url": "https://deoca.vn/quan-he-co-dong",
+        "bctc_direct_portal": "https://deoca.vn/quan-he-co-dong/bao-cao-tai-chinh",
+        "annual_report_portal": "https://deoca.vn/quan-he-co-dong/bao-cao-thuong-nien",
+        "agm_resolutions_portal": "https://deoca.vn/quan-he-co-dong/dai-hoi-co-dong",
+        "vietstock_docs": "https://finance.vietstock.vn/HHV/tai-lieu.htm",
+        "cafef_docs": "https://s.cafef.vn/hose/HHV-ctcp-dau-tu-ha-tang-giao-thong-deo-ca.chn",
+        "notes": "Doanh thu thu phí BOT đều đặn ổn định; Backlog thi công cao tốc Bắc - Nam và dự án lớn khủng."
+    },
+    "KDH": {
+        "company_name": "CTCP Đầu tư và Kinh doanh Nhà Khang Điền",
+        "exchange": "HOSE",
+        "sector": "Bất động sản Dân cư & Đô thị (MidCap)",
+        "official_ir_url": "https://khangdien.com.vn/quan-he-co-dong/",
+        "bctc_direct_portal": "https://khangdien.com.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+        "annual_report_portal": "https://khangdien.com.vn/quan-he-co-dong/bao-cao-thuong-nien/",
+        "agm_resolutions_portal": "https://khangdien.com.vn/quan-he-co-dong/dai-hoi-dong-co-dong/",
+        "vietstock_docs": "https://finance.vietstock.vn/KDH/tai-lieu.htm",
+        "cafef_docs": "https://s.cafef.vn/hose/KDH-ctcp-dau-tu-va-kinh-doanh-nha-khang-dien.chn",
+        "notes": "Pháp lý dự án chuẩn chỉnh nhất khu Đông TP.HCM (The Privia, Clarita, Emeria hợp tác Keppel Land)."
+    },
+    "DBC": {
+        "company_name": "CTCP Tập đoàn Dabaco Việt Nam",
+        "exchange": "HOSE",
+        "sector": "Nông nghiệp & Chăn nuôi Khép kín 3F (MidCap)",
+        "official_ir_url": "https://www.dabaco.com.vn/quan-he-co-dong",
+        "bctc_direct_portal": "https://www.dabaco.com.vn/bao-cao-tai-chinh",
+        "annual_report_portal": "https://www.dabaco.com.vn/bao-cao-thuong-nien",
+        "agm_resolutions_portal": "https://www.dabaco.com.vn/dai-hoi-dong-co-dong",
+        "vietstock_docs": "https://finance.vietstock.vn/DBC/tai-lieu.htm",
+        "cafef_docs": "https://s.cafef.vn/hose/DBC-ctcp-tap-doan-dabaco-viet-nam.chn",
+        "notes": "Chuỗi giá trị 3F khép kín; Đang thương mại hóa vắc-xin dịch tả lợn châu Phi (ASF) quy mô quốc tế."
+        },
+    "GMD": {
+        "company_name": "CTCP Gemadept",
+        "exchange": "HOSE",
+        "sector": "Cảng biển & Logistics Nước Sâu (LargeCap Tiềm Năng)",
+        "official_ir_url": "https://gemadept.com.vn/quan-he-co-dong",
+        "bctc_direct_portal": "https://gemadept.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+        "annual_report_portal": "https://gemadept.com.vn/quan-he-co-dong/bao-cao-thuong-nien",
+        "agm_resolutions_portal": "https://gemadept.com.vn/quan-he-co-dong/thong-tin-dai-hoi-co-dong",
+        "vietstock_docs": "https://finance.vietstock.vn/GMD/tai-lieu.htm",
+        "cafef_docs": "https://s.cafef.vn/hose/GMD-ctcp-gemadept.chn",
+        "notes": "Sở hữu cụm Cảng Gemalink đón tàu mẹ siêu trọng tải; Lợi nhuận tiền thật FCF > 1.400 tỷ; Hưởng lợi trực tiếp luồng dịch chuyển FDI."
+    },
+    "FRT": {
+        "company_name": "CTCP Bán lẻ Kỹ thuật số FPT (FPT Retail)",
+        "exchange": "HOSE",
+        "sector": "Bán lẻ Công nghệ & Chuỗi Dược phẩm Long Châu (LargeCap Tiềm Năng)",
+        "official_ir_url": "https://frt.vn/quan-he-co-dong",
+        "bctc_direct_portal": "https://frt.vn/bao-cao-tai-chinh",
+        "annual_report_portal": "https://frt.vn/bao-cao-thuong-nien",
+        "agm_resolutions_portal": "https://frt.vn/dai-hoi-dong-co-dong",
+        "vietstock_docs": "https://finance.vietstock.vn/FRT/tai-lieu.htm",
+        "cafef_docs": "https://s.cafef.vn/hose/FRT-ctcp-ban-le-ky-thuat-so-fpt.chn",
+        "notes": "Chuỗi nhà thuốc Long Châu bùng nổ doanh thu vượt 1.000 tỷ/tháng, dẫn đầu tuyệt đối thị phần dược phẩm bán lẻ."
+    },
+    "PNJ": {
+        "company_name": "CTCP Vàng bạc Đá quý Phú Nhuận",
+        "exchange": "HOSE",
+        "sector": "Bán lẻ Trang sức & Hàng Tiêu dùng Xa xỉ (LargeCap Tiềm Năng)",
+        "official_ir_url": "https://ir.pnj.com.vn",
+        "bctc_direct_portal": "https://ir.pnj.com.vn/thong-tin-tai-chinh/bao-cao-tai-chinh",
+        "annual_report_portal": "https://ir.pnj.com.vn/thong-tin-tai-chinh/bao-cao-thuong-nien",
+        "agm_resolutions_portal": "https://ir.pnj.com.vn/quan-tri-cong-ty/dai-hoi-dong-co-dong",
+        "vietstock_docs": "https://finance.vietstock.vn/PNJ/tai-lieu.htm",
+        "cafef_docs": "https://s.cafef.vn/hose/PNJ-ctcp-vang-bac-da-quy-phu-nhuan.chn",
+        "notes": "Biên lợi nhuận gộp trang sức bán lẻ trên 18%; Hệ thống quản trị hàng tồn kho số 1; Tăng trưởng SSSG ổn định."
     }
 }
 
