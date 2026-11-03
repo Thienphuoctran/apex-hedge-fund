@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-03T07:41:31.701304+00:00",
+  "timestamp_utc": "2026-11-03T08:38:35.271987+00:00",
   "scan_date": "2026-11-03",
   "total_us_filings_count": 369,
   "total_vn_announcements_count": 31,
@@ -290,7 +290,7 @@
       "severity": "INFO",
       "published_at": "Tue, 03 Nov 26 14:37:00 +0700",
       "source_url": "https://cafef.vn/cong-nhan-bat-khoc-trong-ngay-cong-ty-o-tphcm-thong-bao-giai-the-khien-hang-nghin-phai-nghi-viec-tu-3-11-188261103141454585.chn",
-      "total_announcements": 12
+      "total_announcements": 13
     },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -306,7 +306,7 @@
       "severity": "INFO",
       "published_at": "Tue, 03 Nov 26 07:58:00 +0700",
       "source_url": "https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn",
-      "total_announcements": 8
+      "total_announcements": 7
     },
     "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -5095,18 +5095,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng miếng, vàng nhẫn hôm nay (31/10) tại SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... tiếp tục giảm mạnh tới 2,6 triệu đồng/lượng: Bao nhiêu tiền một chỉ?",
-      "summary": "Giá bán vàng miếng tại các thương hiệu đồng loạt lùi về 139 triệu đồng/lượng, giảm 2,4 triệu đồng/lượng so với bảng giá trước đó....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sat, 31 Oct 26 09:21:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-hom-nay-31-10-tai-sjc-doji-bao-tin-manh-hai-pnj-bao-nhieu-tien-mot-chi-188261031073825033.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "HCM"
       ],
       "title": "Khai trương không gian trải nghiệm 1 ha tại đô thị One Era",
@@ -5151,6 +5139,18 @@
       "severity": "INFO",
       "published_at": "Thu, 29 Oct 2026 03:27:00 GMT",
       "source_url": "https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Sun PhuQuoc Airways mở thêm đường bay đến Thượng Hải",
+      "summary": "Sun PhuQuoc Airways mở đường bay thẳng Hà Nội - Thượng Hải từ ngày 26/11, bổ sung tuyến thứ hai kết nối thành phố này, sau đường bay TP HCM - Thượng Hải khai thác từ giữa tháng 10....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 2026 15:00:00 +0700",
+      "source_url": "https://vnexpress.net/sun-phuquoc-airways-mo-them-duong-bay-den-thuong-hai-5140166.html"
     },
     {
       "market": "VIETNAM",
