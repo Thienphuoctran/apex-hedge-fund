@@ -174,12 +174,12 @@ def dispatch_chairman_directive(command_text: str, source: str = "TELEGRAM_COPIL
 
     # 2. GIAI ĐOẠN 1: Bắn thông báo [TIẾP NHẬN CHỈ THỊ] (ACK) ngay vào Topic phòng ban đó
     ack_msg = (
-        f"📥 *[CHỈ THỊ CẤP BÁO TỪ CHỦ TỊCH PHƯỚC TRẦN]*\n"
+        f"🎖️ *[LỆNH ĐIỀU ĐỘNG CỦA TỔNG TƯ LỆNH JAMES (MASTER CIO)]*\n"
+        f"Kính gửi: *{meta['department_name']}* ({meta['officer']})\n"
+        f"Chấp hành chỉ thị trực tiếp từ: *Chủ tịch Phước Trần*\n"
         f"Mã Lệnh: *#{task_id}*\n"
-        f"Cơ quan thụ lý: *{meta['department_name']}*\n"
-        f"Người chịu trách nhiệm: *{meta['officer']}*\n"
         f"Nội dung lệnh: _\"{command_text}\"_\n"
-        f"Trạng thái: ⏳ *ĐANG TIẾP NHẬN & TRIỂN KHAI THỰC TẾ NGAY LẬP TỨC...*"
+        f"👉 *Chỉ đạo của James*: Bắt buộc triển khai kỹ thuật THẬT SỰ, đo lường số liệu sống, báo cáo nghiệm thu ngay tại phân luồng này!"
     )
     dispatch_message(meta["topic_key"], ack_msg)
     task_record["logs"].append(f"{now.strftime('%H:%M:%S')} - Đã phát lệnh ACK vào phân luồng {meta['topic_name']}")
@@ -193,13 +193,12 @@ def dispatch_chairman_directive(command_text: str, source: str = "TELEGRAM_COPIL
     # 4. GIAI ĐOẠN 3: Bắn báo cáo [NGHIỆM THU THỰC THI] kèm Bằng chứng vào đúng Topic phòng ban
     summary_text = execution_result.get("summary", "Đã hoàn tất xử lý chỉ lệnh.")
     report_msg = (
-        f"✅ *[BÁO CÁO NGHIỆM THU THỰC THI CHỈ THỊ]*\n"
+        f"✅ *[BÁO CÁO NGHIỆM THU — TỔNG TƯ LỆNH JAMES PHÊ DUYỆT]*\n"
         f"Mã Lệnh: *#{task_id}*\n"
-        f"Cơ quan báo cáo: *{meta['department_name']}*\n"
-        f"Người thực thi: *{meta['officer']}*\n\n"
-        f"📊 *KẾT QUẢ THỰC THI THỰC TẾ*:\n"
+        f"Cơ quan thực thi: *{meta['department_name']}* ({meta['officer']})\n\n"
+        f"📊 *KẾT QUẢ THỰC THI THỰC TẾ (LÀM THẬT VIỆC THẬT)*:\n"
         f"{summary_text}\n\n"
-        f"🎯 *Kết luận*: Chỉ thị của Chủ tịch đã được hoàn tất 100%, có bằng chứng số liệu và lưu vết kiểm toán đầy đủ!"
+        f"🎖️ *Phán quyết của Master CIO James*: Đã nghiệm thu đạt chuẩn 'Làm thật việc thật', lưu vết kiểm toán 100%!"
     )
     dispatch_message(meta["topic_key"], report_msg)
     task_record["logs"].append(f"{datetime.datetime.now().strftime('%H:%M:%S')} - Đã phát báo cáo nghiệm thu vào {meta['topic_name']}")

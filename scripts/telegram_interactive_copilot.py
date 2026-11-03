@@ -391,29 +391,29 @@ def process_user_query(text: str) -> str:
         task_res = dispatch_chairman_directive(text, source="TELEGRAM_COPILOT")
         summary_txt = task_res.get("execution_result", {}).get("summary", "Đã tiếp nhận và thực thi hoàn tất.")
         return (
-            f"🎯 *[PALMER — ĐÃ ĐIỀU PHỐI CHỈ THỊ ĐÓNG LẶP THÀNH CÔNG]*\n"
+            f"🎖️ *[TỔNG TƯ LỆNH JAMES — ĐÃ PHÂN CÔNG & CHỈ HUY THỰC THI]*\n"
             f"━━━━━━━━━━━━━━━━━━━\n"
+            f"Báo cáo Chủ tịch Phước Trần: Tôi (Master CIO James) đã tiếp nhận chỉ thị và trực tiếp giao việc cho *{task_res.get('assigned_department_name', task_res['assigned_department'])}*.\n\n"
             f"• Mã Lệnh: `#{task_res['task_id']}`\n"
-            f"• Cơ quan thụ lý: *{task_res.get('assigned_department_name', task_res['assigned_department'])}*\n"
-            f"• Người chịu trách nhiệm: *{task_res['assigned_officer']}*\n"
-            f"• Phân luồng tiếp nhận & báo cáo: *{task_res['topic_name']}*\n"
+            f"• Cán bộ phụ trách: *{task_res['assigned_officer']}*\n"
+            f"• Phân luồng báo cáo: *{task_res['topic_name']}*\n"
             f"• Trạng thái: ✅ *{task_res['status']}*\n\n"
-            f"📊 *Tóm tắt thực thi tức thời*:\n{summary_txt}\n\n"
-            f"👉 *Lưu ý*: Báo cáo nghiệm thu chi tiết đã được gửi trực tiếp vào Topic *{task_res['topic_name']}*. Mời Chủ tịch chuyển sang Topic đó để kiểm tra!"
+            f"📊 *KẾT QUẢ THỰC THI THỰC TẾ*:\n{summary_txt}\n\n"
+            f"👉 *Nghiệm thu*: Tôi đã yêu cầu phòng ban gửi báo cáo chi tiết kèm bằng chứng vào Topic *{task_res['topic_name']}*. Kính mời Chủ tịch kiểm tra!"
         )
     except Exception as e:
         print(f"[!] Lỗi dispatch chỉ thị: {e}")
 
-    # Fallback phản hồi trò chuyện tự nhiên của Palmer
+    # Fallback phản hồi trò chuyện tự nhiên của Tổng Tư Lệnh James
     return (
-        "👋 *Chào Chủ tịch Phước Trần! Palmer tôi luôn trực chiến cùng Chủ tịch.*\n\n"
-        "Chủ tịch có thể bấm các nút chức năng bên dưới hoặc nhắn tin bất kỳ yêu cầu nào:\n"
-        "• *'Tổng hợp thị trường sáng nay'*\n"
-        "• *'Tóm tắt danh mục hiện tại'*\n"
-        "• *'Kiểm tra mã HPG / TCB / MBB'*\n"
-        "• *'Sổ lệnh hôm nay mua giá nào'*\n"
-        "• *'Đã chạm điểm chốt lời chưa'*\n\n"
-        "Palmer sẽ lập tức phân tích và báo cáo số liệu chuẩn xác ngay tức thì!"
+        "🎖️ *Chào Chủ tịch Phước Trần! Tôi là James — Tổng Tư Lệnh Master CIO (Ban 8).*\n\n"
+        "Tôi trực tiếp chỉ huy toàn bộ chiến dịch tác chiến, quản trị vốn và phân công kỷ luật cho 9 phòng ban.\n"
+        "Chủ tịch có thể chỉ thị bất kỳ yêu cầu nào, tôi sẽ điều động phòng ban làm thật việc thật và báo cáo nghiệm thu ngay:\n"
+        "• *'James kiểm tra ngay giá và khối lượng HPG/TCB/MBB'\n"
+        "• *'James chỉ thị Victor canh sát Stop Loss 2xATR'\n"
+        "• *'James cùng Minh Quân chuẩn bị lệnh Khung 14h00'\n"
+        "• *'James rà soát lại BCTC và dòng tiền OCF'*\n\n"
+        "Tổng Tư Lệnh James luôn sẵn sàng chấp hành chỉ thị của Chủ tịch!"
     )
 
 
