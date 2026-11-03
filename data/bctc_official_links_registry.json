@@ -1,139 +1,183 @@
 {
   "HPG": {
-    "company_name": "Tập đoàn Hòa Phát",
+    "company_name": "CTCP Tập đoàn Hòa Phát",
     "exchange": "HOSE",
-    "sector": "Thép & Vật liệu xây dựng",
+    "sector": "Thép & Vật liệu xây dựng (Vua Thép)",
     "official_ir_url": "https://www.hoaphat.com.vn/quan-he-co-dong",
     "bctc_direct_portal": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
     "annual_report_portal": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-thuong-nien",
     "agm_resolutions_portal": "https://www.hoaphat.com.vn/quan-he-co-dong/dai-hoi-dong-co-dong",
     "vietstock_docs": "https://finance.vietstock.vn/HPG/tai-lieu.htm",
     "cafef_docs": "https://s.cafef.vn/hose/HPG-ctcp-tap-doan-hoa-phat.chn",
-    "latest_reports": [
-      {
-        "title": "BCTC Hợp nhất Quý 3/2026 (Đã soát xét / Công bố)",
-        "type": "BCTC_QUARTERLY",
-        "period": "Q3/2026",
-        "direct_pdf_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
-        "highlights": "Doanh thu tăng +19% YoY, OCF dương 8,400 tỷ, Dung Quất 2 chạy thử nghiệm lò cao số 1 thành công."
-      },
-      {
-        "title": "BCTC Hợp nhất Bán niên 2026 (Đã kiểm toán)",
-        "type": "BCTC_SEMI_ANNUAL",
-        "period": "6T/2026",
-        "direct_pdf_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
-        "highlights": "Kiểm toán Big4 chấp thuận toàn phần, dòng tiền hoạt động OCF tăng trưởng mạnh."
-      },
-      {
-        "title": "Báo cáo Thường niên & Báo cáo Phát triển Bền vững",
-        "type": "ANNUAL_REPORT",
-        "period": "Annual",
-        "direct_pdf_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-thuong-nien",
-        "highlights": "Chiến lược nâng công suất HRC lên 14 triệu tấn/năm khi Dung Quất 2 hoàn tất 100%."
-      },
-      {
-        "title": "Nghị quyết & Biên bản ĐHĐCĐ Thường niên",
-        "type": "AGM_RESOLUTION",
-        "period": "AGM",
-        "direct_pdf_url": "https://www.hoaphat.com.vn/quan-he-co-dong/dai-hoi-dong-co-dong",
-        "highlights": "Thông qua kế hoạch chia cổ tức tiền mặt & cổ phiếu, kế hoạch doanh thu 140.000 tỷ."
-      }
-    ]
+    "notes": "Lò cao số 1 Dung Quất 2 chạy thử nghiệm thành công; Dung Quất 2 bổ sung 5.6M tấn HRC/năm.",
+    "latest_fundamentals": {
+      "symbol": "HPG",
+      "extracted_at": "2026-11-03 18:15:05",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-09-30",
+      "revenue_vnd_bil": 62214.2,
+      "net_income_vnd_bil": 8217.3,
+      "operating_income_vnd_bil": 9769.0,
+      "ocf_vnd_bil": 8865.9,
+      "fcf_vnd_bil": 6451.8,
+      "capex_vnd_bil": -2414.1,
+      "cash_and_equiv_vnd_bil": 6852.9,
+      "total_debt_vnd_bil": 105736.8,
+      "ocf_to_net_income_ratio": 1.08,
+      "earnings_quality_rating": "TIỀN THẬT XUẤT SẮC (OCF > LNST — ZERO RED FLAGS)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-09-30",
+          "revenue_bil": 62214.2,
+          "net_income_bil": 8217.3
+        },
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 55158.9,
+          "net_income_bil": 6371.0
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 52900.8,
+          "net_income_bil": 8994.0
+        }
+      ]
+    }
   },
   "TCB": {
     "company_name": "Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)",
     "exchange": "HOSE",
-    "sector": "Ngân hàng & Dịch vụ Tài chính",
+    "sector": "Ngân hàng & Dịch vụ Tài chính (Bank Leader)",
     "official_ir_url": "https://techcombank.com/ve-chung-toi/quan-he-co-dong",
     "bctc_direct_portal": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bctc-vas",
     "annual_report_portal": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bao-cao-thuong-nien",
     "agm_resolutions_portal": "https://techcombank.com/nha-dau-tu/quan-tri-doanh-nghiep/dai-hoi-dong-co-dong",
     "vietstock_docs": "https://finance.vietstock.vn/TCB/tai-lieu.htm",
     "cafef_docs": "https://s.cafef.vn/hose/TCB-ngan-hang-tmcp-ky-thuong-viet-nam.chn",
-    "latest_reports": [
-      {
-        "title": "BCTC Hợp nhất Quý 3/2026 theo chuẩn VAS (Bản ký đóng dấu)",
-        "type": "BCTC_QUARTERLY",
-        "period": "Q3/2026",
-        "direct_pdf_url": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bctc-vas",
-        "highlights": "Tỷ lệ CASA đạt quán quân toàn ngành 40.5%, NIM ổn định 4.2%, tiến độ IPO TCBS."
-      },
-      {
-        "title": "BCTC Bán niên Soát xét 2026 (VAS & IFRS)",
-        "type": "BCTC_SEMI_ANNUAL",
-        "period": "6T/2026",
-        "direct_pdf_url": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bctc-vas",
-        "highlights": "Được kiểm toán độc lập xác nhận trích lập dự phòng đầy đủ, nợ xấu NPL kiểm soát 1.35%."
-      },
-      {
-        "title": "Báo cáo Thường niên Techcombank (Song ngữ Anh - Việt)",
-        "type": "ANNUAL_REPORT",
-        "period": "Annual",
-        "direct_pdf_url": "https://techcombank.com/nha-dau-tu/thong-tin-tai-chinh/bao-cao-thuong-nien",
-        "highlights": "Chiến lược dẫn đầu ngân hàng số và ngân hàng bán lẻ cao cấp Private Banking."
-      },
-      {
-        "title": "Nghị quyết ĐHĐCĐ & Tài liệu Họp Cổ Đông",
-        "type": "AGM_RESOLUTION",
-        "period": "AGM",
-        "direct_pdf_url": "https://techcombank.com/nha-dau-tu/quan-tri-doanh-nghiep/dai-hoi-dong-co-dong",
-        "highlights": "Thông qua phương án chia cổ tức tiền mặt 15% và phát hành cổ phiếu thưởng 100%."
-      }
-    ]
+    "notes": "Tỷ lệ CASA 40.5% dẫn đầu toàn ngành; NIM 4.2%; Đang thúc đẩy tiến trình IPO TCBS.",
+    "latest_fundamentals": {
+      "symbol": "TCB",
+      "extracted_at": "2026-11-03 18:15:05",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-09-30",
+      "revenue_vnd_bil": 17226.8,
+      "net_income_vnd_bil": 7942.9,
+      "operating_income_vnd_bil": 0.0,
+      "ocf_vnd_bil": 7635.8,
+      "fcf_vnd_bil": 7424.0,
+      "capex_vnd_bil": -211.8,
+      "cash_and_equiv_vnd_bil": 174897.8,
+      "total_debt_vnd_bil": 333528.2,
+      "ocf_to_net_income_ratio": 0.96,
+      "earnings_quality_rating": "CHẤT LƯỢNG TIỀN KHÁ (OCF >= 70% LNST)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-09-30",
+          "revenue_bil": 17226.8,
+          "net_income_bil": 7942.9
+        },
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 16577.1,
+          "net_income_bil": 7350.1
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 13678.6,
+          "net_income_bil": 6671.1
+        }
+      ]
+    }
   },
   "MBB": {
     "company_name": "Ngân hàng TMCP Quân Đội (MBBank)",
     "exchange": "HOSE",
-    "sector": "Ngân hàng Quân Đội",
+    "sector": "Ngân hàng & Dịch vụ Tài chính Quân Đội",
     "official_ir_url": "https://www.mbbank.com.vn",
     "bctc_direct_portal": "https://www.mbbank.com.vn/Contact",
-    "annual_report_portal": "https://www.mbbank.com.vn/Contact",
-    "agm_resolutions_portal": "https://www.mbbank.com.vn/Contact",
+    "annual_report_portal": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
+    "agm_resolutions_portal": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
     "vietstock_docs": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
     "cafef_docs": "https://s.cafef.vn/hose/MBB-ngan-hang-tmcp-quan-doi.chn",
-    "latest_reports": [
-      {
-        "title": "BCTC Hợp nhất Quý 3/2026 (Bản công bố chính thức)",
-        "type": "BCTC_QUARTERLY",
-        "period": "Q3/2026",
-        "direct_pdf_url": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
-        "highlights": "Tăng trưởng tín dụng 13.8%, lợi nhuận trước thuế vượt 21.000 tỷ 9 tháng."
-      },
-      {
-        "title": "Báo cáo Thường niên MBBank",
-        "type": "ANNUAL_REPORT",
-        "period": "Annual",
-        "direct_pdf_url": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
-        "highlights": "Mục tiêu 30 triệu khách hàng, chuyển đổi số toàn diện hệ sinh thái Quân đội."
-      },
-      {
-        "title": "Nghị quyết ĐHĐCĐ & Biên bản họp cổ đông",
-        "type": "AGM_RESOLUTION",
-        "period": "AGM",
-        "direct_pdf_url": "https://finance.vietstock.vn/MBB/tai-lieu.htm",
-        "highlights": "Thông qua phương án nhận chuyển giao bắt buộc ngân hàng yếu kém và mở rộng quy mô."
-      }
-    ]
+    "notes": "Tăng trưởng tín dụng 9 tháng 13.8%; Lợi nhuận trước thuế vượt 21.000 tỷ; Hệ sinh thái số mạnh.",
+    "latest_fundamentals": {
+      "symbol": "MBB",
+      "extracted_at": "2026-11-03 18:15:05",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-06-30",
+      "revenue_vnd_bil": 19781.5,
+      "net_income_vnd_bil": 8229.1,
+      "operating_income_vnd_bil": 0.0,
+      "ocf_vnd_bil": 11770.0,
+      "fcf_vnd_bil": 11599.4,
+      "capex_vnd_bil": -170.6,
+      "cash_and_equiv_vnd_bil": 187417.4,
+      "total_debt_vnd_bil": 334762.4,
+      "ocf_to_net_income_ratio": 1.43,
+      "earnings_quality_rating": "TIỀN THẬT XUẤT SẮC (OCF > LNST — ZERO RED FLAGS)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 19781.5,
+          "net_income_bil": 8229.1
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 16694.5,
+          "net_income_bil": 7515.5
+        },
+        {
+          "period": "2025-12-31",
+          "revenue_bil": 19527.9,
+          "net_income_bil": 8762.6
+        }
+      ]
+    }
   },
   "FPT": {
     "company_name": "CTCP FPT",
     "exchange": "HOSE",
-    "sector": "Công nghệ Thông tin & AI",
+    "sector": "Công nghệ Thông tin & Bán dẫn / AI",
     "official_ir_url": "https://fpt.com/vi/quan-he-co-dong",
     "bctc_direct_portal": "https://fpt.com/vi/quan-he-co-dong/bao-cao-tai-chinh",
     "annual_report_portal": "https://fpt.com/vi/quan-he-co-dong/bao-cao-thuong-nien",
     "agm_resolutions_portal": "https://fpt.com/vi/quan-he-co-dong/thong-tin-dai-hoi-co-dong",
     "vietstock_docs": "https://finance.vietstock.vn/FPT/tai-lieu.htm",
     "cafef_docs": "https://s.cafef.vn/hose/FPT-ctcp-fpt.chn",
-    "latest_reports": [
-      {
-        "title": "BCTC Hợp nhất Quý 3/2026 FPT",
-        "type": "BCTC_QUARTERLY",
-        "period": "Q3/2026",
-        "direct_pdf_url": "https://fpt.com/vi/quan-he-co-dong/bao-cao-tai-chinh",
-        "highlights": "Doanh thu dịch vụ CNTT nước ngoài tăng trưởng +28% YoY, ký hợp đồng AI Factory cùng NVIDIA."
-      }
-    ]
+    "notes": "Doanh thu dịch vụ CNTT nước ngoài tăng +28% YoY; Hợp tác xây dựng AI Factory cùng NVIDIA.",
+    "latest_fundamentals": {
+      "symbol": "FPT",
+      "extracted_at": "2026-11-03 18:15:05",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-09-30",
+      "revenue_vnd_bil": 13754.2,
+      "net_income_vnd_bil": 2723.1,
+      "operating_income_vnd_bil": 2019.5,
+      "ocf_vnd_bil": 2096.5,
+      "fcf_vnd_bil": 1404.2,
+      "capex_vnd_bil": -692.3,
+      "cash_and_equiv_vnd_bil": 7377.3,
+      "total_debt_vnd_bil": 16596.4,
+      "ocf_to_net_income_ratio": 0.77,
+      "earnings_quality_rating": "CHẤT LƯỢNG TIỀN KHÁ (OCF >= 70% LNST)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-09-30",
+          "revenue_bil": 13754.2,
+          "net_income_bil": 2723.1
+        },
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 13788.5,
+          "net_income_bil": 2567.7
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 12480.0,
+          "net_income_bil": 2487.4
+        }
+      ]
+    }
   },
   "MWG": {
     "company_name": "CTCP Đầu tư Thế Giới Di Động",
@@ -145,15 +189,40 @@
     "agm_resolutions_portal": "https://mwg.vn/dai-hoi-co-dong",
     "vietstock_docs": "https://finance.vietstock.vn/MWG/tai-lieu.htm",
     "cafef_docs": "https://s.cafef.vn/hose/MWG-ctcp-dau-tu-the-gioi-di-dong.chn",
-    "latest_reports": [
-      {
-        "title": "BCTC Hợp nhất Quý 3/2026 MWG",
-        "type": "BCTC_QUARTERLY",
-        "period": "Q3/2026",
-        "direct_pdf_url": "https://mwg.vn/bao-cao-tai-chinh",
-        "highlights": "Bách Hóa Xanh đóng góp lợi nhuận dương liên tục 3 quý, chuỗi EraBlue Indonesia mở rộng."
-      }
-    ]
+    "notes": "Bách Hóa Xanh đóng góp lợi nhuận dương liên tục; Chuỗi EraBlue Indonesia bùng nổ.",
+    "latest_fundamentals": {
+      "symbol": "MWG",
+      "extracted_at": "2026-11-03 18:15:06",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-09-30",
+      "revenue_vnd_bil": 52613.6,
+      "net_income_vnd_bil": 3094.3,
+      "operating_income_vnd_bil": 3541.9,
+      "ocf_vnd_bil": -15136.3,
+      "fcf_vnd_bil": -15705.7,
+      "capex_vnd_bil": -569.4,
+      "cash_and_equiv_vnd_bil": 6456.0,
+      "total_debt_vnd_bil": 27774.0,
+      "ocf_to_net_income_ratio": 0.0,
+      "earnings_quality_rating": "ĐẠT CHUẨN VAS (Đang theo dõi chu kỳ OCF)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-09-30",
+          "revenue_bil": 52613.6,
+          "net_income_bil": 3094.3
+        },
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 48751.3,
+          "net_income_bil": 3302.5
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 46462.0,
+          "net_income_bil": 2714.4
+        }
+      ]
+    }
   },
   "SSI": {
     "company_name": "CTCP Chứng khoán SSI",
@@ -165,14 +234,219 @@
     "agm_resolutions_portal": "https://www.ssi.com.vn/quan-he-nha-dau-tu/thong-tin-dai-hoi-co-dong",
     "vietstock_docs": "https://finance.vietstock.vn/SSI/tai-lieu.htm",
     "cafef_docs": "https://s.cafef.vn/hose/SSI-ctcp-chung-khoan-ssi.chn",
-    "latest_reports": [
-      {
-        "title": "BCTC Quý 3/2026 SSI",
-        "type": "BCTC_QUARTERLY",
-        "period": "Q3/2026",
-        "direct_pdf_url": "https://www.ssi.com.vn/quan-he-nha-dau-tu/bao-cao-tai-chinh",
-        "highlights": "Thị phần môi giới HOSE top 2, dư nợ Margin kỷ lục, mảng tự doanh FVTPL tăng trưởng mạnh."
-      }
-    ]
+    "notes": "Thị phần môi giới HOSE top 2; Dư nợ Margin tăng trưởng mạnh; Hưởng lợi trực tiếp sóng KRX.",
+    "latest_fundamentals": {
+      "symbol": "SSI",
+      "extracted_at": "2026-11-03 18:15:06",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-09-30",
+      "revenue_vnd_bil": 1664.5,
+      "net_income_vnd_bil": 1124.9,
+      "operating_income_vnd_bil": 1127.5,
+      "ocf_vnd_bil": 5217.4,
+      "fcf_vnd_bil": 5191.0,
+      "capex_vnd_bil": -26.5,
+      "cash_and_equiv_vnd_bil": 1127.0,
+      "total_debt_vnd_bil": 51904.4,
+      "ocf_to_net_income_ratio": 4.64,
+      "earnings_quality_rating": "TIỀN THẬT XUẤT SẮC (OCF > LNST — ZERO RED FLAGS)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-09-30",
+          "revenue_bil": 1664.5,
+          "net_income_bil": 1124.9
+        },
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 1685.3,
+          "net_income_bil": 1231.1
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 1495.7,
+          "net_income_bil": 1277.9
+        }
+      ]
+    }
+  },
+  "VCB": {
+    "company_name": "Ngân hàng TMCP Ngoại Thương Việt Nam (Vietcombank)",
+    "exchange": "HOSE",
+    "sector": "Ngân hàng Quốc Doanh Số 1 Việt Nam",
+    "official_ir_url": "https://portal.vietcombank.com.vn/about/investor",
+    "bctc_direct_portal": "https://portal.vietcombank.com.vn/about/investor/financial",
+    "annual_report_portal": "https://portal.vietcombank.com.vn/about/investor/annual-report",
+    "agm_resolutions_portal": "https://portal.vietcombank.com.vn/about/investor/agm",
+    "vietstock_docs": "https://finance.vietstock.vn/VCB/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/VCB-ngan-hang-tmcp-ngoai-thuong-viet-nam.chn",
+    "notes": "Chất lượng tài sản số 1 toàn ngành; Tỷ lệ bao phủ nợ xấu LLR > 250%; Vốn hóa thị trường lớn nhất sàn.",
+    "latest_fundamentals": {
+      "symbol": "VCB",
+      "extracted_at": "2026-11-03 18:15:06",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-06-30",
+      "revenue_vnd_bil": 26940.6,
+      "net_income_vnd_bil": 14542.3,
+      "operating_income_vnd_bil": 0.0,
+      "ocf_vnd_bil": 95598.2,
+      "fcf_vnd_bil": 95225.8,
+      "capex_vnd_bil": -372.5,
+      "cash_and_equiv_vnd_bil": 696130.2,
+      "total_debt_vnd_bil": 55401.2,
+      "ocf_to_net_income_ratio": 6.57,
+      "earnings_quality_rating": "TIỀN THẬT XUẤT SẮC (OCF > LNST — ZERO RED FLAGS)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 26940.6,
+          "net_income_bil": 14542.3
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 21542.7,
+          "net_income_bil": 9456.6
+        },
+        {
+          "period": "2025-12-31",
+          "revenue_bil": 19968.8,
+          "net_income_bil": 8629.5
+        }
+      ]
+    }
+  },
+  "ACB": {
+    "company_name": "Ngân hàng TMCP Á Châu (ACB)",
+    "exchange": "HOSE",
+    "sector": "Ngân hàng Bán lẻ & Quản trị Rủi ro Tinh hoa",
+    "official_ir_url": "https://acb.com.vn/quan-he-nha-dau-tu",
+    "bctc_direct_portal": "https://acb.com.vn/quan-he-nha-dau-tu/bao-cao-tai-chinh",
+    "annual_report_portal": "https://acb.com.vn/quan-he-nha-dau-tu/bao-cao-thuong-nien",
+    "agm_resolutions_portal": "https://acb.com.vn/quan-he-nha-dau-tu/dai-hoi-dong-co-dong",
+    "vietstock_docs": "https://finance.vietstock.vn/ACB/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/ACB-ngan-hang-tmcp-a-chau.chn",
+    "notes": "Nợ xấu dưới 1.2%; Quản trị thanh khoản và đòn bẩy vững chắc; ROE duy trì trên 20% nhiều năm.",
+    "latest_fundamentals": {
+      "symbol": "ACB",
+      "extracted_at": "2026-11-03 18:15:07",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-09-30",
+      "revenue_vnd_bil": 10019.3,
+      "net_income_vnd_bil": 4698.8,
+      "operating_income_vnd_bil": 0.0,
+      "ocf_vnd_bil": -3317.2,
+      "fcf_vnd_bil": -3700.4,
+      "capex_vnd_bil": -383.2,
+      "cash_and_equiv_vnd_bil": 126268.0,
+      "total_debt_vnd_bil": 255245.5,
+      "ocf_to_net_income_ratio": 0.0,
+      "earnings_quality_rating": "ĐẠT CHUẨN VAS (Đang theo dõi chu kỳ OCF)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-09-30",
+          "revenue_bil": 10019.3,
+          "net_income_bil": 4698.8
+        },
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 9347.0,
+          "net_income_bil": 4292.5
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 9004.1,
+          "net_income_bil": 4320.4
+        }
+      ]
+    }
+  },
+  "CTG": {
+    "company_name": "Ngân hàng TMCP Công Thương Việt Nam (VietinBank)",
+    "exchange": "HOSE",
+    "sector": "Ngân hàng Quốc Doanh Trụ Cột",
+    "official_ir_url": "https://investor.vietinbank.vn",
+    "bctc_direct_portal": "https://investor.vietinbank.vn/FinancialReports.aspx",
+    "annual_report_portal": "https://investor.vietinbank.vn/AnnualReports.aspx",
+    "agm_resolutions_portal": "https://investor.vietinbank.vn/AGM.aspx",
+    "vietstock_docs": "https://finance.vietstock.vn/CTG/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/CTG-ngan-hang-tmcp-cong-thuong-viet-nam.chn",
+    "notes": "Thu nhập lãi thuần NIM phục hồi; Xử lý dứt điểm nợ xấu tồn đọng; Tăng vốn cấp 1 thành công.",
+    "latest_fundamentals": {
+      "symbol": "CTG",
+      "extracted_at": "2026-11-03 18:15:07",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-06-30",
+      "revenue_vnd_bil": 26767.8,
+      "net_income_vnd_bil": 11740.1,
+      "operating_income_vnd_bil": 0.0,
+      "ocf_vnd_bil": -36111.5,
+      "fcf_vnd_bil": -36481.8,
+      "capex_vnd_bil": -370.3,
+      "cash_and_equiv_vnd_bil": 564499.4,
+      "total_debt_vnd_bil": 167235.1,
+      "ocf_to_net_income_ratio": 0.0,
+      "earnings_quality_rating": "ĐẠT CHUẨN VAS (Đang theo dõi chu kỳ OCF)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 26767.8,
+          "net_income_bil": 11740.1
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 25438.3,
+          "net_income_bil": 8917.0
+        },
+        {
+          "period": "2025-12-31",
+          "revenue_bil": 24032.8,
+          "net_income_bil": 11053.1
+        }
+      ]
+    }
+  },
+  "DGC": {
+    "company_name": "CTCP Tập đoàn Hóa chất Đức Giang",
+    "exchange": "HOSE",
+    "sector": "Hóa chất & Phốt pho vàng Bán dẫn",
+    "official_ir_url": "https://ducgiangchem.vn/quan-he-co-dong",
+    "bctc_direct_portal": "https://ducgiangchem.vn/bao-cao-tai-chinh",
+    "annual_report_portal": "https://ducgiangchem.vn/bao-cao-thuong-nien",
+    "agm_resolutions_portal": "https://ducgiangchem.vn/dai-hoi-co-dong",
+    "vietstock_docs": "https://finance.vietstock.vn/DGC/tai-lieu.htm",
+    "cafef_docs": "https://s.cafef.vn/hose/DGC-ctcp-tap-doan-hoa-chat-duc-giang.chn",
+    "notes": "Hưởng lợi chu kỳ siêu chuỗi cung ứng chip bán dẫn; Dự án Nghi Sơn xúc tiến cấp phép.",
+    "latest_fundamentals": {
+      "symbol": "DGC",
+      "extracted_at": "2026-11-03 18:15:08",
+      "status": "VERIFIED_PRIMARY_SOURCE",
+      "latest_quarter": "2026-06-30",
+      "revenue_vnd_bil": 2415.4,
+      "net_income_vnd_bil": 388.6,
+      "operating_income_vnd_bil": 330.2,
+      "ocf_vnd_bil": 1082.9,
+      "fcf_vnd_bil": 803.1,
+      "capex_vnd_bil": -279.8,
+      "cash_and_equiv_vnd_bil": 37.3,
+      "total_debt_vnd_bil": 1869.7,
+      "ocf_to_net_income_ratio": 2.79,
+      "earnings_quality_rating": "TIỀN THẬT XUẤT SẮC (OCF > LNST — ZERO RED FLAGS)",
+      "recent_quarters_history": [
+        {
+          "period": "2026-06-30",
+          "revenue_bil": 2415.4,
+          "net_income_bil": 388.6
+        },
+        {
+          "period": "2026-03-31",
+          "revenue_bil": 2124.6,
+          "net_income_bil": 384.3
+        },
+        {
+          "period": "2025-12-31",
+          "revenue_bil": 2740.6,
+          "net_income_bil": 621.8
+        }
+      ]
+    }
   }
 }
