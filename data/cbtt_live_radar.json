@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-03T06:20:09.101224+00:00",
+  "timestamp_utc": "2026-11-03T07:41:31.701304+00:00",
   "scan_date": "2026-11-03",
   "total_us_filings_count": 369,
-  "total_vn_announcements_count": 30,
+  "total_vn_announcements_count": 31,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -286,11 +286,11 @@
     },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Công ty giày ở TP.HCM giải thể trước Tết, 1.400 công nhân được hỗ trợ ra sao?",
+      "latest_title": "Công nhân bật khóc trong ngày công ty ở TP.HCM thông báo giải thể khiến hàng nghìn phải nghỉ việc từ 3/11",
       "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 11:38:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-giay-o-tphcm-giai-the-truoc-tet-1400-cong-nhan-duoc-ho-tro-ra-sao-188261103110047035.chn",
-      "total_announcements": 11
+      "published_at": "Tue, 03 Nov 26 14:37:00 +0700",
+      "source_url": "https://cafef.vn/cong-nhan-bat-khoc-trong-ngay-cong-ty-o-tphcm-thong-bao-giai-the-khien-hang-nghin-phai-nghi-viec-tu-3-11-188261103141454585.chn",
+      "total_announcements": 12
     },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4817,6 +4817,30 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Công nhân bật khóc trong ngày công ty ở TP.HCM thông báo giải thể khiến hàng nghìn phải nghỉ việc từ 3/11",
+      "summary": "Công ty TNHH ECCO Việt Nam bất ngờ thông báo giải thể khiến 1.611 lao động bất ngờ. Trong khi đó, doanh nghiệp cũng đưa ra các chính sách hỗ trợ và 12 công ty lân cận có nhu cầu tuyển dụng hơn 6.500 người....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 14:37:00 +0700",
+      "source_url": "https://cafef.vn/cong-nhan-bat-khoc-trong-ngay-cong-ty-o-tphcm-thong-bao-giai-the-khien-hang-nghin-phai-nghi-viec-tu-3-11-188261103141454585.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Công ty giày vừa đóng cửa tại TP HCM: 1.600 lao động được trả đủ lương tháng 11, có cả lương tháng 13",
+      "summary": "Lương tháng 10, công ty ECCO đã chi trả cho người lao động. Lương tháng 11 sẽ được tính đến hết ngày 30/11, dù trong thời gian đó, người lao động không phải đến công ty làm việc....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 03 Nov 26 13:22:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-giay-vua-dong-cua-tai-tp-hcm-1600-lao-dong-duoc-tra-du-luong-thang-11-co-ca-luong-thang-13-188261103132246908.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Công ty giày ở TP.HCM giải thể trước Tết, 1.400 công nhân được hỗ trợ ra sao?",
       "summary": "Khoảng 1.400 công nhân Công ty ECCO Việt Nam phải nghỉ việc khi doanh nghiệp giải thể, ngoài các chế độ theo quy định, họ được hỗ trợ thêm tiền và lương tháng 13....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5011,12 +5035,12 @@
       "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng tới 1,5 triệu đồng/lượng",
-      "summary": "Giá vàng trong nước tiếp tục tăng mạnh sáng 3/11, với vàng miếng SJC đồng loạt tăng 1,2 triệu đồng/lượng, lên 141,2 triệu đồng/lượng ở chiều bán ra. Giá vàng nhẫn cũng tăng từ 500.000 đến 1,5 triệu đồng/lượng, đưa giá bá...",
+      "title": "Giá vàng nhẫn trơn, vàng miếng chiều 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt giảm so với buổi sáng",
+      "summary": "Giá vàng trong nước giảm so với mức đỉnh buổi sáng, dù vẫn cao hơn cuối phiên trước. Khảo sát lúc 14h ngày 3/11 cho thấy giá vàng miếng SJC được các doanh nghiệp niêm yết ở mức 137,6–140,6 triệu đồng/lượng, giảm 600.000 ...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 10:15:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-toi-15-trieu-dong-luong-188261103075423102.chn"
+      "published_at": "Tue, 03 Nov 26 14:26:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-giam-so-voi-buoi-sang-188261103075423102.chn"
     },
     {
       "market": "VIETNAM",
@@ -5103,18 +5127,6 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 18:30:00 +0700",
       "source_url": "https://cafef.vn/tphcm-chot-gia-dat-va-3790-can-ho-chung-cu-tai-thu-thiem-hon-18200-ty-dong-188261102165857291.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Sau nhiều lần 'trễ hẹn', nút giao hiện đại bậc nhất TP.HCM hiện thi công ra sao?",
-      "summary": "Sau nhiều lần điều chỉnh tiến độ, nút giao An Phú vẫn còn hạng mục dang dở; một số nhánh cầu chưa thể thi công đồng bộ do vướng bàn giao mặt bằng ở Lương Định Của....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 13:59:00 +0700",
-      "source_url": "https://cafef.vn/sau-nhieu-lan-tre-hen-nut-giao-hien-dai-bac-nhat-tphcm-hien-thi-cong-ra-sao-18826110213211429.chn"
     },
     {
       "market": "VIETNAM",
