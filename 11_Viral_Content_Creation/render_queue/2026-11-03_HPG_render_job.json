@@ -1,9 +1,9 @@
 {
   "job_id": "JOB-2026-11-03-HPG",
-  "created_at": "03/11/2026 lúc 19:40",
+  "created_at": "03/11/2026 lúc 20:42",
   "assigned_to": "Bảo — Chuyên Viên Dựng Phim & Render Video AI (Desktop Studio)",
   "chief_strategist": "Khánh — Trưởng Ban 11 (Laptop HQ)",
-  "status": "RENDER_ASSETS_COMPLETED",
+  "status": "PENDING_DESKTOP_RENDER",
   "ticker": "HPG",
   "video_title": "SỰ THẬT VỀ 'CỖ MÁY IN TIỀN' HÒA PHÁT: LÃI 8.200 TỶ NHƯNG TIỀN THẬT VÀO TÀI KHOẢN LÀ BAO NHIÊU?",
   "aspect_ratio": "9:16",
@@ -99,7 +99,7 @@
   },
   "hien_data": {
     "responder": "Hiền — Trưởng Ban 10 (Rà Soát BCTC & Quan Hệ Cổ Đông)",
-    "timestamp": "2026-11-03 19:40:21",
+    "timestamp": "2026-11-03 20:42:17",
     "ticker": "HPG",
     "company_name": "CTCP Tập đoàn Hòa Phát",
     "exchange": "HOSE",
@@ -115,47 +115,5 @@
     "key_catalyst_notes": "Lò cao số 1 Dung Quất 2 chạy thử nghiệm thành công; Dung Quất 2 bổ sung 5.6M tấn HRC/năm.",
     "hien_verdict": "Hiền đã kiểm tra kỹ: HPG có doanh thu 62,214.2 tỷ, LNST 8,217.3 tỷ và dòng tiền OCF thực tế đạt 8,865.9 tỷ. Tỷ lệ tiền thật OCF/LNST đạt 1.08x (TIỀN THẬT XUẤT SẮC (OCF > LNST — ZERO RED FLAGS)). Số liệu này 100% lấy từ BCTC kiểm toán chính thống, Khánh an tâm dựng kịch bản nhé!"
   },
-  "output_expected_path": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\output\\JOB-2026-11-03-HPG.mp4",
-  "processed_by": "Bảo — Chuyên Viên Dựng Phim & Render Video AI",
-  "processed_at": "2026-11-03 19:46:57",
-  "rendered_scenes": [
-    {
-      "scene_idx": 1,
-      "audio_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_1_audio.mp3",
-      "visual_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_1_visual.jpg",
-      "duration_seconds": 3
-    },
-    {
-      "scene_idx": 2,
-      "audio_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_2_audio.mp3",
-      "visual_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_2_visual.jpg",
-      "duration_seconds": 14
-    },
-    {
-      "scene_idx": 3,
-      "audio_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_3_audio.mp3",
-      "visual_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_3_visual.jpg",
-      "duration_seconds": 17
-    },
-    {
-      "scene_idx": 4,
-      "audio_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_4_audio.mp3",
-      "visual_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_4_visual.jpg",
-      "duration_seconds": 11
-    },
-    {
-      "scene_idx": 5,
-      "audio_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_5_audio.mp3",
-      "visual_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_5_visual.jpg",
-      "duration_seconds": 6
-    },
-    {
-      "scene_idx": 6,
-      "audio_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_6_audio.mp3",
-      "visual_file": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG\\scene_6_visual.jpg",
-      "duration_seconds": 5
-    }
-  ],
-  "assets_directory": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\assets\\JOB-2026-11-03-HPG",
-  "final_video_ready": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\output\\JOB-2026-11-03-HPG_viral_60s.mp4"
+  "output_expected_path": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\output\\JOB-2026-11-03-HPG.mp4"
 }

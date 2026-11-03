@@ -512,6 +512,26 @@ def run_khanh_evening_routine(ticker: str = "HPG", angle_id: str = "ANGLE_01_TRU
     return package
 
 
+def generate_viral_content(query: str = "HPG") -> Dict[str, Any]:
+    """Hàm tiện ích tương thích nhận diện mã từ query và sinh kịch bản hoàn chỉnh"""
+    import re
+    tickers = re.findall(r"\b[A-Z]{3}\b", (query or "").upper())
+    sym = tickers[0] if tickers else "HPG"
+    pkg = run_khanh_evening_routine(sym)
+    scenes = pkg.get("scenes", [])
+    hook_3s = scenes[0].get("spoken_script", "") if scenes else ""
+    date_str = datetime.date.today().strftime("%Y-%m-%d")
+    return {
+        "title": pkg.get("metadata", {}).get("title", f"Bí mật BCTC {sym}"),
+        "ticker": sym,
+        "hook_3s": hook_3s,
+        "duration_seconds": 60,
+        "cta": "Bấm theo dõi kênh để không bị lừa bởi BCTC lợi nhuận giấy!",
+        "script_file": f"11_Viral_Content_Creation/{date_str}_Viral_Script_Khanh_{sym}.md",
+        "package": pkg
+    }
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Ban 11 — Khánh Chief Viral Financial Content Creator Engine")

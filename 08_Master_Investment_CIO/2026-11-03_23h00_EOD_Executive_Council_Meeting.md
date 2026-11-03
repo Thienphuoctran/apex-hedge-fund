@@ -94,9 +94,16 @@ Hội nghị 23h00 đêm nay ghi nhận sự có mặt đầy đủ của đại
  08:00 - 08:30 ──► [Ban 2 & 3] Rà soát sức khỏe BCTC và lập bảng Alpha Ranking (Top Leader vs Traps).
  08:30 SÁNG    ──► [Ban 7 Minh Quân & Alex] NẠP BỘ NHỚ V2.1 VÀ XUẤT TRÌNH SỔ LỆNH PRE-MARKET.
  08:45 SÁNG    ──► [Ban 8 Master CIO James] PHÊ DUYỆT SỔ LỆNH MASTER BLOTTER.
- 09:00 - 15:00 ──► [Ban 9 Victor Sentinel] Trực chiến thời gian thực mỗi 60 giây, bảo vệ danh mục 900 CP.
- 15:15 - 16:00 ──► [Ban 5 Learning] Kiểm toán Walk-Forward, đo lường biến động T+1 của HPG, MBB, TCB.
- 21:15 TỐI     ──► [Ban 11 Khánh & Hiền] Xuất bản kịch bản Video Viral phân tích BCTC Hòa Phát.
+ 09:00 - 11:30 ──► [Ban 9 Victor Sentinel] Trực chiến thời gian thực mỗi 60 giây, bảo vệ danh mục 900 CP (GUARD-01).
+ 11:45 TRƯA    ──► [Ban 1 & 3 VN] Báo cáo Flash Khớp Lệnh Phiên Sáng & Radar Dòng Tiền 3 Khối.
+ 13:00 - 13:45 ──► [Ban 4 & Victor] Radar đo áp lực xả hàng T+2 về tài khoản, phát hiện bẫy Bull-Trap.
+ 14:00 - 14:25 ──► [Ban 7 Minh Quân] KHUNG GIỜ VÀNG QUYẾT ĐỊNH: Lệnh gom nhịp 2 & Lướt sóng T+0 hạ giá vốn.
+ 14:25 CHIỀU   ──► [Victor & Minh Quân] KÍCH HOẠT CẦU CHÌ T+0 (GUARD-03): Cân bằng tuyệt đối trước ATC.
+ 15:15 - 16:00 ──► [Ban 5 Learning] Kiểm toán Walk-Forward, đo lường biến động T+1 của HPG, MBB, TCB, cập nhật TCBS.
+ 18:00 - 19:00 ──► [Ban 10 Hiền] Xuất bản Thư Viện BCTC & Cổng IR Doanh Nghiệp Tổng Hợp Sau Phiên.
+ 21:00 TỐI     ──► [Ban 10 Hiền] BÁO CÁO ĐỘC QUYỀN 2-3 BCTC & KQKD LỚN/VỪA/NHỎ CÓ LINK CHÍNH THỐNG & ĐO OCF TIỀN THẬT.
+ 21:15 TỐI     ──► [Ban 11 Khánh & Hiền] XUẤT BẢN KỊCH BẢN VIDEO VIRAL 60S (DÙNG DATA BCTC 21H00 CỦA HIỀN) TRÌNH JAMES.
+ 22:00 - 22:45 ──► [Hội Đồng Viện Sĩ] GIỜ TỰ HỌC & NẠP TRI THỨC ĐỈNH CAO 22H00 (SÁCH KINH ĐIỂN, IQ 152.0).
  23:00 ĐÊM     ──► [HỘI ĐỒNG ĐIỀU HÀNH 23H00] Triệu tập phiên giao ban phản biện cuối ngày theo quy chế!
 ```
 

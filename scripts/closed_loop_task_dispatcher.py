@@ -71,6 +71,17 @@ def classify_directive(command_text: str) -> Dict[str, Any]:
     """
     text_lower = command_text.lower()
 
+    # 0. Nhóm Ban 11 (Khánh): Sáng tạo nội dung, Kịch bản video viral 60s, TikTok, Reels, Shorts phối hợp cùng Hiền
+    if any(k in text_lower for k in ["khánh", "khanh", "video", "tiktok", "reels", "shorts", "kịch bản", "viral", "sáng tạo", "content", "b-roll", "bảo"]):
+        return {
+            "department": "BAN_11_KHANH_CONTENT_CREATOR",
+            "department_name": "Ban 11 — Sáng Tạo Nội Dung & Video Viral (Khánh) phối hợp Ban 10 (Hiền)",
+            "officer": "Khánh (Giám Đốc Sáng Tạo) & Hiền (Trưởng Ban BCTC)",
+            "topic_key": "james_hq",
+            "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+            "action_type": "VIRAL_VIDEO_SCRIPT_CREATION"
+        }
+
     # 1. Nhóm Ban 10 (Hiền): Rà soát BCTC, link chính thống, Báo cáo thường niên, ĐHCĐ & trích xuất dòng tiền
     if any(k in text_lower for k in ["hiền", "hien", "bctc", "tài chính", "báo cáo kinh doanh", "báo cáo tài chính", "link", "nguồn", "thường niên", "nghị quyết", "đhcđ", "soi", "doanh thu", "lợi nhuận", "ocf", "beneish", "cbtt", "sec", "radar", "sóng"]):
         return {
@@ -238,6 +249,21 @@ def execute_task_action(action_type: str, command_text: str, task_id: str) -> Di
             "• Ma trận tương quan: Correlation(HPG, TCB) = 0.42, Correlation(TCB, MBB) = 0.68 -> Đảm bảo đa dạng hóa dòng tiền.\n"
             "• Kiểm thử Stress-Test 3 kịch bản khủng hoảng: Tỷ giá biến động, Margin Call chéo, VN-Index giảm -30 điểm -> Danh mục được bảo vệ an toàn bởi Stop 2xATR!"
         )
+
+    elif action_type == "VIRAL_VIDEO_SCRIPT_CREATION":
+        from scripts.khanh_content_creator import generate_viral_content
+        res = generate_viral_content(command_text)
+        evidence["summary"] = (
+            f"🎬 *[BAN 11 — KHÁNH & HIỀN: KỊCH BẢN VIDEO VIRAL ĐÃ HOÀN TẤT]*\n"
+            f"• *Tiêu đề video*: {res.get('title')}\n"
+            f"• *Mã cổ phiếu & BCTC*: {res.get('ticker')} (Dữ liệu tiền thật từ Ban 10 Hiền)\n"
+            f"• *Hook 3s đầu*: {res.get('hook_3s')}\n"
+            f"• *Thời lượng*: {res.get('duration_seconds', 60)}s (Chuẩn TikTok / Reels / Shorts 9:16)\n"
+            f"• *Call-To-Action*: {res.get('cta')}\n"
+            f"• *Kịch bản chi tiết*: `{res.get('script_file', '11_Viral_Content_Creation/')}`\n"
+            f"👉 Đã chuyển giao kịch bản sang Master CIO James duyệt và Bảo render!"
+        )
+        evidence["script_file"] = res.get("script_file")
 
     elif action_type == "ACADEMY_AND_LEARNING_AUDIT":
         evidence["summary"] = (
