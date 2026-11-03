@@ -4,7 +4,7 @@
 ---
 
 ## 1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)
-- **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **100.0%**
+- **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **13.7%**
 - **Số lượng phiên lịch sử lưu trữ**: 4 phiên giao dịch.
 - **Trạng thái mô hình**: THÍCH NGHI ỔN ĐỊNH & LIÊN TỤC TIẾN HÓA.
 

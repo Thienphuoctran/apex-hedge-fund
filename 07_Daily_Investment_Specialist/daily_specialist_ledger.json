@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-03T01:39:28.985768+00:00",
+  "generated_at_utc": "2026-11-03T08:59:32.159001+00:00",
   "trading_date": "2026-11-03",
   "previous_date_compared": "2026-11-02",
   "specialist_profile": {
@@ -20,7 +20,7 @@
     {
       "department": "Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)",
       "verdict": "CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)",
-      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 19.42 xuống 21.15 (-8.18%), Dầu WTI dịu từ $101.61 xuống $96.25, US10Y ổn định ở 4.89%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
+      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 19.42 xuống 21.83 (-8.18%), Dầu WTI dịu từ $101.61 xuống $98.21, US10Y ổn định ở 4.89%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
       "specialist_takeaway": "Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve)."
     },
     {
@@ -56,7 +56,7 @@
   ],
   "yesterday_post_mortem": {
     "compared_period": "2026-11-02 -> 2026-11-03",
-    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 19.42 xuống 21.15 (-8.18%), Dầu WTI dịu từ $101.61 về $96.25, US10Y ở 4.89%.",
+    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 19.42 xuống 21.83 (-8.18%), Dầu WTI dịu từ $101.61 về $98.21, US10Y ở 4.89%.",
     "validated_wins": [
       {
         "category": "Thắng lợi Nhóm Trụ cột Tăng trưởng & Dầu khí (Core Winners)",
@@ -75,7 +75,7 @@
       {
         "error_code": "ERR-01 (Timing & Entry Execution Flaw)",
         "title": "Giải ngân 100% tại giá đóng cửa vào nhóm Phòng thủ đúng đỉnh ngắn hạn của VIX",
-        "what_happened": "Ngày 2026-11-02, khi VIX ở mức cao (19.42), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-03, khi VIX hạ nhiệt mạnh về 21.15 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi -0.97% ($273.2 -> $270.56), `PG` lùi 1.23% ($161.57 -> $163.56), và `V` lùi 2.88%.",
+        "what_happened": "Ngày 2026-11-02, khi VIX ở mức cao (19.42), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-03, khi VIX hạ nhiệt mạnh về 21.83 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi -0.97% ($273.2 -> $270.56), `PG` lùi 1.23% ($161.57 -> $163.56), và `V` lùi 2.88%.",
         "root_cause": "Chưa tách lệnh thành 2 nhịp (Market + Limit Pullback) và chưa tính độ nhạy đảo chiều của VIX khi vượt ngưỡng 21.",
         "corrective_action": "Kể từ hôm nay, Alex bắt buộc áp dụng quy tắc 60/40: chỉ giải ngân 60% tại vùng hiện tại và đặt 40% ở lệnh chờ `Limit Buy = Giá hiện tại - 0.35x ATR(14)`. Nhờ vậy, nhịp lùi -1.0% hôm nay của PG và JNJ trở thành điểm khớp Limit giá rẻ tối ưu!"
       }
@@ -207,9 +207,9 @@
       "change_vs_yesterday_pct": 1.05,
       "limit_pullback_price": 338.33,
       "tranche_split": "60% tại $337.04 • 40% Limit tại $334.77 (-0.35x ATR)",
-      "tp1_price": 366.24,
+      "tp1_price": 366.26,
       "tp2_price": 373.48,
-      "stop_2atr_price": 327.75,
+      "stop_2atr_price": 327.74,
       "chandelier_trailing_stop": 329.71,
       "stop_dist_pct": 3.77,
       "weight_nav_pct": 7.0,
@@ -225,7 +225,7 @@
       "win_prob_pct": 81.0,
       "reward_risk_ratio": 2.44,
       "tp2_reward_risk_ratio": 2.56,
-      "expected_value_pct": 6.07,
+      "expected_value_pct": 6.08,
       "days_to_earnings": 72,
       "market_events_and_catalysts": "Lợi suất trái phiếu chính phủ Mỹ 10 năm (US10Y) neo cao ở 4.93% tiếp tục mở rộng Thu nhập lãi thuần (NII). Thương vụ thâu tóm ngân hàng trước đây đã tích hợp hoàn tất, gia tăng thị phần tiền gửi tổ chức toàn cầu.",
       "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `91.3/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+8.90%` • True FCF ex-SBC: `$NoneB` • Altman Z: `4.4` • Lynch PEG: `1.43x` • SEC EDGAR: Form 424B2 (2026-11-02)]** — JPMorgan Chase là ngân hàng số 1 thế giới với bảng cân đối vững như pháo đài (Tỷ lệ CET1 15.3%), P/E chỉ 14.9x cực kỳ hấp dẫn. Tín hiệu ban lãnh đạo mua ròng nội bộ củng cố niềm tin tuyệt đối. Giá đang tích lũy chặt chẽ ngay sát hỗ trợ kỹ thuật.",
@@ -433,9 +433,9 @@
       "ic_score": 83.0,
       "master_legends_score": 90.2,
       "piotroski_f_score": 9,
-      "altman_z_score": 15.99,
-      "eva_spread_pct": 31.17,
-      "true_fcf_ex_sbc_bil": 33.59,
+      "altman_z_score": 16.08,
+      "eva_spread_pct": 31.22,
+      "true_fcf_ex_sbc_bil": 33.37,
       "sec_edgar_badge": "SEC EDGAR: Form 6-K (2026-10-22)",
       "win_prob_pct": 78.0,
       "reward_risk_ratio": 5.31,
@@ -443,7 +443,7 @@
       "expected_value_pct": 19.93,
       "days_to_earnings": 72,
       "market_events_and_catalysts": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.",
-      "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.17%` • True FCF ex-SBC: `$33.59B` • Altman Z: `15.99` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
+      "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.22%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.08` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
       "how_to_optimize_profit": "Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%).",
       "max_nav_risk_if_stopped_pct": 0.377,
       "inviolable_gate_checks": {
@@ -463,13 +463,13 @@
       "action_type": "NEW TACTICAL BUY (Mở mới từ Bài học Tối ưu Lợi nhuận)",
       "last_price": 278.99,
       "change_vs_yesterday_pct": -0.3,
-      "limit_pullback_price": 275.17,
+      "limit_pullback_price": 275.16,
       "tranche_split": "60% khớp ngay $279.84 • 40% Limit tại $276.21",
-      "tp1_price": 322.69,
+      "tp1_price": 322.71,
       "tp2_price": 402.73,
-      "stop_2atr_price": 257.14,
-      "chandelier_trailing_stop": 332.09,
-      "stop_dist_pct": 7.83,
+      "stop_2atr_price": 257.13,
+      "chandelier_trailing_stop": 332.08,
+      "stop_dist_pct": 7.84,
       "weight_nav_pct": 4.2,
       "allocated_capital_usd": 42000.0,
       "estimated_shares": 150,
@@ -561,7 +561,7 @@
       "symbol": "BRK-B",
       "price": 556.11,
       "change_vs_yesterday_pct": 2.51,
-      "status": "WAIT POST-EARNINGS (Còn 4 ngày tới BCTC 2026-11-07, Implied ±3.31%)",
+      "status": "WAIT POST-EARNINGS (Còn 4 ngày tới BCTC 2026-11-07, Implied ±3.34%)",
       "planned_weight_pct": 8.0,
       "limit_order_plan": "Đặt cảnh báo mua sau BCTC quanh $535.00 – $542.00 (Hôm nay đã tiết kiệm được -0.64% nhờ đứng ngoài)."
     },

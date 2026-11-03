@@ -4,9 +4,9 @@
 ## 1. Danh Mục 10 Vị Thế Hoạt Động (`Active Risk-Parity Allocations — 60.0% NAV`)
 | Mã | Ngành | Giá Hiện Tại ($) | Vùng Giải Ngân | Stop `2xATR` ($) | Chandelier Stop ($) | TP1 ($) | TP2 ($) | Tỷ Trọng (% NAV) | Rủi Ro Tối Đa (% NAV) | Trạng Thái BCTC |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`JPM`** | Global Diversified Banking | $340.58 | $333.77 – $342.28 | **$327.75** | $329.71 | $366.24 | $373.48 | **8.1%** | `-0.3%` | CLEAR (2027-01-14 BMO) |
+| **`JPM`** | Global Diversified Banking | $340.58 | $333.77 – $342.28 | **$327.74** | $329.71 | $366.26 | $373.48 | **8.1%** | `-0.3%` | CLEAR (2027-01-14 BMO) |
 | **`PG`** | Consumer Household Staples | $163.56 | $160.29 – $164.38 | **$156.68** | $158.25 | $177.32 | $184.2 | **7.0%** | `-0.29%` | CLEAR (2027-01-21 BMO) |
-| **`COST`** | Membership Warehouse Retail | $1040.55 | $973.9 – $993.58 | **$1002.97** | $995.59 | $1115.71 | $1153.29 | **6.8%** | `-0.25%` | CLEAR (2026-12-10 AMC) |
+| **`COST`** | Membership Warehouse Retail | $1040.55 | $973.9 – $993.58 | **$1002.97** | $995.6 | $1115.71 | $1153.29 | **6.8%** | `-0.25%` | CLEAR (2026-12-10 AMC) |
 | **`V`** | Global Payment Network | $425.51 | $394.92 – $402.9 | **$409.77** | $407.11 | $456.99 | $472.73 | **6.6%** | `-0.24%` | CLEAR (2027-01-26 AMC) |
 | **`XOM`** | Integrated Oil & Gas | $179.67 | $176.08 – $180.57 | **$170.71** | $177.29 | $197.59 | $206.55 | **6.4%** | `-0.32%` | CLEAR (2027-01-29 BMO) |
 | **`ABBV`** | Biotech & Immunology | $288.84 | $283.06 – $290.28 | **$275.17** | $281.66 | $316.18 | $329.85 | **6.1%** | `-0.29%` | JUST REPORTED (4d ago) — Đã qua rủi ro BCTC |
@@ -22,7 +22,7 @@
 | **`ARM`** | `2026-11-04` (AMC) | **1 ngày** | `±14.5%` | **WAIT POST-EARNINGS** — Quan sát phản ứng giá sau BCTC ngày 2026-11-04 trước khi mở vị thế. |
 | **`NVO`** | `2026-11-04` (BMO) | **1 ngày** | `±4.42%` | **WAIT POST-EARNINGS** — Quan sát phản ứng giá sau BCTC ngày 2026-11-04 trước khi mở vị thế. |
 | **`MCD`** | `2026-11-04` (BMO) | **1 ngày** | `±4.54%` | **WAIT POST-EARNINGS** — Quan sát phản ứng giá sau BCTC ngày 2026-11-04 trước khi mở vị thế. |
-| **`BRK-B`** | `2026-11-07` (BMO) | **4 ngày** | `±3.31%` | **WAIT POST-EARNINGS** — Chờ BCTC công bố ngày 2026-11-07; chỉ giải ngân nếu giữ vững MA50 ($516.32) và hướng dẫn EPS tích cực. |
+| **`BRK-B`** | `2026-11-07` (BMO) | **4 ngày** | `±3.34%` | **WAIT POST-EARNINGS** — Chờ BCTC công bố ngày 2026-11-07; chỉ giải ngân nếu giữ vững MA50 ($516.32) và hướng dẫn EPS tích cực. |
 | **`OXY`** | `2026-11-09` (AMC) | **6 ngày** | `±6.42%` | **WAIT POST-EARNINGS** — Chờ BCTC công bố ngày 2026-11-09; chỉ giải ngân nếu giữ vững MA50 ($60.17) và hướng dẫn EPS tích cực. |
 | **`AMD`** | `2026-11-03` (AMC) | **0 ngày** | `±14.5%` | **WAIT POST-EARNINGS** — Quan sát phản ứng giá sau BCTC ngày 2026-11-03 trước khi mở vị thế. |
 | **`SMCI`** | `2026-11-03` (AMC) | **0 ngày** | `±14.5%` | **WAIT POST-EARNINGS** — Quan sát phản ứng giá sau BCTC ngày 2026-11-03 trước khi mở vị thế. |

@@ -17,16 +17,16 @@
 
 | Mã | **`MSFT`** | **`TSM`** | **`JPM`** | **`NVDA`** | **`PG`** | **`JNJ`** | **`V`** | **`ABBV`** | **`COST`** | **`XOM`** |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`MSFT`** | `1.00` | 0.17 | 0.07 | 0.26 | -0.15 | -0.23 | 0.19 | -0.15 | -0.06 | -0.15 |
-| **`TSM`** | 0.17 | `1.00` | 0.13 | **0.66** | -0.18 | -0.22 | -0.11 | -0.19 | -0.22 | -0.29 |
-| **`JPM`** | 0.07 | 0.13 | `1.00` | 0.13 | 0.06 | 0.09 | 0.31 | 0.04 | -0.04 | -0.10 |
-| **`NVDA`** | 0.26 | **0.66** | 0.13 | `1.00` | -0.26 | -0.22 | -0.13 | -0.20 | -0.28 | -0.23 |
-| **`PG`** | -0.15 | -0.18 | 0.06 | -0.26 | `1.00` | 0.41 | 0.20 | 0.25 | 0.34 | -0.02 |
-| **`JNJ`** | -0.23 | -0.22 | 0.09 | -0.22 | 0.41 | `1.00` | 0.12 | 0.51 | 0.30 | 0.08 |
-| **`V`** | 0.19 | -0.11 | 0.31 | -0.13 | 0.20 | 0.12 | `1.00` | 0.21 | 0.24 | -0.05 |
-| **`ABBV`** | -0.15 | -0.19 | 0.04 | -0.20 | 0.25 | 0.51 | 0.21 | `1.00` | 0.23 | 0.03 |
-| **`COST`** | -0.06 | -0.22 | -0.04 | -0.28 | 0.34 | 0.30 | 0.24 | 0.23 | `1.00` | 0.16 |
-| **`XOM`** | -0.15 | -0.29 | -0.10 | -0.23 | -0.02 | 0.08 | -0.05 | 0.03 | 0.16 | `1.00` |
+| **`MSFT`** | `1.00` | 0.18 | 0.06 | 0.26 | -0.15 | -0.22 | 0.17 | -0.14 | -0.07 | -0.14 |
+| **`TSM`** | 0.18 | `1.00` | 0.13 | **0.66** | -0.19 | -0.22 | -0.12 | -0.18 | -0.22 | -0.27 |
+| **`JPM`** | 0.06 | 0.13 | `1.00` | 0.13 | 0.07 | 0.09 | 0.31 | 0.04 | -0.04 | -0.10 |
+| **`NVDA`** | 0.26 | **0.66** | 0.13 | `1.00` | -0.26 | -0.22 | -0.13 | -0.19 | -0.29 | -0.23 |
+| **`PG`** | -0.15 | -0.19 | 0.07 | -0.26 | `1.00` | 0.40 | 0.21 | 0.25 | 0.35 | -0.03 |
+| **`JNJ`** | -0.22 | -0.22 | 0.09 | -0.22 | 0.40 | `1.00` | 0.11 | 0.51 | 0.29 | 0.09 |
+| **`V`** | 0.17 | -0.12 | 0.31 | -0.13 | 0.21 | 0.11 | `1.00` | 0.20 | 0.26 | -0.07 |
+| **`ABBV`** | -0.14 | -0.18 | 0.04 | -0.19 | 0.25 | 0.51 | 0.20 | `1.00` | 0.22 | 0.05 |
+| **`COST`** | -0.07 | -0.22 | -0.04 | -0.29 | 0.35 | 0.29 | 0.26 | 0.22 | `1.00` | 0.14 |
+| **`XOM`** | -0.14 | -0.27 | -0.10 | -0.23 | -0.03 | 0.09 | -0.07 | 0.05 | 0.14 | `1.00` |
 
 ---
 
@@ -34,9 +34,9 @@
 
 | Mã | Ngành | Giá ($) | Stop `2xATR` ($) | Chandelier Trailing ($) | Khoảng cách Stop (%) | Tỷ trọng (% NAV) | Rủi ro tối đa (% NAV) | Điểm IC (/100) | Lịch BCTC (`Earnings Radar`) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`JPM`** | Global Diversified Banking | $340.58 | **$327.75** | $329.71 | -3.76% | **8.1% NAV** | `-0.3% NAV` | **90/100** | CLEAR (2027-01-14 BMO) |
+| **`JPM`** | Global Diversified Banking | $340.58 | **$327.74** | $329.71 | -3.76% | **8.1% NAV** | `-0.3% NAV` | **90/100** | CLEAR (2027-01-14 BMO) |
 | **`PG`** | Consumer Household Staples | $163.56 | **$156.68** | $158.25 | -4.2% | **7.0% NAV** | `-0.29% NAV` | **86/100** | CLEAR (2027-01-21 BMO) |
-| **`COST`** | Membership Warehouse Retail | $1040.55 | **$1002.97** | $995.59 | -3.62% | **6.8% NAV** | `-0.25% NAV` | **71/100** | CLEAR (2026-12-10 AMC) |
+| **`COST`** | Membership Warehouse Retail | $1040.55 | **$1002.97** | $995.6 | -3.62% | **6.8% NAV** | `-0.25% NAV` | **71/100** | CLEAR (2026-12-10 AMC) |
 | **`V`** | Global Payment Network | $425.51 | **$409.77** | $407.11 | -3.7% | **6.6% NAV** | `-0.24% NAV` | **73/100** | CLEAR (2027-01-26 AMC) |
 | **`XOM`** | Integrated Oil & Gas | $179.67 | **$170.71** | $177.29 | -4.98% | **6.4% NAV** | `-0.32% NAV` | **88/100** | CLEAR (2027-01-29 BMO) |
 | **`ABBV`** | Biotech & Immunology | $288.84 | **$275.17** | $281.66 | -4.74% | **6.1% NAV** | `-0.29% NAV` | **86/100** | JUST REPORTED (4d ago) — Đã qua rủi ro BCTC |
@@ -52,7 +52,7 @@
 | **`ARM`** | Semiconductor IP Architecture | $196.79 | `2026-11-04` | AMC | **1d** | `±14.5%` | 60/100 | Quan sát phản ứng giá sau BCTC ngày 2026-11-04 trước khi mở vị thế. |
 | **`NVO`** | Biopharma GLP-1 Leader | $40.45 | `2026-11-04` | BMO | **1d** | `±4.42%` | 65/100 | Quan sát phản ứng giá sau BCTC ngày 2026-11-04 trước khi mở vị thế. |
 | **`MCD`** | Global Quick Service Restaurants | $265.64 | `2026-11-04` | BMO | **1d** | `±4.54%` | 61/100 | Quan sát phản ứng giá sau BCTC ngày 2026-11-04 trước khi mở vị thế. |
-| **`BRK-B`** | Diversified Conglomerate | $556.11 | `2026-11-07` | BMO | **4d** | `±3.31%` | 68/100 | Chờ BCTC công bố ngày 2026-11-07; chỉ giải ngân nếu giữ vững MA50 ($516.32) và hướng dẫn EPS tích cực. |
+| **`BRK-B`** | Diversified Conglomerate | $556.11 | `2026-11-07` | BMO | **4d** | `±3.34%` | 68/100 | Chờ BCTC công bố ngày 2026-11-07; chỉ giải ngân nếu giữ vững MA50 ($516.32) và hướng dẫn EPS tích cực. |
 | **`OXY`** | Upstream Oil & Carbon Capture | $60.72 | `2026-11-09` | AMC | **6d** | `±6.42%` | 83/100 | Chờ BCTC công bố ngày 2026-11-09; chỉ giải ngân nếu giữ vững MA50 ($60.17) và hướng dẫn EPS tích cực. |
 | **`AMD`** | Processors & AI Accelerators | $466.84 | `2026-11-03` | AMC | **0d** | `±14.5%` | 77/100 | Quan sát phản ứng giá sau BCTC ngày 2026-11-03 trước khi mở vị thế. |
 | **`SMCI`** | AI Server Infrastructure | $30.44 | `2026-11-03` | AMC | **0d** | `±14.5%` | 45/100 | Quan sát phản ứng giá sau BCTC ngày 2026-11-03 trước khi mở vị thế. |
@@ -80,5 +80,5 @@
 | **`ABBV`** | FCF chuẩn hóa đạt +$0.0B USD, tăng trưởng doanh thu +10.3% YoY, giá ($288.84) giữ cấu trúc trên MA200 ($237.46), điểm IC 86/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`MSFT`** | FCF chuẩn hóa đạt +$2.99B USD, tăng trưởng doanh thu +18.8% YoY, giá ($507.12) giữ cấu trúc trên MA200 ($438.18), điểm IC 83/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`JNJ`** | FCF chuẩn hóa đạt +$18.5B USD, tăng trưởng doanh thu +5.9% YoY, giá ($270.56) giữ cấu trúc trên MA200 ($247.24), điểm IC 82/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
-| **`TSM`** | FCF chuẩn hóa đạt +$36.93B USD, tăng trưởng doanh thu +50.9% YoY, giá ($398.63) giữ cấu trúc trên MA200 ($400.45), điểm IC 83/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
+| **`TSM`** | FCF chuẩn hóa đạt +$36.69B USD, tăng trưởng doanh thu +50.9% YoY, giá ($398.63) giữ cấu trúc trên MA200 ($400.45), điểm IC 83/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`NVDA`** | FCF chuẩn hóa đạt +$41.81B USD, tăng trưởng doanh thu +105.9% YoY, giá ($202.06) giữ cấu trúc trên MA200 ($204.46), điểm IC 68/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |

@@ -7,7 +7,7 @@
 
 ## 1. Bảng Đo Lường Hiệu Suất & Độ Chuẩn Xác Của Dự Báo (Prediction Telemetry)
 - **Tổng số Tài sản Được Theo Dõi Toàn Cầu**: **`35 Cổ phiếu`** & **`12 ETF Ngành GICS`**
-- **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **21.15**, `US10Y` = **4.89%**, `WTI Oil` = **$96.25/thùng**)
+- **Trạng thái Thị trường Hiện tại**: **`Reflationary / Hawkish Rotation`** (`VIX` = **21.83**, `US10Y` = **4.89%**, `WTI Oil` = **$98.21/thùng**)
 - **Tỷ lệ Dự Báo Chuẩn Xác (Walk-Forward Hit Rate)**: **`77.8%`** (`14 Thắng` / `4 Thua` / `17 Tích lũy`)
 - **Hiệu quả Bộ Lọc Rủi Ro (Avoidance Score)**: **100%** (Cảnh báo thành công các bẫy suy yếu `TSLA`, `COIN`, `QCOM`, `SMCI`, `INTC`).
 
@@ -36,14 +36,14 @@
 
 ## 4. Nhật Ký Bài Học Thị Trường Tích Lũy Ngày Hôm Nay (Market Lessons Learned)
 
-- **Bài học 1 (Thanh khoản & Biến động VIX = 21.15 >= 20)**: Khi VIX vượt ngưỡng 20, hệ thống nâng trọng số FCF lên **35%** (Tổng 4 trụ cột = `25% + 35% + 20% + 20% = 100%`) và giữ đệm tiền mặt tối thiểu **40% NAV**.
+- **Bài học 1 (Thanh khoản & Biến động VIX = 21.83 >= 20)**: Khi VIX vượt ngưỡng 20, hệ thống nâng trọng số FCF lên **35%** (Tổng 4 trụ cột = `25% + 35% + 20% + 20% = 100%`) và giữ đệm tiền mặt tối thiểu **40% NAV**.
 - **Bài học 2 (Kỷ luật Khóa Mua Mới Trước BCTC <= 7 Ngày)**: Hệ thống đã tự động khóa giải ngân mới và loại khỏi bảng phân bổ Risk-Parity đối với 4 mã sắp công bố BCTC (`AMD (0d), QCOM (1d), ARM (1d), SMCI (0d), BRK-B (4d), NVO (1d), OXY (6d), MCD (1d)`), trong khi các mã vừa công bố xong (`AAPL (1d ago), AMZN (5d ago), PLTR (1d ago), COIN (5d ago), LLY (5d ago), ABBV (4d ago)`) đã thoát rủi ro nhảy gap sự kiện.
 - **Bài học 3 (Độ tin cậy của True FCF ex-SBC, EVA Spread & SEC Form 4)**: Các doanh nghiệp có dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC > 0`), `ROIC > WACC` và giao dịch nội bộ mua ròng (`MSFT`, `JPM`, `PG`) giữ giá vượt trội trong các phiên chỉ số chung điều chỉnh.
 
 ---
 
 ## 5. Tinh Chỉnh Thích Nghi Trọng Số Chấm Điểm (`Adaptive Weight Tuning — Tổng = 100%`)
-Dựa trên mức biến động thực tế hôm nay (`VIX = 21.15`):
+Dựa trên mức biến động thực tế hôm nay (`VIX = 21.83`):
 - **Trụ cột 1 — Vĩ mô & Chu kỳ Ngành (`Macro & Sector Fit`)**: **`25%`**
 - **Trụ cột 2 — Sức khỏe BCTC & Dòng tiền (`Fundamental & True FCF`)**: **`35%`**
 - **Trụ cột 3 — Định giá & Dư địa Tăng giá (`Valuation & Consensus Upside`)**: **`20%`**

@@ -15,15 +15,15 @@ Dưới sự điều phối tối cao của Master CIO, dòng vốn được gi�
 | Hạng Mục Danh Mục | Tỷ Trọng (% NAV) | Giá Trị Quy Đổi (USD) | Giá Trị Quy Đổi (VNĐ) | Trạng Thái Phân Bổ & Chiến Lược |
 | :--- | :---: | :---: | :---: | :--- |
 | **Thị Trường Toàn Cầu / Mỹ (US Equities)** | **0.0%** | **$0.00** | **0 ₫** | 4 Siêu cổ phiếu FCF khổng lồ, độc quyền thị phần thế giới. |
-| **Thị Trường Việt Nam (VN Equities)** | **93.4%** | **$735.44** | **18,680,000 ₫** | 4 Siêu cổ phiếu dẫn đầu ngành, hưởng lợi đầu tư công & SBV. |
-| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **6.6%** | **$51.96** | **1,319,824 ₫** | Dự phòng thanh khoản, săn hàng chiết khấu sau mùa BCTC. |
+| **Thị Trường Việt Nam (VN Equities)** | **93.4%** | **$735.63** | **18,685,000 ₫** | 4 Siêu cổ phiếu dẫn đầu ngành, hưởng lợi đầu tư công & SBV. |
+| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **6.6%** | **$51.77** | **1,314,998 ₫** | Dự phòng thanh khoản, săn hàng chiết khấu sau mùa BCTC. |
 | **TỔNG CỘNG (100% NAV)** | **100.0%** | **$787.40** | **20,000,000 ₫** | **Danh mục cân bằng Volatility Risk-Parity** |
 
 ### Chỉ Số Định Lượng Danh Mục Hợp Nhất (Unified Quant Health)
 - **Kỳ vọng Toán học Danh mục (EV%)**: **+5.84% / lệnh** (Chứng minh tính toán xác suất dương).
 - **Xác suất Thắng Bình quân (P(W))**: **80.2%** (Đạt chuẩn Super-Forecasting).
 - **Tỷ lệ Lợi Nhuận / Rủi Ro Trung Bình (R:R)**: **1 : 2.31** (Vượt ngưỡng tối thiểu 1:2.0).
-- **Mức Rủi Ro Mất Vốn Tối Đa Trên 1 Vị Thế**: **2.08% NAV** (Khóa chặt bằng ngưỡng Stop Loss cứng 2xATR(14)).
+- **Mức Rủi Ro Mất Vốn Tối Đa Trên 1 Vị Thế**: **2.50% NAV** (Khóa chặt bằng ngưỡng Stop Loss cứng 2xATR(14)).
 - **Hệ Số Beta Danh Mục (Portfolio Beta)**: **0.58** (Thấp hơn thị trường chung ~42%, biến động êm đềm nhưng sinh lời vượt trội).
 
 ---
@@ -97,7 +97,7 @@ sequenceDiagram
 | **AVGO** | Custom AI ASICs & Networking | **$0.00**<br/>(0 ₫) | **0 CP** | $322.23 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($322.23) • 40% Gia tăng Breakout • 30% Retest | **$298.06**<br/>(-7.5%) | TP1: **$374.29**<br/>TP2: **$530.14** | +23.7%<br/>(1:6.73) |
 | **NVDA** | Semiconductors & AI | **$0.00**<br/>(0 ₫) | **0 CP** | $202.06 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($202.06) • 40% Gia tăng Breakout • 30% Retest | **$188.59**<br/>(-6.67%) | TP1: **$229.00**<br/>TP2: **$328.95** | +22.0%<br/>(1:7.86) |
 | **TSM** | Global Chip Foundry | **$0.00**<br/>(0 ₫) | **0 CP** | $398.63 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($398.63) • 40% Gia tăng Breakout • 30% Retest | **$368.73**<br/>(-7.5%) | TP1: **$458.67**<br/>TP2: **$584.39** | +19.9%<br/>(1:5.31) |
-| **GOOGL** | Search & Hyperscale Cloud | **$0.00**<br/>(0 ₫) | **0 CP** | $278.99 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($278.99) • 40% Gia tăng Breakout • 30% Retest | **$258.07**<br/>(-7.5%) | TP1: **$322.69**<br/>TP2: **$402.73** | +13.2%<br/>(1:4.89) |
+| **GOOGL** | Search & Hyperscale Cloud | **$0.00**<br/>(0 ₫) | **0 CP** | $278.99 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($278.99) • 40% Gia tăng Breakout • 30% Retest | **$258.07**<br/>(-7.5%) | TP1: **$322.71**<br/>TP2: **$402.73** | +13.2%<br/>(1:4.89) |
 
 ### Giải Trình Chi Tiết Từng Mã Mỹ Của Master CIO & Alex:
 
@@ -114,7 +114,7 @@ sequenceDiagram
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
 
 #### 🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)
-- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.17%` • True FCF ex-SBC: `$33.59B` • Altman Z: `15.99` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
+- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.22%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.08` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
 - **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.
 - **Cách thức thực thi tối ưu lợi nhuận (The "How")**: Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO.
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
@@ -128,13 +128,13 @@ sequenceDiagram
 ---
 
 ## 4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)
-**Tổng Vốn Phân Bổ: 18,680,000 VNĐ ($735.44 USD - 93.4% NAV) | Chuyên Viên Thực Thi: Minh Quân**
+**Tổng Vốn Phân Bổ: 18,685,000 VNĐ ($735.63 USD - 93.4% NAV) | Chuyên Viên Thực Thi: Minh Quân**
 
 | Mã CP | Sàn / Ngành | Vốn Phân Bổ (VNĐ / USD) | Số Cổ Phiếu (Lô Chẵn 100) | Thị Giá Hiện Tại | Pháp Y & Net Conviction (Bước 1 & 2) | Ngưỡng Cắt Lỗ Bắt Buộc | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **HPG** | HOSE • Thép & Vật Liệu Xây Dựng | **10,500,000 ₫**<br/>($413.39) | **500 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 21,000 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+62.2`<br/>**MoS:** `+58.9%` | **20,170 ₫**<br/>(-3.95%) | TP1: **22,160 ₫**<br/>TP2: **23,150 ₫** | +6.58%<br/>(1:2.59) |
-| **TCB** | HOSE • Ngân Hàng & Dịch Vụ Tài Chính | **4,320,000 ₫**<br/>($170.08) | **200 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 21,600 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+60.8`<br/>**MoS:** `+57.0%` | **20,830 ₫**<br/>(-3.56%) | TP1: **22,680 ₫**<br/>TP2: **23,600 ₫** | +5.74%<br/>(1:2.60) |
-| **MBB** | HOSE • Ngân Hàng & Dịch Vụ Tài Chính | **3,860,000 ₫**<br/>($151.97) | **200 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 19,300 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+58.8`<br/>**MoS:** `+59.8%` | **18,690 ₫**<br/>(-3.16%) | TP1: **20,160 ₫**<br/>TP2: **20,900 ₫** | +4.85%<br/>(1:2.62) |
+| **HPG** | HOSE • Thép & Vật Liệu Xây Dựng | **10,625,000 ₫**<br/>($418.31) | **500 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 21,250 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+62.2`<br/>**MoS:** `+58.9%` | **20,250 ₫**<br/>(-4.71%) | TP1: **22,650 ₫**<br/>TP2: **23,850 ₫** | +7.86%<br/>(1:2.60) |
+| **TCB** | HOSE • Ngân Hàng & Dịch Vụ Tài Chính | **4,280,000 ₫**<br/>($168.50) | **200 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 21,400 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+60.8`<br/>**MoS:** `+57.0%` | **20,480 ₫**<br/>(-4.3%) | TP1: **22,690 ₫**<br/>TP2: **23,800 ₫** | +6.94%<br/>(1:2.61) |
+| **MBB** | HOSE • Ngân Hàng & Dịch Vụ Tài Chính | **3,780,000 ₫**<br/>($148.82) | **200 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 18,900 ₫ | **Pháp y:** `100/100`<br/>**Conviction:** `+58.8`<br/>**MoS:** `+59.8%` | **18,200 ₫**<br/>(-3.7%) | TP1: **19,880 ₫**<br/>TP2: **20,720 ₫** | +5.63%<br/>(1:2.60) |
 
 ### Giải Trình Chi Tiết Từng Mã Việt Nam Của Master CIO & Minh Quân:
 
@@ -142,19 +142,19 @@ sequenceDiagram
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +62.2/100, MoS +58.9%.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Vào 300 cổ HPG tại 20,850 - 21,000 ₫ phiên sáng; nạp tiếp 200 cổ trong Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong T+2. Gom 500 CP làm kho hàng T+0 cốt lõi cho Tháng 2
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **415,000 VNĐ** (chỉ chiếm **2.08% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **500,000 VNĐ** (chỉ chiếm **2.50% Tổng NAV**).
 
 #### 🔹 TCB — Kỹ Thương Việt Nam (Techcombank) (CORE COMPOUNDER (BANK LEADER))
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +60.8/100, MoS +57.0%.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Đặt Limit Buy 200 cổ TCB tại 21,450 - 21,600 ₫ phiên sáng. Gom 200 CP tích lũy giá trị, CASA 40.5% & IPO TCBS
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **154,000 VNĐ** (chỉ chiếm **0.77% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **184,000 VNĐ** (chỉ chiếm **0.92% Tổng NAV**).
 
 #### 🔹 MBB — Quân Đội (MBBank) (TACTICAL ALPHA (FAST SWING))
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +58.8/100, MoS +59.8%.
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời.
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Đặt Limit Buy 200 cổ MBB tại 19,190 - 19,300 ₫ phiên sáng. 200 CP lướt sóng ngắn T+3/T+5 đón đầu dòng tiền tín dụng
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **122,000 VNĐ** (chỉ chiếm **0.61% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **140,000 VNĐ** (chỉ chiếm **0.70% Tổng NAV**).
 
 ---
 
@@ -178,7 +178,7 @@ graph LR
 2. **Kịch bản 2: Giá Dầu Vọt > $110/thùng Do Leo Thang Địa Chính Trị**:
    - *Tác động*: Vị thế **OXY (Occidental Petroleum)** bùng nổ lợi nhuận, đóng vai trò tấm khiên phòng hộ năng lượng hoàn hảo cho toàn danh mục.
 3. **Kịch bản 3: Sàn HOSE Rung Lắc Nghẽn Lệnh ATO / Khối Ngoại Bán Ròng**:
-   - *Tác động*: Tỷ lệ tiền mặt dự phòng **10% Dry Powder ($51.96 USD)** sẵn sàng giải ngân gom thêm cổ phiếu AAA (FPT, MWG) tại vùng sàn chiết khấu sâu.
+   - *Tác động*: Tỷ lệ tiền mặt dự phòng **10% Dry Powder ($51.77 USD)** sẵn sàng giải ngân gom thêm cổ phiếu AAA (FPT, MWG) tại vùng sàn chiết khấu sâu.
 
 ---
 

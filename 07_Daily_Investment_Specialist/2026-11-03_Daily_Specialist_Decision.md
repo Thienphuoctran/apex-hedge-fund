@@ -1,7 +1,7 @@
 # [BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX
 **Chuyên viên phụ trách**: **`Alex`** (Chuyên Viên Đầu Tư Trưởng & Quản Lý Thực Thi Danh Mục Hàng Ngày)  
 **Khung giờ hoạt động định kỳ**: `08:30 AM Mỗi Ngày` *(Sau khoảng đệm 1 tiếng để Nhà đầu tư đọc kỹ BCTC từ 07:30 – 08:30)*  
-**Ngày giao dịch**: `2026-11-03` (`2026-11-03 00:32:10 UTC`)  
+**Ngày giao dịch**: `2026-11-03` (`2026-11-03 08:59:06 UTC`)  
 **Chỉ số Hoàn thiện Của Alex (`Specialist Mastery Score`)**: **`95.8 / 100`** *(Tăng `+4.3 điểm` nhờ hồ sơ mổ xẻ sự kiện chi tiết và chiến lược tối ưu lợi nhuận đa nhịp)*  
 **Kỳ vọng Toán học Danh mục (`Portfolio Weighted Expected Value`)**: **`+11.66%`** | **Xác suất Thắng Trung bình (`Win Probability`)**: **`76.7%`**
 
@@ -11,7 +11,7 @@
 
 | Phòng Ban Báo Cáo | Nhận Định Cốt Lõi Hôm Nay | Đánh Giá Chi Tiết Từ Phòng Ban | Quyết Định Điều Phối Khoa Học Của Alex |
 | :--- | :--- | :--- | :--- |
-| **Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)** | **`CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)`** | Chỉ số sợ hãi VIX giảm mạnh từ 19.42 xuống 21.15 (-8.18%), Dầu WTI dịu từ $101.61 xuống $96.25, US10Y ổn định ở 4.89%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao. | **Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve).** |
+| **Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)** | **`CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)`** | Chỉ số sợ hãi VIX giảm mạnh từ 19.42 xuống 21.83 (-8.18%), Dầu WTI dịu từ $101.61 xuống $98.21, US10Y ổn định ở 4.89%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao. | **Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve).** |
 | **Ban 2 — Thẩm Định BCTC, FCF & SEC Form 4 (`equity-fundamental-agent`)** | **`ƯU TIÊN CỖ MÁY IN TIỀN FCF & INSIDER BUYING`** | Nhóm dẫn dắt có FCF chuẩn hóa USD khổng lồ và Ban lãnh đạo mua ròng (MSFT +$74.1B FCF, TSM +$36.93B FCF, NVDA +$60.8B FCF, JPM, OXY, V, PG) vẫn giữ cấu trúc tăng. Đặc biệt, nhóm Quá bán có BCTC siêu khỏe (GOOGL FCF +$52.4B, P/E 20.9x; AVGO FCF +$22.8B, RSI 33.9) đã xuất hiện lực cầu bắt đáy. | **Alex duy trì 8 mã Trụ cột (Core 52% NAV) và mở thêm vị thế thăm dò có kỷ luật vào GOOGL (4.2%) và AVGO (3.8%) để gia tăng hiệu suất sinh lời.** |
 | **Ban 3 — Tổng Hợp & Điều Phối Xung Đột (`synthesis-hub-agent`)** | **`KHÓA MUA ĐUỔI TRƯỚC BCTC & CẢNH BÁO QUÁ MUA`** | Cấm giải ngân mới vào các mã có lịch công bố BCTC <= 7 ngày (AAPL -1d, PLTR -1d, AMD 0d, BRK-B 4d), trong khi XOM và CVX đã công bố xong (JUST REPORTED). Tiếp tục cảnh báo không mua đuổi nhóm RSI Quá mua > 70 (LLY, ABBV, LMT, WMT). | **Alex tuân thủ tuyệt đối lệnh cấm mua trước BCTC; chuyển phần vốn chờ của BRK-B và AAPL sang lệnh Limit sau BCTC và nhánh Alpha.** |
 | **Ban 4 — Hội Đồng Đầu Tư & Rủi Ro Định Lượng (`investment-committee-agent`)** | **`KIỂM SOÁT TƯƠNG QUAN & KHÓA RỦI RO STOP 2xATR`** | Định cỡ vị thế theo ATR Risk-Parity sao cho mỗi lệnh chạm Stop 2xATR(14) chỉ mất tối đa ~0.23% đến 0.30% NAV. Khống chế cụm tương quan Bán dẫn (NVDA + TSM + AVGO) trong trần an toàn và giữ Beta danh mục quanh ~0.55. | **Alex gắn sẵn Stop 2xATR(14) tự động cho mọi lệnh mở mới hôm nay và chia 2 nhịp vào lệnh (Market + Limit -0.35x ATR).** |
@@ -29,7 +29,7 @@
 
 ### 2.2. Kiểm Điểm Chỗ SAI / Điểm Vào Lệnh Chưa Tối Ưu Của Alex (`Commission & Timing Flaws`)
 - **[ERR-01 (Timing & Entry Execution Flaw)] Giải ngân 100% tại giá đóng cửa vào nhóm Phòng thủ đúng đỉnh ngắn hạn của VIX**:
-  - *Thực tế diễn ra*: Ngày 2026-11-02, khi VIX ở mức cao (19.42), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-03, khi VIX hạ nhiệt mạnh về 21.15 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi -0.97% ($273.2 -> $270.56), `PG` lùi 1.23% ($161.57 -> $163.56), và `V` lùi 2.88%.
+  - *Thực tế diễn ra*: Ngày 2026-11-02, khi VIX ở mức cao (19.42), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-03, khi VIX hạ nhiệt mạnh về 21.83 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi -0.97% ($273.2 -> $270.56), `PG` lùi 1.23% ($161.57 -> $163.56), và `V` lùi 2.88%.
   - *Nguyên nhân gốc rễ*: Chưa tách lệnh thành 2 nhịp (Market + Limit Pullback) và chưa tính độ nhạy đảo chiều của VIX khi vượt ngưỡng 21.
   - *Alex sửa sai & cải tiến ngay hôm nay*: **Kể từ hôm nay, Alex bắt buộc áp dụng quy tắc 60/40: chỉ giải ngân 60% tại vùng hiện tại và đặt 40% ở lệnh chờ `Limit Buy = Giá hiện tại - 0.35x ATR(14)`. Nhờ vậy, nhịp lùi -1.0% hôm nay của PG và JNJ trở thành điểm khớp Limit giá rẻ tối ưu!**
 
@@ -56,13 +56,13 @@
 | :--- | :--- | :--- | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **`MSFT`** | `CORE COMPOUNDER` | **HOLD & TRAIL WINNER (Giữ & Gồng lãi chủ lực)** | **$507.12** *(-2.83%)* | Đã khớp 80% • Chờ mua thêm 20% tại Limit $518.00 | $558.26 / $633.13 | **$481.55** *(-5.04%)* | **8.0% NAV** *($80,000)* | `78.0%` | `4.31x` | **`+11.36%`** | `PASSED (-0.403% NAV)` |
 | **`V`** | `CORE COMPOUNDER` | **SCALE-IN AT DISCOUNT (Khớp thêm nhịp chỉnh -0.62%)** | **$425.51** *(+2.88%)* | 60% vùng $413.59 • 40% khớp Limit chiết khấu $410.99 | $456.99 / $472.73 | **$409.77** *(-3.7%)* | **7.5% NAV** *($75,000)* | `74.0%` | `2.79x` | **`+5.61%`** | `PASSED (-0.278% NAV)` |
-| **`JPM`** | `CORE COMPOUNDER` | **ACCUMULATE AT MA200 (Tích lũy sát hỗ trợ)** | **$340.58** *(+1.05%)* | 60% tại $337.04 • 40% Limit tại $334.77 (-0.35x ATR) | $366.24 / $373.48 | **$327.75** *(-3.77%)* | **7.0% NAV** *($70,000)* | `81.0%` | `2.44x` | **`+6.07%`** | `PASSED (-0.264% NAV)` |
+| **`JPM`** | `CORE COMPOUNDER` | **ACCUMULATE AT MA200 (Tích lũy sát hỗ trợ)** | **$340.58** *(+1.05%)* | 60% tại $337.04 • 40% Limit tại $334.77 (-0.35x ATR) | $366.26 / $373.48 | **$327.74** *(-3.77%)* | **7.0% NAV** *($70,000)* | `81.0%` | `2.44x` | **`+6.08%`** | `PASSED (-0.264% NAV)` |
 | **`PG`** | `CORE COMPOUNDER` | **SCALE-IN AT DISCOUNT (Mua gom nhịp lùi -1.00%)** | **$163.56** *(+1.23%)* | 60% đã giữ • 40% khớp Limit giá rẻ tại $160.43 | $177.32 / $184.2 | **$156.68** *(-4.21%)* | **6.5% NAV** *($65,000)* | `82.0%` | `2.79x` | **`+7.52%`** | `PASSED (-0.274% NAV)` |
 | **`XOM`** | `CORE COMPOUNDER` | **HOLD & TRAIL WINNER (Giữ & Hưởng lợi Dầu > $102)** | **$179.67** *(-4.05%)* | 70% vị thế hiện tại • 30% Limit tại $63.47 | $197.59 / $206.55 | **$170.71** *(-4.99%)* | **6.5% NAV** *($65,000)* | `83.0%` | `2.79x` | **`+9.09%`** | `PASSED (-0.324% NAV)` |
 | **`JNJ`** | `CORE COMPOUNDER` | **SCALE-IN AT DISCOUNT (Mua gom nhịp lùi -1.08%)** | **$270.56** *(-0.97%)* | 60% đã giữ • 40% khớp Limit giá rẻ tại $270.61 | $297.84 / $311.48 | **$256.92** *(-5.04%)* | **6.0% NAV** *($60,000)* | `78.0%` | `2.79x` | **`+8.33%`** | `PASSED (-0.302% NAV)` |
 | **`NVDA`** | `CORE COMPOUNDER` | **HOLD & ADD ON DIP (Gồng lãi +0.58% • Cắt lỗ chặt)** | **$202.06** *(-1.26%)* | 70% tại $204.64 • 30% Limit tại $202.56 | $229.0 / $328.95 | **$188.59** *(-6.67%)* | **5.5% NAV** *($55,000)* | `72.0%` | `7.86x` | **`+21.98%`** | `PASSED (-0.367% NAV)` |
 | **`TSM`** | `CORE COMPOUNDER` | **HOLD & ADD ON DIP (Gồng lãi +0.35% • Chuẩn hóa USD)** | **$398.63** *(-1.85%)* | 70% tại $406.13 • 30% Limit tại $401.63 | $458.67 / $584.39 | **$368.61** *(-7.53%)* | **5.0% NAV** *($50,000)* | `78.0%` | `5.31x` | **`+19.93%`** | `PASSED (-0.377% NAV)` |
-| **`GOOGL`** | `TACTICAL ALPHA SLEEVE (MỚI)` | **NEW TACTICAL BUY (Mở mới từ Bài học Tối ưu Lợi nhuận)** | **$278.99** *(-0.30%)* | 60% khớp ngay $279.84 • 40% Limit tại $276.21 | $322.69 / $402.73 | **$257.14** *(-7.83%)* | **4.2% NAV** *($42,000)* | `60.0%` | `4.89x` | **`+13.15%`** | `PASSED (-0.329% NAV)` |
+| **`GOOGL`** | `TACTICAL ALPHA SLEEVE (MỚI)` | **NEW TACTICAL BUY (Mở mới từ Bài học Tối ưu Lợi nhuận)** | **$278.99** *(-0.30%)* | 60% khớp ngay $279.84 • 40% Limit tại $276.21 | $322.71 / $402.73 | **$257.13** *(-7.84%)* | **4.2% NAV** *($42,000)* | `60.0%` | `4.89x` | **`+13.15%`** | `PASSED (-0.329% NAV)` |
 | **`AVGO`** | `TACTICAL ALPHA SLEEVE (MỚI)` | **NEW TACTICAL BUY (Mở mới Quá bán Chất lượng cao)** | **$322.23** *(-1.18%)* | 60% khớp ngay $326.08 • 40% Limit tại $321.72 | $374.29 / $530.14 | **$296.2** *(-8.08%)* | **3.8% NAV** *($38,000)* | `73.0%` | `6.73x` | **`+23.73%`** | `PASSED (-0.307% NAV)` |
 
 ---
@@ -92,7 +92,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 
 ### 4.3. JPM — JPMorgan Chase & Co. (Global Diversified Banking)
 - **Phân nhánh danh mục**: `CORE COMPOUNDER` | **Tỷ trọng phân bổ**: **`7.0% NAV`** (`$70,000` ~ 205 cổ phiếu)
-- **Kỳ vọng Toán học (`Expected Value`)**: **`+6.07%`** | **Xác suất Thắng `P(W)`**: **`81.0%`** | **Tỷ lệ `Reward/Risk`**: **`2.44x`**
+- **Kỳ vọng Toán học (`Expected Value`)**: **`+6.08%`** | **Xác suất Thắng `P(W)`**: **`81.0%`** | **Tỷ lệ `Reward/Risk`**: **`2.44x`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Lợi suất trái phiếu chính phủ Mỹ 10 năm (US10Y) neo cao ở 4.93% tiếp tục mở rộng Thu nhập lãi thuần (NII). Thương vụ thâu tóm ngân hàng trước đây đã tích hợp hoàn tất, gia tăng thị phần tiền gửi tổ chức toàn cầu.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
@@ -146,7 +146,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.17%` • True FCF ex-SBC: `$33.59B` • Altman Z: `15.99` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
+  **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.22%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.08` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%).
 
@@ -175,7 +175,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 ## 5. Danh Sách Đặt Lệnh Chờ Sau BCTC & Lệnh Từ Chối Kỷ Luật Của Alex
 | Mã | Giá Hiện Tại (vs Hôm Qua) | Trạng Thái Kỷ Luật | Tỷ Trọng Dự Kiến Sau BCTC | Kế Hoạch Hành Động Chi Tiết Của Alex |
 | :--- | :---: | :--- | :---: | :--- |
-| **`BRK-B`** | $556.11 *(+2.51%)* | **WAIT POST-EARNINGS (Còn 4 ngày tới BCTC 2026-11-07, Implied ±3.31%)** | `8.0% NAV` | Đặt cảnh báo mua sau BCTC quanh $535.00 – $542.00 (Hôm nay đã tiết kiệm được -0.64% nhờ đứng ngoài). |
+| **`BRK-B`** | $556.11 *(+2.51%)* | **WAIT POST-EARNINGS (Còn 4 ngày tới BCTC 2026-11-07, Implied ±3.34%)** | `8.0% NAV` | Đặt cảnh báo mua sau BCTC quanh $535.00 – $542.00 (Hôm nay đã tiết kiệm được -0.64% nhờ đứng ngoài). |
 | **`AAPL`** | $338.32 *(-1.83%)* | **WAIT POST-EARNINGS (Còn -1 ngày tới BCTC 2026-11-02, Implied ±4.72%)** | `6.0% NAV` | Chờ công bố BCTC xong mới giải ngân quanh $338.00 – $344.00 (Hôm nay đã né được nhịp chỉnh -0.51%). |
 | **`AMD / PLTR`** | $466.84 *(-7.52%)* | **WAIT POST-EARNINGS (AMD 0d ±14.5% • PLTR -1d ±12.55%)** | `4.0% NAV` | Không FOMO mua đuổi sát ngày BCTC; khóa lệnh mua mới cho tới khi qua kỳ công bố. |
 | **`SMCI / COIN`** | $30.44 *(-7.62%)* | **DISCIPLINED VETO (Từ chối Kỷ luật — FCF Âm / ROE Âm & Dưới MA200)** | `0.0% NAV` | Alex kiên quyết đứng ngoài dù giá bật tăng kỹ thuật (+3.81% / +3.34%) để bảo vệ tính toàn vẹn khoa học của danh mục. |
