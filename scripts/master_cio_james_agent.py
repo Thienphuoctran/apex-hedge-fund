@@ -91,7 +91,8 @@ def handle_james_chat(user_text: str) -> str:
     action_keywords = [
         "quét", "kiểm tra", "canh", "rà soát", "chốt lời", "cắt lỗ", "bán", "mua",
         "giải ngân", "sổ lệnh", "báo cáo", "chỉ thị", "giao việc", "yêu cầu", "thực hiện",
-        "làm", "phân bổ", "rủi ro", "stop", "tp1", "tp2", "vps", "feed", "trễ"
+        "làm", "phân bổ", "rủi ro", "stop", "tp1", "tp2", "vps", "feed", "trễ",
+        "kế hoạch", "hôm nay", "minh quân", "cả 3", "3 cổ phiếu", "victor", "alex", "hpg", "tcb", "mbb"
     ]
     if any(k in text_lower for k in action_keywords):
         task_res = dispatch_chairman_directive(text_clean, source="TELEGRAM_JAMES_HQ")
