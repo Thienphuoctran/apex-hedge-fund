@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-03T02:39:39.825784+00:00",
+  "timestamp_utc": "2026-11-03T03:30:37.602480+00:00",
   "scan_date": "2026-11-03",
   "total_us_filings_count": 369,
-  "total_vn_announcements_count": 33,
+  "total_vn_announcements_count": 31,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -290,7 +290,7 @@
       "severity": "CRITICAL",
       "published_at": "Tue, 03 Nov 26 09:09:00 +0700",
       "source_url": "https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn",
-      "total_announcements": 14
+      "total_announcements": 12
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4943,18 +4943,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan",
-      "summary": "Chuyến bay Vietnam Airlines từ TP.HCM đi Munich (Đức) đã phải hạ cánh khẩn cấp tại Pakistan để hỗ trợ hành khách gặp vấn đề sức khỏe....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 01 Nov 26 13:54:00 +0700",
-      "source_url": "https://cafef.vn/ly-do-chuyen-bay-cua-vna-ha-canh-khan-cap-tai-pakistan-188261101135436257.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "MBS"
       ],
       "title": "CTCK hé lộ 8 doanh nghiệp đáng chú ý, phù hợp để \"xuống tiền\" trong tháng 11",
@@ -5019,12 +5007,12 @@
       "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
-      "summary": "Giá vàng trong nước sáng 3/11 đi ngang, với vàng miếng SJC duy trì mức bán ra 140 triệu đồng/lượng, trong khi giá vàng nhẫn tại các thương hiệu dao động từ 136,8 đến 139 triệu đồng/lượng. Trên thị trường quốc tế, giá vàn...",
+      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng tới 1,5 triệu đồng/lượng",
+      "summary": "Giá vàng trong nước tiếp tục tăng mạnh sáng 3/11, với vàng miếng SJC đồng loạt tăng 1,2 triệu đồng/lượng, lên 141,2 triệu đồng/lượng ở chiều bán ra. Giá vàng nhẫn cũng tăng từ 500.000 đến 1,5 triệu đồng/lượng, đưa giá bá...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 07:53:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn"
+      "published_at": "Tue, 03 Nov 26 10:15:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-toi-15-trieu-dong-luong-188261103075423102.chn"
     },
     {
       "market": "VIETNAM",
@@ -5207,18 +5195,6 @@
       "severity": "INFO",
       "published_at": "Fri, 30 Oct 2026 16:26:09 +0700",
       "source_url": "https://vnexpress.net/con-gai-ba-cao-thi-ngoc-dung-co-the-phai-ban-hon-2-trieu-co-phieu-pnj-5138856.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "TP HCM phát hành trái phiếu để huy động vốn cho các dự án trọng điểm",
-      "summary": "TP HCM sẽ phát hành trái phiếu đô thị, công trình tại Trung tâm tài chính quốc tế, đồng thời huy động vốn trong nước qua nhiều loại trái phiếu, khoản vay phục vụ các dự án trọng điểm....",
-      "event_type": "ESOP_PHAT_HANH",
-      "severity": "WARNING",
-      "published_at": "Fri, 30 Oct 2026 12:32:50 +0700",
-      "source_url": "https://vnexpress.net/tp-hcm-phat-hanh-trai-phieu-de-huy-dong-von-cho-cac-du-an-trong-diem-5138747.html"
     }
   ]
 }

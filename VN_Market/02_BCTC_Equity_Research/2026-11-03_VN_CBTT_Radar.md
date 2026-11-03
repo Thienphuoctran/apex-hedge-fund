@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-03 02:39:39  
-> **Số sự kiện ghi nhận:** 33 thông báo  
+> **Thời gian quét:** 2026-11-03 03:30:37  
+> **Số sự kiện ghi nhận:** 31 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -14,13 +14,12 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm | [Xem Link](https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vì sao cổ phiếu FPT bị bán ròng? | [Xem Link](https://cafef.vn/vi-sao-co-phieu-fpt-bi-ban-rong-188261102101138474.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Huy động 2.571 người, 27 xe chữa cháy, 12 xe cứu thương, 6 robot để xử lý kịch bản thảm họa tại tổ hợp hóa dầu 5,4 tỷ USD ở Tp.HCM | [Xem Link](https://cafef.vn/huy-dong-2571-nguoi-27-xe-chua-chay-12-xe-cuu-thuong-6-robot-de-xu-ly-kich-ban-tham-hoa-tai-to-hop-hoa-dau-54-ty-usd-o-tphcm-188261101213557186.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Lý do chuyến bay của VNA hạ cánh khẩn cấp tại Pakistan | [Xem Link](https://cafef.vn/ly-do-chuyen-bay-cua-vna-ha-canh-khan-cap-tai-pakistan-188261101135436257.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK hé lộ 8 doanh nghiệp đáng chú ý, phù hợp để "xuống tiền" trong tháng 11 | [Xem Link](https://cafef.vn/ctck-he-lo-8-doanh-nghiep-dang-chu-y-phu-hop-de-xuong-tien-trong-thang-11-188261102104310284.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu | [Xem Link](https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-188261102192903264.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT mất 120.000 tỷ vốn hóa | [Xem Link](https://cafef.vn/fpt-mat-120000-ty-von-hoa-188261102164752939.chn) |
 | **BID, VCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chứng khoán 'đỏ lửa', loạt cổ phiếu nằm sàn | [Xem Link](https://cafef.vn/chung-khoan-do-lua-loat-co-phieu-nam-san-188261102164122062.chn) |
 | **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bí mật sau những tờ cổ phần “ế” và hành trình 26 năm của hai cổ phiếu đầu tiên trên sàn chứng khoán | [Xem Link](https://cafef.vn/bi-mat-sau-nhung-to-co-phan-e-va-hanh-trinh-26-nam-cua-hai-co-phieu-dau-tien-tren-san-chung-khoan-188261101105644903.chn) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng sáng 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn) |
+| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng sáng 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng tới 1,5 triệu đồng/lượng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-toi-15-trieu-dong-luong-188261103075423102.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều tối 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ? | [Xem Link](https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn) |
 | **HDB, TCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành | [Xem Link](https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn) |
@@ -36,4 +35,3 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP HCM định hình mạng lưới trung tâm logistics tại 10 đầu mối lớn | [Xem Link](https://vnexpress.net/tp-hcm-dinh-hinh-mang-luoi-trung-tam-logistics-tai-10-dau-moi-lon-5139061.html) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng tồn kho của PNJ tăng lên hơn 16.600 tỷ đồng | [Xem Link](https://vnexpress.net/hang-ton-kho-cua-pnj-tang-len-hon-16-600-ty-dong-5138903.html) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái bà Cao Thị Ngọc Dung có thể phải bán hơn 2 triệu cổ phiếu PNJ | [Xem Link](https://vnexpress.net/con-gai-ba-cao-thi-ngoc-dung-co-the-phai-ban-hon-2-trieu-co-phieu-pnj-5138856.html) |
-| **HCM** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | TP HCM phát hành trái phiếu để huy động vốn cho các dự án trọng điểm | [Xem Link](https://vnexpress.net/tp-hcm-phat-hanh-trai-phieu-de-huy-dong-von-cho-cac-du-an-trong-diem-5138747.html) |
