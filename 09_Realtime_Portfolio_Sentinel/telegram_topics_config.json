@@ -37,10 +37,24 @@
       "thread_id": 4,
       "icon_color": 16766590
     },
+    "hien_desk": {
+      "key": "hien_desk",
+      "name": "🌸 BAN 10 — BÀN LÀM VIỆC CỦA HIỀN (BCTC & IR)",
+      "description": "Bàn làm việc độc quyền của Hiền: Rà soát BCTC, Báo cáo Thường niên, trích xuất dòng tiền thật OCF/LNST và xuất bản Báo cáo 21h00 tối theo lệnh Chủ tịch",
+      "thread_id": 189,
+      "icon_color": 7322352
+    },
+    "khanh_studio": {
+      "key": "khanh_studio",
+      "name": "🎬 BAN 11 — STUDIO VIDEO VIRAL (KHÁNH & BẢO)",
+      "description": "Ban Sáng Tạo Nội Dung & Video Viral: Khánh lên kịch bản video TikTok/Reels 60s lúc 21h15, chuyển giao Render Job cho Bảo dựng phim, kiếm tiền Affiliate & iCopy",
+      "thread_id": 190,
+      "icon_color": 16766590
+    },
     "radar_filings": {
       "key": "radar_filings",
-      "name": "📡 BAN 10 & 2 — HIỀN & BCTC FORENSIC RADAR",
-      "description": "Ban 10 Hiền & Ban 2: Rà soát BCTC, Báo cáo Thường niên, link IR chính thống 100% không bịa đặt & kiểm toán dòng tiền thật OCF/LNST",
+      "name": "📡 BAN 1, 2 & 3 — RADAR VĨ MÔ & ALPHA RANKING",
+      "description": "Ban 1, Ban 2 & Ban 3: Cập nhật vĩ mô SBV, thanh khoản 3 khối, thẩm định pháp y kế toán VAS/TT200 và phân hạng siêu cổ phiếu Top Leader vs Traps",
       "thread_id": 5,
       "icon_color": 7322352
     },

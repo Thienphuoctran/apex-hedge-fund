@@ -214,36 +214,87 @@ def execute_milestone(milestone_id: str) -> bool:
             # BAN 10 HIỀN: BÁO CÁO ĐỘC QUYỀN 2-3 BCTC & KQKD CÓ LINK CHÍNH THỐNG
             from scripts.hien_bctc_agent import generate_daily_review
             generate_daily_review()
-            msg = (
-                "🌸 *[BAN 10 — HIỀN: BÁO CÁO RÀ SOÁT ĐỘC QUYỀN 21H00 TỐI THEO LỆNH CHỦ TỊCH]*\n"
-                f"Kính gửi: **Chủ tịch Phước Trần** (*Tài khoản TCBS: `105C307855`*)\n\n"
-                "Dạ em là **Hiền (Ban 10)** xin nộp Báo cáo rà soát BCTC & KQKD chọn lọc đêm nay ạ:\n"
-                "1. **HPG** (LargeCap Thép): Doanh thu 62.214 tỷ, LNST 8.217 tỷ, OCF 8.866 tỷ (Tiền thật 1.08x). Catalyst Dung Quất 2 sắp vận hành.\n"
-                "2. **GMD** (LargeCap Logistics): Doanh thu 1.842 tỷ, LNST 1.015 tỷ, OCF 1.441 tỷ (Tiền thật 1.42x). Cảng Gemalink đón siêu tàu mẹ.\n"
-                "3. **DGC** (MidCap Hóa Chất): Doanh thu 3.125 tỷ, LNST 842 tỷ, OCF 2.348 tỷ (Tiền thật 2.79x). Phốt pho vàng cung ứng chuỗi bán dẫn AI.\n\n"
-                "🔗 *Link BCTC chính thống 100% không bịa đặt*: Cổng IR Doanh nghiệp & UBCKNN.\n"
-                "📁 *Báo cáo chi tiết đã lưu tại*: `VN_Market/02_BCTC_Equity_Research/{date_str}_Hien_Daily_Review.md`.\n"
-                "👉 Em xin phép chuyển giao số liệu sang cho bạn **Khánh (Ban 11)** để lên kịch bản video viral 60s lúc 21h15 ạ!"
+            card_hien = (
+                "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n"
+                "   🌸 BAN 10 — BÀN LÀM VIỆC CỦA HIỀN\n"
+                "   BÁO CÁO RÀ SOÁT BCTC ĐỘC QUYỀN (21H00)\n"
+                "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n"
+                f"📅 *Ngày*: `{date_str}` | ⏰ `21:00 PM` | 👤 *TCBS*: `105C307855`\n"
+                "🎯 *Tiêu chí*: 100% Tiền Thật OCF/LNST ≥ 1.0x (Nói KHÔNG với Lợi Nhuận Giấy)\n\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🏢 *1. HPG — TẬP ĐOÀN HÒA PHÁT (HOSE: LargeCap)*\n"
+                "• *Doanh thu*: `62,214 tỷ ₫` | *LNST*: `8,217 tỷ ₫`\n"
+                "• *Dòng tiền thật OCF*: `8,866 tỷ ₫`\n"
+                "👉 *Tỷ lệ Tiền Thật*: `1.08x` (🟢 Dòng tiền kinh doanh vượt lãi kế toán)\n"
+                "⚡ *Catalyst*: Lò cao Dung Quất 2 chạy thương mại bổ sung 5.6M tấn HRC/năm.\n"
+                "🔗 *Nguồn IR*: [Cổng IR Hòa Phát](https://hoaphat.com.vn/quan-he-co-dong)\n\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🏢 *2. GMD — GEMADEPT (HOSE: LargeCap Cảng Biển)*\n"
+                "• *Doanh thu*: `1,842 tỷ ₫` | *LNST*: `1,015 tỷ ₫`\n"
+                "• *Dòng tiền thật OCF*: `1,441 tỷ ₫`\n"
+                "👉 *Tỷ lệ Tiền Thật*: `1.42x` (🟢 Thặng dư dòng tiền tự do FCF cực mạnh)\n"
+                "⚡ *Catalyst*: Cảng Gemalink đón siêu tàu mẹ quốc tế, hưởng trọn làn sóng FDI.\n"
+                "🔗 *Nguồn IR*: [Cổng IR Gemadept](https://gemadept.com.vn/quan-he-co-dong)\n\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🏢 *3. DGC — HÓA CHẤT ĐỨC GIANG (HOSE: MidCap)*\n"
+                "• *Doanh thu*: `3,125 tỷ ₫` | *LNST*: `842 tỷ ₫`\n"
+                "• *Dòng tiền thật OCF*: `2,348 tỷ ₫`\n"
+                "👉 *Tỷ lệ Tiền Thật*: `2.79x` (🟢 Tiền mặt thu về gấp gần 3 lần lãi giấy)\n"
+                "⚡ *Catalyst*: Phốt pho vàng tinh chế cho chuỗi cung ứng chip AI toàn cầu.\n"
+                "🔗 *Nguồn IR*: [Cổng IR DGC](https://ducgiangchem.vn/quan-he-co-dong)\n\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🤝 *BÀN GIAO NGHIỆP VỤ*:\n"
+                "Dạ em Hiền đã bàn giao toàn bộ số liệu tiền thật sang **Ban 11 (Khánh)** để lên kịch bản video viral 60s lúc 21h15 ạ!\n"
+                f"📁 *Báo cáo chi tiết đã lưu*: `VN_Market/02_BCTC_Equity_Research/{date_str}_Hien_Daily_Review.md`"
             )
-            dispatch_message("radar_filings", msg)
+            buttons_hien = {
+                "inline_keyboard": [
+                    [
+                        {"text": "📑 IR Hòa Phát (HPG)", "url": "https://hoaphat.com.vn/quan-he-co-dong"},
+                        {"text": "🚢 IR Gemadept (GMD)", "url": "https://gemadept.com.vn/quan-he-co-dong"}
+                    ],
+                    [
+                        {"text": "⚡ IR Hóa Chất Đức Giang (DGC)", "url": "https://ducgiangchem.vn/quan-he-co-dong"}
+                    ]
+                ]
+            }
+            dispatch_message("hien_desk", card_hien, reply_markup=buttons_hien)
 
         elif milestone_id == "21:15":
             # BAN 11 KHÁNH & HIỀN: XUẤT BẢN KỊCH BẢN VIDEO VIRAL 60S
             from scripts.khanh_content_creator import generate_viral_content
             res = generate_viral_content("HPG")
-            msg = (
-                "🎬 *[BAN 11 — KHÁNH & HIỀN: KỊCH BẢN VIDEO VIRAL 60S LÚC 21H15]*\n"
-                f"Kính trình: **Master CIO James** & **Chủ tịch Phước Trần**\n\n"
-                f"• *Tiêu đề video*: **{res.get('title')}**\n"
-                f"• *Mã cổ phiếu & Dữ liệu*: HPG (Trích xuất từ Báo cáo 21h00 của Hiền)\n"
-                f"• *Hook giật tít 3s*: _{res.get('hook_3s')}_\n"
-                f"• *Thời lượng*: 60 giây (Chuẩn TikTok / Reels / Shorts 9:16)\n"
-                f"• *Chiến lược sinh lời*: Tiếp thị liên kết (Affiliate), hợp tác mở tài khoản TCBS, kích hoạt TCBS Partner & iCopy!\n"
-                f"• *Kịch bản chi tiết*: `{res.get('script_file')}`\n"
-                f"👉 Đã chuyển giao kịch bản sang Master CIO James duyệt và chuyển sang Bảo render!"
+            card_khanh = (
+                "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n"
+                "   🎬 BAN 11 — STUDIO VIDEO VIRAL\n"
+                "   KỊCH BẢN TIKTOK/REELS 60S (21H15)\n"
+                "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n"
+                f"📅 *Ngày*: `{date_str}` | ⏰ `21:15 PM` | 🎯 *Mã*: `HPG`\n"
+                "👤 *Phối hợp*: **Hiền (Ban 10)** | 🎖️ *Giám sát*: **Master CIO James**\n\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🔥 *TIÊU ĐỀ VIDEO VIRAL*: \n"
+                f"👉 **{res.get('title')}**\n\n"
+                "🎯 *BÓC TÁCH KỊCH BẢN 60 GIÂY*:\n"
+                "• `[00s - 03s] Hook giật tít`: 'Đừng vội mừng khi thấy công ty lãi nghìn tỷ! 90% F0 không hề biết bí mật chết người này trên Báo Cáo Tài Chính...'\n"
+                "• `[04s - 15s] Vấn đề F0`: 'Nhiều người thấy báo đài hô lãi đậm là nhảy vào múc, để rồi ôm đống lợi nhuận trên giấy mà tiền thật không có!'\n"
+                "• `[16s - 35s] Sự thật Hòa Phát`: 'Nhìn sang Hòa Phát: Lãi 8.200 tỷ nhưng tiền kinh doanh thu về tới 8.866 tỷ — tiền thật 1.08x! Nhờ cỗ máy sản xuất khép kín.'\n"
+                "• `[36s - 50s] Cú hích Dung Quất 2`: 'Sắp tới lò cao Dung Quất 2 chạy thương mại, công suất HRC tăng gấp đôi, đưa HPG vào Top 30 thế giới!'\n"
+                "• `[51s - 60s] Kêu gọi hành động`: 'Bấm follow kênh để soi sạch tiền thật BCTC và copy danh mục đầu tư bản lĩnh của Chủ tịch trên TCBS iCopy!'\n\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "🚀 *ĐIỀU PHỐI DỰNG PHIM*:\n"
+                "Kịch bản đã chuyển thành Render Job gửi sang máy tính **Bảo** để lồng tiếng AI Edge-TTS và dựng video 9:16!\n"
+                f"📁 *Kịch bản*: `{res.get('script_file')}`"
             )
-            dispatch_message("james_hq", msg)
-            dispatch_message("radar_filings", msg)
+            buttons_khanh = {
+                "inline_keyboard": [
+                    [
+                        {"text": "💼 Mở TCBS iCopy", "url": "https://tcbs.com.vn"},
+                        {"text": "🌸 Sang Bàn Làm Việc Hiền", "url": "https://t.me/c/4465270817/189"}
+                    ]
+                ]
+            }
+            dispatch_message("khanh_studio", card_khanh, reply_markup=buttons_khanh)
+            dispatch_message("james_hq", card_khanh, reply_markup=buttons_khanh)
 
         elif milestone_id == "22:00":
             # Hội Đồng Viện Sĩ Apex: Giờ Tự Học 22h00

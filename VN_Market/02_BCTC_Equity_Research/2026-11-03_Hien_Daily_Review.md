@@ -1,6 +1,6 @@
 # 🌸 BAN 10: BÁO CÁO RÀ SOÁT & PHÂN TÍCH CHỌN LỌC BCTC DOANH NGHIỆP TIỀM NĂNG (VỪA & LỚN)
 
-**Thời gian phát hành**: `2026-11-03 20:40:05` (Khung giờ 21h00 tối)
+**Thời gian phát hành**: `2026-11-03 21:10:37` (Khung giờ 21h00 tối)
 **Chuyên viên thẩm định**: **Hiền** — Trưởng Ban Rà Soát BCTC & Quan Hệ Cổ Đông (IR) — Ban 10
 **Báo cáo trực tiếp cho**: **Chủ tịch Phước Trần** *(Tài khoản TCBS: `105C307855`)*
 **Định hướng chọn lọc**: *Tập trung 100% Doanh nghiệp Vừa & Lớn, sàng lọc tiềm năng thực chất, bài trừ SmallCap rủi ro, Tiền thật $OCF/LNST \ge 1.0x$.*

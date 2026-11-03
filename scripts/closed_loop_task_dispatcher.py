@@ -77,8 +77,8 @@ def classify_directive(command_text: str) -> Dict[str, Any]:
             "department": "BAN_11_KHANH_CONTENT_CREATOR",
             "department_name": "Ban 11 — Sáng Tạo Nội Dung & Video Viral (Khánh) phối hợp Ban 10 (Hiền)",
             "officer": "Khánh (Giám Đốc Sáng Tạo) & Hiền (Trưởng Ban BCTC)",
-            "topic_key": "james_hq",
-            "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+            "topic_key": "khanh_studio",
+            "topic_name": "🎬 BAN 11 — STUDIO VIDEO VIRAL (KHÁNH & BẢO)",
             "action_type": "VIRAL_VIDEO_SCRIPT_CREATION"
         }
 
@@ -86,10 +86,10 @@ def classify_directive(command_text: str) -> Dict[str, Any]:
     if any(k in text_lower for k in ["hiền", "hien", "bctc", "tài chính", "báo cáo kinh doanh", "báo cáo tài chính", "link", "nguồn", "thường niên", "nghị quyết", "đhcđ", "soi", "doanh thu", "lợi nhuận", "ocf", "beneish", "cbtt", "sec", "radar", "sóng"]):
         return {
             "department": "BAN_10_HIEN_BCTC_SCOUT",
-            "department_name": "Ban 10 — Rà Soát BCTC & Quan Hệ Cổ Đông (Hiền) & Ban 2 VN",
-            "officer": "Hiền (Trưởng Ban BCTC & IR) & Ban 2 VN",
-            "topic_key": "radar_filings",
-            "topic_name": "📡 BAN 10 & 2 — HIỀN & BCTC FORENSIC RADAR",
+            "department_name": "Ban 10 — Rà Soát BCTC & Quan Hệ Cổ Đông (Hiền)",
+            "officer": "Hiền (Trưởng Ban BCTC & IR)",
+            "topic_key": "hien_desk",
+            "topic_name": "🌸 BAN 10 — BÀN LÀM VIỆC CỦA HIỀN (BCTC & IR)",
             "action_type": "BCTC_AND_IR_SCOUT"
         }
 
