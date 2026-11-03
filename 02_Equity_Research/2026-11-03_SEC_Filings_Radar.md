@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)
-> **Thời gian quét:** 2026-11-03 09:32:30  
-> **Số lượng hồ sơ ghi nhận:** 369 hồ sơ SEC chính thức  
+> **Thời gian quét:** 2026-11-03 14:02:05  
+> **Số lượng hồ sơ ghi nhận:** 368 hồ sơ SEC chính thức  
 
 | Ticker | Loại Form | Mức Độ | Ngày Nộp | Mô Tả Hồ Sơ | Đường Dẫn SEC |
 | :--- | :---: | :---: | :---: | :--- | :---: |
@@ -16,6 +16,7 @@
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-18 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `144` | ℹ️ INFO | 2026-09-17 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-11 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
+| **AAPL** | `10-K` | 🚨 CRITICAL | 2026-11-03 | 10-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `8-K` | ⚠️ WARNING | 2026-11-02 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-29 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-22 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
@@ -24,7 +25,6 @@
 | **AAPL** | `144` | ℹ️ INFO | 2026-10-16 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-15 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-08 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
-| **AAPL** | `4` | ℹ️ INFO | 2026-10-05 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-05 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-05 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-05 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |

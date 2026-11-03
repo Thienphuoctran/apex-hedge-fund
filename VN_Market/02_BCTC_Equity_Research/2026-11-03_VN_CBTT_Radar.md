@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-03 09:32:30  
-> **Số sự kiện ghi nhận:** 30 thông báo  
+> **Thời gian quét:** 2026-11-03 14:02:05  
+> **Số sự kiện ghi nhận:** 31 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -16,13 +16,13 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thu giữ hơn 2.100 tấn phân bón trong đường dây do Nguyễn Hồng Lam cầm đầu: 11 người bị bắt, thu lợi hàng chục tỷ đồng | [Xem Link](https://cafef.vn/thu-giu-hon-2100-tan-phan-bon-trong-duong-day-do-nguyen-hong-lam-cam-dau-11-nguoi-bi-bat-thu-loi-hang-chuc-ty-dong-188261102143155898.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ | [Xem Link](https://cafef.vn/sieu-tau-tuan-tra-hien-dai-nhat-cua-my-tri-gia-670-trieu-usd-vua-cap-cang-tphcm-lan-dau-tien-sau-20-nam-mang-theo-uav-ung-dung-ai-co-the-bay-12-gio-188261102113324323.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm | [Xem Link](https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn) |
-| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vì sao cổ phiếu FPT bị bán ròng? | [Xem Link](https://cafef.vn/vi-sao-co-phieu-fpt-bi-ban-rong-188261102101138474.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành | [Xem Link](https://cafef.vn/ben-trong-nha-may-kiem-thu-va-dong-goi-chip-ban-dan-fpt-vua-dua-vao-van-hanh-188261103103904204.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK hé lộ 8 doanh nghiệp đáng chú ý, phù hợp để "xuống tiền" trong tháng 11 | [Xem Link](https://cafef.vn/ctck-he-lo-8-doanh-nghiep-dang-chu-y-phu-hop-de-xuong-tien-trong-thang-11-188261102104310284.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu | [Xem Link](https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-188261102192903264.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT mất 120.000 tỷ vốn hóa | [Xem Link](https://cafef.vn/fpt-mat-120000-ty-von-hoa-188261102164752939.chn) |
 | **BID, VCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chứng khoán 'đỏ lửa', loạt cổ phiếu nằm sàn | [Xem Link](https://cafef.vn/chung-khoan-do-lua-loat-co-phieu-nam-san-188261102164122062.chn) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt giảm so với buổi sáng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-giam-so-voi-buoi-sang-188261103075423102.chn) |
+| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn) |
+| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 3/11, gửi 200 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-3-11-gui-200-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261103170626883.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều tối 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ? | [Xem Link](https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn) |
 | **HDB, TCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành | [Xem Link](https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn) |
@@ -31,6 +31,7 @@
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Khai trương không gian trải nghiệm 1 ha tại đô thị One Era | [Xem Link](https://cafef.vn/khai-truong-khong-gian-trai-nghiem-1-ha-tai-do-thi-one-era-188261102163517491.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép | [Xem Link](https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Trung tâm Tài chính quốc tế TP.HCM công bố 10 thành viên đầu tiên | [Xem Link](https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 'Trung tâm tài chính TP HCM không nên cạnh tranh trực tiếp với Singapore' | [Xem Link](https://vnexpress.net/trung-tam-tai-chinh-tp-hcm-khong-nen-canh-tranh-truc-tiep-voi-singapore-5140196.html) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Sun PhuQuoc Airways mở thêm đường bay đến Thượng Hải | [Xem Link](https://vnexpress.net/sun-phuquoc-airways-mo-them-duong-bay-den-thuong-hai-5140166.html) |
 | **BSR** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ nhà máy lọc dầu Dung Quất gửi ngân hàng hơn 2 tỷ USD | [Xem Link](https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-gui-ngan-hang-hon-2-ty-usd-5139328.html) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP HCM định hình mạng lưới trung tâm logistics tại 10 đầu mối lớn | [Xem Link](https://vnexpress.net/tp-hcm-dinh-hinh-mang-luoi-trung-tam-logistics-tai-10-dau-moi-lon-5139061.html) |
