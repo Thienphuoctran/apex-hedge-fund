@@ -65,6 +65,12 @@ $CouncilTrigger = New-ScheduledTaskTrigger -Daily -At "23:00"
 Register-ScheduledTask -TaskName "ApexFund_EOD_Council_2300" -Action $CouncilAction -Trigger $CouncilTrigger -Settings $Settings -Description "Apex 23:00 EOD Executive Council Meeting" -Force | Out-Null
 Write-Host "[OK] Task 6 registered: ApexFund_EOD_Council_2300 (Daily at 23:00 -> EOD Council Meeting)"
 
+# 7. Auto-Launch 24/7 Cron Daemon on Windows Logon via Startup Folder
+$StartupBat = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\launch_apex_fund.bat"
+if (Test-Path $StartupBat) {
+    Write-Host "[OK] Task 7 active: Windows Startup Folder bat launches apex_institutional_cron_daemon.py on boot"
+}
+
 Write-Host "============================================================"
 Write-Host " AUTOMATION ACTIVE: Computer does NOT need to run 24/24!"
 Write-Host " If machine is OFF at schedule, it will auto-run on boot."
