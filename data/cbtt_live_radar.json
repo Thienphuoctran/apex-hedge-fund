@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-04T02:39:01.718126+00:00",
+  "timestamp_utc": "2026-11-04T03:29:22.486879+00:00",
   "scan_date": "2026-11-04",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 29,
+  "total_vn_announcements_count": 31,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "FPT": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
+      "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn",
+      "total_announcements": 7
+    },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM",
@@ -299,14 +307,6 @@
       "published_at": "Tue, 03 Nov 26 21:50:00 +0700",
       "source_url": "https://cafef.vn/cong-ty-dau-tien-he-lo-doanh-thu-ca-nam-2026-dat-gan-224000-ty-dong-tang-56-188261103214915204.chn",
       "total_announcements": 2
-    },
-    "FPT": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 10:32:00 +0700",
-      "source_url": "https://cafef.vn/fpt-van-hanh-thu-nha-may-kiem-thu-chip-cong-suat-300-trieu-san-pham-moi-nam-188261103102956893.chn",
-      "total_announcements": 5
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4811,6 +4811,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "FPT"
+      ],
+      "title": "Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ",
+      "summary": "Theo thỏa thuận, hai doanh nghiệp sẽ phối hợp phát triển các dịch vụ viễn thông thế hệ mới như mạng di động ảo (MVNO), SIM 5G, kết nối máy với máy (M2M), Internet vạn vật (IoT) và các dịch vụ giá trị gia tăng ứng dụng AI...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
+      "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
       "title": "Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM",
@@ -4927,6 +4939,18 @@
       "severity": "INFO",
       "published_at": "Tue, 03 Nov 26 07:20:00 +0700",
       "source_url": "https://cafef.vn/mot-cong-ty-giay-o-tphcm-giai-the-hang-nghin-cong-nhan-nghi-viec-tu-ngay-3-11-188261103055550405.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Ông Trương Gia Bình cùng Thiếu tướng Trương Sơn Lâm hé lộ kế hoạch lớn giữa FPT và MobiFone",
+      "summary": "Thỏa thuận kết hợp hạ tầng viễn thông, hệ sinh thái khách hàng, thế mạnh về giải pháp, công nghệ số của MobiFone với năng lực công nghệ, nghiên cứu, phát triển và triển khai giải pháp của FPT trong các lĩnh vực viễn thôn...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
+      "source_url": "https://cafef.vn/ong-truong-gia-binh-cung-thieu-tuong-truong-son-lam-he-lo-ke-hoach-lon-giua-fpt-va-mobifone-188261104100137664.chn"
     },
     {
       "market": "VIETNAM",
