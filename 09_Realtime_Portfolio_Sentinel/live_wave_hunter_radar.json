@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04 09:37:10",
+  "generated_at": "2026-11-04 14:00:27",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -359,11 +359,11 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 03 Nov 26 1",
-      "headline": "FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm",
-      "is_portfolio_holding": true
+      "symbol": "POW",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Wed, 04 Nov 26 2",
+      "headline": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
+      "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 34 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 361 hồ sơ SEC & 35 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
