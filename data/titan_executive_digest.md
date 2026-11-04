@@ -17,10 +17,10 @@
 
 | Mã CP | Sàn | Nhánh Chiến Lược | Giá Hiện Tại & Điểm Mua Limit | Cắt Lỗ Cứng (Stop 2xATR) | Chốt Lời (TP1 / TP2) | Tỷ Lệ R:R | Kỳ Vọng EV% |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **AVGO** | US (NYSE/NASDAQ) | TACTICAL ALPHA SLEEVE (MỚI) | `$322.23` (Limit `$317.67`) | `$298.06` (-7.5%) | `$374.29` / `$530.14` | **6.73x** | +23.73% |
-| **NVDA** | US (NYSE/NASDAQ) | CORE COMPOUNDER | `$202.06` (Limit `$199.7`) | `$188.59` (-6.67%) | `$229.0` / `$328.95` | **7.86x** | +21.98% |
-| **TSM** | US (NYSE/NASDAQ) | CORE COMPOUNDER | `$398.63` (Limit `$393.38`) | `$368.73` (-7.5%) | `$458.67` / `$584.39` | **5.31x** | +19.93% |
-| **GOOGL** | US (NYSE/NASDAQ) | TACTICAL ALPHA SLEEVE (MỚI) | `$278.99` (Limit `$275.16`) | `$258.07` (-7.5%) | `$322.71` / `$402.73` | **4.89x** | +13.15% |
+| **NVDA** | US (NYSE/NASDAQ) | CORE COMPOUNDER | `$206.69` (Limit `$204.33`) | `$193.22` (-6.52%) | `$233.63` / `$327.14` | **7.48x** | +22.47% |
+| **AVGO** | US (NYSE/NASDAQ) | TACTICAL ALPHA SLEEVE (MỚI) | `$332.13` (Limit `$327.57`) | `$307.22` (-7.5%) | `$384.19` / `$526.81` | **6.33x** | +21.86% |
+| **TSM** | US (NYSE/NASDAQ) | CORE COMPOUNDER | `$404.8` (Limit `$399.55`) | `$374.78` (-7.42%) | `$464.84` / `$584.39` | **5.14x** | +19.15% |
+| **GOOGL** | US (NYSE/NASDAQ) | TACTICAL ALPHA SLEEVE (MỚI) | `$280.03` (Limit `$276.2`) | `$259.03` (-7.5%) | `$323.75` / `$400.37` | **4.77x** | +12.81% |
 
 ---
 

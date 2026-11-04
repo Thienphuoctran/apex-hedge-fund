@@ -598,9 +598,7 @@
   "injected_contextual_memories": [
     "MEM-VN-001",
     "MEM-VN-002",
-    "MEM-VN-003",
-    "MEM-VN-004",
-    "MEM-VN-005"
+    "MEM-VN-003"
   ],
-  "memory_vault_version": "VN-Mem0-Contextual-Vault-v2.1"
+  "memory_vault_version": "VN-Mem0-Contextual-Vault-v2.0"
 }

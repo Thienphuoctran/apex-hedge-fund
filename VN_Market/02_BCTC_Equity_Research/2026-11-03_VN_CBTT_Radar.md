@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-03 14:02:05  
-> **Số sự kiện ghi nhận:** 31 thông báo  
+> **Thời gian quét:** 2026-11-03 21:14:44  
+> **Số sự kiện ghi nhận:** 32 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Công ty đầu tiên hé lộ doanh thu cả năm 2026 đạt gần 224.000 tỷ đồng, tăng 56% | [Xem Link](https://cafef.vn/cong-ty-dau-tien-he-lo-doanh-thu-ca-nam-2026-dat-gan-224000-ty-dong-tang-56-188261103214915204.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Công nhân bật khóc trong ngày công ty ở TP.HCM thông báo giải thể khiến hàng nghìn phải nghỉ việc từ 3/11 | [Xem Link](https://cafef.vn/cong-nhan-bat-khoc-trong-ngay-cong-ty-o-tphcm-thong-bao-giai-the-khien-hang-nghin-phai-nghi-viec-tu-3-11-188261103141454585.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Công ty giày vừa đóng cửa tại TP HCM: 1.600 lao động được trả đủ lương tháng 11, có cả lương tháng 13 | [Xem Link](https://cafef.vn/cong-ty-giay-vua-dong-cua-tai-tp-hcm-1600-lao-dong-duoc-tra-du-luong-thang-11-co-ca-luong-thang-13-188261103132246908.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Công ty giày ở TP.HCM giải thể trước Tết, 1.400 công nhân được hỗ trợ ra sao? | [Xem Link](https://cafef.vn/cong-ty-giay-o-tphcm-giai-the-truoc-tet-1400-cong-nhan-duoc-ho-tro-ra-sao-188261103110047035.chn) |
@@ -15,7 +16,8 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Siêu đô thị 200.000 tỷ đồng của tỷ phú Phạm Nhật Vượng vào vòng bình chọn “7 Kỳ quan Đô thị Tương lai” | [Xem Link](https://cafef.vn/sieu-do-thi-200000-ty-dong-cua-ty-phu-pham-nhat-vuong-vao-vong-binh-chon-7-ky-quan-do-thi-tuong-lai-188261102200858193.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thu giữ hơn 2.100 tấn phân bón trong đường dây do Nguyễn Hồng Lam cầm đầu: 11 người bị bắt, thu lợi hàng chục tỷ đồng | [Xem Link](https://cafef.vn/thu-giu-hon-2100-tan-phan-bon-trong-duong-day-do-nguyen-hong-lam-cam-dau-11-nguoi-bi-bat-thu-loi-hang-chuc-ty-dong-188261102143155898.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Siêu tàu tuần tra hiện đại nhất của Mỹ trị giá 670 triệu USD vừa cập cảng TP.HCM lần đầu tiên sau 20 năm, mang theo UAV ứng dụng AI có thể bay 12 giờ | [Xem Link](https://cafef.vn/sieu-tau-tuan-tra-hien-dai-nhat-cua-my-tri-gia-670-trieu-usd-vua-cap-cang-tphcm-lan-dau-tien-sau-20-nam-mang-theo-uav-ung-dung-ai-co-the-bay-12-gio-188261102113324323.chn) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Cao Thị Ngọc Dung trực tiếp cho PNJ vay 700 tỷ đồng với lãi suất 10%/năm | [Xem Link](https://cafef.vn/chu-tich-cao-thi-ngoc-dung-truc-tiep-cho-pnj-vay-700-ty-dong-voi-lai-suat-10-nam-188261102130922044.chn) |
+| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK đưa ra dự báo bất ngờ về triển vọng FPT | [Xem Link](https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-trien-vong-fpt-188261103163220239.chn) |
+| **FPT, SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa "bay hơi" khỏi doanh nghiệp từ đầu năm | [Xem Link](https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành | [Xem Link](https://cafef.vn/ben-trong-nha-may-kiem-thu-va-dong-goi-chip-ban-dan-fpt-vua-dua-vao-van-hanh-188261103103904204.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK hé lộ 8 doanh nghiệp đáng chú ý, phù hợp để "xuống tiền" trong tháng 11 | [Xem Link](https://cafef.vn/ctck-he-lo-8-doanh-nghiep-dang-chu-y-phu-hop-de-xuong-tien-trong-thang-11-188261102104310284.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu | [Xem Link](https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-188261102192903264.chn) |
@@ -28,7 +30,6 @@
 | **HDB, TCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành | [Xem Link](https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Đấu giá 5 lô đất tại Khu đô thị mới Thủ Thiêm, khởi điểm hơn 18.250 tỷ đồng | [Xem Link](https://cafef.vn/dau-gia-5-lo-dat-tai-khu-do-thi-moi-thu-thiem-khoi-diem-hon-18250-ty-dong-188261103153037972.chn) |
-| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Khai trương không gian trải nghiệm 1 ha tại đô thị One Era | [Xem Link](https://cafef.vn/khai-truong-khong-gian-trai-nghiem-1-ha-tai-do-thi-one-era-188261102163517491.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép | [Xem Link](https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Trung tâm Tài chính quốc tế TP.HCM công bố 10 thành viên đầu tiên | [Xem Link](https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 'Trung tâm tài chính TP HCM không nên cạnh tranh trực tiếp với Singapore' | [Xem Link](https://vnexpress.net/trung-tam-tai-chinh-tp-hcm-khong-nen-canh-tranh-truc-tiep-voi-singapore-5140196.html) |
