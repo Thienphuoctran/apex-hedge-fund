@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-04 07:45:11  
+> **Thời gian quét:** 2026-11-04 08:39:51  
 > **Số sự kiện ghi nhận:** 33 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
@@ -11,12 +11,12 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Công ty giày ở TP.HCM giải thể trước Tết, 1.400 công nhân được hỗ trợ ra sao? | [Xem Link](https://cafef.vn/cong-ty-giay-o-tphcm-giai-the-truoc-tet-1400-cong-nhan-duoc-ho-tro-ra-sao-188261103110047035.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT vận hành thử nhà máy kiểm thử chip công suất 300 triệu sản phẩm mỗi năm | [Xem Link](https://cafef.vn/fpt-van-hanh-thu-nha-may-kiem-thu-chip-cong-suat-300-trieu-san-pham-moi-nam-188261103102956893.chn) |
 | **HCM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp | [Xem Link](https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn) |
+| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT "tái sinh" | [Xem Link](https://cafef.vn/fpt-tai-sinh-188261104145852068.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT Retail ba năm liên tiếp thăng hạng trong Fortune Southeast Asia 500 | [Xem Link](https://cafef.vn/fpt-retail-ba-nam-lien-tiep-thang-hang-trong-fortune-southeast-asia-500-18826110413250883.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hé lộ kế hoạch giữa FPT và MobiFone | [Xem Link](https://cafef.vn/he-lo-ke-hoach-lon-giua-fpt-va-mobifone-188261104100137664.chn) |
 | **HCM** | `CO_TUC` | ⚠️ CHÚ Ý | ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031 | [Xem Link](https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK đưa ra dự báo bất ngờ về triển vọng FPT | [Xem Link](https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-trien-vong-fpt-188261103163220239.chn) |
 | **FPT, SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa "bay hơi" khỏi doanh nghiệp từ đầu năm | [Xem Link](https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn) |
-| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành | [Xem Link](https://cafef.vn/ben-trong-nha-may-kiem-thu-va-dong-goi-chip-ban-dan-fpt-vua-dua-vao-van-hanh-188261103103904204.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng | [Xem Link](https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng sáng 4/11 đồng loạt tăng tại SJC, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-4-11-dong-loat-tang-tai-sjc-pnj-bao-tin-minh-chau-va-bao-tin-manh-hai-188261104072255434.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn) |

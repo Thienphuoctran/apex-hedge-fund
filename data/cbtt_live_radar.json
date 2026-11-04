@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-04T07:45:11.653406+00:00",
+  "timestamp_utc": "2026-11-04T08:39:51.325182+00:00",
   "scan_date": "2026-11-04",
   "total_us_filings_count": 370,
   "total_vn_announcements_count": 33,
@@ -4897,6 +4897,18 @@
       "symbols": [
         "FPT"
       ],
+      "title": "FPT \"tái sinh\"",
+      "summary": "Đà tăng mạnh giúp giá trị vốn hóa của tập đoàn tăng thêm khoảng 6.400 tỷ đồng chỉ sau một phiên, qua đó lấy lại cột mốc 100.000 tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 14:58:00 +0700",
+      "source_url": "https://cafef.vn/fpt-tai-sinh-188261104145852068.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
       "title": "FPT Retail ba năm liên tiếp thăng hạng trong Fortune Southeast Asia 500",
       "summary": "Đây cũng là năm thứ ba liên tiếp FPT Retail góp mặt và cải thiện thứ hạng, từ vị trí 221 năm 2024 lên 199 năm 2025 và 170 vào năm 2026, tăng tổng cộng 51 bậc....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -4952,18 +4964,6 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành",
-      "summary": "Nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT (FPT Analysis Technologies Joint Stock Company) có diện tích 1.600 m² đặt tại Khu công nghiệp Yên Phong II-C, tỉnh Bắc Ninh....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 10:38:00 +0700",
-      "source_url": "https://cafef.vn/ben-trong-nha-may-kiem-thu-va-dong-goi-chip-ban-dan-fpt-vua-dua-vao-van-hanh-188261103103904204.chn"
     },
     {
       "market": "VIETNAM",
