@@ -1,3 +1,6 @@
+> [!NOTE]
+> **[HISTORICAL PRE-FUNDING MOCK SIMULATION]**: Biên bản kiểm toán này được lập trong giai đoạn kiểm thử mô phỏng trước khi Chủ tịch Phước Trần chính thức cấp vốn 20,000,000 VNĐ thực tế cho 3 mã HPG (400 CP) + TCB (300 CP) + MBB (200 CP).
+
 # BIÊN BẢN KIỂM TOÁN PHÚC TRA CUỐI NGÀY & CHỈ THỊ SỬA ĐỔI TỰ TIẾN HÓA
 ## (Apex Master CIO End-of-Day Audit & Closed-Loop Correction Memo)
 

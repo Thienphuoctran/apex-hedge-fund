@@ -126,7 +126,7 @@ def build_vn_session_evaluation(audit: dict, blotter: dict) -> str:
         ])
         tickers_str = ", ".join([str(o.get("symbol")) for o in orders_vn])
     else:
-        holdings_desc = "HPG 500 cổ + TCB 200 cổ + MBB 200 cổ"
+        holdings_desc = "HPG 400 cổ + TCB 300 cổ + MBB 200 cổ (Tổng 900 CP)"
         stops_desc = "HPG (20,120 đ = -4.19%), TCB (20,250 đ = -4.03%), MBB (22,900 đ = -4.18%)"
         ocf_desc = "HPG (1.29), TCB (CASA 40.5%), MBB (ROE 22.8%)"
         tickers_str = "HPG, TCB, MBB"

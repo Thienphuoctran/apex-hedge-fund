@@ -60,7 +60,7 @@ CONFIG = {
     "TCB": {
         "status": "HOLDING",
         "shares": 300,
-        "entry_price": 21350.0,
+        "entry_price": 21356.0,
         "stop_loss": 20400.0,
         "stop_warning": 20700.0,
         "tp1": 23200.0,
@@ -70,7 +70,7 @@ CONFIG = {
     "MBB": {
         "status": "HOLDING",
         "shares": 200,
-        "entry_price": 18600.0,
+        "entry_price": 18606.0,
         "stop_loss": 17900.0,
         "stop_warning": 18150.0,
         "tp1": 19800.0,
@@ -80,7 +80,7 @@ CONFIG = {
     "HPG": {
         "status": "HOLDING",
         "shares": 400,
-        "entry_price": 21150.0,
+        "entry_price": 21156.0,
         "stop_loss": 19400.0,
         "stop_warning": 19700.0,
         "tp1": 22200.0,
@@ -299,10 +299,10 @@ def update_telemetry(quotes):
 ## 1. TỔNG QUAN GIÁ TRỊ TÀI SẢN & HIỆU SUẤT TỨC THỜI
 | Chỉ Số Đo Lường | Giá Trị Thực Tế | Ghi Chú Tác Chiến |
 | :--- | :---: | :--- |
-| **Tổng Vốn Đã Giải Ngân** | **`{total_cost:,.0f} VNĐ`** | TCB (100 CP) + MBB (100 CP) + HPG (200 CP) |
+| **Tổng Vốn Đã Giải Ngân** | **`{total_cost:,.0f} VNĐ`** | HPG (400 CP) + TCB (300 CP) + MBB (200 CP) |
 | **Giá Trị Thị Trường Hiện Tại** | **`{total_market_val:,.0f} VNĐ`** | Định giá theo thị giá khớp lệnh thời gian thực |
 | **Lợi Nhuận / Thua Lỗ Tạm Tính (PnL)** | **`{total_pnl_str}`** | Bảo toàn vốn, vượt qua áp lực điều chỉnh đầu phiên |
-| **Tiền Mặt Dry Powder Dự Phòng** | **`1,670,000 VNĐ`** | Sẵn sàng ứng cứu kịch bản khẩn cấp hoặc lướt sóng T+0 |
+| **Tiền Mặt Dry Powder Dự Phòng** | **`1,409,425 VNĐ`** | Sẵn sàng ứng cứu kịch bản khẩn cấp hoặc lướt sóng T+0 |
 
 ---
 
@@ -341,18 +341,18 @@ def broadcast_status_to_telegram(quotes):
     mbb_p = quotes.get("MBB", {}).get("price", 18600.0)
     hpg_p = quotes.get("HPG", {}).get("price", 20850.0)
     
-    tcb_pnl = (tcb_p - 21250.0) * 100
-    mbb_pnl = (mbb_p - 18650.0) * 100
-    hpg_pnl = (hpg_p - 20400.0) * 200
+    tcb_pnl = (tcb_p - 21356.0) * 300
+    mbb_pnl = (mbb_p - 18606.0) * 200
+    hpg_pnl = (hpg_p - 21156.0) * 400
     total_pnl = tcb_pnl + mbb_pnl + hpg_pnl
     
     msg = f"""🛡️ *[VICTOR SENTINEL — BÁO CÁO TRỰC CHIẾN 3 MÃ TCBS 105C307855]*
 ⏱️ *Thời gian*: `{now_str}` | *Chu kỳ quét*: `15s/lần`
 
 📊 *DIỄN BIẾN THỊ GIÁ & PNL HIỆN TẠI*:
-• *TCB (100 CP)*: `{tcb_p:,.0f} ₫` | Vốn: `21,250 ₫` | Stop: `20,400 ₫` | TP1: `23,200 ₫`
-• *MBB (100 CP)*: `{mbb_p:,.0f} ₫` | Vốn: `18,650 ₫` | Stop: `17,900 ₫` | TP1: `19,800 ₫`
-• *HPG (200 CP)*: `{hpg_p:,.0f} ₫` | Vốn: `20,400 ₫` | Stop: `19,400 ₫` | TP1: `22,200 ₫`
+• *TCB (300 CP)*: `{tcb_p:,.0f} ₫` | Vốn: `21,356 ₫` | Stop: `20,400 ₫` | TP1: `23,200 ₫`
+• *MBB (200 CP)*: `{mbb_p:,.0f} ₫` | Vốn: `18,606 ₫` | Stop: `17,900 ₫` | TP1: `19,800 ₫`
+• *HPG (400 CP)*: `{hpg_p:,.0f} ₫` | Vốn: `21,156 ₫` | Stop: `19,400 ₫` | TP1: `22,200 ₫`
 
 💰 *Tổng Lãi/Lỗ Tạm Tính*: *{'+' if total_pnl >= 0 else ''}{total_pnl:,.0f} VNĐ*
 🟢 *Tình trạng*: Toàn bộ 3 vị thế an toàn trên Stop 2xATR (+3.9% đến +7.5%). Đang trực chiến rà soát áp lực Margin Call phiên sáng và đợt xả hàng T+2 phiên chiều!"""

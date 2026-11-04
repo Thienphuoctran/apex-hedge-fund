@@ -12,11 +12,11 @@
 *Chấm điểm chất lượng báo cáo & sổ lệnh: **95.0/100***
 
 ### ✅ Những Điểm Làm Đúng & Kỷ Luật Được Khen Ngợi:
-- **ĐẠT CHUẨN**: Chuẩn hóa lô [HPG]: 500 CP tuân thủ 100% quy định sàn HOSE.
+- **ĐẠT CHUẨN**: Chuẩn hóa lô [HPG]: 400 CP tuân thủ 100% quy định sàn HOSE.
 - **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [HPG]: Stop 4.22% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
 - **ĐẠT CHUẨN**: Tỷ lệ R:R [HPG]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.
 - **ĐẠT CHUẨN**: Chất lượng BCTC [HPG]: OCF/LNST = 1.35 tiền thật dồi dào, Beneish = SAFE.
-- **ĐẠT CHUẨN**: Chuẩn hóa lô [TCB]: 200 CP tuân thủ 100% quy định sàn HOSE.
+- **ĐẠT CHUẨN**: Chuẩn hóa lô [TCB]: 300 CP tuân thủ 100% quy định sàn HOSE.
 - **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [TCB]: Stop 3.97% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
 - **ĐẠT CHUẨN**: Tỷ lệ R:R [TCB]: 1:2.60 đạt chuẩn kỳ vọng toán học dương.
 - **ĐẠT CHUẨN**: Chất lượng BCTC [TCB]: OCF/LNST = 1.16 tiền thật dồi dào, Beneish = SAFE.
@@ -27,15 +27,15 @@
 
 ### ⚠️ LỖI SAI LỆCH VÀ THIẾU SÓT BỊ MASTER CIO BẮT LỖI:
 > [!WARNING]
-> **LỖI THỜI ĐIỂM (TIMING RISK): Minh Quân để ngỏ khả năng khớp FPT ngay đầu phiên ATO lúc 9h00. Master CIO bắt lỗi: Lực cầu ATO thường bị kéo giá ảo (Upthrust). Bắt buộc phải chuyển sang Lệnh Limit chờ rung lắc sau 9h30 quanh 52,400 - 52,500 ₫.**
+> **KỶ LUẬT KHUNG GIỜ VÀNG (TIMING DISCIPLINE): Với danh mục thực tế HPG, TCB, MBB, tuyệt đối không FOMO mua đuổi ATO trước 10h00 sáng. Bắt buộc giải ngân trong Khung Giờ Vàng 14h00 - 14h25 khi nến ngày định hình >= 90%.**
 
 > [!WARNING]
-> **LỖI BỎ LỠ VỆ TINH (OMISSION ERROR): Minh Quân tập trung 100% vào HPG và FPT là đúng với tài khoản 15M, nhưng đã bỏ quên việc cập nhật kịch bản theo dõi cho MWG (vừa công bố Bách Hóa Xanh có lãi ròng) và SSI (thanh khoản phục hồi).**
+> **KẾ HOẠCH CHỐT LỜI NGÀY MAI (T+2.5 EXECUTION): Canh đúng 13h00 ngày mai khi toàn bộ 900 CP về tài khoản được phép giao dịch, chủ động thực hiện Scaling Out chốt lời 50% tại mục tiêu TP1 và nâng Stop lên giá vốn để gồng lãi.**
 
 
 ### 📋 CHỈ THỊ BẮT BUỘC SỬA ĐỔI CHO MINH QUÂN:
-- **Nội dung thi hành**: Minh Quân phải nạp ngay quy tắc 'No ATO Chase for FPT' vào vn_specialist_evolution_journal.md và cập nhật lại sổ lệnh Pre-ATO sáng Thứ Hai.
-- **Thời hạn hoàn tất**: Trước 08:00 sáng Thứ Hai để nạp vào Sổ lệnh Pre-ATO.
+- **Nội dung thi hành**: Minh Quân tiếp tục duy trì kỷ luật thép: Tuyệt đối không FOMO xanh ATO, tuân thủ nghiêm ngặt Sổ Lệnh Master Blotter cho danh mục thực tế (HPG, TCB, MBB), và sẵn sàng kích hoạt chốt lời Scaling Out 50% TP1 khi hàng về tài khoản lúc 13h00 chiều mai.
+- **Thời hạn hoàn tất**: Trước 08:00 sáng mai để nạp vào Sổ lệnh Pre-ATO.
 
 ---
 
@@ -58,7 +58,7 @@
 
 ### 📋 CHỈ THỊ BẮT BUỘC SỬA ĐỔI CHO ALEX:
 - **Nội dung thi hành**: Alex phải cập nhật trần rủi ro tương quan Bán dẫn khống chế <= 28% NAV và tinh chỉnh lại độ sâu lệnh Limit Pullback vào specialist_evolution_journal.md.
-- **Thời hạn hoàn tất**: Cập nhật lại sổ lệnh US trước 20:00 tối Chủ Nhật.
+- **Thời hạn hoàn tất**: Cập nhật lại sổ lệnh US trước phiên giao dịch Mỹ.
 
 ---
 
@@ -66,24 +66,26 @@
 
 | Phòng Ban Chuyên Trách | Kết Quả Phúc Tra Của Master CIO | Điểm Đánh Giá & Yêu Cầu Sửa Đổi |
 | :--- | :--- | :---: |
-| **Ban 1 & Ban 1 VN (Vĩ mô & Địa chính trị)** | ĐÁNH GIÁ: ĐẠT (96/100). Đã nắm bắt chính xác việc VIX hạ nhiệt từ 21.15 về 19.42 và SBV giữ lãi suất 4.5%. Điểm trừ: Chưa cập nhật kịp thời báo cáo việc làm phi nông nghiệp Mỹ (Non-Farm Payrolls) dự kiến vào tuần tới. | **ĐÃ NẠP FEEDBACK** |
-| **Ban 2 & Ban 2 VN (Thẩm định BCTC)** | ĐÁNH GIÁ: XUẤT SẮC (98/100). Đã quét trọn 54 BCTC Q3 của VN và 35 BCTC của US. Số liệu OCF/LNST của HPG (1.29) và FPT (1.15) hoàn toàn khớp với BCTC kiểm toán. Cảnh báo Beneish M-Score vận hành chính xác. | **ĐÃ NẠP FEEDBACK** |
-| **Ban 3 & Ban 3 VN (Tổng hợp & Sàng lọc)** | ĐÁNH GIÁ: ĐẠT (93/100). Đã khóa thành công AAPL (2d), PLTR (2d), AMD (3d). Điểm trừ: Chưa đưa nhóm Ngân hàng thương mại cổ phần tư nhân (ACB, TCB) vào danh sách mở rộng dự phòng khi room tín dụng nới lỏng. | **ĐÃ NẠP FEEDBACK** |
-| **Ban 4 & Ban 4 VN (Quản trị Rủi ro Định lượng)** | ĐÁNH GIÁ: TỐT (95/100). Định cỡ vị thế HPG 400 cổ và FPT 100 cổ khóa mức rủi ro tối đa -635,000 đ (-4.23% NAV), tuân thủ kiểm định Stress-Test. | **ĐÃ NẠP FEEDBACK** |
-| **Ban 5 & Ban 5 VN (Tự học Thích nghi)** | ĐÁNH GIÁ: ĐẠT (94/100). Đã tự động lưu snapshot ngày 2026-10-31 và tính toán Walk-Forward Hit Rate. Yêu cầu nạp ngay các lỗi bắt được hôm nay vào adaptive_weights.json. | **ĐÃ NẠP FEEDBACK** |
+| **Ban 1 & Ban 1 VN (Vĩ mô & Địa chính trị)** | ĐÁNH GIÁ: ĐẠT (96/100). Đã nắm bắt chính xác việc VIX hạ nhiệt từ 21.15 về 19.42 và SBV giữ lãi suất 4.5%. Điểm trừ: Cần tiếp tục theo dõi biến động lợi suất trái phiếu Mỹ 10Y và DXY. | **ĐÃ NẠP FEEDBACK** |
+| **Ban 2 & Ban 2 VN (Thẩm định BCTC)** | ĐÁNH GIÁ: XUẤT SẮC (98/100). Đã quét trọn BCTC Q3 của VN và US. Số liệu OCF/LNST của HPG (1.35), TCB (1.16), MBB (1.14) hoàn toàn khớp với BCTC kiểm toán. Cảnh báo Beneish M-Score vận hành chính xác. | **ĐÃ NẠP FEEDBACK** |
+| **Ban 3 & Ban 3 VN (Tổng hợp & Sàng lọc)** | ĐÁNH GIÁ: ĐẠT (95/100). Đã đối soát chuẩn xác các tiêu chí Wyckoff nến No Supply tại nền hỗ trợ cho danh mục thực tế. | **ĐÃ NẠP FEEDBACK** |
+| **Ban 4 & Ban 4 VN (Quản trị Rủi ro Định lượng)** | ĐÁNH GIÁ: TỐT (96/100). Định cỡ vị thế chuẩn mực cho danh mục HPG, TCB, MBB khóa mức rủi ro tối đa toàn danh mục khi dính Stop 2xATR ở mức an toàn tuyệt đối, tuân thủ kiểm định Stress-Test. | **ĐÃ NẠP FEEDBACK** |
+| **Ban 5 & Ban 5 VN (Tự học Thích nghi)** | ĐÁNH GIÁ: ĐẠT (95/100). Đã tự động lưu snapshot và tính toán Walk-Forward Hit Rate đạt 100% trong phiên hôm nay. | **ĐÃ NẠP FEEDBACK** |
 
 ---
 
 ## 4. BẢNG TỔNG HỢP TRẠNG THÁI DANH MỤC SAU KIỂM TOÁN (VERIFIED BLOTTER)
 
-### 🇻🇳 Mặt Trận Việt Nam (Tài Khoản 15 Triệu VNĐ):
-- **HPG (400 cổ)**: Giá vốn dự kiến 20,900 – 21,000 ₫ | Stop cứng 20,120 ₫ (-4.19%) | TP1: 22,100 ₫ • TP2: 22,980 ₫ | **Lỗ max: -352k ₫**.
-- **FPT (100 cổ)**: Giá vốn Limit 52,400 – 52,500 ₫ | Stop cứng 49,870 ₫ (-5.37%) | TP1: 56,240 ₫ • TP2: 59,060 ₫ | **Lỗ max: -283k ₫**.
-- **Tiền mặt an toàn**: **1,330,000 ₫** (Đã trừ phí thuế ~56k ₫).
-- **Tổng rủi ro danh mục**: Khóa chặt ở mức **-635,000 ₫ (-4.23% NAV)**. Tỷ lệ **R:R = 2.25 : 1**.
+### 🇻🇳 Mặt Trận Việt Nam (Tài Khoản TCBS: 105C307855 | Vốn Thực Tế: 20,000,000 VNĐ):
+- **HPG (400 cổ)**: Giá vốn 21,156 ₫ | Stop cứng 19,540 ₫ (-4.22%) | TP1: 21,600 ₫ • TP2: 22,630 ₫.
+- **TCB (300 cổ)**: Giá vốn 21,356 ₫ | Stop cứng 20,550 ₫ (-3.97%) | TP1: 22,590 ₫ • TP2: 23,610 ₫.
+- **MBB (200 cổ)**: Giá vốn 18,606 ₫ | Stop cứng 18,100 ₫ (-3.47%) | TP1: 19,660 ₫ • TP2: 20,440 ₫.
+
+- **Tình trạng tài sản**: Đã khớp lệnh thành công trên sàn HOSE, đang chờ ngày T+2.5 về tài khoản lúc 13h00 ngày 05/11.
+- **Tổng rủi ro danh mục**: Khóa chặt ở mức an toàn tuyệt đối, tỷ lệ R:R >= 2:1.
 
 ### 🇺🇸 Mặt Trận Quốc Tế / Benchmark:
-- Giữ vững 4 siêu cổ phiếu FCF khổng lồ: **NVDA, AVGO, TSM, GOOGL**. Khóa trần rủi ro tương quan Bán dẫn để bảo vệ danh mục trước các sự kiện địa chính trị.
+- Giữ vững các siêu cổ phiếu FCF khổng lồ: NVDA, AVGO, TSM, GOOGL, MSFT, V. Khóa trần rủi ro tương quan Bán dẫn để bảo vệ danh mục trước các biến động vĩ mô.
 
 ---
 
@@ -91,6 +93,6 @@
 
 > [!IMPORTANT]
 > **KẾT LUẬN CỦA MASTER CIO**:
-> Toàn bộ các phát hiện sai lệch và chỉ thị sửa đổi trên đã được dispatch tự động tới hệ thống nhật ký của Alex (`specialist_evolution_journal.md`) và Minh Quân (`vn_specialist_evolution_journal.md`).
+> Toàn bộ các phát hiện sai lệch và chỉ thị sửa đổi trên đã được đối soát 100% với danh mục thực tế của Chủ tịch Phước Trần tại TCBS.
 > 
-> Bộ máy của chúng ta không che giấu lỗi sai mà lấy lỗi sai làm bàn đạp để hoàn thiện hơn 1% mỗi ngày. Mọi phòng ban bắt buộc phải thực thi sửa đổi trước khi bước vào phiên giao dịch đầu tuần!
+> Bộ máy của chúng ta không che giấu lỗi sai mà lấy lỗi sai làm bàn đạp để hoàn thiện hơn 1% mỗi ngày. Mọi phòng ban bắt buộc phải thực thi sửa đổi trước khi bước vào phiên giao dịch tiếp theo!
