@@ -994,3 +994,6 @@
 [2026-11-04 13:11:23] [WARN loop] The read operation timed out
 [2026-11-04 13:15:52] [WARN loop] The read operation timed out
 [2026-11-04 13:27:33] [HEARTBEAT] Unified Omni-Copilot V4.0 trực chiến ổn định. Offset: 698824948
+[2026-11-04 13:38:29] [WARN loop] The read operation timed out
+[2026-11-04 13:42:41] [WARN loop] HTTP Error 409: Conflict
+[2026-11-04 13:43:32] [WARN loop] HTTP Error 409: Conflict
