@@ -36,6 +36,30 @@
       ],
       "lesson_learned": "Các nhịp kéo trần đầu cơ của cổ phiếu âm dòng tiền kinh doanh và nợ vay cao thường kết thúc bằng chuỗi giảm sàn mất thanh khoản.",
       "actionable_rule": "Khóa cứng trong danh sách Veto; đánh giá mọi nhịp tăng của nhóm này là Disciplined Pass (Bỏ qua có kỷ luật)."
+    },
+    {
+      "memory_id": "MEM-VN-004",
+      "category": "INTRADAY_LIMIT_ORDER_CALIBRATION",
+      "regime_trigger": "Dòng tiền lớn mua chủ động bứt phá cản (Breakout Volume > +40% MA20)",
+      "affected_tickers": [
+        "HPG",
+        "TCB",
+        "MBB"
+      ],
+      "lesson_learned": "Đặt lệnh Limit LO quá sâu dưới chân hỗ trợ (lệch > 2% so với giá giao dịch thực tế) khi dòng tiền hấp thụ mạnh sẽ dẫn đến tình trạng sửa lệnh nhiều lần hoặc trượt mất hàng.",
+      "actionable_rule": "Linh hoạt nâng giá đặt Limit LO lên sát bước giá khớp thực tế trong Khung Giờ Vàng 14h00-14h25 khi đã xác nhận lực hấp thụ của khối ngoại/tổ chức, khóa chặt mức trượt giá tối đa <= 0.5%."
+    },
+    {
+      "memory_id": "MEM-VN-005",
+      "category": "POSITION_SIZING_AND_CASH_PRESERVATION",
+      "regime_trigger": "Tác chiến danh mục tài khoản thực tế chuẩn lô chẵn 100 CP",
+      "affected_tickers": [
+        "HPG",
+        "MBB",
+        "TCB"
+      ],
+      "lesson_learned": "Giải ngân 100% tiền mặt mà không giữ lại lượng tiền dự phòng sẽ làm giảm tính cơ động khi thị trường xuất hiện nhịp điều chỉnh bất ngờ ở phiên kế tiếp.",
+      "actionable_rule": "Luôn bảo đảm tỷ lệ phân bổ lô chẵn 100 CP chuẩn xác và giữ tỷ lệ tiền mặt dự phòng (Dry Powder >= 7% NAV), tuyệt đối không dùng margin để triệt tiêu mọi rủi ro tài khoản."
     }
   ]
 }
