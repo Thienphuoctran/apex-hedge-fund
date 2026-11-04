@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-04T08:39:51.325182+00:00",
+  "timestamp_utc": "2026-11-04T09:02:46.317868+00:00",
   "scan_date": "2026-11-04",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 33,
+  "total_vn_announcements_count": 34,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -307,6 +307,14 @@
       "published_at": "Tue, 03 Nov 26 21:50:00 +0700",
       "source_url": "https://cafef.vn/cong-ty-dau-tien-he-lo-doanh-thu-ca-nam-2026-dat-gan-224000-ty-dong-tang-56-188261103214915204.chn",
       "total_announcements": 2
+    },
+    "MBB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn",
+      "total_announcements": 1
     },
     "SSI": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4891,6 +4899,18 @@
       "severity": "CRITICAL",
       "published_at": "Tue, 03 Nov 26 09:09:00 +0700",
       "source_url": "https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "MBB"
+      ],
+      "title": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
+      "summary": "Ở chiều ngược lại, khối ngoại bán ròng mạnh nhất trên HoSE là MBB với giá trị gần 199 tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn"
     },
     {
       "market": "VIETNAM",
