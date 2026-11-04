@@ -127,3 +127,9 @@
 - **Tổng trọng số**: **100.0%** (Cân bằng toán học tuyệt đối)
 - **Lý do điều chỉnh**: Ban 2 (BCTC & Dòng tiền thật OCF) duy trì Hit Rate 100% trên 3 mã HPG, TCB, MBB -> Thưởng quyền biểu quyết lên 35.0%.; Ban 1 (Vĩ mô chung) điều chỉnh về 15.0% để ưu tiên sức mạnh nội tại doanh nghiệp.
 ---
+
+
+### 📅 Nhật Ký Tiến Hóa Hệ Thống — Ngày 2026-11-04
+- **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **52.9%**
+- **Bài học đúc rút**: Phiên 2026-11-04: Cần tăng cường kiểm soát rủi ro tâm lý và quản trị ngưỡng dừng lỗ T+2.5 chặt chẽ hơn.
+- **Trọng số BCTC duy trì**: 35.0% | Dòng tiền: 25.0%
