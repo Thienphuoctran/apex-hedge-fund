@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04 09:03:27",
+  "generated_at": "2026-11-04 09:37:10",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -367,18 +367,18 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Tue, 03 Nov 26 0",
-      "headline": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
       "symbol": "MBB",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Wed, 04 Nov 26 1",
       "headline": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Wed, 04 Nov 26 1",
+      "headline": "FPT \"tái sinh\"",
       "is_portfolio_holding": true
     }
   ],

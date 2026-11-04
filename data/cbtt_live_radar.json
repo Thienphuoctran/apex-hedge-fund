@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-04T09:02:46.317868+00:00",
+  "timestamp_utc": "2026-11-04T09:37:02.306909+00:00",
   "scan_date": "2026-11-04",
   "total_us_filings_count": 370,
   "total_vn_announcements_count": 34,
@@ -290,7 +290,7 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
       "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn",
-      "total_announcements": 7
+      "total_announcements": 8
     },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -298,7 +298,7 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
       "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn",
-      "total_announcements": 15
+      "total_announcements": 14
     },
     "BSR": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -4891,18 +4891,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
-      "summary": "Không chỉ tại Việt Nam, ông lớn giày dép châu Âu còn đóng cửa nhà máy lâu đời ở Bồ Đào Nha, giữa lúc tập đoàn mẹ liên tiếp kinh doanh thua lỗ....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 03 Nov 26 09:09:00 +0700",
-      "source_url": "https://cafef.vn/hon-1600-cong-nhan-nhan-tin-buon-cuoi-nam-nha-may-giay-hon-860-ty-dong-tai-tphcm-giai-the-tap-doan-me-thua-lo-2-nam-lien-tiep-188261103090354953.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "MBB"
       ],
       "title": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
@@ -5190,6 +5178,18 @@
       "severity": "INFO",
       "published_at": "Thu, 29 Oct 2026 03:27:00 GMT",
       "source_url": "https://vneconomy.vn/trung-tam-tai-chinh-quoc-te-tphcm-cong-bo-10-thanh-vien-dau-tien.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "FPT Retail tăng 51 bậc sau ba năm vào Fortune Southeast Asia 500",
+      "summary": "FPT Retail tiếp tục thăng hạng trên bảng xếp hạng \"500 doanh nghiệp lớn nhất Đông Nam Á\", còn Chủ tịch HĐQT Nguyễn Bạch Điệp lần đầu vào danh sách \"100 phụ nữ quyền lực nhất châu Á\" của Fortune....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 2026 16:00:00 +0700",
+      "source_url": "https://vnexpress.net/fpt-retail-tang-51-bac-sau-ba-nam-vao-fortune-southeast-asia-500-5140694.html"
     },
     {
       "market": "VIETNAM",
