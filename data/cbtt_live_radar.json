@@ -1,7 +1,7 @@
 {
-  "timestamp_utc": "2026-11-04T01:36:39.633665+00:00",
+  "timestamp_utc": "2026-11-04T02:39:01.718126+00:00",
   "scan_date": "2026-11-04",
-  "total_us_filings_count": 369,
+  "total_us_filings_count": 370,
   "total_vn_announcements_count": 29,
   "ticker_filing_summary": {
     "NVDA": {
@@ -166,11 +166,11 @@
     },
     "BRK-B": {
       "latest_form": "4",
-      "latest_filing_date": "2026-10-29",
+      "latest_filing_date": "2026-11-03",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983",
-      "total_recent_filings": 8
+      "total_recent_filings": 9
     },
     "LLY": {
       "latest_form": "10-Q",
@@ -2939,6 +2939,18 @@
       "symbol": "BRK-B",
       "company_name": "BERKSHIRE HATHAWAY INC",
       "form": "4",
+      "filing_date": "2026-11-03",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-445930",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
       "filing_date": "2026-10-29",
       "description": "4",
       "event_type": "INSIDER_TRADING",
@@ -4921,18 +4933,6 @@
       "symbols": [
         "HCM"
       ],
-      "title": "Siêu đô thị 200.000 tỷ đồng của tỷ phú Phạm Nhật Vượng vào vòng bình chọn “7 Kỳ quan Đô thị Tương lai”",
-      "summary": "Vinhomes Green Paradise tại Cần Giờ, TP.HCM bước vào vòng bình chọn toàn cầu của chiến dịch “7 Kỳ quan Đô thị Tương lai”, dự kiến công bố kết quả ngày 31/10/2027....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 20:13:00 +0700",
-      "source_url": "https://cafef.vn/sieu-do-thi-200000-ty-dong-cua-ty-phu-pham-nhat-vuong-vao-vong-binh-chon-7-ky-quan-do-thi-tuong-lai-188261102200858193.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
       "title": "ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031",
       "summary": "Ngày 02/11/2026 tại TP.HCM, CTCP Thành Thành Công – Biên Hòa (AgriS, HOSE: SBT) tổ chức ĐHĐCĐ thường niên niên độ 2025-2026 theo hình thức hybrid. Đại hội thông qua 14 tờ trình với tỷ lệ đồng thuận trên 98%, trong đó có ...",
       "event_type": "CO_TUC",
@@ -5062,6 +5062,18 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 15:38:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Nhà 3 tầng mang dáng dấp phố xưa với mái ngói đỏ và cửa vòm",
+      "summary": "Giữa không gian đô thị hiện đại của TP.HCM, ngôi nhà ba tầng gợi nhắc kiến trúc phố xưa qua mái ngói đỏ, cửa vòm, lam gỗ và sân lát gạch tàu. Những vật liệu quen thuộc được kết hợp với cách tổ chức không gian thông thoán...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 08:42:00 +0700",
+      "source_url": "https://cafef.vn/nha-3-tang-mang-dang-dap-pho-xua-voi-mai-ngoi-do-va-cua-vom-188261104082700364.chn"
     },
     {
       "market": "VIETNAM",

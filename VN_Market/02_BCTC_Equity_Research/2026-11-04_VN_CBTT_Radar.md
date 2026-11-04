@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-04 01:36:39  
+> **Thời gian quét:** 2026-11-04 02:39:01  
 > **Số sự kiện ghi nhận:** 29 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
@@ -14,7 +14,6 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ | [Xem Link](https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn) |
 | **FPT** | `CO_TUC` | ⚠️ CHÚ Ý | FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20% | [Xem Link](https://cafef.vn/fpt-telecom-sap-tra-co-tuc-tien-mat-ty-le-20-188261103071445257.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một công ty giày ở TP.HCM giải thể, hàng nghìn công nhân nghỉ việc từ ngày 3/11 | [Xem Link](https://cafef.vn/mot-cong-ty-giay-o-tphcm-giai-the-hang-nghin-cong-nhan-nghi-viec-tu-ngay-3-11-188261103055550405.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Siêu đô thị 200.000 tỷ đồng của tỷ phú Phạm Nhật Vượng vào vòng bình chọn “7 Kỳ quan Đô thị Tương lai” | [Xem Link](https://cafef.vn/sieu-do-thi-200000-ty-dong-cua-ty-phu-pham-nhat-vuong-vao-vong-binh-chon-7-ky-quan-do-thi-tuong-lai-188261102200858193.chn) |
 | **HCM** | `CO_TUC` | ⚠️ CHÚ Ý | ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031 | [Xem Link](https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK đưa ra dự báo bất ngờ về triển vọng FPT | [Xem Link](https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-trien-vong-fpt-188261103163220239.chn) |
 | **FPT, SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa "bay hơi" khỏi doanh nghiệp từ đầu năm | [Xem Link](https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn) |
@@ -26,6 +25,7 @@
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ? | [Xem Link](https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn) |
 | **HDB, TCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành | [Xem Link](https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhà 3 tầng mang dáng dấp phố xưa với mái ngói đỏ và cửa vòm | [Xem Link](https://cafef.vn/nha-3-tang-mang-dang-dap-pho-xua-voi-mai-ngoi-do-va-cua-vom-188261104082700364.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nghệ thuật sống chậm giữa Compound vịnh xanh: Nơi sự tĩnh tại, riêng tư giao hòa cùng nhịp sống sôi động và đa trải nghiệm | [Xem Link](https://cafef.vn/nghe-thuat-song-cham-giua-compound-vinh-xanh-noi-su-tinh-tai-rieng-tu-giao-hoa-cung-nhip-song-soi-dong-va-da-trai-nghiem-188261103120958419.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Đấu giá 5 lô đất tại Khu đô thị mới Thủ Thiêm, khởi điểm hơn 18.250 tỷ đồng | [Xem Link](https://cafef.vn/dau-gia-5-lo-dat-tai-khu-do-thi-moi-thu-thiem-khoi-diem-hon-18250-ty-dong-188261103153037972.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép | [Xem Link](https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm) |
