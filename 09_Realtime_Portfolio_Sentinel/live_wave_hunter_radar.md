@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-04 03:29:39`  
+*Cập nhật thời gian thực*: `2026-11-04 04:27:23`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -63,4 +63,4 @@
 | `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Wed, 04 Nov 26 1` | Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ |
 | `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Wed, 04 Nov 26 0` | Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM |
 | `VIETNAM_CBTT` | **`BSR`** | `BCTC_KET_QUA_KINH_DOANH` | `Tue, 03 Nov 26 2` | Công ty đầu tiên hé lộ doanh thu cả năm 2026 đạt gần 224.000 tỷ đồng, tăng 56% |
-| `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Tue, 03 Nov 26 1` | Công nhân bật khóc trong ngày công ty ở TP.HCM thông báo giải thể khiến hàng nghìn phải nghỉ việc từ 3/11 |
+| `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Tue, 03 Nov 26 1` | Công ty giày vừa đóng cửa tại TP HCM: 1.600 lao động được trả đủ lương tháng 11, có cả lương tháng 13 |

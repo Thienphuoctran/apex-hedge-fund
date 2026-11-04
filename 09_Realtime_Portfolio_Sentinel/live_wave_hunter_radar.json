@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04 03:29:39",
+  "generated_at": "2026-11-04 04:27:23",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -346,14 +346,6 @@
       "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 03 Nov 26 1",
-      "headline": "Công nhân bật khóc trong ngày công ty ở TP.HCM thông báo giải thể khiến hàng nghìn phải nghỉ việc từ 3/11",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 03 Nov 26 1",
       "headline": "Công ty giày vừa đóng cửa tại TP HCM: 1.600 lao động được trả đủ lương tháng 11, có cả lương tháng 13",
       "is_portfolio_holding": false
     },
@@ -379,6 +371,14 @@
       "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
       "date": "Tue, 03 Nov 26 0",
       "headline": "Hơn 1.600 công nhân nhận tin buồn cuối năm: Nhà máy giày hơn 860 tỷ đồng tại Tp.HCM giải thể, tập đoàn mẹ thua lỗ 2 năm liên tiếp",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "PNJ",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Tue, 03 Nov 26 0",
+      "headline": "Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ",
       "is_portfolio_holding": false
     }
   ],

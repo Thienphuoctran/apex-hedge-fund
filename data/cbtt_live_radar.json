@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-04T03:29:22.486879+00:00",
+  "timestamp_utc": "2026-11-04T04:27:11.280878+00:00",
   "scan_date": "2026-11-04",
   "total_us_filings_count": 370,
   "total_vn_announcements_count": 31,
@@ -4849,18 +4849,6 @@
       "symbols": [
         "HCM"
       ],
-      "title": "Công nhân bật khóc trong ngày công ty ở TP.HCM thông báo giải thể khiến hàng nghìn phải nghỉ việc từ 3/11",
-      "summary": "Công ty TNHH ECCO Việt Nam bất ngờ thông báo giải thể khiến 1.611 lao động bất ngờ. Trong khi đó, doanh nghiệp cũng đưa ra các chính sách hỗ trợ và 12 công ty lân cận có nhu cầu tuyển dụng hơn 6.500 người....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 14:37:00 +0700",
-      "source_url": "https://cafef.vn/cong-nhan-bat-khoc-trong-ngay-cong-ty-o-tphcm-thong-bao-giai-the-khien-hang-nghin-phai-nghi-viec-tu-3-11-188261103141454585.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
       "title": "Công ty giày vừa đóng cửa tại TP HCM: 1.600 lao động được trả đủ lương tháng 11, có cả lương tháng 13",
       "summary": "Lương tháng 10, công ty ECCO đã chi trả cho người lao động. Lương tháng 11 sẽ được tính đến hết ngày 30/11, dù trong thời gian đó, người lao động không phải đến công ty làm việc....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5006,12 +4994,12 @@
       "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 4/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
-      "summary": "Giá vàng trong nước mở phiên sáng 4/11 duy trì ổn định so với cuối phiên trước, với vàng miếng SJC bán ra ở mức 140,6 triệu đồng/lượng tại phần lớn thương hiệu. Giá vàng nhẫn dao động trong khoảng 133,7-139,5 triệu đồng/...",
+      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 4/11 đồng loạt tăng tại SJC, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng trong nước lúc 10h15 ngày 4/11 tăng so với cuối phiên trước, với vàng miếng SJC bán ra tại phần lớn thương hiệu lên 141,2 triệu đồng/lượng, tăng 600.000 đồng/lượng. Giá vàng nhẫn cũng tăng 200.000-600.000 đồng/l...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 07:21:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-4-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261104072255434.chn"
+      "published_at": "Wed, 04 Nov 26 10:34:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-4-11-dong-loat-tang-tai-sjc-pnj-bao-tin-minh-chau-va-bao-tin-manh-hai-188261104072255434.chn"
     },
     {
       "market": "VIETNAM",
@@ -5086,6 +5074,18 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 15:38:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Việt Nam sắp có siêu dự án metro gần 89.000 tỷ đồng tại thành phố giàu nhất cả nước, tương lai có thể đón tới 830.000 lượt khách mỗi ngày",
+      "summary": "Tuyến đường sắt đô thị số 1 (Thành phố mới Bình Dương – Suối Tiên, TP.HCM) dự kiến thi công trong khoảng 60 tháng....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 11:06:00 +0700",
+      "source_url": "https://cafef.vn/viet-nam-sap-co-sieu-du-an-metro-gan-89000-ty-dong-tai-thanh-pho-giau-nhat-ca-nuoc-tuong-lai-co-the-don-toi-830000-luot-khach-moi-ngay-188261104110450031.chn"
     },
     {
       "market": "VIETNAM",
