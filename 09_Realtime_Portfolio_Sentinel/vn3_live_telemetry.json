@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-04 13:49:36",
+  "updated_at": "2026-11-04 14:13:44",
   "portfolio_summary": {
     "total_cost_vnd": 18585000.0,
-    "total_market_value_vnd": 18935000.0,
-    "total_unrealized_pnl_vnd": 350000.0,
-    "total_unrealized_pnl_pct": 1.8832391713747645,
+    "total_market_value_vnd": 19005000.0,
+    "total_unrealized_pnl_vnd": 420000.0,
+    "total_unrealized_pnl_pct": 2.2598870056497176,
     "total_shares": 900
   },
   "positions": [
@@ -13,21 +13,21 @@
       "name": "Techcombank",
       "shares": 300,
       "entry_price": 21350.0,
-      "current_price": 21650.0,
-      "high": 21750.0,
+      "current_price": 21750.0,
+      "high": 21800.0,
       "low": 21150.0,
-      "volume": 8290887,
+      "volume": 10703061,
       "cost_vnd": 6405000.0,
-      "market_value_vnd": 6495000.0,
-      "pnl_vnd": 90000.0,
-      "pnl_pct": 1.405152224824356,
+      "market_value_vnd": 6525000.0,
+      "pnl_vnd": 120000.0,
+      "pnl_pct": 1.873536299765808,
       "stop_loss_2atr": 20400.0,
       "stop_warning": 20700.0,
-      "stop_dist_pct": 5.773672055427252,
+      "stop_dist_pct": 6.206896551724138,
       "tp1": 23200.0,
-      "tp1_dist_pct": 7.159353348729793,
+      "tp1_dist_pct": 6.666666666666667,
       "tp2": 24800.0,
-      "tp2_dist_pct": 14.549653579676674,
+      "tp2_dist_pct": 14.022988505747128,
       "status": "🟢 ĐANG LÃI TÍCH CỰC"
     },
     {
@@ -38,7 +38,7 @@
       "current_price": 19100.0,
       "high": 19100.0,
       "low": 18700.0,
-      "volume": 10610997,
+      "volume": 13830325,
       "cost_vnd": 3720000.0,
       "market_value_vnd": 3820000.0,
       "pnl_vnd": 100000.0,
@@ -57,42 +57,42 @@
       "name": "Tập đoàn Hòa Phát",
       "shares": 400,
       "entry_price": 21150.0,
-      "current_price": 21550.0,
-      "high": 21600.0,
+      "current_price": 21650.0,
+      "high": 21650.0,
       "low": 21100.0,
-      "volume": 22435230,
+      "volume": 31210197,
       "cost_vnd": 8460000.0,
-      "market_value_vnd": 8620000.0,
-      "pnl_vnd": 160000.0,
-      "pnl_pct": 1.8912529550827424,
+      "market_value_vnd": 8660000.0,
+      "pnl_vnd": 200000.0,
+      "pnl_pct": 2.3640661938534278,
       "stop_loss_2atr": 19400.0,
       "stop_warning": 19700.0,
-      "stop_dist_pct": 9.976798143851507,
+      "stop_dist_pct": 10.392609699769054,
       "tp1": 22200.0,
-      "tp1_dist_pct": 3.0162412993039442,
+      "tp1_dist_pct": 2.5404157043879905,
       "tp2": 23200.0,
-      "tp2_dist_pct": 7.65661252900232,
+      "tp2_dist_pct": 7.159353348729793,
       "status": "🟢 ĐANG LÃI TÍCH CỰC"
     }
   ],
   "quotes": {
     "TCB": {
-      "price": 21650.0,
-      "high": 21750.0,
+      "price": 21750.0,
+      "high": 21800.0,
       "low": 21150.0,
-      "volume": 8290887
+      "volume": 10703061
     },
     "MBB": {
       "price": 19100.0,
       "high": 19100.0,
       "low": 18700.0,
-      "volume": 10610997
+      "volume": 13830325
     },
     "HPG": {
-      "price": 21550.0,
-      "high": 21600.0,
+      "price": 21650.0,
+      "high": 21650.0,
       "low": 21100.0,
-      "volume": 22435230
+      "volume": 31210197
     }
   },
   "config": {
