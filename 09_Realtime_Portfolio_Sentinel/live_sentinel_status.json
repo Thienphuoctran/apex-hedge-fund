@@ -1,9 +1,9 @@
 {
-  "last_scan_utc": "2026-11-04T07:45:20.631283",
+  "last_scan_utc": "2026-11-04T09:37:10.664829",
   "total_positions_monitored": 3,
   "emergency_alerts_active": 0,
-  "take_profit_alerts_active": 1,
-  "status": "TAKE_PROFIT_ALERT",
+  "take_profit_alerts_active": 0,
+  "status": "ALL_NORMAL",
   "positions": [
     {
       "symbol": "HPG",
@@ -12,30 +12,25 @@
       "current_price": 21700.0,
       "prev_close": 21250.0,
       "change_pct": 2.12,
-      "stop_loss_2atr": 19540.0,
-      "stop_dist_pct": 9.95,
-      "tp1": 21600.0,
-      "tp2": 22630.0,
-      "tp1_dist_pct": -0.46,
-      "tp2_dist_pct": 4.29,
+      "stop_loss_2atr": 20680.0,
+      "stop_dist_pct": 4.7,
+      "tp1": 23130.0,
+      "tp2": 24360.0,
+      "tp1_dist_pct": 6.59,
+      "tp2_dist_pct": 12.26,
       "volume_surge_ratio": 2.56,
       "vwap_est": 21500.0,
-      "severity": "TAKE_PROFIT_TP1",
+      "severity": "NORMAL",
       "triggers_hit": [],
-      "upside_triggers_hit": [
-        {
-          "level": "🎯 [CHỐT LỜI TP1 — SCALING OUT 50%] ĐẠT MỤC TIÊU KỲ VỌNG",
-          "desc": "Thị giá 21,700.00 đã chạm/vượt mốc TP1 (21,600.00). Mở app bán chốt lời 50% vị thế đút túi tiền tươi, nâng Stop 50% còn lại lên giá vốn!"
-        }
-      ],
+      "upside_triggers_hit": [],
       "hedging_solution": {
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
         "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
         "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 1294.1
+        "hedge_ratio_pct": 1216.6
       },
       "shares": 500,
-      "allocated_capital": 10200000.0,
+      "allocated_capital": 10850000.0,
       "currency": "VND",
       "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +62.2/100, MoS +58.9%.",
       "catalysts": "Siêu dự án Dung Quất 2 (vốn 85.000 tỷ) chạy lò cao nâng công suất HRC thêm 5.6 triệu tấn/năm và áp thuế chống bán phá giá HRC."
@@ -47,13 +42,13 @@
       "current_price": 21850.0,
       "prev_close": 21400.0,
       "change_pct": 2.1,
-      "stop_loss_2atr": 20550.0,
-      "stop_dist_pct": 5.95,
-      "tp1": 22590.0,
-      "tp2": 23610.0,
-      "tp1_dist_pct": 3.39,
-      "tp2_dist_pct": 8.05,
-      "volume_surge_ratio": 2.87,
+      "stop_loss_2atr": 20860.0,
+      "stop_dist_pct": 4.53,
+      "tp1": 23230.0,
+      "tp2": 24410.0,
+      "tp1_dist_pct": 6.32,
+      "tp2_dist_pct": 11.72,
+      "volume_surge_ratio": 3.06,
       "vwap_est": 21633.33,
       "severity": "NORMAL",
       "triggers_hit": [],
@@ -62,10 +57,10 @@
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
         "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
         "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 3084.1
+        "hedge_ratio_pct": 3020.6
       },
       "shares": 200,
-      "allocated_capital": 4280000.0,
+      "allocated_capital": 4370000.0,
       "currency": "VND",
       "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +60.8/100, MoS +57.0%.",
       "catalysts": "Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS."
@@ -77,12 +72,12 @@
       "current_price": 19250.0,
       "prev_close": 18900.0,
       "change_pct": 1.85,
-      "stop_loss_2atr": 18100.0,
-      "stop_dist_pct": 5.97,
-      "tp1": 19660.0,
-      "tp2": 20440.0,
-      "tp1_dist_pct": 2.13,
-      "tp2_dist_pct": 6.18,
+      "stop_loss_2atr": 18580.0,
+      "stop_dist_pct": 3.48,
+      "tp1": 20190.0,
+      "tp2": 21000.0,
+      "tp1_dist_pct": 4.88,
+      "tp2_dist_pct": 9.09,
       "volume_surge_ratio": 2.44,
       "vwap_est": 19083.33,
       "severity": "NORMAL",
@@ -92,10 +87,10 @@
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
         "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
         "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 3520.0
+        "hedge_ratio_pct": 3428.6
       },
       "shares": 200,
-      "allocated_capital": 3750000.0,
+      "allocated_capital": 3850000.0,
       "currency": "VND",
       "bctc_thesis": "Thẩm định BCTC VAS/TT200 đạt chuẩn Xếp hạng AAA, Forensic 100.0/100 (CLEAN), Net Conviction +58.8/100, MoS +59.8%.",
       "catalysts": "Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời."
@@ -105,11 +100,11 @@
     "vn_waves_count": 8,
     "us_waves_count": 6,
     "top_vn_wave_symbols": [
-      "HHV",
+      "GMD",
       "HAH",
-      "DBC",
-      "MSN",
-      "MBB"
+      "VCI",
+      "SSI",
+      "HCM"
     ],
     "top_us_wave_symbols": [
       "NVDA",

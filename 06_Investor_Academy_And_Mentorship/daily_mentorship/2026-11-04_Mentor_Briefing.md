@@ -7,12 +7,12 @@
 ---
 
 ### PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)
-- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 20.83 (>= 20)**
-- **Bản chất chiến lược**: Chỉ số VIX ở mức 20.83 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
+- **Chủ đề**: **Chiến Thuật Chia Lệnh 60/40 & Lọc Siêu Cổ Phiếu Tạo Giá Trị Thực (EVA Spread > 0) Khi VIX = 19.05 (< 20)**
+- **Bản chất chiến lược**: Khi VIX hạ nhiệt xuống dưới 20 (19.05), Ban 5 đã cân bằng trọng số chấm điểm chuẩn 100% (Vĩ mô 25% / BCTC-FCF 35% / Định giá 20% / Kỹ thuật 20%). Danh mục Core (65%) tập trung tích sản các doanh nghiệp có ROIC > WACC (EVA dương) và Piotroski F-Score >= 7/9; trong khi phần Satellite (35%) tận dụng quy tắc chia lệnh 60/40 (40% đặt Limit tại Giá - 0.35xATR) để tối ưu giá vốn.
 - **Công thức / Quy tắc vàng**:
-  > Quy tắc Kỷ luật Thép: Khi VIX >= 20, phần Satellite tuyệt đối KHÔNG sử dụng Margin, giữ tối thiểu 40% tiền mặt/T-Bills.
+  > Quy tắc Phân Bổ Vốn Quỹ & Thuế Cổ Tức VN: (1) Không giải ngân mới vào mã có lịch BCTC <= 7 ngày; (2) Tính cổ tức thực nhận sau thuế khấu trừ tại nguồn 30% của Mỹ (WHT); (3) Luôn kiểm tra cả Stop 2xATR ban đầu và Chandelier Trailing Stop (Highest_22d - 2.5xATR).
 - **Thực tế thị trường hôm nay (2026-11-04)**: 
-  - VIX hiện tại: **20.83** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.95%** | Dầu WTI: **$96.23**.
+  - VIX hiện tại: **19.05** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.95%** | Dầu WTI: **$96.32**.
   - Độ rộng thị trường (`Market Breadth`): **62.9%** cổ phiếu giữ trên MA200.
 
 ---
@@ -26,9 +26,9 @@
      - Hiệu suất sinh lời trên vốn đầu tư (`ROIC`): **`23.79%`** vs Chi phí vốn (`WACC`): **`9.2%`** -> Tạo giá trị kinh tế ròng **`EVA Spread = +14.59%`**.
      - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.71%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.5%`**)*.
   2. **Định lượng & Quản trị rủi ro 2 Tầng (Ban 4)**:
-     - Biến động `ATR(14)` = **$12.79**.
-     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$495.42** (`-4.28%`).
-     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$519.19**.
+     - Biến động `ATR(14)` = **$13.01**.
+     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$494.97** (`-4.28%`).
+     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$518.63**.
 - **Bài tập Paper Trading hôm nay**:
   - Chạy lệnh mô phỏng: `python scripts/paper_trading_simulator.py buy --symbol MSFT --shares 10 --type Core`.
 

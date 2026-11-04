@@ -1,6 +1,6 @@
 # 🎯 [TAKE-PROFIT ALERT] TÍN HIỆU CHỐT LỜI TỰ ĐỘNG & BẢO VỆ THÀNH QUẢ
 **Hệ Thống**: Palmer Always-On Apex Sentinel & Minh Quân / Alex Execution Desk  
-**Thời gian phát hiện**: `2026-11-04 07:45:19` | **Mã Cổ Phiếu Đạt Mục Tiêu**: **`HPG`** (VIETNAM)  
+**Thời gian phát hiện**: `2026-11-04 08:40:00` | **Mã Cổ Phiếu Đạt Mục Tiêu**: **`HPG`** (VIETNAM)  
 **Trạng thái**: **`TAKE_PROFIT_TP1`** — KÍCH HOẠT QUY TẮC SCALING OUT 50/50
 
 ---
