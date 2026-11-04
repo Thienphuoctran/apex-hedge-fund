@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-04T05:27:17.076786+00:00",
+  "timestamp_utc": "2026-11-04T06:26:07.939973+00:00",
   "scan_date": "2026-11-04",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 31,
+  "total_vn_announcements_count": 34,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -298,7 +298,7 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
       "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn",
-      "total_announcements": 13
+      "total_announcements": 15
     },
     "BSR": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -323,6 +323,14 @@
       "published_at": "Wed, 04 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn",
       "total_announcements": 1
+    },
+    "VND": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng thông qua kênh hoán đổi ngoại tệ",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 13:17:00 +0700",
+      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-thong-qua-kenh-hoan-doi-ngoai-te-188261104132128425.chn",
+      "total_announcements": 2
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -354,14 +362,6 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 20:58:00 +0700",
       "source_url": "https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn",
-      "total_announcements": 1
-    },
-    "VND": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 2026 09:37:09 GMT",
-      "source_url": "https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm",
       "total_announcements": 1
     }
   },
@@ -4992,6 +4992,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "VND"
+      ],
+      "title": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng thông qua kênh hoán đổi ngoại tệ",
+      "summary": "NHNN dự kiến cung ứng gần 48.800 tỷ đồng cho hệ thống ngân hàng thông qua giao dịch hoán đổi USD/VND kỳ hạn 182 ngày, với quy mô tối đa 2 tỷ USD. Đây là kỳ hạn dài hơn nhiều so với các đợt can thiệp trước, trong bối cảnh...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 13:17:00 +0700",
+      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-thong-qua-kenh-hoan-doi-ngoai-te-188261104132128425.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PNJ"
       ],
       "title": "Giá vàng nhẫn trơn, vàng miếng sáng 4/11 đồng loạt tăng tại SJC, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
@@ -5074,6 +5086,30 @@
       "severity": "INFO",
       "published_at": "Sun, 01 Nov 26 15:38:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Cập nhật mới nhất về đề xuất 'siêu dự án' TOD tại Hàng Xanh",
+      "summary": "Sở Quy hoạch - Kiến trúc TP.HCM vừa có văn bản gửi Công ty CP Đầu tư Hạ tầng kỹ thuật TP.HCM (HoSE: CII) về việc nghiên cứu ý tưởng quy hoạch phát triển đô thị theo định hướng giao thông công cộng (TOD) tại khu vực Hàng ...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 12:51:00 +0700",
+      "source_url": "https://cafef.vn/cap-nhat-moi-nhat-ve-de-xuat-sieu-du-an-tod-tai-hang-xanh-18826110412413787.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Thông tin mới về dự án nhà ở hơn 4.600 tỷ đồng cho 4.000 cư dân tại một xã của TP.HCM",
+      "summary": "UBND xã Tân Nhựt (TP.HCM) mới có Quyết định phê duyệt Đồ án quy hoạch chi tiết tỷ lệ 1/500 Khu căn hộ cao tầng NBB II trên địa bàn xã....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 12:50:00 +0700",
+      "source_url": "https://cafef.vn/thong-tin-moi-ve-du-an-nha-o-hon-4600-ty-dong-cho-4000-cu-dan-tai-mot-xa-cua-tphcm-18826110412391902.chn"
     },
     {
       "market": "VIETNAM",

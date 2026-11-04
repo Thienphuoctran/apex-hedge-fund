@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-04 05:27:17  
-> **Số sự kiện ghi nhận:** 31 thông báo  
+> **Thời gian quét:** 2026-11-04 06:26:07  
+> **Số sự kiện ghi nhận:** 34 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -19,6 +19,7 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK đưa ra dự báo bất ngờ về triển vọng FPT | [Xem Link](https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-trien-vong-fpt-188261103163220239.chn) |
 | **FPT, SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa "bay hơi" khỏi doanh nghiệp từ đầu năm | [Xem Link](https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bên trong nhà máy Kiểm thử và Đóng gói chip bán dẫn FPT vừa đưa vào vận hành | [Xem Link](https://cafef.vn/ben-trong-nha-may-kiem-thu-va-dong-goi-chip-ban-dan-fpt-vua-dua-vao-van-hanh-188261103103904204.chn) |
+| **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng thông qua kênh hoán đổi ngoại tệ | [Xem Link](https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-thong-qua-kenh-hoan-doi-ngoai-te-188261104132128425.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng sáng 4/11 đồng loạt tăng tại SJC, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-4-11-dong-loat-tang-tai-sjc-pnj-bao-tin-minh-chau-va-bao-tin-manh-hai-188261104072255434.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 3/11, gửi 200 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-3-11-gui-200-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261103170626883.chn) |
@@ -26,6 +27,8 @@
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Không chỉ vì tỷ giá: Điều gì đang thúc đẩy doanh nghiệp giao dịch đồng Nhân Dân Tệ? | [Xem Link](https://cafef.vn/khong-chi-vi-ty-gia-dieu-gi-dang-thuc-day-doanh-nghiep-giao-dich-dong-nhan-dan-te-188261102073136403.chn) |
 | **HDB, TCB, VPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt cổ phiếu ngân hàng giảm sâu trong tuần qua, SHB, TCB, TPB, HDB và VPB chiếm hơn một nửa khối lượng giao dịch toàn ngành | [Xem Link](https://cafef.vn/hang-loat-co-phieu-ngan-hang-giam-sau-trong-tuan-qua-shb-tcb-tpb-hdb-va-vpb-chiem-hon-mot-nua-khoi-luong-giao-dich-toan-nganh-188261101205916823.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn chiều 1/11 tại Bảo Tín Minh Châu, SJC, DOJI, Bảo Tín Mạnh Hải, PNJ,... | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-1-11-tai-bao-tin-minh-chau-sjc-doji-bao-tin-manh-hai-pnj-188261101074602212.chn) |
+| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Cập nhật mới nhất về đề xuất 'siêu dự án' TOD tại Hàng Xanh | [Xem Link](https://cafef.vn/cap-nhat-moi-nhat-ve-de-xuat-sieu-du-an-tod-tai-hang-xanh-18826110412413787.chn) |
+| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Thông tin mới về dự án nhà ở hơn 4.600 tỷ đồng cho 4.000 cư dân tại một xã của TP.HCM | [Xem Link](https://cafef.vn/thong-tin-moi-ve-du-an-nha-o-hon-4600-ty-dong-cho-4000-cu-dan-tai-mot-xa-cua-tphcm-18826110412391902.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Việt Nam sắp có siêu dự án metro gần 89.000 tỷ đồng tại thành phố giàu nhất cả nước, tương lai có thể đón tới 830.000 lượt khách mỗi ngày | [Xem Link](https://cafef.vn/viet-nam-sap-co-sieu-du-an-metro-gan-89000-ty-dong-tai-thanh-pho-giau-nhat-ca-nuoc-tuong-lai-co-the-don-toi-830000-luot-khach-moi-ngay-188261104110450031.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhà 3 tầng mang dáng dấp phố xưa với mái ngói đỏ và cửa vòm | [Xem Link](https://cafef.vn/nha-3-tang-mang-dang-dap-pho-xua-voi-mai-ngoi-do-va-cua-vom-188261104082700364.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nghệ thuật sống chậm giữa Compound vịnh xanh: Nơi sự tĩnh tại, riêng tư giao hòa cùng nhịp sống sôi động và đa trải nghiệm | [Xem Link](https://cafef.vn/nghe-thuat-song-cham-giua-compound-vinh-xanh-noi-su-tinh-tai-rieng-tu-giao-hoa-cung-nhip-song-soi-dong-va-da-trai-nghiem-188261103120958419.chn) |
