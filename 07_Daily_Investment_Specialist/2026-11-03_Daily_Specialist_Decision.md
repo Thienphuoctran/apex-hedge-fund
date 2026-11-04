@@ -114,7 +114,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Lợi suất trái phiếu chính phủ Mỹ 10 năm (US10Y) neo cao ở 4.93% tiếp tục mở rộng Thu nhập lãi thuần (NII). Thương vụ thâu tóm ngân hàng trước đây đã tích hợp hoàn tất, gia tăng thị phần tiền gửi tổ chức toàn cầu.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `91.3/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+8.90%` • True FCF ex-SBC: `$NoneB` • Altman Z: `4.4` • Lynch PEG: `1.43x` • SEC EDGAR: Form 424B2 (2026-11-02)]** — JPMorgan Chase là ngân hàng số 1 thế giới với bảng cân đối vững như pháo đài (Tỷ lệ CET1 15.3%), P/E chỉ 14.9x cực kỳ hấp dẫn. Tín hiệu ban lãnh đạo mua ròng nội bộ củng cố niềm tin tuyệt đối. Giá đang tích lũy chặt chẽ ngay sát hỗ trợ kỹ thuật.
+  **[Hội Đồng 10 Đại Danh Thủ: `91.3/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+8.90%` • True FCF ex-SBC: `$NoneB` • Altman Z: `4.4` • Lynch PEG: `1.43x` • SEC EDGAR: Form 424B2 (2026-11-03)]** — JPMorgan Chase là ngân hàng số 1 thế giới với bảng cân đối vững như pháo đài (Tỷ lệ CET1 15.3%), P/E chỉ 14.9x cực kỳ hấp dẫn. Tín hiệu ban lãnh đạo mua ròng nội bộ củng cố niềm tin tuyệt đối. Giá đang tích lũy chặt chẽ ngay sát hỗ trợ kỹ thuật.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Vào 60% tại vùng $337.04 và đặt Limit 40% tại $334.77. Chốt lời TP1 tại $363.00 (+7.7%) và TP2 tại $373.26 (+10.7%). Cắt lỗ cứng Stop 2xATR tại $324.06 (-3.85%).
 
@@ -164,7 +164,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.22%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.08` • Lynch PEG: `0.73x` • SEC EDGAR: Form 6-K (2026-10-22)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
+  **[Hội Đồng 10 Đại Danh Thủ: `90.2/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.22%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.08` • Lynch PEG: `0.73x` • SEC EDGAR: Form 4 (2026-11-03)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%).
 

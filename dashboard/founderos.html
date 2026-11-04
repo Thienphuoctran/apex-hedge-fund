@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex FounderOS — Bảng Điều Hành Quỹ & Solopreneur Đa Tầng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; color: #f1f5f9; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0f19; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+    </style>
+</head>
+<body class="p-4 md:p-6 space-y-6">
+
+    <!-- TOP HEADER -->
+    <header class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">🏛️</span>
+                <h1 class="text-2xl font-black text-slate-100 tracking-tight">APEX FOUNDEROS COMMAND CENTER</h1>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-sky-500/20 text-sky-400 border border-sky-500/40">Solopreneur v2.5</span>
+            </div>
+            <p class="text-xs md:text-sm text-slate-400 mt-1">
+                Chủ tịch: <strong class="text-amber-400">Phước Trần</strong> • Tài khoản TCBS: <code class="text-sky-300 font-mono">105C307855</code> • Telegram Supergroup: <code class="text-slate-400 font-mono">-1004465270817</code>
+            </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 text-xs">
+            <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl px-3.5 py-2">
+                <span class="text-slate-400">Ngày tác chiến:</span>
+                <span class="font-mono font-bold text-slate-200 ml-1">2026-11-04 (13:26:01)</span>
+            </div>
+            <div class="bg-emerald-950/30 border border-emerald-500/40 rounded-xl px-3.5 py-2 text-emerald-400 font-mono font-bold">
+                ⚡ 11 Phòng Ban Trực Chiến
+            </div>
+            <a href="https://t.me/c/4465270817/4" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-md">
+                📱 Mở Telegram Quỹ
+            </a>
+        </div>
+    </header>
+
+    <!-- KPI STATS CARDS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Vốn Quỹ & TCBS -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 shadow-sm">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Danh Mục 900 Cổ Phiếu</span>
+            <div class="text-xl font-black text-emerald-400 font-mono mt-1">400 HPG • 300 TCB • 200 MBB</div>
+            <div class="text-xs text-slate-400 mt-2 flex justify-between">
+                <span>Tiền mặt: <strong class="text-slate-200">1,415,000 ₫ (7.1%)</strong></span>
+                <span class="text-emerald-400">Margin: 0.0%</span>
+            </div>
+        </div>
+
+        <!-- Token Budget Hard Cap (Paperclip) -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 shadow-sm">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Chi Phí Token Hôm Nay (Paperclip)</span>
+            <div class="text-xl font-black text-sky-400 font-mono mt-1">$0.0008 <span class="text-xs font-normal text-slate-400">/ $1.20 USD</span></div>
+            <div class="w-full bg-slate-800 rounded-full h-1.5 mt-2.5">
+                <div class="bg-sky-500 h-1.5 rounded-full" style="width: 0.1%"></div>
+            </div>
+            <div class="text-[11px] text-slate-400 mt-1 flex justify-between font-mono">
+                <span>5,500 tokens</span>
+                <span>0.1% ngân sách</span>
+            </div>
+        </div>
+
+        <!-- Kanban Progress (Mesa) -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 shadow-sm">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tiến Độ Tác Chiến (Mesa Jira)</span>
+            <div class="text-xl font-black text-amber-400 font-mono mt-1">8 / 17 <span class="text-xs font-normal text-slate-400">Cột mốc hoàn tất</span></div>
+            <div class="text-xs text-slate-400 mt-2 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Đang chạy: <strong class="text-slate-200">2 nhiệm vụ</strong></span>
+            </div>
+        </div>
+
+        <!-- Y Combinator Collective IQ -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 shadow-sm">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Trí Tuệ Quỹ (YC Stanford #08)</span>
+            <div class="text-xl font-black text-purple-400 font-mono mt-1">IQ 152.0 <span class="text-xs font-normal text-slate-400">(Peter Thiel Moat)</span></div>
+            <div class="text-xs text-slate-400 mt-2">
+                <span>100% Tiền Thật <strong class="text-emerald-400">OCF/LNST ≥ 1.0x</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN TWO-COLUMN WORKSPACE -->
+    <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+
+        <!-- LEFT: KANBAN BOARD (Mesa Protocol) - 7 COLS -->
+        <div class="xl:col-span-7 space-y-4">
+            <div class="flex items-center justify-between">
+                <h2 class="text-lg font-bold flex items-center gap-2 text-slate-100">
+                    <span>📋</span> Bảng Giao Việc Kanban 11 Phòng Ban (Mesa Jira-Like Protocol)
+                </h2>
+                <span class="text-xs text-slate-400 font-mono">17 Nhiệm vụ tự động hóa 24/7</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <!-- COL 1: BACKLOG -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col h-[520px]">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800">
+                        <span class="font-bold text-xs uppercase text-slate-400">⏳ Chờ Giờ G</span>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300 font-mono">7</span>
+                    </div>
+                    <div class="overflow-y-auto flex-1 pr-1">
+                        
+            <div class="p-3 mb-2.5 rounded-lg border border-rose-500/40 bg-rose-950/30 text-rose-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">14:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 7 VN</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">KHUNG GIỜ VÀNG TÁC CHIẾN (14h00 - 14h25): Soi nến & Lướt T+0</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Minh Quân</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-1400-GOLDENHOUR</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-rose-500/40 bg-rose-950/30 text-rose-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">14:25</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 4 & 9</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Kích hoạt chốt chặn GUARD-03 đóng vị thế T+0 trước ATC</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Victor Sentinel</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-1425-GUARD03</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-amber-500/40 bg-amber-950/20 text-amber-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">15:15</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 5 VN</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Hồi tố Walk-Forward Hit Rate % & Kiểm toán tài khoản TCBS</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Learning Lead</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-1515-WALKFORWARD</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-rose-500/40 bg-rose-950/30 text-rose-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">21:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 10</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Báo cáo Độc quyền 2-3 BCTC chọn lọc (OCF/LNST ≥ 1.0x) Topic 189</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Hiền (Trưởng Ban 10)</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-2100-HIENBCTC</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-amber-500/40 bg-amber-950/20 text-amber-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">21:15</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 11</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Xuất bản kịch bản Video Viral 60s BCTC Hòa Phát vào Topic 190</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Khánh & Bảo</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-2115-KHANHVIDEO</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-amber-500/40 bg-amber-950/20 text-amber-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">22:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 5</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Giờ Tự Học Thích Nghi Quỹ Apex & Tinh chỉnh trọng số AI</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Performance Agent</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-2200-EVOLUTION</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-rose-500/40 bg-rose-950/30 text-rose-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">23:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 8</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Triệu tập Hội Đồng Điều Hành 23h00 & Đóng dấu biên bản EOD</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Master CIO James</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-2300-COUNCIL</span>
+                </div>
+            </div>
+            
+                    </div>
+                </div>
+
+                <!-- COL 2: IN_PROGRESS -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col h-[520px]">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800">
+                        <span class="font-bold text-xs uppercase text-sky-400">⚡ Đang Chạy</span>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-950 text-sky-300 border border-sky-500/40 font-mono">2</span>
+                    </div>
+                    <div class="overflow-y-auto flex-1 pr-1">
+                        
+            <div class="p-3 mb-2.5 rounded-lg border border-amber-500/40 bg-amber-950/20 text-amber-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">09:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 3 & Victor</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Khai hỏa phiên ATO sàn HOSE & Cảnh báo bẫy giá giả</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Victor Sentinel</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-0900-OPENING</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-rose-500/40 bg-rose-950/30 text-rose-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">09:00-15:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 9</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Trực chiến Sentinel quét giá streaming 60s bảo vệ 900 CP</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Victor Sentinel</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-0900-STREAMING</span>
+                </div>
+            </div>
+            
+                    </div>
+                </div>
+
+                <!-- COL 3: DONE -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col h-[520px]">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800">
+                        <span class="font-bold text-xs uppercase text-emerald-400">✅ Hoàn Thành</span>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-500/40 font-mono">8</span>
+                    </div>
+                    <div class="overflow-y-auto flex-1 pr-1">
+                        
+            <div class="p-3 mb-2.5 rounded-lg border border-amber-500/40 bg-amber-950/20 text-amber-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">06:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 9 & System</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Auto-Clean Telegram (Xóa tin rác hôm trước ở Topic 3 & 4)</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Palmer & Cleaner</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-0600-AUTOCLEAN</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-amber-500/40 bg-amber-950/20 text-amber-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">07:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 1</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Báo cáo Vĩ mô SBV, Tỷ giá USD/VND & Phố Wall đêm qua</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Macro Lead</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-0700-MACRO</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-amber-500/40 bg-amber-950/20 text-amber-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">07:30</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 6</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Bản Tin Khai Sáng Buổi Sáng gửi Chủ tịch Phước Trần</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Coach Huấn Luyện</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-0730-COACH</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-rose-500/40 bg-rose-950/30 text-rose-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">08:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 2 & 3</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Rà soát BCTC Forensic & Bảng Alpha Ranking (Top Leader vs Traps)</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Forensic & Screener Lead</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-0800-ALPHA</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-rose-500/40 bg-rose-950/30 text-rose-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">08:30</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 7 & 8</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Xuất bản BẢN TIN TẠP CHÍ BUỔI SÁNG (Ghim Topic 4 kèm 6 nút)</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Minh Quân & James</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-0830-MAGAZINE</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-sky-500/30 bg-sky-950/20 text-sky-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">11:45</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 1 & 3</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Báo cáo Flash khớp lệnh tạm đóng phiên sáng HOSE</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Synthesis Hub</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-1145-FLASH</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-amber-500/40 bg-amber-950/20 text-amber-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">13:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 4 & Victor</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Radar đo lực xả hàng T+2 về tài khoản phiên chiều</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Victor & Quant Risk</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-1300-T2RADAR</span>
+                </div>
+            </div>
+            
+            <div class="p-3 mb-2.5 rounded-lg border border-sky-500/30 bg-sky-950/20 text-sky-300 shadow-sm hover:scale-[1.01] transition">
+                <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="font-mono font-bold text-slate-400">18:00</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">Ban 10</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-100 mb-1">Đồng bộ giá đóng cửa & Cập nhật Thư viện BCTC Master</div>
+                <div class="text-xs text-slate-400 flex items-center justify-between">
+                    <span>👤 Hiền BCTC & IR</span>
+                    <span class="font-mono text-[10px] text-slate-500">TASK-1800-BCTCLIBRARY</span>
+                </div>
+            </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: HIỀN BCTC & KHÁNH STUDIO - 5 COLS -->
+        <div class="xl:col-span-5 space-y-6">
+
+            <!-- HIỀN BCTC CARD -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-sm text-slate-100 flex items-center gap-2">
+                        <span>🌸</span> Ban 10 — Bàn Làm Việc Của Hiền (BCTC & IR)
+                    </h3>
+                    <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40">Topic 189</span>
+                </div>
+                <p class="text-xs text-slate-400">Tự động rà soát 2-3 BCTC chọn lọc lúc 21h00 tối. Cam kết 100% link thật & OCF/LNST ≥ 1.0x.</p>
+
+                <div class="space-y-2 pt-1">
+                    <div class="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60 flex items-center justify-between">
+                        <div>
+                            <span class="font-bold text-xs text-slate-200">HPG (Hòa Phát)</span>
+                            <span class="text-[11px] text-emerald-400 ml-2 font-mono">OCF 1.08x (8,866 tỷ)</span>
+                        </div>
+                        <a href="https://hoaphat.com.vn/quan-he-co-dong" target="_blank" class="text-xs text-sky-400 hover:underline">Link IR ↗</a>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60 flex items-center justify-between">
+                        <div>
+                            <span class="font-bold text-xs text-slate-200">GMD (Gemadept)</span>
+                            <span class="text-[11px] text-emerald-400 ml-2 font-mono">OCF 1.42x (1,441 tỷ)</span>
+                        </div>
+                        <a href="https://gemadept.com.vn/quan-he-co-dong" target="_blank" class="text-xs text-sky-400 hover:underline">Link IR ↗</a>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60 flex items-center justify-between">
+                        <div>
+                            <span class="font-bold text-xs text-slate-200">DGC (Đức Giang)</span>
+                            <span class="text-[11px] text-emerald-400 ml-2 font-mono">OCF 2.79x (2,348 tỷ)</span>
+                        </div>
+                        <a href="https://ducgiangchem.vn/quan-he-co-dong" target="_blank" class="text-xs text-sky-400 hover:underline">Link IR ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KHÁNH STUDIO CARD -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-sm text-slate-100 flex items-center gap-2">
+                        <span>🎬</span> Ban 11 — Studio Video Viral (Khánh & Bảo)
+                    </h3>
+                    <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">Topic 190</span>
+                </div>
+                <p class="text-xs text-slate-400">Xuất bản kịch bản video TikTok 60s phân tích BCTC lúc 21h15 tối và gửi Render Job cho Bảo.</p>
+
+                <div class="p-3 rounded-lg bg-slate-800/60 border border-slate-700/60 text-xs space-y-1.5">
+                    <div class="font-bold text-amber-400">🔥 Video mới nhất: Sự Thật Tiền Thật Hòa Phát (HPG)</div>
+                    <div class="text-slate-300">Hook 3s: 'Đừng vội mừng khi thấy công ty lãi nghìn tỷ! 90% F0 không biết bí mật này...'</div>
+                    <div class="text-[11px] text-slate-400 font-mono">Trạng thái: Đã chuyển sang máy tính Bảo render video 9:16 Edge-TTS</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LOWER SECTION: HARD BUDGET CAPS (PAPERCLIP) TABLE -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+                <h2 class="text-lg font-bold flex items-center gap-2 text-slate-100">
+                    <span>🛡️</span> Quản Trị Hạn Mức Ngân Sách Token 11 Phòng Ban (Paperclip Protocol)
+                </h2>
+                <p class="text-xs text-slate-400 mt-0.5">Mạch ngắt cứng kích hoạt 100% khi phòng ban vượt trần chi phí ngày để bảo vệ ví tiền Chủ tịch.</p>
+            </div>
+            <div class="flex items-center gap-2 font-mono text-xs">
+                <span class="text-slate-400">Trần chi phí toàn quỹ:</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-sky-400 font-bold">$1.20 USD / ngày</span>
+            </div>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+                <thead class="bg-slate-800/60 text-slate-400 uppercase text-[10px] tracking-wider font-mono">
+                    <tr>
+                        <th class="py-3 px-4 rounded-l-lg">Phòng Ban Chuyên Trách</th>
+                        <th class="py-3 px-4">Vai Trò</th>
+                        <th class="py-3 px-4 text-right">Chi Phí Đã Dùng</th>
+                        <th class="py-3 px-4 text-right">Tokens Tiêu Thụ</th>
+                        <th class="py-3 px-4 w-44">Tỷ Lệ Tiêu Thụ %</th>
+                        <th class="py-3 px-4 text-center rounded-r-lg">Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 1 — Vĩ Mô & Luân Chuyển Ngành</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Macro & Geopolitics</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.08</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 40,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 2 — Thẩm Định BCTC & Định Giá</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Equity Fundamental</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.12</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 60,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 3 — Tổng Hợp & Săn Sóng Alpha</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Synthesis Hub</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.08</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 40,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 4 — Quản Trị Rủi Ro Định Lượng</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Quant Risk Committee</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.08</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 40,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 5 — Thẩm Định Hiệu Suất & Tự Học</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Performance Learning</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.08</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 40,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 6 — Học Viện Huấn Luyện NĐT</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Investor Mentorship Coach</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.10</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 50,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 7 — Chuyên Viên Đầu Tư (Minh Quân & Alex)</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Daily Specialist Execution</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.12</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 60,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 8 — Tổng Tư Lệnh Master CIO (James)</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Master CIO Desk</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.20</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 100,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 9 — Giám Sát Thời Gian Thực (Victor)</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Live Portfolio Sentinel</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.10</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 50,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 10 — BCTC, Báo Cáo Thường Niên & IR (Hiền)</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">BCTC & IR Scout</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0008 <span class="text-xs text-slate-500">/ $0.10</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">5,500 <span class="text-xs text-slate-500">/ 50,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 11.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">11.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+        <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-semibold text-slate-200">Ban 11 — Studio Video Viral (Khánh & Bảo)</td>
+            <td class="py-3 px-4 text-xs text-sky-400 font-mono">Viral Content & Video Render</td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">$0.0000 <span class="text-xs text-slate-500">/ $0.15</span></td>
+            <td class="py-3 px-4 text-right font-mono text-slate-300">0 <span class="text-xs text-slate-500">/ 75,000</span></td>
+            <td class="py-3 px-4">
+                <div class="w-full bg-slate-800 rounded-full h-2">
+                    <div class="h-2 rounded-full bg-emerald-500" style="width: 0.0%"></div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-mono">0.0%</span>
+            </td>
+            <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">🟢 An Toàn</span></td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-xs text-slate-500 py-3 font-mono">
+        Apex Quantitative & Fundamental Multi-Agent Hedge Fund • Powered by Antigravity AI Engine • Phục vụ trực tiếp Chủ tịch Phước Trần
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+{
+  "date": "2026-11-04",
+  "last_updated": "2026-11-04 13:23:59",
+  "total_tasks": 17,
+  "columns": {
+    "BACKLOG": [
+      "TASK-1400-GOLDENHOUR",
+      "TASK-1425-GUARD03",
+      "TASK-1515-WALKFORWARD",
+      "TASK-2100-HIENBCTC",
+      "TASK-2115-KHANHVIDEO",
+      "TASK-2200-EVOLUTION",
+      "TASK-2300-COUNCIL"
+    ],
+    "IN_PROGRESS": [
+      "TASK-0900-OPENING",
+      "TASK-0900-STREAMING"
+    ],
+    "AUDIT_REVIEW": [],
+    "DONE": [
+      "TASK-0600-AUTOCLEAN",
+      "TASK-0700-MACRO",
+      "TASK-0730-COACH",
+      "TASK-0800-ALPHA",
+      "TASK-0830-MAGAZINE",
+      "TASK-1145-FLASH",
+      "TASK-1300-T2RADAR",
+      "TASK-1800-BCTCLIBRARY"
+    ]
+  },
+  "tasks": {
+    "TASK-0600-AUTOCLEAN": {
+      "id": "TASK-0600-AUTOCLEAN",
+      "title": "Auto-Clean Telegram (Xóa tin rác hôm trước ở Topic 3 & 4)",
+      "dept": "Ban 9 & System",
+      "assignee": "Palmer & Cleaner",
+      "scheduled_time": "06:00",
+      "status": "DONE",
+      "priority": "HIGH",
+      "output": "data/telegram_sent_messages_tracker.json",
+      "created_at": "2026-11-04 06:00",
+      "completed_at": "2026-11-04 06:00"
+    },
+    "TASK-0700-MACRO": {
+      "id": "TASK-0700-MACRO",
+      "title": "Báo cáo Vĩ mô SBV, Tỷ giá USD/VND & Phố Wall đêm qua",
+      "dept": "Ban 1",
+      "assignee": "Macro Lead",
+      "scheduled_time": "07:00",
+      "status": "DONE",
+      "priority": "HIGH",
+      "output": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-04_VN_Macro_Report.md",
+      "created_at": "2026-11-04 07:00",
+      "completed_at": "2026-11-04 07:00"
+    },
+    "TASK-0730-COACH": {
+      "id": "TASK-0730-COACH",
+      "title": "Bản Tin Khai Sáng Buổi Sáng gửi Chủ tịch Phước Trần",
+      "dept": "Ban 6",
+      "assignee": "Coach Huấn Luyện",
+      "scheduled_time": "07:30",
+      "status": "DONE",
+      "priority": "HIGH",
+      "output": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-04_VN_Mentor_Briefing.md",
+      "created_at": "2026-11-04 07:30",
+      "completed_at": "2026-11-04 07:30"
+    },
+    "TASK-0800-ALPHA": {
+      "id": "TASK-0800-ALPHA",
+      "title": "Rà soát BCTC Forensic & Bảng Alpha Ranking (Top Leader vs Traps)",
+      "dept": "Ban 2 & 3",
+      "assignee": "Forensic & Screener Lead",
+      "scheduled_time": "08:00",
+      "status": "DONE",
+      "priority": "CRITICAL",
+      "output": "VN_Market/03_Synthesis_Memos/2026-11-04_VN_Investment_Memo.md",
+      "created_at": "2026-11-04 08:00",
+      "completed_at": "2026-11-04 08:00"
+    },
+    "TASK-0830-MAGAZINE": {
+      "id": "TASK-0830-MAGAZINE",
+      "title": "Xuất bản BẢN TIN TẠP CHÍ BUỔI SÁNG (Ghim Topic 4 kèm 6 nút)",
+      "dept": "Ban 7 & 8",
+      "assignee": "Minh Quân & James",
+      "scheduled_time": "08:30",
+      "status": "DONE",
+      "priority": "CRITICAL",
+      "output": "08_Master_Investment_CIO/master_execution_blotter.json",
+      "created_at": "2026-11-04 08:30",
+      "completed_at": "2026-11-04 08:30"
+    },
+    "TASK-0900-OPENING": {
+      "id": "TASK-0900-OPENING",
+      "title": "Khai hỏa phiên ATO sàn HOSE & Cảnh báo bẫy giá giả",
+      "dept": "Ban 3 & Victor",
+      "assignee": "Victor Sentinel",
+      "scheduled_time": "09:00",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "output": "Telegram Topic 3 (alerts)",
+      "created_at": "2026-11-04 09:00"
+    },
+    "TASK-0900-STREAMING": {
+      "id": "TASK-0900-STREAMING",
+      "title": "Trực chiến Sentinel quét giá streaming 60s bảo vệ 900 CP",
+      "dept": "Ban 9",
+      "assignee": "Victor Sentinel",
+      "scheduled_time": "09:00-15:00",
+      "status": "IN_PROGRESS",
+      "priority": "CRITICAL",
+      "output": "09_Realtime_Portfolio_Sentinel/portfolio_tracker.md",
+      "created_at": "2026-11-04 09:00-15:00"
+    },
+    "TASK-1145-FLASH": {
+      "id": "TASK-1145-FLASH",
+      "title": "Báo cáo Flash khớp lệnh tạm đóng phiên sáng HOSE",
+      "dept": "Ban 1 & 3",
+      "assignee": "Synthesis Hub",
+      "scheduled_time": "11:45",
+      "status": "DONE",
+      "priority": "MEDIUM",
+      "output": "VN_Market/03_Synthesis_Memos/2026-11-04_Morning_Flash_Report.md",
+      "created_at": "2026-11-04 11:45",
+      "completed_at": "2026-11-04 11:45"
+    },
+    "TASK-1300-T2RADAR": {
+      "id": "TASK-1300-T2RADAR",
+      "title": "Radar đo lực xả hàng T+2 về tài khoản phiên chiều",
+      "dept": "Ban 4 & Victor",
+      "assignee": "Victor & Quant Risk",
+      "scheduled_time": "13:00",
+      "status": "DONE",
+      "priority": "HIGH",
+      "output": "09_Realtime_Portfolio_Sentinel/2026-11-04_T2_Pressure_Radar.md",
+      "created_at": "2026-11-04 13:00",
+      "completed_at": "2026-11-04 13:00"
+    },
+    "TASK-1400-GOLDENHOUR": {
+      "id": "TASK-1400-GOLDENHOUR",
+      "title": "KHUNG GIỜ VÀNG TÁC CHIẾN (14h00 - 14h25): Soi nến & Lướt T+0",
+      "dept": "Ban 7 VN",
+      "assignee": "Minh Quân",
+      "scheduled_time": "14:00",
+      "status": "BACKLOG",
+      "priority": "CRITICAL",
+      "output": "08_Master_Investment_CIO/2026-11-04_Golden_Hour_Tactical_Memo.md",
+      "created_at": "2026-11-04 14:00"
+    },
+    "TASK-1425-GUARD03": {
+      "id": "TASK-1425-GUARD03",
+      "title": "Kích hoạt chốt chặn GUARD-03 đóng vị thế T+0 trước ATC",
+      "dept": "Ban 4 & 9",
+      "assignee": "Victor Sentinel",
+      "scheduled_time": "14:25",
+      "status": "BACKLOG",
+      "priority": "CRITICAL",
+      "output": "Telegram Topic 3 (alerts)",
+      "created_at": "2026-11-04 14:25"
+    },
+    "TASK-1515-WALKFORWARD": {
+      "id": "TASK-1515-WALKFORWARD",
+      "title": "Hồi tố Walk-Forward Hit Rate % & Kiểm toán tài khoản TCBS",
+      "dept": "Ban 5 VN",
+      "assignee": "Learning Lead",
+      "scheduled_time": "15:15",
+      "status": "BACKLOG",
+      "priority": "HIGH",
+      "output": "VN_Market/05_Learning_And_Evolution/2026-11-04_VN_Learning_Report.md",
+      "created_at": "2026-11-04 15:15"
+    },
+    "TASK-1800-BCTCLIBRARY": {
+      "id": "TASK-1800-BCTCLIBRARY",
+      "title": "Đồng bộ giá đóng cửa & Cập nhật Thư viện BCTC Master",
+      "dept": "Ban 10",
+      "assignee": "Hiền BCTC & IR",
+      "scheduled_time": "18:00",
+      "status": "DONE",
+      "priority": "MEDIUM",
+      "output": "VN_Market/02_BCTC_Equity_Research/2026-11-04_BCTC_Master_Library.md",
+      "created_at": "2026-11-04 18:00",
+      "updated_at": "2026-11-04 13:23:59",
+      "note": "Hoàn tất lúc 13:23:59",
+      "completed_at": "2026-11-04 13:23:59"
+    },
+    "TASK-2100-HIENBCTC": {
+      "id": "TASK-2100-HIENBCTC",
+      "title": "Báo cáo Độc quyền 2-3 BCTC chọn lọc (OCF/LNST ≥ 1.0x) Topic 189",
+      "dept": "Ban 10",
+      "assignee": "Hiền (Trưởng Ban 10)",
+      "scheduled_time": "21:00",
+      "status": "BACKLOG",
+      "priority": "CRITICAL",
+      "output": "VN_Market/02_BCTC_Equity_Research/2026-11-04_Hien_Daily_Review.md",
+      "created_at": "2026-11-04 21:00"
+    },
+    "TASK-2115-KHANHVIDEO": {
+      "id": "TASK-2115-KHANHVIDEO",
+      "title": "Xuất bản kịch bản Video Viral 60s BCTC Hòa Phát vào Topic 190",
+      "dept": "Ban 11",
+      "assignee": "Khánh & Bảo",
+      "scheduled_time": "21:15",
+      "status": "BACKLOG",
+      "priority": "HIGH",
+      "output": "11_Viral_Content_Creation/2026-11-04_Viral_Script_Khanh_HPG.md",
+      "created_at": "2026-11-04 21:15"
+    },
+    "TASK-2200-EVOLUTION": {
+      "id": "TASK-2200-EVOLUTION",
+      "title": "Giờ Tự Học Thích Nghi Quỹ Apex & Tinh chỉnh trọng số AI",
+      "dept": "Ban 5",
+      "assignee": "Performance Agent",
+      "scheduled_time": "22:00",
+      "status": "BACKLOG",
+      "priority": "HIGH",
+      "output": "05_Learning_And_Evolution/system_evolution_journal.md",
+      "created_at": "2026-11-04 22:00"
+    },
+    "TASK-2300-COUNCIL": {
+      "id": "TASK-2300-COUNCIL",
+      "title": "Triệu tập Hội Đồng Điều Hành 23h00 & Đóng dấu biên bản EOD",
+      "dept": "Ban 8",
+      "assignee": "Master CIO James",
+      "scheduled_time": "23:00",
+      "status": "BACKLOG",
+      "priority": "SUPREME",
+      "output": "08_Master_Investment_CIO/2026-11-04_23h00_EOD_Executive_Council_Meeting.md",
+      "created_at": "2026-11-04 23:00"
+    }
+  }
+}
