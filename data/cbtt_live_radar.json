@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-04T06:26:07.939973+00:00",
+  "timestamp_utc": "2026-11-04T07:45:11.653406+00:00",
   "scan_date": "2026-11-04",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 34,
+  "total_vn_announcements_count": 33,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -308,14 +308,6 @@
       "source_url": "https://cafef.vn/cong-ty-dau-tien-he-lo-doanh-thu-ca-nam-2026-dat-gan-224000-ty-dong-tang-56-188261103214915204.chn",
       "total_announcements": 2
     },
-    "PNJ": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 07:58:00 +0700",
-      "source_url": "https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn",
-      "total_announcements": 5
-    },
     "SSI": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa \"bay hơi\" khỏi doanh nghiệp từ đầu năm",
@@ -326,11 +318,19 @@
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng thông qua kênh hoán đổi ngoại tệ",
+      "latest_title": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng",
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 13:17:00 +0700",
-      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-thong-qua-kenh-hoan-doi-ngoai-te-188261104132128425.chn",
+      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn",
       "total_announcements": 2
+    },
+    "PNJ": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Giá vàng nhẫn trơn, vàng miếng sáng 4/11 đồng loạt tăng tại SJC, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 10:34:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-4-11-dong-loat-tang-tai-sjc-pnj-bao-tin-minh-chau-va-bao-tin-manh-hai-188261104072255434.chn",
+      "total_announcements": 4
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4895,50 +4895,26 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PNJ"
+        "FPT"
       ],
-      "title": "Người nhà Chủ tịch Cao Thị Ngọc Dung bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ",
-      "summary": "Trong phiên 30/10/2026, bà Trần Phương Ngọc Giao, con gái Chủ tịch Cao Thị Ngọc Dung, bị bán giải chấp hơn 1,8 triệu cổ phiếu PNJ....",
+      "title": "FPT Retail ba năm liên tiếp thăng hạng trong Fortune Southeast Asia 500",
+      "summary": "Đây cũng là năm thứ ba liên tiếp FPT Retail góp mặt và cải thiện thứ hạng, từ vị trí 221 năm 2024 lên 199 năm 2025 và 170 vào năm 2026, tăng tổng cộng 51 bậc....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 07:58:00 +0700",
-      "source_url": "https://cafef.vn/nguoi-nha-chu-tich-cao-thi-ngoc-dung-bi-ban-giai-chap-hon-18-trieu-co-phieu-pnj-188261103071615444.chn"
+      "published_at": "Wed, 04 Nov 26 13:24:00 +0700",
+      "source_url": "https://cafef.vn/fpt-retail-ba-nam-lien-tiep-thang-hang-trong-fortune-southeast-asia-500-18826110413250883.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "FPT"
       ],
-      "title": "FPT Telecom sắp trả cổ tức tiền mặt tỷ lệ 20%",
-      "summary": "Ngày 10/12/2026 tới đây, FPT Telecom sẽ chốt danh cổ đông để trả cổ tức năm 2025 cho cổ đông bằng tiền mặt tỷ lệ 20%....",
-      "event_type": "CO_TUC",
-      "severity": "WARNING",
-      "published_at": "Tue, 03 Nov 26 07:36:00 +0700",
-      "source_url": "https://cafef.vn/fpt-telecom-sap-tra-co-tuc-tien-mat-ty-le-20-188261103071445257.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Một công ty giày ở TP.HCM giải thể, hàng nghìn công nhân nghỉ việc từ ngày 3/11",
-      "summary": "Công ty TNHH ECCO Việt Nam quyết định giải thể, chấm dứt hoạt động sản xuất tại nhà máy ở Khu công nghiệp Bàu Bàng, TPHCM từ ngày 30/11/2026, khiến hàng nghìn lao động bị ảnh hưởng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 07:20:00 +0700",
-      "source_url": "https://cafef.vn/mot-cong-ty-giay-o-tphcm-giai-the-hang-nghin-cong-nhan-nghi-viec-tu-ngay-3-11-188261103055550405.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Ông Trương Gia Bình cùng Thiếu tướng Trương Sơn Lâm hé lộ kế hoạch lớn giữa FPT và MobiFone",
+      "title": "Hé lộ kế hoạch giữa FPT và MobiFone",
       "summary": "Thỏa thuận kết hợp hạ tầng viễn thông, hệ sinh thái khách hàng, thế mạnh về giải pháp, công nghệ số của MobiFone với năng lực công nghệ, nghiên cứu, phát triển và triển khai giải pháp của FPT trong các lĩnh vực viễn thôn...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
-      "source_url": "https://cafef.vn/ong-truong-gia-binh-cung-thieu-tuong-truong-son-lam-he-lo-ke-hoach-lon-giua-fpt-va-mobifone-188261104100137664.chn"
+      "source_url": "https://cafef.vn/he-lo-ke-hoach-lon-giua-fpt-va-mobifone-188261104100137664.chn"
     },
     {
       "market": "VIETNAM",
@@ -4994,12 +4970,12 @@
       "symbols": [
         "VND"
       ],
-      "title": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng thông qua kênh hoán đổi ngoại tệ",
+      "title": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng",
       "summary": "NHNN dự kiến cung ứng gần 48.800 tỷ đồng cho hệ thống ngân hàng thông qua giao dịch hoán đổi USD/VND kỳ hạn 182 ngày, với quy mô tối đa 2 tỷ USD. Đây là kỳ hạn dài hơn nhiều so với các đợt can thiệp trước, trong bối cảnh...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 13:17:00 +0700",
-      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-thong-qua-kenh-hoan-doi-ngoai-te-188261104132128425.chn"
+      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn"
     },
     {
       "market": "VIETNAM",
@@ -5092,6 +5068,30 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Cận cảnh gần 15 km Vành đai 3 trên cao trước ngày thông xe",
+      "summary": "Đoạn trên cao Vành đai 3 dài gần 15 km qua TP.HCM đang được khẩn trương hoàn thiện các hạng mục cuối, hướng đến mục tiêu thông xe trong tháng 11/2026....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 14:15:00 +0700",
+      "source_url": "https://cafef.vn/can-canh-gan-15-km-vanh-dai-3-tren-cao-truoc-ngay-thong-xe-188261104135210243.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "TP.HCM tái khởi động công viên Sài Gòn Safari hơn 450 ha bỏ hoang 22 năm",
+      "summary": "Công viên Sài Gòn Safari rộng 456,85 ha, là dự án công viên lớn nhất TP.HCM nhưng treo suốt 22 năm, đang được TP.HCM kêu gọi đầu tư....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 14:14:00 +0700",
+      "source_url": "https://cafef.vn/tphcm-tai-khoi-dong-cong-vien-sai-gon-safari-hon-450-ha-bo-hoang-22-nam-188261104134735993.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Cập nhật mới nhất về đề xuất 'siêu dự án' TOD tại Hàng Xanh",
       "summary": "Sở Quy hoạch - Kiến trúc TP.HCM vừa có văn bản gửi Công ty CP Đầu tư Hạ tầng kỹ thuật TP.HCM (HoSE: CII) về việc nghiên cứu ý tưởng quy hoạch phát triển đô thị theo định hướng giao thông công cộng (TOD) tại khu vực Hàng ...",
       "event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -5146,18 +5146,6 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
       "source_url": "https://cafef.vn/nghe-thuat-song-cham-giua-compound-vinh-xanh-noi-su-tinh-tai-rieng-tu-giao-hoa-cung-nhip-song-soi-dong-va-da-trai-nghiem-188261103120958419.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Đấu giá 5 lô đất tại Khu đô thị mới Thủ Thiêm, khởi điểm hơn 18.250 tỷ đồng",
-      "summary": "UBND TP.HCM đã phê duyệt giá khởi điểm đấu giá 5 lô đất tại Khu đô thị mới Thủ Thiêm với tổng giá trị tại thời điểm tháng 10/2026 hơn 18.253 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 15:59:00 +0700",
-      "source_url": "https://cafef.vn/dau-gia-5-lo-dat-tai-khu-do-thi-moi-thu-thiem-khoi-diem-hon-18250-ty-dong-188261103153037972.chn"
     },
     {
       "market": "VIETNAM",
