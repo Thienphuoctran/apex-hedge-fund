@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-05 17:23:12  
-> **Số sự kiện ghi nhận:** 38 thông báo  
+> **Thời gian quét:** 2026-11-05 18:07:55  
+> **Số sự kiện ghi nhận:** 39 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -19,6 +19,7 @@
 | **POW** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm? | [Xem Link](https://cafef.vn/dang-sau-khoan-loi-nhuan-tang-dot-bien-pv-power-pow-co-nhung-bien-dong-gi-sau-9-thang-dau-nam-188261104203102274.chn) |
 | **MBB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại giảm bán phiên VN-Index bứt phá, "tung" 350 tỷ gom 2 cổ phiếu VN30 | [Xem Link](https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT "tái sinh" | [Xem Link](https://cafef.vn/fpt-tai-sinh-188261104145852068.chn) |
+| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 6/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng? | [Xem Link](https://cafef.vn/ngay-6-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261105233246163.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bảng xếp hạng tiền gửi ngân hàng: HDBank tăng 3 bậc, ACB lùi về hạng 10, một nhà băng ít ai nghĩ đến tăng trưởng tới 45% | [Xem Link](https://cafef.vn/bang-xep-hang-tien-gui-ngan-hang-hdbank-tang-3-bac-acb-lui-ve-hang-10-mot-nha-bang-it-ai-nghi-den-tang-truong-toi-45-18826110511281671.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2 triệu đồng/lượng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-2-trieu-dong-luong-188261105065603864.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | HDBank tăng 140 bậc qua ba kỳ xếp hạng Fortune Southeast Asia 500 | [Xem Link](https://cafef.vn/hdbank-tang-140-bac-qua-ba-ky-xep-hang-fortune-southeast-asia-500-188261105122506793.chn) |

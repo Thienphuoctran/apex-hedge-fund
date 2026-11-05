@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-05T17:23:12.598107+00:00",
+  "timestamp_utc": "2026-11-05T18:07:55.335063+00:00",
   "scan_date": "2026-11-05",
-  "total_us_filings_count": 368,
-  "total_vn_announcements_count": 38,
+  "total_us_filings_count": 370,
+  "total_vn_announcements_count": 39,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -154,7 +154,7 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982",
-      "total_recent_filings": 10
+      "total_recent_filings": 12
     },
     "V": {
       "latest_form": "144",
@@ -182,7 +182,7 @@
     },
     "NVO": {
       "latest_form": "6-K",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-05",
       "event_type": "MATERIAL_EVENT_8K",
       "severity": "WARNING",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000353278",
@@ -374,11 +374,11 @@
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Bảng xếp hạng tiền gửi ngân hàng: HDBank tăng 3 bậc, ACB lùi về hạng 10, một nhà băng ít ai nghĩ đến tăng trưởng tới 45%",
+      "latest_title": "Ngày 6/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng?",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 00:05:00 +0700",
-      "source_url": "https://cafef.vn/bang-xep-hang-tien-gui-ngan-hang-hdbank-tang-3-bac-acb-lui-ve-hang-10-mot-nha-bang-it-ai-nghi-den-tang-truong-toi-45-18826110511281671.chn",
-      "total_announcements": 5
+      "published_at": "Fri, 06 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-6-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261105233246163.chn",
+      "total_announcements": 6
     },
     "CTG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -1564,6 +1564,30 @@
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
       "filing_date": "2026-11-05",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034734",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034733",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
       "description": "PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
@@ -1628,30 +1652,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001918704-26-034725",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-05",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034724",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-05",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034723",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -2707,6 +2707,42 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
+      "accession_number": "0001193125-26-449239",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-449227",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-449192",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "accession_number": "0001193125-26-449162",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
@@ -2804,18 +2840,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0000950103-26-016961",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-447671",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -3207,6 +3231,18 @@
       "symbol": "NVO",
       "company_name": "NOVO NORDISK A S",
       "form": "6-K",
+      "filing_date": "2026-11-05",
+      "description": "FORM 6-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001171843-26-007156",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000353278"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "NVO",
+      "company_name": "NOVO NORDISK A S",
+      "form": "6-K",
       "filing_date": "2026-11-04",
       "description": "6-K",
       "event_type": "MATERIAL_EVENT_8K",
@@ -3332,18 +3368,6 @@
       "event_type": "MATERIAL_EVENT_8K",
       "severity": "WARNING",
       "accession_number": "0001171843-26-006038",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000353278"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "NVO",
-      "company_name": "NOVO NORDISK A S",
-      "form": "6-K",
-      "filing_date": "2026-09-09",
-      "description": "FORM 6-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001171843-26-005925",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000353278"
     },
     {
@@ -5003,6 +5027,18 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 14:58:00 +0700",
       "source_url": "https://cafef.vn/fpt-tai-sinh-188261104145852068.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Ngày 6/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng?",
+      "summary": "Lãi suất tiết kiệm kỳ hạn 6 tháng tại 7 ngân hàng MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB đang có sự chênh lệch đáng kể. Theo đó, mức lãi suất gửi online cao nhất trong nhóm khảo sát đạt 6,7%/năm, trong kh...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-6-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261105233246163.chn"
     },
     {
       "market": "VIETNAM",
