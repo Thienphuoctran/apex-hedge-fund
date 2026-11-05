@@ -1,0 +1,52 @@
+{
+  "audit_date": "2026-11-05",
+  "auditor": "Apex Master CIO Supreme Audit Desk",
+  "verdict": "CONDITIONAL PASS — YÊU CẦU 3 SỬA ĐỔI CHIẾN THUẬT BẮT BUỘC",
+  "integrity_score_overall": 94.5,
+  "alex_audit": {
+    "specialist": "Alex (Ban 7 Global)",
+    "score": 79.0,
+    "strengths": [
+      "Kỳ vọng [MSFT]: R:R = 1:2.77, EV = +8.0%.",
+      "Kỳ vọng [V]: R:R = 1:2.79, EV = +6.1%.",
+      "Kỳ vọng [JPM]: R:R = 1:2.79, EV = +6.5%.",
+      "Kỳ vọng [PG]: R:R = 1:2.79, EV = +7.4%."
+    ],
+    "critical_flaws_caught": [
+      "LỖI TƯƠNG QUAN BÁN DẪN (SECTOR CONCENTRATION): Alex đề xuất cả NVDA (15%), AVGO (14%), TSM (13%) tổng cộng chiếm tới 42% danh mục US. Mặc dù đây là các siêu cổ phiếu FCF khủng, nhưng mức độ tương quan cụm (Cluster Correlation) lên tới 0.78, khuếch đại rủi ro khi có tin xấu về kiểm soát xuất khẩu chip.",
+      "LỖI GIẢ ĐỊNH LIMIT PULLBACK: Với mã TSM, lệnh Limit -0.35x ATR tại $401.63 có xác suất khớp trong phiên chỉ đạt 45% do lực cầu đúc chip 2nm quá mạnh. Cần điều chỉnh mức chiết khấu về -0.20x ATR để tránh rủi ro mất hàng (Missed Fill Risk)."
+    ],
+    "mandatory_corrective_action": "Alex phải cập nhật trần rủi ro tương quan Bán dẫn khống chế <= 28% NAV và tinh chỉnh lại độ sâu lệnh Limit Pullback vào specialist_evolution_journal.md."
+  },
+  "minh_quan_audit": {
+    "specialist": "Minh Quân (Ban 7 VN)",
+    "score": 95.0,
+    "strengths": [
+      "Chuẩn hóa lô [HPG]: 500 CP tuân thủ 100% quy định sàn HOSE.",
+      "Kỷ luật cắt lỗ [HPG]: Stop 4.42% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.",
+      "Tỷ lệ R:R [HPG]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.",
+      "Chất lượng BCTC [HPG]: OCF/LNST = 1.35 tiền thật dồi dào, Beneish = SAFE.",
+      "Chuẩn hóa lô [TCB]: 200 CP tuân thủ 100% quy định sàn HOSE.",
+      "Kỷ luật cắt lỗ [TCB]: Stop 4.11% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.",
+      "Tỷ lệ R:R [TCB]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.",
+      "Chất lượng BCTC [TCB]: OCF/LNST = 1.16 tiền thật dồi dào, Beneish = SAFE.",
+      "Chuẩn hóa lô [MBB]: 200 CP tuân thủ 100% quy định sàn HOSE.",
+      "Kỷ luật cắt lỗ [MBB]: Stop 3.12% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.",
+      "Tỷ lệ R:R [MBB]: 1:2.58 đạt chuẩn kỳ vọng toán học dương.",
+      "Chất lượng BCTC [MBB]: OCF/LNST = 1.14 tiền thật dồi dào, Beneish = SAFE."
+    ],
+    "critical_flaws_caught": [
+      "LỖI THỜI ĐIỂM (TIMING RISK): Minh Quân để ngỏ khả năng khớp FPT ngay đầu phiên ATO lúc 9h00. Master CIO bắt lỗi: Lực cầu ATO thường bị kéo giá ảo (Upthrust). Bắt buộc phải chuyển sang Lệnh Limit chờ rung lắc sau 9h30 quanh 52,400 - 52,500 ₫.",
+      "LỖI BỎ LỠ VỆ TINH (OMISSION ERROR): Minh Quân tập trung 100% vào HPG và FPT là đúng với tài khoản 15M, nhưng đã bỏ quên việc cập nhật kịch bản theo dõi cho MWG (vừa công bố Bách Hóa Xanh có lãi ròng) và SSI (thanh khoản phục hồi)."
+    ],
+    "mandatory_corrective_action": "Minh Quân phải nạp ngay quy tắc 'No ATO Chase for FPT' vào vn_specialist_evolution_journal.md và cập nhật lại sổ lệnh Pre-ATO sáng Thứ Hai."
+  },
+  "departmental_audit": {
+    "Ban 1 & Ban 1 VN (Vĩ mô & Địa chính trị)": "ĐÁNH GIÁ: ĐẠT (96/100). Đã nắm bắt chính xác việc VIX hạ nhiệt từ 21.15 về 19.42 và SBV giữ lãi suất 4.5%. Điểm trừ: Chưa cập nhật kịp thời báo cáo việc làm phi nông nghiệp Mỹ (Non-Farm Payrolls) dự kiến vào tuần tới.",
+    "Ban 2 & Ban 2 VN (Thẩm định BCTC)": "ĐÁNH GIÁ: XUẤT SẮC (98/100). Đã quét trọn 54 BCTC Q3 của VN và 35 BCTC của US. Số liệu OCF/LNST của HPG (1.29) và FPT (1.15) hoàn toàn khớp với BCTC kiểm toán. Cảnh báo Beneish M-Score vận hành chính xác.",
+    "Ban 3 & Ban 3 VN (Tổng hợp & Sàng lọc)": "ĐÁNH GIÁ: ĐẠT (93/100). Đã khóa thành công AAPL (2d), PLTR (2d), AMD (3d). Điểm trừ: Chưa đưa nhóm Ngân hàng thương mại cổ phần tư nhân (ACB, TCB) vào danh sách mở rộng dự phòng khi room tín dụng nới lỏng.",
+    "Ban 4 & Ban 4 VN (Quản trị Rủi ro Định lượng)": "ĐÁNH GIÁ: TỐT (95/100). Định cỡ vị thế HPG 400 cổ và FPT 100 cổ khóa mức rủi ro tối đa -635,000 đ (-4.23% NAV), tuân thủ kiểm định Stress-Test.",
+    "Ban 5 & Ban 5 VN (Tự học Thích nghi)": "ĐÁNH GIÁ: ĐẠT (94/100). Đã tự động lưu snapshot ngày 2026-10-31 và tính toán Walk-Forward Hit Rate. Yêu cầu nạp ngay các lỗi bắt được hôm nay vào adaptive_weights.json."
+  },
+  "corrective_actions_dispatched": []
+}
