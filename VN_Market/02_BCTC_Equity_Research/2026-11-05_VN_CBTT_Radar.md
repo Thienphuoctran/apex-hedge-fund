@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-05 15:05:28  
-> **Số sự kiện ghi nhận:** 32 thông báo  
+> **Thời gian quét:** 2026-11-05 16:12:03  
+> **Số sự kiện ghi nhận:** 33 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -29,6 +29,7 @@
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Toàn cảnh dự án mở rộng cao tốc TP.HCM - Long Thành | [Xem Link](https://cafef.vn/toan-canh-du-an-mo-rong-cao-toc-tphcm-long-thanh-188261105094350987.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | IVY Central – Sống giữa tâm mạch tri thức, đón nhịp phát triển khu đông TP.HCM | [Xem Link](https://cafef.vn/ivy-central-song-giua-tam-mach-tri-thuc-don-nhip-phat-trien-khu-dong-tphcm-188261104192015949.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khám phá bộ sưu tập nhà phố biệt thự danh giá hiếm hoi tại Nam Rạch Chiếc | [Xem Link](https://cafef.vn/kham-pha-bo-suu-tap-nha-pho-biet-thu-danh-gia-hiem-hoi-tai-nam-rach-chiec-188261103202016902.chn) |
+| **CTG, DXG, HPG, MBB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại mua ròng đột biến ở VIX | [Xem Link](https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm) |
 | **SSI** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn | [Xem Link](https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại quay trở lại gom FPT | [Xem Link](https://vneconomy.vn/khoi-ngoai-quay-tro-lai-gom-fpt.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | MB Economic Insights 2026: Khơi thông nguồn vốn, thích ứng nhanh trước biến động sắp diễn ra tại TP. HCM | [Xem Link](https://vneconomy.vn/mb-economic-insights-2026-khoi-thong-nguon-von-thich-ung-nhanh-truoc-bien-dong-sap-dien-ra-tai-tp-hcm.htm) |
