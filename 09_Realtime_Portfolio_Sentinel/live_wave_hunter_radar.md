@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-05 03:44:10`  
+*Cập nhật thời gian thực*: `2026-11-05 04:41:03`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -10,7 +10,7 @@
 | Phòng Ban Chuyên Trách | Trạng Thái Hoạt Động | Báo Cáo Tác Chiến Thời Gian Thực |
 | :--- | :---: | :--- |
 | **Ban 1 (Global & VN) — Vĩ Mô & Tiền Tệ SBV/Fed** | **🟢 ACTIVE 24/7** | Giám sát DXY, VIX, Lãi suất SBV & Tỷ giá USD/VND |
-| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 39 tin CBTT |
+| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 36 tin CBTT |
 | **Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff** | **🟢 ACTIVE 24/7** | Phát hiện 8 sóng cổ phiếu VN & 6 sóng cổ phiếu Mỹ đạt chuẩn AAA/AA |
 | **Ban 4 (Global & VN) — Hội Đồng Rủi Ro Định Lượng ATR** | **🟢 ACTIVE 24/7** | Khóa chặt Stop 2xATR <= 7.5% & R:R >= 1:2.0 |
 | **Ban 5 (Global & VN) — Tự Học Thích Nghi & Kiểm Định 4 Ngày** | **🟢 ACTIVE 24/7** | Điểm sức khỏe hệ thống đạt 100/100 (Zero Drift) |
@@ -60,7 +60,7 @@
 | `US_SEC_EDGAR` | **`GOOGL`** ⭐ **(ĐANG THEO DÕI)** | `SEC Form 10-Q` | `2026-10-29` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`MSFT`** | `SEC Form 10-Q` | `2026-10-28` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`AAPL`** | `SEC Form 10-K` | `2026-11-03` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
+| `VIETNAM_CBTT` | **`DPM`** | `BCTC_KET_QUA_KINH_DOANH` | `Thu, 05 Nov 26 1` | 9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026 |
 | `VIETNAM_CBTT` | **`MWG`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Thu, 05 Nov 26 0` | Ông Nguyễn Đức Tài: Nếu đầu tư 1 tỷ đồng vào Thế Giới Di Động và giữ nguyên trong 20 năm, khoản tiền đó hiện nay đã thành 400 tỷ đồng |
 | `VIETNAM_CBTT` | **`HAH`** | `TIN_DOANH_NGHIEP` | `Thu, 05 Nov 26 0` | Đại gia Hải Phòng có danh mục cổ phiếu gần 11.000 tỷ đồng: Ôm 62 triệu cổ phiếu GEX, 42 triệu cổ phiếu HAH, 1% Eximbank |
 | `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Wed, 04 Nov 26 1` | Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ |
-| `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Wed, 04 Nov 26 0` | Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM |

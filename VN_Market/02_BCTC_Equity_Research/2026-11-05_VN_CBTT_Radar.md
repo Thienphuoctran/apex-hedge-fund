@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-05 03:43:57  
-> **Số sự kiện ghi nhận:** 39 thông báo  
+> **Thời gian quét:** 2026-11-05 04:40:47  
+> **Số sự kiện ghi nhận:** 36 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **DPM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | 9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026 | [Xem Link](https://cafef.vn/9-thang-da-hoan-thanh-gap-doi-muc-tieu-loi-nhuan-ca-nam-ong-lon-nganh-phan-bon-tang-113-ke-hoach-nam-2026-188261105105540776.chn) |
 | **MWG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ông Nguyễn Đức Tài: Nếu đầu tư 1 tỷ đồng vào Thế Giới Di Động và giữ nguyên trong 20 năm, khoản tiền đó hiện nay đã thành 400 tỷ đồng | [Xem Link](https://cafef.vn/ong-nguyen-duc-tai-neu-dau-tu-1-ty-dong-vao-the-gioi-di-dong-va-giu-nguyen-trong-20-nam-khoan-tien-do-hien-nay-da-thanh-400-ty-dong-188261105081557057.chn) |
 | **HAH** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Đại gia Hải Phòng có danh mục cổ phiếu gần 11.000 tỷ đồng: Ôm 62 triệu cổ phiếu GEX, 42 triệu cổ phiếu HAH, 1% Eximbank | [Xem Link](https://cafef.vn/khong-chi-nam-1-eximbank-dai-gia-cang-bien-hai-phong-lo-danh-muc-dau-tu-gan-11000-ty-dong-om-62-trieu-co-phieu-gex-42-trieu-co-phieu-hah-188261105070213823.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ | [Xem Link](https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn) |
@@ -15,8 +16,6 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT Retail ba năm liên tiếp thăng hạng trong Fortune Southeast Asia 500 | [Xem Link](https://cafef.vn/fpt-retail-ba-nam-lien-tiep-thang-hang-trong-fortune-southeast-asia-500-18826110413250883.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hé lộ kế hoạch giữa FPT và MobiFone | [Xem Link](https://cafef.vn/he-lo-ke-hoach-lon-giua-fpt-va-mobifone-188261104100137664.chn) |
 | **HCM** | `CO_TUC` | ⚠️ CHÚ Ý | ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031 | [Xem Link](https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn) |
-| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CTCK đưa ra dự báo bất ngờ về triển vọng FPT | [Xem Link](https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-trien-vong-fpt-188261103163220239.chn) |
-| **FPT, SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa "bay hơi" khỏi doanh nghiệp từ đầu năm | [Xem Link](https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2,5 triệu đồng/lượng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn) |
 | **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB ("ACBC") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn) |
 | **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB (“ACBC”) thông báo chào bán chứng chỉ Quỹ ACBC-SFUND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-sfund-ra-cong-chung-18826110508211184.chn) |
@@ -34,8 +33,6 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chốt giá 3.790 căn hộ Thủ Thiêm, TP.HCM quy định 'sức khỏe' doanh nghiệp đấu giá | [Xem Link](https://cafef.vn/chot-gia-3790-can-ho-thu-thiem-tphcm-quy-dinh-suc-khoe-doanh-nghiep-dau-gia-188261104185950187.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cận cảnh gần 15 km Vành đai 3 trên cao trước ngày thông xe | [Xem Link](https://cafef.vn/can-canh-gan-15-km-vanh-dai-3-tren-cao-truoc-ngay-thong-xe-188261104135210243.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | TP.HCM tái khởi động công viên Sài Gòn Safari hơn 450 ha bỏ hoang 22 năm | [Xem Link](https://cafef.vn/tphcm-tai-khoi-dong-cong-vien-sai-gon-safari-hon-450-ha-bo-hoang-22-nam-188261104134735993.chn) |
-| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Cập nhật mới nhất về đề xuất 'siêu dự án' TOD tại Hàng Xanh | [Xem Link](https://cafef.vn/cap-nhat-moi-nhat-ve-de-xuat-sieu-du-an-tod-tai-hang-xanh-18826110412413787.chn) |
-| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Thông tin mới về dự án nhà ở hơn 4.600 tỷ đồng cho 4.000 cư dân tại một xã của TP.HCM | [Xem Link](https://cafef.vn/thong-tin-moi-ve-du-an-nha-o-hon-4600-ty-dong-cho-4000-cu-dan-tai-mot-xa-cua-tphcm-18826110412391902.chn) |
 | **SSI** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn | [Xem Link](https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại quay trở lại gom FPT | [Xem Link](https://vneconomy.vn/khoi-ngoai-quay-tro-lai-gom-fpt.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | MB Economic Insights 2026: Khơi thông nguồn vốn, thích ứng nhanh trước biến động sắp diễn ra tại TP. HCM | [Xem Link](https://vneconomy.vn/mb-economic-insights-2026-khoi-thong-nguon-von-thich-ung-nhanh-truoc-bien-dong-sap-dien-ra-tai-tp-hcm.htm) |

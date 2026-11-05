@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-05T03:43:57.763674+00:00",
+  "timestamp_utc": "2026-11-05T04:40:47.568164+00:00",
   "scan_date": "2026-11-05",
   "total_us_filings_count": 368,
-  "total_vn_announcements_count": 39,
+  "total_vn_announcements_count": 36,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "DPM": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 05 Nov 26 10:53:00 +0700",
+      "source_url": "https://cafef.vn/9-thang-da-hoan-thanh-gap-doi-muc-tieu-loi-nhuan-ca-nam-ong-lon-nganh-phan-bon-tang-113-ke-hoach-nam-2026-188261105105540776.chn",
+      "total_announcements": 1
+    },
     "MWG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Ông Nguyễn Đức Tài: Nếu đầu tư 1 tỷ đồng vào Thế Giới Di Động và giữ nguyên trong 20 năm, khoản tiền đó hiện nay đã thành 400 tỷ đồng",
@@ -306,7 +314,7 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
       "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn",
-      "total_announcements": 8
+      "total_announcements": 6
     },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -314,7 +322,7 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
       "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn",
-      "total_announcements": 14
+      "total_announcements": 12
     },
     "VND": {
       "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -340,14 +348,6 @@
       "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn",
       "total_announcements": 1
     },
-    "SSI": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa \"bay hơi\" khỏi doanh nghiệp từ đầu năm",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn",
-      "total_announcements": 2
-    },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2,5 triệu đồng/lượng",
@@ -363,6 +363,14 @@
       "published_at": "Thu, 05 Nov 26 09:30:00 +0700",
       "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn",
       "total_announcements": 4
+    },
+    "SSI": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 05 Nov 2026 03:26:16 GMT",
+      "source_url": "https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm",
+      "total_announcements": 1
     }
   },
   "us_filings": [
@@ -4787,6 +4795,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "DPM"
+      ],
+      "title": "9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026",
+      "summary": "Tổng công ty Phân bón và Hóa chất Dầu khí (PVFCCo - Phú Mỹ, mã DPM) nâng mục tiêu lợi nhuận sau thuế hợp nhất năm 2026 lên 1.445 tỷ đồng, cao hơn 112,5% so với kế hoạch đầu năm. Sau 9 tháng, doanh nghiệp đã thực hiện đượ...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 05 Nov 26 10:53:00 +0700",
+      "source_url": "https://cafef.vn/9-thang-da-hoan-thanh-gap-doi-muc-tieu-loi-nhuan-ca-nam-ong-lon-nganh-phan-bon-tang-113-ke-hoach-nam-2026-188261105105540776.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "MWG"
       ],
       "title": "Ông Nguyễn Đức Tài: Nếu đầu tư 1 tỷ đồng vào Thế Giới Di Động và giữ nguyên trong 20 năm, khoản tiền đó hiện nay đã thành 400 tỷ đồng",
@@ -4915,31 +4935,6 @@
       "severity": "WARNING",
       "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
       "source_url": "https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "CTCK đưa ra dự báo bất ngờ về triển vọng FPT",
-      "summary": "Đằng sau nhận định \"Khó để cạnh tranh\" là những thách thức mà VCBS nhìn thấy trong mô hình kinh doanh của FPT....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 00:04:00 +0700",
-      "source_url": "https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-trien-vong-fpt-188261103163220239.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT",
-        "SSI"
-      ],
-      "title": "Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa \"bay hơi\" khỏi doanh nghiệp từ đầu năm",
-      "summary": "Chỉ riêng 20 doanh nghiệp đứng đầu danh sách đã mất gần 623.000 tỷ đồng vốn hóa kể từ đầu năm 2026....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn"
     },
     {
       "market": "VIETNAM",
@@ -5144,30 +5139,6 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 14:14:00 +0700",
       "source_url": "https://cafef.vn/tphcm-tai-khoi-dong-cong-vien-sai-gon-safari-hon-450-ha-bo-hoang-22-nam-188261104134735993.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Cập nhật mới nhất về đề xuất 'siêu dự án' TOD tại Hàng Xanh",
-      "summary": "Sở Quy hoạch - Kiến trúc TP.HCM vừa có văn bản gửi Công ty CP Đầu tư Hạ tầng kỹ thuật TP.HCM (HoSE: CII) về việc nghiên cứu ý tưởng quy hoạch phát triển đô thị theo định hướng giao thông công cộng (TOD) tại khu vực Hàng ...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 12:51:00 +0700",
-      "source_url": "https://cafef.vn/cap-nhat-moi-nhat-ve-de-xuat-sieu-du-an-tod-tai-hang-xanh-18826110412413787.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Thông tin mới về dự án nhà ở hơn 4.600 tỷ đồng cho 4.000 cư dân tại một xã của TP.HCM",
-      "summary": "UBND xã Tân Nhựt (TP.HCM) mới có Quyết định phê duyệt Đồ án quy hoạch chi tiết tỷ lệ 1/500 Khu căn hộ cao tầng NBB II trên địa bàn xã....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 12:50:00 +0700",
-      "source_url": "https://cafef.vn/thong-tin-moi-ve-du-an-nha-o-hon-4600-ty-dong-cho-4000-cu-dan-tai-mot-xa-cua-tphcm-18826110412391902.chn"
     },
     {
       "market": "VIETNAM",
