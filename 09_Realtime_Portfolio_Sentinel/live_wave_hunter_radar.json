@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05 16:12:20",
+  "generated_at": "2026-11-05 17:23:21",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -361,24 +361,24 @@
       "market": "VIETNAM_CBTT",
       "symbol": "HPG",
       "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Thu, 05 Nov 26 1",
-      "headline": "Con trai tỷ phú Trần Đình Long chỉ mua 1/5 số cổ phiếu HPG đã đăng ký",
+      "date": "Fri, 06 Nov 26 0",
+      "headline": "Hé lộ lý do con trai tỷ phú Trần Đình Long không mua đủ lượng cổ phiếu HPG đăng ký",
       "is_portfolio_holding": true
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "REE",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Thu, 05 Nov 26 1",
-      "headline": "‘Nữ tướng’ cơ điện lạnh REE Nguyễn Thị Mai Thanh lần đầu tiên nói về sự buông bỏ và thất bại trong quá trình chuyển giao",
+      "symbol": "HCM",
+      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
+      "date": "Fri, 06 Nov 26 0",
+      "headline": "Doanh nhân U80 quê Hà Tĩnh đi xây nhà, làm thủy điện có khối tài sản gần 2.000 tỷ đồng",
       "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "VND",
-      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
-      "date": "Thu, 05 Nov 26 1",
-      "headline": "VNDirect sắp họp đại hội bất thường",
+      "symbol": "PNJ",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 06 Nov 26 0",
+      "headline": "Con gái Chủ tịch PNJ đã bị bán giải chấp gần nửa lượng cổ phiếu nắm giữ trong chưa đầy 1 tháng",
       "is_portfolio_holding": false
     }
   ],
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 33 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 38 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

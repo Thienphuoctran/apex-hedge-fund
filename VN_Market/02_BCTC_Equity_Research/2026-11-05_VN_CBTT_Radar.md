@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-05 16:12:03  
-> **Số sự kiện ghi nhận:** 33 thông báo  
+> **Thời gian quét:** 2026-11-05 17:23:12  
+> **Số sự kiện ghi nhận:** 38 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -9,12 +9,17 @@
 | **DPM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | 9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026 | [Xem Link](https://cafef.vn/9-thang-da-hoan-thanh-gap-doi-muc-tieu-loi-nhuan-ca-nam-ong-lon-nganh-phan-bon-tang-113-ke-hoach-nam-2026-188261105105540776.chn) |
 | **MWG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ông Nguyễn Đức Tài: Nếu đầu tư 1 tỷ đồng vào Thế Giới Di Động và giữ nguyên trong 20 năm, khoản tiền đó hiện nay đã thành 400 tỷ đồng | [Xem Link](https://cafef.vn/ong-nguyen-duc-tai-neu-dau-tu-1-ty-dong-vao-the-gioi-di-dong-va-giu-nguyen-trong-20-nam-khoan-tien-do-hien-nay-da-thanh-400-ty-dong-188261105081557057.chn) |
 | **HAH** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Đại gia Hải Phòng có danh mục cổ phiếu gần 11.000 tỷ đồng: Ôm 62 triệu cổ phiếu GEX, 42 triệu cổ phiếu HAH, 1% Eximbank | [Xem Link](https://cafef.vn/khong-chi-nam-1-eximbank-dai-gia-cang-bien-hai-phong-lo-danh-muc-dau-tu-gan-11000-ty-dong-om-62-trieu-co-phieu-gex-42-trieu-co-phieu-hah-188261105070213823.chn) |
+| **HPG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hé lộ lý do con trai tỷ phú Trần Đình Long không mua đủ lượng cổ phiếu HPG đăng ký | [Xem Link](https://cafef.vn/he-lo-ly-do-con-trai-ty-phu-tran-dinh-long-khong-mua-du-luong-co-phieu-hpg-dang-ky-188261105224959143.chn) |
+| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Doanh nhân U80 quê Hà Tĩnh đi xây nhà, làm thủy điện có khối tài sản gần 2.000 tỷ đồng | [Xem Link](https://cafef.vn/doanh-nhan-u80-que-ha-tinh-di-xay-nha-lam-thuy-dien-co-khoi-tai-san-gan-2000-ty-dong-188261105223358594.chn) |
+| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái Chủ tịch PNJ đã bị bán giải chấp gần nửa lượng cổ phiếu nắm giữ trong chưa đầy 1 tháng | [Xem Link](https://cafef.vn/con-gai-chu-tich-pnj-da-bi-ban-giai-chap-gan-nua-luong-co-phieu-nam-giu-trong-chua-day-1-thang-188261105223516603.chn) |
+| **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Quỹ ngoại quy mô 23.000 tỷ lỗ gần 15% từ đầu năm, không tiếc lời khen một cổ phiếu “họ” FPT | [Xem Link](https://cafef.vn/quy-ngoai-quy-mo-23000-ty-lo-gan-15-tu-dau-nam-khong-tiec-loi-khen-mot-co-phieu-ho-fpt-188261105230521952.chn) |
 | **HPG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con trai tỷ phú Trần Đình Long chỉ mua 1/5 số cổ phiếu HPG đã đăng ký | [Xem Link](https://cafef.vn/con-trai-ty-phu-tran-dinh-long-chi-mua-1-5-so-co-phieu-hpg-da-dang-ky-188261105173848906.chn) |
 | **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | ‘Nữ tướng’ cơ điện lạnh REE Nguyễn Thị Mai Thanh lần đầu tiên nói về sự buông bỏ và thất bại trong quá trình chuyển giao | [Xem Link](https://cafef.vn/nu-tuong-co-dien-lanh-ree-nguyen-thi-mai-thanh-lan-dau-tien-noi-ve-su-buong-bo-va-that-bai-trong-qua-trinh-chuyen-giao-188261105163638727.chn) |
 | **VND** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | VNDirect sắp họp đại hội bất thường | [Xem Link](https://cafef.vn/vndirect-sap-hop-dai-hoi-bat-thuong-188261105101903973.chn) |
 | **POW** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm? | [Xem Link](https://cafef.vn/dang-sau-khoan-loi-nhuan-tang-dot-bien-pv-power-pow-co-nhung-bien-dong-gi-sau-9-thang-dau-nam-188261104203102274.chn) |
 | **MBB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại giảm bán phiên VN-Index bứt phá, "tung" 350 tỷ gom 2 cổ phiếu VN30 | [Xem Link](https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT "tái sinh" | [Xem Link](https://cafef.vn/fpt-tai-sinh-188261104145852068.chn) |
+| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bảng xếp hạng tiền gửi ngân hàng: HDBank tăng 3 bậc, ACB lùi về hạng 10, một nhà băng ít ai nghĩ đến tăng trưởng tới 45% | [Xem Link](https://cafef.vn/bang-xep-hang-tien-gui-ngan-hang-hdbank-tang-3-bac-acb-lui-ve-hang-10-mot-nha-bang-it-ai-nghi-den-tang-truong-toi-45-18826110511281671.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2 triệu đồng/lượng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-2-trieu-dong-luong-188261105065603864.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | HDBank tăng 140 bậc qua ba kỳ xếp hạng Fortune Southeast Asia 500 | [Xem Link](https://cafef.vn/hdbank-tang-140-bac-qua-ba-ky-xep-hang-fortune-southeast-asia-500-188261105122506793.chn) |
 | **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB ("ACBC") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn) |
