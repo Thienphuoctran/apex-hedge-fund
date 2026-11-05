@@ -9,60 +9,60 @@
 
 | Mã CK | Sàn | Ngành | Xếp Hạng | Điểm 10 Danh Thủ | F-Score (/9) | RS Rating | PEG (Lynch) | EVA Spread | OCF/LNST | Altman Z'' / CAMELS | Beneish M | Giá Trị Nội Tại Graham |
 | :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **HDB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **96.8/100** | 9/9 | 95 | 0.3x | +15.4% | CASA 12.5% | 3.12 (SAFE) | -2.7 (SAFE) | 61,571 ₫ (+182.4%) |
-| **GMD** | HOSE | Cảng Biển & Logistics Vận Tải | **AAA** | **96.5/100** | 9/9 | 87 | 0.82x | +2.2% | 1.14x | 10.67 (SAFE) | -2.71 (SAFE) | 62,232 ₫ (+25.2%) |
-| **IDC** | HNX | Bất Động Sản Khu Công Nghiệp | **AAA** | **94.9/100** | 9/9 | 83 | 0.39x | +19.1% | 1.58x | 11.75 (SAFE) | -3.06 (SAFE) | 41,198 ₫ (+64.8%) |
-| **TCB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **94.2/100** | 9/9 | 89 | 0.33x | +7.1% | CASA 40.5% | 3.51 (SAFE) | -2.68 (SAFE) | 50,590 ₫ (+136.4%) |
-| **MBB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **93.6/100** | 9/9 | 59 | 0.38x | +13.2% | CASA 38.6% | 3.44 (SAFE) | -2.69 (SAFE) | 51,634 ₫ (+173.2%) |
-| **MWG** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **92.8/100** | 9/9 | 74 | 0.21x | +8.4% | 2.22x | 10.78 (SAFE) | -2.99 (SAFE) | 135,661 ₫ (+87.6%) |
-| **FPT** | HOSE | Công Nghệ Thông Tin & Viễn Thông | **AAA** | **92.7/100** | 9/9 | 23 | 0.47x | +19.4% | 1.25x | 12.94 (SAFE) | -2.8 (SAFE) | 88,558 ₫ (+75.7%) |
-| **HAH** | HOSE | Cảng Biển & Logistics Vận Tải | **AAA** | **92.6/100** | 9/9 | 50 | 0.19x | +1.7% | 2.07x | 6.79 (SAFE) | -2.94 (SAFE) | 110,974 ₫ (+140.2%) |
-| **PVT** | HOSE | Cảng Biển & Logistics Vận Tải | **AAA** | **92.4/100** | 9/9 | 96 | 0.46x | +2.0% | 2.01x | 8.08 (SAFE) | -2.93 (SAFE) | 47,720 ₫ (+129.4%) |
-| **CTG** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **92.3/100** | 9/9 | 57 | 0.37x | +13.4% | CASA 22.6% | 3.24 (SAFE) | -2.69 (SAFE) | 79,272 ₫ (+163.8%) |
-| **MBS** | HNX | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **92.2/100** | 9/9 | 84 | 0.37x | +2.6% | 1.21x | 2.77 (SAFE) | -2.68 (SAFE) | 35,745 ₫ (+43.0%) |
-| **BID** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **91.0/100** | 9/9 | 44 | 0.64x | +9.1% | CASA 19.8% | 3.21 (SAFE) | -2.68 (SAFE) | 61,264 ₫ (+93.3%) |
-| **ACB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **89.9/100** | 9/9 | 72 | 0.68x | +8.0% | CASA 23.2% | 3.26 (SAFE) | -2.69 (SAFE) | 39,104 ₫ (+93.1%) |
-| **VCG** | HOSE | Hạ Tầng Xây Dựng & Đầu Tư Công | **AAA** | **89.7/100** | 8/9 | 42 | 0.21x | -3.6% | 1.79x | 7.57 (SAFE) | -2.6 (SAFE) | 32,260 ₫ (+112.2%) |
-| **STB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **89.6/100** | 9/9 | 81 | 0.52x | -6.6% | CASA 18.9% | 2.83 (SAFE) | -2.71 (SAFE) | 109,035 ₫ (+63.7%) |
-| **VCB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **89.4/100** | 9/9 | 56 | 1.14x | +8.3% | CASA 34.2% | 3.7 (SAFE) | -2.68 (SAFE) | 66,000 ₫ (+23.4%) |
-| **SSI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **89.4/100** | 9/9 | 53 | 0.44x | +4.1% | 1.11x | 2.8 (SAFE) | -2.67 (SAFE) | 29,580 ₫ (+54.5%) |
-| **DGW** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **88.5/100** | 8/9 | 75 | 0.44x | +3.2% | 1.53x | 10.18 (SAFE) | -2.79 (SAFE) | 69,322 ₫ (+80.5%) |
-| **KDH** | HOSE | Bất Động Sản Dân Cư | **AA** | **88.4/100** | 9/9 | 21 | 0.59x | -4.9% | 1.33x | 10.49 (SAFE) | -2.17 (SAFE) | 22,819 ₫ (+75.5%) |
-| **MSN** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **88.2/100** | 7/9 | 71 | 0.26x | -2.8% | 3.79x | 5.33 (SAFE) | -2.78 (SAFE) | 110,227 ₫ (+58.8%) |
-| **BSR** | UPCOM | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **88.2/100** | 6/9 | 98 | 0.82x | -3.6% | 1.61x | 12.44 (SAFE) | -2.76 (SAFE) | 44,694 ₫ (+69.9%) |
-| **HPG** | HOSE | Thép & Vật Liệu Xây Dựng | **AAA** | **88.1/100** | 8/9 | 60 | 0.14x | -1.0% | 1.35x | 7.48 (SAFE) | -2.73 (SAFE) | 61,616 ₫ (+190.0%) |
-| **VPB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AA** | **88.0/100** | 9/9 | 90 | 0.24x | +1.8% | CASA 14.8% | 2.21 (GREY) | -2.67 (SAFE) | 55,390 ₫ (+161.3%) |
-| **VCI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **88.0/100** | 9/9 | 32 | 0.34x | +0.6% | 1.25x | 2.66 (SAFE) | -2.68 (SAFE) | 25,621 ₫ (+35.2%) |
-| **PC1** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **87.7/100** | 7/9 | 54 | 0.15x | -3.9% | 2.5x | 5.48 (SAFE) | -2.68 (SAFE) | 42,989 ₫ (+169.4%) |
-| **FRT** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AA** | **87.3/100** | 8/9 | 92 | 0.42x | +4.4% | 4.4x | 9.81 (SAFE) | -3.17 (SAFE) | 130,686 ₫ (-5.5%) |
-| **VHC** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | **AAA** | **87.2/100** | 9/9 | 45 | 0.28x | +3.7% | 1.29x | 11.4 (SAFE) | -2.76 (SAFE) | 120,448 ₫ (+150.7%) |
-| **POW** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **87.1/100** | 8/9 | 51 | 0.42x | -6.2% | 3.15x | 7.33 (SAFE) | -2.72 (SAFE) | 31,395 ₫ (+161.6%) |
-| **VGC** | HOSE | Bất Động Sản Khu Công Nghiệp | **AAA** | **86.6/100** | 9/9 | 78 | 1.48x | +3.8% | 1.91x | 9.1 (SAFE) | -2.9 (SAFE) | 45,410 ₫ (+13.5%) |
-| **VRE** | HOSE | Bất Động Sản Dân Cư | **AAA** | **86.2/100** | 9/9 | 36 | 1.23x | +0.1% | 1.13x | 9.13 (SAFE) | -2.69 (SAFE) | 38,922 ₫ (+68.1%) |
-| **PVD** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **86.2/100** | 9/9 | 77 | 0.65x | -3.5% | 2.12x | 9.06 (SAFE) | -2.74 (SAFE) | 17,708 ₫ (+1.5%) |
-| **DGC** | HOSE | Hóa Chất & Phân Bón | **AAA** | **85.5/100** | 9/9 | 26 | 1.19x | +10.7% | 1.15x | 15.49 (SAFE) | -2.75 (SAFE) | 59,293 ₫ (+80.5%) |
-| **DPM** | HOSE | Hóa Chất & Phân Bón | **AAA** | **85.5/100** | 8/9 | 38 | 0.67x | -3.1% | 2.09x | 13.07 (SAFE) | -2.83 (SAFE) | 26,836 ₫ (+39.4%) |
-| **DCM** | HOSE | Hóa Chất & Phân Bón | **AAA** | **85.2/100** | 9/9 | 66 | 1.51x | +4.9% | 1.66x | 15.12 (SAFE) | -2.92 (SAFE) | 21,700 ₫ (-33.5%) |
-| **HHV** | HOSE | Hạ Tầng Xây Dựng & Đầu Tư Công | **AA** | **84.7/100** | 7/9 | 39 | 0.4x | -7.0% | 3.26x | 3.36 (SAFE) | -2.63 (SAFE) | 24,855 ₫ (+168.1%) |
-| **PVS** | HNX | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **84.5/100** | 8/9 | 86 | 0.92x | -1.4% | 1.65x | 13.94 (SAFE) | -2.81 (SAFE) | 33,108 ₫ (+32.4%) |
-| **SZC** | HOSE | Bất Động Sản Khu Công Nghiệp | **AAA** | **84.0/100** | 9/9 | 47 | 0.55x | -2.2% | 1.8x | 7.37 (SAFE) | -2.81 (SAFE) | 18,251 ₫ (-5.2%) |
-| **DBC** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | **AAA** | **83.8/100** | 7/9 | 33 | 0.15x | -1.8% | 1.63x | 7.22 (SAFE) | -2.78 (SAFE) | 45,247 ₫ (+197.7%) |
-| **HCM** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **83.6/100** | 9/9 | 68 | 0.51x | +0.3% | 1.23x | 2.65 (SAFE) | -2.68 (SAFE) | 22,891 ₫ (-3.0%) |
-| **CMG** | HOSE | Công Nghệ Thông Tin & Viễn Thông | **AAA** | **83.3/100** | 9/9 | 20 | 0.88x | +2.9% | 1.72x | 9.38 (SAFE) | -2.84 (SAFE) | 24,529 ₫ (+40.2%) |
-| **VNM** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **83.1/100** | 9/9 | 65 | 1.6x | +16.9% | 1.12x | 14.54 (SAFE) | -2.74 (SAFE) | 51,597 ₫ (-8.4%) |
-| **HSG** | HOSE | Thép & Vật Liệu Xây Dựng | **AAA** | **82.5/100** | 7/9 | 62 | 0.29x | -2.4% | 1.86x | 8.68 (SAFE) | -2.79 (SAFE) | 18,353 ₫ (+71.5%) |
-| **NKG** | HOSE | Thép & Vật Liệu Xây Dựng | **AAA** | **82.3/100** | 7/9 | 80 | 0.55x | -2.4% | 1.71x | 7.39 (SAFE) | -2.76 (SAFE) | 13,001 ₫ (+7.4%) |
-| **PNJ** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AA** | **81.9/100** | 8/9 | 18 | 0.41x | +9.6% | 0.92x | 12.57 (SAFE) | -2.61 (SAFE) | 48,944 ₫ (+231.8%) |
-| **REE** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AA** | **81.7/100** | 9/9 | 48 | 1.72x | -0.9% | 1.58x | 7.58 (SAFE) | -2.68 (SAFE) | 58,940 ₫ (+31.4%) |
-| **VHM** | HOSE | Bất Động Sản Dân Cư | **AA** | **81.6/100** | 5/9 | 69 | 0.9x | +0.2% | 0.5x | 10.14 (SAFE) | -1.83 (SAFE) | 88,747 ₫ (+43.4%) |
-| **DHG** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | **AA** | **79.3/100** | 8/9 | 63 | 2.1x | +8.1% | 1.11x | 13.57 (SAFE) | -2.71 (SAFE) | 63,654 ₫ (-24.0%) |
-| **NLG** | HOSE | Bất Động Sản Dân Cư | **AA** | **78.9/100** | 9/9 | 35 | 1.36x | -5.5% | 1.44x | 9.99 (SAFE) | -2.3 (SAFE) | 19,215 ₫ (-8.1%) |
-| **GAS** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AA** | **78.7/100** | 8/9 | 93 | 1.68x | +8.2% | 1.24x | 14.1 (SAFE) | -2.77 (SAFE) | 65,693 ₫ (-12.9%) |
-| **BCM** | HOSE | Bất Động Sản Khu Công Nghiệp | **AA** | **77.3/100** | 8/9 | 30 | 1.46x | -3.0% | 1.18x | 6.54 (SAFE) | -2.29 (SAFE) | 31,729 ₫ (-14.5%) |
-| **VND** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AA** | **74.0/100** | 6/9 | 27 | 1.71x | +0.3% | 0.91x | 2.7 (SAFE) | -2.65 (SAFE) | 19,522 ₫ (+49.6%) |
-| **KBC** | HOSE | Bất Động Sản Khu Công Nghiệp | **BB (WATCH)** | **69.2/100** | 7/9 | 41 | 2.34x | -3.9% | 1.23x | 11.74 (SAFE) | -1.19 (HIGH_RISK) | 33,568 ₫ (+27.9%) |
-| **DXG** | HOSE | Bất Động Sản Dân Cư | **BB (WATCH)** | **62.6/100** | 5/9 | 29 | 3.33x | -6.8% | -1.81x | 10.01 (SAFE) | -0.9 (HIGH_RISK) | 4,464 ₫ (-54.9%) |
-| **PDR** | HOSE | Bất Động Sản Dân Cư | **BB (WATCH)** | **59.6/100** | 4/9 | 24 | 3.23x | -7.0% | -0.62x | 10.06 (SAFE) | 0.41 (HIGH_RISK) | 12,337 ₫ (+11.6%) |
+| **HDB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **96.8/100** | 9/9 | 96 | 0.3x | +15.4% | CASA 12.5% | 3.12 (SAFE) | -2.7 (SAFE) | 64,001 ₫ (+185.1%) |
+| **GMD** | HOSE | Cảng Biển & Logistics Vận Tải | **AAA** | **96.5/100** | 9/9 | 95 | 0.79x | +2.2% | 1.14x | 10.67 (SAFE) | -2.71 (SAFE) | 67,999 ₫ (+29.3%) |
+| **MBB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **94.9/100** | 9/9 | 57 | 0.38x | +13.2% | CASA 38.6% | 3.44 (SAFE) | -2.69 (SAFE) | 52,989 ₫ (+171.7%) |
+| **IDC** | HNX | Bất Động Sản Khu Công Nghiệp | **AAA** | **94.9/100** | 9/9 | 80 | 0.39x | +19.1% | 1.58x | 11.75 (SAFE) | -3.06 (SAFE) | 41,198 ₫ (+64.8%) |
+| **TCB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **94.2/100** | 9/9 | 87 | 0.33x | +7.1% | CASA 40.5% | 3.51 (SAFE) | -2.68 (SAFE) | 52,555 ₫ (+139.4%) |
+| **MWG** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **94.1/100** | 9/9 | 77 | 0.21x | +8.4% | 2.22x | 10.78 (SAFE) | -2.99 (SAFE) | 143,819 ₫ (+91.8%) |
+| **FPT** | HOSE | Công Nghệ Thông Tin & Viễn Thông | **AAA** | **93.9/100** | 9/9 | 23 | 0.43x | +19.4% | 1.25x | 12.94 (SAFE) | -2.8 (SAFE) | 100,078 ₫ (+89.2%) |
+| **CTG** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **93.6/100** | 9/9 | 62 | 0.37x | +13.4% | CASA 22.6% | 3.24 (SAFE) | -2.69 (SAFE) | 83,474 ₫ (+164.2%) |
+| **DCM** | HOSE | Hóa Chất & Phân Bón | **AAA** | **92.6/100** | 9/9 | 59 | 0.32x | +4.9% | 1.66x | 15.12 (SAFE) | -2.92 (SAFE) | 76,845 ₫ (+137.2%) |
+| **HAH** | HOSE | Cảng Biển & Logistics Vận Tải | **AAA** | **92.6/100** | 9/9 | 60 | 0.17x | +1.7% | 2.07x | 6.79 (SAFE) | -2.94 (SAFE) | 127,671 ₫ (+161.9%) |
+| **BID** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **92.3/100** | 9/9 | 39 | 0.61x | +9.1% | CASA 19.8% | 3.21 (SAFE) | -2.68 (SAFE) | 64,462 ₫ (+99.9%) |
+| **MBS** | HNX | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **92.2/100** | 9/9 | 81 | 0.37x | +2.6% | 1.21x | 2.77 (SAFE) | -2.68 (SAFE) | 35,745 ₫ (+43.0%) |
+| **SSI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **91.4/100** | 9/9 | 66 | 0.42x | +4.1% | 1.11x | 2.8 (SAFE) | -2.67 (SAFE) | 32,803 ₫ (+60.8%) |
+| **PVT** | HOSE | Cảng Biển & Logistics Vận Tải | **AAA** | **91.1/100** | 9/9 | 93 | 0.45x | +2.0% | 2.01x | 8.08 (SAFE) | -2.93 (SAFE) | 48,178 ₫ (+133.9%) |
+| **VCG** | HOSE | Hạ Tầng Xây Dựng & Đầu Tư Công | **AAA** | **90.9/100** | 8/9 | 41 | 0.21x | -3.6% | 1.79x | 7.57 (SAFE) | -2.6 (SAFE) | 33,684 ₫ (+117.3%) |
+| **VCB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **90.7/100** | 9/9 | 51 | 1.1x | +8.3% | CASA 34.2% | 3.7 (SAFE) | -2.68 (SAFE) | 69,039 ₫ (+27.4%) |
+| **ACB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **89.9/100** | 9/9 | 71 | 0.68x | +8.0% | CASA 23.2% | 3.26 (SAFE) | -2.69 (SAFE) | 40,052 ₫ (+94.9%) |
+| **DGW** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **89.8/100** | 8/9 | 72 | 0.42x | +3.2% | 1.53x | 10.18 (SAFE) | -2.79 (SAFE) | 73,850 ₫ (+87.2%) |
+| **KDH** | HOSE | Bất Động Sản Dân Cư | **AA** | **89.7/100** | 9/9 | 21 | 0.57x | -4.9% | 1.33x | 10.49 (SAFE) | -2.17 (SAFE) | 25,925 ₫ (+80.7%) |
+| **STB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AAA** | **89.6/100** | 9/9 | 90 | 0.53x | -6.6% | CASA 18.9% | 2.83 (SAFE) | -2.71 (SAFE) | 110,828 ₫ (+60.2%) |
+| **VCI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **89.3/100** | 9/9 | 35 | 0.33x | +0.6% | 1.25x | 2.66 (SAFE) | -2.68 (SAFE) | 28,308 ₫ (+41.2%) |
+| **PC1** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **89.0/100** | 7/9 | 56 | 0.18x | -3.9% | 2.5x | 5.48 (SAFE) | -2.68 (SAFE) | 38,802 ₫ (+133.7%) |
+| **POW** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **88.4/100** | 8/9 | 53 | 0.4x | -6.2% | 3.15x | 7.33 (SAFE) | -2.72 (SAFE) | 33,704 ₫ (+169.6%) |
+| **VGC** | HOSE | Bất Động Sản Khu Công Nghiệp | **AAA** | **88.3/100** | 9/9 | 75 | 1.42x | +3.8% | 1.91x | 9.1 (SAFE) | -2.9 (SAFE) | 48,008 ₫ (+17.8%) |
+| **MSN** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **88.2/100** | 7/9 | 74 | 0.24x | -2.8% | 3.79x | 5.33 (SAFE) | -2.78 (SAFE) | 118,974 ₫ (+66.2%) |
+| **BSR** | UPCOM | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **88.2/100** | 6/9 | 98 | 0.79x | -3.6% | 1.61x | 12.44 (SAFE) | -2.76 (SAFE) | 45,885 ₫ (+73.2%) |
+| **HPG** | HOSE | Thép & Vật Liệu Xây Dựng | **AAA** | **88.1/100** | 8/9 | 54 | 0.14x | -1.0% | 1.35x | 7.48 (SAFE) | -2.73 (SAFE) | 61,822 ₫ (+187.5%) |
+| **VRE** | HOSE | Bất Động Sản Dân Cư | **AAA** | **87.5/100** | 9/9 | 38 | 1.19x | +0.1% | 1.13x | 9.13 (SAFE) | -2.69 (SAFE) | 41,439 ₫ (+71.2%) |
+| **PVD** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **87.5/100** | 9/9 | 68 | 0.63x | -3.5% | 2.12x | 9.06 (SAFE) | -2.74 (SAFE) | 18,196 ₫ (+5.2%) |
+| **FRT** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AA** | **87.3/100** | 8/9 | 92 | 0.4x | +4.4% | 4.4x | 9.81 (SAFE) | -3.17 (SAFE) | 140,959 ₫ (-1.4%) |
+| **VHC** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | **AAA** | **87.2/100** | 9/9 | 45 | 0.32x | +3.7% | 1.29x | 11.4 (SAFE) | -2.76 (SAFE) | 110,089 ₫ (+122.9%) |
+| **DGC** | HOSE | Hóa Chất & Phân Bón | **AAA** | **86.8/100** | 9/9 | 24 | 1.17x | +10.7% | 1.15x | 15.49 (SAFE) | -2.75 (SAFE) | 60,713 ₫ (+81.8%) |
+| **VPB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | **AA** | **86.7/100** | 9/9 | 89 | 0.22x | +1.8% | CASA 14.8% | 2.21 (GREY) | -2.67 (SAFE) | 60,950 ₫ (+178.3%) |
+| **DPM** | HOSE | Hóa Chất & Phân Bón | **AAA** | **85.5/100** | 8/9 | 32 | 0.64x | -3.1% | 2.09x | 13.07 (SAFE) | -2.83 (SAFE) | 28,348 ₫ (+44.3%) |
+| **SZC** | HOSE | Bất Động Sản Khu Công Nghiệp | **AAA** | **85.3/100** | 9/9 | 50 | 0.52x | -2.2% | 1.8x | 7.37 (SAFE) | -2.81 (SAFE) | 20,319 ₫ (-2.1%) |
+| **DBC** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | **AAA** | **85.1/100** | 7/9 | 29 | 0.14x | -1.8% | 1.63x | 7.22 (SAFE) | -2.78 (SAFE) | 48,299 ₫ (+209.6%) |
+| **CMG** | HOSE | Công Nghệ Thông Tin & Viễn Thông | **AAA** | **84.9/100** | 9/9 | 20 | 0.8x | +2.9% | 1.72x | 9.38 (SAFE) | -2.84 (SAFE) | 27,335 ₫ (+51.9%) |
+| **HHV** | HOSE | Hạ Tầng Xây Dựng & Đầu Tư Công | **AA** | **84.7/100** | 7/9 | 36 | 0.39x | -7.0% | 3.26x | 3.36 (SAFE) | -2.63 (SAFE) | 26,279 ₫ (+173.7%) |
+| **HSG** | HOSE | Thép & Vật Liệu Xây Dựng | **AAA** | **84.6/100** | 7/9 | 65 | 0.29x | -2.4% | 1.86x | 8.68 (SAFE) | -2.79 (SAFE) | 19,011 ₫ (+72.0%) |
+| **PVS** | HNX | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **84.5/100** | 8/9 | 83 | 0.92x | -1.4% | 1.65x | 13.94 (SAFE) | -2.81 (SAFE) | 33,108 ₫ (+32.4%) |
+| **VNM** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **84.3/100** | 9/9 | 69 | 1.58x | +16.9% | 1.12x | 14.54 (SAFE) | -2.74 (SAFE) | 53,204 ₫ (-7.5%) |
+| **HCM** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AAA** | **84.0/100** | 9/9 | 63 | 0.5x | +0.3% | 1.23x | 2.65 (SAFE) | -2.68 (SAFE) | 23,684 ₫ (-1.3%) |
+| **PNJ** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | **AAA** | **83.2/100** | 8/9 | 18 | 0.4x | +9.6% | 0.92x | 12.57 (SAFE) | -2.61 (SAFE) | 51,306 ₫ (+238.7%) |
+| **REE** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AAA** | **83.0/100** | 9/9 | 47 | 1.71x | -0.9% | 1.58x | 7.58 (SAFE) | -2.68 (SAFE) | 60,542 ₫ (+31.5%) |
+| **NKG** | HOSE | Thép & Vật Liệu Xây Dựng | **AAA** | **82.3/100** | 7/9 | 86 | 0.55x | -2.4% | 1.71x | 7.39 (SAFE) | -2.76 (SAFE) | 13,425 ₫ (+7.4%) |
+| **VHM** | HOSE | Bất Động Sản Dân Cư | **AA** | **81.6/100** | 5/9 | 78 | 0.89x | +0.2% | 0.5x | 10.14 (SAFE) | -1.83 (SAFE) | 92,105 ₫ (+45.5%) |
+| **DHG** | HOSE | Thủy Sản, Nông Nghiệp & Dược Phẩm | **AA** | **80.6/100** | 8/9 | 48 | 2.09x | +8.1% | 1.11x | 13.57 (SAFE) | -2.71 (SAFE) | 63,121 ₫ (-23.5%) |
+| **NLG** | HOSE | Bất Động Sản Dân Cư | **AA** | **80.2/100** | 9/9 | 42 | 1.74x | -5.5% | 1.44x | 9.99 (SAFE) | -2.3 (SAFE) | 16,761 ₫ (-24.8%) |
+| **GAS** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | **AA** | **80.0/100** | 8/9 | 84 | 1.62x | +8.2% | 1.24x | 14.1 (SAFE) | -2.77 (SAFE) | 67,110 ₫ (-10.0%) |
+| **BCM** | HOSE | Bất Động Sản Khu Công Nghiệp | **AA** | **77.3/100** | 8/9 | 27 | 1.4x | -3.0% | 1.18x | 6.54 (SAFE) | -2.29 (SAFE) | 33,875 ₫ (-11.1%) |
+| **VND** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | **AA** | **75.3/100** | 6/9 | 30 | 1.62x | +0.3% | 0.91x | 2.7 (SAFE) | -2.65 (SAFE) | 21,702 ₫ (+52.8%) |
+| **KBC** | HOSE | Bất Động Sản Khu Công Nghiệp | **BB (WATCH)** | **70.5/100** | 7/9 | 44 | 2.31x | -3.9% | 1.23x | 11.74 (SAFE) | -1.19 (HIGH_RISK) | 34,804 ₫ (+28.2%) |
+| **DXG** | HOSE | Bất Động Sản Dân Cư | **BB (WATCH)** | **63.8/100** | 5/9 | 33 | 3.19x | -6.8% | -1.81x | 10.01 (SAFE) | -0.9 (HIGH_RISK) | 4,921 ₫ (-54.2%) |
+| **PDR** | HOSE | Bất Động Sản Dân Cư | **BB (WATCH)** | **60.9/100** | 4/9 | 26 | 3.54x | -7.0% | -0.62x | 10.06 (SAFE) | 0.41 (HIGH_RISK) | 12,318 ₫ (+6.6%) |
 
 ---
 
@@ -74,8 +74,8 @@
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **15,600 tỷ VND** (OCF/LNST = `1.16x`) | FCF = **14,750 tỷ VND** | Tiền mặt = **88,000 tỷ** | D/E = `1.27x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **24.59%** vs WACC = **9.2%** (EVA Spread = **+15.39%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **61,571 ₫** (Biên an toàn MoS = **+182.4%**) | GARP SWEET SPOT (PEG = 0.3x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **98.0/100** | Sức mạnh giá RS Rating = **95/99** | `Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)` | Tín hiệu VSA: `NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)`.
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **64,001 ₫** (Biên an toàn MoS = **+185.1%**) | GARP SWEET SPOT (PEG = 0.3x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **98.0/100** | Sức mạnh giá RS Rating = **96/99** | `Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)` | Tín hiệu VSA: `DRY_VOLUME_BASE (Siết nền biên độ hẹp VCP — Chờ điểm nổ Volume)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.7` (SAFE) | Sloan Accrual = `-1.27%` | Altman/CAMELS Z = `3.12` (SAFE (CAMELS Vững mạnh)).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **12,800 tỷ** (Ước đạt **105.1%**) | Rủi ro ESOP: `LOW (0.5%)` | **Catalyst**: Hưởng lợi hạn mức tăng trưởng tín dụng cao nhờ nhận chuyển giao ngân hàng yếu kém, ROE dẫn đầu ngành >25%.
 - **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 12.5%, NIM = 5.15%, CAR Basel II/III = 13.8%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 24.59%)
@@ -87,11 +87,24 @@
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **1,920 tỷ VND** (OCF/LNST = `1.14x`) | FCF = **1,070 tỷ VND** | Tiền mặt = **4,200 tỷ** | D/E = `0.18x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **11.41%** vs WACC = **9.2%** (EVA Spread = **+2.21%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **62,232 ₫** (Biên an toàn MoS = **+25.2%**) | GARP SWEET SPOT (PEG = 0.82x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **96.0/100** | Sức mạnh giá RS Rating = **87/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)`.
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **67,999 ₫** (Biên an toàn MoS = **+29.3%**) | GARP SWEET SPOT (PEG = 0.79x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **96.0/100** | Sức mạnh giá RS Rating = **95/99** | `Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.71` (SAFE) | Sloan Accrual = `-1.78%` | Altman/CAMELS Z = `10.67` (SAFE).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **1,350 tỷ** (Ước đạt **124.4%**) | Rủi ro ESOP: `LOW (0.8%)` | **Catalyst**: Sản lượng container qua siêu cảng nước sâu Gemalink và Nam Đình Vũ đạt kỷ lục nhờ tăng khung giá dịch vụ bốc dỡ cảng biển.
 - **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 1.14x >= 1.0); Vị thế TIỀN MẶT RÒNG dồi dào (+2,100 tỷ VND), kháng độc lãi suất
+- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
+
+### 🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**
+- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **KPMG (Big4 - Chấp thuận toàn phần)**
+- **Kết quả Kinh doanh TTM**: Doanh thu = **51,200 tỷ VND** (+14.8% YoY) | LNST = **22,600 tỷ VND** (+14.2% YoY) | ROE = **22.41%**
+- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **25,800 tỷ VND** (OCF/LNST = `1.14x`) | FCF = **24,300 tỷ VND** | Tiền mặt = **135,000 tỷ** | D/E = `1.0x`
+- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
+  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **22.41%** vs WACC = **9.2%** (EVA Spread = **+13.21%**).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **52,989 ₫** (Biên an toàn MoS = **+171.7%**) | GARP SWEET SPOT (PEG = 0.38x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **86.0/100** | Sức mạnh giá RS Rating = **57/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `SOS_ABSORPTION (Hấp thụ hàng T+2.5 về tài khoản tích cực trên MA20)`.
+  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.69` (SAFE) | Sloan Accrual = `-0.98%` | Altman/CAMELS Z = `3.44` (SAFE (CAMELS Vững mạnh)).
+- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **22,600 tỷ** (Ước đạt **100.0%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời.
+- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 38.6%, NIM = 4.55%, CAR Basel II/III = 11.9%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (1.62%), Bộ đệm bao phủ nợ xấu LLR đạt 112.0%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 22.41%)
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
 ### 🏛️ IDC — Tổng Công Ty IDICO (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.9/100**
@@ -101,7 +114,7 @@
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **28.33%** vs WACC = **9.2%** (EVA Spread = **+19.13%**).
   * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **41,198 ₫** (Biên an toàn MoS = **+64.8%**) | GARP SWEET SPOT (PEG = 0.39x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **98.0/100** | Sức mạnh giá RS Rating = **83/99** | `Phase B — CONSOLIDATION` | Tín hiệu VSA: `Tích lũy nền giá`.
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **98.0/100** | Sức mạnh giá RS Rating = **80/99** | `Phase B — CONSOLIDATION` | Tín hiệu VSA: `Tích lũy nền giá`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-3.06` (SAFE) | Sloan Accrual = `-12.83%` | Altman/CAMELS Z = `11.75` (SAFE).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **2,000 tỷ** (Ước đạt **109.0%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Hạch toán một lần doanh thu KCN Phú Mỹ 2 & Hựu Thạnh, của để dành người mua trả tiền trước 6.200 tỷ, cổ tức tiền mặt 40%.
 - **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 1.58x >= 1.0); Vị thế TIỀN MẶT RÒNG dồi dào (+700 tỷ VND), kháng độc lãi suất; 'Của để dành' Người mua trả tiền trước lớn (6,200 tỷ VND) đảm bảo doanh thu tương lai
@@ -113,50 +126,63 @@
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **26,500 tỷ VND** (OCF/LNST = `1.16x`) | FCF = **24,700 tỷ VND** | Tiền mặt = **142,000 tỷ** | D/E = `0.8x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **93.0/100** | ROIC = **15.92%** vs WACC = **8.86%** (EVA Spread = **+7.06%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **50,590 ₫** (Biên an toàn MoS = **+136.4%**) | GARP SWEET SPOT (PEG = 0.33x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **90.0/100** | Sức mạnh giá RS Rating = **89/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)`.
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **52,555 ₫** (Biên an toàn MoS = **+139.4%**) | GARP SWEET SPOT (PEG = 0.33x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **90.0/100** | Sức mạnh giá RS Rating = **87/99** | `Phase E — MARKUP (Đẩy giá Uptrend bền vững trên MA50 & MA200)` | Tín hiệu VSA: `NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.68` (SAFE) | Sloan Accrual = `-0.84%` | Altman/CAMELS Z = `3.51` (SAFE (CAMELS Vững mạnh)).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **22,000 tỷ** (Ước đạt **103.8%**) | Rủi ro ESOP: `LOW (0.5%)` | **Catalyst**: Quán quân CASA 40.5% nhờ Auto-earning, CAR Basel II đạt 15.2% cao nhất ngành, lộ trình IPO TCBS.
 - **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 40.5%, NIM = 4.28%, CAR Basel II/III = 15.2%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (1.22%), Bộ đệm bao phủ nợ xấu LLR đạt 106.0%
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
-### 🏛️ MBB — Quân Đội (MBBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**
-- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **KPMG (Big4 - Chấp thuận toàn phần)**
-- **Kết quả Kinh doanh TTM**: Doanh thu = **51,200 tỷ VND** (+14.8% YoY) | LNST = **22,600 tỷ VND** (+14.2% YoY) | ROE = **22.41%**
-- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **25,800 tỷ VND** (OCF/LNST = `1.14x`) | FCF = **24,300 tỷ VND** | Tiền mặt = **135,000 tỷ** | D/E = `1.0x`
-- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
-  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **22.41%** vs WACC = **9.2%** (EVA Spread = **+13.21%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **51,634 ₫** (Biên an toàn MoS = **+173.2%**) | GARP SWEET SPOT (PEG = 0.38x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **78.0/100** | Sức mạnh giá RS Rating = **59/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
-  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.69` (SAFE) | Sloan Accrual = `-0.98%` | Altman/CAMELS Z = `3.44` (SAFE (CAMELS Vững mạnh)).
-- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **22,600 tỷ** (Ước đạt **100.0%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Hệ sinh thái số 30 triệu khách hàng duy trì CASA 38.6% và ROE >21%, định giá P/B hấp dẫn so với hiệu suất sinh lời.
-- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 38.6%, NIM = 4.55%, CAR Basel II/III = 11.9%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (1.62%), Bộ đệm bao phủ nợ xấu LLR đạt 112.0%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 22.41%)
-- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
-
-### 🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.8/100**
+### 🏛️ MWG — Thế Giới Di Động (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **94.1/100**
 - **Chế độ Kế toán & Kiểm toán**: `CORPORATE_VAS_TT200` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
 - **Kết quả Kinh doanh TTM**: Doanh thu = **134,800 tỷ VND** (+14.2% YoY) | LNST = **4,150 tỷ VND** (+520.0% YoY) | ROE = **27.83%**
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **9,200 tỷ VND** (OCF/LNST = `2.22x`) | FCF = **7,700 tỷ VND** | Tiền mặt = **28,500 tỷ** | D/E = `0.78x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **96.0/100** | ROIC = **16.86%** vs WACC = **8.5%** (EVA Spread = **+8.36%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **135,661 ₫** (Biên an toàn MoS = **+87.6%**) | GARP SWEET SPOT (PEG = 0.21x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **89.0/100** | Sức mạnh giá RS Rating = **74/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **143,819 ₫** (Biên an toàn MoS = **+91.8%**) | GARP SWEET SPOT (PEG = 0.21x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **97.0/100** | Sức mạnh giá RS Rating = **77/99** | `Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.99` (SAFE) | Sloan Accrual = `-10.56%` | Altman/CAMELS Z = `10.78` (SAFE).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **2,400 tỷ** (Ước đạt **172.9%**) | Rủi ro ESOP: `MEDIUM (1.8%)` | **Catalyst**: Bách Hóa Xanh chính thức có lãi ròng bền vững 4 quý liên tiếp, hoàn tất tái cấu trúc TGDĐ/ĐMX và mở rộng chuỗi EraBlue tại Indonesia.
 - **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 2.22x >= 1.0); Vị thế TIỀN MẶT RÒNG dồi dào (+7,500 tỷ VND), kháng độc lãi suất
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
-### 🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.7/100**
+### 🏛️ FPT — Tập Đoàn FPT (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.9/100**
 - **Chế độ Kế toán & Kiểm toán**: `CORPORATE_VAS_TT200` | Đơn vị kiểm toán: **PwC (Big4 - Chấp thuận toàn phần)**
 - **Kết quả Kinh doanh TTM**: Doanh thu = **61,800 tỷ VND** (+21.2% YoY) | LNST = **8,650 tỷ VND** (+22.8% YoY) | ROE = **24.8%**
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **10,800 tỷ VND** (OCF/LNST = `1.25x`) | FCF = **6,900 tỷ VND** | Tiền mặt = **28,400 tỷ** | D/E = `0.45x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **27.94%** vs WACC = **8.5%** (EVA Spread = **+19.44%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **88,558 ₫** (Biên an toàn MoS = **+75.7%**) | GARP SWEET SPOT (PEG = 0.47x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **84.0/100** | Sức mạnh giá RS Rating = **23/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **100,078 ₫** (Biên an toàn MoS = **+89.2%**) | GARP SWEET SPOT (PEG = 0.43x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **92.0/100** | Sức mạnh giá RS Rating = **23/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.8` (SAFE) | Sloan Accrual = `-4.7%` | Altman/CAMELS Z = `12.94` (SAFE).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **8,600 tỷ** (Ước đạt **100.6%**) | Rủi ro ESOP: `LOW (0.5% chuẩn mực)` | **Catalyst**: Doanh thu CNTT nước ngoài vượt 1 tỷ USD (Nhật Bản +32%), vận hành AI Factory cùng NVIDIA tại Việt Nam và Nhật Bản.
 - **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 1.25x >= 1.0); Vị thế TIỀN MẶT RÒNG dồi dào (+14,200 tỷ VND), kháng độc lãi suất; 'Của để dành' Người mua trả tiền trước lớn (4,200 tỷ VND) đảm bảo doanh thu tương lai
+- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
+
+### 🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **93.6/100**
+- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
+- **Kết quả Kinh doanh TTM**: Doanh thu = **72,800 tỷ VND** (+12.4% YoY) | LNST = **22,400 tỷ VND** (+16.8% YoY) | ROE = **22.64%**
+- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **26,100 tỷ VND** (OCF/LNST = `1.17x`) | FCF = **24,750 tỷ VND** | Tiền mặt = **198,000 tỷ** | D/E = `1.27x`
+- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
+  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **22.64%** vs WACC = **9.2%** (EVA Spread = **+13.44%**).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **83,474 ₫** (Biên an toàn MoS = **+164.2%**) | GARP SWEET SPOT (PEG = 0.37x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **78.0/100** | Sức mạnh giá RS Rating = **62/99** | `Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)` | Tín hiệu VSA: `POCKET_PIVOT_BREAKOUT (Dòng tiền thông minh gom chủ động Vol lớn vượt nền)`.
+  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.69` (SAFE) | Sloan Accrual = `-0.89%` | Altman/CAMELS Z = `3.24` (SAFE (CAMELS Vững mạnh)).
+- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **23,000 tỷ** (Ước đạt **97.4%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Chu kỳ giảm mạnh chi phí trích lập dự phòng sau khi làm sạch bảng cân đối, thúc đẩy lợi nhuận bứt tốc.
+- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 22.6%, NIM = 2.95%, CAR Basel II/III = 9.8%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (1.35%), Bộ đệm bao phủ nợ xấu LLR đạt 158.0%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 22.64%)
+- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
+
+### 🏛️ DCM — Phân Bón Dầu Khí Cà Mau (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.6/100**
+- **Chế độ Kế toán & Kiểm toán**: `CORPORATE_VAS_TT200` | Đơn vị kiểm toán: **Deloitte (Big4 - Chấp thuận toàn phần)**
+- **Kết quả Kinh doanh TTM**: Doanh thu = **13,450 tỷ VND** (+7.2% YoY) | LNST = **1,480 tỷ VND** (+33.5% YoY) | ROE = **24.24%**
+- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **2,450 tỷ VND** (OCF/LNST = `1.66x`) | FCF = **2,030 tỷ VND** | Tiền mặt = **9,850 tỷ** | D/E = `0.11x`
+- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
+  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **90.0/100** | ROIC = **13.44%** vs WACC = **8.5%** (EVA Spread = **+4.94%**).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **76,845 ₫** (Biên an toàn MoS = **+137.2%**) | GARP SWEET SPOT (PEG = 0.32x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **84.0/100** | Sức mạnh giá RS Rating = **59/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.92` (SAFE) | Sloan Accrual = `-8.51%` | Altman/CAMELS Z = `15.12` (SAFE).
+- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **795 tỷ** (Ước đạt **186.2%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Nhà máy Đạm Cà Mau hết khấu hao giúp giảm chi phí cố định ~1.200 tỷ/năm, thông qua Luật Thuế GTGT 5% cho phân bón giúp hoàn thuế đầu vào.
+- **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 1.66x >= 1.0); Vị thế TIỀN MẶT RÒNG dồi dào (+8,700 tỷ VND), kháng độc lãi suất
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
 ### 🏛️ HAH — Vận Tải & Xếp Dỡ Hải An (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.6/100**
@@ -165,37 +191,24 @@
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **1,120 tỷ VND** (OCF/LNST = `2.07x`) | FCF = **-130 tỷ VND** | Tiền mặt = **1,150 tỷ** | D/E = `0.83x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **90.0/100** | ROIC = **10.23%** vs WACC = **8.5%** (EVA Spread = **+1.73%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **110,974 ₫** (Biên an toàn MoS = **+140.2%**) | GARP SWEET SPOT (PEG = 0.19x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **84.0/100** | Sức mạnh giá RS Rating = **50/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **127,671 ₫** (Biên an toàn MoS = **+161.9%**) | GARP SWEET SPOT (PEG = 0.17x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **84.0/100** | Sức mạnh giá RS Rating = **60/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.94` (SAFE) | Sloan Accrual = `-9.21%` | Altman/CAMELS Z = `6.79` (SAFE).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **450 tỷ** (Ước đạt **120.0%**) | Rủi ro ESOP: `LOW (1.0%)` | **Catalyst**: Đưa vào khai thác 4 tàu container đóng mới 1.800 TEU cùng mặt bằng giá cho thuê tàu định hạn (Time Charter) duy trì ở mức cao.
 - **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 2.07x >= 1.0)
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
-### 🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.4/100**
-- **Chế độ Kế toán & Kiểm toán**: `CORPORATE_VAS_TT200` | Đơn vị kiểm toán: **Deloitte (Big4 - Chấp thuận toàn phần)**
-- **Kết quả Kinh doanh TTM**: Doanh thu = **11,250 tỷ VND** (+17.6% YoY) | LNST = **1,320 tỷ VND** (+14.5% YoY) | ROE = **16.06%**
-- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **2,650 tỷ VND** (OCF/LNST = `2.01x`) | FCF = **500 tỷ VND** | Tiền mặt = **4,650 tỷ** | D/E = `0.62x`
+### 🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**
+- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **Deloitte (Big4 - Chấp thuận toàn phần)**
+- **Kết quả Kinh doanh TTM**: Doanh thu = **75,400 tỷ VND** (+9.8% YoY) | LNST = **23,850 tỷ VND** (+12.5% YoY) | ROE = **18.12%**
+- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **27,400 tỷ VND** (OCF/LNST = `1.15x`) | FCF = **25,800 tỷ VND** | Tiền mặt = **210,000 tỷ** | D/E = `1.43x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
-  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **89.0/100** | ROIC = **10.65%** vs WACC = **8.61%** (EVA Spread = **+2.04%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **47,720 ₫** (Biên an toàn MoS = **+129.4%**) | GARP SWEET SPOT (PEG = 0.46x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **84.0/100** | Sức mạnh giá RS Rating = **96/99** | `Phase C/D — RE-ACCUMULATION (Tích lũy lại / Test cung trên MA200)` | Tín hiệu VSA: `NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)`.
-  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.93` (SAFE) | Sloan Accrual = `-8.69%` | Altman/CAMELS Z = `8.08` (SAFE).
-- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **760 tỷ** (Ước đạt **173.7%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Trẻ hóa và mở rộng đội tàu chở dầu/hóa chất/LPG lên >58 tàu, >85% đội tàu chạy tuyến quốc tế thu ngoại tệ USD.
-- **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 2.01x >= 1.0)
-- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
-
-### 🏛️ CTG — Công Thương Việt Nam (VietinBank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.3/100**
-- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
-- **Kết quả Kinh doanh TTM**: Doanh thu = **72,800 tỷ VND** (+12.4% YoY) | LNST = **22,400 tỷ VND** (+16.8% YoY) | ROE = **22.64%**
-- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **26,100 tỷ VND** (OCF/LNST = `1.17x`) | FCF = **24,750 tỷ VND** | Tiền mặt = **198,000 tỷ** | D/E = `1.27x`
-- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
-  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **99.0/100** | ROIC = **22.64%** vs WACC = **9.2%** (EVA Spread = **+13.44%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **79,272 ₫** (Biên an toàn MoS = **+163.8%**) | GARP SWEET SPOT (PEG = 0.37x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **70.0/100** | Sức mạnh giá RS Rating = **57/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
-  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.69` (SAFE) | Sloan Accrual = `-0.89%` | Altman/CAMELS Z = `3.24` (SAFE (CAMELS Vững mạnh)).
-- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **23,000 tỷ** (Ước đạt **97.4%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Chu kỳ giảm mạnh chi phí trích lập dự phòng sau khi làm sạch bảng cân đối, thúc đẩy lợi nhuận bứt tốc.
-- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 22.6%, NIM = 2.95%, CAR Basel II/III = 9.8%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (1.35%), Bộ đệm bao phủ nợ xấu LLR đạt 158.0%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 22.64%)
+  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **93.0/100** | ROIC = **18.12%** vs WACC = **9.0%** (EVA Spread = **+9.12%**).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **64,462 ₫** (Biên an toàn MoS = **+99.9%**) | GARP SWEET SPOT (PEG = 0.61x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **78.0/100** | Sức mạnh giá RS Rating = **39/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.68` (SAFE) | Sloan Accrual = `-0.87%` | Altman/CAMELS Z = `3.21` (SAFE (CAMELS Vững mạnh)).
+- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **24,500 tỷ** (Ước đạt **97.3%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Ngân hàng quy mô tổng tài sản lớn nhất Việt Nam (>2.5 triệu tỷ), hưởng lợi giải ngân tín dụng hạ tầng trọng điểm.
+- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 19.8%, NIM = 2.65%, CAR Basel II/III = 9.6%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (1.42%), Bộ đệm bao phủ nợ xấu LLR đạt 152.0%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 18.12%)
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
 ### 🏛️ MBS — Chứng Khoán MB (HNX) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **92.2/100**
@@ -205,23 +218,62 @@
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **84.0/100** | ROIC = **11.8%** vs WACC = **9.2%** (EVA Spread = **+2.60%**).
   * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **35,745 ₫** (Biên an toàn MoS = **+43.0%**) | GARP SWEET SPOT (PEG = 0.37x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **90.0/100** | Sức mạnh giá RS Rating = **84/99** | `Phase B — CONSOLIDATION` | Tín hiệu VSA: `Tích lũy nền giá`.
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **90.0/100** | Sức mạnh giá RS Rating = **81/99** | `Phase B — CONSOLIDATION` | Tín hiệu VSA: `Tích lũy nền giá`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.68` (SAFE) | Sloan Accrual = `-0.83%` | Altman/CAMELS Z = `2.77` (SAFE (An toàn Vốn Khả Dụng)).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **744 tỷ** (Ước đạt **102.1%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Hưởng lợi hệ sinh thái khách hàng khổng lồ từ ngân hàng mẹ MBBank, ROE cao nhất nhóm chứng khoán top đầu.
 - **Điểm mạnh BCTC**: Chế độ Công ty Chứng khoán: Dư nợ Margin/VCSH = 1.56x (An toàn dưới trần 2.0x của UBCKNN); Dòng tiền hoạt động môi giới & tự doanh thực dương mạnh (OCF/LNST = 1.21x)
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
-### 🏛️ BID — Đầu Tư & Phát Triển Việt Nam (BIDV) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.0/100**
-- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **Deloitte (Big4 - Chấp thuận toàn phần)**
-- **Kết quả Kinh doanh TTM**: Doanh thu = **75,400 tỷ VND** (+9.8% YoY) | LNST = **23,850 tỷ VND** (+12.5% YoY) | ROE = **18.12%**
-- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **27,400 tỷ VND** (OCF/LNST = `1.15x`) | FCF = **25,800 tỷ VND** | Tiền mặt = **210,000 tỷ** | D/E = `1.43x`
+### 🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.4/100**
+- **Chế độ Kế toán & Kiểm toán**: `BROKERAGE_FVTPL_MARGIN` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
+- **Kết quả Kinh doanh TTM**: Doanh thu = **8,450 tỷ VND** (+24.0% YoY) | LNST = **3,120 tỷ VND** (+32.5% YoY) | ROE = **13.86%**
+- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **3,450 tỷ VND** (OCF/LNST = `1.11x`) | FCF = **3,200 tỷ VND** | Tiền mặt = **18,500 tỷ** | D/E = `1.5x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
-  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **93.0/100** | ROIC = **18.12%** vs WACC = **9.0%** (EVA Spread = **+9.12%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **61,264 ₫** (Biên an toàn MoS = **+93.3%**) | GARP SWEET SPOT (PEG = 0.64x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **70.0/100** | Sức mạnh giá RS Rating = **44/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
-  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.68` (SAFE) | Sloan Accrual = `-0.87%` | Altman/CAMELS Z = `3.21` (SAFE (CAMELS Vững mạnh)).
-- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **24,500 tỷ** (Ước đạt **97.3%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Ngân hàng quy mô tổng tài sản lớn nhất Việt Nam (>2.5 triệu tỷ), hưởng lợi giải ngân tín dụng hạ tầng trọng điểm.
-- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 19.8%, NIM = 2.65%, CAR Basel II/III = 9.6%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (1.42%), Bộ đệm bao phủ nợ xấu LLR đạt 152.0%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 18.12%)
+  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **84.0/100** | ROIC = **13.86%** vs WACC = **9.79%** (EVA Spread = **+4.07%**).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **32,803 ₫** (Biên an toàn MoS = **+60.8%**) | GARP SWEET SPOT (PEG = 0.42x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **85.0/100** | Sức mạnh giá RS Rating = **66/99** | `Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.67` (SAFE) | Sloan Accrual = `-0.43%` | Altman/CAMELS Z = `2.8` (SAFE (An toàn Vốn Khả Dụng)).
+- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **2,700 tỷ** (Ước đạt **115.5%**) | Rủi ro ESOP: `LOW (0.6%)` | **Catalyst**: Dẫn đầu quy mô vốn chủ sở hữu ngành chứng khoán, hưởng lợi trực tiếp từ Non-Prefunding (Thông tư 68) cho khối ngoại và nâng hạng FTSE.
+- **Điểm mạnh BCTC**: Chế độ Công ty Chứng khoán: Dư nợ Margin/VCSH = 0.85x (An toàn dưới trần 2.0x của UBCKNN); Dòng tiền hoạt động môi giới & tự doanh thực dương mạnh (OCF/LNST = 1.11x); Hiệu suất ROE đạt 13.86%, hưởng lợi trực tiếp từ nâng hạng FTSE và hệ thống KRX
+- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
+
+### 🏛️ PVT — Tổng Công Ty Vận Tải Dầu Khí (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **91.1/100**
+- **Chế độ Kế toán & Kiểm toán**: `CORPORATE_VAS_TT200` | Đơn vị kiểm toán: **Deloitte (Big4 - Chấp thuận toàn phần)**
+- **Kết quả Kinh doanh TTM**: Doanh thu = **11,250 tỷ VND** (+17.6% YoY) | LNST = **1,320 tỷ VND** (+14.5% YoY) | ROE = **16.06%**
+- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **2,650 tỷ VND** (OCF/LNST = `2.01x`) | FCF = **500 tỷ VND** | Tiền mặt = **4,650 tỷ** | D/E = `0.62x`
+- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
+  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **89.0/100** | ROIC = **10.65%** vs WACC = **8.61%** (EVA Spread = **+2.04%**).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **48,178 ₫** (Biên an toàn MoS = **+133.9%**) | GARP SWEET SPOT (PEG = 0.45x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **76.0/100** | Sức mạnh giá RS Rating = **93/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.93` (SAFE) | Sloan Accrual = `-8.69%` | Altman/CAMELS Z = `8.08` (SAFE).
+- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **760 tỷ** (Ước đạt **173.7%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Trẻ hóa và mở rộng đội tàu chở dầu/hóa chất/LPG lên >58 tàu, >85% đội tàu chạy tuyến quốc tế thu ngoại tệ USD.
+- **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 2.01x >= 1.0)
+- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
+
+### 🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.9/100**
+- **Chế độ Kế toán & Kiểm toán**: `CORPORATE_VAS_TT200` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
+- **Kết quả Kinh doanh TTM**: Doanh thu = **12,850 tỷ VND** (+4.5% YoY) | LNST = **920 tỷ VND** (+135.0% YoY) | ROE = **33.84%**
+- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **1,650 tỷ VND** (OCF/LNST = `1.79x`) | FCF = **800 tỷ VND** | Tiền mặt = **3,450 tỷ** | D/E = `0.85x`
+- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
+  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **90.0/100** | ROIC = **4.92%** vs WACC = **8.5%** (EVA Spread = **-3.58%**).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **33,684 ₫** (Biên an toàn MoS = **+117.3%**) | GARP SWEET SPOT (PEG = 0.21x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **84.0/100** | Sức mạnh giá RS Rating = **41/99** | `Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **8/9** | Beneish M-Score = `-2.6` (SAFE) | Sloan Accrual = `-3.64%` | Altman/CAMELS Z = `7.57` (SAFE).
+- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **950 tỷ** (Ước đạt **96.8%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Backlog xây lắp hạ tầng >26.000 tỷ (Nhà ga hành khách Sân bay Long Thành gói 5.10, cao tốc Bắc Nam).
+- **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 1.79x >= 1.0); 'Của để dành' Người mua trả tiền trước lớn (2,450 tỷ VND) đảm bảo doanh thu tương lai
+- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
+
+### 🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **90.7/100**
+- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **KPMG (Big4 - Chấp thuận toàn phần)**
+- **Kết quả Kinh doanh TTM**: Doanh thu = **68,950 tỷ VND** (+8.6% YoY) | LNST = **34,280 tỷ VND** (+10.4% YoY) | ROE = **17.5%**
+- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **38,500 tỷ VND** (OCF/LNST = `1.12x`) | FCF = **37,100 tỷ VND** | Tiền mặt = **245,000 tỷ** | D/E = `0.87x`
+- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
+  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **93.0/100** | ROIC = **17.5%** vs WACC = **9.2%** (EVA Spread = **+8.30%**).
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **69,039 ₫** (Biên an toàn MoS = **+27.4%**) | FAIR GROWTH (PEG = 1.1x — Định giá hợp lý theo tốc độ tăng EPS).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **78.0/100** | Sức mạnh giá RS Rating = **51/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.68` (SAFE) | Sloan Accrual = `-0.74%` | Altman/CAMELS Z = `3.7` (SAFE (CAMELS Vững mạnh)).
+- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **36,000 tỷ** (Ước đạt **97.5%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Chất lượng tài sản số 1 hệ thống (NPL 0.98%, bao phủ nợ xấu 215%), phát hành riêng lẻ 6.5% vốn cho tổ chức ngoại.
+- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 34.2%, NIM = 3.18%, CAR Basel II/III = 11.8%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (0.98%), Bộ đệm bao phủ nợ xấu LLR đạt 215.0%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 17.5%)
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
 ### 🏛️ ACB — Á Châu (ACB) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.9/100**
@@ -230,73 +282,21 @@
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **19,200 tỷ VND** (OCF/LNST = `1.14x`) | FCF = **18,250 tỷ VND** | Tiền mặt = **112,000 tỷ** | D/E = `1.08x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **93.0/100** | ROIC = **16.47%** vs WACC = **8.5%** (EVA Spread = **+7.97%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **39,104 ₫** (Biên an toàn MoS = **+93.1%**) | GARP SWEET SPOT (PEG = 0.68x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **63.0/100** | Sức mạnh giá RS Rating = **72/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **40,052 ₫** (Biên an toàn MoS = **+94.9%**) | GARP SWEET SPOT (PEG = 0.68x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **63.0/100** | Sức mạnh giá RS Rating = **71/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.69` (SAFE) | Sloan Accrual = `-0.96%` | Altman/CAMELS Z = `3.26` (SAFE (CAMELS Vững mạnh)).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **17,600 tỷ** (Ước đạt **95.7%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Ngân hàng bán lẻ quản trị rủi ro chuẩn mực nhất (0% trái phiếu doanh nghiệp BĐS rủi ro), ROE duy trì >21%.
 - **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 23.2%, NIM = 3.85%, CAR Basel II/III = 12.4%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (1.38%), Bộ đệm bao phủ nợ xấu LLR đạt 96.0%
 - **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
 
-### 🏛️ VCG — Vinaconex (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.7/100**
-- **Chế độ Kế toán & Kiểm toán**: `CORPORATE_VAS_TT200` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
-- **Kết quả Kinh doanh TTM**: Doanh thu = **12,850 tỷ VND** (+4.5% YoY) | LNST = **920 tỷ VND** (+135.0% YoY) | ROE = **33.84%**
-- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **1,650 tỷ VND** (OCF/LNST = `1.79x`) | FCF = **800 tỷ VND** | Tiền mặt = **3,450 tỷ** | D/E = `0.85x`
-- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
-  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **90.0/100** | ROIC = **4.92%** vs WACC = **8.5%** (EVA Spread = **-3.58%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **32,260 ₫** (Biên an toàn MoS = **+112.2%**) | GARP SWEET SPOT (PEG = 0.21x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **76.0/100** | Sức mạnh giá RS Rating = **42/99** | `Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
-  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **8/9** | Beneish M-Score = `-2.6` (SAFE) | Sloan Accrual = `-3.64%` | Altman/CAMELS Z = `7.57` (SAFE).
-- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **950 tỷ** (Ước đạt **96.8%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Backlog xây lắp hạ tầng >26.000 tỷ (Nhà ga hành khách Sân bay Long Thành gói 5.10, cao tốc Bắc Nam).
-- **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 1.79x >= 1.0); 'Của để dành' Người mua trả tiền trước lớn (2,450 tỷ VND) đảm bảo doanh thu tương lai
-- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
-
-### 🏛️ STB — Sài Gòn Thương Tín (Sacombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.6/100**
-- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
-- **Kết quả Kinh doanh TTM**: Doanh thu = **29,400 tỷ VND** (+12.0% YoY) | LNST = **9,850 tỷ VND** (+24.5% YoY) | ROE = **2.4%**
-- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **12,400 tỷ VND** (OCF/LNST = `1.26x`) | FCF = **11,650 tỷ VND** | Tiền mặt = **95,000 tỷ** | D/E = `1.29x`
-- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
-  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **78.0/100** | ROIC = **2.4%** vs WACC = **9.0%** (EVA Spread = **-6.60%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **109,035 ₫** (Biên an toàn MoS = **+63.7%**) | GARP SWEET SPOT (PEG = 0.52x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **82.0/100** | Sức mạnh giá RS Rating = **81/99** | `Phase C — SPRING / RECOVERY (Nỗ lực tạo đáy & Phục hồi lên MA20)` | Tín hiệu VSA: `NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung tổ chức giữ nền)`.
-  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.71` (SAFE) | Sloan Accrual = `-1.61%` | Altman/CAMELS Z = `2.83` (SAFE (CAMELS Vững mạnh)).
-- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **10,600 tỷ** (Ước đạt **92.9%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Giai đoạn cuối hoàn tất Đề án tái cơ cấu, xử lý dứt điểm KCN Phong Phú và đấu giá lô 32.5% cổ phiếu VAMC.
-- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 18.9%, NIM = 3.78%, CAR Basel II/III = 10.2%
-- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
-
-### 🏛️ VCB — Ngoại Thương Việt Nam (Vietcombank) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**
-- **Chế độ Kế toán & Kiểm toán**: `BANK_CAMELS_BASEL` | Đơn vị kiểm toán: **KPMG (Big4 - Chấp thuận toàn phần)**
-- **Kết quả Kinh doanh TTM**: Doanh thu = **68,950 tỷ VND** (+8.6% YoY) | LNST = **34,280 tỷ VND** (+10.4% YoY) | ROE = **17.5%**
-- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **38,500 tỷ VND** (OCF/LNST = `1.12x`) | FCF = **37,100 tỷ VND** | Tiền mặt = **245,000 tỷ** | D/E = `0.87x`
-- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
-  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **93.0/100** | ROIC = **17.5%** vs WACC = **9.2%** (EVA Spread = **+8.30%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **66,000 ₫** (Biên an toàn MoS = **+23.4%**) | FAIR GROWTH (PEG = 1.14x — Định giá hợp lý theo tốc độ tăng EPS).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **70.0/100** | Sức mạnh giá RS Rating = **56/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
-  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.68` (SAFE) | Sloan Accrual = `-0.74%` | Altman/CAMELS Z = `3.7` (SAFE (CAMELS Vững mạnh)).
-- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **36,000 tỷ** (Ước đạt **97.5%**) | Rủi ro ESOP: `NONE (0%)` | **Catalyst**: Chất lượng tài sản số 1 hệ thống (NPL 0.98%, bao phủ nợ xấu 215%), phát hành riêng lẻ 6.5% vốn cho tổ chức ngoại.
-- **Điểm mạnh BCTC**: Chế độ Ngân hàng CAMELS: CASA = 34.2%, NIM = 3.18%, CAR Basel II/III = 11.8%; Chất lượng tài sản dẫn đầu: Nợ xấu NPL kiểm soát thấp (0.98%), Bộ đệm bao phủ nợ xấu LLR đạt 215.0%; Hiệu suất sinh lời trên vốn chủ sở hữu xuất sắc (ROE = 17.5%)
-- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
-
-### 🏛️ SSI — Chứng Khoán SSI (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.4/100**
-- **Chế độ Kế toán & Kiểm toán**: `BROKERAGE_FVTPL_MARGIN` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
-- **Kết quả Kinh doanh TTM**: Doanh thu = **8,450 tỷ VND** (+24.0% YoY) | LNST = **3,120 tỷ VND** (+32.5% YoY) | ROE = **13.86%**
-- **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **3,450 tỷ VND** (OCF/LNST = `1.11x`) | FCF = **3,200 tỷ VND** | Tiền mặt = **18,500 tỷ** | D/E = `1.5x`
-- **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
-  * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **84.0/100** | ROIC = **13.86%** vs WACC = **9.79%** (EVA Spread = **+4.07%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **29,580 ₫** (Biên an toàn MoS = **+54.5%**) | GARP SWEET SPOT (PEG = 0.44x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **72.0/100** | Sức mạnh giá RS Rating = **53/99** | `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
-  * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **9/9** | Beneish M-Score = `-2.67` (SAFE) | Sloan Accrual = `-0.43%` | Altman/CAMELS Z = `2.8` (SAFE (An toàn Vốn Khả Dụng)).
-- **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **2,700 tỷ** (Ước đạt **115.5%**) | Rủi ro ESOP: `LOW (0.6%)` | **Catalyst**: Dẫn đầu quy mô vốn chủ sở hữu ngành chứng khoán, hưởng lợi trực tiếp từ Non-Prefunding (Thông tư 68) cho khối ngoại và nâng hạng FTSE.
-- **Điểm mạnh BCTC**: Chế độ Công ty Chứng khoán: Dư nợ Margin/VCSH = 0.85x (An toàn dưới trần 2.0x của UBCKNN); Dòng tiền hoạt động môi giới & tự doanh thực dương mạnh (OCF/LNST = 1.11x); Hiệu suất ROE đạt 13.86%, hưởng lợi trực tiếp từ nâng hạng FTSE và hệ thống KRX
-- **Cảnh báo Red Flags**: Không phát hiện rủi ro trọng yếu trên BCTC kiểm toán
-
-### 🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **88.5/100**
+### 🏛️ DGW — Thế Giới Số (Digiworld) (HOSE) | Xếp hạng: **AAA** | Điểm 10 Danh Thủ: **89.8/100**
 - **Chế độ Kế toán & Kiểm toán**: `CORPORATE_VAS_TT200` | Đơn vị kiểm toán: **Ernst & Young (Big4 - Chấp thuận toàn phần)**
 - **Kết quả Kinh doanh TTM**: Doanh thu = **21,800 tỷ VND** (+15.8% YoY) | LNST = **445 tỷ VND** (+24.5% YoY) | ROE = **28.47%**
 - **Kiểm toán Dòng tiền & Bảng cân đối**: OCF = **680 tỷ VND** (OCF/LNST = `1.53x`) | FCF = **560 tỷ VND** | Tiền mặt = **1,450 tỷ** | D/E = `0.82x`
 - **Góc nhìn 10 Đại Danh Thủ Đầu Tư**:
   * **Warren Buffett & Charlie Munger**: Điểm hào kinh tế Moat = **90.0/100** | ROIC = **11.68%** vs WACC = **8.5%** (EVA Spread = **+3.18%**).
-  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **69,322 ₫** (Biên an toàn MoS = **+80.5%**) | GARP SWEET SPOT (PEG = 0.44x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
-  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **81.0/100** | Sức mạnh giá RS Rating = **75/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
+  * **Benjamin Graham & Peter Lynch**: Giá trị nội tại Graham = **73,850 ₫** (Biên an toàn MoS = **+87.2%**) | GARP SWEET SPOT (PEG = 0.42x < 1.0 — Tăng trưởng giá rẻ chuẩn Peter Lynch).
+  * **William O'Neil & Richard Wyckoff**: Điểm CANSLIM = **89.0/100** | Sức mạnh giá RS Rating = **72/99** | `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)` | Tín hiệu VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`.
   * **Piotroski, Beneish, Sloan & Altman**: Piotroski F-Score = **8/9** | Beneish M-Score = `-2.79` (SAFE) | Sloan Accrual = `-4.52%` | Altman/CAMELS Z = `10.18` (SAFE).
 - **Kế hoạch ĐHCĐ & Chất xúc tác cốt lõi**: Mục tiêu LNST = **490 tỷ** (Ước đạt **90.8%**) | Rủi ro ESOP: `LOW (1.0%)` | **Catalyst**: Chu kỳ thay mới Laptop AI PC, thiết bị văn phòng doanh nghiệp và mở rộng mảng hàng tiêu dùng/thiết bị gia dụng.
 - **Điểm mạnh BCTC**: Chất lượng lợi nhuận TIỀN THẬT xuất sắc (OCF/LNST = 1.53x >= 1.0)

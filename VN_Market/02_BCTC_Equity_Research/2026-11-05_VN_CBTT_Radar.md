@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-05 08:51:03  
-> **Số sự kiện ghi nhận:** 35 thông báo  
+> **Thời gian quét:** 2026-11-05 09:08:05  
+> **Số sự kiện ghi nhận:** 36 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bà Mai Kiều Liên cùng Vinamilk ba năm liền góp mặt trong hai bảng xếp hạng danh giá của Fortune | [Xem Link](https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Máy bay Vietnam Airlines vừa cất cánh 15 phút, nữ hành khách gặp sự cố: 4 người đặc biệt lập tức vào cuộc | [Xem Link](https://cafef.vn/may-bay-vietnam-airlines-vua-cat-canh-15-phut-nu-hanh-khach-gap-su-co-4-nguoi-dac-biet-lap-tuc-vao-cuoc-188261105152305712.chn) |
 | **DPM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | 9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026 | [Xem Link](https://cafef.vn/9-thang-da-hoan-thanh-gap-doi-muc-tieu-loi-nhuan-ca-nam-ong-lon-nganh-phan-bon-tang-113-ke-hoach-nam-2026-188261105105540776.chn) |
 | **MWG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ông Nguyễn Đức Tài: Nếu đầu tư 1 tỷ đồng vào Thế Giới Di Động và giữ nguyên trong 20 năm, khoản tiền đó hiện nay đã thành 400 tỷ đồng | [Xem Link](https://cafef.vn/ong-nguyen-duc-tai-neu-dau-tu-1-ty-dong-vao-the-gioi-di-dong-va-giu-nguyen-trong-20-nam-khoan-tien-do-hien-nay-da-thanh-400-ty-dong-188261105081557057.chn) |

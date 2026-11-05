@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-05T08:51:03.797565+00:00",
+  "timestamp_utc": "2026-11-05T09:08:05.815817+00:00",
   "scan_date": "2026-11-05",
   "total_us_filings_count": 368,
-  "total_vn_announcements_count": 35,
+  "total_vn_announcements_count": 36,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -286,11 +286,11 @@
     },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Máy bay Vietnam Airlines vừa cất cánh 15 phút, nữ hành khách gặp sự cố: 4 người đặc biệt lập tức vào cuộc",
+      "latest_title": "Bà Mai Kiều Liên cùng Vinamilk ba năm liền góp mặt trong hai bảng xếp hạng danh giá của Fortune",
       "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 15:20:00 +0700",
-      "source_url": "https://cafef.vn/may-bay-vietnam-airlines-vua-cat-canh-15-phut-nu-hanh-khach-gap-su-co-4-nguoi-dac-biet-lap-tuc-vao-cuoc-188261105152305712.chn",
-      "total_announcements": 11
+      "published_at": "Thu, 05 Nov 26 16:00:00 +0700",
+      "source_url": "https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn",
+      "total_announcements": 12
     },
     "DPM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -4792,6 +4792,18 @@
     }
   ],
   "vn_announcements": [
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Bà Mai Kiều Liên cùng Vinamilk ba năm liền góp mặt trong hai bảng xếp hạng danh giá của Fortune",
+      "summary": "Ngày 3/11, tại Hội nghị Thượng đỉnh Fortune Southeast Asia 500 diễn ra ở TP.HCM, Nguyên Ủy viên Trung ương Đảng, Anh hùng Lao động, Tổng Giám đốc Vinamilk Mai Kiều Liên đón nhận hai danh hiệu của Fortune dành cho cá nhân...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 16:00:00 +0700",
+      "source_url": "https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn"
+    },
     {
       "market": "VIETNAM",
       "symbols": [

@@ -13,16 +13,16 @@
 
 ### ✅ Những Điểm Làm Đúng & Kỷ Luật Được Khen Ngợi:
 - **ĐẠT CHUẨN**: Chuẩn hóa lô [HPG]: 500 CP tuân thủ 100% quy định sàn HOSE.
-- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [HPG]: Stop 4.42% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
+- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [HPG]: Stop 4.93% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
 - **ĐẠT CHUẨN**: Tỷ lệ R:R [HPG]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.
 - **ĐẠT CHUẨN**: Chất lượng BCTC [HPG]: OCF/LNST = 1.35 tiền thật dồi dào, Beneish = SAFE.
 - **ĐẠT CHUẨN**: Chuẩn hóa lô [TCB]: 200 CP tuân thủ 100% quy định sàn HOSE.
-- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [TCB]: Stop 4.11% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
-- **ĐẠT CHUẨN**: Tỷ lệ R:R [TCB]: 1:2.59 đạt chuẩn kỳ vọng toán học dương.
+- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [TCB]: Stop 4.56% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
+- **ĐẠT CHUẨN**: Tỷ lệ R:R [TCB]: 1:2.60 đạt chuẩn kỳ vọng toán học dương.
 - **ĐẠT CHUẨN**: Chất lượng BCTC [TCB]: OCF/LNST = 1.16 tiền thật dồi dào, Beneish = SAFE.
 - **ĐẠT CHUẨN**: Chuẩn hóa lô [MBB]: 200 CP tuân thủ 100% quy định sàn HOSE.
-- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [MBB]: Stop 3.12% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
-- **ĐẠT CHUẨN**: Tỷ lệ R:R [MBB]: 1:2.58 đạt chuẩn kỳ vọng toán học dương.
+- **ĐẠT CHUẨN**: Kỷ luật cắt lỗ [MBB]: Stop 3.54% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.
+- **ĐẠT CHUẨN**: Tỷ lệ R:R [MBB]: 1:2.61 đạt chuẩn kỳ vọng toán học dương.
 - **ĐẠT CHUẨN**: Chất lượng BCTC [MBB]: OCF/LNST = 1.14 tiền thật dồi dào, Beneish = SAFE.
 
 ### ⚠️ LỖI SAI LỆCH VÀ THIẾU SÓT BỊ MASTER CIO BẮT LỖI:
@@ -43,10 +43,10 @@
 *Chấm điểm chất lượng báo cáo & sổ lệnh: **79.0/100***
 
 ### ✅ Những Điểm Làm Đúng & Kỷ Luật Được Khen Ngợi:
-- **ĐẠT CHUẨN**: Kỳ vọng [MSFT]: R:R = 1:2.77, EV = +8.0%.
-- **ĐẠT CHUẨN**: Kỳ vọng [V]: R:R = 1:2.79, EV = +6.1%.
-- **ĐẠT CHUẨN**: Kỳ vọng [JPM]: R:R = 1:2.79, EV = +6.5%.
-- **ĐẠT CHUẨN**: Kỳ vọng [PG]: R:R = 1:2.79, EV = +7.4%.
+- **ĐẠT CHUẨN**: Kỳ vọng [MSFT]: R:R = 1:2.45, EV = +8.6%.
+- **ĐẠT CHUẨN**: Kỳ vọng [V]: R:R = 1:2.79, EV = +6.2%.
+- **ĐẠT CHUẨN**: Kỳ vọng [JPM]: R:R = 1:2.79, EV = +7.2%.
+- **ĐẠT CHUẨN**: Kỳ vọng [PG]: R:R = 1:2.79, EV = +7.7%.
 
 ### ⚠️ LỖI SAI LỆCH VÀ RỦI RO BỊ MASTER CIO BẮT LỖI:
 > [!WARNING]
