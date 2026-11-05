@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05 09:09:55",
+  "generated_at": "2026-11-05 14:09:59",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -359,11 +359,19 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
+      "symbol": "HPG",
       "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Wed, 04 Nov 26 1",
-      "headline": "Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ",
+      "date": "Thu, 05 Nov 26 1",
+      "headline": "Con trai tỷ phú Trần Đình Long chỉ mua 1/5 số cổ phiếu HPG đã đăng ký",
       "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "REE",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Thu, 05 Nov 26 1",
+      "headline": "‘Nữ tướng’ cơ điện lạnh REE Nguyễn Thị Mai Thanh lần đầu tiên nói về sự buông bỏ và thất bại trong quá trình chuyển giao",
+      "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
@@ -371,14 +379,6 @@
       "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
       "date": "Thu, 05 Nov 26 1",
       "headline": "VNDirect sắp họp đại hội bất thường",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "POW",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Wed, 04 Nov 26 2",
-      "headline": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
       "is_portfolio_holding": false
     }
   ],
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 36 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 364 hồ sơ SEC & 32 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

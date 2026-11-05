@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-05T09:08:05.815817+00:00",
+  "timestamp_utc": "2026-11-05T14:09:43.133983+00:00",
   "scan_date": "2026-11-05",
-  "total_us_filings_count": 368,
-  "total_vn_announcements_count": 36,
+  "total_us_filings_count": 364,
+  "total_vn_announcements_count": 32,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -45,12 +45,12 @@
       "total_recent_filings": 8
     },
     "META": {
-      "latest_form": "4",
-      "latest_filing_date": "2026-11-04",
+      "latest_form": "424B5",
+      "latest_filing_date": "2026-11-05",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801",
-      "total_recent_filings": 8
+      "total_recent_filings": 9
     },
     "TSLA": {
       "latest_form": "10-Q",
@@ -78,11 +78,11 @@
     },
     "JPM": {
       "latest_form": "424B2",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-05",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617",
-      "total_recent_filings": 12
+      "total_recent_filings": 7
     },
     "TSM": {
       "latest_form": "4",
@@ -142,7 +142,7 @@
     },
     "BAC": {
       "latest_form": "424B2",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-05",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858",
@@ -150,7 +150,7 @@
     },
     "GS": {
       "latest_form": "424B2",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-05",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982",
@@ -269,10 +269,10 @@
       "total_recent_filings": 12
     },
     "PG": {
-      "latest_form": "8-K",
-      "latest_filing_date": "2026-11-03",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
+      "latest_form": "4",
+      "latest_filing_date": "2026-11-05",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424",
       "total_recent_filings": 11
     },
@@ -290,7 +290,7 @@
       "severity": "INFO",
       "published_at": "Thu, 05 Nov 26 16:00:00 +0700",
       "source_url": "https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn",
-      "total_announcements": 12
+      "total_announcements": 10
     },
     "DPM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -316,13 +316,21 @@
       "source_url": "https://cafef.vn/khong-chi-nam-1-eximbank-dai-gia-cang-bien-hai-phong-lo-danh-muc-dau-tu-gan-11000-ty-dong-om-62-trieu-co-phieu-gex-42-trieu-co-phieu-hah-188261105070213823.chn",
       "total_announcements": 1
     },
-    "FPT": {
+    "HPG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ",
+      "latest_title": "Con trai tỷ phú Trần Đình Long chỉ mua 1/5 số cổ phiếu HPG đã đăng ký",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
-      "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn",
-      "total_announcements": 6
+      "published_at": "Thu, 05 Nov 26 17:40:00 +0700",
+      "source_url": "https://cafef.vn/con-trai-ty-phu-tran-dinh-long-chi-mua-1-5-so-co-phieu-hpg-da-dang-ky-188261105173848906.chn",
+      "total_announcements": 1
+    },
+    "REE": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "‘Nữ tướng’ cơ điện lạnh REE Nguyễn Thị Mai Thanh lần đầu tiên nói về sự buông bỏ và thất bại trong quá trình chuyển giao",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 16:36:00 +0700",
+      "source_url": "https://cafef.vn/nu-tuong-co-dien-lanh-ree-nguyen-thi-mai-thanh-lan-dau-tien-noi-ve-su-buong-bo-va-that-bai-trong-qua-trinh-chuyen-giao-188261105163638727.chn",
+      "total_announcements": 1
     },
     "VND": {
       "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -348,13 +356,21 @@
       "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn",
       "total_announcements": 1
     },
+    "FPT": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "FPT \"tái sinh\"",
+      "severity": "INFO",
+      "published_at": "Wed, 04 Nov 26 14:58:00 +0700",
+      "source_url": "https://cafef.vn/fpt-tai-sinh-188261104145852068.chn",
+      "total_announcements": 3
+    },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giá vàng nhẫn trơn, vàng miếng chiều 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải",
+      "latest_title": "Giá vàng nhẫn trơn, vàng miếng tối 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2 triệu đồng/lượng",
       "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 14:58:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn",
-      "total_announcements": 4
+      "published_at": "Thu, 05 Nov 26 19:38:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-2-trieu-dong-luong-188261105065603864.chn",
+      "total_announcements": 3
     },
     "ACB": {
       "latest_event_type": "ESOP_PHAT_HANH",
@@ -522,6 +538,18 @@
       "market": "US_GLOBAL",
       "symbol": "AAPL",
       "company_name": "Apple Inc.",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001140361-26-042046",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AAPL",
+      "company_name": "Apple Inc.",
       "form": "10-K",
       "filing_date": "2026-11-03",
       "description": "10-K",
@@ -652,15 +680,15 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "AAPL",
-      "company_name": "Apple Inc.",
-      "form": "4",
-      "filing_date": "2026-10-05",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001140361-26-038669",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
+      "symbol": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "form": "8-K",
+      "filing_date": "2026-11-05",
+      "description": "8-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001193125-26-448357",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
     },
     {
       "market": "US_GLOBAL",
@@ -768,18 +796,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001214659-26-013218",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "MSFT",
-      "company_name": "MICROSOFT CORP",
-      "form": "DEFA14A",
-      "filing_date": "2026-10-21",
-      "description": "DEFA14A",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-427867",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
     },
     {
@@ -1009,6 +1025,18 @@
       "severity": "INFO",
       "accession_number": "0001284323-26-000002",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "form": "424B5",
+      "filing_date": "2026-11-05",
+      "description": "424B5",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-448015",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
     },
     {
       "market": "US_GLOBAL",
@@ -1507,6 +1535,54 @@
       "symbol": "JPM",
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034669",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-116091",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-116088",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-116074",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
       "filing_date": "2026-11-04",
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
@@ -1536,114 +1612,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001213900-26-116020",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116015",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116014",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034648",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034639",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B3",
-      "filing_date": "2026-11-04",
-      "description": "FORM 424B3",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116007",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116006",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034637",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-115976",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-115974",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -2551,6 +2519,66 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034668",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034667",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034664",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034659",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034658",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
+      "form": "424B2",
       "filing_date": "2026-11-04",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
@@ -2620,63 +2648,27 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-05",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034635",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+      "accession_number": "0001193125-26-447920",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-05",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034634",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034631",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034626",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034625",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+      "accession_number": "0001193125-26-447791",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
       "market": "US_GLOBAL",
@@ -2748,30 +2740,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001193125-26-447585",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-447444",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-447338",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -4554,6 +4522,18 @@
       "market": "US_GLOBAL",
       "symbol": "PG",
       "company_name": "PROCTER & GAMBLE Co",
+      "form": "4",
+      "filing_date": "2026-11-05",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000080424-26-000271",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "PG",
+      "company_name": "PROCTER & GAMBLE Co",
       "form": "8-K",
       "filing_date": "2026-11-03",
       "description": "8-K",
@@ -4668,18 +4648,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001628280-26-068216",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "PG",
-      "company_name": "PROCTER & GAMBLE Co",
-      "form": "144",
-      "filing_date": "2026-10-29",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000080424-26-000264",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424"
     },
     {
@@ -4855,14 +4823,26 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT"
+        "HPG"
       ],
-      "title": "Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ",
-      "summary": "Theo thỏa thuận, hai doanh nghiệp sẽ phối hợp phát triển các dịch vụ viễn thông thế hệ mới như mạng di động ảo (MVNO), SIM 5G, kết nối máy với máy (M2M), Internet vạn vật (IoT) và các dịch vụ giá trị gia tăng ứng dụng AI...",
+      "title": "Con trai tỷ phú Trần Đình Long chỉ mua 1/5 số cổ phiếu HPG đã đăng ký",
+      "summary": "Ông Trần Vũ Minh, con trai Chủ tịch Hòa Phát Trần Đình Long, chỉ mua thành công 10 triệu trong tổng số 50 triệu cổ phiếu HPG đã đăng ký, tương đương 20% kế hoạch....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
-      "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn"
+      "published_at": "Thu, 05 Nov 26 17:40:00 +0700",
+      "source_url": "https://cafef.vn/con-trai-ty-phu-tran-dinh-long-chi-mua-1-5-so-co-phieu-hpg-da-dang-ky-188261105173848906.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "REE"
+      ],
+      "title": "‘Nữ tướng’ cơ điện lạnh REE Nguyễn Thị Mai Thanh lần đầu tiên nói về sự buông bỏ và thất bại trong quá trình chuyển giao",
+      "summary": "Bà Mai Thanh thừa nhận, đã căng thẳng tột độ khi hai CEO kế nhiệm lần lượt rời bỏ REE. Những lần chuyển giao thất bại liên tiếp là một đòn giáng mạnh nhưng giúp bà xác định rõ lằn ranh của sự buông bỏ....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 16:36:00 +0700",
+      "source_url": "https://cafef.vn/nu-tuong-co-dien-lanh-ree-nguyen-thi-mai-thanh-lan-dau-tien-noi-ve-su-buong-bo-va-that-bai-trong-qua-trinh-chuyen-giao-188261105163638727.chn"
     },
     {
       "market": "VIETNAM",
@@ -4915,38 +4895,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT"
-      ],
-      "title": "FPT Retail ba năm liên tiếp thăng hạng trong Fortune Southeast Asia 500",
-      "summary": "Đây cũng là năm thứ ba liên tiếp FPT Retail góp mặt và cải thiện thứ hạng, từ vị trí 221 năm 2024 lên 199 năm 2025 và 170 vào năm 2026, tăng tổng cộng 51 bậc....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 13:24:00 +0700",
-      "source_url": "https://cafef.vn/fpt-retail-ba-nam-lien-tiep-thang-hang-trong-fortune-southeast-asia-500-18826110413250883.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Hé lộ kế hoạch giữa FPT và MobiFone",
-      "summary": "Thỏa thuận kết hợp hạ tầng viễn thông, hệ sinh thái khách hàng, thế mạnh về giải pháp, công nghệ số của MobiFone với năng lực công nghệ, nghiên cứu, phát triển và triển khai giải pháp của FPT trong các lĩnh vực viễn thôn...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
-      "source_url": "https://cafef.vn/he-lo-ke-hoach-lon-giua-fpt-va-mobifone-188261104100137664.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng chiều 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải",
-      "summary": "Giá vàng trong nước chiều 5/11 tiếp tục neo ở vùng cao nhưng đã hạ nhiệt so với buổi sáng, khi vàng miếng SJC giảm 1,5 triệu đồng/lượng so với 9h30, xuống 143 triệu đồng/lượng ở chiều bán ra. Trong khi đó, giá vàng thế g...",
+      "title": "Giá vàng nhẫn trơn, vàng miếng tối 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2 triệu đồng/lượng",
+      "summary": "Giá vàng trong nước kết phiên 5/11 tiếp tục tăng, trong đó vàng nhẫn tăng mạnh tới 2 triệu đồng/lượng, trong khi vàng miếng SJC chỉ nhích thêm 100.000 đồng/lượng ở chiều bán ra, lên 142,5 triệu đồng/lượng. Trên thị trườn...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 14:58:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn"
+      "published_at": "Thu, 05 Nov 26 19:38:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-2-trieu-dong-luong-188261105065603864.chn"
     },
     {
       "market": "VIETNAM",
@@ -5059,18 +5015,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng chiều tối 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "summary": "Giá vàng trong nước kết phiên 2/11 tăng tại tất cả thương hiệu được khảo sát. Vàng miếng SJC đồng loạt tăng 1 triệu đồng/lượng ở cả hai chiều mua vào và bán ra tại phần lớn doanh nghiệp, lên mức 137-140 triệu đồng/lượng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 19:26:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "HCM"
       ],
       "title": "Ít ai biết khu đất gần 457 ha từng được FLC đề xuất xây công viên Safari hàng đầu châu Á, có cả resort 5 sao và mô hình Disneyland, nay TP.HCM muốn kêu gọi đầu tư trở lại",
@@ -5115,18 +5059,6 @@
       "severity": "INFO",
       "published_at": "Thu, 05 Nov 26 08:00:00 +0700",
       "source_url": "https://cafef.vn/kham-pha-bo-suu-tap-nha-pho-biet-thu-danh-gia-hiem-hoi-tai-nam-rach-chiec-188261103202016902.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "TP.HCM hỗ trợ 2,5 triệu m³ đá xây dựng cho Cần Thơ làm đường cao tốc",
-      "summary": "Theo kế hoạch, TP Cần Thơ dự kiến tiếp nhận khoảng 250.000m³ đá xây dựng trong tháng 12/2026 và 2,25 triệu m³ còn lại trong năm 2027....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 20:46:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-ho-tro-25-trieu-m-da-xay-dung-cho-can-tho-lam-duong-cao-toc-188261104204822412.chn"
     },
     {
       "market": "VIETNAM",
@@ -5211,18 +5143,6 @@
       "severity": "INFO",
       "published_at": "Tue, 03 Nov 2026 18:19:09 +0700",
       "source_url": "https://vnexpress.net/trung-tam-tai-chinh-tp-hcm-khong-nen-canh-tranh-truc-tiep-voi-singapore-5140196.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Sun PhuQuoc Airways mở thêm đường bay đến Thượng Hải",
-      "summary": "Sun PhuQuoc Airways mở đường bay thẳng Hà Nội - Thượng Hải từ ngày 26/11, bổ sung tuyến thứ hai kết nối thành phố này, sau đường bay TP HCM - Thượng Hải khai thác từ giữa tháng 10....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 2026 15:00:00 +0700",
-      "source_url": "https://vnexpress.net/sun-phuquoc-airways-mo-them-duong-bay-den-thuong-hai-5140166.html"
     }
   ]
 }
