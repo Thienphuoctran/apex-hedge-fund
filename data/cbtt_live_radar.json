@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-05T01:42:53.926891+00:00",
+  "timestamp_utc": "2026-11-05T02:45:51.217002+00:00",
   "scan_date": "2026-11-05",
   "total_us_filings_count": 368,
   "total_vn_announcements_count": 37,
@@ -316,14 +316,6 @@
       "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn",
       "total_announcements": 14
     },
-    "BSR": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Công ty đầu tiên hé lộ doanh thu cả năm 2026 đạt gần 224.000 tỷ đồng, tăng 56%",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 03 Nov 26 21:50:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-dau-tien-he-lo-doanh-thu-ca-nam-2026-dat-gan-224000-ty-dong-tang-56-188261103214915204.chn",
-      "total_announcements": 1
-    },
     "POW": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
@@ -350,11 +342,11 @@
     },
     "ACB": {
       "latest_event_type": "ESOP_PHAT_HANH",
-      "latest_title": "Quỹ ACB chào bán ra công chúng chứng chỉ quỹ trái phiếu thông minh ACBC-SFUND, nhà đầu tư có thể mua tối thiểu 1 triệu đồng",
+      "latest_title": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB (\"ACBC\") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng",
       "severity": "WARNING",
-      "published_at": "Thu, 05 Nov 26 08:30:00 +0700",
-      "source_url": "https://cafef.vn/quy-acb-chao-ban-ra-cong-chung-chung-chi-quy-trai-phieu-thong-minh-acbc-sfund-nha-dau-tu-co-the-mua-toi-thieu-1-trieu-dong-18826110508211184.chn",
-      "total_announcements": 3
+      "published_at": "Thu, 05 Nov 26 09:30:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn",
+      "total_announcements": 4
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -1230,6 +1222,18 @@
       "market": "US_GLOBAL",
       "symbol": "PLTR",
       "company_name": "Palantir Technologies Inc.",
+      "form": "4",
+      "filing_date": "2026-11-04",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001840244-26-000023",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "PLTR",
+      "company_name": "Palantir Technologies Inc.",
       "form": "10-Q",
       "filing_date": "2026-11-03",
       "description": "10-Q",
@@ -1356,18 +1360,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001823923-26-000013",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "PLTR",
-      "company_name": "Palantir Technologies Inc.",
-      "form": "144",
-      "filing_date": "2026-10-09",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001950047-26-010148",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
     },
     {
@@ -4843,18 +4835,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "BSR"
-      ],
-      "title": "Công ty đầu tiên hé lộ doanh thu cả năm 2026 đạt gần 224.000 tỷ đồng, tăng 56%",
-      "summary": "Tổng công ty Lọc hóa dầu Việt Nam (BSR) ước đạt doanh thu hợp nhất 223.991 tỷ đồng trong năm 2026, vượt 17% kế hoạch và tăng 56% so với năm trước....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 03 Nov 26 21:50:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-dau-tien-he-lo-doanh-thu-ca-nam-2026-dat-gan-224000-ty-dong-tang-56-188261103214915204.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "POW"
       ],
       "title": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
@@ -4954,12 +4934,24 @@
       "symbols": [
         "ACB"
       ],
-      "title": "Quỹ ACB chào bán ra công chúng chứng chỉ quỹ trái phiếu thông minh ACBC-SFUND, nhà đầu tư có thể mua tối thiểu 1 triệu đồng",
+      "title": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB (\"ACBC\") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng",
+      "summary": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB trân trọng thông báo về đợt chào bán ra công chúng (IPO) của Quỹ Đầu Tư Trái phiếu ACBC (ACBC-BOND)....",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Thu, 05 Nov 26 09:30:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB (“ACBC”) thông báo chào bán chứng chỉ Quỹ ACBC-SFUND ra công chúng",
       "summary": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB vừa thông báo về đợt chào bán ra công chúng (IPO) của Quỹ Đầu Tư Trái phiếu Thông minh ACBC (ACBC-SFUND)....",
       "event_type": "ESOP_PHAT_HANH",
       "severity": "WARNING",
       "published_at": "Thu, 05 Nov 26 08:30:00 +0700",
-      "source_url": "https://cafef.vn/quy-acb-chao-ban-ra-cong-chung-chung-chi-quy-trai-phieu-thong-minh-acbc-sfund-nha-dau-tu-co-the-mua-toi-thieu-1-trieu-dong-18826110508211184.chn"
+      "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-sfund-ra-cong-chung-18826110508211184.chn"
     },
     {
       "market": "VIETNAM",
