@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-05T05:40:36.666483+00:00",
+  "timestamp_utc": "2026-11-05T06:41:15.703983+00:00",
   "scan_date": "2026-11-05",
   "total_us_filings_count": 368,
   "total_vn_announcements_count": 35,
@@ -4927,6 +4927,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "HDBank tăng 140 bậc qua ba kỳ xếp hạng Fortune Southeast Asia 500",
+      "summary": "Ngày 3/11/2026, tại lễ vinh danh Fortune Southeast Asia 500 ở TP.HCM, HDBank ghi dấu năm thứ ba liên tiếp góp mặt cùng bước nhảy vọt trên bảng xếp hạng 500 doanh nghiệp lớn nhất Đông Nam Á....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 13:09:00 +0700",
+      "source_url": "https://cafef.vn/hdbank-tang-140-bac-qua-ba-ky-xep-hang-fortune-southeast-asia-500-188261105122506793.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PNJ"
       ],
       "title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2,5 triệu đồng/lượng",
@@ -5107,30 +5119,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Cận cảnh gần 15 km Vành đai 3 trên cao trước ngày thông xe",
-      "summary": "Đoạn trên cao Vành đai 3 dài gần 15 km qua TP.HCM đang được khẩn trương hoàn thiện các hạng mục cuối, hướng đến mục tiêu thông xe trong tháng 11/2026....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 14:15:00 +0700",
-      "source_url": "https://cafef.vn/can-canh-gan-15-km-vanh-dai-3-tren-cao-truoc-ngay-thong-xe-188261104135210243.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "TP.HCM tái khởi động công viên Sài Gòn Safari hơn 450 ha bỏ hoang 22 năm",
-      "summary": "Công viên Sài Gòn Safari rộng 456,85 ha, là dự án công viên lớn nhất TP.HCM nhưng treo suốt 22 năm, đang được TP.HCM kêu gọi đầu tư....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 14:14:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-tai-khoi-dong-cong-vien-sai-gon-safari-hon-450-ha-bo-hoang-22-nam-188261104134735993.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "SSI"
       ],
       "title": "Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn",
@@ -5175,6 +5163,18 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 2026 09:37:09 GMT",
       "source_url": "https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Vốn FDI vào TP HCM tăng hơn 4 lần",
+      "summary": "Đầu tàu kinh tế thu hút 19,1 tỷ USD vốn FDI trong 10 tháng đầu năm, gấp 4,2 lần so với cùng kỳ 2025, theo cơ quan Thống kê TP HCM....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 2026 12:29:06 +0700",
+      "source_url": "https://vnexpress.net/von-fdi-vao-tp-hcm-tang-hon-4-lan-5141078.html"
     },
     {
       "market": "VIETNAM",

@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-05 05:40:36  
+> **Thời gian quét:** 2026-11-05 06:41:15  
 > **Số sự kiện ghi nhận:** 35 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
@@ -15,6 +15,7 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT Retail ba năm liên tiếp thăng hạng trong Fortune Southeast Asia 500 | [Xem Link](https://cafef.vn/fpt-retail-ba-nam-lien-tiep-thang-hang-trong-fortune-southeast-asia-500-18826110413250883.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hé lộ kế hoạch giữa FPT và MobiFone | [Xem Link](https://cafef.vn/he-lo-ke-hoach-lon-giua-fpt-va-mobifone-188261104100137664.chn) |
 | **HCM** | `CO_TUC` | ⚠️ CHÚ Ý | ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031 | [Xem Link](https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | HDBank tăng 140 bậc qua ba kỳ xếp hạng Fortune Southeast Asia 500 | [Xem Link](https://cafef.vn/hdbank-tang-140-bac-qua-ba-ky-xep-hang-fortune-southeast-asia-500-188261105122506793.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2,5 triệu đồng/lượng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn) |
 | **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB ("ACBC") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn) |
 | **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB (“ACBC”) thông báo chào bán chứng chỉ Quỹ ACBC-SFUND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-sfund-ra-cong-chung-18826110508211184.chn) |
@@ -30,12 +31,11 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khám phá bộ sưu tập nhà phố biệt thự danh giá hiếm hoi tại Nam Rạch Chiếc | [Xem Link](https://cafef.vn/kham-pha-bo-suu-tap-nha-pho-biet-thu-danh-gia-hiem-hoi-tai-nam-rach-chiec-188261103202016902.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP.HCM hỗ trợ 2,5 triệu m³ đá xây dựng cho Cần Thơ làm đường cao tốc | [Xem Link](https://cafef.vn/tphcm-ho-tro-25-trieu-m-da-xay-dung-cho-can-tho-lam-duong-cao-toc-188261104204822412.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chốt giá 3.790 căn hộ Thủ Thiêm, TP.HCM quy định 'sức khỏe' doanh nghiệp đấu giá | [Xem Link](https://cafef.vn/chot-gia-3790-can-ho-thu-thiem-tphcm-quy-dinh-suc-khoe-doanh-nghiep-dau-gia-188261104185950187.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cận cảnh gần 15 km Vành đai 3 trên cao trước ngày thông xe | [Xem Link](https://cafef.vn/can-canh-gan-15-km-vanh-dai-3-tren-cao-truoc-ngay-thong-xe-188261104135210243.chn) |
-| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | TP.HCM tái khởi động công viên Sài Gòn Safari hơn 450 ha bỏ hoang 22 năm | [Xem Link](https://cafef.vn/tphcm-tai-khoi-dong-cong-vien-sai-gon-safari-hon-450-ha-bo-hoang-22-nam-188261104134735993.chn) |
 | **SSI** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn | [Xem Link](https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại quay trở lại gom FPT | [Xem Link](https://vneconomy.vn/khoi-ngoai-quay-tro-lai-gom-fpt.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | MB Economic Insights 2026: Khơi thông nguồn vốn, thích ứng nhanh trước biến động sắp diễn ra tại TP. HCM | [Xem Link](https://vneconomy.vn/mb-economic-insights-2026-khoi-thong-nguon-von-thich-ung-nhanh-truoc-bien-dong-sap-dien-ra-tai-tp-hcm.htm) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép | [Xem Link](https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vốn FDI vào TP HCM tăng hơn 4 lần | [Xem Link](https://vnexpress.net/von-fdi-vao-tp-hcm-tang-hon-4-lan-5141078.html) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT Retail tăng 51 bậc sau ba năm vào Fortune Southeast Asia 500 | [Xem Link](https://vnexpress.net/fpt-retail-tang-51-bac-sau-ba-nam-vao-fortune-southeast-asia-500-5140694.html) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 'Trung tâm tài chính TP HCM không nên cạnh tranh trực tiếp với Singapore' | [Xem Link](https://vnexpress.net/trung-tam-tai-chinh-tp-hcm-khong-nen-canh-tranh-truc-tiep-voi-singapore-5140196.html) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Sun PhuQuoc Airways mở thêm đường bay đến Thượng Hải | [Xem Link](https://vnexpress.net/sun-phuquoc-airways-mo-them-duong-bay-den-thuong-hai-5140166.html) |
