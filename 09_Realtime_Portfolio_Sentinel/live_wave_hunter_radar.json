@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05 02:45:59",
+  "generated_at": "2026-11-05 03:44:10",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -351,6 +351,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "VND",
+      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
+      "date": "Thu, 05 Nov 26 1",
+      "headline": "VNDirect sắp họp đại hội bất thường",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "POW",
       "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
       "date": "Wed, 04 Nov 26 2",
@@ -372,14 +380,6 @@
       "date": "Wed, 04 Nov 26 1",
       "headline": "FPT \"tái sinh\"",
       "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Wed, 04 Nov 26 1",
-      "headline": "FPT Retail ba năm liên tiếp thăng hạng trong Fortune Southeast Asia 500",
-      "is_portfolio_holding": true
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 37 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 39 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

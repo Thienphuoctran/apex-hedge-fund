@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-05T02:45:51.217002+00:00",
+  "timestamp_utc": "2026-11-05T03:43:57.763674+00:00",
   "scan_date": "2026-11-05",
   "total_us_filings_count": 368,
-  "total_vn_announcements_count": 37,
+  "total_vn_announcements_count": 39,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -316,6 +316,14 @@
       "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn",
       "total_announcements": 14
     },
+    "VND": {
+      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "latest_title": "VNDirect sắp họp đại hội bất thường",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 10:22:00 +0700",
+      "source_url": "https://cafef.vn/vndirect-sap-hop-dai-hoi-bat-thuong-188261105101903973.chn",
+      "total_announcements": 4
+    },
     "POW": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
@@ -338,7 +346,15 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn",
-      "total_announcements": 1
+      "total_announcements": 2
+    },
+    "PNJ": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2,5 triệu đồng/lượng",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 09:49:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn",
+      "total_announcements": 4
     },
     "ACB": {
       "latest_event_type": "ESOP_PHAT_HANH",
@@ -346,22 +362,6 @@
       "severity": "WARNING",
       "published_at": "Thu, 05 Nov 26 09:30:00 +0700",
       "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn",
-      "total_announcements": 4
-    },
-    "VND": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Hoán đổi ngoại tệ kỳ hạn 6 tháng: Hỗ trợ thanh khoản, giảm áp lực lãi suất",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 08:19:00 +0700",
-      "source_url": "https://cafef.vn/hoan-doi-ngoai-te-ky-han-6-thang-ho-tro-thanh-khoan-giam-ap-luc-lai-suat-188261105080626478.chn",
-      "total_announcements": 3
-    },
-    "PNJ": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 06:55:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-188261105065603864.chn",
       "total_announcements": 4
     }
   },
@@ -4835,6 +4835,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "VND"
+      ],
+      "title": "VNDirect sắp họp đại hội bất thường",
+      "summary": "CTCP Chứng khoán VNDIRECT phát thông báo mới trong bối cảnh cổ phiếu VND vừa có phiên tăng kịch trần với thanh khoản đột biến....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 10:22:00 +0700",
+      "source_url": "https://cafef.vn/vndirect-sap-hop-dai-hoi-bat-thuong-188261105101903973.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "POW"
       ],
       "title": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
@@ -4932,6 +4944,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2,5 triệu đồng/lượng",
+      "summary": "Giá vàng trong nước lúc 9h30 sáng 5/11 tiếp tục tăng, với vàng nhẫn bán ra phổ biến 142,3-143 triệu đồng/lượng, trong khi vàng miếng SJC đồng loạt được các thương hiệu khảo sát bán ra ở 144,5 triệu đồng/lượng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 09:49:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "ACB"
       ],
       "title": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB (\"ACBC\") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng",
@@ -4976,18 +5000,6 @@
       "severity": "INFO",
       "published_at": "Thu, 05 Nov 26 07:16:00 +0700",
       "source_url": "https://cafef.vn/acb-ra-mat-the-tin-dung-danh-cho-ho-kinh-doanh-mien-lai-den-55-ngay-va-hoan-tien-den-10-188261105071713898.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "summary": "Hiện, vàng nhẫn được các thương hiệu khảo sát niêm yết trong khoảng 136,5-140,8 triệu đồng/lượng, trong khi vàng miếng SJC phổ biến ở mức 139,4-142,4 triệu đồng/lượng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 06:55:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-188261105065603864.chn"
     },
     {
       "market": "VIETNAM",
@@ -5048,6 +5060,18 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 26 19:26:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Toàn cảnh dự án mở rộng cao tốc TP.HCM - Long Thành",
+      "summary": "Dự án mở rộng cao tốc TP.HCM - Long Thành đạt khoảng 80% sản lượng, hàng nghìn nhân lực, máy móc đang thi công ngày đêm để cơ bản hoàn thành vào cuối năm 2026....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 10:17:00 +0700",
+      "source_url": "https://cafef.vn/toan-canh-du-an-mo-rong-cao-toc-tphcm-long-thanh-188261105094350987.chn"
     },
     {
       "market": "VIETNAM",
@@ -5148,14 +5172,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "SSI"
       ],
-      "title": "Việt Nam sắp có siêu dự án metro gần 89.000 tỷ đồng tại thành phố giàu nhất cả nước, tương lai có thể đón tới 830.000 lượt khách mỗi ngày",
-      "summary": "Tuyến đường sắt đô thị số 1 (Thành phố mới Bình Dương – Suối Tiên, TP.HCM) dự kiến thi công trong khoảng 60 tháng....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 11:06:00 +0700",
-      "source_url": "https://cafef.vn/viet-nam-sap-co-sieu-du-an-metro-gan-89000-ty-dong-tai-thanh-pho-giau-nhat-ca-nuoc-tuong-lai-co-the-don-toi-830000-luot-khach-moi-ngay-188261104110450031.chn"
+      "title": "Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn",
+      "summary": "SSI Research vừa cập nhật triển vọng ngành ngân hàng trong đó nhấn mạnh các ngân hàng thương mại sẽ hỗ trợ nền kinh tế bằng cách giảm cả lãi suất huy động và lãi suất cho vay, qua đó gây áp lực lên biên lãi ròng trong ng...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 05 Nov 2026 03:26:16 GMT",
+      "source_url": "https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm"
     },
     {
       "market": "VIETNAM",
