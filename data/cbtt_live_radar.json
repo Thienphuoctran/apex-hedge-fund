@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-05T07:57:05.072684+00:00",
+  "timestamp_utc": "2026-11-05T08:51:03.797565+00:00",
   "scan_date": "2026-11-05",
   "total_us_filings_count": 368,
   "total_vn_announcements_count": 35,
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Máy bay Vietnam Airlines vừa cất cánh 15 phút, nữ hành khách gặp sự cố: 4 người đặc biệt lập tức vào cuộc",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 15:20:00 +0700",
+      "source_url": "https://cafef.vn/may-bay-vietnam-airlines-vua-cat-canh-15-phut-nu-hanh-khach-gap-su-co-4-nguoi-dac-biet-lap-tuc-vao-cuoc-188261105152305712.chn",
+      "total_announcements": 11
+    },
     "DPM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026",
@@ -340,19 +348,11 @@
       "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn",
       "total_announcements": 1
     },
-    "HCM": {
-      "latest_event_type": "CO_TUC",
-      "latest_title": "ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031",
-      "severity": "WARNING",
-      "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn",
-      "total_announcements": 11
-    },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2,5 triệu đồng/lượng",
+      "latest_title": "Giá vàng nhẫn trơn, vàng miếng chiều 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải",
       "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 09:49:00 +0700",
+      "published_at": "Thu, 05 Nov 26 14:58:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn",
       "total_announcements": 4
     },
@@ -4795,6 +4795,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "Máy bay Vietnam Airlines vừa cất cánh 15 phút, nữ hành khách gặp sự cố: 4 người đặc biệt lập tức vào cuộc",
+      "summary": "Sự cố xảy ra trên chuyến bay VN1415 của Vietnam Airlines từ Buôn Ma Thuột về TP.HCM, khiến phi hành đoàn phải phát thông báo tìm kiếm sự hỗ trợ ngay giữa không trung....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 15:20:00 +0700",
+      "source_url": "https://cafef.vn/may-bay-vietnam-airlines-vua-cat-canh-15-phut-nu-hanh-khach-gap-su-co-4-nguoi-dac-biet-lap-tuc-vao-cuoc-188261105152305712.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "DPM"
       ],
       "title": "9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026",
@@ -4915,14 +4927,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "PNJ"
       ],
-      "title": "ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031",
-      "summary": "Ngày 02/11/2026 tại TP.HCM, CTCP Thành Thành Công – Biên Hòa (AgriS, HOSE: SBT) tổ chức ĐHĐCĐ thường niên niên độ 2025-2026 theo hình thức hybrid. Đại hội thông qua 14 tờ trình với tỷ lệ đồng thuận trên 98%, trong đó có ...",
-      "event_type": "CO_TUC",
-      "severity": "WARNING",
-      "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn"
+      "title": "Giá vàng nhẫn trơn, vàng miếng chiều 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng trong nước chiều 5/11 tiếp tục neo ở vùng cao nhưng đã hạ nhiệt so với buổi sáng, khi vàng miếng SJC giảm 1,5 triệu đồng/lượng so với 9h30, xuống 143 triệu đồng/lượng ở chiều bán ra. Trong khi đó, giá vàng thế g...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 14:58:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn"
     },
     {
       "market": "VIETNAM",
@@ -4935,18 +4947,6 @@
       "severity": "INFO",
       "published_at": "Thu, 05 Nov 26 13:09:00 +0700",
       "source_url": "https://cafef.vn/hdbank-tang-140-bac-qua-ba-ky-xep-hang-fortune-southeast-asia-500-188261105122506793.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2,5 triệu đồng/lượng",
-      "summary": "Giá vàng trong nước lúc 9h30 sáng 5/11 tiếp tục tăng, với vàng nhẫn bán ra phổ biến 142,3-143 triệu đồng/lượng, trong khi vàng miếng SJC đồng loạt được các thương hiệu khảo sát bán ra ở 144,5 triệu đồng/lượng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 09:49:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-25-trieu-dong-luong-188261105065603864.chn"
     },
     {
       "market": "VIETNAM",
@@ -5061,6 +5061,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Ít ai biết khu đất gần 457 ha từng được FLC đề xuất xây công viên Safari hàng đầu châu Á, có cả resort 5 sao và mô hình Disneyland, nay TP.HCM muốn kêu gọi đầu tư trở lại",
+      "summary": "Công viên Sài Gòn Safari được TP.HCM kêu gọi đầu tư....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 14:51:00 +0700",
+      "source_url": "https://cafef.vn/it-ai-biet-khu-dat-gan-457-ha-tung-duoc-flc-de-xuat-xay-cong-vien-safari-hang-dau-chau-a-co-ca-resort-5-sao-va-mo-hinh-disneyland-nay-tphcm-muon-keu-goi-dau-tu-tro-lai-188261105144448064.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Toàn cảnh dự án mở rộng cao tốc TP.HCM - Long Thành",
       "summary": "Dự án mở rộng cao tốc TP.HCM - Long Thành đạt khoảng 80% sản lượng, hàng nghìn nhân lực, máy móc đang thi công ngày đêm để cơ bản hoàn thành vào cuối năm 2026....",
       "event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -5103,18 +5115,6 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 20:46:00 +0700",
       "source_url": "https://cafef.vn/tphcm-ho-tro-25-trieu-m-da-xay-dung-cho-can-tho-lam-duong-cao-toc-188261104204822412.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Chốt giá 3.790 căn hộ Thủ Thiêm, TP.HCM quy định 'sức khỏe' doanh nghiệp đấu giá",
-      "summary": "Giá khởi điểm 3.790 căn hộ ở Thủ Thiêm gần 18.254 tỷ đồng; tổng đầu tư dự kiến hơn 39.843 tỷ đồng, TP.HCM quy định doanh nghiệp phải có vốn bằng 20% tổng mức đầu tư....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 19:19:00 +0700",
-      "source_url": "https://cafef.vn/chot-gia-3790-can-ho-thu-thiem-tphcm-quy-dinh-suc-khoe-doanh-nghiep-dau-gia-188261104185950187.chn"
     },
     {
       "market": "VIETNAM",
