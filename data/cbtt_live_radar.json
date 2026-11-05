@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-05T04:40:47.568164+00:00",
+  "timestamp_utc": "2026-11-05T05:40:36.666483+00:00",
   "scan_date": "2026-11-05",
   "total_us_filings_count": 368,
-  "total_vn_announcements_count": 36,
+  "total_vn_announcements_count": 35,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -316,14 +316,6 @@
       "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn",
       "total_announcements": 6
     },
-    "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn",
-      "total_announcements": 12
-    },
     "VND": {
       "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
       "latest_title": "VNDirect sắp họp đại hội bất thường",
@@ -347,6 +339,14 @@
       "published_at": "Wed, 04 Nov 26 15:45:00 +0700",
       "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn",
       "total_announcements": 1
+    },
+    "HCM": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031",
+      "severity": "WARNING",
+      "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn",
+      "total_announcements": 11
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4839,18 +4839,6 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
       "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM",
-      "summary": "Từ ngày 04-06/11/2026, SECC sẽ là tâm điểm ngành công nghiệp công nghệ cao với chuỗi triển lãm về Điện, Năng lượng tái tạo, Công nghệ hỗ trợ, HVACR và Trung tâm dữ liệu....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn"
     },
     {
       "market": "VIETNAM",

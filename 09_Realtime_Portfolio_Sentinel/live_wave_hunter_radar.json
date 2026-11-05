@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05 04:41:03",
+  "generated_at": "2026-11-05 05:40:45",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -351,14 +351,6 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Wed, 04 Nov 26 0",
-      "headline": "Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
       "symbol": "VND",
       "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
       "date": "Thu, 05 Nov 26 1",
@@ -380,6 +372,14 @@
       "date": "Wed, 04 Nov 26 1",
       "headline": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
       "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Wed, 04 Nov 26 1",
+      "headline": "FPT \"tái sinh\"",
+      "is_portfolio_holding": true
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 36 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 35 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
