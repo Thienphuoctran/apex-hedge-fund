@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-06T02:44:41.385692+00:00",
+  "timestamp_utc": "2026-11-06T03:34:49.540812+00:00",
   "scan_date": "2026-11-06",
   "total_us_filings_count": 371,
-  "total_vn_announcements_count": 39,
+  "total_vn_announcements_count": 41,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -290,7 +290,7 @@
       "severity": "INFO",
       "published_at": "Thu, 05 Nov 26 16:00:00 +0700",
       "source_url": "https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn",
-      "total_announcements": 11
+      "total_announcements": 12
     },
     "DPM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -402,6 +402,14 @@
       "severity": "CRITICAL",
       "published_at": "Thu, 05 Nov 2026 03:26:16 GMT",
       "source_url": "https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm",
+      "total_announcements": 1
+    },
+    "BSR": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "BSR lãi hợp nhất gần 25.000 tỷ đồng sau 9 tháng",
+      "severity": "CRITICAL",
+      "published_at": "Fri, 06 Nov 2026 10:00:00 +0700",
+      "source_url": "https://vnexpress.net/bsr-lai-hop-nhat-gan-25-000-ty-dong-sau-9-thang-5140193.html",
       "total_announcements": 1
     }
   },
@@ -5033,12 +5041,12 @@
       "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 6/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải",
-      "summary": "Giá vàng trong nước mở phiên sáng 6/11 đi ngang so với cuối phiên trước, với vàng nhẫn bán ra dao động từ 142-142,8 triệu đồng/lượng, trong khi vàng miếng SJC đồng loạt niêm yết ở mức 142,5 triệu đồng/lượng....",
+      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 6/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt giảm",
+      "summary": "Giá vàng trong nước sáng 6/11 đảo chiều giảm so với cuối phiên trước, với vàng nhẫn mất tới 1,8 triệu đồng/lượng, trong khi vàng miếng SJC đồng loạt giảm 1,5 triệu đồng/lượng ở chiều bán ra, xuống 141 triệu đồng/lượng. T...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 07:32:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-6-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261106073345843.chn"
+      "published_at": "Fri, 06 Nov 26 10:21:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-6-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-giam-188261106073345843.chn"
     },
     {
       "market": "VIETNAM",
@@ -5189,6 +5197,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Người dân ở TPHCM tự tay đập nhà mặt tiền nhường đất mở đường",
+      "summary": "Hàng chục hộ dân tại phường Bình Trưng, TPHCM tự tay đập bỏ mặt tiền căn nhà gắn bó mấy chục năm để nhường mặt bằng cho dự án mở rộng đường Lương Định Của. Đằng sau đống xà bần ngổn ngang hiện nay là niềm hy vọng về 1 tư...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 10:13:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-dan-o-tphcm-tu-tay-dap-nha-mat-tien-nhuong-dat-mo-duong-188261106091620129.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Cảnh tượng lạ mắt tại đường sách TP.HCM lọt top 10 chợ sách tốt nhất thế giới",
       "summary": "Ánh nắng giữa trưa xuyên qua hàng nón lá trang trí tại Đường sách Nguyễn Văn Bình (TPHCM), tạo nên những họa tiết bóng đổ độc đáo trên mặt đường, thu hút người dân và du khách dừng chân chiêm ngưỡng, chụp ảnh....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5294,6 +5314,18 @@
       "severity": "INFO",
       "published_at": "Mon, 02 Nov 2026 09:37:09 GMT",
       "source_url": "https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "BSR"
+      ],
+      "title": "BSR lãi hợp nhất gần 25.000 tỷ đồng sau 9 tháng",
+      "summary": "BSR ghi nhận lợi nhuận sau thuế hợp nhất 24.901,7 tỷ đồng trong 9 tháng, gấp gần 11,6 lần cùng kỳ, nhờ thị trường thuận lợi và duy trì công suất vận hành cao....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Fri, 06 Nov 2026 10:00:00 +0700",
+      "source_url": "https://vnexpress.net/bsr-lai-hop-nhat-gan-25-000-ty-dong-sau-9-thang-5140193.html"
     },
     {
       "market": "VIETNAM",
