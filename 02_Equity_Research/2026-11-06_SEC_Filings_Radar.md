@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)
-> **Thời gian quét:** 2026-11-06 09:44:12  
-> **Số lượng hồ sơ ghi nhận:** 371 hồ sơ SEC chính thức  
+> **Thời gian quét:** 2026-11-06 14:02:34  
+> **Số lượng hồ sơ ghi nhận:** 370 hồ sơ SEC chính thức  
 
 | Ticker | Loại Form | Mức Độ | Ngày Nộp | Mô Tả Hồ Sơ | Đường Dẫn SEC |
 | :--- | :---: | :---: | :---: | :--- | :---: |
@@ -27,7 +27,6 @@
 | **AAPL** | `144` | ℹ️ INFO | 2026-10-16 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-15 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-10-08 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
-| **AAPL** | `4` | ℹ️ INFO | 2026-10-05 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **MSFT** | `144` | ℹ️ INFO | 2026-11-05 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
 | **MSFT** | `8-K` | ⚠️ WARNING | 2026-11-05 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
 | **MSFT** | `8-K` | ⚠️ WARNING | 2026-11-04 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
@@ -44,3 +43,4 @@
 | **GOOGL** | `424B5` | ℹ️ INFO | 2026-11-02 | 424B5 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `4` | ℹ️ INFO | 2026-10-30 | 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `144` | ℹ️ INFO | 2026-10-29 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
+| **GOOGL** | `10-Q` | 🚨 CRITICAL | 2026-10-29 | 10-Q | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
