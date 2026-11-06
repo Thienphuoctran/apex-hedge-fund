@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06 15:43:33",
+  "generated_at": "2026-11-06 16:31:49",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "CANH_BAO_RUI_RO",
+      "date": "Fri, 06 Nov 26 2",
+      "headline": "Bắt giang hồ mạng Hiệp “đen” nổi tiếng trên TikTok: Khám xét khách sạn Hồng Hạnh phát hiện súng giấu trên trần nhà",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "FPT",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 06 Nov 26 1",
@@ -372,14 +380,6 @@
       "date": "Fri, 06 Nov 26 1",
       "headline": "Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Fri, 06 Nov 26 1",
-      "headline": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
-      "is_portfolio_holding": true
     }
   ],
   "departments_heartbeat": [

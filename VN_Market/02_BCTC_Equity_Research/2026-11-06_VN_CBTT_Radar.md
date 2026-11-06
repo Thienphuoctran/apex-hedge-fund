@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-06 15:43:20  
+> **Thời gian quét:** 2026-11-06 16:31:32  
 > **Số sự kiện ghi nhận:** 43 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **HCM** | `CANH_BAO_RUI_RO` | 🔴 RED FLAG | Bắt giang hồ mạng Hiệp “đen” nổi tiếng trên TikTok: Khám xét khách sạn Hồng Hạnh phát hiện súng giấu trên trần nhà | [Xem Link](https://cafef.vn/bat-giang-ho-mang-hiep-den-noi-tieng-tren-tiktok-kham-xet-khach-san-hong-hanh-phat-hien-sung-giau-tren-tran-nha-188261106220234071.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT AI Factory được vinh danh tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026 | [Xem Link](https://cafef.vn/fpt-ai-factory-duoc-vinh-danh-tai-giai-thuong-tri-tue-nhan-tao-viet-nam-2026-188261106195055665.chn) |
 | **HCM** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm | [Xem Link](https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106163036649.chn) |
 | **IDC** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC | [Xem Link](https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn) |
@@ -33,7 +34,6 @@
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | ACB ra mắt thẻ tín dụng dành cho hộ kinh doanh, miễn lãi đến 55 ngày và hoàn tiền đến 10% | [Xem Link](https://cafef.vn/acb-ra-mat-the-tin-dung-danh-cho-ho-kinh-doanh-mien-lai-den-55-ngay-va-hoan-tien-den-10-188261105071713898.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều tối 4/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-toi-4-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-188261104072255434.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng | [Xem Link](https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Sở hữu một ngôi nhà, hay nắm giữ giá trị của đất? | [Xem Link](https://cafef.vn/so-huu-mot-ngoi-nha-hay-nam-giu-gia-tri-cua-dat-188261106154333945.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Thành phố giàu nhất Việt Nam giao 4 lô đất gần 43.000 m2 tại Thủ Thiêm cho doanh nghiệp của tỷ phú Trần Bá Dương để thanh toán dự án hơn 3.000 tỷ đồng | [Xem Link](https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106152356465.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | TP.HCM giao bổ sung 3,7m2 đất cho Kita Group làm dự án 368 căn hộ | [Xem Link](https://cafef.vn/tphcm-giao-bo-sung-37m2-dat-cho-kita-group-lam-du-an-368-can-ho-188261106152711939.chn) |

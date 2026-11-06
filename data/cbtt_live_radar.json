@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-06T15:43:20.167754+00:00",
+  "timestamp_utc": "2026-11-06T16:31:32.850628+00:00",
   "scan_date": "2026-11-06",
   "total_us_filings_count": 370,
   "total_vn_announcements_count": 43,
@@ -82,7 +82,7 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617",
-      "total_recent_filings": 11
+      "total_recent_filings": 12
     },
     "TSM": {
       "latest_form": "4",
@@ -154,7 +154,7 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982",
-      "total_recent_filings": 10
+      "total_recent_filings": 9
     },
     "V": {
       "latest_form": "10-K",
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "HCM": {
+      "latest_event_type": "CANH_BAO_RUI_RO",
+      "latest_title": "Bắt giang hồ mạng Hiệp “đen” nổi tiếng trên TikTok: Khám xét khách sạn Hồng Hạnh phát hiện súng giấu trên trần nhà",
+      "severity": "RED_FLAG",
+      "published_at": "Fri, 06 Nov 26 22:54:00 +0700",
+      "source_url": "https://cafef.vn/bat-giang-ho-mang-hiep-den-noi-tieng-tren-tiktok-kham-xet-khach-san-hong-hanh-phat-hien-sung-giau-tren-tran-nha-188261106220234071.chn",
+      "total_announcements": 14
+    },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "FPT AI Factory được vinh danh tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026",
@@ -291,14 +299,6 @@
       "published_at": "Fri, 06 Nov 26 19:30:00 +0700",
       "source_url": "https://cafef.vn/fpt-ai-factory-duoc-vinh-danh-tai-giai-thuong-tri-tue-nhan-tao-viet-nam-2026-188261106195055665.chn",
       "total_announcements": 4
-    },
-    "HCM": {
-      "latest_event_type": "ESOP_PHAT_HANH",
-      "latest_title": "Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm",
-      "severity": "WARNING",
-      "published_at": "Fri, 06 Nov 26 16:30:00 +0700",
-      "source_url": "https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106163036649.chn",
-      "total_announcements": 13
     },
     "IDC": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -346,7 +346,7 @@
       "severity": "INFO",
       "published_at": "Fri, 06 Nov 26 10:44:00 +0700",
       "source_url": "https://cafef.vn/con-gai-chu-tich-cao-thi-ngoc-dung-tiep-tuc-bi-ban-giai-chap-hon-23-trieu-co-phieu-pnj-188261106104258622.chn",
-      "total_announcements": 6
+      "total_announcements": 5
     },
     "HPG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -1560,6 +1560,66 @@
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
       "filing_date": "2026-11-06",
+      "description": "PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-116721",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-116712",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034824",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034823",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034822",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
@@ -1636,54 +1696,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001213900-26-116658",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-06",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034807",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-06",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034799",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-06",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034798",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-06",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116630",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -2607,6 +2619,30 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
+      "accession_number": "0001918704-26-034832",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034825",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "accession_number": "0001918704-26-034820",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
@@ -2720,30 +2756,6 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
-      "form": "424B2",
-      "filing_date": "2026-11-05",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034784",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
-      "form": "424B2",
-      "filing_date": "2026-11-05",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034781",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
-    },
-    {
-      "market": "US_GLOBAL",
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
@@ -2848,18 +2860,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001193125-26-449956",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-05",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-449678",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -4859,6 +4859,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "Bắt giang hồ mạng Hiệp “đen” nổi tiếng trên TikTok: Khám xét khách sạn Hồng Hạnh phát hiện súng giấu trên trần nhà",
+      "summary": "Hiệp “đen”, chủ một khách sạn tại TP.HCM, vừa bị bắt cùng 13 người liên quan sau khi công an phát hiện hàng loạt hành vi vi phạm pháp luật....",
+      "event_type": "CANH_BAO_RUI_RO",
+      "severity": "RED_FLAG",
+      "published_at": "Fri, 06 Nov 26 22:54:00 +0700",
+      "source_url": "https://cafef.vn/bat-giang-ho-mang-hiep-den-noi-tieng-tren-tiktok-kham-xet-khach-san-hong-hanh-phat-hien-sung-giau-tren-tran-nha-188261106220234071.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "FPT"
       ],
       "title": "FPT AI Factory được vinh danh tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026",
@@ -5203,18 +5215,6 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 26 13:17:00 +0700",
       "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng tối 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
-      "summary": "Giá vàng trong nước kết phiên ngày 3/11 tiếp tục tăng so với phiên trước, với vàng miếng SJC tăng 600.000 đồng/lượng, lên 140,6 triệu đồng/lượng ở chiều bán ra. Giá vàng nhẫn cũng tăng từ 500.000 đến 900.000 đồng/lượng t...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 19:58:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn"
     },
     {
       "market": "VIETNAM",

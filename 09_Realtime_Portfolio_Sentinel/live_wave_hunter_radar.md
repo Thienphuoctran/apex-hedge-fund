@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-06 15:43:33`  
+*Cập nhật thời gian thực*: `2026-11-06 16:31:49`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -60,7 +60,7 @@
 | `US_SEC_EDGAR` | **`GOOGL`** ⭐ **(ĐANG THEO DÕI)** | `SEC Form 10-Q` | `2026-10-29` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`MSFT`** | `SEC Form 10-Q` | `2026-10-28` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`AAPL`** | `SEC Form 10-K` | `2026-11-03` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
+| `VIETNAM_CBTT` | **`HCM`** | `CANH_BAO_RUI_RO` | `Fri, 06 Nov 26 2` | Bắt giang hồ mạng Hiệp “đen” nổi tiếng trên TikTok: Khám xét khách sạn Hồng Hạnh phát hiện súng giấu trên trần nhà |
 | `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Fri, 06 Nov 26 1` | FPT AI Factory được vinh danh tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026 |
 | `VIETNAM_CBTT` | **`HCM`** | `ESOP_PHAT_HANH` | `Fri, 06 Nov 26 1` | Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm |
 | `VIETNAM_CBTT` | **`IDC`** | `TIN_DOANH_NGHIEP` | `Fri, 06 Nov 26 1` | Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC |
-| `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Thu, 05 Nov 26 1` | Bà Mai Kiều Liên cùng Vinamilk ba năm liền góp mặt trong hai bảng xếp hạng danh giá của Fortune |
