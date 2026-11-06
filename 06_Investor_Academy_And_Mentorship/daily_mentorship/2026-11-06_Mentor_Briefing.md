@@ -7,13 +7,13 @@
 ---
 
 ### PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)
-- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 28.18 (>= 20)**
-- **Bản chất chiến lược**: Chỉ số VIX ở mức 28.18 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
+- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 26.80 (>= 20)**
+- **Bản chất chiến lược**: Chỉ số VIX ở mức 26.80 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
 - **Công thức / Quy tắc vàng**:
   > Quy tắc Kỷ luật Thép: Khi VIX >= 20, phần Satellite tuyệt đối KHÔNG sử dụng Margin, giữ tối thiểu 40% tiền mặt/T-Bills.
 - **Thực tế thị trường hôm nay (2026-11-06)**: 
-  - VIX hiện tại: **28.18** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.84%** | Dầu WTI: **$91.25**.
-  - Độ rộng thị trường (`Market Breadth`): **48.6%** cổ phiếu giữ trên MA200.
+  - VIX hiện tại: **26.80** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.84%** | Dầu WTI: **$90.17**.
+  - Độ rộng thị trường (`Market Breadth`): **45.7%** cổ phiếu giữ trên MA200.
 
 ---
 
@@ -26,9 +26,9 @@
      - Hiệu suất sinh lời trên vốn đầu tư (`ROIC`): **`23.8%`** vs Chi phí vốn (`WACC`): **`9.2%`** -> Tạo giá trị kinh tế ròng **`EVA Spread = +14.60%`**.
      - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.69%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.48%`**)*.
   2. **Định lượng & Quản trị rủi ro 2 Tầng (Ban 4)**:
-     - Biến động `ATR(14)` = **$15.03**.
-     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$505.88** (`-4.28%`).
-     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$521.59**.
+     - Biến động `ATR(14)` = **$15.42**.
+     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$505.09** (`-4.28%`).
+     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$520.59**.
 - **Bài tập Paper Trading hôm nay**:
   - Chạy lệnh mô phỏng: `python scripts/paper_trading_simulator.py buy --symbol MSFT --shares 10 --type Core`.
 
