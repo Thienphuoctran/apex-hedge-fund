@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06 07:54:58",
+  "generated_at": "2026-11-06 08:45:12",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -359,27 +359,27 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Fri, 06 Nov 26 1",
+      "headline": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "REE",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 06 Nov 26 1",
+      "headline": "Gia nhập quân giải phóng từ năm 16 tuổi, bà Nguyễn Thị Mai Thanh tự dặn lòng: Hãy quên mình là con gái của một vị tướng chỉ huy",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "PC1",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 06 Nov 26 1",
       "headline": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "PNJ",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Fri, 06 Nov 26 1",
-      "headline": "Con gái Chủ tịch Cao Thị Ngọc Dung tiếp tục bị bán giải chấp hơn 2,3 triệu cổ phiếu PNJ",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "HPG",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Fri, 06 Nov 26 0",
-      "headline": "Hé lộ lý do con trai tỷ phú Trần Đình Long không mua đủ lượng cổ phiếu HPG đăng ký",
-      "is_portfolio_holding": true
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 371 hồ sơ SEC & 42 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 371 hồ sơ SEC & 46 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

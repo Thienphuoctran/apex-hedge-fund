@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-06T07:54:42.334229+00:00",
+  "timestamp_utc": "2026-11-06T08:45:08.604496+00:00",
   "scan_date": "2026-11-06",
   "total_us_filings_count": 371,
-  "total_vn_announcements_count": 42,
+  "total_vn_announcements_count": 46,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -290,7 +290,7 @@
       "severity": "INFO",
       "published_at": "Thu, 05 Nov 26 16:00:00 +0700",
       "source_url": "https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn",
-      "total_announcements": 12
+      "total_announcements": 14
     },
     "DPM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -316,6 +316,22 @@
       "source_url": "https://cafef.vn/khong-chi-nam-1-eximbank-dai-gia-cang-bien-hai-phong-lo-danh-muc-dau-tu-gan-11000-ty-dong-om-62-trieu-co-phieu-gex-42-trieu-co-phieu-hah-188261105070213823.chn",
       "total_announcements": 1
     },
+    "FPT": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
+      "severity": "CRITICAL",
+      "published_at": "Fri, 06 Nov 26 15:05:00 +0700",
+      "source_url": "https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-loi-nhuan-quy-4-cua-fpt-188261106144829129.chn",
+      "total_announcements": 4
+    },
+    "REE": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Gia nhập quân giải phóng từ năm 16 tuổi, bà Nguyễn Thị Mai Thanh tự dặn lòng: Hãy quên mình là con gái của một vị tướng chỉ huy",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 15:04:00 +0700",
+      "source_url": "https://cafef.vn/gia-nhap-quan-giai-phong-tu-nam-16-tuoi-ba-nguyen-thi-mai-thanh-tu-dan-long-hay-quen-minh-la-con-gai-cua-mot-vi-tuong-chi-huy-18826110615045685.chn",
+      "total_announcements": 2
+    },
     "PC1": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
@@ -339,22 +355,6 @@
       "published_at": "Fri, 06 Nov 26 00:07:00 +0700",
       "source_url": "https://cafef.vn/he-lo-ly-do-con-trai-ty-phu-tran-dinh-long-khong-mua-du-luong-co-phieu-hpg-dang-ky-188261105224959143.chn",
       "total_announcements": 3
-    },
-    "FPT": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Quỹ ngoại quy mô 23.000 tỷ lỗ gần 15% từ đầu năm, không tiếc lời khen một cổ phiếu “họ” FPT",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 06 Nov 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/quy-ngoai-quy-mo-23000-ty-lo-gan-15-tu-dau-nam-khong-tiec-loi-khen-mot-co-phieu-ho-fpt-188261105230521952.chn",
-      "total_announcements": 3
-    },
-    "REE": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "‘Nữ tướng’ cơ điện lạnh REE Nguyễn Thị Mai Thanh lần đầu tiên nói về sự buông bỏ và thất bại trong quá trình chuyển giao",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 16:36:00 +0700",
-      "source_url": "https://cafef.vn/nu-tuong-co-dien-lanh-ree-nguyen-thi-mai-thanh-lan-dau-tien-noi-ve-su-buong-bo-va-that-bai-trong-qua-trinh-chuyen-giao-188261105163638727.chn",
-      "total_announcements": 1
     },
     "VND": {
       "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -4931,6 +4931,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "FPT"
+      ],
+      "title": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
+      "summary": "Theo Mirae Asset, mức tăng trưởng dự kiến trong quý cuối năm phù hợp với tính chu kỳ trong hoạt động kinh doanh của FPT....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Fri, 06 Nov 26 15:05:00 +0700",
+      "source_url": "https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-loi-nhuan-quy-4-cua-fpt-188261106144829129.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "REE"
+      ],
+      "title": "Gia nhập quân giải phóng từ năm 16 tuổi, bà Nguyễn Thị Mai Thanh tự dặn lòng: Hãy quên mình là con gái của một vị tướng chỉ huy",
+      "summary": "Năm 16 tuổi, giữa chiến trường bận rộn chăm sóc thương binh, bà Nguyễn Thị Mai Thanh - Nhà sáng lập REE đã tự dặn lòng: “Hãy quên mình là con gái của một vị tướng chỉ huy. Càng không được xem mình là phụ nữ để đòi hỏi sự...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 15:04:00 +0700",
+      "source_url": "https://cafef.vn/gia-nhap-quan-giai-phong-tu-nam-16-tuoi-ba-nguyen-thi-mai-thanh-tu-dan-long-hay-quen-minh-la-con-gai-cua-mot-vi-tuong-chi-huy-18826110615045685.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PC1"
       ],
       "title": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
@@ -5039,6 +5063,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng nhẫn trơn, vàng miếng chiều 6/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng trong nước chiều 6/11 tiếp tục xu hướng giảm, trong đó vàng miếng SJC giảm 1,4 triệu đồng/lượng so với cuối phiên trước, xuống 141 triệu đồng/lượng. Đáng chú ý, so với lúc 10h sáng, giá vàng nhẫn tại một số thươ...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 15:16:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-6-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261106073345843.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "ACB"
       ],
       "title": "ACB mang hơn 1,7 triệu phần thưởng lên ACB ONE, trúng iPhone 18 Pro Max mỗi tuần",
@@ -5047,18 +5083,6 @@
       "severity": "INFO",
       "published_at": "Fri, 06 Nov 26 13:30:00 +0700",
       "source_url": "https://cafef.vn/acb-mang-hon-17-trieu-phan-thuong-len-acb-one-trung-iphone-18-pro-max-moi-tuan-188261106133025656.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 6/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt giảm",
-      "summary": "Giá vàng trong nước sáng 6/11 đảo chiều giảm so với cuối phiên trước, với vàng nhẫn mất tới 1,8 triệu đồng/lượng, trong khi vàng miếng SJC đồng loạt giảm 1,5 triệu đồng/lượng ở chiều bán ra, xuống 141 triệu đồng/lượng. T...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 10:21:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-6-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-giam-188261106073345843.chn"
     },
     {
       "market": "VIETNAM",
@@ -5203,6 +5227,30 @@
       "severity": "INFO",
       "published_at": "Tue, 03 Nov 26 19:26:00 +0700",
       "source_url": "https://cafef.vn/ngay-3-11-gui-200-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261103170626883.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "TP.HCM giao bổ sung 3,7m2 đất cho Kita Group làm dự án 368 căn hộ",
+      "summary": "UBND TP.HCM vừa quyết định giao bổ sung 3,7m2 đất do Nhà nước quản lý tại phường An Lạc cho Công ty Cổ phần Tập đoàn Kita Group, để thực hiện dự án khu phức hợp thương mại - dịch vụ vàcCăn hộ Ngôi sao 69 (The Stella 69),...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 15:27:00 +0700",
+      "source_url": "https://cafef.vn/tphcm-giao-bo-sung-37m2-dat-cho-kita-group-lam-du-an-368-can-ho-188261106152711939.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm",
+      "summary": "Sau khi tăng vốn điều lệ lên gần 37.000 tỷ đồng, Công ty cổ phần Đầu tư Địa ốc Đại Quang Minh của đại gia Trần Đăng Khoa (Khoa Khàn) tiếp tục được TP.HCM giao 4 lô đất với tổng diện tích gần 43.000m2 tại Thủ Thiêm để tha...",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Fri, 06 Nov 26 15:23:00 +0700",
+      "source_url": "https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106152356465.chn"
     },
     {
       "market": "VIETNAM",
