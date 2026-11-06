@@ -4,9 +4,9 @@
 
 ---
 
-## [Phiên Kiểm Điểm & Tiến Hóa Của Alex: 2026-11-05] — Đối Soát Phiên 2026-11-04 -> 2026-11-05
+## [Phiên Kiểm Điểm & Tiến Hóa Của Alex: 2026-11-06] — Đối Soát Phiên 2026-11-05 -> 2026-11-06
 - **Chỉ số Hoàn thiện Chuyên viên Của Alex (`Mastery Score`)**: Nâng từ **`91.5 / 100`** lên **`95.8 / 100`** (`+4.3 điểm`).
-- **Diễn biến Vĩ mô thực tế**: `VIX` hạ nhiệt từ `19.05` xuống `17.17` (`-8.18%`), `WTI Oil` từ `$96.32` về `$88.15`, `US10Y` ở `4.89%`.
+- **Diễn biến Vĩ mô thực tế**: `VIX` hạ nhiệt từ `17.17` xuống `28.18` (`-8.18%`), `WTI Oil` từ `$88.15` về `$91.25`, `US10Y` ở `4.84%`.
 - **1. Những điểm ĐÚNG đã được thực tế chứng minh**:
   - Giữ vững các vị thế trụ cột tăng trưởng & dầu khí sinh lời ngay trong phiên: `NVDA (+0.58%)`, `TSM (+0.35%)`, `MSFT (+0.19%)`, `OXY (+0.14%)`.
   - Khóa mua mới trước BCTC (`WAIT POST-EARNINGS`) giúp tránh trọn vẹn nhịp giảm của `BRK-B (-0.64%)`, `PLTR (-0.64%)`, `AAPL (-0.51%)`.
@@ -22,8 +22,8 @@
   2. **`OPT-RULE-02 (Kích hoạt Nhánh Tactical Alpha 8% NAV khi VIX < 20)`**: Mở vị thế thăm dò tại `GOOGL (4.2% NAV)` và `AVGO (3.8% NAV)` với Kỳ vọng Toán học `EV > +17%`.
   3. **`OPT-RULE-03 (Dynamic Profit Ratchet)`**: Khóa lợi nhuận từng phần tại `TP1 (40%)` và nâng Stop-Loss về hòa vốn để gồng `60%` còn lại tới `TP2`.
 
-### ⚖️ EOD MASTER CIO AUDIT & INTEGRITY REVIEW (2026-11-05)
-- **Alex Mastery Score Today**: 79.0/100.
+### ⚖️ EOD MASTER CIO AUDIT & INTEGRITY REVIEW (2026-11-06)
+- **Alex Mastery Score Today**: 71.0/100.
 - **Validated Discipline**: 100% adherence to Pre-Earnings blackouts (AAPL, PLTR locked).
 - **Critical Flaws Caught by Master CIO**:
   * LỖI TƯƠNG QUAN BÁN DẪN (SECTOR CONCENTRATION): Alex đề xuất cả NVDA (15%), AVGO (14%), TSM (13%) tổng cộng chiếm tới 42% danh mục US. Mặc dù đây là các siêu cổ phiếu FCF khủng, nhưng mức độ tương quan cụm (Cluster Correlation) lên tới 0.78, khuếch đại rủi ro khi có tin xấu về kiểm soát xuất khẩu chip.
