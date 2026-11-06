@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06 16:31:49",
+  "generated_at": "2026-11-06 17:31:18",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -367,19 +367,19 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "DPM",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Thu, 05 Nov 26 1",
-      "headline": "9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
       "symbol": "KDH",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 06 Nov 26 1",
       "headline": "Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc",
       "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Fri, 06 Nov 26 1",
+      "headline": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
+      "is_portfolio_holding": true
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 43 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 373 hồ sơ SEC & 42 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

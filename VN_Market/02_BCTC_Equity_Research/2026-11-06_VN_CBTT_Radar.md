@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-06 16:31:32  
-> **Số sự kiện ghi nhận:** 43 thông báo  
+> **Thời gian quét:** 2026-11-06 17:31:05  
+> **Số sự kiện ghi nhận:** 42 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -10,7 +10,6 @@
 | **IDC** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC | [Xem Link](https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bà Mai Kiều Liên cùng Vinamilk ba năm liền góp mặt trong hai bảng xếp hạng danh giá của Fortune | [Xem Link](https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Máy bay Vietnam Airlines vừa cất cánh 15 phút, nữ hành khách gặp sự cố: 4 người đặc biệt lập tức vào cuộc | [Xem Link](https://cafef.vn/may-bay-vietnam-airlines-vua-cat-canh-15-phut-nu-hanh-khach-gap-su-co-4-nguoi-dac-biet-lap-tuc-vao-cuoc-188261105152305712.chn) |
-| **DPM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | 9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026 | [Xem Link](https://cafef.vn/9-thang-da-hoan-thanh-gap-doi-muc-tieu-loi-nhuan-ca-nam-ong-lon-nganh-phan-bon-tang-113-ke-hoach-nam-2026-188261105105540776.chn) |
 | **KDH** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc | [Xem Link](https://cafef.vn/phien-6-11-khoi-ngoai-do-tien-mua-rong-hon-400-ty-dong-co-phieu-viet-nam-giua-luc-chung-khoan-toan-cau-lao-doc-188261106153537479.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT | [Xem Link](https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-loi-nhuan-quy-4-cua-fpt-188261106144829129.chn) |
 | **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Gia nhập quân giải phóng từ năm 16 tuổi, bà Nguyễn Thị Mai Thanh tự dặn lòng: Hãy quên mình là con gái của một vị tướng chỉ huy | [Xem Link](https://cafef.vn/gia-nhap-quan-giai-phong-tu-nam-16-tuoi-ba-nguyen-thi-mai-thanh-tu-dan-long-hay-quen-minh-la-con-gai-cua-mot-vi-tuong-chi-huy-18826110615045685.chn) |
