@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-06 04:38:29  
+> **Thời gian quét:** 2026-11-06 05:38:51  
 > **Số sự kiện ghi nhận:** 41 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
