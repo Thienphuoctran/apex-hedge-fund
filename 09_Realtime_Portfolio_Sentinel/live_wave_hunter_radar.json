@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06 09:04:42",
+  "generated_at": "2026-11-06 09:44:24",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -320,6 +320,22 @@
     {
       "market": "VIETNAM_CBTT",
       "symbol": "HCM",
+      "form_or_type": "ESOP_PHAT_HANH",
+      "date": "Fri, 06 Nov 26 1",
+      "headline": "Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "IDC",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 06 Nov 26 1",
+      "headline": "Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Thu, 05 Nov 26 1",
       "headline": "Bà Mai Kiều Liên cùng Vinamilk ba năm liền góp mặt trong hai bảng xếp hạng danh giá của Fortune",
@@ -364,22 +380,6 @@
       "date": "Fri, 06 Nov 26 1",
       "headline": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
       "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "REE",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Fri, 06 Nov 26 1",
-      "headline": "Gia nhập quân giải phóng từ năm 16 tuổi, bà Nguyễn Thị Mai Thanh tự dặn lòng: Hãy quên mình là con gái của một vị tướng chỉ huy",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "PC1",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Fri, 06 Nov 26 1",
-      "headline": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 371 hồ sơ SEC & 45 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 371 hồ sơ SEC & 47 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

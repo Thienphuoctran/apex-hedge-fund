@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-06T09:03:08.889007+00:00",
+  "timestamp_utc": "2026-11-06T09:44:12.759675+00:00",
   "scan_date": "2026-11-06",
   "total_us_filings_count": 371,
-  "total_vn_announcements_count": 45,
+  "total_vn_announcements_count": 47,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -285,12 +285,20 @@
       "total_recent_filings": 9
     },
     "HCM": {
+      "latest_event_type": "ESOP_PHAT_HANH",
+      "latest_title": "Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm",
+      "severity": "WARNING",
+      "published_at": "Fri, 06 Nov 26 16:30:00 +0700",
+      "source_url": "https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106163036649.chn",
+      "total_announcements": 15
+    },
+    "IDC": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Bà Mai Kiều Liên cùng Vinamilk ba năm liền góp mặt trong hai bảng xếp hạng danh giá của Fortune",
+      "latest_title": "Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC",
       "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 16:00:00 +0700",
-      "source_url": "https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn",
-      "total_announcements": 14
+      "published_at": "Fri, 06 Nov 26 16:20:00 +0700",
+      "source_url": "https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn",
+      "total_announcements": 1
     },
     "DPM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -4868,6 +4876,30 @@
     }
   ],
   "vn_announcements": [
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm",
+      "summary": "Sau khi tăng vốn điều lệ lên gần 37.000 tỷ đồng, Công ty cổ phần Đầu tư Địa ốc Đại Quang Minh của đại gia Trần Đăng Khoa (Khoa Khàn) tiếp tục được TP.HCM giao 4 lô đất với tổng diện tích gần 43.000m2 tại Thủ Thiêm để tha...",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Fri, 06 Nov 26 16:30:00 +0700",
+      "source_url": "https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106163036649.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "IDC"
+      ],
+      "title": "Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC",
+      "summary": "Ông Đặng Việt Dũng- Phó Tổng Giám đốc của Idico vừa đăng ký mua 4,4 triệu cổ phiếu IDC nhằm mục đích tăng tỷ lệ sở hữu....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 16:20:00 +0700",
+      "source_url": "https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn"
+    },
     {
       "market": "VIETNAM",
       "symbols": [

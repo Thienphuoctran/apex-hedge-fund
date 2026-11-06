@@ -1,9 +1,11 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-06 09:03:08  
-> **Số sự kiện ghi nhận:** 45 thông báo  
+> **Thời gian quét:** 2026-11-06 09:44:12  
+> **Số sự kiện ghi nhận:** 47 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **HCM** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm | [Xem Link](https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106163036649.chn) |
+| **IDC** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC | [Xem Link](https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bà Mai Kiều Liên cùng Vinamilk ba năm liền góp mặt trong hai bảng xếp hạng danh giá của Fortune | [Xem Link](https://cafef.vn/ba-mai-kieu-lien-cung-vinamilk-ba-nam-lien-gop-mat-trong-hai-bang-xep-hang-danh-gia-cua-fortune-188261105153404021.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Máy bay Vietnam Airlines vừa cất cánh 15 phút, nữ hành khách gặp sự cố: 4 người đặc biệt lập tức vào cuộc | [Xem Link](https://cafef.vn/may-bay-vietnam-airlines-vua-cat-canh-15-phut-nu-hanh-khach-gap-su-co-4-nguoi-dac-biet-lap-tuc-vao-cuoc-188261105152305712.chn) |
 | **DPM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | 9 tháng đã hoàn thành gấp đôi mục tiêu lợi nhuận cả năm, ông lớn ngành phân bón tăng 113% kế hoạch năm 2026 | [Xem Link](https://cafef.vn/9-thang-da-hoan-thanh-gap-doi-muc-tieu-loi-nhuan-ca-nam-ong-lon-nganh-phan-bon-tang-113-ke-hoach-nam-2026-188261105105540776.chn) |
