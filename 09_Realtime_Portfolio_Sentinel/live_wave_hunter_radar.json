@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06 03:35:01",
+  "generated_at": "2026-11-06 04:38:42",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -359,6 +359,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "PNJ",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 06 Nov 26 1",
+      "headline": "Con gái Chủ tịch Cao Thị Ngọc Dung tiếp tục bị bán giải chấp hơn 2,3 triệu cổ phiếu PNJ",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "HPG",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 06 Nov 26 0",
@@ -371,14 +379,6 @@
       "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
       "date": "Fri, 06 Nov 26 0",
       "headline": "Doanh nhân U80 quê Hà Tĩnh đi xây nhà, làm thủy điện có khối tài sản gần 2.000 tỷ đồng",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "PNJ",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Fri, 06 Nov 26 0",
-      "headline": "Con gái Chủ tịch PNJ đã bị bán giải chấp gần nửa lượng cổ phiếu nắm giữ trong chưa đầy 1 tháng",
       "is_portfolio_holding": false
     }
   ],

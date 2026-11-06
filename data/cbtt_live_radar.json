@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-06T03:34:49.540812+00:00",
+  "timestamp_utc": "2026-11-06T04:38:29.642188+00:00",
   "scan_date": "2026-11-06",
   "total_us_filings_count": 371,
   "total_vn_announcements_count": 41,
@@ -316,6 +316,14 @@
       "source_url": "https://cafef.vn/khong-chi-nam-1-eximbank-dai-gia-cang-bien-hai-phong-lo-danh-muc-dau-tu-gan-11000-ty-dong-om-62-trieu-co-phieu-gex-42-trieu-co-phieu-hah-188261105070213823.chn",
       "total_announcements": 1
     },
+    "PNJ": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Con gái Chủ tịch Cao Thị Ngọc Dung tiếp tục bị bán giải chấp hơn 2,3 triệu cổ phiếu PNJ",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 10:44:00 +0700",
+      "source_url": "https://cafef.vn/con-gai-chu-tich-cao-thi-ngoc-dung-tiep-tuc-bi-ban-giai-chap-hon-23-trieu-co-phieu-pnj-188261106104258622.chn",
+      "total_announcements": 6
+    },
     "HPG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Hé lộ lý do con trai tỷ phú Trần Đình Long không mua đủ lượng cổ phiếu HPG đăng ký",
@@ -323,14 +331,6 @@
       "published_at": "Fri, 06 Nov 26 00:07:00 +0700",
       "source_url": "https://cafef.vn/he-lo-ly-do-con-trai-ty-phu-tran-dinh-long-khong-mua-du-luong-co-phieu-hpg-dang-ky-188261105224959143.chn",
       "total_announcements": 3
-    },
-    "PNJ": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Con gái Chủ tịch PNJ đã bị bán giải chấp gần nửa lượng cổ phiếu nắm giữ trong chưa đầy 1 tháng",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/con-gai-chu-tich-pnj-da-bi-ban-giai-chap-gan-nua-luong-co-phieu-nam-giu-trong-chua-day-1-thang-188261105223516603.chn",
-      "total_announcements": 5
     },
     "FPT": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -364,14 +364,6 @@
       "source_url": "https://cafef.vn/dang-sau-khoan-loi-nhuan-tang-dot-bien-pv-power-pow-co-nhung-bien-dong-gi-sau-9-thang-dau-nam-188261104203102274.chn",
       "total_announcements": 1
     },
-    "MBB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn",
-      "total_announcements": 2
-    },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Ngày 6/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng?",
@@ -389,6 +381,14 @@
       "total_announcements": 1
     },
     "DXG": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại mua ròng đột biến ở VIX",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 2026 15:54:36 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm",
+      "total_announcements": 1
+    },
+    "MBB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Khối ngoại mua ròng đột biến ở VIX",
       "severity": "INFO",
@@ -4931,6 +4931,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "PNJ"
+      ],
+      "title": "Con gái Chủ tịch Cao Thị Ngọc Dung tiếp tục bị bán giải chấp hơn 2,3 triệu cổ phiếu PNJ",
+      "summary": "Bà Trần Phương Ngọc Giao- con gái Chủ tịch Cao Thị Ngọc Dung, tiếp tục bị bán giải chấp hơn 2,3 triệu cổ phiếu PNJ trong phiên 4/11/2026....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 10:44:00 +0700",
+      "source_url": "https://cafef.vn/con-gai-chu-tich-cao-thi-ngoc-dung-tiep-tuc-bi-ban-giai-chap-hon-23-trieu-co-phieu-pnj-188261106104258622.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HPG"
       ],
       "title": "Hé lộ lý do con trai tỷ phú Trần Đình Long không mua đủ lượng cổ phiếu HPG đăng ký",
@@ -5023,18 +5035,6 @@
       "severity": "CRITICAL",
       "published_at": "Wed, 04 Nov 26 20:30:00 +0700",
       "source_url": "https://cafef.vn/dang-sau-khoan-loi-nhuan-tang-dot-bien-pv-power-pow-co-nhung-bien-dong-gi-sau-9-thang-dau-nam-188261104203102274.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "MBB"
-      ],
-      "title": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
-      "summary": "Ở chiều ngược lại, khối ngoại bán ròng mạnh nhất trên HoSE là MBB với giá trị gần 199 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn"
     },
     {
       "market": "VIETNAM",
