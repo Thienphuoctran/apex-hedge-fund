@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-06 14:02:34  
-> **Số sự kiện ghi nhận:** 47 thông báo  
+> **Thời gian quét:** 2026-11-06 14:57:21  
+> **Số sự kiện ghi nhận:** 43 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -34,15 +34,11 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều tối 4/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-toi-4-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-188261104072255434.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng | [Xem Link](https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn) |
-| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 3/11, gửi 200 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-3-11-gui-200-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261103170626883.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Sở hữu một ngôi nhà, hay nắm giữ giá trị của đất? | [Xem Link](https://cafef.vn/so-huu-mot-ngoi-nha-hay-nam-giu-gia-tri-cua-dat-188261106154333945.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Thành phố giàu nhất Việt Nam giao 4 lô đất gần 43.000 m2 tại Thủ Thiêm cho doanh nghiệp của tỷ phú Trần Bá Dương để thanh toán dự án hơn 3.000 tỷ đồng | [Xem Link](https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106152356465.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | TP.HCM giao bổ sung 3,7m2 đất cho Kita Group làm dự án 368 căn hộ | [Xem Link](https://cafef.vn/tphcm-giao-bo-sung-37m2-dat-cho-kita-group-lam-du-an-368-can-ho-188261106152711939.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một thành phố du lịch nổi tiếng và đầu tàu kinh tế Việt Nam cùng lọt Top 16 trung tâm tài sản tại châu Á - Thái Bình Dương | [Xem Link](https://cafef.vn/mot-thanh-pho-du-lich-noi-tieng-va-dau-tau-kinh-te-viet-nam-cung-lot-top-16-trung-tam-tai-san-tai-chau-a-thai-binh-duong-188261106104433932.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Người dân ở TPHCM tự tay đập nhà mặt tiền nhường đất mở đường | [Xem Link](https://cafef.vn/nguoi-dan-o-tphcm-tu-tay-dap-nha-mat-tien-nhuong-dat-mo-duong-188261106091620129.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cảnh tượng lạ mắt tại đường sách TP.HCM lọt top 10 chợ sách tốt nhất thế giới | [Xem Link](https://cafef.vn/canh-tuong-la-mat-tai-duong-sach-tphcm-lot-top-10-cho-sach-tot-nhat-the-gioi-188261106063527054.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt mặt bằng ‘vàng’ ở TP.HCM bỏ trống trước mùa cao điểm mua sắm | [Xem Link](https://cafef.vn/hang-loat-mat-bang-vang-o-tphcm-bo-trong-truoc-mua-cao-diem-mua-sam-188261106062755428.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giám đốc Sở NN&MT TP.HCM kỳ vọng đấu giá 4 lô đất Thủ Thiêm đạt 50.000 tỷ đồng | [Xem Link](https://cafef.vn/giam-doc-so-nnmt-tphcm-ky-vong-dau-gia-4-lo-dat-thu-thiem-dat-50000-ty-dong-188261106062540192.chn) |
 | **CTG, DXG, HPG, MBB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại mua ròng đột biến ở VIX | [Xem Link](https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm) |
 | **SSI** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn | [Xem Link](https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại quay trở lại gom FPT | [Xem Link](https://vneconomy.vn/khoi-ngoai-quay-tro-lai-gom-fpt.htm) |
