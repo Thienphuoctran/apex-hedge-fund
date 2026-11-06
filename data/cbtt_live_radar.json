@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-06T06:41:27.174162+00:00",
+  "timestamp_utc": "2026-11-06T07:54:42.334229+00:00",
   "scan_date": "2026-11-06",
   "total_us_filings_count": 371,
   "total_vn_announcements_count": 42,
@@ -5209,12 +5209,12 @@
       "symbols": [
         "HCM"
       ],
-      "title": "Không chỉ Singapore, Hong Kong hay Tokyo, Việt Nam có 2 địa danh lọt Top 16 trung tâm tài sản hàng đầu châu Á",
+      "title": "Một thành phố du lịch nổi tiếng và đầu tàu kinh tế Việt Nam cùng lọt Top 16 trung tâm tài sản tại châu Á - Thái Bình Dương",
       "summary": "Việt Nam có hai đại diện trong Top 16 trung tâm tài sản châu Á - Thái Bình Dương, với Hội An xếp thứ 15 và TP.HCM xếp thứ 16....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 12:56:00 +0700",
-      "source_url": "https://cafef.vn/khong-chi-singapore-hong-kong-hay-tokyo-viet-nam-co-2-dia-danh-lot-top-16-trung-tam-tai-san-hang-dau-chau-a-188261106104433932.chn"
+      "published_at": "Fri, 06 Nov 26 13:56:00 +0700",
+      "source_url": "https://cafef.vn/mot-thanh-pho-du-lich-noi-tieng-va-dau-tau-kinh-te-viet-nam-cung-lot-top-16-trung-tam-tai-san-tai-chau-a-thai-binh-duong-188261106104433932.chn"
     },
     {
       "market": "VIETNAM",
@@ -5330,6 +5330,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "TP HCM không đánh đổi môi trường Cần Giờ để tăng trưởng kinh tế",
+      "summary": "Lãnh đạo TP HCM khẳng định việc bảo tồn rừng ngập mặn Cần Giờ là nguyên tắc trong quá trình phát triển và không đánh đổi môi trường để tăng trưởng kinh tế....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 2026 14:35:29 +0700",
+      "source_url": "https://vnexpress.net/tp-hcm-khong-danh-doi-moi-truong-can-gio-de-tang-truong-kinh-te-5141549.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "BSR"
       ],
       "title": "BSR lãi hợp nhất gần 25.000 tỷ đồng sau 9 tháng",
@@ -5362,18 +5374,6 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 2026 16:00:00 +0700",
       "source_url": "https://vnexpress.net/fpt-retail-tang-51-bac-sau-ba-nam-vao-fortune-southeast-asia-500-5140694.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "'Trung tâm tài chính TP HCM không nên cạnh tranh trực tiếp với Singapore'",
-      "summary": "Trưởng đại diện khu vực châu Á - Thái Bình Dương Viện Tài chính Quốc tế cho rằng Trung tâm tài chính TP HCM nên đóng vai trò bổ trợ trong hệ sinh thái khu vực thay vì cạnh tranh với Singapore, Hong Kong....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 2026 18:19:09 +0700",
-      "source_url": "https://vnexpress.net/trung-tam-tai-chinh-tp-hcm-khong-nen-canh-tranh-truc-tiep-voi-singapore-5140196.html"
     }
   ]
 }

@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-06 06:41:27  
+> **Thời gian quét:** 2026-11-06 07:54:42  
 > **Số sự kiện ghi nhận:** 42 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
@@ -32,7 +32,7 @@
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng | [Xem Link](https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 3/11, gửi 200 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-3-11-gui-200-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261103170626883.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Không chỉ Singapore, Hong Kong hay Tokyo, Việt Nam có 2 địa danh lọt Top 16 trung tâm tài sản hàng đầu châu Á | [Xem Link](https://cafef.vn/khong-chi-singapore-hong-kong-hay-tokyo-viet-nam-co-2-dia-danh-lot-top-16-trung-tam-tai-san-hang-dau-chau-a-188261106104433932.chn) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một thành phố du lịch nổi tiếng và đầu tàu kinh tế Việt Nam cùng lọt Top 16 trung tâm tài sản tại châu Á - Thái Bình Dương | [Xem Link](https://cafef.vn/mot-thanh-pho-du-lich-noi-tieng-va-dau-tau-kinh-te-viet-nam-cung-lot-top-16-trung-tam-tai-san-tai-chau-a-thai-binh-duong-188261106104433932.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Người dân ở TPHCM tự tay đập nhà mặt tiền nhường đất mở đường | [Xem Link](https://cafef.vn/nguoi-dan-o-tphcm-tu-tay-dap-nha-mat-tien-nhuong-dat-mo-duong-188261106091620129.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cảnh tượng lạ mắt tại đường sách TP.HCM lọt top 10 chợ sách tốt nhất thế giới | [Xem Link](https://cafef.vn/canh-tuong-la-mat-tai-duong-sach-tphcm-lot-top-10-cho-sach-tot-nhat-the-gioi-188261106063527054.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hàng loạt mặt bằng ‘vàng’ ở TP.HCM bỏ trống trước mùa cao điểm mua sắm | [Xem Link](https://cafef.vn/hang-loat-mat-bang-vang-o-tphcm-bo-trong-truoc-mua-cao-diem-mua-sam-188261106062755428.chn) |
@@ -42,7 +42,7 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại quay trở lại gom FPT | [Xem Link](https://vneconomy.vn/khoi-ngoai-quay-tro-lai-gom-fpt.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | MB Economic Insights 2026: Khơi thông nguồn vốn, thích ứng nhanh trước biến động sắp diễn ra tại TP. HCM | [Xem Link](https://vneconomy.vn/mb-economic-insights-2026-khoi-thong-nguon-von-thich-ung-nhanh-truoc-bien-dong-sap-dien-ra-tai-tp-hcm.htm) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép | [Xem Link](https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP HCM không đánh đổi môi trường Cần Giờ để tăng trưởng kinh tế | [Xem Link](https://vnexpress.net/tp-hcm-khong-danh-doi-moi-truong-can-gio-de-tang-truong-kinh-te-5141549.html) |
 | **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | BSR lãi hợp nhất gần 25.000 tỷ đồng sau 9 tháng | [Xem Link](https://vnexpress.net/bsr-lai-hop-nhat-gan-25-000-ty-dong-sau-9-thang-5140193.html) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vốn FDI vào TP HCM tăng hơn 4 lần | [Xem Link](https://vnexpress.net/von-fdi-vao-tp-hcm-tang-hon-4-lan-5141078.html) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT Retail tăng 51 bậc sau ba năm vào Fortune Southeast Asia 500 | [Xem Link](https://vnexpress.net/fpt-retail-tang-51-bac-sau-ba-nam-vao-fortune-southeast-asia-500-5140694.html) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 'Trung tâm tài chính TP HCM không nên cạnh tranh trực tiếp với Singapore' | [Xem Link](https://vnexpress.net/trung-tam-tai-chinh-tp-hcm-khong-nen-canh-tranh-truc-tiep-voi-singapore-5140196.html) |
