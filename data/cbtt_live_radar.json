@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-06T05:38:51.107790+00:00",
+  "timestamp_utc": "2026-11-06T06:41:27.174162+00:00",
   "scan_date": "2026-11-06",
   "total_us_filings_count": 371,
-  "total_vn_announcements_count": 41,
+  "total_vn_announcements_count": 42,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4/A",
@@ -316,6 +316,14 @@
       "source_url": "https://cafef.vn/khong-chi-nam-1-eximbank-dai-gia-cang-bien-hai-phong-lo-danh-muc-dau-tu-gan-11000-ty-dong-om-62-trieu-co-phieu-gex-42-trieu-co-phieu-hah-188261105070213823.chn",
       "total_announcements": 1
     },
+    "PC1": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 13:32:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-cua-nu-chu-tich-27-tuoi-phat-thong-bao-quan-trong-188261106113423265.chn",
+      "total_announcements": 1
+    },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Con gái Chủ tịch Cao Thị Ngọc Dung tiếp tục bị bán giải chấp hơn 2,3 triệu cổ phiếu PNJ",
@@ -356,21 +364,13 @@
       "source_url": "https://cafef.vn/vndirect-sap-hop-dai-hoi-bat-thuong-188261105101903973.chn",
       "total_announcements": 4
     },
-    "POW": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 04 Nov 26 20:30:00 +0700",
-      "source_url": "https://cafef.vn/dang-sau-khoan-loi-nhuan-tang-dot-bien-pv-power-pow-co-nhung-bien-dong-gi-sau-9-thang-dau-nam-188261104203102274.chn",
-      "total_announcements": 1
-    },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngày 6/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng?",
+      "latest_title": "ACB mang hơn 1,7 triệu phần thưởng lên ACB ONE, trúng iPhone 18 Pro Max mỗi tuần",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-6-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261105233246163.chn",
-      "total_announcements": 6
+      "published_at": "Fri, 06 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/acb-mang-hon-17-trieu-phan-thuong-len-acb-one-trung-iphone-18-pro-max-moi-tuan-188261106133025656.chn",
+      "total_announcements": 7
     },
     "CTG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4931,6 +4931,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "PC1"
+      ],
+      "title": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
+      "summary": "Tập đoàn PC1, doanh nghiệp do nữ Chủ tịch sinh năm 1999 Trịnh Khánh Linh đứng đầu, vừa phát đi thông báo đính chính một nội dung trong Báo cáo thường niên năm 2025....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 13:32:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-cua-nu-chu-tich-27-tuoi-phat-thong-bao-quan-trong-188261106113423265.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PNJ"
       ],
       "title": "Con gái Chủ tịch Cao Thị Ngọc Dung tiếp tục bị bán giải chấp hơn 2,3 triệu cổ phiếu PNJ",
@@ -5027,14 +5039,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "POW"
+        "ACB"
       ],
-      "title": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
-      "summary": "Sau 9 tháng đầu năm 2026, PV Power ghi nhận lợi nhuận sau thuế gần 6.900 tỷ đồng, tăng hơn 216% so với cùng kỳ. Tuy nhiên, doanh nghiệp cũng ghi nhận nhiều chỉ tiêu tài chính khác biến động đáng chú ý....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 04 Nov 26 20:30:00 +0700",
-      "source_url": "https://cafef.vn/dang-sau-khoan-loi-nhuan-tang-dot-bien-pv-power-pow-co-nhung-bien-dong-gi-sau-9-thang-dau-nam-188261104203102274.chn"
+      "title": "ACB mang hơn 1,7 triệu phần thưởng lên ACB ONE, trúng iPhone 18 Pro Max mỗi tuần",
+      "summary": "Dịp cuối năm, ACB triển khai chương trình “Bịt Mắt Bắt Dê” trên ACB ONE với hàng triệu phần quà và cơ hội trúng iPhone 18 Pro Max mỗi tuần. Đồng thời, Kho quà mang đến thêm nhiều ưu đãi hấp dẫn cho nhu cầu tiêu dùng hằng...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/acb-mang-hon-17-trieu-phan-thuong-len-acb-one-trung-iphone-18-pro-max-moi-tuan-188261106133025656.chn"
     },
     {
       "market": "VIETNAM",
@@ -5197,6 +5209,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Không chỉ Singapore, Hong Kong hay Tokyo, Việt Nam có 2 địa danh lọt Top 16 trung tâm tài sản hàng đầu châu Á",
+      "summary": "Việt Nam có hai đại diện trong Top 16 trung tâm tài sản châu Á - Thái Bình Dương, với Hội An xếp thứ 15 và TP.HCM xếp thứ 16....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 12:56:00 +0700",
+      "source_url": "https://cafef.vn/khong-chi-singapore-hong-kong-hay-tokyo-viet-nam-co-2-dia-danh-lot-top-16-trung-tam-tai-san-hang-dau-chau-a-188261106104433932.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Người dân ở TPHCM tự tay đập nhà mặt tiền nhường đất mở đường",
       "summary": "Hàng chục hộ dân tại phường Bình Trưng, TPHCM tự tay đập bỏ mặt tiền căn nhà gắn bó mấy chục năm để nhường mặt bằng cho dự án mở rộng đường Lương Định Của. Đằng sau đống xà bần ngổn ngang hiện nay là niềm hy vọng về 1 tư...",
       "event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -5239,18 +5263,6 @@
       "severity": "INFO",
       "published_at": "Fri, 06 Nov 26 06:22:00 +0700",
       "source_url": "https://cafef.vn/giam-doc-so-nnmt-tphcm-ky-vong-dau-gia-4-lo-dat-thu-thiem-dat-50000-ty-dong-188261106062540192.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Ít ai biết khu đất gần 457 ha từng được FLC đề xuất xây công viên Safari hàng đầu châu Á, có cả resort 5 sao và mô hình Disneyland, nay TP.HCM muốn kêu gọi đầu tư trở lại",
-      "summary": "Công viên Sài Gòn Safari được TP.HCM kêu gọi đầu tư....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 14:51:00 +0700",
-      "source_url": "https://cafef.vn/it-ai-biet-khu-dat-gan-457-ha-tung-duoc-flc-de-xuat-xay-cong-vien-safari-hang-dau-chau-a-co-ca-resort-5-sao-va-mo-hinh-disneyland-nay-tphcm-muon-keu-goi-dau-tu-tro-lai-188261105144448064.chn"
     },
     {
       "market": "VIETNAM",

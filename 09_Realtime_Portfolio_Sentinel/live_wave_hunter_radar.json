@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06 05:39:02",
+  "generated_at": "2026-11-06 06:41:35",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -359,6 +359,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "PC1",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 06 Nov 26 1",
+      "headline": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "PNJ",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 06 Nov 26 1",
@@ -372,14 +380,6 @@
       "date": "Fri, 06 Nov 26 0",
       "headline": "Hé lộ lý do con trai tỷ phú Trần Đình Long không mua đủ lượng cổ phiếu HPG đăng ký",
       "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
-      "date": "Fri, 06 Nov 26 0",
-      "headline": "Doanh nhân U80 quê Hà Tĩnh đi xây nhà, làm thủy điện có khối tài sản gần 2.000 tỷ đồng",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 371 hồ sơ SEC & 41 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 371 hồ sơ SEC & 42 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
