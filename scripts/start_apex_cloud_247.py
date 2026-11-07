@@ -56,7 +56,7 @@ from scripts.telegram_dispatcher import dispatch_message
 
 SERVICES_CONFIG = {
     "cron_daemon": {
-        "name": "Apex Institutional 17-Milestones Cron Daemon",
+        "name": "Apex Institutional 18-Milestones Cron Daemon",
         "script": "scripts/apex_institutional_cron_daemon.py",
         "args": ["--daemon"],
         "log_file": LOGS_DIR / "cron_daemon.log",
@@ -80,6 +80,16 @@ SERVICES_CONFIG = {
         "script": "scripts/telegram_interactive_copilot.py",
         "args": ["--daemon"],
         "log_file": LOGS_DIR / "telegram_copilot.log",
+        "enabled": True,
+        "max_crashes_in_window": 10,
+        "crash_window_seconds": 300,
+        "restart_delay_seconds": 3
+    },
+    "inspector_trong": {
+        "name": "Apex Institutional Ombudsman (Trọng - Ban 12)",
+        "script": "scripts/apex_inspector_trong.py",
+        "args": ["--daemon"],
+        "log_file": LOGS_DIR / "inspector_trong.log",
         "enabled": True,
         "max_crashes_in_window": 10,
         "crash_window_seconds": 300,

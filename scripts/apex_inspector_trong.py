@@ -481,13 +481,58 @@ class ApexInspectorTrong:
             "health_score": tech_audit["system_health_score"]
         }
 
+    @classmethod
+    def run_daemon_loop(cls, poll_interval_sec: int = 60):
+        """
+        Vòng lặp túc trực 24/24 của Ban 12 Trọng:
+        - Quét kiểm tra toàn vẹn kỹ thuật định kỳ (độ trễ VPS, SSOT, tính toàn vẹn dữ liệu).
+        - Canh đúng 23:30 hàng ngày, tự động kích hoạt phiên kiểm sát thể chế & chuyên môn 23h30 và gửi báo cáo Telegram.
+        """
+        print("[+] [BAN 12 TRỌNG] Khởi động Daemon kiểm sát thể chế & toàn vẹn hệ thống 24/24...", flush=True)
+        last_audit_date = ""
+
+        # Kiểm tra xem hôm nay đã chạy chưa
+        today_init = datetime.datetime.now().strftime("%Y-%m-%d")
+        today_report = DAILY_AUDITS_DIR / f"{today_init}_Trong_Audit_Report.md"
+        if today_report.exists():
+            last_audit_date = today_init
+
+        while True:
+            try:
+                now = datetime.datetime.now()
+                today_str = now.strftime("%Y-%m-%d")
+                current_hm = now.strftime("%H:%M")
+
+                # Kích hoạt phiên kiểm sát 23h30 nếu đến giờ và chưa chạy hôm nay
+                if current_hm >= "23:30" and last_audit_date != today_str:
+                    print(f"[*] [BAN 12 TRỌNG] Đến giờ kiểm sát 23h30 ({current_hm}) ngày {today_str}. Bắt đầu thanh tra...", flush=True)
+                    cls.run_full_23h30_ombudsman_session()
+                    last_audit_date = today_str
+
+                # Quét sức khỏe kỹ thuật định kỳ
+                tech_res = cls.audit_system_technical_integrity_247()
+                if tech_res.get("issues_count", 0) > 0:
+                    for iss in tech_res.get("issues", []):
+                        if iss.get("severity") == "P0_CRITICAL":
+                            print(f"[!] [BÁO ĐỘNG ĐỎ TRỌNG 24/24] {iss['module']}: {iss['issue']}", flush=True)
+
+            except Exception as e_daemon:
+                print(f"[!] [LỖI DAEMON TRỌNG]: {e_daemon}", flush=True)
+
+            time.sleep(poll_interval_sec)
+
 
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Apex Institutional Ombudsman Engine (Trọng)")
     parser.add_argument("--run-23h30-audit", action="store_true", help="Chạy đầy đủ quy trình kiểm sát 23h30 và gửi báo cáo Telegram")
     parser.add_argument("--health-sweep", action="store_true", help="Quét kiểm tra toàn vẹn kỹ thuật 24/24")
+    parser.add_argument("--daemon", action="store_true", help="Chạy vòng lặp túc trực 24/24 (giám sát kỹ thuật và tự động kiểm sát 23h30)")
     args = parser.parse_args()
+
+    if args.daemon:
+        ApexInspectorTrong.run_daemon_loop(poll_interval_sec=60)
+        return
 
     if args.health_sweep:
         res = ApexInspectorTrong.audit_system_technical_integrity_247()
