@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  apex-hedge-fund-supervisor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apex_cloud_supervisor_immortal
+    restart: always
+    environment:
+      - PORT=8000
+      - PYTHONUNBUFFERED=1
+      - PYTHONIOENCODING=utf-8
+      - TZ=Asia/Ho_Chi_Minh
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./VN_Market:/app/VN_Market
+      - ./08_Master_Investment_CIO:/app/08_Master_Investment_CIO
+      - ./09_Realtime_Portfolio_Sentinel:/app/09_Realtime_Portfolio_Sentinel
+      - ./12_Institutional_Ombudsman_And_Inspectorate:/app/12_Institutional_Ombudsman_And_Inspectorate
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
