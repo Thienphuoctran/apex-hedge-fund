@@ -1,5 +1,5 @@
 # 📚 BẢN TIN NGHIÊN CỨU & NẠP TRI THỨC ĐỈNH CAO — NGÀY 2026-11-07
-*Thời gian thực thi*: `2026-11-07 20:53:12` *(Khung giờ nghiên cứu đêm khuya 22h00)*  
+*Thời gian thực thi*: `2026-11-07 21:40:48` *(Khung giờ nghiên cứu đêm khuya 22h00)*  
 *Chuyên đề nghiên cứu*: **PHÂN TÍCH CHUYÊN SÂU CHUỖI GIÁ TRỊ DOANH NGHIỆP & CON HÀO KINH TẾ (MOATS)**  
 *Cơ quan chủ trì biên soạn*: **Ban 2 VN & Global, Ban 10 (Hiền IR)**  
 *Tài liệu nghiên cứu gốc*: _Warren Buffett (Letters to Shareholders), Michael Porter ('Competitive Strategy') & Báo cáo Ngành Công Thương_  
@@ -46,7 +46,8 @@ Dưới sự giám sát của Master CIO James và Tổng Kiểm Soát Trọng, 
 | **Ban 9 (Victor - Sentinel Thời Gian Thực)** | Victor | Thuật toán phát hiện lệnh kê ảo: Nhận diện hiện tượng tạo lập kê lệnh mua khối lượng lớn ở bước giá Giá 2 và Giá 3 để tạo tâm lý đỡ giá giả tạo nhằm xả hàng ở Giá 1. | **Cài đặt radar giám sát độ sâu sổ lệnh (Order Book Depth) để cảnh báo tức thời cho Minh Quân trước khi đặt lệnh.** |
 | **Ban 10 (Hiền - Rà Soát BCTC & Quan Hệ Cổ Đông IR)** | Hiền IR | Kiểm tra chéo Báo cáo thường niên và Biên bản ĐHĐCĐ của các mã trong Tầm ngắm Vòng 2: HDB chuẩn bị chia cổ tức bằng tiền mặt, MSH mở rộng nhà máy may xuất khẩu, BAF ghi nhận doanh thu từ cụm trại 3F mới. | **Cung cấp đường link chính thống 100% không bịa đặt cho từng thuyết minh tài chính phục vụ Chủ tịch tra cứu.** |
 | **Ban 11 (Khánh & Bảo - Sáng Tạo Nội Dung & Dựng Phim)** | Khánh & Bảo | Nghiên cứu kịch bản video TikTok 60s viral: Công thức 'Hook 3s gây sốc + Bóc trần sự thật BCTC + Bài học rút ra' giúp tỷ lệ giữ chân người xem đạt trên 65%. | **Biến bài học Pháp y BCTC của Ban 2 thành video phân tích trực quan về cách nhận biết cổ phiếu có dòng tiền tiền tươi thóc thật.** |
-| **Ban 12 (Trọng - Tổng Kiểm Soát Viên Thể Chế)** | Trọng | Thanh tra quy trình tự học: Xác nhận 100% nội dung nghiên cứu đêm nay dựa trên số liệu thực tế, lý thuyết kinh điển đã kiểm chứng và gắn chặt với tài khoản thực của Chủ tịch. | **Phúc tra toàn bộ cam kết cải tiến vào phiên kiểm sát đêm khuya 23h30, không dung túng bất kỳ biểu hiện đối phó hình thức nào.** |
+| **Ban 12 (Trọng - Tổng Kiểm Soát Viên Thể Chế)** | Trọng | Thanh tra quy trình tự học: Xác nhận 100% nội dung nghiên cứu đêm nay dựa trên số liệu thực tế từ bộ quét 145 mã / 18 ngành, lý thuyết kinh điển đã kiểm chứng và gắn chặt với tài khoản thực của Chủ tịch. | **Phúc tra toàn bộ cam kết cải tiến vào phiên kiểm sát đêm khuya 23h30, không dung túng bất kỳ biểu hiện đối phó hình thức nào.** |
+| **Văn Phòng Trợ Lý Chủ Tịch (Trợ Lý Cá Nhân Nam)** | Trợ Lý Nam | Tổng hợp nhu cầu điều hành của Chủ tịch Phước Trần: Chủ tịch yêu cầu báo cáo ngắn gọn, đi thẳng vào quyết định (Mua mã nào, giá bao nhiêu, cắt lỗ ở đâu), mở rộng tầm nhìn đón đầu các cổ phiếu đang lên mạnh mẽ. | **Kết nối trực tiếp dữ liệu 105 Tinh hoa, Sổ cái Kiểm điểm 23h15 và Radar 12 Cổ phiếu Đang Lên vào bộ nhớ trả lời tức thì của Nam.** |
 
 ---
 ## IV. ĐỐI SOÁT BÁCH KHOA TOÀN THƯ 105 BÀI HỌC BẬC THẦY
@@ -78,16 +79,35 @@ Hôm nay, các phòng ban đã đối chiếu và hấp thụ sâu sắc các b�
 * **Ứng dụng thực chiến Quỹ Apex**: Tìm kiếm các doanh nghiệp bị thị trường lãng quên do một rủi ro ngắn hạn tạm thời đã được giải quyết xong nhưng giá chưa kịp phản ứng.
 
 ---
-## V. ỨNG DỤNG TRỰC TIẾP VÀO DANH MỤC VÒNG 2 CỦA CHỦ TỊCH
+## V. ỨNG DỤNG TRỰC TIẾP VÀO DANH MỤC VÒNG 2 & RADAR CỔ PHIẾU ĐANG LÊN CỦA CHỦ TỊCH
 🎯 **Trạng thái tài sản SSOT V2.0**: **20,167,119 ₫ Tiền Mặt (100% Cash)** | **0 CP Rủi Ro** | Lãi ròng Vòng 1: **+167,119 ₫**.
 🎯 **Định hướng chiến lược**: Thẩm định con hào kinh tế của MSH (đơn hàng FOB xuất khẩu giá trị cao), IDC (quỹ đất KCN sạch cho thuê) và HDB (tăng trưởng tín dụng bán lẻ).
 
-| Mã Tầm Ngắm | Chất Lượng Tiền Thật OCF | Con Hào Kinh Tế (Moat) | Kế Hoạch Tác Chiến Khung 14h00-14h25 |
-| :---: | :---: | :--- | :--- |
-| **`HDB`** | $OCF/LNST = 1.16x$ | Ngân hàng bán lẻ năng động, CASA tăng trưởng, ROE 25.6%. | Canh gom thăm dò 30% quanh `22,310 - 22,500 ₫`, gia tăng khi vượt `22,820 ₫`. |
-| **`MSH`** | $OCF/LNST = 1.42x$ | Dệt may đơn hàng FOB chất lượng cao, tiền mặt dồi dào, nợ vay cực thấp. | Canh gom thăm dò 30% quanh `35,060 - 35,500 ₫`, gia tăng khi vượt `36,220 ₫`. |
-| **`BAF`** | $OCF/LNST = 1.18x$ | Chuỗi khép kín 3F, hưởng lợi giá heo phục hồi, biên lãi gộp mở rộng. | Canh gom thăm dò 30% quanh `30,710 - 30,900 ₫`, gia tăng khi vượt `31,210 ₫`. |
-| **`IDC`** | $OCF/LNST = 1.48x$ | Quỹ đất KCN sẵn sàng cho thuê lớn, khách hàng trả tiền trước dòng FCF khủng. | Canh gom thăm dò 30% quanh `34,500 - 34,900 ₫`, gia tăng khi vượt `35,570 ₫`. |
+### 1. Bảng Sổ Lệnh Chờ Kích Hoạt Vòng 2 Đa Ngành (Tuyển Chọn Từ 145 Mã / 18 Ngành):
+| Mã Tầm Ngắm | Ngành | Thị Giá | RS (1-99) | Điểm 10 Danh Thủ | OCF/LNST | Kế Hoạch Tác Chiến Khung 14h00-14h25 (Quyết Đoán 100%) |
+| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
+| **`HDB`** | Ngân Hàng TMCP | `22,500 ₫` | **`95`** | **`91.4/100`** | `1.16x` | Đặt LO `300 CP` vùng `22,310 - 22,500 ₫` • Stop: `21,220 ₫` (-5.69%) • TP1: `24,290 ₫` |
+| **`MSH`** | Dệt May Xuất Khẩu | `35,500 ₫` | **`94`** | **`91.9/100`** | `1.42x` | Đặt LO `200 CP` vùng `35,060 - 35,500 ₫` • Stop: `33,090 ₫` (-6.79%) • TP1: `39,560 ₫` |
+| **`BAF`** | Nông Nghiệp & Chăn Nuôi 3F | `30,900 ₫` | **`96`** | **`88.1/100`** | `1.18x` | Đặt LO `200 CP` vùng `30,710 - 30,900 ₫` • Stop: `29,650 ₫` (-4.05%) • TP1: `32,650 ₫` |
+| **`IDC`** | BĐS Khu Công Nghiệp & Cao Su | `34,900 ₫` | **`81`** | **`89.0/100`** | `1.48x` | Đặt LO `200 CP` vùng `34,500 - 34,900 ₫` • Stop: `32,530 ₫` (-6.79%) • TP1: `38,660 ₫` |
+| **`TCH`** | Bất Động Sản Dân Cư & Đô Thị | `13,500 ₫` | **`89`** | **`82.7/100`** | `1.32x` | Đặt LO `300 CP` vùng `13,350 - 13,500 ₫` • Stop: `12,580 ₫` (-6.81%) • TP1: `14,880 ₫` |
+| **`OCB`** | Ngân Hàng TMCP | `10,700 ₫` | **`88`** | **`81.9/100`** | `1.08x` | Đặt LO `300 CP` vùng `10,600 - 10,700 ₫` • Stop: `10,020 ₫` (-6.36%) • TP1: `11,650 ₫` |
+
+### 2. Radar Phát Hiện Sớm 12 Cổ Phiếu Đang Lên Mạnh Nhất Toàn Thị Trường (Emerging Rising Leaders):
+| Mã CP | Sàn | Nhóm Ngành | Phân Khúc | Giá Hiện Tại | Đà Tăng 1M | RS (1-99) | Điểm 10 Danh Thủ | Phán Quyết Dứt Khoát |
+| :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`MSH`** | HOSE | Dệt May Xuất Khẩu | `SmallCap_HiddenGem` | `35,500 ₫` | `+13.06%` | **`94`** | `91.9/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`HDB`** | HOSE | Ngân Hàng TMCP | `VN30_LargeCap` | `22,500 ₫` | `+0.45%` | **`95`** | `91.4/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`BAF`** | HOSE | Nông Nghiệp & Chăn Nuôi 3F | `SmallCap_HiddenGem` | `30,900 ₫` | `+4.64%` | **`96`** | `88.1/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`MSB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | `16,350 ₫` | `+11.99%` | **`98`** | `85.8/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`TCH`** | HOSE | Bất Động Sản Dân Cư & Đô Thị | `MidCap_Growth` | `13,500 ₫` | `+25.58%` | **`89`** | `82.7/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`NAB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | `12,600 ₫` | `+3.70%` | **`91`** | `87.8/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`OCB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | `10,700 ₫` | `+7.43%` | **`88`** | `81.9/100` | **ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)** |
+| **`CTS`** | HOSE | Chứng Khoán & Đầu Tư | `SmallCap_HiddenGem` | `23,350 ₫` | `+19.13%` | **`84`** | `81.9/100` | **ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)** |
+| **`BVS`** | HNX | Chứng Khoán & Đầu Tư | `SmallCap_HiddenGem` | `28,300 ₫` | `+8.43%` | **`87`** | `82.3/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`LHG`** | HOSE | BĐS Khu Công Nghiệp & Cao Su | `SmallCap_HiddenGem` | `26,600 ₫` | `+0.76%` | **`83`** | `87.7/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`IDC`** | HNX | BĐS Khu Công Nghiệp & Cao Su | `MidCap_Growth` | `34,900 ₫` | `-1.69%` | **`81`** | `89.0/100` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`NKG`** | HOSE | Thép & Kim Loại Công Nghiệp | `MidCap_Growth` | `12,150 ₫` | `+30.79%` | **`78`** | `78.6/100` | **ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)** |
 
 ---
 ## VI. ĐÚC RÚT VÀO NHẬT KÝ TIẾN HÓA & PHÊ DUYỆT CỦA BAN ĐIỀU HÀNH

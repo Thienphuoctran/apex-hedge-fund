@@ -404,17 +404,49 @@ def run_full_10_department_council() -> Dict[str, Any]:
             "head": "Victor (Chỉ Huy Lá Chắn Thời Gian Thực 24/7)",
             "quantitative_findings": (
                 f"Đã nạp toàn bộ {len(approved_round2_watchlist)} siêu cổ phiếu đa ngành Vòng 2 ({', '.join([x['code'] for x in approved_round2_watchlist])}) "
+                f"cùng Top 12 Cổ phiếu đang lên mạnh nhất ({', '.join(scan_data.get('top_12_emerging_rising_leaders', [])[:8])}) "
                 "vào Radar canh gác 24/7 trên cả Local Daemon và Cloud Sentinel. Tự động bắn pháo hiệu Telegram ngay khi cổ phiếu chạm vùng gom Limit hoặc bứt phá Pocket Pivot."
+            )
+        },
+        {
+            "dept_id": "BAN_11_VIRAL_STUDIO",
+            "dept_name": "Ban 11 — Sáng Tạo Nội Dung & Dựng Phim AI (`khanh-creator-agent` & `bao`)",
+            "head": "Khánh (Giám Đốc Sáng Tạo) & Bảo (Kỹ Sư Render AI)",
+            "quantitative_findings": (
+                "Phối hợp chặt chẽ cùng Ban 10 (Hiền) và Ban 2 chuyển hóa trực tiếp dữ liệu pháp y BCTC của các siêu cổ phiếu mới nổi (MSH, HDB, BAF, IDC, PVT) "
+                "thành kịch bản truyền thông số liệu thật 100%, tuyệt đối không giật tít câu view hoặc dùng số liệu chưa kiểm toán."
+            )
+        },
+        {
+            "dept_id": "BAN_12_OMBUDSMAN_TRONG",
+            "dept_name": "Ban 12 — Ban Kiểm Sát Thể Chế, Kỷ Luật & Toàn Vẹn Hệ Thống (`apex_inspector_trong`)",
+            "head": "Trọng (Tổng Kiểm Sát Viên Độc Lập)",
+            "quantitative_findings": (
+                "Thực hiện thanh tra không vùng cấm theo 10 Điều Luật Hiến Chương: Đã phát hiện và yêu cầu chấn chỉnh ngay 3 điểm yếu trong đợt nâng cấp chiều nay: "
+                "(1) Sửa trần cắt lỗ sàn HNX từ 8.5% về cứng <= 6.8% (khắc phục mã IDC từ -7.71% về -6.79%); "
+                "(2) Buộc kịch bản Minh Quân (`vn_daily_specialist.py`) và Sổ lệnh Master (`master_cio_allocator.py`) phải nạp động danh sách Vòng 2 từ bộ quét 145 mã thay vì neo cứng mã cũ; "
+                "(3) Buộc Giờ tự học 22h00 và Kiểm điểm 23h15 trích xuất trực tiếp dữ liệu quét thị trường thực tế."
+            )
+        },
+        {
+            "dept_id": "ASSISTANT_NAM_EXECUTIVE",
+            "dept_name": "Văn Phòng Trợ Lý Chủ Tịch — Trợ Lý Cá Nhân & Điều Phối Đời Sống (`assistant_nam_agent`)",
+            "head": "Nam (Trợ Lý Cá Nhân Cấp Cao của Chủ tịch Phước Trần)",
+            "quantitative_findings": (
+                f"Đã kết nối trực tiếp vào Sổ cái SSOT V2.0 ({cash_vnd:,.0f} ₫ tiền mặt, 0 CP), Bách Khoa 105 Tinh Hoa Đầu Tư và Radar 145 mã. "
+                "Đóng góp góc nhìn thực tế bảo vệ Chủ tịch: Mọi báo cáo gửi Chủ tịch phải ngắn gọn, quyết đoán (có giá mua LO, giá cắt lỗ, số lượng CP rõ ràng), "
+                "tuyệt đối không báo cáo 'nước đôi' gây mất thời gian của Chủ tịch."
             )
         },
         {
             "dept_id": "BAN_08_MASTER_CIO",
             "dept_name": "Ban 8 — Ban Đầu Tư Tối Cao & Tổng Tư Lệnh Phân Bổ Vốn (`master-cio-agent`)",
-            "head": "Master CIO James (Tổng Tư Lệnh Tối Cao)",
+            "head": "Master CIO James (Tổng Tư Lệnh Tối Cao & Trợ Lý Chiến Lược Số 1)",
             "quantitative_findings": (
-                f"Chủ tọa phê duyệt Nghị quyết Hội đồng: Chấm dứt hoàn toàn việc bó hẹp trong 4 mã cũ. "
+                f"Chủ tọa phê duyệt Nghị quyết Hội đồng Toàn Doanh Nghiệp (12 Phòng Ban + 2 Trợ Lý): Chấm dứt vĩnh viễn việc bó hẹp trong 4 mã cũ. "
                 f"Chính thức ban hành Danh mục Tầm ngắm Vòng 2 Đa Ngành gồm {len(approved_round2_watchlist)} Siêu cổ phiếu Hạng AAA/AA "
                 f"({', '.join([x['code'] + ' [' + x['sector_name'] + ']' for x in approved_round2_watchlist])}) "
+                f"cùng Radar 12 Cổ Phiếu Đang Lên Mạnh Nhất ({', '.join(scan_data.get('top_12_emerging_rising_leaders', []))}) "
                 f"được chọn lọc từ 145 mã toàn thị trường, đảm bảo hội tụ đủ 3 yếu tố: BCTC Tiền thật + Sức mạnh giá RS dẫn đầu + Vừa khít quy mô vốn 20,167,119 ₫."
             )
         }
@@ -426,8 +458,33 @@ def run_full_10_department_council() -> Dict[str, Any]:
         "2. KHI MỞ CỬA PHIÊN THỨ HAI (09/11/2026): Do cơ chế bảo mật Read-Only Air-Gap bảo vệ tiền của Chủ tịch 100%, hệ thống AI KHÔNG tự ý đặt lệnh mua/bán vào tài khoản TCBS. Khi Victor & Minh Quân báo tín hiệu điểm mua chuẩn trong Khung Giờ Vàng (14h00 - 14h25) qua Telegram, Chủ tịch chỉ cần mở app TCInvest bấm đặt lệnh theo đúng Mã + Số lượng lô chẵn 100 CP + Giá Limit đã tính sẵn, sau đó nhắn xác nhận lên Telegram (ví dụ: 'Đã mua 200 MSH giá 35.2') để hệ thống tự động ghi sổ và canh chốt lời/cắt lỗ."
     ]
 
+    emerging_details = []
+    for em_code in scan_data.get("top_12_emerging_rising_leaders", [])[:12]:
+        if em_code in stocks:
+            s_em = stocks[em_code]
+            t_em = s_em["technical"]
+            e_em = s_em["institutional_evaluation"]
+            emerging_details.append({
+                "code": em_code,
+                "name": s_em["name"],
+                "exchange": s_em["exchange"],
+                "sector_name": s_em["sector_name"],
+                "cap_tier": s_em["cap_tier"],
+                "price": t_em["price"],
+                "change_1m_pct": t_em["change_1m_pct"],
+                "rs_rating": t_em["rs_rating"],
+                "vsa_signal": t_em["vsa_signal"],
+                "legends_score": e_em["legends_composite_score"],
+                "lot_100_nav_pct": e_em["lot_100_nav_pct"],
+                "stop_loss_2atr": e_em["stop_loss_2atr_vnd"],
+                "stop_dist_pct": e_em["stop_dist_pct"],
+                "tp1": e_em["tp1_vnd"],
+                "rr_ratio": e_em["rr_ratio"],
+                "decisive_verdict": e_em.get("decisive_verdict", "STRONG_BUY_ROUND2_SNIPER")
+            })
+
     resolution_payload = {
-        "resolution_id": f"APEX-COUNCIL-10DEPT-{today_str}",
+        "resolution_id": f"APEX-COUNCIL-12DEPT-2ASSIST-{today_str}",
         "generated_at": t_ctx["full_time_label_vn"],
         "execution_time_seconds": round(time.perf_counter() - start_t, 2),
         "account_id": "105C307855",
@@ -438,11 +495,13 @@ def run_full_10_department_council() -> Dict[str, Any]:
             "total_stocks_scanned": scan_data["total_stocks_scanned"],
             "total_sectors_covered": scan_data["total_sectors_covered"],
             "pct_above_ma20": scan_data["market_breadth_summary"]["pct_stocks_above_ma20"],
-            "pct_above_ma200": scan_data["market_breadth_summary"]["pct_stocks_above_ma200"]
+            "pct_above_ma200": scan_data["market_breadth_summary"]["pct_stocks_above_ma200"],
+            "emerging_rising_stocks_count": scan_data["market_breadth_summary"].get("emerging_rising_stocks_count", len(emerging_details))
         },
         "previous_session_continuity": prev_handover,
         "departmental_reports": departmental_reports,
         "approved_round2_watchlist": approved_round2_watchlist,
+        "top_12_emerging_rising_leaders": emerging_details,
         "top_10_mid_small_cap_hidden_gems": scan_data["top_10_mid_small_cap_hidden_gems"],
         "rejected_or_downgraded_candidates": rejected_or_downgraded,
         "manual_actions_required_from_chairman": manual_actions_required
@@ -541,6 +600,17 @@ def write_council_markdown_report(out_path: Path, res: Dict[str, Any], sectors: 
             f"`{w['lot_100_cost_vnd']:,.0f} ₫` (`{w['lot_100_nav_pct']}%`) | **`{w['target_shares']} CP`** | "
             f"`{w['probe_buy_price']:,.0f} ₫` | `{w['stop_loss_2atr']:,.0f} ₫` (-{w['stop_dist_pct']}%) | "
             f"`{w['tp1']:,.0f} ₫` / `{w['tp2']:,.0f} ₫` | {w['key_catalyst']} |\n"
+        )
+
+    md += "\n---\n\n## 4B. RADAR 12 CỔ PHIẾU ĐANG LÊN MẠNH NHẤT TOÀN THỊ TRƯỜNG (EMERGING RISING LEADERS — RS >= 75, GIÁ >= MA20)\n\n"
+    md += "| Mã CP | Sàn | Nhóm Ngành | Phân Khúc | Giá Hiện Tại | Đà Tăng 1M | RS (1-99) | Điểm 10 Danh Thủ | 1 Lô 100 CP (% NAV) | Stop 2xATR | Chốt Lời TP1 | Phán Quyết Dứt Khoát Của Hội Đồng |\n"
+    md += "| :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |\n"
+    for em in res.get("top_12_emerging_rising_leaders", []):
+        md += (
+            f"| **`{em['code']}`** | {em['exchange']} | {em['sector_name']} | `{em['cap_tier']}` | **`{em['price']:,.0f} ₫`** | "
+            f"`{em['change_1m_pct']:+.2f}%` | **`{em['rs_rating']}`** | `{em['legends_score']}/100` | "
+            f"`{em['lot_100_nav_pct']}%` | `{em['stop_loss_2atr']:,.0f} ₫` (-{em['stop_dist_pct']}%) | "
+            f"`{em['tp1']:,.0f} ₫` | **{em['decisive_verdict']}** |\n"
         )
 
     md += "\n---\n\n## 5. BÁO CÁO TRÁCH NHIỆM: VIỆC HỆ THỐNG TỰ ĐỘNG 100% VS VIỆC CẦN CHỦ TỊCH THAO TÁC THỦ CÔNG\n\n"

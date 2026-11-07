@@ -139,7 +139,30 @@ def handle_nam_chat(user_text: str) -> str:
             "Dạ Chủ tịch có muốn em ghi chú thêm lịch hẹn hoặc việc cần làm nào không ạ?"
         )
 
-    # 4. Hướng dẫn nạp Gemini API Key nếu muốn mở rộng trí tuệ toàn năng vô hạn
+    # 4. Xử lý các câu hỏi về Cổ phiếu tiềm năng / Cổ phiếu đang lên / Tầm ngắm Vòng 2 / Họp Hội Đồng 12 Ban
+    if any(k in text_lower for k in ["cổ phiếu", "đang lên", "tiềm năng", "vòng 2", "hội đồng", "kiểm điểm", "mẹo", "bài học"]):
+        council_path = BASE_DIR / "data" / "latest_full_council_resolution.json"
+        if council_path.exists():
+            try:
+                c_data = json.loads(council_path.read_text(encoding="utf-8"))
+                r2_list = c_data.get("approved_round2_watchlist", [])
+                em_list = c_data.get("top_12_emerging_rising_leaders", [])
+                r2_str = "\n".join([
+                    f"• **`{x['code']}`** ({x['sector_name']}): Giá `{x['price']:,.0f} ₫` | RS `{x['rs_rating']}/99` | Điểm 10 Danh Thủ `{x['legends_score']}/100` | Gom LO `{x['target_shares']} CP` vùng `{x['probe_buy_price']:,.0f} ₫` | Stop `{x['stop_loss_2atr']:,.0f} ₫` (-{x['stop_dist_pct']}%)"
+                    for x in r2_list[:6]
+                ])
+                em_codes = ", ".join([f"`{x['code']}` (RS {x['rs_rating']})" for x in em_list[:8]])
+                return (
+                    f"💼 *[TRỢ LÝ NAM — BÁO CÁO TẦM NGẮM VÒNG 2 & CỔ PHIẾU ĐANG LÊN]*\n\n"
+                    f"Dạ thưa Chủ tịch, em Nam trích xuất trực tiếp từ **Nghị Quyết Hội Đồng 12 Phòng Ban (Quét 145 mã / 18 ngành)** ạ:\n\n"
+                    f"🎯 **Top 6 Siêu Cổ Phiếu Bắn Tỉa Vòng 2 (Vừa khít vốn `20,167,119 ₫`):**\n{r2_str}\n\n"
+                    f"🚀 **Radar Cổ Phiếu Đang Lên Mạnh Nhất (Emerging Rising Leaders):** {em_codes}\n\n"
+                    f"Dạ Chủ tịch muốn em Nam phối hợp cùng anh James và Trọng mổ xẻ sâu mã nào thì nhắn em ngay nhé!"
+                )
+            except Exception:
+                pass
+
+    # 5. Hướng dẫn nạp Gemini API Key nếu muốn mở rộng trí tuệ toàn năng vô hạn
     if any(k in text_lower for k in ["api key", "gemini key", "kích hoạt flash", "chưa có key"]):
         return (
             "💼 *[TRỢ LÝ NAM — HƯỚNG DẪN KÍCH HOẠT GEMINI 3.8 FLASH]*\n\n"

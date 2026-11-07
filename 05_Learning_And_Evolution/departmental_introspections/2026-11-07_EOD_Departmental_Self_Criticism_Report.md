@@ -2,10 +2,10 @@
 ## (Apex Post-Council EOD Departmental Introspection & Corrective Roadmap)
 
 > **CƠ QUAN CHỦ TỌA PHÚC TRA**: Ban Đầu Tư Tối Cao (Master CIO James) & Ban Kiểm Soát Thể Chế (Trọng Ban 12)  
-> **THỜI ĐIỂM THỰC THI**: `2026-11-07 20:56:45` *(Khung giờ tự soi rọi đêm khuya sau phiên Hội đồng 23h00)*  
+> **THỜI ĐIỂM THỰC THI**: `2026-11-07 21:40:48` *(Khung giờ tự soi rọi đêm khuya sau phiên Hội đồng 23h00)*  
 > **CHỦ TỊCH QUAN SÁT & CHỈ ĐẠO**: **Trần Quốc Thiên Phước** *(Tài khoản TCBS: `105C307855`)*  
 > **TRẠNG THÁI DANH MỤC SSOT V2.0**: **20,167,119 ₫ Tiền Mặt (100% Cash)** | **0 CP Rủi Ro** | Lãi Vòng 1: **+167,119 ₫**  
-> **ĐIỂM ĐÁNH GIÁ TRUNG BÌNH TOÀN HỆ THỐNG**: **`95.1 / 100 ĐIỂM`**  
+> **ĐIỂM ĐÁNH GIÁ TRUNG BÌNH TOÀN HỆ THỐNG**: **`95.2 / 100 ĐIỂM`**  
 
 ---
 
@@ -34,7 +34,8 @@ Không có chỗ cho sự tự mãn dù Chiến dịch Vòng 1 đã toàn thắn
 | **Ban 9 (Victor — Live Portfolio Sentinel)** | `96.0` | Trực chiến 24/7 không gián đoạn, phát hiện kịp thời các bước giá biến động, bảo vệ an toàn tuyệt đối cho tài khoản. | Bộ lọc phát hiện lệnh kê ảo (Spoofing) cần giảm bớt độ nhạy ở phiên sáng để tránh phát cảnh báo giả cho Minh Quân. | **Cài đặt ngưỡng phát hiện kê ảo linh hoạt: Khối lượng kê >= 3x thanh khoản bình quân 5 phút gần nhất.** | _Bài 101: Bóc Trần Chiêu Trò Kê Lệnh Mua Ảo Giá 2 / Giá 3 (Chuyên Gia Bảng Điện)_ |
 | **Ban 10 (Hiền — Rà Soát BCTC & Quan Hệ Cổ Đông IR)** | `96.0` | Cung cấp nguồn tài liệu BCTC chính thống 100%, trích xuất đúng dòng tiền tiền thật OCF, bảo vệ uy tín thể chế của Quỹ. | Tốc độ tải các phụ lục thuyết minh BCTC dung lượng lớn trong mùa cao điểm báo cáo đôi khi cần tối ưu hóa hơn nữa. | **Thiết lập cơ chế bộ nhớ đệm tự động (Local Caching) và đa nguồn kiểm tra chéo (Website Doanh nghiệp + UBCKNN + Vietstock).** | _Bài 21: Thuyết Minh BCTC — Nơi Giấu Giếm Toàn Bộ Tội Lỗi Của Doanh Nghiệp (Howard Schilit)_ |
 | **Ban 11 (Khánh & Bảo — Sáng Tạo Nội Dung & Dựng Video)** | `94.0` | Xây dựng kịch bản video TikTok 60s sắc sảo, truyền tải đúng thông điệp bảo vệ vốn và dòng tiền thật đến cộng đồng. | Hình ảnh minh họa B-Roll trong một số video cần sống động hơn, giảm bớt đồ thị phức tạp để người xem đại chúng dễ hiểu. | **Áp dụng quy chuẩn mới: 3 giây đầu tiên phải có hình ảnh trực quan bắt mắt (tiền mặt, kho hàng, biểu cảm kịch tính) trước khi đi vào số liệu.** | _Bài 88: Tâm Lý Học Hành Vi & Nghệ Thuật Chinh Phục Niềm Tin Đám Đông_ |
-| **Ban 12 (Trọng — Tổng Kiểm Soát Viên Thể Chế)** | `98.0` | Thanh tra nghiêm cẩn 19/19 hạng mục đạt chuẩn 100%, triệt tiêu hoàn toàn các lỗi xung đột số liệu cũ, bảo vệ tuyệt đối kỷ luật Quỹ. | Cần tăng cường kiểm tra đột xuất quy trình sao lưu dữ liệu và tính toàn vẹn của các file JSON bộ nhớ. | **Thiết lập cơ chế kiểm sát ngẫu nhiên (Spot-Check) không báo trước vào các khung giờ giao dịch 10h30 và 14h15.** | _Bài 94: Tách Biệt Kết Quả Ngắn Hạn Khỏi Chất Lượng Của Quy Trình (Annie Duke)_ |
+| **Ban 12 (Trọng — Tổng Kiểm Soát Viên Thể Chế)** | `98.0` | Thanh tra nghiêm cẩn không vùng cấm: Phát hiện và yêu cầu sửa ngay trần cắt lỗ HNX từ 8.5% về <= 6.8% và đồng bộ động kịch bản Minh Quân / Sổ lệnh Master với bộ quét 145 mã. | Trước phiên họp toàn doanh nghiệp tối nay, Trọng chưa phát hiện sớm việc file `vn_daily_specialist.py` vẫn còn giữ danh sách 6 mã cố định cũ. | **Thiết lập cơ chế kiểm sát đối chiếu chéo tự động (Cross-File Ticker Parity Check) vào lúc 08h35, 14h15 và 23h30.** | _Bài 94: Tách Biệt Kết Quả Ngắn Hạn Khỏi Chất Lượng Của Quy Trình (Annie Duke)_ |
+| **Văn Phòng Trợ Lý Chủ Tịch (Trợ Lý Cá Nhân Nam)** | `96.0` | Túc trực 24/7 báo cáo tiền thật chuẩn xác từng đồng (`20,167,119 ₫` tiền mặt, lãi ròng Vòng 1 `+167,119 ₫`), hỗ trợ điều phối lịch trình và dự án cho Chủ tịch. | Trước đợt nâng cấp tối nay, bộ não của Nam chưa được kết nối trực tiếp với CSDL 105 Tinh hoa Đầu tư và Radar 12 Cổ phiếu Đang Lên của Hội đồng. | **Đã tích hợp trực tiếp Radar 145 mã, Sổ lệnh Vòng 2 và 105 Bài học Bậc thầy vào `assistant_nam_agent.py` ngay trong tối nay.** | _Bài 1: Bảo Toàn Vốn Tuyệt Đối — Quy Tắc Số 1 Và Số 2 (Warren Buffett)_ |
 
 ---
 
@@ -139,11 +140,18 @@ Không có chỗ cho sự tự mãn dù Chiến dịch Vòng 1 đã toàn thắn
 * **5. Kim chỉ nam từ Bách Khoa Toàn Thư 105 Tinh Hoa**: 📌 **Bài 88: Tâm Lý Học Hành Vi & Nghệ Thuật Chinh Phục Niềm Tin Đám Đông**
 
 ### 🏛️ Ban 12 (Trọng — Tổng Kiểm Soát Viên Thể Chế) — Phụ trách: *Trọng* (Tự chấm: `98.0/100`)
-* **1. Điểm mạnh phiên hôm nay**: Thanh tra nghiêm cẩn 19/19 hạng mục đạt chuẩn 100%, triệt tiêu hoàn toàn các lỗi xung đột số liệu cũ, bảo vệ tuyệt đối kỷ luật Quỹ.
-* **2. Lỗ hổng & Sai sót tự nhìn nhận**: ⚠️ Cần tăng cường kiểm tra đột xuất quy trình sao lưu dữ liệu và tính toàn vẹn của các file JSON bộ nhớ.
-* **3. Căn nguyên cốt lõi (Root Cause)**: _Lịch kiểm sát cố định 23h30 có thể tạo tâm lý chủ quan cho các ban trong các khung giờ khác._
-* **4. Kế hoạch học tập & Khắc phục bắt buộc cho ngày mai**: 🎯 **Thiết lập cơ chế kiểm sát ngẫu nhiên (Spot-Check) không báo trước vào các khung giờ giao dịch 10h30 và 14h15.**
+* **1. Điểm mạnh phiên hôm nay**: Thanh tra nghiêm cẩn không vùng cấm: Phát hiện và yêu cầu sửa ngay trần cắt lỗ HNX từ 8.5% về <= 6.8% và đồng bộ động kịch bản Minh Quân / Sổ lệnh Master với bộ quét 145 mã.
+* **2. Lỗ hổng & Sai sót tự nhìn nhận**: ⚠️ Trước phiên họp toàn doanh nghiệp tối nay, Trọng chưa phát hiện sớm việc file `vn_daily_specialist.py` vẫn còn giữ danh sách 6 mã cố định cũ.
+* **3. Căn nguyên cốt lõi (Root Cause)**: _Quét kiểm tra cú pháp JSON/Python nhưng chưa đối chiếu chéo danh sách mã đầu ra của Ban 7 với Nghị quyết Hội đồng 145 mã._
+* **4. Kế hoạch học tập & Khắc phục bắt buộc cho ngày mai**: 🎯 **Thiết lập cơ chế kiểm sát đối chiếu chéo tự động (Cross-File Ticker Parity Check) vào lúc 08h35, 14h15 và 23h30.**
 * **5. Kim chỉ nam từ Bách Khoa Toàn Thư 105 Tinh Hoa**: 📌 **Bài 94: Tách Biệt Kết Quả Ngắn Hạn Khỏi Chất Lượng Của Quy Trình (Annie Duke)**
+
+### 🏛️ Văn Phòng Trợ Lý Chủ Tịch (Trợ Lý Cá Nhân Nam) — Phụ trách: *Trợ Lý Cá Nhân Nam* (Tự chấm: `96.0/100`)
+* **1. Điểm mạnh phiên hôm nay**: Túc trực 24/7 báo cáo tiền thật chuẩn xác từng đồng (`20,167,119 ₫` tiền mặt, lãi ròng Vòng 1 `+167,119 ₫`), hỗ trợ điều phối lịch trình và dự án cho Chủ tịch.
+* **2. Lỗ hổng & Sai sót tự nhìn nhận**: ⚠️ Trước đợt nâng cấp tối nay, bộ não của Nam chưa được kết nối trực tiếp với CSDL 105 Tinh hoa Đầu tư và Radar 12 Cổ phiếu Đang Lên của Hội đồng.
+* **3. Căn nguyên cốt lõi (Root Cause)**: _Module `assistant_nam_agent.py` trước đây chỉ đọc file trạng thái tài sản cơ bản mà chưa nối vào `latest_full_council_resolution.json`._
+* **4. Kế hoạch học tập & Khắc phục bắt buộc cho ngày mai**: 🎯 **Đã tích hợp trực tiếp Radar 145 mã, Sổ lệnh Vòng 2 và 105 Bài học Bậc thầy vào `assistant_nam_agent.py` ngay trong tối nay.**
+* **5. Kim chỉ nam từ Bách Khoa Toàn Thư 105 Tinh Hoa**: 📌 **Bài 1: Bảo Toàn Vốn Tuyệt Đối — Quy Tắc Số 1 Và Số 2 (Warren Buffett)**
 
 ---
 

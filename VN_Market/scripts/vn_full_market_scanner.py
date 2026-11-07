@@ -589,7 +589,8 @@ def evaluate_10_legends_and_capital_fit(
     # 10. Ray Dalio & Stanley Druckenmiller Risk/Reward Asymmetry
     atr = max(float(tech.get("atr14", price * 0.025)), price * 0.018)
     exchange = meta.get("exchange", "HOSE")
-    max_loss_cap = 0.068 if exchange == "HOSE" else 0.085
+    # Khóa cứng ngưỡng cắt lỗ bảo vệ vốn <= 6.8% trên mọi sàn (HOSE, HNX, UPCoM) theo Quy Tắc Vàng Bậc Thầy
+    max_loss_cap = 0.068
     stop_2atr = max(round(price - 2.0 * atr, -1), round(price * (1.0 - max_loss_cap), -1))
     stop_dist_pct = round(((price - stop_2atr) / price) * 100.0, 2)
     tp1 = round(price + 2.8 * atr, -1)
@@ -645,9 +646,26 @@ def evaluate_10_legends_and_capital_fit(
     # Điểm xếp hạng thực thi tổng thể cho Tài khoản Chủ tịch (Tích hợp cả BCTC + Kỹ thuật + Tương thích vốn)
     actionable_alpha_score = round(legends_composite + capital_fit_bonus + (4.0 if tech.get("vsa_code") in ("POCKET_PIVOT", "NO_SUPPLY", "SOS_ABSORPTION") else 0.0), 1)
 
+    # PHÁN QUYẾT DỨT KHOÁT 100% (ZERO WISHY-WASHY / KHÔNG NƯỚC ĐÔI)
+    is_rising_uptrend = (price >= float(tech.get("ma20", price))) and (rs_rating >= 75)
+    if not is_accounting_clean:
+        decisive_verdict = "HARD_VETO_RED_FLAG (Cấm giải ngân tuyệt đối — Rủi ro kế toán / OCF yếu)"
+    elif capital_fit_code == "OVERSIZED_LOT":
+        decisive_verdict = "SKIP_OVERSIZED_LOT_20M (BCTC tốt nhưng 1 lô 100 CP > 33% NAV 20M — Loại khỏi rổ mua trực tiếp)"
+    elif legends_composite >= 82.0 and is_rising_uptrend and capital_fit_code == "OPTIMAL":
+        decisive_verdict = "STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)"
+    elif legends_composite >= 76.0 and is_rising_uptrend:
+        decisive_verdict = "ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)"
+    elif price < float(tech.get("ma20", price)) or rs_rating < 50:
+        decisive_verdict = "STAND_ASIDE_WEAK_MOMENTUM (Đứng ngoài — Giá dưới MA20 hoặc RS yếu, cấm bắt dao rơi)"
+    else:
+        decisive_verdict = "WATCHLIST_BASE_BUILDING (Theo dõi nền tích lũy — Chờ điểm nổ Pocket Pivot vượt MA20)"
+
     return {
         "bctc_tier": bctc_tier,
         "is_accounting_clean": is_accounting_clean,
+        "decisive_verdict": decisive_verdict,
+        "is_rising_uptrend": is_rising_uptrend,
         "legends_composite_score": legends_composite,
         "actionable_alpha_score": actionable_alpha_score,
         "piotroski_f_score": f_score,
@@ -892,6 +910,22 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
     ]
     oversized_lot_compounders.sort(key=lambda x: x["institutional_evaluation"]["legends_composite_score"], reverse=True)
 
+    # D. Top 12 Emerging Rising Stocks (Cổ Phiếu Đang Lên Mạnh Nhất Toàn Thị Trường: Giá >= MA20, RS >= 75, BCTC Sạch, Vừa Vốn)
+    emerging_rising_leaders = [
+        v for v in clean_stocks
+        if v["institutional_evaluation"]["capital_fit_code"] in ("OPTIMAL", "MODERATE")
+        and v["technical"]["price"] >= v["technical"]["ma20"]
+        and v["technical"]["rs_rating"] >= 75
+    ]
+    emerging_rising_leaders.sort(
+        key=lambda x: (
+            x["technical"]["rs_rating"] * 0.45 +
+            x["institutional_evaluation"]["actionable_alpha_score"] * 0.40 +
+            max(0.0, x["technical"]["change_1m_pct"]) * 0.15
+        ),
+        reverse=True
+    )
+
     elapsed_sec = round(time.perf_counter() - start_t, 2)
     above_ma20_total = sum(1 for v in scanned_stocks.values() if v["technical"]["price"] >= v["technical"]["ma20"])
     above_ma200_total = sum(1 for v in scanned_stocks.values() if v["technical"]["price"] >= v["technical"]["ma200"])
@@ -906,10 +940,12 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
             "pct_stocks_above_ma20": round((above_ma20_total / max(1, len(scanned_stocks))) * 100.0, 1),
             "pct_stocks_above_ma200": round((above_ma200_total / max(1, len(scanned_stocks))) * 100.0, 1),
             "accounting_clean_count": len(clean_stocks),
-            "red_flag_warning_count": len(red_flag_stocks)
+            "red_flag_warning_count": len(red_flag_stocks),
+            "emerging_rising_stocks_count": len(emerging_rising_leaders)
         },
         "sector_rotation_ranking": sector_rotation_ranking,
         "top_12_diversified_actionable_discoveries": [x["code"] for x in diversified_top_discoveries],
+        "top_12_emerging_rising_leaders": [x["code"] for x in emerging_rising_leaders[:12]],
         "top_10_mid_small_cap_hidden_gems": [x["code"] for x in hidden_gems[:10]],
         "oversized_lot_institutional_compounders": [x["code"] for x in oversized_lot_compounders[:8]],
         "red_flag_avoid_list": [x["code"] for x in red_flag_stocks],
@@ -924,6 +960,7 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
     print(f"    • Độ rộng thị trường: {payload['market_breadth_summary']['pct_stocks_above_ma20']}% mã nằm trên MA20 | {payload['market_breadth_summary']['pct_stocks_above_ma200']}% mã nằm trên MA200")
     print(f"    • Top 5 Ngành Dẫn Dắt Dòng Tiền: {', '.join([s['sector_name'] + ' (' + str(s['sector_strength_score']) + 'đ)' for s in sector_rotation_ranking[:5]])}")
     print(f"    • Top 12 Siêu Cổ Phiếu Đa Ngành Phù Hợp Quy Mô Vốn 20.16M VNĐ: {', '.join(payload['top_12_diversified_actionable_discoveries'])}")
+    print(f"    • Top 12 Cổ Phiếu Đang Lên Mạnh Nhất (Emerging Rising Leaders): {', '.join(payload['top_12_emerging_rising_leaders'])}")
     print(f"    • Top 10 Mid/Small-Cap Hidden Gems: {', '.join(payload['top_10_mid_small_cap_hidden_gems'])}")
     print(f"    • Các mã Bluechip thị giá quá cao (1 lô 100 CP > 33% NAV 20M cần lưu ý): {', '.join(payload['oversized_lot_institutional_compounders'])}")
     return payload

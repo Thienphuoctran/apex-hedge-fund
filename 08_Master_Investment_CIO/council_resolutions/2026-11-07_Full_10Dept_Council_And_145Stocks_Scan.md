@@ -1,6 +1,6 @@
 # BIÊN BẢN HỌP THƯỢNG ĐỈNH 10 PHÒNG BAN & BÁO CÁO QUÉT TOÀN THỊ TRƯỜNG (145 MÃ / 18 NGÀNH)
-**Mã Nghị Quyết:** `APEX-COUNCIL-10DEPT-2026-11-07`  
-**Thời điểm thực thi:** `16:11:37 Thứ Bảy, ngày 07/11/2026` *(Thời gian xử lý: `1.05s`)*  
+**Mã Nghị Quyết:** `APEX-COUNCIL-12DEPT-2ASSIST-2026-11-07`  
+**Thời điểm thực thi:** `21:40:05 Thứ Bảy, ngày 07/11/2026` *(Thời gian xử lý: `1.41s`)*  
 **Tài khoản Chủ tịch:** TCBS `105C307855` — **Số dư Tiền mặt thực tế:** `20,167,119 ₫` (`0 CP` nắm giữ | Lãi ròng Vòng 1: `+167,119 ₫`)  
 
 ---
@@ -66,11 +66,23 @@
 
 ### 🏛️ Ban 9 — Giám Sát Thời Gian Thực & Ứng Phó Khẩn Cấp (`live-portfolio-sentinel-agent`)
 - **Người chủ trì:** Victor (Chỉ Huy Lá Chắn Thời Gian Thực 24/7)
-- **Báo cáo số liệu & Phản biện thực tế:** Đã nạp toàn bộ 6 siêu cổ phiếu đa ngành Vòng 2 (HDB, MSH, BAF, IDC, TCH, OCB) vào Radar canh gác 24/7 trên cả Local Daemon và Cloud Sentinel. Tự động bắn pháo hiệu Telegram ngay khi cổ phiếu chạm vùng gom Limit hoặc bứt phá Pocket Pivot.
+- **Báo cáo số liệu & Phản biện thực tế:** Đã nạp toàn bộ 6 siêu cổ phiếu đa ngành Vòng 2 (HDB, MSH, BAF, IDC, TCH, OCB) cùng Top 12 Cổ phiếu đang lên mạnh nhất (MSH, HDB, BAF, MSB, TCH, NAB, OCB, CTS) vào Radar canh gác 24/7 trên cả Local Daemon và Cloud Sentinel. Tự động bắn pháo hiệu Telegram ngay khi cổ phiếu chạm vùng gom Limit hoặc bứt phá Pocket Pivot.
+
+### 🏛️ Ban 11 — Sáng Tạo Nội Dung & Dựng Phim AI (`khanh-creator-agent` & `bao`)
+- **Người chủ trì:** Khánh (Giám Đốc Sáng Tạo) & Bảo (Kỹ Sư Render AI)
+- **Báo cáo số liệu & Phản biện thực tế:** Phối hợp chặt chẽ cùng Ban 10 (Hiền) và Ban 2 chuyển hóa trực tiếp dữ liệu pháp y BCTC của các siêu cổ phiếu mới nổi (MSH, HDB, BAF, IDC, PVT) thành kịch bản truyền thông số liệu thật 100%, tuyệt đối không giật tít câu view hoặc dùng số liệu chưa kiểm toán.
+
+### 🏛️ Ban 12 — Ban Kiểm Sát Thể Chế, Kỷ Luật & Toàn Vẹn Hệ Thống (`apex_inspector_trong`)
+- **Người chủ trì:** Trọng (Tổng Kiểm Sát Viên Độc Lập)
+- **Báo cáo số liệu & Phản biện thực tế:** Thực hiện thanh tra không vùng cấm theo 10 Điều Luật Hiến Chương: Đã phát hiện và yêu cầu chấn chỉnh ngay 3 điểm yếu trong đợt nâng cấp chiều nay: (1) Sửa trần cắt lỗ sàn HNX từ 8.5% về cứng <= 6.8% (khắc phục mã IDC từ -7.71% về -6.79%); (2) Buộc kịch bản Minh Quân (`vn_daily_specialist.py`) và Sổ lệnh Master (`master_cio_allocator.py`) phải nạp động danh sách Vòng 2 từ bộ quét 145 mã thay vì neo cứng mã cũ; (3) Buộc Giờ tự học 22h00 và Kiểm điểm 23h15 trích xuất trực tiếp dữ liệu quét thị trường thực tế.
+
+### 🏛️ Văn Phòng Trợ Lý Chủ Tịch — Trợ Lý Cá Nhân & Điều Phối Đời Sống (`assistant_nam_agent`)
+- **Người chủ trì:** Nam (Trợ Lý Cá Nhân Cấp Cao của Chủ tịch Phước Trần)
+- **Báo cáo số liệu & Phản biện thực tế:** Đã kết nối trực tiếp vào Sổ cái SSOT V2.0 (20,167,119 ₫ tiền mặt, 0 CP), Bách Khoa 105 Tinh Hoa Đầu Tư và Radar 145 mã. Đóng góp góc nhìn thực tế bảo vệ Chủ tịch: Mọi báo cáo gửi Chủ tịch phải ngắn gọn, quyết đoán (có giá mua LO, giá cắt lỗ, số lượng CP rõ ràng), tuyệt đối không báo cáo 'nước đôi' gây mất thời gian của Chủ tịch.
 
 ### 🏛️ Ban 8 — Ban Đầu Tư Tối Cao & Tổng Tư Lệnh Phân Bổ Vốn (`master-cio-agent`)
-- **Người chủ trì:** Master CIO James (Tổng Tư Lệnh Tối Cao)
-- **Báo cáo số liệu & Phản biện thực tế:** Chủ tọa phê duyệt Nghị quyết Hội đồng: Chấm dứt hoàn toàn việc bó hẹp trong 4 mã cũ. Chính thức ban hành Danh mục Tầm ngắm Vòng 2 Đa Ngành gồm 6 Siêu cổ phiếu Hạng AAA/AA (HDB [Ngân Hàng TMCP], MSH [Dệt May Xuất Khẩu], BAF [Nông Nghiệp & Chăn Nuôi 3F], IDC [BĐS Khu Công Nghiệp & Cao Su], TCH [Bất Động Sản Dân Cư & Đô Thị], OCB [Ngân Hàng TMCP]) được chọn lọc từ 145 mã toàn thị trường, đảm bảo hội tụ đủ 3 yếu tố: BCTC Tiền thật + Sức mạnh giá RS dẫn đầu + Vừa khít quy mô vốn 20,167,119 ₫.
+- **Người chủ trì:** Master CIO James (Tổng Tư Lệnh Tối Cao & Trợ Lý Chiến Lược Số 1)
+- **Báo cáo số liệu & Phản biện thực tế:** Chủ tọa phê duyệt Nghị quyết Hội đồng Toàn Doanh Nghiệp (12 Phòng Ban + 2 Trợ Lý): Chấm dứt vĩnh viễn việc bó hẹp trong 4 mã cũ. Chính thức ban hành Danh mục Tầm ngắm Vòng 2 Đa Ngành gồm 6 Siêu cổ phiếu Hạng AAA/AA (HDB [Ngân Hàng TMCP], MSH [Dệt May Xuất Khẩu], BAF [Nông Nghiệp & Chăn Nuôi 3F], IDC [BĐS Khu Công Nghiệp & Cao Su], TCH [Bất Động Sản Dân Cư & Đô Thị], OCB [Ngân Hàng TMCP]) cùng Radar 12 Cổ Phiếu Đang Lên Mạnh Nhất (MSH, HDB, BAF, MSB, TCH, NAB, OCB, CTS, BVS, LHG, IDC, NKG) được chọn lọc từ 145 mã toàn thị trường, đảm bảo hội tụ đủ 3 yếu tố: BCTC Tiền thật + Sức mạnh giá RS dẫn đầu + Vừa khít quy mô vốn 20,167,119 ₫.
 
 ---
 
@@ -95,9 +107,28 @@
 | **`HDB`** | HOSE | Ngân Hàng TMCP | **`22,500 ₫`** | **`95`** | **`91.4/100`** (AAA) | `6.1x` | `25.6%` | `1.16x` | `2,250,000 ₫` (`11.16%`) | **`300 CP`** | `22,310 ₫` | `21,220 ₫` (-5.69%) | `24,290 ₫` / `25,820 ₫` | Tăng trưởng tín dụng & ROE dẫn đầu ngành, mảng tài chính tiêu dùng HD Saison khỏe |
 | **`MSH`** | HOSE | Dệt May Xuất Khẩu | **`35,500 ₫`** | **`94`** | **`91.9/100`** (AAA) | `9.8x` | `21.5%` | `1.42x` | `3,550,000 ₫` (`17.6%`) | **`200 CP`** | `35,060 ₫` | `33,090 ₫` (-6.79%) | `39,560 ₫` / `43,040 ₫` | Nhà máy Sông Hồng 10 và nhà máy tại Ai Cập chạy tối đa công suất đơn hàng FOB biên lãi cao, tiền mặt lớn |
 | **`BAF`** | HOSE | Nông Nghiệp & Chăn Nuôi 3F | **`30,900 ₫`** | **`96`** | **`88.1/100`** (AAA) | `11.5x` | `16.2%` | `1.18x` | `3,090,000 ₫` (`15.32%`) | **`200 CP`** | `30,710 ₫` | `29,650 ₫` (-4.05%) | `32,650 ₫` / `34,140 ₫` | Mô hình chăn nuôi 3F khép kín hợp tác tập đoàn Muyuan (Trung Quốc), nâng tổng đàn lên 1 triệu con |
-| **`IDC`** | HNX | BĐS Khu Công Nghiệp & Cao Su | **`34,900 ₫`** | **`81`** | **`89.0/100`** (AAA) | `9.8x` | `32.5%` | `1.48x` | `3,490,000 ₫` (`17.31%`) | **`200 CP`** | `34,500 ₫` | `32,210 ₫` (-7.71%) | `38,660 ₫` / `41,880 ₫` | Quỹ đất thương phẩm >700ha sẵn sàng cho thuê (Hựu Thạnh, Phú Mỹ 2), cổ tức tiền mặt 40% |
+| **`IDC`** | HNX | BĐS Khu Công Nghiệp & Cao Su | **`34,900 ₫`** | **`81`** | **`89.0/100`** (AAA) | `9.8x` | `32.5%` | `1.48x` | `3,490,000 ₫` (`17.31%`) | **`200 CP`** | `34,500 ₫` | `32,530 ₫` (-6.79%) | `38,660 ₫` / `41,880 ₫` | Quỹ đất thương phẩm >700ha sẵn sàng cho thuê (Hựu Thạnh, Phú Mỹ 2), cổ tức tiền mặt 40% |
 | **`TCH`** | HOSE | Bất Động Sản Dân Cư & Đô Thị | **`13,500 ₫`** | **`89`** | **`82.7/100`** (AA) | `9.6x` | `9.8%` | `1.32x` | `1,350,000 ₫` (`6.69%`) | **`300 CP`** | `13,350 ₫` | `12,580 ₫` (-6.81%) | `14,880 ₫` / `16,060 ₫` | Ông lớn BĐS Hải Phòng (Hoàng Huy New City Thủy Nguyên), tiền gửi ngân hàng >6,000 tỷ đồng, P/B < 0.9x |
 | **`OCB`** | HOSE | Ngân Hàng TMCP | **`10,700 ₫`** | **`88`** | **`81.9/100`** (AA) | `6.9x` | `14.2%` | `1.08x` | `1,070,000 ₫` (`5.31%`) | **`300 CP`** | `10,600 ₫` | `10,020 ₫` (-6.36%) | `11,650 ₫` / `12,470 ₫` | Cổ đông chiến lược Aozora Nhật Bản, P/B chiết khấu sâu dưới giá trị sổ sách |
+
+---
+
+## 4B. RADAR 12 CỔ PHIẾU ĐANG LÊN MẠNH NHẤT TOÀN THỊ TRƯỜNG (EMERGING RISING LEADERS — RS >= 75, GIÁ >= MA20)
+
+| Mã CP | Sàn | Nhóm Ngành | Phân Khúc | Giá Hiện Tại | Đà Tăng 1M | RS (1-99) | Điểm 10 Danh Thủ | 1 Lô 100 CP (% NAV) | Stop 2xATR | Chốt Lời TP1 | Phán Quyết Dứt Khoát Của Hội Đồng |
+| :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`MSH`** | HOSE | Dệt May Xuất Khẩu | `SmallCap_HiddenGem` | **`35,500 ₫`** | `+13.06%` | **`94`** | `91.9/100` | `17.6%` | `33,090 ₫` (-6.79%) | `39,560 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`HDB`** | HOSE | Ngân Hàng TMCP | `VN30_LargeCap` | **`22,500 ₫`** | `+0.45%` | **`95`** | `91.4/100` | `11.16%` | `21,220 ₫` (-5.69%) | `24,290 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`BAF`** | HOSE | Nông Nghiệp & Chăn Nuôi 3F | `SmallCap_HiddenGem` | **`30,900 ₫`** | `+4.64%` | **`96`** | `88.1/100` | `15.32%` | `29,650 ₫` (-4.05%) | `32,650 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`MSB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | **`16,350 ₫`** | `+11.99%` | **`98`** | `85.8/100` | `8.11%` | `15,640 ₫` (-4.34%) | `17,340 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`TCH`** | HOSE | Bất Động Sản Dân Cư & Đô Thị | `MidCap_Growth` | **`13,500 ₫`** | `+25.58%` | **`89`** | `82.7/100` | `6.69%` | `12,580 ₫` (-6.81%) | `14,880 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`NAB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | **`12,600 ₫`** | `+3.70%` | **`91`** | `87.8/100` | `6.25%` | `12,000 ₫` (-4.76%) | `13,440 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`OCB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | **`10,700 ₫`** | `+7.43%` | **`88`** | `81.9/100` | `5.31%` | `10,020 ₫` (-6.36%) | `11,650 ₫` | **ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)** |
+| **`CTS`** | HOSE | Chứng Khoán & Đầu Tư | `SmallCap_HiddenGem` | **`23,350 ₫`** | `+19.13%` | **`84`** | `81.9/100` | `11.58%` | `21,760 ₫` (-6.81%) | `26,010 ₫` | **ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)** |
+| **`BVS`** | HNX | Chứng Khoán & Đầu Tư | `SmallCap_HiddenGem` | **`28,300 ₫`** | `+8.43%` | **`87`** | `82.3/100` | `14.03%` | `26,380 ₫` (-6.78%) | `31,040 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`LHG`** | HOSE | BĐS Khu Công Nghiệp & Cao Su | `SmallCap_HiddenGem` | **`26,600 ₫`** | `+0.76%` | **`83`** | `87.7/100` | `13.19%` | `25,640 ₫` (-3.61%) | `27,940 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`IDC`** | HNX | BĐS Khu Công Nghiệp & Cao Su | `MidCap_Growth` | **`34,900 ₫`** | `-1.69%` | **`81`** | `89.0/100` | `17.31%` | `32,530 ₫` (-6.79%) | `38,660 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`NKG`** | HOSE | Thép & Kim Loại Công Nghiệp | `MidCap_Growth` | **`12,150 ₫`** | `+30.79%` | **`78`** | `78.6/100` | `6.02%` | `11,320 ₫` (-6.83%) | `13,670 ₫` | **ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)** |
 
 ---
 

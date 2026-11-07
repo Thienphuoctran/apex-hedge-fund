@@ -1,13 +1,14 @@
 {
   "session_date": "2026-11-07",
-  "recorded_at": "2026-11-07 16:11:38",
+  "recorded_at": "2026-11-07 21:40:06",
   "total_stocks_scanned": 145,
   "total_sectors_scanned": 18,
   "market_breadth": {
     "pct_stocks_above_ma20": 42.1,
     "pct_stocks_above_ma200": 17.9,
     "accounting_clean_count": 138,
-    "red_flag_warning_count": 7
+    "red_flag_warning_count": 7,
+    "emerging_rising_stocks_count": 14
   },
   "top_leading_sectors": [
     {
@@ -61,8 +62,8 @@
       ]
     }
   ],
-  "council_resolution_id": "APEX-COUNCIL-10DEPT-2026-11-07",
-  "departments_participated_count": 10,
+  "council_resolution_id": "APEX-COUNCIL-12DEPT-2ASSIST-2026-11-07",
+  "departments_participated_count": 13,
   "approved_round2_watchlist": [
     {
       "code": "HDB",
@@ -211,11 +212,11 @@
       "lynch_peg": 0.28,
       "probe_buy_price": 34500.0,
       "breakout_buy_price": 35570.0,
-      "stop_loss_2atr": 32210.0,
-      "stop_dist_pct": 7.71,
+      "stop_loss_2atr": 32530.0,
+      "stop_dist_pct": 6.79,
       "tp1": 38660.0,
       "tp2": 41880.0,
-      "rr_ratio": 2.59,
+      "rr_ratio": 2.95,
       "lot_100_cost_vnd": 3490000.0,
       "lot_100_nav_pct": 17.31,
       "target_shares": 200,

@@ -1,14 +1,14 @@
 {
   "system_name": "APEX HEDGE FUND — UNIFIED EPISODIC MEMORY & TEMPORAL AWARENESS LEDGER",
-  "last_synchronized": "20:04:53 Thứ Bảy, ngày 07/11/2026",
+  "last_synchronized": "21:40:06 Thứ Bảy, ngày 07/11/2026",
   "temporal_awareness": {
-    "timestamp_iso": "2026-11-07T20:04:53.168760",
+    "timestamp_iso": "2026-11-07T21:40:06.507274",
     "date_str": "2026-11-07",
     "date_vn": "07/11/2026",
-    "time_vn": "20:04:53",
+    "time_vn": "21:40:06",
     "weekday_index": 5,
     "weekday_vn": "Thứ Bảy",
-    "full_time_label_vn": "20:04:53 Thứ Bảy, ngày 07/11/2026",
+    "full_time_label_vn": "21:40:06 Thứ Bảy, ngày 07/11/2026",
     "market_phase": "WEEKEND_CLOSED",
     "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
     "is_trading_hours": false,
@@ -170,7 +170,7 @@
       "lot_100_nav_pct": 17.31,
       "target_shares": 200,
       "probe_buy_price": 34500.0,
-      "stop_loss_2atr": 32210.0,
+      "stop_loss_2atr": 32530.0,
       "tp1": 38660.0,
       "tp2": 41880.0,
       "target_buy_zone": "Gom thăm dò Limit LO quanh 34,500 ₫ - 34,900 ₫; Gia tăng khi vượt 35,570 ₫ trong Khung Giờ Vàng 14h00-14h25",
@@ -210,45 +210,5 @@
       "target_buy_zone": "Gom thăm dò Limit LO quanh 10,600 ₫ - 10,700 ₫; Gia tăng khi vượt 10,870 ₫ trong Khung Giờ Vàng 14h00-14h25",
       "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 81.9/100 | RS: 88/99) • P/E 6.9x, ROE 14.2%, OCF/LNST 1.08x • 1 lô 100 CP = 1,070,000 ₫ (5.31% NAV)"
     }
-  ],
-  "institutional_knowledge_core": {
-    "status": "105_LEGENDARY_INVESTOR_HEURISTICS_ACTIVATED",
-    "version": "V9.0_MASTER_KNOWLEDGE_COMPENDIUM",
-    "total_heuristics": 105,
-    "total_categories": 8,
-    "database_path": "data/100_institutional_heuristics_database.json",
-    "compendium_markdown_path": "05_Learning_And_Evolution/100_LEGENDARY_INVESTOR_HEURISTICS_MASTER_COMPENDIUM.md",
-    "curriculum_markdown_path": "VN_Market/06_Investor_Academy/curriculum/100_tinh_hoa_dau_tu_thuc_chien.md",
-    "last_ingested_at": "2026-11-07T21:00:00+07:00",
-    "key_masters_embedded": [
-      "Warren Buffett",
-      "Charlie Munger",
-      "Peter Lynch",
-      "George Soros",
-      "Stanley Druckenmiller",
-      "Ray Dalio",
-      "Howard Marks",
-      "Benjamin Graham",
-      "Jesse Livermore",
-      "William O'Neil",
-      "Mark Minervini",
-      "Jim Simons",
-      "Nassim Nicholas Taleb",
-      "Richard Wyckoff",
-      "Alexander Elder"
-    ],
-    "active_vietnam_microstructure_rules": [
-      "RULE_95_GOLDEN_HOUR_14H00_14H25",
-      "RULE_96_AVOID_MORNING_ATO_TRAP",
-      "RULE_97_PYRAMID_CAPITAL_ALLOCATION_30_40_30",
-      "RULE_98_T0_T1_SCALPING_INVENTORY",
-      "RULE_99_SCALING_OUT_50_50_TRAILING_STOP",
-      "RULE_100_LIMIT_ORDER_LO_95PCT_DISCIPLINE",
-      "RULE_101_ORDER_BOOK_DEPTH_FAKE_BID_REVEAL",
-      "RULE_102_ODD_LOT_100_SHARE_TCBS_SIZING",
-      "RULE_103_FOREIGN_FLOW_NET_BUY_SURVEILLANCE",
-      "RULE_104_MARGIN_ROOM_EXHAUSTION_ALARM",
-      "RULE_105_INDEX_PROPPING_DIVERGENCE_DETECTION"
-    ]
-  }
+  ]
 }

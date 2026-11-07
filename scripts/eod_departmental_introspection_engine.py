@@ -224,11 +224,22 @@ def generate_departmental_introspections(date_str: str) -> List[Dict[str, Any]]:
             "dept_name": "Ban 12 (Trọng — Tổng Kiểm Soát Viên Thể Chế)",
             "officer": "Trọng",
             "self_score": 98.0,
-            "strengths_today": "Thanh tra nghiêm cẩn 19/19 hạng mục đạt chuẩn 100%, triệt tiêu hoàn toàn các lỗi xung đột số liệu cũ, bảo vệ tuyệt đối kỷ luật Quỹ.",
-            "mistakes_and_flaws": "Cần tăng cường kiểm tra đột xuất quy trình sao lưu dữ liệu và tính toàn vẹn của các file JSON bộ nhớ.",
-            "root_cause": "Lịch kiểm sát cố định 23h30 có thể tạo tâm lý chủ quan cho các ban trong các khung giờ khác.",
-            "corrective_action_plan": "Thiết lập cơ chế kiểm sát ngẫu nhiên (Spot-Check) không báo trước vào các khung giờ giao dịch 10h30 và 14h15.",
+            "strengths_today": "Thanh tra nghiêm cẩn không vùng cấm: Phát hiện và yêu cầu sửa ngay trần cắt lỗ HNX từ 8.5% về <= 6.8% và đồng bộ động kịch bản Minh Quân / Sổ lệnh Master với bộ quét 145 mã.",
+            "mistakes_and_flaws": "Trước phiên họp toàn doanh nghiệp tối nay, Trọng chưa phát hiện sớm việc file `vn_daily_specialist.py` vẫn còn giữ danh sách 6 mã cố định cũ.",
+            "root_cause": "Quét kiểm tra cú pháp JSON/Python nhưng chưa đối chiếu chéo danh sách mã đầu ra của Ban 7 với Nghị quyết Hội đồng 145 mã.",
+            "corrective_action_plan": "Thiết lập cơ chế kiểm sát đối chiếu chéo tự động (Cross-File Ticker Parity Check) vào lúc 08h35, 14h15 và 23h30.",
             "linked_heuristic": "Bài 94: Tách Biệt Kết Quả Ngắn Hạn Khỏi Chất Lượng Của Quy Trình (Annie Duke)"
+        },
+        {
+            "dept_id": "assistant_nam_executive",
+            "dept_name": "Văn Phòng Trợ Lý Chủ Tịch (Trợ Lý Cá Nhân Nam)",
+            "officer": "Trợ Lý Cá Nhân Nam",
+            "self_score": 96.0,
+            "strengths_today": "Túc trực 24/7 báo cáo tiền thật chuẩn xác từng đồng (`20,167,119 ₫` tiền mặt, lãi ròng Vòng 1 `+167,119 ₫`), hỗ trợ điều phối lịch trình và dự án cho Chủ tịch.",
+            "mistakes_and_flaws": "Trước đợt nâng cấp tối nay, bộ não của Nam chưa được kết nối trực tiếp với CSDL 105 Tinh hoa Đầu tư và Radar 12 Cổ phiếu Đang Lên của Hội đồng.",
+            "root_cause": "Module `assistant_nam_agent.py` trước đây chỉ đọc file trạng thái tài sản cơ bản mà chưa nối vào `latest_full_council_resolution.json`.",
+            "corrective_action_plan": "Đã tích hợp trực tiếp Radar 145 mã, Sổ lệnh Vòng 2 và 105 Bài học Bậc thầy vào `assistant_nam_agent.py` ngay trong tối nay.",
+            "linked_heuristic": "Bài 1: Bảo Toàn Vốn Tuyệt Đối — Quy Tắc Số 1 Và Số 2 (Warren Buffett)"
         }
     ]
     return introspections
