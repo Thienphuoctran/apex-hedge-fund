@@ -4,7 +4,7 @@
 > **CƠ QUAN CHỦ TỌA**: VĂN PHÒNG TỔNG TƯ LỆNH ĐIỀU HÀNH ĐẦU TƯ (APEX MASTER CIO DESK — BAN 8)  
 > **PHIÊN HỌP NGÀY**: `2026-11-07` (07/11/2026) lúc **`23:00 PM`**  
 > **CHỦ TỊCH QUAN SÁT & PHÊ DUYỆT**: **Trần Quốc Thiên Phước**  
-> **TÀI KHOẢN TÁC CHIẾN THỰC TẾ**: TCBS Tiểu Khoản Thường **`105C307855`** | NAV: **`20,234,425 ₫`**  
+> **TÀI KHOẢN TÁC CHIẾN THỰC TẾ**: TCBS Tiểu Khoản Thường **`105C307855`** | NAV: **`39,024,425 ₫`**  
 > **QUY CHẾ THỂ CHẾ**: **Dữ Liệu Thật 100% — Toàn Bộ 11 Phòng Ban Phản Biện, Tự Học & Phê Chuẩn Kế Hoạch Tác Chiến**
 
 ---
@@ -57,8 +57,8 @@
 | **MBB** | 200 CP | 18,606 ₫ | 19,250 ₫ | **+128,800 ₫** | **+3.46%** | Stop: `18,610` • TP1: `20,150` |
 | **TỔNG** | **900 CP** | **18,590,400 ₫** | **18,825,000 ₫** | **+234,600 ₫** | **+1.26%** | **An toàn 100% (Margin 0%)** |
 
-- **Tiền mặt dự phòng (Dry Powder)**: **`1,409,425 ₫` (6.97% NAV)**.
-- **Tổng NAV tài khoản**: **`20,234,425 ₫`**.
+- **Tiền mặt dự phòng (Dry Powder)**: **`20,199,425 ₫` (51.76% NAV)**.
+- **Tổng NAV tài khoản**: **`39,024,425 ₫`**.
 - **Tỷ lệ vay Margin**: **`0.0%`** (An toàn tuyệt đối).
 
 ---

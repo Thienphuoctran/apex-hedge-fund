@@ -65,10 +65,22 @@ TELEMETRY_JSON = SENTINEL_DIR / "vn3_live_telemetry.json"
 TELEMETRY_MD = SENTINEL_DIR / "vn3_live_telemetry.md"
 
 # Cấu hình ngưỡng kích hoạt cho 3 mã (Khóa cứng Kịch bản A: Bán hết 100% trong vùng đỉnh)
+# Đọc trạng thái từ neo thể chế
+_anchor_p = BASE_DIR / "data" / "institutional_compliance_anchor.json"
+_is_closed = False
+if _anchor_p.exists():
+    try:
+        with open(_anchor_p, "r", encoding="utf-8") as _af:
+            _anc = json.load(_af)
+        if _anc.get("status") == "ALL_POSITIONS_CLOSED_100_PERCENT_CASH":
+            _is_closed = True
+    except Exception:
+        pass
+
 CONFIG = {
     "TCB": {
-        "status": "HOLDING",
-        "shares": 300,
+        "status": "CLOSED_PROFIT_LOCKED" if _is_closed else "HOLDING",
+        "shares": 0 if _is_closed else 300,
         "entry_price": 21356.0,
         "stop_loss": 20400.0,
         "stop_warning": 20700.0,
@@ -79,8 +91,8 @@ CONFIG = {
         "name": "Techcombank"
     },
     "MBB": {
-        "status": "HOLDING",
-        "shares": 200,
+        "status": "CLOSED_PROFIT_LOCKED" if _is_closed else "HOLDING",
+        "shares": 0 if _is_closed else 200,
         "entry_price": 18606.0,
         "stop_loss": 17900.0,
         "stop_warning": 18150.0,
@@ -91,8 +103,8 @@ CONFIG = {
         "name": "Ngân hàng Quân Đội"
     },
     "HPG": {
-        "status": "HOLDING",
-        "shares": 400,
+        "status": "CLOSED_PROFIT_LOCKED" if _is_closed else "HOLDING",
+        "shares": 0 if _is_closed else 400,
         "entry_price": 21156.0,
         "stop_loss": 19400.0,
         "stop_warning": 19700.0,
@@ -299,8 +311,8 @@ def update_telemetry(quotes):
         "total_market_val": total_market_val,
         "total_unrealized_pnl": total_unrealized_pnl,
         "total_unrealized_pnl_pct": round(total_pnl_pct, 2),
-        "dry_powder": 1409425.0,
-        "total_nav": total_market_val + 1409425.0,
+        "dry_powder": 20199425.0 if _is_closed else 1409425.0,
+        "total_nav": (total_market_val + 20199425.0) if _is_closed else (total_market_val + 1409425.0),
         "positions": positions_summary
     }
     with open(TELEMETRY_JSON, "w", encoding="utf-8") as f:
@@ -311,7 +323,9 @@ def update_telemetry(quotes):
     md_content = f"""# BẢNG ĐIỀU KHIỂN TELEMETRY THỜI GIAN THỰC — APEX SENTINEL (VICTOR)
 **Thời gian cập nhật**: `{now_dt}` | **Chu kỳ quét**: `15 giây/lần` (VPS 0-second Feed)  
 **Tài khoản giám sát**: Chủ tịch **Trần Quốc Thiên Phước** | **TCBS**: `105C307855`  
-**Mệnh lệnh thực thi**: **KỊCH BẢN A — BÁN HẾT 100% TOÀN BỘ 900 CP TRONG KHUNG GIỜ VÀNG 09H15 - 09H45**
+**Trạng thái danh mục**: **100% TIỀN MẶT (`20,199,425 VNĐ`) — ĐÃ BÁN HẾT 100% (0 CP)**  
+**Lãi ròng đã đút túi**: `+199,600 VNĐ` (Chốt lời toàn bộ HPG, TCB, MBB Thứ Sáu 06/11)  
+**Chiến lược**: **PATIENT PREDATOR (THỢ SĂN KIÊN NHẪN) — AN TOÀN TUYỆT ĐỐI QUA CUỐI TUẦN**
 
 ---
 

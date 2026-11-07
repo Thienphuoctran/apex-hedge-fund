@@ -1,10 +1,10 @@
 {
   "supervisor_name": "Apex Institutional Cloud Supervisor 24/7",
-  "supervisor_pid": 1984,
+  "supervisor_pid": 6116,
   "supervisor_status": "DEGRADED_RECOVERING",
   "uptime_seconds": 6.1,
-  "started_at": "2026-11-07 12:46:48",
-  "last_heartbeat": "2026-11-07 12:46:54",
+  "started_at": "2026-11-07 13:13:39",
+  "last_heartbeat": "2026-11-07 13:13:46",
   "system_platform": "win32",
   "python_executable": "C:\\Users\\phuoc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
   "chairman_account": "TCBS 105C307855 (Trần Quốc Thiên Phước)",

@@ -14,13 +14,13 @@
   },
   "financial_snapshot": {
     "account_tcbs": "105C307855",
-    "total_nav_vnd": 20234425.0,
+    "total_nav_vnd": 39024425.0,
     "cost_basis_vnd": 18590400.0,
     "market_value_vnd": 18825000.0,
     "unrealized_pnl_vnd": 234600.0,
     "unrealized_pnl_pct": 1.26,
-    "cash_dry_powder_vnd": 1409425.0,
-    "cash_dry_powder_pct": 6.97,
+    "cash_dry_powder_vnd": 20199425.0,
+    "cash_dry_powder_pct": 51.76,
     "leverage_margin_pct": 0.0,
     "holdings": [
       {

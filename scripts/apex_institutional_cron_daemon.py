@@ -147,10 +147,24 @@ def _get_live_portfolio_snapshot() -> Dict[str, Any]:
     except Exception:
         pass
 
+    # Kiểm tra anchor neo thể chế: Nếu đã bán hết sang 100% Tiền Mặt thì không nạp shares cũ
+    anchor_file = BASE_DIR / "data" / "institutional_compliance_anchor.json"
+    is_all_cash = False
+    realized_cash = 20199425.0
+    if anchor_file.exists():
+        try:
+            with open(anchor_file, "r", encoding="utf-8") as af:
+                anc = json.load(af)
+            if anc.get("status") == "ALL_POSITIONS_CLOSED_100_PERCENT_CASH":
+                is_all_cash = True
+                realized_cash = float(anc.get("realized_cash_vnd", 20199425.0))
+        except Exception:
+            pass
+
     defaults = {
-        "HPG": {"shares": 400, "entry": 21156.0, "price": 21700.0, "stop": 20710.0, "tp1": 23090.0},
-        "TCB": {"shares": 300, "entry": 21356.0, "price": 21850.0, "stop": 20910.0, "tp1": 23170.0},
-        "MBB": {"shares": 200, "entry": 18606.0, "price": 19250.0, "stop": 18610.0, "tp1": 20150.0},
+        "HPG": {"shares": 0 if is_all_cash else 400, "entry": 21156.0, "price": 21700.0, "stop": 20710.0, "tp1": 23090.0},
+        "TCB": {"shares": 0 if is_all_cash else 300, "entry": 21356.0, "price": 21850.0, "stop": 20910.0, "tp1": 23170.0},
+        "MBB": {"shares": 0 if is_all_cash else 200, "entry": 18606.0, "price": 19250.0, "stop": 18610.0, "tp1": 20150.0},
     }
 
     items = {}
@@ -160,7 +174,7 @@ def _get_live_portfolio_snapshot() -> Dict[str, Any]:
         tp = pos_map.get(sym, {})
         bp = blot_map.get(sym, {})
         vp = vps_prices.get(sym, {})
-        shares = int(tp.get("shares") or bp.get("shares") or df["shares"])
+        shares = 0 if is_all_cash else int(tp.get("shares") or bp.get("shares") or df["shares"])
         entry = float(tp.get("entry_price") or df["entry"])
         price = float(vp.get("price") or tp.get("current_price") or bp.get("current_price_vnd") or df["price"])
         stop = float(bp.get("stop_loss_2atr_vnd") or tp.get("stop_loss") or df["stop"])
@@ -186,7 +200,7 @@ def _get_live_portfolio_snapshot() -> Dict[str, Any]:
             "pnl_pct": pnl_pct
         }
 
-    cash_vnd = float(telemetry.get("dry_powder") or blotter.get("capital_summary", {}).get("dry_powder_vnd", 1409425.0))
+    cash_vnd = realized_cash if is_all_cash else float(telemetry.get("dry_powder") or blotter.get("capital_summary", {}).get("dry_powder_vnd", 1409425.0))
     total_nav = total_mkt + cash_vnd
     total_pnl = total_mkt - total_cost
     total_pnl_pct = round((total_pnl / total_cost) * 100.0, 2) if total_cost > 0 else 0.0
@@ -198,7 +212,9 @@ def _get_live_portfolio_snapshot() -> Dict[str, Any]:
         "total_pnl": round(total_pnl, 0),
         "total_pnl_pct": total_pnl_pct,
         "cash_vnd": round(cash_vnd, 0),
-        "total_nav": round(total_nav, 0)
+        "dry_powder": round(cash_vnd, 0),
+        "total_nav": round(total_nav, 0),
+        "is_all_cash": is_all_cash
     }
 
 
