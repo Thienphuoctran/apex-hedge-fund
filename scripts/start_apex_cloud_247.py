@@ -33,6 +33,8 @@ import datetime
 import subprocess
 import http.server
 import threading
+import urllib.parse
+import re
 from pathlib import Path
 from typing import Dict, Any, Optional, List
 
@@ -243,7 +245,11 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
         pass
 
     def do_GET(self):
-        if self.path in ("/api/health", "/healthz", "/health"):
+        parsed_url = urllib.parse.urlparse(self.path)
+        path = parsed_url.path
+        query = urllib.parse.parse_qs(parsed_url.query)
+
+        if path in ("/api/health", "/healthz", "/health"):
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.send_header("Cache-Control", "no-cache")
@@ -260,7 +266,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode("utf-8"))
             return
 
-        elif self.path in ("/api/status", "/api/state"):
+        elif path in ("/api/status", "/api/state"):
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.send_header("Cache-Control", "no-cache")
@@ -275,6 +281,67 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(status_data, ensure_ascii=False).encode("utf-8"))
             return
 
+        elif path == "/api/reports":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_report_scanner import scan_all_institutional_reports
+                date_filter = query.get("date", ["all"])[0]
+                dept_filter = query.get("dept", ["all"])[0]
+                limit = int(query.get("limit", [100])[0])
+                reports = scan_all_institutional_reports(date_filter=date_filter, dept_filter=dept_filter, limit=limit)
+                self.wfile.write(json.dumps(reports, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            return
+
+        elif path == "/api/report":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            rel_path = query.get("path", [""])[0]
+            if not rel_path or ".." in rel_path or not rel_path.endswith(".md"):
+                self.wfile.write(json.dumps({"ok": False, "error": "Đường dẫn báo cáo không hợp lệ."}).encode("utf-8"))
+                return
+            full_path = BASE_DIR / rel_path
+            if not full_path.exists() or not full_path.is_file():
+                self.wfile.write(json.dumps({"ok": False, "error": f"Không tìm thấy file: {rel_path}"}).encode("utf-8"))
+                return
+            try:
+                content = full_path.read_text(encoding="utf-8", errors="ignore")
+                stat = full_path.stat()
+                mtime_str = datetime.datetime.fromtimestamp(stat.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+                m_title = re.search(r"^#\s+(.+)$", content, re.MULTILINE)
+                title = m_title.group(1).strip() if m_title else full_path.stem
+                payload = {
+                    "ok": True,
+                    "path": rel_path,
+                    "title": title,
+                    "content": content,
+                    "size_kb": round(stat.st_size / 1024, 1),
+                    "last_modified": mtime_str
+                }
+                self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+            return
+
+        elif path == "/api/timeline":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_report_scanner import get_daily_milestones_status
+                ms = get_daily_milestones_status()
+                self.wfile.write(json.dumps(ms, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            return
+
         else:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -286,7 +353,14 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                         status_data = json.load(f)
                 except Exception:
                     pass
-            html = generate_supervisor_dashboard_html(status_data)
+            try:
+                from scripts.apex_report_scanner import scan_all_institutional_reports, get_daily_milestones_status
+                from scripts.apex_web_portal_engine import generate_portal_html
+                reports = scan_all_institutional_reports(limit=80)
+                milestones = get_daily_milestones_status()
+                html = generate_portal_html(status_data, reports, milestones)
+            except Exception as e:
+                html = generate_supervisor_dashboard_html(status_data)
             self.wfile.write(html.encode("utf-8"))
             return
 
