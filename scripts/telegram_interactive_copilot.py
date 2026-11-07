@@ -661,8 +661,14 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                     )
                     continue
                     
-                # 3. Phân luồng thông minh theo từng Phòng Ban (Topic Thread ID):
-                if thread_id == 106:
+                # 3. ƯU TIÊN XỬ LÝ TRỰC TIẾP CÁC LỆNH HỆ THỐNG (/tcbs, /baomat, /danhmuc...) TRÊN MỌI TOPIC
+                text_l = text.lower().strip()
+                if text_l.startswith("/") or any(k in text_l for k in [
+                    "tcbs", "tcinvest", "bảo mật", "chống hack", "khiên bảo mật",
+                    "đã bán", "bán hết", "tất toán", "đã mua", "khớp mua"
+                ]):
+                    reply_text = process_user_query(text)
+                elif thread_id == 106:
                     # VĂN PHÒNG TRỢ LÝ NAM (GEMINI 3.8 FLASH)
                     from scripts.assistant_nam_agent import handle_nam_chat
                     reply_text = handle_nam_chat(text)

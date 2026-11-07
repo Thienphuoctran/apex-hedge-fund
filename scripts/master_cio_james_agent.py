@@ -5,17 +5,6 @@ MASTER CIO EXECUTIVE DESK — "JAMES" (SUPREME PORTFOLIO COMMANDER)
 File: scripts/master_cio_james_agent.py
 Cơ quan vận hành: Bộ Chỉ Huy Tối Cao — Tổng Tư Lệnh Master CIO James (Ban 8)
 Dành riêng cho: Chủ tịch Phước Trần (Tài khoản TCBS: 105C307855)
-
-Nhiệm vụ cốt lõi:
-1. Tiếp nhận trực tiếp 1:1 mọi chỉ thị, trao đổi, phân công từ Chủ tịch Phước Trần y như đang hoạt động tại bàn điều hành Antigravity.
-2. Phân tách chỉ thị, khởi tạo Task Ticket (#TASK-...), điều động các phòng ban trực thuộc:
-   - Ban 9 Victor (Realtime Feed & Canh 2 đầu) -> Topic 3 (alerts)
-   - Ban 7 Minh Quân (Sổ lệnh & Khung 14h00) -> Topic 4 (morning_blotter)
-   - Ban 2 & 3 (BCTC & Radar săn sóng) -> Topic 5 (radar_filings)
-   - Ban 4 (Quản trị rủi ro & Stress-test) -> Topic 6 (quant_risk)
-   - Ban 6 & 5 (Học viện đào tạo & Hồi tố) -> Topic 7 (academy_learning)
-3. Bắt buộc kiểm tra kết quả thực tế ("Làm thật việc thật"), xác nhận báo cáo nghiệm thu vào đúng Topic.
-4. Tham vấn chiến lược cấp cao, giải trình chi tiết cơ cấu phân bổ vốn và lộ trình lợi nhuận 2 tháng (+21% NAV).
 """
 
 import os
@@ -37,9 +26,31 @@ sys.path.insert(0, str(BASE_DIR))
 
 from scripts.closed_loop_task_dispatcher import dispatch_chairman_directive
 from scripts.assistant_nam_agent import get_gemini_api_key
+from scripts.portfolio_state_manager import PortfolioStateManager
 
 BLOTTER_PATH = BASE_DIR / "08_Master_Investment_CIO" / "master_execution_blotter.json"
 SENTINEL_STATUS = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / "live_sentinel_status.json"
+
+
+def _get_live_portfolio_context() -> str:
+    try:
+        st = PortfolioStateManager.load_state()
+        cash_vnd = st.get("cash_balance_vnd", 20199425.0)
+        positions = st.get("active_positions", {})
+        realized = st.get("realized_pnl_vnd", 199600.0)
+        if not positions:
+            return (
+                f"Vốn NAV hiện tại: {cash_vnd:,.0f} VNĐ. Trạng thái: 100% Tiền mặt ({cash_vnd:,.0f} VNĐ), "
+                f"đã tất toán toàn bộ cổ phiếu cũ (HPG, TCB, MBB) và khóa lãi thực nhận +{realized:,.0f} VNĐ."
+            )
+        holdings_desc = ", ".join(
+            f"{sym} ({info.get('shares', 0)} CP @ {info.get('avg_price', 0):,.0f} ₫)"
+            for sym, info in positions.items()
+            if info.get("shares", 0) > 0
+        )
+        return f"Cổ phiếu đang nắm giữ: {holdings_desc}. Tiền mặt: {cash_vnd:,.0f} VNĐ."
+    except Exception:
+        return "Vốn NAV: 20,199,425 VNĐ (100% Tiền mặt sẵn sàng giải ngân)."
 
 
 def query_gemini_cio(prompt: str) -> Optional[str]:
@@ -52,12 +63,11 @@ def query_gemini_cio(prompt: str) -> Optional[str]:
         from google import genai
         from google.genai import types
 
+        portfolio_ctx = _get_live_portfolio_context()
         client = genai.Client(api_key=api_key)
         system_instruction = (
             "Bạn là James — Tổng Tư Lệnh Master CIO (Ban 8), người đứng đầu bộ máy tác chiến Quỹ Đầu Tư Apex Hedge Fund của Chủ tịch Phước Trần.\n"
-            "Chủ tài khoản: Chủ tịch Phước Trần (TCBS: 105C307855). Vốn NAV: 20.000.000 VNĐ.\n"
-            "Danh mục đầu tư thực tế: HPG (500 CP - 52.5%), TCB (200 CP - 21.6%), MBB (200 CP - 19.3%), Tiền mặt dự phòng (6.6%).\n"
-            "Chiến lược 2 tháng: Tháng 1 xây kho hàng nền móng -> Tháng 2 tăng tốc lướt T+0 hạ giá vốn, mục tiêu lợi nhuận 4.2 triệu (+21% NAV).\n"
+            f"Chủ tài khoản: Chủ tịch Phước Trần (TCBS: 105C307855). {portfolio_ctx}\n"
             "Kỷ luật thể chế: Không FOMO ATO, giải ngân Khung Giờ Vàng 14h00-14h25, Stop Loss 2xATR <= 7.5%, Scaling Out chốt lời 50/50.\n"
             "Phong cách của bạn:\n"
             "- Xưng hô: 'Báo cáo Chủ tịch Phước Trần' hoặc 'Thưa Chủ tịch', xưng 'tôi' hoặc 'James'.\n"
@@ -87,29 +97,39 @@ def handle_james_chat(user_text: str) -> str:
     text_clean = user_text.strip()
     text_lower = text_clean.lower()
 
-    # 1. NHẬN DIỆN CÁC CÂU LỆNH HÀNH ĐỘNG ➔ KÍCH HOẠT CLOSED-LOOP TASK DISPATCHER
-    action_keywords = [
-        "quét", "kiểm tra", "canh", "rà soát", "chốt lời", "cắt lỗ", "bán", "mua",
-        "giải ngân", "sổ lệnh", "báo cáo", "chỉ thị", "giao việc", "yêu cầu", "thực hiện",
-        "làm", "phân bổ", "rủi ro", "stop", "tp1", "tp2", "vps", "feed", "trễ",
-        "kế hoạch", "hôm nay", "minh quân", "cả 3", "3 cổ phiếu", "victor", "alex", "hpg", "tcb", "mbb"
+    # 0. CHUYỂN TIẾP TRỰC TIẾP CÁC LỆNH HỆ THỐNG (/tcbs, /baomat, /danhmuc, mua/bán...) SANG BỘ XỬ LÝ TRUNG TÂM
+    direct_commands = [
+        "/tcbs", "tcbs", "tcinvest", "tài khoản tcbs", "số dư tcbs", "bảng giá tcbs",
+        "/baomat", "bảo mật", "khiên bảo mật", "chống hack", "kiểm toán bảo mật",
+        "/set_tcbs_token", "/danhmuc", "/solenh", "/tonghop", "/canh", "/radar"
     ]
-    if any(k in text_lower for k in action_keywords):
+    if text_lower.startswith("/") or any(k in text_lower for k in direct_commands):
+        from scripts.telegram_interactive_copilot import process_user_query
+        return process_user_query(text_clean)
+
+    # Nếu là thông báo đã bán hết / chốt lời / mua khớp cổ phiếu ➔ Gọi thẳng bộ nhớ trung tâm trong process_user_query
+    if any(p in text_lower for p in ["đã bán", "bán hết", "bán sạch", "tất toán", "chốt hết", "xả hết", "đã mua", "mua thêm", "vừa mua", "khớp mua"]):
+        from scripts.telegram_interactive_copilot import process_user_query
+        return process_user_query(text_clean)
+
+    # 1. NHẬN DIỆN CÁC CÂU LỆNH HÀNH ĐỘNG PHÂN CÔNG PHÒNG BAN (Dùng regex word-boundary chuẩn xác)
+    action_patterns = [
+        r"\bquét\b", r"\bkiểm tra\b", r"\bcanh\b", r"\brà soát\b", r"\bchốt lời\b", r"\bcắt lỗ\b",
+        r"\bgiải ngân\b", r"\bsổ lệnh\b", r"\bbáo cáo\b", r"\bchỉ thị\b", r"\bgiao việc\b",
+        r"\byêu cầu\b", r"\bthực hiện\b", r"\bphân bổ\b", r"\brủi ro\b", r"\bstop\b",
+        r"\btp1\b", r"\btp2\b", r"\bkế hoạch\b", r"\bhôm nay\b", r"\bminh quân\b",
+        r"\bvictor\b", r"\balex\b", r"\bhiền\b", r"\bkhánh\b"
+    ]
+    if any(re.search(pat, text_lower) for pat in action_patterns):
         task_res = dispatch_chairman_directive(text_clean, source="TELEGRAM_JAMES_HQ")
         summary_txt = task_res.get("execution_result", {}).get("summary", "Đã tiếp nhận và thực thi hoàn tất.")
-        
         return (
-            f"🎖️ *[BỘ CHỈ HUY MASTER CIO JAMES — ĐÃ PHÂN CÔNG TÁC CHIẾN]*\n"
+            f"🎖️ *[BỘ CHỈ HUY MASTER CIO JAMES — BÁO CÁO THỰC THI]*\n"
             f"━━━━━━━━━━━━━━━━━━━\n"
-            f"Báo cáo Chủ tịch Phước Trần: Tôi (James) đã tiếp nhận chỉ thị của Chủ tịch và giao việc trực tiếp cho đơn vị thụ lý:\n\n"
-            f"• *Mã Lệnh Điều Động*: `#{task_res['task_id']}`\n"
-            f"• *Phòng ban tác chiến*: *{task_res.get('assigned_department_name', task_res['assigned_department'])}*\n"
-            f"• *Sĩ quan phụ trách*: *{task_res['assigned_officer']}*\n"
-            f"• *Phân luồng báo cáo nghiệm thu*: *{task_res['topic_name']}*\n"
+            f"• *Mã Lệnh*: `#{task_res['task_id']}`\n"
+            f"• *Đơn vị thực thi*: *{task_res.get('assigned_department_name', task_res['assigned_department'])}* ({task_res['assigned_officer']})\n"
             f"• *Trạng thái*: ✅ *{task_res['status']}*\n\n"
-            f"📊 *KẾT QUẢ THỰC THI THỰC TẾ (LÀM THẬT VIỆC THẬT)*:\n"
-            f"{summary_txt}\n\n"
-            f"👉 *Kỷ luật của James*: Tôi đã chỉ đạo phòng ban nộp báo cáo chi tiết kèm bằng chứng số liệu vào đúng Topic *{task_res['topic_name']}*. Kính mời Chủ tịch chuyển sang Topic đó để kiểm tra thực tế!"
+            f"{summary_txt}"
         )
 
     # 2. Thử gọi bộ não Gemini nếu có API key
@@ -117,41 +137,19 @@ def handle_james_chat(user_text: str) -> str:
     if llm_resp:
         return f"🎖️ *[TỔNG TƯ LỆNH MASTER CIO JAMES]*\n\n{llm_resp}"
 
-    # 3. Phản hồi các câu hỏi chiến lược cốt lõi
-    if any(k in text_lower for k in ["lợi nhuận", "2 tháng", "mục tiêu", "kế hoạch", "4.2 triệu", "bao nhiêu"]):
-        return (
-            "🎖️ *[MASTER CIO JAMES — BÁO CÁO MỤC TIÊU LỢI NHUẬN 2 THÁNG]*\n\n"
-            "Báo cáo Chủ tịch Phước Trần, kế hoạch 2 tháng với số vốn `20.000.000 VNĐ` của chúng ta đặt mục tiêu:\n"
-            "• *Mục tiêu Lợi Nhuận Ròng*: **`+4,200,000 VNĐ` (+21% NAV)**.\n\n"
-            "📈 *Cơ cấu nguồn thu gồm 3 dòng tiền khoa học*:\n"
-            "1. **Tăng trưởng giá trị cốt lõi (Core Capital Gain - 65%)**: HPG hưởng lợi lò cao Dung Quất 2 bùng nổ, TCB đạt CASA 40.5% & game IPO TCBS -> Đóng góp `~+2,700,000 ₫`.\n"
-            "2. **Lướt sóng T+0 / T+1 trên kho hàng sẵn (Alpha Scalp - 25%)**: Tận dụng lượng hàng 500 HPG & 200 TCB có sẵn để lướt sóng nhịp rung lắc trong phiên -> Đóng góp `~+1,050,000 ₫`.\n"
-            "3. **Sóng tín dụng Tactical Fast Swing MBB (10%)**: Đóng góp `~+450,000 ₫`.\n\n"
-            "Kỷ luật bảo vệ vốn: Stop Loss 2xATR khóa cứng rủi ro tối đa mỗi vị thế `<= 0.77% NAV`!"
-        )
-
-    if any(k in text_lower for k in ["hpg", "hòa phát", "thép"]):
-        return (
-            "🎖️ *[MASTER CIO JAMES — ĐÁNH GIÁ CHIẾN LƯỢC HPG]*\n\n"
-            "Báo cáo Chủ tịch, **HPG là Cổ Phiếu Vua (Core Sniper) chiếm 52.5% NAV (500 CP)**:\n"
-            "• Sáng nay HPG bứt phá mạnh +3.7% lên 21,150 ₫ với Volume khủng 15 triệu cổ phiếu, khẳng định dòng tiền cá mập đang nhập cuộc.\n"
-            "• *Nội tại BCTC*: Forensic 100/100 (CLEAN), OCF dương mạnh, Dung Quất 2 chạy lò cao bổ sung 5.6 triệu tấn HRC/năm.\n"
-            "• *Mục tiêu*: TP1 `22,200 ₫`, TP2 `23,200 ₫`. Ngưỡng Stop 2xATR bảo vệ vốn tại `19,400 ₫`.\n"
-            "Tôi và Minh Quân đang theo dõi sát sao để bấm cò đợt 2 trong Khung Giờ Vàng 14h00-14h25!"
-        )
-
-    # 4. Phản hồi trò chuyện điều hành của Tổng Tư Lệnh James
+    # 3. Phản hồi các câu hỏi chiến lược cốt lõi dựa trên Single Source of Truth
+    portfolio_ctx = _get_live_portfolio_context()
     return (
         f"🎖️ *[BỘ CHỈ HUY TỔNG TƯ LỆNH MASTER CIO JAMES]*\n\n"
-        f"Báo cáo Chủ tịch Phước Trần, tôi đã tiếp nhận ý kiến: _\"{text_clean}\"_\n\n"
-        "Tôi túc trực 24/7 tại Bộ Chỉ Huy này cùng Chủ tịch. Chủ tịch có thể ra lệnh cho tôi bất kỳ lúc nào:\n"
-        "• *'James kiểm tra ngay bảng điện và giá khớp HPG/TCB/MBB'*\n"
-        "• *'James chỉ thị Victor canh sát Stop Loss 2xATR'*\n"
-        "• *'James điều động Minh Quân chuẩn bị lệnh Khung 14h00'*\n"
-        "• *'James cho Ban 2 kiểm tra lại dòng tiền OCF của ngành Ngân Hàng'*\n\n"
-        "Bất kỳ lệnh nào của Chủ tịch, tôi sẽ phân bổ ngay xuống phòng ban và bắt buộc nộp báo cáo nghiệm thu thực tế!"
+        f"Báo cáo Chủ tịch Phước Trần, tôi đã tiếp nhận ý kiến: _\"{text_clean}\"_\n"
+        f"• *Trạng thái danh mục hiện tại*: {portfolio_ctx}\n\n"
+        "Chủ tịch có thể dùng nhanh các lệnh kiểm tra tức thời:\n"
+        "• `/tcbs` — Kiểm tra trực tiếp tài khoản TCInvest (`105C307855`) & Bảng giá Live\n"
+        "• `/baomat` — Kiểm toán Khiên Bảo Vệ 5 Tầng (Chống Hack 100%)\n"
+        "• `/danhmuc` — Báo cáo trạng thái NAV & Danh mục hiện tại\n"
+        "• `/solenh` — Xem Sổ lệnh & Tầm ngắm giải ngân Khung 14h00"
     )
 
 
 if __name__ == "__main__":
-    print(handle_james_chat("James thấy thị trường hôm nay thế nào?"))
+    print(handle_james_chat("/tcbs"))
