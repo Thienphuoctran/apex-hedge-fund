@@ -154,7 +154,7 @@ def run_eod_master_audit(audit_date: str = None) -> dict:
     else:
         critical_flaws = [
             f"KỶ LUẬT KHUNG GIỜ VÀNG (TIMING DISCIPLINE): Với danh mục thực tế {tickers_str}, tuyệt đối không FOMO mua đuổi ATO trước 10h00 sáng. Bắt buộc giải ngân trong Khung Giờ Vàng 14h00 - 14h25 khi nến ngày định hình >= 90%.",
-            f"KẾ HOẠCH CHỐT LỜI NGÀY MAI (T+2.5 EXECUTION): Canh đúng 13h00 ngày mai khi toàn bộ 900 CP về tài khoản được phép giao dịch, chủ động thực hiện Scaling Out chốt lời 50% tại mục tiêu TP1 và nâng Stop lên giá vốn để gồng lãi."
+            f"KẾ HOẠCH CHỐT LỜI NGÀY MAI (T+2.5 EXECUTION): Canh đúng 13h00 ngày mai với 100% tiền mặt (20,167,119 ₫) đã thu về sau khi tất toán Vòng 1 (+167,119 ₫), chủ động canh nhịp chiết khấu mở vị thế Vòng 2 tại mục tiêu TP1 và nâng Stop lên giá vốn để gồng lãi."
         ]
 
     mandatory_action = (

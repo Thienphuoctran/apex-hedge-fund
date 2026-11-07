@@ -301,10 +301,10 @@ def execute_milestone(milestone_id: str) -> bool:
                 f"# BÁO CÁO RÀ SOÁT CÔNG BỐ THÔNG TIN ĐÊM QUA (BAN 10 — HIỀN & AGENT ZERO)\n"
                 f"**Ngày thực hiện**: `{date_str} 06:00 AM` | **Đối tượng**: 54 Siêu cổ phiếu Việt Nam & 35 Siêu cổ phiếu Mỹ\n"
                 f"**Tài khoản thẩm định**: TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)\n\n"
-                f"## 1. Kết quả kiểm toán Pháp y BCTC & IR trực tiếp cho 3 mã nắm giữ (900 CP)\n"
+                f"## 1. Kết quả kiểm toán Pháp y BCTC & IR trực tiếp cho danh mục và tầm ngắm Vòng 2 (Trạng thái hiện tại: 100% Tiền mặt 20,167,119 ₫, 0 CP)\n"
                 f"{bullets_md}\n\n"
                 f"## 2. Kết quả kiểm tra tính toàn vẹn thông tin toàn thị trường\n"
-                f"- **Thị trường Việt Nam (HOSE/HNX)**: Đã quét cổng IR/SSC/Vietstock/CafeF. Không có biến cố bất thường (hoãn nộp BCTC, từ nhiệm kiểm toán, phạt thuế trọng yếu) đối với `400 HPG`, `300 TCB`, `200 MBB`.\n"
+                f"- **Thị trường Việt Nam (HOSE/HNX)**: Đã quét cổng IR/SSC/Vietstock/CafeF. Không có biến cố bất thường (hoãn nộp BCTC, từ nhiệm kiểm toán, phạt thuế trọng yếu) đối với các cổ phiếu trong tầm ngắm (`FPT`, `DGC`, `HPG`, `TCB`, `MBB`).\n"
                 f"- **Thị trường Mỹ (SEC EDGAR)**: Đã rà soát Form 8-K, 10-Q, Form 4 của vũ trụ Phố Wall (`NVDA`, `TSM`, `AVGO`, `GOOGL`).\n"
             )
             write_md_safe(cbtt_file, cbtt_content)
@@ -315,7 +315,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n"
                 f"📅 *Ngày*: `{date_str}` | ⏰ `06:00 AM` | 👤 *TCBS*: `105C307855`\n"
                 "• Đã chạy `ZeroBrowserScout` & `ZeroForensicAuditor` rà soát 54 mã HOSE/HNX và 35 mã Phố Wall.\n"
-                "• Trạng thái 900 CP (`400 HPG`, `300 TCB`, `200 MBB`): 100% hồ sơ pháp lý & BCTC đạt chuẩn CLEAN.\n"
+                "• Trạng thái Quỹ: 100% Tiền mặt (`20,167,119 ₫` - Đã tất toán Vòng 1 lãi `+167,119 ₫`). Hồ sơ BCTC tầm ngắm Vòng 2 đạt chuẩn CLEAN.\n"
                 f"📁 Báo cáo đã lưu: `VN_Market/02_BCTC_Equity_Research/{date_str}_VN_CBTT_Radar.md`\n"
                 "👉 Dữ liệu đã bàn giao sang Ban 1 & Ban 2 thẩm định trước phiên!"
             )
@@ -375,7 +375,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 "💡 *3 NGUYÊN TẮC THÉP HÔM NAY*:\n"
                 "1. Tuyệt đối không FOMO ATO: 9h00-9h30 là giờ nhiễu loạn cung cầu, không mua đuổi giá xanh.\n"
                 "2. Giữ vững kỷ luật Khung Giờ Vàng: Hành động quyết định lúc 14h00-14h25 khi nến ngày định hình >= 90%.\n"
-                "3. Quản trị rủi ro hàng đầu: Bảo vệ 900 CP (`400 HPG`, `300 TCB`, `200 MBB`) bằng ngưỡng cắt lỗ cứng Stop 2xATR.\n"
+                "3. Quản trị rủi ro hàng đầu: Bảo vệ 100% vốn & lãi (`20,167,119 ₫` tiền mặt), chỉ giải ngân Vòng 2 khi có biên an toàn và khóa Stop 2xATR.\n"
                 f"📁 Bản tin đầy đủ: `{coach_briefing_file.relative_to(BASE_DIR).as_posix()}`"
             )
             _dispatch("academy_learning", msg)
@@ -438,7 +438,7 @@ def execute_milestone(milestone_id: str) -> bool:
             snap_content = (
                 f"# SỔ LỆNH MASTER BLOTTER NGÀY {date_str} (MASTER CIO JAMES — BAN 8)\n"
                 f"**Chủ tịch**: Trần Quốc Thiên Phước | **TCBS**: `105C307855` | **Tổng NAV**: `{snap['total_nav']:,.0f} ₫`\n"
-                f"**Trạng thái kho hàng thực tế**: 900 CP (`400 HPG`, `300 TCB`, `200 MBB`)\n\n"
+                f"**Trạng thái kho hàng thực tế**: {'100% TIỀN MẶT (20,167,119 ₫ - 0 CP nắm giữ, đã chốt lời Vòng 1 +167,119 ₫)' if snap.get('is_all_cash') else 'Đang nắm giữ cổ phiếu'}\n\n"
                 f"| Mã CP | Khối Lượng | Giá Vốn | Thị Giá | Cắt Lỗ Stop 2xATR | Chốt Lời TP1 |\n"
                 f"| :---: | :---: | :---: | :---: | :---: | :---: |\n"
                 f"| **HPG** | {hpg['shares']} CP | {hpg['entry']:,.0f} ₫ | {hpg['price']:,.0f} ₫ | {hpg['stop']:,.0f} ₫ | {hpg['tp1']:,.0f} ₫ |\n"
@@ -452,7 +452,7 @@ def execute_milestone(milestone_id: str) -> bool:
             msg = (
                 "🎖️ *[BAN 8 — MASTER CIO JAMES: PHÊ DUYỆT SỔ LỆNH MASTER BLOTTER]*\n"
                 f"Chủ tịch: **Trần Quốc Thiên Phước** | Tài khoản: `105C307855` | NAV: `{snap['total_nav']:,.0f} ₫`\n\n"
-                "📋 *DANH MỤC 900 CP ĐANG NẮM GIỮ & NGƯỠNG BẢO VỆ*:\n"
+                "📋 *TRẠNG THÁI VỐN THỰC TẾ (100% TIỀN MẶT `20,167,119 ₫`) & TẦM NGẮM VÒNG 2*:\n"
                 f"1. `HPG`: {hpg['shares']} CP | Giá vốn: `{hpg['entry']:,.0f}` | Thị giá: `{hpg['price']:,.0f}` | Stop: `{hpg['stop']:,.0f}` | TP1: `{hpg['tp1']:,.0f}`\n"
                 f"2. `TCB`: {tcb['shares']} CP | Giá vốn: `{tcb['entry']:,.0f}` | Thị giá: `{tcb['price']:,.0f}` | Stop: `{tcb['stop']:,.0f}` | TP1: `{tcb['tp1']:,.0f}`\n"
                 f"3. `MBB`: {mbb['shares']} CP | Giá vốn: `{mbb['entry']:,.0f}` | Thị giá: `{mbb['price']:,.0f}` | Stop: `{mbb['stop']:,.0f}` | TP1: `{mbb['tp1']:,.0f}`\n"
@@ -480,24 +480,24 @@ def execute_milestone(milestone_id: str) -> bool:
             ato_content = (
                 f"# BÁO CÁO GIÁM SÁT ATO & KÍCH HOẠT CẦU CHÌ GUARD-01 (VICTOR SENTINEL — BAN 9)\n"
                 f"**Thời gian quét**: `{date_str} 09:00:00 AM` | **Độ trễ bảng điện VPS**: `< 150ms`\n"
-                f"**Trạng thái 900 CP trong danh mục TCBS (`105C307855`)**:\n"
+                f"**Trạng thái tài sản thực tế trong danh mục TCBS (`105C307855` — 100% Tiền mặt `20,167,119 ₫`)**:\n"
                 f"- `HPG (400 CP)`: Giá mở cửa `{hpg['price']:,.0f} ₫` (Stop 2xATR: `{hpg['stop']:,.0f} ₫` | TP1: `{hpg['tp1']:,.0f} ₫`)\n"
                 f"- `TCB (300 CP)`: Giá mở cửa `{tcb['price']:,.0f} ₫` (Stop 2xATR: `{tcb['stop']:,.0f} ₫` | TP1: `{tcb['tp1']:,.0f} ₫`)\n"
                 f"- `MBB (200 CP)`: Giá mở cửa `{mbb['price']:,.0f} ₫` (Stop 2xATR: `{mbb['stop']:,.0f} ₫` | TP1: `{mbb['tp1']:,.0f} ₫`)\n\n"
                 f"## Chỉ thị cầu chì GUARD-01 & ZeroMarketWatcher\n"
                 f"- **KHÓA LỆNH MUA ĐUỔI ATO**: Cấm tuyệt đối giải ngân mua mới khi bảng điện nhảy giá xanh đầu phiên (09:00 - 09:30).\n"
-                f"- **GIÁM SÁT TỰ ĐỘNG 15 GIÂY/LẦN**: Victor Sentinel theo dõi sát sao từng bước giá để bảo vệ 900 CP của Chủ tịch.\n"
+                f"- **GIÁM SÁT TỰ ĐỘNG 15 GIÂY/LẦN**: Victor Sentinel theo dõi sát sao từng bước giá để giám sát tín hiệu giải ngân Vòng 2 và bảo vệ vốn của Chủ tịch.\n"
             )
             write_md_safe(ato_file, ato_content)
 
             msg_ato = (
                 "🚨 *[BAN 9 — VICTOR SENTINEL: KÍCH HOẠT CẦU CHÌ CHẶN BẪY ATO (GUARD-01)]*\n"
                 f"⏰ Mở cửa phiên: `09:00 AM` | 📡 Bảng điện: HOSE/VPS Realtime\n\n"
-                "📊 *GIÁ KHỚP MỞ PHIÊN (DANH MỤC 900 CP)*:\n"
+                "📊 *GIÁ KHỚP MỞ PHIÊN (CÁC MÃ TRONG RADAR THEO DÕI VÒNG 2)*:\n"
                 f"• `HPG (400 CP)`: `{hpg['price']:,.0f} ₫` | `TCB (300 CP)`: `{tcb['price']:,.0f} ₫` | `MBB (200 CP)`: `{mbb['price']:,.0f} ₫`\n\n"
                 "⛔ *CHỈ THỊ CẦU CHÌ GUARD-01*:\n"
                 "1. Tuyệt đối KHÔNG mua đuổi khi bảng điện nhảy giá xanh ATO.\n"
-                "2. Giữ vững kỷ luật cho 900 CP đang nắm giữ, chỉ chốt lời bằng lệnh LO khi chạm vùng mục tiêu TP1.\n"
+                "2. Giữ vững kỷ luật 100% tiền mặt (`20,167,119 ₫`), chỉ giải ngân Vòng 2 bằng lệnh LO tại vùng chiết khấu Khung Giờ Vàng.\n"
                 "👉 Victor Sentinel (`ZeroMarketWatcher`) đang quét liên tục mỗi 15 giây bảo vệ tài khoản Chủ tịch!"
             )
             _dispatch("alerts", msg_ato)
@@ -526,7 +526,7 @@ def execute_milestone(milestone_id: str) -> bool:
             flash_content = (
                 f"# BÁO CÁO FLASH KHỚP LỆNH PHIÊN SÁNG (BAN 1 & BAN 3 VN)\n"
                 f"**Thời gian**: `{date_str} 11:45 AM` (Tạm đóng phiên sáng HOSE)\n\n"
-                f"## 1. Biến động danh mục thực tế 900 CP (TCBS `105C307855`)\n"
+                f"## 1. Trạng thái tài khoản TCBS `105C307855` (100% Tiền mặt `20,167,119 ₫`) & Theo dõi thị trường\n"
                 f"- `HPG (400 CP)`: `{hpg['price']:,.0f} ₫` (PnL: `{hpg['pnl_vnd']:+,.0f} ₫` / `{hpg['pnl_pct']:+.2f}%`)\n"
                 f"- `TCB (300 CP)`: `{tcb['price']:,.0f} ₫` (PnL: `{tcb['pnl_vnd']:+,.0f} ₫` / `{tcb['pnl_pct']:+.2f}%`)\n"
                 f"- `MBB (200 CP)`: `{mbb['price']:,.0f} ₫` (PnL: `{mbb['pnl_vnd']:+,.0f} ₫` / `{mbb['pnl_pct']:+.2f}%`)\n"
@@ -571,7 +571,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 f"# RADAR ĐO LỰC HẤP THỤ HÀNG T+2.5 VỀ TÀI KHOẢN (BAN 4 & VICTOR SENTINEL)\n"
                 f"**Thời gian quét**: `{date_str} 13:00 - 13:45 PM`\n"
                 f"- Lượng cổ phiếu T+2.5 trên toàn thị trường đã về tài khoản nhà đầu tư.\n"
-                f"- Danh mục Chủ tịch (`400 HPG`, `300 TCB`, `200 MBB` = 900 CP) đang được kiểm soát rủi ro chặt chẽ:\n"
+                f"- Danh mục Chủ tịch hiện nắm giữ 100% Tiền mặt (`20,167,119 ₫`, `0 CP`, Rủi ro = 0%), đang theo dõi sát các mã tầm ngắm:\n"
                 f"{inc_md}\n"
             )
             write_md_safe(t2_file, t2_content)
@@ -579,7 +579,7 @@ def execute_milestone(milestone_id: str) -> bool:
             msg = (
                 "🛡️ *[BAN 4 & VICTOR — RADAR ĐO LỰC HẤP THỤ HÀNG T+2.5 LÚC 13H00]*\n"
                 "• Khung giờ nhạy cảm `13:00 - 13:45`: Đang đo lường lực cầu hấp thụ lượng hàng T+2.5 về tài khoản.\n"
-                f"• Danh mục 900 CP (`400 HPG`, `300 TCB`, `200 MBB`) giữ vững trên ngưỡng Stop 2xATR, Tổng NAV đạt `{snap['total_nav']:,.0f} ₫`.\n"
+                f"• Danh mục bảo toàn 100% Tiền mặt (`0 CP` rủi ro), Tổng NAV thực tế trên TCBS đạt `{snap['total_nav']:,.0f} ₫` (Lãi đã chốt `+167,119 ₫`).\n"
                 "👉 Kiên nhẫn quan sát đến đúng 14h00 (Khung Giờ Vàng) mới đưa ra quyết định hành động!"
             )
             _dispatch("alerts", msg)
@@ -596,11 +596,11 @@ def execute_milestone(milestone_id: str) -> bool:
                 f"# KHUNG GIỜ VÀNG TÁC CHIẾN 14H00 - 14H25 (BAN 7 VN — MINH QUÂN)\n"
                 f"**Thời gian**: `{date_str} 14:00 PM` | **Tài khoản**: TCBS `105C307855`\n"
                 f"- Hình thái nến ngày đã định hình >= 90%.\n"
-                f"- **Trạng thái 900 CP thực tế**:\n"
+                f"- **Trạng thái tài khoản & các mã tầm ngắm Vòng 2**:\n"
                 f"  * `HPG (400 CP)`: Thị giá `{hpg['price']:,.0f} ₫` | Mục tiêu TP1: `{hpg['tp1']:,.0f} ₫` | Stop: `{hpg['stop']:,.0f} ₫`\n"
                 f"  * `TCB (300 CP)`: Thị giá `{tcb['price']:,.0f} ₫` | Mục tiêu TP1: `{tcb['tp1']:,.0f} ₫` | Stop: `{tcb['stop']:,.0f} ₫`\n"
                 f"  * `MBB (200 CP)`: Thị giá `{mbb['price']:,.0f} ₫` | Mục tiêu TP1: `{mbb['tp1']:,.0f} ₫` | Stop: `{mbb['stop']:,.0f} ₫`\n"
-                f"- **Chỉ thị hành động**: Giữ vững 900 CP nếu chưa chạm TP1; nếu mã nào chạm TP1 thì thực hiện Scaling Out chốt lời 50% bằng lệnh LO.\n"
+                f"- **Chỉ thị hành động**: Đang cầm 100% tiền mặt (`{snap['cash_vnd']:,.0f} ₫`); kiên nhẫn quan sát trong Khung Giờ Vàng 14h00-14h25, chỉ mở mua Vòng 2 khi đạt đủ Checklist 7 điểm.\n"
             )
             write_md_safe(golden_file, golden_content)
 
@@ -609,7 +609,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 "🎯 *Thời điểm nến ngày định hình >= 90%*:\n"
                 f"• `HPG (400 CP)`: `{hpg['price']:,.0f} ₫` (TP1: `{hpg['tp1']:,.0f}`) | `TCB (300 CP)`: `{tcb['price']:,.0f} ₫` (TP1: `{tcb['tp1']:,.0f}`) | `MBB (200 CP)`: `{mbb['price']:,.0f} ₫` (TP1: `{mbb['tp1']:,.0f}`)\n"
                 f"• Tiền mặt dự phòng: `{snap['cash_vnd']:,.0f} ₫` | Tổng NAV: `{snap['total_nav']:,.0f} ₫`.\n"
-                "👉 Chỉ thị: Nắm giữ kỷ luật 900 CP, chỉ đặt lệnh LO chốt lời từng phần nếu thị giá bứt phá chạm vùng mục tiêu TP1!"
+                "👉 Chỉ thị: Bảo toàn 100% tiền mặt (`20,167,119 ₫`), chỉ giải ngân Vòng 2 bằng lệnh LO khi có chiết khấu đạt chuẩn!"
             )
             _dispatch("morning_blotter", msg)
 
@@ -623,7 +623,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 f"# BIÊN BẢN KÍCH HOẠT CẦU CHÌ AN TOÀN GUARD-03 (KHÓA TRƯỚC ATC)\n"
                 f"**Thời gian**: `{date_str} 14:25 PM` | **Đơn vị phối hợp**: Ban 9 (Victor) & Ban 7 (Minh Quân)\n"
                 f"- Đã rà soát 100% lệnh trong phiên: Không có lệnh lướt sóng T+0 treo qua đêm.\n"
-                f"- Khối lượng cổ phiếu nắm giữ qua đêm được khóa cố định: **`400 HPG`, `300 TCB`, `200 MBB` (Tổng 900 CP)**.\n"
+                f"- Trạng thái qua đêm/cuối tuần được khóa an toàn tuyệt đối: **100% TIỀN MẶT (`{snap['cash_vnd']:,.0f} ₫`), `0 CP` nắm giữ (0% Overnight/Weekend Risk)**.\n"
                 f"- Tiền mặt dự phòng: **`{snap['cash_vnd']:,.0f} ₫`** | Tổng NAV: **`{snap['total_nav']:,.0f} ₫`**.\n"
                 f"- Triệt tiêu hoàn toàn rủi ro biến động giá ảo trong phiên ATC (14h30 - 14h45).\n"
             )
@@ -632,7 +632,7 @@ def execute_milestone(milestone_id: str) -> bool:
             msg = (
                 "⚡ *[BAN 9 & 7 — KÍCH HOẠT CẦU CHÌ AN TOÀN T+0 (GUARD-03) LÚC 14H25]*\n"
                 "• Bây giờ là `14:25`: Toàn bộ sổ lệnh trong phiên được khóa cố định trước khi bước vào phiên ATC.\n"
-                f"• Kho hàng chuẩn TCBS `105C307855`: Bảo toàn `400 HPG`, `300 TCB`, `200 MBB` (900 CP) + Tiền mặt `{snap['cash_vnd']:,.0f} ₫` (Margin `0.0%`)."
+                f"• Kho hàng chuẩn TCBS `105C307855`: Bảo toàn 100% Tiền mặt `{snap['cash_vnd']:,.0f} ₫` (`0 CP` nắm giữ | Lãi Vòng 1 đã chốt `+167,119 ₫` | Margin `0.0%`)."
             )
             _dispatch("alerts", msg)
             _dispatch("morning_blotter", msg)
@@ -668,7 +668,7 @@ def execute_milestone(milestone_id: str) -> bool:
             msg = (
                 "🏛️ *[BAN 5 & BAN 8 — BÁO CÁO HỒI TỐ WALK-FORWARD, TỰ HỌC & PHÚC TRA CUỐI NGÀY]*\n"
                 f"📅 Phiên giao dịch: `{date_str}` | Tài khoản: `105C307855`\n"
-                f"• Trạng thái kết phiên: Nắm giữ `900 CP` (`400 HPG`, `300 TCB`, `200 MBB`) | Tiền mặt: `{snap['cash_vnd']:,.0f} ₫` | Tổng NAV: `{snap['total_nav']:,.0f} ₫` (PnL: `{snap['total_pnl']:+,.0f} ₫` / `{snap['total_pnl_pct']:+.2f}%`).\n"
+                f"• Trạng thái kết phiên: **100% Tiền mặt (`0 CP`)** | Số dư TCBS: `{snap['cash_vnd']:,.0f} ₫` | Tổng NAV: `{snap['total_nav']:,.0f} ₫` (Lãi ròng Vòng 1 đã chốt: `+167,119 ₫`).\n"
                 f"• Walk-Forward Hit Rate: `{hit_rate:.1f}%` — Đã cập nhật trọng số `adaptive_weights_vn.json` và ghi biên bản sửa đổi vào Nhật ký Tiến hóa của Minh Quân & Alex.\n"
                 f"📁 Báo cáo Tự học: `VN_Market/05_Learning_And_Evolution/{date_str}_VN_Learning_Report.md`\n"
                 f"📁 Biên bản Phúc tra EOD: `08_Master_Investment_CIO/eod_audit_logs/{date_str}_EOD_Master_Correction_Memo.md`"
@@ -828,7 +828,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 "🎖️ *[APEX MASTER CIO DESK — BIÊN BẢN HỘI NGHỊ GIAO BAN ĐIỀU HÀNH 23H00]*\n"
                 f"Chủ tọa: **Master CIO James** | Ngày: `{date_str}`\n\n"
                 "1. **Điểm danh & Phản biện**: Đầy đủ 11 phòng ban — Đã đối soát kết quả kiểm toán EOD và rút kinh nghiệm thực chất.\n"
-                f"2. **Tài sản TCBS `105C307855`**: Nắm giữ `900 CP` (`400 HPG`, `300 TCB`, `200 MBB`) | Tổng NAV: `{nav_v:,.0f} ₫` (PnL: `{pnl_v:+,.0f} ₫` / `{pnl_p:+.2f}%`).\n"
+                f"2. **Tài sản TCBS `105C307855`**: **100% Tiền mặt (`0 CP` nắm giữ)** | Tổng NAV thực tế: `{nav_v:,.0f} ₫` (Lãi ròng Vòng 1 đã thực nhận: `+167,119 ₫`).\n"
                 f"3. **Chỉ thị kỷ luật cho {nxt_day}**: {mq_act}\n"
                 f"👉 Biên bản chi tiết: `08_Master_Investment_CIO/{date_str}_23h00_EOD_Executive_Council_Meeting.md`.\n"
                 "Chúc Chủ tịch Phước Trần một giấc ngủ thật ngon ạ!"

@@ -1,0 +1,141 @@
+{
+  "account_id": "105C307855",
+  "chairman": "Trần Quốc Thiên Phước",
+  "status": "ALL_CASH_STANDDOWN",
+  "cash_balance_vnd": 20167119.0,
+  "total_nav_vnd": 20167119.0,
+  "total_market_val_vnd": 0.0,
+  "total_cost_vnd": 0.0,
+  "realized_pnl_vnd": 167119.0,
+  "unrealized_pnl_vnd": 0.0,
+  "active_positions": {},
+  "trade_history": [
+    {
+      "trade_id": "TRD-20261106-001",
+      "timestamp": "2026-11-06 09:30:00",
+      "action": "SELL_ALL",
+      "reason": "Chốt lời Kịch bản A vùng đỉnh sáng Thứ Sáu theo chỉ thị Master CIO",
+      "shares_sold": {
+        "HPG": 400,
+        "TCB": 300,
+        "MBB": 200
+      },
+      "realized_pnl_vnd": 167119.0,
+      "cash_after_trade": 20167119.0
+    },
+    {
+      "trade_id": "TRD-20261107131910",
+      "timestamp": "2026-11-07 13:19:10",
+      "action": "BUY",
+      "symbol": "PVT",
+      "shares": 200,
+      "buy_price": 20700.0,
+      "total_cost_vnd": 4140000.0,
+      "cash_after_trade": 16059425.0,
+      "reason": "Chủ tịch ra lệnh mua trên Telegram"
+    },
+    {
+      "trade_id": "TRD-20261107131910",
+      "timestamp": "2026-11-07 13:19:10",
+      "action": "SELL_ALL",
+      "details": {
+        "PVT": {
+          "shares": 200,
+          "price": 20700.0,
+          "pnl": 0.0
+        }
+      },
+      "liquidated_vnd": 4140000.0,
+      "pnl_vnd": 0.0,
+      "cash_after_trade": 20167119.0,
+      "reason": "Chủ tịch ra lệnh trực tiếp trên Telegram: 'James oi da ban het roi nhe'"
+    }
+  ],
+  "tactical_regime": "PATIENT_PREDATOR_100_CASH_STANDDOWN",
+  "last_updated": "2026-11-07 15:32:19",
+  "tcbs_mcp_url": "https://mcp.tcbs.com.vn/mcp/tcinvest/",
+  "current_campaign_phase": "ROUND_1_COMPLETED_100_CASH_WAITING_ROUND_2",
+  "initial_capital_vnd": 20000000.0,
+  "pending_active_orders": [],
+  "next_round_watchlist": [
+    {
+      "symbol": "FPT",
+      "name": "Tập Đoàn FPT",
+      "sector": "Công Nghệ & AI Factory",
+      "target_buy_zone": "Canh nhịp chiết khấu về hỗ trợ MA20 trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Xếp hạng AAA, OCF/LNST = 1.25x, Beneish M = -2.80 (An toàn)"
+    },
+    {
+      "symbol": "DGC",
+      "name": "Tập Đoàn Hóa Chất Đức Giang",
+      "sector": "Hóa Chất & Phốt Pho Bán Dẫn",
+      "target_buy_zone": "Canh nền tích lũy cạn cung (No Supply) phiên chiều",
+      "bctc_highlight": "Pháo đài tiền mặt >10,500 tỷ (77% tài sản), OCF/LNST = 1.15x"
+    },
+    {
+      "symbol": "HPG",
+      "name": "Tập Đoàn Hòa Phát (Đã chốt lời Vòng 1 — Theo dõi làm vòng mới)",
+      "sector": "Thép & Vật Liệu Xây Dựng",
+      "target_buy_zone": "Chỉ vào lại khi điều chỉnh chiết khấu đủ biên an toàn (Không mua đuổi)",
+      "bctc_highlight": "Đã mang về lợi nhuận Vòng 1; Dung Quất 2 là động lực dài hạn"
+    },
+    {
+      "symbol": "TCB",
+      "name": "Ngân Hàng Techcombank (Đã chốt lời Vòng 1 — Theo dõi làm vòng mới)",
+      "sector": "Ngân Hàng",
+      "target_buy_zone": "Chờ kiểm định lại vùng hỗ trợ sau nhịp chốt lời Vòng 1",
+      "bctc_highlight": "CASA 40.5% dẫn đầu ngành, CAR 15.2%"
+    }
+  ],
+  "completed_campaigns": [
+    {
+      "campaign_id": "CAMPAIGN-VN-ROUND-01",
+      "period": "2026-11-04 -> 2026-11-06",
+      "status": "CLOSED_AND_SETTLED_100_PERCENT_CASH",
+      "initial_capital_vnd": 20000000.0,
+      "final_cash_tcbs_vnd": 20167119.0,
+      "net_realized_profit_after_tax_fee_vnd": 167119.0,
+      "net_return_pct": 0.8356,
+      "positions_traded_and_closed": [
+        {
+          "symbol": "HPG",
+          "shares_bought": 400,
+          "shares_sold": 400,
+          "remaining_shares": 0,
+          "entry_price": 21156.0,
+          "exit_status": "SOLD_100_PERCENT"
+        },
+        {
+          "symbol": "TCB",
+          "shares_bought": 300,
+          "shares_sold": 300,
+          "remaining_shares": 0,
+          "entry_price": 21356.0,
+          "exit_status": "SOLD_100_PERCENT"
+        },
+        {
+          "symbol": "MBB",
+          "shares_bought": 200,
+          "shares_sold": 200,
+          "remaining_shares": 0,
+          "entry_price": 18606.0,
+          "exit_status": "SOLD_100_PERCENT"
+        }
+      ],
+      "lesson_learned": "Chốt lời dứt khoát toàn bộ 900 CP trước kỳ nghỉ cuối tuần, bảo toàn 100% vốn + lãi thực nhận 20,167,119 ₫ trên TCInvest, triệt tiêu 100% rủi ro qua tuần (0% Weekend Risk)."
+    }
+  ],
+  "temporal_context": {
+    "timestamp_iso": "2026-11-07T15:32:19.644506",
+    "date_str": "2026-11-07",
+    "date_vn": "07/11/2026",
+    "time_vn": "15:32:19",
+    "weekday_index": 5,
+    "weekday_vn": "Thứ Bảy",
+    "full_time_label_vn": "15:32:19 Thứ Bảy, ngày 07/11/2026",
+    "market_phase": "WEEKEND_CLOSED",
+    "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
+    "is_trading_hours": false,
+    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
+  }
+}

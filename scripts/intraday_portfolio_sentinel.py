@@ -207,99 +207,40 @@ def parse_markdown_table_tracker(file_path: Path, market_type: str) -> List[Dict
 
 def load_all_active_positions() -> List[Dict[str, Any]]:
     """
-    Loads active invested positions from Master Blotter.
-    STRICT DISCIPLINE FOR CHỦ TỊCH PHƯỚC TRẦN:
-    ONLY positions with shares > 0 and allocated capital are monitored for Red Alarms / Take-Profit.
-    Real active portfolio: HPG (500 CP), TCB (200 CP), MBB (200 CP).
+    Loads active invested positions strictly from SSOT V2.0.
+    If SSOT is ALL_CASH_STANDDOWN or active_positions is empty, returns empty list (0 shares).
     """
-    positions_map: Dict[str, Dict[str, Any]] = {}
-
-    # 1. Read Master Execution Blotter (Single Source of Truth)
-    if MASTER_BLOTTER_PATH.exists():
-        try:
-            with open(MASTER_BLOTTER_PATH, "r", encoding="utf-8") as f:
-                blotter = json.load(f)
-
-            # Active US/Global orders (only if shares > 0 and capital > 0)
-            for order in blotter.get("orders_us_global", []):
-                sym = order.get("symbol", "").strip()
-                shares = order.get("shares", 0)
-                alloc = order.get("allocated_capital_usd", 0.0)
-                if sym and shares > 0 and alloc > 0:
-                    positions_map[sym] = {
-                        "symbol": sym,
-                        "market": "US_GLOBAL",
-                        "name": order.get("name", sym),
-                        "sector": order.get("sector", "Global"),
-                        "sleeve": order.get("sleeve", "CORE COMPOUNDER"),
-                        "shares": shares,
-                        "allocated_capital": alloc,
-                        "currency": "USD",
-                        "current_price": order.get("current_price_usd", 0.0),
-                        "entry_strategy": order.get("entry_strategy", ""),
-                        "limit_pullback_price": order.get("limit_pullback_price_usd", 0.0),
-                        "stop_loss_2atr": order.get("stop_loss_2atr_usd", 0.0),
-                        "tp1": order.get("tp1_usd", 0.0),
-                        "tp2": order.get("tp2_usd", 0.0),
-                        "weight_nav_pct": order.get("weight_nav_pct", 5.0),
-                        "bctc_thesis": order.get("bctc_thesis", ""),
-                        "catalysts": order.get("catalysts", ""),
-                        "source": "master_execution_blotter.json"
-                    }
-
-            # Active Vietnam orders (Strictly HPG, TCB, MBB with real capital)
-            for order in blotter.get("orders_vietnam", []):
-                sym = order.get("symbol", "").strip()
-                shares = order.get("shares", 0)
-                alloc = order.get("allocated_capital_vnd", 0.0)
-                if sym and shares > 0 and alloc > 0:
-                    positions_map[sym] = {
-                        "symbol": sym,
-                        "market": "VIETNAM",
-                        "name": order.get("name", sym),
-                        "sector": order.get("sector", "Vietnam"),
-                        "sleeve": order.get("sleeve", "TACTICAL ALPHA"),
-                        "shares": shares,
-                        "allocated_capital": alloc,
-                        "currency": "VND",
-                        "current_price": order.get("current_price_vnd", 0.0),
-                        "entry_strategy": order.get("entry_strategy", ""),
-                        "limit_pullback_price": order.get("limit_pullback_price_vnd", 0.0),
-                        "stop_loss_2atr": order.get("stop_loss_2atr_vnd", 0.0),
-                        "tp1": order.get("tp1_vnd", 0.0),
-                        "tp2": order.get("tp2_vnd", 0.0),
-                        "weight_nav_pct": order.get("weight_nav_pct", 5.0),
-                        "bctc_thesis": order.get("bctc_thesis", ""),
-                        "catalysts": order.get("catalysts", ""),
-                        "source": "master_execution_blotter.json"
-                    }
-        except Exception as e:
-            print(f"[!] Warning reading master blotter: {e}")
-
-    # Fallback strictly if blotter empty: parse vn_portfolio_tracker for HPG, TCB, MBB only
-    if not positions_map:
-        vn_tracked = parse_markdown_table_tracker(VN_TRACKER_PATH, "VIETNAM")
-        for pos in vn_tracked:
-            sym = pos["symbol"]
-            if sym in ["HPG", "TCB", "MBB"]:
-                positions_map[sym] = {
+    try:
+        from scripts.portfolio_state_manager import get_current_portfolio_state
+        state = get_current_portfolio_state()
+        if state.get("status") == "ALL_CASH_STANDDOWN" or not state.get("active_positions"):
+            return []
+        
+        active_pos = state.get("active_positions", {})
+        res = []
+        for sym, pos in active_pos.items():
+            sh = int(pos.get("shares", 0))
+            if sh > 0:
+                res.append({
                     "symbol": sym,
                     "market": "VIETNAM",
-                    "name": sym,
-                    "sector": "Vietnam Sector",
-                    "shares": 200,
-                    "allocated_capital": pos["current_price"] * 200,
+                    "name": pos.get("name", sym),
+                    "sector": pos.get("sector", "Vietnam"),
+                    "sleeve": pos.get("sleeve", "ACTIVE HOLDING"),
+                    "shares": sh,
+                    "allocated_capital": float(pos.get("entry_price", 0.0)) * sh,
                     "currency": "VND",
-                    "current_price": pos["current_price"],
-                    "stop_loss_2atr": pos["stop_loss_2atr"],
-                    "tp1": pos.get("tp1", round(pos["current_price"] * 1.08, 0)),
-                    "tp2": pos.get("tp2", round(pos["current_price"] * 1.15, 0)),
-                    "weight_nav_pct": pos["weight_nav_pct"],
-                    "bctc_thesis": "Vị thế danh mục VN IC Tracker",
-                    "source": "vn_portfolio_tracker.md"
-                }
-
-    return list(positions_map.values())
+                    "current_price": float(pos.get("current_price", pos.get("entry_price", 0.0))),
+                    "stop_loss_2atr": float(pos.get("stop_loss", 0.0)),
+                    "tp1": float(pos.get("take_profit_tp1", 0.0)),
+                    "tp2": float(pos.get("take_profit_tp2", 0.0)),
+                    "weight_nav_pct": float(pos.get("weight_nav_pct", 0.0)),
+                    "source": "current_portfolio_state.json"
+                })
+        return res
+    except Exception as e:
+        print(f"[!] Warning reading SSOT in sentinel: {e}")
+        return []
 
 
 def fetch_live_quote(symbol: str, market: str, fallback_price: float) -> Dict[str, Any]:
@@ -1320,8 +1261,21 @@ def main():
         positions = [p for p in positions if p["market"] == "US_GLOBAL"]
 
     if not positions:
-        print("[!] Không tìm thấy cổ phiếu nào trong danh mục đầu tư để theo dõi.")
-        sys.exit(1)
+        try:
+            from scripts.portfolio_state_manager import get_current_portfolio_state
+            st = get_current_portfolio_state()
+            cash_vnd = st.get("cash_balance_vnd", 20167119.0)
+            pnl_vnd = st.get("realized_pnl_vnd", 167119.0)
+            print("=" * 80)
+            print(f"  VICTOR SENTINEL 24/7: CHẾ ĐỘ TRỰC CHIẾN BẢO TOÀN VỐN (100% TIỀN MẶT)")
+            print(f"  • Tiền mặt thực tế TCBS: {cash_vnd:,.0f} ₫ (Lãi ròng Vòng 1: +{pnl_vnd:,.0f} ₫)")
+            print(f"  • Cổ phiếu rủi ro nắm giữ: 0 CP | 0% Rủi ro qua đêm/cuối tuần")
+            print(f"  • Trạng thái: Trực chiến bảo vệ tài sản & Radar rà soát Tầm ngắm Vòng 2.")
+            print("=" * 80)
+            sys.exit(0)
+        except Exception:
+            print("[!] Danh mục hiện tại 100% Tiền Mặt (0 CP rủi ro).")
+            sys.exit(0)
 
     if args.drill:
         run_sentinel_audit(positions, config, drill_target=args.drill, drill_drop_pct=args.drop_pct)

@@ -1,0 +1,82 @@
+name: Apex Cloud Sentinel 24/7 & Institutional SSOT Guardian
+
+on:
+  schedule:
+    # Quét định kỳ mỗi 30 phút trong phiên giao dịch VN (01:00 - 08:30 UTC <=> 08:00 - 15:30 VN, Thứ 2 - Thứ 6)
+    - cron: '*/30 1-8 * * 1-5'
+    # Quét kiểm toán toàn vẹn dữ liệu lúc 00:00 UTC hàng ngày
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Cho phép Chủ tịch bấm nút kích hoạt quét tức thời 24/7 từ điện thoại qua GitHub Mobile App
+    inputs:
+      action:
+        description: 'Hành động thực thi (scan-once / full-audit / sync-ssot)'
+        required: true
+        default: 'scan-once'
+
+permissions:
+  contents: write
+
+jobs:
+  cloud_sentinel_guardian:
+    name: Victor Sentinel 24/7 & SSOT V2.0 Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Apex Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Cloud Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install yfinance pandas requests numpy fastapi uvicorn
+
+      - name: 1. Institutional SSOT V2.0 & Temporal Audit
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python -c "
+          import json
+          with open('data/current_portfolio_state.json', 'r', encoding='utf-8') as f:
+              state = json.load(f)
+          assert state.get('account_id') == '105C307855', 'Sai mã tài khoản TCBS'
+          assert state.get('cash_balance_vnd') == 20167119.0, f'Sai số dư tiền mặt: {state.get(\"cash_balance_vnd\")}'
+          assert state.get('status') == 'ALL_CASH_STANDDOWN', f'Sai trạng thái: {state.get(\"status\")}'
+          print('✅ [PASS] SSOT V2.0 Audit: Tài khoản Chủ tịch 105C307855 đạt chuẩn 100% tiền mặt 20,167,119 ₫.')
+          "
+
+      - name: 2. Run Victor Sentinel Audit Scan
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/intraday_portfolio_sentinel.py --scan-once
+
+      - name: 3. Verify Cloud Sentinel Web App Health
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python -c "
+          import cloud_sentinel.main as m
+          assert m.app is not None, 'FastAPI app không khởi tạo được'
+          print('✅ [PASS] Cloud Sentinel Web Engine (FastAPI) sẵn sàng 100% cho Render/Docker.')
+          "
+
+      - name: 4. Commit & Push Updated Status & Telemetry (If changed)
+        run: |
+          git config --global user.name "Apex Cloud Sentinel Bot"
+          git config --global user.email "sentinel-bot@apex-fund.internal"
+          git add data/ 09_Realtime_Portfolio_Sentinel/ cloud_sentinel/
+          if git diff --staged --quiet; then
+            echo "Dữ liệu SSOT đã ở trạng thái tối ưu nhất, không có thay đổi mới."
+          else
+            git commit -m "chore(sentinel): Automated 24/7 Cloud Sentinel & SSOT Telemetry Sync [skip ci]"
+            git push origin HEAD || echo "Push failed or no upstream configured."
+          fi

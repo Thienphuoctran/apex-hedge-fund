@@ -1,57 +1,65 @@
-# HƯỚNG DẪN TRIỂN KHAI VICTOR SENTINEL 24/7 TRÊN CLOUD HOÀN TOÀN MIỄN PHÍ
-*(Tắt máy tính cá nhân 100% — Victor vẫn trực chiến 24/7 trên mây và bắn tin Telegram)*
+# HƯỚNG DẪN TRIỂN KHAI APEX CLOUD SENTINEL 24/7 & HỆ THỐNG QUỸ TRÊN CLOUD
+*(Tắt máy tính cá nhân 100% — Toàn bộ Hệ Thống & Victor Sentinel vẫn trực chiến 24/7 trên Cloud, dữ liệu đồng bộ chuẩn xác tuyệt đối)*
 
-Thư mục `cloud_sentinel/` đã được đóng gói sẵn toàn bộ mã nguồn, cấu hình Telegram của bạn (`@Chuyenvienvictor_bot`), và danh mục 22 siêu cổ phiếu đang đầu tư.
-
----
-
-## 🏆 CÁCH 1: TRIỂN KHAI TRÊN HUGGING FACE SPACES (KHUYÊN DÙNG — 100% MIỄN PHÍ, KHÔNG CẦN THẺ TÍN DỤNG, MẤT 3 PHÚT)
-
-Hugging Face là nền tảng AI lớn nhất thế giới, cung cấp máy chủ đám mây **2 CPU, 16GB RAM Miễn Phí Vĩnh Viễn** để chạy code Python/Docker 24/7 mà không bao giờ hỏi thẻ tín dụng!
-
-### Các Bước Thực Hiện Cực Kỳ Đơn Giản:
-1. **Đăng ký tài khoản miễn phí**:
-   - Truy cập: [https://huggingface.co/join](https://huggingface.co/join) (Đăng ký bằng email của bạn, mất 30 giây).
-2. **Tạo Một Không Gian Mới (New Space)**:
-   - Bấm vào ảnh đại diện góc phải ➔ Chọn **`New Space`** (hoặc vào thẳng [https://huggingface.co/new-space](https://huggingface.co/new-space)).
-   - **Space name**: Đặt tên bất kỳ, ví dụ: `victor-sentinel-phuoc`
-   - **Space SDK**: Chọn **`Docker`** ➔ Chọn **`Blank`**.
-   - **Space Hardware**: Giữ mặc định **`CPU basic • 2 vCPU • 16GB • Free`** (Miễn phí 100%).
-   - **Visibility**: Chọn **`Private`** (để chỉ một mình bạn xem được và bảo mật danh mục) hoặc **`Public`**.
-   - Bấm nút **`Create Space`**.
-3. **Tải 5 File Lên**:
-   - Trong trang Space vừa tạo, bấm tab **`Files`** ➔ Chọn **`Add file`** ➔ **`Upload files`**.
-   - Kéo thả toàn bộ **5 file** trong thư mục `cloud_sentinel/` trên máy tính của bạn lên:
-     1. `main.py`
-     2. `portfolio_data.json`
-     3. `sentinel_config.json`
-     4. `requirements.txt`
-     5. `Dockerfile`
-   - Bấm **`Commit changes to main`**.
-4. **HOÀN TẤT**:
-   - Hugging Face sẽ tự động cài đặt và khởi động Victor trong 1 phút.
-   - Bạn sẽ nhận được 1 đường link trang web Dashboard riêng (ví dụ `https://phuoc-victor-sentinel.hf.space`).
-   - Kể từ giờ: **BẠN TẮT HẲN MÁY TÍNH CÁ NHÂN, GẬP LAPTOP ĐI NGỦ**, Victor trên máy chủ đám mây vẫn âm thầm quét mỗi 60 giây và rung chuông Telegram báo động ngay khi có biến!
+Hệ thống đã được nâng cấp lên **Kiến Trúc Đơn Nguồn Sự Thật Chuẩn Mực (Single Source of Truth SSOT V2.0)** tích hợp **Temporal Awareness & Episodic Memory**:
+- **Chủ tài khoản**: Chủ tịch Trần Quốc Thiên Phước (TCBS: `105C307855`).
+- **Tình trạng tài sản thực tế**: **100% Tiền mặt (`20,167,119 ₫`)**, **`0 CP` rủi ro**.
+- **Lịch sử Vòng 1**: Đã tất toán chốt lời 100% (HPG 400 CP, TCB 300 CP, MBB 200 CP), lãi ròng thực nhận **`+167,119 ₫`**.
+- **Tầm ngắm Vòng 2**: Radar rà soát FPT, DGC, HPG, TCB chờ điểm mua bứt phá chuẩn xác.
 
 ---
 
-## 🚀 CÁCH 2: TRIỂN KHAI TRÊN RENDER.COM (100% MIỄN PHÍ)
+## 🌟 PHƯƠNG ÁN 1: GITHUB ACTIONS 24/7 (ĐÃ CÀI SẴN TRONG REPO — 100% TỰ ĐỘNG & MIỄN PHÍ)
 
-1. Đăng ký tài khoản miễn phí tại [https://render.com](https://render.com) (đăng nhập bằng tài khoản GitHub hoặc Google).
-2. Tạo **`New Web Service`** ➔ Kết nối repository hoặc chọn Docker Image.
-3. Để giữ Render không bị ngủ sau 15 phút không có người vào:
-   - Vào trang [https://cron-job.org](https://cron-job.org) (miễn phí), tạo 1 cron job ping vào link `https://tên-app-của-bạn.onrender.com/health` mỗi 5 phút một lần.
+Hệ thống đã có sẵn workflow tự động chạy trên hạ tầng đám mây của GitHub:
+- **File cấu hình**: `.github/workflows/apex_cloud_sentinel_247.yml` và `.github/workflows/apex_nightly_autonomous_fund.yml`.
+- **Lịch chạy tự động**:
+  * Mỗi 30 phút trong phiên giao dịch HOSE/HNX (08h00 - 15h30 VN, Thứ 2 - Thứ 6).
+  * 20h00 Tối Chủ Nhật: Master CIO James họp tổng duyệt tuần mới.
+  * 07h30 Sáng (Thứ 2 - Thứ 6): Bản tin khai sáng & Sổ lệnh sáng sớm gửi điện thoại.
+  * 15h15 Chiều (Thứ 2 - Thứ 6): Tự động chốt phiên và học tập thích nghi.
+- **Bấm chạy thủ công từ điện thoại (Manual 1-Click)**:
+  1. Mở ứng dụng **GitHub Mobile** trên điện thoại (hoặc vào web repo `https://github.com/Thienphuoctran/apex-hedge-fund`).
+  2. Bấm tab **Actions** ➔ Chọn **Apex Cloud Sentinel 24/7 & Institutional SSOT Guardian**.
+  3. Bấm nút **Run workflow** ➔ Hệ thống sẽ tự động quét toàn vẹn tài sản và kiểm toán chỉ trong 60 giây!
 
 ---
 
-## 💻 CÁCH 3: TỰ ĐỘNG CHẠY TRÊN MÁY TÍNH WINDOWS MỖI KHI MỞ MÁY (KHÔNG DÙNG CLOUD)
+## 🚀 PHƯƠNG ÁN 2: TRIỂN KHAI WEB DASHBOARD LIVE 24/7 TRÊN RENDER.COM (100% MIỄN PHÍ)
 
-Nếu bạn chỉ muốn Victor tự động khởi động cùng máy tính Windows mà bạn không cần phải gõ lệnh mỗi ngày:
-1. Nhấn tổ hợp phím **`Windows + R`**, gõ: `shell:startup` rồi nhấn Enter (Thư mục Startup tự chạy khi mở máy sẽ hiện ra).
-2. Tạo một file shortcut hoặc file `run_victor_auto.bat` với nội dung:
-   ```bat
-   @echo off
-   cd /d "C:\Users\phuoc\Downloads\antigravity\Chứng khoán"
-   python scripts\intraday_portfolio_sentinel.py --daemon
-   ```
-3. Mỗi khi bạn bật máy tính lên làm việc, Victor sẽ tự động chạy ngầm bảo vệ danh mục!
+Nếu Chủ tịch muốn có một trang Web Dashboard trực quan chạy liên tục trên mạng (để mở xem số dư và radar bất cứ lúc nào từ trình duyệt điện thoại Safari / Chrome):
+
+1. **Đăng nhập Render**:
+   - Truy cập [https://render.com](https://render.com) và chọn **Sign in with GitHub**.
+2. **Tạo Web Service Mới**:
+   - Bấm nút **New +** ở góc trên ➔ Chọn **Web Service**.
+   - Chọn repository: `Thienphuoctran/apex-hedge-fund`.
+3. **Cấu hình thông số (chỉ mất 1 phút)**:
+   - **Name**: `apex-sentinel-dashboard` (hoặc tên tùy chọn).
+   - **Region**: `Singapore` (để kết nối về VN nhanh nhất).
+   - **Root Directory**: `cloud_sentinel`
+   - **Runtime**: `Python 3`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+   - **Instance Type**: Chọn **Free** (Miễn phí vĩnh viễn).
+4. **Bấm "Deploy Web Service"**:
+   - Render sẽ tự động dựng Web Dashboard trong 2 phút.
+   - Chủ tịch sẽ nhận được 1 đường link riêng, ví dụ: `https://apex-sentinel-dashboard.onrender.com`.
+   - Mở link trên điện thoại: Xem trực tiếp biểu đồ tài sản 20,167,119 ₫, trạng thái 100% Tiền Mặt, lịch sử Vòng 1 và radar Vòng 2!
+
+*(Mẹo giữ server không ngủ: Dùng dịch vụ miễn phí [cron-job.org](https://cron-job.org) ping vào URL `https://apex-sentinel-dashboard.onrender.com/api/health` mỗi 10 phút).*
+
+---
+
+## 🏆 PHƯƠNG ÁN 3: HUGGING FACE SPACES (DOCKER 24/7 MIỄN PHÍ, 16GB RAM)
+
+1. Truy cập [https://huggingface.co/new-space](https://huggingface.co/new-space).
+2. Đặt tên Space: `apex-sentinel` ➔ Chọn SDK: **Docker** ➔ Chọn **Blank**.
+3. Tải các file trong thư mục `cloud_sentinel/` lên (bao gồm `Dockerfile`, `main.py`, `portfolio_data.json`, `current_portfolio_state.json`, `requirements.txt`).
+4. Bấm **Commit changes** ➔ Dashboard sẽ online 24/7 ngay lập tức.
+
+---
+
+## 🔒 NGUYÊN TẮC BẢO MẬT VÀ TOÀN VẸN DỮ LIỆU
+1. **Zero Secret Leak**: Mật khẩu, token cá nhân và file `.env.tcbs` được bảo vệ bằng `.gitignore`, **tuyệt đối không bao giờ bị đẩy lên GitHub**.
+2. **Chế Độ Chỉ Đọc (Read-Only Air-Gap)**: Mã nguồn trên Cloud chỉ có quyền đọc dữ liệu bảng giá và đồng bộ hóa báo cáo, hoàn toàn không có quyền rút tiền hay chuyển khoản. Mọi giao dịch tiền mặt bắt buộc phải có Smart OTP trên điện thoại của Chủ tịch Phước Trần.

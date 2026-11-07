@@ -124,17 +124,18 @@ def handle_nam_chat(user_text: str) -> str:
             "Dạ Chủ tịch cần em Nam lập bảng chi tiết vật tư hay chuẩn bị hồ sơ khảo sát mặt bằng thì dặn em ngay nhé!"
         )
 
-    # 3. Xử lý các câu hỏi về Lịch trình & Thời gian
+    # 3. Xử lý các câu hỏi về Lịch trình & Thời gian (Tích hợp Nhận thức Không gian - Thời gian SSOT V2.0)
     if any(k in text_lower for k in ["lịch", "hôm nay làm gì", "mấy giờ", "thời gian", "schedule", "calendar"]):
-        now = datetime.datetime.now()
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        st = PortfolioStateManager.load_state()
+        t_ctx = st.get("temporal_context") or PortfolioStateManager.get_temporal_context()
+        cash = float(st.get("cash_balance_vnd", 20167119.0))
         return (
-            f"💼 *[TRỢ LÝ NAM — LỊCH TRÌNH CÔNG VIỆC]*\n\n"
-            f"Dạ thưa Chủ tịch, hôm nay là **{now.strftime('Thứ %w, ngày %d/%m/%Y')}** (Hiện tại: `{now.strftime('%H:%M')}`):\n\n"
-            "• *Sáng (09h00 - 11h30)*: Trực chiến cùng Master CIO James và Victor giám sát phiên khớp lệnh HOSE. HPG đang tăng tốt +3.7%!\n"
-            "• *Nghỉ trưa (11h30 - 13h00)*: Nghỉ ngơi, tái tạo năng lượng.\n"
-            "• *Chiều (13h00 - 13h45)*: Victor canh nhịp hấp thụ hàng T+2.\n"
-            "• *Khung Giờ Vàng (14h00 - 14h25)*: Minh Quân chuẩn bị kích hoạt nhịp giải ngân hoàn tất theo Sổ Lệnh Master Blotter.\n"
-            "• *Cuối ngày (17h00)*: Nhận Báo cáo Tổng kết Ngày (EOD Correction Memo).\n\n"
+            f"💼 *[TRỢ LÝ NAM — LỊCH TRÌNH & NHẬN THỨC THỜI GIAN THỰC]*\n\n"
+            f"Dạ thưa Chủ tịch, hiện tại là **`{t_ctx.get('full_time_label_vn')}`**:\n"
+            f"• *Trạng thái thị trường*: {t_ctx.get('market_phase_vn')}\n"
+            f"• *Trạng thái Quỹ TCBS (`105C307855`)*: Cầm **100% Tiền mặt (`{cash:,.0f} ₫`)**, `0 CP` sau khi đã chốt lời toàn bộ Vòng 1 (`+167,119 ₫`).\n"
+            f"• *Lịch trình tiếp theo*: {t_ctx.get('next_session_note')}\n\n"
             "Dạ Chủ tịch có muốn em ghi chú thêm lịch hẹn hoặc việc cần làm nào không ạ?"
         )
 

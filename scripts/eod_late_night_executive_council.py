@@ -170,7 +170,7 @@ def run_council(target_date: str = None) -> int:
         "Tuân thủ kỷ luật Khung Giờ Vàng 14h00-14h25, không mua đuổi ATO.",
         "Chuẩn bị sẵn sàng phương án Scaling Out chốt lời 50% tại TP1."
     ])
-    mq_action = mq_audit.get("mandatory_corrective_action", "Duy trì kỷ luật thép cho danh mục 400 HPG, 300 TCB, 200 MBB.")
+    mq_action = mq_audit.get("mandatory_corrective_action", "Bảo toàn 100% tiền mặt (20,167,119 ₫) sau khi tất toán Vòng 1 (+167,119 ₫) và chuẩn bị tầm ngắm Vòng 2.")
     alex_action = alex_audit.get("mandatory_corrective_action", "Khống chế rủi ro tương quan cụm Bán dẫn <= 28% NAV.")
 
     hit_rate_vn = vn_learning.get("overall_hit_rate_pct", 100.0)
@@ -209,7 +209,7 @@ def run_council(target_date: str = None) -> int:
             "cash_dry_powder_pct": cash_pct,
             "leverage_margin_pct": 0.0,
             "holdings": holdings_list,
-            "settlement_status": f"900 CP khả dụng 100% trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên {next_trading_str}."
+            "settlement_status": f"100% Tiền mặt (20,167,119 ₫, 0 CP) khả dụng trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên {next_trading_str}."
         },
         "attendance_roster": [
             {"dept": "Ban 8", "representative": "Master CIO James", "role": "Chủ Tọa & Tổng Tư Lệnh Điều Hành"},
@@ -324,7 +324,7 @@ def run_council(target_date: str = None) -> int:
 
 ## 📅 PHẦN 4: SỔ LỆNH MASTER & KẾ HOẠCH TÁC CHIẾN PHIÊN TIẾP THEO ({next_trading_str})
 
-### Chiến Lược Tác Chiến Chi Tiết Cho 900 Cổ Phiếu (`400 HPG`, `300 TCB`, `200 MBB`):
+### Chiến Lược Tác Chiến Vòng 2 (Từ Sức Mua 100% Tiền Mặt `20,167,119 ₫` Sau Khi Tất Toán Vòng 1):
 1. **Buổi Sáng (09:00 - 11:30)**:
    - Kiên nhẫn quan sát, tuyệt đối không FOMO mua đuổi giá xanh đầu phiên ATO (Cầu chì `GUARD-01`).
    - Victor Sentinel (`ZeroMarketWatcher`) quét liên tục từng bước giá mỗi 15 giây để phát hiện lệnh kê ảo (Spoofing) và bảo vệ ngưỡng Stop 2xATR.

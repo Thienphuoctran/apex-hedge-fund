@@ -135,16 +135,25 @@ def build_morning_briefing(blotter: Dict[str, Any]) -> List[str]:
         f"🇻🇳 *4. SỔ LỆNH TTCK VIỆT NAM (Minh Quân — Ban 7 VN)*\n"
         f"━━━━━━━━━━━━━━━━━━━\n\n"
     )
-    for idx, o in enumerate(orders_vn, 1):
+    if not orders_vn:
         msg_3 += (
-            f"*{idx}. {o.get('symbol')}* ({o.get('name')})\n"
-            f"   • Tỷ trọng: {o.get('weight_nav_pct', 0)}% NAV ({o.get('allocated_capital_vnd', 0):,.0f} ₫)\n"
-            f"   • Khối lượng: {o.get('shares', 0):,} CP ({o.get('lot_standard', 'Lô 100')})\n"
-            f"   • Giá tham chiếu: {o.get('current_price_vnd', 0):,.0f} ₫\n"
-            f"   • *Stop Loss 2xATR:* {o.get('stop_loss_2atr_vnd', 0):,.0f} ₫ (-{o.get('stop_dist_pct', 0):.1f}%)\n"
-            f"   • *Mục tiêu:* TP1: {o.get('tp1_vnd', 0):,.0f} ₫ | TP2: {o.get('tp2_vnd', 0):,.0f} ₫\n"
-            f"   • *Chiến lược:* {o.get('execution_instruction', 'Chia nhịp 30-40-30')}\n\n"
+            f"🛡 *TRẠNG THÁI HIỆN TẠI: 100% TIỀN MẶT — ĐÃ CHỐT TOÀN BỘ VÒNG 1*\n"
+            f"• Số dư tiền mặt thực tế: *{cap.get('total_nav_vnd', 20167119):,.0f} ₫* (Lãi ròng Vòng 1: *+{cap.get('realized_pnl_vnd', 167119):,.0f} ₫*)\n"
+            f"• Số cổ phiếu rủi ro nắm giữ: *0 CP* (0% rủi ro qua đêm/cuối tuần)\n"
+            f"• Số lệnh mở hôm nay: *0 lệnh* (Kỷ luật tuyệt đối, cấm FOMO ATO)\n"
+            f"• 🎯 *Tầm ngắm Vòng 2:* Bật radar rà soát FPT, DGC, HPG, TCB chờ điểm mua bứt phá chuẩn xác.\n\n"
         )
+    else:
+        for idx, o in enumerate(orders_vn, 1):
+            msg_3 += (
+                f"*{idx}. {o.get('symbol')}* ({o.get('name')})\n"
+                f"   • Tỷ trọng: {o.get('weight_nav_pct', 0)}% NAV ({o.get('allocated_capital_vnd', 0):,.0f} ₫)\n"
+                f"   • Khối lượng: {o.get('shares', 0):,} CP ({o.get('lot_standard', 'Lô 100')})\n"
+                f"   • Giá tham chiếu: {o.get('current_price_vnd', 0):,.0f} ₫\n"
+                f"   • *Stop Loss 2xATR:* {o.get('stop_loss_2atr_vnd', 0):,.0f} ₫ (-{o.get('stop_dist_pct', 0):.1f}%)\n"
+                f"   • *Mục tiêu:* TP1: {o.get('tp1_vnd', 0):,.0f} ₫ | TP2: {o.get('tp2_vnd', 0):,.0f} ₫\n"
+                f"   • *Chiến lược:* {o.get('execution_instruction', 'Chia nhịp 30-40-30')}\n\n"
+            )
         
     msg_3 += (
         f"━━━━━━━━━━━━━━━━━━━\n"
