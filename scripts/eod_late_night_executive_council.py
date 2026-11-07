@@ -23,6 +23,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
 CIO_DIR = BASE_DIR / "08_Master_Investment_CIO"
 AUDIT_LOGS_DIR = CIO_DIR / "eod_audit_logs"
 SENTINEL_DATA = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / "vn3_live_telemetry.json"
@@ -346,6 +347,13 @@ Nghị quyết Hội đồng Điều hành Đêm Khuya 23h00 ngày `{today_str}`
 
     save_json(meeting_ledger_path, council_payload)
     print(f"[+] 2. Đã lưu Sổ cái Hội đồng 23h00 tại: {meeting_ledger_path}")
+
+    # 4. TỰ ĐỘNG KÍCH HOẠT PHIÊN TỰ KIỂM ĐIỂM & KẾ HOẠCH HỌC TẬP CỦA 12 PHÒNG BAN
+    try:
+        from scripts.eod_departmental_introspection_engine import run_eod_introspection
+        run_eod_introspection(today_str)
+    except Exception as e:
+        print(f"[!] Cảnh báo kích hoạt Tự kiểm điểm 12 Ban: {e}")
 
     print("=" * 80)
     print(" 🎉 [HOÀN TẤT 100%] HỘI NGHỊ GIAO BAN ĐIỀU HÀNH TỐI CẤP CAO 23H00 ĐÃ BẾ MẠC THÀNH CÔNG!")

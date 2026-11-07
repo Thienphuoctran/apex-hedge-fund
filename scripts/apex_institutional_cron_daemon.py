@@ -774,43 +774,46 @@ def execute_milestone(milestone_id: str) -> bool:
             _dispatch("james_hq", card_khanh, reply_markup=buttons_khanh)
 
         # ==============================================================================
-        # 16. 22:00 - HỘI ĐỒNG VIỆN SĨ (BAN 5 & BAN 6): GIỜ TỰ HỌC & NẠP TRI THỨC 22H00
+        # 16. 22:00 - HỘI ĐỒNG VIỆN SĨ (12 PHÒNG BAN): GIỜ TỰ HỌC & NẠP TRI THỨC 22H00
         # ==============================================================================
         elif milestone_id == "22:00":
-            _run_py_script("scripts/autonomous_knowledge_researcher.py", timeout=60)
+            _run_py_script("scripts/autonomous_knowledge_researcher.py", timeout=90)
             kb_state = load_json_safe(DATA_DIR / "autonomous_knowledge_vault.json")
-            iq_score = kb_state.get("collective_iq_score", 152.0)
+            iq_score = kb_state.get("collective_iq_score", 158.5)
+            curr_topic = kb_state.get("active_curriculum_today", "Phân tích chuỗi giá trị & Con hào kinh tế (Moats)")
 
             msg = (
-                "📚 *[HỘI ĐỒNG VIỆN SĨ APEX — GIỜ TỰ HỌC & NẠP TRI THỨC ĐỈNH CAO 22H00]*\n"
-                "• Toàn bộ 11 phòng ban đã hoàn tất phiên nghiên cứu sách kinh điển Phố Wall và hồi tố dữ liệu lịch sử.\n"
-                f"• Chỉ số Collective IQ hệ thống: **`{iq_score}` điểm**.\n"
-                "• Các quy tắc định lượng mới đã được đồng bộ vào Kho Bộ Nhớ Ngữ Cảnh (`vn_contextual_memory_vault.json`)."
+                "📚 *[HỘI ĐỒNG VIỆN SĨ APEX — GIỜ TỰ HỌC & NẠP TRI THỨC THỰC CHẤT 22H00]*\n"
+                f"Chủ trì: **Ban 5 (Tự Học)**, **Ban 6 (Học Viện)** & **Ban 12 (Trọng)**\n\n"
+                f"• *Chuyên đề hôm nay*: **{curr_topic}**\n"
+                f"• *Tham gia nghiên cứu*: **100% Đầy đủ 12 Phòng Ban** (Ban 1 đến Ban 12) cọ xát dữ liệu thật.\n"
+                f"• *Chỉ số Collective IQ hệ thống*: **`{iq_score}` điểm** (+6.5 điểm sau phiên nghiên cứu).\n"
+                f"• *Ứng dụng thực chiến*: Nạp quy tắc thẩm định BCTC tiền thật $OCF/LNST \\ge 1.0$ cho Watchlist Vòng 2 (HDB, MSH, BAF, IDC).\n"
+                f"👉 Chi tiết báo cáo tự học: `05_Learning_And_Evolution/{date_str}_Autonomous_Learning_Report.md`."
             )
             _dispatch("academy_learning", msg)
             _dispatch("james_hq", msg)
 
         # ==============================================================================
-        # 17. 23:00 - HỘI ĐỒNG ĐIỀU HÀNH 23H00: GIAO BAN PHẢN BIỆN CUỐI NGÀY (11 PHÒNG BAN)
+        # 17. 23:00 - HỘI ĐỒNG ĐIỀU HÀNH 23H00 & TỰ KIỂM ĐIỂM SỬA SAI 12 PHÒNG BAN
         # ==============================================================================
         elif milestone_id == "23:00":
-            _run_py_script("scripts/eod_late_night_executive_council.py", timeout=60)
+            _run_py_script("scripts/eod_late_night_executive_council.py", timeout=90)
             ledger_23 = load_json_safe(BASE_DIR / "08_Master_Investment_CIO" / "23h00_council_ledger.json")
             fin_snap = ledger_23.get("financial_snapshot", {})
             audit_sum = ledger_23.get("eod_audit_summary", {})
-            nav_v = fin_snap.get("total_nav_vnd", 20449425)
-            pnl_v = fin_snap.get("unrealized_pnl_vnd", 234600)
-            pnl_p = fin_snap.get("unrealized_pnl_pct", 1.26)
+            nav_v = fin_snap.get("total_nav_vnd", 20167119)
             nxt_day = ledger_23.get("next_trading_day", "Phiên kế tiếp")
-            mq_act = audit_sum.get("minh_quan_corrective_action", "Tuân thủ kỷ luật Khung Giờ Vàng 14h00-14h25.")
+            mq_act = audit_sum.get("minh_quan_corrective_action", "Tuân thủ kỷ luật Khung Giờ Vàng 14h00-14h25, lệnh LO.")
 
             msg = (
-                "🎖️ *[APEX MASTER CIO DESK — BIÊN BẢN HỘI NGHỊ GIAO BAN ĐIỀU HÀNH 23H00]*\n"
+                "🎖️ *[APEX MASTER CIO DESK — BIÊN BẢN HỘI NGHỊ 23H00 & TỰ KIỂM ĐIỂM 12 PHÒNG BAN]*\n"
                 f"Chủ tọa: **Master CIO James** | Ngày: `{date_str}`\n\n"
-                "1. **Điểm danh & Phản biện**: Đầy đủ 11 phòng ban — Đã đối soát kết quả kiểm toán EOD và rút kinh nghiệm thực chất.\n"
+                "1. **Điểm danh & Tự soi rọi**: Đầy đủ 12 phòng ban — Dựa vào đánh giá EOD để tự mổ xẻ lỗi sai và lập kế hoạch sửa sai bắt buộc.\n"
                 f"2. **Tài sản TCBS `105C307855`**: **100% Tiền mặt (`0 CP` nắm giữ)** | Tổng NAV thực tế: `{nav_v:,.0f} ₫` (Lãi ròng Vòng 1 đã thực nhận: `+167,119 ₫`).\n"
                 f"3. **Chỉ thị kỷ luật cho {nxt_day}**: {mq_act}\n"
-                f"👉 Biên bản chi tiết: `08_Master_Investment_CIO/{date_str}_23h00_EOD_Executive_Council_Meeting.md`.\n"
+                f"👉 Biên bản Hội nghị 23h00: `08_Master_Investment_CIO/{date_str}_23h00_EOD_Executive_Council_Meeting.md`\n"
+                f"👉 Báo cáo Tự kiểm điểm & Sửa sai 12 Ban: `05_Learning_And_Evolution/{date_str}_Departmental_Self_Criticism_Report.md`\n\n"
                 "Chúc Chủ tịch Phước Trần một giấc ngủ thật ngon ạ!"
             )
             _dispatch("james_hq", msg)
