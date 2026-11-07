@@ -120,6 +120,21 @@ flowchart TD
 
 ## PHẦN II: 6 QUY TẮC BỔ SUNG SỐNG CÒN DO MASTER CIO JAMES & TRỢ LÝ NAM THAM MƯU
 
+Sau khi tham vấn sâu sắc cùng **Tổng Tư Lệnh Master CIO James** và **Trợ Lý Nam**, 6 quy tắc bổ sung sau đây được đưa vào Hiến chương để bịt kín mọi lỗ hổng quản trị và bảo vệ tài sản của Chủ tịch:
+
+```mermaid
+flowchart LR
+    subgraph 6 QUY TẮC BỔ SUNG SỐNG CÒN
+        D5["ĐIỀU 5<br/>Bảo Toàn Vốn &<br/>Lô 100 CP Vừa Vốn"]
+        D6["ĐIỀU 6<br/>Khung Giờ Vàng<br/>14h00-14h25"]
+        D7["ĐIỀU 7<br/>Báo Cáo Tiền Thật<br/>Không Ngụy Biện"]
+        D8["ĐIỀU 8<br/>Bảo Mật Air-Gap &<br/>Báo Ngay Thao Tác Tay"]
+        D9["ĐIỀU 9<br/>Trách Nhiệm Cá Nhân &<br/>Chống Đổ Lỗi"]
+        D10["ĐIỀU 10<br/>Mục Tiêu Tối Thượng:<br/>Thịnh Vượng Bền Vững"]
+    end
+    D5 --> D6 --> D7 --> D8 --> D9 --> D10
+```
+
 ---
 
 ### ĐIỀU 5: KỶ LUẬT BẢO TOÀN VỐN & ĐỘ TƯƠNG THÍCH QUY MÔ VỐN LÔ 100 CP
