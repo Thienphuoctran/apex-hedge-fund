@@ -98,3 +98,7 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 - **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `BRK-B (2d), OXY (4d)` (chuyển sang `Locked Earnings Watchlist`).
 - **Realized Alpha vs S&P 500**: 1D `-0.23%` | 5D `+2.07%` | 20D `+5.60%`.
 - **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **72.0%**
+
+- `[2026-11-07 13:19:10]` **[DYNAMIC STATE SYNC]**: Thực thi MUA 200 PVT tại giá 20,700 ₫ (Vốn: 4,140,000 ₫). Lý do: Chủ tịch ra lệnh mua trên Telegram
+
+- `[2026-11-07 13:19:10]` **[DYNAMIC STATE SYNC]**: Kích hoạt BÁN SẠCH TOÀN BỘ DANH MỤC quy về 100% Tiền Mặt (20,199,425 ₫). Lý do: Chủ tịch ra lệnh trực tiếp trên Telegram: 'James oi da ban het roi nhe'

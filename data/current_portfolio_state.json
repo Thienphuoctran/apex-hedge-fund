@@ -1,0 +1,56 @@
+{
+  "account_id": "105C307855",
+  "chairman": "Trần Quốc Thiên Phước",
+  "status": "ALL_CASH_STANDDOWN",
+  "cash_balance_vnd": 20199425.0,
+  "total_nav_vnd": 20199425.0,
+  "total_market_val_vnd": 0.0,
+  "total_cost_vnd": 0.0,
+  "realized_pnl_vnd": 199600.0,
+  "unrealized_pnl_vnd": 0.0,
+  "active_positions": {},
+  "trade_history": [
+    {
+      "trade_id": "TRD-20261106-001",
+      "timestamp": "2026-11-06 09:30:00",
+      "action": "SELL_ALL",
+      "reason": "Chốt lời Kịch bản A vùng đỉnh sáng Thứ Sáu theo chỉ thị Master CIO",
+      "shares_sold": {
+        "HPG": 400,
+        "TCB": 300,
+        "MBB": 200
+      },
+      "realized_pnl_vnd": 199600.0,
+      "cash_after_trade": 20199425.0
+    },
+    {
+      "trade_id": "TRD-20261107131910",
+      "timestamp": "2026-11-07 13:19:10",
+      "action": "BUY",
+      "symbol": "PVT",
+      "shares": 200,
+      "buy_price": 20700.0,
+      "total_cost_vnd": 4140000.0,
+      "cash_after_trade": 16059425.0,
+      "reason": "Chủ tịch ra lệnh mua trên Telegram"
+    },
+    {
+      "trade_id": "TRD-20261107131910",
+      "timestamp": "2026-11-07 13:19:10",
+      "action": "SELL_ALL",
+      "details": {
+        "PVT": {
+          "shares": 200,
+          "price": 20700.0,
+          "pnl": 0.0
+        }
+      },
+      "liquidated_vnd": 4140000.0,
+      "pnl_vnd": 0.0,
+      "cash_after_trade": 20199425.0,
+      "reason": "Chủ tịch ra lệnh trực tiếp trên Telegram: 'James oi da ban het roi nhe'"
+    }
+  ],
+  "tactical_regime": "PATIENT_PREDATOR_WEEKEND_STANDDOWN",
+  "last_updated": "2026-11-07 13:19:10"
+}

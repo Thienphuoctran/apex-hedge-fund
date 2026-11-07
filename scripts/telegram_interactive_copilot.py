@@ -113,30 +113,55 @@ def load_wave_radar_data() -> Dict[str, Any]:
 # ==============================================================================
 
 def handle_portfolio_summary() -> str:
-    """Trả lời câu hỏi về Danh Mục Hiện Tại."""
-    anchor_file = BASE_DIR / "data" / "institutional_compliance_anchor.json"
-    if anchor_file.exists():
-        try:
-            with open(anchor_file, "r", encoding="utf-8") as af:
-                anchor = json.load(af)
-            if anchor.get("status") == "ALL_POSITIONS_CLOSED_100_PERCENT_CASH":
-                realized_cash = anchor.get("realized_cash_vnd", 20199425.0)
-                realized_pnl = anchor.get("realized_pnl_vnd", 199600.0)
-                lines = [
-                    "📊 *[BÁO CÁO DANH MỤC THỰC TẾ — APEX HEDGE FUND]*",
-                    f"👤 *Chủ tài khoản:* Chủ tịch Phước Trần (TCBS: `105C307855`)",
-                    f"💰 *Cơ cấu tài sản:* *100% TIỀN MẶT* (`{realized_cash:,.0f} ₫`) | *Cổ phiếu:* `0 CP`",
-                    f"💵 *Lợi nhuận chốt lời đã đút túi:* `+{realized_pnl:,.0f} ₫`",
-                    "━━━━━━━━━━━━━━━━━━━",
-                    "🎖 *TRẠNG THÁI TÁC CHIẾN:*",
-                    "• *Đã chốt lời BÁN HẾT 100% toàn bộ 900 CP* (`400 HPG`, `300 TCB`, `200 MBB`) vào phiên sáng Thứ Sáu 06/11 lúc 09h15-09h45.",
-                    "• *Tuân thủ Kỷ luật Thể chế:* Triệt tiêu 100% rủi ro cuối tuần (Weekend De-risking), không ôm hàng qua đêm.",
-                    "• *Vị thế hiện tại:* *Patient Predator (Thợ săn kiên nhẫn)* — Giữ nguyên 100% tiền tươi sẵn sàng giải ngân chu kỳ mới vào Thứ Hai tuần tới (09/11)!",
-                    "• *Radar tuần mới:* Đang theo dõi BCTC và dòng tiền sạch của các ứng viên: `PVT`, `BSR`, `IDC`, `FPT`."
-                ]
-                return "\n".join(lines)
-        except Exception:
-            pass
+    """Trả lời câu hỏi về Danh Mục Hiện Tại bằng PortfolioStateManager SSOT."""
+    try:
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        st = PortfolioStateManager.load_state()
+        cash = st.get("cash_balance_vnd", 20199425.0)
+        positions = st.get("active_positions", {})
+        realized_pnl = st.get("realized_pnl_vnd", 199600.0)
+
+        if not positions:
+            lines = [
+                "📊 *[BÁO CÁO DANH MỤC THỰC TẾ THỜI GIAN THỰC — APEX FUND]*",
+                f"👤 *Chủ tài khoản:* Chủ tịch Phước Trần (TCBS: `105C307855`)",
+                f"💰 *Cơ cấu tài sản:* *100% TIỀN MẶT* (`{cash:,.0f} ₫`) | *Cổ phiếu:* `0 CP`",
+                f"💵 *Lợi nhuận chốt lời đã đút túi:* `+{realized_pnl:,.0f} ₫`",
+                "━━━━━━━━━━━━━━━━━━━",
+                "🎖 *TRẠNG THÁI TÁC CHIẾN:*",
+                "• *Sạch bóng vị thế rủi ro:* Toàn bộ 900 CP (`HPG`, `TCB`, `MBB`) đã chốt lời đút túi tiền tươi.",
+                "• *Kỷ luật Thể chế:* Triệt tiêu 100% Weekend Risk qua 2 ngày cuối tuần.",
+                "• *Vị thế hiện tại:* *Patient Predator (Thợ săn kiên nhẫn)* — Sẵn sàng 100% sức mua 20.2 triệu cho chu kỳ tuần tới!",
+                "• *Radar tuần mới:* Đang theo dõi BCTC & dòng tiền: `PVT`, `BSR`, `IDC`, `FPT`."
+            ]
+            return "\n".join(lines)
+        else:
+            total_mkt = 0.0
+            pos_lines = []
+            for sym, pos in positions.items():
+                sh = pos.get("shares", 0)
+                entry = pos.get("entry_price", 0.0)
+                curr = pos.get("current_price", entry)
+                val = sh * curr
+                pnl = val - (sh * entry)
+                total_mkt += val
+                pnl_pct = (pnl / (sh * entry) * 100) if entry > 0 else 0.0
+                emoji = "🟢" if pnl >= 0 else "🔴"
+                pos_lines.append(f"• *{sym}*: {sh:,} CP | Giá vốn: `{entry:,.0f} ₫` | Giá hiện tại: `{curr:,.0f} ₫` ({emoji} `{pnl:+,.0f} ₫` / `{pnl_pct:+.2f}%`)")
+
+            tot_nav = cash + total_mkt
+            lines = [
+                "📊 *[BÁO CÁO DANH MỤC ĐANG NẮM GIỮ — APEX FUND]*",
+                f"👤 *Chủ tài khoản:* Chủ tịch Phước Trần (TCBS: `105C307855`)",
+                f"💰 *Tổng NAV:* `{tot_nav:,.0f} ₫` | *Tiền mặt:* `{cash:,.0f} ₫` | *Cổ phiếu:* `{total_mkt:,.0f} ₫`",
+                "━━━━━━━━━━━━━━━━━━━",
+                *pos_lines,
+                "━━━━━━━━━━━━━━━━━━━",
+                "🛡 *Kiểm soát rủi ro:* Khóa cứng ngưỡng cắt lỗ Stop 2xATR và bảo vệ lợi nhuận!"
+            ]
+            return "\n".join(lines)
+    except Exception as e:
+        print(f"[!] Lỗi handle_portfolio_summary SSOT: {e}")
 
     blotter = load_blotter_data()
     sentinel = load_sentinel_status_data()
@@ -373,6 +398,36 @@ def handle_stock_inquiry(ticker: str) -> str:
 def process_user_query(text: str) -> str:
     """Bộ định tuyến ngôn ngữ tự nhiên thông minh của Palmer."""
     clean_text = text.lower().strip()
+
+    # XỬ LÝ LỆNH THỰC THI DANH MỤC THỜI GIAN THỰC (TỰ ĐỘNG CẬP NHẬT SSOT 0.1s)
+    try:
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        # 1. Lệnh Bán hết / Chốt lời sạch (cả có dấu lẫn không dấu)
+        if any(k in clean_text for k in ["bán hết", "ban het", "chốt lời hết", "chot loi het", "bán sạch", "ban sach", "sell all", "thoát hết", "thoat het", "đã bán hết", "da ban het"]):
+            ok, msg = PortfolioStateManager.execute_sell_all_and_lock_cash(reason=f"Chủ tịch ra lệnh trực tiếp trên Telegram: '{text}'")
+            return msg
+
+        # 2. Lệnh Bán cụ thể: "đã bán 200 hpg giá 21.8" hoặc "ban 200 hpg 21.8"
+        sell_m = re.search(r"(?:đã bán|da ban|bán|ban)\s+(\d+)\s+([a-zA-Z]{3})\s+(?:giá|gia)?\s*([\d\.,]+)", clean_text)
+        if sell_m:
+            sh = int(sell_m.group(1))
+            sym = sell_m.group(2).upper()
+            pr_raw = sell_m.group(3).replace(",", "").replace(".", "")
+            pr = float(pr_raw) if float(pr_raw) > 1000 else float(pr_raw) * 1000.0
+            ok, msg = PortfolioStateManager.execute_sell_order(sym, sh, pr, reason=f"Chủ tịch ra lệnh bán trên Telegram")
+            return msg
+
+        # 3. Lệnh Mua cụ thể: "đã mua 200 pvt giá 20.7" hoặc "mua 200 pvt 20.7"
+        buy_m = re.search(r"(?:đã mua|da mua|mua)\s+(\d+)\s+([a-zA-Z]{3})\s+(?:giá|gia)?\s*([\d\.,]+)", clean_text)
+        if buy_m:
+            sh = int(buy_m.group(1))
+            sym = buy_m.group(2).upper()
+            pr_raw = buy_m.group(3).replace(",", "").replace(".", "")
+            pr = float(pr_raw) if float(pr_raw) > 1000 else float(pr_raw) * 1000.0
+            ok, msg = PortfolioStateManager.execute_buy_order(sym, sh, pr, reason=f"Chủ tịch ra lệnh mua trên Telegram")
+            return msg
+    except Exception as e:
+        print(f"[!] Lỗi bộ xử lý giao dịch tự động: {e}")
     
     # 0. Tranh biện đối kháng tam giác (Bước 2)
     if any(k in clean_text for k in ["tranh biện", "tranh bien", "đối kháng", "doi khang", "phan bien", "phản biện", "red team", "bull bear", "bear bull"]):
