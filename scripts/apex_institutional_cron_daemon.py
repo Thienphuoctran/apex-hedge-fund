@@ -466,6 +466,13 @@ def execute_milestone(milestone_id: str) -> bool:
         # ==============================================================================
         elif milestone_id == "09:00":
             _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=45)
+            # Master CIO James: Tuần tra TCBS Phiên Sáng (Bảng giá, Vốn, Lệnh, Lãi/Lỗ)
+            try:
+                from scripts.tcinvest_vault_watcher import TCBSVaultWatcher
+                watcher = TCBSVaultWatcher()
+                watcher.run_session_patrol_audit(session_name="morning", dispatch_telegram=(not DRY_RUN_MODE))
+            except Exception as e:
+                log_event(f"[!] Warning James morning patrol: {e}")
             snap = _get_live_portfolio_snapshot()
             hpg, tcb, mbb = snap["items"]["HPG"], snap["items"]["TCB"], snap["items"]["MBB"]
 
@@ -645,6 +652,14 @@ def execute_milestone(milestone_id: str) -> bool:
             if not DRY_RUN_MODE:
                 eod_args.append("--force")
             _run_py_script("scripts/eod_master_audit_engine.py", args=eod_args, timeout=60)
+
+            # Master CIO James: Tuần tra TCBS Phiên Chiều & Khóa Lãi/Lỗ Cuối Ngày
+            try:
+                from scripts.tcinvest_vault_watcher import TCBSVaultWatcher
+                watcher = TCBSVaultWatcher()
+                watcher.run_session_patrol_audit(session_name="afternoon", dispatch_telegram=(not DRY_RUN_MODE))
+            except Exception as e:
+                log_event(f"[!] Warning James afternoon patrol: {e}")
 
             snap = _get_live_portfolio_snapshot()
             vn_learn = load_json_safe(BASE_DIR / "VN_Market" / "05_Learning_And_Evolution" / "vn_learning_telemetry.json")

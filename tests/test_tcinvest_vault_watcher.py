@@ -35,19 +35,29 @@ class TestTCBSVaultWatcher(unittest.TestCase):
                 with self.assertRaises(SecurityViolationError):
                     assert_read_only_safety(url)
 
+    def test_security_interceptor_blocks_write_http_methods(self):
+        """Kiểm thử chặn tuyệt đối các method POST, PUT, DELETE, PATCH."""
+        for method in ["POST", "PUT", "DELETE", "PATCH"]:
+            with self.subTest(method=method):
+                with self.assertRaises(SecurityViolationError):
+                    assert_read_only_safety("https://openapi.tcbs.com.vn/v1/some_endpoint", method=method)
+
     def test_safe_read_actions_allowed(self):
         """Đảm bảo các thao tác đọc an toàn không bị chặn."""
         safe_urls = [
             "https://openapi.tcbs.com.vn/aion/v1/accounts/105C307855/cashInvestments",
             "https://openapi.tcbs.com.vn/aion/v1/accounts/105C307855/se",
+            "https://openapi.tcbs.com.vn/aion/v1/accounts/105C307855/orders",
             "fetch_cash_balance",
             "fetch_portfolio_holdings",
-            "fetch_realtime_board"
+            "fetch_realtime_board",
+            "fetch_orders_status_history",
+            "fetch_pnl_realtime"
         ]
         for url in safe_urls:
             with self.subTest(url=url):
                 try:
-                    assert_read_only_safety(url)
+                    assert_read_only_safety(url, method="GET")
                 except SecurityViolationError:
                     self.fail(f"Safe URL {url} should not trigger SecurityViolationError")
 
@@ -67,6 +77,19 @@ class TestTCBSVaultWatcher(unittest.TestCase):
         quotes = board.get("quotes", {})
         self.assertIn("HPG", quotes)
         self.assertGreater(quotes["HPG"]["price"], 0)
+
+    def test_pnl_and_session_patrol_audit(self):
+        """Kiểm tra báo cáo tuần tra phiên của Master CIO James."""
+        watcher = TCBSVaultWatcher()
+        pnl = watcher.fetch_pnl_realtime()
+        self.assertIn("total_nav_vnd", pnl)
+        self.assertIn("cash_balance_vnd", pnl)
+        self.assertGreaterEqual(pnl["total_nav_vnd"], 20000000.0)
+
+        report = watcher.run_session_patrol_audit("morning", dispatch_telegram=False)
+        self.assertIn("BÁO CÁO TUẦN TRA PHIÊN SÁNG", report)
+        self.assertIn("Chủ tịch Phước Trần", report)
+        self.assertIn("105C307855", report)
 
 
 if __name__ == "__main__":
