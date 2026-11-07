@@ -485,12 +485,14 @@ def process_user_query(text: str) -> str:
             holdings = watcher.fetch_portfolio_holdings()
             
             cash_vnd = float(cash_info.get("cash_balance_vnd", 20167119.0))
-            is_live = cash_info.get("status") == "LIVE_TCBS_SYNCED"
-            auth_badge = "🟢 *ĐÃ KẾT NỐI TRỰC TIẾP TCBS (LIVE)*" if is_live else "🟡 *CHẾ ĐỘ STANDBY AN TOÀN (SSOT)*"
+            is_live = "LIVE" in cash_info.get("status", "")
+            auth_badge = "🟢 *ĐÃ KẾT NỐI TCBS MCP (AI CONNECTOR)*" if is_live else "🟡 *CHẾ ĐỘ STANDBY AN TOÀN (SSOT)*"
+            mcp_url = cash_info.get("mcp_url", "https://mcp.tcbs.com.vn/mcp/tcinvest/")
             
             lines = [
                 "🏛️ *[BÁO CÁO TÀI SẢN & VỐN TCBS TCINVEST — APEX FUND]*",
                 f"👤 *Chủ tài khoản:* Chủ tịch Phước Trần (`105C307855`)",
+                f"🔗 *Cổng TCBS MCP:* `{mcp_url}`",
                 "🔐 *Bảo mật:* Chế độ Chỉ Đọc (Read-Only Air-Gap) — Cấm rút tiền/chuyển khoản 100%",
                 f"📡 *Trạng thái:* {auth_badge}",
                 "━━━━━━━━━━━━━━━━━━━",
