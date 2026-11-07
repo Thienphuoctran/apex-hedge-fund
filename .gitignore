@@ -22,8 +22,16 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# Virtual environments
+# Virtual environments & Secrets
 .env
+.env*
+!.env.tcbs.example
+*.enc
+*.secret
+*.key
+*.token
+config/tcbs_*.json
+config/*.secret*
 .venv
 env/
 venv/

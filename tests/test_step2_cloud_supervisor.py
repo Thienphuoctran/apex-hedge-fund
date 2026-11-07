@@ -91,7 +91,7 @@ class TestStep2CloudSupervisor(unittest.TestCase):
         sub_env = os.environ.copy()
         sub_env["PYTHONIOENCODING"] = "utf-8"
 
-        res = subprocess.run(cmd, cwd=str(BASE_DIR), env=sub_env, capture_output=True, text=True, timeout=30)
+        res = subprocess.run(cmd, cwd=str(BASE_DIR), env=sub_env, capture_output=True, encoding="utf-8", errors="replace", timeout=30)
         print("\n--- TEST RUN OUTPUT ---")
         print(res.stdout)
         if res.stderr:
@@ -116,7 +116,7 @@ class TestStep2CloudSupervisor(unittest.TestCase):
         sub_env = os.environ.copy()
         sub_env["PYTHONIOENCODING"] = "utf-8"
 
-        res = subprocess.run(cmd, cwd=str(BASE_DIR), env=sub_env, capture_output=True, text=True, timeout=10)
+        res = subprocess.run(cmd, cwd=str(BASE_DIR), env=sub_env, capture_output=True, encoding="utf-8", errors="replace", timeout=10)
         self.assertEqual(res.returncode, 0)
         self.assertIn("BẢNG ĐIỀU KHIỂN GIÁM SÁT APEX CLOUD SUPERVISOR 24/7", res.stdout)
         self.assertIn("Apex Institutional 17-Milestones", res.stdout)
