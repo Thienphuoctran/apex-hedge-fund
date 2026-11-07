@@ -1336,6 +1336,36 @@
     "Pending_Manual_Actions_For_Chairman": [
       "1. TRONG NGÀY NGHỈ CUỐI TUẦN (HÔM NAY): Chủ tịch KHÔNG CẦN thao tác thủ công bất kỳ việc gì. Tài khoản TCBS 105C307855 đang an toàn tuyệt đối với 100% Tiền mặt (20,167,119 ₫) và 0 CP rủi ro.",
       "2. KHI MỞ CỬA PHIÊN THỨ HAI (09/11/2026): Do cơ chế bảo mật Read-Only Air-Gap bảo vệ tiền của Chủ tịch 100%, hệ thống AI KHÔNG tự ý đặt lệnh mua/bán vào tài khoản TCBS. Khi Victor & Minh Quân báo tín hiệu điểm mua chuẩn trong Khung Giờ Vàng (14h00 - 14h25) qua Telegram, Chủ tịch chỉ cần mở app TCInvest bấm đặt lệnh theo đúng Mã + Số lượng lô chẵn 100 CP + Giá Limit đã tính sẵn, sau đó nhắn xác nhận lên Telegram (ví dụ: 'Đã mua 200 MSH giá 35.2') để hệ thống tự động ghi sổ và canh chốt lời/cắt lỗ."
-    ]
-  }
+    ],
+    "upcoming_meeting_sunday_20h": {
+      "task_id": "APEX_SUMMIT_20261108_2000",
+      "scheduled_time": "2026-11-08 20:00:00",
+      "title": "Đại Hội Nghị 12 Phòng Ban Toàn Doanh Nghiệp (Chủ Nhật 08/11/2026)",
+      "calendar_event_id": "rq2teifjtk08o84th59uojfm4g",
+      "calendar_link": "https://www.google.com/calendar/event?eid=cnEydGVpZmp0azA4bzg0dGg1OXVvamZtNGcgcGh1b2N0OTk4QG0",
+      "status": "SCHEDULED",
+      "agenda": [
+        "Rà soát, nghiên cứu và phân tích toàn bộ tình hình kinh tế thế giới & địa chính trị.",
+        "Phân tích các chuyển dịch vĩ mô tác động tới TTCK VN.",
+        "Quét phổ rộng 145+ cổ phiếu (Mid-cap & Small-cap), tìm kiếm các cơ hội bứt phá tiềm năng tối ưu lợi nhuận.",
+        "Giải trình câu hỏi: Có nên lao vào thị trường vào Thứ Hai khi đang đỏ lửa? Chiến lược tác chiến sắc sảo."
+      ]
+    }
+  },
+  "upcoming_tasks_schedule": [
+    {
+      "task_id": "APEX_SUMMIT_20261108_2000",
+      "scheduled_time": "2026-11-08 20:00:00",
+      "title": "Đại Hội Nghị 12 Phòng Ban Toàn Doanh Nghiệp (Chủ Nhật 08/11/2026)",
+      "calendar_event_id": "rq2teifjtk08o84th59uojfm4g",
+      "calendar_link": "https://www.google.com/calendar/event?eid=cnEydGVpZmp0azA4bzg0dGg1OXVvamZtNGcgcGh1b2N0OTk4QG0",
+      "status": "SCHEDULED",
+      "agenda": [
+        "Rà soát, nghiên cứu và phân tích toàn bộ tình hình kinh tế thế giới & địa chính trị.",
+        "Phân tích các chuyển dịch vĩ mô tác động tới TTCK VN.",
+        "Quét phổ rộng 145+ cổ phiếu (Mid-cap & Small-cap), tìm kiếm các cơ hội bứt phá tiềm năng tối ưu lợi nhuận.",
+        "Giải trình câu hỏi: Có nên lao vào thị trường vào Thứ Hai khi đang đỏ lửa? Chiến lược tác chiến sắc sảo."
+      ]
+    }
+  ]
 }
