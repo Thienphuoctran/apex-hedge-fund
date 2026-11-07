@@ -1,5 +1,22 @@
 [
   {
+    "task_id": "TASK-20261107-204519",
+    "created_at": "2026-11-07T20:45:19.882998",
+    "command_raw": "/meo wyckoff",
+    "source": "TELEGRAM_COPILOT",
+    "assigned_department": "MASTER_CIO_JAMES_HQ",
+    "assigned_department_name": "Bộ Chỉ Huy Tối Cao — Tổng Tư Lệnh Master CIO James",
+    "assigned_officer": "James",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "SUPREME_CIO_DIRECTIVE",
+    "logs": [],
+    "execution_result": {
+      "summary": "Đã rà soát trạng thái danh mục hiện tại (NAV: `20,167,119 ₫`, Tiền mặt: `20,167,119 ₫`)."
+    }
+  },
+  {
     "task_id": "TASK-20261107-141037",
     "created_at": "2026-11-07T14:10:37.339215",
     "command_raw": "/tcbs",

@@ -19,6 +19,7 @@ import os
 import sys
 import json
 import datetime
+import re
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
@@ -212,6 +213,68 @@ class ApexPersistentMemoryCore:
         }
 
 
+    @staticmethod
+    def load_heuristics_database() -> Dict[str, Any]:
+        """Tải 105 Tinh hoa, Mẹo & Bài học Đầu tư Huyền thoại từ Database máy đọc được."""
+        db_path = DATA_DIR / "100_institutional_heuristics_database.json"
+        if db_path.exists():
+            try:
+                with open(db_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return {"total_heuristics": 0, "heuristics": []}
+
+    @staticmethod
+    def query_heuristics(query: str = "", category: str = "", limit: int = 5) -> List[Dict[str, Any]]:
+        """Tìm kiếm mẹo và bài học theo từ khóa hoặc danh mục chuyên khoa."""
+        data = ApexPersistentMemoryCore.load_heuristics_database()
+        heuristics = data.get("heuristics", [])
+        results = []
+        q = query.lower().strip()
+        cat = category.upper().strip()
+        for h in heuristics:
+            match = True
+            if cat and h.get("category_code") != cat:
+                match = False
+            if q and match:
+                full_text = (h.get("title", "") + " " + h.get("author", "") + " " + h.get("core_principle", "") + " " + h.get("apex_heuristic", "")).lower()
+                # Tách từ khóa và loại bỏ các từ dừng tiếng Việt phổ biến
+                stopwords = {"của", "và", "cho", "tôi", "các", "những", "về", "là", "có", "được", "bài", "học", "mẹo", "hãy"}
+                tokens = [w for w in re.findall(r"\w+", q) if w not in stopwords]
+                if tokens:
+                    if not any(token in full_text for token in tokens):
+                        match = False
+                elif q not in full_text:
+                    match = False
+            if match:
+                results.append(h)
+                if len(results) >= limit:
+                    break
+        return results
+
+    @staticmethod
+    def get_daily_guiding_heuristic(date_str: str = None) -> Dict[str, Any]:
+        """Trả về bài học chỉ đạo chiến lược ngày xoay vòng theo ngày cho Alex, Minh Quân và Huấn luyện viên."""
+        data = ApexPersistentMemoryCore.load_heuristics_database()
+        heuristics = data.get("heuristics", [])
+        if not heuristics:
+            return {}
+        if not date_str:
+            date_str = datetime.date.today().strftime("%Y-%m-%d")
+        try:
+            day_num = int(date_str.replace("-", ""))
+        except Exception:
+            day_num = 1
+        idx = day_num % len(heuristics)
+        return heuristics[idx]
+
+
 if __name__ == "__main__":
     mem = ApexPersistentMemoryCore.load_continuity_ledger()
     print(f"[MEMORY CORE V4.0] Loaded Continuity Ledger. Last updated: {mem.get('last_updated')}")
+    heuristics_db = ApexPersistentMemoryCore.load_heuristics_database()
+    print(f"[HEURISTICS CORE V9.0] Loaded {heuristics_db.get('total_heuristics', 0)} Legendary Heuristics.")
+    sample = ApexPersistentMemoryCore.get_daily_guiding_heuristic()
+    if sample:
+        print(f"[DAILY GUIDING HEURISTIC] Bài {sample.get('id')}: {sample.get('title')} ({sample.get('author')})")

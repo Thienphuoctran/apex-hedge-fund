@@ -355,6 +355,26 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
             return
 
+        elif path == "/api/heuristics":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_persistent_memory_core import ApexPersistentMemoryCore
+                query_str = query.get("q", [""])[0]
+                category_str = query.get("cat", [""])[0]
+                if query_str or category_str:
+                    res = ApexPersistentMemoryCore.query_heuristics(query=query_str, category=category_str, limit=50)
+                    self.wfile.write(json.dumps({"count": len(res), "heuristics": res}, ensure_ascii=False).encode("utf-8"))
+                else:
+                    db = ApexPersistentMemoryCore.load_heuristics_database()
+                    self.wfile.write(json.dumps(db, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            return
+
         else:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")

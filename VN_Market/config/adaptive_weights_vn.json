@@ -35,13 +35,29 @@
   "max_single_stock_risk": 0.02,
   "t_plus_buffer_days": 2.5,
   "learning_cycle_days": 5,
-  "last_updated": "2026-11-03",
+  "last_updated": "2026-11-07",
   "tuning_audit": {
-    "updated_at": "2026-11-03 19:55:48",
+    "updated_at": "2026-11-07 21:00:00",
     "bctc_hit_rate": 100.0,
     "reasoning": [
       "Ban 2 (BCTC & Dòng tiền thật OCF) duy trì Hit Rate 100% trên 3 mã HPG, TCB, MBB -> Thưởng quyền biểu quyết lên 35.0%.",
-      "Ban 1 (Vĩ mô chung) điều chỉnh về 15.0% để ưu tiên sức mạnh nội tại doanh nghiệp."
+      "Ban 1 (Vĩ mô chung) điều chỉnh về 15.0% để ưu tiên sức mạnh nội tại doanh nghiệp.",
+      "Đồng bộ hóa toàn diện 105 Bài học, Mẹo & Tinh hoa Đầu tư Huyền thoại vào thuật toán chấm điểm và quản trị rủi ro của Quỹ Apex trước tuần giao dịch 09/11/2026."
     ]
+  },
+  "heuristics_engine": {
+    "status": "ACTIVE",
+    "knowledge_version": "V9.0_105_LEGENDARY_COMPENDIUM",
+    "total_heuristics": 105,
+    "calibrated_at": "2026-11-07T21:00:00+07:00",
+    "enforced_rules": {
+      "RULE_01_LOSS_AVOIDANCE": "Stop Loss 2xATR <= 7.5% enforced by Ban 4",
+      "RULE_16_OCF_OVER_LNST": "OCF/LNST >= 1.0 minimum threshold required",
+      "RULE_18_BENEISH_MSCORE": "Beneish M-Score <= -1.78 to eliminate earnings manipulation",
+      "RULE_32_MOS_GRAHAM": "Margin of Safety >= 20% below intrinsic value",
+      "RULE_59_VCP_MINERVINI": "Volatility Contraction with volume dry-up required before breakout",
+      "RULE_73_ATR_RISK_PARITY": "Position size derived from 1.5% NAV risk budget",
+      "RULE_95_GOLDEN_HOUR": "Execution strictly in 14h00 - 14h25 window"
+    }
   }
 }

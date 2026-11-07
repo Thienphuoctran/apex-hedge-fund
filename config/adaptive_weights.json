@@ -1,5 +1,5 @@
 {
-  "calibrated_at": "2026-11-05T00:32:54.504190+00:00",
+  "calibrated_at": "2026-11-07T21:00:00+07:00",
   "market_regime": "Standard Growth",
   "scoring_weights": {
     "macro_sector_fit": 25,
@@ -21,5 +21,12 @@
     "realized_alpha_1d_pct": -0.23,
     "realized_alpha_5d_pct": 2.07,
     "realized_alpha_20d_pct": 5.6
+  },
+  "heuristics_engine": {
+    "status": "ACTIVE",
+    "knowledge_version": "V9.0_105_LEGENDARY_COMPENDIUM",
+    "total_heuristics": 105,
+    "calibrated_at": "2026-11-07T21:00:00+07:00",
+    "integrated_masters_count": 15
   }
 }

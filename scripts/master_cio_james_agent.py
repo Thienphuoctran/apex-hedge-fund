@@ -97,7 +97,33 @@ def handle_james_chat(user_text: str) -> str:
     text_clean = user_text.strip()
     text_lower = text_clean.lower()
 
-    # 0. CHUYỂN TIẾP TRỰC TIẾP CÁC LỆNH HỆ THỐNG (/tcbs, /baomat, /danhmuc, mua/bán...) SANG BỘ XỬ LÝ TRUNG TÂM
+    # 0. TRA CỨU BÁCH KHOA TOÀN THƯ 105 BÀI HỌC & MẸO ĐẦU TƯ HUYỀN THOẠI
+    heuristic_triggers = [
+        "/heuristics", "/meo", "/kinhnghiem", "bài học", "mẹo đầu tư", "tinh hoa", "kinh nghiệm", "mẹo",
+        "buffett", "munger", "peter lynch", "soros", "druckenmiller", "minervini",
+        "livermore", "105 bài học", "100 bài học", "triết lý đầu tư", "t+2.5", "wyckoff", "vcp", "canslim"
+    ]
+    if any(k in text_lower for k in heuristic_triggers):
+        from scripts.apex_persistent_memory_core import ApexPersistentMemoryCore
+        search_query = text_clean
+        for kw in ["/heuristics", "/meo", "/kinhnghiem", "bài học", "mẹo", "tìm", "cho tôi"]:
+            search_query = re.sub(re.escape(kw), "", search_query, flags=re.IGNORECASE).strip()
+        res = ApexPersistentMemoryCore.query_heuristics(search_query, limit=3)
+        if not res:
+            res = [ApexPersistentMemoryCore.get_daily_guiding_heuristic()]
+        reply_lines = [
+            "🧠 *[BÁCH KHOA TOÀN THƯ 105 TINH HOA & MẸO ĐẦU TƯ HUYỀN THOẠI]*",
+            "━━━━━━━━━━━━━━━━━━━"
+        ]
+        for h in res:
+            reply_lines.append(f"📌 *Bài {h['id']}: {h['title']}*")
+            reply_lines.append(f"• *Bậc thầy*: _{h['author']}_")
+            reply_lines.append(f"• *Nguyên lý*: {h['core_principle']}")
+            reply_lines.append(f"• *Ứng dụng Apex*: {h['apex_heuristic']}\n")
+        reply_lines.append("📖 _Chủ tịch có thể tra cứu toàn bộ 105 bài học tại file `05_Learning_And_Evolution/100_LEGENDARY_INVESTOR_HEURISTICS_MASTER_COMPENDIUM.md` hoặc qua API `/api/heuristics`._")
+        return "\n".join(reply_lines)
+
+    # 0.1 CHUYỂN TIẾP TRỰC TIẾP CÁC LỆNH HỆ THỐNG (/tcbs, /baomat, /danhmuc, mua/bán...) SANG BỘ XỬ LÝ TRUNG TÂM
     direct_commands = [
         "/tcbs", "tcbs", "tcinvest", "tài khoản tcbs", "số dư tcbs", "bảng giá tcbs",
         "/baomat", "bảo mật", "khiên bảo mật", "chống hack", "kiểm toán bảo mật",
@@ -111,6 +137,8 @@ def handle_james_chat(user_text: str) -> str:
     if any(p in text_lower for p in ["đã bán", "bán hết", "bán sạch", "tất toán", "chốt hết", "xả hết", "đã mua", "mua thêm", "vừa mua", "khớp mua"]):
         from scripts.telegram_interactive_copilot import process_user_query
         return process_user_query(text_clean)
+
+
 
     # 1. NHẬN DIỆN CÁC CÂU LỆNH HÀNH ĐỘNG PHÂN CÔNG PHÒNG BAN (Dùng regex word-boundary chuẩn xác)
     action_patterns = [
