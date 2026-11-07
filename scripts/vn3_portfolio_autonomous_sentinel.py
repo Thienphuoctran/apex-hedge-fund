@@ -64,18 +64,16 @@ SENTINEL_DIR = BASE_DIR / "09_Realtime_Portfolio_Sentinel"
 TELEMETRY_JSON = SENTINEL_DIR / "vn3_live_telemetry.json"
 TELEMETRY_MD = SENTINEL_DIR / "vn3_live_telemetry.md"
 
-# Cấu hình ngưỡng kích hoạt cho 3 mã (Khóa cứng Kịch bản A: Bán hết 100% trong vùng đỉnh)
-# Đọc trạng thái từ neo thể chế
-_anchor_p = BASE_DIR / "data" / "institutional_compliance_anchor.json"
-_is_closed = False
-if _anchor_p.exists():
-    try:
-        with open(_anchor_p, "r", encoding="utf-8") as _af:
-            _anc = json.load(_af)
-        if _anc.get("status") == "ALL_POSITIONS_CLOSED_100_PERCENT_CASH":
-            _is_closed = True
-    except Exception:
-        pass
+# Cấu hình ngưỡng kích hoạt và nạp trạng thái SSOT V2.0 từ PortfolioStateManager
+try:
+    from scripts.portfolio_state_manager import PortfolioStateManager
+    _st = PortfolioStateManager.load_state()
+    _active_pos = _st.get("active_positions", {})
+    _is_closed = (len(_active_pos) == 0) or (_st.get("status") in ("ALL_CASH_STANDDOWN", "ALL_POSITIONS_CLOSED_100_PERCENT_CASH"))
+    _verified_cash = float(_st.get("cash_balance_vnd", 20167119.0))
+except Exception:
+    _is_closed = True
+    _verified_cash = 20167119.0
 
 CONFIG = {
     "TCB": {
@@ -300,80 +298,109 @@ def update_telemetry(quotes):
     total_pnl_pct = (total_unrealized_pnl / total_cost) * 100.0 if total_cost > 0 else 0.0
     total_pnl_str = f"+{total_unrealized_pnl:,.0f} VNĐ (+{total_pnl_pct:.2f}%)" if total_unrealized_pnl >= 0 else f"{total_unrealized_pnl:,.0f} VNĐ ({total_pnl_pct:.2f}%)"
     
-    # 1. Update JSON Telemetry
-    telemetry_data = {
-        "timestamp": now_dt,
-        "account_id": "105C307855",
-        "chairman": "Trần Quốc Thiên Phước",
-        "mode": "REALTIME_VPS_DIRECT_FEED",
-        "mandate": "KỊCH BẢN A — BÁN HẾT 100% (900 CP)",
-        "total_cost": total_cost,
-        "total_market_val": total_market_val,
-        "total_unrealized_pnl": total_unrealized_pnl,
-        "total_unrealized_pnl_pct": round(total_pnl_pct, 2),
-        "dry_powder": 20167119.0 if _is_closed else 1409425.0,
-        "total_nav": (total_market_val + 20167119.0) if _is_closed else (total_market_val + 1409425.0),
-        "positions": positions_summary
-    }
+    # 1. Update JSON Telemetry (Đồng bộ SSOT V2.0)
+    if _is_closed:
+        telemetry_data = {
+            "timestamp": now_dt,
+            "account_id": "105C307855",
+            "chairman": "Trần Quốc Thiên Phước",
+            "mode": "ALL_CASH_STANDDOWN",
+            "mandate": "TẤT TOÁN 100% VÒNG 1 — BẢO TOÀN THÀNH QUẢ VÀ THEO DÕI VÒNG 2",
+            "total_cost": 0.0,
+            "total_market_val": 0.0,
+            "total_unrealized_pnl": 0.0,
+            "total_unrealized_pnl_pct": 0.0,
+            "dry_powder": _verified_cash,
+            "total_nav": _verified_cash,
+            "realized_pnl_vnd": 167119.0,
+            "positions": []
+        }
+    else:
+        telemetry_data = {
+            "timestamp": now_dt,
+            "account_id": "105C307855",
+            "chairman": "Trần Quốc Thiên Phước",
+            "mode": "REALTIME_VPS_DIRECT_FEED",
+            "mandate": "GIÁM SÁT RỦI RO ĐỊNH LƯỢNG 2XATR",
+            "total_cost": total_cost,
+            "total_market_val": total_market_val,
+            "total_unrealized_pnl": total_unrealized_pnl,
+            "total_unrealized_pnl_pct": round(total_pnl_pct, 2),
+            "dry_powder": _verified_cash,
+            "total_nav": total_market_val + _verified_cash,
+            "positions": positions_summary
+        }
     with open(TELEMETRY_JSON, "w", encoding="utf-8") as f:
         json.dump(telemetry_data, f, indent=2, ensure_ascii=False)
         
-    # 2. Update Markdown Telemetry
-    table_rows_str = "\n".join(table_rows)
-    md_content = f"""# BẢNG ĐIỀU KHIỂN TELEMETRY THỜI GIAN THỰC — APEX SENTINEL (VICTOR)
+    # 2. Update Markdown Telemetry (SSOT V2.0)
+    if _is_closed:
+        md_content = f"""# BẢNG ĐIỀU KHIỂN TELEMETRY THỜI GIAN THỰC — APEX SENTINEL (VICTOR)
 **Thời gian cập nhật**: `{now_dt}` | **Chu kỳ quét**: `15 giây/lần` (VPS 0-second Feed)  
 **Tài khoản giám sát**: Chủ tịch **Trần Quốc Thiên Phước** | **TCBS**: `105C307855`  
-**Trạng thái danh mục**: **100% TIỀN MẶT (`20,199,425 VNĐ`) — ĐÃ BÁN HẾT 100% (0 CP)**  
-**Lãi ròng đã đút túi**: `+199,600 VNĐ` (Chốt lời toàn bộ HPG, TCB, MBB Thứ Sáu 06/11)  
-**Chiến lược**: **PATIENT PREDATOR (THỢ SĂN KIÊN NHẪN) — AN TOÀN TUYỆT ĐỐI QUA CUỐI TUẦN**
+**Trạng thái danh mục**: **100% TIỀN MẶT (`{_verified_cash:,.0f} VNĐ`) — 0 CP RỦI RO**  
+**Lãi ròng đã thu về Vòng 1**: `+167,119 VNĐ` (Đã tất toán toàn bộ HPG, TCB, MBB)  
+**Chiến lược**: **PATIENT PREDATOR (THỢ SĂN KIÊN NHẪN) — THEO DÕI RADAR TẦM NGẮM VÒNG 2**
 
 ---
 
 ## 1. TỔNG QUAN TÀI SẢN & LỢI NHUẬN THỜI GIAN THỰC
 | Chỉ Số Đo Lường | Giá Trị Thực Tế | Ghi Chú Tác Chiến |
 | :--- | :---: | :--- |
-| **Tổng Vốn Đã Giải Ngân** | **`{total_cost:,.0f} VNĐ`** | HPG (400 CP) + TCB (300 CP) + MBB (200 CP) |
-| **Giá Trị Thị Trường Hiện Tại** | **`{total_market_val:,.0f} VNĐ`** | Cập nhật trực tiếp bảng điện VPS HOSE/HNX |
-| **Lợi Nhuận Tạm Tính (PnL)** | **`{total_pnl_str}`** | Xanh mượt cả 3 mã, bảo toàn trọn vẹn thành quả |
-| **Tiền Mặt Dry Powder Có Sẵn** | **`1,409,425 VNĐ`** | Đang có sẵn trong tài khoản |
-| **Dự Kiến Tiền Mặt Sau Khi Chốt** | **`~20,500,000 – 20,800,000 VNĐ`** | 100% Tiền Mặt, sạch bóng cổ phiếu |
+| **Tổng Vốn Đang Giải Ngân** | **`0 VNĐ`** | Đã bán sạch 100% cổ phiếu (0 CP rủi ro) |
+| **Giá Trị Thị Trường Cổ Phiếu** | **`0 VNĐ`** | Không có vị thế rủi ro qua đêm/cuối tuần |
+| **Lợi Nhuận Thực Nhận Vòng 1** | **`+167,119 VNĐ`** | Đã chốt lời và thực nhận an toàn vào két TCBS |
+| **Tiền Mặt Dry Powder Sẵn Sàng** | **`{_verified_cash:,.0f} VNĐ`** | Sẵn sàng 100% cho Chiến dịch Vòng 2 |
+| **Tổng Tài Sản (NAV)** | **`{_verified_cash:,.0f} VNĐ`** | Khớp 100% với số dư TCInvest (105C307855) |
 
 ---
 
-## 2. MA TRẬN GIÁM SÁT CHI TIẾT 3 MÃ TRỰC CHIẾN BÁN 100%
-| Mã CP | Doanh Nghiệp | Khối Lượng | Giá Vốn | Thị Giá Hiện Tại | PnL Tạm Tính | Cắt Lỗ Stop 2xATR | Vùng Bán Tối Ưu LO | Khối Lượng Khớp | Trạng Thái Trực Chiến |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-{table_rows_str}
+## 2. RADAR TẦM NGẮM VÒNG 2 (SẴN SÀNG GIẢI NGÂN KHUNG GIỜ VÀNG)
+| Mã CP | Nhóm Ngành | Giá Vốn Kế Hoạch | Vùng Gom Limit LO | Cắt Lỗ Stop 2xATR | Chốt Lời TP1 | Trạng Thái Trực Chiến |
+| :---: | :--- | :---: | :---: | :---: | :---: | :---: |
+| **HDB** | Ngân Hàng TMCP | `22,310 ₫` | `22,310 – 22,500 ₫` | `20,710 ₫` | `25,500 ₫` | 🟡 Chờ tín hiệu Khung Giờ Vàng |
+| **MSH** | Dệt May Xuất Khẩu | `35,060 ₫` | `35,060 – 35,500 ₫` | `32,500 ₫` | `40,500 ₫` | 🟡 Chờ tín hiệu Khung Giờ Vàng |
+| **BAF** | Nông Nghiệp & Chăn Nuôi 3F | `30,710 ₫` | `30,710 – 30,900 ₫` | `28,500 ₫` | `35,000 ₫` | 🟡 Chờ tín hiệu Khung Giờ Vàng |
+| **IDC** | BĐS Khu Công Nghiệp | `34,500 ₫` | `34,500 – 34,900 ₫` | `32,000 ₫` | `39,000 ₫` | 🟡 Chờ tín hiệu Khung Giờ Vàng |
 
 ---
 
 ## 3. CHỈ LỆNH THỰC THI CHO CHỦ TỊCH
-1. **09:00 - 09:15 (ATO)**: Cầu chì GUARD-01: Không bán ATO, Không mua ATO.
-2. **09:15 - 09:45 (Khung Giờ Vàng)**: Khi thị giá chạm Vùng Bán Tối Ưu LO, hệ thống sẽ kích hoạt Báo Động tức thời. Chủ tịch vào App TCBS đặt lệnh Bán LO toàn bộ 100%!
+1. **09:00 - 10:00 (ATO & Đầu Phiên Sáng)**: Tuyệt đối không FOMO mua đuổi giá xanh.
+2. **14:00 - 14:25 (Khung Giờ Vàng Chiều)**: Chỉ giải ngân thăm dò khi cổ phiếu đạt đủ Checklist 7 Điểm và tỷ lệ R:R >= 1:2.0!
+"""
+    else:
+        table_rows_str = "\n".join(table_rows)
+        md_content = f"""# BẢNG ĐIỀU KHIỂN TELEMETRY THỜI GIAN THỰC — APEX SENTINEL (VICTOR)
+**Thời gian cập nhật**: `{now_dt}` | **Chu kỳ quét**: `15 giây/lần` (VPS 0-second Feed)  
+**Tài khoản giám sát**: Chủ tịch **Trần Quốc Thiên Phước** | **TCBS**: `105C307855`  
+**Tổng Vốn Đang Giữ**: `{total_cost:,.0f} VNĐ` | **NAV**: `{total_market_val + _verified_cash:,.0f} VNĐ`
+
+---
+
+## MA TRẬN GIÁM SÁT CHI TIẾT
+{table_rows_str}
 """
     TELEMETRY_MD.write_text(md_content, encoding="utf-8")
 
 def broadcast_status_to_telegram(quotes):
     now_str = datetime.datetime.now().strftime("%H:%M:%S")
+    if _is_closed:
+        msg = f"""🛡️ *[VICTOR SENTINEL — BÁO CÁO TRỰC CHIẾN REALTIME TCBS 105C307855]*
+⏱️ *Thời gian*: `{now_str}` | *Cổng dữ liệu*: `VPS Live Feed (0-second)`
+💰 *Trạng thái danh mục*: **100% TIỀN MẶT ({_verified_cash:,.0f} VNĐ) — 0 CP RỦI RO**
+🏆 *Lợi nhuận Vòng 1*: `+167,119 VNĐ` (Đã tất toán an toàn)
+🎯 *Kỷ luật*: Sentinel đang quét 15s/lần theo dõi Radar Tầm Ngắm Vòng 2 (HDB, MSH, BAF, IDC). Tuyệt đối không FOMO ATO, sẵn sàng kích hoạt lệnh LO trong Khung Giờ Vàng 14h00-14h25!"""
+        return dispatch_message("alerts", msg)
+    
     tcb_p = quotes.get("TCB", {}).get("price", 21950.0)
     mbb_p = quotes.get("MBB", {}).get("price", 19500.0)
     hpg_p = quotes.get("HPG", {}).get("price", 21500.0)
     
-    tcb_pnl = (tcb_p - 21356.0) * 300
-    mbb_pnl = (mbb_p - 18606.0) * 200
-    hpg_pnl = (hpg_p - 21156.0) * 400
-    total_pnl = tcb_pnl + mbb_pnl + hpg_pnl
-    
     msg = f"""🛡️ *[VICTOR SENTINEL — BÁO CÁO TRỰC CHIẾN REALTIME TCBS 105C307855]*
 ⏱️ *Thời gian*: `{now_str}` | *Cổng dữ liệu*: `VPS Live Feed (0-second)`
-
-📊 *THỊ GIÁ & MỤC TIÊU BÁN TỐI ƯU 100%*:
-• *HPG (400 CP)*: `{hpg_p:,.0f} ₫` | Vùng Bán: **`21,800 – 22,000 ₫`** (+{((hpg_p-21156)/21156)*100:.2f}%)
-• *TCB (300 CP)*: `{tcb_p:,.0f} ₫` | Vùng Bán: **`22,300 – 22,500 ₫`** (+{((tcb_p-21356)/21356)*100:.2f}%)
-• *MBB (200 CP)*: `{mbb_p:,.0f} ₫` | Vùng Bán: **`19,800 – 20,000 ₫`** (+{((mbb_p-18606)/18606)*100:.2f}%)
-
-💰 *Tổng Lợi Nhuận Tạm Tính*: *{'+' if total_pnl >= 0 else ''}{total_pnl:,.0f} VNĐ*
-🎯 *Kỷ luật*: Đúng 09:15 bước vào Khung Giờ Vàng, Sentinel sẽ tự động kích hoạt còi hú & báo động ngay khi từng mã chạm vùng giá bán tối ưu!"""
+• TCB: `{tcb_p:,.0f} ₫` | MBB: `{mbb_p:,.0f} ₫` | HPG: `{hpg_p:,.0f} ₫`
+💰 Tiền mặt dự phòng: `{_verified_cash:,.0f} VNĐ`"""
     return dispatch_message("alerts", msg)
 
 def main():

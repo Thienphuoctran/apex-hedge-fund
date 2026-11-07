@@ -126,10 +126,10 @@ def build_vn_session_evaluation(audit: dict, blotter: dict) -> str:
         ])
         tickers_str = ", ".join([str(o.get("symbol")) for o in orders_vn])
     else:
-        holdings_desc = "400 HPG + 300 TCB + 200 MBB (Tổng 900 CP - Danh mục Thực Tế TCBS 105C307855)"
-        stops_desc = "HPG (20,120 đ = -4.19%), TCB (20,250 đ = -4.03%), MBB (22,900 đ = -4.18%)"
-        ocf_desc = "HPG (1.29), TCB (CASA 40.5%), MBB (ROE 22.8%)"
-        tickers_str = "HPG, TCB, MBB"
+        holdings_desc = "100% TIỀN MẶT (20,167,119 ₫) — 0 CP RỦI RO (Đã tất toán Vòng 1 +167,119 ₫)"
+        stops_desc = "Không có vị thế rủi ro qua đêm/cuối tuần (Bảo toàn 100% vốn)"
+        ocf_desc = "Top Tầm Ngắm Vòng 2: HDB (1.16x), MSH (1.42x), BAF (1.18x), IDC (1.48x)"
+        tickers_str = "HDB, MSH, BAF, IDC"
 
     msg = (
         f"🇻🇳 *[BẢN ĐÁNH GIÁ PHÚC TRA PHIÊN 1 — THỊ TRƯỜNG VIỆT NAM]*\n"

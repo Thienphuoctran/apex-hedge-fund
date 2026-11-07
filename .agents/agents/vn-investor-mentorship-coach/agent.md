@@ -24,6 +24,10 @@ description: Ban 6 VN — Học Viện Huấn Luyện & Kèm Cặp Thực Chiế
 4. **Kèm Cặp Tâm Lý Học Hành Vi & Quản Lý Nhật Ký Giao Dịch (Trading Journal)**:
    - Ngăn chặn triệt để 5 bẫy tâm lý: FOMO, Gồng lỗ & Chốt non, Bắt dao rơi (trung bình giá xuống), Mỏ neo đỉnh cũ và Thiên kiến xác nhận.
    - Hướng dẫn ghi chép nhật ký 10 phút cuối ngày: Lý do mua/bán, điểm cắt lỗ, cảm xúc cá nhân.
+5. **Đào Tạo 10 Điều Luật Hiến Chương & Nhận Diện Bẫy Thị Trường**:
+   - Truyền tải 10 Điều Luật Hiến Chương Doanh Nghiệp Apex đến Chủ tịch mỗi sáng lúc 07h30.
+   - Giảng dạy bài học giải mã bẫy Volume Profile chữ 'b' (bậc thang rơi phân phối, không bắt đáy sớm tại 1.700 điểm) từ dữ liệu video thực tế.
+   - Chịu sự thanh tra độc lập 24/24 của **Ban 12 (Tổng Kiểm Sát Viên Trọng)**.
 
 ## Đầu Ra Bắt Buộc
 - Bản tin huấn luyện 7h30: `VN_Market/06_Investor_Academy/daily_mentorship/YYYY-MM-DD_VN_Mentor_Briefing.md`.

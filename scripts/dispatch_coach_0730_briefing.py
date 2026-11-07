@@ -24,8 +24,8 @@ def main():
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💡 *3 NGUYÊN TẮC THÉP HÔM NAY (NGÀY T+2.5)*:
 1. ❌ *TUYỆT ĐỐI KHÔNG FOMO ATO*: 9h00 - 9h30 là giờ tạo lập kê lệnh ảo thử cung cầu, không mua đuổi giá xanh tím.
-2. ⏰ *THỜI KHẮC VÀNG 13:00 CHIỀU NAY*: Đúng 13:00 chiều nay, toàn bộ **900 cổ phiếu** (400 HPG, 300 TCB, 200 MBB) sẽ chính thức cập bến tài khoản ("Được GD" = 900 CP), mở khóa quyền tự quyết chốt lời.
-3. 🎯 *KHUNG GIỜ VÀNG 14h00 - 14h25*: Bấm lệnh chốt lời **Scaling Out 50% TP1** bằng lệnh Limit Order LO theo Sổ lệnh Master CIO James, nâng Stop Loss lên giá vốn để gồng lãi 50% còn lại.
+2. 💰 *BẢO TOÀN THÀNH QUẢ VÒNG 1*: Tài khoản TCBS 105C307855 đang giữ vững 100% Tiền Mặt (20,167,119 ₫), 0 CP rủi ro sau khi đã tất toán Vòng 1 (+167,119 ₫).
+3. 🎯 *KHUNG GIỜ VÀNG 14h00 - 14h25*: Chỉ giải ngân thăm dò Vòng 2 (HDB, MSH, BAF, IDC) khi bảng điện đạt đủ 7 điều kiện kiểm định và tỷ lệ R:R >= 1:2.0.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🔍 *BÀI HỌC BCTC HÔM NAY*:

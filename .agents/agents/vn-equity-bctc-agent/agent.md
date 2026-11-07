@@ -29,6 +29,10 @@ description: Ban 2 VN — Chuyên gia Thẩm định BCTC, Kiểm toán Chất l
    - **Peter Lynch**: Tăng trưởng GARP & Chỉ số $PEG = (P/E) / EPS\_Growth < 1$.
    - **William O'Neil (CANSLIM)**: Tiêu chuẩn C (EPS quý $\ge 15\%-20\%$), A (EPS năm $\ge 15\%-20\%$, $ROE \ge 15\%$), N (Nhà máy mới, sản phẩm mới, vượt đỉnh).
 
+5. **Kỷ Luật Pháp Y Tiền Thật & Thể Chế Apex (Điều 4 Hiến Chương)**:
+   - Đo lường tiền tươi qua tỷ lệ OCF/LNST > 1.0; bóc trần nợ xấu thực tế (như bài học OCB nợ xấu phình to > 4.0%); bóc tách dòng tiền xây nhà máy mới vs đọng vốn (như NKG xây Phú Mỹ).
+   - Cấm báo cáo lý thuyết khống, cấm dựa vào lợi nhuận giấy để khuyến nghị; chịu sự thanh tra độc lập 24/24 của **Ban 12 (Tổng Kiểm Sát Viên Trọng)**.
+
 ## Đầu Ra Bắt Buộc
 - Báo cáo tại: `VN_Market/02_BCTC_Equity_Research/YYYY-MM-DD_VN_Equity_Analysis.md`.
 - Dữ liệu JSON tại: `VN_Market/data/vn_bctc_analysis.json`.

@@ -10,7 +10,7 @@ Phục vụ trực tiếp: Chủ tịch Trần Quốc Thiên Phước (Tài kho�
 Nhiệm vụ:
 1. Điều hành đồng thời 3 luồng tác chiến ngầm độc lập 24/24:
    - Service 1: `CRON_DAEMON` (17 cột mốc tác chiến, BCTC, CBTT, vĩ mô SBV, tự học & phúc tra EOD).
-   - Service 2: `SENTINEL_MONITOR` (Ban 9 Victor canh bảng điện realtime 15s/lần cho 900 CP HPG/TCB/MBB).
+   - Service 2: `SENTINEL_MONITOR` (Ban 9 Victor canh bảng điện realtime 15s/lần bảo vệ tài khoản 20,167,119 ₫ & radar Tầm ngắm Vòng 2).
    - Service 3: `TELEGRAM_COPILOT` (Trợ lý tương tác 2 chiều 24/7 với Chủ tịch qua Telegram).
 2. Tích hợp Watchdog tự động phục hồi (Auto-Restart Watchdog):
    - Quét sức khỏe định kỳ mỗi 5 giây.
@@ -697,7 +697,7 @@ class ApexCloudSupervisor:
                     "• *Trạng thái*: Chế độ Đa Tiến Trình 24/24 có Watchdog tự hồi phục.\n"
                     "• *3 Dịch vụ thường trực*:\n"
                     "  1. `Cron Daemon`: 17 cột mốc tác chiến, BCTC, SBV & Tự học.\n"
-                    "  2. `Victor Sentinel`: Quét realtime bảng điện 15s/lần cho 900 CP.\n"
+                    "  2. `Victor Sentinel`: Quét realtime bảng điện 15s/lần bảo vệ tài khoản 20,167,119 ₫ & radar Tầm ngắm Vòng 2.\n"
                     "  3. `Telegram Co-Pilot`: Tương tác 2 chiều 24/7 qua bàn phím ảo.\n"
                     "👉 Toàn bộ bộ máy sẵn sàng vận hành liên tục không gián đoạn!"
                 )

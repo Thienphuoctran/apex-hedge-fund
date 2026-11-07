@@ -1,32 +1,33 @@
 # BẢNG ĐIỀU KHIỂN TELEMETRY THỜI GIAN THỰC — APEX SENTINEL (VICTOR)
-**Thời gian cập nhật**: `2026-11-07 18:33:59` | **Chu kỳ quét**: `15 giây/lần` (VPS 0-second Feed)  
+**Thời gian cập nhật**: `2026-11-07 20:24:59` | **Chu kỳ quét**: `15 giây/lần` (VPS 0-second Feed)  
 **Tài khoản giám sát**: Chủ tịch **Trần Quốc Thiên Phước** | **TCBS**: `105C307855`  
-**Trạng thái danh mục**: **100% TIỀN MẶT (`20,199,425 VNĐ`) — ĐÃ BÁN HẾT 100% (0 CP)**  
-**Lãi ròng đã đút túi**: `+199,600 VNĐ` (Chốt lời toàn bộ HPG, TCB, MBB Thứ Sáu 06/11)  
-**Chiến lược**: **PATIENT PREDATOR (THỢ SĂN KIÊN NHẪN) — AN TOÀN TUYỆT ĐỐI QUA CUỐI TUẦN**
+**Trạng thái danh mục**: **100% TIỀN MẶT (`20,167,119 VNĐ`) — 0 CP RỦI RO**  
+**Lãi ròng đã thu về Vòng 1**: `+167,119 VNĐ` (Đã tất toán toàn bộ HPG, TCB, MBB)  
+**Chiến lược**: **PATIENT PREDATOR (THỢ SĂN KIÊN NHẪN) — THEO DÕI RADAR TẦM NGẮM VÒNG 2**
 
 ---
 
 ## 1. TỔNG QUAN TÀI SẢN & LỢI NHUẬN THỜI GIAN THỰC
 | Chỉ Số Đo Lường | Giá Trị Thực Tế | Ghi Chú Tác Chiến |
 | :--- | :---: | :--- |
-| **Tổng Vốn Đã Giải Ngân** | **`18,590,400 VNĐ`** | HPG (400 CP) + TCB (300 CP) + MBB (200 CP) |
-| **Giá Trị Thị Trường Hiện Tại** | **`18,825,000 VNĐ`** | Cập nhật trực tiếp bảng điện VPS HOSE/HNX |
-| **Lợi Nhuận Tạm Tính (PnL)** | **`+234,600 VNĐ (+1.26%)`** | Xanh mượt cả 3 mã, bảo toàn trọn vẹn thành quả |
-| **Tiền Mặt Dry Powder Có Sẵn** | **`1,409,425 VNĐ`** | Đang có sẵn trong tài khoản |
-| **Dự Kiến Tiền Mặt Sau Khi Chốt** | **`~20,500,000 – 20,800,000 VNĐ`** | 100% Tiền Mặt, sạch bóng cổ phiếu |
+| **Tổng Vốn Đang Giải Ngân** | **`0 VNĐ`** | Đã bán sạch 100% cổ phiếu (0 CP rủi ro) |
+| **Giá Trị Thị Trường Cổ Phiếu** | **`0 VNĐ`** | Không có vị thế rủi ro qua đêm/cuối tuần |
+| **Lợi Nhuận Thực Nhận Vòng 1** | **`+167,119 VNĐ`** | Đã chốt lời và thực nhận an toàn vào két TCBS |
+| **Tiền Mặt Dry Powder Sẵn Sàng** | **`20,167,119 VNĐ`** | Sẵn sàng 100% cho Chiến dịch Vòng 2 |
+| **Tổng Tài Sản (NAV)** | **`20,167,119 VNĐ`** | Khớp 100% với số dư TCInvest (105C307855) |
 
 ---
 
-## 2. MA TRẬN GIÁM SÁT CHI TIẾT 3 MÃ TRỰC CHIẾN BÁN 100%
-| Mã CP | Doanh Nghiệp | Khối Lượng | Giá Vốn | Thị Giá Hiện Tại | PnL Tạm Tính | Cắt Lỗ Stop 2xATR | Vùng Bán Tối Ưu LO | Khối Lượng Khớp | Trạng Thái Trực Chiến |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **TCB** | Techcombank | `300` CP | `21,356 ₫` | **`21,650 ₫`** | **+88,200 ₫ (+1.38%)** | `20,400 ₫` (+5.8%) | **`22,300 – 22,500 ₫`** (còn +3.0%) | `11,339,600` CP | **🟢 TRỰC CHIẾN BÁN 100%** |
-| **MBB** | Ngân hàng Quân Đội | `200` CP | `18,606 ₫` | **`19,250 ₫`** | **+128,800 ₫ (+3.46%)** | `17,900 ₫` (+7.0%) | **`19,800 – 20,000 ₫`** (còn +2.9%) | `12,496,300` CP | **🟢 TRỰC CHIẾN BÁN 100%** |
-| **HPG** | Tập đoàn Hòa Phát | `400` CP | `21,156 ₫` | **`21,200 ₫`** | **+17,600 ₫ (+0.21%)** | `19,400 ₫` (+8.5%) | **`21,800 – 22,000 ₫`** (còn +2.8%) | `22,105,200` CP | **🟢 TRỰC CHIẾN BÁN 100%** |
+## 2. RADAR TẦM NGẮM VÒNG 2 (SẴN SÀNG GIẢI NGÂN KHUNG GIỜ VÀNG)
+| Mã CP | Nhóm Ngành | Giá Vốn Kế Hoạch | Vùng Gom Limit LO | Cắt Lỗ Stop 2xATR | Chốt Lời TP1 | Trạng Thái Trực Chiến |
+| :---: | :--- | :---: | :---: | :---: | :---: | :---: |
+| **HDB** | Ngân Hàng TMCP | `22,310 ₫` | `22,310 – 22,500 ₫` | `20,710 ₫` | `25,500 ₫` | 🟡 Chờ tín hiệu Khung Giờ Vàng |
+| **MSH** | Dệt May Xuất Khẩu | `35,060 ₫` | `35,060 – 35,500 ₫` | `32,500 ₫` | `40,500 ₫` | 🟡 Chờ tín hiệu Khung Giờ Vàng |
+| **BAF** | Nông Nghiệp & Chăn Nuôi 3F | `30,710 ₫` | `30,710 – 30,900 ₫` | `28,500 ₫` | `35,000 ₫` | 🟡 Chờ tín hiệu Khung Giờ Vàng |
+| **IDC** | BĐS Khu Công Nghiệp | `34,500 ₫` | `34,500 – 34,900 ₫` | `32,000 ₫` | `39,000 ₫` | 🟡 Chờ tín hiệu Khung Giờ Vàng |
 
 ---
 
 ## 3. CHỈ LỆNH THỰC THI CHO CHỦ TỊCH
-1. **09:00 - 09:15 (ATO)**: Cầu chì GUARD-01: Không bán ATO, Không mua ATO.
-2. **09:15 - 09:45 (Khung Giờ Vàng)**: Khi thị giá chạm Vùng Bán Tối Ưu LO, hệ thống sẽ kích hoạt Báo Động tức thời. Chủ tịch vào App TCBS đặt lệnh Bán LO toàn bộ 100%!
+1. **09:00 - 10:00 (ATO & Đầu Phiên Sáng)**: Tuyệt đối không FOMO mua đuổi giá xanh.
+2. **14:00 - 14:25 (Khung Giờ Vàng Chiều)**: Chỉ giải ngân thăm dò khi cổ phiếu đạt đủ Checklist 7 Điểm và tỷ lệ R:R >= 1:2.0!

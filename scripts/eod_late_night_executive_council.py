@@ -108,53 +108,42 @@ def run_council(target_date: str = None) -> int:
     blotter_pos_map = {o.get("symbol"): o for o in blotter.get("orders_vietnam", []) if o.get("symbol")}
     vn_stocks_data = vn_market.get("stocks", {})
 
-    default_specs = {
-        "HPG": {"shares": 400, "cost": 21156.0, "fallback_close": 21700.0, "tp1": 23090.0, "stop": 20710.0},
-        "TCB": {"shares": 300, "cost": 21356.0, "fallback_close": 21850.0, "tp1": 23170.0, "stop": 20910.0},
-        "MBB": {"shares": 200, "cost": 18606.0, "fallback_close": 19250.0, "tp1": 20150.0, "stop": 18610.0},
-    }
+    try:
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        ssot_state = PortfolioStateManager.load_state()
+        cash_vnd = float(ssot_state.get("cash_balance_vnd", 20167119.0))
+        active_pos_dict = ssot_state.get("active_positions", {})
+        is_all_cash = (len(active_pos_dict) == 0) or (ssot_state.get("status") in ("ALL_CASH_STANDDOWN", "ALL_POSITIONS_CLOSED_100_PERCENT_CASH"))
+    except Exception:
+        is_all_cash = True
+        cash_vnd = 20167119.0
+        active_pos_dict = {}
 
     holdings_list: List[Dict[str, Any]] = []
     total_cost_vnd = 0.0
     total_market_val = 0.0
     total_pnl = 0.0
 
-    for sym in ["HPG", "TCB", "MBB"]:
-        spec = default_specs[sym]
-        s_pos = sentinel_pos_map.get(sym, {})
-        b_pos = blotter_pos_map.get(sym, {})
-        m_pos = vn_stocks_data.get(sym, {})
-
-        shares = int(s_pos.get("shares") or b_pos.get("shares") or spec["shares"])
-        cost_price = float(s_pos.get("entry_price") or spec["cost"])
-        close_price = float(
-            s_pos.get("current_price")
-            or b_pos.get("current_price_vnd")
-            or m_pos.get("close_price", 0) * (1000.0 if m_pos.get("close_price", 0) < 500 else 1.0)
-            or spec["fallback_close"]
-        )
-        tp1_price = float(b_pos.get("tp1_vnd") or s_pos.get("sell_target_min") or spec["tp1"])
-        stop_price = float(b_pos.get("stop_loss_2atr_vnd") or s_pos.get("stop_loss") or spec["stop"])
-
-        pos_cost = shares * cost_price
-        pos_mkt = shares * close_price
-        pos_pnl = pos_mkt - pos_cost
-        pos_pct = round((pos_pnl / pos_cost) * 100.0, 2) if pos_cost > 0 else 0.0
-
-        total_cost_vnd += pos_cost
-        total_market_val += pos_mkt
-        total_pnl += pos_pnl
-
-        holdings_list.append({
-            "symbol": sym,
-            "shares": shares,
-            "cost": cost_price,
-            "close": close_price,
-            "pnl_vnd": round(pos_pnl, 0),
-            "pnl_pct": pos_pct,
-            "tp1": tp1_price,
-            "stop_2atr": stop_price
-        })
+    if not is_all_cash and active_pos_dict:
+        for sym, pos_info in active_pos_dict.items():
+            sh = int(pos_info.get("shares", 0))
+            if sh <= 0:
+                continue
+            ep = float(pos_info.get("entry_price", 0.0))
+            cp = float(pos_info.get("current_price", ep))
+            sl = float(pos_info.get("stop_loss", round(ep * 0.93, 0)))
+            tp = float(pos_info.get("take_profit_tp1", round(ep * 1.15, 0)))
+            pos_cost = sh * ep
+            pos_mkt = sh * cp
+            pos_pnl = pos_mkt - pos_cost
+            pos_pct = round((pos_pnl / pos_cost) * 100.0, 2) if pos_cost > 0 else 0.0
+            total_cost_vnd += pos_cost
+            total_market_val += pos_mkt
+            total_pnl += pos_pnl
+            holdings_list.append({
+                "symbol": sym, "shares": sh, "cost": ep, "close": cp,
+                "pnl_vnd": round(pos_pnl, 0), "pnl_pct": pos_pct, "tp1": tp, "stop_2atr": sl
+            })
 
     nav_vnd = total_market_val + cash_vnd
     pnl_pct = round((total_pnl / total_cost_vnd) * 100.0, 2) if total_cost_vnd > 0 else 0.0
@@ -232,30 +221,31 @@ def run_council(target_date: str = None) -> int:
         ]
     }
 
-    # Tạo bảng Markdown từ holdings_list động
+    # Tạo bảng Markdown từ holdings_list động (SSOT V2.0)
     holdings_rows_md = []
-    for h in holdings_list:
-        sign = "+" if h["pnl_vnd"] >= 0 else ""
+    if holdings_list:
+        for h in holdings_list:
+            sign = "+" if h["pnl_vnd"] >= 0 else ""
+            holdings_rows_md.append(
+                f"| **{h['symbol']}** | {h['shares']} CP | {h['cost']:,.0f} ₫ | {h['close']:,.0f} ₫ | "
+                f"**{sign}{h['pnl_vnd']:,.0f} ₫** | **{sign}{h['pnl_pct']:.2f}%** | "
+                f"Stop: `{h['stop_2atr']:,.0f}` • TP1: `{h['tp1']:,.0f}` |"
+            )
+        total_sign = "+" if total_pnl >= 0 else ""
         holdings_rows_md.append(
-            f"| **{h['symbol']}** | {h['shares']} CP | {h['cost']:,.0f} ₫ | {h['close']:,.0f} ₫ | "
-            f"**{sign}{h['pnl_vnd']:,.0f} ₫** | **{sign}{h['pnl_pct']:.2f}%** | "
-            f"Stop: `{h['stop_2atr']:,.0f}` • TP1: `{h['tp1']:,.0f}` |"
+            f"| **TỔNG** | **{sum([h['shares'] for h in holdings_list])} CP** | **{total_cost_vnd:,.0f} ₫** | **{total_market_val:,.0f} ₫** | "
+            f"**{total_sign}{total_pnl:,.0f} ₫** | **{total_sign}{pnl_pct:.2f}%** | **An toàn 100% (Margin 0%)** |"
         )
-    total_sign = "+" if total_pnl >= 0 else ""
-    holdings_rows_md.append(
-        f"| **TỔNG** | **900 CP** | **{total_cost_vnd:,.0f} ₫** | **{total_market_val:,.0f} ₫** | "
-        f"**{total_sign}{total_pnl:,.0f} ₫** | **{total_sign}{pnl_pct:.2f}%** | **An toàn 100% (Margin 0%)** |"
-    )
+    else:
+        holdings_rows_md.append(
+            "| **100% TIỀN MẶT** | **0 CP** | **0 ₫** | **0 ₫** | **+167,119 ₫ (Lãi Vòng 1)** | **+0.83%** | **Đã tất toán toàn bộ — Bảo vệ 100% vốn** |"
+        )
     holdings_table_str = "\n".join(holdings_rows_md)
 
     flaws_md_str = "\n".join([f"- ⚠️ **{fl}**" for fl in mq_flaws])
     dept_eval_md_str = "\n".join([f"- **{k}**: {v}" for k, v in dept_audit.items()]) if dept_audit else (
         "- **Ban 1 đến Ban 6**: Hoàn thành 100% định mức báo cáo và kiểm toán số liệu thực tế."
     )
-
-    hpg_h = holdings_list[0]
-    tcb_h = holdings_list[1]
-    mbb_h = holdings_list[2]
 
     md_content = f"""# BIÊN BẢN HỘI NGHỊ GIAO BAN ĐIỀU HÀNH TỐI CẤP CAO 23H00 HÀNG NGÀY
 ## (Apex 23:00 EOD Executive Council & Adversarial Post-Mortem Hearing)
@@ -330,10 +320,11 @@ def run_council(target_date: str = None) -> int:
    - Victor Sentinel (`ZeroMarketWatcher`) quét liên tục từng bước giá mỗi 15 giây để phát hiện lệnh kê ảo (Spoofing) và bảo vệ ngưỡng Stop 2xATR.
 2. **Khung Giờ Hấp Thụ T+2.5 (13:00 - 13:45)**:
    - Đo lường áp lực cung hàng về tài khoản và tỷ lệ Mua chủ động (Active Buy Up $\\ge 60\\%$).
-3. **Khung Giờ Vàng Quyết Định (14:00 - 14:25) — Thực Thi Theo Sổ Lệnh Master Blotter**:
-   - **HPG (400 CP)**: Khóa chặn dưới Stop 2xATR tại `{hpg_h['stop_2atr']:,.0f} ₫`, hướng tới mục tiêu chốt lời TP1 tại `{hpg_h['tp1']:,.0f} ₫` (Scaling Out 50% = 200 CP).
-   - **TCB (300 CP)**: Khóa chặn dưới Stop 2xATR tại `{tcb_h['stop_2atr']:,.0f} ₫`, hướng tới mục tiêu chốt lời TP1 tại `{tcb_h['tp1']:,.0f} ₫`.
-   - **MBB (200 CP)**: Khóa chặn dưới Stop 2xATR tại `{mbb_h['stop_2atr']:,.0f} ₫`, hướng tới mục tiêu chốt lời TP1 tại `{mbb_h['tp1']:,.0f} ₫`.
+3. **Khung Giờ Vàng Quyết Định (14:00 - 14:25) — Sổ Lệnh Tầm Ngắm Vòng 2 (Limit LO)**:
+   - **HDB**: Vùng gom Limit LO `22,310 – 22,500 ₫` | Stop 2xATR `20,710 ₫` | TP1 `25,500 ₫`.
+   - **MSH**: Vùng gom Limit LO `35,060 – 35,500 ₫` | Stop 2xATR `32,500 ₫` | TP1 `40,500 ₫`.
+   - **BAF**: Vùng gom Limit LO `30,710 – 30,900 ₫` | Stop 2xATR `28,500 ₫` | TP1 `35,000 ₫`.
+   - **IDC**: Vùng gom Limit LO `34,500 – 34,900 ₫` | Stop 2xATR `32,000 ₫` | TP1 `39,000 ₫`.
    - Đúng **14:25**, kích hoạt Cầu chì `GUARD-03` khóa sổ vị thế trước giờ ATC.
 
 ---

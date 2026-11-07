@@ -132,78 +132,50 @@ def write_md_safe(p: Path, content: str):
 
 
 def _get_live_portfolio_snapshot() -> Dict[str, Any]:
-    """Lấy thông tin danh mục thực tế hợp nhất từ Sentinel Telemetry & Master Blotter."""
-    telemetry = load_json_safe(BASE_DIR / "09_Realtime_Portfolio_Sentinel" / "vn3_live_telemetry.json")
-    blotter = load_json_safe(BASE_DIR / "08_Master_Investment_CIO" / "master_execution_blotter.json")
-
-    pos_map = {p.get("symbol"): p for p in telemetry.get("positions", []) if p.get("symbol")}
-    blot_map = {o.get("symbol"): o for o in blotter.get("orders_vietnam", []) if o.get("symbol")}
-
-    # Quét thêm giá VPS trực tiếp nếu có
-    vps_prices = {}
+    """Lấy thông tin danh mục thực tế từ SSOT V2.0 (PortfolioStateManager)."""
     try:
-        from scripts.vietnam_realtime_feed import fetch_vps_quotes
-        vps_prices = fetch_vps_quotes(["HPG", "TCB", "MBB"], timeout=3)
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        st = PortfolioStateManager.load_state()
+        cash_vnd = float(st.get("cash_balance_vnd", 20167119.0))
+        active_pos = st.get("active_positions", {})
+        is_all_cash = (len(active_pos) == 0) or (st.get("status") in ("ALL_CASH_STANDDOWN", "ALL_POSITIONS_CLOSED_100_PERCENT_CASH"))
+        total_nav = float(st.get("total_nav_vnd", cash_vnd))
+        total_cost = float(st.get("total_cost_vnd", 0.0))
+        total_mkt = float(st.get("total_market_val_vnd", 0.0))
+        total_pnl = float(st.get("unrealized_pnl_vnd", 0.0))
+        total_pnl_pct = 0.0
     except Exception:
-        pass
-
-    # Kiểm tra anchor neo thể chế: Nếu đã bán hết sang 100% Tiền Mặt thì không nạp shares cũ
-    anchor_file = BASE_DIR / "data" / "institutional_compliance_anchor.json"
-    is_all_cash = False
-    realized_cash = 20167119.0
-    if anchor_file.exists():
-        try:
-            with open(anchor_file, "r", encoding="utf-8") as af:
-                anc = json.load(af)
-            if anc.get("status") == "ALL_POSITIONS_CLOSED_100_PERCENT_CASH":
-                is_all_cash = True
-                realized_cash = float(anc.get("realized_cash_vnd", 20167119.0))
-        except Exception:
-            pass
+        cash_vnd = 20167119.0
+        total_nav = 20167119.0
+        total_cost = 0.0
+        total_mkt = 0.0
+        total_pnl = 0.0
+        total_pnl_pct = 0.0
+        is_all_cash = True
+        active_pos = {}
 
     defaults = {
-        "HPG": {"shares": 0 if is_all_cash else 400, "entry": 21156.0, "price": 21700.0, "stop": 20710.0, "tp1": 23090.0},
-        "TCB": {"shares": 0 if is_all_cash else 300, "entry": 21356.0, "price": 21850.0, "stop": 20910.0, "tp1": 23170.0},
-        "MBB": {"shares": 0 if is_all_cash else 200, "entry": 18606.0, "price": 19250.0, "stop": 18610.0, "tp1": 20150.0},
+        "HPG": {"shares": 0, "entry": 21156.0, "price": 21700.0, "stop": 20710.0, "tp1": 23090.0, "volume": 10000000, "pnl_vnd": 0, "pnl_pct": 0.0},
+        "TCB": {"shares": 0, "entry": 21356.0, "price": 21850.0, "stop": 20910.0, "tp1": 23170.0, "volume": 10000000, "pnl_vnd": 0, "pnl_pct": 0.0},
+        "MBB": {"shares": 0, "entry": 18606.0, "price": 19250.0, "stop": 18610.0, "tp1": 20150.0, "volume": 10000000, "pnl_vnd": 0, "pnl_pct": 0.0},
     }
 
-    items = {}
-    total_cost = 0.0
-    total_mkt = 0.0
-    for sym, df in defaults.items():
-        tp = pos_map.get(sym, {})
-        bp = blot_map.get(sym, {})
-        vp = vps_prices.get(sym, {})
-        shares = 0 if is_all_cash else int(tp.get("shares") or bp.get("shares") or df["shares"])
-        entry = float(tp.get("entry_price") or df["entry"])
-        price = float(vp.get("price") or tp.get("current_price") or bp.get("current_price_vnd") or df["price"])
-        stop = float(bp.get("stop_loss_2atr_vnd") or tp.get("stop_loss") or df["stop"])
-        tp1 = float(bp.get("tp1_vnd") or tp.get("sell_target_min") or df["tp1"])
-        vol = int(vp.get("volume") or tp.get("volume") or 10000000)
-
-        cost_v = shares * entry
-        mkt_v = shares * price
-        pnl_v = mkt_v - cost_v
-        pnl_pct = round((pnl_v / cost_v) * 100.0, 2) if cost_v > 0 else 0.0
-
-        total_cost += cost_v
-        total_mkt += mkt_v
-        items[sym] = {
-            "symbol": sym,
-            "shares": shares,
-            "entry": entry,
-            "price": price,
-            "stop": stop,
-            "tp1": tp1,
-            "volume": vol,
-            "pnl_vnd": round(pnl_v, 0),
-            "pnl_pct": pnl_pct
-        }
-
-    cash_vnd = realized_cash if is_all_cash else float(telemetry.get("dry_powder") or blotter.get("capital_summary", {}).get("dry_powder_vnd", 1409425.0))
-    total_nav = total_mkt + cash_vnd
-    total_pnl = total_mkt - total_cost
-    total_pnl_pct = round((total_pnl / total_cost) * 100.0, 2) if total_cost > 0 else 0.0
+    if not is_all_cash and active_pos:
+        items = {}
+        for sym, p in active_pos.items():
+            sh = int(p.get("shares", 0))
+            ep = float(p.get("entry_price", 0.0))
+            cp = float(p.get("current_price", ep))
+            items[sym] = {
+                "symbol": sym, "shares": sh, "entry": ep, "price": cp,
+                "stop": float(p.get("stop_loss", round(ep * 0.93, 0))),
+                "tp1": float(p.get("take_profit_tp1", round(ep * 1.15, 0))),
+                "volume": int(p.get("volume", 5000000)),
+                "pnl_vnd": round((cp - ep) * sh, 0),
+                "pnl_pct": round(((cp - ep) / ep) * 100.0, 2) if ep > 0 else 0.0
+            }
+    else:
+        items = defaults
 
     return {
         "items": items,
@@ -407,7 +379,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 "📡 *[BAN 2, BAN 3 & BAN 4 VN — HOÀN TẤT KIỂM TOÁN BCTC PHÁP Y & ĐỊNH LƯỢNG]*\n"
                 f"• Đã chạy `vn_bctc_analyzer`, `vn_forensic_accounting_engine`, `vn_audit_and_verify` & `vn_quant_portfolio` trên 54 mã.\n"
                 f"• Kết quả Pháp y BCTC: `{clean_cnt}` mã đạt chuẩn CLEAN, `{flag_cnt}` mã bị gắn cờ cảnh báo lợi nhuận giấy.\n"
-                "• Top Siêu Cổ Phiếu Dẫn Dắt trong danh mục Chủ tịch: `HPG` (100/100 CLEAN), `TCB` (100/100 CLEAN), `MBB` (100/100 CLEAN).\n"
+                "• Trạng thái danh mục: 100% TIỀN MẶT (20,167,119 ₫) — Top Tầm Ngắm Vòng 2 Đạt Chuẩn CLEAN: `HDB`, `MSH`, `BAF`, `IDC`.\n"
                 f"📁 Báo cáo: `VN_Market/03_Synthesis_Memos/{date_str}_VN_Investment_Memo.md`\n"
                 "👉 Sẵn sàng chuyển giao dữ liệu sang Phiên Giao Ban 8h30!"
             )

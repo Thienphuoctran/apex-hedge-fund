@@ -1,5 +1,5 @@
 {
-  "last_scan_utc": "2026-11-07T09:11:38.162011+00:00",
+  "last_scan_utc": "2026-11-07T13:04:53.200634+00:00",
   "total_positions_monitored": 0,
   "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
@@ -23,13 +23,13 @@
     ]
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-07T16:11:38.123751",
+    "timestamp_iso": "2026-11-07T20:04:53.168760",
     "date_str": "2026-11-07",
     "date_vn": "07/11/2026",
-    "time_vn": "16:11:38",
+    "time_vn": "20:04:53",
     "weekday_index": 5,
     "weekday_vn": "Thứ Bảy",
-    "full_time_label_vn": "16:11:38 Thứ Bảy, ngày 07/11/2026",
+    "full_time_label_vn": "20:04:53 Thứ Bảy, ngày 07/11/2026",
     "market_phase": "WEEKEND_CLOSED",
     "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
     "is_trading_hours": false,

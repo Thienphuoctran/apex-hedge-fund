@@ -14,47 +14,16 @@
   },
   "financial_snapshot": {
     "account_tcbs": "105C307855",
-    "total_nav_vnd": 39024425.0,
-    "cost_basis_vnd": 18590400.0,
-    "market_value_vnd": 18825000.0,
-    "unrealized_pnl_vnd": 234600.0,
-    "unrealized_pnl_pct": 1.26,
-    "cash_dry_powder_vnd": 20199425.0,
-    "cash_dry_powder_pct": 51.76,
+    "total_nav_vnd": 20167119.0,
+    "cost_basis_vnd": 0.0,
+    "market_value_vnd": 0.0,
+    "unrealized_pnl_vnd": 0.0,
+    "unrealized_pnl_pct": 0.0,
+    "cash_dry_powder_vnd": 20167119.0,
+    "cash_dry_powder_pct": 100.0,
     "leverage_margin_pct": 0.0,
-    "holdings": [
-      {
-        "symbol": "HPG",
-        "shares": 400,
-        "cost": 21156.0,
-        "close": 21200.0,
-        "pnl_vnd": 17600.0,
-        "pnl_pct": 0.21,
-        "tp1": 23090.0,
-        "stop_2atr": 20710.0
-      },
-      {
-        "symbol": "TCB",
-        "shares": 300,
-        "cost": 21356.0,
-        "close": 21650.0,
-        "pnl_vnd": 88200.0,
-        "pnl_pct": 1.38,
-        "tp1": 23170.0,
-        "stop_2atr": 20910.0
-      },
-      {
-        "symbol": "MBB",
-        "shares": 200,
-        "cost": 18606.0,
-        "close": 19250.0,
-        "pnl_vnd": 128800.0,
-        "pnl_pct": 3.46,
-        "tp1": 20150.0,
-        "stop_2atr": 18610.0
-      }
-    ],
-    "settlement_status": "900 CP khả dụng 100% trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên Thứ Hai (09/11/2026)."
+    "holdings": [],
+    "settlement_status": "100% Tiền mặt (20,167,119 ₫, 0 CP) khả dụng trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên Thứ Hai (09/11/2026)."
   },
   "attendance_roster": [
     {

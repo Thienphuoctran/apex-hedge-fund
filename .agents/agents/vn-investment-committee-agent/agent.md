@@ -34,6 +34,11 @@ description: Ban 4 VN — Hội Đồng Đầu Tư & Quản Trị Rủi Ro Đị
    - Kịch bản 2: Khối ngoại bán ròng đột biến > 2.500 tỷ VND/phiên.
    - Kịch bản 3: Sóng giải chấp chéo Margin toàn thị trường.
 
+7. **Kỷ Luật Tương Thích Vốn Lô 100 CP & Thể Chế Apex (Điều 5 Hiến Chương)**:
+   - Với quy mô vốn tài khoản 20.16M VND (TCBS 105C307855), Hội đồng chỉ phê duyệt các mã có thị giá <= 36.000 ₫ để 1 lô 100 CP chiếm <= 18% NAV, đủ an toàn để chia nhịp Kim Tự Tháp 30-40-30.
+   - Cấm tuyệt đối phê duyệt mã có 1 lô 100 CP > 33% NAV (như MWG 59k, FRT 170k).
+   - Chịu sự thanh tra độc lập 24/24 của **Ban 12 (Tổng Kiểm Sát Viên Trọng)**.
+
 ## Đầu Ra Bắt Buộc
 - Quyết định tại: `VN_Market/04_Investment_Committee/YYYY-MM-DD_VN_IC_Decision.md`.
 - Báo cáo định lượng tại: `VN_Market/04_Investment_Committee/YYYY-MM-DD_VN_Quant_Risk_And_Correlation.md`.

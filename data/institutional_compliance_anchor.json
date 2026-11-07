@@ -4,7 +4,7 @@
   "promulgated_at": "2026-11-07 16:42:00",
   "account_id": "105C307855",
   "cash_balance_vnd": 20167119.0,
-  "status": "ALL_CASH_STANDDOWN",
+  "status": "ALL_POSITIONS_CLOSED_100_PERCENT_CASH",
   "ten_commandments": [
     {
       "article": 1,
@@ -79,5 +79,9 @@
     "Khóa cứng Stop Loss 2xATR <= 7.5%",
     "Chốt lời Scaling Out 50/50 tại TP1",
     "Đối soát Ký ức Liên Ngày Walk-Forward SHA-256 mỗi sáng lúc 08h30"
-  ]
+  ],
+  "enforced_strategy": "100_PERCENT_CASH_PROTECTED",
+  "realized_cash_vnd": 20167119.0,
+  "realized_pnl_vnd": 167119.0,
+  "audit_timestamp": "2026-11-07_20h04_dynamic_sync"
 }
