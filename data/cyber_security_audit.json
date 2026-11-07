@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2026-11-07 14:03:38",
+    "event_type": "VAULT_SEALED_SUCCESS",
+    "severity": "INFO",
+    "details": "Đã mã hóa và niêm phong tài khoản 105C307855 (User: 039***855) vào Két sắt AES/HMAC."
+  },
+  {
+    "timestamp": "2026-11-07 14:04:08",
+    "event_type": "IDS_INTEGRITY_SCAN",
+    "severity": "INFO",
+    "details": "Quét IDS hoàn tất: Status=SECURE_GREEN, SHA256=668a0f0e16dd, Cash=20,199,425 VND"
+  },
+  {
+    "timestamp": "2026-11-07 14:07:00",
+    "event_type": "IDS_INTEGRITY_SCAN",
+    "severity": "INFO",
+    "details": "Quét IDS hoàn tất: Status=SECURE_GREEN, SHA256=668a0f0e16dd, Cash=20,199,425 VND"
+  },
+  {
+    "timestamp": "2026-11-07 14:07:50",
+    "event_type": "IDS_INTEGRITY_SCAN",
+    "severity": "INFO",
+    "details": "Quét IDS hoàn tất: Status=SECURE_GREEN, SHA256=668a0f0e16dd, Cash=20,199,425 VND"
+  }
+]

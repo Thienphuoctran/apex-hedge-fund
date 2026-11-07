@@ -91,6 +91,22 @@ class TestTCBSVaultWatcher(unittest.TestCase):
         self.assertIn("Chủ tịch Phước Trần", report)
         self.assertIn("105C307855", report)
 
+    def test_cyber_vault_5layer_shield(self):
+        """Kiểm thử Lá chắn Bảo mật 5 lớp (ApexCyberVaultShield): Mã hóa, HMAC, IDS & Redactor."""
+        from scripts.apex_cyber_vault_shield import ApexCyberVaultShield, encrypt_payload, decrypt_payload
+
+        # 1. Test encryption & HMAC verification
+        sample = {"user": "test_user", "secret": "test_secret_123"}
+        enc = encrypt_payload(sample)
+        dec = decrypt_payload(enc)
+        self.assertEqual(dec["secret"], "test_secret_123")
+
+        # 2. Test IDS & Integrity check
+        res = ApexCyberVaultShield.verify_portfolio_integrity_and_ids()
+        self.assertEqual(res["security_status"], "SECURE_GREEN")
+        self.assertTrue(res["read_only_airgap_locked"])
+        self.assertEqual(len(res["anomalies_detected"]), 0)
+
 
 if __name__ == "__main__":
     unittest.main()
