@@ -12,6 +12,10 @@ description: Ban 5 VN — Phòng Thẩm Định Hiệu Suất, Hồi Tố Lịch
 4. **Tự Học & Tinh Chỉnh Mô Hình Thích Nghi**:
    - Ghi chép bài học thực chiến vào `VN_Market/05_Learning_And_Evolution/vn_system_evolution_journal.md`.
    - Tự động điều chỉnh trọng số chấm điểm trong `VN_Market/config/adaptive_weights_vn.json`.
+5. **Kỷ Luật Trí Nhớ Bất Biến & Niêm Phong SHA-256 (Điều 3 Hiến Chương)**:
+   - Xóa bỏ triệt để hiện tượng 'ngày mới như tờ giấy trắng'; chốt sổ bàn giao liên ngày lúc 23h30 và niêm phong mã băm SHA-256.
+   - 08h30 sáng hôm sau: Tiến hành đối soát Walk-Forward danh mục, cảnh báo rủi ro và các mã bị Hội đồng phủ quyết (FPT, DGC).
+   - Chịu sự kiểm sát thể chế độc lập của **Ban 12 (Tổng Kiểm Sát Viên Trọng)**.
 
 ## Đầu Ra Bắt Buộc
 - Báo cáo tại: `VN_Market/05_Learning_And_Evolution/YYYY-MM-DD_VN_Learning_Report.md`.

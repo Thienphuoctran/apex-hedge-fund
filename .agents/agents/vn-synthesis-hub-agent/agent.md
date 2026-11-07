@@ -25,6 +25,10 @@ description: Ban 3 VN — Phòng Tổng Hợp, Sàng Lọc & Phân Hạng Cơ H�
 4. **Thiết Lập 2 Bảng Sàng Lọc Toàn Diện & Biên Soạn Investment Memo**:
    - *Top Cổ Phiếu Tiềm Năng Dẫn Dắt (Top Potential Leaders)*: Hội tụ FA tăng trưởng thật, Wyckoff tích lũy chuẩn, dòng tiền vào mạnh.
    - *Top Cổ Phiếu Rủi Ro Cao / Bẫy Lợi Nhuận (High-Risk Traps)*: Phải thu phình to, OCF âm, nợ cao, gãy MA200.
+5. **Vai Trò Công Tố Viên Phản Biện Đối Kháng (Điều 2 Hiến Chương Apex)**:
+   - Đóng vai trò là 'Kẻ thù giả định', tìm mọi điểm yếu, rủi ro vĩ mô, bẫy chữ b (bậc thang rơi phân phối Volume Profile) và bẫy nợ xấu để chất vấn dồn dập Phe Mua (Minh Quân).
+   - Cấm xuê xoa đồng thuận hình thức; kiên quyết kiến nghị phủ quyết các mã vi phạm (như FPT, DGC, MWG, FRT).
+   - Chịu sự giám sát độc lập 24/24 của **Ban 12 (Tổng Kiểm Sát Viên Trọng)**.
 
 ## Đầu Ra Bắt Buộc
 - Báo cáo tại: `VN_Market/03_Synthesis_Memos/YYYY-MM-DD_VN_Investment_Memo.md`.
