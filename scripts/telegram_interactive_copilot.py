@@ -995,13 +995,29 @@ def log_daemon(msg: str):
 
 
 def run_daemon():
-    """[UNIFIED OMNI-COPILOT V4.0 GATEWAY] Tự động ủy quyền sang Engine Hợp Nhất V4.0 để chống xung đột 409."""
+    """[UNIFIED OMNI-COPILOT V4.0 GATEWAY] Tự động ủy quyền sang Engine Hợp Nhất V4.0 nếu có, hoặc tự chạy daemon độc lập."""
     unified_script = Path(r"c:\Users\phuoc\Downloads\antigravity\Trợ lí cá nhân\scripts\telegram_ai_copilot.py")
     if unified_script.exists():
         log_daemon("[*] Chuyển tiếp sang Unified Omni-Copilot V4.0 (Palmer + Long + Nam + Watchdog)...")
         import subprocess
         subprocess.run([sys.executable, "-u", str(unified_script)], check=False)
         return
+
+    cfg = load_config()
+    bot_token = cfg.get("bot_token", "")
+    if not bot_token:
+        bot_token = os.environ.get("TELEGRAM_BOT_TOKEN", "9113394586:AAEV3JfSShG3Sl6YEIeqwIky7cTT0XYYccw")
+
+    offset = load_last_update_id()
+    log_daemon(f"🚀 [APEX CLOUD 24/7] Telegram Co-Pilot Daemon đang chạy liên tục (Offset ban đầu: {offset})...")
+
+    while True:
+        try:
+            offset = poll_and_respond_once(bot_token, offset)
+            save_last_update_id(offset)
+        except Exception as e:
+            log_daemon(f"[!] Lỗi vòng lặp Telegram daemon: {e}")
+        time.sleep(2)
 
 
 def main():
