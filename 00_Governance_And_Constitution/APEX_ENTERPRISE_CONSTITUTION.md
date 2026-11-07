@@ -22,6 +22,10 @@ flowchart TD
         CT["👑 CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC<br/>(Quyền Lực Tối Thượng & Phê Duyệt Cuối Cùng)"]
     end
 
+    subgraph CƠ QUAN KIỂM SÁT ĐỘC LẬP TỐI CAO
+        TRONG["⚖️ Ban 12: Tổng Kiểm Sát Viên Trọng<br/>(Thanh Tra Kỷ Luật, Chuyên Môn & Kỹ Thuật 24/24)"]
+    end
+
     subgraph BỘ CHỈ HUY ĐIỀU HÀNH
         J["🎖️ Master CIO James (Ban 8)<br/>Tổng Tư Lệnh Tác Chiến Vốn"]
         N["💼 Trợ Lý Nam (Văn Phòng CT)<br/>Giám Sát Thể Chế & Báo Cáo"]
@@ -42,6 +46,8 @@ flowchart TD
 
     CT -->|Ban Hành Chỉ Thị| J
     CT -->|Giám Sát Trực Tiếp| N
+    CT <-->|Báo Cáo Thanh Tra 23h30 & Khẩn Cấp| TRONG
+    TRONG -.->|Kiểm Sát Kỷ Luật & Kỹ Thuật Chéo 24/24| J & N & B1 & B2 & B3 & B4 & B5 & B6 & B7 & B9 & B10 & B11
     J <-->|Hội Ý Chiến Lược| N
     J -->|Giao Nhiệm Vụ Độc Lập| B1 & B2 & B3 & B4 & B5 & B6 & B7 & B9 & B10 & B11
     B3 -.->|Chất Vấn Phản Biện Đối Kháng| B7
@@ -206,6 +212,7 @@ flowchart TD
 | **Ban 9: Victor Sentinel** | **Giám Sát Realtime & Báo Động Đỏ** | Giám sát giá live 73ms, trực chiến Stop Loss và chốt lời TP1/TP2 | Kích hoạt còi báo động khẩn cấp khi có biến động bất thường |
 | **Ban 10: Hiền BCTC Scout** | **Thu Thập BCTC & Quan Hệ Cổ Đông** | Tìm kiếm link BCTC gốc, Nghị quyết ĐHĐCĐ, kế hoạch kinh doanh | Đảm bảo nguồn tài liệu chính thống 100%, không bịa đặt |
 | **Ban 11: Khánh & Bảo Video** | **Sáng Tạo Video Viral Tài Chính** | Chuyển hóa BCTC xuất sắc thành video ngắn triệu view TikTok/Shorts | Lan tỏa thương hiệu uy tín của Quỹ dưới sự phê duyệt của CIO James |
+| **Ban 12: Tổng Kiểm Sát Viên Trọng** | **Ban Kiểm Sát Thể Chế, Kỷ Luật & Toàn Vẹn Hệ Thống** | Túc trực 24/24 thanh tra độc lập; kiểm sát kỷ luật & chuyên môn 11 phòng ban lúc 23h30; phát hiện lỗi hệ thống | Độc lập tuyệt đối, chí công vô tư, trung thực 100%, bảo vệ an toàn két vốn cho Chủ tịch |
 
 ---
 

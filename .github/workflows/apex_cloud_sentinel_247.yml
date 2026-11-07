@@ -4,6 +4,8 @@ on:
   schedule:
     # Quét định kỳ mỗi 30 phút trong phiên giao dịch VN (01:00 - 08:30 UTC <=> 08:00 - 15:30 VN, Thứ 2 - Thứ 6)
     - cron: '*/30 1-8 * * 1-5'
+    # Ban 12 Trọng: Phiên Kiểm Sát Kỷ Luật & Chuyên Môn lúc 23:30 VN hàng ngày (16:30 UTC)
+    - cron: '30 16 * * *'
     # Quét kiểm toán toàn vẹn dữ liệu lúc 00:00 UTC hàng ngày
     - cron: '0 0 * * *'
   workflow_dispatch: # Cho phép Chủ tịch bấm nút kích hoạt quét tức thời 24/7 từ điện thoại qua GitHub Mobile App
@@ -75,14 +77,20 @@ jobs:
           print('✅ [PASS] Cloud Sentinel Web Engine (FastAPI) sẵn sàng 100% cho Render/Docker.')
           "
 
-      - name: 5. Commit & Push Updated Status, Market Scan & Cross-Day Continuity Ledger
+      - name: 5. Ban 12 Trong: 24/7 Technical Integrity & 23h30 Institutional Audit
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/apex_inspector_trong.py --run-23h30-audit
+
+      - name: 6. Commit & Push Updated Status, Market Scan, Audit & Cross-Day Continuity Ledger
         run: |
           git config --global user.name "Apex Cloud Sentinel Bot"
           git config --global user.email "sentinel-bot@apex-fund.internal"
-          git add data/ VN_Market/data/ 08_Master_Investment_CIO/ 09_Realtime_Portfolio_Sentinel/ cloud_sentinel/
+          git add data/ VN_Market/data/ 08_Master_Investment_CIO/ 09_Realtime_Portfolio_Sentinel/ 12_Institutional_Ombudsman_And_Inspectorate/ cloud_sentinel/
           if git diff --staged --quiet; then
             echo "Dữ liệu SSOT đã ở trạng thái tối ưu nhất, không có thay đổi mới."
           else
-            git commit -m "chore(sentinel): Automated 24/7 Cloud Sentinel, 145-Stock Scan & Cross-Day Memory Sync [skip ci]"
+            git commit -m "chore(sentinel): Automated 24/7 Cloud Sentinel, 145-Stock Scan, Trong Audit & Memory Sync [skip ci]"
             git push origin HEAD || echo "Push failed or no upstream configured."
           fi

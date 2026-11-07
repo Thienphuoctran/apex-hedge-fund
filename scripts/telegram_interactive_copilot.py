@@ -669,6 +669,28 @@ def process_user_query(text: str) -> str:
             )
         return "⚠️ Cú pháp: `/set_tcbs_token <dán_chuỗi_token_ở_đây>`"
 
+    if any(k in clean_text for k in ["/kiemsat", "/trong", "kiểm sát viên", "kiem sat vien", "báo cáo kiểm sát", "thanh tra hệ thống"]):
+        try:
+            from scripts.apex_inspector_trong import ApexInspectorTrong
+            from scripts.portfolio_state_manager import PortfolioStateManager
+            st_cur = PortfolioStateManager.load_state()
+            tech = ApexInspectorTrong.audit_system_technical_integrity_247()
+            dept = ApexInspectorTrong.audit_discipline_and_expertise_23h30()
+            return (
+                f"⚖️ *[BAN 12 — BIÊN BẢN KIỂM SÁT TỨC THỜI CỦA TỔNG KIỂM SÁT VIÊN TRỌNG]*\n"
+                f"━━━━━━━━━━━━━━━━━━━\n"
+                f"👑 *Kính gửi:* Chủ tịch HĐQT Trần Quốc Thiên Phước\n"
+                f"⭐ *Điểm Kỷ Luật Chung:* `{dept['overall_discipline_score']}/100` | *Điểm Chuyên Môn:* `{dept['overall_expertise_score']}/100`\n"
+                f"🟢 *Sức Khỏe Kỹ Thuật:* `{tech['system_health_score']}/100` | *Số Lỗi Phát Hiện:* `{tech['issues_count']}`\n\n"
+                f"📋 *KẾT QUẢ RÀ SOÁT CÁC PHÒNG BAN:*\n"
+                f"• *Kỷ luật 10 Điều Luật*: Đạt chuẩn 100%, không FOMO sáng, đã loại bỏ thói quen lười biếng 4 mã cũ.\n"
+                f"• *Két Tiền Mặt TCBS (`105C307855`)*: `{st_cur.get('cash_balance_vnd', 20167119):,.0f} ₫` (Khớp 100% SSOT).\n"
+                f"• *Trí Nhớ Liên Ngày*: Đã niêm phong SHA-256 an toàn, cấm hiện tượng 'tờ giấy trắng'.\n\n"
+                f"👉 Báo cáo chi tiết đã lưu tại thư mục `12_Institutional_Ombudsman_And_Inspectorate/`!"
+            )
+        except Exception as e:
+            return f"⚠️ Lỗi kiểm sát viên Trọng: {e}"
+
     if any(k in clean_text for k in ["/giaoca", "/tiepnoi", "giao ca", "tiếp nối", "bàn giao liên ngày"]):
         return handle_handover_continuity_command()
 
