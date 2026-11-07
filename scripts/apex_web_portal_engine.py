@@ -2098,7 +2098,7 @@ def generate_portal_html(
         function copyReportLink() {{
             const url = window.location.origin + '/?open=' + encodeURIComponent(currentOpenPath);
             navigator.clipboard.writeText(url).then(() => {{
-                alert('Đã sao chép liên kết báo cáo vào bộ nhớ tạm:\n' + url);
+                alert('Đã sao chép liên kết báo cáo: ' + url);
             }}).catch(() => {{
                 prompt('Sao chép liên kết báo cáo:', url);
             }});
