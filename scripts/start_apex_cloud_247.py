@@ -342,6 +342,19 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
             return
 
+        elif path == "/api/dates":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_report_scanner import get_available_archive_dates
+                dates = get_available_archive_dates()
+                self.wfile.write(json.dumps(dates, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            return
+
         else:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -354,11 +367,12 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 except Exception:
                     pass
             try:
-                from scripts.apex_report_scanner import scan_all_institutional_reports, get_daily_milestones_status
+                from scripts.apex_report_scanner import scan_all_institutional_reports, get_daily_milestones_status, get_available_archive_dates
                 from scripts.apex_web_portal_engine import generate_portal_html
-                reports = scan_all_institutional_reports(limit=80)
+                reports = scan_all_institutional_reports(limit=150)
                 milestones = get_daily_milestones_status()
-                html = generate_portal_html(status_data, reports, milestones)
+                dates = get_available_archive_dates()
+                html = generate_portal_html(status_data, reports, milestones, available_dates=dates)
             except Exception as e:
                 html = generate_supervisor_dashboard_html(status_data)
             self.wfile.write(html.encode("utf-8"))

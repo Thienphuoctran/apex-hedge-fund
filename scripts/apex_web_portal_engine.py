@@ -1,25 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-APEX INSTITUTIONAL CLOUD PORTAL ENGINE (BLOOMBERG-GRADE WEB INTERFACE)
+APEX INSTITUTIONAL CLOUD PORTAL ENGINE (BLOOMBERG-GRADE WEB INTERFACE V2.0)
 File: scripts/apex_web_portal_engine.py
 Cơ quan chủ quản: Palmer — Apex Central System Governance
 Phục vụ: Chủ tịch Trần Quốc Thiên Phước (Tài khoản TCBS: 105C307855)
 
-Chức năng:
-1. Sinh giao diện Web Portal hoàn chỉnh chuẩn Responsive Dark-Mode phong cách Quỹ định lượng Wall Street.
-2. Hiển thị Dashboard Real-time (100% Tiền Mặt 20,167,119 ₫, 0 CP, 4 Daemons).
-3. Thư viện Báo Cáo Thời Gian Thực (Live Report Feed): Tự động nạp toàn bộ báo cáo mới nhất từ 12 phòng ban.
-4. Trình Đọc Toàn Văn Báo Cáo Markdown (Interactive HTML Markdown Reader) có bảng biểu, callouts, checklist.
-5. Tiến độ 18 Cột Mốc Tác Chiến trong ngày (Daily Milestones Timeline).
-6. Bản Đồ Vốn & Bảng So Sánh 5 Siêu Cổ Phiếu Tầm Ngắm Vòng 2 (FPT, DGC, HPG, TCB, MBB).
+Nâng cấp Thể chế V2.0:
+1. Tách biệt rạch ròi "Báo Cáo Hôm Nay (Today's Live Desk)" vs "Kho Lưu Trữ Lịch Sử (Archive Vault)".
+   - Không bao giờ bị đè báo cáo hay ngập tràn trang web khi bước sang ngày mới!
+2. Phân loại theo 4 Ca Tác Chiến: Ca Sáng (06h-11h30), Ca Trưa (11h30-13h30), Ca Chiều (13h30-17h), Ca Tối & Đêm (18h-23h30).
+3. Ghi rõ ràng GIỜ GỬI BÁO CÁO CHÍNH XÁC (Timestamp) trên từng thẻ.
+4. Tích hợp nút In / Xuất PDF và Sao Chép Toàn Văn trong trình đọc Markdown.
 """
 
 import sys
 import json
 import datetime
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
 if hasattr(sys.stdout, "reconfigure"):
     try:
@@ -32,14 +31,16 @@ if hasattr(sys.stdout, "reconfigure"):
 def generate_portal_html(
     supervisor_data: Dict[str, Any],
     initial_reports: List[Dict[str, Any]],
-    milestones: List[Dict[str, Any]]
+    milestones: List[Dict[str, Any]],
+    available_dates: Optional[List[Dict[str, Any]]] = None
 ) -> str:
     sup_status = supervisor_data.get("supervisor_status", "HEALTHY_ALL_RUNNING")
     uptime_sec = supervisor_data.get("uptime_seconds", 0)
-    started_at = supervisor_data.get("started_at", "N/A")
-    last_hb = supervisor_data.get("last_heartbeat", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     services = supervisor_data.get("services", {})
     total_reports_count = len(initial_reports)
+
+    today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+    today_reports_count = sum(1 for r in initial_reports if r.get("date") == today_str)
 
     # Render bảng tiến trình daemons
     services_rows = ""
@@ -66,9 +67,10 @@ def generate_portal_html(
         st_color = m["color"]
         milestone_rows += f"""
         <tr>
-            <td style="padding: 10px 14px; font-family: monospace; font-weight: bold; color: #38bdf8; font-size: 15px;">{m['time']}</td>
+            <td style="padding: 10px 14px; font-family: monospace; font-weight: bold; color: #38bdf8; font-size: 14px;">{m['time']}</td>
             <td style="padding: 10px 14px; font-size: 18px; text-align: center;">{m['icon']}</td>
             <td style="padding: 10px 14px; font-weight: 600; color: #f1f5f9;">{m['name']}</td>
+            <td style="padding: 10px 14px; font-size: 12px; color: #94a3b8;">{m.get('shift', '')}</td>
             <td style="padding: 10px 14px;">
                 <span style="background: {st_color}22; color: {st_color}; border: 1px solid {st_color}; padding: 3px 8px; border-radius: 9999px; font-size: 11px; font-weight: 700;">
                     ● {m['status_label']}
@@ -77,8 +79,18 @@ def generate_portal_html(
         </tr>
         """
 
+    if not available_dates:
+        available_dates = [{"date": today_str, "display": f"🌟 Hôm Nay ({today_str})", "count": today_reports_count, "is_today": True}]
+
+    # Dropdown options
+    date_options_html = ""
+    for d in available_dates:
+        selected = "selected" if d["is_today"] else ""
+        date_options_html += f'<option value="{d["date"]}" {selected}>{d["display"]}</option>'
+
     # Serialized JSON dữ liệu ban đầu cho JavaScript clientside
     initial_reports_json = json.dumps(initial_reports, ensure_ascii=False)
+    available_dates_json = json.dumps(available_dates, ensure_ascii=False)
 
     html = f"""<!DOCTYPE html>
 <html lang="vi">
@@ -114,14 +126,14 @@ def generate_portal_html(
             min-height: 100vh;
             padding: 20px;
         }}
-        .container {{ max-width: 1280px; margin: 0 auto; }}
+        .container {{ max-width: 1320px; margin: 0 auto; }}
         
         /* HEADER */
         .portal-header {{
             background: linear-gradient(135deg, #111827 0%, #172033 100%);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 24px;
+            padding: 22px 26px;
             margin-bottom: 20px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
             display: flex;
@@ -147,7 +159,7 @@ def generate_portal_html(
         .header-meta {{
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             flex-wrap: wrap;
         }}
         .live-badge {{
@@ -240,7 +252,92 @@ def generate_portal_html(
         .tab-pane {{ display: none; }}
         .tab-pane.active {{ display: block; }}
 
-        /* REPORT FEED SECTION */
+        /* TIMELINE & ARCHIVE VAULT SWITCHER BAR */
+        .archive-vault-bar {{
+            background: linear-gradient(135deg, #172033 0%, #1e293b 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }}
+        .date-tabs {{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }}
+        .date-tab-btn {{
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+        }}
+        .date-tab-btn:hover {{
+            color: #fff;
+            border-color: var(--primary);
+        }}
+        .date-tab-btn.active {{
+            background: var(--primary);
+            color: #090d16;
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+        }}
+        .archive-select {{
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            outline: none;
+            cursor: pointer;
+        }}
+
+        /* 4 CA TÁC CHIẾN FILTER */
+        .shift-filter-bar {{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 16px;
+            margin-bottom: 16px;
+        }}
+        .shift-btn {{
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }}
+        .shift-btn:hover {{
+            background: var(--bg-card);
+            color: #fff;
+        }}
+        .shift-btn.active {{
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--primary);
+            border-color: rgba(56, 189, 248, 0.3);
+            font-weight: 700;
+        }}
+
+        /* DEPT FILTER & SEARCH BAR */
         .filter-bar {{
             display: flex;
             gap: 12px;
@@ -250,7 +347,7 @@ def generate_portal_html(
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 14px 18px;
+            padding: 12px 18px;
             margin-bottom: 20px;
         }}
         .filter-tags {{
@@ -289,8 +386,8 @@ def generate_portal_html(
         /* REPORT CARDS GRID */
         .reports-grid {{
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 18px;
         }}
         .report-card {{
             background: var(--bg-surface);
@@ -314,6 +411,7 @@ def generate_portal_html(
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 12px;
+            gap: 8px;
         }}
         .dept-tag {{
             display: inline-flex;
@@ -325,10 +423,18 @@ def generate_portal_html(
             border-radius: 9999px;
             text-transform: uppercase;
         }}
-        .report-time {{
+        .report-time-badge {{
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
-            color: var(--text-dim);
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #cbd5e1;
+            white-space: nowrap;
         }}
         .report-title {{
             font-size: 16px;
@@ -372,14 +478,14 @@ def generate_portal_html(
             display: none;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(9, 13, 22, 0.85);
+            background: rgba(9, 13, 22, 0.88);
             backdrop-filter: blur(8px);
             z-index: 1000;
             padding: 20px;
             overflow-y: auto;
         }}
         .modal-container {{
-            max-width: 960px;
+            max-width: 980px;
             margin: 30px auto;
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
@@ -399,7 +505,25 @@ def generate_portal_html(
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
         }}
+        .modal-actions {{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }}
+        .modal-btn {{
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }}
+        .modal-btn:hover {{ background: rgba(255, 255, 255, 0.15); }}
         .modal-close {{
             background: rgba(255, 255, 255, 0.08);
             border: none;
@@ -508,6 +632,18 @@ def generate_portal_html(
         table.standard-table tr:hover td {{
             background: rgba(255, 255, 255, 0.02);
         }}
+
+        @media print {{
+            body * {{ visibility: hidden; }}
+            #report-modal, #report-modal * {{ visibility: visible; }}
+            #report-modal {{ position: absolute; left: 0; top: 0; width: 100%; background: #fff; color: #000; padding: 0; }}
+            .modal-header {{ border-bottom: 2px solid #000; }}
+            .modal-close, .modal-actions {{ display: none; }}
+            .modal-container {{ box-shadow: none; border: none; width: 100%; max-width: 100%; margin: 0; }}
+            .markdown-body {{ color: #000; }}
+            .markdown-body th {{ background: #f1f5f9; color: #000; }}
+            .markdown-body code {{ color: #000; background: #eee; }}
+        }}
     </style>
 </head>
 <body>
@@ -550,9 +686,9 @@ def generate_portal_html(
                 <div class="kpi-sub">Đã tất toán 100% HPG, TCB, MBB</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-lbl">Báo Cáo Thể Chế Lưu Trữ</div>
-                <div class="kpi-val" style="color: #c084fc;" id="stat-reports-count">{total_reports_count} Báo Cáo</div>
-                <div class="kpi-sub">Bao trọn 12 Phòng Ban mỗi ngày</div>
+                <div class="kpi-lbl">Báo Cáo Hôm Nay ({today_str})</div>
+                <div class="kpi-val" style="color: #c084fc;" id="stat-today-count">{today_reports_count} Báo Cáo</div>
+                <div class="kpi-sub">Tự động chuyển Kho Lưu Trữ qua ngày mới</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-lbl">Tiến Trình Nền Trực Chiến</div>
@@ -563,7 +699,7 @@ def generate_portal_html(
 
         <!-- TABS NAV -->
         <nav class="tab-nav">
-            <button class="tab-btn active" onclick="switchTab('reports')">📑 Thư Viện Báo Cáo Hôm Nay</button>
+            <button class="tab-btn active" onclick="switchTab('reports')">📑 Thư Viện Báo Cáo Thể Chế</button>
             <button class="tab-btn" onclick="switchTab('timeline')">⏰ 18 Cột Mốc Tác Chiến Ngày</button>
             <button class="tab-btn" onclick="switchTab('portfolio')">📈 Bản Đồ Vốn & Tầm Ngắm Vòng 2</button>
             <button class="tab-btn" onclick="switchTab('supervisor')">🛡️ Giám Sát 4 Daemons 24/7</button>
@@ -571,9 +707,36 @@ def generate_portal_html(
 
         <!-- TAB 1: REPORTS FEED -->
         <main id="tab-reports" class="tab-pane active">
+            <!-- ARCHIVE VAULT & DATE SELECTOR BAR -->
+            <div class="archive-vault-bar">
+                <div class="date-tabs">
+                    <span style="font-size: 11px; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Bộ Lọc Ngày:</span>
+                    <button class="date-tab-btn active" id="btn-date-today" onclick="selectDateFilter('today')">🌟 Hôm Nay ({today_str})</button>
+                    <button class="date-tab-btn" id="btn-date-yesterday" onclick="selectDateFilter('yesterday')">⏮️ Hôm Qua</button>
+                    <button class="date-tab-btn" id="btn-date-all" onclick="selectDateFilter('all')">🏛️ Toàn Bộ Lịch Sử</button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 12px; color: var(--text-muted);">📅 Chọn Ngày Cụ Thể:</span>
+                    <select id="archive-date-select" class="archive-select" onchange="selectDateFromDropdown(this.value)">
+                        {date_options_html}
+                    </select>
+                </div>
+            </div>
+
+            <!-- 4 CA TÁC CHIẾN FILTER -->
+            <div class="shift-filter-bar">
+                <span style="font-size: 11px; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Ca Tác Chiến:</span>
+                <button class="shift-btn active" onclick="filterShift('all')">Tất Cả Ca (24h)</button>
+                <button class="shift-btn" onclick="filterShift('Ca Sáng')">🌅 Ca Sáng (06h - 11h30)</button>
+                <button class="shift-btn" onclick="filterShift('Ca Trưa')">☀️ Ca Trưa (11h30 - 13h30)</button>
+                <button class="shift-btn" onclick="filterShift('Ca Chiều')">🎯 Ca Chiều (13h30 - 17h00)</button>
+                <button class="shift-btn" onclick="filterShift('Ca Tối')">🌙 Ca Tối & Đêm (18h00 - 23h30)</button>
+            </div>
+
+            <!-- DEPT FILTER & SEARCH -->
             <div class="filter-bar">
                 <div class="filter-tags" id="dept-filter-tags">
-                    <button class="tag-btn active" onclick="filterReports('all')">Tất Cả</button>
+                    <button class="tag-btn active" onclick="filterReports('all')">Tất Cả Phòng Ban</button>
                     <button class="tag-btn" onclick="filterReports('ban_1_macro')">Ban 1: Vĩ Mô</button>
                     <button class="tag-btn" onclick="filterReports('ban_2_vn_equity')">Ban 2: BCTC</button>
                     <button class="tag-btn" onclick="filterReports('ban_3_debates')">Ban 3: Tranh Biện</button>
@@ -601,7 +764,8 @@ def generate_portal_html(
                                 <th style="width: 100px;">Thời Gian</th>
                                 <th style="width: 50px;">Icon</th>
                                 <th>Nhiệm Vụ & Phòng Ban Phụ Trách</th>
-                                <th style="width: 160px;">Trạng Thái Thực Thi</th>
+                                <th style="width: 140px;">Khung Giờ</th>
+                                <th style="width: 150px;">Trạng Thái Thực Thi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -776,7 +940,11 @@ def generate_portal_html(
                         Ngày: 2026-11-07 | Dung lượng: 12 KB
                     </div>
                 </div>
-                <button class="modal-close" onclick="closeReportModal()">✕</button>
+                <div class="modal-actions">
+                    <button class="modal-btn" onclick="printReport()">🖨️ In / PDF</button>
+                    <button class="modal-btn" onclick="copyReportLink()">📋 Sao Chép Link</button>
+                    <button class="modal-close" onclick="closeReportModal()">✕</button>
+                </div>
             </div>
             <div class="modal-body markdown-body" id="modal-content-area">
                 <div style="text-align: center; padding: 40px; color: var(--text-muted);">Đang tải toàn văn báo cáo...</div>
@@ -787,7 +955,14 @@ def generate_portal_html(
     <script>
         // Dữ liệu ban đầu
         let allReports = {initial_reports_json};
-        let currentFilter = 'all';
+        let availableDates = {available_dates_json};
+        const todayDateStr = "{today_str}";
+
+        // Trạng thái bộ lọc
+        let currentDateFilter = 'today'; // 'today', 'yesterday', 'all', hoặc cụ thể 'YYYY-MM-DD'
+        let currentShiftFilter = 'all';  // 'all', 'Ca Sáng', 'Ca Trưa', 'Ca Chiều', 'Ca Tối'
+        let currentDeptFilter = 'all';   // 'all', 'ban_1_macro', ...
+        let currentSearchQuery = '';
 
         // Đồng hồ thời gian thực (Giờ Việt Nam)
         function updateLiveClock() {{
@@ -812,6 +987,95 @@ def generate_portal_html(
             if (targetPane) targetPane.classList.add('active');
         }}
 
+        // BỘ LỌC NGÀY & KHO LƯU TRỮ
+        function selectDateFilter(mode) {{
+            currentDateFilter = mode;
+            document.querySelectorAll('.date-tab-btn').forEach(b => b.classList.remove('active'));
+
+            if (mode === 'today') {{
+                document.getElementById('btn-date-today').classList.add('active');
+                document.getElementById('archive-date-select').value = todayDateStr;
+            }} else if (mode === 'yesterday') {{
+                document.getElementById('btn-date-yesterday').classList.add('active');
+            }} else if (mode === 'all') {{
+                document.getElementById('btn-date-all').classList.add('active');
+            }}
+            applyAllFilters();
+        }}
+
+        function selectDateFromDropdown(selectedDate) {{
+            currentDateFilter = selectedDate;
+            document.querySelectorAll('.date-tab-btn').forEach(b => b.classList.remove('active'));
+            if (selectedDate === todayDateStr) {{
+                document.getElementById('btn-date-today').classList.add('active');
+            }}
+            applyAllFilters();
+        }}
+
+        // BỘ LỌC CA TÁC CHIẾN
+        function filterShift(shiftName) {{
+            currentShiftFilter = shiftName;
+            document.querySelectorAll('.shift-btn').forEach(b => b.classList.remove('active'));
+            const activeBtn = Array.from(document.querySelectorAll('.shift-btn')).find(b => b.getAttribute('onclick').includes(shiftName));
+            if (activeBtn) activeBtn.classList.add('active');
+            applyAllFilters();
+        }}
+
+        // BỘ LỌC PHÒNG BAN
+        function filterReports(deptId) {{
+            currentDeptFilter = deptId;
+            document.querySelectorAll('#dept-filter-tags .tag-btn').forEach(b => b.classList.remove('active'));
+            const activeBtn = Array.from(document.querySelectorAll('#dept-filter-tags .tag-btn')).find(b => b.getAttribute('onclick').includes(deptId));
+            if (activeBtn) activeBtn.classList.add('active');
+            applyAllFilters();
+        }}
+
+        // TÌM KIẾM
+        function searchReports() {{
+            currentSearchQuery = (document.getElementById('report-search').value || '').toLowerCase().trim();
+            applyAllFilters();
+        }}
+
+        // ÁP DỤNG ĐỒNG THỜI CÁC BỘ LỌC
+        function applyAllFilters() {{
+            let filtered = allReports;
+
+            // 1. Lọc theo Ngày (Tránh đè báo cáo của hôm trước)
+            if (currentDateFilter === 'today') {{
+                filtered = filtered.filter(r => r.date === todayDateStr);
+            }} else if (currentDateFilter === 'yesterday') {{
+                // Tìm ngày gần nhất trước hôm nay
+                const olderDates = availableDates.map(d => d.date).filter(d => d < todayDateStr);
+                const yesterdayDate = olderDates[0] || '';
+                if (yesterdayDate) {{
+                    filtered = filtered.filter(r => r.date === yesterdayDate);
+                }}
+            }} else if (currentDateFilter !== 'all') {{
+                filtered = filtered.filter(r => r.date === currentDateFilter);
+            }}
+
+            // 2. Lọc theo Ca Tác Chiến
+            if (currentShiftFilter !== 'all') {{
+                filtered = filtered.filter(r => r.shift_label && r.shift_label.includes(currentShiftFilter));
+            }}
+
+            // 3. Lọc theo Phòng Ban
+            if (currentDeptFilter !== 'all') {{
+                filtered = filtered.filter(r => r.dept_id === currentDeptFilter);
+            }}
+
+            // 4. Lọc theo Từ Khóa
+            if (currentSearchQuery) {{
+                filtered = filtered.filter(r => 
+                    (r.title && r.title.toLowerCase().includes(currentSearchQuery)) ||
+                    (r.preview && r.preview.toLowerCase().includes(currentSearchQuery)) ||
+                    (r.file_name && r.file_name.toLowerCase().includes(currentSearchQuery))
+                );
+            }}
+
+            renderReports(filtered);
+        }}
+
         // Render danh sách báo cáo
         function renderReports(reports) {{
             const container = document.getElementById('reports-container');
@@ -821,8 +1085,8 @@ def generate_portal_html(
                 container.innerHTML = `
                     <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 14px; color: var(--text-muted);">
                         <div style="font-size: 32px; margin-bottom: 12px;">📂</div>
-                        <div style="font-size: 16px; font-weight: 700; color: #fff;">Chưa tìm thấy báo cáo phù hợp</div>
-                        <div style="font-size: 13px; margin-top: 6px;">Vui lòng chọn bộ lọc khác hoặc nhập từ khóa tìm kiếm.</div>
+                        <div style="font-size: 16px; font-weight: 700; color: #fff;">Không có báo cáo nào trong khung thời gian này</div>
+                        <div style="font-size: 13px; margin-top: 6px; color: var(--text-dim);">Chủ tịch có thể chọn "Toàn Bộ Lịch Sử" hoặc chọn ngày khác trong Kho Lưu Trữ ở trên.</div>
                     </div>
                 `;
                 return;
@@ -831,6 +1095,9 @@ def generate_portal_html(
             let html = '';
             reports.forEach(r => {{
                 const deptColor = r.color || '#38bdf8';
+                const timeText = r.time || '--:--';
+                const shiftText = r.shift_label || 'Tác Chiến';
+
                 html += `
                     <div class="report-card" onclick="openReportModal('${{r.rel_path}}')">
                         <div>
@@ -838,13 +1105,18 @@ def generate_portal_html(
                                 <span class="dept-tag" style="background: ${{deptColor}}22; color: ${{deptColor}}; border: 1px solid ${{deptColor}}44;">
                                     ${{r.icon}} ${{r.dept_short}}
                                 </span>
-                                <span class="report-time">${{r.date}} ${{r.time}}</span>
+                                <div class="report-time-badge">
+                                    <strong style="color: #fbbf24;">⏰ ${{timeText}}</strong>
+                                    <span style="color: var(--text-dim);">• ${{shiftText}}</span>
+                                </div>
                             </div>
                             <div class="report-title">${{r.title}}</div>
                             <div class="report-preview">${{r.preview || 'Báo cáo chi tiết thể chế đã lưu trữ.'}}</div>
                         </div>
                         <div class="card-bottom">
-                            <span style="color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">${{r.size_kb}} KB</span>
+                            <span style="color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 11px;">
+                                📅 ${{r.date}} | 📦 ${{r.size_kb}} KB
+                            </span>
                             <button class="btn-read" onclick="event.stopPropagation(); openReportModal('${{r.rel_path}}')">
                                 📖 Đọc Toàn Văn
                             </button>
@@ -855,42 +1127,10 @@ def generate_portal_html(
             container.innerHTML = html;
         }}
 
-        // Lọc theo phòng ban
-        function filterReports(deptId) {{
-            currentFilter = deptId;
-            document.querySelectorAll('#dept-filter-tags .tag-btn').forEach(b => b.classList.remove('active'));
-            const activeBtn = Array.from(document.querySelectorAll('#dept-filter-tags .tag-btn')).find(b => b.getAttribute('onclick').includes(deptId));
-            if (activeBtn) activeBtn.classList.add('active');
-
-            applyFilters();
-        }}
-
-        // Tìm kiếm
-        function searchReports() {{
-            applyFilters();
-        }}
-
-        function applyFilters() {{
-            const query = (document.getElementById('report-search').value || '').toLowerCase().trim();
-            let filtered = allReports;
-
-            if (currentFilter !== 'all') {{
-                filtered = filtered.filter(r => r.dept_id === currentFilter);
-            }}
-
-            if (query) {{
-                filtered = filtered.filter(r => 
-                    (r.title && r.title.toLowerCase().includes(query)) ||
-                    (r.preview && r.preview.toLowerCase().includes(query)) ||
-                    (r.file_name && r.file_name.toLowerCase().includes(query))
-                );
-            }}
-
-            renderReports(filtered);
-        }}
-
         // Mở Modal đọc báo cáo toàn văn
+        let currentOpenPath = '';
         async function openReportModal(relPath) {{
+            currentOpenPath = relPath;
             const modal = document.getElementById('report-modal');
             const contentArea = document.getElementById('modal-content-area');
             const titleEl = document.getElementById('modal-report-title');
@@ -899,7 +1139,7 @@ def generate_portal_html(
 
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            contentArea.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--text-muted);">⏳ Đang tải dữ liệu từ máy chủ đám mây...</div>';
+            contentArea.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--text-muted);">⏳ Đang tải toàn văn từ máy chủ đám mây...</div>';
 
             try {{
                 const res = await fetch('/api/report?path=' + encodeURIComponent(relPath));
@@ -911,11 +1151,11 @@ def generate_portal_html(
                 }}
 
                 titleEl.innerText = data.title || 'Báo cáo chi tiết';
-                metaEl.innerText = `Đường dẫn: ${{data.path}} | Kích thước: ${{data.size_kb}} KB | Cập nhật: ${{data.last_modified}}`;
+                metaEl.innerText = `Đường dẫn: ${{data.path}} | Kích thước: ${{data.size_kb}} KB | Thời gian cập nhật: ${{data.last_modified}}`;
                 
                 const meta = allReports.find(r => r.rel_path === relPath);
                 if (meta) {{
-                    badgeEl.innerText = `${{meta.icon}} ${{meta.dept_name}}`;
+                    badgeEl.innerText = `${{meta.icon}} ${{meta.dept_name}} [${{meta.shift_label}}]`;
                     badgeEl.style.background = `${{meta.color}}22`;
                     badgeEl.style.color = meta.color;
                     badgeEl.style.borderColor = `${{meta.color}}55`;
@@ -947,14 +1187,28 @@ def generate_portal_html(
             }}
         }}
 
+        function printReport() {{
+            window.print();
+        }}
+
+        function copyReportLink() {{
+            const url = window.location.origin + '?view=' + encodeURIComponent(currentOpenPath);
+            navigator.clipboard.writeText(url).then(() => {{
+                alert('Đã sao chép link báo cáo: ' + url);
+            }}).catch(() => {{
+                prompt('Link báo cáo:', url);
+            }});
+        }}
+
         // Làm mới dữ liệu từ server (Auto polling mỗi 10 giây)
         async function refreshData() {{
             try {{
-                const res = await fetch('/api/reports?limit=100');
+                const res = await fetch('/api/reports?limit=150');
                 if (res.ok) {{
                     allReports = await res.json();
-                    document.getElementById('stat-reports-count').innerText = allReports.length + ' Báo Cáo';
-                    applyFilters();
+                    const todayCount = allReports.filter(r => r.date === todayDateStr).length;
+                    document.getElementById('stat-today-count').innerText = todayCount + ' Báo Cáo';
+                    applyAllFilters();
                 }}
             }} catch (e) {{
                 console.log('Polling reports error:', e);
@@ -964,8 +1218,8 @@ def generate_portal_html(
         // Tự động quét cập nhật mỗi 10 giây
         setInterval(refreshData, 10000);
 
-        // Khởi động render danh sách ban đầu
-        renderReports(allReports);
+        // Khởi động render danh sách ban đầu (mặc định mở Báo Cáo Hôm Nay)
+        applyAllFilters();
 
         // Kiểm tra xem trên URL có tham số ?view= không để tự động mở báo cáo
         const urlParams = new URLSearchParams(window.location.search);
