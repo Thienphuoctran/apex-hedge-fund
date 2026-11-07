@@ -53,7 +53,7 @@ DAEMON_LOG.parent.mkdir(parents=True, exist_ok=True)
 SCHEDULED_MILESTONES = [
     "06:00", "07:00", "07:30", "08:00", "08:30", "08:45",
     "09:00", "11:45", "13:00", "14:00", "14:25", "15:15",
-    "18:00", "21:00", "21:15", "22:00", "23:00"
+    "18:00", "21:00", "21:15", "22:00", "23:00", "23:30"
 ]
 
 DRY_RUN_MODE = False
@@ -246,7 +246,8 @@ def execute_milestone(milestone_id: str) -> bool:
         "21:00": ("TASK-2100-HIENBCTC", "ban_10_hien", 6500, 2500),
         "21:15": ("TASK-2115-KHANHVIDEO", "ban_11_khanh", 7500, 3200),
         "22:00": ("TASK-2200-EVOLUTION", "ban_5_learning", 4500, 1800),
-        "23:00": ("TASK-2300-COUNCIL", "ban_8_cio", 8000, 3500)
+        "23:00": ("TASK-2300-COUNCIL", "ban_8_cio", 8000, 3500),
+        "23:30": ("TASK-2330-TRONG-AUDIT", "ban_12_ombudsman", 8000, 3500)
     }
 
     meta = milestone_meta_map.get(milestone_id)
@@ -361,6 +362,13 @@ def execute_milestone(milestone_id: str) -> bool:
             )
             _dispatch("radar_filings", msg)
             _dispatch("james_hq", msg)
+
+        # ==============================================================================
+        # 18. 23:30 - BAN 12 TRỌNG: PHIÊN KIỂM SÁT THỂ CHẾ, KỶ LUẬT & TOÀN VẸN HỆ THỐNG
+        # ==============================================================================
+        elif milestone_id == "23:30":
+            _run_py_script("scripts/apex_inspector_trong.py", args=["--run-23h30-audit"], timeout=180)
+            log_event("[+] Đã thực thi phiên kiểm sát thể chế 23h30 của Ban 12 Trọng.")
 
         # ==============================================================================
         # 3. 07:30 - BAN 6: CHẠY ENGINE BẢN TIN KHAI SÁNG BUỔI SÁNG GỬI CHỦ TỊCH

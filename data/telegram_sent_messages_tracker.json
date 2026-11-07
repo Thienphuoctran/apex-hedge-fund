@@ -2166,5 +2166,37 @@
     "topic_key": "assistant_nam",
     "date": "2026-11-07",
     "timestamp": "2026-11-07 16:52:54"
+  },
+  {
+    "message_id": 472,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-07",
+    "timestamp": "2026-11-07 17:04:58"
+  },
+  {
+    "message_id": 473,
+    "chat_id": "-1004465270817",
+    "thread_id": 106,
+    "topic_key": "assistant_nam",
+    "date": "2026-11-07",
+    "timestamp": "2026-11-07 17:04:59"
+  },
+  {
+    "message_id": 474,
+    "chat_id": "-1004465270817",
+    "thread_id": 4,
+    "topic_key": "morning_blotter",
+    "date": "2026-11-07",
+    "timestamp": "2026-11-07 17:05:00"
+  },
+  {
+    "message_id": 505,
+    "chat_id": "8332675283",
+    "thread_id": null,
+    "topic_key": "james_hq",
+    "date": "2026-11-07",
+    "timestamp": "2026-11-07 17:05:01"
   }
 ]
