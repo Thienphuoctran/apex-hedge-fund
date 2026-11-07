@@ -177,22 +177,22 @@ DEPARTMENTS_CONFIG = [
 MILESTONE_TIME_MAP = [
     ("23:30", ["23:30", "23h30", "task-2330", "trong_audit"], "23:30 PM", "🌙 Ca Đêm (23h30)"),
     ("23:00", ["23:00", "23h00", "task-2300", "council", "eod_executive"], "23:00 PM", "🌙 Ca Đêm (23h00)"),
-    ("22:00", ["22:00", "22h00", "task-2200", "evolution"], "22:00 PM", "🌙 Ca Đêm (22h00)"),
-    ("21:15", ["21:15", "21h15", "task-2115", "khanhvideo"], "21:15 PM", "🌙 Ca Tối (21h15)"),
-    ("21:00", ["21:00", "21h00", "task-2100", "hienbctc"], "21:00 PM", "🌙 Ca Tối (21h00)"),
-    ("18:00", ["18:00", "18h00", "task-1800", "bctclibrary"], "18:00 PM", "🌙 Ca Tối (18h00)"),
-    ("15:15", ["15:15", "15h15", "task-1515", "walkforward", "post_mortem"], "15:15 PM", "🎯 Ca Chiều (15h15)"),
-    ("14:25", ["14:25", "14h25", "task-1425", "guard03", "pre_atc"], "14:25 PM", "🎯 Ca Chiều (14h25)"),
+    ("22:00", ["22:00", "22h00", "task-2200", "evolution", "vn_learning_report"], "22:00 PM", "🌙 Ca Đêm (22h00)"),
+    ("21:15", ["21:15", "21h15", "task-2115", "khanhvideo", "viral_script"], "21:15 PM", "🌙 Ca Tối (21h15)"),
+    ("21:00", ["21:00", "21h00", "task-2100", "hienbctc", "hien_daily_review", "chọn lọc bctc"], "21:00 PM", "🌙 Ca Tối (21h00)"),
+    ("18:00", ["18:00", "18h00", "task-1800", "bctclibrary", "vn_cbtt_radar", "rà soát bctc"], "18:00 PM", "🌙 Ca Tối (18h00)"),
+    ("15:15", ["15:15", "15h15", "task-1515", "walkforward", "post_mortem", "learning_report"], "15:15 PM", "🎯 Ca Chiều (15h15)"),
+    ("14:25", ["14:25", "14h25", "task-1425", "guard03", "pre_atc", "vn_ic_decision", "ic decision", "nghị quyết hội đồng"], "14:25 PM", "🎯 Ca Chiều (14h25)"),
     ("14:00", ["14:00", "14h00", "task-1400", "goldenhour", "khung_gio_vang"], "14:00 PM", "🎯 Ca Chiều (14h00)"),
-    ("13:00", ["13:00", "13h00", "task-1300", "t2radar"], "13:00 PM", "☀️ Ca Trưa (13h00)"),
-    ("11:45", ["11:45", "11h45", "task-1145", "flash"], "11:45 AM", "☀️ Ca Trưa (11h45)"),
+    ("13:00", ["13:00", "13h00", "task-1300", "t2radar", "t2_pressure"], "13:00 PM", "☀️ Ca Trưa (13h00)"),
+    ("11:45", ["11:45", "11h45", "task-1145", "flash", "vn_investment_memo", "investment memo", "sàng lọc cơ hội"], "11:45 AM", "☀️ Ca Trưa (11h45)"),
     ("09:00", ["09:00", "09h00", "task-0900", "opening", "ato"], "09:00 AM", "🌅 Ca Sáng (09h00)"),
-    ("08:45", ["08:45", "08h45", "task-0845", "blotter", "master_cio"], "08:45 AM", "🌅 Ca Sáng (08h45)"),
-    ("08:30", ["08:30", "08h30", "task-0830", "magazine", "specialist"], "08:30 AM", "🌅 Ca Sáng (08h30)"),
-    ("08:00", ["08:00", "08h00", "task-0800", "alpha", "equity"], "08:00 AM", "🌅 Ca Sáng (08h00)"),
-    ("07:30", ["07:30", "07h30", "task-0730", "coach", "mentor"], "07:30 AM", "🌅 Ca Sáng (07h30)"),
-    ("07:00", ["07:00", "07h00", "task-0700", "macro"], "07:00 AM", "🌅 Ca Sáng (07h00)"),
-    ("06:00", ["06:00", "06h00", "task-0600", "autoclean", "cbtt"], "06:00 AM", "🌅 Ca Sáng (06h00)"),
+    ("08:45", ["08:45", "08h45", "task-0845", "blotter", "master_cio", "quant_risk"], "08:45 AM", "🌅 Ca Sáng (08h45)"),
+    ("08:30", ["08:30", "08h30", "task-0830", "magazine", "specialist", "vn_specialist"], "08:30 AM", "🌅 Ca Sáng (08h30)"),
+    ("08:00", ["08:00", "08h00", "task-0800", "alpha", "equity", "vn_equity_analysis"], "08:00 AM", "🌅 Ca Sáng (08h00)"),
+    ("07:30", ["07:30", "07h30", "task-0730", "coach", "mentor", "mentor_briefing"], "07:30 AM", "🌅 Ca Sáng (07h30)"),
+    ("07:00", ["07:00", "07h00", "task-0700", "macro", "vn_macro"], "07:00 AM", "🌅 Ca Sáng (07h00)"),
+    ("06:00", ["06:00", "06h00", "task-0600", "autoclean", "cbtt", "cbtt_radar"], "06:00 AM", "🌅 Ca Sáng (06h00)"),
 ]
 
 
@@ -359,6 +359,16 @@ def scan_all_institutional_reports(
             if shift_filter and shift_filter != "all" and shift_filter not in meta["shift_label"]:
                 continue
 
+            # CẦU CHÌ KHÓA THỜI GIAN THỰC (STRICT TIME-GATING & EMBARGO SHIELD):
+            # Nếu báo cáo mang ngày hôm nay, CHỈ ĐƯỢC PHÉP CÔNG BỐ khi giờ thực tế >= giờ tác chiến của báo cáo.
+            now_dt = datetime.datetime.now()
+            today_str = now_dt.strftime("%Y-%m-%d")
+            current_sort_time = now_dt.strftime("%H:%M:%S")
+
+            if meta["date"] == today_str and meta["sort_time"] > current_sort_time:
+                # CHƯA ĐẾN GIỜ TÁC CHIẾN THỰC TẾ! Embargoed - Khóa lại cho đến khi đến đúng giờ!
+                continue
+
             reports.append(meta)
 
     # Sắp xếp theo Ngày giảm dần, sau đó theo Giờ tác chiến giảm dần
@@ -367,18 +377,14 @@ def scan_all_institutional_reports(
 
 
 def get_available_archive_dates() -> List[Dict[str, Any]]:
-    """Lấy danh sách tất cả các ngày có báo cáo trong kho dữ liệu kèm số lượng báo cáo."""
+    """Lấy danh sách tất cả các ngày có báo cáo trong kho dữ liệu kèm số lượng báo cáo chuẩn unembargoed."""
+    all_reps = scan_all_institutional_reports(limit=1000)
     date_counts: Dict[str, int] = {}
     today_str = datetime.datetime.now().strftime("%Y-%m-%d")
 
-    for dept_cfg in DEPARTMENTS_CONFIG:
-        for file_path in BASE_DIR.glob(dept_cfg["pattern"]):
-            if file_path.name.lower() in EXCLUDED_FILENAMES:
-                continue
-            m = re.search(r"(\d{4}-\d{2}-\d{2})", file_path.name)
-            if m:
-                d = m.group(1)
-                date_counts[d] = date_counts.get(d, 0) + 1
+    for r in all_reps:
+        d = r["date"]
+        date_counts[d] = date_counts.get(d, 0) + 1
 
     sorted_dates = sorted(date_counts.keys(), reverse=True)
     result = []
