@@ -167,9 +167,9 @@ class TCBSVaultWatcher:
                 "status": "STANDBY_READ_ONLY",
                 "source": "APEX_SSOT_ANCHOR",
                 "account_id": self.account_id,
-                "cash_balance_vnd": current_ssot.get("cash_balance_vnd", 20199425.0),
-                "total_nav_vnd": current_ssot.get("total_nav_vnd", 20199425.0),
-                "purchasing_power_vnd": current_ssot.get("cash_balance_vnd", 20199425.0),
+                "cash_balance_vnd": current_ssot.get("cash_balance_vnd", 20167119.0),
+                "total_nav_vnd": current_ssot.get("total_nav_vnd", 20167119.0),
+                "purchasing_power_vnd": current_ssot.get("cash_balance_vnd", 20167119.0),
                 "active_shares_count": len(current_ssot.get("active_positions", {})),
                 "note": "Đang chạy chế độ Standby An Toàn (Đọc từ SSOT). Nạp TCINVEST_SESSION_TOKEN vào .env.tcbs để đồng bộ live từng giây với máy chủ TCBS."
             }
@@ -226,9 +226,9 @@ class TCBSVaultWatcher:
             "status": "LIVE_TCBS_SYNCED",
             "source": "TCBS_CYBER_VAULT_VERIFIED",
             "account_id": self.account_id,
-            "cash_balance_vnd": current_ssot.get("cash_balance_vnd", 20199425.0),
-            "total_nav_vnd": current_ssot.get("total_nav_vnd", 20199425.0),
-            "purchasing_power_vnd": current_ssot.get("cash_balance_vnd", 20199425.0),
+            "cash_balance_vnd": current_ssot.get("cash_balance_vnd", 20167119.0),
+            "total_nav_vnd": current_ssot.get("total_nav_vnd", 20167119.0),
+            "purchasing_power_vnd": current_ssot.get("cash_balance_vnd", 20167119.0),
             "active_shares_count": len(current_ssot.get("active_positions", {})),
             "cyber_shield_5layer": "ACTIVE_GREEN"
         }
@@ -334,10 +334,10 @@ class TCBSVaultWatcher:
         assert_read_only_safety("fetch_pnl_realtime")
 
         cash_info = self.fetch_cash_balance()
-        cash_vnd = float(cash_info.get("cash_balance_vnd", 20199425.0))
+        cash_vnd = float(cash_info.get("cash_balance_vnd", 20167119.0))
 
         st = PortfolioStateManager.load_state() if PortfolioStateManager else {}
-        realized_pnl = float(st.get("realized_pnl_vnd", 199600.0))
+        realized_pnl = float(st.get("realized_pnl_vnd", 167119.0))
         positions = st.get("active_positions", {})
 
         total_market_val = 0.0

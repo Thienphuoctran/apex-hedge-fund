@@ -117,9 +117,9 @@ def handle_portfolio_summary() -> str:
     try:
         from scripts.portfolio_state_manager import PortfolioStateManager
         st = PortfolioStateManager.load_state()
-        cash = st.get("cash_balance_vnd", 20199425.0)
+        cash = st.get("cash_balance_vnd", 20167119.0)
         positions = st.get("active_positions", {})
-        realized_pnl = st.get("realized_pnl_vnd", 199600.0)
+        realized_pnl = st.get("realized_pnl_vnd", 167119.0)
 
         if not positions:
             lines = [
@@ -484,7 +484,7 @@ def process_user_query(text: str) -> str:
             cash_info = watcher.fetch_cash_balance()
             holdings = watcher.fetch_portfolio_holdings()
             
-            cash_vnd = float(cash_info.get("cash_balance_vnd", 20199425.0))
+            cash_vnd = float(cash_info.get("cash_balance_vnd", 20167119.0))
             is_live = cash_info.get("status") == "LIVE_TCBS_SYNCED"
             auth_badge = "🟢 *ĐÃ KẾT NỐI TRỰC TIẾP TCBS (LIVE)*" if is_live else "🟡 *CHẾ ĐỘ STANDBY AN TOÀN (SSOT)*"
             

@@ -35,9 +35,9 @@ SENTINEL_STATUS = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / "live_sentinel_s
 def _get_live_portfolio_context() -> str:
     try:
         st = PortfolioStateManager.load_state()
-        cash_vnd = st.get("cash_balance_vnd", 20199425.0)
+        cash_vnd = st.get("cash_balance_vnd", 20167119.0)
         positions = st.get("active_positions", {})
-        realized = st.get("realized_pnl_vnd", 199600.0)
+        realized = st.get("realized_pnl_vnd", 167119.0)
         if not positions:
             return (
                 f"Vốn NAV hiện tại: {cash_vnd:,.0f} VNĐ. Trạng thái: 100% Tiền mặt ({cash_vnd:,.0f} VNĐ), "

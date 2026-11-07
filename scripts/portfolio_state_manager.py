@@ -31,11 +31,11 @@ DEFAULT_INITIAL_STATE = {
     "account_id": "105C307855",
     "chairman": "Trần Quốc Thiên Phước",
     "status": "ALL_CASH_STANDDOWN",
-    "cash_balance_vnd": 20199425.0,
-    "total_nav_vnd": 20199425.0,
+    "cash_balance_vnd": 20167119.0,
+    "total_nav_vnd": 20167119.0,
     "total_market_val_vnd": 0.0,
     "total_cost_vnd": 0.0,
-    "realized_pnl_vnd": 199600.0,
+    "realized_pnl_vnd": 167119.0,
     "unrealized_pnl_vnd": 0.0,
     "active_positions": {},
     "trade_history": [
@@ -45,8 +45,8 @@ DEFAULT_INITIAL_STATE = {
             "action": "SELL_ALL",
             "reason": "Chốt lời Kịch bản A vùng đỉnh sáng Thứ Sáu theo chỉ thị Master CIO",
             "shares_sold": {"HPG": 400, "TCB": 300, "MBB": 200},
-            "realized_pnl_vnd": 199600.0,
-            "cash_after_trade": 20199425.0
+            "realized_pnl_vnd": 167119.0,
+            "cash_after_trade": 20167119.0
         }
     ],
     "tactical_regime": "PATIENT_PREDATOR_WEEKEND_STANDDOWN",
@@ -106,8 +106,8 @@ class PortfolioStateManager:
                 anchor["status"] = "ALL_POSITIONS_CLOSED_100_PERCENT_CASH"
                 anchor["enforced_strategy"] = "100_PERCENT_CASH_PROTECTED"
 
-            anchor["realized_cash_vnd"] = float(state.get("cash_balance_vnd", 20199425.0))
-            anchor["realized_pnl_vnd"] = float(state.get("realized_pnl_vnd", 199600.0))
+            anchor["realized_cash_vnd"] = float(state.get("cash_balance_vnd", 20167119.0))
+            anchor["realized_pnl_vnd"] = float(state.get("realized_pnl_vnd", 167119.0))
             anchor["audit_timestamp"] = f"{datetime.datetime.now().strftime('%Y-%m-%d_%Hh%M')}_dynamic_sync"
 
             with open(COMPLIANCE_ANCHOR_FILE, "w", encoding="utf-8") as f:
@@ -275,7 +275,7 @@ class PortfolioStateManager:
         positions = state.get("active_positions", {})
 
         if not positions:
-            return True, f"Danh mục vốn dĩ đã là 100% TIỀN MẶT ({state.get('cash_balance_vnd', 20199425.0):,.0f} ₫), không có cổ phiếu nào cần bán."
+            return True, f"Danh mục vốn dĩ đã là 100% TIỀN MẶT ({state.get('cash_balance_vnd', 20167119.0):,.0f} ₫), không có cổ phiếu nào cần bán."
 
         total_liquidated = 0.0
         total_pnl = 0.0

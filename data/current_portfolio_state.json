@@ -2,11 +2,11 @@
   "account_id": "105C307855",
   "chairman": "Trần Quốc Thiên Phước",
   "status": "ALL_CASH_STANDDOWN",
-  "cash_balance_vnd": 20199425.0,
-  "total_nav_vnd": 20199425.0,
+  "cash_balance_vnd": 20167119.0,
+  "total_nav_vnd": 20167119.0,
   "total_market_val_vnd": 0.0,
   "total_cost_vnd": 0.0,
-  "realized_pnl_vnd": 199600.0,
+  "realized_pnl_vnd": 167119.0,
   "unrealized_pnl_vnd": 0.0,
   "active_positions": {},
   "trade_history": [
@@ -20,8 +20,8 @@
         "TCB": 300,
         "MBB": 200
       },
-      "realized_pnl_vnd": 199600.0,
-      "cash_after_trade": 20199425.0
+      "realized_pnl_vnd": 167119.0,
+      "cash_after_trade": 20167119.0
     },
     {
       "trade_id": "TRD-20261107131910",
@@ -47,10 +47,10 @@
       },
       "liquidated_vnd": 4140000.0,
       "pnl_vnd": 0.0,
-      "cash_after_trade": 20199425.0,
+      "cash_after_trade": 20167119.0,
       "reason": "Chủ tịch ra lệnh trực tiếp trên Telegram: 'James oi da ban het roi nhe'"
     }
   ],
   "tactical_regime": "PATIENT_PREDATOR_WEEKEND_STANDDOWN",
-  "last_updated": "2026-11-07 13:19:10"
+  "last_updated": "2026-11-07 14:37:46"
 }

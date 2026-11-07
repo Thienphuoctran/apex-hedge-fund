@@ -36,8 +36,8 @@ def run_pre_flight_audit():
         anchor_data = {
             "audit_timestamp": "2026-11-06_09h55_Emergency_Council_Forensic_Hearing",
             "status": "ALL_POSITIONS_CLOSED_100_PERCENT_CASH",
-            "realized_cash_vnd": 20199425.0,
-            "realized_pnl_vnd": 199600.0,
+            "realized_cash_vnd": 20167119.0,
+            "realized_pnl_vnd": 167119.0,
             "enforced_strategy": "100_PERCENT_CASH_PROTECTED",
             "institutional_rules_hardcoded": [
                 {

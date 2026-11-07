@@ -150,14 +150,14 @@ def _get_live_portfolio_snapshot() -> Dict[str, Any]:
     # Kiểm tra anchor neo thể chế: Nếu đã bán hết sang 100% Tiền Mặt thì không nạp shares cũ
     anchor_file = BASE_DIR / "data" / "institutional_compliance_anchor.json"
     is_all_cash = False
-    realized_cash = 20199425.0
+    realized_cash = 20167119.0
     if anchor_file.exists():
         try:
             with open(anchor_file, "r", encoding="utf-8") as af:
                 anc = json.load(af)
             if anc.get("status") == "ALL_POSITIONS_CLOSED_100_PERCENT_CASH":
                 is_all_cash = True
-                realized_cash = float(anc.get("realized_cash_vnd", 20199425.0))
+                realized_cash = float(anc.get("realized_cash_vnd", 20167119.0))
         except Exception:
             pass
 

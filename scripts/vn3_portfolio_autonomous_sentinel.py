@@ -311,8 +311,8 @@ def update_telemetry(quotes):
         "total_market_val": total_market_val,
         "total_unrealized_pnl": total_unrealized_pnl,
         "total_unrealized_pnl_pct": round(total_pnl_pct, 2),
-        "dry_powder": 20199425.0 if _is_closed else 1409425.0,
-        "total_nav": (total_market_val + 20199425.0) if _is_closed else (total_market_val + 1409425.0),
+        "dry_powder": 20167119.0 if _is_closed else 1409425.0,
+        "total_nav": (total_market_val + 20167119.0) if _is_closed else (total_market_val + 1409425.0),
         "positions": positions_summary
     }
     with open(TELEMETRY_JSON, "w", encoding="utf-8") as f:

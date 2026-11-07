@@ -143,7 +143,7 @@ def execute_task_action(action_type: str, command_text: str, task_id: str) -> Di
     state = PortfolioStateManager.load_state()
     positions = state.get("active_positions", {})
     active_syms = [s for s, info in positions.items() if info.get("shares", 0) > 0]
-    cash_vnd = state.get("cash_balance_vnd", 20199425.0)
+    cash_vnd = state.get("cash_balance_vnd", 20167119.0)
     nav_vnd = cash_vnd + sum(info.get("shares", 0) * info.get("avg_price", 0) for info in positions.values())
 
     if action_type == "SENTINEL_SCAN_AND_MONITOR":
@@ -176,7 +176,7 @@ def execute_task_action(action_type: str, command_text: str, task_id: str) -> Di
                 f"☀️ *[BÁO CÁO KẾ HOẠCH TÁC CHIẾN HÔM NAY — MINH QUÂN BAN 7 VN]*\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"Tài khoản TCBS: `105C307855` | Tổng NAV: `{nav_vnd:,.0f} VNĐ` | Tiền mặt sẵn sàng: `{cash_vnd:,.0f} VNĐ (100% Cash)` | Độ trễ Feed: `{latency}ms`\n\n"
-                f"✅ *TRẠNG THÁI KHO HÀNG*: Đã tất toán 100% cổ phiếu cũ — Khóa sổ lãi thực nhận `+{state.get('realized_pnl_vnd', 199600):,.0f} ₫`.\n\n"
+                f"✅ *TRẠNG THÁI KHO HÀNG*: Đã tất toán 100% cổ phiếu cũ — Khóa sổ lãi thực nhận `+{state.get('realized_pnl_vnd', 167119):,.0f} ₫`.\n\n"
                 f"📡 *RADAR TẦM NGẮM VÒNG MỚI (CHỜ KHUNG GIỜ VÀNG 14H00 - 14H25)*:\n"
                 + "\n".join(q_lines) + "\n\n"
                 f"🛡️ *KỶ LUẬT GUARDRAILS*: Giữ 100% tiền mặt quan sát hấp thụ cung T+2, chỉ giải ngân khi hội tụ đủ Checklist 7 điểm!"

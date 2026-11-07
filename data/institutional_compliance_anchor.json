@@ -1,8 +1,8 @@
 {
-  "audit_timestamp": "2026-11-07_13h19_dynamic_sync",
+  "audit_timestamp": "2026-11-07_14h37_dynamic_sync",
   "status": "ALL_POSITIONS_CLOSED_100_PERCENT_CASH",
-  "realized_cash_vnd": 20199425.0,
-  "realized_pnl_vnd": 199600.0,
+  "realized_cash_vnd": 20167119.0,
+  "realized_pnl_vnd": 167119.0,
   "enforced_strategy": "100_PERCENT_CASH_PROTECTED",
   "institutional_rules_hardcoded": [
     {
