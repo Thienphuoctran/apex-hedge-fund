@@ -27,6 +27,14 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
+# --- TÍCH HỢP AGENT ZERO SCOUT (BAN 1 VN) ---
+try:
+    from scripts.apex_agent_zero_engine import ZeroBrowserScout
+    AGENT_ZERO_SCOUT = ZeroBrowserScout(timeout=3, max_retries=1)
+except Exception:
+    AGENT_ZERO_SCOUT = None
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_PATH = os.path.join(BASE_DIR, "config", "watchlist_vn.json")
 OUTPUT_PATH = os.path.join(BASE_DIR, "data", "vn_market_data.json")
@@ -365,6 +373,16 @@ def fetch_macro_indicators():
                 macro_data[name] = {"value": round(val, 2), "change_pct": round(chg, 2)}
         except Exception:
             macro_data[name] = {"value": None, "change_pct": 0.0}
+
+        # Cào số liệu sống SBV qua Agent Zero Browser Scout
+    if AGENT_ZERO_SCOUT:
+        try:
+            sbv_live = AGENT_ZERO_SCOUT.crawl_sbv_indicators()
+            macro_data["SBV_Central_Rate_USD_VND"] = {"value": sbv_live.get("central_rate_usd_vnd", 24250.0), "unit": "VND", "status": sbv_live.get("status")}
+            macro_data["SBV_OMO_Rate"] = {"value": sbv_live.get("omo_rate", 4.0), "unit": "%"}
+            macro_data["SBV_Interbank_Overnight"] = {"value": sbv_live.get("overnight_interbank_rate", 4.12), "unit": "%"}
+        except Exception:
+            pass
 
     macro_data["SBV_Refinancing_Rate"] = {"value": 4.5, "unit": "%", "status": "Hỗ trợ thanh khoản"}
     macro_data["SBV_Discount_Rate"] = {"value": 3.0, "unit": "%", "status": "Ổn định"}

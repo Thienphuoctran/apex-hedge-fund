@@ -31,7 +31,7 @@
 
 > [!IMPORTANT]
 > **KẾT QUẢ KIỂM TOÁN DANH MỤC PHỐ WALL ĐƯỢC TỰ ĐỘNG LIÊN KẾT**:  
-> - **Chuyên viên**: `Alex (Ban 7 Global)` | **Hit Rate**: `100.0%` | **Tiết kiệm trượt giá (Quy tắc 60/40)**: `+$2,239.32 USD` | **Alpha 5D vs S&P 500**: `+1.94%`.  
+> - **Chuyên viên**: `Alex (Ban 7 Global)` | **Hit Rate**: `100.0%` | **Tiết kiệm trượt giá (Quy tắc 60/40)**: `+$2,198.09 USD` | **Alpha 5D vs S&P 500**: `+1.94%`.  
 > - **Sẵn sàng Lộ trình Phố Wall (6 Tháng)**: Alex cam kết áp trần rủi ro Bán dẫn <= 28% NAV và chuẩn hóa điểm vào lệnh Limit Pullback để bảo toàn tuyệt đối dòng vốn của Chủ tịch Phước Trần!
 
 ---

@@ -1,20 +1,60 @@
 {
   "meeting_time": "23:00:00",
-  "meeting_date": "2026-11-03",
+  "meeting_date": "2026-11-07",
+  "next_trading_day": "Thứ Hai (09/11/2026)",
   "chairman_observed": "Trần Quốc Thiên Phước",
   "presiding_officer": "Master CIO James (Ban 8)",
   "council_status": "CONCLUDED_AND_RATIFIED",
+  "eod_audit_summary": {
+    "minh_quan_score": 95.0,
+    "alex_score": 79.0,
+    "vn_walk_forward_hit_rate_pct": 100.0,
+    "minh_quan_corrective_action": "Minh Quân tiếp tục duy trì kỷ luật thép: Tuyệt đối không FOMO xanh ATO, tuân thủ nghiêm ngặt Sổ Lệnh Master Blotter cho danh mục thực tế (HPG, TCB, MBB), và sẵn sàng kích hoạt chốt lời Scaling Out 50% TP1 khi hàng về tài khoản lúc 13h00 chiều mai.",
+    "alex_corrective_action": "Alex phải cập nhật trần rủi ro tương quan Bán dẫn khống chế <= 28% NAV và tinh chỉnh lại độ sâu lệnh Limit Pullback vào specialist_evolution_journal.md."
+  },
   "financial_snapshot": {
     "account_tcbs": "105C307855",
-    "total_nav_vnd": 20115000,
-    "realized_pnl_vnd": 115000,
-    "realized_pnl_pct": 0.58,
-    "cash_dry_powder_vnd": 1415000,
-    "cash_dry_powder_pct": 7.0,
+    "total_nav_vnd": 20234425.0,
+    "cost_basis_vnd": 18590400.0,
+    "market_value_vnd": 18825000.0,
+    "unrealized_pnl_vnd": 234600.0,
+    "unrealized_pnl_pct": 1.26,
+    "cash_dry_powder_vnd": 1409425.0,
+    "cash_dry_powder_pct": 6.97,
     "leverage_margin_pct": 0.0,
-    "hit_rate_vn_pct": 100.0,
-    "alex_slippage_saved_usd": 2250.47,
-    "alex_alpha_5d_pct": 1.9
+    "holdings": [
+      {
+        "symbol": "HPG",
+        "shares": 400,
+        "cost": 21156.0,
+        "close": 21200.0,
+        "pnl_vnd": 17600.0,
+        "pnl_pct": 0.21,
+        "tp1": 23090.0,
+        "stop_2atr": 20710.0
+      },
+      {
+        "symbol": "TCB",
+        "shares": 300,
+        "cost": 21356.0,
+        "close": 21650.0,
+        "pnl_vnd": 88200.0,
+        "pnl_pct": 1.38,
+        "tp1": 23170.0,
+        "stop_2atr": 20910.0
+      },
+      {
+        "symbol": "MBB",
+        "shares": 200,
+        "cost": 18606.0,
+        "close": 19250.0,
+        "pnl_vnd": 128800.0,
+        "pnl_pct": 3.46,
+        "tp1": 20150.0,
+        "stop_2atr": 18610.0
+      }
+    ],
+    "settlement_status": "900 CP khả dụng 100% trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên Thứ Hai (09/11/2026)."
   },
   "attendance_roster": [
     {
@@ -99,8 +139,8 @@
     },
     {
       "dept": "Ban 11",
-      "representative": "Khánh",
-      "role": "Giám Đốc Sáng Tạo Nội Dung & Video Viral"
+      "representative": "Khánh & Bảo",
+      "role": "Giám Đốc Sáng Tạo Nội Dung & Chuyên Viên Dựng Video"
     }
   ]
 }

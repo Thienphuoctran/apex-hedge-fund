@@ -27,6 +27,16 @@ import json
 import math
 import sys
 from pathlib import Path
+
+# --- TÍCH HỢP AGENT ZERO FORENSIC AUDITOR CHO BAN 2 VN (BƯỚC 3) ---
+try:
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+    from scripts.apex_agent_zero_engine import ZeroForensicAuditor
+    BAN2_ZERO_AUDITOR = ZeroForensicAuditor()
+except Exception:
+    BAN2_ZERO_AUDITOR = None
+
 from typing import Dict, Any, List, Tuple
 
 if hasattr(sys.stdout, "reconfigure"):

@@ -23,6 +23,16 @@ import os
 import sys
 from pathlib import Path
 
+# --- TÍCH HỢP AGENT ZERO SANDBOX CHO CHUYÊN VIÊN MINH QUÂN (BƯỚC 3) ---
+try:
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+    from scripts.apex_agent_zero_engine import DynamicCodeSandbox
+    MINH_QUAN_SANDBOX = DynamicCodeSandbox()
+except Exception:
+    MINH_QUAN_SANDBOX = None
+
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 

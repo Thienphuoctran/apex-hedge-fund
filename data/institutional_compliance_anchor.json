@@ -1,0 +1,27 @@
+{
+  "audit_timestamp": "2026-11-06_09h55_Emergency_Council_Forensic_Hearing",
+  "status": "ALL_POSITIONS_CLOSED_100_PERCENT_CASH",
+  "realized_cash_vnd": 20199425.0,
+  "realized_pnl_vnd": 199600.0,
+  "enforced_strategy": "100_PERCENT_CASH_PROTECTED",
+  "institutional_rules_hardcoded": [
+    {
+      "rule_id": "RULE-TPLF-01",
+      "name": "Thursday Profit Lock Fuse",
+      "statement": "BẮT BUỘC chốt lời tối thiểu 50% đến 100% vào chiều Thứ Năm nếu danh mục đạt lãi >= +2.0% NAV. CẤM TUYỆT ĐỐI ôm hàng qua đêm vào ngày Thứ Sáu."
+    },
+    {
+      "rule_id": "RULE-REALITY-02",
+      "name": "Reality-First Reporting",
+      "statement": "CẤM dùng từ ngữ phóng đại tô hồng ('bùng nổ', 'bứt phá', 'bay cao') khi bảng điện đỏ > 50%. Chỉ báo cáo thị giá thực tế khớp lệnh và khuyến nghị bán bám sát giá mua của thị trường."
+    },
+    {
+      "rule_id": "RULE-ZERO-FORGET-03",
+      "name": "Zero-Forgetting Hardcoded Anchor",
+      "statement": "Mọi Agent trước khi phát ngôn hay lập Sổ lệnh BẮT BUỘC nạp file compliance anchor này và kiểm tra pre_flight_compliance_check.py, cấm lặp lại sai lầm cũ."
+    }
+  ],
+  "allowed_action_today": "GIỮ NGUYÊN 100% TIỀN MẶT, ĐỨNG NGOÀI THỊ TRƯỜNG, SOẠN BÁO CÁO KIỂM ĐIỂM",
+  "forbidden_action_today": "CẤM MUA MỚI HOẶC BẮT ĐÁY VỘI VÀNG VÀO PHIÊN THỨ SÁU",
+  "hard_lock_status": "PERMANENTLY_ENFORCED_ZERO_FORGETTING"
+}

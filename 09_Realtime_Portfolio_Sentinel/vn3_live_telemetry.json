@@ -1,34 +1,31 @@
 {
-  "updated_at": "2026-11-04 18:16:55",
-  "portfolio_summary": {
-    "total_cost_vnd": 18590400.0,
-    "total_market_value_vnd": 19085000.0,
-    "total_unrealized_pnl_vnd": 494600.0,
-    "total_unrealized_pnl_pct": 2.660512952921938,
-    "total_shares": 900
-  },
+  "timestamp": "2026-11-07 12:42:43",
+  "account_id": "105C307855",
+  "chairman": "Trần Quốc Thiên Phước",
+  "mode": "REALTIME_VPS_DIRECT_FEED",
+  "mandate": "KỊCH BẢN A — BÁN HẾT 100% (900 CP)",
+  "total_cost": 18590400.0,
+  "total_market_val": 18825000.0,
+  "total_unrealized_pnl": 234600.0,
+  "total_unrealized_pnl_pct": 1.26,
+  "dry_powder": 1409425.0,
+  "total_nav": 20234425.0,
   "positions": [
     {
       "symbol": "TCB",
       "name": "Techcombank",
       "shares": 300,
       "entry_price": 21356.0,
-      "current_price": 21850.0,
-      "high": 21900.0,
-      "low": 21150.0,
-      "volume": 14245207,
-      "cost_vnd": 6406800.0,
-      "market_value_vnd": 6555000.0,
-      "pnl_vnd": 148200.0,
-      "pnl_pct": 2.3131672597864767,
-      "stop_loss_2atr": 20400.0,
-      "stop_warning": 20700.0,
-      "stop_dist_pct": 6.636155606407322,
-      "tp1": 23200.0,
-      "tp1_dist_pct": 6.178489702517163,
-      "tp2": 24800.0,
-      "tp2_dist_pct": 13.501144164759726,
-      "status": "🟢 ĐANG LÃI TÍCH CỰC"
+      "current_price": 21650.0,
+      "cost": 6406800.0,
+      "market_value": 6495000.0,
+      "unrealized_pnl": 88200.0,
+      "unrealized_pnl_pct": 1.38,
+      "stop_loss": 20400.0,
+      "sell_target_min": 22300.0,
+      "sell_target_max": 22500.0,
+      "volume": 11339600,
+      "action_mandate": "BÁN HẾT 100% TRONG KHUNG GIỜ VÀNG"
     },
     {
       "symbol": "MBB",
@@ -36,95 +33,31 @@
       "shares": 200,
       "entry_price": 18606.0,
       "current_price": 19250.0,
-      "high": 19300.0,
-      "low": 18700.0,
-      "volume": 19655852,
-      "cost_vnd": 3721200.0,
-      "market_value_vnd": 3850000.0,
-      "pnl_vnd": 128800.0,
-      "pnl_pct": 3.4612490594431904,
-      "stop_loss_2atr": 17900.0,
-      "stop_warning": 18150.0,
-      "stop_dist_pct": 7.012987012987012,
-      "tp1": 19800.0,
-      "tp1_dist_pct": 2.857142857142857,
-      "tp2": 20800.0,
-      "tp2_dist_pct": 8.051948051948052,
-      "status": "🟢 ĐANG LÃI TÍCH CỰC"
+      "cost": 3721200.0,
+      "market_value": 3850000.0,
+      "unrealized_pnl": 128800.0,
+      "unrealized_pnl_pct": 3.46,
+      "stop_loss": 17900.0,
+      "sell_target_min": 19800.0,
+      "sell_target_max": 20000.0,
+      "volume": 12496300,
+      "action_mandate": "BÁN HẾT 100% TRONG KHUNG GIỜ VÀNG"
     },
     {
       "symbol": "HPG",
       "name": "Tập đoàn Hòa Phát",
       "shares": 400,
       "entry_price": 21156.0,
-      "current_price": 21700.0,
-      "high": 21700.0,
-      "low": 21100.0,
-      "volume": 38678836,
-      "cost_vnd": 8462400.0,
-      "market_value_vnd": 8680000.0,
-      "pnl_vnd": 217600.0,
-      "pnl_pct": 2.571374550954812,
-      "stop_loss_2atr": 19400.0,
-      "stop_warning": 19700.0,
-      "stop_dist_pct": 10.599078341013826,
-      "tp1": 22200.0,
-      "tp1_dist_pct": 2.3041474654377883,
-      "tp2": 23200.0,
-      "tp2_dist_pct": 6.912442396313365,
-      "status": "🟢 ĐANG LÃI TÍCH CỰC"
-    }
-  ],
-  "quotes": {
-    "TCB": {
-      "price": 21850.0,
-      "high": 21900.0,
-      "low": 21150.0,
-      "volume": 14245207
-    },
-    "MBB": {
-      "price": 19250.0,
-      "high": 19300.0,
-      "low": 18700.0,
-      "volume": 19655852
-    },
-    "HPG": {
-      "price": 21700.0,
-      "high": 21700.0,
-      "low": 21100.0,
-      "volume": 38678836
-    }
-  },
-  "config": {
-    "TCB": {
-      "status": "HOLDING",
-      "shares": 300,
-      "entry_price": 21356.0,
-      "stop_loss": 20400.0,
-      "stop_warning": 20700.0,
-      "tp1": 23200.0,
-      "tp2": 24800.0,
-      "name": "Techcombank"
-    },
-    "MBB": {
-      "status": "HOLDING",
-      "shares": 200,
-      "entry_price": 18606.0,
-      "stop_loss": 17900.0,
-      "stop_warning": 18150.0,
-      "tp1": 19800.0,
-      "tp2": 20800.0,
-      "name": "Ngân hàng Quân Đội"
-    },
-    "HPG": {
-      "status": "HOLDING",
-      "shares": 400,
-      "entry_price": 21156.0,
+      "current_price": 21200.0,
+      "cost": 8462400.0,
+      "market_value": 8480000.0,
+      "unrealized_pnl": 17600.0,
+      "unrealized_pnl_pct": 0.21,
       "stop_loss": 19400.0,
-      "stop_warning": 19700.0,
-      "tp1": 22200.0,
-      "tp2": 23200.0,
-      "name": "Tập đoàn Hòa Phát"
+      "sell_target_min": 21800.0,
+      "sell_target_max": 22000.0,
+      "volume": 22105200,
+      "action_mandate": "BÁN HẾT 100% TRONG KHUNG GIỜ VÀNG"
     }
-  }
+  ]
 }

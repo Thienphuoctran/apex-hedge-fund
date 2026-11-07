@@ -126,7 +126,7 @@ def build_vn_session_evaluation(audit: dict, blotter: dict) -> str:
         ])
         tickers_str = ", ".join([str(o.get("symbol")) for o in orders_vn])
     else:
-        holdings_desc = "HPG 400 cổ + TCB 300 cổ + MBB 200 cổ (Tổng 900 CP)"
+        holdings_desc = "400 HPG + 300 TCB + 200 MBB (Tổng 900 CP - Danh mục Thực Tế TCBS 105C307855)"
         stops_desc = "HPG (20,120 đ = -4.19%), TCB (20,250 đ = -4.03%), MBB (22,900 đ = -4.18%)"
         ocf_desc = "HPG (1.29), TCB (CASA 40.5%), MBB (ROE 22.8%)"
         tickers_str = "HPG, TCB, MBB"
@@ -202,6 +202,14 @@ def build_us_session_evaluation(audit: dict, blotter: dict) -> str:
 
 
 def main():
+
+    # KHÓA KỶ LUẬT THỜI GIAN: Báo cáo Phúc Tra Cuối Ngày (EOD) chỉ được phép gửi sau 15:30 chiều
+    now_hour = datetime.now().hour
+    if "--force-eod" not in sys.argv and (6 <= now_hour < 15):
+        print(f"[!] TỪ CHỐI GỬI: Hiện tại là {now_hour}h sáng, thị trường đang trong phiên giao dịch.")
+        print("[!] Báo cáo Phúc tra Cuối ngày (Sau giờ đóng cửa) chỉ được phép phát hành sau 15:30 chiều.")
+        return
+
     print("=" * 70)
     print(" 📡 MASTER CIO TELEGRAM EOD AUDIT REPORTER")
     print(" GỬI BẢN ĐÁNH GIÁ CẢ 2 PHIÊN TỚI TELEGRAM NHÀ ĐẦU TƯ PHƯỚC TRẦN")

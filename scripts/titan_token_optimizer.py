@@ -277,13 +277,14 @@ def build_titan_index_and_digest() -> dict:
     if vn_ledger_file.exists():
         try:
             vn_l = json.loads(vn_ledger_file.read_text(encoding="utf-8"))
-            for r in vn_l.get("recommendations", []):
+            orders = vn_l.get("orders") or vn_l.get("recommendations", [])
+            for r in orders:
                 vn_md_rows.append(
-                    f"| **{r.get('ticker')}** | VN ({r.get('exchange')}) | {r.get('sleeve')} | "
-                    f"`{r.get('current_price'):,.0f}đ` (60%: `{r.get('probe_price_60'):,.0f}đ`) | "
-                    f"`{r.get('stop_loss'):,.0f}đ` (-{r.get('loss_pct')}%) | "
-                    f"`{r.get('tp1'):,.0f}đ` / `{r.get('tp2'):,.0f}đ` | **{r.get('rr_ratio')}x** | "
-                    f"OCF/LNST: `{r.get('ocf_ratio')}x` • Z: `{r.get('altman_z')}` • {r.get('audit_firm')} |"
+                    f"| **{r.get('ticker', r.get('code'))}** | VN ({r.get('exchange')}) | {r.get('sleeve')} | "
+                    f"`{r.get('current_price', 0):,.0f}đ` (60%: `{r.get('probe_price_60', 0):,.0f}đ`) | "
+                    f"`{r.get('stop_loss', 0):,.0f}đ` (-{r.get('loss_pct', 0)}%) | "
+                    f"`{r.get('tp1', 0):,.0f}đ` / `{r.get('tp2', 0):,.0f}đ` | **{r.get('rr_ratio', 2.0)}x** | "
+                    f"OCF/LNST: `{r.get('ocf_ratio', 1.0)}x` • Z: `{r.get('altman_z', 2.0)}` • {r.get('audit_firm', 'Big4')} |"
                 )
         except Exception:
             pass

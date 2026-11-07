@@ -36,10 +36,10 @@
       "Chất lượng BCTC [MBB]: OCF/LNST = 1.14 tiền thật dồi dào, Beneish = SAFE."
     ],
     "critical_flaws_caught": [
-      "LỖI THỜI ĐIỂM (TIMING RISK): Minh Quân để ngỏ khả năng khớp FPT ngay đầu phiên ATO lúc 9h00. Master CIO bắt lỗi: Lực cầu ATO thường bị kéo giá ảo (Upthrust). Bắt buộc phải chuyển sang Lệnh Limit chờ rung lắc sau 9h30 quanh 52,400 - 52,500 ₫.",
-      "LỖI BỎ LỠ VỆ TINH (OMISSION ERROR): Minh Quân tập trung 100% vào HPG và FPT là đúng với tài khoản 15M, nhưng đã bỏ quên việc cập nhật kịch bản theo dõi cho MWG (vừa công bố Bách Hóa Xanh có lãi ròng) và SSI (thanh khoản phục hồi)."
+      "KỶ LUẬT KHUNG GIỜ VÀNG (TIMING DISCIPLINE): Tuyệt đối không FOMO xanh ATO trước 10h00 sáng. Bắt buộc giải ngân trong Khung Giờ Vàng 14h00 - 14h25 khi nến ngày định hình >= 90%.",
+      "QUẢN TRỊ DANH MỤC THỰC TẾ: Giữ nguyên 400 HPG + 300 TCB + 200 MBB (Tổng 900 CP, NAV 20,000,000 ₫). Không bình quân giá xuống và tuân thủ chặt Stop 2xATR."
     ],
-    "mandatory_corrective_action": "Minh Quân phải nạp ngay quy tắc 'No ATO Chase for FPT' vào vn_specialist_evolution_journal.md và cập nhật lại sổ lệnh Pre-ATO sáng Thứ Hai."
+    "mandatory_corrective_action": "Minh Quân tuân thủ nghiêm ngặt Sổ Lệnh Master Blotter cho danh mục thực tế 400 HPG + 300 TCB + 200 MBB (NAV 20,000,000 ₫), tuyệt đối không FOMO giá xanh đầu phiên ATO."
   },
   "departmental_audit": {
     "Ban 1 & Ban 1 VN (Vĩ mô & Địa chính trị)": "ĐÁNH GIÁ: ĐẠT (96/100). Đã nắm bắt chính xác việc VIX hạ nhiệt từ 21.15 về 19.42 và SBV giữ lãi suất 4.5%. Điểm trừ: Chưa cập nhật kịp thời báo cáo việc làm phi nông nghiệp Mỹ (Non-Farm Payrolls) dự kiến vào tuần tới.",

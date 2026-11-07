@@ -48,6 +48,7 @@ def main():
     parser.add_argument("--cio-only", action="store_true", help="Chỉ chạy bước phân bổ vốn Master CIO")
     parser.add_argument("--telegram", action="store_true", default=True, help="Tự động gửi bản tin sáng tới Telegram Bot")
     parser.add_argument("--no-telegram", action="store_true", help="Không gửi tin nhắn Telegram")
+    parser.add_argument("--run-eod", action="store_true", help="Chạy kiểm toán phúc tra cuối ngày EOD (Chỉ dùng sau 15:30)")
     args = parser.parse_args()
 
     start_time = time.time()
@@ -86,8 +87,12 @@ def main():
     # Bước 6: Phòng Tổng Hệ Thống Rà Soát Định Kỳ 4 Ngày
     run_cmd([sys.executable, str(SCRIPTS_DIR / "system_health_audit.py"), "--check-due"], "Phòng Tổng Hệ Thống: Kiểm Tra Đợt Tổng Rà Soát Chất Lượng Định Kỳ 4 Ngày")
 
-    # Bước 7: Ban Đầu Tư Tối Cao — Kiểm Toán Phúc Tra Cuối Ngày & Phản Hồi Tự Tiến Hóa (EOD Master Audit)
-    run_cmd([sys.executable, str(SCRIPTS_DIR / "eod_master_audit_engine.py")], "Ban Đầu Tư Tối Cao: Kiểm Toán Phúc Tra Cuối Ngày & Phản Hồi Tự Tiến Hóa")
+    # Bước 7: Ban Đầu Tư Tối Cao — Kiểm Toán Phúc Tra Cuối Ngày (EOD Master Audit)
+    # LƯU Ý KỶ LUẬT: Chỉ chạy khi có cờ --run-eod hoặc sau 15:30 chiều đóng cửa phiên
+    if args.run_eod:
+        run_cmd([sys.executable, str(SCRIPTS_DIR / "eod_master_audit_engine.py")], "Ban Đầu Tư Tối Cao: Kiểm Toán Phúc Tra Cuối Ngày & Phản Hồi Tự Tiến Hóa")
+    else:
+        print("[!] Bỏ qua Kiểm toán Phúc tra Cuối ngày EOD trong phiên sáng (Chỉ thực thi sau 15:30 đóng cửa sàn HOSE/HNX).")
     run_cmd([sys.executable, str(SCRIPTS_DIR / "titan_token_optimizer.py"), "--quiet"], "Titan Token Optimizer: Lập Chỉ Mục Dòng BCTC & Bản Tóm Lược Không Mất Dữ Liệu")
 
     elapsed = time.time() - start_time

@@ -39,3 +39,11 @@ venv.bak/
 *~
 .DS_Store
 Thumbs.db
+
+# Runtime Logs, PIDs & Local Locks
+*.log
+data/*.log
+data/logs/
+*.pid
+data/*.pid
+data/*.flag

@@ -39,7 +39,7 @@
       "KỶ LUẬT KHUNG GIỜ VÀNG (TIMING DISCIPLINE): Với danh mục thực tế HPG, TCB, MBB, tuyệt đối không FOMO mua đuổi ATO trước 10h00 sáng. Bắt buộc giải ngân trong Khung Giờ Vàng 14h00 - 14h25 khi nến ngày định hình >= 90%.",
       "KẾ HOẠCH CHỐT LỜI NGÀY MAI (T+2.5 EXECUTION): Canh đúng 13h00 ngày mai khi toàn bộ 900 CP về tài khoản được phép giao dịch, chủ động thực hiện Scaling Out chốt lời 50% tại mục tiêu TP1 và nâng Stop lên giá vốn để gồng lãi."
     ],
-    "mandatory_corrective_action": "Minh Quân tiếp tục duy trì kỷ luật thép: Tuyệt đối không FOMO xanh ATO, tuân thủ nghiêm ngặt Sổ Lệnh Master Blotter cho danh mục thực tế (HPG, TCB, MBB), và sẵn sàng kích hoạt chốt lời Scaling Out 50% TP1 khi hàng về tài khoản lúc 13h00 chiều mai."
+    "mandatory_corrective_action": "Minh Quân tuân thủ nghiêm ngặt Sổ Lệnh Master Blotter cho danh mục thực tế 400 HPG + 300 TCB + 200 MBB (NAV 20,000,000 ₫), tuyệt đối không FOMO giá xanh đầu phiên ATO."
   },
   "departmental_audit": {
     "Ban 1 & Ban 1 VN (Vĩ mô & Địa chính trị)": "ĐÁNH GIÁ: ĐẠT (96/100). Đã nắm bắt chính xác việc VIX hạ nhiệt từ 21.15 về 19.42 và SBV giữ lãi suất 4.5%. Điểm trừ: Cần tiếp tục theo dõi biến động lợi suất trái phiếu Mỹ 10Y và DXY.",

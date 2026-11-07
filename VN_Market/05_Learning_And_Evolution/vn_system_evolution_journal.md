@@ -183,3 +183,55 @@
 - **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **52.9%**
 - **Bài học đúc rút**: Phiên 2026-11-04: Cần tăng cường kiểm soát rủi ro tâm lý và quản trị ngưỡng dừng lỗ T+2.5 chặt chẽ hơn.
 - **Trọng số BCTC duy trì**: 35.0% | Dòng tiền: 25.0%
+
+
+### 📅 Nhật Ký Tiến Hóa Hệ Thống — Ngày 2026-11-05
+- **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **3.9%**
+- **Bài học đúc rút**: Phiên 2026-11-05: Cần tăng cường kiểm soát rủi ro tâm lý và quản trị ngưỡng dừng lỗ T+2.5 chặt chẽ hơn.
+- **Trọng số BCTC duy trì**: 35.0% | Dòng tiền: 25.0%
+
+
+### 📅 Nhật Ký Tiến Hóa Hệ Thống — Ngày 2026-11-05
+- **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **3.9%**
+- **Bài học đúc rút**: Phiên 2026-11-05: Cần tăng cường kiểm soát rủi ro tâm lý và quản trị ngưỡng dừng lỗ T+2.5 chặt chẽ hơn.
+- **Trọng số BCTC duy trì**: 35.0% | Dòng tiền: 25.0%
+
+
+### 📅 Nhật Ký Tiến Hóa Hệ Thống — Ngày 2026-11-05
+- **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **3.9%**
+- **Bài học đúc rút**: Phiên 2026-11-05: Cần tăng cường kiểm soát rủi ro tâm lý và quản trị ngưỡng dừng lỗ T+2.5 chặt chẽ hơn.
+- **Trọng số BCTC duy trì**: 35.0% | Dòng tiền: 25.0%
+
+
+### 📅 Nhật Ký Tiến Hóa Hệ Thống — Ngày 2026-11-05
+- **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **3.9%**
+- **Bài học đúc rút**: Phiên 2026-11-05: Cần tăng cường kiểm soát rủi ro tâm lý và quản trị ngưỡng dừng lỗ T+2.5 chặt chẽ hơn.
+- **Trọng số BCTC duy trì**: 35.0% | Dòng tiền: 25.0%
+
+
+### 📅 Nhật Ký Tiến Hóa Hệ Thống — Ngày 2026-11-06
+- **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **98.0%**
+- **Bài học đúc rút**: Phiên 2026-11-06: Mô hình mổ xẻ BCTC phát huy hiệu quả cao. Doanh nghiệp dòng tiền thật (OCF > LNST) duy trì sức chống chịu vượt trội khi thị trường phân hóa.
+- **Trọng số BCTC duy trì**: 35.0% | Dòng tiền: 25.0%
+
+### 🚨 Bài Học Sửa Sai Thể Chế Số 14 — Chủ Tịch Rèn Giũa Ngày 2026-11-06 (Khung Giờ 08h28)
+- **Tình huống**: Ngày 05/11 đã chốt quyết nghị Kịch bản A (Giữ 100% qua đêm để sáng Thứ Sáu BÁN HẾT 100% tại đỉnh hưng phấn 09h15-09h45). Sáng 06/11, chuyên viên lại tự ý đưa ra phương án nước đôi (vừa Scaling Out 50% vừa Bán hết 100%).
+- **Bắt lỗi từ Chủ tịch Phước Trần**: Thiếu nhất quán thể chế, trượt kỷ luật (Discipline Drift) do tâm lý tham lam & tiếc rẻ (Regret Aversion Bias).
+- **Hành động khắc phục**: Hủy bỏ ngay lập tức phương án nước đôi. Khóa cứng 1 mệnh lệnh duy nhất: **BÁN HẾT 100% (900 CP) TRONG SÁNG NAY**.
+- **Nguyên tắc đóng băng**: Đã chọn Kịch bản A thì khi đến giờ G chỉ được phép bấm cò BÁN HẾT, nghiêm cấm tự ý dao động hay pha loãng kịch bản!
+
+
+### 🚨 Bài Học Sửa Sai Thể Chế Số 15 — Chủ Tịch Rèn Giũa Ngày 2026-11-06 (Khung Giờ 09h52)
+- **Tình huống**: Chiều 05/11 tham lam không chốt khoản lãi +534.600 ₫ (+2.88%), cố tình ôm 900 CP qua đêm vào phiên Thứ Sáu để săn lãi +900k. Kết quả sáng 06/11 thị trường mở gap đỏ rực rỡ, khoản lãi bị bốc hơi mất 335.000 ₫ (chỉ còn lại +199.600 ₫). Thêm lỗi dùng từ phóng đại khi bảng điện đang đỏ 249 mã.
+- **Bắt lỗi từ Chủ tịch Phước Trần**: Cố chấp mở rộng biên lãi vô căn cứ, đui mù trước quy luật rủi ro phiên Thứ Sáu (Friday Weekend De-risking), và bệnh rò rỉ trí nhớ thể chế (nhớ hôm nay mai quên sạch).
+- **Hành động khắc phục**: 
+  1. Kích hoạt Cầu chì Khóa Lãi Thứ Năm (Thursday Profit Lock Fuse - TPLF): Lãi >= +2.0% vào chiều Thứ Năm BẮT BUỘC chốt lời tối thiểu 50% đến 100%, CẤM ôm hàng qua đêm vào Thứ Sáu!
+  2. Kích hoạt Bộ lọc Báo cáo Thực tế (Reality-First Reporting): Cấm dùng từ ngữ phóng đại tô hồng khi bảng điện đỏ > 50%.
+  3. Mã hóa toàn bộ bài học vào anchor state machine bằng code Python và script `pre_flight_compliance_check.py` để cưỡng chế tự động, triệt tiêu 100% bệnh quên lãng!
+- **Nguyên tắc đóng băng**: *"Một đồng tiền lãi tươi nằm chắc trong tài khoản quý giá gấp ngàn lần mười đồng tiền lãi nằm trên bảng điện kỳ vọng!"*
+
+
+### 📅 Nhật Ký Tiến Hóa Hệ Thống — Ngày 2026-11-07
+- **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **100.0%**
+- **Bài học đúc rút**: Phiên 2026-11-07: Mô hình mổ xẻ BCTC phát huy hiệu quả cao. Doanh nghiệp dòng tiền thật (OCF > LNST) duy trì sức chống chịu vượt trội khi thị trường phân hóa.
+- **Trọng số BCTC duy trì**: 35.0% | Dòng tiền: 25.0%

@@ -32,7 +32,7 @@
         "core_picks": [
           {
             "symbol": "HPG",
-            "target_shares": 500,
+            "target_shares": 400,
             "approx_capital_vnd": 10500000.0,
             "role": "Vua Thép • Dung Quất 2 • HRC • Biên an toàn BCTC AAA"
           },
@@ -51,7 +51,7 @@
             "role": "Đầu Ngành Chứng Khoán • Hưởng Lợi Nâng Hạng FTSE & Hệ thống KRX"
           }
         ],
-        "key_deliverable": "Tích lũy trọn vẹn 500 cổ HPG + 200 cổ TCB khả dụng 100% trong tài khoản sau T+2.5 để làm kho hàng T+0 cho Tháng 2."
+        "key_deliverable": "Tích lũy trọn vẹn 400 cổ HPG + 200 cổ TCB khả dụng 100% trong tài khoản sau T+2.5 để làm kho hàng T+0 cho Tháng 2."
       },
       "stage_2_month_2": {
         "title": "Giai Đoạn 2 (Tháng 2) - Kích Hoạt Vũ Khí T+0 Đột Phá Lợi Nhuận",
@@ -60,7 +60,7 @@
         "target_cumulative_return_pct": 21.0,
         "execution_mode": "Nâng Cấp A (Thêm Lướt T+0 Kho Hàng Sẵn) + Chốt Lời Core Scaling Out 50% TP1",
         "weapons": [
-          "Lướt T+0 kho hàng sẵn trên 500 cổ HPG: 1-2 nhịp/tuần, biên lợi nhuận +2% đến +3%/nhịp trên lô 200 CP, rủi ro qua đêm bằng 0.",
+          "Lướt T+0 kho hàng sẵn trên 400 cổ HPG: 1-2 nhịp/tuần, biên lợi nhuận +2% đến +3%/nhịp trên lô 200 CP, rủi ro qua đêm bằng 0.",
           "Chốt lời từng phần Scaling Out 50% danh mục Core khi chạm TP1 (+8% đến +10%), nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA20.",
           "Tiếp tục xoay vòng 5tr Tactical Swing theo sóng ngắn T+3/T+5 cùng Minh Quân."
         ],

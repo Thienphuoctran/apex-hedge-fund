@@ -21,6 +21,14 @@ import json
 import re
 import datetime
 from pathlib import Path
+
+# --- TÍCH HỢP AGENT ZERO MEDIA HARVESTER (BAN 11 KHÁNH & BẢO) ---
+try:
+    from scripts.apex_agent_zero_engine import ZeroMediaHarvester
+    KHANH_MEDIA_HARVESTER = ZeroMediaHarvester()
+except Exception:
+    KHANH_MEDIA_HARVESTER = None
+
 from typing import Dict, Any, Optional, List
 
 if hasattr(sys.stdout, "reconfigure"):

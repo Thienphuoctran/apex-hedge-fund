@@ -240,13 +240,19 @@ def run_eod_master_audit(audit_date: str = None) -> dict:
     append_audit_to_journals(today_str, audit_findings)
 
     # Broadcast: Tự động gửi 2 Bản Đánh Giá Phúc Tra (VN & Mỹ) tới Telegram Nhà đầu tư
-    try:
-        import subprocess
-        sub_env = os.environ.copy()
-        sub_env["PYTHONIOENCODING"] = "utf-8"
-        subprocess.run([sys.executable, str(BASE_DIR / "scripts" / "telegram_eod_audit_reporter.py")], cwd=str(BASE_DIR), env=sub_env)
-    except Exception as e:
-        print(f"[!] Warning khi tự động gửi Telegram: {e}")
+    # KỶ LUẬT THỂ CHẾ: Chỉ gửi khi sau 15:30 chiều
+    now_hour = datetime.now().hour
+    if now_hour >= 15 or "--force" in sys.argv:
+        try:
+            import subprocess
+            sub_env = os.environ.copy()
+            sub_env["PYTHONIOENCODING"] = "utf-8"
+            subprocess.run([sys.executable, str(BASE_DIR / "scripts" / "telegram_eod_audit_reporter.py"), "--force-eod"], cwd=str(BASE_DIR), env=sub_env)
+        except Exception as e:
+            print(f"[!] Warning khi tự động gửi Telegram: {e}")
+    else:
+        print(f"[!] Hiện tại là {now_hour}h sáng: Không gửi Bản Phúc Tra Cuối Ngày (EOD) lên Telegram trong giờ giao dịch!")
+
 
     print(f"[SUCCESS] Đã lập Biên bản Phúc tra: {memo_md_path.name}")
     print(f"[DISPATCH] Đã gửi chỉ thị sửa đổi ngược lại cho Alex, Minh Quân và các Phòng ban!")
