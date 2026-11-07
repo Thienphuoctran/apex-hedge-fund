@@ -53,13 +53,19 @@ jobs:
           print('✅ [PASS] SSOT V2.0 Audit: Tài khoản Chủ tịch 105C307855 đạt chuẩn 100% tiền mặt 20,167,119 ₫.')
           "
 
-      - name: 2. Run Victor Sentinel Audit Scan
+      - name: 2. Run 145-Stock Full Market Scanner & 10-Department Council Orchestrator
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/apex_full_council_orchestrator.py
+
+      - name: 3. Run Victor Sentinel Audit Scan
         env:
           PYTHONIOENCODING: utf-8
         run: |
           python scripts/intraday_portfolio_sentinel.py --scan-once
 
-      - name: 3. Verify Cloud Sentinel Web App Health
+      - name: 4. Verify Cloud Sentinel Web App Health
         env:
           PYTHONIOENCODING: utf-8
         run: |
@@ -69,14 +75,14 @@ jobs:
           print('✅ [PASS] Cloud Sentinel Web Engine (FastAPI) sẵn sàng 100% cho Render/Docker.')
           "
 
-      - name: 4. Commit & Push Updated Status & Telemetry (If changed)
+      - name: 5. Commit & Push Updated Status, Market Scan & Cross-Day Continuity Ledger
         run: |
           git config --global user.name "Apex Cloud Sentinel Bot"
           git config --global user.email "sentinel-bot@apex-fund.internal"
-          git add data/ 09_Realtime_Portfolio_Sentinel/ cloud_sentinel/
+          git add data/ VN_Market/data/ 08_Master_Investment_CIO/ 09_Realtime_Portfolio_Sentinel/ cloud_sentinel/
           if git diff --staged --quiet; then
             echo "Dữ liệu SSOT đã ở trạng thái tối ưu nhất, không có thay đổi mới."
           else
-            git commit -m "chore(sentinel): Automated 24/7 Cloud Sentinel & SSOT Telemetry Sync [skip ci]"
+            git commit -m "chore(sentinel): Automated 24/7 Cloud Sentinel, 145-Stock Scan & Cross-Day Memory Sync [skip ci]"
             git push origin HEAD || echo "Push failed or no upstream configured."
           fi

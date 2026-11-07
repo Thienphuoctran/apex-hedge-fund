@@ -1,6 +1,6 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-07T08:32:24.894701+00:00",
+  "generated_at_utc": "2026-11-07T09:11:38.149925+00:00",
   "trading_date": "2026-11-07",
   "cio_desk_verdict": "100% TIỀN MẶT (20,167,119 ₫) — ĐÃ TẤT TOÁN VÒNG 1 (LÃI RÒNG +167,119 ₫) & ĐỢI TẦM NGẮM VÒNG 2",
   "capital_summary": {
@@ -10,8 +10,8 @@
     "global_allocated_usd": 0.0,
     "global_allocated_vnd": 0.0,
     "global_allocated_pct": 0.0,
-    "vn_allocated_vnd": 0,
-    "vn_allocated_usd": 0,
+    "vn_allocated_vnd": 0.0,
+    "vn_allocated_usd": 0.0,
     "vn_allocated_pct": 0.0,
     "dry_powder_usd": 793.98,
     "dry_powder_vnd": 20167119.0,
@@ -140,11 +140,163 @@
   "agent_zero_validation": {
     "status": "VERIFIED_100_PERCENT_CASH_SYNCED",
     "sandbox_math_verified": true,
-    "portfolio_allocation_verified": "100% TIỀN MẶT (20,167,119 ₫) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +167,119 VNĐ",
+    "portfolio_allocation_verified": "100% TIỀN MẶT (20,167,119 VNĐ) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +167,119 VNĐ",
     "max_risk_locked_pct": 0.0,
-    "timestamp": "2026-11-07 08:32:24 UTC"
+    "timestamp": "16:11:38 Thứ Bảy, ngày 07/11/2026"
   },
-  "temporal_context": {},
-  "completed_orders_history": [],
-  "next_round_watchlist": []
+  "temporal_context": {
+    "timestamp_iso": "2026-11-07T16:11:38.123751",
+    "date_str": "2026-11-07",
+    "date_vn": "07/11/2026",
+    "time_vn": "16:11:38",
+    "weekday_index": 5,
+    "weekday_vn": "Thứ Bảy",
+    "full_time_label_vn": "16:11:38 Thứ Bảy, ngày 07/11/2026",
+    "market_phase": "WEEKEND_CLOSED",
+    "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
+    "is_trading_hours": false,
+    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
+  },
+  "completed_orders_history": [
+    {
+      "campaign_id": "CAMPAIGN-VN-ROUND-01",
+      "period": "2026-11-04 -> 2026-11-06",
+      "status": "CLOSED_AND_SETTLED_100_PERCENT_CASH",
+      "initial_capital_vnd": 20000000.0,
+      "final_cash_tcbs_vnd": 20167119.0,
+      "net_realized_profit_after_tax_fee_vnd": 167119.0,
+      "net_return_pct": 0.8356,
+      "positions_traded_and_closed": [
+        {
+          "symbol": "HPG",
+          "shares_bought": 400,
+          "shares_sold": 400,
+          "remaining_shares": 0,
+          "entry_price": 21156.0,
+          "exit_status": "SOLD_100_PERCENT"
+        },
+        {
+          "symbol": "TCB",
+          "shares_bought": 300,
+          "shares_sold": 300,
+          "remaining_shares": 0,
+          "entry_price": 21356.0,
+          "exit_status": "SOLD_100_PERCENT"
+        },
+        {
+          "symbol": "MBB",
+          "shares_bought": 200,
+          "shares_sold": 200,
+          "remaining_shares": 0,
+          "entry_price": 18606.0,
+          "exit_status": "SOLD_100_PERCENT"
+        }
+      ],
+      "lesson_learned": "Chốt lời dứt khoát toàn bộ 900 CP trước kỳ nghỉ cuối tuần, bảo toàn 100% vốn + lãi thực nhận 20,167,119 ₫ trên TCInvest, triệt tiêu 100% rủi ro qua tuần (0% Weekend Risk)."
+    }
+  ],
+  "next_round_watchlist": [
+    {
+      "symbol": "HDB",
+      "name": "HDBank (VN30_LargeCap)",
+      "exchange": "HOSE",
+      "sector": "Ngân Hàng TMCP",
+      "price_vnd": 22500.0,
+      "rs_rating": 95,
+      "legends_score": 91.4,
+      "lot_100_nav_pct": 11.16,
+      "target_shares": 300,
+      "probe_buy_price": 22310.0,
+      "stop_loss_2atr": 21220.0,
+      "tp1": 24290.0,
+      "tp2": 25820.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 22,310 ₫ - 22,500 ₫; Gia tăng khi vượt 22,820 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 91.4/100 | RS: 95/99) • P/E 6.1x, ROE 25.6%, OCF/LNST 1.16x • 1 lô 100 CP = 2,250,000 ₫ (11.16% NAV)"
+    },
+    {
+      "symbol": "MSH",
+      "name": "May Sông Hồng (SmallCap_HiddenGem)",
+      "exchange": "HOSE",
+      "sector": "Dệt May Xuất Khẩu",
+      "price_vnd": 35500.0,
+      "rs_rating": 94,
+      "legends_score": 91.9,
+      "lot_100_nav_pct": 17.6,
+      "target_shares": 200,
+      "probe_buy_price": 35060.0,
+      "stop_loss_2atr": 33090.0,
+      "tp1": 39560.0,
+      "tp2": 43040.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 35,060 ₫ - 35,500 ₫; Gia tăng khi vượt 36,220 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 91.9/100 | RS: 94/99) • P/E 9.8x, ROE 21.5%, OCF/LNST 1.42x • 1 lô 100 CP = 3,550,000 ₫ (17.6% NAV)"
+    },
+    {
+      "symbol": "BAF",
+      "name": "Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem)",
+      "exchange": "HOSE",
+      "sector": "Nông Nghiệp & Chăn Nuôi 3F",
+      "price_vnd": 30900.0,
+      "rs_rating": 96,
+      "legends_score": 88.1,
+      "lot_100_nav_pct": 15.32,
+      "target_shares": 200,
+      "probe_buy_price": 30710.0,
+      "stop_loss_2atr": 29650.0,
+      "tp1": 32650.0,
+      "tp2": 34140.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 30,710 ₫ - 30,900 ₫; Gia tăng khi vượt 31,210 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 88.1/100 | RS: 96/99) • P/E 11.5x, ROE 16.2%, OCF/LNST 1.18x • 1 lô 100 CP = 3,090,000 ₫ (15.32% NAV)"
+    },
+    {
+      "symbol": "IDC",
+      "name": "Tổng Công ty IDICO (MidCap_Growth)",
+      "exchange": "HNX",
+      "sector": "BĐS Khu Công Nghiệp & Cao Su",
+      "price_vnd": 34900.0,
+      "rs_rating": 81,
+      "legends_score": 89.0,
+      "lot_100_nav_pct": 17.31,
+      "target_shares": 200,
+      "probe_buy_price": 34500.0,
+      "stop_loss_2atr": 32210.0,
+      "tp1": 38660.0,
+      "tp2": 41880.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 34,500 ₫ - 34,900 ₫; Gia tăng khi vượt 35,570 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 89.0/100 | RS: 81/99) • P/E 9.8x, ROE 32.5%, OCF/LNST 1.48x • 1 lô 100 CP = 3,490,000 ₫ (17.31% NAV)"
+    },
+    {
+      "symbol": "TCH",
+      "name": "Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth)",
+      "exchange": "HOSE",
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "price_vnd": 13500.0,
+      "rs_rating": 89,
+      "legends_score": 82.7,
+      "lot_100_nav_pct": 6.69,
+      "target_shares": 300,
+      "probe_buy_price": 13350.0,
+      "stop_loss_2atr": 12580.0,
+      "tp1": 14880.0,
+      "tp2": 16060.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 13,350 ₫ - 13,500 ₫; Gia tăng khi vượt 13,750 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 82.7/100 | RS: 89/99) • P/E 9.6x, ROE 9.8%, OCF/LNST 1.32x • 1 lô 100 CP = 1,350,000 ₫ (6.69% NAV)"
+    },
+    {
+      "symbol": "OCB",
+      "name": "Ngân hàng Phương Đông (MidCap_Growth)",
+      "exchange": "HOSE",
+      "sector": "Ngân Hàng TMCP",
+      "price_vnd": 10700.0,
+      "rs_rating": 88,
+      "legends_score": 81.9,
+      "lot_100_nav_pct": 5.31,
+      "target_shares": 300,
+      "probe_buy_price": 10600.0,
+      "stop_loss_2atr": 10020.0,
+      "tp1": 11650.0,
+      "tp2": 12470.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 10,600 ₫ - 10,700 ₫; Gia tăng khi vượt 10,870 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 81.9/100 | RS: 88/99) • P/E 6.9x, ROE 14.2%, OCF/LNST 1.08x • 1 lô 100 CP = 1,070,000 ₫ (5.31% NAV)"
+    }
+  ]
 }

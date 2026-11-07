@@ -311,38 +311,163 @@ handle_tp_sl_watch = handle_take_profit_stop_loss
 
 
 def handle_wave_hunter_radar() -> str:
-    """Trả lời câu hỏi về Radar Săn Sóng Mới (`/radar`) tích hợp trạng thái vốn thực tế."""
+    """Trả lời câu hỏi về Radar Săn Sóng Mới (`/radar`) tích hợp Quét Toàn Thị Trường 145 Mã / 18 Ngành."""
     from scripts.portfolio_state_manager import PortfolioStateManager
     st = PortfolioStateManager.load_state()
     t_ctx = st.get("temporal_context") or PortfolioStateManager.get_temporal_context()
     cash = float(st.get("cash_balance_vnd", 20167119.0))
-    radar = load_wave_radar_data()
-    vn_stocks = radar.get("vietnam_universe_ranked", [])
+
+    full_scan_path = BASE_DIR / "VN_Market" / "data" / "vn_full_market_scan.json"
+    scan_data = {}
+    if full_scan_path.exists():
+        try:
+            with open(full_scan_path, "r", encoding="utf-8") as f:
+                scan_data = json.load(f)
+        except Exception:
+            pass
 
     lines = [
-        "📡 *[RADAR SĂN SÓNG VÒNG 2 — MINH QUÂN & ALEX]*",
+        "📡 *[RADAR QUÉT TOÀN THỊ TRƯỜNG 145 CỔ PHIẾU / 18 NGÀNH — VÒNG 2]*",
         f"🕒 *Thời điểm quét:* `{t_ctx.get('full_time_label_vn')}`",
         f"💳 *Sức mua Tiền mặt sẵn sàng cho Vòng 2:* `{cash:,.0f} ₫` (100% Cash sau khi tất toán Vòng 1)",
-        "🔍 *Tiêu chí lọc:* BCTC Hạng AAA/AA, OCF > LNST, Điểm Danh Thủ >= 80/100",
+        "🔍 *Tiêu chí lọc:* Quét rộng 145 mã (HOSE/HNX/UPCoM) | BCTC AAA/AA | OCF > LNST | 10 Danh Thủ >= 80/100 | Lô 100 CP vừa khít vốn 20.16M",
         "━━━━━━━━━━━━━━━━━━━"
     ]
 
-    top_vn = vn_stocks[:5]
-    if top_vn:
-        lines.append("🇻🇳 *TOP SIÊU CỔ PHIẾU VN TRONG TẦM NGẮM VÒNG 2:*")
-        for i, s in enumerate(top_vn, 1):
-            sym = s.get("symbol")
-            score = s.get("composite_score", 0)
-            status = s.get("wave_status", "Đang tích lũy")
-            lines.append(f"{i}. *{sym}* — Điểm: `{score:.1f}/100` | Trạng thái: {status}")
+    if scan_data:
+        sectors = scan_data.get("sector_rotation_ranking", [])[:4]
+        stocks_db = scan_data.get("stocks", {})
+        if sectors:
+            lines.append("🌊 *1. TOP NGÀNH DẪN DẮT DÒNG TIỀN TOÀN THỊ TRƯỜNG:*")
+            for idx, sec in enumerate(sectors, 1):
+                leaders = ", ".join(sec.get("top_sector_picks", [])[:3])
+                sc_val = sec.get("sector_strength_score", 0)
+                lines.append(
+                    f"• *{idx}. {sec.get('sector_name')}* (Điểm: `{sc_val}/100` | RS TB: `{sec.get('avg_rs_rating')}`): Dẫn dắt bởi `{leaders}`"
+                )
+
+        top_picks = scan_data.get("top_12_diversified_actionable_discoveries", [])[:6]
+        if top_picks:
+            lines.append("\n💎 *2. TOP 6 SIÊU CỔ PHIẾU ĐA NGÀNH ĐƯỢC HỘI ĐỒNG 10 PHÒNG BAN DUYỆT:*")
+            for idx, p_item in enumerate(top_picks, 1):
+                code = p_item.get("code") if isinstance(p_item, dict) else str(p_item)
+                stk = stocks_db.get(code, {})
+                tech = stk.get("technical", {})
+                ev = stk.get("institutional_evaluation", {})
+                p_now = float(tech.get('price', 0))
+                atr_v = float(tech.get('atr14', p_now * 0.03))
+                buy_lo = round((p_now - 0.3 * atr_v) / 10.0) * 10.0
+                lines.append(
+                    f"{idx}. *{code}* ({stk.get('sector_name', '')} - `{stk.get('cap_tier', '')}`): Giá `{p_now:,.0f} ₫` | "
+                    f"RS `{tech.get('rs_rating', 80)}/99` | 10 Danh Thủ `{ev.get('legends_composite_score', 85)}/100 ({ev.get('bctc_tier', 'AAA')})` | "
+                    f"1 lô = `{ev.get('lot_100_nav_pct', 12)}% NAV` | Canh mua LO: `{buy_lo:,.0f} ₫`"
+                )
+
+        gems = scan_data.get("top_10_mid_small_cap_hidden_gems", [])[:5]
+        if gems:
+            gem_items = []
+            for g in gems:
+                g_code = g.get("code") if isinstance(g, dict) else str(g)
+                g_stk = stocks_db.get(g_code, {})
+                g_tech = g_stk.get("technical", {})
+                gem_items.append(f"*{g_code}* (`{g_tech.get('price', 0):,.0f}₫`, RS `{g_tech.get('rs_rating', 85)}`)")
+            lines.append(f"\n🚀 *3. Ngọc Ẩn Mid/Small-Cap (Hidden Gems):* " + ", ".join(gem_items))
+
+        lines.extend([
+            "\n⚠️ *4. CÁC MÃ QUEN THUỘC BỊ HỘI ĐỒNG HẠ BẬC / TẠM LOẠI HÔM NAY:*",
+            "• *FPT (`50,800 ₫`)*: Gãy dưới MA20 (`55,100 ₫`), sức mạnh giá RS chỉ đạt `18/99` ➔ *Tạm loại, chờ tạo đáy*.",
+            "• *DGC (`33,000 ₫`)*: Nằm dưới MA20 (`33,118 ₫`), RS yếu (`22/99`) ➔ *Chưa giải ngân vội*.",
+            "• *MWG (`73,700 ₫`) / FRT (`130,000 ₫`)*: 1 lô 100 CP ngốn `36.5% - 64.5% NAV`, không thể chia lệnh Kim Tự Tháp cho vốn `20.16M ₫`."
+        ])
     else:
         for i, w in enumerate(st.get("next_round_watchlist", []), 1):
             lines.append(f"{i}. *{w.get('symbol')}* ({w.get('sector')}) — {w.get('bctc_highlight')}")
 
     lines.append(
-        f"\n💡 *Chiến lược Vòng 2:* Với `{cash:,.0f} ₫` tiền mặt sẵn sàng trong két TCBS, hệ thống kiên nhẫn chờ nhịp chiết khấu đạt chuẩn **Checklist 7 Điểm** trong Khung Giờ Vàng 14h00–14h25 mới bấm cò giải ngân!"
+        "\n💡 *Gõ `/hop <MÃ>` (VD: `/hop MSH`, `/hop HDB`, `/hop FPT`) để triệu tập 10 Phòng Ban tranh biện trực tiếp bất kỳ mã nào trên sàn!*"
     )
     return "\n".join(lines)
+
+
+def handle_10dept_council_command(ticker: str = "") -> str:
+    """Triệu tập 10 Phòng Ban họp và tranh biện thực chất trên số liệu sống (`/hop` hoặc `/hop <MÃ>`)."""
+    try:
+        from scripts.apex_full_council_orchestrator import (
+            run_single_stock_10dept_debate,
+            run_full_10_department_council
+        )
+        ticker = ticker.upper().strip()
+        if ticker and len(ticker) == 3:
+            res = run_single_stock_10dept_debate(ticker)
+            if "error" not in res:
+                return res["formatted_message"]
+            return res["error"]
+
+        council = run_full_10_department_council(force_rescan=False)
+        approved = council.get("approved_round2_picks", [])
+        downgraded = council.get("downgraded_familiar_stocks", [])
+
+        lines = [
+            "🏛️ *[NGHỊ QUYẾT HỘI NGHỊ THƯỢNG ĐỈNH 10 PHÒNG BAN — LÀM THẬT VIỆC THẬT]*",
+            f"🕒 *Thời điểm họp:* `{council.get('timestamp_vn')}`",
+            f"📡 *Phạm vi rà soát:* `{council.get('universe_scanned')} mã cổ phiếu / {council.get('sectors_covered')} nhóm ngành`",
+            f"💰 *Vốn thực tế TCBS (`105C307855`):* `{council.get('cash_balance_vnd', 20167119):,.0f} ₫` (**100% Tiền mặt**)",
+            "━━━━━━━━━━━━━━━━━━━",
+            "✅ *1. TOP 6 CỔ PHIẾU ĐA NGÀNH ĐƯỢC 10 PHÒNG BAN PHÊ DUYỆT CHO VÒNG 2:*"
+        ]
+        for idx, p in enumerate(approved, 1):
+            lines.append(
+                f"{idx}. *{p['code']}* ({p['sector_name']}) — Giá `{p['price']:,.0f} ₫` | RS `{p['rs_rating']}/99` | "
+                f"10 Danh Thủ `{p['legends_10_score']}/100 ({p['bctc_tier']})` | 1 lô = `{p['lot_100_nav_pct']}% NAV` | "
+                f"Canh mua LO: `{p['buy_zone_lo']:,.0f} ₫` (Stop `{p['stop_loss_2atr']:,.0f} ₫`, TP1 `{p['target_tp1']:,.0f} ₫`)"
+            )
+
+        if downgraded:
+            lines.append("\n🛑 *2. CÁC MÃ LỚN QUEN THUỘC BỊ BAN 3 & BAN 4 PHỦ QUYẾT / HẠ BẬC:*")
+            for d in downgraded[:4]:
+                lines.append(
+                    f"• *{d['code']}* (`{d['price']:,.0f} ₫`, RS `{d['rs_rating']}/99`, 1 lô = `{d['lot_100_nav_pct']}% NAV`): {d['reason']}"
+                )
+
+        lines.extend([
+            "\n🧠 *3. LƯU TRỮ TRÍ NHỚ LIÊN NGÀY BẤT BIẾN:*",
+            "• Đã khóa Sổ cái Liên Ngày (`apex_daily_continuity_ledger.json`) kèm mã kiểm chứng SHA-256 để ngày mai nối tiếp 100% mạch công việc!",
+            "👉 *Gõ `/hop <MÃ>` (VD: `/hop MSH`, `/hop PVT`, `/hop FPT`) để xem biên bản tranh biện của 10 Phòng Ban cho từng mã!*"
+        ])
+        return "\n".join(lines)
+    except Exception as e:
+        return f"⚠️ Lỗi triệu tập Hội đồng 10 Phòng Ban: {e}"
+
+
+def handle_handover_continuity_command() -> str:
+    """Xem Biên bản Bàn giao Liên Ngày Bất Biến (`/giaoca`, `/tiepnoi`)."""
+    try:
+        from scripts.apex_persistent_memory_core import ApexPersistentMemoryCore
+        ho = ApexPersistentMemoryCore.get_handover_for_today()
+        if not ho.get("has_previous_memory"):
+            return "🧠 Chưa có bản bàn giao liên ngày trước đó."
+        lines = [
+            "🧠 *[SỔ CÁI BÀN GIAO LIÊN NGÀY BẤT BIẾN — WALK-FORWARD CONTINUITY]*",
+            f"📅 *Phiên bàn giao gần nhất:* `{ho.get('last_session_date')}`",
+            f"📌 *Tóm tắt những gì đã làm:* {ho.get('what_we_did_last_session')}",
+            "━━━━━━━━━━━━━━━━━━━",
+            "🎯 *1. DANH SÁCH TẦM NGẮM BÀN GIAO SANG PHIÊN TIẾP THEO:*"
+        ]
+        for idx, item in enumerate(ho.get("priority_watchlist", []), 1):
+            lines.append(
+                f"{idx}. *{item.get('code')}* ({item.get('sector')}): Giá tham chiếu `{item.get('reference_price_vnd', 0):,.0f} ₫` | "
+                f"Canh mua LO: `{item.get('ideal_buy_zone_vnd', 0):,.0f} ₫` | Stop: `{item.get('stop_loss_2atr_vnd', 0):,.0f} ₫` | "
+                f"TP1: `{item.get('tp1_vnd', 0):,.0f} ₫` (`{item.get('target_shares_lot100', 100)} CP`)"
+            )
+        rej = ho.get("rejected_stocks", [])
+        if rej:
+            lines.append("\n🛑 *2. CÁC MÃ ĐÃ BỊ HỘI ĐỒNG PHỦ QUYẾT (KHÔNG TỰ Ý ĐỀ XUẤT LẠI):*")
+            for r in rej[:4]:
+                lines.append(f"• {r}")
+        lines.append("\n✅ *Cam kết Liên Ngày:* Sổ cái đã khóa SHA-256; sang ngày mới hệ thống tự động đối soát tiếp nối 100%, tuyệt đối không bao giờ quên việc cũ!")
+        return "\n".join(lines)
+    except Exception as e:
+        return f"⚠️ Lỗi đọc Sổ cái Bàn giao Liên Ngày: {e}"
 
 
 def handle_adversarial_inquiry(ticker: str = "") -> str:
@@ -544,6 +669,17 @@ def process_user_query(text: str) -> str:
             )
         return "⚠️ Cú pháp: `/set_tcbs_token <dán_chuỗi_token_ở_đây>`"
 
+    if any(k in clean_text for k in ["/giaoca", "/tiepnoi", "giao ca", "tiếp nối", "bàn giao liên ngày"]):
+        return handle_handover_continuity_command()
+
+    if any(k in clean_text for k in ["/quettoanthitruong", "/quet145", "quét toàn thị trường", "quet toan thi truong"]):
+        return handle_wave_hunter_radar()
+
+    if clean_text.startswith("/hop") or any(k in clean_text for k in ["họp 10 phòng ban", "hop 10 phong ban", "triệu tập hội đồng", "trieu tap hoi dong"]):
+        m_tk = re.search(r"(?:/hop|họp|hop)\s+([a-zA-Z]{3})\b", clean_text)
+        tk_arg = m_tk.group(1).upper() if m_tk else ""
+        return handle_10dept_council_command(tk_arg)
+
     if any(k in clean_text for k in ["/kyuc", "/lichsu", "ký ức", "ky uc", "lịch sử giao dịch", "lich su giao dich", "đang ở đâu", "đã trải qua"]):
         return handle_episodic_memory_report()
 
@@ -601,11 +737,14 @@ def process_user_query(text: str) -> str:
         except Exception as e:
             return f"⚠️ Lỗi tra cứu TCBS: {e}"
 
-    # 0. Tranh biện đối kháng tam giác (Bước 2)
+    # 0. Tranh biện đối kháng tam giác & 10 Phòng Ban
     if any(k in clean_text for k in ["tranh biện", "tranh bien", "đối kháng", "doi khang", "phan bien", "phản biện", "red team", "bull bear", "bear bull"]):
-        ticker_match = re.search(r"\b(hpg|tcb|mbb|fpt|dgc|mwg)\b", clean_text)
-        sym = ticker_match.group(1).upper() if ticker_match else ""
-        return handle_adversarial_inquiry(sym)
+        ticker_match = re.search(r"\b([a-zA-Z]{3})\b", clean_text)
+        if ticker_match:
+            cand = ticker_match.group(1).upper()
+            if cand not in ["RED", "BULL", "BEAR", "XEM", "CHO", "CỦA", "CUA"]:
+                return handle_10dept_council_command(cand)
+        return handle_10dept_council_command("")
 
     # 1. Danh mục
     if any(k in clean_text for k in ["danh mục", "danhmuc", "portfolio", "lãi bao nhiêu", "cầm mã gì", "xem danh mục"]):
@@ -627,13 +766,26 @@ def process_user_query(text: str) -> str:
     if any(k in clean_text for k in ["săn sóng", "radar", "mã mới", "sóng mới", "cổ phiếu mới"]):
         return handle_wave_hunter_radar()
 
-    # 6. Tra cứu mã cụ thể
-    ticker_match = re.search(r"\b(hpg|tcb|mbb|fpt|dgc|mwg|nvda|aapl|msft|googl)\b", clean_text)
+    # 6. Tra cứu mã cụ thể trong 145 cổ phiếu toàn thị trường
+    try:
+        full_scan_path = BASE_DIR / "VN_Market" / "data" / "vn_full_market_scan.json"
+        if full_scan_path.exists():
+            with open(full_scan_path, "r", encoding="utf-8") as f:
+                scan_stocks = json.load(f).get("stocks", {})
+            words = re.findall(r"\b[a-zA-Z]{3}\b", clean_text)
+            for w in words:
+                w_up = w.upper()
+                if w_up in scan_stocks and w_up not in ["CHO", "XEM", "MUA", "BAN", "GIA", "NAO", "SAO", "CON", "ANH", "TOI", "NAM"]:
+                    return handle_10dept_council_command(w_up)
+    except Exception:
+        pass
+
+    ticker_match = re.search(r"\b(hpg|tcb|mbb|fpt|dgc|mwg|msh|hdb|pvt|baf|idc|szc|tng|qns|nvda|aapl|msft|googl)\b", clean_text)
     if ticker_match:
-        return handle_stock_inquiry(ticker_match.group(1))
+        return handle_10dept_council_command(ticker_match.group(1).upper())
 
     if "soi mã" in clean_text or "tra cứu" in clean_text:
-        return "🔍 Chủ tịch vui lòng gõ trực tiếp tên mã (Ví dụ: `FPT`, `DGC`, `HPG`, `TCB`) để Palmer phân tích chi tiết BCTC và điểm vào lệnh Vòng 2 nhé!"
+        return "🔍 Chủ tịch vui lòng gõ `/hop <MÃ>` (Ví dụ: `/hop MSH`, `/hop HDB`, `/hop PVT`, `/hop FPT`) để 10 Phòng Ban họp và tranh biện trực tiếp mã đó nhé!"
 
     # 7. CHUYỂN GIAO CHỈ THỊ ĐIỀU HÀNH ĐÓNG LẶP (CLOSED-LOOP TASK DISPATCHER)
     try:

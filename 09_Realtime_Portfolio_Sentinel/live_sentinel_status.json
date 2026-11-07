@@ -1,41 +1,10 @@
 {
-  "last_scan_utc": "2026-11-07T15:33:17.874002",
-  "total_positions_monitored": 1,
+  "last_scan_utc": "2026-11-07T09:11:38.162011+00:00",
+  "total_positions_monitored": 0,
   "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
-  "status": "ALL_NORMAL",
-  "positions": [
-    {
-      "symbol": "TCB",
-      "market": "VIETNAM",
-      "name": "TCB",
-      "current_price": 21650.0,
-      "prev_close": 21950.0,
-      "change_pct": 1.37,
-      "stop_loss_2atr": 20907.0,
-      "stop_dist_pct": 3.43,
-      "tp1": 23076.0,
-      "tp2": 23971.0,
-      "tp1_dist_pct": 6.59,
-      "tp2_dist_pct": 10.72,
-      "volume_surge_ratio": 2.83,
-      "vwap_est": 21683.33,
-      "severity": "NORMAL",
-      "triggers_hit": [],
-      "upside_triggers_hit": [],
-      "hedging_solution": {
-        "instrument": "Hợp Đồng Tương Lai VN30F1M",
-        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
-        "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 3020.6
-      },
-      "shares": 200,
-      "allocated_capital": 4370000.0,
-      "currency": "VND",
-      "bctc_thesis": "Vị thế danh mục VN IC Tracker",
-      "catalysts": ""
-    }
-  ],
+  "status": "ALL_CASH_STANDDOWN_0_SHARES",
+  "positions": [],
   "wave_hunter_summary": {
     "vn_waves_count": 8,
     "us_waves_count": 6,
@@ -52,5 +21,21 @@
       "TSM",
       "XOM"
     ]
-  }
+  },
+  "temporal_context": {
+    "timestamp_iso": "2026-11-07T16:11:38.123751",
+    "date_str": "2026-11-07",
+    "date_vn": "07/11/2026",
+    "time_vn": "16:11:38",
+    "weekday_index": 5,
+    "weekday_vn": "Thứ Bảy",
+    "full_time_label_vn": "16:11:38 Thứ Bảy, ngày 07/11/2026",
+    "market_phase": "WEEKEND_CLOSED",
+    "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
+    "is_trading_hours": false,
+    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
+  },
+  "cash_balance_vnd": 20167119.0,
+  "realized_pnl_vnd": 167119.0,
+  "positions_tracked": []
 }
