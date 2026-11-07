@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-APEX INSTITUTIONAL CLOUD PORTAL ENGINE (BLOOMBERG-GRADE WEB INTERFACE V2.0)
+APEX INSTITUTIONAL CLOUD PORTAL ENGINE (BLOOMBERG-GRADE WEB INTERFACE V3.0)
 File: scripts/apex_web_portal_engine.py
 Cơ quan chủ quản: Palmer — Apex Central System Governance
 Phục vụ: Chủ tịch Trần Quốc Thiên Phước (Tài khoản TCBS: 105C307855)
 
-Nâng cấp Thể chế V2.0:
-1. Tách biệt rạch ròi "Báo Cáo Hôm Nay (Today's Live Desk)" vs "Kho Lưu Trữ Lịch Sử (Archive Vault)".
-   - Không bao giờ bị đè báo cáo hay ngập tràn trang web khi bước sang ngày mới!
-2. Phân loại theo 4 Ca Tác Chiến: Ca Sáng (06h-11h30), Ca Trưa (11h30-13h30), Ca Chiều (13h30-17h), Ca Tối & Đêm (18h-23h30).
-3. Ghi rõ ràng GIỜ GỬI BÁO CÁO CHÍNH XÁC (Timestamp) trên từng thẻ.
-4. Tích hợp nút In / Xuất PDF và Sao Chép Toàn Văn trong trình đọc Markdown.
+Tích hợp V3.0 Toàn Diện:
+1. Đề xuất 3: Biểu Đồ Nến Kỹ Thuật Realtime TradingView (Live Sàn HOSE) trong Tab Tầm Ngắm Vòng 2.
+   - Hỗ trợ chọn nhanh: VNINDEX, FPT, DGC, HPG, TCB, MBB.
+2. Đề xuất 5: Ô Lệnh Trực Tiếp Giao Việc Cho Master CIO James Ngay Trên Web (Apex Command Box).
+   - Tương tác 2 chiều với Master CIO James qua endpoint POST /api/command.
+   - Hỗ trợ Quick Command Chips: /tcbs, /danhmuc, /solenh, /hop FPT, /hop DGC, /baomat.
+3. Tách biệt rạch ròi "Báo Cáo Hôm Nay (Today's Live Desk)" vs "Kho Lưu Trữ Lịch Sử (Archive Vault)".
+4. Phân loại theo 4 Ca Tác Chiến: Ca Sáng, Ca Trưa, Ca Chiều, Ca Tối & Đêm.
+5. Ghi rõ ràng GIỜ GỬI BÁO CÁO CHÍNH XÁC (Timestamp) trên từng thẻ.
+6. Nút In / Xuất PDF và Sao Chép Link trong trình đọc Markdown.
 """
 
 import sys
@@ -35,7 +39,6 @@ def generate_portal_html(
     available_dates: Optional[List[Dict[str, Any]]] = None
 ) -> str:
     sup_status = supervisor_data.get("supervisor_status", "HEALTHY_ALL_RUNNING")
-    uptime_sec = supervisor_data.get("uptime_seconds", 0)
     services = supervisor_data.get("services", {})
     total_reports_count = len(initial_reports)
 
@@ -102,6 +105,7 @@ def generate_portal_html(
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <style>
         :root {{
             --bg-base: #090d16;
@@ -126,7 +130,7 @@ def generate_portal_html(
             min-height: 100vh;
             padding: 20px;
         }}
-        .container {{ max-width: 1320px; margin: 0 auto; }}
+        .container {{ max-width: 1340px; margin: 0 auto; }}
         
         /* HEADER */
         .portal-header {{
@@ -473,6 +477,72 @@ def generate_portal_html(
             color: #090d16;
         }}
 
+        /* TRADINGVIEW STYLES */
+        .tv-btn {{
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+        }}
+        .tv-btn:hover {{ color: #fff; border-color: var(--primary); }}
+        .tv-btn.active {{
+            background: var(--primary);
+            color: #090d16;
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+        }}
+
+        /* JAMES COMMAND CENTER STYLES */
+        .cmd-chip {{
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }}
+        .cmd-chip:hover {{
+            background: var(--primary);
+            color: #090d16;
+            font-weight: 700;
+            border-color: var(--primary);
+        }}
+        .msg-james {{
+            background: #172033;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 16px 20px;
+            max-width: 85%;
+            align-self: flex-start;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }}
+        .msg-user {{
+            background: #1e3a8a;
+            border: 1px solid #3b82f6;
+            border-radius: 12px;
+            padding: 14px 18px;
+            max-width: 75%;
+            align-self: flex-end;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }}
+        .msg-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 6px;
+        }}
+
         /* MODAL REPORT VIEWER */
         .modal-overlay {{
             display: none;
@@ -702,6 +772,7 @@ def generate_portal_html(
             <button class="tab-btn active" onclick="switchTab('reports')">📑 Thư Viện Báo Cáo Thể Chế</button>
             <button class="tab-btn" onclick="switchTab('timeline')">⏰ 18 Cột Mốc Tác Chiến Ngày</button>
             <button class="tab-btn" onclick="switchTab('portfolio')">📈 Bản Đồ Vốn & Tầm Ngắm Vòng 2</button>
+            <button class="tab-btn" onclick="switchTab('james-command')">🎖️ Bàn Chỉ Huy Master CIO James</button>
             <button class="tab-btn" onclick="switchTab('supervisor')">🛡️ Giám Sát 4 Daemons 24/7</button>
         </nav>
 
@@ -776,8 +847,32 @@ def generate_portal_html(
             </div>
         </section>
 
-        <!-- TAB 3: PORTFOLIO & WATCHLIST -->
+        <!-- TAB 3: PORTFOLIO, WATCHLIST & TRADINGVIEW (ĐỀ XUẤT 3) -->
         <section id="tab-portfolio" class="tab-pane">
+            <!-- TRADINGVIEW LIVE HOSE CHART WIDGET -->
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 14px; padding: 20px; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+                    <div>
+                        <h3 style="font-size: 16px; color: #fff; display: flex; align-items: center; gap: 8px;">
+                            <span>📈</span> <span>BIỂU ĐỒ NẾN KỸ THUẬT REALTIME TRADINGVIEW (LIVE SÀN HOSE)</span>
+                        </h3>
+                        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
+                            Soi nến Candlestick, Khối Lượng Volume, RSI, MACD & MA20 trực tiếp trên sàn HOSE — Không cần mở app phụ.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="tv-symbol-buttons">
+                        <button class="tv-btn active" onclick="switchTVSymbol('HOSE:VNINDEX', this)">📈 VN-INDEX</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:FPT', this)">💎 FPT</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:DGC', this)">🧪 DGC</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:HPG', this)">🏗️ HPG</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:TCB', this)">🏦 TCB</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:MBB', this)">🛡️ MBB</button>
+                    </div>
+                </div>
+                <div id="tv_chart_container" style="height: 520px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color);"></div>
+            </div>
+
+            <!-- PHÂN BỔ VỐN & NGUYÊN TẮC -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 20px;">
                 <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 14px; padding: 20px;">
                     <h3 style="font-size: 16px; margin-bottom: 14px; color: #fff;">📊 PHÂN BỔ TÀI SẢN THỰC TẾ (SSOT V2.0)</h3>
@@ -901,7 +996,68 @@ def generate_portal_html(
             </div>
         </section>
 
-        <!-- TAB 4: SUPERVISOR & DAEMONS -->
+        <!-- TAB 4: BÀN CHỈ HUY MASTER CIO JAMES (ĐỀ XUẤT 5) -->
+        <section id="tab-james-command" class="tab-pane">
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; min-height: 650px;">
+                <!-- Header -->
+                <div style="background: linear-gradient(135deg, #1e1b4b 0%, #172033 100%); border-bottom: 1px solid var(--border-color); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 22px;">🎖️</span>
+                            <h3 style="font-size: 18px; font-weight: 800; color: #fff;">TRUNG TÂM CHỈ HUY TÁC CHIẾN — MASTER CIO JAMES (BAN 8)</h3>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
+                            Kênh giao việc trực tiếp từ Chủ tịch Phước Trần • Tiếp nhận & đóng lặp thực thi qua 10 phòng ban thời gian thực
+                        </p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 5px 12px; border-radius: 9999px; font-size: 11px; font-weight: 700;">
+                            ● ĐANG TRỰC CHIẾN 24/7
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Quick Command Chips -->
+                <div style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 12px 20px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                    <span style="font-size: 11px; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Lệnh Nhanh:</span>
+                    <button class="cmd-chip" onclick="sendQuickCommand('/tcbs')">🏦 /tcbs (Két Tiền)</button>
+                    <button class="cmd-chip" onclick="sendQuickCommand('/danhmuc')">📊 /danhmuc (100% Cash)</button>
+                    <button class="cmd-chip" onclick="sendQuickCommand('/solenh')">⚡ /solenh (Sổ Lệnh Vòng 2)</button>
+                    <button class="cmd-chip" onclick="sendQuickCommand('/hop FPT')">⚔️ /hop FPT (Họp 10 Ban Soi FPT)</button>
+                    <button class="cmd-chip" onclick="sendQuickCommand('/hop DGC')">🎯 /hop DGC (Họp 10 Ban Soi DGC)</button>
+                    <button class="cmd-chip" onclick="sendQuickCommand('/hop HPG')">🏗️ /hop HPG (Họp 10 Ban Soi HPG)</button>
+                    <button class="cmd-chip" onclick="sendQuickCommand('/baomat')">🛡️ /baomat (Khiên Bảo Mật)</button>
+                </div>
+
+                <!-- Chat Messages Stream -->
+                <div id="james-chat-stream" style="flex-grow: 1; padding: 24px; overflow-y: auto; max-height: 520px; display: flex; flex-direction: column; gap: 16px;">
+                    <!-- Tin nhắn chào đầu tiên từ James -->
+                    <div class="msg-james">
+                        <div class="msg-header">
+                            <span style="font-weight: 700; color: #e879f9;">🎖️ Master CIO James (Ban 8)</span>
+                            <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">TRỰC CHIẾN 24/7</span>
+                        </div>
+                        <div class="msg-body markdown-body">
+                            <p>Kính chào <strong>Chủ tịch Trần Quốc Thiên Phước</strong>!</p>
+                            <p>Tôi là <strong>James</strong> — Tổng Tư Lệnh Master CIO trực tiếp chỉ huy toàn bộ Quỹ Apex. Tôi túc trực 24/7 để tiếp nhận chỉ thị trực tiếp từ Chủ tịch ngay tại Web Portal này.</p>
+                            <p>Chủ tịch có thể bấm các <strong>Lệnh Nhanh</strong> phía trên hoặc gõ bất kỳ chỉ thị nào bên dưới (ví dụ: <code>/hop FPT</code>, <code>Rà soát BCTC DGC</code>, <code>/danhmuc</code>, <code>/tcbs</code>, <code>/solenh</code>). Tôi sẽ phân công các phòng ban thực thi và phản hồi số liệu ngay lập tức!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Box -->
+                <div style="background: var(--bg-card); border-top: 1px solid var(--border-color); padding: 16px 20px;">
+                    <form id="james-cmd-form" onsubmit="submitJamesCommand(event)" style="display: flex; gap: 12px; align-items: center;">
+                        <input type="text" id="james-cmd-input" class="search-input" style="flex-grow: 1; padding: 12px 18px; font-size: 14px; background: var(--bg-base);" placeholder="💬 Gõ chỉ thị điều hành cho James (Ví dụ: /hop FPT, /danhmuc, Soi BCTC DGC...)..." autocomplete="off">
+                        <button type="submit" id="james-submit-btn" class="btn-read" style="padding: 12px 24px; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                            <span>🚀</span> <span>Gửi Chỉ Thị</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: SUPERVISOR & DAEMONS -->
         <section id="tab-supervisor" class="tab-pane">
             <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 14px; overflow: hidden; padding: 20px;">
                 <h3 style="font-size: 16px; margin-bottom: 16px; color: #fff;">🛡️ TRẠNG THÁI 4 TIẾN TRÌNH TỰ HÀNH 24/24 (WATCHDOG AUTO-RECOVERY)</h3>
@@ -985,6 +1141,143 @@ def generate_portal_html(
 
             const targetPane = document.getElementById('tab-' + tabId);
             if (targetPane) targetPane.classList.add('active');
+
+            if (tabId === 'portfolio') {{
+                setTimeout(() => initTradingViewWidget(currentTVSymbol), 100);
+            }}
+        }}
+
+        // TRADINGVIEW REALTIME WIDGET (ĐỀ XUẤT 3)
+        let currentTVSymbol = 'HOSE:VNINDEX';
+        function initTradingViewWidget(symbol) {{
+            const container = document.getElementById('tv_chart_container');
+            if (!container || typeof TradingView === 'undefined') return;
+            container.innerHTML = '';
+            new TradingView.widget({{
+                "autosize": true,
+                "symbol": symbol || currentTVSymbol,
+                "interval": "D",
+                "timezone": "Asia/Ho_Chi_Minh",
+                "theme": "dark",
+                "style": "1",
+                "locale": "vi_VN",
+                "toolbar_bg": "#111827",
+                "enable_publishing": false,
+                "hide_side_toolbar": false,
+                "allow_symbol_change": true,
+                "container_id": "tv_chart_container"
+            }});
+        }}
+
+        function switchTVSymbol(symbol, btn) {{
+            currentTVSymbol = symbol;
+            document.querySelectorAll('.tv-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            initTradingViewWidget(symbol);
+        }}
+
+        // MASTER CIO JAMES COMMAND CENTER (ĐỀ XUẤT 5)
+        let isJamesProcessing = false;
+        async function submitJamesCommand(e) {{
+            if (e) e.preventDefault();
+            if (isJamesProcessing) return;
+
+            const input = document.getElementById('james-cmd-input');
+            const cmd = input.value.trim();
+            if (!cmd) return;
+
+            input.value = '';
+            appendUserMessage(cmd);
+
+            // Bật trạng thái loading
+            isJamesProcessing = true;
+            const submitBtn = document.getElementById('james-submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.6';
+            const tempLoadingId = appendJamesLoading();
+
+            try {{
+                const res = await fetch('/api/command', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ command: cmd }})
+                }});
+                const data = await res.json();
+                removeJamesLoading(tempLoadingId);
+
+                if (data.ok) {{
+                    appendJamesMessage(data.response, data.timestamp);
+                }} else {{
+                    appendJamesMessage('⚠️ Master CIO James phản hồi: ' + (data.error || 'Có lỗi xử lý chỉ thị.'));
+                }}
+            }} catch (err) {{
+                removeJamesLoading(tempLoadingId);
+                appendJamesMessage('⚠️ Lỗi kết nối máy chủ điều hành: ' + err.message);
+            }} finally {{
+                isJamesProcessing = false;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+            }}
+        }}
+
+        function sendQuickCommand(cmd) {{
+            document.getElementById('james-cmd-input').value = cmd;
+            submitJamesCommand();
+        }}
+
+        function appendUserMessage(text) {{
+            const stream = document.getElementById('james-chat-stream');
+            const nowTime = new Date().toLocaleTimeString('vi-VN', {{ hour12: false }});
+            const div = document.createElement('div');
+            div.className = 'msg-user';
+            div.innerHTML = `
+                <div class="msg-header" style="border-bottom-color: rgba(255,255,255,0.2);">
+                    <span style="font-weight: 700; color: #fff;">👤 Chủ tịch Trần Quốc Thiên Phước</span>
+                    <span style="font-size: 11px; opacity: 0.8; font-family: 'JetBrains Mono', monospace;">${{nowTime}}</span>
+                </div>
+                <div style="font-size: 14px; line-height: 1.5;">${{text}}</div>
+            `;
+            stream.appendChild(div);
+            stream.scrollTop = stream.scrollHeight;
+        }}
+
+        function appendJamesLoading() {{
+            const stream = document.getElementById('james-chat-stream');
+            const loadingId = 'loading-' + Date.now();
+            const div = document.createElement('div');
+            div.className = 'msg-james';
+            div.id = loadingId;
+            div.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px; color: #e879f9; font-size: 13px;">
+                    <span class="pulse-dot" style="background: #e879f9; box-shadow: 0 0 10px #e879f9;"></span>
+                    <span>Master CIO James đang triệu tập các phòng ban và xử lý chỉ thị...</span>
+                </div>
+            `;
+            stream.appendChild(div);
+            stream.scrollTop = stream.scrollHeight;
+            return loadingId;
+        }}
+
+        function removeJamesLoading(id) {{
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }}
+
+        function appendJamesMessage(rawText, timestamp) {{
+            const stream = document.getElementById('james-chat-stream');
+            const nowTime = timestamp || new Date().toLocaleTimeString('vi-VN', {{ hour12: false }});
+            const div = document.createElement('div');
+            div.className = 'msg-james';
+            const parsedHtml = window.marked ? marked.parse(rawText) : `<pre style="white-space: pre-wrap;">${{rawText}}</pre>`;
+            div.innerHTML = `
+                <div class="msg-header">
+                    <span style="font-weight: 700; color: #e879f9;">🎖️ Master CIO James (Ban 8)</span>
+                    <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">${{nowTime}}</span>
+                </div>
+                <div class="msg-body markdown-body">${{parsedHtml}}</div>
+            `;
+            stream.appendChild(div);
+            stream.scrollTop = stream.scrollHeight;
         }}
 
         // BỘ LỌC NGÀY & KHO LƯU TRỮ
@@ -1044,7 +1337,6 @@ def generate_portal_html(
             if (currentDateFilter === 'today') {{
                 filtered = filtered.filter(r => r.date === todayDateStr);
             }} else if (currentDateFilter === 'yesterday') {{
-                // Tìm ngày gần nhất trước hôm nay
                 const olderDates = availableDates.map(d => d.date).filter(d => d < todayDateStr);
                 const yesterdayDate = olderDates[0] || '';
                 if (yesterdayDate) {{

@@ -399,9 +399,11 @@ def handle_10dept_council_command(ticker: str = "") -> str:
         ticker = ticker.upper().strip()
         if ticker and len(ticker) == 3:
             res = run_single_stock_10dept_debate(ticker)
-            if "error" not in res:
-                return res["formatted_message"]
-            return res["error"]
+            if isinstance(res, str):
+                return res
+            if isinstance(res, dict):
+                return res.get("formatted_message", res.get("error", str(res)))
+            return str(res)
 
         council = run_full_10_department_council(force_rescan=False)
         approved = council.get("approved_round2_picks", [])

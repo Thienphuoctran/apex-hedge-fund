@@ -378,6 +378,54 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(html.encode("utf-8"))
             return
 
+    def do_POST(self):
+        parsed_url = urllib.parse.urlparse(self.path)
+        if parsed_url.path == "/api/command":
+            content_length = int(self.headers.get("Content-Length", 0))
+            body_bytes = self.rfile.read(content_length)
+            try:
+                req_data = json.loads(body_bytes.decode("utf-8"))
+                user_command = req_data.get("command", "").strip()
+                if not user_command:
+                    self.send_response(400)
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"ok": False, "error": "Chỉ thị không được để trống."}).encode("utf-8"))
+                    return
+
+                # Gọi trực tiếp bộ chỉ huy Master CIO James
+                from scripts.master_cio_james_agent import handle_james_chat
+                james_reply = handle_james_chat(user_command)
+
+                # Gửi thông báo đồng bộ vào Telegram james_hq để lưu vết
+                try:
+                    from scripts.telegram_dispatcher import dispatch_message
+                    dispatch_message("james_hq", f"💬 *[CHỈ THỊ TỪ WEB PORTAL]*\n👤 *Chủ tịch*: `{user_command}`\n\n{james_reply}")
+                except Exception:
+                    pass
+
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                payload = {
+                    "ok": True,
+                    "command": user_command,
+                    "response": james_reply,
+                    "officer": "Master CIO James (Ban 8)",
+                    "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                }
+                self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+            return
+        else:
+            self.send_response(404)
+            self.end_headers()
+            return
+
 class ManagedService:
     def __init__(self, key: str, cfg: Dict[str, Any]):
         self.key = key
