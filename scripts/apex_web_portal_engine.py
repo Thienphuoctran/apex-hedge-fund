@@ -103,6 +103,23 @@ def generate_portal_html(
     initial_reports_json = json.dumps(initial_reports, ensure_ascii=False)
     available_dates_json = json.dumps(available_dates, ensure_ascii=False)
 
+    db_milestone_banner = ""
+    if total_reports_count >= 300:
+        db_milestone_banner = f'''
+        <div style="background: linear-gradient(135deg, #78350f 0%, #451a03 100%); border: 1px solid #f59e0b; border-radius: 14px; padding: 14px 22px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 26px;">⚠️</span>
+                <div>
+                    <strong style="color: #fbbf24; font-size: 14.5px;">CẢNH BÁO THỂ CHẾ: KHO DỮ LIỆU ĐÃ ĐẠT {total_reports_count} BÁO CÁO (NGƯỠNG 300 - 500)</strong>
+                    <div style="font-size: 12.5px; color: #fde68a; margin-top: 3px;">Hệ thống đang tự động kích hoạt Kế hoạch Nâng cấp Cơ sở dữ liệu V5.0 (SQLite / PostgreSQL) theo đúng Chỉ thị của Chủ tịch Phước Trần!</div>
+                </div>
+            </div>
+            <button onclick="switchTab(\'james-command\'); sendQuickCommand(\'Đệ trình kế hoạch nâng cấp Database V5.0\')" class="btn-read" style="background: #f59e0b; color: #070a12; font-weight: 800; white-space: nowrap; padding: 8px 18px;">
+                ⚡ Xem Đệ Trình
+            </button>
+        </div>
+        '''
+
     return f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -1011,7 +1028,7 @@ def generate_portal_html(
             <div class="kpi-card" style="--card-accent: #c084fc;">
                 <div class="kpi-lbl">📑 Báo Cáo Hôm Nay ({today_str})</div>
                 <div class="kpi-val" style="color: #c084fc;" id="stat-today-count">{today_reports_count} Báo Cáo</div>
-                <div class="kpi-sub">Tự động chuyển Kho Vault qua ngày mới</div>
+                <div class="kpi-sub">Kho Vault: <strong style="color: #c084fc;">{total_reports_count}/300</strong> (Mốc nâng cấp DB: 300 - 500)</div>
             </div>
             <div class="kpi-card" style="--card-accent: #f472b6;">
                 <div class="kpi-lbl">🛡️ Hệ Thống Tự Hành 24/7</div>
@@ -1020,6 +1037,7 @@ def generate_portal_html(
             </div>
         </section>
 
+        {db_milestone_banner}
         <!-- TABS NAV -->
         <nav class="tab-nav">
             <button class="tab-btn active" onclick="switchTab('reports')">
