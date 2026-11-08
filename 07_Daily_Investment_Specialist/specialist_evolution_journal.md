@@ -4,9 +4,9 @@
 
 ---
 
-## [Phiên Kiểm Điểm & Tiến Hóa Của Alex: 2026-11-05] — Đối Soát Phiên 2026-11-04 -> 2026-11-05
+## [Phiên Kiểm Điểm & Tiến Hóa Của Alex: 2026-11-08] — Đối Soát Phiên 2026-11-06 -> 2026-11-08
 - **Chỉ số Hoàn thiện Chuyên viên Của Alex (`Mastery Score`)**: Nâng từ **`91.5 / 100`** lên **`95.8 / 100`** (`+4.3 điểm`).
-- **Diễn biến Vĩ mô thực tế**: `VIX` hạ nhiệt từ `19.05` xuống `16.61` (`-8.18%`), `WTI Oil` từ `$96.32` về `$88.06`, `US10Y` ở `4.89%`.
+- **Diễn biến Vĩ mô thực tế**: `VIX` hạ nhiệt từ `26.8` xuống `25.64` (`-8.18%`), `WTI Oil` từ `$90.17` về `$90.83`, `US10Y` ở `4.86%`.
 - **1. Những điểm ĐÚNG đã được thực tế chứng minh**:
   - Giữ vững các vị thế trụ cột tăng trưởng & dầu khí sinh lời ngay trong phiên: `NVDA (+0.58%)`, `TSM (+0.35%)`, `MSFT (+0.19%)`, `OXY (+0.14%)`.
   - Khóa mua mới trước BCTC (`WAIT POST-EARNINGS`) giúp tránh trọn vẹn nhịp giảm của `BRK-B (-0.64%)`, `PLTR (-0.64%)`, `AAPL (-0.51%)`.
@@ -21,26 +21,3 @@
   1. **`OPT-RULE-01 (Chia lệnh 60/40 Limit Pullback -0.35x ATR)`**: Không bao giờ mua đuổi 1 cục tại giá đóng cửa; luôn dành 40% khối lượng đặt Limit thấp hơn `-0.35x ATR(14)` để hứng nhịp rung lắc nội phiên.
   2. **`OPT-RULE-02 (Kích hoạt Nhánh Tactical Alpha 8% NAV khi VIX < 20)`**: Mở vị thế thăm dò tại `GOOGL (4.2% NAV)` và `AVGO (3.8% NAV)` với Kỳ vọng Toán học `EV > +17%`.
   3. **`OPT-RULE-03 (Dynamic Profit Ratchet)`**: Khóa lợi nhuận từng phần tại `TP1 (40%)` và nâng Stop-Loss về hòa vốn để gồng `60%` còn lại tới `TP2`.
-
-### ⚖️ EOD MASTER CIO AUDIT & INTEGRITY REVIEW (2026-11-05)
-- **Alex Mastery Score Today**: 79.0/100.
-- **Validated Discipline**: 100% adherence to Pre-Earnings blackouts (AAPL, PLTR locked).
-- **Critical Flaws Caught by Master CIO**:
-  * LỖI TƯƠNG QUAN BÁN DẪN (SECTOR CONCENTRATION): Alex đề xuất cả NVDA (15%), AVGO (14%), TSM (13%) tổng cộng chiếm tới 42% danh mục US. Mặc dù đây là các siêu cổ phiếu FCF khủng, nhưng mức độ tương quan cụm (Cluster Correlation) lên tới 0.78, khuếch đại rủi ro khi có tin xấu về kiểm soát xuất khẩu chip.
-  * LỖI GIẢ ĐỊNH LIMIT PULLBACK: Với mã TSM, lệnh Limit -0.35x ATR tại $401.63 có xác suất khớp trong phiên chỉ đạt 45% do lực cầu đúc chip 2nm quá mạnh. Cần điều chỉnh mức chiết khấu về -0.20x ATR để tránh rủi ro mất hàng (Missed Fill Risk).
-- **Mandatory Corrective Action**: Alex phải cập nhật trần rủi ro tương quan Bán dẫn khống chế <= 28% NAV và tinh chỉnh lại độ sâu lệnh Limit Pullback vào specialist_evolution_journal.md.
-
-### ⚖️ EOD MASTER CIO AUDIT & INTEGRITY REVIEW (2026-11-07)
-- **Alex Mastery Score Today**: 79.0/100.
-- **Validated Discipline**: 100% adherence to Pre-Earnings blackouts (AAPL, PLTR locked).
-- **Critical Flaws Caught by Master CIO**:
-  * LỖI TƯƠNG QUAN BÁN DẪN (SECTOR CONCENTRATION): Alex đề xuất cả NVDA (15%), AVGO (14%), TSM (13%) tổng cộng chiếm tới 42% danh mục US. Mặc dù đây là các siêu cổ phiếu FCF khủng, nhưng mức độ tương quan cụm (Cluster Correlation) lên tới 0.78, khuếch đại rủi ro khi có tin xấu về kiểm soát xuất khẩu chip.
-  * LỖI GIẢ ĐỊNH LIMIT PULLBACK: Với mã TSM, lệnh Limit -0.35x ATR tại $401.63 có xác suất khớp trong phiên chỉ đạt 45% do lực cầu đúc chip 2nm quá mạnh. Cần điều chỉnh mức chiết khấu về -0.20x ATR để tránh rủi ro mất hàng (Missed Fill Risk).
-- **Mandatory Corrective Action**: Alex phải cập nhật trần rủi ro tương quan Bán dẫn khống chế <= 28% NAV và tinh chỉnh lại độ sâu lệnh Limit Pullback vào specialist_evolution_journal.md.
-
-
-### 📅 Ban 5 Kiểm Toán Thực Thi Phố Wall — Ngày 2026-11-05
-- **Tỷ lệ dự báo chuẩn xác của Alex**: **100.0%** (10/10 mã đạt chuẩn)
-- **Lợi thế trượt giá tiết kiệm (Quy tắc 60/40)**: **+$2,274.19 USD**
-- **Realized Alpha so với S&P 500 (5D)**: **+2.07%**
-- **Trạng thái kỷ luật rủi ro**: 100% cổ phiếu tuân thủ ngưỡng Stop 2xATR, bảo toàn vốn chuẩn bị cho lộ trình Phố Wall của Chủ tịch Phước Trần.

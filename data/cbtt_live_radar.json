@@ -1,12 +1,12 @@
 {
-  "timestamp_utc": "2026-11-05T00:32:51.313648+00:00",
-  "scan_date": "2026-11-05",
-  "total_us_filings_count": 368,
-  "total_vn_announcements_count": 32,
+  "timestamp_utc": "2026-11-08T13:39:47.829280+00:00",
+  "scan_date": "2026-11-08",
+  "total_us_filings_count": 370,
+  "total_vn_announcements_count": 46,
   "ticker_filing_summary": {
     "NVDA": {
-      "latest_form": "4/A",
-      "latest_filing_date": "2026-10-13",
+      "latest_form": "4",
+      "latest_filing_date": "2026-11-06",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
@@ -18,7 +18,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
-      "total_recent_filings": 12
+      "total_recent_filings": 11
     },
     "MSFT": {
       "latest_form": "10-Q",
@@ -26,7 +26,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
-      "total_recent_filings": 10
+      "total_recent_filings": 11
     },
     "GOOGL": {
       "latest_form": "10-Q",
@@ -34,7 +34,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044",
-      "total_recent_filings": 11
+      "total_recent_filings": 10
     },
     "AMZN": {
       "latest_form": "10-Q",
@@ -46,11 +46,11 @@
     },
     "META": {
       "latest_form": "4",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-06",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801",
-      "total_recent_filings": 8
+      "total_recent_filings": 10
     },
     "TSLA": {
       "latest_form": "10-Q",
@@ -78,7 +78,7 @@
     },
     "JPM": {
       "latest_form": "424B2",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-06",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617",
@@ -125,10 +125,10 @@
       "total_recent_filings": 12
     },
     "SMCI": {
-      "latest_form": "8-K",
-      "latest_filing_date": "2026-11-03",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
+      "latest_form": "10-Q",
+      "latest_filing_date": "2026-11-06",
+      "event_type": "EARNINGS_FINANCIAL_REPORT",
+      "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365",
       "total_recent_filings": 8
     },
@@ -142,25 +142,25 @@
     },
     "BAC": {
       "latest_form": "424B2",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-06",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858",
-      "total_recent_filings": 11
+      "total_recent_filings": 10
     },
     "GS": {
       "latest_form": "424B2",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-06",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982",
-      "total_recent_filings": 8
+      "total_recent_filings": 11
     },
     "V": {
-      "latest_form": "144",
-      "latest_filing_date": "2026-11-04",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
+      "latest_form": "10-K",
+      "latest_filing_date": "2026-11-05",
+      "event_type": "EARNINGS_FINANCIAL_REPORT",
+      "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161",
       "total_recent_filings": 12
     },
@@ -182,7 +182,7 @@
     },
     "NVO": {
       "latest_form": "6-K",
-      "latest_filing_date": "2026-11-04",
+      "latest_filing_date": "2026-11-05",
       "event_type": "MATERIAL_EVENT_8K",
       "severity": "WARNING",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000353278",
@@ -213,10 +213,10 @@
       "total_recent_filings": 7
     },
     "CVX": {
-      "latest_form": "4",
-      "latest_filing_date": "2026-11-04",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
+      "latest_form": "10-Q",
+      "latest_filing_date": "2026-11-05",
+      "event_type": "EARNINGS_FINANCIAL_REPORT",
+      "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000093410",
       "total_recent_filings": 11
     },
@@ -226,7 +226,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000797468",
-      "total_recent_filings": 8
+      "total_recent_filings": 7
     },
     "LMT": {
       "latest_form": "10-Q",
@@ -254,11 +254,11 @@
     },
     "WMT": {
       "latest_form": "4",
-      "latest_filing_date": "2026-11-03",
+      "latest_filing_date": "2026-11-05",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169",
-      "total_recent_filings": 10
+      "total_recent_filings": 11
     },
     "COST": {
       "latest_form": "4",
@@ -269,103 +269,179 @@
       "total_recent_filings": 12
     },
     "PG": {
-      "latest_form": "8-K",
-      "latest_filing_date": "2026-11-03",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
+      "latest_form": "4",
+      "latest_filing_date": "2026-11-05",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424",
-      "total_recent_filings": 11
+      "total_recent_filings": 9
     },
     "MCD": {
       "latest_form": "10-Q",
-      "latest_filing_date": "2026-08-07",
+      "latest_filing_date": "2026-11-06",
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
-      "total_recent_filings": 9
-    },
-    "HAH": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Đại gia Hải Phòng có danh mục cổ phiếu gần 11.000 tỷ đồng: Ôm 62 triệu cổ phiếu GEX, 42 triệu cổ phiếu HAH, 1% Eximbank",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 07:02:00 +0700",
-      "source_url": "https://cafef.vn/khong-chi-nam-1-eximbank-dai-gia-cang-bien-hai-phong-lo-danh-muc-dau-tu-gan-11000-ty-dong-om-62-trieu-co-phieu-gex-42-trieu-co-phieu-hah-188261105070213823.chn",
-      "total_announcements": 1
-    },
-    "FPT": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
-      "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn",
-      "total_announcements": 8
-    },
-    "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn",
-      "total_announcements": 12
-    },
-    "BSR": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Công ty đầu tiên hé lộ doanh thu cả năm 2026 đạt gần 224.000 tỷ đồng, tăng 56%",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 03 Nov 26 21:50:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-dau-tien-he-lo-doanh-thu-ca-nam-2026-dat-gan-224000-ty-dong-tang-56-188261103214915204.chn",
-      "total_announcements": 1
+      "total_recent_filings": 10
     },
     "POW": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
+      "latest_title": "PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu?",
       "severity": "CRITICAL",
-      "published_at": "Wed, 04 Nov 26 20:30:00 +0700",
-      "source_url": "https://cafef.vn/dang-sau-khoan-loi-nhuan-tang-dot-bien-pv-power-pow-co-nhung-bien-dong-gi-sau-9-thang-dau-nam-188261104203102274.chn",
+      "published_at": "Sun, 08 Nov 26 12:14:00 +0700",
+      "source_url": "https://cafef.vn/pv-power-pow-bao-lai-vuot-6-lan-ke-hoach-nam-chi-sau-9-thang-nho-dau-188261108101433278.chn",
       "total_announcements": 1
     },
-    "MBB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
+    "BSR": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Nhà máy lọc hóa dầu đầu tiên của Việt Nam nâng mục tiêu lợi nhuận năm 2026 lên hơn 18.500 tỷ đồng, gấp 8,6 lần kế hoạch ban đầu",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 08 Nov 26 00:03:00 +0700",
+      "source_url": "https://cafef.vn/nha-may-loc-hoa-dau-dau-tien-cua-viet-nam-nang-muc-tieu-loi-nhuan-nam-2026-len-hon-18500-ty-dong-gap-86-lan-ke-hoach-ban-dau-188261107211140114.chn",
+      "total_announcements": 3
+    },
+    "HCM": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Người đàn ông chưa học hết phổ thông, từng bán vé số ở Tp.HCM vừa kiếm 4.700 tỷ đồng khi bán công ty cho tập đoàn Nhật Bản",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn",
+      "total_announcements": 11
+    },
+    "REE": {
+      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "latest_title": "Bà Nguyễn Thị Mai Thanh: Công ty của REE muốn  sáp nhập thêm nhiều công ty con bởi việc đang nhiều kinh khủng",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn",
+      "published_at": "Sat, 07 Nov 26 13:15:00 +0700",
+      "source_url": "https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn",
+      "total_announcements": 2
+    },
+    "FPT": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "FPT AI Factory được vinh danh tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 19:30:00 +0700",
+      "source_url": "https://cafef.vn/fpt-ai-factory-duoc-vinh-danh-tai-giai-thuong-tri-tue-nhan-tao-viet-nam-2026-188261106195055665.chn",
+      "total_announcements": 4
+    },
+    "IDC": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 16:20:00 +0700",
+      "source_url": "https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn",
       "total_announcements": 1
     },
     "SSI": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa \"bay hơi\" khỏi doanh nghiệp từ đầu năm",
+      "latest_title": "Tín hiệu VN-Index tạo đáy xuất hiện, SSI gọi tên 11 cổ phiếu có cơ hội",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn",
-      "total_announcements": 1
-    },
-    "ACB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "ACB ra mắt thẻ tín dụng dành cho hộ kinh doanh, miễn lãi đến 55 ngày và hoàn tiền đến 10%",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 07:16:00 +0700",
-      "source_url": "https://cafef.vn/acb-ra-mat-the-tin-dung-danh-cho-ho-kinh-doanh-mien-lai-den-55-ngay-va-hoan-tien-den-10-188261105071713898.chn",
+      "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
+      "source_url": "https://cafef.vn/tin-hieu-vn-index-tao-day-xuat-hien-ssi-goi-ten-11-co-phieu-co-du-dia-tang-manh-188261107205152922.chn",
       "total_announcements": 2
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng",
+      "latest_title": "PNJ bất ngờ muốn rút sạch vốn khỏi công ty cầm đồ sau chưa đầy 8 tháng",
       "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 06:55:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-188261105065603864.chn",
-      "total_announcements": 4
+      "published_at": "Sat, 07 Nov 26 10:50:00 +0700",
+      "source_url": "https://cafef.vn/pnj-bat-ngo-muon-rut-sach-von-khoi-cong-ty-cam-do-sau-chua-day-8-thang-188261107105050558.chn",
+      "total_announcements": 7
+    },
+    "KDH": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/phien-6-11-khoi-ngoai-do-tien-mua-rong-hon-400-ty-dong-co-phieu-viet-nam-giua-luc-chung-khoan-toan-cau-lao-doc-188261106153537479.chn",
+      "total_announcements": 1
+    },
+    "PC1": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 13:32:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-cua-nu-chu-tich-27-tuoi-phat-thong-bao-quan-trong-188261106113423265.chn",
+      "total_announcements": 1
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng",
+      "latest_title": "Tỷ giá USD/VND có thêm yếu tố hỗ trợ trong những tháng cuối năm",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 13:17:00 +0700",
-      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn",
-      "total_announcements": 2
+      "published_at": "Sun, 08 Nov 26 11:16:00 +0700",
+      "source_url": "https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn",
+      "total_announcements": 3
+    },
+    "ACB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Ngày 8/11, gửi dưới 1 tỷ đồng kỳ hạn 1 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "severity": "INFO",
+      "published_at": "Sun, 08 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-8-11-gui-duoi-1-ty-dong-ky-han-1-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261107214517163.chn",
+      "total_announcements": 8
+    },
+    "STB": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "\"Cá mập\" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
+      "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
+      "total_announcements": 1
+    },
+    "MBS": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026",
+      "severity": "INFO",
+      "published_at": "Sun, 08 Nov 2026 03:44:26 GMT",
+      "source_url": "https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm",
+      "total_announcements": 1
+    },
+    "CTG": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại mua ròng đột biến ở VIX",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 2026 15:54:36 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm",
+      "total_announcements": 1
+    },
+    "DXG": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại mua ròng đột biến ở VIX",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 2026 15:54:36 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm",
+      "total_announcements": 1
+    },
+    "HPG": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại mua ròng đột biến ở VIX",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 2026 15:54:36 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm",
+      "total_announcements": 1
+    },
+    "MBB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại mua ròng đột biến ở VIX",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 2026 15:54:36 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm",
+      "total_announcements": 1
     }
   },
   "us_filings": [
+    {
+      "market": "US_GLOBAL",
+      "symbol": "NVDA",
+      "company_name": "NVIDIA CORP",
+      "form": "4",
+      "filing_date": "2026-11-06",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001197647-26-000013",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810"
+    },
     {
       "market": "US_GLOBAL",
       "symbol": "NVDA",
@@ -500,15 +576,39 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "NVDA",
-      "company_name": "NVIDIA CORP",
+      "symbol": "AAPL",
+      "company_name": "Apple Inc.",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001140361-26-042505",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AAPL",
+      "company_name": "Apple Inc.",
       "form": "4",
-      "filing_date": "2026-09-11",
+      "filing_date": "2026-11-05",
       "description": "FORM 4",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0002152188-26-000005",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810"
+      "accession_number": "0001140361-26-042149",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AAPL",
+      "company_name": "Apple Inc.",
+      "form": "424B2",
+      "filing_date": "2026-11-05",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001140361-26-042046",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
     },
     {
       "market": "US_GLOBAL",
@@ -608,51 +708,27 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "AAPL",
-      "company_name": "Apple Inc.",
-      "form": "4",
-      "filing_date": "2026-10-08",
-      "description": "FORM 4",
+      "symbol": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "form": "144",
+      "filing_date": "2026-11-05",
+      "description": "SEC Form 144",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001140361-26-039158",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
+      "accession_number": "0001959173-26-007778",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "AAPL",
-      "company_name": "Apple Inc.",
-      "form": "4",
-      "filing_date": "2026-10-05",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001140361-26-038674",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AAPL",
-      "company_name": "Apple Inc.",
-      "form": "4",
-      "filing_date": "2026-10-05",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001140361-26-038672",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AAPL",
-      "company_name": "Apple Inc.",
-      "form": "4",
-      "filing_date": "2026-10-05",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001140361-26-038669",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193"
+      "symbol": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "form": "8-K",
+      "filing_date": "2026-11-05",
+      "description": "8-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001193125-26-448357",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
     },
     {
       "market": "US_GLOBAL",
@@ -764,15 +840,15 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "MSFT",
-      "company_name": "MICROSOFT CORP",
-      "form": "DEFA14A",
-      "filing_date": "2026-10-21",
-      "description": "DEFA14A",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-427867",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
+      "symbol": "GOOGL",
+      "company_name": "Alphabet Inc.",
+      "form": "8-K",
+      "filing_date": "2026-11-05",
+      "description": "8-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001193125-26-449835",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044"
     },
     {
       "market": "US_GLOBAL",
@@ -884,27 +960,15 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "GOOGL",
-      "company_name": "Alphabet Inc.",
-      "form": "4",
-      "filing_date": "2026-10-27",
-      "description": "4",
+      "symbol": "AMZN",
+      "company_name": "AMAZON COM INC",
+      "form": "144/A",
+      "filing_date": "2026-11-05",
+      "description": "SEC Form 144/A",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-434839",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GOOGL",
-      "company_name": "Alphabet Inc.",
-      "form": "4",
-      "filing_date": "2026-10-27",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-434837",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044"
+      "accession_number": "0001000275-26-000122",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
     },
     {
       "market": "US_GLOBAL",
@@ -992,15 +1056,51 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "AMZN",
-      "company_name": "AMAZON COM INC",
+      "symbol": "META",
+      "company_name": "Meta Platforms, Inc.",
       "form": "4",
-      "filing_date": "2026-09-09",
+      "filing_date": "2026-11-06",
       "description": "FORM 4",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001284323-26-000002",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
+      "accession_number": "0000950103-26-017123",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "form": "424B5",
+      "filing_date": "2026-11-06",
+      "description": "424B5",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-450754",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "form": "8-K",
+      "filing_date": "2026-11-05",
+      "description": "8-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001193125-26-450074",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "form": "424B5",
+      "filing_date": "2026-11-05",
+      "description": "424B5",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-448015",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
     },
     {
       "market": "US_GLOBAL",
@@ -1076,27 +1176,15 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "META",
-      "company_name": "Meta Platforms, Inc.",
-      "form": "DEF 14C",
-      "filing_date": "2026-11-02",
-      "description": "DEF 14C",
+      "symbol": "TSLA",
+      "company_name": "Tesla, Inc.",
+      "form": "DEFA14A",
+      "filing_date": "2026-11-06",
+      "description": "DEFA14A",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001628280-26-068935",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "META",
-      "company_name": "Meta Platforms, Inc.",
-      "form": "144",
-      "filing_date": "2026-11-02",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001921094-26-001133",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
+      "accession_number": "0001104659-26-123945",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001318605"
     },
     {
       "market": "US_GLOBAL",
@@ -1208,15 +1296,15 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "TSLA",
-      "company_name": "Tesla, Inc.",
-      "form": "8-K",
-      "filing_date": "2026-10-02",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001628280-26-064366",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001318605"
+      "symbol": "PLTR",
+      "company_name": "Palantir Technologies Inc.",
+      "form": "4",
+      "filing_date": "2026-11-04",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001840244-26-000023",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
     },
     {
       "market": "US_GLOBAL",
@@ -1348,18 +1436,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001823923-26-000013",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "PLTR",
-      "company_name": "Palantir Technologies Inc.",
-      "form": "144",
-      "filing_date": "2026-10-09",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001950047-26-010148",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
     },
     {
@@ -1499,11 +1575,11 @@
       "symbol": "JPM",
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-116025",
+      "accession_number": "0001213900-26-117009",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1511,11 +1587,11 @@
       "symbol": "JPM",
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-116023",
+      "accession_number": "0001213900-26-116999",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1523,11 +1599,11 @@
       "symbol": "JPM",
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-116020",
+      "accession_number": "0001918704-26-034951",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1535,83 +1611,11 @@
       "symbol": "JPM",
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116015",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116014",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034648",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034639",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B3",
-      "filing_date": "2026-11-04",
-      "description": "FORM 424B3",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116007",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-116006",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034637",
+      "accession_number": "0001213900-26-116980",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1619,11 +1623,11 @@
       "symbol": "JPM",
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRICING SUPPLEMENT",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-115976",
+      "accession_number": "0001213900-26-116972",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1631,11 +1635,83 @@
       "symbol": "JPM",
       "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "PRICING SUPPLEMENT",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-115974",
+      "accession_number": "0001213900-26-116958",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034948",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034933",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034931",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034928",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034922",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-034921",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -2014,6 +2090,66 @@
       "market": "US_GLOBAL",
       "symbol": "QCOM",
       "company_name": "QUALCOMM INC/DE",
+      "form": "4",
+      "filing_date": "2026-11-06",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000804328-26-000131",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "QCOM",
+      "company_name": "QUALCOMM INC/DE",
+      "form": "4",
+      "filing_date": "2026-11-06",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000804328-26-000130",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "QCOM",
+      "company_name": "QUALCOMM INC/DE",
+      "form": "144",
+      "filing_date": "2026-11-06",
+      "description": "SEC Form 144",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001950047-26-010769",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "QCOM",
+      "company_name": "QUALCOMM INC/DE",
+      "form": "144",
+      "filing_date": "2026-11-06",
+      "description": "SEC Form 144",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001949846-26-000643",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "QCOM",
+      "company_name": "QUALCOMM INC/DE",
+      "form": "4",
+      "filing_date": "2026-11-04",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000804328-26-000129",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "QCOM",
+      "company_name": "QUALCOMM INC/DE",
       "form": "10-K",
       "filing_date": "2026-11-04",
       "description": "10-K",
@@ -2092,66 +2228,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0000804328-26-000116",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "QCOM",
-      "company_name": "QUALCOMM INC/DE",
-      "form": "4",
-      "filing_date": "2026-11-02",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000804328-26-000115",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "QCOM",
-      "company_name": "QUALCOMM INC/DE",
-      "form": "4",
-      "filing_date": "2026-10-21",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000804328-26-000112",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "QCOM",
-      "company_name": "QUALCOMM INC/DE",
-      "form": "4",
-      "filing_date": "2026-10-21",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000804328-26-000111",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "QCOM",
-      "company_name": "QUALCOMM INC/DE",
-      "form": "4",
-      "filing_date": "2026-10-21",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000804328-26-000110",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "QCOM",
-      "company_name": "QUALCOMM INC/DE",
-      "form": "4",
-      "filing_date": "2026-10-21",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000804328-26-000109",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
     },
     {
@@ -2302,6 +2378,18 @@
       "market": "US_GLOBAL",
       "symbol": "SMCI",
       "company_name": "Super Micro Computer, Inc.",
+      "form": "10-Q",
+      "filing_date": "2026-11-06",
+      "description": "10-Q",
+      "event_type": "EARNINGS_FINANCIAL_REPORT",
+      "severity": "CRITICAL",
+      "accession_number": "0001375365-26-000027",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "SMCI",
+      "company_name": "Super Micro Computer, Inc.",
       "form": "8-K",
       "filing_date": "2026-11-03",
       "description": "8-K",
@@ -2380,18 +2468,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0002135314-26-000014",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "SMCI",
-      "company_name": "Super Micro Computer, Inc.",
-      "form": "8-K",
-      "filing_date": "2026-10-20",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001375365-26-000025",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365"
     },
     {
@@ -2543,11 +2619,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034651",
+      "accession_number": "0001918704-26-034950",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2555,11 +2631,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034646",
+      "accession_number": "0001918704-26-034949",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2567,11 +2643,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034645",
+      "accession_number": "0001918704-26-034945",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2579,11 +2655,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034642",
+      "accession_number": "0001918704-26-034941",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2591,11 +2667,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034638",
+      "accession_number": "0001918704-26-034940",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2603,11 +2679,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034636",
+      "accession_number": "0001918704-26-034939",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2615,11 +2691,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034635",
+      "accession_number": "0001918704-26-034936",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2627,11 +2703,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034634",
+      "accession_number": "0001918704-26-034930",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2639,11 +2715,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034631",
+      "accession_number": "0001918704-26-034924",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2651,23 +2727,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-034626",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
-      "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-034625",
+      "accession_number": "0001918704-26-034917",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2675,11 +2739,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
-      "description": "FORM 424B2",
+      "filing_date": "2026-11-06",
+      "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0000950103-26-016961",
+      "accession_number": "0001193125-26-452112",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2687,11 +2751,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-447671",
+      "accession_number": "0001193125-26-452022",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2699,11 +2763,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-447619",
+      "accession_number": "0001193125-26-452000",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2711,11 +2775,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-447606",
+      "accession_number": "0001193125-26-451990",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2723,11 +2787,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-447596",
+      "accession_number": "0001193125-26-451838",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2735,11 +2799,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-447585",
+      "accession_number": "0001193125-26-451818",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2747,11 +2811,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-447444",
+      "accession_number": "0001193125-26-451751",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2759,12 +2823,72 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-04",
+      "filing_date": "2026-11-06",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-447338",
+      "accession_number": "0001193125-26-451747",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-451737",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-451731",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-06",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-451716",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "V",
+      "company_name": "VISA INC.",
+      "form": "4",
+      "filing_date": "2026-11-05",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001403161-26-000136",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "V",
+      "company_name": "VISA INC.",
+      "form": "10-K",
+      "filing_date": "2026-11-05",
+      "description": "10-K",
+      "event_type": "EARNINGS_FINANCIAL_REPORT",
+      "severity": "CRITICAL",
+      "accession_number": "0001403161-26-000134",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
     },
     {
       "market": "US_GLOBAL",
@@ -2884,30 +3008,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001964306-26-000460",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "V",
-      "company_name": "VISA INC.",
-      "form": "8-K",
-      "filing_date": "2026-09-23",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001403161-26-000121",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "V",
-      "company_name": "VISA INC.",
-      "form": "4",
-      "filing_date": "2026-09-10",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001403161-26-000118",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
     },
     {
@@ -3155,6 +3255,18 @@
       "symbol": "NVO",
       "company_name": "NOVO NORDISK A S",
       "form": "6-K",
+      "filing_date": "2026-11-05",
+      "description": "FORM 6-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001171843-26-007156",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000353278"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "NVO",
+      "company_name": "NOVO NORDISK A S",
+      "form": "6-K",
       "filing_date": "2026-11-04",
       "description": "6-K",
       "event_type": "MATERIAL_EVENT_8K",
@@ -3280,18 +3392,6 @@
       "event_type": "MATERIAL_EVENT_8K",
       "severity": "WARNING",
       "accession_number": "0001171843-26-006038",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000353278"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "NVO",
-      "company_name": "NOVO NORDISK A S",
-      "form": "6-K",
-      "filing_date": "2026-09-09",
-      "description": "FORM 6-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001171843-26-005925",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000353278"
     },
     {
@@ -3634,6 +3734,18 @@
       "market": "US_GLOBAL",
       "symbol": "CVX",
       "company_name": "CHEVRON CORP",
+      "form": "10-Q",
+      "filing_date": "2026-11-05",
+      "description": "10-Q",
+      "event_type": "EARNINGS_FINANCIAL_REPORT",
+      "severity": "CRITICAL",
+      "accession_number": "0000093410-26-000200",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000093410"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "CVX",
+      "company_name": "CHEVRON CORP",
       "form": "4",
       "filing_date": "2026-11-04",
       "description": "PRIMARY DOCUMENT",
@@ -3752,18 +3864,6 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "CVX",
-      "company_name": "CHEVRON CORP",
-      "form": "4",
-      "filing_date": "2026-08-19",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000093410-26-000177",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000093410"
-    },
-    {
-      "market": "US_GLOBAL",
       "symbol": "OXY",
       "company_name": "OCCIDENTAL PETROLEUM CORP /DE/",
       "form": "8-K",
@@ -3844,18 +3944,6 @@
       "event_type": "MATERIAL_EVENT_8K",
       "severity": "WARNING",
       "accession_number": "0001628280-26-047886",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000797468"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "OXY",
-      "company_name": "OCCIDENTAL PETROLEUM CORP /DE/",
-      "form": "4",
-      "filing_date": "2026-06-24",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001628280-26-045313",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000797468"
     },
     {
@@ -4283,6 +4371,54 @@
       "symbol": "WMT",
       "company_name": "Walmart Inc.",
       "form": "4",
+      "filing_date": "2026-11-05",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001886367-26-000031",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "WMT",
+      "company_name": "Walmart Inc.",
+      "form": "4",
+      "filing_date": "2026-11-05",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0002058309-26-000021",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "WMT",
+      "company_name": "Walmart Inc.",
+      "form": "4",
+      "filing_date": "2026-11-05",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0002110304-26-000025",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "WMT",
+      "company_name": "Walmart Inc.",
+      "form": "4",
+      "filing_date": "2026-11-05",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0002110643-26-000022",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "WMT",
+      "company_name": "Walmart Inc.",
+      "form": "4",
       "filing_date": "2026-11-03",
       "description": "FORM 4",
       "event_type": "INSIDER_TRADING",
@@ -4360,42 +4496,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001193125-26-427921",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "WMT",
-      "company_name": "Walmart Inc.",
-      "form": "424B5",
-      "filing_date": "2026-10-19",
-      "description": "424B5",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-424989",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "WMT",
-      "company_name": "Walmart Inc.",
-      "form": "424B5",
-      "filing_date": "2026-10-19",
-      "description": "424B5",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-424733",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "WMT",
-      "company_name": "Walmart Inc.",
-      "form": "4",
-      "filing_date": "2026-10-16",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001696737-26-000021",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
     },
     {
@@ -4546,6 +4646,18 @@
       "market": "US_GLOBAL",
       "symbol": "PG",
       "company_name": "PROCTER & GAMBLE Co",
+      "form": "4",
+      "filing_date": "2026-11-05",
+      "description": "PRIMARY DOCUMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000080424-26-000271",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "PG",
+      "company_name": "PROCTER & GAMBLE Co",
       "form": "8-K",
       "filing_date": "2026-11-03",
       "description": "8-K",
@@ -4640,39 +4752,15 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "PG",
-      "company_name": "PROCTER & GAMBLE Co",
-      "form": "8-K",
-      "filing_date": "2026-10-30",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001628280-26-068591",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "PG",
-      "company_name": "PROCTER & GAMBLE Co",
-      "form": "424B5",
-      "filing_date": "2026-10-29",
-      "description": "424B5",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001628280-26-068216",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "PG",
-      "company_name": "PROCTER & GAMBLE Co",
-      "form": "144",
-      "filing_date": "2026-10-29",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000080424-26-000264",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000080424"
+      "symbol": "MCD",
+      "company_name": "MCDONALDS CORP",
+      "form": "10-Q",
+      "filing_date": "2026-11-06",
+      "description": "10-Q",
+      "event_type": "EARNINGS_FINANCIAL_REPORT",
+      "severity": "CRITICAL",
+      "accession_number": "0000063908-26-000083",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908"
     },
     {
       "market": "US_GLOBAL",
@@ -4787,147 +4875,374 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HAH"
+        "POW"
       ],
-      "title": "Đại gia Hải Phòng có danh mục cổ phiếu gần 11.000 tỷ đồng: Ôm 62 triệu cổ phiếu GEX, 42 triệu cổ phiếu HAH, 1% Eximbank",
-      "summary": "Không chỉ sở hữu gần 19 triệu cổ phiếu Eximbank, một đại gia cảng biển Hải Phòng còn nắm lượng lớn cổ phần tại nhiều doanh nghiệp niêm yết trong lĩnh vực chứng khoán, vận tải biển và logistics....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 07:02:00 +0700",
-      "source_url": "https://cafef.vn/khong-chi-nam-1-eximbank-dai-gia-cang-bien-hai-phong-lo-danh-muc-dau-tu-gan-11000-ty-dong-om-62-trieu-co-phieu-gex-42-trieu-co-phieu-hah-188261105070213823.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Ông Trương Gia Bình muốn FPT và MobiFone hình thành liên minh công nghệ",
-      "summary": "Theo thỏa thuận, hai doanh nghiệp sẽ phối hợp phát triển các dịch vụ viễn thông thế hệ mới như mạng di động ảo (MVNO), SIM 5G, kết nối máy với máy (M2M), Internet vạn vật (IoT) và các dịch vụ giá trị gia tăng ứng dụng AI...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
-      "source_url": "https://cafef.vn/ong-truong-gia-binh-muon-fpt-va-mobifone-hinh-thanh-lien-minh-cong-nghe-18826110410094668.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Kết nối hệ sinh thái công nghiệp và công nghệ cao tại chuỗi triển lãm quốc tế ở TP.HCM",
-      "summary": "Từ ngày 04-06/11/2026, SECC sẽ là tâm điểm ngành công nghiệp công nghệ cao với chuỗi triển lãm về Điện, Năng lượng tái tạo, Công nghệ hỗ trợ, HVACR và Trung tâm dữ liệu....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/ket-noi-he-sinh-thai-cong-nghiep-va-cong-nghe-cao-tai-chuoi-trien-lam-quoc-te-o-tphcm-1882611031918164.chn"
+      "title": "PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu?",
+      "summary": "Tổng Công ty Điện lực Dầu khí Việt Nam (PV Power, HOSE: POW) ghi nhận lợi nhuận sau thuế gần 6.900 tỷ đồng trong 9 tháng đầu năm 2026, tăng hơn 3 lần so với cùng kỳ. Đáng chú ý, lợi nhuận đã vượt 6 lần kế hoạch năm, nhờ ...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 08 Nov 26 12:14:00 +0700",
+      "source_url": "https://cafef.vn/pv-power-pow-bao-lai-vuot-6-lan-ke-hoach-nam-chi-sau-9-thang-nho-dau-188261108101433278.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "BSR"
       ],
-      "title": "Công ty đầu tiên hé lộ doanh thu cả năm 2026 đạt gần 224.000 tỷ đồng, tăng 56%",
-      "summary": "Tổng công ty Lọc hóa dầu Việt Nam (BSR) ước đạt doanh thu hợp nhất 223.991 tỷ đồng trong năm 2026, vượt 17% kế hoạch và tăng 56% so với năm trước....",
+      "title": "Nhà máy lọc hóa dầu đầu tiên của Việt Nam nâng mục tiêu lợi nhuận năm 2026 lên hơn 18.500 tỷ đồng, gấp 8,6 lần kế hoạch ban đầu",
+      "summary": "Tổng Công ty Lọc hóa dầu Việt Nam (BSR) vừa điều chỉnh mạnh kế hoạch kinh doanh năm 2026, nâng mục tiêu lợi nhuận sau thuế lên 18.579 tỷ đồng, gấp 8,6 lần kế hoạch được phê duyệt hồi tháng 4....",
       "event_type": "BCTC_KET_QUA_KINH_DOANH",
       "severity": "CRITICAL",
-      "published_at": "Tue, 03 Nov 26 21:50:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-dau-tien-he-lo-doanh-thu-ca-nam-2026-dat-gan-224000-ty-dong-tang-56-188261103214915204.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "POW"
-      ],
-      "title": "Đằng sau khoản lợi nhuận tăng đột biến, PV Power (POW) có những biến động gì sau 9 tháng đầu năm?",
-      "summary": "Sau 9 tháng đầu năm 2026, PV Power ghi nhận lợi nhuận sau thuế gần 6.900 tỷ đồng, tăng hơn 216% so với cùng kỳ. Tuy nhiên, doanh nghiệp cũng ghi nhận nhiều chỉ tiêu tài chính khác biến động đáng chú ý....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 04 Nov 26 20:30:00 +0700",
-      "source_url": "https://cafef.vn/dang-sau-khoan-loi-nhuan-tang-dot-bien-pv-power-pow-co-nhung-bien-dong-gi-sau-9-thang-dau-nam-188261104203102274.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "MBB"
-      ],
-      "title": "Khối ngoại giảm bán phiên VN-Index bứt phá, \"tung\" 350 tỷ gom 2 cổ phiếu VN30",
-      "summary": "Ở chiều ngược lại, khối ngoại bán ròng mạnh nhất trên HoSE là MBB với giá trị gần 199 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-giam-ban-phien-vn-index-but-pha-tung-350-ty-gom-2-co-phieu-vn30-188261104152719074.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "FPT \"tái sinh\"",
-      "summary": "Đà tăng mạnh giúp giá trị vốn hóa của tập đoàn tăng thêm khoảng 6.400 tỷ đồng chỉ sau một phiên, qua đó lấy lại cột mốc 100.000 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 14:58:00 +0700",
-      "source_url": "https://cafef.vn/fpt-tai-sinh-188261104145852068.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "FPT Retail ba năm liên tiếp thăng hạng trong Fortune Southeast Asia 500",
-      "summary": "Đây cũng là năm thứ ba liên tiếp FPT Retail góp mặt và cải thiện thứ hạng, từ vị trí 221 năm 2024 lên 199 năm 2025 và 170 vào năm 2026, tăng tổng cộng 51 bậc....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 13:24:00 +0700",
-      "source_url": "https://cafef.vn/fpt-retail-ba-nam-lien-tiep-thang-hang-trong-fortune-southeast-asia-500-18826110413250883.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Hé lộ kế hoạch giữa FPT và MobiFone",
-      "summary": "Thỏa thuận kết hợp hạ tầng viễn thông, hệ sinh thái khách hàng, thế mạnh về giải pháp, công nghệ số của MobiFone với năng lực công nghệ, nghiên cứu, phát triển và triển khai giải pháp của FPT trong các lĩnh vực viễn thôn...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 10:10:00 +0700",
-      "source_url": "https://cafef.vn/he-lo-ke-hoach-lon-giua-fpt-va-mobifone-188261104100137664.chn"
+      "published_at": "Sun, 08 Nov 26 00:03:00 +0700",
+      "source_url": "https://cafef.vn/nha-may-loc-hoa-dau-dau-tien-cua-viet-nam-nang-muc-tieu-loi-nhuan-nam-2026-len-hon-18500-ty-dong-gap-86-lan-ke-hoach-ban-dau-188261107211140114.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "HCM"
       ],
-      "title": "ĐHĐCĐ thường niên AgriS: Định hình động lực tăng trưởng mới đến niên độ 2030–2031",
-      "summary": "Ngày 02/11/2026 tại TP.HCM, CTCP Thành Thành Công – Biên Hòa (AgriS, HOSE: SBT) tổ chức ĐHĐCĐ thường niên niên độ 2025-2026 theo hình thức hybrid. Đại hội thông qua 14 tờ trình với tỷ lệ đồng thuận trên 98%, trong đó có ...",
-      "event_type": "CO_TUC",
-      "severity": "WARNING",
-      "published_at": "Wed, 04 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/dhdcd-thuong-nien-agris-dinh-hinh-dong-luc-tang-truong-moi-den-nien-do-20302031-188261104074407483.chn"
+      "title": "Người đàn ông chưa học hết phổ thông, từng bán vé số ở Tp.HCM vừa kiếm 4.700 tỷ đồng khi bán công ty cho tập đoàn Nhật Bản",
+      "summary": "Không có bằng đại học, từng bán vé số, thuốc lá và đạp xe bán bút bi dạo, ông Cô Gia Thọ đã xây dựng Thiên Long thành doanh nghiệp văn phòng phẩm doanh thu hơn 4.000 tỷ đồng mỗi năm. Sau 45 năm khởi nghiệp, doanh nhân si...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Tỷ phú Phạm Nhật Vượng xuất hiện tại siêu cảng dự kiến lắp 165 cần cẩu khổng lồ, hình thành 3 siêu dự án hơn 500.000 tỷ đồng quanh vịnh Gành Rái",
+      "summary": "Đứng tên chủ đầu tư khu đô thị lấn biển Cần Giờ hơn 217.000 tỷ đồng, tham gia liên danh thực hiện tuyến đường vượt biển hơn 93.000 tỷ đồng, một doanh nghiệp thuộc hệ sinh thái Vingroup tiếp tục xuất hiện trong tổ hợp cản...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Sun, 08 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/ty-phu-pham-nhat-vuong-xuat-hien-tai-sieu-cang-du-kien-lap-165-can-cau-khong-lo-hinh-thanh-3-sieu-du-an-hon-500000-ty-dong-quanh-vinh-ganh-rai-188261107221648411.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "REE"
+      ],
+      "title": "Bà Nguyễn Thị Mai Thanh: Công ty của REE muốn  sáp nhập thêm nhiều công ty con bởi việc đang nhiều kinh khủng",
+      "summary": "Theo Nhà sáng lập REE, công ty con REE M&E – là một trong những đơn vị dẫn đầu thị trường nội địa về cơ điện công trình - đang có rất nhiều bên mời nhưng không đủ khả năng thực hiện hết. Doanh nghiệp phải lựa chọn dự án ...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Sat, 07 Nov 26 13:15:00 +0700",
+      "source_url": "https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Bắt giang hồ mạng Hiệp “đen” nổi tiếng trên TikTok: Khám xét khách sạn Hồng Hạnh phát hiện súng giấu trên trần nhà",
+      "summary": "Hiệp “đen”, chủ một khách sạn tại TP.HCM, vừa bị bắt cùng 13 người liên quan sau khi công an phát hiện hàng loạt hành vi vi phạm pháp luật....",
+      "event_type": "CANH_BAO_RUI_RO",
+      "severity": "RED_FLAG",
+      "published_at": "Fri, 06 Nov 26 22:54:00 +0700",
+      "source_url": "https://cafef.vn/bat-giang-ho-mang-hiep-den-noi-tieng-tren-tiktok-kham-xet-khach-san-hong-hanh-phat-hien-sung-giau-tren-tran-nha-188261106220234071.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "FPT"
       ],
-      "title": "CTCK đưa ra dự báo bất ngờ về triển vọng FPT",
-      "summary": "Đằng sau nhận định \"Khó để cạnh tranh\" là những thách thức mà VCBS nhìn thấy trong mô hình kinh doanh của FPT....",
+      "title": "FPT AI Factory được vinh danh tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026",
+      "summary": "Ngày 4/11/2026, Nền tảng FPT AI Factory của Tập đoàn FPT được vinh danh ở hạng mục Sản phẩm/Giải pháp tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026 (AI Awards 2026), trong khuôn khổ Ngày hội Trí tuệ nhân tạo Việt Nam (A...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 00:04:00 +0700",
-      "source_url": "https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-trien-vong-fpt-188261103163220239.chn"
+      "published_at": "Fri, 06 Nov 26 19:30:00 +0700",
+      "source_url": "https://cafef.vn/fpt-ai-factory-duoc-vinh-danh-tai-giai-thuong-tri-tue-nhan-tao-viet-nam-2026-188261106195055665.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT",
-        "SSI"
+        "HCM"
       ],
-      "title": "Buồn của cổ đông FPT, Masan Consumer, SSI: Hàng chục nghìn tỷ vốn hóa \"bay hơi\" khỏi doanh nghiệp từ đầu năm",
-      "summary": "Chỉ riêng 20 doanh nghiệp đứng đầu danh sách đã mất gần 623.000 tỷ đồng vốn hóa kể từ đầu năm 2026....",
+      "title": "Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm",
+      "summary": "Sau khi tăng vốn điều lệ lên gần 37.000 tỷ đồng, Công ty cổ phần Đầu tư Địa ốc Đại Quang Minh của đại gia Trần Đăng Khoa (Khoa Khàn) tiếp tục được TP.HCM giao 4 lô đất với tổng diện tích gần 43.000m2 tại Thủ Thiêm để tha...",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Fri, 06 Nov 26 16:30:00 +0700",
+      "source_url": "https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106163036649.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "IDC"
+      ],
+      "title": "Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC",
+      "summary": "Ông Đặng Việt Dũng- Phó Tổng Giám đốc của Idico vừa đăng ký mua 4,4 triệu cổ phiếu IDC nhằm mục đích tăng tỷ lệ sở hữu....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/nhung-ten-tuoi-nao-giam-von-hoa-nhieu-nhat-tu-dau-nam-2026-188261103144515023.chn"
+      "published_at": "Fri, 06 Nov 26 16:20:00 +0700",
+      "source_url": "https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "BSR"
+      ],
+      "title": "BSR tăng mạnh kế hoạch lợi nhuận năm 2026 lên gần 18.600 tỷ đồng",
+      "summary": "BSR vừa điều chỉnh tăng mạnh kế hoạch kinh doanh năm 2026, trong đó lợi nhuận sau thuế tăng từ 2.162 tỷ đồng lên 18.579 tỷ đồng, gấp 8,6 lần mục tiêu ban đầu....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 08 Nov 26 16:19:00 +0700",
+      "source_url": "https://cafef.vn/bsr-tang-manh-ke-hoach-loi-nhuan-nam-2026-len-gan-18600-ty-dong-188261108095036544.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "SSI"
+      ],
+      "title": "Tín hiệu VN-Index tạo đáy xuất hiện, SSI gọi tên 11 cổ phiếu có cơ hội",
+      "summary": "Dù diễn biến lịch sử không bảo đảm sẽ lặp lại, SSI cho rằng thị trường hiện đang xuất hiện một số điều kiện thuận lợi cho khả năng đảo chiều....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
+      "source_url": "https://cafef.vn/tin-hieu-vn-index-tao-day-xuat-hien-ssi-goi-ten-11-co-phieu-co-du-dia-tang-manh-188261107205152922.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "PNJ bất ngờ muốn rút sạch vốn khỏi công ty cầm đồ sau chưa đầy 8 tháng",
+      "summary": "Quyết định trên được đưa ra khi công ty cầm đồ mới thành lập chưa đầy 8 tháng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sat, 07 Nov 26 10:50:00 +0700",
+      "source_url": "https://cafef.vn/pnj-bat-ngo-muon-rut-sach-von-khoi-cong-ty-cam-do-sau-chua-day-8-thang-188261107105050558.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Hơn 1.000 nhân viên rời đi, PNJ nhận thêm đơn xin nghỉ của Giám đốc cấp cao Tài chính",
+      "summary": "PNJ tiếp tục có biến động ở bộ máy lãnh đạo cấp cao....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sat, 07 Nov 26 10:31:00 +0700",
+      "source_url": "https://cafef.vn/hon-1000-nhan-vien-roi-di-pnj-nhan-them-don-xin-nghi-cua-giam-doc-cap-cao-tai-chinh-188261107103127179.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "KDH"
+      ],
+      "title": "Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc",
+      "summary": "Tại chiều mua, KDH được khối ngoại mua ròng mạnh nhất với giá trị khoảng 171 tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/phien-6-11-khoi-ngoai-do-tien-mua-rong-hon-400-ty-dong-co-phieu-viet-nam-giua-luc-chung-khoan-toan-cau-lao-doc-188261106153537479.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
+      "summary": "Theo Mirae Asset, mức tăng trưởng dự kiến trong quý cuối năm phù hợp với tính chu kỳ trong hoạt động kinh doanh của FPT....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Fri, 06 Nov 26 15:05:00 +0700",
+      "source_url": "https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-loi-nhuan-quy-4-cua-fpt-188261106144829129.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "REE"
+      ],
+      "title": "Gia nhập quân giải phóng từ năm 16 tuổi, bà Nguyễn Thị Mai Thanh tự dặn lòng: Hãy quên mình là con gái của một vị tướng chỉ huy",
+      "summary": "Năm 16 tuổi, giữa chiến trường bận rộn chăm sóc thương binh, bà Nguyễn Thị Mai Thanh - Nhà sáng lập REE đã tự dặn lòng: “Hãy quên mình là con gái của một vị tướng chỉ huy. Càng không được xem mình là phụ nữ để đòi hỏi sự...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 15:04:00 +0700",
+      "source_url": "https://cafef.vn/gia-nhap-quan-giai-phong-tu-nam-16-tuoi-ba-nguyen-thi-mai-thanh-tu-dan-long-hay-quen-minh-la-con-gai-cua-mot-vi-tuong-chi-huy-18826110615045685.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PC1"
+      ],
+      "title": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
+      "summary": "Tập đoàn PC1, doanh nghiệp do nữ Chủ tịch sinh năm 1999 Trịnh Khánh Linh đứng đầu, vừa phát đi thông báo đính chính một nội dung trong Báo cáo thường niên năm 2025....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 13:32:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-cua-nu-chu-tich-27-tuoi-phat-thong-bao-quan-trong-188261106113423265.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "VND"
+      ],
+      "title": "Tỷ giá USD/VND có thêm yếu tố hỗ trợ trong những tháng cuối năm",
+      "summary": "Từ đầu tháng 8 đến ngày 5/11, tỷ giá USD tại các ngân hàng và trên thị trường tự do đều giảm, trong khi tỷ giá trung tâm tăng nhẹ. Nguồn cung ngoại tệ cải thiện cùng xu hướng suy yếu của đồng USD quốc tế đang tạo thêm yế...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 08 Nov 26 11:16:00 +0700",
+      "source_url": "https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 8/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng so với cuối tuần trước",
+      "summary": "Giá vàng trong nước mở đầu phiên sáng 8/11 đi ngang nhưng vẫn ghi nhận mức tăng mạnh so với cuối tuần trước. Vàng nhẫn SJC tăng tới 4,7 triệu đồng/lượng, trong khi vàng miếng SJC tăng 2 triệu đồng/lượng, lên mức 141 triệ...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 08 Nov 26 08:27:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-8-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-so-voi-cuoi-tuan-truoc-188261108083025831.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Ngày 8/11, gửi dưới 1 tỷ đồng kỳ hạn 1 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Với kỳ hạn 1 tháng, lãi suất tiết kiệm tại 7 ngân hàng MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB đang dao động từ 3,7% đến 4,75%/năm tùy hình thức gửi tiền và điều kiện áp dụng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 08 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-8-11-gui-duoi-1-ty-dong-ky-han-1-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261107214517163.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng nhẫn trơn, vàng miếng tối 7/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng trong nước tối 7/11 tiếp tục đi ngang sau phiên giảm trước đó. Vàng miếng SJC đồng loạt giữ mức 141 triệu đồng/lượng ở chiều bán ra, trong khi vàng nhẫn dao động từ 140,3-140,5 triệu đồng/lượng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sat, 07 Nov 26 20:09:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-7-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261107073236839.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Ngày 7/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 3 tháng?",
+      "summary": "Với khoản tiền gửi kỳ hạn 3 tháng, lãi suất tại 7 ngân hàng được khảo sát dao động từ 3,6% đến 4,75%/năm, tùy ngân hàng, số tiền gửi và hình thức giao dịch....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sat, 07 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-7-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-3-thang-18826110622451738.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng nhẫn trơn, vàng miếng chiều tối 6/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng trong nước kết phiên 6/11 đồng loạt giảm, trong đó vàng miếng SJC mất 1,4 triệu đồng/lượng, xuống còn 141 triệu đồng/lượng ở chiều bán ra. Vàng nhẫn cũng giảm tại một số thương hiệu, trong khi SJC và DOJI giữ ng...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 20:11:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-toi-6-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261106073345843.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "ACB mang hơn 1,7 triệu phần thưởng lên ACB ONE, trúng iPhone 18 Pro Max mỗi tuần",
+      "summary": "Dịp cuối năm, ACB triển khai chương trình “Bịt Mắt Bắt Dê” trên ACB ONE với hàng triệu phần quà và cơ hội trúng iPhone 18 Pro Max mỗi tuần. Đồng thời, Kho quà mang đến thêm nhiều ưu đãi hấp dẫn cho nhu cầu tiêu dùng hằng...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/acb-mang-hon-17-trieu-phan-thuong-len-acb-one-trung-iphone-18-pro-max-moi-tuan-188261106133025656.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Ngày 6/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng?",
+      "summary": "Lãi suất tiết kiệm kỳ hạn 6 tháng tại 7 ngân hàng MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB đang có sự chênh lệch đáng kể. Theo đó, mức lãi suất gửi online cao nhất trong nhóm khảo sát đạt 6,7%/năm, trong kh...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-6-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261105233246163.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Bảng xếp hạng tiền gửi ngân hàng: HDBank tăng 3 bậc, ACB lùi về hạng 10, một nhà băng ít ai nghĩ đến tăng trưởng tới 45%",
+      "summary": "Tiền gửi khách hàng tại 28 ngân hàng tăng hơn 10% sau 9 tháng đầu năm 2026, trong đó quý 3 là quý tăng mạnh nhất từ đầu năm....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 06 Nov 26 00:05:00 +0700",
+      "source_url": "https://cafef.vn/bang-xep-hang-tien-gui-ngan-hang-hdbank-tang-3-bac-acb-lui-ve-hang-10-mot-nha-bang-it-ai-nghi-den-tang-truong-toi-45-18826110511281671.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng nhẫn trơn, vàng miếng tối 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2 triệu đồng/lượng",
+      "summary": "Giá vàng trong nước kết phiên 5/11 tiếp tục tăng, trong đó vàng nhẫn tăng mạnh tới 2 triệu đồng/lượng, trong khi vàng miếng SJC chỉ nhích thêm 100.000 đồng/lượng ở chiều bán ra, lên 142,5 triệu đồng/lượng. Trên thị trườn...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 19:38:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-2-trieu-dong-luong-188261105065603864.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "HDBank tăng 140 bậc qua ba kỳ xếp hạng Fortune Southeast Asia 500",
+      "summary": "Ngày 3/11/2026, tại lễ vinh danh Fortune Southeast Asia 500 ở TP.HCM, HDBank ghi dấu năm thứ ba liên tiếp góp mặt cùng bước nhảy vọt trên bảng xếp hạng 500 doanh nghiệp lớn nhất Đông Nam Á....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 13:09:00 +0700",
+      "source_url": "https://cafef.vn/hdbank-tang-140-bac-qua-ba-ky-xep-hang-fortune-southeast-asia-500-188261105122506793.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB (\"ACBC\") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng",
+      "summary": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB trân trọng thông báo về đợt chào bán ra công chúng (IPO) của Quỹ Đầu Tư Trái phiếu ACBC (ACBC-BOND)....",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Thu, 05 Nov 26 09:30:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB (“ACBC”) thông báo chào bán chứng chỉ Quỹ ACBC-SFUND ra công chúng",
+      "summary": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB vừa thông báo về đợt chào bán ra công chúng (IPO) của Quỹ Đầu Tư Trái phiếu Thông minh ACBC (ACBC-SFUND)....",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Thu, 05 Nov 26 08:30:00 +0700",
+      "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-sfund-ra-cong-chung-18826110508211184.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "VND"
+      ],
+      "title": "Hoán đổi ngoại tệ kỳ hạn 6 tháng: Hỗ trợ thanh khoản, giảm áp lực lãi suất",
+      "summary": "Việc Ngân hàng Nhà nước Việt Nam (NHNN) triển khai nghiệp vụ hoán đổi giữa ngoại tệ và đồng Việt Nam kỳ hạn 6 tháng được đánh giá là giải pháp phù hợp nhằm hỗ trợ nguồn vốn VND cho các tổ chức tín dụng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 26 08:19:00 +0700",
+      "source_url": "https://cafef.vn/hoan-doi-ngoai-te-ky-han-6-thang-ho-tro-thanh-khoan-giam-ap-luc-lai-suat-188261105080626478.chn"
     },
     {
       "market": "VIETNAM",
@@ -4946,18 +5261,6 @@
       "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "summary": "Hiện, vàng nhẫn được các thương hiệu khảo sát niêm yết trong khoảng 136,5-140,8 triệu đồng/lượng, trong khi vàng miếng SJC phổ biến ở mức 139,4-142,4 triệu đồng/lượng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 06:55:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-188261105065603864.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
       "title": "Giá vàng nhẫn trơn, vàng miếng chiều tối 4/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng",
       "summary": "Giá vàng trong nước kết phiên ngày 4/11 tăng mạnh, với vàng miếng SJC bán ra tại phần lớn thương hiệu lên 142,4 triệu đồng/lượng, tăng 1,8 triệu đồng/lượng so với cuối phiên trước. Giá vàng nhẫn cũng tăng 1-2,8 triệu đồn...",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -4968,134 +5271,78 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "VND"
-      ],
-      "title": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng",
-      "summary": "NHNN dự kiến cung ứng gần 48.800 tỷ đồng cho hệ thống ngân hàng thông qua giao dịch hoán đổi USD/VND kỳ hạn 182 ngày, với quy mô tối đa 2 tỷ USD. Đây là kỳ hạn dài hơn nhiều so với các đợt can thiệp trước, trong bối cảnh...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 13:17:00 +0700",
-      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng tối 3/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
-      "summary": "Giá vàng trong nước kết phiên ngày 3/11 tiếp tục tăng so với phiên trước, với vàng miếng SJC tăng 600.000 đồng/lượng, lên 140,6 triệu đồng/lượng ở chiều bán ra. Giá vàng nhẫn cũng tăng từ 500.000 đến 900.000 đồng/lượng t...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 19:58:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-3-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261103075423102.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Ngày 3/11, gửi 200 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "summary": "Với khoản tiền gửi 200 triệu đồng kỳ hạn 12 tháng, số tiền lãi khách hàng nhận được tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB dao động từ 9,6 triệu đến 13,6 triệu đồng nếu gửi theo biểu lãi suất tại quầy...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 03 Nov 26 19:26:00 +0700",
-      "source_url": "https://cafef.vn/ngay-3-11-gui-200-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261103170626883.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng chiều tối 2/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "summary": "Giá vàng trong nước kết phiên 2/11 tăng tại tất cả thương hiệu được khảo sát. Vàng miếng SJC đồng loạt tăng 1 triệu đồng/lượng ở cả hai chiều mua vào và bán ra tại phần lớn doanh nghiệp, lên mức 137-140 triệu đồng/lượng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 02 Nov 26 19:26:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-2-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261102073739396.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "HCM"
       ],
-      "title": "TP.HCM hỗ trợ 2,5 triệu m³ đá xây dựng cho Cần Thơ làm đường cao tốc",
-      "summary": "Theo kế hoạch, TP Cần Thơ dự kiến tiếp nhận khoảng 250.000m³ đá xây dựng trong tháng 12/2026 và 2,25 triệu m³ còn lại trong năm 2027....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 20:46:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-ho-tro-25-trieu-m-da-xay-dung-cho-can-tho-lam-duong-cao-toc-188261104204822412.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Chốt giá 3.790 căn hộ Thủ Thiêm, TP.HCM quy định 'sức khỏe' doanh nghiệp đấu giá",
-      "summary": "Giá khởi điểm 3.790 căn hộ ở Thủ Thiêm gần 18.254 tỷ đồng; tổng đầu tư dự kiến hơn 39.843 tỷ đồng, TP.HCM quy định doanh nghiệp phải có vốn bằng 20% tổng mức đầu tư....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 19:19:00 +0700",
-      "source_url": "https://cafef.vn/chot-gia-3790-can-ho-thu-thiem-tphcm-quy-dinh-suc-khoe-doanh-nghiep-dau-gia-188261104185950187.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Cận cảnh gần 15 km Vành đai 3 trên cao trước ngày thông xe",
-      "summary": "Đoạn trên cao Vành đai 3 dài gần 15 km qua TP.HCM đang được khẩn trương hoàn thiện các hạng mục cuối, hướng đến mục tiêu thông xe trong tháng 11/2026....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 14:15:00 +0700",
-      "source_url": "https://cafef.vn/can-canh-gan-15-km-vanh-dai-3-tren-cao-truoc-ngay-thong-xe-188261104135210243.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "TP.HCM tái khởi động công viên Sài Gòn Safari hơn 450 ha bỏ hoang 22 năm",
-      "summary": "Công viên Sài Gòn Safari rộng 456,85 ha, là dự án công viên lớn nhất TP.HCM nhưng treo suốt 22 năm, đang được TP.HCM kêu gọi đầu tư....",
+      "title": "Toàn cảnh công trường Trung tâm hành chính TP.HCM sau hơn 6 tháng khởi công",
+      "summary": "Sau hơn 6 tháng khởi công, khu đất 46,7 ha tại Thủ Thiêm trở thành đại công trường với nhiều mũi thi công Quảng trường trung tâm và Trung tâm hành chính mới TP.HCM....",
       "event_type": "NGHI_QUYET_HDQT_DU_AN",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 14:14:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-tai-khoi-dong-cong-vien-sai-gon-safari-hon-450-ha-bo-hoang-22-nam-188261104134735993.chn"
+      "published_at": "Sun, 08 Nov 26 15:15:00 +0700",
+      "source_url": "https://cafef.vn/toan-canh-cong-truong-trung-tam-hanh-chinh-tphcm-sau-hon-6-thang-khoi-cong-188261108141613934.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "HCM"
       ],
-      "title": "Cập nhật mới nhất về đề xuất 'siêu dự án' TOD tại Hàng Xanh",
-      "summary": "Sở Quy hoạch - Kiến trúc TP.HCM vừa có văn bản gửi Công ty CP Đầu tư Hạ tầng kỹ thuật TP.HCM (HoSE: CII) về việc nghiên cứu ý tưởng quy hoạch phát triển đô thị theo định hướng giao thông công cộng (TOD) tại khu vực Hàng ...",
+      "title": "Doanh nghiệp muốn cơ chế '3 ưu đãi' làm nhà xã hội cho thuê ở TP.HCM",
+      "summary": "Cơ chế \"3 ưu đãi\" được mong muốn gồm mở luồng xanh thủ tục cho dự án nhà ở cho thuê, bố trí vốn vay lãi suất thấp và các gói ưu đãi phải dễ tiếp cận....",
       "event_type": "NGHI_QUYET_HDQT_DU_AN",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 12:51:00 +0700",
-      "source_url": "https://cafef.vn/cap-nhat-moi-nhat-ve-de-xuat-sieu-du-an-tod-tai-hang-xanh-18826110412413787.chn"
+      "published_at": "Sun, 08 Nov 26 14:17:00 +0700",
+      "source_url": "https://cafef.vn/doanh-nghiep-muon-co-che-3-uu-dai-lam-nha-xa-hoi-cho-thue-o-tphcm-188261108141734139.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "FPT",
+        "STB"
       ],
-      "title": "Thông tin mới về dự án nhà ở hơn 4.600 tỷ đồng cho 4.000 cư dân tại một xã của TP.HCM",
-      "summary": "UBND xã Tân Nhựt (TP.HCM) mới có Quyết định phê duyệt Đồ án quy hoạch chi tiết tỷ lệ 1/500 Khu căn hộ cao tầng NBB II trên địa bàn xã....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 12:50:00 +0700",
-      "source_url": "https://cafef.vn/thong-tin-moi-ve-du-an-nha-o-hon-4600-ty-dong-cho-4000-cu-dan-tai-mot-xa-cua-tphcm-18826110412391902.chn"
+      "title": "\"Cá mập\" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB",
+      "summary": "Tính từ đầu năm đến hết tháng 10/2026, quỹ PYN Elite ghi nhận hiệu suất âm 14,68%, đánh dấu một năm kém tích cực sau hai năm liên tiếp đạt mức sinh lời cao trong năm 2024 và 2025....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
+      "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "MBS"
       ],
-      "title": "Việt Nam sắp có siêu dự án metro gần 89.000 tỷ đồng tại thành phố giàu nhất cả nước, tương lai có thể đón tới 830.000 lượt khách mỗi ngày",
-      "summary": "Tuyến đường sắt đô thị số 1 (Thành phố mới Bình Dương – Suối Tiên, TP.HCM) dự kiến thi công trong khoảng 60 tháng....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "title": "Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026",
+      "summary": "MBS dự báo lãi suất huy động có thể tiếp tục điều chỉnh giảm thêm 20–30 điểm cơ bản từ nay đến cuối năm 2026....",
+      "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 11:06:00 +0700",
-      "source_url": "https://cafef.vn/viet-nam-sap-co-sieu-du-an-metro-gan-89000-ty-dong-tai-thanh-pho-giau-nhat-ca-nuoc-tuong-lai-co-the-don-toi-830000-luot-khach-moi-ngay-188261104110450031.chn"
+      "published_at": "Sun, 08 Nov 2026 03:44:26 GMT",
+      "source_url": "https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CTG",
+        "DXG",
+        "HPG",
+        "MBB"
+      ],
+      "title": "Khối ngoại mua ròng đột biến ở VIX",
+      "summary": "Nhà đầu tư nước ngoài tập trung mua ròng khớp lệnh ở nhóm dịch vụ tài chính và bảo hiểm. Các mã được mua ròng nhiều nhất gồm VIX, CTG, VIC, HVN, MBB, BVH, DXG, HPG, DIG và CTD....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 05 Nov 2026 15:54:36 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "SSI"
+      ],
+      "title": "Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn",
+      "summary": "SSI Research vừa cập nhật triển vọng ngành ngân hàng trong đó nhấn mạnh các ngân hàng thương mại sẽ hỗ trợ nền kinh tế bằng cách giảm cả lãi suất huy động và lãi suất cho vay, qua đó gây áp lực lên biên lãi ròng trong ng...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 05 Nov 2026 03:26:16 GMT",
+      "source_url": "https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm"
     },
     {
       "market": "VIETNAM",
@@ -5136,38 +5383,50 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT"
+        "HCM"
       ],
-      "title": "FPT Retail tăng 51 bậc sau ba năm vào Fortune Southeast Asia 500",
-      "summary": "FPT Retail tiếp tục thăng hạng trên bảng xếp hạng \"500 doanh nghiệp lớn nhất Đông Nam Á\", còn Chủ tịch HĐQT Nguyễn Bạch Điệp lần đầu vào danh sách \"100 phụ nữ quyền lực nhất châu Á\" của Fortune....",
+      "title": "Sắp diễn ra DNSE Future Tech Summit mùa 2",
+      "summary": "DNSE Future Tech Summit 2026 sẽ diễn ra ngày 20/11 tại TP HCM, quy tụ các chuyên gia tài chính, công nghệ thảo luận về ứng dụng AI, phân bổ tài sản và chiến lược đầu tư....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 04 Nov 2026 16:00:00 +0700",
-      "source_url": "https://vnexpress.net/fpt-retail-tang-51-bac-sau-ba-nam-vao-fortune-southeast-asia-500-5140694.html"
+      "published_at": "Sat, 07 Nov 2026 14:30:00 +0700",
+      "source_url": "https://vnexpress.net/sap-dien-ra-dnse-future-tech-summit-mua-2-5141896.html"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "HCM"
       ],
-      "title": "'Trung tâm tài chính TP HCM không nên cạnh tranh trực tiếp với Singapore'",
-      "summary": "Trưởng đại diện khu vực châu Á - Thái Bình Dương Viện Tài chính Quốc tế cho rằng Trung tâm tài chính TP HCM nên đóng vai trò bổ trợ trong hệ sinh thái khu vực thay vì cạnh tranh với Singapore, Hong Kong....",
+      "title": "TP HCM không đánh đổi môi trường Cần Giờ để tăng trưởng kinh tế",
+      "summary": "Lãnh đạo TP HCM khẳng định việc bảo tồn rừng ngập mặn Cần Giờ là nguyên tắc trong quá trình phát triển và không đánh đổi môi trường để tăng trưởng kinh tế....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 03 Nov 2026 18:19:09 +0700",
-      "source_url": "https://vnexpress.net/trung-tam-tai-chinh-tp-hcm-khong-nen-canh-tranh-truc-tiep-voi-singapore-5140196.html"
+      "published_at": "Fri, 06 Nov 2026 14:35:29 +0700",
+      "source_url": "https://vnexpress.net/tp-hcm-khong-danh-doi-moi-truong-can-gio-de-tang-truong-kinh-te-5141549.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "BSR"
+      ],
+      "title": "BSR lãi hợp nhất gần 25.000 tỷ đồng sau 9 tháng",
+      "summary": "BSR ghi nhận lợi nhuận sau thuế hợp nhất 24.901,7 tỷ đồng trong 9 tháng, gấp gần 11,6 lần cùng kỳ, nhờ thị trường thuận lợi và duy trì công suất vận hành cao....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Fri, 06 Nov 2026 10:00:00 +0700",
+      "source_url": "https://vnexpress.net/bsr-lai-hop-nhat-gan-25-000-ty-dong-sau-9-thang-5140193.html"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "HCM"
       ],
-      "title": "Sun PhuQuoc Airways mở thêm đường bay đến Thượng Hải",
-      "summary": "Sun PhuQuoc Airways mở đường bay thẳng Hà Nội - Thượng Hải từ ngày 26/11, bổ sung tuyến thứ hai kết nối thành phố này, sau đường bay TP HCM - Thượng Hải khai thác từ giữa tháng 10....",
+      "title": "Vốn FDI vào TP HCM tăng hơn 4 lần",
+      "summary": "Đầu tàu kinh tế thu hút 19,1 tỷ USD vốn FDI trong 10 tháng đầu năm, gấp 4,2 lần so với cùng kỳ 2025, theo cơ quan Thống kê TP HCM....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 03 Nov 2026 15:00:00 +0700",
-      "source_url": "https://vnexpress.net/sun-phuquoc-airways-mo-them-duong-bay-den-thuong-hai-5140166.html"
+      "published_at": "Thu, 05 Nov 2026 12:29:06 +0700",
+      "source_url": "https://vnexpress.net/von-fdi-vao-tp-hcm-tang-hon-4-lan-5141078.html"
     }
   ]
 }
