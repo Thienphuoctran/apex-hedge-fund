@@ -524,6 +524,7 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
         "compliance_audit": state.get("compliance_audit"),
         "phases": state.get("phases"),
         "voting_board": state.get("voting_board"),
+        "executive_approval": state.get("executive_approval"),
         "timeline_stream": all_messages,
         "inspector_notes": state.get("inspector_notes"),
         "total_messages_count": len(all_messages),

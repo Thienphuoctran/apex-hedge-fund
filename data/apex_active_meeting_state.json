@@ -109,63 +109,102 @@
       ]
     }
   ],
+  "executive_approval": {
+    "status": "APPROVED",
+    "approved_by": "Chủ tịch Trần Quốc Thiên Phước",
+    "approval_time": "2026-11-08 22:14:57",
+    "seal": "🛡️ BAN 12 TRỌNG ĐÃ NIÊM PHONG PHÁP LÝ THỂ CHẾ",
+    "order_blotter_status": "READY_FOR_EXECUTION"
+  },
   "voting_board": [
     {
       "ticker": "MSH",
       "name": "May Sông Hồng",
+      "exchange": "HOSE",
       "sector": "Dệt May Xuất Khẩu",
       "price": "35,500 ₫",
-      "lot_cost": "3,550,000 ₫ (17.6% NAV)",
+      "order_zone": "35,000 – 35,300 ₫ (LO Khung Giờ Vàng)",
+      "quantity": "100 CP",
+      "lot_cost": "3,530,000 ₫ (17.5% NAV)",
       "ocf_lnst": "1.42x",
       "rs_score": 94,
-      "stop_loss": "33,090 ₫ (-6.79%)",
+      "stop_loss": "33,090 ₫ (-6.26%)",
+      "max_risk": "-221,000 ₫ (1.09% NAV)",
+      "take_profit_1": "39,560 ₫ (+12.0%)",
+      "take_profit_2": "42,000 ₫ (+18.9%)",
+      "rr_ratio": "1:2.4",
       "votes_for": 12,
       "votes_against": 0,
       "status": "APPROVED",
-      "action": "Kê lệnh Limit LO quanh 35.0 - 35.3 (1 lô 100 CP)"
+      "action": "Kê lệnh Limit LO quanh 35.0 - 35.3 (1 lô 100 CP)",
+      "discipline_note": "Chỉ giải ngân trong Khung Giờ Vàng (14h00 – 14h25), cấm mua xanh ATO."
     },
     {
       "ticker": "BAF",
       "name": "Nông Nghiệp BAF Việt Nam",
-      "sector": "Nông Nghiệp 3F",
+      "exchange": "HOSE",
+      "sector": "Nông Nghiệp Khép Kín 3F (Heo Ăn Thực Vật)",
       "price": "30,900 ₫",
-      "lot_cost": "3,090,000 ₫ (15.3% NAV)",
+      "order_zone": "30,500 – 30,800 ₫ (LO Khung Giờ Vàng)",
+      "quantity": "100 CP",
+      "lot_cost": "3,080,000 ₫ (15.2% NAV)",
       "ocf_lnst": "1.18x",
       "rs_score": 96,
-      "stop_loss": "29,650 ₫ (-4.05%)",
+      "stop_loss": "29,650 ₫ (-3.73%)",
+      "max_risk": "-115,000 ₫ (0.57% NAV)",
+      "take_profit_1": "32,650 ₫ (+6.0%)",
+      "take_profit_2": "35,500 ₫ (+15.2%)",
+      "rr_ratio": "1:2.1",
       "votes_for": 11,
       "votes_against": 1,
       "status": "APPROVED_WITH_CONDITIONS",
-      "dissent_note": "Ban 3 bảo lưu phiếu chống vì nợ vay 2.400 tỷ",
-      "action": "Kê lệnh Limit LO quanh 30.5 - 30.8 (1 lô 100 CP)"
+      "dissent_note": "Ban 3 bảo lưu phiếu chống vì nợ vay 2.420 tỷ",
+      "action": "Kê lệnh Limit LO quanh 30.5 - 30.8 (1 lô 100 CP)",
+      "discipline_note": "⚠️ ĐIỀU KIỆN RÀO CHẮN BAN 3: Do nợ vay 2.420 tỷ, chỉ được giải ngân đúng 1 lô 100 CP. Gãy 29.65k phải cắt lỗ thẳng tay trong 60s!"
     },
     {
       "ticker": "HDB",
       "name": "HDBank",
-      "sector": "Ngân Hàng Bán Lẻ",
+      "exchange": "HOSE",
+      "sector": "Ngân Hàng Bán Lẻ & Chuỗi Giá Trị",
       "price": "22,500 ₫",
-      "lot_cost": "2,250,000 ₫ (11.2% NAV)",
-      "ocf_lnst": "NIM 5.2%",
+      "order_zone": "22,200 – 22,400 ₫ (LO Khung Giờ Vàng)",
+      "quantity": "100 CP",
+      "lot_cost": "2,240,000 ₫ (11.1% NAV)",
+      "ocf_lnst": "NIM 5.2% (ROE 23.8%)",
       "rs_score": 95,
-      "stop_loss": "21,220 ₫ (-5.69%)",
+      "stop_loss": "21,220 ₫ (-5.26%)",
+      "max_risk": "-118,000 ₫ (0.58% NAV)",
+      "take_profit_1": "24,290 ₫ (+8.4%)",
+      "take_profit_2": "26,500 ₫ (+18.3%)",
+      "rr_ratio": "1:2.3",
       "votes_for": 12,
       "votes_against": 0,
       "status": "APPROVED",
-      "action": "Kê lệnh Limit LO quanh 22.2 - 22.5 (1 lô 100 CP)"
+      "action": "Kê lệnh Limit LO quanh 22.2 - 22.4 (1 lô 100 CP)",
+      "discipline_note": "Theo dõi sát nợ nhóm 2 và mảng HD SAISON, chốt lời 50% tại mốc 24.29k."
     },
     {
       "ticker": "IDC",
       "name": "IDICO (HNX)",
-      "sector": "BĐS Khu Công Nghiệp",
+      "exchange": "HNX",
+      "sector": "Bất Động Sản Khu Công Nghiệp",
       "price": "34,900 ₫",
-      "lot_cost": "3,490,000 ₫ (17.3% NAV)",
-      "ocf_lnst": "1.48x",
+      "order_zone": "34,200 – 34,600 ₫ (LO Khung Giờ Vàng)",
+      "quantity": "100 CP",
+      "lot_cost": "3,460,000 ₫ (17.1% NAV)",
+      "ocf_lnst": "1.48x (Tiền mặt 5.25k tỷ)",
       "rs_score": 81,
-      "stop_loss": "32,530 ₫ (-6.79%)",
+      "stop_loss": "32,530 ₫ (-5.98%)",
+      "max_risk": "-207,000 ₫ (1.02% NAV)",
+      "take_profit_1": "38,660 ₫ (+11.7%)",
+      "take_profit_2": "42,000 ₫ (+21.3%)",
+      "rr_ratio": "1:2.2",
       "votes_for": 12,
       "votes_against": 0,
       "status": "APPROVED",
-      "action": "Kê lệnh Limit LO quanh 34.2 - 34.6 (1 lô 100 CP)"
+      "action": "Kê lệnh Limit LO quanh 34.2 - 34.6 (1 lô 100 CP)",
+      "discipline_note": "Cổ phiếu sàn HNX biên độ ±10%, đặt lệnh LO đón lõng tại hỗ trợ, tuyệt đối không đu giá xanh."
     }
   ],
   "timeline_stream": [
@@ -954,7 +993,27 @@
       }
     }
   ],
-  "dynamic_messages": [],
+  "dynamic_messages": [
+    {
+      "id": "appr_1794150897",
+      "minute": 30,
+      "time_str": "22:14:57",
+      "phase_step": 8,
+      "sender_name": "Chủ Tịch Trần Quốc Thiên Phước",
+      "department": "Hội Đồng Quản Trị Tối Cao",
+      "role": "Tổng Chỉ Huy Tối Cao",
+      "avatar": "👑",
+      "badge": "LỆNH PHÊ DUYỆT CỦA CHỦ TỊCH",
+      "badge_color": "#eab308",
+      "content": "LỆNH CỦA CHỦ TỊCH: Tôi — Chủ tịch Trần Quốc Thiên Phước — đã trực tiếp kiểm tra và chính thức KÝ PHÊ DUYỆT toàn văn Nghị Quyết Thượng Đỉnh cùng Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC. Giao Master CIO James, chuyên viên Minh Quân và Sentinel Victor thực thi nghiêm ngặt trong Khung Giờ Vàng sáng mai!",
+      "highlight": "Chủ tịch Phước Trần đã bấm nút ký duyệt Sổ Lệnh lúc 2026-11-08 22:14:57",
+      "metrics": {
+        "Status": "OFFICIALLY_SIGNED",
+        "Signer": "Chairman Phuoc Tran",
+        "Active_Orders": 4
+      }
+    }
+  ],
   "inspector_notes": [
     {
       "time": "21:00",

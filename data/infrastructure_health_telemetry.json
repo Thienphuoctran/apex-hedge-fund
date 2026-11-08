@@ -1,6 +1,6 @@
 {
-  "audit_timestamp": "2026-11-08 22:03:42",
-  "audit_duration_seconds": 0.64,
+  "audit_timestamp": "2026-11-08 22:17:02",
+  "audit_duration_seconds": 0.9,
   "overall_infrastructure_health_score": 85,
   "health_verdict": "CẦN LƯU Ý",
   "appointed_officers": {
@@ -11,15 +11,15 @@
   },
   "check_1_report_counts_and_thresholds": {
     "operational_institutional_reports": 239,
-    "total_markdown_documents": 447,
+    "total_markdown_documents": 448,
     "threshold_min": 300,
     "threshold_max": 500,
     "status": "AMBER_APPROACHING_THRESHOLD",
     "urgency": "MEDIUM",
-    "action_guidance": "Đã chạm ngưỡng cảnh báo (447 tệp MD / 239 báo cáo). Kích hoạt kế hoạch chuẩn bị sharding YYYY/MM."
+    "action_guidance": "Đã chạm ngưỡng cảnh báo (448 tệp MD / 239 báo cáo). Kích hoạt kế hoạch chuẩn bị sharding YYYY/MM."
   },
   "check_2_directory_density": {
-    "total_directories_scanned": 101,
+    "total_directories_scanned": 97,
     "dense_directories_flagged": [
       {
         "directory": "scripts",
@@ -38,17 +38,17 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 798,
-    "total_project_size_mb": 21.48,
-    "data_directory_size_mb": 3.36,
+    "total_active_files": 805,
+    "total_project_size_mb": 21.57,
+    "data_directory_size_mb": 3.39,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "2.15%",
+    "github_quota_used_pct": "2.16%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 13.81,
-    "uncommitted_files_count": 27,
+    "git_directory_size_mb": 13.94,
+    "uncommitted_files_count": 31,
     "active_branch": "main",
     "status": "HEALTHY"
   },
@@ -57,7 +57,7 @@
     "log_files_details": [
       {
         "path": "data\\apex_cloud_supervisor.log",
-        "size_mb": 0.02
+        "size_mb": 0.03
       },
       {
         "path": "data\\apex_cron_daemon.log",
@@ -77,11 +77,11 @@
       },
       {
         "path": "data\\logs\\sentinel_monitor.log",
-        "size_mb": 0.01
+        "size_mb": 0.02
       },
       {
         "path": "data\\logs\\telegram_copilot.log",
-        "size_mb": 0.17
+        "size_mb": 0.18
       }
     ],
     "rotation_threshold_mb": 5.0,
@@ -89,8 +89,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 73.1,
-    "ssot_load_latency_ms": 0.39,
+    "json_directory_scan_latency_ms": 92.84,
+    "ssot_load_latency_ms": 0.46,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },

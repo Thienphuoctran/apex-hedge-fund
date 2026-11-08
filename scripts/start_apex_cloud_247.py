@@ -490,6 +490,30 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
             return
+
+        elif parsed_url.path == "/api/approve_summit_resolution":
+            try:
+                from scripts.apex_autonomous_council_engine import approve_summit_resolution
+                res = approve_summit_resolution()
+
+                # Gửi thông báo đến Telegram james_hq
+                try:
+                    from scripts.telegram_dispatcher import dispatch_message
+                    dispatch_message('james_hq', "👑 *[CHỦ TỊCH ĐÃ KÝ DUYỆT NGHỊ QUYẾT THƯỢNG ĐỈNH & SỔ LỆNH VÒNG 2]*\n\n👤 *Người ký*: `Chủ tịch Trần Quốc Thiên Phước`\n📜 *Văn kiện*: `08_Master_Investment_CIO/council_resolutions/`\n🛡️ *Tổng Kiểm Sát Ban 12 Trọng*: Đã niêm phong pháp lý thể chế thành công 100%!")
+                except Exception:
+                    pass
+
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+            return
         else:
             self.send_response(404)
             self.end_headers()

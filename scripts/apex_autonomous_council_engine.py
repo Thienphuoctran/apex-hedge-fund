@@ -708,63 +708,102 @@ def build_autonomous_summit_session() -> Dict[str, Any]:
                 ]
             }
         ],
+        "executive_approval": {
+            "status": "PENDING_CHAIRMAN_APPROVAL",
+            "approved_by": None,
+            "approval_time": None,
+            "seal": "⏳ Chờ Chủ Tịch Trần Quốc Thiên Phước Bấm Nút Phê Chuẩn",
+            "order_blotter_status": "LOCKED_PRE_EXECUTION"
+        },
         "voting_board": [
             {
                 "ticker": "MSH",
                 "name": "May Sông Hồng",
+                "exchange": "HOSE",
                 "sector": "Dệt May Xuất Khẩu",
                 "price": "35,500 ₫",
-                "lot_cost": "3,550,000 ₫ (17.6% NAV)",
+                "order_zone": "35,000 – 35,300 ₫ (LO Khung Giờ Vàng)",
+                "quantity": "100 CP",
+                "lot_cost": "3,530,000 ₫ (17.5% NAV)",
                 "ocf_lnst": "1.42x",
                 "rs_score": 94,
-                "stop_loss": "33,090 ₫ (-6.79%)",
+                "stop_loss": "33,090 ₫ (-6.26%)",
+                "max_risk": "-221,000 ₫ (1.09% NAV)",
+                "take_profit_1": "39,560 ₫ (+12.0%)",
+                "take_profit_2": "42,000 ₫ (+18.9%)",
+                "rr_ratio": "1:2.4",
                 "votes_for": 12,
                 "votes_against": 0,
                 "status": "APPROVED",
-                "action": "Kê lệnh Limit LO quanh 35.0 - 35.3 (1 lô 100 CP)"
+                "action": "Kê lệnh Limit LO quanh 35.0 - 35.3 (1 lô 100 CP)",
+                "discipline_note": "Chỉ giải ngân trong Khung Giờ Vàng (14h00 – 14h25), cấm mua xanh ATO."
             },
             {
                 "ticker": "BAF",
                 "name": "Nông Nghiệp BAF Việt Nam",
-                "sector": "Nông Nghiệp 3F",
+                "exchange": "HOSE",
+                "sector": "Nông Nghiệp Khép Kín 3F (Heo Ăn Thực Vật)",
                 "price": "30,900 ₫",
-                "lot_cost": "3,090,000 ₫ (15.3% NAV)",
+                "order_zone": "30,500 – 30,800 ₫ (LO Khung Giờ Vàng)",
+                "quantity": "100 CP",
+                "lot_cost": "3,080,000 ₫ (15.2% NAV)",
                 "ocf_lnst": "1.18x",
                 "rs_score": 96,
-                "stop_loss": "29,650 ₫ (-4.05%)",
+                "stop_loss": "29,650 ₫ (-3.73%)",
+                "max_risk": "-115,000 ₫ (0.57% NAV)",
+                "take_profit_1": "32,650 ₫ (+6.0%)",
+                "take_profit_2": "35,500 ₫ (+15.2%)",
+                "rr_ratio": "1:2.1",
                 "votes_for": 11,
                 "votes_against": 1,
                 "status": "APPROVED_WITH_CONDITIONS",
-                "dissent_note": "Ban 3 bảo lưu phiếu chống vì nợ vay 2.400 tỷ",
-                "action": "Kê lệnh Limit LO quanh 30.5 - 30.8 (1 lô 100 CP)"
+                "dissent_note": "Ban 3 bảo lưu phiếu chống vì nợ vay 2.420 tỷ",
+                "action": "Kê lệnh Limit LO quanh 30.5 - 30.8 (1 lô 100 CP)",
+                "discipline_note": "⚠️ ĐIỀU KIỆN RÀO CHẮN BAN 3: Do nợ vay 2.420 tỷ, chỉ được giải ngân đúng 1 lô 100 CP. Gãy 29.65k phải cắt lỗ thẳng tay trong 60s!"
             },
             {
                 "ticker": "HDB",
                 "name": "HDBank",
-                "sector": "Ngân Hàng Bán Lẻ",
+                "exchange": "HOSE",
+                "sector": "Ngân Hàng Bán Lẻ & Chuỗi Giá Trị",
                 "price": "22,500 ₫",
-                "lot_cost": "2,250,000 ₫ (11.2% NAV)",
-                "ocf_lnst": "NIM 5.2%",
+                "order_zone": "22,200 – 22,400 ₫ (LO Khung Giờ Vàng)",
+                "quantity": "100 CP",
+                "lot_cost": "2,240,000 ₫ (11.1% NAV)",
+                "ocf_lnst": "NIM 5.2% (ROE 23.8%)",
                 "rs_score": 95,
-                "stop_loss": "21,220 ₫ (-5.69%)",
+                "stop_loss": "21,220 ₫ (-5.26%)",
+                "max_risk": "-118,000 ₫ (0.58% NAV)",
+                "take_profit_1": "24,290 ₫ (+8.4%)",
+                "take_profit_2": "26,500 ₫ (+18.3%)",
+                "rr_ratio": "1:2.3",
                 "votes_for": 12,
                 "votes_against": 0,
                 "status": "APPROVED",
-                "action": "Kê lệnh Limit LO quanh 22.2 - 22.5 (1 lô 100 CP)"
+                "action": "Kê lệnh Limit LO quanh 22.2 - 22.4 (1 lô 100 CP)",
+                "discipline_note": "Theo dõi sát nợ nhóm 2 và mảng HD SAISON, chốt lời 50% tại mốc 24.29k."
             },
             {
                 "ticker": "IDC",
                 "name": "IDICO (HNX)",
-                "sector": "BĐS Khu Công Nghiệp",
+                "exchange": "HNX",
+                "sector": "Bất Động Sản Khu Công Nghiệp",
                 "price": "34,900 ₫",
-                "lot_cost": "3,490,000 ₫ (17.3% NAV)",
-                "ocf_lnst": "1.48x",
+                "order_zone": "34,200 – 34,600 ₫ (LO Khung Giờ Vàng)",
+                "quantity": "100 CP",
+                "lot_cost": "3,460,000 ₫ (17.1% NAV)",
+                "ocf_lnst": "1.48x (Tiền mặt 5.25k tỷ)",
                 "rs_score": 81,
-                "stop_loss": "32,530 ₫ (-6.79%)",
+                "stop_loss": "32,530 ₫ (-5.98%)",
+                "max_risk": "-207,000 ₫ (1.02% NAV)",
+                "take_profit_1": "38,660 ₫ (+11.7%)",
+                "take_profit_2": "42,000 ₫ (+21.3%)",
+                "rr_ratio": "1:2.2",
                 "votes_for": 12,
                 "votes_against": 0,
                 "status": "APPROVED",
-                "action": "Kê lệnh Limit LO quanh 34.2 - 34.6 (1 lô 100 CP)"
+                "action": "Kê lệnh Limit LO quanh 34.2 - 34.6 (1 lô 100 CP)",
+                "discipline_note": "Cổ phiếu sàn HNX biên độ ±10%, đặt lệnh LO đón lõng tại hỗ trợ, tuyệt đối không đu giá xanh."
             }
         ],
         "timeline_stream": timeline,
@@ -798,3 +837,85 @@ def activate_autonomous_summit_session():
 
 if __name__ == "__main__":
     activate_autonomous_summit_session()
+
+
+
+def load_meeting_state() -> Dict[str, Any]:
+    if not MEETING_STATE_FILE.exists():
+        return activate_autonomous_summit_session()
+    try:
+        with open(MEETING_STATE_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return activate_autonomous_summit_session()
+
+def save_meeting_state(state: Dict[str, Any]) -> None:
+    temp_file = MEETING_STATE_FILE.with_suffix('.tmp')
+    with open(temp_file, 'w', encoding='utf-8') as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+    temp_file.replace(MEETING_STATE_FILE)
+
+def approve_summit_resolution(approved_by: str = "Chủ tịch Trần Quốc Thiên Phước") -> Dict[str, Any]:
+    """Phê chuẩn Nghị Quyết Thượng Đỉnh và Sổ Lệnh Bắn Tỉa Vòng 2 trực tiếp từ Chủ tịch (Step 3)."""
+    state = load_meeting_state()
+    now_dt = datetime.datetime.now()
+    now_str = now_dt.strftime("%Y-%m-%d %H:%M:%S")
+    
+    state["executive_approval"] = {
+        "status": "APPROVED",
+        "approved_by": approved_by,
+        "approval_time": now_str,
+        "seal": "🛡️ BAN 12 TRỌNG ĐÃ NIÊM PHONG PHÁP LÝ THỂ CHẾ",
+        "order_blotter_status": "READY_FOR_EXECUTION"
+    }
+
+    # Thêm thông báo ký duyệt vào luồng phát biểu
+    approval_msg = {
+        "id": f"appr_{int(time.time())}",
+        "minute": 30,
+        "time_str": now_dt.strftime("%H:%M:%S"),
+        "phase_step": 8,
+        "sender_name": "Chủ Tịch Trần Quốc Thiên Phước",
+        "department": "Hội Đồng Quản Trị Tối Cao",
+        "role": "Tổng Chỉ Huy Tối Cao",
+        "avatar": "👑",
+        "badge": "LỆNH PHÊ DUYỆT CỦA CHỦ TỊCH",
+        "badge_color": "#eab308",
+        "content": f"LỆNH CỦA CHỦ TỊCH: Tôi — Chủ tịch Trần Quốc Thiên Phước — đã trực tiếp kiểm tra và chính thức KÝ PHÊ DUYỆT toàn văn Nghị Quyết Thượng Đỉnh cùng Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC. Giao Master CIO James, chuyên viên Minh Quân và Sentinel Victor thực thi nghiêm ngặt trong Khung Giờ Vàng sáng mai!",
+        "highlight": f"Chủ tịch Phước Trần đã bấm nút ký duyệt Sổ Lệnh lúc {now_str}",
+        "metrics": {"Status": "OFFICIALLY_SIGNED", "Signer": "Chairman Phuoc Tran", "Active_Orders": 4}
+    }
+    
+    state.setdefault("dynamic_messages", []).append(approval_msg)
+    save_meeting_state(state)
+
+    # Sinh file Markdown Nghị Quyết chính thức
+    res_dir = BASE_DIR / "08_Master_Investment_CIO" / "council_resolutions"
+    res_dir.mkdir(parents=True, exist_ok=True)
+    res_file = res_dir / f"{now_dt.strftime('%Y-%m-%d')}_Nghi_Quyet_Thuong_Dinh_Da_Ky_Duyet.md"
+    
+    md_content = f"""# NGHỊ QUYẾT ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX
+> **VĂN KIỆN THỂ CHẾ TỐI CAO ĐÃ ĐƯỢC CHỦ TỊCH KÝ PHÊ DUYỆT CHÍNH THỨC**  
+> **CHỦ TỌA PHÊ DUYỆT**: **CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC** (TCBS: `105C307855`)  
+> **THỜI GIAN KÝ DUYỆT**: `{now_str}`  
+> **CON DẤU THỂ CHẾ**: `🛡️ BAN 12 TRỌNG NIÊM PHONG PHÁP LÝ THỂ CHẾ`  
+> **HIỆN TRẠNG TÀI KHOẢN**: `20,167,119 ₫` (100% TIỀN MẶT — 0 CP RỦI RO)  
+
+---
+
+## 1. SỔ LỆNH BẮN TỈA VÒNG 2 CHÍNH THỨC (PHÊ DUYỆT 100%)
+1. **MSH (May Sông Hồng - HOSE)**: Vùng kê Limit LO `35.000 – 35.300 ₫` • Khối lượng `100 CP` (3.530.000 ₫ = 17.5% NAV) • Stop Loss `33.090 ₫ (-6.26%)` • TP1 `39.560 ₫` • TP2 `42.000 ₫` (R:R = 1:2.4).
+2. **BAF (Nông Nghiệp BAF - HOSE)**: Vùng kê Limit LO `30.500 – 30.800 ₫` • Khối lượng `100 CP` (3.080.000 ₫ = 15.2% NAV) • Stop Loss `29.650 ₫ (-3.73%)` • TP1 `32.650 ₫` • TP2 `35.500 ₫` (R:R = 1:2.1).  
+   *⚠️ ĐIỀU KIỆN RÀO CHẮN BAN 3*: Do nợ vay 2.420 tỷ, chỉ được giải ngân đúng 1 lô 100 CP. Gãy 29.65k phải cắt lỗ thẳng tay trong 60s!
+3. **HDB (HDBank - HOSE)**: Vùng kê Limit LO `22.200 – 22.400 ₫` • Khối lượng `100 CP` (2.240.000 ₫ = 11.1% NAV) • Stop Loss `21.220 ₫ (-5.26%)` • TP1 `24.290 ₫` • TP2 `26.500 ₫` (R:R = 1:2.3).
+4. **IDC (IDICO - HNX)**: Vùng kê Limit LO `34.200 – 34.600 ₫` • Khối lượng `100 CP` (3.460.000 ₫ = 17.1% NAV) • Stop Loss `32.530 ₫ (-5.98%)` • TP1 `38.660 ₫` • TP2 `42.000 ₫` (R:R = 1:2.2).
+
+---
+
+## 2. CHỈ THỊ THỰC THI SÁNG THỨ HAI
+- Tuyệt đối cấm mua ATO và cấm đua giá xanh buổi sáng.
+- Chuyên viên Minh Quân canh lệnh và kích hoạt trong **Khung Giờ Vàng (14h00 – 14h25)** khi thị trường xác nhận nến rút chân hỗ trợ 1.700 – 1.710 điểm.
+- Tổng Kiểm Sát Viên Trọng và Sentinel Victor trực chiến 24/7 bảo vệ an toàn danh mục.
+"""
+    res_file.write_text(md_content, encoding="utf-8")
+    return {"ok": True, "approval": state["executive_approval"]}

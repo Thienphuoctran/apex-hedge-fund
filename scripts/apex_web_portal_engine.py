@@ -1613,6 +1613,34 @@ def generate_portal_html(
             color: #070a12;
             box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
         }}
+        .summit-action-btn-gold {{
+            width: 100%;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #0f172a;
+            font-weight: 800;
+            font-size: 11.5px;
+            padding: 11px 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }}
+        .summit-action-btn-gold:hover {{
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(245, 158, 11, 0.5);
+        }}
+        .summit-action-btn-gold:disabled {{
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }}
 
     </style>
 </head>
@@ -2201,13 +2229,28 @@ def generate_portal_html(
                             </div>
                         </div>
 
-                        <!-- Card 2: Bảng Biểu Quyết Điện Tử -->
+                        <!-- Card 2: Bảng Biểu Quyết Điện Tử & Sổ Lệnh Bắn Tỉa Vòng 2 -->
                         <div class="summit-side-card">
                             <div class="summit-side-title">
-                                <span>📊</span> <span>Biểu Quyết Sổ Lệnh Vòng 2</span>
+                                <span>📊</span> <span>Sổ Lệnh Bắn Tỉa Vòng 2 & Biểu Quyết</span>
                             </div>
                             <div id="summit-voting-container">
                                 <!-- Stock voting cards rendered here -->
+                            </div>
+                        </div>
+
+                        <!-- Card 2.5: Phê Chuẩn Nghị Quyết Của Chủ Tịch (BƯỚC 3) -->
+                        <div class="summit-side-card" style="border: 1px solid rgba(234, 179, 8, 0.45); background: linear-gradient(180deg, rgba(234, 179, 8, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%);">
+                            <div class="summit-side-title" style="color: #fbbf24;">
+                                <span>👑</span> <span>Phê Chuẩn Sổ Lệnh — Chủ Tịch Phước Trần</span>
+                            </div>
+                            <div id="summit-approval-box">
+                                <div id="summit-approval-status" style="font-size: 11.5px; color: #fef3c7; margin-bottom: 12px; line-height: 1.5;">
+                                    Trạng thái: <strong style="color: #f59e0b;">⏳ Chờ Chủ Tịch Ký Phê Duyệt</strong>
+                                </div>
+                                <button id="btn-approve-summit" class="summit-action-btn-gold" onclick="approveSummitResolution()">
+                                    <span>✍️</span> <span>KÝ PHÊ DUYỆT SỔ LỆNH SÁNG THỨ HAI</span>
+                                </button>
                             </div>
                         </div>
 
@@ -3277,7 +3320,7 @@ def generate_portal_html(
                 }}
             }}
 
-            // 4. Render Bảng Biểu Quyết
+            // 4. Render Bảng Biểu Quyết & Sổ Lệnh Bắn Tỉa Vòng 2 (BƯỚC 3)
             const voteContainer = document.getElementById('summit-voting-container');
             const votes = data.voting_board || [];
             if (voteContainer) {{
@@ -3286,7 +3329,11 @@ def generate_portal_html(
                     if (v.votes_against > 0 || (v.status && v.status.includes('CONDITION'))) {{
                         tallyHtml = `<span class="summit-vote-tally" style="color: #f59e0b; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); padding: 2px 6px; border-radius: 4px;">${{v.votes_for}}/12 (${{v.votes_against}} Phiếu Bảo Lưu)</span>`;
                     }}
+                    let orderZoneHtml = v.order_zone ? `<div style="color: #38bdf8; font-weight: 700; font-size: 11px; margin-top: 3px;">📍 Vùng Kê LO: ${{v.order_zone}}</div>` : '';
+                    let tpRrHtml = (v.take_profit_1 && v.rr_ratio) ? `<div style="color: #a78bfa; font-size: 10.5px; margin-top: 2px;">🎯 TP1: ${{v.take_profit_1}} • TP2: ${{v.take_profit_2 || 'MA20'}} (R:R = ${{v.rr_ratio}})</div>` : '';
                     let actionHtml = v.action ? `<div style="margin-top: 6px; font-size: 11px; color: #7dd3fc; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 4px;">⚡ ${{v.action}}</div>` : '';
+                    let disciplineHtml = v.discipline_note ? `<div style="margin-top: 5px; font-size: 10.5px; color: #fbbf24; background: rgba(245,158,11,0.08); border-left: 2px solid #f59e0b; padding: 4px 6px; border-radius: 4px;">${{v.discipline_note}}</div>` : '';
+
                     return `
                         <div class="summit-stock-vote-card">
                             <div class="summit-stock-header">
@@ -3295,13 +3342,65 @@ def generate_portal_html(
                             </div>
                             <div class="summit-stock-meta">
                                 <div><strong>${{v.name}}</strong> (${{v.sector}})</div>
-                                <div style="margin-top: 4px; color: #34d399;">Giá: ${{v.price}} • 1 Lô: ${{v.lot_cost}}</div>
-                                <div style="color: #94a3b8;">OCF/LNST: ${{v.ocf_lnst}} • Stop: ${{v.stop_loss}}</div>
+                                ${{orderZoneHtml}}
+                                <div style="margin-top: 3px; color: #34d399;">Giá: ${{v.price}} • 1 Lô 100 CP: ${{v.lot_cost}}</div>
+                                <div style="color: #94a3b8;">OCF/LNST: ${{v.ocf_lnst}} • Stop: <strong style="color: #f87171;">${{v.stop_loss}}</strong></div>
+                                ${{tpRrHtml}}
                                 ${{actionHtml}}
+                                ${{disciplineHtml}}
                             </div>
                         </div>
                     `;
                 }}).join('');
+            }}
+
+            // 5. Cập nhật Trạng Thái Phê Chuẩn của Chủ Tịch
+            const appBox = document.getElementById('summit-approval-status');
+            const appBtn = document.getElementById('btn-approve-summit');
+            if (data.executive_approval && data.executive_approval.status === 'APPROVED') {{
+                if (appBox) {{
+                    appBox.innerHTML = `
+                        <div style="background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 6px; padding: 8px 10px;">
+                            <div style="color: #34d399; font-weight: 800; font-size: 11px;">✅ ĐÃ ĐƯỢC CHỦ TỊCH KÝ PHÊ DUYỆT CHÍNH THỨC</div>
+                            <div style="color: #cbd5e1; font-size: 11px; margin-top: 3px;">Thời gian: <strong>${{data.executive_approval.approval_time}}</strong></div>
+                            <div style="color: #fbbf24; font-size: 10.5px; margin-top: 2px;">🛡️ BAN 12 TRỌNG ĐÃ NIÊM PHONG PHÁP LÝ THỂ CHẾ</div>
+                        </div>
+                    `;
+                }}
+                if (appBtn) {{
+                    appBtn.disabled = true;
+                    appBtn.style.background = 'rgba(16,185,129,0.2)';
+                    appBtn.style.color = '#34d399';
+                    appBtn.style.border = '1px solid rgba(16,185,129,0.4)';
+                    appBtn.style.boxShadow = 'none';
+                    appBtn.innerHTML = '<span>✅</span> <span>NGHỊ QUYẾT ĐÃ ĐƯỢC PHÊ DUYỆT (CHỦ TỊCH ĐÃ KÝ)</span>';
+                }}
+            }}
+        }}
+
+        async function approveSummitResolution() {{
+            const btn = document.getElementById('btn-approve-summit');
+            if (btn) {{
+                btn.disabled = true;
+                btn.innerHTML = '<span>⏳</span> <span>Đang Niêm Phong Nghị Quyết & Đóng Dấu Mộc...</span>';
+            }}
+            try {{
+                const res = await fetch('/api/approve_summit_resolution', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ approved_by: 'Chủ tịch Trần Quốc Thiên Phước', timestamp: new Date().toISOString() }})
+                }});
+                const data = await res.json();
+                if (data.ok) {{
+                    alert('🎉 CHÚC MỪNG CHỦ TỊCH!\n\nToàn văn Nghị Quyết Thượng Đỉnh và Sổ Lệnh Bắn Tỉa Vòng 2 đã được Chủ tịch Trần Quốc Thiên Phước chính thức KÝ DUYỆT BAN HÀNH!\n\nBan 12 Tổng Kiểm Sát Viên Trọng đã niêm phong pháp lý thể chế.');
+                    await pollSummitMeeting();
+                }} else {{
+                    alert('Lỗi phê duyệt: ' + (data.error || 'Không xác định'));
+                }}
+            }} catch (err) {{
+                alert('Lỗi kết nối máy chủ khi phê duyệt: ' + err.message);
+            }} finally {{
+                if (btn) btn.disabled = false;
             }}
         }}
 
