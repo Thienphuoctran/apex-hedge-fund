@@ -168,39 +168,24 @@ class ApexInspectorTrong:
                 "remedy": "Chuyển toàn bộ chuỗi bảo mật sang biến môi trường .env và git-crypt."
             })
 
-        # Check 6: Giám sát Dung Lượng Kho Báo Cáo & Cảnh Báo Ngưỡng 300 - 500 Báo Cáo (Chỉ Thị Chủ Tịch Phước Trần)
+        # Check 6: Giám sát Hạ Tầng, Dung Lượng Kho Báo Cáo & Cảnh Báo Ngưỡng 300 - 500 (Nhiệm Vụ Chủ Tịch Giao Trọng)
         checks_performed += 1
         try:
-            from scripts.apex_report_scanner import scan_all_institutional_reports
-            all_reps = scan_all_institutional_reports(limit=2000)
-            total_reps_count = len(all_reps)
-            
-            scaling_cfg_file = BASE_DIR / "config" / "database_scaling_sentinel.json"
-            scaling_state = {}
-            if scaling_cfg_file.exists():
-                try:
-                    with open(scaling_cfg_file, "r", encoding="utf-8") as f_sc:
-                        scaling_state = json.load(f_sc)
-                except Exception:
-                    pass
-            
-            scaling_state["current_report_count"] = total_reps_count
-            scaling_state["last_audit_time"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            
-            if total_reps_count >= 300:
-                scaling_state["status"] = "ALERT_THRESHOLD_REACHED"
+            from scripts.trong_infrastructure_sentinel import TrongInfrastructureSentinel
+            infra_res = TrongInfrastructureSentinel.run_full_infrastructure_audit(send_telegram_alert=False)
+            c1_rep = infra_res.get("check_1_report_counts_and_thresholds", {})
+            st_status = c1_rep.get("status", "GREEN_OPTIMAL")
+            total_md = c1_rep.get("total_markdown_documents", 0)
+            inst_cnt = c1_rep.get("operational_institutional_reports", 0)
+
+            if st_status in ("ORANGE_HIGH_ALERT_PREPARE_UPGRADE", "RED_CRITICAL_UPGRADE_REQUIRED"):
                 issues_detected.append({
                     "severity": "P1_DATABASE_UPGRADE_MILESTONE",
-                    "module": "ApexDatabaseScalingSentinel",
-                    "issue": f"Kho dữ liệu báo cáo đã đạt mốc {total_reps_count} tệp (Chạm ngưỡng 300 - 500 báo cáo theo Chỉ thị của Chủ tịch Phước Trần). Cần kích hoạt ngay Kế hoạch Nâng cấp Database (SQLite / PostgreSQL) để tránh nghẽn I/O và quá tải web.",
-                    "remedy": "Master CIO James lập tức đệ trình Kế hoạch Nâng cấp Database V5.0 lên Chủ tịch Phước Trần để phê duyệt."
+                    "module": "TrongInfrastructureSentinel",
+                    "issue": f"Kho dữ liệu báo cáo đã đạt {total_md} tài liệu MD ({inst_cnt} báo cáo thể chế). Chạm ngưỡng cảnh báo tối đa theo Chỉ thị của Chủ tịch Phước Trần! Cần kích hoạt Kế hoạch Nâng cấp SQLite Lakehouse V4.0.",
+                    "remedy": "Trọng, Palmer phối hợp cùng Master CIO James lập tức đệ trình Kế hoạch Nâng cấp Cơ sở Hạ tầng lên Chủ tịch Phước Trần phê duyệt."
                 })
-            else:
-                scaling_state["status"] = f"WATCHING_ACTIVE ({total_reps_count}/300)"
-                
-            with open(scaling_cfg_file, "w", encoding="utf-8") as f_sc:
-                json.dump(scaling_state, f_sc, ensure_ascii=False, indent=2)
-        except Exception:
+        except Exception as e_infra:
             pass
 
         elapsed = round(time.perf_counter() - start_t, 2)

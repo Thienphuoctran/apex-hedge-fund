@@ -1350,6 +1350,21 @@
         "Quét phổ rộng 145+ cổ phiếu (Mid-cap & Small-cap), tìm kiếm các cơ hội bứt phá tiềm năng tối ưu lợi nhuận.",
         "Giải trình câu hỏi: Có nên lao vào thị trường vào Thứ Hai khi đang đỏ lửa? Chiến lược tác chiến sắc sảo."
       ]
+    },
+    "infrastructure_sentinel_mandate": {
+      "mandate_id": "INFRASTRUCTURE_HEALTH_AND_SCALING_SENTINEL",
+      "assigned_to": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Ombudsman)",
+      "co_pilot_systems_lead": "Palmer (Cố Vấn Điều Hành Tối Cao & Trưởng Phòng Tổng Hệ Thống)",
+      "supervising_officer": "Master CIO James (Ban 8)",
+      "commissioned_by": "Chủ tịch HĐQT Trần Quốc Thiên Phước (TCBS: 105C307855)",
+      "effective_date": "2026-11-08",
+      "core_duties": [
+        "Giám sát liên tục 7 khâu hạ tầng: Số lượng báo cáo, mật độ thư mục, dung lượng đĩa, sức khỏe Git, log rotation, latency, và SSOT V2.0.",
+        "Theo dõi ngưỡng kích hoạt nâng cấp cơ sở hạ tầng (Threshold Radar: 300 - 500 báo cáo).",
+        "Phát tín hiệu báo động khẩn cấp lên Telegram và đệ trình phương án nâng cấp SQLite Lakehouse V4.0 ngay khi chạm ngưỡng."
+      ],
+      "automated_engine": "scripts/trong_infrastructure_sentinel.py",
+      "status": "ACTIVE_IN_PRODUCTION"
     }
   },
   "upcoming_tasks_schedule": [
@@ -1366,6 +1381,23 @@
         "Quét phổ rộng 145+ cổ phiếu (Mid-cap & Small-cap), tìm kiếm các cơ hội bứt phá tiềm năng tối ưu lợi nhuận.",
         "Giải trình câu hỏi: Có nên lao vào thị trường vào Thứ Hai khi đang đỏ lửa? Chiến lược tác chiến sắc sảo."
       ]
+    }
+  ],
+  "institutional_mandates": [
+    {
+      "mandate_id": "INFRASTRUCTURE_HEALTH_AND_SCALING_SENTINEL",
+      "assigned_to": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Ombudsman)",
+      "co_pilot_systems_lead": "Palmer (Cố Vấn Điều Hành Tối Cao & Trưởng Phòng Tổng Hệ Thống)",
+      "supervising_officer": "Master CIO James (Ban 8)",
+      "commissioned_by": "Chủ tịch HĐQT Trần Quốc Thiên Phước (TCBS: 105C307855)",
+      "effective_date": "2026-11-08",
+      "core_duties": [
+        "Giám sát liên tục 7 khâu hạ tầng: Số lượng báo cáo, mật độ thư mục, dung lượng đĩa, sức khỏe Git, log rotation, latency, và SSOT V2.0.",
+        "Theo dõi ngưỡng kích hoạt nâng cấp cơ sở hạ tầng (Threshold Radar: 300 - 500 báo cáo).",
+        "Phát tín hiệu báo động khẩn cấp lên Telegram và đệ trình phương án nâng cấp SQLite Lakehouse V4.0 ngay khi chạm ngưỡng."
+      ],
+      "automated_engine": "scripts/trong_infrastructure_sentinel.py",
+      "status": "ACTIVE_IN_PRODUCTION"
     }
   ]
 }

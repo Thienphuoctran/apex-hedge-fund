@@ -2,7 +2,7 @@
   "system_directive": "Chỉ thị Thể chế của Chủ tịch Trần Quốc Thiên Phước về Ngưỡng Nâng cấp Database",
   "issued_by": "Chủ tịch Trần Quốc Thiên Phước (Tài khoản TCBS: 105C307855)",
   "issued_timestamp": "2026-11-07 19:38:00",
-  "sentinel_officer": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Ombudsman) & Master CIO James",
+  "sentinel_officer": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Ombudsman) & Palmer (Cố Vấn Tối Cao)",
   "threshold_warning_min": 300,
   "threshold_warning_max": 500,
   "action_required": "Khi kho báo cáo đạt ngưỡng từ 300 đến 500 tệp, hệ thống BẮT BUỘC tự động gửi báo cáo đệ trình Kế hoạch Nâng cấp Database V5.0 (SQLite / PostgreSQL) lên Chủ tịch Phước Trần để phê duyệt, ngăn chặn triệt để tình trạng quá tải ổ đĩa và giật lag web.",
@@ -16,7 +16,9 @@
     "telegram_trong_audit",
     "web_portal_kpi_banner"
   ],
-  "current_report_count": 202,
-  "status": "WATCHING_ACTIVE (202/300)",
-  "last_audit_time": "2026-11-07 21:40:56"
+  "current_report_count": 211,
+  "status": "AMBER_APPROACHING_THRESHOLD",
+  "last_audit_time": "2026-11-08 15:32:38",
+  "total_markdown_documents": 413,
+  "supervising_officer": "Master CIO James (Ban 8)"
 }
