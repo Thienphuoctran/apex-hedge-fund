@@ -3222,9 +3222,9 @@ def generate_portal_html(
                         }}
 
                         let formattedContent = (m.content || '')
-                            .replace(/\\*\\*(.*?)\\*\\*/g, '<strong style="color: #f8fafc;">$1</strong>')
-                            .replace(/\n- /g, '<br/>• ')
-                            .replace(/\n/g, '<br/>');
+                            .replace(/\*\*(.*?)\*\*/g, '<strong style="color: #f8fafc;">$1</strong>')
+                            .split(String.fromCharCode(10) + '- ').join('<br/>• ')
+                            .split(String.fromCharCode(10)).join('<br/>');
 
                         let evidenceHtml = '';
                         if (m.evidence_card) {{
@@ -3398,7 +3398,7 @@ def generate_portal_html(
                 }});
                 const data = await res.json();
                 if (data.ok) {{
-                    alert('🎉 CHÚC MỪNG CHỦ TỊCH!\n\nToàn văn Nghị Quyết Thượng Đỉnh và Sổ Lệnh Bắn Tỉa Vòng 2 đã được Chủ tịch Trần Quốc Thiên Phước chính thức KÝ DUYỆT BAN HÀNH!\n\nBan 12 Tổng Kiểm Sát Viên Trọng đã niêm phong pháp lý thể chế.');
+                    alert(`🎉 CHÚC MỪNG CHỦ TỊCH!\n\nToàn văn Nghị Quyết Thượng Đỉnh và Sổ Lệnh Bắn Tỉa Vòng 2 đã được Chủ tịch Trần Quốc Thiên Phước chính thức KÝ DUYỆT BAN HÀNH!\n\nBan 12 Tổng Kiểm Sát Viên Trọng đã niêm phong pháp lý thể chế.`);
                     await pollSummitMeeting();
                 }} else {{
                     alert('Lỗi phê duyệt: ' + (data.error || 'Không xác định'));
