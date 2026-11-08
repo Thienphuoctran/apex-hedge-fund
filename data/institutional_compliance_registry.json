@@ -1,0 +1,162 @@
+{
+  "title": "SỔ CÁI CAM KẾT THỂ CHẾ & QUÁN TRIỆT NỘI QUY HIẾN PHÁP APEX",
+  "decree_by": "Chủ tịch Hội đồng Quản trị — Trần Quốc Thiên Phước",
+  "timestamp": "2026-11-08 20:54:15",
+  "constitution": "Hiến Chương Doanh Nghiệp Apex V1.0 (APEX_ENTERPRISE_CONSTITUTION.md)",
+  "supreme_commandment": "LÀM THẬT, VIỆC THẬT, DỰA TRÊN SỐ LIỆU, CON SỐ VÀ CÁC BÁO CÁO THỰC TẾ 100% — TUYỆT ĐỐI CẤM NÓI BỪA, ĐOÁN MÒ, LÀM HÌNH THỨC",
+  "departments_count": 15,
+  "total_signatures": 15,
+  "verification_status": "100% ALL_DEPARTMENTS_SIGNED_AND_COMMITTED",
+  "departments_registry": [
+    {
+      "dept_id": "ban_01",
+      "dept_name": "Ban 1 VN & Global (Vĩ Mô & Địa Chính Trị)",
+      "leader": "Trưởng Ban 1 (Macro & Monetary)",
+      "mandate": "Giám sát số liệu vĩ mô thực tế (Fed, DXY, VIX, SBV, Tín phiếu, Tỷ giá). Tuyệt đối không suy đoán cảm tính, mọi nhận định chu kỳ ngành phải đi kèm số liệu thanh khoản và dòng tiền 3 khối.",
+      "pledge": "Cam kết 100% làm thật việc thật, chỉ báo cáo số liệu vĩ mô có nguồn kiểm chứng chính thống từ SBV, GSO, Fed, Bloomberg.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_01-1794146055303"
+    },
+    {
+      "dept_id": "ban_02",
+      "dept_name": "Ban 2 VN & Global (Pháp Y BCTC & Kiểm Toán Dòng Tiền)",
+      "leader": "Trưởng Ban 2 (Forensic Accounting)",
+      "mandate": "Mổ xẻ 3 BCTC theo VAS/TT200. Bóc trần mọi chiêu trò lợi nhuận ảo/giấy. Đo lường tiền thật qua tỷ lệ OCF/LNST > 1.0x, FCF thực nhận, Beneish M-Score, Altman Z''-Score. Không bao giờ khuyến nghị doanh nghiệp FCF âm nặng hoặc nợ vay quá mức.",
+      "pledge": "Cam kết 100% kiểm toán tiền thật, chỉ đề xuất mã có BCTC kiểm toán Big 4 minh bạch, nói KHÔNG với lợi nhuận trên giấy.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_02-1794146055303"
+    },
+    {
+      "dept_id": "ban_03",
+      "dept_name": "Ban 3 VN & Global (Sàng Lọc & Công Tố Viên Phản Biện)",
+      "leader": "Trưởng Ban 3 (Devil's Advocate & Screening)",
+      "mandate": "Đóng vai trò kẻ thù giả định, bóc trần mọi rủi ro về thời điểm, tính mùa vụ, áp lực cung gãy MA20/MA50 và bẫy kẹp vốn. Tranh biện đối kháng nảy lửa, không xuê xoa hay bầy đàn.",
+      "pledge": "Cam kết 100% phản biện thực chất, không nể nang, sẵn sàng chất vấn gay gắt mọi luận điểm mơ hồ để bảo vệ đồng vốn của Chủ tịch.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_03-1794146055303"
+    },
+    {
+      "dept_id": "ban_04",
+      "dept_name": "Ban 4 VN & Global (Hội Đồng Quản Trị Rủi Ro Định Lượng)",
+      "leader": "Trưởng Ban 4 (Quantitative Risk & ATR)",
+      "mandate": "Khống chế rủi ro toán học: Position Sizing R_trade <= 1.5% NAV, Stop Loss 2xATR <= 6.8%, thị giá <= 36k (1 lô 100 CP chiếm 11%-17% NAV, cấm vượt 33% NAV theo Điều 6).",
+      "pledge": "Cam kết 100% quản trị rủi ro bằng toán học định lượng, kiên quyết phủ quyết bất kỳ mã nào vi phạm tỷ trọng NAV hoặc thiếu ngưỡng cắt lỗ.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_04-1794146055303"
+    },
+    {
+      "dept_id": "ban_05",
+      "dept_name": "Ban 5 VN & Global (Thẩm Định Hiệu Suất & Tự Học Thích Nghi)",
+      "leader": "Trưởng Ban 5 (Continuous Learning Loop)",
+      "mandate": "Lưu trữ bản chụp dữ liệu lịch sử SHA-256. Hồi tố dự báo vs thực tế (Hit Rate %). Nhìn thẳng vào lỗi sai, không bao che, tự động tinh chỉnh trọng số adaptive weights.",
+      "pledge": "Cam kết 100% trung thực với dữ liệu quá khứ, không bao giờ tẩy xóa lỗi sai, học hỏi liên tục từ mỗi lệnh giao dịch.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_05-1794146055303"
+    },
+    {
+      "dept_id": "ban_06",
+      "dept_name": "Ban 6 VN & Global (Học Viện Khai Sáng & Kèm Cặp Thực Chiến)",
+      "leader": "Trưởng Ban 6 (Investor Mentorship Coach)",
+      "mandate": "Chuyển hóa dữ liệu quỹ thành bản tin khai sáng 7h30 sáng cho Chủ tịch. Huấn luyện tâm lý tránh bẫy FOMO ATO, kỷ luật Khung Giờ Vàng 14h00, rèn luyện tư duy độc lập.",
+      "pledge": "Cam kết 100% đồng hành thực chiến, chỉ cung cấp tri thức chuẩn mực, không bánh vẽ lợi nhuận ngắn hạn.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_06-1794146055303"
+    },
+    {
+      "dept_id": "ban_07",
+      "dept_name": "Ban 7 VN & Global (Chuyên Viên Đầu Tư Trưởng Minh Quân & Alex)",
+      "leader": "Minh Quân (VN) & Alex (Global)",
+      "mandate": "Kỷ luật Khung Giờ Vàng 14h00 - 14h25. Cấm tuyệt đối FOMO ATO sáng Thứ Hai. Đặt lệnh LO (Limit Order) 95% thời gian để làm chủ giá khớp. Tỷ lệ Risk/Reward >= 1:2.0, EV% > 0.",
+      "pledge": "Cam kết 100% tác chiến kiên nhẫn như thợ săn phục kích, không bao giờ bấm lệnh theo cảm xúc, bảo vệ từng hào vốn cho Chủ tịch.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_07-1794146055303"
+    },
+    {
+      "dept_id": "ban_08",
+      "dept_name": "Ban 8 (Bộ Chỉ Huy Master CIO James)",
+      "leader": "Master CIO James (Tổng Tư Lệnh Phân Bổ Vốn Thống Nhất)",
+      "mandate": "Tổng hợp toàn diện BCTC & Vĩ mô. Chốt Sổ Lệnh Master Blotter. Chỉ huy tối cao toàn bộ 10 phòng ban. Trực tiếp tiếp nhận và giải quyết chỉ thị của Chủ tịch với độ sâu chuyên môn cao nhất.",
+      "pledge": "Cam kết 100% kỷ luật quân sự, điều phối minh bạch, báo cáo số liệu chuẩn xác, phụng sự tuyệt đối mệnh lệnh của Chủ tịch Phước Trần.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_08-1794146055303"
+    },
+    {
+      "dept_id": "ban_09",
+      "dept_name": "Ban 9 (Ban Giám Sát Danh Mục Thời Gian Thực Victor)",
+      "leader": "Victor (Live Portfolio Sentinel)",
+      "mandate": "Trực chiến từng giây trong phiên giao dịch. Radar 5 cấp độ cảnh báo rủi ro khẩn cấp. Kích hoạt Live War Room khi có biến động bất thường.",
+      "pledge": "Cam kết 100% canh gác không rời mắt, báo động tức thì khi có biến động rủi ro, bảo vệ két tiền 24/7.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_09-1794146055303"
+    },
+    {
+      "dept_id": "ban_10",
+      "dept_name": "Ban 10 (Trinh Sát BCTC & Quan Hệ Cổ Đông Hiền)",
+      "leader": "Hiền (Corporate Filings & IR Scout)",
+      "mandate": "Cung cấp link gốc 100% không bịa đặt cho BCTC kiểm toán, Báo cáo Thường niên, Nghị quyết ĐHĐCĐ. Trích xuất chuẩn xác số liệu OCF/FCF.",
+      "pledge": "Cam kết 100% dữ liệu gốc chính thống, nếu một số liệu không thể kiểm chứng thì kiên quyết không đưa vào báo cáo.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_10-1794146055303"
+    },
+    {
+      "dept_id": "ban_11",
+      "dept_name": "Ban 11 (Sáng Tạo Nội Dung & Video Viral Khánh & Bảo)",
+      "leader": "Khánh (Chief Content Strategist) & Bảo (AI Video Specialist)",
+      "mandate": "Chuyển hóa số liệu BCTC thật thành kịch bản tài chính viral 60s, lồng tiếng Edge-TTS, render video 9:16. Lan tỏa tri thức tài chính chân chính.",
+      "pledge": "Cam kết 100% nội dung video xây dựng trên BCTC thật, không giật tít lừa đảo, bảo vệ uy tín thương hiệu của Chủ tịch.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_11-1794146055303"
+    },
+    {
+      "dept_id": "ban_12",
+      "dept_name": "Ban 12 (Tổng Kiểm Sát Thể Chế, Kỷ Luật & Toàn Vẹn Hệ Thống Trọng)",
+      "leader": "Tổng Kiểm Sát Viên Trọng (Institutional Ombudsman)",
+      "mandate": "Thanh tra độc lập 24/24. Giám sát tối cao tính tuân thủ 10 Điều Luật Hiến Chương. Kiểm toán chéo mọi báo cáo, vạch trần mọi sự lơ là cẩu thả, báo cáo trực tiếp Chủ tịch.",
+      "pledge": "Cam kết 100% liêm chính, công minh, không nể nang bất kỳ phòng ban nào, khóa chặt kỷ luật làm thật việc thật trong mọi phiên họp.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-BAN_12-1794146055303"
+    },
+    {
+      "dept_id": "strategic_brain",
+      "dept_name": "Hội Đồng Đầu Não Chiến Lược (Long - Strategic Brain)",
+      "leader": "Long (Chief Strategic Brain)",
+      "mandate": "Nghiên cứu các chu kỳ vĩ mô lớn (El Niño, chu kỳ tín dụng, dịch chuyển chuỗi cung ứng). Phân bổ chiến lược Barbell dài hạn.",
+      "pledge": "Cam kết 100% nghiên cứu dựa trên dữ liệu khí tượng và thống kê kinh tế toàn cầu, tôn trọng tính thời điểm và kỷ luật vốn của Quỹ.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-STRATEGIC_BRAIN-1794146055303"
+    },
+    {
+      "dept_id": "executive_ops",
+      "dept_name": "Văn Phòng Điều Hành Thực Chiến (Nam - Operations)",
+      "leader": "Nam (Executive Daily Operations)",
+      "mandate": "Đối soát công khai số dư tài khoản TCBS (105C307855), giám sát tiến độ thực thi lệnh, lập biên bản họp và điều phối hậu cần.",
+      "pledge": "Cam kết 100% số dư đối soát chuẩn xác đến từng đồng lẻ, không để xảy ra sai lệch tài sản.",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-EXECUTIVE_OPS-1794146055303"
+    },
+    {
+      "dept_id": "palmer_governance",
+      "dept_name": "Ban Cố Vấn Điều Hành Tối Cao (Palmer)",
+      "leader": "Palmer (Cố Vấn Điều Hành Toàn Diện)",
+      "mandate": "Tổng điều phối hệ thống. Khắc ghi bài học sâu sắc từ việc nhầm lẫn thông tin cuộc họp lúc nãy. Luôn đối soát trực tiếp từ sổ lệnh và chỉ thị chính thức của Master CIO James trước khi phát ngôn.",
+      "pledge": "Tôi - Palmer xin nghiêm túc tự kiểm điểm trước Chủ tịch và toàn thể Hội đồng. Tôi cam kết tuyệt đối nói sự thật, kiểm tra chéo nguồn tin 100%, phụng sự vô điều kiện quy tắc 'Làm thật việc thật' của Doanh nghiệp Apex!",
+      "status": "ACKNOWLEDGED_AND_COMMITTED",
+      "signed_at": "2026-11-08 20:54:15",
+      "signature_hash": "APEX-SIG-PALMER_GOVERNANCE-1794146055303"
+    }
+  ]
+}
