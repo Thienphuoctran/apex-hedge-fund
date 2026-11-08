@@ -1299,8 +1299,17 @@ def generate_portal_html(
             border-color: rgba(245, 158, 11, 0.35);
         }}
         .summit-msg-card.msg-debate {{
-            background: rgba(239, 68, 68, 0.05);
-            border-color: rgba(239, 68, 68, 0.3);
+            background: rgba(239, 68, 68, 0.06);
+            border-color: rgba(239, 68, 68, 0.45);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.08);
+        }}
+        .summit-msg-card.msg-forensic {{
+            background: rgba(236, 72, 153, 0.06);
+            border-color: rgba(236, 72, 153, 0.35);
+        }}
+        .summit-msg-card.msg-quant {{
+            background: rgba(16, 185, 129, 0.06);
+            border-color: rgba(16, 185, 129, 0.35);
         }}
         @keyframes fadeInMsg {{
             from {{ opacity: 0; transform: translateY(8px); }}
@@ -2001,35 +2010,35 @@ def generate_portal_html(
                     <div class="summit-steps-grid" id="summit-steps-container">
                         <div class="summit-step-item active" id="step-node-1">
                             <div class="summit-step-min">00 - 03m</div>
-                            <div class="summit-step-lbl">1. Khai mạc & Đối soát tài khoản</div>
+                            <div class="summit-step-lbl">1. Khai mạc & Đối soát Tiền Mặt 20M</div>
                         </div>
                         <div class="summit-step-item" id="step-node-2">
-                            <div class="summit-step-min">03 - 08m</div>
-                            <div class="summit-step-lbl">2. Vĩ mô & Kịch bản VN-Index</div>
+                            <div class="summit-step-min">03 - 07m</div>
+                            <div class="summit-step-lbl">2. Vĩ mô Phố Wall sập & SBV</div>
                         </div>
                         <div class="summit-step-item" id="step-node-3">
-                            <div class="summit-step-min">08 - 13m</div>
-                            <div class="summit-step-lbl">3. Pháp y BCTC & Lọc Top 4</div>
+                            <div class="summit-step-min">08 - 12m</div>
+                            <div class="summit-step-lbl">3. Hiệp 1: Đại chiến MSH (Dệt may vs Lạm phát)</div>
                         </div>
                         <div class="summit-step-item" id="step-node-4">
                             <div class="summit-step-min">13 - 17m</div>
-                            <div class="summit-step-lbl">4. Quản trị rủi ro & Định cỡ</div>
+                            <div class="summit-step-lbl">4. Hiệp 2: Đại chiến BAF (Biên lãi vs Nợ 2.4k tỷ)</div>
                         </div>
                         <div class="summit-step-item" id="step-node-5">
-                            <div class="summit-step-min">17 - 20m</div>
-                            <div class="summit-step-lbl">5. Chiến thuật Khung Giờ Vàng</div>
+                            <div class="summit-step-min">18 - 22m</div>
+                            <div class="summit-step-lbl">5. Hiệp 3: Đại chiến HDB (NIM 5.2% vs Nợ nhóm 2)</div>
                         </div>
                         <div class="summit-step-item" id="step-node-6">
-                            <div class="summit-step-min">20 - 25m</div>
-                            <div class="summit-step-lbl">6. Tranh biện đối kháng 3 câu</div>
+                            <div class="summit-step-min">23 - 27m</div>
+                            <div class="summit-step-lbl">6. Hiệp 4: Đại chiến IDC (Tiền trả trước 5.2k tỷ)</div>
                         </div>
                         <div class="summit-step-item" id="step-node-7">
-                            <div class="summit-step-min">25 - 28m</div>
-                            <div class="summit-step-lbl">7. Biểu quyết Sổ Lệnh Vòng 2</div>
+                            <div class="summit-step-min">28 - 29m</div>
+                            <div class="summit-step-lbl">7. Bảo lưu thể chế & Bỏ phiếu độc lập</div>
                         </div>
                         <div class="summit-step-item" id="step-node-8">
-                            <div class="summit-step-min">28 - 30m</div>
-                            <div class="summit-step-lbl">8. Kiểm toán kỷ luật & Bế mạc</div>
+                            <div class="summit-step-min">29 - 30m</div>
+                            <div class="summit-step-lbl">8. Trọng chứng thực 100% Làm thật & Bế mạc</div>
                         </div>
                     </div>
                 </div>
@@ -3040,7 +3049,9 @@ def generate_portal_html(
                         let cardClass = 'summit-msg-card';
                         if (m.sender_name && m.sender_name.includes('Chủ tịch')) cardClass += ' msg-chairman';
                         else if (m.sender_name && m.sender_name.includes('Trọng')) cardClass += ' msg-inspector';
-                        else if (m.badge && m.badge.includes('TRANH BIỆN')) cardClass += ' msg-debate';
+                        else if (m.badge && (m.badge.includes('TRANH BIỆN') || m.badge.includes('KẺ THÙ') || m.badge.includes('BẢO LƯU') || m.badge.includes('PHẢN ĐỐI'))) cardClass += ' msg-debate';
+                        else if (m.badge && (m.badge.includes('PHÁP Y') || m.badge.includes('DỮ LIỆU') || m.badge.includes('BCTC'))) cardClass += ' msg-forensic';
+                        else if (m.badge && (m.badge.includes('ĐỊNH LƯỢNG') || m.badge.includes('PHÁN QUYẾT') || m.badge.includes('ĐỐI SOÁT') || m.badge.includes('ĐỀ XUẤT'))) cardClass += ' msg-quant';
 
                         let badgeHtml = '';
                         if (m.badge) {{
@@ -3051,6 +3062,19 @@ def generate_portal_html(
                         if (m.highlight) {{
                             highlightHtml = `<div class="summit-msg-highlight">📌 <strong>Điểm Nhấn:</strong> ${{m.highlight}}</div>`;
                         }}
+
+                        let metricsHtml = '';
+                        if (m.metrics && typeof m.metrics === 'object') {{
+                            const chips = Object.entries(m.metrics).map(([k, v]) => 
+                                `<span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #cbd5e1;"><strong style="color: #38bdf8;">${{k}}:</strong> ${{v}}</span>`
+                            ).join(' ');
+                            metricsHtml = `<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,0.1);">${{chips}}</div>`;
+                        }}
+
+                        let formattedContent = (m.content || '')
+                            .replace(/\\*\\*(.*?)\\*\\*/g, '<strong style="color: #f8fafc;">$1</strong>')
+                            .replace(/\n- /g, '<br/>• ')
+                            .replace(/\n/g, '<br/>');
 
                         return `
                             <div class="${{cardClass}}">
@@ -3067,7 +3091,8 @@ def generate_portal_html(
                                         <span class="summit-msg-time">${{m.time_str}}</span>
                                     </div>
                                 </div>
-                                <div class="summit-msg-content">${{m.content}}</div>
+                                <div class="summit-msg-content">${{formattedContent}}</div>
+                                ${{metricsHtml}}
                                 ${{highlightHtml}}
                             </div>
                         `;
@@ -3082,20 +3107,28 @@ def generate_portal_html(
             // 4. Render Bảng Biểu Quyết
             const voteContainer = document.getElementById('summit-voting-container');
             const votes = data.voting_board || [];
-            if (voteContainer && voteContainer.children.length === 0) {{
-                voteContainer.innerHTML = votes.map(v => `
-                    <div class="summit-stock-vote-card">
-                        <div class="summit-stock-header">
-                            <span class="summit-stock-sym">${{v.ticker}}</span>
-                            <span class="summit-vote-tally">${{v.votes_for}}/12 Nhất Trí</span>
+            if (voteContainer) {{
+                voteContainer.innerHTML = votes.map(v => {{
+                    let tallyHtml = `<span class="summit-vote-tally" style="color: #34d399;">${{v.votes_for}}/12 Nhất Trí</span>`;
+                    if (v.votes_against > 0 || (v.status && v.status.includes('CONDITION'))) {{
+                        tallyHtml = `<span class="summit-vote-tally" style="color: #f59e0b; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); padding: 2px 6px; border-radius: 4px;">${{v.votes_for}}/12 (${{v.votes_against}} Phiếu Bảo Lưu)</span>`;
+                    }}
+                    let actionHtml = v.action ? `<div style="margin-top: 6px; font-size: 11px; color: #7dd3fc; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 4px;">⚡ ${{v.action}}</div>` : '';
+                    return `
+                        <div class="summit-stock-vote-card">
+                            <div class="summit-stock-header">
+                                <span class="summit-stock-sym">${{v.ticker}}</span>
+                                ${{tallyHtml}}
+                            </div>
+                            <div class="summit-stock-meta">
+                                <div><strong>${{v.name}}</strong> (${{v.sector}})</div>
+                                <div style="margin-top: 4px; color: #34d399;">Giá: ${{v.price}} • 1 Lô: ${{v.lot_cost}}</div>
+                                <div style="color: #94a3b8;">OCF/LNST: ${{v.ocf_lnst}} • Stop: ${{v.stop_loss}}</div>
+                                ${{actionHtml}}
+                            </div>
                         </div>
-                        <div class="summit-stock-meta">
-                            <div><strong>${{v.name}}</strong> (${{v.sector}})</div>
-                            <div style="margin-top: 4px; color: #34d399;">Giá: ${{v.price}} • 1 Lô: ${{v.lot_cost}}</div>
-                            <div style="color: #94a3b8;">OCF/LNST: ${{v.ocf_lnst}} • Stop: ${{v.stop_loss}}</div>
-                        </div>
-                    </div>
-                `).join('');
+                    `;
+                }}).join('');
             }}
         }}
 

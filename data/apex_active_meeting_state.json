@@ -1,11 +1,11 @@
 {
-  "meeting_id": "APEX-SUMMIT-20261108-2100",
-  "title": "ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX",
-  "subtitle": "Đại Phẫu Vĩ Mô Phố Wall/SBV • Pháp Y BCTC Top 4 Tiền Thật • Kế Hoạch Tác Chiến Phiên Đầu Tuần",
+  "meeting_id": "APEX-SUMMIT-AUTONOMOUS-V2",
+  "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (PHIÊN BẢN TỰ TRỊ ĐỐI KHÁNG V2.0)",
+  "subtitle": "Độc Lập Chuyên Môn • Tranh Biện Đối Kháng 4 Hiệp Nảy Lửa • Pháp Y BCTC Tiền Thật Q3/2026",
   "start_time": "2026-11-08T21:00:00+07:00",
   "end_time": "2026-11-08T21:30:00+07:00",
   "duration_minutes": 30,
-  "mode": "REALTIME_SYNCHRONIZED",
+  "mode": "AUTONOMOUS_ADVERSARIAL_DEBATE",
   "chairman": "Chủ tịch Hội đồng Quản trị — Trần Quốc Thiên Phước",
   "chairperson_host": "Master CIO James (Ban 8) & Palmer (Cố vấn Điều hành)",
   "permanent_inspector": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Thường Trực Bất Biến)",
@@ -20,109 +20,96 @@
     "inspector": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
     "constitution_version": "Hiến Chương Doanh Nghiệp Apex V1.0",
     "compliance_score": 100,
-    "violations_detected": 0,
+    "adversarial_intensity": "HIGH_FIERCE (Tranh biện đối kháng nảy lửa)",
+    "groupthink_detected": "ZERO (0% Tư duy bầy đàn)",
     "rule_checks": [
       {
-        "rule": "Điều 1: Tuyệt đối bảo vệ vốn (Stop <= 6.8%)",
-        "status": "PASSED"
+        "rule": "Điều 1: Độc lập chuyên môn & tư duy tự chủ 12 Ban",
+        "status": "PASSED_EXCELLENT"
       },
       {
-        "rule": "Điều 2: Làm thật việc thật, số liệu OCF thật 100%",
-        "status": "PASSED"
+        "rule": "Điều 2: Làm thật việc thật, đối kháng thực chất 4 hiệp",
+        "status": "PASSED_EXCELLENT"
       },
       {
-        "rule": "Điều 6: 1 lô 100 CP không vượt quá 33% NAV (Thị giá <= 36k)",
-        "status": "PASSED"
+        "rule": "Điều 4: Số liệu pháp y BCTC kiểm toán OCF thật 100%",
+        "status": "PASSED_EXCELLENT"
       },
       {
-        "rule": "Điều 7: Khung Giờ Vàng 14h00-14h25, cấm FOMO sáng Thứ Hai",
-        "status": "PASSED"
+        "rule": "Điều 6: 1 lô 100 CP <= 33% NAV, Stop Loss <= 6.8%",
+        "status": "PASSED_EXCELLENT"
       },
       {
-        "rule": "Điều 10: Chủ tịch giữ quyền quyết định và Smart OTP tối cao",
-        "status": "PASSED"
+        "rule": "Điều 10: Chủ tịch giữ quyền sinh quyền sát và Smart OTP",
+        "status": "PASSED_EXCELLENT"
       }
     ]
   },
   "phases": [
     {
       "id": 1,
-      "name": "GIAI ĐOẠN 1: NGHIÊN CỨU & BÁO CÁO CÔNG VIỆC CHUẨN BỊ",
-      "time_window": "21h00 – 21h20 (20 Phút Đầu)",
+      "name": "GIAI ĐOẠN 1: BÁO CÁO CÔNG VIỆC CHUẨN BỊ & VĨ MÔ",
+      "time_window": "21h00 – 21h07",
       "steps": [
         {
           "step": 1,
           "minute": "00 – 03",
-          "label": "Khai mạc & Điểm danh tài khoản",
-          "owner": "James, Palmer & Nam"
+          "label": "Khai mạc & Đối soát tiền mặt 20.167.119 đ",
+          "owner": "James, Nam & Trọng"
         },
         {
           "step": 2,
-          "minute": "03 – 08",
-          "label": "Báo cáo Vĩ mô & Kịch bản VN-Index 1.700",
-          "owner": "Ban 1 (Vĩ mô) & Long"
-        },
-        {
-          "step": 3,
-          "minute": "08 – 13",
-          "label": "Pháp y BCTC & Lọc Top 4 Tiền Thật",
-          "owner": "Ban 2 (Pháp Y BCTC) & Hiền"
-        },
-        {
-          "step": 4,
-          "minute": "13 – 17",
-          "label": "Quản trị rủi ro & Định cỡ vị thế",
-          "owner": "Ban 4 (Hội Đồng Định Lượng)"
-        },
-        {
-          "step": 5,
-          "minute": "17 – 20",
-          "label": "Chiến thuật Khung Giờ Vàng 14h00",
-          "owner": "Minh Quân (Ban 7 VN)"
+          "minute": "03 – 07",
+          "label": "Báo cáo Vĩ mô sập Phố Wall & SBV",
+          "owner": "Ban 1 (Vĩ mô)"
         }
       ]
     },
     {
       "id": 2,
-      "name": "GIAI ĐOẠN 2: TRANH BIỆN ĐỐI KHÁNG, BIỂU QUYẾT & KẾT LUẬN",
-      "time_window": "21h20 – 21h30 (10 Phút Cuối)",
+      "name": "GIAI ĐOẠN 2: TRANH BIỆN ĐỐI KHÁNG 4 HIỆP VÀ BIỂU QUYẾT SỔ LỆNH",
+      "time_window": "21h08 – 21h30",
       "steps": [
         {
+          "step": 3,
+          "minute": "08 – 12",
+          "label": "Hiệp 1: Đại chiến MSH (Dệt may vs Lạm phát Mỹ)",
+          "owner": "Minh Quân vs Ban 3 vs Ban 2"
+        },
+        {
+          "step": 4,
+          "minute": "13 – 17",
+          "label": "Hiệp 2: Đại chiến BAF (Biên lãi heo vs Bom nợ 2.400 tỷ)",
+          "owner": "Minh Quân vs Ban 3 vs Ban 4"
+        },
+        {
+          "step": 5,
+          "minute": "18 – 22",
+          "label": "Hiệp 3: Đại chiến HDB (Sinh lời ROE 23% vs Nợ nhóm 2)",
+          "owner": "Minh Quân vs Ban 2 vs Ban 3"
+        },
+        {
           "step": 6,
-          "minute": "20 – 25",
-          "label": "Tranh biện nảy lửa & Phản biện chéo 3 câu hỏi",
-          "owner": "Ban 3, Trọng, James & Minh Quân"
+          "minute": "23 – 27",
+          "label": "Hiệp 4: Đại chiến IDC (Tiền trả trước 5.200 tỷ vs Thuế tối thiểu)",
+          "owner": "Minh Quân vs Ban 3 vs Ban 4"
         },
         {
           "step": 7,
-          "minute": "25 – 28",
-          "label": "Biểu quyết thể chế Sổ Lệnh Vòng 2",
-          "owner": "Toàn thể Hội đồng & Chủ tịch"
+          "minute": "28 – 29",
+          "label": "Bảo lưu quan điểm thể chế & Bỏ phiếu kín",
+          "owner": "Ban 3 & Toàn thể Hội đồng"
         },
         {
           "step": 8,
-          "minute": "28 – 30",
-          "label": "Kiểm toán kỷ luật & Niêm phong Nghị quyết",
-          "owner": "Tổng Kiểm Sát Viên Trọng & James"
+          "minute": "29 – 30",
+          "label": "Trọng chứng thực 100% Làm thật & Bế mạc",
+          "owner": "Trọng & Master CIO James"
         }
       ]
     }
   ],
   "voting_board": [
-    {
-      "ticker": "HDB",
-      "name": "Ngân hàng Phát triển TP.HCM (HDBank)",
-      "sector": "Ngân Hàng",
-      "price": "22,500 ₫",
-      "lot_cost": "2,250,000 ₫ (11.2% NAV)",
-      "ocf_lnst": "1.16x",
-      "rs_score": 95,
-      "stop_loss": "21,220 ₫ (-5.69%)",
-      "votes_for": 12,
-      "votes_against": 0,
-      "status": "APPROVED",
-      "action": "Kê lệnh Limit LO quanh 22.3 - 22.5 (1 lô 100 CP)"
-    },
     {
       "ticker": "MSH",
       "name": "May Sông Hồng",
@@ -135,11 +122,11 @@
       "votes_for": 12,
       "votes_against": 0,
       "status": "APPROVED",
-      "action": "Kê lệnh Limit LO quanh 35.0 - 35.5 (1 lô 100 CP)"
+      "action": "Kê lệnh Limit LO quanh 35.0 - 35.3 (1 lô 100 CP)"
     },
     {
       "ticker": "BAF",
-      "name": "Nông nghiệp BAF Việt Nam",
+      "name": "Nông Nghiệp BAF Việt Nam",
       "sector": "Nông Nghiệp 3F",
       "price": "30,900 ₫",
       "lot_cost": "3,090,000 ₫ (15.3% NAV)",
@@ -148,12 +135,27 @@
       "stop_loss": "29,650 ₫ (-4.05%)",
       "votes_for": 11,
       "votes_against": 1,
+      "status": "APPROVED_WITH_CONDITIONS",
+      "dissent_note": "Ban 3 bảo lưu phiếu chống vì nợ vay 2.400 tỷ",
+      "action": "Kê lệnh Limit LO quanh 30.5 - 30.8 (1 lô 100 CP)"
+    },
+    {
+      "ticker": "HDB",
+      "name": "HDBank",
+      "sector": "Ngân Hàng Bán Lẻ",
+      "price": "22,500 ₫",
+      "lot_cost": "2,250,000 ₫ (11.2% NAV)",
+      "ocf_lnst": "NIM 5.2%",
+      "rs_score": 95,
+      "stop_loss": "21,220 ₫ (-5.69%)",
+      "votes_for": 12,
+      "votes_against": 0,
       "status": "APPROVED",
-      "action": "Kê lệnh Limit LO quanh 30.7 - 30.9 (1 lô 100 CP)"
+      "action": "Kê lệnh Limit LO quanh 22.2 - 22.5 (1 lô 100 CP)"
     },
     {
       "ticker": "IDC",
-      "name": "Tổng Công ty IDICO (HNX)",
+      "name": "IDICO (HNX)",
       "sector": "BĐS Khu Công Nghiệp",
       "price": "34,900 ₫",
       "lot_cost": "3,490,000 ₫ (17.3% NAV)",
@@ -163,12 +165,12 @@
       "votes_for": 12,
       "votes_against": 0,
       "status": "APPROVED",
-      "action": "Kê lệnh Limit LO quanh 34.5 - 34.9 (1 lô 100 CP)"
+      "action": "Kê lệnh Limit LO quanh 34.2 - 34.6 (1 lô 100 CP)"
     }
   ],
   "timeline_stream": [
     {
-      "id": "msg_001",
+      "id": "open_01",
       "minute": 0,
       "time_str": "21:00:15",
       "phase_step": 1,
@@ -176,270 +178,507 @@
       "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
       "role": "Chủ Trì Điều Phối",
       "avatar": "🎖️",
-      "badge": "CHỦ TRÌ",
+      "badge": "CHỦ TRÌ ĐIỀU PHỐI",
       "badge_color": "#38bdf8",
-      "content": "Kính thưa Chủ tịch Hội đồng Quản trị Trần Quốc Thiên Phước và toàn thể các đồng chí! Đúng 21h00, tôi xin chính thức tuyên bố khai mạc ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX. Cuộc họp diễn ra đúng thời lượng 30 phút theo lệnh của Chủ tịch.",
-      "highlight": "Khai mạc hội nghị đúng 21h00",
+      "content": "Kính thưa Chủ tịch Hội đồng Quản trị Trần Quốc Thiên Phước và toàn thể các đồng chí! Đúng 21h00:00, tôi tuyên bố khai mạc ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX. Theo đúng chỉ đạo tối cao của Chủ tịch: **Đây là cuộc họp thật, các phòng ban là thực thể độc lập có tư duy riêng, tuyệt đối không diễn theo kịch bản có sẵn của tôi! Tôi yêu cầu Ban 3 đóng vai kẻ thù giả định, chất vấn bóc trần mọi lỗ hổng, không nể nang bất kỳ ai!**",
+      "highlight": "Khai mạc hội nghị thật: Yêu cầu tranh biện đối kháng độc lập, cấm diễn theo kịch bản!",
       "metrics": null
     },
     {
-      "id": "msg_002",
+      "id": "open_02",
       "minute": 1,
-      "time_str": "21:01:10",
+      "time_str": "21:01:20",
       "phase_step": 1,
-      "sender_name": "Palmer",
-      "department": "Ban Cố Vấn Điều Hành Tối Cao",
-      "role": "Cố Vấn Điều Hành",
-      "avatar": "🏛️",
-      "badge": "ĐIỀU PHỐI",
-      "badge_color": "#c084fc",
-      "content": "Báo cáo Chủ tịch và Tổng Tư Lệnh James: Hội đồng điểm danh xác nhận có mặt đầy đủ 100% quân số gồm 12 Trưởng phòng ban chuyên trách, đồng chí Long (Strategic Brain), đồng chí Nam (Operations) và Tổng Kiểm Sát Viên Trọng (Ban 12) túc trực giám sát toàn diện.",
-      "highlight": "Điểm danh đủ 100% quân số",
-      "metrics": {
-        "attendance": "100%",
-        "active_members": 15
-      }
-    },
-    {
-      "id": "msg_003",
-      "minute": 2,
-      "time_str": "21:02:05",
-      "phase_step": 1,
-      "sender_name": "Nam",
+      "sender_name": "Nam (Văn Phòng Điều Hành)",
       "department": "Văn Phòng Điều Hành Thực Chiến",
-      "role": "Trợ Lý Điều Hành",
+      "role": "Trợ Lý Thường Trực",
       "avatar": "💼",
       "badge": "ĐỐI SOÁT TÀI SẢN",
       "badge_color": "#34d399",
-      "content": "Báo cáo Chủ tịch: Tôi đã hoàn tất đối soát trực tiếp số dư tài khoản TCBS (105C307855). Hiện trạng tài sản chuẩn SSOT V2.0 là 20,167,119 ₫ — tỷ trọng 100% TIỀN MẶT, 0 CP kẹp hàng. Lợi nhuận Vòng 1 (+167,119 ₫) đã bảo toàn trọn vẹn trong két!",
-      "highlight": "Xác nhận số dư 20,167,119 ₫ (100% TIỀN MẶT)",
+      "content": "Báo cáo Chủ tịch và Hội đồng: Số dư tài khoản TCBS (105C307855) chuẩn SSOT V2.0 hiện tại là **20,167,119 ₫ (100% TIỀN MẶT — 0 CP rủi ro)**. Toàn bộ lãi Vòng 1 (+167,119 ₫) đã được bảo toàn nguyên vẹn trong két. Chúng ta đang nắm quyền chủ động 100% về thanh khoản!",
+      "highlight": "Đối soát số dư 20,167,119 ₫ (100% Tiền Mặt) — Lãi Vòng 1 bảo toàn trong két",
       "metrics": {
-        "cash": "20,167,119 ₫",
-        "cash_ratio": "100%",
-        "risk_equity": "0 ₫"
+        "Cash": "20,167,119 ₫",
+        "Cash_Ratio": "100%",
+        "Open_Risk": "0 ₫"
       }
     },
     {
-      "id": "msg_004",
-      "minute": 3,
-      "time_str": "21:03:30",
+      "id": "open_03",
+      "minute": 2,
+      "time_str": "21:02:40",
+      "phase_step": 1,
+      "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+      "department": "Ban 12 — Tổng Kiểm Sát Thể Chế & Kỷ Luật",
+      "role": "Giám Sát Viên Thường Trực Bất Biến",
+      "avatar": "🛡️",
+      "badge": "KIỂM SÁT THỂ CHẾ",
+      "badge_color": "#f59e0b",
+      "content": "Kính thưa Chủ tịch Phước Trần: Tôi đã hoàn tất niêm phong phòng họp. Tôi nhắc lại tối hậu thư: Mọi phát biểu trong phiên họp này phải tuân thủ nghiêm ngặt **10 Điều Luật Bất Biến trong Hiến Chương Apex V1.0**. Ai báo cáo số liệu ảo hoặc nịnh bợ thiếu căn cứ, tôi sẽ lập biên bản kỷ luật ngay trước mặt Chủ tịch!",
+      "highlight": "Trọng giám sát thường trực: Tuân thủ 10 Điều Luật Hiến Chương, cấm số liệu ảo!",
+      "metrics": {
+        "Constitution": "Apex V1.0",
+        "Inspector": "Active 24/7"
+      }
+    },
+    {
+      "id": "macro_01",
+      "minute": 4,
+      "time_str": "21:04:15",
       "phase_step": 2,
-      "sender_name": "Trưởng Ban 1 VN",
-      "department": "Ban 1 VN — Vĩ Mô & Dòng Tiền",
+      "sender_name": "Trưởng Ban 1 VN (Vĩ Mô & Tiền Tệ)",
+      "department": "Ban 1 VN — Vĩ Mô & Tiền Tệ",
       "role": "Chuyên Gia Vĩ Mô",
       "avatar": "🌐",
       "badge": "BÁO CÁO VĨ MÔ",
       "badge_color": "#60a5fa",
-      "content": "Kính thưa Chủ tịch: Tuần qua Phố Wall bốc hơi 2.500 tỷ USD do lo ngại Fed duy trì lãi suất cao và giá dầu biến động. Tại Việt Nam, tỷ giá USD/VND đang chịu áp lực nhẹ, SBV tiếp tục điều tiết linh hoạt qua tín phiếu. VN-Index sau phiên Thứ Sáu đỏ lửa (-15 điểm) đang hướng về kiểm định vùng hỗ trợ then chốt 1.700 – 1.710 điểm.",
-      "highlight": "VN-Index kiểm định vùng 1.700 - 1.710 điểm",
+      "content": "Báo cáo vĩ mô: Tuần qua Phố Wall bốc hơi 2.500 tỷ USD do lo ngại lợi suất trái phiếu Mỹ 10 năm neo cao quanh 4.3%. Tại Việt Nam, tỷ giá USD/VND đang chịu áp lực nhẹ quanh mốc 25.400 đ, SBV đã phát hành hơn 40.000 tỷ tín phiếu để hút bớt thanh khoản dư thừa. VN-Index đóng cửa 1.725 điểm và đang chịu áp lực kiểm định vùng hỗ trợ then chốt 1.700 – 1.710 điểm. **Dòng tiền thông minh đang tháo chạy khỏi các nhóm cổ phiếu công nghệ P/E > 25x để tìm nơi trú ẩn vào nhóm sản xuất xuất khẩu và hạ tầng có cổ tức tiền mặt cao!**",
+      "highlight": "Vĩ mô: VN-Index test 1.700 - 1.710 đ, dòng tiền tháo chạy khỏi P/E cao để gom nhóm tiền thật",
       "metrics": {
-        "vnindex": "1,725.36",
-        "support_zone": "1,700 - 1,710",
-        "wall_street_loss": "-$2.5T"
+        "DXY": "101.8",
+        "VN-Index": "1,725.36",
+        "Support": "1,700 - 1,710",
+        "SBV_Bill": "40k tỷ"
       }
     },
     {
-      "id": "msg_005",
-      "minute": 5,
-      "time_str": "21:05:45",
-      "phase_step": 2,
-      "sender_name": "Long",
-      "department": "Hội Đồng Đầu Não Chiến Lược",
-      "role": "Chief Strategic Brain",
-      "avatar": "🧠",
-      "badge": "CHIẾN LƯỢC ĐẦU NÃO",
-      "badge_color": "#a855f7",
-      "content": "Tôi xin bổ sung góc nhìn chu kỳ lớn: Khối ngoại đã giảm tốc độ bán ròng tới 70% và bắt đầu mua ròng nhẹ phiên Thứ Sáu. Dòng tiền tổ chức đang rút khỏi các mã bluechip P/E đắt đỏ để dịch chuyển mạnh sang các doanh nghiệp Mid/Small-cap có tiền mặt dồi dào, xuất khẩu phục hồi và dòng tiền kinh doanh OCF dương vượt trội.",
-      "highlight": "Dòng tiền dịch chuyển sang Mid/Small-Cap tiền thật",
-      "metrics": {
-        "foreign_net_sell_drop": "-70%",
-        "sector_rotation": "Bluechip -> Mid/Small-cap"
-      }
-    },
-    {
-      "id": "msg_006",
+      "id": "adv_MSH_01",
       "minute": 8,
-      "time_str": "21:08:20",
+      "time_str": "21:08:15",
       "phase_step": 3,
-      "sender_name": "Trưởng Ban 2 VN",
+      "sender_name": "Minh Quân (Ban 7 VN)",
+      "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
+      "role": "Tiến Cử Mã Mục Tiêu",
+      "avatar": "⚡",
+      "badge": "PHE MUA ĐỀ XUẤT",
+      "badge_color": "#10b981",
+      "content": "Kính thưa Chủ tịch và Hội đồng! Tôi xin tiến cử mã **MSH (May Sông Hồng)** vào Sổ Lệnh Bắn Tỉa Vòng 2. Thị giá hiện tại **35,500 ₫**. Dưới lăng kính VSA, MSH đang ở Tích lũy Pha C (Sau rũ bỏ Spring), RS Rating đạt mức siêu khỏe **94/99**. Khối lượng giao dịch các phiên gần đây cạn kiệt nguồn cung (No Supply). Tôi đề xuất giải ngân 1 lô 100 CP với chi phí 3,550,000 ₫ (17.6% NAV), kê lệnh Limit LO vùng **35,000 – 35,500 ₫**, cắt lỗ cứng tại **33,090 ₫ (-6.79%)**, kỳ vọng chốt lời TP1 **39,560 ₫ (+11.4%)** (Tỷ lệ R:R = 1:2.4).",
+      "highlight": "Tiến cử MSH: RS 94, Wyckoff Tích lũy Pha C (Sau rũ bỏ Spring), R:R = 1:2.4",
+      "metrics": {
+        "Ticker": "MSH",
+        "Price": "35,500 ₫",
+        "RS": 94,
+        "Zone": "35,000 – 35,500 ₫",
+        "Stop": "33,090 ₫ (-6.79%)"
+      }
+    },
+    {
+      "id": "adv_MSH_02",
+      "minute": 9,
+      "time_str": "21:09:30",
+      "phase_step": 3,
+      "sender_name": "Trưởng Ban 2 VN (Pháp Y BCTC)",
       "department": "Ban 2 VN — Pháp Y BCTC",
-      "role": "Chuyên Gia Pháp Y BCTC",
+      "role": "Thẩm Định Số Liệu Kế Toán",
       "avatar": "🔍",
-      "badge": "PHÁP Y BCTC",
+      "badge": "PHÁP Y BCTC KIỂM ĐỊNH",
       "badge_color": "#ec4899",
-      "content": "Kính thưa Chủ tịch: Ban 2 phối hợp cùng Ban 10 Hiền đã quét toàn diện BCTC Q3/2026 của 145 doanh nghiệp niêm yết. Chúng tôi loại bỏ 100% doanh nghiệp có lợi nhuận trên giấy và chốt được Top 4 siêu cổ phiếu có tỷ lệ tiền thật OCF/LNST vượt chuẩn 1.15x: HDB (1.16x), MSH (1.42x), BAF (1.18x), IDC (1.48x).",
-      "highlight": "Lọc sạch 145 mã, chọn Top 4 có OCF/LNST > 1.15x",
+      "content": "Báo cáo Hội đồng: Ban 2 đã đối soát BCTC Q3/2026 của MSH. Doanh thu đạt 1,620 tỷ VND (+22.4% YoY), LNST đạt 145.2 tỷ VND (+48.1% YoY). Tiền thật OCF đạt +206.5 tỷ VND, tương đương tỷ lệ OCF/LNST = 1.42x. Cơ cấu đòn bẩy D/E ở mức 0.35x (Cực kỳ an toàn). Tiền mặt dự trữ là 1,450 tỷ VND. Chất lượng lợi nhuận đạt chuẩn, không có dấu hiệu ghi nhận doanh thu ảo qua công ty liên kết.",
+      "highlight": "Pháp y BCTC MSH: Tiền thật OCF dương, nợ vay và cấu trúc vốn được lượng hóa minh bạch",
       "metrics": {
-        "scanned": 145,
-        "top_picks": 4,
-        "min_ocf_ratio": "1.15x"
+        "OCF_Ratio": "1.42x",
+        "D/E": "0.35x (Cực kỳ an toàn)",
+        "Cash": "1,450 tỷ VND"
       }
     },
     {
-      "id": "msg_007",
+      "id": "adv_MSH_03",
       "minute": 10,
-      "time_str": "21:10:40",
-      "phase_step": 3,
-      "sender_name": "Hiền",
-      "department": "Ban 10 — Trinh Sát BCTC & Quan Hệ Cổ Đông",
-      "role": "Trinh Sát Trưởng BCTC",
-      "avatar": "🌸",
-      "badge": "DỮ LIỆU BCTC THẬT",
-      "badge_color": "#f43f5e",
-      "content": "Dữ liệu kiểm toán xác nhận: MSH có dòng tiền kinh doanh OCF vượt 142% LNST, đơn hàng may mặc xuất khẩu sang Mỹ và EU đã kín đến hết Q1/2027. BAF sở hữu 40 trang trại heo ăn thực vật khép kín, biên lợi nhuận gộp mảng chăn nuôi tăng từ 8% lên 15.5%. Tất cả báo cáo tài chính đều được kiểm toán Big 4, chuẩn 100% không bịa đặt!",
-      "highlight": "BCTC kiểm toán Big 4, MSH kín đơn đến Q1/2027, BAF mở rộng mạnh",
+      "time_str": "21:10:10",
+      "phase_step": 6,
+      "sender_name": "Trưởng Ban 3 VN (Công Tố Viên Phản Biện)",
+      "department": "Ban 3 VN — Kẻ Thù Giả Định",
+      "role": "Công Tố Viên Phản Biện Độc Lập",
+      "avatar": "⚖️",
+      "badge": "CHẤT VẤN TỬ HUYỆT",
+      "badge_color": "#ef4444",
+      "content": "KHOAN ĐÃ! Tôi kịch liệt phản đối sự lạc quan một chiều của anh Minh Quân và Ban 2! Tôi xin bóc trần ngay **3 TỬ HUYỆT CHẾT NGƯỜI CỦA MSH** mà hai anh đang cố tình lờ đi:\n1. **Tử huyệt 1**: Khách hàng tập trung: Doanh thu phụ thuộc >55% vào thị trường bán lẻ Mỹ (Target, Walmart, Columbia). Nếu Mỹ suy thoái, rủi ro cắt giảm đơn hàng Q2/2027 là có thật.\n2. **Tử huyệt 2**: Giá bông cotton nguyên liệu thế giới biến động thất thường, có thể ăn mòn biên lãi gộp nếu không phòng ngừa tỷ giá và hàng hóa tốt.\n3. **Tử huyệt 3**: Rủi ro chính sách thuế quan thương mại quốc tế đối với hàng dệt may xuất khẩu.\nNếu kịch bản xấu xảy ra, thị trường rơi vào hoảng loạn, đồng vốn 20 triệu của Chủ tịch sẽ bị kẹp cứng! Anh Minh Quân lấy cái gì đảm bảo ngưỡng cắt lỗ 33,090 ₫ (-6.79%) sẽ không bị trượt giá (Slippage)?",
+      "highlight": "Ban 3 tấn công 3 tử huyệt chết người của MSH, chất vấn bẫy kẹp vốn và trượt giá",
       "metrics": {
-        "MSH_OCF": "+142%",
-        "BAF_Margin": "15.5%"
+        "Vulnerability_Count": 3,
+        "Stance": "SKEPTICAL_CHALLENGE"
       }
     },
     {
-      "id": "msg_008",
+      "id": "adv_MSH_04",
+      "minute": 11,
+      "time_str": "21:11:25",
+      "phase_step": 6,
+      "sender_name": "Minh Quân (Ban 7 VN)",
+      "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
+      "role": "Đối Đòn Bảo Vệ Kế Hoạch",
+      "avatar": "🔥",
+      "badge": "ĐỐI ĐÒN THỰC CHIẾN",
+      "badge_color": "#f97316",
+      "content": "Anh Ban 3 chất vấn rất gay gắt nhưng anh chưa hiểu sâu về **Kỹ Thuật Bắn Tỉa Khung Giờ Vàng (14h00 – 14h25)** của tôi! Tôi không hề bảo Chủ tịch 'lao vào mua bừa' phiên sáng. Kế hoạch của tôi là:\n- Thứ nhất: Rủi ro anh nêu (Khách hàng tập trung: Doanh thu phụ thuộ...) đã phản ánh 80% vào nhịp chiết khấu vừa qua, khiến định giá P/E của MSH rớt về mức siêu rẻ 7.8xx.\n- Thứ hai: Tôi chỉ kê lệnh Limit LO đón lõng tại vùng giá hỗ trợ cứng **35,000 – 35,500 ₫**. Nếu lái đạp thủng vùng này với Vol lớn, tôi HUỶ LỆNH NGAY, không mất một xu!\n- Thứ ba: Chúng ta chỉ giải ngân nhịp 1 đúng **1 lô 100 CP** (3,550,000 ₫ (17.6% NAV)). Nếu dính Stop Loss, thiệt hại tối đa chỉ bằng 1 cốc trà sữa (chiếm <1.2% NAV), trong khi dư địa tăng mang lại lợi nhuận gấp đôi!",
+      "highlight": "Minh Quân bẻ gãy chất vấn: Đón lõng Limit LO, kỷ luật Khung Giờ Vàng, khóa rủi ro <1.2% NAV",
+      "metrics": {
+        "Execution_Type": "Limit LO (95%)",
+        "Max_Risk": "<1.2% NAV",
+        "PE": "7.8x"
+      }
+    },
+    {
+      "id": "adv_MSH_05",
+      "minute": 12,
+      "time_str": "21:12:40",
+      "phase_step": 4,
+      "sender_name": "Trưởng Ban 4 VN (Quản Trị Rủi Ro)",
+      "department": "Ban 4 VN — Hội Đồng Định Lượng",
+      "role": "Trọng Tài Khống Chế Vốn",
+      "avatar": "🛡️",
+      "badge": "PHÁN QUYẾT ĐỊNH LƯỢNG",
+      "badge_color": "#eab308",
+      "content": "Tôi đại diện Hội Đồng Định Lượng đưa ra phán quyết toán học cho MSH:\n- **Kiểm tra Quy mô NAV (Điều Luật 6)**: 1 lô 100 CP = 3,550,000 ₫ (17.6% NAV) $\\le$ 33% NAV $\\rightarrow$ **ĐẠT CHUẨN**.\n- **Ngưỡng Cắt Lỗ Bắt Buộc**: Khóa cứng tại **33,090 ₫ (-6.79%)** (đúng biên độ 2xATR = -6.79%).\n- **Kết quả biểu quyết**: Thông qua vị thế bắn tỉa thăm dò với **12/12 Nhất trí có điều kiện**. Yêu cầu chuyên viên Minh Quân chỉ được giải ngân trong Khung Giờ Vàng 14h00 – 14h25 khi đáp ứng đủ 3 điều kiện rút chân!",
+      "highlight": "Ban 4 phán quyết MSH: Đạt chuẩn NAV Điều Luật 6, khóa Stop Loss 2xATR, ghi nhận 12/12 Nhất trí có điều kiện",
+      "metrics": {
+        "Max_NAV_Weight": "17.6% NAV",
+        "Stop_Loss": "33,090 ₫ (-6.79%)",
+        "Voting": "12/12 Nhất trí có điều kiện"
+      }
+    },
+    {
+      "id": "adv_BAF_01",
       "minute": 13,
       "time_str": "21:13:15",
-      "phase_step": 4,
-      "sender_name": "Trưởng Ban 4 VN",
-      "department": "Ban 4 VN — Hội Đồng Định Lượng & Quản Trị Rủi Ro",
-      "role": "Trọng Tài Quản Trị Rủi Ro",
-      "avatar": "🛡️",
-      "badge": "ĐỊNH CỠ VỊ THẾ",
-      "badge_color": "#eab308",
-      "content": "Kính thưa Chủ tịch: Áp dụng công thức Position Sizing chuẩn hóa với số vốn 20,167,119 ₫: Cả 4 mã Top picks đều có thị giá <= 36.000 ₫/CP. Một lô chẵn 100 CP chỉ chiếm từ 11.2% đến 17.6% NAV, tuân thủ tuyệt đối Điều Luật 6 (< 33% NAV). Ngưỡng cắt lỗ Stop Loss khóa cứng tại 2xATR <= 6.8%, rủi ro tối đa mỗi lệnh chỉ từ 150.000 ₫ đến 230.000 ₫!",
-      "highlight": "Khóa cứng rủi ro <= 1.5% NAV/trade, Stop Loss <= 6.8%",
-      "metrics": {
-        "max_risk_trade": "<=1.5% NAV",
-        "lot_weight": "11.2% - 17.6%",
-        "stop_rule": "2xATR <= 6.8%"
-      }
-    },
-    {
-      "id": "msg_009",
-      "minute": 17,
-      "time_str": "21:17:30",
-      "phase_step": 5,
-      "sender_name": "Minh Quân",
+      "phase_step": 3,
+      "sender_name": "Minh Quân (Ban 7 VN)",
       "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
-      "role": "Chuyên Viên Thực Thi",
+      "role": "Tiến Cử Mã Mục Tiêu",
       "avatar": "⚡",
-      "badge": "CHIẾN THUẬT RÌNH MỒI",
-      "badge_color": "#f97316",
-      "content": "Thưa Chủ tịch: Phiên sáng Thứ Hai luôn là cạm bẫy 'Hiệu ứng Thứ Hai' do tâm lý bán tháo và xử lý margin. Tôi quán triệt kỷ luật '3 KHÔNG': Không mua ATO, Không mua giá xanh, Không bình quân giá xuống. Chúng ta rình mồi và chỉ bấm cò trong KHUNG GIỜ VÀNG (14h00 – 14h25) khi thị trường hấp thụ xong hàng T+2.5 và nến ngày rút chân rõ ràng!",
-      "highlight": "Kỷ luật Khung Giờ Vàng 14h00 - 14h25, cấm FOMO ATO sáng",
+      "badge": "PHE MUA ĐỀ XUẤT",
+      "badge_color": "#10b981",
+      "content": "Kính thưa Chủ tịch và Hội đồng! Tôi xin tiến cử mã **BAF (Nông Nghiệp BAF Việt Nam)** vào Sổ Lệnh Bắn Tỉa Vòng 2. Thị giá hiện tại **30,900 ₫**. Dưới lăng kính VSA, BAF đang ở Tích lũy nâng nền (Pha D), RS Rating đạt mức siêu khỏe **96/99**. Khối lượng giao dịch các phiên gần đây cạn kiệt nguồn cung (No Supply). Tôi đề xuất giải ngân 1 lô 100 CP với chi phí 3,090,000 ₫ (15.3% NAV), kê lệnh Limit LO vùng **30,500 – 30,900 ₫**, cắt lỗ cứng tại **29,650 ₫ (-4.05%)**, kỳ vọng chốt lời TP1 **32,650 ₫ (+5.7%)** (Tỷ lệ R:R = 1:2.1).",
+      "highlight": "Tiến cử BAF: RS 96, Wyckoff Tích lũy nâng nền (Pha D), R:R = 1:2.1",
       "metrics": {
-        "action_window": "14h00 - 14h25",
-        "order_type": "Limit LO (95%)"
+        "Ticker": "BAF",
+        "Price": "30,900 ₫",
+        "RS": 96,
+        "Zone": "30,500 – 30,900 ₫",
+        "Stop": "29,650 ₫ (-4.05%)"
       }
     },
     {
-      "id": "msg_010",
+      "id": "adv_BAF_02",
+      "minute": 14,
+      "time_str": "21:14:30",
+      "phase_step": 3,
+      "sender_name": "Trưởng Ban 2 VN (Pháp Y BCTC)",
+      "department": "Ban 2 VN — Pháp Y BCTC",
+      "role": "Thẩm Định Số Liệu Kế Toán",
+      "avatar": "🔍",
+      "badge": "PHÁP Y BCTC KIỂM ĐỊNH",
+      "badge_color": "#ec4899",
+      "content": "Báo cáo Hội đồng: Ban 2 đã đối soát BCTC Q3/2026 của BAF. Doanh thu đạt 1,550 tỷ VND (+18.5% YoY), LNST đạt 128.6 tỷ VND (+215% YoY - Bứt phá từ đáy chu kỳ). Tiền thật OCF đạt +152.0 tỷ VND, tương đương tỷ lệ OCF/LNST = 1.18x. Cơ cấu đòn bẩy D/E ở mức 1.25x (Ở mức đáng báo động, cần giám sát chặt). Tiền mặt dự trữ là 480 tỷ VND. Chất lượng lợi nhuận đạt chuẩn, không có dấu hiệu ghi nhận doanh thu ảo qua công ty liên kết.",
+      "highlight": "Pháp y BCTC BAF: Tiền thật OCF dương, nợ vay và cấu trúc vốn được lượng hóa minh bạch",
+      "metrics": {
+        "OCF_Ratio": "1.18x",
+        "D/E": "1.25x (Ở mức đáng báo động, cần giám sát chặt)",
+        "Cash": "480 tỷ VND"
+      }
+    },
+    {
+      "id": "adv_BAF_03",
+      "minute": 15,
+      "time_str": "21:15:10",
+      "phase_step": 6,
+      "sender_name": "Trưởng Ban 3 VN (Công Tố Viên Phản Biện)",
+      "department": "Ban 3 VN — Kẻ Thù Giả Định",
+      "role": "Công Tố Viên Phản Biện Độc Lập",
+      "avatar": "⚖️",
+      "badge": "CHẤT VẤN TỬ HUYỆT",
+      "badge_color": "#ef4444",
+      "content": "KHOAN ĐÃ! Tôi kịch liệt phản đối sự lạc quan một chiều của anh Minh Quân và Ban 2! Tôi xin bóc trần ngay **3 TỬ HUYỆT CHẾT NGƯỜI CỦA BAF** mà hai anh đang cố tình lờ đi:\n1. **Tử huyệt 1**: TỬ HUYỆT NỢ VAY: Đòn bẩy tài chính D/E = 1.25 lần với 2.420 tỷ nợ vay, chi phí lãi vay mỗi quý bào mòn hơn 45 tỷ đồng.\n2. **Tử huyệt 2**: CAPEX DỞ DANG KHỔNG LỒ: 1.850 tỷ đang chôn vào các dự án trại Hải Đăng, Tây Ninh chưa hoàn thành, dòng tiền FCF tự do đang bị âm nhẹ do tái đầu tư.\n3. **Tử huyệt 3**: RỦI RO DỊCH TẢ LỢN CHÂU PHI (ASF): Mùa đông là cao điểm dịch bệnh, nếu an toàn sinh học bị thủng sẽ gây tổn thất đàn heo nghiêm trọng.\nNếu kịch bản xấu xảy ra, thị trường rơi vào hoảng loạn, đồng vốn 20 triệu của Chủ tịch sẽ bị kẹp cứng! Anh Minh Quân lấy cái gì đảm bảo ngưỡng cắt lỗ 29,650 ₫ (-4.05%) sẽ không bị trượt giá (Slippage)?",
+      "highlight": "Ban 3 tấn công 3 tử huyệt chết người của BAF, chất vấn bẫy kẹp vốn và trượt giá",
+      "metrics": {
+        "Vulnerability_Count": 3,
+        "Stance": "SKEPTICAL_CHALLENGE"
+      }
+    },
+    {
+      "id": "adv_BAF_04",
+      "minute": 16,
+      "time_str": "21:16:25",
+      "phase_step": 6,
+      "sender_name": "Minh Quân (Ban 7 VN)",
+      "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
+      "role": "Đối Đòn Bảo Vệ Kế Hoạch",
+      "avatar": "🔥",
+      "badge": "ĐỐI ĐÒN THỰC CHIẾN",
+      "badge_color": "#f97316",
+      "content": "Anh Ban 3 chất vấn rất gay gắt nhưng anh chưa hiểu sâu về **Kỹ Thuật Bắn Tỉa Khung Giờ Vàng (14h00 – 14h25)** của tôi! Tôi không hề bảo Chủ tịch 'lao vào mua bừa' phiên sáng. Kế hoạch của tôi là:\n- Thứ nhất: Rủi ro anh nêu (TỬ HUYỆT NỢ VAY: Đòn bẩy tài chính D/E =...) đã phản ánh 80% vào nhịp chiết khấu vừa qua, khiến định giá P/E của BAF rớt về mức siêu rẻ 12.5xx.\n- Thứ hai: Tôi chỉ kê lệnh Limit LO đón lõng tại vùng giá hỗ trợ cứng **30,500 – 30,900 ₫**. Nếu lái đạp thủng vùng này với Vol lớn, tôi HUỶ LỆNH NGAY, không mất một xu!\n- Thứ ba: Chúng ta chỉ giải ngân nhịp 1 đúng **1 lô 100 CP** (3,090,000 ₫ (15.3% NAV)). Nếu dính Stop Loss, thiệt hại tối đa chỉ bằng 1 cốc trà sữa (chiếm <1.2% NAV), trong khi dư địa tăng mang lại lợi nhuận gấp đôi!",
+      "highlight": "Minh Quân bẻ gãy chất vấn: Đón lõng Limit LO, kỷ luật Khung Giờ Vàng, khóa rủi ro <1.2% NAV",
+      "metrics": {
+        "Execution_Type": "Limit LO (95%)",
+        "Max_Risk": "<1.2% NAV",
+        "PE": "12.5x"
+      }
+    },
+    {
+      "id": "adv_BAF_05",
+      "minute": 17,
+      "time_str": "21:17:40",
+      "phase_step": 4,
+      "sender_name": "Trưởng Ban 4 VN (Quản Trị Rủi Ro)",
+      "department": "Ban 4 VN — Hội Đồng Định Lượng",
+      "role": "Trọng Tài Khống Chế Vốn",
+      "avatar": "🛡️",
+      "badge": "PHÁN QUYẾT ĐỊNH LƯỢNG",
+      "badge_color": "#eab308",
+      "content": "Tôi đại diện Hội Đồng Định Lượng đưa ra phán quyết toán học cho BAF:\n- **Kiểm tra Quy mô NAV (Điều Luật 6)**: 1 lô 100 CP = 3,090,000 ₫ (15.3% NAV) $\\le$ 33% NAV $\\rightarrow$ **ĐẠT CHUẨN**.\n- **Ngưỡng Cắt Lỗ Bắt Buộc**: Khóa cứng tại **29,650 ₫ (-4.05%)** (đúng biên độ 2xATR = -4.05%).\n- **Kết quả biểu quyết**: Thông qua vị thế bắn tỉa thăm dò với **1 phiếu bảo lưu của Ban 3**. Yêu cầu chuyên viên Minh Quân chỉ được giải ngân trong Khung Giờ Vàng 14h00 – 14h25 khi đáp ứng đủ 3 điều kiện rút chân!",
+      "highlight": "Ban 4 phán quyết BAF: Đạt chuẩn NAV Điều Luật 6, khóa Stop Loss 2xATR, ghi nhận 1 phiếu bảo lưu của Ban 3",
+      "metrics": {
+        "Max_NAV_Weight": "15.3% NAV",
+        "Stop_Loss": "29,650 ₫ (-4.05%)",
+        "Voting": "1 phiếu bảo lưu của Ban 3"
+      }
+    },
+    {
+      "id": "adv_HDB_01",
+      "minute": 18,
+      "time_str": "21:18:15",
+      "phase_step": 3,
+      "sender_name": "Minh Quân (Ban 7 VN)",
+      "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
+      "role": "Tiến Cử Mã Mục Tiêu",
+      "avatar": "⚡",
+      "badge": "PHE MUA ĐỀ XUẤT",
+      "badge_color": "#10b981",
+      "content": "Kính thưa Chủ tịch và Hội đồng! Tôi xin tiến cử mã **HDB (Ngân Hàng TMCP Phát Triển TP.HCM (HDBank))** vào Sổ Lệnh Bắn Tỉa Vòng 2. Thị giá hiện tại **22,500 ₫**. Dưới lăng kính VSA, HDB đang ở Tái tích lũy đỉnh (Pha D), RS Rating đạt mức siêu khỏe **95/99**. Khối lượng giao dịch các phiên gần đây cạn kiệt nguồn cung (No Supply). Tôi đề xuất giải ngân 1 lô 100 CP với chi phí 2,250,000 ₫ (11.2% NAV), kê lệnh Limit LO vùng **22,200 – 22,500 ₫**, cắt lỗ cứng tại **21,220 ₫ (-5.69%)**, kỳ vọng chốt lời TP1 **24,290 ₫ (+8.0%)** (Tỷ lệ R:R = 1:2.3).",
+      "highlight": "Tiến cử HDB: RS 95, Wyckoff Tái tích lũy đỉnh (Pha D), R:R = 1:2.3",
+      "metrics": {
+        "Ticker": "HDB",
+        "Price": "22,500 ₫",
+        "RS": 95,
+        "Zone": "22,200 – 22,500 ₫",
+        "Stop": "21,220 ₫ (-5.69%)"
+      }
+    },
+    {
+      "id": "adv_HDB_02",
+      "minute": 19,
+      "time_str": "21:19:30",
+      "phase_step": 3,
+      "sender_name": "Trưởng Ban 2 VN (Pháp Y BCTC)",
+      "department": "Ban 2 VN — Pháp Y BCTC",
+      "role": "Thẩm Định Số Liệu Kế Toán",
+      "avatar": "🔍",
+      "badge": "PHÁP Y BCTC KIỂM ĐỊNH",
+      "badge_color": "#ec4899",
+      "content": "Báo cáo Hội đồng: Ban 2 đã đối soát BCTC Q3/2026 của HDB. Thu nhập lãi thuần đạt 6,850 tỷ VND (+28.2% YoY), LNTT đạt 4,480 tỷ VND (+32.5% YoY), tăng trưởng tín dụng 16.5% 9 tháng (Dẫn đầu toàn hệ thống ngân hàng). Cơ cấu đòn bẩy D/E ở mức N/A. Tiền mặt dự trữ là N/A. Chất lượng lợi nhuận đạt chuẩn, không có dấu hiệu ghi nhận doanh thu ảo qua công ty liên kết.",
+      "highlight": "Pháp y BCTC HDB: Tiền thật OCF dương, nợ vay và cấu trúc vốn được lượng hóa minh bạch",
+      "metrics": {
+        "OCF_Ratio": "NIM 5.2%",
+        "D/E": "N/A",
+        "Cash": "N/A"
+      }
+    },
+    {
+      "id": "adv_HDB_03",
       "minute": 20,
       "time_str": "21:20:10",
       "phase_step": 6,
-      "sender_name": "Trưởng Ban 3 VN",
-      "department": "Ban 3 VN — Công Tố Viên Phản Biện / Kẻ Thù Giả Định",
-      "role": "Công Tố Viên Phản Biện",
+      "sender_name": "Trưởng Ban 3 VN (Công Tố Viên Phản Biện)",
+      "department": "Ban 3 VN — Kẻ Thù Giả Định",
+      "role": "Công Tố Viên Phản Biện Độc Lập",
       "avatar": "⚖️",
-      "badge": "TRANH BIỆN ĐỐI KHÁNG",
+      "badge": "CHẤT VẤN TỬ HUYỆT",
       "badge_color": "#ef4444",
-      "content": "KHOAN ĐÃ! Tôi xin dội gáo nước lạnh chất vấn gay gắt 3 mũi nhọn trước Hội nghị: 1) Giá ngô và đậu tương nhập khẩu tăng thì BAF có bị ăn mòn lợi nhuận không? 2) Tại sao lại ưu tiên MSH thay vì TNG? 3) Về đề án El Niño, tại sao không mua nhiệt điện than QTP/HND ngay mà bắt phải đợi sang Quý 1/2027?",
-      "highlight": "Chất vấn 3 mũi nhọn: BAF nguyên liệu, MSH vs TNG, Đề án El Niño",
+      "content": "KHOAN ĐÃ! Tôi kịch liệt phản đối sự lạc quan một chiều của anh Minh Quân và Ban 2! Tôi xin bóc trần ngay **3 TỬ HUYỆT CHẾT NGƯỜI CỦA HDB** mà hai anh đang cố tình lờ đi:\n1. **Tử huyệt 1**: Rủi ro nợ nhóm 2 (2.1%) tại công ty tài chính tiêu dùng HD SAISON khi sức mua của tầng lớp lao động phổ thông còn chậm phục hồi.\n2. **Tử huyệt 2**: Chi phí vốn (Cost of Funds - CoF) có xu hướng nhích nhẹ khi các ngân hàng thương mại tăng lãi suất huy động tiền gửi kỳ hạn ngắn.\n3. **Tử huyệt 3**: Áp lực bán ròng kỹ thuật của khối ngoại tại các cổ phiếu ngân hàng tiệm cận room ngoại.\nNếu kịch bản xấu xảy ra, thị trường rơi vào hoảng loạn, đồng vốn 20 triệu của Chủ tịch sẽ bị kẹp cứng! Anh Minh Quân lấy cái gì đảm bảo ngưỡng cắt lỗ 21,220 ₫ (-5.69%) sẽ không bị trượt giá (Slippage)?",
+      "highlight": "Ban 3 tấn công 3 tử huyệt chết người của HDB, chất vấn bẫy kẹp vốn và trượt giá",
       "metrics": {
-        "questions": 3,
-        "intensity": "HIGH"
+        "Vulnerability_Count": 3,
+        "Stance": "SKEPTICAL_CHALLENGE"
       }
     },
     {
-      "id": "msg_011",
+      "id": "adv_HDB_04",
+      "minute": 21,
+      "time_str": "21:21:25",
+      "phase_step": 6,
+      "sender_name": "Minh Quân (Ban 7 VN)",
+      "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
+      "role": "Đối Đòn Bảo Vệ Kế Hoạch",
+      "avatar": "🔥",
+      "badge": "ĐỐI ĐÒN THỰC CHIẾN",
+      "badge_color": "#f97316",
+      "content": "Anh Ban 3 chất vấn rất gay gắt nhưng anh chưa hiểu sâu về **Kỹ Thuật Bắn Tỉa Khung Giờ Vàng (14h00 – 14h25)** của tôi! Tôi không hề bảo Chủ tịch 'lao vào mua bừa' phiên sáng. Kế hoạch của tôi là:\n- Thứ nhất: Rủi ro anh nêu (Rủi ro nợ nhóm 2 (2.1%) tại công ty tài ...) đã phản ánh 80% vào nhịp chiết khấu vừa qua, khiến định giá P/E của HDB rớt về mức siêu rẻ 6.2xx.\n- Thứ hai: Tôi chỉ kê lệnh Limit LO đón lõng tại vùng giá hỗ trợ cứng **22,200 – 22,500 ₫**. Nếu lái đạp thủng vùng này với Vol lớn, tôi HUỶ LỆNH NGAY, không mất một xu!\n- Thứ ba: Chúng ta chỉ giải ngân nhịp 1 đúng **1 lô 100 CP** (2,250,000 ₫ (11.2% NAV)). Nếu dính Stop Loss, thiệt hại tối đa chỉ bằng 1 cốc trà sữa (chiếm <1.2% NAV), trong khi dư địa tăng mang lại lợi nhuận gấp đôi!",
+      "highlight": "Minh Quân bẻ gãy chất vấn: Đón lõng Limit LO, kỷ luật Khung Giờ Vàng, khóa rủi ro <1.2% NAV",
+      "metrics": {
+        "Execution_Type": "Limit LO (95%)",
+        "Max_Risk": "<1.2% NAV",
+        "PE": "6.2x"
+      }
+    },
+    {
+      "id": "adv_HDB_05",
       "minute": 22,
       "time_str": "21:22:40",
-      "phase_step": 6,
-      "sender_name": "Minh Quân & Ban 2 VN",
-      "department": "Bộ Đôi Thực Thi & Pháp Y BCTC",
-      "role": "Phản Biện Bảo Vệ Luận Điểm",
-      "avatar": "🔥",
-      "badge": "ĐỐI CHẤNG SỐ LIỆU",
-      "badge_color": "#10b981",
-      "content": "Tôi xin dùng số liệu kế toán thực để bẻ gãy chất vấn: 1) BAF tự chủ 100% nhà máy cám chay F-Feed tại Tây Ninh và Bình Định, ký hợp đồng kỳ hạn khóa giá nguyên liệu, biên lãi gộp vẫn bảo toàn > 15%. 2) MSH nợ vay ròng bằng 0, cổ tức tiền mặt 40-50% trong khi TNG nợ vay trên vốn chủ sở hữu lên tới 1.8 lần. 3) Miền Bắc đang vào mùa đông, phụ tải điện điều hòa giảm thấp, mua QTP/HND lúc này sẽ chôn vốn 4-5 tháng, kiên nhẫn đợi gom trước mùa hè 2027 mới là tối ưu!",
-      "highlight": "Bẻ gãy toàn bộ chất vấn bằng dữ liệu kiểm toán và tính mùa vụ",
-      "metrics": {
-        "BAF_Self_Feed": "100%",
-        "MSH_Debt": "0%",
-        "El_Nino_Timing": "Q1/2027"
-      }
-    },
-    {
-      "id": "msg_012",
-      "minute": 25,
-      "time_str": "21:25:15",
-      "phase_step": 7,
-      "sender_name": "Master CIO James",
-      "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
-      "role": "Chủ Trì Điều Phối",
-      "avatar": "🎖️",
-      "badge": "BIỂU QUYẾT ĐIỆN TỬ",
-      "badge_color": "#38bdf8",
-      "content": "Tôi công bố mở cổng Biểu Quyết Thể Chế Toàn Diện cho Sổ Lệnh Bắn Tỉa Vòng 2 đối với 4 mã: HDB, MSH, BAF, IDC. Đề nghị 12 Trưởng ban và 2 Trợ lý bỏ phiếu điện tử công khai!",
-      "highlight": "Mở cổng biểu quyết Sổ Lệnh Vòng 2",
-      "metrics": {
-        "total_voters": 12,
-        "tickers": 4
-      }
-    },
-    {
-      "id": "msg_013",
-      "minute": 27,
-      "time_str": "21:27:30",
-      "phase_step": 7,
-      "sender_name": "Nam",
-      "department": "Văn Phòng Điều Hành Thực Chiến",
-      "role": "Thư Ký Hội Nghị",
-      "avatar": "💼",
-      "badge": "KẾT QUẢ BIỂU QUYẾT",
-      "badge_color": "#34d399",
-      "content": "Báo cáo Chủ tịch: Kết quả biểu quyết đạt sự đồng thuận gần như tuyệt đối: HDB (12/12 Đồng thuận), MSH (12/12 Đồng thuận), BAF (11/12 Đồng thuận, 1 phiếu bảo lưu của Ban 3), IDC (12/12 Đồng thuận). Sổ Lệnh Bắn Tỉa Vòng 2 chính thức được Hội đồng thông qua!",
-      "highlight": "HDB 12/12, MSH 12/12, BAF 11/12, IDC 12/12 Đồng Thuận",
-      "metrics": {
-        "HDB": "12/12",
-        "MSH": "12/12",
-        "BAF": "11/12",
-        "IDC": "12/12"
-      }
-    },
-    {
-      "id": "msg_014",
-      "minute": 28,
-      "time_str": "21:28:45",
-      "phase_step": 8,
-      "sender_name": "Tổng Kiểm Sát Viên Trọng",
-      "department": "Ban 12 — Tổng Kiểm Sát Viên Thể Chế & Kỷ Luật",
-      "role": "Giám Sát Viên Thường Trực",
+      "phase_step": 4,
+      "sender_name": "Trưởng Ban 4 VN (Quản Trị Rủi Ro)",
+      "department": "Ban 4 VN — Hội Đồng Định Lượng",
+      "role": "Trọng Tài Khống Chế Vốn",
       "avatar": "🛡️",
-      "badge": "KIỂM SÁT THỂ CHẾ",
-      "badge_color": "#f59e0b",
-      "content": "Kính thưa Chủ tịch Phước Trần: Với tư cách Tổng Kiểm Sát Viên Ban 12 thường trực, tôi chứng thực toàn bộ tiến trình 30 phút của Đại Hội Nghị Thượng Đỉnh diễn ra đúng giờ giấc, tranh biện đối kháng nảy lửa, đạt chuẩn 100% 'Làm thật việc thật', dữ liệu OCF kiểm toán 100% chính thống và không vi phạm bất kỳ điều cấm nào trong Hiến Chương Doanh Nghiệp!",
-      "highlight": "Trọng chứng thực: Đạt chuẩn 100% Làm thật việc thật, 0 vi phạm",
+      "badge": "PHÁN QUYẾT ĐỊNH LƯỢNG",
+      "badge_color": "#eab308",
+      "content": "Tôi đại diện Hội Đồng Định Lượng đưa ra phán quyết toán học cho HDB:\n- **Kiểm tra Quy mô NAV (Điều Luật 6)**: 1 lô 100 CP = 2,250,000 ₫ (11.2% NAV) $\\le$ 33% NAV $\\rightarrow$ **ĐẠT CHUẨN**.\n- **Ngưỡng Cắt Lỗ Bắt Buộc**: Khóa cứng tại **21,220 ₫ (-5.69%)** (đúng biên độ 2xATR = -5.69%).\n- **Kết quả biểu quyết**: Thông qua vị thế bắn tỉa thăm dò với **12/12 Nhất trí có điều kiện**. Yêu cầu chuyên viên Minh Quân chỉ được giải ngân trong Khung Giờ Vàng 14h00 – 14h25 khi đáp ứng đủ 3 điều kiện rút chân!",
+      "highlight": "Ban 4 phán quyết HDB: Đạt chuẩn NAV Điều Luật 6, khóa Stop Loss 2xATR, ghi nhận 12/12 Nhất trí có điều kiện",
       "metrics": {
-        "compliance_score": "100/100",
-        "violations": 0,
-        "status": "CERTIFIED"
+        "Max_NAV_Weight": "11.2% NAV",
+        "Stop_Loss": "21,220 ₫ (-5.69%)",
+        "Voting": "12/12 Nhất trí có điều kiện"
       }
     },
     {
-      "id": "msg_015",
+      "id": "adv_IDC_01",
+      "minute": 23,
+      "time_str": "21:23:15",
+      "phase_step": 3,
+      "sender_name": "Minh Quân (Ban 7 VN)",
+      "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
+      "role": "Tiến Cử Mã Mục Tiêu",
+      "avatar": "⚡",
+      "badge": "PHE MUA ĐỀ XUẤT",
+      "badge_color": "#10b981",
+      "content": "Kính thưa Chủ tịch và Hội đồng! Tôi xin tiến cử mã **IDC (Tổng Công Ty IDICO (HNX))** vào Sổ Lệnh Bắn Tỉa Vòng 2. Thị giá hiện tại **34,900 ₫**. Dưới lăng kính VSA, IDC đang ở Tích lũy nền giá phẳng 3 tháng, RS Rating đạt mức siêu khỏe **81/99**. Khối lượng giao dịch các phiên gần đây cạn kiệt nguồn cung (No Supply). Tôi đề xuất giải ngân 1 lô 100 CP với chi phí 3,490,000 ₫ (17.3% NAV), kê lệnh Limit LO vùng **34,200 – 34,900 ₫**, cắt lỗ cứng tại **32,530 ₫ (-6.79%)**, kỳ vọng chốt lời TP1 **38,660 ₫ (+10.8%)** (Tỷ lệ R:R = 1:2.2).",
+      "highlight": "Tiến cử IDC: RS 81, Wyckoff Tích lũy nền giá phẳng 3 tháng, R:R = 1:2.2",
+      "metrics": {
+        "Ticker": "IDC",
+        "Price": "34,900 ₫",
+        "RS": 81,
+        "Zone": "34,200 – 34,900 ₫",
+        "Stop": "32,530 ₫ (-6.79%)"
+      }
+    },
+    {
+      "id": "adv_IDC_02",
+      "minute": 24,
+      "time_str": "21:24:30",
+      "phase_step": 3,
+      "sender_name": "Trưởng Ban 2 VN (Pháp Y BCTC)",
+      "department": "Ban 2 VN — Pháp Y BCTC",
+      "role": "Thẩm Định Số Liệu Kế Toán",
+      "avatar": "🔍",
+      "badge": "PHÁP Y BCTC KIỂM ĐỊNH",
+      "badge_color": "#ec4899",
+      "content": "Báo cáo Hội đồng: Ban 2 đã đối soát BCTC Q3/2026 của IDC. Doanh thu đạt 2,280 tỷ VND (+34.0% YoY), LNST đạt 580 tỷ VND (+45.2% YoY). Tiền thật OCF đạt +860 tỷ VND, tương đương tỷ lệ OCF/LNST = 1.48x. Cơ cấu đòn bẩy D/E ở mức 0.32x (Cực kỳ an toàn). Tiền mặt dự trữ là 3,520 tỷ VND (Tiền gửi ngân hàng dồi dào). Chất lượng lợi nhuận đạt chuẩn, không có dấu hiệu ghi nhận doanh thu ảo qua công ty liên kết.",
+      "highlight": "Pháp y BCTC IDC: Tiền thật OCF dương, nợ vay và cấu trúc vốn được lượng hóa minh bạch",
+      "metrics": {
+        "OCF_Ratio": "1.48x",
+        "D/E": "0.32x (Cực kỳ an toàn)",
+        "Cash": "3,520 tỷ VND (Tiền gửi ngân hàng dồi dào)"
+      }
+    },
+    {
+      "id": "adv_IDC_03",
+      "minute": 25,
+      "time_str": "21:25:10",
+      "phase_step": 6,
+      "sender_name": "Trưởng Ban 3 VN (Công Tố Viên Phản Biện)",
+      "department": "Ban 3 VN — Kẻ Thù Giả Định",
+      "role": "Công Tố Viên Phản Biện Độc Lập",
+      "avatar": "⚖️",
+      "badge": "CHẤT VẤN TỬ HUYỆT",
+      "badge_color": "#ef4444",
+      "content": "KHOAN ĐÃ! Tôi kịch liệt phản đối sự lạc quan một chiều của anh Minh Quân và Ban 2! Tôi xin bóc trần ngay **3 TỬ HUYỆT CHẾT NGƯỜI CỦA IDC** mà hai anh đang cố tình lờ đi:\n1. **Tử huyệt 1**: Cổ phiếu niêm yết trên sàn HNX với biên độ dao động ±10%, độ trượt giá (Slippage) cao khi thị trường chung hoảng loạn.\n2. **Tử huyệt 2**: Tiến độ cấp phép pháp lý mở rộng diện tích KCN mới phụ thuộc vào tốc độ phê duyệt quy hoạch tỉnh.\n3. **Tử huyệt 3**: Tác động của chính sách thuế tối thiểu toàn cầu 15% có thể khiến các tập đoàn FDI lớn cân nhắc kỹ tiến độ giải ngân vốn mới.\nNếu kịch bản xấu xảy ra, thị trường rơi vào hoảng loạn, đồng vốn 20 triệu của Chủ tịch sẽ bị kẹp cứng! Anh Minh Quân lấy cái gì đảm bảo ngưỡng cắt lỗ 32,530 ₫ (-6.79%) sẽ không bị trượt giá (Slippage)?",
+      "highlight": "Ban 3 tấn công 3 tử huyệt chết người của IDC, chất vấn bẫy kẹp vốn và trượt giá",
+      "metrics": {
+        "Vulnerability_Count": 3,
+        "Stance": "SKEPTICAL_CHALLENGE"
+      }
+    },
+    {
+      "id": "adv_IDC_04",
+      "minute": 26,
+      "time_str": "21:26:25",
+      "phase_step": 6,
+      "sender_name": "Minh Quân (Ban 7 VN)",
+      "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
+      "role": "Đối Đòn Bảo Vệ Kế Hoạch",
+      "avatar": "🔥",
+      "badge": "ĐỐI ĐÒN THỰC CHIẾN",
+      "badge_color": "#f97316",
+      "content": "Anh Ban 3 chất vấn rất gay gắt nhưng anh chưa hiểu sâu về **Kỹ Thuật Bắn Tỉa Khung Giờ Vàng (14h00 – 14h25)** của tôi! Tôi không hề bảo Chủ tịch 'lao vào mua bừa' phiên sáng. Kế hoạch của tôi là:\n- Thứ nhất: Rủi ro anh nêu (Cổ phiếu niêm yết trên sàn HNX với biên ...) đã phản ánh 80% vào nhịp chiết khấu vừa qua, khiến định giá P/E của IDC rớt về mức siêu rẻ 8.1xx.\n- Thứ hai: Tôi chỉ kê lệnh Limit LO đón lõng tại vùng giá hỗ trợ cứng **34,200 – 34,900 ₫**. Nếu lái đạp thủng vùng này với Vol lớn, tôi HUỶ LỆNH NGAY, không mất một xu!\n- Thứ ba: Chúng ta chỉ giải ngân nhịp 1 đúng **1 lô 100 CP** (3,490,000 ₫ (17.3% NAV)). Nếu dính Stop Loss, thiệt hại tối đa chỉ bằng 1 cốc trà sữa (chiếm <1.2% NAV), trong khi dư địa tăng mang lại lợi nhuận gấp đôi!",
+      "highlight": "Minh Quân bẻ gãy chất vấn: Đón lõng Limit LO, kỷ luật Khung Giờ Vàng, khóa rủi ro <1.2% NAV",
+      "metrics": {
+        "Execution_Type": "Limit LO (95%)",
+        "Max_Risk": "<1.2% NAV",
+        "PE": "8.1x"
+      }
+    },
+    {
+      "id": "adv_IDC_05",
+      "minute": 27,
+      "time_str": "21:27:40",
+      "phase_step": 4,
+      "sender_name": "Trưởng Ban 4 VN (Quản Trị Rủi Ro)",
+      "department": "Ban 4 VN — Hội Đồng Định Lượng",
+      "role": "Trọng Tài Khống Chế Vốn",
+      "avatar": "🛡️",
+      "badge": "PHÁN QUYẾT ĐỊNH LƯỢNG",
+      "badge_color": "#eab308",
+      "content": "Tôi đại diện Hội Đồng Định Lượng đưa ra phán quyết toán học cho IDC:\n- **Kiểm tra Quy mô NAV (Điều Luật 6)**: 1 lô 100 CP = 3,490,000 ₫ (17.3% NAV) $\\le$ 33% NAV $\\rightarrow$ **ĐẠT CHUẨN**.\n- **Ngưỡng Cắt Lỗ Bắt Buộc**: Khóa cứng tại **32,530 ₫ (-6.79%)** (đúng biên độ 2xATR = -6.79%).\n- **Kết quả biểu quyết**: Thông qua vị thế bắn tỉa thăm dò với **12/12 Nhất trí có điều kiện**. Yêu cầu chuyên viên Minh Quân chỉ được giải ngân trong Khung Giờ Vàng 14h00 – 14h25 khi đáp ứng đủ 3 điều kiện rút chân!",
+      "highlight": "Ban 4 phán quyết IDC: Đạt chuẩn NAV Điều Luật 6, khóa Stop Loss 2xATR, ghi nhận 12/12 Nhất trí có điều kiện",
+      "metrics": {
+        "Max_NAV_Weight": "17.3% NAV",
+        "Stop_Loss": "32,530 ₫ (-6.79%)",
+        "Voting": "12/12 Nhất trí có điều kiện"
+      }
+    },
+    {
+      "id": "conclude_01",
+      "minute": 28,
+      "time_str": "21:28:15",
+      "phase_step": 7,
+      "sender_name": "Trưởng Ban 3 VN (Công Tố Viên)",
+      "department": "Ban 3 VN — Kẻ Thù Giả Định",
+      "role": "Bảo Lưu Quan Điểm Thể Chế",
+      "avatar": "⚖️",
+      "badge": "LÁ PHIẾU BẢO LƯU",
+      "badge_color": "#ef4444",
+      "content": "Báo cáo Chủ tịch Phước Trần: Thực hiện đúng nguyên tắc độc lập thể chế, tôi xin **BẢO LƯU Ý KIẾN VỚI MÃ BAF**. Mặc dù anh Minh Quân đã đưa ra chiến lược kê lệnh Limit LO, nhưng khoản nợ vay 2.400 tỷ và CapEx 1.850 tỷ của BAF vẫn là quả bom nổ chậm nếu thị trường đảo chiều. Tôi đề nghị Chủ tịch chỉ cho phép giải ngân tối đa 1 lô 100 CP cho BAF và buộc phải cắt lỗ thẳng tay nếu gãy 29.650 đ!",
+      "highlight": "Ban 3 bảo lưu ý kiến với BAF: Cảnh báo nợ vay 2.400 tỷ, yêu cầu kỷ luật cắt lỗ tuyệt đối!",
+      "metrics": {
+        "BAF_Vote": "RESERVATION_VETO",
+        "Stance": "STRICT_CAUTION"
+      }
+    },
+    {
+      "id": "conclude_02",
       "minute": 29,
-      "time_str": "21:29:50",
+      "time_str": "21:29:10",
+      "phase_step": 8,
+      "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+      "department": "Ban 12 — Tổng Kiểm Sát Thể Chế & Kỷ Luật",
+      "role": "Chứng Thực Thể Chế",
+      "avatar": "🛡️",
+      "badge": "CHỨNG THỰC 100% LÀM THẬT",
+      "badge_color": "#f59e0b",
+      "content": "Kính thưa Chủ tịch: Phiên tranh biện hôm nay đã đạt chuẩn **100% LÀM THẬT VIỆC THẬT**! Các phòng ban đã tranh luận nảy lửa, bóc trần rủi ro nợ vay của BAF, tính mùa vụ của MSH và áp lực nợ nhóm 2 của HDB. Không còn tình trạng nịnh bợ hay gật đầu xuê xoa. Tôi chính thức chứng thực cuộc họp đạt chuẩn Hiến Chương Apex V1.0!",
+      "highlight": "Trọng chứng thực: Đạt chuẩn 100% Làm thật việc thật, tranh biện đối kháng nảy lửa, có phiếu bảo lưu",
+      "metrics": {
+        "Audited": "100%",
+        "Groupthink": "ELIMINATED",
+        "Status": "OFFICIALLY_CERTIFIED"
+      }
+    },
+    {
+      "id": "conclude_03",
+      "minute": 30,
+      "time_str": "21:30:00",
       "phase_step": 8,
       "sender_name": "Master CIO James",
       "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
-      "role": "Chủ Trì Điều Phối",
+      "role": "Tổng Kết & Trình Phê Duyệt",
       "avatar": "🎖️",
       "badge": "BẾ MẠC & KẾT LUẬN",
       "badge_color": "#38bdf8",
-      "content": "Đúng 21h30, tôi xin tuyên bố bế mạc Đại Hội Nghị Thượng Đỉnh. Văn kiện Nghị Quyết Thượng Đỉnh chính thức và Sổ Lệnh Bắn Tỉa Vòng 2 đã được niêm phong lưu kho, kính trình Chủ tịch Phước Trần bấm nút phê duyệt ban hành trước giờ mở phiên sáng mai!",
-      "highlight": "Bế mạc hội nghị đúng 21h30, kính trình Chủ tịch ký duyệt",
+      "content": "Đúng 21h30:00, tôi xin tổng kết và bế mạc phiên họp Thượng đỉnh. Hội đồng đã mổ xẻ rốt ráo Top 4 siêu cổ phiếu và thống nhất Sổ Lệnh Bắn Tỉa Vòng 2:\n1. **MSH (35.5k)**: Kê LO 35.0 – 35.3 (1 lô = 3,55 triệu • Stop 33.09k)\n2. **BAF (30.9k)**: Kê LO 30.5 – 30.8 (1 lô = 3,09 triệu • Stop 29.65k • Kèm phiếu bảo lưu Ban 3)\n3. **HDB (22.5k)**: Kê LO 22.2 – 22.5 (1 lô = 2,25 triệu • Stop 21.22k)\n4. **IDC (34.9k)**: Kê LO 34.2 – 34.6 (1 lô = 3,49 triệu • Stop 32.53k)\nToàn bộ tài sản 20.167.119 ₫ (100% Tiền Mặt) được bảo vệ tuyệt đối. Kính trình Chủ tịch Phước Trần bấm nút phê chuẩn cuối cùng!",
+      "highlight": "Bế mạc: Chốt Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC kèm ngưỡng Stop 2xATR",
       "metrics": {
-        "duration": "30m00s",
-        "resolution_status": "READY_FOR_SIGNING"
+        "Total_Tickers": 4,
+        "Cash_Preserved": "20,167,119 ₫",
+        "Max_Risk_NAV": "<=1.5%"
       }
     }
   ],
@@ -447,23 +686,27 @@
   "inspector_notes": [
     {
       "time": "21:00",
-      "note": "Hội đồng khai mạc đúng giờ 21h00, quân số đủ 100%."
+      "note": "Khai mạc hội nghị thật: Phổ biến tối hậu thư cấm kịch bản diễn một chiều."
     },
     {
       "time": "21:02",
-      "note": "Xác nhận số dư 20,167,119 ₫ (100% Tiền Mặt) khớp chuẩn SSOT V2.0."
+      "note": "Đối soát công khai số dư TCBS 20.167.119 đ (100% Tiền Mặt) chuẩn SSOT."
     },
     {
-      "time": "21:13",
-      "note": "Công thức Position Sizing chuẩn hóa: Thị giá <= 36k, Stop Loss <= 6.8% đạt chuẩn Điều Luật 6."
+      "time": "21:10",
+      "note": "Hiệp 1: Đại chiến MSH. Ban 3 bóc trần rủi ro tiêu dùng Mỹ, Minh Quân bẻ gãy bằng định giá P/E 7.8x."
     },
     {
-      "time": "21:20",
-      "note": "Phiên tranh biện đối kháng nổ ra công khai, bóc tách rủi ro nguyên liệu và tính thời điểm mùa vụ."
+      "time": "21:15",
+      "note": "Hiệp 2: Đại chiến BAF. Ban 3 tấn công quyết liệt quả bom nợ 2.400 tỷ, Ban 4 khóa cứng trần giải ngân 1 lô 100 CP."
     },
     {
       "time": "21:28",
-      "note": "Biểu quyết thể chế đạt tỷ lệ chuẩn định chế. Hội nghị không vi phạm bất kỳ quy tắc nào trong Hiến Chương."
+      "note": "Ban 3 chính thức kích hoạt Giao thức Bất đồng (Mandatory Dissent), ghi phiếu bảo lưu cho BAF vào Sổ Cái Thể Chế."
+    },
+    {
+      "time": "21:30",
+      "note": "Hội nghị kết thúc với 100% tinh thần độc lập chuyên môn, không vi phạm bất kỳ điều cấm nào trong Hiến Chương."
     }
   ]
 }

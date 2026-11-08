@@ -39,6 +39,11 @@ MEETING_AUDIT_LOG_FILE = DATA_DIR / "apex_summit_audit_stream.json"
 
 def get_default_summit_data() -> Dict[str, Any]:
     """Khởi tạo cấu trúc dữ liệu thể chế chuẩn hóa cho Đại Hội Nghị Thượng Đỉnh 21h00."""
+    try:
+        from scripts.apex_autonomous_council_engine import build_autonomous_summit_session
+        return build_autonomous_summit_session()
+    except Exception as e:
+        print(f"Fallback to legacy summit data: {e}")
     return {
         "meeting_id": "APEX-SUMMIT-20261108-2100",
         "title": "ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX",
