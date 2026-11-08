@@ -73,6 +73,23 @@ STOCK_FORENSIC_DATABASE = {
             "Giá bông cotton nguyên liệu thế giới biến động thất thường, có thể ăn mòn biên lãi gộp nếu không phòng ngừa tỷ giá và hàng hóa tốt.",
             "Rủi ro chính sách thuế quan thương mại quốc tế đối với hàng dệt may xuất khẩu."
         ],
+        "peer_comparison": {
+            "peer_name": "TNG (Đầu Tư & Thương Mại TNG)",
+            "comparison_rows": [
+                {"criteria": "Doanh thu Q3", "stock": "1.620 tỷ đ (+22.4%)", "peer": "1.850 tỷ đ (+11.2%)", "verdict": "Tương đương"},
+                {"criteria": "Dòng tiền kinh doanh OCF", "stock": "+206.5 tỷ đ (Tiền thật)", "peer": "+75.0 tỷ đ (Hụt hơi)", "verdict": "MSH vượt trội 2.75x"},
+                {"criteria": "Tỷ lệ OCF / LNST", "stock": "1.42x (Chất lượng vàng)", "peer": "0.65x (Lợi nhuận giấy)", "verdict": "MSH ăn đứt TNG"},
+                {"criteria": "Nợ vay / Vốn chủ (D/E)", "stock": "0.35x (Sạch nợ dài hạn)", "peer": "1.82x (Nợ 2.800 tỷ)", "verdict": "MSH an toàn gấp 5 lần"},
+                {"criteria": "Cổ tức tiền mặt hàng năm", "stock": "40% - 50% tiền tươi", "peer": "8% (Chủ yếu chia giấy)", "verdict": "MSH tiền tươi số 1"}
+            ],
+            "conclusion": "MSH hoàn toàn áp đảo TNG về sức khỏe tài chính: Sạch nợ dài hạn, tiền mặt 1.450 tỷ gửi ngân hàng và OCF dương 142% LNST."
+        },
+        "forensic_checks": {
+            "beneish_m_score": "-2.85 (Vượt chuẩn an toàn -1.78, 0% gian lận)",
+            "altman_z_score": "3.82 (Vùng xanh Safe Zone, rủi ro phá sản 0%)",
+            "sloan_accrual": "-8.5% (Accrual âm cực tốt, tiền mặt về nhanh hơn doanh thu)",
+            "auditor_status": "Big 4 Chấp Thuận Toàn Phần (Unqualified Opinion)"
+        },
         "technical_vsa": {
             "wyckoff_phase": "Tích lũy Pha C (Sau rũ bỏ Spring)",
             "rsi_14": 56.4,
@@ -118,6 +135,23 @@ STOCK_FORENSIC_DATABASE = {
             "CAPEX DỞ DANG KHỔNG LỒ: 1.850 tỷ đang chôn vào các dự án trại Hải Đăng, Tây Ninh chưa hoàn thành, dòng tiền FCF tự do đang bị âm nhẹ do tái đầu tư.",
             "RỦI RO DỊCH TẢ LỢN CHÂU PHI (ASF): Mùa đông là cao điểm dịch bệnh, nếu an toàn sinh học bị thủng sẽ gây tổn thất đàn heo nghiêm trọng."
         ],
+        "peer_comparison": {
+            "peer_name": "DBC (Dabaco) & MSN (Masan MEATDeli)",
+            "comparison_rows": [
+                {"criteria": "Mô hình chuỗi", "stock": "3F Khép kín (Heo ăn thực vật)", "peer": "DBC: 3F truyền thống • MSN: Chế biến thịt", "verdict": "BAF thương hiệu ngách"},
+                {"criteria": "Tự chủ thức ăn chăn nuôi", "stock": "100% Cám chay F-Feed tự sản xuất", "peer": "DBC: 100% • MSN: Thu mua 30%", "verdict": "BAF chủ động giá thành"},
+                {"criteria": "Biên lãi gộp chăn nuôi", "stock": "15.5% (Tăng từ 8.2%)", "peer": "DBC: 14.2% • MSN: 12.8%", "verdict": "BAF biên gộp dẫn đầu"},
+                {"criteria": "Tổng Nợ vay / Vốn chủ", "stock": "1.25x (2.420 tỷ nợ vay)", "peer": "DBC: 1.10x • MSN: 1.95x", "verdict": "TỬ HUYỆT NỢ VAY CỦA BAF"},
+                {"criteria": "CapEx xây dựng dở dang", "stock": "1.850 tỷ (Chôn vốn mở trại)", "peer": "DBC: 1.200 tỷ • MSN: 850 tỷ", "verdict": "Áp lực dòng tiền tự do FCF"}
+            ],
+            "conclusion": "BAF có biên lợi nhuận bứt phá ngoạn mục nhưng gánh nặng nợ vay 2.420 tỷ khiến Ban 3 buộc phải bỏ phiếu bảo lưu!"
+        },
+        "forensic_checks": {
+            "beneish_m_score": "-1.92 (Đạt chuẩn an toàn nhưng tiệm cận ngưỡng nhạy cảm)",
+            "altman_z_score": "1.65 (Vùng xám Grey Zone do đòn bẩy nợ cao, cần quản trị chặt)",
+            "sloan_accrual": "-3.2% (Dòng tiền OCF dương 152 tỷ bù đắp được LNST)",
+            "auditor_status": "Kiểm toán Big 4 Chấp Thuận Toàn Phần"
+        },
         "technical_vsa": {
             "wyckoff_phase": "Tích lũy nâng nền (Pha D)",
             "rsi_14": 62.1,
@@ -163,6 +197,23 @@ STOCK_FORENSIC_DATABASE = {
             "Chi phí vốn (Cost of Funds - CoF) có xu hướng nhích nhẹ khi các ngân hàng thương mại tăng lãi suất huy động tiền gửi kỳ hạn ngắn.",
             "Áp lực bán ròng kỹ thuật của khối ngoại tại các cổ phiếu ngân hàng tiệm cận room ngoại."
         ],
+        "peer_comparison": {
+            "peer_name": "TCB (Techcombank) & MBB (MBBank)",
+            "comparison_rows": [
+                {"criteria": "Biên lãi thuần NIM", "stock": "5.2% (Top 1 toàn ngành ngân hàng)", "peer": "TCB: 4.3% • MBB: 4.6%", "verdict": "HDB vượt trội nhờ bán lẻ"},
+                {"criteria": "Hiệu quả sinh lời ROE", "stock": "23.8% (Dẫn đầu hệ thống)", "peer": "TCB: 17.5% • MBB: 21.0%", "verdict": "HDB cỗ máy in lợi nhuận"},
+                {"criteria": "Tăng trưởng tín dụng 9T", "stock": "+16.5% (Được SBV nới room)", "peer": "TCB: +14.2% • MBB: +15.5%", "verdict": "HDB tăng tốc tín dụng mạnh nhất"},
+                {"criteria": "Tỷ lệ nợ xấu NPL", "stock": "1.65% (Kiểm soát chuẩn)", "peer": "TCB: 1.28% • MBB: 1.62%", "verdict": "TCB thấp hơn"},
+                {"criteria": "Nợ nhóm 2 (Cần chú ý)", "stock": "2.10% (Tăng nhẹ do HD SAISON)", "peer": "TCB: 1.45% • MBB: 1.80%", "verdict": "Tử huyệt Ban 3 chất vấn"}
+            ],
+            "conclusion": "HDB là ngân hàng sinh lời ROE số 1 với NIM 5.2%, song cần kiểm soát chặt dư nợ vay tiêu dùng HD SAISON."
+        },
+        "forensic_checks": {
+            "car_basel_ii": "12.8% (Hệ số an toàn vốn vượt xa chuẩn 8.0% của NHNN)",
+            "cir_ratio": "32.5% (Tối ưu hóa chi phí hoạt động xuất sắc)",
+            "casa_ratio": "14.5% (Thấp hơn TCB/MBB, chi phí vốn nhạy cảm hơn)",
+            "auditor_status": "PwC Việt Nam Chấp Thuận Toàn Phần"
+        },
         "technical_vsa": {
             "wyckoff_phase": "Tái tích lũy đỉnh (Pha D)",
             "rsi_14": 58.5,
@@ -207,6 +258,23 @@ STOCK_FORENSIC_DATABASE = {
             "Tiến độ cấp phép pháp lý mở rộng diện tích KCN mới phụ thuộc vào tốc độ phê duyệt quy hoạch tỉnh.",
             "Tác động của chính sách thuế tối thiểu toàn cầu 15% có thể khiến các tập đoàn FDI lớn cân nhắc kỹ tiến độ giải ngân vốn mới."
         ],
+        "peer_comparison": {
+            "peer_name": "KBC (Kinh Bắc) & BCM (Becamex IDC)",
+            "comparison_rows": [
+                {"criteria": "Doanh thu chưa thực hiện", "stock": "5.250 tỷ đ (Tiền khách trả trước)", "peer": "KBC: 1.800 tỷ • BCM: 3.500 tỷ", "verdict": "IDC của để dành lớn nhất"},
+                {"criteria": "Quỹ đất thương phẩm sạch", "stock": "800 ha (Hựu Thạnh, Phú Mỹ 2, Cầu Nghìn)", "peer": "KBC: 450 ha • BCM: 1.200 ha", "verdict": "IDC đất sạch sẵn sàng giao ngay"},
+                {"criteria": "Nợ vay / Vốn chủ (D/E)", "stock": "0.32x (Rất an toàn)", "peer": "KBC: 0.85x • BCM: 1.75x (Nợ trái phiếu)", "verdict": "IDC an toàn tuyệt đối"},
+                {"criteria": "Dòng tiền kinh doanh OCF", "stock": "+860 tỷ đ (Chất lượng vàng)", "peer": "KBC: -320 tỷ (Âm) • BCM: +450 tỷ", "verdict": "IDC tiền về thật 100%"},
+                {"criteria": "Tỷ suất cổ tức tiền mặt", "stock": "30% - 40% (3.000đ - 4.000đ/CP)", "peer": "KBC: 0% • BCM: 8%", "verdict": "IDC vô địch cổ tức KCN"}
+            ],
+            "conclusion": "IDC là vua tiền mặt KCN với 5.250 tỷ tiền trả trước và cổ tức 30-40% tiền tươi, sạch nợ vay và OCF dương khủng."
+        },
+        "forensic_checks": {
+            "beneish_m_score": "-2.45 (An toàn tuyệt đối)",
+            "altman_z_score": "3.15 (Vùng xanh tài chính siêu vững chắc)",
+            "sloan_accrual": "-12.4% (Chất lượng tiền mặt số 1 toàn sàn)",
+            "auditor_status": "Ernst & Young Chấp Thuận Toàn Phần"
+        },
         "technical_vsa": {
             "wyckoff_phase": "Tích lũy nền giá phẳng 3 tháng",
             "rsi_14": 52.3,
@@ -222,6 +290,34 @@ STOCK_FORENSIC_DATABASE = {
     }
 }
 
+
+
+def build_forensic_evidence_card(stock_info: Dict[str, Any]) -> Dict[str, Any]:
+    """Tạo cấu trúc Thẻ Bằng Chứng Pháp Y BCTC Sống (Step 2)."""
+    sym = stock_info["ticker"]
+    fin = stock_info["financials_q3_2026"]
+    peer = stock_info.get("peer_comparison", {})
+    checks = stock_info.get("forensic_checks", {})
+    return {
+        "ticker": sym,
+        "name": stock_info["name"],
+        "sector": stock_info["sector"],
+        "price": stock_info["price_str"],
+        "lot_cost": stock_info["lot_100_cost"],
+        "balance_sheet": {
+            "Doanh Thu": fin.get("revenue", fin.get("net_interest_income", "N/A")),
+            "Lợi Nhuận": fin.get("net_profit", fin.get("profit_before_tax", "N/A")),
+            "Dòng Tiền OCF": fin.get("ocf", fin.get("ocf_proxy", "N/A")),
+            "Tỷ Lệ OCF/LNST": fin.get("ocf_lnst_ratio", fin.get("nim", "N/A")),
+            "Đòn Bẩy D/E": fin.get("debt_to_equity", fin.get("car_basel_ii", "N/A")),
+            "Tiền Mặt Dự Trữ": fin.get("cash_equivalents", fin.get("unearned_revenue", "N/A")),
+            "Cổ Tức Tiền": fin.get("dividend_cash", "Có kế hoạch chia tiền")
+        },
+        "peer_comparison": peer,
+        "forensic_checks": checks,
+        "vulnerabilities": stock_info.get("bear_vulnerabilities", []),
+        "catalysts": stock_info.get("bull_catalysts", [])
+    }
 
 # ==============================================================================
 # BỘ CƠ CHẾ SINH TRANH LUẬN ĐỐI KHÁNG 4 HIỆP TỰ TRỊ (AUTONOMOUS 4-ROUND CLASH)
@@ -293,7 +389,8 @@ def generate_stock_adversarial_round(stock_info: Dict[str, Any], round_number: i
             f"Chất lượng lợi nhuận đạt chuẩn, không có dấu hiệu ghi nhận doanh thu ảo qua công ty liên kết."
         ),
         "highlight": f"Pháp y BCTC {sym}: Tiền thật OCF dương, nợ vay và cấu trúc vốn được lượng hóa minh bạch",
-        "metrics": {"OCF_Ratio": fin.get('ocf_lnst_ratio', 'NIM 5.2%'), "D/E": fin.get('debt_to_equity', 'N/A'), "Cash": fin.get('cash_equivalents', 'N/A')}
+        "metrics": {"OCF_Ratio": fin.get('ocf_lnst_ratio', 'NIM 5.2%'), "D/E": fin.get('debt_to_equity', 'N/A'), "Cash": fin.get('cash_equivalents', 'N/A')},
+        "evidence_card": build_forensic_evidence_card(stock_info)
     })
 
     # ----------------------------------------------------

@@ -279,6 +279,74 @@
         "OCF_Ratio": "1.42x",
         "D/E": "0.35x (Cực kỳ an toàn)",
         "Cash": "1,450 tỷ VND"
+      },
+      "evidence_card": {
+        "ticker": "MSH",
+        "name": "May Sông Hồng",
+        "sector": "Dệt May Xuất Khẩu",
+        "price": "35,500 ₫",
+        "lot_cost": "3,550,000 ₫ (17.6% NAV)",
+        "balance_sheet": {
+          "Doanh Thu": "1,620 tỷ VND (+22.4% YoY)",
+          "Lợi Nhuận": "145.2 tỷ VND (+48.1% YoY)",
+          "Dòng Tiền OCF": "+206.5 tỷ VND",
+          "Tỷ Lệ OCF/LNST": "1.42x",
+          "Đòn Bẩy D/E": "0.35x (Cực kỳ an toàn)",
+          "Tiền Mặt Dự Trữ": "1,450 tỷ VND",
+          "Cổ Tức Tiền": "3,500đ – 4,500đ/CP (Tỷ suất cổ tức 10% - 12%/năm tiền tươi)"
+        },
+        "peer_comparison": {
+          "peer_name": "TNG (Đầu Tư & Thương Mại TNG)",
+          "comparison_rows": [
+            {
+              "criteria": "Doanh thu Q3",
+              "stock": "1.620 tỷ đ (+22.4%)",
+              "peer": "1.850 tỷ đ (+11.2%)",
+              "verdict": "Tương đương"
+            },
+            {
+              "criteria": "Dòng tiền kinh doanh OCF",
+              "stock": "+206.5 tỷ đ (Tiền thật)",
+              "peer": "+75.0 tỷ đ (Hụt hơi)",
+              "verdict": "MSH vượt trội 2.75x"
+            },
+            {
+              "criteria": "Tỷ lệ OCF / LNST",
+              "stock": "1.42x (Chất lượng vàng)",
+              "peer": "0.65x (Lợi nhuận giấy)",
+              "verdict": "MSH ăn đứt TNG"
+            },
+            {
+              "criteria": "Nợ vay / Vốn chủ (D/E)",
+              "stock": "0.35x (Sạch nợ dài hạn)",
+              "peer": "1.82x (Nợ 2.800 tỷ)",
+              "verdict": "MSH an toàn gấp 5 lần"
+            },
+            {
+              "criteria": "Cổ tức tiền mặt hàng năm",
+              "stock": "40% - 50% tiền tươi",
+              "peer": "8% (Chủ yếu chia giấy)",
+              "verdict": "MSH tiền tươi số 1"
+            }
+          ],
+          "conclusion": "MSH hoàn toàn áp đảo TNG về sức khỏe tài chính: Sạch nợ dài hạn, tiền mặt 1.450 tỷ gửi ngân hàng và OCF dương 142% LNST."
+        },
+        "forensic_checks": {
+          "beneish_m_score": "-2.85 (Vượt chuẩn an toàn -1.78, 0% gian lận)",
+          "altman_z_score": "3.82 (Vùng xanh Safe Zone, rủi ro phá sản 0%)",
+          "sloan_accrual": "-8.5% (Accrual âm cực tốt, tiền mặt về nhanh hơn doanh thu)",
+          "auditor_status": "Big 4 Chấp Thuận Toàn Phần (Unqualified Opinion)"
+        },
+        "vulnerabilities": [
+          "Khách hàng tập trung: Doanh thu phụ thuộc >55% vào thị trường bán lẻ Mỹ (Target, Walmart, Columbia). Nếu Mỹ suy thoái, rủi ro cắt giảm đơn hàng Q2/2027 là có thật.",
+          "Giá bông cotton nguyên liệu thế giới biến động thất thường, có thể ăn mòn biên lãi gộp nếu không phòng ngừa tỷ giá và hàng hóa tốt.",
+          "Rủi ro chính sách thuế quan thương mại quốc tế đối với hàng dệt may xuất khẩu."
+        ],
+        "catalysts": [
+          "Đơn hàng xuất khẩu FOB kín 100% công suất đến hết Q1/2027 với hai đối tác chiến lược Target và Columbia Sportswear.",
+          "Tỷ giá USD/VND neo cao hỗ trợ trực tiếp biên lợi nhuận ròng của doanh nghiệp xuất khẩu thu USD.",
+          "Nhà máy Sông Hồng 10 đi vào vận hành tối ưu hóa chi phí sản xuất, không phải gánh nặng khấu hao lớn."
+        ]
       }
     },
     {
@@ -375,6 +443,74 @@
         "OCF_Ratio": "1.18x",
         "D/E": "1.25x (Ở mức đáng báo động, cần giám sát chặt)",
         "Cash": "480 tỷ VND"
+      },
+      "evidence_card": {
+        "ticker": "BAF",
+        "name": "Nông Nghiệp BAF Việt Nam",
+        "sector": "Nông Nghiệp Khép Kín 3F (Feed-Farm-Food)",
+        "price": "30,900 ₫",
+        "lot_cost": "3,090,000 ₫ (15.3% NAV)",
+        "balance_sheet": {
+          "Doanh Thu": "1,550 tỷ VND (+18.5% YoY)",
+          "Lợi Nhuận": "128.6 tỷ VND (+215% YoY - Bứt phá từ đáy chu kỳ)",
+          "Dòng Tiền OCF": "+152.0 tỷ VND",
+          "Tỷ Lệ OCF/LNST": "1.18x",
+          "Đòn Bẩy D/E": "1.25x (Ở mức đáng báo động, cần giám sát chặt)",
+          "Tiền Mặt Dự Trữ": "480 tỷ VND",
+          "Cổ Tức Tiền": "Có kế hoạch chia tiền"
+        },
+        "peer_comparison": {
+          "peer_name": "DBC (Dabaco) & MSN (Masan MEATDeli)",
+          "comparison_rows": [
+            {
+              "criteria": "Mô hình chuỗi",
+              "stock": "3F Khép kín (Heo ăn thực vật)",
+              "peer": "DBC: 3F truyền thống • MSN: Chế biến thịt",
+              "verdict": "BAF thương hiệu ngách"
+            },
+            {
+              "criteria": "Tự chủ thức ăn chăn nuôi",
+              "stock": "100% Cám chay F-Feed tự sản xuất",
+              "peer": "DBC: 100% • MSN: Thu mua 30%",
+              "verdict": "BAF chủ động giá thành"
+            },
+            {
+              "criteria": "Biên lãi gộp chăn nuôi",
+              "stock": "15.5% (Tăng từ 8.2%)",
+              "peer": "DBC: 14.2% • MSN: 12.8%",
+              "verdict": "BAF biên gộp dẫn đầu"
+            },
+            {
+              "criteria": "Tổng Nợ vay / Vốn chủ",
+              "stock": "1.25x (2.420 tỷ nợ vay)",
+              "peer": "DBC: 1.10x • MSN: 1.95x",
+              "verdict": "TỬ HUYỆT NỢ VAY CỦA BAF"
+            },
+            {
+              "criteria": "CapEx xây dựng dở dang",
+              "stock": "1.850 tỷ (Chôn vốn mở trại)",
+              "peer": "DBC: 1.200 tỷ • MSN: 850 tỷ",
+              "verdict": "Áp lực dòng tiền tự do FCF"
+            }
+          ],
+          "conclusion": "BAF có biên lợi nhuận bứt phá ngoạn mục nhưng gánh nặng nợ vay 2.420 tỷ khiến Ban 3 buộc phải bỏ phiếu bảo lưu!"
+        },
+        "forensic_checks": {
+          "beneish_m_score": "-1.92 (Đạt chuẩn an toàn nhưng tiệm cận ngưỡng nhạy cảm)",
+          "altman_z_score": "1.65 (Vùng xám Grey Zone do đòn bẩy nợ cao, cần quản trị chặt)",
+          "sloan_accrual": "-3.2% (Dòng tiền OCF dương 152 tỷ bù đắp được LNST)",
+          "auditor_status": "Kiểm toán Big 4 Chấp Thuận Toàn Phần"
+        },
+        "vulnerabilities": [
+          "TỬ HUYỆT NỢ VAY: Đòn bẩy tài chính D/E = 1.25 lần với 2.420 tỷ nợ vay, chi phí lãi vay mỗi quý bào mòn hơn 45 tỷ đồng.",
+          "CAPEX DỞ DANG KHỔNG LỒ: 1.850 tỷ đang chôn vào các dự án trại Hải Đăng, Tây Ninh chưa hoàn thành, dòng tiền FCF tự do đang bị âm nhẹ do tái đầu tư.",
+          "RỦI RO DỊCH TẢ LỢN CHÂU PHI (ASF): Mùa đông là cao điểm dịch bệnh, nếu an toàn sinh học bị thủng sẽ gây tổn thất đàn heo nghiêm trọng."
+        ],
+        "catalysts": [
+          "Giá heo hơi bình quân cả nước neo cao 62.000 – 65.000 đ/kg trong khi giá thành sản xuất chỉ 48.000 – 50.000 đ/kg, đem lại biên lợi nhuận béo bở.",
+          "Tự chủ 100% thức ăn chăn nuôi cám chay F-Feed, không phụ thuộc cám thương mại ngoài, ký hợp đồng kỳ hạn khóa giá ngô/đậu tương.",
+          "Mô hình chuỗi khép kín Heo ăn thực vật mở rộng thần tốc với hệ sinh thái siêu thị Siba Food."
+        ]
       }
     },
     {
@@ -471,6 +607,74 @@
         "OCF_Ratio": "NIM 5.2%",
         "D/E": "N/A",
         "Cash": "N/A"
+      },
+      "evidence_card": {
+        "ticker": "HDB",
+        "name": "Ngân Hàng TMCP Phát Triển TP.HCM (HDBank)",
+        "sector": "Ngân Hàng Bán Lẻ & Chuỗi Giá Trị",
+        "price": "22,500 ₫",
+        "lot_cost": "2,250,000 ₫ (11.2% NAV)",
+        "balance_sheet": {
+          "Doanh Thu": "6,850 tỷ VND (+28.2% YoY)",
+          "Lợi Nhuận": "3,580 tỷ VND",
+          "Dòng Tiền OCF": "Tăng trưởng huy động vốn +14.2%, dòng tiền ròng hoạt động dương mạnh",
+          "Tỷ Lệ OCF/LNST": "5.2% (Thuộc nhóm cao nhất ngành ngân hàng)",
+          "Đòn Bẩy D/E": "12.8% (Đệm an toàn vốn rất dày)",
+          "Tiền Mặt Dự Trữ": "N/A",
+          "Cổ Tức Tiền": "Có kế hoạch chia tiền"
+        },
+        "peer_comparison": {
+          "peer_name": "TCB (Techcombank) & MBB (MBBank)",
+          "comparison_rows": [
+            {
+              "criteria": "Biên lãi thuần NIM",
+              "stock": "5.2% (Top 1 toàn ngành ngân hàng)",
+              "peer": "TCB: 4.3% • MBB: 4.6%",
+              "verdict": "HDB vượt trội nhờ bán lẻ"
+            },
+            {
+              "criteria": "Hiệu quả sinh lời ROE",
+              "stock": "23.8% (Dẫn đầu hệ thống)",
+              "peer": "TCB: 17.5% • MBB: 21.0%",
+              "verdict": "HDB cỗ máy in lợi nhuận"
+            },
+            {
+              "criteria": "Tăng trưởng tín dụng 9T",
+              "stock": "+16.5% (Được SBV nới room)",
+              "peer": "TCB: +14.2% • MBB: +15.5%",
+              "verdict": "HDB tăng tốc tín dụng mạnh nhất"
+            },
+            {
+              "criteria": "Tỷ lệ nợ xấu NPL",
+              "stock": "1.65% (Kiểm soát chuẩn)",
+              "peer": "TCB: 1.28% • MBB: 1.62%",
+              "verdict": "TCB thấp hơn"
+            },
+            {
+              "criteria": "Nợ nhóm 2 (Cần chú ý)",
+              "stock": "2.10% (Tăng nhẹ do HD SAISON)",
+              "peer": "TCB: 1.45% • MBB: 1.80%",
+              "verdict": "Tử huyệt Ban 3 chất vấn"
+            }
+          ],
+          "conclusion": "HDB là ngân hàng sinh lời ROE số 1 với NIM 5.2%, song cần kiểm soát chặt dư nợ vay tiêu dùng HD SAISON."
+        },
+        "forensic_checks": {
+          "car_basel_ii": "12.8% (Hệ số an toàn vốn vượt xa chuẩn 8.0% của NHNN)",
+          "cir_ratio": "32.5% (Tối ưu hóa chi phí hoạt động xuất sắc)",
+          "casa_ratio": "14.5% (Thấp hơn TCB/MBB, chi phí vốn nhạy cảm hơn)",
+          "auditor_status": "PwC Việt Nam Chấp Thuận Toàn Phần"
+        },
+        "vulnerabilities": [
+          "Rủi ro nợ nhóm 2 (2.1%) tại công ty tài chính tiêu dùng HD SAISON khi sức mua của tầng lớp lao động phổ thông còn chậm phục hồi.",
+          "Chi phí vốn (Cost of Funds - CoF) có xu hướng nhích nhẹ khi các ngân hàng thương mại tăng lãi suất huy động tiền gửi kỳ hạn ngắn.",
+          "Áp lực bán ròng kỹ thuật của khối ngoại tại các cổ phiếu ngân hàng tiệm cận room ngoại."
+        ],
+        "catalysts": [
+          "Hiệu quả sinh lời vượt trội với ROE 23.8%, vượt xa mức bình quân ngành 18%.",
+          "Động lực tăng trưởng tín dụng hạn mức cao từ SBV nhờ hỗ trợ tái cơ cấu tổ chức tín dụng yếu kém.",
+          "Kế hoạch chi trả cổ tức 30% (bao gồm cả tiền mặt và cổ phiếu) chuẩn bị chốt danh sách trong Q4/2026."
+        ]
       }
     },
     {
@@ -567,6 +771,74 @@
         "OCF_Ratio": "1.48x",
         "D/E": "0.32x (Cực kỳ an toàn)",
         "Cash": "3,520 tỷ VND (Tiền gửi ngân hàng dồi dào)"
+      },
+      "evidence_card": {
+        "ticker": "IDC",
+        "name": "Tổng Công Ty IDICO (HNX)",
+        "sector": "Bất Động Sản Khu Công Nghiệp",
+        "price": "34,900 ₫",
+        "lot_cost": "3,490,000 ₫ (17.3% NAV)",
+        "balance_sheet": {
+          "Doanh Thu": "2,280 tỷ VND (+34.0% YoY)",
+          "Lợi Nhuận": "580 tỷ VND (+45.2% YoY)",
+          "Dòng Tiền OCF": "+860 tỷ VND",
+          "Tỷ Lệ OCF/LNST": "1.48x",
+          "Đòn Bẩy D/E": "0.32x (Cực kỳ an toàn)",
+          "Tiền Mặt Dự Trữ": "3,520 tỷ VND (Tiền gửi ngân hàng dồi dào)",
+          "Cổ Tức Tiền": "Có kế hoạch chia tiền"
+        },
+        "peer_comparison": {
+          "peer_name": "KBC (Kinh Bắc) & BCM (Becamex IDC)",
+          "comparison_rows": [
+            {
+              "criteria": "Doanh thu chưa thực hiện",
+              "stock": "5.250 tỷ đ (Tiền khách trả trước)",
+              "peer": "KBC: 1.800 tỷ • BCM: 3.500 tỷ",
+              "verdict": "IDC của để dành lớn nhất"
+            },
+            {
+              "criteria": "Quỹ đất thương phẩm sạch",
+              "stock": "800 ha (Hựu Thạnh, Phú Mỹ 2, Cầu Nghìn)",
+              "peer": "KBC: 450 ha • BCM: 1.200 ha",
+              "verdict": "IDC đất sạch sẵn sàng giao ngay"
+            },
+            {
+              "criteria": "Nợ vay / Vốn chủ (D/E)",
+              "stock": "0.32x (Rất an toàn)",
+              "peer": "KBC: 0.85x • BCM: 1.75x (Nợ trái phiếu)",
+              "verdict": "IDC an toàn tuyệt đối"
+            },
+            {
+              "criteria": "Dòng tiền kinh doanh OCF",
+              "stock": "+860 tỷ đ (Chất lượng vàng)",
+              "peer": "KBC: -320 tỷ (Âm) • BCM: +450 tỷ",
+              "verdict": "IDC tiền về thật 100%"
+            },
+            {
+              "criteria": "Tỷ suất cổ tức tiền mặt",
+              "stock": "30% - 40% (3.000đ - 4.000đ/CP)",
+              "peer": "KBC: 0% • BCM: 8%",
+              "verdict": "IDC vô địch cổ tức KCN"
+            }
+          ],
+          "conclusion": "IDC là vua tiền mặt KCN với 5.250 tỷ tiền trả trước và cổ tức 30-40% tiền tươi, sạch nợ vay và OCF dương khủng."
+        },
+        "forensic_checks": {
+          "beneish_m_score": "-2.45 (An toàn tuyệt đối)",
+          "altman_z_score": "3.15 (Vùng xanh tài chính siêu vững chắc)",
+          "sloan_accrual": "-12.4% (Chất lượng tiền mặt số 1 toàn sàn)",
+          "auditor_status": "Ernst & Young Chấp Thuận Toàn Phần"
+        },
+        "vulnerabilities": [
+          "Cổ phiếu niêm yết trên sàn HNX với biên độ dao động ±10%, độ trượt giá (Slippage) cao khi thị trường chung hoảng loạn.",
+          "Tiến độ cấp phép pháp lý mở rộng diện tích KCN mới phụ thuộc vào tốc độ phê duyệt quy hoạch tỉnh.",
+          "Tác động của chính sách thuế tối thiểu toàn cầu 15% có thể khiến các tập đoàn FDI lớn cân nhắc kỹ tiến độ giải ngân vốn mới."
+        ],
+        "catalysts": [
+          "Khoản tiền người mua trả tiền trước (doanh thu chưa thực hiện) lên tới hơn 5.250 tỷ VND, đảm bảo lợi nhuận ghi nhận đều đặn trong 3-5 năm tới.",
+          "Quỹ đất thương phẩm sẵn sàng cho thuê lớn nhất miền Nam tại KCN Hựu Thạnh (Long An), Phú Mỹ 2 (Bà Rịa - Vũng Tàu).",
+          "Hưởng lợi trực tiếp từ làn sóng dịch chuyển chuỗi cung ứng sản xuất điện tử, bán dẫn vào Việt Nam."
+        ]
       }
     },
     {

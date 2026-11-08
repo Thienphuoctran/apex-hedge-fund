@@ -1370,6 +1370,94 @@ def generate_portal_html(
             color: #7dd3fc;
         }}
 
+        /* LIVE EVIDENCE DATA CARDS (BƯỚC 2) */
+        .summit-evidence-box {{
+            margin-top: 12px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            transition: all 0.2s ease;
+        }}
+        .summit-evidence-box:hover {{
+            border-color: rgba(56, 189, 248, 0.55);
+            box-shadow: 0 6px 24px rgba(56, 189, 248, 0.12);
+        }}
+        .summit-evidence-toggle-btn {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.12) 0%, rgba(30, 58, 138, 0.15) 100%);
+            padding: 9px 14px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            user-select: none;
+        }}
+        .summit-evidence-title {{
+            font-weight: 800;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11.5px;
+            letter-spacing: 0.5px;
+        }}
+        .summit-evidence-content {{
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }}
+        .evidence-peer-table {{
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            margin-top: 4px;
+        }}
+        .evidence-peer-table th {{
+            background: rgba(255, 255, 255, 0.05);
+            color: #94a3b8;
+            font-weight: 700;
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            text-transform: uppercase;
+        }}
+        .evidence-peer-table td {{
+            padding: 7px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: #cbd5e1;
+        }}
+        .evidence-check-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 8px;
+            margin-top: 4px;
+        }}
+        .evidence-check-item {{
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 7px 10px;
+        }}
+        .evidence-check-k {{
+            font-size: 10px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 700;
+        }}
+        .evidence-check-v {{
+            font-size: 11px;
+            color: #34d399;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 2px;
+        }}
+
         /* CHAIRMAN DIRECT INPUT BAR */
         .summit-input-panel {{
             background: var(--bg-surface);
@@ -2957,6 +3045,19 @@ def generate_portal_html(
         let lastSummitMsgCount = 0;
         let summitPollTimer = null;
 
+        function toggleEvidenceCard(cardId) {{
+            const el = document.getElementById(cardId);
+            const btn = document.getElementById('btn-' + cardId);
+            if (!el) return;
+            if (el.style.display === 'none') {{
+                el.style.display = 'block';
+                if (btn) btn.innerText = '▲ THU GỌN BẰNG CHỨNG';
+            }} else {{
+                el.style.display = 'none';
+                if (btn) btn.innerText = '▼ MỞ RỘNG BẰNG CHỨNG';
+            }}
+        }}
+
         function toggleSummitPreview() {{
             summitPreviewMode = !summitPreviewMode;
             const btn = document.getElementById('btn-toggle-preview');
@@ -3076,6 +3177,77 @@ def generate_portal_html(
                             .replace(/\n- /g, '<br/>• ')
                             .replace(/\n/g, '<br/>');
 
+                        let evidenceHtml = '';
+                        if (m.evidence_card) {{
+                            const ev = m.evidence_card;
+                            const cardId = 'ev-card-' + (m.id || Math.random().toString(36).substr(2, 9));
+
+                            const bs = ev.balance_sheet || {{}};
+                            const bsChips = Object.entries(bs).map(([k, v]) => 
+                                `<span style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-family: 'JetBrains Mono', monospace;"><strong style="color: #7dd3fc;">${{k}}:</strong> <span style="color: #f8fafc;">${{v}}</span></span>`
+                            ).join(' ');
+
+                            const peer = ev.peer_comparison || {{}};
+                            const peerRows = (peer.comparison_rows || []).map(r => `
+                                <tr>
+                                    <td style="font-weight: 600; color: #f8fafc;">${{r.criteria}}</td>
+                                    <td style="color: #34d399; font-weight: 700; font-family: 'JetBrains Mono', monospace;">${{r.stock}}</td>
+                                    <td style="color: #94a3b8; font-family: 'JetBrains Mono', monospace;">${{r.peer}}</td>
+                                    <td style="color: #fbbf24; font-weight: 700;">${{r.verdict}}</td>
+                                </tr>
+                            `).join('');
+
+                            const checks = ev.forensic_checks || {{}};
+                            const checkBoxes = Object.entries(checks).map(([k, v]) => `
+                                <div class="evidence-check-item">
+                                    <div class="evidence-check-k">${{k.replace(/_/g, ' ')}}</div>
+                                    <div class="evidence-check-v">${{v}}</div>
+                                </div>
+                            `).join('');
+
+                            evidenceHtml = `
+                                <div class="summit-evidence-box">
+                                    <div class="summit-evidence-toggle-btn" onclick="toggleEvidenceCard('${{cardId}}')">
+                                        <span class="summit-evidence-title">📑 THẺ BẰNG CHỨNG PHÁP Y BCTC SỐNG — ${{ev.ticker}} (KIỂM TOÁN BIG 4)</span>
+                                        <span id="btn-${{cardId}}" style="color: #38bdf8; font-weight: 700; font-size: 11px;">▲ THU GỌN BẰNG CHỨNG</span>
+                                    </div>
+                                    <div id="${{cardId}}" class="summit-evidence-content" style="display: block;">
+                                        <div>
+                                            <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">1. BẢNG CÂN ĐỐI & DÒNG TIỀN KIỂM TOÁN THẬT Q3/2026:</div>
+                                            <div style="display: flex; flex-wrap: wrap; gap: 6px;">${{bsChips}}</div>
+                                        </div>
+
+                                        <div style="margin-top: 6px;">
+                                            <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">2. ĐỐI ĐẦU TRỰC DIỆN ĐỐI THỦ CÙNG NGÀNH (${{peer.peer_name || ''}}):</div>
+                                            <div style="overflow-x: auto; background: rgba(0,0,0,0.2); border-radius: 6px; padding: 6px;">
+                                                <table class="evidence-peer-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Tiêu Chí Pháp Y</th>
+                                                            <th>${{ev.ticker}} (Đề Xuất)</th>
+                                                            <th>Đối Thủ Cùng Ngành</th>
+                                                            <th>Phán Quyết Ban 2</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        ${{peerRows}}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div style="margin-top: 6px; font-size: 11px; color: #7dd3fc; font-style: italic;">
+                                                💡 <strong>Kết luận:</strong> ${{peer.conclusion || ''}}
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-top: 6px;">
+                                            <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">3. BỘ RADAR KIỂM ĐỊNH GIAN LẬN KẾ TOÁN (BENEISH M & ALTMAN Z):</div>
+                                            <div class="evidence-check-grid">${{checkBoxes}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }}
+
                         return `
                             <div class="${{cardClass}}">
                                 <div class="summit-msg-header">
@@ -3093,6 +3265,7 @@ def generate_portal_html(
                                 </div>
                                 <div class="summit-msg-content">${{formattedContent}}</div>
                                 ${{metricsHtml}}
+                                ${{evidenceHtml}}
                                 ${{highlightHtml}}
                             </div>
                         `;

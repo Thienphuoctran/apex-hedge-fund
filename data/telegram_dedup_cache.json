@@ -1,22 +1,27 @@
 {
-  "735145f8978a7f8f29de6fd24f1480a9": {
-    "ts": 1794145245.4776423,
-    "thread_id": 189,
-    "preview": "\u2705 *[B\u00c1O C\u00c1O NGHI\u1ec6M THU \u2014 #TASK-20261108-204043]*\nC\u01a1 quan th\u1ef1"
-  },
-  "a80e658833b3e93992d9d23c63961e68": {
-    "ts": 1794145422.9605484,
-    "thread_id": 189,
-    "preview": "\u2705 *[B\u00c1O C\u00c1O NGHI\u1ec6M THU \u2014 #TASK-20261108-204341]*\nC\u01a1 quan th\u1ef1"
-  },
-  "96c5497c4db77a01d4205ea86bb64f35": {
-    "ts": 1794146055.414272,
-    "thread_id": 6,
-    "preview": "\ud83c\udfdb\ufe0f *[C\u00d4NG \u0110I\u1ec6N QU\u00c1N TRI\u1ec6T TH\u1ec2 CH\u1ebe T\u1ed0I KH\u1ea8N T\u1eea CH\u1ee6 T\u1ecaCH PH\u01af\u1edaC"
-  },
   "d1f770956601df483d138316151c000f": {
     "ts": 1794148528.389005,
     "thread_id": 6,
     "preview": "*\ud83c\udfdb\ufe0f [NGH\u1eca QUY\u1ebeT B\u1ebe M\u1ea0C] \u0110\u1ea0I H\u1ed8I NGH\u1eca TH\u01af\u1ee2NG \u0110\u1ec8NH APEX 21H00 "
+  },
+  "9c2b4745bc27fec498e931e4d0b4fc13": {
+    "ts": 1794149795.7518704,
+    "thread_id": 6,
+    "preview": "\ud83d\ude80 *[APEX CLOUD SUPERVISOR 24/7 \u0110\u00c3 CH\u00cdNH TH\u1ee8C K\u00cdCH HO\u1ea0T]*\nK\u00edn"
+  },
+  "cde44e406bf01aaf15f8dcb7a4d21f7b": {
+    "ts": 1794149797.1119072,
+    "thread_id": 6,
+    "preview": "\ud83d\ude80 *[H\u1ec6 TH\u1ed0NG APEX CRON DAEMON V3.0 \u0110\u00c3 CH\u00cdNH TH\u1ee8C K\u00cdCH HO\u1ea0T 2"
+  },
+  "941e39bc5c2407264fc85b32ee0af164": {
+    "ts": 1794150005.5347166,
+    "thread_id": 112,
+    "preview": "\ud83d\udcda *[H\u1ed8I \u0110\u1ed2NG VI\u1ec6N S\u0128 APEX \u2014 GI\u1edc T\u1ef0 H\u1eccC & N\u1ea0P TRI TH\u1ee8C TH\u1ef0C C"
+  },
+  "5027a4eda8a7b0b8b0fdf24355e498d3": {
+    "ts": 1794150006.901967,
+    "thread_id": 6,
+    "preview": "\ud83d\udcda *[H\u1ed8I \u0110\u1ed2NG VI\u1ec6N S\u0128 APEX \u2014 GI\u1edc T\u1ef0 H\u1eccC & N\u1ea0P TRI TH\u1ee8C TH\u1ef0C C"
   }
 }

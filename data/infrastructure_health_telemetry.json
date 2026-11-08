@@ -1,8 +1,8 @@
 {
-  "audit_timestamp": "2026-11-08 15:32:38",
-  "audit_duration_seconds": 0.63,
-  "overall_infrastructure_health_score": 90,
-  "health_verdict": "XUẤT SẮC",
+  "audit_timestamp": "2026-11-08 22:03:42",
+  "audit_duration_seconds": 0.64,
+  "overall_infrastructure_health_score": 85,
+  "health_verdict": "CẦN LƯU Ý",
   "appointed_officers": {
     "sentinel_lead": "Ban 12 Trọng (Tổng Kiểm Sát Thể Chế & Liêm Chính)",
     "systems_architect": "Palmer (Cố Vấn Điều Hành Tối Cao & Trưởng Phòng Tổng Hệ Thống)",
@@ -10,20 +10,20 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 211,
-    "total_markdown_documents": 413,
+    "operational_institutional_reports": 239,
+    "total_markdown_documents": 447,
     "threshold_min": 300,
     "threshold_max": 500,
     "status": "AMBER_APPROACHING_THRESHOLD",
     "urgency": "MEDIUM",
-    "action_guidance": "Đã chạm ngưỡng cảnh báo (413 tệp MD / 211 báo cáo). Kích hoạt kế hoạch chuẩn bị sharding YYYY/MM."
+    "action_guidance": "Đã chạm ngưỡng cảnh báo (447 tệp MD / 239 báo cáo). Kích hoạt kế hoạch chuẩn bị sharding YYYY/MM."
   },
   "check_2_directory_density": {
     "total_directories_scanned": 101,
     "dense_directories_flagged": [
       {
         "directory": "scripts",
-        "file_count": 121,
+        "file_count": 124,
         "threshold": 80,
         "recommendation": "Cần phân mảnh thư mục con theo Năm/Tháng (YYYY/MM) khi vượt 80 tệp."
       },
@@ -38,17 +38,17 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 741,
-    "total_project_size_mb": 20.03,
-    "data_directory_size_mb": 3.14,
+    "total_active_files": 798,
+    "total_project_size_mb": 21.48,
+    "data_directory_size_mb": 3.36,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "2.0%",
+    "github_quota_used_pct": "2.15%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 12.8,
-    "uncommitted_files_count": 9,
+    "git_directory_size_mb": 13.81,
+    "uncommitted_files_count": 27,
     "active_branch": "main",
     "status": "HEALTHY"
   },
@@ -65,11 +65,11 @@
       },
       {
         "path": "data\\telegram_copilot_daemon.log",
-        "size_mb": 0.75
+        "size_mb": 0.84
       },
       {
         "path": "data\\logs\\cron_daemon.log",
-        "size_mb": 0.01
+        "size_mb": 0.02
       },
       {
         "path": "data\\logs\\inspector_trong.log",
@@ -89,8 +89,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 77.13,
-    "ssot_load_latency_ms": 0.46,
+    "json_directory_scan_latency_ms": 73.1,
+    "ssot_load_latency_ms": 0.39,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
