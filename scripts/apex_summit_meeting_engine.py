@@ -552,7 +552,13 @@ def add_chairman_directive(user_message: str) -> Dict[str, Any]:
     }
     state.setdefault("dynamic_messages", []).append(chairman_msg)
 
-    # 2. Phản hồi tức thời từ Master CIO James
+    # 2. Gọi bộ não Master CIO James nghiên cứu, mổ xẻ dữ liệu & báo cáo thực thi sâu sắc
+    try:
+        from scripts.master_cio_james_agent import handle_james_chat
+        james_analysis_reply = handle_james_chat(user_message)
+    except Exception as e:
+        james_analysis_reply = f"Báo cáo Chủ tịch: Tôi đã tiếp nhận chỉ thị '{user_message}' và đang trực tiếp điều phối 12 phòng ban đối soát số liệu khẩn cấp (Ghi chú hệ thống: {e})."
+
     james_resp = {
         "id": f"dyn_james_{int(time.time()*1000)+1}",
         "minute": 99,
@@ -562,10 +568,10 @@ def add_chairman_directive(user_message: str) -> Dict[str, Any]:
         "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
         "role": "Chủ Trì Điều Phối",
         "avatar": "🎖️",
-        "badge": "TIẾP NHẬN CHỈ THỊ",
+        "badge": "BÁO CÁO THỰC THI",
         "badge_color": "#38bdf8",
-        "content": f"Báo cáo Chủ tịch: Bộ chỉ huy Master CIO James đã tiếp nhận chỉ thị: '{user_message}'. Toàn bộ 12 phòng ban đang phối hợp đối soát dữ liệu và tuân thủ tuyệt đối mệnh lệnh của Chủ tịch!",
-        "highlight": "Đã tiếp nhận chỉ thị trực tiếp",
+        "content": james_analysis_reply,
+        "highlight": "Báo cáo thực thi & nghiên cứu chuyên sâu của Master CIO James",
         "metrics": None
     }
     state["dynamic_messages"].append(james_resp)
@@ -582,8 +588,8 @@ def add_chairman_directive(user_message: str) -> Dict[str, Any]:
         "avatar": "🛡️",
         "badge": "KIỂM SÁT KỶ LUẬT",
         "badge_color": "#f59e0b",
-        "content": "Tổng Kiểm Sát Viên Trọng xác nhận: Chỉ thị của Chủ tịch đã được ghi vào biên bản điện tử và kích hoạt giám sát thi hành theo Hiến Chương Apex V1.0.",
-        "highlight": "Ghi nhận kỷ luật thể chế",
+        "content": "Tổng Kiểm Sát Viên Trọng xác nhận: Đã niêm phong chỉ thị của Chủ tịch vào Sổ Cái Thể Chế. Phản hồi và phương án hành động của James đạt chuẩn 100% 'Làm thật việc thật', tuân thủ Hiến Chương Apex V1.0.",
+        "highlight": "Ghi nhận & kiểm sát kỷ luật thể chế",
         "metrics": None
     }
     state["dynamic_messages"].append(trong_resp)

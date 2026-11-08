@@ -470,6 +470,15 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                     return
                 from scripts.apex_summit_meeting_engine import add_chairman_directive
                 res = add_chairman_directive(user_msg)
+
+                # Gửi báo cáo nghiên cứu đồng bộ vào Telegram james_hq
+                try:
+                    from scripts.telegram_dispatcher import dispatch_message
+                    james_content = res.get('james_resp', {}).get('content', '')
+                    dispatch_message('james_hq', f"🏛️ *[CHỈ THỊ TẠI ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH]*\n👤 *Chủ tịch*: `{user_msg}`\n\n{james_content}")
+                except Exception:
+                    pass
+
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.send_header("Cache-Control", "no-cache")

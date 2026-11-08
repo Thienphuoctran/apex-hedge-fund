@@ -3117,6 +3117,13 @@ def generate_portal_html(
                 const data = await res.json();
                 if (data.ok) {{
                     await pollSummitMeeting();
+                    // Đồng bộ trực tiếp sang phòng chat Bàn Chỉ Huy James (Tab 3)
+                    if (typeof appendUserMessage === 'function') {{
+                        appendUserMessage(msg);
+                    }}
+                    if (data.james_resp && typeof appendJamesMessage === 'function') {{
+                        appendJamesMessage(data.james_resp.content, data.james_resp.time_str);
+                    }}
                 }} else {{
                     alert('Lỗi gửi chỉ thị: ' + (data.error || 'Không xác định'));
                 }}
