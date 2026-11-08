@@ -112,7 +112,7 @@
   "executive_approval": {
     "status": "APPROVED",
     "approved_by": "Chủ tịch Trần Quốc Thiên Phước",
-    "approval_time": "2026-11-08 22:14:57",
+    "approval_time": "2026-11-08 23:08:16",
     "seal": "🛡️ BAN 12 TRỌNG ĐÃ NIÊM PHONG PHÁP LÝ THỂ CHẾ",
     "order_blotter_status": "READY_FOR_EXECUTION"
   },
@@ -1007,6 +1007,25 @@
       "badge_color": "#eab308",
       "content": "LỆNH CỦA CHỦ TỊCH: Tôi — Chủ tịch Trần Quốc Thiên Phước — đã trực tiếp kiểm tra và chính thức KÝ PHÊ DUYỆT toàn văn Nghị Quyết Thượng Đỉnh cùng Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC. Giao Master CIO James, chuyên viên Minh Quân và Sentinel Victor thực thi nghiêm ngặt trong Khung Giờ Vàng sáng mai!",
       "highlight": "Chủ tịch Phước Trần đã bấm nút ký duyệt Sổ Lệnh lúc 2026-11-08 22:14:57",
+      "metrics": {
+        "Status": "OFFICIALLY_SIGNED",
+        "Signer": "Chairman Phuoc Tran",
+        "Active_Orders": 4
+      }
+    },
+    {
+      "id": "appr_1794154096",
+      "minute": 30,
+      "time_str": "23:08:16",
+      "phase_step": 8,
+      "sender_name": "Chủ Tịch Trần Quốc Thiên Phước",
+      "department": "Hội Đồng Quản Trị Tối Cao",
+      "role": "Tổng Chỉ Huy Tối Cao",
+      "avatar": "👑",
+      "badge": "LỆNH PHÊ DUYỆT CỦA CHỦ TỊCH",
+      "badge_color": "#eab308",
+      "content": "LỆNH CỦA CHỦ TỊCH: Tôi — Chủ tịch Trần Quốc Thiên Phước — đã trực tiếp kiểm tra và chính thức KÝ PHÊ DUYỆT toàn văn Nghị Quyết Thượng Đỉnh cùng Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC. Giao Master CIO James, chuyên viên Minh Quân và Sentinel Victor thực thi nghiêm ngặt trong Khung Giờ Vàng sáng mai!",
+      "highlight": "Chủ tịch Phước Trần đã bấm nút ký duyệt Sổ Lệnh lúc 2026-11-08 23:08:16",
       "metrics": {
         "Status": "OFFICIALLY_SIGNED",
         "Signer": "Chairman Phuoc Tran",

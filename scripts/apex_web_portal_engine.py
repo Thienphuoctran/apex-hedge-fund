@@ -3360,26 +3360,34 @@ def generate_portal_html(
                 }}).join('');
             }}
 
-            // 5. Cập nhật Trạng Thái Phê Chuẩn của Chủ Tịch
+            // 5. Cập nhật Trạng Thái Phê Chuẩn của Chủ Tịch (BƯỚC 5: XUẤT VĂN KIỆN & CHUYỂN GIAO)
             const appBox = document.getElementById('summit-approval-status');
             const appBtn = document.getElementById('btn-approve-summit');
             if (data.executive_approval && data.executive_approval.status === 'APPROVED') {{
                 if (appBox) {{
                     appBox.innerHTML = `
-                        <div style="background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 6px; padding: 8px 10px;">
-                            <div style="color: #34d399; font-weight: 800; font-size: 11px;">✅ ĐÃ ĐƯỢC CHỦ TỊCH KÝ PHÊ DUYỆT CHÍNH THỨC</div>
-                            <div style="color: #cbd5e1; font-size: 11px; margin-top: 3px;">Thời gian: <strong>${{data.executive_approval.approval_time}}</strong></div>
-                            <div style="color: #fbbf24; font-size: 10.5px; margin-top: 2px;">🛡️ BAN 12 TRỌNG ĐÃ NIÊM PHONG PHÁP LÝ THỂ CHẾ</div>
+                        <div style="background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;">
+                            <div style="color: #34d399; font-weight: 800; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                                <span>👑</span> <span>NGHỊ QUYẾT ĐÃ ĐƯỢC CHỦ TỊCH KÝ PHÊ DUYỆT CHÍNH THỨC</span>
+                            </div>
+                            <div style="color: #cbd5e1; font-size: 11px; margin-top: 4px;">Thời gian ký duyệt: <strong>${{data.executive_approval.approval_time}}</strong></div>
+                            <div style="color: #fbbf24; font-size: 11px; margin-top: 2px;">🛡️ BAN 12 TRỌNG ĐÃ NIÊM PHONG PHÁP LÝ THỂ CHẾ</div>
+                            <div style="color: #38bdf8; font-size: 11px; margin-top: 5px; line-height: 1.4;">🚀 <strong>ĐÃ CHUYỂN GIAO SỔ LỆNH:</strong> 4 mã (HDB, MSH, BAF, IDC) đã khóa sẵn trong hàng đợi tác chiến Khung Giờ Vàng 14h00 cho Minh Quân & James!</div>
+                        </div>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <button onclick="openReportModal('08_Master_Investment_CIO/council_resolutions/2026-11-08_Nghi_Quyet_Thuong_Dinh_Da_Ky_Duyet.md')" 
+                                    style="flex: 1; min-width: 170px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: none; border-radius: 6px; padding: 10px 12px; font-size: 11px; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);">
+                                <span>📄</span> <span>Xem Toàn Văn Nghị Quyết</span>
+                            </button>
+                            <a href="/api/report?path=08_Master_Investment_CIO/council_resolutions/2026-11-08_Nghi_Quyet_Thuong_Dinh_Da_Ky_Duyet.md" target="_blank"
+                               style="background: rgba(255, 255, 255, 0.08); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; padding: 10px 12px; font-size: 11px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                <span>📥</span> <span>Tải Markdown</span>
+                            </a>
                         </div>
                     `;
                 }}
                 if (appBtn) {{
-                    appBtn.disabled = true;
-                    appBtn.style.background = 'rgba(16,185,129,0.2)';
-                    appBtn.style.color = '#34d399';
-                    appBtn.style.border = '1px solid rgba(16,185,129,0.4)';
-                    appBtn.style.boxShadow = 'none';
-                    appBtn.innerHTML = '<span>✅</span> <span>NGHỊ QUYẾT ĐÃ ĐƯỢC PHÊ DUYỆT (CHỦ TỊCH ĐÃ KÝ)</span>';
+                    appBtn.style.display = 'none';
                 }}
             }}
         }}

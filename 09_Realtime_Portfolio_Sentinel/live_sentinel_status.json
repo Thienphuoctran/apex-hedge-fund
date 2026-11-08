@@ -37,5 +37,13 @@
   },
   "cash_balance_vnd": 20167119.0,
   "realized_pnl_vnd": 167119.0,
-  "positions_tracked": []
+  "positions_tracked": [],
+  "primed_radar_symbols": [
+    "HDB",
+    "MSH",
+    "BAF",
+    "IDC"
+  ],
+  "last_council_handover": "2026-11-08 23:08:16",
+  "council_handover_status": "ACTIVE_RADAR_PRIMED"
 }

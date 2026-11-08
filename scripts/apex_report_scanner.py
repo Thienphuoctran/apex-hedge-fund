@@ -164,6 +164,14 @@ DEPARTMENTS_CONFIG = [
         "pattern": "08_Master_Investment_CIO/*.md"
     },
     {
+        "dept_id": "ban_8_council",
+        "name": "Nghị Quyết Thượng Đỉnh Toàn Doanh Nghiệp (HĐQT & Ban 8)",
+        "short_name": "Nghị Quyết Thượng Đỉnh",
+        "icon": "🏛️",
+        "color": "#f59e0b",
+        "pattern": "08_Master_Investment_CIO/council_resolutions/*.md"
+    },
+    {
         "dept_id": "ban_10_hien",
         "name": "Ban 10: Rà Soát BCTC & Quan Hệ Cổ Đông (Hiền Scout)",
         "short_name": "Hiền BCTC & IR",
