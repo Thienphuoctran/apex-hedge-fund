@@ -535,14 +535,16 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
 def add_chairman_directive(user_message: str) -> Dict[str, Any]:
     """
     Xử lý chỉ thị trực tiếp từ Chủ tịch Phước Trần gõ ngay tại phòng họp.
-    Hệ thống ghi nhận và Master CIO James / Trọng phản hồi lập tức.
+    Hệ thống ghi nhận và Master CIO James / Các phòng ban chuyên trách / Trọng phản hồi lập tức
+    với đầy đủ tư duy độc lập, đối chất số liệu kiểm toán và rẽ nhánh thông minh (BƯỚC 4).
     """
     state = load_meeting_state()
     now_str = datetime.datetime.now().strftime("%H:%M:%S")
+    ts_chair = int(time.time() * 1000)
     
     # 1. Tin nhắn của Chủ tịch
     chairman_msg = {
-        "id": f"dyn_chair_{int(time.time()*1000)}",
+        "id": f"dyn_chair_{ts_chair}",
         "minute": 99,
         "time_str": now_str,
         "phase_step": 99,
@@ -558,54 +560,61 @@ def add_chairman_directive(user_message: str) -> Dict[str, Any]:
     }
     state.setdefault("dynamic_messages", []).append(chairman_msg)
 
-    # 2. Gọi bộ não Master CIO James nghiên cứu, mổ xẻ dữ liệu & báo cáo thực thi sâu sắc
+    # 2. Sinh chuỗi phản hồi rẽ nhánh thông minh từ Bộ Não Chỉ Thị Đa Phòng Ban (BƯỚC 4)
     try:
-        from scripts.master_cio_james_agent import handle_james_chat
-        james_analysis_reply = handle_james_chat(user_message)
+        from scripts.apex_directive_intelligence_engine import ApexDirectiveIntelligenceEngine
+        council_responses = ApexDirectiveIntelligenceEngine.generate_executive_directive_reply(user_message, state)
     except Exception as e:
-        james_analysis_reply = f"Báo cáo Chủ tịch: Tôi đã tiếp nhận chỉ thị '{user_message}' và đang trực tiếp điều phối 12 phòng ban đối soát số liệu khẩn cấp (Ghi chú hệ thống: {e})."
+        from scripts.master_cio_james_agent import handle_james_chat
+        reply_txt = handle_james_chat(user_message)
+        council_responses = [
+            {
+                "id": f"dyn_james_{ts_chair+1}",
+                "minute": 99,
+                "time_str": now_str,
+                "phase_step": 99,
+                "sender_name": "Master CIO James",
+                "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
+                "role": "Chủ Trì Điều Phối",
+                "avatar": "🎖️",
+                "badge": "BÁO CÁO THỰC THI",
+                "badge_color": "#38bdf8",
+                "content": reply_txt,
+                "highlight": "Báo cáo thực thi của Master CIO James",
+                "metrics": None
+            },
+            {
+                "id": f"dyn_trong_{ts_chair+2}",
+                "minute": 99,
+                "time_str": now_str,
+                "phase_step": 99,
+                "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+                "department": "Ban 12 — Tổng Kiểm Sát Thể Chế",
+                "role": "Giám Sát Viên Thường Trực",
+                "avatar": "🛡️",
+                "badge": "KIỂM SÁT KỶ LUẬT",
+                "badge_color": "#f59e0b",
+                "content": "Tổng Kiểm Sát Viên Trọng xác nhận: Đã niêm phong chỉ thị của Chủ tịch vào Sổ Cái Thể Chế. Hệ thống ghi nhận và kiểm sát kỷ luật tuân thủ Hiến Chương Apex V1.0.",
+                "highlight": "Ghi nhận & kiểm sát kỷ luật thể chế",
+                "metrics": None
+            }
+        ]
 
-    james_resp = {
-        "id": f"dyn_james_{int(time.time()*1000)+1}",
-        "minute": 99,
-        "time_str": now_str,
-        "phase_step": 99,
-        "sender_name": "Master CIO James",
-        "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
-        "role": "Chủ Trì Điều Phối",
-        "avatar": "🎖️",
-        "badge": "BÁO CÁO THỰC THI",
-        "badge_color": "#38bdf8",
-        "content": james_analysis_reply,
-        "highlight": "Báo cáo thực thi & nghiên cứu chuyên sâu của Master CIO James",
-        "metrics": None
-    }
-    state["dynamic_messages"].append(james_resp)
-
-    # 3. Phản hồi giám sát từ Trọng (Ban 12)
-    trong_resp = {
-        "id": f"dyn_trong_{int(time.time()*1000)+2}",
-        "minute": 99,
-        "time_str": now_str,
-        "phase_step": 99,
-        "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
-        "department": "Ban 12 — Tổng Kiểm Sát Thể Chế",
-        "role": "Giám Sát Viên Thường Trực",
-        "avatar": "🛡️",
-        "badge": "KIỂM SÁT KỶ LUẬT",
-        "badge_color": "#f59e0b",
-        "content": "Tổng Kiểm Sát Viên Trọng xác nhận: Đã niêm phong chỉ thị của Chủ tịch vào Sổ Cái Thể Chế. Phản hồi và phương án hành động của James đạt chuẩn 100% 'Làm thật việc thật', tuân thủ Hiến Chương Apex V1.0.",
-        "highlight": "Ghi nhận & kiểm sát kỷ luật thể chế",
-        "metrics": None
-    }
-    state["dynamic_messages"].append(trong_resp)
+    # Nạp toàn bộ các tin nhắn rẽ nhánh vào dynamic_messages
+    for resp in council_responses:
+        state["dynamic_messages"].append(resp)
 
     save_meeting_state(state)
+
+    james_msg = next((m for m in council_responses if "James" in m.get("sender_name", "")), council_responses[0])
+    trong_msg = next((m for m in reversed(council_responses) if "Trọng" in m.get("sender_name", "")), council_responses[-1])
+
     return {
         "ok": True,
         "chairman_msg": chairman_msg,
-        "james_resp": james_resp,
-        "trong_resp": trong_resp
+        "responses": council_responses,
+        "james_resp": james_msg,
+        "trong_resp": trong_msg
     }
 
 

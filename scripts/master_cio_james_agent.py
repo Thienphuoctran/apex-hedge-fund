@@ -166,7 +166,22 @@ def handle_james_chat(user_text: str) -> str:
     if llm_resp:
         return f"🎖️ *[TỔNG TƯ LỆNH MASTER CIO JAMES]*\n\n{llm_resp}"
 
-    # 3. Phản hồi các câu hỏi chiến lược cốt lõi dựa trên Single Source of Truth
+    # 3. Gọi Bộ Não Phân Tích Định Chế Chuyên Sâu (Apex Directive Intelligence Engine - BƯỚC 4)
+    try:
+        from scripts.apex_directive_intelligence_engine import ApexDirectiveIntelligenceEngine
+        c_msgs = ApexDirectiveIntelligenceEngine.generate_executive_directive_reply(text_clean)
+        if c_msgs:
+            blocks = []
+            for m in c_msgs:
+                s_name = m.get("sender_name", "")
+                badge = m.get("badge", "")
+                content = m.get("content", "")
+                blocks.append(f"📌 *[{s_name.upper()} — {badge}]*\n{content}")
+            return "\n\n━━━━━━━━━━━━━━━━━━━\n\n".join(blocks)
+    except Exception:
+        pass
+
+    # 4. Phản hồi các câu hỏi chiến lược cốt lõi dựa trên Single Source of Truth
     portfolio_ctx = _get_live_portfolio_context()
     return (
         f"🎖️ *[BỘ CHỈ HUY TỔNG TƯ LỆNH MASTER CIO JAMES]*\n\n"

@@ -1311,6 +1311,11 @@ def generate_portal_html(
             background: rgba(16, 185, 129, 0.06);
             border-color: rgba(16, 185, 129, 0.35);
         }}
+        .summit-msg-card.msg-tactical {{
+            background: rgba(249, 115, 22, 0.06);
+            border-color: rgba(249, 115, 22, 0.4);
+            box-shadow: 0 2px 14px rgba(249, 115, 22, 0.12);
+        }}
         @keyframes fadeInMsg {{
             from {{ opacity: 0; transform: translateY(8px); }}
             to {{ opacity: 1; transform: translateY(0); }}
@@ -2183,7 +2188,7 @@ def generate_portal_html(
                                 <input type="text" id="summit-chairman-input" class="summit-input-field" 
                                        placeholder="Gõ câu hỏi, chất vấn hoặc chỉ thị trực tiếp cho Hội đồng..." 
                                        onkeydown="if(event.key === 'Enter') sendChairmanSummitDirective();" />
-                                <button class="summit-btn-send" onclick="sendChairmanSummitDirective()">
+                                <button id="summit-btn-send-directive" class="summit-btn-send" onclick="sendChairmanSummitDirective()">
                                     <span>🚀</span> <span>Gửi Chỉ Thị</span>
                                 </button>
                             </div>
@@ -3195,7 +3200,8 @@ def generate_portal_html(
                         else if (m.sender_name && m.sender_name.includes('Trọng')) cardClass += ' msg-inspector';
                         else if (m.badge && (m.badge.includes('TRANH BIỆN') || m.badge.includes('KẺ THÙ') || m.badge.includes('BẢO LƯU') || m.badge.includes('PHẢN ĐỐI'))) cardClass += ' msg-debate';
                         else if (m.badge && (m.badge.includes('PHÁP Y') || m.badge.includes('DỮ LIỆU') || m.badge.includes('BCTC'))) cardClass += ' msg-forensic';
-                        else if (m.badge && (m.badge.includes('ĐỊNH LƯỢNG') || m.badge.includes('PHÁN QUYẾT') || m.badge.includes('ĐỐI SOÁT') || m.badge.includes('ĐỀ XUẤT'))) cardClass += ' msg-quant';
+                        else if (m.sender_name && m.sender_name.includes('Minh Quân')) cardClass += ' msg-tactical';
+                        else if (m.badge && (m.badge.includes('ĐỊNH LƯỢNG') || m.badge.includes('PHÁN QUYẾT') || m.badge.includes('ĐỐI SOÁT') || m.badge.includes('ĐỀ XUẤT') || m.badge.includes('RỦI RO'))) cardClass += ' msg-quant';
 
                         let badgeHtml = '';
                         if (m.badge) {{
@@ -3406,12 +3412,17 @@ def generate_portal_html(
 
         async function sendChairmanSummitDirective() {{
             const input = document.getElementById('summit-chairman-input');
+            const btn = document.getElementById('summit-btn-send-directive') || document.querySelector('.summit-btn-send');
             if (!input) return;
             const msg = input.value.trim();
             if (!msg) return;
 
             input.value = '';
             input.disabled = true;
+            if (btn) {{
+                btn.disabled = true;
+                btn.innerHTML = '<span>⏳</span> <span>Đang Phân Tích & Điều Phối...</span>';
+            }}
 
             try {{
                 const res = await fetch('/api/summit_message', {{
@@ -3422,7 +3433,12 @@ def generate_portal_html(
                 const data = await res.json();
                 if (data.ok) {{
                     await pollSummitMeeting();
-                    // Đồng bộ trực tiếp sang phòng chat Bàn Chỉ Huy James (Tab 3)
+                    // Cuộn mượt xuống cuối phòng họp để xem ngay lập tức các phản hồi rẽ nhánh
+                    const container = document.getElementById('summit-timeline-container');
+                    if (container) {{
+                        setTimeout(() => {{ container.scrollTop = container.scrollHeight; }}, 80);
+                    }}
+                    // Đồng bộ sang phòng chat Bàn Chỉ Huy James (Tab 3)
                     if (typeof appendUserMessage === 'function') {{
                         appendUserMessage(msg);
                     }}
@@ -3436,6 +3452,10 @@ def generate_portal_html(
                 alert('Lỗi kết nối máy chủ khi gửi chỉ thị: ' + err.message);
             }} finally {{
                 input.disabled = false;
+                if (btn) {{
+                    btn.disabled = false;
+                    btn.innerHTML = '<span>🚀</span> <span>Gửi Chỉ Thị</span>';
+                }}
                 input.focus();
             }}
         }}
