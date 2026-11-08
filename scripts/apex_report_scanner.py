@@ -73,7 +73,7 @@ DEPARTMENTS_CONFIG = [
         "short_name": "Pháp Y BCTC VN",
         "icon": "🔍",
         "color": "#34d399",
-        "pattern": "VN_Market/02_BCTC_Equity_Research/*.md"
+        "pattern": "VN_Market/02_BCTC_Equity_Research/*Equity_Analysis*.md"
     },
     {
         "dept_id": "ban_3_synthesis",
@@ -162,6 +162,30 @@ DEPARTMENTS_CONFIG = [
         "icon": "🎖️",
         "color": "#e879f9",
         "pattern": "08_Master_Investment_CIO/*.md"
+    },
+    {
+        "dept_id": "ban_10_hien",
+        "name": "Ban 10: Rà Soát BCTC & Quan Hệ Cổ Đông (Hiền Scout)",
+        "short_name": "Hiền BCTC & IR",
+        "icon": "🌸",
+        "color": "#ec4899",
+        "pattern": "VN_Market/02_BCTC_Equity_Research/*Hien*.md"
+    },
+    {
+        "dept_id": "ban_10_cbtt",
+        "name": "Ban 10: Rà Soát Công Bố Thông Tin & BCTC (Hiền)",
+        "short_name": "Hiền CBTT & BCTC",
+        "icon": "🌸",
+        "color": "#ec4899",
+        "pattern": "VN_Market/02_BCTC_Equity_Research/*CBTT*.md"
+    },
+    {
+        "dept_id": "ban_11_khanh",
+        "name": "Ban 11: Sáng Tạo Video Viral Tài Chính (Khánh & Bảo)",
+        "short_name": "Khánh Video Viral",
+        "icon": "🎬",
+        "color": "#f97316",
+        "pattern": "11_Viral_Content_Creation/*.md"
     },
     {
         "dept_id": "ban_12_ombudsman",
@@ -415,6 +439,8 @@ def get_daily_milestones_status() -> List[Dict[str, Any]]:
     """Tính toán tiến độ 18 Cột Mốc Tác Chiến trong ngày so khớp với giờ Việt Nam."""
     now_vn = datetime.datetime.now()
     now_hm = now_vn.strftime("%H:%M")
+    is_weekend = now_vn.weekday() in (5, 6)
+    trading_milestones = {"09:00", "11:45", "13:00", "14:00", "14:25", "15:15"}
 
     milestones_def = [
         ("06:00", "TASK-0600-AUTOCLEAN", "Ban 10: Rà Soát CBTT Đêm Qua & Dọn Dẹp Cache", "ban_10_hien", "🌸", "🌅 Ca Sáng"),
@@ -439,7 +465,11 @@ def get_daily_milestones_status() -> List[Dict[str, Any]]:
 
     status_list = []
     for time_milestone, tid, name, dept_code, icon, shift in milestones_def:
-        if now_hm > time_milestone:
+        if is_weekend and time_milestone in trading_milestones:
+            status = "WEEKEND_STANDBY"
+            status_label = "NGHỈ GIAO DỊCH CUỐI TUẦN"
+            color = "#64748b"
+        elif now_hm > time_milestone:
             status = "COMPLETED"
             status_label = "ĐÃ HOÀN TẤT"
             color = "#10b981"
