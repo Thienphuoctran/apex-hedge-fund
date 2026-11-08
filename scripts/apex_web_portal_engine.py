@@ -1065,6 +1065,458 @@ def generate_portal_html(
             .markdown-body th {{ background: #f1f5f9; color: #000; }}
             .markdown-body code {{ color: #000; background: #eee; }}
         }}
+
+        /* ========================================================
+           TAB 4: PHÒNG HỌP THƯỢNG ĐỈNH TRỰC TUYẾN (APEX WAR ROOM)
+           ======================================================== */
+        .summit-container {{
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }}
+        .summit-header-card {{
+            background: linear-gradient(135deg, #0b1329 0%, #171d36 50%, #1e1b4b 100%);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 16px;
+            padding: 22px 28px;
+            box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }}
+        .summit-header-card::before {{
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #ec4899);
+        }}
+        .summit-title-box {{
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }}
+        .summit-tag-row {{
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }}
+        .summit-tag {{
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }}
+        .summit-tag-gold {{
+            background: rgba(234, 179, 8, 0.15);
+            color: #facc15;
+            border: 1px solid rgba(234, 179, 8, 0.35);
+        }}
+        .summit-tag-blue {{
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.35);
+        }}
+        .summit-tag-inspector {{
+            background: rgba(245, 158, 11, 0.18);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            font-weight: 800;
+        }}
+        .summit-title {{
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }}
+        .summit-sub {{
+            font-size: 12.5px;
+            color: var(--text-muted);
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }}
+        .summit-timer-card {{
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 14px 20px;
+            text-align: center;
+            min-width: 220px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }}
+        .summit-timer-label {{
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            margin-bottom: 4px;
+        }}
+        .summit-timer-val {{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 24px;
+            font-weight: 800;
+            color: #38bdf8;
+            letter-spacing: 0.04em;
+        }}
+        .summit-timer-sub {{
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }}
+
+        /* PHASES TIMELINE STEPPER */
+        .summit-phases-card {{
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 18px 22px;
+        }}
+        .summit-phases-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-dim);
+        }}
+        .summit-steps-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 8px;
+        }}
+        .summit-step-item {{
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 10px 12px;
+            transition: all 0.2s;
+            position: relative;
+        }}
+        .summit-step-item.active {{
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.08);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+        }}
+        .summit-step-item.completed {{
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.06);
+        }}
+        .summit-step-min {{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 3px;
+        }}
+        .summit-step-item.active .summit-step-min {{ color: #38bdf8; }}
+        .summit-step-item.completed .summit-step-min {{ color: #34d399; }}
+        .summit-step-lbl {{
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #f1f5f9;
+            line-height: 1.3;
+        }}
+
+        /* SPLIT-VIEW WAR ROOM (70% - 30%) */
+        .summit-war-split {{
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 18px;
+            align-items: start;
+        }}
+        @media (max-width: 1080px) {{
+            .summit-war-split {{ grid-template-columns: 1fr; }}
+        }}
+
+        /* CỘT TRÁI: LIVE DIALOGUE STREAM */
+        .summit-feed-panel {{
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 680px;
+        }}
+        .summit-feed-header {{
+            background: linear-gradient(135deg, #131b2e 0%, #1e293b 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }}
+        .summit-feed-body {{
+            flex: 1;
+            padding: 20px 22px;
+            overflow-y: auto;
+            max-height: 620px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: #090e1a;
+            scrollbar-width: thin;
+        }}
+        .summit-msg-card {{
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 16px 18px;
+            transition: all 0.2s;
+            animation: fadeInMsg 0.3s ease;
+        }}
+        .summit-msg-card:hover {{
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.15);
+        }}
+        .summit-msg-card.msg-chairman {{
+            background: rgba(234, 179, 8, 0.06);
+            border-color: rgba(234, 179, 8, 0.35);
+            box-shadow: 0 4px 18px rgba(234, 179, 8, 0.1);
+        }}
+        .summit-msg-card.msg-inspector {{
+            background: rgba(245, 158, 11, 0.06);
+            border-color: rgba(245, 158, 11, 0.35);
+        }}
+        .summit-msg-card.msg-debate {{
+            background: rgba(239, 68, 68, 0.05);
+            border-color: rgba(239, 68, 68, 0.3);
+        }}
+        @keyframes fadeInMsg {{
+            from {{ opacity: 0; transform: translateY(8px); }}
+            to {{ opacity: 1; transform: translateY(0); }}
+        }}
+        .summit-msg-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }}
+        .summit-msg-author {{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }}
+        .summit-msg-avatar {{
+            font-size: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }}
+        .summit-msg-name {{
+            font-weight: 800;
+            color: #f8fafc;
+            font-size: 13.5px;
+        }}
+        .summit-msg-dept {{
+            font-size: 11px;
+            color: var(--text-muted);
+        }}
+        .summit-msg-time {{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+        }}
+        .summit-msg-content {{
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+        }}
+        .summit-msg-highlight {{
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: rgba(56, 189, 248, 0.08);
+            border-left: 3px solid #38bdf8;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #7dd3fc;
+        }}
+
+        /* CHAIRMAN DIRECT INPUT BAR */
+        .summit-input-panel {{
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }}
+        .summit-input-label {{
+            font-size: 11px;
+            font-weight: 800;
+            color: #facc15;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }}
+        .summit-input-row {{
+            display: flex;
+            gap: 10px;
+        }}
+        .summit-input-field {{
+            flex: 1;
+            background: var(--bg-base);
+            border: 1px solid rgba(234, 179, 8, 0.35);
+            border-radius: 10px;
+            color: #fff;
+            padding: 12px 16px;
+            font-size: 13.5px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }}
+        .summit-input-field:focus {{
+            border-color: #facc15;
+            box-shadow: 0 0 12px rgba(234, 179, 8, 0.25);
+        }}
+        .summit-btn-send {{
+            background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+            color: #070a12;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }}
+        .summit-btn-send:hover {{
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(234, 179, 8, 0.35);
+        }}
+
+        /* CỘT PHẢI: BÀN KIỂM SÁT TRỌNG & BIỂU QUYẾT */
+        .summit-side-col {{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }}
+        .summit-side-card {{
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 18px 20px;
+            position: relative;
+        }}
+        .summit-side-title {{
+            font-size: 13px;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }}
+        .inspector-rule-item {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 12px;
+        }}
+        .inspector-rule-item:last-child {{ border-bottom: none; }}
+        .inspector-rule-text {{ color: var(--text-muted); }}
+        .inspector-rule-badge {{
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 10.5px;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+        }}
+        .summit-stock-vote-card {{
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+        }}
+        .summit-stock-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }}
+        .summit-stock-sym {{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            font-weight: 800;
+            color: #38bdf8;
+        }}
+        .summit-vote-tally {{
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 800;
+        }}
+        .summit-stock-meta {{
+            font-size: 11.5px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }}
+        .summit-action-btn-large {{
+            width: 100%;
+            background: linear-gradient(135deg, #1e1b4b 0%, #1e293b 100%);
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 12.5px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }}
+        .summit-action-btn-large:hover {{
+            background: #38bdf8;
+            color: #070a12;
+            box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
+        }}
+
     </style>
 </head>
 <body>
@@ -1136,11 +1588,15 @@ def generate_portal_html(
             <button class="tab-btn" onclick="switchTab('james-command')">
                 <span>🎖️</span> <span>3. Bàn Chỉ Huy Master CIO James</span>
             </button>
+            <button class="tab-btn" id="btn-tab-summit" onclick="switchTab('summit-room')">
+                <span>🏛️</span> <span>4. Phòng Họp Thượng Đỉnh Trực Tuyến</span>
+                <span class="live-badge" id="summit-nav-badge" style="padding: 2px 8px; font-size: 10.5px; margin-left: 4px; border-radius: 9999px;">● LIVE 21H00</span>
+            </button>
             <button class="tab-btn" onclick="switchTab('timeline')">
-                <span>⏰</span> <span>4. Tiến Độ 18 Cột Mốc Ngày</span>
+                <span>⏰</span> <span>5. Tiến Độ 18 Cột Mốc Ngày</span>
             </button>
             <button class="tab-btn" onclick="switchTab('supervisor')">
-                <span>🛡️</span> <span>5. Giám Sát Cụm Container 24/7</span>
+                <span>🛡️</span> <span>6. Giám Sát Cụm Container 24/7</span>
             </button>
         </nav>
 
@@ -1501,6 +1957,174 @@ def generate_portal_html(
             </div>
         </section>
 
+
+        <!-- ========================================================
+             TAB 4: PHÒNG HỌP THƯỢNG ĐỈNH TRỰC TUYẾN (APEX WAR ROOM)
+             ======================================================== -->
+        <section id="tab-summit-room" class="tab-pane">
+            <div class="summit-container">
+                <!-- 1. HEADER CARD & REAL-TIME TIMER -->
+                <div class="summit-header-card">
+                    <div class="summit-title-box">
+                        <div class="summit-tag-row">
+                            <span class="summit-tag summit-tag-gold">👑 CHỦ TỌA: CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC</span>
+                            <span class="summit-tag summit-tag-blue">🎖️ CHỦ TRÌ: MASTER CIO JAMES & PALMER</span>
+                            <span class="summit-tag summit-tag-inspector">🛡️ GIÁM SÁT VIÊN THƯỜNG TRỰC: TỔNG KIỂM SÁT VIÊN TRỌNG (BAN 12)</span>
+                        </div>
+                        <h2 class="summit-title" id="summit-main-title">
+                            <span>🏛️</span> <span>ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX</span>
+                        </h2>
+                        <div class="summit-sub">
+                            <span>⏱️ Khung giờ: <strong>21h00 – 21h30 (30 Phút)</strong></span>
+                            <span>🏦 Tài khoản: <strong>TCBS 105C307855</strong> (20,167,119 ₫ • 100% Tiền Mặt)</span>
+                            <span>⚖️ Thể chế: <strong>100% Tuân thủ Hiến Chương V1.0</strong></span>
+                        </div>
+                    </div>
+                    <div class="summit-timer-card">
+                        <div class="summit-timer-label" id="summit-timer-lbl">⏱️ ĐỒNG HỒ ĐẾM NGƯỢC GIỜ G</div>
+                        <div class="summit-timer-val" id="summit-timer-val">21:00:00</div>
+                        <div class="summit-timer-sub" id="summit-timer-sub">Đồng bộ nguyên tử theo máy chủ</div>
+                    </div>
+                </div>
+
+                <!-- 2. PHASES & STEPS TIMELINE TRACKER -->
+                <div class="summit-phases-card">
+                    <div class="summit-phases-header">
+                        <span>📋 NGHỊ TRÌNH 2 GIAI ĐOẠN / 8 BƯỚC ĐỊNH CHẾ (30 PHÚT)</span>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <button onclick="toggleSummitPreview()" id="btn-toggle-preview" style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; cursor: pointer;">
+                                👁️ Xem Trước Toàn Bộ (Preview)
+                            </button>
+                            <span id="summit-phase-indicator" style="color: #38bdf8; font-weight: 800;">Giai Đoạn 1: Báo Cáo Chuẩn Bị</span>
+                        </div>
+                    </div>
+                    <div class="summit-steps-grid" id="summit-steps-container">
+                        <div class="summit-step-item active" id="step-node-1">
+                            <div class="summit-step-min">00 - 03m</div>
+                            <div class="summit-step-lbl">1. Khai mạc & Đối soát tài khoản</div>
+                        </div>
+                        <div class="summit-step-item" id="step-node-2">
+                            <div class="summit-step-min">03 - 08m</div>
+                            <div class="summit-step-lbl">2. Vĩ mô & Kịch bản VN-Index</div>
+                        </div>
+                        <div class="summit-step-item" id="step-node-3">
+                            <div class="summit-step-min">08 - 13m</div>
+                            <div class="summit-step-lbl">3. Pháp y BCTC & Lọc Top 4</div>
+                        </div>
+                        <div class="summit-step-item" id="step-node-4">
+                            <div class="summit-step-min">13 - 17m</div>
+                            <div class="summit-step-lbl">4. Quản trị rủi ro & Định cỡ</div>
+                        </div>
+                        <div class="summit-step-item" id="step-node-5">
+                            <div class="summit-step-min">17 - 20m</div>
+                            <div class="summit-step-lbl">5. Chiến thuật Khung Giờ Vàng</div>
+                        </div>
+                        <div class="summit-step-item" id="step-node-6">
+                            <div class="summit-step-min">20 - 25m</div>
+                            <div class="summit-step-lbl">6. Tranh biện đối kháng 3 câu</div>
+                        </div>
+                        <div class="summit-step-item" id="step-node-7">
+                            <div class="summit-step-min">25 - 28m</div>
+                            <div class="summit-step-lbl">7. Biểu quyết Sổ Lệnh Vòng 2</div>
+                        </div>
+                        <div class="summit-step-item" id="step-node-8">
+                            <div class="summit-step-min">28 - 30m</div>
+                            <div class="summit-step-lbl">8. Kiểm toán kỷ luật & Bế mạc</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. SPLIT-VIEW WAR ROOM (70% - 30%) -->
+                <div class="summit-war-split">
+                    <!-- CỘT TRÁI: LIVE DIALOGUE STREAM -->
+                    <div class="summit-feed-panel">
+                        <div class="summit-feed-header">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span class="pulse-dot" style="background: #ef4444; box-shadow: 0 0 10px #ef4444;"></span>
+                                <h3 style="font-size: 14.5px; font-weight: 800; color: #fff;">LUỒNG PHÁT BIỂU & TRANH BIỆN THỜI GIAN THỰC</h3>
+                            </div>
+                            <span id="summit-feed-counter" style="font-size: 11.5px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+                                Đang tải luồng...
+                            </span>
+                        </div>
+                        <div class="summit-feed-body" id="summit-feed-container">
+                            <!-- Messages will be rendered here dynamically -->
+                        </div>
+                        <div class="summit-input-panel">
+                            <div class="summit-input-label">
+                                <span>👑</span> <span>Chủ Tịch Trần Quốc Thiên Phước Can Thiệp / Chỉ Thị Trực Tiếp Vào Phòng Họp:</span>
+                            </div>
+                            <div class="summit-input-row">
+                                <input type="text" id="summit-chairman-input" class="summit-input-field" 
+                                       placeholder="Gõ câu hỏi, chất vấn hoặc chỉ thị trực tiếp cho Hội đồng..." 
+                                       onkeydown="if(event.key === 'Enter') sendChairmanSummitDirective();" />
+                                <button class="summit-btn-send" onclick="sendChairmanSummitDirective()">
+                                    <span>🚀</span> <span>Gửi Chỉ Thị</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CỘT PHẢI: BÀN KIỂM SÁT TRỌNG & BIỂU QUYẾT -->
+                    <div class="summit-side-col">
+                        <!-- Card 1: Bàn Kiểm Sát Trọng -->
+                        <div class="summit-side-card" style="border-color: rgba(245, 158, 11, 0.4);">
+                            <div class="summit-side-title" style="color: #fbbf24;">
+                                <span>🛡️</span> <span>Bàn Kiểm Sát Viên Trọng (Ban 12)</span>
+                            </div>
+                            <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px;">
+                                <div style="font-size: 11px; font-weight: 800; color: #f59e0b; text-transform: uppercase;">
+                                    TỔNG KIỂM SÁT VIÊN THƯỜNG TRỰC BẤT BIẾN
+                                </div>
+                                <div style="font-size: 12px; color: #fef3c7; margin-top: 4px;">
+                                    Đảm bảo 100% "Làm thật việc thật", không vi phạm bất kỳ điều cấm nào trong Hiến Chương Doanh Nghiệp.
+                                </div>
+                            </div>
+                            <div id="summit-inspector-rules">
+                                <div class="inspector-rule-item">
+                                    <span class="inspector-rule-text">1. Tuyệt đối bảo vệ vốn (Stop &le; 6.8%)</span>
+                                    <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
+                                </div>
+                                <div class="inspector-rule-item">
+                                    <span class="inspector-rule-text">2. Tiền thật OCF/LNST &gt; 1.15x</span>
+                                    <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
+                                </div>
+                                <div class="inspector-rule-item">
+                                    <span class="inspector-rule-text">3. 1 lô 100 CP &le; 33% NAV (Giá &le; 36k)</span>
+                                    <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
+                                </div>
+                                <div class="inspector-rule-item">
+                                    <span class="inspector-rule-text">4. Khung Giờ Vàng 14h00-14h25</span>
+                                    <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
+                                </div>
+                                <div class="inspector-rule-item">
+                                    <span class="inspector-rule-text">5. Quyền quyết định tối cao của Chủ tịch</span>
+                                    <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Bảng Biểu Quyết Điện Tử -->
+                        <div class="summit-side-card">
+                            <div class="summit-side-title">
+                                <span>📊</span> <span>Biểu Quyết Sổ Lệnh Vòng 2</span>
+                            </div>
+                            <div id="summit-voting-container">
+                                <!-- Stock voting cards rendered here -->
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Nút Xem Nghị Quyết Thượng Đỉnh -->
+                        <div class="summit-side-card" style="text-align: center;">
+                            <button class="summit-action-btn-large" onclick="openReportModal('08_Master_Investment_CIO/2026-11-08_Ke_Hoach_Nghi_Trinh_Thuong_Dinh_21h00_James.md')">
+                                <span>📖</span> <span>XEM TOÀN VĂN NGHỊ QUYẾT 21H30</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ========================================================
              TAB 4: 18 CỘT MỐC TÁC CHIẾN 24H
              ======================================================== -->
@@ -1666,6 +2290,9 @@ def generate_portal_html(
 
             if (tabId === 'portfolio') {{
                 setTimeout(() => initTradingViewWidget(currentTVSymbol), 100);
+            }}
+            if (tabId === 'summit-room') {{
+                initSummitRoom();
             }}
         }}
 
@@ -2313,6 +2940,201 @@ def generate_portal_html(
             }});
         }}
 
+
+        // ========================================================
+        // TAB 4: SUMMIT MEETING REAL-TIME CLIENT ENGINE
+        // ========================================================
+        let summitPreviewMode = false;
+        let lastSummitMsgCount = 0;
+        let summitPollTimer = null;
+
+        function toggleSummitPreview() {{
+            summitPreviewMode = !summitPreviewMode;
+            const btn = document.getElementById('btn-toggle-preview');
+            if (btn) {{
+                btn.innerText = summitPreviewMode ? '🔴 Trở Về Thời Gian Thực' : '👁️ Xem Trước Toàn Bộ (Preview)';
+                btn.style.background = summitPreviewMode ? 'rgba(239, 68, 68, 0.2)' : 'rgba(56, 189, 248, 0.12)';
+                btn.style.color = summitPreviewMode ? '#ef4444' : '#38bdf8';
+                btn.style.borderColor = summitPreviewMode ? '#ef4444' : 'rgba(56, 189, 248, 0.3)';
+            }}
+            pollSummitMeeting();
+        }}
+
+        async function pollSummitMeeting() {{
+            try {{
+                const url = '/api/summit_meeting' + (summitPreviewMode ? '?preview=1' : '');
+                const res = await fetch(url);
+                if (!res.ok) return;
+                const data = await res.json();
+                renderSummitMeetingState(data);
+            }} catch (e) {{
+                console.error('Lỗi poll summit meeting:', e);
+            }}
+        }}
+
+        function renderSummitMeetingState(data) {{
+            if (!data) return;
+
+            // 1. Cập nhật Timer & Badge
+            const timerVal = document.getElementById('summit-timer-val');
+            const timerLbl = document.getElementById('summit-timer-lbl');
+            const timerSub = document.getElementById('summit-timer-sub');
+            const phaseInd = document.getElementById('summit-phase-indicator');
+            const navBadge = document.getElementById('summit-nav-badge');
+
+            if (data.meeting_status === 'WAITING_COUNTDOWN') {{
+                const totalSec = data.countdown_seconds || 0;
+                const m = Math.floor(totalSec / 60);
+                const s = totalSec % 60;
+                if (timerVal) timerVal.innerText = `${{String(m).padStart(2,'0')}}m : ${{String(s).padStart(2,'0')}}s`;
+                if (timerLbl) timerLbl.innerText = '⏱️ ĐỒNG HỒ ĐẾM NGƯỢC GIỜ G';
+                if (timerSub) timerSub.innerText = 'Khai mạc chính xác lúc 21h00:00';
+                if (phaseInd) phaseInd.innerText = 'Phòng chờ sẵn sàng 100%';
+                if (navBadge) {{
+                    navBadge.innerText = '⏳ CHỜ 21H00';
+                    navBadge.style.color = '#f59e0b';
+                }}
+            }} else if (data.meeting_status === 'LIVE_IN_PROGRESS') {{
+                const curMin = data.current_minute || 0;
+                if (timerVal) timerVal.innerText = `PHÚT ${{curMin}} / 30`;
+                if (timerLbl) timerLbl.innerText = '🔴 ĐANG HỌP TRỰC TIẾP';
+                if (timerSub) timerSub.innerText = 'Đồng bộ nguyên tử theo máy chủ';
+                if (phaseInd) phaseInd.innerText = data.current_phase === 1 ? 'Giai Đoạn 1: Báo Cáo Chuẩn Bị' : 'Giai Đoạn 2: Tranh Biện & Biểu Quyết';
+                if (navBadge) {{
+                    navBadge.innerText = `● LIVE (P.${{curMin}})`;
+                    navBadge.style.color = '#ef4444';
+                }}
+            }} else {{
+                if (timerVal) timerVal.innerText = '30m : 00s (BẾ MẠC)';
+                if (timerLbl) timerLbl.innerText = '🏁 HỘI NGHỊ ĐÃ KẾT THÚC';
+                if (timerSub) timerSub.innerText = 'Nghị quyết sẵn sàng ký duyệt';
+                if (phaseInd) phaseInd.innerText = 'Đã hoàn tất 100% nghị trình';
+                if (navBadge) {{
+                    navBadge.innerText = '✅ HOÀN TẤT';
+                    navBadge.style.color = '#10b981';
+                }}
+            }}
+
+            // 2. Cập nhật Step Tracker (1 đến 8)
+            const curStep = data.current_step || 1;
+            for (let i = 1; i <= 8; i++) {{
+                const el = document.getElementById('step-node-' + i);
+                if (el) {{
+                    el.classList.remove('active', 'completed');
+                    if (i < curStep) el.classList.add('completed');
+                    else if (i === curStep) el.classList.add('active');
+                }}
+            }}
+
+            // 3. Render Luồng Tin Nhắn
+            const container = document.getElementById('summit-feed-container');
+            const counter = document.getElementById('summit-feed-counter');
+            const msgs = data.timeline_stream || [];
+
+            if (counter) counter.innerText = `${{msgs.length}} phát biểu ghi nhận`;
+
+            if (container) {{
+                // Chỉ render lại nếu số lượng tin nhắn thay đổi hoặc lần đầu
+                if (msgs.length !== lastSummitMsgCount) {{
+                    container.innerHTML = msgs.map(m => {{
+                        let cardClass = 'summit-msg-card';
+                        if (m.sender_name && m.sender_name.includes('Chủ tịch')) cardClass += ' msg-chairman';
+                        else if (m.sender_name && m.sender_name.includes('Trọng')) cardClass += ' msg-inspector';
+                        else if (m.badge && m.badge.includes('TRANH BIỆN')) cardClass += ' msg-debate';
+
+                        let badgeHtml = '';
+                        if (m.badge) {{
+                            badgeHtml = `<span style="background: ${{m.badge_color || '#38bdf8'}}22; color: ${{m.badge_color || '#38bdf8'}}; border: 1px solid ${{m.badge_color || '#38bdf8'}}55; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 800;">${{m.badge}}</span>`;
+                        }}
+
+                        let highlightHtml = '';
+                        if (m.highlight) {{
+                            highlightHtml = `<div class="summit-msg-highlight">📌 <strong>Điểm Nhấn:</strong> ${{m.highlight}}</div>`;
+                        }}
+
+                        return `
+                            <div class="${{cardClass}}">
+                                <div class="summit-msg-header">
+                                    <div class="summit-msg-author">
+                                        <div class="summit-msg-avatar">${{m.avatar || '👤'}}</div>
+                                        <div>
+                                            <div class="summit-msg-name">${{m.sender_name}}</div>
+                                            <div class="summit-msg-dept">${{m.department || ''}} • ${{m.role || ''}}</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        ${{badgeHtml}}
+                                        <span class="summit-msg-time">${{m.time_str}}</span>
+                                    </div>
+                                </div>
+                                <div class="summit-msg-content">${{m.content}}</div>
+                                ${{highlightHtml}}
+                            </div>
+                        `;
+                    }}).join('');
+
+                    // Tự động cuộn xuống dưới cùng nếu có tin mới
+                    container.scrollTop = container.scrollHeight;
+                    lastSummitMsgCount = msgs.length;
+                }}
+            }}
+
+            // 4. Render Bảng Biểu Quyết
+            const voteContainer = document.getElementById('summit-voting-container');
+            const votes = data.voting_board || [];
+            if (voteContainer && voteContainer.children.length === 0) {{
+                voteContainer.innerHTML = votes.map(v => `
+                    <div class="summit-stock-vote-card">
+                        <div class="summit-stock-header">
+                            <span class="summit-stock-sym">${{v.ticker}}</span>
+                            <span class="summit-vote-tally">${{v.votes_for}}/12 Nhất Trí</span>
+                        </div>
+                        <div class="summit-stock-meta">
+                            <div><strong>${{v.name}}</strong> (${{v.sector}})</div>
+                            <div style="margin-top: 4px; color: #34d399;">Giá: ${{v.price}} • 1 Lô: ${{v.lot_cost}}</div>
+                            <div style="color: #94a3b8;">OCF/LNST: ${{v.ocf_lnst}} • Stop: ${{v.stop_loss}}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }}
+        }}
+
+        async function sendChairmanSummitDirective() {{
+            const input = document.getElementById('summit-chairman-input');
+            if (!input) return;
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            input.value = '';
+            input.disabled = true;
+
+            try {{
+                const res = await fetch('/api/summit_message', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ message: msg }})
+                }});
+                const data = await res.json();
+                if (data.ok) {{
+                    await pollSummitMeeting();
+                }} else {{
+                    alert('Lỗi gửi chỉ thị: ' + (data.error || 'Không xác định'));
+                }}
+            }} catch (err) {{
+                alert('Lỗi kết nối máy chủ khi gửi chỉ thị: ' + err.message);
+            }} finally {{
+                input.disabled = false;
+                input.focus();
+            }}
+        }}
+
+        function initSummitRoom() {{
+            pollSummitMeeting();
+            if (!summitPollTimer) {{
+                summitPollTimer = setInterval(pollSummitMeeting, 2500);
+            }}
+        }}
+
         // Tự động kiểm tra URL tham số để mở báo cáo nếu có ?open=
         window.addEventListener('DOMContentLoaded', () => {{
             applyAllFilters();
@@ -2321,6 +3143,7 @@ def generate_portal_html(
             if (openPath) {{
                 openReportModal(openPath);
             }}
+            initSummitRoom();
         }});
 
         // LÀM MỚI DỮ LIỆU
