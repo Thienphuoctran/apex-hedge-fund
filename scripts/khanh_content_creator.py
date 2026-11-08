@@ -524,7 +524,13 @@ def generate_viral_content(query: str = "HPG") -> Dict[str, Any]:
     """Hàm tiện ích tương thích nhận diện mã từ query và sinh kịch bản hoàn chỉnh"""
     import re
     tickers = re.findall(r"\b[A-Z]{3}\b", (query or "").upper())
-    sym = tickers[0] if tickers else "HPG"
+    STOP_WORDS = {
+        "CHO", "CUA", "TOI", "HAY", "CAC", "MOI", "NGAY", "NAY", "BAN", "XEM", "NAO", "LAM", "VAO", "GUI",
+        "XUAT", "TIM", "DOC", "BAI", "HOI", "CON", "MOT", "HAI", "BA", "KHI", "THI", "LAI", "NHAN", "VOI",
+        "TRONG", "NGOAI", "THEO", "DUOC", "MINH", "QUAN", "ALEX", "HIEN", "VICTOR", "JAMES", "VND", "USD", "NAV"
+    }
+    valid_tickers = [t for t in tickers if t not in STOP_WORDS]
+    sym = valid_tickers[0] if valid_tickers else "HPG"
     pkg = run_khanh_evening_routine(sym)
     scenes = pkg.get("scenes", [])
     hook_3s = scenes[0].get("spoken_script", "") if scenes else ""

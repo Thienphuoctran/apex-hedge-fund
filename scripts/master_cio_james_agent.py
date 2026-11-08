@@ -146,7 +146,8 @@ def handle_james_chat(user_text: str) -> str:
         r"\bgiải ngân\b", r"\bsổ lệnh\b", r"\bbáo cáo\b", r"\bchỉ thị\b", r"\bgiao việc\b",
         r"\byêu cầu\b", r"\bthực hiện\b", r"\bphân bổ\b", r"\brủi ro\b", r"\bstop\b",
         r"\btp1\b", r"\btp2\b", r"\bkế hoạch\b", r"\bhôm nay\b", r"\bminh quân\b",
-        r"\bvictor\b", r"\balex\b", r"\bhiền\b", r"\bkhánh\b"
+        r"\bvictor\b", r"\balex\b", r"\bhiền\b", r"\bkhánh\b", r"\bvideo\b", r"\bkịch bản\b",
+        r"\btiktok\b", r"\breels\b", r"\bshorts\b", r"\bsoi\b", r"\bbctc\b", r"\bxuất\b", r"\bxem\b"
     ]
     if any(re.search(pat, text_lower) for pat in action_patterns):
         task_res = dispatch_chairman_directive(text_clean, source="TELEGRAM_JAMES_HQ")

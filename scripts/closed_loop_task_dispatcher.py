@@ -49,11 +49,180 @@ def save_task_ledger(tasks: List[Dict[str, Any]]) -> None:
         print(f"[!] Lỗi ghi Sổ cái Task: {e}")
 
 
+def retrieve_institutional_reports(command_text: str) -> Dict[str, Any]:
+    """
+    Tra cứu và trích xuất báo cáo chi tiết chính thống theo yêu cầu của Chủ tịch.
+    Hỗ trợ nhận diện mốc thời gian (hôm qua, hôm nay, ngày cụ thể) và phòng ban phụ trách.
+    """
+    import re
+    text_lower = command_text.lower()
+    today = datetime.date.today()
+    yesterday = today - datetime.timedelta(days=1)
+
+    target_date = None
+    if any(k in text_lower for k in ["hôm qua", "hom qua", "yesterday"]):
+        target_date = yesterday.strftime("%Y-%m-%d")
+    elif any(k in text_lower for k in ["hôm nay", "hom nay", "today"]):
+        target_date = today.strftime("%Y-%m-%d")
+    else:
+        m_date = re.search(r"\b(202\d[-/]\d{1,2}[-/]\d{1,2})\b", text_lower)
+        if m_date:
+            target_date = m_date.group(1).replace("/", "-")
+        else:
+            m_vn_date = re.search(r"\b(\d{1,2})[/-](\d{1,2})(?:[/-](202\d))?\b", text_lower)
+            if m_vn_date:
+                d, m, y = m_vn_date.group(1), m_vn_date.group(2), m_vn_date.group(3) or str(today.year)
+                target_date = f"{y}-{int(m):02d}-{int(d):02d}"
+
+    dirs = []
+    if any(k in text_lower for k in ["khánh", "khanh", "video", "tiktok", "reels", "shorts", "kịch bản", "viral", "b-roll", "bảo"]):
+        dirs.append("11_Viral_Content_Creation")
+    if any(k in text_lower for k in ["hiền", "hien", "bctc", "tài chính", "dòng tiền", "pháp y", "cbtt", "quan hệ cổ đông", "ir"]):
+        dirs.extend(["VN_Market/02_BCTC_Equity_Research", "10_Corporate_Filings_BCTC"])
+    if any(k in text_lower for k in ["vĩ mô", "vi mo", "macro", "sbv", "tiền tệ"]):
+        dirs.extend(["VN_Market/01_Macro_Monetary_Vietnam", "01_Macro_Geopolitics"])
+    if any(k in text_lower for k in ["minh quân", "minh quan", "chiến lược ngày"]):
+        dirs.append("VN_Market/07_Daily_Specialist")
+    if any(k in text_lower for k in ["alex"]):
+        dirs.append("07_Daily_Investment_Specialist")
+    if any(k in text_lower for k in ["james", "blotter", "sổ lệnh", "tổng tư lệnh"]):
+        dirs.append("08_Master_Investment_CIO")
+    if any(k in text_lower for k in ["trọng", "trong", "kiểm sát", "hạ tầng", "ombudsman"]):
+        dirs.append("12_Institutional_Ombudsman_And_Inspectorate")
+    if any(k in text_lower for k in ["rủi ro", "hội đồng", "ic", "atr"]):
+        dirs.extend(["VN_Market/04_Investment_Committee", "04_Investment_Committee"])
+
+    if not dirs:
+        dirs = [
+            "11_Viral_Content_Creation",
+            "VN_Market/02_BCTC_Equity_Research",
+            "VN_Market/01_Macro_Monetary_Vietnam",
+            "08_Master_Investment_CIO",
+            "12_Institutional_Ombudsman_And_Inspectorate"
+        ]
+
+    matched = []
+    for d in dirs:
+        dp = BASE_DIR / d
+        if dp.exists():
+            for f in dp.glob("*.md"):
+                if target_date:
+                    if target_date in f.name:
+                        matched.append(f)
+                else:
+                    matched.append(f)
+
+    matched.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+    
+    if not matched:
+        return {
+            "summary": f"Không tìm thấy báo cáo phù hợp với mốc thời gian {target_date or 'toàn thời gian'} trong kho dữ liệu thể chế.",
+            "files": []
+        }
+
+    lines = [
+        "📑 *[TRÍCH XUẤT BÁO CÁO THỂ CHẾ THEO YÊU CẦU CỦA CHỦ TỊCH]*",
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        "👤 *Người yêu cầu*: Chủ tịch Trần Quốc Thiên Phước | TCBS: `105C307855`",
+        f"📅 *Mốc thời gian tra cứu*: `{target_date or 'Gần nhất'}` | Số lượng tệp: `{len(matched[:3])}` tệp\n"
+    ]
+
+    files_list = []
+    for f in matched[:3]:
+        rel = f.relative_to(BASE_DIR).as_posix()
+        files_list.append(rel)
+        content = f.read_text(encoding="utf-8", errors="ignore")
+        m_title = re.search(r"^#\s+(.+)$", content, re.MULTILINE)
+        title = m_title.group(1).strip() if m_title else f.stem
+        size_kb = round(f.stat().st_size / 1024, 1)
+
+        bullets = []
+        for l in content.splitlines():
+            ls = l.strip()
+            if (ls.startswith("•") or ls.startswith("-") or ls.startswith("*")) and len(ls) > 15 and not ls.startswith("***"):
+                bullets.append(f"  {ls}")
+                if len(bullets) >= 2:
+                    break
+        preview_txt = "\n".join(bullets) if bullets else "  • Đã lưu trữ toàn văn chính thống trong kho dữ liệu Apex."
+
+        lines.append(f"📌 *{title}*")
+        lines.append(f"• *Dung lượng*: `{size_kb} KB` | *Tệp tin*: `{rel}`")
+        lines.append(f"• *Nội dung tóm tắt*:\n{preview_txt}")
+        lines.append(f"👉 **Nhấn vào đây để xem toàn văn**: `{rel}`\n")
+
+    return {"summary": "\n".join(lines), "files": files_list}
+
+
 def classify_directive(command_text: str) -> Dict[str, Any]:
     """
     Phân loại chỉ thị của Chủ tịch để gán cho đúng Phòng Ban và Phân luồng Telegram Topic.
+    Ưu tiên cao nhất cho tác vụ tra cứu / trích xuất / xem lại báo cáo đã có.
     """
     text_lower = command_text.lower()
+
+    # 0. ƯU TIÊN HÀNG ĐẦU: TRA CỨU HOẶC XUẤT LẠI BÁO CÁO ĐÃ CÓ (REPORT RETRIEVAL)
+    retrieval_triggers = [
+        "xuất báo cáo", "xuất cho tôi", "xem lại", "xem báo cáo", "cho tôi xem",
+        "đọc báo cáo", "mở báo cáo", "tìm báo cáo", "gửi báo cáo", "tải báo cáo",
+        "báo cáo hôm qua", "báo cáo ngày", "kịch bản hôm qua", "kịch bản ngày",
+        "xem lại kịch bản", "xuất kịch bản", "cho xem báo cáo", "cho xem kịch bản",
+        "tra cứu báo cáo", "lấy báo cáo", "gửi lại báo cáo"
+    ]
+    if any(k in text_lower for k in retrieval_triggers):
+        if any(k in text_lower for k in ["khánh", "khanh", "video", "tiktok", "reels", "shorts", "kịch bản", "viral"]):
+            return {
+                "department": "BAN_11_KHANH_CONTENT_CREATOR",
+                "department_name": "Ban 11 — Sáng Tạo Nội Dung & Video Viral (Khánh) phối hợp Ban 10 (Hiền)",
+                "officer": "Khánh (Giám Đốc Sáng Tạo) & Hiền (Trưởng Ban BCTC)",
+                "topic_key": "khanh_studio",
+                "topic_name": "🎬 BAN 11 — STUDIO VIDEO VIRAL (KHÁNH & BẢO)",
+                "action_type": "REPORT_RETRIEVAL"
+            }
+        elif any(k in text_lower for k in ["hiền", "hien", "bctc", "tài chính", "dòng tiền", "cbtt", "pháp y"]):
+            return {
+                "department": "BAN_10_HIEN_BCTC_SCOUT",
+                "department_name": "Ban 10 — Rà Soát BCTC & Quan Hệ Cổ Đông (Hiền)",
+                "officer": "Hiền (Trưởng Ban BCTC & IR)",
+                "topic_key": "hien_desk",
+                "topic_name": "🌸 BAN 10 — BÀN LÀM VIỆC CỦA HIỀN (BCTC & IR)",
+                "action_type": "REPORT_RETRIEVAL"
+            }
+        elif any(k in text_lower for k in ["minh quân", "minh quan"]):
+            return {
+                "department": "BAN_8_JAMES_MINH_QUAN",
+                "department_name": "Ban 8 (Master CIO James) & Ban 7 VN (Minh Quân Execution Desk)",
+                "officer": "Minh Quân",
+                "topic_key": "morning_blotter",
+                "topic_name": "☀️ BAN 7 VN — MINH QUÂN EXECUTION DESK",
+                "action_type": "REPORT_RETRIEVAL"
+            }
+        elif any(k in text_lower for k in ["trọng", "trong", "kiểm sát", "hạ tầng"]):
+            return {
+                "department": "BAN_12_TRONG_INSPECTORATE",
+                "department_name": "Ban 12 — Tổng Kiểm Sát Thể Chế & Giám Sát Hạ Tầng (Trọng)",
+                "officer": "Trọng (Tổng Kiểm Sát Viên Thể Chế)",
+                "topic_key": "james_hq",
+                "topic_name": "🏛️ BAN 12 — TỔNG KIỂM SÁT VIÊN TRỌNG",
+                "action_type": "REPORT_RETRIEVAL"
+            }
+        elif any(k in text_lower for k in ["vĩ mô", "vi mo", "macro", "sbv", "tiền tệ"]):
+            return {
+                "department": "BAN_1_VN_MACRO",
+                "department_name": "Ban 1 VN — Phân Tích Vĩ Mô & Chính Sách Tiền Tệ SBV",
+                "officer": "Trưởng Ban 1 VN",
+                "topic_key": "james_hq",
+                "topic_name": "🌐 BAN 1 VN — VĨ MÔ & CHÍNH SÁCH TIỀN TỆ",
+                "action_type": "REPORT_RETRIEVAL"
+            }
+        else:
+            return {
+                "department": "MASTER_CIO_JAMES_HQ",
+                "department_name": "Bộ Chỉ Huy Tối Cao — Tổng Tư Lệnh Master CIO James",
+                "officer": "James",
+                "topic_key": "james_hq",
+                "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+                "action_type": "REPORT_RETRIEVAL"
+            }
 
     if any(k in text_lower for k in ["khánh", "khanh", "video", "tiktok", "reels", "shorts", "kịch bản", "viral", "sáng tạo", "content", "b-roll", "bảo"]):
         return {
@@ -209,18 +378,25 @@ def execute_task_action(action_type: str, command_text: str, task_id: str) -> Di
             "• Phân bổ Risk-Parity cho vòng mới: Khóa mức rủi ro tối đa mỗi giao dịch ≤ 0.77% NAV, Stop Loss 2xATR ≤ 7.5%."
         )
 
+    elif action_type == "REPORT_RETRIEVAL":
+        retrieval_res = retrieve_institutional_reports(command_text)
+        evidence["summary"] = retrieval_res.get("summary", "Đã tra cứu xong báo cáo.")
+        evidence["files"] = retrieval_res.get("files", [])
+
     elif action_type == "VIRAL_VIDEO_SCRIPT_CREATION":
         from scripts.khanh_content_creator import generate_viral_content
         res = generate_viral_content(command_text)
+        script_file_path = res.get("script_file", "11_Viral_Content_Creation/")
         evidence["summary"] = (
             f"🎬 *[BAN 11 — KHÁNH & HIỀN: KỊCH BẢN VIDEO VIRAL ĐÃ HOÀN TẤT]*\n"
             f"• *Tiêu đề video*: {res.get('title')}\n"
             f"• *Mã cổ phiếu & BCTC*: {res.get('ticker')} (Dữ liệu tiền thật từ Ban 10 Hiền)\n"
             f"• *Hook 3s đầu*: {res.get('hook_3s')}\n"
             f"• *Thời lượng*: {res.get('duration_seconds', 60)}s (Chuẩn TikTok / Reels / Shorts 9:16)\n"
-            f"• *Kịch bản chi tiết*: `{res.get('script_file', '11_Viral_Content_Creation/')}`"
+            f"• *Kịch bản chi tiết*: `{script_file_path}`\n\n"
+            f"👉 **Nhấn vào đây để xem toàn văn kịch bản**: `{script_file_path}`"
         )
-        evidence["script_file"] = res.get("script_file")
+        evidence["script_file"] = script_file_path
 
     elif action_type == "ACADEMY_AND_LEARNING_AUDIT":
         evidence["summary"] = (

@@ -1,0 +1,119 @@
+{
+  "job_id": "JOB-2026-11-08-HPG",
+  "created_at": "08/11/2026 lúc 16:20",
+  "assigned_to": "Bảo — Chuyên Viên Dựng Phim & Render Video AI (Desktop Studio)",
+  "chief_strategist": "Khánh — Trưởng Ban 11 (Laptop HQ)",
+  "status": "PENDING_DESKTOP_RENDER",
+  "ticker": "HPG",
+  "video_title": "SỰ THẬT VỀ 'CỖ MÁY IN TIỀN' HÒA PHÁT: LÃI 8.200 TỶ NHƯNG TIỀN THẬT VÀO TÀI KHOẢN LÀ BAO NHIÊU?",
+  "aspect_ratio": "9:16",
+  "resolution": {
+    "width": 1080,
+    "height": 1920
+  },
+  "target_fps": 30,
+  "voice_preset": {
+    "primary": "vi-VN-NamMinhNeural",
+    "alternative": "vi-VN-HoaiMyNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "tcbs_icopy_badge": "iCopy TCBS: 105C307855",
+  "scenes": [
+    {
+      "scene_idx": 1,
+      "phase": "🔥 HOOK (CHẶN NGÓN TAY)",
+      "timestamp": "00:00 - 00:03",
+      "duration_est_seconds": 3,
+      "voiceover_text": "Đừng mua Hòa Phát nếu chưa biết con số này! Công ty báo lãi 8.200 tỷ, nhưng số tiền mặt thật sự chảy về két là bao nhiêu? Có phải lợi nhuận trên giấy không?",
+      "visual_prompt": "Góc quay cận cảnh mặt (Close-up), biểu cảm nghiêm túc, mắt nhìn thẳng ống kính. Chữ to màu vàng viền đen giật tít nhấp nháy trên màn hình: 'SỰ THẬT BCTC HÒA PHÁT!'. B-Roll chèn hình ảnh lò cao đang rót thép đỏ rực.",
+      "audio_sfx_cue": "Tiếng sấm rền hoặc tiếng gõ búa đanh (Boom sound effect). Nhạc nền đệm kịch tính (Suspense beat).",
+      "subtitle_text": "Đừng mua Hòa Phát nếu chưa biết con số này! Công ty báo lãi 8.200 tỷ, nhưng số tiền mặt thật sự chảy về két là bao nhiêu? Có phải lợi nhuận trên giấy không?"
+    },
+    {
+      "scene_idx": 2,
+      "phase": "📊 THỰC TRẠNG & CON SỐ GIẤY",
+      "timestamp": "00:04 - 00:18",
+      "duration_est_seconds": 14,
+      "voiceover_text": "Hầu hết nhà đầu tư chỉ nhìn vào con số lợi nhuận sau thuế 8,217.3 tỷ ₫. Nhưng một bậc thầy đầu tư sẽ luôn kiểm tra dòng tiền kinh doanh OCF. Và đây là điều kinh ngạc mà Ban 10 vừa bóc tách:",
+      "visual_prompt": "Chuyển sang góc trung (Medium shot). Màn hình chia đôi: Một bên là hình ảnh bài báo giật tít 'Lãi kỷ lục', một bên là bảng BCTC có khoanh tròn đỏ vào chỉ tiêu 'Lợi nhuận sau thuế'.",
+      "audio_sfx_cue": "Tiếng lật trang giấy (Page flip) + Tiếng 'Whoosh' chuyển cảnh.",
+      "subtitle_text": "Hầu hết nhà đầu tư chỉ nhìn vào con số lợi nhuận sau thuế 8,217.3 tỷ ₫. Nhưng một bậc thầy đầu tư sẽ luôn kiểm tra dòng tiền kinh doanh OCF. Và đây là điều kinh ngạc mà Ban 10 vừa bóc tách:"
+    },
+    {
+      "scene_idx": 3,
+      "phase": "💎 BÓC TRẦN TIỀN THẬT OCF (DATA TỪ HIỀN)",
+      "timestamp": "00:19 - 00:36",
+      "duration_est_seconds": 17,
+      "voiceover_text": "Dòng tiền kinh doanh thật của Hòa Phát quý vừa qua lên tới 8,865.9 tỷ ₫! Tức là tỷ lệ tiền thật gấp 1.08x lần lợi nhuận kế toán. Tiền tươi thóc thật 100%!",
+      "visual_prompt": "Zoom cận vào con số OCF trên đồ thị trực quan. Hiển thị đồ họa thanh màu xanh lá cây vọt lên cao hơn hẳn cột LNST. Hiệu ứng số tiền nhảy đếm ngược ting ting.",
+      "audio_sfx_cue": "Tiếng máy đếm tiền rè rè (Cash register) + Tiếng 'Ting ting' tiền vào tài khoản.",
+      "subtitle_text": "Dòng tiền kinh doanh thật của Hòa Phát quý vừa qua lên tới 8,865.9 tỷ ₫! Tức là tỷ lệ tiền thật gấp 1.08x lần lợi nhuận kế toán. Tiền tươi thóc thật 100%!"
+    },
+    {
+      "scene_idx": 4,
+      "phase": "🚀 CHẤT XÚC TÁC & TRIỂN VỌNG DỰ ÁN",
+      "timestamp": "00:37 - 00:48",
+      "duration_est_seconds": 11,
+      "voiceover_text": "Không chỉ vậy, đại dự án Lò cao Dung Quất 2 với công suất 5,6 triệu tấn HRC/năm đang được tài trợ bằng chính cỗ máy in tiền này, không phải đọng vốn ảo.",
+      "visual_prompt": "B-roll flycam toàn cảnh siêu dự án đại công trường hoặc hình ảnh sản phẩm thực tế. Dòng chữ nổi: 'Catalyst: Dung Quất 2 bổ sung 5.6M tấn HRC'.",
+      "audio_sfx_cue": "Nhạc nền chuyển sang nhịp điệu tích cực, tăng tốc (Uplifting tempo).",
+      "subtitle_text": "Không chỉ vậy, đại dự án Lò cao Dung Quất 2 với công suất 5,6 triệu tấn HRC/năm đang được tài trợ bằng chính cỗ máy in tiền này, không phải đọng vốn ảo."
+    },
+    {
+      "scene_idx": 5,
+      "phase": "💡 BÀI HỌC THỰC CHIẾN (INSIGHT)",
+      "timestamp": "00:49 - 00:55",
+      "duration_est_seconds": 6,
+      "voiceover_text": "Bài học xương máu cho anh em: Khi doanh nghiệp có OCF lớn hơn LNST, đó là viên ngọc quý. Ngược lại, nếu lãi nghìn tỷ mà OCF âm liên tục 2 quý, hãy chạy ngay kẻo ăn bẫy xào nấu số liệu!",
+      "visual_prompt": "Góc quay cận cảnh. Chữ chạy từng từ (Dynamic Captions) nhấn mạnh công thức vàng: 'OCF > LNST = TIỀN THẬT'.",
+      "audio_sfx_cue": "Tiếng gõ chuông cảnh báo (Warning bell).",
+      "subtitle_text": "Bài học xương máu cho anh em: Khi doanh nghiệp có OCF lớn hơn LNST, đó là viên ngọc quý. Ngược lại, nếu lãi nghìn tỷ mà OCF âm liên tục 2 quý, hãy chạy ngay kẻo ăn bẫy xào nấu số liệu!"
+    },
+    {
+      "scene_idx": 6,
+      "phase": "🎯 CALL TO ACTION (CTA & PHỄU ICOPY)",
+      "timestamp": "00:56 - 01:00",
+      "duration_est_seconds": 5,
+      "voiceover_text": "Anh em đang giữ Hòa Phát ở giá vốn bao nhiêu? Bình luận xuống dưới để mình cùng chia sẻ nhật ký gom hàng T+0 tại TCBS nhé!",
+      "visual_prompt": "Màn hình hiển thị nút Follow, nút Thả tim và icon bình luận rung rinh. Góc dưới gắn nhãn nhỏ: 'Tham khảo danh mục iCopy TCBS 105C307855'.",
+      "audio_sfx_cue": "Tiếng 'Click' chuột và tiếng chuông reo đăng ký.",
+      "subtitle_text": "Anh em đang giữ Hòa Phát ở giá vốn bao nhiêu? Bình luận xuống dưới để mình cùng chia sẻ nhật ký gom hàng T+0 tại TCBS nhé!"
+    }
+  ],
+  "seo_package": {
+    "video_title": "SỰ THẬT VỀ 'CỖ MÁY IN TIỀN' HÒA PHÁT: LÃI 8.200 TỶ NHƯNG TIỀN THẬT VÀO TÀI KHOẢN LÀ BAO NHIÊU?",
+    "caption_post": "Đừng mua Hòa Phát nếu chưa biết con số này! Công ty báo lãi 8.200 tỷ, nhưng số tiền mặt thật sự chảy về két là bao nhiêu? Có phải lợi nhuận trên giấy không?\n\nNhiều anh em chỉ nhìn lãi 8,217.3 tỷ ₫ mà quên mất dòng tiền kinh doanh OCF mới là máu của doanh nghiệp. Quý này Hòa Phát mang về tới 8,865.9 tỷ ₫ tiền tươi thóc thật!\n\nAnh em đang ôm HPG giá bao nhiêu? Để lại bình luận cùng đàm đạo nhé!\n\n#hoaphat #hpg #chungkhoan #taichinh #bctc #dautu #kinhdoanh #kiemtien #tcbs #icopy",
+    "hashtags": [
+      "#hoaphat",
+      "#hpg",
+      "#chungkhoan",
+      "#taichinh",
+      "#bctc",
+      "#dautu",
+      "#kinhdoanh",
+      "#kiemtien",
+      "#tcbs",
+      "#icopy"
+    ]
+  },
+  "hien_data": {
+    "responder": "Hiền — Trưởng Ban 10 (Rà Soát BCTC & Quan Hệ Cổ Đông)",
+    "timestamp": "2026-11-08 16:20:46",
+    "ticker": "HPG",
+    "company_name": "CTCP Tập đoàn Hòa Phát",
+    "exchange": "HOSE",
+    "sector": "Thép & Vật liệu xây dựng (Vua Thép)",
+    "latest_quarter": "2026-09-30",
+    "revenue_vnd_bil": 62214.2,
+    "net_income_vnd_bil": 8217.3,
+    "ocf_vnd_bil": 8865.9,
+    "fcf_vnd_bil": 6451.8,
+    "ocf_to_net_income_ratio": 1.08,
+    "earnings_quality_rating": "TIỀN THẬT XUẤT SẮC (OCF > LNST — ZERO RED FLAGS)",
+    "official_ir_portal": "https://www.hoaphat.com.vn/quan-he-co-dong",
+    "key_catalyst_notes": "Lò cao số 1 Dung Quất 2 chạy thử nghiệm thành công; Dung Quất 2 bổ sung 5.6M tấn HRC/năm.",
+    "hien_verdict": "Hiền đã kiểm tra kỹ: HPG có doanh thu 62,214.2 tỷ, LNST 8,217.3 tỷ và dòng tiền OCF thực tế đạt 8,865.9 tỷ. Tỷ lệ tiền thật OCF/LNST đạt 1.08x (TIỀN THẬT XUẤT SẮC (OCF > LNST — ZERO RED FLAGS)). Số liệu này 100% lấy từ BCTC kiểm toán chính thống, Khánh an tâm dựng kịch bản nhé!"
+  },
+  "output_expected_path": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\11_Viral_Content_Creation\\output\\JOB-2026-11-08-HPG.mp4"
+}

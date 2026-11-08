@@ -840,6 +840,92 @@ def generate_portal_html(
             line-height: 1.6;
         }}
 
+        /* INTERACTIVE CHAT REPORT CARD (CLICK TO OPEN REPORT MODAL) */
+        .chat-open-report-card {{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85));
+            border: 1.5px solid rgba(56, 189, 248, 0.4);
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }}
+        .chat-open-report-card:hover {{
+            border-color: #38bdf8;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.9));
+            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.35), 0 0 15px rgba(56, 189, 248, 0.2);
+            transform: translateY(-2px);
+        }}
+        .chat-open-report-icon-box {{
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }}
+        .chat-open-report-body {{
+            flex: 1;
+            min-width: 0;
+        }}
+        .chat-open-report-label {{
+            font-size: 10.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #38bdf8;
+            margin-bottom: 2px;
+        }}
+        .chat-open-report-name {{
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }}
+        .chat-open-report-path {{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }}
+        .chat-open-report-btn {{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: #ffffff;
+            border: 1px solid #38bdf8;
+            padding: 9px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            box-shadow: 0 2px 10px rgba(2, 132, 199, 0.4);
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }}
+        .chat-open-report-btn:hover {{
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            box-shadow: 0 4px 16px rgba(14, 165, 233, 0.6);
+            transform: scale(1.02);
+        }}
+
         /* TRADINGVIEW STYLES */
         .tv-btn {{
             background: var(--bg-base);
@@ -1798,9 +1884,114 @@ def generate_portal_html(
                 }}
             }}
 
+            // 4. Biến đổi tất cả các đường dẫn báo cáo / kịch bản thành Thẻ Tương Tác Bấm Để Xem Báo Cáo Toàn Văn
+            const seenReportPaths = new Set();
+            function createReportCardHtml(rawPath) {{
+                const cleanPath = rawPath.replace(/[`*]/g, '').trim();
+                if (!cleanPath || !cleanPath.endsWith('.md')) return '';
+
+                let icon = '📑';
+                let label = 'BÁO CÁO CHI TIẾT THEO YÊU CẦU CỦA CHỦ TỊCH';
+                let title = '';
+
+                if (cleanPath.includes('Viral_Script') || cleanPath.includes('11_Viral_Content_Creation')) {{
+                    icon = '🎬';
+                    label = 'KỊCH BẢN VIDEO VIRAL TIKTOK / REELS — BAN 11 (KHÁNH & BẢO)';
+                    title = 'Kịch Bản Video Viral 60s TikTok & Shorts';
+                }} else if (cleanPath.includes('Hien_Daily_Review') || cleanPath.includes('02_BCTC_Equity_Research')) {{
+                    icon = '🌸';
+                    label = 'RÀ SOÁT BCTC & DÒNG TIỀN THẬT OCF — BAN 10 (HIỀN)';
+                    title = 'Báo Cáo Kiểm Toán BCTC Chuyên Sâu & Tiền Thật';
+                }} else if (cleanPath.includes('CBTT_Radar')) {{
+                    icon = '🔍';
+                    label = 'RADAR CÔNG BỐ THÔNG TIN & BCTC ĐÊM QUA — BAN 10';
+                    title = 'Báo Cáo Radar CBT & Quan Hệ Cổ Đông';
+                }} else if (cleanPath.includes('Macro_Report') || cleanPath.includes('01_Macro') || cleanPath.includes('Weekend_Market_Intel')) {{
+                    icon = '🌐';
+                    label = 'PHÂN TÍCH VĨ MÔ & CHÍNH SÁCH TIỀN TỆ SBV — BAN 1';
+                    title = 'Báo Cáo Vĩ Mô, Tỷ Giá & Luân Chuyển Ngành';
+                }} else if (cleanPath.includes('Master_CIO') || cleanPath.includes('Final_Decision') || cleanPath.includes('08_Master') || cleanPath.includes('Blotter')) {{
+                    icon = '🎖️';
+                    label = 'QUYẾT ĐỊNH ĐẦU TƯ TỐI CAO & SỔ LỆNH MASTER — MASTER CIO JAMES';
+                    title = 'Sổ Lệnh Master Blotter & Phân Bổ Vốn Thống Nhất';
+                }} else if (cleanPath.includes('Specialist_Decision') || cleanPath.includes('07_Daily_Specialist')) {{
+                    icon = '⚡';
+                    label = 'KẾ HOẠCH TÁC CHIẾN KHUNG GIỜ VÀNG — MINH QUÂN BAN 7 VN';
+                    title = 'Chiến Lược Ra Lệnh & Tối Ưu Lợi Nhuận Trước ATO';
+                }} else if (cleanPath.includes('IC_Decision') || cleanPath.includes('Quant_Risk') || cleanPath.includes('04_Investment')) {{
+                    icon = '⚖️';
+                    label = 'QUẢN TRỊ RỦI RO ĐỊNH LƯỢNG & HỘI ĐỒNG ĐẦU TƯ — BAN 4';
+                    title = 'Nghị Quyết Hội Đồng & Định Cỡ Vị Thế ATR Risk-Parity';
+                }} else if (cleanPath.includes('Trong') || cleanPath.includes('12_Institutional_Ombudsman')) {{
+                    icon = '🏛️';
+                    label = 'TỔNG KIỂM SÁT THỂ CHẾ & HẠ TẦNG — BAN 12 TRỌNG';
+                    title = 'Biên Bản Giám Sát Sức Chứa Dữ Liệu & Toàn Vẹn Hệ Thống';
+                }} else if (cleanPath.includes('Mentor_Briefing') || cleanPath.includes('06_Investor_Academy')) {{
+                    icon = '💡';
+                    label = 'HỌC VIỆN ĐÀO TẠO & KÈM CẶP THỰC CHIẾN — BAN 6';
+                    title = 'Bản Tin Khai Sáng Buổi Sáng Cho Nhà Đầu Tư';
+                }} else if (cleanPath.includes('Learning') || cleanPath.includes('Evolution') || cleanPath.includes('HEURISTICS')) {{
+                    icon = '🧠';
+                    label = 'BÁCH KHOA TOÀN THƯ & TIẾN HÓA THÍCH NGHI — BAN 5';
+                    title = 'Bách Khoa Toàn Thư Tri Thức & 105 Mẹo Bất Hủ';
+                }}
+
+                if (!title) {{
+                    const fileName = cleanPath.split('/').pop().replace('.md', '');
+                    title = fileName.replace(/^[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}}_/, '').replace(/_/g, ' ');
+                }}
+
+                const dateMatch = cleanPath.match(/([0-9]{{4}})-([0-9]{{2}})-([0-9]{{2}})/);
+                let dateBadge = '';
+                if (dateMatch) {{
+                    dateBadge = `<span style="font-size: 11px; color: #fbbf24; background: rgba(251, 191, 36, 0.12); padding: 2px 7px; border-radius: 4px; font-weight: 600;">📅 Ngày ${{dateMatch[3]}}/${{dateMatch[2]}}/${{dateMatch[1]}}</span>`;
+                }}
+
+                return `
+<div class="chat-open-report-card" onclick="openReportModal('${{cleanPath}}')">
+    <div class="chat-open-report-icon-box">
+        <span>${{icon}}</span>
+    </div>
+    <div class="chat-open-report-body">
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <div class="chat-open-report-label">${{label}}</div>
+            ${{dateBadge}}
+        </div>
+        <div class="chat-open-report-name">${{title}}</div>
+        <div class="chat-open-report-path">📂 ${{cleanPath}}</div>
+    </div>
+    <button class="chat-open-report-btn" onclick="event.stopPropagation(); openReportModal('${{cleanPath}}')">
+        <span>📖</span> BẤM ĐỂ XEM TOÀN VĂN NGAY ➔
+    </button>
+</div>
+                `;
+            }}
+
+            // Regex 1: Thay thế các dòng mang định dạng "Kịch bản chi tiết:", "Báo cáo chi tiết:", "Nhấn vào đây để xem toàn văn:"
+            const reportLineRegex = /^[ \\t]*(?:[•\\-*👉]|\\d+\\.)?[ \\t]*(?:\\*{{0,2}}(?:Kịch bản chi tiết|Báo cáo chi tiết|Tệp báo cáo|Tệp tin|Đường dẫn lưu trữ|Đường dẫn|Nhấn vào đây để xem toàn văn báo cáo|Nhấn vào đây để xem toàn văn kịch bản|Nhấn vào đây để xem toàn văn|Nhấn vào đây để xem|Bấm để xem toàn văn|Bấm để xem|Xem toàn văn|File)[:\\s*]*(?:\\*{{0,2}}))?[ \\t]*`?((?:11_Viral_Content_Creation|VN_Market\\/[a-zA-Z0-9_\\-]+|[0-9]{{2}}_[a-zA-Z0-9_\\-]+)[^\\s`*()\\[\\]"':<>|]+\\.md)`?[ \\t]*$/gmi;
+
+            textToParse = textToParse.replace(reportLineRegex, (match, path) => {{
+                const clean = path.replace(/[`*]/g, '').trim();
+                if (seenReportPaths.has(clean)) return '';
+                seenReportPaths.add(clean);
+                return `\n\n${{createReportCardHtml(clean)}}\n\n`;
+            }});
+
+            // Regex 2: Kiểm tra các đường dẫn báo cáo thể chế còn sót lại trong toàn văn
+            const generalPathRegex = /(`?((?:11_Viral_Content_Creation|VN_Market\\/[a-zA-Z0-9_\\-]+|[0-9]{{2}}_[a-zA-Z0-9_\\-]+)[^\\s`*()\\[\\]"':<>|]+\\.md)`?)/g;
+            let mReport;
+            let extraReportCards = '';
+            while ((mReport = generalPathRegex.exec(rawText)) !== null) {{
+                const clean = mReport[2].replace(/[`*]/g, '').trim();
+                if (!seenReportPaths.has(clean)) {{
+                    seenReportPaths.add(clean);
+                    extraReportCards += `\n${{createReportCardHtml(clean)}}`;
+                }}
+            }}
+
             // Render Markdown cho phần còn lại
             const parsedMd = window.marked ? marked.parse(textToParse) : `<pre style="white-space: pre-wrap;">${{textToParse}}</pre>`;
-            htmlOutput += parsedMd;
+            htmlOutput += parsedMd + extraReportCards;
             return htmlOutput;
         }}
 
