@@ -38,5 +38,69 @@
     "role": "sentinel",
     "type": "execution_confirmation",
     "content": "🎉 [XÁC NHẬN KHỚP LỆNH MUA THÀNH CÔNG VÒNG 2] Victor và Minh Quân xác nhận: Chủ tịch Phước Trần đã thực thi khớp lệnh thành công 100% trên app TCInvest! Tài sản ròng NAV: 20,160,386 ₫. Danh mục hiện sở hữu: 100 CP HDB (2,200,000 ₫) và 100 CP MSH (3,450,000 ₫) — Tổng cổ phiếu: 5,650,000 ₫ (chiếm 28.0% NAV). Tiền mặt bảo toàn an toàn trong két: 14,510,422 ₫ (72.0% NAV). Victor chính thức kích hoạt hàng rào phòng thủ Stop Loss 2xATR (HDB: 21,220 ₫, MSH: 33,090 ₫) bảo vệ tuyệt đối thành quả!"
+  },
+  {
+    "id": "dir_user_1794209488605",
+    "timestamp": "14:31:28",
+    "sender": "Chủ tịch Trần Quốc Thiên Phước",
+    "role": "chairman",
+    "type": "chairman_directive",
+    "content": "Cho tôi xem kế hoạch tuần"
+  },
+  {
+    "id": "dir_resp_1794209488606",
+    "timestamp": "14:31:28",
+    "sender": "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)",
+    "role": "specialist",
+    "type": "specialist_reply",
+    "content": "📋 [BÁO CÁO KẾ HOẠCH TÁC CHIẾN TUẦN — ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH]\nKính trình Chủ tịch Trần Quốc Thiên Phước! Căn cứ Nghị Quyết Thượng Đỉnh APEX-SUMMIT-20261108-2100 đã được Chủ tịch ký duyệt lúc 23:08 ngày 08/11/2026, Minh Quân và Victor xin tóm lược định hướng tuần (09/11 – 13/11):\n\n⚖️ ĐIỀU KHOẢN THỂ CHẾ TỐI QUAN TRỌNG: Bảng kế hoạch tuần này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG DÀNH CHO CHỦ TỊCH, TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN. Toàn bộ 12 Phòng Ban KHÔNG ĐƯỢC TỰ ĐỘNG THỰC THI mà BẮT BUỘC PHẢI THAY ĐỔI TỪNG NGÀY dựa trên Báo cáo KQKD, Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên!\n\n📅 TIẾN TRÌNH 5 NGÀY THAM KHẢO:\n• Thứ Hai (09/11): ✅ ĐÃ HOÀN TẤT THĂM DÒ NHỊP 1 — Chủ tịch đã khớp 100 CP HDB (22,050 ₫) và 100 CP MSH (34,517 ₫) lúc 14:02. Két tiền mặt còn lại 14,510,422 ₫ (72.0% NAV) bảo toàn trọn vẹn.\n• Thứ Ba (10/11): Thẩm định lực cầu giữ nền HDB/MSH. Soi tín hiệu nến Test Cung của BAF (30.5 – 30.8k) và IDC (34.2 – 34.6k). Tiếp tục giữ 72% tiền mặt an toàn.\n• Thứ Tư (11/11): Đo lường hấp thụ hàng T+2 phiên mua Nhịp 1. Nếu HDB vượt 22.8k hoặc MSH vượt 36k kèm Vol bùng nổ, xem xét kích hoạt Nhịp 2 (40% gia tăng).\n• Thứ Năm (12/11): Hàng Nhịp 1 về tài khoản lúc 13h15. Nếu có lãi >= +5%, nâng Trailing Stop lên giá vốn để khóa hòa vốn; chốt lời 50% nếu đạt TP1.\n• Thứ Sáu (13/11): Đóng nến tuần, cấm mở lệnh mới buổi chiều, khóa bảo toàn két tiền mặt và bàn giao số liệu kiểm toán chuẩn bị Hội Nghị Thượng Đỉnh tối Chủ Nhật."
+  },
+  {
+    "id": "dir_user_1794209517223",
+    "timestamp": "14:31:57",
+    "sender": "Chủ tịch Trần Quốc Thiên Phước",
+    "role": "chairman",
+    "type": "chairman_directive",
+    "content": "Cho tôi xem kế hoạch tuần"
+  },
+  {
+    "id": "dir_resp_1794209517224",
+    "timestamp": "14:31:57",
+    "sender": "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)",
+    "role": "specialist",
+    "type": "specialist_reply",
+    "content": "📋 [BÁO CÁO KẾ HOẠCH TÁC CHIẾN TUẦN — ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH]\nKính trình Chủ tịch Trần Quốc Thiên Phước! Căn cứ Nghị Quyết Thượng Đỉnh APEX-SUMMIT-20261108-2100 đã được Chủ tịch ký duyệt lúc 23:08 ngày 08/11/2026, Minh Quân và Victor xin tóm lược định hướng tuần (09/11 – 13/11):\n\n⚖️ ĐIỀU KHOẢN THỂ CHẾ TỐI QUAN TRỌNG: Bảng kế hoạch tuần này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG DÀNH CHO CHỦ TỊCH, TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN. Toàn bộ 12 Phòng Ban KHÔNG ĐƯỢC TỰ ĐỘNG THỰC THI mà BẮT BUỘC PHẢI THAY ĐỔI TỪNG NGÀY dựa trên Báo cáo KQKD, Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên!\n\n📅 TIẾN TRÌNH 5 NGÀY THAM KHẢO:\n• Thứ Hai (09/11): ✅ ĐÃ HOÀN TẤT THĂM DÒ NHỊP 1 — Chủ tịch đã khớp 100 CP HDB (22,050 ₫) và 100 CP MSH (34,517 ₫) lúc 14:02. Két tiền mặt còn lại 14,510,422 ₫ (72.0% NAV) bảo toàn trọn vẹn.\n• Thứ Ba (10/11): Thẩm định lực cầu giữ nền HDB/MSH. Soi tín hiệu nến Test Cung của BAF (30.5 – 30.8k) và IDC (34.2 – 34.6k). Tiếp tục giữ 72% tiền mặt an toàn.\n• Thứ Tư (11/11): Đo lường hấp thụ hàng T+2 phiên mua Nhịp 1. Nếu HDB vượt 22.8k hoặc MSH vượt 36k kèm Vol bùng nổ, xem xét kích hoạt Nhịp 2 (40% gia tăng).\n• Thứ Năm (12/11): Hàng Nhịp 1 về tài khoản lúc 13h15. Nếu có lãi >= +5%, nâng Trailing Stop lên giá vốn để khóa hòa vốn; chốt lời 50% nếu đạt TP1.\n• Thứ Sáu (13/11): Đóng nến tuần, cấm mở lệnh mới buổi chiều, khóa bảo toàn két tiền mặt và bàn giao số liệu kiểm toán chuẩn bị Hội Nghị Thượng Đỉnh tối Chủ Nhật."
+  },
+  {
+    "id": "dir_user_1794209524005",
+    "timestamp": "14:32:03",
+    "sender": "Chủ tịch Trần Quốc Thiên Phước",
+    "role": "chairman",
+    "type": "chairman_directive",
+    "content": "Cho tôi xem kế hoạch tuần"
+  },
+  {
+    "id": "dir_resp_1794209524006",
+    "timestamp": "14:32:03",
+    "sender": "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)",
+    "role": "specialist",
+    "type": "specialist_reply",
+    "content": "📋 [BÁO CÁO KẾ HOẠCH TÁC CHIẾN TUẦN — ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH]\nKính trình Chủ tịch Trần Quốc Thiên Phước! Căn cứ Nghị Quyết Thượng Đỉnh APEX-SUMMIT-20261108-2100 đã được Chủ tịch ký duyệt lúc 23:08 ngày 08/11/2026, Minh Quân và Victor xin tóm lược định hướng tuần (09/11 – 13/11):\n\n⚖️ ĐIỀU KHOẢN THỂ CHẾ TỐI QUAN TRỌNG: Bảng kế hoạch tuần này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG DÀNH CHO CHỦ TỊCH, TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN. Toàn bộ 12 Phòng Ban KHÔNG ĐƯỢC TỰ ĐỘNG THỰC THI mà BẮT BUỘC PHẢI THAY ĐỔI TỪNG NGÀY dựa trên Báo cáo KQKD, Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên!\n\n📅 TIẾN TRÌNH 5 NGÀY THAM KHẢO:\n• Thứ Hai (09/11): ✅ ĐÃ HOÀN TẤT THĂM DÒ NHỊP 1 — Chủ tịch đã khớp 100 CP HDB (22,050 ₫) và 100 CP MSH (34,517 ₫) lúc 14:02. Két tiền mặt còn lại 14,510,422 ₫ (72.0% NAV) bảo toàn trọn vẹn.\n• Thứ Ba (10/11): Thẩm định lực cầu giữ nền HDB/MSH. Soi tín hiệu nến Test Cung của BAF (30.5 – 30.8k) và IDC (34.2 – 34.6k). Tiếp tục giữ 72% tiền mặt an toàn.\n• Thứ Tư (11/11): Đo lường hấp thụ hàng T+2 phiên mua Nhịp 1. Nếu HDB vượt 22.8k hoặc MSH vượt 36k kèm Vol bùng nổ, xem xét kích hoạt Nhịp 2 (40% gia tăng).\n• Thứ Năm (12/11): Hàng Nhịp 1 về tài khoản lúc 13h15. Nếu có lãi >= +5%, nâng Trailing Stop lên giá vốn để khóa hòa vốn; chốt lời 50% nếu đạt TP1.\n• Thứ Sáu (13/11): Đóng nến tuần, cấm mở lệnh mới buổi chiều, khóa bảo toàn két tiền mặt và bàn giao số liệu kiểm toán chuẩn bị Hội Nghị Thượng Đỉnh tối Chủ Nhật."
+  },
+  {
+    "id": "dir_user_1794209530824",
+    "timestamp": "14:32:10",
+    "sender": "Chủ tịch Trần Quốc Thiên Phước",
+    "role": "chairman",
+    "type": "chairman_directive",
+    "content": "Cho tôi xem kế hoạch tuần"
+  },
+  {
+    "id": "dir_resp_1794209530825",
+    "timestamp": "14:32:10",
+    "sender": "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)",
+    "role": "specialist",
+    "type": "specialist_reply",
+    "content": "📋 [BÁO CÁO KẾ HOẠCH TÁC CHIẾN TUẦN — ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH]\nKính trình Chủ tịch Trần Quốc Thiên Phước! Căn cứ Nghị Quyết Thượng Đỉnh APEX-SUMMIT-20261108-2100 đã được Chủ tịch ký duyệt lúc 23:08 ngày 08/11/2026, Minh Quân và Victor xin tóm lược định hướng tuần (09/11 – 13/11):\n\n⚖️ ĐIỀU KHOẢN THỂ CHẾ TỐI QUAN TRỌNG: Bảng kế hoạch tuần này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG DÀNH CHO CHỦ TỊCH, TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN. Toàn bộ 12 Phòng Ban KHÔNG ĐƯỢC TỰ ĐỘNG THỰC THI mà BẮT BUỘC PHẢI THAY ĐỔI TỪNG NGÀY dựa trên Báo cáo KQKD, Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên!\n\n📅 TIẾN TRÌNH 5 NGÀY THAM KHẢO:\n• Thứ Hai (09/11): ✅ ĐÃ HOÀN TẤT THĂM DÒ NHỊP 1 — Chủ tịch đã khớp 100 CP HDB (22,050 ₫) và 100 CP MSH (34,517 ₫) lúc 14:02. Két tiền mặt còn lại 14,510,422 ₫ (72.0% NAV) bảo toàn trọn vẹn.\n• Thứ Ba (10/11): Thẩm định lực cầu giữ nền HDB/MSH. Soi tín hiệu nến Test Cung của BAF (30.5 – 30.8k) và IDC (34.2 – 34.6k). Tiếp tục giữ 72% tiền mặt an toàn.\n• Thứ Tư (11/11): Đo lường hấp thụ hàng T+2 phiên mua Nhịp 1. Nếu HDB vượt 22.8k hoặc MSH vượt 36k kèm Vol bùng nổ, xem xét kích hoạt Nhịp 2 (40% gia tăng).\n• Thứ Năm (12/11): Hàng Nhịp 1 về tài khoản lúc 13h15. Nếu có lãi >= +5%, nâng Trailing Stop lên giá vốn để khóa hòa vốn; chốt lời 50% nếu đạt TP1.\n• Thứ Sáu (13/11): Đóng nến tuần, cấm mở lệnh mới buổi chiều, khóa bảo toàn két tiền mặt và bàn giao số liệu kiểm toán chuẩn bị Hội Nghị Thượng Đỉnh tối Chủ Nhật."
   }
 ]

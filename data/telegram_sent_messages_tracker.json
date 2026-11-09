@@ -3054,5 +3054,21 @@
     "topic_key": "morning_blotter",
     "date": "2026-11-09",
     "timestamp": "2026-11-09 14:00:08"
+  },
+  {
+    "message_id": 1396,
+    "chat_id": "-1004465270817",
+    "thread_id": 3,
+    "topic_key": "alerts",
+    "date": "2026-11-09",
+    "timestamp": "2026-11-09 14:25:09"
+  },
+  {
+    "message_id": 1398,
+    "chat_id": "-1004465270817",
+    "thread_id": 4,
+    "topic_key": "morning_blotter",
+    "date": "2026-11-09",
+    "timestamp": "2026-11-09 14:25:10"
   }
 ]
