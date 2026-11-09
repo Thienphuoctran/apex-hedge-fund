@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-09 17:19:15  
-> **Số sự kiện ghi nhận:** 47 thông báo  
+> **Thời gian quét:** 2026-11-09 19:13:45  
+> **Số sự kiện ghi nhận:** 46 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -23,6 +23,7 @@
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền” | [Xem Link](https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một nhà đầu tư xử phạt hành chính do thao túng cổ phiếu | [Xem Link](https://cafef.vn/mot-nha-dau-tu-xu-phat-hanh-chinh-do-thao-tung-co-phieu-18826110820552351.chn) |
 | **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | BSR tăng mạnh kế hoạch lợi nhuận năm 2026 lên gần 18.600 tỷ đồng | [Xem Link](https://cafef.vn/bsr-tang-manh-ke-hoach-loi-nhuan-nam-2026-len-gan-18600-ty-dong-188261108095036544.chn) |
+| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 10/11, gửi dưới 1 tỷ đồng kỳ hạn 15 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-10-11-gui-duoi-1-ty-dong-ky-han-15-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261109224318997.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nóng: Ngân hàng Nhà nước sẽ mua ngoại tệ giao ngay, bơm VND cho hệ thống ngân hàng vào thứ Hai và thứ Tư hằng tuần từ ngày 11/11 | [Xem Link](https://cafef.vn/nong-ngan-hang-nha-nuoc-se-mua-ngoai-te-giao-ngay-bom-vnd-cho-he-thong-ngan-hang-vao-thu-hai-va-thu-tu-hang-tuan-tu-ngay-11-11-188261109200423359.chn) |
 | **FPT** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | MB Capital, FPT Capital, Chứng khoán KIS, nhà đầu tư Hàn Quốc cùng dự kiến mua một cổ phiếu ngân hàng | [Xem Link](https://cafef.vn/mb-capital-fpt-capital-chung-khoan-kis-nha-dau-tu-han-quoc-cung-du-kien-mua-mot-co-phieu-ngan-hang-188261109142631982.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khoản nợ của ông Nguyễn Hồ Nam sẽ được đấu giá vào ngày 23/11, tài sản bảo đảm là nhà đất tại TP.HCM | [Xem Link](https://cafef.vn/khoan-no-cua-ong-nguyen-ho-nam-se-duoc-dau-gia-vao-ngay-23-11-tai-san-bao-dam-la-nha-dat-tai-tphcm-188261108223825996.chn) |
@@ -34,8 +35,6 @@
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 7/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 3 tháng? | [Xem Link](https://cafef.vn/ngay-7-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-3-thang-18826110622451738.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều tối 6/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-toi-6-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261106073345843.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | ACB mang hơn 1,7 triệu phần thưởng lên ACB ONE, trúng iPhone 18 Pro Max mỗi tuần | [Xem Link](https://cafef.vn/acb-mang-hon-17-trieu-phan-thuong-len-acb-one-trung-iphone-18-pro-max-moi-tuan-188261106133025656.chn) |
-| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 6/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng? | [Xem Link](https://cafef.vn/ngay-6-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261105233246163.chn) |
-| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bảng xếp hạng tiền gửi ngân hàng: HDBank tăng 3 bậc, ACB lùi về hạng 10, một nhà băng ít ai nghĩ đến tăng trưởng tới 45% | [Xem Link](https://cafef.vn/bang-xep-hang-tien-gui-ngan-hang-hdbank-tang-3-bac-acb-lui-ve-hang-10-mot-nha-bang-it-ai-nghi-den-tang-truong-toi-45-18826110511281671.chn) |
 | **FPT** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Toàn cảnh cây cầu dây văng hơn 7.300 tỷ đồng ở Hà Nội: Trụ tháp hình cánh chim cao tương đương tòa nhà 25 tầng, nằm gần loạt dự án của Vingroup, Sunshine, FPT, dự kiến hoàn thành năm 2027 | [Xem Link](https://cafef.vn/toan-canh-cay-cau-day-vang-hon-7300-ty-dong-o-ha-noi-tru-thap-hinh-canh-chim-cao-tuong-duong-toa-nha-25-tang-nam-gan-loat-du-an-cua-vingroup-sunshine-fpt-du-kien-hoan-thanh-nam-2027-188261109210908703.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Chi hơn 8.500 tỷ đồng, TP.HCM muốn giải quyết con rạch đang ô nhiễm trầm trọng | [Xem Link](https://cafef.vn/chi-hon-8500-ty-dong-tphcm-muon-giai-quyet-con-rach-dang-o-nhiem-tram-trong-18826110919401525.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Nhà đất giấy tay ở TPHCM: Cơ hội nhận bồi thường 100%? | [Xem Link](https://cafef.vn/nha-dat-giay-tay-o-tphcm-co-hoi-nhan-boi-thuong-100-188261109101949552.chn) |
