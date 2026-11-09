@@ -573,6 +573,139 @@ def evaluate_and_trigger_tactical_alerts(
     return directives
 
 
+def get_weekly_reference_roadmap() -> Dict[str, Any]:
+    """
+    BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH):
+    - Căn cứ trực tiếp: Nghị Quyết Đại Hội Nghị Thượng Đỉnh Toàn Doanh Nghiệp Apex (Mã: APEX-SUMMIT-20261108-2100)
+      được tổ chức lúc 21h00 - 21h30 ngày 08/11/2026 và đã được Chủ tịch ký duyệt lúc 23:08:16 cùng ngày.
+    - ĐIỀU KHOẢN THỂ CHẾ BẤT BIẾN: Bảng kế hoạch này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG CHO CHỦ TỊCH,
+      TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN VÌ THỊ TRƯỜNG BIẾN ĐỘNG VÀ ĐẦY BIẾN SỐ.
+      CÁC PHÒNG BAN KHÔNG ĐƯỢC XEM ĐÂY LÀ KẾ HOẠCH CHÍNH THỨC MÀ LÀM THEO.
+      MỌI HÀNH ĐỘNG PHẢI ĐƯỢC THAY ĐỔI TỪNG NGÀY THEO ĐÚNG TÌNH HÌNH THỊ TRƯỜNG VÀ BÁO CÁO MỖI PHIÊN.
+    """
+    return {
+        "title": "BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)",
+        "week_label": "Tuần 46 (09/11 – 13/11/2026)",
+        "basis": "Nghị Quyết Đại Hội Nghị Thượng Đỉnh Toàn Doanh Nghiệp Apex (Mã: APEX-SUMMIT-20261108-2100)",
+        "approved_by": "Chủ tịch Trần Quốc Thiên Phước (Ký duyệt lúc 23:08:16 Ngày 08/11/2026)",
+        "legal_stamp": "🛡️ BAN 12 TRỌNG NIÊM PHONG PHÁP LÝ THỂ CHẾ",
+        "is_reference_only": True,
+        "constitution_mandate": (
+            "⚠️ THỂ CHẾ BẤT BIẾN THEO CHỈ THỊ CỦA CHỦ TỊCH: Bảng kế hoạch tuần này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG "
+            "DÀNH RIÊNG CHO CHỦ TỊCH, TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN vì thị trường biến động và đầy biến số. "
+            "TOÀN BỘ 12 PHÒNG BAN NGHIÊM CẤM TỰ Ý XEM ĐÂY LÀ KẾ HOẠCH CHÍNH THỨC ĐỂ TỰ ĐỘNG THỰC THI. "
+            "Mọi hành động giải ngân, gia tăng hay phòng thủ BẮT BUỘC PHẢI ĐƯỢC THAY ĐỔI TỪNG NGÀY dựa trên Báo cáo KQKD, "
+            "Báo cáo Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên!"
+        ),
+        "days": [
+            {
+                "day_id": "mon",
+                "day_name": "Thứ Hai (09/11/2026)",
+                "theme": "Khảo Sát Hấp Thụ Hàng T+2 & Thăm Dò Nhịp 1 (30% NAV)",
+                "status": "COMPLETED",
+                "status_badge": "✅ ĐÃ THỰC THI XONG",
+                "guideline": "Đứng ngoài phiên sáng; Canh cạn cung Khung Giờ Vàng (14h00 – 14h25) để thăm dò Nhịp 1.",
+                "execution_actual": "Chủ tịch đã bấm cò khớp lệnh thành công 100 CP HDB (22,050 ₫) và 100 CP MSH (34,517 ₫) lúc 14:02. Vốn giải ngân thực tế: 5,650,000 ₫ (28.0% NAV). Két tiền mặt còn lại: 14,510,422 ₫ (72.0% NAV). Victor đã kích hoạt Stop 2xATR (HDB: 21,220 ₫, MSH: 33,090 ₫) bảo vệ thành quả.",
+                "cash_reserve_target": "72.0% NAV (14.51M)"
+            },
+            {
+                "day_id": "tue",
+                "day_name": "Thứ Ba (10/11/2026)",
+                "theme": "Thẩm Định Lực Cầu Giữ Nền & Soi Tín Hiệu Test Cung BAF / IDC",
+                "status": "UPCOMING",
+                "status_badge": "⏳ DỰ KIẾN THAM KHẢO",
+                "guideline": "Quan sát phản ứng giữ nền của HDB (quanh 22.0k) và MSH (quanh 34.5k). Theo dõi độ cạn Vol của BAF (vùng 30.5 – 30.8k) và IDC (vùng 34.2 – 34.6k).",
+                "action_condition": "NẾU HDB/MSH giữ nền xanh nhẹ với Vol thấp ➔ Giữ nguyên vị thế, KHÔNG mua đuổi. NẾU BAF/IDC xuất hiện nến Test Cung kiệt vol ➔ Đưa vào tầm ngắm ưu tiên phiên chiều. NẾU thị trường rung lắc gãy 1.700 ➔ Đứng yên bảo vệ 72% tiền mặt.",
+                "cash_reserve_target": ">= 70.0% NAV"
+            },
+            {
+                "day_id": "wed",
+                "day_name": "Thứ Tư (11/11/2026)",
+                "theme": "Hấp Thụ Hàng T+2 Phiên Mua Nhịp 1 & Đánh Giá Điểm Breakout",
+                "status": "UPCOMING",
+                "status_badge": "⏳ DỰ KIẾN THAM KHẢO",
+                "guideline": "Giữa tuần là thời điểm dòng tiền phân hóa mạnh. Đối soát luồng tiền 3 khối (Ngoại, Tự doanh, Cá nhân) từ Ban 1 VN.",
+                "action_condition": "NẾU HDB bứt phá vượt 22,800 ₫ hoặc MSH bứt qua 36,000 ₫ kèm Vol >= 150% MA20 ➔ Minh Quân xem xét trình Sổ lệnh Nhịp 2 (40% gia tăng). NẾU thanh khoản yếu hoặc có biến động xấu ➔ Tuyệt đối KHÔNG gia tăng.",
+                "cash_reserve_target": ">= 50.0% NAV"
+            },
+            {
+                "day_id": "thu",
+                "day_name": "Thứ Năm (12/11/2026)",
+                "theme": "Hàng Nhịp 1 Về Tài Khoản (T+2.5) & Rà Soát Nâng Trailing Stop",
+                "status": "UPCOMING",
+                "status_badge": "⏳ DỰ KIẾN THAM KHẢO",
+                "guideline": "13:15 chiều Thứ Năm, 100 CP HDB và 100 CP MSH của Chủ tịch chính thức về tài khoản khả dụng, sẵn sàng chốt lời hoặc cơ cấu bất cứ lúc nào.",
+                "action_condition": "NẾU vị thế có lãi >= +5% đến +8% ➔ Nâng Stop Loss lên giá vốn (Trailing Stop 0% rủi ro). NẾU chạm mục tiêu TP1 (HDB: 24.29k, MSH: 39.56k) ➔ Chủ động chốt lời 50% theo chiến thuật Scaling Out để đút tiền vào két.",
+                "cash_reserve_target": ">= 60.0% NAV"
+            },
+            {
+                "day_id": "fri",
+                "day_name": "Thứ Sáu (13/11/2026)",
+                "theme": "Đóng Nến Tuần, Tổng Kết Hiệu Suất & Chuẩn Bị Hội Nghị Thượng Đỉnh",
+                "status": "UPCOMING",
+                "status_badge": "⏳ DỰ KIẾN THAM KHẢO",
+                "guideline": "Xác nhận xu hướng nến tuần của VN-Index. Ban 5 VN thực hiện kiểm toán Walk-Forward Hit Rate % và bóc tách Attribution.",
+                "action_condition": "KỶ LUẬT THÉP: CẤM mở vị thế mới vào chiều Thứ Sáu để tránh rủi ro tin tức cuối tuần. Khóa an toàn két tiền mặt. Bàn giao toàn bộ hồ sơ cho Master CIO James để chuẩn bị Đại Hội Nghị Thượng Đỉnh tối Chủ Nhật.",
+                "cash_reserve_target": ">= 50.0% - 60.0% NAV"
+            }
+        ],
+        "approved_watchlist": [
+            {
+                "symbol": "HDB",
+                "name": "HDBank (HOSE)",
+                "tier": "Core Compounder (Tiêu điểm 1)",
+                "weekly_limit": "Tối đa 300 CP (3 nhịp: 100 - 100 - 100)",
+                "executed_shares": 100,
+                "current_status": "ĐÃ KHỚP NHỊP 1 (100 CP @ 22,050 ₫)",
+                "entry_zone": "22,200 – 22,400 ₫",
+                "stop_loss_2xatr": "21,220 ₫ (-5.69%)",
+                "tp1": "24,290 ₫ (+8.68%)",
+                "tp2": "25,820 ₫ (+15.53%)",
+                "catalyst": "Tín dụng +22% Top 1 ngành, NIM 5.1%, CASA 18.2%, ROE 24.5%"
+            },
+            {
+                "symbol": "MSH",
+                "name": "May Sông Hồng (HOSE)",
+                "tier": "Tactical Alpha (Tiêu điểm 2)",
+                "weekly_limit": "Tối đa 200 CP (2 nhịp: 100 - 100)",
+                "executed_shares": 100,
+                "current_status": "ĐÃ KHỚP NHỊP 1 (100 CP @ 34,517 ₫)",
+                "entry_zone": "34,500 – 35,000 ₫",
+                "stop_loss_2xatr": "33,090 ₫ (-6.79%)",
+                "tp1": "39,560 ₫ (+13.68%)",
+                "tp2": "43,040 ₫ (+23.68%)",
+                "catalyst": "Nhà máy Sông Hồng 10 chạy 100% công suất, đơn hàng dệt may Mỹ hồi phục mạnh"
+            },
+            {
+                "symbol": "BAF",
+                "name": "Nông Nghiệp BAF (HOSE)",
+                "tier": "Standby Alpha (Dự bị 1)",
+                "weekly_limit": "Tối đa đúng 100 CP (Rào chắn nợ vay 2.420 tỷ)",
+                "executed_shares": 0,
+                "current_status": "CHỜ TÍN HIỆU TEST CUNG (0 CP)",
+                "entry_zone": "30,500 – 30,800 ₫",
+                "stop_loss_2xatr": "29,650 ₫ (-4.05%)",
+                "tp1": "32,650 ₫ (+6.00%)",
+                "tp2": "35,500 ₫ (+15.26%)",
+                "catalyst": "Giá heo hơi > 65k/kg, tự chủ cám chay F-Feed, biên lãi gộp > 15%"
+            },
+            {
+                "symbol": "IDC",
+                "name": "IDICO (HNX)",
+                "tier": "Standby Alpha (Dự bị 2)",
+                "weekly_limit": "Tối đa 200 CP (2 nhịp: 100 - 100)",
+                "executed_shares": 0,
+                "current_status": "CHỜ TÍN HIỆU CẠN VOL (0 CP)",
+                "entry_zone": "34,200 – 34,600 ₫",
+                "stop_loss_2xatr": "32,530 ₫ (-5.98%)",
+                "tp1": "38,660 ₫ (+11.73%)",
+                "tp2": "41,880 ₫ (+21.04%)",
+                "catalyst": "FCF dồi dào từ KCN Hựu Thạnh, tỷ lệ lấp đầy cao, cổ tức tiền mặt lớn"
+            }
+        ]
+    }
+
+
 def get_tactical_war_room_state() -> Dict[str, Any]:
     """
     Tập hợp toàn bộ trạng thái thời gian thực của Phòng Tác Chiến (Minh Quân, Victor, Alex).
@@ -690,7 +823,8 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
             ],
             "note": "Phân khu dự phòng sẵn sàng kích hoạt ngay khi Chủ tịch phê duyệt mở rộng quy mô giải ngân sang thị trường Mỹ."
         },
-        "directives_history": directives
+        "directives_history": directives,
+        "weekly_reference_plan": get_weekly_reference_roadmap()
     }
 
 
@@ -714,7 +848,24 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
     response_content = ""
     specialist_sign = "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)"
 
-    if any(k in cmd_lower for k in ["hdb", "ngân hàng", "bank"]):
+    if any(k in cmd_lower for k in ["kế hoạch tuần", "tuần", "roadmap", "tuần này", "kế hoạch mỗi tuần", "tham khảo tuần"]):
+        w_plan = get_weekly_reference_roadmap()
+        response_content = (
+            f"📋 [BÁO CÁO KẾ HOẠCH TÁC CHIẾN TUẦN — ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH]\n"
+            f"Kính trình Chủ tịch Trần Quốc Thiên Phước! Căn cứ Nghị Quyết Thượng Đỉnh APEX-SUMMIT-20261108-2100 "
+            f"đã được Chủ tịch ký duyệt lúc 23:08 ngày 08/11/2026, Minh Quân và Victor xin tóm lược định hướng tuần (09/11 – 13/11):\n\n"
+            f"⚖️ ĐIỀU KHOẢN THỂ CHẾ TỐI QUAN TRỌNG: Bảng kế hoạch tuần này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG DÀNH CHO CHỦ TỊCH, "
+            f"TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN. Toàn bộ 12 Phòng Ban KHÔNG ĐƯỢC TỰ ĐỘNG THỰC THI mà BẮT BUỘC PHẢI THAY ĐỔI "
+            f"TỪNG NGÀY dựa trên Báo cáo KQKD, Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên!\n\n"
+            f"📅 TIẾN TRÌNH 5 NGÀY THAM KHẢO:\n"
+            f"• Thứ Hai (09/11): ✅ ĐÃ HOÀN TẤT THĂM DÒ NHỊP 1 — Chủ tịch đã khớp 100 CP HDB (22,050 ₫) và 100 CP MSH (34,517 ₫) lúc 14:02. "
+            f"Két tiền mặt còn lại 14,510,422 ₫ (72.0% NAV) bảo toàn trọn vẹn.\n"
+            f"• Thứ Ba (10/11): Thẩm định lực cầu giữ nền HDB/MSH. Soi tín hiệu nến Test Cung của BAF (30.5 – 30.8k) và IDC (34.2 – 34.6k). Tiếp tục giữ 72% tiền mặt an toàn.\n"
+            f"• Thứ Tư (11/11): Đo lường hấp thụ hàng T+2 phiên mua Nhịp 1. Nếu HDB vượt 22.8k hoặc MSH vượt 36k kèm Vol bùng nổ, xem xét kích hoạt Nhịp 2 (40% gia tăng).\n"
+            f"• Thứ Năm (12/11): Hàng Nhịp 1 về tài khoản lúc 13h15. Nếu có lãi >= +5%, nâng Trailing Stop lên giá vốn để khóa hòa vốn; chốt lời 50% nếu đạt TP1.\n"
+            f"• Thứ Sáu (13/11): Đóng nến tuần, cấm mở lệnh mới buổi chiều, khóa bảo toàn két tiền mặt và bàn giao số liệu kiểm toán chuẩn bị Hội Nghị Thượng Đỉnh tối Chủ Nhật."
+        )
+    elif any(k in cmd_lower for k in ["hdb", "ngân hàng", "bank"]):
         response_content = (
             f"Báo cáo Chủ tịch! Về mã HDB (HDBank): "
             f"Đây là tiêu điểm số 1 của Vòng 2 với điểm số 91/100. "

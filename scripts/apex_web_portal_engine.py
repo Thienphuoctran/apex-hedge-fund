@@ -2760,6 +2760,175 @@ def generate_portal_html(
                     </div>
                 </div>
 
+                <!-- ========================================================
+                     BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)
+                     CĂN CỨ: NGHỊ QUYẾT ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH (APEX-SUMMIT-20261108-2100)
+                     ======================================================== -->
+                <div class="weekly-roadmap-box" id="weekly-roadmap-box" style="margin-bottom: 20px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85)); border: 1.5px solid rgba(245, 158, 11, 0.45); border-radius: 14px; padding: 18px 20px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 22px;">📅</span>
+                            <div>
+                                <div style="font-size: 15px; font-weight: 800; color: #fbbf24; display: flex; align-items: center; gap: 8px;">
+                                    <span>BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)</span>
+                                    <span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: 9999px; font-size: 10.5px; font-weight: 800;">TUẦN 46: 09/11 – 13/11</span>
+                                </div>
+                                <div style="font-size: 11.5px; color: #94a3b8; margin-top: 2px;">
+                                    Căn cứ: <strong>Nghị Quyết Đại Hội Nghị Thượng Đỉnh Toàn Doanh Nghiệp</strong> (Mã: <code>APEX-SUMMIT-20261108-2100</code>) • Ký duyệt lúc <strong>23:08:16 Ngày 08/11/2026</strong> • 🛡️ Ban 12 Niêm Phong
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;">
+                                💡 Dành Riêng Cho Chủ Tịch Tham Khảo
+                            </span>
+                            <button id="btn-toggle-weekly-roadmap" onclick="toggleWeeklyRoadmap()" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #cbd5e1; font-size: 11.5px; font-weight: 700; padding: 5px 12px; border-radius: 6px; cursor: pointer;">
+                                ▾ Thu Gọn
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- KHUNG CẢNH BÁO THỂ CHẾ BẮT BUỘC (DISCLAIMER ĐANH THÉP) -->
+                    <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 11.5px; color: #fde68a; line-height: 1.55;">
+                        ⚖️ <strong>QUY TẮC HIẾN CHƯƠNG TỐI QUAN TRỌNG THEO CHỈ THỊ CỦA CHỦ TỊCH:</strong><br>
+                        Bảng kế hoạch tuần này <strong>CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG DÀNH RIÊNG CHO CHỦ TỊCH</strong>, <strong>TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN</strong> vì thị trường chứng khoán liên tục biến động và đầy biến số.<br>
+                        <strong>TOÀN BỘ 12 PHÒNG BAN NGHIÊM CẤM TỰ Ý XEM ĐÂY LÀ KẾ HOẠCH CHÍNH THỨC ĐỂ TỰ ĐỘNG THỰC THI</strong>. Mọi quyết định giải ngân, gia tăng hay phòng thủ <strong>BẮT BUỘC PHẢI ĐƯỢC THAY ĐỔI TỪNG NGÀY</strong> dựa trên Báo cáo KQKD, Báo cáo Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên giao dịch!
+                    </div>
+
+                    <!-- NỘI DUNG CHI TIẾT 5 NGÀY VÀ WATCHLIST TUẦN (CÓ THỂ COLLAPSE) -->
+                    <div id="weekly-roadmap-details">
+                        <!-- 5 NGÀY TÁC CHIẾN TRONG TUẦN -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-bottom: 14px;">
+                            <!-- Thứ Hai -->
+                            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <strong style="color: #34d399; font-size: 12px;">THỨ HAI (09/11)</strong>
+                                    <span style="background: rgba(16, 185, 129, 0.25); color: #34d399; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">✅ ĐÃ HOÀN TẤT</span>
+                                </div>
+                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Khảo Sát Hàng T+2 &amp; Thăm Dò Nhịp 1</div>
+                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
+                                    🎉 <strong>Đã thực thi thành công</strong>: Khớp 100 CP HDB (22,050 ₫) &amp; 100 CP MSH (34,517 ₫) lúc 14:02. Vốn giải ngân 5.65M (28.0% NAV). Két tiền 14.51M (72.0% NAV). Stop 2xATR đã khóa chặt!
+                                </div>
+                            </div>
+
+                            <!-- Thứ Ba -->
+                            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <strong style="color: #38bdf8; font-size: 12px;">THỨ BA (10/11)</strong>
+                                    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">⏳ DỰ KIẾN THAM KHẢO</span>
+                                </div>
+                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Thẩm Định Giữ Nền &amp; Soi BAF / IDC</div>
+                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
+                                    • Quan sát lực đỡ của HDB (22k) và MSH (34.5k).<br>
+                                    • Soi nến Test Cung của BAF (30.5 – 30.8k) và IDC (34.2 – 34.6k).<br>
+                                    • <strong>Hành động</strong>: Tiếp tục bảo toàn 72% tiền mặt. Tuyệt đối không FOMO đuổi giá xanh!
+                                </div>
+                            </div>
+
+                            <!-- Thứ Tư -->
+                            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <strong style="color: #94a3b8; font-size: 12px;">THỨ TƯ (11/11)</strong>
+                                    <span style="background: rgba(148, 163, 184, 0.15); color: #94a3b8; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">⏳ DỰ KIẾN THAM KHẢO</span>
+                                </div>
+                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Hấp Thụ Hàng T+2 &amp; Điểm Breakout</div>
+                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
+                                    • Đo lường phân hóa dòng tiền 3 khối.<br>
+                                    • <strong>Điều kiện Nhịp 2 (40%)</strong>: Chỉ xem xét gia tăng nếu HDB vượt 22.8k hoặc MSH vượt 36k kèm Vol &ge; 150% MA20.<br>
+                                    • Nếu vol yếu, kiên quyết không giải ngân thêm.
+                                </div>
+                            </div>
+
+                            <!-- Thứ Năm -->
+                            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <strong style="color: #94a3b8; font-size: 12px;">THỨ NĂM (12/11)</strong>
+                                    <span style="background: rgba(148, 163, 184, 0.15); color: #94a3b8; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">⏳ DỰ KIẾN THAM KHẢO</span>
+                                </div>
+                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Hàng Về Tài Khoản &amp; Trailing Stop</div>
+                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
+                                    • 13:15 chiều: 200 CP (HDB, MSH) về kho khả dụng.<br>
+                                    • Nếu lãi &ge; +5%: Nâng Stop Loss lên giá vốn (Trailing Stop 0% rủi ro).<br>
+                                    • Nếu chạm TP1 (HDB: 24.29k, MSH: 39.56k): Chủ động chốt lời 50% đút tiền vào két.
+                                </div>
+                            </div>
+
+                            <!-- Thứ Sáu -->
+                            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <strong style="color: #94a3b8; font-size: 12px;">THỨ SÁU (13/11)</strong>
+                                    <span style="background: rgba(148, 163, 184, 0.15); color: #94a3b8; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">⏳ DỰ KIẾN THAM KHẢO</span>
+                                </div>
+                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Đóng Nến Tuần &amp; Đối Soát Hiệu Suất</div>
+                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
+                                    • CẤM MỞ LỆNH MỚI chiều Thứ Sáu.<br>
+                                    • Khóa bảo toàn két tiền mặt &ge; 50% - 60% NAV.<br>
+                                    • Ban 5 VN hồi tố Hit Rate %; Bàn giao toàn bộ số liệu kiểm toán cho Master CIO James chuẩn bị Hội Nghị Thượng Đỉnh 21h00 Chủ Nhật.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BẢNG TOP 4 SIÊU CỔ PHIẾU ĐỊNH HƯỚNG TUẦN (PHÊ DUYỆT BỞI HỘI NGHỊ THƯỢNG ĐỈNH) -->
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 8px; padding: 10px 14px;">
+                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>🎯 TOP 4 SIÊU CỔ PHIẾU ĐỊNH HƯỚNG TUẦN (NGHỊ QUYẾT APEX-SUMMIT-20261108-2100)</span>
+                                <span style="font-size: 10.5px; color: #94a3b8;">Biên độ gom LO • Stop 2xATR • Kế hoạch chia nhịp Kim Tự Tháp</span>
+                            </div>
+                            <table class="stock-sentinel-table" style="font-size: 11px;">
+                                <thead>
+                                    <tr>
+                                        <th>Mã CP</th>
+                                        <th>Phân Tầng</th>
+                                        <th>Vùng Gom LO</th>
+                                        <th>Stop 2xATR</th>
+                                        <th>Mục Tiêu TP1 / TP2</th>
+                                        <th>Kế Hoạch Cả Tuần</th>
+                                        <th>Trạng Thái Thực Tế</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong style="color: #38bdf8;">HDB</strong></td>
+                                        <td><span style="color: #34d399;">Core Compounder</span></td>
+                                        <td>22,200 – 22,400 ₫</td>
+                                        <td style="color: #ef4444; font-weight: 700;">21,220 ₫ (-5.7%)</td>
+                                        <td>24.29k / 25.82k</td>
+                                        <td>Tối đa 300 CP (3 nhịp)</td>
+                                        <td><span style="background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 6px; border-radius: 4px; font-weight: 700;">✅ ĐÃ KHỚP 100 CP</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="color: #38bdf8;">MSH</strong></td>
+                                        <td><span style="color: #38bdf8;">Tactical Alpha</span></td>
+                                        <td>34,500 – 35,000 ₫</td>
+                                        <td style="color: #ef4444; font-weight: 700;">33,090 ₫ (-6.8%)</td>
+                                        <td>39.56k / 43.04k</td>
+                                        <td>Tối đa 200 CP (2 nhịp)</td>
+                                        <td><span style="background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 6px; border-radius: 4px; font-weight: 700;">✅ ĐÃ KHỚP 100 CP</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="color: #38bdf8;">BAF</strong></td>
+                                        <td><span style="color: #fbbf24;">Standby Alpha 1</span></td>
+                                        <td>30,500 – 30,800 ₫</td>
+                                        <td style="color: #ef4444; font-weight: 700;">29,650 ₫ (-4.0%)</td>
+                                        <td>32.65k / 35.50k</td>
+                                        <td>Tối đa đúng 100 CP (Rào nợ)</td>
+                                        <td><span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; padding: 2px 6px; border-radius: 4px; font-weight: 700;">⏳ CHỜ TÍN HIỆU (0 CP)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="color: #38bdf8;">IDC</strong></td>
+                                        <td><span style="color: #fbbf24;">Standby Alpha 2</span></td>
+                                        <td>34,200 – 34,600 ₫</td>
+                                        <td style="color: #ef4444; font-weight: 700;">32,530 ₫ (-6.0%)</td>
+                                        <td>38.66k / 41.88k</td>
+                                        <td>Tối đa 200 CP (2 nhịp)</td>
+                                        <td><span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; padding: 2px 6px; border-radius: 4px; font-weight: 700;">⏳ CHỜ TÍN HIỆU (0 CP)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 3 COLUMNS TACTICAL COMMAND -->
                 <div class="war-room-columns">
                     <!-- ================= CỘT 1: MINH QUÂN BLUEPRINT ================= -->
@@ -3040,6 +3209,7 @@ def generate_portal_html(
                             <!-- Quick Prompts -->
                             <div class="quick-prompts-row">
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Minh Quân báo cáo tiến độ hiện tại')">💬 Báo cáo tiến độ</button>
+                                <button class="btn-quick-prompt" onclick="sendQuickTactical('Cho tôi xem kế hoạch tuần')" style="border-color: #fbbf24; color: #fbbf24; font-weight: 700;">📅 Soi Kế Hoạch Tuần</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Đánh giá điều kiện Test Cung của HDB và MSH')">🎯 Soi HDB &amp; MSH</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Kịch bản ứng phó nếu thị trường bất ngờ sập 15 điểm')">🛡️ Kịch bản thị trường sập</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Victor kiểm tra két tiền mặt SSOT và sức mua')">💰 Két tiền &amp; Sức mua</button>
@@ -5035,6 +5205,19 @@ def generate_portal_html(
                     holdBox.innerHTML = hHtml;
                     holdBox.style.display = 'flex';
                 }}
+            }}
+        }}
+
+        function toggleWeeklyRoadmap() {{
+            const det = document.getElementById('weekly-roadmap-details');
+            const btn = document.getElementById('btn-toggle-weekly-roadmap');
+            if (!det || !btn) return;
+            if (det.style.display === 'none') {{
+                det.style.display = 'block';
+                btn.innerText = '▾ Thu Gọn';
+            }} else {{
+                det.style.display = 'none';
+                btn.innerText = '▸ Mở Rộng';
             }}
         }}
 
