@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-09T02:44:30.860687+00:00",
+  "timestamp_utc": "2026-11-09T03:37:36.950584+00:00",
   "scan_date": "2026-11-09",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 49,
+  "total_vn_announcements_count": 48,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 10
     },
+    "GAS": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 10:14:00 +0700",
+      "source_url": "https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn",
+      "total_announcements": 1
+    },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng",
@@ -322,7 +330,7 @@
       "severity": "INFO",
       "published_at": "Sat, 07 Nov 26 13:15:00 +0700",
       "source_url": "https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn",
-      "total_announcements": 2
+      "total_announcements": 1
     },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -330,7 +338,15 @@
       "severity": "INFO",
       "published_at": "Fri, 06 Nov 26 19:30:00 +0700",
       "source_url": "https://cafef.vn/fpt-ai-factory-duoc-vinh-danh-tai-giai-thuong-tri-tue-nhan-tao-viet-nam-2026-188261106195055665.chn",
-      "total_announcements": 4
+      "total_announcements": 3
+    },
+    "MBS": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền”",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 10:37:00 +0700",
+      "source_url": "https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn",
+      "total_announcements": 2
     },
     "SSI": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -339,14 +355,6 @@
       "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/tin-hieu-vn-index-tao-day-xuat-hien-ssi-goi-ten-11-co-phieu-co-du-dia-tang-manh-188261107205152922.chn",
       "total_announcements": 3
-    },
-    "KDH": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/phien-6-11-khoi-ngoai-do-tien-mua-rong-hon-400-ty-dong-co-phieu-viet-nam-giua-luc-chung-khoan-toan-cau-lao-doc-188261106153537479.chn",
-      "total_announcements": 1
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -370,14 +378,6 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
       "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
-      "total_announcements": 1
-    },
-    "MBS": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 2026 03:44:26 GMT",
-      "source_url": "https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm",
       "total_announcements": 1
     },
     "CTG": {
@@ -4859,6 +4859,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "GAS"
+      ],
+      "title": "Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ",
+      "summary": "Được xây dựng từ năm 2009 với sự góp vốn của PV GAS, PV Engineering và doanh nghiệp thuộc hệ sinh thái của nữ tỷ phú Nguyễn Thị Phương Thảo, tòa PV GAS Tower tại số 673 Nguyễn Hữu Thọ hiện là địa chỉ của nhiều đơn vị ngà...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 10:14:00 +0700",
+      "source_url": "https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PNJ"
       ],
       "title": "Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng",
@@ -4955,6 +4967,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "MBS"
+      ],
+      "title": "Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền”",
+      "summary": "Về kỹ thuật, MBS cho rằng hiện tượng \"lệch pha\" giữa VN-Index và diễn biến của mặt bằng cổ phiếu vẫn chưa hoàn toàn chấm dứt....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 10:37:00 +0700",
+      "source_url": "https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
       "title": "Một nhà đầu tư xử phạt hành chính do thao túng cổ phiếu",
@@ -5011,42 +5035,6 @@
       "severity": "INFO",
       "published_at": "Sat, 07 Nov 26 10:31:00 +0700",
       "source_url": "https://cafef.vn/hon-1000-nhan-vien-roi-di-pnj-nhan-them-don-xin-nghi-cua-giam-doc-cap-cao-tai-chinh-188261107103127179.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "KDH"
-      ],
-      "title": "Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc",
-      "summary": "Tại chiều mua, KDH được khối ngoại mua ròng mạnh nhất với giá trị khoảng 171 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/phien-6-11-khoi-ngoai-do-tien-mua-rong-hon-400-ty-dong-co-phieu-viet-nam-giua-luc-chung-khoan-toan-cau-lao-doc-188261106153537479.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
-      "summary": "Theo Mirae Asset, mức tăng trưởng dự kiến trong quý cuối năm phù hợp với tính chu kỳ trong hoạt động kinh doanh của FPT....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 06 Nov 26 15:05:00 +0700",
-      "source_url": "https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-loi-nhuan-quy-4-cua-fpt-188261106144829129.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "REE"
-      ],
-      "title": "Gia nhập quân giải phóng từ năm 16 tuổi, bà Nguyễn Thị Mai Thanh tự dặn lòng: Hãy quên mình là con gái của một vị tướng chỉ huy",
-      "summary": "Năm 16 tuổi, giữa chiến trường bận rộn chăm sóc thương binh, bà Nguyễn Thị Mai Thanh - Nhà sáng lập REE đã tự dặn lòng: “Hãy quên mình là con gái của một vị tướng chỉ huy. Càng không được xem mình là phụ nữ để đòi hỏi sự...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 15:04:00 +0700",
-      "source_url": "https://cafef.vn/gia-nhap-quan-giai-phong-tu-nam-16-tuoi-ba-nguyen-thi-mai-thanh-tu-dan-long-hay-quen-minh-la-con-gai-cua-mot-vi-tuong-chi-huy-18826110615045685.chn"
     },
     {
       "market": "VIETNAM",
