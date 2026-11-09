@@ -2922,9 +2922,9 @@ def generate_portal_html(
                         <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
                             
                             <!-- GIAI ĐOẠN 1: 13:00 - 13:45 (ACTIVE) -->
-                            <div class="action-plan-hero-card" style="border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                            <div id="stage-1-card" class="action-plan-hero-card" style="border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                                 <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span class="action-plan-tag" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8; border-color: rgba(56, 189, 248, 0.5); font-weight: 800;">
+                                    <span id="stage-1-badge" class="action-plan-tag" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8; border-color: rgba(56, 189, 248, 0.5); font-weight: 800;">
                                         <span class="war-room-live-dot" style="background:#38bdf8;"></span> ĐANG DIỄN RA
                                     </span>
                                     <span style="font-size: 11.5px; font-weight: 800; color: #38bdf8; font-family: monospace;">13:00 – 13:45</span>
@@ -2941,9 +2941,9 @@ def generate_portal_html(
                             </div>
 
                             <!-- GIAI ĐOẠN 2: 13:45 - 13:55 (UPCOMING / NO-SUPPLY CHECK) -->
-                            <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                            <div id="stage-2-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                                 <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span style="font-size: 10px; font-weight: 800; color: #94a3b8; background: rgba(148, 163, 184, 0.15); padding: 2px 8px; border-radius: 4px;">CHUẨN BỊ ĐẾN</span>
+                                    <span id="stage-2-badge" style="font-size: 10px; font-weight: 800; color: #94a3b8; background: rgba(148, 163, 184, 0.15); padding: 2px 8px; border-radius: 4px;">CHUẨN BỊ ĐẾN</span>
                                     <span style="font-size: 11px; font-weight: 800; color: #94a3b8; font-family: monospace;">13:45 – 13:55</span>
                                 </div>
                                 <div style="font-size: 13px; font-weight: 800; color: #f1f5f9;">
@@ -2959,9 +2959,9 @@ def generate_portal_html(
                             </div>
 
                             <!-- GIAI ĐOẠN 3: 14:00 - 14:25 (GOLDEN WINDOW - MASTER EXECUTION) -->
-                            <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(245, 158, 11, 0.5); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 7px;">
+                            <div id="stage-3-card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(245, 158, 11, 0.5); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 7px;">
                                 <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(245, 158, 11, 0.3);">
+                                    <span id="stage-3-badge" style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(245, 158, 11, 0.3);">
                                         ⭐ THỜI KHẮC QUYẾT ĐỊNH
                                     </span>
                                     <span style="font-size: 11px; font-weight: 800; color: #fbbf24; font-family: monospace;">14:00 – 14:25</span>
@@ -4751,6 +4751,57 @@ def generate_portal_html(
                 if (nyEl) nyEl.innerText = countStr;
                 const alexNyEl = document.getElementById('alex-ny-countdown');
                 if (alexNyEl) alexNyEl.innerText = countStr;
+
+                // Live dynamic switcher for 3 afternoon stages
+                const curMinutes = now.getHours() * 60 + now.getMinutes();
+                const s1Card = document.getElementById('stage-1-card');
+                const s2Card = document.getElementById('stage-2-card');
+                const s3Card = document.getElementById('stage-3-card');
+                const s1Badge = document.getElementById('stage-1-badge');
+                const s2Badge = document.getElementById('stage-2-badge');
+                const s3Badge = document.getElementById('stage-3-badge');
+
+                if (s1Card && s2Card && s3Card) {{
+                    if (curMinutes >= 13 * 60 && curMinutes < 13 * 60 + 45) {{
+                        // Stage 1 ACTIVE
+                        s1Card.style.border = '1.5px solid rgba(56, 189, 248, 0.6)';
+                        s1Card.style.background = 'linear-gradient(135deg, rgba(14, 165, 233, 0.18), rgba(15, 23, 42, 0.9))';
+                        if (s1Badge) {{ s1Badge.style.background = 'rgba(56, 189, 248, 0.25)'; s1Badge.style.color = '#38bdf8'; s1Badge.innerHTML = '<span class="war-room-live-dot" style="background:#38bdf8;"></span> ĐANG DIỄN RA'; }}
+
+                        s2Card.style.border = '1px solid rgba(148, 163, 184, 0.2)';
+                        s2Card.style.background = 'rgba(30, 41, 59, 0.5)';
+                        if (s2Badge) {{ s2Badge.style.background = 'rgba(148, 163, 184, 0.15)'; s2Badge.style.color = '#94a3b8'; s2Badge.innerText = 'CHUẨN BỊ ĐẾN'; }}
+
+                        s3Card.style.border = '1.5px solid rgba(245, 158, 11, 0.4)';
+                        if (s3Badge) {{ s3Badge.style.background = 'rgba(245, 158, 11, 0.2)'; s3Badge.style.color = '#fbbf24'; s3Badge.innerText = '⭐ THỜI KHẮC QUYẾT ĐỊNH'; }}
+                    }} else if (curMinutes >= 13 * 60 + 45 && curMinutes < 14 * 60) {{
+                        // Stage 2 ACTIVE (13:45 - 13:55 No-Supply Check)
+                        s1Card.style.border = '1px solid rgba(16, 185, 129, 0.3)';
+                        s1Card.style.background = 'rgba(16, 185, 129, 0.05)';
+                        if (s1Badge) {{ s1Badge.style.background = 'rgba(16, 185, 129, 0.2)'; s1Badge.style.color = '#34d399'; s1Badge.innerText = '✓ ĐÃ HOÀN TẤT HẤP THỤ'; }}
+
+                        s2Card.style.border = '1.8px solid #38bdf8';
+                        s2Card.style.background = 'linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(15, 23, 42, 0.95))';
+                        if (s2Badge) {{ s2Badge.style.background = 'rgba(56, 189, 248, 0.3)'; s2Badge.style.color = '#38bdf8'; s2Badge.innerHTML = '<span class="war-room-live-dot" style="background:#38bdf8;"></span> ĐANG DIỄN RA (NO-SUPPLY CHECK)'; }}
+
+                        s3Card.style.border = '1.5px solid rgba(245, 158, 11, 0.5)';
+                        if (s3Badge) {{ s3Badge.style.background = 'rgba(245, 158, 11, 0.2)'; s3Badge.style.color = '#fbbf24'; s3Badge.innerText = '⭐ SẴN SÀNG BẤM CÒ (14h00)'; }}
+                    }} else if (curMinutes >= 14 * 60 && curMinutes <= 14 * 60 + 25) {{
+                        // Stage 3 ACTIVE (14:00 - 14:25 GOLDEN HOUR)
+                        s1Card.style.border = '1px solid rgba(148, 163, 184, 0.15)';
+                        s1Card.style.background = 'rgba(15, 23, 42, 0.5)';
+                        if (s1Badge) {{ s1Badge.style.background = 'rgba(148, 163, 184, 0.15)'; s1Badge.style.color = '#94a3b8'; s1Badge.innerText = '✓ ĐÃ QUA'; }}
+
+                        s2Card.style.border = '1px solid rgba(16, 185, 129, 0.3)';
+                        s2Card.style.background = 'rgba(16, 185, 129, 0.05)';
+                        if (s2Badge) {{ s2Badge.style.background = 'rgba(16, 185, 129, 0.2)'; s2Badge.style.color = '#34d399'; s2Badge.innerText = '✓ ĐẠT CHUẨN CẠN VOL'; }}
+
+                        s3Card.style.border = '2.5px solid #fbbf24';
+                        s3Card.style.background = 'linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(15, 23, 42, 0.98))';
+                        s3Card.style.boxShadow = '0 0 20px rgba(245, 158, 11, 0.35)';
+                        if (s3Badge) {{ s3Badge.style.background = '#fbbf24'; s3Badge.style.color = '#0f172a'; s3Badge.style.fontWeight = '900'; s3Badge.innerHTML = '⚡ ⭐ KHUNG GIỜ VÀNG — BẤM CÒ NGAY! ⭐ ⚡'; }}
+                    }}
+                }}
             }}
             tick();
             setInterval(tick, 1000);
