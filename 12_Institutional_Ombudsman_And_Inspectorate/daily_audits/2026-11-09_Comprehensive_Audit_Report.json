@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-11-09 10:07:17",
+  "officers": [
+    "Master CIO James (Ban 8)",
+    "Tổng Kiểm Sát Viên Trọng (Ban 12)"
+  ],
+  "account": "TCBS 105C307855 (Chủ tịch Trần Quốc Thiên Phước)",
+  "modules_tested": [
+    {
+      "module": "SSOT_Integrity",
+      "check": "Mã tài khoản TCBS chính chủ",
+      "status": "PASSED",
+      "details": "Account: 105C307855"
+    },
+    {
+      "module": "SSOT_Integrity",
+      "check": "Số dư tiền mặt chuẩn 20,167,119 ₫",
+      "status": "PASSED",
+      "details": "Cash: 20,167,119 ₫"
+    },
+    {
+      "module": "SSOT_Integrity",
+      "check": "Kho hàng 0 CP rủi ro (100% Cash)",
+      "status": "PASSED",
+      "details": "Holdings: 0 CP"
+    },
+    {
+      "module": "Cloud_Endpoint",
+      "check": "GET /api/health",
+      "status": "PASSED",
+      "details": "Response: ok, Cash: 20167119.0"
+    },
+    {
+      "module": "Cloud_Endpoint",
+      "check": "GET /api/reports",
+      "status": "PASSED",
+      "details": "Tổng số báo cáo: 100"
+    },
+    {
+      "module": "Cloud_Endpoint",
+      "check": "POST /api/command (/tcbs)",
+      "status": "PASSED",
+      "details": "Officer: Master CIO James (Ban 8), Ok: True"
+    },
+    {
+      "module": "Cloud_Endpoint",
+      "check": "POST /api/command (/solenh)",
+      "status": "PASSED",
+      "details": "Response length: 2315"
+    },
+    {
+      "module": "Cloud_Endpoint",
+      "check": "POST /api/command (/hop FPT)",
+      "status": "PASSED",
+      "details": "Debate length: 1522"
+    },
+    {
+      "module": "TimeGating_Embargo",
+      "check": "Cầu chì khóa thời gian thực (0 rò rỉ báo cáo tương lai)",
+      "status": "PASSED",
+      "details": "Báo cáo tương lai rò rỉ: 0"
+    },
+    {
+      "module": "Database_Sentinel",
+      "check": "Tệp quy chuẩn database_scaling_sentinel.json",
+      "status": "PASSED",
+      "details": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\config\\database_scaling_sentinel.json"
+    },
+    {
+      "module": "Database_Sentinel",
+      "check": "Ngưỡng giám sát 300 - 500",
+      "status": "PASSED",
+      "details": "Min: 300, Max: 500"
+    },
+    {
+      "module": "Database_Sentinel",
+      "check": "Check 6 trong Bộ Não Thanh Tra Của Trọng",
+      "status": "PASSED",
+      "details": "Checks performed: 6"
+    },
+    {
+      "module": "Python_Code_Integrity",
+      "check": "Biên dịch sạch 122 scripts trong scripts/",
+      "status": "PASSED",
+      "details": "Lỗi: 0"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "Giao diện V4.0 Bloomberg-Grade đã kích hoạt",
+      "status": "PASSED",
+      "details": "V4.0 badge on live HTML"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "TradingView HOSE Live Widget tích hợp",
+      "status": "PASSED",
+      "details": "Found tv_chart_container"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "Bàn Chỉ Huy James 2 Cột (Split-View)",
+      "status": "PASSED",
+      "details": "Found split layout classes"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "5 Khối phân loại báo cáo có badge đếm",
+      "status": "PASSED",
+      "details": "Found category count elements"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "Công tắc chuyển đổi Chế độ xem (Grid vs Table)",
+      "status": "PASSED",
+      "details": "Found view mode buttons"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "Smart Formatter bóc tách KPI & Stock Cards cho James",
+      "status": "PASSED",
+      "details": "Found formatJamesResponseHtml"
+    }
+  ],
+  "total_checks": 19,
+  "passed_checks": 19,
+  "warnings": [],
+  "errors": []
+}

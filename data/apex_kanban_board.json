@@ -1,6 +1,6 @@
 {
   "date": "2026-11-08",
-  "last_updated": "2026-11-08 22:00:53",
+  "last_updated": "2026-11-08 23:00:48",
   "total_tasks": 17,
   "columns": {
     "BACKLOG": [
@@ -8,8 +8,7 @@
       "TASK-0900-STREAMING",
       "TASK-1800-BCTCLIBRARY",
       "TASK-2100-HIENBCTC",
-      "TASK-2115-KHANHVIDEO",
-      "TASK-2300-COUNCIL"
+      "TASK-2115-KHANHVIDEO"
     ],
     "IN_PROGRESS": [
       "TASK-1515-WALKFORWARD"
@@ -25,7 +24,8 @@
       "TASK-1300-T2RADAR",
       "TASK-1400-GOLDENHOUR",
       "TASK-1425-GUARD03",
-      "TASK-2200-EVOLUTION"
+      "TASK-2200-EVOLUTION",
+      "TASK-2300-COUNCIL"
     ]
   },
   "tasks": {
@@ -226,10 +226,13 @@
       "dept": "Ban 8",
       "assignee": "Master CIO James",
       "scheduled_time": "23:00",
-      "status": "BACKLOG",
+      "status": "DONE",
       "priority": "SUPREME",
       "output": "08_Master_Investment_CIO/2026-11-08_23h00_EOD_Executive_Council_Meeting.md",
-      "created_at": "2026-11-08 23:00"
+      "created_at": "2026-11-08 23:00",
+      "updated_at": "2026-11-08 23:00:48",
+      "note": "Hoàn tất lúc 23:00:48",
+      "completed_at": "2026-11-08 23:00:48"
     }
   }
 }

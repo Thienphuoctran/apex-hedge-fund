@@ -1,27 +1,17 @@
 {
-  "d1f770956601df483d138316151c000f": {
-    "ts": 1794148528.389005,
-    "thread_id": 6,
-    "preview": "*\ud83c\udfdb\ufe0f [NGH\u1eca QUY\u1ebeT B\u1ebe M\u1ea0C] \u0110\u1ea0I H\u1ed8I NGH\u1eca TH\u01af\u1ee2NG \u0110\u1ec8NH APEX 21H00 "
-  },
-  "9c2b4745bc27fec498e931e4d0b4fc13": {
-    "ts": 1794151021.8192956,
-    "thread_id": 6,
-    "preview": "\ud83d\ude80 *[APEX CLOUD SUPERVISOR 24/7 \u0110\u00c3 CH\u00cdNH TH\u1ee8C K\u00cdCH HO\u1ea0T]*\nK\u00edn"
-  },
   "cde44e406bf01aaf15f8dcb7a4d21f7b": {
-    "ts": 1794151022.7123477,
+    "ts": 1794193562.4897995,
     "thread_id": 6,
     "preview": "\ud83d\ude80 *[H\u1ec6 TH\u1ed0NG APEX CRON DAEMON V3.0 \u0110\u00c3 CH\u00cdNH TH\u1ee8C K\u00cdCH HO\u1ea0T 2"
   },
-  "941e39bc5c2407264fc85b32ee0af164": {
-    "ts": 1794150005.5347166,
-    "thread_id": 112,
-    "preview": "\ud83d\udcda *[H\u1ed8I \u0110\u1ed2NG VI\u1ec6N S\u0128 APEX \u2014 GI\u1edc T\u1ef0 H\u1eccC & N\u1ea0P TRI TH\u1ee8C TH\u1ef0C C"
+  "24b2c6b25e104f02bc87693185a354f1": {
+    "ts": 1794191770.1794858,
+    "thread_id": 4,
+    "preview": "\ud83d\udccb *[MASTER BLOTTER NG\u00c0Y 09/11/2026] S\u1ed4 L\u1ec6NH T\u00c1C CHI\u1ebeN \u0110\u1ea6U TU"
   },
-  "5027a4eda8a7b0b8b0fdf24355e498d3": {
-    "ts": 1794150006.901967,
+  "9c2b4745bc27fec498e931e4d0b4fc13": {
+    "ts": 1794193561.6712847,
     "thread_id": 6,
-    "preview": "\ud83d\udcda *[H\u1ed8I \u0110\u1ed2NG VI\u1ec6N S\u0128 APEX \u2014 GI\u1edc T\u1ef0 H\u1eccC & N\u1ea0P TRI TH\u1ee8C TH\u1ef0C C"
+    "preview": "\ud83d\ude80 *[APEX CLOUD SUPERVISOR 24/7 \u0110\u00c3 CH\u00cdNH TH\u1ee8C K\u00cdCH HO\u1ea0T]*\nK\u00edn"
   }
 }

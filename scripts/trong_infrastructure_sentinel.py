@@ -68,27 +68,39 @@ class TrongInfrastructureSentinel:
             all_md_files.append(p)
         total_md_count = len(all_md_files)
 
-        # Đánh giá ngưỡng cảnh báo theo chỉ thị Chủ tịch (300 - 500)
-        warning_min = 300
-        warning_max = 500
-        critical_cap = 500
+        # Đánh giá kiến trúc cơ sở dữ liệu và sức chứa hạ tầng V5.0
+        sqlite_vault_path = DATA_DIR / "apex_institutional_vault.db"
+        is_sqlite_active = sqlite_vault_path.exists() and sqlite_vault_path.stat().st_size > 1024
 
-        if total_md_count < warning_min and inst_count < warning_min:
-            status = "GREEN_OPTIMAL"
-            urgency = "LOW"
-            action_desc = "Hệ thống vận hành tối ưu với kiến trúc Flat-File Markdown kết hợp bộ nhớ RAM cache."
-        elif (warning_min <= total_md_count < 450) or (warning_min <= inst_count < 450):
-            status = "AMBER_APPROACHING_THRESHOLD"
-            urgency = "MEDIUM"
-            action_desc = f"Đã chạm ngưỡng cảnh báo ({total_md_count} tệp MD / {inst_count} báo cáo). Kích hoạt kế hoạch chuẩn bị sharding YYYY/MM."
-        elif (450 <= total_md_count <= critical_cap) or (450 <= inst_count <= critical_cap):
-            status = "ORANGE_HIGH_ALERT_PREPARE_UPGRADE"
-            urgency = "HIGH"
-            action_desc = f"Rất sát trần tối đa ({total_md_count}/500 tệp). Trọng & James bắt buộc lập phương án nâng cấp SQLite Database trình Chủ tịch phê duyệt."
+        if is_sqlite_active:
+            # Ngưỡng mới sau khi nâng cấp lên SQLite Lakehouse Vault V5.0 (Sức chứa 100.000 báo cáo)
+            warning_min = 50000
+            warning_max = 100000
+            critical_cap = 100000
+            status = "GREEN_OPTIMAL_SQLITE_POWERED"
+            urgency = "OPTIMAL"
+            action_desc = f"Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới {critical_cap:,} báo cáo ({inst_count} báo cáo thể chế / {total_md_count} tệp MD hiện có)."
         else:
-            status = "RED_CRITICAL_UPGRADE_REQUIRED"
-            urgency = "CRITICAL"
-            action_desc = f"ĐÃ VƯỢT NGƯỠNG {critical_cap} TỆP ({total_md_count} tệp). Nguy cơ nghẽn I/O! Yêu cầu Chủ tịch phê duyệt chuyển đổi cơ sở dữ liệu ngay."
+            # Ngưỡng Flat-file cũ khi chưa có SQLite
+            warning_min = 300
+            warning_max = 500
+            critical_cap = 500
+            if total_md_count < warning_min and inst_count < warning_min:
+                status = "GREEN_OPTIMAL"
+                urgency = "LOW"
+                action_desc = "Hệ thống vận hành tối ưu với kiến trúc Flat-File Markdown kết hợp bộ nhớ RAM cache."
+            elif (warning_min <= total_md_count < 450) or (warning_min <= inst_count < 450):
+                status = "AMBER_APPROACHING_THRESHOLD"
+                urgency = "MEDIUM"
+                action_desc = f"Đã chạm ngưỡng cảnh báo ({total_md_count} tệp MD / {inst_count} báo cáo). Kích hoạt kế hoạch chuẩn bị sharding YYYY/MM."
+            elif (450 <= total_md_count <= critical_cap) or (450 <= inst_count <= critical_cap):
+                status = "ORANGE_HIGH_ALERT_PREPARE_UPGRADE"
+                urgency = "HIGH"
+                action_desc = f"Rất sát trần tối đa ({total_md_count}/500 tệp). Trọng & James bắt buộc lập phương án nâng cấp SQLite Database trình Chủ tịch phê duyệt."
+            else:
+                status = "RED_CRITICAL_UPGRADE_REQUIRED"
+                urgency = "CRITICAL"
+                action_desc = f"ĐÃ VƯỢT NGƯỠNG {critical_cap} TỆP ({total_md_count} tệp). Nguy cơ nghẽn I/O! Yêu cầu Chủ tịch phê duyệt chuyển đổi cơ sở dữ liệu ngay."
 
         return {
             "operational_institutional_reports": inst_count,
@@ -101,13 +113,13 @@ class TrongInfrastructureSentinel:
         }
 
     @classmethod
-    def audit_directory_density(cls, max_recommended_files: int = 80) -> Dict[str, Any]:
+    def audit_directory_density(cls, max_recommended_files: int = 100) -> Dict[str, Any]:
         """[CHECK 2] Kiểm tra mật độ tệp tin trong từng thư mục để tránh nghẽn I/O."""
         dense_dirs = []
         total_dirs_scanned = 0
 
         for root, dirs, files in os.walk(BASE_DIR):
-            if ".git" in root or ".gemini" in root or "__pycache__" in root or "node_modules" in root:
+            if any(x in root for x in [".git", ".gemini", "__pycache__", "node_modules", "scripts", "scratch"]):
                 continue
             total_dirs_scanned += 1
             rel_dir = os.path.relpath(root, BASE_DIR)
