@@ -1,7 +1,7 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-08T13:40:22.609005+00:00",
-  "trading_date": "2026-11-08",
+  "generated_at_utc": "2026-11-09T01:45:00.602767+00:00",
+  "trading_date": "2026-11-09",
   "cio_desk_verdict": "100% TIỀN MẶT (20,000,000 ₫) — ĐÃ TẤT TOÁN VÒNG 1 (LÃI RÒNG +167,119 ₫) & ĐỢI TẦM NGẮM VÒNG 2",
   "capital_summary": {
     "total_nav_usd": 787.4,
@@ -136,89 +136,7 @@
       "execution_instruction": "Giữ 70% vị thế đang có lãi; đặt Limit 30% tại $63.47. Chốt lời TP1 tại $70.08 (+9.5%) và TP2 tại $70.74. Cắt lỗ Stop 2xATR tại $60.96 (-4.75%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
     }
   ],
-  "orders_vietnam": [
-    {
-      "symbol": "HDB",
-      "name": "HDBank",
-      "exchange": "HOSE",
-      "action": "BUY_PROBE_LIMIT_LO",
-      "shares": 100,
-      "probe_price_vnd": 22400.0,
-      "buy_zone": "22,200 – 22,400 ₫",
-      "lot_cost_vnd": 2240000.0,
-      "nav_pct": 11.1,
-      "stop_loss_2atr": 21220.0,
-      "stop_pct": -5.26,
-      "tp1": 24290.0,
-      "tp2": 26500.0,
-      "rr_ratio": "1:2.3",
-      "time_window": "14:00 - 14:25 (Khung Giờ Vàng)",
-      "status": "APPROVED_READY_FOR_EXECUTION",
-      "approved_by": "Chủ tịch Trần Quốc Thiên Phước",
-      "approved_at": "2026-11-08 23:08:16"
-    },
-    {
-      "symbol": "MSH",
-      "name": "May Sông Hồng",
-      "exchange": "HOSE",
-      "action": "BUY_PROBE_LIMIT_LO",
-      "shares": 100,
-      "probe_price_vnd": 35300.0,
-      "buy_zone": "35,000 – 35,300 ₫",
-      "lot_cost_vnd": 3530000.0,
-      "nav_pct": 17.5,
-      "stop_loss_2atr": 33090.0,
-      "stop_pct": -6.26,
-      "tp1": 39560.0,
-      "tp2": 42000.0,
-      "rr_ratio": "1:2.4",
-      "time_window": "14:00 - 14:25 (Khung Giờ Vàng)",
-      "status": "APPROVED_READY_FOR_EXECUTION",
-      "approved_by": "Chủ tịch Trần Quốc Thiên Phước",
-      "approved_at": "2026-11-08 23:08:16"
-    },
-    {
-      "symbol": "BAF",
-      "name": "Nông nghiệp BAF Việt Nam",
-      "exchange": "HOSE",
-      "action": "BUY_PROBE_LIMIT_LO",
-      "shares": 100,
-      "probe_price_vnd": 30800.0,
-      "buy_zone": "30,500 – 30,800 ₫",
-      "lot_cost_vnd": 3080000.0,
-      "nav_pct": 15.2,
-      "stop_loss_2atr": 29650.0,
-      "stop_pct": -3.73,
-      "tp1": 32650.0,
-      "tp2": 35500.0,
-      "rr_ratio": "1:2.1",
-      "covenant": "BAN_3_COVENANT_STRICT_STOP_60S",
-      "time_window": "14:00 - 14:25 (Khung Giờ Vàng)",
-      "status": "APPROVED_READY_FOR_EXECUTION",
-      "approved_by": "Chủ tịch Trần Quốc Thiên Phước",
-      "approved_at": "2026-11-08 23:08:16"
-    },
-    {
-      "symbol": "IDC",
-      "name": "Tổng Công ty IDICO",
-      "exchange": "HNX",
-      "action": "BUY_PROBE_LIMIT_LO",
-      "shares": 100,
-      "probe_price_vnd": 34600.0,
-      "buy_zone": "34,200 – 34,600 ₫",
-      "lot_cost_vnd": 3460000.0,
-      "nav_pct": 17.1,
-      "stop_loss_2atr": 32530.0,
-      "stop_pct": -5.98,
-      "tp1": 38660.0,
-      "tp2": 42000.0,
-      "rr_ratio": "1:2.2",
-      "time_window": "14:00 - 14:25 (Khung Giờ Vàng)",
-      "status": "APPROVED_READY_FOR_EXECUTION",
-      "approved_by": "Chủ tịch Trần Quốc Thiên Phước",
-      "approved_at": "2026-11-08 23:08:16"
-    }
-  ],
+  "orders_vietnam": [],
   "pending_round2_sniper_orders": [
     {
       "market": "VIETNAM",
@@ -630,28 +548,21 @@
     "sandbox_math_verified": true,
     "portfolio_allocation_verified": "100% TIỀN MẶT (20,000,000 ₫) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +167,119 VNĐ",
     "max_risk_locked_pct": 0.0,
-    "timestamp": "2026-11-08 13:40:22 UTC"
+    "timestamp": "2026-11-09 01:45:00 UTC"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-08T13:40:22.607826",
-    "date_str": "2026-11-08",
-    "date_vn": "08/11/2026",
-    "time_vn": "13:40:22",
-    "weekday_index": 6,
-    "weekday_vn": "Chủ Nhật",
-    "full_time_label_vn": "13:40:22 Chủ Nhật, ngày 08/11/2026",
-    "market_phase": "WEEKEND_CLOSED",
-    "market_phase_vn": "Nghỉ cuối tuần (Chủ Nhật) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
+    "timestamp_iso": "2026-11-09T01:45:00.601369",
+    "date_str": "2026-11-09",
+    "date_vn": "09/11/2026",
+    "time_vn": "01:45:00",
+    "weekday_index": 0,
+    "weekday_vn": "Thứ Hai",
+    "full_time_label_vn": "01:45:00 Thứ Hai, ngày 09/11/2026",
+    "market_phase": "PRE_MARKET_PREPARATION",
+    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Hai) — Chuẩn bị kế hoạch tác chiến",
     "is_trading_hours": false,
-    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
+    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
   },
   "completed_orders_history": [],
-  "next_round_watchlist": [],
-  "council_resolution_approval": {
-    "status": "OFFICIALLY_SIGNED",
-    "approved_by": "Chủ tịch Trần Quốc Thiên Phước",
-    "approval_time": "2026-11-08 23:08:16",
-    "seal": "BAN_12_TRONG_NOTARIZED",
-    "active_orders_count": 4
-  }
+  "next_round_watchlist": []
 }

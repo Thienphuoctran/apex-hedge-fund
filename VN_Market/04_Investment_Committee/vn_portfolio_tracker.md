@@ -1,4 +1,4 @@
-# SỔ THEO DÕI DANH MỤC ĐẦU TƯ CHUẨN ĐỊNH LƯỢNG TTCK VIỆT NAM (Cập nhật: 2026-11-08)
+# SỔ THEO DÕI DANH MỤC ĐẦU TƯ CHUẨN ĐỊNH LƯỢNG TTCK VIỆT NAM (Cập nhật: 2026-11-09)
 
 | Mã CK | Sàn | Giá Vốn Tham Chiếu | Điểm IC | Điểm 10 Danh Thủ | Tỷ Trọng | Khối Lượng (Lô 100) | Cắt Lỗ 2xATR | Mục Tiêu TP1 | Mục Tiêu TP2 | Trạng Thái |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |

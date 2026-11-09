@@ -176,3 +176,9 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 - **Ứng dụng danh mục Vòng 2**: Khóa cứng kỷ luật OCF/LNST >= 1.0 cho HDB, MSH, BAF, IDC với vốn 100% Tiền Mặt (20,167,119 ₫).
 - **Tệp báo cáo đầy đủ**: `05_Learning_And_Evolution/2026-11-08_Autonomous_Learning_Report.md`
 ---
+## [Phiên Giao Dịch: 2026-11-09] — Tiến Hóa Mô Hình v5.0 & Kiểm Toán Walk-Forward
+- **Chế độ Vĩ mô**: VIX = 25.64 | Dầu WTI = $90.29 | US10Y = 4.86%.
+- **Trọng số Chấm điểm Thích nghi (Tổng 100%)**: Vĩ mô `25%` | BCTC/FCF `35%` | Định giá `20%` | Kỹ thuật `20%`.
+- **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `BRK-B (0d), OXY (0d)` (chuyển sang `Locked Earnings Watchlist`).
+- **Realized Alpha vs S&P 500**: 1D `-0.12%` | 5D `+2.19%` | 20D `+7.40%`.
+- **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **66.7%**
