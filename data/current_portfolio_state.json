@@ -1,14 +1,49 @@
 {
   "account_id": "105C307855",
   "chairman": "Trần Quốc Thiên Phước",
-  "status": "ALL_CASH_STANDDOWN",
-  "cash_balance_vnd": 20167119.0,
-  "total_nav_vnd": 20167119.0,
-  "total_market_val_vnd": 0.0,
-  "total_cost_vnd": 0.0,
+  "status": "ACTIVE_HOLDING",
+  "cash_balance_vnd": 14510422.0,
+  "total_nav_vnd": 20160422.0,
+  "total_market_val_vnd": 5650000.0,
+  "total_cost_vnd": 5656700.0,
   "realized_pnl_vnd": 167119.0,
-  "unrealized_pnl_vnd": 0.0,
-  "active_positions": {},
+  "unrealized_pnl_vnd": -6700.0,
+  "active_positions": {
+    "HDB": {
+      "symbol": "HDB",
+      "name": "HDBank (HOSE)",
+      "shares": 100,
+      "entry_price": 22050.0,
+      "current_price": 22000.0,
+      "cost_basis_vnd": 2205000.0,
+      "market_val_vnd": 2200000.0,
+      "unrealized_pnl_vnd": -5000.0,
+      "unrealized_pnl_pct": -0.23,
+      "stop_loss": 21220.0,
+      "take_profit_tp1": 24290.0,
+      "take_profit_tp2": 25820.0,
+      "tier": "Core Compounder (Tiêu điểm 1)",
+      "bought_at": "2026-11-09 14:01:25",
+      "status": "HOLDING_PROBE_N1"
+    },
+    "MSH": {
+      "symbol": "MSH",
+      "name": "May Sông Hồng (HOSE)",
+      "shares": 100,
+      "entry_price": 34517.0,
+      "current_price": 34500.0,
+      "cost_basis_vnd": 3451700.0,
+      "market_val_vnd": 3450000.0,
+      "unrealized_pnl_vnd": -1700.0,
+      "unrealized_pnl_pct": -0.05,
+      "stop_loss": 33090.0,
+      "take_profit_tp1": 39560.0,
+      "take_profit_tp2": 43040.0,
+      "tier": "Tactical Alpha (Tiêu điểm 2)",
+      "bought_at": "2026-11-09 14:02:10",
+      "status": "HOLDING_PROBE_N1"
+    }
+  },
   "trade_history": [
     {
       "trade_id": "TRD-20261106-001",
@@ -49,12 +84,34 @@
       "pnl_vnd": 0.0,
       "cash_after_trade": 20167119.0,
       "reason": "Chủ tịch ra lệnh trực tiếp trên Telegram: 'James oi da ban het roi nhe'"
+    },
+    {
+      "trade_id": "TRD-20261109140907-HDB",
+      "timestamp": "2026-11-09 14:09:07",
+      "action": "BUY",
+      "symbol": "HDB",
+      "shares": 100,
+      "buy_price": 22050.0,
+      "total_cost_vnd": 2205000.0,
+      "cash_after_trade": 17962119.0,
+      "reason": "Chủ tịch thực thi thành công Lệnh 1 Limit LO Nhịp 1 Khung Giờ Vàng 14h00"
+    },
+    {
+      "trade_id": "TRD-20261109140907-MSH",
+      "timestamp": "2026-11-09 14:09:07",
+      "action": "BUY",
+      "symbol": "MSH",
+      "shares": 100,
+      "buy_price": 34517.0,
+      "total_cost_vnd": 3451700.0,
+      "cash_after_trade": 14510422.0,
+      "reason": "Chủ tịch thực thi thành công Lệnh 2 Limit LO Nhịp 1 Khung Giờ Vàng 14h00"
     }
   ],
-  "tactical_regime": "PATIENT_PREDATOR_100_CASH_STANDDOWN",
-  "last_updated": "2026-11-07 21:40:06",
+  "tactical_regime": "HOLDING_WITH_RISK_PARITY_STOP",
+  "last_updated": "2026-11-09 14:09:07",
   "tcbs_mcp_url": "https://mcp.tcbs.com.vn/mcp/tcinvest/",
-  "current_campaign_phase": "ROUND_1_COMPLETED_100_CASH_WAITING_ROUND_2",
+  "current_campaign_phase": "ACTIVE_CAMPAIGN_HOLDING",
   "initial_capital_vnd": 20000000.0,
   "pending_active_orders": [],
   "next_round_watchlist": [
@@ -200,16 +257,17 @@
     }
   ],
   "temporal_context": {
-    "timestamp_iso": "2026-11-07T21:40:06.507274",
-    "date_str": "2026-11-07",
-    "date_vn": "07/11/2026",
-    "time_vn": "21:40:06",
-    "weekday_index": 5,
-    "weekday_vn": "Thứ Bảy",
-    "full_time_label_vn": "21:40:06 Thứ Bảy, ngày 07/11/2026",
-    "market_phase": "WEEKEND_CLOSED",
-    "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
-    "is_trading_hours": false,
-    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
-  }
+    "timestamp_iso": "2026-11-09T14:09:07.733966",
+    "date_str": "2026-11-09",
+    "date_vn": "09/11/2026",
+    "time_vn": "14:09:07",
+    "weekday_index": 0,
+    "weekday_vn": "Thứ Hai",
+    "full_time_label_vn": "14:09:07 Thứ Hai, ngày 09/11/2026",
+    "market_phase": "GOLDEN_HOUR_14H00_14H25",
+    "market_phase_vn": "🔥 KHUNG GIỜ VÀNG TÁC CHIẾN (14h00-14h25 Thứ Hai) — Thời điểm quyết định giải ngân/cơ cấu",
+    "is_trading_hours": true,
+    "next_session_note": "Sau 14h30 bước vào phiên ATC."
+  },
+  "debt_vnd": 36.0
 }

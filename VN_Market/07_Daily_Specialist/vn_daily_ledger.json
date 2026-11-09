@@ -382,5 +382,37 @@
       "status": "RADAR_TUAN",
       "reason": "Radar vĩ mô cả tuần, chờ tin chuyển sàn HOSE"
     }
+  ],
+  "cash_reserve_vnd": 14512119.0,
+  "invested_value_vnd": 5655000.0,
+  "holdings_count": 2,
+  "execution_status": "TRANCHE_1_FILLED",
+  "active_positions": [
+    {
+      "symbol": "HDB",
+      "shares": 100,
+      "buy_price": 22050.0,
+      "buy_date": "2026-11-09",
+      "settlement_date": "2026-11-11",
+      "cost_basis_vnd": 2205000.0,
+      "stop_loss": 21220.0,
+      "tp1": 24290.0,
+      "tp2": 25820.0,
+      "tranche": "TRANCHE_1_PROBE",
+      "status": "HOLDING_T0"
+    },
+    {
+      "symbol": "MSH",
+      "shares": 100,
+      "buy_price": 34500.0,
+      "buy_date": "2026-11-09",
+      "settlement_date": "2026-11-11",
+      "cost_basis_vnd": 3450000.0,
+      "stop_loss": 33090.0,
+      "tp1": 39560.0,
+      "tp2": 43040.0,
+      "tranche": "TRANCHE_1_PROBE",
+      "status": "HOLDING_T0"
+    }
   ]
 }

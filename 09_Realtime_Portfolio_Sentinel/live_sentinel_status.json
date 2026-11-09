@@ -1,10 +1,35 @@
 {
-  "last_scan_utc": "2026-11-07T14:40:06.530502+00:00",
-  "total_positions_monitored": 0,
+  "last_scan_utc": "2026-11-09T07:09:07.739460+00:00",
+  "total_positions_monitored": 2,
   "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
-  "status": "ALL_CASH_STANDDOWN_0_SHARES",
-  "positions": [],
+  "status": "ACTIVE_MONITORING",
+  "positions": [
+    {
+      "symbol": "HDB",
+      "market": "VIETNAM",
+      "shares": 100,
+      "entry_price": 22050.0,
+      "current_price": 22000.0,
+      "stop_loss_2atr": 21220.0,
+      "tp1": 24290.0,
+      "distance_to_stop_pct": 3.55,
+      "distance_to_tp1_pct": 10.41,
+      "severity": "NORMAL"
+    },
+    {
+      "symbol": "MSH",
+      "market": "VIETNAM",
+      "shares": 100,
+      "entry_price": 34517.0,
+      "current_price": 34500.0,
+      "stop_loss_2atr": 33090.0,
+      "tp1": 39560.0,
+      "distance_to_stop_pct": 4.09,
+      "distance_to_tp1_pct": 14.67,
+      "severity": "NORMAL"
+    }
+  ],
   "wave_hunter_summary": {
     "vn_waves_count": 8,
     "us_waves_count": 6,
@@ -23,21 +48,46 @@
     ]
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-07T21:40:06.507274",
-    "date_str": "2026-11-07",
-    "date_vn": "07/11/2026",
-    "time_vn": "21:40:06",
-    "weekday_index": 5,
-    "weekday_vn": "Thứ Bảy",
-    "full_time_label_vn": "21:40:06 Thứ Bảy, ngày 07/11/2026",
-    "market_phase": "WEEKEND_CLOSED",
-    "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
-    "is_trading_hours": false,
-    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
+    "timestamp_iso": "2026-11-09T14:09:07.733966",
+    "date_str": "2026-11-09",
+    "date_vn": "09/11/2026",
+    "time_vn": "14:09:07",
+    "weekday_index": 0,
+    "weekday_vn": "Thứ Hai",
+    "full_time_label_vn": "14:09:07 Thứ Hai, ngày 09/11/2026",
+    "market_phase": "GOLDEN_HOUR_14H00_14H25",
+    "market_phase_vn": "🔥 KHUNG GIỜ VÀNG TÁC CHIẾN (14h00-14h25 Thứ Hai) — Thời điểm quyết định giải ngân/cơ cấu",
+    "is_trading_hours": true,
+    "next_session_note": "Sau 14h30 bước vào phiên ATC."
   },
-  "cash_balance_vnd": 20167119.0,
+  "cash_balance_vnd": 14510422.0,
   "realized_pnl_vnd": 167119.0,
-  "positions_tracked": [],
+  "positions_tracked": [
+    {
+      "symbol": "HDB",
+      "market": "VIETNAM",
+      "shares": 100,
+      "entry_price": 22050.0,
+      "current_price": 22000.0,
+      "stop_loss_2atr": 21220.0,
+      "tp1": 24290.0,
+      "distance_to_stop_pct": 3.55,
+      "distance_to_tp1_pct": 10.41,
+      "severity": "NORMAL"
+    },
+    {
+      "symbol": "MSH",
+      "market": "VIETNAM",
+      "shares": 100,
+      "entry_price": 34517.0,
+      "current_price": 34500.0,
+      "stop_loss_2atr": 33090.0,
+      "tp1": 39560.0,
+      "distance_to_stop_pct": 4.09,
+      "distance_to_tp1_pct": 14.67,
+      "severity": "NORMAL"
+    }
+  ],
   "primed_radar_symbols": [
     "HDB",
     "MSH",
