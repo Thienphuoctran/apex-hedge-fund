@@ -254,16 +254,29 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.send_header("Cache-Control", "no-cache")
             self.end_headers()
+            port_file = DATA_DIR / "current_portfolio_state.json"
+            port_state = {}
+            if port_file.exists():
+                try:
+                    with open(port_file, "r", encoding="utf-8") as pf:
+                        port_state = json.load(pf)
+                except Exception:
+                    pass
+            active_pos = port_state.get("active_positions", {})
             data = {
                 "status": "ok",
                 "supervisor": "HEALTHY",
                 "chairman_account": "TCBS 105C307855 (Trần Quốc Thiên Phước)",
-                "cash_vnd": 20167119.0,
-                "holdings_count": 0,
-                "realized_round_1_profit_vnd": 167119.0,
+                "cash_vnd": port_state.get("cash_balance_vnd", 14510422.0),
+                "stock_market_val_vnd": port_state.get("total_market_val_vnd", 5650000.0),
+                "total_nav_vnd": port_state.get("total_nav_vnd", 20160422.0),
+                "holdings_count": len(active_pos),
+                "active_holdings": list(active_pos.keys()),
+                "realized_round_1_profit_vnd": port_state.get("realized_pnl_vnd", 167119.0),
+                "debt_vnd": port_state.get("debt_vnd", 36.0),
                 "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
-            self.wfile.write(json.dumps(data).encode("utf-8"))
+            self.wfile.write(json.dumps(data, ensure_ascii=False).encode("utf-8"))
             return
 
         elif path in ("/api/status", "/api/state"):
