@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-09T06:47:14.400582+00:00",
+  "timestamp_utc": "2026-11-09T08:15:27.173198+00:00",
   "scan_date": "2026-11-09",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 45,
+  "total_vn_announcements_count": 48,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -332,6 +332,14 @@
       "source_url": "https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn",
       "total_announcements": 1
     },
+    "FPT": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "FPT Telecom sắp phát hành hơn 110 triệu cổ phiếu thưởng cho cổ đông",
+      "severity": "WARNING",
+      "published_at": "Mon, 09 Nov 26 15:10:00 +0700",
+      "source_url": "https://cafef.vn/fpt-telecom-sap-phat-hanh-hon-110-trieu-co-phieu-thuong-cho-co-dong-188261109144524706.chn",
+      "total_announcements": 5
+    },
     "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền”",
@@ -362,14 +370,6 @@
       "severity": "INFO",
       "published_at": "Sun, 08 Nov 26 11:16:00 +0700",
       "source_url": "https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn",
-      "total_announcements": 2
-    },
-    "FPT": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "\"Cá mập\" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
-      "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
       "total_announcements": 2
     },
     "STB": {
@@ -4943,6 +4943,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "FPT"
+      ],
+      "title": "FPT Telecom sắp phát hành hơn 110 triệu cổ phiếu thưởng cho cổ đông",
+      "summary": "FPT Telecom dự kiến phát hành hơn 110,8 triệu cổ phiếu thưởng cho cổ đông nhằm tăng vốn điều lệ lên mức gần 8.496 tỷ đồng. Ngày đăng ký cuối cùng để phân bổ quyền là 10/12/2026....",
+      "event_type": "CO_TUC",
+      "severity": "WARNING",
+      "published_at": "Mon, 09 Nov 26 15:10:00 +0700",
+      "source_url": "https://cafef.vn/fpt-telecom-sap-phat-hanh-hon-110-trieu-co-phieu-thuong-cho-co-dong-188261109144524706.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Thống đốc tỉnh của Nhật Bản cảm ơn FPT vì một quyết định ý nghĩa",
+      "summary": "Thống đốc tỉnh Gunma (Nhật Bản) bày tỏ sự cảm kích khi FPT lựa chọn địa phương này để đặt trung tâm đổi mới sáng tạo, mở ra thêm cơ hội hợp tác công nghệ và đầu tư giữa doanh nghiệp hai nước....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 14:50:00 +0700",
+      "source_url": "https://cafef.vn/thong-doc-tinh-cua-nhat-ban-cam-on-fpt-vi-mot-quyet-dinh-y-nghia-188261109145035775.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
       "title": "Phát hiện 14 người nước ngoài nghi lừa đảo qua sàn chứng khoán ảo ở TP.HCM",
@@ -5023,6 +5047,18 @@
       "severity": "INFO",
       "published_at": "Sat, 07 Nov 26 10:31:00 +0700",
       "source_url": "https://cafef.vn/hon-1000-nhan-vien-roi-di-pnj-nhan-them-don-xin-nghi-cua-giam-doc-cap-cao-tai-chinh-188261107103127179.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "MB Capital, FPT Capital, Chứng khoán KIS, nhà đầu tư Hàn Quốc cùng dự kiến mua một cổ phiếu ngân hàng với giá 13.200 đồng/cp",
+      "summary": "Ngân hàng vừa công bố danh sách 7 nhà đầu tư chứng khoán chuyên nghiệp dự kiến mua 100 triệu cổ phiếu riêng lẻ với giá 13.200 đồng/cổ phiếu. Riêng một quỹ ngoại dự kiến nhận gần 45% đợt chào bán....",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Mon, 09 Nov 26 14:26:00 +0700",
+      "source_url": "https://cafef.vn/mb-capital-fpt-capital-chung-khoan-kis-nha-dau-tu-han-quoc-cung-du-kien-mua-mot-co-phieu-ngan-hang-voi-gia-13200-dong-cp-188261109142631982.chn"
     },
     {
       "market": "VIETNAM",

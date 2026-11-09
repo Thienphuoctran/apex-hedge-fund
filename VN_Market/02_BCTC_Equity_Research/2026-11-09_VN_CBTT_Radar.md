@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-09 06:47:14  
-> **Số sự kiện ghi nhận:** 45 thông báo  
+> **Thời gian quét:** 2026-11-09 08:15:27  
+> **Số sự kiện ghi nhận:** 48 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -11,6 +11,8 @@
 | **HCM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Người đàn ông chưa học hết phổ thông, từng bán vé số ở Tp.HCM vừa kiếm 4.700 tỷ đồng khi bán công ty cho tập đoàn Nhật Bản | [Xem Link](https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Tỷ phú Phạm Nhật Vượng xuất hiện tại siêu cảng dự kiến lắp 165 cần cẩu khổng lồ, hình thành 3 siêu dự án hơn 500.000 tỷ đồng quanh vịnh Gành Rái | [Xem Link](https://cafef.vn/ty-phu-pham-nhat-vuong-xuat-hien-tai-sieu-cang-du-kien-lap-165-can-cau-khong-lo-hinh-thanh-3-sieu-du-an-hon-500000-ty-dong-quanh-vinh-ganh-rai-188261107221648411.chn) |
 | **REE** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Bà Nguyễn Thị Mai Thanh: Công ty của REE muốn  sáp nhập thêm nhiều công ty con bởi việc đang nhiều kinh khủng | [Xem Link](https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn) |
+| **FPT** | `CO_TUC` | ⚠️ CHÚ Ý | FPT Telecom sắp phát hành hơn 110 triệu cổ phiếu thưởng cho cổ đông | [Xem Link](https://cafef.vn/fpt-telecom-sap-phat-hanh-hon-110-trieu-co-phieu-thuong-cho-co-dong-188261109144524706.chn) |
+| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thống đốc tỉnh của Nhật Bản cảm ơn FPT vì một quyết định ý nghĩa | [Xem Link](https://cafef.vn/thong-doc-tinh-cua-nhat-ban-cam-on-fpt-vi-mot-quyet-dinh-y-nghia-188261109145035775.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Phát hiện 14 người nước ngoài nghi lừa đảo qua sàn chứng khoán ảo ở TP.HCM | [Xem Link](https://cafef.vn/phat-hien-14-nguoi-nuoc-ngoai-nghi-lua-dao-qua-san-chung-khoan-ao-o-tphcm-18826110910442747.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền” | [Xem Link](https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một nhà đầu tư xử phạt hành chính do thao túng cổ phiếu | [Xem Link](https://cafef.vn/mot-nha-dau-tu-xu-phat-hanh-chinh-do-thao-tung-co-phieu-18826110820552351.chn) |
@@ -18,6 +20,7 @@
 | **SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tín hiệu VN-Index tạo đáy xuất hiện, SSI gọi tên 11 cổ phiếu có cơ hội | [Xem Link](https://cafef.vn/tin-hieu-vn-index-tao-day-xuat-hien-ssi-goi-ten-11-co-phieu-co-du-dia-tang-manh-188261107205152922.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | PNJ bất ngờ muốn rút sạch vốn khỏi công ty cầm đồ sau chưa đầy 8 tháng | [Xem Link](https://cafef.vn/pnj-bat-ngo-muon-rut-sach-von-khoi-cong-ty-cam-do-sau-chua-day-8-thang-188261107105050558.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hơn 1.000 nhân viên rời đi, PNJ nhận thêm đơn xin nghỉ của Giám đốc cấp cao Tài chính | [Xem Link](https://cafef.vn/hon-1000-nhan-vien-roi-di-pnj-nhan-them-don-xin-nghi-cua-giam-doc-cap-cao-tai-chinh-188261107103127179.chn) |
+| **FPT** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | MB Capital, FPT Capital, Chứng khoán KIS, nhà đầu tư Hàn Quốc cùng dự kiến mua một cổ phiếu ngân hàng với giá 13.200 đồng/cp | [Xem Link](https://cafef.vn/mb-capital-fpt-capital-chung-khoan-kis-nha-dau-tu-han-quoc-cung-du-kien-mua-mot-co-phieu-ngan-hang-voi-gia-13200-dong-cp-188261109142631982.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khoản nợ của ông Nguyễn Hồ Nam sẽ được đấu giá vào ngày 23/11, tài sản bảo đảm là nhà đất tại TP.HCM | [Xem Link](https://cafef.vn/khoan-no-cua-ong-nguyen-ho-nam-se-duoc-dau-gia-vao-ngay-23-11-tai-san-bao-dam-la-nha-dat-tai-tphcm-188261108223825996.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 9/11, gửi dưới 1 tỷ đồng kỳ hạn 9 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-9-11-gui-duoi-1-ty-dong-ky-han-9-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261108222446822.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 8/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng so với cuối tuần trước | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-8-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-so-voi-cuoi-tuan-truoc-188261108083025831.chn) |
