@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09 09:28:25",
+  "generated_at": "2026-11-09 14:11:07",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -289,7 +289,7 @@
       "market": "US_SEC_EDGAR",
       "symbol": "TSM",
       "form_or_type": "SEC Form 4",
-      "date": "2026-11-03",
+      "date": "2026-11-09",
       "headline": "Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100%",
       "is_portfolio_holding": true
     },
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 48 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 369 hồ sơ SEC & 48 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
