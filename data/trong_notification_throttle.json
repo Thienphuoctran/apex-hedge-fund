@@ -1,8 +1,8 @@
 {
   "last_status": "ORANGE_HIGH_ALERT_PREPARE_UPGRADE",
-  "last_sent_ts": 1794194183.6748278,
-  "last_sent_iso": "2026-11-09 10:16:23",
-  "alerts_sent_count": 1,
+  "last_sent_ts": 1794196005.9780247,
+  "last_sent_iso": "2026-11-09 10:46:45",
+  "alerts_sent_count": 2,
   "max_alerts_allowed": 2,
   "cooldown_hours": 12,
   "directive": "Chỉ thị Chủ tịch Phước Trần: Tối đa 1-2 tin/ngưỡng (Ngăn chặn triệt để lặp lại qua đêm)"
