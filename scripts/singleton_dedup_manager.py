@@ -90,7 +90,7 @@ def is_milestone_already_dispatched(date_str: str, milestone_id: str) -> bool:
     return milestone_key in cache
 
 
-def mark_milestone_dispatched(date_str: str, milestone_id: str, details: str = ""):
+def mark_milestone_dispatched(date_str: str, milestone_id: str, details: str = "", note: str = "", **kwargs):
     """Ghi nhận mốc tác chiến đã được xuất bản thành công vào sổ cái chống trùng lặp"""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     cache = {}
@@ -101,10 +101,11 @@ def mark_milestone_dispatched(date_str: str, milestone_id: str, details: str = "
         except Exception:
             cache = {}
 
+    final_detail = details or note or kwargs.get("info", "")
     milestone_key = f"{date_str}_{milestone_id}"
     cache[milestone_key] = {
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "details": details
+        "details": final_detail
     }
     with open(DEDUP_AUDIT_FILE, "w", encoding="utf-8") as f:
         json.dump(cache, f, indent=2, ensure_ascii=False)
