@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-09 15:04:12  
-> **Số sự kiện ghi nhận:** 48 thông báo  
+> **Thời gian quét:** 2026-11-09 16:11:25  
+> **Số sự kiện ghi nhận:** 41 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -21,7 +21,6 @@
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền” | [Xem Link](https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một nhà đầu tư xử phạt hành chính do thao túng cổ phiếu | [Xem Link](https://cafef.vn/mot-nha-dau-tu-xu-phat-hanh-chinh-do-thao-tung-co-phieu-18826110820552351.chn) |
 | **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | BSR tăng mạnh kế hoạch lợi nhuận năm 2026 lên gần 18.600 tỷ đồng | [Xem Link](https://cafef.vn/bsr-tang-manh-ke-hoach-loi-nhuan-nam-2026-len-gan-18600-ty-dong-188261108095036544.chn) |
-| **SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tín hiệu VN-Index tạo đáy xuất hiện, SSI gọi tên 11 cổ phiếu có cơ hội | [Xem Link](https://cafef.vn/tin-hieu-vn-index-tao-day-xuat-hien-ssi-goi-ten-11-co-phieu-co-du-dia-tang-manh-188261107205152922.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nóng: Ngân hàng Nhà nước sẽ mua ngoại tệ giao ngay, bơm VND cho hệ thống ngân hàng vào thứ Hai và thứ Tư hằng tuần từ ngày 11/11 | [Xem Link](https://cafef.vn/nong-ngan-hang-nha-nuoc-se-mua-ngoai-te-giao-ngay-bom-vnd-cho-he-thong-ngan-hang-vao-thu-hai-va-thu-tu-hang-tuan-tu-ngay-11-11-188261109200423359.chn) |
 | **FPT** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | MB Capital, FPT Capital, Chứng khoán KIS, nhà đầu tư Hàn Quốc cùng dự kiến mua một cổ phiếu ngân hàng | [Xem Link](https://cafef.vn/mb-capital-fpt-capital-chung-khoan-kis-nha-dau-tu-han-quoc-cung-du-kien-mua-mot-co-phieu-ngan-hang-188261109142631982.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khoản nợ của ông Nguyễn Hồ Nam sẽ được đấu giá vào ngày 23/11, tài sản bảo đảm là nhà đất tại TP.HCM | [Xem Link](https://cafef.vn/khoan-no-cua-ong-nguyen-ho-nam-se-duoc-dau-gia-vao-ngay-23-11-tai-san-bao-dam-la-nha-dat-tai-tphcm-188261108223825996.chn) |
@@ -43,12 +42,6 @@
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026 | [Xem Link](https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm) |
 | **CTG, DXG, HPG, MBB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại mua ròng đột biến ở VIX | [Xem Link](https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm) |
 | **SSI** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Dự báo lãi suất vẫn duy trì ở mức cao, tạo áp lực lên biên lãi ròng nhóm ngân hàng trong ngắn hạn | [Xem Link](https://vneconomy.vn/du-bao-lai-suat-van-duy-tri-o-muc-cao-tao-ap-luc-len-bien-lai-rong-nhom-ngan-hang-trong-ngan-han.htm) |
-| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại quay trở lại gom FPT | [Xem Link](https://vneconomy.vn/khoi-ngoai-quay-tro-lai-gom-fpt.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vietnam Connect Forum 2026: Đầu tư vào Việt Nam - Cơ hội không chỉ nằm ở dòng vốn | [Xem Link](https://vneconomy.vn/vietnam-connect-forum-2026-dau-tu-vao-viet-nam-co-hoi-khong-chi-nam-o-dong-von.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | MB Economic Insights 2026: Khơi thông nguồn vốn, thích ứng nhanh trước biến động sắp diễn ra tại TP. HCM | [Xem Link](https://vneconomy.vn/mb-economic-insights-2026-khoi-thong-nguon-von-thich-ung-nhanh-truoc-bien-dong-sap-dien-ra-tai-tp-hcm.htm) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép | [Xem Link](https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm) |
-| **BSR** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ nhà máy lọc dầu Dung Quất nâng mục tiêu lãi kỷ lục | [Xem Link](https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-nang-muc-tieu-lai-ky-luc-5142212.html) |
-| **SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SSI: Chứng khoán có thể tạo đáy ngắn hạn trong tháng này | [Xem Link](https://vnexpress.net/ssi-chung-khoan-co-the-tao-day-ngan-han-trong-thang-nay-5142164.html) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tìm giải pháp đầu tư từ dữ liệu tại diễn đàn thường niên của DNSE | [Xem Link](https://vnexpress.net/tim-giai-phap-dau-tu-tu-du-lieu-tai-dien-dan-thuong-nien-cua-dnse-5141896.html) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP HCM không đánh đổi môi trường Cần Giờ để tăng trưởng kinh tế | [Xem Link](https://vnexpress.net/tp-hcm-khong-danh-doi-moi-truong-can-gio-de-tang-truong-kinh-te-5141549.html) |
-| **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | BSR lãi hợp nhất gần 25.000 tỷ đồng sau 9 tháng | [Xem Link](https://vnexpress.net/bsr-lai-hop-nhat-gan-25-000-ty-dong-sau-9-thang-5140193.html) |
