@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09 16:11:29",
+  "generated_at": "2026-11-09 17:19:22",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,22 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "DXG",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Tue, 10 Nov 26 0",
+      "headline": "Tỷ phú Bill Gates bất ngờ mua thêm 200.000 cổ phiếu một công ty bất động sản Việt Nam",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Tue, 10 Nov 26 0",
+      "headline": "Petrolimex từng lớn gấp đôi MB nay bằng 1/4, Vinamilk từng gấp 1,5 lần Vingroup nay bằng 1/16: 10 năm viết lại bản đồ tỷ đô trên TTCK",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "FPT",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Mon, 09 Nov 26 1",
@@ -364,22 +380,6 @@
       "date": "Sun, 08 Nov 26 0",
       "headline": "Người đàn ông chưa học hết phổ thông, từng bán vé số ở Tp.HCM vừa kiếm 4.700 tỷ đồng khi bán công ty cho tập đoàn Nhật Bản",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
-      "date": "Sun, 08 Nov 26 0",
-      "headline": "Tỷ phú Phạm Nhật Vượng xuất hiện tại siêu cảng dự kiến lắp 165 cần cẩu khổng lồ, hình thành 3 siêu dự án hơn 500.000 tỷ đồng quanh vịnh Gành Rái",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "REE",
-      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
-      "date": "Sat, 07 Nov 26 1",
-      "headline": "Bà Nguyễn Thị Mai Thanh: Công ty của REE muốn  sáp nhập thêm nhiều công ty con bởi việc đang nhiều kinh khủng",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 373 hồ sơ SEC & 41 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 372 hồ sơ SEC & 47 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
