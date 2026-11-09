@@ -859,21 +859,7 @@ class ApexCloudSupervisor:
                 self.http_server = None
 
         if not self.dry_run:
-            try:
-                init_msg = (
-                    "🚀 *[APEX CLOUD SUPERVISOR 24/7 ĐÃ CHÍNH THỨC KÍCH HOẠT]*\n"
-                    "Kính trình: **Chủ tịch Trần Quốc Thiên Phước** (*TCBS: `105C307855`*)\n"
-                    "Chủ tọa: **Master CIO James** | Quản trị: **Palmer**\n\n"
-                    "• *Trạng thái*: Chế độ Đa Tiến Trình 24/24 có Watchdog tự hồi phục.\n"
-                    "• *3 Dịch vụ thường trực*:\n"
-                    "  1. `Cron Daemon`: 17 cột mốc tác chiến, BCTC, SBV & Tự học.\n"
-                    "  2. `Victor Sentinel`: Quét realtime bảng điện 15s/lần bảo vệ tài khoản 20,167,119 ₫ & radar Tầm ngắm Vòng 2.\n"
-                    "  3. `Telegram Co-Pilot`: Tương tác 2 chiều 24/7 qua bàn phím ảo.\n"
-                    "👉 Toàn bộ bộ máy sẵn sàng vận hành liên tục không gián đoạn!"
-                )
-                dispatch_message("james_hq", init_msg)
-            except Exception as e:
-                log_sup(f"[!] Warning dispatch init: {e}")
+            log_sup("🌟 [APEX CLOUD SUPERVISOR 24/7] Đã sẵn sàng chạy ngầm 24/7. (Đã tắt broadcast khởi động lên Telegram để bảo vệ trải nghiệm của Chủ tịch).")
 
     def stop_all(self):
         log_sup("🛑 ĐANG DỪNG TOÀN BỘ 3 DỊCH VỤ DƯỚI QUYỀN SUPERVISOR...")

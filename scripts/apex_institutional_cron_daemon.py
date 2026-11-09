@@ -846,16 +846,8 @@ def run_daemon(poll_interval: int = 15):
 
     state = load_state()
 
-    init_msg = (
-        "🚀 *[HỆ THỐNG APEX CRON DAEMON V3.0 ĐÃ CHÍNH THỨC KÍCH HOẠT 24/7]*\n"
-        f"Kính trình: **Chủ tịch Trần Quốc Thiên Phước** (*TCBS: `105C307855`*)\n"
-        f"Chủ tọa phê duyệt: **Master CIO James** | Kiến trúc sư: **Palmer**\n\n"
-        "• *Trạng thái*: Chế độ tự động chạy ngầm 100% không gián đoạn (Tích hợp `ApexAgentZeroController`).\n"
-        "• *Số lượng cột mốc*: 17 cột mốc khép kín từ 06:00 sáng đến 23:00 đêm.\n"
-        "• *Cam kết thể chế*: Toàn bộ 11 phòng ban chạy Engine thật, cào số liệu thật, tự học và kiểm điểm thật mỗi ngày!\n"
-        "👉 Hệ thống đang tự động canh giờ và sẵn sàng tác chiến cho từng ca trực!"
-    )
-    _dispatch("james_hq", init_msg)
+    # Khởi động âm thầm 100%, không gửi tin nhắn kích hoạt rác lên Telegram
+    logger.info("🌟 [APEX CRON DAEMON V3.0] Đã khởi động thành công và bắt đầu vòng lặp canh giờ 17 cột mốc.")
 
     while True:
         try:
