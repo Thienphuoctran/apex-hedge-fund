@@ -576,13 +576,22 @@ def evaluate_and_trigger_tactical_alerts(
 def get_weekly_reference_roadmap() -> Dict[str, Any]:
     """
     BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH):
-    - Căn cứ trực tiếp: Nghị Quyết Đại Hội Nghị Thượng Đỉnh Toàn Doanh Nghiệp Apex (Mã: APEX-SUMMIT-20261108-2100)
-      được tổ chức lúc 21h00 - 21h30 ngày 08/11/2026 và đã được Chủ tịch ký duyệt lúc 23:08:16 cùng ngày.
+    - Tự động nạp từ SSOT: data/weekly_tactical_plan_active.json
+    - Quy chế cập nhật định kỳ: Mỗi tối Chủ Nhật lúc 21h30 sau Đại Hội Nghị Thượng Đỉnh Toàn Doanh Nghiệp Apex.
+    - Căn cứ trực tiếp: Nghị Quyết Thượng Đỉnh được Chủ tịch ký duyệt.
     - ĐIỀU KHOẢN THỂ CHẾ BẤT BIẾN: Bảng kế hoạch này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG CHO CHỦ TỊCH,
       TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN VÌ THỊ TRƯỜNG BIẾN ĐỘNG VÀ ĐẦY BIẾN SỐ.
       CÁC PHÒNG BAN KHÔNG ĐƯỢC XEM ĐÂY LÀ KẾ HOẠCH CHÍNH THỨC MÀ LÀM THEO.
       MỌI HÀNH ĐỘNG PHẢI ĐƯỢC THAY ĐỔI TỪNG NGÀY THEO ĐÚNG TÌNH HÌNH THỊ TRƯỜNG VÀ BÁO CÁO MỖI PHIÊN.
     """
+    plan_file = DATA_DIR / "weekly_tactical_plan_active.json"
+    if plan_file.exists():
+        try:
+            with open(plan_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+
     return {
         "title": "BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)",
         "week_label": "Tuần 46 (09/11 – 13/11/2026)",
