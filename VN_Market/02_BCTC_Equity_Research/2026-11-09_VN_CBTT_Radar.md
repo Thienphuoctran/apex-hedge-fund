@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-09 04:44:27  
-> **Số sự kiện ghi nhận:** 47 thông báo  
+> **Thời gian quét:** 2026-11-09 05:43:29  
+> **Số sự kiện ghi nhận:** 45 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -31,8 +31,6 @@
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bảng xếp hạng tiền gửi ngân hàng: HDBank tăng 3 bậc, ACB lùi về hạng 10, một nhà băng ít ai nghĩ đến tăng trưởng tới 45% | [Xem Link](https://cafef.vn/bang-xep-hang-tien-gui-ngan-hang-hdbank-tang-3-bac-acb-lui-ve-hang-10-mot-nha-bang-it-ai-nghi-den-tang-truong-toi-45-18826110511281671.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 5/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng tới 2 triệu đồng/lượng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-5-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-toi-2-trieu-dong-luong-188261105065603864.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | HDBank tăng 140 bậc qua ba kỳ xếp hạng Fortune Southeast Asia 500 | [Xem Link](https://cafef.vn/hdbank-tang-140-bac-qua-ba-ky-xep-hang-fortune-southeast-asia-500-188261105122506793.chn) |
-| **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB ("ACBC") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn) |
-| **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB (“ACBC”) thông báo chào bán chứng chỉ Quỹ ACBC-SFUND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-sfund-ra-cong-chung-18826110508211184.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Nhà đất giấy tay ở TPHCM: Cơ hội nhận bồi thường 100%? | [Xem Link](https://cafef.vn/nha-dat-giay-tay-o-tphcm-co-hoi-nhan-boi-thuong-100-188261109101949552.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Toàn cảnh công trường Trung tâm hành chính TP.HCM sau hơn 6 tháng khởi công | [Xem Link](https://cafef.vn/toan-canh-cong-truong-trung-tam-hanh-chinh-tphcm-sau-hon-6-thang-khoi-cong-188261108141613934.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Doanh nghiệp muốn cơ chế '3 ưu đãi' làm nhà xã hội cho thuê ở TP.HCM | [Xem Link](https://cafef.vn/doanh-nghiep-muon-co-che-3-uu-dai-lam-nha-xa-hoi-cho-thue-o-tphcm-188261108141734139.chn) |

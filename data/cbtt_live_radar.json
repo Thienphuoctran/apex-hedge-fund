@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-09T04:44:27.462510+00:00",
+  "timestamp_utc": "2026-11-09T05:43:29.405966+00:00",
   "scan_date": "2026-11-09",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 47,
+  "total_vn_announcements_count": 45,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -354,7 +354,7 @@
       "severity": "INFO",
       "published_at": "Mon, 09 Nov 26 01:00:00 +0700",
       "source_url": "https://cafef.vn/ngay-9-11-gui-duoi-1-ty-dong-ky-han-9-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261108222446822.chn",
-      "total_announcements": 8
+      "total_announcements": 6
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -5179,30 +5179,6 @@
       "severity": "INFO",
       "published_at": "Thu, 05 Nov 26 13:09:00 +0700",
       "source_url": "https://cafef.vn/hdbank-tang-140-bac-qua-ba-ky-xep-hang-fortune-southeast-asia-500-188261105122506793.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB (\"ACBC\") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng",
-      "summary": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB trân trọng thông báo về đợt chào bán ra công chúng (IPO) của Quỹ Đầu Tư Trái phiếu ACBC (ACBC-BOND)....",
-      "event_type": "ESOP_PHAT_HANH",
-      "severity": "WARNING",
-      "published_at": "Thu, 05 Nov 26 09:30:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB (“ACBC”) thông báo chào bán chứng chỉ Quỹ ACBC-SFUND ra công chúng",
-      "summary": "Công ty TNHH Một Thành viên Quản lý Quỹ ACB vừa thông báo về đợt chào bán ra công chúng (IPO) của Quỹ Đầu Tư Trái phiếu Thông minh ACBC (ACBC-SFUND)....",
-      "event_type": "ESOP_PHAT_HANH",
-      "severity": "WARNING",
-      "published_at": "Thu, 05 Nov 26 08:30:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-sfund-ra-cong-chung-18826110508211184.chn"
     },
     {
       "market": "VIETNAM",
