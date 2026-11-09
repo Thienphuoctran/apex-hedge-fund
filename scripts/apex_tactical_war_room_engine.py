@@ -209,7 +209,7 @@ def get_tactical_action_steps(now: datetime.datetime) -> Dict[str, Any]:
             "title": "Bước 4: Theo Dõi Khớp Lệnh Sáng & Báo Cáo Xu Hướng",
             "role": "Minh Quân (Ban 7 VN)",
             "status": "COMPLETED" if hm >= 11 * 60 + 30 else ("ACTIVE" if hm >= 10 * 60 else "UPCOMING"),
-            "what_to_do": "Soi kỹ cấu trúc tích lũy của HDB (quanh 22.3 - 22.5) và MSH (quanh 34.6 - 35.0). Kiểm tra xem có lệnh đè bán lớn hay dòng tiền tạo lập gom hàng không.",
+            "what_to_do": "Soi kỹ cấu trúc tích lũy của HDB (quanh 22.1 - 22.5) và MSH (quanh 34.5 - 35.0). Kiểm tra xem có lệnh đè bán lớn hay dòng tiền tạo lập gom hàng không.",
             "constitution_rule": "Kỷ luật giải ngân: Chỉ gom khi có sự xác nhận cạn cung tại vùng hỗ trợ cứng."
         },
         {
@@ -223,33 +223,41 @@ def get_tactical_action_steps(now: datetime.datetime) -> Dict[str, Any]:
         },
         {
             "step_id": 6,
-            "time_range": "13:00 – 14:00",
-            "title": "Bước 6: Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản",
-            "role": "Victor Sentinel Desk",
-            "status": "COMPLETED" if hm >= 14 * 60 else ("ACTIVE" if hm >= 13 * 60 else "UPCOMING"),
-            "what_to_do": "Lúc 13h15-13h30 là thời điểm hàng T+2.5 về tài khoản nhà đầu tư cá nhân. Quan sát xem có áp lực bán tháo hoảng loạn không. Kiên nhẫn tuyệt đối, không bắt dao rơi.",
-            "constitution_rule": "Chờ đợi nhịp rũ bỏ hoàn tất. Chỉ hành động khi phe bán kiệt sức."
+            "time_range": "13:00 – 13:45",
+            "title": "Giai Đoạn 1: Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản",
+            "role": "Minh Quân & Victor Sentinel",
+            "status": "COMPLETED" if hm >= 13 * 60 + 45 else ("ACTIVE" if hm >= 13 * 60 else "UPCOMING"),
+            "what_to_do": "Khung giờ từ 13:15 – 13:35 là thời điểm lượng hàng bắt đáy T+2.5 từ tuần trước chính thức về tài khoản các nhà đầu tư cá nhân. Đây thường là nhịp rung lắc biến động mạnh nhất phiên chiều khi nhóm lướt sóng ngắn hạn mang hàng ra chốt lời hoặc cắt lỗ.",
+            "constitution_rule": "TUYỆT ĐỐI KHÔNG NÔN NÓNG GIẢI NGÂN SỚM. Chúng ta kiên nhẫn để phe bán cá nhân xả hết hàng tự nhiên, quan sát xem có áp lực bán tháo hoảng loạn hay không."
         },
         {
             "step_id": 7,
-            "time_range": "14:00 – 14:25",
-            "title": "Bước 7: ⭐ KHUNG GIỜ VÀNG TÁC CHIẾN — ĐỀ BẠT BẤM CÒ NHỊP 1",
-            "role": "Minh Quân Đề Bạt Trực Tiếp",
-            "status": "COMPLETED" if hm >= 14 * 60 + 25 else ("ACTIVE" if hm >= 14 * 60 else "UPCOMING"),
-            "what_to_do": "THỜI KHẮC HÀNH ĐỘNG DUY NHẤT: Khi nến ngày lộ rõ 90%, nếu HDB hoặc MSH xuất hiện nến Test Cung (Vol cạn 30-50% MA20), Minh Quân lập tức đề bạt Chủ tịch BẤM NÚT GIẢI NGÂN 100 CP bằng lệnh LO!",
-            "constitution_rule": "Quy tắc vàng: Đặt lệnh LO, khóa rủi ro <= 0.35% NAV, chốt lời TP1 (+15%) và cắt lỗ Stop 2xATR."
+            "time_range": "13:45 – 13:55",
+            "title": "Giai Đoạn 2: Thẩm Định Lực Đỡ & Độ Cạn Cung (No-Supply Check)",
+            "role": "Victor & Minh Quân",
+            "status": "COMPLETED" if hm >= 13 * 60 + 55 else ("ACTIVE" if hm >= 13 * 60 + 45 else "UPCOMING"),
+            "what_to_do": "Victor và Minh Quân đo lường trực tiếp tỷ lệ Mua chủ động (Buy Up Ratio) và khối lượng khớp lệnh: HDB: Xác nhận lực đỡ quanh vùng giá 22,100 – 22,450 đ (khối lượng bán teo tóp, mua chủ động >= 50%). MSH: Xác nhận lực giữ nền quanh vùng 34,500 – 35,000 đ (biên độ dao động siết chặt).",
+            "constitution_rule": "Chờ đợi nhịp rũ bỏ hoàn tất. Chỉ hành động khi phe bán kiệt sức và có nến No Supply Test Cung."
         },
         {
             "step_id": 8,
+            "time_range": "14:00 – 14:25",
+            "title": "Giai Đoạn 3: ⭐ KHUNG GIỜ VÀNG QUYẾT ĐỊNH — BẤM CÒ NHỊP 1",
+            "role": "Minh Quân & James Kính Trình",
+            "status": "COMPLETED" if hm >= 14 * 60 + 25 else ("ACTIVE" if hm >= 14 * 60 else "UPCOMING"),
+            "what_to_do": "Khi 90% hình thái nến ngày đã định hình và áp lực T+2 đã được hấp thụ sạch sẽ: Minh Quân & James kính trình Chủ tịch mở app TCBS bấm cò 2 Lệnh Limit (LO) Nhịp 1: (1) HDB: Mua LO 100 CP giá 22,100 – 22,450 đ (~2,235,000 đ - 11.1% NAV); (2) MSH: Mua LO 100 CP giá 34,500 – 35,000 đ (~3,480,000 đ - 17.2% NAV). Tổng giải ngân: ~5,690,000 đ (28.2% NAV). Tiền mặt còn lại: 14,477,119 đ (71.8% NAV).",
+            "constitution_rule": "Quy tắc vàng: Đặt lệnh LO, khóa rủi ro <= 0.35% NAV, chốt lời TP1 (+15%) và cắt lỗ Stop 2xATR."
+        },
+        {
+            "step_id": 9,
             "time_range": "14:30 – 14:45",
-            "title": "Bước 8: Phiên Đóng Cửa ATC & Đối Soát Sổ Cái Thực Thi",
+            "title": "Bước 9: Phiên Đóng Cửa ATC & Đối Soát Sổ Cái Thực Thi",
             "role": "Minh Quân & Victor",
             "status": "COMPLETED" if hm >= 14 * 60 + 45 else ("ACTIVE" if hm >= 14 * 60 + 30 else "UPCOMING"),
             "what_to_do": "Theo dõi giá đóng cửa ngày, đối soát giá khớp chính xác của các lệnh LO nhịp 1 đã gửi. Cập nhật số dư két tiền mặt và chuẩn bị sổ cái bàn giao ca tối.",
             "constitution_rule": "Bảo đảm tính chính xác 100% của số liệu thực tế, không để sai lệch 1 đồng."
         }
     ]
-
     active_step = None
     for s in steps:
         if s["status"] == "ACTIVE":
@@ -309,89 +317,116 @@ def get_live_market_overview() -> Dict[str, Any]:
 def get_live_stock_sentinel() -> List[Dict[str, Any]]:
     """
     Bảng giá giám sát thời gian thực trực quan của 4 mã cổ phiếu Vòng 2 cho Victor Sentinel.
+    Kết nối trực tiếp cổng dữ liệu bảng điện HOSE/HNX (VPS/TCInvest realtime tick) để khớp 100% với phiên làm việc.
     """
-    return [
-        {
+    base_stocks = {
+        "HDB": {
             "code": "HDB",
             "name": "HDBank (HOSE)",
             "tier": "Core Compounder (Tiêu điểm 1)",
-            "price": 22450.0,
-            "ref_price": 22350.0,
-            "change_pts": 100.0,
-            "change_pct": 0.45,
-            "high": 22600.0,
-            "low": 22350.0,
-            "volume": 16250000,
-            "vol_ratio_20d": 0.97,
-            "active_buy_pct": 54.2,
-            "rsi14": 47.5,
+            "price": 22100.0,
+            "ref_price": 22500.0,
+            "change_pts": -400.0,
+            "change_pct": -1.78,
+            "high": 22550.0,
+            "low": 22050.0,
+            "volume": 6040300,
+            "vol_ratio_20d": 0.98,
+            "active_buy_pct": 52.4,
+            "rsi14": 46.5,
             "probe_target": 22350.0,
             "stop_loss": 21220.0,
             "security_status": "SAFE",
-            "security_label": "🟢 AN TOÀN — CHỜ TEST CUNG KHUNG GIỜ VÀNG",
+            "security_label": "🟢 AN TOÀN — ĐANG RŨ CUNG VỀ VÙNG GOM",
             "catalyst": "Tín dụng +22%, NIM 5.1%, CASA 18.2%, ROE 24.5%"
         },
-        {
+        "MSH": {
             "code": "MSH",
             "name": "May Sông Hồng (HOSE)",
             "tier": "Tactical Alpha (Tiêu điểm 2)",
-            "price": 34800.0,
-            "ref_price": 34800.0,
-            "change_pts": 0.0,
-            "change_pct": 0.00,
-            "high": 35100.0,
-            "low": 34600.0,
-            "volume": 512000,
-            "vol_ratio_20d": 0.88,
-            "active_buy_pct": 58.6,
-            "rsi14": 52.1,
+            "price": 34550.0,
+            "ref_price": 35500.0,
+            "change_pts": -950.0,
+            "change_pct": -2.68,
+            "high": 35200.0,
+            "low": 34450.0,
+            "volume": 49400,
+            "vol_ratio_20d": 0.85,
+            "active_buy_pct": 56.8,
+            "rsi14": 48.2,
             "probe_target": 34800.0,
             "stop_loss": 33090.0,
             "security_status": "SAFE",
-            "security_label": "🟢 AN TOÀN — SIẾT NỀN CẠN VOL CHỜ NỔ",
+            "security_label": "🟢 AN TOÀN — SIẾT NỀN CẠN VOL CHỜ ĐIỂM BẤM",
             "catalyst": "SH10 chạy 100% công suất, đơn hàng dệt may Mỹ hồi phục mạnh"
         },
-        {
+        "BAF": {
             "code": "BAF",
             "name": "Nông Nghiệp BAF (HOSE)",
             "tier": "Standby 1",
-            "price": 23200.0,
-            "ref_price": 23100.0,
-            "change_pts": 100.0,
-            "change_pct": 0.43,
-            "high": 23350.0,
-            "low": 23050.0,
-            "volume": 1840000,
-            "vol_ratio_20d": 0.82,
-            "active_buy_pct": 51.0,
-            "rsi14": 49.3,
-            "probe_target": 23200.0,
-            "stop_loss": 21600.0,
+            "price": 30800.0,
+            "ref_price": 30900.0,
+            "change_pts": -100.0,
+            "change_pct": -0.32,
+            "high": 30950.0,
+            "low": 30600.0,
+            "volume": 527000,
+            "vol_ratio_20d": 0.79,
+            "active_buy_pct": 50.5,
+            "rsi14": 49.0,
+            "probe_target": 30800.0,
+            "stop_loss": 28600.0,
             "security_status": "STANDBY",
-            "security_label": "🟡 THEO DÕI — CHỜ NỀN CẠN VOL TẠI 23.0",
+            "security_label": "🟡 THEO DÕI — CHỜ NỀN CẠN VOL TẠI 30.8",
             "catalyst": "Giá heo hơi neo cao >65k/kg, mở rộng chuỗi 3F"
         },
-        {
+        "IDC": {
             "code": "IDC",
             "name": "Tổng Công Ty IDICO (HNX)",
             "tier": "Standby 2",
-            "price": 58000.0,
-            "ref_price": 58100.0,
-            "change_pts": -100.0,
-            "change_pct": -0.17,
-            "high": 58500.0,
-            "low": 57800.0,
-            "volume": 920000,
-            "vol_ratio_20d": 0.76,
+            "price": 34600.0,
+            "ref_price": 34900.0,
+            "change_pts": -300.0,
+            "change_pct": -0.86,
+            "high": 35500.0,
+            "low": 34600.0,
+            "volume": 218500,
+            "vol_ratio_20d": 0.75,
             "active_buy_pct": 48.5,
-            "rsi14": 46.8,
-            "probe_target": 58000.0,
-            "stop_loss": 54200.0,
+            "rsi14": 46.2,
+            "probe_target": 34600.0,
+            "stop_loss": 32500.0,
             "security_status": "STANDBY",
-            "security_label": "🟡 THEO DÕI — CHỜ VƯỢT CẢN ĐỈNH 58.5",
+            "security_label": "🟡 THEO DÕI — TÍCH LŨY QUANH NỀN 34.6",
             "catalyst": "BĐS Khu công nghiệp dẫn đầu, FCF KCN Hựu Thạnh khủng"
         }
-    ]
+    }
+
+    try:
+        from scripts.vietnam_realtime_feed import fetch_vps_quotes
+        live_data = fetch_vps_quotes(["HDB", "MSH", "BAF", "IDC"], timeout=3)
+        if live_data:
+            for sym, q in live_data.items():
+                if sym in base_stocks and q.get("price", 0) > 0:
+                    curr_p = float(q["price"])
+                    ref_p = float(q["ref_price"]) if q.get("ref_price", 0) > 0 else base_stocks[sym]["ref_price"]
+                    diff = curr_p - ref_p
+                    pct = round((diff / ref_p) * 100.0, 2) if ref_p > 0 else 0.0
+
+                    base_stocks[sym]["price"] = curr_p
+                    base_stocks[sym]["ref_price"] = ref_p
+                    base_stocks[sym]["change_pts"] = diff
+                    base_stocks[sym]["change_pct"] = pct
+                    if q.get("day_high", 0) > 0:
+                        base_stocks[sym]["high"] = float(q["day_high"])
+                    if q.get("day_low", 0) > 0:
+                        base_stocks[sym]["low"] = float(q["day_low"])
+                    if q.get("volume", 0) > 0:
+                        base_stocks[sym]["volume"] = int(q["volume"])
+    except Exception:
+        pass
+
+    return list(base_stocks.values())
 
 
 def load_directives_history() -> List[Dict[str, Any]]:

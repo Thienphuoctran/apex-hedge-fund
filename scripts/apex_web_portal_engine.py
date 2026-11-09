@@ -2805,7 +2805,7 @@ def generate_portal_html(
                                 <div class="stock-stats-grid">
                                     <div class="stock-stat-item">
                                         <span class="stat-label">Giá Gom N1 (100 CP)</span>
-                                        <span class="stat-val">22,350 ₫</span>
+                                        <span class="stat-val">22,100 – 22,450 ₫</span>
                                     </div>
                                     <div class="stock-stat-item">
                                         <span class="stat-label">Stop 2xATR</span>
@@ -2843,7 +2843,7 @@ def generate_portal_html(
                                 <div class="stock-stats-grid">
                                     <div class="stock-stat-item">
                                         <span class="stat-label">Giá Gom N1 (100 CP)</span>
-                                        <span class="stat-val">34,800 ₫</span>
+                                        <span class="stat-val">34,500 – 35,000 ₫</span>
                                     </div>
                                     <div class="stock-stat-item">
                                         <span class="stat-label">Stop 2xATR</span>
@@ -2876,7 +2876,7 @@ def generate_portal_html(
                                         <span class="stock-ticker">BAF</span>
                                         <span style="font-size:10px; color:#94a3b8;">STANDBY</span>
                                     </div>
-                                    <div style="font-size:11px; color:#cbd5e1;">Giá 23.2k | Stop 21.6k</div>
+                                    <div style="font-size:11px; color:#cbd5e1;">Giá 30.85k | Stop 28.6k</div>
                                     <div style="font-size:10px; color:#94a3b8;">Chờ test cạn Vol, heo >65k</div>
                                 </div>
                                 <div class="stock-pick-card standby">
@@ -2884,7 +2884,7 @@ def generate_portal_html(
                                         <span class="stock-ticker">IDC</span>
                                         <span style="font-size:10px; color:#94a3b8;">STANDBY</span>
                                     </div>
-                                    <div style="font-size:11px; color:#cbd5e1;">Giá 58.0k | Stop 54.2k</div>
+                                    <div style="font-size:11px; color:#cbd5e1;">Giá 34.6k | Stop 32.5k</div>
                                     <div style="font-size:10px; color:#94a3b8;">KCN Hựu Thạnh FCF khủng</div>
                                 </div>
                             </div>
@@ -2905,105 +2905,105 @@ def generate_portal_html(
                         </button>
                     </div>
 
-                    <!-- ================= CỘT 2: REALTIME TIMELINE & DIRECTIVE DESK ================= -->
+                    <!-- ================= CỘT 2: BÁO CÁO TÁC CHIẾN TRONG NGÀY (3 GIAI ĐOẠN QUYẾT ĐỊNH) ================= -->
                     <div class="tactical-panel">
                         <div class="panel-header">
                             <div class="panel-title-box">
-                                <span class="panel-icon">⏱️</span>
+                                <span class="panel-icon">📋</span>
                                 <div>
-                                    <div class="panel-title">Tiến Trình Thực Thi &amp; Hành Động Chi Tiết</div>
-                                    <div style="font-size: 11px; color: #94a3b8;">Kế hoạch hành động cụ thể từng bước trong phiên</div>
+                                    <div class="panel-title">Báo Cáo Tác Chiến Trong Ngày</div>
+                                    <div style="font-size: 11px; color: #94a3b8;">Lộ trình 3 Giai Đoạn Phiên Chiều &amp; Sổ Lệnh Khung Giờ Vàng</div>
                                 </div>
                             </div>
                             <span class="war-room-live-pulse" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);"><span class="war-room-live-dot" style="background: #38bdf8;"></span> REALTIME</span>
                         </div>
 
-                        <!-- ACTION PLAN: TA NÊN LÀM GÌ VÀO THỜI ĐIỂM NÀY? -->
-                        <div class="action-plan-hero-card" id="action-plan-hero-card">
-                            <div style="display: flex; align-items: center; justify-content: space-between;">
-                                <span class="action-plan-tag"><span class="war-room-live-dot" style="background:#fbbf24;"></span> ĐANG DIỄN RA NGAY LÚC NÀY</span>
-                                <span id="action-plan-time" style="font-size: 11px; font-weight: 800; color: #38bdf8;">{wr_step['time_range']}</span>
+                        <!-- 3 GIAI ĐOẠN PHIÊN CHIỀU (CHỦ TỊCH YÊU CẦU ĐẶC BIỆT) -->
+                        <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
+                            
+                            <!-- GIAI ĐOẠN 1: 13:00 - 13:45 (ACTIVE) -->
+                            <div class="action-plan-hero-card" style="border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between;">
+                                    <span class="action-plan-tag" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8; border-color: rgba(56, 189, 248, 0.5); font-weight: 800;">
+                                        <span class="war-room-live-dot" style="background:#38bdf8;"></span> ĐANG DIỄN RA
+                                    </span>
+                                    <span style="font-size: 11.5px; font-weight: 800; color: #38bdf8; font-family: monospace;">13:00 – 13:45</span>
+                                </div>
+                                <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
+                                    1. Giai Đoạn 1 (13:00 – 13:45): Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản
+                                </div>
+                                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                                    • <strong>Bản chất nhịp thị trường</strong>: Khung giờ từ <code style="color:#38bdf8;">13:15 – 13:35</code> là thời điểm lượng hàng bắt đáy T+2.5 từ tuần trước chính thức về tài khoản các nhà đầu tư cá nhân. Đây thường là nhịp rung lắc biến động mạnh nhất phiên chiều khi nhóm lướt sóng ngắn hạn mang hàng ra chốt lời hoặc cắt lỗ.
+                                </div>
+                                <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #fca5a5; line-height: 1.5;">
+                                    ⚖️ <strong>Kỷ luật Hiến chương</strong>: <strong>TUYỆT ĐỐI KHÔNG NÔN NÓNG GIẢI NGÂN SỚM</strong>. Chúng ta kiên nhẫn để phe bán cá nhân xả hết hàng tự nhiên, quan sát xem có áp lực bán tháo hoảng loạn hay không.
+                                </div>
                             </div>
-                            <div class="action-plan-step-title" id="action-plan-title">
-                                📍 {wr_step['title'].upper()}
+
+                            <!-- GIAI ĐOẠN 2: 13:45 - 13:55 (UPCOMING / NO-SUPPLY CHECK) -->
+                            <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between;">
+                                    <span style="font-size: 10px; font-weight: 800; color: #94a3b8; background: rgba(148, 163, 184, 0.15); padding: 2px 8px; border-radius: 4px;">CHUẨN BỊ ĐẾN</span>
+                                    <span style="font-size: 11px; font-weight: 800; color: #94a3b8; font-family: monospace;">13:45 – 13:55</span>
+                                </div>
+                                <div style="font-size: 13px; font-weight: 800; color: #f1f5f9;">
+                                    2. Giai Đoạn 2 (13:45 – 13:55): Thẩm Định Lực Đỡ &amp; Độ Cạn Cung (No-Supply Check)
+                                </div>
+                                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                                    • Victor và Minh Quân sẽ đo lường trực tiếp tỷ lệ Mua chủ động (Buy Up Ratio) và khối lượng khớp lệnh:
+                                    <div style="margin-left: 8px; margin-top: 4px; display: flex; flex-direction: column; gap: 3px;">
+                                        <div>• <strong style="color: #38bdf8;">HDB</strong>: Xác nhận lực đỡ quanh vùng giá <code style="color:#fbbf24;">22,100 – 22,450 đ</code>. Nếu khối lượng bán teo tóp và bên mua chủ động chiếm ưu thế <strong>&ge; 50%</strong>, tín hiệu gom hàng hoàn tất.</div>
+                                        <div>• <strong style="color: #38bdf8;">MSH</strong>: Xác nhận lực giữ nền quanh vùng <code style="color:#fbbf24;">34,500 – 35,000 đ</code>. Biên độ dao động siết chặt là điều kiện tiên quyết.</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="action-plan-content" id="action-plan-what-to-do">
-                                <strong>🎯 HÀNH ĐỘNG CỦA DOANH NGHIỆP TA:</strong><br>
-                                {wr_step['what_to_do']}
-                            </div>
-                            <div class="action-plan-rule" id="action-plan-rule">
-                                ⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: {wr_step['constitution_rule']}
+
+                            <!-- GIAI ĐOẠN 3: 14:00 - 14:25 (GOLDEN WINDOW - MASTER EXECUTION) -->
+                            <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(245, 158, 11, 0.5); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 7px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between;">
+                                    <span style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(245, 158, 11, 0.3);">
+                                        ⭐ THỜI KHẮC QUYẾT ĐỊNH
+                                    </span>
+                                    <span style="font-size: 11px; font-weight: 800; color: #fbbf24; font-family: monospace;">14:00 – 14:25</span>
+                                </div>
+                                <div style="font-size: 13px; font-weight: 800; color: #fbbf24;">
+                                    3. Giai Đoạn 3 (14:00 – 14:25): ⭐ KHUNG GIỜ VÀNG QUYẾT ĐỊNH — BẤM CÒ NHỊP 1
+                                </div>
+                                <div style="font-size: 11px; color: #e2e8f0; line-height: 1.5;">
+                                    • Khi 90% hình thái nến ngày đã định hình và áp lực T+2 đã được hấp thụ sạch sẽ:
+                                </div>
+                                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.5;">
+                                    • Minh Quân và James sẽ chính thức kính trình Chủ tịch mở app TCBS để bấm cò 2 Lệnh Limit (LO) Nhịp 1:
+                                    <div style="margin-left: 6px; margin-top: 5px; display: flex; flex-direction: column; gap: 5px;">
+                                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); padding: 6px 10px; border-radius: 6px; font-size: 11px;">
+                                            <strong style="color: #38bdf8;">1. Lệnh 1 (HDB)</strong>: Đặt Mua Limit (LO) đúng <strong style="color: #34d399;">100 CP</strong> ở vùng giá <strong style="color: #f8fafc;">22,100 – 22,450 đ</strong> (Vốn: ~<code>2,235,000 đ</code> — chiếm <strong>11.1% NAV</strong>).
+                                        </div>
+                                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); padding: 6px 10px; border-radius: 6px; font-size: 11px;">
+                                            <strong style="color: #38bdf8;">2. Lệnh 2 (MSH)</strong>: Đặt Mua Limit (LO) đúng <strong style="color: #34d399;">100 CP</strong> ở vùng giá <strong style="color: #f8fafc;">34,500 – 35,000 đ</strong> (Vốn: ~<code>3,480,000 đ</code> — chiếm <strong>17.2% NAV</strong>).
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 3px; padding-top: 6px; border-top: 1px solid rgba(245, 158, 11, 0.2);">
+                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 5px 8px; border-radius: 6px; font-size: 10.5px;">
+                                        <span style="color: #94a3b8;">Tổng giải ngân hôm nay:</span><br>
+                                        <strong style="color: #fbbf24; font-size: 12px;">~5,690,000 đ (28.2% NAV)</strong>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 5px 8px; border-radius: 6px; font-size: 10.5px;">
+                                        <span style="color: #94a3b8;">Tiền mặt TCBS còn lại:</span><br>
+                                        <strong style="color: #34d399; font-size: 12px;">14,477,119 đ (71.8% NAV)</strong>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Current Directive Hero Box -->
-                        <div class="directive-hero-box">
+                        <div class="directive-hero-box" style="margin-top: 8px;">
                             <span style="font-size: 20px;">📢</span>
                             <div>
                                 <div style="font-size: 11px; font-weight: 800; color: #34d399; margin-bottom: 2px;">THÔNG ĐIỆP CHỈ ĐẠO CỦA MINH QUÂN HIỆN TẠI:</div>
                                 <div class="directive-hero-text" id="war-room-live-directive-box">
                                     {wr_message}
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- 8 Action Steps & Milestones Pre-rendered List -->
-                        <div class="tactical-milestones-list" id="tactical-milestones-list">
-                            <div class="milestone-card completed">
-                                <div class="milestone-header">
-                                    <span class="milestone-time">⏰ 08:30 – 09:00</span>
-                                    <span class="milestone-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">ĐÃ HOÀN TẤT</span>
-                                </div>
-                                <div class="milestone-title">Bước 1: Rà Soát Sổ Lệnh Master Pre-ATO &amp; Đối Soát Sức Mua</div>
-                                <div class="milestone-desc">Minh Quân công bố kế hoạch đầu ngày, khóa rủi ro &le; 0.35% NAV. Két tiền mặt đạt 20,167,119 ₫.</div>
-                            </div>
-                            <div class="milestone-card completed">
-                                <div class="milestone-header">
-                                    <span class="milestone-time">⏰ 09:00 – 09:15</span>
-                                    <span class="milestone-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">ĐÃ QUA</span>
-                                </div>
-                                <div class="milestone-title">Bước 2: Giám Sát Mở Cửa ATO &amp; Giữ Kỷ Luật Thép 3 Không</div>
-                                <div class="milestone-desc">Victor quét độ mở Gap. Toàn đội tuân thủ 100% không đua lệnh ATO, bảo toàn tài sản.</div>
-                            </div>
-                            <div class="milestone-card completed">
-                                <div class="milestone-header">
-                                    <span class="milestone-time">⏰ 09:15 – 11:30</span>
-                                    <span class="milestone-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">ĐÃ QUA</span>
-                                </div>
-                                <div class="milestone-title">Bước 3 &amp; 4: Đo Lường Khớp Lệnh Sáng &amp; Tỷ Lệ Mua Chủ Động</div>
-                                <div class="milestone-desc">Soi lệnh HDB (22.45k, Buy Up 54.2%) và MSH (34.8k, Buy Up 58.6%). Kiên nhẫn quan sát cạn cung.</div>
-                            </div>
-                            <div class="milestone-card active">
-                                <div class="milestone-header">
-                                    <span class="milestone-time" style="color:#fbbf24;">⏰ 11:30 – 13:00</span>
-                                    <span class="milestone-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">ĐANG DIỄN RA</span>
-                                </div>
-                                <div class="milestone-title">Bước 5: Nghỉ Trưa, Tổng Kết Sáng &amp; Đối Soát Khối Ngoại</div>
-                                <div class="milestone-desc">Hội ý cùng Victor về biến động ngoại ETF (+52.6 tỷ mua ròng), tự doanh và Basis phái sinh VN30F (-1.50 điểm).</div>
-                            </div>
-                            <div class="milestone-card">
-                                <div class="milestone-header">
-                                    <span class="milestone-time">⏰ 13:00 – 14:00</span>
-                                    <span class="milestone-badge" style="background: rgba(148, 163, 184, 0.2); color: #94a3b8;">CHỜ ĐẾN GIỜ</span>
-                                </div>
-                                <div class="milestone-title">Bước 6: Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản</div>
-                                <div class="milestone-desc">Theo dõi nhịp rũ bỏ hoảng loạn lúc 13h15-13h30. Kiểm tra sự cạn kiệt của lực bán.</div>
-                            </div>
-                            <div class="milestone-card" style="border-color: rgba(245, 158, 11, 0.4);">
-                                <div class="milestone-header">
-                                    <span class="milestone-time" style="color: #fbbf24;">⭐ 14:00 – 14:25</span>
-                                    <span class="milestone-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">⭐ KHUNG GIỜ VÀNG</span>
-                                </div>
-                                <div class="milestone-title" style="color: #fbbf24;">Bước 7: ⭐ KHUNG GIỜ VÀNG — ĐỀ BẠT BẤM CÒ NHỊP 1</div>
-                                <div class="milestone-desc">Nếu nến ngày đạt Test Cung cạn Vol, Minh Quân đề bạt Chủ tịch BẤM CÒ GIẢI NGÂN 100 CP LO!</div>
-                            </div>
-                            <div class="milestone-card">
-                                <div class="milestone-header">
-                                    <span class="milestone-time">⏰ 14:30 – 14:45</span>
-                                    <span class="milestone-badge" style="background: rgba(148, 163, 184, 0.2); color: #94a3b8;">CHỜ ĐẾN GIỜ</span>
-                                </div>
-                                <div class="milestone-title">Bước 8: Phiên Đóng Cửa ATC &amp; Đối Soát Sổ Cái Thực Thi</div>
-                                <div class="milestone-desc">Chốt nến ngày, đối soát giá khớp chính xác, cập nhật sổ cái vị thế và két tiền mặt.</div>
                             </div>
                         </div>
 
@@ -3134,34 +3134,34 @@ def generate_portal_html(
                                 <tbody id="live-stocks-table-body">
                                     <tr>
                                         <td><strong style="color:#38bdf8;">HDB</strong></td>
-                                        <td class="price-badge up">22,450</td>
-                                        <td class="price-badge up">+0.45%</td>
-                                        <td>16.2M</td>
-                                        <td style="color:#34d399;">54.2%</td>
+                                        <td class="price-badge down">22,100</td>
+                                        <td class="price-badge down">-1.78%</td>
+                                        <td>6.1M</td>
+                                        <td style="color:#34d399;">52.4%</td>
                                         <td><span style="color:#10b981; font-weight:700;">🟢 AN TOÀN</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong style="color:#38bdf8;">MSH</strong></td>
-                                        <td class="price-badge ref">34,800</td>
-                                        <td class="price-badge ref">0.00%</td>
-                                        <td>512k</td>
-                                        <td style="color:#34d399;">58.6%</td>
+                                        <td class="price-badge down">34,500</td>
+                                        <td class="price-badge down">-2.82%</td>
+                                        <td>53.2k</td>
+                                        <td style="color:#34d399;">56.8%</td>
                                         <td><span style="color:#10b981; font-weight:700;">🟢 AN TOÀN</span></td>
                                     </tr>
                                     <tr>
-                                        <td><strong style="color:#94a3b8;">BAF</strong></td>
-                                        <td class="price-badge up">23,200</td>
-                                        <td class="price-badge up">+0.43%</td>
-                                        <td>1.84M</td>
-                                        <td style="color:#cbd5e1;">51.0%</td>
+                                        <td><strong style="color:#38bdf8;">BAF</strong></td>
+                                        <td class="price-badge down">30,850</td>
+                                        <td class="price-badge down">-0.16%</td>
+                                        <td>593k</td>
+                                        <td style="color:#34d399;">50.5%</td>
                                         <td><span style="color:#fbbf24; font-weight:700;">🟡 STANDBY</span></td>
                                     </tr>
                                     <tr>
-                                        <td><strong style="color:#94a3b8;">IDC</strong></td>
-                                        <td class="price-badge down">58,000</td>
-                                        <td class="price-badge down">-0.17%</td>
-                                        <td>920k</td>
-                                        <td style="color:#cbd5e1;">48.5%</td>
+                                        <td><strong style="color:#38bdf8;">IDC</strong></td>
+                                        <td class="price-badge down">34,600</td>
+                                        <td class="price-badge down">-0.86%</td>
+                                        <td>232.7k</td>
+                                        <td style="color:#34d399;">48.5%</td>
                                         <td><span style="color:#fbbf24; font-weight:700;">🟡 STANDBY</span></td>
                                     </tr>
                                 </tbody>
