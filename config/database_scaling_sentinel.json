@@ -16,9 +16,9 @@
     "telegram_trong_audit",
     "web_portal_kpi_banner"
   ],
-  "current_report_count": 239,
-  "status": "AMBER_APPROACHING_THRESHOLD",
-  "last_audit_time": "2026-11-08 22:17:02",
-  "total_markdown_documents": 448,
+  "current_report_count": 246,
+  "status": "ORANGE_HIGH_ALERT_PREPARE_UPGRADE",
+  "last_audit_time": "2026-11-09 09:49:33",
+  "total_markdown_documents": 454,
   "supervising_officer": "Master CIO James (Ban 8)"
 }

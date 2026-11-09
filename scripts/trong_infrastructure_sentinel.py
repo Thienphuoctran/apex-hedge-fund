@@ -45,6 +45,7 @@ INSPECTOR_DIR = BASE_DIR / "12_Institutional_Ombudsman_And_Inspectorate"
 DAILY_AUDITS_DIR = INSPECTOR_DIR / "daily_audits"
 TELEMETRY_FILE = DATA_DIR / "infrastructure_health_telemetry.json"
 SCALING_CONFIG_FILE = CONFIG_DIR / "database_scaling_sentinel.json"
+THROTTLE_STATE_FILE = DATA_DIR / "trong_notification_throttle.json"
 
 
 class TrongInfrastructureSentinel:
@@ -368,9 +369,11 @@ class TrongInfrastructureSentinel:
         report_content = cls._generate_markdown_audit_report(telemetry)
         report_path.write_text(report_content, encoding="utf-8")
 
-        # Gửi Telegram nếu cần thiết hoặc khi có cảnh báo khẩn cấp
-        if send_telegram_alert or c1_reports["status"] in ("ORANGE_HIGH_ALERT_PREPARE_UPGRADE", "RED_CRITICAL_UPGRADE_REQUIRED"):
-            cls._dispatch_telegram_alert(telemetry)
+        # Gửi Telegram nếu cần thiết hoặc khi có cảnh báo khẩn cấp (TUÂN THỦ BỘ LỌC 1-2 TIN THEO LỆNH CHỦ TỊCH)
+        if send_telegram_alert:
+            cls._dispatch_telegram_alert(telemetry, force=True)
+        elif c1_reports["status"] in ("ORANGE_HIGH_ALERT_PREPARE_UPGRADE", "RED_CRITICAL_UPGRADE_REQUIRED"):
+            cls._dispatch_telegram_alert(telemetry, force=False)
 
         return telemetry
 
@@ -463,29 +466,115 @@ pie title Phân Bố Dung Lượng Dự Án Apex ({c3["total_project_size_mb"]} 
         return md
 
     @classmethod
-    def _dispatch_telegram_alert(cls, tel: Dict[str, Any]):
-        """Gửi thông báo tình trạng hạ tầng lên Telegram cho Chủ tịch và James."""
+    def _check_and_update_throttle(cls, current_status: str, force: bool = False) -> Tuple[bool, int, str]:
+        """
+        BỘ LỌC TẦN SUẤT THÔNG BÁO THEO CHỈ THỊ CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC:
+        - Tối đa 1-2 tin nhắn cho mỗi sự kiện / ngưỡng cảnh báo.
+        - Cấm tuyệt đối lặp lại theo chu kỳ daemon 60 giây.
+        - Thời gian giãn cách tối thiểu (cooldown) là 12 giờ cho cùng một ngưỡng trạng thái.
+        """
+        if force:
+            return True, 1, "FORCE_DISPATCH_AUTHORIZED"
+
+        state = {}
+        if THROTTLE_STATE_FILE.exists():
+            try:
+                with open(THROTTLE_STATE_FILE, "r", encoding="utf-8") as f:
+                    state = json.load(f)
+            except Exception:
+                state = {}
+
+        last_status = state.get("last_status", "")
+        alerts_sent_count = state.get("alerts_sent_count", 0)
+        last_sent_ts = state.get("last_sent_ts", 0)
+        now_ts = time.time()
+        cooldown_seconds = 12 * 3600  # 12 giờ cooldown
+
+        # Nếu trạng thái thay đổi (ví dụ: chuyển từ GREEN -> AMBER -> ORANGE -> RED)
+        if current_status != last_status:
+            return True, 1, f"STATUS_TRANSITION ({last_status} -> {current_status})"
+
+        # Cùng trạng thái cũ: nếu đã gửi >= 2 tin
+        if alerts_sent_count >= 2:
+            elapsed = now_ts - last_sent_ts
+            if elapsed < cooldown_seconds:
+                hours_left = (cooldown_seconds - elapsed) / 3600
+                return False, alerts_sent_count, f"MAX_ALERTS_REACHED ({alerts_sent_count}/2 tin đã gửi. Cooldown còn {hours_left:.1f}h)"
+            else:
+                # Đã hết 12h cooldown, reset cho phép nhắc nhở lại lần mới
+                return True, 1, "COOLDOWN_EXPIRED_RESET"
+
+        # Nếu đã gửi 1 tin: giãn cách ít nhất 30 phút trước khi gửi tin thứ 2
+        elapsed = now_ts - last_sent_ts
+        if alerts_sent_count == 1 and elapsed < 1800:
+            return False, 1, f"MIN_INTERVAL_WAIT (Đã gửi 1 tin, khoảng đệm tối thiểu 30p. Đã qua {elapsed:.0f}s)"
+
+        next_cnt = alerts_sent_count + 1
+        return True, next_cnt, f"UNDER_MAX_ALERTS ({next_cnt}/2)"
+
+    @classmethod
+    def _record_alert_dispatched(cls, status: str, alert_num: int):
+        """Ghi nhận lịch sử gửi thông báo để duy trì kỷ luật tối đa 1-2 tin."""
+        state = {}
+        if THROTTLE_STATE_FILE.exists():
+            try:
+                with open(THROTTLE_STATE_FILE, "r", encoding="utf-8") as f:
+                    state = json.load(f)
+            except Exception:
+                state = {}
+
+        now_ts = time.time()
+        state = {
+            "last_status": status,
+            "last_sent_ts": now_ts,
+            "last_sent_iso": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "alerts_sent_count": alert_num,
+            "max_alerts_allowed": 2,
+            "cooldown_hours": 12,
+            "directive": "Chỉ thị Chủ tịch Phước Trần: Tối đa 1-2 tin/ngưỡng (Ngăn chặn triệt để lặp lại qua đêm)"
+        }
+        THROTTLE_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            with open(THROTTLE_STATE_FILE, "w", encoding="utf-8") as f:
+                json.dump(state, f, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+
+    @classmethod
+    def _dispatch_telegram_alert(cls, tel: Dict[str, Any], force: bool = False):
+        """Gửi thông báo tình trạng hạ tầng lên Telegram cho Chủ tịch và James có kiểm soát tần suất."""
         c1 = tel["check_1_report_counts_and_thresholds"]
+        status = c1.get("status", "GREEN_OPTIMAL")
+
+        # Kiểm tra qua bộ lọc Throttle của Chủ tịch
+        can_send, alert_num, reason = cls._check_and_update_throttle(status, force=force)
+        if not can_send:
+            print(f"[*] [BAN 12 TRỌNG — BỘ LỌC CHỦ TỊCH] Ngăn chặn gửi tin: {reason}", flush=True)
+            return
+
         c3 = tel["check_3_disk_and_storage_footprint"]
         score = tel["overall_infrastructure_health_score"]
 
         msg = (
             "🏛️ *[BAN 12 TRỌNG — BÁO CÁO GIÁM SÁT HẠ TẦNG & SỨC CHỨA HỆ THỐNG]*\n"
             f"Kính trình: **Chủ tịch Trần Quốc Thiên Phước** | Giám sát: **Master CIO James**\n"
-            f"Cố vấn kỹ thuật: **Palmer** | Thời điểm: `{tel['audit_timestamp']}`\n\n"
+            f"Cố vấn kỹ thuật: **Palmer** | Thời điểm: `{tel['audit_timestamp']}`\n"
+            f"🔔 *Thông báo [{alert_num}/2]* _(Chỉ thị Chủ tịch: Tối đa 1-2 tin/ngưỡng)_\n\n"
             f"• **Điểm sức khỏe hạ tầng**: `{score}/100` ({tel['health_verdict']})\n"
             f"• **Số lượng báo cáo thể chế**: `{c1['operational_institutional_reports']} báo cáo`\n"
             f"• **Tổng văn bản Markdown**: `{c1['total_markdown_documents']} tài liệu` (Ngưỡng: 300 - 500)\n"
             f"• **Dung lượng dự án**: `{c3['total_project_size_mb']} MB` / `1000 MB` ({c3['github_quota_used_pct']})\n"
             f"• **Trạng thái ngưỡng**: `{c1['status']}`\n"
             f"👉 *Chỉ thị hành động*: {c1['action_guidance']}\n\n"
-            "Ban 12 Trọng và Palmer cam kết giám sát 24/7 và báo cáo tức thời khi chạm ngưỡng!"
+            "Ban 12 Trọng và Palmer cam kết tuân thủ nghiêm ngặt tần suất thông báo của Chủ tịch!"
         )
         try:
             dispatch_message("james_hq", msg)
             dispatch_message("trong_audit", msg)
-        except Exception:
-            pass
+            cls._record_alert_dispatched(status, alert_num)
+            print(f"[+] [BAN 12 TRỌNG] Đã gửi thông báo [{alert_num}/2] lên Telegram cho Chủ tịch.", flush=True)
+        except Exception as e:
+            print(f"[!] [BAN 12 TRỌNG] Lỗi gửi Telegram: {e}", flush=True)
 
 
 def main():

@@ -1,0 +1,9 @@
+{
+  "last_status": "ORANGE_HIGH_ALERT_PREPARE_UPGRADE",
+  "last_sent_ts": 1794192000.0,
+  "last_sent_iso": "2026-11-09 09:40:00",
+  "alerts_sent_count": 2,
+  "max_alerts_allowed": 2,
+  "cooldown_hours": 12,
+  "directive": "Chỉ thị Chủ tịch Phước Trần: Tối đa 1-2 tin/ngưỡng (Đã ghi nhận 443 tin đêm qua, lập tức khóa mutes 12h)"
+}
