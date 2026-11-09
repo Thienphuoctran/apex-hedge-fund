@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-09T08:15:27.173198+00:00",
+  "timestamp_utc": "2026-11-09T09:19:59.868279+00:00",
   "scan_date": "2026-11-09",
   "total_us_filings_count": 370,
   "total_vn_announcements_count": 48,
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 10
     },
+    "FPT": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Từ nhà khoa học đến Chủ tịch FPT, ông Trương Gia Bình trao 1 triệu USD cho người trẻ: “Hãy thành công hơn FPT”",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 15:59:00 +0700",
+      "source_url": "https://cafef.vn/tu-nha-khoa-hoc-den-chu-tich-fpt-ong-truong-gia-binh-trao-1-trieu-usd-cho-nguoi-tre-hay-thanh-cong-hon-fpt-188261109150349201.chn",
+      "total_announcements": 6
+    },
     "GAS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ",
@@ -298,7 +306,7 @@
       "severity": "INFO",
       "published_at": "Mon, 09 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn",
-      "total_announcements": 7
+      "total_announcements": 6
     },
     "POW": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -322,7 +330,7 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn",
-      "total_announcements": 15
+      "total_announcements": 14
     },
     "REE": {
       "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -332,21 +340,13 @@
       "source_url": "https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn",
       "total_announcements": 1
     },
-    "FPT": {
-      "latest_event_type": "CO_TUC",
-      "latest_title": "FPT Telecom sắp phát hành hơn 110 triệu cổ phiếu thưởng cho cổ đông",
-      "severity": "WARNING",
-      "published_at": "Mon, 09 Nov 26 15:10:00 +0700",
-      "source_url": "https://cafef.vn/fpt-telecom-sap-phat-hanh-hon-110-trieu-co-phieu-thuong-cho-co-dong-188261109144524706.chn",
-      "total_announcements": 5
-    },
     "MBS": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền”",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 10:37:00 +0700",
-      "source_url": "https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn",
-      "total_announcements": 2
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "MBS dự báo lợi nhuận năm 2026 của loạt doanh nghiệp “hot”, một ông lớn có thể tăng hơn 100%",
+      "severity": "CRITICAL",
+      "published_at": "Mon, 09 Nov 26 15:24:00 +0700",
+      "source_url": "https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn",
+      "total_announcements": 3
     },
     "SSI": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4859,6 +4859,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "FPT"
+      ],
+      "title": "Từ nhà khoa học đến Chủ tịch FPT, ông Trương Gia Bình trao 1 triệu USD cho người trẻ: “Hãy thành công hơn FPT”",
+      "summary": "Chủ tịch FPT Trương Gia Bình muốn thế hệ startup tiếp theo không chỉ nối bước mà còn có thể vượt qua những gì FPT đã làm được....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 15:59:00 +0700",
+      "source_url": "https://cafef.vn/tu-nha-khoa-hoc-den-chu-tich-fpt-ong-truong-gia-binh-trao-1-trieu-usd-cho-nguoi-tre-hay-thanh-cong-hon-fpt-188261109150349201.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "GAS"
       ],
       "title": "Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ",
@@ -4939,6 +4951,30 @@
       "severity": "INFO",
       "published_at": "Sat, 07 Nov 26 13:15:00 +0700",
       "source_url": "https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "PNJ \"thủng đáy\"",
+      "summary": "Chỉ trong chưa đầy ba tuần, vốn hóa doanh nghiệp đã \"bốc hơi\" thêm khoảng 2.560 tỷ đồng, xuống còn hơn 7.200 tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 16:17:00 +0700",
+      "source_url": "https://cafef.vn/pnj-thung-day-188261109161416223.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "MBS"
+      ],
+      "title": "MBS dự báo lợi nhuận năm 2026 của loạt doanh nghiệp “hot”, một ông lớn có thể tăng hơn 100%",
+      "summary": "Trong danh mục cổ phiếu tiêu biểu tháng 11, MBS dự báo lợi nhuận năm 2026 của nhiều doanh nghiệp lớn tiếp tục tăng mạnh....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Mon, 09 Nov 26 15:24:00 +0700",
+      "source_url": "https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn"
     },
     {
       "market": "VIETNAM",
@@ -5027,38 +5063,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PNJ"
-      ],
-      "title": "PNJ bất ngờ muốn rút sạch vốn khỏi công ty cầm đồ sau chưa đầy 8 tháng",
-      "summary": "Quyết định trên được đưa ra khi công ty cầm đồ mới thành lập chưa đầy 8 tháng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sat, 07 Nov 26 10:50:00 +0700",
-      "source_url": "https://cafef.vn/pnj-bat-ngo-muon-rut-sach-von-khoi-cong-ty-cam-do-sau-chua-day-8-thang-188261107105050558.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Hơn 1.000 nhân viên rời đi, PNJ nhận thêm đơn xin nghỉ của Giám đốc cấp cao Tài chính",
-      "summary": "PNJ tiếp tục có biến động ở bộ máy lãnh đạo cấp cao....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sat, 07 Nov 26 10:31:00 +0700",
-      "source_url": "https://cafef.vn/hon-1000-nhan-vien-roi-di-pnj-nhan-them-don-xin-nghi-cua-giam-doc-cap-cao-tai-chinh-188261107103127179.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "FPT"
       ],
-      "title": "MB Capital, FPT Capital, Chứng khoán KIS, nhà đầu tư Hàn Quốc cùng dự kiến mua một cổ phiếu ngân hàng với giá 13.200 đồng/cp",
+      "title": "MB Capital, FPT Capital, Chứng khoán KIS, nhà đầu tư Hàn Quốc cùng dự kiến mua một cổ phiếu ngân hàng",
       "summary": "Ngân hàng vừa công bố danh sách 7 nhà đầu tư chứng khoán chuyên nghiệp dự kiến mua 100 triệu cổ phiếu riêng lẻ với giá 13.200 đồng/cổ phiếu. Riêng một quỹ ngoại dự kiến nhận gần 45% đợt chào bán....",
       "event_type": "ESOP_PHAT_HANH",
       "severity": "WARNING",
       "published_at": "Mon, 09 Nov 26 14:26:00 +0700",
-      "source_url": "https://cafef.vn/mb-capital-fpt-capital-chung-khoan-kis-nha-dau-tu-han-quoc-cung-du-kien-mua-mot-co-phieu-ngan-hang-voi-gia-13200-dong-cp-188261109142631982.chn"
+      "source_url": "https://cafef.vn/mb-capital-fpt-capital-chung-khoan-kis-nha-dau-tu-han-quoc-cung-du-kien-mua-mot-co-phieu-ngan-hang-188261109142631982.chn"
     },
     {
       "market": "VIETNAM",
@@ -5423,18 +5435,6 @@
       "severity": "CRITICAL",
       "published_at": "Fri, 06 Nov 2026 10:00:00 +0700",
       "source_url": "https://vnexpress.net/bsr-lai-hop-nhat-gan-25-000-ty-dong-sau-9-thang-5140193.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Vốn FDI vào TP HCM tăng hơn 4 lần",
-      "summary": "Đầu tàu kinh tế thu hút 19,1 tỷ USD vốn FDI trong 10 tháng đầu năm, gấp 4,2 lần so với cùng kỳ 2025, theo cơ quan Thống kê TP HCM....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 2026 12:29:06 +0700",
-      "source_url": "https://vnexpress.net/von-fdi-vao-tp-hcm-tang-hon-4-lan-5141078.html"
     }
   ]
 }

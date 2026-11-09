@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-09T01:44:43.113862+00:00",
+  "generated_at_utc": "2026-11-09T09:20:18.773297+00:00",
   "trading_date": "2026-11-09",
   "previous_date_compared": "2026-11-08",
   "specialist_profile": {
@@ -20,7 +20,7 @@
     {
       "department": "Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)",
       "verdict": "CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)",
-      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 25.64 xuống 25.64 (-8.18%), Dầu WTI dịu từ $90.83 xuống $90.29, US10Y ổn định ở 4.86%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
+      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 25.64 xuống 24.12 (-8.18%), Dầu WTI dịu từ $90.83 xuống $89.67, US10Y ổn định ở 4.86%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
       "specialist_takeaway": "Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve)."
     },
     {
@@ -56,7 +56,7 @@
   ],
   "yesterday_post_mortem": {
     "compared_period": "2026-11-08 -> 2026-11-09",
-    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 25.64 xuống 25.64 (-8.18%), Dầu WTI dịu từ $90.83 về $90.29, US10Y ở 4.86%.",
+    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 25.64 xuống 24.12 (-8.18%), Dầu WTI dịu từ $90.83 về $89.67, US10Y ở 4.86%.",
     "validated_wins": [
       {
         "category": "Thắng lợi Nhóm Trụ cột Tăng trưởng & Dầu khí (Core Winners)",
@@ -75,7 +75,7 @@
       {
         "error_code": "ERR-01 (Timing & Entry Execution Flaw)",
         "title": "Giải ngân 100% tại giá đóng cửa vào nhóm Phòng thủ đúng đỉnh ngắn hạn của VIX",
-        "what_happened": "Ngày 2026-11-08, khi VIX ở mức cao (25.64), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-09, khi VIX hạ nhiệt mạnh về 25.64 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi 0.0% ($276.22 -> $276.22), `PG` lùi 0.0% ($165.4 -> $165.4), và `V` lùi 0.0%.",
+        "what_happened": "Ngày 2026-11-08, khi VIX ở mức cao (25.64), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-09, khi VIX hạ nhiệt mạnh về 24.12 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi 0.0% ($276.22 -> $276.22), `PG` lùi 0.0% ($165.4 -> $165.4), và `V` lùi 0.0%.",
         "root_cause": "Chưa tách lệnh thành 2 nhịp (Market + Limit Pullback) và chưa tính độ nhạy đảo chiều của VIX khi vượt ngưỡng 21.",
         "corrective_action": "Kể từ hôm nay, Alex bắt buộc áp dụng quy tắc 60/40: chỉ giải ngân 60% tại vùng hiện tại và đặt 40% ở lệnh chờ `Limit Buy = Giá hiện tại - 0.35x ATR(14)`. Nhờ vậy, nhịp lùi -1.0% hôm nay của PG và JNJ trở thành điểm khớp Limit giá rẻ tối ưu!"
       }

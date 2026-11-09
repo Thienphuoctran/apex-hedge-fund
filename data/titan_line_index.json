@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-09 01:45:04",
+  "generated_at": "2026-11-09 09:20:49",
   "token_metrics": {
-    "total_raw_report_tokens": 67613,
+    "total_raw_report_tokens": 67625,
     "titan_digest_tokens": 1929,
     "token_savings_percent": 97.1,
     "quality_preservation": "100% LOSSLESS (Full reports intact on disk)"
   },
   "deterministic_audit": {
-    "timestamp": "2026-11-09 01:45:04",
+    "timestamp": "2026-11-09 09:20:49",
     "bctc_vn_verified": 54,
     "bctc_red_flags_detected": [
       "UNKNOWN (M-Score=0.41, OCF/LNST=1.2)",
@@ -24,9 +24,9 @@
     "global_macro_ban1": {
       "exists": true,
       "path": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
-      "size_kb": 21.7,
+      "size_kb": 21.8,
       "total_lines": 69,
-      "estimated_raw_tokens": 6342,
+      "estimated_raw_tokens": 6364,
       "sections_count": 5,
       "sections": [
         {
@@ -262,7 +262,7 @@
       "path": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
       "size_kb": 10.1,
       "total_lines": 85,
-      "estimated_raw_tokens": 2966,
+      "estimated_raw_tokens": 2961,
       "sections_count": 8,
       "sections": [
         {
@@ -1172,9 +1172,9 @@
     "vn_synthesis_ban3": {
       "exists": true,
       "path": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
-      "size_kb": 5.5,
+      "size_kb": 5.4,
       "total_lines": 34,
-      "estimated_raw_tokens": 1596,
+      "estimated_raw_tokens": 1579,
       "sections_count": 3,
       "sections": [
         {
@@ -1250,9 +1250,9 @@
     "vn_ic_ban4": {
       "exists": true,
       "path": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-      "size_kb": 11.1,
+      "size_kb": 11.0,
       "total_lines": 95,
-      "estimated_raw_tokens": 3254,
+      "estimated_raw_tokens": 3231,
       "sections_count": 10,
       "sections": [
         {
@@ -1269,49 +1269,49 @@
         },
         {
           "level": 3,
-          "title": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
+          "title": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
           "start_line": 9,
           "end_line": 19
         },
         {
           "level": 3,
-          "title": "🎯 **STB** — Sài Gòn Thương Tín (Sacombank) (HOSE)",
+          "title": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
           "start_line": 20,
           "end_line": 30
         },
         {
           "level": 3,
-          "title": "🎯 **MSN** — Tập Đoàn Masan (HOSE)",
+          "title": "🎯 **MBB** — Quân Đội (MBBank) (HOSE)",
           "start_line": 31,
           "end_line": 41
         },
         {
           "level": 3,
-          "title": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+          "title": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
           "start_line": 42,
           "end_line": 52
         },
         {
           "level": 3,
-          "title": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
+          "title": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
           "start_line": 53,
           "end_line": 63
         },
         {
           "level": 3,
-          "title": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
+          "title": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
           "start_line": 64,
           "end_line": 74
         },
         {
           "level": 3,
-          "title": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
+          "title": "🎯 **MBS** — Chứng Khoán MB (HNX)",
           "start_line": 75,
           "end_line": 85
         },
         {
           "level": 3,
-          "title": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
+          "title": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
           "start_line": 86,
           "end_line": 95
         }
@@ -1349,79 +1349,87 @@
             "end_line": 8
           }
         ],
+        "TCB": [
+          {
+            "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
+            "start_line": 9,
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+            "end_line": 19
+          }
+        ],
         "IDC": [
           {
             "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
-            "start_line": 9,
-            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-            "end_line": 19
-          }
-        ],
-        "IDICO": [
-          {
-            "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
-            "start_line": 9,
-            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-            "end_line": 19
-          }
-        ],
-        "STB": [
-          {
-            "section": "🎯 **STB** — Sài Gòn Thương Tín (Sacombank) (HOSE)",
             "start_line": 20,
             "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 30
           }
         ],
-        "MSN": [
+        "IDICO": [
           {
-            "section": "🎯 **MSN** — Tập Đoàn Masan (HOSE)",
+            "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
+            "start_line": 20,
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+            "end_line": 30
+          }
+        ],
+        "MBB": [
+          {
+            "section": "🎯 **MBB** — Quân Đội (MBBank) (HOSE)",
             "start_line": 31,
             "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 41
           }
         ],
-        "SSI": [
-          {
-            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
-            "start_line": 42,
-            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-            "end_line": 52
-          },
-          {
-            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
-            "start_line": 42,
-            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-            "end_line": 52
-          }
-        ],
         "GMD": [
           {
             "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
-            "start_line": 53,
+            "start_line": 42,
             "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-            "end_line": 63
-          }
-        ],
-        "TCB": [
-          {
-            "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
-            "start_line": 64,
-            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-            "end_line": 74
-          }
-        ],
-        "MWG": [
-          {
-            "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
-            "start_line": 75,
-            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-            "end_line": 85
+            "end_line": 52
           }
         ],
         "PVT": [
           {
             "section": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
+            "start_line": 53,
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+            "end_line": 63
+          }
+        ],
+        "MWG": [
+          {
+            "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
+            "start_line": 64,
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+            "end_line": 74
+          }
+        ],
+        "MBS": [
+          {
+            "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
+            "start_line": 75,
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+            "end_line": 85
+          }
+        ],
+        "MB": [
+          {
+            "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
+            "start_line": 75,
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+            "end_line": 85
+          }
+        ],
+        "SSI": [
+          {
+            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+            "start_line": 86,
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+            "end_line": 95
+          },
+          {
+            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
             "start_line": 86,
             "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 95
@@ -1839,25 +1847,25 @@
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,750 đ (+1.73%)",
+          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,600 đ (-1.28%)",
           "start_line": 257,
           "end_line": 262
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (+2.33%)",
+          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 10,950 đ (-0.45%)",
           "start_line": 263,
           "end_line": 268
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,950 đ (-0.74%)",
+          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,950 đ (+0.00%)",
           "start_line": 269,
           "end_line": 274
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 14,950 đ (+5.28%)",
+          "title": "⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 14,450 đ (-3.34%)",
           "start_line": 275,
           "end_line": 282
         },
@@ -2109,7 +2117,7 @@
         ],
         "PDR": [
           {
-            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,750 đ (+1.73%)",
+            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,600 đ (-1.28%)",
             "start_line": 257,
             "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 262
@@ -2117,7 +2125,7 @@
         ],
         "DXG": [
           {
-            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (+2.33%)",
+            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 10,950 đ (-0.45%)",
             "start_line": 263,
             "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 268
@@ -2125,7 +2133,7 @@
         ],
         "KBC": [
           {
-            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,950 đ (-0.74%)",
+            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,950 đ (+0.00%)",
             "start_line": 269,
             "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 274
@@ -2698,9 +2706,9 @@
     "victor_sentinel_ban9": {
       "exists": true,
       "path": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-      "size_kb": 9.7,
-      "total_lines": 74,
-      "estimated_raw_tokens": 2840,
+      "size_kb": 9.8,
+      "total_lines": 75,
+      "estimated_raw_tokens": 2875,
       "sections_count": 7,
       "sections": [
         {
@@ -2713,37 +2721,37 @@
           "level": 2,
           "title": "1. Giám Sát Cổ Phiếu Đang Đầu Tư (Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR)",
           "start_line": 6,
-          "end_line": 10
+          "end_line": 11
         },
         {
           "level": 2,
           "title": "2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực",
-          "start_line": 11,
-          "end_line": 24
+          "start_line": 12,
+          "end_line": 25
         },
         {
           "level": 2,
           "title": "3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ Phiên Ngày Mai (Thứ Ba, 03/11/2026)",
-          "start_line": 25,
-          "end_line": 42
+          "start_line": 26,
+          "end_line": 43
         },
         {
           "level": 2,
           "title": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-          "start_line": 43,
-          "end_line": 52
+          "start_line": 44,
+          "end_line": 53
         },
         {
           "level": 2,
           "title": "5. Ma Trận 4 Phương Án Ứng Phó Tức Thời Trong 60 Giây (Live Incident Remediation)",
-          "start_line": 53,
-          "end_line": 69
+          "start_line": 54,
+          "end_line": 70
         },
         {
           "level": 2,
           "title": "6. Kênh Kết Nối Báo Động Telegram Topic 1 (alerts) & Tình Trạng Trực Chiến",
-          "start_line": 70,
-          "end_line": 74
+          "start_line": 71,
+          "end_line": 75
         }
       ],
       "tickers": {
@@ -2766,33 +2774,33 @@
         "TCBS": [
           {
             "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-            "start_line": 43,
+            "start_line": 44,
             "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-            "end_line": 52
+            "end_line": 53
           }
         ],
         "HPG": [
           {
             "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-            "start_line": 43,
+            "start_line": 44,
             "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-            "end_line": 52
+            "end_line": 53
           }
         ],
         "TCB": [
           {
             "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-            "start_line": 43,
+            "start_line": 44,
             "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-            "end_line": 52
+            "end_line": 53
           }
         ],
         "MBB": [
           {
             "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-            "start_line": 43,
+            "start_line": 44,
             "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-            "end_line": 52
+            "end_line": 53
           }
         ]
       }
@@ -3546,9 +3554,9 @@
       },
       {
         "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-        "start_line": 43,
+        "start_line": 44,
         "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-        "end_line": 52
+        "end_line": 53
       }
     ],
     "CTCP": [
@@ -3592,15 +3600,15 @@
       },
       {
         "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
-        "start_line": 64,
+        "start_line": 9,
         "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 74
+        "end_line": 19
       },
       {
         "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-        "start_line": 43,
+        "start_line": 44,
         "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-        "end_line": 52
+        "end_line": 53
       }
     ],
     "TMCP": [
@@ -3643,10 +3651,16 @@
         "end_line": 64
       },
       {
+        "section": "🎯 **MBB** — Quân Đội (MBBank) (HOSE)",
+        "start_line": 31,
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+        "end_line": 41
+      },
+      {
         "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-        "start_line": 43,
+        "start_line": 44,
         "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-        "end_line": 52
+        "end_line": 53
       }
     ],
     "FPT": [
@@ -3672,9 +3686,9 @@
       },
       {
         "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
-        "start_line": 75,
+        "start_line": 64,
         "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 85
+        "end_line": 74
       }
     ],
     "SSI": [
@@ -3692,15 +3706,15 @@
       },
       {
         "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
-        "start_line": 42,
+        "start_line": 86,
         "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 52
+        "end_line": 95
       },
       {
         "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
-        "start_line": 42,
+        "start_line": 86,
         "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 52
+        "end_line": 95
       }
     ],
     "VCB": [
@@ -3768,9 +3782,9 @@
     "IDC": [
       {
         "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
-        "start_line": 9,
+        "start_line": 20,
         "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 19
+        "end_line": 30
       },
       {
         "section": "💎 4.4. Cổ Phiếu **`IDC`** — Tổng Công ty IDICO (HNX)",
@@ -3788,9 +3802,9 @@
     "IDICO": [
       {
         "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
-        "start_line": 9,
+        "start_line": 20,
         "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 19
+        "end_line": 30
       },
       {
         "section": "💎 4.4. Cổ Phiếu **`IDC`** — Tổng Công ty IDICO (HNX)",
@@ -3805,36 +3819,36 @@
         "end_line": 170
       }
     ],
-    "STB": [
-      {
-        "section": "🎯 **STB** — Sài Gòn Thương Tín (Sacombank) (HOSE)",
-        "start_line": 20,
-        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 30
-      }
-    ],
-    "MSN": [
-      {
-        "section": "🎯 **MSN** — Tập Đoàn Masan (HOSE)",
-        "start_line": 31,
-        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 41
-      }
-    ],
     "GMD": [
       {
         "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
-        "start_line": 53,
+        "start_line": 42,
         "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 63
+        "end_line": 52
       }
     ],
     "PVT": [
       {
         "section": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
-        "start_line": 86,
+        "start_line": 53,
         "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
-        "end_line": 95
+        "end_line": 63
+      }
+    ],
+    "MBS": [
+      {
+        "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
+        "start_line": 75,
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+        "end_line": 85
+      }
+    ],
+    "MB": [
+      {
+        "section": "🎯 **MBS** — Chứng Khoán MB (HNX)",
+        "start_line": 75,
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
+        "end_line": 85
       }
     ],
     "TCBS": [
@@ -3846,9 +3860,9 @@
       },
       {
         "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
-        "start_line": 43,
+        "start_line": 44,
         "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
-        "end_line": 52
+        "end_line": 53
       }
     ],
     "VS": [
@@ -4139,7 +4153,7 @@
     ],
     "PDR": [
       {
-        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,750 đ (+1.73%)",
+        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,600 đ (-1.28%)",
         "start_line": 257,
         "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 262
@@ -4147,7 +4161,7 @@
     ],
     "DXG": [
       {
-        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (+2.33%)",
+        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 10,950 đ (-0.45%)",
         "start_line": 263,
         "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 268
@@ -4155,7 +4169,7 @@
     ],
     "KBC": [
       {
-        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,950 đ (-0.74%)",
+        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,950 đ (+0.00%)",
         "start_line": 269,
         "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 274

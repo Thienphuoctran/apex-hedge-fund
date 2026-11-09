@@ -7,12 +7,12 @@
 ---
 
 ### PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)
-- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 25.64 (>= 20)**
-- **Bản chất chiến lược**: Chỉ số VIX ở mức 25.64 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
+- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 24.12 (>= 20)**
+- **Bản chất chiến lược**: Chỉ số VIX ở mức 24.12 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
 - **Công thức / Quy tắc vàng**:
   > Quy tắc Kỷ luật Thép: Khi VIX >= 20, phần Satellite tuyệt đối KHÔNG sử dụng Margin, giữ tối thiểu 40% tiền mặt/T-Bills.
 - **Thực tế thị trường hôm nay (2026-11-09)**: 
-  - VIX hiện tại: **25.64** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.86%** | Dầu WTI: **$90.29**.
+  - VIX hiện tại: **24.12** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.86%** | Dầu WTI: **$89.67**.
   - Độ rộng thị trường (`Market Breadth`): **45.7%** cổ phiếu giữ trên MA200.
 
 ---
@@ -22,7 +22,7 @@
 - **Phân loại chiến lược**: Trụ cột **Danh Mục Core (`8.0% NAV`)** — Đã qua kỳ BCTC an toàn.
 - **Góc nhìn Quỹ Đầu Tư (Số liệu Kiểm toán v5.0)**:
   1. **Nội tại doanh nghiệp & Dòng tiền thực (Ban 2)**:
-     - Forward P/E: **`21.94x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
+     - Forward P/E: **`21.93x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
      - Hiệu suất sinh lời trên vốn đầu tư (`ROIC`): **`23.81%`** vs Chi phí vốn (`WACC`): **`9.2%`** -> Tạo giá trị kinh tế ròng **`EVA Spread = +14.61%`**.
      - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.7%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.49%`**)*.
   2. **Định lượng & Quản trị rủi ro 2 Tầng (Ban 4)**:
