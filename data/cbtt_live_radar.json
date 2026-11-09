@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-09T03:37:36.950584+00:00",
+  "timestamp_utc": "2026-11-09T04:44:27.462510+00:00",
   "scan_date": "2026-11-09",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 48,
+  "total_vn_announcements_count": 47,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -322,7 +322,7 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn",
-      "total_announcements": 14
+      "total_announcements": 15
     },
     "REE": {
       "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -331,14 +331,6 @@
       "published_at": "Sat, 07 Nov 26 13:15:00 +0700",
       "source_url": "https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn",
       "total_announcements": 1
-    },
-    "FPT": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "FPT AI Factory được vinh danh tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 19:30:00 +0700",
-      "source_url": "https://cafef.vn/fpt-ai-factory-duoc-vinh-danh-tai-giai-thuong-tri-tue-nhan-tao-viet-nam-2026-188261106195055665.chn",
-      "total_announcements": 3
     },
     "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -370,7 +362,15 @@
       "severity": "INFO",
       "published_at": "Sun, 08 Nov 26 11:16:00 +0700",
       "source_url": "https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn",
-      "total_announcements": 3
+      "total_announcements": 2
+    },
+    "FPT": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "\"Cá mập\" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
+      "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
+      "total_announcements": 2
     },
     "STB": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -4945,24 +4945,12 @@
       "symbols": [
         "HCM"
       ],
-      "title": "Bắt giang hồ mạng Hiệp “đen” nổi tiếng trên TikTok: Khám xét khách sạn Hồng Hạnh phát hiện súng giấu trên trần nhà",
-      "summary": "Hiệp “đen”, chủ một khách sạn tại TP.HCM, vừa bị bắt cùng 13 người liên quan sau khi công an phát hiện hàng loạt hành vi vi phạm pháp luật....",
-      "event_type": "CANH_BAO_RUI_RO",
-      "severity": "RED_FLAG",
-      "published_at": "Fri, 06 Nov 26 22:54:00 +0700",
-      "source_url": "https://cafef.vn/bat-giang-ho-mang-hiep-den-noi-tieng-tren-tiktok-kham-xet-khach-san-hong-hanh-phat-hien-sung-giau-tren-tran-nha-188261106220234071.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "FPT AI Factory được vinh danh tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026",
-      "summary": "Ngày 4/11/2026, Nền tảng FPT AI Factory của Tập đoàn FPT được vinh danh ở hạng mục Sản phẩm/Giải pháp tại Giải thưởng Trí tuệ nhân tạo Việt Nam 2026 (AI Awards 2026), trong khuôn khổ Ngày hội Trí tuệ nhân tạo Việt Nam (A...",
+      "title": "Phát hiện 14 người nước ngoài nghi lừa đảo qua sàn chứng khoán ảo ở TP.HCM",
+      "summary": "Công an TP.HCM phát hiện 14 người nước ngoài không có thông tin khai báo tạm trú, cùng nhiều thiết bị, tài liệu nghi liên quan lừa đảo....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 19:30:00 +0700",
-      "source_url": "https://cafef.vn/fpt-ai-factory-duoc-vinh-danh-tai-giai-thuong-tri-tue-nhan-tao-viet-nam-2026-188261106195055665.chn"
+      "published_at": "Mon, 09 Nov 26 11:29:00 +0700",
+      "source_url": "https://cafef.vn/phat-hien-14-nguoi-nuoc-ngoai-nghi-lua-dao-qua-san-chung-khoan-ao-o-tphcm-18826110910442747.chn"
     },
     {
       "market": "VIETNAM",
@@ -5219,14 +5207,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "VND"
+        "HCM"
       ],
-      "title": "Hoán đổi ngoại tệ kỳ hạn 6 tháng: Hỗ trợ thanh khoản, giảm áp lực lãi suất",
-      "summary": "Việc Ngân hàng Nhà nước Việt Nam (NHNN) triển khai nghiệp vụ hoán đổi giữa ngoại tệ và đồng Việt Nam kỳ hạn 6 tháng được đánh giá là giải pháp phù hợp nhằm hỗ trợ nguồn vốn VND cho các tổ chức tín dụng....",
-      "event_type": "TIN_DOANH_NGHIEP",
+      "title": "Nhà đất giấy tay ở TPHCM: Cơ hội nhận bồi thường 100%?",
+      "summary": "Đề xuất hỗ trợ từ 28% đến 100% giá đất bồi thường đối với các trường hợp mua bán nhà, đất bằng giấy tay tại TP.HCM được kỳ vọng tháo gỡ vướng mắc quyền lợi cho người dân, đồng thời khơi thông tiến độ giải phóng mặt bằng ...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
       "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 08:19:00 +0700",
-      "source_url": "https://cafef.vn/hoan-doi-ngoai-te-ky-han-6-thang-ho-tro-thanh-khoan-giam-ap-luc-lai-suat-188261105080626478.chn"
+      "published_at": "Mon, 09 Nov 26 10:59:00 +0700",
+      "source_url": "https://cafef.vn/nha-dat-giay-tay-o-tphcm-co-hoi-nhan-boi-thuong-100-188261109101949552.chn"
     },
     {
       "market": "VIETNAM",
