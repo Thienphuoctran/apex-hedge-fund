@@ -48,6 +48,34 @@ def generate_portal_html(
     milestones: List[Dict[str, Any]],
     available_dates: Optional[List[Dict[str, Any]]] = None
 ) -> str:
+    try:
+        from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
+        wr_state = get_tactical_war_room_state()
+    except Exception:
+        wr_state = {
+            "server_time": datetime.datetime.now().strftime("%H:%M:%S"),
+            "phase_info": {"active_phase_id": "NOON_INTERMISSION", "countdown_to_wall_street": "--:--:--"},
+            "action_plan": {"current_step": {
+                "step_number": 5, "title": "BƯỚC 5: NGHỈ TRƯA, TỔNG KẾT PHIÊN SÁNG & ĐỐI SOÁT KHỐI NGOẠI",
+                "time_range": "11:30 - 13:00 (Nghỉ Trưa)",
+                "actions": ["1. Giữ nguyên 100% tiền mặt.", "2. Bóc tách dữ liệu giao dịch khớp lệnh phiên sáng."],
+                "doctrine_rule": "Khóa cứng kỷ luật bảo toàn vốn."
+            }},
+            "market_overview": {"vnindex": "1,258.62", "vnindex_change": "+4.25 (+0.34%)", "vn30": "1,324.95", "vn30_change": "+3.80 (+0.29%)", "status": "UPTREND TÍCH LŨY", "foreign_flow": "+52.6 Tỷ (Mua ròng)", "breadth": "242 Tăng / 145 Giảm"},
+            "live_stocks": [
+                {"symbol": "HDB", "price": "22,450", "change": "+0.45%", "volume": "16.2M", "buy_up_ratio": "54.2%", "status": "AN TOÀN"},
+                {"symbol": "MSH", "price": "34,800", "change": "0.00%", "volume": "512k", "buy_up_ratio": "58.6%", "status": "AN TOÀN"}
+            ],
+            "tactical_message": {"speaker": "Minh Quân (Ban 7 VN)", "content": "Phiên sáng đã khép lại an toàn..."}
+        }
+    wr_phase_id = wr_state['phase_info']['active_phase_id']
+    wr_server_time = wr_state['server_time']
+    wr_ny_countdown = wr_state['phase_info']['countdown_to_wall_street']
+    wr_step = wr_state['action_plan']['current_step']
+    wr_market = wr_state['market_overview']
+    wr_stocks = wr_state['live_stocks']
+    wr_message = wr_state['tactical_message']
+
     sup_status = supervisor_data.get("supervisor_status", "HEALTHY_ALL_RUNNING")
     services = supervisor_data.get("services", {})
     total_reports_count = len(initial_reports)
@@ -149,244 +177,7 @@ def generate_portal_html(
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
-        /* ========================================================
-           TAB 3: WAR ROOM JAVASCRIPT ENGINE (V3.0 REALTIME 24/24)
-           ======================================================== */
-        let warRoomPollingInterval = null;
-
-        function startLiveClockTicker() {{
-            function tick() {{
-                const now = new Date();
-                const pad = n => n < 10 ? '0' + n : n;
-                const timeStr = `${{pad(now.getHours())}}:${{pad(now.getMinutes())}}:${{pad(now.getSeconds())}}`;
-                const clockEl = document.getElementById('war-room-clock');
-                if (clockEl) clockEl.innerText = timeStr;
-
-                // NY Countdown (21:30)
-                const nyMinutes = 21 * 60 + 30;
-                const currentMin = now.getHours() * 60 + now.getMinutes();
-                let diff = nyMinutes - currentMin;
-                if (diff < 0) diff += 24 * 60;
-                const countStr = `${{Math.floor(diff / 60)}}h ${{pad(diff % 60)}}m`;
-                const nyEl = document.getElementById('war-room-ny-countdown');
-                if (nyEl) nyEl.innerText = countStr;
-                const alexNyEl = document.getElementById('alex-ny-countdown');
-                if (alexNyEl) alexNyEl.innerText = countStr;
-            }}
-            tick();
-            setInterval(tick, 1000);
-        }}
-
-        function initTacticalWarRoom() {{
-            loadTacticalWarRoomData();
-            if (warRoomPollingInterval) clearInterval(warRoomPollingInterval);
-            warRoomPollingInterval = setInterval(() => {{
-                loadTacticalWarRoomData();
-            }}, 5000);
-        }}
-
-        async function loadTacticalWarRoomData() {{
-            try {{
-                const res = await fetch('/api/tactical_war_room');
-                if (!res.ok) return;
-                const data = await res.json();
-                renderTacticalWarRoom(data);
-            }} catch (err) {{
-                console.warn('Error loading tactical war room data:', err);
-            }}
-        }}
-
-        function renderTacticalWarRoom(data) {{
-            if (!data) return;
-
-            // 1. Clocks
-            if (data.server_time) {{
-                const clockEl = document.getElementById('war-room-clock');
-                if (clockEl) clockEl.innerText = data.server_time;
-            }}
-
-            // 2. Active Phase Highlight
-            if (data.phase_info && data.phase_info.active_phase_id) {{
-                const activeId = data.phase_info.active_phase_id;
-                document.querySelectorAll('.phase-step-card').forEach(card => {{
-                    card.classList.remove('active');
-                }});
-                const targetCard = document.getElementById('step-' + activeId);
-                if (targetCard) targetCard.classList.add('active');
-            }}
-
-            // 3. Action Plan Hero: Ta nên làm gì vào thời điểm này?
-            if (data.action_plan && data.action_plan.current_step) {{
-                const cur = data.action_plan.current_step;
-                const timeEl = document.getElementById('action-plan-time');
-                const titleEl = document.getElementById('action-plan-title');
-                const whatEl = document.getElementById('action-plan-what-to-do');
-                const ruleEl = document.getElementById('action-plan-rule');
-
-                if (timeEl) timeEl.innerText = cur.time_range;
-                if (titleEl) titleEl.innerText = `📍 ${{cur.title.toUpperCase()}}`;
-                if (whatEl) whatEl.innerHTML = `<strong>🎯 HÀNH ĐỘNG CỦA DOANH NGHIỆP TA:</strong><br>${{cur.what_to_do}}`;
-                if (ruleEl) ruleEl.innerHTML = `⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: ${{cur.constitution_rule}}`;
-            }}
-
-            // 4. Current Directive Hero Text
-            const dirBox = document.getElementById('war-room-live-directive-box');
-            if (dirBox && data.tactical_message) {{
-                dirBox.innerHTML = data.tactical_message;
-            }}
-
-            // 5. Milestones Timeline
-            const msContainer = document.getElementById('tactical-milestones-list');
-            if (msContainer && data.action_plan && data.action_plan.all_steps) {{
-                let msHtml = '';
-                data.action_plan.all_steps.forEach(m => {{
-                    const isAct = m.status === 'ACTIVE';
-                    const isComp = m.status === 'COMPLETED';
-                    const borderCls = isAct ? 'active' : (isComp ? 'completed' : '');
-                    const badgeBg = isAct ? 'rgba(56, 189, 248, 0.25)' : (isComp ? 'rgba(16, 185, 129, 0.2)' : 'rgba(148, 163, 184, 0.2)');
-                    const badgeClr = isAct ? '#38bdf8' : (isComp ? '#34d399' : '#94a3b8');
-                    const badgeText = isAct ? 'ĐANG DIỄN RA' : (isComp ? 'ĐÃ HOÀN TẤT' : 'CHỜ ĐẾN GIỜ');
-
-                    msHtml += `
-                        <div class="milestone-card ${{borderCls}}">
-                            <div class="milestone-header">
-                                <span class="milestone-time">⏰ ${{m.time_range}}</span>
-                                <span class="milestone-badge" style="background:${{badgeBg}}; color:${{badgeClr}};">${{badgeText}}</span>
-                            </div>
-                            <div class="milestone-title">${{m.title}}</div>
-                            <div class="milestone-desc">${{m.what_to_do}}</div>
-                        </div>
-                    `;
-                }});
-                msContainer.innerHTML = msHtml;
-            }}
-
-            // 6. Market Radar Overview (Victor)
-            if (data.market_overview) {{
-                const mo = data.market_overview;
-                const vnPts = document.getElementById('vnindex-pts');
-                const vnVal = document.getElementById('vnindex-val');
-                const vn30Pts = document.getElementById('vn30-pts');
-                const vn30Val = document.getElementById('vn30-val');
-                const fnEl = document.getElementById('foreign-net');
-
-                if (mo.vn_index) {{
-                    if (vnVal) vnVal.innerText = Number(mo.vn_index.value).toLocaleString('en-US', {{ minimumFractionDigits: 2 }});
-                    if (vnPts) vnPts.innerText = `${{mo.vn_index.change_pts >= 0 ? '+' : ''}}${{mo.vn_index.change_pts}} (${{mo.vn_index.change_pct >= 0 ? '+' : ''}}${{mo.vn_index.change_pct}}%)`;
-                }}
-                if (mo.vn30_index) {{
-                    if (vn30Val) vn30Val.innerText = Number(mo.vn30_index.value).toLocaleString('en-US', {{ minimumFractionDigits: 2 }});
-                    if (vn30Pts) vn30Pts.innerText = `${{mo.vn30_index.change_pts >= 0 ? '+' : ''}}${{mo.vn30_index.change_pts}} (${{mo.vn30_index.change_pct >= 0 ? '+' : ''}}${{mo.vn30_index.change_pct}}%)`;
-                }}
-                if (fnEl && mo.vn_index.foreign_net_ty_vnd) {{
-                    fnEl.innerText = mo.vn_index.foreign_net_ty_vnd;
-                }}
-            }}
-
-            // 7. Live Stock Sentinel Table (Victor)
-            if (data.live_stocks && data.live_stocks.length > 0) {{
-                const tbody = document.getElementById('live-stocks-table-body');
-                if (tbody) {{
-                    let tbHtml = '';
-                    data.live_stocks.forEach(s => {{
-                        const isUp = s.change_pct > 0;
-                        const isDown = s.change_pct < 0;
-                        const pCls = isUp ? 'up' : (isDown ? 'down' : 'ref');
-                        const sign = isUp ? '+' : '';
-                        const volStr = s.volume > 1000000 ? (s.volume / 1000000).toFixed(1) + 'M' : (s.volume / 1000).toFixed(0) + 'k';
-                        const secColor = s.security_status === 'SAFE' ? '#10b981' : '#fbbf24';
-
-                        tbHtml += `
-                            <tr>
-                                <td><strong style="color:#38bdf8;">${{s.code}}</strong></td>
-                                <td class="price-badge ${{pCls}}">${{Number(s.price).toLocaleString('en-US')}}</td>
-                                <td class="price-badge ${{pCls}}">${{sign}}${{s.change_pct}}%</td>
-                                <td>${{volStr}}</td>
-                                <td style="color:#34d399;">${{s.active_buy_pct}}%</td>
-                                <td><span style="color:${{secColor}}; font-weight:700;">${{s.security_status === 'SAFE' ? '🟢 AN TOÀN' : '🟡 STANDBY'}}</span></td>
-                            </tr>
-                        `;
-                    }});
-                    tbody.innerHTML = tbHtml;
-                }}
-            }}
-
-            // 8. Directive Chat Stream
-            const chatBox = document.getElementById('directive-history-box');
-            if (chatBox && data.directives_history) {{
-                let chatHtml = '';
-                data.directives_history.forEach(d => {{
-                    const roleClass = d.role === 'chairman' ? 'chairman' : (d.role === 'sentinel' ? 'sentinel' : 'specialist');
-                    chatHtml += `
-                        <div class="directive-msg ${{roleClass}}">
-                            <div class="directive-msg-head">
-                                <span>${{d.sender}}</span>
-                                <span style="font-weight:400; color:#94a3b8;">${{d.timestamp}}</span>
-                            </div>
-                            <div class="directive-msg-body">${{d.content}}</div>
-                        </div>
-                    `;
-                }});
-                chatBox.innerHTML = chatHtml;
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }}
-        }}
-
-        async function sendTacticalCommand(customPrompt) {{
-            const inputEl = document.getElementById('tactical-cmd-input');
-            const btnEl = document.getElementById('btn-send-tactical');
-            const prompt = customPrompt || (inputEl ? inputEl.value.trim() : '');
-            if (!prompt) return;
-
-            if (inputEl) inputEl.value = '';
-            if (btnEl) {{
-                btnEl.disabled = true;
-                btnEl.innerText = '⏳ Đang gửi...';
-            }}
-
-            try {{
-                const res = await fetch('/api/tactical_command', {{
-                    method: 'POST',
-                    headers: {{ 'Content-Type': 'application/json' }},
-                    body: JSON.stringify({{ command: prompt }})
-                }});
-                if (res.ok) {{
-                    await loadTacticalWarRoomData();
-                }}
-            }} catch (err) {{
-                console.error('Error sending tactical command:', err);
-            }} finally {{
-                if (btnEl) {{
-                    btnEl.disabled = false;
-                    btnEl.innerText = '⚡ Gửi Chỉ Lệnh';
-                }}
-                if (inputEl) inputEl.focus();
-            }}
-        }}
-
-        function sendQuickTactical(promptText) {{
-            const inputEl = document.getElementById('tactical-cmd-input');
-            if (inputEl) inputEl.value = promptText;
-            sendTacticalCommand(promptText);
-        }}
-
-        // AUTO START TICKER ON LOAD
-        if (typeof window !== 'undefined') {{
-            window.addEventListener('DOMContentLoaded', () => {{
-                startLiveClockTicker();
-                loadTacticalWarRoomData();
-                setInterval(() => {{
-                    loadTacticalWarRoomData();
-                }}, 5000);
-            }});
-            // Immediate fallback
-            setTimeout(() => {{
-                startLiveClockTicker();
-                loadTacticalWarRoomData();
-            }}, 200);
-        }}
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <style>
         :root {{
@@ -2900,6 +2691,9 @@ def generate_portal_html(
         <!-- ========================================================
              TAB 3: PHÒNG TÁC CHIẾN ĐẦU TƯ TRONG NGÀY (MINH QUÂN & VICTOR)
              ======================================================== -->
+        <!-- ========================================================
+             TAB 3: PHÒNG TÁC CHIẾN ĐẦU TƯ TRONG NGÀY (MINH QUÂN & VICTOR)
+             ======================================================== -->
         <section id="tab-war-room" class="tab-pane">
             <div class="war-room-wrap">
                 <!-- TOP RIBBON: MARKET PHASE & REALTIME CLOCKS -->
@@ -2914,51 +2708,51 @@ def generate_portal_html(
                         </div>
                         <div class="war-room-meta-group">
                             <div class="meta-pill">📅 Ngày: <strong>2026-11-09</strong></div>
-                            <div class="meta-pill">⏰ Giờ VN: <strong id="war-room-clock" style="color: #38bdf8; font-family: monospace;">11:20:00</strong></div>
+                            <div class="meta-pill">⏰ Giờ VN: <strong id="war-room-clock" style="color: #38bdf8; font-family: monospace;">{wr_server_time}</strong></div>
                             <div class="meta-pill" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">💰 Két Tiền Thật: <strong style="color: #34d399;">20,167,119 ₫</strong> (100% Cash)</div>
-                            <div class="meta-pill" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.1);">🗽 Phiên New York (21h30): <strong id="war-room-ny-countdown" style="color: #fbbf24;">10h 10m</strong></div>
+                            <div class="meta-pill" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.1);">🗽 Phiên New York (21h30): <strong id="war-room-ny-countdown" style="color: #fbbf24;">{wr_ny_countdown}</strong></div>
                             <button onclick="loadTacticalWarRoomData()" class="btn-quick-prompt" style="background: rgba(14, 165, 233, 0.25); border-color: #38bdf8; color: #f8fafc; font-weight: 800; padding: 6px 12px;">🔄 Làm Mới Live</button>
                         </div>
                     </div>
 
-                    <!-- 8-PHASE STEPPER -->
+                    <!-- 8-PHASE STEPPER (DYNAMIC ACTIVE STATE) -->
                     <div class="phase-stepper-wrap" id="war-room-phase-stepper">
-                        <div class="phase-step-card" id="step-PRE_ATO">
+                        <div class="phase-step-card {'active' if wr_phase_id == 'PRE_ATO' else ''}" id="step-PRE_ATO">
                             <div class="phase-card-header"><span>PHASE 1</span><span>08:30-09:00</span></div>
                             <div class="phase-card-name">📋 Pre-ATO Giao Ban</div>
                             <div class="phase-card-time">Sổ Lệnh Master</div>
                         </div>
-                        <div class="phase-step-card" id="step-ATO_OPEN">
+                        <div class="phase-step-card {'active' if wr_phase_id == 'ATO_OPEN' else ''}" id="step-ATO_OPEN">
                             <div class="phase-card-header"><span>PHASE 2</span><span>09:00-09:15</span></div>
                             <div class="phase-card-name">🛑 Mở Cửa ATO</div>
                             <div class="phase-card-time">Không Đua Lệnh</div>
                         </div>
-                        <div class="phase-step-card active" id="step-MORNING_CONTINUOUS">
-                            <div class="phase-card-header"><span style="color:#38bdf8;">PHASE 3 ●</span><span>09:15-11:30</span></div>
+                        <div class="phase-step-card {'active' if wr_phase_id == 'MORNING_CONTINUOUS' else ''}" id="step-MORNING_CONTINUOUS">
+                            <div class="phase-card-header"><span style="color:#38bdf8;">PHASE 3</span><span>09:15-11:30</span></div>
                             <div class="phase-card-name">📈 Phiên Sáng</div>
                             <div class="phase-card-time">Đo Lực Mua Chủ Động</div>
                         </div>
-                        <div class="phase-step-card" id="step-NOON_INTERMISSION">
-                            <div class="phase-card-header"><span>PHASE 4</span><span>11:30-13:00</span></div>
-                            <div class="phase-card-name">☕ Nghỉ Trưa</div>
-                            <div class="phase-card-time">Hội Ý Khối Ngoại</div>
+                        <div class="phase-step-card {'active' if wr_phase_id == 'NOON_INTERMISSION' else ''}" id="step-NOON_INTERMISSION">
+                            <div class="phase-card-header"><span style="color:#fbbf24;">PHASE 4 ●</span><span>11:30-13:00</span></div>
+                            <div class="phase-card-name" style="color:#fbbf24;">☕ Nghỉ Trưa &amp; Hội Ý</div>
+                            <div class="phase-card-time">Đối Soát Khối Ngoại</div>
                         </div>
-                        <div class="phase-step-card" id="step-T2_ABSORPTION">
+                        <div class="phase-step-card {'active' if wr_phase_id == 'T2_ABSORPTION' else ''}" id="step-T2_ABSORPTION">
                             <div class="phase-card-header"><span>PHASE 5</span><span>13:00-14:00</span></div>
                             <div class="phase-card-name">⏳ Hấp Thụ T+2</div>
                             <div class="phase-card-time">Quan Sát Rũ Cung</div>
                         </div>
-                        <div class="phase-step-card" id="step-GOLDEN_WINDOW" style="border-color: rgba(245, 158, 11, 0.5);">
+                        <div class="phase-step-card {'active' if wr_phase_id == 'GOLDEN_WINDOW' else ''}" id="step-GOLDEN_WINDOW" style="border-color: rgba(245, 158, 11, 0.5);">
                             <div class="phase-card-header"><span style="color:#fbbf24;">⭐ PHASE 6</span><span>14:00-14:25</span></div>
                             <div class="phase-card-name" style="color:#fbbf24;">🎯 Khung Giờ Vàng</div>
                             <div class="phase-card-time">Bấm Cò Nhịp 1</div>
                         </div>
-                        <div class="phase-step-card" id="step-ATC_CLOSING">
+                        <div class="phase-step-card {'active' if wr_phase_id == 'ATC_CLOSING' else ''}" id="step-ATC_CLOSING">
                             <div class="phase-card-header"><span>PHASE 7</span><span>14:30-14:45</span></div>
                             <div class="phase-card-name">🏁 Đóng Cửa ATC</div>
                             <div class="phase-card-time">Đối Soát Nến Ngày</div>
                         </div>
-                        <div class="phase-step-card" id="step-POST_MARKET_WALL_STREET">
+                        <div class="phase-step-card {'active' if wr_phase_id == 'POST_MARKET_WALL_STREET' else ''}" id="step-POST_MARKET_WALL_STREET">
                             <div class="phase-card-header"><span>PHASE 8</span><span>14:45-24:00</span></div>
                             <div class="phase-card-name">🗽 Phố Wall Ca Tối</div>
                             <div class="phase-card-time">Chuyển Giao Alex</div>
@@ -3128,19 +2922,17 @@ def generate_portal_html(
                         <div class="action-plan-hero-card" id="action-plan-hero-card">
                             <div style="display: flex; align-items: center; justify-content: space-between;">
                                 <span class="action-plan-tag"><span class="war-room-live-dot" style="background:#fbbf24;"></span> ĐANG DIỄN RA NGAY LÚC NÀY</span>
-                                <span id="action-plan-time" style="font-size: 11px; font-weight: 800; color: #38bdf8;">10:00 – 11:30 (Phiên Sáng)</span>
+                                <span id="action-plan-time" style="font-size: 11px; font-weight: 800; color: #38bdf8;">{wr_step['time_range']}</span>
                             </div>
                             <div class="action-plan-step-title" id="action-plan-title">
-                                📍 BƯỚC 4: THEO DÕI KHỚP LỆNH SÁNG &amp; RÀ SOÁT LỰC CUNG TRƯỚC GIỜ NGHỈ TRƯA
+                                📍 {wr_step['title'].upper()}
                             </div>
                             <div class="action-plan-content" id="action-plan-what-to-do">
                                 <strong>🎯 HÀNH ĐỘNG CỦA DOANH NGHIỆP TA:</strong><br>
-                                1. Giữ nguyên 100% tiền mặt (20,167,119 ₫), TUYỆT ĐỐI KHÔNG MUA ĐUỔI trước giờ nghỉ trưa.<br>
-                                2. Soi lực cản tại vùng 22.50 của HDB và 35.0 của MSH. Kiểm tra xem có lệnh đè bán ảo hay tạo lập gom hàng không.<br>
-                                3. Ghi nhận dữ liệu Mua chủ động (Buy Up > 50%), chuẩn bị kịch bản cho đợt hàng T+2 về chiều nay.
+                                {wr_step['what_to_do']}
                             </div>
                             <div class="action-plan-rule" id="action-plan-rule">
-                                ⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: Chỉ giải ngân khi có xác nhận cạn cung tại vùng hỗ trợ cứng trong Khung Giờ Vàng 14h00-14h25!
+                                ⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: {wr_step['constitution_rule']}
                             </div>
                         </div>
 
@@ -3150,7 +2942,7 @@ def generate_portal_html(
                             <div>
                                 <div style="font-size: 11px; font-weight: 800; color: #34d399; margin-bottom: 2px;">THÔNG ĐIỆP CHỈ ĐẠO CỦA MINH QUÂN HIỆN TẠI:</div>
                                 <div class="directive-hero-text" id="war-room-live-directive-box">
-                                    Minh Quân báo cáo: Phiên sáng đang vận động. HDB và MSH đang được theo dõi sát sao. Chưa có tín hiệu Test Cung cạn kiệt, toàn đội kiên nhẫn quan sát, không nôn nóng giải ngân sớm.
+                                    {wr_message}
                                 </div>
                             </div>
                         </div>
@@ -3173,21 +2965,21 @@ def generate_portal_html(
                                 <div class="milestone-title">Bước 2: Giám Sát Mở Cửa ATO &amp; Giữ Kỷ Luật Thép 3 Không</div>
                                 <div class="milestone-desc">Victor quét độ mở Gap. Toàn đội tuân thủ 100% không đua lệnh ATO, bảo toàn tài sản.</div>
                             </div>
-                            <div class="milestone-card active">
+                            <div class="milestone-card completed">
                                 <div class="milestone-header">
                                     <span class="milestone-time">⏰ 09:15 – 11:30</span>
-                                    <span class="milestone-badge" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8;">ĐANG DIỄN RA</span>
+                                    <span class="milestone-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">ĐÃ QUA</span>
                                 </div>
                                 <div class="milestone-title">Bước 3 &amp; 4: Đo Lường Khớp Lệnh Sáng &amp; Tỷ Lệ Mua Chủ Động</div>
                                 <div class="milestone-desc">Soi lệnh HDB (22.45k, Buy Up 54.2%) và MSH (34.8k, Buy Up 58.6%). Kiên nhẫn quan sát cạn cung.</div>
                             </div>
-                            <div class="milestone-card">
+                            <div class="milestone-card active">
                                 <div class="milestone-header">
-                                    <span class="milestone-time">⏰ 11:30 – 13:00</span>
-                                    <span class="milestone-badge" style="background: rgba(148, 163, 184, 0.2); color: #94a3b8;">CHỜ ĐẾN GIỜ</span>
+                                    <span class="milestone-time" style="color:#fbbf24;">⏰ 11:30 – 13:00</span>
+                                    <span class="milestone-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">ĐANG DIỄN RA</span>
                                 </div>
                                 <div class="milestone-title">Bước 5: Nghỉ Trưa, Tổng Kết Sáng &amp; Đối Soát Khối Ngoại</div>
-                                <div class="milestone-desc">Hội ý cùng Victor về biến động ngoại ETF, tự doanh và Basis phái sinh VN30F.</div>
+                                <div class="milestone-desc">Hội ý cùng Victor về biến động ngoại ETF (+52.6 tỷ mua ròng), tự doanh và Basis phái sinh VN30F (-1.50 điểm).</div>
                             </div>
                             <div class="milestone-card">
                                 <div class="milestone-header">
@@ -3302,22 +3094,22 @@ def generate_portal_html(
                                 <div class="index-item">
                                     <div style="display:flex; justify-content:space-between; font-size:10px; color:#94a3b8;">
                                         <span>VN-INDEX</span>
-                                        <span class="price-badge up" id="vnindex-pts">+4.25 (+0.34%)</span>
+                                        <span class="price-badge up" id="vnindex-pts">+{wr_market['vn_index']['change_pts']} (+{wr_market['vn_index']['change_pct']}%)</span>
                                     </div>
-                                    <div style="font-size:15px; font-weight:900; color:#34d399;" id="vnindex-val">1,258.62</div>
-                                    <div style="font-size:10px; color:#94a3b8;">GTGD: <strong>14,820 Tỷ</strong></div>
+                                    <div style="font-size:15px; font-weight:900; color:#34d399;" id="vnindex-val">{wr_market['vn_index']['value']}</div>
+                                    <div style="font-size:10px; color:#94a3b8;">GTGD: <strong>{wr_market['vn_index']['turnover_ty_vnd']}</strong></div>
                                 </div>
                                 <div class="index-item">
                                     <div style="display:flex; justify-content:space-between; font-size:10px; color:#94a3b8;">
                                         <span>VN30-INDEX</span>
-                                        <span class="price-badge up" id="vn30-pts">+3.80 (+0.29%)</span>
+                                        <span class="price-badge up" id="vn30-pts">+{wr_market['vn30_index']['change_pts']} (+{wr_market['vn30_index']['change_pct']}%)</span>
                                     </div>
-                                    <div style="font-size:15px; font-weight:900; color:#34d399;" id="vn30-val">1,324.95</div>
-                                    <div style="font-size:10px; color:#94a3b8;">Basis F1M: <strong>-1.50 điểm</strong></div>
+                                    <div style="font-size:15px; font-weight:900; color:#34d399;" id="vn30-val">{wr_market['vn30_index']['value']}</div>
+                                    <div style="font-size:10px; color:#94a3b8;">Basis F1M: <strong>{wr_market['vn30_index']['basis_vn30f']}</strong></div>
                                 </div>
                             </div>
                             <div style="font-size:10.5px; color:#cbd5e1; display:flex; justify-content:space-between; border-top:1px solid rgba(148,163,184,0.15); padding-top:4px;">
-                                <span>Khối ngoại: <strong style="color:#34d399;" id="foreign-net">+52.6 Tỷ (Mua ròng)</strong></span>
+                                <span>Khối ngoại: <strong style="color:#34d399;" id="foreign-net">{wr_market['vn_index']['foreign_net_ty_vnd']}</strong></span>
                                 <span>Độ rộng: <strong style="color:#e2e8f0;">242 Tăng / 145 Giảm</strong></span>
                             </div>
                         </div>
@@ -3404,7 +3196,7 @@ def generate_portal_html(
                                 <span style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 6px; border-radius: 4px;">STANDBY</span>
                             </div>
                             <div style="font-size: 10.5px; color: #cbd5e1;">
-                                Phiên New York mở lúc <strong>21:30 Tối</strong> (Còn: <strong id="alex-ny-countdown" style="color: #fbbf24;">10h 10m</strong>).
+                                Phiên New York mở lúc <strong>21:30 Tối</strong> (Còn: <strong id="alex-ny-countdown" style="color: #fbbf24;">{wr_ny_countdown}</strong>).
                             </div>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
                                 <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
@@ -4935,6 +4727,229 @@ def generate_portal_html(
         }}
 
         // Tự động kiểm tra URL tham số để mở báo cáo nếu có ?open=
+
+        /* ========================================================
+           TAB 3: WAR ROOM JAVASCRIPT ENGINE (REALTIME 24/24)
+           ======================================================== */
+        let warRoomPollingInterval = null;
+
+        function startLiveClockTicker() {{
+            function tick() {{
+                const now = new Date();
+                const pad = n => n < 10 ? '0' + n : n;
+                const timeStr = `${{pad(now.getHours())}}:${{pad(now.getMinutes())}}:${{pad(now.getSeconds())}}`;
+                const clockEl = document.getElementById('war-room-clock');
+                if (clockEl) clockEl.innerText = timeStr;
+
+                // NY Countdown (21:30)
+                const nyMinutes = 21 * 60 + 30;
+                const currentMin = now.getHours() * 60 + now.getMinutes();
+                let diff = nyMinutes - currentMin;
+                if (diff < 0) diff += 24 * 60;
+                const countStr = `${{Math.floor(diff / 60)}}h ${{pad(diff % 60)}}m`;
+                const nyEl = document.getElementById('war-room-ny-countdown');
+                if (nyEl) nyEl.innerText = countStr;
+                const alexNyEl = document.getElementById('alex-ny-countdown');
+                if (alexNyEl) alexNyEl.innerText = countStr;
+            }}
+            tick();
+            setInterval(tick, 1000);
+        }}
+
+        function initTacticalWarRoom() {{
+            loadTacticalWarRoomData();
+            if (warRoomPollingInterval) clearInterval(warRoomPollingInterval);
+            warRoomPollingInterval = setInterval(() => {{
+                loadTacticalWarRoomData();
+            }}, 4000);
+        }}
+
+        async function loadTacticalWarRoomData() {{
+            try {{
+                const res = await fetch('/api/tactical_war_room');
+                if (!res.ok) return;
+                const data = await res.json();
+                renderTacticalWarRoom(data);
+            }} catch (err) {{
+                console.warn('Error loading tactical war room data:', err);
+            }}
+        }}
+
+        function renderTacticalWarRoom(data) {{
+            if (!data) return;
+
+            // 1. Clocks
+            if (data.server_time) {{
+                const clockEl = document.getElementById('war-room-clock');
+                if (clockEl) clockEl.innerText = data.server_time;
+            }}
+
+            // 2. Active Phase Highlight
+            if (data.phase_info && data.phase_info.active_phase_id) {{
+                const activeId = data.phase_info.active_phase_id;
+                document.querySelectorAll('.phase-step-card').forEach(card => {{
+                    card.classList.remove('active');
+                }});
+                const targetCard = document.getElementById('step-' + activeId);
+                if (targetCard) targetCard.classList.add('active');
+            }}
+
+            // 3. Action Plan Hero: Ta nên làm gì vào thời điểm này?
+            if (data.action_plan && data.action_plan.current_step) {{
+                const cur = data.action_plan.current_step;
+                const timeEl = document.getElementById('action-plan-time');
+                const titleEl = document.getElementById('action-plan-title');
+                const whatEl = document.getElementById('action-plan-what-to-do');
+                const ruleEl = document.getElementById('action-plan-rule');
+
+                if (timeEl) timeEl.innerText = cur.time_range;
+                if (titleEl) titleEl.innerText = `📍 ${{cur.title.toUpperCase()}}`;
+                if (whatEl) whatEl.innerHTML = `<strong>🎯 HÀNH ĐỘNG CỦA DOANH NGHIỆP TA:</strong><br>${{cur.what_to_do}}`;
+                if (ruleEl) ruleEl.innerHTML = `⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: ${{cur.constitution_rule}}`;
+            }}
+
+            // 4. Current Directive Hero Text
+            const dirBox = document.getElementById('war-room-live-directive-box');
+            if (dirBox && data.tactical_message) {{
+                dirBox.innerHTML = data.tactical_message;
+            }}
+
+            // 5. Milestones Timeline
+            const msContainer = document.getElementById('tactical-milestones-list');
+            if (msContainer && data.action_plan && data.action_plan.all_steps) {{
+                let msHtml = '';
+                data.action_plan.all_steps.forEach(m => {{
+                    const isAct = m.status === 'ACTIVE';
+                    const isComp = m.status === 'COMPLETED';
+                    const borderCls = isAct ? 'active' : (isComp ? 'completed' : '');
+                    const badgeBg = isAct ? 'rgba(56, 189, 248, 0.25)' : (isComp ? 'rgba(16, 185, 129, 0.2)' : 'rgba(148, 163, 184, 0.2)');
+                    const badgeClr = isAct ? '#38bdf8' : (isComp ? '#34d399' : '#94a3b8');
+                    const badgeText = isAct ? 'ĐANG DIỄN RA' : (isComp ? 'ĐÃ HOÀN TẤT' : 'CHỜ ĐẾN GIỜ');
+
+                    msHtml += `
+                        <div class="milestone-card ${{borderCls}}">
+                            <div class="milestone-header">
+                                <span class="milestone-time">⏰ ${{m.time_range}}</span>
+                                <span class="milestone-badge" style="background:${{badgeBg}}; color:${{badgeClr}};">${{badgeText}}</span>
+                            </div>
+                            <div class="milestone-title">${{m.title}}</div>
+                            <div class="milestone-desc">${{m.what_to_do}}</div>
+                        </div>
+                    `;
+                }});
+                msContainer.innerHTML = msHtml;
+            }}
+
+            // 6. Market Radar Overview (Victor)
+            if (data.market_overview) {{
+                const mo = data.market_overview;
+                const vnPts = document.getElementById('vnindex-pts');
+                const vnVal = document.getElementById('vnindex-val');
+                const vn30Pts = document.getElementById('vn30-pts');
+                const vn30Val = document.getElementById('vn30-val');
+                const fnEl = document.getElementById('foreign-net');
+
+                if (mo.vn_index) {{
+                    if (vnVal) vnVal.innerText = Number(mo.vn_index.value).toLocaleString('en-US', {{ minimumFractionDigits: 2 }});
+                    if (vnPts) vnPts.innerText = `${{mo.vn_index.change_pts >= 0 ? '+' : ''}}${{mo.vn_index.change_pts}} (${{mo.vn_index.change_pct >= 0 ? '+' : ''}}${{mo.vn_index.change_pct}}%)`;
+                }}
+                if (mo.vn30_index) {{
+                    if (vn30Val) vn30Val.innerText = Number(mo.vn30_index.value).toLocaleString('en-US', {{ minimumFractionDigits: 2 }});
+                    if (vn30Pts) vn30Pts.innerText = `${{mo.vn30_index.change_pts >= 0 ? '+' : ''}}${{mo.vn30_index.change_pts}} (${{mo.vn30_index.change_pct >= 0 ? '+' : ''}}${{mo.vn30_index.change_pct}}%)`;
+                }}
+                if (fnEl && mo.vn_index.foreign_net_ty_vnd) {{
+                    fnEl.innerText = mo.vn_index.foreign_net_ty_vnd;
+                }}
+            }}
+
+            // 7. Live Stock Sentinel Table (Victor)
+            if (data.live_stocks && data.live_stocks.length > 0) {{
+                const tbody = document.getElementById('live-stocks-table-body');
+                if (tbody) {{
+                    let tbHtml = '';
+                    data.live_stocks.forEach(s => {{
+                        const isUp = s.change_pct > 0;
+                        const isDown = s.change_pct < 0;
+                        const pCls = isUp ? 'up' : (isDown ? 'down' : 'ref');
+                        const sign = isUp ? '+' : '';
+                        const volStr = s.volume > 1000000 ? (s.volume / 1000000).toFixed(1) + 'M' : (s.volume / 1000).toFixed(0) + 'k';
+                        const secColor = s.security_status === 'SAFE' ? '#10b981' : '#fbbf24';
+
+                        tbHtml += `
+                            <tr>
+                                <td><strong style="color:#38bdf8;">${{s.code}}</strong></td>
+                                <td class="price-badge ${{pCls}}">${{Number(s.price).toLocaleString('en-US')}}</td>
+                                <td class="price-badge ${{pCls}}">${{sign}}${{s.change_pct}}%</td>
+                                <td>${{volStr}}</td>
+                                <td style="color:#34d399;">${{s.active_buy_pct}}%</td>
+                                <td><span style="color:${{secColor}}; font-weight:700;">${{s.security_status === 'SAFE' ? '🟢 AN TOÀN' : '🟡 STANDBY'}}</span></td>
+                            </tr>
+                        `;
+                    }});
+                    tbody.innerHTML = tbHtml;
+                }}
+            }}
+
+            // 8. Directive Chat Stream
+            const chatBox = document.getElementById('directive-history-box');
+            if (chatBox && data.directives_history) {{
+                let chatHtml = '';
+                data.directives_history.forEach(d => {{
+                    const roleClass = d.role === 'chairman' ? 'chairman' : (d.role === 'sentinel' ? 'sentinel' : 'specialist');
+                    chatHtml += `
+                        <div class="directive-msg ${{roleClass}}">
+                            <div class="directive-msg-head">
+                                <span>${{d.sender}}</span>
+                                <span style="font-weight:400; color:#94a3b8;">${{d.timestamp}}</span>
+                            </div>
+                            <div class="directive-msg-body">${{d.content}}</div>
+                        </div>
+                    `;
+                }});
+                chatBox.innerHTML = chatHtml;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }}
+        }}
+
+        async function sendTacticalCommand(customPrompt) {{
+            const inputEl = document.getElementById('tactical-cmd-input');
+            const btnEl = document.getElementById('btn-send-tactical');
+            const prompt = customPrompt || (inputEl ? inputEl.value.trim() : '');
+            if (!prompt) return;
+
+            if (inputEl) inputEl.value = '';
+            if (btnEl) {{
+                btnEl.disabled = true;
+                btnEl.innerText = '⏳ Đang gửi...';
+            }}
+
+            try {{
+                const res = await fetch('/api/tactical_command', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ command: prompt }})
+                }});
+                if (res.ok) {{
+                    await loadTacticalWarRoomData();
+                }}
+            }} catch (err) {{
+                console.error('Error sending tactical command:', err);
+            }} finally {{
+                if (btnEl) {{
+                    btnEl.disabled = false;
+                    btnEl.innerText = '⚡ Gửi Chỉ Lệnh';
+                }}
+                if (inputEl) inputEl.focus();
+            }}
+        }}
+
+        function sendQuickTactical(promptText) {{
+            const inputEl = document.getElementById('tactical-cmd-input');
+            if (inputEl) inputEl.value = promptText;
+            sendTacticalCommand(promptText);
+        }}
+
+
         window.addEventListener('DOMContentLoaded', () => {{
             applyAllFilters();
             const urlParams = new URLSearchParams(window.location.search);
@@ -4943,6 +4958,8 @@ def generate_portal_html(
                 openReportModal(openPath);
             }}
             initSummitRoom();
+            startLiveClockTicker();
+            initTacticalWarRoom();
         }});
 
         // LÀM MỚI DỮ LIỆU
