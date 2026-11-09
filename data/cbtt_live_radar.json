@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-08T13:39:47.829280+00:00",
-  "scan_date": "2026-11-08",
+  "timestamp_utc": "2026-11-09T03:37:36.950584+00:00",
+  "scan_date": "2026-11-09",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 46,
+  "total_vn_announcements_count": 48,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -284,6 +284,22 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 10
     },
+    "GAS": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 10:14:00 +0700",
+      "source_url": "https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn",
+      "total_announcements": 1
+    },
+    "PNJ": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn",
+      "total_announcements": 7
+    },
     "POW": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu?",
@@ -298,7 +314,7 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 26 00:03:00 +0700",
       "source_url": "https://cafef.vn/nha-may-loc-hoa-dau-dau-tien-cua-viet-nam-nang-muc-tieu-loi-nhuan-nam-2026-len-hon-18500-ty-dong-gap-86-lan-ke-hoach-ban-dau-188261107211140114.chn",
-      "total_announcements": 3
+      "total_announcements": 4
     },
     "HCM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -306,7 +322,7 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn",
-      "total_announcements": 11
+      "total_announcements": 14
     },
     "REE": {
       "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -314,7 +330,7 @@
       "severity": "INFO",
       "published_at": "Sat, 07 Nov 26 13:15:00 +0700",
       "source_url": "https://cafef.vn/ba-nguyen-thi-mai-thanh-cong-ty-cua-ree-muon-sap-nhap-them-nhieu-cong-ty-con-boi-viec-dang-nhieu-kinh-khung-188261107121602758.chn",
-      "total_announcements": 2
+      "total_announcements": 1
     },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -322,15 +338,15 @@
       "severity": "INFO",
       "published_at": "Fri, 06 Nov 26 19:30:00 +0700",
       "source_url": "https://cafef.vn/fpt-ai-factory-duoc-vinh-danh-tai-giai-thuong-tri-tue-nhan-tao-viet-nam-2026-188261106195055665.chn",
-      "total_announcements": 4
+      "total_announcements": 3
     },
-    "IDC": {
+    "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC",
+      "latest_title": "Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền”",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 16:20:00 +0700",
-      "source_url": "https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn",
-      "total_announcements": 1
+      "published_at": "Mon, 09 Nov 26 10:37:00 +0700",
+      "source_url": "https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn",
+      "total_announcements": 2
     },
     "SSI": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -338,31 +354,15 @@
       "severity": "INFO",
       "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/tin-hieu-vn-index-tao-day-xuat-hien-ssi-goi-ten-11-co-phieu-co-du-dia-tang-manh-188261107205152922.chn",
-      "total_announcements": 2
+      "total_announcements": 3
     },
-    "PNJ": {
+    "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "PNJ bất ngờ muốn rút sạch vốn khỏi công ty cầm đồ sau chưa đầy 8 tháng",
+      "latest_title": "Ngày 9/11, gửi dưới 1 tỷ đồng kỳ hạn 9 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
       "severity": "INFO",
-      "published_at": "Sat, 07 Nov 26 10:50:00 +0700",
-      "source_url": "https://cafef.vn/pnj-bat-ngo-muon-rut-sach-von-khoi-cong-ty-cam-do-sau-chua-day-8-thang-188261107105050558.chn",
-      "total_announcements": 7
-    },
-    "KDH": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/phien-6-11-khoi-ngoai-do-tien-mua-rong-hon-400-ty-dong-co-phieu-viet-nam-giua-luc-chung-khoan-toan-cau-lao-doc-188261106153537479.chn",
-      "total_announcements": 1
-    },
-    "PC1": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 13:32:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-cua-nu-chu-tich-27-tuoi-phat-thong-bao-quan-trong-188261106113423265.chn",
-      "total_announcements": 1
+      "published_at": "Mon, 09 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-9-11-gui-duoi-1-ty-dong-ky-han-9-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261108222446822.chn",
+      "total_announcements": 8
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -372,28 +372,12 @@
       "source_url": "https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn",
       "total_announcements": 3
     },
-    "ACB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngày 8/11, gửi dưới 1 tỷ đồng kỳ hạn 1 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-8-11-gui-duoi-1-ty-dong-ky-han-1-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261107214517163.chn",
-      "total_announcements": 8
-    },
     "STB": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "\"Cá mập\" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB",
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
       "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
-      "total_announcements": 1
-    },
-    "MBS": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 2026 03:44:26 GMT",
-      "source_url": "https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm",
       "total_announcements": 1
     },
     "CTG": {
@@ -4875,6 +4859,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "GAS"
+      ],
+      "title": "Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ",
+      "summary": "Được xây dựng từ năm 2009 với sự góp vốn của PV GAS, PV Engineering và doanh nghiệp thuộc hệ sinh thái của nữ tỷ phú Nguyễn Thị Phương Thảo, tòa PV GAS Tower tại số 673 Nguyễn Hữu Thọ hiện là địa chỉ của nhiều đơn vị ngà...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 10:14:00 +0700",
+      "source_url": "https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng",
+      "summary": "Ông Phan Quốc Công, người đứng sau thương hiệu dầu gội X-Men, từng tham gia hai thương vụ bán cổ phần chi phối doanh nghiệp Việt cho nhà đầu tư nước ngoài. Năm 2011, tập đoàn Ấn Độ chi khoảng 60 triệu USD mua ICP. Một th...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "POW"
       ],
       "title": "PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu?",
@@ -4959,26 +4967,26 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "MBS"
       ],
-      "title": "Vừa tăng vốn gần 37.000 tỷ đồng, Đại Quang Minh của đại gia 'Khoa Khàn' được giao 4,3ha đất vàng Thủ Thiêm",
-      "summary": "Sau khi tăng vốn điều lệ lên gần 37.000 tỷ đồng, Công ty cổ phần Đầu tư Địa ốc Đại Quang Minh của đại gia Trần Đăng Khoa (Khoa Khàn) tiếp tục được TP.HCM giao 4 lô đất với tổng diện tích gần 43.000m2 tại Thủ Thiêm để tha...",
-      "event_type": "ESOP_PHAT_HANH",
-      "severity": "WARNING",
-      "published_at": "Fri, 06 Nov 26 16:30:00 +0700",
-      "source_url": "https://cafef.vn/vua-tang-von-gan-37000-ty-dong-dai-quang-minh-cua-dai-gia-khoa-khan-duoc-giao-43ha-dat-vang-thu-thiem-188261106163036649.chn"
+      "title": "Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền”",
+      "summary": "Về kỹ thuật, MBS cho rằng hiện tượng \"lệch pha\" giữa VN-Index và diễn biến của mặt bằng cổ phiếu vẫn chưa hoàn toàn chấm dứt....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 10:37:00 +0700",
+      "source_url": "https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "IDC"
+        "HCM"
       ],
-      "title": "Lãnh đạo Idico đăng ký mua 4,4 triệu cổ phiếu IDC",
-      "summary": "Ông Đặng Việt Dũng- Phó Tổng Giám đốc của Idico vừa đăng ký mua 4,4 triệu cổ phiếu IDC nhằm mục đích tăng tỷ lệ sở hữu....",
+      "title": "Một nhà đầu tư xử phạt hành chính do thao túng cổ phiếu",
+      "summary": "Một nhà đầu tư ở TP.HCM bị phạt tiền 1,5 tỷ đồng đối với hành vi thao túng thị trường chứng khoán....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 16:20:00 +0700",
-      "source_url": "https://cafef.vn/lanh-dao-idico-dang-ky-mua-44-trieu-co-phieu-idc-188261106154022067.chn"
+      "published_at": "Sun, 08 Nov 26 21:46:00 +0700",
+      "source_url": "https://cafef.vn/mot-nha-dau-tu-xu-phat-hanh-chinh-do-thao-tung-co-phieu-18826110820552351.chn"
     },
     {
       "market": "VIETNAM",
@@ -5031,50 +5039,38 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "KDH"
+        "HCM"
       ],
-      "title": "Khối ngoại bất ngờ đổ tiền mua cổ phiếu Việt Nam giữa lúc chứng khoán toàn cầu lao dốc",
-      "summary": "Tại chiều mua, KDH được khối ngoại mua ròng mạnh nhất với giá trị khoảng 171 tỷ đồng....",
+      "title": "Khoản nợ của ông Nguyễn Hồ Nam sẽ được đấu giá vào ngày 23/11, tài sản bảo đảm là nhà đất tại TP.HCM",
+      "summary": "VietinBank thông báo bán đấu giá khoản nợ của ông Nguyễn Hồ Nam với giá khởi điểm 58,9 tỷ đồng. Tài sản bảo đảm là quyền sử dụng đất và nhà ở riêng lẻ tại TP.HCM, với diện tích đất gần 329 m² và tổng diện tích sàn hơn 1....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/phien-6-11-khoi-ngoai-do-tien-mua-rong-hon-400-ty-dong-co-phieu-viet-nam-giua-luc-chung-khoan-toan-cau-lao-doc-188261106153537479.chn"
+      "published_at": "Mon, 09 Nov 26 06:36:00 +0700",
+      "source_url": "https://cafef.vn/khoan-no-cua-ong-nguyen-ho-nam-se-duoc-dau-gia-vao-ngay-23-11-tai-san-bao-dam-la-nha-dat-tai-tphcm-188261108223825996.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT"
+        "ACB"
       ],
-      "title": "CTCK đưa ra dự báo bất ngờ về lợi nhuận quý 4 của FPT",
-      "summary": "Theo Mirae Asset, mức tăng trưởng dự kiến trong quý cuối năm phù hợp với tính chu kỳ trong hoạt động kinh doanh của FPT....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Fri, 06 Nov 26 15:05:00 +0700",
-      "source_url": "https://cafef.vn/ctck-dua-ra-du-bao-bat-ngo-ve-loi-nhuan-quy-4-cua-fpt-188261106144829129.chn"
+      "title": "Ngày 9/11, gửi dưới 1 tỷ đồng kỳ hạn 9 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Với kỳ hạn 9 tháng, lãi suất tiết kiệm tại 7 ngân hàng MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB dao động từ 4,1% đến 6,7%/năm, tùy hình thức gửi tiền và điều kiện áp dụng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-9-11-gui-duoi-1-ty-dong-ky-han-9-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261108222446822.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "REE"
+        "PNJ"
       ],
-      "title": "Gia nhập quân giải phóng từ năm 16 tuổi, bà Nguyễn Thị Mai Thanh tự dặn lòng: Hãy quên mình là con gái của một vị tướng chỉ huy",
-      "summary": "Năm 16 tuổi, giữa chiến trường bận rộn chăm sóc thương binh, bà Nguyễn Thị Mai Thanh - Nhà sáng lập REE đã tự dặn lòng: “Hãy quên mình là con gái của một vị tướng chỉ huy. Càng không được xem mình là phụ nữ để đòi hỏi sự...",
+      "title": "Giá vàng nhẫn trơn, vàng miếng tối 8/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng so với cuối tuần trước",
+      "summary": "Giá vàng trong nước đóng cửa ngày 8/11 đi ngang so với cuối phiên hôm qua nhưng vẫn ghi nhận mức tăng mạnh so với cuối tuần trước....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 15:04:00 +0700",
-      "source_url": "https://cafef.vn/gia-nhap-quan-giai-phong-tu-nam-16-tuoi-ba-nguyen-thi-mai-thanh-tu-dan-long-hay-quen-minh-la-con-gai-cua-mot-vi-tuong-chi-huy-18826110615045685.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PC1"
-      ],
-      "title": "Công ty của nữ Chủ tịch 27 tuổi phát thông báo quan trọng",
-      "summary": "Tập đoàn PC1, doanh nghiệp do nữ Chủ tịch sinh năm 1999 Trịnh Khánh Linh đứng đầu, vừa phát đi thông báo đính chính một nội dung trong Báo cáo thường niên năm 2025....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 26 13:32:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-cua-nu-chu-tich-27-tuoi-phat-thong-bao-quan-trong-188261106113423265.chn"
+      "published_at": "Sun, 08 Nov 26 20:40:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-8-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-so-voi-cuoi-tuan-truoc-188261108083025831.chn"
     },
     {
       "market": "VIETNAM",
@@ -5087,18 +5083,6 @@
       "severity": "INFO",
       "published_at": "Sun, 08 Nov 26 11:16:00 +0700",
       "source_url": "https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 8/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng so với cuối tuần trước",
-      "summary": "Giá vàng trong nước mở đầu phiên sáng 8/11 đi ngang nhưng vẫn ghi nhận mức tăng mạnh so với cuối tuần trước. Vàng nhẫn SJC tăng tới 4,7 triệu đồng/lượng, trong khi vàng miếng SJC tăng 2 triệu đồng/lượng, lên mức 141 triệ...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 26 08:27:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-8-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-so-voi-cuoi-tuan-truoc-188261108083025831.chn"
     },
     {
       "market": "VIETNAM",
@@ -5247,30 +5231,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
-      ],
-      "title": "ACB ra mắt thẻ tín dụng dành cho hộ kinh doanh, miễn lãi đến 55 ngày và hoàn tiền đến 10%",
-      "summary": "Trước nhu cầu vốn lưu động và quản lý chi phí gia tăng vào mùa kinh doanh cuối năm, ACB cho ra mắt thẻ tín dụng ACB Visa Business được thiết kế riêng cho khách hàng kinh doanh với các quyền lợi tập trung vào ba nhu cầu: ...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 07:16:00 +0700",
-      "source_url": "https://cafef.vn/acb-ra-mat-the-tin-dung-danh-cho-ho-kinh-doanh-mien-lai-den-55-ngay-va-hoan-tien-den-10-188261105071713898.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng chiều tối 4/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "summary": "Giá vàng trong nước kết phiên ngày 4/11 tăng mạnh, với vàng miếng SJC bán ra tại phần lớn thương hiệu lên 142,4 triệu đồng/lượng, tăng 1,8 triệu đồng/lượng so với cuối phiên trước. Giá vàng nhẫn cũng tăng 1-2,8 triệu đồn...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 04 Nov 26 18:49:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-toi-4-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-dong-loat-tang-188261104072255434.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "HCM"
       ],
       "title": "Toàn cảnh công trường Trung tâm hành chính TP.HCM sau hơn 6 tháng khởi công",
@@ -5291,6 +5251,18 @@
       "severity": "INFO",
       "published_at": "Sun, 08 Nov 26 14:17:00 +0700",
       "source_url": "https://cafef.vn/doanh-nghiep-muon-co-che-3-uu-dai-lam-nha-xa-hoi-cho-thue-o-tphcm-188261108141734139.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "NAB gia nhập nhóm doanh nghiệp tỷ USD, PGV, LPS và GEL bị loại",
+      "summary": "Sở Giao dịch Chứng khoán Tp.HCM (HOSE) thông tin thị trường kỳ tháng 10/2026....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 2026 02:01:37 GMT",
+      "source_url": "https://vneconomy.vn/nab-gia-nhap-nhom-doanh-nghiep-ty-usd-pgv-lps-va-gel-bi-loai.htm"
     },
     {
       "market": "VIETNAM",
@@ -5361,6 +5333,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Vietnam Connect Forum 2026: Đầu tư vào Việt Nam - Cơ hội không chỉ nằm ở dòng vốn",
+      "summary": "VietinBank tổ chức Vietnam Connect Forum 2026 ngày 17/11 tại TP.HCM, cập nhật chính sách đầu tư, thuế, triển vọng kinh tế và kết nối đối tác cho doanh nghiệp FDI....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 2026 01:00:00 GMT",
+      "source_url": "https://vneconomy.vn/vietnam-connect-forum-2026-dau-tu-vao-viet-nam-co-hoi-khong-chi-nam-o-dong-von.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "MB Economic Insights 2026: Khơi thông nguồn vốn, thích ứng nhanh trước biến động sắp diễn ra tại TP. HCM",
       "summary": "Trong tuần này, ngày 6/11/2026, Ngân hàng TMCP Quân đội (MB) sẽ tổ chức Diễn đàn Kinh tế thường niên lần thứ 12 – MB Economic Insights 2026 với chủ đề \"Khơi thông nguồn vốn, thích ứng nhanh trước biến động\" tại TP. HCM....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5383,14 +5367,38 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "BSR"
+      ],
+      "title": "Chủ nhà máy lọc dầu Dung Quất nâng mục tiêu lãi kỷ lục",
+      "summary": "BSR, đơn vị vận hành nhà máy lọc dầu Dung Quất, điều chỉnh kế hoạch lãi năm nay lên 18.579 tỷ đồng, gấp hơn 8 lần ban đầu và cao nhất từ trước đến nay....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 2026 07:57:33 +0700",
+      "source_url": "https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-nang-muc-tieu-lai-ky-luc-5142212.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "SSI"
+      ],
+      "title": "SSI: Chứng khoán có thể tạo đáy ngắn hạn trong tháng này",
+      "summary": "VN-Index được dự báo tạo đáy ngắn hạn trong tháng 11, nhờ định giá hấp dẫn, yếu tố mùa vụ và chuyển biến tích cực về lãi suất, tỷ giá....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 2026 07:41:09 +0700",
+      "source_url": "https://vnexpress.net/ssi-chung-khoan-co-the-tao-day-ngan-han-trong-thang-nay-5142164.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
-      "title": "Sắp diễn ra DNSE Future Tech Summit mùa 2",
+      "title": "Tìm giải pháp đầu tư từ dữ liệu tại diễn đàn thường niên của DNSE",
       "summary": "DNSE Future Tech Summit 2026 sẽ diễn ra ngày 20/11 tại TP HCM, quy tụ các chuyên gia tài chính, công nghệ thảo luận về ứng dụng AI, phân bổ tài sản và chiến lược đầu tư....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
       "published_at": "Sat, 07 Nov 2026 14:30:00 +0700",
-      "source_url": "https://vnexpress.net/sap-dien-ra-dnse-future-tech-summit-mua-2-5141896.html"
+      "source_url": "https://vnexpress.net/tim-giai-phap-dau-tu-tu-du-lieu-tai-dien-dan-thuong-nien-cua-dnse-5141896.html"
     },
     {
       "market": "VIETNAM",

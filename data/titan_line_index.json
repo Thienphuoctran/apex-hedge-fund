@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-08 13:40:25",
+  "generated_at": "2026-11-09 01:45:04",
   "token_metrics": {
-    "total_raw_report_tokens": 70006,
-    "titan_digest_tokens": 1937,
-    "token_savings_percent": 97.2,
+    "total_raw_report_tokens": 67613,
+    "titan_digest_tokens": 1929,
+    "token_savings_percent": 97.1,
     "quality_preservation": "100% LOSSLESS (Full reports intact on disk)"
   },
   "deterministic_audit": {
-    "timestamp": "2026-11-08 13:40:25",
+    "timestamp": "2026-11-09 01:45:04",
     "bctc_vn_verified": 54,
     "bctc_red_flags_detected": [
       "UNKNOWN (M-Score=0.41, OCF/LNST=1.2)",
@@ -23,10 +23,10 @@
   "reports": {
     "global_macro_ban1": {
       "exists": true,
-      "path": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
-      "size_kb": 21.3,
+      "path": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
+      "size_kb": 21.7,
       "total_lines": 69,
-      "estimated_raw_tokens": 6231,
+      "estimated_raw_tokens": 6342,
       "sections_count": 5,
       "sections": [
         {
@@ -65,7 +65,7 @@
           {
             "section": "[BAN 1 — MACRO & GEOPOLITICS] BÁO CÁO VĨ MÔ, ĐỘ RỘNG THỊ TRƯỜNG, TÍN DỤNG, 12 NGÀNH GICS & 24 BẢN TIN PHỐ WALL TRỰC TUYẾN",
             "start_line": 1,
-            "file": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
+            "file": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
             "end_line": 7
           }
         ],
@@ -73,7 +73,7 @@
           {
             "section": "[BAN 1 — MACRO & GEOPOLITICS] BÁO CÁO VĨ MÔ, ĐỘ RỘNG THỊ TRƯỜNG, TÍN DỤNG, 12 NGÀNH GICS & 24 BẢN TIN PHỐ WALL TRỰC TUYẾN",
             "start_line": 1,
-            "file": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
+            "file": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
             "end_line": 7
           }
         ],
@@ -81,7 +81,7 @@
           {
             "section": "[BAN 1 — MACRO & GEOPOLITICS] BÁO CÁO VĨ MÔ, ĐỘ RỘNG THỊ TRƯỜNG, TÍN DỤNG, 12 NGÀNH GICS & 24 BẢN TIN PHỐ WALL TRỰC TUYẾN",
             "start_line": 1,
-            "file": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
+            "file": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
             "end_line": 7
           }
         ],
@@ -89,7 +89,7 @@
           {
             "section": "2. Toàn Cảnh 8 Chỉ Số Chứng Khoán Toàn Cầu (US, Europe, Asia)",
             "start_line": 15,
-            "file": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
+            "file": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
             "end_line": 26
           }
         ]
@@ -97,7 +97,7 @@
     },
     "global_equity_ban2": {
       "exists": true,
-      "path": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+      "path": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
       "size_kb": 5.0,
       "total_lines": 46,
       "estimated_raw_tokens": 1469,
@@ -115,7 +115,7 @@
           {
             "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
             "start_line": 1,
-            "file": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+            "file": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
             "end_line": 46
           }
         ],
@@ -123,7 +123,7 @@
           {
             "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
             "start_line": 1,
-            "file": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+            "file": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
             "end_line": 46
           }
         ],
@@ -131,7 +131,7 @@
           {
             "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
             "start_line": 1,
-            "file": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+            "file": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
             "end_line": 46
           }
         ],
@@ -139,7 +139,7 @@
           {
             "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
             "start_line": 1,
-            "file": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+            "file": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
             "end_line": 46
           }
         ]
@@ -147,7 +147,7 @@
     },
     "global_synthesis_ban3": {
       "exists": true,
-      "path": "03_Synthesis_Memos/2026-11-08_Investment_Memo.md",
+      "path": "03_Synthesis_Memos/2026-11-09_Investment_Memo.md",
       "size_kb": 19.7,
       "total_lines": 73,
       "estimated_raw_tokens": 5770,
@@ -183,7 +183,7 @@
           {
             "section": "[BAN 3 — SYNTHESIS HUB] BIÊN BẢN TỔNG HỢP ĐỊNH GIÁ PHỐ WALL, ĐIỀU PHỐI XUNG ĐỘT & BẢNG SÀNG LỌC CỔ PHIẾU TĂNG/GIẢM",
             "start_line": 1,
-            "file": "03_Synthesis_Memos/2026-11-08_Investment_Memo.md",
+            "file": "03_Synthesis_Memos/2026-11-09_Investment_Memo.md",
             "end_line": 5
           }
         ],
@@ -191,7 +191,7 @@
           {
             "section": "[BAN 3 — SYNTHESIS HUB] BIÊN BẢN TỔNG HỢP ĐỊNH GIÁ PHỐ WALL, ĐIỀU PHỐI XUNG ĐỘT & BẢNG SÀNG LỌC CỔ PHIẾU TĂNG/GIẢM",
             "start_line": 1,
-            "file": "03_Synthesis_Memos/2026-11-08_Investment_Memo.md",
+            "file": "03_Synthesis_Memos/2026-11-09_Investment_Memo.md",
             "end_line": 5
           }
         ],
@@ -199,7 +199,7 @@
           {
             "section": "[BAN 3 — SYNTHESIS HUB] BIÊN BẢN TỔNG HỢP ĐỊNH GIÁ PHỐ WALL, ĐIỀU PHỐI XUNG ĐỘT & BẢNG SÀNG LỌC CỔ PHIẾU TĂNG/GIẢM",
             "start_line": 1,
-            "file": "03_Synthesis_Memos/2026-11-08_Investment_Memo.md",
+            "file": "03_Synthesis_Memos/2026-11-09_Investment_Memo.md",
             "end_line": 5
           }
         ]
@@ -207,7 +207,7 @@
     },
     "global_ic_ban4": {
       "exists": true,
-      "path": "04_Investment_Committee/2026-11-08_IC_Decision.md",
+      "path": "04_Investment_Committee/2026-11-09_IC_Decision.md",
       "size_kb": 7.4,
       "total_lines": 39,
       "estimated_raw_tokens": 2152,
@@ -243,7 +243,7 @@
           {
             "section": "[BAN 4 — INVESTMENT COMMITTEE] NGHỊ QUYẾT PHÊ DUYỆT DANH MỤC ĐẦU TƯ & KIỂM SOÁT RỦI RO ĐỊNH LƯỢNG",
             "start_line": 1,
-            "file": "04_Investment_Committee/2026-11-08_IC_Decision.md",
+            "file": "04_Investment_Committee/2026-11-09_IC_Decision.md",
             "end_line": 6
           }
         ],
@@ -251,7 +251,7 @@
           {
             "section": "[BAN 4 — INVESTMENT COMMITTEE] NGHỊ QUYẾT PHÊ DUYỆT DANH MỤC ĐẦU TƯ & KIỂM SOÁT RỦI RO ĐỊNH LƯỢNG",
             "start_line": 1,
-            "file": "04_Investment_Committee/2026-11-08_IC_Decision.md",
+            "file": "04_Investment_Committee/2026-11-09_IC_Decision.md",
             "end_line": 6
           }
         ]
@@ -259,10 +259,10 @@
     },
     "global_learning_ban5": {
       "exists": true,
-      "path": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+      "path": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
       "size_kb": 10.1,
       "total_lines": 85,
-      "estimated_raw_tokens": 2955,
+      "estimated_raw_tokens": 2966,
       "sections_count": 8,
       "sections": [
         {
@@ -319,7 +319,7 @@
           {
             "section": "[BAN 5] BÁO CÁO THẨM ĐỊNH HIỆU SUẤT, HỒI TỐ WALK-FORWARD & TỰ HỌC THÍCH NGHI",
             "start_line": 1,
-            "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+            "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
             "end_line": 7
           }
         ],
@@ -327,7 +327,7 @@
           {
             "section": "[BAN 5] BÁO CÁO THẨM ĐỊNH HIỆU SUẤT, HỒI TỐ WALK-FORWARD & TỰ HỌC THÍCH NGHI",
             "start_line": 1,
-            "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+            "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
             "end_line": 7
           }
         ],
@@ -335,7 +335,7 @@
           {
             "section": "🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)",
             "start_line": 8,
-            "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+            "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
             "end_line": 29
           }
         ],
@@ -343,7 +343,7 @@
           {
             "section": "🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)",
             "start_line": 8,
-            "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+            "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
             "end_line": 29
           }
         ],
@@ -351,7 +351,7 @@
           {
             "section": "🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)",
             "start_line": 8,
-            "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+            "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
             "end_line": 29
           }
         ],
@@ -359,7 +359,7 @@
           {
             "section": "🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)",
             "start_line": 8,
-            "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+            "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
             "end_line": 29
           }
         ],
@@ -367,7 +367,7 @@
           {
             "section": "2. Bảng Đối Soát Hiệu Suất Đa Khung Thời Gian (`Multi-Horizon Walk-Forward Alpha vs ^GSPC`)",
             "start_line": 38,
-            "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+            "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
             "end_line": 47
           }
         ]
@@ -375,7 +375,7 @@
     },
     "global_mentor_ban6": {
       "exists": true,
-      "path": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+      "path": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
       "size_kb": 4.5,
       "total_lines": 47,
       "estimated_raw_tokens": 1306,
@@ -389,7 +389,7 @@
         },
         {
           "level": 2,
-          "title": "Ngày Huấn Luyện: 2026-11-08 | Huấn Luyện Viên: `investor-mentorship-coach` (Ban 6)",
+          "title": "Ngày Huấn Luyện: 2026-11-09 | Huấn Luyện Viên: `investor-mentorship-coach` (Ban 6)",
           "start_line": 2,
           "end_line": 2
         },
@@ -429,7 +429,7 @@
           {
             "section": "BẢN TIN HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN BUỔI SÁNG (MORNING MENTOR BRIEFING v5.0)",
             "start_line": 1,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 1
           }
         ],
@@ -437,13 +437,13 @@
           {
             "section": "Chương trình: 4 Tiếng/Ngày • Mô hình Core & Satellite • Thực hành Paper Trading & VN Localization",
             "start_line": 3,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 8
           },
           {
             "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
             "start_line": 37,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 45
           }
         ],
@@ -451,7 +451,7 @@
           {
             "section": "PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)",
             "start_line": 9,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 19
           }
         ],
@@ -459,7 +459,7 @@
           {
             "section": "PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)",
             "start_line": 9,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 19
           }
         ],
@@ -467,7 +467,7 @@
           {
             "section": "PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)",
             "start_line": 9,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 19
           }
         ],
@@ -475,7 +475,7 @@
           {
             "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
             "start_line": 20,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 36
           }
         ],
@@ -483,7 +483,7 @@
           {
             "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
             "start_line": 20,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 36
           }
         ],
@@ -491,7 +491,7 @@
           {
             "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
             "start_line": 20,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 36
           }
         ],
@@ -499,7 +499,7 @@
           {
             "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
             "start_line": 20,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 36
           }
         ],
@@ -507,7 +507,7 @@
           {
             "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
             "start_line": 20,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 36
           }
         ],
@@ -515,7 +515,7 @@
           {
             "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
             "start_line": 20,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 36
           }
         ],
@@ -523,7 +523,7 @@
           {
             "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
             "start_line": 37,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 45
           }
         ],
@@ -531,7 +531,7 @@
           {
             "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
             "start_line": 37,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 45
           }
         ],
@@ -539,7 +539,7 @@
           {
             "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
             "start_line": 37,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 45
           }
         ],
@@ -547,7 +547,7 @@
           {
             "section": "PHẦN 4: THỬ THÁCH TƯ DUY SOCRATIC TRONG NGÀY (SOCRATIC CHALLENGE)",
             "start_line": 46,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 47
           }
         ],
@@ -555,7 +555,7 @@
           {
             "section": "PHẦN 4: THỬ THÁCH TƯ DUY SOCRATIC TRONG NGÀY (SOCRATIC CHALLENGE)",
             "start_line": 46,
-            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+            "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
             "end_line": 47
           }
         ]
@@ -563,10 +563,10 @@
     },
     "global_alex_ban7": {
       "exists": true,
-      "path": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+      "path": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
       "size_kb": 34.2,
       "total_lines": 197,
-      "estimated_raw_tokens": 9999,
+      "estimated_raw_tokens": 9992,
       "sections_count": 21,
       "sections": [
         {
@@ -589,7 +589,7 @@
         },
         {
           "level": 2,
-          "title": "2. Alex Tự Soi Gương & Kiểm Điểm Ngày Hôm Qua (`2026-11-06 -> 2026-11-08`)",
+          "title": "2. Alex Tự Soi Gương & Kiểm Điểm Ngày Hôm Qua (`2026-11-08 -> 2026-11-09`)",
           "start_line": 39,
           "end_line": 40
         },
@@ -701,7 +701,7 @@
           {
             "section": "[BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX",
             "start_line": 1,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 9
           }
         ],
@@ -709,7 +709,7 @@
           {
             "section": "[BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX",
             "start_line": 1,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 9
           }
         ],
@@ -717,7 +717,7 @@
           {
             "section": "[BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX",
             "start_line": 1,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 9
           }
         ],
@@ -725,7 +725,7 @@
           {
             "section": "🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)",
             "start_line": 23,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 38
           }
         ],
@@ -733,7 +733,7 @@
           {
             "section": "2.2. Kiểm Điểm Chỗ SAI / Điểm Vào Lệnh Chưa Tối Ưu Của Alex (`Commission & Timing Flaws`)",
             "start_line": 46,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 51
           }
         ],
@@ -741,7 +741,7 @@
           {
             "section": "4.1. MSFT — Microsoft Corp. (Enterprise Software & Cloud)",
             "start_line": 89,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 98
           }
         ],
@@ -749,7 +749,7 @@
           {
             "section": "4.3. JPM — JPMorgan Chase & Co. (Global Diversified Banking)",
             "start_line": 109,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 118
           }
         ],
@@ -757,7 +757,7 @@
           {
             "section": "4.4. PG — Procter & Gamble (Consumer Household Staples)",
             "start_line": 119,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 128
           }
         ],
@@ -765,7 +765,7 @@
           {
             "section": "4.5. XOM — Exxon Mobil Corp. (Integrated Oil & Gas)",
             "start_line": 129,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 138
           }
         ],
@@ -773,7 +773,7 @@
           {
             "section": "4.6. JNJ — Johnson & Johnson (Pharmaceuticals & MedTech)",
             "start_line": 139,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 148
           }
         ],
@@ -781,7 +781,7 @@
           {
             "section": "4.7. NVDA — NVIDIA Corp. (Semiconductors & AI)",
             "start_line": 149,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 158
           }
         ],
@@ -789,13 +789,13 @@
           {
             "section": "4.7. NVDA — NVIDIA Corp. (Semiconductors & AI)",
             "start_line": 149,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 158
           },
           {
             "section": "4.10. AVGO — Broadcom Inc. (Custom AI ASICs & Networking)",
             "start_line": 179,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 190
           }
         ],
@@ -803,7 +803,7 @@
           {
             "section": "4.8. TSM — Taiwan Semiconductor (TSMC) (Global Chip Foundry)",
             "start_line": 159,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 168
           }
         ],
@@ -811,7 +811,7 @@
           {
             "section": "4.8. TSM — Taiwan Semiconductor (TSMC) (Global Chip Foundry)",
             "start_line": 159,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 168
           }
         ],
@@ -819,7 +819,7 @@
           {
             "section": "4.9. GOOGL — Alphabet Inc. (Search & Hyperscale Cloud)",
             "start_line": 169,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 178
           }
         ],
@@ -827,7 +827,7 @@
           {
             "section": "4.10. AVGO — Broadcom Inc. (Custom AI ASICs & Networking)",
             "start_line": 179,
-            "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+            "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
             "end_line": 190
           }
         ]
@@ -835,172 +835,46 @@
     },
     "vn_macro_ban1": {
       "exists": true,
-      "path": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-      "size_kb": 10.7,
-      "total_lines": 93,
-      "estimated_raw_tokens": 3122,
-      "sections_count": 13,
+      "path": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-09_VN_Macro_Report.md",
+      "size_kb": 2.1,
+      "total_lines": 20,
+      "estimated_raw_tokens": 613,
+      "sections_count": 3,
       "sections": [
         {
           "level": 1,
-          "title": "🌅 BẢN TIN TÌNH BÁO THỊ TRƯỜNG CUỐI TUẦN & DỰ BÁO TÁC CHIẾN RỰC RỠ PHIÊN THỨ HAI (09/11/2026)",
+          "title": "[BAN 1 VN] BÁO CÁO VĨ MÔ, CHÍNH SÁCH TIỀN TỆ SBV & LUÂN CHUYỂN 12 NHÓM NGÀNH — 2026-11-09",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 6
         },
         {
           "level": 2,
-          "title": "(Apex Strategic Weekend Intelligence Briefing & Monday Battle Plan)",
-          "start_line": 2,
-          "end_line": 11
+          "title": "1. ĐIỂM NHẤN CHÍNH SÁCH TIỀN TỆ SBV, TỶ GIÁ USD/VND & ĐẦU TƯ CÔNG",
+          "start_line": 7,
+          "end_line": 12
         },
         {
           "level": 2,
-          "title": "I. TỔNG HỢP TIN TỨC VĨ MÔ & TÌNH HÌNH THỊ TRƯỜNG CUỐI TUẦN",
-          "start_line": 12,
-          "end_line": 15
-        },
-        {
-          "level": 3,
-          "title": "1. Dòng Tiền Khối Ngoại Đảo Chiều & Giảm Áp Lực Bán Ròng (-70%)",
-          "start_line": 16,
-          "end_line": 19
-        },
-        {
-          "level": 3,
-          "title": "2. Vĩ Mô Việt Nam Duy Trì Bệ Đỡ Tăng Trưởng Vững Vàng",
-          "start_line": 20,
-          "end_line": 23
-        },
-        {
-          "level": 3,
-          "title": "3. Sóng Công Nghệ Quốc Tế Phân Hóa — Dòng Tiền Xoay Trục Sang Sản Xuất & Hàng Hóa Thực",
-          "start_line": 24,
-          "end_line": 29
-        },
-        {
-          "level": 2,
-          "title": "II. DỰ BÁO 3 KỊCH BẢN THỊ TRƯỜNG PHIÊN THỨ HAI (09/11/2026)",
-          "start_line": 30,
-          "end_line": 46
-        },
-        {
-          "level": 3,
-          "title": "1. Kịch Bản 1 (Chiếm 65% Xác Suất — Kịch Bản Trọng Tâm): Giằng Co Phiên Sáng & Bùng Nổ Sau 14h00 Chiều",
-          "start_line": 47,
-          "end_line": 50
-        },
-        {
-          "level": 3,
-          "title": "2. Kịch Bản 2 (Chiếm 25% Xác Suất): Kéo Xanh Hưng Phấn Đầu Phiên Rồi Bị Bán Cụt Đầu (Bull-Trap Sáng)",
-          "start_line": 51,
-          "end_line": 54
-        },
-        {
-          "level": 3,
-          "title": "3. Kịch Bản 3 (Chiếm 10% Xác Suất): Nhúng Quét Rũ Bỏ Thủng 1.700 Điểm Trước Khi Bật Tăng",
-          "start_line": 55,
-          "end_line": 60
-        },
-        {
-          "level": 2,
-          "title": "III. BẢN KẾ HOẠCH BẮN TỈA VÒNG 2 ĐÃ CHUẨN BỊ SẴN SÀNG CHO CHỦ TỊCH",
-          "start_line": 61,
-          "end_line": 64
-        },
-        {
-          "level": 3,
-          "title": "Sổ Lệnh Bắn Tỉa Tham Số Đã Tính Sẵn Đến Từng 10 Đồng (Chờ Khung Giờ Vàng 14h00 – 14h25):",
-          "start_line": 65,
-          "end_line": 77
-        },
-        {
-          "level": 2,
-          "title": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-          "start_line": 78,
-          "end_line": 93
+          "title": "2. RADAR DÒNG TIỀN 3 KHỐI & LUÂN CHUYỂN 12 NHÓM NGÀNH TRÊN HOSE / HNX",
+          "start_line": 13,
+          "end_line": 20
         }
       ],
       "tickers": {
-        "TIN": [
+        "VN": [
           {
-            "section": "🌅 BẢN TIN TÌNH BÁO THỊ TRƯỜNG CUỐI TUẦN & DỰ BÁO TÁC CHIẾN RỰC RỠ PHIÊN THỨ HAI (09/11/2026)",
+            "section": "[BAN 1 VN] BÁO CÁO VĨ MÔ, CHÍNH SÁCH TIỀN TỆ SBV & LUÂN CHUYỂN 12 NHÓM NGÀNH — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 1
-          },
-          {
-            "section": "I. TỔNG HỢP TIN TỨC VĨ MÔ & TÌNH HÌNH THỊ TRƯỜNG CUỐI TUẦN",
-            "start_line": 12,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 15
+            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-09_VN_Macro_Report.md",
+            "end_line": 6
           }
         ],
-        "HAI": [
+        "RADAR": [
           {
-            "section": "🌅 BẢN TIN TÌNH BÁO THỊ TRƯỜNG CUỐI TUẦN & DỰ BÁO TÁC CHIẾN RỰC RỠ PHIÊN THỨ HAI (09/11/2026)",
-            "start_line": 1,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 1
-          },
-          {
-            "section": "II. DỰ BÁO 3 KỊCH BẢN THỊ TRƯỜNG PHIÊN THỨ HAI (09/11/2026)",
-            "start_line": 30,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 46
-          }
-        ],
-        "II": [
-          {
-            "section": "II. DỰ BÁO 3 KỊCH BẢN THỊ TRƯỜNG PHIÊN THỨ HAI (09/11/2026)",
-            "start_line": 30,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 46
-          }
-        ],
-        "III": [
-          {
-            "section": "III. BẢN KẾ HOẠCH BẮN TỈA VÒNG 2 ĐÃ CHUẨN BỊ SẴN SÀNG CHO CHỦ TỊCH",
-            "start_line": 61,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 64
-          }
-        ],
-        "CHO": [
-          {
-            "section": "III. BẢN KẾ HOẠCH BẮN TỈA VÒNG 2 ĐÃ CHUẨN BỊ SẴN SÀNG CHO CHỦ TỊCH",
-            "start_line": 61,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 64
-          },
-          {
-            "section": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-            "start_line": 78,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 93
-          }
-        ],
-        "IV": [
-          {
-            "section": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-            "start_line": 78,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 93
-          }
-        ],
-        "QUY": [
-          {
-            "section": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-            "start_line": 78,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 93
-          }
-        ],
-        "THAO": [
-          {
-            "section": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-            "start_line": 78,
-            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-            "end_line": 93
+            "section": "2. RADAR DÒNG TIỀN 3 KHỐI & LUÂN CHUYỂN 12 NHÓM NGÀNH TRÊN HOSE / HNX",
+            "start_line": 13,
+            "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-09_VN_Macro_Report.md",
+            "end_line": 20
           }
         ]
       }
@@ -1297,7 +1171,7 @@
     },
     "vn_synthesis_ban3": {
       "exists": true,
-      "path": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+      "path": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
       "size_kb": 5.5,
       "total_lines": 34,
       "estimated_raw_tokens": 1596,
@@ -1305,7 +1179,7 @@
       "sections": [
         {
           "level": 1,
-          "title": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-08",
+          "title": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-09",
           "start_line": 1,
           "end_line": 5
         },
@@ -1325,25 +1199,25 @@
       "tickers": {
         "VN": [
           {
-            "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-08",
+            "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+            "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
             "end_line": 5
           }
         ],
         "TTCK": [
           {
-            "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-08",
+            "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+            "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
             "end_line": 5
           }
         ],
         "NAM": [
           {
-            "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-08",
+            "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+            "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
             "end_line": 5
           }
         ],
@@ -1351,7 +1225,7 @@
           {
             "section": "2. BẢNG 2: TOP CỔ PHIẾU CẢNH BÁO RỦI RO / BẪY LỢI NHUẬN GIẤY (`TOP HIGH-RISK TRAPS & WATCHLIST`)",
             "start_line": 24,
-            "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+            "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
             "end_line": 34
           }
         ],
@@ -1359,7 +1233,7 @@
           {
             "section": "2. BẢNG 2: TOP CỔ PHIẾU CẢNH BÁO RỦI RO / BẪY LỢI NHUẬN GIẤY (`TOP HIGH-RISK TRAPS & WATCHLIST`)",
             "start_line": 24,
-            "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+            "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
             "end_line": 34
           }
         ],
@@ -1367,7 +1241,7 @@
           {
             "section": "2. BẢNG 2: TOP CỔ PHIẾU CẢNH BÁO RỦI RO / BẪY LỢI NHUẬN GIẤY (`TOP HIGH-RISK TRAPS & WATCHLIST`)",
             "start_line": 24,
-            "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+            "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
             "end_line": 34
           }
         ]
@@ -1375,7 +1249,7 @@
     },
     "vn_ic_ban4": {
       "exists": true,
-      "path": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+      "path": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
       "size_kb": 11.1,
       "total_lines": 95,
       "estimated_raw_tokens": 3254,
@@ -1383,7 +1257,7 @@
       "sections": [
         {
           "level": 1,
-          "title": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-08",
+          "title": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-09",
           "start_line": 1,
           "end_line": 6
         },
@@ -1445,25 +1319,25 @@
       "tickers": {
         "TTCK": [
           {
-            "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-08",
+            "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 6
           }
         ],
         "NAM": [
           {
-            "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-08",
+            "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 6
           }
         ],
         "IC": [
           {
-            "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-08",
+            "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 6
           }
         ],
@@ -1471,7 +1345,7 @@
           {
             "section": "QUYẾT NGHỊ GIẢI NGÂN DANH MỤC TOP 8 SIÊU CỔ PHIẾU ĐẦU NGÀNH",
             "start_line": 7,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 8
           }
         ],
@@ -1479,7 +1353,7 @@
           {
             "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
             "start_line": 9,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 19
           }
         ],
@@ -1487,7 +1361,7 @@
           {
             "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
             "start_line": 9,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 19
           }
         ],
@@ -1495,7 +1369,7 @@
           {
             "section": "🎯 **STB** — Sài Gòn Thương Tín (Sacombank) (HOSE)",
             "start_line": 20,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 30
           }
         ],
@@ -1503,7 +1377,7 @@
           {
             "section": "🎯 **MSN** — Tập Đoàn Masan (HOSE)",
             "start_line": 31,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 41
           }
         ],
@@ -1511,13 +1385,13 @@
           {
             "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
             "start_line": 42,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 52
           },
           {
             "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
             "start_line": 42,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 52
           }
         ],
@@ -1525,7 +1399,7 @@
           {
             "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
             "start_line": 53,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 63
           }
         ],
@@ -1533,7 +1407,7 @@
           {
             "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
             "start_line": 64,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 74
           }
         ],
@@ -1541,7 +1415,7 @@
           {
             "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
             "start_line": 75,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 85
           }
         ],
@@ -1549,7 +1423,7 @@
           {
             "section": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
             "start_line": 86,
-            "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+            "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
             "end_line": 95
           }
         ]
@@ -1557,15 +1431,15 @@
     },
     "vn_learning_ban5": {
       "exists": true,
-      "path": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+      "path": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
       "size_kb": 5.1,
       "total_lines": 40,
-      "estimated_raw_tokens": 1500,
+      "estimated_raw_tokens": 1501,
       "sections_count": 6,
       "sections": [
         {
           "level": 1,
-          "title": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-08",
+          "title": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-09",
           "start_line": 1,
           "end_line": 5
         },
@@ -1603,17 +1477,17 @@
       "tickers": {
         "TTCK": [
           {
-            "section": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-08",
+            "section": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 5
           }
         ],
         "NAM": [
           {
-            "section": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-08",
+            "section": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 5
           }
         ],
@@ -1621,7 +1495,7 @@
           {
             "section": "🏛️ ĐỐI SOÁT TÀI KHOẢN THỰC CHIẾN CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC (TCBS: 105C307855)",
             "start_line": 6,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 18
           }
         ],
@@ -1629,7 +1503,7 @@
           {
             "section": "1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)",
             "start_line": 19,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 23
           }
         ],
@@ -1637,7 +1511,7 @@
           {
             "section": "1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)",
             "start_line": 19,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 23
           }
         ],
@@ -1645,7 +1519,7 @@
           {
             "section": "1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)",
             "start_line": 19,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 23
           }
         ],
@@ -1653,7 +1527,7 @@
           {
             "section": "3. CƠ CHẾ TỰ ĐỘNG TINH CHỈNH TRỌNG SỐ (ADAPTIVE TUNING)",
             "start_line": 29,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 32
           }
         ],
@@ -1661,7 +1535,7 @@
           {
             "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
             "start_line": 33,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 40
           }
         ],
@@ -1669,7 +1543,7 @@
           {
             "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
             "start_line": 33,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 40
           }
         ],
@@ -1677,7 +1551,7 @@
           {
             "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
             "start_line": 33,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 40
           }
         ],
@@ -1685,7 +1559,7 @@
           {
             "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
             "start_line": 33,
-            "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+            "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
             "end_line": 40
           }
         ]
@@ -1693,7 +1567,7 @@
     },
     "vn_mentor_ban6": {
       "exists": true,
-      "path": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+      "path": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
       "size_kb": 3.9,
       "total_lines": 43,
       "estimated_raw_tokens": 1136,
@@ -1701,7 +1575,7 @@
       "sections": [
         {
           "level": 1,
-          "title": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-08",
+          "title": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-09",
           "start_line": 1,
           "end_line": 6
         },
@@ -1751,25 +1625,25 @@
       "tickers": {
         "TIN": [
           {
-            "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-08",
+            "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 6
           }
         ],
         "KHAI": [
           {
-            "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-08",
+            "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 6
           }
         ],
         "AM": [
           {
-            "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-08",
+            "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-09",
             "start_line": 1,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 6
           }
         ],
@@ -1777,7 +1651,7 @@
           {
             "section": "🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
             "start_line": 7,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 14
           }
         ],
@@ -1785,7 +1659,7 @@
           {
             "section": "🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
             "start_line": 7,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 14
           }
         ],
@@ -1793,7 +1667,7 @@
           {
             "section": "🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
             "start_line": 7,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 14
           }
         ],
@@ -1801,7 +1675,7 @@
           {
             "section": "🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
             "start_line": 7,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 14
           }
         ],
@@ -1809,13 +1683,13 @@
           {
             "section": "🔍 2. BÀI HỌC THỰC CHIẾN HÔM NAY: 'NGHỆ THUẬT BÓC TÁCH DÒNG TIỀN THỰC OCF TRONG BCTC'",
             "start_line": 15,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 18
           },
           {
             "section": "🧠 3. CÂU HỎI TƯ DUY PHẢN BIỆN SOCRATIC DÀNH CHO BẠN HÔM NAY",
             "start_line": 34,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 40
           }
         ],
@@ -1823,7 +1697,7 @@
           {
             "section": "🔍 2. BÀI HỌC THỰC CHIẾN HÔM NAY: 'NGHỆ THUẬT BÓC TÁCH DÒNG TIỀN THỰC OCF TRONG BCTC'",
             "start_line": 15,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 18
           }
         ],
@@ -1831,7 +1705,7 @@
           {
             "section": "🧠 3. CÂU HỎI TƯ DUY PHẢN BIỆN SOCRATIC DÀNH CHO BẠN HÔM NAY",
             "start_line": 34,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 40
           }
         ],
@@ -1839,7 +1713,7 @@
           {
             "section": "🧠 3. CÂU HỎI TƯ DUY PHẢN BIỆN SOCRATIC DÀNH CHO BẠN HÔM NAY",
             "start_line": 34,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 40
           }
         ],
@@ -1847,7 +1721,7 @@
           {
             "section": "⏰ LỊCH TRÌNH TIẾP THEO:",
             "start_line": 41,
-            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+            "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
             "end_line": 43
           }
         ]
@@ -1855,7 +1729,7 @@
     },
     "vn_minh_quan_ban7": {
       "exists": true,
-      "path": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+      "path": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
       "size_kb": 45.7,
       "total_lines": 286,
       "estimated_raw_tokens": 13378,
@@ -1999,13 +1873,13 @@
           {
             "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
             "start_line": 1,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 9
           },
           {
             "section": "2.4. Ba Thuật Toán Nâng Cấp Để Tối Ưu Hóa Lợi Nhuận Cho TTCK Việt Nam (`VN Profit Optimization Upgrades`)",
             "start_line": 61,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 70
           }
         ],
@@ -2013,13 +1887,13 @@
           {
             "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
             "start_line": 1,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 9
           },
           {
             "section": "📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN",
             "start_line": 71,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 86
           }
         ],
@@ -2027,7 +1901,7 @@
           {
             "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
             "start_line": 1,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 9
           }
         ],
@@ -2035,37 +1909,37 @@
           {
             "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
             "start_line": 1,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 9
           },
           {
             "section": "🏛️ 1. HỘI NGHỊ GIAO BAN ĐẦU NGÀY CỦA MINH QUÂN: LẮNG NGHE & ĐỐI SOÁT 6 PHÒNG BAN (`Morning Hearing lúc 8h30`)",
             "start_line": 10,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 23
           },
           {
             "section": "🔍 2. MINH QUÂN TỰ SOI GƯƠNG & KIỂM ĐIỂM NGÀY HÔM QUA (`Yesterday Autopsy & Evolution`)",
             "start_line": 42,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 43
           },
           {
             "section": "📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN",
             "start_line": 71,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 86
           },
           {
             "section": "🎯 4. HỒ SƠ MỔ XẺ CHI TIẾT TỪNG VỊ THẾ CỦA MINH QUÂN: TÍNH XÁC THỰC 100% & KHUNG 5 BẬC THẦY ĐẦU TƯ",
             "start_line": 87,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 89
           },
           {
             "section": "🧭 6. KỶ LUẬT THỰC CHIẾN TỐI THƯỢNG CỦA MINH QUÂN",
             "start_line": 283,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 286
           }
         ],
@@ -2073,7 +1947,7 @@
           {
             "section": "🏛️ 1. HỘI NGHỊ GIAO BAN ĐẦU NGÀY CỦA MINH QUÂN: LẮNG NGHE & ĐỐI SOÁT 6 PHÒNG BAN (`Morning Hearing lúc 8h30`)",
             "start_line": 10,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 23
           }
         ],
@@ -2081,7 +1955,7 @@
           {
             "section": "🏛️ 1. HỘI NGHỊ GIAO BAN ĐẦU NGÀY CỦA MINH QUÂN: LẮNG NGHE & ĐỐI SOÁT 6 PHÒNG BAN (`Morning Hearing lúc 8h30`)",
             "start_line": 10,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 23
           }
         ],
@@ -2089,7 +1963,7 @@
           {
             "section": "🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)",
             "start_line": 24,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 41
           }
         ],
@@ -2097,7 +1971,7 @@
           {
             "section": "🔍 2. MINH QUÂN TỰ SOI GƯƠNG & KIỂM ĐIỂM NGÀY HÔM QUA (`Yesterday Autopsy & Evolution`)",
             "start_line": 42,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 43
           }
         ],
@@ -2105,7 +1979,7 @@
           {
             "section": "🔍 2. MINH QUÂN TỰ SOI GƯƠNG & KIỂM ĐIỂM NGÀY HÔM QUA (`Yesterday Autopsy & Evolution`)",
             "start_line": 42,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 43
           }
         ],
@@ -2113,7 +1987,7 @@
           {
             "section": "2.2. Kiểm Điểm Chỗ SAI / Điểm Vào Lệnh Chưa Tối Ưu Của Minh Quân (`Commission & Timing Flaws`)",
             "start_line": 49,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 54
           }
         ],
@@ -2121,7 +1995,7 @@
           {
             "section": "2.4. Ba Thuật Toán Nâng Cấp Để Tối Ưu Hóa Lợi Nhuận Cho TTCK Việt Nam (`VN Profit Optimization Upgrades`)",
             "start_line": 61,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 70
           }
         ],
@@ -2129,7 +2003,7 @@
           {
             "section": "📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN",
             "start_line": 71,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 86
           }
         ],
@@ -2137,7 +2011,7 @@
           {
             "section": "🎯 4. HỒ SƠ MỔ XẺ CHI TIẾT TỪNG VỊ THẾ CỦA MINH QUÂN: TÍNH XÁC THỰC 100% & KHUNG 5 BẬC THẦY ĐẦU TƯ",
             "start_line": 87,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 89
           }
         ],
@@ -2145,7 +2019,7 @@
           {
             "section": "💎 4.1. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
             "start_line": 90,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 116
           }
         ],
@@ -2153,7 +2027,7 @@
           {
             "section": "💎 4.2. Cổ Phiếu **`MSH`** — May Sông Hồng (HOSE)",
             "start_line": 117,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 143
           }
         ],
@@ -2161,13 +2035,13 @@
           {
             "section": "💎 4.3. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
             "start_line": 144,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 170
           },
           {
             "section": "💎 4.3. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
             "start_line": 144,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 170
           }
         ],
@@ -2175,7 +2049,7 @@
           {
             "section": "💎 4.4. Cổ Phiếu **`IDC`** — Tổng Công ty IDICO (HNX)",
             "start_line": 171,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 197
           }
         ],
@@ -2183,7 +2057,7 @@
           {
             "section": "💎 4.4. Cổ Phiếu **`IDC`** — Tổng Công ty IDICO (HNX)",
             "start_line": 171,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 197
           }
         ],
@@ -2191,7 +2065,7 @@
           {
             "section": "💎 4.5. Cổ Phiếu **`TCH`** — Đầu tư Dịch vụ Tài chính Hoàng Huy (HOSE)",
             "start_line": 198,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 224
           }
         ],
@@ -2199,7 +2073,7 @@
           {
             "section": "💎 4.6. Cổ Phiếu **`OCB`** — Ngân hàng Phương Đông (HOSE)",
             "start_line": 225,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 253
           }
         ],
@@ -2207,13 +2081,13 @@
           {
             "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
             "start_line": 254,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 256
           },
           {
             "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
             "start_line": 254,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 256
           }
         ],
@@ -2221,7 +2095,7 @@
           {
             "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
             "start_line": 254,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 256
           }
         ],
@@ -2229,7 +2103,7 @@
           {
             "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
             "start_line": 254,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 256
           }
         ],
@@ -2237,7 +2111,7 @@
           {
             "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,750 đ (+1.73%)",
             "start_line": 257,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 262
           }
         ],
@@ -2245,7 +2119,7 @@
           {
             "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (+2.33%)",
             "start_line": 263,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 268
           }
         ],
@@ -2253,7 +2127,7 @@
           {
             "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,950 đ (-0.74%)",
             "start_line": 269,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+            "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
             "end_line": 274
           }
         ]
@@ -2261,7 +2135,7 @@
     },
     "master_cio_ban8": {
       "exists": true,
-      "path": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+      "path": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
       "size_kb": 30.4,
       "total_lines": 251,
       "estimated_raw_tokens": 8888,
@@ -2435,7 +2309,7 @@
           {
             "section": "BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ TỐI CAO & SỔ LỆNH THỰC THI THỐNG NHẤT",
             "start_line": 1,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 1
           }
         ],
@@ -2443,25 +2317,25 @@
           {
             "section": "BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ TỐI CAO & SỔ LỆNH THỰC THI THỐNG NHẤT",
             "start_line": 1,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 1
           },
           {
             "section": "3. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN TOÀN CẦU / PHỐ WALL (US EQUITIES)",
             "start_line": 91,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 100
           },
           {
             "section": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
             "start_line": 129,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 140
           },
           {
             "section": "7. LỜI KẾT VÀ CHỈ THỊ BẤM CÒ THỰC THI TỪ TỔNG TƯ LỆNH",
             "start_line": 237,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 251
           }
         ],
@@ -2469,13 +2343,13 @@
           {
             "section": "1. TỔNG QUAN PHÂN BỔ VỐN BAN ĐẦU & TỶ TRỌNG ĐA TÀI SẢN (CAPITAL ALLOCATION)",
             "start_line": 11,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 21
           },
           {
             "section": "5. MA TRẬN TƯƠNG QUAN & KIỂM THỬ SỨC CHỊU ĐỰNG KHỦNG HOẢNG (STRESS-TESTING)",
             "start_line": 187,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 200
           }
         ],
@@ -2483,7 +2357,7 @@
           {
             "section": "1B. ĐẶC TẢ CHIẾN LƯỢC LAI TẠO TIẾN HÓA 2 GIAI ĐOẠN ĐÃ THÔNG QUA",
             "start_line": 31,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 54
           }
         ],
@@ -2491,7 +2365,7 @@
           {
             "section": "1B. ĐẶC TẢ CHIẾN LƯỢC LAI TẠO TIẾN HÓA 2 GIAI ĐOẠN ĐÃ THÔNG QUA",
             "start_line": 31,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 54
           }
         ],
@@ -2499,7 +2373,7 @@
           {
             "section": "1B. ĐẶC TẢ CHIẾN LƯỢC LAI TẠO TIẾN HÓA 2 GIAI ĐOẠN ĐÃ THÔNG QUA",
             "start_line": 31,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 54
           }
         ],
@@ -2507,7 +2381,7 @@
           {
             "section": "2. BIÊN BẢN HỘI NGHỊ THƯỢNG ĐỈNH: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
             "start_line": 62,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 83
           }
         ],
@@ -2515,7 +2389,7 @@
           {
             "section": "2. BIÊN BẢN HỘI NGHỊ THƯỢNG ĐỈNH: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
             "start_line": 62,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 83
           }
         ],
@@ -2523,7 +2397,7 @@
           {
             "section": "2. BIÊN BẢN HỘI NGHỊ THƯỢNG ĐỈNH: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
             "start_line": 62,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 83
           }
         ],
@@ -2531,13 +2405,13 @@
           {
             "section": "2. BIÊN BẢN HỘI NGHỊ THƯỢNG ĐỈNH: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
             "start_line": 62,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 83
           },
           {
             "section": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
             "start_line": 129,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 140
           }
         ],
@@ -2545,7 +2419,7 @@
           {
             "section": "3. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN TOÀN CẦU / PHỐ WALL (US EQUITIES)",
             "start_line": 91,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 100
           }
         ],
@@ -2553,7 +2427,7 @@
           {
             "section": "3. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN TOÀN CẦU / PHỐ WALL (US EQUITIES)",
             "start_line": 91,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 100
           }
         ],
@@ -2561,7 +2435,7 @@
           {
             "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
             "start_line": 103,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 108
           }
         ],
@@ -2569,7 +2443,7 @@
           {
             "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
             "start_line": 103,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 108
           }
         ],
@@ -2577,7 +2451,7 @@
           {
             "section": "🔹 NVDA — NVIDIA Corp. (CORE COMPOUNDER)",
             "start_line": 109,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 114
           }
         ],
@@ -2585,19 +2459,19 @@
           {
             "section": "🔹 NVDA — NVIDIA Corp. (CORE COMPOUNDER)",
             "start_line": 109,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 114
           },
           {
             "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
             "start_line": 115,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 120
           },
           {
             "section": "🔹 XOM — Exxon Mobil Corp. (CORE COMPOUNDER)",
             "start_line": 121,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 128
           }
         ],
@@ -2605,7 +2479,7 @@
           {
             "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
             "start_line": 115,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 120
           }
         ],
@@ -2613,7 +2487,7 @@
           {
             "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
             "start_line": 115,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 120
           }
         ],
@@ -2621,7 +2495,7 @@
           {
             "section": "🔹 XOM — Exxon Mobil Corp. (CORE COMPOUNDER)",
             "start_line": 121,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 128
           }
         ],
@@ -2629,7 +2503,7 @@
           {
             "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 143,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 149
           }
         ],
@@ -2637,37 +2511,37 @@
           {
             "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 143,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 149
           },
           {
             "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 150,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 156
           },
           {
             "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 157,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 163
           },
           {
             "section": "🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 164,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 170
           },
           {
             "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 171,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 177
           },
           {
             "section": "🔹 OCB — Ngân hàng Phương Đông (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 178,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 186
           }
         ],
@@ -2675,37 +2549,37 @@
           {
             "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 143,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 149
           },
           {
             "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 150,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 156
           },
           {
             "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 157,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 163
           },
           {
             "section": "🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 164,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 170
           },
           {
             "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 171,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 177
           },
           {
             "section": "🔹 OCB — Ngân hàng Phương Đông (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 178,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 186
           }
         ],
@@ -2713,7 +2587,7 @@
           {
             "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 150,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 156
           }
         ],
@@ -2721,13 +2595,13 @@
           {
             "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 157,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 163
           },
           {
             "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 157,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 163
           }
         ],
@@ -2735,7 +2609,7 @@
           {
             "section": "🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 164,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 170
           }
         ],
@@ -2743,7 +2617,7 @@
           {
             "section": "🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 164,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 170
           }
         ],
@@ -2751,7 +2625,7 @@
           {
             "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 171,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 177
           }
         ],
@@ -2759,7 +2633,7 @@
           {
             "section": "🔹 OCB — Ngân hàng Phương Đông (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 178,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 186
           }
         ],
@@ -2767,7 +2641,7 @@
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
             "start_line": 211,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 224
           }
         ],
@@ -2775,7 +2649,7 @@
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
             "start_line": 211,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 224
           }
         ],
@@ -2783,7 +2657,7 @@
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
             "start_line": 211,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 224
           }
         ],
@@ -2791,7 +2665,7 @@
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
             "start_line": 211,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 224
           }
         ],
@@ -2799,7 +2673,7 @@
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
             "start_line": 211,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 224
           }
         ],
@@ -2807,7 +2681,7 @@
           {
             "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
             "start_line": 211,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 224
           }
         ],
@@ -2815,7 +2689,7 @@
           {
             "section": "6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)",
             "start_line": 225,
-            "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+            "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
             "end_line": 236
           }
         ]
@@ -2929,7 +2803,7 @@
       {
         "section": "[BAN 1 — MACRO & GEOPOLITICS] BÁO CÁO VĨ MÔ, ĐỘ RỘNG THỊ TRƯỜNG, TÍN DỤNG, 12 NGÀNH GICS & 24 BẢN TIN PHỐ WALL TRỰC TUYẾN",
         "start_line": 1,
-        "file": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
+        "file": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
         "end_line": 7
       }
     ],
@@ -2937,37 +2811,25 @@
       {
         "section": "[BAN 1 — MACRO & GEOPOLITICS] BÁO CÁO VĨ MÔ, ĐỘ RỘNG THỊ TRƯỜNG, TÍN DỤNG, 12 NGÀNH GICS & 24 BẢN TIN PHỐ WALL TRỰC TUYẾN",
         "start_line": 1,
-        "file": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
+        "file": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
         "end_line": 7
       },
       {
         "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
         "start_line": 1,
-        "file": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+        "file": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
         "end_line": 46
       },
       {
         "section": "BẢN TIN HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN BUỔI SÁNG (MORNING MENTOR BRIEFING v5.0)",
         "start_line": 1,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 1
       },
       {
-        "section": "🌅 BẢN TIN TÌNH BÁO THỊ TRƯỜNG CUỐI TUẦN & DỰ BÁO TÁC CHIẾN RỰC RỠ PHIÊN THỨ HAI (09/11/2026)",
+        "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 1
-      },
-      {
-        "section": "I. TỔNG HỢP TIN TỨC VĨ MÔ & TÌNH HÌNH THỊ TRƯỜNG CUỐI TUẦN",
-        "start_line": 12,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 15
-      },
-      {
-        "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-08",
-        "start_line": 1,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 6
       }
     ],
@@ -2975,25 +2837,25 @@
       {
         "section": "[BAN 1 — MACRO & GEOPOLITICS] BÁO CÁO VĨ MÔ, ĐỘ RỘNG THỊ TRƯỜNG, TÍN DỤNG, 12 NGÀNH GICS & 24 BẢN TIN PHỐ WALL TRỰC TUYẾN",
         "start_line": 1,
-        "file": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
+        "file": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
         "end_line": 7
       },
       {
         "section": "[BAN 3 — SYNTHESIS HUB] BIÊN BẢN TỔNG HỢP ĐỊNH GIÁ PHỐ WALL, ĐIỀU PHỐI XUNG ĐỘT & BẢNG SÀNG LỌC CỔ PHIẾU TĂNG/GIẢM",
         "start_line": 1,
-        "file": "03_Synthesis_Memos/2026-11-08_Investment_Memo.md",
+        "file": "03_Synthesis_Memos/2026-11-09_Investment_Memo.md",
         "end_line": 5
       },
       {
         "section": "🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)",
         "start_line": 8,
-        "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+        "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
         "end_line": 29
       },
       {
         "section": "3. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN TOÀN CẦU / PHỐ WALL (US EQUITIES)",
         "start_line": 91,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 100
       }
     ],
@@ -3001,19 +2863,19 @@
       {
         "section": "2. Toàn Cảnh 8 Chỉ Số Chứng Khoán Toàn Cầu (US, Europe, Asia)",
         "start_line": 15,
-        "file": "01_Macro_Geopolitics/2026-11-08_Macro_Report.md",
+        "file": "01_Macro_Geopolitics/2026-11-09_Macro_Report.md",
         "end_line": 26
       },
       {
         "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
         "start_line": 1,
-        "file": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+        "file": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
         "end_line": 46
       },
       {
         "section": "3. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN TOÀN CẦU / PHỐ WALL (US EQUITIES)",
         "start_line": 91,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 100
       }
     ],
@@ -3021,8 +2883,14 @@
       {
         "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
         "start_line": 1,
-        "file": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+        "file": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
         "end_line": 46
+      },
+      {
+        "section": "2. RADAR DÒNG TIỀN 3 KHỐI & LUÂN CHUYỂN 12 NHÓM NGÀNH TRÊN HOSE / HNX",
+        "start_line": 13,
+        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-09_VN_Macro_Report.md",
+        "end_line": 20
       },
       {
         "section": "BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)",
@@ -3035,7 +2903,7 @@
       {
         "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
         "start_line": 1,
-        "file": "02_Equity_Research/2026-11-08_SEC_Filings_Radar.md",
+        "file": "02_Equity_Research/2026-11-09_SEC_Filings_Radar.md",
         "end_line": 46
       }
     ],
@@ -3043,7 +2911,7 @@
       {
         "section": "[BAN 3 — SYNTHESIS HUB] BIÊN BẢN TỔNG HỢP ĐỊNH GIÁ PHỐ WALL, ĐIỀU PHỐI XUNG ĐỘT & BẢNG SÀNG LỌC CỔ PHIẾU TĂNG/GIẢM",
         "start_line": 1,
-        "file": "03_Synthesis_Memos/2026-11-08_Investment_Memo.md",
+        "file": "03_Synthesis_Memos/2026-11-09_Investment_Memo.md",
         "end_line": 5
       }
     ],
@@ -3051,7 +2919,7 @@
       {
         "section": "[BAN 3 — SYNTHESIS HUB] BIÊN BẢN TỔNG HỢP ĐỊNH GIÁ PHỐ WALL, ĐIỀU PHỐI XUNG ĐỘT & BẢNG SÀNG LỌC CỔ PHIẾU TĂNG/GIẢM",
         "start_line": 1,
-        "file": "03_Synthesis_Memos/2026-11-08_Investment_Memo.md",
+        "file": "03_Synthesis_Memos/2026-11-09_Investment_Memo.md",
         "end_line": 5
       }
     ],
@@ -3059,19 +2927,19 @@
       {
         "section": "[BAN 4 — INVESTMENT COMMITTEE] NGHỊ QUYẾT PHÊ DUYỆT DANH MỤC ĐẦU TƯ & KIỂM SOÁT RỦI RO ĐỊNH LƯỢNG",
         "start_line": 1,
-        "file": "04_Investment_Committee/2026-11-08_IC_Decision.md",
+        "file": "04_Investment_Committee/2026-11-09_IC_Decision.md",
         "end_line": 6
       },
       {
         "section": "🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)",
         "start_line": 8,
-        "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+        "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
         "end_line": 29
       },
       {
         "section": "QUYẾT NGHỊ GIẢI NGÂN DANH MỤC TOP 8 SIÊU CỔ PHIẾU ĐẦU NGÀNH",
         "start_line": 7,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 8
       }
     ],
@@ -3079,25 +2947,25 @@
       {
         "section": "[BAN 4 — INVESTMENT COMMITTEE] NGHỊ QUYẾT PHÊ DUYỆT DANH MỤC ĐẦU TƯ & KIỂM SOÁT RỦI RO ĐỊNH LƯỢNG",
         "start_line": 1,
-        "file": "04_Investment_Committee/2026-11-08_IC_Decision.md",
+        "file": "04_Investment_Committee/2026-11-09_IC_Decision.md",
         "end_line": 6
       },
       {
         "section": "🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)",
         "start_line": 23,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 38
       },
       {
         "section": "2. BẢNG 2: TOP CỔ PHIẾU CẢNH BÁO RỦI RO / BẪY LỢI NHUẬN GIẤY (`TOP HIGH-RISK TRAPS & WATCHLIST`)",
         "start_line": 24,
-        "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+        "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
         "end_line": 34
       },
       {
         "section": "🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)",
         "start_line": 24,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 41
       }
     ],
@@ -3105,13 +2973,13 @@
       {
         "section": "[BAN 5] BÁO CÁO THẨM ĐỊNH HIỆU SUẤT, HỒI TỐ WALK-FORWARD & TỰ HỌC THÍCH NGHI",
         "start_line": 1,
-        "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+        "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
         "end_line": 7
       },
       {
         "section": "1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)",
         "start_line": 19,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 23
       }
     ],
@@ -3119,7 +2987,7 @@
       {
         "section": "[BAN 5] BÁO CÁO THẨM ĐỊNH HIỆU SUẤT, HỒI TỐ WALK-FORWARD & TỰ HỌC THÍCH NGHI",
         "start_line": 1,
-        "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+        "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
         "end_line": 7
       }
     ],
@@ -3127,31 +2995,31 @@
       {
         "section": "🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)",
         "start_line": 8,
-        "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+        "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
         "end_line": 29
       },
       {
         "section": "BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ TỐI CAO & SỔ LỆNH THỰC THI THỐNG NHẤT",
         "start_line": 1,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 1
       },
       {
         "section": "3. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN TOÀN CẦU / PHỐ WALL (US EQUITIES)",
         "start_line": 91,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 100
       },
       {
         "section": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
         "start_line": 129,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 140
       },
       {
         "section": "7. LỜI KẾT VÀ CHỈ THỊ BẤM CÒ THỰC THI TỪ TỔNG TƯ LỆNH",
         "start_line": 237,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 251
       }
     ],
@@ -3159,19 +3027,19 @@
       {
         "section": "🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)",
         "start_line": 8,
-        "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+        "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
         "end_line": 29
       },
       {
         "section": "[BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX",
         "start_line": 1,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 9
       },
       {
         "section": "2. BIÊN BẢN HỘI NGHỊ THƯỢNG ĐỈNH: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
         "start_line": 62,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 83
       }
     ],
@@ -3179,7 +3047,7 @@
       {
         "section": "2. Bảng Đối Soát Hiệu Suất Đa Khung Thời Gian (`Multi-Horizon Walk-Forward Alpha vs ^GSPC`)",
         "start_line": 38,
-        "file": "05_Learning_And_Evolution/2026-11-08_Learning_And_Attribution_Report.md",
+        "file": "05_Learning_And_Evolution/2026-11-09_Learning_And_Attribution_Report.md",
         "end_line": 47
       }
     ],
@@ -3187,43 +3055,49 @@
       {
         "section": "Chương trình: 4 Tiếng/Ngày • Mô hình Core & Satellite • Thực hành Paper Trading & VN Localization",
         "start_line": 3,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 8
       },
       {
         "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
         "start_line": 37,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 45
       },
       {
-        "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-08",
+        "section": "[BAN 1 VN] BÁO CÁO VĨ MÔ, CHÍNH SÁCH TIỀN TỆ SBV & LUÂN CHUYỂN 12 NHÓM NGÀNH — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-09_VN_Macro_Report.md",
+        "end_line": 6
+      },
+      {
+        "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-09",
+        "start_line": 1,
+        "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
         "end_line": 5
       },
       {
         "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
         "start_line": 33,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 40
       },
       {
         "section": "🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
         "start_line": 7,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 14
       },
       {
         "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
         "start_line": 1,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 9
       },
       {
         "section": "2.4. Ba Thuật Toán Nâng Cấp Để Tối Ưu Hóa Lợi Nhuận Cho TTCK Việt Nam (`VN Profit Optimization Upgrades`)",
         "start_line": 61,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 70
       }
     ],
@@ -3231,13 +3105,13 @@
       {
         "section": "PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)",
         "start_line": 9,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 19
       },
       {
         "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
         "start_line": 33,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 40
       }
     ],
@@ -3245,7 +3119,7 @@
       {
         "section": "PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)",
         "start_line": 9,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 19
       }
     ],
@@ -3253,7 +3127,7 @@
       {
         "section": "PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)",
         "start_line": 9,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 19
       }
     ],
@@ -3261,7 +3135,7 @@
       {
         "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
         "start_line": 20,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 36
       }
     ],
@@ -3269,19 +3143,19 @@
       {
         "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
         "start_line": 20,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 36
       },
       {
         "section": "🔍 2. BÀI HỌC THỰC CHIẾN HÔM NAY: 'NGHỆ THUẬT BÓC TÁCH DÒNG TIỀN THỰC OCF TRONG BCTC'",
         "start_line": 15,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 18
       },
       {
         "section": "🧠 3. CÂU HỎI TƯ DUY PHẢN BIỆN SOCRATIC DÀNH CHO BẠN HÔM NAY",
         "start_line": 34,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 40
       }
     ],
@@ -3289,7 +3163,7 @@
       {
         "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
         "start_line": 20,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 36
       }
     ],
@@ -3297,7 +3171,7 @@
       {
         "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
         "start_line": 20,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 36
       }
     ],
@@ -3305,7 +3179,7 @@
       {
         "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
         "start_line": 20,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 36
       }
     ],
@@ -3313,13 +3187,13 @@
       {
         "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
         "start_line": 20,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 36
       },
       {
         "section": "4.1. MSFT — Microsoft Corp. (Enterprise Software & Cloud)",
         "start_line": 89,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 98
       }
     ],
@@ -3327,25 +3201,13 @@
       {
         "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
         "start_line": 37,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 45
-      },
-      {
-        "section": "III. BẢN KẾ HOẠCH BẮN TỈA VÒNG 2 ĐÃ CHUẨN BỊ SẴN SÀNG CHO CHỦ TỊCH",
-        "start_line": 61,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 64
-      },
-      {
-        "section": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-        "start_line": 78,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 93
       },
       {
         "section": "🧠 3. CÂU HỎI TƯ DUY PHẢN BIỆN SOCRATIC DÀNH CHO BẠN HÔM NAY",
         "start_line": 34,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 40
       }
     ],
@@ -3353,7 +3215,7 @@
       {
         "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
         "start_line": 37,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 45
       },
       {
@@ -3363,33 +3225,33 @@
         "end_line": 8
       },
       {
-        "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-08",
+        "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+        "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
         "end_line": 5
       },
       {
-        "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-08",
+        "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 6
       },
       {
-        "section": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-08",
+        "section": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 5
       },
       {
         "section": "2. BIÊN BẢN HỘI NGHỊ THƯỢNG ĐỈNH: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
         "start_line": 62,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 83
       },
       {
         "section": "4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)",
         "start_line": 129,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 140
       }
     ],
@@ -3397,7 +3259,7 @@
       {
         "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
         "start_line": 37,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 45
       }
     ],
@@ -3405,13 +3267,13 @@
       {
         "section": "PHẦN 4: THỬ THÁCH TƯ DUY SOCRATIC TRONG NGÀY (SOCRATIC CHALLENGE)",
         "start_line": 46,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 47
       },
       {
         "section": "🧠 3. CÂU HỎI TƯ DUY PHẢN BIỆN SOCRATIC DÀNH CHO BẠN HÔM NAY",
         "start_line": 34,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 40
       }
     ],
@@ -3419,25 +3281,25 @@
       {
         "section": "PHẦN 4: THỬ THÁCH TƯ DUY SOCRATIC TRONG NGÀY (SOCRATIC CHALLENGE)",
         "start_line": 46,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-08_Mentor_Briefing.md",
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-09_Mentor_Briefing.md",
         "end_line": 47
       },
       {
         "section": "[BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX",
         "start_line": 1,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 9
       },
       {
         "section": "🔍 2. BÀI HỌC THỰC CHIẾN HÔM NAY: 'NGHỆ THUẬT BÓC TÁCH DÒNG TIỀN THỰC OCF TRONG BCTC'",
         "start_line": 15,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 18
       },
       {
         "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
         "start_line": 1,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 9
       }
     ],
@@ -3445,19 +3307,19 @@
       {
         "section": "[BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX",
         "start_line": 1,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 9
       },
       {
         "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
         "start_line": 1,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 9
       },
       {
         "section": "📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN",
         "start_line": 71,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 86
       }
     ],
@@ -3465,19 +3327,19 @@
       {
         "section": "2.2. Kiểm Điểm Chỗ SAI / Điểm Vào Lệnh Chưa Tối Ưu Của Alex (`Commission & Timing Flaws`)",
         "start_line": 46,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 51
       },
       {
         "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
         "start_line": 33,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 40
       },
       {
         "section": "2.2. Kiểm Điểm Chỗ SAI / Điểm Vào Lệnh Chưa Tối Ưu Của Minh Quân (`Commission & Timing Flaws`)",
         "start_line": 49,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 54
       }
     ],
@@ -3485,7 +3347,7 @@
       {
         "section": "4.3. JPM — JPMorgan Chase & Co. (Global Diversified Banking)",
         "start_line": 109,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 118
       }
     ],
@@ -3493,7 +3355,7 @@
       {
         "section": "4.4. PG — Procter & Gamble (Consumer Household Staples)",
         "start_line": 119,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 128
       }
     ],
@@ -3501,13 +3363,13 @@
       {
         "section": "4.5. XOM — Exxon Mobil Corp. (Integrated Oil & Gas)",
         "start_line": 129,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 138
       },
       {
         "section": "🔹 XOM — Exxon Mobil Corp. (CORE COMPOUNDER)",
         "start_line": 121,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 128
       }
     ],
@@ -3515,7 +3377,7 @@
       {
         "section": "4.6. JNJ — Johnson & Johnson (Pharmaceuticals & MedTech)",
         "start_line": 139,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 148
       }
     ],
@@ -3523,13 +3385,13 @@
       {
         "section": "4.7. NVDA — NVIDIA Corp. (Semiconductors & AI)",
         "start_line": 149,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 158
       },
       {
         "section": "🔹 NVDA — NVIDIA Corp. (CORE COMPOUNDER)",
         "start_line": 109,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 114
       }
     ],
@@ -3537,19 +3399,19 @@
       {
         "section": "4.7. NVDA — NVIDIA Corp. (Semiconductors & AI)",
         "start_line": 149,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 158
       },
       {
         "section": "4.10. AVGO — Broadcom Inc. (Custom AI ASICs & Networking)",
         "start_line": 179,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 190
       },
       {
         "section": "6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)",
         "start_line": 225,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 236
       }
     ],
@@ -3557,13 +3419,13 @@
       {
         "section": "4.8. TSM — Taiwan Semiconductor (TSMC) (Global Chip Foundry)",
         "start_line": 159,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 168
       },
       {
         "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
         "start_line": 115,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 120
       }
     ],
@@ -3571,13 +3433,13 @@
       {
         "section": "4.8. TSM — Taiwan Semiconductor (TSMC) (Global Chip Foundry)",
         "start_line": 159,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 168
       },
       {
         "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
         "start_line": 115,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 120
       }
     ],
@@ -3585,7 +3447,7 @@
       {
         "section": "4.9. GOOGL — Alphabet Inc. (Search & Hyperscale Cloud)",
         "start_line": 169,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 178
       }
     ],
@@ -3593,68 +3455,14 @@
       {
         "section": "4.10. AVGO — Broadcom Inc. (Custom AI ASICs & Networking)",
         "start_line": 179,
-        "file": "07_Daily_Investment_Specialist/2026-11-08_Daily_Specialist_Decision.md",
+        "file": "07_Daily_Investment_Specialist/2026-11-09_Daily_Specialist_Decision.md",
         "end_line": 190
       },
       {
         "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
         "start_line": 103,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 108
-      }
-    ],
-    "HAI": [
-      {
-        "section": "🌅 BẢN TIN TÌNH BÁO THỊ TRƯỜNG CUỐI TUẦN & DỰ BÁO TÁC CHIẾN RỰC RỠ PHIÊN THỨ HAI (09/11/2026)",
-        "start_line": 1,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 1
-      },
-      {
-        "section": "II. DỰ BÁO 3 KỊCH BẢN THỊ TRƯỜNG PHIÊN THỨ HAI (09/11/2026)",
-        "start_line": 30,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 46
-      }
-    ],
-    "II": [
-      {
-        "section": "II. DỰ BÁO 3 KỊCH BẢN THỊ TRƯỜNG PHIÊN THỨ HAI (09/11/2026)",
-        "start_line": 30,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 46
-      }
-    ],
-    "III": [
-      {
-        "section": "III. BẢN KẾ HOẠCH BẮN TỈA VÒNG 2 ĐÃ CHUẨN BỊ SẴN SÀNG CHO CHỦ TỊCH",
-        "start_line": 61,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 64
-      }
-    ],
-    "IV": [
-      {
-        "section": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-        "start_line": 78,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 93
-      }
-    ],
-    "QUY": [
-      {
-        "section": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-        "start_line": 78,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 93
-      }
-    ],
-    "THAO": [
-      {
-        "section": "IV. QUY TRÌNH CHỦ NHẬT & KỊCH BẢN THAO TÁC CỰC KỲ THƯ THÁI CHO CHỦ TỊCH",
-        "start_line": 78,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-08_Weekend_Market_Intel_And_Monday_Forecast.md",
-        "end_line": 93
       }
     ],
     "QUAN": [
@@ -3667,19 +3475,19 @@
       {
         "section": "🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
         "start_line": 7,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 14
       },
       {
         "section": "1. TỔNG QUAN PHÂN BỔ VỐN BAN ĐẦU & TỶ TRỌNG ĐA TÀI SẢN (CAPITAL ALLOCATION)",
         "start_line": 11,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 21
       },
       {
         "section": "5. MA TRẬN TƯƠNG QUAN & KIỂM THỬ SỨC CHỊU ĐỰNG KHỦNG HOẢNG (STRESS-TESTING)",
         "start_line": 187,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 200
       }
     ],
@@ -3705,27 +3513,27 @@
         "end_line": 8
       },
       {
-        "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-08",
+        "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ TTCK VIỆT NAM — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+        "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
         "end_line": 5
       },
       {
-        "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-08",
+        "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 6
       },
       {
-        "section": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-08",
+        "section": "BÁO CÁO THẨM ĐỊNH HIỆU SUẤT & TỰ HỌC TIẾN HÓA TTCK VIỆT NAM — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 5
       },
       {
         "section": "2.4. Ba Thuật Toán Nâng Cấp Để Tối Ưu Hóa Lợi Nhuận Cho TTCK Việt Nam (`VN Profit Optimization Upgrades`)",
         "start_line": 61,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 70
       }
     ],
@@ -3785,7 +3593,7 @@
       {
         "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
         "start_line": 64,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 74
       },
       {
@@ -3865,7 +3673,7 @@
       {
         "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
         "start_line": 75,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 85
       }
     ],
@@ -3885,13 +3693,13 @@
       {
         "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
         "start_line": 42,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 52
       },
       {
         "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
         "start_line": 42,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 52
       }
     ],
@@ -3937,7 +3745,7 @@
       {
         "section": "2. BẢNG 2: TOP CỔ PHIẾU CẢNH BÁO RỦI RO / BẪY LỢI NHUẬN GIẤY (`TOP HIGH-RISK TRAPS & WATCHLIST`)",
         "start_line": 24,
-        "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+        "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
         "end_line": 34
       }
     ],
@@ -3945,15 +3753,15 @@
       {
         "section": "2. BẢNG 2: TOP CỔ PHIẾU CẢNH BÁO RỦI RO / BẪY LỢI NHUẬN GIẤY (`TOP HIGH-RISK TRAPS & WATCHLIST`)",
         "start_line": 24,
-        "file": "VN_Market/03_Synthesis_Memos/2026-11-08_VN_Investment_Memo.md",
+        "file": "VN_Market/03_Synthesis_Memos/2026-11-09_VN_Investment_Memo.md",
         "end_line": 34
       }
     ],
     "IC": [
       {
-        "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-08",
+        "section": "NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 6
       }
     ],
@@ -3961,19 +3769,19 @@
       {
         "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
         "start_line": 9,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 19
       },
       {
         "section": "💎 4.4. Cổ Phiếu **`IDC`** — Tổng Công ty IDICO (HNX)",
         "start_line": 171,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 197
       },
       {
         "section": "🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 164,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 170
       }
     ],
@@ -3981,19 +3789,19 @@
       {
         "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
         "start_line": 9,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 19
       },
       {
         "section": "💎 4.4. Cổ Phiếu **`IDC`** — Tổng Công ty IDICO (HNX)",
         "start_line": 171,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 197
       },
       {
         "section": "🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 164,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 170
       }
     ],
@@ -4001,7 +3809,7 @@
       {
         "section": "🎯 **STB** — Sài Gòn Thương Tín (Sacombank) (HOSE)",
         "start_line": 20,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 30
       }
     ],
@@ -4009,7 +3817,7 @@
       {
         "section": "🎯 **MSN** — Tập Đoàn Masan (HOSE)",
         "start_line": 31,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 41
       }
     ],
@@ -4017,7 +3825,7 @@
       {
         "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
         "start_line": 53,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 63
       }
     ],
@@ -4025,7 +3833,7 @@
       {
         "section": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
         "start_line": 86,
-        "file": "VN_Market/04_Investment_Committee/2026-11-08_VN_IC_Decision.md",
+        "file": "VN_Market/04_Investment_Committee/2026-11-09_VN_IC_Decision.md",
         "end_line": 95
       }
     ],
@@ -4033,7 +3841,7 @@
       {
         "section": "🏛️ ĐỐI SOÁT TÀI KHOẢN THỰC CHIẾN CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC (TCBS: 105C307855)",
         "start_line": 6,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 18
       },
       {
@@ -4047,13 +3855,13 @@
       {
         "section": "1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)",
         "start_line": 19,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 23
       },
       {
         "section": "2. BIÊN BẢN HỘI NGHỊ THƯỢNG ĐỈNH: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
         "start_line": 62,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 83
       }
     ],
@@ -4061,7 +3869,7 @@
       {
         "section": "1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)",
         "start_line": 19,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 23
       }
     ],
@@ -4069,7 +3877,7 @@
       {
         "section": "3. CƠ CHẾ TỰ ĐỘNG TINH CHỈNH TRỌNG SỐ (ADAPTIVE TUNING)",
         "start_line": 29,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 32
       }
     ],
@@ -4077,23 +3885,23 @@
       {
         "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
         "start_line": 33,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-08_VN_Learning_Report.md",
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-09_VN_Learning_Report.md",
         "end_line": 40
       }
     ],
     "KHAI": [
       {
-        "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-08",
+        "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 6
       }
     ],
     "AM": [
       {
-        "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-08",
+        "section": "BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — 2026-11-09",
         "start_line": 1,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 6
       }
     ],
@@ -4101,19 +3909,19 @@
       {
         "section": "🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
         "start_line": 7,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 14
       },
       {
         "section": "🔍 2. MINH QUÂN TỰ SOI GƯƠNG & KIỂM ĐIỂM NGÀY HÔM QUA (`Yesterday Autopsy & Evolution`)",
         "start_line": 42,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 43
       },
       {
         "section": "1B. ĐẶC TẢ CHIẾN LƯỢC LAI TẠO TIẾN HÓA 2 GIAI ĐOẠN ĐÃ THÔNG QUA",
         "start_line": 31,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 54
       }
     ],
@@ -4121,7 +3929,7 @@
       {
         "section": "🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
         "start_line": 7,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 14
       }
     ],
@@ -4129,7 +3937,7 @@
       {
         "section": "⏰ LỊCH TRÌNH TIẾP THEO:",
         "start_line": 41,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-08_VN_Mentor_Briefing.md",
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-09_VN_Mentor_Briefing.md",
         "end_line": 43
       }
     ],
@@ -4137,43 +3945,43 @@
       {
         "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
         "start_line": 1,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 9
       },
       {
         "section": "🏛️ 1. HỘI NGHỊ GIAO BAN ĐẦU NGÀY CỦA MINH QUÂN: LẮNG NGHE & ĐỐI SOÁT 6 PHÒNG BAN (`Morning Hearing lúc 8h30`)",
         "start_line": 10,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 23
       },
       {
         "section": "🔍 2. MINH QUÂN TỰ SOI GƯƠNG & KIỂM ĐIỂM NGÀY HÔM QUA (`Yesterday Autopsy & Evolution`)",
         "start_line": 42,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 43
       },
       {
         "section": "📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN",
         "start_line": 71,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 86
       },
       {
         "section": "🎯 4. HỒ SƠ MỔ XẺ CHI TIẾT TỪNG VỊ THẾ CỦA MINH QUÂN: TÍNH XÁC THỰC 100% & KHUNG 5 BẬC THẦY ĐẦU TƯ",
         "start_line": 87,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 89
       },
       {
         "section": "🧭 6. KỶ LUẬT THỰC CHIẾN TỐI THƯỢNG CỦA MINH QUÂN",
         "start_line": 283,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 286
       },
       {
         "section": "2. BIÊN BẢN HỘI NGHỊ THƯỢNG ĐỈNH: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
         "start_line": 62,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 83
       }
     ],
@@ -4181,7 +3989,7 @@
       {
         "section": "🏛️ 1. HỘI NGHỊ GIAO BAN ĐẦU NGÀY CỦA MINH QUÂN: LẮNG NGHE & ĐỐI SOÁT 6 PHÒNG BAN (`Morning Hearing lúc 8h30`)",
         "start_line": 10,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 23
       }
     ],
@@ -4189,7 +3997,7 @@
       {
         "section": "🏛️ 1. HỘI NGHỊ GIAO BAN ĐẦU NGÀY CỦA MINH QUÂN: LẮNG NGHE & ĐỐI SOÁT 6 PHÒNG BAN (`Morning Hearing lúc 8h30`)",
         "start_line": 10,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 23
       }
     ],
@@ -4197,7 +4005,7 @@
       {
         "section": "🔍 2. MINH QUÂN TỰ SOI GƯƠNG & KIỂM ĐIỂM NGÀY HÔM QUA (`Yesterday Autopsy & Evolution`)",
         "start_line": 42,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 43
       }
     ],
@@ -4205,7 +4013,7 @@
       {
         "section": "📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN",
         "start_line": 71,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 86
       }
     ],
@@ -4213,7 +4021,7 @@
       {
         "section": "🎯 4. HỒ SƠ MỔ XẺ CHI TIẾT TỪNG VỊ THẾ CỦA MINH QUÂN: TÍNH XÁC THỰC 100% & KHUNG 5 BẬC THẦY ĐẦU TƯ",
         "start_line": 87,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 89
       }
     ],
@@ -4221,13 +4029,13 @@
       {
         "section": "💎 4.1. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
         "start_line": 90,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 116
       },
       {
         "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 143,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 149
       }
     ],
@@ -4235,13 +4043,13 @@
       {
         "section": "💎 4.2. Cổ Phiếu **`MSH`** — May Sông Hồng (HOSE)",
         "start_line": 117,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 143
       },
       {
         "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 150,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 156
       }
     ],
@@ -4249,25 +4057,25 @@
       {
         "section": "💎 4.3. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
         "start_line": 144,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 170
       },
       {
         "section": "💎 4.3. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
         "start_line": 144,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 170
       },
       {
         "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 157,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 163
       },
       {
         "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 157,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 163
       }
     ],
@@ -4275,13 +4083,13 @@
       {
         "section": "💎 4.5. Cổ Phiếu **`TCH`** — Đầu tư Dịch vụ Tài chính Hoàng Huy (HOSE)",
         "start_line": 198,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 224
       },
       {
         "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 171,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 177
       }
     ],
@@ -4289,13 +4097,13 @@
       {
         "section": "💎 4.6. Cổ Phiếu **`OCB`** — Ngân hàng Phương Đông (HOSE)",
         "start_line": 225,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 253
       },
       {
         "section": "🔹 OCB — Ngân hàng Phương Đông (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 178,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 186
       }
     ],
@@ -4303,13 +4111,13 @@
       {
         "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
         "start_line": 254,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 256
       },
       {
         "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
         "start_line": 254,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 256
       }
     ],
@@ -4317,7 +4125,7 @@
       {
         "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
         "start_line": 254,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 256
       }
     ],
@@ -4325,7 +4133,7 @@
       {
         "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
         "start_line": 254,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 256
       }
     ],
@@ -4333,7 +4141,7 @@
       {
         "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,750 đ (+1.73%)",
         "start_line": 257,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 262
       }
     ],
@@ -4341,7 +4149,7 @@
       {
         "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (+2.33%)",
         "start_line": 263,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 268
       }
     ],
@@ -4349,7 +4157,7 @@
       {
         "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,950 đ (-0.74%)",
         "start_line": 269,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-08_VN_Specialist_Decision.md",
+        "file": "VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md",
         "end_line": 274
       }
     ],
@@ -4357,7 +4165,7 @@
       {
         "section": "BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ TỐI CAO & SỔ LỆNH THỰC THI THỐNG NHẤT",
         "start_line": 1,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 1
       }
     ],
@@ -4365,7 +4173,7 @@
       {
         "section": "1B. ĐẶC TẢ CHIẾN LƯỢC LAI TẠO TIẾN HÓA 2 GIAI ĐOẠN ĐÃ THÔNG QUA",
         "start_line": 31,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 54
       }
     ],
@@ -4373,7 +4181,7 @@
       {
         "section": "1B. ĐẶC TẢ CHIẾN LƯỢC LAI TẠO TIẾN HÓA 2 GIAI ĐOẠN ĐÃ THÔNG QUA",
         "start_line": 31,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 54
       }
     ],
@@ -4381,7 +4189,7 @@
       {
         "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
         "start_line": 103,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 108
       }
     ],
@@ -4389,19 +4197,19 @@
       {
         "section": "🔹 NVDA — NVIDIA Corp. (CORE COMPOUNDER)",
         "start_line": 109,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 114
       },
       {
         "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
         "start_line": 115,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 120
       },
       {
         "section": "🔹 XOM — Exxon Mobil Corp. (CORE COMPOUNDER)",
         "start_line": 121,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 128
       }
     ],
@@ -4409,37 +4217,37 @@
       {
         "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 143,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 149
       },
       {
         "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 150,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 156
       },
       {
         "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 157,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 163
       },
       {
         "section": "🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 164,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 170
       },
       {
         "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 171,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 177
       },
       {
         "section": "🔹 OCB — Ngân hàng Phương Đông (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 178,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 186
       }
     ],
@@ -4447,37 +4255,37 @@
       {
         "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 143,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 149
       },
       {
         "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 150,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 156
       },
       {
         "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 157,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 163
       },
       {
         "section": "🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 164,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 170
       },
       {
         "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 171,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 177
       },
       {
         "section": "🔹 OCB — Ngân hàng Phương Đông (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 178,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 186
       }
     ],
@@ -4485,7 +4293,7 @@
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
         "start_line": 211,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 224
       }
     ],
@@ -4493,7 +4301,7 @@
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
         "start_line": 211,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 224
       }
     ],
@@ -4501,7 +4309,7 @@
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
         "start_line": 211,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 224
       }
     ],
@@ -4509,7 +4317,7 @@
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
         "start_line": 211,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 224
       }
     ],
@@ -4517,7 +4325,7 @@
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
         "start_line": 211,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 224
       }
     ],
@@ -4525,7 +4333,7 @@
       {
         "section": "6. BẢNG CHECKLIST 7 ĐIỂM KIỂM TRA BẮT BUỘC TRƯỚC KHI BẤM NÚT MUA (PRE-ORDER GATEKEEPER AUDIT)",
         "start_line": 211,
-        "file": "08_Master_Investment_CIO/2026-11-08_Master_CIO_Final_Decision.md",
+        "file": "08_Master_Investment_CIO/2026-11-09_Master_CIO_Final_Decision.md",
         "end_line": 224
       }
     ],

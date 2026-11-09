@@ -1,5 +1,5 @@
 # BẢNG ĐIỀU KHIỂN TELEMETRY THỜI GIAN THỰC — APEX SENTINEL (VICTOR)
-**Thời gian cập nhật**: `2026-11-09 10:57:18` | **Chu kỳ quét**: `15 giây/lần` (VPS 0-second Feed)  
+**Thời gian cập nhật**: `2026-11-09 10:57:34` | **Chu kỳ quét**: `15 giây/lần` (VPS 0-second Feed)  
 **Tài khoản giám sát**: Chủ tịch **Trần Quốc Thiên Phước** | **TCBS**: `105C307855`  
 **Trạng thái danh mục**: **100% TIỀN MẶT (`20,167,119 VNĐ`) — 0 CP RỦI RO**  
 **Lãi ròng đã thu về Vòng 1**: `+167,119 VNĐ` (Đã tất toán toàn bộ HPG, TCB, MBB)  

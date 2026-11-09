@@ -1,4 +1,4 @@
-# BẢN KIỂM TOÁN SỐ LIỆU TÀI CHÍNH & THỊ TRƯỜNG CHỨNG KHOÁN VIỆT NAM (54/54 MÃ) — 2026-11-08
+# BẢN KIỂM TOÁN SỐ LIỆU TÀI CHÍNH & THỊ TRƯỜNG CHỨNG KHOÁN VIỆT NAM (54/54 MÃ) — 2026-11-09
 **Trạng thái kiểm toán**: ĐÃ ĐỐI SOÁT TOÀN DIỆN (AUDITED & VERIFIED — 100% REAL DATA, ZERO HALLUCINATION)
 **Cơ chế bảo đảm**: 100% số liệu thị giá khớp lệnh từ sở giao dịch HOSE/HNX/UPCoM, số liệu BCTC kiểm toán đối soát 3 báo cáo theo chuẩn VAS/TT200 + Hội Đồng 10 Đại Danh Thủ.
 
@@ -11,7 +11,7 @@
 - **Tỷ giá trung tâm / Thị trường USD/VND**: 25,420 VND/USD
 - **Tăng trưởng tín dụng toàn ngành**: 9.2% (Mục tiêu cả năm: 15.0%)
 - **Tiến độ giải ngân Đầu tư công**: 52.8%
-- **Chỉ số DXY thế giới**: 102.3 | **Lợi suất US10Y**: 4.86% | **Dầu WTI**: $90.83/thùng
+- **Chỉ số DXY thế giới**: 102.16 | **Lợi suất US10Y**: 4.86% | **Dầu WTI**: $90.26/thùng
 
 ---
 

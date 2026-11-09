@@ -1,8 +1,14 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
+<<<<<<< HEAD
   "generated_at_utc": "2026-11-09T03:27:37.444728+00:00",
   "trading_date": "2026-11-09",
   "cio_desk_verdict": "PHÊ DUYỆT BẮM CÒ NHỊP 1 THĂM DÒ (1 LÔ 100 CP / MÃ) CHO HDB VÀ MSH TRONG KHUNG GIỜ VÀNG (14h00 - 14h25)",
+=======
+  "generated_at_utc": "2026-11-09T01:45:00.602767+00:00",
+  "trading_date": "2026-11-09",
+  "cio_desk_verdict": "100% TIỀN MẶT (20,000,000 ₫) — ĐÃ TẤT TOÁN VÒNG 1 (LÃI RÒNG +167,119 ₫) & ĐỢI TẦM NGẮM VÒNG 2",
+>>>>>>> fd7b2149c1ea47855685c449428d9024ef39f4eb
   "capital_summary": {
     "total_nav_usd": 793.98,
     "total_nav_vnd": 20167119.0,
@@ -136,6 +142,7 @@
       "execution_instruction": "Giữ 70% vị thế đang có lãi; đặt Limit 30% tại $63.47. Chốt lời TP1 tại $70.08 (+9.5%) và TP2 tại $70.74. Cắt lỗ Stop 2xATR tại $60.96 (-4.75%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
     }
   ],
+<<<<<<< HEAD
   "orders_vietnam": [
     {
       "symbol": "HDB",
@@ -186,6 +193,9 @@
       "approved_at": "2026-11-09 08:45:00"
     }
   ],
+=======
+  "orders_vietnam": [],
+>>>>>>> fd7b2149c1ea47855685c449428d9024ef39f4eb
   "pending_round2_sniper_orders": [
     {
       "market": "VIETNAM",
@@ -453,22 +463,23 @@
     "sandbox_math_verified": true,
     "portfolio_allocation_verified": "100% TIỀN MẶT (20,000,000 ₫) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +167,119 VNĐ",
     "max_risk_locked_pct": 0.0,
-    "timestamp": "2026-11-08 13:40:22 UTC"
+    "timestamp": "2026-11-09 01:45:00 UTC"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-08T13:40:22.607826",
-    "date_str": "2026-11-08",
-    "date_vn": "08/11/2026",
-    "time_vn": "13:40:22",
-    "weekday_index": 6,
-    "weekday_vn": "Chủ Nhật",
-    "full_time_label_vn": "13:40:22 Chủ Nhật, ngày 08/11/2026",
-    "market_phase": "WEEKEND_CLOSED",
-    "market_phase_vn": "Nghỉ cuối tuần (Chủ Nhật) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
+    "timestamp_iso": "2026-11-09T01:45:00.601369",
+    "date_str": "2026-11-09",
+    "date_vn": "09/11/2026",
+    "time_vn": "01:45:00",
+    "weekday_index": 0,
+    "weekday_vn": "Thứ Hai",
+    "full_time_label_vn": "01:45:00 Thứ Hai, ngày 09/11/2026",
+    "market_phase": "PRE_MARKET_PREPARATION",
+    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Hai) — Chuẩn bị kế hoạch tác chiến",
     "is_trading_hours": false,
-    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
+    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
   },
   "completed_orders_history": [],
+<<<<<<< HEAD
   "next_round_watchlist": [],
   "council_resolution_approval": {
     "status": "OFFICIALLY_SIGNED",
@@ -527,4 +538,7 @@
       "reason": "Radar vĩ mô cả tuần, chờ tin chuyển sàn HOSE"
     }
   ]
+=======
+  "next_round_watchlist": []
+>>>>>>> fd7b2149c1ea47855685c449428d9024ef39f4eb
 }
