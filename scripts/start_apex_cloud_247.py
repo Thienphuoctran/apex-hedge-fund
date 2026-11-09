@@ -290,9 +290,32 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 from scripts.apex_report_scanner import scan_all_institutional_reports
                 date_filter = query.get("date", ["all"])[0]
                 dept_filter = query.get("dept", ["all"])[0]
-                limit = int(query.get("limit", [100])[0])
-                reports = scan_all_institutional_reports(date_filter=date_filter, dept_filter=dept_filter, limit=limit)
+                shift_filter = query.get("shift", ["all"])[0]
+                search_query = query.get("search", [""])[0] or query.get("q", [""])[0]
+                limit = int(query.get("limit", [150])[0])
+                offset = int(query.get("offset", [0])[0])
+                reports = scan_all_institutional_reports(
+                    date_filter=date_filter,
+                    dept_filter=dept_filter,
+                    shift_filter=shift_filter,
+                    search_query=search_query,
+                    limit=limit,
+                    offset=offset
+                )
                 self.wfile.write(json.dumps(reports, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            return
+
+        elif path in ("/api/db_stats", "/api/database"):
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_database_engine import ApexDatabaseEngine
+                st = ApexDatabaseEngine.get_database_stats()
+                self.wfile.write(json.dumps(st, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
             return

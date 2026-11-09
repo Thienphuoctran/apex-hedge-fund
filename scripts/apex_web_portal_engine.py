@@ -32,6 +32,8 @@ import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 try:
     if sys.stdout.encoding != 'utf-8':
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -104,7 +106,25 @@ def generate_portal_html(
     available_dates_json = json.dumps(available_dates, ensure_ascii=False)
 
     db_milestone_banner = ""
-    if total_reports_count >= 300:
+    sqlite_db_file = BASE_DIR / "data" / "apex_institutional_vault.db"
+    if sqlite_db_file.exists():
+        db_milestone_banner = f'''
+        <div style="background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); border: 1px solid #10b981; border-radius: 14px; padding: 14px 22px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 26px;">⚡</span>
+                <div>
+                    <strong style="color: #34d399; font-size: 14.5px;">HẠ TẦNG V5.0: ĐÃ NÂNG CẤP LÊN SQLITE LAKEHOUSE VAULT (SỨC CHỨA 100.000 BÁO CÁO)</strong>
+                    <div style="font-size: 12.5px; color: #a7f3d0; margin-top: 3px;">Truy vấn chỉ mục B-Tree &lt; 2ms | Kích hoạt FTS5 Search toàn văn | Bảo tồn 100% tài liệu tiền thật theo lệnh Chủ tịch Phước Trần!</div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; border-radius: 9999px; padding: 6px 14px; font-size: 12px; font-weight: 700;">
+                    🟢 SQLITE VAULT ACTIVE
+                </span>
+            </div>
+        </div>
+        '''
+    elif total_reports_count >= 300:
         db_milestone_banner = f'''
         <div style="background: linear-gradient(135deg, #78350f 0%, #451a03 100%); border: 1px solid #f59e0b; border-radius: 14px; padding: 14px 22px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);">
             <div style="display: flex; align-items: center; gap: 12px;">
@@ -1696,7 +1716,7 @@ def generate_portal_html(
             <div class="kpi-card" style="--card-accent: #c084fc;">
                 <div class="kpi-lbl">📑 Báo Cáo Hôm Nay ({today_str})</div>
                 <div class="kpi-val" style="color: #c084fc;" id="stat-today-count">{today_reports_count} Báo Cáo</div>
-                <div class="kpi-sub">Kho Vault: <strong style="color: #c084fc;">{total_reports_count}/300</strong> (Mốc nâng cấp DB: 300 - 500)</div>
+                <div class="kpi-sub">Kho Vault: <strong style="color: #10b981;">{total_reports_count} Báo Cáo</strong> (SQLite V5.0: Sức chứa 100.000)</div>
             </div>
             <div class="kpi-card" style="--card-accent: #f472b6;">
                 <div class="kpi-lbl">🛡️ Hệ Thống Tự Hành 24/7</div>
@@ -2880,12 +2900,13 @@ def generate_portal_html(
                 finalFiltered = finalFiltered.filter(r => allowedDepts.includes(r.dept_id));
             }}
 
-            // 4. Lọc theo Từ Khóa
+            // 4. Lọc theo Từ Khóa (Bao gồm cả Tiêu đề, Tóm tắt, Tên tệp và Mã Cổ Phiếu Tickers)
             if (currentSearchQuery) {{
                 finalFiltered = finalFiltered.filter(r => 
                     (r.title && r.title.toLowerCase().includes(currentSearchQuery)) ||
                     (r.preview && r.preview.toLowerCase().includes(currentSearchQuery)) ||
-                    (r.file_name && r.file_name.toLowerCase().includes(currentSearchQuery))
+                    (r.file_name && r.file_name.toLowerCase().includes(currentSearchQuery)) ||
+                    (r.tickers && Array.isArray(r.tickers) && r.tickers.some(t => t.toLowerCase().includes(currentSearchQuery)))
                 );
             }}
 
@@ -3222,7 +3243,7 @@ def generate_portal_html(
                         }}
 
                         let formattedContent = (m.content || '')
-                            .replace(/\*\*(.*?)\*\*/g, '<strong style="color: #f8fafc;">$1</strong>')
+                            .replace(/\\*\\*(.*?)\\*\\*/g, '<strong style="color: #f8fafc;">$1</strong>')
                             .split(String.fromCharCode(10) + '- ').join('<br/>• ')
                             .split(String.fromCharCode(10)).join('<br/>');
 
