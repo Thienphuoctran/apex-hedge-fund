@@ -1,9 +1,9 @@
 {
-  "last_status": "GREEN_OPTIMAL_SQLITE_POWERED",
-  "last_sent_ts": 1794192000.0,
-  "last_sent_iso": "2026-11-09 10:15:00",
-  "alerts_sent_count": 0,
+  "last_status": "ORANGE_HIGH_ALERT_PREPARE_UPGRADE",
+  "last_sent_ts": 1794194183.6748278,
+  "last_sent_iso": "2026-11-09 10:16:23",
+  "alerts_sent_count": 1,
   "max_alerts_allowed": 2,
   "cooldown_hours": 12,
-  "directive": "Chỉ thị Chủ tịch Phước Trần: Hệ thống đã nâng cấp thành công lên SQLite Lakehouse Vault V5.0 (Sức chứa 100.000 báo cáo). Mọi chỉ số đạt 100/100 XUẤT SẮC, trạng thái thanh bình tuyệt đối."
+  "directive": "Chỉ thị Chủ tịch Phước Trần: Tối đa 1-2 tin/ngưỡng (Ngăn chặn triệt để lặp lại qua đêm)"
 }
