@@ -847,7 +847,7 @@ def run_daemon(poll_interval: int = 15):
     state = load_state()
 
     # Khởi động âm thầm 100%, không gửi tin nhắn kích hoạt rác lên Telegram
-    logger.info("🌟 [APEX CRON DAEMON V3.0] Đã khởi động thành công và bắt đầu vòng lặp canh giờ 17 cột mốc.")
+    log_event("🌟 [APEX CRON DAEMON V3.0] Đã khởi động thành công và bắt đầu vòng lặp canh giờ 17 cột mốc.")
 
     while True:
         try:
