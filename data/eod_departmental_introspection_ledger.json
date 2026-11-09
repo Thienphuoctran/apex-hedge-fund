@@ -1,12 +1,12 @@
 {
-  "report_date": "2026-11-08",
-  "recorded_at": "2026-11-08 23:00:48",
+  "report_date": "2026-11-09",
+  "recorded_at": "2026-11-09 22:48:16",
   "chairman": "Trần Quốc Thiên Phước",
   "account_tcbs": "105C307855",
   "average_system_score": 95.2,
   "total_departments_evaluated": 16,
   "portfolio_snapshot": {
-    "cash_vnd": 20167119.0,
+    "cash_vnd": 14510422.0,
     "settled_profit_v1_vnd": 167119.0,
     "status": "100_PERCENT_CASH_STANDDOWN"
   },

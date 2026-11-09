@@ -1,7 +1,7 @@
 {
   "meeting_time": "23:00:00",
-  "meeting_date": "2026-11-08",
-  "next_trading_day": "Thứ Hai (09/11/2026)",
+  "meeting_date": "2026-11-09",
+  "next_trading_day": "Thứ Ba (10/11/2026)",
   "chairman_observed": "Trần Quốc Thiên Phước",
   "presiding_officer": "Master CIO James (Ban 8)",
   "council_status": "CONCLUDED_AND_RATIFIED",
@@ -14,16 +14,37 @@
   },
   "financial_snapshot": {
     "account_tcbs": "105C307855",
-    "total_nav_vnd": 20167119.0,
-    "cost_basis_vnd": 0.0,
-    "market_value_vnd": 0.0,
-    "unrealized_pnl_vnd": 0.0,
-    "unrealized_pnl_pct": 0.0,
-    "cash_dry_powder_vnd": 20167119.0,
-    "cash_dry_powder_pct": 100.0,
+    "total_nav_vnd": 20160422.0,
+    "cost_basis_vnd": 5656700.0,
+    "market_value_vnd": 5650000.0,
+    "unrealized_pnl_vnd": -6700.0,
+    "unrealized_pnl_pct": -0.12,
+    "cash_dry_powder_vnd": 14510422.0,
+    "cash_dry_powder_pct": 71.97,
     "leverage_margin_pct": 0.0,
-    "holdings": [],
-    "settlement_status": "100% Tiền mặt (20,167,119 ₫, 0 CP) khả dụng trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên Thứ Hai (09/11/2026)."
+    "holdings": [
+      {
+        "symbol": "HDB",
+        "shares": 100,
+        "cost": 22050.0,
+        "close": 22000.0,
+        "pnl_vnd": -5000.0,
+        "pnl_pct": -0.23,
+        "tp1": 24290.0,
+        "stop_2atr": 21220.0
+      },
+      {
+        "symbol": "MSH",
+        "shares": 100,
+        "cost": 34517.0,
+        "close": 34500.0,
+        "pnl_vnd": -1700.0,
+        "pnl_pct": -0.05,
+        "tp1": 39560.0,
+        "stop_2atr": 33090.0
+      }
+    ],
+    "settlement_status": "100% Tiền mặt (20,167,119 ₫, 0 CP) khả dụng trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên Thứ Ba (10/11/2026)."
   },
   "attendance_roster": [
     {
