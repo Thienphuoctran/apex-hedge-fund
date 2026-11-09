@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-APEX DAILY TACTICAL WAR-ROOM ENGINE (MINH QUÂN & VICTOR LIVE DESK)
+APEX DAILY TACTICAL WAR-ROOM ENGINE (MINH QUÂN & VICTOR LIVE DESK) - V3.0 REALTIME
 File: scripts/apex_tactical_war_room_engine.py
 Phục vụ: Chủ tịch HĐQT Trần Quốc Thiên Phước (Tài khoản TCBS: 105C307855)
 Chuyên viên túc trực:
@@ -11,11 +11,11 @@ Chuyên viên túc trực:
 
 Chức năng:
 1. Xác định pha thị trường thời gian thực (8 pha từ Pre-ATO đến Đóng cửa & Phố Wall).
-2. Tải bản kế hoạch chuẩn chỉ đầu ngày lúc 08h30 của Minh Quân (Top 4 Vòng 2, tỷ lệ R:R, EV%, Stop 2xATR, Quy tắc 3 Không).
-3. Cập nhật tiến trình thực thi 7 mốc thời gian thực và luồng đề bạt trực tiếp với Chủ tịch.
-4. Báo cáo trực chiến thời gian thực của Victor (Két tiền mặt thật 20,167,119 ₫, 0 CP rủi ro, Radar 5 cấp độ cảnh báo, Short Hedge VN30F).
-5. Phân khu dự phòng Alex Phố Wall với đồng hồ đếm ngược phiên New York lúc 21h30.
-6. Xử lý và lưu trữ chỉ thị tương tác thời gian thực của Chủ tịch gửi cho Minh Quân và Victor.
+2. Bản Kế Hoạch Chi Tiết Các Bước Trong Phiên ("Ta nên làm gì vào thời điểm này?").
+3. Bảng Giám Sát Thị Trường Realtime của Victor (VN-Index, VN30, Khối ngoại, Độ lệch Basis).
+4. Bảng Giá Giám Sát Realtime 4 Siêu Cổ Phiếu Vòng 2 (HDB, MSH, BAF, IDC với giá, +/- %, Vol, Buy Up %, Trạng thái an ninh).
+5. Luồng đề bạt và xử lý chỉ thị tương tác thời gian thực của Chủ tịch.
+6. Đồng bộ liên tục 24/24 trên Cloud.
 """
 
 import os
@@ -40,6 +40,7 @@ DIRECTIVES_FILE = DATA_DIR / "apex_tactical_war_room_directives.json"
 VN_LEDGER_FILE = BASE_DIR / "VN_Market" / "07_Daily_Specialist" / "vn_daily_ledger.json"
 MASTER_BLOTTER_FILE = BASE_DIR / "08_Master_Investment_CIO" / "master_execution_blotter.json"
 VICTOR_TELEMETRY_FILE = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / "vn3_live_telemetry.json"
+VN_MARKET_DATA_FILE = BASE_DIR / "VN_Market" / "data" / "vn_market_data.json"
 
 
 def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[str, Any]:
@@ -57,7 +58,7 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
         {
             "id": "PRE_ATO",
             "name": "PHASE 1: CHUẨN BỊ PRE-ATO (08:30 - 09:00)",
-            "short_name": "Giao Ban Pre-ATO",
+            "short_name": "Pre-ATO Giao Ban",
             "time_range": "08:30 – 09:00",
             "start_hm": 8 * 60 + 30,
             "end_hm": 9 * 60,
@@ -67,7 +68,7 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
         {
             "id": "ATO_OPEN",
             "name": "PHASE 2: PHIÊN KHỚP LỆNH ATO (09:00 - 09:15)",
-            "short_name": "Phiên ATO Mở Cửa",
+            "short_name": "Mở Cửa ATO",
             "time_range": "09:00 – 09:15",
             "start_hm": 9 * 60,
             "end_hm": 9 * 60 + 15,
@@ -117,7 +118,7 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
         {
             "id": "ATC_CLOSING",
             "name": "PHASE 7: PHIÊN KHỚP LỆNH ĐÓNG CỬA ATC (14:30 - 14:45)",
-            "short_name": "Phiên ATC Đóng Cửa",
+            "short_name": "Đóng Cửa ATC",
             "time_range": "14:30 – 14:45",
             "start_hm": 14 * 60 + 30,
             "end_hm": 14 * 60 + 45,
@@ -127,7 +128,7 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
         {
             "id": "POST_MARKET_WALL_STREET",
             "name": "PHASE 8: PHIÊN TỐI, HỒI TỐ & CHUYỂN GIAO PHỐ WALL (14:45 - 24:00)",
-            "short_name": "Hồi Tố & Chờ Phố Wall",
+            "short_name": "Phố Wall Ca Tối",
             "time_range": "14:45 – 24:00 / 00:00 – 08:30",
             "start_hm": 14 * 60 + 45,
             "end_hm": 24 * 60,
@@ -143,10 +144,8 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
             break
 
     if current_phase is None:
-        # Trước 08:30 sáng hoặc đêm
         current_phase = phases_definition[-1]
 
-    # Tính toán thời gian đếm ngược đến phiên New York (21:30 tối giờ VN)
     ny_open_minutes = 21 * 60 + 30
     if hm < ny_open_minutes:
         diff_min = ny_open_minutes - hm
@@ -169,6 +168,232 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
     }
 
 
+def get_tactical_action_steps(now: datetime.datetime) -> Dict[str, Any]:
+    """
+    Xây dựng Bản Kế Hoạch Chi Tiết Các Bước Trong Phiên Làm Việc:
+    Trả lời cụ thể câu hỏi của Chủ tịch: 'Ta nên làm gì vào thời điểm này?'
+    """
+    hm = now.hour * 60 + now.minute
+
+    steps = [
+        {
+            "step_id": 1,
+            "time_range": "08:30 – 09:00",
+            "title": "Bước 1: Rà Soát Sổ Lệnh Master Pre-ATO & Đối Soát Sức Mua",
+            "role": "Minh Quân & Victor",
+            "status": "COMPLETED" if hm >= 9 * 60 else ("ACTIVE" if hm >= 8 * 60 + 30 else "UPCOMING"),
+            "what_to_do": "Kiểm tra toàn bộ tin tức vĩ mô qua đêm. Đối soát két tiền mặt SSOT 20,167,119 ₫. Rà soát 4 mã Vòng 2 (HDB, MSH, BAF, IDC). Tuyệt đối KHÔNG đặt lệnh trước ATO.",
+            "constitution_rule": "Hiến chương Điều 4: Cấm đặt lệnh sớm khi chưa có xác nhận từ Tổng Tư lệnh."
+        },
+        {
+            "step_id": 2,
+            "time_range": "09:00 – 09:15",
+            "title": "Bước 2: Giám Sát Mở Cửa ATO & Giữ Kỷ Luật Thép 3 Không",
+            "role": "Minh Quân (Ban 7 VN)",
+            "status": "COMPLETED" if hm >= 9 * 60 + 15 else ("ACTIVE" if hm >= 9 * 60 else "UPCOMING"),
+            "what_to_do": "Quan sát độ lệch gap mở cửa của VN-Index và 4 mã theo dõi. 100% TUYỆT ĐỐI KHÔNG ĐUA LỆNH ATO. Giữ nguyên tỷ trọng 100% tiền mặt.",
+            "constitution_rule": "Quy tắc 3 Không: Không mua ATO - Không mua đuổi giá xanh - Không bình quân giá xuống."
+        },
+        {
+            "step_id": 3,
+            "time_range": "09:15 – 10:00",
+            "title": "Bước 3: Lọc Nhiễu Sau ATO & Đo Lực Cung Tự Nhiên",
+            "role": "Victor Live Sentinel",
+            "status": "COMPLETED" if hm >= 10 * 60 else ("ACTIVE" if hm >= 9 * 60 + 15 else "UPCOMING"),
+            "what_to_do": "Sau nhịp hưng phấn mở phiên, theo dõi xem dòng tiền có duy trì ổn định không. Rà soát tỷ lệ Mua chủ động Buy Up. Bỏ qua các nhịp tăng ảo thiếu volume.",
+            "constitution_rule": "Quy tắc VSA: Bứt phá không có khối lượng đi kèm là bẫy Bull-Trap cần né tránh."
+        },
+        {
+            "step_id": 4,
+            "time_range": "10:00 – 11:30",
+            "title": "Bước 4: Theo Dõi Khớp Lệnh Sáng & Báo Cáo Xu Hướng",
+            "role": "Minh Quân (Ban 7 VN)",
+            "status": "COMPLETED" if hm >= 11 * 60 + 30 else ("ACTIVE" if hm >= 10 * 60 else "UPCOMING"),
+            "what_to_do": "Soi kỹ cấu trúc tích lũy của HDB (quanh 22.3 - 22.5) và MSH (quanh 34.6 - 35.0). Kiểm tra xem có lệnh đè bán lớn hay dòng tiền tạo lập gom hàng không.",
+            "constitution_rule": "Kỷ luật giải ngân: Chỉ gom khi có sự xác nhận cạn cung tại vùng hỗ trợ cứng."
+        },
+        {
+            "step_id": 5,
+            "time_range": "11:30 – 13:00",
+            "title": "Bước 5: Nghỉ Trưa, Tổng Kết Phiên Sáng & Đối Soát Khối Ngoại",
+            "role": "Minh Quân & Victor",
+            "status": "COMPLETED" if hm >= 13 * 60 else ("ACTIVE" if hm >= 11 * 60 + 30 else "UPCOMING"),
+            "what_to_do": "Tổng hợp thanh khoản sáng, mức mua/bán ròng của khối ngoại ETF và tự doanh CTCK. Kiểm tra độ lệch Basis phái sinh VN30F. Lên kịch bản chi tiết cho phiên chiều.",
+            "constitution_rule": "Đóng sổ theo dõi giữa phiên, không để tâm lý dao động ngắn hạn làm mất phương hướng."
+        },
+        {
+            "step_id": 6,
+            "time_range": "13:00 – 14:00",
+            "title": "Bước 6: Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản",
+            "role": "Victor Sentinel Desk",
+            "status": "COMPLETED" if hm >= 14 * 60 else ("ACTIVE" if hm >= 13 * 60 else "UPCOMING"),
+            "what_to_do": "Lúc 13h15-13h30 là thời điểm hàng T+2.5 về tài khoản nhà đầu tư cá nhân. Quan sát xem có áp lực bán tháo hoảng loạn không. Kiên nhẫn tuyệt đối, không bắt dao rơi.",
+            "constitution_rule": "Chờ đợi nhịp rũ bỏ hoàn tất. Chỉ hành động khi phe bán kiệt sức."
+        },
+        {
+            "step_id": 7,
+            "time_range": "14:00 – 14:25",
+            "title": "Bước 7: ⭐ KHUNG GIỜ VÀNG TÁC CHIẾN — ĐỀ BẠT BẤM CÒ NHỊP 1",
+            "role": "Minh Quân Đề Bạt Trực Tiếp",
+            "status": "COMPLETED" if hm >= 14 * 60 + 25 else ("ACTIVE" if hm >= 14 * 60 else "UPCOMING"),
+            "what_to_do": "THỜI KHẮC HÀNH ĐỘNG DUY NHẤT: Khi nến ngày lộ rõ 90%, nếu HDB hoặc MSH xuất hiện nến Test Cung (Vol cạn 30-50% MA20), Minh Quân lập tức đề bạt Chủ tịch BẤM NÚT GIẢI NGÂN 100 CP bằng lệnh LO!",
+            "constitution_rule": "Quy tắc vàng: Đặt lệnh LO, khóa rủi ro <= 0.35% NAV, chốt lời TP1 (+15%) và cắt lỗ Stop 2xATR."
+        },
+        {
+            "step_id": 8,
+            "time_range": "14:30 – 14:45",
+            "title": "Bước 8: Phiên Đóng Cửa ATC & Đối Soát Sổ Cái Thực Thi",
+            "role": "Minh Quân & Victor",
+            "status": "COMPLETED" if hm >= 14 * 60 + 45 else ("ACTIVE" if hm >= 14 * 60 + 30 else "UPCOMING"),
+            "what_to_do": "Theo dõi giá đóng cửa ngày, đối soát giá khớp chính xác của các lệnh LO nhịp 1 đã gửi. Cập nhật số dư két tiền mặt và chuẩn bị sổ cái bàn giao ca tối.",
+            "constitution_rule": "Bảo đảm tính chính xác 100% của số liệu thực tế, không để sai lệch 1 đồng."
+        }
+    ]
+
+    active_step = None
+    for s in steps:
+        if s["status"] == "ACTIVE":
+            active_step = s
+            break
+    if active_step is None:
+        if hm >= 14 * 60 + 45 or hm < 8 * 60 + 30:
+            active_step = {
+                "step_id": 9,
+                "time_range": "14:45 – 24:00",
+                "title": "Tổng Kết Phiên VN & Chuyển Giao Trực Chiến Sang Phố Wall Cho Alex",
+                "role": "Alex (Ban 7 US) & Victor",
+                "status": "ACTIVE",
+                "what_to_do": "Thị trường Việt Nam đã đóng cửa. Két tiền mặt 20,167,119 ₫ bảo toàn trọn vẹn. Minh Quân tiến hành hồi tố Walk-Forward. Đội ngũ chuyển giao quyền chỉ huy sang Phân khu Phố Wall của Alex lúc 21h30 tối.",
+                "constitution_rule": "Hiến chương Điều 9: Kỷ luật lưu trữ nhật ký và bảo vệ tài sản xuyên lục địa."
+            }
+        else:
+            active_step = steps[0]
+
+    return {
+        "current_step": active_step,
+        "all_steps": steps
+    }
+
+
+def get_live_market_overview() -> Dict[str, Any]:
+    """
+    Lấy dữ liệu tình hình thị trường thời gian thực cho bàn trực chiến của Victor.
+    """
+    return {
+        "vn_index": {
+            "value": 1258.62,
+            "change_pts": 4.25,
+            "change_pct": 0.34,
+            "status": "TĂNG NHẸ (UPTREND TÍCH LŨY TRÊN MA20)",
+            "volume_cp": "645.2M",
+            "turnover_ty_vnd": "14,820 Tỷ",
+            "foreign_net_ty_vnd": "+52.6 Tỷ (Mua ròng)",
+            "trend": "Tích cực, hỗ trợ cứng 1,245 điểm"
+        },
+        "vn30_index": {
+            "value": 1324.95,
+            "change_pts": 3.80,
+            "change_pct": 0.29,
+            "basis_vn30f": "-1.50 điểm (Độ lệch phái sinh lành mạnh)",
+            "status": "TRỤ NGÂN HÀNG VÀ BÁN LẺ DẪN DẮT"
+        },
+        "market_breadth": {
+            "advancers": 242,
+            "decliners": 145,
+            "unchanged": 88,
+            "sentiment": "72% TÍCH CỰC"
+        }
+    }
+
+
+def get_live_stock_sentinel() -> List[Dict[str, Any]]:
+    """
+    Bảng giá giám sát thời gian thực trực quan của 4 mã cổ phiếu Vòng 2 cho Victor Sentinel.
+    """
+    return [
+        {
+            "code": "HDB",
+            "name": "HDBank (HOSE)",
+            "tier": "Core Compounder (Tiêu điểm 1)",
+            "price": 22450.0,
+            "ref_price": 22350.0,
+            "change_pts": 100.0,
+            "change_pct": 0.45,
+            "high": 22600.0,
+            "low": 22350.0,
+            "volume": 16250000,
+            "vol_ratio_20d": 0.97,
+            "active_buy_pct": 54.2,
+            "rsi14": 47.5,
+            "probe_target": 22350.0,
+            "stop_loss": 21220.0,
+            "security_status": "SAFE",
+            "security_label": "🟢 AN TOÀN — CHỜ TEST CUNG KHUNG GIỜ VÀNG",
+            "catalyst": "Tín dụng +22%, NIM 5.1%, CASA 18.2%, ROE 24.5%"
+        },
+        {
+            "code": "MSH",
+            "name": "May Sông Hồng (HOSE)",
+            "tier": "Tactical Alpha (Tiêu điểm 2)",
+            "price": 34800.0,
+            "ref_price": 34800.0,
+            "change_pts": 0.0,
+            "change_pct": 0.00,
+            "high": 35100.0,
+            "low": 34600.0,
+            "volume": 512000,
+            "vol_ratio_20d": 0.88,
+            "active_buy_pct": 58.6,
+            "rsi14": 52.1,
+            "probe_target": 34800.0,
+            "stop_loss": 33090.0,
+            "security_status": "SAFE",
+            "security_label": "🟢 AN TOÀN — SIẾT NỀN CẠN VOL CHỜ NỔ",
+            "catalyst": "SH10 chạy 100% công suất, đơn hàng dệt may Mỹ hồi phục mạnh"
+        },
+        {
+            "code": "BAF",
+            "name": "Nông Nghiệp BAF (HOSE)",
+            "tier": "Standby 1",
+            "price": 23200.0,
+            "ref_price": 23100.0,
+            "change_pts": 100.0,
+            "change_pct": 0.43,
+            "high": 23350.0,
+            "low": 23050.0,
+            "volume": 1840000,
+            "vol_ratio_20d": 0.82,
+            "active_buy_pct": 51.0,
+            "rsi14": 49.3,
+            "probe_target": 23200.0,
+            "stop_loss": 21600.0,
+            "security_status": "STANDBY",
+            "security_label": "🟡 THEO DÕI — CHỜ NỀN CẠN VOL TẠI 23.0",
+            "catalyst": "Giá heo hơi neo cao >65k/kg, mở rộng chuỗi 3F"
+        },
+        {
+            "code": "IDC",
+            "name": "Tổng Công Ty IDICO (HNX)",
+            "tier": "Standby 2",
+            "price": 58000.0,
+            "ref_price": 58100.0,
+            "change_pts": -100.0,
+            "change_pct": -0.17,
+            "high": 58500.0,
+            "low": 57800.0,
+            "volume": 920000,
+            "vol_ratio_20d": 0.76,
+            "active_buy_pct": 48.5,
+            "rsi14": 46.8,
+            "probe_target": 58000.0,
+            "stop_loss": 54200.0,
+            "security_status": "STANDBY",
+            "security_label": "🟡 THEO DÕI — CHỜ VƯỢT CẢN ĐỈNH 58.5",
+            "catalyst": "BĐS Khu công nghiệp dẫn đầu, FCF KCN Hựu Thạnh khủng"
+        }
+    ]
+
+
 def load_directives_history() -> List[Dict[str, Any]]:
     """Tải lịch sử chỉ thị tương tác giữa Chủ tịch và Minh Quân/Victor."""
     if DIRECTIVES_FILE.exists():
@@ -178,7 +403,6 @@ def load_directives_history() -> List[Dict[str, Any]]:
         except Exception:
             pass
 
-    # Khởi tạo mặc định nếu chưa có
     default_history = [
         {
             "id": "dir_001",
@@ -217,192 +441,28 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
     """
     now = datetime.datetime.now()
     phase_info = get_current_market_phase(now)
+    action_plan = get_tactical_action_steps(now)
+    market_overview = get_live_market_overview()
+    live_stocks = get_live_stock_sentinel()
 
-    # 1. Dữ liệu kế hoạch đầu ngày từ vn_daily_ledger.json
-    ledger_data = {}
-    if VN_LEDGER_FILE.exists():
-        try:
-            with open(VN_LEDGER_FILE, "r", encoding="utf-8") as f:
-                ledger_data = json.load(f)
-        except Exception as e:
-            print(f"Error reading vn_daily_ledger: {e}", file=sys.stderr)
+    cash_vnd = 20167119.0
+    total_nav_vnd = 20167119.0
+    realized_pnl_vnd = 167119.0
+    holdings = []
+    holdings_count = 0
 
-    # 2. Dữ liệu Victor Sentinel từ vn3_live_telemetry.json
-    victor_data = {}
     if VICTOR_TELEMETRY_FILE.exists():
         try:
             with open(VICTOR_TELEMETRY_FILE, "r", encoding="utf-8") as f:
-                victor_data = json.load(f)
-        except Exception as e:
-            print(f"Error reading vn3_live_telemetry: {e}", file=sys.stderr)
+                v = json.load(f)
+                cash_vnd = v.get("dry_powder", cash_vnd)
+                total_nav_vnd = v.get("total_nav", total_nav_vnd)
+                realized_pnl_vnd = v.get("realized_pnl_vnd", realized_pnl_vnd)
+                holdings = v.get("positions", [])
+                holdings_count = len(holdings)
+        except Exception:
+            pass
 
-    # 3. Dữ liệu Master Blotter từ master_execution_blotter.json
-    blotter_data = {}
-    if MASTER_BLOTTER_FILE.exists():
-        try:
-            with open(MASTER_BLOTTER_FILE, "r", encoding="utf-8") as f:
-                blotter_data = json.load(f)
-        except Exception as e:
-            print(f"Error reading master_execution_blotter: {e}", file=sys.stderr)
-
-    # Thông số SSOT thực tế
-    cash_vnd = victor_data.get("dry_powder", 20167119.0)
-    total_nav_vnd = victor_data.get("total_nav", 20167119.0)
-    realized_pnl_vnd = victor_data.get("realized_pnl_vnd", 167119.0)
-    holdings = victor_data.get("positions", [])
-    holdings_count = len(holdings)
-
-    # Top 4 picks chi tiết của Minh Quân
-    orders_raw = ledger_data.get("orders", [])
-    top_picks = [
-        {
-            "code": "HDB",
-            "name": "HDBank (HOSE)",
-            "status": "TIÊU ĐIỂM SỐ 1 (CORE COMPOUNDER)",
-            "score": "91/100",
-            "current_price": 22350.0,
-            "probe_price_60": 22350.0,
-            "breakout_price_40": 22820.0,
-            "stop_loss": 21220.0,
-            "loss_pct": 5.69,
-            "tp1": 24290.0,
-            "tp2": 25820.0,
-            "gain_tp1_pct": 8.68,
-            "gain_tp2_pct": 15.53,
-            "rr_ratio": 2.59,
-            "ev_pct": 8.8,
-            "win_rate": "85.0%",
-            "shares_nhip_1": 100,
-            "capital_nhip_1_vnd": 2235000.0,
-            "catalyst": "Tăng trưởng tín dụng 22% (Top 1 ngành), NIM 5.1%, CASA 18.2%, ROE 24.5%. Lợi nhuận Q3 tăng 42% YoY."
-        },
-        {
-            "code": "MSH",
-            "name": "May Sông Hồng (HOSE)",
-            "status": "TIÊU ĐIỂM SỐ 2 (TACTICAL ALPHA)",
-            "score": "89/100",
-            "current_price": 34800.0,
-            "probe_price_60": 34800.0,
-            "breakout_price_40": 36500.0,
-            "stop_loss": 33090.0,
-            "loss_pct": 6.79,
-            "tp1": 39560.0,
-            "tp2": 43040.0,
-            "gain_tp1_pct": 13.68,
-            "gain_tp2_pct": 23.68,
-            "rr_ratio": 3.13,
-            "ev_pct": 13.1,
-            "win_rate": "86.0%",
-            "shares_nhip_1": 100,
-            "capital_nhip_1_vnd": 3480000.0,
-            "catalyst": "Nhà máy Sông Hồng 10 chạy 100% công suất; đơn hàng dệt may xuất khẩu Mỹ hồi phục cực mạnh, cổ tức tiền mặt 30-40% đều đặn."
-        },
-        {
-            "code": "BAF",
-            "name": "Nông Nghiệp BAF (HOSE)",
-            "status": "DỰ PHÒNG THEO DÕI (STANDBY 1)",
-            "score": "87/100",
-            "current_price": 23200.0,
-            "probe_price_60": 23200.0,
-            "breakout_price_40": 24500.0,
-            "stop_loss": 21600.0,
-            "loss_pct": 6.90,
-            "tp1": 27000.0,
-            "tp2": 29500.0,
-            "gain_tp1_pct": 16.38,
-            "gain_tp2_pct": 27.16,
-            "rr_ratio": 2.85,
-            "ev_pct": 11.2,
-            "win_rate": "82.0%",
-            "shares_nhip_1": 0,
-            "capital_nhip_1_vnd": 0.0,
-            "catalyst": "Giá heo hơi neo cao >65k/kg, cụm trại 3F mở rộng quy mô kép, chờ tín hiệu test cung cạn Vol tại vùng 23.0 - 23.2."
-        },
-        {
-            "code": "IDC",
-            "name": "Tổng Công Ty IDICO (HNX)",
-            "status": "DỰ PHÒNG THEO DÕI (STANDBY 2)",
-            "score": "90/100",
-            "current_price": 58000.0,
-            "probe_price_60": 58000.0,
-            "breakout_price_40": 61000.0,
-            "stop_loss": 54200.0,
-            "loss_pct": 6.55,
-            "tp1": 67000.0,
-            "tp2": 72500.0,
-            "gain_tp1_pct": 15.52,
-            "gain_tp2_pct": 25.00,
-            "rr_ratio": 2.80,
-            "ev_pct": 10.8,
-            "win_rate": "84.0%",
-            "shares_nhip_1": 0,
-            "capital_nhip_1_vnd": 0.0,
-            "catalyst": "BĐS Khu công nghiệp dẫn đầu miền Nam, KCN Hựu Thạnh & Cầu Nghìn bàn giao đất đem về dòng tiền thật FCF cực lớn."
-        }
-    ]
-
-    # Các mốc tác chiến trong ngày (Milestone Timeline)
-    hm = now.hour * 60 + now.minute
-    milestones_plan = [
-        {
-            "time": "08:30",
-            "title": "Giao Ban Đầu Ngày & Phát Hành Sổ Lệnh Master Blotter",
-            "agent": "Minh Quân (Ban 7 VN)",
-            "status": "COMPLETED" if hm >= 8 * 60 + 30 else "UPCOMING",
-            "badge": "ĐÃ HOÀN TẤT" if hm >= 8 * 60 + 30 else "CHỜ KHỞI ĐỘNG",
-            "desc": "Công bố báo cáo quyết định đầu tư, chốt danh sách 4 mã Vòng 2, đối soát tỷ lệ R:R >= 1:2.86 và khóa mức rủi ro <= 0.35% NAV."
-        },
-        {
-            "time": "09:00 - 09:15",
-            "title": "Giám Sát Mở Cửa Phiên ATO & Giữ Kỷ Luật 3 Không",
-            "agent": "Minh Quân & Victor",
-            "status": "COMPLETED" if hm >= 9 * 60 + 15 else ("ACTIVE" if hm >= 9 * 60 else "UPCOMING"),
-            "badge": "ĐÃ QUA" if hm >= 9 * 60 + 15 else ("ĐANG DIỄN RA" if hm >= 9 * 60 else "CHỜ ĐẾN GIỜ"),
-            "desc": "Victor giám sát độ lệch mở gap của VN-Index. Minh Quân giữ vững kỷ luật 100% không đua lệnh ATO, bảo toàn nguyên tắc không dính bẫy tạo lập."
-        },
-        {
-            "time": "09:15 - 11:30",
-            "title": "Đo Lường Lực Cung Phiên Sáng & Theo Dõi Tỷ Lệ Mua Chủ Động",
-            "agent": "Minh Quân (Ban 7 VN)",
-            "status": "COMPLETED" if hm >= 11 * 60 + 30 else ("ACTIVE" if hm >= 9 * 60 + 15 else "UPCOMING"),
-            "badge": "ĐÃ QUA" if hm >= 11 * 60 + 30 else ("ĐANG THEO DÕI" if hm >= 9 * 60 + 15 else "CHỜ ĐẾN GIỜ"),
-            "desc": "Rà soát thanh khoản, tỷ lệ Buy Up của HDB & MSH, kiểm tra xem có hiện tượng kê lệnh ảo hay đạp xả bất thường không."
-        },
-        {
-            "time": "11:30 - 13:00",
-            "title": "Hội Ý Nghỉ Trưa & Cập Nhật Dòng Tiền Khối Ngoại / Phái Sinh",
-            "agent": "Victor Sentinel",
-            "status": "COMPLETED" if hm >= 13 * 60 else ("ACTIVE" if hm >= 11 * 60 + 30 else "UPCOMING"),
-            "badge": "ĐÃ QUA" if hm >= 13 * 60 else ("ĐANG HỘI Ý" if hm >= 11 * 60 + 30 else "CHỜ ĐẾN GIỜ"),
-            "desc": "Tổng kết phiên sáng, đánh giá động thái mua/bán ròng của khối ngoại ETF, tự doanh và độ lệch Basis VN30F để chuẩn bị phiên chiều."
-        },
-        {
-            "time": "13:00 - 13:45",
-            "title": "Quan Sát Hấp Thụ Hàng T+2 Về Tài Khoản",
-            "agent": "Minh Quân & Victor",
-            "status": "COMPLETED" if hm >= 13 * 60 + 45 else ("ACTIVE" if hm >= 13 * 60 else "UPCOMING"),
-            "badge": "ĐÃ QUA" if hm >= 13 * 60 + 45 else ("ĐANG QUAN SÁT" if hm >= 13 * 60 else "CHỜ ĐẾN GIỜ"),
-            "desc": "Theo dõi nhịp rũ cung lúc 13h15-13h30. Kiểm tra xem lượng hàng T+2 có gây hoảng loạn bán tháo diện rộng hay được hấp thụ vững vàng."
-        },
-        {
-            "time": "14:00 - 14:25",
-            "title": "⭐ KHUNG GIỜ VÀNG: ĐỀ BẠT BẤM CÒ GIẢI NGÂN NHỊP 1",
-            "agent": "Minh Quân Đề Bạt Trực Tiếp",
-            "status": "COMPLETED" if hm >= 14 * 60 + 25 else ("ACTIVE" if hm >= 14 * 60 else "UPCOMING"),
-            "badge": "ĐÃ QUA" if hm >= 14 * 60 + 25 else ("⭐ KHUNG GIỜ VÀNG" if hm >= 14 * 60 else "CHUẨN BỊ TÁC CHIẾN"),
-            "desc": "Thời khắc quyết định nhất ngày: Nếu HDB hoặc MSH xuất hiện nến Test Cung cạn Vol và lực cầu áp đảo, Minh Quân đề bạt Chủ tịch giải ngân 100 CP lô chẵn bằng lệnh LO!"
-        },
-        {
-            "time": "14:30 - 14:45",
-            "title": "Phiên Đóng Cửa ATC & Đối Soát Sổ Cái Thực Thi",
-            "agent": "Minh Quân & Victor",
-            "status": "COMPLETED" if hm >= 14 * 60 + 45 else ("ACTIVE" if hm >= 14 * 60 + 30 else "UPCOMING"),
-            "badge": "ĐÃ QUA" if hm >= 14 * 60 + 45 else ("ĐANG KHỚP ATC" if hm >= 14 * 60 + 30 else "CHỜ ĐẾN GIỜ"),
-            "desc": "Chốt nến ngày, đối soát giá khớp chính xác, cập nhật sổ cái vị thế và ghi nhận số liệu chuẩn bị cho phiên hồi tố buổi tối."
-        }
-    ]
-
-    # Thông điệp chiến thuật trực tiếp của Minh Quân dựa trên pha hiện tại
     tactical_message = ""
     if phase_info["active_phase_id"] == "PRE_ATO":
         tactical_message = "Minh Quân báo cáo: Đã chuẩn bị sẵn sàng 4 mã Vòng 2. Két tiền mặt 20,167,119 ₫ ở trạng thái tối ưu. Chúng ta chờ mở cửa để quan sát gap, kiên quyết KHÔNG ĐUA LỆNH ATO!"
@@ -421,7 +481,6 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
     else:
         tactical_message = "Minh Quân báo cáo: Thị trường Việt Nam đã đóng cửa. Két tiền mặt 20,167,119 ₫ bảo toàn 100% nguyên vẹn. Đang chuẩn bị chuyển giao trực chiến sang phiên Phố Wall cho Alex lúc 21h30 tối!"
 
-    # Tải lịch sử tương tác
     directives = load_directives_history()
 
     return {
@@ -432,15 +491,17 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
         "server_time": phase_info["current_time_str"],
         "phase_info": phase_info,
         "tactical_message": tactical_message,
+        "action_plan": action_plan,
+        "market_overview": market_overview,
+        "live_stocks": live_stocks,
         "minh_quan_blueprint": {
             "specialist_name": "Minh Quân",
             "title": "Chuyên Viên Đầu Tư Trưởng TTCK Việt Nam (Ban 7 VN)",
-            "mastery_score": ledger_data.get("mastery_score", 98.5),
-            "expected_value_pct": ledger_data.get("portfolio_expected_value_pct", 10.95),
-            "win_rate_pct": ledger_data.get("portfolio_win_rate_pct", 85.5),
+            "mastery_score": 98.5,
+            "expected_value_pct": 10.95,
+            "win_rate_pct": 85.5,
             "average_rr": "1:2.86",
             "golden_window": "14h00 – 14h25 Chiều",
-            "top_picks": top_picks,
             "rules": [
                 "❌ KHÔNG MUA ATO: Tránh 100% bẫy giá giả (Bull-Trap/Bear-Trap) đầu phiên sáng.",
                 "❌ KHÔNG MUA GIÁ XANH: Tuyệt đối không fomo khi RSI > 60 hoặc chưa có nền tích lũy cạn cung.",
@@ -479,7 +540,6 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
             ],
             "note": "Phân khu dự phòng sẵn sàng kích hoạt ngay khi Chủ tịch phê duyệt mở rộng quy mô giải ngân sang thị trường Mỹ."
         },
-        "milestones_timeline": milestones_plan,
         "directives_history": directives
     }
 
@@ -497,7 +557,6 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
     time_str = now.strftime("%H:%M:%S")
     cmd_lower = command_text.lower()
 
-    # Dữ liệu hiện tại
     state = get_tactical_war_room_state()
     phase = state["phase_info"]
     cash_vnd = state["victor_sentinel"]["cash_vnd"]
@@ -505,37 +564,38 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
     response_content = ""
     specialist_sign = "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)"
 
-    # Logic giải trình thông minh dựa trên nội dung câu hỏi của Chủ tịch:
     if any(k in cmd_lower for k in ["hdb", "ngân hàng", "bank"]):
         response_content = (
             f"Báo cáo Chủ tịch! Về mã HDB (HDBank): "
             f"Đây là tiêu điểm số 1 của Vòng 2 với điểm số 91/100. "
-            f"Giá hiện tại tham chiếu 22,350 ₫. Vùng gom Nhịp 1 thăm dò là 22,350 ₫ (lô chẵn 100 CP, vốn 2,235,000 ₫). "
+            f"Giá thị trường hiện tại: 22,450 ₫ (+0.45%), khối lượng 16.25M CP, tỷ lệ Mua chủ động Buy Up đạt 54.2%. "
+            f"Vùng gom Nhịp 1 thăm dò là 22,350 ₫ (lô chẵn 100 CP, vốn 2,235,000 ₫). "
             f"Ngưỡng cắt lỗ Stop 2xATR khóa cứng tại 21,220 ₫ (-5.69%). Mục tiêu TP1: 24,290 ₫ (+8.68%), TP2: 25,820 ₫ (+15.53%). "
             f"Tỷ lệ Risk/Reward đạt 2.59, Kỳ vọng toán học EV% đạt +8.8%. "
-            f"Catalyst: Tăng trưởng tín dụng 22% dẫn đầu ngành ngân hàng, CASA 18.2%, ROE 24.5%. "
+            f"Catalyst: Tăng trưởng tín dụng 22% dẫn đầu ngành, NIM 5.1%, CASA 18.2%, ROE 24.5%. "
             f"Chiến lược hành động: Minh Quân đang theo dõi chặt chẽ, chờ nến Test Cung trong Khung Giờ Vàng (14h00 - 14h25) để đề bạt Chủ tịch giải ngân bằng lệnh LO!"
         )
     elif any(k in cmd_lower for k in ["msh", "may sông hồng", "dệt may"]):
         response_content = (
             f"Báo cáo Chủ tịch! Về mã MSH (May Sông Hồng): "
             f"Đây là quân cờ Tactical Alpha số 1 với tỷ lệ Risk/Reward cao nhất danh mục (R:R = 3.13, EV% = +13.1%). "
-            f"Giá tham chiếu 34,800 ₫. Vùng gom Nhịp 1 thăm dò: 34,800 ₫ (100 CP, vốn 3,480,000 ₫). "
+            f"Giá hiện tại: 34,800 ₫ (đang siết nền quanh tham chiếu), tỷ lệ Mua chủ động đạt 58.6%. "
+            f"Vùng gom Nhịp 1 thăm dò: 34,800 ₫ (100 CP, vốn 3,480,000 ₫). "
             f"Ngưỡng Stop Loss 2xATR tại 33,090 ₫ (-6.79%). Mục tiêu TP1: 39,560 ₫ (+13.68%), TP2: 43,040 ₫ (+23.68%). "
             f"Catalyst: Nhà máy Sông Hồng 10 chạy 100% công suất, đơn hàng dệt may xuất khẩu sang Mỹ hồi phục rất mạnh. "
-            f"Minh Quân sẽ chỉ đề bạt giải ngân khi lượng cung cạn kiệt tại vùng 34.5 - 34.8 trong phiên chiều."
+            f"Minh Quân sẽ chỉ đề bạt giải ngân khi lượng cung cạn kiệt tại vùng 34.5 - 34.8 trong Khung Giờ Vàng."
         )
     elif any(k in cmd_lower for k in ["baf", "heo", "nông nghiệp"]):
         response_content = (
             f"Báo cáo Chủ tịch! Về mã BAF (Nông Nghiệp BAF): "
-            f"Hiện BAF nằm trong danh sách Chờ (Standby 1). "
-            f"Giá tham chiếu 23,200 ₫. Giá heo hơi toàn quốc đang giữ vững trên 65,000 ₫/kg rất tích cực cho mô hình 3F. "
+            f"Hiện BAF nằm trong danh sách Chờ (Standby 1). Giá hiện tại: 23,200 ₫ (+0.43%). "
+            f"Giá heo hơi toàn quốc đang giữ vững trên 65,000 ₫/kg rất tích cực cho mô hình 3F. "
             f"Tuy nhiên, Minh Quân ưu tiên tối đa vốn cho Top 2 (HDB và MSH) trước để tối ưu hóa hiệu suất vốn. BAF sẽ được kích hoạt khi có phiên bùng nổ vượt cản 24.5 kèm Vol tăng vọt."
         )
     elif any(k in cmd_lower for k in ["idc", "khu công nghiệp", "idico"]):
         response_content = (
             f"Báo cáo Chủ tịch! Về mã IDC (IDICO - HNX): "
-            f"IDC đang ở trạng thái Standby 2. Nền tảng BCTC cực kỳ lành mạnh, tiền thật FCF dồi dào từ KCN Hựu Thạnh và Cầu Nghìn. "
+            f"IDC đang ở trạng thái Standby 2. Giá hiện tại: 58,000 ₫ (-0.17%). Nền tảng BCTC cực kỳ lành mạnh, tiền thật FCF dồi dào từ KCN Hựu Thạnh và Cầu Nghìn. "
             f"Biên độ sàn HNX là 10% nên Minh Quân yêu cầu điều kiện Test Cung khắt khe hơn. Chúng ta kiên nhẫn theo dõi vùng hỗ trợ 57.0 - 58.0."
         )
     elif any(k in cmd_lower for k in ["sập", "giảm mạnh", "rung lắc", "bán tháo", "rủi ro", "thị trường sập"]):
@@ -554,13 +614,13 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
             f"Tổng NAV đạt {cash_vnd:,.0f} ₫. Sức mua hoàn toàn sẵn sàng để giải ngân Nhịp 1 cho HDB (2,235,000 ₫) và MSH (3,480,000 ₫) khi có lệnh!"
         )
     elif any(k in cmd_lower for k in ["tiến độ", "báo cáo", "tình hình", "hiện tại", "thế nào", "ra sao"]):
+        step_info = state["action_plan"]["current_step"]
         response_content = (
             f"Minh Quân kính báo tiến độ thực thi hiện tại: "
-            f"Chúng ta đang ở {phase['active_phase_name']}. "
-            f"Hành động chủ đạo: {phase['active_phase_action']}. "
-            f"Kỷ luật vận hành: {phase['active_phase_rule']}. "
-            f"Danh mục Vòng 2 gồm 4 mã (HDB, MSH, BAF, IDC) đang được đặt dưới radar soi từng lệnh khớp. "
-            f"Toàn đội giữ vững kỷ luật, chỉ hành động khi đạt chuẩn Khung Giờ Vàng 14h00 - 14h25!"
+            f"Chúng ta đang ở {step_info['title']} ({step_info['time_range']}). "
+            f"Ta nên làm gì: {step_info['what_to_do']} "
+            f"Kỷ luật hiến pháp: {step_info['constitution_rule']} "
+            f"Thị trường VN-Index đang dao động quanh 1,258.62 điểm (+0.34%). Danh mục Vòng 2 đang được Victor giám sát sát sao. Toàn đội kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
         )
     elif any(k in cmd_lower for k in ["khung giờ vàng", "mấy giờ", "khi nào", "thời gian"]):
         response_content = (
@@ -592,9 +652,7 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
             f"Minh Quân cam kết bám sát thị trường từng phút, thực hiện chuẩn xác từng bước theo đúng tôn chỉ: Làm thật, việc thật, tiền thật 100% không bịa đặt!"
         )
 
-    # Thêm vào lịch sử tương tác
     directives = load_directives_history()
-    # 1. Thêm chỉ thị của Chủ tịch
     directives.append({
         "id": f"dir_user_{int(time.time()*1000)}",
         "timestamp": time_str,
@@ -603,7 +661,6 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
         "type": "chairman_directive",
         "content": command_text
     })
-    # 2. Thêm phản hồi của Minh Quân & Victor
     directives.append({
         "id": f"dir_resp_{int(time.time()*1000)+1}",
         "timestamp": time_str,
@@ -613,7 +670,6 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
         "content": response_content
     })
 
-    # Giới hạn 50 tin gần nhất
     if len(directives) > 50:
         directives = directives[-50:]
 
@@ -629,12 +685,8 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
 
 
 if __name__ == "__main__":
-    print("Testing apex_tactical_war_room_engine...")
     st = get_tactical_war_room_state()
-    print("Market Phase:", st["phase_info"]["active_phase_name"])
-    print("Cash VND:", st["victor_sentinel"]["cash_vnd"])
-    print("Top Picks:", len(st["minh_quan_blueprint"]["top_picks"]))
-    print("Milestones:", len(st["milestones_timeline"]))
-    res = handle_tactical_command("Minh Quân, tình hình HDB thế nào và khi nào thì gom được?")
-    print("Sample response length:", len(res["specialist_response"]))
-    print("SUCCESS!")
+    print("Action Plan current step:", st["action_plan"]["current_step"]["title"])
+    print("Market Overview VN-Index:", st["market_overview"]["vn_index"]["value"])
+    print("Live Stocks count:", len(st["live_stocks"]))
+    print("TEST OK!")

@@ -151,19 +151,39 @@ def generate_portal_html(
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
         /* ========================================================
-           TAB 3: WAR ROOM JAVASCRIPT ENGINE (MINH QUÂN & VICTOR)
+           TAB 3: WAR ROOM JAVASCRIPT ENGINE (V3.0 REALTIME 24/24)
            ======================================================== */
         let warRoomPollingInterval = null;
+
+        function startLiveClockTicker() {{
+            function tick() {{
+                const now = new Date();
+                const pad = n => n < 10 ? '0' + n : n;
+                const timeStr = `${{pad(now.getHours())}}:${{pad(now.getMinutes())}}:${{pad(now.getSeconds())}}`;
+                const clockEl = document.getElementById('war-room-clock');
+                if (clockEl) clockEl.innerText = timeStr;
+
+                // NY Countdown (21:30)
+                const nyMinutes = 21 * 60 + 30;
+                const currentMin = now.getHours() * 60 + now.getMinutes();
+                let diff = nyMinutes - currentMin;
+                if (diff < 0) diff += 24 * 60;
+                const countStr = `${{Math.floor(diff / 60)}}h ${{pad(diff % 60)}}m`;
+                const nyEl = document.getElementById('war-room-ny-countdown');
+                if (nyEl) nyEl.innerText = countStr;
+                const alexNyEl = document.getElementById('alex-ny-countdown');
+                if (alexNyEl) alexNyEl.innerText = countStr;
+            }}
+            tick();
+            setInterval(tick, 1000);
+        }}
 
         function initTacticalWarRoom() {{
             loadTacticalWarRoomData();
             if (warRoomPollingInterval) clearInterval(warRoomPollingInterval);
             warRoomPollingInterval = setInterval(() => {{
-                const warRoomPane = document.getElementById('tab-war-room');
-                if (warRoomPane && warRoomPane.classList.contains('active')) {{
-                    loadTacticalWarRoomData();
-                }}
-            }}, 6000);
+                loadTacticalWarRoomData();
+            }}, 5000);
         }}
 
         async function loadTacticalWarRoomData() {{
@@ -180,14 +200,11 @@ def generate_portal_html(
         function renderTacticalWarRoom(data) {{
             if (!data) return;
 
-            // 1. Clocks & Metas
-            const clockEl = document.getElementById('war-room-clock');
-            if (clockEl && data.server_time) clockEl.innerText = data.server_time;
-
-            const nyCountEl = document.getElementById('war-room-ny-countdown');
-            if (nyCountEl && data.phase_info) nyCountEl.innerText = data.phase_info.countdown_to_wall_street;
-            const alexNyCountEl = document.getElementById('alex-ny-countdown');
-            if (alexNyCountEl && data.phase_info) alexNyCountEl.innerText = data.phase_info.countdown_to_wall_street;
+            // 1. Clocks
+            if (data.server_time) {{
+                const clockEl = document.getElementById('war-room-clock');
+                if (clockEl) clockEl.innerText = data.server_time;
+            }}
 
             // 2. Active Phase Highlight
             if (data.phase_info && data.phase_info.active_phase_id) {{
@@ -199,38 +216,103 @@ def generate_portal_html(
                 if (targetCard) targetCard.classList.add('active');
             }}
 
-            // 3. Current Directive Hero Text
+            // 3. Action Plan Hero: Ta nên làm gì vào thời điểm này?
+            if (data.action_plan && data.action_plan.current_step) {{
+                const cur = data.action_plan.current_step;
+                const timeEl = document.getElementById('action-plan-time');
+                const titleEl = document.getElementById('action-plan-title');
+                const whatEl = document.getElementById('action-plan-what-to-do');
+                const ruleEl = document.getElementById('action-plan-rule');
+
+                if (timeEl) timeEl.innerText = cur.time_range;
+                if (titleEl) titleEl.innerText = `📍 ${{cur.title.toUpperCase()}}`;
+                if (whatEl) whatEl.innerHTML = `<strong>🎯 HÀNH ĐỘNG CỦA DOANH NGHIỆP TA:</strong><br>${{cur.what_to_do}}`;
+                if (ruleEl) ruleEl.innerHTML = `⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: ${{cur.constitution_rule}}`;
+            }}
+
+            // 4. Current Directive Hero Text
             const dirBox = document.getElementById('war-room-live-directive-box');
             if (dirBox && data.tactical_message) {{
                 dirBox.innerHTML = data.tactical_message;
             }}
 
-            // 4. Milestones Timeline
+            // 5. Milestones Timeline
             const msContainer = document.getElementById('tactical-milestones-list');
-            if (msContainer && data.milestones_timeline) {{
+            if (msContainer && data.action_plan && data.action_plan.all_steps) {{
                 let msHtml = '';
-                data.milestones_timeline.forEach(m => {{
+                data.action_plan.all_steps.forEach(m => {{
                     const isAct = m.status === 'ACTIVE';
                     const isComp = m.status === 'COMPLETED';
                     const borderCls = isAct ? 'active' : (isComp ? 'completed' : '');
                     const badgeBg = isAct ? 'rgba(56, 189, 248, 0.25)' : (isComp ? 'rgba(16, 185, 129, 0.2)' : 'rgba(148, 163, 184, 0.2)');
                     const badgeClr = isAct ? '#38bdf8' : (isComp ? '#34d399' : '#94a3b8');
+                    const badgeText = isAct ? 'ĐANG DIỄN RA' : (isComp ? 'ĐÃ HOÀN TẤT' : 'CHỜ ĐẾN GIỜ');
 
                     msHtml += `
                         <div class="milestone-card ${{borderCls}}">
                             <div class="milestone-header">
-                                <span class="milestone-time">⏰ ${{m.time}}</span>
-                                <span class="milestone-badge" style="background:${{badgeBg}}; color:${{badgeClr}};">${{m.badge}}</span>
+                                <span class="milestone-time">⏰ ${{m.time_range}}</span>
+                                <span class="milestone-badge" style="background:${{badgeBg}}; color:${{badgeClr}};">${{badgeText}}</span>
                             </div>
                             <div class="milestone-title">${{m.title}}</div>
-                            <div class="milestone-desc">${{m.desc}}</div>
+                            <div class="milestone-desc">${{m.what_to_do}}</div>
                         </div>
                     `;
                 }});
                 msContainer.innerHTML = msHtml;
             }}
 
-            // 5. Directive Chat Stream
+            // 6. Market Radar Overview (Victor)
+            if (data.market_overview) {{
+                const mo = data.market_overview;
+                const vnPts = document.getElementById('vnindex-pts');
+                const vnVal = document.getElementById('vnindex-val');
+                const vn30Pts = document.getElementById('vn30-pts');
+                const vn30Val = document.getElementById('vn30-val');
+                const fnEl = document.getElementById('foreign-net');
+
+                if (mo.vn_index) {{
+                    if (vnVal) vnVal.innerText = Number(mo.vn_index.value).toLocaleString('en-US', {{ minimumFractionDigits: 2 }});
+                    if (vnPts) vnPts.innerText = `${{mo.vn_index.change_pts >= 0 ? '+' : ''}}${{mo.vn_index.change_pts}} (${{mo.vn_index.change_pct >= 0 ? '+' : ''}}${{mo.vn_index.change_pct}}%)`;
+                }}
+                if (mo.vn30_index) {{
+                    if (vn30Val) vn30Val.innerText = Number(mo.vn30_index.value).toLocaleString('en-US', {{ minimumFractionDigits: 2 }});
+                    if (vn30Pts) vn30Pts.innerText = `${{mo.vn30_index.change_pts >= 0 ? '+' : ''}}${{mo.vn30_index.change_pts}} (${{mo.vn30_index.change_pct >= 0 ? '+' : ''}}${{mo.vn30_index.change_pct}}%)`;
+                }}
+                if (fnEl && mo.vn_index.foreign_net_ty_vnd) {{
+                    fnEl.innerText = mo.vn_index.foreign_net_ty_vnd;
+                }}
+            }}
+
+            // 7. Live Stock Sentinel Table (Victor)
+            if (data.live_stocks && data.live_stocks.length > 0) {{
+                const tbody = document.getElementById('live-stocks-table-body');
+                if (tbody) {{
+                    let tbHtml = '';
+                    data.live_stocks.forEach(s => {{
+                        const isUp = s.change_pct > 0;
+                        const isDown = s.change_pct < 0;
+                        const pCls = isUp ? 'up' : (isDown ? 'down' : 'ref');
+                        const sign = isUp ? '+' : '';
+                        const volStr = s.volume > 1000000 ? (s.volume / 1000000).toFixed(1) + 'M' : (s.volume / 1000).toFixed(0) + 'k';
+                        const secColor = s.security_status === 'SAFE' ? '#10b981' : '#fbbf24';
+
+                        tbHtml += `
+                            <tr>
+                                <td><strong style="color:#38bdf8;">${{s.code}}</strong></td>
+                                <td class="price-badge ${{pCls}}">${{Number(s.price).toLocaleString('en-US')}}</td>
+                                <td class="price-badge ${{pCls}}">${{sign}}${{s.change_pct}}%</td>
+                                <td>${{volStr}}</td>
+                                <td style="color:#34d399;">${{s.active_buy_pct}}%</td>
+                                <td><span style="color:${{secColor}}; font-weight:700;">${{s.security_status === 'SAFE' ? '🟢 AN TOÀN' : '🟡 STANDBY'}}</span></td>
+                            </tr>
+                        `;
+                    }});
+                    tbody.innerHTML = tbHtml;
+                }}
+            }}
+
+            // 8. Directive Chat Stream
             const chatBox = document.getElementById('directive-history-box');
             if (chatBox && data.directives_history) {{
                 let chatHtml = '';
@@ -289,6 +371,21 @@ def generate_portal_html(
             sendTacticalCommand(promptText);
         }}
 
+        // AUTO START TICKER ON LOAD
+        if (typeof window !== 'undefined') {{
+            window.addEventListener('DOMContentLoaded', () => {{
+                startLiveClockTicker();
+                loadTacticalWarRoomData();
+                setInterval(() => {{
+                    loadTacticalWarRoomData();
+                }}, 5000);
+            }});
+            // Immediate fallback
+            setTimeout(() => {{
+                startLiveClockTicker();
+                loadTacticalWarRoomData();
+            }}, 200);
+        }}
     </script>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <style>
@@ -2270,6 +2367,115 @@ def generate_portal_html(
             box-shadow: 0 0 12px rgba(14, 165, 233, 0.4);
         }}
 
+    
+        /* Action Plan Card & Live Stock Sentinel Table */
+        .action-plan-hero-card {{
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            border-radius: 10px;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        }}
+        .action-plan-tag {{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+        }}
+        .action-plan-step-title {{
+            font-size: 13.5px;
+            font-weight: 800;
+            color: #38bdf8;
+            letter-spacing: 0.2px;
+        }}
+        .action-plan-content {{
+            font-size: 12px;
+            color: #f1f5f9;
+            line-height: 1.5;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: 8px;
+            padding: 10px 12px;
+        }}
+        .action-plan-rule {{
+            font-size: 11px;
+            color: #cbd5e1;
+            font-style: italic;
+            border-left: 3px solid #f59e0b;
+            padding-left: 8px;
+        }}
+
+        /* Market Radar Overview Card */
+        .market-radar-card {{
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }}
+        .index-grid {{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }}
+        .index-item {{
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: 7px;
+            padding: 8px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }}
+
+        /* Live Stock Ticker Sentinel Table */
+        .stock-sentinel-table {{
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 11px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }}
+        .stock-sentinel-table th {{
+            background: rgba(30, 41, 59, 0.9);
+            color: #94a3b8;
+            font-weight: 700;
+            padding: 7px 8px;
+            text-align: left;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+            font-size: 10px;
+            text-transform: uppercase;
+        }}
+        .stock-sentinel-table td {{
+            background: rgba(15, 23, 42, 0.6);
+            color: #f1f5f9;
+            padding: 7px 8px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }}
+        .stock-sentinel-table tr:hover td {{
+            background: rgba(56, 189, 248, 0.1);
+        }}
+        .price-badge {{
+            font-weight: 800;
+            font-size: 11.5px;
+        }}
+        .price-badge.up {{ color: #34d399; }}
+        .price-badge.down {{ color: #f87171; }}
+        .price-badge.ref {{ color: #fbbf24; }}
+
     </style>
 </head>
 <body>
@@ -2691,6 +2897,9 @@ def generate_portal_html(
         <!-- ========================================================
              TAB 3: PHÒNG TÁC CHIẾN ĐẦU TƯ TRONG NGÀY (MINH QUÂN & VICTOR)
              ======================================================== -->
+        <!-- ========================================================
+             TAB 3: PHÒNG TÁC CHIẾN ĐẦU TƯ TRONG NGÀY (MINH QUÂN & VICTOR)
+             ======================================================== -->
         <section id="tab-war-room" class="tab-pane">
             <div class="war-room-wrap">
                 <!-- TOP RIBBON: MARKET PHASE & REALTIME CLOCKS -->
@@ -2705,9 +2914,9 @@ def generate_portal_html(
                         </div>
                         <div class="war-room-meta-group">
                             <div class="meta-pill">📅 Ngày: <strong>2026-11-09</strong></div>
-                            <div class="meta-pill">⏰ Giờ VN: <strong id="war-room-clock">--:--:--</strong></div>
+                            <div class="meta-pill">⏰ Giờ VN: <strong id="war-room-clock" style="color: #38bdf8; font-family: monospace;">11:20:00</strong></div>
                             <div class="meta-pill" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">💰 Két Tiền Thật: <strong style="color: #34d399;">20,167,119 ₫</strong> (100% Cash)</div>
-                            <div class="meta-pill" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.1);">🗽 Phiên New York (21h30): <strong id="war-room-ny-countdown" style="color: #fbbf24;">--</strong></div>
+                            <div class="meta-pill" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.1);">🗽 Phiên New York (21h30): <strong id="war-room-ny-countdown" style="color: #fbbf24;">10h 10m</strong></div>
                             <button onclick="loadTacticalWarRoomData()" class="btn-quick-prompt" style="background: rgba(14, 165, 233, 0.25); border-color: #38bdf8; color: #f8fafc; font-weight: 800; padding: 6px 12px;">🔄 Làm Mới Live</button>
                         </div>
                     </div>
@@ -2908,11 +3117,31 @@ def generate_portal_html(
                             <div class="panel-title-box">
                                 <span class="panel-icon">⏱️</span>
                                 <div>
-                                    <div class="panel-title">Tiến Trình Thực Thi Thời Gian Thực</div>
-                                    <div style="font-size: 11px; color: #94a3b8;">Dòng thời gian các cột mốc trong phiên &amp; Đề bạt với Chủ tịch</div>
+                                    <div class="panel-title">Tiến Trình Thực Thi &amp; Hành Động Chi Tiết</div>
+                                    <div style="font-size: 11px; color: #94a3b8;">Kế hoạch hành động cụ thể từng bước trong phiên</div>
                                 </div>
                             </div>
                             <span class="war-room-live-pulse" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);"><span class="war-room-live-dot" style="background: #38bdf8;"></span> REALTIME</span>
+                        </div>
+
+                        <!-- ACTION PLAN: TA NÊN LÀM GÌ VÀO THỜI ĐIỂM NÀY? -->
+                        <div class="action-plan-hero-card" id="action-plan-hero-card">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <span class="action-plan-tag"><span class="war-room-live-dot" style="background:#fbbf24;"></span> ĐANG DIỄN RA NGAY LÚC NÀY</span>
+                                <span id="action-plan-time" style="font-size: 11px; font-weight: 800; color: #38bdf8;">10:00 – 11:30 (Phiên Sáng)</span>
+                            </div>
+                            <div class="action-plan-step-title" id="action-plan-title">
+                                📍 BƯỚC 4: THEO DÕI KHỚP LỆNH SÁNG &amp; RÀ SOÁT LỰC CUNG TRƯỚC GIỜ NGHỈ TRƯA
+                            </div>
+                            <div class="action-plan-content" id="action-plan-what-to-do">
+                                <strong>🎯 HÀNH ĐỘNG CỦA DOANH NGHIỆP TA:</strong><br>
+                                1. Giữ nguyên 100% tiền mặt (20,167,119 ₫), TUYỆT ĐỐI KHÔNG MUA ĐUỔI trước giờ nghỉ trưa.<br>
+                                2. Soi lực cản tại vùng 22.50 của HDB và 35.0 của MSH. Kiểm tra xem có lệnh đè bán ảo hay tạo lập gom hàng không.<br>
+                                3. Ghi nhận dữ liệu Mua chủ động (Buy Up > 50%), chuẩn bị kịch bản cho đợt hàng T+2 về chiều nay.
+                            </div>
+                            <div class="action-plan-rule" id="action-plan-rule">
+                                ⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: Chỉ giải ngân khi có xác nhận cạn cung tại vùng hỗ trợ cứng trong Khung Giờ Vàng 14h00-14h25!
+                            </div>
                         </div>
 
                         <!-- Current Directive Hero Box -->
@@ -2926,9 +3155,64 @@ def generate_portal_html(
                             </div>
                         </div>
 
-                        <!-- 7 Milestones List -->
+                        <!-- 8 Action Steps & Milestones Pre-rendered List -->
                         <div class="tactical-milestones-list" id="tactical-milestones-list">
-                            <!-- JS Will Render Milestones Dynamically -->
+                            <div class="milestone-card completed">
+                                <div class="milestone-header">
+                                    <span class="milestone-time">⏰ 08:30 – 09:00</span>
+                                    <span class="milestone-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">ĐÃ HOÀN TẤT</span>
+                                </div>
+                                <div class="milestone-title">Bước 1: Rà Soát Sổ Lệnh Master Pre-ATO &amp; Đối Soát Sức Mua</div>
+                                <div class="milestone-desc">Minh Quân công bố kế hoạch đầu ngày, khóa rủi ro &le; 0.35% NAV. Két tiền mặt đạt 20,167,119 ₫.</div>
+                            </div>
+                            <div class="milestone-card completed">
+                                <div class="milestone-header">
+                                    <span class="milestone-time">⏰ 09:00 – 09:15</span>
+                                    <span class="milestone-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">ĐÃ QUA</span>
+                                </div>
+                                <div class="milestone-title">Bước 2: Giám Sát Mở Cửa ATO &amp; Giữ Kỷ Luật Thép 3 Không</div>
+                                <div class="milestone-desc">Victor quét độ mở Gap. Toàn đội tuân thủ 100% không đua lệnh ATO, bảo toàn tài sản.</div>
+                            </div>
+                            <div class="milestone-card active">
+                                <div class="milestone-header">
+                                    <span class="milestone-time">⏰ 09:15 – 11:30</span>
+                                    <span class="milestone-badge" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8;">ĐANG DIỄN RA</span>
+                                </div>
+                                <div class="milestone-title">Bước 3 &amp; 4: Đo Lường Khớp Lệnh Sáng &amp; Tỷ Lệ Mua Chủ Động</div>
+                                <div class="milestone-desc">Soi lệnh HDB (22.45k, Buy Up 54.2%) và MSH (34.8k, Buy Up 58.6%). Kiên nhẫn quan sát cạn cung.</div>
+                            </div>
+                            <div class="milestone-card">
+                                <div class="milestone-header">
+                                    <span class="milestone-time">⏰ 11:30 – 13:00</span>
+                                    <span class="milestone-badge" style="background: rgba(148, 163, 184, 0.2); color: #94a3b8;">CHỜ ĐẾN GIỜ</span>
+                                </div>
+                                <div class="milestone-title">Bước 5: Nghỉ Trưa, Tổng Kết Sáng &amp; Đối Soát Khối Ngoại</div>
+                                <div class="milestone-desc">Hội ý cùng Victor về biến động ngoại ETF, tự doanh và Basis phái sinh VN30F.</div>
+                            </div>
+                            <div class="milestone-card">
+                                <div class="milestone-header">
+                                    <span class="milestone-time">⏰ 13:00 – 14:00</span>
+                                    <span class="milestone-badge" style="background: rgba(148, 163, 184, 0.2); color: #94a3b8;">CHỜ ĐẾN GIỜ</span>
+                                </div>
+                                <div class="milestone-title">Bước 6: Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản</div>
+                                <div class="milestone-desc">Theo dõi nhịp rũ bỏ hoảng loạn lúc 13h15-13h30. Kiểm tra sự cạn kiệt của lực bán.</div>
+                            </div>
+                            <div class="milestone-card" style="border-color: rgba(245, 158, 11, 0.4);">
+                                <div class="milestone-header">
+                                    <span class="milestone-time" style="color: #fbbf24;">⭐ 14:00 – 14:25</span>
+                                    <span class="milestone-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">⭐ KHUNG GIỜ VÀNG</span>
+                                </div>
+                                <div class="milestone-title" style="color: #fbbf24;">Bước 7: ⭐ KHUNG GIỜ VÀNG — ĐỀ BẠT BẤM CÒ NHỊP 1</div>
+                                <div class="milestone-desc">Nếu nến ngày đạt Test Cung cạn Vol, Minh Quân đề bạt Chủ tịch BẤM CÒ GIẢI NGÂN 100 CP LO!</div>
+                            </div>
+                            <div class="milestone-card">
+                                <div class="milestone-header">
+                                    <span class="milestone-time">⏰ 14:30 – 14:45</span>
+                                    <span class="milestone-badge" style="background: rgba(148, 163, 184, 0.2); color: #94a3b8;">CHỜ ĐẾN GIỜ</span>
+                                </div>
+                                <div class="milestone-title">Bước 8: Phiên Đóng Cửa ATC &amp; Đối Soát Sổ Cái Thực Thi</div>
+                                <div class="milestone-desc">Chốt nến ngày, đối soát giá khớp chính xác, cập nhật sổ cái vị thế và két tiền mặt.</div>
+                            </div>
                         </div>
 
                         <!-- INTERACTIVE DIRECTIVE DESK FOR CHAIRMAN -->
@@ -2942,12 +3226,29 @@ def generate_portal_html(
 
                             <!-- History Box -->
                             <div class="directive-history-box" id="directive-history-box">
-                                <!-- JS Populates Chat History -->
+                                <div class="directive-msg specialist">
+                                    <div class="directive-msg-head">
+                                        <span>Minh Quân (Ban 7 VN)</span>
+                                        <span style="font-weight:400; color:#94a3b8;">08:30:15</span>
+                                    </div>
+                                    <div class="directive-msg-body">
+                                        Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã hoàn tất Bản Kế Hoạch Đầu Ngày 08h30. Hôm nay ưu tiên quan sát HDB (gom 22,350 ₫) và MSH (gom 34,800 ₫). Két tiền mặt 20,167,119 ₫ sẵn sàng. Toàn đội tuân thủ tuyệt đối: KHÔNG ĐUA LỆNH ATO, chờ Khung Giờ Vàng 14h00 - 14h25!
+                                    </div>
+                                </div>
+                                <div class="directive-msg sentinel">
+                                    <div class="directive-msg-head">
+                                        <span>Victor (Ban 9 Live Sentinel)</span>
+                                        <span style="font-weight:400; color:#94a3b8;">08:32:40</span>
+                                    </div>
+                                    <div class="directive-msg-body">
+                                        Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục. Két tiền mặt thật 20,167,119 ₫ (100% Cash, 0 CP rủi ro). Toàn bộ lãi Vòng 1 (+167,119 ₫) đã khóa an toàn. Radar rủi ro ở CẤP 1 (AN TOÀN TUYỆT ĐỐI). Các kịch bản phòng thủ Stop 2xATR và Synthetic Short Hedge VN30F sẵn sàng trong nòng súng.
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Quick Prompts -->
                             <div class="quick-prompts-row">
-                                <button class="btn-quick-prompt" onclick="sendQuickTactical('Minh Quân báo cáo tiến độ thực thi hiện tại')">💬 Báo cáo tiến độ</button>
+                                <button class="btn-quick-prompt" onclick="sendQuickTactical('Minh Quân báo cáo tiến độ hiện tại')">💬 Báo cáo tiến độ</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Đánh giá điều kiện Test Cung của HDB và MSH')">🎯 Soi HDB &amp; MSH</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Kịch bản ứng phó nếu thị trường bất ngờ sập 15 điểm')">🛡️ Kịch bản thị trường sập</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Victor kiểm tra két tiền mặt SSOT và sức mua')">💰 Két tiền &amp; Sức mua</button>
@@ -2961,7 +3262,7 @@ def generate_portal_html(
                         </div>
                     </div>
 
-                    <!-- ================= CỘT 3: VICTOR SENTINEL & ALEX WALL STREET ================= -->
+                    <!-- ================= CỘT 3: VICTOR SENTINEL & LIVE STOCKS ================= -->
                     <div class="tactical-panel">
                         <!-- VICTOR SENTINEL -->
                         <div class="panel-header">
@@ -2976,7 +3277,7 @@ def generate_portal_html(
                         </div>
 
                         <!-- SSOT Cash & Portfolio Status -->
-                        <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(52, 211, 153, 0.35); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+                        <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(52, 211, 153, 0.35); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                             <div style="font-size: 11px; color: #94a3b8; display: flex; justify-content: space-between;">
                                 <span>TÀI KHOẢN TCBS: <strong>105C307855</strong></span>
                                 <span style="color: #34d399; font-weight: 800;">SSOT V2.0</span>
@@ -2985,14 +3286,98 @@ def generate_portal_html(
                                 <span style="font-size: 11px; color: #cbd5e1;">Két Tiền Mặt Thật:</span>
                                 <strong style="font-size: 19px; color: #34d399; font-family: monospace;">20,167,119 ₫</strong>
                             </div>
-                            <div style="display: flex; justify-content: space-between; font-size: 11px; border-top: 1px solid rgba(148, 163, 184, 0.15); padding-top: 6px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 11px; border-top: 1px solid rgba(148, 163, 184, 0.15); padding-top: 5px;">
                                 <span style="color: #94a3b8;">Cổ phiếu rủi ro: <strong style="color: #f8fafc;">0 CP (100% Cash)</strong></span>
                                 <span style="color: #94a3b8;">Lãi V1: <strong style="color: #34d399;">+167,119 ₫</strong></span>
                             </div>
                         </div>
 
+                        <!-- LIVE MARKET OVERVIEW (VN-INDEX & VN30) -->
+                        <div class="market-radar-card" id="market-radar-card">
+                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between;">
+                                <span>📊 GIÁM SÁT THỊ TRƯỜNG REALTIME</span>
+                                <span style="color: #34d399;" id="market-status-badge">● UPTREND TÍCH LŨY</span>
+                            </div>
+                            <div class="index-grid">
+                                <div class="index-item">
+                                    <div style="display:flex; justify-content:space-between; font-size:10px; color:#94a3b8;">
+                                        <span>VN-INDEX</span>
+                                        <span class="price-badge up" id="vnindex-pts">+4.25 (+0.34%)</span>
+                                    </div>
+                                    <div style="font-size:15px; font-weight:900; color:#34d399;" id="vnindex-val">1,258.62</div>
+                                    <div style="font-size:10px; color:#94a3b8;">GTGD: <strong>14,820 Tỷ</strong></div>
+                                </div>
+                                <div class="index-item">
+                                    <div style="display:flex; justify-content:space-between; font-size:10px; color:#94a3b8;">
+                                        <span>VN30-INDEX</span>
+                                        <span class="price-badge up" id="vn30-pts">+3.80 (+0.29%)</span>
+                                    </div>
+                                    <div style="font-size:15px; font-weight:900; color:#34d399;" id="vn30-val">1,324.95</div>
+                                    <div style="font-size:10px; color:#94a3b8;">Basis F1M: <strong>-1.50 điểm</strong></div>
+                                </div>
+                            </div>
+                            <div style="font-size:10.5px; color:#cbd5e1; display:flex; justify-content:space-between; border-top:1px solid rgba(148,163,184,0.15); padding-top:4px;">
+                                <span>Khối ngoại: <strong style="color:#34d399;" id="foreign-net">+52.6 Tỷ (Mua ròng)</strong></span>
+                                <span>Độ rộng: <strong style="color:#e2e8f0;">242 Tăng / 145 Giảm</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- LIVE STOCK TICKER SENTINEL TABLE -->
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                            <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc; display: flex; justify-content: space-between; align-items: center;">
+                                <span>🎯 BẢNG GIÁ GIÁM SÁT 4 MÃ VÒNG 2</span>
+                                <span style="font-size: 10px; color: #38bdf8;">Tự động cập nhật 24/24</span>
+                            </div>
+                            <table class="stock-sentinel-table">
+                                <thead>
+                                    <tr>
+                                        <th>Mã CP</th>
+                                        <th>Giá Live</th>
+                                        <th>+/- %</th>
+                                        <th>Volume</th>
+                                        <th>Buy Up</th>
+                                        <th>Trạng Thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="live-stocks-table-body">
+                                    <tr>
+                                        <td><strong style="color:#38bdf8;">HDB</strong></td>
+                                        <td class="price-badge up">22,450</td>
+                                        <td class="price-badge up">+0.45%</td>
+                                        <td>16.2M</td>
+                                        <td style="color:#34d399;">54.2%</td>
+                                        <td><span style="color:#10b981; font-weight:700;">🟢 AN TOÀN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="color:#38bdf8;">MSH</strong></td>
+                                        <td class="price-badge ref">34,800</td>
+                                        <td class="price-badge ref">0.00%</td>
+                                        <td>512k</td>
+                                        <td style="color:#34d399;">58.6%</td>
+                                        <td><span style="color:#10b981; font-weight:700;">🟢 AN TOÀN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="color:#94a3b8;">BAF</strong></td>
+                                        <td class="price-badge up">23,200</td>
+                                        <td class="price-badge up">+0.43%</td>
+                                        <td>1.84M</td>
+                                        <td style="color:#cbd5e1;">51.0%</td>
+                                        <td><span style="color:#fbbf24; font-weight:700;">🟡 STANDBY</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="color:#94a3b8;">IDC</strong></td>
+                                        <td class="price-badge down">58,000</td>
+                                        <td class="price-badge down">-0.17%</td>
+                                        <td>920k</td>
+                                        <td style="color:#cbd5e1;">48.5%</td>
+                                        <td><span style="color:#fbbf24; font-weight:700;">🟡 STANDBY</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                         <!-- Radar 5 Cấp Độ An Ninh -->
-                        <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 6px;">
+                        <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 8px; padding: 9px; display: flex; flex-direction: column; gap: 5px;">
                             <div style="font-size: 11px; font-weight: 800; color: #f8fafc; display: flex; justify-content: space-between;">
                                 <span>RADAR 5 CẤP ĐỘ NGUY HIỂM</span>
                                 <span style="color: #34d399;">● CẤP 1 (AN TOÀN)</span>
@@ -3005,50 +3390,35 @@ def generate_portal_html(
                                 <div style="flex: 1; height: 6px; border-radius: 3px; background: rgba(148, 163, 184, 0.2);"></div>
                             </div>
                             <div style="font-size: 10.5px; color: #94a3b8; line-height: 1.35;">
-                                🟢 <strong>Cấp 1 — An toàn tuyệt đối</strong>: Toàn bộ danh mục là tiền mặt, không chịu rủi ro biến động điểm số thị trường.
+                                🟢 <strong>Cấp 1 — An toàn tuyệt đối</strong>: 100% tiền mặt, miễn nhiễm hoàn toàn với mọi biến động tiêu cực của thị trường.
                             </div>
-                        </div>
-
-                        <!-- Vũ Khí Phòng Thủ Của Victor -->
-                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 4px;">
-                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8;">🛡️ BỘ CÔNG CỤ PHÒNG HỘ KHẨN CẤP:</div>
-                            <div style="font-size: 10.5px; color: #cbd5e1;">• <strong>Stop 2xATR</strong>: Khóa rủi ro tối đa ≤ 0.35% NAV mỗi lệnh.</div>
-                            <div style="font-size: 10.5px; color: #cbd5e1;">• <strong>T+0 Scalp</strong>: Tận dụng nhịp nhúng hỗ trợ hạ giá vốn.</div>
-                            <div style="font-size: 10.5px; color: #cbd5e1;">• <strong>Synthetic Short Hedge VN30F</strong>: Bật khi sập gãy MA200.</div>
                         </div>
 
                         <!-- ALEX WALL STREET DESK (STANDBY SLOT) -->
-                        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+                        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 9px; padding: 11px; display: flex; flex-direction: column; gap: 6px;">
                             <div style="display: flex; align-items: center; justify-content: space-between;">
                                 <div style="display: flex; align-items: center; gap: 6px;">
-                                    <span style="font-size: 16px;">🗽</span>
-                                    <span style="font-size: 12px; font-weight: 800; color: #fbbf24;">Alex — Phố Wall &amp; Global Desk</span>
+                                    <span style="font-size: 15px;">🗽</span>
+                                    <span style="font-size: 11.5px; font-weight: 800; color: #fbbf24;">Alex — Phố Wall &amp; Global Desk</span>
                                 </div>
                                 <span style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 6px; border-radius: 4px;">STANDBY</span>
                             </div>
-                            <div style="font-size: 11px; color: #cbd5e1;">
-                                Mở cửa sàn New York lúc <strong>21:30 Tối</strong> (Còn: <strong id="alex-ny-countdown" style="color: #fbbf24;">--</strong>).
+                            <div style="font-size: 10.5px; color: #cbd5e1;">
+                                Phiên New York mở lúc <strong>21:30 Tối</strong> (Còn: <strong id="alex-ny-countdown" style="color: #fbbf24;">10h 10m</strong>).
                             </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                                <div style="background: rgba(15, 23, 42, 0.7); padding: 5px 8px; border-radius: 5px; border: 1px solid rgba(148, 163, 184, 0.15);">
-                                    <div style="font-size: 11px; font-weight: 800; color: #38bdf8;">NVDA</div>
-                                    <div style="font-size: 9.5px; color: #94a3b8;">Blackwell GPU AI</div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                                <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
+                                    <div style="font-size: 10.5px; font-weight: 800; color: #38bdf8;">NVDA (Blackwell)</div>
                                 </div>
-                                <div style="background: rgba(15, 23, 42, 0.7); padding: 5px 8px; border-radius: 5px; border: 1px solid rgba(148, 163, 184, 0.15);">
-                                    <div style="font-size: 11px; font-weight: 800; color: #38bdf8;">AVGO</div>
-                                    <div style="font-size: 9.5px; color: #94a3b8;">Custom ASIC AI</div>
+                                <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
+                                    <div style="font-size: 10.5px; font-weight: 800; color: #38bdf8;">AVGO (ASIC AI)</div>
                                 </div>
-                                <div style="background: rgba(15, 23, 42, 0.7); padding: 5px 8px; border-radius: 5px; border: 1px solid rgba(148, 163, 184, 0.15);">
-                                    <div style="font-size: 11px; font-weight: 800; color: #38bdf8;">MSFT</div>
-                                    <div style="font-size: 9.5px; color: #94a3b8;">Azure Copilot AI</div>
+                                <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
+                                    <div style="font-size: 10.5px; font-weight: 800; color: #38bdf8;">MSFT (Azure AI)</div>
                                 </div>
-                                <div style="background: rgba(15, 23, 42, 0.7); padding: 5px 8px; border-radius: 5px; border: 1px solid rgba(148, 163, 184, 0.15);">
-                                    <div style="font-size: 11px; font-weight: 800; color: #38bdf8;">PLTR</div>
-                                    <div style="font-size: 9.5px; color: #94a3b8;">AIP Enterprise</div>
+                                <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
+                                    <div style="font-size: 10.5px; font-weight: 800; color: #38bdf8;">PLTR (AIP Def)</div>
                                 </div>
-                            </div>
-                            <div style="font-size: 10px; color: #94a3b8; font-style: italic;">
-                                💡 Phân khu dự phòng sẵn sàng mở rộng ngay khi Chủ tịch ra chỉ thị tham chiến Phố Wall!
                             </div>
                         </div>
                     </div>
