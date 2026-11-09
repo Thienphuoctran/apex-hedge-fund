@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-09 01:44:20  
+> **Thời gian quét:** 2026-11-09 02:44:30  
 > **Số sự kiện ghi nhận:** 49 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
@@ -36,9 +36,9 @@
 | **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB ("ACBC") thông báo chào bán chứng chỉ Quỹ ACBC-BOND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-bond-ra-cong-chung-188261105083038836.chn) |
 | **ACB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | Công ty TNHH Một Thành viên Quản lý Quỹ ACB (“ACBC”) thông báo chào bán chứng chỉ Quỹ ACBC-SFUND ra công chúng | [Xem Link](https://cafef.vn/cong-ty-tnhh-mot-thanh-vien-quan-ly-quy-acb-acbc-thong-bao-chao-ban-chung-chi-quy-acbc-sfund-ra-cong-chung-18826110508211184.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hoán đổi ngoại tệ kỳ hạn 6 tháng: Hỗ trợ thanh khoản, giảm áp lực lãi suất | [Xem Link](https://cafef.vn/hoan-doi-ngoai-te-ky-han-6-thang-ho-tro-thanh-khoan-giam-ap-luc-lai-suat-188261105080626478.chn) |
-| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | ACB ra mắt thẻ tín dụng dành cho hộ kinh doanh, miễn lãi đến 55 ngày và hoàn tiền đến 10% | [Xem Link](https://cafef.vn/acb-ra-mat-the-tin-dung-danh-cho-ho-kinh-doanh-mien-lai-den-55-ngay-va-hoan-tien-den-10-188261105071713898.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Toàn cảnh công trường Trung tâm hành chính TP.HCM sau hơn 6 tháng khởi công | [Xem Link](https://cafef.vn/toan-canh-cong-truong-trung-tam-hanh-chinh-tphcm-sau-hon-6-thang-khoi-cong-188261108141613934.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Doanh nghiệp muốn cơ chế '3 ưu đãi' làm nhà xã hội cho thuê ở TP.HCM | [Xem Link](https://cafef.vn/doanh-nghiep-muon-co-che-3-uu-dai-lam-nha-xa-hoi-cho-thue-o-tphcm-188261108141734139.chn) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | NAB gia nhập nhóm doanh nghiệp tỷ USD, PGV, LPS và GEL bị loại | [Xem Link](https://vneconomy.vn/nab-gia-nhap-nhom-doanh-nghiep-ty-usd-pgv-lps-va-gel-bi-loai.htm) |
 | **FPT, STB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | "Cá mập" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB | [Xem Link](https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026 | [Xem Link](https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm) |
 | **CTG, DXG, HPG, MBB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại mua ròng đột biến ở VIX | [Xem Link](https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm) |

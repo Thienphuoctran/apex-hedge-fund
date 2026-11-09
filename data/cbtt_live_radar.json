@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-09T01:44:20.720153+00:00",
+  "timestamp_utc": "2026-11-09T02:44:30.860687+00:00",
   "scan_date": "2026-11-09",
   "total_us_filings_count": 370,
   "total_vn_announcements_count": 49,
@@ -314,7 +314,7 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn",
-      "total_announcements": 13
+      "total_announcements": 14
     },
     "REE": {
       "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
@@ -354,7 +354,7 @@
       "severity": "INFO",
       "published_at": "Mon, 09 Nov 26 01:00:00 +0700",
       "source_url": "https://cafef.vn/ngay-9-11-gui-duoi-1-ty-dong-ky-han-9-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261108222446822.chn",
-      "total_announcements": 9
+      "total_announcements": 8
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -5243,18 +5243,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
-      ],
-      "title": "ACB ra mắt thẻ tín dụng dành cho hộ kinh doanh, miễn lãi đến 55 ngày và hoàn tiền đến 10%",
-      "summary": "Trước nhu cầu vốn lưu động và quản lý chi phí gia tăng vào mùa kinh doanh cuối năm, ACB cho ra mắt thẻ tín dụng ACB Visa Business được thiết kế riêng cho khách hàng kinh doanh với các quyền lợi tập trung vào ba nhu cầu: ...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 05 Nov 26 07:16:00 +0700",
-      "source_url": "https://cafef.vn/acb-ra-mat-the-tin-dung-danh-cho-ho-kinh-doanh-mien-lai-den-55-ngay-va-hoan-tien-den-10-188261105071713898.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "HCM"
       ],
       "title": "Toàn cảnh công trường Trung tâm hành chính TP.HCM sau hơn 6 tháng khởi công",
@@ -5275,6 +5263,18 @@
       "severity": "INFO",
       "published_at": "Sun, 08 Nov 26 14:17:00 +0700",
       "source_url": "https://cafef.vn/doanh-nghiep-muon-co-che-3-uu-dai-lam-nha-xa-hoi-cho-thue-o-tphcm-188261108141734139.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "NAB gia nhập nhóm doanh nghiệp tỷ USD, PGV, LPS và GEL bị loại",
+      "summary": "Sở Giao dịch Chứng khoán Tp.HCM (HOSE) thông tin thị trường kỳ tháng 10/2026....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 2026 02:01:37 GMT",
+      "source_url": "https://vneconomy.vn/nab-gia-nhap-nhom-doanh-nghiep-ty-usd-pgv-lps-va-gel-bi-loai.htm"
     },
     {
       "market": "VIETNAM",
