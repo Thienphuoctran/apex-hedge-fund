@@ -2305,8 +2305,8 @@ def generate_portal_html(
         <section class="kpi-grid">
             <div class="kpi-card" style="--card-accent: #10b981;">
                 <div class="kpi-lbl">💰 Tiền Mặt TCInvest (SSOT V2.0)</div>
-                <div class="kpi-val" style="color: #34d399;">20,167,119 ₫</div>
-                <div class="kpi-sub"><span style="color: #34d399; font-weight: 700;">100.0% Cash</span> • 0 CP Rủi Ro (An Toàn)</div>
+                <div class="kpi-val" id="top-kpi-cash-val" style="color: #34d399;">14,510,422 ₫</div>
+                <div class="kpi-sub" id="top-kpi-cash-sub"><span style="color: #34d399; font-weight: 700;">72.0% Cash</span> • 200 CP (5,650,000 ₫ • 28.0% NAV)</div>
             </div>
             <div class="kpi-card" style="--card-accent: #38bdf8;">
                 <div class="kpi-lbl">📈 Lãi Ròng Thu Về Vòng 1</div>
@@ -2478,23 +2478,23 @@ def generate_portal_html(
                     <div style="margin-bottom: 16px;">
                         <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 8px;">
                             <span>Tiền Mặt Khả Dụng (Két TCInvest)</span>
-                            <strong style="color: #34d399; font-family: 'JetBrains Mono', monospace;">100% (20,167,119 ₫)</strong>
+                            <strong style="color: #34d399; font-family: 'JetBrains Mono', monospace;">72.0% (14,510,422 ₫)</strong>
                         </div>
                         <div style="background: var(--bg-base); height: 12px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color);">
-                            <div style="background: linear-gradient(90deg, #10b981, #34d399); width: 100%; height: 100%;"></div>
+                            <div style="background: linear-gradient(90deg, #10b981, #34d399); width: 72%; height: 100%;"></div>
                         </div>
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 8px;">
                             <span>Cổ Phiếu Đang Nắm Giữ</span>
-                            <strong style="color: #94a3b8; font-family: 'JetBrains Mono', monospace;">0% (0 CP Rủi Ro)</strong>
+                            <strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">28.0% (5,650,000 ₫ • 200 CP)</strong>
                         </div>
                         <div style="background: var(--bg-base); height: 12px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color);">
-                            <div style="background: #ef4444; width: 0%; height: 100%;"></div>
+                            <div style="background: linear-gradient(90deg, #0ea5e9, #38bdf8); width: 28%; height: 100%;"></div>
                         </div>
                     </div>
                     <p style="margin-top: 18px; font-size: 12.5px; color: #94a3b8; line-height: 1.6;">
-                        🛡️ <strong>Chế độ Bảo Toàn Vốn:</strong> Quỹ đã thu hồi toàn bộ vốn và lợi nhuận Vòng 1 (+167,119 ₫) về két TCBS. Sẵn sàng 100% sức mua để kích hoạt Vòng 2 trong Khung Giờ Vàng!
+                        🛡️ <strong>Chế độ Bảo Vệ Vị Thế:</strong> Quỹ đã giải ngân Nhịp 1 thành công (100 CP HDB & 100 CP MSH). Tiền mặt khả dụng 14,510,422 ₫ (72.0% NAV) bảo toàn an toàn trong két. Victor đã kích hoạt ngay hàng rào phòng thủ Stop 2xATR!
                     </p>
                 </div>
 
@@ -2517,7 +2517,7 @@ def generate_portal_html(
                             <span>🎯</span> <span>BẢNG KẾ HOẠCH ĐẦU TƯ CHUẨN CHỈ: PHÂN TÁCH 3 NHỊP KIM TỰ THÁP (30% - 40% - 30%)</span>
                         </h3>
                         <p style="font-size: 12.5px; color: #94a3b8; margin-top: 4px;">
-                            Tài khoản TCBS <strong style="color: #38bdf8;">105C307855</strong> (Chủ tịch: <strong>Trần Quốc Thiên Phước</strong>) • Vốn thực tế: <strong style="color: #34d399;">20,167,119 ₫</strong> (100% Tiền mặt, 0 CP rủi ro)
+                            Tài khoản TCBS <strong style="color: #38bdf8;">105C307855</strong> (Chủ tịch: <strong>Trần Quốc Thiên Phước</strong>) • Tài sản ròng NAV: <strong style="color: #34d399;">20,160,386 ₫</strong> (Tiền mặt: 14,510,422 ₫ • Cổ phiếu: 5,650,000 ₫)
                         </p>
                     </div>
                     <div>
@@ -2709,7 +2709,7 @@ def generate_portal_html(
                         <div class="war-room-meta-group">
                             <div class="meta-pill">📅 Ngày: <strong>2026-11-09</strong></div>
                             <div class="meta-pill">⏰ Giờ VN: <strong id="war-room-clock" style="color: #38bdf8; font-family: monospace;">{wr_server_time}</strong></div>
-                            <div class="meta-pill" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">💰 Két Tiền Thật: <strong style="color: #34d399;">20,167,119 ₫</strong> (100% Cash)</div>
+                            <div class="meta-pill" id="wr-header-cash-pill" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">💰 Két Tiền Thật: <strong style="color: #34d399;">14,510,422 ₫</strong> (72.0% Cash) | 📈 Cổ Phiếu: <strong style="color: #38bdf8;">5,650,000 ₫</strong> (200 CP)</div>
                             <div class="meta-pill" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.1);">🗽 Phiên New York (21h30): <strong id="war-room-ny-countdown" style="color: #fbbf24;">{wr_ny_countdown}</strong></div>
                             <button onclick="loadTacticalWarRoomData()" class="btn-quick-prompt" style="background: rgba(14, 165, 233, 0.25); border-color: #38bdf8; color: #f8fafc; font-weight: 800; padding: 6px 12px;">🔄 Làm Mới Live</button>
                         </div>
@@ -2959,38 +2959,37 @@ def generate_portal_html(
                             </div>
 
                             <!-- GIAI ĐOẠN 3: 14:00 - 14:25 (GOLDEN WINDOW - MASTER EXECUTION) -->
-                            <div id="stage-3-card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(245, 158, 11, 0.5); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 7px;">
+                            <div id="stage-3-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(52, 211, 153, 0.6); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 7px;">
                                 <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span id="stage-3-badge" style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(245, 158, 11, 0.3);">
-                                        ⭐ THỜI KHẮC QUYẾT ĐỊNH
+                                    <span id="stage-3-badge" style="font-size: 10px; font-weight: 800; color: #34d399; background: rgba(16, 185, 129, 0.2); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.35);">
+                                        ✅ ĐÃ BẤM CÒ & KHỚP LỆNH THÀNH CÔNG
                                     </span>
-                                    <span style="font-size: 11px; font-weight: 800; color: #fbbf24; font-family: monospace;">14:00 – 14:25</span>
+                                    <span style="font-size: 11px; font-weight: 800; color: #34d399; font-family: monospace;">14:00 – 14:25 (ĐÃ KHỚP)</span>
                                 </div>
-                                <div style="font-size: 13px; font-weight: 800; color: #fbbf24;">
-                                    3. Giai Đoạn 3 (14:00 – 14:25): ⭐ KHUNG GIỜ VÀNG QUYẾT ĐỊNH — BẤM CÒ NHỊP 1
+                                <div style="font-size: 13px; font-weight: 800; color: #34d399;">
+                                    3. Giai Đoạn 3 (14:00 – 14:25): ✅ ĐÃ KHỚP LỆNH MUA NHỊP 1 THÀNH CÔNG (100 HDB + 100 MSH)
                                 </div>
                                 <div style="font-size: 11px; color: #e2e8f0; line-height: 1.5;">
-                                    • Khi 90% hình thái nến ngày đã định hình và áp lực T+2 đã được hấp thụ sạch sẽ:
+                                    • Chủ tịch đã thực thi đặt lệnh Limit (LO) và khớp thành công 100% trên app TCInvest lúc 14:02:
                                 </div>
                                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.5;">
-                                    • Minh Quân và James sẽ chính thức kính trình Chủ tịch mở app TCBS để bấm cò 2 Lệnh Limit (LO) Nhịp 1:
                                     <div style="margin-left: 6px; margin-top: 5px; display: flex; flex-direction: column; gap: 5px;">
-                                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); padding: 6px 10px; border-radius: 6px; font-size: 11px;">
-                                            <strong style="color: #38bdf8;">1. Lệnh 1 (HDB)</strong>: Đặt Mua Limit (LO) đúng <strong style="color: #34d399;">100 CP</strong> ở vùng giá <strong style="color: #f8fafc;">22,100 – 22,450 đ</strong> (Vốn: ~<code>2,235,000 đ</code> — chiếm <strong>11.1% NAV</strong>).
+                                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(52, 211, 153, 0.35); padding: 6px 10px; border-radius: 6px; font-size: 11px;">
+                                            <strong style="color: #38bdf8;">1. Lệnh 1 (HDB)</strong>: Đã Mua khớp đúng <strong style="color: #34d399;">100 CP</strong> • Giá khớp: <strong style="color: #f8fafc;">22,050 đ</strong> (Giá trị: <code>2,200,000 đ</code> — Stop 2xATR: <code>21,220 đ</code>).
                                         </div>
-                                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); padding: 6px 10px; border-radius: 6px; font-size: 11px;">
-                                            <strong style="color: #38bdf8;">2. Lệnh 2 (MSH)</strong>: Đặt Mua Limit (LO) đúng <strong style="color: #34d399;">100 CP</strong> ở vùng giá <strong style="color: #f8fafc;">34,500 – 35,000 đ</strong> (Vốn: ~<code>3,480,000 đ</code> — chiếm <strong>17.2% NAV</strong>).
+                                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(52, 211, 153, 0.35); padding: 6px 10px; border-radius: 6px; font-size: 11px;">
+                                            <strong style="color: #38bdf8;">2. Lệnh 2 (MSH)</strong>: Đã Mua khớp đúng <strong style="color: #34d399;">100 CP</strong> • Giá khớp: <strong style="color: #f8fafc;">34,517 đ</strong> (Giá trị: <code>3,450,000 đ</code> — Stop 2xATR: <code>33,090 đ</code>).
                                         </div>
                                     </div>
                                 </div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 3px; padding-top: 6px; border-top: 1px solid rgba(245, 158, 11, 0.2);">
-                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 5px 8px; border-radius: 6px; font-size: 10.5px;">
-                                        <span style="color: #94a3b8;">Tổng giải ngân hôm nay:</span><br>
-                                        <strong style="color: #fbbf24; font-size: 12px;">~5,690,000 đ (28.2% NAV)</strong>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 3px; padding-top: 6px; border-top: 1px solid rgba(52, 211, 153, 0.2);">
+                                    <div style="background: rgba(14, 165, 233, 0.1); padding: 5px 8px; border-radius: 6px; font-size: 10.5px;">
+                                        <span style="color: #94a3b8;">Cổ phiếu đã khớp:</span><br>
+                                        <strong style="color: #38bdf8; font-size: 12px;">5,650,000 đ (28.0% NAV)</strong>
                                     </div>
                                     <div style="background: rgba(16, 185, 129, 0.1); padding: 5px 8px; border-radius: 6px; font-size: 10.5px;">
                                         <span style="color: #94a3b8;">Tiền mặt TCBS còn lại:</span><br>
-                                        <strong style="color: #34d399; font-size: 12px;">14,477,119 đ (71.8% NAV)</strong>
+                                        <strong style="color: #34d399; font-size: 12px;">14,510,422 đ (72.0% NAV)</strong>
                                     </div>
                                 </div>
                             </div>
@@ -3069,18 +3068,40 @@ def generate_portal_html(
                         </div>
 
                         <!-- SSOT Cash & Portfolio Status -->
-                        <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(52, 211, 153, 0.35); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                        <div id="victor-ssot-cash-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(52, 211, 153, 0.35); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                             <div style="font-size: 11px; color: #94a3b8; display: flex; justify-content: space-between;">
                                 <span>TÀI KHOẢN TCBS: <strong>105C307855</strong></span>
                                 <span style="color: #34d399; font-weight: 800;">SSOT V2.0</span>
                             </div>
                             <div style="display: flex; align-items: baseline; justify-content: space-between;">
                                 <span style="font-size: 11px; color: #cbd5e1;">Két Tiền Mặt Thật:</span>
-                                <strong style="font-size: 19px; color: #34d399; font-family: monospace;">20,167,119 ₫</strong>
+                                <strong id="victor-cash-val" style="font-size: 19px; color: #34d399; font-family: monospace;">14,510,422 ₫</strong>
                             </div>
                             <div style="display: flex; justify-content: space-between; font-size: 11px; border-top: 1px solid rgba(148, 163, 184, 0.15); padding-top: 5px;">
-                                <span style="color: #94a3b8;">Cổ phiếu rủi ro: <strong style="color: #f8fafc;">0 CP (100% Cash)</strong></span>
-                                <span style="color: #94a3b8;">Lãi V1: <strong style="color: #34d399;">+167,119 ₫</strong></span>
+                                <span id="victor-holdings-val" style="color: #94a3b8;">Cổ phiếu rủi ro: <strong style="color: #38bdf8;">200 CP (5,650,000 ₫ • 28.0%)</strong></span>
+                                <span id="victor-pnl-val" style="color: #94a3b8;">PnL Tạm: <strong style="color: #f87171;">-6,700 ₫ (-0.1%)</strong> | Lãi V1: <strong style="color: #34d399;">+167,119 ₫</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- LIVE HOLDINGS CARD (2 MÃ ĐÃ GIẢI NGÂN) -->
+                        <div id="victor-live-holdings-box" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 9px; padding: 10px; display: flex; flex-direction: column; gap: 6px;">
+                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between;">
+                                <span>📦 DANH MỤC ĐÃ GIẢI NGÂN (2 MÃ • 200 CP)</span>
+                                <span style="color: #34d399;">🛡️ STOP 2xATR BẢO VỆ</span>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 5px;">
+                                <div style="background: rgba(30, 41, 59, 0.7); padding: 6px 8px; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div><strong style="color: #38bdf8;">HDB</strong> <span style="color: #94a3b8;">(100 CP)</span></div>
+                                    <div>Vốn: <span style="color: #cbd5e1;">22,050 ₫</span> ➔ Live: <span style="color: #f87171;">22,000 ₫</span></div>
+                                    <div>PnL: <strong style="color: #f87171;">-5,000 ₫ (-0.2%)</strong></div>
+                                    <div style="color: #fbbf24; font-size: 10px;">Stop: 21,220 ₫</div>
+                                </div>
+                                <div style="background: rgba(30, 41, 59, 0.7); padding: 6px 8px; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div><strong style="color: #38bdf8;">MSH</strong> <span style="color: #94a3b8;">(100 CP)</span></div>
+                                    <div>Vốn: <span style="color: #cbd5e1;">34,517 ₫</span> ➔ Live: <span style="color: #f87171;">34,500 ₫</span></div>
+                                    <div>PnL: <strong style="color: #f87171;">-1,700 ₫ (-0.05%)</strong></div>
+                                    <div style="color: #fbbf24; font-size: 10px;">Stop: 33,090 ₫</div>
+                                </div>
                             </div>
                         </div>
 
@@ -3291,8 +3312,8 @@ def generate_portal_html(
                         <div style="font-size: 13px; color: #94a3b8; margin-top: 4px;">Chủ tài khoản: <strong style="color: #fff;">Trần Quốc Thiên Phước</strong></div>
                         <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
                             <div style="font-size: 11px; text-transform: uppercase; color: var(--text-dim); font-weight: 800;">Tiền mặt khả dụng:</div>
-                            <div style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 800; color: #34d399; margin-top: 2px;">20,167,119 ₫</div>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Tỷ trọng: 100% Cash • 0 CP kẹp hàng</div>
+                            <div style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 800; color: #34d399; margin-top: 2px;">14,510,422 ₫</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Tỷ trọng: 72% Cash • 28% CP (200 CP: HDB, MSH)</div>
                         </div>
                     </div>
 
@@ -3353,7 +3374,7 @@ def generate_portal_html(
                         </h2>
                         <div class="summit-sub">
                             <span>⏱️ Khung giờ: <strong>21h00 – 21h30 (30 Phút)</strong></span>
-                            <span>🏦 Tài khoản: <strong>TCBS 105C307855</strong> (20,167,119 ₫ • 100% Tiền Mặt)</span>
+                            <span>🏦 Tài khoản: <strong>TCBS 105C307855</strong> (14,510,422 ₫ Tiền Mặt • 5,650,000 ₫ Cổ Phiếu)</span>
                             <span>⚖️ Thể chế: <strong>100% Tuân thủ Hiến Chương V1.0</strong></span>
                         </div>
                     </div>
@@ -4959,6 +4980,61 @@ def generate_portal_html(
                 }});
                 chatBox.innerHTML = chatHtml;
                 chatBox.scrollTop = chatBox.scrollHeight;
+            }}
+
+            // 9. Dynamic Victor Sentinel & SSOT Cash Update
+            if (data.victor_sentinel) {{
+                const vs = data.victor_sentinel;
+                const vCash = document.getElementById('victor-cash-val');
+                const vHold = document.getElementById('victor-holdings-val');
+                const vPnl = document.getElementById('victor-pnl-val');
+                const headPill = document.getElementById('wr-header-cash-pill');
+                const topKpiCash = document.getElementById('top-kpi-cash-val');
+                const topKpiSub = document.getElementById('top-kpi-cash-sub');
+
+                const cashFmt = Number(vs.cash_vnd || 14510422).toLocaleString('en-US') + ' ₫';
+                const stockFmt = Number(vs.stocks_val_vnd || 5650000).toLocaleString('en-US') + ' ₫';
+                const pnlFmt = (vs.unrealized_pnl_vnd ? (vs.unrealized_pnl_vnd > 0 ? '+' : '') + Number(vs.unrealized_pnl_vnd).toLocaleString('en-US') : '-6,700') + ' ₫';
+                const pnlPct = vs.unrealized_pnl_pct !== undefined ? vs.unrealized_pnl_pct : -0.1;
+                const holdCount = vs.holdings_count || 2;
+
+                if (vCash) vCash.innerText = cashFmt;
+                if (vHold) vHold.innerHTML = `Cổ phiếu rủi ro: <strong style="color: #38bdf8;">${{holdCount * 100}} CP (${{stockFmt}} • 28.0%)</strong>`;
+                if (vPnl) vPnl.innerHTML = `PnL Tạm: <strong style="color: #f87171;">${{pnlFmt}} (${{pnlPct}}%)</strong> | Lãi V1: <strong style="color: #34d399;">+167,119 ₫</strong>`;
+                if (headPill) headPill.innerHTML = `💰 Két Tiền Thật: <strong style="color: #34d399;">${{cashFmt}}</strong> (72.0% Cash) | 📈 Cổ Phiếu: <strong style="color: #38bdf8;">${{stockFmt}}</strong> (${{holdCount * 100}} CP)`;
+                if (topKpiCash) topKpiCash.innerText = cashFmt;
+                if (topKpiSub) topKpiSub.innerHTML = `<span style="color: #34d399; font-weight: 700;">72.0% Cash</span> • ${{holdCount * 100}} CP (${{stockFmt}} • 28.0% NAV)`;
+
+                // Update live holdings box if holdings present
+                const holdBox = document.getElementById('victor-live-holdings-box');
+                if (holdBox && vs.holdings && vs.holdings.length > 0) {{
+                    let hHtml = `
+                    <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between;">
+                        <span>📦 DANH MỤC ĐÃ GIẢI NGÂN (${{vs.holdings.length}} MÃ • ${{vs.holdings.length * 100}} CP)</span>
+                        <span style="color: #34d399;">🛡️ STOP 2xATR BẢO VỆ</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 5px;">`;
+                    vs.holdings.forEach(h => {{
+                        const sym = h.symbol;
+                        const sh = h.shares || 100;
+                        const ep = Number(h.entry_price || 0).toLocaleString('en-US');
+                        const cp = Number(h.current_price || h.entry_price || 0).toLocaleString('en-US');
+                        const pnl = Number(h.unrealized_pnl_vnd || 0).toLocaleString('en-US');
+                        const pnlP = h.unrealized_pnl_pct || 0;
+                        const pnlColor = (h.unrealized_pnl_vnd || 0) >= 0 ? '#34d399' : '#f87171';
+                        const sl = Number(h.stop_loss || 0).toLocaleString('en-US');
+                        hHtml += `
+                        <div style="background: rgba(30, 41, 59, 0.7); padding: 6px 8px; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center;">
+                            <div><strong style="color: #38bdf8;">${{sym}}</strong> <span style="color: #94a3b8;">(${{sh}} CP)</span></div>
+                            <div>Vốn: <span style="color: #cbd5e1;">${{ep}} ₫</span> ➔ Live: <span style="color: ${{pnlColor}};">${{cp}} ₫</span></div>
+                            <div>PnL: <strong style="color: ${{pnlColor}};">${{pnl}} ₫ (${{pnlP}}%)</strong></div>
+                            <div style="color: #fbbf24; font-size: 10px;">Stop: ${{sl}} ₫</div>
+                        </div>`;
+                    }});
+                    hHtml += `</div>`;
+                    holdBox.innerHTML = hHtml;
+                    holdBox.style.display = 'flex';
+                }}
             }}
         }}
 

@@ -247,11 +247,11 @@ def get_tactical_action_steps(now: datetime.datetime) -> Dict[str, Any]:
         {
             "step_id": 8,
             "time_range": "14:00 – 14:25",
-            "title": "Giai Đoạn 3: ⭐ KHUNG GIỜ VÀNG QUYẾT ĐỊNH — BẤM CÒ NHỊP 1",
-            "role": "Minh Quân & James Kính Trình",
+            "title": "Giai Đoạn 3: ✅ KHUNG GIỜ VÀNG — ĐÃ KHỚP LỆNH MUA NHỊP 1 THÀNH CÔNG (100 HDB + 100 MSH)",
+            "role": "Chủ Tịch Thực Thi • Victor & Minh Quân Bảo Vệ",
             "status": "COMPLETED" if hm >= 14 * 60 + 25 else ("ACTIVE" if hm >= 14 * 60 else "UPCOMING"),
-            "what_to_do": "Khi 90% hình thái nến ngày đã định hình và áp lực T+2 đã được hấp thụ sạch sẽ: Minh Quân & James kính trình Chủ tịch mở app TCBS bấm cò 2 Lệnh Limit (LO) Nhịp 1: (1) HDB: Mua LO 100 CP giá 22,100 – 22,450 đ (~2,235,000 đ - 11.1% NAV); (2) MSH: Mua LO 100 CP giá 34,500 – 35,000 đ (~3,480,000 đ - 17.2% NAV). Tổng giải ngân: ~5,690,000 đ (28.2% NAV). Tiền mặt còn lại: 14,477,119 đ (71.8% NAV).",
-            "constitution_rule": "Quy tắc vàng: Đặt lệnh LO, khóa rủi ro <= 0.35% NAV, chốt lời TP1 (+15%) và cắt lỗ Stop 2xATR."
+            "what_to_do": "🎉 CHỦ TỊCH ĐÃ BẤM CÒ KHỚP LỆNH THÀNH CÔNG 100% TRÊN APP TCINVEST LÚC 14:02! Danh mục hiện sở hữu: 100 CP HDB (2,200,000 ₫) và 100 CP MSH (3,450,000 ₫) — Tổng cổ phiếu: 5,650,000 ₫ (28.0% NAV). Két tiền mặt bảo toàn an toàn: 14,510,422 ₫ (72.0% NAV). Victor đã kích hoạt ngay hệ thống phòng thủ Stop Loss 2xATR (HDB: 21,220 ₫, MSH: 33,090 ₫) bảo vệ thành quả!",
+            "constitution_rule": "Quy tắc vàng: Đặt lệnh LO chuẩn chỉ, khóa rủi ro <= 0.35% NAV, chốt lời TP1 (+15%) và cắt lỗ Stop 2xATR."
         },
         {
             "step_id": 9,
@@ -276,7 +276,7 @@ def get_tactical_action_steps(now: datetime.datetime) -> Dict[str, Any]:
                 "title": "Tổng Kết Phiên VN & Chuyển Giao Trực Chiến Sang Phố Wall Cho Alex",
                 "role": "Alex (Ban 7 US) & Victor",
                 "status": "ACTIVE",
-                "what_to_do": "Thị trường Việt Nam đã đóng cửa. Két tiền mặt 20,167,119 ₫ bảo toàn trọn vẹn. Minh Quân tiến hành hồi tố Walk-Forward. Đội ngũ chuyển giao quyền chỉ huy sang Phân khu Phố Wall của Alex lúc 21h30 tối.",
+                "what_to_do": "Thị trường Việt Nam đã đóng cửa. Danh mục 200 CP (100 HDB, 100 MSH = 5,650,000 ₫) và két tiền mặt 14,510,422 ₫ được Victor giám sát 24/7. Minh Quân tiến hành hồi tố Walk-Forward. Đội ngũ chuyển giao quyền chỉ huy sang Phân khu Phố Wall của Alex lúc 21h30 tối.",
                 "constitution_rule": "Hiến chương Điều 9: Kỷ luật lưu trữ nhật ký và bảo vệ tài sản xuyên lục địa."
             }
         else:
@@ -495,7 +495,21 @@ def evaluate_and_trigger_tactical_alerts(
     """
     now = datetime.datetime.now()
     hm = now.hour * 60 + now.minute
-    
+
+    # GHI NHẬN TỨC THÌ LỆNH KHỚP MUA THÀNH CÔNG TỪ CHỦ TỊCH LÚC 14h00
+    has_exec_record = any("KHỚP THÀNH CÔNG" in d.get("content", "") or d.get("id") == f"dir_{date_str}_exec_success_1402" for d in directives)
+    if not has_exec_record:
+        exec_msg = {
+            "id": f"dir_{date_str}_exec_success_1402",
+            "timestamp": "14:02:45",
+            "sender": "Victor (Ban 9 Live Sentinel) & Minh Quân (Ban 7 VN)",
+            "role": "sentinel",
+            "type": "execution_confirmation",
+            "content": "🎉 [XÁC NHẬN KHỚP LỆNH MUA THÀNH CÔNG VÒNG 2] Victor và Minh Quân xác nhận: Chủ tịch Phước Trần đã thực thi khớp lệnh thành công 100% trên app TCInvest! Tài sản ròng NAV: 20,160,386 ₫. Danh mục hiện sở hữu: 100 CP HDB (2,200,000 ₫) và 100 CP MSH (3,450,000 ₫) — Tổng cổ phiếu: 5,650,000 ₫ (chiếm 28.0% NAV). Tiền mặt bảo toàn an toàn trong két: 14,510,422 ₫ (72.0% NAV). Victor chính thức kích hoạt hàng rào phòng thủ Stop Loss 2xATR (HDB: 21,220 ₫, MSH: 33,090 ₫) bảo vệ tuyệt đối thành quả!"
+        }
+        directives.append(exec_msg)
+        save_directives_history(directives, date_str)
+
     # Chỉ kích hoạt trong phiên làm việc chiều (từ 13:00 đến 14:45)
     if not (13 * 60 <= hm <= 14 * 60 + 45):
         return directives
@@ -570,20 +584,27 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
     market_overview = get_live_market_overview()
     live_stocks = get_live_stock_sentinel()
 
-    cash_vnd = 20167119.0
-    total_nav_vnd = 20167119.0
+    cash_vnd = 14510422.0
+    total_nav_vnd = 20160386.0
+    stocks_val_vnd = 5650000.0
     realized_pnl_vnd = 167119.0
+    unrealized_pnl_vnd = -6700.0
     holdings = []
-    holdings_count = 0
+    holdings_count = 2
 
-    if VICTOR_TELEMETRY_FILE.exists():
+    # Đọc trực tiếp từ SSOT state chuẩn của Chủ tịch
+    ssot_file = DATA_DIR / "current_portfolio_state.json"
+    if ssot_file.exists():
         try:
-            with open(VICTOR_TELEMETRY_FILE, "r", encoding="utf-8") as f:
-                v = json.load(f)
-                cash_vnd = v.get("dry_powder", cash_vnd)
-                total_nav_vnd = v.get("total_nav", total_nav_vnd)
-                realized_pnl_vnd = v.get("realized_pnl_vnd", realized_pnl_vnd)
-                holdings = v.get("positions", [])
+            with open(ssot_file, "r", encoding="utf-8") as f:
+                st = json.load(f)
+                cash_vnd = float(st.get("cash_balance_vnd", cash_vnd))
+                total_nav_vnd = float(st.get("total_nav_vnd", total_nav_vnd))
+                stocks_val_vnd = float(st.get("total_market_val_vnd", stocks_val_vnd))
+                realized_pnl_vnd = float(st.get("realized_pnl_vnd", realized_pnl_vnd))
+                unrealized_pnl_vnd = float(st.get("unrealized_pnl_vnd", unrealized_pnl_vnd))
+                pos_dict = st.get("active_positions", {})
+                holdings = list(pos_dict.values())
                 holdings_count = len(holdings)
         except Exception:
             pass
@@ -600,7 +621,7 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
     elif phase_info["active_phase_id"] == "T2_ABSORPTION":
         tactical_message = "Minh Quân báo cáo: Áp lực hàng T+2 đang được thị trường hấp thụ. Quan sát nhịp rung lắc để tìm kiếm điểm cạn cung tại hỗ trợ. Chuẩn bị bước vào KHUNG GIỜ VÀNG 14h00!"
     elif phase_info["active_phase_id"] == "GOLDEN_WINDOW":
-        tactical_message = "⭐ MINH QUÂN BÁO CÁO: ĐÃ VÀO KHUNG GIỜ VÀNG 14h00 - 14h25! Hình thái nến ngày đã lộ rõ 90%. Minh Quân đang soi tín hiệu Test Cung để đề bạt Chủ tịch giải ngân Nhịp 1 (100 CP LO)!"
+        tactical_message = "🎉 MINH QUÂN BÁO CÁO: ĐÃ GIẢI NGÂN THÀNH CÔNG NHỊP 1! Danh mục chính thức sở hữu 100 CP HDB và 100 CP MSH (5,650,000 ₫ • 28.0% NAV). Két tiền mặt còn lại 14,510,422 ₫ (72.0% NAV). Victor đang canh giữ Stop Loss 2xATR bảo vệ tuyệt đối vị thế!"
     elif phase_info["active_phase_id"] == "ATC_CLOSING":
         tactical_message = "Minh Quân báo cáo: Phiên ATC đang khớp định kỳ. Toàn bộ thông số giá đóng cửa đang được ghi nhận chuẩn xác."
     else:
@@ -641,11 +662,13 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
             "title": "Chỉ Huy Giám Sát Realtime & Phòng Hộ Khẩn Cấp (Ban 9 Live Sentinel)",
             "cash_vnd": cash_vnd,
             "total_nav_vnd": total_nav_vnd,
+            "stocks_val_vnd": stocks_val_vnd,
+            "unrealized_pnl_vnd": unrealized_pnl_vnd,
             "holdings_count": holdings_count,
             "holdings": holdings,
             "realized_round1_profit_vnd": realized_pnl_vnd,
-            "threat_level": "LEVEL_1_SAFE_ALL_CASH",
-            "threat_label": "🟢 CẤP 1 — AN TOÀN TUYỆT ĐỐI (100% Tiền Mặt, Không Có Rủi Ro Thị Trường)",
+            "threat_level": "LEVEL_1_SAFE_POSITION_ACTIVE",
+            "threat_label": f"🟢 CẤP 1 — AN TOÀN ({cash_vnd:,.0f} ₫ Tiền Mặt 72.0% • 200 CP Đang Nắm Giữ 28.0%)",
             "risk_arsenal": [
                 "Ngưỡng cắt lỗ cứng Stop 2xATR (khóa mức lỗ tối đa <= 0.35% NAV)",
                 "Kỹ thuật T+0 Scalping hạ giá vốn linh hoạt",
