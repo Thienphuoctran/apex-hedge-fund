@@ -1,0 +1,34 @@
+[
+  {
+    "id": "dir_2026-11-09_001",
+    "timestamp": "08:30:15",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "morning_brief",
+    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã hoàn tất Bản Kế Hoạch Đầu Ngày 08h30 cho phiên giao dịch ngày 2026-11-09. Chúng ta bám sát danh mục tiêu điểm đã sàng lọc, kiên quyết tuân thủ kỷ luật: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
+  },
+  {
+    "id": "dir_2026-11-09_002",
+    "timestamp": "08:32:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_brief",
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục ngày 2026-11-09. Két tiền mặt thật 20,167,119 ₫ (100% Cash, 0 CP rủi ro). Toàn bộ lãi Vòng 1 (+167,119 ₫) đã khóa an toàn. Radar rủi ro ở CẤP 1 (AN TOÀN TUYỆT ĐỐI). Bảng giá live HOSE/HNX đang được quét liên tục 24/24."
+  },
+  {
+    "id": "dir_2026-11-09_alert_gold_victor",
+    "timestamp": "13:31:11",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [VICTOR BÁO ĐỘNG TÁC CHIẾN] Báo cáo Minh Quân & Kính trình Chủ tịch! Mã HDB đang nhúng về 22,050 ₫ (-2.00%), khối lượng khớp 6.1M CP, lực bán teo tóp, tỷ lệ Mua chủ động đạt 52.4%! Tín hiệu Test Cung tại vùng hỗ trợ 22.0 - 22.45k ĐÃ ĐẠT CHUẨN KỶ LUẬT! Victor kiến nghị Minh Quân kích hoạt quy trình chuẩn bị bấm cò lệnh LO!"
+  },
+  {
+    "id": "dir_2026-11-09_alert_gold",
+    "timestamp": "13:31:11",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "specialist_directive",
+    "content": "🎯 [MINH QUÂN THẨM ĐỊNH & KÍNH TRÌNH CHỦ TỊCH] Đã nhận báo động từ Victor! Cấu trúc tích lũy của HDB (22,050 ₫) và MSH (34,600 ₫) hoàn toàn khớp với Kế hoạch Đầu ngày. Áp lực hàng T+2 đã được hấp thụ sạch sẽ. Kính trình Chủ tịch Phước Trần: Mở app TCBS, sẵn sàng bấm 2 Lệnh Limit (LO) Nhịp 1: (1) Mua 100 CP HDB ở vùng giá 22,100 – 22,450 ₫ (~2,235,000 ₫ - 11.1% NAV); (2) Mua 100 CP MSH ở vùng giá 34,500 – 35,000 ₫ (~3,480,000 ₫ - 17.2% NAV) đúng vào Khung Giờ Vàng 14h00 - 14h25!"
+  }
+]

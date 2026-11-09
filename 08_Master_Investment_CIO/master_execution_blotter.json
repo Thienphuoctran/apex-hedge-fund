@@ -1,14 +1,8 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-<<<<<<< HEAD
   "generated_at_utc": "2026-11-09T03:27:37.444728+00:00",
   "trading_date": "2026-11-09",
-  "cio_desk_verdict": "PHÊ DUYỆT BẮM CÒ NHỊP 1 THĂM DÒ (1 LÔ 100 CP / MÃ) CHO HDB VÀ MSH TRONG KHUNG GIỜ VÀNG (14h00 - 14h25)",
-=======
-  "generated_at_utc": "2026-11-09T01:45:00.602767+00:00",
-  "trading_date": "2026-11-09",
-  "cio_desk_verdict": "100% TIỀN MẶT (20,000,000 ₫) — ĐÃ TẤT TOÁN VÒNG 1 (LÃI RÒNG +167,119 ₫) & ĐỢI TẦM NGẮM VÒNG 2",
->>>>>>> fd7b2149c1ea47855685c449428d9024ef39f4eb
+  "cio_desk_verdict": "PHÊ DUYỆT BẤM CÒ NHỊP 1 THĂM DÒ (1 LÔ 100 CP / MÃ) CHO HDB VÀ MSH TRONG KHUNG GIỜ VÀNG (14h00 - 14h25)",
   "capital_summary": {
     "total_nav_usd": 793.98,
     "total_nav_vnd": 20167119.0,
@@ -142,7 +136,6 @@
       "execution_instruction": "Giữ 70% vị thế đang có lãi; đặt Limit 30% tại $63.47. Chốt lời TP1 tại $70.08 (+9.5%) và TP2 tại $70.74. Cắt lỗ Stop 2xATR tại $60.96 (-4.75%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
     }
   ],
-<<<<<<< HEAD
   "orders_vietnam": [
     {
       "symbol": "HDB",
@@ -193,9 +186,6 @@
       "approved_at": "2026-11-09 08:45:00"
     }
   ],
-=======
-  "orders_vietnam": [],
->>>>>>> fd7b2149c1ea47855685c449428d9024ef39f4eb
   "pending_round2_sniper_orders": [
     {
       "market": "VIETNAM",
@@ -479,7 +469,6 @@
     "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
   },
   "completed_orders_history": [],
-<<<<<<< HEAD
   "next_round_watchlist": [],
   "council_resolution_approval": {
     "status": "OFFICIALLY_SIGNED",
@@ -538,7 +527,4 @@
       "reason": "Radar vĩ mô cả tuần, chờ tin chuyển sàn HOSE"
     }
   ]
-=======
-  "next_round_watchlist": []
->>>>>>> fd7b2149c1ea47855685c449428d9024ef39f4eb
 }
