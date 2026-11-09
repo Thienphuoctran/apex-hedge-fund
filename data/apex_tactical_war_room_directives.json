@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dir_001",
+    "timestamp": "08:30:15",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "morning_brief",
+    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã hoàn tất Bản Kế Hoạch Đầu Ngày 08h30. Hôm nay chúng ta ưu tiên quan sát 2 siêu cổ phiếu dẫn đầu: HDB (giá gom nhịp 1 22,350 ₫, R:R = 2.59, EV% +8.8%) và MSH (giá gom nhịp 1 34,800 ₫, R:R = 3.13, EV% +13.1%). Sức mua két tiền mặt SSOT đạt 20,167,119 ₫ (100% Cash). Toàn đội tuân thủ tuyệt đối quy tắc: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
+  },
+  {
+    "id": "dir_002",
+    "timestamp": "08:32:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_brief",
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục. Hiện trạng: Két tiền mặt 20,167,119 ₫ (100% Cash, 0 CP rủi ro). Toàn bộ lãi Vòng 1 (+167,119 ₫) đã được khóa an toàn. Radar rủi ro đang ở CẤP 1 (XANH LÁ - AN TOÀN TUYỆT ĐỐI). Các kịch bản phòng thủ Stop Loss 2xATR và Synthetic Short Hedge VN30F đã nạp sẵn sàng trong nòng súng."
+  },
+  {
+    "id": "dir_user_1794195845531",
+    "timestamp": "10:44:05",
+    "sender": "Chủ tịch Trần Quốc Thiên Phước",
+    "role": "chairman",
+    "type": "chairman_directive",
+    "content": "Minh Quân, tình hình HDB thế nào và khi nào thì gom được?"
+  },
+  {
+    "id": "dir_resp_1794195845532",
+    "timestamp": "10:44:05",
+    "sender": "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)",
+    "role": "specialist",
+    "type": "specialist_reply",
+    "content": "Báo cáo Chủ tịch! Về mã HDB (HDBank): Đây là tiêu điểm số 1 của Vòng 2 với điểm số 91/100. Giá hiện tại tham chiếu 22,350 ₫. Vùng gom Nhịp 1 thăm dò là 22,350 ₫ (lô chẵn 100 CP, vốn 2,235,000 ₫). Ngưỡng cắt lỗ Stop 2xATR khóa cứng tại 21,220 ₫ (-5.69%). Mục tiêu TP1: 24,290 ₫ (+8.68%), TP2: 25,820 ₫ (+15.53%). Tỷ lệ Risk/Reward đạt 2.59, Kỳ vọng toán học EV% đạt +8.8%. Catalyst: Tăng trưởng tín dụng 22% dẫn đầu ngành ngân hàng, CASA 18.2%, ROE 24.5%. Chiến lược hành động: Minh Quân đang theo dõi chặt chẽ, chờ nến Test Cung trong Khung Giờ Vàng (14h00 - 14h25) để đề bạt Chủ tịch giải ngân bằng lệnh LO!"
+  },
+  {
+    "id": "dir_user_1794196293300",
+    "timestamp": "10:51:33",
+    "sender": "Chủ tịch Trần Quốc Thiên Phước",
+    "role": "chairman",
+    "type": "chairman_directive",
+    "content": "Minh Quân, tình hình HDB thế nào và khi nào thì gom được?"
+  },
+  {
+    "id": "dir_resp_1794196293301",
+    "timestamp": "10:51:33",
+    "sender": "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)",
+    "role": "specialist",
+    "type": "specialist_reply",
+    "content": "Báo cáo Chủ tịch! Về mã HDB (HDBank): Đây là tiêu điểm số 1 của Vòng 2 với điểm số 91/100. Giá hiện tại tham chiếu 22,350 ₫. Vùng gom Nhịp 1 thăm dò là 22,350 ₫ (lô chẵn 100 CP, vốn 2,235,000 ₫). Ngưỡng cắt lỗ Stop 2xATR khóa cứng tại 21,220 ₫ (-5.69%). Mục tiêu TP1: 24,290 ₫ (+8.68%), TP2: 25,820 ₫ (+15.53%). Tỷ lệ Risk/Reward đạt 2.59, Kỳ vọng toán học EV% đạt +8.8%. Catalyst: Tăng trưởng tín dụng 22% dẫn đầu ngành ngân hàng, CASA 18.2%, ROE 24.5%. Chiến lược hành động: Minh Quân đang theo dõi chặt chẽ, chờ nến Test Cung trong Khung Giờ Vàng (14h00 - 14h25) để đề bạt Chủ tịch giải ngân bằng lệnh LO!"
+  }
+]

@@ -287,6 +287,9 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Cache-Control", "no-cache")
             self.end_headers()
             try:
+                import importlib
+                import scripts.apex_report_scanner
+                importlib.reload(scripts.apex_report_scanner)
                 from scripts.apex_report_scanner import scan_all_institutional_reports
                 date_filter = query.get("date", ["all"])[0]
                 dept_filter = query.get("dept", ["all"])[0]
@@ -413,6 +416,20 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
             return
 
+        elif path == "/api/tactical_war_room":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
+                st = get_tactical_war_room_state()
+                self.wfile.write(json.dumps(st, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            return
+
         else:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -425,12 +442,15 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 except Exception:
                     pass
             try:
-                from scripts.apex_report_scanner import scan_all_institutional_reports, get_daily_milestones_status, get_available_archive_dates
-                from scripts.apex_web_portal_engine import generate_portal_html
-                reports = scan_all_institutional_reports(limit=150)
-                milestones = get_daily_milestones_status()
-                dates = get_available_archive_dates()
-                html = generate_portal_html(status_data, reports, milestones, available_dates=dates)
+                import importlib
+                import scripts.apex_report_scanner
+                import scripts.apex_web_portal_engine
+                importlib.reload(scripts.apex_report_scanner)
+                importlib.reload(scripts.apex_web_portal_engine)
+                reports = scripts.apex_report_scanner.scan_all_institutional_reports(limit=150)
+                milestones = scripts.apex_report_scanner.get_daily_milestones_status()
+                dates = scripts.apex_report_scanner.get_available_archive_dates()
+                html = scripts.apex_web_portal_engine.generate_portal_html(status_data, reports, milestones, available_dates=dates)
             except Exception as e:
                 html = generate_supervisor_dashboard_html(status_data)
             self.wfile.write(html.encode("utf-8"))
@@ -523,6 +543,40 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 try:
                     from scripts.telegram_dispatcher import dispatch_message
                     dispatch_message('james_hq', "👑 *[CHỦ TỊCH ĐÃ KÝ DUYỆT NGHỊ QUYẾT THƯỢNG ĐỈNH & SỔ LỆNH VÒNG 2]*\n\n👤 *Người ký*: `Chủ tịch Trần Quốc Thiên Phước`\n📜 *Văn kiện*: `08_Master_Investment_CIO/council_resolutions/`\n🛡️ *Tổng Kiểm Sát Ban 12 Trọng*: Đã niêm phong pháp lý thể chế thành công 100%!")
+                except Exception:
+                    pass
+
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+            return
+
+        elif parsed_url.path == "/api/tactical_command":
+            content_length = int(self.headers.get("Content-Length", 0))
+            body_bytes = self.rfile.read(content_length)
+            try:
+                req_data = json.loads(body_bytes.decode("utf-8"))
+                user_msg = req_data.get("command", "").strip()
+                if not user_msg:
+                    self.send_response(400)
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"ok": False, "error": "Chỉ thị không được để trống."}).encode("utf-8"))
+                    return
+
+                from scripts.apex_tactical_war_room_engine import handle_tactical_command
+                res = handle_tactical_command(user_msg, user_name="Chủ tịch Trần Quốc Thiên Phước")
+
+                try:
+                    from scripts.telegram_dispatcher import dispatch_message
+                    resp_text = res.get('specialist_response', '')
+                    dispatch_message('minh_quan_execution', f"⚡ *[PHÒNG TÁC CHIẾN ĐẦU TƯ TRONG NGÀY]*\n👤 *Chủ tịch*: `{user_msg}`\n\n🎯 *Minh Quân & Victor*: {resp_text}")
                 except Exception:
                     pass
 
