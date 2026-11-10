@@ -185,11 +185,12 @@ def handle_order_blotter() -> str:
         positions = st.get("active_positions", {})
         watchlist = st.get("next_round_watchlist", [])
 
+        cash_tag = "(100% Cash)" if not positions else f"({(cash / (cash + sum(p.get('shares', 0) * (p.get('current_price') or p.get('entry_price', 0)) for p in positions.values()))) * 100:.1f}% Cash)"
         lines = [
             f"⚡ *[SỔ LỆNH & NHẬN THỨC TÁC CHIẾN MASTER CIO — {t_ctx.get('date_vn')}]*",
             f"🕒 *Thời điểm hiện tại:* `{t_ctx.get('full_time_label_vn')}`",
             f"📡 *Trạng thái sàn:* {t_ctx.get('market_phase_vn')}",
-            f"💰 *Sức mua Tiền mặt TCBS (`105C307855`):* `{cash:,.0f} ₫` (**100% Cash**)",
+            f"💰 *Sức mua Tiền mặt TCBS (`105C307855`):* `{cash:,.0f} ₫` (**{cash_tag}**)",
             "━━━━━━━━━━━━━━━━━━━"
         ]
 
@@ -615,6 +616,20 @@ def process_user_query(text: str) -> str:
     """Bộ định tuyến ngôn ngữ tự nhiên thông minh của Palmer."""
     clean_text = text.lower().strip()
 
+    # 0. ĐỒNG BỘ NỘI BỘ ANTIGRAVITY <-> PALMER (BẢO TOÀN TÍNH THỐNG NHẤT 100%)
+    if any(k in clean_text for k in [
+        "antigravity", "tiến độ", "công việc", "sáng nay", "đã làm gì", "làm những gì", 
+        "đồng bộ", "thống nhất", "trao đổi với palmer", "palmer trao đổi",
+        "có nên vào không", "có nên mua không", "chạm đáy thế", "vào bsr", "vào baf"
+    ]):
+        try:
+            from scripts.palmer_antigravity_sync_bridge import PalmerAntigravitySyncBridge
+            briefing = PalmerAntigravitySyncBridge.get_latest_briefing_for_palmer()
+            PalmerAntigravitySyncBridge.broadcast_from_palmer_to_antigravity(text, briefing, action_executed="SYNC_BRIEFING_DISPATCH")
+            return briefing
+        except Exception as e:
+            pass
+
     # XỬ LÝ LỆNH THỰC THI DANH MỤC THỜI GIAN THỰC (TỰ ĐỘNG CẬP NHẬT SSOT 0.1s)
     try:
         from scripts.portfolio_state_manager import PortfolioStateManager
@@ -831,11 +846,15 @@ def process_user_query(text: str) -> str:
         print(f"[!] Lỗi dispatch chỉ thị: {e}")
 
     from scripts.portfolio_state_manager import PortfolioStateManager
+    st_cur = PortfolioStateManager.load_state()
     t_ctx = PortfolioStateManager.get_temporal_context()
+    cash_cur = float(st_cur.get("cash_balance_vnd", 14510422.0))
+    pos_cur = st_cur.get("active_positions", {})
+    pos_summary = "100% Tiền mặt" if not pos_cur else ", ".join([f"{s} ({p.get('shares')} CP, T+1)" for s, p in pos_cur.items()])
     return (
-        "🎖️ *Chào Chủ tịch Phước Trần! Tôi là James — Tổng Tư Lệnh Master CIO (Ban 8).*\n\n"
+        "🎖️ *Chào Chủ tịch Phước Trần! Tôi là Palmer & Tổng Tư Lệnh Master CIO James.*\n\n"
         f"• *Thời điểm hiện tại:* `{t_ctx.get('full_time_label_vn')}` ({t_ctx.get('market_phase_vn')})\n"
-        "• *Trạng thái Quỹ:* **100% Tiền mặt (`20,167,119 ₫`)** sau khi chốt lời toàn bộ Vòng 1 (`+167,119 ₫`).\n\n"
+        f"• *Trạng thái Quỹ:* Tiền mặt `{cash_cur:,.0f} ₫` | Vị thế: `{pos_summary}`\n\n"
         "Chủ tịch có thể dùng các lệnh kiểm tra tức thời: `/danhmuc`, `/solenh`, `/canh`, `/tcbs`, `/baomat`, `/kyuc`, `/radar`!"
     )
 

@@ -313,7 +313,8 @@ def execute_task_action(action_type: str, command_text: str, task_id: str) -> Di
     positions = state.get("active_positions", {})
     active_syms = [s for s, info in positions.items() if info.get("shares", 0) > 0]
     cash_vnd = state.get("cash_balance_vnd", 20167119.0)
-    nav_vnd = cash_vnd + sum(info.get("shares", 0) * info.get("avg_price", 0) for info in positions.values())
+    stock_val = sum(info.get("shares", 0) * (info.get("current_price") or info.get("entry_price") or info.get("avg_price", 0)) for info in positions.values())
+    nav_vnd = cash_vnd + stock_val
 
     if action_type == "SENTINEL_SCAN_AND_MONITOR":
         target_syms = active_syms if active_syms else ["FPT", "VCB", "MWG", "SSI"]
@@ -355,8 +356,10 @@ def execute_task_action(action_type: str, command_text: str, task_id: str) -> Di
             for s in active_syms:
                 q = quotes.get(s, {})
                 pos = positions.get(s, {})
+                ep = pos.get('entry_price') or pos.get('avg_price', 0)
+                cp = q.get('price', ep)
                 q_lines.append(
-                    f"  • *{s}* ({pos.get('shares', 0)} CP | Giá vốn `{pos.get('avg_price', 0):,.0f} ₫`): Giá khớp `{q.get('price', 0):,.0f} ₫` ({q.get('change_pct', 0):+.2f}%)"
+                    f"  • *{s}* ({pos.get('shares', 0)} CP | Giá vốn `{ep:,.0f} ₫` | Thị giá `{cp:,.0f} ₫`): PnL `{((cp - ep) * pos.get('shares', 0)):+,.0f} ₫`"
                 )
             evidence["summary"] = (
                 f"☀️ *[BÁO CÁO KẾ HOẠCH TÁC CHIẾN HÔM NAY — MINH QUÂN BAN 7 VN]*\n"
@@ -406,7 +409,12 @@ def execute_task_action(action_type: str, command_text: str, task_id: str) -> Di
         )
 
     else:
-        evidence["summary"] = f"Đã rà soát trạng thái danh mục hiện tại (NAV: `{nav_vnd:,.0f} ₫`, Tiền mặt: `{cash_vnd:,.0f} ₫`)."
+        try:
+            from scripts.palmer_antigravity_sync_bridge import PalmerAntigravitySyncBridge
+            briefing = PalmerAntigravitySyncBridge.get_latest_briefing_for_palmer()
+            evidence["summary"] = briefing
+        except Exception:
+            evidence["summary"] = f"Đã rà soát trạng thái danh mục hiện tại (Tổng NAV: `{nav_vnd:,.0f} ₫`, Tiền mặt: `{cash_vnd:,.0f} ₫`, Cổ phiếu: `{stock_val:,.0f} ₫`)."
 
     return evidence
 

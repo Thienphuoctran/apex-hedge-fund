@@ -8,7 +8,7 @@
 > **TỔNG NAV HIỆN TẠI**: **`20,167,119 ₫`** (Bảo toàn 100% vốn + Lãi Vòng 1 `+167,119 ₫`)  
 > **VỊ THẾ ĐANG NẮM GIỮ (NHỊP 1 — T+1)**: **100 CP HDB** (@ 22.05k) + **100 CP MSH** (@ 34.50k) = **`5,655,000 ₫`** (`28.04% NAV`)  
 > **KÉT TIỀN MẶT DỰ PHÒNG (DRY POWDER)**: **`14,512,119 ₫`** (`71.96% NAV`)  
-> **TÌNH TRẠNG THỰC THI HÔM NAY**: **GIỮ VỮNG VỊ THẾ T+1 — THEO DÕI RADAR SĂN MỒI PVT/BSR CHO KHUNG GIỜ VÀNG**
+> **TÌNH TRẠNG THỰC THI HÔM NAY**: **GIỮ VỮNG VỊ THẾ T+1 — 100% ÁN BINH BẤT ĐỘNG, BẢO TOÀN 72.0% TIỀN MẶT**
 
 ---
 
@@ -19,7 +19,7 @@ graph TD
     subgraph Portfolio["1. DANH MỤC THỰC TẾ TRONG KHO (TCBS 105C307855)"]
         HDB_Pos["HDB: 100 CP @ 22,050 đ (Vốn: 2.205.000 ₫)<br/>Trạng thái: T+1 (Chiều mai 11/11 hàng về) • Stop: 21.22k • TP1: 24.29k"]
         MSH_Pos["MSH: 100 CP @ 34,500 đ (Vốn: 3.450.000 ₫)<br/>Trạng thái: T+1 (Chiều mai 11/11 hàng về) • Stop: 33.09k • TP1: 39.56k"]
-        Cash_Pos["Két Tiền Mặt: 14.512.119 ₫ (71.96% NAV)<br/>Sẵn sàng đạn dược cho Nhịp 2 hoặc săn thêm siêu cổ phiếu"]
+        Cash_Pos["Két Tiền Mặt: 14.510.422 ₫ (72.0% NAV)<br/>Bảo toàn nguyên vẹn an toàn tuyệt đối trong két"]
     end
 
     subgraph Discipline["2. KỶ LUẬT THỂ CHẾ BẮT BUỘC HÔM NAY"]
@@ -27,14 +27,14 @@ graph TD
         D2["🛑 CẤM ĐUA LỆNH XANH ATO PHIÊN SÁNG (09h00 - 10h00)<br/>Tránh bẫy kéo giá ảo đầu phiên của tạo lập."]
     end
 
-    subgraph Radar["3. RADAR SĂN MỒI MỞ RỘNG (NẾU THỊ TRƯỜNG THUẬN LỢI)"]
-        R1["PVT (Vận tải Dầu khí thu USD): RS 95 • OCF/LNST 2.01x • Vùng ngắm: 20.0 - 20.4k"]
-        R2["BSR (Lọc dầu tiền mặt 28.3k tỷ): RS 98 • Xúc tác chuyển sàn HOSE • Vùng ngắm: 26.0 - 26.5k"]
-        R_Action["Chỉ xem xét giải ngân thăm dò (1 lô 100 CP) trong KHUNG GIỜ VÀNG 14h00 - 14h25!"]
+    subgraph Standby["3. DANH MỤC DỰ BỊ VÒNG 2 (STANDBY — THEO DÕI 0 CP)"]
+        R1["BAF (Nông nghiệp 3F): Vùng ngắm 30.5 - 30.85k • STANDBY"]
+        R2["IDC (BĐS KCN FCF lớn): Vùng ngắm 34.2 - 34.6k • STANDBY"]
+        R_Action["Án binh bất động, KHÔNG giải ngân khi hàng Vòng 2 chưa về kho!"]
     end
 
     Portfolio --> Discipline
-    Discipline --> Radar
+    Discipline --> Standby
 ```
 
 ---
@@ -53,18 +53,20 @@ graph TD
 
 ---
 
-### PHẦN 2: RADAR SĂN MỒI TỪ KÉT TIỀN MẶT `14,512,119 ₫` (KHUNG GIỜ VÀNG 14h00 – 14h25)
+### PHẦN 2: BẢNG THEO DÕI VŨ TRỤ VÒNG 2 & KẾT TIỀN MẶT `14,510,422 ₫` (72.0% NAV)
 
-> [!NOTE]
-> **ĐIỀU KIỆN KÍCH HOẠT DUY NHẤT**:  
-> Quỹ chỉ xem xét giải ngân thêm **1 vị thế thăm dò (1 lô 100 CP)** từ két 14.5M tiền mặt NẾU thị trường phiên chiều xuất hiện tín hiệu cạn cung No-Supply chuẩn VSA hoặc dòng tiền lớn bùng nổ rõ rệt.  
-> Nếu thị trường rung lắc hoặc chưa có điểm Pivot an toàn: **KIÊN QUYẾT GIỮ NGUYÊN 14.51M TIỀN MẶT**, không giải ngân bừa bãi!
+> [!IMPORTANT]
+> **CHỈ THỊ THỂ CHẾ TỐI CAO CỦA MASTER CIO JAMES CHO NGÀY HÔM NAY (10/11/2026 - PHIÊN T+1)**:  
+> 1. Toàn Quỹ **100% ÁN BINH BẤT ĐỘNG**, bảo toàn nguyên vẹn **14,510,422 ₫ tiền mặt** (72.0% NAV) trong két TCBS.  
+> 2. Quản trị nghiêm ngặt 2 vị thế **100 HDB** và **100 MSH** đang trong chu kỳ T+1 chờ về kho chiều mai.  
+> 3. Hai mã dự bị **BAF** và **IDC** tiếp tục nằm ở trạng thái **STANDBY (THEO DÕI 0 CP)**. Tuyệt đối KHÔNG mở thêm vị thế mới khi hàng Nhịp 1 chưa về tài khoản để tránh rủi ro kẹp T+.
 
-| Mã Radar | Sàn / Ngành | Động Lực Cốt Lõi (Key Catalysts) | Vùng Giá Theo Dõi | LỆNH DỰ KIẾN (CHỈ KÍCH HOẠT NẾU ĐẠT CHUẨN 14h00) | Vốn Dự Kiến | Cắt Lỗ Stop 2xATR | Mục Tiêu TP1 |
+| Mã Vòng 2 | Sàn / Ngành | Động Lực Cốt Lõi (Key Catalysts) | Vùng Giá Theo Dõi | Trạng Thái Tác Chiến Hôm Nay (10/11) | Tỷ Trọng Danh Mục | Cắt Lỗ Stop 2xATR | Mục Tiêu TP1 / TP2 |
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **`PVT`** | HOSE • Vận tải dầu khí | Đội tàu 58 chiếc chạy quốc tế thu USD, OCF/LNST 2.01x (gấp đôi LNST), RS 95, P/E hấp dẫn. | 20.00 – 20.40 ₫ | **100 CP (Lô chẵn 100)**<br/>*Đặt lệnh LO: 20.10 – 20.35 ₫* | **~2,030,000 ₫**<br/>*(10.0% NAV)* | **19.20 ₫**<br/>*(-5.4%)* | **22.50 ₫**<br/>*(+10.8%)* |
-| **`BSR`** | UPCoM • Lọc hóa dầu | Thặng dư tiền mặt 28.300 tỷ VNĐ (~1.1 tỷ USD), RS 98, xúc tác chuyển sàn HOSE. | 26.00 – 26.50 ₫ | **100 CP (Lô chẵn 100)**<br/>*Chỉ xem xét nếu PVT không đạt chuẩn* | **~2,630,000 ₫**<br/>*(13.0% NAV)* | **24.50 ₫**<br/>*(-6.8%)* | **29.50 ₫**<br/>*(+12.1%)* |
-| **`BAF` & `IDC`** | HOSE / HNX | Nông nghiệp 3F & BĐS Khu công nghiệp | — | **STANDBY — TIẾP TỤC THEO DÕI (0 CP)** | **0 ₫** | — | — |
+| **`HDB`** | HOSE • Ngân hàng TMCP | Tín dụng +22% (Top 1 ngành), NIM 5.1%, CASA 18.2%, ROE 24.5%. Lãi Q3 tăng 42% YoY. | 22.00 – 22.45 ₫ | **ĐÃ NẮM GIỮ 100 CP (T+1)**<br/>*Án binh bất động, chờ hàng về chiều mai.* | **10.93% NAV**<br/>*(2,205,000 ₫)* | **21,220 ₫**<br/>*(-3.76%)* | TP1: **24.29k**<br/>TP2: **25.82k** |
+| **`MSH`** | HOSE • Dệt may xuất khẩu | Nhà máy Sông Hồng 10 chạy 100% công suất, đơn hàng dệt may Mỹ hồi phục mạnh, cổ tức tiền mặt 30–40%. | 34.50 – 35.00 ₫ | **ĐÃ NẮM GIỮ 100 CP (T+1)**<br/>*Án binh bất động, chờ hàng về chiều mai.* | **17.11% NAV**<br/>*(3,450,000 ₫)* | **33,090 ₫**<br/>*(-4.09%)* | TP1: **39.56k**<br/>TP2: **43.04k** |
+| **`BAF`** | HOSE • Nông nghiệp 3F | Giá heo hơi > 65k/kg, tự chủ cám chay F-Feed, biên lãi gộp > 15%. Rào chắn kiểm soát nợ. | 30.50 – 30.85 ₫ | **STANDBY — TIẾP TỤC THEO DÕI (0 CP)**<br/>*Không giải ngân khi hàng Vòng 2 chưa về.* | **0.0% NAV**<br/>*(0 ₫)* | **29.65 ₫**<br/>*(-4.05%)* | TP1: **32.65k**<br/>TP2: **35.50k** |
+| **`IDC`** | HNX • BĐS Khu công nghiệp | FCF dồi dào từ KCN Hựu Thạnh, tỷ lệ lấp đầy cao, cổ tức tiền mặt lớn. | 34.20 – 34.60 ₫ | **STANDBY — TIẾP TỤC THEO DÕI (0 CP)**<br/>*Không giải ngân khi hàng Vòng 2 chưa về.* | **0.0% NAV**<br/>*(0 ₫)* | **32.53 ₫**<br/>*(-5.98%)* | TP1: **38.66k**<br/>TP2: **41.88k** |
 
 ---
 
@@ -72,10 +74,10 @@ graph TD
 
 | Khoản Mục Vốn | Số Tiền (VNĐ) | Tỷ Trọng (% NAV) | Trạng Thái Thể Chế |
 | :--- | :---: | :---: | :--- |
-| **Tổng NAV Quỹ** | **20,167,119 ₫** | **100.0%** | Bảo toàn trọn vẹn, không chịu rủi ro quá tải danh mục. |
-| **Vốn Đang Đầu Tư (HDB + MSH Nhịp 1)** | **5,655,000 ₫** | **28.04%** | Khóa trong kho T+1, chờ hàng về chiều mai. |
-| **Két Tiền Mặt Giữ Lại (Dry Powder)** | **14,512,119 ₫** | **71.96%** | Đạn sẵn sàng cho Nhịp 2 hoặc săn thêm mã mới. |
-| **Vốn Giải Ngân Tối Đa Hôm Nay (Nếu Mua PVT)** | **~2,030,000 ₫** | **~10.0%** | Khống chế tổng mức giải ngân toàn Quỹ $\le 38\%$ NAV. |
+| **Tổng NAV Quỹ** | **20,160,422 ₫** | **100.0%** | Bảo toàn trọn vẹn, không chịu rủi ro quá tải danh mục. |
+| **Vốn Đang Đầu Tư (100 HDB + 100 MSH)** | **5,650,000 ₫** | **28.0%** | Khóa trong kho T+1, chờ hàng về chiều mai. |
+| **Két Tiền Mặt Khả Dụng (Dry Powder)** | **14,510,422 ₫** | **72.0%** | Bảo vệ tuyệt đối an toàn trong két TCBS, không giải ngân thêm hôm nay. |
+| **Vốn Giải Ngân Mới Hôm Nay** | **0 ₫** | **0.0%** | Kỷ luật thép: Không mua thêm bất kỳ mã nào trong ngày T+1. |
 | **Dư Nợ Vay Margin** | **0 ₫** | **0.0%** | Tuyệt đối không dùng nợ vay. |
 | **Tổn Thất Tối Đa Hiện Tại (HDB + MSH)** | **224,000 ₫** | **1.11% NAV** | Khóa chặt bằng Stop 2xATR, bảo toàn 98.89% tài sản Quỹ. |
 
@@ -87,7 +89,7 @@ graph TD
 graph LR
     P1["PHA 1: 09h00 - 11h30<br/>Phiên sáng: ĐỨNG NGOÀI 100%<br/>Tuyệt đối cấm đua lệnh xanh ATO<br/>Theo dõi nến T+1 của HDB & MSH"] --> P2["PHA 2: 11h30 - 13h00<br/>Nghỉ trưa: Rà soát bảng giá<br/>Kiểm tra dòng tiền Khối ngoại & Tự doanh"]
     P2 --> P3["PHA 3: 13h00 - 14h00<br/>Đầu chiều: Thẩm định hàng T+2.5 về tài khoản<br/>Quan sát phản ứng rung lắc của thị trường"]
-    P3 --> P4["PHA 4: 14h00 - 14h25<br/>⭐ KHUNG GIỜ VÀNG:<br/>Nếu PVT đạt chuẩn cạn cung No-Supply<br/>Minh Quân đề bạt giải ngân 100 CP"]
+    P3 --> P4["PHA 4: 14h00 - 14h25<br/>⭐ KHUNG GIỜ VÀNG:<br/>Án binh bất động 100%<br/>Victor canh giữ Stop Loss 2xATR"]
 ```
 
 ---
@@ -97,9 +99,8 @@ graph LR
 1. **Phiên sáng (09h00 – 11h30)**:
    - Chủ tịch hoàn toàn có thể **yên tâm làm việc khác, không cần canh bảng điện hay thao tác bất kỳ lệnh nào**.
    - HDB và MSH đã khớp giá đáy hôm qua, hôm nay chỉ cần để cổ phiếu vận động nến T+1 tự nhiên.
-2. **Phiên chiều (13h00 – 14h00)**:
-   - Victor Sentinel sẽ trực chiến liên tục theo dõi nhịp hấp thụ của thị trường.
-3. **Trước Khung Giờ Vàng (13h55)**:
-   - James và Minh Quân sẽ báo cáo trực tiếp tình hình thị trường:
-     - Nếu `PVT` xuất hiện điểm mua Pivot đẹp: James sẽ đề bạt Chủ tịch mở app TCBS nhập 1 lệnh LO thăm dò **100 CP PVT** (~2.03 triệu).
-     - Nếu thị trường chưa đạt chuẩn: Toàn bộ Quỹ tiếp tục **giữ nguyên 14.51 triệu tiền mặt** để dồn lực đón nhịp hàng về chiều mai (Thứ Tư 11/11)!
+2. **Phiên chiều (13h00 – 14h45)**:
+   - Victor Sentinel trực chiến liên tục theo dõi nhịp hấp thụ áp lực cung T+2 toàn thị trường.
+3. **Khung Giờ Vàng (14h00 – 14h25)**:
+   - Toàn bộ Quỹ tiếp tục **giữ nguyên 14,510,422 ₫ tiền mặt (72.0% NAV)**.
+   - **TUYỆT ĐỐI KHÔNG ĐẶT BẤT KỲ LỆNH MUA NÀO HÔM NAY!** Dồn toàn lực đón nhịp hàng về chiều mai (Thứ Tư 11/11)!

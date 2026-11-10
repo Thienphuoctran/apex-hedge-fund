@@ -82,18 +82,20 @@
 
 ---
 
-### PHẦN 2: RADAR SĂN MỒI TỪ KÉT TIỀN MẶT 14,512,119 ₫ (KHUNG GIỜ VÀNG 14h00 – 14h25)
+### PHẦN 2: BẢNG GIÁM SÁT VŨ TRỤ VÒNG 2 & KÉT TIỀN MẶT 14,510,422 ₫ (72.0% NAV)
 
 > [!IMPORTANT]
-> **ĐIỀU KIỆN KÍCH HOẠT DUY NHẤT**:  
-> Minh Quân chỉ đề bạt giải ngân thêm **1 vị thế thăm dò (1 lô 100 CP)** từ két tiền mặt 14.51M NẾU phiên chiều thị trường kiểm định cung cầu ổn định, cổ phiếu xuất hiện nến Test Cung No-Supply cạn kiệt Vol tại vùng hỗ trợ hoặc dòng tiền tổ chức mua chủ động Breakout.  
-> Nếu thị trường rung lắc hoặc chưa đủ biên an toàn: **KIÊN QUYẾT GIỮ NGUYÊN 14.51M TIỀN MẶT**, không giải ngân bừa bãi!
+> **CHỈ THỊ KỶ LUẬT TÁC CHIẾN CỦA MINH QUÂN CHO PHIÊN HÔM NAY (10/11/2026 - PHIÊN T+1)**:  
+> 1. Toàn bộ Quỹ **100% ÁN BINH BẤT ĐỘNG**, bảo toàn nguyên vẹn **14,510,422 ₫ tiền mặt** (72.0% NAV) an toàn tuyệt đối trong két TCBS.  
+> 2. Giữ nguyên và theo dõi nến T+1 của **100 CP HDB** và **100 CP MSH** chờ hàng về tài khoản vào chiều mai (11/11). Tuyệt đối KHÔNG mua gia tăng hôm nay.  
+> 3. Hai mã dự bị **BAF** và **IDC** duy trì ở trạng thái **STANDBY (THEO DÕI 0 CP)**. Không mở thêm vị thế mới khi chưa có hàng T+2 về bảo chứng.
 
-| Mã Radar | Sàn / Ngành | Động Lực Cốt Lõi (Key Catalysts) | Vùng Giá Theo Dõi | LỆNH DỰ KIẾN (CHỈ KÍCH HOẠT NẾU ĐẠT CHUẨN 14h00) | Vốn Dự Kiến | Cắt Lỗ Stop 2xATR | Mục Tiêu TP1 | Xác Suất P(W) | R:R | Kỳ Vọng EV% |
+| Mã Vòng 2 | Sàn / Ngành | Động Lực Cốt Lõi (Key Catalysts) | Vùng Giá Theo Dõi | Trạng Thái Tác Chiến Hôm Nay (10/11) | Tỷ Trọng Danh Mục | Cắt Lỗ Stop 2xATR | Mục Tiêu TP1 / TP2 | Xác Suất P(W) | R:R | Kỳ Vọng EV% |
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **PVT** | HOSE • Vận tải dầu khí | Đội tàu 58 chiếc chạy quốc tế thu USD, OCF/LNST 2.01x (gấp đôi LNST), RS 95, P/E hấp dẫn. | 20.00 – 20.40 ₫ | **100 CP (Lô chẵn 100)**<br/>*Đặt lệnh LO: 20.10 – 20.35 ₫* | **~2,030,000 ₫**<br/>*(10.0% NAV)* | **19.20 ₫**<br/>*(-5.4%)* | **22.50 ₫**<br/>*(+10.8%)* | 82% | 1:2.45 | **+7.8%** |
-| **BSR** | UPCoM • Lọc hóa dầu | Thặng dư tiền mặt 28.300 tỷ VNĐ (~1.1 tỷ USD), RS 98, xúc tác chuyển sàn HOSE. | 26.00 – 26.50 ₫ | **100 CP (Lô chẵn 100)**<br/>*Chỉ xem xét nếu PVT không đạt chuẩn* | **~2,630,000 ₫**<br/>*(13.0% NAV)* | **24.50 ₫**<br/>*(-6.8%)* | **29.50 ₫**<br/>*(+12.1%)* | 80% | 1:2.35 | **+6.5%** |
-| **BAF & IDC** | HOSE / HNX | Nông nghiệp 3F & BĐS Khu công nghiệp | — | **STANDBY — TIẾP TỤC THEO DÕI (0 CP)** | **0 ₫** | — | — | — | — | — |
+| **HDB** | HOSE • Ngân hàng TMCP | Tín dụng +22% (Top 1 ngành), NIM 5.1%, CASA 18.2%, ROE 24.5%. Lãi Q3 tăng 42% YoY. | 22.00 – 22.45 ₫ | **ĐÃ NẮM GIỮ 100 CP (T+1)**<br/>*Án binh bất động, chờ hàng về chiều mai.* | **10.93% NAV**<br/>*(2,205,000 ₫)* | **21,220 ₫**<br/>*(-3.76%)* | TP1: **24.29k**<br/>TP2: **25.82k** | 85% | 1:2.59 | **+8.8%** |
+| **MSH** | HOSE • Dệt may xuất khẩu | Nhà máy Sông Hồng 10 chạy 100% công suất, đơn hàng dệt may Mỹ hồi phục mạnh, cổ tức 30–40%. | 34.50 – 35.00 ₫ | **ĐÃ NẮM GIỮ 100 CP (T+1)**<br/>*Án binh bất động, chờ hàng về chiều mai.* | **17.11% NAV**<br/>*(3,450,000 ₫)* | **33,090 ₫**<br/>*(-4.09%)* | TP1: **39.56k**<br/>TP2: **43.04k** | 86% | 1:3.13 | **+13.1%** |
+| **BAF** | HOSE • Nông nghiệp 3F | Giá heo hơi > 65k/kg, tự chủ cám chay F-Feed, biên lãi gộp > 15%. Rào chắn nợ vay kiểm soát. | 30.50 – 30.85 ₫ | **STANDBY — TIẾP TỤC THEO DÕI (0 CP)**<br/>*Không giải ngân khi hàng Vòng 2 chưa về.* | **0.0% NAV**<br/>*(0 ₫)* | **29.65 ₫**<br/>*(-4.05%)* | TP1: **32.65k**<br/>TP2: **35.50k** | 82% | 1:2.45 | **+7.8%** |
+| **IDC** | HNX • BĐS Khu công nghiệp | FCF dồi dào từ KCN Hựu Thạnh, tỷ lệ lấp đầy cao, cổ tức tiền mặt lớn. | 34.20 – 34.60 ₫ | **STANDBY — TIẾP TỤC THEO DÕI (0 CP)**<br/>*Không giải ngân khi hàng Vòng 2 chưa về.* | **0.0% NAV**<br/>*(0 ₫)* | **32.53 ₫**<br/>*(-5.98%)* | TP1: **38.66k**<br/>TP2: **41.88k** | 80% | 1:2.35 | **+6.5%** |
 
 ---
 

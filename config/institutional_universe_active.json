@@ -1,0 +1,64 @@
+{
+  "updated_at": "2026-11-10T13:30:00+07:00",
+  "approved_by": "Chủ tịch HĐQT Trần Quốc Thiên Phước",
+  "account_id": "105C307855",
+  "current_round": "ROUND_2",
+  "active_holdings": {
+    "HDB": {
+      "shares": 100,
+      "cost_price": 22050.0,
+      "bought_date": "2026-11-09",
+      "cycle_status": "T+1_HOLDING",
+      "settlement_date": "2026-11-11 13:00",
+      "stop_loss_2xatr": 21220.0,
+      "tp1": 24290.0,
+      "tp2": 25820.0,
+      "action_today": "HOLD_NO_BUY"
+    },
+    "MSH": {
+      "shares": 100,
+      "cost_price": 34517.0,
+      "bought_date": "2026-11-09",
+      "cycle_status": "T+1_HOLDING",
+      "settlement_date": "2026-11-11 13:00",
+      "stop_loss_2xatr": 33090.0,
+      "tp1": 39560.0,
+      "tp2": 43040.0,
+      "action_today": "HOLD_NO_BUY"
+    }
+  },
+  "approved_tactical_watchlist_round_2": [
+    "HDB",
+    "MSH",
+    "BAF",
+    "IDC"
+  ],
+  "standby_candidates": {
+    "BAF": {
+      "symbol": "BAF",
+      "name": "Nông Nghiệp BAF (HOSE)",
+      "status": "STANDBY_WATCH_ONLY",
+      "max_shares": 100,
+      "entry_zone": "30.50 – 30.85 ₫",
+      "action_today": "STANDBY_NO_EXECUTION"
+    },
+    "IDC": {
+      "symbol": "IDC",
+      "name": "IDICO (HNX)",
+      "status": "STANDBY_WATCH_ONLY",
+      "max_shares": 200,
+      "entry_zone": "34.20 – 34.60 ₫",
+      "action_today": "STANDBY_NO_EXECUTION"
+    }
+  },
+  "prohibited_tickers_for_round_2": [
+    "PVT",
+    "BSR",
+    "HPG",
+    "TCB",
+    "MBB"
+  ],
+  "cash_reserve_vnd": 14510422.0,
+  "total_nav_vnd": 20160422.0,
+  "action_order_today": "ABSOLUTE_STANDSTILL_HOLDING_T1"
+}
