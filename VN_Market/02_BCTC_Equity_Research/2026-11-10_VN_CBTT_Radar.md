@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-10 08:59:10  
-> **Số sự kiện ghi nhận:** 45 thông báo  
+> **Thời gian quét:** 2026-11-10 09:32:19  
+> **Số sự kiện ghi nhận:** 44 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -35,7 +35,6 @@
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tỷ giá USD/VND có thêm yếu tố hỗ trợ trong những tháng cuối năm | [Xem Link](https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 8/11, gửi dưới 1 tỷ đồng kỳ hạn 1 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-8-11-gui-duoi-1-ty-dong-ky-han-1-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261107214517163.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 7/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-7-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261107073236839.chn) |
-| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 7/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 3 tháng? | [Xem Link](https://cafef.vn/ngay-7-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-3-thang-18826110622451738.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Một nhà thầu lớn sẽ thi công loạt hạng mục quan trọng tại tuyến metro gần 4 tỷ USD, dài 54km nối Bến Thành - Cần Giờ của tỷ phú Phạm Nhật Vượng | [Xem Link](https://cafef.vn/mot-nha-thau-lon-se-thi-cong-loat-hang-muc-quan-trong-tai-tuyen-metro-gan-4-ty-usd-dai-54km-noi-ben-thanh-can-gio-cua-ty-phu-pham-nhat-vuong-188261110110233935.chn) |
 | **FPT** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Toàn cảnh cây cầu dây văng hơn 7.300 tỷ đồng ở Hà Nội: Trụ tháp hình cánh chim cao tương đương tòa nhà 25 tầng, nằm gần loạt dự án của Vingroup, Sunshine, FPT, dự kiến hoàn thành năm 2027 | [Xem Link](https://cafef.vn/toan-canh-cay-cau-day-vang-hon-7300-ty-dong-o-ha-noi-tru-thap-hinh-canh-chim-cao-tuong-duong-toa-nha-25-tang-nam-gan-loat-du-an-cua-vingroup-sunshine-fpt-du-kien-hoan-thanh-nam-2027-188261109210908703.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Chi hơn 8.500 tỷ đồng, TP.HCM muốn giải quyết con rạch đang ô nhiễm trầm trọng | [Xem Link](https://cafef.vn/chi-hon-8500-ty-dong-tphcm-muon-giai-quyet-con-rach-dang-o-nhiem-tram-trong-18826110919401525.chn) |

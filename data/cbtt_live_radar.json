@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-10T08:59:10.918662+00:00",
+  "timestamp_utc": "2026-11-10T09:32:19.188990+00:00",
   "scan_date": "2026-11-10",
   "total_us_filings_count": 356,
-  "total_vn_announcements_count": 45,
+  "total_vn_announcements_count": 44,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -338,7 +338,7 @@
       "severity": "CRITICAL",
       "published_at": "Tue, 10 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/vo-chong-bau-kien-van-deu-dan-nhan-hang-tram-ty-dong-moi-nam-tu-acb-188261109230112292.chn",
-      "total_announcements": 6
+      "total_announcements": 5
     },
     "MBS": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -5036,18 +5036,6 @@
       "severity": "INFO",
       "published_at": "Sat, 07 Nov 26 20:09:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-7-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261107073236839.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Ngày 7/11, gửi dưới 1 tỷ đồng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 3 tháng?",
-      "summary": "Với khoản tiền gửi kỳ hạn 3 tháng, lãi suất tại 7 ngân hàng được khảo sát dao động từ 3,6% đến 4,75%/năm, tùy ngân hàng, số tiền gửi và hình thức giao dịch....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sat, 07 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-7-11-gui-duoi-1-ty-dong-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-3-thang-18826110622451738.chn"
     },
     {
       "market": "VIETNAM",
