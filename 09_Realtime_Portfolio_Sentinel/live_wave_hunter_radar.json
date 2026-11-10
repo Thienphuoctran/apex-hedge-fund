@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10 07:42:24",
+  "generated_at": "2026-11-10 08:38:52",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -327,14 +327,6 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "ACB",
-      "form_or_type": "CO_TUC",
-      "date": "Tue, 10 Nov 26 1",
-      "headline": "Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
       "symbol": "REE",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 10 Nov 26 0",
@@ -380,6 +372,14 @@
       "date": "Mon, 09 Nov 26 0",
       "headline": "Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng",
       "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM,SSI",
+      "form_or_type": "CANH_BAO_RUI_RO",
+      "date": "Tue, 10 Nov 26 1",
+      "headline": "Một chi nhánh của SSI bị xử phạt vi phạm hành chính về thuế",
+      "is_portfolio_holding": true
     }
   ],
   "departments_heartbeat": [

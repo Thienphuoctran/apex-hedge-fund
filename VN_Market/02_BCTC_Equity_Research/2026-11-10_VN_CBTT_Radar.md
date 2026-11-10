@@ -1,11 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-10 07:42:12  
+> **Thời gian quét:** 2026-11-10 08:38:41  
 > **Số sự kiện ghi nhận:** 45 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng | [Xem Link](https://cafef.vn/chu-tich-fedex-chau-a-thai-binh-duong-o-singapore-toi-mat-45-phut-tu-san-bay-ve-nha-nhung-o-tphcm-45-phut-chi-du-de-xep-hang-188261110130357227.chn) |
-| **ACB** | `CO_TUC` | ⚠️ CHÚ Ý | Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ | [Xem Link](https://cafef.vn/sau-14-nam-gia-dinh-bau-kien-van-so-huu-hon-10-ngan-hang-acb-tri-gia-tren-12000-ty-dong-he-lo-me-vo-dai-gia-nhan-vat-bi-an-va-khoan-co-tuc-hang-tram-ty-188261110120013802.chn) |
 | **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thái Lan thâu tóm 80% vốn của 1 công ty công nghệ Việt Nam, cũng là nhà phân phối cấp 2 của Microsoft | [Xem Link](https://cafef.vn/thai-lan-thau-tom-80-von-cua-1-cong-ty-cong-nghe-viet-nam-cung-la-nha-phan-phoi-cap-2-cua-microsoft-188261110074553656.chn) |
 | **DXG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tỷ phú Bill Gates bất ngờ mua thêm 200.000 cổ phiếu một công ty bất động sản Việt Nam | [Xem Link](https://cafef.vn/ty-phu-bill-gates-bat-ngo-mua-them-200000-co-phieu-mot-cong-ty-bat-dong-san-viet-nam-188261109233549925.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Petrolimex từng lớn gấp đôi MB nay bằng 1/4, Vinamilk từng gấp 1,5 lần Vingroup nay bằng 1/16: 10 năm viết lại bản đồ tỷ đô trên TTCK | [Xem Link](https://cafef.vn/petrolimex-tung-lon-gap-doi-mb-nay-bang-1-4-vinamilk-tung-gap-15-lan-vingroup-nay-bang-1-16-10-nam-viet-lai-ban-do-ty-do-tren-ttck-188261109224125049.chn) |
@@ -14,7 +13,7 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng | [Xem Link](https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn) |
 | **HCM, SSI** | `CANH_BAO_RUI_RO` | 🔴 RED FLAG | Một chi nhánh của SSI bị xử phạt vi phạm hành chính về thuế | [Xem Link](https://cafef.vn/mot-chi-nhanh-cua-ssi-bi-xu-phat-vi-pham-hanh-chinh-ve-thue-188261110141145584.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm | [Xem Link](https://cafef.vn/giam-doc-cap-cao-phu-trach-tai-chinh-cua-pnj-tu-nhiem-188261110080205957.chn) |
-| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vợ chồng bầu Kiên vẫn đều đặn nhận hàng trăm tỷ đồng mỗi năm từ ACB | [Xem Link](https://cafef.vn/vo-chong-bau-kien-van-deu-dan-nhan-hang-tram-ty-dong-moi-nam-tu-acb-188261109230112292.chn) |
+| **ACB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Những cổ đông sở hữu lượng lớn cổ phiếu ACB nhận cổ tức | [Xem Link](https://cafef.vn/vo-chong-bau-kien-van-deu-dan-nhan-hang-tram-ty-dong-moi-nam-tu-acb-188261109230112292.chn) |
 | **DXG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhóm quỹ liên quan Dragon Capital quay trở lại ghế cổ đông lớn sau khi gom thêm 5 triệu cổ phiếu DXG | [Xem Link](https://cafef.vn/nhom-quy-lien-quan-dragon-capital-quay-tro-lai-ghe-co-dong-lon-sau-khi-gom-them-5-trieu-co-phieu-dxg-188261109175803857.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | PNJ "thủng đáy" | [Xem Link](https://cafef.vn/pnj-thung-day-188261109161416223.chn) |
 | **MBS** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | MBS dự báo lợi nhuận năm 2026 của loạt doanh nghiệp “hot”, một ông lớn có thể tăng hơn 100% | [Xem Link](https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn) |
@@ -22,6 +21,7 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thống đốc tỉnh của Nhật Bản cảm ơn FPT vì một quyết định ý nghĩa | [Xem Link](https://cafef.vn/thong-doc-tinh-cua-nhat-ban-cam-on-fpt-vi-mot-quyet-dinh-y-nghia-188261109145035775.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Phát hiện 14 người nước ngoài nghi lừa đảo qua sàn chứng khoán ảo ở TP.HCM | [Xem Link](https://cafef.vn/phat-hien-14-nguoi-nuoc-ngoai-nghi-lua-dao-qua-san-chung-khoan-ao-o-tphcm-18826110910442747.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền” | [Xem Link](https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn) |
+| **STB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vietcap: Hệ sinh thái Vingroup chiếm gần 10% tổng dư nợ của Sacombank | [Xem Link](https://cafef.vn/vietcap-he-sinh-thai-vingroup-chiem-gan-10-tong-du-no-cua-sacombank-188261110144327636.chn) |
 | **VCB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | "Ông lớn" ngân hàng Nhật Bản tiếp tục rót thêm tiền vào Vietcombank | [Xem Link](https://cafef.vn/ong-lon-ngan-hang-nhat-ban-tiep-tuc-rot-them-tien-vao-vietcombank-188261110142614911.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Linh hoạt các giải pháp ổn định tỷ giá | [Xem Link](https://cafef.vn/linh-hoat-cac-giai-phap-on-dinh-ty-gia-18826111013535336.chn) |
 | **STB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê | [Xem Link](https://cafef.vn/nhnn-co-dong-thai-moi-voi-325-co-phan-sacombank-lien-quan-ong-tram-be-188261110105749137.chn) |
