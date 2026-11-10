@@ -188,10 +188,10 @@ def generate_dynamic_tactical_stages_html(now=None):
                     <span style="font-size: 11px; font-weight: 800; color: #fbbf24; font-family: monospace;">14:00 – 14:25</span>
                 </div>
                 <div style="font-size: 13px; font-weight: 800; color: #fbbf24;">
-                    3. Giai Đoạn 3 (14:00 – 14:25): ⭐ KHUNG GIỜ VÀNG QUYẾT ĐỊNH
+                    3. Giai Đoạn 3 (14:00 – 14:25): ⭐ KHUNG GIỜ VÀNG QUAN SÁT T+1
                 </div>
                 <div style="font-size: 11px; color: #e2e8f0; line-height: 1.5;">
-                    • Nhìn rõ 90% nến ngày. Minh Quân trình duyệt lệnh gia tăng Nhịp 2 (40%) nếu đủ điều kiện!
+                    • Phiên T+1: Hàng đang chờ về. Minh Quân & Victor giám sát giữ nền tích lũy, bảo vệ 72% tiền mặt, TUYỆT ĐỐI KHÔNG giải ngân khi hàng chưa về!
                 </div>
             </div>
         </div>

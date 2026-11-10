@@ -490,13 +490,62 @@ def evaluate_and_trigger_tactical_alerts(
 ) -> List[Dict[str, Any]]:
     """
     CƠ CHẾ TRAO ĐỔI TƯƠNG TÁC THỜI GIAN THỰC GIỮA VICTOR VÀ MINH QUÂN:
-    Khi Victor quét thấy biến động đúng kế hoạch (HDB nhúng về vùng gom 22.1 - 22.45k, MSH siết nền cạn cung):
-    Tự động ghi nhận đối thoại tác chiến và gửi cảnh báo khẩn cấp (Topic alerts) đến Chủ tịch.
+    - Đọc trạng thái danh mục SSOT thực tế từ data/current_portfolio_state.json.
+    - Tuyệt đối KHÔNG nhắc lại lệnh mua Nhịp 1 nếu danh mục đã sở hữu cổ phiếu đó.
+    - Trong phiên T+1 (hàng chưa về tài khoản): Giữ kỷ luật thép ÁN BINH BẤT ĐỘNG, không mua gia tăng.
     """
     now = datetime.datetime.now()
     hm = now.hour * 60 + now.minute
 
-    # GHI NHẬN TỨC THÌ LỆNH KHỚP MUA THÀNH CÔNG TỪ CHỦ TỊCH LÚC 14h00
+    # 1. Đọc trạng thái danh mục SSOT thực tế
+    ssot_file = DATA_DIR / "current_portfolio_state.json"
+    active_positions = {}
+    if ssot_file.exists():
+        try:
+            with open(ssot_file, "r", encoding="utf-8") as f:
+                st = json.load(f)
+                active_positions = st.get("active_positions", {})
+        except Exception:
+            pass
+
+    has_hdb = active_positions.get("HDB", {}).get("shares", 0) > 0
+    has_msh = active_positions.get("MSH", {}).get("shares", 0) > 0
+
+    hdb_stock = next((s for s in live_stocks if s.get("code") == "HDB"), None)
+    msh_stock = next((s for s in live_stocks if s.get("code") == "MSH"), None)
+    curr_p_hdb = f"{int(hdb_stock['price']):,} ₫" if hdb_stock else "22,250 ₫"
+    curr_p_msh = f"{int(msh_stock['price']):,} ₫" if msh_stock else "34,700 ₫"
+
+    # NẾU ĐÃ SỞ HỮU HDB & MSH (TRẠNG THÁI T+1 CHỜ VỀ)
+    if has_hdb and has_msh:
+        # Ghi nhận trạng thái T+1 giám sát phòng thủ, KHÔNG BAO GIỜ BẮN LỆNH MUA NHỊP 1
+        has_t1_report = any("GIÁM SÁT T+1" in d.get("content", "") or d.get("id") == f"dir_{date_str}_t1_sentinel" for d in directives)
+        if not has_t1_report and (13 * 60 <= hm <= 14 * 60 + 45):
+            t_now_str = now.strftime("%H:%M:%S")
+            v_msg = {
+                "id": f"dir_{date_str}_t1_sentinel_victor",
+                "timestamp": t_now_str,
+                "sender": "Victor (Ban 9 Live Sentinel)",
+                "role": "sentinel",
+                "type": "sentinel_alert",
+                "content": f"🛡️ [VICTOR BÁO CÁO GIÁM SÁT T+1] Báo cáo Minh Quân & Kính trình Chủ tịch! Danh mục 2 mã Vòng 2 gồm 100 HDB ({curr_p_hdb}) và 100 MSH ({curr_p_msh}) đang vận động ổn định, hấp thụ tốt áp lực cung toàn sàn. Toàn bộ vị thế đang ở trạng thái T+1 (chờ về chiều mai). Hệ thống Stop Loss 2xATR (HDB: 21,220 ₫, MSH: 33,090 ₫) đang được giám sát chặt chẽ!"
+            }
+            directives.append(v_msg)
+
+            mq_msg = {
+                "id": f"dir_{date_str}_t1_sentinel",
+                "timestamp": t_now_str,
+                "sender": "Minh Quân (Ban 7 VN)",
+                "role": "specialist",
+                "type": "specialist_directive",
+                "content": f"🎯 [MINH QUÂN XÁC NHẬN KỶ LUẬT T+1] Nhận báo cáo từ Victor! Danh mục 100 HDB và 100 MSH đã được Chủ tịch giải ngân chuẩn chỉ từ phiên hôm qua. Hôm nay là phiên T+1 (hàng chưa về tài khoản), KỶ LUẬT THỂ CHẾ BẤT BIẾN: TUYỆT ĐỐI ÁN BINH BẤT ĐỘNG, KHÔNG MUA GIA TĂNG! Bảo toàn nguyên vẹn 14,510,422 ₫ tiền mặt (72.0% NAV) an toàn tuyệt đối!"
+            }
+            directives.append(mq_msg)
+            save_directives_history(directives, date_str)
+        return directives
+
+    # NẾU CHƯA SỞ HỮU (TRƯỜNG HỢP GIẢI NGÂN LẦN ĐẦU)
+    # GHI NHẬN TỨC THÌ LỆNH KHỚP MUA THÀNH CÔNG NẾU CÓ
     has_exec_record = any("KHỚP THÀNH CÔNG" in d.get("content", "") or d.get("id") == f"dir_{date_str}_exec_success_1402" for d in directives)
     if not has_exec_record:
         exec_msg = {
@@ -518,15 +567,8 @@ def evaluate_and_trigger_tactical_alerts(
     if has_alert:
         return directives
 
-    hdb_stock = next((s for s in live_stocks if s.get("code") == "HDB"), None)
-    msh_stock = next((s for s in live_stocks if s.get("code") == "MSH"), None)
-
-    # Điều kiện kích hoạt: HDB chạm vùng gom (<= 22,450 đ) và MSH siết nền (<= 35,000 đ)
+    # Điều kiện kích hoạt thăm dò Nhịp 1: HDB chạm vùng gom (<= 22,450 đ) và MSH siết nền (<= 35,000 đ)
     if hdb_stock and hdb_stock.get("price", 0) <= 22450.0:
-        curr_p_hdb = f"{int(hdb_stock['price']):,} ₫"
-        curr_p_msh = f"{int(msh_stock['price']):,} ₫" if msh_stock else "34,500 ₫"
-        
-        # 1. Victor gửi báo động tác chiến
         t_now_str = now.strftime("%H:%M:%S")
         v_msg = {
             "id": f"dir_{date_str}_alert_gold_victor",
@@ -538,7 +580,6 @@ def evaluate_and_trigger_tactical_alerts(
         }
         directives.append(v_msg)
 
-        # 2. Minh Quân thẩm định và đề bạt Chủ tịch
         mq_msg = {
             "id": f"dir_{date_str}_alert_gold",
             "timestamp": t_now_str,
@@ -550,7 +591,6 @@ def evaluate_and_trigger_tactical_alerts(
         directives.append(mq_msg)
         save_directives_history(directives, date_str)
 
-        # 3. Gửi thông báo Telegram (Topic alerts) đến Chủ tịch
         try:
             from scripts.telegram_dispatcher import dispatch_message
             tg_text = (

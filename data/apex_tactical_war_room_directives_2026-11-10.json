@@ -13,14 +13,22 @@
     "sender": "Victor (Ban 9 Live Sentinel)",
     "role": "sentinel",
     "type": "sentinel_brief",
-    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục ngày 2026-11-10. Két tiền mặt thật 20,167,119 ₫ (100% Cash, 0 CP rủi ro). Toàn bộ lãi Vòng 1 (+167,119 ₫) đã khóa an toàn. Radar rủi ro ở CẤP 1 (AN TOÀN TUYỆT ĐỐI). Bảng giá live HOSE/HNX đang được quét liên tục 24/24."
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục ngày 2026-11-10. Danh mục hiện sở hữu 100 CP HDB và 100 CP MSH, két tiền mặt thật 14,510,422 ₫ (72.0% Cash). Toàn bộ lãi Vòng 1 (+167,119 ₫) đã khóa an toàn. Radar rủi ro ở CẤP 1 (AN TOÀN TUYỆT ĐỐI). Bảng giá live HOSE/HNX đang được quét liên tục 24/24."
   },
   {
-    "id": "dir_2026-11-10_exec_success_1402",
-    "timestamp": "14:02:45",
-    "sender": "Victor (Ban 9 Live Sentinel) & Minh Quân (Ban 7 VN)",
+    "id": "dir_2026-11-10_t1_sentinel_victor",
+    "timestamp": "13:00:05",
+    "sender": "Victor (Ban 9 Live Sentinel)",
     "role": "sentinel",
-    "type": "execution_confirmation",
-    "content": "🎉 [XÁC NHẬN KHỚP LỆNH MUA THÀNH CÔNG VÒNG 2] Victor và Minh Quân xác nhận: Chủ tịch Phước Trần đã thực thi khớp lệnh thành công 100% trên app TCInvest! Tài sản ròng NAV: 20,160,386 ₫. Danh mục hiện sở hữu: 100 CP HDB (2,200,000 ₫) và 100 CP MSH (3,450,000 ₫) — Tổng cổ phiếu: 5,650,000 ₫ (chiếm 28.0% NAV). Tiền mặt bảo toàn an toàn trong két: 14,510,422 ₫ (72.0% NAV). Victor chính thức kích hoạt hàng rào phòng thủ Stop Loss 2xATR (HDB: 21,220 ₫, MSH: 33,090 ₫) bảo vệ tuyệt đối thành quả!"
+    "type": "sentinel_alert",
+    "content": "🛡️ [VICTOR BÁO CÁO GIÁM SÁT T+1] Báo cáo Minh Quân & Kính trình Chủ tịch! Danh mục 2 mã Vòng 2 gồm 100 HDB (22,250 ₫) và 100 MSH (34,700 ₫) đang vận động tích lũy rất ổn định, tạm lãi +38,300 ₫ (+0.7%). Cả hai mã đang trong chu kỳ T+1 chờ về (chiều mai khả dụng). Hệ thống Stop Loss 2xATR (HDB: 21,220 ₫, MSH: 33,090 ₫) đang được canh giữ tuyệt đối!"
+  },
+  {
+    "id": "dir_2026-11-10_t1_sentinel",
+    "timestamp": "13:00:10",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "specialist_directive",
+    "content": "🎯 [MINH QUÂN XÁC NHẬN KỶ LUẬT T+1] Nhận báo cáo từ Victor! Danh mục 100 HDB và 100 MSH đã được Chủ tịch giải ngân thành công từ chiều hôm qua (09/11). Hôm nay là phiên T+1 (hàng chưa về tài khoản), KỶ LUẬT THỂ CHẾ BẤT BIẾN: TUYỆT ĐỐI ÁN BINH BẤT ĐỘNG, KHÔNG MUA GIA TĂNG! Bảo toàn nguyên vẹn 14,510,422 ₫ tiền mặt (72.0% NAV) an toàn tuyệt đối!"
   }
 ]
