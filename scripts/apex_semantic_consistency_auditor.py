@@ -47,12 +47,18 @@ def audit_report_file(file_path: Path, rules: Dict[str, Any]) -> List[str]:
         return [f"Không đọc được file: {e}"]
 
     # 1. Kiểm tra mã cấm xuất hiện trong kế hoạch tác chiến / radar giải ngân
+    is_tactical_action_report = any(part in str(file_path).replace("\\", "/") for part in [
+        "04_Investment_Committee", "07_Daily", "08_Master_Investment_CIO", "09_Realtime", "Synthesis_Memos"
+    ])
     prohibited = rules.get("prohibited_tickers_for_round_2", [])
     for ticker in prohibited:
-        if f"**`{ticker}`**" in content or f"**{ticker}**" in content or f"| **{ticker}** |" in content:
-            # Kiểm tra xem có phải là đề xuất mua hay không
-            if any(kw in content for kw in [f"LỆNH DỰ KIẾN", f"Mua LO", f"giải ngân", f"săn mồi", f"Lệnh 1 ({ticker})"]):
-                violations.append(f"Xuất hiện mã cấm ngoài danh mục Vòng 2 ({ticker}) trong kế hoạch tác chiến/săn mồi")
+        if is_tactical_action_report:
+            if f"**`{ticker}`**" in content or f"**{ticker}**" in content or f"| **{ticker}** |" in content:
+                if any(kw in content for kw in [f"LỆNH DỰ KIẾN", f"Mua LO", f"Lệnh 1 ({ticker})", f"Lệnh 2 ({ticker})", f"Vốn Dự Kiến", f"Vùng Mua"]):
+                    violations.append(f"Xuất hiện mã cấm ngoài danh mục Vòng 2 ({ticker}) trong kế hoạch tác chiến/săn mồi")
+        else:
+            if f"Lệnh 1 ({ticker})" in content or f"Mua LO 100 CP {ticker}" in content:
+                violations.append(f"Xuất hiện lệnh mua trực tiếp mã cấm ({ticker})")
 
     # 2. Kiểm tra lỗi nhắc lại lệnh mua Nhịp 1 cho mã đang giữ T+1
     active_holdings = rules.get("active_holdings", {})

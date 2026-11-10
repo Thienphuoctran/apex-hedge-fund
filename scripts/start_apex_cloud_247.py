@@ -889,6 +889,15 @@ class ApexCloudSupervisor:
                 except Exception:
                     pf.unlink(missing_ok=True)
 
+        # Tự động đồng bộ toàn bộ báo cáo Markdown vào SQLite Lakehouse Vault V5.0
+        try:
+            log_sup("🔄 Đang đồng bộ thư viện báo cáo Markdown vào SQLite Lakehouse Vault V5.0...")
+            from scripts.migrate_markdown_to_sqlite import migrate_all_markdown_reports
+            migrate_all_markdown_reports()
+            log_sup("✅ Đồng bộ SQLite Lakehouse Vault thành công!")
+        except Exception as e_mig:
+            log_sup(f"⚠️ Cảnh báo đồng bộ SQLite ban đầu: {e_mig}")
+
         for k, s in self.services.items():
             s.start()
         self._save_status()

@@ -2644,11 +2644,10 @@ def generate_portal_html(
                     </div>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="tv-symbol-buttons">
                         <button class="tv-btn active" onclick="switchTVSymbol('HOSE:VNINDEX', this)">📈 VN-INDEX</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:HDB', this)">🏦 HDB (Mũi Nhọn 1)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:MSH', this)">🧵 MSH (Mũi Nhọn 2)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:HDB', this)">🏦 HDB (100 CP T+1)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:MSH', this)">🧵 MSH (100 CP T+1)</button>
                         <button class="tv-btn" onclick="switchTVSymbol('HOSE:BAF', this)">🐷 BAF (Dự phòng)</button>
                         <button class="tv-btn" onclick="switchTVSymbol('HNX:IDC', this)">🏗️ IDC (Dự phòng)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:PVT', this)">🚢 PVT (Radar Tuần)</button>
                     </div>
                 </div>
                 <div id="tv_chart_container" style="height: 540px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color);"></div>
@@ -2815,22 +2814,6 @@ def generate_portal_html(
                                     <td style="padding: 10px 14px; font-size: 12px; color: #94a3b8;">Sàn HNX biên độ 10%, cổ tức tiền 40%, chờ dòng tiền FDI và khu công nghiệp bứt phá.</td>
                                     <td style="padding: 10px 14px; font-size: 12px; color: #cbd5e1;">Kích hoạt tại Nhịp 2 khi vượt cản 35,570 đ.</td>
                                 </tr>
-                                <tr>
-                                    <td style="padding: 10px 14px; font-weight: 800; color: #fbbf24; font-family: 'JetBrains Mono', monospace;">PVT</td>
-                                    <td style="padding: 10px 14px;">HOSE • Vận tải Dầu khí</td>
-                                    <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">20,650 đ</td>
-                                    <td style="padding: 10px 14px;"><span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">RADAR TUẦN (0 CP)</span></td>
-                                    <td style="padding: 10px 14px; font-size: 12px; color: #94a3b8;">Đội tàu 58 chiếc chạy quốc tế thu USD, OCF gấp đôi LNST, theo dõi sóng vận tải cả tuần.</td>
-                                    <td style="padding: 10px 14px; font-size: 12px; color: #cbd5e1;">Chờ điểm Pivot cạn cung No-Supply.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 10px 14px; font-weight: 800; color: #fbbf24; font-family: 'JetBrains Mono', monospace;">BSR</td>
-                                    <td style="padding: 10px 14px;">UPCoM • Lọc hóa dầu</td>
-                                    <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">26,500 đ</td>
-                                    <td style="padding: 10px 14px;"><span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">RADAR TUẦN (0 CP)</span></td>
-                                    <td style="padding: 10px 14px; font-size: 12px; color: #94a3b8;">Tiền mặt 28,300 tỷ đồng, chờ thông tin chính thức chuyển sàn niêm yết sang HOSE.</td>
-                                    <td style="padding: 10px 14px; font-size: 12px; color: #cbd5e1;">Chờ tin tức chuyển sàn HOSE.</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -2839,28 +2822,28 @@ def generate_portal_html(
                 <!-- PHẦN 3: TIMELINE TÁC CHIẾN 4 PHA -->
                 <div style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px;">
                     <div style="font-size: 12px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">
-                        ⏱️ KẾ HOẠCH TÁC CHIẾN 4 PHA NGÀY HÔM NAY (THỨ HAI 09/11/2026)
+                        ⏱️ KẾ HOẠCH QUẢN TRỊ DANH MỤC T+1 CHỜ VỀ (PHIÊN HÔM NAY — THỨ BA 10/11/2026)
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
                         <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #64748b;">
                             <div style="font-size: 11px; color: #94a3b8; font-weight: 700;">PHA 1: 09h00 - 11h30</div>
                             <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">Phiên Sáng: ĐỨNG NGOÀI 100%</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Tuyệt đối không mua đuổi giá xanh ATO; quan sát phe bán kiệt sức.</div>
+                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Giữ vững kỷ luật thép, bảo vệ an toàn 100 HDB + 100 MSH đang ở trạng thái T+1.</div>
                         </div>
                         <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #f59e0b;">
                             <div style="font-size: 11px; color: #fbbf24; font-weight: 700;">PHA 2: 11h30 - 13h00</div>
                             <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">Nghỉ Trưa: Rà Soát Sổ Lệnh</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Kiểm tra độ cạn cung No-Supply, mở app TCBS sẵn sàng tiểu khoản 105C307855.</div>
+                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Kiểm tra độ cạn cung, bảo toàn nguyên vẹn 14,510,422 ₫ tiền mặt trong két TCInvest.</div>
                         </div>
                         <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #38bdf8;">
                             <div style="font-size: 11px; color: #38bdf8; font-weight: 700;">PHA 3: 13h00 - 13h55</div>
                             <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">Đầu Chiều: Radar Hàng T+2.5</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Đánh giá lực hấp thụ hàng bán cắt lỗ của thị trường, xác nhận dòng tiền tạo lập.</div>
+                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Đo lường áp lực xả hàng T+2 toàn thị trường, xác nhận sức chống chịu của 2 mũi nhọn.</div>
                         </div>
                         <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 11px; color: #34d399; font-weight: 700;">PHA 4: 14h00 - 14h25</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">KHUNG GIỜ VÀNG: Bấm Cò Nhịp 1</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Đặt lệnh LO: 100 CP HDB (22.30 - 22.45) & 100 CP MSH (34.60 - 35.00).</div>
+                            <div style="font-size: 11px; color: #34d399; font-weight: 700;">PHA 4: 14h00 - 14h45</div>
+                            <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">KHUNG GIỜ VÀNG & ATC: Án Binh Bất Động</div>
+                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">TUYỆT ĐỐI KHÔNG giải ngân khi hàng chưa về! Giám sát chặt Stop 2xATR (HDB 21.22k, MSH 33.09k).</div>
                         </div>
                     </div>
                 </div>

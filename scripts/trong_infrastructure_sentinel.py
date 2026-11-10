@@ -276,23 +276,49 @@ class TrongInfrastructureSentinel:
         st = PortfolioStateManager.load_state()
         cash = float(st.get("cash_balance_vnd", 0))
         nav = float(st.get("total_nav_vnd", 0))
+        mkt_val = float(st.get("total_market_val_vnd", 0))
         acc_id = st.get("account_id")
         positions = st.get("active_positions", {})
 
-        is_intact = (acc_id == "105C307855" and abs(cash - 20167119.0) < 1.0 and not positions)
+        # Toàn vẹn tài sản: Cash + Market Value khớp với NAV (sai số < 1,000 đ)
+        is_intact = (acc_id == "105C307855" and abs((cash + mkt_val) - nav) < 1000.0)
 
         return {
             "account_id": acc_id,
             "cash_balance_vnd": cash,
             "total_nav_vnd": nav,
+            "total_market_val_vnd": mkt_val,
             "active_positions_count": len(positions),
             "ssot_is_intact": is_intact,
-            "status": "SSOT_PERFECT_100_PERCENT_CASH" if is_intact else "SSOT_MISMATCH_ALERT"
+            "status": "SSOT_COHESION_VERIFIED" if is_intact else "SSOT_MISMATCH_ALERT"
         }
 
     @classmethod
+    def audit_interdepartmental_semantic_consistency(cls) -> Dict[str, Any]:
+        """[CHECK 8] Kiểm toán chéo tính đồng bộ ngữ nghĩa & triệt tiêu rác dữ liệu quá khứ giữa 11 phòng ban."""
+        try:
+            from scripts.apex_semantic_consistency_auditor import run_full_institutional_semantic_audit
+            res = run_full_institutional_semantic_audit()
+            is_clean = (res.get("violation_reports", 0) == 0)
+            return {
+                "audited_reports": res.get("audited_reports", 0),
+                "clean_reports": res.get("clean_reports", 0),
+                "violation_reports": res.get("violation_reports", 0),
+                "violations_details": res.get("details", []),
+                "semantic_audit_passed": is_clean,
+                "status": "SEMANTIC_CONSISTENCY_PERFECT" if is_clean else "SEMANTIC_CONFLICT_DETECTED"
+            }
+        except Exception as e:
+            return {
+                "semantic_audit_passed": False,
+                "status": f"AUDIT_ERROR: {e}",
+                "violation_reports": 1,
+                "violations_details": [{"file": "AUDITOR", "issues": [str(e)]}]
+            }
+
+    @classmethod
     def run_full_infrastructure_audit(cls, send_telegram_alert: bool = False) -> Dict[str, Any]:
-        """Thực thi kiểm toán toàn diện 7 khâu và lưu trữ telemetry + xuất bản báo cáo."""
+        """Thực thi kiểm toán toàn diện 8 khâu và lưu trữ telemetry + xuất bản báo cáo."""
         start_time = time.perf_counter()
         now = datetime.datetime.now()
         date_str = now.strftime("%Y-%m-%d")
@@ -301,7 +327,7 @@ class TrongInfrastructureSentinel:
         DATA_DIR.mkdir(parents=True, exist_ok=True)
         DAILY_AUDITS_DIR.mkdir(parents=True, exist_ok=True)
 
-        # Chạy 7 khâu kiểm toán
+        # Chạy 8 khâu kiểm toán
         c1_reports = cls.audit_report_counts_and_thresholds()
         c2_density = cls.audit_directory_density()
         c3_storage = cls.audit_disk_and_storage_footprint()
@@ -309,6 +335,7 @@ class TrongInfrastructureSentinel:
         c5_logs = cls.audit_log_files_and_rotation()
         c6_latency = cls.audit_io_performance_latency()
         c7_ssot = cls.audit_ssot_and_capital_cohesion()
+        c8_semantic = cls.audit_interdepartmental_semantic_consistency()
 
         elapsed_sec = round(time.perf_counter() - start_time, 2)
 
@@ -333,6 +360,10 @@ class TrongInfrastructureSentinel:
 
         if not c7_ssot["ssot_is_intact"]:
             deductions += 30
+
+        if not c8_semantic["semantic_audit_passed"]:
+            # Phạt nặng lỗi xung đột phòng ban hoặc rác dữ liệu
+            deductions += min(35, c8_semantic["violation_reports"] * 10)
 
         health_score = max(0, 100 - deductions)
 
