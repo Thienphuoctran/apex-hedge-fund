@@ -122,6 +122,33 @@ def generate_supervisor_dashboard_html(data: Dict[str, Any]) -> str:
     started_at = data.get("started_at", "N/A")
     last_hb = data.get("last_heartbeat", "N/A")
     services = data.get("services", {})
+
+    # Load dynamic portfolio SSOT
+    cash_str = "14,510,422 ₫"
+    cash_sub = "72.0% Cash • 200 CP (5,650,000 ₫ • 28.0% NAV)"
+    pnl_str = "+167,119 ₫"
+    try:
+        ssot_path = DATA_DIR / "current_portfolio_state.json"
+        if ssot_path.exists():
+            with open(ssot_path, "r", encoding="utf-8") as f:
+                pdata = json.load(f)
+                cash_val = float(pdata.get("cash_balance_vnd", 14510422.0))
+                tot_nav = float(pdata.get("total_nav_vnd", 20160422.0))
+                mkt_val = float(pdata.get("total_market_val_vnd", 5650000.0))
+                pos = pdata.get("active_positions", {})
+                num_cp = sum(p.get("shares", 0) for p in pos.values())
+                cash_str = f"{cash_val:,.0f} ₫"
+                cash_pct = (cash_val / tot_nav * 100) if tot_nav > 0 else 72.0
+                nav_pct = 100.0 - cash_pct
+                if num_cp > 0:
+                    pos_names = ", ".join([f"{p.get('shares', 0)} {s}" for s, p in pos.items()])
+                    cash_sub = f"{cash_pct:.1f}% Cash • {num_cp} CP ({pos_names}) • {nav_pct:.1f}% NAV"
+                else:
+                    cash_sub = "100% Tiền Mặt (0 CP Rủi Ro)"
+                realized = float(pdata.get("realized_pnl_vnd", 167119.0))
+                pnl_str = f"+{realized:,.0f} ₫" if realized >= 0 else f"{realized:,.0f} ₫"
+    except Exception:
+        pass
     
     rows_html = ""
     for k, sinfo in services.items():
@@ -182,14 +209,14 @@ def generate_supervisor_dashboard_html(data: Dict[str, Any]) -> str:
 
             <div class="grid">
                 <div class="stat-box">
-                    <div class="stat-lbl">Tài Sản Khả Dụng</div>
-                    <div class="stat-val" style="color: #34d399;">20,167,119 ₫</div>
-                    <div style="font-size: 11px; color: #64748b; margin-top: 2px;">100% Tiền Mặt (0 CP Rủi Ro)</div>
+                    <div class="stat-lbl">Tài Sản Khả Dụng (SSOT V2.0)</div>
+                    <div class="stat-val" style="color: #34d399;">{cash_str}</div>
+                    <div style="font-size: 11px; color: #64748b; margin-top: 2px;">{cash_sub}</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-lbl">Lãi Ròng Vòng 1</div>
-                    <div class="stat-val" style="color: #60a5fa;">+167,119 ₫</div>
-                    <div style="font-size: 11px; color: #64748b; margin-top: 2px;">Đã tất toán HPG, TCB, MBB</div>
+                    <div class="stat-lbl">Lãi Ròng Thu Về Vòng 1</div>
+                    <div class="stat-val" style="color: #60a5fa;">{pnl_str}</div>
+                    <div style="font-size: 11px; color: #64748b; margin-top: 2px;">Đã tất toán 100% (HPG, TCB, MBB)</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-lbl">Dịch Vụ Trực Chiến</div>
@@ -467,6 +494,9 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 dates = scripts.apex_report_scanner.get_available_archive_dates()
                 html = scripts.apex_web_portal_engine.generate_portal_html(status_data, reports, milestones, available_dates=dates)
             except Exception as e:
+                import traceback
+                log_supervisor(f"[CRITICAL_PORTAL_RENDER_ERROR] {traceback.format_exc()}")
+                print(f"[CRITICAL_PORTAL_RENDER_ERROR] {traceback.format_exc()}", flush=True)
                 html = generate_supervisor_dashboard_html(status_data)
             self.wfile.write(html.encode("utf-8"))
             return

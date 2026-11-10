@@ -5126,17 +5126,16 @@ def generate_portal_html(
             }}
         }}
 
-        function renderTacticalWarRoom(data) {
+        function renderTacticalWarRoom(data) {{
             if (!data) return;
 
             // 0. Dynamic Stages HTML update
-            if (data.tactical_stages_html) {
+            if (data.tactical_stages_html) {{
                 const stagesEl = document.getElementById('afternoon-tactical-stages');
-                if (stagesEl) {
+                if (stagesEl) {{
                     stagesEl.outerHTML = data.tactical_stages_html;
-                }
-            }{
-            if (!data) return;
+                }}
+            }}
 
             // 1. Clocks
             if (data.server_time) {{
