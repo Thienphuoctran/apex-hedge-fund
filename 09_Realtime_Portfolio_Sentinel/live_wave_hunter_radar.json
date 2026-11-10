@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10 04:24:50",
+  "generated_at": "2026-11-10 05:22:24",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "ACB",
+      "form_or_type": "CO_TUC",
+      "date": "Tue, 10 Nov 26 1",
+      "headline": "Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "REE",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 10 Nov 26 0",
@@ -372,14 +380,6 @@
       "date": "Sun, 08 Nov 26 1",
       "headline": "PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu?",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "PNJ",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 10 Nov 26 0",
-      "headline": "Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 356 hồ sơ SEC & 43 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 356 hồ sơ SEC & 45 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-10 04:24:50`  
+*Cập nhật thời gian thực*: `2026-11-10 05:22:24`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -10,7 +10,7 @@
 | Phòng Ban Chuyên Trách | Trạng Thái Hoạt Động | Báo Cáo Tác Chiến Thời Gian Thực |
 | :--- | :---: | :--- |
 | **Ban 1 (Global & VN) — Vĩ Mô & Tiền Tệ SBV/Fed** | **🟢 ACTIVE 24/7** | Giám sát DXY, VIX, Lãi suất SBV & Tỷ giá USD/VND |
-| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 356 hồ sơ SEC & 43 tin CBTT |
+| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 356 hồ sơ SEC & 45 tin CBTT |
 | **Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff** | **🟢 ACTIVE 24/7** | Phát hiện 8 sóng cổ phiếu VN & 6 sóng cổ phiếu Mỹ đạt chuẩn AAA/AA |
 | **Ban 4 (Global & VN) — Hội Đồng Rủi Ro Định Lượng ATR** | **🟢 ACTIVE 24/7** | Khóa chặt Stop 2xATR <= 7.5% & R:R >= 1:2.0 |
 | **Ban 5 (Global & VN) — Tự Học Thích Nghi & Kiểm Định 4 Ngày** | **🟢 ACTIVE 24/7** | Điểm sức khỏe hệ thống đạt 100/100 (Zero Drift) |
@@ -60,7 +60,7 @@
 | `US_SEC_EDGAR` | **`GOOGL`** ⭐ **(ĐANG THEO DÕI)** | `SEC Form 10-Q` | `2026-10-29` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`MSFT`** | `SEC Form 10-Q` | `2026-10-28` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`AAPL`** | `SEC Form 10-K` | `2026-11-03` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
+| `VIETNAM_CBTT` | **`ACB`** | `CO_TUC` | `Tue, 10 Nov 26 1` | Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ |
 | `VIETNAM_CBTT` | **`REE`** | `TIN_DOANH_NGHIEP` | `Tue, 10 Nov 26 0` | Thái Lan thâu tóm 80% vốn của 1 công ty công nghệ Việt Nam, cũng là nhà phân phối cấp 2 của Microsoft |
 | `VIETNAM_CBTT` | **`DXG`** | `TIN_DOANH_NGHIEP` | `Tue, 10 Nov 26 0` | Tỷ phú Bill Gates bất ngờ mua thêm 200.000 cổ phiếu một công ty bất động sản Việt Nam |
 | `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Tue, 10 Nov 26 0` | Petrolimex từng lớn gấp đôi MB nay bằng 1/4, Vinamilk từng gấp 1,5 lần Vingroup nay bằng 1/16: 10 năm viết lại bản đồ tỷ đô trên TTCK |
-| `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Mon, 09 Nov 26 1` | Từ nhà khoa học đến Chủ tịch FPT, ông Trương Gia Bình trao 1 triệu USD cho người trẻ: “Hãy thành công hơn FPT” |

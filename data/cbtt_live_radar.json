@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-10T04:24:41.718397+00:00",
+  "timestamp_utc": "2026-11-10T05:22:17.448377+00:00",
   "scan_date": "2026-11-10",
   "total_us_filings_count": 356,
-  "total_vn_announcements_count": 43,
+  "total_vn_announcements_count": 45,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -276,13 +276,21 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "ACB": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ",
+      "severity": "WARNING",
+      "published_at": "Tue, 10 Nov 26 12:00:00 +0700",
+      "source_url": "https://cafef.vn/sau-14-nam-gia-dinh-bau-kien-van-so-huu-hon-10-ngan-hang-acb-tri-gia-tren-12000-ty-dong-he-lo-me-vo-dai-gia-nhan-vat-bi-an-va-khoan-co-tuc-hang-tram-ty-188261110120013802.chn",
+      "total_announcements": 7
+    },
     "REE": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Thái Lan thâu tóm 80% vốn của 1 công ty công nghệ Việt Nam, cũng là nhà phân phối cấp 2 của Microsoft",
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 07:45:00 +0700",
       "source_url": "https://cafef.vn/thai-lan-thau-tom-80-von-cua-1-cong-ty-cong-nghe-viet-nam-cung-la-nha-phan-phoi-cap-2-cua-microsoft-188261110074553656.chn",
-      "total_announcements": 1
+      "total_announcements": 2
     },
     "DXG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -324,14 +332,6 @@
       "source_url": "https://cafef.vn/pv-power-pow-bao-lai-vuot-6-lan-ke-hoach-nam-chi-sau-9-thang-nho-dau-188261108101433278.chn",
       "total_announcements": 1
     },
-    "ACB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Vợ chồng bầu Kiên vẫn đều đặn nhận hàng trăm tỷ đồng mỗi năm từ ACB",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/vo-chong-bau-kien-van-deu-dan-nhan-hang-tram-ty-dong-moi-nam-tu-acb-188261109230112292.chn",
-      "total_announcements": 6
-    },
     "MBS": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "MBS dự báo lợi nhuận năm 2026 của loạt doanh nghiệp “hot”, một ông lớn có thể tăng hơn 100%",
@@ -350,9 +350,9 @@
     },
     "STB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê?",
+      "latest_title": "NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 10:59:00 +0700",
+      "published_at": "Tue, 10 Nov 26 11:33:00 +0700",
       "source_url": "https://cafef.vn/nhnn-co-dong-thai-moi-voi-325-co-phan-sacombank-lien-quan-ong-tram-be-188261110105749137.chn",
       "total_announcements": 2
     },
@@ -363,6 +363,14 @@
       "published_at": "Mon, 09 Nov 26 20:03:00 +0700",
       "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-se-mua-ngoai-te-giao-ngay-bom-vnd-cho-he-thong-ngan-hang-vao-thu-hai-va-thu-tu-hang-tuan-tu-ngay-11-11-188261109200423359.chn",
       "total_announcements": 2
+    },
+    "GMD": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Tái cơ cấu ETF chỉ số HoSE tháng 10/2026: Dòng tiền dự kiến tập trung mạnh vào GMD, REE và VJC",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 2026 04:25:21 GMT",
+      "source_url": "https://vneconomy.vn/tai-co-cau-etf-chi-so-hose-thang-102026-dong-tien-du-kien-tap-trung-manh-vao-gmd-ree-va-vjc.htm",
+      "total_announcements": 1
     },
     "CTG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4683,6 +4691,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "ACB"
+      ],
+      "title": "Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ",
+      "summary": "Sau hơn 14 năm kể từ khi bầu Kiên vướng vòng lao lý, gia đình và nhóm người liên quan đến vợ ông vẫn nắm giữ khối cổ phiếu ACB trị giá hàng nghìn tỷ đồng....",
+      "event_type": "CO_TUC",
+      "severity": "WARNING",
+      "published_at": "Tue, 10 Nov 26 12:00:00 +0700",
+      "source_url": "https://cafef.vn/sau-14-nam-gia-dinh-bau-kien-van-so-huu-hon-10-ngan-hang-acb-tri-gia-tren-12000-ty-dong-he-lo-me-vo-dai-gia-nhan-vat-bi-an-va-khoan-co-tuc-hang-tram-ty-188261110120013802.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "REE"
       ],
       "title": "Thái Lan thâu tóm 80% vốn của 1 công ty công nghệ Việt Nam, cũng là nhà phân phối cấp 2 của Microsoft",
@@ -4889,11 +4909,11 @@
       "symbols": [
         "STB"
       ],
-      "title": "NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê?",
+      "title": "NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê",
       "summary": "Công ty Chứng khoán Vietcap vừa cập nhật báo cáo sau buổi gặp nhà đầu tư của Ngân hàng TMCP Sài Gòn Tài Lộc (Sacombank, mã STB)....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 10:59:00 +0700",
+      "published_at": "Tue, 10 Nov 26 11:33:00 +0700",
       "source_url": "https://cafef.vn/nhnn-co-dong-thai-moi-voi-325-co-phan-sacombank-lien-quan-ong-tram-be-188261110105749137.chn"
     },
     {
@@ -5079,6 +5099,19 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "GMD",
+        "REE"
+      ],
+      "title": "Tái cơ cấu ETF chỉ số HoSE tháng 10/2026: Dòng tiền dự kiến tập trung mạnh vào GMD, REE và VJC",
+      "summary": "11 quỹ ETF với tổng quy mô tài sản khoảng 19.958 tỷ đồng sẽ thực hiện giao dịch, với tổng giá trị mua ròng và bán ròng dự kiến mỗi chiều khoảng 949 tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 2026 04:25:21 GMT",
+      "source_url": "https://vneconomy.vn/tai-co-cau-etf-chi-so-hose-thang-102026-dong-tien-du-kien-tap-trung-manh-vao-gmd-ree-va-vjc.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
       "title": "NAB gia nhập nhóm doanh nghiệp tỷ USD, PGV, LPS và GEL bị loại",
@@ -5155,6 +5188,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "CII huy động vốn mở rộng cao tốc TP HCM - Trung Lương - Mỹ Thuận",
+      "summary": "CII chào bán trái phiếu chuyển đổi trị giá hơn 6.700 tỷ đồng để thu xếp vốn cho dự án mở rộng cao tốc TP HCM - Trung Lương - Mỹ Thuận....",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Tue, 10 Nov 2026 10:31:34 +0700",
+      "source_url": "https://vnexpress.net/cii-huy-dong-von-mo-rong-cao-toc-tp-hcm-trung-luong-my-thuan-5142760.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "BSR"
       ],
       "title": "Chủ nhà máy lọc dầu Dung Quất nâng mục tiêu lãi kỷ lục",
@@ -5187,18 +5232,6 @@
       "severity": "INFO",
       "published_at": "Sat, 07 Nov 2026 14:30:00 +0700",
       "source_url": "https://vnexpress.net/tim-giai-phap-dau-tu-tu-du-lieu-tai-dien-dan-thuong-nien-cua-dnse-5141896.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "TP HCM không đánh đổi môi trường Cần Giờ để tăng trưởng kinh tế",
-      "summary": "Lãnh đạo TP HCM khẳng định việc bảo tồn rừng ngập mặn Cần Giờ là nguyên tắc trong quá trình phát triển và không đánh đổi môi trường để tăng trưởng kinh tế....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 06 Nov 2026 14:35:29 +0700",
-      "source_url": "https://vnexpress.net/tp-hcm-khong-danh-doi-moi-truong-can-gio-de-tang-truong-kinh-te-5141549.html"
     }
   ]
 }
