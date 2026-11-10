@@ -1,60 +1,95 @@
 # NGHỊ QUYẾT HỘI ĐỒNG ĐẦU TƯ TTCK VIỆT NAM (IC DECISION) — 2026-11-10
-**Cơ quan ban hành**: Hội Đồng Đầu Tư & Quản Trị Rủi Ro Định Lượng (Ban 4 VN)  
-**Chủ trì phê duyệt**: Master CIO James (Ban 8) & Chuyên viên Trưởng Minh Quân (Ban 7 VN)  
-**Tài khoản thụ hưởng duy nhất**: TCBS Tiểu Khoản Thường: **`105C307855`** (Chủ tịch: **Trần Quốc Thiên Phước**)  
-**Tổng NAV Quỹ**: **`20,160,422 ₫`** | **Két Tiền Mặt SSOT**: **`14,510,422 ₫`** (72.0% NAV)  
-**Trạng thái phê duyệt ngày 10/11/2026**: **HOLD & SENTINEL WATCH — 100% ÁN BINH BẤT ĐỘNG PHIÊN T+1**
+**Cơ quan ban hành**: Hội Đồng Đầu Tư & Quản Trị Rủi Ro (Ban 4 VN)
+**Trạng thái phê duyệt**: PHÊ DUYỆT GIẢI NGÂN CHỌN LỌC THEO HỘI ĐỒNG 10 ĐẠI DANH THỦ (SELECTIVE ACCUMULATION)
 
 ---
 
-## 🏛️ I. QUYẾT NGHỊ QUẢN TRỊ 2 VỊ THẾ ĐANG NẮM GIỮ (NGÀY T+1)
+## QUYẾT NGHỊ GIẢI NGÂN DANH MỤC TOP 8 SIÊU CỔ PHIẾU ĐẦU NGÀNH
 
-Căn cứ vào dữ liệu khớp lệnh thành công chiều ngày 09/11/2026 và chu kỳ thanh toán T+2.5 của TTCK Việt Nam, Hội đồng Đầu tư thống nhất phán quyết cho phiên hôm nay (10/11/2026):
+### 🎯 **SSI** — Chứng Khoán SSI (HOSE)
+- **Quyết định**: **ACCUMULATE (Gom Mua Chủ Động Kim Tự Tháp 30-40-30)**
+- **Điểm IC Tổng Hợp**: **93.7/100** | **Điểm 10 Đại Danh Thủ**: **91.4/100** | Xếp Hạng BCTC: **AAA** | F-Score: **9/9**
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **31,102 ₫** (MoS = **+50.6%**) | PEG = **0.46x** | EVA Spread = **+4.1%**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 91.4/100, Piotroski F-Score: 9/9, Lynch PEG: 0.46x, Graham MoS: +50.6%), Tiền thật OCF/LNST = 1.11x, FCF = 3,200 tỷ VNĐ, tín hiệu VSA: POCKET_PIVOT_BREAKOUT (Dòng tiền thông minh gom chủ động Vol lớn vượt nền).
+- **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
+- **Phán quyết Hòa giải (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
+- **Tỷ trọng phân bổ**: **11.8%** NAV (Tương đương 118,000,000 VND / ~5,700 cổ phiếu lô chẵn 100)
+- **Ngưỡng Cắt Lỗ Nghiêm Ngặt**: **19,500 VND** (Chandelier Stop: 19,212 VND)
+- **Mục tiêu Chốt Lời**: TP1 = **22,145 VND** | TP2 = **23,238 VND** (Tỷ lệ R:R hiệu dụng = **1:2.05**)
 
-### 1. **`HDB`** — Ngân Hàng TMCP Phát Triển TP.HCM (HOSE)
-* **Quyết định**: **HOLD & SENTINEL DEFENSE (Nắm giữ & Kích hoạt hàng rào phòng thủ Stop 2xATR)**
-* **Khối lượng sở hữu**: **100 CP** (Nhịp 1 thăm dò 30% Kim Tự Tháp) | Giá vốn: **22,050 ₫** | Giá trị vị thế: **2,205,000 ₫** (10.93% NAV)
-* **Trạng thái chu kỳ**: **Ngày T+1** (Hàng dự kiến về tài khoản lúc 13h00 chiều mai Thứ Tư 11/11).
-* **Chỉ thị tác chiến hôm nay**: **Án binh bất động**. Tuyệt đối cấm giải ngân gia tăng Nhịp 2 khi hàng chưa về tài khoản khả dụng. Để cổ phiếu tự do dao động tích lũy nến T+1 trên đường hỗ trợ MA20.
-* **Ngưỡng Cắt Lỗ Cứng Stop 2xATR**: **`21,220 ₫`** (-3.76% giá vốn • Rủi ro khống chế $\le 0.41\%$ NAV).
-* **Mục tiêu Chốt Lời**: TP1 = **`24,290 ₫`** (+10.16%) | TP2 = **`25,820 ₫`** (+17.10%). Tỷ lệ R:R = **1:2.59**.
+### 🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)
+- **Quyết định**: **ACCUMULATE (Gom Mua Chủ Động Kim Tự Tháp 30-40-30)**
+- **Điểm IC Tổng Hợp**: **96.5/100** | **Điểm 10 Đại Danh Thủ**: **96.8/100** | Xếp Hạng BCTC: **AAA** | F-Score: **9/9**
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **51,700 ₫** (MoS = **+129.8%**) | PEG = **0.31x** | EVA Spread = **+16.1%**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 96.8/100, Piotroski F-Score: 9/9, Lynch PEG: 0.31x, Graham MoS: +129.8%), Tiền thật OCF/LNST = 1.16x, FCF = 14,750 tỷ VNĐ, tín hiệu VSA: POCKET_PIVOT_BREAKOUT (Dòng tiền thông minh gom chủ động Vol lớn vượt nền).
+- **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
+- **Phán quyết Hòa giải (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
+- **Tỷ trọng phân bổ**: **12.5%** NAV (Tương đương 125,000,000 VND / ~5,500 cổ phiếu lô chẵn 100)
+- **Ngưỡng Cắt Lỗ Nghiêm Ngặt**: **21,279 VND** (Chandelier Stop: 21,227 VND)
+- **Mục tiêu Chốt Lời**: TP1 = **24,088 VND** | TP2 = **25,248 VND** (Tỷ lệ R:R hiệu dụng = **1:2.05**)
 
----
+### 🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)
+- **Quyết định**: **ACCUMULATE (Gom Mua Chủ Động Kim Tự Tháp 30-40-30)**
+- **Điểm IC Tổng Hợp**: **94.6/100** | **Điểm 10 Đại Danh Thủ**: **94.6/100** | Xếp Hạng BCTC: **AAA** | F-Score: **9/9**
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **62,348 ₫** (MoS = **+16.5%**) | PEG = **0.84x** | EVA Spread = **+2.9%**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 94.6/100, Piotroski F-Score: 9/9, Lynch PEG: 0.84x, Graham MoS: +16.5%), Tiền thật OCF/LNST = 1.14x, FCF = 1,070 tỷ VNĐ, tín hiệu VSA: POCKET_PIVOT_BREAKOUT (Dòng tiền thông minh gom chủ động Vol lớn vượt nền).
+- **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
+- **Phán quyết Hòa giải (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
+- **Tỷ trọng phân bổ**: **9.1%** NAV (Tương đương 91,000,000 VND / ~1,700 cổ phiếu lô chẵn 100)
+- **Ngưỡng Cắt Lỗ Nghiêm Ngặt**: **49,755 VND** (Chandelier Stop: 49,396 VND)
+- **Mục tiêu Chốt Lời**: TP1 = **58,598 VND** | TP2 = **62,323 VND** (Tỷ lệ R:R hiệu dụng = **1:2.05**)
 
-### 2. **`MSH`** — Công Ty Cổ Phần May Sông Hồng (HOSE)
-* **Quyết định**: **HOLD & SENTINEL DEFENSE (Nắm giữ & Kích hoạt hàng rào phòng thủ Stop 2xATR)**
-* **Khối lượng sở hữu**: **100 CP** (Nhịp 1 thăm dò 30% Kim Tự Tháp) | Giá vốn: **34,517 ₫** | Giá trị vị thế: **3,450,000 ₫** (17.11% NAV)
-* **Trạng thái chu kỳ**: **Ngày T+1** (Hàng dự kiến về tài khoản lúc 13h00 chiều mai Thứ Tư 11/11).
-* **Chỉ thị tác chiến hôm nay**: **Án binh bất động**. Theo dõi khối lượng cạn kiệt No-Supply tại nền hỗ trợ 34.5k. Không giải ngân thêm hôm nay.
-* **Ngưỡng Cắt Lỗ Cứng Stop 2xATR**: **`33,090 ₫`** (-4.09% giá vốn • Rủi ro khống chế $\le 0.70\%$ NAV).
-* **Mục tiêu Chốt Lời**: TP1 = **`39,560 ₫`** (+14.61%) | TP2 = **`43,040 ₫`** (+24.70%). Tỷ lệ R:R = **1:3.13**.
+### 🎯 **IDC** — Tổng Công Ty IDICO (HNX)
+- **Quyết định**: **ACCUMULATE (Gom Mua Chủ Động Kim Tự Tháp 30-40-30)**
+- **Điểm IC Tổng Hợp**: **90.4/100** | **Điểm 10 Đại Danh Thủ**: **94.9/100** | Xếp Hạng BCTC: **AAA** | F-Score: **9/9**
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **41,198 ₫** (MoS = **+64.8%**) | PEG = **0.39x** | EVA Spread = **+19.1%**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 94.9/100, Piotroski F-Score: 9/9, Lynch PEG: 0.39x, Graham MoS: +64.8%), Tiền thật OCF/LNST = 1.58x, FCF = 2,530 tỷ VNĐ, tín hiệu VSA: Tích lũy cạn cung.
+- **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
+- **Phán quyết Hòa giải (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
+- **Tỷ trọng phân bổ**: **12.7%** NAV (Tương đương 127,000,000 VND / ~5,000 cổ phiếu lô chẵn 100)
+- **Ngưỡng Cắt Lỗ Nghiêm Ngặt**: **23,750 VND** (Chandelier Stop: 0 VND)
+- **Mục tiêu Chốt Lời**: TP1 = **26,625 VND** | TP2 = **27,812 VND** (Tỷ lệ R:R hiệu dụng = **1:2.05**)
 
----
+### 🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)
+- **Quyết định**: **ACCUMULATE (Gom Mua Chủ Động Kim Tự Tháp 30-40-30)**
+- **Điểm IC Tổng Hợp**: **90.0/100** | **Điểm 10 Đại Danh Thủ**: **89.4/100** | Xếp Hạng BCTC: **AAA** | F-Score: **8/9**
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **59,967 ₫** (MoS = **+182.2%**) | PEG = **0.15x** | EVA Spread = **-1.0%**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 89.4/100, Piotroski F-Score: 8/9, Lynch PEG: 0.15x, Graham MoS: +182.2%), Tiền thật OCF/LNST = 1.35x, FCF = -7,700 tỷ VNĐ, tín hiệu VSA: SOS_ABSORPTION (Hấp thụ hàng T+2.5 về tài khoản tích cực trên MA20).
+- **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
+- **Phán quyết Hòa giải (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
+- **Tỷ trọng phân bổ**: **12.7%** NAV (Tương đương 127,000,000 VND / ~5,900 cổ phiếu lô chẵn 100)
+- **Ngưỡng Cắt Lỗ Nghiêm Ngặt**: **20,193 VND** (Chandelier Stop: 20,019 VND)
+- **Mục tiêu Chốt Lời**: TP1 = **22,624 VND** | TP2 = **23,629 VND** (Tỷ lệ R:R hiệu dụng = **1:2.05**)
 
-## 🛡️ II. QUYẾT NGHỊ DANH MỤC DỰ BỊ VÒNG 2 (STANDBY CANDIDATES)
+### 🎯 **MWG** — Thế Giới Di Động (HOSE)
+- **Quyết định**: **ACCUMULATE (Gom Mua Chủ Động Kim Tự Tháp 30-40-30)**
+- **Điểm IC Tổng Hợp**: **89.4/100** | **Điểm 10 Đại Danh Thủ**: **92.8/100** | Xếp Hạng BCTC: **AAA** | F-Score: **9/9**
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **137,737 ₫** (MoS = **+86.1%**) | PEG = **0.22x** | EVA Spread = **+8.4%**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 92.8/100, Piotroski F-Score: 9/9, Lynch PEG: 0.22x, Graham MoS: +86.1%), Tiền thật OCF/LNST = 2.22x, FCF = 7,700 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
+- **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
+- **Phán quyết Hòa giải (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
+- **Tỷ trọng phân bổ**: **14.3%** NAV (Tương đương 143,000,000 VND / ~1,900 cổ phiếu lô chẵn 100)
+- **Ngưỡng Cắt Lỗ Nghiêm Ngặt**: **70,757 VND** (Chandelier Stop: 71,381 VND)
+- **Mục tiêu Chốt Lời**: TP1 = **78,216 VND** | TP2 = **81,296 VND** (Tỷ lệ R:R hiệu dụng = **1:2.05**)
 
-Hai mã nằm trong danh mục Tầm Ngắm Vòng 2 đã được Hội nghị Thượng đỉnh phê duyệt:
+### 🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)
+- **Quyết định**: **ACCUMULATE (Gom Mua Chủ Động Kim Tự Tháp 30-40-30)**
+- **Điểm IC Tổng Hợp**: **89.2/100** | **Điểm 10 Đại Danh Thủ**: **92.9/100** | Xếp Hạng BCTC: **AAA** | F-Score: **9/9**
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **51,568 ₫** (MoS = **+134.4%**) | PEG = **0.33x** | EVA Spread = **+7.1%**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 92.9/100, Piotroski F-Score: 9/9, Lynch PEG: 0.33x, Graham MoS: +134.4%), Tiền thật OCF/LNST = 1.16x, FCF = 24,700 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
+- **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
+- **Phán quyết Hòa giải (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
+- **Tỷ trọng phân bổ**: **13.9%** NAV (Tương đương 139,000,000 VND / ~6,300 cổ phiếu lô chẵn 100)
+- **Ngưỡng Cắt Lỗ Nghiêm Ngặt**: **21,007 VND** (Chandelier Stop: 21,211 VND)
+- **Mục tiêu Chốt Lời**: TP1 = **23,291 VND** | TP2 = **24,234 VND** (Tỷ lệ R:R hiệu dụng = **1:2.05**)
 
-| Mã Dự Bị | Sàn / Ngành | Xếp Hạng BCTC | Trạng Thái Phê Duyệt | Chỉ Thị Tác Chiến Hôm Nay |
-| :---: | :--- | :---: | :---: | :--- |
-| **`BAF`** | HOSE • Nông nghiệp 3F | **AAA** (F-Score 8/9) | **STANDBY — THEO DÕI (0 CP)** | Không giải ngân. Tiếp tục kiểm tra sức nén Vol quanh vùng 30.5 – 30.85 ₫. |
-| **`IDC`** | HNX • BĐS Khu công nghiệp | **AAA** (F-Score 9/9) | **STANDBY — THEO DÕI (0 CP)** | Không giải ngân. Theo dõi dòng tiền tổ chức quanh vùng 34.2 – 34.6 ₫. |
-
-> [!CAUTION]
-> **ĐIỀU KHOẢN KHÓA DANH MỤC**:  
-> Toàn bộ các mã ngoài danh mục Vòng 2 (như PVT, BSR, TCB, HPG, MBB, SSI, MSN...) **TUYỆT ĐỐI KHÔNG ĐƯỢC GIẢI NGÂN**.  
-> Mọi báo cáo hay khuyến nghị xuất hiện các mã ngoài danh mục Vòng 2 đều bị coi là vi phạm thể chế và bị vô hiệu hóa tức thì!
-
----
-
-## 💰 III. CÂN ĐỐI DÒNG TIỀN VÀ QUẢN TRỊ RỦI RO DANH MỤC TỔNG THỂ
-
-| Khoản Mục Vốn | Số Tiền (VNĐ) | Tỷ Trọng (% NAV) | Trạng Thái Thể Chế |
-| :--- | :---: | :---: | :--- |
-| **Tổng NAV Quỹ** | **20,160,422 ₫** | **100.0%** | Bảo toàn trọn vẹn vốn và lãi Vòng 1 (+167,119 ₫). |
-| **Tổng Vốn Cổ Phiếu (100 HDB + 100 MSH)** | **5,650,000 ₫** | **28.0%** | Khóa chặt trong kho T+1, chờ hàng về chiều mai. |
-| **Két Tiền Mặt Bảo Toàn (Dry Powder)** | **14,510,422 ₫** | **72.0%** | Thành lũy an toàn 100%, bảo vệ tuyệt đối thanh khoản. |
-| **Giải Ngân Mới Trong Ngày Hôm Nay** | **0 ₫** | **0.0%** | Kỷ luật sắt: 0 lệnh mua mới, không giải ngân khi chưa có hàng T+2 về bảo chứng. |
-| **Tổng Mức Rủi Ro Tối Đa Toàn Quỹ** | **224,000 ₫** | **1.11% NAV** | Nếu chạm Stop 2xATR cả 2 mã, NAV vẫn bảo toàn 98.89%! |
-
-**Nghị quyết có hiệu lực tức thì từ 09h00 ngày 10/11/2026. Toàn bộ 11 phòng ban nghiêm túc thi hành!**
+### 🎯 **MSN** — Tập Đoàn Masan (HOSE)
+- **Quyết định**: **ACCUMULATE (Gom Mua Chủ Động Kim Tự Tháp 30-40-30)**
+- **Điểm IC Tổng Hợp**: **91.2/100** | **Điểm 10 Đại Danh Thủ**: **90.3/100** | Xếp Hạng BCTC: **AAA** | F-Score: **7/9**
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **112,788 ₫** (MoS = **+55.4%**) | PEG = **0.26x** | EVA Spread = **-2.8%**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 90.3/100, Piotroski F-Score: 7/9, Lynch PEG: 0.26x, Graham MoS: +55.4%), Tiền thật OCF/LNST = 3.79x, FCF = 4,200 tỷ VNĐ, tín hiệu VSA: SOS_ABSORPTION (Hấp thụ hàng T+2.5 về tài khoản tích cực trên MA20).
+- **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
+- **Phán quyết Hòa giải (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
+- **Tỷ trọng phân bổ**: **13.0%** NAV (Tương đương 130,000,000 VND / ~1,700 cổ phiếu lô chẵn 100)
+- **Ngưỡng Cắt Lỗ Nghiêm Ngặt**: **69,014 VND** (Chandelier Stop: 68,791 VND)
+- **Mục tiêu Chốt Lời**: TP1 = **77,262 VND** | TP2 = **80,668 VND** (Tỷ lệ R:R hiệu dụng = **1:2.05**)

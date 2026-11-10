@@ -23,7 +23,7 @@
       "stop_loss": 20400.0,
       "sell_target_min": 22300.0,
       "sell_target_max": 22500.0,
-      "volume": 0,
+      "volume": 7690900,
       "action_mandate": "BÁN HẾT 100% TRONG KHUNG GIỜ VÀNG"
     },
     {
@@ -31,15 +31,15 @@
       "name": "Ngân hàng Quân Đội",
       "shares": 200,
       "entry_price": 18606.0,
-      "current_price": 19450.0,
+      "current_price": 19350.0,
       "cost": 3721200.0,
-      "market_value": 3890000.0,
-      "unrealized_pnl": 168800.0,
-      "unrealized_pnl_pct": 4.54,
+      "market_value": 3870000.0,
+      "unrealized_pnl": 148800.0,
+      "unrealized_pnl_pct": 4.0,
       "stop_loss": 17900.0,
       "sell_target_min": 19800.0,
       "sell_target_max": 20000.0,
-      "volume": 0,
+      "volume": 6391200,
       "action_mandate": "BÁN HẾT 100% TRONG KHUNG GIỜ VÀNG"
     },
     {
@@ -47,15 +47,15 @@
       "name": "Tập đoàn Hòa Phát",
       "shares": 400,
       "entry_price": 21156.0,
-      "current_price": 21000.0,
+      "current_price": 21300.0,
       "cost": 8462400.0,
-      "market_value": 8400000.0,
-      "unrealized_pnl": -62400.0,
-      "unrealized_pnl_pct": -0.74,
+      "market_value": 8520000.0,
+      "unrealized_pnl": 57600.0,
+      "unrealized_pnl_pct": 0.68,
       "stop_loss": 19400.0,
       "sell_target_min": 21800.0,
       "sell_target_max": 22000.0,
-      "volume": 0,
+      "volume": 14487200,
       "action_mandate": "BÁN HẾT 100% TRONG KHUNG GIỜ VÀNG"
     }
   ]

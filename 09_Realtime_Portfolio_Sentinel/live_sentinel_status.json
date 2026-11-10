@@ -1,5 +1,5 @@
 {
-  "last_scan_utc": "2026-11-10T08:38:52.768203",
+  "last_scan_utc": "2026-11-10T08:59:45.745198",
   "total_positions_monitored": 2,
   "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
@@ -70,17 +70,17 @@
     "vn_waves_count": 8,
     "us_waves_count": 6,
     "top_vn_wave_symbols": [
-      "HHV",
       "POW",
+      "KDH",
       "HAH",
-      "MSN",
-      "PC1"
+      "PC1",
+      "HHV"
     ],
     "top_us_wave_symbols": [
       "NVDA",
       "AVGO",
       "TSM",
-      "XOM"
+      "MSFT"
     ]
   }
 }

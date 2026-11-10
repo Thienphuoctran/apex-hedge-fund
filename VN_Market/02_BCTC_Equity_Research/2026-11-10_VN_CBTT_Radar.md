@@ -1,5 +1,5 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-10 08:38:41  
+> **Thời gian quét:** 2026-11-10 08:59:10  
 > **Số sự kiện ghi nhận:** 45 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
@@ -11,6 +11,7 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Từ nhà khoa học đến Chủ tịch FPT, ông Trương Gia Bình trao 1 triệu USD cho người trẻ: “Hãy thành công hơn FPT” | [Xem Link](https://cafef.vn/tu-nha-khoa-hoc-den-chu-tich-fpt-ong-truong-gia-binh-trao-1-trieu-usd-cho-nguoi-tre-hay-thanh-cong-hon-fpt-188261109150349201.chn) |
 | **GAS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ | [Xem Link](https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng | [Xem Link](https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn) |
+| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Phiên 10/11: Khối ngoại mua ròng mạnh tay gần 500 tỷ đồng, cổ phiếu nào được "gom" nhiều nhất? | [Xem Link](https://cafef.vn/phien-10-11-khoi-ngoai-mua-rong-manh-tay-gan-500-ty-dong-co-phieu-nao-duoc-gom-nhieu-nhat-188261110152534078.chn) |
 | **HCM, SSI** | `CANH_BAO_RUI_RO` | 🔴 RED FLAG | Một chi nhánh của SSI bị xử phạt vi phạm hành chính về thuế | [Xem Link](https://cafef.vn/mot-chi-nhanh-cua-ssi-bi-xu-phat-vi-pham-hanh-chinh-ve-thue-188261110141145584.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm | [Xem Link](https://cafef.vn/giam-doc-cap-cao-phu-trach-tai-chinh-cua-pnj-tu-nhiem-188261110080205957.chn) |
 | **ACB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Những cổ đông sở hữu lượng lớn cổ phiếu ACB nhận cổ tức | [Xem Link](https://cafef.vn/vo-chong-bau-kien-van-deu-dan-nhan-hang-tram-ty-dong-moi-nam-tu-acb-188261109230112292.chn) |
@@ -21,7 +22,6 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thống đốc tỉnh của Nhật Bản cảm ơn FPT vì một quyết định ý nghĩa | [Xem Link](https://cafef.vn/thong-doc-tinh-cua-nhat-ban-cam-on-fpt-vi-mot-quyet-dinh-y-nghia-188261109145035775.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Phát hiện 14 người nước ngoài nghi lừa đảo qua sàn chứng khoán ảo ở TP.HCM | [Xem Link](https://cafef.vn/phat-hien-14-nguoi-nuoc-ngoai-nghi-lua-dao-qua-san-chung-khoan-ao-o-tphcm-18826110910442747.chn) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhịp rung lắc mở ra cơ hội giải ngân 4 nhóm ngành đang “hút tiền” | [Xem Link](https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn) |
-| **STB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vietcap: Hệ sinh thái Vingroup chiếm gần 10% tổng dư nợ của Sacombank | [Xem Link](https://cafef.vn/vietcap-he-sinh-thai-vingroup-chiem-gan-10-tong-du-no-cua-sacombank-188261110144327636.chn) |
 | **VCB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | "Ông lớn" ngân hàng Nhật Bản tiếp tục rót thêm tiền vào Vietcombank | [Xem Link](https://cafef.vn/ong-lon-ngan-hang-nhat-ban-tiep-tuc-rot-them-tien-vao-vietcombank-188261110142614911.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Linh hoạt các giải pháp ổn định tỷ giá | [Xem Link](https://cafef.vn/linh-hoat-cac-giai-phap-on-dinh-ty-gia-18826111013535336.chn) |
 | **STB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê | [Xem Link](https://cafef.vn/nhnn-co-dong-thai-moi-voi-325-co-phan-sacombank-lien-quan-ong-tram-be-188261110105749137.chn) |

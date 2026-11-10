@@ -6,8 +6,8 @@
 
 ## 🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?
 - **Chỉ số S&P 500 & Chứng khoán Mỹ**: Tiếp tục xu hướng tích lũy, tâm lý giới đầu tư toàn cầu duy trì ổn định.
-- **Chỉ số Đô la Mỹ (DXY)**: Đang neo quanh mức **101.7**. Áp lực tỷ giá USD/VND đang được NHNN (SBV) kiểm soát chặt chẽ thông qua các công cụ điều tiết linh hoạt.
-- **Giá Dầu thô WTI**: Ở mức **$86.11/thùng**. Tác động phân hóa tích cực lên nhóm cổ phiếu Dầu khí thượng nguồn (PVS, PVD).
+- **Chỉ số Đô la Mỹ (DXY)**: Đang neo quanh mức **101.51**. Áp lực tỷ giá USD/VND đang được NHNN (SBV) kiểm soát chặt chẽ thông qua các công cụ điều tiết linh hoạt.
+- **Giá Dầu thô WTI**: Ở mức **$84.58/thùng**. Tác động phân hóa tích cực lên nhóm cổ phiếu Dầu khí thượng nguồn (PVS, PVD).
 - **Thông điệp mở phiên ATO**: Nhà đầu tư tuyệt đối không mua đuổi giá xanh tím trong 15 phút mở phiên ATO. Hãy quan sát lực cung cầu thực tế sau 9h30 khi dòng tiền tổ chức nhập cuộc.
 
 ---

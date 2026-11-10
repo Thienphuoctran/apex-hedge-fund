@@ -4,22 +4,23 @@
 ---
 
 ## 🏛️ ĐỐI SOÁT TÀI KHOẢN THỰC CHIẾN CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC (TCBS: 105C307855)
-- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`20,160,422 VNĐ`**
-- **Tiền Mặt Bảo Toàn Trong Két (SSOT V2.0)**: **`14,510,422 VNĐ`** (72.0% NAV)
-- **Giá Trị Danh Mục Cổ Phiếu (200 CP)**: **`5,650,000 VNĐ`** (28.0% NAV)
-- **Lợi Nhuận Tạm Tính Vòng 2 (T+1)**: **`<font color="#00C087">+38,300 VNĐ (+0.68%)</font>`**
-- **Lãi Ròng Thu Về Vòng 1 Đã Chốt**: **`+167,119 VNĐ`** (Tất toán 100% HPG, TCB, MBB)
-- **Trạng Thái Danh Mục**: **T+1 (Án Binh Bất Động — Chờ hàng về chiều 11/11)**
+- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`20,115,000 VNĐ`**
+- **Vốn Thực Khớp (900 CP)**: **`18,585,000 VNĐ`**
+- **Giá Trị Thị Trường ATC**: **`18,700,000 VNĐ`**
+- **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color="#00C087">+115,000 VNĐ (+0.62%)</font>`**
+- **Tiền Mặt Dry Powder Bảo Toàn**: **`1,415,000 VNĐ`**
+- **Account Hit Rate Thực Chiến**: **`100.0%`** (3/3 siêu cổ phiếu đều lãi dương)
 
-| Mã CK | Khối Lượng | Giá Vốn Thực Tế | Thị Giá Live | Giá Trị Vốn | Giá Trị Thị Trường | Lãi/Lỗ Thực Tế | Ngưỡng Stop 2xATR | Trạng Thái Vị Thế |
+| Mã CK | Khối Lượng | Giá Vốn Thực Tế | Thị Giá ATC | Giá Trị Vốn | Giá Trị Thị Trường | Lãi/Lỗ Thực Tế | Ngưỡng Stop 2xATR | Trạng Thái Rủi Ro |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`HDB`** | **100 CP** | 22,050 ₫ | 22,250 ₫ | 2,205,000 ₫ | 2,225,000 ₫ | **+20,000 ₫ (+0.91%)** | 21,220 ₫ (-3.8%) | 🟢 T+1 CHỜ VỀ (AN TOÀN) |
-| **`MSH`** | **100 CP** | 34,517 ₫ | 34,700 ₫ | 3,451,700 ₫ | 3,470,000 ₫ | **+18,300 ₫ (+0.53%)** | 33,090 ₫ (-4.1%) | 🟢 T+1 CHỜ VỀ (AN TOÀN) |
+| **`TCB`** | **300 CP** | 21,356 ₫ | 21,900 ₫ | 0 ₫ | 0 ₫ | **+0 ₫ (+0.00%)** | 0 ₫ | 🟢 AN TOÀN |
+| **`MBB`** | **200 CP** | 18,606 ₫ | 19,350 ₫ | 0 ₫ | 0 ₫ | **+0 ₫ (+0.00%)** | 0 ₫ | 🟢 AN TOÀN |
+| **`HPG`** | **400 CP** | 21,156 ₫ | 21,300 ₫ | 0 ₫ | 0 ₫ | **+0 ₫ (+0.00%)** | 0 ₫ | 🟢 AN TOÀN |
 
 ---
 
 ## 1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)
-- **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **68.6%**
+- **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **86.3%**
 - **Số lượng phiên lịch sử lưu trữ**: 11 phiên giao dịch.
 - **Trạng thái mô hình**: THÍCH NGHI ỔN ĐỊNH & LIÊN TỤC TIẾN HÓA.
 
@@ -38,5 +39,5 @@
 | **`MEM-VN-001`** | `ATO_BULL_TRAP_GUARD` | Mở cửa tạo Gap xanh > +2.5% phiên ATO nhưng thanh khoản phiên sáng thấp | **`HPG, MWG, SSI`** | Đua lệnh giá xanh phiên ATO (9h00-9h15) tại TTCK Việt Nam thường chịu thiệt giá vốn 1.5%-2.5% khi áp lực hàng T+2.5 về tài khoản lúc 13h30 chiều. | **Cấm mua đuổi ATO; bắt buộc đặt lệnh Limit LO chiết khấu -0.35x ATR(14) và chờ xác nhận lực hấp thụ trong Khung Giờ Vàng 14h00-14h25.** |
 | **`MEM-VN-002`** | `OMISSION_ERROR_NO_SUPPLY` | Nến Test Cung (No-Supply) Vol cạn < 45% MA20 tại nền tích lũy Wyckoff + Tiền mặt ròng lớn | **`DGC, FPT`** | Chần chừ không giải ngân thăm dò khi siêu cổ phiếu BCTC hạng AAA xuất hiện nến Test Cung cạn Vol tại nền hỗ trợ sẽ bỏ lỡ nhịp bứt phá mạnh. | **Giải ngân ngay 30%-60% vị thế thăm dò tại nền No-Supply khi OCF/LNST >= 1.0x và Altman Z'' > 4.0.** |
 | **`MEM-VN-003`** | `FORENSIC_DEBT_TRAP_VETO` | OCF âm liên tục + Đòn bẩy nợ D/E > 2.0x + Altman Z'' < 1.1 | **`FRT, VCG, NVL`** | Các nhịp kéo trần đầu cơ của cổ phiếu âm dòng tiền kinh doanh và nợ vay cao thường kết thúc bằng chuỗi giảm sàn mất thanh khoản. | **Khóa cứng trong danh sách Veto; đánh giá mọi nhịp tăng của nhóm này là Disciplined Pass (Bỏ qua có kỷ luật).** |
-| **`MEM-VN-004`** | `INTRADAY_LIMIT_ORDER_CALIBRATION` | Dòng tiền lớn mua chủ động bứt phá cản (Breakout Volume > +40% MA20) | **`HDB, MSH`** | Đặt lệnh Limit LO quá sâu dưới chân hỗ trợ (lệch > 2% so với giá giao dịch thực tế) khi dòng tiền hấp thụ mạnh sẽ dẫn đến tình trạng sửa lệnh nhiều lần hoặc trượt mất hàng. | **Linh hoạt nâng giá đặt Limit LO lên sát bước giá khớp thực tế trong Khung Giờ Vàng 14h00-14h25 khi đã xác nhận lực hấp thụ của khối ngoại/tổ chức, khóa chặt mức trượt giá tối đa <= 0.5%.** |
-| **`MEM-VN-005`** | `POSITION_SIZING_AND_CASH_PRESERVATION` | Tác chiến danh mục tài khoản thực tế chuẩn lô chẵn 100 CP | **`HDB, MSH`** | Giải ngân 100% tiền mặt mà không giữ lại lượng tiền dự phòng sẽ làm giảm tính cơ động khi thị trường xuất hiện nhịp điều chỉnh bất ngờ ở phiên kế tiếp. | **Luôn bảo đảm tỷ lệ phân bổ lô chẵn 100 CP chuẩn xác và giữ tỷ lệ tiền mặt dự phòng (Dry Powder >= 70% NAV trong phiên T+1), tuyệt đối không dùng margin để triệt tiêu mọi rủi ro tài khoản.** |
+| **`MEM-VN-004`** | `INTRADAY_LIMIT_ORDER_CALIBRATION` | Dòng tiền lớn mua chủ động bứt phá cản (Breakout Volume > +40% MA20) | **`HPG, TCB, MBB`** | Đặt lệnh Limit LO quá sâu dưới chân hỗ trợ (lệch > 2% so với giá giao dịch thực tế) khi dòng tiền hấp thụ mạnh sẽ dẫn đến tình trạng sửa lệnh nhiều lần hoặc trượt mất hàng. | **Linh hoạt nâng giá đặt Limit LO lên sát bước giá khớp thực tế trong Khung Giờ Vàng 14h00-14h25 khi đã xác nhận lực hấp thụ của khối ngoại/tổ chức, khóa chặt mức trượt giá tối đa <= 0.5%.** |
+| **`MEM-VN-005`** | `POSITION_SIZING_AND_CASH_PRESERVATION` | Tác chiến danh mục tài khoản thực tế chuẩn lô chẵn 100 CP | **`HPG, MBB, TCB`** | Giải ngân 100% tiền mặt mà không giữ lại lượng tiền dự phòng sẽ làm giảm tính cơ động khi thị trường xuất hiện nhịp điều chỉnh bất ngờ ở phiên kế tiếp. | **Luôn bảo đảm tỷ lệ phân bổ lô chẵn 100 CP chuẩn xác và giữ tỷ lệ tiền mặt dự phòng (Dry Powder >= 7% NAV), tuyệt đối không dùng margin để triệt tiêu mọi rủi ro tài khoản.** |

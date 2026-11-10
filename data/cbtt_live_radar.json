@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-10T08:38:41.567917+00:00",
+  "timestamp_utc": "2026-11-10T08:59:10.918662+00:00",
   "scan_date": "2026-11-10",
   "total_us_filings_count": 356,
   "total_vn_announcements_count": 45,
@@ -306,7 +306,7 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/petrolimex-tung-lon-gap-doi-mb-nay-bang-1-4-vinamilk-tung-gap-15-lan-vingroup-nay-bang-1-16-10-nam-viet-lai-ban-do-ty-do-tren-ttck-188261109224125049.chn",
-      "total_announcements": 7
+      "total_announcements": 8
     },
     "GAS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -348,14 +348,6 @@
       "source_url": "https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn",
       "total_announcements": 3
     },
-    "STB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Vietcap: Hệ sinh thái Vingroup chiếm gần 10% tổng dư nợ của Sacombank",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 14:45:00 +0700",
-      "source_url": "https://cafef.vn/vietcap-he-sinh-thai-vingroup-chiem-gan-10-tong-du-no-cua-sacombank-188261110144327636.chn",
-      "total_announcements": 3
-    },
     "VCB": {
       "latest_event_type": "ESOP_PHAT_HANH",
       "latest_title": "\"Ông lớn\" ngân hàng Nhật Bản tiếp tục rót thêm tiền vào Vietcombank",
@@ -371,6 +363,14 @@
       "published_at": "Tue, 10 Nov 26 13:53:00 +0700",
       "source_url": "https://cafef.vn/linh-hoat-cac-giai-phap-on-dinh-ty-gia-18826111013535336.chn",
       "total_announcements": 3
+    },
+    "STB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 26 11:33:00 +0700",
+      "source_url": "https://cafef.vn/nhnn-co-dong-thai-moi-voi-325-co-phan-sacombank-lien-quan-ong-tram-be-188261110105749137.chn",
+      "total_announcements": 2
     },
     "GMD": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4751,6 +4751,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "FPT"
+      ],
+      "title": "Phiên 10/11: Khối ngoại mua ròng mạnh tay gần 500 tỷ đồng, cổ phiếu nào được \"gom\" nhiều nhất?",
+      "summary": "Ở chiều ngược lại, FPT là cổ phiếu bị khối ngoại bán ròng mạnh nhất, với giá trị khoảng 88 tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/phien-10-11-khoi-ngoai-mua-rong-manh-tay-gan-500-ty-dong-co-phieu-nao-duoc-gom-nhieu-nhat-188261110152534078.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM",
         "SSI"
       ],
@@ -4868,18 +4880,6 @@
       "severity": "INFO",
       "published_at": "Mon, 09 Nov 26 10:37:00 +0700",
       "source_url": "https://cafef.vn/nhip-rung-lac-mo-ra-co-hoi-giai-ngan-4-nhom-nganh-dang-hut-tien-188261109103319843.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "STB"
-      ],
-      "title": "Vietcap: Hệ sinh thái Vingroup chiếm gần 10% tổng dư nợ của Sacombank",
-      "summary": "Theo báo cáo của Vietcap sau buổi gặp gỡ nhà đầu tư, dư nợ gắn với hệ sinh thái Vingroup tại Sacombank (STB) hiện chiếm gần 10% tổng dư nợ cho vay, trong đó phần cho vay trực tiếp khoảng 3-4%....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 14:45:00 +0700",
-      "source_url": "https://cafef.vn/vietcap-he-sinh-thai-vingroup-chiem-gan-10-tong-du-no-cua-sacombank-188261110144327636.chn"
     },
     {
       "market": "VIETNAM",
