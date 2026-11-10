@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10 09:32:30",
+  "generated_at": "2026-11-10 14:01:03",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -288,9 +288,9 @@
     {
       "market": "US_SEC_EDGAR",
       "symbol": "TSM",
-      "form_or_type": "SEC Form 4",
-      "date": "2026-11-09",
-      "headline": "Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100%",
+      "form_or_type": "SEC Form 6-K",
+      "date": "2026-11-10",
+      "headline": "Hồ sơ SEC MATERIAL_EVENT_8K đã kiểm chứng 100%",
       "is_portfolio_holding": true
     },
     {
@@ -375,11 +375,11 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
+      "symbol": "VND",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 10 Nov 26 1",
-      "headline": "Phiên 10/11: Khối ngoại mua ròng mạnh tay gần 500 tỷ đồng, cổ phiếu nào được \"gom\" nhiều nhất?",
-      "is_portfolio_holding": true
+      "headline": "Ngân hàng Nhà nước bơm thêm VND, chứng khoán bật tăng gần 29 điểm",
+      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 356 hồ sơ SEC & 44 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 362 hồ sơ SEC & 46 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
