@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-10T03:29:01.830289+00:00",
+  "timestamp_utc": "2026-11-10T04:24:41.718397+00:00",
   "scan_date": "2026-11-10",
   "total_us_filings_count": 356,
-  "total_vn_announcements_count": 44,
+  "total_vn_announcements_count": 43,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -324,22 +324,6 @@
       "source_url": "https://cafef.vn/pv-power-pow-bao-lai-vuot-6-lan-ke-hoach-nam-chi-sau-9-thang-nho-dau-188261108101433278.chn",
       "total_announcements": 1
     },
-    "BSR": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Nhà máy lọc hóa dầu đầu tiên của Việt Nam nâng mục tiêu lợi nhuận năm 2026 lên hơn 18.500 tỷ đồng, gấp 8,6 lần kế hoạch ban đầu",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/nha-may-loc-hoa-dau-dau-tien-cua-viet-nam-nang-muc-tieu-loi-nhuan-nam-2026-len-hon-18500-ty-dong-gap-86-lan-ke-hoach-ban-dau-188261107211140114.chn",
-      "total_announcements": 3
-    },
-    "HCM": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Người đàn ông chưa học hết phổ thông, từng bán vé số ở Tp.HCM vừa kiếm 4.700 tỷ đồng khi bán công ty cho tập đoàn Nhật Bản",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn",
-      "total_announcements": 10
-    },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Vợ chồng bầu Kiên vẫn đều đặn nhận hàng trăm tỷ đồng mỗi năm từ ACB",
@@ -356,6 +340,22 @@
       "source_url": "https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn",
       "total_announcements": 3
     },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Phát hiện 14 người nước ngoài nghi lừa đảo qua sàn chứng khoán ảo ở TP.HCM",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 26 11:29:00 +0700",
+      "source_url": "https://cafef.vn/phat-hien-14-nguoi-nuoc-ngoai-nghi-lua-dao-qua-san-chung-khoan-ao-o-tphcm-18826110910442747.chn",
+      "total_announcements": 10
+    },
+    "STB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê?",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 26 10:59:00 +0700",
+      "source_url": "https://cafef.vn/nhnn-co-dong-thai-moi-voi-325-co-phan-sacombank-lien-quan-ong-tram-be-188261110105749137.chn",
+      "total_announcements": 2
+    },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Nóng: Ngân hàng Nhà nước sẽ mua ngoại tệ giao ngay, bơm VND cho hệ thống ngân hàng vào thứ Hai và thứ Tư hằng tuần từ ngày 11/11",
@@ -363,14 +363,6 @@
       "published_at": "Mon, 09 Nov 26 20:03:00 +0700",
       "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-se-mua-ngoai-te-giao-ngay-bom-vnd-cho-he-thong-ngan-hang-vao-thu-hai-va-thu-tu-hang-tuan-tu-ngay-11-11-188261109200423359.chn",
       "total_announcements": 2
-    },
-    "STB": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "\"Cá mập\" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
-      "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
-      "total_announcements": 1
     },
     "CTG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -394,6 +386,14 @@
       "severity": "INFO",
       "published_at": "Thu, 05 Nov 2026 15:54:36 GMT",
       "source_url": "https://vneconomy.vn/khoi-ngoai-mua-rong-dot-bien-o-vix.htm",
+      "total_announcements": 1
+    },
+    "BSR": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Chủ nhà máy lọc dầu Dung Quất nâng mục tiêu lãi kỷ lục",
+      "severity": "INFO",
+      "published_at": "Mon, 09 Nov 2026 07:57:33 +0700",
+      "source_url": "https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-nang-muc-tieu-lai-ky-luc-5142212.html",
       "total_announcements": 1
     },
     "SSI": {
@@ -4767,30 +4767,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "BSR"
-      ],
-      "title": "Nhà máy lọc hóa dầu đầu tiên của Việt Nam nâng mục tiêu lợi nhuận năm 2026 lên hơn 18.500 tỷ đồng, gấp 8,6 lần kế hoạch ban đầu",
-      "summary": "Tổng Công ty Lọc hóa dầu Việt Nam (BSR) vừa điều chỉnh mạnh kế hoạch kinh doanh năm 2026, nâng mục tiêu lợi nhuận sau thuế lên 18.579 tỷ đồng, gấp 8,6 lần kế hoạch được phê duyệt hồi tháng 4....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/nha-may-loc-hoa-dau-dau-tien-cua-viet-nam-nang-muc-tieu-loi-nhuan-nam-2026-len-hon-18500-ty-dong-gap-86-lan-ke-hoach-ban-dau-188261107211140114.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Người đàn ông chưa học hết phổ thông, từng bán vé số ở Tp.HCM vừa kiếm 4.700 tỷ đồng khi bán công ty cho tập đoàn Nhật Bản",
-      "summary": "Không có bằng đại học, từng bán vé số, thuốc lá và đạp xe bán bút bi dạo, ông Cô Gia Thọ đã xây dựng Thiên Long thành doanh nghiệp văn phòng phẩm doanh thu hơn 4.000 tỷ đồng mỗi năm. Sau 45 năm khởi nghiệp, doanh nhân si...",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "PNJ"
       ],
       "title": "Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm",
@@ -4911,14 +4887,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "BSR"
+        "STB"
       ],
-      "title": "BSR tăng mạnh kế hoạch lợi nhuận năm 2026 lên gần 18.600 tỷ đồng",
-      "summary": "BSR vừa điều chỉnh tăng mạnh kế hoạch kinh doanh năm 2026, trong đó lợi nhuận sau thuế tăng từ 2.162 tỷ đồng lên 18.579 tỷ đồng, gấp 8,6 lần mục tiêu ban đầu....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 26 16:19:00 +0700",
-      "source_url": "https://cafef.vn/bsr-tang-manh-ke-hoach-loi-nhuan-nam-2026-len-gan-18600-ty-dong-188261108095036544.chn"
+      "title": "NHNN có động thái mới với 32,5% cổ phần Sacombank liên quan ông Trầm Bê?",
+      "summary": "Công ty Chứng khoán Vietcap vừa cập nhật báo cáo sau buổi gặp nhà đầu tư của Ngân hàng TMCP Sài Gòn Tài Lộc (Sacombank, mã STB)....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 26 10:59:00 +0700",
+      "source_url": "https://cafef.vn/nhnn-co-dong-thai-moi-voi-325-co-phan-sacombank-lien-quan-ong-tram-be-188261110105749137.chn"
     },
     {
       "market": "VIETNAM",
@@ -5063,6 +5039,18 @@
       "severity": "INFO",
       "published_at": "Fri, 06 Nov 26 20:11:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-toi-6-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261106073345843.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Một nhà thầu lớn sẽ thi công loạt hạng mục quan trọng tại tuyến metro gần 4 tỷ USD, dài 54km nối Bến Thành - Cần Giờ của tỷ phú Phạm Nhật Vượng",
+      "summary": "Sở Xây dựng TP.HCM vừa ban hành Quyết định số 3313/QĐ-SXD-KTVLXD, cấp giấy phép hoạt động xây dựng cho Công ty HH Tập đoàn Công trình Xây dựng Trung Quốc tham gia thi công một số hạng mục thuộc dự án tuyến đường sắt Bến ...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 26 11:05:00 +0700",
+      "source_url": "https://cafef.vn/mot-nha-thau-lon-se-thi-cong-loat-hang-muc-quan-trong-tai-tuyen-metro-gan-4-ty-usd-dai-54km-noi-ben-thanh-can-gio-cua-ty-phu-pham-nhat-vuong-188261110110233935.chn"
     },
     {
       "market": "VIETNAM",

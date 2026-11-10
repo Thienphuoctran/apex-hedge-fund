@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10 03:29:08",
+  "generated_at": "2026-11-10 04:24:50",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -375,10 +375,10 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "BSR",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Sun, 08 Nov 26 0",
-      "headline": "Nhà máy lọc hóa dầu đầu tiên của Việt Nam nâng mục tiêu lợi nhuận năm 2026 lên hơn 18.500 tỷ đồng, gấp 8,6 lần kế hoạch ban đầu",
+      "symbol": "PNJ",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Tue, 10 Nov 26 0",
+      "headline": "Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm",
       "is_portfolio_holding": false
     }
   ],
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 356 hồ sơ SEC & 44 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 356 hồ sơ SEC & 43 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
