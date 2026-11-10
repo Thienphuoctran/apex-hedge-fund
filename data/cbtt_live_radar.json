@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-10T02:40:42.936428+00:00",
+  "timestamp_utc": "2026-11-10T03:29:01.830289+00:00",
   "scan_date": "2026-11-10",
   "total_us_filings_count": 356,
-  "total_vn_announcements_count": 46,
+  "total_vn_announcements_count": 44,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -338,7 +338,7 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn",
-      "total_announcements": 12
+      "total_announcements": 10
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4791,18 +4791,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Tỷ phú Phạm Nhật Vượng xuất hiện tại siêu cảng dự kiến lắp 165 cần cẩu khổng lồ, hình thành 3 siêu dự án hơn 500.000 tỷ đồng quanh vịnh Gành Rái",
-      "summary": "Đứng tên chủ đầu tư khu đô thị lấn biển Cần Giờ hơn 217.000 tỷ đồng, tham gia liên danh thực hiện tuyến đường vượt biển hơn 93.000 tỷ đồng, một doanh nghiệp thuộc hệ sinh thái Vingroup tiếp tục xuất hiện trong tổ hợp cản...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/ty-phu-pham-nhat-vuong-xuat-hien-tai-sieu-cang-du-kien-lap-165-can-cau-khong-lo-hinh-thanh-3-sieu-du-an-hon-500000-ty-dong-quanh-vinh-ganh-rai-188261107221648411.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "PNJ"
       ],
       "title": "Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm",
@@ -5099,18 +5087,6 @@
       "severity": "INFO",
       "published_at": "Mon, 09 Nov 26 20:40:00 +0700",
       "source_url": "https://cafef.vn/chi-hon-8500-ty-dong-tphcm-muon-giai-quyet-con-rach-dang-o-nhiem-tram-trong-18826110919401525.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Nhà đất giấy tay ở TPHCM: Cơ hội nhận bồi thường 100%?",
-      "summary": "Đề xuất hỗ trợ từ 28% đến 100% giá đất bồi thường đối với các trường hợp mua bán nhà, đất bằng giấy tay tại TP.HCM được kỳ vọng tháo gỡ vướng mắc quyền lợi cho người dân, đồng thời khơi thông tiến độ giải phóng mặt bằng ...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 10:59:00 +0700",
-      "source_url": "https://cafef.vn/nha-dat-giay-tay-o-tphcm-co-hoi-nhan-boi-thuong-100-188261109101949552.chn"
     },
     {
       "market": "VIETNAM",

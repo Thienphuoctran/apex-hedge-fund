@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-10 02:40:42  
-> **Số sự kiện ghi nhận:** 46 thông báo  
+> **Thời gian quét:** 2026-11-10 03:29:01  
+> **Số sự kiện ghi nhận:** 44 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -13,7 +13,6 @@
 | **POW** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu? | [Xem Link](https://cafef.vn/pv-power-pow-bao-lai-vuot-6-lan-ke-hoach-nam-chi-sau-9-thang-nho-dau-188261108101433278.chn) |
 | **BSR** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Nhà máy lọc hóa dầu đầu tiên của Việt Nam nâng mục tiêu lợi nhuận năm 2026 lên hơn 18.500 tỷ đồng, gấp 8,6 lần kế hoạch ban đầu | [Xem Link](https://cafef.vn/nha-may-loc-hoa-dau-dau-tien-cua-viet-nam-nang-muc-tieu-loi-nhuan-nam-2026-len-hon-18500-ty-dong-gap-86-lan-ke-hoach-ban-dau-188261107211140114.chn) |
 | **HCM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Người đàn ông chưa học hết phổ thông, từng bán vé số ở Tp.HCM vừa kiếm 4.700 tỷ đồng khi bán công ty cho tập đoàn Nhật Bản | [Xem Link](https://cafef.vn/nguoi-dan-ong-chua-hoc-het-pho-thong-tung-ban-ve-so-o-tphcm-vua-kiem-4700-ty-dong-khi-ban-cong-ty-cho-tap-doan-nhat-ban-188261107212759181.chn) |
-| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Tỷ phú Phạm Nhật Vượng xuất hiện tại siêu cảng dự kiến lắp 165 cần cẩu khổng lồ, hình thành 3 siêu dự án hơn 500.000 tỷ đồng quanh vịnh Gành Rái | [Xem Link](https://cafef.vn/ty-phu-pham-nhat-vuong-xuat-hien-tai-sieu-cang-du-kien-lap-165-can-cau-khong-lo-hinh-thanh-3-sieu-du-an-hon-500000-ty-dong-quanh-vinh-ganh-rai-188261107221648411.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm | [Xem Link](https://cafef.vn/giam-doc-cap-cao-phu-trach-tai-chinh-cua-pnj-tu-nhiem-188261110080205957.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vợ chồng bầu Kiên vẫn đều đặn nhận hàng trăm tỷ đồng mỗi năm từ ACB | [Xem Link](https://cafef.vn/vo-chong-bau-kien-van-deu-dan-nhan-hang-tram-ty-dong-moi-nam-tu-acb-188261109230112292.chn) |
 | **DXG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhóm quỹ liên quan Dragon Capital quay trở lại ghế cổ đông lớn sau khi gom thêm 5 triệu cổ phiếu DXG | [Xem Link](https://cafef.vn/nhom-quy-lien-quan-dragon-capital-quay-tro-lai-ghe-co-dong-lon-sau-khi-gom-them-5-trieu-co-phieu-dxg-188261109175803857.chn) |
@@ -39,7 +38,6 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều tối 6/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-toi-6-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261106073345843.chn) |
 | **FPT** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Toàn cảnh cây cầu dây văng hơn 7.300 tỷ đồng ở Hà Nội: Trụ tháp hình cánh chim cao tương đương tòa nhà 25 tầng, nằm gần loạt dự án của Vingroup, Sunshine, FPT, dự kiến hoàn thành năm 2027 | [Xem Link](https://cafef.vn/toan-canh-cay-cau-day-vang-hon-7300-ty-dong-o-ha-noi-tru-thap-hinh-canh-chim-cao-tuong-duong-toa-nha-25-tang-nam-gan-loat-du-an-cua-vingroup-sunshine-fpt-du-kien-hoan-thanh-nam-2027-188261109210908703.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Chi hơn 8.500 tỷ đồng, TP.HCM muốn giải quyết con rạch đang ô nhiễm trầm trọng | [Xem Link](https://cafef.vn/chi-hon-8500-ty-dong-tphcm-muon-giai-quyet-con-rach-dang-o-nhiem-tram-trong-18826110919401525.chn) |
-| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Nhà đất giấy tay ở TPHCM: Cơ hội nhận bồi thường 100%? | [Xem Link](https://cafef.vn/nha-dat-giay-tay-o-tphcm-co-hoi-nhan-boi-thuong-100-188261109101949552.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | NAB gia nhập nhóm doanh nghiệp tỷ USD, PGV, LPS và GEL bị loại | [Xem Link](https://vneconomy.vn/nab-gia-nhap-nhom-doanh-nghiep-ty-usd-pgv-lps-va-gel-bi-loai.htm) |
 | **FPT, STB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | "Cá mập" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB | [Xem Link](https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm) |
 | **MBS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026 | [Xem Link](https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm) |
