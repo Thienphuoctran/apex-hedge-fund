@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-10 14:00:56  
-> **Số sự kiện ghi nhận:** 46 thông báo  
+> **Thời gian quét:** 2026-11-10 20:49:14  
+> **Số sự kiện ghi nhận:** 45 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -10,7 +10,7 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Petrolimex từng lớn gấp đôi MB nay bằng 1/4, Vinamilk từng gấp 1,5 lần Vingroup nay bằng 1/16: 10 năm viết lại bản đồ tỷ đô trên TTCK | [Xem Link](https://cafef.vn/petrolimex-tung-lon-gap-doi-mb-nay-bang-1-4-vinamilk-tung-gap-15-lan-vingroup-nay-bang-1-16-10-nam-viet-lai-ban-do-ty-do-tren-ttck-188261109224125049.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Từ nhà khoa học đến Chủ tịch FPT, ông Trương Gia Bình trao 1 triệu USD cho người trẻ: “Hãy thành công hơn FPT” | [Xem Link](https://cafef.vn/tu-nha-khoa-hoc-den-chu-tich-fpt-ong-truong-gia-binh-trao-1-trieu-usd-cho-nguoi-tre-hay-thanh-cong-hon-fpt-188261109150349201.chn) |
 | **GAS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ | [Xem Link](https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng | [Xem Link](https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn) |
+| **ACB** | `CO_TUC` | ⚠️ CHÚ Ý | Bất ngờ: Chủ tịch Trần Hùng Huy nhận tiền cổ tức từ ACB ít hơn vợ chồng bầu Kiên | [Xem Link](https://cafef.vn/bat-ngo-chu-tich-tran-hung-huy-nhan-tien-co-tuc-tu-acb-it-hon-vo-chong-bau-kien-188261110160054803.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngân hàng Nhà nước bơm thêm VND, chứng khoán bật tăng gần 29 điểm | [Xem Link](https://cafef.vn/ngan-hang-nha-nuoc-bom-them-vnd-chung-khoan-bat-tang-gan-29-diem-188261110164611689.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Phiên 10/11: Khối ngoại mua ròng mạnh tay gần 500 tỷ đồng, cổ phiếu nào được "gom" nhiều nhất? | [Xem Link](https://cafef.vn/phien-10-11-khoi-ngoai-mua-rong-manh-tay-gan-500-ty-dong-co-phieu-nao-duoc-gom-nhieu-nhat-188261110152534078.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm | [Xem Link](https://cafef.vn/giam-doc-cap-cao-phu-trach-tai-chinh-cua-pnj-tu-nhiem-188261110080205957.chn) |
@@ -19,7 +19,7 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | PNJ "thủng đáy" | [Xem Link](https://cafef.vn/pnj-thung-day-188261109161416223.chn) |
 | **MBS** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | MBS dự báo lợi nhuận năm 2026 của loạt doanh nghiệp “hot”, một ông lớn có thể tăng hơn 100% | [Xem Link](https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn) |
 | **FPT** | `CO_TUC` | ⚠️ CHÚ Ý | FPT Telecom sắp phát hành hơn 110 triệu cổ phiếu thưởng cho cổ đông | [Xem Link](https://cafef.vn/fpt-telecom-sap-phat-hanh-hon-110-trieu-co-phieu-thuong-cho-co-dong-188261109144524706.chn) |
-| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thống đốc tỉnh của Nhật Bản cảm ơn FPT vì một quyết định ý nghĩa | [Xem Link](https://cafef.vn/thong-doc-tinh-cua-nhat-ban-cam-on-fpt-vi-mot-quyet-dinh-y-nghia-188261109145035775.chn) |
+| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 11/11, gửi 100 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-11-11-gui-100-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261110223643707.chn) |
 | **VCB** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | "Ông lớn" ngân hàng Nhật Bản tiếp tục rót thêm tiền vào Vietcombank | [Xem Link](https://cafef.vn/ong-lon-ngan-hang-nhat-ban-tiep-tuc-rot-them-tien-vao-vietcombank-188261110142614911.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Linh hoạt các giải pháp ổn định tỷ giá | [Xem Link](https://cafef.vn/linh-hoat-cac-giai-phap-on-dinh-ty-gia-18826111013535336.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | ACB nhận 6 giải thưởng từ Visa, nổi bật về thanh toán và tăng trưởng đa phân khúc | [Xem Link](https://cafef.vn/acb-nhan-6-giai-thuong-tu-visa-noi-bat-ve-thanh-toan-va-tang-truong-da-phan-khuc-188261109214424383.chn) |
@@ -31,7 +31,6 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 8/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng so với cuối tuần trước | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-8-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-so-voi-cuoi-tuan-truoc-188261108083025831.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tỷ giá USD/VND có thêm yếu tố hỗ trợ trong những tháng cuối năm | [Xem Link](https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 8/11, gửi dưới 1 tỷ đồng kỳ hạn 1 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-8-11-gui-duoi-1-ty-dong-ky-han-1-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261107214517163.chn) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng tối 7/11 tại SJC, PNJ, Bảo Tín Minh Châu, DOJI và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-7-11-tai-sjc-pnj-bao-tin-minh-chau-doji-va-bao-tin-manh-hai-188261107073236839.chn) |
 | **HCM** | `CANH_BAO_RUI_RO` | 🔴 RED FLAG | Đề xuất buộc nhà đầu tư nộp lại tiền thu từ xây dựng sai phép, thay thế tháo dỡ | [Xem Link](https://cafef.vn/de-xuat-buoc-nha-dau-tu-nop-lai-tien-thu-tu-xay-dung-sai-phep-thay-the-thao-do-188261110204831207.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chốt ngày đấu giá trực tuyến 3.790 căn hộ Thủ Thiêm trên hệ thống Bộ Công an | [Xem Link](https://cafef.vn/chot-ngay-dau-gia-truc-tuyen-3790-can-ho-thu-thiem-tren-he-thong-bo-cong-an-188261110202948598.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP.HCM đấu giá 5 lô đất trong 30 phút, khách đấu giá cần đặt cọc trước hơn 3.600 tỷ đồng | [Xem Link](https://cafef.vn/tphcm-dau-gia-5-lo-dat-trong-30-phut-khach-dau-gia-can-dat-coc-truoc-hon-3600-ty-dong-188261110202209535.chn) |
