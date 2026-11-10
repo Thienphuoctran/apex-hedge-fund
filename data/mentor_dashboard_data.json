@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T01:36:26.004065+00:00",
+  "updated_at": "2026-11-10T02:02:44.550702+00:00",
   "briefing_date": "2026-11-10",
   "vix_value": 19.92,
   "vn_localization": {
@@ -910,8 +910,8 @@
       "ban4_verdict": "HOLD & WATCH (Quan sát)",
       "entry_zone": "$40.55 – $41.59",
       "tp1_price": 45.46,
-      "tp2_price": 46.03,
-      "rr_ratio": 2.28,
+      "tp2_price": 46.02,
+      "rr_ratio": 2.27,
       "socratic_question": "Giá NVO ($41.38) hiện đang nằm dưới đường xu hướng dài hạn MA200 ($43.7). Dựa trên điểm sức khỏe Piotroski F-Score (8/9) và EVA Spread (25.85%), đây là cơ hội bắt đáy giá trị hay bẫy giá trị (Value Trap)?",
       "paper_trade_cmd": "python scripts/paper_trading_simulator.py buy --symbol NVO --shares 10 --type Core"
     },

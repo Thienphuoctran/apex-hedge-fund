@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-10T01:36:53.147175+00:00",
+  "generated_at_utc": "2026-11-10T02:03:25.937134+00:00",
   "trading_date": "2026-11-10",
   "previous_date_compared": "2026-11-09",
   "specialist_profile": {
@@ -20,7 +20,7 @@
     {
       "department": "Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)",
       "verdict": "CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)",
-      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 24.12 xuống 19.92 (-8.18%), Dầu WTI dịu từ $89.67 xuống $86.21, US10Y ổn định ở 4.86%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
+      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 24.12 xuống 19.92 (-8.18%), Dầu WTI dịu từ $89.67 xuống $86.03, US10Y ổn định ở 4.86%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
       "specialist_takeaway": "Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve)."
     },
     {
@@ -56,7 +56,7 @@
   ],
   "yesterday_post_mortem": {
     "compared_period": "2026-11-09 -> 2026-11-10",
-    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 24.12 xuống 19.92 (-8.18%), Dầu WTI dịu từ $89.67 về $86.21, US10Y ở 4.86%.",
+    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 24.12 xuống 19.92 (-8.18%), Dầu WTI dịu từ $89.67 về $86.03, US10Y ở 4.86%.",
     "validated_wins": [
       {
         "category": "Thắng lợi Nhóm Trụ cột Tăng trưởng & Dầu khí (Core Winners)",
@@ -264,14 +264,14 @@
       "altman_z_score": 5.16,
       "eva_spread_pct": 15.61,
       "true_fcf_ex_sbc_bil": 10.72,
-      "sec_edgar_badge": "SEC EDGAR: Form 144 (2026-11-09)",
+      "sec_edgar_badge": "SEC EDGAR: Form 4 (2026-11-05)",
       "win_prob_pct": 84.0,
       "reward_risk_ratio": 2.79,
       "tp2_reward_risk_ratio": 3.0,
       "expected_value_pct": 8.39,
       "days_to_earnings": 72,
       "market_events_and_catalysts": "Chi phí nguyên vật liệu đầu vào (bột giấy, nhựa, dầu thực vật) đang hạ nhiệt giúp mở rộng biên lợi nhuận gộp lên 51.4%. Nhịp lùi -1.00% hôm nay do VIX hạ nhiệt kích hoạt đúng bài học tối ưu giá vốn của Alex hôm qua.",
-      "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `87.1/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+15.61%` • True FCF ex-SBC: `$10.72B` • Altman Z: `5.16` • Lynch PEG: `4.25x` • SEC EDGAR: Form 144 (2026-11-09)]** — Sở hữu danh mục thương hiệu tiêu dùng thiết yếu toàn cầu (Gillette, Tide, Pampers) có khả năng chuyển giá cho người tiêu dùng. FCF dồi dào +$15.97B USD, Insider mua ròng, đóng vai trò mỏ neo giảm thiểu tối đa biến động danh mục.",
+      "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `87.1/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+15.61%` • True FCF ex-SBC: `$10.72B` • Altman Z: `5.16` • Lynch PEG: `4.25x` • SEC EDGAR: Form 4 (2026-11-05)]** — Sở hữu danh mục thương hiệu tiêu dùng thiết yếu toàn cầu (Gillette, Tide, Pampers) có khả năng chuyển giá cho người tiêu dùng. FCF dồi dào +$15.97B USD, Insider mua ròng, đóng vai trò mỏ neo giảm thiểu tối đa biến động danh mục.",
       "how_to_optimize_profit": "Khớp 60% vùng $161.57 và hứng trọn 40% tại lệnh Limit chiết khấu $160.43. Chốt lời TP1 tại $174.55 (+8.0%) và TP2 tại $181.04 (+12.0%). Cắt lỗ Stop 2xATR tại $155.08 (-4.02%).",
       "max_nav_risk_if_stopped_pct": 0.294,
       "inviolable_gate_checks": {

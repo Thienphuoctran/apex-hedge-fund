@@ -196,7 +196,7 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 - **Tệp biên bản chi tiết**: `05_Learning_And_Evolution/2026-11-09_Departmental_Self_Criticism_Report.md`
 ---
 ## [Phiên Giao Dịch: 2026-11-10] — Tiến Hóa Mô Hình v5.0 & Kiểm Toán Walk-Forward
-- **Chế độ Vĩ mô**: VIX = 19.92 | Dầu WTI = $86.21 | US10Y = 4.86%.
+- **Chế độ Vĩ mô**: VIX = 19.92 | Dầu WTI = $86.03 | US10Y = 4.86%.
 - **Trọng số Chấm điểm Thích nghi (Tổng 100%)**: Vĩ mô `25%` | BCTC/FCF `30%` | Định giá `25%` | Kỹ thuật `20%`.
 - **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `NVDA (7d)` (chuyển sang `Locked Earnings Watchlist`).
 - **Realized Alpha vs S&P 500**: 1D `-1.52%` | 5D `-0.03%` | 20D `+6.83%`.
