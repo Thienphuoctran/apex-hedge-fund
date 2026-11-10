@@ -31,6 +31,12 @@ SYNC_LEDGER_FILE = DATA_DIR / "palmer_antigravity_bilateral_sync.json"
 LIVE_BRIEFING_FILE = DATA_DIR / "palmer_live_briefing.json"
 LIVE_BRIEFING_MD = DATA_DIR / "palmer_live_briefing.md"
 
+TRO_LI_DIR = Path(r"c:\Users\phuoc\Downloads\antigravity\Trợ lí cá nhân")
+TRO_LI_DATA_DIR = TRO_LI_DIR / "data"
+TRO_LI_SYNC_JSON = TRO_LI_DATA_DIR / "james_live_sync_for_palmer.json"
+TRO_LI_SYNC_MD = TRO_LI_DATA_DIR / "james_live_sync_for_palmer.md"
+TRO_LI_MEMORY_MD = TRO_LI_DIR / "MEMORY.md"
+
 
 class PalmerAntigravitySyncBridge:
     """Cầu nối đồng bộ 2 chiều thời gian thực giữa Antigravity và Palmer."""
@@ -315,8 +321,60 @@ class PalmerAntigravitySyncBridge:
 """
             with open(LIVE_BRIEFING_MD, "w", encoding="utf-8") as f:
                 f.write(content)
+
+            # Đồng bộ trực tiếp sang phòng làm việc của Palmer (Trợ lí cá nhân)
+            if TRO_LI_DIR.exists():
+                try:
+                    TRO_LI_DATA_DIR.mkdir(parents=True, exist_ok=True)
+                    with open(TRO_LI_SYNC_JSON, "w", encoding="utf-8") as f:
+                        json.dump(data, f, indent=2, ensure_ascii=False)
+                    with open(TRO_LI_SYNC_MD, "w", encoding="utf-8") as f:
+                        f.write(content)
+                    cls._sync_to_tro_li_memory(data)
+                except Exception as _e_tr:
+                    print(f"[!] Lỗi đồng bộ sang Trợ lí cá nhân: {_e_tr}")
         except Exception as e:
             print(f"[!] Lỗi xuất Markdown briefing: {e}")
+
+    @classmethod
+    def _sync_to_tro_li_memory(cls, data: Dict[str, Any]) -> None:
+        if not TRO_LI_MEMORY_MD.exists():
+            return
+        try:
+            mem_content = TRO_LI_MEMORY_MD.read_text(encoding="utf-8")
+            snap = data.get("portfolio_snapshot", {})
+            pos = snap.get("positions", {})
+            dirs = data.get("directives_for_palmer_responses", {})
+
+            section_header = "## 6. SỔ CÁI ĐỒNG BỘ DỮ LIỆU TỨC THỜI TỪ MASTER CIO JAMES (INTER-CHAT SYNC)"
+            pos_bullets = []
+            for sym, p in pos.items():
+                pos_bullets.append(f"• **{sym}**: {p.get('shares')} CP | Giá vốn: {p.get('entry_price'):,.0f} ₫ | Thị giá: {p.get('current_price'):,.0f} ₫ | PnL: {p.get('pnl_vnd'):+,.0f} ₫ (T+1)")
+            pos_str = "\n".join(pos_bullets) if pos_bullets else "• 100% Tiền mặt"
+
+            sync_block = f"""{section_header}
+> [!IMPORTANT]
+> **Dữ liệu sống từ phòng chat Chứng khoán của Master CIO James (Cập nhật: {data.get('last_updated')})**:
+> - **Tài khoản TCBS**: `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
+> - **Tổng NAV**: `{snap.get('total_nav_vnd', 20160422):,.0f} ₫` | **Tiền mặt**: `{snap.get('cash_vnd', 14510422):,.0f} ₫` (72.0% Cash) | **Cổ phiếu**: `{snap.get('stock_market_val_vnd', 5650000):,.0f} ₫`
+> - **Vị thế nắm giữ (Ngày T+1)**:
+{pos_str}
+> - **Chỉ thị tác chiến của James**:
+>   * BSR & BAF: {dirs.get('regarding_bsr_baf')}
+>   * HDB & MSH: {dirs.get('regarding_hdb_msh')}
+>   * Kế hoạch tuần: {dirs.get('regarding_weekly_plan')}
+>   * Yêu cầu gần nhất của Chủ tịch: _{data.get('latest_user_request')}_
+>   * Quyết định của James: {data.get('latest_response_summary')}
+"""
+            if section_header in mem_content:
+                parts = mem_content.split(section_header)
+                mem_content = parts[0].rstrip() + "\n\n" + sync_block
+            else:
+                mem_content = mem_content.rstrip() + "\n\n---\n\n" + sync_block
+
+            TRO_LI_MEMORY_MD.write_text(mem_content, encoding="utf-8")
+        except Exception as e:
+            print(f"[!] Lỗi cập nhật Trợ lí cá nhân MEMORY.md: {e}")
 
 
 if __name__ == "__main__":
