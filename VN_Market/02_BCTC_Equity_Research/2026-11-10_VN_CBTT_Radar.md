@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-10 05:22:17  
+> **Thời gian quét:** 2026-11-10 06:20:16  
 > **Số sự kiện ghi nhận:** 45 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng | [Xem Link](https://cafef.vn/chu-tich-fedex-chau-a-thai-binh-duong-o-singapore-toi-mat-45-phut-tu-san-bay-ve-nha-nhung-o-tphcm-45-phut-chi-du-de-xep-hang-188261110130357227.chn) |
 | **ACB** | `CO_TUC` | ⚠️ CHÚ Ý | Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ | [Xem Link](https://cafef.vn/sau-14-nam-gia-dinh-bau-kien-van-so-huu-hon-10-ngan-hang-acb-tri-gia-tren-12000-ty-dong-he-lo-me-vo-dai-gia-nhan-vat-bi-an-va-khoan-co-tuc-hang-tram-ty-188261110120013802.chn) |
 | **REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thái Lan thâu tóm 80% vốn của 1 công ty công nghệ Việt Nam, cũng là nhà phân phối cấp 2 của Microsoft | [Xem Link](https://cafef.vn/thai-lan-thau-tom-80-von-cua-1-cong-ty-cong-nghe-viet-nam-cung-la-nha-phan-phoi-cap-2-cua-microsoft-188261110074553656.chn) |
 | **DXG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tỷ phú Bill Gates bất ngờ mua thêm 200.000 cổ phiếu một công ty bất động sản Việt Nam | [Xem Link](https://cafef.vn/ty-phu-bill-gates-bat-ngo-mua-them-200000-co-phieu-mot-cong-ty-bat-dong-san-viet-nam-188261109233549925.chn) |
@@ -11,7 +12,6 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Từ nhà khoa học đến Chủ tịch FPT, ông Trương Gia Bình trao 1 triệu USD cho người trẻ: “Hãy thành công hơn FPT” | [Xem Link](https://cafef.vn/tu-nha-khoa-hoc-den-chu-tich-fpt-ong-truong-gia-binh-trao-1-trieu-usd-cho-nguoi-tre-hay-thanh-cong-hon-fpt-188261109150349201.chn) |
 | **GAS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ | [Xem Link](https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng | [Xem Link](https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn) |
-| **POW** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu? | [Xem Link](https://cafef.vn/pv-power-pow-bao-lai-vuot-6-lan-ke-hoach-nam-chi-sau-9-thang-nho-dau-188261108101433278.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm | [Xem Link](https://cafef.vn/giam-doc-cap-cao-phu-trach-tai-chinh-cua-pnj-tu-nhiem-188261110080205957.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vợ chồng bầu Kiên vẫn đều đặn nhận hàng trăm tỷ đồng mỗi năm từ ACB | [Xem Link](https://cafef.vn/vo-chong-bau-kien-van-deu-dan-nhan-hang-tram-ty-dong-moi-nam-tu-acb-188261109230112292.chn) |
 | **DXG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhóm quỹ liên quan Dragon Capital quay trở lại ghế cổ đông lớn sau khi gom thêm 5 triệu cổ phiếu DXG | [Xem Link](https://cafef.vn/nhom-quy-lien-quan-dragon-capital-quay-tro-lai-ghe-co-dong-lon-sau-khi-gom-them-5-trieu-co-phieu-dxg-188261109175803857.chn) |

@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-10T05:22:17.448377+00:00",
+  "timestamp_utc": "2026-11-10T06:20:16.979129+00:00",
   "scan_date": "2026-11-10",
   "total_us_filings_count": 356,
   "total_vn_announcements_count": 45,
@@ -276,6 +276,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 9
     },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 26 13:03:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-fedex-chau-a-thai-binh-duong-o-singapore-toi-mat-45-phut-tu-san-bay-ve-nha-nhung-o-tphcm-45-phut-chi-du-de-xep-hang-188261110130357227.chn",
+      "total_announcements": 11
+    },
     "ACB": {
       "latest_event_type": "CO_TUC",
       "latest_title": "Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ",
@@ -324,14 +332,6 @@
       "source_url": "https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn",
       "total_announcements": 6
     },
-    "POW": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu?",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 26 12:14:00 +0700",
-      "source_url": "https://cafef.vn/pv-power-pow-bao-lai-vuot-6-lan-ke-hoach-nam-chi-sau-9-thang-nho-dau-188261108101433278.chn",
-      "total_announcements": 1
-    },
     "MBS": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
       "latest_title": "MBS dự báo lợi nhuận năm 2026 của loạt doanh nghiệp “hot”, một ông lớn có thể tăng hơn 100%",
@@ -339,14 +339,6 @@
       "published_at": "Mon, 09 Nov 26 15:24:00 +0700",
       "source_url": "https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn",
       "total_announcements": 3
-    },
-    "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Phát hiện 14 người nước ngoài nghi lừa đảo qua sàn chứng khoán ảo ở TP.HCM",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 11:29:00 +0700",
-      "source_url": "https://cafef.vn/phat-hien-14-nguoi-nuoc-ngoai-nghi-lua-dao-qua-san-chung-khoan-ao-o-tphcm-18826110910442747.chn",
-      "total_announcements": 10
     },
     "STB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4691,6 +4683,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng",
+      "summary": "Từ khoảng 200 lên gần 600 nhân viên chỉ trong một năm, cùng với đó là 42 chuyến bay đi và đến Việt Nam, FedEx đang tăng tốc tại một trong những thị trường mà hãng coi là trọng điểm tăng trưởng toàn cầu. Nhưng theo ông Sa...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 26 13:03:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-fedex-chau-a-thai-binh-duong-o-singapore-toi-mat-45-phut-tu-san-bay-ve-nha-nhung-o-tphcm-45-phut-chi-du-de-xep-hang-188261110130357227.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "ACB"
       ],
       "title": "Sau 14 năm, gia đình bầu Kiên vẫn sở hữu hơn 10% ngân hàng ACB, trị giá trên 12.000 tỷ đồng: Hé lộ mẹ vợ đại gia, nhân vật bí ẩn và khoản cổ tức hàng trăm tỷ",
@@ -4771,18 +4775,6 @@
       "severity": "INFO",
       "published_at": "Mon, 09 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/tien-sy-quan-tri-kinh-doanh-sn-1970-hai-lan-tu-xay-co-ngoi-tai-viet-nam-roi-ban-cho-an-do-nhat-ban-thu-ve-hang-nghin-ty-dong-188261108120608774.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "POW"
-      ],
-      "title": "PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu?",
-      "summary": "Tổng Công ty Điện lực Dầu khí Việt Nam (PV Power, HOSE: POW) ghi nhận lợi nhuận sau thuế gần 6.900 tỷ đồng trong 9 tháng đầu năm 2026, tăng hơn 3 lần so với cùng kỳ. Đáng chú ý, lợi nhuận đã vượt 6 lần kế hoạch năm, nhờ ...",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 26 12:14:00 +0700",
-      "source_url": "https://cafef.vn/pv-power-pow-bao-lai-vuot-6-lan-ke-hoach-nam-chi-sau-9-thang-nho-dau-188261108101433278.chn"
     },
     {
       "market": "VIETNAM",

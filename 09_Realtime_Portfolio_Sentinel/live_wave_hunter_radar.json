@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10 05:22:24",
+  "generated_at": "2026-11-10 06:20:24",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Tue, 10 Nov 26 1",
+      "headline": "Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "ACB",
       "form_or_type": "CO_TUC",
       "date": "Tue, 10 Nov 26 1",
@@ -371,14 +379,6 @@
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Mon, 09 Nov 26 0",
       "headline": "Cựu sinh viên đại học Bách khoa xây dựng 2 thương hiệu tiêu dùng vạn người mê, lần lượt bán lại cho Ấn Độ, Nhật Bản thu về hàng nghìn tỷ đồng",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "POW",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Sun, 08 Nov 26 1",
-      "headline": "PV Power (POW) báo lãi vượt 6 lần kế hoạch năm chỉ sau 9 tháng, nhờ đâu?",
       "is_portfolio_holding": false
     }
   ],
