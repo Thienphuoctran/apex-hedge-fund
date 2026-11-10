@@ -30,7 +30,9 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 SYNC_LEDGER_FILE = DATA_DIR / "palmer_antigravity_bilateral_sync.json"
 LIVE_BRIEFING_FILE = DATA_DIR / "palmer_live_briefing.json"
 LIVE_BRIEFING_MD = DATA_DIR / "palmer_live_briefing.md"
+INTER_CHAT_STATE_MD = BASE_DIR / "00_LIVE_INTER_CHAT_STATE.md"
 
+PALMER_BRAIN_DIR = Path(r"C:\Users\phuoc\.gemini\antigravity\brain\434b15db-b27c-41bb-b475-10a5bdc513b3")
 TRO_LI_DIR = Path(r"c:\Users\phuoc\Downloads\antigravity\Trợ lí cá nhân")
 TRO_LI_DATA_DIR = TRO_LI_DIR / "data"
 TRO_LI_SYNC_JSON = TRO_LI_DATA_DIR / "james_live_sync_for_palmer.json"
@@ -321,6 +323,23 @@ class PalmerAntigravitySyncBridge:
 """
             with open(LIVE_BRIEFING_MD, "w", encoding="utf-8") as f:
                 f.write(content)
+
+            # Ghi ra thư mục gốc workspace Chứng khoán để mọi agent/chat đều nhìn thấy ngay
+            try:
+                with open(INTER_CHAT_STATE_MD, "w", encoding="utf-8") as f:
+                    f.write(content)
+            except Exception as _e_root:
+                print(f"[!] Lỗi ghi 00_LIVE_INTER_CHAT_STATE.md: {_e_root}")
+
+            # Ghi trực tiếp vào thư mục brain của đoạn chat Palmer (Tổng hệ thống)
+            if PALMER_BRAIN_DIR.exists():
+                try:
+                    with open(PALMER_BRAIN_DIR / "00_LIVE_INTER_CHAT_STATE.md", "w", encoding="utf-8") as f:
+                        f.write(content)
+                    with open(PALMER_BRAIN_DIR / "LIVE_BRIEFING_FROM_JAMES.md", "w", encoding="utf-8") as f:
+                        f.write(content)
+                except Exception as _e_brain:
+                    print(f"[!] Lỗi ghi brain của Palmer: {_e_brain}")
 
             # Đồng bộ trực tiếp sang phòng làm việc của Palmer (Trợ lí cá nhân)
             if TRO_LI_DIR.exists():

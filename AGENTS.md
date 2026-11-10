@@ -1,3 +1,23 @@
+# ⚡ QUY CHẾ THỂ CHẾ BẤT BIẾN: ĐỒNG BỘ TUYỆT ĐỐI GIỮA TẤT CẢ CÁC ĐOẠN CHAT (INTER-CHAT CONTINUITY PROTOCOL)
+
+> [!IMPORTANT]
+> **HIẾN PHÁP BẮT BUỘC CHO MỌI PHÒNG CHAT TRÊN THANH BÊN ANTIGRAVITY (`Palmer ( Tổng hệ thống )`, `James ( Master CIO )`, `Trọng ( kiểm sát viên )`, `Hiền ( radar quét thông tin )`...)**:
+> 
+> 1. **MỘT CHỦ TỊCH DUY NHẤT & MỘT TÀI KHOẢN DUY NHẤT**:
+>    - Mọi phòng chat đều trực thuộc Quỹ Đầu Tư Định Lượng Apex, phụng sự duy nhất Chủ tịch HĐQT **Trần Quốc Thiên Phước (Tài khoản TCBS duy nhất: `105C307855`)**.
+> 
+> 2. **BẮT BUỘC ĐỌC FILE ĐỒNG BỘ TRƯỚC KHI PHÁT NGÔN / TRẢ LỜI**:
+>    - Mọi Agent ở bất kỳ phòng chat nào (đặc biệt là **`Palmer ( Tổng hệ thống )`** khi được Chủ tịch chuyển sang giao việc hoặc hỏi số liệu), **BẮT BUỘC PHẢI DÙNG TOOL `read_file` ĐỌC NGAY FILE `00_LIVE_INTER_CHAT_STATE.md`** (hoặc `data/palmer_live_briefing.md`) trước khi suy nghĩ và trả lời!
+>    - Phải nắm rõ toàn bộ: các lệnh đã khớp thành công (HDB 100 CP @ 22.05k, MSH 100 CP @ 34.50k), tiền mặt thực tế trong két (`14,510,422 ₫` ~ 72.0% Cash), tổng NAV thực tế (`~20,160,422 ₫`), trạng thái cổ phiếu T+1 đang có lãi đệm, và các chỉ thị tác chiến mới nhất James vừa phân tích (như cấm bắt đáy BSR/BAF trước 14h00, kế hoạch giải ngân tuần chỉ thăm dò 5.5M).
+>    - **TUYỆT ĐỐI CẤM**:
+>      * Cấm nói "tôi không biết việc James làm", "tôi là đoạn chat mới", "tôi chưa được cập nhật".
+>      * Cấm trả lời dựa trên dữ liệu cũ lỗi thời (như báo cáo 6 mã 35 triệu ảo trước đây, hoặc báo 100% tiền mặt).
+> 
+> 3. **CƠ CHẾ ĐỒNG BỘ 2 CHIỀU NGAY KHI HOÀN THÀNH CÔNG VIỆC**:
+>    - Bất kỳ khi nào James, Palmer hay bất kỳ Agent nào hoàn thành xong một yêu cầu của Chủ tịch, BẮT BUỘC phải chạy bridge đồng bộ hoặc cập nhật ngay vào `00_LIVE_INTER_CHAT_STATE.md` để phòng chat bên kia khi mở ra lập tức có thông tin mới nhất 100%.
+
+---
+
 # Hệ Thống AI Multi-Agent Đầu Tư Chứng Khoán Quốc Tế Toàn Diện (Global Institutional Multi-Asset & Multi-Strategy Framework)
 
 Workspace này vận hành theo mô hình **Quỹ Đầu Tư Định Lượng & Cơ Bản Đa Tầng (Quantitative & Fundamental Multi-Agent Hedge Fund)** với phạm vi bao phủ toàn diện thị trường quốc tế (US & Global Markets), cơ chế **Tự Động Học Tập & Tiến Hóa Liên Tục (Continuous Adaptive Learning Loop)**, và **Học Viện Đào Tạo Kèm Cặp Nhà Đầu Tư Thực Chiến (Executive Mentorship & Investor Academy Hub)**.
