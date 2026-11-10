@@ -437,7 +437,9 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             try:
                 from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
+                from scripts.apex_web_portal_engine import generate_dynamic_tactical_stages_html
                 st = get_tactical_war_room_state()
+                st["tactical_stages_html"] = generate_dynamic_tactical_stages_html()
                 self.wfile.write(json.dumps(st, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))

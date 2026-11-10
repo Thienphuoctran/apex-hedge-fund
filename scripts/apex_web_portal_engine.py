@@ -34,6 +34,189 @@ from typing import List, Dict, Any, Optional
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+def generate_dynamic_tactical_stages_html(now=None):
+    if now is None:
+        now = datetime.datetime.now()
+    hm = now.hour * 60 + now.minute
+    
+    # Morning: 08:30 - 11:30
+    if hm < 11 * 60 + 30:
+        s1_active = (8 * 60 + 30 <= hm < 9 * 60)
+        s1_done = (hm >= 9 * 60)
+        s2_active = (9 * 60 <= hm < 9 * 60 + 15)
+        s2_done = (hm >= 9 * 60 + 15)
+        s3_active = (9 * 60 + 15 <= hm < 11 * 60 + 30)
+        
+        s1_badge = "ĐANG DIỄN RA" if s1_active else ("ĐÃ HOÀN TẤT" if s1_done else "CHỜ ĐẾN GIỜ")
+        s1_cls = "border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88));" if s1_active else "background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2);"
+        s1_b_cls = "background: rgba(56, 189, 248, 0.25); color: #38bdf8; border-color: rgba(56, 189, 248, 0.5);" if s1_active else ("background: rgba(16, 185, 129, 0.2); color: #34d399;" if s1_done else "background: rgba(148, 163, 184, 0.15); color: #94a3b8;")
+
+        s2_badge = "ĐANG DIỄN RA" if s2_active else ("ĐÃ HOÀN TẤT" if s2_done else "CHỜ ĐẾN GIỜ")
+        s2_cls = "border: 1.5px solid rgba(239, 68, 68, 0.5); background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(15, 23, 42, 0.88));" if s2_active else "background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2);"
+        s2_b_cls = "background: rgba(239, 68, 68, 0.25); color: #f87171; border-color: rgba(239, 68, 68, 0.5);" if s2_active else ("background: rgba(16, 185, 129, 0.2); color: #34d399;" if s2_done else "background: rgba(148, 163, 184, 0.15); color: #94a3b8;")
+
+        s3_badge = "ĐANG DIỄN RA" if s3_active else "CHỜ ĐẾN GIỜ"
+        s3_cls = "border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88));" if s3_active else "background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2);"
+        s3_b_cls = "background: rgba(56, 189, 248, 0.25); color: #38bdf8; border-color: rgba(56, 189, 248, 0.5);" if s3_active else "background: rgba(148, 163, 184, 0.15); color: #94a3b8;"
+
+        return f"""
+        <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
+            <!-- GIAI ĐOẠN 1: PRE-ATO -->
+            <div id="stage-1-card" class="action-plan-hero-card" style="{s1_cls} border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span id="stage-1-badge" class="action-plan-tag" style="{s1_b_cls} font-weight: 800;">
+                        <span class="war-room-live-dot" style="background:#38bdf8;"></span> {s1_badge}
+                    </span>
+                    <span style="font-size: 11.5px; font-weight: 800; color: #38bdf8; font-family: monospace;">08:30 – 09:00</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
+                    1. Giai Đoạn 1 (08:30 – 09:00): Pre-ATO Giao Ban &amp; Rà Soát Sức Mua
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                    • <strong>Nhiệm vụ</strong>: Minh Quân rà soát Sổ Lệnh Master Blotter, đối soát két tiền mặt SSOT <strong>14,510,422 ₫</strong> và bảo vệ an toàn cho <strong>200 CP (100 HDB + 100 MSH)</strong>.
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #fca5a5; line-height: 1.5;">
+                    ⚖️ <strong>Kỷ luật Hiến chương</strong>: <strong>TUYỆT ĐỐI KHÔNG ĐẶT LỆNH SỚM TRƯỚC ATO</strong>. Kiên nhẫn chờ tín hiệu mở cửa thị trường.
+                </div>
+            </div>
+
+            <!-- GIAI ĐOẠN 2: ATO OPEN -->
+            <div id="stage-2-card" style="{s2_cls} border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span id="stage-2-badge" style="{s2_b_cls} font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px;">{s2_badge}</span>
+                    <span style="font-size: 11px; font-weight: 800; color: #f87171; font-family: monospace;">09:00 – 09:15</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #f1f5f9;">
+                    2. Giai Đoạn 2 (09:00 – 09:15): Khớp Lệnh ATO — Giữ Kỷ Luật Thép 3 Không
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                    • Victor quét độ mở Gap của VN-Index và độ lệch giá ATO. 
+                    <div style="margin-left: 8px; margin-top: 4px; display: flex; flex-direction: column; gap: 3px;">
+                        <div>• <strong>HDB</strong> (100 CP giá vốn 22,050 ₫ | Stop 2xATR: <code style="color:#fbbf24;">21,220 ₫</code>).</div>
+                        <div>• <strong>MSH</strong> (100 CP giá vốn 34,517 ₫ | Stop 2xATR: <code style="color:#fbbf24;">33,090 ₫</code>).</div>
+                    </div>
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #fca5a5; line-height: 1.5;">
+                    🚫 <strong>CẢNH BÁO BẪY ATO</strong>: 100% CẤM MUA ĐUỔI GIÁ XANH ATO. Tạo lập thường kê lệnh ảo kéo trần đầu phiên.
+                </div>
+            </div>
+
+            <!-- GIAI ĐOẠN 3: PHIÊN SÁNG -->
+            <div id="stage-3-card" style="{s3_cls} border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span id="stage-3-badge" style="{s3_b_cls} font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px;">{s3_badge}</span>
+                    <span style="font-size: 11px; font-weight: 800; color: #38bdf8; font-family: monospace;">09:15 – 11:30</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #38bdf8;">
+                    3. Giai Đoạn 3 (09:15 – 11:30): Khớp Lệnh Liên Tục Sáng — Giám Sát Cung Cầu
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                    • Theo dõi tỷ lệ Mua chủ động (Buy Up Ratio) và phản ứng giữ nền hỗ trợ. Giữ nguyên <strong>14,510,422 ₫ tiền mặt</strong> cho cơ hội Khung Giờ Vàng.
+                </div>
+            </div>
+        </div>
+        """
+    
+    # Noon: 11:30 - 13:00
+    elif hm < 13 * 60:
+        return f"""
+        <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
+            <div id="stage-1-card" class="action-plan-hero-card" style="border: 1.5px solid rgba(251, 191, 36, 0.5); background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span class="action-plan-tag" style="background: rgba(245, 158, 11, 0.25); color: #fbbf24; font-weight: 800;">☕ NGHỈ TRƯA &amp; ĐỐI SOÁT</span>
+                    <span style="font-size: 11.5px; font-weight: 800; color: #fbbf24; font-family: monospace;">11:30 – 13:00</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
+                    Hội Ý Giữa Phiên: Đối Soát Khối Ngoại &amp; Chuẩn Bị Đón Hàng T+2
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                    • Minh Quân và Victor tổng kết thanh khoản sáng, lập kịch bản ứng phó áp lực hàng về lúc 13h00.
+                </div>
+            </div>
+        </div>
+        """
+
+    # Afternoon: 13:00 - 14:45
+    elif hm < 14 * 60 + 45:
+        s1_active = (13 * 60 <= hm < 13 * 60 + 45)
+        s1_done = (hm >= 13 * 60 + 45)
+        s2_active = (13 * 60 + 45 <= hm < 14 * 60)
+        s2_done = (hm >= 14 * 60)
+        s3_active = (14 * 60 <= hm < 14 * 60 + 25)
+        s3_done = (hm >= 14 * 60 + 25)
+
+        s1_badge = "ĐANG DIỄN RA" if s1_active else ("ĐÃ HOÀN TẤT" if s1_done else "CHỜ ĐẾN GIỜ")
+        s2_badge = "ĐANG DIỄN RA" if s2_active else ("ĐÃ HOÀN TẤT" if s2_done else "CHUẨN BỊ ĐẾN")
+        s3_badge = "⭐ KHUNG GIỜ VÀNG" if s3_active else ("ĐÃ HOÀN TẤT" if s3_done else "CHỜ BẤM CÒ")
+
+        return f"""
+        <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
+            <!-- GIAI ĐOẠN 1: HẤP THỤ T+2 -->
+            <div id="stage-1-card" class="action-plan-hero-card" style="border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span id="stage-1-badge" class="action-plan-tag" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8; font-weight: 800;">
+                        <span class="war-room-live-dot" style="background:#38bdf8;"></span> {s1_badge}
+                    </span>
+                    <span style="font-size: 11.5px; font-weight: 800; color: #38bdf8; font-family: monospace;">13:00 – 13:45</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
+                    1. Giai Đoạn 1 (13:00 – 13:45): Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                    • Đo lường lực rũ bỏ của nhỏ lẻ khi hàng về tài khoản. Tuyệt đối không vội vàng mua sớm.
+                </div>
+            </div>
+
+            <!-- GIAI ĐOẠN 2: THẨM ĐỊNH LỰC ĐỠ -->
+            <div id="stage-2-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span id="stage-2-badge" style="font-size: 10px; font-weight: 800; color: #94a3b8; background: rgba(148, 163, 184, 0.15); padding: 2px 8px; border-radius: 4px;">{s2_badge}</span>
+                    <span style="font-size: 11px; font-weight: 800; color: #94a3b8; font-family: monospace;">13:45 – 13:55</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #f1f5f9;">
+                    2. Giai Đoạn 2 (13:45 – 13:55): Thẩm Định Lực Đỡ &amp; Độ Cạn Cung (No-Supply Check)
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                    • Kiểm tra nến No Supply, Vol teo tóp và bên mua chủ động chiếm ưu thế &ge; 50%.
+                </div>
+            </div>
+
+            <!-- GIAI ĐOẠN 3: KHUNG GIỜ VÀNG -->
+            <div id="stage-3-card" style="background: rgba(15, 23, 42, 0.7); border: 1.5px solid rgba(245, 158, 11, 0.5); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span id="stage-3-badge" style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 8px; border-radius: 4px;">{s3_badge}</span>
+                    <span style="font-size: 11px; font-weight: 800; color: #fbbf24; font-family: monospace;">14:00 – 14:25</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #fbbf24;">
+                    3. Giai Đoạn 3 (14:00 – 14:25): ⭐ KHUNG GIỜ VÀNG QUYẾT ĐỊNH
+                </div>
+                <div style="font-size: 11px; color: #e2e8f0; line-height: 1.5;">
+                    • Nhìn rõ 90% nến ngày. Minh Quân trình duyệt lệnh gia tăng Nhịp 2 (40%) nếu đủ điều kiện!
+                </div>
+            </div>
+        </div>
+        """
+
+    # Evening: 14:45 - 24:00
+    else:
+        return f"""
+        <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
+            <div id="stage-1-card" class="action-plan-hero-card" style="border: 1.5px solid rgba(192, 132, 252, 0.5); background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span class="action-plan-tag" style="background: rgba(168, 85, 247, 0.25); color: #c084fc; font-weight: 800;">🗽 PHỐ WALL CA TỐI</span>
+                    <span style="font-size: 11.5px; font-weight: 800; color: #c084fc; font-family: monospace;">Ca Tối &amp; Đêm</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
+                    Hồi Tố, Tự Kiểm Điểm &amp; Chuyển Giao Trực Chiến Alex (Phố Wall)
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                    • Hoàn tất nhật ký phiên HOSE, đếm ngược chuyển ca trực chiến sang thị trường Mỹ lúc 21h30.
+                </div>
+            </div>
+        </div>
+        """
+
+
 try:
     if sys.stdout.encoding != 'utf-8':
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -3069,7 +3252,7 @@ def generate_portal_html(
                         </div>
 
                         <!-- Button Full Report -->
-                        <button onclick="openReportModal('VN_Market/07_Daily_Specialist/2026-11-09_VN_Specialist_Decision.md')" class="btn-read" style="background: rgba(14, 165, 233, 0.2); border: 1px solid #38bdf8; color: #38bdf8; font-weight: 800; padding: 8px; text-align: center; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
+                        <button onclick="openReportModal('VN_Market/07_Daily_Specialist/' + today_str + '_VN_Specialist_Decision.md')" class="btn-read" style="background: rgba(14, 165, 233, 0.2); border: 1px solid #38bdf8; color: #38bdf8; font-weight: 800; padding: 8px; text-align: center; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
                             📖 Xem Toàn Văn Quyết Định Minh Quân Hôm Nay
                         </button>
                     </div>
@@ -3081,88 +3264,14 @@ def generate_portal_html(
                                 <span class="panel-icon">📋</span>
                                 <div>
                                     <div class="panel-title">Báo Cáo Tác Chiến Trong Ngày</div>
-                                    <div style="font-size: 11px; color: #94a3b8;">Lộ trình 3 Giai Đoạn Phiên Chiều &amp; Sổ Lệnh Khung Giờ Vàng</div>
+                                    <div style="font-size: 11px; color: #94a3b8;">Lộ trình Các Giai Đoạn Tác Chiến Theo Khung Giờ Realtime</div>
                                 </div>
                             </div>
                             <span class="war-room-live-pulse" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);"><span class="war-room-live-dot" style="background: #38bdf8;"></span> REALTIME</span>
                         </div>
 
-                        <!-- 3 GIAI ĐOẠN PHIÊN CHIỀU (CHỦ TỊCH YÊU CẦU ĐẶC BIỆT) -->
-                        <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
-                            
-                            <!-- GIAI ĐOẠN 1: 13:00 - 13:45 (ACTIVE) -->
-                            <div id="stage-1-card" class="action-plan-hero-card" style="border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
-                                <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span id="stage-1-badge" class="action-plan-tag" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8; border-color: rgba(56, 189, 248, 0.5); font-weight: 800;">
-                                        <span class="war-room-live-dot" style="background:#38bdf8;"></span> ĐANG DIỄN RA
-                                    </span>
-                                    <span style="font-size: 11.5px; font-weight: 800; color: #38bdf8; font-family: monospace;">13:00 – 13:45</span>
-                                </div>
-                                <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
-                                    1. Giai Đoạn 1 (13:00 – 13:45): Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản
-                                </div>
-                                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                                    • <strong>Bản chất nhịp thị trường</strong>: Khung giờ từ <code style="color:#38bdf8;">13:15 – 13:35</code> là thời điểm lượng hàng bắt đáy T+2.5 từ tuần trước chính thức về tài khoản các nhà đầu tư cá nhân. Đây thường là nhịp rung lắc biến động mạnh nhất phiên chiều khi nhóm lướt sóng ngắn hạn mang hàng ra chốt lời hoặc cắt lỗ.
-                                </div>
-                                <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #fca5a5; line-height: 1.5;">
-                                    ⚖️ <strong>Kỷ luật Hiến chương</strong>: <strong>TUYỆT ĐỐI KHÔNG NÔN NÓNG GIẢI NGÂN SỚM</strong>. Chúng ta kiên nhẫn để phe bán cá nhân xả hết hàng tự nhiên, quan sát xem có áp lực bán tháo hoảng loạn hay không.
-                                </div>
-                            </div>
-
-                            <!-- GIAI ĐOẠN 2: 13:45 - 13:55 (UPCOMING / NO-SUPPLY CHECK) -->
-                            <div id="stage-2-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
-                                <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span id="stage-2-badge" style="font-size: 10px; font-weight: 800; color: #94a3b8; background: rgba(148, 163, 184, 0.15); padding: 2px 8px; border-radius: 4px;">CHUẨN BỊ ĐẾN</span>
-                                    <span style="font-size: 11px; font-weight: 800; color: #94a3b8; font-family: monospace;">13:45 – 13:55</span>
-                                </div>
-                                <div style="font-size: 13px; font-weight: 800; color: #f1f5f9;">
-                                    2. Giai Đoạn 2 (13:45 – 13:55): Thẩm Định Lực Đỡ &amp; Độ Cạn Cung (No-Supply Check)
-                                </div>
-                                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                                    • Victor và Minh Quân sẽ đo lường trực tiếp tỷ lệ Mua chủ động (Buy Up Ratio) và khối lượng khớp lệnh:
-                                    <div style="margin-left: 8px; margin-top: 4px; display: flex; flex-direction: column; gap: 3px;">
-                                        <div>• <strong style="color: #38bdf8;">HDB</strong>: Xác nhận lực đỡ quanh vùng giá <code style="color:#fbbf24;">22,100 – 22,450 đ</code>. Nếu khối lượng bán teo tóp và bên mua chủ động chiếm ưu thế <strong>&ge; 50%</strong>, tín hiệu gom hàng hoàn tất.</div>
-                                        <div>• <strong style="color: #38bdf8;">MSH</strong>: Xác nhận lực giữ nền quanh vùng <code style="color:#fbbf24;">34,500 – 35,000 đ</code>. Biên độ dao động siết chặt là điều kiện tiên quyết.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- GIAI ĐOẠN 3: 14:00 - 14:25 (GOLDEN WINDOW - MASTER EXECUTION) -->
-                            <div id="stage-3-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(15, 23, 42, 0.95)); border: 1.5px solid rgba(52, 211, 153, 0.6); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 7px;">
-                                <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span id="stage-3-badge" style="font-size: 10px; font-weight: 800; color: #34d399; background: rgba(16, 185, 129, 0.2); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.35);">
-                                        ✅ ĐÃ BẤM CÒ & KHỚP LỆNH THÀNH CÔNG
-                                    </span>
-                                    <span style="font-size: 11px; font-weight: 800; color: #34d399; font-family: monospace;">14:00 – 14:25 (ĐÃ KHỚP)</span>
-                                </div>
-                                <div style="font-size: 13px; font-weight: 800; color: #34d399;">
-                                    3. Giai Đoạn 3 (14:00 – 14:25): ✅ ĐÃ KHỚP LỆNH MUA NHỊP 1 THÀNH CÔNG (100 HDB + 100 MSH)
-                                </div>
-                                <div style="font-size: 11px; color: #e2e8f0; line-height: 1.5;">
-                                    • Chủ tịch đã thực thi đặt lệnh Limit (LO) và khớp thành công 100% trên app TCInvest lúc 14:02:
-                                </div>
-                                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.5;">
-                                    <div style="margin-left: 6px; margin-top: 5px; display: flex; flex-direction: column; gap: 5px;">
-                                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(52, 211, 153, 0.35); padding: 6px 10px; border-radius: 6px; font-size: 11px;">
-                                            <strong style="color: #38bdf8;">1. Lệnh 1 (HDB)</strong>: Đã Mua khớp đúng <strong style="color: #34d399;">100 CP</strong> • Giá khớp: <strong style="color: #f8fafc;">22,050 đ</strong> (Giá trị: <code>2,200,000 đ</code> — Stop 2xATR: <code>21,220 đ</code>).
-                                        </div>
-                                        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(52, 211, 153, 0.35); padding: 6px 10px; border-radius: 6px; font-size: 11px;">
-                                            <strong style="color: #38bdf8;">2. Lệnh 2 (MSH)</strong>: Đã Mua khớp đúng <strong style="color: #34d399;">100 CP</strong> • Giá khớp: <strong style="color: #f8fafc;">34,517 đ</strong> (Giá trị: <code>3,450,000 đ</code> — Stop 2xATR: <code>33,090 đ</code>).
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 3px; padding-top: 6px; border-top: 1px solid rgba(52, 211, 153, 0.2);">
-                                    <div style="background: rgba(14, 165, 233, 0.1); padding: 5px 8px; border-radius: 6px; font-size: 10.5px;">
-                                        <span style="color: #94a3b8;">Cổ phiếu đã khớp:</span><br>
-                                        <strong style="color: #38bdf8; font-size: 12px;">5,650,000 đ (28.0% NAV)</strong>
-                                    </div>
-                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 5px 8px; border-radius: 6px; font-size: 10.5px;">
-                                        <span style="color: #94a3b8;">Tiền mặt TCBS còn lại:</span><br>
-                                        <strong style="color: #34d399; font-size: 12px;">14,510,422 đ (72.0% NAV)</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- DYNAMIC REALTIME TACTICAL STAGES -->
+{generate_dynamic_tactical_stages_html()}
 
                         <!-- Current Directive Hero Box -->
                         <div class="directive-hero-box" style="margin-top: 8px;">
@@ -5017,7 +5126,16 @@ def generate_portal_html(
             }}
         }}
 
-        function renderTacticalWarRoom(data) {{
+        function renderTacticalWarRoom(data) {
+            if (!data) return;
+
+            // 0. Dynamic Stages HTML update
+            if (data.tactical_stages_html) {
+                const stagesEl = document.getElementById('afternoon-tactical-stages');
+                if (stagesEl) {
+                    stagesEl.outerHTML = data.tactical_stages_html;
+                }
+            }{
             if (!data) return;
 
             // 1. Clocks

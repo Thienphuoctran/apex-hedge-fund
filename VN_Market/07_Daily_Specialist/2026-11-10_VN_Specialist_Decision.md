@@ -68,19 +68,32 @@
 
 ---
 
-## 📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN
-*Quy mô danh mục tham chiếu: **20,160,422 VNĐ** (Cấu trúc: **90% Core Compounders** + **10% Tiền mặt dự phòng Dry Powder**).*  
-*Tuân thủ 100% quy chuẩn khớp lệnh LO, lô chẵn 100 CP, biên độ sàn HOSE (+/-7%) / HNX (+/-10%) và chu kỳ thanh toán T+2.5.*  
-*Chốt chặn Van An Toàn Toán Học Dual-Engine (`VN Inviolable Gate v2.0`): Đạt chuẩn **6/6 vị thế** (`Stop <= 7%`, `Blended R:R >= 2.0x`, `EV% >= +3.5%`, `OCF/LNST >= 1.0x`).*
+## 📋 3. BẢNG KẾ HOẠCH TÁC CHIẾN ĐẦU TƯ CHUẨN CHỈ HÔM NAY (10/11/2026) — MINH QUÂN
+*(Chuẩn hóa cho tài khoản TCBS 105C307855 — Chủ tịch: **Trần Quốc Thiên Phước** — Tổng NAV: **20,167,119 ₫**)*  
+*Chốt chặn Van An Toàn Toán Học Dual-Engine (VN Inviolable Gate v2.0): Tuân thủ 100% chu kỳ T+2.5, lô chẵn 100 CP, Stop <= 7% và Khung Giờ Vàng 14h00-14h25.*
 
-| Mã | Sàn | Phân Nhánh | Giá Hiện Tại | Khối Lượng (Lô 100) | Giá Trị (VNĐ) | Nhịp Gom 1 (60% Limit) | Nhịp Gom 2 (40% Breakout) | Cắt Lỗ (Stop 2xATR) | Chốt Lời TP1 / TP2 | Xác Suất P(W) | R:R | Kỳ Vọng EV% | Van An Toàn Toán Học |
-| :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`HDB`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **22,500 đ** | **300 CP** | 6,750,000 đ | **22,310 đ** | **22,820 đ** | **21,220 đ** *(-5.69%)* | 24,290 đ / 25,820 đ | `85%` | `1:2.59` | **`+8.8%`** | `PASSED (-1.05% NAV)` |
-| **`MSH`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **35,500 đ** | **200 CP** | 7,100,000 đ | **35,060 đ** | **36,220 đ** | **33,090 đ** *(-6.79%)* | 39,560 đ / 43,040 đ | `86%` | `1:3.13` | **`+13.1%`** | `PASSED (-1.32% NAV)` |
-| **`BAF`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **30,900 đ** | **200 CP** | 6,180,000 đ | **30,710 đ** | **31,210 đ** | **29,650 đ** *(-4.05%)* | 32,650 đ / 34,140 đ | `82%` | `1:2.59` | **`+5.89%`** | `PASSED (-0.68% NAV)` |
-| **`IDC`** | HNX | `TACTICAL RISING GEM (MidCap_Growth)` | **34,900 đ** | **200 CP** | 6,980,000 đ | **34,500 đ** | **35,570 đ** | **32,530 đ** *(-6.79%)* | 38,660 đ / 41,880 đ | `83%` | `1:2.95` | **`+11.61%`** | `PASSED (-1.29% NAV)` |
-| **`TCH`** | HOSE | `TACTICAL RISING GEM (MidCap_Growth)` | **13,500 đ** | **300 CP** | 4,050,000 đ | **13,350 đ** | **13,750 đ** | **12,580 đ** *(-6.81%)* | 14,880 đ / 16,060 đ | `78%` | `1:2.78` | **`+9.88%`** | `PASSED (-0.75% NAV)` |
-| **`OCB`** | HOSE | `TACTICAL RISING GEM (MidCap_Growth)` | **10,700 đ** | **300 CP** | 3,210,000 đ | **10,600 đ** | **10,870 đ** | **10,020 đ** *(-6.36%)* | 11,650 đ / 12,470 đ | `78%` | `1:2.6` | **`+8.51%`** | `PASSED (-0.56% NAV)` |
+### PHẦN 1: QUẢN TRỊ 2 VỊ THẾ ĐANG NẮM GIỮ (NGÀY T+1 — HÀNG VỀ CHIỀU MAI 11/11)
+
+| Mã CP | Sàn / Ngành | Số Lượng Đang Nắm | Giá Vốn Thực Tế | Giá Trị Vị Thế | Trạng Thái Chu Kỳ | Kế Hoạch Tác Chiến Hôm Nay (10/11) | Ngưỡng Cắt Lỗ Cứng Stop 2xATR | Mục Tiêu Chốt Lời (TP1 / TP2) | Van An Toàn Toán Học |
+| :---: | :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
+| **HDB** | HOSE • Ngân Hàng TMCP | **100 CP** | **22,050 ₫** | **2,205,000 ₫** *(10.93% NAV)* | **Ngày T+1** *(Chiều mai 11/11 hàng về)* | **GIỮ NGUYÊN & QUAN SÁT**<br/>*Cấm mua gia tăng Nhịp 2 hôm nay; để cổ phiếu tích lũy nến T+1 tự nhiên.* | **21,220 ₫**<br/>*(-3.76%)* | TP1: **24,290 ₫**<br/>TP2: **25,820 ₫** | PASSED (-0.41% NAV Risk) |
+| **MSH** | HOSE • Dệt May Xuất Khẩu | **100 CP** | **34,500 ₫** | **3,450,000 ₫** *(17.11% NAV)* | **Ngày T+1** *(Chiều mai 11/11 hàng về)* | **GIỮ NGUYÊN & QUAN SÁT**<br/>*Cấm mua gia tăng Nhịp 2 hôm nay; theo dõi thanh khoản cạn kiệt No-Supply.* | **33,090 ₫**<br/>*(-4.09%)* | TP1: **39,560 ₫**<br/>TP2: **43,040 ₫** | PASSED (-0.70% NAV Risk) |
+| **TỔNG** | — | **200 CP** | — | **5,655,000 ₫** *(28.04% NAV)* | **KHÓA TRONG KHO T+1** | **KHÔNG HÀNH ĐỘNG PHIÊN SÁNG** | — | — | **BẢO VỆ 98.89% NAV** |
+
+---
+
+### PHẦN 2: RADAR SĂN MỒI TỪ KÉT TIỀN MẶT 14,512,119 ₫ (KHUNG GIỜ VÀNG 14h00 – 14h25)
+
+> [!IMPORTANT]
+> **ĐIỀU KIỆN KÍCH HOẠT DUY NHẤT**:  
+> Minh Quân chỉ đề bạt giải ngân thêm **1 vị thế thăm dò (1 lô 100 CP)** từ két tiền mặt 14.51M NẾU phiên chiều thị trường kiểm định cung cầu ổn định, cổ phiếu xuất hiện nến Test Cung No-Supply cạn kiệt Vol tại vùng hỗ trợ hoặc dòng tiền tổ chức mua chủ động Breakout.  
+> Nếu thị trường rung lắc hoặc chưa đủ biên an toàn: **KIÊN QUYẾT GIỮ NGUYÊN 14.51M TIỀN MẶT**, không giải ngân bừa bãi!
+
+| Mã Radar | Sàn / Ngành | Động Lực Cốt Lõi (Key Catalysts) | Vùng Giá Theo Dõi | LỆNH DỰ KIẾN (CHỈ KÍCH HOẠT NẾU ĐẠT CHUẨN 14h00) | Vốn Dự Kiến | Cắt Lỗ Stop 2xATR | Mục Tiêu TP1 | Xác Suất P(W) | R:R | Kỳ Vọng EV% |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **PVT** | HOSE • Vận tải dầu khí | Đội tàu 58 chiếc chạy quốc tế thu USD, OCF/LNST 2.01x (gấp đôi LNST), RS 95, P/E hấp dẫn. | 20.00 – 20.40 ₫ | **100 CP (Lô chẵn 100)**<br/>*Đặt lệnh LO: 20.10 – 20.35 ₫* | **~2,030,000 ₫**<br/>*(10.0% NAV)* | **19.20 ₫**<br/>*(-5.4%)* | **22.50 ₫**<br/>*(+10.8%)* | 82% | 1:2.45 | **+7.8%** |
+| **BSR** | UPCoM • Lọc hóa dầu | Thặng dư tiền mặt 28.300 tỷ VNĐ (~1.1 tỷ USD), RS 98, xúc tác chuyển sàn HOSE. | 26.00 – 26.50 ₫ | **100 CP (Lô chẵn 100)**<br/>*Chỉ xem xét nếu PVT không đạt chuẩn* | **~2,630,000 ₫**<br/>*(13.0% NAV)* | **24.50 ₫**<br/>*(-6.8%)* | **29.50 ₫**<br/>*(+12.1%)* | 80% | 1:2.35 | **+6.5%** |
+| **BAF & IDC** | HOSE / HNX | Nông nghiệp 3F & BĐS Khu công nghiệp | — | **STANDBY — TIẾP TỤC THEO DÕI (0 CP)** | **0 ₫** | — | — | — | — | — |
 
 ---
 
