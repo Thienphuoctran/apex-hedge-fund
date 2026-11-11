@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-11T01:36:10.301691+00:00",
+  "timestamp_utc": "2026-11-11T02:39:29.142959+00:00",
   "scan_date": "2026-11-11",
   "total_us_filings_count": 363,
   "total_vn_announcements_count": 43,
@@ -277,12 +277,12 @@
       "total_recent_filings": 10
     },
     "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 13:03:00 +0700",
-      "source_url": "https://cafef.vn/chu-tich-fedex-chau-a-thai-binh-duong-o-singapore-toi-mat-45-phut-tu-san-bay-ve-nha-nhung-o-tphcm-45-phut-chi-du-de-xep-hang-188261110130357227.chn",
-      "total_announcements": 13
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Một doanh nghiệp bất động sản tại TP.HCM đang lỗ gần 1.000 tỷ đồng, mở thêm công ty buôn hàng may mặc, giày dép vốn 5 tỷ",
+      "severity": "CRITICAL",
+      "published_at": "Wed, 11 Nov 26 09:17:00 +0700",
+      "source_url": "https://cafef.vn/mot-doanh-nghiep-bat-dong-san-tai-tphcm-dang-lo-gan-1000-ty-dong-mo-them-cong-ty-buon-hang-may-mac-giay-dep-von-5-ty-188261111085334036.chn",
+      "total_announcements": 14
     },
     "REE": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -306,7 +306,7 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/petrolimex-tung-lon-gap-doi-mb-nay-bang-1-4-vinamilk-tung-gap-15-lan-vingroup-nay-bang-1-16-10-nam-viet-lai-ban-do-ty-do-tren-ttck-188261109224125049.chn",
-      "total_announcements": 6
+      "total_announcements": 5
     },
     "MSN": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -4753,6 +4753,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Một doanh nghiệp bất động sản tại TP.HCM đang lỗ gần 1.000 tỷ đồng, mở thêm công ty buôn hàng may mặc, giày dép vốn 5 tỷ",
+      "summary": "Thuduc House lên kế hoạch thành lập công ty con chuyên kinh doanh vải, hàng may mặc và giày dép với vốn điều lệ 5 tỷ đồng. Động thái này diễn ra khi doanh nghiệp đang gánh khoản lỗ lũy kế gần 938 tỷ đồng....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Wed, 11 Nov 26 09:17:00 +0700",
+      "source_url": "https://cafef.vn/mot-doanh-nghiep-bat-dong-san-tai-tphcm-dang-lo-gan-1000-ty-dong-mo-them-cong-ty-buon-hang-may-mac-giay-dep-von-5-ty-188261111085334036.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng",
       "summary": "Từ khoảng 200 lên gần 600 nhân viên chỉ trong một năm, cùng với đó là 42 chuyến bay đi và đến Việt Nam, FedEx đang tăng tốc tại một trong những thị trường mà hãng coi là trọng điểm tăng trưởng toàn cầu. Nhưng theo ông Sa...",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -4925,7 +4937,7 @@
       "summary": "Với 100 triệu đồng gửi tiết kiệm kỳ hạn 12 tháng, số tiền lãi khách hàng nhận được tại 7 ngân hàng MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB có sự chênh lệch đáng kể. Theo các biểu lãi suất được khảo sát, mứ...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 11 Nov 26 00:00:00 +0700",
+      "published_at": "Wed, 11 Nov 26 07:00:00 +0700",
       "source_url": "https://cafef.vn/ngay-11-11-gui-100-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261110223643707.chn"
     },
     {
@@ -5119,18 +5131,6 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 11:05:00 +0700",
       "source_url": "https://cafef.vn/mot-nha-thau-lon-se-thi-cong-loat-hang-muc-quan-trong-tai-tuyen-metro-gan-4-ty-usd-dai-54km-noi-ben-thanh-can-gio-cua-ty-phu-pham-nhat-vuong-188261110110233935.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Toàn cảnh cây cầu dây văng hơn 7.300 tỷ đồng ở Hà Nội: Trụ tháp hình cánh chim cao tương đương tòa nhà 25 tầng, nằm gần loạt dự án của Vingroup, Sunshine, FPT, dự kiến hoàn thành năm 2027",
-      "summary": "Cầu Thượng Cát có tổng chiều dài hơn 5,2km, quy mô 8 làn xe. Riêng phần cầu vượt sông Hồng dài khoảng 780m, được thiết kế dạng cầu dây văng với 3 trụ tháp chính....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/toan-canh-cay-cau-day-vang-hon-7300-ty-dong-o-ha-noi-tru-thap-hinh-canh-chim-cao-tuong-duong-toa-nha-25-tang-nam-gan-loat-du-an-cua-vingroup-sunshine-fpt-du-kien-hoan-thanh-nam-2027-188261109210908703.chn"
     },
     {
       "market": "VIETNAM",

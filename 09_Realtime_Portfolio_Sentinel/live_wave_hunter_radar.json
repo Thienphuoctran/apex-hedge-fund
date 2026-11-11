@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11 01:37:18",
+  "generated_at": "2026-11-11 02:39:35",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -320,6 +320,14 @@
     {
       "market": "VIETNAM_CBTT",
       "symbol": "HCM",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Wed, 11 Nov 26 0",
+      "headline": "Một doanh nghiệp bất động sản tại TP.HCM đang lỗ gần 1.000 tỷ đồng, mở thêm công ty buôn hàng may mặc, giày dép vốn 5 tỷ",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 10 Nov 26 1",
       "headline": "Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng",
@@ -371,14 +379,6 @@
       "form_or_type": "CO_TUC",
       "date": "Wed, 11 Nov 26 0",
       "headline": "Bất ngờ: Chủ tịch Trần Hùng Huy nhận tiền cổ tức từ ACB ít hơn vợ chồng bầu Kiên",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "VND",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 10 Nov 26 1",
-      "headline": "Ngân hàng Nhà nước bơm thêm VND, chứng khoán bật tăng gần 29 điểm",
       "is_portfolio_holding": false
     }
   ],
