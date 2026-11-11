@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-11T09:51:21.548555+00:00",
+  "timestamp_utc": "2026-11-11T20:00:06.177361+00:00",
   "scan_date": "2026-11-11",
   "total_us_filings_count": 363,
-  "total_vn_announcements_count": 37,
+  "total_vn_announcements_count": 32,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -282,7 +282,7 @@
       "severity": "INFO",
       "published_at": "Wed, 11 Nov 26 14:31:00 +0700",
       "source_url": "https://cafef.vn/vua-tieu-phan-minh-thong-phuc-sinh-san-sang-tra-mot-nhan-su-21-thang-luong-nam-ho-tro-vay-mua-nha-lai-suat-0-suot-10-nam-188261111143105428.chn",
-      "total_announcements": 12
+      "total_announcements": 8
     },
     "REE": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -292,21 +292,21 @@
       "source_url": "https://cafef.vn/thai-lan-thau-tom-80-von-cua-1-cong-ty-cong-nghe-viet-nam-cung-la-nha-phan-phoi-cap-2-cua-microsoft-188261110074553656.chn",
       "total_announcements": 2
     },
-    "DXG": {
+    "VHM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Tỷ phú Bill Gates bất ngờ mua thêm 200.000 cổ phiếu một công ty bất động sản Việt Nam",
+      "latest_title": "4 tín hiệu có thể kích hoạt làn sóng \"bắt đáy\" trên thị trường chứng khoán",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/ty-phu-bill-gates-bat-ngo-mua-them-200000-co-phieu-mot-cong-ty-bat-dong-san-viet-nam-188261109233549925.chn",
-      "total_announcements": 1
+      "published_at": "Thu, 12 Nov 26 00:03:00 +0700",
+      "source_url": "https://cafef.vn/4-tin-hieu-co-the-kich-hoat-lan-song-bat-day-tren-thi-truong-chung-khoan-188261111163030299.chn",
+      "total_announcements": 3
     },
-    "FPT": {
+    "VRE": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Petrolimex từng lớn gấp đôi MB nay bằng 1/4, Vinamilk từng gấp 1,5 lần Vingroup nay bằng 1/16: 10 năm viết lại bản đồ tỷ đô trên TTCK",
+      "latest_title": "4 tín hiệu có thể kích hoạt làn sóng \"bắt đáy\" trên thị trường chứng khoán",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/petrolimex-tung-lon-gap-doi-mb-nay-bang-1-4-vinamilk-tung-gap-15-lan-vingroup-nay-bang-1-16-10-nam-viet-lai-ban-do-ty-do-tren-ttck-188261109224125049.chn",
-      "total_announcements": 6
+      "published_at": "Thu, 12 Nov 26 00:03:00 +0700",
+      "source_url": "https://cafef.vn/4-tin-hieu-co-the-kich-hoat-lan-song-bat-day-tren-thi-truong-chung-khoan-188261111163030299.chn",
+      "total_announcements": 1
     },
     "MSN": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -322,15 +322,15 @@
       "severity": "WARNING",
       "published_at": "Wed, 11 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/bat-ngo-chu-tich-tran-hung-huy-nhan-tien-co-tuc-tu-acb-it-hon-vo-chong-bau-kien-188261110160054803.chn",
-      "total_announcements": 5
+      "total_announcements": 6
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngân hàng Nhà nước bơm thêm VND, chứng khoán bật tăng gần 29 điểm",
+      "latest_title": "Hoán đổi ngoại tệ: Đã có gần 50 nghìn tỷ đồng được cung ứng cho hệ thống ngân hàng",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 17:23:00 +0700",
-      "source_url": "https://cafef.vn/ngan-hang-nha-nuoc-bom-them-vnd-chung-khoan-bat-tang-gan-29-diem-188261110164611689.chn",
-      "total_announcements": 5
+      "published_at": "Wed, 11 Nov 26 16:47:00 +0700",
+      "source_url": "https://cafef.vn/hoan-doi-ngoai-te-da-co-gan-50-nghin-ty-dong-duoc-cung-ung-cho-he-thong-ngan-hang-188261111144738067.chn",
+      "total_announcements": 4
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -340,12 +340,36 @@
       "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-11-11-dong-loat-quay-dau-tang-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261111071532931.chn",
       "total_announcements": 1
     },
+    "FPT": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Bất ngờ cựu TGĐ Vietcombank, TGĐ VPBank, FPT Telecom và loạt founder đình đám cùng học tại ngôi trường được ví như 'Harvard Việt Nam'",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 26 12:22:00 +0700",
+      "source_url": "https://cafef.vn/bat-ngo-cuu-tgd-vietcombank-tgd-vpbank-fpt-telecom-va-loat-founder-dinh-dam-cung-hoc-tai-ngoi-truong-duoc-vi-nhu-harvard-viet-nam-188261111102322254.chn",
+      "total_announcements": 3
+    },
     "VCB": {
       "latest_event_type": "ESOP_PHAT_HANH",
       "latest_title": "\"Ông lớn\" ngân hàng Nhật Bản tiếp tục rót thêm tiền vào Vietcombank",
       "severity": "WARNING",
       "published_at": "Tue, 10 Nov 26 14:30:00 +0700",
       "source_url": "https://cafef.vn/ong-lon-ngan-hang-nhat-ban-tiep-tuc-rot-them-tien-vao-vietcombank-188261110142614911.chn",
+      "total_announcements": 1
+    },
+    "HDB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
+      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
+      "total_announcements": 1
+    },
+    "POW": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
+      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
       "total_announcements": 1
     },
     "BSR": {
@@ -362,14 +386,6 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 2026 04:25:21 GMT",
       "source_url": "https://vneconomy.vn/tai-co-cau-etf-chi-so-hose-thang-102026-dong-tien-du-kien-tap-trung-manh-vao-gmd-ree-va-vjc.htm",
-      "total_announcements": 1
-    },
-    "STB": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "\"Cá mập\" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
-      "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
       "total_announcements": 1
     },
     "SSI": {
@@ -4791,26 +4807,27 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "DXG"
+        "VHM",
+        "VRE"
       ],
-      "title": "Tỷ phú Bill Gates bất ngờ mua thêm 200.000 cổ phiếu một công ty bất động sản Việt Nam",
-      "summary": "Sau khi liên tiếp bán cổ phiếu tại nhiều doanh nghiệp Việt Nam, Gates Foundation Trust, quỹ tín thác đầu tư gắn với tỷ phú Bill Gates, vừa mua thêm 50.000 cổ phiếu DXG. So với số liệu công bố giữa tháng 7, lượng cổ phiếu...",
+      "title": "4 tín hiệu có thể kích hoạt làn sóng \"bắt đáy\" trên thị trường chứng khoán",
+      "summary": "Nếu loại trừ bốn cổ phiếu thuộc hệ sinh thái Vingroup gồm VIC, VHM, VRE và VPL, hệ số P/E của phần thị trường còn lại chỉ khoảng 9,1 lần, thấp hơn đáng kể so với mặt bằng định giá lịch sử....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/ty-phu-bill-gates-bat-ngo-mua-them-200000-co-phieu-mot-cong-ty-bat-dong-san-viet-nam-188261109233549925.chn"
+      "published_at": "Thu, 12 Nov 26 00:03:00 +0700",
+      "source_url": "https://cafef.vn/4-tin-hieu-co-the-kich-hoat-lan-song-bat-day-tren-thi-truong-chung-khoan-188261111163030299.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT"
+        "VHM"
       ],
-      "title": "Petrolimex từng lớn gấp đôi MB nay bằng 1/4, Vinamilk từng gấp 1,5 lần Vingroup nay bằng 1/16: 10 năm viết lại bản đồ tỷ đô trên TTCK",
-      "summary": "Từng có vốn hóa gần gấp đôi MB, Petrolimex nay chỉ bằng khoảng 1/4 ngân hàng này. Viettel Global từ gần cuối danh sách tỷ đô có lúc vươn lên thứ 2, còn FPT lớn gần gấp 3 nhưng vẫn tụt hạng. Gần 10 năm trên sàn chứng khoá...",
+      "title": "VN-Index tăng điểm, tài khoản nhà đầu tư vẫn 'mỏng' đi",
+      "summary": "VN-Index tăng gần 4 điểm trong phiên giao dịch ngày 11/11 nhờ lực đỡ từ nhóm cổ phiếu vốn hóa lớn, đặc biệt là VIC, VHM và một số mã năng lượng. Tuy nhiên, sắc xanh chưa lan tỏa rộng khi nhiều cổ phiếu ngân hàng, chứng k...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/petrolimex-tung-lon-gap-doi-mb-nay-bang-1-4-vinamilk-tung-gap-15-lan-vingroup-nay-bang-1-16-10-nam-viet-lai-ban-do-ty-do-tren-ttck-188261109224125049.chn"
+      "published_at": "Wed, 11 Nov 26 18:33:00 +0700",
+      "source_url": "https://cafef.vn/vn-index-tang-diem-tai-khoan-nha-dau-tu-van-mong-di-188261111173347625.chn"
     },
     {
       "market": "VIETNAM",
@@ -4839,26 +4856,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "VND"
+        "ACB"
       ],
-      "title": "Ngân hàng Nhà nước bơm thêm VND, chứng khoán bật tăng gần 29 điểm",
-      "summary": "Sau hai phiên giảm liên tiếp, thị trường chứng khoán đảo chiều mạnh trong phiên 10/11. VN-Index tăng gần 29 điểm, thanh khoản phục hồi, khối ngoại quay lại mua ròng hơn 460 tỷ đồng sau động thái mua ngoại tệ định kỳ của ...",
+      "title": "Ngày 12/11, gửi dưới 1 tỷ đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Cùng kỳ hạn 12 tháng, lãi suất tiết kiệm tại 7 ngân hàng có sự chênh lệch đáng kể giữa hình thức gửi tại quầy và online....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 17:23:00 +0700",
-      "source_url": "https://cafef.vn/ngan-hang-nha-nuoc-bom-them-vnd-chung-khoan-bat-tang-gan-29-diem-188261110164611689.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Phiên 10/11: Khối ngoại mua ròng mạnh tay gần 500 tỷ đồng, cổ phiếu nào được \"gom\" nhiều nhất?",
-      "summary": "Ở chiều ngược lại, FPT là cổ phiếu bị khối ngoại bán ròng mạnh nhất, với giá trị khoảng 88 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 15:45:00 +0700",
-      "source_url": "https://cafef.vn/phien-10-11-khoi-ngoai-mua-rong-manh-tay-gan-500-ty-dong-co-phieu-nao-duoc-gom-nhieu-nhat-188261110152534078.chn"
+      "published_at": "Thu, 12 Nov 26 01:11:00 +0700",
+      "source_url": "https://cafef.vn/ngay-12-11-gui-duoi-1-ty-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261111232658813.chn"
     },
     {
       "market": "VIETNAM",
@@ -5019,50 +5024,16 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "HDB",
+        "POW",
+        "VHM"
       ],
-      "title": "15/11 chính thức mở bán và khai trương căn hộ mẫu IVY Central",
-      "summary": "Tòa căn hộ cao cấp IVY Central đang trở thành tâm điểm của thị trường bất động sản phía Đông TP HCM khi chính thức mở bán và khai trương căn hộ mẫu vào ngày 15/11 tới đây ngay tại dự án (Số 446 Quốc lộ 1K, Đông Hòa, TP H...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Wed, 11 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/15-11-chinh-thuc-mo-ban-va-khai-truong-can-ho-mau-ivy-central-188261111075731762.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Đề xuất buộc nhà đầu tư nộp lại tiền thu từ xây dựng sai phép, thay thế tháo dỡ",
-      "summary": "Với công trình vi phạm trật tự xây dựng, TP.HCM đề xuất thay thế biện pháp bắt buộc tháo dỡ bằng quy định nộp lại số tiền thu lợi bất hợp pháp từ xây dựng sai phạm....",
-      "event_type": "CANH_BAO_RUI_RO",
-      "severity": "RED_FLAG",
-      "published_at": "Tue, 10 Nov 26 20:48:00 +0700",
-      "source_url": "https://cafef.vn/de-xuat-buoc-nha-dau-tu-nop-lai-tien-thu-tu-xay-dung-sai-phep-thay-the-thao-do-188261110204831207.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Chốt ngày đấu giá trực tuyến 3.790 căn hộ Thủ Thiêm trên hệ thống Bộ Công an",
-      "summary": "Ngày 11/12, TP.HCM sẽ đấu giá trực tuyến 3.790 căn hộ tại Thủ Thiêm trên hệ thống của Bộ Công an, với giá khởi điểm hơn 18.253 tỷ đồng....",
+      "title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
+      "summary": "Giao dịch của nhà đầu tư nước ngoài ghi nhận sự phân hóa giữa các cổ phiếu. VIC được mua ròng mạnh nhất với 138,8 tỷ đồng, tiếp đến là POW với 78,1 tỷ đồng, VHM với 47 tỷ đồng, HDB với 42 tỷ đồng và TPB với 41,3 tỷ đồng....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 20:29:00 +0700",
-      "source_url": "https://cafef.vn/chot-ngay-dau-gia-truc-tuyen-3790-can-ho-thu-thiem-tren-he-thong-bo-cong-an-188261110202948598.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "TP.HCM đấu giá 5 lô đất trong 30 phút, khách đấu giá cần đặt cọc trước hơn 3.600 tỷ đồng",
-      "summary": "Trung tâm Dịch vụ đấu giá tài sản TP.HCM vừa có thông báo niêm yết, công khai việc đấu giá tài sản quyền sử dụng đất, công trình xây dựng và tài sản khác gắn liền với đất tạo lập bằng nguồn vốn ngân sách Nhà nước tại 5 l...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 20:21:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-dau-gia-5-lo-dat-trong-30-phut-khach-dau-gia-can-dat-coc-truoc-hon-3600-ty-dong-188261110202209535.chn"
+      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
+      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm"
     },
     {
       "market": "VIETNAM",
@@ -5100,19 +5071,6 @@
       "severity": "INFO",
       "published_at": "Mon, 09 Nov 2026 02:01:37 GMT",
       "source_url": "https://vneconomy.vn/nab-gia-nhap-nhom-doanh-nghiep-ty-usd-pgv-lps-va-gel-bi-loai.htm"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT",
-        "STB"
-      ],
-      "title": "\"Cá mập\" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB",
-      "summary": "Tính từ đầu năm đến hết tháng 10/2026, quỹ PYN Elite ghi nhận hiệu suất âm 14,68%, đánh dấu một năm kém tích cực sau hai năm liên tiếp đạt mức sinh lời cao trong năm 2024 và 2025....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
-      "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm"
     },
     {
       "market": "VIETNAM",

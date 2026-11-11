@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11 09:51:32",
+  "generated_at": "2026-11-11 20:00:13",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -351,19 +351,19 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "DXG",
+      "symbol": "VHM,VRE",
       "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 10 Nov 26 0",
-      "headline": "Tỷ phú Bill Gates bất ngờ mua thêm 200.000 cổ phiếu một công ty bất động sản Việt Nam",
+      "date": "Thu, 12 Nov 26 0",
+      "headline": "4 tín hiệu có thể kích hoạt làn sóng \"bắt đáy\" trên thị trường chứng khoán",
       "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
+      "symbol": "VHM",
       "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 10 Nov 26 0",
-      "headline": "Petrolimex từng lớn gấp đôi MB nay bằng 1/4, Vinamilk từng gấp 1,5 lần Vingroup nay bằng 1/16: 10 năm viết lại bản đồ tỷ đô trên TTCK",
-      "is_portfolio_holding": true
+      "date": "Wed, 11 Nov 26 1",
+      "headline": "VN-Index tăng điểm, tài khoản nhà đầu tư vẫn 'mỏng' đi",
+      "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 363 hồ sơ SEC & 37 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 363 hồ sơ SEC & 32 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
