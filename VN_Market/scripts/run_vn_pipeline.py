@@ -39,6 +39,12 @@ def run_pipeline():
     sub_env = os.environ.copy()
     sub_env["PYTHONIOENCODING"] = "utf-8"
 
+    # [BƯỚC 0 THỂ CHẾ] Đồng bộ Trí nhớ dài hạn Claude-Mem FTS5 & SQLite SSOT
+    memory_bridge_path = os.path.join(os.path.dirname(os.path.dirname(SCRIPTS_DIR)), "scripts", "apex_institutional_memory_bridge.py")
+    if os.path.exists(memory_bridge_path):
+        print("\n[BƯỚC 0/8] >>> Đồng bộ Trí Nhớ Dài Hạn Claude-Mem (FTS5 Long-term Memory)...")
+        subprocess.run([sys.executable, memory_bridge_path], env=sub_env, capture_output=False)
+
     for idx, (desc, script_name) in enumerate(PIPELINE_STEPS, 1):
         script_path = os.path.join(SCRIPTS_DIR, script_name)
         print(f"\n[{idx}/8] >>> {desc}...")

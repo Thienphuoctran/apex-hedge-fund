@@ -1,34 +1,35 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-11 09:12:21  
+**Thời gian cập nhật:** 2026-11-11 11:42:00  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261111-091221`  
+**Mã đồng bộ:** `SYNC-AG2P-20261111-114200`  
 
 ---
 
-## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** 9h rồi nay tôi ngủ quên, bạn hãy báo cáo cho tôi kế hoạch đầu tư ngày hôm nay thật chi tiết nhé
-* **Kết luận & Quyết định thể chế:**
-KẾ HOẠCH TÁC CHIẾN 11/11: Phiên sáng cấm FOMO ATO, giữ nguyên 14.51M tiền mặt. Đúng 13h00 chiều nay 100 HDB và 100 MSH chính thức về tài khoản (khả dụng T+0). Khung Giờ Vàng 14h00-14h25 kích hoạt chiến thuật bảo vệ lãi đệm và chỉ thăm dò tối đa 5.5M nếu xuất hiện setup A+.
+## I. YÊU CẦU & KẾT QUẢ TRIỂN KHAI MỚI NHẤT CỦA CHỦ TỊCH
+* **Chỉ thị của Chủ tịch:** Cài đặt đầy đủ 2 repository Top GitHub: T3 Code (#1) và Claude-mem (#8), tích hợp cho các phòng ban và hướng dẫn Chủ tịch cài trên điện thoại.
+* **Kết quả thực thi:**
+  1. **Claude-mem (#8) - Hoàn tất 100%:**
+     - Đã cài đặt Bun v1.4.4, uv, claude-mem v15.16.0, worker daemon tại cổng 37725.
+     - Đã gắn 5 Hooks và MCP Server vào Antigravity (`hooks.json`, `mcp_config.json`, `claude-mem-context.md`).
+     - Đã xây dựng `scripts/apex_institutional_memory_bridge.py` nạp SSOT danh mục vào FTS5 Database.
+     - Đã tích hợp vào Bước 0 của pipeline 8 bước `VN_Market/scripts/run_vn_pipeline.py`.
+  2. **T3 Code (#1) - Hoàn tất 100% & Sẵn sàng kết nối điện thoại:**
+     - Đã cài đặt CLI `t3` v0.1.8 vào PATH hệ thống.
+     - Đã khởi chạy Server lắng nghe tại `http://192.168.1.252:37888`.
+     - Đã nạp Workspace Quỹ: `ApexHedgeFund` (Project ID: `9fb8b7f4-6c4f-4226-a5e9-c8bbfc48b299`).
+     - Pairing Token cho Chủ tịch: `WL7CL6SB4436`.
+     - Link kết nối từ điện thoại: `http://192.168.1.252:37888/pair#token=WL7CL6SB4436`.
 
-## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Kích hoạt toàn bộ 8 bước chu trình AI 7 Phòng Ban Việt Nam ngày 11/11/2026 thành công (46.9s)
-- [x] Xác lập chiến thuật mở phiên 9h: Cấm FOMO ATO, khóa két tiền mặt 14,510,422 ₫ (~72.0% Cash)
-- [x] Lập lịch then chốt: Đúng 13h00 chiều nay hàng HDB và MSH về tài khoản chuyển sang T+0 khả dụng
-- [x] Chuẩn bị kịch bản Khung Giờ Vàng 14h00-14h25: Nâng Stop giá vốn cho HDB/MSH và lọc điểm nổ thăm dò 5.5M cho BAF/IDC/BSR
-
-## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
+## II. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
 - **Tổng NAV:** `20,160,422 ₫`
 - **Tiền mặt thực tế:** `14,510,422 ₫` (~72.0% Cash)
 - **Giá trị cổ phiếu:** `5,650,000 ₫`
 - **Vị thế nắm giữ (Ngày T+2.5 — Về tài khoản lúc 13h00 hôm nay):**
-  * **HDB**: 100 CP | Giá vốn: 22,050 ₫ | Đóng cửa hôm qua: 22,250 ₫ | Trạng thái: LÃI ĐỆM +0.91%
-  * **MSH**: 100 CP | Giá vốn: 34,517 ₫ | Đóng cửa hôm qua: 34,700 ₫ | Trạng thái: LÃI ĐỆM +0.58%
+  * **HDB**: 100 CP | Giá vốn: 22,050 ₫ | Trạng thái: LÃI ĐỆM +0.91%
+  * **MSH**: 100 CP | Giá vốn: 34,517 ₫ | Trạng thái: LÃI ĐỆM +0.58%
 
-## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
-1. **Về Phiên sáng 11/11:** Cấm FOMO ATO trước 10h00; kiên nhẫn quan sát, khóa cứng 14.51M tiền mặt.
-2. **Về Hàng T+2.5:** Đúng 13h00 chiều nay 100 HDB và 100 MSH chính thức về tài khoản trở thành T+0 khả dụng.
-3. **Về Khung Giờ Vàng (14h00-14h25):** Kích hoạt nâng Stop giá vốn cho HDB/MSH để gồng lãi không rủi ro; chỉ giải ngân thăm dò tối đa 5.5M nếu BAF/IDC/BSR có setup A+ cạn cung bứt phá.
-4. **Về Kế hoạch tuần:** Giải ngân thăm dò tối đa 5.5M, bảo vệ két tiền mặt 14.51M.
-
-*Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*
+## III. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
+1. Nắm vững việc T3 Code và Claude-Mem đã được cài đặt và tích hợp hoàn chỉnh.
+2. Trí nhớ dài hạn đã được kích hoạt, tuyệt đối không nhắc lại lệnh mua HDB/MSH.
+3. Kế hoạch phiên chiều: Chờ 13h00 hàng về, Khung Giờ Vàng 14h00-14h25 nâng Stop giá vốn gồng lãi.

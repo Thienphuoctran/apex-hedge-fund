@@ -1,22 +1,22 @@
 {
-  "timestamp": "2026-11-11 01:37:11",
+  "timestamp": "2026-11-11 09:11:47",
   "total_tickers": 54,
   "macro_vietnam": {
     "DXY": {
-      "value": 102.27,
-      "change_pct": 0.61
+      "value": 102.22,
+      "change_pct": 0.56
     },
     "US10Y": {
       "value": 4.98,
       "change_pct": 2.45
     },
     "WTI_OIL": {
-      "value": 86.42,
-      "change_pct": -0.5
+      "value": 86.22,
+      "change_pct": -0.73
     },
     "GOLD": {
-      "value": 4042.7,
-      "change_pct": -1.75
+      "value": 4055.7,
+      "change_pct": -1.43
     },
     "S_AND_P500": {
       "value": 7520.93,
@@ -104,7 +104,7 @@
         "chandelier_stop": 53613.0,
         "rs_rating": 47
       },
-      "last_updated": "2026-11-11 01:36:43",
+      "last_updated": "2026-11-11 09:11:17",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -163,7 +163,7 @@
         "chandelier_stop": 31825.0,
         "rs_rating": 35
       },
-      "last_updated": "2026-11-11 01:36:43",
+      "last_updated": "2026-11-11 09:11:18",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -174,7 +174,7 @@
       "exchange": "HOSE",
       "tier": "VN30_LargeCap",
       "weight_target": 0.035,
-      "pe": 5.78,
+      "pe": 5.86,
       "pb": 1.2,
       "roe_pct": 22.64,
       "market_cap_ty_vnd": 247765.5,
@@ -191,7 +191,7 @@
         "gross_margin_pct": 0.0,
         "operating_margin_pct": 65.58,
         "profit_margin_pct": 51.63,
-        "eps_vnd": 5522.0,
+        "eps_vnd": 5445.0,
         "bvps_vnd": 26545.0
       },
       "technical": {
@@ -220,9 +220,9 @@
         "vsa_code": "NEUTRAL_TEST",
         "active_buy_pct": 56.3,
         "chandelier_stop": 30204.0,
-        "rs_rating": 72
+        "rs_rating": 71
       },
-      "last_updated": "2026-11-11 01:36:44",
+      "last_updated": "2026-11-11 09:11:18",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -279,9 +279,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 46.8,
         "chandelier_stop": 21280.0,
-        "rs_rating": 86
+        "rs_rating": 84
       },
-      "last_updated": "2026-11-11 01:36:44",
+      "last_updated": "2026-11-11 09:11:19",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -338,9 +338,9 @@
         "vsa_code": "NEUTRAL_TEST",
         "active_buy_pct": 47.3,
         "chandelier_stop": 18959.0,
-        "rs_rating": 71
+        "rs_rating": 69
       },
-      "last_updated": "2026-11-11 01:36:45",
+      "last_updated": "2026-11-11 09:11:19",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -397,9 +397,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 56.7,
         "chandelier_stop": 19952.0,
-        "rs_rating": 78
+        "rs_rating": 77
       },
-      "last_updated": "2026-11-11 01:36:45",
+      "last_updated": "2026-11-11 09:11:20",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -456,9 +456,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 50.2,
         "chandelier_stop": 21933.0,
-        "rs_rating": 93
+        "rs_rating": 92
       },
-      "last_updated": "2026-11-11 01:36:46",
+      "last_updated": "2026-11-11 09:11:20",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -515,9 +515,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 56.5,
         "chandelier_stop": 21283.0,
-        "rs_rating": 98
+        "rs_rating": 96
       },
-      "last_updated": "2026-11-11 01:36:46",
+      "last_updated": "2026-11-11 09:11:21",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -574,9 +574,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 61.8,
         "chandelier_stop": 63518.0,
-        "rs_rating": 90
+        "rs_rating": 89
       },
-      "last_updated": "2026-11-11 01:36:47",
+      "last_updated": "2026-11-11 09:11:21",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -590,7 +590,7 @@
       "pe": 5.47,
       "pb": 1.78,
       "roe_pct": 37.99,
-      "market_cap_ty_vnd": 254659.5,
+      "market_cap_ty_vnd": 509319.1,
       "beta": 1.33,
       "yf_fundamentals": {
         "revenue_ty_vnd": 305443.7,
@@ -635,7 +635,7 @@
         "chandelier_stop": 58081.0,
         "rs_rating": 54
       },
-      "last_updated": "2026-11-11 01:36:47",
+      "last_updated": "2026-11-11 09:11:22",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -694,7 +694,7 @@
         "chandelier_stop": 22496.0,
         "rs_rating": 33
       },
-      "last_updated": "2026-11-11 01:36:48",
+      "last_updated": "2026-11-11 09:11:22",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -753,7 +753,7 @@
         "chandelier_stop": 13657.0,
         "rs_rating": 26
       },
-      "last_updated": "2026-11-11 01:36:48",
+      "last_updated": "2026-11-11 09:11:23",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -812,7 +812,7 @@
         "chandelier_stop": 20493.0,
         "rs_rating": 44
       },
-      "last_updated": "2026-11-11 01:36:49",
+      "last_updated": "2026-11-11 09:11:23",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -871,7 +871,7 @@
         "chandelier_stop": 10743.0,
         "rs_rating": 27
       },
-      "last_updated": "2026-11-11 01:36:49",
+      "last_updated": "2026-11-11 09:11:24",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -885,7 +885,7 @@
       "pe": 128.29,
       "pb": 1.01,
       "roe_pct": 1.68,
-      "market_cap_ty_vnd": 14456.4,
+      "market_cap_ty_vnd": 14456.5,
       "beta": 0.86,
       "yf_fundamentals": {
         "revenue_ty_vnd": 4287.4,
@@ -930,7 +930,7 @@
         "chandelier_stop": 10138.0,
         "rs_rating": 42
       },
-      "last_updated": "2026-11-11 01:36:50",
+      "last_updated": "2026-11-11 09:11:24",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -989,7 +989,7 @@
         "chandelier_stop": 36944.0,
         "rs_rating": 21
       },
-      "last_updated": "2026-11-11 01:36:50",
+      "last_updated": "2026-11-11 09:11:25",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1022,9 +1022,9 @@
       },
       "technical": {
         "raw_rs_score": 0.0,
-        "rs_rating": 81
+        "rs_rating": 80
       },
-      "last_updated": "2026-11-11 01:36:51",
+      "last_updated": "2026-11-11 09:11:26",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1083,7 +1083,7 @@
         "chandelier_stop": 25688.0,
         "rs_rating": 45
       },
-      "last_updated": "2026-11-11 01:36:51",
+      "last_updated": "2026-11-11 09:11:26",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1142,7 +1142,7 @@
         "chandelier_stop": 18366.0,
         "rs_rating": 50
       },
-      "last_updated": "2026-11-11 01:36:52",
+      "last_updated": "2026-11-11 09:11:27",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1199,9 +1199,9 @@
         "vsa_code": "NEUTRAL_TEST",
         "active_buy_pct": 44.9,
         "chandelier_stop": 39156.0,
-        "rs_rating": 74
+        "rs_rating": 72
       },
-      "last_updated": "2026-11-11 01:36:52",
+      "last_updated": "2026-11-11 09:11:27",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1260,7 +1260,7 @@
         "chandelier_stop": 20108.0,
         "rs_rating": 51
       },
-      "last_updated": "2026-11-11 01:36:53",
+      "last_updated": "2026-11-11 09:11:27",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1317,9 +1317,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 55.6,
         "chandelier_stop": 10097.0,
-        "rs_rating": 69
+        "rs_rating": 68
       },
-      "last_updated": "2026-11-11 01:36:53",
+      "last_updated": "2026-11-11 09:11:28",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1376,9 +1376,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 60.3,
         "chandelier_stop": 11054.0,
-        "rs_rating": 87
+        "rs_rating": 86
       },
-      "last_updated": "2026-11-11 01:36:54",
+      "last_updated": "2026-11-11 09:11:29",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1435,9 +1435,9 @@
         "vsa_code": "NEUTRAL_TEST",
         "active_buy_pct": 46.8,
         "chandelier_stop": 71634.0,
-        "rs_rating": 75
+        "rs_rating": 74
       },
-      "last_updated": "2026-11-11 01:36:54",
+      "last_updated": "2026-11-11 09:11:30",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1494,9 +1494,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 50.0,
         "chandelier_stop": 135901.0,
-        "rs_rating": 92
+        "rs_rating": 90
       },
-      "last_updated": "2026-11-11 01:36:55",
+      "last_updated": "2026-11-11 09:11:31",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1553,9 +1553,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 53.3,
         "chandelier_stop": 68949.0,
-        "rs_rating": 80
+        "rs_rating": 78
       },
-      "last_updated": "2026-11-11 01:36:55",
+      "last_updated": "2026-11-11 09:11:31",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1587,34 +1587,34 @@
         "bvps_vnd": 16494.0
       },
       "technical": {
-        "price": 54400.0,
-        "day_change_pct": 0.0,
-        "change_1m_pct": -2.57,
-        "change_3m_pct": -7.63,
-        "change_6m_pct": -2.87,
-        "change_1y_pct": -5.07,
-        "ma20": 54921.1,
-        "ma50": 56262.4,
-        "ma200": 57063.8,
-        "rsi14": 38.7,
-        "atr14": 730.7,
+        "price": NaN,
+        "day_change_pct": NaN,
+        "change_1m_pct": NaN,
+        "change_3m_pct": NaN,
+        "change_6m_pct": NaN,
+        "change_1y_pct": NaN,
+        "ma20": NaN,
+        "ma50": NaN,
+        "ma200": NaN,
+        "rsi14": 40.0,
+        "atr14": NaN,
         "volume": 0,
-        "vol20": 2004925,
+        "vol20": 1945975,
         "vol_ratio": 0.0,
-        "price_vs_ma200": -4.67,
-        "price_vs_ma20": -0.95,
+        "price_vs_ma200": 0.0,
+        "price_vs_ma20": 0.0,
         "high_52w": 69892.2,
         "low_52w": 52201.1,
-        "pct_from_52w_high": -22.17,
-        "raw_rs_score": -5.48,
-        "wyckoff_phase": "Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Tuyệt đối không bắt dao rơi)",
+        "pct_from_52w_high": NaN,
+        "raw_rs_score": NaN,
+        "wyckoff_phase": "Phase B — CONSOLIDATION (Tích lũy hấp thụ nguồn cung T+2.5)",
         "vsa_signal": "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)",
         "vsa_code": "NEUTRAL_TEST",
-        "active_buy_pct": 48.0,
-        "chandelier_stop": 53918.0,
-        "rs_rating": 68
+        "active_buy_pct": NaN,
+        "chandelier_stop": NaN,
+        "rs_rating": 98
       },
-      "last_updated": "2026-11-11 01:36:56",
+      "last_updated": "2026-11-11 09:11:32",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1673,7 +1673,7 @@
         "chandelier_stop": 15117.0,
         "rs_rating": 18
       },
-      "last_updated": "2026-11-11 01:36:56",
+      "last_updated": "2026-11-11 09:11:33",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1732,7 +1732,7 @@
         "chandelier_stop": 39415.0,
         "rs_rating": 56
       },
-      "last_updated": "2026-11-11 01:36:57",
+      "last_updated": "2026-11-11 09:11:33",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1791,7 +1791,7 @@
         "chandelier_stop": 51071.0,
         "rs_rating": 23
       },
-      "last_updated": "2026-11-11 01:36:57",
+      "last_updated": "2026-11-11 09:11:34",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -1850,7 +1850,7 @@
         "chandelier_stop": 17740.0,
         "rs_rating": 20
       },
-      "last_updated": "2026-11-11 01:36:58",
+      "last_updated": "2026-11-11 09:11:34",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -1862,7 +1862,7 @@
       "tier": "VN30_LargeCap",
       "weight_target": 0.035,
       "pe": 13.62,
-      "pb": 1.53,
+      "pb": 1.61,
       "roe_pct": 13.86,
       "market_cap_ty_vnd": 61976.9,
       "beta": 1.21,
@@ -1879,7 +1879,7 @@
         "operating_margin_pct": 72.74,
         "profit_margin_pct": 42.92,
         "eps_vnd": 1517.0,
-        "bvps_vnd": 13525.0
+        "bvps_vnd": 12820.0
       },
       "technical": {
         "price": 19900.0,
@@ -1909,7 +1909,7 @@
         "chandelier_stop": 18775.0,
         "rs_rating": 59
       },
-      "last_updated": "2026-11-11 01:36:58",
+      "last_updated": "2026-11-11 09:11:35",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -1968,7 +1968,7 @@
         "chandelier_stop": 13298.0,
         "rs_rating": 41
       },
-      "last_updated": "2026-11-11 01:36:59",
+      "last_updated": "2026-11-11 09:11:35",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2027,7 +2027,7 @@
         "chandelier_stop": 18343.0,
         "rs_rating": 30
       },
-      "last_updated": "2026-11-11 01:36:59",
+      "last_updated": "2026-11-11 09:11:36",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2086,7 +2086,7 @@
         "chandelier_stop": 22367.0,
         "rs_rating": 53
       },
-      "last_updated": "2026-11-11 01:37:00",
+      "last_updated": "2026-11-11 09:11:36",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2119,9 +2119,9 @@
       },
       "technical": {
         "raw_rs_score": 0.0,
-        "rs_rating": 83
+        "rs_rating": 81
       },
-      "last_updated": "2026-11-11 01:37:01",
+      "last_updated": "2026-11-11 09:11:37",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2178,9 +2178,9 @@
         "vsa_code": "NEUTRAL_TEST",
         "active_buy_pct": 47.5,
         "chandelier_stop": 71851.0,
-        "rs_rating": 77
+        "rs_rating": 75
       },
-      "last_updated": "2026-11-11 01:37:01",
+      "last_updated": "2026-11-11 09:11:38",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2213,9 +2213,9 @@
       },
       "technical": {
         "raw_rs_score": 0.0,
-        "rs_rating": 84
+        "rs_rating": 83
       },
-      "last_updated": "2026-11-11 01:37:02",
+      "last_updated": "2026-11-11 09:11:39",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2274,7 +2274,7 @@
         "chandelier_stop": 16598.0,
         "rs_rating": 60
       },
-      "last_updated": "2026-11-11 01:37:03",
+      "last_updated": "2026-11-11 09:11:39",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2331,9 +2331,9 @@
         "vsa_code": "NEUTRAL_TEST",
         "active_buy_pct": 45.1,
         "chandelier_stop": 25851.0,
-        "rs_rating": 95
+        "rs_rating": 93
       },
-      "last_updated": "2026-11-11 01:37:03",
+      "last_updated": "2026-11-11 09:11:40",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2392,7 +2392,7 @@
         "chandelier_stop": 11983.0,
         "rs_rating": 62
       },
-      "last_updated": "2026-11-11 01:37:04",
+      "last_updated": "2026-11-11 09:11:40",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2451,7 +2451,7 @@
         "chandelier_stop": 45352.0,
         "rs_rating": 66
       },
-      "last_updated": "2026-11-11 01:37:04",
+      "last_updated": "2026-11-11 09:11:41",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2510,7 +2510,7 @@
         "chandelier_stop": 15734.0,
         "rs_rating": 65
       },
-      "last_updated": "2026-11-11 01:37:05",
+      "last_updated": "2026-11-11 09:11:41",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2569,7 +2569,7 @@
         "chandelier_stop": 32019.0,
         "rs_rating": 24
       },
-      "last_updated": "2026-11-11 01:37:05",
+      "last_updated": "2026-11-11 09:11:42",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2628,7 +2628,7 @@
         "chandelier_stop": 31654.0,
         "rs_rating": 48
       },
-      "last_updated": "2026-11-11 01:37:06",
+      "last_updated": "2026-11-11 09:11:42",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2687,7 +2687,7 @@
         "chandelier_stop": 19888.0,
         "rs_rating": 29
       },
-      "last_updated": "2026-11-11 01:37:06",
+      "last_updated": "2026-11-11 09:11:43",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2744,9 +2744,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 53.4,
         "chandelier_stop": 49659.0,
-        "rs_rating": 96
+        "rs_rating": 95
       },
-      "last_updated": "2026-11-11 01:37:07",
+      "last_updated": "2026-11-11 09:11:43",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -2805,7 +2805,7 @@
         "chandelier_stop": 46363.0,
         "rs_rating": 63
       },
-      "last_updated": "2026-11-11 01:37:07",
+      "last_updated": "2026-11-11 09:11:44",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -2862,9 +2862,9 @@
         "vsa_code": "NO_SUPPLY",
         "active_buy_pct": 47.1,
         "chandelier_stop": 21037.0,
-        "rs_rating": 89
+        "rs_rating": 87
       },
-      "last_updated": "2026-11-11 01:37:08",
+      "last_updated": "2026-11-11 09:11:45",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -2923,7 +2923,7 @@
         "chandelier_stop": 14257.0,
         "rs_rating": 32
       },
-      "last_updated": "2026-11-11 01:37:08",
+      "last_updated": "2026-11-11 09:11:45",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -2982,7 +2982,7 @@
         "chandelier_stop": 9110.0,
         "rs_rating": 36
       },
-      "last_updated": "2026-11-11 01:37:09",
+      "last_updated": "2026-11-11 09:11:46",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -3041,7 +3041,7 @@
         "chandelier_stop": 15227.0,
         "rs_rating": 39
       },
-      "last_updated": "2026-11-11 01:37:09",
+      "last_updated": "2026-11-11 09:11:46",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -3055,7 +3055,7 @@
       "pe": 9.31,
       "pb": 1.09,
       "roe_pct": 13.0,
-      "market_cap_ty_vnd": 11200.2,
+      "market_cap_ty_vnd": 10451.7,
       "beta": 0.36,
       "yf_fundamentals": {
         "revenue_ty_vnd": 12375.0,
@@ -3100,7 +3100,7 @@
         "chandelier_stop": 48516.0,
         "rs_rating": 38
       },
-      "last_updated": "2026-11-11 01:37:10",
+      "last_updated": "2026-11-11 09:11:47",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -3159,7 +3159,7 @@
         "chandelier_stop": 85549.0,
         "rs_rating": 57
       },
-      "last_updated": "2026-11-11 01:37:11",
+      "last_updated": "2026-11-11 09:11:47",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     }
