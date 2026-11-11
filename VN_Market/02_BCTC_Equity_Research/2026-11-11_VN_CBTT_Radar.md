@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-11 09:02:30  
-> **Số sự kiện ghi nhận:** 36 thông báo  
+> **Thời gian quét:** 2026-11-11 09:51:21  
+> **Số sự kiện ghi nhận:** 37 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -14,6 +14,7 @@
 | **ACB** | `CO_TUC` | ⚠️ CHÚ Ý | Bất ngờ: Chủ tịch Trần Hùng Huy nhận tiền cổ tức từ ACB ít hơn vợ chồng bầu Kiên | [Xem Link](https://cafef.vn/bat-ngo-chu-tich-tran-hung-huy-nhan-tien-co-tuc-tu-acb-it-hon-vo-chong-bau-kien-188261110160054803.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngân hàng Nhà nước bơm thêm VND, chứng khoán bật tăng gần 29 điểm | [Xem Link](https://cafef.vn/ngan-hang-nha-nuoc-bom-them-vnd-chung-khoan-bat-tang-gan-29-diem-188261110164611689.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Phiên 10/11: Khối ngoại mua ròng mạnh tay gần 500 tỷ đồng, cổ phiếu nào được "gom" nhiều nhất? | [Xem Link](https://cafef.vn/phien-10-11-khoi-ngoai-mua-rong-manh-tay-gan-500-ty-dong-co-phieu-nao-duoc-gom-nhieu-nhat-188261110152534078.chn) |
+| **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hoán đổi ngoại tệ: Đã có gần 50 nghìn tỷ đồng được cung ứng cho hệ thống ngân hàng | [Xem Link](https://cafef.vn/hoan-doi-ngoai-te-da-co-gan-50-nghin-ty-dong-duoc-cung-ung-cho-he-thong-ngan-hang-188261111144738067.chn) |
 | **VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Từ hôm nay (11/11), Ngân hàng Nhà nước bắt đầu triển khai kênh bơm tiền VND 2 lần/tuần | [Xem Link](https://cafef.vn/tu-hom-nay-11-11-ngan-hang-nha-nuoc-bat-dau-trien-khai-kenh-bom-tien-vnd-2-lan-tuan-188261111155525195.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn chiều 11/11 đồng loạt quay đầu tăng tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-11-11-dong-loat-quay-dau-tang-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261111071532931.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bất ngờ cựu TGĐ Vietcombank, TGĐ VPBank, FPT Telecom và loạt founder đình đám cùng học tại ngôi trường được ví như 'Harvard Việt Nam' | [Xem Link](https://cafef.vn/bat-ngo-cuu-tgd-vietcombank-tgd-vpbank-fpt-telecom-va-loat-founder-dinh-dam-cung-hoc-tai-ngoi-truong-duoc-vi-nhu-harvard-viet-nam-188261111102322254.chn) |
@@ -30,13 +31,13 @@
 | **HCM** | `CANH_BAO_RUI_RO` | 🔴 RED FLAG | Đề xuất buộc nhà đầu tư nộp lại tiền thu từ xây dựng sai phép, thay thế tháo dỡ | [Xem Link](https://cafef.vn/de-xuat-buoc-nha-dau-tu-nop-lai-tien-thu-tu-xay-dung-sai-phep-thay-the-thao-do-188261110204831207.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chốt ngày đấu giá trực tuyến 3.790 căn hộ Thủ Thiêm trên hệ thống Bộ Công an | [Xem Link](https://cafef.vn/chot-ngay-dau-gia-truc-tuyen-3790-can-ho-thu-thiem-tren-he-thong-bo-cong-an-188261110202948598.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | TP.HCM đấu giá 5 lô đất trong 30 phút, khách đấu giá cần đặt cọc trước hơn 3.600 tỷ đồng | [Xem Link](https://cafef.vn/tphcm-dau-gia-5-lo-dat-trong-30-phut-khach-dau-gia-can-dat-coc-truoc-hon-3600-ty-dong-188261110202209535.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Đề xuất cho bán nhà ở xã hội theo giá thị trường sau 5 năm | [Xem Link](https://cafef.vn/de-xuat-cho-ban-nha-o-xa-hoi-theo-gia-thi-truong-sau-5-nam-188261110202051626.chn) |
 | **BSR** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | BSR và Liên danh FutureTec - Hanghua trao đổi cơ hội hợp tác phát triển chuỗi giá trị lọc hóa dầu | [Xem Link](https://vneconomy.vn/bsr-va-lien-danh-futuretec-hanghua-trao-doi-co-hoi-hop-tac-phat-trien-chuoi-gia-tri-loc-hoa-dau.htm) |
 | **GMD, REE** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tái cơ cấu ETF chỉ số HoSE tháng 10/2026: Dòng tiền dự kiến tập trung mạnh vào GMD, REE và VJC | [Xem Link](https://vneconomy.vn/tai-co-cau-etf-chi-so-hose-thang-102026-dong-tien-du-kien-tap-trung-manh-vao-gmd-ree-va-vjc.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | NAB gia nhập nhóm doanh nghiệp tỷ USD, PGV, LPS và GEL bị loại | [Xem Link](https://vneconomy.vn/nab-gia-nhap-nhom-doanh-nghiep-ty-usd-pgv-lps-va-gel-bi-loai.htm) |
 | **FPT, STB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | "Cá mập" Pyn Elite Fund báo lỗ nặng từ đầu năm do nắm giữ nhiều FPT, STB | [Xem Link](https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vietnam Connect Forum 2026: Đầu tư vào Việt Nam - Cơ hội không chỉ nằm ở dòng vốn | [Xem Link](https://vneconomy.vn/vietnam-connect-forum-2026-dau-tu-vao-viet-nam-co-hoi-khong-chi-nam-o-dong-von.htm) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | MB Economic Insights 2026: Khơi thông nguồn vốn, thích ứng nhanh trước biến động sắp diễn ra tại TP. HCM | [Xem Link](https://vneconomy.vn/mb-economic-insights-2026-khoi-thong-nguon-von-thich-ung-nhanh-truoc-bien-dong-sap-dien-ra-tai-tp-hcm.htm) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vietjet khai thác ba đường bay kết nối Việt Nam - Philippines | [Xem Link](https://vnexpress.net/vietjet-khai-thac-ba-duong-bay-ket-noi-viet-nam-philippines-5143438.html) |
 | **HCM** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | CII huy động vốn mở rộng cao tốc TP HCM - Trung Lương - Mỹ Thuận | [Xem Link](https://vnexpress.net/cii-huy-dong-von-mo-rong-cao-toc-tp-hcm-trung-luong-my-thuan-5142760.html) |
 | **BSR** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ nhà máy lọc dầu Dung Quất nâng mục tiêu lãi kỷ lục | [Xem Link](https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-nang-muc-tieu-lai-ky-luc-5142212.html) |
 | **SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SSI: Chứng khoán có thể tạo đáy ngắn hạn trong tháng này | [Xem Link](https://vnexpress.net/ssi-chung-khoan-co-the-tao-day-ngan-han-trong-thang-nay-5142164.html) |

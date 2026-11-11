@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-11T09:02:30.698176+00:00",
+  "timestamp_utc": "2026-11-11T09:51:21.548555+00:00",
   "scan_date": "2026-11-11",
   "total_us_filings_count": 363,
-  "total_vn_announcements_count": 36,
+  "total_vn_announcements_count": 37,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -330,7 +330,7 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 17:23:00 +0700",
       "source_url": "https://cafef.vn/ngan-hang-nha-nuoc-bom-them-vnd-chung-khoan-bat-tang-gan-29-diem-188261110164611689.chn",
-      "total_announcements": 4
+      "total_announcements": 5
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4865,6 +4865,18 @@
       "symbols": [
         "VND"
       ],
+      "title": "Hoán đổi ngoại tệ: Đã có gần 50 nghìn tỷ đồng được cung ứng cho hệ thống ngân hàng",
+      "summary": "Nghiệp vụ hoán đổi ngoại tệ kỳ hạn 6 tháng của Ngân hàng Nhà nước (NHNN) đã bước đầu có tác động tích cực, bổ sung nguồn vốn VND và hỗ trợ ổn định kỳ vọng thị trường. Trao đổi với phóng viên, bà Nguyễn Linh Phương, Phó V...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 26 16:47:00 +0700",
+      "source_url": "https://cafef.vn/hoan-doi-ngoai-te-da-co-gan-50-nghin-ty-dong-duoc-cung-ung-cho-he-thong-ngan-hang-188261111144738067.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "VND"
+      ],
       "title": "Từ hôm nay (11/11), Ngân hàng Nhà nước bắt đầu triển khai kênh bơm tiền VND 2 lần/tuần",
       "summary": "Từ hôm nay (11/11), Ngân hàng Nhà nước bắt đầu triển khai kênh bơm tiền định kỳ 2 lần/tuần thông qua hoạt động mua USD giao ngay. Theo Chứng khoán Rồng Việt (VDSC), động thái này không chỉ nhằm tạo sàn cho tỷ giá và bổ s...",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5055,18 +5067,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Đề xuất cho bán nhà ở xã hội theo giá thị trường sau 5 năm",
-      "summary": "Hiệp hội Bất động sản TP HCM (HoREA) kiến nghị cho phép người mua nhà ở xã hội (NƠXH) được chuyển nhượng theo giá thị trường sau 5 năm, thay vì tiếp tục bị giới hạn đối tượng và giá bán....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 20:20:00 +0700",
-      "source_url": "https://cafef.vn/de-xuat-cho-ban-nha-o-xa-hoi-theo-gia-thi-truong-sau-5-nam-188261110202051626.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "BSR"
       ],
       "title": "BSR và Liên danh FutureTec - Hanghua trao đổi cơ hội hợp tác phát triển chuỗi giá trị lọc hóa dầu",
@@ -5137,6 +5137,18 @@
       "severity": "INFO",
       "published_at": "Wed, 04 Nov 2026 11:00:01 GMT",
       "source_url": "https://vneconomy.vn/mb-economic-insights-2026-khoi-thong-nguon-von-thich-ung-nhanh-truoc-bien-dong-sap-dien-ra-tai-tp-hcm.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Vietjet khai thác ba đường bay kết nối Việt Nam - Philippines",
+      "summary": "Vietjet khai trương đường bay TP HCM, Hà Nội - Cebu và TP HCM - Clark với ba chuyến khứ hồi mỗi tuần, mở thêm lựa chọn đi lại giữa hai nước....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 2026 15:30:00 +0700",
+      "source_url": "https://vnexpress.net/vietjet-khai-thac-ba-duong-bay-ket-noi-viet-nam-philippines-5143438.html"
     },
     {
       "market": "VIETNAM",
