@@ -32,11 +32,17 @@ import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
+def get_ict_now() -> datetime.datetime:
+    """Luôn lấy thời gian hiện tại chuẩn múi giờ Việt Nam (ICT = UTC+7) bất kể chạy trên Cloud Render hay Local."""
+    utc_now = datetime.datetime.now(datetime.timezone.utc)
+    ict_tz = datetime.timezone(datetime.timedelta(hours=7))
+    return utc_now.astimezone(ict_tz)
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 def generate_dynamic_tactical_stages_html(now=None):
     if now is None:
-        now = datetime.datetime.now()
+        now = get_ict_now()
     hm = now.hour * 60 + now.minute
     
     # Morning: 08:30 - 11:30
@@ -236,7 +242,7 @@ def generate_portal_html(
         wr_state = get_tactical_war_room_state()
     except Exception:
         wr_state = {
-            "server_time": datetime.datetime.now().strftime("%H:%M:%S"),
+            "server_time": get_ict_now().strftime("%H:%M:%S"),
             "phase_info": {"active_phase_id": "NOON_INTERMISSION", "countdown_to_wall_street": "--:--:--"},
             "action_plan": {"current_step": {
                 "step_number": 5, "title": "BƯỚC 5: NGHỈ TRƯA, TỔNG KẾT PHIÊN SÁNG & ĐỐI SOÁT KHỐI NGOẠI",
@@ -263,7 +269,7 @@ def generate_portal_html(
     services = supervisor_data.get("services", {})
     total_reports_count = len(initial_reports)
 
-    today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+    today_str = get_ict_now().strftime("%Y-%m-%d")
     today_reports_count = sum(1 for r in initial_reports if r.get("date") == today_str)
 
     # Render bảng tiến trình daemons

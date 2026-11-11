@@ -26,6 +26,12 @@ import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 
+def get_ict_now() -> datetime.datetime:
+    """Luôn lấy thời gian hiện tại chuẩn múi giờ Việt Nam (ICT = UTC+7) bất kể chạy trên Cloud Render hay Local."""
+    utc_now = datetime.datetime.now(datetime.timezone.utc)
+    ict_tz = datetime.timezone(datetime.timedelta(hours=7))
+    return utc_now.astimezone(ict_tz)
+
 if hasattr(sys.stdout, "reconfigure"):
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -370,8 +376,8 @@ class ApexDatabaseEngine:
             conditions.append("tickers LIKE ?")
             params.append(f"%{ticker_filter}%")
 
-        # CẦU CHÌ KHÓA THỜI GIAN THỰC (STRICT TIME-GATING & EMBARGO SHIELD)
-        now_dt = datetime.datetime.now()
+        # CẦU CHÌ KHÓA THỜI GIAN THỰC (STRICT TIME-GATING & EMBARGO SHIELD) - ĐỒNG BỘ CHUẨN GIỜ VIỆT NAM (ICT UTC+7)
+        now_dt = get_ict_now()
         today_str = now_dt.strftime("%Y-%m-%d")
         current_sort_time = now_dt.strftime("%H:%M:%S")
 
@@ -431,7 +437,7 @@ class ApexDatabaseEngine:
 
         fts_match_query = " ".join([f'"{tok}"*' for tok in clean_q.split()])
 
-        now_dt = datetime.datetime.now()
+        now_dt = get_ict_now()
         today_str = now_dt.strftime("%Y-%m-%d")
         current_sort_time = now_dt.strftime("%H:%M:%S")
 

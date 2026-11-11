@@ -26,6 +26,12 @@ import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
+def get_ict_now() -> datetime.datetime:
+    """Luôn lấy thời gian hiện tại chuẩn múi giờ Việt Nam (ICT = UTC+7) bất kể chạy trên Cloud Render hay Local."""
+    utc_now = datetime.datetime.now(datetime.timezone.utc)
+    ict_tz = datetime.timezone(datetime.timedelta(hours=7))
+    return utc_now.astimezone(ict_tz)
+
 try:
     if sys.stdout.encoding != 'utf-8':
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -39,7 +45,7 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 # Định tuyến directives phân luồng theo ngày hiện tại để bảo đảm tính tiến hóa liên tục
 def get_daily_directives_file(date_str: Optional[str] = None) -> Path:
     if not date_str:
-        date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+        date_str = get_ict_now().strftime("%Y-%m-%d")
     return DATA_DIR / f"apex_tactical_war_room_directives_{date_str}.json"
 
 VN_LEDGER_FILE = BASE_DIR / "VN_Market" / "07_Daily_Specialist" / "vn_daily_ledger.json"
@@ -53,7 +59,7 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
     Xác định chính xác pha thị trường hiện tại của TTCK Việt Nam.
     """
     if now is None:
-        now = datetime.datetime.now()
+        now = get_ict_now()
 
     weekday = now.weekday()  # 0=Monday, 4=Friday, 5=Saturday, 6=Sunday
     is_weekend = weekday >= 5
@@ -437,7 +443,7 @@ def get_live_stock_sentinel() -> List[Dict[str, Any]]:
 def load_directives_history(date_str: Optional[str] = None) -> List[Dict[str, Any]]:
     """Tải lịch sử chỉ thị tương tác giữa Chủ tịch và Minh Quân/Victor theo từng ngày mới."""
     if not date_str:
-        date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+        date_str = get_ict_now().strftime("%Y-%m-%d")
     
     file_path = get_daily_directives_file(date_str)
     if file_path.exists():
@@ -473,7 +479,7 @@ def load_directives_history(date_str: Optional[str] = None) -> List[Dict[str, An
 def save_directives_history(history: List[Dict[str, Any]], date_str: Optional[str] = None) -> None:
     """Lưu lịch sử chỉ thị tương tác vào file của đúng ngày hôm đó."""
     if not date_str:
-        date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+        date_str = get_ict_now().strftime("%Y-%m-%d")
     file_path = get_daily_directives_file(date_str)
     try:
         with open(file_path, "w", encoding="utf-8") as f:
@@ -494,7 +500,7 @@ def evaluate_and_trigger_tactical_alerts(
     - Tuyệt đối KHÔNG nhắc lại lệnh mua Nhịp 1 nếu danh mục đã sở hữu cổ phiếu đó.
     - Trong phiên T+1 (hàng chưa về tài khoản): Giữ kỷ luật thép ÁN BINH BẤT ĐỘNG, không mua gia tăng.
     """
-    now = datetime.datetime.now()
+    now = get_ict_now()
     hm = now.hour * 60 + now.minute
 
     # 1. Đọc trạng thái danh mục SSOT thực tế
@@ -760,7 +766,7 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
     Tập hợp toàn bộ trạng thái thời gian thực của Phòng Tác Chiến (Minh Quân, Victor, Alex).
     Số liệu chuẩn chỉ 100% không bịa đặt, khớp hoàn toàn với các báo cáo thể chế.
     """
-    now = datetime.datetime.now()
+    now = get_ict_now()
     phase_info = get_current_market_phase(now)
     action_plan = get_tactical_action_steps(now)
     market_overview = get_live_market_overview()
@@ -886,7 +892,7 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
     if not command_text:
         return {"ok": False, "error": "Chỉ thị không được để trống."}
 
-    now = datetime.datetime.now()
+    now = get_ict_now()
     time_str = now.strftime("%H:%M:%S")
     cmd_lower = command_text.lower()
 

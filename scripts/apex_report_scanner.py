@@ -26,6 +26,12 @@ import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 
+def get_ict_now() -> datetime.datetime:
+    """Luôn lấy thời gian hiện tại chuẩn múi giờ Việt Nam (ICT = UTC+7) bất kể chạy trên Cloud Render hay Local."""
+    utc_now = datetime.datetime.now(datetime.timezone.utc)
+    ict_tz = datetime.timezone(datetime.timedelta(hours=7))
+    return utc_now.astimezone(ict_tz)
+
 if hasattr(sys.stdout, "reconfigure"):
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -391,8 +397,8 @@ def _flat_file_scan_all_institutional_reports(
             if shift_filter and shift_filter != "all" and shift_filter not in meta["shift_label"]:
                 continue
 
-            # CẦU CHÌ KHÓA THỜI GIAN THỰC (STRICT TIME-GATING & EMBARGO SHIELD):
-            now_dt = datetime.datetime.now()
+            # CẦU CHÌ KHÓA THỜI GIAN THỰC (STRICT TIME-GATING & EMBARGO SHIELD) - ĐỒNG BỘ CHUẨN GIỜ VIỆT NAM (ICT UTC+7):
+            now_dt = get_ict_now()
             today_str = now_dt.strftime("%Y-%m-%d")
             current_sort_time = now_dt.strftime("%H:%M:%S")
 
@@ -450,7 +456,7 @@ def get_available_archive_dates() -> List[Dict[str, Any]]:
     """Lấy danh sách tất cả các ngày có báo cáo trong kho dữ liệu kèm số lượng báo cáo chuẩn unembargoed."""
     all_reps = scan_all_institutional_reports(limit=1000)
     date_counts: Dict[str, int] = {}
-    today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+    today_str = get_ict_now().strftime("%Y-%m-%d")
 
     for r in all_reps:
         d = r["date"]
@@ -483,7 +489,7 @@ def get_available_archive_dates() -> List[Dict[str, Any]]:
 
 def get_daily_milestones_status() -> List[Dict[str, Any]]:
     """Tính toán tiến độ 18 Cột Mốc Tác Chiến trong ngày so khớp với giờ Việt Nam."""
-    now_vn = datetime.datetime.now()
+    now_vn = get_ict_now()
     now_hm = now_vn.strftime("%H:%M")
     is_weekend = now_vn.weekday() in (5, 6)
     trading_milestones = {"09:00", "11:45", "13:00", "14:00", "14:25", "15:15"}
