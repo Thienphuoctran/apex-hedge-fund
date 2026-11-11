@@ -1,6 +1,6 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-11T01:37:11.973190+00:00",
+  "generated_at_utc": "2026-11-11T09:03:36.629940+00:00",
   "trading_date": "2026-11-11",
   "cio_desk_verdict": "100% TIỀN MẶT (20,000,000 ₫) — ĐÃ TẤT TOÁN VÒNG 1 (LÃI RÒNG +167,119 ₫) & ĐỢI TẦM NGẮM VÒNG 2",
   "capital_summary": {
@@ -78,7 +78,7 @@
       "reward_risk_ratio": 5.03,
       "expected_value_pct": 24.98,
       "catalysts": "Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưởng bùng nổ 3 con số. Việc sáp nhập VMware bắt đầu phát huy hiệu quả cắt giảm chi phí và gia tăng dòng tiền thuê bao phần mềm doanh nghiệp.",
-      "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `81.4/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+14.62%` • True FCF ex-SBC: `$28.64B` • Altman Z: `13.31` • Lynch PEG: `0.29x` • SEC EDGAR: Form 10-Q (2026-09-10)]** — Cổ phiếu bị bán tháo quá đà lùi về vùng quá bán sâu (RSI chạm 33.9) tạo ra phân kỳ dương. Nội tại cực khỏe với FCF +$22.8B USD, biên gộp 76.2%. Hôm qua đã bật tăng mạnh +0.78% lên $326.08 xác nhận đáy ngắn hạn.",
+      "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `81.4/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+14.62%` • True FCF ex-SBC: `$28.64B` • Altman Z: `13.31` • Lynch PEG: `0.32x` • SEC EDGAR: Form 10-Q (2026-09-10)]** — Cổ phiếu bị bán tháo quá đà lùi về vùng quá bán sâu (RSI chạm 33.9) tạo ra phân kỳ dương. Nội tại cực khỏe với FCF +$22.8B USD, biên gộp 76.2%. Hôm qua đã bật tăng mạnh +0.78% lên $326.08 xác nhận đáy ngắn hạn.",
       "execution_instruction": "Vào 60% tại $326.08 và 40% Limit tại $321.72. Tỷ lệ Reward/Risk đạt tới 4.70x với chốt lời TP1 tại $372.74 (+14.3%) và TP2 tại $530.14 (+62.6%). Cắt lỗ Stop 2xATR tại $302.75 (-7.15%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
     },
     {
@@ -105,7 +105,7 @@
       "reward_risk_ratio": 4.57,
       "expected_value_pct": 20.32,
       "catalysts": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.",
-      "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `83.1/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.27%` • True FCF ex-SBC: `$33.26B` • Altman Z: `16.05` • Lynch PEG: `0.71x` • SEC EDGAR: Form 6-K (2026-11-10)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
+      "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `83.1/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.22%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.01` • Lynch PEG: `0.71x` • SEC EDGAR: Form 6-K (2026-11-10)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
       "execution_instruction": "Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
     },
     {
@@ -132,7 +132,7 @@
       "reward_risk_ratio": 2.79,
       "expected_value_pct": 11.65,
       "catalysts": "Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông chưa giải tỏa. Dự án thu giữ carbon trực tiếp (DAC STRATOS) tiến gần ngày vận hành thương mại, mở ra nguồn tín chỉ carbon khổng lồ.",
-      "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `86.8/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+11.49%` • True FCF ex-SBC: `$19.78B` • Altman Z: `4.12` • Lynch PEG: `1.31x` • SEC EDGAR: Form 10-Q (2026-11-02)]** — Được Berkshire Hathaway của Warren Buffett sở hữu gần 29% và liên tục mua thêm khi giá dưới $65. Ngành Năng lượng (XLE) dẫn đầu thị trường về chỉ số Sharpe 1Y (2.46). OXY hôm qua tăng tiếp +0.14% lên $64.00.",
+      "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `86.8/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+11.49%` • True FCF ex-SBC: `$19.78B` • Altman Z: `4.12` • Lynch PEG: `1.3x` • SEC EDGAR: Form 10-Q (2026-11-02)]** — Được Berkshire Hathaway của Warren Buffett sở hữu gần 29% và liên tục mua thêm khi giá dưới $65. Ngành Năng lượng (XLE) dẫn đầu thị trường về chỉ số Sharpe 1Y (2.46). OXY hôm qua tăng tiếp +0.14% lên $64.00.",
       "execution_instruction": "Giữ 70% vị thế đang có lãi; đặt Limit 30% tại $63.47. Chốt lời TP1 tại $70.08 (+9.5%) và TP2 tại $70.74. Cắt lỗ Stop 2xATR tại $60.96 (-4.75%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
     }
   ],
@@ -548,20 +548,20 @@
     "sandbox_math_verified": true,
     "portfolio_allocation_verified": "100% TIỀN MẶT (20,000,000 ₫) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +167,119 VNĐ",
     "max_risk_locked_pct": 0.0,
-    "timestamp": "2026-11-11 01:37:11 UTC"
+    "timestamp": "2026-11-11 09:03:36 UTC"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-11T01:37:11.971801",
+    "timestamp_iso": "2026-11-11T09:03:36.628892",
     "date_str": "2026-11-11",
     "date_vn": "11/11/2026",
-    "time_vn": "01:37:11",
+    "time_vn": "09:03:36",
     "weekday_index": 2,
     "weekday_vn": "Thứ Tư",
-    "full_time_label_vn": "01:37:11 Thứ Tư, ngày 11/11/2026",
-    "market_phase": "PRE_MARKET_PREPARATION",
-    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Tư) — Chuẩn bị kế hoạch tác chiến",
-    "is_trading_hours": false,
-    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
+    "full_time_label_vn": "09:03:36 Thứ Tư, ngày 11/11/2026",
+    "market_phase": "MORNING_SESSION",
+    "market_phase_vn": "Đang trong Phiên Sáng (Thứ Tư) — Kỷ luật KHÔNG FOMO mua đuổi giá xanh",
+    "is_trading_hours": true,
+    "next_session_note": "Quan sát áp lực cung cầu; chờ nhịp hấp thụ chiều."
   },
   "completed_orders_history": [],
   "next_round_watchlist": []

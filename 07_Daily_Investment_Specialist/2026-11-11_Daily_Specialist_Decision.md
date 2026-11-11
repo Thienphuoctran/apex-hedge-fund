@@ -1,7 +1,7 @@
 # [BAN 7] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — ALEX
 **Chuyên viên phụ trách**: **`Alex`** (Chuyên Viên Đầu Tư Trưởng & Quản Lý Thực Thi Danh Mục Hàng Ngày)  
 **Khung giờ hoạt động định kỳ**: `08:30 AM Mỗi Ngày` *(Sau khoảng đệm 1 tiếng để Nhà đầu tư đọc kỹ BCTC từ 07:30 – 08:30)*  
-**Ngày giao dịch**: `2026-11-11` (`2026-11-11 01:36:11 UTC`)  
+**Ngày giao dịch**: `2026-11-11` (`2026-11-11 09:02:31 UTC`)  
 **Chỉ số Hoàn thiện Của Alex (`Specialist Mastery Score`)**: **`95.8 / 100`** *(Tăng `+4.3 điểm` nhờ hồ sơ mổ xẻ sự kiện chi tiết và chiến lược tối ưu lợi nhuận đa nhịp)*  
 **Kỳ vọng Toán học Danh mục (`Portfolio Weighted Expected Value`)**: **`+13.94%`** | **Xác suất Thắng Trung bình (`Win Probability`)**: **`78.5%`**
 
@@ -11,7 +11,7 @@
 
 | Phòng Ban Báo Cáo | Nhận Định Cốt Lõi Hôm Nay | Đánh Giá Chi Tiết Từ Phòng Ban | Quyết Định Điều Phối Khoa Học Của Alex |
 | :--- | :--- | :--- | :--- |
-| **Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)** | **`CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)`** | Chỉ số sợ hãi VIX giảm mạnh từ 19.78 xuống 19.46 (-8.18%), Dầu WTI dịu từ $84.53 xuống $86.43, US10Y ổn định ở 4.98%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao. | **Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve).** |
+| **Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)** | **`CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)`** | Chỉ số sợ hãi VIX giảm mạnh từ 19.78 xuống 18.74 (-8.18%), Dầu WTI dịu từ $84.53 xuống $86.1, US10Y ổn định ở 4.98%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao. | **Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve).** |
 | **Ban 2 — Thẩm Định BCTC, FCF & SEC Form 4 (`equity-fundamental-agent`)** | **`ƯU TIÊN CỖ MÁY IN TIỀN FCF & INSIDER BUYING`** | Nhóm dẫn dắt có FCF chuẩn hóa USD khổng lồ và Ban lãnh đạo mua ròng (MSFT +$74.1B FCF, TSM +$36.93B FCF, NVDA +$60.8B FCF, JPM, OXY, V, PG) vẫn giữ cấu trúc tăng. Đặc biệt, nhóm Quá bán có BCTC siêu khỏe (GOOGL FCF +$52.4B, P/E 20.9x; AVGO FCF +$22.8B, RSI 33.9) đã xuất hiện lực cầu bắt đáy. | **Alex duy trì 8 mã Trụ cột (Core 52% NAV) và mở thêm vị thế thăm dò có kỷ luật vào GOOGL (4.2%) và AVGO (3.8%) để gia tăng hiệu suất sinh lời.** |
 | **Ban 3 — Tổng Hợp & Điều Phối Xung Đột (`synthesis-hub-agent`)** | **`KHÓA MUA ĐUỔI TRƯỚC BCTC & CẢNH BÁO QUÁ MUA`** | Cấm giải ngân mới vào các mã có lịch công bố BCTC <= 7 ngày (AAPL 78d, PLTR 82d, AMD 83d, BRK-B -2d), trong khi XOM và CVX đã công bố xong (JUST REPORTED). Tiếp tục cảnh báo không mua đuổi nhóm RSI Quá mua > 70 (LLY, ABBV, LMT, WMT). | **Alex tuân thủ tuyệt đối lệnh cấm mua trước BCTC; chuyển phần vốn chờ của BRK-B và AAPL sang lệnh Limit sau BCTC và nhánh Alpha.** |
 | **Ban 4 — Hội Đồng Đầu Tư & Rủi Ro Định Lượng (`investment-committee-agent`)** | **`KIỂM SOÁT TƯƠNG QUAN & KHÓA RỦI RO STOP 2xATR`** | Định cỡ vị thế theo ATR Risk-Parity sao cho mỗi lệnh chạm Stop 2xATR(14) chỉ mất tối đa ~0.23% đến 0.30% NAV. Khống chế cụm tương quan Bán dẫn (NVDA + TSM + AVGO) trong trần an toàn và giữ Beta danh mục quanh ~0.55. | **Alex gắn sẵn Stop 2xATR(14) tự động cho mọi lệnh mở mới hôm nay và chia 2 nhịp vào lệnh (Market + Limit -0.35x ATR).** |
@@ -31,7 +31,7 @@
 
 > [!IMPORTANT]
 > **KẾT QUẢ KIỂM TOÁN DANH MỤC PHỐ WALL ĐƯỢC TỰ ĐỘNG LIÊN KẾT**:  
-> - **Chuyên viên**: `Alex (Ban 7 Global)` | **Hit Rate**: `80.0%` | **Tiết kiệm trượt giá (Quy tắc 60/40)**: `+$2,743.64 USD` | **Alpha 5D vs S&P 500**: `+1.25%`.  
+> - **Chuyên viên**: `Alex (Ban 7 Global)` | **Hit Rate**: `100.0%` | **Tiết kiệm trượt giá (Quy tắc 60/40)**: `+$2,816.20 USD` | **Alpha 5D vs S&P 500**: `+1.32%`.  
 > - **Sẵn sàng Lộ trình Phố Wall (6 Tháng)**: Alex cam kết áp trần rủi ro Bán dẫn <= 28% NAV và chuẩn hóa điểm vào lệnh Limit Pullback để bảo toàn tuyệt đối dòng vốn của Chủ tịch Phước Trần!
 
 ---
@@ -45,7 +45,7 @@
 
 ### 2.2. Kiểm Điểm Chỗ SAI / Điểm Vào Lệnh Chưa Tối Ưu Của Alex (`Commission & Timing Flaws`)
 - **[ERR-01 (Timing & Entry Execution Flaw)] Giải ngân 100% tại giá đóng cửa vào nhóm Phòng thủ đúng đỉnh ngắn hạn của VIX**:
-  - *Thực tế diễn ra*: Ngày 2026-11-10, khi VIX ở mức cao (19.78), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-11, khi VIX hạ nhiệt mạnh về 19.46 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi -0.47% ($282.11 -> $280.78), `PG` lùi 0.2% ($168.32 -> $168.66), và `V` lùi 0.2%.
+  - *Thực tế diễn ra*: Ngày 2026-11-10, khi VIX ở mức cao (19.78), chúng ta ưu tiên phân bổ mạnh vào nhóm Phòng thủ (`JNJ`, `PG`, `V`) ngay tại mức giá đóng cửa. Sang ngày 2026-11-11, khi VIX hạ nhiệt mạnh về 18.74 (-8.18%), dòng tiền tổ chức chốt lời nhẹ nhóm trú ẩn để xoay sang nhóm Tăng trưởng, làm `JNJ` lùi -0.47% ($282.11 -> $280.78), `PG` lùi 0.2% ($168.32 -> $168.66), và `V` lùi 0.2%.
   - *Nguyên nhân gốc rễ*: Chưa tách lệnh thành 2 nhịp (Market + Limit Pullback) và chưa tính độ nhạy đảo chiều của VIX khi vượt ngưỡng 21.
   - *Alex sửa sai & cải tiến ngay hôm nay*: **Kể từ hôm nay, Alex bắt buộc áp dụng quy tắc 60/40: chỉ giải ngân 60% tại vùng hiện tại và đặt 40% ở lệnh chờ `Limit Buy = Giá hiện tại - 0.35x ATR(14)`. Nhờ vậy, nhịp lùi -1.0% hôm nay của PG và JNJ trở thành điểm khớp Limit giá rẻ tối ưu!**
 
@@ -92,7 +92,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu tăng mua ròng cổ phiếu công nghệ có FCF lớn sau khi VIX hạ nhiệt về 19.42.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `88.0/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+14.61%` • True FCF ex-SBC: `$-4.63B` • Altman Z: `12.38` • Lynch PEG: `1.57x` • SEC EDGAR: Form 10-Q (2026-10-28)]** — MSFT là cỗ máy in tiền mặt vĩ đại nhất thế giới với FCF đạt +$74.1B USD, biên hoạt động trên 44%. Ban lãnh đạo (CEO & Giám đốc cấp cao) mua ròng +263,400 cổ phiếu theo SEC Form 4. Cổ phiếu giữ vững trên đường MA200 ($485.20) và vừa tăng +0.19%.
+  **[Hội Đồng 10 Đại Danh Thủ: `88.0/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+14.61%` • True FCF ex-SBC: `$-4.63B` • Altman Z: `12.38` • Lynch PEG: `1.61x` • SEC EDGAR: Form 10-Q (2026-10-28)]** — MSFT là cỗ máy in tiền mặt vĩ đại nhất thế giới với FCF đạt +$74.1B USD, biên hoạt động trên 44%. Ban lãnh đạo (CEO & Giám đốc cấp cao) mua ròng +263,400 cổ phiếu theo SEC Form 4. Cổ phiếu giữ vững trên đường MA200 ($485.20) và vừa tăng +0.19%.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Giữ 80% vị thế hiện tại; đặt lệnh Limit Buy 20% còn lại tại $518.00 (hỗ trợ MA20). Chốt lời bậc 1 (TP1) 40% vị thế tại $566.55 (+8.5%); khi chạm TP1, tự động nâng Stop-Loss về điểm hòa vốn $521.91 để gồng 60% còn lại lên TP2 $627.73 (+20.3%). Ngưỡng cắt lỗ bảo vệ vốn cứng: Stop 2xATR tại $499.59 (-4.28%).
 
@@ -112,7 +112,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Lợi suất trái phiếu chính phủ Mỹ 10 năm (US10Y) neo cao ở 4.93% tiếp tục mở rộng Thu nhập lãi thuần (NII). Thương vụ thâu tóm ngân hàng trước đây đã tích hợp hoàn tất, gia tăng thị phần tiền gửi tổ chức toàn cầu.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `92.4/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+8.90%` • True FCF ex-SBC: `$NoneB` • Altman Z: `4.4` • Lynch PEG: `1.42x` • SEC EDGAR: Form 424B3 (2026-11-10)]** — JPMorgan Chase là ngân hàng số 1 thế giới với bảng cân đối vững như pháo đài (Tỷ lệ CET1 15.3%), P/E chỉ 14.9x cực kỳ hấp dẫn. Tín hiệu ban lãnh đạo mua ròng nội bộ củng cố niềm tin tuyệt đối. Giá đang tích lũy chặt chẽ ngay sát hỗ trợ kỹ thuật.
+  **[Hội Đồng 10 Đại Danh Thủ: `92.4/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+8.90%` • True FCF ex-SBC: `$NoneB` • Altman Z: `4.4` • Lynch PEG: `1.45x` • SEC EDGAR: Form 424B3 (2026-11-10)]** — JPMorgan Chase là ngân hàng số 1 thế giới với bảng cân đối vững như pháo đài (Tỷ lệ CET1 15.3%), P/E chỉ 14.9x cực kỳ hấp dẫn. Tín hiệu ban lãnh đạo mua ròng nội bộ củng cố niềm tin tuyệt đối. Giá đang tích lũy chặt chẽ ngay sát hỗ trợ kỹ thuật.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Vào 60% tại vùng $337.04 và đặt Limit 40% tại $334.77. Chốt lời TP1 tại $363.00 (+7.7%) và TP2 tại $373.26 (+10.7%). Cắt lỗ cứng Stop 2xATR tại $324.06 (-3.85%).
 
@@ -122,7 +122,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Chi phí nguyên vật liệu đầu vào (bột giấy, nhựa, dầu thực vật) đang hạ nhiệt giúp mở rộng biên lợi nhuận gộp lên 51.4%. Nhịp lùi -1.00% hôm nay do VIX hạ nhiệt kích hoạt đúng bài học tối ưu giá vốn của Alex hôm qua.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `83.2/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+15.60%` • True FCF ex-SBC: `$10.72B` • Altman Z: `5.17` • Lynch PEG: `4.25x` • SEC EDGAR: Form 144 (2026-11-09)]** — Sở hữu danh mục thương hiệu tiêu dùng thiết yếu toàn cầu (Gillette, Tide, Pampers) có khả năng chuyển giá cho người tiêu dùng. FCF dồi dào +$15.97B USD, Insider mua ròng, đóng vai trò mỏ neo giảm thiểu tối đa biến động danh mục.
+  **[Hội Đồng 10 Đại Danh Thủ: `83.2/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+15.60%` • True FCF ex-SBC: `$10.72B` • Altman Z: `5.17` • Lynch PEG: `4.32x` • SEC EDGAR: Form 144 (2026-11-09)]** — Sở hữu danh mục thương hiệu tiêu dùng thiết yếu toàn cầu (Gillette, Tide, Pampers) có khả năng chuyển giá cho người tiêu dùng. FCF dồi dào +$15.97B USD, Insider mua ròng, đóng vai trò mỏ neo giảm thiểu tối đa biến động danh mục.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Khớp 60% vùng $161.57 và hứng trọn 40% tại lệnh Limit chiết khấu $160.43. Chốt lời TP1 tại $174.55 (+8.0%) và TP2 tại $181.04 (+12.0%). Cắt lỗ Stop 2xATR tại $155.08 (-4.02%).
 
@@ -132,7 +132,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông chưa giải tỏa. Dự án thu giữ carbon trực tiếp (DAC STRATOS) tiến gần ngày vận hành thương mại, mở ra nguồn tín chỉ carbon khổng lồ.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `86.8/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+11.49%` • True FCF ex-SBC: `$19.78B` • Altman Z: `4.12` • Lynch PEG: `1.31x` • SEC EDGAR: Form 10-Q (2026-11-02)]** — Được Berkshire Hathaway của Warren Buffett sở hữu gần 29% và liên tục mua thêm khi giá dưới $65. Ngành Năng lượng (XLE) dẫn đầu thị trường về chỉ số Sharpe 1Y (2.46). OXY hôm qua tăng tiếp +0.14% lên $64.00.
+  **[Hội Đồng 10 Đại Danh Thủ: `86.8/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+11.49%` • True FCF ex-SBC: `$19.78B` • Altman Z: `4.12` • Lynch PEG: `1.3x` • SEC EDGAR: Form 10-Q (2026-11-02)]** — Được Berkshire Hathaway của Warren Buffett sở hữu gần 29% và liên tục mua thêm khi giá dưới $65. Ngành Năng lượng (XLE) dẫn đầu thị trường về chỉ số Sharpe 1Y (2.46). OXY hôm qua tăng tiếp +0.14% lên $64.00.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Giữ 70% vị thế đang có lãi; đặt Limit 30% tại $63.47. Chốt lời TP1 tại $70.08 (+9.5%) và TP2 tại $70.74. Cắt lỗ Stop 2xATR tại $60.96 (-4.75%).
 
@@ -142,7 +142,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Tiến trình dàn xếp các vụ kiện pháp lý phấn rôm bước vào giai đoạn cuối cùng với quỹ bồi thường đã được trích lập xong. Ngành Y tế (XLV) đang hút mạnh dòng tiền tổ chức 1 tháng qua (+15.49%). Nhịp chỉnh -1.08% về $273.20 mở ra điểm mua tuyệt đẹp.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `82.9/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+10.98%` • True FCF ex-SBC: `$16.31B` • Altman Z: `6.92` • Lynch PEG: `3.11x` • SEC EDGAR: Form 10-Q (2026-10-21)]** — Cấu trúc cân bằng hoàn hảo giữa Dược phẩm sinh học và Thiết bị y tế (MedTech). Là 1 trong 2 tập đoàn Mỹ hiếm hoi duy trì xếp hạng tín nhiệm AAA (cao hơn cả trái phiếu chính phủ Mỹ). FCF đạt +$18.5B USD.
+  **[Hội Đồng 10 Đại Danh Thủ: `82.9/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+10.98%` • True FCF ex-SBC: `$16.31B` • Altman Z: `6.92` • Lynch PEG: `3.17x` • SEC EDGAR: Form 10-Q (2026-10-21)]** — Cấu trúc cân bằng hoàn hảo giữa Dược phẩm sinh học và Thiết bị y tế (MedTech). Là 1 trong 2 tập đoàn Mỹ hiếm hoi duy trì xếp hạng tín nhiệm AAA (cao hơn cả trái phiếu chính phủ Mỹ). FCF đạt +$18.5B USD.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Tận dụng nhịp lùi -1.08% hôm nay để gom 60% tại $273.20 và 40% Limit tại $270.61. Chốt lời TP1 tại $302.76 (+10.8%) và TP2 tại $317.54 (+16.2%). Cắt lỗ Stop 2xATR tại $258.42 (-5.41%).
 
@@ -162,7 +162,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `83.1/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.27%` • True FCF ex-SBC: `$33.26B` • Altman Z: `16.05` • Lynch PEG: `0.71x` • SEC EDGAR: Form 6-K (2026-11-10)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
+  **[Hội Đồng 10 Đại Danh Thủ: `83.1/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+31.22%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.01` • Lynch PEG: `0.71x` • SEC EDGAR: Form 6-K (2026-11-10)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%).
 
@@ -172,7 +172,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Mảng Google Cloud đạt bước ngoặt mở rộng biên lợi nhuận hoạt động lên 11.2%. Mô hình AI Gemini 2.0 tích hợp sâu vào Workspace và hệ sinh thái Android. Cổ phiếu vừa trải qua nhịp rũ bỏ quá bán (RSI chạm 36.9) và hôm qua đã bật tăng +0.38% xác nhận lực cầu đảo chiều.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `57.5/100` • Piotroski F-Score: `6/9` • EVA Spread (ROIC-WACC): `+5.30%` • True FCF ex-SBC: `$-41.2B` • Altman Z: `8.55` • Lynch PEG: `1.01x` • SEC EDGAR: Form 10-Q (2026-10-29)]** — Đây là cơ hội khắc phục thiếu sót hôm qua (GAP-01): Alphabet là cổ phiếu định giá rẻ nhất trong nhóm Magnificent 7 với Forward P/E chỉ 20.9x trong khi sở hữu FCF khổng lồ +$52.4B USD. Đã qua mùa BCTC an toàn.
+  **[Hội Đồng 10 Đại Danh Thủ: `57.5/100` • Piotroski F-Score: `6/9` • EVA Spread (ROIC-WACC): `+5.30%` • True FCF ex-SBC: `$-41.2B` • Altman Z: `8.55` • Lynch PEG: `1.02x` • SEC EDGAR: Form 10-Q (2026-10-29)]** — Đây là cơ hội khắc phục thiếu sót hôm qua (GAP-01): Alphabet là cổ phiếu định giá rẻ nhất trong nhóm Magnificent 7 với Forward P/E chỉ 20.9x trong khi sở hữu FCF khổng lồ +$52.4B USD. Đã qua mùa BCTC an toàn.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Giải ngân 60% vùng $279.84 và đặt Limit 40% tại $276.21. Kỳ vọng toán học đạt EV = +17.0% với chốt lời TP1 tại $322.96 (+15.4%) và TP2 tại $408.09 (+45.8%). Cắt lỗ chặt Stop 2xATR tại $258.28 (-7.70%).
 
@@ -182,7 +182,7 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưởng bùng nổ 3 con số. Việc sáp nhập VMware bắt đầu phát huy hiệu quả cắt giảm chi phí và gia tăng dòng tiền thuê bao phần mềm doanh nghiệp.
 - **2. Tại sao Alex quyết định đầu tư vào mã này? (`Why Alex Invests`)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `81.4/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+14.62%` • True FCF ex-SBC: `$28.64B` • Altman Z: `13.31` • Lynch PEG: `0.29x` • SEC EDGAR: Form 10-Q (2026-09-10)]** — Cổ phiếu bị bán tháo quá đà lùi về vùng quá bán sâu (RSI chạm 33.9) tạo ra phân kỳ dương. Nội tại cực khỏe với FCF +$22.8B USD, biên gộp 76.2%. Hôm qua đã bật tăng mạnh +0.78% lên $326.08 xác nhận đáy ngắn hạn.
+  **[Hội Đồng 10 Đại Danh Thủ: `81.4/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+14.62%` • True FCF ex-SBC: `$28.64B` • Altman Z: `13.31` • Lynch PEG: `0.32x` • SEC EDGAR: Form 10-Q (2026-09-10)]** — Cổ phiếu bị bán tháo quá đà lùi về vùng quá bán sâu (RSI chạm 33.9) tạo ra phân kỳ dương. Nội tại cực khỏe với FCF +$22.8B USD, biên gộp 76.2%. Hôm qua đã bật tăng mạnh +0.78% lên $326.08 xác nhận đáy ngắn hạn.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Vào 60% tại $326.08 và 40% Limit tại $321.72. Tỷ lệ Reward/Risk đạt tới 4.70x với chốt lời TP1 tại $372.74 (+14.3%) và TP2 tại $530.14 (+62.6%). Cắt lỗ Stop 2xATR tại $302.75 (-7.15%).
 
@@ -193,5 +193,5 @@ Dưới đây là giải trình minh bạch của Alex cho từng mã trong danh
 | :--- | :---: | :--- | :---: | :--- |
 | **`BRK-B`** | $583.34 *(+1.41%)* | **WAIT POST-EARNINGS (Còn -2 ngày tới BCTC 2026-11-09, Implied ±4.56%)** | `8.0% NAV` | Đặt cảnh báo mua sau BCTC quanh $535.00 – $542.00 (Hôm nay đã tiết kiệm được -0.64% nhờ đứng ngoài). |
 | **`AAPL`** | $348.51 *(-0.62%)* | **WAIT POST-EARNINGS (Còn 78 ngày tới BCTC 2027-01-28, Implied ±6.39%)** | `6.0% NAV` | Chờ công bố BCTC xong mới giải ngân quanh $338.00 – $344.00 (Hôm nay đã né được nhịp chỉnh -0.51%). |
-| **`AMD / PLTR`** | $515.21 *(+1.30%)* | **WAIT POST-EARNINGS (AMD 83d ±14.5% • PLTR 82d ±14.22%)** | `4.0% NAV` | Không FOMO mua đuổi sát ngày BCTC; khóa lệnh mua mới cho tới khi qua kỳ công bố. |
+| **`AMD / PLTR`** | $515.21 *(+1.30%)* | **WAIT POST-EARNINGS (AMD 83d ±14.5% • PLTR 82d ±13.56%)** | `4.0% NAV` | Không FOMO mua đuổi sát ngày BCTC; khóa lệnh mua mới cho tới khi qua kỳ công bố. |
 | **`SMCI / COIN`** | $27.79 *(-2.83%)* | **DISCIPLINED VETO (Từ chối Kỷ luật — FCF Âm / ROE Âm & Dưới MA200)** | `0.0% NAV` | Alex kiên quyết đứng ngoài dù giá bật tăng kỹ thuật (+3.81% / +3.34%) để bảo vệ tính toàn vẹn khoa học của danh mục. |

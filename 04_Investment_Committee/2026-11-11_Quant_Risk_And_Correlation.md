@@ -8,7 +8,7 @@
 - **Tỷ trọng Cổ phiếu / Tiền mặt (T-Bills ~5%)**: **`60.0% Cổ phiếu` / `40.0% Tiền mặt`**
 - **Hệ số Beta Danh mục Tổng hợp (Portfolio Weighted Beta vs S&P 500)**: **`0.44`** *(Thấp hơn đáng kể so với biến động thị trường chung 1.00)*
 - **Kiểm soát Cụm Bán dẫn (`NVDA + TSM`)**: **`3.1% NAV`** *(Tuân thủ trần `<= 14.0% NAV`)*
-- **Tổng rủi ro danh mục nếu toàn bộ 10 vị thế đồng loạt chạm Stop-Loss `2xATR(14)`**: **`-3.27% NAV`**
+- **Tổng rủi ro danh mục nếu toàn bộ 10 vị thế đồng loạt chạm Stop-Loss `2xATR(14)`**: **`-3.24% NAV`**
 - **Số mã bị khóa mua mới do sát lịch BCTC (`0 <= days_to_earnings <= 7`)**: **`1 mã`** (`NVDA`)
 
 ---
@@ -17,16 +17,16 @@
 
 | Mã | **`MSFT`** | **`TSM`** | **`JPM`** | **`OXY`** | **`PG`** | **`JNJ`** | **`V`** | **`ABBV`** | **`COST`** | **`XOM`** |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`MSFT`** | `1.00` | 0.18 | 0.12 | -0.11 | -0.11 | -0.17 | 0.21 | -0.10 | -0.06 | -0.17 |
-| **`TSM`** | 0.18 | `1.00` | 0.16 | -0.21 | -0.18 | -0.18 | -0.08 | -0.14 | -0.24 | -0.22 |
+| **`MSFT`** | `1.00` | 0.17 | 0.12 | -0.11 | -0.11 | -0.17 | 0.21 | -0.10 | -0.06 | -0.16 |
+| **`TSM`** | 0.17 | `1.00` | 0.16 | -0.21 | -0.18 | -0.18 | -0.08 | -0.14 | -0.24 | -0.22 |
 | **`JPM`** | 0.12 | 0.16 | `1.00` | -0.15 | 0.11 | 0.14 | 0.36 | 0.08 | -0.01 | -0.12 |
 | **`OXY`** | -0.11 | -0.21 | -0.15 | `1.00` | -0.16 | -0.02 | -0.12 | 0.00 | 0.04 | **0.76** |
 | **`PG`** | -0.11 | -0.18 | 0.11 | -0.16 | `1.00` | 0.42 | 0.22 | 0.26 | 0.37 | -0.07 |
-| **`JNJ`** | -0.17 | -0.18 | 0.14 | -0.02 | 0.42 | `1.00` | 0.15 | 0.52 | 0.31 | 0.06 |
-| **`V`** | 0.21 | -0.08 | 0.36 | -0.12 | 0.22 | 0.15 | `1.00` | 0.22 | 0.25 | -0.08 |
+| **`JNJ`** | -0.17 | -0.18 | 0.14 | -0.02 | 0.42 | `1.00` | 0.14 | 0.52 | 0.31 | 0.06 |
+| **`V`** | 0.21 | -0.08 | 0.36 | -0.12 | 0.22 | 0.14 | `1.00` | 0.22 | 0.25 | -0.08 |
 | **`ABBV`** | -0.10 | -0.14 | 0.08 | 0.00 | 0.26 | 0.52 | 0.22 | `1.00` | 0.22 | 0.03 |
 | **`COST`** | -0.06 | -0.24 | -0.01 | 0.04 | 0.37 | 0.31 | 0.25 | 0.22 | `1.00` | 0.11 |
-| **`XOM`** | -0.17 | -0.22 | -0.12 | **0.76** | -0.07 | 0.06 | -0.08 | 0.03 | 0.11 | `1.00` |
+| **`XOM`** | -0.16 | -0.22 | -0.12 | **0.76** | -0.07 | 0.06 | -0.08 | 0.03 | 0.11 | `1.00` |
 
 ---
 
@@ -35,14 +35,14 @@
 | Mã | Ngành | Giá ($) | Stop `2xATR` ($) | Chandelier Trailing ($) | Khoảng cách Stop (%) | Tỷ trọng (% NAV) | Rủi ro tối đa (% NAV) | Điểm IC (/100) | Lịch BCTC (`Earnings Radar`) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | **`JPM`** | Global Diversified Banking | $342.07 | **$326.17** | $339.92 | -4.64% | **8.0% NAV** | `-0.37% NAV` | **92/100** | CLEAR (2027-01-14 BMO) |
-| **`V`** | Global Payment Network | $423.0 | **$403.18** | $417.46 | -4.68% | **7.6% NAV** | `-0.36% NAV` | **84/100** | CLEAR (2027-01-26 AMC) |
-| **`COST`** | Membership Warehouse Retail | $1066.14 | **$1023.41** | $1028.14 | -4.0% | **7.2% NAV** | `-0.29% NAV` | **71/100** | CLEAR (2026-12-10 AMC) |
-| **`PG`** | Consumer Household Staples | $168.66 | **$160.79** | $160.68 | -4.66% | **6.7% NAV** | `-0.31% NAV` | **78/100** | CLEAR (2027-01-21 BMO) |
-| **`ABBV`** | Biotech & Immunology | $293.89 | **$278.42** | $283.6 | -5.26% | **6.4% NAV** | `-0.34% NAV` | **86/100** | CLEAR (2026-10-30 BMO) |
-| **`JNJ`** | Pharmaceuticals & MedTech | $280.78 | **$265.23** | $263.82 | -5.54% | **5.9% NAV** | `-0.33% NAV` | **79/100** | CLEAR (2027-01-26 BMO) |
+| **`V`** | Global Payment Network | $423.0 | **$403.18** | $417.46 | -4.68% | **7.5% NAV** | `-0.35% NAV` | **84/100** | CLEAR (2027-01-26 AMC) |
+| **`COST`** | Membership Warehouse Retail | $1066.14 | **$1023.41** | $1028.14 | -4.0% | **7.1% NAV** | `-0.28% NAV` | **71/100** | CLEAR (2026-12-10 AMC) |
+| **`PG`** | Consumer Household Staples | $168.66 | **$160.79** | $160.68 | -4.66% | **7.0% NAV** | `-0.33% NAV` | **78/100** | CLEAR (2027-01-21 BMO) |
+| **`ABBV`** | Biotech & Immunology | $293.89 | **$278.92** | $284.22 | -5.1% | **6.5% NAV** | `-0.33% NAV` | **86/100** | CLEAR (2026-10-30 BMO) |
+| **`JNJ`** | Pharmaceuticals & MedTech | $280.78 | **$265.23** | $263.82 | -5.54% | **5.8% NAV** | `-0.32% NAV` | **79/100** | CLEAR (2027-01-26 BMO) |
 | **`XOM`** | Integrated Oil & Gas | $164.47 | **$154.15** | $175.6 | -6.28% | **5.6% NAV** | `-0.35% NAV` | **86/100** | CLEAR (2027-01-29 BMO) |
 | **`MSFT`** | Enterprise Software & Cloud | $533.16 | **$498.57** | $515.92 | -6.48% | **5.3% NAV** | `-0.34% NAV` | **82/100** | CLEAR (2027-01-27 AMC) |
-| **`OXY`** | Upstream Oil & Carbon Capture | $56.9 | **$52.85** | $59.89 | -7.12% | **4.2% NAV** | `-0.3% NAV` | **76/100** | JUST REPORTED (2d ago) — Đã qua rủi ro BCTC |
+| **`OXY`** | Upstream Oil & Carbon Capture | $56.9 | **$52.85** | $59.89 | -7.12% | **4.1% NAV** | `-0.29% NAV` | **76/100** | JUST REPORTED (2d ago) — Đã qua rủi ro BCTC |
 | **`TSM`** | Global Chip Foundry | $396.48 | **$360.29** | $409.16 | -9.12% | **3.1% NAV** | `-0.28% NAV` | **70/100** | CLEAR (2027-01-14 BMO) |
 
 ### Danh Sách Theo Dõi Tạm Khóa Do Sát Ngày Công Bố BCTC (`Locked Imminent Earnings Watchlist <= 7 Ngày`)
@@ -56,9 +56,9 @@
 
 | Kịch bản Cú sốc Vĩ mô / Địa chính trị | Giả định S&P 500 | Tác động Dự kiến lên Danh mục | Mức Vượt trội (Alpha Bảo vệ) | Cơ chế Phòng vệ Tự động của Danh mục |
 | :--- | :---: | :---: | :---: | :--- |
-| **Kịch bản 1: Cú sốc Bán tháo Thị trường (S&P 500 sập -10.0%)**<br>*(Kích hoạt: Khủng hoảng thanh khoản hoặc dữ liệu kinh tế xấu đột biến)* | `-10.0%` | **`-4.23% NAV`** | **`+5.77%`** | Beta danh mục thấp (0.44) + Đệm 40.0% Tiền mặt/T-Bills + Kích hoạt Stop-Loss 2xATR & Chandelier Stop tự động |
-| **Kịch bản 2: Cú sốc Lãi suất Fed Diều hâu (US 10Y Yield vọt lên 5.45%)**<br>*(Kích hoạt: PCE/CPI vượt 4.0% buộc Fed tăng lãi suất thêm +25–50 bps)* | `-6.5%` | **`-1.23% NAV`** | **`+5.27%`** | Nhóm Ngân hàng/Tài chính (JPM, V) và 40.0% T-Bills hưởng lợi trực tiếp bù đắp cho nhóm Công nghệ |
-| **Kịch bản 3: Cú sốc Giá Dầu Địa chính trị (WTI Crude vọt lên $125/thùng)**<br>*(Kích hoạt: Gián đoạn nghiêm trọng eo biển Hormuz hoặc cơ sở lọc dầu toàn cầu)* | `-5.5%` | **`0.19% NAV`** | **`+5.69%`** | Vị thế Dầu khí (OXY) và Phòng thủ Thiết yếu/Y tế (PG, JNJ, ABBV, COST) đóng vai trò Natural Hedge bảo vệ NAV |
+| **Kịch bản 1: Cú sốc Bán tháo Thị trường (S&P 500 sập -10.0%)**<br>*(Kích hoạt: Khủng hoảng thanh khoản hoặc dữ liệu kinh tế xấu đột biến)* | `-10.0%` | **`-4.21% NAV`** | **`+5.79%`** | Beta danh mục thấp (0.44) + Đệm 40.0% Tiền mặt/T-Bills + Kích hoạt Stop-Loss 2xATR & Chandelier Stop tự động |
+| **Kịch bản 2: Cú sốc Lãi suất Fed Diều hâu (US 10Y Yield vọt lên 5.45%)**<br>*(Kích hoạt: PCE/CPI vượt 4.0% buộc Fed tăng lãi suất thêm +25–50 bps)* | `-6.5%` | **`-1.24% NAV`** | **`+5.26%`** | Nhóm Ngân hàng/Tài chính (JPM, V) và 40.0% T-Bills hưởng lợi trực tiếp bù đắp cho nhóm Công nghệ |
+| **Kịch bản 3: Cú sốc Giá Dầu Địa chính trị (WTI Crude vọt lên $125/thùng)**<br>*(Kích hoạt: Gián đoạn nghiêm trọng eo biển Hormuz hoặc cơ sở lọc dầu toàn cầu)* | `-5.5%` | **`0.18% NAV`** | **`+5.68%`** | Vị thế Dầu khí (OXY) và Phòng thủ Thiết yếu/Y tế (PG, JNJ, ABBV, COST) đóng vai trò Natural Hedge bảo vệ NAV |
 
 ---
 
@@ -67,11 +67,11 @@
 | :--- | :--- | :--- | :--- | :---: |
 | **`JPM`** | FCF chuẩn hóa đạt +$0.0B USD, tăng trưởng doanh thu +10.2% YoY, giá ($342.07) giữ cấu trúc trên MA200 ($324.24), điểm IC 92/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`V`** | FCF chuẩn hóa đạt +$20.98B USD, tăng trưởng doanh thu +13.2% YoY, giá ($423.0) giữ cấu trúc trên MA200 ($345.63), điểm IC 84/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
-| **`COST`** | FCF chuẩn hóa đạt +$6.75B USD, tăng trưởng doanh thu +11.1% YoY, giá ($1066.14) giữ cấu trúc trên MA200 ($973.67), điểm IC 71/100. | CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: Định giá Fwd P/E cao (42.61x); RSI tiệm cận vùng nóng (69.56) — Cần tránh mua đuổi giá xanh. | **APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)** | **`84.5/100`** |
+| **`COST`** | FCF chuẩn hóa đạt +$6.75B USD, tăng trưởng doanh thu +11.1% YoY, giá ($1066.14) giữ cấu trúc trên MA200 ($973.67), điểm IC 71/100. | CẢNH BÁO ĐỊNH GIÁ/ĐÀ TĂNG: Định giá Fwd P/E cao (42.59x); RSI tiệm cận vùng nóng (69.56) — Cần tránh mua đuổi giá xanh. | **APPROVED_WITH_60_40_SPLIT (Bác bỏ Veto định giá • Duyệt giải ngân chia nhịp 60/40 Limit Pullback)** | **`84.5/100`** |
 | **`PG`** | FCF chuẩn hóa đạt +$12.65B USD, tăng trưởng doanh thu +4.0% YoY, giá ($168.66) giữ cấu trúc trên MA200 ($149.58), điểm IC 78/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
-| **`ABBV`** | FCF chuẩn hóa đạt +$17.69B USD, tăng trưởng doanh thu +10.3% YoY, giá ($293.89) giữ cấu trúc trên MA200 ($239.31), điểm IC 86/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
+| **`ABBV`** | FCF chuẩn hóa đạt +$17.69B USD, tăng trưởng doanh thu +10.3% YoY, giá ($293.89) giữ cấu trúc trên MA200 ($239.68), điểm IC 86/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`JNJ`** | FCF chuẩn hóa đạt +$18.5B USD, tăng trưởng doanh thu +5.9% YoY, giá ($280.78) giữ cấu trúc trên MA200 ($248.94), điểm IC 79/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`XOM`** | FCF chuẩn hóa đạt +$28.32B USD, tăng trưởng doanh thu +32.6% YoY, giá ($164.47) giữ cấu trúc trên MA200 ($155.9), điểm IC 86/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`MSFT`** | FCF chuẩn hóa đạt +$2.99B USD, tăng trưởng doanh thu +18.8% YoY, giá ($533.16) giữ cấu trúc trên MA200 ($440.56), điểm IC 82/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`OXY`** | FCF chuẩn hóa đạt +$5.41B USD, tăng trưởng doanh thu +2.2% YoY, giá ($56.9) giữ cấu trúc trên MA200 ($56.57), điểm IC 76/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
-| **`TSM`** | FCF chuẩn hóa đạt +$36.57B USD, tăng trưởng doanh thu +50.9% YoY, giá ($396.48) giữ cấu trúc trên MA200 ($402.07), điểm IC 70/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
+| **`TSM`** | FCF chuẩn hóa đạt +$36.69B USD, tăng trưởng doanh thu +50.9% YoY, giá ($396.48) giữ cấu trúc trên MA200 ($402.07), điểm IC 70/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |

@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-11T02:39:29.142959+00:00",
+  "timestamp_utc": "2026-11-11T09:02:30.698176+00:00",
   "scan_date": "2026-11-11",
   "total_us_filings_count": 363,
-  "total_vn_announcements_count": 43,
+  "total_vn_announcements_count": 36,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -277,12 +277,12 @@
       "total_recent_filings": 10
     },
     "HCM": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Một doanh nghiệp bất động sản tại TP.HCM đang lỗ gần 1.000 tỷ đồng, mở thêm công ty buôn hàng may mặc, giày dép vốn 5 tỷ",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 11 Nov 26 09:17:00 +0700",
-      "source_url": "https://cafef.vn/mot-doanh-nghiep-bat-dong-san-tai-tphcm-dang-lo-gan-1000-ty-dong-mo-them-cong-ty-buon-hang-may-mac-giay-dep-von-5-ty-188261111085334036.chn",
-      "total_announcements": 14
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "'Vua tiêu' Phan Minh Thông: Phúc Sinh sẵn sàng trả một nhân sự 21 tháng lương/năm, hỗ trợ vay mua nhà lãi suất 0% suốt 10 năm",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 26 14:31:00 +0700",
+      "source_url": "https://cafef.vn/vua-tieu-phan-minh-thong-phuc-sinh-san-sang-tra-mot-nhan-su-21-thang-luong-nam-ho-tro-vay-mua-nha-lai-suat-0-suot-10-nam-188261111143105428.chn",
+      "total_announcements": 12
     },
     "REE": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -298,7 +298,7 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 00:03:00 +0700",
       "source_url": "https://cafef.vn/ty-phu-bill-gates-bat-ngo-mua-them-200000-co-phieu-mot-cong-ty-bat-dong-san-viet-nam-188261109233549925.chn",
-      "total_announcements": 2
+      "total_announcements": 1
     },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -306,7 +306,7 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/petrolimex-tung-lon-gap-doi-mb-nay-bang-1-4-vinamilk-tung-gap-15-lan-vingroup-nay-bang-1-16-10-nam-viet-lai-ban-do-ty-do-tren-ttck-188261109224125049.chn",
-      "total_announcements": 5
+      "total_announcements": 6
     },
     "MSN": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -322,7 +322,7 @@
       "severity": "WARNING",
       "published_at": "Wed, 11 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/bat-ngo-chu-tich-tran-hung-huy-nhan-tien-co-tuc-tu-acb-it-hon-vo-chong-bau-kien-188261110160054803.chn",
-      "total_announcements": 7
+      "total_announcements": 5
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -334,11 +334,11 @@
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm",
+      "latest_title": "Giá vàng miếng, vàng nhẫn chiều 11/11 đồng loạt quay đầu tăng tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 08:01:00 +0700",
-      "source_url": "https://cafef.vn/giam-doc-cap-cao-phu-trach-tai-chinh-cua-pnj-tu-nhiem-188261110080205957.chn",
-      "total_announcements": 3
+      "published_at": "Wed, 11 Nov 26 15:07:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-11-11-dong-loat-quay-dau-tang-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261111071532931.chn",
+      "total_announcements": 1
     },
     "VCB": {
       "latest_event_type": "ESOP_PHAT_HANH",
@@ -370,14 +370,6 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
       "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
-      "total_announcements": 1
-    },
-    "MBS": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 2026 03:44:26 GMT",
-      "source_url": "https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm",
       "total_announcements": 1
     },
     "SSI": {
@@ -4753,6 +4745,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "'Vua tiêu' Phan Minh Thông: Phúc Sinh sẵn sàng trả một nhân sự 21 tháng lương/năm, hỗ trợ vay mua nhà lãi suất 0% suốt 10 năm",
+      "summary": "Tại hội thảo về văn hoá doanh nghiệp TP.HCM diễn ra ngày 10/11, ông Phan Minh Thông, Nhà sáng lập, Chủ tịch HĐQT Công ty CP Phúc Sinh đã 'bật mí' cách tạo lợi thế cạnh tranh về mặt nhân sự, đồng thời đưa người lao động t...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 26 14:31:00 +0700",
+      "source_url": "https://cafef.vn/vua-tieu-phan-minh-thong-phuc-sinh-san-sang-tra-mot-nhan-su-21-thang-luong-nam-ho-tro-vay-mua-nha-lai-suat-0-suot-10-nam-188261111143105428.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Một doanh nghiệp bất động sản tại TP.HCM đang lỗ gần 1.000 tỷ đồng, mở thêm công ty buôn hàng may mặc, giày dép vốn 5 tỷ",
       "summary": "Thuduc House lên kế hoạch thành lập công ty con chuyên kinh doanh vải, hàng may mặc và giày dép với vốn điều lệ 5 tỷ đồng. Động thái này diễn ra khi doanh nghiệp đang gánh khoản lỗ lũy kế gần 938 tỷ đồng....",
       "event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -4811,18 +4815,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT"
-      ],
-      "title": "Từ nhà khoa học đến Chủ tịch FPT, ông Trương Gia Bình trao 1 triệu USD cho người trẻ: “Hãy thành công hơn FPT”",
-      "summary": "Chủ tịch FPT Trương Gia Bình muốn thế hệ startup tiếp theo không chỉ nối bước mà còn có thể vượt qua những gì FPT đã làm được....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 15:59:00 +0700",
-      "source_url": "https://cafef.vn/tu-nha-khoa-hoc-den-chu-tich-fpt-ong-truong-gia-binh-trao-1-trieu-usd-cho-nguoi-tre-hay-thanh-cong-hon-fpt-188261109150349201.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "MSN"
       ],
       "title": "Không chỉ mở rộng kinh doanh, Masan đang tạo ra nhiều lợi nhuận hơn trên mỗi cổ phiếu",
@@ -4871,50 +4863,38 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PNJ"
+        "VND"
       ],
-      "title": "Giám đốc cấp cao phụ trách tài chính của PNJ từ nhiệm",
-      "summary": "Ông Hải sẽ thôi giữ chức Giám đốc cấp cao phụ trách tài chính tại PNJ từ ngày 17/11 theo nguyện vọng cá nhân; ông mới đã đảm nhiệm vị trí này từ đầu năm 2025....",
+      "title": "Từ hôm nay (11/11), Ngân hàng Nhà nước bắt đầu triển khai kênh bơm tiền VND 2 lần/tuần",
+      "summary": "Từ hôm nay (11/11), Ngân hàng Nhà nước bắt đầu triển khai kênh bơm tiền định kỳ 2 lần/tuần thông qua hoạt động mua USD giao ngay. Theo Chứng khoán Rồng Việt (VDSC), động thái này không chỉ nhằm tạo sàn cho tỷ giá và bổ s...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 08:01:00 +0700",
-      "source_url": "https://cafef.vn/giam-doc-cap-cao-phu-trach-tai-chinh-cua-pnj-tu-nhiem-188261110080205957.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Những cổ đông sở hữu lượng lớn cổ phiếu ACB nhận cổ tức",
-      "summary": "Việc ACB duy trì chi trả cổ tức qua nhiều năm mang lại nguồn thu nhập đáng kể cho các cổ đông nắm giữ lượng lớn cổ phiếu, trong bối cảnh ngân hàng tiếp tục thực hiện chính sách phân phối lợi nhuận cho cổ đông....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 10 Nov 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/vo-chong-bau-kien-van-deu-dan-nhan-hang-tram-ty-dong-moi-nam-tu-acb-188261109230112292.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "DXG"
-      ],
-      "title": "Nhóm quỹ liên quan Dragon Capital quay trở lại ghế cổ đông lớn sau khi gom thêm 5 triệu cổ phiếu DXG",
-      "summary": "Nhóm quỹ liên quan Dragon Capital vừa mua thêm 5 triệu cổ phiếu DXG trong phiên 4/11, qua đó nâng tỷ lệ sở hữu tại Bluemarq Group lên 5,2% và chính thức trở thành cổ đông lớn của doanh nghiệp....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 18:33:00 +0700",
-      "source_url": "https://cafef.vn/nhom-quy-lien-quan-dragon-capital-quay-tro-lai-ghe-co-dong-lon-sau-khi-gom-them-5-trieu-co-phieu-dxg-188261109175803857.chn"
+      "published_at": "Wed, 11 Nov 26 15:54:00 +0700",
+      "source_url": "https://cafef.vn/tu-hom-nay-11-11-ngan-hang-nha-nuoc-bat-dau-trien-khai-kenh-bom-tien-vnd-2-lan-tuan-188261111155525195.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
         "PNJ"
       ],
-      "title": "PNJ \"thủng đáy\"",
-      "summary": "Chỉ trong chưa đầy ba tuần, vốn hóa doanh nghiệp đã \"bốc hơi\" thêm khoảng 2.560 tỷ đồng, xuống còn hơn 7.200 tỷ đồng....",
+      "title": "Giá vàng miếng, vàng nhẫn chiều 11/11 đồng loạt quay đầu tăng tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Chiều 11/11, giá vàng trong nước đồng loạt phục hồi sau khi giảm mạnh vào buổi sáng. Vàng miếng SJC, PNJ và DOJI cùng tăng 500.000 đồng/lượng, trong khi giá vàng nhẫn diễn biến trái chiều giữa các thương hiệu....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 16:17:00 +0700",
-      "source_url": "https://cafef.vn/pnj-thung-day-188261109161416223.chn"
+      "published_at": "Wed, 11 Nov 26 15:07:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-11-11-dong-loat-quay-dau-tang-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261111071532931.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Bất ngờ cựu TGĐ Vietcombank, TGĐ VPBank, FPT Telecom và loạt founder đình đám cùng học tại ngôi trường được ví như 'Harvard Việt Nam'",
+      "summary": "Đại học Ngoại thương là nơi đào tạo nhiều thế hệ nhân sự cho nền kinh tế Việt Nam. Trong số những người từng theo học tại ngôi trường này có các lãnh đạo ngân hàng, doanh nhân và nhà sáng lập doanh nghiệp nổi bật....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 26 12:22:00 +0700",
+      "source_url": "https://cafef.vn/bat-ngo-cuu-tgd-vietcombank-tgd-vpbank-fpt-telecom-va-loat-founder-dinh-dam-cung-hoc-tai-ngoi-truong-duoc-vi-nhu-harvard-viet-nam-188261111102322254.chn"
     },
     {
       "market": "VIETNAM",
@@ -5015,50 +4995,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "FPT"
       ],
-      "title": "Khoản nợ của ông Nguyễn Hồ Nam sẽ được đấu giá vào ngày 23/11, tài sản bảo đảm là nhà đất tại TP.HCM",
-      "summary": "VietinBank thông báo bán đấu giá khoản nợ của ông Nguyễn Hồ Nam với giá khởi điểm 58,9 tỷ đồng. Tài sản bảo đảm là quyền sử dụng đất và nhà ở riêng lẻ tại TP.HCM, với diện tích đất gần 329 m² và tổng diện tích sàn hơn 1....",
+      "title": "Tỉnh rộng thứ 2 Việt Nam, nơi được Sun Group, FLC, VinEnergo, FPT… đổ bộ sẽ có khu đô thị 19.300 tỷ đồng",
+      "summary": "Khu đô thị Nam đường Hùng Vương rộng gần 70ha, tổng vốn đầu tư hơn 19.310 tỷ đồng đang được Gia Lai tổ chức lựa chọn nhà đầu tư thông qua đấu thầu quốc tế....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 06:36:00 +0700",
-      "source_url": "https://cafef.vn/khoan-no-cua-ong-nguyen-ho-nam-se-duoc-dau-gia-vao-ngay-23-11-tai-san-bao-dam-la-nha-dat-tai-tphcm-188261108223825996.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Ngày 9/11, gửi dưới 1 tỷ đồng kỳ hạn 9 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "summary": "Với kỳ hạn 9 tháng, lãi suất tiết kiệm tại 7 ngân hàng MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB dao động từ 4,1% đến 6,7%/năm, tùy hình thức gửi tiền và điều kiện áp dụng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-9-11-gui-duoi-1-ty-dong-ky-han-9-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261108222446822.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng tối 8/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng so với cuối tuần trước",
-      "summary": "Giá vàng trong nước đóng cửa ngày 8/11 đi ngang so với cuối phiên hôm qua nhưng vẫn ghi nhận mức tăng mạnh so với cuối tuần trước....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 26 20:40:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-toi-8-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-so-voi-cuoi-tuan-truoc-188261108083025831.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "VND"
-      ],
-      "title": "Tỷ giá USD/VND có thêm yếu tố hỗ trợ trong những tháng cuối năm",
-      "summary": "Từ đầu tháng 8 đến ngày 5/11, tỷ giá USD tại các ngân hàng và trên thị trường tự do đều giảm, trong khi tỷ giá trung tâm tăng nhẹ. Nguồn cung ngoại tệ cải thiện cùng xu hướng suy yếu của đồng USD quốc tế đang tạo thêm yế...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 26 11:16:00 +0700",
-      "source_url": "https://cafef.vn/ty-gia-usd-vnd-co-them-yeu-to-ho-tro-trong-nhung-thang-cuoi-nam-188261108111707668.chn"
+      "published_at": "Wed, 11 Nov 26 15:49:00 +0700",
+      "source_url": "https://cafef.vn/tinh-rong-thu-2-viet-nam-noi-duoc-sun-group-flc-vinenergo-fpt-do-bo-se-co-khu-do-thi-19300-ty-dong-188261111154157777.chn"
     },
     {
       "market": "VIETNAM",
@@ -5123,18 +5067,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Một nhà thầu lớn sẽ thi công loạt hạng mục quan trọng tại tuyến metro gần 4 tỷ USD, dài 54km nối Bến Thành - Cần Giờ của tỷ phú Phạm Nhật Vượng",
-      "summary": "Sở Xây dựng TP.HCM vừa ban hành Quyết định số 3313/QĐ-SXD-KTVLXD, cấp giấy phép hoạt động xây dựng cho Công ty HH Tập đoàn Công trình Xây dựng Trung Quốc tham gia thi công một số hạng mục thuộc dự án tuyến đường sắt Bến ...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 11:05:00 +0700",
-      "source_url": "https://cafef.vn/mot-nha-thau-lon-se-thi-cong-loat-hang-muc-quan-trong-tai-tuyen-metro-gan-4-ty-usd-dai-54km-noi-ben-thanh-can-gio-cua-ty-phu-pham-nhat-vuong-188261110110233935.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "BSR"
       ],
       "title": "BSR và Liên danh FutureTec - Hanghua trao đổi cơ hội hợp tác phát triển chuỗi giá trị lọc hóa dầu",
@@ -5181,18 +5113,6 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
       "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "MBS"
-      ],
-      "title": "Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026",
-      "summary": "MBS dự báo lãi suất huy động có thể tiếp tục điều chỉnh giảm thêm 20–30 điểm cơ bản từ nay đến cuối năm 2026....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 08 Nov 2026 03:44:26 GMT",
-      "source_url": "https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm"
     },
     {
       "market": "VIETNAM",
@@ -5253,18 +5173,6 @@
       "severity": "INFO",
       "published_at": "Mon, 09 Nov 2026 07:41:09 +0700",
       "source_url": "https://vnexpress.net/ssi-chung-khoan-co-the-tao-day-ngan-han-trong-thang-nay-5142164.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Tìm giải pháp đầu tư từ dữ liệu tại diễn đàn thường niên của DNSE",
-      "summary": "DNSE Future Tech Summit 2026 sẽ diễn ra ngày 20/11 tại TP HCM, quy tụ các chuyên gia tài chính, công nghệ thảo luận về ứng dụng AI, phân bổ tài sản và chiến lược đầu tư....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sat, 07 Nov 2026 14:30:00 +0700",
-      "source_url": "https://vnexpress.net/tim-giai-phap-dau-tu-tu-du-lieu-tai-dien-dan-thuong-nien-cua-dnse-5141896.html"
     }
   ]
 }
