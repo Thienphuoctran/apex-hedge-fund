@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-10T20:49:14.693535+00:00",
-  "scan_date": "2026-11-10",
-  "total_us_filings_count": 369,
-  "total_vn_announcements_count": 45,
+  "timestamp_utc": "2026-11-11T01:36:10.301691+00:00",
+  "scan_date": "2026-11-11",
+  "total_us_filings_count": 363,
+  "total_vn_announcements_count": 43,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -77,7 +77,7 @@
       "total_recent_filings": 11
     },
     "JPM": {
-      "latest_form": "424B2",
+      "latest_form": "424B3",
       "latest_filing_date": "2026-11-10",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
@@ -130,7 +130,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365",
-      "total_recent_filings": 8
+      "total_recent_filings": 10
     },
     "COIN": {
       "latest_form": "10-Q",
@@ -146,14 +146,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858",
-      "total_recent_filings": 10
-    },
-    "GS": {
-      "latest_form": "424B2",
-      "latest_filing_date": "2026-11-10",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982",
       "total_recent_filings": 12
     },
     "V": {
@@ -178,7 +170,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478",
-      "total_recent_filings": 11
+      "total_recent_filings": 12
     },
     "NVO": {
       "latest_form": "6-K",
@@ -261,10 +253,10 @@
       "total_recent_filings": 11
     },
     "COST": {
-      "latest_form": "4",
-      "latest_filing_date": "2026-10-27",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
+      "latest_form": "8-K",
+      "latest_filing_date": "2026-11-10",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000909832",
       "total_recent_filings": 12
     },
@@ -282,7 +274,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
-      "total_recent_filings": 9
+      "total_recent_filings": 10
     },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -314,14 +306,14 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/petrolimex-tung-lon-gap-doi-mb-nay-bang-1-4-vinamilk-tung-gap-15-lan-vingroup-nay-bang-1-16-10-nam-viet-lai-ban-do-ty-do-tren-ttck-188261109224125049.chn",
-      "total_announcements": 7
+      "total_announcements": 6
     },
-    "GAS": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 10:14:00 +0700",
-      "source_url": "https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn",
+    "MSN": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Không chỉ mở rộng kinh doanh, Masan đang tạo ra nhiều lợi nhuận hơn trên mỗi cổ phiếu",
+      "severity": "CRITICAL",
+      "published_at": "Wed, 11 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/khong-chi-mo-rong-kinh-doanh-masan-dang-tao-ra-nhieu-loi-nhuan-hon-tren-moi-co-phieu-188261110153052983.chn",
       "total_announcements": 1
     },
     "ACB": {
@@ -347,14 +339,6 @@
       "published_at": "Tue, 10 Nov 26 08:01:00 +0700",
       "source_url": "https://cafef.vn/giam-doc-cap-cao-phu-trach-tai-chinh-cua-pnj-tu-nhiem-188261110080205957.chn",
       "total_announcements": 3
-    },
-    "MBS": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "MBS dự báo lợi nhuận năm 2026 của loạt doanh nghiệp “hot”, một ông lớn có thể tăng hơn 100%",
-      "severity": "CRITICAL",
-      "published_at": "Mon, 09 Nov 26 15:24:00 +0700",
-      "source_url": "https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn",
-      "total_announcements": 2
     },
     "VCB": {
       "latest_event_type": "ESOP_PHAT_HANH",
@@ -386,6 +370,14 @@
       "severity": "CRITICAL",
       "published_at": "Sun, 08 Nov 2026 03:45:20 GMT",
       "source_url": "https://vneconomy.vn/ca-map-pyn-elite-fund-bao-lo-nang-tu-dau-nam-do-nam-giu-nhieu-fpt-stb.htm",
+      "total_announcements": 1
+    },
+    "MBS": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Dự báo lãi suất huy động tiếp tục giảm 0,3% từ nay tới cuối năm 2026",
+      "severity": "INFO",
+      "published_at": "Sun, 08 Nov 2026 03:44:26 GMT",
+      "source_url": "https://vneconomy.vn/du-bao-lai-suat-huy-dong-tiep-tuc-giam-03-tu-nay-toi-cuoi-nam-2026.htm",
       "total_announcements": 1
     },
     "SSI": {
@@ -667,6 +659,18 @@
       "symbol": "MSFT",
       "company_name": "MICROSOFT CORP",
       "form": "4",
+      "filing_date": "2026-11-10",
+      "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000789019-26-000232",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "form": "4",
       "filing_date": "2026-11-09",
       "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
       "event_type": "INSIDER_TRADING",
@@ -780,18 +784,6 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "accession_number": "0001193125-26-436133",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "MSFT",
-      "company_name": "MICROSOFT CORP",
-      "form": "8-K",
-      "filing_date": "2026-10-28",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001193125-26-436122",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
     },
     {
@@ -1254,6 +1246,18 @@
       "market": "US_GLOBAL",
       "symbol": "PLTR",
       "company_name": "Palantir Technologies Inc.",
+      "form": "144",
+      "filing_date": "2026-11-10",
+      "description": "SEC Form 144",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001950047-26-010948",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "PLTR",
+      "company_name": "Palantir Technologies Inc.",
       "form": "4",
       "filing_date": "2026-11-04",
       "description": "FORM 4",
@@ -1380,18 +1384,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001840244-26-000020",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "PLTR",
-      "company_name": "Palantir Technologies Inc.",
-      "form": "4",
-      "filing_date": "2026-10-13",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001823923-26-000013",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
     },
     {
@@ -1530,12 +1522,60 @@
       "market": "US_GLOBAL",
       "symbol": "JPM",
       "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B3",
+      "filing_date": "2026-11-10",
+      "description": "FORM 424B3",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-118130",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B3",
+      "filing_date": "2026-11-10",
+      "description": "FORM 424B3",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-118105",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B3",
+      "filing_date": "2026-11-10",
+      "description": "FORM 424B3",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-118103",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
       "form": "424B2",
       "filing_date": "2026-11-10",
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-117988",
+      "accession_number": "0001213900-26-118100",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-10",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-118090",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1547,7 +1587,67 @@
       "description": "PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035280",
+      "accession_number": "0001213900-26-118080",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-10",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-035315",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-10",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-035308",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-10",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-035307",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-10",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-035305",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-10",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-118057",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1559,115 +1659,7 @@
       "description": "PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-117986",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-035278",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-117981",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-035264",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "AMENDED & RESTATED PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-117962",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-117946",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-117943",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-117941",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "PRELIMINARY PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-117935",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-117932",
+      "accession_number": "0001213900-26-118050",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -2058,6 +2050,18 @@
       "market": "US_GLOBAL",
       "symbol": "QCOM",
       "company_name": "QUALCOMM INC/DE",
+      "form": "424B5",
+      "filing_date": "2026-11-10",
+      "description": "424B5",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001104659-26-125254",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "QCOM",
+      "company_name": "QUALCOMM INC/DE",
       "form": "4",
       "filing_date": "2026-11-09",
       "description": "PRIMARY DOCUMENT",
@@ -2160,18 +2164,6 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "accession_number": "0000804328-26-000128",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "QCOM",
-      "company_name": "QUALCOMM INC/DE",
-      "form": "8-K",
-      "filing_date": "2026-11-04",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0000804328-26-000127",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000804328"
     },
     {
@@ -2322,6 +2314,42 @@
       "market": "US_GLOBAL",
       "symbol": "SMCI",
       "company_name": "Super Micro Computer, Inc.",
+      "form": "4",
+      "filing_date": "2026-11-10",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001593123-26-000010",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "SMCI",
+      "company_name": "Super Micro Computer, Inc.",
+      "form": "4",
+      "filing_date": "2026-11-10",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0002160181-26-000006",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "SMCI",
+      "company_name": "Super Micro Computer, Inc.",
+      "form": "4",
+      "filing_date": "2026-11-10",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0002063388-26-000006",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "SMCI",
+      "company_name": "Super Micro Computer, Inc.",
       "form": "10-Q",
       "filing_date": "2026-11-06",
       "description": "10-Q",
@@ -2400,18 +2428,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0002148161-26-000012",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "SMCI",
-      "company_name": "Super Micro Computer, Inc.",
-      "form": "4",
-      "filing_date": "2026-10-29",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0002135314-26-000014",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001375365"
     },
     {
@@ -2567,7 +2583,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035277",
+      "accession_number": "0001918704-26-035322",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2579,7 +2595,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035276",
+      "accession_number": "0001918704-26-035321",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2591,7 +2607,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035263",
+      "accession_number": "0001918704-26-035320",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2603,7 +2619,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035262",
+      "accession_number": "0001918704-26-035318",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2615,7 +2631,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035257",
+      "accession_number": "0001918704-26-035317",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2627,7 +2643,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035255",
+      "accession_number": "0001918704-26-035312",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2639,7 +2655,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035252",
+      "accession_number": "0001918704-26-035300",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2651,7 +2667,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035250",
+      "accession_number": "0001918704-26-035299",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2663,7 +2679,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035244",
+      "accession_number": "0001918704-26-035298",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2675,152 +2691,56 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035242",
+      "accession_number": "0001918704-26-035296",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
       "filing_date": "2026-11-10",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-455328",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+      "accession_number": "0001918704-26-035295",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
+      "symbol": "BAC",
+      "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
       "filing_date": "2026-11-10",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-455316",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+      "accession_number": "0001918704-26-035292",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
+      "symbol": "V",
+      "company_name": "VISA INC.",
+      "form": "144",
       "filing_date": "2026-11-10",
-      "description": "424B2",
+      "description": "SEC Form 144",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-455313",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+      "accession_number": "0001964306-26-000509",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
+      "symbol": "V",
+      "company_name": "VISA INC.",
+      "form": "4",
       "filing_date": "2026-11-10",
-      "description": "424B2",
+      "description": "PRIMARY DOCUMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-455288",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "FORM 424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000950103-26-017250",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-455269",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "FORM 424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000950103-26-017246",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-455258",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-455253",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-455251",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-455222",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-10",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-455213",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+      "accession_number": "0001403161-26-000138",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
     },
     {
       "market": "US_GLOBAL",
@@ -2944,30 +2864,6 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "V",
-      "company_name": "VISA INC.",
-      "form": "8-K",
-      "filing_date": "2026-10-27",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001403161-26-000126",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "V",
-      "company_name": "VISA INC.",
-      "form": "4",
-      "filing_date": "2026-10-02",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001403161-26-000123",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001403161"
-    },
-    {
-      "market": "US_GLOBAL",
       "symbol": "BRK-B",
       "company_name": "BERKSHIRE HATHAWAY INC",
       "form": "424B5",
@@ -3085,6 +2981,18 @@
       "severity": "INFO",
       "accession_number": "0001193125-26-403089",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-10",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001786054-26-000008",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
     },
     {
       "market": "US_GLOBAL",
@@ -3690,6 +3598,18 @@
       "market": "US_GLOBAL",
       "symbol": "CVX",
       "company_name": "CHEVRON CORP",
+      "form": "144",
+      "filing_date": "2026-11-10",
+      "description": "SEC Form 144",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001950047-26-010923",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000093410"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "CVX",
+      "company_name": "CHEVRON CORP",
       "form": "10-Q",
       "filing_date": "2026-11-05",
       "description": "10-Q",
@@ -3804,18 +3724,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0000093410-26-000181",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000093410"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "CVX",
-      "company_name": "CHEVRON CORP",
-      "form": "4",
-      "filing_date": "2026-08-20",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000093410-26-000179",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000093410"
     },
     {
@@ -4470,6 +4378,18 @@
       "market": "US_GLOBAL",
       "symbol": "COST",
       "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "form": "8-K",
+      "filing_date": "2026-11-10",
+      "description": "8-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0000909832-26-000134",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000909832"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "COST",
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
       "form": "4",
       "filing_date": "2026-10-27",
       "description": "PRIMARY DOCUMENT",
@@ -4600,18 +4520,6 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "COST",
-      "company_name": "COSTCO WHOLESALE CORP /NEW",
-      "form": "4",
-      "filing_date": "2026-10-26",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000909832-26-000115",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000909832"
-    },
-    {
-      "market": "US_GLOBAL",
       "symbol": "PG",
       "company_name": "PROCTER & GAMBLE Co",
       "form": "144",
@@ -4722,6 +4630,30 @@
       "market": "US_GLOBAL",
       "symbol": "MCD",
       "company_name": "MCDONALDS CORP",
+      "form": "424B2",
+      "filing_date": "2026-11-10",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001104659-26-125266",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "MCD",
+      "company_name": "MCDONALDS CORP",
+      "form": "424B2",
+      "filing_date": "2026-11-10",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001104659-26-125264",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "MCD",
+      "company_name": "MCDONALDS CORP",
       "form": "10-Q",
       "filing_date": "2026-11-06",
       "description": "10-Q",
@@ -4813,18 +4745,6 @@
       "severity": "CRITICAL",
       "accession_number": "0000063908-26-000073",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "MCD",
-      "company_name": "MCDONALDS CORP",
-      "form": "8-K",
-      "filing_date": "2026-08-04",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0000063908-26-000069",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908"
     }
   ],
   "vn_announcements": [
@@ -4891,14 +4811,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "GAS"
+        "MSN"
       ],
-      "title": "Một trong những tòa nhà đầu tiên tỷ phú Nguyễn Thị Phương Thảo xây tại Việt Nam: Đầu tư 800 tỷ, nay “chứa” gần 200.000 tỷ",
-      "summary": "Được xây dựng từ năm 2009 với sự góp vốn của PV GAS, PV Engineering và doanh nghiệp thuộc hệ sinh thái của nữ tỷ phú Nguyễn Thị Phương Thảo, tòa PV GAS Tower tại số 673 Nguyễn Hữu Thọ hiện là địa chỉ của nhiều đơn vị ngà...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 10:14:00 +0700",
-      "source_url": "https://cafef.vn/mot-trong-nhung-toa-nha-dau-tien-ty-phu-nguyen-thi-phuong-thao-xay-tai-viet-nam-dau-tu-800-ty-nay-chua-gan-200000-ty-188261109093013147.chn"
+      "title": "Không chỉ mở rộng kinh doanh, Masan đang tạo ra nhiều lợi nhuận hơn trên mỗi cổ phiếu",
+      "summary": "Sau 9 tháng đầu năm 2026, doanh thu Masan tăng 52,7%, trong khi lợi nhuận thuộc về cổ đông công ty mẹ tăng hơn 205%. Cùng với dòng tiền cải thiện và nợ vay giảm, kết quả này đang tạo cơ sở để các công ty chứng khoán đánh...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Wed, 11 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/khong-chi-mo-rong-kinh-doanh-masan-dang-tao-ra-nhieu-loi-nhuan-hon-tren-moi-co-phieu-188261110153052983.chn"
     },
     {
       "market": "VIETNAM",
@@ -4987,26 +4907,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "MBS"
+        "ACB"
       ],
-      "title": "MBS dự báo lợi nhuận năm 2026 của loạt doanh nghiệp “hot”, một ông lớn có thể tăng hơn 100%",
-      "summary": "Trong danh mục cổ phiếu tiêu biểu tháng 11, MBS dự báo lợi nhuận năm 2026 của nhiều doanh nghiệp lớn tiếp tục tăng mạnh....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Mon, 09 Nov 26 15:24:00 +0700",
-      "source_url": "https://cafef.vn/mbs-du-bao-loi-nhuan-nam-2026-cua-loat-doanh-nghiep-hot-mot-ong-lon-co-the-tang-hon-100-188261109144659075.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "FPT Telecom sắp phát hành hơn 110 triệu cổ phiếu thưởng cho cổ đông",
-      "summary": "FPT Telecom dự kiến phát hành hơn 110,8 triệu cổ phiếu thưởng cho cổ đông nhằm tăng vốn điều lệ lên mức gần 8.496 tỷ đồng. Ngày đăng ký cuối cùng để phân bổ quyền là 10/12/2026....",
-      "event_type": "CO_TUC",
-      "severity": "WARNING",
-      "published_at": "Mon, 09 Nov 26 15:10:00 +0700",
-      "source_url": "https://cafef.vn/fpt-telecom-sap-phat-hanh-hon-110-trieu-co-phieu-thuong-cho-co-dong-188261109144524706.chn"
+      "title": "ACB & Sun Life: Khi “tin vào điều mình chọn\", điều gì giúp chúng ta đi đến cùng?",
+      "summary": "Chúng ta có thể tin tưởng vào một quyết định ở thời điểm bắt đầu, nhưng vẫn lo ngại khả năng duy trì quyết định ấy trong nhiều năm sau....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 26 07:40:00 +0700",
+      "source_url": "https://cafef.vn/acb-sun-life-khi-tin-vao-dieu-minh-chon-dieu-gi-giup-chung-ta-di-den-cung-188261111064027983.chn"
     },
     {
       "market": "VIETNAM",
@@ -5143,14 +5051,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
+        "HCM"
       ],
-      "title": "Ngày 8/11, gửi dưới 1 tỷ đồng kỳ hạn 1 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "summary": "Với kỳ hạn 1 tháng, lãi suất tiết kiệm tại 7 ngân hàng MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB đang dao động từ 3,7% đến 4,75%/năm tùy hình thức gửi tiền và điều kiện áp dụng....",
-      "event_type": "TIN_DOANH_NGHIEP",
+      "title": "15/11 chính thức mở bán và khai trương căn hộ mẫu IVY Central",
+      "summary": "Tòa căn hộ cao cấp IVY Central đang trở thành tâm điểm của thị trường bất động sản phía Đông TP HCM khi chính thức mở bán và khai trương căn hộ mẫu vào ngày 15/11 tới đây ngay tại dự án (Số 446 Quốc lộ 1K, Đông Hòa, TP H...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
       "severity": "INFO",
-      "published_at": "Sun, 08 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-8-11-gui-duoi-1-ty-dong-ky-han-1-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261107214517163.chn"
+      "published_at": "Wed, 11 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/15-11-chinh-thuc-mo-ban-va-khai-truong-can-ho-mau-ivy-central-188261111075731762.chn"
     },
     {
       "market": "VIETNAM",
@@ -5223,18 +5131,6 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 26 00:01:00 +0700",
       "source_url": "https://cafef.vn/toan-canh-cay-cau-day-vang-hon-7300-ty-dong-o-ha-noi-tru-thap-hinh-canh-chim-cao-tuong-duong-toa-nha-25-tang-nam-gan-loat-du-an-cua-vingroup-sunshine-fpt-du-kien-hoan-thanh-nam-2027-188261109210908703.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Chi hơn 8.500 tỷ đồng, TP.HCM muốn giải quyết con rạch đang ô nhiễm trầm trọng",
-      "summary": "Dự án cải tạo môi trường, xây dựng hạ tầng rạch Văn Thánh được kỳ vọng sẽ góp phần giải quyết tình trạng ô nhiễm môi trường, tăng khả năng thoát nước, giảm ngập cho khu vực....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 20:40:00 +0700",
-      "source_url": "https://cafef.vn/chi-hon-8500-ty-dong-tphcm-muon-giai-quyet-con-rach-dang-o-nhiem-tram-trong-18826110919401525.chn"
     },
     {
       "market": "VIETNAM",
