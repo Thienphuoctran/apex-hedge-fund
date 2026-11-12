@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12 16:49:35",
+  "generated_at": "2026-11-12 20:38:49",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "CO_TUC",
+      "date": "Fri, 13 Nov 26 0",
+      "headline": "FPT Telecom sắp chi gần 1.500 tỷ đồng trả cổ tức, Bộ Công an nhận hơn 741 tỷ đồng và hàng chục triệu cổ phiếu thưởng",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "HCM",
       "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
       "date": "Thu, 12 Nov 26 2",
@@ -359,10 +367,10 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
+      "symbol": "PNJ",
       "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Wed, 11 Nov 26 0",
-      "headline": "Một doanh nghiệp bất động sản tại TP.HCM đang lỗ gần 1.000 tỷ đồng, mở thêm công ty buôn hàng may mặc, giày dép vốn 5 tỷ",
+      "date": "Fri, 13 Nov 26 0",
+      "headline": "PNJ thua lỗ, giá giảm sàn, tại sao vẫn lọt rổ chỉ số quan trọng của MSCI?",
       "is_portfolio_holding": false
     },
     {
@@ -372,14 +380,6 @@
       "date": "Thu, 12 Nov 26 1",
       "headline": "Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu lần thứ 4",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Thu, 12 Nov 26 1",
-      "headline": "Gần 200 cổ phiếu giảm giá, khối ngoại bán ròng đột biến",
-      "is_portfolio_holding": true
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 372 hồ sơ SEC & 31 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 33 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
