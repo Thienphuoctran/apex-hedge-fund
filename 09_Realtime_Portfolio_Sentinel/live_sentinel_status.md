@@ -1,13 +1,13 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-12 07:33:50`  
+*Cập nhật gần nhất*: `2026-11-12 09:08:49`  
 *Trạng thái hệ thống*: **`✅ TOÀN BỘ 9 PHÒNG BAN TRỰC CHIẾN 24/7 ỔN ĐỊNH`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`2 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
 ## 1. Giám Sát Cổ Phiếu Đang Đầu Tư (Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR)
 | Mã CP | Thị Trường | Giá Hiện Tại | Biến Động | Ngưỡng Stop 2xATR | Cách Stop | Mục Tiêu TP1 | Cách TP1 | Vol Surge | Trạng Thái Tác Chiến |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`HDB`** | VIETNAM | `22,500.00 VND` | `+0.00%` | `21,220.00 VND` | `+5.69%` | `24,290.00 VND` | `+7.96%` | `1.8x` | ✅ Đang canh 2 đầu |
-| **`MSH`** | VIETNAM | `34,050.00 VND` | `+1.87%` | `33,090.00 VND` | `+2.82%` | `39,560.00 VND` | `+16.18%` | `0.0x` | ✅ Đang canh 2 đầu |
+| **`HDB`** | VIETNAM | `22,500.00 VND` | `+0.00%` | `21,220.00 VND` | `+5.69%` | `24,290.00 VND` | `+7.96%` | `2.0x` | ✅ Đang canh 2 đầu |
+| **`MSH`** | VIETNAM | `34,000.00 VND` | `+2.02%` | `33,090.00 VND` | `+2.68%` | `39,560.00 VND` | `+16.35%` | `0.0x` | ✅ Đang canh 2 đầu |
 
 ## 2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực
 | Chuyên Viên | Mã CP | Giá Hiện Tại | Tín Hiệu Sóng | Chất Lượng BCTC | Điểm Mua Chuẩn | Cắt Lỗ 2xATR | Chốt Lời TP1 |

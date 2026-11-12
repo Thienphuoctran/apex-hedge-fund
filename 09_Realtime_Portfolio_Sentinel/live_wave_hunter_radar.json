@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12 07:33:50",
+  "generated_at": "2026-11-12 09:08:49",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -359,6 +359,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Thu, 12 Nov 26 1",
+      "headline": "Cơn bĩ cực của cổ đông FPT",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "NLG,PNJ",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Thu, 12 Nov 26 1",
@@ -372,14 +380,6 @@
       "date": "Thu, 12 Nov 26 1",
       "headline": "Chuyên gia MBS: Thị trường thiếu sóng lớn, đâu là lợi thế cho Nhà đầu tư?",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "VHM,VRE",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Thu, 12 Nov 26 0",
-      "headline": "4 tín hiệu có thể kích hoạt làn sóng \"bắt đáy\" trên thị trường chứng khoán",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 363 hồ sơ SEC & 28 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 363 hồ sơ SEC & 17 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
