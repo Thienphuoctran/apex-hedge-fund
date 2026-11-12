@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11 20:00:13",
+  "generated_at": "2026-11-12 01:52:54",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "PC1",
+      "form_or_type": "CANH_BAO_RUI_RO",
+      "date": "Thu, 12 Nov 26 0",
+      "headline": "Lãnh đạo bị khởi tố, công ty ngành điện hơn 3.000 tỷ đồng thay 'ghế nóng'",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Wed, 11 Nov 26 1",
@@ -339,14 +347,6 @@
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 10 Nov 26 1",
       "headline": "Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "REE",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 10 Nov 26 0",
-      "headline": "Thái Lan thâu tóm 80% vốn của 1 công ty công nghệ Việt Nam, cũng là nhà phân phối cấp 2 của Microsoft",
       "is_portfolio_holding": false
     },
     {
@@ -376,9 +376,9 @@
     {
       "market": "VIETNAM_CBTT",
       "symbol": "ACB",
-      "form_or_type": "CO_TUC",
-      "date": "Wed, 11 Nov 26 0",
-      "headline": "Bất ngờ: Chủ tịch Trần Hùng Huy nhận tiền cổ tức từ ACB ít hơn vợ chồng bầu Kiên",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Thu, 12 Nov 26 0",
+      "headline": "Ngày 12/11, gửi dưới 1 tỷ đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
       "is_portfolio_holding": false
     }
   ],
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 363 hồ sơ SEC & 32 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 363 hồ sơ SEC & 30 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
