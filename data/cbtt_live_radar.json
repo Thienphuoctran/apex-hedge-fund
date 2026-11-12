@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-12T01:52:43.046301+00:00",
+  "timestamp_utc": "2026-11-12T07:33:04.856364+00:00",
   "scan_date": "2026-11-12",
   "total_us_filings_count": 363,
-  "total_vn_announcements_count": 30,
+  "total_vn_announcements_count": 28,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -276,6 +276,22 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 10
     },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "GELEX thuộc Top 50 công ty niêm yết kinh doanh hiệu quả nhất Việt Nam năm 2026",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/gelex-thuoc-top-50-cong-ty-niem-yet-kinh-doanh-hieu-qua-nhat-viet-nam-nam-2026-188261112122220129.chn",
+      "total_announcements": 8
+    },
+    "MSN": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Hệ sinh thái Masan ghi dấu tại TOP 50 Công ty niêm yết kinh doanh hiệu quả nhất Việt Nam",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 12 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/he-sinh-thai-masan-ghi-dau-tai-top-50-cong-ty-niem-yet-kinh-doanh-hieu-qua-nhat-viet-nam-188261112102118059.chn",
+      "total_announcements": 1
+    },
     "PC1": {
       "latest_event_type": "CANH_BAO_RUI_RO",
       "latest_title": "Lãnh đạo bị khởi tố, công ty ngành điện hơn 3.000 tỷ đồng thay 'ghế nóng'",
@@ -284,13 +300,29 @@
       "source_url": "https://cafef.vn/lanh-dao-bi-khoi-to-cong-ty-nganh-dien-hon-3000-ty-dong-thay-ghe-nong-188261112080033911.chn",
       "total_announcements": 1
     },
-    "HCM": {
+    "NLG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "'Vua tiêu' Phan Minh Thông: Phúc Sinh sẵn sàng trả một nhân sự 21 tháng lương/năm, hỗ trợ vay mua nhà lãi suất 0% suốt 10 năm",
+      "latest_title": "Hai mã PNJ và NLG bất ngờ lọt rổ chỉ số quan trọng của MSCI",
       "severity": "INFO",
-      "published_at": "Wed, 11 Nov 26 14:31:00 +0700",
-      "source_url": "https://cafef.vn/vua-tieu-phan-minh-thong-phuc-sinh-san-sang-tra-mot-nhan-su-21-thang-luong-nam-ho-tro-vay-mua-nha-lai-suat-0-suot-10-nam-188261111143105428.chn",
-      "total_announcements": 8
+      "published_at": "Thu, 12 Nov 26 10:51:00 +0700",
+      "source_url": "https://cafef.vn/hai-ma-pnj-va-nlg-bat-ngo-lot-ro-chi-so-quan-trong-cua-msci-188261112105145258.chn",
+      "total_announcements": 1
+    },
+    "PNJ": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Hai mã PNJ và NLG bất ngờ lọt rổ chỉ số quan trọng của MSCI",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 26 10:51:00 +0700",
+      "source_url": "https://cafef.vn/hai-ma-pnj-va-nlg-bat-ngo-lot-ro-chi-so-quan-trong-cua-msci-188261112105145258.chn",
+      "total_announcements": 2
+    },
+    "MBS": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Chuyên gia MBS: Thị trường thiếu sóng lớn, đâu là lợi thế cho Nhà đầu tư?",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 26 10:00:00 +0700",
+      "source_url": "https://cafef.vn/chuyen-gia-mbs-thi-truong-thieu-song-lon-dau-la-loi-the-cho-nha-dau-tu-188261111163924931.chn",
+      "total_announcements": 1
     },
     "VHM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -308,21 +340,13 @@
       "source_url": "https://cafef.vn/4-tin-hieu-co-the-kich-hoat-lan-song-bat-day-tren-thi-truong-chung-khoan-188261111163030299.chn",
       "total_announcements": 1
     },
-    "MSN": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Không chỉ mở rộng kinh doanh, Masan đang tạo ra nhiều lợi nhuận hơn trên mỗi cổ phiếu",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 11 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/khong-chi-mo-rong-kinh-doanh-masan-dang-tao-ra-nhieu-loi-nhuan-hon-tren-moi-co-phieu-188261110153052983.chn",
-      "total_announcements": 1
-    },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngày 12/11, gửi dưới 1 tỷ đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "latest_title": "Một ngân hàng nhỏ bất ngờ vượt BIDV để lọt Top 5 nhà băng có tỷ trọng tiền gửi giá rẻ dẫn đầu cùng MB, Vietcombank, Techcombank, VietinBank",
       "severity": "INFO",
-      "published_at": "Thu, 12 Nov 26 01:11:00 +0700",
-      "source_url": "https://cafef.vn/ngay-12-11-gui-duoi-1-ty-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261111232658813.chn",
-      "total_announcements": 5
+      "published_at": "Thu, 12 Nov 26 13:56:00 +0700",
+      "source_url": "https://cafef.vn/mot-ngan-hang-nho-bat-ngo-vuot-bidv-de-lot-top-5-nha-bang-co-ty-trong-tien-gui-gia-re-dan-dau-cung-mb-vietcombank-techcombank-vietinbank-188261112125252795.chn",
+      "total_announcements": 4
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -330,15 +354,7 @@
       "severity": "INFO",
       "published_at": "Wed, 11 Nov 26 16:47:00 +0700",
       "source_url": "https://cafef.vn/hoan-doi-ngoai-te-da-co-gan-50-nghin-ty-dong-duoc-cung-ung-cho-he-thong-ngan-hang-188261111144738067.chn",
-      "total_announcements": 4
-    },
-    "PNJ": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giá vàng miếng, vàng nhẫn chiều 11/11 đồng loạt quay đầu tăng tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
-      "severity": "INFO",
-      "published_at": "Wed, 11 Nov 26 15:07:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-11-11-dong-loat-quay-dau-tang-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261111071532931.chn",
-      "total_announcements": 1
+      "total_announcements": 3
     },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -378,7 +394,7 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 2026 10:59:30 GMT",
       "source_url": "https://vneconomy.vn/bsr-va-lien-danh-futuretec-hanghua-trao-doi-co-hoi-hop-tac-phat-trien-chuoi-gia-tri-loc-hoa-dau.htm",
-      "total_announcements": 2
+      "total_announcements": 1
     },
     "GMD": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -394,14 +410,6 @@
       "severity": "INFO",
       "published_at": "Tue, 10 Nov 2026 04:25:21 GMT",
       "source_url": "https://vneconomy.vn/tai-co-cau-etf-chi-so-hose-thang-102026-dong-tien-du-kien-tap-trung-manh-vao-gmd-ree-va-vjc.htm",
-      "total_announcements": 1
-    },
-    "SSI": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "SSI: Chứng khoán có thể tạo đáy ngắn hạn trong tháng này",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 2026 07:41:09 +0700",
-      "source_url": "https://vnexpress.net/ssi-chung-khoan-co-the-tao-day-ngan-han-trong-thang-nay-5142164.html",
       "total_announcements": 1
     }
   },
@@ -4767,6 +4775,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "GELEX thuộc Top 50 công ty niêm yết kinh doanh hiệu quả nhất Việt Nam năm 2026",
+      "summary": "Thông tin được công bố tại Lễ vinh danh diễn ra sáng 11/11 tại TP.HCM....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/gelex-thuoc-top-50-cong-ty-niem-yet-kinh-doanh-hieu-qua-nhat-viet-nam-nam-2026-188261112122220129.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "MSN"
+      ],
+      "title": "Hệ sinh thái Masan ghi dấu tại TOP 50 Công ty niêm yết kinh doanh hiệu quả nhất Việt Nam",
+      "summary": "Với doanh nghiệp niêm yết, mở rộng quy mô thường đi kèm áp lực vốn và biên lợi nhuận. Masan đang cho thấy hai mục tiêu này có thể song hành. Ngày 11/11/2026, Masan Group (HOSE: MSN) và Masan Consumer (HOSE: MCH) cùng đượ...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 12 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/he-sinh-thai-masan-ghi-dau-tai-top-50-cong-ty-niem-yet-kinh-doanh-hieu-qua-nhat-viet-nam-188261112102118059.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PC1"
       ],
       "title": "Lãnh đạo bị khởi tố, công ty ngành điện hơn 3.000 tỷ đồng thay 'ghế nóng'",
@@ -4803,14 +4835,27 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "NLG",
+        "PNJ"
       ],
-      "title": "Chủ tịch FedEx châu Á - Thái Bình Dương: Ở Singapore, tôi mất 45 phút từ sân bay về nhà nhưng ở TP.HCM, 45 phút chỉ đủ để xếp hàng",
-      "summary": "Từ khoảng 200 lên gần 600 nhân viên chỉ trong một năm, cùng với đó là 42 chuyến bay đi và đến Việt Nam, FedEx đang tăng tốc tại một trong những thị trường mà hãng coi là trọng điểm tăng trưởng toàn cầu. Nhưng theo ông Sa...",
+      "title": "Hai mã PNJ và NLG bất ngờ lọt rổ chỉ số quan trọng của MSCI",
+      "summary": "Tại ngày 31/10, Việt Nam vẫn là quốc gia chiếm tỷ trọng cao nhất trong rổ chỉ số của MSCI Frontier Market Index...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 13:03:00 +0700",
-      "source_url": "https://cafef.vn/chu-tich-fedex-chau-a-thai-binh-duong-o-singapore-toi-mat-45-phut-tu-san-bay-ve-nha-nhung-o-tphcm-45-phut-chi-du-de-xep-hang-188261110130357227.chn"
+      "published_at": "Thu, 12 Nov 26 10:51:00 +0700",
+      "source_url": "https://cafef.vn/hai-ma-pnj-va-nlg-bat-ngo-lot-ro-chi-so-quan-trong-cua-msci-188261112105145258.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "MBS"
+      ],
+      "title": "Chuyên gia MBS: Thị trường thiếu sóng lớn, đâu là lợi thế cho Nhà đầu tư?",
+      "summary": "Đọc nhiều thông tin, theo dõi bảng giá mỗi ngày nhưng vẫn khó tìm được điểm giải ngân thuyết phục — đây là thế khó khi thị trường thiếu sóng lớn. Nếu mua sớm, vốn có thể nằm chờ; nếu chờ tín hiệu rõ ràng, mức giá hấp dẫn...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 26 10:00:00 +0700",
+      "source_url": "https://cafef.vn/chuyen-gia-mbs-thi-truong-thieu-song-lon-dau-la-loi-the-cho-nha-dau-tu-188261111163924931.chn"
     },
     {
       "market": "VIETNAM",
@@ -4840,14 +4885,26 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "MSN"
+        "ACB"
       ],
-      "title": "Không chỉ mở rộng kinh doanh, Masan đang tạo ra nhiều lợi nhuận hơn trên mỗi cổ phiếu",
-      "summary": "Sau 9 tháng đầu năm 2026, doanh thu Masan tăng 52,7%, trong khi lợi nhuận thuộc về cổ đông công ty mẹ tăng hơn 205%. Cùng với dòng tiền cải thiện và nợ vay giảm, kết quả này đang tạo cơ sở để các công ty chứng khoán đánh...",
+      "title": "Một ngân hàng nhỏ bất ngờ vượt BIDV để lọt Top 5 nhà băng có tỷ trọng tiền gửi giá rẻ dẫn đầu cùng MB, Vietcombank, Techcombank, VietinBank",
+      "summary": "Một ngân hàng quy mô nhỏ ghi nhận tỷ lệ tiền gửi không kỳ hạn (CASA) đạt 21,4%, vượt qua nhiều nhà băng lớn như BIDV, ACB và Sacombank để góp mặt trong Top 5 toàn ngành....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 26 13:56:00 +0700",
+      "source_url": "https://cafef.vn/mot-ngan-hang-nho-bat-ngo-vuot-bidv-de-lot-top-5-nha-bang-co-ty-trong-tien-gui-gia-re-dan-dau-cung-mb-vietcombank-techcombank-vietinbank-188261112125252795.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "HDBank, Vietjet và Vikki đồng hành mùa mua sắm cuối năm TP.HCM, kết nối ưu đãi tài chính – hàng không – du lịch",
+      "summary": "Hưởng ứng Vibrant HCMC và Shopping Season 2026, Sovico Group cùng HDBank, Vietjet, Vikki Digital Bank và các đối tác triển khai chuỗi ưu đãi tài chính, hàng không, mua sắm, du lịch và giải trí, góp phần kích cầu tiêu dùn...",
       "event_type": "BCTC_KET_QUA_KINH_DOANH",
       "severity": "CRITICAL",
-      "published_at": "Wed, 11 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/khong-chi-mo-rong-kinh-doanh-masan-dang-tao-ra-nhieu-loi-nhuan-hon-tren-moi-co-phieu-188261110153052983.chn"
+      "published_at": "Thu, 12 Nov 26 08:58:00 +0700",
+      "source_url": "https://cafef.vn/hdbank-vietjet-va-vikki-dong-hanh-mua-mua-sam-cuoi-nam-tphcm-ket-noi-uu-dai-tai-chinh-hang-khong-du-lich-188261112085820623.chn"
     },
     {
       "market": "VIETNAM",
@@ -4960,42 +5017,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
-      ],
-      "title": "ACB nhận 6 giải thưởng từ Visa, nổi bật về thanh toán và tăng trưởng đa phân khúc",
-      "summary": "Ngày 5/11/2026, Ngân hàng TMCP Á Châu (ACB) được Visa vinh danh tại 6 hạng mục giải thưởng trong khuôn khổ Hội nghị Khách hàng Visa 2026, diễn ra vào ngày 5/11 tại TP. Huế với chủ đề \"Powering Infinite Possibilities\", gh...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 07:30:00 +0700",
-      "source_url": "https://cafef.vn/acb-nhan-6-giai-thuong-tu-visa-noi-bat-ve-thanh-toan-va-tang-truong-da-phan-khuc-188261109214424383.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Ngày 10/11, gửi dưới 1 tỷ đồng kỳ hạn 15 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "summary": "Lãi suất tiết kiệm kỳ hạn 15 tháng tại 7 ngân hàng đang có sự chênh lệch đáng kể, với mức cao nhất lên tới 7,4%/năm khi gửi online. Với cùng khoản tiền gửi 500 triệu đồng, số tiền lãi nhận được sau 15 tháng có thể chênh ...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 10 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-10-11-gui-duoi-1-ty-dong-ky-han-15-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261109224318997.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "VND"
-      ],
-      "title": "Nóng: Ngân hàng Nhà nước sẽ mua ngoại tệ giao ngay, bơm VND cho hệ thống ngân hàng vào thứ Hai và thứ Tư hằng tuần từ ngày 11/11",
-      "summary": "Ngân hàng Nhà nước (NHNN) vừa thông báo phương án mua ngoại tệ giao ngay với tỷ giá 25.500 đồng/USD, dự kiến triển khai định kỳ hai phiên mỗi tuần từ ngày 11/11/2026. Động thái này mở thêm kênh cung ứng VND không xác địn...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 26 20:03:00 +0700",
-      "source_url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-se-mua-ngoai-te-giao-ngay-bom-vnd-cho-he-thong-ngan-hang-vao-thu-hai-va-thu-tu-hang-tuan-tu-ngay-11-11-188261109200423359.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "FPT"
       ],
       "title": "Tỉnh rộng thứ 2 Việt Nam, nơi được Sun Group, FLC, VinEnergo, FPT… đổ bộ sẽ có khu đô thị 19.300 tỷ đồng",
@@ -5049,18 +5070,6 @@
       "symbols": [
         "HCM"
       ],
-      "title": "NAB gia nhập nhóm doanh nghiệp tỷ USD, PGV, LPS và GEL bị loại",
-      "summary": "Sở Giao dịch Chứng khoán Tp.HCM (HOSE) thông tin thị trường kỳ tháng 10/2026....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 2026 02:01:37 GMT",
-      "source_url": "https://vneconomy.vn/nab-gia-nhap-nhom-doanh-nghiep-ty-usd-pgv-lps-va-gel-bi-loai.htm"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
       "title": "Vietnam Connect Forum 2026: Đầu tư vào Việt Nam - Cơ hội không chỉ nằm ở dòng vốn",
       "summary": "VietinBank tổ chức Vietnam Connect Forum 2026 ngày 17/11 tại TP.HCM, cập nhật chính sách đầu tư, thuế, triển vọng kinh tế và kết nối đối tác cho doanh nghiệp FDI....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5103,30 +5112,6 @@
       "severity": "WARNING",
       "published_at": "Tue, 10 Nov 2026 10:31:34 +0700",
       "source_url": "https://vnexpress.net/cii-huy-dong-von-mo-rong-cao-toc-tp-hcm-trung-luong-my-thuan-5142760.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "BSR"
-      ],
-      "title": "Chủ nhà máy lọc dầu Dung Quất nâng mục tiêu lãi kỷ lục",
-      "summary": "BSR, đơn vị vận hành nhà máy lọc dầu Dung Quất, điều chỉnh kế hoạch lãi năm nay lên 18.579 tỷ đồng, gấp hơn 8 lần ban đầu và cao nhất từ trước đến nay....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 2026 07:57:33 +0700",
-      "source_url": "https://vnexpress.net/chu-nha-may-loc-dau-dung-quat-nang-muc-tieu-lai-ky-luc-5142212.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "SSI"
-      ],
-      "title": "SSI: Chứng khoán có thể tạo đáy ngắn hạn trong tháng này",
-      "summary": "VN-Index được dự báo tạo đáy ngắn hạn trong tháng 11, nhờ định giá hấp dẫn, yếu tố mùa vụ và chuyển biến tích cực về lãi suất, tỷ giá....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 09 Nov 2026 07:41:09 +0700",
-      "source_url": "https://vnexpress.net/ssi-chung-khoan-co-the-tao-day-ngan-han-trong-thang-nay-5142164.html"
     }
   ]
 }

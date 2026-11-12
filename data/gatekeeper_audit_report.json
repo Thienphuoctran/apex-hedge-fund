@@ -1,5 +1,5 @@
 {
-  "audited_at_utc": "2026-11-11T09:03:01.353454+00:00",
+  "audited_at_utc": "2026-11-12T07:33:25.863264+00:00",
   "status": "WARNING (1 issues)",
   "total_errors": 1,
   "checks_summary": {
@@ -17,6 +17,6 @@
     "LIVE_24_HEADLINES_AND_35_STOCK_CATALYST_EXPLANATIONS": true
   },
   "errors": [
-    "[BUG-03] NVDA in daily_scientific_orders has imminent earnings in 6d"
+    "[BUG-03] NVDA in daily_scientific_orders has imminent earnings in 5d"
   ]
 }
