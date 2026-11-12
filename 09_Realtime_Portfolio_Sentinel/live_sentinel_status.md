@@ -1,5 +1,5 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-12 09:08:49`  
+*Cập nhật gần nhất*: `2026-11-12 16:49:35`  
 *Trạng thái hệ thống*: **`✅ TOÀN BỘ 9 PHÒNG BAN TRỰC CHIẾN 24/7 ỔN ĐỊNH`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`2 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
@@ -12,14 +12,14 @@
 ## 2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực
 | Chuyên Viên | Mã CP | Giá Hiện Tại | Tín Hiệu Sóng | Chất Lượng BCTC | Điểm Mua Chuẩn | Cắt Lỗ 2xATR | Chốt Lời TP1 |
 | :--- | :---: | :---: | :--- | :---: | :---: | :---: | :---: |
-| **Minh Quân (VN)** | **`HHV`** | `9,790 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AA** (`84.7/100`) | `9,741 ₫` | `9,301 ₫` | `10,816 ₫` |
-| **Minh Quân (VN)** | **`MSN`** | `71,400 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`90.3/100`) | `71,043 ₫` | `67,857 ₫` | `78,840 ₫` |
-| **Minh Quân (VN)** | **`HPG`** | `21,200 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`88.1/100`) | `21,094 ₫` | `20,171 ₫` | `23,360 ₫` |
-| **Minh Quân (VN)** | **`HDB`** | `22,450 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`96.2/100`) | `22,338 ₫` | `21,314 ₫` | `24,835 ₫` |
-| **Minh Quân (VN)** | **`DCM`** | `30,300 ₫` | 💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND) | **AAA** (`92.6/100`) | `30,148 ₫` | `28,386 ₫` | `34,320 ₫` |
-| **Alex (Global)** | **`NVDA`** | `$173.73` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`78.7/100`) | `$170.53` | `$155.45` | `$210.29` |
-| **Alex (Global)** | **`AVGO`** | `$345.22` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`80.9/100`) | `$338.97` | `$309.49` | `$416.68` |
-| **Alex (Global)** | **`TSM`** | `$413.35` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`90.2/100`) | `$407.05` | `$377.35` | `$485.35` |
+| **Minh Quân (VN)** | **`POW`** | `12,600 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`88.4/100`) | `12,537 ₫` | `12,064 ₫` | `13,725 ₫` |
+| **Minh Quân (VN)** | **`MSN`** | `71,200 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`90.3/100`) | `70,844 ₫` | `67,657 ₫` | `78,640 ₫` |
+| **Minh Quân (VN)** | **`CTG`** | `31,550 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`93.1/100`) | `31,392 ₫` | `30,429 ₫` | `33,905 ₫` |
+| **Minh Quân (VN)** | **`MWG`** | `73,000 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`94.1/100`) | `72,635 ₫` | `69,757 ₫` | `79,810 ₫` |
+| **Minh Quân (VN)** | **`HDB`** | `22,500 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`96.8/100`) | `22,388 ₫` | `21,364 ₫` | `24,885 ₫` |
+| **Alex (Global)** | **`NVDA`** | `$164.72` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`78.7/100`) | `$160.99` | `$143.40` | `$207.36` |
+| **Alex (Global)** | **`TSM`** | `$408.36` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`90.8/100`) | `$401.83` | `$371.04` | `$483.00` |
+| **Alex (Global)** | **`AVGO`** | `$365.18` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`86.4/100`) | `$358.50` | `$327.01` | `$441.52` |
 
 ---
 

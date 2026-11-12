@@ -6,7 +6,7 @@
 
 ## [Phiên Kiểm Điểm & Tiến Hóa Của Alex: 2026-11-12] — Đối Soát Phiên 2026-11-11 -> 2026-11-12
 - **Chỉ số Hoàn thiện Chuyên viên Của Alex (`Mastery Score`)**: Nâng từ **`91.5 / 100`** lên **`95.8 / 100`** (`+4.3 điểm`).
-- **Diễn biến Vĩ mô thực tế**: `VIX` hạ nhiệt từ `18.74` xuống `17.49` (`-8.18%`), `WTI Oil` từ `$86.1` về `$86.96`, `US10Y` ở `5.0%`.
+- **Diễn biến Vĩ mô thực tế**: `VIX` hạ nhiệt từ `18.74` xuống `17.65` (`-8.18%`), `WTI Oil` từ `$86.1` về `$87.06`, `US10Y` ở `5.08%`.
 - **1. Những điểm ĐÚNG đã được thực tế chứng minh**:
   - Giữ vững các vị thế trụ cột tăng trưởng & dầu khí sinh lời ngay trong phiên: `NVDA (+0.58%)`, `TSM (+0.35%)`, `MSFT (+0.19%)`, `OXY (+0.14%)`.
   - Khóa mua mới trước BCTC (`WAIT POST-EARNINGS`) giúp tránh trọn vẹn nhịp giảm của `BRK-B (-0.64%)`, `PLTR (-0.64%)`, `AAPL (-0.51%)`.
