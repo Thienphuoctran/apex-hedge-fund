@@ -4,7 +4,7 @@
 > **CƠ QUAN PHÊ DUYỆT**: VĂN PHÒNG TỔNG TƯ LỆNH ĐẦU TƯ (UNIFIED CHIEF INVESTMENT OFFICER DESK - BAN 8)  
 > **PHIÊN GIAO DỊCH**: Ngày 2026-11-13  
 > **TÌNH TRẠNG THỰC THI**: **PHÊ DUYỆT BẤM CÒ THỰC THI (AUTHORIZED TO PULL THE TRIGGER)**  
-> **TỔNG VỐN QUẢN LÝ (NAV)**: **$714.62 USD** tương đương **18,151,471 VNĐ** (Tỷ giá USD/VND: 25,400)
+> **TỔNG VỐN QUẢN LÝ (NAV)**: **$787.40 USD** tương đương **20,000,000 VNĐ** (Tỷ giá USD/VND: 25,400)
 
 ---
 
@@ -16,8 +16,8 @@ Dưới sự điều phối tối cao của Master CIO, dòng vốn được gi�
 | :--- | :---: | :---: | :---: | :--- |
 | **Thị Trường Toàn Cầu / Mỹ (US Equities)** | **0.0%** | **$0.00** | **0 ₫** | 4 Siêu cổ phiếu FCF khổng lồ, độc quyền thị phần thế giới. |
 | **Thị Trường Việt Nam (VN Equities)** | **0.0%** | **$0.00** | **0 ₫** | 4 Siêu cổ phiếu dẫn đầu ngành, hưởng lợi đầu tư công & SBV. |
-| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **100.0%** | **$714.62** | **18,151,471 ₫** | Dự phòng thanh khoản, săn hàng chiết khấu sau mùa BCTC. |
-| **TỔNG CỘNG (100% NAV)** | **100.0%** | **$714.62** | **18,151,471 ₫** | **Danh mục cân bằng Volatility Risk-Parity** |
+| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **100.0%** | **$787.40** | **20,000,000 ₫** | Dự phòng thanh khoản, săn hàng chiết khấu sau mùa BCTC. |
+| **TỔNG CỘNG (100% NAV)** | **100.0%** | **$787.40** | **20,000,000 ₫** | **Danh mục cân bằng Volatility Risk-Parity** |
 
 ### Chỉ Số Định Lượng Danh Mục Hợp Nhất (Unified Quant Health)
 - **Kỳ vọng Toán học Danh mục (EV%)**: **+5.84% / lệnh** (Chứng minh tính toán xác suất dương).
@@ -93,7 +93,7 @@ sequenceDiagram
 
 | Mã CP | Sàn / Ngành | Vốn Phân Bổ (USD / VNĐ) | Số Cổ Phiếu | Giá Hiện Tại | Điểm Vào Lệnh Tối Ưu (Chia Nhịp) | Ngưỡng Cắt Lỗ Stop 2xATR | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **NVDA** | Semiconductors & AI | **$0.00**<br/>(0 ₫) | **0 CP** | $166.19 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($166.19) • 40% Gia tăng Breakout • 30% Retest | **$153.73**<br/>(-7.5%) | TP1: **$208.83**<br/>TP2: **$309.72** | +33.6%<br/>(1:5.74) |
+| **NVDA** | Semiconductors & AI | **$0.00**<br/>(0 ₫) | **0 CP** | $166.19 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($166.19) • 40% Gia tăng Breakout • 30% Retest | **$153.73**<br/>(-7.5%) | TP1: **$208.83**<br/>TP2: **$285.35** | +29.3%<br/>(1:4.84) |
 | **AVGO** | Custom AI ASICs & Networking | **$0.00**<br/>(0 ₫) | **0 CP** | $364.36 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($364.36) • 40% Gia tăng Breakout • 30% Retest | **$337.03**<br/>(-7.5%) | TP1: **$440.70**<br/>TP2: **$533.42** | +22.4%<br/>(1:3.92) |
 | **TSM** | Global Chip Foundry | **$0.00**<br/>(0 ₫) | **0 CP** | $405.49 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($405.49) • 40% Gia tăng Breakout • 30% Retest | **$375.08**<br/>(-7.5%) | TP1: **$480.13**<br/>TP2: **$586.69** | +21.7%<br/>(1:4.26) |
 | **MSFT** | Enterprise Software & Cloud | **$0.00**<br/>(0 ₫) | **0 CP** | $523.00 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($523.00) • 40% Gia tăng Breakout • 30% Retest | **$488.04**<br/>(-6.68%) | TP1: **$592.92**<br/>TP2: **$636.12** | +12.2%<br/>(1:2.98) |
@@ -113,7 +113,7 @@ sequenceDiagram
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
 
 #### 🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)
-- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `90.8/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+30.75%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.3` • Lynch PEG: `0.75x` • SEC EDGAR: Form 6-K (2026-11-12)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
+- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `90.8/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+30.76%` • True FCF ex-SBC: `$33.26B` • Altman Z: `16.35` • Lynch PEG: `0.75x` • SEC EDGAR: Form 6-K (2026-11-12)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
 - **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.
 - **Cách thức thực thi tối ưu lợi nhuận (The "How")**: Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO.
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
@@ -145,42 +145,42 @@ sequenceDiagram
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AAA (FORTRESS) (10 Danh Thủ: 91.4/100 | RS: 95/99) • P/E 6.1x, ROE 25.6%, OCF/LNST 1.16x • 1 lô 100 CP = 2,250,000 ₫ (11.16% NAV)
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Tăng trưởng tín dụng & ROE dẫn đầu ngành, mảng tài chính tiêu dùng HD Saison khỏe
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Gom thăm dò Limit LO quanh 22,310 ₫ - 22,500 ₫; Gia tăng khi vượt 22,820 ₫ trong Khung Giờ Vàng 14h00-14h25
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **384,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **1.06% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **384,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **0.96% Tổng NAV**).
 
 #### 🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)
 - **Trạng thái lệnh**: `PENDING_MONDAY_GOLDEN_HOUR_LO` — **STRONG_BUY_ROUND2_SNIPER (Đặt lệnh LO Khung Giờ Vàng 14h00-14h25)**
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AAA (FORTRESS) (10 Danh Thủ: 91.9/100 | RS: 94/99) • P/E 9.8x, ROE 21.5%, OCF/LNST 1.42x • 1 lô 100 CP = 3,550,000 ₫ (17.6% NAV)
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Nhà máy Sông Hồng 10 và nhà máy tại Ai Cập chạy tối đa công suất đơn hàng FOB biên lãi cao, tiền mặt lớn
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Gom thăm dò Limit LO quanh 35,060 ₫ - 35,500 ₫; Gia tăng khi vượt 36,220 ₫ trong Khung Giờ Vàng 14h00-14h25
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **482,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **1.33% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **482,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **1.21% Tổng NAV**).
 
 #### 🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)
 - **Trạng thái lệnh**: `PENDING_MONDAY_GOLDEN_HOUR_LO` — **STRONG_BUY_ROUND2_SNIPER (Đặt lệnh LO Khung Giờ Vàng 14h00-14h25)**
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AAA (FORTRESS) (10 Danh Thủ: 88.1/100 | RS: 96/99) • P/E 11.5x, ROE 16.2%, OCF/LNST 1.18x • 1 lô 100 CP = 3,090,000 ₫ (15.32% NAV)
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Mô hình chăn nuôi 3F khép kín hợp tác tập đoàn Muyuan (Trung Quốc), nâng tổng đàn lên 1 triệu con
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Gom thăm dò Limit LO quanh 30,710 ₫ - 30,900 ₫; Gia tăng khi vượt 31,210 ₫ trong Khung Giờ Vàng 14h00-14h25
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **250,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **0.69% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **250,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **0.62% Tổng NAV**).
 
 #### 🔹 IDC — Tổng Công ty IDICO (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)
 - **Trạng thái lệnh**: `PENDING_MONDAY_GOLDEN_HOUR_LO` — **STRONG_BUY_ROUND2_SNIPER (Đặt lệnh LO Khung Giờ Vàng 14h00-14h25)**
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AAA (FORTRESS) (10 Danh Thủ: 89.0/100 | RS: 81/99) • P/E 9.8x, ROE 32.5%, OCF/LNST 1.48x • 1 lô 100 CP = 3,490,000 ₫ (17.31% NAV)
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Quỹ đất thương phẩm >700ha sẵn sàng cho thuê (Hựu Thạnh, Phú Mỹ 2), cổ tức tiền mặt 40%
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Gom thăm dò Limit LO quanh 34,500 ₫ - 34,900 ₫; Gia tăng khi vượt 35,570 ₫ trong Khung Giờ Vàng 14h00-14h25
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **474,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **1.31% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **474,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **1.19% Tổng NAV**).
 
 #### 🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)
 - **Trạng thái lệnh**: `PENDING_MONDAY_GOLDEN_HOUR_LO` — **STRONG_BUY_ROUND2_SNIPER (Đặt lệnh LO Khung Giờ Vàng 14h00-14h25)**
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AA (HIGH QUALITY) (10 Danh Thủ: 82.7/100 | RS: 89/99) • P/E 9.6x, ROE 9.8%, OCF/LNST 1.32x • 1 lô 100 CP = 1,350,000 ₫ (6.69% NAV)
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Ông lớn BĐS Hải Phòng (Hoàng Huy New City Thủy Nguyên), tiền gửi ngân hàng >6,000 tỷ đồng, P/B < 0.9x
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Gom thăm dò Limit LO quanh 13,350 ₫ - 13,500 ₫; Gia tăng khi vượt 13,750 ₫ trong Khung Giờ Vàng 14h00-14h25
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **276,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **0.76% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **276,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **0.69% Tổng NAV**).
 
 #### 🔹 OCB — Ngân hàng Phương Đông (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)
 - **Trạng thái lệnh**: `PENDING_MONDAY_GOLDEN_HOUR_LO` — **STRONG_BUY_ROUND2_SNIPER (Đặt lệnh LO Khung Giờ Vàng 14h00-14h25)**
 - **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AA (HIGH QUALITY) (10 Danh Thủ: 81.9/100 | RS: 88/99) • P/E 6.9x, ROE 14.2%, OCF/LNST 1.08x • 1 lô 100 CP = 1,070,000 ₫ (5.31% NAV)
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Cổ đông chiến lược Aozora Nhật Bản, P/B chiết khấu sâu dưới giá trị sổ sách
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Gom thăm dò Limit LO quanh 10,600 ₫ - 10,700 ₫; Gia tăng khi vượt 10,870 ₫ trong Khung Giờ Vàng 14h00-14h25
-- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **204,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **0.56% Tổng NAV**).
+- **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **204,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **0.51% Tổng NAV**).
 
 ---
 
@@ -204,7 +204,7 @@ graph LR
 2. **Kịch bản 2: Giá Dầu Vọt > $110/thùng Do Leo Thang Địa Chính Trị**:
    - *Tác động*: Vị thế **OXY (Occidental Petroleum)** bùng nổ lợi nhuận, đóng vai trò tấm khiên phòng hộ năng lượng hoàn hảo cho toàn danh mục.
 3. **Kịch bản 3: Sàn HOSE Rung Lắc Nghẽn Lệnh ATO / Khối Ngoại Bán Ròng**:
-   - *Tác động*: Tỷ lệ tiền mặt dự phòng **10% Dry Powder ($714.62 USD)** sẵn sàng giải ngân gom thêm cổ phiếu AAA (FPT, MWG) tại vùng sàn chiết khấu sâu.
+   - *Tác động*: Tỷ lệ tiền mặt dự phòng **10% Dry Powder ($787.40 USD)** sẵn sàng giải ngân gom thêm cổ phiếu AAA (FPT, MWG) tại vùng sàn chiết khấu sâu.
 
 ---
 

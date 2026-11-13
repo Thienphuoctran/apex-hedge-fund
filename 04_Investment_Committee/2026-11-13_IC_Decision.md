@@ -15,7 +15,7 @@
 | 6 | **`ABBV`** | Biotech & Immunology | **$294.45** | $288.56 – $295.92 | **$279.5** | $284.24 | $324.35 / $339.3 | **6.0% NAV** | `-0.3% NAV` | CLEAR (2026-10-30 BMO) |
 | 7 | **`JNJ`** | Pharmaceuticals & MedTech | **$283.52** | $277.85 – $284.94 | **$268.95** | $267.87 | $312.66 / $327.23 | **5.7% NAV** | `-0.29% NAV` | CLEAR (2027-01-26 BMO) |
 | 8 | **`MSFT`** | Enterprise Software & Cloud | **$523.0** | $512.54 – $525.61 | **$488.04** | $515.45 | $592.92 / $636.12 | **5.1% NAV** | `-0.34% NAV` | CLEAR (2027-01-27 AMC) |
-| 9 | **`OXY`** | Upstream Oil & Carbon Capture | **$58.4** | $57.23 – $58.69 | **$54.65** | $60.28 | $65.9 / $70.78 | **4.9% NAV** | `-0.31% NAV` | JUST REPORTED (4d ago) — Đã qua rủi ro BCTC |
+| 9 | **`OXY`** | Upstream Oil & Carbon Capture | **$58.4** | $57.23 – $58.69 | **$54.65** | $60.28 | $65.9 / $71.04 | **4.9% NAV** | `-0.31% NAV` | JUST REPORTED (4d ago) — Đã qua rủi ro BCTC |
 | 10 | **`TSM`** | Global Chip Foundry | **$405.49** | $397.38 – $407.52 | **$368.17** | $394.23 | $480.13 / $586.69 | **3.6% NAV** | `-0.33% NAV` | CLEAR (2027-01-14 BMO) |
 
 ## 2. Danh Sách Tạm Khóa Giải Ngân Mới Do Sát Ngày BCTC (`Locked Imminent Earnings Watchlist <= 7 Ngày`)
@@ -36,4 +36,4 @@
 | **`JNJ`** | FCF chuẩn hóa đạt +$18.5B USD, tăng trưởng doanh thu +5.9% YoY, giá ($283.52) giữ cấu trúc trên MA200 ($249.49), điểm IC 75/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`MSFT`** | FCF chuẩn hóa đạt +$2.99B USD, tăng trưởng doanh thu +18.8% YoY, giá ($523.0) giữ cấu trúc trên MA200 ($440.97), điểm IC 85/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
 | **`OXY`** | FCF chuẩn hóa đạt +$4.91B USD, tăng trưởng doanh thu +19.0% YoY, giá ($58.4) giữ cấu trúc trên MA200 ($56.7), điểm IC 84/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
-| **`TSM`** | FCF chuẩn hóa đạt +$36.69B USD, tăng trưởng doanh thu +50.9% YoY, giá ($405.49) giữ cấu trúc trên MA200 ($402.76), điểm IC 84/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |
+| **`TSM`** | FCF chuẩn hóa đạt +$36.57B USD, tăng trưởng doanh thu +50.9% YoY, giá ($405.49) giữ cấu trúc trên MA200 ($402.76), điểm IC 84/100. | Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC. | **UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)** | **`92.0/100`** |

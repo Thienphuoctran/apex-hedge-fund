@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-13T03:23:40.356487+00:00",
+  "generated_at_utc": "2026-11-13T07:04:41.106629+00:00",
   "portfolio_summary": {
     "target_equity_allocation_pct": 60.0,
     "target_cash_tbills_allocation_pct": 40.0,
@@ -435,8 +435,8 @@
       "ic_composite_score": 84,
       "entry_zone": "$57.23 – $58.69",
       "tp1_price": 65.9,
-      "tp2_price": 70.78,
-      "rr_ratio": 3.3,
+      "tp2_price": 71.04,
+      "rr_ratio": 3.37,
       "days_to_earnings": -4,
       "earnings_risk_flag": "JUST REPORTED (4d ago) — Đã qua rủi ro BCTC",
       "options_implied_move_pct": 7.54,
@@ -476,7 +476,7 @@
       "insider_sentiment": "Neutral / Routine",
       "adversarial_debate": {
         "symbol": "TSM",
-        "bull_agent_thesis": "FCF chuẩn hóa đạt +$36.69B USD, tăng trưởng doanh thu +50.9% YoY, giá ($405.49) giữ cấu trúc trên MA200 ($402.76), điểm IC 84/100.",
+        "bull_agent_thesis": "FCF chuẩn hóa đạt +$36.57B USD, tăng trưởng doanh thu +50.9% YoY, giá ($405.49) giữ cấu trúc trên MA200 ($402.76), điểm IC 84/100.",
         "bear_agent_critique": "Rủi ro thị trường chung và biến động lãi suất US10Y; không có điểm yếu nội tại BCTC.",
         "cio_debate_resolution": "UNANIMOUS_STRONG_APPROVAL (Đồng thuận tuyệt đối Bull & Risk Manager)",
         "debate_consensus_score": 92.0

@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-13T03:22:53.728450+00:00",
+  "timestamp_utc": "2026-11-13T07:04:26.066089+00:00",
   "scan_date": "2026-11-13",
   "total_us_filings_count": 368,
   "total_vn_announcements_count": 37,
@@ -284,6 +284,22 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 10
     },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Chủ tịch Tân Hoàng Minh Đỗ Anh Dũng bị tạm hoãn xuất cảnh vì công ty nợ thuế hơn 300 tỷ",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 11:37:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-tan-hoang-minh-do-anh-dung-bi-tam-hoan-xuat-canh-vi-cong-ty-no-thue-hon-300-ty-188261113113213709.chn",
+      "total_announcements": 10
+    },
+    "PVT": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "PVT Logistics chốt ngày chào bán gần 57 triệu cổ phiếu cho cổ đông",
+      "severity": "WARNING",
+      "published_at": "Fri, 13 Nov 26 10:59:00 +0700",
+      "source_url": "https://cafef.vn/pvt-logistics-chot-ngay-chao-ban-gan-57-trieu-co-phieu-cho-co-dong-188261113105921862.chn",
+      "total_announcements": 1
+    },
     "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Quỹ đầu tư mạo hiểm với sự góp mặt của Vingroup, Sovico, FPT, VNG vừa có động thái mới",
@@ -291,14 +307,6 @@
       "published_at": "Fri, 13 Nov 26 08:38:00 +0700",
       "source_url": "https://cafef.vn/quy-dau-tu-mao-hiem-voi-su-gop-mat-cua-vingroup-sovico-fpt-vng-vua-co-dong-thai-moi-188261113083825657.chn",
       "total_announcements": 6
-    },
-    "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Quỹ đầu tư mạo hiểm với sự góp mặt của Vingroup, Sovico, FPT, VNG vừa có động thái mới",
-      "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 08:38:00 +0700",
-      "source_url": "https://cafef.vn/quy-dau-tu-mao-hiem-voi-su-gop-mat-cua-vingroup-sovico-fpt-vng-vua-co-dong-thai-moi-188261113083825657.chn",
-      "total_announcements": 8
     },
     "MSN": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -356,29 +364,13 @@
       "source_url": "https://cafef.vn/hai-ma-pnj-va-nlg-bat-ngo-lot-ro-chi-so-quan-trong-cua-msci-188261112105145258.chn",
       "total_announcements": 1
     },
-    "VHM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "4 tín hiệu có thể kích hoạt làn sóng \"bắt đáy\" trên thị trường chứng khoán",
-      "severity": "INFO",
-      "published_at": "Thu, 12 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/4-tin-hieu-co-the-kich-hoat-lan-song-bat-day-tren-thi-truong-chung-khoan-188261111163030299.chn",
-      "total_announcements": 2
-    },
-    "VRE": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "4 tín hiệu có thể kích hoạt làn sóng \"bắt đáy\" trên thị trường chứng khoán",
-      "severity": "INFO",
-      "published_at": "Thu, 12 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/4-tin-hieu-co-the-kich-hoat-lan-song-bat-day-tren-thi-truong-chung-khoan-188261111163030299.chn",
-      "total_announcements": 1
-    },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "ACB vượt mốc thương hiệu 1,4 tỷ USD, vào Top 3 ngân hàng tư nhân giá trị nhất Việt Nam",
       "severity": "INFO",
       "published_at": "Fri, 13 Nov 26 07:30:00 +0700",
       "source_url": "https://cafef.vn/acb-vuot-moc-thuong-hieu-14-ty-usd-vao-top-3-ngan-hang-tu-nhan-gia-tri-nhat-viet-nam-188261112233717134.chn",
-      "total_announcements": 6
+      "total_announcements": 4
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -397,6 +389,14 @@
       "total_announcements": 1
     },
     "POW": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
+      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
+      "total_announcements": 1
+    },
+    "VHM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
       "severity": "INFO",
@@ -4851,6 +4851,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "Chủ tịch Tân Hoàng Minh Đỗ Anh Dũng bị tạm hoãn xuất cảnh vì công ty nợ thuế hơn 300 tỷ",
+      "summary": "Ông Đỗ Anh Dũng, Chủ tịch Tập đoàn Tân Hoàng Minh, bị tạm hoãn xuất cảnh do một công ty mà ông là chủ sở hữu hưởng lợi đang có khoản nợ thuế lớn tại TP.HCM....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 11:37:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-tan-hoang-minh-do-anh-dung-bi-tam-hoan-xuat-canh-vi-cong-ty-no-thue-hon-300-ty-188261113113213709.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PVT"
+      ],
+      "title": "PVT Logistics chốt ngày chào bán gần 57 triệu cổ phiếu cho cổ đông",
+      "summary": "PVT Logistics chào bán hơn 56,9 triệu cổ phiếu cho cổ đông với giá 10.000 đồng/cổ phiếu. Ngày đăng ký cuối cùng thực hiện quyền là 25/11/2026....",
+      "event_type": "CO_TUC",
+      "severity": "WARNING",
+      "published_at": "Fri, 13 Nov 26 10:59:00 +0700",
+      "source_url": "https://cafef.vn/pvt-logistics-chot-ngay-chao-ban-gan-57-trieu-co-phieu-cho-co-dong-188261113105921862.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "FPT",
         "HCM"
       ],
@@ -5034,27 +5058,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "VHM",
-        "VRE"
-      ],
-      "title": "4 tín hiệu có thể kích hoạt làn sóng \"bắt đáy\" trên thị trường chứng khoán",
-      "summary": "Nếu loại trừ bốn cổ phiếu thuộc hệ sinh thái Vingroup gồm VIC, VHM, VRE và VPL, hệ số P/E của phần thị trường còn lại chỉ khoảng 9,1 lần, thấp hơn đáng kể so với mặt bằng định giá lịch sử....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 12 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/4-tin-hieu-co-the-kich-hoat-lan-song-bat-day-tren-thi-truong-chung-khoan-188261111163030299.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng miếng, vàng nhẫn trơn sáng 13/11 đồng loạt giảm sâu tại SJC, DOJI, PNJ, Bảo Tín Minh Châu",
-      "summary": "Người đi bán vàng 9999 lúc này chỉ có thể thu về với giá khoảng 131 - 135 triệu đồng/lượng, tuỳ loại vàng và doanh nghiệp....",
+      "title": "Giá vàng miếng, vàng nhẫn trơn chiều 13/11 tại SJC, DOJI, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Giá bán ra vàng miếng, vàng nhẫn hiện phổ biến 137 - 138 triệu đồng/lượng....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 08:43:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-tron-sang-13-11-dong-loat-giam-sau-tai-sjc-doji-pnj-bao-tin-minh-chau-188261112231426077.chn"
+      "published_at": "Fri, 13 Nov 26 13:45:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-tron-chieu-13-11-tai-sjc-doji-pnj-bao-tin-minh-chau-va-bao-tin-manh-hai-188261112231426077.chn"
     },
     {
       "market": "VIETNAM",
@@ -5179,26 +5190,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
+        "HCM"
       ],
-      "title": "ACB & Sun Life: Khi “tin vào điều mình chọn\", điều gì giúp chúng ta đi đến cùng?",
-      "summary": "Chúng ta có thể tin tưởng vào một quyết định ở thời điểm bắt đầu, nhưng vẫn lo ngại khả năng duy trì quyết định ấy trong nhiều năm sau....",
+      "title": "Thành phố giàu nhất Việt Nam sắp xây cầu hơn 5.000 tỷ đồng nối Thủ Thiêm với khu Nam TP.HCM, dài 2,16 km, rộng 8 làn xe, có đường đi bộ độc đáo chưa từng có",
+      "summary": "Ngoài lối đi bộ bố trí hai bên cầu chính, cầu Thủ Thiêm 4 còn có một cầu riêng phía dưới dành cho người đi bộ và xe đạp, kết nối các công viên ven sông ở hai bờ....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 11 Nov 26 07:40:00 +0700",
-      "source_url": "https://cafef.vn/acb-sun-life-khi-tin-vao-dieu-minh-chon-dieu-gi-giup-chung-ta-di-den-cung-188261111064027983.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB"
-      ],
-      "title": "Ngày 11/11, gửi 100 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "summary": "Với 100 triệu đồng gửi tiết kiệm kỳ hạn 12 tháng, số tiền lãi khách hàng nhận được tại 7 ngân hàng MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB có sự chênh lệch đáng kể. Theo các biểu lãi suất được khảo sát, mứ...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 11 Nov 26 07:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-11-11-gui-100-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261110223643707.chn"
+      "published_at": "Fri, 13 Nov 26 12:49:00 +0700",
+      "source_url": "https://cafef.vn/thanh-pho-giau-nhat-viet-nam-sap-xay-cau-hon-5000-ty-dong-noi-thu-thiem-voi-khu-nam-tphcm-dai-216-km-rong-8-lan-xe-co-duong-di-bo-doc-dao-chua-tung-co-188261113105825893.chn"
     },
     {
       "market": "VIETNAM",

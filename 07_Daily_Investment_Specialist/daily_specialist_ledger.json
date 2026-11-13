@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-13T03:23:41.799548+00:00",
+  "generated_at_utc": "2026-11-13T07:04:41.261752+00:00",
   "trading_date": "2026-11-13",
   "previous_date_compared": "2026-11-12",
   "specialist_profile": {
@@ -13,14 +13,14 @@
     "core_compounder_allocation_pct": 52.0,
     "tactical_alpha_allocation_pct": 8.0,
     "cash_and_post_earnings_reserve_pct": 40.0,
-    "portfolio_weighted_expected_value_pct": 13.52,
+    "portfolio_weighted_expected_value_pct": 13.13,
     "portfolio_weighted_win_prob_pct": 79.2
   },
   "departmental_hearing": [
     {
       "department": "Ban 1 — Vĩ Mô & Địa Chính Trị (`macro-geopolitics-agent`)",
       "verdict": "CHUYỂN PHA TÍCH CỰC NHẸ (VIX HẠ NHIỆT DƯỚI 20)",
-      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 17.65 xuống 18.7 (-8.18%), Dầu WTI dịu từ $87.06 xuống $88.23, US10Y ổn định ở 5.1%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
+      "key_assessment": "Chỉ số sợ hãi VIX giảm mạnh từ 17.65 xuống 18.7 (-8.18%), Dầu WTI dịu từ $87.06 xuống $88.89, US10Y ổn định ở 5.1%. Áp lực bán tháo đã hạ nhiệt; dòng tiền bắt đầu chốt lời nhẹ nhóm Phòng thủ thuần túy (Y tế/Tiêu dùng thiết yếu) để quay lại nhóm Bán dẫn, Cloud và cổ phiếu Quá bán chất lượng cao.",
       "specialist_takeaway": "Alex giữ nguyên kỷ luật 40% Tiền mặt/T-Bills nhưng dịch chuyển 8% NAV từ nhóm Phòng thủ sang Nhánh Vệ tinh Tối ưu Lợi nhuận (Tactical Alpha Sleeve)."
     },
     {
@@ -56,7 +56,7 @@
   ],
   "yesterday_post_mortem": {
     "compared_period": "2026-11-12 -> 2026-11-13",
-    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 17.65 xuống 18.7 (-8.18%), Dầu WTI dịu từ $87.06 về $88.23, US10Y ở 5.1%.",
+    "macro_shift_summary": "VIX hạ nhiệt mạnh từ 17.65 xuống 18.7 (-8.18%), Dầu WTI dịu từ $87.06 về $88.89, US10Y ở 5.1%.",
     "validated_wins": [
       {
         "category": "Thắng lợi Nhóm Trụ cột Tăng trưởng & Dầu khí (Core Winners)",
@@ -380,7 +380,7 @@
       "limit_pullback_price": 162.46,
       "tranche_split": "70% tại $204.64 • 30% Limit tại $202.56",
       "tp1_price": 208.83,
-      "tp2_price": 309.72,
+      "tp2_price": 285.35,
       "stop_2atr_price": 144.87,
       "chandelier_trailing_stop": 199.35,
       "stop_dist_pct": 12.83,
@@ -395,9 +395,9 @@
       "true_fcf_ex_sbc_bil": 16.06,
       "sec_edgar_badge": "SEC EDGAR: Form 8-K (2026-11-12)",
       "win_prob_pct": 74.0,
-      "reward_risk_ratio": 5.74,
-      "tp2_reward_risk_ratio": 6.73,
-      "expected_value_pct": 33.62,
+      "reward_risk_ratio": 4.84,
+      "tp2_reward_risk_ratio": 5.59,
+      "expected_value_pct": 29.28,
       "days_to_earnings": 4,
       "market_events_and_catalysts": "Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết công suất cả năm tới. Các tập đoàn siêu đám mây (Meta, Google, Microsoft) cam kết chi tiêu vốn (CapEx) vượt $200 tỷ USD cho hạ tầng AI.",
       "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `78.7/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+51.20%` • True FCF ex-SBC: `$16.06B` • Altman Z: `18.5` • Lynch PEG: `0.21x` • SEC EDGAR: Form 8-K (2026-11-12)]** — Vị thế độc tôn tuyệt đối với 85%+ thị phần chip gia tốc AI toàn cầu. Doanh thu tăng trưởng +62.5% YoY, FCF khổng lồ +$60.8B USD, biên gộp 75.1%. Hôm qua tăng +0.58% ngay khi VIX dịu lại.",
@@ -433,9 +433,9 @@
       "ic_score": 84.0,
       "master_legends_score": 90.8,
       "piotroski_f_score": 9,
-      "altman_z_score": 16.3,
-      "eva_spread_pct": 30.75,
-      "true_fcf_ex_sbc_bil": 33.37,
+      "altman_z_score": 16.35,
+      "eva_spread_pct": 30.76,
+      "true_fcf_ex_sbc_bil": 33.26,
       "sec_edgar_badge": "SEC EDGAR: Form 6-K (2026-11-12)",
       "win_prob_pct": 81.0,
       "reward_risk_ratio": 4.26,
@@ -443,7 +443,7 @@
       "expected_value_pct": 21.68,
       "days_to_earnings": 62,
       "market_events_and_catalysts": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.",
-      "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `90.8/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+30.75%` • True FCF ex-SBC: `$33.37B` • Altman Z: `16.3` • Lynch PEG: `0.75x` • SEC EDGAR: Form 6-K (2026-11-12)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
+      "why_alex_invests": "**[Hội Đồng 10 Đại Danh Thủ: `90.8/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+30.76%` • True FCF ex-SBC: `$33.26B` • Altman Z: `16.35` • Lynch PEG: `0.75x` • SEC EDGAR: Form 6-K (2026-11-12)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
       "how_to_optimize_profit": "Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%).",
       "max_nav_risk_if_stopped_pct": 0.46,
       "inviolable_gate_checks": {

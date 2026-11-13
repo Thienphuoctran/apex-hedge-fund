@@ -12,7 +12,7 @@
 - **Công thức / Quy tắc vàng**:
   > Quy tắc Phân Bổ Vốn Quỹ & Thuế Cổ Tức VN: (1) Không giải ngân mới vào mã có lịch BCTC <= 7 ngày; (2) Tính cổ tức thực nhận sau thuế khấu trừ tại nguồn 30% của Mỹ (WHT); (3) Luôn kiểm tra cả Stop 2xATR ban đầu và Chandelier Trailing Stop (Highest_22d - 2.5xATR).
 - **Thực tế thị trường hôm nay (2026-11-13)**: 
-  - VIX hiện tại: **18.70** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **5.10%** | Dầu WTI: **$88.23**.
+  - VIX hiện tại: **18.70** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **5.10%** | Dầu WTI: **$88.89**.
   - Độ rộng thị trường (`Market Breadth`): **62.9%** cổ phiếu giữ trên MA200.
 
 ---

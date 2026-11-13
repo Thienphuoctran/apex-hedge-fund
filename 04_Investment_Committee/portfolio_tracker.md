@@ -12,7 +12,7 @@
 | **`ABBV`** | Biotech & Immunology | $294.45 | $288.56 – $295.92 | **$279.5** | $284.24 | $324.35 | $339.3 | **6.0%** | `-0.3%` | CLEAR (2026-10-30 BMO) |
 | **`JNJ`** | Pharmaceuticals & MedTech | $283.52 | $277.85 – $284.94 | **$268.95** | $267.87 | $312.66 | $327.23 | **5.7%** | `-0.29%` | CLEAR (2027-01-26 BMO) |
 | **`MSFT`** | Enterprise Software & Cloud | $523.0 | $512.54 – $525.61 | **$488.04** | $515.45 | $592.92 | $636.12 | **5.1%** | `-0.34%` | CLEAR (2027-01-27 AMC) |
-| **`OXY`** | Upstream Oil & Carbon Capture | $58.4 | $57.23 – $58.69 | **$54.65** | $60.28 | $65.9 | $70.78 | **4.9%** | `-0.31%` | JUST REPORTED (4d ago) — Đã qua rủi ro BCTC |
+| **`OXY`** | Upstream Oil & Carbon Capture | $58.4 | $57.23 – $58.69 | **$54.65** | $60.28 | $65.9 | $71.04 | **4.9%** | `-0.31%` | JUST REPORTED (4d ago) — Đã qua rủi ro BCTC |
 | **`TSM`** | Global Chip Foundry | $405.49 | $397.38 – $407.52 | **$368.17** | $394.23 | $480.13 | $586.69 | **3.6%** | `-0.33%` | CLEAR (2027-01-14 BMO) |
 
 ## 2. Danh Sách Khóa Mua Mới Chờ Qua BCTC (`Locked Earnings Watchlist <= 7 Ngày`)
