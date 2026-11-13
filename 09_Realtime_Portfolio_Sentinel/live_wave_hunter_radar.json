@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13 07:05:03",
+  "generated_at": "2026-11-13 09:00:02",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -322,6 +322,14 @@
       "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 13 Nov 26 1",
+      "headline": "3 công ty quân đội muốn chi gần 1.500 tỷ đồng mua cổ phiếu MB, công ty đặc biệt của TP.HCM cũng tham gia",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "HCM",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 13 Nov 26 1",
       "headline": "Chủ tịch Tân Hoàng Minh Đỗ Anh Dũng bị tạm hoãn xuất cảnh vì công ty nợ thuế hơn 300 tỷ",
       "is_portfolio_holding": false
     },
@@ -372,14 +380,6 @@
       "date": "Thu, 12 Nov 26 1",
       "headline": "GELEX thuộc Top 50 công ty niêm yết kinh doanh hiệu quả nhất Việt Nam năm 2026",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "MSN",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Thu, 12 Nov 26 1",
-      "headline": "Hệ sinh thái Masan ghi dấu tại TOP 50 Công ty niêm yết kinh doanh hiệu quả nhất Việt Nam",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 37 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 36 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

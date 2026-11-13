@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-13T07:04:26.066089+00:00",
+  "timestamp_utc": "2026-11-13T08:59:59.315003+00:00",
   "scan_date": "2026-11-13",
   "total_us_filings_count": 368,
-  "total_vn_announcements_count": 37,
+  "total_vn_announcements_count": 36,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "8-K",
@@ -286,11 +286,11 @@
     },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Chủ tịch Tân Hoàng Minh Đỗ Anh Dũng bị tạm hoãn xuất cảnh vì công ty nợ thuế hơn 300 tỷ",
+      "latest_title": "3 công ty quân đội muốn chi gần 1.500 tỷ đồng mua cổ phiếu MB, công ty đặc biệt của TP.HCM cũng tham gia",
       "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 11:37:00 +0700",
-      "source_url": "https://cafef.vn/chu-tich-tan-hoang-minh-do-anh-dung-bi-tam-hoan-xuat-canh-vi-cong-ty-no-thue-hon-300-ty-188261113113213709.chn",
-      "total_announcements": 10
+      "published_at": "Fri, 13 Nov 26 14:51:00 +0700",
+      "source_url": "https://cafef.vn/3-cong-ty-quan-doi-muon-chi-gan-1500-ty-dong-mua-co-phieu-mb-cong-ty-dac-biet-cua-tphcm-cung-tham-gia-1882611131448031.chn",
+      "total_announcements": 13
     },
     "PVT": {
       "latest_event_type": "CO_TUC",
@@ -306,7 +306,7 @@
       "severity": "INFO",
       "published_at": "Fri, 13 Nov 26 08:38:00 +0700",
       "source_url": "https://cafef.vn/quy-dau-tu-mao-hiem-voi-su-gop-mat-cua-vingroup-sovico-fpt-vng-vua-co-dong-thai-moi-188261113083825657.chn",
-      "total_announcements": 6
+      "total_announcements": 5
     },
     "MSN": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -314,14 +314,6 @@
       "severity": "CRITICAL",
       "published_at": "Thu, 12 Nov 26 13:30:00 +0700",
       "source_url": "https://cafef.vn/he-sinh-thai-masan-ghi-dau-tai-top-50-cong-ty-niem-yet-kinh-doanh-hieu-qua-nhat-viet-nam-188261112102118059.chn",
-      "total_announcements": 1
-    },
-    "PC1": {
-      "latest_event_type": "CANH_BAO_RUI_RO",
-      "latest_title": "Lãnh đạo bị khởi tố, công ty ngành điện hơn 3.000 tỷ đồng thay 'ghế nóng'",
-      "severity": "RED_FLAG",
-      "published_at": "Thu, 12 Nov 26 08:12:00 +0700",
-      "source_url": "https://cafef.vn/lanh-dao-bi-khoi-to-cong-ty-nganh-dien-hon-3000-ty-dong-thay-ghe-nong-188261112080033911.chn",
       "total_announcements": 1
     },
     "KDH": {
@@ -346,7 +338,7 @@
       "severity": "CRITICAL",
       "published_at": "Fri, 13 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/pnj-thua-lo-gia-giam-san-tai-sao-van-lot-ro-chi-so-quan-trong-cua-msci-188261112225231116.chn",
-      "total_announcements": 6
+      "total_announcements": 5
     },
     "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -354,14 +346,6 @@
       "severity": "INFO",
       "published_at": "Thu, 12 Nov 26 19:53:00 +0700",
       "source_url": "https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-lan-thu-4-188261112195218052.chn",
-      "total_announcements": 2
-    },
-    "NLG": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Hai mã PNJ và NLG bất ngờ lọt rổ chỉ số quan trọng của MSCI",
-      "severity": "INFO",
-      "published_at": "Thu, 12 Nov 26 10:51:00 +0700",
-      "source_url": "https://cafef.vn/hai-ma-pnj-va-nlg-bat-ngo-lot-ro-chi-so-quan-trong-cua-msci-188261112105145258.chn",
       "total_announcements": 1
     },
     "ACB": {
@@ -4853,6 +4837,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "3 công ty quân đội muốn chi gần 1.500 tỷ đồng mua cổ phiếu MB, công ty đặc biệt của TP.HCM cũng tham gia",
+      "summary": "Ba công ty quân đội dự kiến chi gần 1.500 tỷ đồng mua cổ phiếu MB, trong đó một tổng công ty xây dựng đăng ký mua nhiều nhất. Danh sách còn có một công ty tài chính đặc biệt của TP.HCM, vừa báo lãi hàng nghìn tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 14:51:00 +0700",
+      "source_url": "https://cafef.vn/3-cong-ty-quan-doi-muon-chi-gan-1500-ty-dong-mua-co-phieu-mb-cong-ty-dac-biet-cua-tphcm-cung-tham-gia-1882611131448031.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Chủ tịch Tân Hoàng Minh Đỗ Anh Dũng bị tạm hoãn xuất cảnh vì công ty nợ thuế hơn 300 tỷ",
       "summary": "Ông Đỗ Anh Dũng, Chủ tịch Tập đoàn Tân Hoàng Minh, bị tạm hoãn xuất cảnh do một công ty mà ông là chủ sở hữu hưởng lợi đang có khoản nợ thuế lớn tại TP.HCM....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -4948,18 +4944,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PC1"
-      ],
-      "title": "Lãnh đạo bị khởi tố, công ty ngành điện hơn 3.000 tỷ đồng thay 'ghế nóng'",
-      "summary": "Tổng Công ty Thiết bị điện Đông Anh (TBD) vừa miễn nhiệm một thành viên HĐQT liên quan đến vụ án xảy ra tại Tổng Công ty Truyền tải điện quốc gia và Tập đoàn PC1....",
-      "event_type": "CANH_BAO_RUI_RO",
-      "severity": "RED_FLAG",
-      "published_at": "Thu, 12 Nov 26 08:12:00 +0700",
-      "source_url": "https://cafef.vn/lanh-dao-bi-khoi-to-cong-ty-nganh-dien-hon-3000-ty-dong-thay-ghe-nong-188261112080033911.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "KDH"
       ],
       "title": "Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền",
@@ -5029,31 +5013,6 @@
       "severity": "INFO",
       "published_at": "Thu, 12 Nov 26 15:33:00 +0700",
       "source_url": "https://cafef.vn/con-bi-cuc-cua-co-dong-fpt-18826111215335329.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "NLG",
-        "PNJ"
-      ],
-      "title": "Hai mã PNJ và NLG bất ngờ lọt rổ chỉ số quan trọng của MSCI",
-      "summary": "Tại ngày 31/10, Việt Nam vẫn là quốc gia chiếm tỷ trọng cao nhất trong rổ chỉ số của MSCI Frontier Market Index...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 12 Nov 26 10:51:00 +0700",
-      "source_url": "https://cafef.vn/hai-ma-pnj-va-nlg-bat-ngo-lot-ro-chi-so-quan-trong-cua-msci-188261112105145258.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "MBS"
-      ],
-      "title": "Chuyên gia MBS: Thị trường thiếu sóng lớn, đâu là lợi thế cho Nhà đầu tư?",
-      "summary": "Đọc nhiều thông tin, theo dõi bảng giá mỗi ngày nhưng vẫn khó tìm được điểm giải ngân thuyết phục — đây là thế khó khi thị trường thiếu sóng lớn. Nếu mua sớm, vốn có thể nằm chờ; nếu chờ tín hiệu rõ ràng, mức giá hấp dẫn...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 12 Nov 26 10:00:00 +0700",
-      "source_url": "https://cafef.vn/chuyen-gia-mbs-thi-truong-thieu-song-lon-dau-la-loi-the-cho-nha-dau-tu-188261111163924931.chn"
     },
     {
       "market": "VIETNAM",
@@ -5178,14 +5137,26 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT"
+        "HCM"
       ],
-      "title": "Bất ngờ cựu TGĐ Vietcombank, TGĐ VPBank, FPT Telecom và loạt founder đình đám cùng học tại ngôi trường được ví như 'Harvard Việt Nam'",
-      "summary": "Đại học Ngoại thương là nơi đào tạo nhiều thế hệ nhân sự cho nền kinh tế Việt Nam. Trong số những người từng theo học tại ngôi trường này có các lãnh đạo ngân hàng, doanh nhân và nhà sáng lập doanh nghiệp nổi bật....",
+      "title": "TPHCM: Cứ 100 căn biệt thự, nhà phố được bán ra thì có tới 95 căn không bán được",
+      "summary": "Thị trường bất động sản nhà ở TP.HCM và vùng phụ cận trong tháng 10/2026 ghi nhận diễn biến trái chiều giữa các phân khúc. Trong khi căn hộ có tỷ lệ hấp thụ tăng lên 14%, lượng tiêu thụ nhà phố, biệt thự chỉ đạt khoảng 5...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 11 Nov 26 12:22:00 +0700",
-      "source_url": "https://cafef.vn/bat-ngo-cuu-tgd-vietcombank-tgd-vpbank-fpt-telecom-va-loat-founder-dinh-dam-cung-hoc-tai-ngoi-truong-duoc-vi-nhu-harvard-viet-nam-188261111102322254.chn"
+      "published_at": "Fri, 13 Nov 26 15:34:00 +0700",
+      "source_url": "https://cafef.vn/tphcm-cu-100-can-biet-thu-nha-pho-duoc-ban-ra-thi-co-toi-95-can-khong-ban-duoc-188261113135928595.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "BLUEMARQ khởi công The Grand Tower, chào mừng 23 năm thành lập",
+      "summary": "Ngày 13/11/2026, BLUEMARQ Development khởi công dự án The Grand Tower tại phường Bình Hòa, TP.HCM. Tòa tháp gồm 44 tầng nổi và 2 tầng hầm, tọa lạc trên mặt tiền Đại lộ Bình Dương. Sự kiện diễn ra đúng ngày BLUEMARQ Group...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 15:30:00 +0700",
+      "source_url": "https://cafef.vn/bluemarq-khoi-cong-the-grand-tower-chao-mung-23-nam-thanh-lap-188261113144624278.chn"
     },
     {
       "market": "VIETNAM",
