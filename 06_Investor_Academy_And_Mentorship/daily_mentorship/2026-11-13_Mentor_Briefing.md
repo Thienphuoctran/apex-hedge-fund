@@ -7,28 +7,28 @@
 ---
 
 ### PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)
-- **Chủ đề**: **Chiến Thuật Chia Lệnh 60/40 & Lọc Siêu Cổ Phiếu Tạo Giá Trị Thực (EVA Spread > 0) Khi VIX = 18.70 (< 20)**
-- **Bản chất chiến lược**: Khi VIX hạ nhiệt xuống dưới 20 (18.70), Ban 5 đã cân bằng trọng số chấm điểm chuẩn 100% (Vĩ mô 25% / BCTC-FCF 30% / Định giá 25% / Kỹ thuật 20%). Danh mục Core (65%) tập trung tích sản các doanh nghiệp có ROIC > WACC (EVA dương) và Piotroski F-Score >= 7/9; trong khi phần Satellite (35%) tận dụng quy tắc chia lệnh 60/40 (40% đặt Limit tại Giá - 0.35xATR) để tối ưu giá vốn.
+- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 20.35 (>= 20)**
+- **Bản chất chiến lược**: Chỉ số VIX ở mức 20.35 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
 - **Công thức / Quy tắc vàng**:
-  > Quy tắc Phân Bổ Vốn Quỹ & Thuế Cổ Tức VN: (1) Không giải ngân mới vào mã có lịch BCTC <= 7 ngày; (2) Tính cổ tức thực nhận sau thuế khấu trừ tại nguồn 30% của Mỹ (WHT); (3) Luôn kiểm tra cả Stop 2xATR ban đầu và Chandelier Trailing Stop (Highest_22d - 2.5xATR).
+  > Quy tắc Kỷ luật Thép: Khi VIX >= 20, phần Satellite tuyệt đối KHÔNG sử dụng Margin, giữ tối thiểu 40% tiền mặt/T-Bills.
 - **Thực tế thị trường hôm nay (2026-11-13)**: 
-  - VIX hiện tại: **18.70** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **5.10%** | Dầu WTI: **$88.89**.
-  - Độ rộng thị trường (`Market Breadth`): **62.9%** cổ phiếu giữ trên MA200.
+  - VIX hiện tại: **20.35** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **5.13%** | Dầu WTI: **$88.94**.
+  - Độ rộng thị trường (`Market Breadth`): **57.1%** cổ phiếu giữ trên MA200.
 
 ---
 
 ### PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)
-- **Mã cổ phiếu mổ xẻ**: **`MSFT`** (Giá khớp thực tế: **$523.00**).
+- **Mã cổ phiếu mổ xẻ**: **`MSFT`** (Giá khớp thực tế: **$521.80**).
 - **Phân loại chiến lược**: Trụ cột **Danh Mục Core (`8.0% NAV`)** — Đã qua kỳ BCTC an toàn.
 - **Góc nhìn Quỹ Đầu Tư (Số liệu Kiểm toán v5.0)**:
   1. **Nội tại doanh nghiệp & Dòng tiền thực (Ban 2)**:
-     - Forward P/E: **`21.62x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
+     - Forward P/E: **`21.57x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
      - Hiệu suất sinh lời trên vốn đầu tư (`ROIC`): **`22.54%`** vs Chi phí vốn (`WACC`): **`9.2%`** -> Tạo giá trị kinh tế ròng **`EVA Spread = +13.34%`**.
      - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.71%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.5%`**)*.
   2. **Định lượng & Quản trị rủi ro 2 Tầng (Ban 4)**:
-     - Biến động `ATR(14)` = **$17.48**.
-     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$488.04** (`-4.28%`).
-     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$515.45**.
+     - Biến động `ATR(14)` = **$17.53**.
+     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$486.74** (`-4.28%`).
+     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$515.33**.
 - **Bài tập Paper Trading hôm nay**:
   - Chạy lệnh mô phỏng: `python scripts/paper_trading_simulator.py buy --symbol MSFT --shares 10 --type Core`.
 

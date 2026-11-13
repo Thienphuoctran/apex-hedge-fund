@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-13 07:05:05",
+  "generated_at": "2026-11-13 16:20:29",
   "token_metrics": {
-    "total_raw_report_tokens": 67763,
-    "titan_digest_tokens": 1930,
+    "total_raw_report_tokens": 67767,
+    "titan_digest_tokens": 1929,
     "token_savings_percent": 97.2,
     "quality_preservation": "100% LOSSLESS (Full reports intact on disk)"
   },
   "deterministic_audit": {
-    "timestamp": "2026-11-13 07:05:05",
+    "timestamp": "2026-11-13 16:20:29",
     "bctc_vn_verified": 54,
     "bctc_red_flags_detected": [
       "UNKNOWN (M-Score=0.41, OCF/LNST=1.2)",
@@ -24,9 +24,9 @@
     "global_macro_ban1": {
       "exists": true,
       "path": "01_Macro_Geopolitics/2026-11-13_Macro_Report.md",
-      "size_kb": 21.4,
+      "size_kb": 21.7,
       "total_lines": 69,
-      "estimated_raw_tokens": 6256,
+      "estimated_raw_tokens": 6356,
       "sections_count": 5,
       "sections": [
         {
@@ -148,9 +148,9 @@
     "global_synthesis_ban3": {
       "exists": true,
       "path": "03_Synthesis_Memos/2026-11-13_Investment_Memo.md",
-      "size_kb": 19.2,
+      "size_kb": 19.4,
       "total_lines": 73,
-      "estimated_raw_tokens": 5616,
+      "estimated_raw_tokens": 5664,
       "sections_count": 4,
       "sections": [
         {
@@ -210,7 +210,7 @@
       "path": "04_Investment_Committee/2026-11-13_IC_Decision.md",
       "size_kb": 7.4,
       "total_lines": 39,
-      "estimated_raw_tokens": 2161,
+      "estimated_raw_tokens": 2171,
       "sections_count": 4,
       "sections": [
         {
@@ -260,9 +260,9 @@
     "global_learning_ban5": {
       "exists": true,
       "path": "05_Learning_And_Evolution/2026-11-13_Learning_And_Attribution_Report.md",
-      "size_kb": 10.3,
+      "size_kb": 10.1,
       "total_lines": 85,
-      "estimated_raw_tokens": 3004,
+      "estimated_raw_tokens": 2962,
       "sections_count": 8,
       "sections": [
         {
@@ -376,9 +376,9 @@
     "global_mentor_ban6": {
       "exists": true,
       "path": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-13_Mentor_Briefing.md",
-      "size_kb": 4.9,
+      "size_kb": 4.5,
       "total_lines": 47,
-      "estimated_raw_tokens": 1428,
+      "estimated_raw_tokens": 1306,
       "sections_count": 7,
       "sections": [
         {
@@ -566,7 +566,7 @@
       "path": "07_Daily_Investment_Specialist/2026-11-13_Daily_Specialist_Decision.md",
       "size_kb": 34.2,
       "total_lines": 197,
-      "estimated_raw_tokens": 10004,
+      "estimated_raw_tokens": 10003,
       "sections_count": 21,
       "sections": [
         {
@@ -1174,7 +1174,7 @@
       "path": "VN_Market/03_Synthesis_Memos/2026-11-13_VN_Investment_Memo.md",
       "size_kb": 5.4,
       "total_lines": 34,
-      "estimated_raw_tokens": 1577,
+      "estimated_raw_tokens": 1580,
       "sections_count": 3,
       "sections": [
         {
@@ -1250,9 +1250,9 @@
     "vn_ic_ban4": {
       "exists": true,
       "path": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-      "size_kb": 11.1,
+      "size_kb": 11.2,
       "total_lines": 95,
-      "estimated_raw_tokens": 3251,
+      "estimated_raw_tokens": 3263,
       "sections_count": 10,
       "sections": [
         {
@@ -1269,7 +1269,7 @@
         },
         {
           "level": 3,
-          "title": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
+          "title": "🎯 **STB** — Sài Gòn Thương Tín (Sacombank) (HOSE)",
           "start_line": 9,
           "end_line": 19
         },
@@ -1281,37 +1281,37 @@
         },
         {
           "level": 3,
-          "title": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+          "title": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
           "start_line": 31,
           "end_line": 41
         },
         {
           "level": 3,
-          "title": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
+          "title": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
           "start_line": 42,
           "end_line": 52
         },
         {
           "level": 3,
-          "title": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
+          "title": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
           "start_line": 53,
           "end_line": 63
         },
         {
           "level": 3,
-          "title": "🎯 **POW** — Điện Lực Dầu Khí Việt Nam (PV Power) (HOSE)",
+          "title": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
           "start_line": 64,
           "end_line": 74
         },
         {
           "level": 3,
-          "title": "🎯 **SZC** — Sonadezi Châu Đức (HOSE)",
+          "title": "🎯 **POW** — Điện Lực Dầu Khí Việt Nam (PV Power) (HOSE)",
           "start_line": 75,
           "end_line": 85
         },
         {
           "level": 3,
-          "title": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
+          "title": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
           "start_line": 86,
           "end_line": 95
         }
@@ -1349,9 +1349,9 @@
             "end_line": 8
           }
         ],
-        "TCB": [
+        "STB": [
           {
-            "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
+            "section": "🎯 **STB** — Sài Gòn Thương Tín (Sacombank) (HOSE)",
             "start_line": 9,
             "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
             "end_line": 19
@@ -1373,79 +1373,63 @@
             "end_line": 30
           }
         ],
-        "SSI": [
+        "GMD": [
           {
-            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
-            "start_line": 31,
-            "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-            "end_line": 41
-          },
-          {
-            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+            "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
             "start_line": 31,
             "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
             "end_line": 41
           }
         ],
-        "HDB": [
+        "TCB": [
           {
-            "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
+            "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
             "start_line": 42,
             "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
             "end_line": 52
           }
         ],
-        "TP": [
+        "PVT": [
           {
-            "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-            "start_line": 42,
-            "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-            "end_line": 52
-          }
-        ],
-        "HCM": [
-          {
-            "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-            "start_line": 42,
-            "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-            "end_line": 52
-          }
-        ],
-        "MWG": [
-          {
-            "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
+            "section": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
             "start_line": 53,
             "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
             "end_line": 63
           }
         ],
+        "MWG": [
+          {
+            "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
+            "start_line": 64,
+            "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
+            "end_line": 74
+          }
+        ],
         "POW": [
           {
             "section": "🎯 **POW** — Điện Lực Dầu Khí Việt Nam (PV Power) (HOSE)",
-            "start_line": 64,
-            "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-            "end_line": 74
-          }
-        ],
-        "PV": [
-          {
-            "section": "🎯 **POW** — Điện Lực Dầu Khí Việt Nam (PV Power) (HOSE)",
-            "start_line": 64,
-            "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-            "end_line": 74
-          }
-        ],
-        "SZC": [
-          {
-            "section": "🎯 **SZC** — Sonadezi Châu Đức (HOSE)",
             "start_line": 75,
             "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
             "end_line": 85
           }
         ],
-        "GMD": [
+        "PV": [
           {
-            "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
+            "section": "🎯 **POW** — Điện Lực Dầu Khí Việt Nam (PV Power) (HOSE)",
+            "start_line": 75,
+            "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
+            "end_line": 85
+          }
+        ],
+        "SSI": [
+          {
+            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
+            "start_line": 86,
+            "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
+            "end_line": 95
+          },
+          {
+            "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
             "start_line": 86,
             "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
             "end_line": 95
@@ -1863,19 +1847,19 @@
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,550 đ (-2.12%)",
+          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,500 đ (-2.54%)",
           "start_line": 257,
           "end_line": 262
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,050 đ (-0.45%)",
+          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,100 đ (+0.00%)",
           "start_line": 263,
           "end_line": 268
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,600 đ (-1.12%)",
+          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,800 đ (-0.37%)",
           "start_line": 269,
           "end_line": 274
         },
@@ -2133,7 +2117,7 @@
         ],
         "PDR": [
           {
-            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,550 đ (-2.12%)",
+            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,500 đ (-2.54%)",
             "start_line": 257,
             "file": "VN_Market/07_Daily_Specialist/2026-11-13_VN_Specialist_Decision.md",
             "end_line": 262
@@ -2141,7 +2125,7 @@
         ],
         "DXG": [
           {
-            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,050 đ (-0.45%)",
+            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,100 đ (+0.00%)",
             "start_line": 263,
             "file": "VN_Market/07_Daily_Specialist/2026-11-13_VN_Specialist_Decision.md",
             "end_line": 268
@@ -2149,7 +2133,7 @@
         ],
         "KBC": [
           {
-            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,600 đ (-1.12%)",
+            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,800 đ (-0.37%)",
             "start_line": 269,
             "file": "VN_Market/07_Daily_Specialist/2026-11-13_VN_Specialist_Decision.md",
             "end_line": 274
@@ -2724,7 +2708,7 @@
       "path": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
       "size_kb": 9.8,
       "total_lines": 75,
-      "estimated_raw_tokens": 2880,
+      "estimated_raw_tokens": 2876,
       "sections_count": 7,
       "sections": [
         {
@@ -3616,9 +3600,9 @@
       },
       {
         "section": "🎯 **TCB** — Kỹ Thương Việt Nam (Techcombank) (HOSE)",
-        "start_line": 9,
+        "start_line": 42,
         "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 19
+        "end_line": 52
       },
       {
         "section": "4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)",
@@ -3696,9 +3680,9 @@
       },
       {
         "section": "🎯 **MWG** — Thế Giới Di Động (HOSE)",
-        "start_line": 53,
+        "start_line": 64,
         "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 63
+        "end_line": 74
       }
     ],
     "SSI": [
@@ -3716,15 +3700,15 @@
       },
       {
         "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
-        "start_line": 31,
+        "start_line": 86,
         "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 41
+        "end_line": 95
       },
       {
         "section": "🎯 **SSI** — Chứng Khoán SSI (HOSE)",
-        "start_line": 31,
+        "start_line": 86,
         "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 41
+        "end_line": 95
       }
     ],
     "VCB": [
@@ -3789,6 +3773,14 @@
         "end_line": 6
       }
     ],
+    "STB": [
+      {
+        "section": "🎯 **STB** — Sài Gòn Thương Tín (Sacombank) (HOSE)",
+        "start_line": 9,
+        "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
+        "end_line": 19
+      }
+    ],
     "IDC": [
       {
         "section": "🎯 **IDC** — Tổng Công Ty IDICO (HNX)",
@@ -3829,72 +3821,36 @@
         "end_line": 170
       }
     ],
-    "HDB": [
+    "GMD": [
       {
-        "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-        "start_line": 42,
+        "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
+        "start_line": 31,
         "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 52
-      },
-      {
-        "section": "💎 4.1. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
-        "start_line": 90,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-13_VN_Specialist_Decision.md",
-        "end_line": 116
-      },
-      {
-        "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
-        "start_line": 143,
-        "file": "08_Master_Investment_CIO/2026-11-13_Master_CIO_Final_Decision.md",
-        "end_line": 149
+        "end_line": 41
       }
     ],
-    "TP": [
+    "PVT": [
       {
-        "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-        "start_line": 42,
+        "section": "🎯 **PVT** — Tổng Công Ty Vận Tải Dầu Khí (HOSE)",
+        "start_line": 53,
         "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 52
-      }
-    ],
-    "HCM": [
-      {
-        "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-        "start_line": 42,
-        "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 52
+        "end_line": 63
       }
     ],
     "POW": [
       {
         "section": "🎯 **POW** — Điện Lực Dầu Khí Việt Nam (PV Power) (HOSE)",
-        "start_line": 64,
-        "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 74
-      }
-    ],
-    "PV": [
-      {
-        "section": "🎯 **POW** — Điện Lực Dầu Khí Việt Nam (PV Power) (HOSE)",
-        "start_line": 64,
-        "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 74
-      }
-    ],
-    "SZC": [
-      {
-        "section": "🎯 **SZC** — Sonadezi Châu Đức (HOSE)",
         "start_line": 75,
         "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
         "end_line": 85
       }
     ],
-    "GMD": [
+    "PV": [
       {
-        "section": "🎯 **GMD** — Gemadept (Cảng nước sâu Gemalink) (HOSE)",
-        "start_line": 86,
+        "section": "🎯 **POW** — Điện Lực Dầu Khí Việt Nam (PV Power) (HOSE)",
+        "start_line": 75,
         "file": "VN_Market/04_Investment_Committee/2026-11-13_VN_IC_Decision.md",
-        "end_line": 95
+        "end_line": 85
       }
     ],
     "TCBS": [
@@ -4085,6 +4041,20 @@
         "end_line": 89
       }
     ],
+    "HDB": [
+      {
+        "section": "💎 4.1. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
+        "start_line": 90,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-13_VN_Specialist_Decision.md",
+        "end_line": 116
+      },
+      {
+        "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "start_line": 143,
+        "file": "08_Master_Investment_CIO/2026-11-13_Master_CIO_Final_Decision.md",
+        "end_line": 149
+      }
+    ],
     "MSH": [
       {
         "section": "💎 4.2. Cổ Phiếu **`MSH`** — May Sông Hồng (HOSE)",
@@ -4185,7 +4155,7 @@
     ],
     "PDR": [
       {
-        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,550 đ (-2.12%)",
+        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,500 đ (-2.54%)",
         "start_line": 257,
         "file": "VN_Market/07_Daily_Specialist/2026-11-13_VN_Specialist_Decision.md",
         "end_line": 262
@@ -4193,7 +4163,7 @@
     ],
     "DXG": [
       {
-        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,050 đ (-0.45%)",
+        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,100 đ (+0.00%)",
         "start_line": 263,
         "file": "VN_Market/07_Daily_Specialist/2026-11-13_VN_Specialist_Decision.md",
         "end_line": 268
@@ -4201,7 +4171,7 @@
     ],
     "KBC": [
       {
-        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,600 đ (-1.12%)",
+        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,800 đ (-0.37%)",
         "start_line": 269,
         "file": "VN_Market/07_Daily_Specialist/2026-11-13_VN_Specialist_Decision.md",
         "end_line": 274

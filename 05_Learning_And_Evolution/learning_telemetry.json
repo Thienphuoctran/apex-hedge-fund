@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-11-13T07:04:28.049353+00:00",
+  "updated_at": "2026-11-13T16:19:29.301119+00:00",
   "hit_rate_pct": 78.3,
   "wins_count": 18,
   "losses_count": 5,
   "neutral_count": 12,
   "total_predictions": 35,
-  "vix_value": 18.7,
-  "vix_regime": "VIX 18.70 (Sub-20 Normalizing Regime)",
+  "vix_value": 20.35,
+  "vix_regime": "VIX 20.35 (High Volatility >= 20)",
   "scoring_weights": {
     "macro_sector_fit": 25,
-    "fundamental_and_fcf": 30,
-    "valuation_and_upside": 25,
+    "fundamental_and_fcf": 35,
+    "valuation_and_upside": 20,
     "technical_and_risk_reward": 20
   },
   "adaptive_macro_weight": 25,
-  "adaptive_fcf_weight": 30,
-  "adaptive_valuation_weight": 25,
+  "adaptive_fcf_weight": 35,
+  "adaptive_valuation_weight": 20,
   "adaptive_tech_weight": 20,
-  "min_cash_reserve_pct": 30.0,
+  "min_cash_reserve_pct": 40.0,
   "imminent_earnings_locked": [
     "NVDA (4d)",
     "WMT (6d)"
@@ -29,21 +29,21 @@
   "walk_forward_horizons": {
     "T_minus_1d": {
       "horizon": "T-1 (1 Phiên)",
-      "portfolio_return_pct": 0.17,
-      "sp500_benchmark_pct": -0.35,
-      "realized_alpha_pct": 0.52
+      "portfolio_return_pct": 0.37,
+      "sp500_benchmark_pct": -1.06,
+      "realized_alpha_pct": 1.43
     },
     "T_minus_5d": {
       "horizon": "T-5 (1 Tuần)",
-      "portfolio_return_pct": 1.45,
-      "sp500_benchmark_pct": 3.25,
-      "realized_alpha_pct": -1.8
+      "portfolio_return_pct": 1.64,
+      "sp500_benchmark_pct": 1.84,
+      "realized_alpha_pct": -0.2
     },
     "T_minus_20d": {
       "horizon": "T-20 (1 Tháng)",
-      "portfolio_return_pct": 2.24,
-      "sp500_benchmark_pct": -1.64,
-      "realized_alpha_pct": 3.88
+      "portfolio_return_pct": 2.7,
+      "sp500_benchmark_pct": -2.99,
+      "realized_alpha_pct": 5.69
     }
   },
   "top_attribution_items": [
@@ -54,15 +54,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
       "entry_price": 203.46,
-      "current_price": 166.19,
+      "current_price": 158.97,
       "stop_2atr": 144.87,
-      "tp1_price": 208.83,
-      "pnl_pct": -18.32,
-      "alpha_vs_sp500_pct": -21.57,
+      "tp1_price": 202.97,
+      "pnl_pct": -21.87,
+      "alpha_vs_sp500_pct": -23.71,
       "status_tag": "WATCHING",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (-18.32%)"
+      "evaluation_note": "Đang quan sát tạo nền (-21.87%)"
     },
     {
       "symbol": "MSFT",
@@ -71,15 +71,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
       "entry_price": 520.94,
-      "current_price": 523.0,
+      "current_price": 521.8,
       "stop_2atr": 488.04,
-      "tp1_price": 592.92,
-      "pnl_pct": 0.4,
-      "alpha_vs_sp500_pct": -2.85,
+      "tp1_price": 591.92,
+      "pnl_pct": 0.17,
+      "alpha_vs_sp500_pct": -1.67,
       "status_tag": "OUTPERFORM",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+0.40%, Alpha -2.85%)"
+      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+0.17%, Alpha -1.67%)"
     },
     {
       "symbol": "AAPL",
@@ -88,15 +88,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
       "entry_price": 346.38,
-      "current_price": 354.88,
+      "current_price": 357.57,
       "stop_2atr": 335.86,
-      "tp1_price": 392.92,
-      "pnl_pct": 2.45,
-      "alpha_vs_sp500_pct": -0.8,
+      "tp1_price": 395.39,
+      "pnl_pct": 3.23,
+      "alpha_vs_sp500_pct": 1.39,
       "status_tag": "OUTPERFORM",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+2.45%, Alpha -0.80%)"
+      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+3.23%, Alpha +1.39%)"
     },
     {
       "symbol": "GOOGL",
@@ -105,15 +105,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim)",
       "entry_price": 278.79,
-      "current_price": 298.7,
+      "current_price": 294.06,
       "stop_2atr": 275.83,
-      "tp1_price": 344.44,
-      "pnl_pct": 7.14,
-      "alpha_vs_sp500_pct": 3.89,
+      "tp1_price": 341.58,
+      "pnl_pct": 5.48,
+      "alpha_vs_sp500_pct": 3.64,
       "status_tag": "FALSE_ALARM",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Phục hồi kỹ thuật ngắn hạn (+7.14%)"
+      "evaluation_note": "Phục hồi kỹ thuật ngắn hạn (+5.48%)"
     },
     {
       "symbol": "AMZN",
@@ -122,15 +122,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
       "entry_price": 238.13,
-      "current_price": 267.44,
+      "current_price": 264.94,
       "stop_2atr": 246.32,
-      "tp1_price": 309.68,
-      "pnl_pct": 12.31,
-      "alpha_vs_sp500_pct": 9.06,
+      "tp1_price": 307.7,
+      "pnl_pct": 11.26,
+      "alpha_vs_sp500_pct": 9.42,
       "status_tag": "OUTPERFORM",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+12.31%, Alpha +9.06%)"
+      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+11.26%, Alpha +9.42%)"
     },
     {
       "symbol": "META",
@@ -139,15 +139,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
       "entry_price": 620.75,
-      "current_price": 623.61,
+      "current_price": 630.6,
       "stop_2atr": 581.75,
-      "tp1_price": 707.33,
-      "pnl_pct": 0.46,
-      "alpha_vs_sp500_pct": -2.79,
+      "tp1_price": 712.52,
+      "pnl_pct": 1.59,
+      "alpha_vs_sp500_pct": -0.25,
       "status_tag": "WATCHING",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (+0.46%)"
+      "evaluation_note": "Đang quan sát tạo nền (+1.59%)"
     },
     {
       "symbol": "TSLA",
@@ -156,15 +156,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim)",
       "entry_price": 398.55,
-      "current_price": 397.45,
+      "current_price": 387.33,
       "stop_2atr": 360.2,
-      "tp1_price": 471.95,
-      "pnl_pct": -0.28,
-      "alpha_vs_sp500_pct": -3.53,
+      "tp1_price": 459.99,
+      "pnl_pct": -2.82,
+      "alpha_vs_sp500_pct": -4.66,
       "status_tag": "RISK_AVOIDED",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Phòng vệ thành công — Tránh được nhịp sụt giảm (-0.28%)"
+      "evaluation_note": "Phòng vệ thành công — Tránh được nhịp sụt giảm (-2.82%)"
     },
     {
       "symbol": "TSM",
@@ -173,15 +173,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
       "entry_price": 404.71,
-      "current_price": 405.49,
+      "current_price": 393.6,
       "stop_2atr": 368.17,
-      "tp1_price": 480.13,
-      "pnl_pct": 0.19,
-      "alpha_vs_sp500_pct": -3.06,
-      "status_tag": "OUTPERFORM",
-      "is_win": true,
+      "tp1_price": 469.8,
+      "pnl_pct": -2.75,
+      "alpha_vs_sp500_pct": -4.59,
+      "status_tag": "ACCUMULATING",
+      "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+0.19%, Alpha -3.06%)"
+      "evaluation_note": "Biến động tích lũy trong biên độ an toàn (-2.75%)"
     },
     {
       "symbol": "AVGO",
@@ -190,15 +190,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
       "entry_price": 323.55,
-      "current_price": 364.36,
+      "current_price": 339.34,
       "stop_2atr": 326.19,
-      "tp1_price": 440.7,
-      "pnl_pct": 12.61,
-      "alpha_vs_sp500_pct": 9.36,
+      "tp1_price": 420.34,
+      "pnl_pct": 4.88,
+      "alpha_vs_sp500_pct": 3.04,
       "status_tag": "OUTPERFORM",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+12.61%, Alpha +9.36%)"
+      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+4.88%, Alpha +3.04%)"
     },
     {
       "symbol": "AMD",
@@ -207,15 +207,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
       "entry_price": 499.48,
-      "current_price": 585.3,
+      "current_price": 526.12,
       "stop_2atr": 496.08,
-      "tp1_price": 763.74,
-      "pnl_pct": 17.18,
-      "alpha_vs_sp500_pct": 13.93,
+      "tp1_price": 716.74,
+      "pnl_pct": 5.33,
+      "alpha_vs_sp500_pct": 3.49,
       "status_tag": "OUTPERFORM",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+17.18%, Alpha +13.93%)"
+      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+5.33%, Alpha +3.49%)"
     },
     {
       "symbol": "INTC",
@@ -224,15 +224,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "NEUTRAL — ĐI NGANG / QUAN SÁT (Hold & Watch)",
       "entry_price": 64.41,
-      "current_price": 61.2,
+      "current_price": 57.62,
       "stop_2atr": 48.58,
-      "tp1_price": 86.44,
-      "pnl_pct": -4.98,
-      "alpha_vs_sp500_pct": -8.23,
+      "tp1_price": 82.5,
+      "pnl_pct": -10.54,
+      "alpha_vs_sp500_pct": -12.38,
       "status_tag": "WATCHING",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (-4.98%)"
+      "evaluation_note": "Đang quan sát tạo nền (-10.54%)"
     },
     {
       "symbol": "QCOM",
@@ -241,19 +241,19 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "NEUTRAL — ĐI NGANG / QUAN SÁT (Hold & Watch)",
       "entry_price": 163.8,
-      "current_price": 177.14,
+      "current_price": 169.27,
       "stop_2atr": 156.84,
-      "tp1_price": 217.74,
-      "pnl_pct": 8.14,
-      "alpha_vs_sp500_pct": 4.89,
+      "tp1_price": 211.25,
+      "pnl_pct": 3.34,
+      "alpha_vs_sp500_pct": 1.5,
       "status_tag": "STABLE_HOLD",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Giữ nhịp ổn định hơn thị trường chung (+8.14%)"
+      "evaluation_note": "Giữ nhịp ổn định hơn thị trường chung (+3.34%)"
     }
   ],
   "latest_lessons": [
-    "**Bài học 1 (Thích nghi Chế độ Biến động VIX = 18.70 < 20)**: Khi VIX lùi xuống dưới 20 (`18.70`), hệ thống tự động phân bổ trọng số chuẩn xác **100%** (`Vĩ mô 25% + BCTC/FCF 30% + Định giá 25% + Kỹ thuật 20% = 100%`), đồng thời duy trì kỷ luật ATR Risk-Parity giúp danh mục tạo Alpha `+0.52%` so với S&P 500.",
+    "**Bài học 1 (Thanh khoản & Biến động VIX = 20.35 >= 20)**: Khi VIX vượt ngưỡng 20, hệ thống nâng trọng số FCF lên **35%** (Tổng 4 trụ cột = `25% + 35% + 20% + 20% = 100%`) và giữ đệm tiền mặt tối thiểu **40% NAV**.",
     "**Bài học 2 (Kỷ luật Khóa Mua Mới Trước BCTC <= 7 Ngày)**: Hệ thống đã tự động khóa giải ngân mới và loại khỏi bảng phân bổ Risk-Parity đối với 4 mã sắp công bố BCTC (`NVDA (4d), WMT (6d)`), trong khi các mã vừa công bố xong (`BRK-B (4d ago), OXY (4d ago)`) đã thoát rủi ro nhảy gap sự kiện.",
     "**Bài học 3 (Độ tin cậy của True FCF ex-SBC, EVA Spread & SEC Form 4)**: Các doanh nghiệp có dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC > 0`), `ROIC > WACC` và giao dịch nội bộ mua ròng (`MSFT`, `JPM`, `PG`) giữ giá vượt trội trong các phiên chỉ số chung điều chỉnh."
   ],
