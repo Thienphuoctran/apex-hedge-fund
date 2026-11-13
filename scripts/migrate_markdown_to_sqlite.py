@@ -197,6 +197,9 @@ def run_full_migration() -> Dict[str, Any]:
     # 4. Đồng bộ Snapshot Tài sản SSOT V2.0 & Sổ Lệnh Master
     print("\n[3/4] 💰 Đồng bộ Snapshot Tài Sản SSOT V2.0 & Sổ Lệnh Master Blotter...")
     st_ssot = PortfolioStateManager.load_state()
+    active_pos_obj = st_ssot.get("active_positions") or st_ssot.get("positions", {})
+    pos_count = len(active_pos_obj) if isinstance(active_pos_obj, (dict, list)) else 0
+    cash_bal = float(st_ssot.get("cash_balance_vnd", 0.0))
     cur.execute("""
     INSERT INTO portfolio_snapshots (
         timestamp, account_id, cash_vnd, active_positions_count, realized_pnl_vnd, positions_json, notes
@@ -204,11 +207,11 @@ def run_full_migration() -> Dict[str, Any]:
     """, (
         now_str,
         st_ssot.get("account_id", "105C307855"),
-        st_ssot.get("cash_balance_vnd", 20167119.0),
-        len(st_ssot.get("positions", [])),
+        cash_bal,
+        pos_count,
         st_ssot.get("realized_pnl_vnd", 167119.0),
-        json.dumps(st_ssot.get("positions", []), ensure_ascii=False),
-        "Khởi tạo snapshot chuẩn SSOT V2.0 (100% Tiền Mặt, 0 CP Rủi Ro)"
+        json.dumps(active_pos_obj, ensure_ascii=False),
+        f"Snapshot SSOT V2.0 (Cash: {cash_bal:,.0f} đ, Active Positions: {pos_count})"
     ))
 
     # Nạp các lệnh chiến lược Vòng 2 vào execution_orders
@@ -273,6 +276,11 @@ def run_full_migration() -> Dict[str, Any]:
         "fts_latency_ms": fts_elapsed_ms,
         "fts_results_count": len(fts_results)
     }
+
+
+def migrate_all_markdown_reports() -> Dict[str, Any]:
+    """Alias chuẩn hóa được gọi bởi ApexCloudSupervisor và các daemon đồng bộ SQLite."""
+    return run_full_migration()
 
 
 if __name__ == "__main__":

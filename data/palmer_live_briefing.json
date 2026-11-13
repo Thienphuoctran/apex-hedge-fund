@@ -1,42 +1,45 @@
 {
-  "last_updated": "2026-11-11 11:14:33",
+  "last_updated": "2026-11-13 10:26:55",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261111-111433",
-  "latest_user_request": "Phân tích giúp tôi 2 video này nhé, từ sáng h tôi cứ tìm thấy thông tin về cổ phiếu BSR ấy thì bạn hãy phối hợp với Hiền, Quân và các phòng ban khác để nghiên cứu về cổ phiếu này toàn diện nhé",
-  "latest_response_summary": "Hoàn thành báo cáo pháp y 2 video (Tài Chính Dễ Hiểu & LEVACAPITAL BSR) và thẩm định toàn diện BSR cùng Hiền (Ban 10), Minh Quân (Ban 7 VN) và James (Ban 8). Xác nhận BSR có 28.3k tỷ tiền ròng, chiết khấu sâu 43.8% so với giá trị Graham (46.2k) nhưng đang rơi tự do về 23.x; PHÁN QUYẾT: Tuyệt đối chưa bắt đáy trước 14h00, ưu tiên quản trị 100 HDB và 100 MSH về T+0 khả dụng lúc 13h00 hôm nay, giữ nguyên két tiền 14.51M.",
+  "sync_id": "SYNC-AG2P-20261113-102655",
+  "latest_user_request": "Chủ tịch yêu cầu cập nhật trang web và tìm + sửa dứt điểm lỗi ngày nào mở Apex Institutional Cloud Portal cũng báo 0 Báo Cáo / Không tìm thấy báo cáo nào phù hợp với bộ lọc.",
+  "latest_response_summary": "Đã rà soát và sửa triệt để 5 nguyên nhân gốc rễ: (1) Bổ sung hàm migrate_all_markdown_reports() còn thiếu vào migrate_markdown_to_sqlite.py để hết lỗi ImportError khi container Render khởi động; (2) Sửa apex_report_scanner.py dùng giờ ICT (UTC+7) và luôn hợp nhất file Markdown mới với SQLite; (3) Sửa start_apex_cloud_247.py nâng limit 150->2000 và sửa apex_web_portal_engine.py / apex_tactical_war_room_engine.py đọc động 100% SSOT (12,516,471 đ Cash / 18,151,471 đ NAV / 200 CP HDB & MSH), sửa refreshData() khớp mảng JSON và thêm Smart Date Fallback tự lùi về phiên gần nhất nếu hôm nay chưa phát hành báo cáo; (4) Thêm cơ chế catch-up cột mốc vào apex_institutional_cron_daemon.py, gọi migrate vào run_master_unified_fund.py và sửa assert lỗi thời trong .github/workflows/apex_cloud_sentinel_247.yml; (5) Chạy pipeline 2026-11-13 nạp 345 báo cáo thể chế (17 báo cáo ngày 13/11) vào SQLite Vault.",
   "latest_completed_tasks": [
-    "Pháp y Video 1 Tài Chính Dễ Hiểu: Phân định trường phái Tăng trưởng (tên lửa) vs Cổ tức/Giá trị (cây tiền) và định vị BSR là Deep Value Cyclical",
-    "Pháp y Video 2 LEVACAPITAL: Thẩm định 100% số liệu LNST 9T 24.9k tỷ, kế hoạch x8.6, cảnh báo crack spread hạ nhiệt 28% và LN 2027 giảm 31%",
-    "Hiền (Ban 10) bóc tách BCTC BSR: Tiền mặt ròng +28.300 tỷ VNĐ, OCF/LNST 1.61x, tiến độ chuyển sàn HOSE đã chấp thuận",
-    "Minh Quân (Ban 7 VN) phân tích Wyckoff/VSA: BSR Phase A Selling Climax, vol xả 7.6M, cảnh báo không bắt dao rơi, canh vùng cá mập 23.0 - 23.5k",
-    "James (Master CIO) ra phán quyết: Khóa cứng 14.51M tiền mặt, chờ đón 100 HDB & 100 MSH về T+0 lúc 13h00, chỉ thăm dò BSR trong Khung Giờ Vàng nếu thỏa mãn setup A+"
+    "Pull va hop nhat 2026-11-12/13 reports tu origin/main giu nguyen SSOT live 12,516,471 VND",
+    "Sua migrate_markdown_to_sqlite.py, apex_report_scanner.py, start_apex_cloud_247.py",
+    "Sua apex_web_portal_engine.py, apex_tactical_war_room_engine.py (SSOT dong + Smart Date Fallback)",
+    "Sua cron daemon catch-up & GitHub Actions workflows",
+    "Chay run_master_unified_fund.py & migrate_markdown_to_sqlite.py (345 bao cao, 17 bao cao 13/11)",
+    "Kiem thu local HTTP server 100% PASS"
   ],
   "latest_strategic_decisions": {
-    "bsr_action": "HOLD_AND_WATCHLIST_NO_EARLY_BUY (Cấm bắt đáy trước 14h00, canh vùng 23.x)",
-    "hdb_msh_milestone": "13h00 chiều nay hàng về T+0 khả dụng, nâng Stop giá vốn bảo vệ lãi đệm",
-    "cash_security": "14,510,422 ₫ (~72.0% Cash) an toàn tuyệt đối",
-    "golden_hour_plan": "14h00 - 14h25 chỉ thăm dò tối đa 5.5M nếu BSR/BAF/IDC có tín hiệu cạn cung bứt phá"
+    "portal_url": "https://apex-hedge-fund.onrender.com",
+    "vault_total_reports": 345,
+    "today_reports_2026_11_13": 17,
+    "ssot_cash_vnd": 12516471.0,
+    "ssot_nav_vnd": 18151471.0,
+    "afternoon_tactic_2026_11_13": "An binh bat dong phien sang, cho danh gia sau 14h00 chieu 13/11"
   },
   "portfolio_snapshot": {
-    "total_nav_vnd": 20160422.0,
-    "cash_vnd": 14510422.0,
-    "stock_market_val_vnd": 5650000.0,
+    "total_nav_vnd": 18151471.0,
+    "cash_vnd": 12516471.0,
+    "stock_market_val_vnd": 5635000.0,
     "positions": {
       "HDB": {
         "shares": 100,
-        "entry_price": 22050.0,
-        "current_price": 22000.0,
-        "market_val_vnd": 2200000.0,
-        "pnl_vnd": -5000.0,
-        "status": "HOLDING_PROBE_N1"
+        "entry_price": 22057.0,
+        "current_price": 22350.0,
+        "market_val_vnd": 2235000.0,
+        "pnl_vnd": 29300.0,
+        "status": "HOLDING_T0_AVAILABLE"
       },
       "MSH": {
         "shares": 100,
-        "entry_price": 34517.0,
-        "current_price": 34500.0,
-        "market_val_vnd": 3450000.0,
-        "pnl_vnd": -1700.0,
-        "status": "HOLDING_PROBE_N1"
+        "entry_price": 34510.0,
+        "current_price": 34000.0,
+        "market_val_vnd": 3400000.0,
+        "pnl_vnd": -51000.0,
+        "status": "HOLDING_T0_AVAILABLE"
       }
     }
   },

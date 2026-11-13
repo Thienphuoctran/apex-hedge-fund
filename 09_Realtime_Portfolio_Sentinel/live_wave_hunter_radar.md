@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-13 01:29:22`  
+*Cập nhật thời gian thực*: `2026-11-13 10:24:23`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -10,7 +10,7 @@
 | Phòng Ban Chuyên Trách | Trạng Thái Hoạt Động | Báo Cáo Tác Chiến Thời Gian Thực |
 | :--- | :---: | :--- |
 | **Ban 1 (Global & VN) — Vĩ Mô & Tiền Tệ SBV/Fed** | **🟢 ACTIVE 24/7** | Giám sát DXY, VIX, Lãi suất SBV & Tỷ giá USD/VND |
-| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 33 tin CBTT |
+| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 368 hồ sơ SEC & 37 tin CBTT |
 | **Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff** | **🟢 ACTIVE 24/7** | Phát hiện 8 sóng cổ phiếu VN & 6 sóng cổ phiếu Mỹ đạt chuẩn AAA/AA |
 | **Ban 4 (Global & VN) — Hội Đồng Rủi Ro Định Lượng ATR** | **🟢 ACTIVE 24/7** | Khóa chặt Stop 2xATR <= 7.5% & R:R >= 1:2.0 |
 | **Ban 5 (Global & VN) — Tự Học Thích Nghi & Kiểm Định 4 Ngày** | **🟢 ACTIVE 24/7** | Điểm sức khỏe hệ thống đạt 100/100 (Zero Drift) |
@@ -26,14 +26,14 @@
 
 | Mã CP | Ngành | Giá Hiện Tại | Tín Hiệu Sóng & Dòng Tiền | Hạng BCTC & Điểm 10 Danh Thủ | Vùng Canh Mua | Cắt Lỗ 2xATR | Chốt Lời TP1 / TP2 | Nhận Định Tác Chiến Minh Quân |
 | :---: | :--- | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| **`POW`** | Dầu Khí & Tiện Ích Năng Lượng | `12,600 ₫`<br/>(`-0.79%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `49%` • Vol: `1.54x`) | **AAA** (`88.4/100`)<br/>OCF/LNST: `3.15x` | `12,537 ₫` | `12,064 ₫` | TP1: `13,725 ₫`<br/>TP2: `14,341 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +162.6%. Điểm gom thăm dò an toàn! |
-| **`MSN`** | Bán Lẻ & Tiêu Dùng Thiết Yếu | `71,200 ₫`<br/>(`-0.84%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `49%` • Vol: `0.54x`) | **AAA** (`90.3/100`)<br/>OCF/LNST: `3.79x` | `70,844 ₫` | `67,657 ₫` | TP1: `78,640 ₫`<br/>TP2: `82,714 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +59.7%. Điểm gom thăm dò an toàn! |
-| **`CTG`** | Ngân Hàng & Dịch Vụ Tài Chính | `31,550 ₫`<br/>(`-0.79%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `51%` • Vol: `0.58x`) | **AAA** (`93.1/100`)<br/>OCF/LNST: `1.17x` | `31,392 ₫` | `30,429 ₫` | TP1: `33,905 ₫`<br/>TP2: `35,195 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +162.1%. Điểm gom thăm dò an toàn! |
-| **`MWG`** | Bán Lẻ & Tiêu Dùng Thiết Yếu | `73,000 ₫`<br/>(`-0.95%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `45%` • Vol: `1.27x`) | **AAA** (`94.1/100`)<br/>OCF/LNST: `2.22x` | `72,635 ₫` | `69,757 ₫` | TP1: `79,810 ₫`<br/>TP2: `83,539 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +91.1%. Điểm gom thăm dò an toàn! |
-| **`HDB`** | Ngân Hàng & Dịch Vụ Tài Chính | `22,500 ₫`<br/>(`+0.00%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `52%` • Vol: `1.16x`) | **AAA** (`96.8/100`)<br/>OCF/LNST: `1.16x` | `22,388 ₫` | `21,364 ₫` | TP1: `24,885 ₫`<br/>TP2: `26,191 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +132.6%. Điểm gom thăm dò an toàn! |
-| **`NLG`** | Bất Động Sản Dân Cư | `24,300 ₫`<br/>(`+1.67%`) | **⚡ BÙNG NỔ DÒNG TIỀN / POCKET PIVOT**<br/>(BuyUp: `68%` • Vol: `2.13x`) | **AA** (`80.2/100`)<br/>OCF/LNST: `1.44x` | `24,178 ₫` | `22,599 ₫` | TP1: `28,035 ₫`<br/>TP2: `30,080 ₫` | Mua chủ động đạt 68.0%, Vol 2.13x MA20. Canh gom nhịp chuẩn! |
-| **`VCG`** | Hạ Tầng Xây Dựng & Đầu Tư Công | `15,550 ₫`<br/>(`+0.00%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `52%` • Vol: `1.41x`) | **AAA** (`84.2/100`)<br/>OCF/LNST: `1.79x` | `15,472 ₫` | `14,543 ₫` | TP1: `17,665 ₫`<br/>TP2: `18,823 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +114.5%. Điểm gom thăm dò an toàn! |
-| **`BSR`** | Dầu Khí & Tiện Ích Năng Lượng | `25,500 ₫`<br/>(`+0.79%`) | **💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND)**<br/>(BuyUp: `43%` • Vol: `0.51x`) | **AAA** (`87.0/100`)<br/>OCF/LNST: `1.61x` | `25,372 ₫` | `23,715 ₫` | TP1: `29,430 ₫`<br/>TP2: `31,582 ₫` | RSI lùi về 14.9 trên nền BCTC AAA. Sẵn sàng bắt nhịp hồi phục T+3! |
+| **`HHV`** | Hạ Tầng Xây Dựng & Đầu Tư Công | `9,680 ₫`<br/>(`-0.72%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `51%` • Vol: `0.22x`) | **AA** (`84.7/100`)<br/>OCF/LNST: `3.26x` | `9,632 ₫` | `9,203 ₫` | TP1: `10,682 ₫`<br/>TP2: `11,231 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +177.4%. Điểm gom thăm dò an toàn! |
+| **`POW`** | Dầu Khí & Tiện Ích Năng Lượng | `12,700 ₫`<br/>(`+0.79%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `63%` • Vol: `0.62x`) | **AAA** (`89.2/100`)<br/>OCF/LNST: `3.15x` | `12,636 ₫` | `12,143 ₫` | TP1: `13,870 ₫`<br/>TP2: `14,511 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +159.6%. Điểm gom thăm dò an toàn! |
+| **`MSN`** | Bán Lẻ & Tiêu Dùng Thiết Yếu | `71,500 ₫`<br/>(`+0.42%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `56%` • Vol: `0.05x`) | **AAA** (`90.3/100`)<br/>OCF/LNST: `3.79x` | `71,142 ₫` | `68,086 ₫` | TP1: `78,670 ₫`<br/>TP2: `82,596 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +59.0%. Điểm gom thăm dò an toàn! |
+| **`PC1`** | Dầu Khí & Tiện Ích Năng Lượng | `16,750 ₫`<br/>(`+0.00%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `51%` • Vol: `0.25x`) | **AAA** (`87.7/100`)<br/>OCF/LNST: `2.50x` | `16,666 ₫` | `15,955 ₫` | TP1: `18,420 ₫`<br/>TP2: `19,334 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +139.5%. Điểm gom thăm dò an toàn! |
+| **`HPG`** | Thép & Vật Liệu Xây Dựng | `21,150 ₫`<br/>(`+0.48%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `62%` • Vol: `0.12x`) | **AAA** (`89.4/100`)<br/>OCF/LNST: `1.35x` | `21,044 ₫` | `20,114 ₫` | TP1: `23,325 ₫`<br/>TP2: `24,516 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +188.2%. Điểm gom thăm dò an toàn! |
+| **`DBC`** | Thủy Sản, Nông Nghiệp & Dược Phẩm | `15,900 ₫`<br/>(`-0.62%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `47%` • Vol: `0.08x`) | **AAA** (`83.8/100`)<br/>OCF/LNST: `1.63x` | `15,820 ₫` | `15,164 ₫` | TP1: `17,445 ₫`<br/>TP2: `18,291 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +194.5%. Điểm gom thăm dò an toàn! |
+| **`MBB`** | Ngân Hàng & Dịch Vụ Tài Chính | `19,200 ₫`<br/>(`+0.00%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `50%` • Vol: `0.09x`) | **AAA** (`93.6/100`)<br/>OCF/LNST: `1.14x` | `19,104 ₫` | `18,529 ₫` | TP1: `20,610 ₫`<br/>TP2: `21,382 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +171.9%. Điểm gom thăm dò an toàn! |
+| **`HDB`** | Ngân Hàng & Dịch Vụ Tài Chính | `22,500 ₫`<br/>(`+0.00%`) | **🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)**<br/>(BuyUp: `58%` • Vol: `0.18x`) | **AAA** (`96.8/100`)<br/>OCF/LNST: `1.16x` | `22,388 ₫` | `21,400 ₫` | TP1: `24,810 ₫`<br/>TP2: `26,075 ₫` | Cạn cung tại nền hỗ trợ, Biên an toàn Graham +132.6%. Điểm gom thăm dò an toàn! |
 
 ---
 
@@ -42,12 +42,12 @@
 
 | Mã CP | Ngành | Giá Hiện Tại | Điểm 10 Danh Thủ | Kỳ Vọng EV% & R:R | Điểm Mua Pullback | Cắt Lỗ 2xATR | Mục Tiêu TP1 | Chất Xúc Tác Cốt Lõi |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`NVDA`** | Semiconductors & AI | `$164.72` | **`78.7/100`** | `+34.2%` (`1:5.79`) | `$160.99` | `$143.40` | `$207.36` | Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết c... |
-| **`TSM`** | Global Chip Foundry | `$408.36` | **`90.8/100`** | `+21.3%` (`1:4.20`) | `$401.83` | `$371.04` | `$483.00` | Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói ... |
-| **`AVGO`** | Custom AI ASICs & Networking | `$365.18` | **`86.4/100`** | `+22.3%` (`1:3.90`) | `$358.50` | `$327.01` | `$441.52` | Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưở... |
-| **`MSFT`** | Enterprise Software & Cloud | `$527.86` | **`89.4/100`** | `+11.8%` (`1:2.87`) | `$521.76` | `$492.98` | `$597.62` | Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quy... |
-| **`XOM`** | Integrated Oil & Gas | `$169.33` | **`86.5/100`** | `+10.5%` (`1:2.79`) | `$167.68` | `$159.91` | `$188.17` | Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông ch... |
-| **`JPM`** | Global Diversified Banking | `$344.93` | **`92.4/100`** | `+8.8%` (`1:2.95`) | `$342.19` | `$329.24` | `$376.31` | Lợi suất trái phiếu chính phủ Mỹ 10 năm (US10Y) neo cao ở 4.93% tiếp tục mở rộng Thu nhập ... |
+| **`NVDA`** | Semiconductors & AI | `$166.19` | **`78.7/100`** | `+33.6%` (`1:5.74`) | `$162.46` | `$144.87` | `$208.83` | Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết c... |
+| **`TSM`** | Global Chip Foundry | `$405.49` | **`90.8/100`** | `+21.7%` (`1:4.26`) | `$398.96` | `$368.17` | `$480.13` | Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói ... |
+| **`AVGO`** | Custom AI ASICs & Networking | `$364.36` | **`86.4/100`** | `+22.4%` (`1:3.92`) | `$357.68` | `$326.19` | `$440.70` | Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưở... |
+| **`MSFT`** | Enterprise Software & Cloud | `$523.00` | **`89.4/100`** | `+12.2%` (`1:2.98`) | `$516.88` | `$488.04` | `$592.92` | Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quy... |
+| **`XOM`** | Integrated Oil & Gas | `$169.78` | **`86.5/100`** | `+10.7%` (`1:2.79`) | `$168.09` | `$160.13` | `$189.08` | Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông ch... |
+| **`JPM`** | Global Diversified Banking | `$342.82` | **`92.4/100`** | `+8.8%` (`1:2.94`) | `$340.07` | `$327.13` | `$374.20` | Lợi suất trái phiếu chính phủ Mỹ 10 năm (US10Y) neo cao ở 4.93% tiếp tục mở rộng Thu nhập ... |
 
 ---
 
@@ -60,7 +60,7 @@
 | `US_SEC_EDGAR` | **`GOOGL`** ⭐ **(ĐANG THEO DÕI)** | `SEC Form 10-Q` | `2026-10-29` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`MSFT`** | `SEC Form 4` | `2026-11-12` | Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`AAPL`** | `SEC Form 10-K` | `2026-11-03` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
+| `VIETNAM_CBTT` | **`FPT,HCM`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Fri, 13 Nov 26 0` | Quỹ đầu tư mạo hiểm với sự góp mặt của Vingroup, Sovico, FPT, VNG vừa có động thái mới |
+| `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Fri, 13 Nov 26 0` | Nhiều đối tác quốc tế bó tay, kỹ sư FPT tại Mỹ tìm ra lời giải chỉ trong 4 tuần |
 | `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `CO_TUC` | `Fri, 13 Nov 26 0` | FPT Telecom sắp chi gần 1.500 tỷ đồng trả cổ tức, Bộ Công an nhận hơn 741 tỷ đồng và hàng chục triệu cổ phiếu thưởng |
 | `VIETNAM_CBTT` | **`HCM`** | `NGHI_QUYET_HDQT_DU_AN` | `Thu, 12 Nov 26 2` | TP.HCM thiếu công nhân xây dựng dù thu nhập lên tới 20 triệu đồng/tháng |
-| `VIETNAM_CBTT` | **`HCM`** | `TIN_DOANH_NGHIEP` | `Thu, 12 Nov 26 1` | GELEX thuộc Top 50 công ty niêm yết kinh doanh hiệu quả nhất Việt Nam năm 2026 |
-| `VIETNAM_CBTT` | **`MSN`** | `BCTC_KET_QUA_KINH_DOANH` | `Thu, 12 Nov 26 1` | Hệ sinh thái Masan ghi dấu tại TOP 50 Công ty niêm yết kinh doanh hiệu quả nhất Việt Nam |

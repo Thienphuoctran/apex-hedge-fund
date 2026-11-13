@@ -95,6 +95,9 @@ def main():
         print("[!] Bỏ qua Kiểm toán Phúc tra Cuối ngày EOD trong phiên sáng (Chỉ thực thi sau 15:30 đóng cửa sàn HOSE/HNX).")
     run_cmd([sys.executable, str(SCRIPTS_DIR / "titan_token_optimizer.py"), "--quiet"], "Titan Token Optimizer: Lập Chỉ Mục Dòng BCTC & Bản Tóm Lược Không Mất Dữ Liệu")
 
+    # Bước 8: Đồng Bộ Toàn Bộ Báo Cáo Vào SQLite Lakehouse Vault V5.0 (Chống Lệch Dữ Liệu Web Portal)
+    run_cmd([sys.executable, str(SCRIPTS_DIR / "migrate_markdown_to_sqlite.py")], "Đồng Bộ Toàn Bộ Báo Cáo Mới Vào SQLite Lakehouse Vault V5.0")
+
     elapsed = time.time() - start_time
     print("\n" + "=" * 80)
     print(f" [THỰC THI HOÀN TẤT TRONG {elapsed:.1f} GIÂY] KHẨU SÚNG ĐÃ SẴN SÀNG NẠP ĐẠN & BẤM CÒ!")

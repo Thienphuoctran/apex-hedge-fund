@@ -772,13 +772,14 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
     market_overview = get_live_market_overview()
     live_stocks = get_live_stock_sentinel()
 
-    cash_vnd = 14510422.0
-    total_nav_vnd = 20160386.0
-    stocks_val_vnd = 5650000.0
+    cash_vnd = 0.0
+    total_nav_vnd = 0.0
+    stocks_val_vnd = 0.0
+    total_cost_vnd = 0.0
     realized_pnl_vnd = 167119.0
-    unrealized_pnl_vnd = -6700.0
+    unrealized_pnl_vnd = 0.0
     holdings = []
-    holdings_count = 2
+    holdings_count = 0
 
     # Đọc trực tiếp từ SSOT state chuẩn của Chủ tịch
     ssot_file = DATA_DIR / "current_portfolio_state.json"
@@ -787,8 +788,9 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
             with open(ssot_file, "r", encoding="utf-8") as f:
                 st = json.load(f)
                 cash_vnd = float(st.get("cash_balance_vnd", cash_vnd))
-                total_nav_vnd = float(st.get("total_nav_vnd", total_nav_vnd))
                 stocks_val_vnd = float(st.get("total_market_val_vnd", stocks_val_vnd))
+                total_cost_vnd = float(st.get("total_cost_vnd", stocks_val_vnd))
+                total_nav_vnd = float(st.get("total_nav_vnd", cash_vnd + stocks_val_vnd))
                 realized_pnl_vnd = float(st.get("realized_pnl_vnd", realized_pnl_vnd))
                 unrealized_pnl_vnd = float(st.get("unrealized_pnl_vnd", unrealized_pnl_vnd))
                 pos_dict = st.get("active_positions", {})
@@ -797,23 +799,44 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
         except Exception:
             pass
 
+    total_shares = sum(int(h.get("shares", 0)) for h in holdings)
+    cash_pct = round((cash_vnd / total_nav_vnd) * 100, 1) if total_nav_vnd > 0 else 100.0
+    stocks_pct = round(100.0 - cash_pct, 1)
+    unrealized_pnl_pct = round((unrealized_pnl_vnd / total_cost_vnd) * 100, 2) if total_cost_vnd > 0 else 0.0
+    holdings_desc = " + ".join(f"{h.get('shares', 0)} {h.get('symbol', '')}" for h in holdings) or "0 CP"
+
     tactical_message = ""
     if phase_info["active_phase_id"] == "PRE_ATO":
-        tactical_message = "Minh Quân báo cáo: Đã chuẩn bị sẵn sàng 4 mã Vòng 2. Két tiền mặt 20,167,119 ₫ ở trạng thái tối ưu. Chúng ta chờ mở cửa để quan sát gap, kiên quyết KHÔNG ĐUA LỆNH ATO!"
+        tactical_message = (
+            f"Minh Quân báo cáo: Két tiền mặt thực tế {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% NAV) "
+            f"| Danh mục {total_shares} CP ({holdings_desc}). Chờ mở cửa quan sát gap, TUYỆT ĐỐI KHÔNG ĐUA LỆNH ATO!"
+        )
     elif phase_info["active_phase_id"] == "ATO_OPEN":
         tactical_message = "Minh Quân báo cáo: Phiên ATO đang diễn ra. Xin Chủ tịch giữ vững kỷ luật 3 KHÔNG. Không đua lệnh giá xanh mở gap. Quan sát kỹ lực cung tự nhiên."
     elif phase_info["active_phase_id"] == "MORNING_CONTINUOUS":
-        tactical_message = "Minh Quân báo cáo: Phiên sáng đang vận động. HDB và MSH đang được theo dõi sát sao. Chưa có tín hiệu Test Cung cạn kiệt, toàn đội kiên nhẫn quan sát, không nôn nóng giải ngân sớm."
+        tactical_message = (
+            f"Minh Quân báo cáo: Phiên sáng đang vận động. Danh mục {holdings_desc} ({stocks_val_vnd:,.0f} ₫) đang được Victor giám sát chặt. "
+            f"Bảo toàn két tiền mặt {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% NAV), kiên nhẫn chờ khung giờ chiều!"
+        )
     elif phase_info["active_phase_id"] == "NOON_INTERMISSION":
-        tactical_message = "Minh Quân & Victor báo cáo: Nghỉ trưa. Tổng kết phiên sáng thị trường vận động lành mạnh. Khối ngoại và tự doanh duy trì trạng thái cân bằng. Chuẩn bị đón nhịp hấp thụ hàng T+2 chiều nay."
+        tactical_message = (
+            f"Minh Quân & Victor báo cáo: Nghỉ trưa. Tiền mặt SSOT {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% NAV) • "
+            f"Cổ phiếu {stocks_val_vnd:,.0f} ₫ ({total_shares} CP). Chuẩn bị đón nhịp hấp thụ hàng T+2 chiều nay."
+        )
     elif phase_info["active_phase_id"] == "T2_ABSORPTION":
         tactical_message = "Minh Quân báo cáo: Áp lực hàng T+2 đang được thị trường hấp thụ. Quan sát nhịp rung lắc để tìm kiếm điểm cạn cung tại hỗ trợ. Chuẩn bị bước vào KHUNG GIỜ VÀNG 14h00!"
     elif phase_info["active_phase_id"] == "GOLDEN_WINDOW":
-        tactical_message = "🎉 MINH QUÂN BÁO CÁO: ĐÃ GIẢI NGÂN THÀNH CÔNG NHỊP 1! Danh mục chính thức sở hữu 100 CP HDB và 100 CP MSH (5,650,000 ₫ • 28.0% NAV). Két tiền mặt còn lại 14,510,422 ₫ (72.0% NAV). Victor đang canh giữ Stop Loss 2xATR bảo vệ tuyệt đối vị thế!"
+        tactical_message = (
+            f"🎯 MINH QUÂN BÁO CÁO KHUNG GIỜ VÀNG: Danh mục đang nắm giữ {total_shares} CP ({holdings_desc}: {stocks_val_vnd:,.0f} ₫ • {stocks_pct:.1f}% NAV). "
+            f"Két tiền mặt khả dụng {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% NAV). Victor canh giữ Stop Loss 2xATR 24/7!"
+        )
     elif phase_info["active_phase_id"] == "ATC_CLOSING":
         tactical_message = "Minh Quân báo cáo: Phiên ATC đang khớp định kỳ. Toàn bộ thông số giá đóng cửa đang được ghi nhận chuẩn xác."
     else:
-        tactical_message = "Minh Quân báo cáo: Thị trường Việt Nam đã đóng cửa. Két tiền mặt 20,167,119 ₫ bảo toàn 100% nguyên vẹn. Đang chuẩn bị chuyển giao trực chiến sang phiên Phố Wall cho Alex lúc 21h30 tối!"
+        tactical_message = (
+            f"Minh Quân báo cáo: Thị trường Việt Nam đã đóng cửa. Két tiền mặt {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% NAV) "
+            f"và {total_shares} CP ({stocks_val_vnd:,.0f} ₫) bảo toàn nguyên vẹn. Chuyển giao trực chiến sang phiên Phố Wall cho Alex lúc 21h30!"
+        )
 
     date_str = phase_info["current_date_str"]
     directives = load_directives_history(date_str)
@@ -851,12 +874,16 @@ def get_tactical_war_room_state() -> Dict[str, Any]:
             "cash_vnd": cash_vnd,
             "total_nav_vnd": total_nav_vnd,
             "stocks_val_vnd": stocks_val_vnd,
+            "cash_pct": cash_pct,
+            "stocks_pct": stocks_pct,
+            "total_shares": total_shares,
             "unrealized_pnl_vnd": unrealized_pnl_vnd,
+            "unrealized_pnl_pct": unrealized_pnl_pct,
             "holdings_count": holdings_count,
             "holdings": holdings,
             "realized_round1_profit_vnd": realized_pnl_vnd,
             "threat_level": "LEVEL_1_SAFE_POSITION_ACTIVE",
-            "threat_label": f"🟢 CẤP 1 — AN TOÀN ({cash_vnd:,.0f} ₫ Tiền Mặt 72.0% • 200 CP Đang Nắm Giữ 28.0%)",
+            "threat_label": f"🟢 CẤP 1 — AN TOÀN ({cash_vnd:,.0f} ₫ Tiền Mặt {cash_pct:.1f}% • {total_shares} CP Đang Nắm Giữ {stocks_pct:.1f}%)",
             "risk_arsenal": [
                 "Ngưỡng cắt lỗ cứng Stop 2xATR (khóa mức lỗ tối đa <= 0.35% NAV)",
                 "Kỹ thuật T+0 Scalping hạ giá vốn linh hoạt",

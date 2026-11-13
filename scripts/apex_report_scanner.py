@@ -341,7 +341,8 @@ def extract_report_metadata(file_path: Path, dept_cfg: Dict[str, Any]) -> Option
 
         rel_path = str(file_path.relative_to(BASE_DIR).as_posix())
 
-        now_date = datetime.datetime.now().strftime("%Y-%m-%d")
+        ict_now = datetime.datetime.now(datetime.timezone.utc).astimezone(datetime.timezone(datetime.timedelta(hours=7)))
+        now_date = ict_now.strftime("%Y-%m-%d")
         is_today = (date_str == now_date)
 
         return {
@@ -425,6 +426,18 @@ def scan_all_institutional_reports(
     - DỰ PHÒNG 2 (FAIL-SAFE FALLBACK): Tự động quét Flat-File nếu cơ sở dữ liệu chưa sẵn sàng hoặc gặp lỗi.
     - CẦU CHÌ KHÓA THỜI GIAN THỰC: Bảo đảm tính liêm chính 100%.
     """
+    ict_today_str = datetime.datetime.now(datetime.timezone.utc).astimezone(
+        datetime.timezone(datetime.timedelta(hours=7))
+    ).strftime("%Y-%m-%d")
+
+    # Cơ chế dự phòng Flat-File luôn rà soát để không bao giờ bỏ sót báo cáo mới trên ổ đĩa
+    flat_reps = _flat_file_scan_all_institutional_reports(
+        date_filter=date_filter,
+        dept_filter=dept_filter,
+        shift_filter=shift_filter,
+        limit=limit
+    )
+
     try:
         from scripts.apex_database_engine import ApexDatabaseEngine, DB_PATH
         if DB_PATH.exists():
@@ -439,17 +452,30 @@ def scan_all_institutional_reports(
                     offset=offset
                 )
             if db_reps and len(db_reps) > 0:
-                return db_reps
+                seen_paths = set()
+                merged: List[Dict[str, Any]] = []
+                # Nếu chưa tìm kiếm từ khóa FTS, ưu tiên hợp nhất báo cáo mới trên đĩa nếu SQLite chưa kịp index
+                if not (search_query and search_query.strip()):
+                    for fr in flat_reps:
+                        rp = fr.get("rel_path")
+                        if rp and rp not in seen_paths:
+                            fr["is_today"] = (fr.get("date") == ict_today_str)
+                            merged.append(fr)
+                            seen_paths.add(rp)
+                for dr in db_reps:
+                    rp = dr.get("rel_path")
+                    if rp and rp not in seen_paths:
+                        dr["is_today"] = (dr.get("date") == ict_today_str)
+                        merged.append(dr)
+                        seen_paths.add(rp)
+                merged.sort(key=lambda x: (x.get("date", ""), x.get("sort_time", ""), x.get("mtime", 0)), reverse=True)
+                return merged[:limit]
     except Exception:
         pass
 
-    # Cơ chế dự phòng Flat-File an toàn tuyệt đối
-    return _flat_file_scan_all_institutional_reports(
-        date_filter=date_filter,
-        dept_filter=dept_filter,
-        shift_filter=shift_filter,
-        limit=limit
-    )
+    for fr in flat_reps:
+        fr["is_today"] = (fr.get("date") == ict_today_str)
+    return flat_reps
 
 
 def get_available_archive_dates() -> List[Dict[str, Any]]:

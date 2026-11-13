@@ -40,10 +40,62 @@ def get_ict_now() -> datetime.datetime:
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+def _load_live_ssot_summary() -> Dict[str, Any]:
+    """Đọc trạng thái tài khoản SSOT V2.0 trực tiếp từ data/current_portfolio_state.json."""
+    ssot_file = BASE_DIR / "data" / "current_portfolio_state.json"
+    cash_vnd = 0.0
+    stocks_val_vnd = 0.0
+    total_cost_vnd = 0.0
+    total_nav_vnd = 0.0
+    realized_pnl_vnd = 167119.0
+    unrealized_pnl_vnd = 0.0
+    pos_dict: Dict[str, Any] = {}
+    if ssot_file.exists():
+        try:
+            with open(ssot_file, "r", encoding="utf-8") as f:
+                st = json.load(f)
+            cash_vnd = float(st.get("cash_balance_vnd", 0.0))
+            stocks_val_vnd = float(st.get("total_market_val_vnd", 0.0))
+            total_cost_vnd = float(st.get("total_cost_vnd", stocks_val_vnd))
+            total_nav_vnd = float(st.get("total_nav_vnd", cash_vnd + stocks_val_vnd))
+            realized_pnl_vnd = float(st.get("realized_pnl_vnd", 167119.0))
+            unrealized_pnl_vnd = float(st.get("unrealized_pnl_vnd", 0.0))
+            pos_dict = st.get("active_positions", {})
+        except Exception:
+            pass
+    if total_nav_vnd <= 0:
+        total_nav_vnd = cash_vnd + stocks_val_vnd
+    total_shares = sum(int(p.get("shares", 0)) for p in pos_dict.values()) if isinstance(pos_dict, dict) else 0
+    cash_pct = round((cash_vnd / total_nav_vnd) * 100, 1) if total_nav_vnd > 0 else 100.0
+    stocks_pct = round(100.0 - cash_pct, 1)
+    unrealized_pct = round((unrealized_pnl_vnd / total_cost_vnd) * 100, 1) if total_cost_vnd > 0 else 0.0
+    holdings_desc = " + ".join(f"{p.get('shares', 0)} {s}" for s, p in pos_dict.items()) if pos_dict else "0 CP"
+    return {
+        "cash_vnd": cash_vnd,
+        "cash_str": f"{cash_vnd:,.0f} ₫",
+        "stocks_val_vnd": stocks_val_vnd,
+        "stocks_str": f"{stocks_val_vnd:,.0f} ₫",
+        "total_nav_vnd": total_nav_vnd,
+        "nav_str": f"{total_nav_vnd:,.0f} ₫",
+        "cash_pct": cash_pct,
+        "stocks_pct": stocks_pct,
+        "total_shares": total_shares,
+        "holdings_count": len(pos_dict) if isinstance(pos_dict, dict) else 0,
+        "holdings_desc": holdings_desc,
+        "realized_pnl_vnd": realized_pnl_vnd,
+        "realized_str": (f"+{realized_pnl_vnd:,.0f} ₫" if realized_pnl_vnd >= 0 else f"{realized_pnl_vnd:,.0f} ₫"),
+        "unrealized_pnl_vnd": unrealized_pnl_vnd,
+        "unrealized_str": (f"+{unrealized_pnl_vnd:,.0f} ₫" if unrealized_pnl_vnd >= 0 else f"{unrealized_pnl_vnd:,.0f} ₫"),
+        "unrealized_pct": unrealized_pct,
+    }
+
+
 def generate_dynamic_tactical_stages_html(now=None):
     if now is None:
         now = get_ict_now()
     hm = now.hour * 60 + now.minute
+    ssot = _load_live_ssot_summary()
     
     # Morning: 08:30 - 11:30
     if hm < 11 * 60 + 30:
@@ -79,7 +131,7 @@ def generate_dynamic_tactical_stages_html(now=None):
                     1. Giai Đoạn 1 (08:30 – 09:00): Pre-ATO Giao Ban &amp; Rà Soát Sức Mua
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • <strong>Nhiệm vụ</strong>: Minh Quân rà soát Sổ Lệnh Master Blotter, đối soát két tiền mặt SSOT <strong>14,510,422 ₫</strong> và bảo vệ an toàn cho <strong>200 CP (100 HDB + 100 MSH)</strong>.
+                    • <strong>Nhiệm vụ</strong>: Minh Quân rà soát Sổ Lệnh Master Blotter, đối soát két tiền mặt SSOT <strong>{ssot['cash_str']}</strong> và bảo vệ an toàn cho <strong>{ssot['total_shares']} CP ({ssot['holdings_desc']})</strong>.
                 </div>
                 <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #fca5a5; line-height: 1.5;">
                     ⚖️ <strong>Kỷ luật Hiến chương</strong>: <strong>TUYỆT ĐỐI KHÔNG ĐẶT LỆNH SỚM TRƯỚC ATO</strong>. Kiên nhẫn chờ tín hiệu mở cửa thị trường.
@@ -117,7 +169,7 @@ def generate_dynamic_tactical_stages_html(now=None):
                     3. Giai Đoạn 3 (09:15 – 11:30): Khớp Lệnh Liên Tục Sáng — Giám Sát Cung Cầu
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • Theo dõi tỷ lệ Mua chủ động (Buy Up Ratio) và phản ứng giữ nền hỗ trợ. Giữ nguyên <strong>14,510,422 ₫ tiền mặt</strong> cho cơ hội Khung Giờ Vàng.
+                    • Theo dõi tỷ lệ Mua chủ động (Buy Up Ratio) và phản ứng giữ nền hỗ trợ. Giữ nguyên <strong>{ssot['cash_str']} tiền mặt</strong> cho cơ hội Khung Giờ Vàng.
                 </div>
             </div>
         </div>
@@ -267,10 +319,20 @@ def generate_portal_html(
 
     sup_status = supervisor_data.get("supervisor_status", "HEALTHY_ALL_RUNNING")
     services = supervisor_data.get("services", {})
+    ssot = _load_live_ssot_summary()
     total_reports_count = len(initial_reports)
+    try:
+        from scripts.apex_database_engine import ApexDatabaseEngine
+        db_stats = ApexDatabaseEngine.get_database_stats()
+        total_vault_count = max(total_reports_count, int(db_stats.get("total_institutional_reports", 0)))
+    except Exception:
+        total_vault_count = total_reports_count
 
     today_str = get_ict_now().strftime("%Y-%m-%d")
     today_reports_count = sum(1 for r in initial_reports if r.get("date") == today_str)
+    latest_avail_date = available_dates[0]["date"] if available_dates else (initial_reports[0].get("date", today_str) if initial_reports else today_str)
+    initial_date_filter = "today" if today_reports_count > 0 else (latest_avail_date if total_reports_count > 0 else "all")
+    unrealized_color = "#34d399" if ssot["unrealized_pnl_vnd"] >= 0 else "#f87171"
 
     # Render bảng tiến trình daemons
     services_rows = ""
@@ -2494,18 +2556,18 @@ def generate_portal_html(
         <section class="kpi-grid">
             <div class="kpi-card" style="--card-accent: #10b981;">
                 <div class="kpi-lbl">💰 Tiền Mặt TCInvest (SSOT V2.0)</div>
-                <div class="kpi-val" id="top-kpi-cash-val" style="color: #34d399;">14,510,422 ₫</div>
-                <div class="kpi-sub" id="top-kpi-cash-sub"><span style="color: #34d399; font-weight: 700;">72.0% Cash</span> • 200 CP (5,650,000 ₫ • 28.0% NAV)</div>
+                <div class="kpi-val" id="top-kpi-cash-val" style="color: #34d399;">{ssot['cash_str']}</div>
+                <div class="kpi-sub" id="top-kpi-cash-sub"><span style="color: #34d399; font-weight: 700;">{ssot['cash_pct']:.1f}% Cash</span> • {ssot['total_shares']} CP ({ssot['stocks_str']} • {ssot['stocks_pct']:.1f}% NAV)</div>
             </div>
             <div class="kpi-card" style="--card-accent: #38bdf8;">
                 <div class="kpi-lbl">📈 Lãi Ròng Thu Về Vòng 1</div>
-                <div class="kpi-val" style="color: #38bdf8;">+167,119 ₫</div>
+                <div class="kpi-val" style="color: #38bdf8;">{ssot['realized_str']}</div>
                 <div class="kpi-sub">Đã tất toán 100% (HPG, TCB, MBB)</div>
             </div>
             <div class="kpi-card" style="--card-accent: #c084fc;">
                 <div class="kpi-lbl">📑 Báo Cáo Hôm Nay ({today_str})</div>
                 <div class="kpi-val" style="color: #c084fc;" id="stat-today-count">{today_reports_count} Báo Cáo</div>
-                <div class="kpi-sub">Kho Vault: <strong style="color: #10b981;">{total_reports_count} Báo Cáo</strong> (SQLite V5.0: Sức chứa 100.000)</div>
+                <div class="kpi-sub">Kho Vault: <strong id="stat-vault-count" style="color: #10b981;">{total_vault_count} Báo Cáo</strong> (SQLite V5.0: Sức chứa 100.000)</div>
             </div>
             <div class="kpi-card" style="--card-accent: #f472b6;">
                 <div class="kpi-lbl">🛡️ Hệ Thống Tự Hành 24/7</div>
@@ -2628,6 +2690,10 @@ def generate_portal_html(
             </div>
 
             <!-- CONTAINER HIỂN THỊ BÁO CÁO -->
+            <div id="reports-fallback-banner" style="display: none; margin-bottom: 14px; padding: 11px 16px; border-radius: 10px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.35); color: #bae6fd; font-size: 13px; align-items: center; justify-content: space-between; gap: 12px;">
+                <span id="reports-fallback-text"></span>
+                <button class="btn-read" onclick="selectDateFilter('all')" style="padding: 5px 12px; font-size: 11.5px; white-space: nowrap;">🏛️ Xem Toàn Bộ Lịch Sử</button>
+            </div>
             <div id="reports-container">
                 <!-- Sẽ được render bởi JavaScript -->
             </div>
@@ -2666,23 +2732,23 @@ def generate_portal_html(
                     <div style="margin-bottom: 16px;">
                         <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 8px;">
                             <span>Tiền Mặt Khả Dụng (Két TCInvest)</span>
-                            <strong style="color: #34d399; font-family: 'JetBrains Mono', monospace;">72.0% (14,510,422 ₫)</strong>
+                            <strong style="color: #34d399; font-family: 'JetBrains Mono', monospace;">{ssot['cash_pct']:.1f}% ({ssot['cash_str']})</strong>
                         </div>
                         <div style="background: var(--bg-base); height: 12px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color);">
-                            <div style="background: linear-gradient(90deg, #10b981, #34d399); width: 72%; height: 100%;"></div>
+                            <div style="background: linear-gradient(90deg, #10b981, #34d399); width: {ssot['cash_pct']:.1f}%; height: 100%;"></div>
                         </div>
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 8px;">
                             <span>Cổ Phiếu Đang Nắm Giữ</span>
-                            <strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">28.0% (5,650,000 ₫ • 200 CP)</strong>
+                            <strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">{ssot['stocks_pct']:.1f}% ({ssot['stocks_str']} • {ssot['total_shares']} CP)</strong>
                         </div>
                         <div style="background: var(--bg-base); height: 12px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color);">
-                            <div style="background: linear-gradient(90deg, #0ea5e9, #38bdf8); width: 28%; height: 100%;"></div>
+                            <div style="background: linear-gradient(90deg, #0ea5e9, #38bdf8); width: {ssot['stocks_pct']:.1f}%; height: 100%;"></div>
                         </div>
                     </div>
                     <p style="margin-top: 18px; font-size: 12.5px; color: #94a3b8; line-height: 1.6;">
-                        🛡️ <strong>Chế độ Bảo Vệ Vị Thế:</strong> Quỹ đã giải ngân Nhịp 1 thành công (100 CP HDB & 100 CP MSH). Tiền mặt khả dụng 14,510,422 ₫ (72.0% NAV) bảo toàn an toàn trong két. Victor đã kích hoạt ngay hàng rào phòng thủ Stop 2xATR!
+                        🛡️ <strong>Chế độ Bảo Vệ Vị Thế:</strong> Danh mục hiện nắm giữ {ssot['holdings_desc']} ({ssot['stocks_str']}). Tiền mặt khả dụng {ssot['cash_str']} ({ssot['cash_pct']:.1f}% NAV) bảo toàn an toàn trong két. Victor đã kích hoạt ngay hàng rào phòng thủ Stop 2xATR!
                     </p>
                 </div>
 
@@ -2705,7 +2771,7 @@ def generate_portal_html(
                             <span>🎯</span> <span>BẢNG KẾ HOẠCH ĐẦU TƯ CHUẨN CHỈ: PHÂN TÁCH 3 NHỊP KIM TỰ THÁP (30% - 40% - 30%)</span>
                         </h3>
                         <p style="font-size: 12.5px; color: #94a3b8; margin-top: 4px;">
-                            Tài khoản TCBS <strong style="color: #38bdf8;">105C307855</strong> (Chủ tịch: <strong>Trần Quốc Thiên Phước</strong>) • Tài sản ròng NAV: <strong style="color: #34d399;">20,160,386 ₫</strong> (Tiền mặt: 14,510,422 ₫ • Cổ phiếu: 5,650,000 ₫)
+                            Tài khoản TCBS <strong style="color: #38bdf8;">105C307855</strong> (Chủ tịch: <strong>Trần Quốc Thiên Phước</strong>) • Tài sản ròng NAV: <strong style="color: #34d399;">{ssot['nav_str']}</strong> (Tiền mặt: {ssot['cash_str']} • Cổ phiếu: {ssot['stocks_str']})
                         </p>
                     </div>
                     <div>
@@ -2839,7 +2905,7 @@ def generate_portal_html(
                         <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #f59e0b;">
                             <div style="font-size: 11px; color: #fbbf24; font-weight: 700;">PHA 2: 11h30 - 13h00</div>
                             <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">Nghỉ Trưa: Rà Soát Sổ Lệnh</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Kiểm tra độ cạn cung, bảo toàn nguyên vẹn 14,510,422 ₫ tiền mặt trong két TCInvest.</div>
+                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Kiểm tra độ cạn cung, bảo toàn nguyên vẹn {ssot['cash_str']} tiền mặt trong két TCInvest.</div>
                         </div>
                         <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #38bdf8;">
                             <div style="font-size: 11px; color: #38bdf8; font-weight: 700;">PHA 3: 13h00 - 13h55</div>
@@ -2879,9 +2945,9 @@ def generate_portal_html(
                             </div>
                         </div>
                         <div class="war-room-meta-group">
-                            <div class="meta-pill">📅 Ngày: <strong>2026-11-09</strong></div>
+                            <div class="meta-pill">📅 Ngày: <strong>{today_str}</strong></div>
                             <div class="meta-pill">⏰ Giờ VN: <strong id="war-room-clock" style="color: #38bdf8; font-family: monospace;">{wr_server_time}</strong></div>
-                            <div class="meta-pill" id="wr-header-cash-pill" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">💰 Két Tiền Thật: <strong style="color: #34d399;">14,510,422 ₫</strong> (72.0% Cash) | 📈 Cổ Phiếu: <strong style="color: #38bdf8;">5,650,000 ₫</strong> (200 CP)</div>
+                            <div class="meta-pill" id="wr-header-cash-pill" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">💰 Két Tiền Thật: <strong style="color: #34d399;">{ssot['cash_str']}</strong> ({ssot['cash_pct']:.1f}% Cash) | 📈 Cổ Phiếu: <strong style="color: #38bdf8;">{ssot['stocks_str']}</strong> ({ssot['total_shares']} CP)</div>
                             <div class="meta-pill" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.1);">🗽 Phiên New York (21h30): <strong id="war-room-ny-countdown" style="color: #fbbf24;">{wr_ny_countdown}</strong></div>
                             <button onclick="loadTacticalWarRoomData()" class="btn-quick-prompt" style="background: rgba(14, 165, 233, 0.25); border-color: #38bdf8; color: #f8fafc; font-weight: 800; padding: 6px 12px;">🔄 Làm Mới Live</button>
                         </div>
@@ -3290,7 +3356,7 @@ def generate_portal_html(
                                         <span style="font-weight:400; color:#94a3b8;">08:30:15</span>
                                     </div>
                                     <div class="directive-msg-body">
-                                        Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã hoàn tất Bản Kế Hoạch Đầu Ngày 08h30. Hôm nay ưu tiên quan sát HDB (gom 22,350 ₫) và MSH (gom 34,800 ₫). Két tiền mặt 20,167,119 ₫ sẵn sàng. Toàn đội tuân thủ tuyệt đối: KHÔNG ĐUA LỆNH ATO, chờ Khung Giờ Vàng 14h00 - 14h25!
+                                        Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã hoàn tất Bản Kế Hoạch Đầu Ngày 08h30. Két tiền mặt thực tế {ssot['cash_str']} ({ssot['cash_pct']:.1f}% NAV) | Kho hàng {ssot['holdings_desc']} ({ssot['stocks_str']}). Toàn đội tuân thủ tuyệt đối: KHÔNG ĐUA LỆNH ATO, chờ Khung Giờ Vàng 14h00 - 14h25!
                                     </div>
                                 </div>
                                 <div class="directive-msg sentinel">
@@ -3299,7 +3365,7 @@ def generate_portal_html(
                                         <span style="font-weight:400; color:#94a3b8;">08:32:40</span>
                                     </div>
                                     <div class="directive-msg-body">
-                                        Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục. Két tiền mặt thật 20,167,119 ₫ (100% Cash, 0 CP rủi ro). Toàn bộ lãi Vòng 1 (+167,119 ₫) đã khóa an toàn. Radar rủi ro ở CẤP 1 (AN TOÀN TUYỆT ĐỐI). Các kịch bản phòng thủ Stop 2xATR và Synthetic Short Hedge VN30F sẵn sàng trong nòng súng.
+                                        Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục. Két tiền mặt thật {ssot['cash_str']} ({ssot['cash_pct']:.1f}% Cash • {ssot['total_shares']} CP đang nắm giữ). Toàn bộ lãi Vòng 1 ({ssot['realized_str']}) đã khóa an toàn. Radar rủi ro ở CẤP 1, kịch bản phòng thủ Stop 2xATR và Synthetic Short Hedge VN30F sẵn sàng trong nòng súng.
                                     </div>
                                 </div>
                             </div>
@@ -3343,11 +3409,11 @@ def generate_portal_html(
                             </div>
                             <div style="display: flex; align-items: baseline; justify-content: space-between;">
                                 <span style="font-size: 11px; color: #cbd5e1;">Két Tiền Mặt Thật:</span>
-                                <strong id="victor-cash-val" style="font-size: 19px; color: #34d399; font-family: monospace;">14,510,422 ₫</strong>
+                                <strong id="victor-cash-val" style="font-size: 19px; color: #34d399; font-family: monospace;">{ssot['cash_str']}</strong>
                             </div>
                             <div style="display: flex; justify-content: space-between; font-size: 11px; border-top: 1px solid rgba(148, 163, 184, 0.15); padding-top: 5px;">
-                                <span id="victor-holdings-val" style="color: #94a3b8;">Cổ phiếu rủi ro: <strong style="color: #38bdf8;">200 CP (5,650,000 ₫ • 28.0%)</strong></span>
-                                <span id="victor-pnl-val" style="color: #94a3b8;">PnL Tạm: <strong style="color: #f87171;">-6,700 ₫ (-0.1%)</strong> | Lãi V1: <strong style="color: #34d399;">+167,119 ₫</strong></span>
+                                <span id="victor-holdings-val" style="color: #94a3b8;">Cổ phiếu rủi ro: <strong style="color: #38bdf8;">{ssot['total_shares']} CP ({ssot['stocks_str']} • {ssot['stocks_pct']:.1f}%)</strong></span>
+                                <span id="victor-pnl-val" style="color: #94a3b8;">PnL Tạm: <strong style="color: {unrealized_color};">{ssot['unrealized_str']} ({ssot['unrealized_pct']}%)</strong> | Lãi V1: <strong style="color: #34d399;">{ssot['realized_str']}</strong></span>
                             </div>
                         </div>
 
@@ -3580,8 +3646,8 @@ def generate_portal_html(
                         <div style="font-size: 13px; color: #94a3b8; margin-top: 4px;">Chủ tài khoản: <strong style="color: #fff;">Trần Quốc Thiên Phước</strong></div>
                         <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
                             <div style="font-size: 11px; text-transform: uppercase; color: var(--text-dim); font-weight: 800;">Tiền mặt khả dụng:</div>
-                            <div style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 800; color: #34d399; margin-top: 2px;">14,510,422 ₫</div>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Tỷ trọng: 72% Cash • 28% CP (200 CP: HDB, MSH)</div>
+                            <div id="james-sidebar-cash-val" style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 800; color: #34d399; margin-top: 2px;">{ssot['cash_str']}</div>
+                            <div id="james-sidebar-cash-sub" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Tỷ trọng: {ssot['cash_pct']:.1f}% Cash • {ssot['stocks_pct']:.1f}% CP ({ssot['total_shares']} CP: {ssot['holdings_desc']})</div>
                         </div>
                     </div>
 
@@ -3642,7 +3708,7 @@ def generate_portal_html(
                         </h2>
                         <div class="summit-sub">
                             <span>⏱️ Khung giờ: <strong>21h00 – 21h30 (30 Phút)</strong></span>
-                            <span>🏦 Tài khoản: <strong>TCBS 105C307855</strong> (14,510,422 ₫ Tiền Mặt • 5,650,000 ₫ Cổ Phiếu)</span>
+                            <span>🏦 Tài khoản: <strong>TCBS 105C307855</strong> ({ssot['cash_str']} Tiền Mặt • {ssot['stocks_str']} Cổ Phiếu)</span>
                             <span>⚖️ Thể chế: <strong>100% Tuân thủ Hiến Chương V1.0</strong></span>
                         </div>
                     </div>
@@ -3897,9 +3963,11 @@ def generate_portal_html(
         let allReports = {initial_reports_json};
         let availableDates = {available_dates_json};
         const todayDateStr = "{today_str}";
+        const hasTodayReportsOnInit = {today_reports_count} > 0;
 
-        // Trạng thái bộ lọc
-        let currentDateFilter = 'today'; // 'today', 'yesterday', 'all', hoặc 'YYYY-MM-DD'
+        // Trạng thái bộ lọc thông minh: nếu Hôm Nay chưa có báo cáo, tự động lùi sang ngày gần nhất có dữ liệu
+        let currentDateFilter = "{initial_date_filter}"; // 'today', 'yesterday', 'all', hoặc 'YYYY-MM-DD'
+        let autoFallbackDateUsed = (!hasTodayReportsOnInit && currentDateFilter !== 'today' && currentDateFilter !== 'all') ? currentDateFilter : '';
         let currentShiftFilter = 'all';  // 'all', 'Ca Sáng', 'Ca Trưa', 'Ca Chiều', 'Ca Tối'
         let currentCategoryFilter = 'all'; // 'all', 'macro', 'equity_bctc', 'cio_execution', 'risk_learning', 'mentorship'
         let currentSearchQuery = '';
@@ -4105,18 +4173,18 @@ def generate_portal_html(
             let textToParse = rawText;
 
             // 1. Trích xuất 4 KPI nếu có dữ liệu tiền mặt
-            if (rawText.includes('20,167,119') || rawText.includes('105C307855')) {{
+            if (rawText.includes('20,167,119') || rawText.includes('105C307855') || rawText.includes('{ssot["cash_str"]}')) {{
                 htmlOutput += `
                 <div class="exec-kpi-banner">
                     <div class="exec-kpi-box" style="border-left: 3px solid #10b981;">
                         <div class="exec-kpi-box-lbl">💰 Két Tiền Mặt TCBS</div>
-                        <div class="exec-kpi-box-val" style="color: #34d399;">20,167,119 ₫</div>
-                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">100% Cash Bảo Toàn</div>
+                        <div class="exec-kpi-box-val" style="color: #34d399;">{ssot['cash_str']}</div>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">{ssot['cash_pct']:.1f}% Cash Bảo Toàn</div>
                     </div>
                     <div class="exec-kpi-box" style="border-left: 3px solid #38bdf8;">
                         <div class="exec-kpi-box-lbl">🛡️ Kho Hàng Hiện Tại</div>
-                        <div class="exec-kpi-box-val" style="color: #38bdf8;">0 CP</div>
-                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">0% Rủi Ro Biến Động</div>
+                        <div class="exec-kpi-box-val" style="color: #38bdf8;">{ssot['total_shares']} CP</div>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">{ssot['holdings_desc']} ({ssot['stocks_pct']:.1f}% NAV)</div>
                     </div>
                     <div class="exec-kpi-box" style="border-left: 3px solid #c084fc;">
                         <div class="exec-kpi-box-lbl">📈 Lãi Vòng 1 Thực Thu</div>
@@ -4326,23 +4394,31 @@ def generate_portal_html(
         }}
 
         // BỘ LỌC NGÀY & KHO LƯU TRỮ
+        function syncDateFilterButtons() {{
+            document.querySelectorAll('.date-pill-btn').forEach(b => b.classList.remove('active'));
+            const sel = document.getElementById('archive-date-select');
+            if (currentDateFilter === 'today') {{
+                document.getElementById('btn-date-today').classList.add('active');
+                if (sel) sel.value = todayDateStr;
+            }} else if (currentDateFilter === 'yesterday') {{
+                document.getElementById('btn-date-yesterday').classList.add('active');
+            }} else if (currentDateFilter === 'all') {{
+                document.getElementById('btn-date-all').classList.add('active');
+            }} else if (sel) {{
+                sel.value = currentDateFilter;
+            }}
+        }}
+
         function selectDateFilter(mode) {{
             currentDateFilter = mode;
-            document.querySelectorAll('.date-pill-btn').forEach(b => b.classList.remove('active'));
-
-            if (mode === 'today') {{
-                document.getElementById('btn-date-today').classList.add('active');
-                document.getElementById('archive-date-select').value = todayDateStr;
-            }} else if (mode === 'yesterday') {{
-                document.getElementById('btn-date-yesterday').classList.add('active');
-            }} else if (mode === 'all') {{
-                document.getElementById('btn-date-all').classList.add('active');
-            }}
+            autoFallbackDateUsed = '';
+            syncDateFilterButtons();
             applyAllFilters();
         }}
 
         function selectDateFromDropdown(selectedDate) {{
             currentDateFilter = selectedDate;
+            autoFallbackDateUsed = '';
             document.querySelectorAll('.date-pill-btn').forEach(b => b.classList.remove('active'));
             if (selectedDate === todayDateStr) {{
                 document.getElementById('btn-date-today').classList.add('active');
@@ -4394,13 +4470,29 @@ def generate_portal_html(
             if (currentDateFilter === 'today') {{
                 dateFiltered = dateFiltered.filter(r => r.date === todayDateStr);
             }} else if (currentDateFilter === 'yesterday') {{
-                const olderDates = availableDates.map(d => d.date).filter(d => d < todayDateStr);
-                const yesterdayDate = olderDates[0] || '';
+                const uniqueOlder = [...new Set([
+                    ...availableDates.map(d => d.date),
+                    ...allReports.map(r => r.date)
+                ])].filter(d => d && d < todayDateStr).sort().reverse();
+                const yesterdayDate = uniqueOlder[0] || '';
                 if (yesterdayDate) {{
                     dateFiltered = dateFiltered.filter(r => r.date === yesterdayDate);
+                }} else {{
+                    dateFiltered = [];
                 }}
             }} else if (currentDateFilter !== 'all') {{
                 dateFiltered = dateFiltered.filter(r => r.date === currentDateFilter);
+            }}
+
+            const fbBanner = document.getElementById('reports-fallback-banner');
+            const fbText = document.getElementById('reports-fallback-text');
+            if (fbBanner && fbText) {{
+                if (autoFallbackDateUsed && currentDateFilter === autoFallbackDateUsed) {{
+                    fbText.innerHTML = `ℹ️ Hôm nay (<strong>${{todayDateStr}}</strong>) chưa phát hành thêm báo cáo mới trong khung giờ này — tự động hiển thị phiên gần nhất có dữ liệu (<strong>${{autoFallbackDateUsed}}</strong>).`;
+                    fbBanner.style.display = 'flex';
+                }} else {{
+                    fbBanner.style.display = 'none';
+                }}
             }}
 
             // 2. Lọc theo Ca Tác Chiến
@@ -5268,18 +5360,34 @@ def generate_portal_html(
                 const topKpiCash = document.getElementById('top-kpi-cash-val');
                 const topKpiSub = document.getElementById('top-kpi-cash-sub');
 
-                const cashFmt = Number(vs.cash_vnd || 14510422).toLocaleString('en-US') + ' ₫';
-                const stockFmt = Number(vs.stocks_val_vnd || 5650000).toLocaleString('en-US') + ' ₫';
-                const pnlFmt = (vs.unrealized_pnl_vnd ? (vs.unrealized_pnl_vnd > 0 ? '+' : '') + Number(vs.unrealized_pnl_vnd).toLocaleString('en-US') : '-6,700') + ' ₫';
-                const pnlPct = vs.unrealized_pnl_pct !== undefined ? vs.unrealized_pnl_pct : -0.1;
-                const holdCount = vs.holdings_count || 2;
+                const cashNum = Number(vs.cash_vnd ?? 0);
+                const stockNum = Number(vs.stocks_val_vnd ?? 0);
+                const navNum = Number(vs.total_nav_vnd ?? (cashNum + stockNum));
+                const cashPct = vs.cash_pct !== undefined ? Number(vs.cash_pct).toFixed(1) : (navNum > 0 ? ((cashNum / navNum) * 100).toFixed(1) : '100.0');
+                const stockPct = vs.stocks_pct !== undefined ? Number(vs.stocks_pct).toFixed(1) : (100 - Number(cashPct)).toFixed(1);
+                const cashFmt = cashNum.toLocaleString('en-US') + ' ₫';
+                const stockFmt = stockNum.toLocaleString('en-US') + ' ₫';
+                const unPnlNum = Number(vs.unrealized_pnl_vnd ?? 0);
+                const pnlFmt = (unPnlNum > 0 ? '+' : '') + unPnlNum.toLocaleString('en-US') + ' ₫';
+                const pnlPct = vs.unrealized_pnl_pct !== undefined ? vs.unrealized_pnl_pct : 0;
+                const pnlCol = unPnlNum >= 0 ? '#34d399' : '#f87171';
+                const realNum = Number(vs.realized_round1_profit_vnd ?? 167119);
+                const realFmt = (realNum >= 0 ? '+' : '') + realNum.toLocaleString('en-US') + ' ₫';
+                const totalShares = vs.total_shares !== undefined ? vs.total_shares : ((vs.holdings || []).reduce((acc, h) => acc + (h.shares || 0), 0));
 
                 if (vCash) vCash.innerText = cashFmt;
-                if (vHold) vHold.innerHTML = `Cổ phiếu rủi ro: <strong style="color: #38bdf8;">${{holdCount * 100}} CP (${{stockFmt}} • 28.0%)</strong>`;
-                if (vPnl) vPnl.innerHTML = `PnL Tạm: <strong style="color: #f87171;">${{pnlFmt}} (${{pnlPct}}%)</strong> | Lãi V1: <strong style="color: #34d399;">+167,119 ₫</strong>`;
-                if (headPill) headPill.innerHTML = `💰 Két Tiền Thật: <strong style="color: #34d399;">${{cashFmt}}</strong> (72.0% Cash) | 📈 Cổ Phiếu: <strong style="color: #38bdf8;">${{stockFmt}}</strong> (${{holdCount * 100}} CP)`;
+                if (vHold) vHold.innerHTML = `Cổ phiếu rủi ro: <strong style="color: #38bdf8;">${{totalShares}} CP (${{stockFmt}} • ${{stockPct}}%)</strong>`;
+                if (vPnl) vPnl.innerHTML = `PnL Tạm: <strong style="color: ${{pnlCol}};">${{pnlFmt}} (${{pnlPct}}%)</strong> | Lãi V1: <strong style="color: #34d399;">${{realFmt}}</strong>`;
+                if (headPill) headPill.innerHTML = `💰 Két Tiền Thật: <strong style="color: #34d399;">${{cashFmt}}</strong> (${{cashPct}}% Cash) | 📈 Cổ Phiếu: <strong style="color: #38bdf8;">${{stockFmt}}</strong> (${{totalShares}} CP)`;
                 if (topKpiCash) topKpiCash.innerText = cashFmt;
-                if (topKpiSub) topKpiSub.innerHTML = `<span style="color: #34d399; font-weight: 700;">72.0% Cash</span> • ${{holdCount * 100}} CP (${{stockFmt}} • 28.0% NAV)`;
+                if (topKpiSub) topKpiSub.innerHTML = `<span style="color: #34d399; font-weight: 700;">${{cashPct}}% Cash</span> • ${{totalShares}} CP (${{stockFmt}} • ${{stockPct}}% NAV)`;
+                const jamesCash = document.getElementById('james-sidebar-cash-val');
+                if (jamesCash) jamesCash.innerText = cashFmt;
+                const jamesSub = document.getElementById('james-sidebar-cash-sub');
+                if (jamesSub) {{
+                    const syms = (vs.holdings || []).map(h => h.symbol).join(', ') || 'Không có';
+                    jamesSub.innerText = `Tỷ trọng: ${{cashPct}}% Cash • ${{stockPct}}% CP (${{totalShares}} CP: ${{syms}})`;
+                }}
 
                 // Update live holdings box if holdings present
                 const holdBox = document.getElementById('victor-live-holdings-box');
@@ -5367,6 +5475,7 @@ def generate_portal_html(
 
 
         window.addEventListener('DOMContentLoaded', () => {{
+            syncDateFilterButtons();
             applyAllFilters();
             const urlParams = new URLSearchParams(window.location.search);
             const openPath = urlParams.get('open');
@@ -5381,12 +5490,42 @@ def generate_portal_html(
         // LÀM MỚI DỮ LIỆU
         async function refreshData() {{
             try {{
-                const res = await fetch('/api/reports');
-                const data = await res.json();
-                if (data.ok && data.reports) {{
-                    allReports = data.reports;
+                const [repRes, datesRes] = await Promise.all([
+                    fetch('/api/reports?limit=2000'),
+                    fetch('/api/dates').catch(() => null)
+                ]);
+                const data = await repRes.json();
+                const freshReports = Array.isArray(data) ? data : (data && Array.isArray(data.reports) ? data.reports : null);
+                if (freshReports) {{
+                    allReports = freshReports;
+                    if (datesRes && datesRes.ok) {{
+                        const freshDates = await datesRes.json();
+                        if (Array.isArray(freshDates) && freshDates.length > 0) {{
+                            availableDates = freshDates;
+                            const sel = document.getElementById('archive-date-select');
+                            if (sel) {{
+                                sel.innerHTML = freshDates.map(d => `<option value="${{d.date}}">${{d.display}}</option>`).join('');
+                            }}
+                        }}
+                    }}
+                    const todayCnt = allReports.filter(r => r.date === todayDateStr).length;
+                    const elToday = document.getElementById('stat-today-count');
+                    if (elToday) elToday.innerText = `${{todayCnt}} Báo Cáo`;
+                    const elVault = document.getElementById('stat-vault-count');
+                    if (elVault) elVault.innerText = `${{allReports.length}} Báo Cáo`;
+                    if (todayCnt > 0 && autoFallbackDateUsed) {{
+                        currentDateFilter = 'today';
+                        autoFallbackDateUsed = '';
+                        syncDateFilterButtons();
+                    }} else if (todayCnt === 0 && currentDateFilter === 'today' && allReports.length > 0) {{
+                        const newestDate = (availableDates[0] && availableDates[0].date) || allReports[0].date;
+                        currentDateFilter = newestDate || 'all';
+                        autoFallbackDateUsed = currentDateFilter !== 'all' ? currentDateFilter : '';
+                        syncDateFilterButtons();
+                    }}
                     applyAllFilters();
-                    alert('Đã làm mới dữ liệu toàn hệ thống thành công (' + allReports.length + ' báo cáo)!');
+                    await loadTacticalWarRoomData();
+                    alert('Đã làm mới dữ liệu toàn hệ thống thành công (' + allReports.length + ' báo cáo, Hôm nay: ' + todayCnt + ')!');
                 }} else {{
                     location.reload();
                 }}

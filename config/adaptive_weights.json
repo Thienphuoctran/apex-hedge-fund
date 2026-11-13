@@ -1,5 +1,5 @@
 {
-  "calibrated_at": "2026-11-10T02:02:44.550702+00:00",
+  "calibrated_at": "2026-11-13T03:22:57.243806+00:00",
   "market_regime": "Standard Growth",
   "scoring_weights": {
     "macro_sector_fit": 25,
@@ -15,11 +15,11 @@
   },
   "learning_telemetry": {
     "total_tracked_assets": 35,
-    "estimated_hit_rate_pct": 70.8,
+    "estimated_hit_rate_pct": 76.0,
     "avoided_high_risk_assets_count": 4,
     "model_confidence_score": 94.5,
-    "realized_alpha_1d_pct": -1.52,
-    "realized_alpha_5d_pct": -0.03,
-    "realized_alpha_20d_pct": 6.83
+    "realized_alpha_1d_pct": 0.52,
+    "realized_alpha_5d_pct": -1.8,
+    "realized_alpha_20d_pct": 3.88
   }
 }

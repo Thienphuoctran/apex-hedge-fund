@@ -50,9 +50,11 @@ jobs:
           with open('data/current_portfolio_state.json', 'r', encoding='utf-8') as f:
               state = json.load(f)
           assert state.get('account_id') == '105C307855', 'Sai mã tài khoản TCBS'
-          assert state.get('cash_balance_vnd') == 20167119.0, f'Sai số dư tiền mặt: {state.get(\"cash_balance_vnd\")}'
-          assert state.get('status') == 'ALL_CASH_STANDDOWN', f'Sai trạng thái: {state.get(\"status\")}'
-          print('✅ [PASS] SSOT V2.0 Audit: Tài khoản Chủ tịch 105C307855 đạt chuẩn 100% tiền mặt 20,167,119 ₫.')
+          cash_bal = float(state.get('cash_balance_vnd', -1))
+          total_nav = float(state.get('total_nav_vnd', -1))
+          assert cash_bal >= 0 and total_nav >= cash_bal, f'Số dư SSOT bất hợp lệ: cash={cash_bal}, nav={total_nav}'
+          assert state.get('status') in ('ALL_CASH_STANDDOWN', 'ACTIVE_HOLDING', 'DEFENSIVE_HOLDING'), f'Trạng thái không hợp lệ: {state.get(\"status\")}'
+          print(f'✅ [PASS] SSOT V2.0 Audit: Tài khoản 105C307855 | Cash={cash_bal:,.0f} đ | NAV={total_nav:,.0f} đ | Status={state.get(\"status\")}')
           "
 
       - name: 2. Run 145-Stock Full Market Scanner & 10-Department Council Orchestrator
@@ -82,6 +84,7 @@ jobs:
           PYTHONIOENCODING: utf-8
         run: |
           python scripts/apex_inspector_trong.py --run-23h30-audit
+          python scripts/migrate_markdown_to_sqlite.py
 
       - name: 6. Commit & Push Updated Status, Market Scan, Audit & Cross-Day Continuity Ledger
         run: |

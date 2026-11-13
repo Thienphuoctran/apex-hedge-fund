@@ -848,7 +848,9 @@ def run_daemon(poll_interval: int = 15):
 
     while True:
         try:
-            now = datetime.datetime.now()
+            now = datetime.datetime.now(datetime.timezone.utc).astimezone(
+                datetime.timezone(datetime.timedelta(hours=7))
+            )
             today_str = now.strftime("%Y-%m-%d")
             current_hm = now.strftime("%H:%M")
 
@@ -857,13 +859,33 @@ def run_daemon(poll_interval: int = 15):
 
             executed_today = state["executed_milestones"][today_str]
 
+            # Cơ chế Catch-Up bù cột mốc bị lỡ nếu Cloud Render vừa thức dậy sau khi ngủ đông
+            catchup_core = ["07:30", "08:30", "15:15"]
+            targets_to_run = []
             if current_hm in SCHEDULED_MILESTONES and current_hm not in executed_today:
-                log_event(f"⏰ ĐẾN GIỜ TÁC CHIẾN CỦA CỘT MỐC: {current_hm}")
-                success = execute_milestone(current_hm)
+                targets_to_run.append(current_hm)
+            for cm in catchup_core:
+                if cm < current_hm and cm not in executed_today and cm not in targets_to_run:
+                    log_event(f"🔄 [CATCH-UP] Bù cột mốc quan trọng {cm} bị lỡ do container thức dậy sau {cm}.")
+                    targets_to_run.append(cm)
+
+            any_milestone_ok = False
+            for m_hm in targets_to_run:
+                log_event(f"⏰ ĐẾN GIỜ TÁC CHIẾN CỦA CỘT MỐC: {m_hm}")
+                success = execute_milestone(m_hm)
                 if success:
-                    executed_today.append(current_hm)
+                    executed_today.append(m_hm)
                     state["last_active"] = now.strftime("%Y-%m-%d %H:%M:%S")
                     save_state(state)
+                    any_milestone_ok = True
+
+            if any_milestone_ok:
+                try:
+                    from scripts.migrate_markdown_to_sqlite import migrate_all_markdown_reports
+                    migrate_all_markdown_reports()
+                    log_event("✅ Đã tự động đồng bộ báo cáo mới vào SQLite Vault.")
+                except Exception as sync_err:
+                    log_event(f"⚠️ Lỗi đồng bộ SQLite sau cột mốc: {sync_err}")
 
             time.sleep(poll_interval)
 

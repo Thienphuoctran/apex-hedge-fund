@@ -290,18 +290,22 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 except Exception:
                     pass
             active_pos = port_state.get("active_positions", {})
+            cash_val = float(port_state.get("cash_balance_vnd", 0.0))
+            mkt_val = float(port_state.get("total_market_val_vnd", 0.0))
+            nav_val = float(port_state.get("total_nav_vnd", cash_val + mkt_val))
             data = {
                 "status": "ok",
                 "supervisor": "HEALTHY",
                 "chairman_account": "TCBS 105C307855 (Trần Quốc Thiên Phước)",
-                "cash_vnd": port_state.get("cash_balance_vnd", 14510422.0),
-                "stock_market_val_vnd": port_state.get("total_market_val_vnd", 5650000.0),
-                "total_nav_vnd": port_state.get("total_nav_vnd", 20160422.0),
+                "cash_vnd": cash_val,
+                "stock_market_val_vnd": mkt_val,
+                "total_nav_vnd": nav_val,
                 "holdings_count": len(active_pos),
                 "active_holdings": list(active_pos.keys()),
-                "realized_round_1_profit_vnd": port_state.get("realized_pnl_vnd", 167119.0),
-                "debt_vnd": port_state.get("debt_vnd", 36.0),
-                "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                "realized_round_1_profit_vnd": float(port_state.get("realized_pnl_vnd", 167119.0)),
+                "unrealized_pnl_vnd": float(port_state.get("unrealized_pnl_vnd", 0.0)),
+                "debt_vnd": float(port_state.get("debt_vnd", 0.0)),
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).astimezone(datetime.timezone(datetime.timedelta(hours=7))).strftime("%Y-%m-%d %H:%M:%S")
             }
             self.wfile.write(json.dumps(data, ensure_ascii=False).encode("utf-8"))
             return
@@ -335,7 +339,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 dept_filter = query.get("dept", ["all"])[0]
                 shift_filter = query.get("shift", ["all"])[0]
                 search_query = query.get("search", [""])[0] or query.get("q", [""])[0]
-                limit = int(query.get("limit", [150])[0])
+                limit = int(query.get("limit", [2000])[0])
                 offset = int(query.get("offset", [0])[0])
                 reports = scan_all_institutional_reports(
                     date_filter=date_filter,
@@ -489,7 +493,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 import scripts.apex_web_portal_engine
                 importlib.reload(scripts.apex_report_scanner)
                 importlib.reload(scripts.apex_web_portal_engine)
-                reports = scripts.apex_report_scanner.scan_all_institutional_reports(limit=150)
+                reports = scripts.apex_report_scanner.scan_all_institutional_reports(limit=2000)
                 milestones = scripts.apex_report_scanner.get_daily_milestones_status()
                 dates = scripts.apex_report_scanner.get_available_archive_dates()
                 html = scripts.apex_web_portal_engine.generate_portal_html(status_data, reports, milestones, available_dates=dates)

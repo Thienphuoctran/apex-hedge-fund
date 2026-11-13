@@ -1,30 +1,31 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-11 11:14:33  
+**Thời gian cập nhật:** 2026-11-13 10:26:55  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261111-111433`  
+**Mã đồng bộ:** `SYNC-AG2P-20261113-102655`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Phân tích giúp tôi 2 video này nhé, từ sáng h tôi cứ tìm thấy thông tin về cổ phiếu BSR ấy thì bạn hãy phối hợp với Hiền, Quân và các phòng ban khác để nghiên cứu về cổ phiếu này toàn diện nhé
+* **Câu hỏi của Chủ tịch:** Chủ tịch yêu cầu cập nhật trang web và tìm + sửa dứt điểm lỗi ngày nào mở Apex Institutional Cloud Portal cũng báo 0 Báo Cáo / Không tìm thấy báo cáo nào phù hợp với bộ lọc.
 * **Kết luận & Quyết định thể chế:**
-Hoàn thành báo cáo pháp y 2 video (Tài Chính Dễ Hiểu & LEVACAPITAL BSR) và thẩm định toàn diện BSR cùng Hiền (Ban 10), Minh Quân (Ban 7 VN) và James (Ban 8). Xác nhận BSR có 28.3k tỷ tiền ròng, chiết khấu sâu 43.8% so với giá trị Graham (46.2k) nhưng đang rơi tự do về 23.x; PHÁN QUYẾT: Tuyệt đối chưa bắt đáy trước 14h00, ưu tiên quản trị 100 HDB và 100 MSH về T+0 khả dụng lúc 13h00 hôm nay, giữ nguyên két tiền 14.51M.
+Đã rà soát và sửa triệt để 5 nguyên nhân gốc rễ: (1) Bổ sung hàm migrate_all_markdown_reports() còn thiếu vào migrate_markdown_to_sqlite.py để hết lỗi ImportError khi container Render khởi động; (2) Sửa apex_report_scanner.py dùng giờ ICT (UTC+7) và luôn hợp nhất file Markdown mới với SQLite; (3) Sửa start_apex_cloud_247.py nâng limit 150->2000 và sửa apex_web_portal_engine.py / apex_tactical_war_room_engine.py đọc động 100% SSOT (12,516,471 đ Cash / 18,151,471 đ NAV / 200 CP HDB & MSH), sửa refreshData() khớp mảng JSON và thêm Smart Date Fallback tự lùi về phiên gần nhất nếu hôm nay chưa phát hành báo cáo; (4) Thêm cơ chế catch-up cột mốc vào apex_institutional_cron_daemon.py, gọi migrate vào run_master_unified_fund.py và sửa assert lỗi thời trong .github/workflows/apex_cloud_sentinel_247.yml; (5) Chạy pipeline 2026-11-13 nạp 345 báo cáo thể chế (17 báo cáo ngày 13/11) vào SQLite Vault.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Pháp y Video 1 Tài Chính Dễ Hiểu: Phân định trường phái Tăng trưởng (tên lửa) vs Cổ tức/Giá trị (cây tiền) và định vị BSR là Deep Value Cyclical
-- [x] Pháp y Video 2 LEVACAPITAL: Thẩm định 100% số liệu LNST 9T 24.9k tỷ, kế hoạch x8.6, cảnh báo crack spread hạ nhiệt 28% và LN 2027 giảm 31%
-- [x] Hiền (Ban 10) bóc tách BCTC BSR: Tiền mặt ròng +28.300 tỷ VNĐ, OCF/LNST 1.61x, tiến độ chuyển sàn HOSE đã chấp thuận
-- [x] Minh Quân (Ban 7 VN) phân tích Wyckoff/VSA: BSR Phase A Selling Climax, vol xả 7.6M, cảnh báo không bắt dao rơi, canh vùng cá mập 23.0 - 23.5k
-- [x] James (Master CIO) ra phán quyết: Khóa cứng 14.51M tiền mặt, chờ đón 100 HDB & 100 MSH về T+0 lúc 13h00, chỉ thăm dò BSR trong Khung Giờ Vàng nếu thỏa mãn setup A+
+- [x] Pull va hop nhat 2026-11-12/13 reports tu origin/main giu nguyen SSOT live 12,516,471 VND
+- [x] Sua migrate_markdown_to_sqlite.py, apex_report_scanner.py, start_apex_cloud_247.py
+- [x] Sua apex_web_portal_engine.py, apex_tactical_war_room_engine.py (SSOT dong + Smart Date Fallback)
+- [x] Sua cron daemon catch-up & GitHub Actions workflows
+- [x] Chay run_master_unified_fund.py & migrate_markdown_to_sqlite.py (345 bao cao, 17 bao cao 13/11)
+- [x] Kiem thu local HTTP server 100% PASS
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
-- **Tổng NAV:** `20,160,422 ₫`
-- **Tiền mặt thực tế:** `14,510,422 ₫`
-- **Giá trị cổ phiếu:** `5,650,000 ₫`
+- **Tổng NAV:** `18,151,471 ₫`
+- **Tiền mặt thực tế:** `12,516,471 ₫`
+- **Giá trị cổ phiếu:** `5,635,000 ₫`
 - **Vị thế nắm giữ (Ngày T+1):**
-  * **HDB**: 100 CP | Giá vốn: 22,050 ₫ | Thị giá: 22,000 ₫ | PnL: -5,000 ₫ (HOLDING_PROBE_N1)
-  * **MSH**: 100 CP | Giá vốn: 34,517 ₫ | Thị giá: 34,500 ₫ | PnL: -1,700 ₫ (HOLDING_PROBE_N1)
+  * **HDB**: 100 CP | Giá vốn: 22,057 ₫ | Thị giá: 22,350 ₫ | PnL: +29,300 ₫ (HOLDING_T0_AVAILABLE)
+  * **MSH**: 100 CP | Giá vốn: 34,510 ₫ | Thị giá: 34,000 ₫ | PnL: -51,000 ₫ (HOLDING_T0_AVAILABLE)
 
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
 1. **Về BSR & BAF:** TUYỆT ĐỐI KHÔNG BẮT ĐÁY ĐẦU GIỜ CHIỀU; chờ Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong cung T+2.5

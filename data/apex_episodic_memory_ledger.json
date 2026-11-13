@@ -1,64 +1,64 @@
 {
   "system_name": "APEX HEDGE FUND — UNIFIED EPISODIC MEMORY & TEMPORAL AWARENESS LEDGER",
-  "last_synchronized": "2026-11-09 14:51:19",
+  "last_synchronized": "09:22:53 Thứ Sáu, ngày 13/11/2026",
   "temporal_awareness": {
-    "timestamp_iso": "2026-11-09T14:09:07.733966",
-    "date_str": "2026-11-09",
-    "date_vn": "09/11/2026",
-    "time_vn": "14:09:07",
-    "weekday_index": 0,
-    "weekday_vn": "Thứ Hai",
-    "full_time_label_vn": "14:09:07 Thứ Hai, ngày 09/11/2026",
-    "market_phase": "GOLDEN_HOUR_14H00_14H25",
-    "market_phase_vn": "🔥 KHUNG GIỜ VÀNG TÁC CHIẾN (14h00-14h25 Thứ Hai) — Thời điểm quyết định giải ngân/cơ cấu",
+    "timestamp_iso": "2026-11-13T09:22:53.869227",
+    "date_str": "2026-11-13",
+    "date_vn": "13/11/2026",
+    "time_vn": "09:22:53",
+    "weekday_index": 4,
+    "weekday_vn": "Thứ Sáu",
+    "full_time_label_vn": "09:22:53 Thứ Sáu, ngày 13/11/2026",
+    "market_phase": "MORNING_SESSION",
+    "market_phase_vn": "Đang trong Phiên Sáng (Thứ Sáu) — Kỷ luật KHÔNG FOMO mua đuổi giá xanh",
     "is_trading_hours": true,
-    "next_session_note": "Sau 14h30 bước vào phiên ATC."
+    "next_session_note": "Quan sát áp lực cung cầu; chờ nhịp hấp thụ chiều."
   },
   "current_situational_awareness": {
-    "trading_date": "2026-11-09",
-    "round": "ROUND_2_ACTIVE",
-    "phase": "TRANCHE_1_COMPLETED_SUCCESSFULLY",
     "account_id": "105C307855",
     "chairman": "Trần Quốc Thiên Phước",
-    "total_nav_vnd": 20167119.0,
-    "cash_reserve_vnd": 14512119.0,
-    "invested_capital_vnd": 5655000.0,
-    "deployed_pct_nav": 28.04,
-    "cash_pct_nav": 71.96,
-    "active_holdings": [
-      {
+    "portfolio_status": "ACTIVE_HOLDING",
+    "campaign_phase": "ACTIVE_CAMPAIGN_HOLDING",
+    "initial_capital_vnd": 20000000.0,
+    "verified_tcbs_cash_vnd": 12516471.0,
+    "verified_tcbs_nav_vnd": 18151471.0,
+    "net_realized_profit_vnd": 167119.0,
+    "active_positions_count": 2,
+    "active_positions": {
+      "HDB": {
         "symbol": "HDB",
+        "name": "HDBank (HOSE)",
         "shares": 100,
-        "buy_price": 22050.0,
-        "cost_vnd": 2205000.0,
-        "stop_loss": 21220.0,
-        "tp1": 24290.0,
-        "tp2": 25820.0,
-        "settlement": "2026-11-11 13:00"
+        "tradable_shares": 100,
+        "entry_price": 22057.0,
+        "current_price": 22350.0,
+        "cost_basis_vnd": 2205700.0,
+        "market_val_vnd": 2235000.0,
+        "unrealized_pnl_vnd": 29300.0,
+        "unrealized_pnl_pct": 1.33,
+        "stop_loss": 22060.0,
+        "take_profit_tp1": 24200.0,
+        "take_profit_tp2": 25800.0,
+        "status": "HOLDING_T0_AVAILABLE"
       },
-      {
+      "MSH": {
         "symbol": "MSH",
+        "name": "May Sông Hồng (HOSE)",
         "shares": 100,
-        "buy_price": 34500.0,
-        "cost_vnd": 3450000.0,
+        "tradable_shares": 100,
+        "entry_price": 34510.0,
+        "current_price": 34000.0,
+        "cost_basis_vnd": 3451000.0,
+        "market_val_vnd": 3400000.0,
+        "unrealized_pnl_vnd": -51000.0,
+        "unrealized_pnl_pct": -1.48,
         "stop_loss": 33090.0,
-        "tp1": 39560.0,
-        "tp2": 43040.0,
-        "settlement": "2026-11-11 13:00"
+        "take_profit_tp1": 39500.0,
+        "take_profit_tp2": 43000.0,
+        "status": "HOLDING_T0_AVAILABLE"
       }
-    ],
-    "chairman_directive_memorized": {
-      "timestamp": "2026-11-09 14:51:19",
-      "directive": "Chủ tịch Trần Quốc Thiên Phước phê duyệt kế hoạch phân bổ vốn Kim Tự Tháp 3 Nhịp. Nhớ rõ cơ cấu: Giữ lại 14.51M tiền mặt (72% NAV) để sẵn sàng bung đạn cho Nhịp 2 (Breakout HDB & MSH khi nổ vol) hoặc mở vị thế thăm dò siêu cổ phiếu Radar tuần (PVT, BSR) khi thị trường thuận lợi.",
-      "status": "PERMANENTLY_MEMORIZED_SSOT"
     },
-    "standby_radar_watchlist": [
-      "PVT",
-      "BSR",
-      "BAF",
-      "IDC",
-      "TCB"
-    ]
+    "what_we_are_doing_now": "Đang nắm giữ 2 mã cổ phiếu và canh chặt ngưỡng Stop Loss 2xATR / TP1."
   },
   "completed_campaigns_chronicle": [
     {
@@ -160,33 +160,6 @@
       "total_cost_vnd": 3451700.0,
       "cash_after_trade": 14510422.0,
       "reason": "Chủ tịch thực thi thành công Lệnh 2 Limit LO Nhịp 1 Khung Giờ Vàng 14h00"
-    },
-    {
-      "execution_id": "EXEC-20261109-ROUND2-TRANCHE1",
-      "date": "2026-11-09",
-      "orders": [
-        {
-          "symbol": "HDB",
-          "action": "BUY",
-          "shares": 100,
-          "price": 22050.0,
-          "value_vnd": 2205000.0,
-          "time": "14:00:00",
-          "status": "FILLED"
-        },
-        {
-          "symbol": "MSH",
-          "action": "BUY",
-          "shares": 100,
-          "price": 34500.0,
-          "value_vnd": 3450000.0,
-          "time": "14:01:00",
-          "status": "FILLED"
-        }
-      ],
-      "total_value_vnd": 5655000.0,
-      "cash_remaining_vnd": 14512119.0,
-      "notes": "Khớp thành công 100% trong Khung Giờ Vàng (14h00-14h01) tại vùng giá chiết khấu đáy phiên rũ T+2"
     }
   ],
   "next_round_watchlist": [

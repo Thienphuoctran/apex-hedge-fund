@@ -46,6 +46,7 @@ jobs:
           CAPITAL_VND: ${{ github.event.inputs.capital_vnd || '20000000' }}
         run: |
           python scripts/run_master_unified_fund.py --capital-vnd $CAPITAL_VND
+          python scripts/migrate_markdown_to_sqlite.py
 
       - name: Commit & Push Updated Research, BCTC Reports & Blotters
         run: |

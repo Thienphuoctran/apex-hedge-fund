@@ -1,25 +1,25 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-13 01:29:22`  
+*Cập nhật gần nhất*: `2026-11-13 10:24:23`  
 *Trạng thái hệ thống*: **`✅ TOÀN BỘ 9 PHÒNG BAN TRỰC CHIẾN 24/7 ỔN ĐỊNH`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`2 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
 ## 1. Giám Sát Cổ Phiếu Đang Đầu Tư (Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR)
 | Mã CP | Thị Trường | Giá Hiện Tại | Biến Động | Ngưỡng Stop 2xATR | Cách Stop | Mục Tiêu TP1 | Cách TP1 | Vol Surge | Trạng Thái Tác Chiến |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`HDB`** | VIETNAM | `22,500.00 VND` | `+0.00%` | `21,220.00 VND` | `+5.69%` | `24,290.00 VND` | `+7.96%` | `0.0x` | ✅ Đang canh 2 đầu |
-| **`MSH`** | VIETNAM | `34,000.00 VND` | `+0.00%` | `33,090.00 VND` | `+2.68%` | `39,560.00 VND` | `+16.35%` | `0.0x` | ✅ Đang canh 2 đầu |
+| **`HDB`** | VIETNAM | `22,450.00 VND` | `+0.22%` | `22,060.00 VND` | `+1.74%` | `24,200.00 VND` | `+7.80%` | `0.4x` | ✅ Đang canh 2 đầu |
+| **`MSH`** | VIETNAM | `33,700.00 VND` | `+0.88%` | `33,090.00 VND` | `+1.81%` | `39,500.00 VND` | `+17.21%` | `0.0x` | ✅ Đang canh 2 đầu |
 
 ## 2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực
 | Chuyên Viên | Mã CP | Giá Hiện Tại | Tín Hiệu Sóng | Chất Lượng BCTC | Điểm Mua Chuẩn | Cắt Lỗ 2xATR | Chốt Lời TP1 |
 | :--- | :---: | :---: | :--- | :---: | :---: | :---: | :---: |
-| **Minh Quân (VN)** | **`POW`** | `12,600 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`88.4/100`) | `12,537 ₫` | `12,064 ₫` | `13,725 ₫` |
-| **Minh Quân (VN)** | **`MSN`** | `71,200 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`90.3/100`) | `70,844 ₫` | `67,657 ₫` | `78,640 ₫` |
-| **Minh Quân (VN)** | **`CTG`** | `31,550 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`93.1/100`) | `31,392 ₫` | `30,429 ₫` | `33,905 ₫` |
-| **Minh Quân (VN)** | **`MWG`** | `73,000 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`94.1/100`) | `72,635 ₫` | `69,757 ₫` | `79,810 ₫` |
-| **Minh Quân (VN)** | **`HDB`** | `22,500 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`96.8/100`) | `22,388 ₫` | `21,364 ₫` | `24,885 ₫` |
-| **Alex (Global)** | **`NVDA`** | `$164.72` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`78.7/100`) | `$160.99` | `$143.40` | `$207.36` |
-| **Alex (Global)** | **`TSM`** | `$408.36` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`90.8/100`) | `$401.83` | `$371.04` | `$483.00` |
-| **Alex (Global)** | **`AVGO`** | `$365.18` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`86.4/100`) | `$358.50` | `$327.01` | `$441.52` |
+| **Minh Quân (VN)** | **`HHV`** | `9,680 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AA** (`84.7/100`) | `9,632 ₫` | `9,203 ₫` | `10,682 ₫` |
+| **Minh Quân (VN)** | **`POW`** | `12,700 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`89.2/100`) | `12,636 ₫` | `12,143 ₫` | `13,870 ₫` |
+| **Minh Quân (VN)** | **`MSN`** | `71,500 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`90.3/100`) | `71,142 ₫` | `68,086 ₫` | `78,670 ₫` |
+| **Minh Quân (VN)** | **`PC1`** | `16,750 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`87.7/100`) | `16,666 ₫` | `15,955 ₫` | `18,420 ₫` |
+| **Minh Quân (VN)** | **`HPG`** | `21,150 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`89.4/100`) | `21,044 ₫` | `20,114 ₫` | `23,325 ₫` |
+| **Alex (Global)** | **`NVDA`** | `$166.19` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`78.7/100`) | `$162.46` | `$144.87` | `$208.83` |
+| **Alex (Global)** | **`TSM`** | `$405.49` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`90.8/100`) | `$398.96` | `$368.17` | `$480.13` |
+| **Alex (Global)** | **`AVGO`** | `$364.36` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`86.4/100`) | `$357.68` | `$326.19` | `$440.70` |
 
 ---
 

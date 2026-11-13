@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-13T01:29:14.088515+00:00",
+  "timestamp_utc": "2026-11-13T03:22:53.728450+00:00",
   "scan_date": "2026-11-13",
   "total_us_filings_count": 368,
-  "total_vn_announcements_count": 33,
+  "total_vn_announcements_count": 37,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "8-K",
@@ -285,20 +285,20 @@
       "total_recent_filings": 10
     },
     "FPT": {
-      "latest_event_type": "CO_TUC",
-      "latest_title": "FPT Telecom sắp chi gần 1.500 tỷ đồng trả cổ tức, Bộ Công an nhận hơn 741 tỷ đồng và hàng chục triệu cổ phiếu thưởng",
-      "severity": "WARNING",
-      "published_at": "Fri, 13 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/fpt-telecom-sap-chi-gan-1500-ty-dong-tra-co-tuc-bo-cong-an-nhan-hon-741-ty-dong-va-hang-chuc-trieu-co-phieu-thuong-188261112175409976.chn",
-      "total_announcements": 4
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Quỹ đầu tư mạo hiểm với sự góp mặt của Vingroup, Sovico, FPT, VNG vừa có động thái mới",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 08:38:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-mao-hiem-voi-su-gop-mat-cua-vingroup-sovico-fpt-vng-vua-co-dong-thai-moi-188261113083825657.chn",
+      "total_announcements": 6
     },
     "HCM": {
-      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "latest_title": "TP.HCM thiếu công nhân xây dựng dù thu nhập lên tới 20 triệu đồng/tháng",
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Quỹ đầu tư mạo hiểm với sự góp mặt của Vingroup, Sovico, FPT, VNG vừa có động thái mới",
       "severity": "INFO",
-      "published_at": "Thu, 12 Nov 26 20:16:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-thieu-cong-nhan-xay-dung-du-thu-nhap-len-toi-20-trieu-dong-thang-188261112193910212.chn",
-      "total_announcements": 7
+      "published_at": "Fri, 13 Nov 26 08:38:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-mao-hiem-voi-su-gop-mat-cua-vingroup-sovico-fpt-vng-vua-co-dong-thai-moi-188261113083825657.chn",
+      "total_announcements": 8
     },
     "MSN": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -314,6 +314,22 @@
       "severity": "RED_FLAG",
       "published_at": "Thu, 12 Nov 26 08:12:00 +0700",
       "source_url": "https://cafef.vn/lanh-dao-bi-khoi-to-cong-ty-nganh-dien-hon-3000-ty-dong-thay-ghe-nong-188261112080033911.chn",
+      "total_announcements": 1
+    },
+    "KDH": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 08:28:00 +0700",
+      "source_url": "https://cafef.vn/dragon-capital-khong-con-la-co-dong-lon-tai-nha-khang-dien-188261113082848084.chn",
+      "total_announcements": 1
+    },
+    "PVS": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "PVS sắp họp ĐHĐCĐ bất thường để bàn về nhân sự",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 08:27:00 +0700",
+      "source_url": "https://cafef.vn/pvs-sap-hop-dhdcd-bat-thuong-de-ban-ve-nhan-su-188261113082743059.chn",
       "total_announcements": 1
     },
     "PNJ": {
@@ -4835,6 +4851,31 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "FPT",
+        "HCM"
+      ],
+      "title": "Quỹ đầu tư mạo hiểm với sự góp mặt của Vingroup, Sovico, FPT, VNG vừa có động thái mới",
+      "summary": "Cơ quan điều hành Trung tâm Tài chính quốc tế Việt Nam tại TP.HCM (VIFC-HCMC) vừa công bố Thỏa thuận hợp tác khung với Touchstone Partners (Touchstone) và Công ty CP Quỹ Đầu tư mạo hiểm TP.HCM (HCM VIF)....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 08:38:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-mao-hiem-voi-su-gop-mat-cua-vingroup-sovico-fpt-vng-vua-co-dong-thai-moi-188261113083825657.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Nhiều đối tác quốc tế bó tay, kỹ sư FPT tại Mỹ tìm ra lời giải chỉ trong 4 tuần",
+      "summary": "Một kỹ sư FPT tại Mỹ đã sử dụng trí tuệ nhân tạo (AI) để phát triển giải pháp truy xuất nguồn gốc pin ô tô trong khoảng 4 tuần, sau khi nhiều nhóm kỹ thuật và đối tác quốc tế của khách hàng chưa đáp ứng được yêu cầu đặt ...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 08:27:00 +0700",
+      "source_url": "https://cafef.vn/nhieu-doi-tac-quoc-te-bo-tay-ky-su-fpt-tai-my-tim-ra-loi-giai-chi-trong-4-tuan-188261113082256181.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "FPT"
       ],
       "title": "FPT Telecom sắp chi gần 1.500 tỷ đồng trả cổ tức, Bộ Công an nhận hơn 741 tỷ đồng và hàng chục triệu cổ phiếu thưởng",
@@ -4891,6 +4932,30 @@
       "severity": "RED_FLAG",
       "published_at": "Thu, 12 Nov 26 08:12:00 +0700",
       "source_url": "https://cafef.vn/lanh-dao-bi-khoi-to-cong-ty-nganh-dien-hon-3000-ty-dong-thay-ghe-nong-188261112080033911.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "KDH"
+      ],
+      "title": "Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền",
+      "summary": "Sau khi bán ra tổng cộng 710.000 cổ phiếu KDH trong phiên 12/11/2026, Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 08:28:00 +0700",
+      "source_url": "https://cafef.vn/dragon-capital-khong-con-la-co-dong-lon-tai-nha-khang-dien-188261113082848084.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PVS"
+      ],
+      "title": "PVS sắp họp ĐHĐCĐ bất thường để bàn về nhân sự",
+      "summary": "PVS dự tổ chức cuộc họp ĐHĐCĐ bất thường vào ngày 29/12/2026 bằng hình thức trực tuyến nhằm thông qua các vấn đề về công tác nhân sự Thành viên HĐQT của công ty....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 08:27:00 +0700",
+      "source_url": "https://cafef.vn/pvs-sap-hop-dhdcd-bat-thuong-de-ban-ve-nhan-su-188261113082743059.chn"
     },
     {
       "market": "VIETNAM",
@@ -4982,6 +5047,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng miếng, vàng nhẫn trơn sáng 13/11 đồng loạt giảm sâu tại SJC, DOJI, PNJ, Bảo Tín Minh Châu",
+      "summary": "Người đi bán vàng 9999 lúc này chỉ có thể thu về với giá khoảng 131 - 135 triệu đồng/lượng, tuỳ loại vàng và doanh nghiệp....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 08:43:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-tron-sang-13-11-dong-loat-giam-sau-tai-sjc-doji-pnj-bao-tin-minh-chau-188261112231426077.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "ACB"
       ],
       "title": "ACB vượt mốc thương hiệu 1,4 tỷ USD, vào Top 3 ngân hàng tư nhân giá trị nhất Việt Nam",
@@ -4990,18 +5067,6 @@
       "severity": "INFO",
       "published_at": "Fri, 13 Nov 26 07:30:00 +0700",
       "source_url": "https://cafef.vn/acb-vuot-moc-thuong-hieu-14-ty-usd-vao-top-3-ngan-hang-tu-nhan-gia-tri-nhat-viet-nam-188261112233717134.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng miếng, vàng nhẫn trơn sáng 13/11 tại SJC, DOJI, PNJ, Bảo Tín Minh Châu",
-      "summary": "Giá vàng thế giới giảm mạnh hơn 3% trong tối 12/11, lùi sâu dưới ngưỡng 3.900 USD/ounce. Trong nước, vàng miếng SJC kết thúc ngày giao dịch 12/11 ở mức bán ra 139 triệu đồng/lượng, giảm 1 triệu đồng so với cuối ngày trướ...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 03:06:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-tron-sang-13-11-tai-sjc-doji-pnj-bao-tin-minh-chau-188261112231426077.chn"
     },
     {
       "market": "VIETNAM",
