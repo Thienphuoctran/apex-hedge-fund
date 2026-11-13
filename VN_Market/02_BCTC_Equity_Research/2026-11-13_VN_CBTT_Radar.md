@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-13 16:19:26  
-> **Số sự kiện ghi nhận:** 33 thông báo  
+> **Thời gian quét:** 2026-11-13 20:19:24  
+> **Số sự kiện ghi nhận:** 34 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -13,7 +13,6 @@
 | **FPT** | `CO_TUC` | ⚠️ CHÚ Ý | FPT Telecom sắp chi gần 1.500 tỷ đồng trả cổ tức, Bộ Công an nhận hơn 741 tỷ đồng và hàng chục triệu cổ phiếu thưởng | [Xem Link](https://cafef.vn/fpt-telecom-sap-chi-gan-1500-ty-dong-tra-co-tuc-bo-cong-an-nhan-hon-741-ty-dong-va-hang-chuc-trieu-co-phieu-thuong-188261112175409976.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | TP.HCM thiếu công nhân xây dựng dù thu nhập lên tới 20 triệu đồng/tháng | [Xem Link](https://cafef.vn/tphcm-thieu-cong-nhan-xay-dung-du-thu-nhap-len-toi-20-trieu-dong-thang-188261112193910212.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | GELEX thuộc Top 50 công ty niêm yết kinh doanh hiệu quả nhất Việt Nam năm 2026 | [Xem Link](https://cafef.vn/gelex-thuoc-top-50-cong-ty-niem-yet-kinh-doanh-hieu-qua-nhat-viet-nam-nam-2026-188261112122220129.chn) |
-| **MSN** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Hệ sinh thái Masan ghi dấu tại TOP 50 Công ty niêm yết kinh doanh hiệu quả nhất Việt Nam | [Xem Link](https://cafef.vn/he-sinh-thai-masan-ghi-dau-tai-top-50-cong-ty-niem-yet-kinh-doanh-hieu-qua-nhat-viet-nam-188261112102118059.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khai sai thuế, PNJ bị phạt gần 2 tỷ đồng | [Xem Link](https://cafef.vn/khai-sai-thue-pnj-bi-phat-gan-2-ty-dong-188261113204306125.chn) |
 | **NKG** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ái nữ kín tiếng của Chủ tịch Hồ Minh Quang lần đầu đăng ký mua cổ phiếu Thép Nam Kim | [Xem Link](https://cafef.vn/ai-nu-kin-tieng-cua-chu-tich-ho-minh-quang-lan-dau-dang-ky-mua-co-phieu-thep-nam-kim-188261113200054275.chn) |
 | **KDH** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền | [Xem Link](https://cafef.vn/dragon-capital-khong-con-la-co-dong-lon-tai-nha-khang-dien-188261113082848084.chn) |
@@ -22,6 +21,7 @@
 | **MBS, PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu lần thứ 4 | [Xem Link](https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-lan-thu-4-188261112195218052.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Gần 200 cổ phiếu giảm giá, khối ngoại bán ròng đột biến | [Xem Link](https://cafef.vn/gan-200-co-phieu-giam-gia-khoi-ngoai-ban-rong-dot-bien-188261112181544927.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cơn bĩ cực của cổ đông FPT | [Xem Link](https://cafef.vn/con-bi-cuc-cua-co-dong-fpt-18826111215335329.chn) |
+| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 14/11, gửi dưới 1 tỷ đồng kỳ hạn 18 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-14-11-gui-duoi-1-ty-dong-ky-han-18-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261113224114723.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn trơn chiều 13/11 tại SJC, DOJI, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-tron-chieu-13-11-tai-sjc-doji-pnj-bao-tin-minh-chau-va-bao-tin-manh-hai-188261112231426077.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | ACB vượt mốc thương hiệu 1,4 tỷ USD, vào Top 3 ngân hàng tư nhân giá trị nhất Việt Nam | [Xem Link](https://cafef.vn/acb-vuot-moc-thuong-hieu-14-ty-usd-vao-top-3-ngan-hang-tu-nhan-gia-tri-nhat-viet-nam-188261112233717134.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 13/11, gửi dưới 1 tỷ đồng kỳ hạn 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-13-11-gui-duoi-1-ty-dong-ky-han-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261112234438454.chn) |
@@ -29,6 +29,7 @@
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Một ngân hàng nhỏ bất ngờ vượt BIDV để lọt Top 5 nhà băng có tỷ trọng tiền gửi giá rẻ dẫn đầu cùng MB, Vietcombank, Techcombank, VietinBank | [Xem Link](https://cafef.vn/mot-ngan-hang-nho-bat-ngo-vuot-bidv-de-lot-top-5-nha-bang-co-ty-trong-tien-gui-gia-re-dan-dau-cung-mb-vietcombank-techcombank-vietinbank-188261112125252795.chn) |
 | **HCM** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | HDBank, Vietjet và Vikki đồng hành mùa mua sắm cuối năm TP.HCM, kết nối ưu đãi tài chính – hàng không – du lịch | [Xem Link](https://cafef.vn/hdbank-vietjet-va-vikki-dong-hanh-mua-mua-sam-cuoi-nam-tphcm-ket-noi-uu-dai-tai-chinh-hang-khong-du-lich-188261112085820623.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 12/11, gửi dưới 1 tỷ đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-12-11-gui-duoi-1-ty-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261111232658813.chn) |
+| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Tuyến cao tốc hơn 14.900 tỷ đồng, dài 22 km nối TP.HCM với siêu sân bay 16 tỷ USD chưa từng có trong lịch sử Việt Nam, rộng gấp 6 lần Tân Sơn Nhất đạt cột mốc quan trọng | [Xem Link](https://cafef.vn/tuyen-cao-toc-hon-14900-ty-dong-dai-22-km-noi-tphcm-voi-sieu-san-bay-16-ty-usd-chua-tung-co-trong-lich-su-viet-nam-rong-gap-6-lan-tan-son-nhat-dat-cot-moc-quan-trong-188261113224055041.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bất ngờ căn hộ chung cư tại TPHCM có lượng tiêu thụ tháng 10 tăng gấp 2,2 lần tháng trước | [Xem Link](https://cafef.vn/tphcm-cu-100-can-biet-thu-nha-pho-duoc-ban-ra-thi-co-toi-95-can-khong-ban-duoc-188261113135928595.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | BLUEMARQ khởi công The Grand Tower, chào mừng 23 năm thành lập | [Xem Link](https://cafef.vn/bluemarq-khoi-cong-the-grand-tower-chao-mung-23-nam-thanh-lap-188261113144624278.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thành phố giàu nhất Việt Nam sắp xây cầu hơn 5.000 tỷ đồng nối Thủ Thiêm với khu Nam TP.HCM, dài 2,16 km, rộng 8 làn xe, có đường đi bộ độc đáo chưa từng có | [Xem Link](https://cafef.vn/thanh-pho-giau-nhat-viet-nam-sap-xay-cau-hon-5000-ty-dong-noi-thu-thiem-voi-khu-nam-tphcm-dai-216-km-rong-8-lan-xe-co-duong-di-bo-doc-dao-chua-tung-co-188261113105825893.chn) |
