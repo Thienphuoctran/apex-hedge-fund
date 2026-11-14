@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13 20:19:35",
+  "generated_at": "2026-11-14 00:58:03",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "DXG",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Sat, 14 Nov 26 0",
+      "headline": "Dragon Capital nâng tỷ lệ sở hữu tại Bluemarq Group lên hơn 6%",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "DXG,KDH",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 13 Nov 26 1",
@@ -372,14 +380,6 @@
       "date": "Fri, 13 Nov 26 0",
       "headline": "FPT Telecom sắp chi gần 1.500 tỷ đồng trả cổ tức, Bộ Công an nhận hơn 741 tỷ đồng và hàng chục triệu cổ phiếu thưởng",
       "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "HCM",
-      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
-      "date": "Thu, 12 Nov 26 2",
-      "headline": "TP.HCM thiếu công nhân xây dựng dù thu nhập lên tới 20 triệu đồng/tháng",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 374 hồ sơ SEC & 34 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 371 hồ sơ SEC & 34 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
