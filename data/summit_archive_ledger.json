@@ -1,0 +1,52 @@
+{
+  "sessions": [
+    {
+      "meeting_id": "APEX-SUMMIT-20261116-0045",
+      "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (V10.0 — CHIẾN LƯỢC CƠ ĐỘNG TUẦN MỚI)",
+      "topic": "Thị trường Tuần Sau (16/11 – 20/11/2026) — Tranh biện Chiến lược Toàn Vũ Trụ & Kế hoạch Đầu tư Cơ động",
+      "meeting_window_str": "00h45 – 01h15 (30 Phút)",
+      "prep_window_str": "00h25 – 00h45 (Nghiên Cứu T-20p)",
+      "start_time": "2026-11-16T00:45:00+07:00",
+      "end_time": "2026-11-16T01:15:00+07:00",
+      "chairman_approved": false,
+      "approval_time": null,
+      "archived_at": "2026-11-16T00:42:54.710415+07:00",
+      "archived_display": "16/11/2026 00:42:54",
+      "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
+      "archived_by": "Palmer & Ban 11 Archive",
+      "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261116-0045.json",
+      "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261116-0045_Bien_Ban_Luu_Tru.md",
+      "james_summary_path": "08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_Tuan_Co_Dong.md",
+      "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md",
+      "turns_count": 26,
+      "prep_dossiers_count": 14,
+      "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện thật 100%)",
+      "summary_headline": "Tổng kết phiên 00h45 – 01h15 (30 Phút) — Kế hoạch Tuần 16/11–20/11 (Tham khảo cơ động từng ngày trên 6 mã trọng tâm)"
+    },
+    {
+      "meeting_id": "APEX-SUMMIT-20261115-2345",
+      "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (V9.0 — CHIẾN LƯỢC TUẦN MỚI)",
+      "topic": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới",
+      "meeting_window_str": "23h45 – 00h15 (30 Phút)",
+      "prep_window_str": "23h30 – 23h45 (Chuẩn Bị T-15p)",
+      "start_time": "2026-11-15T23:45:00+07:00",
+      "end_time": "2026-11-16T00:15:00+07:00",
+      "chairman_approved": false,
+      "approval_time": null,
+      "archived_at": "2026-11-16T00:28:16.364279+07:00",
+      "archived_display": "16/11/2026 00:28:16",
+      "archive_reason": "PRESERVED_23H45_BEFORE_V10",
+      "archived_by": "Palmer & Ban 11 Archive",
+      "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261115-2345.json",
+      "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261115-2345_Bien_Ban_Luu_Tru.md",
+      "james_summary_path": null,
+      "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-15_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md",
+      "turns_count": 26,
+      "prep_dossiers_count": 14,
+      "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện thật 100%)",
+      "summary_headline": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới"
+    }
+  ],
+  "total_archived": 2,
+  "last_updated": "2026-11-16T00:42:54.855191+07:00"
+}

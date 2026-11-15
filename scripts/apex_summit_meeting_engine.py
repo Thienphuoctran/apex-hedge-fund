@@ -94,389 +94,81 @@ def _get_live_enterprise_mesh() -> Dict[str, Any]:
 
 
 def get_default_summit_data() -> Dict[str, Any]:
-    """Khởi tạo cấu trúc dữ liệu thể chế chuẩn hóa cho Đại Hội Nghị Thượng Đỉnh."""
+    """Khởi tạo cấu trúc dữ liệu thể chế chuẩn hóa V10.0 cho Đại Hội Nghị Thượng Đỉnh."""
+    from scripts.apex_autonomous_council_engine import (
+        CHARTER_REPORT_PATH,
+        SUMMIT_CHARTER_RULES,
+        build_autonomous_summit_session,
+        load_summit_archive_ledger,
+    )
     try:
-        from scripts.apex_autonomous_council_engine import build_autonomous_summit_session
         sess = build_autonomous_summit_session()
         sess["enterprise_mesh_session"] = _get_live_enterprise_mesh()
         return sess
     except Exception as e:
-        print(f"Fallback to legacy summit data: {e}")
-    acc = _get_live_account_state_dict()
-    return {
-        "meeting_id": "APEX-SUMMIT-20261108-2100",
-        "title": "ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX",
-        "subtitle": "Đại Phẫu Vĩ Mô Phố Wall/SBV • Pháp Y BCTC Top 4 Tiền Thật • Kế Hoạch Tác Chiến Phiên Đầu Tuần",
-        "start_time": "2026-11-08T21:00:00+07:00",
-        "end_time": "2026-11-08T21:30:00+07:00",
-        "duration_minutes": 30,
-        "mode": "REALTIME_SYNCHRONIZED",
-        "chairman": "Chủ tịch Hội đồng Quản trị — Trần Quốc Thiên Phước",
-        "chairperson_host": "Master CIO James (Ban 8) & Palmer (Cố vấn Điều hành)",
-        "permanent_inspector": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Thường Trực Bất Biến)",
-        "account_state": {
-            "account_no": acc["account_no"],
-            "total_nav": acc["total_nav"],
-            "cash_balance": acc["cash_balance"],
-            "cash_ratio": acc["cash_ratio"],
-            "equity_risk": acc["equity_risk"],
-            "realized_profit_v1": acc["realized_profit_v1"],
-        },
-        "compliance_audit": {
-            "inspector": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
-            "constitution_version": "Hiến Chương Doanh Nghiệp Apex V1.0",
-            "compliance_score": 100,
-            "violations_detected": 0,
-            "rule_checks": [
-                {"rule": "Điều 1: Tuyệt đối bảo vệ vốn (Stop <= 6.8%)", "status": "PASSED"},
-                {"rule": "Điều 2: Làm thật việc thật, số liệu OCF thật 100%", "status": "PASSED"},
-                {"rule": "Điều 6: 1 lô 100 CP không vượt quá 33% NAV (Thị giá <= 36k)", "status": "PASSED"},
-                {"rule": "Điều 7: Khung Giờ Vàng 14h00-14h25, cấm FOMO sáng Thứ Hai", "status": "PASSED"},
-                {"rule": "Điều 10: Chủ tịch giữ quyền quyết định và Smart OTP tối cao", "status": "PASSED"}
-            ]
-        },
-        "phases": [
-            {
-                "id": 1,
-                "name": "GIAI ĐOẠN 1: NGHIÊN CỨU & BÁO CÁO CÔNG VIỆC CHUẨN BỊ",
-                "time_window": "21h00 – 21h20 (20 Phút Đầu)",
-                "steps": [
-                    {"step": 1, "minute": "00 – 03", "label": "Khai mạc & Điểm danh tài khoản", "owner": "James, Palmer & Nam"},
-                    {"step": 2, "minute": "03 – 08", "label": "Báo cáo Vĩ mô & Kịch bản VN-Index 1.700", "owner": "Ban 1 (Vĩ mô) & Long"},
-                    {"step": 3, "minute": "08 – 13", "label": "Pháp y BCTC & Lọc Top 4 Tiền Thật", "owner": "Ban 2 (Pháp Y BCTC) & Hiền"},
-                    {"step": 4, "minute": "13 – 17", "label": "Quản trị rủi ro & Định cỡ vị thế", "owner": "Ban 4 (Hội Đồng Định Lượng)"},
-                    {"step": 5, "minute": "17 – 20", "label": "Chiến thuật Khung Giờ Vàng 14h00", "owner": "Minh Quân (Ban 7 VN)"}
-                ]
+        print(f"[SummitEngine] Lỗi khởi tạo phiên họp V10.0: {e}")
+        acc = _get_live_account_state_dict()
+        now_ict = datetime.now(ICT_TZ)
+        ledger = load_summit_archive_ledger()
+        return {
+            "meeting_id": f"APEX-SUMMIT-STANDBY-{now_ict.strftime('%Y%m%d-%H%M')}",
+            "version": "10.0-Autonomous-Charter-Vault",
+            "title": "ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX",
+            "subtitle": "Phòng họp đang ở trạng thái chờ triệu tập phiên mới theo Hiến Chương 5 Điều",
+            "start_time": now_ict.isoformat(timespec="seconds"),
+            "end_time": now_ict.isoformat(timespec="seconds"),
+            "prep_start_time": now_ict.isoformat(timespec="seconds"),
+            "prep_minutes": 20,
+            "duration_minutes": 30,
+            "mode": "CLEANED_STANDBY",
+            "status_override": "CLEANED_STANDBY",
+            "account_state": acc,
+            "charter_report_path": CHARTER_REPORT_PATH,
+            "summit_charter_rules": SUMMIT_CHARTER_RULES,
+            "phases": [],
+            "voting_board": [],
+            "timeline_stream": [],
+            "pre_summit_prep_stream": [],
+            "dynamic_messages": [],
+            "inspector_notes": [],
+            "james_executive_summary": None,
+            "archive_summary": {
+                "total_archived": ledger.get("total_archived", 0),
+                "archived_sessions": ledger.get("sessions", [])[:15],
             },
-            {
-                "id": 2,
-                "name": "GIAI ĐOẠN 2: TRANH BIỆN ĐỐI KHÁNG, BIỂU QUYẾT & KẾT LUẬN",
-                "time_window": "21h20 – 21h30 (10 Phút Cuối)",
-                "steps": [
-                    {"step": 6, "minute": "20 – 25", "label": "Tranh biện nảy lửa & Phản biện chéo 3 câu hỏi", "owner": "Ban 3, Trọng, James & Minh Quân"},
-                    {"step": 7, "minute": "25 – 28", "label": "Biểu quyết thể chế Sổ Lệnh Vòng 2", "owner": "Toàn thể Hội đồng & Chủ tịch"},
-                    {"step": 8, "minute": "28 – 30", "label": "Kiểm toán kỷ luật & Niêm phong Nghị quyết", "owner": "Tổng Kiểm Sát Viên Trọng & James"}
-                ]
-            }
-        ],
-        "voting_board": [
-            {
-                "ticker": "HDB",
-                "name": "Ngân hàng Phát triển TP.HCM (HDBank)",
-                "sector": "Ngân Hàng",
-                "price": "22,500 ₫",
-                "lot_cost": "2,250,000 ₫ (11.2% NAV)",
-                "ocf_lnst": "1.16x",
-                "rs_score": 95,
-                "stop_loss": "21,220 ₫ (-5.69%)",
-                "votes_for": 12,
-                "votes_against": 0,
-                "status": "APPROVED",
-                "action": "Kê lệnh Limit LO quanh 22.3 - 22.5 (1 lô 100 CP)"
-            },
-            {
-                "ticker": "MSH",
-                "name": "May Sông Hồng",
-                "sector": "Dệt May Xuất Khẩu",
-                "price": "35,500 ₫",
-                "lot_cost": "3,550,000 ₫ (17.6% NAV)",
-                "ocf_lnst": "1.42x",
-                "rs_score": 94,
-                "stop_loss": "33,090 ₫ (-6.79%)",
-                "votes_for": 12,
-                "votes_against": 0,
-                "status": "APPROVED",
-                "action": "Kê lệnh Limit LO quanh 35.0 - 35.5 (1 lô 100 CP)"
-            },
-            {
-                "ticker": "BAF",
-                "name": "Nông nghiệp BAF Việt Nam",
-                "sector": "Nông Nghiệp 3F",
-                "price": "30,900 ₫",
-                "lot_cost": "3,090,000 ₫ (15.3% NAV)",
-                "ocf_lnst": "1.18x",
-                "rs_score": 96,
-                "stop_loss": "29,650 ₫ (-4.05%)",
-                "votes_for": 11,
-                "votes_against": 1,
-                "status": "APPROVED",
-                "action": "Kê lệnh Limit LO quanh 30.7 - 30.9 (1 lô 100 CP)"
-            },
-            {
-                "ticker": "IDC",
-                "name": "Tổng Công ty IDICO (HNX)",
-                "sector": "BĐS Khu Công Nghiệp",
-                "price": "34,900 ₫",
-                "lot_cost": "3,490,000 ₫ (17.3% NAV)",
-                "ocf_lnst": "1.48x",
-                "rs_score": 81,
-                "stop_loss": "32,530 ₫ (-6.79%)",
-                "votes_for": 12,
-                "votes_against": 0,
-                "status": "APPROVED",
-                "action": "Kê lệnh Limit LO quanh 34.5 - 34.9 (1 lô 100 CP)"
-            }
-        ],
-        "timeline_stream": [
-            {
-                "id": "msg_001",
-                "minute": 0,
-                "time_str": "21:00:15",
-                "phase_step": 1,
-                "sender_name": "Master CIO James",
-                "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
-                "role": "Chủ Trì Điều Phối",
-                "avatar": "🎖️",
-                "badge": "CHỦ TRÌ",
-                "badge_color": "#38bdf8",
-                "content": "Kính thưa Chủ tịch Hội đồng Quản trị Trần Quốc Thiên Phước và toàn thể các đồng chí! Đúng 21h00, tôi xin chính thức tuyên bố khai mạc ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX. Cuộc họp diễn ra đúng thời lượng 30 phút theo lệnh của Chủ tịch.",
-                "highlight": "Khai mạc hội nghị đúng 21h00",
-                "metrics": None
-            },
-            {
-                "id": "msg_002",
-                "minute": 1,
-                "time_str": "21:01:10",
-                "phase_step": 1,
-                "sender_name": "Palmer",
-                "department": "Ban Cố Vấn Điều Hành Tối Cao",
-                "role": "Cố Vấn Điều Hành",
-                "avatar": "🏛️",
-                "badge": "ĐIỀU PHỐI",
-                "badge_color": "#c084fc",
-                "content": "Báo cáo Chủ tịch và Tổng Tư Lệnh James: Hội đồng điểm danh xác nhận có mặt đầy đủ 100% quân số gồm 12 Trưởng phòng ban chuyên trách, đồng chí Long (Strategic Brain), đồng chí Nam (Operations) và Tổng Kiểm Sát Viên Trọng (Ban 12) túc trực giám sát toàn diện.",
-                "highlight": "Điểm danh đủ 100% quân số",
-                "metrics": {"attendance": "100%", "active_members": 15}
-            },
-            {
-                "id": "msg_003",
-                "minute": 2,
-                "time_str": "21:02:05",
-                "phase_step": 1,
-                "sender_name": "Nam",
-                "department": "Văn Phòng Điều Hành Thực Chiến",
-                "role": "Trợ Lý Điều Hành",
-                "avatar": "💼",
-                "badge": "ĐỐI SOÁT TÀI SẢN",
-                "badge_color": "#34d399",
-                "content": f"Báo cáo Chủ tịch: Tôi đã hoàn tất đối soát trực tiếp số dư tài khoản {acc['account_no']}. Hiện trạng tài sản chuẩn SSOT: Tổng NAV {acc['total_nav']} — Tiền mặt {acc['cash_balance']} ({acc['cash_ratio']}), Cổ phiếu {acc['equity_risk']}. Lợi nhuận thực nhận {acc['realized_profit_v1']}!",
-                "highlight": f"Xác nhận SSOT: NAV {acc['total_nav']} | Cash {acc['cash_balance']} ({acc['cash_ratio']})",
-                "metrics": {"nav": acc["total_nav"], "cash": acc["cash_balance"], "cash_ratio": acc["cash_ratio"], "risk_equity": acc["equity_risk"]}
-            },
-            {
-                "id": "msg_004",
-                "minute": 3,
-                "time_str": "21:03:30",
-                "phase_step": 2,
-                "sender_name": "Trưởng Ban 1 VN",
-                "department": "Ban 1 VN — Vĩ Mô & Dòng Tiền",
-                "role": "Chuyên Gia Vĩ Mô",
-                "avatar": "🌐",
-                "badge": "BÁO CÁO VĨ MÔ",
-                "badge_color": "#60a5fa",
-                "content": "Kính thưa Chủ tịch: Tuần qua Phố Wall bốc hơi 2.500 tỷ USD do lo ngại Fed duy trì lãi suất cao và giá dầu biến động. Tại Việt Nam, tỷ giá USD/VND đang chịu áp lực nhẹ, SBV tiếp tục điều tiết linh hoạt qua tín phiếu. VN-Index sau phiên Thứ Sáu đỏ lửa (-15 điểm) đang hướng về kiểm định vùng hỗ trợ then chốt 1.700 – 1.710 điểm.",
-                "highlight": "VN-Index kiểm định vùng 1.700 - 1.710 điểm",
-                "metrics": {"vnindex": "1,725.36", "support_zone": "1,700 - 1,710", "wall_street_loss": "-$2.5T"}
-            },
-            {
-                "id": "msg_005",
-                "minute": 5,
-                "time_str": "21:05:45",
-                "phase_step": 2,
-                "sender_name": "Long",
-                "department": "Hội Đồng Đầu Não Chiến Lược",
-                "role": "Chief Strategic Brain",
-                "avatar": "🧠",
-                "badge": "CHIẾN LƯỢC ĐẦU NÃO",
-                "badge_color": "#a855f7",
-                "content": "Tôi xin bổ sung góc nhìn chu kỳ lớn: Khối ngoại đã giảm tốc độ bán ròng tới 70% và bắt đầu mua ròng nhẹ phiên Thứ Sáu. Dòng tiền tổ chức đang rút khỏi các mã bluechip P/E đắt đỏ để dịch chuyển mạnh sang các doanh nghiệp Mid/Small-cap có tiền mặt dồi dào, xuất khẩu phục hồi và dòng tiền kinh doanh OCF dương vượt trội.",
-                "highlight": "Dòng tiền dịch chuyển sang Mid/Small-Cap tiền thật",
-                "metrics": {"foreign_net_sell_drop": "-70%", "sector_rotation": "Bluechip -> Mid/Small-cap"}
-            },
-            {
-                "id": "msg_006",
-                "minute": 8,
-                "time_str": "21:08:20",
-                "phase_step": 3,
-                "sender_name": "Trưởng Ban 2 VN",
-                "department": "Ban 2 VN — Pháp Y BCTC",
-                "role": "Chuyên Gia Pháp Y BCTC",
-                "avatar": "🔍",
-                "badge": "PHÁP Y BCTC",
-                "badge_color": "#ec4899",
-                "content": "Kính thưa Chủ tịch: Ban 2 phối hợp cùng Ban 10 Hiền đã quét toàn diện BCTC Q3/2026 của 145 doanh nghiệp niêm yết. Chúng tôi loại bỏ 100% doanh nghiệp có lợi nhuận trên giấy và chốt được Top 4 siêu cổ phiếu có tỷ lệ tiền thật OCF/LNST vượt chuẩn 1.15x: HDB (1.16x), MSH (1.42x), BAF (1.18x), IDC (1.48x).",
-                "highlight": "Lọc sạch 145 mã, chọn Top 4 có OCF/LNST > 1.15x",
-                "metrics": {"scanned": 145, "top_picks": 4, "min_ocf_ratio": "1.15x"}
-            },
-            {
-                "id": "msg_007",
-                "minute": 10,
-                "time_str": "21:10:40",
-                "phase_step": 3,
-                "sender_name": "Hiền",
-                "department": "Ban 10 — Trinh Sát BCTC & Quan Hệ Cổ Đông",
-                "role": "Trinh Sát Trưởng BCTC",
-                "avatar": "🌸",
-                "badge": "DỮ LIỆU BCTC THẬT",
-                "badge_color": "#f43f5e",
-                "content": "Dữ liệu kiểm toán xác nhận: MSH có dòng tiền kinh doanh OCF vượt 142% LNST, đơn hàng may mặc xuất khẩu sang Mỹ và EU đã kín đến hết Q1/2027. BAF sở hữu 40 trang trại heo ăn thực vật khép kín, biên lợi nhuận gộp mảng chăn nuôi tăng từ 8% lên 15.5%. Tất cả báo cáo tài chính đều được kiểm toán Big 4, chuẩn 100% không bịa đặt!",
-                "highlight": "BCTC kiểm toán Big 4, MSH kín đơn đến Q1/2027, BAF mở rộng mạnh",
-                "metrics": {"MSH_OCF": "+142%", "BAF_Margin": "15.5%"}
-            },
-            {
-                "id": "msg_008",
-                "minute": 13,
-                "time_str": "21:13:15",
-                "phase_step": 4,
-                "sender_name": "Trưởng Ban 4 VN",
-                "department": "Ban 4 VN — Hội Đồng Định Lượng & Quản Trị Rủi Ro",
-                "role": "Trọng Tài Quản Trị Rủi Ro",
-                "avatar": "🛡️",
-                "badge": "ĐỊNH CỠ VỊ THẾ",
-                "badge_color": "#eab308",
-                "content": f"Kính thưa Chủ tịch: Áp dụng công thức Position Sizing chuẩn hóa trên tổng NAV sống {acc['total_nav']}: Cả 4 mã đều tuân thủ trần 1 lô chẵn 100 CP <= 33% NAV theo Điều Luật 5 & 6. Ngưỡng cắt lỗ Stop Loss khóa cứng tại 2xATR <= 7.5%, rủi ro tối đa mỗi lệnh <= 1.5% NAV!",
-                "highlight": "Khóa cứng rủi ro <= 1.5% NAV/trade, Stop Loss <= 6.8%",
-                "metrics": {"max_risk_trade": "<=1.5% NAV", "lot_weight": "11.2% - 17.6%", "stop_rule": "2xATR <= 6.8%"}
-            },
-            {
-                "id": "msg_009",
-                "minute": 17,
-                "time_str": "21:17:30",
-                "phase_step": 5,
-                "sender_name": "Minh Quân",
-                "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng",
-                "role": "Chuyên Viên Thực Thi",
-                "avatar": "⚡",
-                "badge": "CHIẾN THUẬT RÌNH MỒI",
-                "badge_color": "#f97316",
-                "content": "Thưa Chủ tịch: Phiên sáng Thứ Hai luôn là cạm bẫy 'Hiệu ứng Thứ Hai' do tâm lý bán tháo và xử lý margin. Tôi quán triệt kỷ luật '3 KHÔNG': Không mua ATO, Không mua giá xanh, Không bình quân giá xuống. Chúng ta rình mồi và chỉ bấm cò trong KHUNG GIỜ VÀNG (14h00 – 14h25) khi thị trường hấp thụ xong hàng T+2.5 và nến ngày rút chân rõ ràng!",
-                "highlight": "Kỷ luật Khung Giờ Vàng 14h00 - 14h25, cấm FOMO ATO sáng",
-                "metrics": {"action_window": "14h00 - 14h25", "order_type": "Limit LO (95%)"}
-            },
-            {
-                "id": "msg_010",
-                "minute": 20,
-                "time_str": "21:20:10",
-                "phase_step": 6,
-                "sender_name": "Trưởng Ban 3 VN",
-                "department": "Ban 3 VN — Công Tố Viên Phản Biện / Kẻ Thù Giả Định",
-                "role": "Công Tố Viên Phản Biện",
-                "avatar": "⚖️",
-                "badge": "TRANH BIỆN ĐỐI KHÁNG",
-                "badge_color": "#ef4444",
-                "content": "KHOAN ĐÃ! Tôi xin dội gáo nước lạnh chất vấn gay gắt 3 mũi nhọn trước Hội nghị: 1) Giá ngô và đậu tương nhập khẩu tăng thì BAF có bị ăn mòn lợi nhuận không? 2) Tại sao lại ưu tiên MSH thay vì TNG? 3) Về đề án El Niño, tại sao không mua nhiệt điện than QTP/HND ngay mà bắt phải đợi sang Quý 1/2027?",
-                "highlight": "Chất vấn 3 mũi nhọn: BAF nguyên liệu, MSH vs TNG, Đề án El Niño",
-                "metrics": {"questions": 3, "intensity": "HIGH"}
-            },
-            {
-                "id": "msg_011",
-                "minute": 22,
-                "time_str": "21:22:40",
-                "phase_step": 6,
-                "sender_name": "Minh Quân & Ban 2 VN",
-                "department": "Bộ Đôi Thực Thi & Pháp Y BCTC",
-                "role": "Phản Biện Bảo Vệ Luận Điểm",
-                "avatar": "🔥",
-                "badge": "ĐỐI CHẤNG SỐ LIỆU",
-                "badge_color": "#10b981",
-                "content": "Tôi xin dùng số liệu kế toán thực để bẻ gãy chất vấn: 1) BAF tự chủ 100% nhà máy cám chay F-Feed tại Tây Ninh và Bình Định, ký hợp đồng kỳ hạn khóa giá nguyên liệu, biên lãi gộp vẫn bảo toàn > 15%. 2) MSH nợ vay ròng bằng 0, cổ tức tiền mặt 40-50% trong khi TNG nợ vay trên vốn chủ sở hữu lên tới 1.8 lần. 3) Miền Bắc đang vào mùa đông, phụ tải điện điều hòa giảm thấp, mua QTP/HND lúc này sẽ chôn vốn 4-5 tháng, kiên nhẫn đợi gom trước mùa hè 2027 mới là tối ưu!",
-                "highlight": "Bẻ gãy toàn bộ chất vấn bằng dữ liệu kiểm toán và tính mùa vụ",
-                "metrics": {"BAF_Self_Feed": "100%", "MSH_Debt": "0%", "El_Nino_Timing": "Q1/2027"}
-            },
-            {
-                "id": "msg_012",
-                "minute": 25,
-                "time_str": "21:25:15",
-                "phase_step": 7,
-                "sender_name": "Master CIO James",
-                "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
-                "role": "Chủ Trì Điều Phối",
-                "avatar": "🎖️",
-                "badge": "BIỂU QUYẾT ĐIỆN TỬ",
-                "badge_color": "#38bdf8",
-                "content": "Tôi công bố mở cổng Biểu Quyết Thể Chế Toàn Diện cho Sổ Lệnh Bắn Tỉa Vòng 2 đối với 4 mã: HDB, MSH, BAF, IDC. Đề nghị 12 Trưởng ban và 2 Trợ lý bỏ phiếu điện tử công khai!",
-                "highlight": "Mở cổng biểu quyết Sổ Lệnh Vòng 2",
-                "metrics": {"total_voters": 12, "tickers": 4}
-            },
-            {
-                "id": "msg_013",
-                "minute": 27,
-                "time_str": "21:27:30",
-                "phase_step": 7,
-                "sender_name": "Nam",
-                "department": "Văn Phòng Điều Hành Thực Chiến",
-                "role": "Thư Ký Hội Nghị",
-                "avatar": "💼",
-                "badge": "KẾT QUẢ BIỂU QUYẾT",
-                "badge_color": "#34d399",
-                "content": "Báo cáo Chủ tịch: Kết quả biểu quyết đạt sự đồng thuận gần như tuyệt đối: HDB (12/12 Đồng thuận), MSH (12/12 Đồng thuận), BAF (11/12 Đồng thuận, 1 phiếu bảo lưu của Ban 3), IDC (12/12 Đồng thuận). Sổ Lệnh Bắn Tỉa Vòng 2 chính thức được Hội đồng thông qua!",
-                "highlight": "HDB 12/12, MSH 12/12, BAF 11/12, IDC 12/12 Đồng Thuận",
-                "metrics": {"HDB": "12/12", "MSH": "12/12", "BAF": "11/12", "IDC": "12/12"}
-            },
-            {
-                "id": "msg_014",
-                "minute": 28,
-                "time_str": "21:28:45",
-                "phase_step": 8,
-                "sender_name": "Tổng Kiểm Sát Viên Trọng",
-                "department": "Ban 12 — Tổng Kiểm Sát Viên Thể Chế & Kỷ Luật",
-                "role": "Giám Sát Viên Thường Trực",
-                "avatar": "🛡️",
-                "badge": "KIỂM SÁT THỂ CHẾ",
-                "badge_color": "#f59e0b",
-                "content": "Kính thưa Chủ tịch Phước Trần: Với tư cách Tổng Kiểm Sát Viên Ban 12 thường trực, tôi chứng thực toàn bộ tiến trình 30 phút của Đại Hội Nghị Thượng Đỉnh diễn ra đúng giờ giấc, tranh biện đối kháng nảy lửa, đạt chuẩn 100% 'Làm thật việc thật', dữ liệu OCF kiểm toán 100% chính thống và không vi phạm bất kỳ điều cấm nào trong Hiến Chương Doanh Nghiệp!",
-                "highlight": "Trọng chứng thực: Đạt chuẩn 100% Làm thật việc thật, 0 vi phạm",
-                "metrics": {"compliance_score": "100/100", "violations": 0, "status": "CERTIFIED"}
-            },
-            {
-                "id": "msg_015",
-                "minute": 29,
-                "time_str": "21:29:50",
-                "phase_step": 8,
-                "sender_name": "Master CIO James",
-                "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
-                "role": "Chủ Trì Điều Phối",
-                "avatar": "🎖️",
-                "badge": "BẾ MẠC & KẾT LUẬN",
-                "badge_color": "#38bdf8",
-                "content": "Đúng 21h30, tôi xin tuyên bố bế mạc Đại Hội Nghị Thượng Đỉnh. Văn kiện Nghị Quyết Thượng Đỉnh chính thức và Sổ Lệnh Bắn Tỉa Vòng 2 đã được niêm phong lưu kho, kính trình Chủ tịch Phước Trần bấm nút phê duyệt ban hành trước giờ mở phiên sáng mai!",
-                "highlight": "Bế mạc hội nghị đúng 21h30, kính trình Chủ tịch ký duyệt",
-                "metrics": {"duration": "30m00s", "resolution_status": "READY_FOR_SIGNING"}
-            }
-        ],
-        "dynamic_messages": [],
-        "inspector_notes": [
-            {"time": "21:00", "note": "Hội đồng khai mạc đúng giờ 21h00, quân số đủ 100%."},
-            {"time": "21:02", "note": f"Xác nhận SSOT sống: NAV {acc['total_nav']} | Cash {acc['cash_balance']} ({acc['cash_ratio']}) | Vị thế {acc['_held_str']}."},
-            {"time": "21:13", "note": "Công thức Position Sizing chuẩn hóa: Thị giá <= 36k, Stop Loss <= 6.8% đạt chuẩn Điều Luật 6."},
-            {"time": "21:20", "note": "Phiên tranh biện đối kháng nổ ra công khai, bóc tách rủi ro nguyên liệu và tính thời điểm mùa vụ."},
-            {"time": "21:28", "note": "Biểu quyết thể chế đạt tỷ lệ chuẩn định chế. Hội nghị không vi phạm bất kỳ quy tắc nào trong Hiến Chương."}
-        ]
-    }
+            "enterprise_mesh_session": _get_live_enterprise_mesh(),
+        }
 
 
 def load_meeting_state() -> Dict[str, Any]:
-    """Tải trạng thái cuộc họp từ file; tự động nâng cấp lên V9.0 nếu phát hiện state cũ."""
+    """Tải trạng thái cuộc họp từ file; bảo lưu sạch sẽ phiên STANDBY hoặc tự động nâng cấp V10.0."""
     if not MEETING_STATE_FILE.exists():
-        state = get_default_summit_data()
-        save_meeting_state(state)
-        return state
+        from scripts.apex_autonomous_council_engine import activate_autonomous_summit_session
+        return activate_autonomous_summit_session()
     try:
         with open(MEETING_STATE_FILE, "r", encoding="utf-8") as f:
             st = json.load(f)
+        if isinstance(st, dict) and st.get("room_status") == "CLEANED_STANDBY":
+            return st
         if (
             not isinstance(st, dict)
             or not st.get("pre_summit_prep_dossiers")
             or len(st.get("pre_summit_prep_dossiers", [])) < 14
             or "2026-11-08" in str(st.get("start_time", ""))
+            or not st.get("james_executive_summary")
+            or not st.get("summit_charter_rules")
         ):
-            st = get_default_summit_data()
-            save_meeting_state(st)
+            from scripts.apex_autonomous_council_engine import (
+                archive_summit_session,
+                activate_autonomous_summit_session,
+            )
+            if isinstance(st, dict) and st.get("meeting_id"):
+                archive_summit_session(st, reason="AUTO_ARCHIVED_BEFORE_V10_UPGRADE", archived_by="Apex System Auto-Upgrader")
+            return activate_autonomous_summit_session()
         return st
     except Exception:
-        state = get_default_summit_data()
-        save_meeting_state(state)
-        return state
+        from scripts.apex_autonomous_council_engine import activate_autonomous_summit_session
+        return activate_autonomous_summit_session()
 
 
 def save_meeting_state(state: Dict[str, Any]) -> None:
@@ -491,18 +183,21 @@ def schedule_custom_summit_meeting(
     start_time_str: Optional[str] = None,
     duration_minutes: int = 30,
     topic: Optional[str] = None,
-    trigger_prep_now: bool = True
+    trigger_prep_now: bool = True,
+    prep_minutes: int = 20
 ) -> Dict[str, Any]:
     """
-    Lập lịch và kích hoạt ngay một Phiên Họp Thượng Đỉnh tùy chỉnh (14/14 Phòng Ban).
-    Mặc định chuẩn bị trước 15 phút (T-15m Pre-Summit Research & Reconnaissance).
+    Lập lịch và kích hoạt ngay một Phiên Họp Thượng Đỉnh V10.0 tùy chỉnh (14/14 Phòng Ban).
+    Mặc định nghiên cứu tiền hội nghị 20 phút (T-15..20p Pre-Summit Research & Reconnaissance).
+    Phiên họp cũ (nếu có) được tự động lưu trữ vào Summit Archive Vault trước khi kích hoạt lịch mới.
     """
     try:
         from scripts.apex_autonomous_council_engine import activate_autonomous_summit_session
         st = activate_autonomous_summit_session(
             start_time_iso=start_time_str,
             duration_minutes=duration_minutes,
-            topic=topic
+            topic=topic,
+            prep_minutes=prep_minutes
         )
     except Exception as e:
         st = get_default_summit_data()
@@ -519,11 +214,14 @@ def schedule_custom_summit_meeting(
         "start_time": st.get("start_time"),
         "end_time": st.get("end_time"),
         "duration_minutes": st.get("duration_minutes"),
+        "prep_duration_minutes": st.get("prep_duration_minutes", 20),
         "meeting_window_str": st.get("meeting_window_str"),
         "prep_window_str": st.get("prep_window_str"),
         "resolution_report_path": st.get("resolution_report_path"),
+        "james_summary_report_path": st.get("james_summary_report_path"),
         "prep_dossiers_count": len(st.get("pre_summit_prep_dossiers", [])),
         "attendance_summary": st.get("attendance_summary"),
+        "archive_summary": st.get("archive_summary"),
         "trigger_prep_now": bool(trigger_prep_now),
         "state": rt,
     }
@@ -539,22 +237,48 @@ def _parse_ict_dt(iso_str: str, fallback_dt: datetime.datetime) -> datetime.date
         return fallback_dt
 
 
-def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, preview_mode: bool = False) -> Dict[str, Any]:
+def get_realtime_meeting_state(
+    custom_now: Optional[datetime.datetime] = None,
+    preview_mode: bool = False,
+    archive_id: Optional[str] = None
+) -> Dict[str, Any]:
     """
-    Tính toán trạng thái thời gian thực chuẩn ICT (+07:00) của cuộc họp Thượng Đỉnh V9.0:
-    1. WAITING_COUNTDOWN (> 15 phút trước giờ G): Đếm ngược đến mốc chuẩn bị T-15p và giờ khai mạc.
-    2. PRE_MEETING_PREP_15M (trong 15 phút trước giờ G): 14/14 Phòng Ban thực sự cào dữ liệu & nộp Hồ sơ chuẩn bị theo từng phút.
-    3. LIVE_IN_PROGRESS (trong 30 phút họp chính thức): Mở khóa toàn bộ hồ sơ T-15p + luồng tranh biện đối kháng theo phút hiện tại.
-    4. CONCLUDED / PREVIEW_FULL: Toàn bộ giai đoạn chuẩn bị T-15p + 30 phút tranh biện + biểu quyết đã hoàn tất.
+    Tính toán trạng thái thời gian thực chuẩn ICT (+07:00) của cuộc họp Thượng Đỉnh V10.0:
+    0. ARCHIVED_VIEW (khi có archive_id): Mở xem lại nguyên văn một phiên họp lịch sử trong Kho Lưu Trữ.
+    1. CLEANED_STANDBY (sau khi đủ Chủ tịch duyệt + 2H và bấm dọn phòng): Phòng sạch chờ lịch mới.
+    2. WAITING_COUNTDOWN (> T-20p trước giờ G): Cả 14 Ban vẫn hiển thị trạng thái đang nghiên cứu trước họp.
+    3. PRE_MEETING_PREP_15M (trong khung T-15..20p -> T-0p): 14/14 Phòng Ban nộp Hồ sơ Chuẩn Bị & Nội Quy 5 Điều.
+    4. LIVE_IN_PROGRESS (trong 30p họp chính thức): Mở khóa toàn bộ hồ sơ + luồng tranh biện theo từng phút.
+    5. CONCLUDED / PREVIEW_FULL: Tự động lưu trữ vào Archive Vault & chạy đồng hồ Quy chế 2 Tiếng sau phê duyệt.
     """
-    state = load_meeting_state()
-    now = _get_ict_now(custom_now)
+    from scripts.apex_autonomous_council_engine import (
+        CHARTER_REPORT_PATH,
+        SUMMIT_CHARTER_RULES,
+        archive_summit_session,
+        compute_retention_status,
+        get_archived_summit_by_id,
+        load_summit_archive_ledger,
+    )
 
-    default_start = now.replace(hour=23, minute=45, second=0, microsecond=0)
+    now = _get_ict_now(custom_now)
+    is_archived_view = False
+    state: Optional[Dict[str, Any]] = None
+    if archive_id:
+        arch = get_archived_summit_by_id(archive_id)
+        if arch:
+            state = arch
+            is_archived_view = True
+
+    if state is None:
+        state = load_meeting_state()
+
+    default_start = now.replace(hour=0, minute=45, second=0, microsecond=0)
     default_end = default_start + datetime.timedelta(minutes=30)
     start_dt = _parse_ict_dt(state.get("start_time", ""), default_start)
     end_dt = _parse_ict_dt(state.get("end_time", ""), default_end)
-    prep_start_dt = _parse_ict_dt(state.get("prep_start_time", ""), start_dt - datetime.timedelta(minutes=15))
+    prep_mins = max(15, min(30, int(state.get("prep_duration_minutes", 20) or 20)))
+    prep_seconds = prep_mins * 60
+    prep_start_dt = _parse_ict_dt(state.get("prep_start_time", ""), start_dt - datetime.timedelta(minutes=prep_mins))
 
     duration_minutes = max(10, int(state.get("duration_minutes", 30) or 30))
     duration_seconds = max(60, int((end_dt - start_dt).total_seconds()))
@@ -565,25 +289,55 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
 
     prep_stream = state.get("prep_timeline_stream") or []
     debate_stream = state.get("timeline_stream") or []
-    prep_dossiers = state.get("pre_summit_prep_dossiers") or []
+    raw_dossiers = state.get("pre_summit_prep_dossiers") or []
     attendance_roster = state.get("attendance_roster") or []
+    prep_progress_pct = 100.0
 
-    if preview_mode:
+    archive_summary = load_summit_archive_ledger()
+
+    if is_archived_view:
+        meeting_status = "ARCHIVED_VIEW"
+        current_minute = duration_minutes
+        current_phase = 2
+        current_step = 8
+        unlocked_prep = prep_stream
+        unlocked_debate = debate_stream
+        prep_dossiers = raw_dossiers
+    elif state.get("room_status") == "CLEANED_STANDBY" and not preview_mode:
+        meeting_status = "CLEANED_STANDBY"
+        current_minute = 0
+        current_phase = 0
+        current_step = 0
+        unlocked_prep = []
+        unlocked_debate = []
+        prep_dossiers = []
+        prep_progress_pct = 0.0
+    elif preview_mode:
         meeting_status = "PREVIEW_FULL"
         current_minute = duration_minutes
         current_phase = 2
         current_step = 8
         unlocked_prep = prep_stream
         unlocked_debate = debate_stream
-    elif delta_to_start > 900:
+        prep_dossiers = raw_dossiers
+    elif delta_to_start > prep_seconds:
         meeting_status = "WAITING_COUNTDOWN"
-        current_minute = 0
+        current_minute = -prep_mins
         current_phase = 0
         current_step = 0
+        prep_progress_pct = 0.0
+        prep_dossiers = [
+            {
+                **d,
+                "status": "RESEARCHING_BEFORE_MEETING",
+                "pre_meeting_findings": f"[ĐANG CÀO DỮ LIỆU TIỀN HỘI NGHỊ] {d.get('pre_meeting_findings', '')}",
+            }
+            for d in raw_dossiers
+        ]
         unlocked_prep = [
             {
                 "id": "pre_001",
-                "minute": -16,
+                "minute": -prep_mins - 1,
                 "is_prep_phase": True,
                 "time_str": now.strftime("%H:%M:%S"),
                 "phase_step": 0,
@@ -591,31 +345,37 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
                 "department": "Ban 12 — Tổng Kiểm Sát Thể Chế",
                 "role": "Giám Sát Viên Thường Trực Bất Biến",
                 "avatar": "🛡️",
-                "badge": "CHỜ KÍCH HOẠT CHUẨN BỊ T-15P",
+                "badge": f"CHỜ MỞ PHIÊN NGHIÊN CỨU T-{prep_mins}P",
                 "badge_color": "#f59e0b",
                 "content": (
-                    f"Báo cáo Chủ tịch Phước Trần: Toàn bộ 14 Phòng Ban đã nhận nghị trình '{state.get('topic', '')}'. "
-                    f"Đúng {prep_start_dt.strftime('%H:%M:%S')} (trước giờ họp 15 phút), 14 Ban sẽ đồng loạt cào dữ liệu thật và nộp Hồ sơ Chuẩn Bị trước khi khai mạc lúc {start_dt.strftime('%H:%M:%S')}!"
+                    f"Báo cáo Chủ tịch Phước Trần: Toàn bộ 14 Phòng Ban đang hoàn tất giai đoạn tìm kiếm & phân tích số liệu sống cho nghị trình '{state.get('topic', '')}'. "
+                    f"Cổng nộp hồ sơ T-{prep_mins} phút chính thức mở lúc {prep_start_dt.strftime('%H:%M:%S')} trước khi khai mạc lúc {start_dt.strftime('%H:%M:%S')}!"
                 ),
-                "highlight": f"Chuẩn bị T-15p bắt đầu lúc {prep_start_dt.strftime('%H:%M')} • Khai mạc {start_dt.strftime('%H:%M')}",
-                "metrics": {"countdown_seconds": int(delta_to_start), "Departments": "14/14"}
+                "highlight": f"Nghiên cứu T-{prep_mins}p bắt đầu lúc {prep_start_dt.strftime('%H:%M')} • Khai mạc {start_dt.strftime('%H:%M')}",
+                "metrics": {"countdown_seconds": int(delta_to_start), "Departments": "14/14", "Prep_Window": f"{prep_mins} Phút"}
             }
         ]
         unlocked_debate = []
-    elif 0 < delta_to_start <= 900:
-        # ĐANG TRONG GIAI ĐOẠN CHUẨN BỊ T-15 PHÚT TRƯỚC HỌP
+    elif 0 < delta_to_start <= prep_seconds:
         meeting_status = "PRE_MEETING_PREP_15M"
         prep_elapsed_secs = max(0, int((now - prep_start_dt).total_seconds()))
-        prep_minute = min(-1, -15 + int(prep_elapsed_secs // 60))
+        prep_progress_pct = round(min(100.0, max(0.0, (prep_elapsed_secs / max(1, prep_seconds)) * 100.0)), 1)
+        prep_minute = min(-1, -prep_mins + int(prep_elapsed_secs // 60))
         current_minute = prep_minute
         current_phase = 0
         current_step = 0
-        unlocked_prep = [m for m in prep_stream if int(m.get("minute", -15)) <= prep_minute]
+        unlocked_prep = [m for m in prep_stream if int(m.get("minute", -prep_mins)) <= prep_minute]
         if not unlocked_prep and prep_stream:
             unlocked_prep = [prep_stream[0]]
+        prep_dossiers = [
+            {
+                **d,
+                "status": "READY_VERIFIED" if int(d.get("prep_minute", -1)) <= prep_minute else "RESEARCHING_BEFORE_MEETING",
+            }
+            for d in raw_dossiers
+        ]
         unlocked_debate = []
     elif 0 <= delta_from_start <= duration_seconds:
-        # ĐANG TRONG PHIÊN HỌP CHÍNH THỨC (30 PHÚT)
         meeting_status = "LIVE_IN_PROGRESS"
         current_minute = min(duration_minutes, elapsed_minutes)
         current_phase = 1 if current_minute < 13 else 2
@@ -638,6 +398,7 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
             current_step = 8
 
         unlocked_prep = prep_stream
+        prep_dossiers = raw_dossiers
         unlocked_debate = [
             msg for msg in debate_stream
             if int(msg.get("minute", 0)) <= current_minute
@@ -648,8 +409,16 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
         current_phase = 2
         current_step = 8
         unlocked_prep = prep_stream
+        prep_dossiers = raw_dossiers
         unlocked_debate = debate_stream
 
+        mid = str(state.get("meeting_id") or "")
+        archived_ids = {s.get("meeting_id") for s in (archive_summary.get("sessions") or []) if isinstance(s, dict)}
+        if mid and mid not in archived_ids:
+            archive_summit_session(state, reason="CONCLUDED_AUTO_ARCHIVED", archived_by="Ban 11 & Trọng Auto-Archiver")
+            archive_summary = load_summit_archive_ledger()
+
+    retention_status = compute_retention_status(state, now)
     all_messages = unlocked_prep + unlocked_debate + (state.get("dynamic_messages") or [])
     live_acc = _get_live_account_state_dict()
     live_account_state = {
@@ -666,15 +435,24 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
         "title": state.get("title"),
         "topic": state.get("topic") or state.get("title"),
         "subtitle": state.get("subtitle"),
+        "room_status": state.get("room_status", "ACTIVE_SESSION"),
+        "is_archived_view": is_archived_view,
         "prep_start_time": state.get("prep_start_time"),
         "start_time": state.get("start_time"),
         "end_time": state.get("end_time"),
         "duration_minutes": duration_minutes,
-        "prep_duration_minutes": int(state.get("prep_duration_minutes", 15) or 15),
+        "prep_duration_minutes": prep_mins,
+        "prep_progress_pct": prep_progress_pct,
         "meeting_window_str": state.get("meeting_window_str") or f"{start_dt.strftime('%Hh%M')} – {end_dt.strftime('%Hh%M')} ({duration_minutes} Phút)",
-        "prep_window_str": state.get("prep_window_str") or f"{prep_start_dt.strftime('%Hh%M')} – {start_dt.strftime('%Hh%M')} (Chuẩn Bị T-15p)",
-        "resolution_report_path": state.get("resolution_report_path") or "08_Master_Investment_CIO/council_resolutions/2026-11-15_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md",
-        "agenda_report_path": state.get("agenda_report_path") or "08_Master_Investment_CIO/2026-11-15_Ke_Hoach_Nghi_Trinh_Thuong_Dinh_23h45_James.md",
+        "prep_window_str": state.get("prep_window_str") or f"{prep_start_dt.strftime('%Hh%M')} – {start_dt.strftime('%Hh%M')} (Nghiên Cứu T-{prep_mins}p)",
+        "charter_report_path": state.get("charter_report_path") or CHARTER_REPORT_PATH,
+        "summit_charter_rules": state.get("summit_charter_rules") or SUMMIT_CHARTER_RULES,
+        "james_executive_summary": state.get("james_executive_summary"),
+        "james_summary_report_path": state.get("james_summary_report_path") or (state.get("james_executive_summary") or {}).get("report_path"),
+        "resolution_report_path": state.get("resolution_report_path") or CHARTER_REPORT_PATH,
+        "agenda_report_path": state.get("agenda_report_path") or CHARTER_REPORT_PATH,
+        "retention_status": retention_status,
+        "archive_summary": archive_summary,
         "meeting_status": meeting_status,
         "countdown_seconds": max(0, int(delta_to_start)),
         "current_minute": current_minute,

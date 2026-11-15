@@ -1,20 +1,21 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-15 23:52:47  
+**Thời gian cập nhật:** 2026-11-16 00:42:54  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261115-235247`  
+**Mã đồng bộ:** `SYNC-AG2P-20261116-004254`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Nâng cấp toàn diện Phòng Họp Thượng Đỉnh V9.0 (14/14 Phòng Ban dự họp, rà soát T-15 phút, tranh biện chuyên môn, đặt lịch tùy biến) và tổ chức họp lúc 23h45 (30 phút) về thị trường tuần sau.
+* **Câu hỏi của Chủ tịch:** Khắc phục hiển thị cũ 21h/21H30, ban hành Bộ Nội Quy 5 Điều Phòng Họp Thượng Đỉnh, xây dựng Kho Lưu Trữ + quy chế 2H sau duyệt, báo cáo tổng kết James cơ động theo ngày, và triệu tập họp lúc 12h45 (00h45 sáng 16/11/2026).
 * **Kết luận & Quyết định thể chế:**
-Đã hoàn thành nâng cấp V9.0 Phòng Họp Thượng Đỉnh & kích hoạt phiên họp 23h45-00h15 bàn chiến lược tuần mới (16/11-20/11/2026). Kiểm toán cục bộ đạt 50/50 HẠNG MỤC ĐẠT CHUẨN.
+ĐÃ HOÀN THÀNH NÂNG CẤP V10.0 PHÒNG HỌP THƯỢNG ĐỈNH APEX & ĐẠT 52/52 KIỂM TOÁN LOCAL: (1) Sửa triệt để lỗi cache 21h/21H30/14-12; (2) Ban hành Nội quy 5 Điều bất biến tại 08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md; (3) Triển khai Kho Lưu Trữ Summit Archive Vault + Khóa Dọn Phòng Điều 5 (chờ Chủ tịch duyệt + tối thiểu 2H sau họp -> HTTP 409 lock); (4) Xuất bản Báo cáo Tổng kết Master CIO James kèm Kế hoạch Tuần 16/11-20/11 mang tính THAM KHẢO, thực thi CƠ ĐỘNG từng ngày; (5) Tránh trùng lặp: quét toàn bộ 12 mã VN + 5 mã US (rổ 6 mã cơ động MSH, HDB, DBC, BAF, SZC, HPG; loại VHC, HAH >26% NAV); (6) Phiên họp mới APEX-SUMMIT-20261116-0045 (00h45-01h15, nghiên cứu trước T-20p từ 00h25-00h45) đã sẵn sàng với 14/14 Phòng Ban.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Nâng cấp apex_autonomous_council_engine.py V9.0: T-15m Pre-Summit Prep Dossiers cho đủ 14 Ban, 100% Attendance 14/14 Ban + Palmer + Nam, 26 lượt tranh biện chuyên sâu & Nghị quyết Markdown + SQLite Vault
-- [x] Nâng cấp apex_summit_meeting_engine.py hỗ trợ 4 pha thời gian thực theo ICT (+07:00) và schedule_custom_summit_meeting()
-- [x] Bổ sung API POST /api/summit/schedule và hoàn thiện Tab 5 Phòng Họp Thượng Đỉnh trên Web Portal (chọn giờ/phút/chủ đề, thẻ điểm danh 14 Ban, ngăn rà soát T-15p)
-- [x] Kiểm toán 50/50 đạt chuẩn trên local Web Server, sẵn sàng đẩy lên Render Cloud
+- [x] 08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md (Hiến Chương 5 Điều)
+- [x] 08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_Tuan_Co_Dong.md
+- [x] data/summit_archive/APEX-SUMMIT-20261115-2345.json (Lưu trữ phiên cũ)
+- [x] data/apex_active_meeting_state.json -> APEX-SUMMIT-20261116-0045 (00h45-01h15 ICT, T-20p 00h25-00h45)
+- [x] Web Portal V10.0 + Cache-Control no-store + Archive API + Audit 52/52 PASS
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
@@ -27,8 +28,8 @@
 
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
 1. **Về BSR & BAF:** TUYỆT ĐỐI KHÔNG BẮT ĐÁY ĐẦU GIỜ CHIỀU; chờ Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong cung T+2.5
-2. **Về HDB & MSH:** Giữ kỷ luật 100 CP HDB + 100 CP MSH theo kế hoạch tuần mới
-3. **Về Kế hoạch tuần:** Tiền mặt SSOT 12,516,471 đ (69.0% NAV) / Tổng NAV 18,151,471 đ — giải ngân chọn lọc tuần mới 16/11-20/11 theo Nghị quyết Thượng Đỉnh
-4. **Về Tiến độ công việc:** Hoàn tất V9.0 Summit Room (50/50 audit local) và đồng bộ GitHub -> Render Cloud
+2. **Về HDB & MSH:** Đang giữ T+1 có lãi đệm, khóa quan sát không mua thêm hôm nay, chờ chiều mai 11/11 hàng về
+3. **Về Kế hoạch tuần:** Kế hoạch tuần tham khảo giải ngân 5.5M thăm dò, két 14.51M tiền mặt kiểm soát chặt chẽ
+4. **Về Tiến độ công việc:** Đã sửa toàn bộ báo cáo web portal, đồng bộ khớp 2 lệnh HDB/MSH, loại bỏ báo cáo ảo 6 mã 35 triệu
 
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*

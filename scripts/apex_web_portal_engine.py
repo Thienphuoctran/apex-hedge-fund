@@ -2682,6 +2682,89 @@ def generate_portal_html(
             background: rgba(168, 85, 247, 0.06);
             border-color: rgba(168, 85, 247, 0.35);
         }}
+        .summit-charter-strip {{
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.09), rgba(15, 23, 42, 0.85));
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 14px;
+            padding: 13px 16px;
+        }}
+        .summit-charter-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 8px;
+            margin-top: 10px;
+        }}
+        .summit-charter-card {{
+            background: rgba(9, 14, 26, 0.85);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 11px;
+            line-height: 1.45;
+        }}
+        .summit-james-summary-card {{
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, rgba(15, 23, 42, 0.88) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.38);
+            border-radius: 16px;
+            padding: 16px;
+        }}
+        .summit-agile-pill {{
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #fde68a;
+            border-radius: 8px;
+            padding: 7px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 8px 0 10px 0;
+        }}
+        .summit-archive-panel {{
+            background: var(--bg-surface);
+            border: 1px solid rgba(56, 189, 248, 0.32);
+            border-radius: 16px;
+            padding: 16px;
+        }}
+        .summit-archive-list {{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+            max-height: 240px;
+            overflow-y: auto;
+        }}
+        .summit-archive-item {{
+            background: rgba(9, 14, 26, 0.88);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 8px;
+            padding: 8px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 11px;
+        }}
+        .summit-archive-item.active-viewing {{
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+        }}
+        .summit-clean-btn {{
+            width: 100%;
+            margin-top: 10px;
+            padding: 9px 12px;
+            border-radius: 8px;
+            font-size: 11.5px;
+            font-weight: 800;
+            cursor: pointer;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            background: rgba(56, 189, 248, 0.14);
+            color: #7dd3fc;
+            transition: all 0.15s ease;
+        }}
+        .summit-clean-btn.locked {{
+            background: rgba(100, 116, 139, 0.16);
+            border-color: rgba(148, 163, 184, 0.3);
+            color: #94a3b8;
+        }}
 
         /* CỘT PHẢI: BÀN KIỂM SÁT TRỌNG & BIỂU QUYẾT */
         .summit-side-col {{
@@ -3458,7 +3541,7 @@ def generate_portal_html(
             </button>
             <button class="tab-btn" id="btn-tab-summit" onclick="switchTab('summit-room')">
                 <span>🏛️</span> <span>5. Phòng Họp Thượng Đỉnh Trực Tuyến</span>
-                <span class="live-badge" id="summit-nav-badge" style="padding: 2px 8px; font-size: 10.5px; margin-left: 4px; border-radius: 9999px;">● HỌP 23H45</span>
+                <span class="live-badge" id="summit-nav-badge" style="padding: 2px 8px; font-size: 10.5px; margin-left: 4px; border-radius: 9999px;">● HỌP 00H45</span>
             </button>
             <button class="tab-btn" onclick="switchTab('timeline')">
                 <span>⏰</span> <span>6. Tiến Độ 18 Cột Mốc Ngày</span>
@@ -4245,34 +4328,44 @@ def generate_portal_html(
 
 
         <!-- ========================================================
-             TAB 5: PHÒNG HỌP THƯỢNG ĐỈNH TRỰC TUYẾN V9.0 (14 BAN + CHUẨN BỊ T-15P)
+             TAB 5: PHÒNG HỌP THƯỢNG ĐỈNH TRỰC TUYẾN V10.0 (HIẾN CHƯƠNG 5 ĐIỀU + KHO LƯU TRỮ)
              ======================================================== -->
         <section id="tab-summit-room" class="tab-pane">
             <div class="summit-container">
+                <!-- Banner chế độ xem lại Kho Lưu Trữ (ẩn mặc định) -->
+                <div id="summit-archive-view-banner" style="display:none; background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(15, 23, 42, 0.92)); border: 1px solid rgba(168, 85, 247, 0.55); border-radius: 12px; padding: 12px 16px; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <div style="font-size: 12.5px; color: #f3e8ff; font-weight: 700;">
+                        📚 ĐANG MỞ XEM LẠI HỒ SƠ PHIÊN HỌP LỊCH SỬ TRONG KHO LƯU TRỮ: <strong id="summit-archive-view-id" style="color: #38bdf8;">--</strong>
+                    </div>
+                    <button onclick="exitArchivedSummitView()" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: #fff; border: none; border-radius: 8px; padding: 7px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;">
+                        🔴 Quay Về Phòng Họp Hiện Tại
+                    </button>
+                </div>
+
                 <!-- 1. HEADER CARD & REAL-TIME TIMER -->
                 <div class="summit-header-card">
                     <div class="summit-title-box">
                         <div class="summit-tag-row">
                             <span class="summit-tag summit-tag-gold">👑 CHỦ TỌA: CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC</span>
-                            <span class="summit-tag summit-tag-blue">🎖️ CHỦ TRÌ: MASTER CIO JAMES & PALMER</span>
+                            <span class="summit-tag summit-tag-blue">🎖️ CHỦ TRÌ: MASTER CIO JAMES &amp; PALMER</span>
                             <span class="summit-tag summit-tag-inspector">🛡️ GIÁM SÁT VIÊN THƯỜNG TRỰC: TỔNG KIỂM SÁT VIÊN TRỌNG (BAN 12)</span>
                         </div>
                         <h2 class="summit-title" id="summit-main-title">
-                            <span>🏛️</span> <span>ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (V9.0)</span>
+                            <span>🏛️</span> <span>ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (V10.0)</span>
                         </h2>
                         <div id="summit-topic-banner" style="font-size: 13px; color: #7dd3fc; font-weight: 700; margin-top: 2px;">
-                            📌 Chủ đề: Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược &amp; Tối Ưu Lợi Nhuận
+                            📌 Chủ đề: Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026) — Tranh Biện Toàn Vũ Trụ &amp; Kế Hoạch Tham Khảo Cơ Động
                         </div>
                         <div class="summit-sub">
-                            <span>⏱️ Chuẩn bị T-15p: <strong id="summit-prep-window-txt">23h30 – 23h45</strong></span>
-                            <span>🏛️ Giờ họp chính: <strong id="summit-meeting-window-txt">23h45 – 00h15 (30 Phút)</strong></span>
+                            <span>⏱️ Chuẩn bị T-20p: <strong id="summit-prep-window-txt">00h25 – 00h45 (T-20p)</strong></span>
+                            <span>🏛️ Giờ họp chính: <strong id="summit-meeting-window-txt">00h45 – 01h15 (30 Phút)</strong></span>
                             <span>🏦 Tài khoản: <strong>TCBS 105C307855</strong> ({ssot['cash_str']} Tiền Mặt • {ssot['stocks_str']} Cổ Phiếu)</span>
                             <span>⚖️ Thể chế: <strong>14/14 Phòng Ban Làm Thật</strong></span>
                         </div>
                     </div>
                     <div class="summit-timer-card">
                         <div class="summit-timer-label" id="summit-timer-lbl">⏱️ ĐỒNG HỒ ĐẾM NGƯỢC GIỜ G</div>
-                        <div class="summit-timer-val" id="summit-timer-val">23:45:00</div>
+                        <div class="summit-timer-val" id="summit-timer-val">00:45:00</div>
                         <div class="summit-timer-sub" id="summit-timer-sub">Đồng bộ nguyên tử theo máy chủ (ICT +7)</div>
                     </div>
                 </div>
@@ -4283,24 +4376,40 @@ def generate_portal_html(
                         🗓️ TRIỆU TẬP / ĐẶT LỊCH HỌP THƯỢNG ĐỈNH MỚI:
                     </div>
                     <div class="summit-sched-inputs">
-                        <input type="text" id="summit-sched-time" class="summit-sched-input" value="23:45" style="width: 78px; text-align: center;" title="Giờ họp (HH:MM ICT)" />
-                        <input type="number" id="summit-sched-duration" class="summit-sched-input" value="30" min="15" max="90" style="width: 70px; text-align: center;" title="Thời lượng (phút)" />
+                        <input type="text" id="summit-sched-time" class="summit-sched-input" value="00:45" style="width: 74px; text-align: center;" title="Giờ họp (HH:MM ICT)" />
+                        <input type="number" id="summit-sched-duration" class="summit-sched-input" value="30" min="15" max="90" style="width: 64px; text-align: center;" title="Thời lượng họp (phút)" />
+                        <input type="number" id="summit-sched-prep" class="summit-sched-input" value="20" min="15" max="20" style="width: 64px; text-align: center;" title="Thời gian nghiên cứu trước họp T-15..20p (phút)" />
                         <input type="text" id="summit-sched-topic" class="summit-sched-input" style="flex: 1; min-width: 240px;"
-                               value="Dự báo Thị trường Tuần Sau (16/11 – 20/11/2026), Tranh biện Chiến lược & Đề xuất Phương án Tối ưu Lợi nhuận"
+                               value="Thị trường Tuần Sau (16/11 – 20/11/2026) — Tranh biện Chiến lược Toàn Vũ Trụ &amp; Kế hoạch Đầu tư Cơ động"
                                placeholder="Nhập chủ đề cuộc họp Thượng đỉnh..." />
                         <button id="btn-schedule-summit" class="summit-sched-btn" onclick="scheduleNewSummitMeeting()">
-                            🚀 Triệu Tập Họp &amp; Kích Hoạt Chuẩn Bị T-15p
+                            🚀 Triệu Tập Họp &amp; Kích Hoạt Nghiên Cứu 20p
                         </button>
                     </div>
                 </div>
 
-                <!-- 1.2 ĐIỂM DANH 14 PHÒNG BAN & HỒ SƠ CHUẨN BỊ T-15 PHÚT -->
+                <!-- 1.15 BỘ NỘI QUY BẤT BIẾN PHÒNG HỌP THƯỢNG ĐỈNH (5 ĐIỀU HIẾN CHƯƠNG) -->
+                <div class="summit-charter-strip" id="summit-charter-strip">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                        <span style="font-size: 12px; font-weight: 800; color: #fbbf24;">
+                            📜 BỘ NỘI QUY BẤT BIẾN PHÒNG HỌP THƯỢNG ĐỈNH APEX (5 ĐIỀU HIẾN CHƯƠNG)
+                        </span>
+                        <button onclick="openCharterReport()" style="background: rgba(245, 158, 11, 0.16); border: 1px solid rgba(245, 158, 11, 0.45); color: #fde68a; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; cursor: pointer;">
+                            📖 Đọc Toàn Văn Nội Quy (MD)
+                        </button>
+                    </div>
+                    <div class="summit-charter-grid" id="summit-charter-rules-grid">
+                        <!-- Rendered dynamically from summit_charter_rules -->
+                    </div>
+                </div>
+
+                <!-- 1.2 ĐIỂM DANH 14 PHÒNG BAN & HỒ SƠ CHUẨN BỊ T-15..20 PHÚT -->
                 <div class="summit-attendance-strip" id="summit-attendance-panel">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                         <span style="font-size: 12px; font-weight: 800; color: #34d399;">
                             ✅ ĐIỂM DANH THỰC CHẤT TOÀN DOANH NGHIỆP (<span id="summit-attendance-count">14/14 Phòng Ban + Palmer + Nam</span>)
                         </span>
-                        <span style="font-size: 11px; color: #94a3b8;">Quy chế: Toàn bộ 14 Ban phải quét dữ liệu &amp; nộp hồ sơ chuẩn bị trước giờ G đúng 15 phút</span>
+                        <span style="font-size: 11px; color: #94a3b8;">Điều 2 Hiến Chương: Toàn bộ 14 Ban bắt buộc nghiên cứu dữ liệu sống 15–20 phút trước giờ họp</span>
                     </div>
                     <div class="summit-att-grid" id="summit-attendance-strip">
                         <!-- Rendered dynamically -->
@@ -4311,13 +4420,13 @@ def generate_portal_html(
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                         <div>
                             <span style="font-size: 12.5px; font-weight: 800; color: #c084fc;">
-                                🔬 HỒ SƠ NGHIÊN CỨU &amp; CHUẨN BỊ T-15 PHÚT TRƯỚC GIỜ HỌP (14/14 PHÒNG BAN)
+                                🔬 HỒ SƠ NGHIÊN CỨU &amp; CHUẨN BỊ T-20 PHÚT TRƯỚC GIỜ HỌP (14/14 PHÒNG BAN)
                             </span>
-                            <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">Mỗi phòng ban thực sự quét kho dữ liệu sống, BCTC &amp; vĩ mô trước khi bước vào 30 phút tranh biện</div>
+                            <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">Mỗi phòng ban thực sự quét kho dữ liệu sống 12 mã VN + 5 mã US, BCTC &amp; vĩ mô trước khi bước vào 30 phút tranh biện</div>
                         </div>
                         <button onclick="togglePrepDossiersPanel()" id="btn-toggle-prep-dossiers"
                                 style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.4); color: #e9d5ff; font-size: 11px; font-weight: 700; padding: 5px 11px; border-radius: 7px; cursor: pointer;">
-                            ▲ Thu Gọn Hồ Sơ Chuẩn Bị T-15p
+                            ▲ Thu Gọn Hồ Sơ Chuẩn Bị T-20p
                         </button>
                     </div>
                     <div class="summit-prep-grid" id="summit-prep-dossiers-grid">
@@ -4333,7 +4442,7 @@ def generate_portal_html(
                             <button onclick="toggleSummitPreview()" id="btn-toggle-preview" style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; cursor: pointer;">
                                 👁️ Xem Trước Toàn Bộ (Preview)
                             </button>
-                            <span id="summit-phase-indicator" style="color: #38bdf8; font-weight: 800;">Chuẩn bị T-15p &amp; Khai mạc</span>
+                            <span id="summit-phase-indicator" style="color: #38bdf8; font-weight: 800;">Chuẩn bị T-20p &amp; Khai mạc</span>
                         </div>
                     </div>
                     <div class="summit-steps-grid" id="summit-steps-container">
@@ -4347,19 +4456,19 @@ def generate_portal_html(
                         </div>
                         <div class="summit-step-item" id="step-node-3">
                             <div class="summit-step-min">08 - 12m</div>
-                            <div class="summit-step-lbl">3. Hiệp 1: Tối ưu HDB &amp; MSH đang giữ</div>
+                            <div class="summit-step-lbl">3. Hiệp 1: Bảo vệ vị thế HDB &amp; MSH</div>
                         </div>
                         <div class="summit-step-item" id="step-node-4">
                             <div class="summit-step-min">13 - 17m</div>
-                            <div class="summit-step-lbl">4. Hiệp 2: Đại chiến BAF vs DBC (Mũi #1)</div>
+                            <div class="summit-step-lbl">4. Hiệp 2: Đại chiến DBC vs BAF &amp; HDB vs Bank</div>
                         </div>
                         <div class="summit-step-item" id="step-node-5">
                             <div class="summit-step-min">18 - 22m</div>
-                            <div class="summit-step-lbl">5. Hiệp 3: Đại chiến IDC vs TCB/HAH &amp; Ban 5/6</div>
+                            <div class="summit-step-lbl">5. Hiệp 3: Đại chiến SZC/HPG vs IDC &amp; Ban 5/6</div>
                         </div>
                         <div class="summit-step-item" id="step-node-6">
                             <div class="summit-step-min">23 - 27m</div>
-                            <div class="summit-step-lbl">6. Hiệp 4: Lộ trình 5 Phiên &amp; Giờ Vàng 14h00</div>
+                            <div class="summit-step-lbl">6. Hiệp 4: Kế hoạch Tham khảo Cơ động &amp; 14h00</div>
                         </div>
                         <div class="summit-step-item" id="step-node-7">
                             <div class="summit-step-min">28 - 29m</div>
@@ -4367,7 +4476,7 @@ def generate_portal_html(
                         </div>
                         <div class="summit-step-item" id="step-node-8">
                             <div class="summit-step-min">29 - 30m</div>
-                            <div class="summit-step-lbl">8. Trọng chứng thực SHA-256 &amp; Bế mạc</div>
+                            <div class="summit-step-lbl">8. Tổng kết James, Trọng &amp; Ký Duyệt</div>
                         </div>
                     </div>
                 </div>
@@ -4379,7 +4488,7 @@ def generate_portal_html(
                         <div class="summit-feed-header">
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <span class="pulse-dot" style="background: #ef4444; box-shadow: 0 0 10px #ef4444;"></span>
-                                <h3 style="font-size: 14.5px; font-weight: 800; color: #fff;">LUỒNG CHUẨN BỊ T-15P &amp; TRANH BIỆN 14 PHÒNG BAN THỜI GIAN THỰC</h3>
+                                <h3 style="font-size: 14.5px; font-weight: 800; color: #fff;">LUỒNG NGHIÊN CỨU T-20P &amp; TRANH BIỆN 14 PHÒNG BAN THỜI GIAN THỰC</h3>
                             </div>
                             <span id="summit-feed-counter" style="font-size: 11.5px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
                                 Đang tải luồng...
@@ -4393,8 +4502,8 @@ def generate_portal_html(
                                 <span>👑</span> <span>Chủ Tịch Trần Quốc Thiên Phước Can Thiệp / Chỉ Thị Trực Tiếp Vào Phòng Họp:</span>
                             </div>
                             <div class="summit-input-row">
-                                <input type="text" id="summit-chairman-input" class="summit-input-field" 
-                                       placeholder="Gõ câu hỏi, chất vấn hoặc chỉ thị trực tiếp cho 14 Phòng Ban..." 
+                                <input type="text" id="summit-chairman-input" class="summit-input-field"
+                                       placeholder="Gõ câu hỏi, chất vấn hoặc chỉ thị trực tiếp cho 14 Phòng Ban..."
                                        onkeydown="if(event.key === 'Enter') sendChairmanSummitDirective();" />
                                 <button id="summit-btn-send-directive" class="summit-btn-send" onclick="sendChairmanSummitDirective()">
                                     <span>🚀</span> <span>Gửi Chỉ Thị</span>
@@ -4403,7 +4512,7 @@ def generate_portal_html(
                         </div>
                     </div>
 
-                    <!-- CỘT PHẢI: BÀN KIỂM SÁT TRỌNG & BIỂU QUYẾT -->
+                    <!-- CỘT PHẢI: BÀN KIỂM SÁT TRỌNG, BIỂU QUYẾT, TỔNG KẾT JAMES & KHO LƯU TRỮ -->
                     <div class="summit-side-col">
                         <!-- Card 1: Bàn Kiểm Sát Trọng -->
                         <div class="summit-side-card" style="border-color: rgba(245, 158, 11, 0.4);">
@@ -4415,12 +4524,12 @@ def generate_portal_html(
                                     TỔNG KIỂM SÁT VIÊN THƯỜNG TRỰC BẤT BIẾN
                                 </div>
                                 <div style="font-size: 12px; color: #fef3c7; margin-top: 4px;">
-                                    Đảm bảo 14/14 Phòng Ban chuẩn bị T-15p &amp; tranh biện thật 100%, tuân thủ nghiêm Hiến Chương.
+                                    Đảm bảo 14/14 Phòng Ban chuẩn bị T-20p &amp; tranh biện thật 100%, tuân thủ nghiêm Hiến Chương 5 Điều.
                                 </div>
                             </div>
                             <div id="summit-inspector-rules">
                                 <div class="inspector-rule-item">
-                                    <span class="inspector-rule-text">0. Chuẩn bị T-15p &amp; Hiện diện 14/14 Ban</span>
+                                    <span class="inspector-rule-text">0. Chuẩn bị T-20p &amp; Hiện diện 14/14 Ban</span>
                                     <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
                                 </div>
                                 <div class="inspector-rule-item">
@@ -4436,11 +4545,11 @@ def generate_portal_html(
                                     <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
                                 </div>
                                 <div class="inspector-rule-item">
-                                    <span class="inspector-rule-text">4. Khung Giờ Vàng 14h00-14h25</span>
+                                    <span class="inspector-rule-text">4. Kế hoạch tuần Tham khảo &amp; Cơ động</span>
                                     <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
                                 </div>
                                 <div class="inspector-rule-item">
-                                    <span class="inspector-rule-text">5. Quyền quyết định tối cao của Chủ tịch</span>
+                                    <span class="inspector-rule-text">5. Đợi Chủ tịch duyệt + 2H mới dọn phòng</span>
                                     <span class="inspector-rule-badge">ĐẠT CHUẨN</span>
                                 </div>
                             </div>
@@ -4449,11 +4558,27 @@ def generate_portal_html(
                         <!-- Card 2: Bảng Biểu Quyết Điện Tử & Phương Án Tuần Mới -->
                         <div class="summit-side-card">
                             <div class="summit-side-title">
-                                <span>📊</span> <span>Biểu Quyết 14 Ban &amp; Phương Án Tuần Mới</span>
+                                <span>📊</span> <span>Biểu Quyết 14 Ban &amp; Bộ Mã Tâm Điểm</span>
                             </div>
                             <div id="summit-voting-container">
                                 <!-- Stock voting cards rendered here -->
                             </div>
+                        </div>
+
+                        <!-- Card 2.4: Tổng Kết Master CIO James & Kế Hoạch Tuần Tham Khảo Cơ Động -->
+                        <div class="summit-james-summary-card" id="summit-james-summary-card">
+                            <div class="summit-side-title" style="color: #34d399;">
+                                <span>🎖️</span> <span>Tổng Kết James &amp; Kế Hoạch Tuần Cơ Động</span>
+                            </div>
+                            <div class="summit-agile-pill">
+                                ⚠️ KẾ HOẠCH TUẦN CHỈ MANG TÍNH THAM KHẢO ĐỊNH HƯỚNG — THỰC THI CƠ ĐỘNG TỪNG NGÀY THEO BẢNG ĐIỆN THỊ TRƯỜNG
+                            </div>
+                            <div id="summit-james-summary-body" style="font-size: 11.5px; color: #cbd5e1; line-height: 1.5;">
+                                Đang đồng bộ báo cáo tổng kết từ Master CIO James...
+                            </div>
+                            <button onclick="openJamesExecutiveReport()" id="btn-open-james-summary" style="width: 100%; margin-top: 10px; background: linear-gradient(135deg, #10b981, #059669); color: #fff; border: none; border-radius: 8px; padding: 9px 12px; font-size: 11px; font-weight: 800; cursor: pointer;">
+                                📋 Đọc Toàn Văn Báo Cáo Tổng Kết James (MD)
+                            </button>
                         </div>
 
                         <!-- Card 2.5: Phê Chuẩn Nghị Quyết Của Chủ Tịch -->
@@ -4463,11 +4588,33 @@ def generate_portal_html(
                             </div>
                             <div id="summit-approval-box">
                                 <div id="summit-approval-status" style="font-size: 11.5px; color: #fef3c7; margin-bottom: 12px; line-height: 1.5;">
-                                    Trạng thái: <strong style="color: #f59e0b;">⏳ Chờ Chủ Tịch Ký Phê Duyệt Nghị Quyết Tuần Mới</strong>
+                                    Trạng thái: <strong style="color: #f59e0b;">⏳ Chờ Chủ Tịch Ký Phê Duyệt Nghị Quyết &amp; Kế Hoạch Tham Khảo</strong>
                                 </div>
                                 <button id="btn-approve-summit" class="summit-action-btn-gold" onclick="approveSummitResolution()">
-                                    <span>✍️</span> <span>KÝ PHÊ DUYỆT NGHỊ QUYẾT &amp; SỔ LỆNH TUẦN SAU</span>
+                                    <span>✍️</span> <span>KÝ PHÊ DUYỆT NGHỊ QUYẾT &amp; BÁO CÁO JAMES</span>
                                 </button>
+                            </div>
+                            <div id="summit-retention-status-box" style="margin-top: 10px; font-size: 11px; color: #94a3b8; line-height: 1.45;">
+                                🔒 Điều 5 Hiến Chương: Cần Chủ tịch ký duyệt + tối thiểu 2 giờ (120 phút) sau họp trước khi dọn phòng.
+                            </div>
+                        </div>
+
+                        <!-- Card 2.6: Kho Lưu Trữ Lịch Sử & Quy Chế Dọn Phòng 2 Tiếng -->
+                        <div class="summit-archive-panel" id="summit-archive-panel">
+                            <div class="summit-side-title" style="color: #38bdf8;">
+                                <span>🗄️</span> <span>Kho Lưu Trữ Cuộc Họp &amp; Dọn Phòng (Sau 2H)</span>
+                            </div>
+                            <div id="summit-cleanup-lock-info" style="font-size: 11px; color: #cbd5e1; line-height: 1.45;">
+                                Đang kiểm tra đồng hồ bảo lưu tối thiểu 2 tiếng...
+                            </div>
+                            <button id="btn-archive-clean-summit" class="summit-clean-btn locked" onclick="archiveAndCleanSummitRoom()">
+                                🔒 ĐANG KHÓA DỌN PHÒNG (CẦN DUYỆT + ĐỦ 2 TIẾNG)
+                            </button>
+                            <div style="font-size: 11px; font-weight: 800; color: #94a3b8; margin-top: 12px; text-transform: uppercase;">
+                                📚 Các Phiên Họp Đã Lưu Trữ (<span id="summit-archive-count">0</span>)
+                            </div>
+                            <div class="summit-archive-list" id="summit-archive-history-list">
+                                <!-- Archived sessions rendered dynamically -->
                             </div>
                         </div>
 
@@ -5339,17 +5486,78 @@ def generate_portal_html(
 
 
         // ========================================================
-        // TAB 5: SUMMIT MEETING REAL-TIME CLIENT ENGINE V9.0
+        // TAB 5: SUMMIT MEETING REAL-TIME CLIENT ENGINE V10.0 (CHARTER + ARCHIVE VAULT)
         // ========================================================
         let summitPreviewMode = false;
-        let lastSummitMsgCount = 0;
-        let lastPrepDossiersCount = 0;
+        let currentArchiveViewId = null;
+        let lastSummitMeetingId = null;
+        let lastSummitMsgCount = -1;
+        let lastPrepDossiersSig = '';
         let summitPollTimer = null;
-        let currentSummitResolutionPath = '08_Master_Investment_CIO/council_resolutions/2026-11-15_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md';
+        let currentSummitResolutionPath = '08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md';
+        let currentJamesSummaryPath = '';
+        let currentCharterPath = '08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md';
+
+        function openCharterReport() {{
+            if (typeof openReportModal === 'function' && currentCharterPath) {{
+                openReportModal(currentCharterPath);
+            }}
+        }}
+
+        function openJamesExecutiveReport() {{
+            const targetPath = currentJamesSummaryPath || currentSummitResolutionPath;
+            if (typeof openReportModal === 'function' && targetPath) {{
+                openReportModal(targetPath);
+            }}
+        }}
 
         function openCurrentSummitResolution() {{
             if (typeof openReportModal === 'function' && currentSummitResolutionPath) {{
                 openReportModal(currentSummitResolutionPath);
+            }}
+        }}
+
+        function loadArchivedSummitSession(meetingId) {{
+            if (!meetingId) return;
+            currentArchiveViewId = meetingId;
+            lastSummitMeetingId = null;
+            lastSummitMsgCount = -1;
+            lastPrepDossiersSig = '';
+            pollSummitMeeting();
+        }}
+
+        function exitArchivedSummitView() {{
+            currentArchiveViewId = null;
+            lastSummitMeetingId = null;
+            lastSummitMsgCount = -1;
+            lastPrepDossiersSig = '';
+            pollSummitMeeting();
+        }}
+
+        async function archiveAndCleanSummitRoom() {{
+            const btn = document.getElementById('btn-archive-clean-summit');
+            if (btn) btn.disabled = true;
+            try {{
+                const res = await fetch('/api/summit/archive_and_clean', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ force: false, requested_by: 'Chủ tịch Trần Quốc Thiên Phước' }})
+                }});
+                const data = await res.json();
+                if (data.ok) {{
+                    alert('✅ ' + (data.message || 'Đã lưu trữ toàn văn phiên họp vào Kho Lưu Trữ và dọn sạch phòng họp cho phiên mới!'));
+                    currentArchiveViewId = null;
+                    lastSummitMeetingId = null;
+                    lastSummitMsgCount = -1;
+                    lastPrepDossiersSig = '';
+                    await pollSummitMeeting();
+                }} else {{
+                    alert(`🔒 QUY CHẾ ĐIỀU 5 HIẾN CHƯƠNG:\n\n${{data.cleanup_lock_reason || data.error || 'Chưa đủ điều kiện dọn phòng (Phải đợi Chủ tịch ký duyệt + tối thiểu 2 tiếng sau khi bế mạc).'}}`);
+                }}
+            }} catch (err) {{
+                alert('Lỗi kết nối máy chủ khi dọn phòng họp: ' + err.message);
+            }} finally {{
+                if (btn) btn.disabled = false;
             }}
         }}
 
@@ -5359,35 +5567,45 @@ def generate_portal_html(
             if (!grid) return;
             if (grid.style.display === 'none') {{
                 grid.style.display = 'grid';
-                if (btn) btn.innerText = '▲ Thu Gọn Hồ Sơ Chuẩn Bị T-15p';
+                if (btn) btn.innerText = '▲ Thu Gọn Hồ Sơ Chuẩn Bị T-20p';
             }} else {{
                 grid.style.display = 'none';
-                if (btn) btn.innerText = '▼ Mở Rộng 14 Hồ Sơ Chuẩn Bị T-15p';
+                if (btn) btn.innerText = '▼ Mở Rộng 14 Hồ Sơ Chuẩn Bị T-20p';
             }}
         }}
 
         async function scheduleNewSummitMeeting() {{
             const timeEl = document.getElementById('summit-sched-time');
             const durEl = document.getElementById('summit-sched-duration');
+            const prepEl = document.getElementById('summit-sched-prep');
             const topicEl = document.getElementById('summit-sched-topic');
             const btn = document.getElementById('btn-schedule-summit');
-            const startTime = timeEl ? timeEl.value.trim() : '23:45';
+            const startTime = timeEl ? timeEl.value.trim() : '00:45';
             const durationMinutes = durEl ? parseInt(durEl.value || '30', 10) : 30;
+            const prepMinutes = prepEl ? Math.max(15, Math.min(20, parseInt(prepEl.value || '20', 10))) : 20;
             const topic = topicEl ? topicEl.value.trim() : '';
             if (btn) {{
                 btn.disabled = true;
-                btn.innerText = '⏳ Đang Triệu Tập 14 Ban & Quét Dữ Liệu T-15p...';
+                btn.innerText = '⏳ Đang Triệu Tập 14 Ban & Nghiên Cứu Dữ Liệu T-20p...';
             }}
             try {{
                 const res = await fetch('/api/summit/schedule', {{
                     method: 'POST',
                     headers: {{ 'Content-Type': 'application/json' }},
-                    body: JSON.stringify({{ start_time: startTime, duration_minutes: durationMinutes, topic: topic, trigger_prep_now: true }})
+                    body: JSON.stringify({{
+                        start_time: startTime,
+                        duration_minutes: durationMinutes,
+                        prep_minutes: prepMinutes,
+                        topic: topic,
+                        trigger_prep_now: true
+                    }})
                 }});
                 const data = await res.json();
                 if (data.ok) {{
-                    lastSummitMsgCount = 0;
-                    lastPrepDossiersCount = 0;
+                    currentArchiveViewId = null;
+                    lastSummitMeetingId = null;
+                    lastSummitMsgCount = -1;
+                    lastPrepDossiersSig = '';
                     await pollSummitMeeting();
                 }} else {{
                     alert('Lỗi triệu tập họp: ' + (data.error || 'Không xác định'));
@@ -5397,7 +5615,7 @@ def generate_portal_html(
             }} finally {{
                 if (btn) {{
                     btn.disabled = false;
-                    btn.innerText = '🚀 Triệu Tập Họp & Kích Hoạt Chuẩn Bị T-15p';
+                    btn.innerText = '🚀 Triệu Tập Họp & Kích Hoạt Nghiên Cứu 20p';
                 }}
             }}
         }}
@@ -5424,13 +5642,18 @@ def generate_portal_html(
                 btn.style.color = summitPreviewMode ? '#ef4444' : '#38bdf8';
                 btn.style.borderColor = summitPreviewMode ? '#ef4444' : 'rgba(56, 189, 248, 0.3)';
             }}
+            lastSummitMsgCount = -1;
             pollSummitMeeting();
         }}
 
         async function pollSummitMeeting() {{
             try {{
-                const url = '/api/summit_meeting' + (summitPreviewMode ? '?preview=1' : '');
-                const res = await fetch(url);
+                const params = new URLSearchParams();
+                if (summitPreviewMode) params.set('preview', '1');
+                if (currentArchiveViewId) params.set('archive_id', currentArchiveViewId);
+                const qs = params.toString();
+                const url = '/api/summit_meeting' + (qs ? '?' + qs : '');
+                const res = await fetch(url, {{ cache: 'no-store' }});
                 if (!res.ok) return;
                 const data = await res.json();
                 renderSummitMeetingState(data);
@@ -5442,9 +5665,35 @@ def generate_portal_html(
         function renderSummitMeetingState(data) {{
             if (!data) return;
 
+            if (data.meeting_id && data.meeting_id !== lastSummitMeetingId) {{
+                lastSummitMeetingId = data.meeting_id;
+                lastSummitMsgCount = -1;
+                lastPrepDossiersSig = '';
+            }}
+
             if (data.resolution_report_path) {{
                 currentSummitResolutionPath = data.resolution_report_path;
             }}
+            if (data.james_summary_report_path) {{
+                currentJamesSummaryPath = data.james_summary_report_path;
+            }} else if (data.james_executive_summary && data.james_executive_summary.report_path) {{
+                currentJamesSummaryPath = data.james_executive_summary.report_path;
+            }}
+            if (data.charter_report_path) {{
+                currentCharterPath = data.charter_report_path;
+            }}
+
+            const archBanner = document.getElementById('summit-archive-view-banner');
+            const archViewIdEl = document.getElementById('summit-archive-view-id');
+            if (archBanner) {{
+                if (data.is_archived_view || data.meeting_status === 'ARCHIVED_VIEW') {{
+                    archBanner.style.display = 'flex';
+                    if (archViewIdEl) archViewIdEl.innerText = data.meeting_id || '';
+                }} else {{
+                    archBanner.style.display = 'none';
+                }}
+            }}
+
             const titleEl = document.getElementById('summit-main-title');
             if (titleEl && data.title) {{
                 titleEl.innerHTML = `<span>🏛️</span> <span>${{data.title.replace('🏛️ ', '')}}</span>`;
@@ -5464,18 +5713,37 @@ def generate_portal_html(
             const timerSub = document.getElementById('summit-timer-sub');
             const phaseInd = document.getElementById('summit-phase-indicator');
             const navBadge = document.getElementById('summit-nav-badge');
-            const hhmmLabel = (data.server_hhmm || '23h45').toUpperCase();
+            const hhmmLabel = (data.server_hhmm || '00h45').toUpperCase();
             const durMins = data.duration_minutes || 30;
+            const prepMins = data.prep_duration_minutes || 20;
 
-            if (data.meeting_status === 'WAITING_COUNTDOWN') {{
+            if (data.meeting_status === 'ARCHIVED_VIEW') {{
+                if (timerVal) timerVal.innerText = 'LƯU TRỮ LỊCH SỬ';
+                if (timerLbl) timerLbl.innerText = '📚 HỒ SƠ PHIÊN HỌP ĐÃ LƯU KHO';
+                if (timerSub) timerSub.innerText = `Mã phiên: ${{data.meeting_id || ''}}`;
+                if (phaseInd) phaseInd.innerText = 'Đang xem lại toàn văn biên bản lưu kho';
+                if (navBadge) {{
+                    navBadge.innerText = '📚 LƯU TRỮ';
+                    navBadge.style.color = '#c084fc';
+                }}
+            }} else if (data.meeting_status === 'CLEANED_STANDBY') {{
+                if (timerVal) timerVal.innerText = 'PHÒNG TRỐNG SẠCH';
+                if (timerLbl) timerLbl.innerText = '✨ SẴN SÀNG TRIỆU TẬP PHIÊN MỚI';
+                if (timerSub) timerSub.innerText = 'Phiên trước đã được lưu kho & dọn dẹp theo Điều 5';
+                if (phaseInd) phaseInd.innerText = 'Phòng họp trống — Chủ tịch nhập giờ họp mới để triệu tập';
+                if (navBadge) {{
+                    navBadge.innerText = '✨ PHÒNG TRỐNG';
+                    navBadge.style.color = '#38bdf8';
+                }}
+            }} else if (data.meeting_status === 'WAITING_COUNTDOWN') {{
                 const totalSec = data.countdown_seconds || 0;
                 const h = Math.floor(totalSec / 3600);
                 const m = Math.floor((totalSec % 3600) / 60);
                 const s = totalSec % 60;
                 if (timerVal) timerVal.innerText = h > 0 ? `${{h}}h ${{String(m).padStart(2,'0')}}m : ${{String(s).padStart(2,'0')}}s` : `${{String(m).padStart(2,'0')}}m : ${{String(s).padStart(2,'0')}}s`;
                 if (timerLbl) timerLbl.innerText = '⏱️ ĐỒNG HỒ ĐẾM NGƯỢC GIỜ G';
-                if (timerSub) timerSub.innerText = `Khai mạc lúc ${{data.server_hhmm || '23h45'}} • Chuẩn bị T-15p`;
-                if (phaseInd) phaseInd.innerText = '14/14 Phòng Ban đã nhận nghị trình';
+                if (timerSub) timerSub.innerText = `Khai mạc lúc ${{data.server_hhmm || '00h45'}} • Nghiên cứu T-${{prepMins}}p`;
+                if (phaseInd) phaseInd.innerText = '14/14 Phòng Ban đang cào dữ liệu & chuẩn bị trước giờ G';
                 if (navBadge) {{
                     navBadge.innerText = `⏳ CHỜ ${{hhmmLabel}}`;
                     navBadge.style.color = '#f59e0b';
@@ -5485,9 +5753,9 @@ def generate_portal_html(
                 const m = Math.floor(totalSec / 60);
                 const s = totalSec % 60;
                 if (timerVal) timerVal.innerText = `${{String(m).padStart(2,'0')}}m : ${{String(s).padStart(2,'0')}}s`;
-                if (timerLbl) timerLbl.innerText = '🔬 ĐANG CHUẨN BỊ T-15 PHÚT TRƯỚC HỌP';
-                if (timerSub) timerSub.innerText = '14/14 Ban đang cào dữ liệu & nộp hồ sơ';
-                if (phaseInd) phaseInd.innerText = `Chuẩn bị T-15p (Phút ${{data.current_minute}} trước G)`;
+                if (timerLbl) timerLbl.innerText = `🔬 ĐANG NGHIÊN CỨU T-${{prepMins}} PHÚT TRƯỚC HỌP`;
+                if (timerSub) timerSub.innerText = `14/14 Ban đang phân tích & nộp hồ sơ (${{data.prep_progress_pct || 0}}%)`;
+                if (phaseInd) phaseInd.innerText = `Nghiên cứu T-${{prepMins}}p (Phút ${{data.current_minute}} trước G • ${{data.prep_progress_pct || 0}}%)`;
                 if (navBadge) {{
                     navBadge.innerText = `🔬 PREP T${{data.current_minute}}P`;
                     navBadge.style.color = '#c084fc';
@@ -5496,7 +5764,7 @@ def generate_portal_html(
                 const curMin = data.current_minute || 0;
                 if (timerVal) timerVal.innerText = `PHÚT ${{curMin}} / ${{durMins}}`;
                 if (timerLbl) timerLbl.innerText = '🔴 ĐANG HỌP TRỰC TIẾP';
-                if (timerSub) timerSub.innerText = '14/14 Ban đang tranh biện (ICT +7)';
+                if (timerSub) timerSub.innerText = '14/14 Ban đang tranh biện đối kháng (ICT +7)';
                 if (phaseInd) phaseInd.innerText = data.current_phase === 1 ? 'Giai Đoạn 1: Vĩ Mô & Tối Ưu Vị Thế' : 'Giai Đoạn 2: Tranh Biện Mở Mới & Biểu Quyết';
                 if (navBadge) {{
                     navBadge.innerText = `● LIVE (P.${{curMin}})`;
@@ -5505,56 +5773,81 @@ def generate_portal_html(
             }} else {{
                 if (timerVal) timerVal.innerText = `${{durMins}}m : 00s (BẾ MẠC)`;
                 if (timerLbl) timerLbl.innerText = '🏁 HỘI NGHỊ ĐÃ HOÀN TẤT';
-                if (timerSub) timerSub.innerText = 'Đã đủ T-15p Prep + 30p Tranh biện';
-                if (phaseInd) phaseInd.innerText = 'Đã hoàn tất 100% nghị trình V9.0';
+                if (timerSub) timerSub.innerText = `Đã đủ T-${{prepMins}}p Prep + ${{durMins}}p Tranh biện`;
+                if (phaseInd) phaseInd.innerText = 'Đã hoàn tất 100% nghị trình Hiến Chương V10.0';
                 if (navBadge) {{
                     navBadge.innerText = '✅ HOÀN TẤT';
                     navBadge.style.color = '#10b981';
                 }}
             }}
 
-            // 1.5 Render Điểm Danh 14 Phòng Ban & Hồ Sơ Chuẩn Bị T-15 Phút
+            // 1.2 Render Bộ Nội Quy 5 Điều Hiến Chương
+            const charterGrid = document.getElementById('summit-charter-rules-grid');
+            const charterRules = data.summit_charter_rules || [];
+            if (charterGrid && charterRules.length > 0 && !charterGrid.dataset.rendered) {{
+                charterGrid.innerHTML = charterRules.map(r => `
+                    <div class="summit-charter-card">
+                        <div style="color:#fbbf24; font-weight:800; margin-bottom:3px;">${{r.code}}: ${{r.title}}</div>
+                        <div style="color:#cbd5e1; font-size:10.5px;">${{r.detail}}</div>
+                    </div>
+                `).join('');
+                charterGrid.dataset.rendered = '1';
+            }}
+
+            // 1.5 Render Điểm Danh 14 Phòng Ban & Hồ Sơ Chuẩn Bị T-20 Phút
             const attCountEl = document.getElementById('summit-attendance-count');
             if (attCountEl && data.attendance_summary) attCountEl.innerText = data.attendance_summary;
             const attStrip = document.getElementById('summit-attendance-strip');
             const roster = data.attendance_roster || [];
-            if (attStrip && roster.length > 0) {{
-                attStrip.innerHTML = roster.map(r => `
-                    <span class="summit-att-badge" title="${{r.officer}}">
-                        <span>${{r.avatar || '✅'}}</span>
-                        <span>${{r.ban_code}}</span>
-                        <span style="color: #34d399;">●</span>
-                    </span>
-                `).join('');
+            if (attStrip) {{
+                if (roster.length > 0) {{
+                    attStrip.innerHTML = roster.map(r => `
+                        <span class="summit-att-badge" title="${{r.officer}}">
+                            <span>${{r.avatar || '✅'}}</span>
+                            <span>${{r.ban_code}}</span>
+                            <span style="color: #34d399;">●</span>
+                        </span>
+                    `).join('');
+                }} else {{
+                    attStrip.innerHTML = '<span style="font-size:11px; color:#94a3b8;">Phòng họp đang sạch sẽ, sẵn sàng điểm danh phiên mới.</span>';
+                }}
             }}
 
             const prepGrid = document.getElementById('summit-prep-dossiers-grid');
             const dossiers = data.pre_summit_prep_dossiers || [];
-            if (prepGrid && dossiers.length > 0 && dossiers.length !== lastPrepDossiersCount) {{
-                prepGrid.innerHTML = dossiers.map(d => {{
-                    const kMetrics = Object.entries(d.key_metrics || {{}}).map(([k, v]) =>
-                        `<span style="background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.22); border-radius: 4px; padding: 2px 6px; font-size: 10px; font-family: 'JetBrains Mono', monospace;"><strong style="color:#7dd3fc;">${{k}}:</strong> ${{v}}</span>`
-                    ).join(' ');
-                    return `
-                        <div class="summit-prep-card">
-                            <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
-                                <div style="font-size:12px; font-weight:800; color:#f8fafc;">${{d.avatar}} ${{d.ban_code}} — ${{d.officer}}</div>
-                                <span style="font-size:10px; color:#34d399; font-family:'JetBrains Mono',monospace;">✓ ${{d.prep_time}}</span>
+            const dossiersSig = (data.meeting_id || '') + '|' + dossiers.map(d => `${{d.ban_code}}:${{d.status || ''}}`).join(',');
+            if (prepGrid && dossiersSig !== lastPrepDossiersSig) {{
+                if (dossiers.length > 0) {{
+                    prepGrid.innerHTML = dossiers.map(d => {{
+                        const isReady = d.status !== 'RESEARCHING_BEFORE_MEETING';
+                        const statusColor = isReady ? '#34d399' : '#f59e0b';
+                        const statusTxt = isReady ? `✓ ${{d.prep_time}}` : `🔎 ĐANG NGHIÊN CỨU (${{d.prep_time}})`;
+                        const kMetrics = Object.entries(d.key_metrics || {{}}).map(([k, v]) =>
+                            `<span style="background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.22); border-radius: 4px; padding: 2px 6px; font-size: 10px; font-family: 'JetBrains Mono', monospace;"><strong style="color:#7dd3fc;">${{k}}:</strong> ${{v}}</span>`
+                        ).join(' ');
+                        return `
+                            <div class="summit-prep-card">
+                                <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
+                                    <div style="font-size:12px; font-weight:800; color:#f8fafc;">${{d.avatar}} ${{d.ban_code}} — ${{d.officer}}</div>
+                                    <span style="font-size:10px; color:${{statusColor}}; font-family:'JetBrains Mono',monospace;">${{statusTxt}}</span>
+                                </div>
+                                <div style="font-size:11px; color:#94a3b8; font-weight:600;">${{d.dept_name}}</div>
+                                <div style="display:flex; flex-wrap:wrap; gap:4px;">${{kMetrics}}</div>
+                                <div style="font-size:11.5px; color:#cbd5e1; line-height:1.45;">${{d.pre_meeting_findings}}</div>
+                                <div style="font-size:11px; color:#e9d5ff; background: rgba(168,85,247,0.08); border-left:2px solid #a855f7; padding:4px 7px; border-radius:4px;">
+                                    🎯 <strong>Đề xuất:</strong> ${{d.proposed_next_week_stance}}
+                                </div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:2px;">
+                                    <span style="font-size:10px; color:#64748b;">Nguồn: ${{(d.sources_scanned || []).length}} kho dữ liệu</span>
+                                    <button onclick="openReportModal('${{d.report_path}}')" style="background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); color:#38bdf8; font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:5px; cursor:pointer;">📄 Đọc Báo Cáo</button>
+                                </div>
                             </div>
-                            <div style="font-size:11px; color:#94a3b8; font-weight:600;">${{d.dept_name}}</div>
-                            <div style="display:flex; flex-wrap:wrap; gap:4px;">${{kMetrics}}</div>
-                            <div style="font-size:11.5px; color:#cbd5e1; line-height:1.45;">${{d.pre_meeting_findings}}</div>
-                            <div style="font-size:11px; color:#e9d5ff; background: rgba(168,85,247,0.08); border-left:2px solid #a855f7; padding:4px 7px; border-radius:4px;">
-                                🎯 <strong>Đề xuất:</strong> ${{d.proposed_next_week_stance}}
-                            </div>
-                            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:2px;">
-                                <span style="font-size:10px; color:#64748b;">Nguồn: ${{(d.sources_scanned || []).length}} kho dữ liệu</span>
-                                <button onclick="openReportModal('${{d.report_path}}')" style="background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); color:#38bdf8; font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:5px; cursor:pointer;">📄 Đọc Báo Cáo</button>
-                            </div>
-                        </div>
-                    `;
-                }}).join('');
-                lastPrepDossiersCount = dossiers.length;
+                        `;
+                    }}).join('');
+                }} else {{
+                    prepGrid.innerHTML = '<div style="font-size:11.5px; color:#94a3b8; padding:8px;">Chưa có hồ sơ chuẩn bị nào trong phòng hiện tại. Hãy đặt lịch triệu tập họp mới.</div>';
+                }}
+                lastPrepDossiersSig = dossiersSig;
             }}
 
             // 2. Cập nhật Step Tracker (1 đến 8) động từ data.phases
@@ -5575,7 +5868,7 @@ def generate_portal_html(
                     }}
                     el.classList.remove('active', 'completed');
                     if (curStep > 0 && i < curStep) el.classList.add('completed');
-                    else if (i === curStep || (curStep === 0 && i === 1)) el.classList.add('active');
+                    else if (i === curStep || (curStep === 0 && i === 1 && data.meeting_status !== 'CLEANED_STANDBY')) el.classList.add('active');
                 }}
             }}
 
@@ -5584,196 +5877,238 @@ def generate_portal_html(
             const counter = document.getElementById('summit-feed-counter');
             const msgs = data.timeline_stream || [];
 
-            if (counter) counter.innerText = `${{msgs.length}} phát biểu (T-15p: ${{data.prep_messages_count || 0}} | Tranh biện: ${{data.debate_messages_count || 0}})`;
+            if (counter) counter.innerText = `${{msgs.length}} phát biểu (Chuẩn bị T-${{prepMins}}p: ${{data.prep_messages_count || 0}} | Tranh biện: ${{data.debate_messages_count || 0}})`;
 
             if (container) {{
-                // Chỉ render lại nếu số lượng tin nhắn thay đổi hoặc lần đầu
                 if (msgs.length !== lastSummitMsgCount) {{
-                    container.innerHTML = msgs.map(m => {{
-                        let cardClass = 'summit-msg-card';
-                        if (m.is_prep_phase) cardClass += ' msg-prep';
-                        else if (m.sender_name && m.sender_name.includes('Chủ tịch')) cardClass += ' msg-chairman';
-                        else if (m.sender_name && m.sender_name.includes('Trọng')) cardClass += ' msg-inspector';
-                        else if (m.badge && (m.badge.includes('TRANH BIỆN') || m.badge.includes('PHẢN BIỆN') || m.badge.includes('CHẤT VẤN') || m.badge.includes('BẢO LƯU') || m.badge.includes('PHẢN ĐỐI') || m.badge.includes('CẢNH BÁO'))) cardClass += ' msg-debate';
-                        else if (m.badge && (m.badge.includes('PHÁP Y') || m.badge.includes('DỮ LIỆU') || m.badge.includes('BCTC'))) cardClass += ' msg-forensic';
-                        else if (m.sender_name && m.sender_name.includes('Minh Quân')) cardClass += ' msg-tactical';
-                        else if (m.badge && (m.badge.includes('ĐỊNH LƯỢNG') || m.badge.includes('PHÁN QUYẾT') || m.badge.includes('ĐỐI SOÁT') || m.badge.includes('ĐỀ XUẤT') || m.badge.includes('RỦI RO') || m.badge.includes('RÀO CHẮN'))) cardClass += ' msg-quant';
-
-                        let badgeHtml = '';
-                        if (m.badge) {{
-                            badgeHtml = `<span style="background: ${{m.badge_color || '#38bdf8'}}22; color: ${{m.badge_color || '#38bdf8'}}; border: 1px solid ${{m.badge_color || '#38bdf8'}}55; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 800;">${{m.badge}}</span>`;
-                        }}
-
-                        let highlightHtml = '';
-                        if (m.highlight) {{
-                            highlightHtml = `<div class="summit-msg-highlight">📌 <strong>Điểm Nhấn:</strong> ${{m.highlight}}</div>`;
-                        }}
-
-                        let metricsHtml = '';
-                        if (m.metrics && typeof m.metrics === 'object') {{
-                            const chips = Object.entries(m.metrics).map(([k, v]) => 
-                                `<span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #cbd5e1;"><strong style="color: #38bdf8;">${{k}}:</strong> ${{v}}</span>`
-                            ).join(' ');
-                            metricsHtml = `<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,0.1);">${{chips}}</div>`;
-                        }}
-
-                        let formattedContent = (m.content || '')
-                            .replace(/\\*\\*(.*?)\\*\\*/g, '<strong style="color: #f8fafc;">$1</strong>')
-                            .split(String.fromCharCode(10) + '- ').join('<br/>• ')
-                            .split(String.fromCharCode(10)).join('<br/>');
-
-                        let evidenceHtml = '';
-                        if (m.evidence_card) {{
-                            const ev = m.evidence_card;
-                            const cardId = 'ev-card-' + (m.id || Math.random().toString(36).substr(2, 9));
-
-                            const bs = ev.balance_sheet || {{}};
-                            const bsChips = Object.entries(bs).map(([k, v]) => 
-                                `<span style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-family: 'JetBrains Mono', monospace;"><strong style="color: #7dd3fc;">${{k}}:</strong> <span style="color: #f8fafc;">${{v}}</span></span>`
-                            ).join(' ');
-
-                            const peer = ev.peer_comparison || {{}};
-                            const peerRows = (peer.comparison_rows || []).map(r => `
-                                <tr>
-                                    <td style="font-weight: 600; color: #f8fafc;">${{r.criteria}}</td>
-                                    <td style="color: #34d399; font-weight: 700; font-family: 'JetBrains Mono', monospace;">${{r.stock}}</td>
-                                    <td style="color: #94a3b8; font-family: 'JetBrains Mono', monospace;">${{r.peer}}</td>
-                                    <td style="color: #fbbf24; font-weight: 700;">${{r.verdict}}</td>
-                                </tr>
-                            `).join('');
-
-                            const checks = ev.forensic_checks || {{}};
-                            const checkBoxes = Object.entries(checks).map(([k, v]) => `
-                                <div class="evidence-check-item">
-                                    <div class="evidence-check-k">${{k.replace(/_/g, ' ')}}</div>
-                                    <div class="evidence-check-v">${{v}}</div>
-                                </div>
-                            `).join('');
-
-                            evidenceHtml = `
-                                <div class="summit-evidence-box">
-                                    <div class="summit-evidence-toggle-btn" onclick="toggleEvidenceCard('${{cardId}}')">
-                                        <span class="summit-evidence-title">📑 THẺ BẰNG CHỨNG PHÁP Y BCTC SỐNG — ${{ev.ticker}} (KIỂM TOÁN BIG 4)</span>
-                                        <span id="btn-${{cardId}}" style="color: #38bdf8; font-weight: 700; font-size: 11px;">▲ THU GỌN BẰNG CHỨNG</span>
-                                    </div>
-                                    <div id="${{cardId}}" class="summit-evidence-content" style="display: block;">
-                                        <div>
-                                            <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">1. BẢNG CÂN ĐỐI & DÒNG TIỀN KIỂM TOÁN THẬT Q3/2026:</div>
-                                            <div style="display: flex; flex-wrap: wrap; gap: 6px;">${{bsChips}}</div>
-                                        </div>
-
-                                        <div style="margin-top: 6px;">
-                                            <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">2. ĐỐI ĐẦU TRỰC DIỆN ĐỐI THỦ CÙNG NGÀNH (${{peer.peer_name || ''}}):</div>
-                                            <div style="overflow-x: auto; background: rgba(0,0,0,0.2); border-radius: 6px; padding: 6px;">
-                                                <table class="evidence-peer-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Tiêu Chí Pháp Y</th>
-                                                            <th>${{ev.ticker}} (Đề Xuất)</th>
-                                                            <th>Đối Thủ Cùng Ngành</th>
-                                                            <th>Phán Quyết Ban 2</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        ${{peerRows}}
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div style="margin-top: 6px; font-size: 11px; color: #7dd3fc; font-style: italic;">
-                                                💡 <strong>Kết luận:</strong> ${{peer.conclusion || ''}}
-                                            </div>
-                                        </div>
-
-                                        <div style="margin-top: 6px;">
-                                            <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">3. BỘ RADAR KIỂM ĐỊNH GIAN LẬN KẾ TOÁN (BENEISH M & ALTMAN Z):</div>
-                                            <div class="evidence-check-grid">${{checkBoxes}}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                        }}
-
-                        return `
-                            <div class="${{cardClass}}">
-                                <div class="summit-msg-header">
-                                    <div class="summit-msg-author">
-                                        <div class="summit-msg-avatar">${{m.avatar || '👤'}}</div>
-                                        <div>
-                                            <div class="summit-msg-name">${{m.sender_name}}</div>
-                                            <div class="summit-msg-dept">${{m.department || ''}} • ${{m.role || ''}}</div>
-                                        </div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 8px;">
-                                        ${{badgeHtml}}
-                                        <span class="summit-msg-time">${{m.time_str}}</span>
-                                    </div>
-                                </div>
-                                <div class="summit-msg-content">${{formattedContent}}</div>
-                                ${{metricsHtml}}
-                                ${{evidenceHtml}}
-                                ${{highlightHtml}}
+                    if (msgs.length === 0 && data.meeting_status === 'CLEANED_STANDBY') {{
+                        container.innerHTML = `
+                            <div style="padding: 28px; text-align: center; background: rgba(56, 189, 248, 0.06); border: 1px dashed rgba(56, 189, 248, 0.35); border-radius: 12px; color: #cbd5e1;">
+                                <div style="font-size: 28px; margin-bottom: 8px;">✨</div>
+                                <div style="font-size: 14px; font-weight: 800; color: #7dd3fc;">PHÒNG HỌP ĐÃ ĐƯỢC LƯU TRỮ &amp; LÀM SẠCH ĐÚNG CHUẨN ĐIỀU 5 HIẾN CHƯƠNG</div>
+                                <div style="font-size: 12px; color: #94a3b8; margin-top: 6px;">Chủ tịch có thể mở lại mọi cuộc họp cũ tại <strong>Kho Lưu Trữ Lịch Sử</strong> bên phải hoặc nhập giờ mới bên trên để triệu tập cuộc họp tiếp theo.</div>
                             </div>
                         `;
-                    }}).join('');
+                    }} else {{
+                        container.innerHTML = msgs.map(m => {{
+                            let cardClass = 'summit-msg-card';
+                            if (m.is_prep_phase) cardClass += ' msg-prep';
+                            else if (m.sender_name && m.sender_name.includes('Chủ tịch')) cardClass += ' msg-chairman';
+                            else if (m.sender_name && m.sender_name.includes('Trọng')) cardClass += ' msg-inspector';
+                            else if (m.badge && (m.badge.includes('TRANH BIỆN') || m.badge.includes('PHẢN BIỆN') || m.badge.includes('CHẤT VẤN') || m.badge.includes('BẢO LƯU') || m.badge.includes('PHẢN ĐỐI') || m.badge.includes('CẢNH BÁO') || m.badge.includes('LOẠI BỎ'))) cardClass += ' msg-debate';
+                            else if (m.badge && (m.badge.includes('PHÁP Y') || m.badge.includes('DỮ LIỆU') || m.badge.includes('BCTC'))) cardClass += ' msg-forensic';
+                            else if (m.sender_name && m.sender_name.includes('Minh Quân')) cardClass += ' msg-tactical';
+                            else if (m.badge && (m.badge.includes('ĐỊNH LƯỢNG') || m.badge.includes('PHÁN QUYẾT') || m.badge.includes('ĐỐI SOÁT') || m.badge.includes('ĐỀ XUẤT') || m.badge.includes('RỦI RO') || m.badge.includes('RÀO CHẮN'))) cardClass += ' msg-quant';
 
-                    // Tự động cuộn xuống dưới cùng nếu có tin mới
-                    container.scrollTop = container.scrollHeight;
+                            let badgeHtml = '';
+                            if (m.badge) {{
+                                badgeHtml = `<span style="background: ${{m.badge_color || '#38bdf8'}}22; color: ${{m.badge_color || '#38bdf8'}}; border: 1px solid ${{m.badge_color || '#38bdf8'}}55; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 800;">${{m.badge}}</span>`;
+                            }}
+
+                            let highlightHtml = '';
+                            if (m.highlight) {{
+                                highlightHtml = `<div class="summit-msg-highlight">📌 <strong>Điểm Nhấn:</strong> ${{m.highlight}}</div>`;
+                            }}
+
+                            let metricsHtml = '';
+                            if (m.metrics && typeof m.metrics === 'object') {{
+                                const chips = Object.entries(m.metrics).map(([k, v]) =>
+                                    `<span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #cbd5e1;"><strong style="color: #38bdf8;">${{k}}:</strong> ${{v}}</span>`
+                                ).join(' ');
+                                metricsHtml = `<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,0.1);">${{chips}}</div>`;
+                            }}
+
+                            let formattedContent = (Array.isArray(m.content) ? m.content.join(' ') : (m.content || ''))
+                                .replace(/\\*\\*(.*?)\\*\\*/g, '<strong style="color: #f8fafc;">$1</strong>')
+                                .split(String.fromCharCode(10) + '- ').join('<br/>• ')
+                                .split(String.fromCharCode(10)).join('<br/>');
+
+                            let evidenceHtml = '';
+                            if (m.evidence_card) {{
+                                const ev = m.evidence_card;
+                                const cardId = 'ev-card-' + (m.id || Math.random().toString(36).substr(2, 9));
+
+                                const bs = ev.balance_sheet || {{}};
+                                const bsChips = Object.entries(bs).map(([k, v]) =>
+                                    `<span style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-family: 'JetBrains Mono', monospace;"><strong style="color: #7dd3fc;">${{k}}:</strong> <span style="color: #f8fafc;">${{v}}</span></span>`
+                                ).join(' ');
+
+                                const peer = ev.peer_comparison || {{}};
+                                const peerRows = (peer.comparison_rows || []).map(r => `
+                                    <tr>
+                                        <td style="font-weight: 600; color: #f8fafc;">${{r.criteria}}</td>
+                                        <td style="color: #34d399; font-weight: 700; font-family: 'JetBrains Mono', monospace;">${{r.stock}}</td>
+                                        <td style="color: #94a3b8; font-family: 'JetBrains Mono', monospace;">${{r.peer}}</td>
+                                        <td style="color: #fbbf24; font-weight: 700;">${{r.verdict}}</td>
+                                    </tr>
+                                `).join('');
+
+                                const checks = ev.forensic_checks || {{}};
+                                const checkBoxes = Object.entries(checks).map(([k, v]) => `
+                                    <div class="evidence-check-item">
+                                        <div class="evidence-check-k">${{k.replace(/_/g, ' ')}}</div>
+                                        <div class="evidence-check-v">${{v}}</div>
+                                    </div>
+                                `).join('');
+
+                                evidenceHtml = `
+                                    <div class="summit-evidence-box">
+                                        <div class="summit-evidence-toggle-btn" onclick="toggleEvidenceCard('${{cardId}}')">
+                                            <span class="summit-evidence-title">📑 THẺ BẰNG CHỨNG PHÁP Y BCTC SỐNG — ${{ev.ticker}} (KIỂM TOÁN BIG 4)</span>
+                                            <span id="btn-${{cardId}}" style="color: #38bdf8; font-weight: 700; font-size: 11px;">▲ THU GỌN BẰNG CHỨNG</span>
+                                        </div>
+                                        <div id="${{cardId}}" class="summit-evidence-content" style="display: block;">
+                                            <div>
+                                                <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">1. BẢNG CÂN ĐỐI &amp; DÒNG TIỀN KIỂM TOÁN THẬT Q3/2026:</div>
+                                                <div style="display: flex; flex-wrap: wrap; gap: 6px;">${{bsChips}}</div>
+                                            </div>
+                                            <div style="margin-top: 6px;">
+                                                <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">2. ĐỐI ĐẦU TRỰC DIỆN ĐỐI THỦ CÙNG NGÀNH (${{peer.peer_name || ''}}):</div>
+                                                <div style="overflow-x: auto; background: rgba(0,0,0,0.2); border-radius: 6px; padding: 6px;">
+                                                    <table class="evidence-peer-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Tiêu Chí Pháp Y</th>
+                                                                <th>${{ev.ticker}} (Đề Xuất)</th>
+                                                                <th>Đối Thủ Cùng Ngành</th>
+                                                                <th>Phán Quyết Ban 2</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            ${{peerRows}}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style="margin-top: 6px; font-size: 11px; color: #7dd3fc; font-style: italic;">
+                                                    💡 <strong>Kết luận:</strong> ${{peer.conclusion || ''}}
+                                                </div>
+                                            </div>
+                                            <div style="margin-top: 6px;">
+                                                <div style="font-size: 10.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">3. BỘ RADAR KIỂM ĐỊNH GIAN LẬN KẾ TOÁN (BENEISH M &amp; ALTMAN Z):</div>
+                                                <div class="evidence-check-grid">${{checkBoxes}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }}
+
+                            return `
+                                <div class="${{cardClass}}">
+                                    <div class="summit-msg-header">
+                                        <div class="summit-msg-author">
+                                            <div class="summit-msg-avatar">${{m.avatar || '👤'}}</div>
+                                            <div>
+                                                <div class="summit-msg-name">${{m.sender_name}}</div>
+                                                <div class="summit-msg-dept">${{m.department || ''}} • ${{m.role || ''}}</div>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            ${{badgeHtml}}
+                                            <span class="summit-msg-time">${{m.time_str}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="summit-msg-content">${{formattedContent}}</div>
+                                    ${{metricsHtml}}
+                                    ${{evidenceHtml}}
+                                    ${{highlightHtml}}
+                                </div>
+                            `;
+                        }}).join('');
+                        container.scrollTop = container.scrollHeight;
+                    }}
                     lastSummitMsgCount = msgs.length;
                 }}
             }}
 
-            // 4. Render Bảng Biểu Quyết & Sổ Lệnh Chiến Lược Tuần Mới
+            // 4. Render Bảng Biểu Quyết 14 Ban & Bộ Mã Tâm Điểm
             const voteContainer = document.getElementById('summit-voting-container');
             const votes = data.voting_board || [];
             if (voteContainer) {{
-                voteContainer.innerHTML = votes.map(v => {{
-                    const totalV = v.total_voters || 14;
-                    let tallyHtml = `<span class="summit-vote-tally" style="color: #34d399;">${{v.votes_for}}/${{totalV}} Nhất Trí</span>`;
-                    if (v.votes_against > 0 || (v.status && v.status.includes('CONDITION'))) {{
-                        tallyHtml = `<span class="summit-vote-tally" style="color: #f59e0b; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); padding: 2px 6px; border-radius: 4px;">${{v.votes_for}}/${{totalV}} (${{v.votes_against}} Bảo Lưu)</span>`;
-                    }}
-                    let orderZoneHtml = v.order_zone ? `<div style="color: #38bdf8; font-weight: 700; font-size: 11px; margin-top: 3px;">📍 Chiến Thuật: ${{v.order_zone}}</div>` : '';
-                    let tpRrHtml = (v.take_profit_1 && v.rr_ratio) ? `<div style="color: #a78bfa; font-size: 10.5px; margin-top: 2px;">🎯 TP1: ${{v.take_profit_1}} • TP2: ${{v.take_profit_2 || 'MA20'}} (R:R = ${{v.rr_ratio}})</div>` : '';
-                    let actionHtml = v.action ? `<div style="margin-top: 6px; font-size: 11px; color: #7dd3fc; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 4px;">⚡ ${{v.action}}</div>` : '';
-                    let disciplineHtml = v.discipline_note ? `<div style="margin-top: 5px; font-size: 10.5px; color: #fbbf24; background: rgba(245,158,11,0.08); border-left: 2px solid #f59e0b; padding: 4px 6px; border-radius: 4px;">${{v.discipline_note}}</div>` : '';
+                if (votes.length === 0) {{
+                    voteContainer.innerHTML = '<div style="font-size:11px; color:#94a3b8; padding:8px;">Chưa có bảng biểu quyết đang mở.</div>';
+                }} else {{
+                    voteContainer.innerHTML = votes.map(v => {{
+                        const totalV = v.total_voters || 14;
+                        let tallyHtml = `<span class="summit-vote-tally" style="color: #34d399;">${{v.votes_for}}/${{totalV}} Nhất Trí</span>`;
+                        if (v.status && v.status.includes('REJECT')) {{
+                            tallyHtml = `<span class="summit-vote-tally" style="color: #f87171; background: rgba(239,68,68,0.14); border: 1px solid rgba(239,68,68,0.35); padding: 2px 6px; border-radius: 4px;">${{v.votes_for}}/${{totalV}} LOẠI BỎ</span>`;
+                        }} else if (v.votes_against > 0 || (v.status && v.status.includes('CONDITION'))) {{
+                            tallyHtml = `<span class="summit-vote-tally" style="color: #f59e0b; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); padding: 2px 6px; border-radius: 4px;">${{v.votes_for}}/${{totalV}} (${{v.votes_against}} Bảo Lưu)</span>`;
+                        }}
+                        let orderZoneHtml = v.order_zone ? `<div style="color: #38bdf8; font-weight: 700; font-size: 11px; margin-top: 3px;">📍 Chiến Thuật: ${{v.order_zone}}</div>` : '';
+                        let tpRrHtml = (v.take_profit_1 && v.rr_ratio) ? `<div style="color: #a78bfa; font-size: 10.5px; margin-top: 2px;">🎯 TP1: ${{v.take_profit_1}} • TP2: ${{v.take_profit_2 || 'MA20'}} (R:R = ${{v.rr_ratio}})</div>` : '';
+                        let actionHtml = v.action ? `<div style="margin-top: 6px; font-size: 11px; color: #7dd3fc; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 4px;">⚡ ${{v.action}}</div>` : '';
+                        let disciplineHtml = v.discipline_note ? `<div style="margin-top: 5px; font-size: 10.5px; color: #fbbf24; background: rgba(245,158,11,0.08); border-left: 2px solid #f59e0b; padding: 4px 6px; border-radius: 4px;">${{v.discipline_note}}</div>` : '';
 
-                    return `
-                        <div class="summit-stock-vote-card">
-                            <div class="summit-stock-header">
-                                <span class="summit-stock-sym">${{v.ticker}}</span>
-                                ${{tallyHtml}}
+                        return `
+                            <div class="summit-stock-vote-card">
+                                <div class="summit-stock-header">
+                                    <span class="summit-stock-sym">${{v.ticker}}</span>
+                                    ${{tallyHtml}}
+                                </div>
+                                <div class="summit-stock-meta">
+                                    <div><strong>${{v.name}}</strong> (${{v.sector}})</div>
+                                    ${{orderZoneHtml}}
+                                    <div style="margin-top: 3px; color: #34d399;">Giá: ${{v.price}} • 1 Lô 100 CP: ${{v.lot_cost}}</div>
+                                    <div style="color: #94a3b8;">OCF/LNST: ${{v.ocf_lnst}} • Stop: <strong style="color: #f87171;">${{v.stop_loss}}</strong></div>
+                                    ${{tpRrHtml}}
+                                    ${{actionHtml}}
+                                    ${{disciplineHtml}}
+                                </div>
                             </div>
-                            <div class="summit-stock-meta">
-                                <div><strong>${{v.name}}</strong> (${{v.sector}})</div>
-                                ${{orderZoneHtml}}
-                                <div style="margin-top: 3px; color: #34d399;">Giá: ${{v.price}} • 1 Lô 100 CP: ${{v.lot_cost}}</div>
-                                <div style="color: #94a3b8;">OCF/LNST: ${{v.ocf_lnst}} • Stop: <strong style="color: #f87171;">${{v.stop_loss}}</strong></div>
-                                ${{tpRrHtml}}
-                                ${{actionHtml}}
-                                ${{disciplineHtml}}
-                            </div>
-                        </div>
-                    `;
-                }}).join('');
+                        `;
+                    }}).join('');
+                }}
             }}
 
-            // 5. Cập nhật Trạng Thái Phê Chuẩn của Chủ Tịch (Dùng Resolution Path Động)
+            // 4.5 Render Tổng Kết Master CIO James & Kế Hoạch Tuần Tham Khảo Cơ Động
+            const jamesBody = document.getElementById('summit-james-summary-body');
+            const jamesBtn = document.getElementById('btn-open-james-summary');
+            const jsSum = data.james_executive_summary;
+            if (jamesBody) {{
+                if (jsSum) {{
+                    const hlHtml = (jsSum.meeting_highlights || []).map(h => `<div style="margin-bottom:4px;">• ${{h}}</div>`).join('');
+                    const cadHtml = (jsSum.daily_cadence || []).map(c => `
+                        <div style="background:rgba(9,14,26,0.75); border:1px solid rgba(56,189,248,0.2); border-radius:6px; padding:6px 8px; margin-top:5px;">
+                            <div style="font-weight:800; color:#7dd3fc; font-size:11px;">${{c.day}}: ${{c.focus}}</div>
+                            <div style="color:#a7f3d0; font-size:10.5px; margin-top:2px;">⚡ ${{c.trigger}}</div>
+                        </div>
+                    `).join('');
+                    jamesBody.innerHTML = `
+                        <div style="font-weight:800; color:#f8fafc; margin-bottom:6px;">${{jsSum.summary_headline || ''}}</div>
+                        <div style="color:#cbd5e1; margin-bottom:6px;">${{hlHtml}}</div>
+                        <div style="font-size:11px; font-weight:800; color:#34d399; margin-top:6px;">📅 KẾ HOẠCH THAM KHẢO CƠ ĐỘNG TỪNG NGÀY:</div>
+                        ${{cadHtml}}
+                    `;
+                    if (jamesBtn) jamesBtn.style.display = 'block';
+                }} else {{
+                    jamesBody.innerHTML = '<div style="color:#94a3b8;">Chưa có bản tổng kết James cho trạng thái chờ hiện tại.</div>';
+                    if (jamesBtn) jamesBtn.style.display = 'none';
+                }}
+            }}
+
+            // 5. Cập nhật Trạng Thái Phê Chuẩn của Chủ Tịch & Quy Chế Dọn Phòng 2H
             const appBox = document.getElementById('summit-approval-status');
             const appBtn = document.getElementById('btn-approve-summit');
+            const retBox = document.getElementById('summit-retention-status-box');
+            const cleanInfo = document.getElementById('summit-cleanup-lock-info');
+            const cleanBtn = document.getElementById('btn-archive-clean-summit');
             const resPath = currentSummitResolutionPath;
+            const ret = data.retention_status || {{}};
+
             if (data.executive_approval && data.executive_approval.status === 'APPROVED') {{
                 if (appBox) {{
                     appBox.innerHTML = `
                         <div style="background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;">
                             <div style="color: #34d399; font-weight: 800; font-size: 12px; display: flex; align-items: center; gap: 6px;">
-                                <span>👑</span> <span>NGHỊ QUYẾT ĐÃ ĐƯỢC CHỦ TỊCH KÝ PHÊ DUYỆT CHÍNH THỨC</span>
+                                <span>👑</span> <span>NGHỊ QUYẾT &amp; BÁO CÁO JAMES ĐÃ ĐƯỢC CHỦ TỊCH KÝ DUYỆT</span>
                             </div>
                             <div style="color: #cbd5e1; font-size: 11px; margin-top: 4px;">Thời gian ký duyệt: <strong>${{data.executive_approval.approval_time}}</strong></div>
                             <div style="color: #fbbf24; font-size: 11px; margin-top: 2px;">🛡️ BAN 12 TRỌNG ĐÃ NIÊM PHONG PHÁP LÝ THỂ CHẾ</div>
-                            <div style="color: #38bdf8; font-size: 11px; margin-top: 5px; line-height: 1.4;">🚀 <strong>ĐÃ CHUYỂN GIAO SỔ LỆNH TUẦN MỚI:</strong> Bộ mã chiến lược (MSH, HDB, BAF, IDC) đã khóa sẵn Khung Giờ Vàng 14h00 cho Minh Quân &amp; James!</div>
+                            <div style="color: #38bdf8; font-size: 11px; margin-top: 5px; line-height: 1.4;">🚀 <strong>THỰC THI CƠ ĐỘNG TỪNG NGÀY:</strong> James &amp; Minh Quân sẽ đối soát thực tế lúc 08h30 &amp; Khung Giờ Vàng 14h00–14h25 mỗi phiên!</div>
                         </div>
                         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                            <button onclick="openReportModal('${{resPath}}')" 
+                            <button onclick="openReportModal('${{resPath}}')"
                                     style="flex: 1; min-width: 170px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: none; border-radius: 6px; padding: 10px 12px; font-size: 11px; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);">
                                 <span>📄</span> <span>Xem Toàn Văn Nghị Quyết</span>
                             </button>
@@ -5784,15 +6119,61 @@ def generate_portal_html(
                         </div>
                     `;
                 }}
-                if (appBtn) {{
-                    appBtn.style.display = 'none';
-                }}
+                if (appBtn) appBtn.style.display = 'none';
             }} else {{
-                if (appBtn) {{
-                    appBtn.style.display = 'flex';
-                }}
+                if (appBtn) appBtn.style.display = data.meeting_status === 'CLEANED_STANDBY' || data.is_archived_view ? 'none' : 'flex';
                 if (appBox) {{
-                    appBox.innerHTML = `Trạng thái: <strong style="color: #f59e0b;">⏳ Chờ Chủ Tịch Ký Phê Duyệt Nghị Quyết Tuần Mới</strong>`;
+                    appBox.innerHTML = `Trạng thái: <strong style="color: #f59e0b;">⏳ Chờ Chủ Tịch Đọc Báo Cáo James &amp; Ký Phê Duyệt</strong>`;
+                }}
+            }}
+
+            if (retBox && ret.cleanup_lock_reason) {{
+                retBox.innerHTML = `⏱️ <strong>Mốc mở khóa dọn phòng 2H:</strong> <span style="color:#7dd3fc;">${{ret.min_cleanup_display || '--'}}</span><br/><span>${{ret.cleanup_lock_reason}}</span>`;
+            }}
+            if (cleanInfo) {{
+                cleanInfo.innerHTML = ret.cleanup_lock_reason || 'Cần Chủ tịch ký duyệt + tối thiểu 2 tiếng sau họp.';
+            }}
+            if (cleanBtn) {{
+                if (ret.can_clean_now) {{
+                    cleanBtn.classList.remove('locked');
+                    cleanBtn.innerText = '🧹 LƯU KHO HOÀN CHỈNH & DỌN SẠCH PHÒNG HỌP';
+                }} else {{
+                    cleanBtn.classList.add('locked');
+                    const remMin = Math.ceil((ret.seconds_until_2h_unlock || 0) / 60);
+                    cleanBtn.innerText = !ret.chairman_approved
+                        ? '🔒 CHỜ CHỦ TỊCH KÝ DUYỆT TRƯỚC KHI DỌN PHÒNG'
+                        : `🔒 ĐANG KHÓA BẢO LƯU 2H (CÒN ~${{remMin}} PHÚT)`;
+                }}
+            }}
+
+            // 6. Render Danh Sách Phiên Họp Trong Kho Lưu Trữ (Archive Vault)
+            const archSummary = data.archive_summary || {{}};
+            const archList = archSummary.sessions || archSummary.archived_sessions || [];
+            const archCountEl = document.getElementById('summit-archive-count');
+            const archListEl = document.getElementById('summit-archive-history-list');
+            if (archCountEl) archCountEl.innerText = String(archSummary.total_archived || archList.length || 0);
+            if (archListEl) {{
+                if (archList.length === 0) {{
+                    archListEl.innerHTML = '<div style="font-size:11px; color:#64748b;">Chưa có phiên họp nào trong Kho Lưu Trữ.</div>';
+                }} else {{
+                    archListEl.innerHTML = archList.map(s => {{
+                        const isActiveArch = currentArchiveViewId && currentArchiveViewId === s.meeting_id;
+                        const apprTag = s.chairman_approved ? '<span style="color:#34d399;">✓ Đã duyệt</span>' : '<span style="color:#f59e0b;">⏳ Chưa duyệt</span>';
+                        return `
+                            <div class="summit-archive-item ${{isActiveArch ? 'active-viewing' : ''}}">
+                                <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
+                                    <strong style="color:#f8fafc;">${{s.meeting_id}}</strong>
+                                    ${{apprTag}}
+                                </div>
+                                <div style="color:#94a3b8; font-size:10.5px;">${{s.meeting_window_str || ''}} • ${{s.archived_display || ''}}</div>
+                                <div style="color:#cbd5e1; font-size:10.5px;">${{s.topic || s.title || ''}}</div>
+                                <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">
+                                    <button onclick="loadArchivedSummitSession('${{s.meeting_id}}')" style="background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); color:#7dd3fc; font-size:10px; font-weight:700; padding:3px 8px; border-radius:5px; cursor:pointer;">👁️ Xem Lại Phiên</button>
+                                    ${{s.archive_md_path ? `<button onclick="openReportModal('${{s.archive_md_path}}')" style="background:rgba(168,85,247,0.15); border:1px solid rgba(168,85,247,0.35); color:#e9d5ff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:5px; cursor:pointer;">📄 Biên Bản</button>` : ''}}
+                                </div>
+                            </div>
+                        `;
+                    }}).join('');
                 }}
             }}
         }}
@@ -5811,7 +6192,8 @@ def generate_portal_html(
                 }});
                 const data = await res.json();
                 if (data.ok) {{
-                    alert(`🎉 CHÚC MỪNG CHỦ TỊCH!\n\nToàn văn Nghị Quyết Thượng Đỉnh và Sổ Lệnh Bắn Tỉa Vòng 2 đã được Chủ tịch Trần Quốc Thiên Phước chính thức KÝ DUYỆT BAN HÀNH!\n\nBan 12 Tổng Kiểm Sát Viên Trọng đã niêm phong pháp lý thể chế.`);
+                    const unlockDisp = (data.retention_status && data.retention_status.min_cleanup_display) ? data.retention_status.min_cleanup_display : 'sau 2 giờ kể từ khi bế mạc';
+                    alert(`🎉 CHÚC MỪNG CHỦ TỊCH!\n\nToàn văn Nghị Quyết Thượng Đỉnh & Báo Cáo Tổng Kết của Master CIO James (${{data.meeting_id || ''}}) đã được Chủ tịch Trần Quốc Thiên Phước chính thức KÝ DUYỆT BAN HÀNH!\n\nTheo Điều 5 Hiến Chương, phiên họp vẫn được giữ nguyên trong phòng đến ${{unlockDisp}} (đủ tối thiểu 2 tiếng sau bế mạc) trước khi chuyển kho lưu trữ & dọn sạch phòng.`);
                     await pollSummitMeeting();
                 }} else {{
                     alert('Lỗi phê duyệt: ' + (data.error || 'Không xác định'));
@@ -5819,7 +6201,10 @@ def generate_portal_html(
             }} catch (err) {{
                 alert('Lỗi kết nối máy chủ khi phê duyệt: ' + err.message);
             }} finally {{
-                if (btn) btn.disabled = false;
+                if (btn) {{
+                    btn.disabled = false;
+                    btn.innerHTML = '<span>✍️</span> <span>KÝ PHÊ DUYỆT NGHỊ QUYẾT &amp; BÁO CÁO JAMES</span>';
+                }}
             }}
         }}
 
@@ -5846,12 +6231,10 @@ def generate_portal_html(
                 const data = await res.json();
                 if (data.ok) {{
                     await pollSummitMeeting();
-                    // Cuộn mượt xuống cuối phòng họp để xem ngay lập tức các phản hồi rẽ nhánh
-                    const container = document.getElementById('summit-timeline-container');
+                    const container = document.getElementById('summit-feed-container');
                     if (container) {{
                         setTimeout(() => {{ container.scrollTop = container.scrollHeight; }}, 80);
                     }}
-                    // Đồng bộ sang phòng chat Bàn Chỉ Huy James (Tab 3)
                     if (typeof appendUserMessage === 'function') {{
                         appendUserMessage(msg);
                     }}

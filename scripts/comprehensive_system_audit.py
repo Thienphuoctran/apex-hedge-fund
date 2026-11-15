@@ -787,7 +787,7 @@ try:
 except Exception as e:
     record_check("Phase6_PublishWarRoomReportEndpointAndJS", "Publish War Room Endpoint & JS", False, str(e))
 
-# 7. KIỂM TRA PHASE 7 V9.0: PHÒNG HỌP THƯỢNG ĐỈNH 14 PHÒNG BAN, CHUẨN BỊ T-15P & LỊCH HỌP 23H45 TUẦN SAU
+# 7. KIỂM TRA PHASE 7 V10.0: HIẾN CHƯƠNG 5 ĐIỀU, T-20P NGHIÊN CỨU, HỌP 00H45, TỔNG KẾT JAMES & KHO LƯU TRỮ 2 TIẾNG
 summit_preview_data = {}
 try:
     req = urllib.request.Request(f"{live_url}/api/summit_meeting?preview=1", headers={"User-Agent": "ApexAudit/4.0"})
@@ -799,36 +799,41 @@ try:
         bool(d.get("report_path")) and (BASE_DIR / str(d.get("report_path"))).exists()
         for d in dossiers
     )
-    check_prep_15m = (
+    prep_dur = int(summit_preview_data.get("prep_duration_minutes", 0) or 0)
+    check_prep_v10 = (
         res.status == 200
         and len(dossiers) >= 14
         and len(prep_stream) >= 14
+        and prep_dur in (15, 20)
         and all_prep_paths_exist
     )
     record_check(
         "Phase7_SummitPreMeetingPrep15mDossiers",
-        "Giai đoạn Chuẩn bị T-15 Phút (14/14 Phòng Ban quét dữ liệu thật & nộp hồ sơ)",
-        check_prep_15m,
-        f"PrepDossiers: {len(dossiers)}/14 | PrepLogs: {len(prep_stream)} | ReportPathsExist: {all_prep_paths_exist}"
+        "Giai đoạn Nghiên Cứu Tiền Hội Nghị 15–20p (14/14 Phòng Ban quét dữ liệu thật & nộp hồ sơ)",
+        check_prep_v10,
+        f"PrepDossiers: {len(dossiers)}/14 | PrepWindow: {prep_dur}m | PrepLogs: {len(prep_stream)} | ReportPathsExist: {all_prep_paths_exist}"
     )
 except Exception as e:
-    record_check("Phase7_SummitPreMeetingPrep15mDossiers", "Summit T-15m Prep Dossiers", False, str(e))
+    record_check("Phase7_SummitPreMeetingPrep15mDossiers", "Summit T-15..20m Prep Dossiers", False, str(e))
 
 try:
     roster = summit_preview_data.get("attendance_roster", []) or []
     t_stream = summit_preview_data.get("timeline_stream", []) or []
     present_bans = [r for r in roster if r.get("present") and str(r.get("id", "")).startswith("BAN_")]
     speakers = {str(m.get("department", "")) for m in t_stream if m.get("department")}
-    check_debate_v9 = (
+    stream_blob = " ".join(str(m.get("content", "")) for m in t_stream)
+    multi_universe_covered = all(sym in stream_blob for sym in ("DBC", "SZC", "HPG", "VHC", "HAH"))
+    check_debate_v10 = (
         len(present_bans) >= 14
-        and len(t_stream) >= 30
+        and len(t_stream) >= 35
         and len(speakers) >= 12
+        and multi_universe_covered
     )
     record_check(
         "Phase7_SummitFull14DepartmentAttendanceAndDebate",
-        "Điểm danh 14/14 Phòng Ban có mặt 100% & Tranh biện đa chiều (>= 30 lượt)",
-        check_debate_v9,
-        f"PresentBans: {len(present_bans)}/14 | TotalTurns: {len(t_stream)} | ActiveDeptVoices: {len(speakers)}"
+        "Điểm danh 14/14 Phòng Ban có mặt 100% & Tranh biện đa chiều toàn vũ trụ (>= 35 lượt)",
+        check_debate_v10,
+        f"PresentBans: {len(present_bans)}/14 | TotalTurns: {len(t_stream)} | ActiveDeptVoices: {len(speakers)} | ExpandedUniverse: {multi_universe_covered}"
     )
 except Exception as e:
     record_check("Phase7_SummitFull14DepartmentAttendanceAndDebate", "14-Dept Attendance & Debate", False, str(e))
@@ -839,26 +844,56 @@ try:
     s_topic = str(summit_preview_data.get("topic", ""))
     res_rel = str(summit_preview_data.get("resolution_report_path", ""))
     res_disk_ok = bool(res_rel) and (BASE_DIR / res_rel).exists()
-    check_sched_2345 = (
-        "23:45" in s_time
+    check_sched_0045 = (
+        "00:45" in s_time
         and s_dur == 30
         and ("Tuần Sau" in s_topic or "Tuần Mới" in s_topic)
         and res_disk_ok
     )
     record_check(
-        "Phase7_SummitNextWeek2345ScheduleAndResolution",
-        "Lịch họp 23h45 (30p) Chiến lược Thị trường Tuần Sau & Nghị quyết Markdown thật",
-        check_sched_2345,
+        "Phase7_SummitNextWeek0045ScheduleAndResolution",
+        "Lịch họp 00h45 (12h45 sáng, 30p) Chiến lược Thị trường Tuần Sau & Nghị quyết Markdown thật",
+        check_sched_0045,
         f"Start: {s_time} | Dur: {s_dur}m | ResolutionOnDisk: {res_disk_ok} ({res_rel})"
     )
 except Exception as e:
-    record_check("Phase7_SummitNextWeek2345ScheduleAndResolution", "Summit 23h45 Schedule & Resolution", False, str(e))
+    record_check("Phase7_SummitNextWeek0045ScheduleAndResolution", "Summit 00h45 Schedule & Resolution", False, str(e))
+
+try:
+    rules = summit_preview_data.get("summit_charter_rules", []) or []
+    charter_rel = str(summit_preview_data.get("charter_report_path", ""))
+    charter_ok = len(rules) >= 5 and bool(charter_rel) and (BASE_DIR / charter_rel).exists()
+
+    james_sum = summit_preview_data.get("james_executive_summary") or {}
+    js_rel = str(james_sum.get("report_path") or summit_preview_data.get("james_summary_report_path") or "")
+    js_disk_ok = bool(js_rel) and (BASE_DIR / js_rel).exists()
+    agility_txt = str(james_sum.get("agility_mandate", "")).lower()
+    cadence = james_sum.get("daily_cadence", []) or []
+    watchlist = james_sum.get("watchlist_tickers", []) or []
+    check_charter_james = (
+        charter_ok
+        and james_sum.get("is_reference_only") is True
+        and "tham khảo" in agility_txt
+        and "cơ động" in agility_txt
+        and len(cadence) >= 4
+        and len(watchlist) >= 5
+        and js_disk_ok
+    )
+    record_check(
+        "Phase7_SummitCharterAndJamesSummaryAgilePlan",
+        "Hiến Chương 5 Điều & Báo Cáo Tổng Kết James (Kế hoạch Tuần tham khảo, thực thi cơ động theo ngày)",
+        check_charter_james,
+        f"CharterRules: {len(rules)} | CharterMD: {charter_ok} | JamesMD: {js_disk_ok} ({js_rel}) | Watchlist: {len(watchlist)}"
+    )
+except Exception as e:
+    record_check("Phase7_SummitCharterAndJamesSummaryAgilePlan", "Charter 5 Rules & James Agile Summary", False, str(e))
 
 try:
     sched_payload = json.dumps({
-        "start_time": "2026-11-15T23:45:00+07:00",
+        "start_time": "2026-11-16T00:45:00+07:00",
         "duration_minutes": 30,
-        "topic": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới",
+        "prep_minutes": 20,
+        "topic": "Thị trường Tuần Sau (16/11 – 20/11/2026) — Tranh biện Chiến lược Toàn Vũ Trụ & Kế hoạch Đầu tư Cơ động",
         "trigger_prep_now": True
     }).encode("utf-8")
     req_sched = urllib.request.Request(
@@ -869,34 +904,92 @@ try:
     res_sched = urllib.request.urlopen(req_sched, timeout=20)
     sched_body = json.loads(res_sched.read().decode("utf-8"))
 
+    res_home_hdr = urllib.request.urlopen(urllib.request.Request(live_url, headers={"User-Agent": "ApexAudit/4.0"}), timeout=20)
+    cc_hdr = str(res_home_hdr.headers.get("Cache-Control", "")).lower()
+    no_store_ok = ("no-store" in cc_hdr and "no-cache" in cc_hdr)
+
     portal_html_text = str(globals().get("html", "") or "")
     summit_start_idx = portal_html_text.find('id="tab-summit-room"')
     summit_end_idx = portal_html_text.find('id="tab-timeline"')
     summit_section_html = portal_html_text[summit_start_idx:summit_end_idx] if summit_start_idx != -1 and summit_end_idx != -1 else portal_html_text
-    no_stale_20261108 = ("2026-11-08" not in summit_section_html)
-    required_v9_tokens = [
+    no_stale_legacy = ("2026-11-08" not in summit_section_html) and ("21H30" not in portal_html_text)
+    required_v10_tokens = [
         "summit-schedule-bar",
+        "summit-charter-strip",
         "summit-attendance-panel",
         "summit-prep-dossiers-panel",
+        "summit-james-summary-card",
+        "summit-archive-panel",
         "scheduleNewSummitMeeting",
+        "archiveAndCleanSummitRoom",
+        "loadArchivedSummitSession",
         "openCurrentSummitResolution",
     ]
-    missing_v9 = [t for t in required_v9_tokens if t not in portal_html_text]
-    check_api_ui_v9 = (
+    missing_v10 = [t for t in required_v10_tokens if t not in portal_html_text]
+    check_api_ui_v10 = (
         res_sched.status == 200
         and sched_body.get("ok") is True
         and int(sched_body.get("prep_dossiers_count", 0) or 0) >= 14
-        and no_stale_20261108
-        and len(missing_v9) == 0
+        and no_store_ok
+        and no_stale_legacy
+        and len(missing_v10) == 0
     )
     record_check(
         "Phase7_SummitScheduleAPIAndDynamicResolution",
-        "Endpoint POST /api/summit/schedule & Giao diện Tab 5 động 100% (Sạch 2026-11-08)",
-        check_api_ui_v9,
-        f"ScheduleOK: {sched_body.get('ok')} | PrepCount: {sched_body.get('prep_dossiers_count')} | CleanSummitSection: {no_stale_20261108} | MissingV9: {missing_v9}"
+        "POST /api/summit/schedule, Cache-Control no-store & Giao diện Tab 5 V10.0 (Sạch 21H30/2026-11-08)",
+        check_api_ui_v10,
+        f"ScheduleOK: {sched_body.get('ok')} | PrepCount: {sched_body.get('prep_dossiers_count')} | NoStoreHdr: {no_store_ok} | CleanHTML: {no_stale_legacy} | MissingV10: {missing_v10}"
     )
 except Exception as e:
-    record_check("Phase7_SummitScheduleAPIAndDynamicResolution", "Summit Schedule API & Dynamic UI", False, str(e))
+    record_check("Phase7_SummitScheduleAPIAndDynamicResolution", "Summit Schedule API & Dynamic V10 UI", False, str(e))
+
+try:
+    req_arch = urllib.request.Request(f"{live_url}/api/summit/archive", headers={"User-Agent": "ApexAudit/4.0"})
+    res_arch = urllib.request.urlopen(req_arch, timeout=20)
+    arch_body = json.loads(res_arch.read().decode("utf-8"))
+    arch_sessions = (arch_body.get("ledger") or {}).get("sessions", []) or []
+    ret_st = arch_body.get("retention_status") or {}
+    has_2345_archived = any(str(s.get("meeting_id")) == "APEX-SUMMIT-20261115-2345" for s in arch_sessions)
+
+    hist_ok = False
+    if has_2345_archived:
+        req_hist = urllib.request.Request(
+            f"{live_url}/api/summit/archive?meeting_id=APEX-SUMMIT-20261115-2345",
+            headers={"User-Agent": "ApexAudit/4.0"}
+        )
+        res_hist = urllib.request.urlopen(req_hist, timeout=20)
+        hist_body = json.loads(res_hist.read().decode("utf-8"))
+        hist_turns = (hist_body.get("session") or {}).get("timeline_stream", []) or []
+        hist_ok = bool(hist_body.get("ok")) and len(hist_turns) >= 25
+
+    lock_409_ok = False
+    try:
+        req_clean = urllib.request.Request(
+            f"{live_url}/api/summit/archive_and_clean",
+            data=json.dumps({"force": False}).encode("utf-8"),
+            headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/4.0"}
+        )
+        urllib.request.urlopen(req_clean, timeout=20)
+    except urllib.error.HTTPError as he:
+        lock_body = json.loads(he.read().decode("utf-8"))
+        lock_409_ok = (he.code == 409 and lock_body.get("ok") is False)
+
+    check_archive_2h = (
+        res_arch.status == 200
+        and arch_body.get("ok") is True
+        and int(ret_st.get("policy_hours", 0) or 0) == 2
+        and has_2345_archived
+        and hist_ok
+        and lock_409_ok
+    )
+    record_check(
+        "Phase7_SummitArchiveVaultAnd2HourCleanupRule",
+        "Kho Lưu Trữ Summit Archive Vault (/api/summit/archive) & Khóa Dọn Phòng 2H + Phê Duyệt (409 Lock)",
+        check_archive_2h,
+        f"ArchivedSessions: {len(arch_sessions)} | Has2345: {has_2345_archived} | HistReadOK: {hist_ok} | Rule5Lock409: {lock_409_ok}"
+    )
+except Exception as e:
+    record_check("Phase7_SummitArchiveVaultAnd2HourCleanupRule", "Summit Archive Vault & 2H Rule", False, str(e))
 
 try:
     dir_payload = json.dumps({"message": "Báo cáo ngắn phương án phòng thủ HDB tuần sau"}).encode("utf-8")

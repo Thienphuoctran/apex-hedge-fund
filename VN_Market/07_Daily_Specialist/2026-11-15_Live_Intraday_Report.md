@@ -1,5 +1,5 @@
 # [BAN 7 VN & BAN 9] BÁO CÁO TÁC CHIẾN LIVE INTRADAY — 2026-11-15
-**Cập nhật lúc:** `2026-11-15 23:52:07 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
+**Cập nhật lúc:** `2026-11-15 23:55:15 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
 **Trạng thái thị trường (`Market Regime`):** **`⚖️ GIẰNG CO PHÂN HÓA (CHỌN LỌC CỰC CHẶT)`**  
 **Chỉ thị điều hành:** VN-Index +0.01%, Độ rộng 36%, Basis +6.09đ. Thị trường phân hóa mạnh — Cấm FOMO giá xanh; chỉ giữ vị thế khỏe và rình giá chiết khấu.
 

@@ -529,15 +529,57 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.send_header("Access-Control-Allow-Origin", "*")
-            self.send_header("Cache-Control", "no-cache")
+            self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+            self.send_header("Pragma", "no-cache")
             self.end_headers()
             try:
-                from scripts.apex_summit_meeting_engine import get_realtime_meeting_state
+                import importlib
+                import scripts.apex_autonomous_council_engine
+                import scripts.apex_summit_meeting_engine
+                importlib.reload(scripts.apex_autonomous_council_engine)
+                importlib.reload(scripts.apex_summit_meeting_engine)
                 preview = query.get("preview", ["0"])[0] in ("1", "true", "True")
-                st = get_realtime_meeting_state(preview_mode=preview)
+                archive_id = query.get("archive_id", [""])[0].strip() or None
+                st = scripts.apex_summit_meeting_engine.get_realtime_meeting_state(
+                    preview_mode=preview,
+                    archive_id=archive_id
+                )
                 self.wfile.write(json.dumps(st, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
-                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+                self.wfile.write(json.dumps({"error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/summit/archive":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+            self.send_header("Pragma", "no-cache")
+            self.end_headers()
+            try:
+                import importlib
+                import scripts.apex_autonomous_council_engine
+                import scripts.apex_summit_meeting_engine
+                importlib.reload(scripts.apex_autonomous_council_engine)
+                importlib.reload(scripts.apex_summit_meeting_engine)
+                meeting_id = query.get("meeting_id", [""])[0].strip()
+                if meeting_id:
+                    sess = scripts.apex_autonomous_council_engine.get_archived_summit_by_id(meeting_id)
+                    if sess is None:
+                        self.wfile.write(json.dumps({"ok": False, "error": f"Không tìm thấy phiên họp lưu trữ '{meeting_id}'"}, ensure_ascii=False).encode("utf-8"))
+                    else:
+                        self.wfile.write(json.dumps({"ok": True, "session": sess}, ensure_ascii=False).encode("utf-8"))
+                else:
+                    ledger = scripts.apex_autonomous_council_engine.load_summit_archive_ledger()
+                    state = scripts.apex_summit_meeting_engine.load_meeting_state()
+                    retention = scripts.apex_autonomous_council_engine.compute_retention_status(state)
+                    self.wfile.write(json.dumps({
+                        "ok": True,
+                        "ledger": ledger,
+                        "retention_status": retention,
+                    }, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
 
         elif path == "/api/tactical_war_room":
@@ -716,6 +758,9 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
         else:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+            self.send_header("Pragma", "no-cache")
+            self.send_header("Expires", "0")
             self.end_headers()
             status_data = {}
             if SUPERVISOR_STATUS_FILE.exists():
@@ -866,26 +911,47 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
 
         elif parsed_url.path == "/api/approve_summit_resolution":
             try:
-                from scripts.apex_autonomous_council_engine import approve_summit_resolution
-                res = approve_summit_resolution()
+                content_length = int(self.headers.get("Content-Length", 0))
+                body_bytes = self.rfile.read(content_length) if content_length > 0 else b"{}"
+                req_data = json.loads(body_bytes.decode("utf-8") or "{}")
+            except Exception:
+                req_data = {}
+            try:
+                import importlib
+                import scripts.apex_autonomous_council_engine
+                import scripts.apex_summit_meeting_engine
+                importlib.reload(scripts.apex_autonomous_council_engine)
+                importlib.reload(scripts.apex_summit_meeting_engine)
+                approved_by = str(req_data.get("approved_by") or "Chủ tịch Trần Quốc Thiên Phước").strip()
+                res = scripts.apex_autonomous_council_engine.approve_summit_resolution(approved_by=approved_by)
 
                 # Gửi thông báo đến Telegram james_hq
                 try:
                     from scripts.telegram_dispatcher import dispatch_message
-                    dispatch_message('james_hq', "👑 *[CHỦ TỊCH ĐÃ KÝ DUYỆT NGHỊ QUYẾT THƯỢNG ĐỈNH & SỔ LỆNH VÒNG 2]*\n\n👤 *Người ký*: `Chủ tịch Trần Quốc Thiên Phước`\n📜 *Văn kiện*: `08_Master_Investment_CIO/council_resolutions/`\n🛡️ *Tổng Kiểm Sát Ban 12 Trọng*: Đã niêm phong pháp lý thể chế thành công 100%!")
+                    mid = res.get("meeting_id", "APEX-SUMMIT")
+                    unlock_disp = (res.get("retention_status") or {}).get("min_cleanup_display", "+2H")
+                    dispatch_message(
+                        "james_hq",
+                        f"👑 *[CHỦ TỊCH ĐÃ KÝ DUYỆT NGHỊ QUYẾT THƯỢNG ĐỈNH ({mid})]*\n\n"
+                        f"👤 *Người ký*: `{approved_by}`\n"
+                        f"📜 *Văn kiện*: `{res.get('resolution_report_path', '08_Master_Investment_CIO/council_resolutions/')}`\n"
+                        f"⏳ *Quy chế dọn phòng (Điều 5)*: Được lưu trữ & dọn sạch sau tối thiểu 2 tiếng (`{unlock_disp}`)\n"
+                        f"🛡️ *Tổng Kiểm Sát Ban 12 Trọng*: Đã niêm phong pháp lý thể chế & đồng bộ Kho Lưu Trữ 100%!"
+                    )
                 except Exception:
                     pass
 
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
-                self.send_header("Cache-Control", "no-cache")
+                self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+                self.send_header("Pragma", "no-cache")
                 self.end_headers()
                 self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.send_response(500)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.end_headers()
-                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
 
         elif parsed_url.path == "/api/summit/schedule":
@@ -896,28 +962,67 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             except Exception:
                 req_data = {}
             try:
-                from scripts.apex_summit_meeting_engine import schedule_custom_summit_meeting
+                import importlib
+                import scripts.apex_autonomous_council_engine
+                import scripts.apex_summit_meeting_engine
+                importlib.reload(scripts.apex_autonomous_council_engine)
+                importlib.reload(scripts.apex_summit_meeting_engine)
                 start_time_str = str(req_data.get("start_time") or "").strip() or None
                 duration_minutes = int(req_data.get("duration_minutes") or 30)
+                prep_minutes = int(req_data.get("prep_minutes") or 20)
                 topic_str = str(req_data.get("topic") or "").strip() or None
                 trigger_prep_now = bool(req_data.get("trigger_prep_now", True))
-                res = schedule_custom_summit_meeting(
+                res = scripts.apex_summit_meeting_engine.schedule_custom_summit_meeting(
                     start_time_str=start_time_str,
                     duration_minutes=duration_minutes,
                     topic=topic_str,
-                    trigger_prep_now=trigger_prep_now
+                    trigger_prep_now=trigger_prep_now,
+                    prep_minutes=prep_minutes,
                 )
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.send_header("Access-Control-Allow-Origin", "*")
-                self.send_header("Cache-Control", "no-cache")
+                self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+                self.send_header("Pragma", "no-cache")
                 self.end_headers()
                 self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.send_response(500)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.end_headers()
-                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif parsed_url.path == "/api/summit/archive_and_clean":
+            try:
+                content_length = int(self.headers.get("Content-Length", 0))
+                body_bytes = self.rfile.read(content_length) if content_length > 0 else b"{}"
+                req_data = json.loads(body_bytes.decode("utf-8") or "{}")
+            except Exception:
+                req_data = {}
+            try:
+                import importlib
+                import scripts.apex_autonomous_council_engine
+                importlib.reload(scripts.apex_autonomous_council_engine)
+                force_flag = bool(req_data.get("force", False))
+                requested_by = str(req_data.get("requested_by") or "Chủ tịch Trần Quốc Thiên Phước").strip()
+                res = scripts.apex_autonomous_council_engine.clean_and_reset_summit_room(
+                    force=force_flag,
+                    requested_by=requested_by,
+                )
+                status_code = 200 if res.get("ok") else 409
+                self.send_response(status_code)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+                self.send_header("Pragma", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
 
         elif parsed_url.path == "/api/tactical_command":

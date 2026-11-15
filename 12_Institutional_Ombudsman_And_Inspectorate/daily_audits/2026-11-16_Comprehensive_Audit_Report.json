@@ -1,0 +1,327 @@
+{
+  "timestamp": "2026-11-16 00:41:56",
+  "target_url": "http://127.0.0.1:8000",
+  "officers": [
+    "Master CIO James (Ban 8)",
+    "Tổng Kiểm Sát Viên Trọng (Ban 12)"
+  ],
+  "account": "TCBS 105C307855 (Chủ tịch Trần Quốc Thiên Phước)",
+  "modules_tested": [
+    {
+      "module": "SSOT_Integrity",
+      "check": "Mã tài khoản TCBS chính chủ",
+      "status": "PASSED",
+      "details": "Account: 105C307855"
+    },
+    {
+      "module": "SSOT_Integrity",
+      "check": "Số dư tiền mặt SSOT hợp lệ (>= 0)",
+      "status": "PASSED",
+      "details": "Cash: 12,516,471 đ"
+    },
+    {
+      "module": "SSOT_Integrity",
+      "check": "Cân bằng kế toán NAV = Cash + MarketVal",
+      "status": "PASSED",
+      "details": "NAV: 18,151,471 đ (diff 0.00)"
+    },
+    {
+      "module": "SSOT_Integrity",
+      "check": "Cấu trúc danh mục đang nắm giữ hợp lệ",
+      "status": "PASSED",
+      "details": "Holdings: 2 mã (HDB, MSH)"
+    },
+    {
+      "module": "Living_Brain",
+      "check": "Snapshot Brain khớp SSOT & Watchlist động",
+      "status": "PASSED",
+      "details": "Brain Cash: 12,516,471 đ | Stocks: 6 | Regime: SIDEWAY_CHOPPY"
+    },
+    {
+      "module": "Living_Brain",
+      "check": "Xuất Live Intraday Report & Sync SQLite Vault",
+      "status": "PASSED",
+      "details": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\VN_Market\\07_Daily_Specialist\\2026-11-16_Live_Intraday_Report.md"
+    },
+    {
+      "module": "Live_Endpoint",
+      "check": "GET /api/health khớp SSOT Cash",
+      "status": "PASSED",
+      "details": "Status: ok, Health Cash: 12,516,471 vs SSOT 12,516,471"
+    },
+    {
+      "module": "Live_Endpoint",
+      "check": "GET /api/tactical_war_room khớp SSOT & không mock index",
+      "status": "PASSED",
+      "details": "WR Cash: 12,516,471 | VN-Index: 1734.93 | Picks: 6"
+    },
+    {
+      "module": "Live_Endpoint",
+      "check": "GET /api/tactical_war_room/stream (SSE)",
+      "status": "PASSED",
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 114218"
+    },
+    {
+      "module": "Live_Endpoint",
+      "check": "GET /api/reports",
+      "status": "PASSED",
+      "details": "Tổng số báo cáo: 380"
+    },
+    {
+      "module": "Live_Endpoint",
+      "check": "POST /api/command (/tcbs)",
+      "status": "PASSED",
+      "details": "Officer: Master CIO James (Ban 8), Ok: True"
+    },
+    {
+      "module": "Live_Endpoint",
+      "check": "POST /api/command (/solenh)",
+      "status": "PASSED",
+      "details": "Response length: 806"
+    },
+    {
+      "module": "Live_Endpoint",
+      "check": "POST /api/command (/hop FPT)",
+      "status": "PASSED",
+      "details": "Debate length: 1522"
+    },
+    {
+      "module": "TimeGating_Embargo",
+      "check": "Cầu chì khóa thời gian thực (0 rò rỉ báo cáo tương lai)",
+      "status": "PASSED",
+      "details": "Báo cáo tương lai rò rỉ: 0"
+    },
+    {
+      "module": "Database_Sentinel",
+      "check": "Tệp quy chuẩn database_scaling_sentinel.json",
+      "status": "PASSED",
+      "details": "C:\\Users\\phuoc\\Downloads\\antigravity\\Chứng khoán\\config\\database_scaling_sentinel.json"
+    },
+    {
+      "module": "Database_Sentinel",
+      "check": "Ngưỡng giám sát SQLite Vault V5 (50k - 100k)",
+      "status": "PASSED",
+      "details": "Arch: SQLITE_LAKEHOUSE_VAULT_V5, Min: 50000, Max: 100000"
+    },
+    {
+      "module": "Database_Sentinel",
+      "check": "Check 6 trong Bộ Não Thanh Tra Của Trọng",
+      "status": "PASSED",
+      "details": "Checks performed: 6"
+    },
+    {
+      "module": "Python_Code_Integrity",
+      "check": "Biên dịch sạch 135 scripts trong scripts/",
+      "status": "PASSED",
+      "details": "Lỗi: 0"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "Giao diện V4.0 Bloomberg-Grade đã kích hoạt",
+      "status": "PASSED",
+      "details": "V4.0 badge on live HTML"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "TradingView HOSE Live Widget tích hợp",
+      "status": "PASSED",
+      "details": "Found tv_chart_container"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "Bàn Chỉ Huy James 2 Cột (Split-View)",
+      "status": "PASSED",
+      "details": "Found split layout classes"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "Living War-Room V4.0 SSE + Sync TCInvest + Spillover + Không mock tĩnh",
+      "status": "PASSED",
+      "details": "Verified SSE, Sync form, Regime pill, Spillover, 0 mock index"
+    },
+    {
+      "module": "Web_Portal_UI",
+      "check": "Smart Formatter bóc tách KPI & Stock Cards cho James",
+      "status": "PASSED",
+      "details": "Found formatJamesResponseHtml"
+    },
+    {
+      "module": "Phase2_Spillover",
+      "check": "Global-to-VN Spillover Engine (US -> VN)",
+      "status": "PASSED",
+      "details": "Bias: NEUTRAL_SELECTIVE | Mult: 1.0x | Cap: 50%"
+    },
+    {
+      "module": "Phase2_Slippage",
+      "check": "Execution Slippage & Bull-Trap Tracker",
+      "status": "PASSED",
+      "details": "BuyUp>=58.0% | RSI<=70.0 | Signals=2"
+    },
+    {
+      "module": "Phase2_CloudDB",
+      "check": "Cloud DB Schema (RLS) & Local SQLite Mirror",
+      "status": "PASSED",
+      "details": "Mode: LOCAL_SQLITE_VAULT_MIRROR | Vault: True"
+    },
+    {
+      "module": "Phase2_Security_KeepAlive",
+      "check": "Portal PIN Crypto + GitHub Actions Keep-Alive",
+      "status": "PASSED",
+      "details": "PBKDF2 Verified: True | Keep-Alive YML: True"
+    },
+    {
+      "module": "Phase3_OmniCrawler",
+      "check": "Omni-Market Crawler 180 mã & FTS5 Search Engine",
+      "status": "PASSED",
+      "details": "Universe: 180 | File: True | HDB Match: True"
+    },
+    {
+      "module": "Phase3_DeepBrain",
+      "check": "Deep Financial Brain (DuPont, 3-Model Valuation, EV%/Half-Kelly)",
+      "status": "PASSED",
+      "details": "Analyzed: 71 | NVDA ROE: 117.21% | HDB Fair: 39938.0"
+    },
+    {
+      "module": "Phase3_EvolutionLegends",
+      "check": "Self-Evolution Maturity IQ, Weights Invariants & 15 World Legends",
+      "status": "PASSED",
+      "details": "Maturity: 86.8/100 | IQ: 162.5 | Legends: 15 | US=100 VN=1.0"
+    },
+    {
+      "module": "Phase3_LiveEndpoints",
+      "check": "V5 Live Endpoints (/api/intelligence/search, /api/deep_brain, UI Panel)",
+      "status": "PASSED",
+      "details": "Search Ok: True | DeepBrain Ok: True | UI: True | WR Summary: True"
+    },
+    {
+      "module": "Phase4_LiveBCTC_Catalysts",
+      "check": "Live Quarterly BCTC Auto-Refresher & Instant Catalyst/Risk Alerts",
+      "status": "PASSED",
+      "details": "BCTC patched: 6 | Alerts: 33 (Holding: 1)"
+    },
+    {
+      "module": "Phase4_MultiHorizon_WalkForward",
+      "check": "Walk-Forward Attribution T+3/T+5/T+10/T+20 & 5-School Matrix",
+      "status": "PASSED",
+      "details": "Horizons: ['T+3', 'T+5', 'T+10', 'T+20'] | Schools: 5"
+    },
+    {
+      "module": "Phase4_CorrelationMatrix_Guard",
+      "check": "60-Session Portfolio Return Correlation Matrix & Sector Concentration Guard",
+      "status": "PASSED",
+      "details": "60D Live Series: 14 | Evaluated: 28"
+    },
+    {
+      "module": "Phase4_CloudDB_V6_And_AlertsAPI",
+      "check": "Cloud DB V6 Vault Sync, Supabase RLS Migration & /api/intelligence/alerts",
+      "status": "PASSED",
+      "details": "Snapshots DB: 6 | Migration RLS: True | Alerts API: True | UI V6: True"
+    },
+    {
+      "module": "Phase5_EnterpriseRosterAndPackets",
+      "check": "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
+      "status": "PASSED",
+      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: 310b96eb2bb0..."
+    },
+    {
+      "module": "Phase5_AdversarialDebateAndVeto",
+      "check": "Tranh Biện Đối Kháng & Quyền Phủ Quyết VETO Hiến Chương (MWG/FPT)",
+      "status": "PASSED",
+      "details": "MWG: VETOED_CAPITAL_FIT_VIOLATION (Veto=True) | FPT: VETOED_TREND_AND_VALUATION_RISK (Veto=True) | Portfolio: ENTERPRISE_STRATEGY_HOLD_SELECTIVE_14H"
+    },
+    {
+      "module": "Phase5_ConstitutionalOmbudsmanAndZeroStaleSSOT",
+      "check": "Kiểm Toán Viên Trọng & 0% Chuỗi Cứng Lỗi Thời SSOT (Directive + Summit)",
+      "status": "PASSED",
+      "details": "Live NAV/Cash (18,151,471/12,516,471) synced; 0 stale strings in /tcbs & Summit state"
+    },
+    {
+      "module": "Phase5_LiveEnterpriseEndpoints",
+      "check": "V7 Live Endpoints (/api/enterprise/state, /api/enterprise/convene, War-Room & UI Panel)",
+      "status": "PASSED",
+      "details": "State OK=True | Convene HDB=HOLD_RIDE_WINNER_T0_READY | WR=True | UI=True"
+    },
+    {
+      "module": "Phase5_CloudDB_V7_EnterpriseSync",
+      "check": "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
+      "status": "PASSED",
+      "details": "LocalSaved=True | VaultRows=9 | MigrationRLS=True | CloudSynced=False"
+    },
+    {
+      "module": "Phase6_ZeroStaleHardcodedWebStrings",
+      "check": "Zero stale hardcoded dates, prices, or old cash numbers in Portal HTML",
+      "status": "PASSED",
+      "details": "HTML Bytes: 801892 | StaleFound: []"
+    },
+    {
+      "module": "Phase6_VictorDeepSurveillanceAndAlphaWatchlist",
+      "check": "Victor 2-Tier Deep Surveillance (Held Positions + Alpha Watchlist Lot-100 Check)",
+      "status": "PASSED",
+      "details": "Held: ['HDB', 'MSH'] | WatchlistCount: 8 | FieldsOK: True"
+    },
+    {
+      "module": "Phase6_LiveExecutionMasterPlan",
+      "check": "Dynamic Market-Adaptive Live Execution Master Plan & 3 Contingency Scenarios",
+      "status": "PASSED",
+      "details": "PlanID: WAR-PLAN-20261116-0041 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
+    },
+    {
+      "module": "Phase6_DepartmentWorkstationAndReportAuthenticity",
+      "check": "14-Department Operations Workstation & 100% Verified Disk Report Authenticity",
+      "status": "PASSED",
+      "details": "Departments: 14/14 | Feed: 12 | WsExist: True | FeedExist: True"
+    },
+    {
+      "module": "Phase6_PublishWarRoomReportEndpointAndJS",
+      "check": "V8 War-Room UI Panels, 1-Click Publish JS & /api/war_room/publish_report Endpoint",
+      "status": "PASSED",
+      "details": "MissingUITokens: [] | EndpointWired: True"
+    },
+    {
+      "module": "Phase7_SummitPreMeetingPrep15mDossiers",
+      "check": "Giai đoạn Nghiên Cứu Tiền Hội Nghị 15–20p (14/14 Phòng Ban quét dữ liệu thật & nộp hồ sơ)",
+      "status": "PASSED",
+      "details": "PrepDossiers: 14/14 | PrepWindow: 20m | PrepLogs: 17 | ReportPathsExist: True"
+    },
+    {
+      "module": "Phase7_SummitFull14DepartmentAttendanceAndDebate",
+      "check": "Điểm danh 14/14 Phòng Ban có mặt 100% & Tranh biện đa chiều toàn vũ trụ (>= 35 lượt)",
+      "status": "PASSED",
+      "details": "PresentBans: 14/14 | TotalTurns: 43 | ActiveDeptVoices: 39 | ExpandedUniverse: True"
+    },
+    {
+      "module": "Phase7_SummitNextWeek0045ScheduleAndResolution",
+      "check": "Lịch họp 00h45 (12h45 sáng, 30p) Chiến lược Thị trường Tuần Sau & Nghị quyết Markdown thật",
+      "status": "PASSED",
+      "details": "Start: 2026-11-16T00:45:00+07:00 | Dur: 30m | ResolutionOnDisk: True (08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md)"
+    },
+    {
+      "module": "Phase7_SummitCharterAndJamesSummaryAgilePlan",
+      "check": "Hiến Chương 5 Điều & Báo Cáo Tổng Kết James (Kế hoạch Tuần tham khảo, thực thi cơ động theo ngày)",
+      "status": "PASSED",
+      "details": "CharterRules: 5 | CharterMD: True | JamesMD: True (08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_Tuan_Co_Dong.md) | Watchlist: 6"
+    },
+    {
+      "module": "Phase7_SummitScheduleAPIAndDynamicResolution",
+      "check": "POST /api/summit/schedule, Cache-Control no-store & Giao diện Tab 5 V10.0 (Sạch 21H30/2026-11-08)",
+      "status": "PASSED",
+      "details": "ScheduleOK: True | PrepCount: 14 | NoStoreHdr: True | CleanHTML: True | MissingV10: []"
+    },
+    {
+      "module": "Phase7_SummitArchiveVaultAnd2HourCleanupRule",
+      "check": "Kho Lưu Trữ Summit Archive Vault (/api/summit/archive) & Khóa Dọn Phòng 2H + Phê Duyệt (409 Lock)",
+      "status": "PASSED",
+      "details": "ArchivedSessions: 2 | Has2345: True | HistReadOK: True | Rule5Lock409: True"
+    },
+    {
+      "module": "Phase7_SummitLiveInteractiveDirective",
+      "check": "Tương tác chỉ thị Chủ tịch trực tiếp trong Phòng Họp Thượng Đỉnh (Đa Ban phản hồi)",
+      "status": "PASSED",
+      "details": "Ok: True | MultiDeptReplies: 4"
+    }
+  ],
+  "total_checks": 52,
+  "passed_checks": 52,
+  "warnings": [],
+  "errors": []
+}
