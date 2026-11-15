@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-16 02:06:52",
-  "target_url": "http://127.0.0.1:18080",
+  "timestamp": "2026-11-16 02:39:37",
+  "target_url": "https://apex-hedge-fund.onrender.com",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -59,13 +59,13 @@
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room/stream (SSE)",
       "status": "PASSED",
-      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 149502"
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 149913"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/reports",
       "status": "PASSED",
-      "details": "Tổng số báo cáo: 382"
+      "details": "Tổng số báo cáo: 380"
     },
     {
       "module": "Live_Endpoint",
@@ -221,7 +221,7 @@
       "module": "Phase5_EnterpriseRosterAndPackets",
       "check": "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
       "status": "PASSED",
-      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: fd933c22d2e9..."
+      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: 73e07d2c8d2a..."
     },
     {
       "module": "Phase5_AdversarialDebateAndVeto",
@@ -245,13 +245,13 @@
       "module": "Phase5_CloudDB_V7_EnterpriseSync",
       "check": "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
       "status": "PASSED",
-      "details": "LocalSaved=True | VaultRows=11 | MigrationRLS=True | CloudSynced=False"
+      "details": "LocalSaved=True | VaultRows=14 | MigrationRLS=True | CloudSynced=False"
     },
     {
       "module": "Phase6_ZeroStaleHardcodedWebStrings",
       "check": "Zero stale hardcoded dates, prices, or old cash numbers in Portal HTML",
       "status": "PASSED",
-      "details": "HTML Bytes: 858325 | StaleFound: []"
+      "details": "HTML Bytes: 856746 | StaleFound: []"
     },
     {
       "module": "Phase6_VictorDeepSurveillanceAndAlphaWatchlist",
@@ -263,7 +263,7 @@
       "module": "Phase6_LiveExecutionMasterPlan",
       "check": "Dynamic Market-Adaptive Live Execution Master Plan & 3 Contingency Scenarios",
       "status": "PASSED",
-      "details": "PlanID: WAR-PLAN-20261116-0206 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
+      "details": "PlanID: WAR-PLAN-20261116-0239 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
     },
     {
       "module": "Phase6_DepartmentWorkstationAndReportAuthenticity",
@@ -287,7 +287,7 @@
       "module": "Phase7_SummitFull14DepartmentAttendanceAndDebate",
       "check": "Điểm danh 14/14 Phòng Ban có mặt 100% & Tranh biện đa chiều toàn vũ trụ (>= 35 lượt)",
       "status": "PASSED",
-      "details": "PresentBans: 14/14 | TotalTurns: 43 | ActiveDeptVoices: 39 | ExpandedUniverse: True"
+      "details": "PresentBans: 14/14 | TotalTurns: 48 | ActiveDeptVoices: 43 | ExpandedUniverse: True"
     },
     {
       "module": "Phase7_SummitNextWeek0045ScheduleAndResolution",
@@ -303,9 +303,9 @@
     },
     {
       "module": "Phase7_SummitScheduleAPIAndDynamicResolution",
-      "check": "POST /api/summit/schedule, Cache-Control no-store & Giao diện Tab 5 V10.0 (Sạch 21H30/2026-11-08)",
-      "status": "PASSED",
-      "details": "ScheduleOK: True | PrepCount: 14 | NoStoreHdr: True | CleanHTML: True | MissingV10: []"
+      "check": "Summit Schedule API & Dynamic V10 UI",
+      "status": "FAILED",
+      "details": "The read operation timed out"
     },
     {
       "module": "Phase7_SummitArchiveVaultAnd2HourCleanupRule",
@@ -336,10 +336,34 @@
       "check": "Hồ sơ Markdown trên ổ cứng & UI/JS War-Room Demo Plan + Victor Alert Center",
       "status": "PASSED",
       "details": "DemoMD=True | VictorMD=True | UITokens=True"
+    },
+    {
+      "module": "Phase9_ErgonomicSubDeckArchitecture",
+      "check": "Bố cục Sub-Deck chống cuộn dài (War-Room 4 Phân khu + Summit 3 Phân khu + _render_war_room_v8_decks)",
+      "status": "PASSED",
+      "details": "V8Decks=True | MissingTokens=[]"
+    },
+    {
+      "module": "Phase9_GlobalRealtimeSyncAllTabs",
+      "check": "Đồng bộ thời gian thực xuyên suốt Header/KPIs & 7 Tabs + Non-blocking Toast",
+      "status": "PASSED",
+      "details": "MissingRT=[] | NoBlockingAlert=True"
+    },
+    {
+      "module": "Phase9_ModernWebGuidanceCompliance",
+      "check": "Tuân thủ Modern Web Guidance (hidden=until-found, beforematch, sticky thead, content-visibility, clean tokens)",
+      "status": "PASSED",
+      "details": "MissingMWG=[] | CleanLegacy=True"
     }
   ],
-  "total_checks": 55,
-  "passed_checks": 55,
+  "total_checks": 58,
+  "passed_checks": 57,
   "warnings": [],
-  "errors": []
+  "errors": [
+    {
+      "module": "Phase7_SummitScheduleAPIAndDynamicResolution",
+      "check": "Summit Schedule API & Dynamic V10 UI",
+      "details": "The read operation timed out"
+    }
+  ]
 }

@@ -825,8 +825,8 @@ def _render_tab4_live_watchlist_html(wr_state: Dict[str, Any]) -> str:
     return out
 
 
-def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
-    """Render V8.0 Operations Floor inside Tab 3: Victor Surveillance, Master Plan, 14 Depts & Live Reports."""
+def _render_war_room_v8_decks(wr_state: Dict[str, Any]) -> Dict[str, str]:
+    """Render V8.0 Operations Floor split into ergonomic deck chunks for Tab 3 War-Room."""
     import html as _h
     v_surv = wr_state.get("victor_deep_surveillance", {}) or {}
     plan = wr_state.get("live_execution_master_plan", {}) or {}
@@ -948,9 +948,9 @@ def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
         if latest_rel else ""
     )
 
-    return f"""
+    command_html = f"""
         <!-- V8.0: LIVE MULTI-DEPARTMENT TACTICAL WAR-ROOM COMMAND FLOOR -->
-        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 14px;">
+        <div id="wr-v8-command-bar-wrap" style="display: flex; flex-direction: column; gap: 14px;">
             <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(16, 185, 129, 0.42); border-radius: 12px; padding: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px;">
                 <div>
                     <div style="font-size: 13.5px; font-weight: 900; color: #34d399;">⚔️ SÀN TÁC CHIẾN ĐA PHÒNG BAN &amp; ĐỒNG BỘ BÁO CÁO THỜI GIAN THỰC (V8.0)</div>
@@ -1047,7 +1047,10 @@ def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
                     </table>
                 </div>
             </div>
-
+        </div>
+    """
+    surveillance_html = f"""
+        <div style="display: flex; flex-direction: column; gap: 14px;">
             <div id="victor-deep-surveillance-panel" style="background: rgba(15, 23, 42, 0.94); border: 1px solid rgba(251, 191, 36, 0.35); border-radius: 12px; padding: 14px;">
                 <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
                     <div style="font-size: 13px; font-weight: 900; color: #fbbf24;">🛡️ VICTOR (BAN 9 SENTINEL) GIÁM SÁT SÂU DANH MỤC &amp; TẦM NGẮM TIỀM NĂNG</div>
@@ -1084,7 +1087,10 @@ def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
                 </div>
                 <div id="wr-master-plan-scenarios-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px;">{scen_cards}</div>
             </div>
-
+        </div>
+    """
+    departments_html = f"""
+        <div style="display: flex; flex-direction: column; gap: 14px;">
             <div id="wr-dept-workstation-panel" style="background: rgba(15, 23, 42, 0.94); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 12px; padding: 14px;">
                 <div style="font-size: 13px; font-weight: 900; color: #c084fc; margin-bottom: 8px;">🏢 BÀN TÁC CHIẾN TRỰC TIẾP 14 PHÒNG BAN &amp; CHUYÊN VIÊN (ACTIVE IN WAR-ROOM)</div>
                 <div id="wr-dept-workstation-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:9px;">{dept_cards}</div>
@@ -1096,6 +1102,23 @@ def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
             </div>
         </div>
     """
+    return {
+        "command_html": command_html,
+        "surveillance_html": surveillance_html,
+        "departments_html": departments_html,
+    }
+
+
+def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
+    """Backward-compatible wrapper combining V8.0 Operations Floor HTML decks."""
+    decks = _render_war_room_v8_decks(wr_state)
+    return (
+        '<div style="margin-top: 16px; display: flex; flex-direction: column; gap: 14px;">'
+        + decks["command_html"]
+        + decks["surveillance_html"]
+        + decks["departments_html"]
+        + "</div>"
+    )
 
 
 def generate_portal_html(
@@ -1155,7 +1178,10 @@ def generate_portal_html(
     wr_spillover_html = _render_war_room_spillover_slippage_html(wr_state)
     wr_portfolio_live_html = _render_portfolio_tab_live_sections_html(wr_state, ssot)
     wr_tab4_watchlist_html = _render_tab4_live_watchlist_html(wr_state)
-    wr_v8_floor_html = _render_war_room_v8_command_floor_html(wr_state)
+    wr_v8_decks = _render_war_room_v8_decks(wr_state)
+    wr_v8_cmd_html = wr_v8_decks.get("command_html", "")
+    wr_v8_surv_html = wr_v8_decks.get("surveillance_html", "")
+    wr_v8_depts_html = wr_v8_decks.get("departments_html", "")
     wr_phase_label_safe = _html.escape(str((wr_state.get("phase_info", {}) or {}).get("phase_name") or wr_phase_id or "PHÒNG TÁC CHIẾN LIVE"))
     wr_regime_label_safe = _html.escape(str((wr_state.get("intraday_regime", {}) or {}).get("label") or "TÍCH LŨY CHỌN LỌC"))
 
@@ -1243,16 +1269,16 @@ def generate_portal_html(
     sqlite_db_file = BASE_DIR / "data" / "apex_institutional_vault.db"
     if sqlite_db_file.exists():
         db_milestone_banner = f'''
-        <div style="background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); border: 1px solid #10b981; border-radius: 14px; padding: 14px 22px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);">
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <span style="font-size: 26px;">⚡</span>
+        <div id="db-milestone-banner-box" style="background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); border: 1px solid #10b981; border-radius: 12px; padding: 8px 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 20px;">⚡</span>
                 <div>
-                    <strong style="color: #34d399; font-size: 14.5px;">HẠ TẦNG V5.0: ĐÃ NÂNG CẤP LÊN SQLITE LAKEHOUSE VAULT (SỨC CHỨA 100.000 BÁO CÁO)</strong>
-                    <div style="font-size: 12.5px; color: #a7f3d0; margin-top: 3px;">Truy vấn chỉ mục B-Tree &lt; 2ms | Kích hoạt FTS5 Search toàn văn | Bảo tồn 100% tài liệu tiền thật theo lệnh Chủ tịch Phước Trần!</div>
+                    <strong style="color: #34d399; font-size: 13px;">HẠ TẦNG V5.0: ĐÃ NÂNG CẤP LÊN SQLITE LAKEHOUSE VAULT (SỨC CHỨA 100.000 BÁO CÁO)</strong>
+                    <div style="font-size: 11.5px; color: #a7f3d0; margin-top: 2px;">Truy vấn chỉ mục B-Tree &lt; 2ms | Kích hoạt FTS5 Search toàn văn | Bảo tồn 100% tài liệu tiền thật theo lệnh Chủ tịch Phước Trần!</div>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; border-radius: 9999px; padding: 6px 14px; font-size: 12px; font-weight: 700;">
+                <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; border-radius: 9999px; padding: 4px 12px; font-size: 11px; font-weight: 700; white-space: nowrap;">
                     🟢 SQLITE VAULT ACTIVE
                 </span>
             </div>
@@ -3547,6 +3573,238 @@ def generate_portal_html(
         .price-badge.down {{ color: #f87171; }}
         .price-badge.ref {{ color: #fbbf24; }}
 
+        /* ========================================================
+           V11.0 ERGONOMIC LAYOUT, SUB-DECKS & MODERN WEB GUIDANCE
+           ======================================================== */
+        .portal-header {{
+            padding: 12px 20px;
+            margin-bottom: 12px;
+            border-radius: 14px;
+            gap: 12px;
+        }}
+        .kpi-grid {{
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 10px;
+            margin-bottom: 12px;
+        }}
+        .kpi-card {{
+            padding: 12px 15px;
+            border-radius: 12px;
+        }}
+        .kpi-lbl {{
+            font-size: 11px;
+            margin-bottom: 4px;
+        }}
+        .kpi-val {{
+            font-size: 19px;
+        }}
+        .kpi-sub {{
+            font-size: 11px;
+            margin-top: 3px;
+        }}
+        .tab-nav {{
+            position: sticky;
+            top: 6px;
+            z-index: 95;
+            background: rgba(7, 10, 18, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 6px 8px;
+            margin-bottom: 14px;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }}
+        .tab-nav::-webkit-scrollbar {{
+            display: none;
+        }}
+        .tab-btn {{
+            position: relative;
+            white-space: nowrap;
+            flex: 0 0 auto;
+            padding: 8px 13px;
+            font-size: 12.5px;
+            border-radius: 9px;
+        }}
+        .tab-btn.active::after {{
+            content: "";
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            bottom: -1px;
+            height: 2.5px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #38bdf8, #34d399);
+        }}
+
+        /* Sub-Deck Workspace Switchers (Tab 3 & Tab 5) */
+        .wr-deck-nav,
+        .summit-deck-nav {{
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 8px 10px;
+            margin-bottom: 12px;
+            background: rgba(15, 23, 42, 0.94);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 11px;
+            position: sticky;
+            top: 56px;
+            z-index: 80;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }}
+        .wr-deck-nav::-webkit-scrollbar,
+        .summit-deck-nav::-webkit-scrollbar {{
+            display: none;
+        }}
+        .wr-deck-btn,
+        .summit-deck-btn {{
+            flex: 0 0 auto;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 13px;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            background: rgba(30, 41, 59, 0.72);
+            color: #cbd5e1;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }}
+        .wr-deck-btn:hover,
+        .summit-deck-btn:hover {{
+            border-color: #38bdf8;
+            color: #f8fafc;
+        }}
+        .wr-deck-btn.active,
+        .summit-deck-btn.active {{
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.24), rgba(16, 185, 129, 0.18));
+            color: #38bdf8;
+            border-color: #38bdf8;
+            box-shadow: 0 3px 12px rgba(56, 189, 248, 0.2);
+        }}
+        .wr-deck-badge {{
+            background: rgba(56, 189, 248, 0.16);
+            color: #7dd3fc;
+            border-radius: 999px;
+            padding: 1px 7px;
+            font-size: 10px;
+            font-weight: 800;
+        }}
+        .wr-deck-pane,
+        .summit-deck-pane {{
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 14px;
+        }}
+        .war-room-wrap {{
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }}
+        .summit-container {{
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }}
+        .summit-header-card,
+        #summit-deck-switcher,
+        #summit-archive-view-banner {{ order: 0; }}
+        .war-room-ribbon {{ order: -2; margin-bottom: 12px; }}
+        #wr-deck-switcher {{ order: -1; }}
+        #deck-command {{ order: 1; }}
+        #deck-surveillance {{ order: 2; }}
+        #deck-departments {{ order: 3; }}
+        #deck-omnibrain {{ order: 4; }}
+        .wr-deck-pane[hidden="until-found"],
+        .summit-deck-pane[hidden="until-found"] {{
+            content-visibility: hidden;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
+        }}
+
+        /* Responsive Sticky Table Headers */
+        table.standard-table thead th,
+        #tab-war-room table thead th,
+        #tab-portfolio table thead th {{
+            position: sticky;
+            inset-block-start: 0;
+            z-index: 2;
+            background: #0b1120;
+            box-shadow: inset 0 -1px 0 rgba(56, 189, 248, 0.25);
+        }}
+
+        /* Offscreen Render Budget Optimization */
+        #wr-omni-brain-panel,
+        #victor-deep-surveillance-panel,
+        #wr-live-execution-master-plan-panel,
+        #wr-dept-workstation-panel,
+        #wr-enterprise-mesh-panel,
+        .summit-prep-panel,
+        .summit-archive-panel {{
+            content-visibility: auto;
+            contain-intrinsic-size: auto 300px auto 520px;
+        }}
+        @supports not (content-visibility: auto) {{
+            #wr-omni-brain-panel,
+            #victor-deep-surveillance-panel,
+            #wr-live-execution-master-plan-panel,
+            .summit-prep-panel {{
+                contain: layout style;
+            }}
+        }}
+
+        /* Heartbeat & Non-blocking Toast */
+        .sync-heartbeat-pill {{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #34d399;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            padding: 5px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }}
+        #portal-toast-notification {{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.96);
+            color: #f8fafc;
+            border: 1px solid rgba(56, 189, 248, 0.45);
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 12.5px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+            opacity: 0;
+            transform: translateY(12px);
+            pointer-events: none;
+            transition: opacity 0.22s ease, transform 0.22s ease;
+            max-width: 420px;
+        }}
+        #portal-toast-notification.show {{
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }}
+
     </style>
 </head>
 <body>
@@ -3572,17 +3830,18 @@ def generate_portal_html(
                     <span class="pulse-dot"></span>
                     <span>CLOUD 24/7 ACTIVE</span>
                 </div>
-                <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #cbd5e1; background: var(--bg-base); padding: 7px 16px; border-radius: 8px; border: 1px solid var(--border-color);" id="live-clock">
+                <div class="sync-heartbeat-pill" id="global-sync-heartbeat-txt">⚡ Sync: LIVE</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #cbd5e1; background: var(--bg-base); padding: 7px 14px; border-radius: 8px; border: 1px solid var(--border-color);" id="live-clock">
                     --:--:--
                 </div>
-                <button onclick="refreshData()" class="btn-read" style="display: flex; align-items: center; gap: 6px; padding: 8px 16px;">
+                <button onclick="refreshData()" class="btn-read" style="display: flex; align-items: center; gap: 6px; padding: 8px 14px;">
                     <span>🔄</span> <span>Làm Mới</span>
                 </button>
                 {auth_logout_btn_html}
             </div>
         </header>
 
-        <!-- KPI STATS (4 HỘP CHỈ SỐ ĐIỀU HÀNH) -->
+        <!-- KPI STATS (5 HỘP CHỈ SỐ ĐIỀU HÀNH REAL-TIME) -->
         <section class="kpi-grid">
             <div class="kpi-card" style="--card-accent: #10b981;">
                 <div class="kpi-lbl">💰 Tiền Mặt TCInvest (SSOT V2.0)</div>
@@ -3601,8 +3860,13 @@ def generate_portal_html(
             </div>
             <div class="kpi-card" style="--card-accent: #f472b6;">
                 <div class="kpi-lbl">🛡️ Hệ Thống Tự Hành 24/7</div>
-                <div class="kpi-val" style="color: #f472b6;">{len(services)}/4 Daemons</div>
-                <div class="kpi-sub">Watchdog Tự Hồi Phục Bất Tử</div>
+                <div class="kpi-val" id="top-kpi-daemon-val" style="color: #f472b6;">{len(services)}/4 Daemons</div>
+                <div class="kpi-sub" id="top-kpi-daemon-sub">Watchdog Tự Hồi Phục Bất Tử</div>
+            </div>
+            <div class="kpi-card" style="--card-accent: #fbbf24;">
+                <div class="kpi-lbl">📊 VN-Index &amp; Nhịp Phiên</div>
+                <div class="kpi-val" id="top-kpi-vni-val" style="color: {wr_mkt_ui['vni_col']};">{wr_mkt_ui['vni_val_str']} <span style="font-size: 12px; font-weight: 700;">({wr_mkt_ui['vni_pts_str']})</span></div>
+                <div class="kpi-sub" id="top-kpi-regime-sub">{wr_regime_label_safe} • {wr_phase_label_safe}</div>
             </div>
         </section>
 
@@ -3764,22 +4028,22 @@ def generate_portal_html(
                     <div style="margin-bottom: 16px;">
                         <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 8px;">
                             <span>Tiền Mặt Khả Dụng (Két TCInvest)</span>
-                            <strong style="color: #34d399; font-family: 'JetBrains Mono', monospace;">{ssot['cash_pct']:.1f}% ({ssot['cash_str']})</strong>
+                            <strong id="portfolio-cash-txt" style="color: #34d399; font-family: 'JetBrains Mono', monospace;">{ssot['cash_pct']:.1f}% ({ssot['cash_str']})</strong>
                         </div>
                         <div style="background: var(--bg-base); height: 12px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color);">
-                            <div style="background: linear-gradient(90deg, #10b981, #34d399); width: {ssot['cash_pct']:.1f}%; height: 100%;"></div>
+                            <div id="portfolio-cash-bar" style="background: linear-gradient(90deg, #10b981, #34d399); width: {ssot['cash_pct']:.1f}%; height: 100%; transition: width 0.3s ease;"></div>
                         </div>
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 8px;">
                             <span>Cổ Phiếu Đang Nắm Giữ</span>
-                            <strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">{ssot['stocks_pct']:.1f}% ({ssot['stocks_str']} • {ssot['total_shares']} CP)</strong>
+                            <strong id="portfolio-stock-txt" style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">{ssot['stocks_pct']:.1f}% ({ssot['stocks_str']} • {ssot['total_shares']} CP)</strong>
                         </div>
                         <div style="background: var(--bg-base); height: 12px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color);">
-                            <div style="background: linear-gradient(90deg, #0ea5e9, #38bdf8); width: {ssot['stocks_pct']:.1f}%; height: 100%;"></div>
+                            <div id="portfolio-stock-bar" style="background: linear-gradient(90deg, #0ea5e9, #38bdf8); width: {ssot['stocks_pct']:.1f}%; height: 100%; transition: width 0.3s ease;"></div>
                         </div>
                     </div>
-                    <p style="margin-top: 18px; font-size: 12.5px; color: #94a3b8; line-height: 1.6;">
+                    <p id="portfolio-protection-note" style="margin-top: 18px; font-size: 12.5px; color: #94a3b8; line-height: 1.6;">
                         🛡️ <strong>Chế độ Bảo Vệ Vị Thế:</strong> Danh mục hiện nắm giữ {ssot['holdings_desc']} ({ssot['stocks_str']}). Tiền mặt khả dụng {ssot['cash_str']} ({ssot['cash_pct']:.1f}% NAV) bảo toàn an toàn trong két. Victor đã kích hoạt ngay hàng rào phòng thủ Stop 2xATR!
                     </p>
                 </div>
@@ -3876,67 +4140,30 @@ def generate_portal_html(
                     </div>
                 </div>
 
-                <!-- ========================================================
-                     BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)
-                     CĂN CỨ: NGHỊ QUYẾT ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH (APEX-SUMMIT-20261108-2100)
-                     ======================================================== -->
-                <div class="weekly-roadmap-box" id="weekly-roadmap-box" style="margin-bottom: 20px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85)); border: 1.5px solid rgba(245, 158, 11, 0.45); border-radius: 14px; padding: 18px 20px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 22px;">📅</span>
-                            <div>
-                                <div style="font-size: 15px; font-weight: 800; color: #fbbf24; display: flex; align-items: center; gap: 8px;">
-                                    <span>BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)</span>
-                                    <span id="weekly-roadmap-label" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: 9999px; font-size: 10.5px; font-weight: 800;">{wr_weekly_ui['week_label']}</span>
-                                </div>
-                                <div id="weekly-roadmap-basis" style="font-size: 11.5px; color: #94a3b8; margin-top: 2px;">
-                                    {wr_weekly_ui['basis_html']}
-                                </div>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <span style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;">
-                                💡 Dành Riêng Cho Chủ Tịch Tham Khảo
-                            </span>
-                            <button id="btn-toggle-weekly-roadmap" onclick="toggleWeeklyRoadmap()" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #cbd5e1; font-size: 11.5px; font-weight: 700; padding: 5px 12px; border-radius: 6px; cursor: pointer;">
-                                ▾ Thu Gọn
-                            </button>
-                        </div>
-                    </div>
+                <!-- V11.0: WAR-ROOM SUB-DECK WORKSPACE SWITCHER (ZERO SCROLL) -->
+                <nav class="wr-deck-nav" id="wr-deck-switcher" aria-label="Phân khu Phòng Tác Chiến">
+                    <button class="wr-deck-btn active" data-deck="deck-command" onclick="switchWarRoomDeck('deck-command', this)">
+                        <span>⚡</span> <span>Lệnh &amp; Báo Động 24/7</span>
+                        <span class="wr-deck-badge" id="wr-deck-badge-alerts">LIVE</span>
+                    </button>
+                    <button class="wr-deck-btn" data-deck="deck-surveillance" onclick="switchWarRoomDeck('deck-surveillance', this)">
+                        <span>🛡️</span> <span>Victor Giám Sát &amp; Kịch Bản</span>
+                    </button>
+                    <button class="wr-deck-btn" data-deck="deck-departments" onclick="switchWarRoomDeck('deck-departments', this)">
+                        <span>🏛️</span> <span>14 Phòng Ban &amp; Họp Thật</span>
+                        <span class="wr-deck-badge" id="wr-deck-badge-depts">14 Ban</span>
+                    </button>
+                    <button class="wr-deck-btn" data-deck="deck-omnibrain" onclick="switchWarRoomDeck('deck-omnibrain', this)">
+                        <span>🧠</span> <span>Tình Báo V5 &amp; 15 Huyền Thoại</span>
+                    </button>
+                    <button class="wr-deck-btn" data-deck="deck-all" onclick="switchWarRoomDeck('deck-all', this)">
+                        <span>👁️</span> <span>Mở Toàn Bộ</span>
+                    </button>
+                </nav>
 
-                    <div id="weekly-roadmap-mandate" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 11.5px; color: #fde68a; line-height: 1.55;">
-                        {wr_weekly_ui['mandate_html']}
-                    </div>
-
-                    <div id="weekly-roadmap-details">
-                        <div id="weekly-roadmap-days-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-bottom: 14px;">
-                            {wr_weekly_ui['days_html']}
-                        </div>
-
-                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 8px; padding: 10px 14px;">
-                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-                                <span>🎯 RỔ CỔ PHIẾU ĐỊNH HƯỚNG &amp; ĐỒNG BỘ LIVE</span>
-                                <span style="font-size: 10.5px; color: #94a3b8;">Vùng Gom LO • Stop 2xATR • Trạng thái Holding thực tế</span>
-                            </div>
-                            <table class="stock-sentinel-table" style="font-size: 11px;">
-                                <thead>
-                                    <tr>
-                                        <th>Mã CP</th>
-                                        <th>Phân Tầng</th>
-                                        <th>Vùng Gom LO</th>
-                                        <th>Stop 2xATR</th>
-                                        <th>Mục Tiêu TP1 / TP2</th>
-                                        <th>Hạn Mức Tuần</th>
-                                        <th>Trạng Thái Thực Tế</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="weekly-roadmap-watchlist-body">
-                                    {wr_weekly_ui['watchlist_rows']}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <!-- SUB-DECK 1 (MẶC ĐỊNH): LỆNH & BÁO ĐỘNG 24/7 + 3 CỘT TÁC CHIẾN -->
+                <div id="deck-command" class="wr-deck-pane active" data-wr-deck="deck-command">
+                {wr_v8_cmd_html}
 
                 <!-- 3 COLUMNS TACTICAL COMMAND -->
                 <div class="war-room-columns">
@@ -4191,9 +4418,12 @@ def generate_portal_html(
                         </div>
                     </div>
                 </div>
+                </div> <!-- END #deck-command -->
 
+                <!-- SUB-DECK 4: TÌNH BÁO V5 & 15 HUYỀN THOẠI (CSS ORDER: 4) -->
+                <div id="deck-omnibrain" class="wr-deck-pane" data-wr-deck="deck-omnibrain" hidden="until-found">
                 <!-- V5.0 OMNI-MARKET INTELLIGENCE, DEEP FINANCIAL BRAIN & 15 LEGENDS PANEL -->
-                <div id="wr-omni-brain-panel" style="margin-top: 14px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 12px;">
+                <div id="wr-omni-brain-panel" style="margin-top: 6px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 12px;">
                     <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid rgba(148, 163, 184, 0.2); padding-bottom: 8px;">
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <span style="font-size: 18px;">🧠</span>
@@ -4259,12 +4489,77 @@ def generate_portal_html(
                         </div>
                     </div>
                 </div>
-            </div>
+                </div> <!-- END #deck-omnibrain -->
 
-        {wr_v8_floor_html}
+                <!-- SUB-DECK 2: VICTOR GIÁM SÁT SÂU, KỊCH BẢN NGÀY & LỘ TRÌNH TUẦN (CSS ORDER: 2) -->
+                <div id="deck-surveillance" class="wr-deck-pane" data-wr-deck="deck-surveillance" hidden="until-found">
+                    {wr_v8_surv_html}
+
+                    <div class="weekly-roadmap-box" id="weekly-roadmap-box" style="margin-bottom: 8px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85)); border: 1.5px solid rgba(245, 158, 11, 0.45); border-radius: 14px; padding: 16px 18px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 22px;">📅</span>
+                                <div>
+                                    <div style="font-size: 15px; font-weight: 800; color: #fbbf24; display: flex; align-items: center; gap: 8px;">
+                                        <span>BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)</span>
+                                        <span id="weekly-roadmap-label" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: 9999px; font-size: 10.5px; font-weight: 800;">{wr_weekly_ui['week_label']}</span>
+                                    </div>
+                                    <div id="weekly-roadmap-basis" style="font-size: 11.5px; color: #94a3b8; margin-top: 2px;">
+                                        {wr_weekly_ui['basis_html']}
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;">
+                                    💡 Dành Riêng Cho Chủ Tịch Tham Khảo
+                                </span>
+                                <button id="btn-toggle-weekly-roadmap" onclick="toggleWeeklyRoadmap()" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #cbd5e1; font-size: 11.5px; font-weight: 700; padding: 5px 12px; border-radius: 6px; cursor: pointer;">
+                                    ▾ Thu Gọn
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="weekly-roadmap-mandate" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 11.5px; color: #fde68a; line-height: 1.55;">
+                            {wr_weekly_ui['mandate_html']}
+                        </div>
+
+                        <div id="weekly-roadmap-details">
+                            <div id="weekly-roadmap-days-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-bottom: 14px;">
+                                {wr_weekly_ui['days_html']}
+                            </div>
+
+                            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 8px; padding: 10px 14px;">
+                                <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                    <span>🎯 RỔ CỔ PHIẾU ĐỊNH HƯỚNG &amp; ĐỒNG BỘ LIVE</span>
+                                    <span style="font-size: 10.5px; color: #94a3b8;">Vùng Gom LO • Stop 2xATR • Trạng thái Holding thực tế</span>
+                                </div>
+                                <table class="stock-sentinel-table" style="font-size: 11px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã CP</th>
+                                            <th>Phân Tầng</th>
+                                            <th>Vùng Gom LO</th>
+                                            <th>Stop 2xATR</th>
+                                            <th>Mục Tiêu TP1 / TP2</th>
+                                            <th>Hạn Mức Tuần</th>
+                                            <th>Trạng Thái Thực Tế</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="weekly-roadmap-watchlist-body">
+                                        {wr_weekly_ui['watchlist_rows']}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- END #deck-surveillance -->
+
+                <!-- SUB-DECK 3: BÀN TÁC CHIẾN 14 PHÒNG BAN, LUỒNG BÁO CÁO & MESH HỌP THẬT (CSS ORDER: 3) -->
+                <div id="deck-departments" class="wr-deck-pane" data-wr-deck="deck-departments" hidden="until-found">
+                {wr_v8_depts_html}
 
         <!-- V7.0: LIVING ENTERPRISE & INTER-DEPARTMENTAL COLLABORATION MESH -->
-        <div id="wr-enterprise-mesh-panel" class="war-room-section" style="margin-top: 14px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px;">
+        <div id="wr-enterprise-mesh-panel" class="war-room-section" style="margin-top: 4px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
                 <div>
                     <div style="font-size: 13.5px; font-weight: 900; color: #38bdf8; letter-spacing: 0.3px;">
@@ -4306,6 +4601,8 @@ def generate_portal_html(
                 </div>
             </div>
         </div>
+        </div> <!-- END #deck-departments -->
+        </div> <!-- END .war-room-wrap -->
         </section>
 
         <!-- ========================================================
@@ -4390,7 +4687,7 @@ def generate_portal_html(
                     <!-- Widget 2: Countdown to Next Session -->
                     <div class="sidebar-widget">
                         <div class="sidebar-widget-title">⏳ Đếm Ngược Phiên Giao Dịch</div>
-                        <div style="font-size: 12.5px; color: #cbd5e1;">Trạng thái phiên: <strong style="color: #fbbf24;">{wr_phase_label_safe}</strong></div>
+                        <div style="font-size: 12.5px; color: #cbd5e1;">Trạng thái phiên: <strong id="james-sidebar-phase-lbl" style="color: #fbbf24;">{wr_phase_label_safe}</strong></div>
                         <div id="countdown-timer" style="font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; color: #38bdf8; margin: 10px 0; letter-spacing: 0.04em;">
                             --:--:--
                         </div>
@@ -4402,7 +4699,7 @@ def generate_portal_html(
                     <!-- Widget 3: Quick Watchlist Jump -->
                     <div class="sidebar-widget">
                         <div class="sidebar-widget-title">🎯 Tầm Ngắm Live &amp; Biểu Đồ Nhanh</div>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div id="james-sidebar-watchlist-box" style="display: flex; flex-direction: column; gap: 8px;">
                             {wr_tab4_watchlist_html}
                         </div>
                     </div>
@@ -4454,6 +4751,24 @@ def generate_portal_html(
                     </div>
                 </div>
 
+                <!-- V11.0: SUMMIT ROOM SUB-DECK WORKSPACE SWITCHER -->
+                <nav class="summit-deck-nav" id="summit-deck-switcher" aria-label="Phân khu Phòng Họp Thượng Đỉnh">
+                    <button class="summit-deck-btn active" data-deck="summit-deck-main" onclick="switchSummitDeck('summit-deck-main', this)">
+                        <span>🏛️</span> <span>Phiên Họp Live &amp; Phê Duyệt</span>
+                    </button>
+                    <button class="summit-deck-btn" data-deck="summit-deck-prep" onclick="switchSummitDeck('summit-deck-prep', this)">
+                        <span>🔬</span> <span>Điểm Danh &amp; Chuẩn Bị T-20p</span>
+                    </button>
+                    <button class="summit-deck-btn" data-deck="summit-deck-charter" onclick="switchSummitDeck('summit-deck-charter', this)">
+                        <span>🗓️</span> <span>Triệu Tập &amp; Hiến Chương 5 Điều</span>
+                    </button>
+                    <button class="summit-deck-btn" data-deck="summit-deck-all" onclick="switchSummitDeck('summit-deck-all', this)">
+                        <span>👁️</span> <span>Mở Toàn Bộ</span>
+                    </button>
+                </nav>
+
+                <!-- SUB-DECK 3 (MẶC ĐỊNH ẨN): TRIỆU TẬP HỌP & HIẾN CHƯƠNG -->
+                <div id="summit-deck-charter" class="summit-deck-pane" data-summit-deck="summit-deck-charter" style="order: 3;" hidden="until-found">
                 <!-- 1.1 THANH LẬP LỊCH & TRIỆU TẬP HỌP THƯỢNG ĐỈNH TÙY CHỈNH -->
                 <div class="summit-schedule-bar" id="summit-schedule-bar">
                     <div style="font-size: 12px; font-weight: 800; color: #38bdf8; white-space: nowrap;">
@@ -4486,7 +4801,10 @@ def generate_portal_html(
                         <!-- Rendered dynamically from summit_charter_rules -->
                     </div>
                 </div>
+                </div> <!-- END #summit-deck-charter -->
 
+                <!-- SUB-DECK 2 (MẶC ĐỊNH ẨN): ĐIỂM DANH & HỒ SƠ T-20 PHÚT -->
+                <div id="summit-deck-prep" class="summit-deck-pane" data-summit-deck="summit-deck-prep" style="order: 2;" hidden="until-found">
                 <!-- 1.2 ĐIỂM DANH 14 PHÒNG BAN & HỒ SƠ CHUẨN BỊ T-15..20 PHÚT -->
                 <div class="summit-attendance-strip" id="summit-attendance-panel">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
@@ -4517,7 +4835,10 @@ def generate_portal_html(
                         <!-- 14 Pre-Summit Dossiers rendered dynamically -->
                     </div>
                 </div>
+                </div> <!-- END #summit-deck-prep -->
 
+                <!-- SUB-DECK 1 (MẶC ĐỊNH ACTIVE): NGHỊ TRÌNH, TRANH BIỆN, TRỌNG, JAMES, PHÊ DUYỆT & KHO LƯU TRỮ -->
+                <div id="summit-deck-main" class="summit-deck-pane active" data-summit-deck="summit-deck-main" style="order: 1;">
                 <!-- 2. PHASES & STEPS TIMELINE TRACKER -->
                 <div class="summit-phases-card">
                     <div class="summit-phases-header">
@@ -4710,15 +5031,19 @@ def generate_portal_html(
                         </div>
                     </div>
                 </div>
+                </div> <!-- END #summit-deck-main -->
             </div>
         </section>
 
         <!-- ========================================================
-             TAB 4: 18 CỘT MỐC TÁC CHIẾN 24H
+             TAB 6: 18 CỘT MỐC TÁC CHIẾN 24H
              ======================================================== -->
         <section id="tab-timeline" class="tab-pane">
-            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 22px;">
-                <h3 style="font-size: 16px; margin-bottom: 18px; color: #fff; font-weight: 800;">⏰ BẢNG TIẾN ĐỘ 18 CỘT MỐC TÁC CHIẾN 24H (TỰ ĐỘNG CHẠY ENGINE THẬT)</h3>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
+                    <h3 style="font-size: 16px; color: #fff; font-weight: 800; margin: 0;">⏰ BẢNG TIẾN ĐỘ 18 CỘT MỐC TÁC CHIẾN 24H (TỰ ĐỘNG CHẠY ENGINE THẬT)</h3>
+                    <button onclick="switchTab('supervisor')" class="btn-read" style="font-size: 12px; padding: 6px 12px;">🛡️ Chuyển sang Giám Sát Daemons →</button>
+                </div>
                 <div style="overflow-x: auto;">
                     <table class="standard-table">
                         <thead>
@@ -4739,11 +5064,14 @@ def generate_portal_html(
         </section>
 
         <!-- ========================================================
-             TAB 5: SUPERVISOR & 4 DAEMONS 24/7
+             TAB 7: SUPERVISOR & 4 DAEMONS 24/7
              ======================================================== -->
         <section id="tab-supervisor" class="tab-pane">
-            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 22px;">
-                <h3 style="font-size: 16px; margin-bottom: 18px; color: #fff; font-weight: 800;">🛡️ TRẠNG THÁI 4 TIẾN TRÌNH TỰ HÀNH 24/24 (WATCHDOG AUTO-RECOVERY)</h3>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
+                    <h3 style="font-size: 16px; color: #fff; font-weight: 800; margin: 0;">🛡️ TRẠNG THÁI 4 TIẾN TRÌNH TỰ HÀNH 24/24 (WATCHDOG AUTO-RECOVERY)</h3>
+                    <button onclick="switchTab('timeline')" class="btn-read" style="font-size: 12px; padding: 6px 12px;">← ⏰ Xem 18 Cột Mốc Ngày</button>
+                </div>
                 <div style="overflow-x: auto;">
                     <table class="standard-table">
                         <thead>
@@ -4755,18 +5083,20 @@ def generate_portal_html(
                                 <th>Thời Gian Chạy Liên Tục</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="supervisor-services-tbody">
                             {services_rows}
                         </tbody>
                     </table>
                 </div>
-                <div style="margin-top: 22px; font-size: 12px; color: var(--text-dim); display: flex; justify-content: space-between;">
-                    <div>Hạ tầng: Linux Cloud Container / Render Web Service (Port 10000)</div>
-                    <div>Được bảo vệ bởi: Watchdog Circuit Breaker (Cầu chì ngắt lỗi tự động)</div>
+                <div style="margin-top: 16px; font-size: 12px; color: var(--text-dim); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                    <div id="supervisor-infra-meta">Hạ tầng: Cloud Container / Watchdog 24/7</div>
+                    <div id="supervisor-watchdog-meta">Được bảo vệ bởi: Watchdog Circuit Breaker (Cầu chì ngắt lỗi tự động)</div>
                 </div>
             </div>
         </section>
     </div>
+
+    <div id="portal-toast-notification" role="status" aria-live="polite"></div>
 
     <!-- MODAL ĐỌC BÁO CÁO TOÀN VĂN -->
     <div id="report-modal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
@@ -4877,13 +5207,93 @@ def generate_portal_html(
             el.innerText = `${{pad(hours)}}h : ${{pad(mins)}}m : ${{pad(secs)}}s`;
         }}
 
+        // V11.0 NON-BLOCKING REAL-TIME TOAST NOTIFICATION
+        function showPortalToast(message, tone) {{
+            const toast = document.getElementById('portal-toast-notification');
+            if (!toast) return;
+            const palette = {{
+                success: '#34d399',
+                warn: '#fbbf24',
+                error: '#f87171',
+                info: '#38bdf8'
+            }};
+            const col = palette[tone] || palette.info;
+            toast.style.borderColor = col;
+            toast.style.color = '#f8fafc';
+            toast.innerHTML = `<span style="color:${{col}}; margin-right:6px;">●</span>${{escHtml(message)}}`;
+            toast.classList.add('show');
+            if (window._portalToastTimer) clearTimeout(window._portalToastTimer);
+            window._portalToastTimer = setTimeout(() => {{
+                toast.classList.remove('show');
+            }}, 3600);
+        }}
+
+        // V11.0 SHARED SUB-DECK SWITCHER (WAR-ROOM & SUMMIT ROOM)
+        function _switchSubDeck(switcherId, paneSelector, deckId, allId, btnEl) {{
+            const nav = document.getElementById(switcherId);
+            const panes = document.querySelectorAll(paneSelector);
+            panes.forEach(p => {{
+                if (deckId === allId || p.id === deckId) {{
+                    p.removeAttribute('hidden');
+                    p.classList.add('active');
+                }} else {{
+                    p.setAttribute('hidden', 'until-found');
+                    p.classList.remove('active');
+                }}
+            }});
+            if (nav) {{
+                const btns = nav.querySelectorAll('button[data-deck]');
+                btns.forEach(b => b.classList.toggle('active', b === btnEl || b.dataset.deck === deckId));
+                const activeBtn = btnEl || Array.from(btns).find(b => b.dataset.deck === deckId);
+                if (activeBtn) {{
+                    try {{
+                        activeBtn.scrollIntoView({{ block: 'nearest', inline: 'nearest', container: 'nearest' }});
+                    }} catch (_) {{
+                        activeBtn.scrollIntoView({{ block: 'nearest', inline: 'nearest' }});
+                    }}
+                }}
+            }}
+        }}
+
+        function switchWarRoomDeck(deckId, btnEl) {{
+            _switchSubDeck('wr-deck-switcher', '.wr-deck-pane', deckId, 'deck-all', btnEl);
+            try {{ sessionStorage.setItem('apex_wr_deck', deckId); }} catch (_) {{}}
+        }}
+
+        function switchSummitDeck(deckId, btnEl) {{
+            _switchSubDeck('summit-deck-switcher', '.summit-deck-pane', deckId, 'summit-deck-all', btnEl);
+            try {{ sessionStorage.setItem('apex_summit_deck', deckId); }} catch (_) {{}}
+        }}
+
+        function initSubDeckBeforeMatch() {{
+            if (window._subDeckBeforeMatchReady) return;
+            window._subDeckBeforeMatchReady = true;
+            document.querySelectorAll('.wr-deck-pane').forEach(p => {{
+                p.addEventListener('beforematch', () => {{
+                    switchWarRoomDeck(p.id);
+                }});
+            }});
+            document.querySelectorAll('.summit-deck-pane').forEach(p => {{
+                p.addEventListener('beforematch', () => {{
+                    switchSummitDeck(p.id);
+                }});
+            }});
+        }}
+
         // Chuyển Tab
         function switchTab(tabId) {{
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
 
-            const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
-            if (targetBtn) targetBtn.classList.add('active');
+            const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => (b.getAttribute('onclick') || '').includes(tabId));
+            if (targetBtn) {{
+                targetBtn.classList.add('active');
+                try {{
+                    targetBtn.scrollIntoView({{ block: 'nearest', inline: 'nearest', container: 'nearest' }});
+                }} catch (_) {{
+                    targetBtn.scrollIntoView({{ block: 'nearest', inline: 'nearest' }});
+                }}
+            }}
 
             const targetPane = document.getElementById('tab-' + tabId);
             if (targetPane) targetPane.classList.add('active');
@@ -4892,7 +5302,7 @@ def generate_portal_html(
                 setTimeout(() => initTradingViewWidget(currentTVSymbol), 100);
             }}
             if (tabId === 'war-room') {{
-                initTacticalWarRoom();
+                initTacticalWarRoom(false);
             }}
             if (tabId === 'summit-room') {{
                 initSummitRoom();
@@ -6446,8 +6856,11 @@ def generate_portal_html(
             }}
         }}
 
-        function initTacticalWarRoom() {{
+        function initTacticalWarRoom(forceReconnect) {{
             loadTacticalWarRoomData();
+            if (!forceReconnect && warRoomEventSource && warRoomEventSource.readyState <= 1) {{
+                return;
+            }}
             if (warRoomPollingInterval) {{
                 clearInterval(warRoomPollingInterval);
                 warRoomPollingInterval = null;
@@ -7048,6 +7461,115 @@ def generate_portal_html(
                     data.live_execution_master_plan || {{}}
                 );
             }}
+            renderGlobalCrossTabRealtime(data);
+        }}
+
+        function renderGlobalCrossTabRealtime(data) {{
+            if (!data) return;
+            window._lastWarRoomTickMs = Date.now();
+
+            // 1. Header Realtime Heartbeat
+            const hb = document.getElementById('global-sync-heartbeat-txt');
+            if (hb) {{
+                hb.innerText = `⚡ Sync: LIVE • ${{data.server_time || 'Realtime'}}`;
+            }}
+
+            // 2. Top 5th KPI (VN-Index + Intraday Regime + Phase)
+            const vni = data.market_overview && data.market_overview.vn_index;
+            if (vni) {{
+                const vVal = document.getElementById('top-kpi-vni-val');
+                const vValNum = Number(vni.value || 0);
+                if (vVal && vValNum > 0) {{
+                    const pts = Number(vni.change_pts || 0);
+                    const pct = Number(vni.change_pct || 0);
+                    const col = pct >= 0 ? '#34d399' : '#f87171';
+                    vVal.style.color = col;
+                    vVal.innerHTML = `${{vValNum.toLocaleString('en-US', {{ minimumFractionDigits: 2, maximumFractionDigits: 2 }})}} <span style="font-size:12px; font-weight:700;">(${{pts >= 0 ? '+' : ''}}${{pts.toFixed(2)}} / ${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)</span>`;
+                }}
+            }}
+            const regLabel = (data.intraday_regime && data.intraday_regime.label) || '';
+            const phaseLabel = (data.phase_info && data.phase_info.phase_name) || '';
+            const kpiReg = document.getElementById('top-kpi-regime-sub');
+            if (kpiReg && (regLabel || phaseLabel)) {{
+                kpiReg.innerText = [regLabel, phaseLabel].filter(Boolean).join(' • ');
+            }}
+            const jamesPhase = document.getElementById('james-sidebar-phase-lbl');
+            if (jamesPhase && phaseLabel) {{
+                jamesPhase.innerText = phaseLabel;
+            }}
+
+            // 3. Top Cash KPI + Tab 2 Asset Allocation Bars Sync
+            const pr = data.demo_tactical_plan_tomorrow && data.demo_tactical_plan_tomorrow.portfolio_reconciled;
+            if (pr && Number(pr.total_nav_vnd || 0) > 0) {{
+                const cashVnd = Number(pr.cash_vnd || 0);
+                const stockVnd = Number(pr.stocks_val_vnd || 0);
+                const cashPct = Number(pr.cash_pct || 0);
+                const stockPct = Number(pr.stocks_pct !== undefined ? pr.stocks_pct : (100 - cashPct));
+                const cashStr = `${{cashVnd.toLocaleString('en-US', {{ maximumFractionDigits: 0 }})}} ₫`;
+                const stockStr = `${{stockVnd.toLocaleString('en-US', {{ maximumFractionDigits: 0 }})}} ₫`;
+
+                const topCash = document.getElementById('top-kpi-cash-val');
+                if (topCash) topCash.innerText = cashStr;
+                const topCashSub = document.getElementById('top-kpi-cash-sub');
+                if (topCashSub) {{
+                    const sh = Number(pr.total_shares || 200);
+                    topCashSub.innerHTML = `<span style="color:#34d399; font-weight:700;">${{cashPct.toFixed(1)}}% Cash</span> • ${{sh}} CP (${{stockStr}} • ${{stockPct.toFixed(1)}}% NAV)`;
+                }}
+                const pCashTxt = document.getElementById('portfolio-cash-txt');
+                if (pCashTxt) pCashTxt.innerText = `${{cashPct.toFixed(1)}}% (${{cashStr}})`;
+                const pCashBar = document.getElementById('portfolio-cash-bar');
+                if (pCashBar) pCashBar.style.width = `${{Math.max(0, Math.min(100, cashPct)).toFixed(1)}}%`;
+                const pStkTxt = document.getElementById('portfolio-stock-txt');
+                if (pStkTxt) pStkTxt.innerText = `${{stockPct.toFixed(1)}}% (${{stockStr}} • ${{Number(pr.total_shares || 200)}} CP)`;
+                const pStkBar = document.getElementById('portfolio-stock-bar');
+                if (pStkBar) pStkBar.style.width = `${{Math.max(0, Math.min(100, stockPct)).toFixed(1)}}%`;
+            }}
+
+            // 4. Tab 3 Sub-Deck Live Badges
+            const vSum = data.victor_realtime_alert_center && data.victor_realtime_alert_center.summary;
+            const alertBadge = document.getElementById('wr-deck-badge-alerts');
+            if (alertBadge && vSum) {{
+                const triggers = Number(vSum.buy_zone_count || 0) + Number(vSum.take_profit_count || 0) + Number(vSum.critical_stop_count || 0);
+                alertBadge.innerText = triggers > 0 ? `${{triggers}} Trigger` : 'LIVE';
+                if (Number(vSum.critical_stop_count || 0) > 0) {{
+                    alertBadge.style.background = 'rgba(239, 68, 68, 0.25)';
+                    alertBadge.style.color = '#fca5a5';
+                }} else {{
+                    alertBadge.style.background = 'rgba(56, 189, 248, 0.16)';
+                    alertBadge.style.color = '#7dd3fc';
+                }}
+            }}
+            const deptsBadge = document.getElementById('wr-deck-badge-depts');
+            if (deptsBadge && Array.isArray(data.department_live_workstation) && data.department_live_workstation.length > 0) {{
+                deptsBadge.innerText = `${{data.department_live_workstation.length}} Ban`;
+            }}
+
+            // 5. Tab 4 Quick Watchlist Live Sync
+            renderTab4SidebarRealtime(data.victor_deep_surveillance);
+        }}
+
+        function renderTab4SidebarRealtime(vData) {{
+            const box = document.getElementById('james-sidebar-watchlist-box');
+            if (!box || !vData) return;
+            const held = Array.isArray(vData.held_positions_book) ? vData.held_positions_book : [];
+            const watch = Array.isArray(vData.alpha_watchlist_book) ? vData.alpha_watchlist_book : [];
+            const items = [];
+            held.slice(0, 2).forEach(h => {{
+                const sym = String(h.symbol || '').toUpperCase();
+                if (sym) items.push({{ sym, exch: h.exchange || 'HOSE', desc: `${{Number(h.live_price || 0).toLocaleString('en-US')}}đ (Stop ${{Number(h.stop_loss || 0).toLocaleString('en-US')}})` }});
+            }});
+            watch.slice(0, 3).forEach(w => {{
+                const sym = String(w.symbol || '').toUpperCase();
+                if (sym) items.push({{ sym, exch: w.exchange || 'HOSE', desc: `${{Number(w.live_price || 0).toLocaleString('en-US')}}đ (Canh ${{Number(w.probe_target || 0).toLocaleString('en-US')}})` }});
+            }});
+            if (items.length === 0) return;
+            box.innerHTML = items.slice(0, 5).map(it => {{
+                const tvSym = `${{escHtml(it.exch)}}:${{escHtml(it.sym)}}`;
+                return `<div style="display:flex; justify-content:space-between; align-items:center; background:var(--bg-base); padding:8px 12px; border-radius:8px; border:1px solid var(--border-color);">
+                    <div><strong style="color:#38bdf8; font-family:'JetBrains Mono', monospace;">${{escHtml(it.sym)}}</strong> <span style="font-size:11.5px; color:var(--text-muted);">${{escHtml(it.desc)}}</span></div>
+                    <button onclick="switchTab('portfolio'); switchTVSymbol('${{tvSym}}')" style="background:rgba(56,189,248,0.15); border:none; color:#38bdf8; padding:4px 8px; border-radius:4px; font-size:11px; cursor:pointer; font-weight:700;">Chart</button>
+                </div>`;
+            }}).join('');
         }}
 
         function renderDemoPreSessionPlan(demo) {{
@@ -7116,7 +7638,7 @@ def generate_portal_html(
                         '</div>' +
                         '<div style="font-size:11px; color:#94a3b8; margin-top:3px;">Mã Kịch Bản: <strong style="color:#e2e8f0;">' + esc(demo.plan_id) + '</strong> • Trạng thái thích nghi: <span style="color:#34d399; font-weight:700;">' + esc(demo.auto_adapt_status) + '</span></div>' +
                     '</div>' +
-                    (relPath ? '<button onclick="openReportModal(\'' + safeRel + '\')" style="cursor:pointer; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.45); color:#7dd3fc; border-radius:8px; padding:6px 12px; font-size:11px; font-weight:800;">📄 Đọc Báo Cáo Demo Chi Tiết</button>' : '') +
+                    (relPath ? '<button onclick="openReportModal(&#39;' + safeRel + '&#39;)" style="cursor:pointer; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.45); color:#7dd3fc; border-radius:8px; padding:6px 12px; font-size:11px; font-weight:800;">📄 Đọc Báo Cáo Demo Chi Tiết</button>' : '') +
                 '</div>' +
                 '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:8px; margin-bottom:10px;">' +
                     '<div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:8px;"><div style="font-size:10px; color:#94a3b8;">TÀI KHOẢN TCBS • TỔNG NAV</div><div style="font-size:13px; font-weight:800; color:#f8fafc;">' + esc(pr.account_id || '105C307855') + ' • ' + fmt(pr.total_nav_vnd) + ' đ</div></div>' +
@@ -7178,7 +7700,7 @@ def generate_portal_html(
                         '</div>' +
                         '<div style="font-size:11px; color:#94a3b8; margin-top:3px;">Phiên: <strong style="color:#e2e8f0;">' + esc(s.session_phase) + '</strong> • Chế độ: <span style="color:#fbbf24;">' + esc(s.market_regime_label) + '</span> • Quét lúc: ' + esc(s.scan_timestamp) + '</div>' +
                     '</div>' +
-                    '<button onclick="openReportModal(\'' + safeRep + '\')" style="cursor:pointer; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.45); color:#fcd34d; border-radius:8px; padding:6px 12px; font-size:11px; font-weight:800;">🚨 Mở Báo Cáo Trigger Victor</button>' +
+                    '<button onclick="openReportModal(&#39;' + safeRep + '&#39;)" style="cursor:pointer; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.45); color:#fcd34d; border-radius:8px; padding:6px 12px; font-size:11px; font-weight:800;">🚨 Mở Báo Cáo Trigger Victor</button>' +
                 '</div>' +
                 '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:8px; margin-bottom:10px;">' +
                     '<div style="background:rgba(30,41,59,0.72); border-radius:8px; padding:7px 9px; border:1px solid rgba(148,163,184,0.22);"><div style="font-size:10px; color:#94a3b8;">ĐANG GIÁM SÁT</div><div style="font-size:14px; font-weight:900; color:#f8fafc;">' + Number(s.total_monitored || 0) + ' mã</div></div>' +
@@ -7470,6 +7992,74 @@ def generate_portal_html(
             }} catch (e) {{
                 // Silent background sync error ignored
             }}
+        }}
+
+        async function syncSupervisorStatusRealtime() {{
+            try {{
+                const res = await fetch('/api/status');
+                if (!res.ok) return;
+                const st = await res.json();
+                const services = st && st.services ? st.services : null;
+                if (!services || Object.keys(services).length === 0) return;
+                const keys = Object.keys(services);
+                const runningCnt = keys.filter(k => String((services[k] || {{}}).status || '').toUpperCase() === 'RUNNING').length;
+                const dVal = document.getElementById('top-kpi-daemon-val');
+                if (dVal) dVal.innerText = `${{runningCnt}}/${{keys.length}} Daemons`;
+                const dSub = document.getElementById('top-kpi-daemon-sub');
+                if (dSub) dSub.innerText = `Watchdog: ${{st.supervisor_status || 'ACTIVE'}} • Uptime ${{Number(st.uptime_seconds || 0).toFixed(0)}}s`;
+
+                const tbody = document.getElementById('supervisor-services-tbody');
+                if (tbody) {{
+                    tbody.innerHTML = keys.map(k => {{
+                        const sinfo = services[k] || {{}};
+                        const statusTxt = String(sinfo.status || 'UNKNOWN');
+                        const badgeCol = statusTxt === 'RUNNING' ? '#10b981' : (statusTxt === 'STOPPED' ? '#ef4444' : '#f59e0b');
+                        return `<tr>
+                            <td style="padding: 12px 16px; font-weight: 600; color: #f8fafc;">${{escHtml(sinfo.name || k)}}</td>
+                            <td style="padding: 12px 16px; font-family: 'JetBrains Mono', monospace; color: #38bdf8;">${{escHtml(sinfo.pid || '-')}}</td>
+                            <td style="padding: 12px 16px;"><span style="background: ${{badgeCol}}22; color: ${{badgeCol}}; border: 1px solid ${{badgeCol}}55; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 700;">● ${{escHtml(statusTxt)}}</span></td>
+                            <td style="padding: 12px 16px; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">${{Number(sinfo.restart_count || 0)}}</td>
+                            <td style="padding: 12px 16px; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">${{Number(sinfo.uptime_seconds || 0).toFixed(0)}}s</td>
+                        </tr>`;
+                    }}).join('');
+                }}
+                const infraEl = document.getElementById('supervisor-infra-meta');
+                if (infraEl && st.started_at) {{
+                    infraEl.innerText = `Hạ tầng: Watchdog Live từ ${{st.started_at}} • Uptime: ${{Number(st.uptime_seconds || 0).toFixed(0)}}s`;
+                }}
+            }} catch (_) {{}}
+        }}
+
+        async function syncAllPortalRealtime(isManual, skipReportsFetch) {{
+            if (window._globalSyncInFlight) return;
+            window._globalSyncInFlight = true;
+            try {{
+                await Promise.allSettled([
+                    loadTacticalWarRoomData(),
+                    syncSupervisorStatusRealtime(),
+                    typeof pollSummitMeeting === 'function' ? pollSummitMeeting() : Promise.resolve(),
+                    typeof loadEnterpriseMeshState === 'function' ? loadEnterpriseMeshState() : Promise.resolve(),
+                    (isManual && !skipReportsFetch) ? syncPortalReportsSilently(null, true) : Promise.resolve()
+                ]);
+                if (isManual) {{
+                    showPortalToast(`Đã đồng bộ toàn hệ thống (${{allReports.length}} báo cáo & dữ liệu thị trường Live)`, 'success');
+                }}
+            }} finally {{
+                window._globalSyncInFlight = false;
+            }}
+        }}
+
+        function initGlobalPortalRealtimeSync() {{
+            initSubDeckBeforeMatch();
+            initTacticalWarRoom(false);
+            syncSupervisorStatusRealtime();
+            if (window._globalRealtimeInterval) clearInterval(window._globalRealtimeInterval);
+            window._globalRealtimeInterval = setInterval(() => {{
+                const nowMs = Date.now();
+                const staleSse = !window._lastWarRoomTickMs || (nowMs - window._lastWarRoomTickMs > 18000);
+                if (staleSse) loadTacticalWarRoomData();
+                syncSupervisorStatusRealtime();
+            }}, 10000);
         }}
 
         async function publishWarRoomReportNow() {{
@@ -7904,12 +8494,14 @@ def generate_portal_html(
             }}
             initSummitRoom();
             startLiveClockTicker();
-            initTacticalWarRoom();
+            initGlobalPortalRealtimeSync();
             loadEnterpriseMeshState();
         }});
 
-        // LÀM MỚI DỮ LIỆU
+        // LÀM MỚI DỮ LIỆU (KHÔNG CHẶN MÀN HÌNH / KHÔNG RELOAD NẾU API KHỎE)
         async function refreshData() {{
+            const hb = document.getElementById('global-sync-heartbeat-txt');
+            if (hb) hb.innerText = '🔄 Đang đồng bộ...';
             try {{
                 const [repRes, datesRes] = await Promise.all([
                     fetch('/api/reports?limit=2000'),
@@ -7945,13 +8537,12 @@ def generate_portal_html(
                         syncDateFilterButtons();
                     }}
                     applyAllFilters();
-                    await loadTacticalWarRoomData();
-                    alert('Đã làm mới dữ liệu toàn hệ thống thành công (' + allReports.length + ' báo cáo, Hôm nay: ' + todayCnt + ')!');
-                }} else {{
-                    location.reload();
+                    await syncAllPortalRealtime(true, true);
+                    return;
                 }}
+                showPortalToast('API báo cáo trả về dữ liệu trống — vui lòng thử lại sau giây lát', 'warn');
             }} catch (err) {{
-                location.reload();
+                showPortalToast('Mất kết nối tạm thời tới máy chủ Portal — thử lại tự động sau 10s', 'error');
             }}
         }}
     </script>

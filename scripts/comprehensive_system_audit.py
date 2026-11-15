@@ -1083,6 +1083,66 @@ try:
 except Exception as e:
     record_check("Phase8_DiskReportsAndWarRoomPortalUI", "Disk Reports & War-Room Portal UI", False, str(e))
 
+# ==============================================================================
+# 14. PHASE 9 (V11.0): ERGONOMIC SUB-DECK ARCHITECTURE, GLOBAL REAL-TIME SYNC & MODERN WEB GUIDANCE (3 CHECKS -> 58/58)
+# ==============================================================================
+try:
+    from scripts.apex_web_portal_engine import generate_portal_html, _render_war_room_v8_decks
+    html_v11 = locals().get("html_p8") or str(globals().get("html", "") or "") or generate_portal_html({}, [], [])
+    decks_sample = _render_war_room_v8_decks({})
+    decks_ok = all(k in decks_sample and len(decks_sample[k]) > 100 for k in ("command_html", "surveillance_html", "departments_html"))
+    wr_deck_tokens = (
+        "wr-deck-switcher", "switchWarRoomDeck", "deck-command", "deck-surveillance",
+        "deck-departments", "deck-omnibrain", "wr-deck-badge-alerts", "wr-deck-badge-depts",
+        "summit-deck-switcher", "switchSummitDeck", "summit-deck-main", "summit-deck-prep",
+        "summit-deck-charter",
+    )
+    missing_decks = [t for t in wr_deck_tokens if t not in html_v11]
+    record_check(
+        "Phase9_ErgonomicSubDeckArchitecture",
+        "Bố cục Sub-Deck chống cuộn dài (War-Room 4 Phân khu + Summit 3 Phân khu + _render_war_room_v8_decks)",
+        decks_ok and len(missing_decks) == 0,
+        f"V8Decks={decks_ok} | MissingTokens={missing_decks}"
+    )
+
+    rt_tokens = (
+        "global-sync-heartbeat-txt", "top-kpi-vni-val", "top-kpi-regime-sub", "top-kpi-daemon-val",
+        "portfolio-cash-bar", "portfolio-stock-bar", "james-sidebar-phase-lbl",
+        "james-sidebar-watchlist-box", "supervisor-services-tbody",
+        "renderGlobalCrossTabRealtime", "renderTab4SidebarRealtime", "syncSupervisorStatusRealtime",
+        "syncAllPortalRealtime", "initGlobalPortalRealtimeSync", "showPortalToast",
+    )
+    missing_rt = [t for t in rt_tokens if t not in html_v11]
+    no_blocking_alert = "alert('Đã làm mới" not in html_v11
+    record_check(
+        "Phase9_GlobalRealtimeSyncAllTabs",
+        "Đồng bộ thời gian thực xuyên suốt Header/KPIs & 7 Tabs + Non-blocking Toast",
+        len(missing_rt) == 0 and no_blocking_alert,
+        f"MissingRT={missing_rt} | NoBlockingAlert={no_blocking_alert}"
+    )
+
+    mwg_tokens = (
+        "inset-block-start: 0",
+        "content-visibility: auto",
+        "contain-intrinsic-size:",
+        "@supports not (content-visibility: auto)",
+        'hidden="until-found"',
+        "beforematch",
+        "initSubDeckBeforeMatch",
+        "inline: 'nearest'",
+        "container: 'nearest'",
+    )
+    missing_mwg = [t for t in mwg_tokens if t not in html_v11]
+    clean_legacy = ("21H30" not in html_v11) and ("APEX-SUMMIT-20261108-2100" not in html_v11)
+    record_check(
+        "Phase9_ModernWebGuidanceCompliance",
+        "Tuân thủ Modern Web Guidance (hidden=until-found, beforematch, sticky thead, content-visibility, clean tokens)",
+        len(missing_mwg) == 0 and clean_legacy,
+        f"MissingMWG={missing_mwg} | CleanLegacy={clean_legacy}"
+    )
+except Exception as e:
+    record_check("Phase9_ErgonomicSubDeckArchitecture", "Phase 9 V11.0 Overhaul", False, str(e))
+
 print("=" * 70)
 print(f"KẾT QUẢ TỔNG KIỂM TOÁN: {audit_results['passed_checks']}/{audit_results['total_checks']} HẠNG MỤC ĐẠT CHUẨN!")
 if audit_results["errors"]:

@@ -1,21 +1,22 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-16 02:06:05  
+**Thời gian cập nhật:** 2026-11-16 02:37:40  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261116-020605`  
+**Mã đồng bộ:** `SYNC-AG2P-20261116-023740`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Tong hop Bao cao Hoi nghi 00h45, lap Ke hoach Tac chien Demo truoc phien 16/11 (co dong tinh chinh khi thi truong mo cua) va kich hoat Victor 24/7 bao cao trigger tai Phong Tac Chien.
+* **Câu hỏi của Chủ tịch:** Tong thiet ke lai giao dien web toi uu chong cuon dai & hoan thien co che cap nhat du lieu thoi gian thực toan he thong va ra soat toan bo loi.
 * **Kết luận & Quyết định thể chế:**
-Da hoan thanh Kế hoạch Tác chiến Demo Trước Phiên 16/11 (DEMO-PRE-SESSION-20261116, tu dong tinh chinh theo dien bien thi truong) va nang cap Trung tam Canh bao Victor 24/7 giam sat lien tuc moi phien 12 ma (Buy-Zone: DBC/BAF/PVT; Near-Stop: HDB; Avoid-Knife: IDC/BSR). Hien thi live tren Tab 3 Phong Tac Chien & dong bo Vault.
+Hoan tat V11.0 Ergonomic Portal & Unified Real-Time Sync: Tab 3 War-Room gom gon 4 Sub-Deck, Tab 5 Summit gom 3 Sub-Deck, Sticky Top Nav + 5th KPI VN-Index + Dong bo real-time xuyen 7 Tabs, sua loi JS SyntaxError goc trong renderDemoPreSessionPlan & renderVictorRealtimeAlertCenter, kiem toan 58/58 PASSED.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Cap nhat data/weekly_tactical_plan_active.json tu Hoi nghi 00h45 APEX-SUMMIT-20261116-0045
-- [x] Mo rong Victor 24/7 & War-Room giam sat 12 ma TCBS thuc te (HDB, MSH, BAF, DBC, SZC, HPG, IDC, BSR, PVT, TCB, MBB, OCB)
-- [x] Xay dung build_victor_realtime_alert_center & build_demo_tactical_plan_tomorrow trong apex_tactical_war_room_engine.py
-- [x] Nang cap vn3_portfolio_autonomous_sentinel.py quet dong SSOT 24/7 moi phien
-- [x] Bo sung 2 panel SSR + JS live render (#wr-demo-pre-session-plan-panel & #victor-realtime-alert-center-panel) len Web Portal
+- [x] Tai cau truc Tab 3 War-Room thanh 4 Sub-Deck (Lenh & Bao Dong 24/7, Victor Giam Sat, 14 Phong Ban & Hop That, Tinh Bao V5) + che do Mo Toan Bo qua _render_war_room_v8_decks()
+- [x] Tai cau truc Tab 5 Summit Room thanh 3 Sub-Deck (Phien Hop Live & Phe Duyet mac dinh tren man hinh dau, Diem Danh & Ho So T-20p, Trieu Tap & Hien Chuong 5 Dieu)
+- [x] Nang cap Sticky .tab-nav + 5th Live KPI VN-Index + Header Heartbeat #global-sync-heartbeat-txt + Non-blocking #portal-toast-notification
+- [x] Trien khai Unified Real-Time Sync Engine (initGlobalPortalRealtimeSync, syncAllPortalRealtime, renderGlobalCrossTabRealtime, syncSupervisorStatusRealtime)
+- [x] Phat hien & sua dut diem JS SyntaxError cu tai renderDemoPreSessionPlan() va renderVictorRealtimeAlertCenter() (onclick openReportModal escape)
+- [x] Tuan thu Modern Web Guidance (scrollIntoView nearest, hidden=until-found + beforematch, sticky thead, content-visibility: auto) & Dat 58/58 Kiem toan He thong
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
@@ -27,9 +28,9 @@ Da hoan thanh Kế hoạch Tác chiến Demo Trước Phiên 16/11 (DEMO-PRE-SES
   * **MSH**: 100 CP | Giá vốn: 34,510 ₫ | Thị giá: 34,000 ₫ | PnL: -51,000 ₫ (HOLDING_T0_AVAILABLE)
 
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
-1. **Về BSR & BAF:** TUYỆT ĐỐI KHÔNG BẮT ĐÁY ĐẦU GIỜ CHIỀU; chờ Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong cung T+2.5
-2. **Về HDB & MSH:** Đang giữ T+1 có lãi đệm, khóa quan sát không mua thêm hôm nay, chờ chiều mai 11/11 hàng về
-3. **Về Kế hoạch tuần:** Kế hoạch tuần tham khảo giải ngân 5.5M thăm dò, két 14.51M tiền mặt kiểm soát chặt chẽ
-4. **Về Tiến độ công việc:** Đã sửa toàn bộ báo cáo web portal, đồng bộ khớp 2 lệnh HDB/MSH, loại bỏ báo cáo ảo 6 mã 35 triệu
+1. **Về BSR & BAF:** Giu ky luat theo doi tren Deck Lenh & Bao Dong 24/7, khong bat day truoc 14h00
+2. **Về HDB & MSH:** Giu 2 vi the HDB (100 CP) & MSH (100 CP), bao ve Stop 2xATR realtime qua Victor 24/7
+3. **Về Kế hoạch tuần:** Ke hoach tuan tham khao co dong theo bang dien; theo doi nhanh trong Sub-Deck Victor & Kich Ban
+4. **Về Tiến độ công việc:** Da nang cap xong Web Portal V11.0 (0 loi JS, 58/58 Kiem toan PASSED, SSOT Portfolio bao toan 100%)
 
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*
