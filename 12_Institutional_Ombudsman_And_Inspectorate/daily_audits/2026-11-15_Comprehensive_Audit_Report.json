@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-15 22:12:24",
+  "timestamp": "2026-11-15 22:19:26",
   "target_url": "https://apex-hedge-fund.onrender.com",
   "officers": [
     "Master CIO James (Ban 8)",
@@ -51,9 +51,9 @@
     },
     {
       "module": "Live_Endpoint",
-      "check": "GET /api/tactical_war_room",
-      "status": "FAILED",
-      "details": "The read operation timed out"
+      "check": "GET /api/tactical_war_room khớp SSOT & không mock index",
+      "status": "PASSED",
+      "details": "WR Cash: 12,516,471 | VN-Index: 1734.93 | Picks: 6"
     },
     {
       "module": "Live_Endpoint",
@@ -190,8 +190,8 @@
     {
       "module": "Phase3_LiveEndpoints",
       "check": "V5 Live Endpoints (/api/intelligence/search, /api/deep_brain, UI Panel)",
-      "status": "FAILED",
-      "details": "Search Ok: True | DeepBrain Ok: True | UI: True | WR Summary: False"
+      "status": "PASSED",
+      "details": "Search Ok: True | DeepBrain Ok: True | UI: True | WR Summary: True"
     },
     {
       "module": "Phase4_LiveBCTC_Catalysts",
@@ -219,18 +219,7 @@
     }
   ],
   "total_checks": 35,
-  "passed_checks": 33,
+  "passed_checks": 35,
   "warnings": [],
-  "errors": [
-    {
-      "module": "Live_Endpoint",
-      "check": "GET /api/tactical_war_room",
-      "details": "The read operation timed out"
-    },
-    {
-      "module": "Phase3_LiveEndpoints",
-      "check": "V5 Live Endpoints (/api/intelligence/search, /api/deep_brain, UI Panel)",
-      "details": "Search Ok: True | DeepBrain Ok: True | UI: True | WR Summary: False"
-    }
-  ]
+  "errors": []
 }
