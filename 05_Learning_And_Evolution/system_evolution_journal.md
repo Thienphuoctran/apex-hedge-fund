@@ -242,3 +242,10 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 - `[2026-11-15 20:26:51]` **[DYNAMIC STATE & EPISODIC MEMORY SYNC]**: Thực thi MUA 100 BAF tại giá 30,000 ₫ (Vốn: 3,000,000 ₫). Lý do: Phase2 E2E Test
 
 - `[2026-11-15 20:26:52]` **[DYNAMIC STATE & EPISODIC MEMORY SYNC]**: Thực thi BÁN 100 BAF tại giá 31,000 ₫. PnL thực tế: +100,000 ₫. Lý do: Phase2 E2E Sell
+
+## [Phiên Giao Dịch: 2026-11-15] — Tiến Hóa Mô Hình v5.0 & Kiểm Toán Walk-Forward
+- **Chế độ Vĩ mô**: VIX = 19.30 | Dầu WTI = $88.56 | US10Y = 5.15%.
+- **Trọng số Chấm điểm Thích nghi (Tổng 100%)**: Vĩ mô `25%` | BCTC/FCF `30%` | Định giá `25%` | Kỹ thuật `20%`.
+- **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `NVDA (2d), WMT (4d)` (chuyển sang `Locked Earnings Watchlist`).
+- **Realized Alpha vs S&P 500**: 1D `+0.81%` | 5D `-0.82%` | 20D `+5.06%`.
+- **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **79.2%**

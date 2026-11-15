@@ -1,0 +1,46 @@
+{
+  "account_id": "105C307855",
+  "owner": "Chủ tịch Trần Quốc Thiên Phước",
+  "total_nav_vnd": 20115000.0,
+  "total_cost_vnd": 18585000.0,
+  "total_market_val_vnd": 18700000.0,
+  "unrealized_pnl_vnd": 115000.0,
+  "unrealized_pnl_pct": 0.619,
+  "cash_reserve_vnd": 1415000.0,
+  "account_hit_rate": 100.0,
+  "total_shares": 900,
+  "positions": [
+    {
+      "symbol": "HDB",
+      "name": "HDBank (HOSE)",
+      "shares": 100,
+      "tradable_shares": 100,
+      "entry_price": 22057.0,
+      "current_price": 22350.0,
+      "cost_basis_vnd": 2205700.0,
+      "market_val_vnd": 2235000.0,
+      "unrealized_pnl_vnd": 29300.0,
+      "unrealized_pnl_pct": 1.33,
+      "stop_loss": 22060.0,
+      "take_profit_tp1": 24200.0,
+      "take_profit_tp2": 25800.0,
+      "status": "HOLDING_T0_AVAILABLE"
+    },
+    {
+      "symbol": "MSH",
+      "name": "May Sông Hồng (HOSE)",
+      "shares": 100,
+      "tradable_shares": 100,
+      "entry_price": 34510.0,
+      "current_price": 34000.0,
+      "cost_basis_vnd": 3451000.0,
+      "market_val_vnd": 3400000.0,
+      "unrealized_pnl_vnd": -51000.0,
+      "unrealized_pnl_pct": -1.48,
+      "stop_loss": 33090.0,
+      "take_profit_tp1": 39500.0,
+      "take_profit_tp2": 43000.0,
+      "status": "HOLDING_T0_AVAILABLE"
+    }
+  ]
+}
