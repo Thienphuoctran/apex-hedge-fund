@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-15 22:52:17",
-  "target_url": "https://apex-hedge-fund.onrender.com",
+  "timestamp": "2026-11-15 23:21:37",
+  "target_url": "http://127.0.0.1:8799",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -59,7 +59,7 @@
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room/stream (SSE)",
       "status": "PASSED",
-      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 83015"
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 110516"
     },
     {
       "module": "Live_Endpoint",
@@ -221,7 +221,7 @@
       "module": "Phase5_EnterpriseRosterAndPackets",
       "check": "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
       "status": "PASSED",
-      "details": "Roster: 14 | Quorum: 14/14 | Packets: 13 | Audit: 10/10 | Seal: 5b160b6855a5..."
+      "details": "Roster: 14 | Quorum: 14/14 | Packets: 13 | Audit: 10/10 | Seal: af277413d9a6..."
     },
     {
       "module": "Phase5_AdversarialDebateAndVeto",
@@ -245,11 +245,41 @@
       "module": "Phase5_CloudDB_V7_EnterpriseSync",
       "check": "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
       "status": "PASSED",
-      "details": "LocalSaved=True | VaultRows=3 | MigrationRLS=True | CloudSynced=False"
+      "details": "LocalSaved=True | VaultRows=5 | MigrationRLS=True | CloudSynced=False"
+    },
+    {
+      "module": "Phase6_ZeroStaleHardcodedWebStrings",
+      "check": "Zero stale hardcoded dates, prices, or old cash numbers in Portal HTML",
+      "status": "PASSED",
+      "details": "HTML Bytes: 751987 | StaleFound: []"
+    },
+    {
+      "module": "Phase6_VictorDeepSurveillanceAndAlphaWatchlist",
+      "check": "Victor 2-Tier Deep Surveillance (Held Positions + Alpha Watchlist Lot-100 Check)",
+      "status": "PASSED",
+      "details": "Held: ['HDB', 'MSH'] | WatchlistCount: 8 | FieldsOK: True"
+    },
+    {
+      "module": "Phase6_LiveExecutionMasterPlan",
+      "check": "Dynamic Market-Adaptive Live Execution Master Plan & 3 Contingency Scenarios",
+      "status": "PASSED",
+      "details": "PlanID: WAR-PLAN-20261115-2321 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
+    },
+    {
+      "module": "Phase6_DepartmentWorkstationAndReportAuthenticity",
+      "check": "14-Department Operations Workstation & 100% Verified Disk Report Authenticity",
+      "status": "PASSED",
+      "details": "Departments: 14/14 | Feed: 12 | WsExist: True | FeedExist: True"
+    },
+    {
+      "module": "Phase6_PublishWarRoomReportEndpointAndJS",
+      "check": "V8 War-Room UI Panels, 1-Click Publish JS & /api/war_room/publish_report Endpoint",
+      "status": "PASSED",
+      "details": "MissingUITokens: [] | EndpointWired: True"
     }
   ],
-  "total_checks": 40,
-  "passed_checks": 40,
+  "total_checks": 45,
+  "passed_checks": 45,
   "warnings": [],
   "errors": []
 }

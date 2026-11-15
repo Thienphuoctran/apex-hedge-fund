@@ -1093,6 +1093,32 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
+        elif parsed_url.path == "/api/war_room/publish_report":
+            try:
+                content_length = int(self.headers.get("Content-Length", 0))
+                raw_body = self.rfile.read(content_length).decode("utf-8") if content_length > 0 else "{}"
+                req_data = json.loads(raw_body) if raw_body.strip() else {}
+            except Exception:
+                req_data = {}
+            try:
+                from scripts.apex_tactical_war_room_engine import publish_war_room_tactical_report
+                trigger_reason = str(req_data.get("trigger_reason") or "MANUAL_WAR_ROOM_PUBLISH")
+                target_ticker = req_data.get("ticker") or None
+                res = publish_war_room_tactical_report(
+                    trigger_reason=trigger_reason,
+                    target_ticker=target_ticker,
+                )
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
         else:
             self.send_response(404)
             self.end_headers()

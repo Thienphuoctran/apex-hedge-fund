@@ -178,6 +178,14 @@ DEPARTMENTS_CONFIG = [
         "pattern": "08_Master_Investment_CIO/council_resolutions/*.md"
     },
     {
+        "dept_id": "ban_8_enterprise",
+        "name": "Phiên Làm Việc Doanh Nghiệp Đa Phòng Ban (14 Ban V7/V8)",
+        "short_name": "Họp 14 Ban Sống",
+        "icon": "🏛️",
+        "color": "#38bdf8",
+        "pattern": "08_Master_Investment_CIO/enterprise_sessions/*.md"
+    },
+    {
         "dept_id": "ban_10_hien",
         "name": "Ban 10: Rà Soát BCTC & Quan Hệ Cổ Đông (Hiền Scout)",
         "short_name": "Hiền BCTC & IR",
@@ -241,6 +249,25 @@ def extract_accurate_time(file_name: str, content: str, mtime: float) -> Tuple[s
     """
     fn_lower = file_name.lower()
     content_head = content[:1000].lower()
+
+    # 0. Báo cáo sống thời gian thực & Phiên họp doanh nghiệp: ưu tiên lấy giờ ICT thực tế
+    if "live_intraday_report" in fn_lower or "enterprise_work_session" in fn_lower:
+        m_live = re.search(r"(?:cập nhật lúc|thời điểm ict)[^\n]{0,40}?(\d{1,2}):(\d{2})(?::(\d{2}))?", content_head)
+        if m_live:
+            h = min(23, max(0, int(m_live.group(1))))
+            minute = min(59, max(0, int(m_live.group(2))))
+            sec = min(59, max(0, int(m_live.group(3) or 0)))
+            sort_t = f"{h:02d}:{minute:02d}:{sec:02d}"
+            disp_t = f"{h:02d}:{minute:02d}"
+            if h < 11 or (h == 11 and minute < 30):
+                shift = f"🌅 Ca Sáng ({disp_t})"
+            elif h < 13 or (h == 13 and minute < 30):
+                shift = f"☀️ Ca Trưa ({disp_t})"
+            elif h < 18:
+                shift = f"🎯 Ca Chiều ({disp_t})"
+            else:
+                shift = f"🌙 Ca Tối ({disp_t})"
+            return sort_t, disp_t, shift
 
     # 1. So khớp theo cột mốc tác chiến chuẩn hoá
     for hm, keywords, disp, shift in MILESTONE_TIME_MAP:

@@ -590,14 +590,16 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
     return snapshot
 
 
-def _upsert_report_into_vault(report_path: Path) -> bool:
+def _upsert_report_into_vault(report_path: Path, dept_id: str = "ban_7_vn_specialist") -> bool:
     """Nạp trực tiếp file báo cáo Markdown vào bảng institutional_reports của SQLite Vault."""
     try:
         from scripts.apex_database_engine import ApexDatabaseEngine
         from scripts.apex_report_scanner import DEPARTMENTS_CONFIG, extract_report_metadata
 
         ApexDatabaseEngine.initialize_database()
-        dept_cfg = next((d for d in DEPARTMENTS_CONFIG if d.get("dept_id") == "ban_7_vn_specialist"), None)
+        dept_cfg = next((d for d in DEPARTMENTS_CONFIG if d.get("dept_id") == dept_id), None)
+        if not dept_cfg:
+            dept_cfg = next((d for d in DEPARTMENTS_CONFIG if d.get("dept_id") == "ban_7_vn_specialist"), None)
         if not dept_cfg:
             return False
 
@@ -745,12 +747,18 @@ def sync_live_intraday_report(snapshot: Dict[str, Any], force_write: bool = Fals
     sp = snapshot.get("global_spillover", {})
     tr_f = snapshot.get("execution_tracker", {}).get("filters", {})
     sp_m = sp.get("metrics", {})
+    max_deploy_vnd = round(pf["cash_vnd"] * (float(reg.get("max_new_allocation_pct", 25)) / 100.0), 0)
     lines.extend([
         "",
         "## 4. CẦU NỐI LIÊN THỊ TRƯỜNG MỸ → VN & BỘ LỌC BULL-TRAP THÍCH NGHI",
         f"- **Spillover Phố Wall → VN:** `{sp.get('bias_label', '⚖️ TRUNG TÍNH')}` | Hệ số rủi ro: `{sp.get('risk_multiplier', 1.0):.2f}x` | Trần phân bổ mới: **`{reg.get('max_new_allocation_pct', 25)}% NAV`** (Gốc: {reg.get('base_max_allocation_pct', 25)}%)",
         f"- **Chỉ báo Đêm qua:** S&P 500 `{sp_m.get('SP500', {}).get('last_price', 0)}` (`{sp_m.get('SP500', {}).get('change_1d_pct', 0):+.2f}%`) | DXY `{sp_m.get('DXY', {}).get('last_price', 0)}` | VIX `{sp_m.get('VIX', {}).get('last_price', 0)}` | US10Y `{sp_m.get('US10Y', {}).get('last_price', 0)}%` | WTI Oil `{sp_m.get('WTI_OIL', {}).get('last_price', 0)}$`",
         f"- **Hồi tố Thực thi & Bull-Trap Filter:** BuyUp >= `{tr_f.get('min_buy_up_pct', 58.0)}%` | RSI Max <= `{tr_f.get('max_rsi_buy', 70.0)}` | Độ rộng Min >= `{tr_f.get('min_breadth_pct', 32.0)}%` | Slippage TB: `{tr_f.get('avg_slippage_bps', 0.0):+.1f} bps`",
+        "",
+        "## 5. KẾ HOẠCH TRIỂN KHAI TÁC CHIẾN ĐẦU TƯ THEO PHIÊN (MINH QUÂN & VICTOR)",
+        f"- **Quản trị Sức mua & Tường lửa Hiến chương:** Két tiền mặt `{pf['cash_vnd']:,.0f} ₫` (`{pf['cash_pct']:.1f}% NAV`). Hạn mức giải ngân bổ sung tối đa theo chế độ `{reg['label']}` là **`{max_deploy_vnd:,.0f} ₫`** (cấm lô 100 CP vượt `33% NAV` = `{pf['total_nav_vnd'] * 0.33:,.0f} ₫`).",
+        f"- **Phòng thủ Cổ phiếu Đang Giữ:** Theo dõi sát độ lệch Stop 2xATR trên `{pf['holdings_desc']}`; tuyệt đối tuân thủ Stop cứng và tận dụng biên độ phiên T+0/T+1 hạ giá vốn nếu nhúng về vùng hỗ trợ MA20.",
+        f"- **Kỷ luật Thời điểm Thực thi:** Chỉ kê lệnh `LO` chủ động trong Khung Giờ Vàng `14:00 – 14:25` khi Buy-Up >= `{tr_f.get('min_buy_up_pct', 58.0):.0f}%` và không mua đuổi giá xanh ATO.",
     ])
 
     md_text = "\n".join(lines) + "\n"

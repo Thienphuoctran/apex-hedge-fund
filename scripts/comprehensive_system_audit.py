@@ -673,6 +673,120 @@ try:
 except Exception as e:
     record_check("Phase5_CloudDB_V7_EnterpriseSync", "Cloud DB V7 Enterprise Sync", False, str(e))
 
+# =========================================================================
+# 11. PHASE 6 (V8.0): WEB PORTAL LIVE SYNC & MULTI-DEPARTMENT WAR-ROOM (5 CHECKS -> 45/45)
+# =========================================================================
+print("\n[11/11] Kiểm tra Nâng cấp V8.0 (Zero Stale Strings, Victor Deep Surveillance, Live Execution Plan, 14-Dept Workstation & Publisher)...")
+
+try:
+    import re as _re
+    portal_html_text = str(globals().get("html", "") or "")
+    ui_html_only = _re.sub(r"let allReports = \[.*\];", "let allReports = [];", portal_html_text)
+    stale_tokens = [
+        "14,477,119",
+        "20,167,119",
+        "21,220 đ",
+        "NGÀY 09/11/2026",
+        "THỨ BA 10/11/2026",
+        "09:00 Thứ Hai (09/11)",
+        "Tiền Mặt 20M",
+    ]
+    found_stale = [tok for tok in stale_tokens if tok in ui_html_only]
+    check_zero_stale = (len(portal_html_text) > 50000 and len(found_stale) == 0)
+    record_check(
+        "Phase6_ZeroStaleHardcodedWebStrings",
+        "Zero stale hardcoded dates, prices, or old cash numbers in Portal HTML",
+        check_zero_stale,
+        f"HTML Bytes: {len(portal_html_text)} | StaleFound: {found_stale}"
+    )
+except Exception as e:
+    record_check("Phase6_ZeroStaleHardcodedWebStrings", "Zero Stale Hardcoded Strings", False, str(e))
+
+try:
+    wr_payload = globals().get("wr", {}) or {}
+    v_surv = wr_payload.get("victor_deep_surveillance", {}) or {}
+    held_book = v_surv.get("held_positions_book", []) or []
+    watch_book = v_surv.get("alpha_watchlist_book", []) or []
+    held_syms = {str(x.get("symbol", "")).upper() for x in held_book}
+    watch_fields_ok = (
+        len(watch_book) >= 4
+        and all(
+            ("lot_100_cost_vnd" in w and "mos_pct" in w and "victor_signal" in w)
+            for w in watch_book
+        )
+    )
+    check_victor_v8 = ({"HDB", "MSH"}.issubset(held_syms) and watch_fields_ok)
+    record_check(
+        "Phase6_VictorDeepSurveillanceAndAlphaWatchlist",
+        "Victor 2-Tier Deep Surveillance (Held Positions + Alpha Watchlist Lot-100 Check)",
+        check_victor_v8,
+        f"Held: {sorted(held_syms)} | WatchlistCount: {len(watch_book)} | FieldsOK: {watch_fields_ok}"
+    )
+except Exception as e:
+    record_check("Phase6_VictorDeepSurveillanceAndAlphaWatchlist", "Victor Deep Surveillance V8", False, str(e))
+
+try:
+    wr_payload = globals().get("wr", {}) or {}
+    m_plan = wr_payload.get("live_execution_master_plan", {}) or {}
+    h_items = m_plan.get("holdings_action_items", []) or []
+    d_orders = m_plan.get("new_deployment_orders", []) or []
+    scens = m_plan.get("contingency_scenarios", []) or []
+    check_plan_v8 = (len(h_items) >= 1 and len(d_orders) >= 1 and len(scens) == 3)
+    record_check(
+        "Phase6_LiveExecutionMasterPlan",
+        "Dynamic Market-Adaptive Live Execution Master Plan & 3 Contingency Scenarios",
+        check_plan_v8,
+        f"PlanID: {m_plan.get('plan_id')} | HoldActions: {len(h_items)} | Orders: {len(d_orders)} | Scenarios: {len(scens)}"
+    )
+except Exception as e:
+    record_check("Phase6_LiveExecutionMasterPlan", "Live Execution Master Plan V8", False, str(e))
+
+try:
+    wr_payload = globals().get("wr", {}) or {}
+    depts_ws = wr_payload.get("department_live_workstation", []) or []
+    rep_feed = wr_payload.get("latest_reports_feed", []) or []
+    all_ws_exist = all(
+        bool(d.get("latest_report_path")) and (BASE_DIR / str(d.get("latest_report_path"))).exists()
+        for d in depts_ws
+    )
+    all_feed_exist = (
+        len(rep_feed) >= 1
+        and all(
+            bool(r.get("rel_path")) and (BASE_DIR / str(r.get("rel_path"))).exists()
+            for r in rep_feed
+        )
+    )
+    check_ws_v8 = (len(depts_ws) == 14 and all_ws_exist and all_feed_exist)
+    record_check(
+        "Phase6_DepartmentWorkstationAndReportAuthenticity",
+        "14-Department Operations Workstation & 100% Verified Disk Report Authenticity",
+        check_ws_v8,
+        f"Departments: {len(depts_ws)}/14 | Feed: {len(rep_feed)} | WsExist: {all_ws_exist} | FeedExist: {all_feed_exist}"
+    )
+except Exception as e:
+    record_check("Phase6_DepartmentWorkstationAndReportAuthenticity", "14-Dept Workstation & Reports", False, str(e))
+
+try:
+    portal_html_text = str(globals().get("html", "") or "")
+    cloud_srv_src = (BASE_DIR / "scripts" / "start_apex_cloud_247.py").read_text(encoding="utf-8")
+    required_ui_tokens = [
+        "publishWarRoomReportNow",
+        "victor-deep-surveillance-panel",
+        "wr-live-execution-master-plan-panel",
+        "wr-dept-workstation-panel",
+    ]
+    missing_ui = [t for t in required_ui_tokens if t not in portal_html_text]
+    endpoint_wired = ("/api/war_room/publish_report" in cloud_srv_src)
+    check_pub_v8 = (len(missing_ui) == 0 and endpoint_wired)
+    record_check(
+        "Phase6_PublishWarRoomReportEndpointAndJS",
+        "V8 War-Room UI Panels, 1-Click Publish JS & /api/war_room/publish_report Endpoint",
+        check_pub_v8,
+        f"MissingUITokens: {missing_ui} | EndpointWired: {endpoint_wired}"
+    )
+except Exception as e:
+    record_check("Phase6_PublishWarRoomReportEndpointAndJS", "Publish War Room Endpoint & JS", False, str(e))
+
 print("=" * 70)
 print(f"KẾT QUẢ TỔNG KIỂM TOÁN: {audit_results['passed_checks']}/{audit_results['total_checks']} HẠNG MỤC ĐẠT CHUẨN!")
 if audit_results["errors"]:

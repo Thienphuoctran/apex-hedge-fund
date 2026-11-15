@@ -657,12 +657,370 @@ except Exception:
     pass
 
 
+def _render_portfolio_tab_live_sections_html(wr_state: Dict[str, Any], ssot: Dict[str, Any]) -> str:
+    """Render 100% live-synced Portfolio Tab tables (Holdings + Alpha Watchlist + Intraday Protocol)."""
+    import html as _h
+    v_surv = wr_state.get("victor_deep_surveillance", {}) or {}
+    plan = wr_state.get("live_execution_master_plan", {}) or {}
+    held_list = v_surv.get("held_positions_book", []) or []
+    watch_list = v_surv.get("alpha_watchlist_book", []) or []
+    scens = plan.get("contingency_scenarios", []) or []
+
+    t_date = _h.escape(str(plan.get("trading_date") or wr_state.get("trading_date") or get_ict_now().strftime("%Y-%m-%d")))
+    s_time = _h.escape(str(wr_state.get("server_time") or get_ict_now().strftime("%H:%M:%S")))
+    regime_lbl = _h.escape(str(plan.get("regime_label") or (wr_state.get("intraday_regime", {}) or {}).get("label") or "PHÒNG TÁC CHIẾN LIVE"))
+    phase_lbl = _h.escape(str(plan.get("session_phase_label") or (wr_state.get("phase_info", {}) or {}).get("phase_name") or "LIVE MONITOR"))
+
+    held_rows = ""
+    for h in held_list:
+        pnl_val = float(h.get("pnl_vnd", 0) or 0)
+        pnl_pct = float(h.get("pnl_pct", 0) or 0)
+        p_col = "#34d399" if pnl_val >= 0 else "#f87171"
+        sign = "+" if pnl_val >= 0 else ""
+        held_rows += f"""
+        <tr style="background: rgba(56, 189, 248, 0.04);">
+            <td style="padding: 12px 14px; font-weight: 800; color: #38bdf8; font-family: 'JetBrains Mono', monospace;">{_h.escape(str(h.get('symbol', '')))}</td>
+            <td style="padding: 12px 14px;">{_h.escape(str(h.get('name', '')))}</td>
+            <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace;">{int(h.get('shares', 0) or 0)} CP (T0: {int(h.get('tradable_shares', 0) or 0)})</td>
+            <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace;">{float(h.get('entry_price', 0) or 0):,.0f}đ</td>
+            <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-weight: 700;">{float(h.get('live_price', 0) or 0):,.0f}đ</td>
+            <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace; color: {p_col}; font-weight: 800;">{sign}{pnl_val:,.0f}đ ({sign}{pnl_pct:.2f}%)</td>
+            <td style="padding: 12px 14px; color: #f87171; font-weight: 700;">{float(h.get('stop_loss', 0) or 0):,.0f}đ (+{float(h.get('stop_distance_pct', 0) or 0):.2f}%)</td>
+            <td style="padding: 12px 14px; color: #34d399; font-weight: 700;">{float(h.get('tp1', 0) or 0):,.0f} / {float(h.get('tp2', 0) or 0):,.0f}đ</td>
+            <td style="padding: 12px 14px; font-size: 12px; color: #cbd5e1;">{_h.escape(str(h.get('victor_status_badge', '')))} — {_h.escape(str(h.get('victor_instruction', '')))}</td>
+        </tr>"""
+    if not held_rows:
+        held_rows = '<tr><td colspan="9" style="text-align:center; padding:14px; color:#94a3b8;">100% Tiền mặt — Chưa mở vị thế cổ phiếu.</td></tr>'
+
+    watch_rows = ""
+    for w in watch_list:
+        watch_rows += f"""
+        <tr>
+            <td style="padding: 10px 14px; font-weight: 800; color: #fbbf24; font-family: 'JetBrains Mono', monospace;">{_h.escape(str(w.get('symbol', '')))}</td>
+            <td style="padding: 10px 14px;">{_h.escape(str(w.get('sector_name', '')))}</td>
+            <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">{float(w.get('live_price', 0) or 0):,.0f}đ</td>
+            <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace; color:#38bdf8;">{float(w.get('probe_target', 0) or 0):,.0f}đ</td>
+            <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">OCF {float(w.get('ocf_ratio', 1) or 1):.2f}x • MOS +{float(w.get('mos_pct', 0) or 0):.1f}%</td>
+            <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">{float(w.get('lot_100_cost_vnd', 0) or 0):,.0f}đ ({float(w.get('nav_pct_per_lot', 0) or 0):.1f}% NAV)</td>
+            <td style="padding: 10px 14px; font-size: 12px;"><strong>{_h.escape(str(w.get('victor_signal', '')))}</strong> — {_h.escape(str(w.get('catalyst', '')))}</td>
+        </tr>"""
+
+    scen_colors = ["#10b981", "#fbbf24", "#ef4444"]
+    scen_cards = ""
+    for idx, sc in enumerate(scens):
+        col = scen_colors[idx % 3]
+        scen_cards += f"""
+        <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid {col};">
+            <div style="font-size: 11px; color: {col}; font-weight: 700;">{_h.escape(str(sc.get('title', '')))}</div>
+            <div style="font-size: 12px; color: #e2e8f0; margin-top: 4px;">{_h.escape(str(sc.get('trigger', '')))}</div>
+            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">{_h.escape(str(sc.get('portfolio_action', '')))} (Tiền mặt mục tiêu: {float(sc.get('cash_target_pct', 0) or 0):.1f}%)</div>
+        </div>"""
+
+    return f"""
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 24px; margin-bottom: 22px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 14px;">
+                    <div>
+                        <h3 style="font-size: 17px; color: #fff; font-weight: 800; display: flex; align-items: center; gap: 10px;">
+                            <span>🎯</span> <span>KẾ HOẠCH TÁC CHIẾN &amp; SỔ LỆNH LIVE THEO SSOT (PHIÊN {t_date})</span>
+                        </h3>
+                        <p style="font-size: 12.5px; color: #94a3b8; margin-top: 4px;">
+                            Tài khoản TCBS <strong style="color: #38bdf8;">105C307855</strong> (Chủ tịch: <strong>Trần Quốc Thiên Phước</strong>) • NAV Live: <strong style="color: #34d399;">{ssot['nav_str']}</strong> (Tiền mặt: {ssot['cash_str']} • Cổ phiếu: {ssot['stocks_str']})
+                        </p>
+                        <div id="portfolio-tab-plan-meta" style="font-size: 11.5px; color: #38bdf8; margin-top: 3px;">
+                            Cập nhật realtime: {t_date} {s_time} ICT • Chế độ: {regime_lbl} • Pha: {phase_lbl}
+                        </div>
+                    </div>
+                    <div>
+                        <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 5px 12px; border-radius: 9999px; font-size: 11.5px; font-weight: 800;">
+                            ● ĐỒNG BỘ 100% SSOT &amp; BÁO CÁO QUỸ
+                        </span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 12px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                        <span>🔥</span> <span>PHẦN 1: DANH MỤC ĐANG NẮM GIỮ &amp; LỆNH PHÒNG THỦ / T+0 LIVE (VICTOR SENTINEL)</span>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Mã</th>
+                                    <th>Doanh Nghiệp</th>
+                                    <th>Số Lượng</th>
+                                    <th>Giá Vốn SSOT</th>
+                                    <th>Thị Giá Live</th>
+                                    <th>Lãi / Lỗ Ròng</th>
+                                    <th>Stop 2xATR (% Cách)</th>
+                                    <th>TP1 / TP2</th>
+                                    <th>Chỉ Thị Tác Chiến Live</th>
+                                </tr>
+                            </thead>
+                            <tbody id="portfolio-tab-holdings-tbody">{held_rows}</tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 12px; font-weight: 800; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                        <span>🛡️</span> <span>PHẦN 2: WATCHLIST SIÊU CỔ PHIẾU TIỀM NĂNG &amp; CHECK LÔ 100 (&lt;= 33% NAV)</span>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th>Mã</th>
+                                    <th>Ngành</th>
+                                    <th>Thị Giá Live</th>
+                                    <th>Vùng Canh Nhúng</th>
+                                    <th>Sức Khỏe BCTC</th>
+                                    <th>Vốn 1 Lô 100 CP</th>
+                                    <th>Trạng Thái &amp; Catalyst</th>
+                                </tr>
+                            </thead>
+                            <tbody id="portfolio-tab-standby-tbody">{watch_rows}</tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px;">
+                    <div style="font-size: 12px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">
+                        ⏱️ KỊCH BẢN ỨNG PHÓ PHIÊN LIVE ({t_date}) — TIỀN MẶT HIỆN HỮU {ssot['cash_str']} ({ssot['cash_pct']:.1f}% NAV)
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+                        {scen_cards}
+                    </div>
+                </div>
+            </div>
+    """
+
+
+def _render_tab4_live_watchlist_html(wr_state: Dict[str, Any]) -> str:
+    """Render live sidebar chart jump buttons for Tab 4 with exact exchange symbols."""
+    import html as _h
+    v_surv = wr_state.get("victor_deep_surveillance", {}) or {}
+    held = v_surv.get("held_positions_book", []) or []
+    watch = v_surv.get("alpha_watchlist_book", []) or []
+    exchange_map = {"IDC": "HNX:IDC", "BSR": "UPCOM:BSR"}
+
+    items: List[tuple] = []
+    for h in held[:2]:
+        sym = str(h.get("symbol", "")).upper()
+        items.append((sym, f"{float(h.get('live_price', 0) or 0):,.0f}đ (Stop {float(h.get('stop_loss', 0) or 0):,.0f})"))
+    for w in watch[:3]:
+        sym = str(w.get("symbol", "")).upper()
+        items.append((sym, f"{float(w.get('live_price', 0) or 0):,.0f}đ (Canh {float(w.get('probe_target', 0) or 0):,.0f})"))
+
+    if not items:
+        items = [("HDB", "Theo dõi live"), ("MSH", "Theo dõi live"), ("BAF", "Alpha Watchlist"), ("IDC", "Alpha Watchlist")]
+
+    out = ""
+    for sym, desc in items[:5]:
+        tv_sym = exchange_map.get(sym, f"HOSE:{sym}")
+        out += f"""
+                            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-base); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <div><strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">{_h.escape(sym)}</strong> <span style="font-size: 11.5px; color: var(--text-muted);">{_h.escape(desc)}</span></div>
+                                <button onclick="switchTab('portfolio'); switchTVSymbol('{tv_sym}')" style="background: rgba(56, 189, 248, 0.15); border: none; color: #38bdf8; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; font-weight: 700;">Chart</button>
+                            </div>"""
+    return out
+
+
+def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
+    """Render V8.0 Operations Floor inside Tab 3: Victor Surveillance, Master Plan, 14 Depts & Live Reports."""
+    import html as _h
+    v_surv = wr_state.get("victor_deep_surveillance", {}) or {}
+    plan = wr_state.get("live_execution_master_plan", {}) or {}
+    depts = wr_state.get("department_live_workstation", []) or []
+    feed = wr_state.get("latest_reports_feed", []) or []
+    meta = wr_state.get("vault_sync_meta", {}) or {}
+
+    latest_rel = str(meta.get("latest_report_rel_path") or "").replace("\\", "/").replace("'", "\\'")
+    sync_badge = (
+        f"🟢 Vault Sync: {int(meta.get('today_reports_count', 0) or 0)} Hôm nay / "
+        f"{int(meta.get('total_reports_scanned', 0) or 0)} Kho ({meta.get('latest_sync_time', '')})"
+    )
+
+    held_rows = ""
+    for h in (v_surv.get("held_positions_book", []) or []):
+        pnl_v = float(h.get("pnl_vnd", 0) or 0)
+        pnl_p = float(h.get("pnl_pct", 0) or 0)
+        chg_p = float(h.get("change_pct", 0) or 0)
+        buy_up = float(h.get("active_buy_pct", 50) or 50)
+        p_col = "#34d399" if pnl_v >= 0 else "#f87171"
+        c_col = "#34d399" if chg_p >= 0 else "#f87171"
+        held_rows += f"""
+        <tr>
+            <td style="padding:8px 10px;"><strong style="color:#38bdf8; font-family:'JetBrains Mono',monospace;">{_h.escape(str(h.get('symbol', '')))}</strong><div style="font-size:10px; color:#94a3b8;">{int(h.get('shares', 0) or 0)} CP (T0: {int(h.get('tradable_shares', 0) or 0)})</div></td>
+            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace;"><strong>{float(h.get('live_price', 0) or 0):,.0f}đ</strong><div style="font-size:10px; color:{c_col};">{chg_p:+.2f}% • L:{float(h.get('intraday_low', 0) or 0):,.0f} H:{float(h.get('intraday_high', 0) or 0):,.0f}</div></td>
+            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace; color:#cbd5e1;">{float(h.get('entry_price', 0) or 0):,.0f}đ<div style="font-size:10px; color:{p_col}; font-weight:800;">{pnl_v:+,.0f}đ ({pnl_p:+.2f}%)</div></td>
+            <td style="padding:8px 10px;"><div style="font-weight:800; color:#fbbf24;">BuyUp {buy_up:.1f}% • B/A {float(h.get('bid_ask_ratio', 1) or 1):.2f}x</div><div style="font-size:10px; color:#94a3b8;">{_h.escape(str(h.get('orderbook_pressure', '')))}</div></td>
+            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace; color:#f87171;">{float(h.get('stop_loss', 0) or 0):,.0f}đ<div style="font-size:10px; color:#cbd5e1;">Cách +{float(h.get('stop_distance_pct', 0) or 0):.2f}%</div></td>
+            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace; color:#34d399;">{float(h.get('tp1', 0) or 0):,.0f} / {float(h.get('tp2', 0) or 0):,.0f}<div style="font-size:10px; color:#a7f3d0;">TP1 +{float(h.get('tp1_upside_pct', 0) or 0):.1f}%</div></td>
+            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace; color:#fbbf24;">{float(h.get('t0_buy_zone', 0) or 0):,.0f} → {float(h.get('t0_sell_zone', 0) or 0):,.0f}<div style="font-size:10px; color:#94a3b8;">OCF {float(h.get('ocf_ratio', 1) or 1):.2f}x • MOS {float(h.get('mos_pct', 0) or 0):.1f}%</div></td>
+            <td style="padding:8px 10px; font-size:11px;"><div style="font-weight:800; color:#f8fafc;">{_h.escape(str(h.get('victor_status_badge', '')))}</div><div style="color:#cbd5e1;">{_h.escape(str(h.get('victor_instruction', '')))}</div></td>
+        </tr>"""
+
+    watch_rows = ""
+    for w in (v_surv.get("alpha_watchlist_book", []) or []):
+        chg_p = float(w.get("change_pct", 0) or 0)
+        ok = bool(w.get("constitutional_lot_ok"))
+        watch_rows += f"""
+        <tr>
+            <td style="padding:7px 9px;"><strong style="color:#fbbf24; font-family:'JetBrains Mono',monospace;">{_h.escape(str(w.get('symbol', '')))}</strong><div style="font-size:10px; color:#94a3b8;">{_h.escape(str(w.get('sector_name', '')))}</div></td>
+            <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;"><strong>{float(w.get('live_price', 0) or 0):,.0f}đ</strong> <span style="font-size:10px;">({chg_p:+.2f}%)</span><div style="font-size:10px; color:#94a3b8;">Canh nhúng: {float(w.get('probe_target', 0) or 0):,.0f}đ</div></td>
+            <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">BuyUp {float(w.get('active_buy_pct', 50) or 50):.1f}% • RSI {float(w.get('rsi14', 50) or 50):.1f}</td>
+            <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">OCF {float(w.get('ocf_ratio', 1) or 1):.2f}x • MOS <strong style="color:#34d399;">+{float(w.get('mos_pct', 0) or 0):.1f}%</strong></td>
+            <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">Alpha <strong style="color:#38bdf8;">{float(w.get('alpha_score', 0) or 0):.1f}</strong> • 1:{float(w.get('rr_ratio', 0) or 0):.2f}</td>
+            <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">{float(w.get('lot_100_cost_vnd', 0) or 0):,.0f}đ<div style="font-size:10px; color:{'#34d399' if ok else '#f87171'};">{float(w.get('nav_pct_per_lot', 0) or 0):.1f}% NAV ({'Đạt <=33%' if ok else 'Vượt trần'})</div></td>
+            <td style="padding:7px 9px; font-size:11px;"><div style="font-weight:800; color:#f8fafc;">{_h.escape(str(w.get('victor_signal', '')))}</div><div style="font-size:10px; color:#94a3b8;">{_h.escape(str(w.get('catalyst', '')))}</div></td>
+        </tr>"""
+
+    hold_plan_cards = ""
+    for item in (plan.get("holdings_action_items", []) or []):
+        pv = float(item.get("pnl_vnd", 0) or 0)
+        hold_plan_cards += f"""
+        <div style="background:rgba(15,23,42,0.8); border:1px solid rgba(56,189,248,0.28); border-radius:8px; padding:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;"><strong style="color:#38bdf8; font-size:13px;">{_h.escape(str(item.get('symbol', '')))} ({int(item.get('shares', 0) or 0)} CP)</strong><span style="color:{'#34d399' if pv >= 0 else '#f87171'}; font-weight:800; font-size:11.5px;">{pv:+,.0f}đ ({float(item.get('pnl_pct', 0) or 0):+.2f}%)</span></div>
+            <div style="font-size:11px; color:#cbd5e1; margin-top:4px;">Giá live: <strong>{float(item.get('current_price', 0) or 0):,.0f}đ</strong> • Stop: <span style="color:#f87171;">{float(item.get('stop_loss', 0) or 0):,.0f}đ</span> • TP1: <span style="color:#34d399;">{float(item.get('tp1', 0) or 0):,.0f}đ</span></div>
+            <div style="font-size:11px; color:#fbbf24; margin-top:3px;">Vùng lướt T+0: {_h.escape(str(item.get('t0_zone', '')))}</div>
+            <div style="font-size:11px; color:#e2e8f0; margin-top:4px;">{_h.escape(str(item.get('tactical_order_text', '')))}</div>
+        </div>"""
+
+    deploy_rows = ""
+    for o in (plan.get("new_deployment_orders", []) or []):
+        deploy_rows += f"""
+        <tr>
+            <td style="padding:7px 9px;"><strong style="color:#fbbf24; font-family:'JetBrains Mono',monospace;">{_h.escape(str(o.get('symbol', '')))}</strong></td>
+            <td style="padding:7px 9px; font-size:11px; color:#e2e8f0;">{_h.escape(str(o.get('order_type', '')))}</td>
+            <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace; color:#38bdf8;">{_h.escape(str(o.get('limit_buy_zone', '')))}</td>
+            <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;"><span style="color:#f87171;">{float(o.get('stop_loss', 0) or 0):,.0f}</span> / <span style="color:#34d399;">{float(o.get('tp1', 0) or 0):,.0f}</span></td>
+            <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">{float(o.get('est_capital_vnd', 0) or 0):,.0f}đ ({float(o.get('nav_weight_pct', 0) or 0):.1f}%)</td>
+            <td style="padding:7px 9px; font-size:11px;"><div style="font-weight:800; color:#f8fafc;">{_h.escape(str(o.get('approval_status', '')))}</div><div style="color:#94a3b8;">{_h.escape(str(o.get('trigger_condition', '')))}</div></td>
+        </tr>"""
+
+    scen_cards = ""
+    s_cols = ["#10b981", "#fbbf24", "#ef4444"]
+    for idx, sc in enumerate(plan.get("contingency_scenarios", []) or []):
+        col = s_cols[idx % 3]
+        scen_cards += f"""
+        <div style="background:rgba(15,23,42,0.78); border-left:3px solid {col}; border-radius:8px; padding:10px;">
+            <div style="font-size:11.5px; font-weight:800; color:{col};">{_h.escape(str(sc.get('title', '')))}</div>
+            <div style="font-size:11px; color:#94a3b8; margin-top:4px;"><strong>Điều kiện:</strong> {_h.escape(str(sc.get('trigger', '')))}</div>
+            <div style="font-size:11px; color:#e2e8f0; margin-top:4px;"><strong>Hành động:</strong> {_h.escape(str(sc.get('portfolio_action', '')))} (Tiền mặt mục tiêu: {float(sc.get('cash_target_pct', 0) or 0):.1f}%)</div>
+        </div>"""
+
+    dept_cards = ""
+    for d in depts:
+        st = str(d.get("stance") or "ACTIVE_MONITOR")
+        st_col = "#ef4444" if st == "VETO" else ("#fbbf24" if st == "CAUTION" else "#34d399")
+        rpath = str(d.get("latest_report_path") or "").replace("\\", "/").replace("'", "\\'")
+        btn_html = (
+            f'<button onclick="openReportModal(\'{rpath}\')" style="cursor:pointer; background:rgba(56,189,248,0.14); border:1px solid rgba(56,189,248,0.35); color:#7dd3fc; padding:3px 8px; border-radius:5px; font-size:10px; font-weight:700;">📄 Đọc Báo Cáo</button>'
+            if rpath else ""
+        )
+        dept_cards += f"""
+        <div style="background:rgba(15,23,42,0.82); border:1px solid rgba(148,163,184,0.22); border-radius:9px; padding:10px; display:flex; flex-direction:column; justify-content:space-between; gap:6px;">
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;"><strong style="color:#38bdf8; font-size:11.5px;">{_h.escape(str(d.get('ban_code', '')))} • {_h.escape(str(d.get('officer', '')))}</strong><span style="background:{st_col}22; color:{st_col}; border:1px solid {st_col}55; padding:1px 6px; border-radius:4px; font-size:9.5px; font-weight:800;">● {_h.escape(st)}</span></div>
+                <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">{_h.escape(str(d.get('dept_name', '')))}</div>
+                <div style="font-size:11px; color:#e2e8f0; margin-top:5px; line-height:1.45;">{_h.escape(str(d.get('live_finding', '')))}</div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; border-top:1px solid rgba(148,163,184,0.14); padding-top:6px;">
+                <span style="font-size:9.5px; color:#94a3b8;">{_h.escape(str(d.get('latest_report_date', '')))} {_h.escape(str(d.get('latest_report_time', '')))}</span>
+                {btn_html}
+            </div>
+        </div>"""
+
+    feed_rows = ""
+    for r in feed:
+        rpath = str(r.get("rel_path") or "").replace("\\", "/").replace("'", "\\'")
+        feed_rows += f"""
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.18); border-radius:7px; padding:7px 10px;">
+            <div style="min-width:0;">
+                <div style="font-size:11px; font-weight:800; color:#f8fafc; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{_h.escape(str(r.get('icon', '📄')))} {_h.escape(str(r.get('title', '')))}</div>
+                <div style="font-size:10px; color:#94a3b8;">{_h.escape(str(r.get('dept_name', '')))} • {_h.escape(str(r.get('date', '')))} {_h.escape(str(r.get('time', '')))} ({_h.escape(str(r.get('shift_label', '')))}) • {float(r.get('size_kb', 0) or 0):.1f} KB</div>
+            </div>
+            <button onclick="openReportModal('{rpath}')" style="cursor:pointer; white-space:nowrap; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); color:#34d399; padding:4px 10px; border-radius:6px; font-size:10.5px; font-weight:700;">Mở Báo Cáo</button>
+        </div>"""
+
+    open_latest_btn = (
+        f'<button onclick="openReportModal(\'{latest_rel}\')" style="cursor:pointer; background:rgba(16,185,129,0.16); border:1px solid rgba(16,185,129,0.4); color:#34d399; padding:6px 12px; border-radius:8px; font-size:11.5px; font-weight:800;">📄 Đọc Báo Cáo Intraday Mới Nhất</button>'
+        if latest_rel else ""
+    )
+
+    return f"""
+        <!-- V8.0: LIVE MULTI-DEPARTMENT TACTICAL WAR-ROOM COMMAND FLOOR -->
+        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(16, 185, 129, 0.42); border-radius: 12px; padding: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px;">
+                <div>
+                    <div style="font-size: 13.5px; font-weight: 900; color: #34d399;">⚔️ SÀN TÁC CHIẾN ĐA PHÒNG BAN &amp; ĐỒNG BỘ BÁO CÁO THỜI GIAN THỰC (V8.0)</div>
+                    <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">Mọi chỉ thị, giám sát của Victor và kế hoạch tác chiến đều xuất phát 100% từ dữ liệu phiên thực và tự đồng bộ vào Kho Lưu Trữ (Vault).</div>
+                    <div id="wr-publish-status-msg" style="font-size: 11px; color: #7dd3fc; margin-top: 4px;"></div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
+                    <span id="wr-vault-sync-badge" style="font-size: 10.5px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.45); color: #34d399; padding: 5px 10px; border-radius: 7px; font-weight: 800;">{_h.escape(sync_badge)}</span>
+                    <button id="btn-publish-war-room-report" onclick="publishWarRoomReportNow()" style="cursor: pointer; background: linear-gradient(90deg, #059669, #10b981); color: #fff; border: none; border-radius: 8px; padding: 7px 14px; font-size: 11.5px; font-weight: 800;">⚡ Phát Hành &amp; Đồng Bộ Báo Cáo Tác Chiến Mới Nhất</button>
+                    {open_latest_btn}
+                </div>
+            </div>
+
+            <div id="victor-deep-surveillance-panel" style="background: rgba(15, 23, 42, 0.94); border: 1px solid rgba(251, 191, 36, 0.35); border-radius: 12px; padding: 14px;">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                    <div style="font-size: 13px; font-weight: 900; color: #fbbf24;">🛡️ VICTOR (BAN 9 SENTINEL) GIÁM SÁT SÂU DANH MỤC &amp; TẦM NGẮM TIỀM NĂNG</div>
+                    <div id="victor-surveillance-headline" style="font-size: 11.5px; color: #cbd5e1; font-weight: 700;">{_h.escape(str(v_surv.get('victor_headline', '')))}</div>
+                </div>
+                <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 6px;">TẦNG 1: VỊ THẾ ĐANG NẮM GIỮ &amp; LỆNH T+0 / PHÒNG HỘ STOP 2xATR</div>
+                <div style="overflow-x: auto; margin-bottom: 12px;">
+                    <table class="standard-table" style="width:100%; font-size:11.5px;">
+                        <thead><tr><th>Mã</th><th>Thị Giá Live</th><th>Giá Vốn / P&amp;L</th><th>Áp Lực Sổ Lệnh</th><th>Stop 2xATR</th><th>TP1 / TP2</th><th>Vùng T+0 &amp; MOS</th><th>Chỉ Thị Victor</th></tr></thead>
+                        <tbody id="victor-held-surveillance-tbody">{held_rows}</tbody>
+                    </table>
+                </div>
+                <div style="font-size: 11px; font-weight: 800; color: #34d399; margin-bottom: 6px;">TẦNG 2: DANH MỤC TẦM NGẮM ALPHA TIỀM NĂNG &amp; CHECK LÔ 100 (&lt;= 33% NAV)</div>
+                <div style="overflow-x: auto;">
+                    <table class="standard-table" style="width:100%; font-size:11.5px;">
+                        <thead><tr><th>Mã / Ngành</th><th>Thị Giá / Canh Mua</th><th>Sức Cầu &amp; RSI</th><th>OCF &amp; MOS</th><th>Alpha &amp; R:R</th><th>Vốn Lô 100 (% NAV)</th><th>Tín Hiệu Victor &amp; Catalyst</th></tr></thead>
+                        <tbody id="victor-alpha-watchlist-tbody">{watch_rows}</tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="wr-live-execution-master-plan-panel" style="background: rgba(15, 23, 42, 0.94); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px;">
+                <div style="font-size: 13px; font-weight: 900; color: #38bdf8; margin-bottom: 8px;">📜 KẾ HOẠCH TRIỂN KHAI TÁC CHIẾN ĐẦU TƯ THEO PHIÊN THỊ TRƯỜNG THỰC TẾ</div>
+                <div id="wr-master-plan-summary-banner" style="background:rgba(30,41,59,0.72); border:1px solid rgba(56,189,248,0.28); border-radius:8px; padding:10px; font-size:11.5px; color:#e2e8f0; margin-bottom:10px;">
+                    <strong style="color:#38bdf8;">{_h.escape(str(plan.get('plan_id', '')))}</strong> • Pha: <strong>{_h.escape(str(plan.get('session_phase_label', '')))}</strong> • VN-Index: <strong>{float(plan.get('vn_index_value', 0) or 0):,.2f}</strong> • Tiền mặt: <strong>{float(plan.get('cash_available_vnd', 0) or 0):,.0f}đ ({float(plan.get('cash_pct', 0) or 0):.1f}%)</strong> • Trần giải ngân mới: <strong>{float(plan.get('max_new_allocation_pct', 0) or 0):.0f}% NAV (~{float(plan.get('max_deployable_vnd', 0) or 0):,.0f}đ)</strong>
+                    <div style="margin-top:5px;">📜 {_h.escape(str(plan.get('enterprise_action_summary') or plan.get('enterprise_verdict') or ''))}</div>
+                </div>
+                <div id="wr-master-plan-holdings-cards" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; margin-bottom:10px;">{hold_plan_cards}</div>
+                <div style="overflow-x:auto; margin-bottom:10px;">
+                    <table class="standard-table" style="width:100%; font-size:11.5px;">
+                        <thead><tr><th>Mã</th><th>Loại Lệnh</th><th>Vùng Giải Ngân</th><th>Stop / TP1</th><th>Vốn Dự Kiến (% NAV)</th><th>Điều Kiện Kích Hoạt</th></tr></thead>
+                        <tbody id="wr-master-plan-orders-tbody">{deploy_rows}</tbody>
+                    </table>
+                </div>
+                <div id="wr-master-plan-scenarios-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px;">{scen_cards}</div>
+            </div>
+
+            <div id="wr-dept-workstation-panel" style="background: rgba(15, 23, 42, 0.94); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 12px; padding: 14px;">
+                <div style="font-size: 13px; font-weight: 900; color: #c084fc; margin-bottom: 8px;">🏢 BÀN TÁC CHIẾN TRỰC TIẾP 14 PHÒNG BAN &amp; CHUYÊN VIÊN (ACTIVE IN WAR-ROOM)</div>
+                <div id="wr-dept-workstation-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:9px;">{dept_cards}</div>
+            </div>
+
+            <div id="wr-live-reports-stream" style="background: rgba(15, 23, 42, 0.94); border: 1px solid rgba(52, 211, 153, 0.35); border-radius: 12px; padding: 14px;">
+                <div style="font-size: 13px; font-weight: 900; color: #34d399; margin-bottom: 8px;">📰 LUỒNG BÁO CÁO MỚI NHẤT ĐỒNG BỘ TỪ HỆ THỐNG (1-CLICK ĐỌC CHI TIẾT)</div>
+                <div id="wr-live-reports-feed-list" style="display:flex; flex-direction:column; gap:6px; max-height:320px; overflow-y:auto;">{feed_rows}</div>
+            </div>
+        </div>
+    """
+
+
 def generate_portal_html(
     supervisor_data: Dict[str, Any],
     initial_reports: List[Dict[str, Any]],
     milestones: List[Dict[str, Any]],
     available_dates: Optional[List[Dict[str, Any]]] = None
 ) -> str:
+    import html as _html
     try:
         from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
         wr_state = get_tactical_war_room_state()
@@ -670,9 +1028,9 @@ def generate_portal_html(
         ssot_fb = _load_live_ssot_summary()
         wr_state = {
             "server_time": get_ict_now().strftime("%H:%M:%S"),
-            "phase_info": {"active_phase_id": "POST_MARKET_WALL_STREET", "countdown_to_wall_street": "--:--"},
+            "phase_info": {"active_phase_id": "POST_MARKET_WALL_STREET", "phase_name": "PHÒNG TÁC CHIẾN LIVE", "countdown_to_wall_street": "--:--"},
             "intraday_regime": {"regime_id": "SIDEWAY_CHOPPY", "label": "ĐANG ĐỒNG BỘ", "badge_color": "#fbbf24", "max_new_allocation_pct": 30},
-            "action_plan": {"current_step": {"title": "Đang đồng bộ Living War-Room V4.0", "time_range": "--:--", "what_to_do": "Đang tải dữ liệu live...", "constitution_rule": "SSOT Live"}},
+            "action_plan": {"current_step": {"title": "Đang đồng bộ Living War-Room V8.0", "time_range": "--:--", "what_to_do": "Đang tải dữ liệu live...", "constitution_rule": "SSOT Live"}},
             "market_overview": {
                 "vn_index": {"value": 0, "change_pts": 0, "change_pct": 0, "status": "ĐANG ĐỒNG BỘ", "turnover_ty_vnd": "--", "foreign_net_ty_vnd": "--"},
                 "vn30_index": {"value": 0, "change_pts": 0, "change_pct": 0, "basis_vn30f": "--"},
@@ -687,6 +1045,11 @@ def generate_portal_html(
                 "unrealized_pnl_vnd": ssot_fb["unrealized_pnl_vnd"], "unrealized_pnl_pct": ssot_fb["unrealized_pct"],
                 "realized_round1_profit_vnd": ssot_fb["realized_pnl_vnd"], "holdings": [], "threat_level_num": 1, "threat_label": "Đang đồng bộ SSOT...",
             },
+            "victor_deep_surveillance": {"held_positions_book": [], "alpha_watchlist_book": [], "victor_headline": "Đang đồng bộ..."},
+            "live_execution_master_plan": {"holdings_action_items": [], "new_deployment_orders": [], "contingency_scenarios": []},
+            "department_live_workstation": [],
+            "latest_reports_feed": [],
+            "vault_sync_meta": {"total_reports_scanned": 0, "today_reports_count": 0, "latest_report_rel_path": "", "latest_sync_time": ""},
             "tactical_message": f"Đang đồng bộ tiền mặt SSOT {ssot_fb['cash_str']}..."
         }
 
@@ -695,6 +1058,7 @@ def generate_portal_html(
     wr_ny_countdown = wr_state['phase_info']['countdown_to_wall_street']
     wr_message = wr_state['tactical_message']
 
+    ssot = _load_live_ssot_summary()
     wr_weekly_ui = _render_war_room_weekly_html(wr_state)
     wr_picks_html = _render_war_room_picks_html(wr_state)
     wr_directives_html = _render_war_room_directives_html(wr_state)
@@ -705,6 +1069,11 @@ def generate_portal_html(
     wr_stages_html = generate_dynamic_tactical_stages_html(wr_state=wr_state)
     wr_stocks_count = len(wr_state.get("live_stocks") or [])
     wr_spillover_html = _render_war_room_spillover_slippage_html(wr_state)
+    wr_portfolio_live_html = _render_portfolio_tab_live_sections_html(wr_state, ssot)
+    wr_tab4_watchlist_html = _render_tab4_live_watchlist_html(wr_state)
+    wr_v8_floor_html = _render_war_room_v8_command_floor_html(wr_state)
+    wr_phase_label_safe = _html.escape(str((wr_state.get("phase_info", {}) or {}).get("phase_name") or wr_phase_id or "PHÒNG TÁC CHIẾN LIVE"))
+    wr_regime_label_safe = _html.escape(str((wr_state.get("intraday_regime", {}) or {}).get("label") or "TÍCH LŨY CHỌN LỌC"))
 
     auth_logout_btn_html = ""
     try:
@@ -3119,10 +3488,12 @@ def generate_portal_html(
                     </div>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="tv-symbol-buttons">
                         <button class="tv-btn active" onclick="switchTVSymbol('HOSE:VNINDEX', this)">📈 VN-INDEX</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:HDB', this)">🏦 HDB (100 CP T+1)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:MSH', this)">🧵 MSH (100 CP T+1)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:BAF', this)">🐷 BAF (Dự phòng)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HNX:IDC', this)">🏗️ IDC (Dự phòng)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:HDB', this)">🏦 HDB (Đang giữ)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:MSH', this)">🧵 MSH (Đang giữ)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:BAF', this)">🐷 BAF (Alpha Watchlist)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HNX:IDC', this)">🏗️ IDC (Alpha Watchlist)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('UPCOM:BSR', this)">🛢️ BSR (Dầu Khí)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:DPR', this)">🌳 DPR (Cao Su)</button>
                     </div>
                 </div>
                 <div id="tv_chart_container" style="height: 540px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color);"></div>
@@ -3166,163 +3537,7 @@ def generate_portal_html(
                 </div>
             </div>
 
-            <!-- SỔ LỆNH THỰC THI & KẾ HOẠCH TÁC CHIẾN CHUẨN CHỈ (NGÀY 09/11/2026) -->
-            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 24px; margin-bottom: 22px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 14px;">
-                    <div>
-                        <h3 style="font-size: 17px; color: #fff; font-weight: 800; display: flex; align-items: center; gap: 10px;">
-                            <span>🎯</span> <span>BẢNG KẾ HOẠCH ĐẦU TƯ CHUẨN CHỈ: PHÂN TÁCH 3 NHỊP KIM TỰ THÁP (30% - 40% - 30%)</span>
-                        </h3>
-                        <p style="font-size: 12.5px; color: #94a3b8; margin-top: 4px;">
-                            Tài khoản TCBS <strong style="color: #38bdf8;">105C307855</strong> (Chủ tịch: <strong>Trần Quốc Thiên Phước</strong>) • Tài sản ròng NAV: <strong style="color: #34d399;">{ssot['nav_str']}</strong> (Tiền mặt: {ssot['cash_str']} • Cổ phiếu: {ssot['stocks_str']})
-                        </p>
-                    </div>
-                    <div>
-                        <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 5px 12px; border-radius: 9999px; font-size: 11.5px; font-weight: 800;">
-                            ● DUY NHẤT NHỊP 1 HÔM NAY (14h00 – 14h25)
-                        </span>
-                    </div>
-                </div>
-
-                <!-- PHẦN 1: TOP 2 MÃ GIẢI NGÂN NHỊP 1 HÔM NAY -->
-                <div style="margin-bottom: 20px;">
-                    <div style="font-size: 12px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-                        <span>🔥</span> <span>PHẦN 1: LỆNH THỰC THI NHỊP 1 THĂM DÒ HÔM NAY (KHUNG GIỜ VÀNG 14h00 – 14h25)</span>
-                    </div>
-                    <div style="overflow-x: auto;">
-                        <table class="standard-table">
-                            <thead>
-                                <tr>
-                                    <th>Mã</th>
-                                    <th>Sàn / Ngành</th>
-                                    <th>Thị Giá Phiên Sáng</th>
-                                    <th>Lệnh Khung Giờ Vàng (14h00 - 14h25)</th>
-                                    <th>Vốn Giải Ngân Hôm Nay</th>
-                                    <th>Nhịp 2 (Breakout)</th>
-                                    <th>Nhịp 3 (Retest)</th>
-                                    <th>Tổng Target Cap</th>
-                                    <th>Cắt Lỗ Stop 2xATR</th>
-                                    <th>Chốt Lời TP1 / TP2</th>
-                                    <th>EV% & R:R</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="background: rgba(56, 189, 248, 0.04);">
-                                    <td style="padding: 12px 14px; font-weight: 800; color: #38bdf8; font-family: 'JetBrains Mono', monospace; font-size: 15px;">HDB</td>
-                                    <td style="padding: 12px 14px; font-weight: 600;">HOSE • Ngân Hàng TMCP</td>
-                                    <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace;">22,300 – 22,450 đ</td>
-                                    <td style="padding: 12px 14px; color: #34d399; font-weight: 700;">
-                                        <strong>100 CP (Lô chẵn 100)</strong><br/>
-                                        <span style="font-size: 11px; color: #94a3b8;">Đặt LO: 22,300 – 22,450 đ</span>
-                                    </td>
-                                    <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #34d399;">
-                                        ~2,230,000 – 2,245,000 ₫<br/>
-                                        <span style="font-size: 11px; color: #94a3b8;">(~11.1% NAV)</span>
-                                    </td>
-                                    <td style="padding: 12px 14px; font-size: 12px; color: #cbd5e1;">+100 CP (Vượt 22,820 đ Vol +50%)</td>
-                                    <td style="padding: 12px 14px; font-size: 12px; color: #cbd5e1;">+100 CP (Retest nền 22,500 đ)</td>
-                                    <td style="padding: 12px 14px; font-weight: 700; color: #fbbf24;">300 CP (6.75M - 33.5% NAV)</td>
-                                    <td style="padding: 12px 14px; color: #f87171; font-weight: 700;">21,220 đ (-5.69%)</td>
-                                    <td style="padding: 12px 14px; color: #34d399; font-weight: 700;">24,290 / 25,820 đ</td>
-                                    <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">+8.8% (1:2.59)</td>
-                                </tr>
-                                <tr style="background: rgba(56, 189, 248, 0.04);">
-                                    <td style="padding: 12px 14px; font-weight: 800; color: #38bdf8; font-family: 'JetBrains Mono', monospace; font-size: 15px;">MSH</td>
-                                    <td style="padding: 12px 14px; font-weight: 600;">HOSE • Dệt May Xuất Khẩu</td>
-                                    <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace;">34,600 – 35,000 đ</td>
-                                    <td style="padding: 12px 14px; color: #34d399; font-weight: 700;">
-                                        <strong>100 CP (Lô chẵn 100)</strong><br/>
-                                        <span style="font-size: 11px; color: #94a3b8;">Đặt LO: 34,600 – 35,000 đ</span>
-                                    </td>
-                                    <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #34d399;">
-                                        ~3,460,000 – 3,500,000 ₫<br/>
-                                        <span style="font-size: 11px; color: #94a3b8;">(~17.2% NAV)</span>
-                                    </td>
-                                    <td style="padding: 12px 14px; font-size: 12px; color: #cbd5e1;">+100 CP (Vượt 36,220 đ Vol lớn)</td>
-                                    <td style="padding: 12px 14px; font-size: 12px; color: #cbd5e1;">0 CP (Đã đủ 200 CP)</td>
-                                    <td style="padding: 12px 14px; font-weight: 700; color: #fbbf24;">200 CP (7.10M - 35.2% NAV)</td>
-                                    <td style="padding: 12px 14px; color: #f87171; font-weight: 700;">33,090 đ (-6.79%)</td>
-                                    <td style="padding: 12px 14px; color: #34d399; font-weight: 700;">39,560 / 43,040 đ</td>
-                                    <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">+13.1% (1:3.13)</td>
-                                </tr>
-                                <tr style="background: rgba(16, 185, 129, 0.08); font-weight: 800;">
-                                    <td colspan="4" style="padding: 12px 14px; color: #34d399; text-align: right;">TỔNG GIẢI NGÂN NHỊP 1 HÔM NAY (2 LÔ 100 CP):</td>
-                                    <td colspan="2" style="padding: 12px 14px; color: #34d399; font-family: 'JetBrains Mono', monospace; font-size: 14px;">~5,690,000 ₫ (~28.2% NAV)</td>
-                                    <td colspan="5" style="padding: 12px 14px; color: #38bdf8;">KÉT TIỀN MẶT GIỮ LẠI: 14,477,119 ₫ (71.8% NAV BẢO VỆ AN TOÀN)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- PHẦN 2: DANH MỤC DỰ PHÒNG & THEO DÕI VĨ MÔ -->
-                <div style="margin-bottom: 20px;">
-                    <div style="font-size: 12px; font-weight: 800; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-                        <span>🛡️</span> <span>PHẦN 2: DANH MỤC DỰ PHÒNG & THEO DÕI CHIẾN LƯỢC (STANDBY WATCHLIST — CHƯA KÍCH HOẠT HÔM NAY)</span>
-                    </div>
-                    <div style="overflow-x: auto;">
-                        <table class="standard-table">
-                            <thead>
-                                <tr>
-                                    <th>Mã</th>
-                                    <th>Sàn / Ngành</th>
-                                    <th>Thị Giá</th>
-                                    <th>Trạng Thái Chiến Lược Hôm Nay</th>
-                                    <th>Lý Do Tạm Giữ Ở Trạng Thái Chờ</th>
-                                    <th>Cột Mốc Kích Hoạt Dự Kiến</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 10px 14px; font-weight: 800; color: #fbbf24; font-family: 'JetBrains Mono', monospace;">BAF</td>
-                                    <td style="padding: 10px 14px;">HOSE • Nông nghiệp 3F</td>
-                                    <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">30,800 đ</td>
-                                    <td style="padding: 10px 14px;"><span style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">STANDBY (0 CP)</span></td>
-                                    <td style="padding: 10px 14px; font-size: 12px; color: #94a3b8;">Nội tại cực khỏe (RS 96) nhưng ưu tiên tối đa vốn cho Top 2 (HDB & MSH) để không loãng danh mục.</td>
-                                    <td style="padding: 10px 14px; font-size: 12px; color: #cbd5e1;">Kích hoạt khi HDB/MSH chốt lời TP1 thu hồi vốn.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 10px 14px; font-weight: 800; color: #fbbf24; font-family: 'JetBrains Mono', monospace;">IDC</td>
-                                    <td style="padding: 10px 14px;">HNX • BĐS Khu Công Nghiệp</td>
-                                    <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">34,900 đ</td>
-                                    <td style="padding: 10px 14px;"><span style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">STANDBY (0 CP)</span></td>
-                                    <td style="padding: 10px 14px; font-size: 12px; color: #94a3b8;">Sàn HNX biên độ 10%, cổ tức tiền 40%, chờ dòng tiền FDI và khu công nghiệp bứt phá.</td>
-                                    <td style="padding: 10px 14px; font-size: 12px; color: #cbd5e1;">Kích hoạt tại Nhịp 2 khi vượt cản 35,570 đ.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- PHẦN 3: TIMELINE TÁC CHIẾN 4 PHA -->
-                <div style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px;">
-                    <div style="font-size: 12px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">
-                        ⏱️ KẾ HOẠCH QUẢN TRỊ DANH MỤC T+1 CHỜ VỀ (PHIÊN HÔM NAY — THỨ BA 10/11/2026)
-                    </div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
-                        <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #64748b;">
-                            <div style="font-size: 11px; color: #94a3b8; font-weight: 700;">PHA 1: 09h00 - 11h30</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">Phiên Sáng: ĐỨNG NGOÀI 100%</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Giữ vững kỷ luật thép, bảo vệ an toàn 100 HDB + 100 MSH đang ở trạng thái T+1.</div>
-                        </div>
-                        <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #f59e0b;">
-                            <div style="font-size: 11px; color: #fbbf24; font-weight: 700;">PHA 2: 11h30 - 13h00</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">Nghỉ Trưa: Rà Soát Sổ Lệnh</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Kiểm tra độ cạn cung, bảo toàn nguyên vẹn {ssot['cash_str']} tiền mặt trong két TCInvest.</div>
-                        </div>
-                        <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #38bdf8;">
-                            <div style="font-size: 11px; color: #38bdf8; font-weight: 700;">PHA 3: 13h00 - 13h55</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">Đầu Chiều: Radar Hàng T+2.5</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Đo lường áp lực xả hàng T+2 toàn thị trường, xác nhận sức chống chịu của 2 mũi nhọn.</div>
-                        </div>
-                        <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 11px; color: #34d399; font-weight: 700;">PHA 4: 14h00 - 14h45</div>
-                            <div style="font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;">KHUNG GIỜ VÀNG & ATC: Án Binh Bất Động</div>
-                            <div style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">TUYỆT ĐỐI KHÔNG giải ngân khi hàng chưa về! Giám sát chặt Stop 2xATR (HDB 21.22k, MSH 33.09k).</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {wr_portfolio_live_html}
         </section>
 
 
@@ -3787,10 +4002,11 @@ def generate_portal_html(
                     </div>
                 </div>
             </div>
-        </section>
+
+        {wr_v8_floor_html}
 
         <!-- V7.0: LIVING ENTERPRISE & INTER-DEPARTMENTAL COLLABORATION MESH -->
-        <section id="wr-enterprise-mesh-panel" class="war-room-section" style="margin-top: 14px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px;">
+        <div id="wr-enterprise-mesh-panel" class="war-room-section" style="margin-top: 14px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
                 <div>
                     <div style="font-size: 13.5px; font-weight: 900; color: #38bdf8; letter-spacing: 0.3px;">
@@ -3831,6 +4047,7 @@ def generate_portal_html(
                     <div id="enterprise-debate-stream" style="max-height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; font-size: 10.5px;"></div>
                 </div>
             </div>
+        </div>
         </section>
 
         <!-- ========================================================
@@ -3915,35 +4132,20 @@ def generate_portal_html(
                     <!-- Widget 2: Countdown to Next Session -->
                     <div class="sidebar-widget">
                         <div class="sidebar-widget-title">⏳ Đếm Ngược Phiên Giao Dịch</div>
-                        <div style="font-size: 12.5px; color: #cbd5e1;">Phiên tiếp theo: <strong style="color: #fbbf24;">09:00 Thứ Hai (09/11)</strong></div>
+                        <div style="font-size: 12.5px; color: #cbd5e1;">Trạng thái phiên: <strong style="color: #fbbf24;">{wr_phase_label_safe}</strong></div>
                         <div id="countdown-timer" style="font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; color: #38bdf8; margin: 10px 0; letter-spacing: 0.04em;">
                             --:--:--
                         </div>
                         <div style="font-size: 11.5px; color: var(--text-muted); line-height: 1.5;">
-                            Chiến dịch: Chuẩn bị kích hoạt giải ngân Vòng 2 trong Khung Giờ Vàng (14h00 - 14h25).
+                            Chiến dịch: Giám sát chặt vị thế đang nắm giữ và chỉ giải ngân chọn lọc sau 14h00 khi thị trường xác nhận.
                         </div>
                     </div>
 
                     <!-- Widget 3: Quick Watchlist Jump -->
                     <div class="sidebar-widget">
-                        <div class="sidebar-widget-title">🎯 Tầm Ngắm Vòng 2 (Top 4)</div>
+                        <div class="sidebar-widget-title">🎯 Tầm Ngắm Live &amp; Biểu Đồ Nhanh</div>
                         <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-base); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color);">
-                                <div><strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">HDB</strong> <span style="font-size: 12px; color: var(--text-muted);">22,310 - 22,500</span></div>
-                                <button onclick="switchTab('portfolio'); switchTVSymbol('HOSE:VNINDEX')" style="background: rgba(56, 189, 248, 0.15); border: none; color: #38bdf8; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; font-weight: 700;">Chart</button>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-base); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color);">
-                                <div><strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">MSH</strong> <span style="font-size: 12px; color: var(--text-muted);">35,060 - 35,500</span></div>
-                                <button onclick="switchTab('portfolio'); switchTVSymbol('HOSE:VNINDEX')" style="background: rgba(56, 189, 248, 0.15); border: none; color: #38bdf8; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; font-weight: 700;">Chart</button>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-base); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color);">
-                                <div><strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">BAF</strong> <span style="font-size: 12px; color: var(--text-muted);">30,710 - 30,900</span></div>
-                                <button onclick="switchTab('portfolio'); switchTVSymbol('HOSE:VNINDEX')" style="background: rgba(56, 189, 248, 0.15); border: none; color: #38bdf8; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; font-weight: 700;">Chart</button>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-base); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color);">
-                                <div><strong style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">IDC</strong> <span style="font-size: 12px; color: var(--text-muted);">34,500 - 34,900</span></div>
-                                <button onclick="switchTab('portfolio'); switchTVSymbol('HOSE:VNINDEX')" style="background: rgba(56, 189, 248, 0.15); border: none; color: #38bdf8; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; font-weight: 700;">Chart</button>
-                            </div>
+                            {wr_tab4_watchlist_html}
                         </div>
                     </div>
                 </div>
@@ -3994,7 +4196,7 @@ def generate_portal_html(
                     <div class="summit-steps-grid" id="summit-steps-container">
                         <div class="summit-step-item active" id="step-node-1">
                             <div class="summit-step-min">00 - 03m</div>
-                            <div class="summit-step-lbl">1. Khai mạc & Đối soát Tiền Mặt 20M</div>
+                            <div class="summit-step-lbl">1. Khai mạc &amp; Đối soát SSOT ({ssot['cash_str']} Cash)</div>
                         </div>
                         <div class="summit-step-item" id="step-node-2">
                             <div class="summit-step-min">03 - 07m</div>
@@ -4237,10 +4439,10 @@ def generate_portal_html(
         // Ánh xạ 5 Khối Chuyên Môn Thể Chế
         const CATEGORY_MAP = {{
             'macro': ['ban_1_macro', 'ban_1_vn_macro'],
-            'equity_bctc': ['ban_2_equity', 'ban_2_vn_equity', 'ban_3_synthesis', 'ban_3_vn_synthesis', 'ban_10_ir_filings'],
-            'cio_execution': ['ban_8_cio', 'ban_7_specialist', 'ban_7_vn_specialist', 'ban_9_sentinel'],
+            'equity_bctc': ['ban_2_equity', 'ban_2_vn_equity', 'ban_3_synthesis', 'ban_3_vn_synthesis', 'ban_10_hien', 'ban_10_cbtt'],
+            'cio_execution': ['ban_8_cio', 'ban_8_council', 'ban_8_enterprise', 'ban_7_specialist', 'ban_7_vn_specialist', 'ban_9_sentinel'],
             'risk_learning': ['ban_4_risk', 'ban_4_vn_risk', 'ban_5_learning', 'ban_3_debates', 'ban_12_ombudsman'],
-            'mentorship': ['ban_6_mentorship', 'ban_6_vn_coach', 'ban_11_video']
+            'mentorship': ['ban_6_mentorship', 'ban_6_vn_coach', 'ban_11_khanh']
         }};
 
         // Đồng hồ thời gian thực (Giờ Việt Nam)
@@ -4251,7 +4453,7 @@ def generate_portal_html(
             const el = document.getElementById('live-clock');
             if (el) el.innerText = `${{dateStr}} ${{timeStr}} (ICT)`;
 
-            // Cập nhật đồng hồ đếm ngược phiên Thứ Hai (09:00 AM)
+            // Cập nhật đồng hồ đếm ngược phiên giao dịch HOSE/HNX tiếp theo
             updateCountdown();
         }}
         setInterval(updateLiveClock, 1000);
@@ -4262,17 +4464,27 @@ def generate_portal_html(
             if (!el) return;
 
             const now = new Date();
-            // Tính toán thời điểm Thứ Hai 09:00 gần nhất
-            let target = new Date();
-            let day = target.getDay(); // 0: Chủ Nhật, 6: Thứ Bảy
-            let daysUntilMonday = (1 + 7 - day) % 7;
-            if (daysUntilMonday === 0 && (target.getHours() >= 9)) {{
-                daysUntilMonday = 7;
+            const day = now.getDay();
+            const minsOfDay = now.getHours() * 60 + now.getMinutes();
+            if (day >= 1 && day <= 5 && minsOfDay >= 540 && minsOfDay < 885) {{
+                el.innerText = 'ĐANG TRONG PHIÊN GIAO DỊCH!';
+                el.style.color = '#34d399';
+                return;
             }}
-            target.setDate(target.getDate() + daysUntilMonday);
-            target.setHours(9, 0, 0, 0);
 
-            let diff = target - now;
+            let target = new Date(now.getTime());
+            if (day >= 1 && day <= 5 && minsOfDay < 540) {{
+                target.setHours(9, 0, 0, 0);
+            }} else {{
+                let addDays = 1;
+                if (day === 5 && minsOfDay >= 540) addDays = 3;
+                else if (day === 6) addDays = 2;
+                else if (day === 0) addDays = 1;
+                target.setDate(target.getDate() + addDays);
+                target.setHours(9, 0, 0, 0);
+            }}
+
+            const diff = target - now;
             if (diff <= 0) {{
                 el.innerText = 'ĐANG TRONG PHIÊN GIAO DỊCH!';
                 el.style.color = '#34d399';
@@ -4434,7 +4646,7 @@ def generate_portal_html(
             let textToParse = rawText;
 
             // 1. Trích xuất 4 KPI nếu có dữ liệu tiền mặt
-            if (rawText.includes('20,167,119') || rawText.includes('105C307855') || rawText.includes('{ssot["cash_str"]}')) {{
+            if (rawText.includes('{ssot["nav_str"]}') || rawText.includes('105C307855') || rawText.includes('{ssot["cash_str"]}')) {{
                 htmlOutput += `
                 <div class="exec-kpi-banner">
                     <div class="exec-kpi-box" style="border-left: 3px solid #10b981;">
@@ -4448,14 +4660,14 @@ def generate_portal_html(
                         <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">{ssot['holdings_desc']} ({ssot['stocks_pct']:.1f}% NAV)</div>
                     </div>
                     <div class="exec-kpi-box" style="border-left: 3px solid #c084fc;">
-                        <div class="exec-kpi-box-lbl">📈 Lãi Vòng 1 Thực Thu</div>
-                        <div class="exec-kpi-box-val" style="color: #c084fc;">+167,119 ₫</div>
-                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Đã Tất Toán 100%</div>
+                        <div class="exec-kpi-box-lbl">📈 Lãi Đã Thực Hiện (SSOT)</div>
+                        <div class="exec-kpi-box-val" style="color: #c084fc;">{ssot['realized_str']}</div>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">NAV {ssot['nav_str']}</div>
                     </div>
                     <div class="exec-kpi-box" style="border-left: 3px solid #fbbf24;">
                         <div class="exec-kpi-box-lbl">⏱️ Chế Độ Thị Trường</div>
-                        <div class="exec-kpi-box-val" style="color: #fbbf24; font-size: 13.5px;">Chờ ATO Thứ Hai</div>
-                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Mở Cửa 09:00 AM</div>
+                        <div class="exec-kpi-box-val" style="color: #fbbf24; font-size: 13.5px;">{wr_regime_label_safe}</div>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">{wr_phase_label_safe}</div>
                     </div>
                 </div>
                 `;
@@ -6038,6 +6250,341 @@ def generate_portal_html(
             // 13. V7.0 Living Enterprise & Inter-Departmental Collaboration Mesh
             if (data.enterprise_mesh_summary) {{
                 renderEnterpriseMeshPanel(data.enterprise_mesh_summary);
+            }}
+
+            // 14. V8.0 Live Multi-Department War-Room Floor & Portfolio Tab Sync
+            if (data.victor_deep_surveillance) {{
+                renderVictorDeepSurveillance(data.victor_deep_surveillance);
+            }}
+            if (data.live_execution_master_plan) {{
+                renderLiveExecutionMasterPlan(data.live_execution_master_plan);
+            }}
+            if (data.department_live_workstation || data.latest_reports_feed) {{
+                renderDeptWorkstationAndReports(
+                    data.department_live_workstation || [],
+                    data.latest_reports_feed || [],
+                    data.vault_sync_meta || {{}}
+                );
+            }}
+            if (data.vault_sync_meta) {{
+                syncPortalReportsSilently(data.vault_sync_meta, false);
+            }}
+            if (data.victor_deep_surveillance) {{
+                renderPortfolioTabLiveFromWarRoom(
+                    data.victor_deep_surveillance,
+                    data.live_execution_master_plan || {{}}
+                );
+            }}
+        }}
+
+        function renderVictorDeepSurveillance(vData) {{
+            if (!vData) return;
+            const hdEl = document.getElementById('victor-surveillance-headline');
+            if (hdEl) {{
+                hdEl.innerHTML = `${{escHtml(vData.victor_headline || '')}} <span style="color:#94a3b8; font-weight:600; font-size:11px;">(Cập nhật: ${{escHtml(vData.surveillance_timestamp || '')}})</span>`;
+            }}
+
+            const heldBody = document.getElementById('victor-held-surveillance-tbody');
+            const heldList = vData.held_positions_book || [];
+            if (heldBody) {{
+                if (heldList.length === 0) {{
+                    heldBody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:12px; color:#94a3b8;">Hiện đang giữ 100% tiền mặt — Chưa mở vị thế cổ phiếu.</td></tr>';
+                }} else {{
+                    heldBody.innerHTML = heldList.map(h => {{
+                        const pnlVal = Number(h.pnl_vnd || 0);
+                        const pnlPct = Number(h.pnl_pct || 0);
+                        const chgPct = Number(h.change_pct || 0);
+                        const pnlCol = pnlVal >= 0 ? '#34d399' : '#f87171';
+                        const chgCol = chgPct >= 0 ? '#34d399' : '#f87171';
+                        const buyUp = Number(h.active_buy_pct || 50);
+                        return `<tr>
+                            <td style="padding:8px 10px;">
+                                <strong style="color:#38bdf8; font-family:'JetBrains Mono',monospace;">${{escHtml(h.symbol || '')}}</strong>
+                                <div style="font-size:10px; color:#94a3b8;">${{Number(h.shares || 0)}} CP (T0: ${{Number(h.tradable_shares || 0)}})</div>
+                            </td>
+                            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace;">
+                                <strong>${{Number(h.live_price || 0).toLocaleString('en-US')}}đ</strong>
+                                <div style="font-size:10px; color:${{chgCol}};">${{chgPct >= 0 ? '+' : ''}}${{chgPct.toFixed(2)}}% • L:${{Number(h.intraday_low || 0).toLocaleString('en-US')}} H:${{Number(h.intraday_high || 0).toLocaleString('en-US')}}</div>
+                            </td>
+                            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace; color:#cbd5e1;">
+                                ${{Number(h.entry_price || 0).toLocaleString('en-US')}}đ
+                                <div style="font-size:10px; color:${{pnlCol}}; font-weight:800;">${{pnlVal >= 0 ? '+' : ''}}${{pnlVal.toLocaleString('en-US')}}đ (${{pnlPct >= 0 ? '+' : ''}}${{pnlPct.toFixed(2)}}%)</div>
+                            </td>
+                            <td style="padding:8px 10px;">
+                                <div style="font-weight:800; color:${{buyUp >= 58 ? '#34d399' : (buyUp < 45 ? '#f87171' : '#fbbf24')}};">BuyUp ${{buyUp.toFixed(1)}}% • B/A ${{Number(h.bid_ask_ratio || 1).toFixed(2)}}x</div>
+                                <div style="font-size:10px; color:#94a3b8;">${{escHtml(h.orderbook_pressure || '')}}</div>
+                            </td>
+                            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace; color:#f87171;">
+                                ${{Number(h.stop_loss || 0).toLocaleString('en-US')}}đ
+                                <div style="font-size:10px; color:#cbd5e1;">Cách +${{Number(h.stop_distance_pct || 0).toFixed(2)}}%</div>
+                            </td>
+                            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace; color:#34d399;">
+                                ${{Number(h.tp1 || 0).toLocaleString('en-US')}} / ${{Number(h.tp2 || 0).toLocaleString('en-US')}}
+                                <div style="font-size:10px; color:#a7f3d0;">TP1 +${{Number(h.tp1_upside_pct || 0).toFixed(1)}}%</div>
+                            </td>
+                            <td style="padding:8px 10px; font-family:'JetBrains Mono',monospace; color:#fbbf24;">
+                                ${{Number(h.t0_buy_zone || 0).toLocaleString('en-US')}} → ${{Number(h.t0_sell_zone || 0).toLocaleString('en-US')}}
+                                <div style="font-size:10px; color:#94a3b8;">OCF ${{Number(h.ocf_ratio || 1).toFixed(2)}}x • MOS ${{Number(h.mos_pct || 0).toFixed(1)}}%</div>
+                            </td>
+                            <td style="padding:8px 10px; font-size:11px;">
+                                <div style="font-weight:800; color:#f8fafc;">${{escHtml(h.victor_status_badge || '')}}</div>
+                                <div style="color:#cbd5e1; margin-top:2px;">${{escHtml(h.victor_instruction || '')}}</div>
+                            </td>
+                        </tr>`;
+                    }}).join('');
+                }}
+            }}
+
+            const watchBody = document.getElementById('victor-alpha-watchlist-tbody');
+            const watchList = vData.alpha_watchlist_book || [];
+            if (watchBody) {{
+                watchBody.innerHTML = watchList.map(w => {{
+                    const chg = Number(w.change_pct || 0);
+                    const chgCol = chg >= 0 ? '#34d399' : '#f87171';
+                    const ok = !!w.constitutional_lot_ok;
+                    return `<tr>
+                        <td style="padding:7px 9px;">
+                            <strong style="color:#fbbf24; font-family:'JetBrains Mono',monospace;">${{escHtml(w.symbol || '')}}</strong>
+                            <div style="font-size:10px; color:#94a3b8;">${{escHtml(w.sector_name || '')}}</div>
+                        </td>
+                        <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">
+                            <strong>${{Number(w.live_price || 0).toLocaleString('en-US')}}đ</strong>
+                            <span style="color:${{chgCol}}; font-size:10px; font-weight:700;"> (${{chg >= 0 ? '+' : ''}}${{chg.toFixed(2)}}%)</span>
+                            <div style="font-size:10px; color:#94a3b8;">Canh nhúng: ${{Number(w.probe_target || 0).toLocaleString('en-US')}}đ</div>
+                        </td>
+                        <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">
+                            BuyUp ${{Number(w.active_buy_pct || 50).toFixed(1)}}% • RSI ${{Number(w.rsi14 || 50).toFixed(1)}}
+                        </td>
+                        <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">
+                            OCF ${{Number(w.ocf_ratio || 1).toFixed(2)}}x • MOS <strong style="color:#34d399;">+${{Number(w.mos_pct || 0).toFixed(1)}}%</strong>
+                        </td>
+                        <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">
+                            Alpha <strong style="color:#38bdf8;">${{Number(w.alpha_score || 0).toFixed(1)}}</strong> • 1:${{Number(w.rr_ratio || 0).toFixed(2)}} (EV ${{Number(w.ev_pct || 0) >= 0 ? '+' : ''}}${{Number(w.ev_pct || 0).toFixed(1)}}%)
+                        </td>
+                        <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">
+                            ${{Number(w.lot_100_cost_vnd || 0).toLocaleString('en-US')}}đ
+                            <div style="font-size:10px; color:${{ok ? '#34d399' : '#f87171'}};">${{Number(w.nav_pct_per_lot || 0).toFixed(1)}}% NAV (${{ok ? 'Đạt <=33%' : 'Vượt trần'}})</div>
+                        </td>
+                        <td style="padding:7px 9px; font-size:11px;">
+                            <div style="font-weight:800; color:${{w.victor_signal && w.victor_signal.includes('SẴN SÀNG') ? '#34d399' : (ok ? '#fbbf24' : '#f87171')}};">${{escHtml(w.victor_signal || '')}}</div>
+                            <div style="font-size:10px; color:#94a3b8; margin-top:2px;">${{escHtml(w.catalyst || '')}}</div>
+                        </td>
+                    </tr>`;
+                }}).join('');
+            }}
+        }}
+
+        function renderLiveExecutionMasterPlan(plan) {{
+            if (!plan) return;
+            const sumEl = document.getElementById('wr-master-plan-summary-banner');
+            if (sumEl) {{
+                const vniChg = Number(plan.vn_index_change_pts || 0);
+                const vniPct = Number(plan.vn_index_change_pct || 0);
+                sumEl.innerHTML = `
+                    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:center;">
+                        <div>
+                            <strong style="color:#38bdf8; font-family:'JetBrains Mono',monospace;">${{escHtml(plan.plan_id || '')}}</strong>
+                            <span style="color:#cbd5e1; margin-left:8px;">Pha: <strong>${{escHtml(plan.session_phase_label || '')}}</strong> • VN-Index: <strong>${{Number(plan.vn_index_value || 0).toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}})}}</strong> (${{vniChg >= 0 ? '+' : ''}}${{vniChg.toFixed(2)}} / ${{vniPct >= 0 ? '+' : ''}}${{vniPct.toFixed(2)}}%) • Breadth ${{plan.breadth_advancers || 0}}↑/${{plan.breadth_decliners || 0}}↓</span>
+                        </div>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+                            <span style="background:rgba(16,185,129,0.16); border:1px solid rgba(16,185,129,0.4); color:#34d399; padding:3px 9px; border-radius:6px; font-weight:800; font-size:11px;">Tiền mặt: ${{Number(plan.cash_available_vnd || 0).toLocaleString('en-US')}}đ (${{Number(plan.cash_pct || 0).toFixed(1)}}%)</span>
+                            <span style="background:rgba(56,189,248,0.16); border:1px solid rgba(56,189,248,0.4); color:#38bdf8; padding:3px 9px; border-radius:6px; font-weight:800; font-size:11px;">Trần giải ngân mới: ${{Number(plan.max_new_allocation_pct || 0).toFixed(0)}}% NAV (~${{Number(plan.max_deployable_vnd || 0).toLocaleString('en-US')}}đ)</span>
+                        </div>
+                    </div>
+                    <div style="margin-top:6px; font-size:11.5px; color:#e2e8f0;">📜 <strong>Nghị quyết Doanh nghiệp (${{escHtml(plan.enterprise_session_id || 'LIVE')}}):</strong> ${{escHtml(plan.enterprise_action_summary || plan.enterprise_verdict || '')}}</div>
+                `;
+            }}
+
+            const holdCardsEl = document.getElementById('wr-master-plan-holdings-cards');
+            if (holdCardsEl) {{
+                const items = plan.holdings_action_items || [];
+                holdCardsEl.innerHTML = items.map(h => {{
+                    const pv = Number(h.pnl_vnd || 0);
+                    return `<div style="background:rgba(15,23,42,0.8); border:1px solid rgba(56,189,248,0.28); border-radius:8px; padding:10px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <strong style="color:#38bdf8; font-size:13px;">${{escHtml(h.symbol || '')}} (${{h.shares || 0}} CP)</strong>
+                            <span style="color:${{pv >= 0 ? '#34d399' : '#f87171'}}; font-weight:800; font-size:11.5px;">${{pv >= 0 ? '+' : ''}}${{pv.toLocaleString('en-US')}}đ (${{Number(h.pnl_pct || 0).toFixed(2)}}%)</span>
+                        </div>
+                        <div style="font-size:11px; color:#cbd5e1; margin-top:4px;">Giá live: <strong>${{Number(h.current_price || 0).toLocaleString('en-US')}}đ</strong> • Stop: <span style="color:#f87171;">${{Number(h.stop_loss || 0).toLocaleString('en-US')}}đ</span> • TP1: <span style="color:#34d399;">${{Number(h.tp1 || 0).toLocaleString('en-US')}}đ</span></div>
+                        <div style="font-size:11px; color:#fbbf24; margin-top:3px;">Vùng lướt T+0: ${{escHtml(h.t0_zone || '')}}</div>
+                        <div style="font-size:11px; color:#e2e8f0; margin-top:4px;">${{escHtml(h.tactical_order_text || '')}}</div>
+                    </div>`;
+                }}).join('');
+            }}
+
+            const ordersBody = document.getElementById('wr-master-plan-orders-tbody');
+            if (ordersBody) {{
+                const orders = plan.new_deployment_orders || [];
+                ordersBody.innerHTML = orders.map(o => `<tr>
+                    <td style="padding:7px 9px;"><strong style="color:#fbbf24; font-family:'JetBrains Mono',monospace;">${{escHtml(o.symbol || '')}}</strong></td>
+                    <td style="padding:7px 9px; font-size:11px; color:#e2e8f0;">${{escHtml(o.order_type || '')}}</td>
+                    <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace; color:#38bdf8;">${{escHtml(o.limit_buy_zone || '')}}</td>
+                    <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;"><span style="color:#f87171;">${{Number(o.stop_loss || 0).toLocaleString('en-US')}}</span> / <span style="color:#34d399;">${{Number(o.tp1 || 0).toLocaleString('en-US')}}</span></td>
+                    <td style="padding:7px 9px; font-family:'JetBrains Mono',monospace;">${{Number(o.est_capital_vnd || 0).toLocaleString('en-US')}}đ (${{Number(o.nav_weight_pct || 0).toFixed(1)}}%)</td>
+                    <td style="padding:7px 9px; font-size:11px;">
+                        <div style="font-weight:800; color:#f8fafc;">${{escHtml(o.approval_status || '')}}</div>
+                        <div style="color:#94a3b8;">${{escHtml(o.trigger_condition || '')}}</div>
+                    </td>
+                </tr>`).join('');
+            }}
+
+            const scenEl = document.getElementById('wr-master-plan-scenarios-grid');
+            if (scenEl) {{
+                const scens = plan.contingency_scenarios || [];
+                const cols = ['#10b981', '#fbbf24', '#ef4444'];
+                scenEl.innerHTML = scens.map((sc, idx) => `<div style="background:rgba(15,23,42,0.78); border-left:3px solid ${{cols[idx % 3]}}; border-radius:8px; padding:10px;">
+                    <div style="font-size:11.5px; font-weight:800; color:${{cols[idx % 3]}};">${{escHtml(sc.title || '')}}</div>
+                    <div style="font-size:11px; color:#94a3b8; margin-top:4px;"><strong>Điều kiện:</strong> ${{escHtml(sc.trigger || '')}}</div>
+                    <div style="font-size:11px; color:#e2e8f0; margin-top:4px;"><strong>Hành động:</strong> ${{escHtml(sc.portfolio_action || '')}} (Tiền mặt mục tiêu: ${{Number(sc.cash_target_pct || 0).toFixed(1)}}%)</div>
+                </div>`).join('');
+            }}
+        }}
+
+        function renderDeptWorkstationAndReports(depts, feed, meta) {{
+            const badge = document.getElementById('wr-vault-sync-badge');
+            if (badge && meta) {{
+                badge.innerText = `🟢 Vault Sync: ${{meta.today_reports_count || 0}} Hôm nay / ${{meta.total_reports_scanned || 0}} Kho (${{meta.latest_sync_time || ''}})`;
+            }}
+
+            const grid = document.getElementById('wr-dept-workstation-grid');
+            if (grid && Array.isArray(depts) && depts.length > 0) {{
+                grid.innerHTML = depts.map(d => {{
+                    const st = String(d.stance || 'ACTIVE_MONITOR');
+                    const stCol = st === 'VETO' ? '#ef4444' : (st === 'CAUTION' ? '#fbbf24' : '#34d399');
+                    const repPath = String(d.latest_report_path || '');
+                    const safePath = repPath.replace(/\\\\/g, '/').replace(/'/g, "\\\\'");
+                    return `<div style="background:rgba(15,23,42,0.82); border:1px solid rgba(148,163,184,0.22); border-radius:9px; padding:10px; display:flex; flex-direction:column; justify-content:space-between; gap:6px;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
+                                <strong style="color:#38bdf8; font-size:11.5px;">${{escHtml(d.ban_code || '')}} • ${{escHtml(d.officer || '')}}</strong>
+                                <span style="background:${{stCol}}22; color:${{stCol}}; border:1px solid ${{stCol}}55; padding:1px 6px; border-radius:4px; font-size:9.5px; font-weight:800;">● ${{escHtml(st)}}</span>
+                            </div>
+                            <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">${{escHtml(d.dept_name || '')}}</div>
+                            <div style="font-size:11px; color:#e2e8f0; margin-top:5px; line-height:1.45;">${{escHtml(d.live_finding || '')}}</div>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; border-top:1px solid rgba(148,163,184,0.14); padding-top:6px;">
+                            <span style="font-size:9.5px; color:#94a3b8;">${{escHtml(d.latest_report_date || '')}} ${{escHtml(d.latest_report_time || '')}}</span>
+                            ${{safePath ? `<button onclick="openReportModal('${{safePath}}')" style="cursor:pointer; background:rgba(56,189,248,0.14); border:1px solid rgba(56,189,248,0.35); color:#7dd3fc; padding:3px 8px; border-radius:5px; font-size:10px; font-weight:700;">📄 Đọc Báo Cáo</button>` : ''}}
+                        </div>
+                    </div>`;
+                }}).join('');
+            }}
+
+            const feedBox = document.getElementById('wr-live-reports-feed-list');
+            if (feedBox && Array.isArray(feed) && feed.length > 0) {{
+                feedBox.innerHTML = feed.map(r => {{
+                    const safePath = String(r.rel_path || '').replace(/\\\\/g, '/').replace(/'/g, "\\\\'");
+                    return `<div style="display:flex; justify-content:space-between; align-items:center; gap:10px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.18); border-radius:7px; padding:7px 10px;">
+                        <div style="min-width:0;">
+                            <div style="font-size:11px; font-weight:800; color:#f8fafc; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${{escHtml(r.icon || '📄')}} ${{escHtml(r.title || '')}}</div>
+                            <div style="font-size:10px; color:#94a3b8;">${{escHtml(r.dept_name || '')}} • ${{escHtml(r.date || '')}} ${{escHtml(r.time || '')}} (${{escHtml(r.shift_label || '')}}) • ${{Number(r.size_kb || 0).toFixed(1)}} KB</div>
+                        </div>
+                        <button onclick="openReportModal('${{safePath}}')" style="cursor:pointer; white-space:nowrap; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); color:#34d399; padding:4px 10px; border-radius:6px; font-size:10.5px; font-weight:700;">Mở Báo Cáo</button>
+                    </div>`;
+                }}).join('');
+            }}
+        }}
+
+        function renderPortfolioTabLiveFromWarRoom(vData, plan) {{
+            if (!vData) return;
+            const metaEl = document.getElementById('portfolio-tab-plan-meta');
+            if (metaEl && plan && plan.generated_at) {{
+                metaEl.innerText = `Cập nhật realtime: ${{plan.generated_at}} • Chế độ: ${{plan.regime_label || ''}} • Khung pha: ${{plan.session_phase_label || ''}}`;
+            }}
+            const hBody = document.getElementById('portfolio-tab-holdings-tbody');
+            if (hBody && Array.isArray(vData.held_positions_book)) {{
+                hBody.innerHTML = vData.held_positions_book.map(h => {{
+                    const pnlVal = Number(h.pnl_vnd || 0);
+                    const pnlPct = Number(h.pnl_pct || 0);
+                    const pCol = pnlVal >= 0 ? '#34d399' : '#f87171';
+                    return `<tr style="background: rgba(56, 189, 248, 0.04);">
+                        <td style="padding: 12px 14px; font-weight: 800; color: #38bdf8; font-family: 'JetBrains Mono', monospace;">${{escHtml(h.symbol || '')}}</td>
+                        <td style="padding: 12px 14px;">${{escHtml(h.name || '')}}</td>
+                        <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace;">${{Number(h.shares || 0)}} CP (T0: ${{Number(h.tradable_shares || 0)}})</td>
+                        <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace;">${{Number(h.entry_price || 0).toLocaleString('en-US')}}đ</td>
+                        <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-weight: 700;">${{Number(h.live_price || 0).toLocaleString('en-US')}}đ</td>
+                        <td style="padding: 12px 14px; font-family: 'JetBrains Mono', monospace; color: ${{pCol}}; font-weight: 800;">${{pnlVal >= 0 ? '+' : ''}}${{pnlVal.toLocaleString('en-US')}}đ (${{pnlPct >= 0 ? '+' : ''}}${{pnlPct.toFixed(2)}}%)</td>
+                        <td style="padding: 12px 14px; color: #f87171; font-weight: 700;">${{Number(h.stop_loss || 0).toLocaleString('en-US')}}đ (+${{Number(h.stop_distance_pct || 0).toFixed(2)}}%)</td>
+                        <td style="padding: 12px 14px; color: #34d399; font-weight: 700;">${{Number(h.tp1 || 0).toLocaleString('en-US')}} / ${{Number(h.tp2 || 0).toLocaleString('en-US')}}đ</td>
+                        <td style="padding: 12px 14px; font-size: 12px; color: #cbd5e1;">${{escHtml(h.victor_status_badge || '')}} — ${{escHtml(h.victor_instruction || '')}}</td>
+                    </tr>`;
+                }}).join('');
+            }}
+            const sBody = document.getElementById('portfolio-tab-standby-tbody');
+            if (sBody && Array.isArray(vData.alpha_watchlist_book)) {{
+                sBody.innerHTML = vData.alpha_watchlist_book.map(w => `<tr>
+                    <td style="padding: 10px 14px; font-weight: 800; color: #fbbf24; font-family: 'JetBrains Mono', monospace;">${{escHtml(w.symbol || '')}}</td>
+                    <td style="padding: 10px 14px;">${{escHtml(w.sector_name || '')}}</td>
+                    <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">${{Number(w.live_price || 0).toLocaleString('en-US')}}đ</td>
+                    <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace; color:#38bdf8;">${{Number(w.probe_target || 0).toLocaleString('en-US')}}đ</td>
+                    <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">OCF ${{Number(w.ocf_ratio || 1).toFixed(2)}}x • MOS +${{Number(w.mos_pct || 0).toFixed(1)}}%</td>
+                    <td style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace;">${{Number(w.lot_100_cost_vnd || 0).toLocaleString('en-US')}}đ (${{Number(w.nav_pct_per_lot || 0).toFixed(1)}}% NAV)</td>
+                    <td style="padding: 10px 14px; font-size: 12px;"><strong>${{escHtml(w.victor_signal || '')}}</strong> — ${{escHtml(w.catalyst || '')}}</td>
+                </tr>`).join('');
+            }}
+        }}
+
+        window._lastSeenVaultReportKey = '';
+        async function syncPortalReportsSilently(meta, forceSync) {{
+            try {{
+                if (!meta && !forceSync) return;
+                const key = meta ? `${{meta.latest_report_rel_path || ''}}|${{meta.today_reports_count || 0}}|${{meta.total_reports_scanned || 0}}` : '';
+                if (!forceSync && key && key === window._lastSeenVaultReportKey) return;
+                if (!forceSync && !window._lastSeenVaultReportKey && key) {{
+                    window._lastSeenVaultReportKey = key;
+                    return;
+                }}
+                if (key) window._lastSeenVaultReportKey = key;
+                const repRes = await fetch('/api/reports?limit=2000');
+                const data = await repRes.json();
+                const freshReports = Array.isArray(data) ? data : (data && Array.isArray(data.reports) ? data.reports : null);
+                if (freshReports) {{
+                    allReports = freshReports;
+                    const todayCnt = allReports.filter(r => r.date === todayDateStr).length;
+                    const elToday = document.getElementById('stat-today-count');
+                    if (elToday) elToday.innerText = `${{todayCnt}} Báo Cáo`;
+                    const elVault = document.getElementById('stat-vault-count');
+                    if (elVault) elVault.innerText = `${{allReports.length}} Báo Cáo`;
+                    applyAllFilters();
+                }}
+            }} catch (e) {{
+                // Silent background sync error ignored
+            }}
+        }}
+
+        async function publishWarRoomReportNow() {{
+            const btn = document.getElementById('btn-publish-war-room-report');
+            const msg = document.getElementById('wr-publish-status-msg');
+            if (btn) {{
+                btn.disabled = true;
+                btn.innerText = '⏳ Đang Tổng Hợp & Phát Hành...';
+            }}
+            if (msg) msg.innerText = 'Đang triệu tập liên phòng ban cập nhật số liệu thị trường thực tế...';
+            try {{
+                const res = await fetch('/api/war_room/publish_report', {{
+                    method: 'POST',
+                    headers: {{'Content-Type': 'application/json'}},
+                    body: JSON.stringify({{ trigger_reason: 'CHAIRMAN_WAR_ROOM_PUBLISH' }})
+                }});
+                const data = await res.json();
+                if (data && data.ok) {{
+                    if (data.war_room_state) renderTacticalWarRoom(data.war_room_state);
+                    await syncPortalReportsSilently(data.vault_sync_meta || null, true);
+                    if (typeof loadEnterpriseMeshState === 'function') loadEnterpriseMeshState();
+                    if (msg) {{
+                        const rPath = String(data.intraday_report_path || data.enterprise_report_path || '').replace(/\\\\/g, '/').replace(/'/g, "\\\\'");
+                        msg.innerHTML = `✅ Đã phát hành &amp; đồng bộ lên Vault lúc ${{escHtml(data.published_at || '')}}! ` + (rPath ? `<button onclick="openReportModal('${{rPath}}')" style="cursor:pointer; margin-left:6px; background:rgba(16,185,129,0.2); border:1px solid #10b981; color:#34d399; padding:2px 8px; border-radius:5px; font-size:11px; font-weight:700;">📄 Xem Báo Cáo Vừa Xuất</button>` : '');
+                    }}
+                }} else {{
+                    if (msg) msg.innerText = '⚠️ Không thể phát hành báo cáo: ' + (data && data.error ? data.error : 'Lỗi hệ thống');
+                }}
+            }} catch (err) {{
+                if (msg) msg.innerText = '⚠️ Lỗi kết nối API /api/war_room/publish_report';
+            }} finally {{
+                if (btn) {{
+                    btn.disabled = false;
+                    btn.innerText = '⚡ Phát Hành & Đồng Bộ Báo Cáo Tác Chiến Mới Nhất';
+                }}
             }}
         }}
 

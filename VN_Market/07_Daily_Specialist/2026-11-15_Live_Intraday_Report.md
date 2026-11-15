@@ -1,5 +1,5 @@
 # [BAN 7 VN & BAN 9] BÁO CÁO TÁC CHIẾN LIVE INTRADAY — 2026-11-15
-**Cập nhật lúc:** `2026-11-15 22:52:17 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
+**Cập nhật lúc:** `2026-11-15 23:21:38 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
 **Trạng thái thị trường (`Market Regime`):** **`⚖️ GIẰNG CO PHÂN HÓA (CHỌN LỌC CỰC CHẶT)`**  
 **Chỉ thị điều hành:** VN-Index +0.01%, Độ rộng 36%, Basis +6.09đ. Thị trường phân hóa mạnh — Cấm FOMO giá xanh; chỉ giữ vị thế khỏe và rình giá chiết khấu.
 
@@ -34,3 +34,8 @@
 - **Spillover Phố Wall → VN:** `⚖️ TRUNG TÍNH PHÂN HÓA (CHỌN LỌC CỔ PHIẾU)` | Hệ số rủi ro: `1.00x` | Trần phân bổ mới: **`25% NAV`** (Gốc: 25%)
 - **Chỉ báo Đêm qua:** S&P 500 `7561.67` (`-0.40%`) | DXY `103.41` | VIX `19.3` | US10Y `5.15%` | WTI Oil `88.56$`
 - **Hồi tố Thực thi & Bull-Trap Filter:** BuyUp >= `58.0%` | RSI Max <= `70.0` | Độ rộng Min >= `32.0%` | Slippage TB: `+0.0 bps`
+
+## 5. KẾ HOẠCH TRIỂN KHAI TÁC CHIẾN ĐẦU TƯ THEO PHIÊN (MINH QUÂN & VICTOR)
+- **Quản trị Sức mua & Tường lửa Hiến chương:** Két tiền mặt `12,516,471 ₫` (`68.6% NAV`). Hạn mức giải ngân bổ sung tối đa theo chế độ `⚖️ GIẰNG CO PHÂN HÓA (CHỌN LỌC CỰC CHẶT)` là **`3,129,118 ₫`** (cấm lô 100 CP vượt `33% NAV` = `6,024,635 ₫`).
+- **Phòng thủ Cổ phiếu Đang Giữ:** Theo dõi sát độ lệch Stop 2xATR trên `100 HDB + 100 MSH`; tuyệt đối tuân thủ Stop cứng và tận dụng biên độ phiên T+0/T+1 hạ giá vốn nếu nhúng về vùng hỗ trợ MA20.
+- **Kỷ luật Thời điểm Thực thi:** Chỉ kê lệnh `LO` chủ động trong Khung Giờ Vàng `14:00 – 14:25` khi Buy-Up >= `58%` và không mua đuổi giá xanh ATO.

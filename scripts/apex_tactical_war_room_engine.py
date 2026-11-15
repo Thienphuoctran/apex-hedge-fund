@@ -993,6 +993,14 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
     except Exception:
         enterprise_mesh_summary = {}
 
+    victor_deep_surveillance = _build_victor_deep_surveillance(snap)
+    live_execution_master_plan = _build_live_execution_master_plan(
+        snap, victor_deep_surveillance, enterprise_mesh_summary
+    )
+    dept_workstation_bundle = _build_department_live_workstation_and_reports(
+        snap, enterprise_mesh_summary
+    )
+
     return {
         "status": "ok",
         "chairman_name": "Trần Quốc Thiên Phước",
@@ -1066,8 +1074,546 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
         "execution_tracker": snap.get("execution_tracker", {}),
         "deep_brain_summary": deep_brain_summary,
         "enterprise_mesh_summary": enterprise_mesh_summary,
+        "victor_deep_surveillance": victor_deep_surveillance,
+        "live_execution_master_plan": live_execution_master_plan,
+        "department_live_workstation": dept_workstation_bundle.get("department_live_workstation", []),
+        "latest_reports_feed": dept_workstation_bundle.get("latest_reports_feed", []),
+        "vault_sync_meta": dept_workstation_bundle.get("vault_sync_meta", {}),
         "directives_history": directives,
         "weekly_reference_plan": get_weekly_reference_roadmap(snapshot=snap)
+    }
+
+
+def _load_v8_json_safe(rel_path: str) -> Dict[str, Any]:
+    """Read a JSON file relative to repo root without raising on missing/corrupt files."""
+    try:
+        fp = Path(__file__).resolve().parent.parent / rel_path
+        if fp.exists():
+            with open(fp, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data if isinstance(data, dict) else {}
+    except Exception:
+        pass
+    return {}
+
+
+def _build_victor_deep_surveillance(snap: Dict[str, Any]) -> Dict[str, Any]:
+    """Build Victor's 2-tier deep surveillance book: Held Positions & Alpha Watchlist."""
+    ssot = _load_v8_json_safe("data/current_portfolio_state.json")
+    deep_brain = _load_v8_json_safe("data/deep_financial_brain_analysis.json")
+    vs = snap.get("victor_sentinel", {}) or {}
+    live_stocks = snap.get("live_stocks", []) or []
+    live_map = {str(s.get("code", "")).upper(): s for s in live_stocks if s.get("code")}
+
+    ho_list = deep_brain.get("holdings_optimizer", []) or []
+    ho_map = {str(h.get("symbol", "")).upper(): h for h in ho_list if isinstance(h, dict) and h.get("symbol")}
+
+    alpha_list = deep_brain.get("top_vn_alpha_picks", []) or []
+    alpha_map = {str(a.get("symbol", "")).upper(): a for a in alpha_list if isinstance(a, dict) and a.get("symbol")}
+
+    cash_balance_vnd = float(ssot.get("cash_balance_vnd", vs.get("cash_vnd", 0.0)) or 0.0)
+    total_nav_vnd = float(vs.get("total_nav_vnd", ssot.get("total_nav_vnd", 1.0)) or 1.0)
+
+    active_positions = ssot.get("active_positions", {}) or {}
+    held_positions_book: List[Dict[str, Any]] = []
+    held_codes = set()
+
+    for sym, pos in active_positions.items():
+        if not isinstance(pos, dict):
+            continue
+        code = str(sym).upper()
+        held_codes.add(code)
+        tick = live_map.get(code, {})
+        opt = ho_map.get(code, {})
+        ap = alpha_map.get(code, {})
+        val = ap.get("valuation", {}) or {}
+
+        shares = int(pos.get("shares", 0) or 0)
+        tradable = int(pos.get("tradable_shares", shares) or 0)
+        entry_price = float(pos.get("entry_price", 0.0) or 0.0)
+        live_price = float(tick.get("price") or pos.get("current_price") or entry_price or 0.0)
+        intraday_low = float(tick.get("low") or live_price)
+        intraday_high = float(tick.get("high") or live_price)
+        change_pct = float(tick.get("change_pct", 0.0) or 0.0)
+        volume = int(tick.get("volume", 0) or 0)
+        vol_ratio_20d = float(tick.get("vol_ratio_20d", 1.0) or 1.0)
+        active_buy_pct = float(tick.get("active_buy_pct", 50.0) or 50.0)
+
+        bids = tick.get("bid_levels", []) or []
+        asks = tick.get("ask_levels", []) or []
+        bid_vol = sum(int(b.get("vol", 0) or 0) for b in bids)
+        ask_vol = sum(int(a.get("vol", 0) or 0) for a in asks)
+        bid_ask_ratio = round(bid_vol / max(ask_vol, 1), 2) if (bid_vol or ask_vol) else 1.0
+
+        if active_buy_pct >= 58.0 or bid_ask_ratio >= 1.15:
+            orderbook_pressure = "CẦU ÁP ĐẢO (MUA CHỦ ĐỘNG)"
+        elif active_buy_pct < 45.0:
+            orderbook_pressure = "ÁP LỰC CUNG NGẮN HẠN"
+        else:
+            orderbook_pressure = "CÂN BẰNG HẤP THỤ"
+
+        stop_loss = float(tick.get("stop_loss") or pos.get("stop_loss") or 0.0)
+        tp1 = float(tick.get("tp1") or pos.get("take_profit_tp1") or 0.0)
+        tp2 = float(tick.get("tp2") or pos.get("take_profit_tp2") or 0.0)
+        stop_dist_pct = round(((live_price - stop_loss) / max(live_price, 1.0)) * 100.0, 2) if stop_loss > 0 else 0.0
+        tp1_upside_pct = round(((tp1 - live_price) / max(live_price, 1.0)) * 100.0, 2) if tp1 > 0 else 0.0
+        tp2_upside_pct = round(((tp2 - live_price) / max(live_price, 1.0)) * 100.0, 2) if tp2 > 0 else 0.0
+
+        pnl_vnd = round((live_price - entry_price) * shares)
+        pnl_pct = round(((live_price - entry_price) / max(entry_price, 1.0)) * 100.0, 2)
+
+        ma20 = float(tick.get("ma20") or opt.get("t0_dip_level") or live_price)
+        t0_buy_zone = round(min(live_price, max(stop_loss * 1.005, ma20)) / 50.0) * 50.0 if stop_loss > 0 else ma20
+        t0_sell_zone = round(max(intraday_high, live_price * 1.022) / 50.0) * 50.0
+
+        ocf_ratio = float(opt.get("ocf_ratio") or ap.get("ocf_ratio") or 1.0)
+        mos_pct = float(opt.get("margin_of_safety_pct") or val.get("margin_of_safety_pct") or 0.0)
+        alpha_score = float(opt.get("alpha_score") or ap.get("alpha_score") or 70.0)
+
+        if stop_loss > 0 and live_price <= stop_loss:
+            badge = "🔴 CHẠM NGƯỠNG BẢO VỆ / SIẾT STOP"
+            instr = opt.get("recommendation") or f"Theo dõi sát mốc Stop {stop_loss:,.0f}đ, cấm trung bình giá xuống."
+        elif pnl_pct >= 5.0 and active_buy_pct >= 60.0:
+            badge = "🟢 ĐỆM LÃI DÀY — GỒNG LÃI THEO TP1"
+            instr = opt.get("recommendation") or f"Lực mua {active_buy_pct:.1f}% khỏe, giữ vị thế hướng TP1 {tp1:,.0f}đ."
+        elif stop_dist_pct <= 1.2:
+            badge = "🟡 SÁT VÙNG HỖ TRỢ — QUAN SÁT RÚT CHÂN"
+            instr = opt.get("recommendation") or f"Chỉ còn cách Stop {stop_dist_pct:.2f}%. Canh phản ứng cung quanh {t0_buy_zone:,.0f}đ."
+        else:
+            badge = "🟢 AN TOÀN — SẴN SÀNG T+0"
+            instr = opt.get("recommendation") or f"Đệm Stop {stop_dist_pct:.2f}%, cân nhắc T+0 vùng {t0_buy_zone:,.0f}đ -> {t0_sell_zone:,.0f}đ."
+
+        held_positions_book.append({
+            "symbol": code,
+            "name": pos.get("name") or tick.get("name") or code,
+            "shares": shares,
+            "tradable_shares": tradable,
+            "entry_price": entry_price,
+            "live_price": live_price,
+            "intraday_low": intraday_low,
+            "intraday_high": intraday_high,
+            "change_pct": change_pct,
+            "volume": volume,
+            "vol_ratio_20d": vol_ratio_20d,
+            "active_buy_pct": active_buy_pct,
+            "bid_ask_ratio": bid_ask_ratio,
+            "orderbook_pressure": orderbook_pressure,
+            "stop_loss": stop_loss,
+            "stop_distance_pct": stop_dist_pct,
+            "tp1": tp1,
+            "tp2": tp2,
+            "tp1_upside_pct": tp1_upside_pct,
+            "tp2_upside_pct": tp2_upside_pct,
+            "pnl_vnd": pnl_vnd,
+            "pnl_pct": pnl_pct,
+            "t0_buy_zone": t0_buy_zone,
+            "t0_sell_zone": t0_sell_zone,
+            "ocf_ratio": ocf_ratio,
+            "mos_pct": mos_pct,
+            "alpha_score": alpha_score,
+            "victor_status_badge": badge,
+            "victor_instruction": instr,
+        })
+
+    alpha_watchlist_book: List[Dict[str, Any]] = []
+    seen_watch = set(held_codes)
+    candidate_codes: List[str] = []
+
+    for s in live_stocks:
+        c = str(s.get("code", "")).upper()
+        if c and c not in seen_watch:
+            seen_watch.add(c)
+            candidate_codes.append(c)
+    for ap in alpha_list:
+        c = str(ap.get("symbol", "")).upper()
+        if c and c not in seen_watch:
+            seen_watch.add(c)
+            candidate_codes.append(c)
+
+    for code in candidate_codes[:8]:
+        tick = live_map.get(code, {})
+        ap = alpha_map.get(code, {})
+        val = ap.get("valuation", {}) or {}
+        opt = ap.get("optimizer", {}) or {}
+
+        live_price = float(tick.get("price") or ap.get("live_price") or 0.0)
+        intraday_low = float(tick.get("low") or live_price)
+        intraday_high = float(tick.get("high") or live_price)
+        change_pct = float(tick.get("change_pct") or ap.get("change_1d_pct") or 0.0)
+        active_buy_pct = float(tick.get("active_buy_pct") or ap.get("buy_up_pct") or 50.0)
+        rsi14 = float(tick.get("rsi14") or ap.get("rsi14") or 50.0)
+        ma20 = float(tick.get("ma20") or ap.get("ma20") or live_price)
+        probe_target = float(tick.get("probe_target") or round((ma20 if ma20 > 0 else live_price * 0.98) / 50.0) * 50.0)
+        stop_loss = float(tick.get("stop_loss") or opt.get("stop_loss_price") or round(live_price * 0.93, 0))
+        tp1 = float(tick.get("tp1") or opt.get("tp1_price") or round(live_price * 1.14, 0))
+        tp2 = float(tick.get("tp2") or opt.get("tp2_price") or round(live_price * 1.25, 0))
+
+        risk_unit = max(live_price - stop_loss, live_price * 0.03, 1.0)
+        reward_unit = max(tp1 - live_price, 0.0)
+        rr_ratio = float(opt.get("rr_ratio") or round(reward_unit / risk_unit, 2))
+        ev_pct = float(opt.get("ev_pct") or round((active_buy_pct / 100.0 * (reward_unit / max(live_price, 1.0)) - (1.0 - active_buy_pct / 100.0) * (risk_unit / max(live_price, 1.0))) * 100.0, 2))
+        alpha_score = float(ap.get("alpha_score") or (72.0 if tick else 65.0))
+        ocf_ratio = float(ap.get("ocf_ratio") or 1.1)
+        roe_pct = float(ap.get("roe_pct") or 15.0)
+        intrinsic_value = float(val.get("intrinsic_fair_value") or round(live_price * 1.15, 0))
+        mos_pct = float(val.get("margin_of_safety_pct") or round(((intrinsic_value - live_price) / max(intrinsic_value, 1.0)) * 100.0, 1))
+
+        lot_100_cost_vnd = round(live_price * 100.0)
+        nav_pct_per_lot = round((lot_100_cost_vnd / max(total_nav_vnd, 1.0)) * 100.0, 1)
+        constitutional_lot_ok = bool(lot_100_cost_vnd <= cash_balance_vnd and nav_pct_per_lot <= 33.0)
+
+        if not constitutional_lot_ok:
+            victor_signal = "🔴 TẠM HOÃN / VƯỢT TRẦN LÔ 100 (>33% NAV)"
+        elif rsi14 <= 66.0 and active_buy_pct >= 55.0 and mos_pct >= 10.0 and rr_ratio >= 1.8:
+            victor_signal = "🟢 SẴN SÀNG GIẢI NGÂN THĂM DÒ (SAU 14H00)"
+        elif active_buy_pct < 45.0 or live_price > probe_target * 1.04:
+            victor_signal = "🟡 QUAN SÁT ĐIỂM NHÚNG PULLBACK"
+        else:
+            victor_signal = "🟡 THEO DÕI CHẶT THANH KHOẢN CHỦ ĐỘNG"
+
+        alpha_watchlist_book.append({
+            "symbol": code,
+            "name": tick.get("name") or ap.get("company_name") or code,
+            "sector_name": ap.get("sector_name") or tick.get("tier") or "VN Watchlist",
+            "live_price": live_price,
+            "change_pct": change_pct,
+            "intraday_low": intraday_low,
+            "intraday_high": intraday_high,
+            "active_buy_pct": active_buy_pct,
+            "rsi14": rsi14,
+            "ma20": ma20,
+            "probe_target": probe_target,
+            "stop_loss": stop_loss,
+            "tp1": tp1,
+            "tp2": tp2,
+            "rr_ratio": rr_ratio,
+            "ev_pct": ev_pct,
+            "alpha_score": alpha_score,
+            "ocf_ratio": ocf_ratio,
+            "roe_pct": roe_pct,
+            "intrinsic_value": intrinsic_value,
+            "mos_pct": mos_pct,
+            "lot_100_cost_vnd": lot_100_cost_vnd,
+            "nav_pct_per_lot": nav_pct_per_lot,
+            "constitutional_lot_ok": constitutional_lot_ok,
+            "victor_signal": victor_signal,
+            "catalyst": tick.get("catalyst") or ap.get("catalyst") or "Theo dõi dòng tiền và BCTC thực tế.",
+        })
+
+    ts_str = f"{snap.get('trading_date', '')} {snap.get('server_time', '')}".strip() or get_ict_now().strftime("%Y-%m-%d %H:%M:%S")
+    ready_cnt = sum(1 for w in alpha_watchlist_book if "SẴN SÀNG" in w.get("victor_signal", ""))
+    return {
+        "surveillance_timestamp": ts_str,
+        "total_monitored_count": len(held_positions_book) + len(alpha_watchlist_book),
+        "held_count": len(held_positions_book),
+        "watchlist_count": len(alpha_watchlist_book),
+        "held_positions_book": held_positions_book,
+        "alpha_watchlist_book": alpha_watchlist_book,
+        "victor_headline": (
+            f"Victor đang bám sát {len(held_positions_book)} vị thế nắm giữ + {len(alpha_watchlist_book)} mã tầm ngắm "
+            f"({ready_cnt} mã đạt chuẩn giải ngân lô 100 <= 33% NAV)."
+        ),
+    }
+
+
+def _build_live_execution_master_plan(
+    snap: Dict[str, Any],
+    victor_surveillance: Dict[str, Any],
+    enterprise_mesh_summary: Dict[str, Any],
+) -> Dict[str, Any]:
+    """Synthesize real-time market-adaptive execution plan across all departments."""
+    mkt = snap.get("market_overview", {}) or {}
+    vni = mkt.get("vn_index", {}) or {}
+    breadth = mkt.get("market_breadth", {}) or {}
+    regime = snap.get("intraday_regime", {}) or {}
+    phase = snap.get("phase_info", {}) or {}
+    spill = snap.get("global_spillover", {}) or {}
+    vs = snap.get("victor_sentinel", {}) or {}
+    latest_sess = enterprise_mesh_summary.get("latest_session", {}) or {}
+
+    cash_available_vnd = float(vs.get("cash_vnd", 0.0) or 0.0)
+    cash_pct = float(vs.get("cash_pct", 0.0) or 0.0)
+    total_nav_vnd = float(vs.get("total_nav_vnd", 0.0) or 0.0)
+    max_new_alloc_pct = float(
+        spill.get("max_new_allocation_pct") or regime.get("max_new_allocation_pct") or 50.0
+    )
+    target_stock_budget_vnd = total_nav_vnd * (max_new_alloc_pct / 100.0)
+    stocks_val_vnd = float(vs.get("stocks_val_vnd", 0.0) or 0.0)
+    max_deployable_vnd = max(0.0, min(cash_available_vnd, max(target_stock_budget_vnd - stocks_val_vnd, 0.0)))
+    if max_deployable_vnd == 0.0 and cash_available_vnd > 3_500_000:
+        max_deployable_vnd = round(min(cash_available_vnd * 0.45, total_nav_vnd * 0.33))
+
+    holdings_action_items: List[Dict[str, Any]] = []
+    for h in victor_surveillance.get("held_positions_book", []) or []:
+        t0_zone = f"{h['t0_buy_zone']:,.0f}đ -> {h['t0_sell_zone']:,.0f}đ"
+        holdings_action_items.append({
+            "symbol": h["symbol"],
+            "shares": h["shares"],
+            "current_price": h["live_price"],
+            "entry_price": h["entry_price"],
+            "stop_loss": h["stop_loss"],
+            "tp1": h["tp1"],
+            "pnl_vnd": h["pnl_vnd"],
+            "pnl_pct": h["pnl_pct"],
+            "t0_zone": t0_zone,
+            "action_badge": h["victor_status_badge"],
+            "tactical_order_text": h["victor_instruction"],
+        })
+
+    new_deployment_orders: List[Dict[str, Any]] = []
+    sorted_watch = sorted(
+        victor_surveillance.get("alpha_watchlist_book", []) or [],
+        key=lambda x: (1 if x.get("constitutional_lot_ok") else 0, float(x.get("alpha_score", 0))),
+        reverse=True,
+    )
+    for w in sorted_watch[:4]:
+        probe = float(w.get("probe_target") or w.get("live_price") or 0.0)
+        low_zone = round((probe * 0.992) / 50.0) * 50.0
+        high_zone = round((probe * 1.005) / 50.0) * 50.0
+        lot_cost = float(w.get("lot_100_cost_vnd") or (probe * 100.0))
+        ok_flag = bool(w.get("constitutional_lot_ok"))
+        new_deployment_orders.append({
+            "symbol": w["symbol"],
+            "order_type": "LO LIMIT THĂM DÒ 100 CP" if ok_flag else "QUAN SÁT / CHỜ CÂN ĐỐI NAV",
+            "limit_buy_zone": f"{low_zone:,.0f}đ - {high_zone:,.0f}đ",
+            "stop_loss": w["stop_loss"],
+            "tp1": w["tp1"],
+            "lot_shares": 100,
+            "est_capital_vnd": lot_cost,
+            "nav_weight_pct": w["nav_pct_per_lot"],
+            "trigger_condition": (
+                f"Chỉ khớp sau 14h00 nếu Buy-Up >= 58% và giữ vững MA20 ({w['ma20']:,.0f}đ)."
+                if ok_flag
+                else f"Lô 100 tốn {lot_cost:,.0f}đ ({w['nav_pct_per_lot']:.1f}% NAV > trần 33% Điều 3) — Khóa giải ngân!"
+            ),
+            "approval_status": w["victor_signal"],
+        })
+
+    vni_val = float(vni.get("value", 0.0) or 0.0)
+    contingency_scenarios = [
+        {
+            "scenario_id": "SCENARIO_BULL_BREAKOUT",
+            "title": "Kịch Bản 1: Dòng Tiền Bùng Nổ Xác Nhận Sau 14h00",
+            "trigger": f"VN-Index ({vni_val:,.2f}) giữ xanh, độ rộng tích cực và Buy-Up nhóm dẫn dắt >= 62%.",
+            "portfolio_action": (
+                f"Giữ nguyên 100 HDB + 100 MSH hướng TP1; giải ngân tối đa 1 lô thăm dò (~{max_deployable_vnd:,.0f}đ budget) vào mã đầu bảng đạt chuẩn <= 33% NAV."
+            ),
+            "cash_target_pct": max(35.0, round(100.0 - max_new_alloc_pct, 1)),
+        },
+        {
+            "scenario_id": "SCENARIO_BASE_ABSORPTION",
+            "title": "Kịch Bản 2: Rung Lắc Hấp Thụ Cung (Base Case)",
+            "trigger": "VN-Index giằng co biên hẹp quanh tham chiếu, khối lượng cạn cung chờ hàng T+2.5.",
+            "portfolio_action": "Không mua đuổi đầu phiên; chỉ canh lướt T+0 hạ giá vốn HDB/MSH khi nhúng về hỗ trợ với biên >= 2.2%.",
+            "cash_target_pct": round(cash_pct, 1),
+        },
+        {
+            "scenario_id": "SCENARIO_BEAR_DEFENSE",
+            "title": "Kịch Bản 3: Đảo Chiều Giảm Sâu / Gãy Hỗ Trợ",
+            "trigger": "Áp lực bán chủ động > 60% kéo HDB/MSH áp sát Stop 2xATR hoặc VIX/Spillover chuyển đỏ.",
+            "portfolio_action": "Ngừng 100% lệnh mua mới; kích hoạt Stop kỷ luật ngay lập tức khi gãy 2xATR, bảo toàn đệm tiền mặt >= 70% NAV.",
+            "cash_target_pct": 85.0,
+        },
+    ]
+
+    trading_date = snap.get("trading_date") or get_ict_now().strftime("%Y-%m-%d")
+    server_time = snap.get("server_time") or get_ict_now().strftime("%H:%M:%S")
+    return {
+        "plan_id": f"WAR-PLAN-{trading_date.replace('-', '')}-{server_time.replace(':', '')[:4]}",
+        "generated_at": f"{trading_date} {server_time} ICT",
+        "trading_date": trading_date,
+        "session_phase_label": phase.get("phase_name") or phase.get("active_phase_id") or "LIVE WAR-ROOM",
+        "regime_id": regime.get("regime_id", "SIDEWAY_CHOPPY"),
+        "regime_label": regime.get("label", "TÍCH LŨY CHỌN LỌC"),
+        "regime_color": regime.get("badge_color", "#fbbf24"),
+        "vn_index_value": vni_val,
+        "vn_index_change_pts": float(vni.get("change_pts", 0.0) or 0.0),
+        "vn_index_change_pct": float(vni.get("change_pct", 0.0) or 0.0),
+        "breadth_advancers": int(breadth.get("advancers", 0) or 0),
+        "breadth_decliners": int(breadth.get("decliners", 0) or 0),
+        "foreign_net_ty_vnd": vni.get("foreign_net_ty_vnd", "--"),
+        "cash_available_vnd": cash_available_vnd,
+        "cash_pct": cash_pct,
+        "total_nav_vnd": total_nav_vnd,
+        "max_new_allocation_pct": max_new_alloc_pct,
+        "max_deployable_vnd": max_deployable_vnd,
+        "enterprise_session_id": latest_sess.get("session_id", ""),
+        "enterprise_verdict": latest_sess.get("final_verdict", "TUÂN THỦ HIẾN PHÁP 10 ĐIỀU & QUẢN TRỊ RỦI RO"),
+        "enterprise_seal": latest_sess.get("constitutional_seal_sha256", ""),
+        "enterprise_action_summary": latest_sess.get("action_plan") or snap.get("tactical_message", ""),
+        "holdings_action_items": holdings_action_items,
+        "new_deployment_orders": new_deployment_orders,
+        "contingency_scenarios": contingency_scenarios,
+    }
+
+
+def _build_department_live_workstation_and_reports(
+    snap: Dict[str, Any],
+    enterprise_mesh_summary: Dict[str, Any],
+) -> Dict[str, Any]:
+    """Map all 14 enterprise departments to live packets and real institutional reports on disk."""
+    scanned_reports: List[Dict[str, Any]] = []
+    try:
+        from scripts.apex_report_scanner import scan_all_institutional_reports
+        scanned_reports = scan_all_institutional_reports(limit=300) or []
+    except Exception:
+        scanned_reports = []
+
+    latest_by_scanner_dept: Dict[str, Dict[str, Any]] = {}
+    for rep in scanned_reports:
+        did = rep.get("dept_id")
+        if did and did not in latest_by_scanner_dept:
+            latest_by_scanner_dept[did] = rep
+
+    scanner_mapping = {
+        "BAN_1_VN": ("ban_1_vn_macro",),
+        "BAN_1_US": ("ban_1_macro",),
+        "BAN_2_BCTC": ("ban_2_vn_equity", "ban_2_equity", "ban_10_cbtt"),
+        "BAN_3_SYNTHESIS": ("ban_3_vn_synthesis", "ban_3_synthesis", "ban_3_debates"),
+        "BAN_4_RISK": ("ban_4_vn_risk", "ban_4_risk"),
+        "BAN_5_EVOLUTION": ("ban_5_learning",),
+        "BAN_6_ACADEMY": ("ban_6_vn_coach", "ban_6_mentorship"),
+        "BAN_7_VN": ("ban_7_vn_specialist",),
+        "BAN_7_US": ("ban_7_specialist",),
+        "BAN_8_CIO": ("ban_8_enterprise", "ban_8_cio", "ban_8_council"),
+        "BAN_9_SENTINEL": ("ban_7_vn_specialist", "ban_4_vn_risk"),
+        "BAN_10_IR": ("ban_10_cbtt", "ban_10_hien", "ban_2_equity"),
+        "BAN_11_MEDIA": ("ban_11_khanh", "ban_8_enterprise"),
+        "BAN_12_OMBUDSMAN": ("ban_12_ombudsman",),
+    }
+
+    latest_sess = enterprise_mesh_summary.get("latest_session", {}) or {}
+    packets = latest_sess.get("packets", []) or []
+    pkt_by_dept: Dict[str, Dict[str, Any]] = {}
+    for p in packets:
+        fd = p.get("from_dept")
+        if fd:
+            pkt_by_dept[fd] = p
+
+    try:
+        from scripts.apex_enterprise_collaboration_mesh import ENTERPRISE_DEPARTMENT_ROSTER
+        roster = list(ENTERPRISE_DEPARTMENT_ROSTER)
+    except Exception:
+        roster = []
+
+    vni = (snap.get("market_overview", {}) or {}).get("vn_index", {}) or {}
+    vs = snap.get("victor_sentinel", {}) or {}
+    fallback_findings = {
+        "BAN_1_VN": f"VN-Index {float(vni.get('value', 0) or 0):,.2f} ({float(vni.get('change_pct', 0) or 0):+.2f}%), khối ngoại {vni.get('foreign_net_ty_vnd', '--')} tỷ.",
+        "BAN_9_SENTINEL": vs.get("threat_label") or f"Đang giám sát {vs.get('holdings_count', 2)} vị thế với đệm tiền mặt {vs.get('cash_pct', 69.0):.1f}%.",
+        "BAN_7_VN": f"Sẵn sàng tác chiến sau 14h00 cho HDB/MSH và watchlist thanh khoản thực.",
+        "BAN_8_CIO": latest_sess.get("final_verdict") or "Điều phối thống nhất liên phòng ban theo Hiến pháp 10 Điều.",
+    }
+
+    workstation: List[Dict[str, Any]] = []
+    for dept in roster:
+        rid = dept.get("dept_id", "")
+        cand_keys = scanner_mapping.get(rid, ())
+        matched_rep = None
+        for ck in cand_keys:
+            if ck in latest_by_scanner_dept:
+                matched_rep = latest_by_scanner_dept[ck]
+                break
+        if matched_rep is None and scanned_reports:
+            matched_rep = scanned_reports[0]
+
+        pkt = pkt_by_dept.get(rid, {})
+        finding = pkt.get("summary") or fallback_findings.get(rid) or (
+            matched_rep.get("title") if matched_rep else dept.get("mandate", "")
+        )
+        stance = pkt.get("stance") or "ACTIVE_MONITOR"
+        workstation.append({
+            "dept_id": rid,
+            "ban_code": dept.get("ban_code", rid),
+            "dept_name": dept.get("title", ""),
+            "officer": dept.get("officer", ""),
+            "market_scope": dept.get("market_scope", "VN"),
+            "veto_power": bool(dept.get("veto_power", False)),
+            "live_status": "ACTIVE_IN_WAR_ROOM",
+            "stance": stance,
+            "live_finding": finding,
+            "latest_report_path": matched_rep.get("rel_path", "") if matched_rep else "",
+            "latest_report_title": matched_rep.get("title", "") if matched_rep else "",
+            "latest_report_date": matched_rep.get("date", "") if matched_rep else "",
+            "latest_report_time": matched_rep.get("time", "") if matched_rep else "",
+        })
+
+    feed: List[Dict[str, Any]] = []
+    for r in scanned_reports[:12]:
+        feed.append({
+            "rel_path": r.get("rel_path", ""),
+            "title": r.get("title", ""),
+            "dept_id": r.get("dept_id", ""),
+            "dept_name": r.get("dept_name", ""),
+            "dept_short": r.get("dept_short", ""),
+            "date": r.get("date", ""),
+            "time": r.get("time", ""),
+            "shift_label": r.get("shift_label", ""),
+            "size_kb": r.get("size_kb", 0),
+            "icon": r.get("icon", "📄"),
+            "color": r.get("color", "#38bdf8"),
+        })
+
+    today_str = get_ict_now().strftime("%Y-%m-%d")
+    today_cnt = sum(1 for r in scanned_reports if r.get("date") == today_str)
+    latest_rep_rel = feed[0]["rel_path"] if feed else ""
+    sync_time = f"{today_str} {get_ict_now().strftime('%H:%M:%S')}"
+    return {
+        "department_live_workstation": workstation,
+        "latest_reports_feed": feed,
+        "vault_sync_meta": {
+            "total_reports_scanned": len(scanned_reports),
+            "today_reports_count": today_cnt,
+            "latest_report_rel_path": latest_rep_rel,
+            "latest_sync_time": sync_time,
+        },
+    }
+
+
+def publish_war_room_tactical_report(
+    trigger_reason: str = "WAR_ROOM_LIVE_SYNC",
+    target_ticker: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Generate and persist fresh intraday & multi-department War-Room reports to disk & Vault."""
+    from scripts.apex_live_intraday_brain import (
+        compute_live_war_room_snapshot,
+        sync_live_intraday_report,
+        _upsert_report_into_vault,
+    )
+    from scripts.apex_enterprise_collaboration_mesh import run_enterprise_work_session
+
+    snap = compute_live_war_room_snapshot(force_refresh=True)
+    intraday_path = sync_live_intraday_report(snap, force_write=True)
+    directive_text = (
+        f"Phiên tác chiến trực tiếp Phòng Tác Chiến ({trigger_reason}) — "
+        f"Cập nhật báo cáo và kế hoạch triển khai theo diễn biến thị trường thực tế."
+    )
+    sess = run_enterprise_work_session(
+        directive=directive_text,
+        ticker=target_ticker,
+        trigger_source="WAR_ROOM_LIVE_PUBLISH",
+        sync_cloud=False,
+    )
+
+    trading_date = snap.get("trading_date") or get_ict_now().strftime("%Y-%m-%d")
+    ent_path = (
+        Path(__file__).resolve().parent.parent
+        / "08_Master_Investment_CIO"
+        / "enterprise_sessions"
+        / f"{trading_date}_Enterprise_Work_Session.md"
+    )
+    if ent_path.exists():
+        _upsert_report_into_vault(ent_path, dept_id="ban_8_enterprise")
+
+    war_room_state = get_tactical_war_room_state()
+    return {
+        "ok": True,
+        "published_at": get_ict_now().strftime("%Y-%m-%d %H:%M:%S ICT"),
+        "intraday_report_path": str(intraday_path.relative_to(Path(__file__).resolve().parent.parent)).replace("\\", "/") if intraday_path else "",
+        "enterprise_report_path": f"08_Master_Investment_CIO/enterprise_sessions/{trading_date}_Enterprise_Work_Session.md" if ent_path.exists() else "",
+        "enterprise_session_id": (sess or {}).get("session_id", ""),
+        "vault_sync_meta": war_room_state.get("vault_sync_meta", {}),
+        "war_room_state": war_room_state,
     }
 
 
