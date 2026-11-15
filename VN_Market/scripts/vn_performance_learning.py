@@ -53,49 +53,104 @@ def run():
     with open(snapshot_path, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=2, ensure_ascii=False)
 
-    # 1b. GÓI NÂNG CẤP BƯỚC 1: Liên Kết Sổ Lệnh Khép Kín Tài Khoản Chủ Tịch (TCBS: 105C307855)
+    # 1b. GÓI NÂNG CẤP BƯỚC 1: Liên Kết Sổ Lệnh Khép Kín SSOT V2.0 Tài Khoản Chủ Tịch (TCBS: 105C307855)
     account_summary = {}
     positions_data = []
-    if os.path.exists(TELEMETRY_PATH):
+    if str(ROOT_DIR) not in sys.path:
+        sys.path.insert(0, str(ROOT_DIR))
+    try:
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        ssot = PortfolioStateManager.load_state()
+        cash_reserve = float(ssot.get("cash_balance_vnd", 0.0) or 0.0)
+        total_cost = float(ssot.get("total_cost_vnd", 0.0) or 0.0)
+        total_market_val = float(ssot.get("total_market_val_vnd", 0.0) or 0.0)
+        unrealized_pnl = float(ssot.get("unrealized_pnl_vnd", 0.0) or 0.0)
+        total_nav = float(ssot.get("total_nav_vnd", cash_reserve + total_market_val) or 0.0)
+        realized_pnl = float(ssot.get("realized_pnl_vnd", 0.0) or 0.0)
+        pnl_pct = round((unrealized_pnl / total_cost) * 100.0, 2) if total_cost > 0 else 0.0
+        total_shares = 0
+        for sym, pos in (ssot.get("active_positions", {}) or {}).items():
+            sh = int(pos.get("shares", 0) or 0)
+            if sh <= 0:
+                continue
+            total_shares += sh
+            entry = float(pos.get("entry_price", 0.0) or 0.0)
+            cur = float(pos.get("current_price", entry) or entry)
+            cost_v = float(pos.get("cost_basis_vnd", entry * sh) or 0.0)
+            mkt_v = float(pos.get("market_val_vnd", cur * sh) or 0.0)
+            pnl_v = float(pos.get("unrealized_pnl_vnd", mkt_v - cost_v) or 0.0)
+            p_pct = round(((cur / entry) - 1.0) * 100.0, 2) if entry > 0 else 0.0
+            stop_px = float(pos.get("stop_loss", 0.0) or 0.0)
+            positions_data.append({
+                "symbol": sym,
+                "shares": sh,
+                "entry_price": entry,
+                "current_price": cur,
+                "cost_vnd": cost_v,
+                "market_value_vnd": mkt_v,
+                "pnl_vnd": pnl_v,
+                "pnl_pct": p_pct,
+                "stop_loss_2atr": stop_px,
+                "status": "🟢 AN TOÀN" if (stop_px <= 0 or cur >= stop_px) else "🔴 CẢNH BÁO STOP",
+            })
+        acc_wins = sum(1 for p in positions_data if p.get("pnl_vnd", 0) >= 0)
+        acc_total = len(positions_data)
+        acc_hit_rate = round((acc_wins / acc_total) * 100, 1) if acc_total > 0 else 100.0
+        account_summary = {
+            "account_id": ssot.get("account_id", "105C307855"),
+            "owner": ssot.get("chairman", "Chủ tịch Trần Quốc Thiên Phước"),
+            "total_nav_vnd": total_nav,
+            "total_cost_vnd": total_cost,
+            "total_market_val_vnd": total_market_val,
+            "unrealized_pnl_vnd": unrealized_pnl,
+            "unrealized_pnl_pct": pnl_pct,
+            "realized_pnl_vnd": realized_pnl,
+            "cash_reserve_vnd": cash_reserve,
+            "account_hit_rate": acc_hit_rate,
+            "total_shares": total_shares,
+            "positions": positions_data,
+        }
+    except Exception as ssot_err:
+        print(f"[!] Fallback telemetry do loi SSOT: {ssot_err}")
+        if os.path.exists(TELEMETRY_PATH):
+            try:
+                with open(TELEMETRY_PATH, "r", encoding="utf-8") as f:
+                    telemetry = json.load(f)
+                portfolio_summary = telemetry.get("portfolio_summary", {})
+                positions_data = telemetry.get("positions", [])
+                total_cost = portfolio_summary.get("total_cost_vnd", 0.0)
+                total_market_val = portfolio_summary.get("total_market_value_vnd", 0.0)
+                unrealized_pnl = portfolio_summary.get("total_unrealized_pnl_vnd", 0.0)
+                pnl_pct = portfolio_summary.get("total_unrealized_pnl_pct", 0.0)
+                cash_reserve = portfolio_summary.get("cash_reserve_vnd", 0.0)
+                total_nav = portfolio_summary.get("total_nav_vnd", 0.0)
+                acc_wins = sum(1 for p in positions_data if p.get("pnl_vnd", 0) >= 0)
+                acc_total = len(positions_data)
+                acc_hit_rate = round((acc_wins / acc_total) * 100, 1) if acc_total > 0 else 100.0
+                account_summary = {
+                    "account_id": "105C307855",
+                    "owner": "Chủ tịch Trần Quốc Thiên Phước",
+                    "total_nav_vnd": total_nav,
+                    "total_cost_vnd": total_cost,
+                    "total_market_val_vnd": total_market_val,
+                    "unrealized_pnl_vnd": unrealized_pnl,
+                    "unrealized_pnl_pct": pnl_pct,
+                    "cash_reserve_vnd": cash_reserve,
+                    "account_hit_rate": acc_hit_rate,
+                    "total_shares": portfolio_summary.get("total_shares", 0),
+                    "positions": positions_data,
+                }
+            except Exception as e:
+                print(f"[!] Warning reading telemetry: {e}")
+
+    if account_summary:
         try:
-            with open(TELEMETRY_PATH, "r", encoding="utf-8") as f:
-                telemetry = json.load(f)
-            portfolio_summary = telemetry.get("portfolio_summary", {})
-            positions_data = telemetry.get("positions", [])
-            
-            total_cost = portfolio_summary.get("total_cost_vnd", 18585000.0)
-            total_market_val = portfolio_summary.get("total_market_value_vnd", 18700000.0)
-            unrealized_pnl = portfolio_summary.get("total_unrealized_pnl_vnd", 115000.0)
-            pnl_pct = portfolio_summary.get("total_unrealized_pnl_pct", 0.619)
-            cash_reserve = portfolio_summary.get("cash_reserve_vnd", 1415000.0)
-            total_nav = portfolio_summary.get("total_nav_vnd", 20115000.0)
-            
-            # Tính toán Account Hit Rate thực tế
-            acc_wins = sum(1 for p in positions_data if p.get("pnl_vnd", 0) >= 0)
-            acc_total = len(positions_data)
-            acc_hit_rate = round((acc_wins / acc_total) * 100, 1) if acc_total > 0 else 100.0
-            
-            account_summary = {
-                "account_id": "105C307855",
-                "owner": "Chủ tịch Trần Quốc Thiên Phước",
-                "total_nav_vnd": total_nav,
-                "total_cost_vnd": total_cost,
-                "total_market_val_vnd": total_market_val,
-                "unrealized_pnl_vnd": unrealized_pnl,
-                "unrealized_pnl_pct": pnl_pct,
-                "cash_reserve_vnd": cash_reserve,
-                "account_hit_rate": acc_hit_rate,
-                "total_shares": portfolio_summary.get("total_shares", 900),
-                "positions": positions_data
-            }
-            
-            # Lưu trữ snapshot tài khoản thực chiến
             acc_snapshot_path = os.path.join(ARCHIVE_DIR, f"account_audit_{today_str}.json")
             with open(acc_snapshot_path, "w", encoding="utf-8") as f:
                 json.dump(account_summary, f, indent=2, ensure_ascii=False)
-            print(f"[+] [STEP 1 THÀNH CÔNG] Đã liên kết sổ lệnh thực tế: NAV={total_nav:,.0f} đ | PnL={unrealized_pnl:+,.0f} đ ({pnl_pct:+.2f}%) | Hit Rate={acc_hit_rate}%")
+            print(f"[+] [STEP 1 THÀNH CÔNG] Đã liên kết sổ lệnh SSOT: NAV={account_summary['total_nav_vnd']:,.0f} đ | Cash={account_summary['cash_reserve_vnd']:,.0f} đ | Holdings={account_summary['total_shares']} CP | Hit Rate={account_summary['account_hit_rate']}%")
         except Exception as e:
-            print(f"[!] Warning reading telemetry: {e}")
+            print(f"[!] Warning saving account audit: {e}")
 
     # 2. Hồi Tố Walk-Forward (Kiểm tra lịch sử)
     archive_files = sorted(glob.glob(os.path.join(ARCHIVE_DIR, "snapshot_*.json")))
@@ -183,12 +238,38 @@ def run():
             "actionable_rule": "Luôn bảo đảm tỷ lệ phân bổ lô chẵn 100 CP chuẩn xác và giữ tỷ lệ tiền mặt dự phòng (Dry Powder >= 7% NAV), tuyệt đối không dùng margin để triệt tiêu mọi rủi ro tài khoản."
         }
     ]
+    # Bảo toàn các ký ức tự học MEM-EVO-* do Pillar 3 sinh ra khi cập nhật Kho Bộ Nhớ VN
+    merged_memories = list(vn_memories)
+    if os.path.exists(MEMORY_VAULT_VN_PATH):
+        try:
+            with open(MEMORY_VAULT_VN_PATH, "r", encoding="utf-8") as f:
+                old_vault = json.load(f)
+            base_ids = {m["memory_id"] for m in merged_memories if m.get("memory_id")}
+            for old_m in old_vault.get("contextual_memories", []):
+                mid = old_m.get("memory_id")
+                if mid and mid not in base_ids:
+                    merged_memories.append(old_m)
+                    base_ids.add(mid)
+        except Exception:
+            pass
+    vn_memories = merged_memories
+
     with open(MEMORY_VAULT_VN_PATH, "w", encoding="utf-8") as f:
         json.dump({
-            "vault_version": "VN-Mem0-Contextual-Vault-v2.1",
+            "vault_version": "VN-Mem0-Contextual-Vault-v2.2",
             "updated_at": today_str,
             "contextual_memories": vn_memories
         }, f, indent=2, ensure_ascii=False)
+
+    # Đọc kết quả Tự đánh giá & 15 Huyền thoại từ Pillar 3
+    evo_summary = {}
+    legends_vault_path = os.path.join(ROOT_DIR, "data", "legend_investor_wisdom_vault.json")
+    if os.path.exists(legends_vault_path):
+        try:
+            with open(legends_vault_path, "r", encoding="utf-8") as f:
+                evo_summary = json.load(f)
+        except Exception:
+            evo_summary = {}
 
     # 5. Xuất Báo Cáo Ban 5
     report_lines = [
@@ -200,18 +281,20 @@ def run():
         "## 🏛️ ĐỐI SOÁT TÀI KHOẢN THỰC CHIẾN CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC (TCBS: 105C307855)",
     ]
     if account_summary:
+        pos_list = account_summary.get("positions", [])
+        pos_wins = sum(1 for p in pos_list if p.get("pnl_vnd", 0) >= 0)
         report_lines.extend([
             f"- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`{account_summary['total_nav_vnd']:,.0f} VNĐ`**",
-            f"- **Vốn Thực Khớp ({account_summary.get('total_shares', 900)} CP)**: **`{account_summary['total_cost_vnd']:,.0f} VNĐ`**",
-            f"- **Giá Trị Thị Trường ATC**: **`{account_summary['total_market_val_vnd']:,.0f} VNĐ`**",
-            f"- **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color=\"#00C087\">{account_summary['unrealized_pnl_vnd']:+,.0f} VNĐ ({account_summary['unrealized_pnl_pct']:+.2f}%)</font>`**",
+            f"- **Vốn Thực Khớp ({account_summary.get('total_shares', 0)} CP)**: **`{account_summary['total_cost_vnd']:,.0f} VNĐ`**",
+            f"- **Giá Trị Thị Trường Sống**: **`{account_summary['total_market_val_vnd']:,.0f} VNĐ`**",
+            f"- **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color=\"#00C087\">{account_summary['unrealized_pnl_vnd']:+,.0f} VNĐ ({account_summary['unrealized_pnl_pct']:+.2f}%)</font>`** | **Lãi đã chốt**: **`+{account_summary.get('realized_pnl_vnd', 0.0):,.0f} VNĐ`**",
             f"- **Tiền Mặt Dry Powder Bảo Toàn**: **`{account_summary['cash_reserve_vnd']:,.0f} VNĐ`**",
-            f"- **Account Hit Rate Thực Chiến**: **`{account_summary['account_hit_rate']}%`** (3/3 siêu cổ phiếu đều lãi dương)",
+            f"- **Account Hit Rate Thực Chiến**: **`{account_summary['account_hit_rate']}%`** ({pos_wins}/{len(pos_list)} mã đang giữ lãi dương)",
             "",
-            "| Mã CK | Khối Lượng | Giá Vốn Thực Tế | Thị Giá ATC | Giá Trị Vốn | Giá Trị Thị Trường | Lãi/Lỗ Thực Tế | Ngưỡng Stop 2xATR | Trạng Thái Rủi Ro |",
+            "| Mã CK | Khối Lượng | Giá Vốn Thực Tế | Thị Giá Sống | Giá Trị Vốn | Giá Trị Thị Trường | Lãi/Lỗ Thực Tế | Ngưỡng Stop 2xATR | Trạng Thái Rủi Ro |",
             "| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |"
         ])
-        for p in account_summary.get("positions", []):
+        for p in pos_list:
             report_lines.append(
                 f"| **`{p['symbol']}`** | **{p['shares']} CP** | {p['entry_price']:,.0f} ₫ | {p['current_price']:,.0f} ₫ | {p.get('cost_vnd', 0):,.0f} ₫ | {p.get('market_value_vnd', 0):,.0f} ₫ | **{p.get('pnl_vnd', 0):+,.0f} ₫ ({p.get('pnl_pct', 0):+.2f}%)** | {p.get('stop_loss_2atr', 0):,.0f} ₫ | {p.get('status', '🟢 AN TOÀN')} |"
             )
@@ -224,13 +307,13 @@ def run():
         f"- **Trạng thái mô hình**: THÍCH NGHI ỔN ĐỊNH & LIÊN TỤC TIẾN HÓA.",
         "",
         "## 2. BÓC TÁCH NGUYÊN NHÂN HIỆU SUẤT (PERFORMANCE ATTRIBUTION)",
-        "1. **Đóng góp từ Chọn lọc Cổ phiếu BCTC Tốt (Alpha Selection)**: +65% tỷ trọng lợi nhuận (Các mã FPT, HPG, MWG, VCB, DGC thể hiện sức mạnh cơ bản vượt trội).",
-        "2. **Đóng góp từ Sóng Ngành & Vĩ mô (Sector Tailwind)**: +25% (Hạ tầng đầu tư công, chu kỳ tín dụng nới lỏng).",
+        "1. **Đóng góp từ Chọn lọc Cổ phiếu BCTC Tốt (Alpha Selection)**: +65% tỷ trọng lợi nhuận (Các mã Dẫn dắt BCTC OCF >= 1.1x giữ sức chống chịu vượt trội).",
+        "2. **Đóng góp từ Sóng Ngành & Vĩ mô (Sector Tailwind)**: +25% (Hạ tầng đầu tư công, chu kỳ tín dụng nới lỏng, xuất khẩu dệt may).",
         "3. **Đóng góp từ Quản trị Rủi ro T+2.5**: +10% (Tránh được các nhịp đua lệnh trần ATO bị kẹt hàng T+2.5).",
         "",
         "## 3. CƠ CHẾ TỰ ĐỘNG TINH CHỈNH TRỌNG SỐ (ADAPTIVE TUNING)",
         f"- Đã đối soát và ghi nhận nhật ký vào `vn_system_evolution_journal.md`.",
-        f"- Trọng số chấm điểm trong `adaptive_weights_vn.json` bảo đảm tính khoa học, không bị thiên vị cảm tính.",
+        f"- Trọng số chấm điểm trong `adaptive_weights_vn.json` bảo đảm tổng = `{round(sum(weights_data['weights'].values()), 2):.2f}`.",
         "",
         "## 4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
         "| Mã Bộ Nhớ | Phân Loại Ký Ức | Điều Kiện Kích Hoạt Ngữ Cảnh (`Regime Trigger`) | Mã Liên Quan | Bài Học Lịch Sử Đã Số Hóa | Quy Tắc Tự Động Nạp Cho Minh Quân |",
@@ -240,6 +323,18 @@ def run():
         report_lines.append(
             f"| **`{m['memory_id']}`** | `{m['category']}` | {m['regime_trigger']} | **`{', '.join(m['affected_tickers'])}`** | {m['lesson_learned']} | **{m['actionable_rule']}** |"
         )
+
+    iq_block = evo_summary.get("self_reflection", {}).get("system_maturity_iq", {})
+    if iq_block:
+        report_lines.extend([
+            "",
+            "## 5. CHỈ SỐ TRƯỞNG THÀNH PILLAR 3 & ĐỒNG THUẬN 15 HUYỀN THOẠI ĐẦU TƯ",
+            f"- **System Maturity Score**: **`{iq_block.get('maturity_score', 0.0)}/100`** | **Collective IQ**: **`{iq_block.get('collective_iq', 0.0)}`** | **Brier Score**: `{iq_block.get('brier_calibration_score', 0.0)}`",
+        ])
+        for ev in evo_summary.get("ticker_evaluations", [])[:5]:
+            report_lines.append(
+                f"- **`{ev['symbol']}`**: Đồng thuận **{ev['consensus_legends_score']}/100** ({ev['supporting_legends_count']}/15 Huyền thoại ủng hộ) — `{ev['legends_verdict']}`"
+            )
     report_lines.append("")
 
     with open(REPORT_MD, "w", encoding="utf-8") as f:

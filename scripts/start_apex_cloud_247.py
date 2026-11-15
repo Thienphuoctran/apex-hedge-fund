@@ -617,6 +617,89 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
             return
 
+        elif path == "/api/intelligence/search":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_omni_intelligence_crawler import search_market_intelligence
+                q_str = query.get("q", [""])[0]
+                cat_str = query.get("category", [None])[0] or None
+                try:
+                    lim = int(query.get("limit", ["25"])[0] or 25)
+                except Exception:
+                    lim = 25
+                res = search_market_intelligence(query=q_str, category=cat_str, limit=max(1, min(100, lim)))
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/intelligence/alerts":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                alerts_p = DATA_DIR / "live_catalyst_alerts.json"
+                bctc_p = DATA_DIR / "live_bctc_quarterly_updates.json"
+                alerts_d = json.loads(alerts_p.read_text(encoding="utf-8")) if alerts_p.exists() else {"total_alerts": 0, "alerts": []}
+                bctc_d = json.loads(bctc_p.read_text(encoding="utf-8")) if bctc_p.exists() else {"total_tickers_updated": 0, "ticker_updates": {}}
+                self.wfile.write(json.dumps({
+                    "ok": True,
+                    "catalyst_alerts": alerts_d,
+                    "bctc_quarterly_updates": bctc_d,
+                }, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/deep_brain":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                ticker_q = query.get("ticker", [""])[0].strip().upper()
+                refresh_q = query.get("refresh", ["0"])[0] in ("1", "true", "True")
+                if ticker_q:
+                    from scripts.apex_deep_financial_brain import analyze_deep_bctc_and_valuation
+                    analysis = analyze_deep_bctc_and_valuation(ticker_q)
+                    payload = {"ok": True, "mode": "single_ticker", "ticker": ticker_q, "analysis": analysis}
+                else:
+                    brain_file = DATA_DIR / "deep_financial_brain_analysis.json"
+                    legends_file = DATA_DIR / "legend_investor_wisdom_vault.json"
+                    if refresh_q or not brain_file.exists():
+                        from scripts.apex_deep_financial_brain import run_full_market_alpha_optimization
+                        brain_data = run_full_market_alpha_optimization(force_live=refresh_q)
+                    else:
+                        brain_data = json.loads(brain_file.read_text(encoding="utf-8"))
+                    if not legends_file.exists():
+                        from scripts.apex_evolution_and_legends_engine import run_full_evolution_cycle
+                        legends_data = run_full_evolution_cycle(dry_run=False)
+                    else:
+                        legends_data = json.loads(legends_file.read_text(encoding="utf-8"))
+                    payload = {
+                        "ok": True,
+                        "mode": "full_brain",
+                        "generated_at": brain_data.get("generated_at", ""),
+                        "account_ssot": brain_data.get("account_ssot", {}),
+                        "holdings_optimizer": brain_data.get("holdings_optimizer", []),
+                        "correlation_matrix": brain_data.get("correlation_matrix", {}),
+                        "top_vn_alpha_picks": brain_data.get("top_vn_alpha_picks", [])[:15],
+                        "top_us_alpha_picks": brain_data.get("top_us_alpha_picks", [])[:10],
+                        "system_maturity_iq": legends_data.get("self_reflection", {}).get("system_maturity_iq", {}),
+                        "multi_horizon_walk_forward": legends_data.get("multi_horizon_walk_forward", {}),
+                        "school_attribution_matrix": legends_data.get("school_attribution_matrix", {}),
+                        "legends_evaluations": legends_data.get("ticker_evaluations", []),
+                        "school_summary": legends_data.get("school_summary", {}),
+                    }
+                self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
         else:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -928,6 +1011,34 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(ve)}, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+        elif parsed_url.path == "/api/intelligence/crawl":
+            content_length = int(self.headers.get("Content-Length", 0))
+            body_bytes = self.rfile.read(content_length) if content_length > 0 else b""
+            try:
+                req_data = json.loads(body_bytes.decode("utf-8")) if body_bytes else {}
+                force_flag = bool(req_data.get("force", True))
+                from scripts.apex_omni_intelligence_crawler import crawl_realtime_market_intelligence
+                res = crawl_realtime_market_intelligence(force_refresh=force_flag)
+                sh = res.get("source_health", [])
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "ok": True,
+                    "crawled_at": res.get("crawled_at", ""),
+                    "universe_counts": res.get("universe_counts", {}),
+                    "total_items": res.get("total_items", 0),
+                    "category_counts": res.get("category_counts", {}),
+                    "sources_online": f"{sum(1 for s in sh if s.get('ok'))}/{len(sh)}" if sh else "0/0",
+                    "latest_items": res.get("items", [])[:15],
+                }, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.send_response(500)
                 self.send_header("Content-Type", "application/json; charset=utf-8")

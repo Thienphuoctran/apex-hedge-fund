@@ -1,24 +1,24 @@
 {
-  "last_updated": "2026-11-15 20:27:50",
+  "last_updated": "2026-11-15 21:55:46",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261115-202750",
-  "latest_user_request": "Triển khai hoàn chỉnh và đẩy toàn bộ nâng cấp Giai đoạn 1 & Giai đoạn 2 Living War-Room V4.0 lên GitHub/Render.",
-  "latest_response_summary": "Đã hoàn tất triển khai, kiểm định 27/27 hạng mục PASSED sau rebase, và đẩy toàn bộ nâng cấp Giai đoạn 1 & 2 lên nhánh main (GitHub origin/main) để Render tự động deploy tại https://apex-hedge-fund.onrender.com. SSOT TCBS 105C307855 giữ nguyên vẹn: Tiền mặt 12,516,471 đ | Cổ phiếu: 100 HDB (giá vốn 22,057đ) + 100 MSH (giá vốn 34,510đ) | NAV SSOT 18,151,471 đ (NAV Live 18,256,471 đ) | Lãi đã chốt V1: +167,119 đ.",
+  "sync_id": "SYNC-AG2P-20261115-215546",
+  "latest_user_request": "Triển khai toàn diện nâng cấp V5.0 + V6.0 (Omni Crawler 180 mã, Deep Financial Brain 71 mã, Self-Evolution & 15 Huyền Thoại, Live BCTC Refresher, Catalyst Alerts, Walk-Forward T+3..T+20, Corr 60D, Cloud DB V6) và push lên GitHub/Render Cloud.",
+  "latest_response_summary": "Đã hoàn thành 100% V5.0 + V6.0: Kiểm toán 35/35 hạng mục ĐẠT CHUẨN (0 lỗi), node --check JS Portal pass (408,227 bytes), SSOT nguyên vẹn (TCBS 105C307855 | Cash 12,516,471đ | 100 HDB | 100 MSH), Maturity IQ 86.9/100 (CIQ 162.6). Đã đồng bộ và đẩy toàn bộ lên origin/main (Render Cloud).",
   "latest_completed_tasks": [
-    "Giai đoạn 1 & Giai đoạn 2 hoàn thiện 100% và đã hợp nhất sạch lên origin/main.",
-    "Kiểm định toàn hệ thống hậu rebase: verify_phase1_and_2_e2e.py + comprehensive_system_audit.py PASSED 27/27.",
-    "Keep-Alive GitHub Actions (.github/workflows/apex_keep_alive.yml), Portal PIN Auth, Cloud DB RLS SQL migration & SQLite Mirror sẵn sàng."
+    "V5.0 Pillar 1: apex_omni_intelligence_crawler.py (180 mã VN/US, 12/12 nguồn sống, FTS5 Search)",
+    "V5.0 Pillar 2: apex_deep_financial_brain.py (71 mã DuPont/ROIC/EVA/Piotroski, 3-Model Valuation, Half-Kelly EV%)",
+    "V5.0 Pillar 3: apex_evolution_and_legends_engine.py (Maturity 86.9/100, CIQ 162.6, 15 Huyền thoại thế giới)",
+    "V6.0 #1 & #5: Live BCTC Auto-Refresher (6 mã) + Instant Catalyst & Risk Alerts (33 alerts) + /api/intelligence/alerts",
+    "V6.0 #2: Multi-Horizon Walk-Forward Attribution T+3/T+5/T+10/T+20 & 5-School Matrix",
+    "V6.0 #3: 60-Session Return Correlation Matrix (14 chuỗi sống VPS) & Sector Concentration Guard",
+    "V6.0 #4: Cloud DB V6 SQLite Vault + Supabase RLS Migration 20261115220000_apex_v6_omni_brain_and_legends.sql",
+    "Comprehensive Audit 35/35 PASSED + node --check PASSED + SSOT Verified"
   ],
   "latest_strategic_decisions": {
-    "account_id": "105C307855",
-    "cash_balance_vnd": 12516471.0,
-    "holdings": [
-      "HDB (100 CP @ 22,057đ)",
-      "MSH (100 CP @ 34,510đ)"
-    ],
-    "realized_pnl_vnd": 167119.0,
-    "audit_score": "27/27 PASSED",
-    "git_push_status": "PUSHED_TO_ORIGIN_MAIN"
+    "ssot_account": "TCBS 105C307855 | Cash 12,516,471đ | 100 HDB @ 22,057đ | 100 MSH @ 34,510đ",
+    "top_vn_alpha": "MSH (EV +18.43%), BAF (+17.22%), DBC (+16.60%), HAH (+16.36%), TCB (+16.05%)",
+    "audit_status": "35/35 PASSED (2026-11-15_Comprehensive_Audit_Report.json)",
+    "weights_invariant": "US=100, VN=1.0"
   },
   "portfolio_snapshot": {
     "total_nav_vnd": 18151471.0,

@@ -1,19 +1,24 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-15 20:27:50  
+**Thời gian cập nhật:** 2026-11-15 21:55:46  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261115-202750`  
+**Mã đồng bộ:** `SYNC-AG2P-20261115-215546`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Triển khai hoàn chỉnh và đẩy toàn bộ nâng cấp Giai đoạn 1 & Giai đoạn 2 Living War-Room V4.0 lên GitHub/Render.
+* **Câu hỏi của Chủ tịch:** Triển khai toàn diện nâng cấp V5.0 + V6.0 (Omni Crawler 180 mã, Deep Financial Brain 71 mã, Self-Evolution & 15 Huyền Thoại, Live BCTC Refresher, Catalyst Alerts, Walk-Forward T+3..T+20, Corr 60D, Cloud DB V6) và push lên GitHub/Render Cloud.
 * **Kết luận & Quyết định thể chế:**
-Đã hoàn tất triển khai, kiểm định 27/27 hạng mục PASSED sau rebase, và đẩy toàn bộ nâng cấp Giai đoạn 1 & 2 lên nhánh main (GitHub origin/main) để Render tự động deploy tại https://apex-hedge-fund.onrender.com. SSOT TCBS 105C307855 giữ nguyên vẹn: Tiền mặt 12,516,471 đ | Cổ phiếu: 100 HDB (giá vốn 22,057đ) + 100 MSH (giá vốn 34,510đ) | NAV SSOT 18,151,471 đ (NAV Live 18,256,471 đ) | Lãi đã chốt V1: +167,119 đ.
+Đã hoàn thành 100% V5.0 + V6.0: Kiểm toán 35/35 hạng mục ĐẠT CHUẨN (0 lỗi), node --check JS Portal pass (408,227 bytes), SSOT nguyên vẹn (TCBS 105C307855 | Cash 12,516,471đ | 100 HDB | 100 MSH), Maturity IQ 86.9/100 (CIQ 162.6). Đã đồng bộ và đẩy toàn bộ lên origin/main (Render Cloud).
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Giai đoạn 1 & Giai đoạn 2 hoàn thiện 100% và đã hợp nhất sạch lên origin/main.
-- [x] Kiểm định toàn hệ thống hậu rebase: verify_phase1_and_2_e2e.py + comprehensive_system_audit.py PASSED 27/27.
-- [x] Keep-Alive GitHub Actions (.github/workflows/apex_keep_alive.yml), Portal PIN Auth, Cloud DB RLS SQL migration & SQLite Mirror sẵn sàng.
+- [x] V5.0 Pillar 1: apex_omni_intelligence_crawler.py (180 mã VN/US, 12/12 nguồn sống, FTS5 Search)
+- [x] V5.0 Pillar 2: apex_deep_financial_brain.py (71 mã DuPont/ROIC/EVA/Piotroski, 3-Model Valuation, Half-Kelly EV%)
+- [x] V5.0 Pillar 3: apex_evolution_and_legends_engine.py (Maturity 86.9/100, CIQ 162.6, 15 Huyền thoại thế giới)
+- [x] V6.0 #1 & #5: Live BCTC Auto-Refresher (6 mã) + Instant Catalyst & Risk Alerts (33 alerts) + /api/intelligence/alerts
+- [x] V6.0 #2: Multi-Horizon Walk-Forward Attribution T+3/T+5/T+10/T+20 & 5-School Matrix
+- [x] V6.0 #3: 60-Session Return Correlation Matrix (14 chuỗi sống VPS) & Sector Concentration Guard
+- [x] V6.0 #4: Cloud DB V6 SQLite Vault + Supabase RLS Migration 20261115220000_apex_v6_omni_brain_and_legends.sql
+- [x] Comprehensive Audit 35/35 PASSED + node --check PASSED + SSOT Verified
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)

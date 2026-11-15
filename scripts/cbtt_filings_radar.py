@@ -31,6 +31,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = BASE_DIR
 CONFIG_US_PATH = BASE_DIR / "config" / "watchlist.json"
 CONFIG_VN_PATH = BASE_DIR / "VN_Market" / "config" / "watchlist_vn.json"
 SENTINEL_CONFIG_PATH = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / "sentinel_config.json"
@@ -162,10 +163,41 @@ def scan_sec_edgar_filings(tickers: List[str], cik_map: Dict[str, str]) -> List[
     return results
 
 
-def scan_vietnam_cbtt(tickers: List[str]) -> List[Dict[str, Any]]:
+def _load_full_vn_tickers() -> List[str]:
+    """Nạp toàn bộ 144+ mã cổ phiếu Việt Nam (18 ngành) từ VN_FULL_UNIVERSE, fallback watchlist_vn.json."""
+    tickers_set = set()
+    try:
+        if str(BASE_DIR) not in sys.path:
+            sys.path.insert(0, str(BASE_DIR))
+        from VN_Market.scripts.vn_full_market_scanner import VN_FULL_UNIVERSE
+        for sec_data in VN_FULL_UNIVERSE.values():
+            for stk in sec_data.get("stocks", []):
+                code = str(stk.get("code", "")).upper().strip()
+                if code:
+                    tickers_set.add(code)
+    except Exception:
+        pass
+
+    if CONFIG_VN_PATH.exists():
+        try:
+            with open(CONFIG_VN_PATH, "r", encoding="utf-8") as f:
+                d = json.load(f)
+                for sec, data in d.get("sectors", {}).items():
+                    for item in data.get("tickers", []):
+                        sym = str(item.get("code") or item.get("symbol", "")).replace(".VN", "").upper().strip()
+                        if sym:
+                            tickers_set.add(sym)
+        except Exception:
+            pass
+    return sorted(tickers_set)
+
+
+def scan_vietnam_cbtt(tickers: List[str] = None) -> List[Dict[str, Any]]:
     """Scan Vietnam corporate disclosures and earnings announcements via multi-source RSS feeds"""
+    if not tickers:
+        tickers = _load_full_vn_tickers()
     results = []
-    print(f"\n🔍 [VIETNAM CBTT RADAR v2.0] Quét đa cổng công bố thông tin & BCTC cho {len(tickers)} siêu cổ phiếu VN...")
+    print(f"\n🔍 [VIETNAM CBTT RADAR v3.0] Quét đa cổng công bố thông tin & BCTC cho {len(tickers)} cổ phiếu toàn thị trường VN...")
 
     rss_urls = [
         "https://cafef.vn/doanh-nghiep.rss",
@@ -312,7 +344,7 @@ def save_radar_reports(us_filings: List[Dict[str, Any]], vn_filings: List[Dict[s
 
     VN_REPORT_MD.parent.mkdir(parents=True, exist_ok=True)
     with open(VN_REPORT_MD, "w", encoding="utf-8") as f:
-        f.write("# RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (54 MÃ TTCK VIỆT NAM)\n")
+        f.write("# RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (TOÀN THỊ TRƯỜNG 144+ MÃ TTCK VIỆT NAM)\n")
         f.write(f"> **Thời gian quét:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  \n")
         f.write(f"> **Số sự kiện ghi nhận:** {len(vn_filings)} thông báo  \n\n")
         f.write("| Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |\n")
@@ -422,13 +454,7 @@ def main():
             d = json.load(f)
             us_tickers = [x["symbol"] for x in d.get("broad_market_universe", [])]
 
-    vn_tickers = []
-    if CONFIG_VN_PATH.exists():
-        with open(CONFIG_VN_PATH, "r", encoding="utf-8") as f:
-            d = json.load(f)
-            for sec, data in d.get("sectors", {}).items():
-                for item in data.get("tickers", []):
-                    vn_tickers.append(item.get("symbol", ""))
+    vn_tickers = _load_full_vn_tickers()
 
     cik_map = get_sec_cik_map()
     us_filings = scan_sec_edgar_filings(us_tickers, cik_map)

@@ -9,9 +9,9 @@
   },
   "current_regime": "Selective_Accumulation_Earnings_Focus",
   "weights": {
-    "bctc_earnings_quality": 0.35,
-    "cashflow_and_smart_money": 0.25,
-    "macro_monetary_sbv": 0.15,
+    "bctc_earnings_quality": 0.36,
+    "cashflow_and_smart_money": 0.26,
+    "macro_monetary_sbv": 0.13,
     "valuation_fair_value": 0.15,
     "technical_and_atr_risk": 0.1
   },
@@ -35,10 +35,10 @@
   "max_single_stock_risk": 0.02,
   "t_plus_buffer_days": 2.5,
   "learning_cycle_days": 5,
-  "last_updated": "2026-11-07",
+  "last_updated": "2026-11-15",
   "tuning_audit": {
-    "updated_at": "2026-11-07 21:00:00",
-    "bctc_hit_rate": 100.0,
+    "updated_at": "2026-11-15 21:51:25",
+    "bctc_hit_rate": 78.3,
     "reasoning": [
       "Ban 2 (BCTC & Dòng tiền thật OCF) duy trì Hit Rate 100% trên 3 mã HPG, TCB, MBB -> Thưởng quyền biểu quyết lên 35.0%.",
       "Ban 1 (Vĩ mô chung) điều chỉnh về 15.0% để ưu tiên sức mạnh nội tại doanh nghiệp.",

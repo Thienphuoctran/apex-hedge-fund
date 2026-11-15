@@ -145,6 +145,29 @@ def _ensure_local_tables() -> None:
                 payload_json TEXT NOT NULL,
                 updated_at TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS apex_v6_intelligence_snapshots (
+                snapshot_key TEXT PRIMARY KEY,
+                pillar_type TEXT NOT NULL,
+                trading_date TEXT NOT NULL,
+                total_tickers INTEGER DEFAULT 0,
+                maturity_score REAL DEFAULT 0.0,
+                collective_iq REAL DEFAULT 0.0,
+                payload_json TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS apex_live_catalyst_alerts (
+                alert_id TEXT PRIMARY KEY,
+                symbol TEXT NOT NULL,
+                market TEXT DEFAULT 'VN',
+                is_holding INTEGER DEFAULT 0,
+                priority TEXT DEFAULT 'ALPHA_CATALYST',
+                category TEXT DEFAULT 'MARKET_GENERAL',
+                estimated_fair_value_impact_pct REAL DEFAULT 0.0,
+                recommended_action TEXT DEFAULT 'HOLD_AND_MONITOR',
+                title TEXT NOT NULL,
+                payload_json TEXT NOT NULL,
+                detected_at TEXT NOT NULL
+            );
         """)
     _SQLITE_INIT_DONE = True
 
@@ -609,7 +632,159 @@ class ApexCloudDBSync:
             _record_sync_telemetry("apex_global_spillover_snapshots", cloud_ok, detail)
             return True
 
+    @classmethod
+    def sync_v6_intelligence_to_vault(cls) -> Dict[str, Any]:
+        """V6.0 Nâng cấp 4: Đồng bộ Deep Financial Brain, Evolution/Legends, BCTC Updates & Catalyst Alerts vào Vault."""
+        now_ict = datetime.datetime.now(datetime.timezone.utc).astimezone(
+            datetime.timezone(datetime.timedelta(hours=7))
+        )
+        now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        today_str = now_ict.strftime("%Y-%m-%d")
+
+        def _read_j(p: Path) -> Dict[str, Any]:
+            if not p.exists():
+                return {}
+            try:
+                return json.loads(p.read_text(encoding="utf-8"))
+            except Exception:
+                return {}
+
+        deep_brain = _read_j(DATA_DIR / "deep_financial_brain_analysis.json")
+        evo_state = _read_j(DATA_DIR / "system_evolution_and_legends_state.json") or _read_j(DATA_DIR / "legend_investor_wisdom_vault.json")
+        bctc_upd = _read_j(DATA_DIR / "live_bctc_quarterly_updates.json")
+        alerts_data = _read_j(DATA_DIR / "live_catalyst_alerts.json")
+
+        iq_block = (evo_state.get("self_reflection") or {}).get("system_maturity_iq", {})
+        mat_score = float(iq_block.get("maturity_score", 0.0) or 0.0)
+        col_iq = float(iq_block.get("collective_iq", 0.0) or 0.0)
+
+        snapshots = [
+            (
+                f"{today_str}_DEEP_FINANCIAL_BRAIN",
+                "DEEP_FINANCIAL_BRAIN",
+                int(deep_brain.get("total_analyzed", 0) or 0),
+                mat_score,
+                col_iq,
+                deep_brain,
+            ),
+            (
+                f"{today_str}_EVOLUTION_AND_LEGENDS",
+                "EVOLUTION_AND_LEGENDS",
+                int(evo_state.get("total_legends", 15) or 15),
+                mat_score,
+                col_iq,
+                evo_state,
+            ),
+            (
+                f"{today_str}_LIVE_BCTC_UPDATES",
+                "LIVE_BCTC_UPDATES",
+                int(bctc_upd.get("total_tickers_updated", 0) or 0),
+                mat_score,
+                col_iq,
+                bctc_upd,
+            ),
+        ]
+
+        alerts_list = alerts_data.get("alerts", []) if isinstance(alerts_data.get("alerts"), list) else []
+        snapshots_saved = 0
+        alerts_saved = 0
+
+        with _SYNC_LOCK:
+            _ensure_local_tables()
+            try:
+                with sqlite3.connect(VAULT_DB_PATH, timeout=10) as conn:
+                    for snap_key, pillar, cnt, ms, ciq, payload in snapshots:
+                        if not payload:
+                            continue
+                        conn.execute(
+                            """
+                            INSERT INTO apex_v6_intelligence_snapshots (
+                                snapshot_key, pillar_type, trading_date, total_tickers,
+                                maturity_score, collective_iq, payload_json, updated_at
+                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                            ON CONFLICT(snapshot_key) DO UPDATE SET
+                                total_tickers = excluded.total_tickers,
+                                maturity_score = excluded.maturity_score,
+                                collective_iq = excluded.collective_iq,
+                                payload_json = excluded.payload_json,
+                                updated_at = excluded.updated_at
+                            """,
+                            (snap_key, pillar, today_str, cnt, ms, ciq, json.dumps(payload, ensure_ascii=False), now_iso),
+                        )
+                        snapshots_saved += 1
+
+                    for al in alerts_list[:40]:
+                        aid = str(al.get("alert_id", ""))
+                        if not aid:
+                            continue
+                        conn.execute(
+                            """
+                            INSERT INTO apex_live_catalyst_alerts (
+                                alert_id, symbol, market, is_holding, priority, category,
+                                estimated_fair_value_impact_pct, recommended_action, title, payload_json, detected_at
+                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                            ON CONFLICT(alert_id) DO UPDATE SET
+                                priority = excluded.priority,
+                                estimated_fair_value_impact_pct = excluded.estimated_fair_value_impact_pct,
+                                recommended_action = excluded.recommended_action,
+                                payload_json = excluded.payload_json,
+                                detected_at = excluded.detected_at
+                            """,
+                            (
+                                aid,
+                                str(al.get("symbol", "")),
+                                str(al.get("market", "VN")),
+                                1 if al.get("is_holding") else 0,
+                                str(al.get("priority", "ALPHA_CATALYST")),
+                                str(al.get("category", "MARKET_GENERAL")),
+                                float(al.get("estimated_fair_value_impact_pct", 0.0) or 0.0),
+                                str(al.get("recommended_action", "HOLD_AND_MONITOR")),
+                                str(al.get("title", "")),
+                                json.dumps(al, ensure_ascii=False),
+                                now_iso,
+                            ),
+                        )
+                        alerts_saved += 1
+            except Exception as e:
+                print(f"[!] CloudDB V6 SQLite sync error: {e}")
+
+            cloud_ok = False
+            detail = "local-sqlite-only"
+            try:
+                for snap_key, pillar, cnt, ms, ciq, payload in snapshots:
+                    if not payload:
+                        continue
+                    res = _postgrest_request(
+                        "POST",
+                        "apex_v6_intelligence_snapshots",
+                        payload={
+                            "snapshot_key": snap_key,
+                            "pillar_type": pillar,
+                            "trading_date": today_str,
+                            "total_tickers": cnt,
+                            "maturity_score": ms,
+                            "collective_iq": ciq,
+                            "payload_json": payload,
+                            "updated_at": now_iso,
+                        },
+                        query_params="on_conflict=snapshot_key",
+                    )
+                    if res is not None:
+                        cloud_ok = True
+                        detail = "supabase-synced"
+            except Exception as e:
+                detail = f"supabase-err: {e}"
+            _record_sync_telemetry("apex_v6_intelligence_snapshots", cloud_ok, detail)
+            return {
+                "ok": True,
+                "snapshots_saved": snapshots_saved,
+                "alerts_saved": alerts_saved,
+                "cloud_synced": cloud_ok,
+                "detail": detail,
+            }
+
 
 if __name__ == "__main__":
+    v6_res = ApexCloudDBSync.sync_v6_intelligence_to_vault()
     print("=== APEX CLOUD DB SYNC STATUS ===")
-    print(json.dumps(ApexCloudDBSync.get_cloud_status(), ensure_ascii=False, indent=2))
+    print(json.dumps({"v6_sync": v6_res, "status": ApexCloudDBSync.get_cloud_status()}, ensure_ascii=False, indent=2))

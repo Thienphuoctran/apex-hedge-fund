@@ -1,10 +1,11 @@
 {
-  "last_updated": "2026-11-08 22:00:53",
-  "date": "2026-11-08",
-  "collective_iq_score": 158.5,
+  "last_updated": "2026-11-15 21:22:29",
+  "date": "2026-11-15",
+  "collective_iq_score": 158.0,
+  "maturity_score": 80.5,
   "total_heuristics_active": 105,
   "active_curriculum_today": "TỔNG HỢP NÂNG CẤP BỘ NÃO HỆ THỐNG & KẾ HOẠCH TÁC CHIẾN TUẦN MỚI",
   "lead_department": "Ban 8 (Master CIO James), Ban 5 (Tự Học) & Ban 12 (Trọng)",
-  "status": "AUTONOMOUS_LEARNING_COMPLETED_TRANSPARENT_V9.0",
-  "latest_report_path": "05_Learning_And_Evolution/2026-11-08_Autonomous_Learning_Report.md"
+  "status": "AUTONOMOUS_LEARNING_COMPLETED_TRANSPARENT_V10.0",
+  "latest_report_path": "05_Learning_And_Evolution/2026-11-15_Autonomous_Learning_Report.md"
 }

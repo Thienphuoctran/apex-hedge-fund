@@ -322,6 +322,204 @@ try:
 except Exception as e:
     record_check("Phase2_Security_KeepAlive", "Portal Security & Keep-Alive", False, str(e))
 
+# 8. KIỂM TRA V5.0 (OMNI CRAWLER, DEEP FINANCIAL BRAIN, SELF-EVOLUTION & 15 LEGENDS, LIVE V5 ENDPOINTS)
+try:
+    from scripts.apex_omni_intelligence_crawler import _load_master_universe, search_market_intelligence
+    univ = _load_master_universe()
+    omni_file = BASE_DIR / "data" / "omni_market_intelligence.json"
+    sr_hdb = search_market_intelligence("HDB", limit=5)
+    t_syms = [t.get("symbol") for t in sr_hdb.get("matched_tickers", [])]
+    check_omni = (len(univ) >= 175 and omni_file.exists() and sr_hdb.get("ok") is True and "HDB" in t_syms)
+    record_check(
+        "Phase3_OmniCrawler",
+        "Omni-Market Crawler 180 mã & FTS5 Search Engine",
+        check_omni,
+        f"Universe: {len(univ)} | File: {omni_file.exists()} | HDB Match: {'HDB' in t_syms}"
+    )
+except Exception as e:
+    record_check("Phase3_OmniCrawler", "Omni-Market Crawler & FTS5", False, str(e))
+
+try:
+    from scripts.apex_deep_financial_brain import analyze_deep_bctc_and_valuation
+    hdb_b = analyze_deep_bctc_and_valuation("HDB")
+    nvda_b = analyze_deep_bctc_and_valuation("NVDA")
+    db_file = BASE_DIR / "data" / "deep_financial_brain_analysis.json"
+    db_json = json.loads(db_file.read_text(encoding="utf-8")) if db_file.exists() else {}
+    check_db_v5 = (
+        hdb_b.get("valuation", {}).get("intrinsic_fair_value", 0) > 0
+        and float(nvda_b.get("roe_pct", 0)) > 50.0
+        and float(nvda_b.get("valuation", {}).get("intrinsic_fair_value", 0)) > 0
+        and int(db_json.get("total_analyzed", 0)) >= 70
+        and len(db_json.get("holdings_optimizer", [])) > 0
+    )
+    record_check(
+        "Phase3_DeepBrain",
+        "Deep Financial Brain (DuPont, 3-Model Valuation, EV%/Half-Kelly)",
+        check_db_v5,
+        f"Analyzed: {db_json.get('total_analyzed', 0)} | NVDA ROE: {nvda_b.get('roe_pct')}% | HDB Fair: {hdb_b.get('valuation', {}).get('intrinsic_fair_value')}"
+    )
+except Exception as e:
+    record_check("Phase3_DeepBrain", "Deep Financial Brain", False, str(e))
+
+try:
+    from scripts.apex_evolution_and_legends_engine import run_self_reflection_and_mistake_autopsy
+    sr_dry = run_self_reflection_and_mistake_autopsy(dry_run=True)
+    lv_file = BASE_DIR / "data" / "legend_investor_wisdom_vault.json"
+    lv_json = json.loads(lv_file.read_text(encoding="utf-8")) if lv_file.exists() else {}
+    us_w = json.loads((BASE_DIR / "config" / "adaptive_weights.json").read_text(encoding="utf-8")).get("scoring_weights", {})
+    vn_w = json.loads((BASE_DIR / "VN_Market" / "config" / "adaptive_weights_vn.json").read_text(encoding="utf-8")).get("weights", {})
+    iq_m = sr_dry.get("system_maturity_iq", {})
+    check_evo = (
+        float(iq_m.get("maturity_score", 0)) > 50.0
+        and int(lv_json.get("total_legends", 0)) == 15
+        and len(lv_json.get("ticker_evaluations", [])) >= 9
+        and sum(us_w.values()) == 100
+        and round(sum(vn_w.values()), 2) == 1.0
+    )
+    record_check(
+        "Phase3_EvolutionLegends",
+        "Self-Evolution Maturity IQ, Weights Invariants & 15 World Legends",
+        check_evo,
+        f"Maturity: {iq_m.get('maturity_score')}/100 | IQ: {iq_m.get('collective_iq')} | Legends: {lv_json.get('total_legends')} | US={sum(us_w.values())} VN={round(sum(vn_w.values()), 2)}"
+    )
+except Exception as e:
+    record_check("Phase3_EvolutionLegends", "Self-Evolution & 15 Legends", False, str(e))
+
+try:
+    req_s = urllib.request.Request(f"{live_url}/api/intelligence/search?q=HDB", headers={"User-Agent": "ApexAudit/5.0"})
+    res_s = urllib.request.urlopen(req_s, timeout=20)
+    s_json = json.loads(res_s.read().decode("utf-8"))
+
+    req_b = urllib.request.Request(f"{live_url}/api/deep_brain?ticker=HDB", headers={"User-Agent": "ApexAudit/5.0"})
+    res_b = urllib.request.urlopen(req_b, timeout=20)
+    b_json = json.loads(res_b.read().decode("utf-8"))
+
+    html_ok = ("wr-omni-brain-panel" in html and "omni-search-input" in html) if "html" in globals() else False
+    wr_ok = bool(wr.get("deep_brain_summary", {}).get("top_vn_alpha_picks")) if "wr" in globals() else False
+    check_v5_live = (
+        res_s.status == 200
+        and s_json.get("ok") is True
+        and any(t.get("symbol") == "HDB" for t in s_json.get("matched_tickers", []))
+        and res_b.status == 200
+        and b_json.get("ok") is True
+        and float(b_json.get("analysis", {}).get("roe_pct", 0)) > 0
+        and html_ok
+        and wr_ok
+    )
+    record_check(
+        "Phase3_LiveEndpoints",
+        "V5 Live Endpoints (/api/intelligence/search, /api/deep_brain, UI Panel)",
+        check_v5_live,
+        f"Search Ok: {s_json.get('ok')} | DeepBrain Ok: {b_json.get('ok')} | UI: {html_ok} | WR Summary: {wr_ok}"
+    )
+except Exception as e:
+    record_check("Phase3_LiveEndpoints", "V5 Live Endpoints & UI", False, str(e))
+
+# =========================================================================
+# 9. PHASE 4 (V6.0): LIVE BCTC, CATALYST ALERTS, WALK-FORWARD T+3..T+20, CORR 60D & CLOUD V6 (4 CHECKS -> 35/35)
+# =========================================================================
+print("\n[9/9] Kiểm tra Nâng cấp V6.0 (Live BCTC, Catalyst Alerts, Walk-Forward T+20, Corr 60D & Cloud DB V6)...")
+
+try:
+    bctc_u_p = BASE_DIR / "data" / "live_bctc_quarterly_updates.json"
+    alerts_u_p = BASE_DIR / "data" / "live_catalyst_alerts.json"
+    bctc_u = json.loads(bctc_u_p.read_text(encoding="utf-8")) if bctc_u_p.exists() else {}
+    alerts_u = json.loads(alerts_u_p.read_text(encoding="utf-8")) if alerts_u_p.exists() else {}
+    check_v6_cat = (
+        bctc_u_p.exists()
+        and int(bctc_u.get("total_tickers_updated", 0) or 0) >= 1
+        and alerts_u_p.exists()
+        and isinstance(alerts_u.get("alerts"), list)
+        and "HDB" in alerts_u.get("held_symbols", [])
+    )
+    record_check(
+        "Phase4_LiveBCTC_Catalysts",
+        "Live Quarterly BCTC Auto-Refresher & Instant Catalyst/Risk Alerts",
+        check_v6_cat,
+        f"BCTC patched: {bctc_u.get('total_tickers_updated', 0)} | Alerts: {alerts_u.get('total_alerts', 0)} (Holding: {alerts_u.get('holding_alerts_count', 0)})"
+    )
+except Exception as e:
+    record_check("Phase4_LiveBCTC_Catalysts", "Live BCTC & Catalyst Alerts", False, str(e))
+
+try:
+    evo_state_p = BASE_DIR / "data" / "system_evolution_and_legends_state.json"
+    flt_p = BASE_DIR / "config" / "war_room_adaptive_filters.json"
+    evo_st = json.loads(evo_state_p.read_text(encoding="utf-8")) if evo_state_p.exists() else {}
+    flt_st = json.loads(flt_p.read_text(encoding="utf-8")) if flt_p.exists() else {}
+    wf = evo_st.get("multi_horizon_walk_forward", {})
+    mh = flt_st.get("multi_horizon_attribution", {})
+    sch_m = evo_st.get("school_attribution_matrix", {})
+    check_v6_wf = (
+        evo_state_p.exists()
+        and all(k in wf for k in ("T+3", "T+5", "T+10", "T+20"))
+        and all(k in mh for k in ("T+3", "T+5", "T+10", "T+20"))
+        and len(sch_m) == 5
+    )
+    record_check(
+        "Phase4_MultiHorizon_WalkForward",
+        "Walk-Forward Attribution T+3/T+5/T+10/T+20 & 5-School Matrix",
+        check_v6_wf,
+        f"Horizons: {list(wf.keys())} | Schools: {len(sch_m)}"
+    )
+except Exception as e:
+    record_check("Phase4_MultiHorizon_WalkForward", "Walk-Forward T+3..T+20", False, str(e))
+
+try:
+    db_file = BASE_DIR / "data" / "deep_financial_brain_analysis.json"
+    db_json = json.loads(db_file.read_text(encoding="utf-8")) if db_file.exists() else {}
+    cm = db_json.get("correlation_matrix", {})
+    mat = cm.get("matrix", {})
+    vn_picks = db_json.get("top_vn_alpha_picks", [])
+    check_v6_corr = (
+        int(cm.get("session_window", 0) or 0) == 60
+        and int(cm.get("live_60d_series_fetched", 0) or 0) >= 1
+        and "HDB" in mat
+        and "MSH" in mat
+        and bool(vn_picks)
+        and all("corr_guard_status" in p for p in vn_picks[:5])
+    )
+    record_check(
+        "Phase4_CorrelationMatrix_Guard",
+        "60-Session Portfolio Return Correlation Matrix & Sector Concentration Guard",
+        check_v6_corr,
+        f"60D Live Series: {cm.get('live_60d_series_fetched', 0)} | Evaluated: {cm.get('total_symbols_evaluated', 0)}"
+    )
+except Exception as e:
+    record_check("Phase4_CorrelationMatrix_Guard", "60D Correlation Matrix", False, str(e))
+
+try:
+    from scripts.apex_cloud_db_sync import ApexCloudDBSync, VAULT_DB_PATH
+    sync_v6 = ApexCloudDBSync.sync_v6_intelligence_to_vault()
+    mig_p = BASE_DIR / "supabase" / "migrations" / "20261115220000_apex_v6_omni_brain_and_legends.sql"
+    mig_ok = mig_p.exists() and ("ENABLE ROW LEVEL SECURITY" in mig_p.read_text(encoding="utf-8"))
+
+    req_al = urllib.request.Request(f"{live_url}/api/intelligence/alerts", headers={"User-Agent": "ApexAudit/6.0"})
+    res_al = urllib.request.urlopen(req_al, timeout=15)
+    al_json = json.loads(res_al.read().decode("utf-8"))
+
+    import sqlite3
+    with sqlite3.connect(VAULT_DB_PATH, timeout=10) as conn:
+        snap_cnt = conn.execute("SELECT COUNT(*) FROM apex_v6_intelligence_snapshots").fetchone()[0]
+
+    ui_v6_ok = ("wr-omni-catalyst-strip" in html and "omni-walk-forward-strip" in html) if "html" in globals() else False
+    check_v6_cloud = (
+        sync_v6.get("ok") is True
+        and sync_v6.get("snapshots_saved", 0) >= 2
+        and snap_cnt >= 2
+        and mig_ok
+        and res_al.status == 200
+        and al_json.get("ok") is True
+        and ui_v6_ok
+    )
+    record_check(
+        "Phase4_CloudDB_V6_And_AlertsAPI",
+        "Cloud DB V6 Vault Sync, Supabase RLS Migration & /api/intelligence/alerts",
+        check_v6_cloud,
+        f"Snapshots DB: {snap_cnt} | Migration RLS: {mig_ok} | Alerts API: {al_json.get('ok')} | UI V6: {ui_v6_ok}"
+    )
+except Exception as e:
+    record_check("Phase4_CloudDB_V6_And_AlertsAPI", "Cloud DB V6 & Alerts API", False, str(e))
+
 print("=" * 70)
 print(f"KẾT QUẢ TỔNG KIỂM TOÁN: {audit_results['passed_checks']}/{audit_results['total_checks']} HẠNG MỤC ĐẠT CHUẨN!")
 if audit_results["errors"]:

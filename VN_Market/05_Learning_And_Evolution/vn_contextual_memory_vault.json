@@ -1,6 +1,6 @@
 {
-  "vault_version": "VN-Mem0-Contextual-Vault-v2.1",
-  "updated_at": "2026-11-13",
+  "vault_version": "VN-Mem0-Contextual-Vault-v2.2",
+  "updated_at": "2026-11-15",
   "contextual_memories": [
     {
       "memory_id": "MEM-VN-001",
@@ -60,6 +60,18 @@
       ],
       "lesson_learned": "Giải ngân 100% tiền mặt mà không giữ lại lượng tiền dự phòng sẽ làm giảm tính cơ động khi thị trường xuất hiện nhịp điều chỉnh bất ngờ ở phiên kế tiếp.",
       "actionable_rule": "Luôn bảo đảm tỷ lệ phân bổ lô chẵn 100 CP chuẩn xác và giữ tỷ lệ tiền mặt dự phòng (Dry Powder >= 7% NAV), tuyệt đối không dùng margin để triệt tiêu mọi rủi ro tài khoản."
+    },
+    {
+      "memory_id": "MEM-EVO-VN-001",
+      "category": "SELF_REFLECTION_AUTOPSY",
+      "regime_trigger": "Đánh giá tự động ngày 2026-11-15 | Cash 12,516,471₫ | Lỗi thực thi=1",
+      "affected_tickers": [
+        "HDB",
+        "MSH",
+        "BAF"
+      ],
+      "lesson_learned": "Các lệnh lướt ngắn thiếu biên EV >= +5% không tạo giá trị ròng; cơ hội EV >= +15% phải chờ khung 14h00-14h25 mới bấm LO lô chẵn 100 CP.",
+      "actionable_rule": "Chỉ mở vị thế mới khi Alpha Score >= 73, EV >= +12%, R:R >= 1:2.5 và thanh khoản mua chủ động >= 58%."
     }
   ]
 }

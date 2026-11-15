@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-15 20:26:54",
-  "target_url": "http://127.0.0.1:61308",
+  "timestamp": "2026-11-15 21:54:56",
+  "target_url": "http://127.0.0.1:51621",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -59,13 +59,13 @@
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room/stream (SSE)",
       "status": "PASSED",
-      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 35197"
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 46222"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/reports",
       "status": "PASSED",
-      "details": "Tổng số báo cáo: 350"
+      "details": "Tổng số báo cáo: 351"
     },
     {
       "module": "Live_Endpoint",
@@ -111,7 +111,7 @@
     },
     {
       "module": "Python_Code_Integrity",
-      "check": "Biên dịch sạch 131 scripts trong scripts/",
+      "check": "Biên dịch sạch 134 scripts trong scripts/",
       "status": "PASSED",
       "details": "Lỗi: 0"
     },
@@ -168,10 +168,58 @@
       "check": "Portal PIN Crypto + GitHub Actions Keep-Alive",
       "status": "PASSED",
       "details": "PBKDF2 Verified: True | Keep-Alive YML: True"
+    },
+    {
+      "module": "Phase3_OmniCrawler",
+      "check": "Omni-Market Crawler 180 mã & FTS5 Search Engine",
+      "status": "PASSED",
+      "details": "Universe: 180 | File: True | HDB Match: True"
+    },
+    {
+      "module": "Phase3_DeepBrain",
+      "check": "Deep Financial Brain (DuPont, 3-Model Valuation, EV%/Half-Kelly)",
+      "status": "PASSED",
+      "details": "Analyzed: 71 | NVDA ROE: 117.21% | HDB Fair: 39938.0"
+    },
+    {
+      "module": "Phase3_EvolutionLegends",
+      "check": "Self-Evolution Maturity IQ, Weights Invariants & 15 World Legends",
+      "status": "PASSED",
+      "details": "Maturity: 86.9/100 | IQ: 162.6 | Legends: 15 | US=100 VN=1.0"
+    },
+    {
+      "module": "Phase3_LiveEndpoints",
+      "check": "V5 Live Endpoints (/api/intelligence/search, /api/deep_brain, UI Panel)",
+      "status": "PASSED",
+      "details": "Search Ok: True | DeepBrain Ok: True | UI: True | WR Summary: True"
+    },
+    {
+      "module": "Phase4_LiveBCTC_Catalysts",
+      "check": "Live Quarterly BCTC Auto-Refresher & Instant Catalyst/Risk Alerts",
+      "status": "PASSED",
+      "details": "BCTC patched: 6 | Alerts: 33 (Holding: 1)"
+    },
+    {
+      "module": "Phase4_MultiHorizon_WalkForward",
+      "check": "Walk-Forward Attribution T+3/T+5/T+10/T+20 & 5-School Matrix",
+      "status": "PASSED",
+      "details": "Horizons: ['T+3', 'T+5', 'T+10', 'T+20'] | Schools: 5"
+    },
+    {
+      "module": "Phase4_CorrelationMatrix_Guard",
+      "check": "60-Session Portfolio Return Correlation Matrix & Sector Concentration Guard",
+      "status": "PASSED",
+      "details": "60D Live Series: 14 | Evaluated: 28"
+    },
+    {
+      "module": "Phase4_CloudDB_V6_And_AlertsAPI",
+      "check": "Cloud DB V6 Vault Sync, Supabase RLS Migration & /api/intelligence/alerts",
+      "status": "PASSED",
+      "details": "Snapshots DB: 3 | Migration RLS: True | Alerts API: True | UI V6: True"
     }
   ],
-  "total_checks": 27,
-  "passed_checks": 27,
+  "total_checks": 35,
+  "passed_checks": 35,
   "warnings": [],
   "errors": []
 }

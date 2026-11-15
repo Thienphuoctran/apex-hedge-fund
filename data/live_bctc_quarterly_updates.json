@@ -1,0 +1,62 @@
+{
+  "updated_at": "2026-11-15 21:55:10",
+  "total_tickers_updated": 6,
+  "newly_parsed_in_cycle": 1,
+  "ticker_updates": {
+    "PHR": {
+      "profit_growth_yoy": 64.0,
+      "symbol": "PHR",
+      "category": "BCTC_EARNINGS",
+      "headline": "Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96%",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/cao-su-phuoc-hoa-phr-bao-lai-tang-64-loi-nhuan-tu-hoat-dong-cot-loi-bat-ngo-lao-doc-96-188261115094010587.chn",
+      "published_at": "Sun, 15 Nov 26 10:17:00 +0700",
+      "updated_at": "2026-11-15 21:55:10"
+    },
+    "HCM": {
+      "symbol": "HCM",
+      "category": "BCTC_EARNINGS",
+      "headline": "Tập đoàn Trung Quốc đổ tiền xây nhà máy công nghệ cao 10.000 m² tại TP.HCM: Công ty con ở Việt Nam lãi gấp 1,6 lần cả tập đoàn mẹ",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/tap-doan-trung-quoc-do-tien-xay-nha-may-cong-nghe-cao-10000-m-tai-tphcm-cong-ty-con-o-viet-nam-lai-gap-16-lan-ca-tap-doan-me-18826111423032855.chn",
+      "published_at": "Sun, 15 Nov 26 00:04:00 +0700",
+      "updated_at": "2026-11-15 21:55:10"
+    },
+    "AAPL": {
+      "symbol": "AAPL",
+      "category": "BCTC_EARNINGS",
+      "headline": "[SEC 10-K — AAPL] 10-K",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-11-03",
+      "updated_at": "2026-11-15 21:55:10"
+    },
+    "CEO": {
+      "symbol": "CEO",
+      "category": "DIVIDEND_ESOP",
+      "headline": "CEO Novaland bán lượng cổ phiếu bằng 72% số có từ ESOP, ước thu trăm tỷ đồng",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/ceo-novaland-ban-luong-co-phieu-bang-72-so-co-tu-esop-uoc-thu-tram-ty-dong-739-1513715.htm",
+      "published_at": "Wed, 11 Nov 2026 14:07:43 +0700",
+      "updated_at": "2026-11-15 21:55:10"
+    },
+    "PVT": {
+      "symbol": "PVT",
+      "category": "DIVIDEND_ESOP",
+      "headline": "PVT Logistics chốt ngày chào bán gần 57 triệu cổ phiếu cho cổ đông",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/pvt-logistics-chot-ngay-chao-ban-gan-57-trieu-co-phieu-cho-co-dong-188261113105921862.chn",
+      "published_at": "Fri, 13 Nov 26 10:59:00 +0700",
+      "updated_at": "2026-11-15 21:55:10"
+    },
+    "FPT": {
+      "symbol": "FPT",
+      "category": "DIVIDEND_ESOP",
+      "headline": "FPT Telecom sắp chi gần 1.500 tỷ đồng trả cổ tức, Bộ Công an nhận hơn 741 tỷ đồng và hàng chục triệu cổ phiếu thưởng",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/fpt-telecom-sap-chi-gan-1500-ty-dong-tra-co-tuc-bo-cong-an-nhan-hon-741-ty-dong-va-hang-chuc-trieu-co-phieu-thuong-188261112175409976.chn",
+      "published_at": "Fri, 13 Nov 26 00:02:00 +0700",
+      "updated_at": "2026-11-15 21:55:10"
+    }
+  }
+}

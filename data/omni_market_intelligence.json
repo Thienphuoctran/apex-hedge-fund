@@ -1,0 +1,2469 @@
+{
+  "crawled_at": "2026-11-15 21:55:09",
+  "universe_counts": {
+    "vn": 145,
+    "us": 35,
+    "total": 180
+  },
+  "total_items": 414,
+  "category_counts": {
+    "RISK_WARNING": 10,
+    "BCTC_EARNINGS": 19,
+    "MARKET_GENERAL": 265,
+    "MA_INSIDER": 60,
+    "MACRO_SBV_FED": 55,
+    "DIVIDEND_ESOP": 5
+  },
+  "live_bctc_updates_count": 6,
+  "catalyst_alerts_count": 33,
+  "holding_alerts_count": 1,
+  "sources_online": "12/12",
+  "source_health": [
+    {
+      "source": "CafeF - Chứng khoán",
+      "market": "VN",
+      "ok": true,
+      "count": 35,
+      "error": ""
+    },
+    {
+      "source": "CafeF - Bất động sản",
+      "market": "VN",
+      "ok": true,
+      "count": 35,
+      "error": ""
+    },
+    {
+      "source": "CafeF - Doanh nghiệp",
+      "market": "VN",
+      "ok": true,
+      "count": 35,
+      "error": ""
+    },
+    {
+      "source": "CafeF - Tài chính Ngân hàng",
+      "market": "VN",
+      "ok": true,
+      "count": 35,
+      "error": ""
+    },
+    {
+      "source": "Vietstock - Cổ phiếu",
+      "market": "VN",
+      "ok": true,
+      "count": 20,
+      "error": ""
+    },
+    {
+      "source": "VnExpress - Kinh doanh",
+      "market": "VN",
+      "ok": true,
+      "count": 35,
+      "error": ""
+    },
+    {
+      "source": "Vietstock - Doanh nghiệp",
+      "market": "VN",
+      "ok": true,
+      "count": 20,
+      "error": ""
+    },
+    {
+      "source": "VnEconomy - Chứng khoán",
+      "market": "VN",
+      "ok": true,
+      "count": 35,
+      "error": ""
+    },
+    {
+      "source": "CNBC Top News",
+      "market": "US",
+      "ok": true,
+      "count": 30,
+      "error": ""
+    },
+    {
+      "source": "CNBC Economy",
+      "market": "US",
+      "ok": true,
+      "count": 30,
+      "error": ""
+    },
+    {
+      "source": "VnEconomy - Tài chính",
+      "market": "VN",
+      "ok": true,
+      "count": 35,
+      "error": ""
+    },
+    {
+      "source": "MarketWatch Top Stories",
+      "market": "US",
+      "ok": true,
+      "count": 10,
+      "error": ""
+    }
+  ],
+  "items": [
+    {
+      "item_id": "27fb56f3158719b9",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "Khai sai thuế, PNJ bị phạt gần 2 tỷ đồng",
+      "summary": "Theo quyết định, PNJ bị phạt 1,999 tỷ đồng do hành vi khai sai dẫn đến thiếu số tiền thuế giá trị gia tăng phải nộp.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/khai-sai-thue-pnj-bi-phat-gan-2-ty-dong-188261113204306125.chn",
+      "published_at": "Fri, 13 Nov 26 20:42:00 +0700"
+    },
+    {
+      "item_id": "9c6d44dbca17f8c3",
+      "market": "VN",
+      "category": "BCTC_EARNINGS",
+      "urgency": "CRITICAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PHR"
+      ],
+      "sector": "BĐS Khu Công Nghiệp & Cao Su",
+      "title": "Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96%",
+      "summary": "Dù lợi nhuận sau thuế quý III/2026 tăng 64% so với cùng kỳ, đạt 433 tỷ đồng, hoạt động kinh doanh cốt lõi của Cao su Phước Hòa (PHR) lại ghi nhận nhiều dấu hiệu suy yếu khi biên lợi nhuận gộp thu hẹp và chi phí hoạt động tăng mạnh.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/cao-su-phuoc-hoa-phr-bao-lai-tang-64-loi-nhuan-tu-hoat-dong-cot-loi-bat-ngo-lao-doc-96-188261115094010587.chn",
+      "published_at": "Sun, 15 Nov 26 10:17:00 +0700"
+    },
+    {
+      "item_id": "ccce7a498fc53fcc",
+      "market": "VN",
+      "category": "BCTC_EARNINGS",
+      "urgency": "CRITICAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Tập đoàn Trung Quốc đổ tiền xây nhà máy công nghệ cao 10.000 m² tại TP.HCM: Công ty con ở Việt Nam lãi gấp 1,6 lần cả tập đoàn mẹ",
+      "summary": "Một tập đoàn công nghệ Trung Quốc vừa ký hợp đồng xây dựng nhà máy tại TP.HCM. Đáng chú ý, công ty con tại Việt Nam đang ghi nhận kết quả kinh doanh vượt trội.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/tap-doan-trung-quoc-do-tien-xay-nha-may-cong-nghe-cao-10000-m-tai-tphcm-cong-ty-con-o-viet-nam-lai-gap-16-lan-ca-tap-doan-me-18826111423032855.chn",
+      "published_at": "Sun, 15 Nov 26 00:04:00 +0700"
+    },
+    {
+      "item_id": "45c9ba57acc9dd11",
+      "market": "US",
+      "category": "BCTC_EARNINGS",
+      "urgency": "CRITICAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 10-K — AAPL] 10-K",
+      "summary": "Hồ sơ SEC EDGAR Form 10-K nộp ngày 2026-11-03.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-11-03"
+    },
+    {
+      "item_id": "789fbf7a11c41a6f",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "Khai sai thuế, PNJ bị phạt gần 2 tỷ đồng",
+      "summary": "Theo quyết định, PNJ bị phạt 1,999 tỷ đồng do hành vi khai sai dẫn đến thiếu số tiền thuế giá trị gia tăng phải nộp....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/khai-sai-thue-pnj-bi-phat-gan-2-ty-dong-188261113204306125.chn",
+      "published_at": "Fri, 13 Nov 26 20:42:00 +0700"
+    },
+    {
+      "item_id": "4a93f5bb99045936",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "PNJ thua lỗ, giá giảm sàn, tại sao vẫn lọt rổ chỉ số quan trọng của MSCI?",
+      "summary": "Giữa lúc cổ phiếu PNJ trải qua một trong những giai đoạn khó khăn nhất lịch sử, việc bất ngờ được bổ sung vào rổ MSCI Frontier Markets Index trở thành thông tin tích cực....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/pnj-thua-lo-gia-giam-san-tai-sao-van-lot-ro-chi-so-quan-trong-cua-msci-188261112225231116.chn",
+      "published_at": "Fri, 13 Nov 26 00:02:00 +0700"
+    },
+    {
+      "item_id": "b2b472f50957d60d",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [],
+      "sector": "",
+      "title": "TIG giải trình gì về việc cổ phiếu giảm sàn 5 phiên liên tiếp?",
+      "summary": "TIG cho biết, việc cổ phiếu giảm sàn 5 phiên liên tiếp từ ngày 6/11/2026 đến ngày 12/11/2026 là do cung cầu của thị trường.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/tig-giai-trinh-gi-ve-viec-co-phieu-giam-san-5-phien-lien-tiep-188261114103833526.chn",
+      "published_at": "Sat, 14 Nov 26 11:12:00 +0700"
+    },
+    {
+      "item_id": "1a3dacb8e5a39063",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [],
+      "sector": "",
+      "title": "Báo mất 119 phôi sổ đỏ, Phú Thọ cảnh báo không xác nhận giao dịch",
+      "summary": "Sở Nông nghiệp và Môi trường tỉnh Phú Thọ vừa phát đi thông báo mất 119 phôi giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất (sổ đỏ); đồng thời đề nghị các cơ quan, tổ chức, cá nhân không sử dụng, xác nhận các nội dung, giao dịch liên quan đến số phôi này.",
+      "source_name": "CafeF - Bất động sản",
+      "source_url": "https://cafef.vn/bao-mat-119-phoi-so-do-phu-tho-canh-bao-khong-xac-nhan-giao-dich-188261114194441483.chn",
+      "published_at": "Sat, 14 Nov 26 19:48:00 +0700"
+    },
+    {
+      "item_id": "56b4c56e8d064177",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.56,
+      "tickers": [],
+      "sector": "",
+      "title": "Phạt nhiều doanh nghiệp vi phạm về trái phiếu",
+      "summary": "Ủy ban Chứng khoán Nhà nước liên tiếp xử phạt doanh nghiệp phát hành trái phiếu do vi phạm nghĩa vụ công bố thông tin. Trong khi đó, gần 38.800 tỷ đồng trái phiếu sẽ đáo hạn trong phần còn lại của năm 2026, riêng nhóm bất động sản chiếm khoảng 66%.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/phat-nhieu-doanh-nghiep-vi-pham-ve-trai-phieu-188261114155758362.chn",
+      "published_at": "Sat, 14 Nov 26 15:57:00 +0700"
+    },
+    {
+      "item_id": "0474948b8e34e806",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [],
+      "sector": "",
+      "title": "Thanh tra việc giảm lãi suất ngân hàng ngay tháng 11",
+      "summary": "Ngân hàng Nhà nước yêu cầu các chi nhánh khu vực tổ chức thanh tra, kiểm tra chuyên đề diện rộng về việc thực hiện giảm lãi suất tại các tổ chức tín dụng ngay trong tháng 11. Các trường hợp vi phạm sẽ bị xử lý nghiêm theo quy định.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/thanh-tra-viec-giam-lai-suat-ngan-hang-ngay-thang-11-188261113161004744.chn",
+      "published_at": "Fri, 13 Nov 26 16:09:00 +0700"
+    },
+    {
+      "item_id": "24a1a8ae0591533b",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [],
+      "sector": "",
+      "title": "Trung Quốc cảnh báo xử lý nghiêm các trường hợp nhà giàu trốn thuế",
+      "summary": "Chiến dịch siết thuế đối với các nhà đầu tư giàu có đã giúp thu ngân sách từ thuế thu nhập cá nhân của Trung Quốc tăng gần gấp đôi...",
+      "source_name": "VnEconomy - Chứng khoán",
+      "source_url": "https://vneconomy.vn/trung-quoc-canh-bao-xu-ly-nghiem-cac-truong-hop-nha-giau-tron-thue.htm",
+      "published_at": "Fri, 13 Nov 2026 13:08:36 GMT"
+    },
+    {
+      "item_id": "4b769f77509cf8bd",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [],
+      "sector": "",
+      "title": "Nỗ lực thay thế USD bằng nhân dân tệ của Nga gặp trở ngại",
+      "summary": "Nga gần như đã từ bỏ nỗ lực thay thế đồng USD bằng đồng nhân dân tệ Trung Quốc, do áp lực từ các biện pháp trừng phạt thứ cấp của Mỹ...",
+      "source_name": "VnEconomy - Chứng khoán",
+      "source_url": "https://vneconomy.vn/no-luc-thay-the-usd-bang-nhan-dan-te-cua-nga-gap-tro-ngai.htm",
+      "published_at": "Thu, 12 Nov 2026 12:22:38 GMT"
+    },
+    {
+      "item_id": "b6437a6fb471b39a",
+      "market": "VN",
+      "category": "RISK_WARNING",
+      "urgency": "CRITICAL",
+      "sentiment_score": -0.28,
+      "tickers": [],
+      "sector": "",
+      "title": "Không để khách hàng gánh rủi ro khi dịch vụ kế toán bị đình chỉ",
+      "summary": "Đồng tình với chủ trương bãi bỏ giấy phép kinh doanh dịch vụ kế toán để giảm thủ tục, mở rộng khả năng tiếp cận dịch vụ, song các đại biểu Quốc hội đề nghị làm rõ cơ chế hậu kiểm. Đặc biệt, việc đình chỉ kinh doanh phải có căn cứ, thời hạn và trình tự cụ thể, bảo đảm quyền giải trình, tránh gây gián đoạn hoạt động của khách hàng…",
+      "source_name": "VnEconomy - Tài chính",
+      "source_url": "https://vneconomy.vn/khong-de-khach-hang-ganh-rui-ro-khi-dich-vu-ke-toan-bi-dinh-chi.htm",
+      "published_at": "Fri, 13 Nov 2026 10:13:56 GMT"
+    },
+    {
+      "item_id": "07ee38f05b0eb9dd",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "ACB",
+        "CTD",
+        "EIB",
+        "HDB",
+        "KDH",
+        "SAB",
+        "STB",
+        "VCB",
+        "VNM"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Ngày 12/11/2026: 10 cổ phiếu nóng dưới góc nhìn PTKT của Vietstock",
+      "summary": "Các cổ phiếu nóng được phân tích trong báo cáo của Phòng Tư vấn Vietstock gồm: ACB, CTD, EIB, GEX, HDB, KDH, STB, SAB, VNM, VCB.",
+      "source_name": "Vietstock - Cổ phiếu",
+      "source_url": "http://vietstock.vn/2026/11/ngay-12112026-10-co-phieu-nong-duoi-goc-nhin-ptkt-cua-vietstock-585-1513918.htm",
+      "published_at": "Thu, 12 Nov 2026 10:00:00 +0700"
+    },
+    {
+      "item_id": "739311bebaaaae8e",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "DIG",
+        "HPG",
+        "PNJ"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Lãnh đạo và người thân mua bán cổ phiếu gì trong tuần đầu tháng 11?",
+      "summary": "Tuần đầu tháng 11, giao dịch của lãnh đạo và người có liên quan nghiêng mạnh về chiều bán, chủ yếu xuất phát từ các trường hợp bán giải chấp cổ phiếu KOS và PNJ. Ở chiều ngược lại, lãnh đạo tại DIG và HPG thực hiện mua vào lượng lớn cổ phiếu.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/lanh-dao-va-nguoi-than-mua-ban-co-phieu-gi-trong-tuan-dau-thang-11-739-1512830.htm",
+      "published_at": "Mon, 09 Nov 2026 15:02:00 +0700"
+    },
+    {
+      "item_id": "8d77803f239fa3ac",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.28,
+      "tickers": [
+        "HDB",
+        "POW",
+        "VHM"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
+      "summary": "Giao dịch của nhà đầu tư nước ngoài ghi nhận sự phân hóa giữa các cổ phiếu. VIC được mua ròng mạnh nhất với 138,8 tỷ đồng, tiếp đến là POW với 78,1 tỷ đồng, VHM với 47 tỷ đồng, HDB với 42 tỷ đồng và TPB với 41,3 tỷ đồng....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
+      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT"
+    },
+    {
+      "item_id": "701d262b73de6cd6",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "FPT",
+        "PNJ"
+      ],
+      "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "title": "PNJ từng lớn gấp 9 lần Petrosetco, gấp 4 lần Digiworld, bằng 1,3 lần FPT Retail, nay bị cả 3 DN vượt mặt chỉ sau 11 tháng",
+      "summary": "Kết phiên 13/11/2026, vốn hóa PNJ chỉ còn khoảng 7.650 tỷ đồng, thấp hơn Petrosetco, Digiworld và FPT Retail, ba doanh nghiệp mà cuối năm 2025 đều đứng sau doanh nghiệp trang sức này. Cuộc đổi ngôi chủ yếu đến từ việc PNJ mất gần 77% vốn hóa, trong khi 2 trong 3 doanh nghiệp còn lại gần như đi ngang.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/pnj-tung-lon-gap-9-lan-petrosetco-gap-4-lan-digiworld-bang-13-lan-fpt-retail-nay-bi-ca-3-dn-vuot-mat-chi-sau-11-thang-188261114223956507.chn",
+      "published_at": "Sun, 15 Nov 26 00:02:00 +0700"
+    },
+    {
+      "item_id": "1d56308943d31c79",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "ACB",
+        "SHB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Ngày 15/11, gửi kỳ hạn 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Với khoản tiền gửi 100 triệu đồng kỳ hạn 6 tháng, lãi suất tiết kiệm tại 7 ngân hàng có sự chênh lệch đáng kể giữa hình thức gửi tại quầy và online. Theo các biểu lãi suất được tổng hợp, số tiền lãi dự kiến dao động từ 2 triệu đồng đến 3,3 triệu đồng, tùy ngân hàng và phương thức gửi tiền.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/ngay-15-11-gui-ky-han-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261114225800103.chn",
+      "published_at": "Sun, 15 Nov 26 06:00:00 +0700"
+    },
+    {
+      "item_id": "4be1e3fea19973ef",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "ACB",
+        "SHB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Ngày 14/11, gửi dưới 1 tỷ đồng kỳ hạn 18 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Với kỳ hạn 18 tháng, lãi suất huy động tại 7 ngân hàng được khảo sát có sự chênh lệch đáng kể giữa hình thức gửi tại quầy và gửi trực tuyến. Trong đó, lãi suất online cao nhất trong nhóm lên tới 7,4%/năm, trong khi một số ngân hàng niêm yết dưới 5,5%/năm.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/ngay-14-11-gui-duoi-1-ty-dong-ky-han-18-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261113224114723.chn",
+      "published_at": "Sat, 14 Nov 26 02:00:00 +0700"
+    },
+    {
+      "item_id": "5cf2725ab9122a16",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "DXG",
+        "KDH"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Tỷ phú Bill Gates liên tục mua thêm hàng triệu cổ phiếu \"bắt đáy\" 2 công ty bất động sản Việt Nam",
+      "summary": "KDH và DXG đang có đợt phục hồi nhẹ sau khi giảm rất mạnh trong 1 năm qua....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/ty-phu-bill-gates-lien-tuc-mua-them-hang-trieu-co-phieu-bat-day-2-cong-ty-bat-dong-san-viet-nam-188261113184128892.chn",
+      "published_at": "Fri, 13 Nov 26 18:41:00 +0700"
+    },
+    {
+      "item_id": "3f8a9ca05afdcba5",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "FPT",
+        "HCM"
+      ],
+      "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "title": "Quỹ đầu tư mạo hiểm với sự góp mặt của Vingroup, Sovico, FPT, VNG vừa có động thái mới",
+      "summary": "Cơ quan điều hành Trung tâm Tài chính quốc tế Việt Nam tại TP.HCM (VIFC-HCMC) vừa công bố Thỏa thuận hợp tác khung với Touchstone Partners (Touchstone) và Công ty CP Quỹ Đầu tư mạo hiểm TP.HCM (HCM VIF)....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/quy-dau-tu-mao-hiem-voi-su-gop-mat-cua-vingroup-sovico-fpt-vng-vua-co-dong-thai-moi-188261113083825657.chn",
+      "published_at": "Fri, 13 Nov 26 08:38:00 +0700"
+    },
+    {
+      "item_id": "1730253b910735de",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MBS",
+        "PNJ"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Con gái Chủ tịch PNJ bị bán giải chấp cổ phiếu lần thứ 4",
+      "summary": "Bà Trần Phương Ngọc Giao, con gái bà Cao Thị Ngọc Dung - Chủ tịch Hội đồng quản trị Công ty CP Vàng bạc đá quý Phú Nhuận - bị MBS bán giải chấp 2.815.000 cổ phiếu PNJ từ ngày 12/11. Trước đó, bà Giao 3 đợt bị call margin...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/con-gai-chu-tich-pnj-bi-ban-giai-chap-co-phieu-lan-thu-4-188261112195218052.chn",
+      "published_at": "Thu, 12 Nov 26 19:53:00 +0700"
+    },
+    {
+      "item_id": "e4b348a43b5009aa",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "Bất ngờ tỷ lệ sở hữu của gia đình bà Cao Thị Ngọc Dung tại PNJ",
+      "summary": "Sau biến cố kim cương, các thành viên trong gia đình bà Cao Thị Ngọc Dung đã bán ra lượng lớn cổ phiếu PNJ với nhiều mục đích khác nhau.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/bat-ngo-ty-le-so-huu-cua-gia-dinh-ba-cao-thi-ngoc-dung-tai-pnj-18826111422324714.chn",
+      "published_at": "Sun, 15 Nov 26 00:05:00 +0700"
+    },
+    {
+      "item_id": "ba26536d72c1fca5",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Khang Điền 'rót' thêm 2.500 tỷ đồng vào công ty con",
+      "summary": "Khang Điền vừa thông qua việc tăng tổng vốn đầu tư dự án Khu nhà ở 11A tại TP.HCM lên gần 12.948 tỷ đồng, đồng thời dự kiến góp thêm 2.500 tỷ đồng vào chủ đầu tư dự án này.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/khang-dien-rot-them-2500-ty-dong-vao-cong-ty-con-188261114103943736.chn",
+      "published_at": "Sat, 14 Nov 26 12:39:00 +0700"
+    },
+    {
+      "item_id": "2729a81ca0137738",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.28,
+      "tickers": [
+        "CEO"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "CEO Đoàn Văn Hiểu Em tiết lộ bước ngoặt mới: Sau gần 20 năm bán điện thoại, tivi, tủ lạnh, Điện Máy Xanh sẽ tìm cách kiếm tiền hoàn toàn khác",
+      "summary": "Sau hai năm gần như không mở thêm cửa hàng, CEO Đoàn Văn Hiểu Em cho biết Điện Máy Xanh đang chuẩn bị cho một giai đoạn tăng trưởng mới thay vì chỉ bán điện thoại, tivi, tủ lạnh…",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/ceo-doan-van-hieu-em-tiet-lo-buoc-ngoat-moi-sau-gan-20-nam-ban-dien-thoai-tivi-tu-lanh-dien-may-xanh-se-tim-cach-kiem-tien-hoan-toan-khac-188261114085124144.chn",
+      "published_at": "Sat, 14 Nov 26 10:07:00 +0700"
+    },
+    {
+      "item_id": "a3e859664b8e015e",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NKG"
+      ],
+      "sector": "Thép & Kim Loại Công Nghiệp",
+      "title": "Ái nữ kín tiếng của Chủ tịch Hồ Minh Quang lần đầu đăng ký mua cổ phiếu Thép Nam Kim",
+      "summary": "Trước giao dịch, con gái ông Hồ Minh Quang không nắm giữ cổ phiếu NKG của Thép Nam Kim.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/ai-nu-kin-tieng-cua-chu-tich-ho-minh-quang-lan-dau-dang-ky-mua-co-phieu-thep-nam-kim-188261113200054275.chn",
+      "published_at": "Fri, 13 Nov 26 20:03:00 +0700"
+    },
+    {
+      "item_id": "486e1cdb8f975a4a",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "DIG"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Người nhà Tổng Giám đốc DIC Corp đã mua 1 triệu cổ phiếu DIG",
+      "summary": "Bà Vũ Thị Thu Hương, vợ ông Nguyễn Quang Tín- Tổng Giám đốc của DIC Corp đã mua thành công 1 triệu cổ phiếu DIG như đăng ký.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/nguoi-nha-tong-giam-doc-dic-corp-da-mua-1-trieu-co-phieu-dig-188261113150545165.chn",
+      "published_at": "Fri, 13 Nov 26 15:52:00 +0700"
+    },
+    {
+      "item_id": "09801fee8349c025",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "CEO"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Chủ tịch Hội các Nhà quản trị doanh nghiệp Việt Nam: Môi giới bất động sản phải có chứng chỉ, CEO điều hành cả doanh nghiệp lại không cần",
+      "summary": "Theo GS.TS Nguyễn Đức Thuận, Chủ tịch Hội các Nhà quản trị doanh nghiệp Việt Nam, một nghịch lý đang tồn tại là nhiều vị trí chuyên môn phải có chứng chỉ hành nghề, trong khi người điều hành toàn bộ doanh nghiệp có thể được bổ nhiệm mà không cần chứng chỉ tương ứng.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/chu-tich-hoi-cac-nha-quan-tri-doanh-nghiep-viet-nam-moi-gioi-bat-dong-san-phai-co-chung-chi-ceo-dieu-hanh-ca-doanh-nghiep-lai-khong-can-188261113145553117.chn",
+      "published_at": "Fri, 13 Nov 26 14:55:00 +0700"
+    },
+    {
+      "item_id": "052a608f28938cf4",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "CEO"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Jensen Huang có thể phải điều trần trước Thượng viện Mỹ",
+      "summary": "Ủy ban Ngân hàng Thượng viện Mỹ yêu cầu cựu CEO Nvidia Jensen Huang và Bộ trưởng Thương mại Howard Lutnick ra điều trần, trong bối cảnh Washington gia tăng sức ép về những nghi vấn liên quan đến an ninh quốc gia và hoạt động xuất khẩu chip AI sang Trung Quốc.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/jensen-huang-co-the-phai-dieu-tran-truoc-thuong-vien-my-188261113134328152.chn",
+      "published_at": "Fri, 13 Nov 26 13:43:00 +0700"
+    },
+    {
+      "item_id": "29d1e6582ef622a3",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.28,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Tập đoàn của tỷ phú Nguyễn Thị Phương Thảo đề xuất làm tuyến metro đầu tiên ở khu Nam TP.HCM: Có hơn 20km đi xuyên lòng đất đến trung tâm, dự kiến thu hồi đất của 1.855 hộ dân",
+      "summary": "Tập đoàn Sovico của tỷ phú Nguyễn Thị Phương Thảo đang nghiên cứu đầu tư tuyến metro số 4 (Đông Thạnh - Hiệp Phước) dài khoảng 45km, kết nối cửa ngõ Tây Bắc với sân bay Tân Sơn Nhất, trung tâm TP.HCM và khu vực cảng Hiệp Phước. Dự án dự kiến có 31 nhà ga, 2 depot và đặt mục tiêu khởi công trong nửa đầu năm 2027.",
+      "source_name": "CafeF - Bất động sản",
+      "source_url": "https://cafef.vn/tap-doan-cua-ty-phu-nguyen-thi-phuong-thao-de-xuat-lam-tuyen-metro-dau-tien-o-khu-nam-tphcm-co-hon-20km-di-xuyen-long-dat-den-trung-tam-du-kien-thu-hoi-dat-cua-1855-ho-dan-188261115100141674.chn",
+      "published_at": "Sun, 15 Nov 26 15:00:00 +0700"
+    },
+    {
+      "item_id": "01a17c60f7f00dcb",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Cận cảnh các siêu nút giao kết nối TP.HCM với sân bay Long Thành",
+      "summary": "Hàng loạt nút giao đa tầng đang hình thành, kết nối TP.HCM với sân bay Long Thành qua cao tốc, vành đai, quốc lộ, phục vụ sân bay khai thác cuối năm 2026.",
+      "source_name": "CafeF - Bất động sản",
+      "source_url": "https://cafef.vn/can-canh-cac-sieu-nut-giao-ket-noi-tphcm-voi-san-bay-long-thanh-188261115122741044.chn",
+      "published_at": "Sun, 15 Nov 26 13:57:00 +0700"
+    },
+    {
+      "item_id": "04feee5d5bfe6c1c",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Bắt đầu triển khai thu hồi hơn 85 ha đất làm tuyến metro 33km nối Thủ Dầu Một với trung tâm TP.HCM đi qua 16 phường, có 24 ga, chi 36.586 tỷ đồng bồi thường",
+      "summary": "TP.HCM đang triển khai các bước thu hồi đất, điều tra, khảo sát, đo đạc và kiểm đếm để thực hiện tuyến metro số 2 Thủ Dầu Một - TP.HCM dài khoảng 33,2km, đi qua 16 phường.",
+      "source_name": "CafeF - Bất động sản",
+      "source_url": "https://cafef.vn/bat-dau-trien-khai-thu-hoi-hon-85-ha-dat-lam-tuyen-metro-33km-noi-thu-dau-mot-voi-trung-tam-tphcm-di-qua-16-phuong-co-24-ga-chi-36586-ty-dong-boi-thuong-188261115070320552.chn",
+      "published_at": "Sun, 15 Nov 26 07:17:00 +0700"
+    },
+    {
+      "item_id": "9b9c81b6442edb42",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NKG"
+      ],
+      "sector": "Thép & Kim Loại Công Nghiệp",
+      "title": "Con gái Chủ tịch Thép Nam Kim đăng ký mua 5 triệu cổ phiếu NKG",
+      "summary": "Bà Hồ Uyển Nhi, con gái ông Hồ Minh Quang - Chủ tịch HĐQT Thép Nam Kim đăng ký mua mua 5 triệu cổ phiếu NKG trong thời gian từ ngày 18/11 đến ngày 16/12/2026.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/con-gai-chu-tich-thep-nam-kim-dang-ky-mua-5-trieu-co-phieu-nkg-188261115081418529.chn",
+      "published_at": "Sun, 15 Nov 26 08:14:00 +0700"
+    },
+    {
+      "item_id": "d60f5dd62eb43936",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "DIG"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Đại gia Hàn Quốc vừa ký dự án 2 tỷ USD với Bộ Công thương: Có tới 56.200 nhân viên tại Việt Nam, từng thua kiện Novaland, bán hàng chục triệu cổ phiếu DIG trước \"cơn sóng thần\"",
+      "summary": "Dù từng nếm \"trái đắng\" trong các thương vụ tay ngang sang bất động sản và chứng khoán, tập đoàn nắm giữ 15% sản lượng giày Nike toàn cầu vẫn cho thấy tiềm lực tài chính khổng lồ khi chính thức hồi sinh siêu dự án nhiệt điện Nam Định I.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/dai-gia-han-quoc-vua-ky-du-an-2-ty-usd-voi-bo-cong-thuong-co-toi-56200-nhan-vien-tai-viet-nam-tung-thua-kien-novaland-ban-hang-chuc-trieu-co-phieu-dig-truoc-con-song-than-188261113094400548.chn",
+      "published_at": "Sun, 15 Nov 26 00:07:00 +0700"
+    },
+    {
+      "item_id": "b8d75c549fd469ed",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Ông lớn lốp xe Trung Quốc rót 500 triệu USD xây nhà máy tại Việt Nam, dự kiến sản xuất 6,5 triệu chiếc mỗi năm",
+      "summary": "Tập đoàn Zhongce Rubber, một trong 10 nhà sản xuất lốp xe lớn nhất thế giới, sẽ xây dựng nhà máy tại TP.HCM với tổng vốn đầu tư 500 triệu USD. Dự án dự kiến đạt công suất 6,5 triệu lốp xe mỗi năm sau khi hoàn thành cả hai giai đoạn.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/ong-lon-lop-xe-trung-quoc-rot-500-trieu-usd-xay-nha-may-tai-viet-nam-du-kien-san-xuat-65-trieu-chiec-moi-nam-188261114214557914.chn",
+      "published_at": "Sat, 14 Nov 26 21:45:00 +0700"
+    },
+    {
+      "item_id": "945bf7055f306e38",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "KDH"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Nhóm Vinacapital gom hàng chục triệu cổ phiếu một doanh nghiệp bất động sản sau khi giảm 58%",
+      "summary": "Sau giao dịch, nhóm VinaCapital nắm 100,7 triệu cổ phiếu KDH, tương đương 8,09% vốn điều lệ Nhà Khang Điền.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/nhom-vinacapital-gom-hang-chuc-trieu-co-phieu-mot-doanh-nghiep-bat-dong-san-sau-khi-giam-58-188261112220857623.chn",
+      "published_at": "Sat, 14 Nov 26 12:42:00 +0700"
+    },
+    {
+      "item_id": "81180b85113df4aa",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Hai công ty UAV vừa được Bí thư TP.HCM Trần Lưu Quang khảo sát có gì đặc biệt?",
+      "summary": "Sáng 13/11, Bí thư Thành ủy TP.HCM Trần Lưu Quang đã dẫn đầu đoàn công tác khảo sát một số doanh nghiệp sản xuất thiết bị bay không người lái (UAV) và làm việc với Ban Quản lý Khu Công nghệ cao TP.HCM.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/hai-cong-ty-uav-vua-duoc-bi-thu-tphcm-tran-luu-quang-khao-sat-co-gi-dac-biet-188261114081614718.chn",
+      "published_at": "Sat, 14 Nov 26 08:16:00 +0700"
+    },
+    {
+      "item_id": "2120e9db7712a940",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "DXG"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Dragon Capital nâng tỷ lệ sở hữu tại Bluemarq Group lên hơn 6%",
+      "summary": "Sau khi 5 quỹ thành viên mua vào tổng cộng 2,6 triệu cổ phiếu DXG, nhóm quỹ ngoại Dragon Capital đã tăng sở hữu lên 6,1906% vốn tại Bluemarq Group.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/dragon-capital-nang-ty-le-so-huu-tai-bluemarq-group-len-hon-6-18826111406591622.chn",
+      "published_at": "Sat, 14 Nov 26 07:24:00 +0700"
+    },
+    {
+      "item_id": "e8967a62ee9faa3e",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "Giá vàng miếng, vàng nhẫn tròn chiều tối 15/11 tại SJC, DOJI, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng thị trường thế giới khép lại một tuần biến động mạnh dưới mốc 3.900 USD/ounce.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-tron-chieu-toi-15-11-tai-sjc-doji-pnj-bao-tin-minh-chau-va-bao-tin-manh-hai-1882611151139143.chn",
+      "published_at": "Sun, 15 Nov 26 16:53:00 +0700"
+    },
+    {
+      "item_id": "46798eca79e331c2",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "SHB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Giữa tháng 11 gửi 500 triệu tại BIDV, Vietcombank, VietinBank, Agribank, SHB, BAC A Bank: Lãi tối đa bao nhiêu?",
+      "summary": "Lãi suất tiết kiệm giữa tháng 11 vẫn ổn định, không chênh lệch quá nhiều so với hồi đầu tháng.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/giua-thang-11-gui-500-trieu-tai-bidv-vietcombank-vietinbank-agribank-shb-bac-a-bank-lai-toi-da-bao-nhieu-188261115125403534.chn",
+      "published_at": "Sun, 15 Nov 26 12:53:00 +0700"
+    },
+    {
+      "item_id": "625c2566f61b2775",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "SHB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "SHB được Forbes Việt Nam vinh danh trong Top 10 thương hiệu dẫn đầu năm 2026",
+      "summary": "Ngày 12/11, tại lễ vinh danh 50 thương hiệu dẫn đầu năm 2026 do Forbes Việt Nam tổ chức, Ngân hàng TMCP Sài Gòn – Hà Nội (SHB) được xướng tên ở vị trí thứ 10 trong bảng xếp hạng, với giá trị thương hiệu đạt 836 triệu USD.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/shb-duoc-forbes-viet-nam-vinh-danh-trong-top-10-thuong-hieu-dan-dau-nam-2026-188261114124719999.chn",
+      "published_at": "Sat, 14 Nov 26 13:30:00 +0700"
+    },
+    {
+      "item_id": "51cb8cc9e30e39a9",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "LPB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Diễn biến mới tại cổ phiếu LPBank",
+      "summary": "Chỉ trong 5 phiên giao dịch, hơn 248 triệu cổ phiếu LPB được chuyển nhượng qua phương thức thỏa thuận với tổng giá trị hơn 8.350 tỷ đồng. Hoạt động giao dịch diễn ra đặc biệt sôi động trong bối cảnh thị giá LPB đã giảm đáng kể so với vùng đỉnh thiết lập hồi giữa năm.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/dien-bien-moi-tai-co-phieu-lpbank-188261114111125298.chn",
+      "published_at": "Sat, 14 Nov 26 11:09:00 +0700"
+    },
+    {
+      "item_id": "fa4d0c1749c06f04",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "VIB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "VIB khởi động chương trình Siêu Tiệc Đáng Giá với đa tầng ưu đãi cho chủ thẻ",
+      "summary": "Mở mới thẻ tín dụng VIB One Card và Max Card trong mùa mua sắm cuối năm, khách hàng có cơ hội nhận voucher Lazada 1,3 triệu đồng, Blind Box The Masked Singer phiên bản giới hạn và miễn phí thường niên năm đầu. Song song, với chương trình Siêu Tiệc Đáng Giá, VIB mang đến nhiều tầng ưu đãi từ mua sắm, ăn uống đến du lịch quốc tế, giúp chủ thẻ tối ưu từ những c",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/vib-khoi-dong-chuong-trinh-sieu-tiec-dang-gia-voi-da-tang-uu-dai-cho-chu-the-188261113151937047.chn",
+      "published_at": "Fri, 13 Nov 26 15:19:00 +0700"
+    },
+    {
+      "item_id": "b587a1bbf1d6f827",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "VIC"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "VIC nâng đỡ VN-Index, TIG lao dốc trên HNX",
+      "summary": "VN-Index tăng gần 10 điểm trong tuần 09-13/11 nhờ đóng góp nổi bật từ VIC. Trong khi đó, HNX-Index giảm gần 2 điểm, với TIG là một trong những cổ phiếu tác động tiêu cực nhất khi giảm sàn trong toàn bộ các phiên giao dịch.",
+      "source_name": "Vietstock - Cổ phiếu",
+      "source_url": "http://vietstock.vn/2026/11/vic-nang-do-vn-indextig-lao-doc-tren-hnx-830-1514916.htm",
+      "published_at": "Sat, 14 Nov 2026 20:30:00 +0700"
+    },
+    {
+      "item_id": "82df88bfa99484bb",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "LPB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Hơn 10% cổ phần LPB được 'sang tay' kể từ đầu tháng 11",
+      "summary": "Kết phiên 13/11, thị trường ghi nhận 74.52 triệu cp LPB của Ngân hàng TMCP Lộc Phát Việt Nam (LPBank, HOSE: LPB) được giao dịch thỏa thuận với giá trị gần 2,534 tỷ đồng, tương đương giá thỏa thuận bình quân 34,000 đồng/cp.",
+      "source_name": "Vietstock - Cổ phiếu",
+      "source_url": "http://vietstock.vn/2026/11/hon-10-co-phan-lpb-duoc-sang-tay-ke-tu-dau-thang-11-757-1514886.htm",
+      "published_at": "Sat, 14 Nov 2026 09:56:51 +0700"
+    },
+    {
+      "item_id": "33d7f280d35218e1",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.28,
+      "tickers": [
+        "VIX"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Theo dấu dòng tiền cá mập 13/11: Khối ngoại và tự doanh hành động trái chiều tại VIX",
+      "summary": "Phiên giao dịch ngày 13/11 chứng kiến sự đồng thuận mua ròng của cả khối ngoại và khối tự doanh. Tuy nhiên, hai dòng tiền lớn này lại có động thái đối lập tại cổ phiếu VIX.",
+      "source_name": "Vietstock - Cổ phiếu",
+      "source_url": "http://vietstock.vn/2026/11/theo-dau-dong-tien-ca-map-1311-khoi-ngoai-va-tu-doanh-hanh-dong-trai-chieu-tai-vix-830-1514757.htm",
+      "published_at": "Fri, 13 Nov 2026 19:12:00 +0700"
+    },
+    {
+      "item_id": "1142a6110df666cb",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NKG"
+      ],
+      "sector": "Thép & Kim Loại Công Nghiệp",
+      "title": "Con gái Chủ tịch Thép Nam Kim muốn mua 5 triệu cổ phiếu",
+      "summary": "Bà Hồ Uyển Nhi, con gái Chủ tịch HĐQT Thép Nam Kim Hồ Minh Quang đăng ký mua 5 triệu cổ phiếu NKG từ 18/11- 16/12.",
+      "source_name": "VnExpress - Kinh doanh",
+      "source_url": "https://vnexpress.net/con-gai-chu-tich-thep-nam-kim-muon-mua-5-trieu-co-phieu-5144864.html",
+      "published_at": "Sun, 15 Nov 2026 13:30:00 +0700"
+    },
+    {
+      "item_id": "c6f83cda9a47f2ac",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "Gia đình bà Cao Thị Ngọc Dung chỉ còn nắm dưới 8% PNJ",
+      "summary": "Sau ba đợt bán giải chấp cổ phiếu của con gái, tổng sở hữu của gia đình Chủ tịch Cao Thị Ngọc Dung tại PNJ giảm còn 7,62% vốn.",
+      "source_name": "VnExpress - Kinh doanh",
+      "source_url": "https://vnexpress.net/gia-dinh-ba-cao-thi-ngoc-dung-chi-con-nam-duoi-8-pnj-5144615.html",
+      "published_at": "Sat, 14 Nov 2026 10:54:11 +0700"
+    },
+    {
+      "item_id": "6998656a4e1693d9",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "CEO"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Những doanh nghiệp vẫn thành công dù không còn CEO huyền thoại",
+      "summary": "Apple, Walmart và Disney từng khiến nhà đầu tư lo lắng khi CEO qua đời, nhưng các công ty này vẫn đang phát triển thịnh vượng.",
+      "source_name": "VnExpress - Kinh doanh",
+      "source_url": "https://vnexpress.net/nhung-doanh-nghiep-van-thanh-cong-du-khong-con-ceo-huyen-thoai-5144438.html",
+      "published_at": "Sat, 14 Nov 2026 07:00:00 +0700"
+    },
+    {
+      "item_id": "29efc6c3f11737a6",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "CEO"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Vì sao Nvidia chọn Colette Kress thay Jensen Huang?",
+      "summary": "Quyền lực hàng đầu dưới Jensen Huang và quan hệ sâu rộng với Phố Wall là cơ sở giúp Colette Kress trở thành CEO Nvidia tạm quyền.",
+      "source_name": "VnExpress - Kinh doanh",
+      "source_url": "https://vnexpress.net/vi-sao-nvidia-chon-colette-kress-thay-jensen-huang-5144284.html",
+      "published_at": "Fri, 13 Nov 2026 16:11:35 +0700"
+    },
+    {
+      "item_id": "f57e2f4495173aed",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "CEO"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Nhân viên Nvidia bênh vực Jensen Huang giữa bê bối đời tư",
+      "summary": "Hơn 1.600 bình luận trên diễn đàn nội bộ Nvidia kêu gọi HĐQT cân nhắc nguyện vọng nhân viên, trong đó nhiều người muốn Jensen Huang trở lại ghế CEO sau khi từ chức.",
+      "source_name": "VnExpress - Kinh doanh",
+      "source_url": "https://vnexpress.net/nhan-vien-nvidia-benh-vuc-jensen-huang-giua-be-boi-doi-tu-5144180.html",
+      "published_at": "Fri, 13 Nov 2026 12:05:00 +0700"
+    },
+    {
+      "item_id": "2d632a3ec3a9670d",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NKG"
+      ],
+      "sector": "Thép & Kim Loại Công Nghiệp",
+      "title": "Con gái Chủ tịch Thép Nam Kim đăng ký mua hàng triệu cổ phiếu NKG",
+      "summary": "Bà Hồ Uyển Nhi, con gái Chủ tịch HĐQT Thép Nam Kim (HOSE: NKG) Hồ Minh Quang, vừa đăng ký mua 5 triệu cổ phiếu NKG. Trước đó, hồi giữa năm nay, ông Hồ Minh Phát, một người con khác của ông Quang, cũng đã thực hiện giao dịch với quy mô tương tự.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/con-gai-chu-tich-thep-nam-kim-dang-ky-mua-hang-trieu-co-phieu-nkg-739-1514941.htm",
+      "published_at": "Sat, 14 Nov 2026 12:39:46 +0700"
+    },
+    {
+      "item_id": "dc751b60f64c0584",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "TAR"
+      ],
+      "sector": "Nông Nghiệp & Chăn Nuôi 3F",
+      "title": "Lãnh đạo TAR đăng ký mua 1 triệu cp giữa lúc kinh doanh lỗ nặng",
+      "summary": "Bà Nguyễn Lê Bảo Trang - Ủy viên HĐQT kiêm Tổng Giám đốc CTCP Nông nghiệp Công nghệ cao Trung An (UPCoM: TAR) - đăng ký mua 1 triệu cp trong giai đoạn 16/11-11/12, thông qua thỏa thuận và khớp lệnh, nhằm tăng tỷ lệ sở hữu.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/lanh-dao-tar-dang-ky-mua-1-trieu-cp-giua-luc-kinh-doanh-lo-nang-739-1514591.htm",
+      "published_at": "Fri, 13 Nov 2026 16:37:22 +0700"
+    },
+    {
+      "item_id": "4b4e78ea38cb1c35",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NTL"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Phó Chủ tịch Lideco Đinh Quang Chiến liên tục gom hàng triệu cổ phiếu NTL",
+      "summary": "Ba đợt mua vào trong chưa đầy 2 tháng đưa tỷ lệ sở hữu của ông Đinh Quang Chiến tại Lideco từ mức 16.2% lên 21.4%.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/pho-chu-tich-lideco-dinh-quang-chien-lien-tuc-gom-hang-trieu-co-phieu-ntl-739-1514537.htm",
+      "published_at": "Fri, 13 Nov 2026 12:00:00 +0700"
+    },
+    {
+      "item_id": "333d2ff750329460",
+      "market": "VN",
+      "category": "DIVIDEND_ESOP",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "CEO"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "CEO Novaland bán lượng cổ phiếu bằng 72% số có từ ESOP, ước thu trăm tỷ đồng",
+      "summary": "Cuối năm 2024 chưa nắm cổ phiếu NVL, ông Dương Văn Bắc năm ngoái mua và được thưởng tổng cộng gần 14.7 triệu cp ESOP. Chỉ hơn 2 tuần sau khi cổ phiếu trong đợt ESOP hết hạn hạn chế chuyển nhượng ngày 09/10/2026, ông bán lượng tương đương 72%, ước trị giá 107 tỷ đồng.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/ceo-novaland-ban-luong-co-phieu-bang-72-so-co-tu-esop-uoc-thu-tram-ty-dong-739-1513715.htm",
+      "published_at": "Wed, 11 Nov 2026 14:07:43 +0700"
+    },
+    {
+      "item_id": "663d7d085ceb13f8",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "KDH"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Nhóm quỹ VinaCapital mua thêm 12.5 triệu cổ phiếu KDH",
+      "summary": "Nhóm quỹ VinaCapital vừa mua vào 12.5 triệu cổ phiếu CTCP Đầu tư và Kinh doanh Nhà Khang Điền (Khang Điền, HOSE: KDH), qua đó nâng tỷ lệ sở hữu tại Doanh nghiệp lên 7.21% vốn điều lệ.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/nhom-quy-vinacapital-mua-them-125-trieu-co-phieu-kdh-739-1513660.htm",
+      "published_at": "Wed, 11 Nov 2026 14:06:06 +0700"
+    },
+    {
+      "item_id": "0f9bda32c3a3e14e",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "DXG"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Nhóm quỹ Dragon Capital mua 5 triệu cổ phiếu, trở lại ghế cổ đông lớn DXG",
+      "summary": "Nhóm quỹ liên quan đến Dragon Capital vừa hoàn tất mua 5 triệu cp của CTCP Bluemarq Group (HOSE: DXG) trong phiên 04/11, qua đó quay lại vị thế cổ đông lớn tại Doanh nghiệp sau gần 4 tháng.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/nhom-quy-dragon-capital-mua-5-trieu-co-phieu-tro-lai-ghe-co-dong-lon-dxg-739-1513705.htm",
+      "published_at": "Wed, 11 Nov 2026 13:53:49 +0700"
+    },
+    {
+      "item_id": "51bad135f4b06d24",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSN"
+      ],
+      "sector": "Thực Phẩm & Đồ Uống Thiết Yếu",
+      "title": "Sau đối tác Mỹ, tập đoàn Sojitz của Nhật Bản dự kiến mua 5% cổ phần MSR",
+      "summary": "Ngày 09/11/2026, CTCP Tập đoàn Masan (Masan Group, HOSE: MSN) và Tập đoàn Sojitz công bố đã ký kết Biên bản ghi nhớ (MOU). Theo đó, Sojitz sẽ mua 5% cổ phần CTCP Masan High-Tech Materials (UPCoM: MSR) từ Công ty TNHH Masan Horizon - công ty con do Masan Group sở hữu 100% vốn, với mức giá không thấp hơn giá đầu tư của Elmet vào MSR.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/sau-doi-tac-my-tap-doan-sojitz-cua-nhat-ban-du-kien-mua-5-co-phan-msr-739-1512946.htm",
+      "published_at": "Mon, 09 Nov 2026 14:32:10 +0700"
+    },
+    {
+      "item_id": "9cb3d28f8c61537d",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "QNS"
+      ],
+      "sector": "Thực Phẩm & Đồ Uống Thiết Yếu",
+      "title": "Phó Chủ tịch QNS liên tục gom cổ phiếu, sở hữu vượt 10%",
+      "summary": "Ông Võ Thành Đàng - Phó Chủ tịch HĐQT kiêm Tổng Giám đốc CTCP Đường Quảng Ngãi (UPCoM: QNS) - tiếp tục đăng ký mua 1 triệu cp trong thời gian từ 05/11-04/12 qua khớp lệnh và thỏa thuận, nhằm mục đích đầu tư.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/pho-chu-tich-qns-lien-tuc-gom-co-phieu-so-huu-vuot-10-739-1512405.htm",
+      "published_at": "Fri, 06 Nov 2026 17:07:19 +0700"
+    },
+    {
+      "item_id": "1df34d2dee84bd3f",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "Con gái Chủ tịch bị bán giải chấp thêm 2.3 triệu cp, thị giá PNJ về đáy mới",
+      "summary": "Đợt bán thứ 2 trong vòng chưa đầy 1 tuần diễn ra khi thị giá PNJ liên tục lùi về vùng thấp nhất nhiều năm. Kể từ sau cuộc ĐHĐCĐ bất thường ngày 21/10 đến nay, thị giá cổ phiếu đã giảm thêm 21%.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/con-gai-chu-tich-bi-ban-giai-chap-them-23-trieu-cp-thi-gia-pnj-ve-day-moi-739-1512359.htm",
+      "published_at": "Fri, 06 Nov 2026 13:00:12 +0700"
+    },
+    {
+      "item_id": "7b19bb60ab6604b1",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HPG"
+      ],
+      "sector": "Thép & Kim Loại Công Nghiệp",
+      "title": "Con trai tỷ phú Trần Đình Long chỉ mua 1/5 số cổ phiếu HPG đăng ký",
+      "summary": "Ông Trần Vũ Minh, con trai tỷ phú Trần Đình Long - Chủ tịch Tập đoàn Hòa Phát (HOSE: HPG), chỉ mua thành công 10 triệu cp HPG trong tổng số 50 triệu cp đăng ký, tương đương 20% kế hoạch.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/con-trai-ty-phu-tran-dinh-long-chi-mua-15-so-co-phieu-hpg-dang-ky-739-1512205.htm",
+      "published_at": "Fri, 06 Nov 2026 10:55:35 +0700"
+    },
+    {
+      "item_id": "c0d0a1d92cd4869e",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HAX"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "HAX chốt kế hoạch mua lại 4.5 triệu cp, sở hữu của nhóm liên quan Chủ tịch vượt 36%",
+      "summary": "CTCP Dịch vụ Ô tô Hàng Xanh (Haxaco, HOSE: HAX) dự kiến chi tối đa 45 tỷ đồng mua lại 4.5 triệu cp đang lưu hành. Theo đó, tỷ lệ sở hữu của nhóm Chủ tịch Đỗ Tiến Dũng có thể tăng từ 34.95% lên khoảng 36.47%, dù không mua thêm cổ phiếu.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/hax-chot-ke-hoach-mua-lai-45-trieu-cp-so-huu-cua-nhom-lien-quan-chu-tich-vuot-36-739-1511455.htm",
+      "published_at": "Wed, 04 Nov 2026 14:13:02 +0700"
+    },
+    {
+      "item_id": "5063e72334752ff6",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "DIG"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Chủ tịch DIG hoàn tất mua 5 triệu cổ phiếu",
+      "summary": "Ông Nguyễn Hùng Cường, Chủ tịch HĐQT Tổng Công ty Cổ phần Đầu tư Phát triển Xây dựng (DIC Corp, HOSE: DIG) vừa hoàn tất giao dịch mua vào 5 triệu cp như đăng ký, nâng tỷ lệ sở hữu tại Doanh nghiệp lên mức 4%.",
+      "source_name": "Vietstock - Doanh nghiệp",
+      "source_url": "http://vietstock.vn/2026/11/chu-tich-dig-hoan-tat-mua-5-trieu-co-phieu-739-1511448.htm",
+      "published_at": "Wed, 04 Nov 2026 13:50:05 +0700"
+    },
+    {
+      "item_id": "28368cf5d77fedee",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.28,
+      "tickers": [
+        "VIX"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Khối ngoại tiếp tục mua ròng, gom nhiều nhất một cổ phiếu chứng khoán",
+      "summary": "Điểm sáng trong phiên đến từ giao dịch của nhà đầu tư nước ngoài. Khối này mua ròng 337,5 tỷ đồng trên HoSE. VIX được mua ròng mạnh nhất với 308 tỷ đồng...",
+      "source_name": "VnEconomy - Chứng khoán",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-tiep-tuc-mua-rong-gom-nhieu-nhat-mot-co-phieu-chung-khoan.htm",
+      "published_at": "Fri, 13 Nov 2026 13:08:13 GMT"
+    },
+    {
+      "item_id": "14e02fcdf6bcd15d",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.28,
+      "tickers": [
+        "VIX"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Khối ngoại bất ngờ mua ròng mạnh ở VIX, VN-Index đảo chiều thành công",
+      "summary": "Khoảng 5 phút cuối cùng của đợt khớp lệnh liên tục VN-Index đã đảo chiều thành công nhờ một số blue-chips mạnh lên. Tuy nhiên đây cũng chỉ là những dao động giá nhỏ, khiến chỉ số chỉ vừa đủ điểm trên tham chiếu.",
+      "source_name": "VnEconomy - Chứng khoán",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-bat-ngo-mua-rong-manh-o-vix-vn-index-dao-chieu-thanh-cong.htm",
+      "published_at": "Fri, 13 Nov 2026 08:32:53 GMT"
+    },
+    {
+      "item_id": "f2f5e70b992c2551",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "CEO"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Chứng khoán Mỹ tụt điểm sau khi CEO của Nvidia mất chức, giá dầu thô tăng mạnh vì bài đăng của Tổng thống Trump",
+      "summary": "Thị trường chứng khoán Mỹ giảm điểm trong phiên giao dịch ngày thứ Năm (12/11), khi cổ phiếu Nvidia bị bán mạnh trong lúc nhà đầu tư đánh giá về tác động của việc CEO Jensen Huang bị cách chức do bê bối đời tư...",
+      "source_name": "VnEconomy - Chứng khoán",
+      "source_url": "https://vneconomy.vn/chung-khoan-my-tut-diem-sau-khi-ceo-cua-nvidia-mat-chuc-gia-dau-tho-tang-manh-vi-bai-dang-cua-tong-thong-trump.htm",
+      "published_at": "Fri, 13 Nov 2026 01:23:04 GMT"
+    },
+    {
+      "item_id": "84ae52e9fae8f83a",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "VND"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Ngân hàng Nhà nước bổ sung thanh khoản VND, chứng khoán sẽ phản ứng tích cực?",
+      "summary": "Dữ liệu lịch sử giai đoạn 2016–2023 cho thấy VN-Index thường có diễn biến tích cực sau các đợt Ngân hàng Nhà nước mua ngoại tệ. Trong 13 lần được thống kê, chỉ số tăng sau một tháng ở 11 lần và tăng sau ba tháng ở 12 lần. Mức tăng bình quân tương ứng là 4,35% và 9,87%.",
+      "source_name": "VnEconomy - Chứng khoán",
+      "source_url": "https://vneconomy.vn/ngan-hang-nha-nuoc-bo-sung-thanh-khoan-vnd-chung-khoan-se-phan-ung-tich-cuc.htm",
+      "published_at": "Thu, 12 Nov 2026 12:22:18 GMT"
+    },
+    {
+      "item_id": "51257d5446ae8942",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "SHB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "SHB mừng sinh nhật 33 năm với 333 giải thưởng và nhiều ưu đãi dành cho khách hàng",
+      "summary": "Nhân dịp kỷ niệm 33 năm thành lập, Ngân hàng TMCP Sài Gòn – Hà Nội (SHB) triển khai chuỗi chương trình ưu đãi dành cho khách hàng cá nhân và doanh nghiệp. Trong đó, chương trình “33 năm cùng tỏa sáng – Trúng quà sang” mang đến 333 giải thưởng với tổng trị giá hơn 1,5 tỷ đồng, như lời tri ân tới khách hàng đã tin tưởng và đồng hành cùng Ngân hàng.",
+      "source_name": "VnEconomy - Tài chính",
+      "source_url": "https://vneconomy.vn/shb-mung-sinh-nhat-33-nam-voi-333-giai-thuong-va-nhieu-uu-dai-danh-cho-khach-hang.htm",
+      "published_at": "Fri, 13 Nov 2026 03:14:29 GMT"
+    },
+    {
+      "item_id": "7001fbc510ff3390",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NVDA"
+      ],
+      "sector": "Semiconductors & AI",
+      "title": "[SEC 8-K — NVDA] 8-K",
+      "summary": "Hồ sơ SEC EDGAR Form 8-K nộp ngày 2026-11-12.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
+      "published_at": "2026-11-12"
+    },
+    {
+      "item_id": "743416a99c08ed4d",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NVDA"
+      ],
+      "sector": "Semiconductors & AI",
+      "title": "[SEC 4 — NVDA] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-11-06.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
+      "published_at": "2026-11-06"
+    },
+    {
+      "item_id": "b7910813f389e863",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NVDA"
+      ],
+      "sector": "Semiconductors & AI",
+      "title": "[SEC 4/A — NVDA] FORM 4/A",
+      "summary": "Hồ sơ SEC EDGAR Form 4/A nộp ngày 2026-10-13.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
+      "published_at": "2026-10-13"
+    },
+    {
+      "item_id": "779434a2f252d066",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NVDA"
+      ],
+      "sector": "Semiconductors & AI",
+      "title": "[SEC 4 — NVDA] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-10-09.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
+      "published_at": "2026-10-09"
+    },
+    {
+      "item_id": "7c5b175e95093a42",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NVDA"
+      ],
+      "sector": "Semiconductors & AI",
+      "title": "[SEC 4 — NVDA] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-09-23.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
+      "published_at": "2026-09-23"
+    },
+    {
+      "item_id": "5f8d8450649fc673",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NVDA"
+      ],
+      "sector": "Semiconductors & AI",
+      "title": "[SEC 4 — NVDA] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-09-22.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
+      "published_at": "2026-09-22"
+    },
+    {
+      "item_id": "20d0d282441c276f",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NVDA"
+      ],
+      "sector": "Semiconductors & AI",
+      "title": "[SEC 144 — NVDA] SEC Form 144",
+      "summary": "Hồ sơ SEC EDGAR Form 144 nộp ngày 2026-09-21.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
+      "published_at": "2026-09-21"
+    },
+    {
+      "item_id": "d3ffb725c515b2d2",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NVDA"
+      ],
+      "sector": "Semiconductors & AI",
+      "title": "[SEC 4 — NVDA] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-09-18.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
+      "published_at": "2026-09-18"
+    },
+    {
+      "item_id": "b5f1669be6812ecf",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 4 — AAPL] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-11-12.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-11-12"
+    },
+    {
+      "item_id": "b65233289fdbb6b9",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 8-K — AAPL] SEC Form 8-K",
+      "summary": "Hồ sơ SEC EDGAR Form 8-K nộp ngày 2026-11-09.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-11-09"
+    },
+    {
+      "item_id": "85997d90a0ae7111",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 424B2 — AAPL] 424B2",
+      "summary": "Hồ sơ SEC EDGAR Form 424B2 nộp ngày 2026-11-06.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-11-06"
+    },
+    {
+      "item_id": "2113a089dd035d48",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 4 — AAPL] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-11-05.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-11-05"
+    },
+    {
+      "item_id": "1a614bf8de9d782e",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 424B2 — AAPL] 424B2",
+      "summary": "Hồ sơ SEC EDGAR Form 424B2 nộp ngày 2026-11-05.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-11-05"
+    },
+    {
+      "item_id": "4b47d7ad67c12408",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 8-K — AAPL] 8-K",
+      "summary": "Hồ sơ SEC EDGAR Form 8-K nộp ngày 2026-11-02.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-11-02"
+    },
+    {
+      "item_id": "572e2a862957be38",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 4 — AAPL] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-10-29.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-10-29"
+    },
+    {
+      "item_id": "061519c7bab6377e",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 4 — AAPL] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-10-22.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-10-22"
+    },
+    {
+      "item_id": "3af5ee2ad4c7f061",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "AAPL"
+      ],
+      "sector": "Consumer Tech & Ecosystem",
+      "title": "[SEC 4 — AAPL] FORM 4",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-10-19.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+      "published_at": "2026-10-19"
+    },
+    {
+      "item_id": "032f552698217a4b",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 4 — MSFT] STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-11-12.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-11-12"
+    },
+    {
+      "item_id": "67b9bff221b5a294",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 4 — MSFT] STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-11-10.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-11-10"
+    },
+    {
+      "item_id": "0331ddffa268bc82",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 4 — MSFT] STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
+      "summary": "Hồ sơ SEC EDGAR Form 4 nộp ngày 2026-11-09.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-11-09"
+    },
+    {
+      "item_id": "1907667c8cd5842b",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC DEFA14A — MSFT] DEFA14A",
+      "summary": "Hồ sơ SEC EDGAR Form DEFA14A nộp ngày 2026-11-09.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-11-09"
+    },
+    {
+      "item_id": "c726cf704036f4a3",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 144 — MSFT] SEC Form 144",
+      "summary": "Hồ sơ SEC EDGAR Form 144 nộp ngày 2026-11-05.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-11-05"
+    },
+    {
+      "item_id": "d578f21056d0ae82",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 8-K — MSFT] 8-K",
+      "summary": "Hồ sơ SEC EDGAR Form 8-K nộp ngày 2026-11-05.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-11-05"
+    },
+    {
+      "item_id": "f2c0cc3df862b28c",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 8-K — MSFT] 8-K",
+      "summary": "Hồ sơ SEC EDGAR Form 8-K nộp ngày 2026-11-04.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-11-04"
+    },
+    {
+      "item_id": "111dd7faee901783",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 424B2 — MSFT] 424B2",
+      "summary": "Hồ sơ SEC EDGAR Form 424B2 nộp ngày 2026-11-02.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-11-02"
+    },
+    {
+      "item_id": "e1133bdc89848682",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 424B2 — MSFT] 424B2",
+      "summary": "Hồ sơ SEC EDGAR Form 424B2 nộp ngày 2026-10-29.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-10-29"
+    },
+    {
+      "item_id": "364fd9ef3c37003d",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC PX14A6G — MSFT] SEC Form PX14A6G",
+      "summary": "Hồ sơ SEC EDGAR Form PX14A6G nộp ngày 2026-10-28.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-10-28"
+    },
+    {
+      "item_id": "0ec5ee9057825019",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "MSFT"
+      ],
+      "sector": "Enterprise Software & Cloud",
+      "title": "[SEC 8-K — MSFT] 8-K",
+      "summary": "Hồ sơ SEC EDGAR Form 8-K nộp ngày 2026-10-28.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
+      "published_at": "2026-10-28"
+    },
+    {
+      "item_id": "80dc2af1250896b7",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "GOOGL"
+      ],
+      "sector": "Search & Hyperscale Cloud",
+      "title": "[SEC 144 — GOOGL] SEC Form 144",
+      "summary": "Hồ sơ SEC EDGAR Form 144 nộp ngày 2026-11-12.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044",
+      "published_at": "2026-11-12"
+    },
+    {
+      "item_id": "3c548382c1e24620",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "GOOGL"
+      ],
+      "sector": "Search & Hyperscale Cloud",
+      "title": "[SEC 8-K — GOOGL] 8-K",
+      "summary": "Hồ sơ SEC EDGAR Form 8-K nộp ngày 2026-11-05.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044",
+      "published_at": "2026-11-05"
+    },
+    {
+      "item_id": "e1ebd86879807e13",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "GOOGL"
+      ],
+      "sector": "Search & Hyperscale Cloud",
+      "title": "[SEC 424B2 — GOOGL] 424B2",
+      "summary": "Hồ sơ SEC EDGAR Form 424B2 nộp ngày 2026-11-04.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044",
+      "published_at": "2026-11-04"
+    },
+    {
+      "item_id": "006f48446f62729c",
+      "market": "US",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "GOOGL"
+      ],
+      "sector": "Search & Hyperscale Cloud",
+      "title": "[SEC 424B5 — GOOGL] 424B5",
+      "summary": "Hồ sơ SEC EDGAR Form 424B5 nộp ngày 2026-11-02.",
+      "source_name": "SEC EDGAR Official",
+      "source_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044",
+      "published_at": "2026-11-02"
+    },
+    {
+      "item_id": "f2a5c1b95c24af7e",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "DXG"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Dragon Capital nâng tỷ lệ sở hữu tại Bluemarq Group lên hơn 6%",
+      "summary": "Sau khi 5 quỹ thành viên mua vào tổng cộng 2,6 triệu cổ phiếu DXG, nhóm quỹ ngoại Dragon Capital đã tăng sở hữu lên 6,1906% vốn tại Bluemarq Group....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/dragon-capital-nang-ty-le-so-huu-tai-bluemarq-group-len-hon-6-18826111406591622.chn",
+      "published_at": "Sat, 14 Nov 26 07:24:00 +0700"
+    },
+    {
+      "item_id": "a4b60c5519198ceb",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "3 công ty quân đội muốn chi gần 1.500 tỷ đồng mua cổ phiếu MB, công ty đặc biệt của TP.HCM cũng tham gia",
+      "summary": "Ba công ty quân đội dự kiến chi gần 1.500 tỷ đồng mua cổ phiếu MB, trong đó một tổng công ty xây dựng đăng ký mua nhiều nhất. Danh sách còn có một công ty tài chính đặc biệt của TP.HCM, vừa báo lãi hàng nghìn tỷ đồng....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/3-cong-ty-quan-doi-muon-chi-gan-1500-ty-dong-mua-co-phieu-mb-cong-ty-dac-biet-cua-tphcm-cung-tham-gia-1882611131448031.chn",
+      "published_at": "Fri, 13 Nov 26 14:51:00 +0700"
+    },
+    {
+      "item_id": "d0f3faa60b3f2d27",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Chủ tịch Tân Hoàng Minh Đỗ Anh Dũng bị tạm hoãn xuất cảnh vì công ty nợ thuế hơn 300 tỷ",
+      "summary": "Ông Đỗ Anh Dũng, Chủ tịch Tập đoàn Tân Hoàng Minh, bị tạm hoãn xuất cảnh do một công ty mà ông là chủ sở hữu hưởng lợi đang có khoản nợ thuế lớn tại TP.HCM....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/chu-tich-tan-hoang-minh-do-anh-dung-bi-tam-hoan-xuat-canh-vi-cong-ty-no-thue-hon-300-ty-188261113113213709.chn",
+      "published_at": "Fri, 13 Nov 26 11:37:00 +0700"
+    },
+    {
+      "item_id": "7636f493f1e04a2c",
+      "market": "VN",
+      "category": "DIVIDEND_ESOP",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PVT"
+      ],
+      "sector": "Cảng Biển, Vận Tải Biển & Hàng Không",
+      "title": "PVT Logistics chốt ngày chào bán gần 57 triệu cổ phiếu cho cổ đông",
+      "summary": "PVT Logistics chào bán hơn 56,9 triệu cổ phiếu cho cổ đông với giá 10.000 đồng/cổ phiếu. Ngày đăng ký cuối cùng thực hiện quyền là 25/11/2026....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/pvt-logistics-chot-ngay-chao-ban-gan-57-trieu-co-phieu-cho-co-dong-188261113105921862.chn",
+      "published_at": "Fri, 13 Nov 26 10:59:00 +0700"
+    },
+    {
+      "item_id": "c48b4f048ecfda9b",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "FPT"
+      ],
+      "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "title": "Nhiều đối tác quốc tế bó tay, kỹ sư FPT tại Mỹ tìm ra lời giải chỉ trong 4 tuần",
+      "summary": "Một kỹ sư FPT tại Mỹ đã sử dụng trí tuệ nhân tạo (AI) để phát triển giải pháp truy xuất nguồn gốc pin ô tô trong khoảng 4 tuần, sau khi nhiều nhóm kỹ thuật và đối tác quốc tế của khách hàng chưa đáp ứng được yêu cầu đặt ...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/nhieu-doi-tac-quoc-te-bo-tay-ky-su-fpt-tai-my-tim-ra-loi-giai-chi-trong-4-tuan-188261113082256181.chn",
+      "published_at": "Fri, 13 Nov 26 08:27:00 +0700"
+    },
+    {
+      "item_id": "08df71d1a2cf1de1",
+      "market": "VN",
+      "category": "DIVIDEND_ESOP",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "FPT"
+      ],
+      "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "title": "FPT Telecom sắp chi gần 1.500 tỷ đồng trả cổ tức, Bộ Công an nhận hơn 741 tỷ đồng và hàng chục triệu cổ phiếu thưởng",
+      "summary": "FPT Telecom sẽ đồng thời trả cổ tức tiền mặt tỷ lệ 20% và thưởng cổ phiếu tỷ lệ 15% cho cổ đông hiện hữu. Với tỷ lệ sở hữu hơn 50%, Bộ Công an dự kiến nhận hơn 741 tỷ đồng tiền mặt cùng khoảng 55,6 triệu cổ phiếu mới....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/fpt-telecom-sap-chi-gan-1500-ty-dong-tra-co-tuc-bo-cong-an-nhan-hon-741-ty-dong-va-hang-chuc-trieu-co-phieu-thuong-188261112175409976.chn",
+      "published_at": "Fri, 13 Nov 26 00:02:00 +0700"
+    },
+    {
+      "item_id": "a014b4fe80df283f",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "TP.HCM thiếu công nhân xây dựng dù thu nhập lên tới 20 triệu đồng/tháng",
+      "summary": "TP.HCM đẩy nhanh nhiều dự án hạ tầng, giao thông, nhu cầu nhân lực xây dựng tăng cao nhưng doanh nghiệp vẫn khó tuyển công nhân dù thu nhập tới 20 triệu đồng/tháng....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/tphcm-thieu-cong-nhan-xay-dung-du-thu-nhap-len-toi-20-trieu-dong-thang-188261112193910212.chn",
+      "published_at": "Thu, 12 Nov 26 20:16:00 +0700"
+    },
+    {
+      "item_id": "2d534349b8bb6444",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "NKG"
+      ],
+      "sector": "Thép & Kim Loại Công Nghiệp",
+      "title": "Ái nữ kín tiếng của Chủ tịch Hồ Minh Quang lần đầu đăng ký mua cổ phiếu Thép Nam Kim",
+      "summary": "Trước giao dịch, con gái ông Hồ Minh Quang không nắm giữ cổ phiếu NKG của Thép Nam Kim....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/ai-nu-kin-tieng-cua-chu-tich-ho-minh-quang-lan-dau-dang-ky-mua-co-phieu-thep-nam-kim-188261113200054275.chn",
+      "published_at": "Fri, 13 Nov 26 20:03:00 +0700"
+    },
+    {
+      "item_id": "fd794528d6a7a6fd",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "KDH"
+      ],
+      "sector": "Bất Động Sản Dân Cư & Đô Thị",
+      "title": "Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền",
+      "summary": "Sau khi bán ra tổng cộng 710.000 cổ phiếu KDH trong phiên 12/11/2026, Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/dragon-capital-khong-con-la-co-dong-lon-tai-nha-khang-dien-188261113082848084.chn",
+      "published_at": "Fri, 13 Nov 26 08:28:00 +0700"
+    },
+    {
+      "item_id": "6a2c6cc4a7ed62cc",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PVS"
+      ],
+      "sector": "Dầu Khí Thượng Nguồn & Phân Phối",
+      "title": "PVS sắp họp ĐHĐCĐ bất thường để bàn về nhân sự",
+      "summary": "PVS dự tổ chức cuộc họp ĐHĐCĐ bất thường vào ngày 29/12/2026 bằng hình thức trực tuyến nhằm thông qua các vấn đề về công tác nhân sự Thành viên HĐQT của công ty....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/pvs-sap-hop-dhdcd-bat-thuong-de-ban-ve-nhan-su-188261113082743059.chn",
+      "published_at": "Fri, 13 Nov 26 08:27:00 +0700"
+    },
+    {
+      "item_id": "4208aa02aab3260e",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": -0.28,
+      "tickers": [
+        "FPT"
+      ],
+      "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "title": "Gần 200 cổ phiếu giảm giá, khối ngoại bán ròng đột biến",
+      "summary": "Sau hai phiên hồi phục, thị trường chứng khoán đảo chiều giảm mạnh trong ngày 12/11. Áp lực bán lan rộng ở nhóm cổ phiếu vốn hóa lớn, ngân hàng, bất động sản và chứng khoán. Đáng chú ý, khối ngoại bán ròng gần 450 tỷ đồn...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/gan-200-co-phieu-giam-gia-khoi-ngoai-ban-rong-dot-bien-188261112181544927.chn",
+      "published_at": "Thu, 12 Nov 26 18:15:00 +0700"
+    },
+    {
+      "item_id": "ad82999577c6294d",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "FPT"
+      ],
+      "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "title": "Cơn bĩ cực của cổ đông FPT",
+      "summary": "Cổ phiếu FPT tiếp tục giảm mạnh thủng đáy, “bốc hơi” gần 60% so với đỉnh....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/con-bi-cuc-cua-co-dong-fpt-18826111215335329.chn",
+      "published_at": "Thu, 12 Nov 26 15:33:00 +0700"
+    },
+    {
+      "item_id": "e8483520bec65532",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "ACB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Ngày 14/11, gửi dưới 1 tỷ đồng kỳ hạn 18 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Với kỳ hạn 18 tháng, lãi suất huy động tại 7 ngân hàng được khảo sát có sự chênh lệch đáng kể giữa hình thức gửi tại quầy và gửi trực tuyến. Trong đó, lãi suất online cao nhất trong nhóm lên tới 7,4%/năm, trong khi một s...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/ngay-14-11-gui-duoi-1-ty-dong-ky-han-18-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261113224114723.chn",
+      "published_at": "Sat, 14 Nov 26 02:00:00 +0700"
+    },
+    {
+      "item_id": "ed6f6c2987d8b141",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "Giá vàng miếng, vàng nhẫn trơn chiều 13/11 tại SJC, DOJI, PNJ, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Giá bán ra vàng miếng, vàng nhẫn hiện phổ biến 137 - 138 triệu đồng/lượng....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-tron-chieu-13-11-tai-sjc-doji-pnj-bao-tin-minh-chau-va-bao-tin-manh-hai-188261112231426077.chn",
+      "published_at": "Fri, 13 Nov 26 13:45:00 +0700"
+    },
+    {
+      "item_id": "65511287964e5aba",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "ACB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "ACB vượt mốc thương hiệu 1,4 tỷ USD, vào Top 3 ngân hàng tư nhân giá trị nhất Việt Nam",
+      "summary": "ACB vừa được Forbes Việt Nam vinh danh trong danh sách Top 50 Thương hiệu dẫn đầu Việt Nam 2026 với giá trị thương hiệu đạt 1,403 tỷ USD....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/acb-vuot-moc-thuong-hieu-14-ty-usd-vao-top-3-ngan-hang-tu-nhan-gia-tri-nhat-viet-nam-188261112233717134.chn",
+      "published_at": "Fri, 13 Nov 26 07:30:00 +0700"
+    },
+    {
+      "item_id": "c41cfc35d9d846bb",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "ACB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Ngày 13/11, gửi dưới 1 tỷ đồng kỳ hạn 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Lãi suất tiết kiệm kỳ hạn 6 tháng tại các ngân hàng đang có sự chênh lệch đáng kể giữa các nhà băng và giữa hai hình thức gửi tại quầy, gửi online. Với khoản tiền gửi dưới 1 tỷ đồng, số tiền lãi khách hàng nhận được sẽ p...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/ngay-13-11-gui-duoi-1-ty-dong-ky-han-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261112234438454.chn",
+      "published_at": "Fri, 13 Nov 26 01:31:00 +0700"
+    },
+    {
+      "item_id": "56ae3d41cda598f3",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "PNJ"
+      ],
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "title": "Giá vàng miếng, vàng nhẫn trơn 9999 chiều 12/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Hiện giá bán ra vàng nhẫn trơn phổ biến quanh 138 - 139 triệu đồng/lượng....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-tron-9999-chieu-12-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261111233803039.chn",
+      "published_at": "Thu, 12 Nov 26 15:29:00 +0700"
+    },
+    {
+      "item_id": "6623b2add8672fed",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "ACB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Một ngân hàng nhỏ bất ngờ vượt BIDV để lọt Top 5 nhà băng có tỷ trọng tiền gửi giá rẻ dẫn đầu cùng MB, Vietcombank, Techcombank, VietinBank",
+      "summary": "Một ngân hàng quy mô nhỏ ghi nhận tỷ lệ tiền gửi không kỳ hạn (CASA) đạt 21,4%, vượt qua nhiều nhà băng lớn như BIDV, ACB và Sacombank để góp mặt trong Top 5 toàn ngành....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/mot-ngan-hang-nho-bat-ngo-vuot-bidv-de-lot-top-5-nha-bang-co-ty-trong-tien-gui-gia-re-dan-dau-cung-mb-vietcombank-techcombank-vietinbank-188261112125252795.chn",
+      "published_at": "Thu, 12 Nov 26 13:56:00 +0700"
+    },
+    {
+      "item_id": "28f97385ea020814",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "HDBank, Vietjet và Vikki đồng hành mùa mua sắm cuối năm TP.HCM, kết nối ưu đãi tài chính – hàng không – du lịch",
+      "summary": "Hưởng ứng Vibrant HCMC và Shopping Season 2026, Sovico Group cùng HDBank, Vietjet, Vikki Digital Bank và các đối tác triển khai chuỗi ưu đãi tài chính, hàng không, mua sắm, du lịch và giải trí, góp phần kích cầu tiêu dùn...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/hdbank-vietjet-va-vikki-dong-hanh-mua-mua-sam-cuoi-nam-tphcm-ket-noi-uu-dai-tai-chinh-hang-khong-du-lich-188261112085820623.chn",
+      "published_at": "Thu, 12 Nov 26 08:58:00 +0700"
+    },
+    {
+      "item_id": "40e84619b94e488e",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "ACB"
+      ],
+      "sector": "Ngân Hàng TMCP",
+      "title": "Ngày 12/11, gửi dưới 1 tỷ đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Cùng kỳ hạn 12 tháng, lãi suất tiết kiệm tại 7 ngân hàng có sự chênh lệch đáng kể giữa hình thức gửi tại quầy và online....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/ngay-12-11-gui-duoi-1-ty-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261111232658813.chn",
+      "published_at": "Thu, 12 Nov 26 01:11:00 +0700"
+    },
+    {
+      "item_id": "34ef6dedbd64a113",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.28,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Tuyến cao tốc hơn 14.900 tỷ đồng, dài 22 km nối TP.HCM với siêu sân bay 16 tỷ USD chưa từng có trong lịch sử Việt Nam, rộng gấp 6 lần Tân Sơn Nhất đạt cột mốc quan trọng",
+      "summary": "Dự án mở rộng cao tốc TP.HCM - Long Thành có tổng mức đầu tư hơn 14.945 tỷ đồng, chiều dài gần 22 km, đang bước vào giai đoạn tăng tốc. Riêng gói thầu XL01 do liên danh đứng đầu là Tập đoàn Đèo Cả thực hiện đã đạt khoảng...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/tuyen-cao-toc-hon-14900-ty-dong-dai-22-km-noi-tphcm-voi-sieu-san-bay-16-ty-usd-chua-tung-co-trong-lich-su-viet-nam-rong-gap-6-lan-tan-son-nhat-dat-cot-moc-quan-trong-188261113224055041.chn",
+      "published_at": "Sat, 14 Nov 26 00:02:00 +0700"
+    },
+    {
+      "item_id": "05eed4ef49dda05e",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Bất ngờ căn hộ chung cư tại TPHCM có lượng tiêu thụ tháng 10 tăng gấp 2,2 lần tháng trước",
+      "summary": "Thị trường bất động sản nhà ở TP.HCM và vùng phụ cận trong tháng 10/2026 ghi nhận diễn biến trái chiều giữa các phân khúc. Trong khi căn hộ có tỷ lệ hấp thụ tăng lên 14%, lượng tiêu thụ nhà phố, biệt thự chỉ đạt khoảng 5...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/tphcm-cu-100-can-biet-thu-nha-pho-duoc-ban-ra-thi-co-toi-95-can-khong-ban-duoc-188261113135928595.chn",
+      "published_at": "Fri, 13 Nov 26 15:34:00 +0700"
+    },
+    {
+      "item_id": "01f7303ba55f0461",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.28,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "BLUEMARQ khởi công The Grand Tower, chào mừng 23 năm thành lập",
+      "summary": "Ngày 13/11/2026, BLUEMARQ Development khởi công dự án The Grand Tower tại phường Bình Hòa, TP.HCM. Tòa tháp gồm 44 tầng nổi và 2 tầng hầm, tọa lạc trên mặt tiền Đại lộ Bình Dương. Sự kiện diễn ra đúng ngày BLUEMARQ Group...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/bluemarq-khoi-cong-the-grand-tower-chao-mung-23-nam-thanh-lap-188261113144624278.chn",
+      "published_at": "Fri, 13 Nov 26 15:30:00 +0700"
+    },
+    {
+      "item_id": "1fb2456f54970c30",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Thành phố giàu nhất Việt Nam sắp xây cầu hơn 5.000 tỷ đồng nối Thủ Thiêm với khu Nam TP.HCM, dài 2,16 km, rộng 8 làn xe, có đường đi bộ độc đáo chưa từng có",
+      "summary": "Ngoài lối đi bộ bố trí hai bên cầu chính, cầu Thủ Thiêm 4 còn có một cầu riêng phía dưới dành cho người đi bộ và xe đạp, kết nối các công viên ven sông ở hai bờ....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://cafef.vn/thanh-pho-giau-nhat-viet-nam-sap-xay-cau-hon-5000-ty-dong-noi-thu-thiem-voi-khu-nam-tphcm-dai-216-km-rong-8-lan-xe-co-duong-di-bo-doc-dao-chua-tung-co-188261113105825893.chn",
+      "published_at": "Fri, 13 Nov 26 12:49:00 +0700"
+    },
+    {
+      "item_id": "9fd999557c52cf9a",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "VND"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Ngân hàng Nhà nước bổ sung thanh khoản VND, chứng khoán sẽ phản ứng tích cực?",
+      "summary": "Dữ liệu lịch sử giai đoạn 2016–2023 cho thấy VN-Index thường có diễn biến tích cực sau các đợt Ngân hàng Nhà nước mua ngoại tệ. Trong 13 lần được thống kê, chỉ số tăng sau một tháng ở 11 lần và tăng sau ba tháng ở 12 lần...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://vneconomy.vn/ngan-hang-nha-nuoc-bo-sung-thanh-khoan-vnd-chung-khoan-se-phan-ung-tich-cuc.htm",
+      "published_at": "Thu, 12 Nov 2026 12:22:18 GMT"
+    },
+    {
+      "item_id": "78234d10e4ca5be6",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "BSR"
+      ],
+      "sector": "Dầu Khí Thượng Nguồn & Phân Phối",
+      "title": "BSR và Liên danh FutureTec - Hanghua trao đổi cơ hội hợp tác phát triển chuỗi giá trị lọc hóa dầu",
+      "summary": "Tổng công ty Lọc hóa dầu Việt Nam (BSR) đã có buổi làm việc với Liên danh FutureTec - Hanghua nhằm trao đổi, tìm kiếm cơ hội hợp tác trong lĩnh vực chế biến sâu sản phẩm dầu khí, phát triển các sản phẩm có giá trị gia tă...",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://vneconomy.vn/bsr-va-lien-danh-futuretec-hanghua-trao-doi-co-hoi-hop-tac-phat-trien-chuoi-gia-tri-loc-hoa-dau.htm",
+      "published_at": "Tue, 10 Nov 2026 10:59:30 GMT"
+    },
+    {
+      "item_id": "29d378678beb5592",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Vietnam Connect Forum 2026: Đầu tư vào Việt Nam - Cơ hội không chỉ nằm ở dòng vốn",
+      "summary": "VietinBank tổ chức Vietnam Connect Forum 2026 ngày 17/11 tại TP.HCM, cập nhật chính sách đầu tư, thuế, triển vọng kinh tế và kết nối đối tác cho doanh nghiệp FDI....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://vneconomy.vn/vietnam-connect-forum-2026-dau-tu-vao-viet-nam-co-hoi-khong-chi-nam-o-dong-von.htm",
+      "published_at": "Mon, 09 Nov 2026 01:00:00 GMT"
+    },
+    {
+      "item_id": "863193799868767d",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HCM"
+      ],
+      "sector": "Chứng Khoán & Đầu Tư",
+      "title": "Giá vé máy bay Tết Đinh Mùi nhiều chặng tăng nhanh",
+      "summary": "Vé máy bay Tết từ TP HCM đi nhiều tỉnh miền Trung, miền Bắc đã lên 4-5 triệu đồng một chiều, khiến nhiều gia đình phải đổi kế hoạch về quê....",
+      "source_name": "Vietnam CBTT Radar",
+      "source_url": "https://vnexpress.net/gia-ve-may-bay-tet-dinh-mui-nhieu-chang-tang-nhanh-5143344.html",
+      "published_at": "Fri, 13 Nov 2026 05:43:05 +0700"
+    },
+    {
+      "item_id": "08c56466a68ef3aa",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Chủ tịch cùng loạt lãnh đạo Vidipha từ nhiệm sau biến động cổ đông",
+      "summary": "Vidipha nhận được đơn từ nhiệm của Chủ tịch Kiều Hữu cùng 3 thành viên HĐQT và 2 thành Ban Kiểm soát.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/chu-tich-cung-loat-lanh-dao-vidipha-tu-nhiem-sau-bien-dong-co-dong-188261115130100813.chn",
+      "published_at": "Sun, 15 Nov 26 13:00:00 +0700"
+    },
+    {
+      "item_id": "47e7c07d194dad8f",
+      "market": "VN",
+      "category": "DIVIDEND_ESOP",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Lịch chốt quyền cổ tức tuần 16-20/11: Cổ tức tiền mặt cao nhất 45%",
+      "summary": "Tuần này có 20 doanh nghiệp trả cổ tức bằng tiền mặt, mức cao nhất là 45% và thấp nhất là gần 4%.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/lich-chot-quyen-co-tuc-tuan-16-20-11-co-tuc-tien-mat-cao-nhat-45-188261114161213186.chn",
+      "published_at": "Sun, 15 Nov 26 08:05:00 +0700"
+    },
+    {
+      "item_id": "67451acadd124de5",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Hút 7.400 tỷ đồng trái phiếu với lãi suất chỉ 5%/năm, TokenBay đặt cược lớn vào sàn tài sản mã hóa",
+      "summary": "TokenBay vừa hoàn tất phát hành lô trái phiếu trị giá 7.400 tỷ đồng, kỳ hạn 5 năm với mức lãi suất cố định 5%/năm. Đây là lần đầu tiên công ty công nghệ này huy động vốn qua kênh trái phiếu, với mục đích đầu tư góp vốn vào CTCP Sàn giao dịch Tài sản mã hóa Techcom (TCEX).",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/hut-7400-ty-dong-trai-phieu-voi-lai-suat-chi-5-nam-tokenbay-dat-cuoc-lon-vao-san-tai-san-ma-hoa-188261114085838216.chn",
+      "published_at": "Sat, 14 Nov 26 09:32:00 +0700"
+    },
+    {
+      "item_id": "50e04d1a418182ef",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Khối ngoại bán ròng gần nghìn tỷ trong tuần 9-13/11, một cổ phiếu bị \"xả\" gần 900 tỷ",
+      "summary": "Dòng vốn ngoại tiếp tục có sự phân hóa đáng kể, trong đó ghi nhận tới 3 phiên mua ròng, song lượng tiền giải ngân vẫn chưa đủ bù đắp áp lực bán ra trong hai phiên còn lại.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/khoi-ngoai-ban-rong-gan-nghin-ty-trong-tuan-9-13-11-mot-co-phieu-bi-xa-gan-900-ty-188261113230204714.chn",
+      "published_at": "Sat, 14 Nov 26 05:01:00 +0700"
+    },
+    {
+      "item_id": "259e0436b59d2f05",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "HIGH",
+      "sentiment_score": 0.56,
+      "tickers": [],
+      "sector": "",
+      "title": "Lãi vượt kế hoạch năm, nắm \"núi tiền\" gần 50.000 tỷ đồng, một ông lớn sắp đón cú hích từ siêu dự án 12 tỷ USD",
+      "summary": "Theo Agriseco, một trong những động lực tăng trưởng dài hạn của DN đến từ khả năng cải thiện nguồn cung khí nội địa.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/lai-vuot-ke-hoach-nam-nam-nui-tien-gan-50000-ty-dong-mot-ong-lon-sap-don-cu-hich-tu-sieu-du-an-12-ty-usd-188261113215632023.chn",
+      "published_at": "Sat, 14 Nov 26 00:02:00 +0700"
+    },
+    {
+      "item_id": "2dcadaaef80ea4b0",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Một thành viên HĐQT Chứng khoán Kỹ thương (TCBS) xin từ nhiệm",
+      "summary": "CTCP Chứng khoán Kỹ Thương (TCBS) vừa công bố nhận được đơn từ nhiệm Thành viên HĐQT của ông Alexandre Charles Emmanuel Macaire.",
+      "source_name": "CafeF - Chứng khoán",
+      "source_url": "https://cafef.vn/mot-thanh-vien-hdqt-chung-khoan-ky-thuong-tcbs-xin-tu-nhiem-188261113143140187.chn",
+      "published_at": "Fri, 13 Nov 26 14:31:00 +0700"
+    },
+    {
+      "item_id": "e8277eecd3b9dc1e",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Lãi vay mua nhà hiện tại là bao nhiêu?",
+      "summary": "Thời điểm hiện tại các ngân hàng đã triển khai nhiều gói vay mua nhà ưu đãi. Tuy vậy, người mua nhà cân đối mức lãi suất thả nổi sau thời gian ưu đãi và tài chính cá nhân để đưa ra quyết định xuống tiền.",
+      "source_name": "CafeF - Bất động sản",
+      "source_url": "https://cafef.vn/lai-vay-mua-nha-hien-tai-la-bao-nhieu-188261115071446931.chn",
+      "published_at": "Sun, 15 Nov 26 09:43:00 +0700"
+    },
+    {
+      "item_id": "1293672478e9856e",
+      "market": "VN",
+      "category": "BCTC_EARNINGS",
+      "urgency": "HIGH",
+      "sentiment_score": -0.56,
+      "tickers": [],
+      "sector": "",
+      "title": "Cổ phiếu một công ty sách tăng 224% chỉ sau 13 phiên",
+      "summary": "Dù kinh doanh thua lỗ và cổ phiếu đang trong diện cảnh báo, thị giá vẫn tăng hơn 3 lần chỉ sau 13 phiên giao dịch.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/co-phieu-mot-cong-ty-sach-tang-224-chi-sau-13-phien-188261114104646716.chn",
+      "published_at": "Sun, 15 Nov 26 00:01:00 +0700"
+    },
+    {
+      "item_id": "b4ca1677de384b44",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Đúng ngày 14/11, hãng hàng không của bầu Hiển chính thức làm 1 việc đặc biệt kết nối TP có GDP 500 tỷ USD",
+      "summary": "Đây là tin vui ngay trước thềm các hoạt động cấp cao APEC 2026.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/dung-ngay-14-11-hang-hang-khong-cua-bau-hien-chinh-thuc-lam-1-viec-dac-biet-ket-noi-tp-co-gdp-500-ty-usd-188261114195621384.chn",
+      "published_at": "Sat, 14 Nov 26 19:56:00 +0700"
+    },
+    {
+      "item_id": "89d50f59916678d2",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Biến động lớn tại một doanh nghiệp dược: Chủ tịch cùng 5 lãnh đạo đồng loạt xin từ nhiệm, gần 34% vốn đã đổi chủ",
+      "summary": "Nếu các đơn từ nhiệm được thông qua, HĐQT Vidipha sẽ chỉ còn ba người là ông Bạch Quốc Vinh, bà Hà Lan Anh và ông Nguyễn Đức Anh. Cả ba đều là thành viên HĐQT độc lập, cùng được bầu vào HĐQT tại Đại hội đồng cổ đông bất thường ngày 8/1/2026. Ban kiểm soát sẽ chỉ còn bà Nguyễn Thị Thủy.",
+      "source_name": "CafeF - Doanh nghiệp",
+      "source_url": "https://cafef.vn/bien-dong-lon-tai-mot-doanh-nghiep-duoc-chu-tich-cung-5-lanh-dao-dong-loat-xin-tu-nhiem-gan-34-von-da-doi-chu-188261114174146189.chn",
+      "published_at": "Sat, 14 Nov 26 17:41:00 +0700"
+    },
+    {
+      "item_id": "d08aa264b2f8e625",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Lãi suất ngân hàng 15/11 tại Agribank, Vietcombank, BIDV, VietinBank, MB, VPBank, Techcombank, Sacombank, HDBank,...",
+      "summary": "Mặt bằng lãi suất tiết kiệm trực tuyến đang có sự phân hóa đáng kể giữa các ngân hàng. Trong khi nhiều nhà băng niêm yết mức 7%/năm ở kỳ hạn 6–12 tháng, lãi suất kỳ hạn 18 tháng có nơi lên tới 7,1%/năm.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/lai-suat-ngan-hang-15-11-tai-agribank-vietcombank-bidv-vietinbank-mb-vpbank-techcombank-sacombank-hdbank-188261115203330533.chn",
+      "published_at": "Sun, 15 Nov 26 20:32:00 +0700"
+    },
+    {
+      "item_id": "7a4a20e61948e79c",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Linh hoạt công cụ điều hành giải bài toán đa mục tiêu",
+      "summary": "Nhu cầu vốn của nền kinh tế thường gia tăng vào những tháng cuối năm, tạo thêm áp lực lên thanh khoản hệ thống ngân hàng. Trong khi đó, yêu cầu duy trì mặt bằng lãi suất hợp lý để hỗ trợ doanh nghiệp và người dân vẫn được đặt ra. Bài toán đối với NHNN là điều hành làm sao vừa đáp ứng nhu cầu vốn của hệ thống, vừa bảo đảm sự cân bằng giữa lãi suất, tỷ giá và ",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/linh-hoat-cong-cu-dieu-hanh-giai-bai-toan-da-muc-tieu-188261115093724148.chn",
+      "published_at": "Sun, 15 Nov 26 09:36:00 +0700"
+    },
+    {
+      "item_id": "e4f41a5b22f7f66f",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Ngân hàng tư nhân lớn nhất hệ thống vừa điều chỉnh lãi suất tiết kiệm, mức cao nhất còn 7,1%/năm",
+      "summary": "VPBank vừa điều chỉnh giảm lãi suất huy động tại một số kỳ hạn, với mức giảm mạnh nhất 0,4 điểm %/năm. Sau điều chỉnh, lãi suất tiết kiệm trực tuyến cao nhất dành cho khách hàng cá nhân dưới 1 tỷ đồng tại ngân hàng này còn 7,1%/năm.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/ngan-hang-tu-nhan-lon-nhat-he-thong-vua-dieu-chinh-lai-suat-tiet-kiem-muc-cao-nhat-con-71-nam-188261114224604433.chn",
+      "published_at": "Sun, 15 Nov 26 06:00:00 +0700"
+    },
+    {
+      "item_id": "6791ede8084e1fe6",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Lãi suất ngân hàng ngày 14/11 tại Agribank, Vietcombank, BIDV, VietinBank, MB, VPBank, Techcombank, Sacombank, HDBank,...",
+      "summary": "Lãi suất huy động trực tuyến ngày 14/11 ghi nhận nhiều ngân hàng niêm yết mức 7%/năm ở các kỳ hạn từ 6 đến 18 tháng. Đáng chú ý, nhóm Big4 cùng áp dụng lãi suất 6,8%/năm ở kỳ hạn 12 tháng, trong khi VPBank niêm yết mức 7,1%/năm ở kỳ hạn 18 tháng, cao nhất trong bảng khảo sát 35 ngân hàng.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/lai-suat-ngan-hang-ngay-14-11-tai-agribank-vietcombank-bidv-vietinbank-mb-vpbank-techcombank-sacombank-hdbank-18826111420353606.chn",
+      "published_at": "Sat, 14 Nov 26 20:33:00 +0700"
+    },
+    {
+      "item_id": "f49f6115763b3edc",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Giá vàng miếng, vàng nhẫn trơn hôm nay chiều tối 14/11",
+      "summary": "Giá mua vào vàng miếng một số nơi chỉ còn 133,8 triệu đồng/lượng.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-tron-hom-nay-chieu-toi-14-11-188261113234405328.chn",
+      "published_at": "Sat, 14 Nov 26 17:36:00 +0700"
+    },
+    {
+      "item_id": "278d3586024998b8",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "HDBank dành 2.000 tỷ đồng cho doanh nghiệp do phụ nữ làm chủ, lãi suất chỉ từ 7,8%/năm đến hết quý I/2027",
+      "summary": "HDBank triển khai chương trình “Tiếp sức vốn vay - Nâng tầm doanh nghiệp do Phụ nữ làm chủ” với hạn mức 2.000 tỷ đồng, lãi suất từ 7,8%/năm, hỗ trợ doanh nghiệp nhỏ và vừa bổ sung vốn lưu động phục vụ sản xuất kinh doanh.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/hdbank-danh-2000-ty-dong-cho-doanh-nghiep-do-phu-nu-lam-chu-lai-suat-chi-tu-78-nam-den-het-quy-i-2027-188261114111748694.chn",
+      "published_at": "Sat, 14 Nov 26 11:17:00 +0700"
+    },
+    {
+      "item_id": "b8a32218a1419176",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "BIDV vừa giảm lãi suất tiết kiệm: Kỳ hạn nào có lãi suất cao nhất?",
+      "summary": "BIDV vừa điều chỉnh giảm lãi suất huy động trực tuyến ở một số kỳ hạn, trong khi vẫn duy trì mức cao nhất 6,8%/năm. Nhà băng này hiện dẫn đầu hệ thống về quy mô tiền gửi khách hàng, với số dư hơn 2,36 triệu tỷ đồng tính đến cuối tháng 9/2026.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/bidv-vua-giam-lai-suat-tiet-kiem-ky-han-nao-co-lai-suat-cao-nhat-188261113204356829.chn",
+      "published_at": "Fri, 13 Nov 26 20:42:00 +0700"
+    },
+    {
+      "item_id": "825ad273e39c7dfd",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Lãi suất cho vay đã giảm, doanh nghiệp còn e ngại gì?",
+      "summary": "Ngoài việc giảm lãi suất, doanh nghiệp mong muốn các ngân hàng minh bạch, công khai cơ chế điều chỉnh lãi suất trong suốt thời gian vay vốn. Điều này giúp doanh nghiệp chủ động dự toán chi phí tài chính, xây dựng kế hoạch kinh doanh và hạn chế rủi ro khi sử dụng vốn ngân hàng.",
+      "source_name": "CafeF - Tài chính Ngân hàng",
+      "source_url": "https://cafef.vn/lai-suat-cho-vay-da-giam-doanh-nghiep-con-e-ngai-gi-188261113131641898.chn",
+      "published_at": "Fri, 13 Nov 26 14:16:00 +0700"
+    },
+    {
+      "item_id": "82fe57f57b1f5248",
+      "market": "VN",
+      "category": "BCTC_EARNINGS",
+      "urgency": "HIGH",
+      "sentiment_score": -0.56,
+      "tickers": [],
+      "sector": "",
+      "title": "Doanh nghiệp bất động sản, khách sạn bị phạt vì chậm công bố thông tin",
+      "summary": "Mới đây, Ủy ban Chứng khoán Nhà nước (UBCKNN) đưa ra quyết định xử phạt CTCP Gotec Land (GTLC), Công ty TNHH MTV Khách sạn Quốc tế Thiên Phúc (TPHC) do vi phạm quy định về thời hạn công bố thông tin, đặc biệt là các tài liệu liên quan đến BCTC và tình hình thanh toán gốc, lãi trái phiếu.",
+      "source_name": "Vietstock - Cổ phiếu",
+      "source_url": "http://vietstock.vn/2026/11/doanh-nghiep-bat-dong-san-khach-san-bi-phat-vi-cham-cong-bo-thong-tin-830-1514797.htm",
+      "published_at": "Fri, 13 Nov 2026 19:32:00 +0700"
+    },
+    {
+      "item_id": "b889e36cdd76fa0f",
+      "market": "VN",
+      "category": "BCTC_EARNINGS",
+      "urgency": "HIGH",
+      "sentiment_score": -0.56,
+      "tickers": [],
+      "sector": "",
+      "title": "Dầu khí An Pha và loạt doanh nghiệp bị xử phạt vi phạm công bố thông tin",
+      "summary": "Những vi phạm chủ yếu bắt nguồn từ hoạt động công bố thông tin liên quan đến trái phiếu, những sai lệch số liệu trong các báo cáo tài chính (BCTC) và cả những quy chế của doanh nghiệp.",
+      "source_name": "Vietstock - Cổ phiếu",
+      "source_url": "http://vietstock.vn/2026/11/dau-khi-an-pha-va-loat-doanh-nghiep-bi-xu-phat-vi-pham-cong-bo-thong-tin-3118-1514011.htm",
+      "published_at": "Wed, 11 Nov 2026 19:47:00 +0700"
+    },
+    {
+      "item_id": "34c3370fc981b270",
+      "market": "VN",
+      "category": "MA_INSIDER",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "Cựu Chủ tịch Bamboo Airways gia nhập hãng bay của Bầu Hiển",
+      "summary": "Ông Bùi Quang Dũng, cựu Chủ tịch HĐQT Bamboo Airways, vừa tham gia Vietravel Airlines với vai trò thành viên HĐQT.",
+      "source_name": "VnExpress - Kinh doanh",
+      "source_url": "https://vnexpress.net/cuu-chu-tich-bamboo-airways-gia-nhap-hang-bay-cua-bau-hien-5144596.html",
+      "published_at": "Sat, 14 Nov 2026 10:08:49 +0700"
+    },
+    {
+      "item_id": "3beb54692feca295",
+      "market": "VN",
+      "category": "MACRO_SBV_FED",
+      "urgency": "HIGH",
+      "sentiment_score": 0.0,
+      "tickers": [],
+      "sector": "",
+      "title": "IMF đánh giá Việt Nam kiểm soát tốt rủi ro lạm phát",
+      "summary": "Đại diện Quỹ Tiền tệ Quốc tế đánh giá Việt Nam kiểm soát tốt rủi ro lạm phát, song khuyến nghị điều chỉnh chính sách tiền tệ nếu áp lực giá tăng.",
+      "source_name": "VnExpress - Kinh doanh",
+      "source_url": "https://vnexpress.net/imf-danh-gia-viet-nam-kiem-soat-tot-rui-ro-lam-phat-5144481.html",
+      "published_at": "Fri, 13 Nov 2026 21:42:57 +0700"
+    }
+  ]
+}

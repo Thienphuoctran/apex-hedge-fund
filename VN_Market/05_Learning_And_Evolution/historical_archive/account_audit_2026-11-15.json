@@ -1,0 +1,39 @@
+{
+  "account_id": "105C307855",
+  "owner": "Trần Quốc Thiên Phước",
+  "total_nav_vnd": 18151471.0,
+  "total_cost_vnd": 5656700.0,
+  "total_market_val_vnd": 5635000.0,
+  "unrealized_pnl_vnd": -21700.0,
+  "unrealized_pnl_pct": -0.38,
+  "realized_pnl_vnd": 167119.0,
+  "cash_reserve_vnd": 12516471.0,
+  "account_hit_rate": 50.0,
+  "total_shares": 200,
+  "positions": [
+    {
+      "symbol": "HDB",
+      "shares": 100,
+      "entry_price": 22057.0,
+      "current_price": 22350.0,
+      "cost_vnd": 2205700.0,
+      "market_value_vnd": 2235000.0,
+      "pnl_vnd": 29300.0,
+      "pnl_pct": 1.33,
+      "stop_loss_2atr": 22060.0,
+      "status": "🟢 AN TOÀN"
+    },
+    {
+      "symbol": "MSH",
+      "shares": 100,
+      "entry_price": 34510.0,
+      "current_price": 34000.0,
+      "cost_vnd": 3451000.0,
+      "market_value_vnd": 3400000.0,
+      "pnl_vnd": -51000.0,
+      "pnl_pct": -1.48,
+      "stop_loss_2atr": 33090.0,
+      "status": "🟢 AN TOÀN"
+    }
+  ]
+}

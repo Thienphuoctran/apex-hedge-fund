@@ -52,6 +52,14 @@ DEFAULT_ADAPTIVE_FILTERS = {
     "evaluated_signals": 0,
     "hit_rate_t3_pct": 0.0,
     "hit_rate_t5_pct": 0.0,
+    "hit_rate_t10_pct": 0.0,
+    "hit_rate_t20_pct": 0.0,
+    "multi_horizon_attribution": {
+        "T+3": {"samples": 0, "hit_rate_pct": 0.0, "avg_return_pct": 0.0},
+        "T+5": {"samples": 0, "hit_rate_pct": 0.0, "avg_return_pct": 0.0},
+        "T+10": {"samples": 0, "hit_rate_pct": 0.0, "avg_return_pct": 0.0},
+        "T+20": {"samples": 0, "hit_rate_pct": 0.0, "avg_return_pct": 0.0},
+    },
     "bull_trap_rate_pct": 0.0,
     "avg_slippage_bps": 0.0,
     "tuning_note": "Ngưỡng khởi tạo chuẩn V4.0 (BuyUp >= 58%, RSI <= 70, Độ rộng >= 32%)",
@@ -146,6 +154,10 @@ def record_signal_if_new(
             "t3_return_pct": None,
             "t5_price": None,
             "t5_return_pct": None,
+            "t10_price": None,
+            "t10_return_pct": None,
+            "t20_price": None,
+            "t20_return_pct": None,
             "outcome": "PENDING",
             "updated_at": now_ict.strftime("%Y-%m-%d %H:%M:%S"),
         }
@@ -216,6 +228,10 @@ def record_execution_fill(
                 "t3_return_pct": None,
                 "t5_price": None,
                 "t5_return_pct": None,
+                "t10_price": None,
+                "t10_return_pct": None,
+                "t20_price": None,
+                "t20_return_pct": None,
                 "outcome": "PENDING",
                 "updated_at": now_ict.strftime("%Y-%m-%d %H:%M:%S"),
             }
@@ -254,7 +270,7 @@ def _fetch_daily_bars_vps(symbol: str, days_back: int = 35) -> List[Dict[str, An
 
 def evaluate_matured_signals(use_network: bool = True) -> Dict[str, Any]:
     """
-    Hồi tố các tín hiệu đã qua T+3 / T+5 ngày giao dịch, tính Hit Rate & Bull-Trap Rate,
+    Hồi tố các tín hiệu đã qua T+3 / T+5 / T+10 / T+20 ngày giao dịch, tính Hit Rate & Bull-Trap Rate,
     và tự động tinh chỉnh bộ lọc chống Bull-Trap trong `config/war_room_adaptive_filters.json`.
     """
     now_ict = _get_ict_now()
@@ -263,9 +279,13 @@ def evaluate_matured_signals(use_network: bool = True) -> Dict[str, Any]:
     with _TRACKER_LOCK:
         records = _load_tracker_list()
         if use_network:
-            pending_syms = sorted({r.get("symbol", "") for r in records if r.get("symbol") and r.get("outcome") in ("PENDING", "OPEN")})
+            pending_syms = sorted({
+                r.get("symbol", "")
+                for r in records
+                if r.get("symbol") and (r.get("outcome") in ("PENDING", "OPEN") or r.get("t20_price") is None)
+            })
             for sym in pending_syms:
-                bars_cache[sym] = _fetch_daily_bars_vps(sym)
+                bars_cache[sym] = _fetch_daily_bars_vps(sym, days_back=45)
 
         changed_recs: List[Dict[str, Any]] = []
         for r in records:
@@ -277,23 +297,32 @@ def evaluate_matured_signals(use_network: bool = True) -> Dict[str, Any]:
 
             bars = bars_cache.get(sym, [])
             after_bars = [b for b in bars if b["date"] > s_date]
-            if len(after_bars) >= 3 and r.get("t3_price") is None:
-                p3 = float(after_bars[2]["close"])
-                r["t3_price"] = p3
-                r["t3_return_pct"] = round(((p3 - base_p) / base_p) * 100.0, 2)
-                changed_recs.append(dict(r))
-            if len(after_bars) >= 5 and r.get("t5_price") is None:
-                p5 = float(after_bars[4]["close"])
-                r["t5_price"] = p5
-                r["t5_return_pct"] = round(((p5 - base_p) / base_p) * 100.0, 2)
+            updated_row = False
+            for idx_n, field_p, field_r in (
+                (2, "t3_price", "t3_return_pct"),
+                (4, "t5_price", "t5_return_pct"),
+                (9, "t10_price", "t10_return_pct"),
+                (19, "t20_price", "t20_return_pct"),
+            ):
+                if len(after_bars) > idx_n and r.get(field_p) is None:
+                    px_n = float(after_bars[idx_n]["close"])
+                    r[field_p] = px_n
+                    r[field_r] = round(((px_n - base_p) / base_p) * 100.0, 2)
+                    updated_row = True
+
+            if updated_row:
+                r["updated_at"] = now_ict.strftime("%Y-%m-%d %H:%M:%S")
                 changed_recs.append(dict(r))
 
             t3_ret = r.get("t3_return_pct")
             t5_ret = r.get("t5_return_pct")
-            if t5_ret is not None:
-                if float(t5_ret) >= 1.5:
+            t10_ret = r.get("t10_return_pct")
+            t20_ret = r.get("t20_return_pct")
+            eval_ret = t20_ret if t20_ret is not None else (t10_ret if t10_ret is not None else t5_ret)
+            if eval_ret is not None:
+                if float(eval_ret) >= 1.5:
                     r["outcome"] = "WIN"
-                elif float(t5_ret) <= -3.0:
+                elif float(eval_ret) <= -3.0:
                     r["outcome"] = "BULL_TRAP"
                 else:
                     r["outcome"] = "NEUTRAL_HOLD"
@@ -308,15 +337,33 @@ def evaluate_matured_signals(use_network: bool = True) -> Dict[str, Any]:
         if changed_recs:
             _save_tracker_list(records)
 
-        # Tổng hợp KPI & Tự tinh chỉnh bộ lọc Bull-Trap
-        eval_t3 = [r for r in records if r.get("t3_return_pct") is not None]
-        eval_t5 = [r for r in records if r.get("t5_return_pct") is not None]
+        # Tổng hợp KPI đa chu kỳ T+3 / T+5 / T+10 / T+20 & Tự tinh chỉnh bộ lọc Bull-Trap
+        def _horizon_stats(field_r: str) -> Dict[str, Any]:
+            rows = [r for r in records if r.get(field_r) is not None]
+            if not rows:
+                return {"samples": 0, "hit_rate_pct": 0.0, "avg_return_pct": 0.0}
+            rets = [float(r[field_r]) for r in rows]
+            hits = sum(1 for x in rets if x > 0)
+            return {
+                "samples": len(rows),
+                "hit_rate_pct": round((hits / len(rows)) * 100.0, 1),
+                "avg_return_pct": round(sum(rets) / len(rets), 2),
+            }
+
+        mh_attr = {
+            "T+3": _horizon_stats("t3_return_pct"),
+            "T+5": _horizon_stats("t5_return_pct"),
+            "T+10": _horizon_stats("t10_return_pct"),
+            "T+20": _horizon_stats("t20_return_pct"),
+        }
         slips = [float(r["slippage_bps"]) for r in records if r.get("slippage_bps") is not None]
         traps = [r for r in records if r.get("outcome") == "BULL_TRAP"]
         matured = [r for r in records if r.get("outcome") not in ("PENDING", None)]
 
-        hit_t3 = round((sum(1 for r in eval_t3 if float(r["t3_return_pct"]) > 0) / len(eval_t3)) * 100.0, 1) if eval_t3 else 0.0
-        hit_t5 = round((sum(1 for r in eval_t5 if float(r["t5_return_pct"]) > 0) / len(eval_t5)) * 100.0, 1) if eval_t5 else 0.0
+        hit_t3 = mh_attr["T+3"]["hit_rate_pct"]
+        hit_t5 = mh_attr["T+5"]["hit_rate_pct"]
+        hit_t10 = mh_attr["T+10"]["hit_rate_pct"]
+        hit_t20 = mh_attr["T+20"]["hit_rate_pct"]
         trap_rate = round((len(traps) / len(matured)) * 100.0, 1) if matured else 0.0
         avg_slip = round(sum(slips) / len(slips), 1) if slips else 0.0
 
@@ -351,6 +398,9 @@ def evaluate_matured_signals(use_network: bool = True) -> Dict[str, Any]:
             "evaluated_signals": len(matured),
             "hit_rate_t3_pct": hit_t3,
             "hit_rate_t5_pct": hit_t5,
+            "hit_rate_t10_pct": hit_t10,
+            "hit_rate_t20_pct": hit_t20,
+            "multi_horizon_attribution": mh_attr,
             "bull_trap_rate_pct": trap_rate,
             "avg_slippage_bps": avg_slip,
             "tuning_note": note,

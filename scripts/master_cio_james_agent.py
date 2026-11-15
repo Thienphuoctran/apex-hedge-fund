@@ -44,7 +44,7 @@ def _get_live_portfolio_context() -> str:
                 f"đã tất toán toàn bộ cổ phiếu cũ (HPG, TCB, MBB) và khóa lãi thực nhận +{realized:,.0f} VNĐ."
             )
         holdings_desc = ", ".join(
-            f"{sym} ({info.get('shares', 0)} CP @ {info.get('avg_price', 0):,.0f} ₫)"
+            f"{sym} ({info.get('shares', 0)} CP @ {info.get('entry_price', info.get('avg_price', 0)):,.0f} ₫)"
             for sym, info in positions.items()
             if info.get("shares", 0) > 0
         )
@@ -122,6 +122,49 @@ def handle_james_chat(user_text: str) -> str:
             reply_lines.append(f"• *Ứng dụng Apex*: {h['apex_heuristic']}\n")
         reply_lines.append("📖 _Chủ tịch có thể tra cứu toàn bộ 105 bài học tại file `05_Learning_And_Evolution/100_LEGENDARY_INVESTOR_HEURISTICS_MASTER_COMPENDIUM.md` hoặc qua API `/api/heuristics`._")
         return "\n".join(reply_lines)
+
+    # 0.05 BỘ NÃO PHÂN TÍCH BCTC CHUYÊN SÂU, TÌM KIẾM THÔNG TIN & TỐI ƯU ALPHA (/phantichtb, /bctc, /alpha, /timkiem, /toiuu)
+    if text_lower.startswith(("/phantichtb", "/bctc", "/alpha", "/timkiem", "/toiuu")):
+        try:
+            parts = text_clean.split(maxsplit=1)
+            arg_str = parts[1].strip() if len(parts) > 1 else ""
+            if text_lower.startswith("/timkiem") and arg_str:
+                from scripts.apex_omni_intelligence_crawler import search_market_intelligence
+                sr = search_market_intelligence(arg_str, limit=5)
+                lines = [f"🔍 *[OMNI-INTELLIGENCE SEARCH: '{arg_str}']*"]
+                for tk in sr.get("matched_tickers", [])[:3]:
+                    lines.append(f"• *{tk['symbol']}* ({tk.get('company_name','')}) — Giá `{tk.get('live_price',0):,.0f}` | P/E `{tk.get('pe',0)}` | ROE `{tk.get('roe',0)}%` | OCF/LNST `{tk.get('ocf_ratio',0)}x`")
+                for nw in sr.get("matched_news_and_filings", [])[:4]:
+                    lines.append(f"• [{nw['category']}] {nw['title']} _{nw['source_name']}_")
+                return "\n".join(lines)
+            elif arg_str:
+                from scripts.apex_deep_financial_brain import analyze_deep_bctc_and_valuation
+                d = analyze_deep_bctc_and_valuation(arg_str.split()[0].upper())
+                val = d.get("valuation", {})
+                forensic = d.get("forensic", {})
+                return (
+                    f"🧠 *[PHÂN TÍCH PHÁP Y BCTC & ĐỊNH GIÁ — {d['symbol']}]*\n"
+                    f"• *Ngành & Chế độ*: {d['sector_name']} (`{d['accounting_regime']}`)\n"
+                    f"• *Giá Live*: `{d['live_price']:,.2f}` (`{d['change_1d_pct']:+.2f}%`) | *Buy-Up*: `{d['buy_up_pct']}%`\n"
+                    f"• *BCTC*: ROE `{d['roe_pct']}%` | ROIC `{d['roic_est_pct']}%` (EVA `{d['eva_spread_pct']:+.1f}%`) | OCF/LNST `{d['ocf_ratio']}x` | F-Score `{d['piotroski_f_score']}/9`\n"
+                    f"• *Pháp y*: `{forensic.get('forensic_score', 80)}/100` — {forensic.get('forensic_label', '')}\n"
+                    f"• *Định giá 3 Mô hình*: Graham `{val.get('graham_target',0):,.0f}` | GARP `{val.get('pe_garp_target',0):,.0f}` | Hợp lưu **`{val.get('intrinsic_fair_value',0):,.0f}`** (MOS `{val.get('margin_of_safety_pct',0):+.1f}%` — `{val.get('verdict','')}`)\n"
+                    f"• *Catalyst*: {d.get('catalyst', '')}"
+                )
+            else:
+                from scripts.apex_deep_financial_brain import run_full_market_alpha_optimization
+                opt_res = run_full_market_alpha_optimization(force_live=True)
+                lines = [
+                    f"🚀 *[DEEP BRAIN ALPHA & TỐI ƯU LỢI NHUẬN]* (Cash: `{opt_res['account_ssot']['cash_balance_vnd']:,.0f}₫` | NAV Live: `{opt_res['account_ssot']['live_nav_vnd']:,.0f}₫`)"
+                ]
+                for h in opt_res.get("holdings_optimizer", []):
+                    lines.append(f"• *Đang giữ {h['symbol']}*: PnL `{h['pnl_vnd']:+,.0f}₫` (`{h['pnl_pct']:+.2f}%`) ➔ `{h['action']}`")
+                for pk in opt_res.get("top_vn_alpha_picks", [])[:4]:
+                    o = pk["optimizer"]
+                    lines.append(f"• *Top {pk['symbol']}*: Alpha `{pk['alpha_score']}` | EV `{o['ev_pct']:+.2f}%` | R:R `1:{o['rr_ratio']}` | Lô `{o['suggested_shares_lot100']} CP` (`{o['action_signal']}`)")
+                return "\n".join(lines)
+        except Exception as e:
+            return f"[!] Lỗi phân tích Deep Brain: {e}"
 
     # 0.1 CHUYỂN TIẾP TRỰC TIẾP CÁC LỆNH HỆ THỐNG (/tcbs, /baomat, /danhmuc, mua/bán...) SANG BỘ XỬ LÝ TRUNG TÂM
     direct_commands = [

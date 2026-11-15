@@ -883,6 +883,105 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
     avg_rr_num = round(sum(rr_vals) / len(rr_vals), 2) if rr_vals else 0.0
     avg_rr_str = f"1:{avg_rr_num:.2f}" if avg_rr_num > 0 else str(ledger_meta.get("average_rr", "1:2.50"))
 
+    deep_brain_summary: Dict[str, Any] = {
+        "top_vn_alpha_picks": [],
+        "holdings_optimizer": [],
+        "correlation_summary": {},
+        "system_maturity_iq": {},
+        "multi_horizon_walk_forward": {},
+        "legends_top_picks": [],
+        "omni_crawler_stats": {},
+        "catalyst_alerts": {},
+    }
+    try:
+        brain_path = BASE_DIR / "data" / "deep_financial_brain_analysis.json"
+        if brain_path.exists():
+            bd = json.loads(brain_path.read_text(encoding="utf-8"))
+            for p in bd.get("top_vn_alpha_picks", [])[:6]:
+                opt = p.get("optimizer", {})
+                val = p.get("valuation", {})
+                deep_brain_summary["top_vn_alpha_picks"].append({
+                    "symbol": p.get("symbol"),
+                    "sector_name": p.get("sector_name"),
+                    "live_price": p.get("live_price"),
+                    "alpha_score": p.get("alpha_score"),
+                    "ocf_ratio": p.get("ocf_ratio"),
+                    "ev_pct": opt.get("ev_pct"),
+                    "rr_ratio": opt.get("rr_ratio"),
+                    "half_kelly_pct": opt.get("half_kelly_pct"),
+                    "margin_of_safety_pct": val.get("margin_of_safety_pct"),
+                    "intrinsic_fair_value": val.get("intrinsic_fair_value"),
+                    "suggested_shares_lot100": opt.get("suggested_shares_lot100"),
+                    "action_signal": opt.get("action_signal"),
+                    "max_corr_with_holdings": p.get("max_corr_with_holdings"),
+                    "most_correlated_holding": p.get("most_correlated_holding"),
+                    "corr_guard_status": p.get("corr_guard_status"),
+                    "corr_penalty_075x": opt.get("corr_penalty_075x", False),
+                })
+            deep_brain_summary["holdings_optimizer"] = bd.get("holdings_optimizer", [])
+            cm = bd.get("correlation_matrix", {})
+            if isinstance(cm, dict) and cm:
+                deep_brain_summary["correlation_summary"] = {
+                    "session_window": cm.get("session_window", 60),
+                    "held_symbols": cm.get("held_symbols", []),
+                    "live_60d_series_fetched": cm.get("live_60d_series_fetched", 0),
+                    "total_symbols_evaluated": cm.get("total_symbols_evaluated", 0),
+                }
+    except Exception:
+        pass
+    try:
+        lg_path = BASE_DIR / "data" / "system_evolution_and_legends_state.json"
+        if not lg_path.exists():
+            lg_path = BASE_DIR / "data" / "legend_investor_wisdom_vault.json"
+        if lg_path.exists():
+            ld = json.loads(lg_path.read_text(encoding="utf-8"))
+            sr = ld.get("self_reflection", {})
+            iq_raw = dict(sr.get("system_maturity_iq", {}))
+            iq_raw["classification_counts"] = sr.get("classification_counts", {})
+            deep_brain_summary["system_maturity_iq"] = iq_raw
+            deep_brain_summary["multi_horizon_walk_forward"] = ld.get("multi_horizon_walk_forward", {}) or sr.get("multi_horizon_walk_forward", {})
+            for ev in ld.get("ticker_evaluations", [])[:6]:
+                top_adv = (ev.get("top_3_advocates") or [{}])[0]
+                deep_brain_summary["legends_top_picks"].append({
+                    "symbol": ev.get("symbol"),
+                    "market": ev.get("market"),
+                    "consensus_legends_score": ev.get("consensus_legends_score"),
+                    "supporting_legends_count": ev.get("supporting_legends_count"),
+                    "legends_verdict": ev.get("legends_verdict"),
+                    "top_advocate": f"{top_adv.get('name', '')} ({top_adv.get('score', 0)})",
+                    "key_dissent": f"{ev.get('key_dissent', {}).get('name', '')} ({ev.get('key_dissent', {}).get('score', 0)})",
+                })
+    except Exception:
+        pass
+    try:
+        omni_path = BASE_DIR / "data" / "omni_market_intelligence.json"
+        bctc_upd_path = BASE_DIR / "data" / "live_bctc_quarterly_updates.json"
+        alerts_path = BASE_DIR / "data" / "live_catalyst_alerts.json"
+        bctc_cnt = 0
+        if bctc_upd_path.exists():
+            bctc_cnt = int(json.loads(bctc_upd_path.read_text(encoding="utf-8")).get("total_tickers_updated", 0) or 0)
+        if omni_path.exists():
+            od = json.loads(omni_path.read_text(encoding="utf-8"))
+            sh = od.get("source_health", [])
+            deep_brain_summary["omni_crawler_stats"] = {
+                "crawled_at": od.get("crawled_at", ""),
+                "total_universe": (od.get("universe_counts") or {}).get("total", 180),
+                "total_items": od.get("total_items", 0),
+                "live_bctc_updates_count": bctc_cnt,
+                "sources_online": f"{sum(1 for s in sh if s.get('ok'))}/{len(sh)}" if sh else "0/0",
+            }
+        if alerts_path.exists():
+            ad = json.loads(alerts_path.read_text(encoding="utf-8"))
+            deep_brain_summary["catalyst_alerts"] = {
+                "updated_at": ad.get("updated_at", ""),
+                "total_alerts": ad.get("total_alerts", 0),
+                "holding_alerts_count": ad.get("holding_alerts_count", 0),
+                "risk_alerts_count": ad.get("risk_alerts_count", 0),
+                "alerts": (ad.get("alerts") or [])[:6],
+            }
+    except Exception:
+        pass
+
     return {
         "status": "ok",
         "chairman_name": "Trần Quốc Thiên Phước",
@@ -954,6 +1053,7 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
         },
         "global_spillover": snap.get("global_spillover", {}),
         "execution_tracker": snap.get("execution_tracker", {}),
+        "deep_brain_summary": deep_brain_summary,
         "directives_history": directives,
         "weekly_reference_plan": get_weekly_reference_roadmap(snapshot=snap)
     }

@@ -3718,6 +3718,74 @@ def generate_portal_html(
                         </div>
                     </div>
                 </div>
+
+                <!-- V5.0 OMNI-MARKET INTELLIGENCE, DEEP FINANCIAL BRAIN & 15 LEGENDS PANEL -->
+                <div id="wr-omni-brain-panel" style="margin-top: 14px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 12px;">
+                    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid rgba(148, 163, 184, 0.2); padding-bottom: 8px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 18px;">🧠</span>
+                            <div>
+                                <div style="font-size: 13px; font-weight: 900; color: #f8fafc;">TRUNG TÂM TÌNH BÁO THỊ TRƯỜNG, BỘ NÃO BCTC &amp; 15 HUYỀN THOẠI ĐẦU TƯ (V5.0)</div>
+                                <div style="font-size: 10.5px; color: #94a3b8;">Cào dữ liệu 180 mã VN/US thời gian thực • Định giá 3 mô hình &amp; Half-Kelly EV% • Tự kiểm điểm sai lầm &amp; Maturity IQ</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <span id="omni-crawler-badge" style="font-size: 10.5px; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.35); padding: 4px 8px; border-radius: 6px;">📡 Crawler: 180 mã sẵn sàng</span>
+                            <span id="omni-maturity-badge" style="font-size: 10.5px; font-weight: 800; color: #34d399; background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.35); padding: 4px 8px; border-radius: 6px;">🎓 Maturity IQ: Đang tải...</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+                        <input type="text" id="omni-search-input" placeholder="Tìm mã CP (HDB, MSH, BAF, NVDA...), tin CBTT, BCTC hoặc từ khóa vĩ mô..." onkeydown="if(event.key==='Enter') runOmniIntelSearch();" style="flex: 1; min-width: 240px; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.4); background: rgba(15, 23, 42, 0.9); color: #f8fafc; font-size: 12px; outline: none;">
+                        <button onclick="runOmniIntelSearch()" style="padding: 8px 14px; border-radius: 8px; border: 1px solid #38bdf8; background: rgba(14, 165, 233, 0.25); color: #f8fafc; font-weight: 800; font-size: 11.5px; cursor: pointer;">🔍 Tìm Kiếm Toàn Thị Trường</button>
+                        <button id="btn-omni-crawl" onclick="triggerOmniCrawlLive()" style="padding: 8px 14px; border-radius: 8px; border: 1px solid #10b981; background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 800; font-size: 11.5px; cursor: pointer;">📡 Cào Dữ Liệu Live Ngay</button>
+                    </div>
+
+                    <div id="omni-search-results" style="display: none; background: rgba(15, 23, 42, 0.78); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 8px; padding: 10px; font-size: 11px; color: #e2e8f0; max-height: 260px; overflow-y: auto;"></div>
+
+                    <div id="wr-omni-catalyst-strip" style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center; background: rgba(15, 23, 42, 0.68); border: 1px solid rgba(251, 191, 36, 0.28); border-radius: 8px; padding: 7px 10px; font-size: 10.5px; color: #e2e8f0;">
+                        ⚡ Đang tải Radar Catalyst, BCTC Quý Mới &amp; Chốt Chặn Tương Quan 60D...
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 12px;">
+                        <div style="background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; padding: 11px; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 11.5px; font-weight: 800; color: #fbbf24;">💎 TOP ALPHA BCTC &amp; TỐI ƯU LỢI NHUẬN (EV% &amp; HALF-KELLY)</span>
+                                <span style="font-size: 10px; color: #94a3b8;">Nhấn mã để soi Pháp y BCTC</span>
+                            </div>
+                            <div style="overflow-x: auto;">
+                                <table class="stock-sentinel-table" style="width: 100%; font-size: 11px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã CP</th>
+                                            <th>Giá Live</th>
+                                            <th>Alpha</th>
+                                            <th>MOS%</th>
+                                            <th>EV%</th>
+                                            <th>R:R</th>
+                                            <th>Corr 60D</th>
+                                            <th>Lô 100 / Tín Hiệu</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="omni-alpha-picks-body">
+                                        <tr><td colspan="8" style="color:#94a3b8; text-align:center;">Đang nạp dữ liệu Deep Brain...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="omni-deep-ticker-detail" style="display: none; background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(251, 191, 36, 0.35); border-radius: 8px; padding: 9px; font-size: 11px; color: #e2e8f0;"></div>
+                        </div>
+
+                        <div style="background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; padding: 11px; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 11.5px; font-weight: 800; color: #34d399;">🏛️ TỰ ĐÁNH GIÁ IQ &amp; HỘI ĐỒNG 15 HUYỀN THOẠI THẾ GIỚI</span>
+                                <span style="font-size: 10px; color: #94a3b8;">5 Trường Phái • 105 Tinh Hoa</span>
+                            </div>
+                            <div id="omni-maturity-metrics" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; font-size: 10.5px;"></div>
+                            <div id="omni-walk-forward-strip" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-size: 10px;"></div>
+                            <div id="omni-legends-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 7px;"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -5823,6 +5891,194 @@ def generate_portal_html(
                     <div style="margin-top: 2px; padding-top: 5px; border-top: 1px dashed rgba(148, 163, 184, 0.25); font-size: 10px; color: #94a3b8;">
                         🎯 <strong>Bộ Lọc Bull-Trap &amp; Slippage:</strong> BuyUp &ge; <strong style="color:#34d399;">${{minBu}}%</strong> • RSI &le; <strong style="color:#fbbf24;">${{maxRsi}}</strong> • Tín hiệu: <strong style="color:#fff;">${{sigCnt}}</strong> (Slip: ${{avgSlip >= 0 ? '+' : ''}}${{avgSlip.toFixed(1)}} bps)
                     </div>`;
+            }}
+
+            // 12. V5.0/V6.0 Deep Financial Brain, Catalyst Radar, 60D Correlation & 15 World Legends Sync
+            const dbSum = data.deep_brain_summary || {{}};
+            const cStats = dbSum.omni_crawler_stats || {{}};
+            const iqData = dbSum.system_maturity_iq || {{}};
+            const corrSum = dbSum.correlation_summary || {{}};
+            const catAlerts = dbSum.catalyst_alerts || {{}};
+            const wfMap = dbSum.multi_horizon_walk_forward || {{}};
+            const cBadge = document.getElementById('omni-crawler-badge');
+            if (cBadge && (cStats.total_items || cStats.total_universe)) {{
+                cBadge.innerText = `📡 Crawler: ${{cStats.total_universe || 180}} mã • ${{cStats.total_items || 0}} tin • BCTC Live: ${{cStats.live_bctc_updates_count || 0}}`;
+            }}
+            const mBadge = document.getElementById('omni-maturity-badge');
+            if (mBadge && iqData.maturity_score) {{
+                mBadge.innerText = `🎓 Maturity: ${{Number(iqData.maturity_score).toFixed(1)}}/100 • IQ ${{Number(iqData.collective_iq || 158).toFixed(1)}}`;
+            }}
+            const catStrip = document.getElementById('wr-omni-catalyst-strip');
+            if (catStrip) {{
+                const alList = catAlerts.alerts || [];
+                const badgesHtml = alList.slice(0, 3).map(al => {{
+                    const p = String(al.priority || '');
+                    const col = p.includes('RISK') ? '#f87171' : (p.includes('HOLDING') ? '#34d399' : '#38bdf8');
+                    const imp = Number(al.estimated_fair_value_impact_pct || 0);
+                    return `<button onclick="inspectDeepBrainTicker('${{escHtml(al.symbol || '')}}')" style="cursor:pointer; background:rgba(30,41,59,0.9); border:1px solid ${{col}}; color:${{col}}; border-radius:5px; padding:2px 7px; font-size:10px; font-weight:700;">${{escHtml(al.symbol || '')}} (${{imp >= 0 ? '+' : ''}}${{imp.toFixed(1)}}% FV): ${{escHtml(String(al.title || '').slice(0, 42))}}...</button>`;
+                }}).join('');
+                catStrip.innerHTML = `<span style="color:#fbbf24; font-weight:800;">⚡ Catalyst: ${{catAlerts.total_alerts || 0}} (Nắm giữ: ${{catAlerts.holding_alerts_count || 0}} • Rủi ro: ${{catAlerts.risk_alerts_count || 0}})</span> <span style="color:#94a3b8;">| 🔗 Corr 60D: ${{corrSum.live_60d_series_fetched || 0}} chuỗi sống</span> ${{badgesHtml}}`;
+            }}
+            const alphaBody = document.getElementById('omni-alpha-picks-body');
+            const topPicks = dbSum.top_vn_alpha_picks || [];
+            if (alphaBody && topPicks.length > 0) {{
+                alphaBody.innerHTML = topPicks.map(p => {{
+                    const mos = Number(p.margin_of_safety_pct || 0);
+                    const ev = Number(p.ev_pct || 0);
+                    const corrVal = Number(p.max_corr_with_holdings || 0);
+                    const cStat = String(p.corr_guard_status || 'CLEAR');
+                    const cCol = cStat.includes('CLUSTER') ? '#f87171' : (cStat.includes('OVERLAP') ? '#fbbf24' : '#34d399');
+                    const cLbl = cStat.includes('HOLDING') ? 'HOLD' : (cStat.includes('CLUSTER') ? '0.75x' : 'CLEAR');
+                    const symEsc = escHtml(p.symbol || '');
+                    return `<tr>
+                        <td><button onclick="inspectDeepBrainTicker('${{symEsc}}')" style="background:rgba(56,189,248,0.16); border:1px solid rgba(56,189,248,0.4); color:#38bdf8; font-weight:800; border-radius:4px; padding:2px 6px; cursor:pointer;">${{symEsc}}</button></td>
+                        <td style="font-weight:700;">${{Number(p.live_price || 0).toLocaleString('en-US')}}đ</td>
+                        <td><strong style="color:#fbbf24;">${{Number(p.alpha_score || 0).toFixed(1)}}</strong></td>
+                        <td style="color:${{mos >= 15 ? '#34d399' : '#e2e8f0'}};">${{mos >= 0 ? '+' : ''}}${{mos.toFixed(1)}}%</td>
+                        <td style="color:#34d399; font-weight:800;">${{ev >= 0 ? '+' : ''}}${{ev.toFixed(2)}}%</td>
+                        <td>1:${{Number(p.rr_ratio || 0).toFixed(2)}}</td>
+                        <td style="color:${{cCol}}; font-weight:700;">${{corrVal.toFixed(2)}} <span style="font-size:9px;">(${{cLbl}})</span></td>
+                        <td>${{Number(p.suggested_shares_lot100 || 0)}} CP • <span style="color:#93c5fd;">${{escHtml(p.action_signal || '')}}</span></td>
+                    </tr>`;
+                }}).join('');
+            }}
+            const mBox = document.getElementById('omni-maturity-metrics');
+            if (mBox && iqData.maturity_score) {{
+                const cnts = iqData.classification_counts || {{}};
+                mBox.innerHTML = `
+                    <div style="background:rgba(30,41,59,0.75); padding:6px 8px; border-radius:6px; border:1px solid rgba(52,211,153,0.25);">
+                        <div style="color:#94a3b8; font-size:9.5px;">MATURITY / IQ</div>
+                        <div style="color:#34d399; font-weight:900;">${{Number(iqData.maturity_score).toFixed(1)}} / ${{Number(iqData.collective_iq || 158).toFixed(1)}}</div>
+                    </div>
+                    <div style="background:rgba(30,41,59,0.75); padding:6px 8px; border-radius:6px; border:1px solid rgba(56,189,248,0.25);">
+                        <div style="color:#94a3b8; font-size:9.5px;">WIN RATE / BRIER</div>
+                        <div style="color:#38bdf8; font-weight:900;">${{Number(iqData.win_rate_pct || 0).toFixed(1)}}% • ${{Number(iqData.brier_calibration_score || 0).toFixed(3)}}</div>
+                    </div>
+                    <div style="background:rgba(30,41,59,0.75); padding:6px 8px; border-radius:6px; border:1px solid rgba(251,191,36,0.25);">
+                        <div style="color:#94a3b8; font-size:9.5px;">HÀNH VI ĐÚNG / BỎ LỠ</div>
+                        <div style="color:#fbbf24; font-weight:900;">✅ ${{cnts.EXECUTION_EXCELLENCE || 0}} • 🧭 ${{cnts.DISCIPLINED_PASS || 0}} • 💡 ${{cnts.OMISSION_ERROR || 0}}</div>
+                    </div>`;
+            }}
+            const wfStrip = document.getElementById('omni-walk-forward-strip');
+            if (wfStrip) {{
+                const keys = ['T+3', 'T+5', 'T+10', 'T+20'];
+                const cells = keys.map(hk => {{
+                    const hv = wfMap[hk] || {{}};
+                    const hr = Number(hv.hit_rate_pct || 0);
+                    const ar = Number(hv.avg_return_pct || 0);
+                    return `<div style="background:rgba(30,41,59,0.65); padding:4px 6px; border-radius:5px; border:1px solid rgba(148,163,184,0.2); text-align:center;">
+                        <div style="color:#94a3b8; font-weight:700;">Walk ${{hk}}</div>
+                        <div style="color:${{hr >= 60 ? '#34d399' : '#fbbf24'}}; font-weight:800;">${{hr.toFixed(1)}}% (${{ar >= 0 ? '+' : ''}}${{ar.toFixed(1)}}%)</div>
+                    </div>`;
+                }}).join('');
+                wfStrip.innerHTML = cells;
+            }}
+            const lBox = document.getElementById('omni-legends-cards');
+            const lList = dbSum.legends_top_picks || [];
+            if (lBox && lList.length > 0) {{
+                lBox.innerHTML = lList.map(ev => {{
+                    const sc = Number(ev.consensus_legends_score || 0);
+                    const col = sc >= 75 ? '#34d399' : (sc >= 65 ? '#38bdf8' : '#fbbf24');
+                    return `<div style="background:rgba(30,41,59,0.7); border:1px solid rgba(148,163,184,0.22); border-radius:7px; padding:7px 9px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <strong style="color:#f8fafc; font-size:12px;">${{escHtml(ev.symbol || '')}} <span style="font-size:9.5px; color:#94a3b8;">(${{escHtml(ev.market || 'VN')}})</span></strong>
+                            <span style="color:${{col}}; font-weight:900; font-size:11.5px;">${{sc.toFixed(1)}}/100 (${{ev.supporting_legends_count || 0}}/15)</span>
+                        </div>
+                        <div style="font-size:9.5px; color:#cbd5e1; margin-top:2px;">🏆 ${{escHtml(ev.top_advocate || '')}}</div>
+                        <div style="font-size:9px; color:#94a3b8; margin-top:1px;">⚖️ Phản biện: ${{escHtml(ev.key_dissent || '')}}</div>
+                    </div>`;
+                }}).join('');
+            }}
+        }}
+
+        async function runOmniIntelSearch() {{
+            const inp = document.getElementById('omni-search-input');
+            const out = document.getElementById('omni-search-results');
+            if (!out) return;
+            const q = inp ? inp.value.trim() : '';
+            out.style.display = 'block';
+            out.innerHTML = '<div style="color:#38bdf8;">⏳ Đang quét FTS5 toàn thị trường (180 mã, BCTC, CBTT &amp; Kho Báo Cáo)...</div>';
+            try {{
+                const res = await fetch('/api/intelligence/search?q=' + encodeURIComponent(q) + '&limit=12');
+                const data = await res.json();
+                if (!res.ok || !data.ok) {{
+                    out.innerHTML = '<div style="color:#f87171;">❌ Lỗi tìm kiếm: ' + escHtml(data.error || 'HTTP ' + res.status) + '</div>';
+                    return;
+                }}
+                const tks = data.matched_tickers || [];
+                const nws = data.matched_news_and_filings || [];
+                const rps = data.matched_reports || [];
+                let html = `<div style="margin-bottom:6px; color:#94a3b8;">Kết quả cho <strong style="color:#fff;">"${{escHtml(q || 'Tất cả')}}"</strong>: ${{tks.length}} cổ phiếu • ${{nws.length}} tin CBTT/SEC • ${{rps.length}} báo cáo nội bộ</div>`;
+                if (tks.length > 0) {{
+                    html += '<div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;">' + tks.slice(0, 6).map(t => {{
+                        return `<div onclick="inspectDeepBrainTicker('${{escHtml(t.symbol)}}')" style="cursor:pointer; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.35); border-radius:6px; padding:5px 8px;">
+                            <strong style="color:#38bdf8;">${{escHtml(t.symbol)}}</strong> (${{escHtml(t.market)}}) • Giá: <strong>${{Number(t.live_price || 0).toLocaleString('en-US')}}</strong> • P/E: ${{Number(t.pe || 0).toFixed(1)}} • ROE: ${{Number(t.roe || 0).toFixed(1)}}% • OCF/LNST: ${{Number(t.ocf_ratio || 0).toFixed(2)}}x
+                        </div>`;
+                    }}).join('') + '</div>';
+                }}
+                if (nws.length > 0) {{
+                    html += nws.slice(0, 8).map(n => `<div style="padding:3px 0; border-top:1px dashed rgba(148,163,184,0.18);">
+                        <span style="color:#fbbf24; font-weight:700;">[${{escHtml(n.category || 'NEWS')}}]</span> <strong>${{escHtml(n.title || '')}}</strong> <span style="color:#94a3b8;">(${{escHtml(n.source_name || '')}})</span>
+                    </div>`).join('');
+                }}
+                out.innerHTML = html;
+            }} catch (e) {{
+                out.innerHTML = '<div style="color:#f87171;">❌ Lỗi kết nối: ' + escHtml(e.message) + '</div>';
+            }}
+        }}
+
+        async function triggerOmniCrawlLive() {{
+            const btn = document.getElementById('btn-omni-crawl');
+            const out = document.getElementById('omni-search-results');
+            if (btn) {{ btn.disabled = true; btn.innerText = '⏳ Đang cào 12 nguồn...'; }}
+            try {{
+                const res = await fetch('/api/intelligence/crawl', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ force: true }})
+                }});
+                const data = await res.json();
+                if (out) {{
+                    out.style.display = 'block';
+                    if (data.ok) {{
+                        out.innerHTML = `<div style="color:#34d399; font-weight:800;">✅ Đã cào xong ${{data.total_items || 0}} bản tin/CBTT từ ${{data.sources_online || ''}} nguồn (${{escHtml(data.crawled_at || '')}})!</div>`;
+                        await loadTacticalWarRoomData();
+                    }} else {{
+                        out.innerHTML = '<div style="color:#f87171;">❌ ' + escHtml(data.error || 'Crawl failed') + '</div>';
+                    }}
+                }}
+            }} catch (e) {{
+                if (out) {{ out.style.display = 'block'; out.innerHTML = '<div style="color:#f87171;">❌ ' + escHtml(e.message) + '</div>'; }}
+            }} finally {{
+                if (btn) {{ btn.disabled = false; btn.innerText = '📡 Cào Dữ Liệu Live Ngay'; }}
+            }}
+        }}
+
+        async function inspectDeepBrainTicker(sym) {{
+            const box = document.getElementById('omni-deep-ticker-detail');
+            if (!box || !sym) return;
+            box.style.display = 'block';
+            box.innerHTML = '<div style="color:#fbbf24;">⏳ Đang phân tích DuPont, Pháp y BCTC &amp; Định giá 3 mô hình cho ' + escHtml(sym) + '...</div>';
+            try {{
+                const res = await fetch('/api/deep_brain?ticker=' + encodeURIComponent(sym));
+                const data = await res.json();
+                if (!res.ok || !data.ok || !data.analysis) {{
+                    box.innerHTML = '<div style="color:#f87171;">❌ Không tải được dữ liệu ' + escHtml(sym) + '</div>';
+                    return;
+                }}
+                const a = data.analysis;
+                const v = a.valuation || {{}};
+                const f = a.forensic || {{}};
+                box.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                        <strong style="color:#fbbf24; font-size:12px;">🔬 ${{escHtml(a.symbol)}} — ${{escHtml(a.company_name || '')}} (${{escHtml(a.accounting_regime || '')}})</strong>
+                        <span style="color:#34d399; font-weight:800;">Pháp y: ${{Number(f.forensic_score || 0).toFixed(0)}}/100 • Piotroski ${{a.piotroski_f_score || 0}}/9</span>
+                    </div>
+                    <div>• ROE: <strong>${{Number(a.roe_pct || 0).toFixed(1)}}%</strong> | ROIC: <strong>${{Number(a.roic_est_pct || 0).toFixed(1)}}%</strong> (EVA <strong>${{Number(a.eva_spread_pct || 0) >= 0 ? '+' : ''}}${{Number(a.eva_spread_pct || 0).toFixed(1)}}%</strong>) | OCF/LNST: <strong>${{Number(a.ocf_ratio || 0).toFixed(2)}}x</strong></div>
+                    <div>• Định giá: Graham <strong>${{Number(v.graham_target || 0).toLocaleString('en-US')}}</strong> | GARP <strong>${{Number(v.pe_garp_target || 0).toLocaleString('en-US')}}</strong> | Hợp lưu <strong style="color:#34d399;">${{Number(v.intrinsic_fair_value || 0).toLocaleString('en-US')}}</strong> (MOS <strong>${{Number(v.margin_of_safety_pct || 0).toFixed(1)}}%</strong> — ${{escHtml(v.verdict || '')}})</div>
+                    <div style="color:#94a3b8; margin-top:2px;">• Catalyst: ${{escHtml(a.catalyst || '')}}</div>`;
+            }} catch (e) {{
+                box.innerHTML = '<div style="color:#f87171;">❌ ' + escHtml(e.message) + '</div>';
             }}
         }}
 

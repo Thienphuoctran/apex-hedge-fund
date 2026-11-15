@@ -1,11 +1,11 @@
 {
-  "calibrated_at": "2026-11-13T03:22:57.243806+00:00",
+  "calibrated_at": "2026-11-15T21:51:25.346926+07:00",
   "market_regime": "Standard Growth",
   "scoring_weights": {
-    "macro_sector_fit": 25,
-    "fundamental_and_fcf": 30,
+    "macro_sector_fit": 24,
+    "fundamental_and_fcf": 32,
     "valuation_and_upside": 25,
-    "technical_and_risk_reward": 20
+    "technical_and_risk_reward": 19
   },
   "risk_rules": {
     "max_single_position_risk_nav_pct": 0.3,
