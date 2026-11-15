@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-15 22:49:50",
-  "target_url": "http://127.0.0.1:18080",
+  "timestamp": "2026-11-15 22:52:17",
+  "target_url": "https://apex-hedge-fund.onrender.com",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -59,13 +59,13 @@
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room/stream (SSE)",
       "status": "PASSED",
-      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 83498"
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 83015"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/reports",
       "status": "PASSED",
-      "details": "Tổng số báo cáo: 371"
+      "details": "Tổng số báo cáo: 372"
     },
     {
       "module": "Live_Endpoint",
@@ -221,7 +221,7 @@
       "module": "Phase5_EnterpriseRosterAndPackets",
       "check": "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
       "status": "PASSED",
-      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: bc69c1d3d480..."
+      "details": "Roster: 14 | Quorum: 14/14 | Packets: 13 | Audit: 10/10 | Seal: 5b160b6855a5..."
     },
     {
       "module": "Phase5_AdversarialDebateAndVeto",
@@ -245,7 +245,7 @@
       "module": "Phase5_CloudDB_V7_EnterpriseSync",
       "check": "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
       "status": "PASSED",
-      "details": "LocalSaved=True | VaultRows=2 | MigrationRLS=True | CloudSynced=False"
+      "details": "LocalSaved=True | VaultRows=3 | MigrationRLS=True | CloudSynced=False"
     }
   ],
   "total_checks": 40,
