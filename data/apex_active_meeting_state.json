@@ -1,7 +1,7 @@
 {
   "meeting_id": "APEX-SUMMIT-AUTONOMOUS-V2",
-  "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (PHIÊN BẢN TỰ TRỊ ĐỐI KHÁNG V2.0)",
-  "subtitle": "Độc Lập Chuyên Môn • Tranh Biện Đối Kháng 4 Hiệp Nảy Lửa • Pháp Y BCTC Tiền Thật Q3/2026",
+  "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (PHIÊN BẢN TỰ TRỊ ĐỐI KHÁNG V7.0)",
+  "subtitle": "14 Thực Thể Độc Lập • Tranh Biện Đối Kháng Nảy Lửa • Pháp Y BCTC Tiền Thật",
   "start_time": "2026-11-08T21:00:00+07:00",
   "end_time": "2026-11-08T21:30:00+07:00",
   "duration_minutes": 30,
@@ -11,9 +11,10 @@
   "permanent_inspector": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Thường Trực Bất Biến)",
   "account_state": {
     "account_no": "105C307855 (TCBS)",
-    "cash_balance": "20,167,119 ₫",
-    "cash_ratio": "100.0%",
-    "equity_risk": "0 ₫ (0 CP kẹp hàng)",
+    "total_nav": "18,151,471 ₫",
+    "cash_balance": "12,516,471 ₫",
+    "cash_ratio": "69.0%",
+    "equity_risk": "5,635,000 ₫ (HDB (100 CP @ 22,057₫), MSH (100 CP @ 34,510₫))",
     "realized_profit_v1": "+167,119 ₫ (Đã chốt lời trọn vẹn)"
   },
   "compliance_audit": {
@@ -54,7 +55,7 @@
         {
           "step": 1,
           "minute": "00 – 03",
-          "label": "Khai mạc & Đối soát tiền mặt 20.167.119 đ",
+          "label": "Khai mạc & Đối soát SSOT (NAV 18,151,471 ₫ | Cash 12,516,471 ₫)",
           "owner": "James, Nam & Trọng"
         },
         {
@@ -110,11 +111,11 @@
     }
   ],
   "executive_approval": {
-    "status": "APPROVED",
-    "approved_by": "Chủ tịch Trần Quốc Thiên Phước",
-    "approval_time": "2026-11-08 23:08:16",
-    "seal": "🛡️ BAN 12 TRỌNG ĐÃ NIÊM PHONG PHÁP LÝ THỂ CHẾ",
-    "order_blotter_status": "READY_FOR_EXECUTION"
+    "status": "PENDING_CHAIRMAN_APPROVAL",
+    "approved_by": null,
+    "approval_time": null,
+    "seal": "⏳ Chờ Chủ Tịch Trần Quốc Thiên Phước Bấm Nút Phê Chuẩn",
+    "order_blotter_status": "LOCKED_PRE_EXECUTION"
   },
   "voting_board": [
     {
@@ -234,12 +235,13 @@
       "avatar": "💼",
       "badge": "ĐỐI SOÁT TÀI SẢN",
       "badge_color": "#34d399",
-      "content": "Báo cáo Chủ tịch và Hội đồng: Số dư tài khoản TCBS (105C307855) chuẩn SSOT V2.0 hiện tại là **20,167,119 ₫ (100% TIỀN MẶT — 0 CP rủi ro)**. Toàn bộ lãi Vòng 1 (+167,119 ₫) đã được bảo toàn nguyên vẹn trong két. Chúng ta đang nắm quyền chủ động 100% về thanh khoản!",
-      "highlight": "Đối soát số dư 20,167,119 ₫ (100% Tiền Mặt) — Lãi Vòng 1 bảo toàn trong két",
+      "content": "Báo cáo Chủ tịch và Hội đồng: Tài sản thực tế trên TCBS (105C307855) chuẩn SSOT hiện tại: Tổng NAV **18,151,471 ₫** — Tiền mặt khả dụng **12,516,471 ₫ (69.0% NAV)**, Cổ phiếu đang nắm giữ **5,635,000 ₫ (HDB (100 CP @ 22,057₫), MSH (100 CP @ 34,510₫))**, Lãi đã chốt **+167,119 ₫**. Thanh khoản được bảo vệ an toàn!",
+      "highlight": "Đối soát SSOT 105C307855: NAV 18,151,471 ₫ | Cash 12,516,471 ₫ (69.0%)",
       "metrics": {
-        "Cash": "20,167,119 ₫",
-        "Cash_Ratio": "100%",
-        "Open_Risk": "0 ₫"
+        "NAV": "18,151,471 ₫",
+        "Cash": "12,516,471 ₫",
+        "Cash_Ratio": "69.0%",
+        "Open_Equity": "5,635,000 ₫ (HDB (100 CP @ 22,057₫), MSH (100 CP @ 34,510₫))"
       }
     },
     {
@@ -984,55 +986,17 @@
       "avatar": "🎖️",
       "badge": "BẾ MẠC & KẾT LUẬN",
       "badge_color": "#38bdf8",
-      "content": "Đúng 21h30:00, tôi xin tổng kết và bế mạc phiên họp Thượng đỉnh. Hội đồng đã mổ xẻ rốt ráo Top 4 siêu cổ phiếu và thống nhất Sổ Lệnh Bắn Tỉa Vòng 2:\n1. **MSH (35.5k)**: Kê LO 35.0 – 35.3 (1 lô = 3,55 triệu • Stop 33.09k)\n2. **BAF (30.9k)**: Kê LO 30.5 – 30.8 (1 lô = 3,09 triệu • Stop 29.65k • Kèm phiếu bảo lưu Ban 3)\n3. **HDB (22.5k)**: Kê LO 22.2 – 22.5 (1 lô = 2,25 triệu • Stop 21.22k)\n4. **IDC (34.9k)**: Kê LO 34.2 – 34.6 (1 lô = 3,49 triệu • Stop 32.53k)\nToàn bộ tài sản 20.167.119 ₫ (100% Tiền Mặt) được bảo vệ tuyệt đối. Kính trình Chủ tịch Phước Trần bấm nút phê chuẩn cuối cùng!",
-      "highlight": "Bế mạc: Chốt Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC kèm ngưỡng Stop 2xATR",
+      "content": "Đúng 21h30:00, tôi xin tổng kết và bế mạc phiên họp Thượng đỉnh. Hội đồng đã mổ xẻ rốt ráo Top 4 siêu cổ phiếu và thống nhất Sổ Lệnh Bắn Tỉa Vòng 2:\n1. **MSH (35.5k)**: Kê LO 35.0 – 35.3 (1 lô = 3,55 triệu • Stop 33.09k)\n2. **BAF (30.9k)**: Kê LO 30.5 – 30.8 (1 lô = 3,09 triệu • Stop 29.65k • Kèm phiếu bảo lưu Ban 3)\n3. **HDB (22.5k)**: Kê LO 22.2 – 22.5 (1 lô = 2,25 triệu • Stop 21.22k)\n4. **IDC (34.9k)**: Kê LO 34.2 – 34.6 (1 lô = 3,49 triệu • Stop 32.53k)\nĐệm tiền mặt 12,516,471 ₫ (69.0% NAV) trên tổng NAV 18,151,471 ₫ và vị thế HDB (100 CP @ 22,057₫), MSH (100 CP @ 34,510₫) được bảo vệ tuyệt đối. Kính trình Chủ tịch Phước Trần bấm nút phê chuẩn cuối cùng!",
+      "highlight": "Bế mạc: Chốt Sổ Lệnh & Trạng Thái Chiến Lược kèm ngưỡng Stop 2xATR",
       "metrics": {
         "Total_Tickers": 4,
-        "Cash_Preserved": "20,167,119 ₫",
+        "Cash_Preserved": "12,516,471 ₫",
+        "NAV": "18,151,471 ₫",
         "Max_Risk_NAV": "<=1.5%"
       }
     }
   ],
-  "dynamic_messages": [
-    {
-      "id": "appr_1794150897",
-      "minute": 30,
-      "time_str": "22:14:57",
-      "phase_step": 8,
-      "sender_name": "Chủ Tịch Trần Quốc Thiên Phước",
-      "department": "Hội Đồng Quản Trị Tối Cao",
-      "role": "Tổng Chỉ Huy Tối Cao",
-      "avatar": "👑",
-      "badge": "LỆNH PHÊ DUYỆT CỦA CHỦ TỊCH",
-      "badge_color": "#eab308",
-      "content": "LỆNH CỦA CHỦ TỊCH: Tôi — Chủ tịch Trần Quốc Thiên Phước — đã trực tiếp kiểm tra và chính thức KÝ PHÊ DUYỆT toàn văn Nghị Quyết Thượng Đỉnh cùng Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC. Giao Master CIO James, chuyên viên Minh Quân và Sentinel Victor thực thi nghiêm ngặt trong Khung Giờ Vàng sáng mai!",
-      "highlight": "Chủ tịch Phước Trần đã bấm nút ký duyệt Sổ Lệnh lúc 2026-11-08 22:14:57",
-      "metrics": {
-        "Status": "OFFICIALLY_SIGNED",
-        "Signer": "Chairman Phuoc Tran",
-        "Active_Orders": 4
-      }
-    },
-    {
-      "id": "appr_1794154096",
-      "minute": 30,
-      "time_str": "23:08:16",
-      "phase_step": 8,
-      "sender_name": "Chủ Tịch Trần Quốc Thiên Phước",
-      "department": "Hội Đồng Quản Trị Tối Cao",
-      "role": "Tổng Chỉ Huy Tối Cao",
-      "avatar": "👑",
-      "badge": "LỆNH PHÊ DUYỆT CỦA CHỦ TỊCH",
-      "badge_color": "#eab308",
-      "content": "LỆNH CỦA CHỦ TỊCH: Tôi — Chủ tịch Trần Quốc Thiên Phước — đã trực tiếp kiểm tra và chính thức KÝ PHÊ DUYỆT toàn văn Nghị Quyết Thượng Đỉnh cùng Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC. Giao Master CIO James, chuyên viên Minh Quân và Sentinel Victor thực thi nghiêm ngặt trong Khung Giờ Vàng sáng mai!",
-      "highlight": "Chủ tịch Phước Trần đã bấm nút ký duyệt Sổ Lệnh lúc 2026-11-08 23:08:16",
-      "metrics": {
-        "Status": "OFFICIALLY_SIGNED",
-        "Signer": "Chairman Phuoc Tran",
-        "Active_Orders": 4
-      }
-    }
-  ],
+  "dynamic_messages": [],
   "inspector_notes": [
     {
       "time": "21:00",
@@ -1040,7 +1004,7 @@
     },
     {
       "time": "21:02",
-      "note": "Đối soát công khai số dư TCBS 20.167.119 đ (100% Tiền Mặt) chuẩn SSOT."
+      "note": "Đối soát công khai SSOT TCBS 105C307855: NAV 18,151,471 ₫ | Cash 12,516,471 ₫ (69.0%) | Vị thế: HDB (100 CP @ 22,057₫), MSH (100 CP @ 34,510₫)."
     },
     {
       "time": "21:10",

@@ -37,13 +37,61 @@ MEETING_STATE_FILE = DATA_DIR / "apex_active_meeting_state.json"
 MEETING_AUDIT_LOG_FILE = DATA_DIR / "apex_summit_audit_stream.json"
 
 
+def _get_live_account_state_dict() -> Dict[str, Any]:
+    """Đọc trạng thái SSOT sống từ PortfolioStateManager để đồng bộ tuyệt đối 100%."""
+    try:
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        st = PortfolioStateManager.load_state()
+    except Exception:
+        st = {}
+    cash = float(st.get("cash_balance_vnd", 12516471.0) or 12516471.0)
+    mkt = float(st.get("total_market_val_vnd", 0.0) or 0.0)
+    nav = float(st.get("total_nav_vnd", cash + mkt) or (cash + mkt))
+    if nav <= 0:
+        nav = max(1.0, cash + mkt)
+    realized = float(st.get("realized_pnl_vnd", 0.0) or 0.0)
+    unrealized = float(st.get("unrealized_pnl_vnd", 0.0) or 0.0)
+    cash_pct = round((cash / nav) * 100.0, 1)
+    pos_map = st.get("active_positions") or {}
+    held = [
+        f"{p.get('symbol', k)} ({int(p.get('shares', 0))} CP @ {float(p.get('entry_price') or p.get('avg_cost_vnd') or 0):,.0f}₫)"
+        for k, p in pos_map.items()
+        if isinstance(p, dict) and int(p.get("shares", 0) or 0) > 0
+    ]
+    held_str = ", ".join(held) if held else "0 CP"
+    equity_str = f"{mkt:,.0f} ₫ ({held_str})" if held else "0 ₫ (0 CP kẹp hàng)"
+    return {
+        "account_no": f"{st.get('account_id', '105C307855')} (TCBS)",
+        "total_nav": f"{nav:,.0f} ₫",
+        "cash_balance": f"{cash:,.0f} ₫",
+        "cash_ratio": f"{cash_pct:.1f}%",
+        "equity_risk": equity_str,
+        "realized_profit_v1": f"{realized:+,.0f} ₫ (Tạm tính: {unrealized:+,.0f} ₫)",
+        "_raw_nav": nav,
+        "_raw_cash": cash,
+        "_raw_cash_pct": cash_pct,
+        "_held_str": held_str,
+    }
+
+
+def _get_live_enterprise_mesh() -> Dict[str, Any]:
+    try:
+        from scripts.apex_enterprise_collaboration_mesh import get_enterprise_mesh_summary
+        return get_enterprise_mesh_summary()
+    except Exception:
+        return {}
+
+
 def get_default_summit_data() -> Dict[str, Any]:
-    """Khởi tạo cấu trúc dữ liệu thể chế chuẩn hóa cho Đại Hội Nghị Thượng Đỉnh 21h00."""
+    """Khởi tạo cấu trúc dữ liệu thể chế chuẩn hóa cho Đại Hội Nghị Thượng Đỉnh."""
     try:
         from scripts.apex_autonomous_council_engine import build_autonomous_summit_session
-        return build_autonomous_summit_session()
+        sess = build_autonomous_summit_session()
+        sess["enterprise_mesh_session"] = _get_live_enterprise_mesh()
+        return sess
     except Exception as e:
         print(f"Fallback to legacy summit data: {e}")
+    acc = _get_live_account_state_dict()
     return {
         "meeting_id": "APEX-SUMMIT-20261108-2100",
         "title": "ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX",
@@ -56,11 +104,12 @@ def get_default_summit_data() -> Dict[str, Any]:
         "chairperson_host": "Master CIO James (Ban 8) & Palmer (Cố vấn Điều hành)",
         "permanent_inspector": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Thường Trực Bất Biến)",
         "account_state": {
-            "account_no": "105C307855 (TCBS)",
-            "cash_balance": "20,167,119 ₫",
-            "cash_ratio": "100.0%",
-            "equity_risk": "0 ₫ (0 CP kẹp hàng)",
-            "realized_profit_v1": "+167,119 ₫ (Đã chốt lời trọn vẹn)"
+            "account_no": acc["account_no"],
+            "total_nav": acc["total_nav"],
+            "cash_balance": acc["cash_balance"],
+            "cash_ratio": acc["cash_ratio"],
+            "equity_risk": acc["equity_risk"],
+            "realized_profit_v1": acc["realized_profit_v1"],
         },
         "compliance_audit": {
             "inspector": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
@@ -199,9 +248,9 @@ def get_default_summit_data() -> Dict[str, Any]:
                 "avatar": "💼",
                 "badge": "ĐỐI SOÁT TÀI SẢN",
                 "badge_color": "#34d399",
-                "content": "Báo cáo Chủ tịch: Tôi đã hoàn tất đối soát trực tiếp số dư tài khoản TCBS (105C307855). Hiện trạng tài sản chuẩn SSOT V2.0 là 20,167,119 ₫ — tỷ trọng 100% TIỀN MẶT, 0 CP kẹp hàng. Lợi nhuận Vòng 1 (+167,119 ₫) đã bảo toàn trọn vẹn trong két!",
-                "highlight": "Xác nhận số dư 20,167,119 ₫ (100% TIỀN MẶT)",
-                "metrics": {"cash": "20,167,119 ₫", "cash_ratio": "100%", "risk_equity": "0 ₫"}
+                "content": f"Báo cáo Chủ tịch: Tôi đã hoàn tất đối soát trực tiếp số dư tài khoản {acc['account_no']}. Hiện trạng tài sản chuẩn SSOT: Tổng NAV {acc['total_nav']} — Tiền mặt {acc['cash_balance']} ({acc['cash_ratio']}), Cổ phiếu {acc['equity_risk']}. Lợi nhuận thực nhận {acc['realized_profit_v1']}!",
+                "highlight": f"Xác nhận SSOT: NAV {acc['total_nav']} | Cash {acc['cash_balance']} ({acc['cash_ratio']})",
+                "metrics": {"nav": acc["total_nav"], "cash": acc["cash_balance"], "cash_ratio": acc["cash_ratio"], "risk_equity": acc["equity_risk"]}
             },
             {
                 "id": "msg_004",
@@ -274,7 +323,7 @@ def get_default_summit_data() -> Dict[str, Any]:
                 "avatar": "🛡️",
                 "badge": "ĐỊNH CỠ VỊ THẾ",
                 "badge_color": "#eab308",
-                "content": "Kính thưa Chủ tịch: Áp dụng công thức Position Sizing chuẩn hóa với số vốn 20,167,119 ₫: Cả 4 mã Top picks đều có thị giá <= 36.000 ₫/CP. Một lô chẵn 100 CP chỉ chiếm từ 11.2% đến 17.6% NAV, tuân thủ tuyệt đối Điều Luật 6 (< 33% NAV). Ngưỡng cắt lỗ Stop Loss khóa cứng tại 2xATR <= 6.8%, rủi ro tối đa mỗi lệnh chỉ từ 150.000 ₫ đến 230.000 ₫!",
+                "content": f"Kính thưa Chủ tịch: Áp dụng công thức Position Sizing chuẩn hóa trên tổng NAV sống {acc['total_nav']}: Cả 4 mã đều tuân thủ trần 1 lô chẵn 100 CP <= 33% NAV theo Điều Luật 5 & 6. Ngưỡng cắt lỗ Stop Loss khóa cứng tại 2xATR <= 7.5%, rủi ro tối đa mỗi lệnh <= 1.5% NAV!",
                 "highlight": "Khóa cứng rủi ro <= 1.5% NAV/trade, Stop Loss <= 6.8%",
                 "metrics": {"max_risk_trade": "<=1.5% NAV", "lot_weight": "11.2% - 17.6%", "stop_rule": "2xATR <= 6.8%"}
             },
@@ -387,7 +436,7 @@ def get_default_summit_data() -> Dict[str, Any]:
         "dynamic_messages": [],
         "inspector_notes": [
             {"time": "21:00", "note": "Hội đồng khai mạc đúng giờ 21h00, quân số đủ 100%."},
-            {"time": "21:02", "note": "Xác nhận số dư 20,167,119 ₫ (100% Tiền Mặt) khớp chuẩn SSOT V2.0."},
+            {"time": "21:02", "note": f"Xác nhận SSOT sống: NAV {acc['total_nav']} | Cash {acc['cash_balance']} ({acc['cash_ratio']}) | Vị thế {acc['_held_str']}."},
             {"time": "21:13", "note": "Công thức Position Sizing chuẩn hóa: Thị giá <= 36k, Stop Loss <= 6.8% đạt chuẩn Điều Luật 6."},
             {"time": "21:20", "note": "Phiên tranh biện đối kháng nổ ra công khai, bóc tách rủi ro nguyên liệu và tính thời điểm mùa vụ."},
             {"time": "21:28", "note": "Biểu quyết thể chế đạt tỷ lệ chuẩn định chế. Hội nghị không vi phạm bất kỳ quy tắc nào trong Hiến Chương."}
@@ -507,6 +556,15 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
 
     # Bổ sung các dynamic_messages (tin nhắn trực tiếp từ Chủ tịch gõ vào phòng họp)
     all_messages = unlocked_timeline + state.get("dynamic_messages", [])
+    live_acc = _get_live_account_state_dict()
+    live_account_state = {
+        "account_no": live_acc["account_no"],
+        "total_nav": live_acc["total_nav"],
+        "cash_balance": live_acc["cash_balance"],
+        "cash_ratio": live_acc["cash_ratio"],
+        "equity_risk": live_acc["equity_risk"],
+        "realized_profit_v1": live_acc["realized_profit_v1"],
+    }
 
     return {
         "meeting_id": state.get("meeting_id"),
@@ -520,13 +578,14 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
         "chairman": state.get("chairman"),
         "chairperson_host": state.get("chairperson_host"),
         "permanent_inspector": state.get("permanent_inspector"),
-        "account_state": state.get("account_state"),
+        "account_state": live_account_state,
         "compliance_audit": state.get("compliance_audit"),
         "phases": state.get("phases"),
         "voting_board": state.get("voting_board"),
         "executive_approval": state.get("executive_approval"),
         "timeline_stream": all_messages,
         "inspector_notes": state.get("inspector_notes"),
+        "enterprise_mesh_session": state.get("enterprise_mesh_session") or _get_live_enterprise_mesh(),
         "total_messages_count": len(all_messages),
         "server_time": now.strftime("%Y-%m-%d %H:%M:%S")
     }

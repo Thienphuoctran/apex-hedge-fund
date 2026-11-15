@@ -114,17 +114,20 @@ class ApexConstitutionEnforcer:
     def sync_anchor_file() -> Dict[str, Any]:
         """Cập nhật neo thể chế bắt buộc institutional_compliance_anchor.json."""
         st = PortfolioStateManager.load_state()
+        cash_bal = float(st.get("cash_balance_vnd", 12516471.0) or 12516471.0)
+        nav_bal = float(st.get("total_nav_vnd", cash_bal) or cash_bal)
         anchor_data = {
             "constitution_version": "APEX_ENTERPRISE_CONSTITUTION_V1.0",
             "promulgated_by": "Chủ tịch Trần Quốc Thiên Phước",
             "promulgated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "account_id": st.get("account_id", "105C307855"),
-            "cash_balance_vnd": float(st.get("cash_balance_vnd", 20167119.0)),
-            "status": st.get("status", "ALL_CASH_STANDDOWN"),
+            "cash_balance_vnd": cash_bal,
+            "total_nav_vnd": nav_bal,
+            "status": st.get("status", "ACTIVE_PORTFOLIO_MONITORING"),
             "ten_commandments": TEN_CONSTITUTIONAL_ARTICLES,
             "hard_prohibitions": [
                 "CẤM FOMO mua đuổi giá xanh trước 10h00 sáng (Điều 6)",
-                "CẤM mua cổ phiếu có 1 lô 100 CP > 33% NAV của 20.16M VND như MWG, FRT (Điều 5)",
+                f"CẤM mua cổ phiếu có 1 lô 100 CP > 33% NAV sống ({nav_bal:,.0f} ₫) như MWG, FRT (Điều 5)",
                 "CẤM tự ý đề xuất lại mã đã bị Hội đồng phủ quyết như FPT, DGC khi chưa đảo chiều MA20 (Điều 3)",
                 "CẤM báo cáo lý thuyết khống, cấm che giấu lỗ, cấm thuật ngữ hoa mỹ tô hồng (Điều 7)",
                 "CẤM tự ý thao tác tài chính vượt ngoài quyền hạn Read-Only Air-Gap (Điều 8)"
@@ -158,7 +161,7 @@ class ApexConstitutionEnforcer:
         lot_100_cost = price * 100.0
         nav_pct = (lot_100_cost / nav) * 100.0 if nav > 0 else 100.0
         if nav_pct > 33.0:
-            return False, f"[VI PHẠM ĐIỀU 5] 1 lô 100 CP của {symbol} có giá {lot_100_cost:,.0f} ₫ ({nav_pct:.1f}% NAV 20.16M ₫) -> VƯỢT TRẦN PHÂN BỔ 33% NAV! Bị phủ quyết."
+            return False, f"[VI PHẠM ĐIỀU 5] 1 lô 100 CP của {symbol} có giá {lot_100_cost:,.0f} ₫ ({nav_pct:.1f}% NAV {nav/1e6:.2f}M ₫) -> VƯỢT TRẦN PHÂN BỔ 33% NAV! Bị phủ quyết."
 
         # 2. Kiểm tra Điều 3: Các mã bị Hội đồng phủ quyết
         ho = ApexPersistentMemoryCore.get_handover_for_today()
@@ -178,7 +181,9 @@ class ApexConstitutionEnforcer:
     def broadcast_promulgation() -> Dict[str, Any]:
         """Phát thanh Sắc Lệnh Ban Hành Hiến Chương Apex tới toàn bộ 6 Topics trên Telegram."""
         st = PortfolioStateManager.load_state()
-        cash = float(st.get("cash_balance_vnd", 20167119.0))
+        cash = float(st.get("cash_balance_vnd", 12516471.0) or 12516471.0)
+        nav = float(st.get("total_nav_vnd", cash) or cash)
+        cash_pct = (cash / nav * 100.0) if nav > 0 else 100.0
         timestamp_vn = datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y")
 
         announcement_text = (
@@ -186,7 +191,7 @@ class ApexConstitutionEnforcer:
             "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"👤 *Người ký sắc lệnh:* Chủ tịch HĐQT Trần Quốc Thiên Phước\n"
             f"🕒 *Thời điểm ban hành:* `{timestamp_vn}`\n"
-            f"💰 *Quy mô vốn định chế bảo vệ:* `{cash:,.0f} ₫` (**100% TIỀN MẶT AN TOÀN**)\n"
+            f"💰 *Tổng NAV bảo vệ:* `{nav:,.0f} ₫` | *Tiền mặt:* `{cash:,.0f} ₫` (**{cash_pct:.1f}% NAV AN TOÀN**)\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "🎖️ *CHỈ THỊ CỦA TỔNG TƯ LỆNH MASTER CIO JAMES:*\n"
             "Tôi (James) yêu cầu toàn thể 11 Phòng Ban, Chuyên viên Đầu tư Trưởng Minh Quân & Alex, "

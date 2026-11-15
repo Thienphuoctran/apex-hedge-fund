@@ -520,6 +520,159 @@ try:
 except Exception as e:
     record_check("Phase4_CloudDB_V6_And_AlertsAPI", "Cloud DB V6 & Alerts API", False, str(e))
 
+# =========================================================================
+# 10. PHASE 5 (V7.0): LIVING ENTERPRISE & 14-DEPARTMENT COLLABORATION MESH (5 CHECKS -> 40/40)
+# =========================================================================
+print("\n[10/10] Kiểm tra Nâng cấp V7.0 (Doanh Nghiệp Sống 14 Thực Thể, Tranh Biện VETO, Trọng Audit & Cloud V7)...")
+
+_v7_latest_session = {}
+try:
+    from scripts.apex_enterprise_collaboration_mesh import (
+        ENTERPRISE_DEPARTMENT_ROSTER,
+        get_enterprise_mesh_summary,
+    )
+    mesh_sum = get_enterprise_mesh_summary()
+    _v7_latest_session = mesh_sum.get("latest_session") or {}
+    seal_str = str(_v7_latest_session.get("constitutional_seal_sha256") or "")
+    check_v7_roster = (
+        len(ENTERPRISE_DEPARTMENT_ROSTER) == 14
+        and int(_v7_latest_session.get("quorum_count", 0) or 0) == 14
+        and int(_v7_latest_session.get("packet_count", 0) or 0) >= 10
+        and _v7_latest_session.get("ombudsman_audit_score") == "10/10"
+        and len(seal_str) == 64
+    )
+    record_check(
+        "Phase5_EnterpriseRosterAndPackets",
+        "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
+        check_v7_roster,
+        f"Roster: {len(ENTERPRISE_DEPARTMENT_ROSTER)} | Quorum: {_v7_latest_session.get('quorum_count')}/14 | Packets: {_v7_latest_session.get('packet_count')} | Audit: {_v7_latest_session.get('ombudsman_audit_score')} | Seal: {seal_str[:12]}..."
+    )
+except Exception as e:
+    record_check("Phase5_EnterpriseRosterAndPackets", "14 Thực Thể & Data Packets V7", False, str(e))
+
+try:
+    from scripts.apex_enterprise_collaboration_mesh import run_enterprise_work_session
+    mwg_sess = run_enterprise_work_session("Kiểm tra MWG", ticker="MWG", trigger_source="AUDIT", sync_cloud=False)
+    fpt_sess = run_enterprise_work_session("Kiểm tra FPT", ticker="FPT", trigger_source="AUDIT", sync_cloud=False)
+    port_sess = run_enterprise_work_session(
+        "Họp giao ban toàn doanh nghiệp đánh giá danh mục 105C307855",
+        ticker=None,
+        trigger_source="AUDIT",
+        sync_cloud=False,
+    )
+    _v7_latest_session = port_sess or _v7_latest_session
+    check_v7_veto = (
+        mwg_sess.get("veto_triggered") is True
+        and mwg_sess.get("final_verdict") == "VETOED_CAPITAL_FIT_VIOLATION"
+        and fpt_sess.get("veto_triggered") is True
+        and int(port_sess.get("quorum_count", 0) or 0) == 14
+        and port_sess.get("ombudsman_audit_score") == "10/10"
+    )
+    record_check(
+        "Phase5_AdversarialDebateAndVeto",
+        "Tranh Biện Đối Kháng & Quyền Phủ Quyết VETO Hiến Chương (MWG/FPT)",
+        check_v7_veto,
+        f"MWG: {mwg_sess.get('final_verdict')} (Veto={mwg_sess.get('veto_triggered')}) | FPT: {fpt_sess.get('final_verdict')} (Veto={fpt_sess.get('veto_triggered')}) | Portfolio: {port_sess.get('final_verdict')}"
+    )
+except Exception as e:
+    record_check("Phase5_AdversarialDebateAndVeto", "Tranh Biện Đối Kháng & VETO V7", False, str(e))
+
+try:
+    from scripts.apex_directive_intelligence_engine import ApexDirectiveIntelligenceEngine
+    from scripts.apex_summit_meeting_engine import get_realtime_meeting_state
+    tcbs_reply = ApexDirectiveIntelligenceEngine.generate_executive_directive_reply("/tcbs")
+    rt_state = get_realtime_meeting_state(preview_mode=True)
+    tcbs_txt = tcbs_reply if isinstance(tcbs_reply, str) else json.dumps(tcbs_reply, ensure_ascii=False)
+    rt_txt = json.dumps(rt_state, ensure_ascii=False)
+    nav_str_chk = f"{ssot_nav:,.0f}" if ssot_nav > 0 else "18,151,471"
+    cash_str_chk = f"{ssot_cash:,.0f}" if ssot_cash > 0 else "12,516,471"
+    check_v7_ssot = (
+        nav_str_chk in tcbs_txt
+        and cash_str_chk in tcbs_txt
+        and nav_str_chk in rt_txt
+        and cash_str_chk in rt_txt
+        and "20,167,119" not in tcbs_txt
+        and "100% TIỀN MẶT" not in tcbs_txt
+        and "20,167,119" not in rt_txt
+        and "100% TIỀN MẶT" not in rt_txt
+    )
+    record_check(
+        "Phase5_ConstitutionalOmbudsmanAndZeroStaleSSOT",
+        "Kiểm Toán Viên Trọng & 0% Chuỗi Cứng Lỗi Thời SSOT (Directive + Summit)",
+        check_v7_ssot,
+        f"Live NAV/Cash ({nav_str_chk}/{cash_str_chk}) synced; 0 stale strings in /tcbs & Summit state"
+    )
+except Exception as e:
+    record_check("Phase5_ConstitutionalOmbudsmanAndZeroStaleSSOT", "Zero Stale SSOT Audit", False, str(e))
+
+try:
+    req_es = urllib.request.Request(f"{live_url}/api/enterprise/state", headers={"User-Agent": "ApexAudit/7.0"})
+    res_es = urllib.request.urlopen(req_es, timeout=20)
+    es_json = json.loads(res_es.read().decode("utf-8"))
+
+    convene_payload = json.dumps({
+        "ticker": "HDB",
+        "directive": "Audit kiểm tra hợp lưu đa phòng ban HDB",
+        "trigger_source": "AUDIT_SCRIPT",
+        "sync_cloud": False,
+    }).encode("utf-8")
+    req_ec = urllib.request.Request(
+        f"{live_url}/api/enterprise/convene",
+        data=convene_payload,
+        headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/7.0"},
+    )
+    res_ec = urllib.request.urlopen(req_ec, timeout=25)
+    ec_json = json.loads(res_ec.read().decode("utf-8"))
+    ec_sess = ec_json.get("session") or {}
+
+    ui_v7_ok = ("wr-enterprise-mesh-panel" in html and "conveneEnterpriseMesh" in html) if "html" in globals() else False
+    wr_v7_ok = bool((wr.get("enterprise_mesh_summary") or {}).get("latest_session")) if "wr" in globals() else False
+
+    check_v7_live = (
+        res_es.status == 200
+        and es_json.get("ok") is True
+        and int(es_json.get("roster_count", 0) or 0) == 14
+        and res_ec.status == 200
+        and ec_json.get("ok") is True
+        and int(ec_sess.get("quorum_count", 0) or 0) == 14
+        and ec_sess.get("ombudsman_audit_score") == "10/10"
+        and ui_v7_ok
+        and wr_v7_ok
+    )
+    record_check(
+        "Phase5_LiveEnterpriseEndpoints",
+        "V7 Live Endpoints (/api/enterprise/state, /api/enterprise/convene, War-Room & UI Panel)",
+        check_v7_live,
+        f"State OK={es_json.get('ok')} | Convene HDB={ec_sess.get('final_verdict')} | WR={wr_v7_ok} | UI={ui_v7_ok}"
+    )
+except Exception as e:
+    record_check("Phase5_LiveEnterpriseEndpoints", "V7 Live Enterprise Endpoints & UI", False, str(e))
+
+try:
+    from scripts.apex_cloud_db_sync import ApexCloudDBSync, VAULT_DB_PATH
+    sync_v7 = ApexCloudDBSync.sync_enterprise_session(_v7_latest_session)
+    mig_v7_p = BASE_DIR / "supabase" / "migrations" / "20261115230000_apex_v7_enterprise_collaboration_mesh.sql"
+    mig_v7_ok = mig_v7_p.exists() and ("ENABLE ROW LEVEL SECURITY" in mig_v7_p.read_text(encoding="utf-8"))
+
+    import sqlite3
+    with sqlite3.connect(VAULT_DB_PATH, timeout=10) as conn:
+        ent_cnt = conn.execute("SELECT COUNT(*) FROM apex_enterprise_work_sessions").fetchone()[0]
+
+    check_v7_cloud = (
+        sync_v7.get("ok") is True
+        and sync_v7.get("local_saved") is True
+        and mig_v7_ok
+        and ent_cnt >= 1
+    )
+    record_check(
+        "Phase5_CloudDB_V7_EnterpriseSync",
+        "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
+        check_v7_cloud,
+        f"LocalSaved={sync_v7.get('local_saved')} | VaultRows={ent_cnt} | MigrationRLS={mig_v7_ok} | CloudSynced={sync_v7.get('cloud_synced')}"
+    )
+except Exception as e:
+    record_check("Phase5_CloudDB_V7_EnterpriseSync", "Cloud DB V7 Enterprise Sync", False, str(e))
+
 print("=" * 70)
 print(f"KẾT QUẢ TỔNG KIỂM TOÁN: {audit_results['passed_checks']}/{audit_results['total_checks']} HẠNG MỤC ĐẠT CHUẨN!")
 if audit_results["errors"]:

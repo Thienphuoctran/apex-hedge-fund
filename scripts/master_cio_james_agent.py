@@ -123,6 +123,30 @@ def handle_james_chat(user_text: str) -> str:
         reply_lines.append("📖 _Chủ tịch có thể tra cứu toàn bộ 105 bài học tại file `05_Learning_And_Evolution/100_LEGENDARY_INVESTOR_HEURISTICS_MASTER_COMPENDIUM.md` hoặc qua API `/api/heuristics`._")
         return "\n".join(reply_lines)
 
+    # 0.04 PHIÊN LÀM VIỆC DOANH NGHIỆP ĐA PHÒNG BAN V7.0 (/doanhnghiep, /hoidong, /tranhbien)
+    if text_lower.startswith(("/doanhnghiep", "/hoidong", "/tranhbien")):
+        try:
+            from scripts.apex_enterprise_collaboration_mesh import (
+                format_enterprise_session_reply,
+                run_enterprise_work_session,
+            )
+            parts = text_clean.split(maxsplit=1)
+            arg_str = parts[1].strip() if len(parts) > 1 else ""
+            explicit_ticker = None
+            if arg_str:
+                first_tok = arg_str.split()[0].upper().strip(".,:;!?")
+                if first_tok.isalpha() and 2 <= len(first_tok) <= 5:
+                    explicit_ticker = first_tok
+            sess = run_enterprise_work_session(
+                directive=arg_str or text_clean,
+                ticker=explicit_ticker,
+                trigger_source="JAMES_SLASH_COMMAND",
+                sync_cloud=False,
+            )
+            return format_enterprise_session_reply(sess)
+        except Exception as e:
+            return f"[!] Lỗi triệu tập phiên làm việc doanh nghiệp V7.0: {e}"
+
     # 0.05 BỘ NÃO PHÂN TÍCH BCTC CHUYÊN SÂU, TÌM KIẾM THÔNG TIN & TỐI ƯU ALPHA (/phantichtb, /bctc, /alpha, /timkiem, /toiuu)
     if text_lower.startswith(("/phantichtb", "/bctc", "/alpha", "/timkiem", "/toiuu")):
         try:

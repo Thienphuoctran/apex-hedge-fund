@@ -986,6 +986,13 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
     except Exception:
         pass
 
+    enterprise_mesh_summary = {}
+    try:
+        from scripts.apex_enterprise_collaboration_mesh import get_enterprise_mesh_summary
+        enterprise_mesh_summary = get_enterprise_mesh_summary()
+    except Exception:
+        enterprise_mesh_summary = {}
+
     return {
         "status": "ok",
         "chairman_name": "Trần Quốc Thiên Phước",
@@ -1058,6 +1065,7 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
         "global_spillover": snap.get("global_spillover", {}),
         "execution_tracker": snap.get("execution_tracker", {}),
         "deep_brain_summary": deep_brain_summary,
+        "enterprise_mesh_summary": enterprise_mesh_summary,
         "directives_history": directives,
         "weekly_reference_plan": get_weekly_reference_roadmap(snapshot=snap)
     }
@@ -1218,6 +1226,29 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
             f"• VN-Index Live: {float(vni.get('value', 0)):,.2f} ({float(vni.get('change_pct', 0)):+.2f}%) | Chế độ: {regime.get('label', 'N/A')}."
         )
 
+    enterprise_session = {}
+    try:
+        from scripts.apex_enterprise_collaboration_mesh import run_enterprise_work_session
+        target_sym = matched_stock["code"] if isinstance(matched_stock, dict) and matched_stock.get("code") else None
+        enterprise_session = run_enterprise_work_session(
+            directive=command_text,
+            ticker=target_sym,
+            trigger_source="WAR_ROOM_COMMAND",
+            sync_cloud=False,
+        )
+        deb_preview = " | ".join(
+            f"[{dp['stance']}] {dp['speaker']}: {dp['argument'][:140]}"
+            for dp in (enterprise_session.get("debate_points") or [])[:2]
+        )
+        response_content += (
+            f"\n\n🏛️ [Hội Chẩn Doanh Nghiệp V7.0 — {enterprise_session['quorum_count']}/{enterprise_session['roster_total']} Ban | "
+            f"{enterprise_session['packet_count']} Packets | {enterprise_session['dissent_count']} Phản biện | Audit {enterprise_session['ombudsman_audit_score']}]\n"
+            f"• Phán quyết James: {enterprise_session['final_verdict']} — {enterprise_session['action_plan']}\n"
+            + (f"• Tranh biện nổi bật: {deb_preview}" if deb_preview else "")
+        )
+    except Exception:
+        enterprise_session = {}
+
     directives = load_directives_history()
     directives.append({
         "id": f"dir_user_{int(time.time()*1000)}",
@@ -1243,7 +1274,8 @@ def handle_tactical_command(command_text: str, user_name: str = "Chủ tịch Tr
         "timestamp": time_str,
         "chairman_command": command_text,
         "specialist_response": response_content,
-        "directives_history": directives
+        "directives_history": directives,
+        "enterprise_session": enterprise_session,
     }
 
 

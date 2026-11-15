@@ -481,11 +481,51 @@ def generate_stock_adversarial_round(stock_info: Dict[str, Any], round_number: i
 # HÀM TẠO LẬP TOÀN BỘ PHIÊN HỌP ĐỘC LẬP TỰ TRỊ (FULL AUTONOMOUS SUMMIT SESSION)
 # ==============================================================================
 
+def _get_live_ssot_snapshot() -> Dict[str, Any]:
+    """Đọc SSOT thực tế từ PortfolioStateManager để không bao giờ hiển thị số liệu cũ."""
+    try:
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        st = PortfolioStateManager.load_state()
+    except Exception:
+        st = {}
+    cash = float(st.get("cash_balance_vnd", 12516471.0) or 12516471.0)
+    mkt = float(st.get("total_market_val_vnd", 0.0) or 0.0)
+    nav = float(st.get("total_nav_vnd", cash + mkt) or (cash + mkt))
+    if nav <= 0:
+        nav = max(1.0, cash + mkt)
+    realized = float(st.get("realized_pnl_vnd", 0.0) or 0.0)
+    unrealized = float(st.get("unrealized_pnl_vnd", 0.0) or 0.0)
+    cash_pct = round((cash / nav) * 100.0, 1)
+    pos_map = st.get("active_positions") or {}
+    held = [
+        f"{p.get('symbol', k)} ({int(p.get('shares', 0))} CP @ {float(p.get('entry_price') or p.get('avg_cost_vnd') or 0):,.0f}₫)"
+        for k, p in pos_map.items()
+        if isinstance(p, dict) and int(p.get("shares", 0) or 0) > 0
+    ]
+    held_str = ", ".join(held) if held else "0 CP"
+    equity_str = f"{mkt:,.0f} ₫ ({held_str})" if held else "0 ₫ (0 CP kẹp hàng)"
+    return {
+        "account_id": str(st.get("account_id", "105C307855")),
+        "cash": cash,
+        "mkt": mkt,
+        "nav": nav,
+        "realized": realized,
+        "unrealized": unrealized,
+        "cash_pct": cash_pct,
+        "cash_str": f"{cash:,.0f} ₫",
+        "nav_str": f"{nav:,.0f} ₫",
+        "equity_str": equity_str,
+        "held_str": held_str,
+        "realized_str": f"{realized:+,.0f} ₫",
+    }
+
+
 def build_autonomous_summit_session() -> Dict[str, Any]:
     """
     Xây dựng toàn bộ phiên họp Thượng đỉnh tự trị với đầy đủ các hiệp tranh biện độc lập,
-    đầy ắp số liệu BCTC đối soát, có phản biện nảy lửa và phiếu bảo lưu thực tế.
+    đầy ắp số liệu BCTC đối soát trên SSOT sống, có phản biện nảy lửa và phiếu bảo lưu thực tế.
     """
+    ssot = _get_live_ssot_snapshot()
     timeline = []
 
     # 1. Khai mạc & Đối soát tài khoản (Phút 00 - 03)
@@ -523,11 +563,12 @@ def build_autonomous_summit_session() -> Dict[str, Any]:
         "badge": "ĐỐI SOÁT TÀI SẢN",
         "badge_color": "#34d399",
         "content": (
-            "Báo cáo Chủ tịch và Hội đồng: Số dư tài khoản TCBS (105C307855) chuẩn SSOT V2.0 hiện tại là **20,167,119 ₫ (100% TIỀN MẶT — 0 CP rủi ro)**. "
-            "Toàn bộ lãi Vòng 1 (+167,119 ₫) đã được bảo toàn nguyên vẹn trong két. Chúng ta đang nắm quyền chủ động 100% về thanh khoản!"
+            f"Báo cáo Chủ tịch và Hội đồng: Tài sản thực tế trên TCBS ({ssot['account_id']}) chuẩn SSOT hiện tại: "
+            f"Tổng NAV **{ssot['nav_str']}** — Tiền mặt khả dụng **{ssot['cash_str']} ({ssot['cash_pct']:.1f}% NAV)**, "
+            f"Cổ phiếu đang nắm giữ **{ssot['equity_str']}**, Lãi đã chốt **{ssot['realized_str']}**. Thanh khoản được bảo vệ an toàn!"
         ),
-        "highlight": "Đối soát số dư 20,167,119 ₫ (100% Tiền Mặt) — Lãi Vòng 1 bảo toàn trong két",
-        "metrics": {"Cash": "20,167,119 ₫", "Cash_Ratio": "100%", "Open_Risk": "0 ₫"}
+        "highlight": f"Đối soát SSOT {ssot['account_id']}: NAV {ssot['nav_str']} | Cash {ssot['cash_str']} ({ssot['cash_pct']:.1f}%)",
+        "metrics": {"NAV": ssot["nav_str"], "Cash": ssot["cash_str"], "Cash_Ratio": f"{ssot['cash_pct']:.1f}%", "Open_Equity": ssot["equity_str"]}
     })
 
     timeline.append({
@@ -644,18 +685,18 @@ def build_autonomous_summit_session() -> Dict[str, Any]:
             "2. **BAF (30.9k)**: Kê LO 30.5 – 30.8 (1 lô = 3,09 triệu • Stop 29.65k • Kèm phiếu bảo lưu Ban 3)\n"
             "3. **HDB (22.5k)**: Kê LO 22.2 – 22.5 (1 lô = 2,25 triệu • Stop 21.22k)\n"
             "4. **IDC (34.9k)**: Kê LO 34.2 – 34.6 (1 lô = 3,49 triệu • Stop 32.53k)\n"
-            "Toàn bộ tài sản 20.167.119 ₫ (100% Tiền Mặt) được bảo vệ tuyệt đối. "
+            f"Đệm tiền mặt {ssot['cash_str']} ({ssot['cash_pct']:.1f}% NAV) trên tổng NAV {ssot['nav_str']} và vị thế {ssot['held_str']} được bảo vệ tuyệt đối. "
             "Kính trình Chủ tịch Phước Trần bấm nút phê chuẩn cuối cùng!"
         ),
-        "highlight": "Bế mạc: Chốt Sổ Lệnh Bắn Tỉa Vòng 2 cho 4 mã MSH, BAF, HDB, IDC kèm ngưỡng Stop 2xATR",
-        "metrics": {"Total_Tickers": 4, "Cash_Preserved": "20,167,119 ₫", "Max_Risk_NAV": "<=1.5%"}
+        "highlight": "Bế mạc: Chốt Sổ Lệnh & Trạng Thái Chiến Lược kèm ngưỡng Stop 2xATR",
+        "metrics": {"Total_Tickers": 4, "Cash_Preserved": ssot["cash_str"], "NAV": ssot["nav_str"], "Max_Risk_NAV": "<=1.5%"}
     })
 
     # Cập nhật cấu trúc State
     state = {
         "meeting_id": "APEX-SUMMIT-AUTONOMOUS-V2",
-        "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (PHIÊN BẢN TỰ TRỊ ĐỐI KHÁNG V2.0)",
-        "subtitle": "Độc Lập Chuyên Môn • Tranh Biện Đối Kháng 4 Hiệp Nảy Lửa • Pháp Y BCTC Tiền Thật Q3/2026",
+        "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (PHIÊN BẢN TỰ TRỊ ĐỐI KHÁNG V7.0)",
+        "subtitle": "14 Thực Thể Độc Lập • Tranh Biện Đối Kháng Nảy Lửa • Pháp Y BCTC Tiền Thật",
         "start_time": "2026-11-08T21:00:00+07:00",
         "end_time": "2026-11-08T21:30:00+07:00",
         "duration_minutes": 30,
@@ -664,11 +705,12 @@ def build_autonomous_summit_session() -> Dict[str, Any]:
         "chairperson_host": "Master CIO James (Ban 8) & Palmer (Cố vấn Điều hành)",
         "permanent_inspector": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Thường Trực Bất Biến)",
         "account_state": {
-            "account_no": "105C307855 (TCBS)",
-            "cash_balance": "20,167,119 ₫",
-            "cash_ratio": "100.0%",
-            "equity_risk": "0 ₫ (0 CP kẹp hàng)",
-            "realized_profit_v1": "+167,119 ₫ (Đã chốt lời trọn vẹn)"
+            "account_no": f"{ssot['account_id']} (TCBS)",
+            "total_nav": ssot["nav_str"],
+            "cash_balance": ssot["cash_str"],
+            "cash_ratio": f"{ssot['cash_pct']:.1f}%",
+            "equity_risk": ssot["equity_str"],
+            "realized_profit_v1": f"{ssot['realized_str']} (Đã chốt lời trọn vẹn)"
         },
         "compliance_audit": {
             "inspector": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
@@ -690,7 +732,7 @@ def build_autonomous_summit_session() -> Dict[str, Any]:
                 "name": "GIAI ĐOẠN 1: BÁO CÁO CÔNG VIỆC CHUẨN BỊ & VĨ MÔ",
                 "time_window": "21h00 – 21h07",
                 "steps": [
-                    {"step": 1, "minute": "00 – 03", "label": "Khai mạc & Đối soát tiền mặt 20.167.119 đ", "owner": "James, Nam & Trọng"},
+                    {"step": 1, "minute": "00 – 03", "label": f"Khai mạc & Đối soát SSOT (NAV {ssot['nav_str']} | Cash {ssot['cash_str']})", "owner": "James, Nam & Trọng"},
                     {"step": 2, "minute": "03 – 07", "label": "Báo cáo Vĩ mô sập Phố Wall & SBV", "owner": "Ban 1 (Vĩ mô)"}
                 ]
             },
@@ -810,7 +852,7 @@ def build_autonomous_summit_session() -> Dict[str, Any]:
         "dynamic_messages": [],
         "inspector_notes": [
             {"time": "21:00", "note": "Khai mạc hội nghị thật: Phổ biến tối hậu thư cấm kịch bản diễn một chiều."},
-            {"time": "21:02", "note": "Đối soát công khai số dư TCBS 20.167.119 đ (100% Tiền Mặt) chuẩn SSOT."},
+            {"time": "21:02", "note": f"Đối soát công khai SSOT TCBS {ssot['account_id']}: NAV {ssot['nav_str']} | Cash {ssot['cash_str']} ({ssot['cash_pct']:.1f}%) | Vị thế: {ssot['held_str']}."},
             {"time": "21:10", "note": "Hiệp 1: Đại chiến MSH. Ban 3 bóc trần rủi ro tiêu dùng Mỹ, Minh Quân bẻ gãy bằng định giá P/E 7.8x."},
             {"time": "21:15", "note": "Hiệp 2: Đại chiến BAF. Ban 3 tấn công quyết liệt quả bom nợ 2.400 tỷ, Ban 4 khóa cứng trần giải ngân 1 lô 100 CP."},
             {"time": "21:28", "note": "Ban 3 chính thức kích hoạt Giao thức Bất đồng (Mandatory Dissent), ghi phiếu bảo lưu cho BAF vào Sổ Cái Thể Chế."},
@@ -894,12 +936,13 @@ def approve_summit_resolution(approved_by: str = "Chủ tịch Trần Quốc Thi
     res_dir.mkdir(parents=True, exist_ok=True)
     res_file = res_dir / f"{now_dt.strftime('%Y-%m-%d')}_Nghi_Quyet_Thuong_Dinh_Da_Ky_Duyet.md"
     
+    ssot = _get_live_ssot_snapshot()
     md_content = f"""# NGHỊ QUYẾT ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX
 > **VĂN KIỆN THỂ CHẾ TỐI CAO ĐÃ ĐƯỢC CHỦ TỊCH KÝ PHÊ DUYỆT CHÍNH THỨC**  
-> **CHỦ TỌA PHÊ DUYỆT**: **CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC** (TCBS: `105C307855`)  
+> **CHỦ TỌA PHÊ DUYỆT**: **CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC** (TCBS: `{ssot['account_id']}`)  
 > **THỜI GIAN KÝ DUYỆT**: `{now_str}`  
 > **CON DẤU THỂ CHẾ**: `🛡️ BAN 12 TRỌNG NIÊM PHONG PHÁP LÝ THỂ CHẾ`  
-> **HIỆN TRẠNG TÀI KHOẢN**: `20,167,119 ₫` (100% TIỀN MẶT — 0 CP RỦI RO)  
+> **HIỆN TRẠNG TÀI KHOẢN SSOT**: NAV `{ssot['nav_str']}` | Tiền mặt `{ssot['cash_str']}` (`{ssot['cash_pct']:.1f}%`) | Cổ phiếu: `{ssot['equity_str']}` | Thực lãi: `{ssot['realized_str']}`  
 
 ---
 

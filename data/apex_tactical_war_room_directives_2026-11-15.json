@@ -14,5 +14,21 @@
     "role": "sentinel",
     "type": "sentinel_brief",
     "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-15. Tổng NAV live: 18,256,471 đ | Tiền mặt thật: 12,516,471 đ (68.6% Cash) | Đang nắm giữ: 200 CP (100 HDB + 100 MSH ≈ 5,740,000 đ) | Lãi đã chốt lũy kế: +167,119 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
+  },
+  {
+    "id": "dir_user_1794757278612",
+    "timestamp": "22:41:16",
+    "sender": "Chủ tịch Trần Quốc Thiên Phước",
+    "role": "chairman",
+    "type": "chairman_directive",
+    "content": "kiểm tra tình hình BAF"
+  },
+  {
+    "id": "dir_resp_1794757278613",
+    "timestamp": "22:41:16",
+    "sender": "Minh Quân (Ban 7 VN) & Victor (Ban 9 Sentinel)",
+    "role": "specialist",
+    "type": "specialist_reply",
+    "content": "Báo cáo Chủ tịch dữ liệu LIVE của BAF (Nông nghiệp BAF Việt Nam (HOSE)) [Chưa nắm giữ — Trạng thái Radar / Standby]:\n• Giá Live: 30,950 đ (+0.81%) | Khớp: 2,152,700 CP (Pace 1.14x MA20)\n• Dòng tiền: Mua chủ động 71.7% | RSI(14): 62.9 | Khối ngoại: +0.34 Tỷ\n• Vùng mục tiêu gom: <= 30,710 đ | Stop 2xATR: 29,650 đ (cách +4.20%) | TP1: 32,650 đ | TP2: 34,140 đ\n• Đánh giá tác chiến: 🎯 TRONG VÙNG GOM — CHỜ 14H00 | Catalyst: Mô hình chăn nuôi 3F khép kín hợp tác tập đoàn Muyuan (Trung Quốc), nâng tổng đàn lên 1 triệu con\n\n🏛️ [Hội Chẩn Doanh Nghiệp V7.0 — 14/14 Ban | 13 Packets | 2 Phản biện | Audit 10/10]\n• Phán quyết James: CONDITIONAL_PREPARE_AFTERNOON_14H — ĐƯA VÀO TẦM NGẮM GIỜ VÀNG 14H00 BAF: MOS +43.5%, RS=96/99, 1 lô 100 CP = 3,090,000 đ (17.0% NAV). Chỉ cân nhắc giải ngân tối đa 1 lô từ két 12,516,471 đ vào 14h00–14h25 khi giữ vững MA20 (30,002 đ) và áp dụng Stop 29,703 đ.\n• Tranh biện nổi bật: [APPROVE] Pháp Y Tài Chính (Ban 2): [BCTC SẠCH BAN 2] BAF: ROE=16.2%, ROIC=13.2% (EVA +1.7%), OCF/LNST=1.18x >= 1.0x, Piotroski=7/9, MOS=+43.5% (Intrinsic 44,399). | [CONDITIONAL] Hội Đồng Rủi Ro (Ban 4): [ĐIỀU KIỆN RỦI RO BAN 4] Khống chế rủi ro BAF: Stop 2xATR=4.03% (ngưỡng 29,703), Lô 100 CP = 17.0% NAV <= 18% tiêu chuẩn Kim Tự Tháp, Risk M"
   }
 ]

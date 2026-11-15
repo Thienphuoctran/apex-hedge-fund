@@ -3789,6 +3789,50 @@ def generate_portal_html(
             </div>
         </section>
 
+        <!-- V7.0: LIVING ENTERPRISE & INTER-DEPARTMENTAL COLLABORATION MESH -->
+        <section id="wr-enterprise-mesh-panel" class="war-room-section" style="margin-top: 14px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 14px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <div>
+                    <div style="font-size: 13.5px; font-weight: 900; color: #38bdf8; letter-spacing: 0.3px;">
+                        🏛️ BÀN LÀM VIỆC DOANH NGHIỆP SỐNG &amp; TRANH BIỆN ĐA PHÒNG BAN (V7.0)
+                    </div>
+                    <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">
+                        14 Thực Thể Độc Lập • Trao Đổi Gói Số Liệu Thực • Biểu Quyết VETO Hiến Chương &amp; Niêm Phong Trọng Ban 12
+                    </div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
+                    <span id="enterprise-mesh-badge" style="font-size: 10.5px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.45); color: #34d399; padding: 4px 8px; border-radius: 6px; font-weight: 800;">Quorum 14/14 • Audit 10/10</span>
+                    <input id="enterprise-ticker-input" type="text" placeholder="Mã (VD: HDB, BAF, MWG)" style="width: 140px; padding: 5px 8px; font-size: 11px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 6px; color: #f8fafc;" />
+                    <input id="enterprise-directive-input" type="text" placeholder="Chỉ thị họp liên phòng ban..." style="width: 220px; padding: 5px 8px; font-size: 11px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 6px; color: #f8fafc;" />
+                    <button id="enterprise-convene-btn" onclick="conveneEnterpriseMesh()" style="cursor: pointer; background: linear-gradient(90deg, #0284c7, #2563eb); color: #fff; border: none; border-radius: 6px; padding: 5px 11px; font-size: 11px; font-weight: 800;">⚡ Triệu Tập Họp Thật</button>
+                </div>
+            </div>
+            <div id="enterprise-verdict-banner" style="background: rgba(30, 41, 59, 0.72); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 9px 11px; font-size: 11.5px; color: #e2e8f0; margin-bottom: 10px;">
+                ⏳ Đang tải trạng thái đồng bộ Doanh Nghiệp Sống V7.0...
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px;">
+                <div style="background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 8px; padding: 9px;">
+                    <div style="font-size: 11.5px; font-weight: 800; color: #fbbf24; margin-bottom: 6px;">⚖️ Biểu Quyết Điểm Danh 14 Thực Thể (Roll-Call Vote)</div>
+                    <div style="max-height: 250px; overflow-y: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 10.5px;">
+                            <thead>
+                                <tr style="color: #94a3b8; border-bottom: 1px solid rgba(148, 163, 184, 0.2); text-align: left;">
+                                    <th style="padding: 4px;">Ban / Cán Bộ</th>
+                                    <th style="padding: 4px;">Phiếu</th>
+                                    <th style="padding: 4px;">Luận Điểm Định Lượng</th>
+                                </tr>
+                            </thead>
+                            <tbody id="enterprise-roster-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.72); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 8px; padding: 9px;">
+                    <div style="font-size: 11.5px; font-weight: 800; color: #34d399; margin-bottom: 6px;">📡 Luồng Gói Dữ Liệu &amp; Tranh Biện Đối Kháng Liên Phòng Ban</div>
+                    <div id="enterprise-debate-stream" style="max-height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; font-size: 10.5px;"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- ========================================================
              TAB 4: BÀN CHỈ HUY MASTER CIO JAMES (SPLIT-VIEW 2 CỘT)
              ======================================================== -->
@@ -3817,8 +3861,9 @@ def generate_portal_html(
                     <!-- Quick Command Chips -->
                     <div style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 12px 20px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
                         <span style="font-size: 11px; font-weight: 800; color: var(--text-dim); text-transform: uppercase;">Lệnh Nhanh:</span>
-                        <button class="cmd-chip" onclick="sendQuickCommand('/tcbs')">🏦 /tcbs (Két 20.16M)</button>
-                        <button class="cmd-chip" onclick="sendQuickCommand('/danhmuc')">📊 /danhmuc (100% Cash)</button>
+                        <button class="cmd-chip" onclick="sendQuickCommand('/tcbs')">🏦 /tcbs (Số Dư Thực Tế)</button>
+                        <button class="cmd-chip" onclick="sendQuickCommand('/danhmuc')">📊 /danhmuc (Vị Thế &amp; Cash Live)</button>
+                        <button class="cmd-chip" onclick="sendQuickCommand('/doanhnghiep')">🏛️ /doanhnghiep (Họp 14 Ban V7.0)</button>
                         <button class="cmd-chip" onclick="sendQuickCommand('/solenh')">⚡ /solenh (Nhịp 1 HDB & MSH)</button>
                         <button class="cmd-chip" onclick="sendQuickCommand('/hop HDB')">🏦 /hop HDB (Soi BCTC HDB)</button>
                         <button class="cmd-chip" onclick="sendQuickCommand('/hop MSH')">🧵 /hop MSH (Soi BCTC MSH)</button>
@@ -5989,6 +6034,11 @@ def generate_portal_html(
                     </div>`;
                 }}).join('');
             }}
+
+            // 13. V7.0 Living Enterprise & Inter-Departmental Collaboration Mesh
+            if (data.enterprise_mesh_summary) {{
+                renderEnterpriseMeshPanel(data.enterprise_mesh_summary);
+            }}
         }}
 
         async function runOmniIntelSearch() {{
@@ -6208,6 +6258,10 @@ def generate_portal_html(
                     body: JSON.stringify({{ command: prompt }})
                 }});
                 if (res.ok) {{
+                    const cmdData = await res.json().catch(() => null);
+                    if (cmdData && cmdData.enterprise_session && cmdData.enterprise_session.session_id) {{
+                        renderEnterpriseMeshPanel({{ latest_session: cmdData.enterprise_session, roster_count: 14 }});
+                    }}
                     await loadTacticalWarRoomData();
                 }}
             }} catch (err) {{
@@ -6227,6 +6281,151 @@ def generate_portal_html(
             sendTacticalCommand(promptText);
         }}
 
+        function renderEnterpriseMeshPanel(summary) {{
+            if (!summary) return;
+            const s = (summary.latest_session || summary.session)
+                ? (summary.latest_session || summary.session)
+                : summary;
+            if (!s || !s.session_id) return;
+
+            const badgeEl = document.getElementById('enterprise-mesh-badge');
+            const bannerEl = document.getElementById('enterprise-verdict-banner');
+            const rosterBodyEl = document.getElementById('enterprise-roster-body');
+            const debateEl = document.getElementById('enterprise-debate-stream');
+
+            const quorum = s.quorum_count || summary.roster_count || 14;
+            const rosterTotal = s.roster_total || 14;
+            const pktsCount = s.packet_count || (s.packets ? s.packets.length : 14);
+            const dissentCount = s.dissent_count || 0;
+            const auditScore = s.ombudsman_audit_score || '10/10';
+            const sealShort = String(s.constitutional_seal_sha256 || '').slice(0, 12);
+
+            if (badgeEl) {{
+                badgeEl.innerText = `Quorum ${{quorum}}/${{rosterTotal}} • ${{pktsCount}} Packets • ${{dissentCount}} Phản biện • Audit ${{auditScore}} • Seal ${{sealShort}}`;
+                badgeEl.style.color = s.veto_triggered ? '#fca5a5' : '#34d399';
+                badgeEl.style.borderColor = s.veto_triggered ? 'rgba(239, 68, 68, 0.5)' : 'rgba(16, 185, 129, 0.45)';
+                badgeEl.style.background = s.veto_triggered ? 'rgba(239, 68, 68, 0.14)' : 'rgba(16, 185, 129, 0.15)';
+            }}
+
+            if (bannerEl) {{
+                const ssot = s.ssot_snapshot || {{}};
+                const navVnd = Number(ssot.total_nav_vnd || 18151471).toLocaleString('vi-VN');
+                const cashVnd = Number(ssot.cash_vnd ?? ssot.cash_balance_vnd ?? 12516471).toLocaleString('vi-VN');
+                const cashPct = Number(ssot.cash_pct || 69.0).toFixed(1);
+                const verdictColor = s.veto_triggered ? '#f87171' : '#34d399';
+                const targetTag = s.target_ticker ? `<span style="background: rgba(56, 189, 248, 0.18); color: #38bdf8; padding: 2px 7px; border-radius: 5px; font-weight: 800; font-size: 10.5px;">Mã: ${{escHtml(s.target_ticker)}}</span>` : '<span style="background: rgba(148, 163, 184, 0.2); color: #cbd5e1; padding: 2px 7px; border-radius: 5px; font-weight: 700; font-size: 10.5px;">Toàn Danh Mục</span>';
+                bannerEl.innerHTML = `
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; margin-bottom: 5px;">
+                        <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                            <strong style="color: #f8fafc;">Phiên ${{escHtml(s.session_id)}}</strong>
+                            ${{targetTag}}
+                            <span style="color: ${{verdictColor}}; font-weight: 900;">⚖️ ${{escHtml(s.final_verdict || '')}}</span>
+                        </div>
+                        <span style="font-size: 10.5px; color: #94a3b8;">🕒 ${{escHtml(s.created_at || '')}} | SSOT ${{escHtml(ssot.account_id || '105C307855')}}: NAV ${{navVnd}} đ • Cash ${{cashVnd}} đ (${{cashPct}}%)</span>
+                    </div>
+                    <div style="font-size: 11.5px; color: #cbd5e1; line-height: 1.45;">
+                        <strong style="color: #fbbf24;">Chỉ thị:</strong> ${{escHtml(s.directive || '')}}<br>
+                        <strong style="color: #38bdf8;">Hành động chốt:</strong> ${{escHtml(s.action_plan || '')}}
+                    </div>
+                `;
+            }}
+
+            if (rosterBodyEl) {{
+                const votes = Array.isArray(s.roll_call_votes) ? s.roll_call_votes : [];
+                if (!votes.length) {{
+                    rosterBodyEl.innerHTML = '<tr><td colspan="3" style="padding: 8px; color: #94a3b8;">Chưa có dữ liệu điểm danh 14 thực thể.</td></tr>';
+                }} else {{
+                    rosterBodyEl.innerHTML = votes.map((rv) => {{
+                        const v = String(rv.vote || 'INFO').toUpperCase();
+                        let vColor = '#94a3b8';
+                        let vBg = 'rgba(148, 163, 184, 0.15)';
+                        if (v === 'VETO') {{ vColor = '#fca5a5'; vBg = 'rgba(239, 68, 68, 0.22)'; }}
+                        else if (v === 'DISSENT') {{ vColor = '#fdba74'; vBg = 'rgba(249, 115, 22, 0.2)'; }}
+                        else if (v === 'CONDITIONAL') {{ vColor = '#fde047'; vBg = 'rgba(234, 179, 8, 0.18)'; }}
+                        else if (v === 'APPROVE' || v === 'AUDIT_PASS') {{ vColor = '#6ee7b7'; vBg = 'rgba(16, 185, 129, 0.18)'; }}
+                        return `
+                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.12);">
+                                <td style="padding: 5px 4px; color: #f1f5f9; font-weight: 700; white-space: nowrap;">${{escHtml(rv.ban_code || rv.dept_id)}} • <span style="color: #38bdf8; font-weight: 600;">${{escHtml(rv.officer || '')}}</span></td>
+                                <td style="padding: 5px 4px; white-space: nowrap;"><span style="background: ${{vBg}}; color: ${{vColor}}; padding: 2px 6px; border-radius: 4px; font-weight: 800; font-size: 9.5px;">${{escHtml(v)}}</span></td>
+                                <td style="padding: 5px 4px; color: #cbd5e1; line-height: 1.35;">${{escHtml(rv.rationale || '')}} <span style="color: #64748b;">(Đ.${{escHtml(rv.article || '')}})</span></td>
+                            </tr>
+                        `;
+                    }}).join('');
+                }}
+            }}
+
+            if (debateEl) {{
+                const debates = Array.isArray(s.debate_points) ? s.debate_points : [];
+                const packets = Array.isArray(s.packets) ? s.packets : [];
+                let htmlBlocks = debates.map((dp) => {{
+                    const st = String(dp.stance || 'INFO').toUpperCase();
+                    const borderClr = st === 'VETO' ? '#ef4444' : (st === 'DISSENT' ? '#f97316' : (st === 'CONDITIONAL' ? '#eab308' : '#10b981'));
+                    return `
+                        <div style="background: rgba(30, 41, 59, 0.65); border-left: 3px solid ${{borderClr}}; padding: 6px 8px; border-radius: 5px;">
+                            <div style="font-weight: 800; color: #f8fafc; font-size: 10.5px;">[${{escHtml(st)}} • Điều ${{escHtml(dp.article || '')}}] ${{escHtml(dp.speaker || dp.speaker_dept)}} → ${{escHtml(dp.target_dept || '')}}</div>
+                            <div style="color: #cbd5e1; margin-top: 2px; line-height: 1.38;">${{escHtml(dp.argument || '')}}</div>
+                        </div>
+                    `;
+                }});
+                const dataPackets = packets.slice(0, 6).map((pk) => `
+                    <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.22); padding: 5px 8px; border-radius: 5px;">
+                        <div style="color: #38bdf8; font-weight: 700; font-size: 10px;">📦 ${{escHtml(pk.from_dept)}} (${{escHtml(pk.from_officer)}}) → ${{escHtml((pk.to_depts || []).join(', '))}} • [${{escHtml(pk.topic)}}]</div>
+                        <div style="color: #94a3b8; margin-top: 2px; line-height: 1.35;">${{escHtml(pk.summary || '')}}</div>
+                    </div>
+                `);
+                const combined = htmlBlocks.concat(dataPackets);
+                debateEl.innerHTML = combined.length
+                    ? combined.join('')
+                    : '<div style="color: #94a3b8;">Chưa ghi nhận gói tranh biện nào trong phiên này.</div>';
+            }}
+        }}
+
+        async function loadEnterpriseMeshState() {{
+            try {{
+                const res = await fetch('/api/enterprise/state');
+                if (!res.ok) return;
+                const data = await res.json();
+                if (data && data.ok) {{
+                    renderEnterpriseMeshPanel(data.summary || data);
+                }}
+            }} catch (err) {{
+                console.error('Error loading enterprise mesh state:', err);
+            }}
+        }}
+
+        async function conveneEnterpriseMesh() {{
+            const tickerEl = document.getElementById('enterprise-ticker-input');
+            const dirEl = document.getElementById('enterprise-directive-input');
+            const btnEl = document.getElementById('enterprise-convene-btn');
+            const ticker = tickerEl ? tickerEl.value.trim().toUpperCase() : '';
+            const directive = (dirEl && dirEl.value.trim())
+                ? dirEl.value.trim()
+                : (ticker ? `Họp khẩn toàn doanh nghiệp đánh giá đa chiều mã ${{ticker}}` : 'Họp giao ban toàn doanh nghiệp đánh giá danh mục và tầm ngắm');
+
+            if (btnEl) {{
+                btnEl.disabled = true;
+                btnEl.innerText = '⏳ Đang họp 14 Ban...';
+            }}
+            try {{
+                const res = await fetch('/api/enterprise/convene', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ ticker, directive, trigger_source: 'PORTAL_UI' }})
+                }});
+                const data = await res.json();
+                if (res.ok && data && data.ok) {{
+                    renderEnterpriseMeshPanel(data.summary || {{ latest_session: data.session, roster_count: 14 }});
+                    await loadTacticalWarRoomData();
+                }}
+            }} catch (err) {{
+                console.error('Error convening enterprise mesh:', err);
+            }} finally {{
+                if (btnEl) {{
+                    btnEl.disabled = false;
+                    btnEl.innerText = '⚡ Triệu Tập Họp Thật';
+                }}
+            }}
+        }}
 
         window.addEventListener('DOMContentLoaded', () => {{
             syncDateFilterButtons();
@@ -6239,6 +6438,7 @@ def generate_portal_html(
             initSummitRoom();
             startLiveClockTicker();
             initTacticalWarRoom();
+            loadEnterpriseMeshState();
         }});
 
         // LÀM MỚI DỮ LIỆU

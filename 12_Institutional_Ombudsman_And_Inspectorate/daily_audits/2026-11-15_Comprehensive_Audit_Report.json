@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-15 22:19:26",
-  "target_url": "https://apex-hedge-fund.onrender.com",
+  "timestamp": "2026-11-15 22:49:50",
+  "target_url": "http://127.0.0.1:18080",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -59,13 +59,13 @@
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room/stream (SSE)",
       "status": "PASSED",
-      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 46222"
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 83498"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/reports",
       "status": "PASSED",
-      "details": "Tổng số báo cáo: 372"
+      "details": "Tổng số báo cáo: 371"
     },
     {
       "module": "Live_Endpoint",
@@ -111,7 +111,7 @@
     },
     {
       "module": "Python_Code_Integrity",
-      "check": "Biên dịch sạch 134 scripts trong scripts/",
+      "check": "Biên dịch sạch 135 scripts trong scripts/",
       "status": "PASSED",
       "details": "Lỗi: 0"
     },
@@ -216,10 +216,40 @@
       "check": "Cloud DB V6 Vault Sync, Supabase RLS Migration & /api/intelligence/alerts",
       "status": "PASSED",
       "details": "Snapshots DB: 3 | Migration RLS: True | Alerts API: True | UI V6: True"
+    },
+    {
+      "module": "Phase5_EnterpriseRosterAndPackets",
+      "check": "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
+      "status": "PASSED",
+      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: bc69c1d3d480..."
+    },
+    {
+      "module": "Phase5_AdversarialDebateAndVeto",
+      "check": "Tranh Biện Đối Kháng & Quyền Phủ Quyết VETO Hiến Chương (MWG/FPT)",
+      "status": "PASSED",
+      "details": "MWG: VETOED_CAPITAL_FIT_VIOLATION (Veto=True) | FPT: VETOED_TREND_AND_VALUATION_RISK (Veto=True) | Portfolio: ENTERPRISE_STRATEGY_HOLD_SELECTIVE_14H"
+    },
+    {
+      "module": "Phase5_ConstitutionalOmbudsmanAndZeroStaleSSOT",
+      "check": "Kiểm Toán Viên Trọng & 0% Chuỗi Cứng Lỗi Thời SSOT (Directive + Summit)",
+      "status": "PASSED",
+      "details": "Live NAV/Cash (18,151,471/12,516,471) synced; 0 stale strings in /tcbs & Summit state"
+    },
+    {
+      "module": "Phase5_LiveEnterpriseEndpoints",
+      "check": "V7 Live Endpoints (/api/enterprise/state, /api/enterprise/convene, War-Room & UI Panel)",
+      "status": "PASSED",
+      "details": "State OK=True | Convene HDB=HOLD_RIDE_WINNER_T0_READY | WR=True | UI=True"
+    },
+    {
+      "module": "Phase5_CloudDB_V7_EnterpriseSync",
+      "check": "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
+      "status": "PASSED",
+      "details": "LocalSaved=True | VaultRows=2 | MigrationRLS=True | CloudSynced=False"
     }
   ],
-  "total_checks": 35,
-  "passed_checks": 35,
+  "total_checks": 40,
+  "passed_checks": 40,
   "warnings": [],
   "errors": []
 }

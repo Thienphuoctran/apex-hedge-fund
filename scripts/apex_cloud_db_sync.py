@@ -168,6 +168,22 @@ def _ensure_local_tables() -> None:
                 payload_json TEXT NOT NULL,
                 detected_at TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS apex_enterprise_work_sessions (
+                session_id TEXT PRIMARY KEY,
+                created_at TEXT NOT NULL,
+                trigger_source TEXT NOT NULL DEFAULT 'CHAIRMAN_DIRECTIVE',
+                target_ticker TEXT,
+                directive TEXT NOT NULL,
+                final_verdict TEXT NOT NULL,
+                quorum_count INTEGER NOT NULL DEFAULT 14,
+                packet_count INTEGER NOT NULL DEFAULT 0,
+                dissent_count INTEGER NOT NULL DEFAULT 0,
+                veto_triggered INTEGER NOT NULL DEFAULT 0,
+                ombudsman_audit_score TEXT NOT NULL DEFAULT '10/10',
+                constitutional_seal_sha256 TEXT NOT NULL,
+                payload_json TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            );
         """)
     _SQLITE_INIT_DONE = True
 
@@ -804,6 +820,98 @@ class ApexCloudDBSync:
                 "ok": True,
                 "snapshots_saved": snapshots_saved,
                 "alerts_saved": alerts_saved,
+                "cloud_synced": cloud_ok,
+                "detail": detail,
+            }
+
+    @classmethod
+    def sync_enterprise_session(cls, session_payload: Dict[str, Any]) -> Dict[str, Any]:
+        """Đồng bộ phiên làm việc Doanh Nghiệp Sống V7.0 lên SQLite Vault Mirror & Supabase Cloud DB."""
+        if not isinstance(session_payload, dict) or not session_payload.get("session_id"):
+            return {"ok": False, "detail": "invalid-enterprise-session-payload"}
+        with _SYNC_LOCK:
+            _ensure_local_tables()
+            now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
+            sid = str(session_payload["session_id"])
+            created_at = str(session_payload.get("created_at") or now_iso)
+            trigger_src = str(session_payload.get("trigger_source") or "CHAIRMAN_DIRECTIVE")
+            ticker = str(session_payload.get("target_ticker") or "")
+            directive = str(session_payload.get("directive") or "")
+            verdict = str(session_payload.get("final_verdict") or "")
+            quorum = int(session_payload.get("quorum_count") or 14)
+            pkt_cnt = int(session_payload.get("packet_count") or 0)
+            dis_cnt = int(session_payload.get("dissent_count") or 0)
+            veto_flag = bool(session_payload.get("veto_triggered"))
+            audit_score = str(session_payload.get("ombudsman_audit_score") or "10/10")
+            seal_sha = str(session_payload.get("constitutional_seal_sha256") or "")
+
+            local_saved = False
+            try:
+                with sqlite3.connect(VAULT_DB_PATH, timeout=15) as conn:
+                    conn.execute(
+                        """
+                        INSERT INTO apex_enterprise_work_sessions (
+                            session_id, created_at, trigger_source, target_ticker, directive,
+                            final_verdict, quorum_count, packet_count, dissent_count, veto_triggered,
+                            ombudsman_audit_score, constitutional_seal_sha256, payload_json, updated_at
+                        )
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        ON CONFLICT(session_id) DO UPDATE SET
+                            final_verdict=excluded.final_verdict,
+                            quorum_count=excluded.quorum_count,
+                            packet_count=excluded.packet_count,
+                            dissent_count=excluded.dissent_count,
+                            veto_triggered=excluded.veto_triggered,
+                            ombudsman_audit_score=excluded.ombudsman_audit_score,
+                            constitutional_seal_sha256=excluded.constitutional_seal_sha256,
+                            payload_json=excluded.payload_json,
+                            updated_at=excluded.updated_at
+                        """,
+                        (
+                            sid, created_at, trigger_src, ticker or None, directive,
+                            verdict, quorum, pkt_cnt, dis_cnt, 1 if veto_flag else 0,
+                            audit_score, seal_sha, json.dumps(session_payload, ensure_ascii=False), now_iso,
+                        ),
+                    )
+                    local_saved = True
+            except Exception as e:
+                print(f"[!] CloudDB V7 SQLite sync error: {e}")
+
+            cloud_ok = False
+            detail = "local-sqlite-only"
+            try:
+                res = _postgrest_request(
+                    "POST",
+                    "apex_enterprise_work_sessions",
+                    payload={
+                        "session_id": sid,
+                        "created_at": created_at,
+                        "trigger_source": trigger_src,
+                        "target_ticker": ticker or None,
+                        "directive": directive,
+                        "final_verdict": verdict,
+                        "quorum_count": quorum,
+                        "packet_count": pkt_cnt,
+                        "dissent_count": dis_cnt,
+                        "veto_triggered": veto_flag,
+                        "ombudsman_audit_score": audit_score,
+                        "constitutional_seal_sha256": seal_sha,
+                        "payload_json": session_payload,
+                        "updated_at": now_iso,
+                    },
+                    query_params="on_conflict=session_id",
+                )
+                if res is not None:
+                    cloud_ok = True
+                    detail = "supabase-synced"
+            except Exception as e:
+                detail = f"supabase-err: {e}"
+
+            _record_sync_telemetry("apex_enterprise_work_sessions", cloud_ok, detail)
+            return {
+                "ok": local_saved,
+                "session_id": sid,
+                "local_saved": local_saved,
                 "cloud_synced": cloud_ok,
                 "detail": detail,
             }

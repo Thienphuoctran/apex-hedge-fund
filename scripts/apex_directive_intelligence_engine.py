@@ -52,25 +52,60 @@ class ApexDirectiveIntelligenceEngine:
 
     @classmethod
     def get_live_context(cls) -> Dict[str, Any]:
-        """Tải toàn bộ ngữ cảnh sống của quỹ từ SSOT và hồ sơ pháp y."""
+        """Tải toàn bộ ngữ cảnh sống của quỹ từ SSOT (TCBS 105C307855) và hồ sơ vị thế."""
         try:
             st = PortfolioStateManager.load_state()
-            cash_vnd = st.get("cash_balance_vnd", 20167119.0)
-            realized_pnl = st.get("realized_pnl_vnd", 167119.0)
-            positions = st.get("active_positions", {})
+            cash_vnd = float(st.get("cash_balance_vnd", 0.0) or 0.0)
+            market_val_vnd = float(st.get("total_market_val_vnd", 0.0) or 0.0)
+            total_nav_vnd = float(st.get("total_nav_vnd", cash_vnd + market_val_vnd) or (cash_vnd + market_val_vnd))
+            realized_pnl = float(st.get("realized_pnl_vnd", 0.0) or 0.0)
+            unrealized_pnl = float(st.get("unrealized_pnl_vnd", 0.0) or 0.0)
+            positions = st.get("active_positions", {}) or {}
         except Exception:
-            cash_vnd = 20167119.0
-            realized_pnl = 167119.0
+            cash_vnd = 0.0
+            market_val_vnd = 0.0
+            total_nav_vnd = 0.0
+            realized_pnl = 0.0
+            unrealized_pnl = 0.0
             positions = {}
 
+        if total_nav_vnd <= 0:
+            total_nav_vnd = max(1.0, cash_vnd + market_val_vnd)
+        cash_pct = round((cash_vnd / total_nav_vnd) * 100.0, 1) if total_nav_vnd > 0 else 100.0
+        equity_pct = round((market_val_vnd / total_nav_vnd) * 100.0, 1) if total_nav_vnd > 0 else 0.0
+
+        active_items = [p for p in positions.values() if isinstance(p, dict) and int(p.get("shares", 0) or 0) > 0]
+        if active_items:
+            pos_desc = ", ".join(
+                f"{p.get('symbol')} ({int(p.get('shares', 0))} CP @ {float(p.get('entry_price') or p.get('avg_cost_vnd') or 0):,.0f} đ -> {float(p.get('current_price') or p.get('current_price_vnd') or 0):,.0f} đ, Stop {float(p.get('stop_loss') or 0):,.0f} đ)"
+                for p in active_items
+            )
+            equity_risk_label = f"{market_val_vnd:,.0f} ₫ ({len(active_items)} mã: {', '.join(str(p.get('symbol')) for p in active_items)})"
+            cash_state_label = f"{cash_pct:.1f}% TIỀN MẶT ({len(active_items)} mã đang nắm giữ)"
+        else:
+            pos_desc = "0 CP (Chưa giải ngân vị thế mới)"
+            equity_risk_label = "0 ₫ (0 CP)"
+            cash_state_label = "100.0% TIỀN MẶT AN TOÀN"
+
         return {
-            "account_no": "105C307855",
+            "account_no": str(st.get("account_id", "105C307855")) if isinstance(st, dict) else "105C307855",
             "cash_vnd": cash_vnd,
+            "market_val_vnd": market_val_vnd,
+            "total_nav_vnd": total_nav_vnd,
+            "cash_pct": cash_pct,
+            "equity_pct": equity_pct,
             "realized_pnl": realized_pnl,
+            "unrealized_pnl": unrealized_pnl,
             "positions": positions,
             "cash_str": f"{cash_vnd:,.0f} ₫",
-            "realized_str": f"+{realized_pnl:,.0f} ₫",
-            "active_count": len([p for p in positions.values() if p.get("shares", 0) > 0])
+            "market_val_str": f"{market_val_vnd:,.0f} ₫",
+            "nav_str": f"{total_nav_vnd:,.0f} ₫",
+            "realized_str": f"{realized_pnl:+,.0f} ₫",
+            "unrealized_str": f"{unrealized_pnl:+,.0f} ₫",
+            "active_count": len(active_items),
+            "positions_summary_str": pos_desc,
+            "equity_risk_label": equity_risk_label,
+            "cash_state_label": cash_state_label,
         }
 
     @classmethod
@@ -156,9 +191,12 @@ class ApexDirectiveIntelligenceEngine:
         if analysis["is_inspection"] and any(w in analysis["raw_query"].lower() for w in ["bảo mật", "khiên", "chống hack"]):
             return cls._handle_inspection_security(user_query, ctx, ts_base, now_str)
 
-        # PHÂN TÍCH CHUYÊN MÔN THEO DOMAIN & TICKER
+        # === TRƯỜNG HỢP 0: CHỈ THỊ HỌP DOANH NGHIỆP / TRANH BIỆN ĐA PHÒNG BAN V7.0 ===
+        q_low = user_query.lower()
         tickers = analysis["detected_tickers"]
         domains = analysis["domains"]
+        if any(w in q_low for w in ["/doanhnghiep", "/hoidong", "/tranhbien", "doanh nghiệp", "phòng ban", "tranh biện", "biểu quyết", "veto", "họp toàn", "toàn hệ thống"]):
+            return cls._synthesize_enterprise_mesh_dialogue(user_query, tickers, ctx, ts_base, now_str)
 
         # === TRƯỜNG HỢP 1: SO SÁNH CỔ PHIẾU HOẶC HỎI TẠI SAO CHỌN MÃ A THAY VÌ MÃ B ===
         if "PEER_COMPARISON" in domains or ("MSH" in tickers and "TNG" in tickers) or ("BAF" in tickers and any(t in tickers for t in ["DBC", "MSN"])) or ("HDB" in tickers and any(t in tickers for t in ["TCB", "MBB"])) or ("IDC" in tickers and any(t in tickers for t in ["KBC", "BCM"])) or (any(t in tickers for t in ["NKG", "HPG", "HSG"])):
@@ -178,13 +216,12 @@ class ApexDirectiveIntelligenceEngine:
         if "RISK_MANAGEMENT" in domains:
             return cls._synthesize_risk_management(user_query, tickers, ctx, ts_base, now_str)
 
-        # === TRƯỜNG HỢP 5: PHÁP Y BCTC & ĐÁNH GIÁ MÃ CỤ THỂ (MSH, BAF, HDB, IDC) ===
+        # === TRƯỜNG HỢP 5: PHÁP Y BCTC & TRANH BIỆN ĐA PHÒNG BAN CHO MÃ CỤ THỂ ===
         if tickers:
-            primary_ticker = tickers[0]
-            return cls._synthesize_ticker_deepdive(user_query, primary_ticker, ctx, ts_base, now_str)
+            return cls._synthesize_enterprise_mesh_dialogue(user_query, tickers, ctx, ts_base, now_str)
 
-        # === TRƯỜNG HỢP 6: CHIẾN LƯỢC TỔNG QUAN / ĐÁNH GIÁ CHẤT LƯỢNG CUỘC HỌP ===
-        return cls._synthesize_general_strategy(user_query, ctx, ts_base, now_str)
+        # === TRƯỜNG HỢP 6: CHIẾN LƯỢC TỔNG QUAN / PHIÊN LÀM VIỆC TOÀN DOANH NGHIỆP ===
+        return cls._synthesize_enterprise_mesh_dialogue(user_query, [], ctx, ts_base, now_str)
 
     # -------------------------------------------------------------
     # BỘ NÃO CHUYÊN SÂU TỪNG PHÂN HỆ ĐẦU TƯ
@@ -245,9 +282,10 @@ class ApexDirectiveIntelligenceEngine:
 
         # 4. So sánh HDB vs TCB / MBB
         elif "HDB" in tickers or any(t in tickers for t in ["TCB", "MBB"]) or "ngân hàng" in query.lower():
+            hdb_lot_pct = round((2235000.0 / max(1.0, ctx["total_nav_vnd"])) * 100.0, 1)
             james_text = (
                 f"Báo cáo Chủ tịch: Trong nhóm Ngân hàng, chúng ta chọn HDB thay vì TCB hay MBB dựa trên 2 yếu tố quyết định: "
-                f"Khả năng sinh lời ROE vượt trội và tính tương thích với quy mô vốn SSOT 20 triệu VNĐ của quỹ."
+                f"Khả năng sinh lời ROE vượt trội và tính tương thích với quy mô vốn NAV thực tế **{ctx['nav_str']}** của quỹ."
             )
             specialist_name = "Trưởng Ban 4 VN (Hội Đồng Định Lượng)"
             specialist_badge = "ĐỊNH CỠ & ĐỊNH GIÁ"
@@ -255,16 +293,16 @@ class ApexDirectiveIntelligenceEngine:
             specialist_text = (
                 f"Kính thưa Chủ tịch: Xin đặt lên bàn cân định lượng:\n"
                 f"• **Về hiệu quả đồng vốn**: HDB dẫn đầu toàn hệ thống ngân hàng TMCP với **ROE 25.6%** và **NIM 5.2%**. P/E chỉ **6.1x**, P/B **1.15x** — rẻ hơn đáng kể so với TCB (P/B 1.35x).\n"
-                f"• **Tuân thủ Điều Luật 6 Hiến Chương**: Với số vốn SSOT 20,167,119 ₫, 1 lô 100 CP HDB tại giá 22.500 ₫ chỉ tốn **2.250.000 ₫** (chiếm đúng **11.2% NAV**). "
-                f"Nếu mua TCB ở thị giá 38.000 – 40.000 ₫ thì 1 lô 100 CP sẽ ngốn gần 4 triệu ₫ (~20% NAV), làm giảm dư địa đa dạng hóa danh mục.\n"
+                f"• **Tuân thủ Điều Luật 5 Hiến Chương**: Trên tổng NAV sống **{ctx['nav_str']}**, 1 lô 100 CP HDB (~**2.235.000 ₫**) chỉ chiếm **{hdb_lot_pct:.1f}% NAV**. "
+                f"Nếu mua TCB ở thị giá 38.000 – 40.000 ₫ thì 1 lô 100 CP sẽ ngốn gần 4 triệu ₫ (~22% NAV), làm giảm dư địa đa dạng hóa danh mục.\n"
                 f"• **Dư địa tăng trưởng**: HDB được cấp room tín dụng top đầu ngành (+16.8%) nhờ tham gia tái cơ cấu tổ chức tín dụng yếu kém, đồng thời cổ tức đều đặn 30% (10% tiền mặt + 20% cổ phiếu)."
             )
             minhquan_text = (
-                f"Minh Quân chốt hạ: Điểm mua HDB quanh vùng **22.300 – 22.500 ₫** có ngưỡng Stop Loss tại **21.220 ₫ (-5.69%)**. "
-                f"Rủi ro tối đa cho 100 CP chỉ là **128.000 ₫ (0.63% NAV)** — đổi lấy tiềm năng chạm TP1 24.290 ₫ và TP2 25.820 ₫ (+14.7%). Tỷ lệ R:R đạt chuẩn 1:2.5!"
+                f"Minh Quân chốt hạ: Vị thế HDB (giá vốn 22.057 ₫ -> hiện tại 22.350 ₫) khóa Stop Loss tại **22.060 ₫**. "
+                f"Mức rủi ro tuân thủ chặt trần Risk-Parity (<1.5% NAV), hướng tới TP1 **24.200 ₫** và TP2 **25.800 ₫** (Tỷ lệ R:R > 1:2)!"
             )
-            metrics = {"HDB_ROE": "25.6%", "TCB_ROE": "19.5%", "HDB_PE": "6.1x", "HDB_Lot_NAV": "11.2%"}
-            highlight = "HDB ROE 25.6% số 1 hệ thống, P/E 6.1x rẻ, 1 lô 100 CP chỉ 11.2% NAV tối ưu quản trị rủi ro!"
+            metrics = {"HDB_ROE": "25.6%", "TCB_ROE": "19.5%", "HDB_PE": "6.1x", "HDB_Lot_NAV": f"{hdb_lot_pct:.1f}%"}
+            highlight = f"HDB ROE 25.6%, P/E 6.1x rẻ, 1 lô 100 CP chỉ {hdb_lot_pct:.1f}% NAV tối ưu quản trị rủi ro!"
 
         # 5. So sánh IDC vs KBC / BCM (Khu Công Nghiệp)
         elif "IDC" in tickers or any(t in tickers for t in ["KBC", "BCM"]) or any(w in query.lower() for w in ["kcn", "khu công nghiệp", "idico"]):
@@ -320,18 +358,19 @@ class ApexDirectiveIntelligenceEngine:
         )
 
         minhquan_text = (
-            f"Báo cáo Chủ tịch về kịch bản VN-Index: Nếu VN-Index bị ép thủng ngưỡng 1.700 điểm do tâm lý hoảng loạn, "
-            f"hiện tại chúng ta đang nắm giữ **100% TIỀN MẶT ({ctx['cash_str']})**. "
-            f"Chúng ta đang ở vị thế kẻ đi săn hoàn toàn tự chủ. Khi thị trường bán tháo quá đà là lúc các siêu cổ phiếu tiền thật MSH, IDC về vùng định giá siêu hời. "
-            f"Kỷ luật cấm FOMO ATO sáng và chỉ chờ giải ngân Khung Giờ Vàng 14h00 sẽ bảo vệ chúng ta an toàn 100%!"
+            f"Báo cáo Chủ tịch về kịch bản VN-Index: Dù thị trường rung lắc mạnh, "
+            f"hiện tại chúng ta đang kiểm soát **{ctx['cash_state_label']}** — tiền mặt sẵn có **{ctx['cash_str']}** "
+            f"({ctx['cash_pct']:.1f}% NAV `{ctx['nav_str']}`), danh mục mở: `{ctx['positions_summary_str']}`. "
+            f"Chúng ta giữ thế chủ động hoàn toàn. Khi thị trường chiết khấu quá đà là lúc gia tăng các siêu cổ phiếu tiền thật có biên an toàn cao, "
+            f"tuân thủ kỷ luật cấm FOMO ATO sáng và chỉ bấm cò Khung Giờ Vàng 14h00!"
         )
 
-        highlight = "Tỷ giá lên 26k: MSH hưởng lợi lớn nhất (thu USD), IDC neo giá FDI, 100% tiền mặt ở thế thượng phong!"
-        metrics = {"USD_VND": "25,450 - 25,900", "MSH_FX_Gain": "+1.5% profit / 1% USD", "Cash_State": "100% TIỀN MẶT"}
+        highlight = f"Tỷ giá lên 26k: MSH hưởng lợi xuất khẩu USD; quỹ giữ đệm tiền mặt {ctx['cash_str']} ({ctx['cash_pct']:.1f}% NAV) chủ động!"
+        metrics = {"USD_VND": "25,450 - 25,900", "MSH_FX_Gain": "+1.5% profit / 1% USD", "Cash_State": ctx["cash_state_label"]}
 
         msg_james = cls._build_msg("Master CIO James", "Ban 8 — Tổng Tư Lệnh Master CIO", "Chủ Trì Điều Phối", "🎖️", "ĐIỀU HÀNH VĨ MÔ", "#38bdf8", james_text, highlight, metrics, ts_base + 1, now_str)
         msg_spec = cls._build_msg("Long & Trưởng Ban 1 VN", "Ban 1 VN & Hội Đồng Đầu Não Chiến Lược", "Chuyên Gia Vĩ Mô & Tiền Tệ", "🌐", "BÁO CÁO TRUYỀN DẪN VĨ MÔ", "#60a5fa", specialist_text, highlight, metrics, ts_base + 2, now_str)
-        msg_mq = cls._build_msg("Minh Quân", "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng", "Chuyên Viên Thực Thi", "⚡", "CHIẾN LƯỢC KẺ ĐI SĂN", "#f97316", minhquan_text, "100% tiền mặt sẵn sàng rình mồi", None, ts_base + 3, now_str)
+        msg_mq = cls._build_msg("Minh Quân", "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng", "Chuyên Viên Thực Thi", "⚡", "CHIẾN LƯỢC KẺ ĐI SĂN", "#f97316", minhquan_text, f"Đệm tiền mặt {ctx['cash_pct']:.1f}% sẵn sàng rình mồi", None, ts_base + 3, now_str)
         msg_trong = cls._build_trong_verification("Xác nhận: Kịch bản stress-test vĩ mô và tỷ giá tuân thủ nghiêm ngặt Điều Luật 1 (Bảo vệ vốn) và Điều Luật 7 (Khung Giờ Vàng)!", ts_base + 4, now_str)
 
         return [msg_james, msg_spec, msg_mq, msg_trong]
@@ -377,35 +416,31 @@ class ApexDirectiveIntelligenceEngine:
 
     @classmethod
     def _synthesize_risk_management(cls, query: str, tickers: List[str], ctx: Dict[str, Any], ts_base: int, now_str: str) -> List[Dict[str, Any]]:
-        """Mổ xẻ công thức Position Sizing, Stop Loss 2xATR và mức rủi ro tối đa trên vốn 20,167,119 ₫."""
+        """Mổ xẻ công thức Position Sizing, Stop Loss 2xATR và mức rủi ro tối đa trên NAV sống thực tế."""
+        nav = max(1.0, ctx["total_nav_vnd"])
         james_text = (
-            f"Báo cáo Chủ tịch Phước Trần: Điều Luật 1 của Hiến Chương Apex quy định rõ: *'Bảo vệ vốn là ưu tiên tối thượng, lợi nhuận chỉ là hệ quả của việc quản trị rủi ro chặt chẽ'*. "
-            f"Với quy mô vốn SSOT **{ctx['cash_str']}**, Ban 4 Định Lượng đã tính toán chi li từng đồng rủi ro cho mỗi lệnh. "
-            f"Kính mời Trưởng Ban 4 VN công bố bảng tính toán định lượng trước Hội đồng!"
+            f"Báo cáo Chủ tịch Phước Trần: Điều Luật 1 & 5 của Hiến Chương Apex quy định rõ: *'Bảo vệ vốn là ưu tiên tối thượng, 1 lô 100 CP bắt buộc <= 33% NAV'*. "
+            f"Trên NAV thực tế **{ctx['nav_str']}** (Tiền mặt **{ctx['cash_str']}**, Cổ phiếu **{ctx['market_val_str']}**), "
+            f"Ban 4 Định Lượng đã khóa chặt từng đồng rủi ro cho mỗi lệnh. Kính mời Trưởng Ban 4 VN công bố!"
         )
 
         specialist_text = (
-            f"Kính thưa Chủ tịch: Áp dụng mô hình định lượng **ATR Risk-Parity** trên số vốn **{ctx['cash_str']}**:\n"
-            f"1. **Quy tắc 1 Lô chẵn 100 CP (Điều Luật 6)**:\n"
-            f"• HDB: 100 CP @ 22.500 ₫ = **2.250.000 ₫ (11.16% NAV)**. Stop Loss 21.220 ₫ (-5.69%). **Mức rủi ro tối đa: 128.000 ₫ (0.63% NAV)**.\n"
-            f"• MSH: 100 CP @ 35.500 ₫ = **3.550.000 ₫ (17.60% NAV)**. Stop Loss 33.090 ₫ (-6.79%). **Mức rủi ro tối đa: 241.000 ₫ (1.19% NAV)**.\n"
-            f"• BAF: 100 CP @ 30.900 ₫ = **3.090.000 ₫ (15.32% NAV)**. Stop Loss 29.650 ₫ (-4.05%). **Mức rủi ro tối đa: 125.000 ₫ (0.62% NAV)**.\n"
-            f"• IDC: 100 CP @ 34.900 ₫ = **3.490.000 ₫ (17.31% NAV)**. Stop Loss 32.530 ₫ (-6.79%). **Mức rủi ro tối đa: 237.000 ₫ (1.18% NAV)**.\n"
-            f"2. **Toán học bất đối xứng của sự an toàn**:\n"
-            f"• Mỗi lệnh giải ngân của quỹ khống chế mức lỗ tối đa chỉ từ **125.000 ₫ đến 241.000 ₫** (luôn **<= 1.2% NAV**).\n"
-            f"• Ngay cả trong kịch bản 'Thiên nga đen' xấu nhất khi cả 4 lệnh đều dính Stop Loss cùng lúc, tổng thiệt hại tối đa chỉ là **731.000 ₫ (~3.6% NAV)**. "
-            f"Tài khoản vẫn còn hơn **19.430.000 ₫ (96.4% vốn nguyên vẹn)** để làm lại bất cứ lúc nào!\n"
+            f"Kính thưa Chủ tịch: Áp dụng mô hình định lượng **ATR Risk-Parity** trên NAV thực tế **{ctx['nav_str']}**:\n"
+            f"1. **Danh mục đang mở & Stop Loss cứng (Điều 5)**: `{ctx['positions_summary_str']}`.\n"
+            f"2. **Quy tắc 1 Lô chẵn 100 CP trên tiền mặt khả dụng ({ctx['cash_str']})**:\n"
+            f"• Mức lỗ tối đa mỗi lệnh mới khóa cứng `<= 1.2% - 1.5% NAV` (`~215.000 - 270.000 ₫`) với Stop Loss `2xATR <= 7.5%`.\n"
+            f"• Bất kỳ mã nào có 1 lô 100 CP vượt trần `33% NAV` (VD: `MWG ~7.3M = {7300000/nav*100:.1f}% NAV`) đều bị Ban 4 **VETO tự động**!\n"
             f"3. **Chiến lược chốt lời Scaling Out 50/50**:\n"
-            f"• Khi chạm TP1 (+10% đến +15%): Chốt lời 50% đút túi tiền tươi. Ngay lập tức nâng Stop Loss của 50% còn lại lên GIÁ VỐN (Breakeven). Kể từ đó vị thế miễn nhiễm 100% với rủi ro thua lỗ!"
+            f"• Khi chạm TP1 (+10% đến +15%): Chốt lời 50% đút túi tiền tươi. Ngay lập tức nâng Stop Loss của 50% còn lại lên GIÁ VỐN (Breakeven) để miễn nhiễm thua lỗ!"
         )
 
         minhquan_text = (
-            f"Minh Quân cam kết trước Chủ tịch: Tuyệt đối không có chuyện 'tất tay' hay dùng margin bừa bãi. "
-            f"Chúng ta bắn tỉa từng phát đạn chuẩn xác, rủi ro khóa cứng dưới 1.2% NAV/lệnh, bảo vệ thành quả lợi nhuận Vòng 1 (+167,119 ₫) trọn vẹn trong két!"
+            f"Minh Quân cam kết trước Chủ tịch: Tuyệt đối không 'tất tay' hay dùng margin bừa bãi. "
+            f"Lãi thực nhận đã khóa **{ctx['realized_str']}**, quỹ giữ đệm tiền mặt **{ctx['cash_pct']:.1f}% NAV** sẵn sàng bắn tỉa kỷ luật!"
         )
 
-        highlight = "Khóa rủi ro tối đa mỗi lệnh chỉ 125k - 241k (<=1.2% NAV); Stop Loss 2xATR bảo vệ 96.4% vốn trong mọi tình huống!"
-        metrics = {"Max_Risk_Per_Trade": "<= 1.2% NAV", "HDB_Risk": "128k", "MSH_Risk": "241k", "BAF_Risk": "125k", "IDC_Risk": "237k"}
+        highlight = f"Khóa rủi ro <= 1.5% NAV/lệnh trên tổng NAV {ctx['nav_str']}; VETO mọi mã > 33% NAV!"
+        metrics = {"NAV": ctx["nav_str"], "Cash": ctx["cash_str"], "Max_Risk_Per_Trade": "<= 1.5% NAV", "Realized_PnL": ctx["realized_str"]}
 
         msg_james = cls._build_msg("Master CIO James", "Ban 8 — Tổng Tư Lệnh Master CIO", "Chủ Trì Điều Phối", "🎖️", "BẢO VỆ VỐN TỐI THƯỢNG", "#38bdf8", james_text, highlight, metrics, ts_base + 1, now_str)
         msg_spec = cls._build_msg("Trưởng Ban 4 VN", "Ban 4 VN — Quản Trị Rủi Ro Định Lượng", "Trọng Tài Quản Trị Rủi Ro", "🛡️", "BẢNG TÍNH TOÁN RỦI RO CHI TIẾT", "#eab308", specialist_text, highlight, metrics, ts_base + 2, now_str)
@@ -465,8 +500,8 @@ class ApexDirectiveIntelligenceEngine:
             f"Bộ Chỉ Huy Tối Cao và toàn thể 12 phòng ban xin tiếp thu sâu sắc ý kiến chỉ đạo của Chủ tịch: *\"{query}\"*.\n"
             f"Với tinh thần 'Làm thật việc thật', chúng tôi xin báo cáo 3 cam kết chiến lược cốt lõi:\n"
             f"1. **Tư duy độc lập & Tranh biện quyết liệt**: Mỗi phòng ban đều giữ vững tôn chỉ chuyên môn của mình — Ban 3 luôn là kẻ thù giả định phản biện gay gắt, Ban 2 bám chặt BCTC kiểm toán, Ban 4 khóa cứng rủi ro toán học, và Minh Quân chỉ bấm cò khi thỏa mãn đầy đủ tiêu chí Khung Giờ Vàng 14h00.\n"
-            f"2. **Thế trận tiền mặt thượng phong**: Với **{ctx['cash_str']} (100% TIỀN MẶT)**, chúng ta không chịu bất kỳ áp lực lãi vay hay rủi ro kẹp hàng nào. Lợi nhuận Vòng 1 (+167,119 ₫) đã bảo toàn trọn vẹn trong két.\n"
-            f"3. **Kế hoạch hành động tuần mới**: Kiên nhẫn rình mồi, chỉ giải ngân từng lô chẵn 100 CP vào các siêu cổ phiếu có dòng tiền kinh doanh OCF vượt trội (MSH, BAF, HDB, IDC) với tỷ lệ R:R >= 1:2.4."
+            f"2. **Thế trận tài sản SSOT thực tế**: NAV **{ctx['nav_str']}** — Tiền mặt **{ctx['cash_str']} ({ctx['cash_pct']:.1f}%)**, Cổ phiếu **{ctx['market_val_str']} ({ctx['equity_pct']:.1f}%)** [`{ctx['positions_summary_str']}`], Thực lãi **{ctx['realized_str']}**.\n"
+            f"3. **Kế hoạch hành động kỷ luật**: Chỉ giải ngân thăm dò thêm trong Khung Giờ Vàng 14h00-14h25 khi vượt qua VETO của Ban 3 & Ban 4 và tỷ lệ R:R >= 1:2.0."
         )
 
         specialist_text = (
@@ -476,13 +511,13 @@ class ApexDirectiveIntelligenceEngine:
         )
 
         minhquan_text = (
-            f"Minh Quân cam kết trước Chủ tịch: Đúng 8h30 sáng mai trước giờ mở phiên ATO, "
-            f"tôi sẽ phát hành Sổ Lệnh Tác Chiến chi tiết và túc trực từng phút trên bảng điện. "
+            f"Minh Quân cam kết trước Chủ tịch: Đúng 8h30 sáng trước giờ mở phiên ATO, "
+            f"tôi sẽ đối soát Sổ Lệnh Tác Chiến cùng 14 thực thể phòng ban và túc trực từng phút trên bảng điện. "
             f"Tuyệt đối không một lệnh nào được phép mua đuổi giá xanh phiên sáng!"
         )
 
-        highlight = "Cam kết 100% làm thật việc thật, độc lập tư duy, 100% tiền mặt ở thế thượng phong sẵn sàng tuần mới!"
-        metrics = {"Portfolio_NAV": ctx["cash_str"], "Cash_Ratio": "100%", "Realized_V1": ctx["realized_str"], "Council_Status": "SẴN SÀNG TÁC CHIẾN"}
+        highlight = f"100% làm thật việc thật: NAV {ctx['nav_str']} (Cash {ctx['cash_pct']:.1f}%, {ctx['active_count']} vị thế mở)!"
+        metrics = {"Portfolio_NAV": ctx["nav_str"], "Cash_Ratio": f"{ctx['cash_pct']:.1f}%", "Realized_PnL": ctx["realized_str"], "Council_Status": "ĐỒNG BỘ V7.0"}
 
         msg_james = cls._build_msg("Master CIO James", "Ban 8 — Tổng Tư Lệnh Master CIO", "Chủ Trì Điều Phối", "🎖️", "BÁO CÁO THỐNG NHẤT", "#38bdf8", james_text, highlight, metrics, ts_base + 1, now_str)
         msg_spec = cls._build_msg("Long", "Hội Đồng Đầu Não Chiến Lược", "Chief Strategic Brain", "🧠", "TẦM NHÌN DÀI HẠN", "#a855f7", specialist_text, "Quản trị xác suất, phòng thủ đa tầng", None, ts_base + 2, now_str)
@@ -507,10 +542,10 @@ class ApexDirectiveIntelligenceEngine:
 
         james_text = (
             f"TUÂN LỆNH CHỦ TỊCH HỘI ĐỒNG QUẢN TRỊ TRẦN QUỐC THIÊN PHƯỚC!\n\n"
-            f"Tôi tuyên bố thi hành ngay lập tức: **GẠCH TÊN CỔ PHIẾU {ticker} KHỎI SỔ LỆNH BẮN TỈA VÒNG 2**!\n"
-            f"• Toàn bộ tỷ trọng phân bổ vốn dự kiến cho {ticker} (3.090.000 ₫ - 15.3% NAV) được chuyển đổi 100% sang nguồn tiền mặt dự phòng (Dry Powder Cash).\n"
+            f"Tôi tuyên bố thi hành ngay lập tức: **GẠCH TÊN CỔ PHIẾU {ticker} KHỎI SỔ LỆNH CHỜ GIẢI NGÂN**!\n"
+            f"• Tiền mặt thực tế trong két TCBS `{ctx['account_no']}` (**{ctx['cash_str']}**, chiếm **{ctx['cash_pct']:.1f}% NAV**) được giữ nguyên phòng thủ, không phân bổ cho {ticker}.\n"
             f"• Minh Quân bị hủy bỏ quyền đặt lệnh mua đối với mã {ticker} trên bảng điện TCInvest.\n"
-            f"• Danh mục Vòng 2 hiện tại chỉ tập trung vào các siêu cổ phiếu có sự đồng thuận tuyệt đối: MSH, HDB, IDC."
+            f"• Vị thế đang nắm giữ thực tế hiện tại: `{ctx['positions_summary_str']}`."
         )
 
         trong_text = (
@@ -518,8 +553,8 @@ class ApexDirectiveIntelligenceEngine:
             f"Chủ tịch giữ Quyền Phủ Quyết Tối Cao (Supreme Veto Power). Quyết định loại bỏ mã {ticker} đã được đóng dấu pháp lý thể chế!"
         )
 
-        highlight = f"Chủ tịch ra lệnh: LOẠI BỎ HOÀN TOÀN MÃ {ticker} KHỎI DANH MỤC VÒNG 2!"
-        metrics = {"Action": f"REMOVE_{ticker}", "Status": "EXECUTED", "Cash_Preserved": "100% TIỀN MẶT"}
+        highlight = f"Chủ tịch ra lệnh: LOẠI BỎ HOÀN TOÀN MÃ {ticker} KHỎI DANH MỤC TẦM NGẮM!"
+        metrics = {"Action": f"REMOVE_{ticker}", "Status": "EXECUTED", "Cash_Preserved": ctx["cash_str"]}
 
         msg_james = cls._build_msg("Master CIO James", "Ban 8 — Tổng Tư Lệnh Master CIO", "Chủ Trì Điều Phối", "🎖️", "THI HÀNH SẮC LỆNH CHỦ TỊCH", "#ef4444", james_text, highlight, metrics, ts_base + 1, now_str)
         msg_trong = cls._build_trong_verification(trong_text, ts_base + 2, now_str)
@@ -530,14 +565,21 @@ class ApexDirectiveIntelligenceEngine:
     def _handle_inspection_tcbs(cls, query: str, ctx: Dict[str, Any], ts_base: int, now_str: str) -> List[Dict[str, Any]]:
         """Xử lý lệnh kiểm tra số dư và trạng thái tài khoản TCBS."""
         nam_text = (
-            f"Báo cáo Chủ tịch Phước Trần: Tôi đã hoàn tất đối soát trực tiếp số dư từ hệ thống TCBS (Tài khoản 105C307855):\n"
-            f"• **Số dư tiền mặt khả dụng**: **{ctx['cash_str']}** (Chiếm đúng **100.0% NAV**).\n"
-            f"• **Cổ phiếu đang nắm giữ**: **0 CP** (Đã tất toán sạch toàn bộ danh mục Vòng 1 HPG, TCB, MBB).\n"
-            f"• **Lợi nhuận thực nhận Vòng 1**: **{ctx['realized_str']}** (Đã khóa lãi tiền tươi trong tài khoản).\n"
-            f"• **Sức mua Margin khả dụng**: Đang khóa 0% margin để tuân thủ tuyệt đối an toàn vốn!"
+            f"Báo cáo Chủ tịch Phước Trần: Tôi đã hoàn tất đối soát trực tiếp số liệu SSOT sống của tài khoản TCBS ({ctx['account_no']}):\n"
+            f"• **Tổng tài sản ròng (NAV thực tế)**: **{ctx['nav_str']}**.\n"
+            f"• **Số dư tiền mặt khả dụng**: **{ctx['cash_str']}** (Chiếm **{ctx['cash_pct']:.1f}% NAV**).\n"
+            f"• **Giá trị cổ phiếu đang nắm giữ**: **{ctx['market_val_str']}** (Chiếm **{ctx['equity_pct']:.1f}% NAV** — `{ctx['positions_summary_str']}`).\n"
+            f"• **Lãi đã chốt thực nhận**: **{ctx['realized_str']}** | **Lãi/lỗ tạm tính danh mục mở**: **{ctx['unrealized_str']}**.\n"
+            f"• **Sức mua Margin khả dụng**: Đang khóa 0% margin để tuân thủ tuyệt đối tường lửa an toàn vốn (Điều 8)!"
         )
-        highlight = f"TCBS 105C307855: Số dư chuẩn xác {ctx['cash_str']} (100% TIỀN MẶT, 0 CP KẸP HÀNG)!"
-        metrics = {"Account": "105C307855", "Cash": ctx["cash_str"], "Equity_Risk": "0 ₫", "Realized_PnL": ctx["realized_str"]}
+        highlight = f"TCBS {ctx['account_no']}: NAV {ctx['nav_str']} | Cash {ctx['cash_str']} ({ctx['cash_pct']:.1f}%) | {ctx['active_count']} mã mở!"
+        metrics = {
+            "Account": ctx["account_no"],
+            "NAV": ctx["nav_str"],
+            "Cash": ctx["cash_str"],
+            "Equity_Risk": ctx["equity_risk_label"],
+            "Realized_PnL": ctx["realized_str"],
+        }
 
         msg_nam = cls._build_msg("Nam", "Văn Phòng Điều Hành Thực Chiến", "Trợ Lý Điều Hành", "💼", "ĐỐI SOÁT TÀI SẢN TCBS", "#34d399", nam_text, highlight, metrics, ts_base + 1, now_str)
         msg_trong = cls._build_trong_verification("Tổng Kiểm Sát Viên Trọng xác nhận: Dữ liệu tài khoản khớp chuẩn 100% với Single Source of Truth V2.0!", ts_base + 2, now_str)
@@ -602,6 +644,81 @@ class ApexDirectiveIntelligenceEngine:
         }
 
     @classmethod
+    def _synthesize_enterprise_mesh_dialogue(
+        cls, query: str, tickers: List[str], ctx: Dict[str, Any], ts_base: int, now_str: str
+    ) -> List[Dict[str, Any]]:
+        """Khởi chạy phiên làm việc 14 thực thể V7.0 và chuyển thành đối thoại tranh biện đa phòng ban thật."""
+        from scripts.apex_enterprise_collaboration_mesh import run_enterprise_work_session
+
+        target_sym = tickers[0] if tickers else None
+        sess = run_enterprise_work_session(
+            directive=query,
+            ticker=target_sym,
+            trigger_source="SUMMIT_DIRECTIVE",
+            sync_cloud=False,
+        )
+        tm = sess.get("target_metrics") or {}
+        ssot_s = sess.get("ssot_snapshot") or {}
+
+        james_text = (
+            f"Báo cáo Chủ tịch Phước Trần: Hội đồng Doanh nghiệp Sống Apex V7.0 vừa họp đủ mặt **{sess['quorum_count']}/{sess['roster_total']} Ban & Chuyên viên** "
+            f"(Phiên `{sess['session_id']}` | **{sess['packet_count']} Gói Dữ Liệu** | **{sess['dissent_count']} Phản biện/Điều kiện**).\n"
+            f"• **SSOT TCBS `{ssot_s.get('account_id', ctx['account_no'])}`**: NAV **{ssot_s.get('total_nav_vnd', ctx['total_nav_vnd']):,.0f} ₫** | "
+            f"Tiền mặt **{ssot_s.get('cash_vnd', ctx['cash_vnd']):,.0f} ₫ ({ssot_s.get('cash_pct', ctx['cash_pct']):.1f}%)** | "
+            f"Cổ phiếu **{ssot_s.get('market_val_vnd', ctx['market_val_vnd']):,.0f} ₫** | Thực lãi **{ssot_s.get('realized_pnl_vnd', ctx['realized_pnl']):+,.0f} ₫**.\n"
+            f"• **PHÁN QUYẾT TỐI CAO**: **`{sess['final_verdict']}`**\n"
+            f"• **Nghị quyết hành động**: {sess['action_plan']}"
+        )
+
+        debate_lines = []
+        for dp in (sess.get("debate_points") or [])[:5]:
+            debate_lines.append(f"• **[{dp['stance']} | Điều {dp['article']}] {dp['speaker']}**: {dp['argument']}")
+        if not debate_lines:
+            for pkt in (sess.get("packets") or [])[:4]:
+                debate_lines.append(f"• **[{pkt['stance']}] {pkt['from_officer']}**: {pkt['summary']}")
+        debate_text = (
+            f"Biên bản Tranh biện Đối kháng & Trao đổi Số liệu Thật"
+            + (f" về `{target_sym}`" if target_sym else " Toàn Doanh Nghiệp")
+            + ":\n"
+            + "\n".join(debate_lines)
+        )
+
+        roll_summary = " | ".join(
+            f"{rv['ban_code']}: {rv['vote']}" for rv in (sess.get("roll_call_votes") or [])[:8]
+        )
+        exec_text = (
+            f"Biểu quyết điểm danh liên phòng ban ({sess['quorum_count']}/14):\n{roll_summary}\n"
+            + (
+                f"• Thông số `{tm.get('symbol')}`: Giá `{tm.get('live_price', 0):,.2f}` | MA20 `{tm.get('ma20', 0):,.2f}` | "
+                f"RS `{tm.get('rs_rating', 0)}/99` | P/E `{tm.get('pe', 0):.1f}x` | ROE `{tm.get('roe_pct', 0):.1f}%` | "
+                f"OCF `{tm.get('ocf_ratio', 0):.2f}x` | MOS `{tm.get('margin_of_safety_pct', 0):+.1f}%` | "
+                f"Lô 100=`{tm.get('lot_100_nav_pct', 0):.1f}% NAV` (`{tm.get('capital_fit_code')}`)."
+                if target_sym else f"• Vị thế sống hiện tại: `{ctx['positions_summary_str']}`."
+            )
+        )
+
+        highlight = f"[{sess['final_verdict']}] {sess['quorum_count']}/14 Ban | {sess['packet_count']} Packets | {sess['dissent_count']} Phản biện | Audit {sess['ombudsman_audit_score']}"
+        metrics = {
+            "Session": sess["session_id"],
+            "Quorum": f"{sess['quorum_count']}/{sess['roster_total']}",
+            "Packets": sess["packet_count"],
+            "Dissent": sess["dissent_count"],
+            "VETO": "YES" if sess["veto_triggered"] else "NO",
+            "Audit": sess["ombudsman_audit_score"],
+            "Verdict": sess["final_verdict"],
+        }
+
+        msg_james = cls._build_msg("Master CIO James", "Ban 8 — Tổng Tư Lệnh Master CIO", "Chủ Trì Doanh Nghiệp V7.0", "🎖️", "NGHỊ QUYẾT DOANH NGHIỆP", "#ef4444" if sess["veto_triggered"] else "#38bdf8", james_text, highlight, metrics, ts_base + 1, now_str)
+        msg_debate = cls._build_msg("Hội Đồng Tranh Biện Ban 2-3-4", "Liên Phòng Ban Đối Kháng Độc Lập", "Phản Biện & Phủ Quyết VETO", "⚖️", "TRANH BIỆN SỐ LIỆU THẬT", "#f59e0b", debate_text, f"{sess['dissent_count']} ý kiến phản biện / điều kiện", metrics, ts_base + 2, now_str)
+        msg_exec = cls._build_msg("Minh Quân & Alex", "Ban 7 VN & Ban 7 US", "Chuyên Viên Thực Thi", "⚡", "BIỂU QUYẾT & KỶ LUẬT", "#f97316", exec_text, "Chỉ hành động khi vượt qua VETO Ban 3 & Ban 4", None, ts_base + 3, now_str)
+        msg_trong = cls._build_trong_verification(
+            f"Đạt chuẩn {sess['ombudsman_audit_score']} Điều Luật Hiến Chương! {sess['quorum_count']}/14 Ban có mặt, {sess['packet_count']} gói dữ liệu sống, niêm phong SHA-256: {sess['constitutional_seal_sha256'][:16]}...",
+            ts_base + 4,
+            now_str,
+        )
+        return [msg_james, msg_debate, msg_exec, msg_trong]
+
+    @classmethod
     def _try_gemini_synthesis(cls, query: str, analysis: Dict[str, Any], ctx: Dict[str, Any]) -> Optional[List[Dict[str, Any]]]:
         """Gọi Gemini API nếu có cấu hình để làm giàu thêm lời phản hồi."""
         api_key = get_gemini_api_key()
@@ -616,11 +733,12 @@ class ApexDirectiveIntelligenceEngine:
             prompt = (
                 f"Chủ tịch Phước Trần vừa đưa ra chỉ thị/chất vấn tại Đại Hội Nghị Thượng Đỉnh Apex:\n"
                 f"\"{query}\"\n\n"
-                f"Ngữ cảnh quỹ:\n"
-                f"- Vốn SSOT TCBS (105C307855): {ctx['cash_str']} (100% TIỀN MẶT, 0 CP kẹp hàng, đã chốt lời Vòng 1 +167,119 ₫).\n"
-                f"- Top 4 Vòng 2: MSH (35.5k, OCF 1.42x), BAF (30.9k, OCF 1.18x), HDB (22.5k, ROE 25.6%), IDC (34.9k, 5.250 tỷ tiền trả trước FDI).\n"
-                f"- Kỷ luật: 1 lô 100 CP (<=17.6% NAV), Stop Loss 2xATR (<=6.8%), rủi ro <= 1.2% NAV/trade. Khung Giờ Vàng 14h00-14h25, lệnh Limit LO (95%), CẤM MUA ATO sáng Thứ Hai.\n\n"
-                f"Hãy đóng vai Master CIO James (Ban 8) và trả lời thật sắc sảo, quyết đoán, đầy đủ số liệu tài chính, tôn trọng Chủ tịch Phước Trần, tuyệt đối không dùng mẫu câu sáo rỗng."
+                f"Ngữ cảnh quỹ sống SSOT TCBS ({ctx['account_no']}):\n"
+                f"- Tổng NAV: {ctx['nav_str']} | Tiền mặt: {ctx['cash_str']} ({ctx['cash_pct']:.1f}% NAV) | Cổ phiếu: {ctx['market_val_str']} ({ctx['equity_pct']:.1f}% NAV).\n"
+                f"- Danh mục đang mở: {ctx['positions_summary_str']}.\n"
+                f"- Lãi thực nhận đã chốt: {ctx['realized_str']} | P&L tạm tính: {ctx['unrealized_str']}.\n"
+                f"- Kỷ luật Hiến Chương 10 Điều: 1 lô 100 CP bắt buộc <= 33% NAV (tối ưu <= 18% NAV), Stop Loss 2xATR (<= 7.5%), rủi ro <= 1.5% NAV/trade, Khung Giờ Vàng 14h00-14h25, CẤM FOMO ATO.\n\n"
+                f"Hãy đóng vai Master CIO James (Ban 8) và trả lời thật sắc sảo, quyết đoán trên đúng số liệu SSOT hiện tại, tuyệt đối không bịa số liệu cũ."
             )
             resp = client.models.generate_content(
                 model="gemini-2.5-flash",

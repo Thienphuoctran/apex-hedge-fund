@@ -700,6 +700,19 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
 
+        elif path == "/api/enterprise/state":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_enterprise_collaboration_mesh import get_enterprise_mesh_summary
+                summary = get_enterprise_mesh_summary()
+                self.wfile.write(json.dumps({"ok": True, **summary}, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
         else:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -1038,6 +1051,41 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                     "category_counts": res.get("category_counts", {}),
                     "sources_online": f"{sum(1 for s in sh if s.get('ok'))}/{len(sh)}" if sh else "0/0",
                     "latest_items": res.get("items", [])[:15],
+                }, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+        elif parsed_url.path == "/api/enterprise/convene":
+            content_length = int(self.headers.get("Content-Length", 0))
+            body_bytes = self.rfile.read(content_length) if content_length > 0 else b""
+            try:
+                req_data = json.loads(body_bytes.decode("utf-8")) if body_bytes else {}
+                directive = str(req_data.get("directive") or "Họp giao ban toàn doanh nghiệp đánh giá danh mục và tầm ngắm").strip()
+                ticker = str(req_data.get("ticker") or "").strip().upper() or None
+                trigger_src = str(req_data.get("trigger_source") or "WEB_PORTAL_CONVENE").strip()
+                sync_flag = bool(req_data.get("sync_cloud", True))
+                from scripts.apex_enterprise_collaboration_mesh import (
+                    get_enterprise_mesh_summary,
+                    run_enterprise_work_session,
+                )
+                sess = run_enterprise_work_session(
+                    directive=directive,
+                    ticker=ticker,
+                    trigger_source=trigger_src,
+                    sync_cloud=sync_flag,
+                )
+                summary = get_enterprise_mesh_summary()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "ok": True,
+                    "session": sess,
+                    "summary": summary,
                 }, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.send_response(500)
