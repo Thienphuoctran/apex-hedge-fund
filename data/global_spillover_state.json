@@ -1,7 +1,7 @@
 {
   "snapshot_date": "2026-11-15",
-  "updated_at": "2026-11-15 23:10:26",
-  "fetched_epoch": 1794759026.03,
+  "updated_at": "2026-11-15 23:50:40",
+  "fetched_epoch": 1794761440.19,
   "risk_multiplier": 1.0,
   "max_allocation_pct": 50,
   "overnight_bias": "NEUTRAL_SELECTIVE",

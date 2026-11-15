@@ -31,10 +31,21 @@ except Exception:
     pass
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
 DATA_DIR = BASE_DIR / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 MEETING_STATE_FILE = DATA_DIR / "apex_active_meeting_state.json"
 MEETING_AUDIT_LOG_FILE = DATA_DIR / "apex_summit_audit_stream.json"
+ICT_TZ = datetime.timezone(datetime.timedelta(hours=7))
+
+
+def _get_ict_now(custom_now: Optional[datetime.datetime] = None) -> datetime.datetime:
+    """Chuẩn hóa thời gian về múi giờ ICT (+07:00) cho cả Windows Local và Render Cloud Linux."""
+    if custom_now is None:
+        return datetime.datetime.now(ICT_TZ)
+    if custom_now.tzinfo is None:
+        return custom_now.replace(tzinfo=ICT_TZ)
+    return custom_now.astimezone(ICT_TZ)
 
 
 def _get_live_account_state_dict() -> Dict[str, Any]:
@@ -445,15 +456,24 @@ def get_default_summit_data() -> Dict[str, Any]:
 
 
 def load_meeting_state() -> Dict[str, Any]:
-    """Tải trạng thái cuộc họp từ file, nếu chưa có thì khởi tạo."""
+    """Tải trạng thái cuộc họp từ file; tự động nâng cấp lên V9.0 nếu phát hiện state cũ."""
     if not MEETING_STATE_FILE.exists():
         state = get_default_summit_data()
         save_meeting_state(state)
         return state
     try:
         with open(MEETING_STATE_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception as e:
+            st = json.load(f)
+        if (
+            not isinstance(st, dict)
+            or not st.get("pre_summit_prep_dossiers")
+            or len(st.get("pre_summit_prep_dossiers", [])) < 14
+            or "2026-11-08" in str(st.get("start_time", ""))
+        ):
+            st = get_default_summit_data()
+            save_meeting_state(st)
+        return st
+    except Exception:
         state = get_default_summit_data()
         save_meeting_state(state)
         return state
@@ -467,95 +487,170 @@ def save_meeting_state(state: Dict[str, Any]) -> None:
     temp_file.replace(MEETING_STATE_FILE)
 
 
+def schedule_custom_summit_meeting(
+    start_time_str: Optional[str] = None,
+    duration_minutes: int = 30,
+    topic: Optional[str] = None,
+    trigger_prep_now: bool = True
+) -> Dict[str, Any]:
+    """
+    Lập lịch và kích hoạt ngay một Phiên Họp Thượng Đỉnh tùy chỉnh (14/14 Phòng Ban).
+    Mặc định chuẩn bị trước 15 phút (T-15m Pre-Summit Research & Reconnaissance).
+    """
+    try:
+        from scripts.apex_autonomous_council_engine import activate_autonomous_summit_session
+        st = activate_autonomous_summit_session(
+            start_time_iso=start_time_str,
+            duration_minutes=duration_minutes,
+            topic=topic
+        )
+    except Exception as e:
+        st = get_default_summit_data()
+        save_meeting_state(st)
+        return {"ok": False, "error": str(e), "state": get_realtime_meeting_state()}
+
+    rt = get_realtime_meeting_state()
+    return {
+        "ok": True,
+        "meeting_id": st.get("meeting_id"),
+        "title": st.get("title"),
+        "topic": st.get("topic"),
+        "prep_start_time": st.get("prep_start_time"),
+        "start_time": st.get("start_time"),
+        "end_time": st.get("end_time"),
+        "duration_minutes": st.get("duration_minutes"),
+        "meeting_window_str": st.get("meeting_window_str"),
+        "prep_window_str": st.get("prep_window_str"),
+        "resolution_report_path": st.get("resolution_report_path"),
+        "prep_dossiers_count": len(st.get("pre_summit_prep_dossiers", [])),
+        "attendance_summary": st.get("attendance_summary"),
+        "trigger_prep_now": bool(trigger_prep_now),
+        "state": rt,
+    }
+
+
+def _parse_ict_dt(iso_str: str, fallback_dt: datetime.datetime) -> datetime.datetime:
+    try:
+        dt = datetime.datetime.fromisoformat(str(iso_str))
+        if dt.tzinfo is None:
+            return dt.replace(tzinfo=ICT_TZ)
+        return dt.astimezone(ICT_TZ)
+    except Exception:
+        return fallback_dt
+
+
 def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, preview_mode: bool = False) -> Dict[str, Any]:
     """
-    Tính toán trạng thái thời gian thực của cuộc họp:
-    - Nếu trước 21h00: Trạng thái COUNTDOWN, đếm ngược giây, hiển thị quân số sẵn sàng.
-    - Nếu trong khoảng 21h00 – 21h30: Trạng thái LIVE, tự động nhả các lời thoại tương ứng với phút hiện tại.
-    - Nếu sau 21h30: Trạng thái CONCLUDED, toàn bộ 30 phút và biểu quyết đã hoàn tất.
+    Tính toán trạng thái thời gian thực chuẩn ICT (+07:00) của cuộc họp Thượng Đỉnh V9.0:
+    1. WAITING_COUNTDOWN (> 15 phút trước giờ G): Đếm ngược đến mốc chuẩn bị T-15p và giờ khai mạc.
+    2. PRE_MEETING_PREP_15M (trong 15 phút trước giờ G): 14/14 Phòng Ban thực sự cào dữ liệu & nộp Hồ sơ chuẩn bị theo từng phút.
+    3. LIVE_IN_PROGRESS (trong 30 phút họp chính thức): Mở khóa toàn bộ hồ sơ T-15p + luồng tranh biện đối kháng theo phút hiện tại.
+    4. CONCLUDED / PREVIEW_FULL: Toàn bộ giai đoạn chuẩn bị T-15p + 30 phút tranh biện + biểu quyết đã hoàn tất.
     """
     state = load_meeting_state()
-    now = custom_now or datetime.datetime.now()
+    now = _get_ict_now(custom_now)
 
-    # Parse start and end time
-    try:
-        start_dt = datetime.datetime.fromisoformat(state.get("start_time", "2026-11-08T21:00:00+07:00"))
-        end_dt = datetime.datetime.fromisoformat(state.get("end_time", "2026-11-08T21:30:00+07:00"))
-    except Exception:
-        start_dt = now.replace(hour=21, minute=0, second=0, microsecond=0)
-        end_dt = now.replace(hour=21, minute=30, second=0, microsecond=0)
+    default_start = now.replace(hour=23, minute=45, second=0, microsecond=0)
+    default_end = default_start + datetime.timedelta(minutes=30)
+    start_dt = _parse_ict_dt(state.get("start_time", ""), default_start)
+    end_dt = _parse_ict_dt(state.get("end_time", ""), default_end)
+    prep_start_dt = _parse_ict_dt(state.get("prep_start_time", ""), start_dt - datetime.timedelta(minutes=15))
 
-    # Đảm bảo timezone-naive nếu now là naive
-    if start_dt.tzinfo and not now.tzinfo:
-        start_dt = start_dt.replace(tzinfo=None)
-        end_dt = end_dt.replace(tzinfo=None)
+    duration_minutes = max(10, int(state.get("duration_minutes", 30) or 30))
+    duration_seconds = max(60, int((end_dt - start_dt).total_seconds()))
 
     delta_to_start = (start_dt - now).total_seconds()
     delta_from_start = (now - start_dt).total_seconds()
     elapsed_minutes = max(0, int(delta_from_start // 60))
 
+    prep_stream = state.get("prep_timeline_stream") or []
+    debate_stream = state.get("timeline_stream") or []
+    prep_dossiers = state.get("pre_summit_prep_dossiers") or []
+    attendance_roster = state.get("attendance_roster") or []
+
     if preview_mode:
-        # Chế độ xem trước đầy đủ
         meeting_status = "PREVIEW_FULL"
-        current_minute = 30
+        current_minute = duration_minutes
         current_phase = 2
         current_step = 8
-        unlocked_timeline = state.get("timeline_stream", [])
-    elif delta_to_start > 0:
-        # Chưa đến 21h00
+        unlocked_prep = prep_stream
+        unlocked_debate = debate_stream
+    elif delta_to_start > 900:
         meeting_status = "WAITING_COUNTDOWN"
         current_minute = 0
-        current_phase = 1
-        current_step = 1
-        # Trước giờ họp chỉ hiển thị thông báo sẵn sàng và lời chào của Trọng
-        unlocked_timeline = [
+        current_phase = 0
+        current_step = 0
+        unlocked_prep = [
             {
                 "id": "pre_001",
-                "minute": 0,
+                "minute": -16,
+                "is_prep_phase": True,
                 "time_str": now.strftime("%H:%M:%S"),
                 "phase_step": 0,
                 "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
                 "department": "Ban 12 — Tổng Kiểm Sát Thể Chế",
                 "role": "Giám Sát Viên Thường Trực Bất Biến",
                 "avatar": "🛡️",
-                "badge": "KIỂM SÁT TIỀN HỘI NGHỊ",
+                "badge": "CHỜ KÍCH HOẠT CHUẨN BỊ T-15P",
                 "badge_color": "#f59e0b",
-                "content": f"Báo cáo Chủ tịch Phước Trần: Tôi đã hoàn tất niêm phong phòng họp và kiểm toán kỷ luật. Toàn bộ 12 phòng ban và 2 Trợ lý đã có mặt đầy đủ trong phòng chờ. Đồng hồ đang đếm ngược đến đúng 21h00:00 để chính thức khai mạc!",
-                "highlight": "Phòng họp đã sẵn sàng 100%, chờ lệnh Chủ tịch!",
-                "metrics": {"countdown_seconds": int(delta_to_start), "inspectors_ready": 1}
+                "content": (
+                    f"Báo cáo Chủ tịch Phước Trần: Toàn bộ 14 Phòng Ban đã nhận nghị trình '{state.get('topic', '')}'. "
+                    f"Đúng {prep_start_dt.strftime('%H:%M:%S')} (trước giờ họp 15 phút), 14 Ban sẽ đồng loạt cào dữ liệu thật và nộp Hồ sơ Chuẩn Bị trước khi khai mạc lúc {start_dt.strftime('%H:%M:%S')}!"
+                ),
+                "highlight": f"Chuẩn bị T-15p bắt đầu lúc {prep_start_dt.strftime('%H:%M')} • Khai mạc {start_dt.strftime('%H:%M')}",
+                "metrics": {"countdown_seconds": int(delta_to_start), "Departments": "14/14"}
             }
         ]
-    elif 0 <= delta_from_start <= 1800:
-        # Đang trong 30 phút họp (21h00 – 21h30)
+        unlocked_debate = []
+    elif 0 < delta_to_start <= 900:
+        # ĐANG TRONG GIAI ĐOẠN CHUẨN BỊ T-15 PHÚT TRƯỚC HỌP
+        meeting_status = "PRE_MEETING_PREP_15M"
+        prep_elapsed_secs = max(0, int((now - prep_start_dt).total_seconds()))
+        prep_minute = min(-1, -15 + int(prep_elapsed_secs // 60))
+        current_minute = prep_minute
+        current_phase = 0
+        current_step = 0
+        unlocked_prep = [m for m in prep_stream if int(m.get("minute", -15)) <= prep_minute]
+        if not unlocked_prep and prep_stream:
+            unlocked_prep = [prep_stream[0]]
+        unlocked_debate = []
+    elif 0 <= delta_from_start <= duration_seconds:
+        # ĐANG TRONG PHIÊN HỌP CHÍNH THỨC (30 PHÚT)
         meeting_status = "LIVE_IN_PROGRESS"
-        current_minute = min(30, elapsed_minutes)
-        current_phase = 1 if current_minute < 20 else 2
-        
-        # Xác định current_step dựa trên phút
-        if current_minute < 3: current_step = 1
-        elif current_minute < 8: current_step = 2
-        elif current_minute < 13: current_step = 3
-        elif current_minute < 17: current_step = 4
-        elif current_minute < 20: current_step = 5
-        elif current_minute < 25: current_step = 6
-        elif current_minute < 28: current_step = 7
-        else: current_step = 8
+        current_minute = min(duration_minutes, elapsed_minutes)
+        current_phase = 1 if current_minute < 13 else 2
 
-        # Mở khóa các tin nhắn có minute <= current_minute
-        unlocked_timeline = [
-            msg for msg in state.get("timeline_stream", [])
-            if msg.get("minute", 0) <= current_minute
+        if current_minute < 3:
+            current_step = 1
+        elif current_minute < 8:
+            current_step = 2
+        elif current_minute < 13:
+            current_step = 3
+        elif current_minute < 18:
+            current_step = 4
+        elif current_minute < 23:
+            current_step = 5
+        elif current_minute < 28:
+            current_step = 6
+        elif current_minute < 29:
+            current_step = 7
+        else:
+            current_step = 8
+
+        unlocked_prep = prep_stream
+        unlocked_debate = [
+            msg for msg in debate_stream
+            if int(msg.get("minute", 0)) <= current_minute
         ]
     else:
-        # Đã kết thúc (Sau 21h30)
         meeting_status = "CONCLUDED"
-        current_minute = 30
+        current_minute = duration_minutes
         current_phase = 2
         current_step = 8
-        unlocked_timeline = state.get("timeline_stream", [])
+        unlocked_prep = prep_stream
+        unlocked_debate = debate_stream
 
-    # Bổ sung các dynamic_messages (tin nhắn trực tiếp từ Chủ tịch gõ vào phòng họp)
-    all_messages = unlocked_timeline + state.get("dynamic_messages", [])
+    all_messages = unlocked_prep + unlocked_debate + (state.get("dynamic_messages") or [])
     live_acc = _get_live_account_state_dict()
     live_account_state = {
         "account_no": live_acc["account_no"],
@@ -569,7 +664,17 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
     return {
         "meeting_id": state.get("meeting_id"),
         "title": state.get("title"),
+        "topic": state.get("topic") or state.get("title"),
         "subtitle": state.get("subtitle"),
+        "prep_start_time": state.get("prep_start_time"),
+        "start_time": state.get("start_time"),
+        "end_time": state.get("end_time"),
+        "duration_minutes": duration_minutes,
+        "prep_duration_minutes": int(state.get("prep_duration_minutes", 15) or 15),
+        "meeting_window_str": state.get("meeting_window_str") or f"{start_dt.strftime('%Hh%M')} – {end_dt.strftime('%Hh%M')} ({duration_minutes} Phút)",
+        "prep_window_str": state.get("prep_window_str") or f"{prep_start_dt.strftime('%Hh%M')} – {start_dt.strftime('%Hh%M')} (Chuẩn Bị T-15p)",
+        "resolution_report_path": state.get("resolution_report_path") or "08_Master_Investment_CIO/council_resolutions/2026-11-15_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md",
+        "agenda_report_path": state.get("agenda_report_path") or "08_Master_Investment_CIO/2026-11-15_Ke_Hoach_Nghi_Trinh_Thuong_Dinh_23h45_James.md",
         "meeting_status": meeting_status,
         "countdown_seconds": max(0, int(delta_to_start)),
         "current_minute": current_minute,
@@ -578,6 +683,12 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
         "chairman": state.get("chairman"),
         "chairperson_host": state.get("chairperson_host"),
         "permanent_inspector": state.get("permanent_inspector"),
+        "attendance_roster": attendance_roster,
+        "attendance_summary": state.get("attendance_summary") or f"{len(prep_dossiers)}/14 Phòng Ban có mặt 100%",
+        "pre_summit_prep_dossiers": prep_dossiers,
+        "prep_timeline_stream": unlocked_prep,
+        "prep_messages_count": len(unlocked_prep),
+        "debate_messages_count": len(unlocked_debate),
         "account_state": live_account_state,
         "compliance_audit": state.get("compliance_audit"),
         "phases": state.get("phases"),
@@ -587,7 +698,8 @@ def get_realtime_meeting_state(custom_now: Optional[datetime.datetime] = None, p
         "inspector_notes": state.get("inspector_notes"),
         "enterprise_mesh_session": state.get("enterprise_mesh_session") or _get_live_enterprise_mesh(),
         "total_messages_count": len(all_messages),
-        "server_time": now.strftime("%Y-%m-%d %H:%M:%S")
+        "server_time": now.strftime("%Y-%m-%d %H:%M:%S ICT"),
+        "server_hhmm": start_dt.strftime("%Hh%M"),
     }
 
 
@@ -595,13 +707,13 @@ def add_chairman_directive(user_message: str) -> Dict[str, Any]:
     """
     Xử lý chỉ thị trực tiếp từ Chủ tịch Phước Trần gõ ngay tại phòng họp.
     Hệ thống ghi nhận và Master CIO James / Các phòng ban chuyên trách / Trọng phản hồi lập tức
-    với đầy đủ tư duy độc lập, đối chất số liệu kiểm toán và rẽ nhánh thông minh (BƯỚC 4).
+    với đầy đủ tư duy độc lập, đối chất số liệu kiểm toán và rẽ nhánh thông minh.
     """
     state = load_meeting_state()
-    now_str = datetime.datetime.now().strftime("%H:%M:%S")
+    now_dt = _get_ict_now()
+    now_str = now_dt.strftime("%H:%M:%S")
     ts_chair = int(time.time() * 1000)
-    
-    # 1. Tin nhắn của Chủ tịch
+
     chairman_msg = {
         "id": f"dyn_chair_{ts_chair}",
         "minute": 99,
@@ -619,11 +731,10 @@ def add_chairman_directive(user_message: str) -> Dict[str, Any]:
     }
     state.setdefault("dynamic_messages", []).append(chairman_msg)
 
-    # 2. Sinh chuỗi phản hồi rẽ nhánh thông minh từ Bộ Não Chỉ Thị Đa Phòng Ban (BƯỚC 4)
     try:
         from scripts.apex_directive_intelligence_engine import ApexDirectiveIntelligenceEngine
         council_responses = ApexDirectiveIntelligenceEngine.generate_executive_directive_reply(user_message, state)
-    except Exception as e:
+    except Exception:
         from scripts.master_cio_james_agent import handle_james_chat
         reply_txt = handle_james_chat(user_message)
         council_responses = [
@@ -659,7 +770,6 @@ def add_chairman_directive(user_message: str) -> Dict[str, Any]:
             }
         ]
 
-    # Nạp toàn bộ các tin nhắn rẽ nhánh vào dynamic_messages
     for resp in council_responses:
         state["dynamic_messages"].append(resp)
 
@@ -678,11 +788,12 @@ def add_chairman_directive(user_message: str) -> Dict[str, Any]:
 
 
 if __name__ == "__main__":
-    print("Khởi tạo và kiểm thử Apex Summit Meeting Engine...")
+    print("Khởi tạo và kiểm thử Apex Summit Meeting Engine V9.0...")
     st = get_default_summit_data()
     save_meeting_state(st)
     rt = get_realtime_meeting_state(preview_mode=True)
     print(f"[OK] Đã tải trạng thái: {rt['title']}")
-    print(f"[OK] Số tin nhắn trong kịch bản 30 phút: {len(rt['timeline_stream'])}")
+    print(f"[OK] Hồ sơ chuẩn bị T-15p: {len(rt['pre_summit_prep_dossiers'])} Ban | Điểm danh: {rt['attendance_summary']}")
+    print(f"[OK] Tổng tin nhắn (T-15p + 30p tranh biện): {len(rt['timeline_stream'])}")
     print(f"[OK] Số mã trong bảng biểu quyết: {len(rt['voting_board'])}")
-    print(f"[OK] Giám sát viên thường trực: {rt['permanent_inspector']}")
+    print(f"[OK] Nghị quyết: {rt['resolution_report_path']}")

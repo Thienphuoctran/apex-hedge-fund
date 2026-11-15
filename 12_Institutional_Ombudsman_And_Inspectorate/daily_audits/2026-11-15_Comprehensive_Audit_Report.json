@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-15 23:21:37",
-  "target_url": "http://127.0.0.1:8799",
+  "timestamp": "2026-11-15 23:52:07",
+  "target_url": "http://127.0.0.1:8000",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -59,13 +59,13 @@
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room/stream (SSE)",
       "status": "PASSED",
-      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 110516"
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 112164"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/reports",
       "status": "PASSED",
-      "details": "Tổng số báo cáo: 372"
+      "details": "Tổng số báo cáo: 375"
     },
     {
       "module": "Live_Endpoint",
@@ -221,7 +221,7 @@
       "module": "Phase5_EnterpriseRosterAndPackets",
       "check": "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
       "status": "PASSED",
-      "details": "Roster: 14 | Quorum: 14/14 | Packets: 13 | Audit: 10/10 | Seal: af277413d9a6..."
+      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: 68baffcaa592..."
     },
     {
       "module": "Phase5_AdversarialDebateAndVeto",
@@ -245,13 +245,13 @@
       "module": "Phase5_CloudDB_V7_EnterpriseSync",
       "check": "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
       "status": "PASSED",
-      "details": "LocalSaved=True | VaultRows=5 | MigrationRLS=True | CloudSynced=False"
+      "details": "LocalSaved=True | VaultRows=7 | MigrationRLS=True | CloudSynced=False"
     },
     {
       "module": "Phase6_ZeroStaleHardcodedWebStrings",
       "check": "Zero stale hardcoded dates, prices, or old cash numbers in Portal HTML",
       "status": "PASSED",
-      "details": "HTML Bytes: 751987 | StaleFound: []"
+      "details": "HTML Bytes: 772037 | StaleFound: []"
     },
     {
       "module": "Phase6_VictorDeepSurveillanceAndAlphaWatchlist",
@@ -263,7 +263,7 @@
       "module": "Phase6_LiveExecutionMasterPlan",
       "check": "Dynamic Market-Adaptive Live Execution Master Plan & 3 Contingency Scenarios",
       "status": "PASSED",
-      "details": "PlanID: WAR-PLAN-20261115-2321 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
+      "details": "PlanID: WAR-PLAN-20261115-2352 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
     },
     {
       "module": "Phase6_DepartmentWorkstationAndReportAuthenticity",
@@ -276,10 +276,40 @@
       "check": "V8 War-Room UI Panels, 1-Click Publish JS & /api/war_room/publish_report Endpoint",
       "status": "PASSED",
       "details": "MissingUITokens: [] | EndpointWired: True"
+    },
+    {
+      "module": "Phase7_SummitPreMeetingPrep15mDossiers",
+      "check": "Giai đoạn Chuẩn bị T-15 Phút (14/14 Phòng Ban quét dữ liệu thật & nộp hồ sơ)",
+      "status": "PASSED",
+      "details": "PrepDossiers: 14/14 | PrepLogs: 16 | ReportPathsExist: True"
+    },
+    {
+      "module": "Phase7_SummitFull14DepartmentAttendanceAndDebate",
+      "check": "Điểm danh 14/14 Phòng Ban có mặt 100% & Tranh biện đa chiều (>= 30 lượt)",
+      "status": "PASSED",
+      "details": "PresentBans: 14/14 | TotalTurns: 42 | ActiveDeptVoices: 35"
+    },
+    {
+      "module": "Phase7_SummitNextWeek2345ScheduleAndResolution",
+      "check": "Lịch họp 23h45 (30p) Chiến lược Thị trường Tuần Sau & Nghị quyết Markdown thật",
+      "status": "PASSED",
+      "details": "Start: 2026-11-15T23:45:00+07:00 | Dur: 30m | ResolutionOnDisk: True (08_Master_Investment_CIO/council_resolutions/2026-11-15_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md)"
+    },
+    {
+      "module": "Phase7_SummitScheduleAPIAndDynamicResolution",
+      "check": "Endpoint POST /api/summit/schedule & Giao diện Tab 5 động 100% (Sạch 2026-11-08)",
+      "status": "PASSED",
+      "details": "ScheduleOK: True | PrepCount: 14 | CleanSummitSection: True | MissingV9: []"
+    },
+    {
+      "module": "Phase7_SummitLiveInteractiveDirective",
+      "check": "Tương tác chỉ thị Chủ tịch trực tiếp trong Phòng Họp Thượng Đỉnh (Đa Ban phản hồi)",
+      "status": "PASSED",
+      "details": "Ok: True | MultiDeptReplies: 4"
     }
   ],
-  "total_checks": 45,
-  "passed_checks": 45,
+  "total_checks": 50,
+  "passed_checks": 50,
   "warnings": [],
   "errors": []
 }

@@ -1,21 +1,20 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-15 23:22:15  
+**Thời gian cập nhật:** 2026-11-15 23:52:47  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261115-232215`  
+**Mã đồng bộ:** `SYNC-AG2P-20261115-235247`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Nâng cấp toàn diện Web Portal V8.0: Đồng bộ 100% số liệu SSOT & báo cáo thực, xóa toàn bộ số tĩnh lỗi thời, nâng cấp Tab 3 Phòng Tác Chiến thành Sàn Tác Chiến 14 Phòng Ban thực, Victor Giám sát sâu 2 tầng, Kế hoạch triển khai theo phiên & nút Phát hành/Đồng bộ báo cáo 1-click.
+* **Câu hỏi của Chủ tịch:** Nâng cấp toàn diện Phòng Họp Thượng Đỉnh V9.0 (14/14 Phòng Ban dự họp, rà soát T-15 phút, tranh biện chuyên môn, đặt lịch tùy biến) và tổ chức họp lúc 23h45 (30 phút) về thị trường tuần sau.
 * **Kết luận & Quyết định thể chế:**
-Đã hoàn thành nâng cấp V8.0 Web Portal & Sàn Tác Chiến 14 Phòng Ban, kiểm toán cục bộ 45/45 Hạng mục ĐẠT CHUẨN và sẵn sàng đẩy lên Render Cloud.
+Đã hoàn thành nâng cấp V9.0 Phòng Họp Thượng Đỉnh & kích hoạt phiên họp 23h45-00h15 bàn chiến lược tuần mới (16/11-20/11/2026). Kiểm toán cục bộ đạt 50/50 HẠNG MỤC ĐẠT CHUẨN.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Xóa 100% số tĩnh cũ (14,477,119 ₫, 20,167,119, 21,220 đ, 09/11/2026, 10/11/2026, 09:00 Thứ Hai, Tiền Mặt 20M) trên Tab 2, Tab 4, Tab 5 và JS.
-- [x] Xây dựng Victor (Ban 9) Giám sát sâu 2 tầng (Held Positions Book: HDB, MSH + Alpha Watchlist Book: BAF, IDC, BSR, DPR & Top Alpha kèm check lô 100 <= 33% NAV).
-- [x] Xây dựng Kế hoạch triển khai tác chiến đầu tư live theo phiên (3 kịch bản ứng phó + lệnh phòng thủ T+0 + lệnh giải ngân chọn lọc).
-- [x] Xây dựng Bàn tác chiến trực tiếp 14 Phòng Ban (đọc thẳng báo cáo thật qua openReportModal) + API POST /api/war_room/publish_report + đồng bộ nền tự động Vault/Tab 1.
-- [x] Mở rộng scripts/comprehensive_system_audit.py lên 45/45 hạng mục và xác nhận PASSED 45/45 cục bộ.
+- [x] Nâng cấp apex_autonomous_council_engine.py V9.0: T-15m Pre-Summit Prep Dossiers cho đủ 14 Ban, 100% Attendance 14/14 Ban + Palmer + Nam, 26 lượt tranh biện chuyên sâu & Nghị quyết Markdown + SQLite Vault
+- [x] Nâng cấp apex_summit_meeting_engine.py hỗ trợ 4 pha thời gian thực theo ICT (+07:00) và schedule_custom_summit_meeting()
+- [x] Bổ sung API POST /api/summit/schedule và hoàn thiện Tab 5 Phòng Họp Thượng Đỉnh trên Web Portal (chọn giờ/phút/chủ đề, thẻ điểm danh 14 Ban, ngăn rà soát T-15p)
+- [x] Kiểm toán 50/50 đạt chuẩn trên local Web Server, sẵn sàng đẩy lên Render Cloud
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
@@ -28,8 +27,8 @@
 
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
 1. **Về BSR & BAF:** TUYỆT ĐỐI KHÔNG BẮT ĐÁY ĐẦU GIỜ CHIỀU; chờ Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong cung T+2.5
-2. **Về HDB & MSH:** Đang giữ T+1 có lãi đệm, khóa quan sát không mua thêm hôm nay, chờ chiều mai 11/11 hàng về
-3. **Về Kế hoạch tuần:** Kế hoạch tuần tham khảo giải ngân 5.5M thăm dò, két 14.51M tiền mặt kiểm soát chặt chẽ
-4. **Về Tiến độ công việc:** Đã sửa toàn bộ báo cáo web portal, đồng bộ khớp 2 lệnh HDB/MSH, loại bỏ báo cáo ảo 6 mã 35 triệu
+2. **Về HDB & MSH:** Giữ kỷ luật 100 CP HDB + 100 CP MSH theo kế hoạch tuần mới
+3. **Về Kế hoạch tuần:** Tiền mặt SSOT 12,516,471 đ (69.0% NAV) / Tổng NAV 18,151,471 đ — giải ngân chọn lọc tuần mới 16/11-20/11 theo Nghị quyết Thượng Đỉnh
+4. **Về Tiến độ công việc:** Hoàn tất V9.0 Summit Room (50/50 audit local) và đồng bộ GitHub -> Render Cloud
 
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*

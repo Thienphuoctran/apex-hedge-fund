@@ -787,6 +787,137 @@ try:
 except Exception as e:
     record_check("Phase6_PublishWarRoomReportEndpointAndJS", "Publish War Room Endpoint & JS", False, str(e))
 
+# 7. KIỂM TRA PHASE 7 V9.0: PHÒNG HỌP THƯỢNG ĐỈNH 14 PHÒNG BAN, CHUẨN BỊ T-15P & LỊCH HỌP 23H45 TUẦN SAU
+summit_preview_data = {}
+try:
+    req = urllib.request.Request(f"{live_url}/api/summit_meeting?preview=1", headers={"User-Agent": "ApexAudit/4.0"})
+    res = urllib.request.urlopen(req, timeout=20)
+    summit_preview_data = json.loads(res.read().decode("utf-8"))
+    dossiers = summit_preview_data.get("pre_summit_prep_dossiers", []) or []
+    prep_stream = summit_preview_data.get("prep_timeline_stream", []) or []
+    all_prep_paths_exist = all(
+        bool(d.get("report_path")) and (BASE_DIR / str(d.get("report_path"))).exists()
+        for d in dossiers
+    )
+    check_prep_15m = (
+        res.status == 200
+        and len(dossiers) >= 14
+        and len(prep_stream) >= 14
+        and all_prep_paths_exist
+    )
+    record_check(
+        "Phase7_SummitPreMeetingPrep15mDossiers",
+        "Giai đoạn Chuẩn bị T-15 Phút (14/14 Phòng Ban quét dữ liệu thật & nộp hồ sơ)",
+        check_prep_15m,
+        f"PrepDossiers: {len(dossiers)}/14 | PrepLogs: {len(prep_stream)} | ReportPathsExist: {all_prep_paths_exist}"
+    )
+except Exception as e:
+    record_check("Phase7_SummitPreMeetingPrep15mDossiers", "Summit T-15m Prep Dossiers", False, str(e))
+
+try:
+    roster = summit_preview_data.get("attendance_roster", []) or []
+    t_stream = summit_preview_data.get("timeline_stream", []) or []
+    present_bans = [r for r in roster if r.get("present") and str(r.get("id", "")).startswith("BAN_")]
+    speakers = {str(m.get("department", "")) for m in t_stream if m.get("department")}
+    check_debate_v9 = (
+        len(present_bans) >= 14
+        and len(t_stream) >= 30
+        and len(speakers) >= 12
+    )
+    record_check(
+        "Phase7_SummitFull14DepartmentAttendanceAndDebate",
+        "Điểm danh 14/14 Phòng Ban có mặt 100% & Tranh biện đa chiều (>= 30 lượt)",
+        check_debate_v9,
+        f"PresentBans: {len(present_bans)}/14 | TotalTurns: {len(t_stream)} | ActiveDeptVoices: {len(speakers)}"
+    )
+except Exception as e:
+    record_check("Phase7_SummitFull14DepartmentAttendanceAndDebate", "14-Dept Attendance & Debate", False, str(e))
+
+try:
+    s_time = str(summit_preview_data.get("start_time", ""))
+    s_dur = int(summit_preview_data.get("duration_minutes", 0) or 0)
+    s_topic = str(summit_preview_data.get("topic", ""))
+    res_rel = str(summit_preview_data.get("resolution_report_path", ""))
+    res_disk_ok = bool(res_rel) and (BASE_DIR / res_rel).exists()
+    check_sched_2345 = (
+        "23:45" in s_time
+        and s_dur == 30
+        and ("Tuần Sau" in s_topic or "Tuần Mới" in s_topic)
+        and res_disk_ok
+    )
+    record_check(
+        "Phase7_SummitNextWeek2345ScheduleAndResolution",
+        "Lịch họp 23h45 (30p) Chiến lược Thị trường Tuần Sau & Nghị quyết Markdown thật",
+        check_sched_2345,
+        f"Start: {s_time} | Dur: {s_dur}m | ResolutionOnDisk: {res_disk_ok} ({res_rel})"
+    )
+except Exception as e:
+    record_check("Phase7_SummitNextWeek2345ScheduleAndResolution", "Summit 23h45 Schedule & Resolution", False, str(e))
+
+try:
+    sched_payload = json.dumps({
+        "start_time": "2026-11-15T23:45:00+07:00",
+        "duration_minutes": 30,
+        "topic": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới",
+        "trigger_prep_now": True
+    }).encode("utf-8")
+    req_sched = urllib.request.Request(
+        f"{live_url}/api/summit/schedule",
+        data=sched_payload,
+        headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/4.0"}
+    )
+    res_sched = urllib.request.urlopen(req_sched, timeout=20)
+    sched_body = json.loads(res_sched.read().decode("utf-8"))
+
+    portal_html_text = str(globals().get("html", "") or "")
+    summit_start_idx = portal_html_text.find('id="tab-summit-room"')
+    summit_end_idx = portal_html_text.find('id="tab-timeline"')
+    summit_section_html = portal_html_text[summit_start_idx:summit_end_idx] if summit_start_idx != -1 and summit_end_idx != -1 else portal_html_text
+    no_stale_20261108 = ("2026-11-08" not in summit_section_html)
+    required_v9_tokens = [
+        "summit-schedule-bar",
+        "summit-attendance-panel",
+        "summit-prep-dossiers-panel",
+        "scheduleNewSummitMeeting",
+        "openCurrentSummitResolution",
+    ]
+    missing_v9 = [t for t in required_v9_tokens if t not in portal_html_text]
+    check_api_ui_v9 = (
+        res_sched.status == 200
+        and sched_body.get("ok") is True
+        and int(sched_body.get("prep_dossiers_count", 0) or 0) >= 14
+        and no_stale_20261108
+        and len(missing_v9) == 0
+    )
+    record_check(
+        "Phase7_SummitScheduleAPIAndDynamicResolution",
+        "Endpoint POST /api/summit/schedule & Giao diện Tab 5 động 100% (Sạch 2026-11-08)",
+        check_api_ui_v9,
+        f"ScheduleOK: {sched_body.get('ok')} | PrepCount: {sched_body.get('prep_dossiers_count')} | CleanSummitSection: {no_stale_20261108} | MissingV9: {missing_v9}"
+    )
+except Exception as e:
+    record_check("Phase7_SummitScheduleAPIAndDynamicResolution", "Summit Schedule API & Dynamic UI", False, str(e))
+
+try:
+    dir_payload = json.dumps({"message": "Báo cáo ngắn phương án phòng thủ HDB tuần sau"}).encode("utf-8")
+    req_dir = urllib.request.Request(
+        f"{live_url}/api/summit_message",
+        data=dir_payload,
+        headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/4.0"}
+    )
+    res_dir = urllib.request.urlopen(req_dir, timeout=20)
+    dir_body = json.loads(res_dir.read().decode("utf-8"))
+    resps = dir_body.get("responses", []) or []
+    check_dir_v9 = (res_dir.status == 200 and dir_body.get("ok") is True and len(resps) >= 2)
+    record_check(
+        "Phase7_SummitLiveInteractiveDirective",
+        "Tương tác chỉ thị Chủ tịch trực tiếp trong Phòng Họp Thượng Đỉnh (Đa Ban phản hồi)",
+        check_dir_v9,
+        f"Ok: {dir_body.get('ok')} | MultiDeptReplies: {len(resps)}"
+    )
+except Exception as e:
+    record_check("Phase7_SummitLiveInteractiveDirective", "Summit Live Interactive Directive", False, str(e))
+
 print("=" * 70)
 print(f"KẾT QUẢ TỔNG KIỂM TOÁN: {audit_results['passed_checks']}/{audit_results['total_checks']} HẠNG MỤC ĐẠT CHUẨN!")
 if audit_results["errors"]:

@@ -888,6 +888,38 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
             return
 
+        elif parsed_url.path == "/api/summit/schedule":
+            try:
+                content_length = int(self.headers.get("Content-Length", 0))
+                body_bytes = self.rfile.read(content_length) if content_length > 0 else b"{}"
+                req_data = json.loads(body_bytes.decode("utf-8") or "{}")
+            except Exception:
+                req_data = {}
+            try:
+                from scripts.apex_summit_meeting_engine import schedule_custom_summit_meeting
+                start_time_str = str(req_data.get("start_time") or "").strip() or None
+                duration_minutes = int(req_data.get("duration_minutes") or 30)
+                topic_str = str(req_data.get("topic") or "").strip() or None
+                trigger_prep_now = bool(req_data.get("trigger_prep_now", True))
+                res = schedule_custom_summit_meeting(
+                    start_time_str=start_time_str,
+                    duration_minutes=duration_minutes,
+                    topic=topic_str,
+                    trigger_prep_now=trigger_prep_now
+                )
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+            return
+
         elif parsed_url.path == "/api/tactical_command":
             content_length = int(self.headers.get("Content-Length", 0))
             body_bytes = self.rfile.read(content_length)
