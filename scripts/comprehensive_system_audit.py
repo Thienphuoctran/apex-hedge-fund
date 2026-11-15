@@ -18,15 +18,23 @@ if sys.platform.startswith("win"):
 
 import json
 import time
+import argparse
 import datetime
+import py_compile
 import urllib.request
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
+parser = argparse.ArgumentParser(description="Apex Full System & Living War-Room V4.0 Audit")
+parser.add_argument("--url", default="https://apex-hedge-fund.onrender.com", help="Target portal URL (local or Render)")
+args, _ = parser.parse_known_args()
+live_url = args.url.rstrip("/")
+
 audit_results = {
     "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "target_url": live_url,
     "officers": ["Master CIO James (Ban 8)", "Tổng Kiểm Sát Viên Trọng (Ban 12)"],
     "account": "TCBS 105C307855 (Chủ tịch Trần Quốc Thiên Phước)",
     "modules_tested": [],
@@ -35,6 +43,7 @@ audit_results = {
     "warnings": [],
     "errors": []
 }
+
 
 def record_check(module_name, check_name, passed, details=""):
     audit_results["total_checks"] += 1
@@ -53,85 +62,146 @@ def record_check(module_name, check_name, passed, details=""):
         "details": details
     })
 
+
 print("=" * 70)
-print("BẮT ĐẦU TỔNG RÀ SOÁT & KIỂM TRA THỰC TẾ HỆ THỐNG APEX")
+print(f"BẮT ĐẦU TỔNG RÀ SOÁT THỰC TẾ HỆ THỐNG APEX V4.0 ({live_url})")
 print("=" * 70)
 
-# 1. KIỂM TRA TÍNH TOÀN VẸN SSOT V2.0
+# 1. KIỂM TRA TÍNH TOÀN VẸN SSOT ĐỘNG (KHÔNG HARDCODE SỐ TĨNH)
+ssot_cash = 0.0
+ssot_nav = 0.0
+ssot_pos = {}
 try:
     from scripts.portfolio_state_manager import PortfolioStateManager
     st = PortfolioStateManager.load_state()
-    cash = float(st.get("cash_balance_vnd", 0))
+    ssot_cash = float(st.get("cash_balance_vnd", 0.0))
+    ssot_mkt_val = float(st.get("total_market_val_vnd", 0.0))
+    ssot_nav = float(st.get("total_nav_vnd", 0.0))
     acc_id = st.get("account_id")
-    pos = st.get("active_positions", {})
-    
+    ssot_pos = st.get("active_positions", {}) or {}
+
     check_acc = (acc_id == "105C307855")
     record_check("SSOT_Integrity", "Mã tài khoản TCBS chính chủ", check_acc, f"Account: {acc_id}")
-    
-    check_cash = (abs(cash - 20167119.0) < 1.0)
-    record_check("SSOT_Integrity", "Số dư tiền mặt chuẩn 20,167,119 ₫", check_cash, f"Cash: {cash:,.0f} ₫")
-    
-    check_pos = (len(pos) == 0)
-    record_check("SSOT_Integrity", "Kho hàng 0 CP rủi ro (100% Cash)", check_pos, f"Holdings: {len(pos)} CP")
+
+    check_cash = (ssot_cash >= 0.0)
+    record_check("SSOT_Integrity", "Số dư tiền mặt SSOT hợp lệ (>= 0)", check_cash, f"Cash: {ssot_cash:,.0f} đ")
+
+    nav_diff = abs(ssot_nav - (ssot_cash + ssot_mkt_val))
+    check_nav_math = (nav_diff < 100.0 and ssot_nav > 0.0)
+    record_check("SSOT_Integrity", "Cân bằng kế toán NAV = Cash + MarketVal", check_nav_math, f"NAV: {ssot_nav:,.0f} đ (diff {nav_diff:.2f})")
+
+    pos_valid = all(
+        int(p.get("shares", 0)) > 0 and float(p.get("avg_cost", p.get("entry_price", 0))) > 0
+        for p in ssot_pos.values()
+    )
+    record_check("SSOT_Integrity", "Cấu trúc danh mục đang nắm giữ hợp lệ", pos_valid, f"Holdings: {len(ssot_pos)} mã ({', '.join(ssot_pos.keys()) or '0 CP'})")
 except Exception as e:
     record_check("SSOT_Integrity", "Nạp PortfolioStateManager", False, str(e))
 
-# 2. KIỂM TRA LIVE ENDPOINTS TRÊN RENDER CLOUD
-live_url = "https://apex-hedge-fund.onrender.com"
-
-# Check 2.1: /api/health
+# 1B. KIỂM TRA LIVING INTRADAY BRAIN & SQLITE VAULT SYNC
 try:
-    req = urllib.request.Request(f"{live_url}/api/health", headers={"User-Agent": "ApexAudit/1.0"})
+    from scripts.apex_live_intraday_brain import compute_live_war_room_snapshot, sync_live_intraday_report
+    snap = compute_live_war_room_snapshot(force_refresh=True)
+    port_live = snap.get("portfolio_live", {})
+    brain_cash = float(port_live.get("cash_vnd", -1.0))
+    check_brain_ssot = (abs(brain_cash - ssot_cash) < 10.0 and len(snap.get("live_stocks", [])) > 0)
+    record_check(
+        "Living_Brain",
+        "Snapshot Brain khớp SSOT & Watchlist động",
+        check_brain_ssot,
+        f"Brain Cash: {brain_cash:,.0f} đ | Stocks: {len(snap.get('live_stocks', []))} | Regime: {snap.get('intraday_regime', {}).get('regime_id')}"
+    )
+    rep_path = sync_live_intraday_report(snap, force_write=True)
+    check_rep_written = bool(rep_path and rep_path.exists())
+    record_check("Living_Brain", "Xuất Live Intraday Report & Sync SQLite Vault", check_rep_written, str(rep_path))
+except Exception as e:
+    record_check("Living_Brain", "Kiểm tra Apex Living Intraday Brain", False, str(e))
+
+# 2. KIỂM TRA LIVE ENDPOINTS (HEALTH, WAR-ROOM, SSE STREAM, REPORTS, COMMANDS)
+try:
+    req = urllib.request.Request(f"{live_url}/api/health", headers={"User-Agent": "ApexAudit/4.0"})
     res = urllib.request.urlopen(req, timeout=15)
     body = json.loads(res.read().decode("utf-8"))
-    check_health = (res.status == 200 and body.get("status") == "ok" and body.get("cash_vnd") == 20167119.0)
-    record_check("Cloud_Endpoint", "GET /api/health", check_health, f"Response: {body.get('status')}, Cash: {body.get('cash_vnd')}")
+    api_cash = float(body.get("cash_vnd", -1.0))
+    check_health = (res.status == 200 and body.get("status") == "ok" and abs(api_cash - ssot_cash) < 100.0)
+    record_check("Live_Endpoint", "GET /api/health khớp SSOT Cash", check_health, f"Status: {body.get('status')}, Health Cash: {api_cash:,.0f} vs SSOT {ssot_cash:,.0f}")
 except Exception as e:
-    record_check("Cloud_Endpoint", "GET /api/health", False, str(e))
+    record_check("Live_Endpoint", "GET /api/health", False, str(e))
 
-# Check 2.2: /api/reports
 try:
-    req = urllib.request.Request(f"{live_url}/api/reports", headers={"User-Agent": "ApexAudit/1.0"})
+    req = urllib.request.Request(f"{live_url}/api/tactical_war_room", headers={"User-Agent": "ApexAudit/4.0"})
+    res = urllib.request.urlopen(req, timeout=20)
+    raw_wr = res.read().decode("utf-8")
+    wr = json.loads(raw_wr)
+    wr_cash = float(wr.get("victor_sentinel", {}).get("cash_vnd", -1.0))
+    no_mock_index = ("1258.62" not in raw_wr and "1324.95" not in raw_wr)
+    check_wr = (
+        res.status == 200
+        and wr.get("status") == "ok"
+        and abs(wr_cash - ssot_cash) < 100.0
+        and bool(wr.get("intraday_regime", {}).get("regime_id"))
+        and len(wr.get("live_stocks", [])) > 0
+        and no_mock_index
+    )
+    record_check(
+        "Live_Endpoint",
+        "GET /api/tactical_war_room khớp SSOT & không mock index",
+        check_wr,
+        f"WR Cash: {wr_cash:,.0f} | VN-Index: {wr.get('market_overview', {}).get('vn_index', {}).get('value')} | Picks: {len(wr.get('dynamic_picks', []))}"
+    )
+except Exception as e:
+    record_check("Live_Endpoint", "GET /api/tactical_war_room", False, str(e))
+
+try:
+    req = urllib.request.Request(f"{live_url}/api/tactical_war_room/stream?max_frames=1", headers={"User-Agent": "ApexAudit/4.0"})
+    res = urllib.request.urlopen(req, timeout=20)
+    ctype = res.headers.get("Content-Type", "")
+    sse_body = res.read().decode("utf-8")
+    check_sse = (res.status == 200 and "text/event-stream" in ctype and "war_room_tick" in sse_body and "data:" in sse_body)
+    record_check("Live_Endpoint", "GET /api/tactical_war_room/stream (SSE)", check_sse, f"Content-Type: {ctype}, Bytes: {len(sse_body)}")
+except Exception as e:
+    record_check("Live_Endpoint", "GET /api/tactical_war_room/stream (SSE)", False, str(e))
+
+try:
+    req = urllib.request.Request(f"{live_url}/api/reports", headers={"User-Agent": "ApexAudit/4.0"})
     res = urllib.request.urlopen(req, timeout=15)
     data = json.loads(res.read().decode("utf-8"))
     reps = data.get("reports", []) if isinstance(data, dict) else data
     check_reps = (res.status == 200 and len(reps) > 0)
-    record_check("Cloud_Endpoint", "GET /api/reports", check_reps, f"Tổng số báo cáo: {len(reps)}")
+    record_check("Live_Endpoint", "GET /api/reports", check_reps, f"Tổng số báo cáo: {len(reps)}")
 except Exception as e:
-    record_check("Cloud_Endpoint", "GET /api/reports", False, str(e))
+    record_check("Live_Endpoint", "GET /api/reports", False, str(e))
 
-# Check 2.3: POST /api/command (/tcbs)
 try:
     cmd_data = json.dumps({"command": "/tcbs"}).encode("utf-8")
-    req = urllib.request.Request(f"{live_url}/api/command", data=cmd_data, headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/1.0"})
+    req = urllib.request.Request(f"{live_url}/api/command", data=cmd_data, headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/4.0"})
     res = urllib.request.urlopen(req, timeout=20)
     cmd_res = json.loads(res.read().decode("utf-8"))
     check_cmd = (res.status == 200 and cmd_res.get("ok") is True and "105C307855" in cmd_res.get("response", ""))
-    record_check("Cloud_Endpoint", "POST /api/command (/tcbs)", check_cmd, f"Officer: {cmd_res.get('officer')}, Ok: {cmd_res.get('ok')}")
+    record_check("Live_Endpoint", "POST /api/command (/tcbs)", check_cmd, f"Officer: {cmd_res.get('officer')}, Ok: {cmd_res.get('ok')}")
 except Exception as e:
-    record_check("Cloud_Endpoint", "POST /api/command (/tcbs)", False, str(e))
+    record_check("Live_Endpoint", "POST /api/command (/tcbs)", False, str(e))
 
-# Check 2.4: POST /api/command (/solenh)
 try:
     cmd_data = json.dumps({"command": "/solenh"}).encode("utf-8")
-    req = urllib.request.Request(f"{live_url}/api/command", data=cmd_data, headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/1.0"})
+    req = urllib.request.Request(f"{live_url}/api/command", data=cmd_data, headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/4.0"})
     res = urllib.request.urlopen(req, timeout=20)
     cmd_res = json.loads(res.read().decode("utf-8"))
-    check_solenh = (res.status == 200 and cmd_res.get("ok") is True and ("HDB" in cmd_res.get("response", "") or "20,167,119" in cmd_res.get("response", "")))
-    record_check("Cloud_Endpoint", "POST /api/command (/solenh)", check_solenh, f"Response length: {len(cmd_res.get('response', ''))}")
+    resp_text = cmd_res.get("response", "")
+    check_solenh = (res.status == 200 and cmd_res.get("ok") is True and len(resp_text) > 50)
+    record_check("Live_Endpoint", "POST /api/command (/solenh)", check_solenh, f"Response length: {len(resp_text)}")
 except Exception as e:
-    record_check("Cloud_Endpoint", "POST /api/command (/solenh)", False, str(e))
+    record_check("Live_Endpoint", "POST /api/command (/solenh)", False, str(e))
 
-# Check 2.5: POST /api/command (/hop FPT)
 try:
     cmd_data = json.dumps({"command": "/hop FPT"}).encode("utf-8")
-    req = urllib.request.Request(f"{live_url}/api/command", data=cmd_data, headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/1.0"})
+    req = urllib.request.Request(f"{live_url}/api/command", data=cmd_data, headers={"Content-Type": "application/json", "User-Agent": "ApexAudit/4.0"})
     res = urllib.request.urlopen(req, timeout=20)
     cmd_res = json.loads(res.read().decode("utf-8"))
     check_hop = (res.status == 200 and cmd_res.get("ok") is True and "FPT" in cmd_res.get("response", ""))
-    record_check("Cloud_Endpoint", "POST /api/command (/hop FPT)", check_hop, f"Debate length: {len(cmd_res.get('response', ''))}")
+    record_check("Live_Endpoint", "POST /api/command (/hop FPT)", check_hop, f"Debate length: {len(cmd_res.get('response', ''))}")
 except Exception as e:
-    record_check("Cloud_Endpoint", "POST /api/command (/hop FPT)", False, str(e))
+    record_check("Live_Endpoint", "POST /api/command (/hop FPT)", False, str(e))
 
 # 3. KIỂM TRA CẦU CHÌ KHÓA THỜI GIAN THỰC (TIME-GATING EMBARGO)
 try:
@@ -139,25 +209,33 @@ try:
     today_str = datetime.datetime.now().strftime("%Y-%m-%d")
     current_time_str = datetime.datetime.now().strftime("%H:%M:%S")
     scanned = scan_all_institutional_reports(date_filter=today_str)
-    
+
     future_leaks = [r for r in scanned if r["date"] == today_str and r["sort_time"] > current_time_str]
     check_embargo = (len(future_leaks) == 0)
     record_check("TimeGating_Embargo", "Cầu chì khóa thời gian thực (0 rò rỉ báo cáo tương lai)", check_embargo, f"Báo cáo tương lai rò rỉ: {len(future_leaks)}")
 except Exception as e:
     record_check("TimeGating_Embargo", "Cầu chì khóa thời gian thực", False, str(e))
 
-# 4. KIỂM TRA BỘ GIÁM SÁT NGƯỠNG NÂNG CẤP DATABASE (300 - 500 BÁO CÁO)
+# 4. KIỂM TRA BỘ GIÁM SÁT NGƯỠNG NÂNG CẤP DATABASE
 try:
     cfg_file = BASE_DIR / "config" / "database_scaling_sentinel.json"
     check_cfg_exists = cfg_file.exists()
     record_check("Database_Sentinel", "Tệp quy chuẩn database_scaling_sentinel.json", check_cfg_exists, str(cfg_file))
-    
+
     if check_cfg_exists:
         with open(cfg_file, "r", encoding="utf-8") as f:
             cfg = json.load(f)
-        check_thresholds = (cfg.get("threshold_warning_min") == 300 and cfg.get("threshold_warning_max") == 500)
-        record_check("Database_Sentinel", "Ngưỡng giám sát 300 - 500", check_thresholds, f"Min: {cfg.get('threshold_warning_min')}, Max: {cfg.get('threshold_warning_max')}")
-        
+        arch = cfg.get("active_database_architecture", "")
+        t_min = cfg.get("threshold_warning_min")
+        t_max = cfg.get("threshold_warning_max")
+        if arch == "SQLITE_LAKEHOUSE_VAULT_V5":
+            check_thresholds = (t_min == 50000 and t_max == 100000)
+            chk_label = "Ngưỡng giám sát SQLite Vault V5 (50k - 100k)"
+        else:
+            check_thresholds = (t_min == 300 and t_max == 500)
+            chk_label = "Ngưỡng giám sát 300 - 500"
+        record_check("Database_Sentinel", chk_label, check_thresholds, f"Arch: {arch}, Min: {t_min}, Max: {t_max}")
+
     from scripts.apex_inspector_trong import ApexInspectorTrong
     audit_res = ApexInspectorTrong.audit_system_technical_integrity_247()
     check_trong_check6 = (audit_res.get("checks_performed", 0) >= 6)
@@ -170,7 +248,6 @@ py_files = list((BASE_DIR / "scripts").glob("*.py"))
 syntax_errors = []
 for pf in py_files:
     try:
-        import py_compile
         py_compile.compile(str(pf), doraise=True)
     except Exception as e:
         syntax_errors.append(f"{pf.name}: {e}")
@@ -178,30 +255,72 @@ for pf in py_files:
 check_syntax = (len(syntax_errors) == 0)
 record_check("Python_Code_Integrity", f"Biên dịch sạch {len(py_files)} scripts trong scripts/", check_syntax, f"Lỗi: {len(syntax_errors)}")
 
-# 6. KIỂM TRA JAVASCRIPT FRONTEND TRÊN WEB PORTAL
+# 6. KIỂM TRA WEB PORTAL FRONTEND (LIVING WAR-ROOM V4.0 + SYNC FORM + SSE)
 try:
-    req = urllib.request.Request(f"{live_url}/", headers={"User-Agent": "ApexAudit/1.0"})
-    html = urllib.request.urlopen(req, timeout=15).read().decode("utf-8")
-    
+    req = urllib.request.Request(f"{live_url}/", headers={"User-Agent": "ApexAudit/4.0"})
+    html = urllib.request.urlopen(req, timeout=20).read().decode("utf-8")
+
     has_v4 = ("V4.0" in html)
     record_check("Web_Portal_UI", "Giao diện V4.0 Bloomberg-Grade đã kích hoạt", has_v4, "V4.0 badge on live HTML")
-    
+
     has_tv = ("tv_chart_container" in html and "tradingview" in html.lower())
     record_check("Web_Portal_UI", "TradingView HOSE Live Widget tích hợp", has_tv, "Found tv_chart_container")
-    
+
     has_split = ("james-split-container" in html and "james-sidebar-panel" in html)
     record_check("Web_Portal_UI", "Bàn Chỉ Huy James 2 Cột (Split-View)", has_split, "Found split layout classes")
-    
-    has_5cat = ("count-cat-macro" in html and "count-cat-equity" in html and "count-cat-cio" in html)
-    record_check("Web_Portal_UI", "5 Khối phân loại báo cáo có badge đếm", has_5cat, "Found category count elements")
-    
-    has_view_mode = ("btn-view-grid" in html and "btn-view-table" in html)
-    record_check("Web_Portal_UI", "Công tắc chuyển đổi Chế độ xem (Grid vs Table)", has_view_mode, "Found view mode buttons")
-    
+
+    has_war_room_v4 = (
+        "wr-stream-status-badge" in html
+        and "wr-regime-pill" in html
+        and "sync-tcinvest-panel" in html
+        and "wr-spillover-slippage-box" in html
+        and "EventSource('/api/tactical_war_room/stream')" in html
+        and "1258.62" not in html
+        and "1324.95" not in html
+    )
+    record_check("Web_Portal_UI", "Living War-Room V4.0 SSE + Sync TCInvest + Spillover + Không mock tĩnh", has_war_room_v4, "Verified SSE, Sync form, Regime pill, Spillover, 0 mock index")
+
     has_smart_formatter = ("formatJamesResponseHtml" in html and "exec-kpi-banner" in html)
     record_check("Web_Portal_UI", "Smart Formatter bóc tách KPI & Stock Cards cho James", has_smart_formatter, "Found formatJamesResponseHtml")
 except Exception as e:
     record_check("Web_Portal_UI", "Kiểm tra Web Portal Frontend", False, str(e))
+
+# 7. KIỂM TRA PHASE 2 (GLOBAL SPILLOVER, SLIPPAGE TRACKER, CLOUD DB, PORTAL AUTH, KEEP-ALIVE)
+try:
+    from scripts.global_to_vn_spillover_engine import compute_global_to_vn_spillover
+    sp = compute_global_to_vn_spillover(force_refresh=False)
+    check_sp = (0.3 <= float(sp.get("risk_multiplier", 0)) <= 1.2 and bool(sp.get("overnight_bias")))
+    record_check("Phase2_Spillover", "Global-to-VN Spillover Engine (US -> VN)", check_sp, f"Bias: {sp.get('overnight_bias')} | Mult: {sp.get('risk_multiplier')}x | Cap: {sp.get('max_allocation_pct')}%")
+except Exception as e:
+    record_check("Phase2_Spillover", "Global-to-VN Spillover Engine", False, str(e))
+
+try:
+    from scripts.execution_slippage_tracker import get_tracker_summary
+    tr = get_tracker_summary()
+    f_tr = tr.get("filters", {})
+    check_tr = (float(f_tr.get("min_buy_up_pct", 0)) >= 50.0 and float(f_tr.get("max_rsi_buy", 0)) > 0)
+    record_check("Phase2_Slippage", "Execution Slippage & Bull-Trap Tracker", check_tr, f"BuyUp>={f_tr.get('min_buy_up_pct')}% | RSI<={f_tr.get('max_rsi_buy')} | Signals={f_tr.get('total_signals_tracked')}")
+except Exception as e:
+    record_check("Phase2_Slippage", "Execution Slippage Tracker", False, str(e))
+
+try:
+    from scripts.apex_cloud_db_sync import ApexCloudDBSync
+    mig_file = BASE_DIR / "supabase" / "migrations" / "20261115120000_apex_war_room_v4.sql"
+    cdb = ApexCloudDBSync.get_cloud_status()
+    check_cdb = (mig_file.exists() and "ENABLE ROW LEVEL SECURITY" in mig_file.read_text(encoding="utf-8") and bool(cdb.get("local_sqlite_mirror")))
+    record_check("Phase2_CloudDB", "Cloud DB Schema (RLS) & Local SQLite Mirror", check_cdb, f"Mode: {cdb.get('mode')} | Vault: {cdb.get('vault_db_exists')}")
+except Exception as e:
+    record_check("Phase2_CloudDB", "Cloud DB Persistence", False, str(e))
+
+try:
+    from scripts.apex_portal_auth import hash_pin, verify_pin_hash
+    h_pin = hash_pin("998877")
+    check_auth_crypto = verify_pin_hash("998877", h_pin) and not verify_pin_hash("000000", h_pin)
+    ka_file = BASE_DIR / ".github" / "workflows" / "apex_keep_alive.yml"
+    check_ka = ka_file.exists() and "/api/health" in ka_file.read_text(encoding="utf-8")
+    record_check("Phase2_Security_KeepAlive", "Portal PIN Crypto + GitHub Actions Keep-Alive", check_auth_crypto and check_ka, f"PBKDF2 Verified: {check_auth_crypto} | Keep-Alive YML: {check_ka}")
+except Exception as e:
+    record_check("Phase2_Security_KeepAlive", "Portal Security & Keep-Alive", False, str(e))
 
 print("=" * 70)
 print(f"KẾT QUẢ TỔNG KIỂM TOÁN: {audit_results['passed_checks']}/{audit_results['total_checks']} HẠNG MỤC ĐẠT CHUẨN!")
@@ -213,8 +332,9 @@ else:
     print("HOÀN TOÀN KHÔNG CÓ LỖI! 100% CÁC NÂNG CẤP HOẠT ĐỘNG TRƠN TRU & HOÀN THIỆN!")
 print("=" * 70)
 
-# Lưu kết quả kiểm toán vào ledger
 audit_log_path = BASE_DIR / "12_Institutional_Ombudsman_And_Inspectorate" / "daily_audits" / f"{datetime.datetime.now().strftime('%Y-%m-%d')}_Comprehensive_Audit_Report.json"
+audit_log_path.parent.mkdir(parents=True, exist_ok=True)
 with open(audit_log_path, "w", encoding="utf-8") as f:
     json.dump(audit_results, f, ensure_ascii=False, indent=2)
 print(f"Đã lưu hồ sơ kiểm toán: {audit_log_path}")
+sys.exit(1 if audit_results["errors"] else 0)

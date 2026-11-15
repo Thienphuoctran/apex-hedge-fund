@@ -1,0 +1,14 @@
+{
+  "min_buy_up_pct": 58.0,
+  "max_rsi_buy": 70.0,
+  "min_breadth_pct": 32.0,
+  "max_slippage_warn_bps": 60.0,
+  "total_signals_tracked": 0,
+  "evaluated_signals": 0,
+  "hit_rate_t3_pct": 0.0,
+  "hit_rate_t5_pct": 0.0,
+  "bull_trap_rate_pct": 0.0,
+  "avg_slippage_bps": 0.0,
+  "tuning_note": "Ổn định theo bộ lọc chuẩn.",
+  "last_tuned_at": "2026-11-15 20:15:25"
+}

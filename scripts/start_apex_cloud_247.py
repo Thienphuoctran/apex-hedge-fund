@@ -98,6 +98,16 @@ SERVICES_CONFIG = {
         "max_crashes_in_window": 10,
         "crash_window_seconds": 300,
         "restart_delay_seconds": 3
+    },
+    "live_intraday_brain": {
+        "name": "Apex Living Intraday Decision Brain (V4.0 Realtime)",
+        "script": "scripts/apex_live_intraday_brain.py",
+        "args": ["--daemon"],
+        "log_file": LOGS_DIR / "live_intraday_brain.log",
+        "enabled": True,
+        "max_crashes_in_window": 10,
+        "crash_window_seconds": 300,
+        "restart_delay_seconds": 5
     }
 }
 
@@ -271,6 +281,42 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         pass
 
+    def _is_https_request(self) -> bool:
+        proto = (self.headers.get("X-Forwarded-Proto", "") or "").lower()
+        return proto == "https"
+
+    def _enforce_auth_or_deny(self, path: str) -> bool:
+        """Trả True nếu được phép đi tiếp; trả False và gửi 401 nếu chưa xác thực."""
+        try:
+            from scripts.apex_portal_auth import (
+                is_auth_enabled,
+                is_request_authenticated,
+                render_pin_login_html,
+            )
+        except Exception:
+            return True
+
+        if not is_auth_enabled() or is_request_authenticated(self.headers):
+            return True
+
+        if path.startswith("/api/"):
+            self.send_response(401)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(json.dumps({
+                "ok": False,
+                "auth_required": True,
+                "error": "Yêu cầu xác thực PIN Chủ tịch hoặc Bearer Token."
+            }, ensure_ascii=False).encode("utf-8"))
+        else:
+            self.send_response(401)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(render_pin_login_html().encode("utf-8"))
+        return False
+
     def do_GET(self):
         parsed_url = urllib.parse.urlparse(self.path)
         path = parsed_url.path
@@ -293,6 +339,18 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             cash_val = float(port_state.get("cash_balance_vnd", 0.0))
             mkt_val = float(port_state.get("total_market_val_vnd", 0.0))
             nav_val = float(port_state.get("total_nav_vnd", cash_val + mkt_val))
+            cloud_status = {}
+            auth_on = False
+            try:
+                from scripts.apex_cloud_db_sync import ApexCloudDBSync
+                cloud_status = ApexCloudDBSync.get_cloud_status()
+            except Exception:
+                pass
+            try:
+                from scripts.apex_portal_auth import is_auth_enabled
+                auth_on = is_auth_enabled()
+            except Exception:
+                pass
             data = {
                 "status": "ok",
                 "supervisor": "HEALTHY",
@@ -305,9 +363,31 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 "realized_round_1_profit_vnd": float(port_state.get("realized_pnl_vnd", 167119.0)),
                 "unrealized_pnl_vnd": float(port_state.get("unrealized_pnl_vnd", 0.0)),
                 "debt_vnd": float(port_state.get("debt_vnd", 0.0)),
+                "auth_enabled": auth_on,
+                "cloud_db": cloud_status,
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).astimezone(datetime.timezone(datetime.timedelta(hours=7))).strftime("%Y-%m-%d %H:%M:%S")
             }
             self.wfile.write(json.dumps(data, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/auth/status":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            try:
+                from scripts.apex_portal_auth import is_auth_enabled, is_request_authenticated
+                auth_res = {
+                    "ok": True,
+                    "auth_enabled": is_auth_enabled(),
+                    "authenticated": is_request_authenticated(self.headers),
+                }
+            except Exception as e:
+                auth_res = {"ok": False, "error": str(e)}
+            self.wfile.write(json.dumps(auth_res, ensure_ascii=False).encode("utf-8"))
+            return
+
+        if not self._enforce_auth_or_deny(path):
             return
 
         elif path in ("/api/status", "/api/state"):
@@ -470,10 +550,71 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
                 from scripts.apex_web_portal_engine import generate_dynamic_tactical_stages_html
                 st = get_tactical_war_room_state()
-                st["tactical_stages_html"] = generate_dynamic_tactical_stages_html()
+                st["tactical_stages_html"] = generate_dynamic_tactical_stages_html(wr_state=st)
                 self.wfile.write(json.dumps(st, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            return
+
+        elif path == "/api/tactical_war_room/stream":
+            try:
+                max_frames = int(query.get("max_frames", ["0"])[0] or 0)
+            except Exception:
+                max_frames = 0
+            self.send_response(200)
+            self.send_header("Content-Type", "text/event-stream; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            if max_frames > 0:
+                self.send_header("Connection", "close")
+                self.close_connection = True
+            else:
+                self.send_header("Connection", "keep-alive")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("X-Accel-Buffering", "no")
+            self.end_headers()
+            try:
+                from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
+                from scripts.apex_web_portal_engine import generate_dynamic_tactical_stages_html
+                frame_idx = 0
+                while True:
+                    st = get_tactical_war_room_state()
+                    st["tactical_stages_html"] = generate_dynamic_tactical_stages_html(wr_state=st)
+                    payload = f"event: war_room_tick\ndata: {json.dumps(st, ensure_ascii=False)}\n\n"
+                    self.wfile.write(payload.encode("utf-8"))
+                    self.wfile.flush()
+                    frame_idx += 1
+                    if max_frames > 0 and frame_idx >= max_frames:
+                        break
+                    time.sleep(4)
+            except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
+                return
+            except Exception as e:
+                try:
+                    err_payload = f"event: error\ndata: {json.dumps({'error': str(e)}, ensure_ascii=False)}\n\n"
+                    self.wfile.write(err_payload.encode("utf-8"))
+                    self.wfile.flush()
+                except Exception:
+                    pass
+            return
+
+        elif path == "/api/spillover_and_slippage":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.global_to_vn_spillover_engine import compute_global_to_vn_spillover
+                from scripts.execution_slippage_tracker import get_tracker_summary
+                from scripts.apex_cloud_db_sync import ApexCloudDBSync
+                payload = {
+                    "ok": True,
+                    "global_spillover": compute_global_to_vn_spillover(force_refresh=False),
+                    "execution_tracker": get_tracker_summary(),
+                    "cloud_db": ApexCloudDBSync.get_cloud_status(),
+                }
+            except Exception as e:
+                payload = {"ok": False, "error": str(e)}
+            self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
             return
 
         else:
@@ -507,6 +648,50 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
 
     def do_POST(self):
         parsed_url = urllib.parse.urlparse(self.path)
+        if parsed_url.path == "/api/auth/login":
+            content_length = int(self.headers.get("Content-Length", 0))
+            body_bytes = self.rfile.read(content_length)
+            try:
+                req_data = json.loads(body_bytes.decode("utf-8")) if body_bytes else {}
+                pin_val = str(req_data.get("pin", req_data.get("token", ""))).strip()
+                from scripts.apex_portal_auth import (
+                    verify_pin_or_token,
+                    create_session_token,
+                    build_session_cookie_header,
+                )
+                if not verify_pin_or_token(pin_val):
+                    self.send_response(401)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"ok": False, "error": "Mã PIN hoặc Token không đúng."}, ensure_ascii=False).encode("utf-8"))
+                    return
+                tok = create_session_token()
+                cookie_hdr = build_session_cookie_header(tok, is_https=self._is_https_request())
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Set-Cookie", cookie_hdr)
+                self.send_header("Cache-Control", "no-store")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": True, "token": tok}, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(400)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif parsed_url.path == "/api/auth/logout":
+            from scripts.apex_portal_auth import build_logout_cookie_header
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Set-Cookie", build_logout_cookie_header())
+            self.end_headers()
+            self.wfile.write(json.dumps({"ok": True}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        if not self._enforce_auth_or_deny(parsed_url.path):
+            return
+
         if parsed_url.path == "/api/command":
             content_length = int(self.headers.get("Content-Length", 0))
             body_bytes = self.rfile.read(content_length)
@@ -639,6 +824,115 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+            return
+
+        elif parsed_url.path == "/api/sync_tcinvest":
+            try:
+                content_len = int(self.headers.get("Content-Length", 0))
+                body_str = self.rfile.read(content_len).decode("utf-8") if content_len > 0 else "{}"
+                req_data = json.loads(body_str)
+
+                action = str(req_data.get("action", "")).strip().upper()
+                symbol = str(req_data.get("symbol", "")).strip().upper()
+                shares = int(req_data.get("shares", 0) or 0)
+                price = float(req_data.get("price", 0) or 0)
+                stop_loss = float(req_data.get("stop_loss", 0) or 0)
+                take_profit = float(req_data.get("take_profit", 0) or 0)
+                cash_override = req_data.get("cash_balance_vnd", None)
+                reason = str(req_data.get("reason", "")).strip()
+
+                from scripts.portfolio_state_manager import PortfolioStateManager
+                from scripts.apex_live_intraday_brain import invalidate_live_cache, compute_live_war_room_snapshot, sync_live_intraday_report
+                from scripts.apex_tactical_war_room_engine import push_external_war_room_alert, get_tactical_war_room_state
+
+                ok = False
+                msg = ""
+                if action == "BUY":
+                    if not symbol or shares <= 0 or price <= 0:
+                        raise ValueError("Lệnh BUY yêu cầu symbol, shares > 0 và price > 0.")
+                    ok, msg = PortfolioStateManager.execute_buy_order(
+                        symbol=symbol,
+                        shares=shares,
+                        buy_price=price,
+                        stop_loss=stop_loss,
+                        take_profit=take_profit,
+                        reason=reason or "Chủ tịch đồng bộ 1-Click từ TCInvest War-Room V4.0",
+                    )
+                    if ok:
+                        try:
+                            from scripts.execution_slippage_tracker import record_execution_fill
+                            record_execution_fill(symbol=symbol, executed_price=price, shares=shares)
+                        except Exception:
+                            pass
+                elif action == "SELL":
+                    if not symbol or shares <= 0 or price <= 0:
+                        raise ValueError("Lệnh SELL yêu cầu symbol, shares > 0 và price > 0.")
+                    ok, msg = PortfolioStateManager.execute_sell_order(
+                        symbol=symbol,
+                        shares=shares,
+                        sell_price=price,
+                        reason=reason or "Chủ tịch đồng bộ 1-Click từ TCInvest War-Room V4.0",
+                    )
+                elif action == "RECONCILE":
+                    st_curr = PortfolioStateManager.load_state()
+                    updates = []
+                    if cash_override is not None and str(cash_override).strip() != "":
+                        new_cash = float(cash_override)
+                        st_curr["cash_balance_vnd"] = round(new_cash, 2)
+                        updates.append(f"Tiền mặt -> {new_cash:,.0f} đ")
+                    if symbol and symbol in st_curr.get("active_positions", {}):
+                        pos = st_curr["active_positions"][symbol]
+                        if stop_loss > 0:
+                            pos["stop_loss"] = round(stop_loss, 2)
+                            updates.append(f"{symbol} Stop -> {stop_loss:,.0f} đ")
+                        if take_profit > 0:
+                            pos["tp1"] = round(take_profit, 2)
+                            updates.append(f"{symbol} TP1 -> {take_profit:,.0f} đ")
+                    if not updates:
+                        raise ValueError("RECONCILE yêu cầu cash_balance_vnd hoặc symbol/stop_loss/take_profit hợp lệ.")
+                    ok = PortfolioStateManager.save_state(st_curr)
+                    msg = "Đã đối soát SSOT trực tiếp: " + ", ".join(updates) if ok else "Lỗi lưu state SSOT."
+                else:
+                    raise ValueError("action phải là BUY, SELL hoặc RECONCILE.")
+
+                if not ok:
+                    self.send_response(400)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"ok": False, "error": msg}, ensure_ascii=False).encode("utf-8"))
+                    return
+
+                invalidate_live_cache()
+                snap = compute_live_war_room_snapshot(force_refresh=True)
+                sync_live_intraday_report(snap, force_write=True)
+                push_external_war_room_alert(
+                    sender="TCInvest 1-Click Sync (SSOT Engine)",
+                    alert_type="tcinvest_sync",
+                    content=f"⚡ [ĐỒNG BỘ LỆNH TCINVEST] {msg}",
+                    role="specialist",
+                    alert_key=f"sync_{int(time.time()*1000)}",
+                )
+                wr_state = get_tactical_war_room_state(force_refresh=True)
+
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "ok": True,
+                    "message": msg,
+                    "war_room_state": wr_state,
+                }, ensure_ascii=False).encode("utf-8"))
+            except ValueError as ve:
+                self.send_response(400)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(ve)}, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
         else:
             self.send_response(404)
@@ -907,8 +1201,12 @@ class ApexCloudSupervisor:
         self._save_status()
         if self.enable_web:
             try:
+                class _DaemonThreadingHTTPServer(http.server.ThreadingHTTPServer):
+                    daemon_threads = True
+                    allow_reuse_address = True
+
                 ApexSupervisorHTTPHandler.supervisor_ref = self
-                self.http_server = http.server.ThreadingHTTPServer(("0.0.0.0", self.port), ApexSupervisorHTTPHandler)
+                self.http_server = _DaemonThreadingHTTPServer(("0.0.0.0", self.port), ApexSupervisorHTTPHandler)
                 t = threading.Thread(target=self.http_server.serve_forever, daemon=True)
                 t.start()
                 log_sup(f"🌐 [IMMORTAL WEB SERVER] Đang phục vụ tại http://0.0.0.0:{self.port} (Healthcheck: /api/health)")

@@ -993,8 +993,7 @@ def run_sentinel_audit(
         vol_str = f"{metrics['volume_surge_ratio']:>4.1f}x"
 
         status_tag = "[OK] ỔN ĐỊNH"
-        # KHÓA CỨNG BẢO VỆ 3 SIÊU CỔ PHIẾU ĐANG ĐẦU TƯ: CHỈ BÁO ĐỘNG ĐỎ & CHỐT LỜI CHO HPG, TCB, MBB
-        is_invested_stock = (pos.get("shares", 0) > 0) and (sym in ["HPG", "TCB", "MBB"])
+        is_invested_stock = (pos.get("shares", 0) > 0)
         if sev == "EMERGENCY":
             status_tag = "🔥 KHẨN CẤP CẤP ĐỘ 1"
             if is_invested_stock:
@@ -1005,12 +1004,36 @@ def run_sentinel_audit(
                 emergency_alerts.append(metrics)
         elif sev == "WARNING":
             status_tag = "⚠️ CẢNH GIÁC GIẢM"
+            if is_invested_stock and abs(metrics.get("change_pct", 0.0)) >= 2.0:
+                try:
+                    from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
+                    push_external_war_room_alert(
+                        sender="Victor (Ban 9 Sentinel)",
+                        alert_type="sentinel_warning",
+                        content=f"⚠️ [BIẾN ĐỘNG MẠNH — {sym}] Giá {metrics['current_price']:,.0f} ({metrics['change_pct']:+.2f}%) | Cách Stop: {metrics['stop_dist_pct']:+.2f}%.",
+                        role="sentinel",
+                        alert_key=f"ban9_warn_{datetime.datetime.now().strftime('%Y-%m-%d')}_{sym}",
+                    )
+                except Exception:
+                    pass
         elif sev in ["TAKE_PROFIT_TP1", "TAKE_PROFIT_TP2"]:
             status_tag = f"🎯 ĐẠT MỤC TIÊU {sev.replace('TAKE_PROFIT_', '')} — BÁO BÁN!"
             if is_invested_stock:
                 take_profit_alerts.append(metrics)
         elif sev == "UPSIDE_SURGE":
             status_tag = "⚡ BỨT PHÁ TĂNG MẠNH"
+            if is_invested_stock and abs(metrics.get("change_pct", 0.0)) >= 2.0:
+                try:
+                    from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
+                    push_external_war_room_alert(
+                        sender="Victor (Ban 9 Sentinel)",
+                        alert_type="sentinel_surge",
+                        content=f"⚡ [BỨT PHÁ TĂNG — {sym}] Giá {metrics['current_price']:,.0f} ({metrics['change_pct']:+.2f}%) | Vol {metrics['volume_surge_ratio']:.1f}x | Cách TP1: {metrics['tp1_dist_pct']:+.2f}%.",
+                        role="specialist",
+                        alert_key=f"ban9_surge_{datetime.datetime.now().strftime('%Y-%m-%d')}_{sym}",
+                    )
+                except Exception:
+                    pass
 
         print(f"  {sym_str} | Giá: {price_str} | Đổi: {change_str} | Cách Stop: {stop_dist_str} | Cách TP1: {tp1_dist_str} | Vol: {vol_str} | {status_tag}")
 
@@ -1038,6 +1061,20 @@ def run_sentinel_audit(
             )
             send_telegram_alert(config, tg_msg)
             print(f"  -> Đã lập Bản Tin Tác Chiến Khẩn Cấp tại: {LATEST_ALERT_MD_PATH.name}")
+            try:
+                from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
+                push_external_war_room_alert(
+                    sender="Victor (Ban 9 Sentinel)",
+                    alert_type="sentinel_emergency",
+                    content=(
+                        f"🚨 [BAN 9 CẢNH BÁO — {alert['symbol']}] Giá {alert['current_price']:,.2f} ({alert['change_pct']:+.2f}%) | "
+                        f"Cách Stop 2xATR: {alert['stop_dist_pct']:+.2f}% | {alert['hedging_solution']['action']}"
+                    ),
+                    role="sentinel",
+                    alert_key=f"ban9_emg_{datetime.datetime.now().strftime('%Y-%m-%d')}_{alert['symbol']}_{alert['severity']}",
+                )
+            except Exception:
+                pass
 
     # Process Upside Take-Profit Alerts if any
     if take_profit_alerts:
@@ -1064,6 +1101,20 @@ def run_sentinel_audit(
             )
             send_telegram_alert(config, tg_msg)
             print(f"  -> Đã phát thông báo Chốt Lời TP cho mã {tp_alert['symbol']}!")
+            try:
+                from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
+                push_external_war_room_alert(
+                    sender="Victor (Ban 9 Sentinel) & Minh Quân",
+                    alert_type="sentinel_take_profit",
+                    content=(
+                        f"🎯 [BAN 9 CHỐT LỜI — {tp_alert['symbol']}] Giá {tp_alert['current_price']:,.0f} ({tp_alert['change_pct']:+.2f}%) "
+                        f"chạm {tp_alert['severity']}. Khuyến nghị chốt lời 50% ({sell_half} CP) & nâng Stop phần còn lại!"
+                    ),
+                    role="specialist",
+                    alert_key=f"ban9_tp_{datetime.datetime.now().strftime('%Y-%m-%d')}_{tp_alert['symbol']}_{tp_alert['severity']}",
+                )
+            except Exception:
+                pass
 
     if not emergency_alerts and not take_profit_alerts:
         print("\n  [✓] Toàn bộ danh mục đang vận hành ổn định trong biên độ an toàn. Đang canh sát sao từng bước giá.")

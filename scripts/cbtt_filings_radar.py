@@ -329,14 +329,48 @@ def save_radar_reports(us_filings: List[Dict[str, Any]], vn_filings: List[Dict[s
 
 
 def check_and_send_critical_alerts(vn_filings: List[Dict[str, Any]], us_filings: List[Dict[str, Any]]) -> None:
-    """Send immediate Telegram alert if critical BCTC filings or red flags are detected"""
-    if "--no-telegram" in sys.argv:
-        return
+    """Send immediate Telegram alert & push War-Room directive if critical BCTC filings or red flags are detected"""
     critical_vn = [v for v in vn_filings if v["severity"] in ["CRITICAL", "RED_FLAG"]]
     critical_us = [u for u in us_filings if u["severity"] == "CRITICAL"]
 
     if not critical_vn and not critical_us:
         print("[i] Không có sự kiện BCTC khẩn cấp hoặc cảnh báo đỏ nào cần đẩy còi Telegram ngay.")
+        return
+
+    # Cross-Report Event Hook -> War-Room Living Directives (Ban 10 Hiền Radar)
+    if "--no-war-room" not in sys.argv:
+        try:
+            root_str = str(PROJECT_ROOT)
+            if root_str not in sys.path:
+                sys.path.insert(0, root_str)
+            from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
+            today_str = datetime.now().strftime("%Y-%m-%d")
+            for item in critical_vn[:5]:
+                syms = ",".join(item.get("symbols", [])) or "VN"
+                sev = item.get("severity", "CRITICAL")
+                badge = "🔴 RED FLAG" if sev == "RED_FLAG" else "📊 BCTC MỚI"
+                push_external_war_room_alert(
+                    sender="Hiền (Ban 10 CBTT Radar)",
+                    alert_type="cbtt_red_flag" if sev == "RED_FLAG" else "cbtt_critical",
+                    content=f"[{badge} — {syms}] {item.get('title', '')} ({item.get('event_type', '')})",
+                    role="sentinel" if sev == "RED_FLAG" else "specialist",
+                    alert_key=f"cbtt_{today_str}_{sev}_{syms}_{abs(hash(item.get('title', ''))) % 100000}",
+                    date_str=today_str,
+                )
+            for item in critical_us[:3]:
+                sym = item.get("symbol", "US")
+                push_external_war_room_alert(
+                    sender="Hiền (Ban 10 SEC EDGAR)",
+                    alert_type="sec_filing",
+                    content=f"[📊 SEC {item.get('form', '10-Q')} — {sym}] {item.get('description', '')} ({item.get('filing_date', '')})",
+                    role="specialist",
+                    alert_key=f"sec_{today_str}_{sym}_{item.get('form', '')}_{item.get('filing_date', '')}",
+                    date_str=today_str,
+                )
+        except Exception as e_hook:
+            print(f"  [!] Warning pushing CBTT hook to War-Room: {e_hook}")
+
+    if "--no-telegram" in sys.argv:
         return
 
     text = (

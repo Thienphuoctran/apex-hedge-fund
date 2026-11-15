@@ -1,0 +1,67 @@
+{
+  "snapshot_date": "2026-11-15",
+  "updated_at": "2026-11-15 20:15:17",
+  "fetched_epoch": 1794748517.53,
+  "risk_multiplier": 1.0,
+  "max_allocation_pct": 50,
+  "overnight_bias": "NEUTRAL_SELECTIVE",
+  "bias_label": "⚖️ TRUNG TÍNH PHÂN HÓA (CHỌN LỌC CỔ PHIẾU)",
+  "badge_color": "#38bdf8",
+  "drivers": [
+    "Phố Wall đi ngang phân hóa (S&P -0.40%, Nasdaq -0.91%)"
+  ],
+  "sector_tilts": [
+    "Ưu tiên cổ phiếu có OCF > LNST, Buy-Up chủ động > 60% và nền giá chặt"
+  ],
+  "metrics": {
+    "SP500": {
+      "last_price": 7561.67,
+      "prev_close": 7592.4,
+      "change_1d_pct": -0.4,
+      "source": "YFINANCE_LIVE"
+    },
+    "NASDAQ": {
+      "last_price": 25136.27,
+      "prev_close": 25366.09,
+      "change_1d_pct": -0.91,
+      "source": "YFINANCE_LIVE"
+    },
+    "VIX": {
+      "last_price": 19.3,
+      "prev_close": 18.7,
+      "change_1d_pct": 3.21,
+      "source": "YFINANCE_LIVE"
+    },
+    "US10Y": {
+      "last_price": 5.15,
+      "prev_close": 5.1,
+      "change_1d_pct": 1.0,
+      "source": "YFINANCE_LIVE"
+    },
+    "DXY": {
+      "last_price": 103.41,
+      "prev_close": 103.17,
+      "change_1d_pct": 0.23,
+      "source": "YFINANCE_LIVE"
+    },
+    "WTI_OIL": {
+      "last_price": 88.56,
+      "prev_close": 88.74,
+      "change_1d_pct": -0.2,
+      "source": "YFINANCE_LIVE"
+    },
+    "VNM_ETF": {
+      "last_price": 16.93,
+      "prev_close": 17.02,
+      "change_1d_pct": -0.53,
+      "source": "YFINANCE_LIVE"
+    },
+    "EEM_ETF": {
+      "last_price": 60.92,
+      "prev_close": 61.14,
+      "change_1d_pct": -0.36,
+      "source": "YFINANCE_LIVE"
+    }
+  },
+  "handoff_directive": "Alex (Ban 7 US) bàn giao trước 08h30 cho Minh Quân (Ban 7 VN): Hệ số rủi ro liên thị trường 1.00x | Trần giải ngân tối đa 50% NAV. Phố Wall đi ngang phân hóa (S&P -0.40%, Nasdaq -0.91%)"
+}

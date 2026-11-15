@@ -1,0 +1,24 @@
+[
+  {
+    "signal_id": "SIG_2026-11-15_BAF_GOLDEN_BUY_ZONE",
+    "symbol": "BAF",
+    "signal_date": "2026-11-15",
+    "signal_time": "20:15:26",
+    "signal_type": "GOLDEN_BUY_ZONE",
+    "signal_price": 30950.0,
+    "buy_up_pct": 71.7,
+    "rsi14": 62.9,
+    "breadth_pct": 36.0,
+    "regime_id": "SIDEWAY_CHOPPY",
+    "executed_price": null,
+    "executed_shares": 0,
+    "slippage_bps": null,
+    "slippage_pct": null,
+    "t3_price": null,
+    "t3_return_pct": null,
+    "t5_price": null,
+    "t5_return_pct": null,
+    "outcome": "PENDING",
+    "updated_at": "2026-11-15 20:15:27"
+  }
+]

@@ -209,27 +209,43 @@ class PortfolioStateManager:
             "next_session_note": next_session_note
         }
 
+    _CLOUD_HYDRATED_ON_BOOT = False
+
     @staticmethod
     def load_state() -> Dict[str, Any]:
-        """Tải trạng thái danh mục hiện tại từ đĩa (SSOT) kèm làm giàu ngữ cảnh thời gian & lịch sử."""
-        if not PORTFOLIO_STATE_FILE.exists():
-            PortfolioStateManager.save_state(DEFAULT_INITIAL_STATE)
-            return DEFAULT_INITIAL_STATE.copy()
+        """Tải trạng thái danh mục hiện tại từ đĩa (SSOT) kèm hydrate Cloud DB khi container khởi động lại."""
+        local_data: Optional[Dict[str, Any]] = None
+        if PORTFOLIO_STATE_FILE.exists():
+            try:
+                with open(PORTFOLIO_STATE_FILE, "r", encoding="utf-8") as f:
+                    local_data = json.load(f)
+            except Exception as e:
+                print(f"[!] Lỗi đọc state file ({e}).")
+                local_data = None
 
-        try:
-            with open(PORTFOLIO_STATE_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            # Đảm bảo các trường bộ nhớ lịch sử luôn hiện diện đầy đủ
-            for k, v in DEFAULT_INITIAL_STATE.items():
-                if k not in data:
-                    data[k] = v
-            data["temporal_context"] = PortfolioStateManager.get_temporal_context()
-            return data
-        except Exception as e:
-            print(f"[!] Lỗi đọc state file ({e}). Nạp fallback...")
-            st = DEFAULT_INITIAL_STATE.copy()
-            st["temporal_context"] = PortfolioStateManager.get_temporal_context()
-            return st
+        if not PortfolioStateManager._CLOUD_HYDRATED_ON_BOOT:
+            PortfolioStateManager._CLOUD_HYDRATED_ON_BOOT = True
+            try:
+                from scripts.apex_cloud_db_sync import ApexCloudDBSync
+                remote_data = ApexCloudDBSync.restore_ssot_if_newer(local_data)
+                if isinstance(remote_data, dict) and remote_data.get("account_id"):
+                    DATA_DIR.mkdir(parents=True, exist_ok=True)
+                    with open(PORTFOLIO_STATE_FILE, "w", encoding="utf-8") as f:
+                        json.dump(remote_data, f, indent=2, ensure_ascii=False)
+                    local_data = remote_data
+            except Exception:
+                pass
+
+        if local_data is None:
+            local_data = DEFAULT_INITIAL_STATE.copy()
+            PortfolioStateManager.save_state(local_data)
+            return local_data
+
+        for k, v in DEFAULT_INITIAL_STATE.items():
+            if k not in local_data:
+                local_data[k] = v
+        local_data["temporal_context"] = PortfolioStateManager.get_temporal_context()
+        return local_data
 
     @staticmethod
     def save_state(state: Dict[str, Any]) -> bool:
@@ -280,6 +296,11 @@ class PortfolioStateManager:
             PortfolioStateManager._sync_to_master_blotter(state)
             PortfolioStateManager._sync_to_sentinel_files(state)
             PortfolioStateManager._sync_to_episodic_memory(state)
+            try:
+                from scripts.apex_cloud_db_sync import ApexCloudDBSync
+                ApexCloudDBSync.sync_ssot(state)
+            except Exception:
+                pass
             return True
         except Exception as e:
             print(f"[!] Lỗi ghi portfolio state: {e}")

@@ -1,22 +1,19 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-13 10:26:55  
+**Thời gian cập nhật:** 2026-11-15 20:27:50  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261113-102655`  
+**Mã đồng bộ:** `SYNC-AG2P-20261115-202750`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Chủ tịch yêu cầu cập nhật trang web và tìm + sửa dứt điểm lỗi ngày nào mở Apex Institutional Cloud Portal cũng báo 0 Báo Cáo / Không tìm thấy báo cáo nào phù hợp với bộ lọc.
+* **Câu hỏi của Chủ tịch:** Triển khai hoàn chỉnh và đẩy toàn bộ nâng cấp Giai đoạn 1 & Giai đoạn 2 Living War-Room V4.0 lên GitHub/Render.
 * **Kết luận & Quyết định thể chế:**
-Đã rà soát và sửa triệt để 5 nguyên nhân gốc rễ: (1) Bổ sung hàm migrate_all_markdown_reports() còn thiếu vào migrate_markdown_to_sqlite.py để hết lỗi ImportError khi container Render khởi động; (2) Sửa apex_report_scanner.py dùng giờ ICT (UTC+7) và luôn hợp nhất file Markdown mới với SQLite; (3) Sửa start_apex_cloud_247.py nâng limit 150->2000 và sửa apex_web_portal_engine.py / apex_tactical_war_room_engine.py đọc động 100% SSOT (12,516,471 đ Cash / 18,151,471 đ NAV / 200 CP HDB & MSH), sửa refreshData() khớp mảng JSON và thêm Smart Date Fallback tự lùi về phiên gần nhất nếu hôm nay chưa phát hành báo cáo; (4) Thêm cơ chế catch-up cột mốc vào apex_institutional_cron_daemon.py, gọi migrate vào run_master_unified_fund.py và sửa assert lỗi thời trong .github/workflows/apex_cloud_sentinel_247.yml; (5) Chạy pipeline 2026-11-13 nạp 345 báo cáo thể chế (17 báo cáo ngày 13/11) vào SQLite Vault.
+Đã hoàn tất triển khai, kiểm định 27/27 hạng mục PASSED sau rebase, và đẩy toàn bộ nâng cấp Giai đoạn 1 & 2 lên nhánh main (GitHub origin/main) để Render tự động deploy tại https://apex-hedge-fund.onrender.com. SSOT TCBS 105C307855 giữ nguyên vẹn: Tiền mặt 12,516,471 đ | Cổ phiếu: 100 HDB (giá vốn 22,057đ) + 100 MSH (giá vốn 34,510đ) | NAV SSOT 18,151,471 đ (NAV Live 18,256,471 đ) | Lãi đã chốt V1: +167,119 đ.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Pull va hop nhat 2026-11-12/13 reports tu origin/main giu nguyen SSOT live 12,516,471 VND
-- [x] Sua migrate_markdown_to_sqlite.py, apex_report_scanner.py, start_apex_cloud_247.py
-- [x] Sua apex_web_portal_engine.py, apex_tactical_war_room_engine.py (SSOT dong + Smart Date Fallback)
-- [x] Sua cron daemon catch-up & GitHub Actions workflows
-- [x] Chay run_master_unified_fund.py & migrate_markdown_to_sqlite.py (345 bao cao, 17 bao cao 13/11)
-- [x] Kiem thu local HTTP server 100% PASS
+- [x] Giai đoạn 1 & Giai đoạn 2 hoàn thiện 100% và đã hợp nhất sạch lên origin/main.
+- [x] Kiểm định toàn hệ thống hậu rebase: verify_phase1_and_2_e2e.py + comprehensive_system_audit.py PASSED 27/27.
+- [x] Keep-Alive GitHub Actions (.github/workflows/apex_keep_alive.yml), Portal PIN Auth, Cloud DB RLS SQL migration & SQLite Mirror sẵn sàng.
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)

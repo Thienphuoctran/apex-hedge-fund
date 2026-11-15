@@ -32,6 +32,7 @@ MANIFEST
 *.token
 config/tcbs_*.json
 config/*.secret*
+config/portal_security.json
 .venv
 env/
 venv/

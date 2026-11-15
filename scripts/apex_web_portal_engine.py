@@ -28,6 +28,7 @@ TỔNG NÂNG CẤP GIAO DIỆN TOÀN DIỆN V4.0:
 
 import sys
 import json
+import html as html_lib
 import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional
@@ -91,12 +92,49 @@ def _load_live_ssot_summary() -> Dict[str, Any]:
     }
 
 
-def generate_dynamic_tactical_stages_html(now=None):
+def generate_dynamic_tactical_stages_html(
+    now=None,
+    wr_state: Optional[Dict[str, Any]] = None,
+) -> str:
     if now is None:
         now = get_ict_now()
     hm = now.hour * 60 + now.minute
+
     ssot = _load_live_ssot_summary()
-    
+    victor = (wr_state or {}).get("victor_sentinel", {})
+    regime = (wr_state or {}).get("intraday_regime", {})
+    live_stocks = (wr_state or {}).get("live_stocks", [])
+
+    cash_str = f"{float(victor.get('cash_vnd', ssot['cash_vnd'])):,.0f} ₫" if victor else ssot["cash_str"]
+    cash_pct = float(victor.get("cash_pct", ssot["cash_pct"])) if victor else ssot["cash_pct"]
+    total_shares = int(victor.get("total_shares", ssot["total_shares"])) if victor else ssot["total_shares"]
+    holdings = victor.get("holdings", [])
+    holdings_desc = (
+        " + ".join(f"{h.get('shares', 0)} {h.get('symbol', '')}" for h in holdings)
+        if holdings else ssot["holdings_desc"]
+    )
+    regime_label = html_lib.escape(str(regime.get("label", "GIẰNG CO PHÂN HÓA")))
+    max_alloc = int(regime.get("max_new_allocation_pct", 30))
+
+    if holdings:
+        holdings_bullets = "".join(
+            f"<div>• <strong>{html_lib.escape(str(h.get('symbol', '')))}</strong> "
+            f"({int(h.get('shares', 0))} CP • Vốn {float(h.get('avg_cost', 0)):,.0f} ₫ ➔ Live {float(h.get('current_price', 0)):,.0f} ₫ | "
+            f"Stop 2xATR: <code style=\"color:#fbbf24;\">{float(h.get('stop_loss', 0)):,.0f} ₫</code>)</div>"
+            for h in holdings
+        )
+    else:
+        holdings_bullets = "<div>• Chưa nắm giữ cổ phiếu (100% Tiền Mặt Sẵn Sàng Bắn Tỉa).</div>"
+
+    standby_candidates = [s for s in live_stocks if not s.get("is_holding")][:2]
+    if standby_candidates:
+        standby_bullets = ", ".join(
+            f"<strong>{html_lib.escape(str(s.get('code', '')))}</strong> (Live {float(s.get('price', 0)):,.0f} đ • BuyUp {float(s.get('active_buy_pct', 50)):.1f}%)"
+            for s in standby_candidates
+        )
+    else:
+        standby_bullets = "Rổ Watchlist SSOT"
+
     # Morning: 08:30 - 11:30
     if hm < 11 * 60 + 30:
         s1_active = (8 * 60 + 30 <= hm < 9 * 60)
@@ -104,7 +142,7 @@ def generate_dynamic_tactical_stages_html(now=None):
         s2_active = (9 * 60 <= hm < 9 * 60 + 15)
         s2_done = (hm >= 9 * 60 + 15)
         s3_active = (9 * 60 + 15 <= hm < 11 * 60 + 30)
-        
+
         s1_badge = "ĐANG DIỄN RA" if s1_active else ("ĐÃ HOÀN TẤT" if s1_done else "CHỜ ĐẾN GIỜ")
         s1_cls = "border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88));" if s1_active else "background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2);"
         s1_b_cls = "background: rgba(56, 189, 248, 0.25); color: #38bdf8; border-color: rgba(56, 189, 248, 0.5);" if s1_active else ("background: rgba(16, 185, 129, 0.2); color: #34d399;" if s1_done else "background: rgba(148, 163, 184, 0.15); color: #94a3b8;")
@@ -119,7 +157,6 @@ def generate_dynamic_tactical_stages_html(now=None):
 
         return f"""
         <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
-            <!-- GIAI ĐOẠN 1: PRE-ATO -->
             <div id="stage-1-card" class="action-plan-hero-card" style="{s1_cls} border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
                     <span id="stage-1-badge" class="action-plan-tag" style="{s1_b_cls} font-weight: 800;">
@@ -128,17 +165,16 @@ def generate_dynamic_tactical_stages_html(now=None):
                     <span style="font-size: 11.5px; font-weight: 800; color: #38bdf8; font-family: monospace;">08:30 – 09:00</span>
                 </div>
                 <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
-                    1. Giai Đoạn 1 (08:30 – 09:00): Pre-ATO Giao Ban &amp; Rà Soát Sức Mua
+                    1. Giai Đoạn 1 (08:30 – 09:00): Pre-ATO Giao Ban &amp; Rà Soát Sức Mua SSOT
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • <strong>Nhiệm vụ</strong>: Minh Quân rà soát Sổ Lệnh Master Blotter, đối soát két tiền mặt SSOT <strong>{ssot['cash_str']}</strong> và bảo vệ an toàn cho <strong>{ssot['total_shares']} CP ({ssot['holdings_desc']})</strong>.
+                    • <strong>Nhiệm vụ</strong>: Minh Quân rà soát Sổ Lệnh Master Blotter, đối soát két tiền mặt SSOT <strong>{cash_str}</strong> ({cash_pct:.1f}% NAV) và bảo vệ <strong>{total_shares} CP ({holdings_desc})</strong>.
                 </div>
                 <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #fca5a5; line-height: 1.5;">
-                    ⚖️ <strong>Kỷ luật Hiến chương</strong>: <strong>TUYỆT ĐỐI KHÔNG ĐẶT LỆNH SỚM TRƯỚC ATO</strong>. Kiên nhẫn chờ tín hiệu mở cửa thị trường.
+                    ⚖️ <strong>Kỷ luật Hiến chương</strong>: <strong>TUYỆT ĐỐI KHÔNG ĐẶT LỆNH SỚM TRƯỚC ATO</strong>.
                 </div>
             </div>
 
-            <!-- GIAI ĐOẠN 2: ATO OPEN -->
             <div id="stage-2-card" style="{s2_cls} border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
                     <span id="stage-2-badge" style="{s2_b_cls} font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px;">{s2_badge}</span>
@@ -148,33 +184,31 @@ def generate_dynamic_tactical_stages_html(now=None):
                     2. Giai Đoạn 2 (09:00 – 09:15): Khớp Lệnh ATO — Giữ Kỷ Luật Thép 3 Không
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • Victor quét độ mở Gap của VN-Index và độ lệch giá ATO. 
+                    • Victor quét độ mở Gap &amp; cảnh giữ Stop Loss 2xATR danh mục thực tế:
                     <div style="margin-left: 8px; margin-top: 4px; display: flex; flex-direction: column; gap: 3px;">
-                        <div>• <strong>HDB</strong> (100 CP giá vốn 22,050 ₫ | Stop 2xATR: <code style="color:#fbbf24;">21,220 ₫</code>).</div>
-                        <div>• <strong>MSH</strong> (100 CP giá vốn 34,517 ₫ | Stop 2xATR: <code style="color:#fbbf24;">33,090 ₫</code>).</div>
+                        {holdings_bullets}
                     </div>
                 </div>
                 <div style="background: rgba(239, 68, 68, 0.12); border-left: 3px solid #ef4444; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #fca5a5; line-height: 1.5;">
-                    🚫 <strong>CẢNH BÁO BẪY ATO</strong>: 100% CẤM MUA ĐUỔI GIÁ XANH ATO. Tạo lập thường kê lệnh ảo kéo trần đầu phiên.
+                    🚫 <strong>CẢNH BÁO BẪY ATO</strong>: 100% CẤM MUA ĐUỔI GIÁ XANH ATO.
                 </div>
             </div>
 
-            <!-- GIAI ĐOẠN 3: PHIÊN SÁNG -->
             <div id="stage-3-card" style="{s3_cls} border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
                     <span id="stage-3-badge" style="{s3_b_cls} font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px;">{s3_badge}</span>
                     <span style="font-size: 11px; font-weight: 800; color: #38bdf8; font-family: monospace;">09:15 – 11:30</span>
                 </div>
                 <div style="font-size: 13px; font-weight: 800; color: #38bdf8;">
-                    3. Giai Đoạn 3 (09:15 – 11:30): Khớp Lệnh Liên Tục Sáng — Giám Sát Cung Cầu
+                    3. Giai Đoạn 3 (09:15 – 11:30): Khớp Lệnh Sáng — Chế Độ {regime_label}
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • Theo dõi tỷ lệ Mua chủ động (Buy Up Ratio) và phản ứng giữ nền hỗ trợ. Giữ nguyên <strong>{ssot['cash_str']} tiền mặt</strong> cho cơ hội Khung Giờ Vàng.
+                    • Theo dõi Mua chủ động (Buy Up %) của {standby_bullets}. Bảo toàn két tiền mặt <strong>{cash_str}</strong> ({cash_pct:.1f}% NAV) chờ Khung Giờ Vàng.
                 </div>
             </div>
         </div>
         """
-    
+
     # Noon: 11:30 - 13:00
     elif hm < 13 * 60:
         return f"""
@@ -185,10 +219,10 @@ def generate_dynamic_tactical_stages_html(now=None):
                     <span style="font-size: 11.5px; font-weight: 800; color: #fbbf24; font-family: monospace;">11:30 – 13:00</span>
                 </div>
                 <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
-                    Hội Ý Giữa Phiên: Đối Soát Khối Ngoại &amp; Chuẩn Bị Đón Hàng T+2
+                    Hội Ý Giữa Phiên ({regime_label}): Đối Soát Khối Ngoại &amp; Hàng T+2
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • Minh Quân và Victor tổng kết thanh khoản sáng, lập kịch bản ứng phó áp lực hàng về lúc 13h00.
+                    • Tổng kết thanh khoản sáng, giữ nguyên két tiền <strong>{cash_str}</strong> ({cash_pct:.1f}% NAV) &amp; bảo vệ <strong>{total_shares} CP ({holdings_desc})</strong>. Hạn mức giải ngân mới: <strong>{max_alloc}% Cash</strong>.
                 </div>
             </div>
         </div>
@@ -209,7 +243,6 @@ def generate_dynamic_tactical_stages_html(now=None):
 
         return f"""
         <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
-            <!-- GIAI ĐOẠN 1: HẤP THỤ T+2 -->
             <div id="stage-1-card" class="action-plan-hero-card" style="border: 1.5px solid rgba(56, 189, 248, 0.5); background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
                     <span id="stage-1-badge" class="action-plan-tag" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8; font-weight: 800;">
@@ -218,61 +251,402 @@ def generate_dynamic_tactical_stages_html(now=None):
                     <span style="font-size: 11.5px; font-weight: 800; color: #38bdf8; font-family: monospace;">13:00 – 13:45</span>
                 </div>
                 <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
-                    1. Giai Đoạn 1 (13:00 – 13:45): Quan Sát Nhịp Hấp Thụ Hàng T+2 Về Tài Khoản
+                    1. Giai Đoạn 1 (13:00 – 13:45): Hấp Thụ Hàng T+2.5 Về Tài Khoản
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • Đo lường lực rũ bỏ của nhỏ lẻ khi hàng về tài khoản. Tuyệt đối không vội vàng mua sớm.
+                    • Vị thế hiện giữ: <strong>{total_shares} CP ({holdings_desc})</strong> | Tiền mặt: <strong>{cash_str} ({cash_pct:.1f}%)</strong>. Tuyệt đối không mua đuổi trước 13h45.
                 </div>
             </div>
 
-            <!-- GIAI ĐOẠN 2: THẨM ĐỊNH LỰC ĐỠ -->
             <div id="stage-2-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
                     <span id="stage-2-badge" style="font-size: 10px; font-weight: 800; color: #94a3b8; background: rgba(148, 163, 184, 0.15); padding: 2px 8px; border-radius: 4px;">{s2_badge}</span>
                     <span style="font-size: 11px; font-weight: 800; color: #94a3b8; font-family: monospace;">13:45 – 13:55</span>
                 </div>
                 <div style="font-size: 13px; font-weight: 800; color: #f1f5f9;">
-                    2. Giai Đoạn 2 (13:45 – 13:55): Thẩm Định Lực Đỡ &amp; Độ Cạn Cung (No-Supply Check)
+                    2. Giai Đoạn 2 (13:45 – 13:55): Thẩm Định Độ Cạn Cung &amp; Orderbook 3 Bước Giá
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • Kiểm tra nến No Supply, Vol teo tóp và bên mua chủ động chiếm ưu thế &ge; 50%.
+                    • Theo dõi Mua chủ động: {standby_bullets}. Kiểm soát chặt Stop 2xATR trên toàn bộ danh mục.
                 </div>
             </div>
 
-            <!-- GIAI ĐOẠN 3: KHUNG GIỜ VÀNG -->
             <div id="stage-3-card" style="background: rgba(15, 23, 42, 0.7); border: 1.5px solid rgba(245, 158, 11, 0.5); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
                     <span id="stage-3-badge" style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 8px; border-radius: 4px;">{s3_badge}</span>
                     <span style="font-size: 11px; font-weight: 800; color: #fbbf24; font-family: monospace;">14:00 – 14:25</span>
                 </div>
                 <div style="font-size: 13px; font-weight: 800; color: #fbbf24;">
-                    3. Giai Đoạn 3 (14:00 – 14:25): ⭐ KHUNG GIỜ VÀNG QUAN SÁT T+1
+                    3. Giai Đoạn 3 (14:00 – 14:25): ⭐ KHUNG GIỜ VÀNG — {regime_label}
                 </div>
                 <div style="font-size: 11px; color: #e2e8f0; line-height: 1.5;">
-                    • Phiên T+1: Hàng đang chờ về. Minh Quân & Victor giám sát giữ nền tích lũy, bảo vệ 72% tiền mặt, TUYỆT ĐỐI KHÔNG giải ngân khi hàng chưa về!
+                    • Hạn mức giải ngân mới tối đa: <strong>{max_alloc}% Cash</strong> từ két <strong>{cash_str}</strong>. Đặt lệnh LO chuẩn chỉ hoặc bảo vệ vị thế đang giữ!
                 </div>
             </div>
         </div>
         """
 
-    # Evening: 14:45 - 24:00
+    # Evening / Off-hours: 14:45 - 24:00 or < 08:30
     else:
         return f"""
         <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
             <div id="stage-1-card" class="action-plan-hero-card" style="border: 1.5px solid rgba(192, 132, 252, 0.5); background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(15, 23, 42, 0.88)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
-                    <span class="action-plan-tag" style="background: rgba(168, 85, 247, 0.25); color: #c084fc; font-weight: 800;">🗽 PHỐ WALL CA TỐI</span>
+                    <span class="action-plan-tag" style="background: rgba(168, 85, 247, 0.25); color: #c084fc; font-weight: 800;">🗽 PHỐ WALL CA TỐI / SAU GIỜ GD</span>
                     <span style="font-size: 11.5px; font-weight: 800; color: #c084fc; font-family: monospace;">Ca Tối &amp; Đêm</span>
                 </div>
                 <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">
-                    Hồi Tố, Tự Kiểm Điểm &amp; Chuyển Giao Trực Chiến Alex (Phố Wall)
+                    Tổng Kết Live SSOT &amp; Chuyển Giao Trực Chiến Alex (Phố Wall)
                 </div>
                 <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
-                    • Hoàn tất nhật ký phiên HOSE, đếm ngược chuyển ca trực chiến sang thị trường Mỹ lúc 21h30.
+                    • Két tiền mặt bảo toàn: <strong>{cash_str} ({cash_pct:.1f}%)</strong> | Cổ phiếu đang giữ: <strong>{total_shares} CP ({holdings_desc})</strong> | Chế độ thị trường gần nhất: <strong>{regime_label}</strong>.
+                    <div style="margin-top: 5px; display: flex; flex-direction: column; gap: 2px;">{holdings_bullets}</div>
                 </div>
             </div>
         </div>
         """
+
+
+def _render_war_room_weekly_html(wr_state: Dict[str, Any]) -> Dict[str, str]:
+    wp = wr_state.get("weekly_reference_plan", {}) or {}
+    week_label = html_lib.escape(str(wp.get("week_label", "Tuần Giao Dịch")))
+    basis = html_lib.escape(str(wp.get("basis", "SSOT Living War-Room")))
+    approved_by = html_lib.escape(str(wp.get("approved_by", "Chủ tịch Trần Quốc Thiên Phước")))
+    mandate = html_lib.escape(str(wp.get("constitution_mandate", "")))
+
+    days_html = ""
+    for d in wp.get("days", []):
+        st = str(d.get("status", "UPCOMING")).upper()
+        is_done = st == "COMPLETED"
+        is_act = st == "ACTIVE"
+        bdr = "rgba(16, 185, 129, 0.35)" if is_done else ("rgba(56, 189, 248, 0.4)" if is_act else "rgba(148, 163, 184, 0.2)")
+        bg = "rgba(16, 185, 129, 0.08)" if is_done else ("rgba(14, 165, 233, 0.1)" if is_act else "rgba(15, 23, 42, 0.7)")
+        col = "#34d399" if is_done else ("#38bdf8" if is_act else "#94a3b8")
+        body = html_lib.escape(str(d.get("execution_actual") or d.get("guideline") or ""))
+        cond = html_lib.escape(str(d.get("action_condition") or ""))
+        cond_html = f'<div style="margin-top:4px; color:#94a3b8;">{cond}</div>' if cond else ""
+        days_html += f"""
+            <div style="background: {bg}; border: 1px solid {bdr}; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <strong style="color: {col}; font-size: 12px;">{html_lib.escape(str(d.get('day_name', '')))}</strong>
+                    <span style="background: rgba(15, 23, 42, 0.6); color: {col}; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">{html_lib.escape(str(d.get('status_badge', st)))}</span>
+                </div>
+                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">{html_lib.escape(str(d.get('theme', '')))}</div>
+                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">{body}{cond_html}</div>
+            </div>
+        """
+
+    wl_rows = ""
+    for w in wp.get("approved_watchlist", []):
+        sym = html_lib.escape(str(w.get("symbol", "")))
+        ex = int(w.get("executed_shares", 0) or 0)
+        st_col = "#34d399" if ex > 0 else "#fbbf24"
+        st_bg = "rgba(16, 185, 129, 0.2)" if ex > 0 else "rgba(245, 158, 11, 0.2)"
+        wl_rows += f"""
+            <tr>
+                <td><strong style="color: #38bdf8;">{sym}</strong></td>
+                <td><span style="color: #cbd5e1;">{html_lib.escape(str(w.get('tier', '')))}</span></td>
+                <td>{html_lib.escape(str(w.get('entry_zone', '')))}</td>
+                <td style="color: #ef4444; font-weight: 700;">{html_lib.escape(str(w.get('stop_loss_2xatr', '')))}</td>
+                <td>{html_lib.escape(str(w.get('tp1', '')))} / {html_lib.escape(str(w.get('tp2', '')))}</td>
+                <td>{html_lib.escape(str(w.get('weekly_limit', '')))}</td>
+                <td><span style="background: {st_bg}; color: {st_col}; padding: 2px 6px; border-radius: 4px; font-weight: 700;">{html_lib.escape(str(w.get('current_status', '')))}</span></td>
+            </tr>
+        """
+
+    return {
+        "week_label": week_label,
+        "basis_html": f"Căn cứ: <strong>{basis}</strong> • {approved_by}",
+        "mandate_html": mandate,
+        "days_html": days_html,
+        "watchlist_rows": wl_rows,
+    }
+
+
+def _render_war_room_picks_html(wr_state: Dict[str, Any]) -> str:
+    picks = wr_state.get("dynamic_picks") or []
+    if not picks:
+        picks = [
+            {
+                "code": s.get("code", ""),
+                "name": s.get("name", ""),
+                "tier": s.get("tier", "Watchlist"),
+                "is_holding": s.get("is_holding", False),
+                "price": s.get("price", 0),
+                "probe_target": s.get("probe_target", 0),
+                "stop_loss": s.get("stop_loss", 0),
+                "tp1": s.get("tp1", 0),
+                "tp2": s.get("tp2", 0),
+                "rr_ratio": 2.5,
+                "ev_pct": 8.0,
+                "catalyst": s.get("catalyst", ""),
+                "security_label": s.get("security_label", ""),
+            }
+            for s in (wr_state.get("live_stocks") or [])[:4]
+        ]
+
+    cards = []
+    standby_cards = []
+    for idx, p in enumerate(picks):
+        code = html_lib.escape(str(p.get("code", "")))
+        name = html_lib.escape(str(p.get("name", code)))
+        tier = html_lib.escape(str(p.get("tier", "Tiêu điểm")))
+        is_hold = bool(p.get("is_holding"))
+        price = float(p.get("price", 0) or 0)
+        probe = float(p.get("probe_target", price) or 0)
+        stop = float(p.get("stop_loss", 0) or 0)
+        tp1 = float(p.get("tp1", 0) or 0)
+        tp2 = float(p.get("tp2", 0) or 0)
+        rr = float(p.get("rr_ratio", 0) or 0)
+        ev = float(p.get("ev_pct", 0) or 0)
+        shares = int(p.get("holding_shares", 0) or 0)
+        lot_val = (probe if probe > 0 else price) * 100
+        cat = html_lib.escape(str(p.get("catalyst", "")))
+        sec_lbl = html_lib.escape(str(p.get("security_label", "")))
+
+        if idx < 2 or is_hold:
+            cls = "leader" if (idx == 0 or is_hold) else "alpha"
+            badge_col = "#10b981" if cls == "leader" else "#38bdf8"
+            badge_txt = f"ĐANG GIỮ {shares} CP" if is_hold else tier.upper()
+            stop_pct_str = f" ({((stop - price) / price * 100):+.1f}%)" if price > 0 and stop > 0 else ""
+            tp_str = f"{tp1/1000:.2f}k / {tp2/1000:.2f}k" if tp1 > 0 and tp2 > 0 else (f"{tp1/1000:.2f}k" if tp1 > 0 else "N/A")
+            cards.append(f"""
+                <div class="stock-pick-card {cls}">
+                    <div class="stock-card-top">
+                        <div>
+                            <span class="stock-ticker">{code}</span>
+                            <span class="stock-name">{name}</span>
+                        </div>
+                        <span style="font-size: 10px; font-weight: 800; color: {badge_col}; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 4px;">{badge_txt}</span>
+                    </div>
+                    <div class="stock-stats-grid">
+                        <div class="stock-stat-item">
+                            <span class="stat-label">Live / Mục tiêu Gom</span>
+                            <span class="stat-val">{price:,.0f} / ≤ {probe:,.0f} ₫</span>
+                        </div>
+                        <div class="stock-stat-item">
+                            <span class="stat-label">Stop 2xATR</span>
+                            <span class="stat-val loss">{stop:,.0f} ₫{stop_pct_str}</span>
+                        </div>
+                        <div class="stock-stat-item">
+                            <span class="stat-label">Mục Tiêu TP1 / TP2</span>
+                            <span class="stat-val gain">{tp_str}</span>
+                        </div>
+                        <div class="stock-stat-item">
+                            <span class="stat-label">Tỷ Lệ R:R</span>
+                            <span class="stat-val gold">1 : {rr:.2f}</span>
+                        </div>
+                        <div class="stock-stat-item">
+                            <span class="stat-label">Kỳ Vọng EV%</span>
+                            <span class="stat-val gain">{ev:+.1f}%</span>
+                        </div>
+                        <div class="stock-stat-item">
+                            <span class="stat-label">Vốn 100 CP</span>
+                            <span class="stat-val">{lot_val:,.0f} ₫</span>
+                        </div>
+                    </div>
+                    <div class="stock-catalyst">⚡ <strong>{sec_lbl}</strong> | {cat}</div>
+                </div>
+            """)
+        else:
+            standby_cards.append(f"""
+                <div class="stock-pick-card standby">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span class="stock-ticker">{code}</span>
+                        <span style="font-size:10px; color:#94a3b8;">{html_lib.escape(str(p.get('action_code', 'STANDBY')))}</span>
+                    </div>
+                    <div style="font-size:11px; color:#cbd5e1;">Live {price/1000:.2f}k | Gom {probe/1000:.2f}k | Stop {stop/1000:.2f}k</div>
+                    <div style="font-size:10px; color:#94a3b8;">{cat[:95]}</div>
+                </div>
+            """)
+
+    out = "".join(cards)
+    if standby_cards:
+        out += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">' + "".join(standby_cards[:4]) + "</div>"
+    return out or '<div style="font-size:11.5px; color:#94a3b8;">Chưa có mã mục tiêu trong sổ lệnh.</div>'
+
+
+def _render_war_room_directives_html(wr_state: Dict[str, Any]) -> str:
+    items = wr_state.get("directives_history") or []
+    html_parts = []
+    for d in items:
+        role = d.get("role", "specialist")
+        role_cls = "chairman" if role == "chairman" else ("sentinel" if role == "sentinel" else "specialist")
+        sender = html_lib.escape(str(d.get("sender", "")))
+        ts = html_lib.escape(str(d.get("timestamp", "")))
+        content = html_lib.escape(str(d.get("content", ""))).replace("\n", "<br>")
+        html_parts.append(f"""
+            <div class="directive-msg {role_cls}">
+                <div class="directive-msg-head">
+                    <span>{sender}</span>
+                    <span style="font-weight:400; color:#94a3b8;">{ts}</span>
+                </div>
+                <div class="directive-msg-body">{content}</div>
+            </div>
+        """)
+    return "".join(html_parts)
+
+
+def _render_war_room_holdings_html(wr_state: Dict[str, Any]) -> str:
+    vs = wr_state.get("victor_sentinel", {}) or {}
+    holdings = vs.get("holdings") or []
+    total_shares = int(vs.get("total_shares", 0) or 0)
+    if not holdings:
+        return """
+            <div style="font-size: 11px; font-weight: 800; color: #34d399; display: flex; justify-content: space-between;">
+                <span>📦 DANH MỤC ĐÃ GIẢI NGÂN (0 MÃ • 0 CP)</span>
+                <span>🛡️ 100% TIỀN MẶT</span>
+            </div>
+            <div style="font-size: 11px; color: #94a3b8; padding: 4px 0;">
+                Két tiền mặt đang bảo toàn 100%, sẵn sàng giải ngân hoặc cập nhật qua Form Sync TCInvest bên dưới.
+            </div>
+        """
+
+    rows = []
+    for h in holdings:
+        sym = html_lib.escape(str(h.get("symbol", "")))
+        sh = int(h.get("shares", 0) or 0)
+        ep = float(h.get("avg_cost", h.get("entry_price", 0)) or 0)
+        cp = float(h.get("current_price", ep) or 0)
+        pnl = float(h.get("pnl_vnd", h.get("unrealized_pnl_vnd", 0)) or 0)
+        pnl_p = float(h.get("pnl_pct", h.get("unrealized_pnl_pct", 0)) or 0)
+        sl = float(h.get("stop_loss", 0) or 0)
+        p_col = "#34d399" if pnl >= 0 else "#f87171"
+        rows.append(f"""
+            <div style="background: rgba(30, 41, 59, 0.7); padding: 6px 8px; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap;">
+                <div><strong style="color: #38bdf8;">{sym}</strong> <span style="color: #94a3b8;">({sh} CP)</span></div>
+                <div>Vốn: <span style="color: #cbd5e1;">{ep:,.0f} đ</span> ➔ Live: <span style="color: {p_col};">{cp:,.0f} đ</span></div>
+                <div>PnL: <strong style="color: {p_col};">{pnl:+,.0f} đ ({pnl_p:+.2f}%)</strong></div>
+                <div style="color: #fbbf24; font-size: 10px;">Stop: {sl:,.0f} đ</div>
+            </div>
+        """)
+    return f"""
+        <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between;">
+            <span>📦 DANH MỤC ĐÃ GIẢI NGÂN ({len(holdings)} MÃ • {total_shares} CP)</span>
+            <span style="color: #34d399;">🛡️ STOP 2xATR BẢO VỆ</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 5px;">{''.join(rows)}</div>
+    """
+
+
+def _render_war_room_stocks_rows_html(wr_state: Dict[str, Any]) -> str:
+    rows = []
+    for s in (wr_state.get("live_stocks") or []):
+        code = html_lib.escape(str(s.get("code", "")))
+        price = float(s.get("price", 0) or 0)
+        chg = float(s.get("change_pct", 0) or 0)
+        vol = int(s.get("volume", 0) or 0)
+        buy_up = float(s.get("active_buy_pct", 50.0) or 50.0)
+        sec = str(s.get("security_status", "STANDBY"))
+        act = str(s.get("action_code", sec))
+        p_cls = "up" if chg > 0 else ("down" if chg < 0 else "ref")
+        sign = "+" if chg > 0 else ""
+        vol_str = f"{vol / 1000000:.1f}M" if vol >= 1000000 else f"{vol / 1000:.0f}k"
+        col = "#34d399" if sec in ("SAFE", "TAKE_PROFIT") else ("#f87171" if sec in ("CRITICAL", "WARNING") else "#fbbf24")
+        badge = f"🟢 {act}" if sec == "SAFE" else (f"🎯 {act}" if sec == "TAKE_PROFIT" else (f"🚨 {act}" if sec in ("CRITICAL", "WARNING") else f"🟡 {act}"))
+        rows.append(f"""
+            <tr>
+                <td><strong style="color:#38bdf8;">{code}</strong>{' ★' if s.get('is_holding') else ''}</td>
+                <td class="price-badge {p_cls}">{price:,.0f}</td>
+                <td class="price-badge {p_cls}">{sign}{chg:.2f}%</td>
+                <td>{vol_str}</td>
+                <td style="color:{'#34d399' if buy_up >= 50 else '#f87171'};">{buy_up:.1f}%</td>
+                <td><span style="color:{col}; font-weight:700; font-size:10px;">{html_lib.escape(badge)}</span></td>
+            </tr>
+        """)
+    return "".join(rows) or '<tr><td colspan="6" style="text-align:center; color:#94a3b8;">Đang tải bảng giá live...</td></tr>'
+
+
+def _render_war_room_threat_html(wr_state: Dict[str, Any]) -> str:
+    vs = wr_state.get("victor_sentinel", {}) or {}
+    lvl = int(vs.get("threat_level_num", 1) or 1)
+    lbl = html_lib.escape(str(vs.get("threat_label", "CẤP 1 — AN TOÀN")))
+    col = "#10b981" if lvl <= 1 else ("#38bdf8" if lvl == 2 else ("#fbbf24" if lvl == 3 else "#ef4444"))
+    bars = "".join(
+        f'<div style="flex: 1; height: 6px; border-radius: 3px; background: {col if i <= lvl else "rgba(148, 163, 184, 0.2)"}; {"box-shadow: 0 0 6px " + col + ";" if i <= lvl else ""}"></div>'
+        for i in range(1, 6)
+    )
+    return f"""
+        <div style="font-size: 11px; font-weight: 800; color: #f8fafc; display: flex; justify-content: space-between;">
+            <span>RADAR 5 CẤP ĐỘ NGUY HIỂM</span>
+            <span style="color: {col};">● CẤP {lvl}</span>
+        </div>
+        <div style="display: flex; gap: 4px;">{bars}</div>
+        <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.35;">{lbl}</div>
+    """
+
+
+def _format_market_overview_ui(wr_state: Dict[str, Any]) -> Dict[str, Any]:
+    mo = wr_state.get("market_overview", {}) or {}
+    vni = mo.get("vn_index", {}) or {}
+    vn30 = mo.get("vn30_index", {}) or {}
+    br = mo.get("market_breadth", {}) or {}
+    reg = wr_state.get("intraday_regime", {}) or {}
+    mq = wr_state.get("minh_quan_blueprint", {}) or {}
+
+    vni_val = float(vni.get("value", 0) or 0)
+    vni_pts = float(vni.get("change_pts", 0) or 0)
+    vni_pct = float(vni.get("change_pct", 0) or 0)
+    vn30_val = float(vn30.get("value", 0) or 0)
+    vn30_pts = float(vn30.get("change_pts", 0) or 0)
+    vn30_pct = float(vn30.get("change_pct", 0) or 0)
+
+    return {
+        "vni_val_str": f"{vni_val:,.2f}" if vni_val > 0 else "--",
+        "vni_pts_str": f"{vni_pts:+.2f} ({vni_pct:+.2f}%)" if vni_val > 0 else "--",
+        "vni_cls": "up" if vni_pct >= 0 else "down",
+        "vni_col": "#34d399" if vni_pct >= 0 else "#f87171",
+        "turnover_str": html_lib.escape(str(vni.get("turnover_ty_vnd", "--"))),
+        "foreign_str": html_lib.escape(str(vni.get("foreign_net_ty_vnd", "--"))),
+        "vn30_val_str": f"{vn30_val:,.2f}" if vn30_val > 0 else "--",
+        "vn30_pts_str": f"{vn30_pts:+.2f} ({vn30_pct:+.2f}%)" if vn30_val > 0 else "--",
+        "vn30_cls": "up" if vn30_pct >= 0 else "down",
+        "vn30_col": "#34d399" if vn30_pct >= 0 else "#f87171",
+        "basis_str": html_lib.escape(str(vn30.get("basis_vn30f", "--"))),
+        "status_str": html_lib.escape(str(vni.get("status", "ĐANG ĐỒNG BỘ"))),
+        "breadth_str": f"{int(br.get('advancers', 0) or 0)} Tăng / {int(br.get('decliners', 0) or 0)} Giảm",
+        "regime_label": html_lib.escape(str(reg.get("label", "GIẰNG CO PHÂN HÓA"))),
+        "regime_color": html_lib.escape(str(reg.get("badge_color", "#fbbf24"))),
+        "mastery_str": f"{float(mq.get('mastery_score', 98.5)):.1f}",
+        "ev_str": f"{float(mq.get('expected_value_pct', 0)):+.2f}%",
+        "pw_str": f"{float(mq.get('win_rate_pct', 0)):.1f}%",
+        "rr_str": html_lib.escape(str(mq.get("average_rr", "1:2.50"))),
+        "rules_html": "".join(f'<div style="font-size: 11px; color: #cbd5e1;">• {html_lib.escape(str(r))}</div>' for r in (mq.get("rules") or [])),
+    }
+
+
+def _render_war_room_spillover_slippage_html(wr_state: Dict[str, Any]) -> str:
+    sp = wr_state.get("global_spillover") or {}
+    tr = (wr_state.get("execution_tracker") or {}).get("filters") or {}
+    m = sp.get("metrics") or {}
+    mult = float(sp.get("risk_multiplier", 1.0) or 1.0)
+    cap = int(sp.get("max_allocation_pct", 45) or 45)
+    bias_lbl = html_lib.escape(str(sp.get("bias_label", "⚖️ TRUNG TÍNH PHÂN HÓA")))
+    b_col = html_lib.escape(str(sp.get("badge_color", "#38bdf8")))
+    sp500 = m.get("SP500") or {}
+    vix = m.get("VIX") or {}
+    dxy = m.get("DXY") or {}
+    oil = m.get("WTI_OIL") or {}
+    min_bu = float(tr.get("min_buy_up_pct", 58.0) or 58.0)
+    max_rsi = float(tr.get("max_rsi_buy", 70.0) or 70.0)
+    avg_slip = float(tr.get("avg_slippage_bps", 0.0) or 0.0)
+    sig_cnt = int(tr.get("total_signals_tracked", 0) or 0)
+
+    return f"""
+        <div style="font-size: 10.5px; color: {b_col}; font-weight: 800;">{bias_lbl}</div>
+        <div style="font-size: 10.5px; color: #cbd5e1;">
+            Hệ số liên thị trường: <strong style="color:#fff;">{mult:.2f}x</strong> • Trần giải ngân: <strong style="color:#fbbf24;">{cap}% NAV</strong>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; font-size: 10px;">
+            <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">S&amp;P500: <strong style="color:#38bdf8;">{float(sp500.get('change_1d_pct', 0)):+.2f}%</strong></div>
+            <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">VIX: <strong style="color:#fbbf24;">{float(vix.get('last_price', 18.0)):.1f}</strong></div>
+            <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">DXY: <strong style="color:#cbd5e1;">{float(dxy.get('last_price', 103.0)):.1f}</strong></div>
+            <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">WTI Oil: <strong style="color:#34d399;">{float(oil.get('last_price', 0)):.1f}$</strong></div>
+        </div>
+        <div style="margin-top: 2px; padding-top: 5px; border-top: 1px dashed rgba(148, 163, 184, 0.25); font-size: 10px; color: #94a3b8;">
+            🎯 <strong>Bộ Lọc Bull-Trap &amp; Slippage:</strong> BuyUp &ge; <strong style="color:#34d399;">{min_bu:.0f}%</strong> • RSI &le; <strong style="color:#fbbf24;">{max_rsi:.0f}</strong> • Tín hiệu: <strong style="color:#fff;">{sig_cnt}</strong> (Slip: {avg_slip:+.1f} bps)
+        </div>"""
+
 
 
 try:
@@ -293,29 +667,57 @@ def generate_portal_html(
         from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
         wr_state = get_tactical_war_room_state()
     except Exception:
+        ssot_fb = _load_live_ssot_summary()
         wr_state = {
             "server_time": get_ict_now().strftime("%H:%M:%S"),
-            "phase_info": {"active_phase_id": "NOON_INTERMISSION", "countdown_to_wall_street": "--:--:--"},
-            "action_plan": {"current_step": {
-                "step_number": 5, "title": "BƯỚC 5: NGHỈ TRƯA, TỔNG KẾT PHIÊN SÁNG & ĐỐI SOÁT KHỐI NGOẠI",
-                "time_range": "11:30 - 13:00 (Nghỉ Trưa)",
-                "actions": ["1. Giữ nguyên 100% tiền mặt.", "2. Bóc tách dữ liệu giao dịch khớp lệnh phiên sáng."],
-                "doctrine_rule": "Khóa cứng kỷ luật bảo toàn vốn."
-            }},
-            "market_overview": {"vnindex": "1,258.62", "vnindex_change": "+4.25 (+0.34%)", "vn30": "1,324.95", "vn30_change": "+3.80 (+0.29%)", "status": "UPTREND TÍCH LŨY", "foreign_flow": "+52.6 Tỷ (Mua ròng)", "breadth": "242 Tăng / 145 Giảm"},
-            "live_stocks": [
-                {"symbol": "HDB", "price": "22,450", "change": "+0.45%", "volume": "16.2M", "buy_up_ratio": "54.2%", "status": "AN TOÀN"},
-                {"symbol": "MSH", "price": "34,800", "change": "0.00%", "volume": "512k", "buy_up_ratio": "58.6%", "status": "AN TOÀN"}
-            ],
-            "tactical_message": {"speaker": "Minh Quân (Ban 7 VN)", "content": "Phiên sáng đã khép lại an toàn..."}
+            "phase_info": {"active_phase_id": "POST_MARKET_WALL_STREET", "countdown_to_wall_street": "--:--"},
+            "intraday_regime": {"regime_id": "SIDEWAY_CHOPPY", "label": "ĐANG ĐỒNG BỘ", "badge_color": "#fbbf24", "max_new_allocation_pct": 30},
+            "action_plan": {"current_step": {"title": "Đang đồng bộ Living War-Room V4.0", "time_range": "--:--", "what_to_do": "Đang tải dữ liệu live...", "constitution_rule": "SSOT Live"}},
+            "market_overview": {
+                "vn_index": {"value": 0, "change_pts": 0, "change_pct": 0, "status": "ĐANG ĐỒNG BỘ", "turnover_ty_vnd": "--", "foreign_net_ty_vnd": "--"},
+                "vn30_index": {"value": 0, "change_pts": 0, "change_pct": 0, "basis_vn30f": "--"},
+                "market_breadth": {"advancers": 0, "decliners": 0},
+            },
+            "live_stocks": [],
+            "dynamic_picks": [],
+            "directives_history": [],
+            "victor_sentinel": {
+                "cash_vnd": ssot_fb["cash_vnd"], "stocks_val_vnd": ssot_fb["stocks_val_vnd"], "total_nav_vnd": ssot_fb["total_nav_vnd"],
+                "cash_pct": ssot_fb["cash_pct"], "stocks_pct": ssot_fb["stocks_pct"], "total_shares": ssot_fb["total_shares"],
+                "unrealized_pnl_vnd": ssot_fb["unrealized_pnl_vnd"], "unrealized_pnl_pct": ssot_fb["unrealized_pct"],
+                "realized_round1_profit_vnd": ssot_fb["realized_pnl_vnd"], "holdings": [], "threat_level_num": 1, "threat_label": "Đang đồng bộ SSOT...",
+            },
+            "tactical_message": f"Đang đồng bộ tiền mặt SSOT {ssot_fb['cash_str']}..."
         }
+
     wr_phase_id = wr_state['phase_info']['active_phase_id']
     wr_server_time = wr_state['server_time']
     wr_ny_countdown = wr_state['phase_info']['countdown_to_wall_street']
-    wr_step = wr_state['action_plan']['current_step']
-    wr_market = wr_state['market_overview']
-    wr_stocks = wr_state['live_stocks']
     wr_message = wr_state['tactical_message']
+
+    wr_weekly_ui = _render_war_room_weekly_html(wr_state)
+    wr_picks_html = _render_war_room_picks_html(wr_state)
+    wr_directives_html = _render_war_room_directives_html(wr_state)
+    wr_holdings_html = _render_war_room_holdings_html(wr_state)
+    wr_stocks_rows_html = _render_war_room_stocks_rows_html(wr_state)
+    wr_threat_html = _render_war_room_threat_html(wr_state)
+    wr_mkt_ui = _format_market_overview_ui(wr_state)
+    wr_stages_html = generate_dynamic_tactical_stages_html(wr_state=wr_state)
+    wr_stocks_count = len(wr_state.get("live_stocks") or [])
+    wr_spillover_html = _render_war_room_spillover_slippage_html(wr_state)
+
+    auth_logout_btn_html = ""
+    try:
+        from scripts.apex_portal_auth import is_auth_enabled
+        if is_auth_enabled():
+            auth_logout_btn_html = (
+                '<button onclick="logoutPortal()" class="btn-read" '
+                'style="display: flex; align-items: center; gap: 6px; padding: 8px 14px; '
+                'background: rgba(239, 68, 68, 0.16); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5;">'
+                '<span>🔒</span> <span>Khóa Phiên</span></button>'
+            )
+    except Exception:
+        pass
 
     sup_status = supervisor_data.get("supervisor_status", "HEALTHY_ALL_RUNNING")
     services = supervisor_data.get("services", {})
@@ -2549,6 +2951,7 @@ def generate_portal_html(
                 <button onclick="refreshData()" class="btn-read" style="display: flex; align-items: center; gap: 6px; padding: 8px 16px;">
                     <span>🔄</span> <span>Làm Mới</span>
                 </button>
+                {auth_logout_btn_html}
             </div>
         </header>
 
@@ -2947,6 +3350,8 @@ def generate_portal_html(
                         <div class="war-room-meta-group">
                             <div class="meta-pill">📅 Ngày: <strong>{today_str}</strong></div>
                             <div class="meta-pill">⏰ Giờ VN: <strong id="war-room-clock" style="color: #38bdf8; font-family: monospace;">{wr_server_time}</strong></div>
+                            <div class="meta-pill" id="wr-stream-status-badge" style="border-color: rgba(56, 189, 248, 0.4); background: rgba(14, 165, 233, 0.12); color: #38bdf8;">🟡 ĐANG KẾT NỐI...</div>
+                            <div class="meta-pill" id="wr-regime-pill" style="border-color: rgba(251, 191, 36, 0.4); background: rgba(245, 158, 11, 0.1); color: {wr_mkt_ui['regime_color']};">{wr_mkt_ui['regime_label']}</div>
                             <div class="meta-pill" id="wr-header-cash-pill" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">💰 Két Tiền Thật: <strong style="color: #34d399;">{ssot['cash_str']}</strong> ({ssot['cash_pct']:.1f}% Cash) | 📈 Cổ Phiếu: <strong style="color: #38bdf8;">{ssot['stocks_str']}</strong> ({ssot['total_shares']} CP)</div>
                             <div class="meta-pill" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.1);">🗽 Phiên New York (21h30): <strong id="war-room-ny-countdown" style="color: #fbbf24;">{wr_ny_countdown}</strong></div>
                             <button onclick="loadTacticalWarRoomData()" class="btn-quick-prompt" style="background: rgba(14, 165, 233, 0.25); border-color: #38bdf8; color: #f8fafc; font-weight: 800; padding: 6px 12px;">🔄 Làm Mới Live</button>
@@ -3009,10 +3414,10 @@ def generate_portal_html(
                             <div>
                                 <div style="font-size: 15px; font-weight: 800; color: #fbbf24; display: flex; align-items: center; gap: 8px;">
                                     <span>BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)</span>
-                                    <span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: 9999px; font-size: 10.5px; font-weight: 800;">TUẦN 46: 09/11 – 13/11</span>
+                                    <span id="weekly-roadmap-label" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: 9999px; font-size: 10.5px; font-weight: 800;">{wr_weekly_ui['week_label']}</span>
                                 </div>
-                                <div style="font-size: 11.5px; color: #94a3b8; margin-top: 2px;">
-                                    Căn cứ: <strong>Nghị Quyết Đại Hội Nghị Thượng Đỉnh Toàn Doanh Nghiệp</strong> (Mã: <code>APEX-SUMMIT-20261108-2100</code>) • Ký duyệt lúc <strong>23:08:16 Ngày 08/11/2026</strong> • 🛡️ Ban 12 Niêm Phong
+                                <div id="weekly-roadmap-basis" style="font-size: 11.5px; color: #94a3b8; margin-top: 2px;">
+                                    {wr_weekly_ui['basis_html']}
                                 </div>
                             </div>
                         </div>
@@ -3026,91 +3431,19 @@ def generate_portal_html(
                         </div>
                     </div>
 
-                    <!-- KHUNG CẢNH BÁO THỂ CHẾ BẮT BUỘC (DISCLAIMER ĐANH THÉP) -->
-                    <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 11.5px; color: #fde68a; line-height: 1.55;">
-                        ⚖️ <strong>QUY TẮC HIẾN CHƯƠNG TỐI QUAN TRỌNG THEO CHỈ THỊ CỦA CHỦ TỊCH:</strong><br>
-                        Bảng kế hoạch tuần này <strong>CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG DÀNH RIÊNG CHO CHỦ TỊCH</strong>, <strong>TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN</strong> vì thị trường chứng khoán liên tục biến động và đầy biến số.<br>
-                        <strong>TOÀN BỘ 12 PHÒNG BAN NGHIÊM CẤM TỰ Ý XEM ĐÂY LÀ KẾ HOẠCH CHÍNH THỨC ĐỂ TỰ ĐỘNG THỰC THI</strong>. Mọi quyết định giải ngân, gia tăng hay phòng thủ <strong>BẮT BUỘC PHẢI ĐƯỢC THAY ĐỔI TỪNG NGÀY</strong> dựa trên Báo cáo KQKD, Báo cáo Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên giao dịch!
+                    <div id="weekly-roadmap-mandate" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 11.5px; color: #fde68a; line-height: 1.55;">
+                        {wr_weekly_ui['mandate_html']}
                     </div>
 
-                    <!-- NỘI DUNG CHI TIẾT 5 NGÀY VÀ WATCHLIST TUẦN (CÓ THỂ COLLAPSE) -->
                     <div id="weekly-roadmap-details">
-                        <!-- 5 NGÀY TÁC CHIẾN TRONG TUẦN -->
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-bottom: 14px;">
-                            <!-- Thứ Hai -->
-                            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="color: #34d399; font-size: 12px;">THỨ HAI (09/11)</strong>
-                                    <span style="background: rgba(16, 185, 129, 0.25); color: #34d399; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">✅ ĐÃ HOÀN TẤT</span>
-                                </div>
-                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Khảo Sát Hàng T+2 &amp; Thăm Dò Nhịp 1</div>
-                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
-                                    🎉 <strong>Đã thực thi thành công</strong>: Khớp 100 CP HDB (22,050 ₫) &amp; 100 CP MSH (34,517 ₫) lúc 14:02. Vốn giải ngân 5.65M (28.0% NAV). Két tiền 14.51M (72.0% NAV). Stop 2xATR đã khóa chặt!
-                                </div>
-                            </div>
-
-                            <!-- Thứ Ba -->
-                            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="color: #38bdf8; font-size: 12px;">THỨ BA (10/11)</strong>
-                                    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">⏳ DỰ KIẾN THAM KHẢO</span>
-                                </div>
-                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Thẩm Định Giữ Nền &amp; Soi BAF / IDC</div>
-                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
-                                    • Quan sát lực đỡ của HDB (22k) và MSH (34.5k).<br>
-                                    • Soi nến Test Cung của BAF (30.5 – 30.8k) và IDC (34.2 – 34.6k).<br>
-                                    • <strong>Hành động</strong>: Tiếp tục bảo toàn 72% tiền mặt. Tuyệt đối không FOMO đuổi giá xanh!
-                                </div>
-                            </div>
-
-                            <!-- Thứ Tư -->
-                            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="color: #94a3b8; font-size: 12px;">THỨ TƯ (11/11)</strong>
-                                    <span style="background: rgba(148, 163, 184, 0.15); color: #94a3b8; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">⏳ DỰ KIẾN THAM KHẢO</span>
-                                </div>
-                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Hấp Thụ Hàng T+2 &amp; Điểm Breakout</div>
-                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
-                                    • Đo lường phân hóa dòng tiền 3 khối.<br>
-                                    • <strong>Điều kiện Nhịp 2 (40%)</strong>: Chỉ xem xét gia tăng nếu HDB vượt 22.8k hoặc MSH vượt 36k kèm Vol &ge; 150% MA20.<br>
-                                    • Nếu vol yếu, kiên quyết không giải ngân thêm.
-                                </div>
-                            </div>
-
-                            <!-- Thứ Năm -->
-                            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="color: #94a3b8; font-size: 12px;">THỨ NĂM (12/11)</strong>
-                                    <span style="background: rgba(148, 163, 184, 0.15); color: #94a3b8; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">⏳ DỰ KIẾN THAM KHẢO</span>
-                                </div>
-                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Hàng Về Tài Khoản &amp; Trailing Stop</div>
-                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
-                                    • 13:15 chiều: 200 CP (HDB, MSH) về kho khả dụng.<br>
-                                    • Nếu lãi &ge; +5%: Nâng Stop Loss lên giá vốn (Trailing Stop 0% rủi ro).<br>
-                                    • Nếu chạm TP1 (HDB: 24.29k, MSH: 39.56k): Chủ động chốt lời 50% đút tiền vào két.
-                                </div>
-                            </div>
-
-                            <!-- Thứ Sáu -->
-                            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="color: #94a3b8; font-size: 12px;">THỨ SÁU (13/11)</strong>
-                                    <span style="background: rgba(148, 163, 184, 0.15); color: #94a3b8; font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">⏳ DỰ KIẾN THAM KHẢO</span>
-                                </div>
-                                <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc;">Đóng Nến Tuần &amp; Đối Soát Hiệu Suất</div>
-                                <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.45;">
-                                    • CẤM MỞ LỆNH MỚI chiều Thứ Sáu.<br>
-                                    • Khóa bảo toàn két tiền mặt &ge; 50% - 60% NAV.<br>
-                                    • Ban 5 VN hồi tố Hit Rate %; Bàn giao toàn bộ số liệu kiểm toán cho Master CIO James chuẩn bị Hội Nghị Thượng Đỉnh 21h00 Chủ Nhật.
-                                </div>
-                            </div>
+                        <div id="weekly-roadmap-days-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-bottom: 14px;">
+                            {wr_weekly_ui['days_html']}
                         </div>
 
-                        <!-- BẢNG TOP 4 SIÊU CỔ PHIẾU ĐỊNH HƯỚNG TUẦN (PHÊ DUYỆT BỞI HỘI NGHỊ THƯỢNG ĐỈNH) -->
                         <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 8px; padding: 10px 14px;">
                             <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-                                <span>🎯 TOP 4 SIÊU CỔ PHIẾU ĐỊNH HƯỚNG TUẦN (NGHỊ QUYẾT APEX-SUMMIT-20261108-2100)</span>
-                                <span style="font-size: 10.5px; color: #94a3b8;">Biên độ gom LO • Stop 2xATR • Kế hoạch chia nhịp Kim Tự Tháp</span>
+                                <span>🎯 RỔ CỔ PHIẾU ĐỊNH HƯỚNG &amp; ĐỒNG BỘ LIVE</span>
+                                <span style="font-size: 10.5px; color: #94a3b8;">Vùng Gom LO • Stop 2xATR • Trạng thái Holding thực tế</span>
                             </div>
                             <table class="stock-sentinel-table" style="font-size: 11px;">
                                 <thead>
@@ -3120,47 +3453,12 @@ def generate_portal_html(
                                         <th>Vùng Gom LO</th>
                                         <th>Stop 2xATR</th>
                                         <th>Mục Tiêu TP1 / TP2</th>
-                                        <th>Kế Hoạch Cả Tuần</th>
+                                        <th>Hạn Mức Tuần</th>
                                         <th>Trạng Thái Thực Tế</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong style="color: #38bdf8;">HDB</strong></td>
-                                        <td><span style="color: #34d399;">Core Compounder</span></td>
-                                        <td>22,200 – 22,400 ₫</td>
-                                        <td style="color: #ef4444; font-weight: 700;">21,220 ₫ (-5.7%)</td>
-                                        <td>24.29k / 25.82k</td>
-                                        <td>Tối đa 300 CP (3 nhịp)</td>
-                                        <td><span style="background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 6px; border-radius: 4px; font-weight: 700;">✅ ĐÃ KHỚP 100 CP</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style="color: #38bdf8;">MSH</strong></td>
-                                        <td><span style="color: #38bdf8;">Tactical Alpha</span></td>
-                                        <td>34,500 – 35,000 ₫</td>
-                                        <td style="color: #ef4444; font-weight: 700;">33,090 ₫ (-6.8%)</td>
-                                        <td>39.56k / 43.04k</td>
-                                        <td>Tối đa 200 CP (2 nhịp)</td>
-                                        <td><span style="background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 6px; border-radius: 4px; font-weight: 700;">✅ ĐÃ KHỚP 100 CP</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style="color: #38bdf8;">BAF</strong></td>
-                                        <td><span style="color: #fbbf24;">Standby Alpha 1</span></td>
-                                        <td>30,500 – 30,800 ₫</td>
-                                        <td style="color: #ef4444; font-weight: 700;">29,650 ₫ (-4.0%)</td>
-                                        <td>32.65k / 35.50k</td>
-                                        <td>Tối đa đúng 100 CP (Rào nợ)</td>
-                                        <td><span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; padding: 2px 6px; border-radius: 4px; font-weight: 700;">⏳ CHỜ TÍN HIỆU (0 CP)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style="color: #38bdf8;">IDC</strong></td>
-                                        <td><span style="color: #fbbf24;">Standby Alpha 2</span></td>
-                                        <td>34,200 – 34,600 ₫</td>
-                                        <td style="color: #ef4444; font-weight: 700;">32,530 ₫ (-6.0%)</td>
-                                        <td>38.66k / 41.88k</td>
-                                        <td>Tối đa 200 CP (2 nhịp)</td>
-                                        <td><span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; padding: 2px 6px; border-radius: 4px; font-weight: 700;">⏳ CHỜ TÍN HIỆU (0 CP)</span></td>
-                                    </tr>
+                                <tbody id="weekly-roadmap-watchlist-body">
+                                    {wr_weekly_ui['watchlist_rows']}
                                 </tbody>
                             </table>
                         </div>
@@ -3175,141 +3473,51 @@ def generate_portal_html(
                             <div class="panel-title-box">
                                 <span class="panel-icon">👨‍💼</span>
                                 <div>
-                                    <div class="panel-title">Kế Hoạch Đầu Ngày Chuẩn Chỉ</div>
-                                    <div style="font-size: 11px; color: #94a3b8;">Minh Quân (Ban 7 VN) công bố lúc 08h30</div>
+                                    <div class="panel-title">Kế Hoạch Sống Trong Ngày</div>
+                                    <div style="font-size: 11px; color: #94a3b8;">Minh Quân (Ban 7 VN) • Tự tiến hóa theo Bảng điện</div>
                                 </div>
                             </div>
-                            <div class="panel-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);">Mastery: 98.5/100</div>
+                            <div id="mq-mastery-badge" class="panel-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);">Mastery: {wr_mkt_ui['mastery_str']}/100</div>
                         </div>
 
                         <!-- Stats Bar Minh Quân -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; background: rgba(30, 41, 59, 0.5); padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(148, 163, 184, 0.15);">
+                        <div id="minh-quan-stats-bar" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; background: rgba(30, 41, 59, 0.5); padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(148, 163, 184, 0.15);">
                             <div style="display: flex; flex-direction: column; align-items: center;">
                                 <span style="font-size: 10px; color: #94a3b8;">Kỳ Vọng Toán Học</span>
-                                <strong style="font-size: 13px; color: #34d399;">EV% +10.95%</strong>
+                                <strong id="mq-ev-val" style="font-size: 13px; color: #34d399;">EV% {wr_mkt_ui['ev_str']}</strong>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; border-left: 1px solid rgba(148, 163, 184, 0.15); border-right: 1px solid rgba(148, 163, 184, 0.15);">
                                 <span style="font-size: 10px; color: #94a3b8;">Tỷ Lệ Thắng TB</span>
-                                <strong style="font-size: 13px; color: #38bdf8;">P(W) 85.5%</strong>
+                                <strong id="mq-pw-val" style="font-size: 13px; color: #38bdf8;">P(W) {wr_mkt_ui['pw_str']}</strong>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center;">
                                 <span style="font-size: 10px; color: #94a3b8;">Risk / Reward</span>
-                                <strong style="font-size: 13px; color: #fbbf24;">R:R 1:2.86</strong>
+                                <strong id="mq-rr-val" style="font-size: 13px; color: #fbbf24;">R:R {wr_mkt_ui['rr_str']}</strong>
                             </div>
                         </div>
 
-                        <!-- Top 4 Picks Cards -->
+                        <!-- Dynamic Picks Cards -->
                         <div style="display: flex; flex-direction: column; gap: 10px;" id="war-room-picks-container">
-                            <!-- HDB -->
-                            <div class="stock-pick-card leader">
-                                <div class="stock-card-top">
-                                    <div>
-                                        <span class="stock-ticker">HDB</span>
-                                        <span class="stock-name">HDBank (HOSE)</span>
-                                    </div>
-                                    <span style="font-size: 10.5px; font-weight: 800; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 4px;">TIÊU ĐIỂM SỐ 1</span>
-                                </div>
-                                <div class="stock-stats-grid">
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Giá Gom N1 (100 CP)</span>
-                                        <span class="stat-val">22,100 – 22,450 ₫</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Stop 2xATR</span>
-                                        <span class="stat-val loss">21,220 ₫ (-5.7%)</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Mục Tiêu TP1 / TP2</span>
-                                        <span class="stat-val gain">24.29k / 25.82k</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Tỷ Lệ R:R</span>
-                                        <span class="stat-val gold">1 : 2.59</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Kỳ Vọng EV%</span>
-                                        <span class="stat-val gain">+8.8%</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Vốn Nhịp 1</span>
-                                        <span class="stat-val">2,235,000 ₫</span>
-                                    </div>
-                                </div>
-                                <div class="stock-catalyst">⚡ <strong>Catalyst</strong>: Tín dụng +22% (Top 1 ngành), NIM 5.1%, CASA 18.2%, ROE 24.5%. Lãi Q3 tăng 42% YoY.</div>
-                            </div>
-
-                            <!-- MSH -->
-                            <div class="stock-pick-card alpha">
-                                <div class="stock-card-top">
-                                    <div>
-                                        <span class="stock-ticker">MSH</span>
-                                        <span class="stock-name">May Sông Hồng (HOSE)</span>
-                                    </div>
-                                    <span style="font-size: 10.5px; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.15); padding: 2px 6px; border-radius: 4px;">TACTICAL ALPHA</span>
-                                </div>
-                                <div class="stock-stats-grid">
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Giá Gom N1 (100 CP)</span>
-                                        <span class="stat-val">34,500 – 35,000 ₫</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Stop 2xATR</span>
-                                        <span class="stat-val loss">33,090 ₫ (-6.8%)</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Mục Tiêu TP1 / TP2</span>
-                                        <span class="stat-val gain">39.56k / 43.04k</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Tỷ Lệ R:R</span>
-                                        <span class="stat-val gold">1 : 3.13</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Kỳ Vọng EV%</span>
-                                        <span class="stat-val gain">+13.1%</span>
-                                    </div>
-                                    <div class="stock-stat-item">
-                                        <span class="stat-label">Vốn Nhịp 1</span>
-                                        <span class="stat-val">3,480,000 ₫</span>
-                                    </div>
-                                </div>
-                                <div class="stock-catalyst">⚡ <strong>Catalyst</strong>: Nhà máy Sông Hồng 10 chạy 100% công suất, đơn hàng dệt may Mỹ hồi phục cực mạnh, cổ tức tiền mặt 30-40%.</div>
-                            </div>
-
-                            <!-- BAF & IDC STANDBY -->
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                                <div class="stock-pick-card standby">
-                                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                                        <span class="stock-ticker">BAF</span>
-                                        <span style="font-size:10px; color:#94a3b8;">STANDBY</span>
-                                    </div>
-                                    <div style="font-size:11px; color:#cbd5e1;">Giá 30.85k | Stop 28.6k</div>
-                                    <div style="font-size:10px; color:#94a3b8;">Chờ test cạn Vol, heo >65k</div>
-                                </div>
-                                <div class="stock-pick-card standby">
-                                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                                        <span class="stock-ticker">IDC</span>
-                                        <span style="font-size:10px; color:#94a3b8;">STANDBY</span>
-                                    </div>
-                                    <div style="font-size:11px; color:#cbd5e1;">Giá 34.6k | Stop 32.5k</div>
-                                    <div style="font-size:10px; color:#94a3b8;">KCN Hựu Thạnh FCF khủng</div>
-                                </div>
-                            </div>
+                            {wr_picks_html}
                         </div>
 
-                        <!-- 3 KHÔNG & 1 KHUNG GIỜ VÀNG -->
+                        <!-- 3 KHÔNG & REGIME RULES -->
                         <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px;">
                             <div style="font-size: 11px; font-weight: 800; color: #f87171;">🛡️ QUY TẮC KỶ LUẬT SẮT MINH QUÂN:</div>
-                            <div style="font-size: 11px; color: #cbd5e1;">• ❌ <strong>Không mua ATO</strong>: Tránh bẫy kéo giá ảo đầu ngày.</div>
-                            <div style="font-size: 11px; color: #cbd5e1;">• ❌ <strong>Không mua giá xanh</strong>: Cấm FOMO khi chưa có nền cạn cung.</div>
-                            <div style="font-size: 11px; color: #cbd5e1;">• ❌ <strong>Không bình quân giá xuống</strong>: Cắt lỗ cứng Stop 2xATR.</div>
-                            <div style="font-size: 11px; color: #fbbf24;">• ⭐ <strong>Khung Giờ Vàng 14h00-14h25</strong>: Chỉ bấm cò khi nhìn rõ 90% nến ngày!</div>
+                            <div id="mq-rules-list" style="display: flex; flex-direction: column; gap: 4px;">
+                                {wr_mkt_ui['rules_html']}
+                            </div>
                         </div>
 
-                        <!-- Button Full Report -->
-                        <button onclick="openReportModal('VN_Market/07_Daily_Specialist/' + today_str + '_VN_Specialist_Decision.md')" class="btn-read" style="background: rgba(14, 165, 233, 0.2); border: 1px solid #38bdf8; color: #38bdf8; font-weight: 800; padding: 8px; text-align: center; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-                            📖 Xem Toàn Văn Quyết Định Minh Quân Hôm Nay
-                        </button>
+                        <!-- Button Full Live Report -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <button onclick="openReportModal('VN_Market/07_Daily_Specialist/{today_str}_Live_Intraday_Report.md')" class="btn-read" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #34d399; font-weight: 800; padding: 8px; text-align: center; border-radius: 6px; cursor: pointer;">
+                                ⚡ Báo Cáo Sống Realtime
+                            </button>
+                            <button onclick="openReportModal('VN_Market/07_Daily_Specialist/{today_str}_VN_Specialist_Decision.md')" class="btn-read" style="background: rgba(14, 165, 233, 0.2); border: 1px solid #38bdf8; color: #38bdf8; font-weight: 800; padding: 8px; text-align: center; border-radius: 6px; cursor: pointer;">
+                                📖 Sổ Lệnh Đầu Ngày
+                            </button>
+                        </div>
                     </div>
 
                     <!-- ================= CỘT 2: BÁO CÁO TÁC CHIẾN TRONG NGÀY (3 GIAI ĐOẠN QUYẾT ĐỊNH) ================= -->
@@ -3326,7 +3534,7 @@ def generate_portal_html(
                         </div>
 
                         <!-- DYNAMIC REALTIME TACTICAL STAGES -->
-{generate_dynamic_tactical_stages_html()}
+{wr_stages_html}
 
                         <!-- Current Directive Hero Box -->
                         <div class="directive-hero-box" style="margin-top: 8px;">
@@ -3345,36 +3553,19 @@ def generate_portal_html(
                                 <div style="font-size: 12px; font-weight: 800; color: #fbbf24; display: flex; align-items: center; gap: 6px;">
                                     <span>👑</span> BÀN RA CHỈ LỆNH TRỰC TIẾP CỦA CHỦ TỊCH
                                 </div>
-                                <span style="font-size: 10.5px; color: #94a3b8;">Minh Quân &amp; Victor phản hồi tức thì</span>
+                                <span style="font-size: 10.5px; color: #94a3b8;">Minh Quân &amp; Victor &amp; Hook Ban 9/10</span>
                             </div>
 
                             <!-- History Box -->
                             <div class="directive-history-box" id="directive-history-box">
-                                <div class="directive-msg specialist">
-                                    <div class="directive-msg-head">
-                                        <span>Minh Quân (Ban 7 VN)</span>
-                                        <span style="font-weight:400; color:#94a3b8;">08:30:15</span>
-                                    </div>
-                                    <div class="directive-msg-body">
-                                        Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã hoàn tất Bản Kế Hoạch Đầu Ngày 08h30. Két tiền mặt thực tế {ssot['cash_str']} ({ssot['cash_pct']:.1f}% NAV) | Kho hàng {ssot['holdings_desc']} ({ssot['stocks_str']}). Toàn đội tuân thủ tuyệt đối: KHÔNG ĐUA LỆNH ATO, chờ Khung Giờ Vàng 14h00 - 14h25!
-                                    </div>
-                                </div>
-                                <div class="directive-msg sentinel">
-                                    <div class="directive-msg-head">
-                                        <span>Victor (Ban 9 Live Sentinel)</span>
-                                        <span style="font-weight:400; color:#94a3b8;">08:32:40</span>
-                                    </div>
-                                    <div class="directive-msg-body">
-                                        Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục. Két tiền mặt thật {ssot['cash_str']} ({ssot['cash_pct']:.1f}% Cash • {ssot['total_shares']} CP đang nắm giữ). Toàn bộ lãi Vòng 1 ({ssot['realized_str']}) đã khóa an toàn. Radar rủi ro ở CẤP 1, kịch bản phòng thủ Stop 2xATR và Synthetic Short Hedge VN30F sẵn sàng trong nòng súng.
-                                    </div>
-                                </div>
+                                {wr_directives_html}
                             </div>
 
                             <!-- Quick Prompts -->
                             <div class="quick-prompts-row">
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Minh Quân báo cáo tiến độ hiện tại')">💬 Báo cáo tiến độ</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Cho tôi xem kế hoạch tuần')" style="border-color: #fbbf24; color: #fbbf24; font-weight: 700;">📅 Soi Kế Hoạch Tuần</button>
-                                <button class="btn-quick-prompt" onclick="sendQuickTactical('Đánh giá điều kiện Test Cung của HDB và MSH')">🎯 Soi HDB &amp; MSH</button>
+                                <button class="btn-quick-prompt" onclick="sendQuickTactical('Soi giá live HDB và MSH')">🎯 Soi HDB &amp; MSH</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Kịch bản ứng phó nếu thị trường bất ngờ sập 15 điểm')">🛡️ Kịch bản thị trường sập</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Victor kiểm tra két tiền mặt SSOT và sức mua')">💰 Két tiền &amp; Sức mua</button>
                             </div>
@@ -3405,75 +3596,87 @@ def generate_portal_html(
                         <div id="victor-ssot-cash-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(52, 211, 153, 0.35); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
                             <div style="font-size: 11px; color: #94a3b8; display: flex; justify-content: space-between;">
                                 <span>TÀI KHOẢN TCBS: <strong>105C307855</strong></span>
-                                <span style="color: #34d399; font-weight: 800;">SSOT V2.0</span>
+                                <span style="color: #34d399; font-weight: 800;">SSOT V4.0 LIVE</span>
                             </div>
                             <div style="display: flex; align-items: baseline; justify-content: space-between;">
                                 <span style="font-size: 11px; color: #cbd5e1;">Két Tiền Mặt Thật:</span>
                                 <strong id="victor-cash-val" style="font-size: 19px; color: #34d399; font-family: monospace;">{ssot['cash_str']}</strong>
                             </div>
-                            <div style="display: flex; justify-content: space-between; font-size: 11px; border-top: 1px solid rgba(148, 163, 184, 0.15); padding-top: 5px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 11px; border-top: 1px solid rgba(148, 163, 184, 0.15); padding-top: 5px; gap: 6px; flex-wrap: wrap;">
                                 <span id="victor-holdings-val" style="color: #94a3b8;">Cổ phiếu rủi ro: <strong style="color: #38bdf8;">{ssot['total_shares']} CP ({ssot['stocks_str']} • {ssot['stocks_pct']:.1f}%)</strong></span>
                                 <span id="victor-pnl-val" style="color: #94a3b8;">PnL Tạm: <strong style="color: {unrealized_color};">{ssot['unrealized_str']} ({ssot['unrealized_pct']}%)</strong> | Lãi V1: <strong style="color: #34d399;">{ssot['realized_str']}</strong></span>
                             </div>
                         </div>
 
-                        <!-- LIVE HOLDINGS CARD (2 MÃ ĐÃ GIẢI NGÂN) -->
+                        <!-- LIVE HOLDINGS CARD -->
                         <div id="victor-live-holdings-box" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 9px; padding: 10px; display: flex; flex-direction: column; gap: 6px;">
-                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between;">
-                                <span>📦 DANH MỤC ĐÃ GIẢI NGÂN (2 MÃ • 200 CP)</span>
-                                <span style="color: #34d399;">🛡️ STOP 2xATR BẢO VỆ</span>
+                            {wr_holdings_html}
+                        </div>
+
+                        <!-- 1-CLICK SYNC TCINVEST FORM -->
+                        <div style="background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 9px; padding: 9px 10px; display: flex; flex-direction: column; gap: 6px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 11px; font-weight: 800; color: #fbbf24;">⚡ 1-CLICK SYNC TCINVEST (CẬP NHẬT LỆNH KHỚP)</span>
+                                <button type="button" onclick="toggleSyncTCInvest()" id="btn-toggle-sync-tcinvest" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px; cursor: pointer;">▾ Mở Form</button>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 5px;">
-                                <div style="background: rgba(30, 41, 59, 0.7); padding: 6px 8px; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center;">
-                                    <div><strong style="color: #38bdf8;">HDB</strong> <span style="color: #94a3b8;">(100 CP)</span></div>
-                                    <div>Vốn: <span style="color: #cbd5e1;">22,050 ₫</span> ➔ Live: <span style="color: #f87171;">22,000 ₫</span></div>
-                                    <div>PnL: <strong style="color: #f87171;">-5,000 ₫ (-0.2%)</strong></div>
-                                    <div style="color: #fbbf24; font-size: 10px;">Stop: 21,220 ₫</div>
+                            <div id="sync-tcinvest-panel" style="display: none; flex-direction: column; gap: 6px; padding-top: 4px; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                                    <select id="sync-tc-action" onchange="onSyncActionChange()" style="background: #0f172a; color: #f8fafc; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 5px; padding: 5px; font-size: 11px;">
+                                        <option value="BUY">MUA KHỚP (BUY)</option>
+                                        <option value="SELL">BÁN KHỚP (SELL)</option>
+                                        <option value="RECONCILE">ĐỐI SOÁT KÉT / STOP</option>
+                                    </select>
+                                    <input id="sync-tc-symbol" type="text" placeholder="Mã CP (vd: HDB)" style="background: #0f172a; color: #f8fafc; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 5px; padding: 5px; font-size: 11px; text-transform: uppercase;">
                                 </div>
-                                <div style="background: rgba(30, 41, 59, 0.7); padding: 6px 8px; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center;">
-                                    <div><strong style="color: #38bdf8;">MSH</strong> <span style="color: #94a3b8;">(100 CP)</span></div>
-                                    <div>Vốn: <span style="color: #cbd5e1;">34,517 ₫</span> ➔ Live: <span style="color: #f87171;">34,500 ₫</span></div>
-                                    <div>PnL: <strong style="color: #f87171;">-1,700 ₫ (-0.05%)</strong></div>
-                                    <div style="color: #fbbf24; font-size: 10px;">Stop: 33,090 ₫</div>
+                                <div id="sync-tc-order-fields" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                                    <input id="sync-tc-shares" type="number" step="100" min="0" placeholder="Số CP (vd: 100)" style="background: #0f172a; color: #f8fafc; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 5px; padding: 5px; font-size: 11px;">
+                                    <input id="sync-tc-price" type="number" step="50" min="0" placeholder="Giá khớp (vd: 22600)" style="background: #0f172a; color: #f8fafc; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 5px; padding: 5px; font-size: 11px;">
                                 </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                                    <input id="sync-tc-stop" type="number" step="50" min="0" placeholder="Stop Loss (tùy chọn)" style="background: #0f172a; color: #f8fafc; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 5px; padding: 5px; font-size: 11px;">
+                                    <input id="sync-tc-cash" type="number" step="1000" min="0" placeholder="Tiền mặt thực (Reconcile)" style="display: none; background: #0f172a; color: #f8fafc; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 5px; padding: 5px; font-size: 11px;">
+                                    <input id="sync-tc-tp1" type="number" step="50" min="0" placeholder="TP1 (tùy chọn)" style="background: #0f172a; color: #f8fafc; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 5px; padding: 5px; font-size: 11px;">
+                                </div>
+                                <button type="button" id="btn-submit-sync-tc" onclick="submitSyncTCInvest()" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; font-weight: 900; border: none; border-radius: 6px; padding: 6px 10px; font-size: 11px; cursor: pointer;">⚡ Đồng Bộ Ngay Vào SSOT &amp; War-Room</button>
+                                <div id="sync-tcinvest-status" style="font-size: 10.5px; color: #94a3b8;"></div>
                             </div>
                         </div>
 
                         <!-- LIVE MARKET OVERVIEW (VN-INDEX & VN30) -->
                         <div class="market-radar-card" id="market-radar-card">
-                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between;">
+                            <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between; gap: 6px;">
                                 <span>📊 GIÁM SÁT THỊ TRƯỜNG REALTIME</span>
-                                <span style="color: #34d399;" id="market-status-badge">● UPTREND TÍCH LŨY</span>
+                                <span style="color: {wr_mkt_ui['vni_col']};" id="market-status-badge">● {wr_mkt_ui['status_str']}</span>
                             </div>
                             <div class="index-grid">
                                 <div class="index-item">
                                     <div style="display:flex; justify-content:space-between; font-size:10px; color:#94a3b8;">
                                         <span>VN-INDEX</span>
-                                        <span class="price-badge up" id="vnindex-pts">+{wr_market['vn_index']['change_pts']} (+{wr_market['vn_index']['change_pct']}%)</span>
+                                        <span class="price-badge {wr_mkt_ui['vni_cls']}" id="vnindex-pts">{wr_mkt_ui['vni_pts_str']}</span>
                                     </div>
-                                    <div style="font-size:15px; font-weight:900; color:#34d399;" id="vnindex-val">{wr_market['vn_index']['value']}</div>
-                                    <div style="font-size:10px; color:#94a3b8;">GTGD: <strong>{wr_market['vn_index']['turnover_ty_vnd']}</strong></div>
+                                    <div style="font-size:15px; font-weight:900; color:{wr_mkt_ui['vni_col']};" id="vnindex-val">{wr_mkt_ui['vni_val_str']}</div>
+                                    <div style="font-size:10px; color:#94a3b8;">GTGD: <strong id="vnindex-turnover">{wr_mkt_ui['turnover_str']}</strong></div>
                                 </div>
                                 <div class="index-item">
                                     <div style="display:flex; justify-content:space-between; font-size:10px; color:#94a3b8;">
                                         <span>VN30-INDEX</span>
-                                        <span class="price-badge up" id="vn30-pts">+{wr_market['vn30_index']['change_pts']} (+{wr_market['vn30_index']['change_pct']}%)</span>
+                                        <span class="price-badge {wr_mkt_ui['vn30_cls']}" id="vn30-pts">{wr_mkt_ui['vn30_pts_str']}</span>
                                     </div>
-                                    <div style="font-size:15px; font-weight:900; color:#34d399;" id="vn30-val">{wr_market['vn30_index']['value']}</div>
-                                    <div style="font-size:10px; color:#94a3b8;">Basis F1M: <strong>{wr_market['vn30_index']['basis_vn30f']}</strong></div>
+                                    <div style="font-size:15px; font-weight:900; color:{wr_mkt_ui['vn30_col']};" id="vn30-val">{wr_mkt_ui['vn30_val_str']}</div>
+                                    <div style="font-size:10px; color:#94a3b8;">Basis F1M: <strong id="vn30-basis">{wr_mkt_ui['basis_str']}</strong></div>
                                 </div>
                             </div>
-                            <div style="font-size:10.5px; color:#cbd5e1; display:flex; justify-content:space-between; border-top:1px solid rgba(148,163,184,0.15); padding-top:4px;">
-                                <span>Khối ngoại: <strong style="color:#34d399;" id="foreign-net">{wr_market['vn_index']['foreign_net_ty_vnd']}</strong></span>
-                                <span>Độ rộng: <strong style="color:#e2e8f0;">242 Tăng / 145 Giảm</strong></span>
+                            <div style="font-size:10.5px; color:#cbd5e1; display:flex; justify-content:space-between; border-top:1px solid rgba(148,163,184,0.15); padding-top:4px; gap: 6px;">
+                                <span>Khối ngoại: <strong style="color:#34d399;" id="foreign-net">{wr_mkt_ui['foreign_str']}</strong></span>
+                                <span>Độ rộng: <strong style="color:#e2e8f0;" id="market-breadth-val">{wr_mkt_ui['breadth_str']}</strong></span>
                             </div>
                         </div>
 
                         <!-- LIVE STOCK TICKER SENTINEL TABLE -->
                         <div style="display: flex; flex-direction: column; gap: 6px;">
                             <div style="font-size: 11.5px; font-weight: 800; color: #f8fafc; display: flex; justify-content: space-between; align-items: center;">
-                                <span>🎯 BẢNG GIÁ GIÁM SÁT 4 MÃ VÒNG 2</span>
-                                <span style="font-size: 10px; color: #38bdf8;">Tự động cập nhật 24/24</span>
+                                <span id="war-room-table-title">🎯 BẢNG GIÁ GIÁM SÁT LIVE ({wr_stocks_count} MÃ SSOT)</span>
+                                <span style="font-size: 10px; color: #38bdf8;">VPS Orderbook 3 bước</span>
                             </div>
                             <table class="stock-sentinel-table">
                                 <thead>
@@ -3487,58 +3690,14 @@ def generate_portal_html(
                                     </tr>
                                 </thead>
                                 <tbody id="live-stocks-table-body">
-                                    <tr>
-                                        <td><strong style="color:#38bdf8;">HDB</strong></td>
-                                        <td class="price-badge down">22,100</td>
-                                        <td class="price-badge down">-1.78%</td>
-                                        <td>6.1M</td>
-                                        <td style="color:#34d399;">52.4%</td>
-                                        <td><span style="color:#10b981; font-weight:700;">🟢 AN TOÀN</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style="color:#38bdf8;">MSH</strong></td>
-                                        <td class="price-badge down">34,500</td>
-                                        <td class="price-badge down">-2.82%</td>
-                                        <td>53.2k</td>
-                                        <td style="color:#34d399;">56.8%</td>
-                                        <td><span style="color:#10b981; font-weight:700;">🟢 AN TOÀN</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style="color:#38bdf8;">BAF</strong></td>
-                                        <td class="price-badge down">30,850</td>
-                                        <td class="price-badge down">-0.16%</td>
-                                        <td>593k</td>
-                                        <td style="color:#34d399;">50.5%</td>
-                                        <td><span style="color:#fbbf24; font-weight:700;">🟡 STANDBY</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style="color:#38bdf8;">IDC</strong></td>
-                                        <td class="price-badge down">34,600</td>
-                                        <td class="price-badge down">-0.86%</td>
-                                        <td>232.7k</td>
-                                        <td style="color:#34d399;">48.5%</td>
-                                        <td><span style="color:#fbbf24; font-weight:700;">🟡 STANDBY</span></td>
-                                    </tr>
+                                    {wr_stocks_rows_html}
                                 </tbody>
                             </table>
                         </div>
 
                         <!-- Radar 5 Cấp Độ An Ninh -->
-                        <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 8px; padding: 9px; display: flex; flex-direction: column; gap: 5px;">
-                            <div style="font-size: 11px; font-weight: 800; color: #f8fafc; display: flex; justify-content: space-between;">
-                                <span>RADAR 5 CẤP ĐỘ NGUY HIỂM</span>
-                                <span style="color: #34d399;">● CẤP 1 (AN TOÀN)</span>
-                            </div>
-                            <div style="display: flex; gap: 4px;">
-                                <div style="flex: 1; height: 6px; border-radius: 3px; background: #10b981; box-shadow: 0 0 6px #10b981;"></div>
-                                <div style="flex: 1; height: 6px; border-radius: 3px; background: rgba(148, 163, 184, 0.2);"></div>
-                                <div style="flex: 1; height: 6px; border-radius: 3px; background: rgba(148, 163, 184, 0.2);"></div>
-                                <div style="flex: 1; height: 6px; border-radius: 3px; background: rgba(148, 163, 184, 0.2);"></div>
-                                <div style="flex: 1; height: 6px; border-radius: 3px; background: rgba(148, 163, 184, 0.2);"></div>
-                            </div>
-                            <div style="font-size: 10.5px; color: #94a3b8; line-height: 1.35;">
-                                🟢 <strong>Cấp 1 — An toàn tuyệt đối</strong>: 100% tiền mặt, miễn nhiễm hoàn toàn với mọi biến động tiêu cực của thị trường.
-                            </div>
+                        <div id="victor-threat-radar-card" style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 8px; padding: 9px; display: flex; flex-direction: column; gap: 5px;">
+                            {wr_threat_html}
                         </div>
 
                         <!-- ALEX WALL STREET DESK (STANDBY SLOT) -->
@@ -3546,26 +3705,15 @@ def generate_portal_html(
                             <div style="display: flex; align-items: center; justify-content: space-between;">
                                 <div style="display: flex; align-items: center; gap: 6px;">
                                     <span style="font-size: 15px;">🗽</span>
-                                    <span style="font-size: 11.5px; font-weight: 800; color: #fbbf24;">Alex — Phố Wall &amp; Global Desk</span>
+                                    <span style="font-size: 11.5px; font-weight: 800; color: #fbbf24;">Alex — Cầu Nối Phố Wall &amp; Bull-Trap Guard</span>
                                 </div>
-                                <span style="font-size: 10px; font-weight: 800; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 6px; border-radius: 4px;">STANDBY</span>
+                                <span style="font-size: 10px; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.16); padding: 2px 6px; border-radius: 4px;">SPILLOVER V2</span>
                             </div>
                             <div style="font-size: 10.5px; color: #cbd5e1;">
                                 Phiên New York mở lúc <strong>21:30 Tối</strong> (Còn: <strong id="alex-ny-countdown" style="color: #fbbf24;">{wr_ny_countdown}</strong>).
                             </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
-                                <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
-                                    <div style="font-size: 10.5px; font-weight: 800; color: #38bdf8;">NVDA (Blackwell)</div>
-                                </div>
-                                <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
-                                    <div style="font-size: 10.5px; font-weight: 800; color: #38bdf8;">AVGO (ASIC AI)</div>
-                                </div>
-                                <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
-                                    <div style="font-size: 10.5px; font-weight: 800; color: #38bdf8;">MSFT (Azure AI)</div>
-                                </div>
-                                <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">
-                                    <div style="font-size: 10.5px; font-weight: 800; color: #38bdf8;">PLTR (AIP Def)</div>
-                                </div>
+                            <div id="wr-spillover-slippage-box" style="display: flex; flex-direction: column; gap: 5px;">
+                                {wr_spillover_html}
                             </div>
                         </div>
                     </div>
@@ -5188,12 +5336,68 @@ def generate_portal_html(
             setInterval(tick, 1000);
         }}
 
+        let warRoomEventSource = null;
+
+        function setStreamStatusBadge(mode) {{
+            const b = document.getElementById('wr-stream-status-badge');
+            if (!b) return;
+            if (mode === 'sse') {{
+                b.style.borderColor = 'rgba(16, 185, 129, 0.45)';
+                b.style.background = 'rgba(16, 185, 129, 0.14)';
+                b.style.color = '#34d399';
+                b.innerText = '🟢 SSE LIVE (REALTIME)';
+            }} else {{
+                b.style.borderColor = 'rgba(245, 158, 11, 0.45)';
+                b.style.background = 'rgba(245, 158, 11, 0.14)';
+                b.style.color = '#fbbf24';
+                b.innerText = '🟡 POLLING 5S';
+            }}
+        }}
+
         function initTacticalWarRoom() {{
             loadTacticalWarRoomData();
-            if (warRoomPollingInterval) clearInterval(warRoomPollingInterval);
+            if (warRoomPollingInterval) {{
+                clearInterval(warRoomPollingInterval);
+                warRoomPollingInterval = null;
+            }}
+            if (warRoomEventSource) {{
+                try {{ warRoomEventSource.close(); }} catch (_) {{}}
+                warRoomEventSource = null;
+            }}
+
+            if (typeof EventSource !== 'undefined') {{
+                try {{
+                    warRoomEventSource = new EventSource('/api/tactical_war_room/stream');
+                    warRoomEventSource.addEventListener('war_room_tick', (ev) => {{
+                        try {{
+                            const data = JSON.parse(ev.data);
+                            setStreamStatusBadge('sse');
+                            renderTacticalWarRoom(data);
+                        }} catch (_) {{}}
+                    }});
+                    warRoomEventSource.onmessage = (ev) => {{
+                        try {{
+                            const data = JSON.parse(ev.data);
+                            setStreamStatusBadge('sse');
+                            renderTacticalWarRoom(data);
+                        }} catch (_) {{}}
+                    }};
+                    warRoomEventSource.onerror = () => {{
+                        setStreamStatusBadge('polling');
+                        if (!warRoomPollingInterval) {{
+                            warRoomPollingInterval = setInterval(() => {{
+                                loadTacticalWarRoomData();
+                            }}, 5000);
+                        }}
+                    }};
+                    return;
+                }} catch (_) {{}}
+            }}
+
+            setStreamStatusBadge('polling');
             warRoomPollingInterval = setInterval(() => {{
                 loadTacticalWarRoomData();
-            }}, 4000);
+            }}, 5000);
         }}
 
         async function loadTacticalWarRoomData() {{
@@ -5207,6 +5411,14 @@ def generate_portal_html(
             }}
         }}
 
+        function escHtml(str) {{
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }}
+
         function renderTacticalWarRoom(data) {{
             if (!data) return;
 
@@ -5218,10 +5430,24 @@ def generate_portal_html(
                 }}
             }}
 
-            // 1. Clocks
+            // 1. Clocks & Regime Pill
             if (data.server_time) {{
                 const clockEl = document.getElementById('war-room-clock');
                 if (clockEl) clockEl.innerText = data.server_time;
+            }}
+            if (data.phase_info && data.phase_info.countdown_to_wall_street) {{
+                const nyEl = document.getElementById('war-room-ny-countdown');
+                if (nyEl) nyEl.innerText = data.phase_info.countdown_to_wall_street;
+                const alexNy = document.getElementById('alex-ny-countdown');
+                if (alexNy) alexNy.innerText = data.phase_info.countdown_to_wall_street;
+            }}
+            if (data.intraday_regime) {{
+                const reg = data.intraday_regime;
+                const regPill = document.getElementById('wr-regime-pill');
+                if (regPill) {{
+                    regPill.innerText = reg.label || 'GIẰNG CO';
+                    if (reg.badge_color) regPill.style.color = reg.badge_color;
+                }}
             }}
 
             // 2. Active Phase Highlight
@@ -5234,7 +5460,7 @@ def generate_portal_html(
                 if (targetCard) targetCard.classList.add('active');
             }}
 
-            // 3. Action Plan Hero: Ta nên làm gì vào thời điểm này?
+            // 3. Action Plan Hero
             if (data.action_plan && data.action_plan.current_step) {{
                 const cur = data.action_plan.current_step;
                 const timeEl = document.getElementById('action-plan-time');
@@ -5244,40 +5470,87 @@ def generate_portal_html(
 
                 if (timeEl) timeEl.innerText = cur.time_range;
                 if (titleEl) titleEl.innerText = `📍 ${{cur.title.toUpperCase()}}`;
-                if (whatEl) whatEl.innerHTML = `<strong>🎯 HÀNH ĐỘNG CỦA DOANH NGHIỆP TA:</strong><br>${{cur.what_to_do}}`;
-                if (ruleEl) ruleEl.innerHTML = `⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: ${{cur.constitution_rule}}`;
+                if (whatEl) whatEl.innerHTML = `<strong>🎯 HÀNH ĐỘNG CỦA DOANH NGHIỆP TA:</strong><br>${{escHtml(cur.what_to_do)}}`;
+                if (ruleEl) ruleEl.innerHTML = `⚖️ <strong>Kỷ Luật Hiến Chương Bắt Buộc</strong>: ${{escHtml(cur.constitution_rule)}}`;
             }}
 
             // 4. Current Directive Hero Text
             const dirBox = document.getElementById('war-room-live-directive-box');
             if (dirBox && data.tactical_message) {{
-                dirBox.innerHTML = data.tactical_message;
+                dirBox.innerHTML = escHtml(data.tactical_message);
             }}
 
-            // 5. Milestones Timeline
-            const msContainer = document.getElementById('tactical-milestones-list');
-            if (msContainer && data.action_plan && data.action_plan.all_steps) {{
-                let msHtml = '';
-                data.action_plan.all_steps.forEach(m => {{
-                    const isAct = m.status === 'ACTIVE';
-                    const isComp = m.status === 'COMPLETED';
-                    const borderCls = isAct ? 'active' : (isComp ? 'completed' : '');
-                    const badgeBg = isAct ? 'rgba(56, 189, 248, 0.25)' : (isComp ? 'rgba(16, 185, 129, 0.2)' : 'rgba(148, 163, 184, 0.2)');
-                    const badgeClr = isAct ? '#38bdf8' : (isComp ? '#34d399' : '#94a3b8');
-                    const badgeText = isAct ? 'ĐANG DIỄN RA' : (isComp ? 'ĐÃ HOÀN TẤT' : 'CHỜ ĐẾN GIỜ');
+            // 5. Left Column Minh Quân Blueprint & Dynamic Picks
+            if (data.minh_quan_blueprint) {{
+                const mq = data.minh_quan_blueprint;
+                const mBadge = document.getElementById('mq-mastery-badge');
+                const evEl = document.getElementById('mq-ev-val');
+                const pwEl = document.getElementById('mq-pw-val');
+                const rrEl = document.getElementById('mq-rr-val');
+                const rulesEl = document.getElementById('mq-rules-list');
+                if (mBadge && mq.mastery_score !== undefined) mBadge.innerText = `Mastery: ${{Number(mq.mastery_score).toFixed(1)}}/100`;
+                if (evEl && mq.expected_value_pct !== undefined) {{
+                    const evn = Number(mq.expected_value_pct);
+                    evEl.innerText = `EV% ${{evn >= 0 ? '+' : ''}}${{evn.toFixed(2)}}%`;
+                }}
+                if (pwEl && mq.win_rate_pct !== undefined) pwEl.innerText = `P(W) ${{Number(mq.win_rate_pct).toFixed(1)}}%`;
+                if (rrEl && mq.average_rr) rrEl.innerText = `R:R ${{mq.average_rr}}`;
+                if (rulesEl && Array.isArray(mq.rules)) {{
+                    rulesEl.innerHTML = mq.rules.map(r => `<div style="font-size: 11px; color: #cbd5e1;">• ${{escHtml(r)}}</div>`).join('');
+                }}
+            }}
 
-                    msHtml += `
-                        <div class="milestone-card ${{borderCls}}">
-                            <div class="milestone-header">
-                                <span class="milestone-time">⏰ ${{m.time_range}}</span>
-                                <span class="milestone-badge" style="background:${{badgeBg}}; color:${{badgeClr}};">${{badgeText}}</span>
-                            </div>
-                            <div class="milestone-title">${{m.title}}</div>
-                            <div class="milestone-desc">${{m.what_to_do}}</div>
-                        </div>
-                    `;
+            const picksContainer = document.getElementById('war-room-picks-container');
+            if (picksContainer && Array.isArray(data.dynamic_picks) && data.dynamic_picks.length > 0) {{
+                let topHtml = '';
+                let sbHtml = '';
+                data.dynamic_picks.forEach((p, idx) => {{
+                    const price = Number(p.price || 0);
+                    const probe = Number(p.probe_target || price);
+                    const stop = Number(p.stop_loss || 0);
+                    const tp1 = Number(p.tp1 || 0);
+                    const tp2 = Number(p.tp2 || 0);
+                    const rr = Number(p.rr_ratio || 0).toFixed(2);
+                    const ev = Number(p.ev_pct || 0);
+                    const lotVal = ((probe > 0 ? probe : price) * 100).toLocaleString('en-US');
+                    if (idx < 2 || p.is_holding) {{
+                        const cls = (idx === 0 || p.is_holding) ? 'leader' : 'alpha';
+                        const badgeCol = cls === 'leader' ? '#10b981' : '#38bdf8';
+                        const badgeTxt = p.is_holding ? `ĐANG GIỮ ${{p.holding_shares || 0}} CP` : String(p.tier || 'MỤC TIÊU').toUpperCase();
+                        const stopPct = (price > 0 && stop > 0) ? ` (${{(((stop - price) / price) * 100).toFixed(1)}}%)` : '';
+                        const tpStr = (tp1 > 0 && tp2 > 0) ? `${{(tp1/1000).toFixed(2)}}k / ${{(tp2/1000).toFixed(2)}}k` : (tp1 > 0 ? `${{(tp1/1000).toFixed(2)}}k` : 'N/A');
+                        topHtml += `
+                            <div class="stock-pick-card ${{cls}}">
+                                <div class="stock-card-top">
+                                    <div>
+                                        <span class="stock-ticker">${{escHtml(p.code)}}</span>
+                                        <span class="stock-name">${{escHtml(p.name || p.code)}}</span>
+                                    </div>
+                                    <span style="font-size: 10px; font-weight: 800; color: ${{badgeCol}}; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 4px;">${{escHtml(badgeTxt)}}</span>
+                                </div>
+                                <div class="stock-stats-grid">
+                                    <div class="stock-stat-item"><span class="stat-label">Live / Mục tiêu Gom</span><span class="stat-val">${{price.toLocaleString('en-US')}} / ≤ ${{probe.toLocaleString('en-US')}} ₫</span></div>
+                                    <div class="stock-stat-item"><span class="stat-label">Stop 2xATR</span><span class="stat-val loss">${{stop.toLocaleString('en-US')}} ₫${{stopPct}}</span></div>
+                                    <div class="stock-stat-item"><span class="stat-label">Mục Tiêu TP1 / TP2</span><span class="stat-val gain">${{tpStr}}</span></div>
+                                    <div class="stock-stat-item"><span class="stat-label">Tỷ Lệ R:R</span><span class="stat-val gold">1 : ${{rr}}</span></div>
+                                    <div class="stock-stat-item"><span class="stat-label">Kỳ Vọng EV%</span><span class="stat-val gain">${{ev >= 0 ? '+' : ''}}${{ev.toFixed(1)}}%</span></div>
+                                    <div class="stock-stat-item"><span class="stat-label">Vốn 100 CP</span><span class="stat-val">${{lotVal}} ₫</span></div>
+                                </div>
+                                <div class="stock-catalyst">⚡ <strong>${{escHtml(p.security_label || '')}}</strong> | ${{escHtml(p.catalyst || '')}}</div>
+                            </div>`;
+                    }} else {{
+                        sbHtml += `
+                            <div class="stock-pick-card standby">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <span class="stock-ticker">${{escHtml(p.code)}}</span>
+                                    <span style="font-size:10px; color:#94a3b8;">${{escHtml(p.action_code || 'STANDBY')}}</span>
+                                </div>
+                                <div style="font-size:11px; color:#cbd5e1;">Live ${{(price/1000).toFixed(2)}}k | Gom ${{(probe/1000).toFixed(2)}}k | Stop ${{(stop/1000).toFixed(2)}}k</div>
+                                <div style="font-size:10px; color:#94a3b8;">${{escHtml((p.catalyst || '').slice(0, 95))}}</div>
+                            </div>`;
+                    }}
                 }});
-                msContainer.innerHTML = msHtml;
+                picksContainer.innerHTML = topHtml + (sbHtml ? `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">${{sbHtml}}</div>` : '');
             }}
 
             // 6. Market Radar Overview (Victor)
@@ -5285,44 +5558,83 @@ def generate_portal_html(
                 const mo = data.market_overview;
                 const vnPts = document.getElementById('vnindex-pts');
                 const vnVal = document.getElementById('vnindex-val');
+                const vnTurn = document.getElementById('vnindex-turnover');
+                const vnStBadge = document.getElementById('market-status-badge');
                 const vn30Pts = document.getElementById('vn30-pts');
                 const vn30Val = document.getElementById('vn30-val');
+                const vn30Basis = document.getElementById('vn30-basis');
                 const fnEl = document.getElementById('foreign-net');
+                const brEl = document.getElementById('market-breadth-val');
 
                 if (mo.vn_index) {{
-                    if (vnVal) vnVal.innerText = Number(mo.vn_index.value).toLocaleString('en-US', {{ minimumFractionDigits: 2 }});
-                    if (vnPts) vnPts.innerText = `${{mo.vn_index.change_pts >= 0 ? '+' : ''}}${{mo.vn_index.change_pts}} (${{mo.vn_index.change_pct >= 0 ? '+' : ''}}${{mo.vn_index.change_pct}}%)`;
+                    const vniChg = Number(mo.vn_index.change_pts || 0);
+                    const vniPct = Number(mo.vn_index.change_pct || 0);
+                    const vniCol = vniPct >= 0 ? '#34d399' : '#f87171';
+                    const vniCls = vniPct >= 0 ? 'price-badge up' : 'price-badge down';
+                    if (vnVal) {{
+                        vnVal.innerText = Number(mo.vn_index.value || 0).toLocaleString('en-US', {{ minimumFractionDigits: 2, maximumFractionDigits: 2 }});
+                        vnVal.style.color = vniCol;
+                    }}
+                    if (vnPts) {{
+                        vnPts.className = vniCls;
+                        vnPts.innerText = `${{vniChg >= 0 ? '+' : ''}}${{vniChg.toFixed(2)}} (${{vniPct >= 0 ? '+' : ''}}${{vniPct.toFixed(2)}}%)`;
+                    }}
+                    if (vnTurn && mo.vn_index.turnover_ty_vnd) vnTurn.innerText = mo.vn_index.turnover_ty_vnd;
+                    if (vnStBadge && mo.vn_index.status) {{
+                        vnStBadge.innerText = '● ' + mo.vn_index.status;
+                        vnStBadge.style.color = vniCol;
+                    }}
+                    if (fnEl && mo.vn_index.foreign_net_ty_vnd) fnEl.innerText = mo.vn_index.foreign_net_ty_vnd;
                 }}
                 if (mo.vn30_index) {{
-                    if (vn30Val) vn30Val.innerText = Number(mo.vn30_index.value).toLocaleString('en-US', {{ minimumFractionDigits: 2 }});
-                    if (vn30Pts) vn30Pts.innerText = `${{mo.vn30_index.change_pts >= 0 ? '+' : ''}}${{mo.vn30_index.change_pts}} (${{mo.vn30_index.change_pct >= 0 ? '+' : ''}}${{mo.vn30_index.change_pct}}%)`;
+                    const vn30Chg = Number(mo.vn30_index.change_pts || 0);
+                    const vn30Pct = Number(mo.vn30_index.change_pct || 0);
+                    const vn30Col = vn30Pct >= 0 ? '#34d399' : '#f87171';
+                    const vn30Cls = vn30Pct >= 0 ? 'price-badge up' : 'price-badge down';
+                    if (vn30Val) {{
+                        vn30Val.innerText = Number(mo.vn30_index.value || 0).toLocaleString('en-US', {{ minimumFractionDigits: 2, maximumFractionDigits: 2 }});
+                        vn30Val.style.color = vn30Col;
+                    }}
+                    if (vn30Pts) {{
+                        vn30Pts.className = vn30Cls;
+                        vn30Pts.innerText = `${{vn30Chg >= 0 ? '+' : ''}}${{vn30Chg.toFixed(2)}} (${{vn30Pct >= 0 ? '+' : ''}}${{vn30Pct.toFixed(2)}}%)`;
+                    }}
+                    if (vn30Basis && mo.vn30_index.basis_vn30f) vn30Basis.innerText = mo.vn30_index.basis_vn30f;
                 }}
-                if (fnEl && mo.vn_index.foreign_net_ty_vnd) {{
-                    fnEl.innerText = mo.vn_index.foreign_net_ty_vnd;
+                if (brEl && mo.market_breadth) {{
+                    brEl.innerText = `${{mo.market_breadth.advancers || 0}} Tăng / ${{mo.market_breadth.decliners || 0}} Giảm`;
                 }}
             }}
 
             // 7. Live Stock Sentinel Table (Victor)
-            if (data.live_stocks && data.live_stocks.length > 0) {{
+            if (Array.isArray(data.live_stocks) && data.live_stocks.length > 0) {{
+                const tblTitle = document.getElementById('war-room-table-title');
+                if (tblTitle) tblTitle.innerText = `🎯 BẢNG GIÁ GIÁM SÁT LIVE (${{data.live_stocks.length}} MÃ SSOT)`;
                 const tbody = document.getElementById('live-stocks-table-body');
                 if (tbody) {{
                     let tbHtml = '';
                     data.live_stocks.forEach(s => {{
-                        const isUp = s.change_pct > 0;
-                        const isDown = s.change_pct < 0;
+                        const chg = Number(s.change_pct || 0);
+                        const isUp = chg > 0;
+                        const isDown = chg < 0;
                         const pCls = isUp ? 'up' : (isDown ? 'down' : 'ref');
                         const sign = isUp ? '+' : '';
-                        const volStr = s.volume > 1000000 ? (s.volume / 1000000).toFixed(1) + 'M' : (s.volume / 1000).toFixed(0) + 'k';
-                        const secColor = s.security_status === 'SAFE' ? '#10b981' : '#fbbf24';
+                        const vol = Number(s.volume || 0);
+                        const volStr = vol >= 1000000 ? (vol / 1000000).toFixed(1) + 'M' : (vol / 1000).toFixed(0) + 'k';
+                        const sec = String(s.security_status || 'STANDBY');
+                        const act = String(s.action_code || sec);
+                        const secColor = (sec === 'SAFE' || sec === 'TAKE_PROFIT') ? '#34d399' : ((sec === 'CRITICAL' || sec === 'WARNING') ? '#f87171' : '#fbbf24');
+                        const secIcon = sec === 'SAFE' ? '🟢 ' : (sec === 'TAKE_PROFIT' ? '🎯 ' : ((sec === 'CRITICAL' || sec === 'WARNING') ? '🚨 ' : '🟡 '));
+                        const buyUp = Number(s.active_buy_pct || 50);
 
                         tbHtml += `
                             <tr>
-                                <td><strong style="color:#38bdf8;">${{s.code}}</strong></td>
-                                <td class="price-badge ${{pCls}}">${{Number(s.price).toLocaleString('en-US')}}</td>
-                                <td class="price-badge ${{pCls}}">${{sign}}${{s.change_pct}}%</td>
+                                <td><strong style="color:#38bdf8;">${{escHtml(s.code)}}</strong>${{s.is_holding ? ' ★' : ''}}</td>
+                                <td class="price-badge ${{pCls}}">${{Number(s.price || 0).toLocaleString('en-US')}}</td>
+                                <td class="price-badge ${{pCls}}">${{sign}}${{chg.toFixed(2)}}%</td>
                                 <td>${{volStr}}</td>
-                                <td style="color:#34d399;">${{s.active_buy_pct}}%</td>
-                                <td><span style="color:${{secColor}}; font-weight:700;">${{s.security_status === 'SAFE' ? '🟢 AN TOÀN' : '🟡 STANDBY'}}</span></td>
+                                <td style="color:${{buyUp >= 50 ? '#34d399' : '#f87171'}};">${{buyUp.toFixed(1)}}%</td>
+                                <td><span style="color:${{secColor}}; font-weight:700; font-size:10px;">${{secIcon}}${{escHtml(act)}}</span></td>
                             </tr>
                         `;
                     }});
@@ -5330,27 +5642,31 @@ def generate_portal_html(
                 }}
             }}
 
-            // 8. Directive Chat Stream
+            // 8. Directive Chat Stream (only auto-scroll if near bottom or length changed)
             const chatBox = document.getElementById('directive-history-box');
-            if (chatBox && data.directives_history) {{
+            if (chatBox && Array.isArray(data.directives_history)) {{
+                const prevLen = Number(chatBox.dataset.count || 0);
                 let chatHtml = '';
                 data.directives_history.forEach(d => {{
                     const roleClass = d.role === 'chairman' ? 'chairman' : (d.role === 'sentinel' ? 'sentinel' : 'specialist');
                     chatHtml += `
                         <div class="directive-msg ${{roleClass}}">
                             <div class="directive-msg-head">
-                                <span>${{d.sender}}</span>
-                                <span style="font-weight:400; color:#94a3b8;">${{d.timestamp}}</span>
+                                <span>${{escHtml(d.sender)}}</span>
+                                <span style="font-weight:400; color:#94a3b8;">${{escHtml(d.timestamp)}}</span>
                             </div>
-                            <div class="directive-msg-body">${{d.content}}</div>
+                            <div class="directive-msg-body">${{escHtml(d.content).replace(/\\n/g, '<br>')}}</div>
                         </div>
                     `;
                 }});
                 chatBox.innerHTML = chatHtml;
-                chatBox.scrollTop = chatBox.scrollHeight;
+                if (data.directives_history.length !== prevLen) {{
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                    chatBox.dataset.count = String(data.directives_history.length);
+                }}
             }}
 
-            // 9. Dynamic Victor Sentinel & SSOT Cash Update
+            // 9. Dynamic Victor Sentinel, Holdings & Threat Radar
             if (data.victor_sentinel) {{
                 const vs = data.victor_sentinel;
                 const vCash = document.getElementById('victor-cash-val');
@@ -5369,11 +5685,11 @@ def generate_portal_html(
                 const stockFmt = stockNum.toLocaleString('en-US') + ' ₫';
                 const unPnlNum = Number(vs.unrealized_pnl_vnd ?? 0);
                 const pnlFmt = (unPnlNum > 0 ? '+' : '') + unPnlNum.toLocaleString('en-US') + ' ₫';
-                const pnlPct = vs.unrealized_pnl_pct !== undefined ? vs.unrealized_pnl_pct : 0;
+                const pnlPct = vs.unrealized_pnl_pct !== undefined ? Number(vs.unrealized_pnl_pct).toFixed(2) : '0.00';
                 const pnlCol = unPnlNum >= 0 ? '#34d399' : '#f87171';
-                const realNum = Number(vs.realized_round1_profit_vnd ?? 167119);
+                const realNum = Number(vs.realized_round1_profit_vnd ?? 0);
                 const realFmt = (realNum >= 0 ? '+' : '') + realNum.toLocaleString('en-US') + ' ₫';
-                const totalShares = vs.total_shares !== undefined ? vs.total_shares : ((vs.holdings || []).reduce((acc, h) => acc + (h.shares || 0), 0));
+                const totalShares = vs.total_shares !== undefined ? vs.total_shares : ((vs.holdings || []).reduce((acc, h) => acc + Number(h.shares || 0), 0));
 
                 if (vCash) vCash.innerText = cashFmt;
                 if (vHold) vHold.innerHTML = `Cổ phiếu rủi ro: <strong style="color: #38bdf8;">${{totalShares}} CP (${{stockFmt}} • ${{stockPct}}%)</strong>`;
@@ -5389,36 +5705,218 @@ def generate_portal_html(
                     jamesSub.innerText = `Tỷ trọng: ${{cashPct}}% Cash • ${{stockPct}}% CP (${{totalShares}} CP: ${{syms}})`;
                 }}
 
-                // Update live holdings box if holdings present
+                // Update live holdings box dynamically (0 or N holdings)
                 const holdBox = document.getElementById('victor-live-holdings-box');
-                if (holdBox && vs.holdings && vs.holdings.length > 0) {{
-                    let hHtml = `
-                    <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between;">
-                        <span>📦 DANH MỤC ĐÃ GIẢI NGÂN (${{vs.holdings.length}} MÃ • ${{vs.holdings.length * 100}} CP)</span>
-                        <span style="color: #34d399;">🛡️ STOP 2xATR BẢO VỆ</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 5px;">`;
-                    vs.holdings.forEach(h => {{
-                        const sym = h.symbol;
-                        const sh = h.shares || 100;
-                        const ep = Number(h.entry_price || 0).toLocaleString('en-US');
-                        const cp = Number(h.current_price || h.entry_price || 0).toLocaleString('en-US');
-                        const pnl = Number(h.unrealized_pnl_vnd || 0).toLocaleString('en-US');
-                        const pnlP = h.unrealized_pnl_pct || 0;
-                        const pnlColor = (h.unrealized_pnl_vnd || 0) >= 0 ? '#34d399' : '#f87171';
-                        const sl = Number(h.stop_loss || 0).toLocaleString('en-US');
-                        hHtml += `
-                        <div style="background: rgba(30, 41, 59, 0.7); padding: 6px 8px; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center;">
-                            <div><strong style="color: #38bdf8;">${{sym}}</strong> <span style="color: #94a3b8;">(${{sh}} CP)</span></div>
-                            <div>Vốn: <span style="color: #cbd5e1;">${{ep}} ₫</span> ➔ Live: <span style="color: ${{pnlColor}};">${{cp}} ₫</span></div>
-                            <div>PnL: <strong style="color: ${{pnlColor}};">${{pnl}} ₫ (${{pnlP}}%)</strong></div>
-                            <div style="color: #fbbf24; font-size: 10px;">Stop: ${{sl}} ₫</div>
-                        </div>`;
-                    }});
-                    hHtml += `</div>`;
-                    holdBox.innerHTML = hHtml;
+                if (holdBox) {{
+                    const hList = vs.holdings || [];
+                    if (hList.length === 0) {{
+                        holdBox.innerHTML = `
+                            <div style="font-size: 11px; font-weight: 800; color: #34d399; display: flex; justify-content: space-between;">
+                                <span>📦 DANH MỤC ĐÃ GIẢI NGÂN (0 MÃ • 0 CP)</span>
+                                <span>🛡️ 100% TIỀN MẶT</span>
+                            </div>
+                            <div style="font-size: 11px; color: #94a3b8; padding: 4px 0;">
+                                Két tiền mặt đang bảo toàn 100%, sẵn sàng giải ngân hoặc cập nhật qua Form Sync TCInvest bên dưới.
+                            </div>`;
+                    }} else {{
+                        let hHtml = `
+                        <div style="font-size: 11px; font-weight: 800; color: #38bdf8; display: flex; justify-content: space-between;">
+                            <span>📦 DANH MỤC ĐÃ GIẢI NGÂN (${{hList.length}} MÃ • ${{totalShares}} CP)</span>
+                            <span style="color: #34d399;">🛡️ STOP 2xATR BẢO VỆ</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 5px;">`;
+                        hList.forEach(h => {{
+                            const sym = escHtml(h.symbol);
+                            const sh = Number(h.shares || 0);
+                            const ep = Number(h.avg_cost ?? h.entry_price ?? 0);
+                            const cp = Number(h.current_price ?? ep);
+                            const pnl = Number(h.pnl_vnd ?? h.unrealized_pnl_vnd ?? 0);
+                            const pnlP = Number(h.pnl_pct ?? h.unrealized_pnl_pct ?? 0);
+                            const pnlColor = pnl >= 0 ? '#34d399' : '#f87171';
+                            const sl = Number(h.stop_loss || 0);
+                            hHtml += `
+                            <div style="background: rgba(30, 41, 59, 0.7); padding: 6px 8px; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap;">
+                                <div><strong style="color: #38bdf8;">${{sym}}</strong> <span style="color: #94a3b8;">(${{sh}} CP)</span></div>
+                                <div>Vốn: <span style="color: #cbd5e1;">${{ep.toLocaleString('en-US')}} ₫</span> ➔ Live: <span style="color: ${{pnlColor}};">${{cp.toLocaleString('en-US')}} ₫</span></div>
+                                <div>PnL: <strong style="color: ${{pnlColor}};">${{pnl >= 0 ? '+' : ''}}${{pnl.toLocaleString('en-US')}} ₫ (${{pnlP.toFixed(2)}}%)</strong></div>
+                                <div style="color: #fbbf24; font-size: 10px;">Stop: ${{sl.toLocaleString('en-US')}} ₫</div>
+                            </div>`;
+                        }});
+                        hHtml += `</div>`;
+                        holdBox.innerHTML = hHtml;
+                    }}
                     holdBox.style.display = 'flex';
                 }}
+
+                // Update Radar 5 Cấp Độ Nguy Hiểm
+                const threatCard = document.getElementById('victor-threat-radar-card');
+                if (threatCard) {{
+                    const lvl = Number(vs.threat_level_num || 1);
+                    const lbl = escHtml(vs.threat_label || `CẤP ${{lvl}}`);
+                    const col = lvl <= 1 ? '#10b981' : (lvl === 2 ? '#38bdf8' : (lvl === 3 ? '#fbbf24' : '#ef4444'));
+                    let bars = '';
+                    for (let i = 1; i <= 5; i++) {{
+                        const active = i <= lvl;
+                        bars += `<div style="flex: 1; height: 6px; border-radius: 3px; background: ${{active ? col : 'rgba(148, 163, 184, 0.2)'}}; ${{active ? 'box-shadow: 0 0 6px ' + col + ';' : ''}}"></div>`;
+                    }}
+                    threatCard.innerHTML = `
+                        <div style="font-size: 11px; font-weight: 800; color: #f8fafc; display: flex; justify-content: space-between;">
+                            <span>RADAR 5 CẤP ĐỘ NGUY HIỂM</span>
+                            <span style="color: ${{col}};">● CẤP ${{lvl}}</span>
+                        </div>
+                        <div style="display: flex; gap: 4px;">${{bars}}</div>
+                        <div style="font-size: 10.5px; color: #cbd5e1; line-height: 1.35;">${{lbl}}</div>`;
+                }}
+            }}
+
+            // 10. Weekly Reference Plan Watchlist Sync
+            const wlBody = document.getElementById('weekly-roadmap-watchlist-body');
+            if (wlBody && data.weekly_reference_plan && Array.isArray(data.weekly_reference_plan.approved_watchlist)) {{
+                let wHtml = '';
+                data.weekly_reference_plan.approved_watchlist.forEach(w => {{
+                    const ex = Number(w.executed_shares || 0) > 0;
+                    const sCol = ex ? '#34d399' : '#fbbf24';
+                    const sBg = ex ? 'rgba(16, 185, 129, 0.2)' : 'rgba(245, 158, 11, 0.2)';
+                    wHtml += `
+                        <tr>
+                            <td><strong style="color:#38bdf8;">${{escHtml(w.symbol)}}</strong></td>
+                            <td><span style="color:#cbd5e1;">${{escHtml(w.tier || '')}}</span></td>
+                            <td>${{escHtml(w.entry_zone || '')}}</td>
+                            <td style="color:#ef4444; font-weight:700;">${{escHtml(w.stop_loss_2xatr || '')}}</td>
+                            <td>${{escHtml(w.tp1 || '')}} / ${{escHtml(w.tp2 || '')}}</td>
+                            <td>${{escHtml(w.weekly_limit || '')}}</td>
+                            <td><span style="background:${{sBg}}; color:${{sCol}}; padding:2px 6px; border-radius:4px; font-weight:700;">${{escHtml(w.current_status || '')}}</span></td>
+                        </tr>`;
+                }});
+                if (wHtml) wlBody.innerHTML = wHtml;
+            }}
+
+            // 11. Global Spillover & Execution Slippage / Bull-Trap KPI Sync
+            const spBox = document.getElementById('wr-spillover-slippage-box');
+            if (spBox && data.global_spillover) {{
+                const sp = data.global_spillover;
+                const m = sp.metrics || {{}};
+                const trf = (data.execution_tracker && data.execution_tracker.filters) ? data.execution_tracker.filters : {{}};
+                const sp500 = m.SP500 || {{}};
+                const vix = m.VIX || {{}};
+                const dxy = m.DXY || {{}};
+                const oil = m.WTI_OIL || {{}};
+                const spChg = Number(sp500.change_1d_pct || 0);
+                const mult = Number(sp.risk_multiplier || 1.0).toFixed(2);
+                const cap = Number(sp.max_allocation_pct || 45);
+                const minBu = Number(trf.min_buy_up_pct || 58.0).toFixed(0);
+                const maxRsi = Number(trf.max_rsi_buy || 70.0).toFixed(0);
+                const sigCnt = Number(trf.total_signals_tracked || 0);
+                const avgSlip = Number(trf.avg_slippage_bps || 0);
+                const bCol = escHtml(sp.badge_color || '#38bdf8');
+                spBox.innerHTML = `
+                    <div style="font-size: 10.5px; color: ${{bCol}}; font-weight: 800;">${{escHtml(sp.bias_label || '⚖️ TRUNG TÍNH')}}</div>
+                    <div style="font-size: 10.5px; color: #cbd5e1;">
+                        Hệ số liên thị trường: <strong style="color:#fff;">${{mult}}x</strong> • Trần giải ngân: <strong style="color:#fbbf24;">${{cap}}% NAV</strong>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; font-size: 10px;">
+                        <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">S&amp;P500: <strong style="color:#38bdf8;">${{spChg >= 0 ? '+' : ''}}${{spChg.toFixed(2)}}%</strong></div>
+                        <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">VIX: <strong style="color:#fbbf24;">${{Number(vix.last_price || 18).toFixed(1)}}</strong></div>
+                        <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">DXY: <strong style="color:#cbd5e1;">${{Number(dxy.last_price || 103).toFixed(1)}}</strong></div>
+                        <div style="background: rgba(15, 23, 42, 0.7); padding: 4px 6px; border-radius: 4px; border: 1px solid rgba(148, 163, 184, 0.15);">WTI Oil: <strong style="color:#34d399;">${{Number(oil.last_price || 0).toFixed(1)}}$</strong></div>
+                    </div>
+                    <div style="margin-top: 2px; padding-top: 5px; border-top: 1px dashed rgba(148, 163, 184, 0.25); font-size: 10px; color: #94a3b8;">
+                        🎯 <strong>Bộ Lọc Bull-Trap &amp; Slippage:</strong> BuyUp &ge; <strong style="color:#34d399;">${{minBu}}%</strong> • RSI &le; <strong style="color:#fbbf24;">${{maxRsi}}</strong> • Tín hiệu: <strong style="color:#fff;">${{sigCnt}}</strong> (Slip: ${{avgSlip >= 0 ? '+' : ''}}${{avgSlip.toFixed(1)}} bps)
+                    </div>`;
+            }}
+        }}
+
+        async function logoutPortal() {{
+            try {{
+                await fetch('/api/auth/logout', {{ method: 'POST' }});
+            }} catch (_) {{}}
+            window.location.reload();
+        }}
+
+        function toggleSyncTCInvest() {{
+            const panel = document.getElementById('sync-tcinvest-panel');
+            const btn = document.getElementById('btn-toggle-sync-tcinvest');
+            if (!panel || !btn) return;
+            if (panel.style.display === 'none' || panel.style.display === '') {{
+                panel.style.display = 'flex';
+                btn.innerText = '▴ Thu Gọn';
+            }} else {{
+                panel.style.display = 'none';
+                btn.innerText = '▾ Mở Form';
+            }}
+        }}
+
+        function onSyncActionChange() {{
+            const act = document.getElementById('sync-tc-action')?.value || 'BUY';
+            const orderFields = document.getElementById('sync-tc-order-fields');
+            const cashInput = document.getElementById('sync-tc-cash');
+            const tp1Input = document.getElementById('sync-tc-tp1');
+            if (act === 'RECONCILE') {{
+                if (orderFields) orderFields.style.display = 'none';
+                if (cashInput) cashInput.style.display = 'block';
+                if (tp1Input) tp1Input.style.display = 'block';
+            }} else {{
+                if (orderFields) orderFields.style.display = 'grid';
+                if (cashInput) cashInput.style.display = 'none';
+                if (tp1Input) tp1Input.style.display = 'block';
+            }}
+        }}
+
+        async function submitSyncTCInvest() {{
+            const action = document.getElementById('sync-tc-action')?.value || 'BUY';
+            const symbol = (document.getElementById('sync-tc-symbol')?.value || '').trim().toUpperCase();
+            const shares = Number(document.getElementById('sync-tc-shares')?.value || 0);
+            const price = Number(document.getElementById('sync-tc-price')?.value || 0);
+            const stopLoss = Number(document.getElementById('sync-tc-stop')?.value || 0);
+            const tp1 = Number(document.getElementById('sync-tc-tp1')?.value || 0);
+            const cashVal = document.getElementById('sync-tc-cash')?.value || '';
+            const statusEl = document.getElementById('sync-tcinvest-status');
+            const btn = document.getElementById('btn-submit-sync-tc');
+
+            if (btn) {{ btn.disabled = true; btn.innerText = '⏳ Đang đồng bộ SSOT...'; }}
+            if (statusEl) {{ statusEl.style.color = '#38bdf8'; statusEl.innerText = 'Đang gửi yêu cầu...'; }}
+
+            try {{
+                const payload = {{
+                    action,
+                    symbol,
+                    shares,
+                    price,
+                    stop_loss: stopLoss,
+                    take_profit: tp1,
+                }};
+                if (action === 'RECONCILE' && cashVal !== '') {{
+                    payload.cash_balance_vnd = Number(cashVal);
+                }}
+                const res = await fetch('/api/sync_tcinvest', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify(payload)
+                }});
+                const data = await res.json();
+                if (!res.ok || !data.ok) {{
+                    if (statusEl) {{
+                        statusEl.style.color = '#f87171';
+                        statusEl.innerText = '❌ ' + (data.error || 'Lỗi đồng bộ.');
+                    }}
+                }} else {{
+                    if (statusEl) {{
+                        statusEl.style.color = '#34d399';
+                        statusEl.innerText = '✅ ' + (data.message || 'Đồng bộ thành công!');
+                    }}
+                    if (data.war_room_state) {{
+                        renderTacticalWarRoom(data.war_room_state);
+                    }} else {{
+                        await loadTacticalWarRoomData();
+                    }}
+                }}
+            }} catch (err) {{
+                if (statusEl) {{
+                    statusEl.style.color = '#f87171';
+                    statusEl.innerText = '❌ Lỗi kết nối server: ' + err.message;
+                }}
+            }} finally {{
+                if (btn) {{ btn.disabled = false; btn.innerText = '⚡ Đồng Bộ Ngay Vào SSOT & War-Room'; }}
             }}
         }}
 

@@ -1,0 +1,57 @@
+name: Apex Render Cloud Keep-Alive Ping (Market Hours)
+
+on:
+  schedule:
+    # Ping mỗi 10 phút trong khung giờ 01:00 - 08:50 UTC (08:00 - 15:50 ICT), Thứ 2 - Thứ 6
+    - cron: '*/10 1-8 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      force_ping:
+        description: 'Bỏ qua kiểm tra khung giờ giao dịch và ping ngay lập tức'
+        required: false
+        default: 'true'
+
+jobs:
+  keep_alive_ping:
+    name: Keep-Alive Render Portal (/api/health)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check VN Trading Session Window (08:20 - 15:05 ICT)
+        id: window
+        run: |
+          if [ "${{ github.event.inputs.force_ping }}" = "true" ]; then
+            echo "in_window=true" >> "$GITHUB_OUTPUT"
+            echo "Manual dispatch -> force ping enabled."
+            exit 0
+          fi
+          ICT_HM=$(TZ='Asia/Ho_Chi_Minh' date +%H%M)
+          echo "Current ICT HHMM: $ICT_HM"
+          if [ "$((10#$ICT_HM))" -ge 820 ] && [ "$((10#$ICT_HM))" -le 1505 ]; then
+            echo "in_window=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "in_window=false" >> "$GITHUB_OUTPUT"
+            echo "Ngoài khung giờ 08:20 - 15:05 ICT, bỏ qua ping."
+          fi
+
+      - name: Ping Render Health Endpoint
+        if: steps.window.outputs.in_window == 'true'
+        env:
+          TARGET_URL: ${{ vars.APEX_PORTAL_URL || 'https://apex-hedge-fund.onrender.com' }}
+        run: |
+          HEALTH_URL="${TARGET_URL%/}/api/health"
+          echo "Pinging $HEALTH_URL ..."
+          for i in 1 2 3; do
+            RESP=$(curl -sS -w "\nHTTP_CODE:%{http_code}" --max-time 25 "$HEALTH_URL" || true)
+            CODE=$(echo "$RESP" | grep "HTTP_CODE:" | cut -d: -f2)
+            BODY=$(echo "$RESP" | sed '/HTTP_CODE:/d')
+            echo "Attempt $i -> HTTP $CODE"
+            if [ "$CODE" = "200" ]; then
+              echo "✅ Portal AWAKE: $BODY"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "❌ Keep-Alive ping failed after 3 attempts (last HTTP $CODE)."
+          exit 1

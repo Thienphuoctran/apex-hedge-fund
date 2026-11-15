@@ -1,24 +1,24 @@
 {
-  "last_updated": "2026-11-13 10:26:55",
+  "last_updated": "2026-11-15 20:27:50",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261113-102655",
-  "latest_user_request": "Chủ tịch yêu cầu cập nhật trang web và tìm + sửa dứt điểm lỗi ngày nào mở Apex Institutional Cloud Portal cũng báo 0 Báo Cáo / Không tìm thấy báo cáo nào phù hợp với bộ lọc.",
-  "latest_response_summary": "Đã rà soát và sửa triệt để 5 nguyên nhân gốc rễ: (1) Bổ sung hàm migrate_all_markdown_reports() còn thiếu vào migrate_markdown_to_sqlite.py để hết lỗi ImportError khi container Render khởi động; (2) Sửa apex_report_scanner.py dùng giờ ICT (UTC+7) và luôn hợp nhất file Markdown mới với SQLite; (3) Sửa start_apex_cloud_247.py nâng limit 150->2000 và sửa apex_web_portal_engine.py / apex_tactical_war_room_engine.py đọc động 100% SSOT (12,516,471 đ Cash / 18,151,471 đ NAV / 200 CP HDB & MSH), sửa refreshData() khớp mảng JSON và thêm Smart Date Fallback tự lùi về phiên gần nhất nếu hôm nay chưa phát hành báo cáo; (4) Thêm cơ chế catch-up cột mốc vào apex_institutional_cron_daemon.py, gọi migrate vào run_master_unified_fund.py và sửa assert lỗi thời trong .github/workflows/apex_cloud_sentinel_247.yml; (5) Chạy pipeline 2026-11-13 nạp 345 báo cáo thể chế (17 báo cáo ngày 13/11) vào SQLite Vault.",
+  "sync_id": "SYNC-AG2P-20261115-202750",
+  "latest_user_request": "Triển khai hoàn chỉnh và đẩy toàn bộ nâng cấp Giai đoạn 1 & Giai đoạn 2 Living War-Room V4.0 lên GitHub/Render.",
+  "latest_response_summary": "Đã hoàn tất triển khai, kiểm định 27/27 hạng mục PASSED sau rebase, và đẩy toàn bộ nâng cấp Giai đoạn 1 & 2 lên nhánh main (GitHub origin/main) để Render tự động deploy tại https://apex-hedge-fund.onrender.com. SSOT TCBS 105C307855 giữ nguyên vẹn: Tiền mặt 12,516,471 đ | Cổ phiếu: 100 HDB (giá vốn 22,057đ) + 100 MSH (giá vốn 34,510đ) | NAV SSOT 18,151,471 đ (NAV Live 18,256,471 đ) | Lãi đã chốt V1: +167,119 đ.",
   "latest_completed_tasks": [
-    "Pull va hop nhat 2026-11-12/13 reports tu origin/main giu nguyen SSOT live 12,516,471 VND",
-    "Sua migrate_markdown_to_sqlite.py, apex_report_scanner.py, start_apex_cloud_247.py",
-    "Sua apex_web_portal_engine.py, apex_tactical_war_room_engine.py (SSOT dong + Smart Date Fallback)",
-    "Sua cron daemon catch-up & GitHub Actions workflows",
-    "Chay run_master_unified_fund.py & migrate_markdown_to_sqlite.py (345 bao cao, 17 bao cao 13/11)",
-    "Kiem thu local HTTP server 100% PASS"
+    "Giai đoạn 1 & Giai đoạn 2 hoàn thiện 100% và đã hợp nhất sạch lên origin/main.",
+    "Kiểm định toàn hệ thống hậu rebase: verify_phase1_and_2_e2e.py + comprehensive_system_audit.py PASSED 27/27.",
+    "Keep-Alive GitHub Actions (.github/workflows/apex_keep_alive.yml), Portal PIN Auth, Cloud DB RLS SQL migration & SQLite Mirror sẵn sàng."
   ],
   "latest_strategic_decisions": {
-    "portal_url": "https://apex-hedge-fund.onrender.com",
-    "vault_total_reports": 345,
-    "today_reports_2026_11_13": 17,
-    "ssot_cash_vnd": 12516471.0,
-    "ssot_nav_vnd": 18151471.0,
-    "afternoon_tactic_2026_11_13": "An binh bat dong phien sang, cho danh gia sau 14h00 chieu 13/11"
+    "account_id": "105C307855",
+    "cash_balance_vnd": 12516471.0,
+    "holdings": [
+      "HDB (100 CP @ 22,057đ)",
+      "MSH (100 CP @ 34,510đ)"
+    ],
+    "realized_pnl_vnd": 167119.0,
+    "audit_score": "27/27 PASSED",
+    "git_push_status": "PUSHED_TO_ORIGIN_MAIN"
   },
   "portfolio_snapshot": {
     "total_nav_vnd": 18151471.0,
