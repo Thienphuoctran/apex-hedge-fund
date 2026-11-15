@@ -964,6 +964,90 @@ def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
                 </div>
             </div>
 
+            <div id="wr-demo-pre-session-plan-panel" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(17, 24, 39, 0.94)); border: 1px solid rgba(56, 189, 248, 0.42); border-radius: 12px; padding: 14px;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
+                    <div>
+                        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px;">
+                            <span style="font-size: 13px; font-weight: 900; color: #38bdf8;">🎯 {_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('title') or 'KẾ HOẠCH TÁC CHIẾN DEMO TRƯỚC PHIÊN'))}</span>
+                            <span style="font-size: 10px; padding: 2px 8px; border-radius: 999px; font-weight: 800; background: rgba(251, 191, 36, 0.16); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.45);">{'DEMO TRƯỚC PHIÊN — CƠ ĐỘNG TINH CHỈNH REAL-TIME' if (wr_state.get('demo_tactical_plan_tomorrow') or {}).get('is_pre_session_demo', True) else 'PHIÊN ĐANG GIAO DỊCH LIVE'}</span>
+                        </div>
+                        <div style="font-size: 11px; color: #94a3b8; margin-top: 3px;">
+                            Mã Kịch Bản: <strong style="color:#e2e8f0;">{_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('plan_id') or 'DEMO-PRE-SESSION'))}</strong> • Trạng thái thích nghi: <span style="color:#34d399; font-weight:700;">{_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('auto_adapt_status') or 'Sẵn sàng tự động cập nhật khi thị trường biến động'))}</span>
+                        </div>
+                    </div>
+                    <button onclick="openReportModal('{_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('report_rel_path') or '').replace(chr(92), '/'))}')" style="cursor: pointer; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.45); color: #7dd3fc; border-radius: 8px; padding: 6px 12px; font-size: 11px; font-weight: 800;">📄 Đọc Báo Cáo Demo Chi Tiết</button>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-bottom: 10px;">
+                    <div style="background: rgba(30, 41, 59, 0.75); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 8px; padding: 8px;">
+                        <div style="font-size: 10px; color: #94a3b8;">TÀI KHOẢN TCBS • TỔNG NAV</div>
+                        <div style="font-size: 13px; font-weight: 800; color: #f8fafc;">{_h.escape(str(((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('portfolio_reconciled') or {}).get('account_id') or '105C307855'))} • {'{:,.0f}'.format(float(((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('portfolio_reconciled') or {}).get('total_nav_vnd') or 0))} đ</div>
+                    </div>
+                    <div style="background: rgba(30, 41, 59, 0.75); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 8px;">
+                        <div style="font-size: 10px; color: #94a3b8;">TIỀN MẶT KHẢ DỤNG</div>
+                        <div style="font-size: 13px; font-weight: 800; color: #34d399;">{'{:,.0f}'.format(float(((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('portfolio_reconciled') or {}).get('cash_vnd') or 0))} đ ({float(((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('portfolio_reconciled') or {}).get('cash_pct') or 0):.1f}%)</div>
+                    </div>
+                    <div style="background: rgba(30, 41, 59, 0.75); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 8px;">
+                        <div style="font-size: 10px; color: #94a3b8;">GIÁ TRỊ CỔ PHIẾU &amp; LÃI TẠM TÍNH</div>
+                        <div style="font-size: 13px; font-weight: 800; color: #38bdf8;">{'{:,.0f}'.format(float(((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('portfolio_reconciled') or {}).get('stocks_val_vnd') or 0))} đ ({float(((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('portfolio_reconciled') or {}).get('unrealized_pnl_pct') or 0):+.2f}%)</div>
+                    </div>
+                    <div style="background: rgba(30, 41, 59, 0.75); border: 1px solid rgba(251, 191, 36, 0.25); border-radius: 8px; padding: 8px;">
+                        <div style="font-size: 10px; color: #94a3b8;">VN-INDEX &amp; ĐỘ RỘNG</div>
+                        <div style="font-size: 13px; font-weight: 800; color: #fbbf24;">{float(((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('market_snapshot') or {}).get('vn_index') or 0):,.2f} ({float(((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('market_snapshot') or {}).get('vn_index_chg_pct') or 0):+.2f}%)</div>
+                    </div>
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; margin-bottom: 8px; padding: 6px 10px; background: rgba(15, 23, 42, 0.7); border-left: 3px solid #38bdf8; border-radius: 4px;">
+                    {_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('constitution_note') or ''))}
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 8px; margin-bottom: 10px;">
+                    {''.join(["<div style='background: rgba(30,41,59,0.68); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 8px;'><div style='font-size:10.5px; font-weight:800; color:#38bdf8;'>" + _h.escape(str(r.get('slot', ''))) + " • " + _h.escape(str(r.get('phase', ''))) + "</div><div style='font-size:10.5px; color:#cbd5e1; margin-top:3px;'>" + _h.escape(str(r.get('action', ''))) + "</div></div>" for r in ((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('hourly_roadmap') or [])])}
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px;">
+                    {''.join(["<div style='background: " + ("rgba(16,185,129,0.12)" if m.get('is_active_now') else "rgba(30,41,59,0.6)") + "; border: 1px solid " + ("rgba(16,185,129,0.55)" if m.get('is_active_now') else "rgba(148,163,184,0.22)") + "; border-radius: 8px; padding: 8px;'><div style='font-size:11px; font-weight:800; color:" + ("#34d399" if m.get('is_active_now') else "#e2e8f0") + ";'>" + _h.escape(str(m.get('title', ''))) + (" [ĐANG KÍCH HOẠT]" if m.get('is_active_now') else "") + "</div><div style='font-size:10px; color:#fbbf24; margin-top:2px;'>Kích hoạt: " + _h.escape(str(m.get('trigger', ''))) + "</div><div style='font-size:10.5px; color:#cbd5e1; margin-top:3px;'>" + _h.escape(str(m.get('action', ''))) + "</div></div>" for m in ((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('contingency_modes') or [])])}
+                </div>
+            </div>
+
+            <div id="victor-realtime-alert-center-panel" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(24, 24, 37, 0.94)); border: 1px solid rgba(245, 158, 11, 0.45); border-radius: 12px; padding: 14px;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <div>
+                        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px;">
+                            <span style="font-size: 13px; font-weight: 900; color: #fbbf24;">🛡️ VICTOR SENTINEL — TRUNG TÂM GIÁM SÁT &amp; BÁO ĐỘNG ĐA PHIÊN (24/7)</span>
+                            <span style="font-size: 10px; padding: 2px 8px; border-radius: 999px; font-weight: 800; background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.45);">{'HOẠT ĐỘNG LIÊN TỤC TẤT CẢ CÁC PHIÊN' if (wr_state.get('victor_realtime_alert_center') or {}).get('always_active_across_all_sessions', True) else 'GIÁM SÁT ĐỊNH KỲ'}</span>
+                        </div>
+                        <div style="font-size: 11px; color: #94a3b8; margin-top: 3px;">
+                            Phiên: <strong style="color:#e2e8f0;">{_h.escape(str(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('session_phase') or ''))}</strong> • Chế độ: <span style="color:#fbbf24;">{_h.escape(str(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('market_regime_label') or ''))}</span> • Quét lúc: {_h.escape(str(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('scan_timestamp') or ''))}
+                        </div>
+                    </div>
+                    <button onclick="openReportModal('09_Realtime_Portfolio_Sentinel/{__import__('datetime').datetime.now().strftime('%Y-%m-%d')}_Victor_Realtime_Trigger_Report.md')" style="cursor: pointer; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.45); color: #fcd34d; border-radius: 8px; padding: 6px 12px; font-size: 11px; font-weight: 800;">🚨 Mở Báo Cáo Trigger Victor</button>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 10px;">
+                    <div style="background: rgba(30,41,59,0.72); border-radius: 8px; padding: 7px 9px; border: 1px solid rgba(148,163,184,0.22);"><div style="font-size:10px; color:#94a3b8;">ĐANG GIÁM SÁT</div><div style="font-size:14px; font-weight:900; color:#f8fafc;">{int(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('total_monitored') or 0)} mã</div></div>
+                    <div style="background: rgba(16,185,129,0.12); border-radius: 8px; padding: 7px 9px; border: 1px solid rgba(16,185,129,0.35);"><div style="font-size:10px; color:#6ee7b7;">ĐẠT VÙNG MUA LO</div><div style="font-size:14px; font-weight:900; color:#34d399;">{int(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('buy_zone_count') or 0)} mã</div></div>
+                    <div style="background: rgba(56,189,248,0.12); border-radius: 8px; padding: 7px 9px; border: 1px solid rgba(56,189,248,0.35);"><div style="font-size:10px; color:#7dd3fc;">NGƯỠNG CHỐT LỜI</div><div style="font-size:14px; font-weight:900; color:#38bdf8;">{int(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('take_profit_count') or 0)} mã</div></div>
+                    <div style="background: rgba(244,63,94,0.12); border-radius: 8px; padding: 7px 9px; border: 1px solid rgba(244,63,94,0.4);"><div style="font-size:10px; color:#fda4af;">CẮT LỖ KHẨN CẤP</div><div style="font-size:14px; font-weight:900; color:#fb7185;">{int(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('critical_stop_count') or 0)} mã</div></div>
+                    <div style="background: rgba(245,158,11,0.12); border-radius: 8px; padding: 7px 9px; border: 1px solid rgba(245,158,11,0.35);"><div style="font-size:10px; color:#fcd34d;">SÁT NGƯỠNG STOP</div><div style="font-size:14px; font-weight:900; color:#fbbf24;">{int(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('near_stop_count') or 0)} mã</div></div>
+                    <div style="background: rgba(239,68,68,0.1); border-radius: 8px; padding: 7px 9px; border: 1px solid rgba(239,68,68,0.32);"><div style="font-size:10px; color:#fca5a5;">CẤM BẮT DAO RƠI</div><div style="font-size:14px; font-weight:900; color:#f87171;">{int(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('avoid_knife_count') or 0)} mã</div></div>
+                </div>
+                <div style="font-size: 11px; color: #e2e8f0; margin-bottom: 8px;">{_h.escape(str(((wr_state.get('victor_realtime_alert_center') or {}).get('summary') or {}).get('headline') or ''))}</div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(148,163,184,0.25); color: #94a3b8; text-align: left;">
+                                <th style="padding: 6px;">Mã CP</th>
+                                <th style="padding: 6px;">Giá Live</th>
+                                <th style="padding: 6px;">Buy-Up%</th>
+                                <th style="padding: 6px;">Mua LO / Stop / TP1</th>
+                                <th style="padding: 6px;">Cách Ngưỡng</th>
+                                <th style="padding: 6px;">Cảnh Báo Victor</th>
+                                <th style="padding: 6px;">Hành Động Khuyến Nghị</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {''.join(["<tr style='border-bottom: 1px solid rgba(148,163,184,0.12);'><td style='padding:6px; font-weight:800; color:#f8fafc;'>" + _h.escape(str(a.get('symbol', ''))) + (" <span style='font-size:9px;background:rgba(56,189,248,0.2);color:#38bdf8;padding:1px 4px;border-radius:4px;'>GIỮ</span>" if a.get('is_holding') else "") + "</td><td style='padding:6px; color:#e2e8f0;'>" + "{:,.0f}".format(float(a.get('price') or 0)) + " đ (" + "{:+.2f}".format(float(a.get('change_pct') or 0)) + "%)</td><td style='padding:6px; color:" + ("#34d399" if float(a.get('buy_up_pct') or 0) >= 60 else "#f87171") + "; font-weight:700;'>" + "{:.1f}%".format(float(a.get('buy_up_pct') or 0)) + "</td><td style='padding:6px; color:#cbd5e1;'>" + "{:,.0f}".format(float(a.get('probe_target') or 0)) + " / " + "{:,.0f}".format(float(a.get('stop_loss') or 0)) + " / " + "{:,.0f}".format(float(a.get('tp1') or 0)) + "</td><td style='padding:6px; color:#94a3b8;'>Stop " + "{:+.1f}%".format(float(a.get('dist_to_stop_pct') or 0)) + " • TP1 " + "{:+.1f}%".format(float(a.get('dist_to_tp1_pct') or 0)) + "</td><td style='padding:6px; font-weight:800; color:" + ("#fb7185" if str(a.get('severity')) in ('CRITICAL', 'HIGH') else ("#34d399" if str(a.get('category')) in ('BUY_ZONE', 'TAKE_PROFIT') else "#fbbf24")) + ";'>" + _h.escape(str(a.get('trigger_badge', ''))) + "</td><td style='padding:6px; color:#cbd5e1;'>" + _h.escape(str(a.get('recommended_action', ''))) + "</td></tr>" for a in ((wr_state.get('victor_realtime_alert_center') or {}).get('alerts') or [])])}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <div id="victor-deep-surveillance-panel" style="background: rgba(15, 23, 42, 0.94); border: 1px solid rgba(251, 191, 36, 0.35); border-radius: 12px; padding: 14px;">
                 <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
                     <div style="font-size: 13px; font-weight: 900; color: #fbbf24;">🛡️ VICTOR (BAN 9 SENTINEL) GIÁM SÁT SÂU DANH MỤC &amp; TẦM NGẮM TIỀM NĂNG</div>
@@ -6936,6 +7020,12 @@ def generate_portal_html(
             }}
 
             // 14. V8.0 Live Multi-Department War-Room Floor & Portfolio Tab Sync
+            if (data.demo_tactical_plan_tomorrow) {{
+                renderDemoPreSessionPlan(data.demo_tactical_plan_tomorrow);
+            }}
+            if (data.victor_realtime_alert_center) {{
+                renderVictorRealtimeAlertCenter(data.victor_realtime_alert_center);
+            }}
             if (data.victor_deep_surveillance) {{
                 renderVictorDeepSurveillance(data.victor_deep_surveillance);
             }}
@@ -6958,6 +7048,153 @@ def generate_portal_html(
                     data.live_execution_master_plan || {{}}
                 );
             }}
+        }}
+
+        function renderDemoPreSessionPlan(demo) {{
+            const el = document.getElementById('wr-demo-pre-session-plan-panel');
+            if (!el || !demo) return;
+            const esc = (v) => String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            const fmt = (n) => Number(n || 0).toLocaleString('en-US', {{ maximumFractionDigits: 0 }});
+            const pr = demo.portfolio_reconciled || {{}};
+            const ms = demo.market_snapshot || {{}};
+            const relPath = String(demo.report_rel_path || '').split(String.fromCharCode(92)).join('/');
+            const safeRel = esc(relPath).replace(/'/g, '&#39;');
+            const statusBadge = demo.is_pre_session_demo !== false
+                ? 'DEMO TRƯỚC PHIÊN — CƠ ĐỘNG TINH CHỈNH REAL-TIME'
+                : 'PHIÊN ĐANG GIAO DỊCH LIVE';
+            const statusStyle = demo.is_pre_session_demo !== false
+                ? 'background: rgba(251, 191, 36, 0.16); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.45);'
+                : 'background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.45);';
+
+            const roadmapHtml = (demo.hourly_roadmap || []).map((r) =>
+                '<div style="background: rgba(30,41,59,0.68); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 8px;">' +
+                    '<div style="font-size:10.5px; font-weight:800; color:#38bdf8;">' + esc(r.slot) + ' • ' + esc(r.phase) + '</div>' +
+                    '<div style="font-size:10.5px; color:#cbd5e1; margin-top:3px;">' + esc(r.action) + '</div>' +
+                '</div>'
+            ).join('');
+
+            const buyHtml = (demo.buy_zone_candidates || []).map((b) =>
+                '<div style="padding:6px 8px; border-radius:6px; background:rgba(16,185,129,0.09); border:1px solid rgba(16,185,129,0.28); margin-bottom:6px;">' +
+                    '<div style="display:flex; justify-content:space-between; font-size:11px; font-weight:800; color:#34d399;"><span>' + esc(b.symbol) + ' • ' + fmt(b.price) + ' đ</span><span>' + esc(b.badge || '') + '</span></div>' +
+                    '<div style="font-size:10px; color:#cbd5e1; margin-top:2px;">Kê LO ≤ ' + fmt(b.probe_target) + ' | Stop ' + fmt(b.stop_loss) + ' | TP1 ' + fmt(b.tp1) + ' | BuyUp ' + Number(b.buy_up_pct || 0).toFixed(1) + '%</div>' +
+                    '<div style="font-size:10px; color:#94a3b8; margin-top:2px;">' + esc(b.action) + '</div>' +
+                '</div>'
+            ).join('');
+
+            const holdHtml = (demo.holdings_brief || []).map((h) =>
+                '<div style="padding:6px 8px; border-radius:6px; background:rgba(56,189,248,0.09); border:1px solid rgba(56,189,248,0.28); margin-bottom:6px;">' +
+                    '<div style="display:flex; justify-content:space-between; font-size:11px; font-weight:800; color:#38bdf8;"><span>' + esc(h.symbol) + ' • ' + fmt(h.price) + ' đ</span><span>' + esc(h.badge || '') + '</span></div>' +
+                    '<div style="font-size:10px; color:#cbd5e1; margin-top:2px;">Stop ' + fmt(h.stop_loss) + ' | TP1 ' + fmt(h.tp1) + ' | BuyUp ' + Number(h.buy_up_pct || 0).toFixed(1) + '%</div>' +
+                    '<div style="font-size:10px; color:#94a3b8; margin-top:2px;">' + esc(h.action) + '</div>' +
+                '</div>'
+            ).join('');
+
+            const avoidHtml = (demo.avoid_or_wait_candidates || []).map((w) =>
+                '<div style="padding:6px 8px; border-radius:6px; background:rgba(244,63,94,0.09); border:1px solid rgba(244,63,94,0.28); margin-bottom:6px;">' +
+                    '<div style="display:flex; justify-content:space-between; font-size:11px; font-weight:800; color:#fb7185;"><span>' + esc(w.symbol) + ' • ' + fmt(w.price) + ' đ</span><span>' + esc(w.badge || '') + '</span></div>' +
+                    '<div style="font-size:10px; color:#cbd5e1; margin-top:2px;">BuyUp ' + Number(w.buy_up_pct || 0).toFixed(1) + '% — ' + esc(w.action) + '</div>' +
+                '</div>'
+            ).join('');
+
+            const modesHtml = (demo.contingency_modes || []).map((m) =>
+                '<div style="background: ' + (m.is_active_now ? 'rgba(16,185,129,0.12)' : 'rgba(30,41,59,0.6)') + '; border: 1px solid ' + (m.is_active_now ? 'rgba(16,185,129,0.55)' : 'rgba(148,163,184,0.22)') + '; border-radius: 8px; padding: 8px;">' +
+                    '<div style="font-size:11px; font-weight:800; color:' + (m.is_active_now ? '#34d399' : '#e2e8f0') + ';">' + esc(m.title) + (m.is_active_now ? ' [ĐANG KÍCH HOẠT]' : '') + '</div>' +
+                    '<div style="font-size:10px; color:#fbbf24; margin-top:2px;">Kích hoạt: ' + esc(m.trigger) + '</div>' +
+                    '<div style="font-size:10.5px; color:#cbd5e1; margin-top:3px;">' + esc(m.action) + '</div>' +
+                '</div>'
+            ).join('');
+
+            const pnlSign = Number(pr.unrealized_pnl_pct || 0) >= 0 ? '+' : '';
+            const vniSign = Number(ms.vn_index_chg_pct || 0) >= 0 ? '+' : '';
+
+            el.innerHTML =
+                '<div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px;">' +
+                    '<div>' +
+                        '<div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">' +
+                            '<span style="font-size:13px; font-weight:900; color:#38bdf8;">🎯 ' + esc(demo.title || 'KẾ HOẠCH TÁC CHIẾN DEMO TRƯỚC PHIÊN') + '</span>' +
+                            '<span style="font-size:10px; padding:2px 8px; border-radius:999px; font-weight:800; ' + statusStyle + '">' + statusBadge + '</span>' +
+                        '</div>' +
+                        '<div style="font-size:11px; color:#94a3b8; margin-top:3px;">Mã Kịch Bản: <strong style="color:#e2e8f0;">' + esc(demo.plan_id) + '</strong> • Trạng thái thích nghi: <span style="color:#34d399; font-weight:700;">' + esc(demo.auto_adapt_status) + '</span></div>' +
+                    '</div>' +
+                    (relPath ? '<button onclick="openReportModal(\'' + safeRel + '\')" style="cursor:pointer; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.45); color:#7dd3fc; border-radius:8px; padding:6px 12px; font-size:11px; font-weight:800;">📄 Đọc Báo Cáo Demo Chi Tiết</button>' : '') +
+                '</div>' +
+                '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:8px; margin-bottom:10px;">' +
+                    '<div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:8px;"><div style="font-size:10px; color:#94a3b8;">TÀI KHOẢN TCBS • TỔNG NAV</div><div style="font-size:13px; font-weight:800; color:#f8fafc;">' + esc(pr.account_id || '105C307855') + ' • ' + fmt(pr.total_nav_vnd) + ' đ</div></div>' +
+                    '<div style="background:rgba(30,41,59,0.75); border:1px solid rgba(16,185,129,0.25); border-radius:8px; padding:8px;"><div style="font-size:10px; color:#94a3b8;">TIỀN MẶT KHẢ DỤNG</div><div style="font-size:13px; font-weight:800; color:#34d399;">' + fmt(pr.cash_vnd) + ' đ (' + Number(pr.cash_pct || 0).toFixed(1) + '%)</div></div>' +
+                    '<div style="background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:8px; padding:8px;"><div style="font-size:10px; color:#94a3b8;">GIÁ TRỊ CỔ PHIẾU &amp; LÃI TẠM TÍNH</div><div style="font-size:13px; font-weight:800; color:#38bdf8;">' + fmt(pr.stocks_val_vnd) + ' đ (' + pnlSign + Number(pr.unrealized_pnl_pct || 0).toFixed(2) + '%)</div></div>' +
+                    '<div style="background:rgba(30,41,59,0.75); border:1px solid rgba(251,191,36,0.25); border-radius:8px; padding:8px;"><div style="font-size:10px; color:#94a3b8;">VN-INDEX &amp; ĐỘ RỘNG</div><div style="font-size:13px; font-weight:800; color:#fbbf24;">' + Number(ms.vn_index || 0).toLocaleString('en-US', {{ minimumFractionDigits: 2, maximumFractionDigits: 2 }}) + ' (' + vniSign + Number(ms.vn_index_chg_pct || 0).toFixed(2) + '%)</div></div>' +
+                '</div>' +
+                '<div style="font-size:11px; color:#cbd5e1; margin-bottom:8px; padding:6px 10px; background:rgba(15,23,42,0.7); border-left:3px solid #38bdf8; border-radius:4px;">' + esc(demo.constitution_note || '') + ' <span style="color:#94a3b8;">(' + esc(demo.summit_basis || '') + ')</span></div>' +
+                '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(175px, 1fr)); gap:8px; margin-bottom:10px;">' + roadmapHtml + '</div>' +
+                '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px; margin-bottom:10px;">' +
+                    '<div><div style="font-size:10.5px; font-weight:800; color:#38bdf8; margin-bottom:5px;">💼 VỊ THẾ ĐANG NẮM GIỮ</div>' + (holdHtml || '<div style="font-size:10px;color:#94a3b8;">Chưa có vị thế nắm giữ.</div>') + '</div>' +
+                    '<div><div style="font-size:10.5px; font-weight:800; color:#34d399; margin-bottom:5px;">🎯 ĐẠT VÙNG MUA THĂM DÒ LO</div>' + (buyHtml || '<div style="font-size:10px;color:#94a3b8;">Chưa có mã đạt điểm mua LO.</div>') + '</div>' +
+                    '<div><div style="font-size:10.5px; font-weight:800; color:#fb7185; margin-bottom:5px;">⛔ NÉ TRÁNH / CHỜ XÁC NHẬN</div>' + (avoidHtml || '<div style="font-size:10px;color:#94a3b8;">Không có mã cảnh báo dao rơi.</div>') + '</div>' +
+                '</div>' +
+                '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px;">' + modesHtml + '</div>';
+        }}
+
+        function renderVictorRealtimeAlertCenter(vc) {{
+            const el = document.getElementById('victor-realtime-alert-center-panel');
+            if (!el || !vc) return;
+            const esc = (v) => String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            const fmt = (n) => Number(n || 0).toLocaleString('en-US', {{ maximumFractionDigits: 0 }});
+            const s = vc.summary || {{}};
+            const alerts = Array.isArray(vc.alerts) ? vc.alerts : [];
+            const vnToday = new Intl.DateTimeFormat('en-CA', {{ timeZone: 'Asia/Ho_Chi_Minh' }}).format(new Date());
+            const repPath = String(vc.report_rel_path || ('09_Realtime_Portfolio_Sentinel/' + vnToday + '_Victor_Realtime_Trigger_Report.md')).split(String.fromCharCode(92)).join('/');
+            const safeRep = esc(repPath).replace(/'/g, '&#39;');
+            const activeBadge = vc.always_active_across_all_sessions !== false
+                ? 'HOẠT ĐỘNG LIÊN TỤC TẤT CẢ CÁC PHIÊN'
+                : 'GIÁM SÁT ĐỊNH KỲ';
+
+            const rowsHtml = alerts.map((a) => {{
+                const chg = Number(a.change_pct || 0);
+                const chgTxt = (chg >= 0 ? '+' : '') + chg.toFixed(2) + '%';
+                const bu = Number(a.buy_up_pct || 0);
+                const buColor = bu >= 60 ? '#34d399' : '#f87171';
+                const sev = String(a.severity || '');
+                const cat = String(a.category || '');
+                const badgeColor = (sev === 'CRITICAL' || sev === 'HIGH') ? '#fb7185' : ((cat === 'BUY_ZONE' || cat === 'TAKE_PROFIT') ? '#34d399' : '#fbbf24');
+                const dStop = Number(a.dist_to_stop_pct || 0);
+                const dTp1 = Number(a.dist_to_tp1_pct || 0);
+                return '<tr style="border-bottom:1px solid rgba(148,163,184,0.12);">' +
+                    '<td style="padding:6px; font-weight:800; color:#f8fafc;">' + esc(a.symbol) + (a.is_holding ? ' <span style="font-size:9px;background:rgba(56,189,248,0.2);color:#38bdf8;padding:1px 4px;border-radius:4px;">GIỮ</span>' : '') + '</td>' +
+                    '<td style="padding:6px; color:#e2e8f0;">' + fmt(a.price) + ' đ (' + chgTxt + ')</td>' +
+                    '<td style="padding:6px; color:' + buColor + '; font-weight:700;">' + bu.toFixed(1) + '%</td>' +
+                    '<td style="padding:6px; color:#cbd5e1;">' + fmt(a.probe_target) + ' / ' + fmt(a.stop_loss) + ' / ' + fmt(a.tp1) + '</td>' +
+                    '<td style="padding:6px; color:#94a3b8;">Stop ' + (dStop >= 0 ? '+' : '') + dStop.toFixed(1) + '% • TP1 ' + (dTp1 >= 0 ? '+' : '') + dTp1.toFixed(1) + '%</td>' +
+                    '<td style="padding:6px; font-weight:800; color:' + badgeColor + ';">' + esc(a.trigger_badge) + '</td>' +
+                    '<td style="padding:6px; color:#cbd5e1;">' + esc(a.recommended_action) + '</td>' +
+                '</tr>';
+            }}).join('');
+
+            el.innerHTML =
+                '<div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px;">' +
+                    '<div>' +
+                        '<div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">' +
+                            '<span style="font-size:13px; font-weight:900; color:#fbbf24;">🛡️ VICTOR SENTINEL — TRUNG TÂM GIÁM SÁT &amp; BÁO ĐỘNG ĐA PHIÊN (24/7)</span>' +
+                            '<span style="font-size:10px; padding:2px 8px; border-radius:999px; font-weight:800; background:rgba(16,185,129,0.18); color:#34d399; border:1px solid rgba(16,185,129,0.45);">' + activeBadge + '</span>' +
+                        '</div>' +
+                        '<div style="font-size:11px; color:#94a3b8; margin-top:3px;">Phiên: <strong style="color:#e2e8f0;">' + esc(s.session_phase) + '</strong> • Chế độ: <span style="color:#fbbf24;">' + esc(s.market_regime_label) + '</span> • Quét lúc: ' + esc(s.scan_timestamp) + '</div>' +
+                    '</div>' +
+                    '<button onclick="openReportModal(\'' + safeRep + '\')" style="cursor:pointer; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.45); color:#fcd34d; border-radius:8px; padding:6px 12px; font-size:11px; font-weight:800;">🚨 Mở Báo Cáo Trigger Victor</button>' +
+                '</div>' +
+                '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:8px; margin-bottom:10px;">' +
+                    '<div style="background:rgba(30,41,59,0.72); border-radius:8px; padding:7px 9px; border:1px solid rgba(148,163,184,0.22);"><div style="font-size:10px; color:#94a3b8;">ĐANG GIÁM SÁT</div><div style="font-size:14px; font-weight:900; color:#f8fafc;">' + Number(s.total_monitored || 0) + ' mã</div></div>' +
+                    '<div style="background:rgba(16,185,129,0.12); border-radius:8px; padding:7px 9px; border:1px solid rgba(16,185,129,0.35);"><div style="font-size:10px; color:#6ee7b7;">ĐẠT VÙNG MUA LO</div><div style="font-size:14px; font-weight:900; color:#34d399;">' + Number(s.buy_zone_count || 0) + ' mã</div></div>' +
+                    '<div style="background:rgba(56,189,248,0.12); border-radius:8px; padding:7px 9px; border:1px solid rgba(56,189,248,0.35);"><div style="font-size:10px; color:#7dd3fc;">NGƯỠNG CHỐT LỜI</div><div style="font-size:14px; font-weight:900; color:#38bdf8;">' + Number(s.take_profit_count || 0) + ' mã</div></div>' +
+                    '<div style="background:rgba(244,63,94,0.12); border-radius:8px; padding:7px 9px; border:1px solid rgba(244,63,94,0.4);"><div style="font-size:10px; color:#fda4af;">CẮT LỖ KHẨN CẤP</div><div style="font-size:14px; font-weight:900; color:#fb7185;">' + Number(s.critical_stop_count || 0) + ' mã</div></div>' +
+                    '<div style="background:rgba(245,158,11,0.12); border-radius:8px; padding:7px 9px; border:1px solid rgba(245,158,11,0.35);"><div style="font-size:10px; color:#fcd34d;">SÁT NGƯỠNG STOP</div><div style="font-size:14px; font-weight:900; color:#fbbf24;">' + Number(s.near_stop_count || 0) + ' mã</div></div>' +
+                    '<div style="background:rgba(239,68,68,0.1); border-radius:8px; padding:7px 9px; border:1px solid rgba(239,68,68,0.32);"><div style="font-size:10px; color:#fca5a5;">CẤM BẮT DAO RƠI</div><div style="font-size:14px; font-weight:900; color:#f87171;">' + Number(s.avoid_knife_count || 0) + ' mã</div></div>' +
+                '</div>' +
+                '<div style="font-size:11px; color:#e2e8f0; margin-bottom:8px;">' + esc(s.headline || '') + '</div>' +
+                '<div style="overflow-x:auto;">' +
+                    '<table style="width:100%; border-collapse:collapse; font-size:11px;">' +
+                        '<thead><tr style="border-bottom:1px solid rgba(148,163,184,0.25); color:#94a3b8; text-align:left;"><th style="padding:6px;">Mã CP</th><th style="padding:6px;">Giá Live</th><th style="padding:6px;">Buy-Up%</th><th style="padding:6px;">Mua LO / Stop / TP1</th><th style="padding:6px;">Cách Ngưỡng</th><th style="padding:6px;">Cảnh Báo Victor</th><th style="padding:6px;">Hành Động Khuyến Nghị</th></tr></thead>' +
+                        '<tbody>' + rowsHtml + '</tbody>' +
+                    '</table>' +
+                '</div>';
         }}
 
         function renderVictorDeepSurveillance(vData) {{

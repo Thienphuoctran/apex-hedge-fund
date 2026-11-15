@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-16 00:41:56",
-  "target_url": "http://127.0.0.1:8000",
+  "timestamp": "2026-11-16 02:06:52",
+  "target_url": "http://127.0.0.1:18080",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -35,7 +35,7 @@
       "module": "Living_Brain",
       "check": "Snapshot Brain khớp SSOT & Watchlist động",
       "status": "PASSED",
-      "details": "Brain Cash: 12,516,471 đ | Stocks: 6 | Regime: SIDEWAY_CHOPPY"
+      "details": "Brain Cash: 12,516,471 đ | Stocks: 12 | Regime: SIDEWAY_CHOPPY"
     },
     {
       "module": "Living_Brain",
@@ -53,19 +53,19 @@
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room khớp SSOT & không mock index",
       "status": "PASSED",
-      "details": "WR Cash: 12,516,471 | VN-Index: 1734.93 | Picks: 6"
+      "details": "WR Cash: 12,516,471 | VN-Index: 1734.93 | Picks: 12"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room/stream (SSE)",
       "status": "PASSED",
-      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 114218"
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 149502"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/reports",
       "status": "PASSED",
-      "details": "Tổng số báo cáo: 380"
+      "details": "Tổng số báo cáo: 382"
     },
     {
       "module": "Live_Endpoint",
@@ -155,7 +155,7 @@
       "module": "Phase2_Slippage",
       "check": "Execution Slippage & Bull-Trap Tracker",
       "status": "PASSED",
-      "details": "BuyUp>=58.0% | RSI<=70.0 | Signals=2"
+      "details": "BuyUp>=58.0% | RSI<=70.0 | Signals=3"
     },
     {
       "module": "Phase2_CloudDB",
@@ -221,7 +221,7 @@
       "module": "Phase5_EnterpriseRosterAndPackets",
       "check": "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
       "status": "PASSED",
-      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: 310b96eb2bb0..."
+      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: fd933c22d2e9..."
     },
     {
       "module": "Phase5_AdversarialDebateAndVeto",
@@ -245,25 +245,25 @@
       "module": "Phase5_CloudDB_V7_EnterpriseSync",
       "check": "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
       "status": "PASSED",
-      "details": "LocalSaved=True | VaultRows=9 | MigrationRLS=True | CloudSynced=False"
+      "details": "LocalSaved=True | VaultRows=11 | MigrationRLS=True | CloudSynced=False"
     },
     {
       "module": "Phase6_ZeroStaleHardcodedWebStrings",
       "check": "Zero stale hardcoded dates, prices, or old cash numbers in Portal HTML",
       "status": "PASSED",
-      "details": "HTML Bytes: 801892 | StaleFound: []"
+      "details": "HTML Bytes: 858325 | StaleFound: []"
     },
     {
       "module": "Phase6_VictorDeepSurveillanceAndAlphaWatchlist",
       "check": "Victor 2-Tier Deep Surveillance (Held Positions + Alpha Watchlist Lot-100 Check)",
       "status": "PASSED",
-      "details": "Held: ['HDB', 'MSH'] | WatchlistCount: 8 | FieldsOK: True"
+      "details": "Held: ['HDB', 'MSH'] | WatchlistCount: 10 | FieldsOK: True"
     },
     {
       "module": "Phase6_LiveExecutionMasterPlan",
       "check": "Dynamic Market-Adaptive Live Execution Master Plan & 3 Contingency Scenarios",
       "status": "PASSED",
-      "details": "PlanID: WAR-PLAN-20261116-0041 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
+      "details": "PlanID: WAR-PLAN-20261116-0206 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
     },
     {
       "module": "Phase6_DepartmentWorkstationAndReportAuthenticity",
@@ -318,10 +318,28 @@
       "check": "Tương tác chỉ thị Chủ tịch trực tiếp trong Phòng Họp Thượng Đỉnh (Đa Ban phản hồi)",
       "status": "PASSED",
       "details": "Ok: True | MultiDeptReplies: 4"
+    },
+    {
+      "module": "Phase8_Victor247RealtimeAlertCenter",
+      "check": "Victor 24/7 giám sát liên tục mọi phiên & đầy đủ trường cảnh báo trigger",
+      "status": "PASSED",
+      "details": "AlwaysActive=True | Monitored=12 | Alerts=12"
+    },
+    {
+      "module": "Phase8_PreSessionDemoTacticalPlan",
+      "check": "Kế hoạch tác chiến Demo trước phiên cơ động 5 khung giờ & 3 kịch bản ứng biến",
+      "status": "PASSED",
+      "details": "PlanID=DEMO-PRE-SESSION-20261116 | Demo=True | Slots=5 | Modes=3 | Acc=105C307855"
+    },
+    {
+      "module": "Phase8_DiskReportsAndWarRoomPortalUI",
+      "check": "Hồ sơ Markdown trên ổ cứng & UI/JS War-Room Demo Plan + Victor Alert Center",
+      "status": "PASSED",
+      "details": "DemoMD=True | VictorMD=True | UITokens=True"
     }
   ],
-  "total_checks": 52,
-  "passed_checks": 52,
+  "total_checks": 55,
+  "passed_checks": 55,
   "warnings": [],
   "errors": []
 }

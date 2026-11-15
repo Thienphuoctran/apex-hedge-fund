@@ -1794,7 +1794,103 @@
       }
     }
   ],
-  "dynamic_messages": [],
+  "dynamic_messages": [
+    {
+      "id": "dyn_chair_1794769627227",
+      "minute": 99,
+      "time_str": "02:07:07",
+      "phase_step": 99,
+      "sender_name": "Chủ tịch Trần Quốc Thiên Phước",
+      "department": "Hội Đồng Quản Trị Tối Cao",
+      "role": "Chủ Tọa Hội Nghị",
+      "avatar": "👑",
+      "badge": "CHỈ THỊ CỦA CHỦ TỊCH",
+      "badge_color": "#eab308",
+      "content": "Báo cáo ngắn phương án phòng thủ HDB tuần sau",
+      "highlight": "Chỉ thị can thiệp trực tiếp từ Chủ tịch",
+      "metrics": null
+    },
+    {
+      "id": "dyn_ai_1794769627246",
+      "minute": 99,
+      "time_str": "02:07:07",
+      "phase_step": 99,
+      "sender_name": "Master CIO James",
+      "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
+      "role": "Chủ Trì Doanh Nghiệp V7.0",
+      "avatar": "🎖️",
+      "badge": "NGHỊ QUYẾT DOANH NGHIỆP",
+      "badge_color": "#38bdf8",
+      "content": "Báo cáo Chủ tịch Phước Trần: Hội đồng Doanh nghiệp Sống Apex V7.0 vừa họp đủ mặt **14/14 Ban & Chuyên viên** (Phiên `ENT-20261116-020707-FADB62` | **13 Gói Dữ Liệu** | **3 Phản biện/Điều kiện**).\n• **SSOT TCBS `105C307855`**: NAV **18,151,471 ₫** | Tiền mặt **12,516,471 ₫ (69.0%)** | Cổ phiếu **5,635,000 ₫** | Thực lãi **+167,119 ₫**.\n• **PHÁN QUYẾT TỐI CAO**: **`HOLD_RIDE_WINNER_T0_READY`**\n• **Nghị quyết hành động**: GIỮ VỊ THẾ CHIẾN LƯỢC HDB: Đang cầm 100 CP @ 22,057 đ (P&L +29,300 đ). Khóa Stop cứng 22,060 đ, TP1 24,200 đ (Scaling Out 50/50), giữ nguyên 12,516,471 đ tiền mặt phòng thủ.",
+      "highlight": "[HOLD_RIDE_WINNER_T0_READY] 14/14 Ban | 13 Packets | 3 Phản biện | Audit 10/10",
+      "metrics": {
+        "Session": "ENT-20261116-020707-FADB62",
+        "Quorum": "14/14",
+        "Packets": 13,
+        "Dissent": 3,
+        "VETO": "NO",
+        "Audit": "10/10",
+        "Verdict": "HOLD_RIDE_WINNER_T0_READY"
+      }
+    },
+    {
+      "id": "dyn_ai_1794769627247",
+      "minute": 99,
+      "time_str": "02:07:07",
+      "phase_step": 99,
+      "sender_name": "Hội Đồng Tranh Biện Ban 2-3-4",
+      "department": "Liên Phòng Ban Đối Kháng Độc Lập",
+      "role": "Phản Biện & Phủ Quyết VETO",
+      "avatar": "⚖️",
+      "badge": "TRANH BIỆN SỐ LIỆU THẬT",
+      "badge_color": "#f59e0b",
+      "content": "Biên bản Tranh biện Đối kháng & Trao đổi Số liệu Thật về `HDB`:\n• **[CONDITIONAL | Điều 4] Pháp Y Tài Chính (Ban 2)**: [SOÁT XÉT BCTC BAN 2] HDB: ROE=25.6%, P/E=6.1x, OCF/LNST=1.16x, D/E=1.27, Forensic=85/100 (AUDIT_CLEAN_EXCELLENT), MOS=+76.7%. Điểm cần thận trọng: Đòn bẩy D/E > 1.2x cần giám sát chi phí vốn & NIM.\n• **[CONDITIONAL | Điều 5] Hội Đồng Rủi Ro (Ban 4)**: [ĐIỀU KIỆN RỦI RO BAN 4] Khống chế rủi ro HDB: Stop 2xATR=5.65% (ngưỡng 21,323), Lô 100 CP = 12.4% NAV <= 18% tiêu chuẩn Kim Tự Tháp, Risk Multiplier liên thị trường 1.00x (Trần giải ngân 50% NAV). Đang nắm giữ 100 CP @ 22,057 đ (Stop cứng 22,060 đ); Chờ nến xác nhận sau 14h00 theo Điều 6.\n• **[APPROVE | Điều 6] Minh Quân**: [ĐỀ XUẤT THỰC THI BAN 7 VN] HDB đã khớp 100 CP @ 22,057 đ (Giá trị TT 2,235,000 đ, P&L +29,300 đ / +1.33%). Trạng thái HOLDING_T0_AVAILABLE: Giữ gồng lãi, sẵn sàng T+0/T+1 hạ giá vốn nếu nhúng hỗ trợ hoặc Scaling Out 50/50 tại TP1 24,200 đ; tuyệt đối cắt không do dự nếu thủng 22,060 đ.",
+      "highlight": "3 ý kiến phản biện / điều kiện",
+      "metrics": {
+        "Session": "ENT-20261116-020707-FADB62",
+        "Quorum": "14/14",
+        "Packets": 13,
+        "Dissent": 3,
+        "VETO": "NO",
+        "Audit": "10/10",
+        "Verdict": "HOLD_RIDE_WINNER_T0_READY"
+      }
+    },
+    {
+      "id": "dyn_ai_1794769627248",
+      "minute": 99,
+      "time_str": "02:07:07",
+      "phase_step": 99,
+      "sender_name": "Minh Quân & Alex",
+      "department": "Ban 7 VN & Ban 7 US",
+      "role": "Chuyên Viên Thực Thi",
+      "avatar": "⚡",
+      "badge": "BIỂU QUYẾT & KỶ LUẬT",
+      "badge_color": "#f97316",
+      "content": "Biểu quyết điểm danh liên phòng ban (14/14):\nBan 1 VN: APPROVE | Ban 1 US: APPROVE | Ban 2: CONDITIONAL | Ban 3: APPROVE | Ban 4: CONDITIONAL | Ban 5: APPROVE | Ban 6: CONDITIONAL | Ban 7 VN: APPROVE\n• Thông số `HDB`: Giá `22,600.00` | MA20 `22,468.00` | RS `95/99` | P/E `6.1x` | ROE `25.6%` | OCF `1.16x` | MOS `+76.7%` | Lô 100=`12.4% NAV` (`OPTIMAL`).",
+      "highlight": "Chỉ hành động khi vượt qua VETO Ban 3 & Ban 4",
+      "metrics": null
+    },
+    {
+      "id": "dyn_trong_1794769627249",
+      "minute": 99,
+      "time_str": "02:07:07",
+      "phase_step": 99,
+      "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+      "department": "Ban 12 — Tổng Kiểm Sát Thể Chế & Kỷ Luật",
+      "role": "Giám Sát Viên Thường Trực Bất Biến",
+      "avatar": "🛡️",
+      "badge": "KIỂM SÁT THỂ CHẾ",
+      "badge_color": "#f59e0b",
+      "content": "Tổng Kiểm Sát Viên Trọng xác nhận: Đạt chuẩn 10/10 Điều Luật Hiến Chương! 14/14 Ban có mặt, 13 gói dữ liệu sống, niêm phong SHA-256: 726eb688de54162a...",
+      "highlight": "Niêm phong chỉ thị & báo cáo vào Sổ Cái Thể Chế Apex V1.0",
+      "metrics": {
+        "compliance_score": "100/100",
+        "violations": 0,
+        "status": "CERTIFIED"
+      }
+    }
+  ],
   "inspector_notes": [
     {
       "time": "00:25",
@@ -1815,7 +1911,7 @@
   ],
   "james_executive_summary": {
     "author": "Master CIO James (Ban 8 — Tổng Tư Lệnh)",
-    "generated_at": "2026-11-16T00:42:54.890978+07:00",
+    "generated_at": "2026-11-16T02:07:07.044162+07:00",
     "report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_Tuan_Co_Dong.md",
     "summary_headline": "Tổng kết phiên 00h45 – 01h15 (30 Phút) — Kế hoạch Tuần 16/11–20/11 (Tham khảo cơ động từng ngày trên 6 mã trọng tâm)",
     "is_reference_only": true,
@@ -1872,13 +1968,13 @@
     "end_time": "2026-11-16T01:15:00+07:00",
     "min_cleanup_time": "2026-11-16T03:15:00+07:00",
     "min_cleanup_display": "03:15:00 16/11/2026",
-    "seconds_since_end": -1925,
-    "hours_elapsed_since_end": 0.0,
-    "seconds_until_2h_unlock": 9125,
+    "seconds_since_end": 3127,
+    "hours_elapsed_since_end": 0.87,
+    "seconds_until_2h_unlock": 4072,
     "time_gate_passed": false,
     "can_clean_now": false,
-    "cleanup_status": "ACTIVE_OR_UPCOMING",
-    "cleanup_lock_reason": "Cuộc họp chưa kết thúc (01:15 16/11). Theo Điều 5: phải đợi họp xong, Chủ tịch ký duyệt VÀ đủ tối thiểu 2 tiếng (từ 03:15 16/11) mới được dọn phòng."
+    "cleanup_status": "AWAITING_CHAIRMAN_APPROVAL",
+    "cleanup_lock_reason": "CHƯA THỂ DỌN PHÒNG: Đang chờ Chủ tịch Trần Quốc Thiên Phước đọc Báo cáo Tổng kết của James & bấm KÝ PHÊ DUYỆT (và đảm bảo mốc tối thiểu 2 tiếng: 03:15:00 16/11)."
   },
   "archive_summary": {
     "sessions": [
@@ -1892,8 +1988,8 @@
         "end_time": "2026-11-16T01:15:00+07:00",
         "chairman_approved": false,
         "approval_time": null,
-        "archived_at": "2026-11-16T00:42:54.710415+07:00",
-        "archived_display": "16/11/2026 00:42:54",
+        "archived_at": "2026-11-16T02:07:06.979297+07:00",
+        "archived_display": "16/11/2026 02:07:06",
         "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
         "archived_by": "Palmer & Ban 11 Archive",
         "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261116-0045.json",
@@ -1930,6 +2026,6 @@
       }
     ],
     "total_archived": 2,
-    "last_updated": "2026-11-16T00:42:54.855191+07:00"
+    "last_updated": "2026-11-16T02:07:07.005742+07:00"
   }
 }

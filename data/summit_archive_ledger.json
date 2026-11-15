@@ -10,8 +10,8 @@
       "end_time": "2026-11-16T01:15:00+07:00",
       "chairman_approved": false,
       "approval_time": null,
-      "archived_at": "2026-11-16T00:42:54.710415+07:00",
-      "archived_display": "16/11/2026 00:42:54",
+      "archived_at": "2026-11-16T02:07:06.979297+07:00",
+      "archived_display": "16/11/2026 02:07:06",
       "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
       "archived_by": "Palmer & Ban 11 Archive",
       "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261116-0045.json",
@@ -48,5 +48,5 @@
     }
   ],
   "total_archived": 2,
-  "last_updated": "2026-11-16T00:42:54.855191+07:00"
+  "last_updated": "2026-11-16T02:07:07.005742+07:00"
 }

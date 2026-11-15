@@ -1011,6 +1011,78 @@ try:
 except Exception as e:
     record_check("Phase7_SummitLiveInteractiveDirective", "Summit Live Interactive Directive", False, str(e))
 
+# ==============================================================================
+# PHASE 8: VICTOR 24/7 ALERT CENTER & PRE-SESSION DEMO TACTICAL PLAN
+# ==============================================================================
+try:
+    from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
+    wr_live = get_tactical_war_room_state(force_refresh=True) or {}
+    vc = wr_live.get("victor_realtime_alert_center") or {}
+    vc_sum = vc.get("summary") or {}
+    vc_alerts = vc.get("alerts") or []
+    req_alert_keys = ("symbol", "price", "buy_up_pct", "probe_target", "stop_loss", "tp1", "trigger_badge", "recommended_action")
+    alerts_valid = (
+        len(vc_alerts) >= 10
+        and all(all(k in a for k in req_alert_keys) for a in vc_alerts)
+    )
+    check_vc = (
+        vc.get("always_active_across_all_sessions") is True
+        and int(vc_sum.get("total_monitored") or 0) >= 10
+        and alerts_valid
+    )
+    record_check(
+        "Phase8_Victor247RealtimeAlertCenter",
+        "Victor 24/7 giám sát liên tục mọi phiên & đầy đủ trường cảnh báo trigger",
+        check_vc,
+        f"AlwaysActive={vc.get('always_active_across_all_sessions')} | Monitored={vc_sum.get('total_monitored')} | Alerts={len(vc_alerts)}"
+    )
+except Exception as e:
+    wr_live = {}
+    record_check("Phase8_Victor247RealtimeAlertCenter", "Victor 24/7 Alert Center", False, str(e))
+
+try:
+    demo = wr_live.get("demo_tactical_plan_tomorrow") or {}
+    roadmap = demo.get("hourly_roadmap") or []
+    modes = demo.get("contingency_modes") or []
+    pr = demo.get("portfolio_reconciled") or {}
+    check_demo = (
+        demo.get("is_pre_session_demo") is True
+        and len(roadmap) >= 5
+        and len(modes) == 3
+        and pr.get("account_id") == "105C307855"
+    )
+    record_check(
+        "Phase8_PreSessionDemoTacticalPlan",
+        "Kế hoạch tác chiến Demo trước phiên cơ động 5 khung giờ & 3 kịch bản ứng biến",
+        check_demo,
+        f"PlanID={demo.get('plan_id')} | Demo={demo.get('is_pre_session_demo')} | Slots={len(roadmap)} | Modes={len(modes)} | Acc={pr.get('account_id')}"
+    )
+except Exception as e:
+    record_check("Phase8_PreSessionDemoTacticalPlan", "Pre-Session Demo Tactical Plan", False, str(e))
+
+try:
+    from scripts.apex_web_portal_engine import generate_portal_html
+    today_str_p8 = datetime.datetime.now().strftime("%Y-%m-%d")
+    demo_md_path = BASE_DIR / "VN_Market" / "07_Daily_Specialist" / f"{today_str_p8}_Demo_PreSession_Tactical_Plan.md"
+    victor_md_path = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / f"{today_str_p8}_Victor_Realtime_Trigger_Report.md"
+    html_p8 = generate_portal_html({}, [], [])
+    required_ui_tokens = (
+        "wr-demo-pre-session-plan-panel",
+        "victor-realtime-alert-center-panel",
+        "renderDemoPreSessionPlan",
+        "renderVictorRealtimeAlertCenter",
+    )
+    tokens_ok = all(tok in html_p8 for tok in required_ui_tokens) and ("21H30" not in html_p8)
+    check_disk_ui = demo_md_path.exists() and victor_md_path.exists() and tokens_ok
+    record_check(
+        "Phase8_DiskReportsAndWarRoomPortalUI",
+        "Hồ sơ Markdown trên ổ cứng & UI/JS War-Room Demo Plan + Victor Alert Center",
+        check_disk_ui,
+        f"DemoMD={demo_md_path.exists()} | VictorMD={victor_md_path.exists()} | UITokens={tokens_ok}"
+    )
+except Exception as e:
+    record_check("Phase8_DiskReportsAndWarRoomPortalUI", "Disk Reports & War-Room Portal UI", False, str(e))
+
 print("=" * 70)
 print(f"KẾT QUẢ TỔNG KIỂM TOÁN: {audit_results['passed_checks']}/{audit_results['total_checks']} HẠNG MỤC ĐẠT CHUẨN!")
 if audit_results["errors"]:

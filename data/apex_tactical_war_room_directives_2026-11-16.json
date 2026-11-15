@@ -14,5 +14,97 @@
     "role": "sentinel",
     "type": "sentinel_brief",
     "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-16. Tổng NAV live: 18,256,471 đ | Tiền mặt thật: 12,516,471 đ (68.6% Cash) | Đang nắm giữ: 200 CP (100 HDB + 100 MSH ≈ 5,740,000 đ) | Lãi đã chốt lũy kế: +167,119 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
+  },
+  {
+    "id": "dir_2026-11-16_demo_tactical_plan_pre",
+    "timestamp": "02:00:10",
+    "sender": "James (Master CIO) & Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "demo_tactical_plan",
+    "content": "📋 [TỔNG HỢP THƯỢNG ĐỈNH 00H45 & KẾ HOẠCH TÁC CHIẾN 2026-11-16] Trạng thái: 🟡 BẢN DEMO TRƯỚC GIỜ MỞ CỬA — SẼ TỰ ĐỘNG HIỆU CHỈNH NGAY KHI BẢNG ĐIỆN MỞ PHIÊN. Tài sản live: Cổ phiếu 5,740,000đ (PnL +83,300đ / +1.47%), Tiền mặt 12,516,471đ (68.6% NAV • Tổng NAV 18,256,471đ). Sẵn sàng vùng mua LO sau 14h00: DBC, BAF, PVT | Cấm bắt đáy: IDC, BSR. (Bản Demo tự động hiệu chỉnh ngay khi bảng điện ngày mai biến động!)"
+  },
+  {
+    "id": "dir_2026-11-16_victor_247_83157",
+    "timestamp": "02:00:10",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 6 tín hiệu trọng yếu: HDB (22,600đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.39%)) • DBC (16,050đ: 🟢 ĐẠT VÙNG MUA LO (8.8% NAV)) • BAF (30,950đ: 🟢 ĐẠT VÙNG MUA LO (17.0% NAV)) • PVT (21,100đ: 🟢 ĐẠT VÙNG MUA LO (11.6% NAV)) • IDC (35,000đ: 🟠 ÁP LỰC CUNG (BuyUp 26.8%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-16_near_stop_HDB",
+    "timestamp": "02:00:10",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "⚠️ [THEO DÕI CẬN NGƯỠNG BẢO VỆ — HDB] Giá live 22,600 đ hiện cách mốc Stop/Cảnh báo (22,060 đ) 2.39%. Tuyệt đối KHÔNG bình quân giá xuống; kiểm định nến lúc 14h15!"
+  },
+  {
+    "id": "2026-11-16_HDB_NEARSTOP",
+    "key": "2026-11-16_HDB_NEARSTOP",
+    "timestamp": "02:01:30",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "⚠️ [VICTOR CẢNH BÁO CẬN NGƯỠNG BẢO VỆ — HDB] Giá live 22,600 ₫ cách Stop/Cảnh báo 22,060 ₫ chỉ 2.39% (Lãi tạm +54,300 ₫ / Buy-Up 74.5%). Kiểm định nến 14h15!"
+  },
+  {
+    "id": "2026-11-16_BAF_BUYZONE",
+    "key": "2026-11-16_BAF_BUYZONE",
+    "timestamp": "02:01:30",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — BAF ĐẠT VÙNG MUA LO] Giá 30,950 ₫ (+0.81%) sát mục tiêu 30,850 ₫, Mua chủ động 71.7%, Stop 29,650 ₫, TP1 36,580 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-16_DBC_BUYZONE",
+    "key": "2026-11-16_DBC_BUYZONE",
+    "timestamp": "02:01:30",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — DBC ĐẠT VÙNG MUA LO] Giá 16,050 ₫ (+0.31%) sát mục tiêu 16,050 ₫, Mua chủ động 74.0%, Stop 15,087 ₫, TP1 18,971 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-16_PVT_BUYZONE",
+    "key": "2026-11-16_PVT_BUYZONE",
+    "timestamp": "02:01:30",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — PVT ĐẠT VÙNG MUA LO] Giá 21,100 ₫ (+0.96%) sát mục tiêu 20,900 ₫, Mua chủ động 55.9%, Stop 19,550 ₫, TP1 23,200 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "dir_2026-11-16_victor_247_90522",
+    "timestamp": "02:01:30",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 6 tín hiệu trọng yếu: HDB (22,600đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.39%)) • DBC (16,050đ: 🟢 ĐẠT VÙNG MUA LO (8.8% NAV)) • BAF (30,950đ: 🟢 ĐẠT VÙNG MUA LO (17.0% NAV)) • PVT (21,100đ: 🟢 ĐẠT VÙNG MUA LO (11.6% NAV)) • IDC (35,000đ: 🟠 ÁP LỰC CUNG (BuyUp 26.8%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-16_victor_247_22550",
+    "timestamp": "02:05:27",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 6 tín hiệu trọng yếu: HDB (22,600đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.39%)) • DBC (16,050đ: 🟢 ĐẠT VÙNG MUA LO (8.8% NAV)) • BAF (30,950đ: 🟢 ĐẠT VÙNG MUA LO (17.0% NAV)) • PVT (21,100đ: 🟢 ĐẠT VÙNG MUA LO (11.6% NAV)) • IDC (35,000đ: 🟠 ÁP LỰC CUNG (BuyUp 26.8%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-16_victor_247_18197",
+    "timestamp": "02:06:52",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 6 tín hiệu trọng yếu: HDB (22,600đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.39%)) • DBC (16,050đ: 🟢 ĐẠT VÙNG MUA LO (8.8% NAV)) • BAF (30,950đ: 🟢 ĐẠT VÙNG MUA LO (17.0% NAV)) • PVT (21,100đ: 🟢 ĐẠT VÙNG MUA LO (11.6% NAV)) • IDC (35,000đ: 🟠 ÁP LỰC CUNG (BuyUp 26.8%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-16_victor_247_81342",
+    "timestamp": "02:07:10",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 6 tín hiệu trọng yếu: HDB (22,600đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.39%)) • DBC (16,050đ: 🟢 ĐẠT VÙNG MUA LO (8.8% NAV)) • BAF (30,950đ: 🟢 ĐẠT VÙNG MUA LO (17.0% NAV)) • PVT (21,100đ: 🟢 ĐẠT VÙNG MUA LO (11.6% NAV)) • IDC (35,000đ: 🟠 ÁP LỰC CUNG (BuyUp 26.8%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
   }
 ]

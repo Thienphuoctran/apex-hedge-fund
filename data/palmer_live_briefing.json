@@ -1,32 +1,34 @@
 {
-  "last_updated": "2026-11-16 00:42:54",
+  "last_updated": "2026-11-16 02:06:05",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261116-004254",
-  "latest_user_request": "Khắc phục hiển thị cũ 21h/21H30, ban hành Bộ Nội Quy 5 Điều Phòng Họp Thượng Đỉnh, xây dựng Kho Lưu Trữ + quy chế 2H sau duyệt, báo cáo tổng kết James cơ động theo ngày, và triệu tập họp lúc 12h45 (00h45 sáng 16/11/2026).",
-  "latest_response_summary": "ĐÃ HOÀN THÀNH NÂNG CẤP V10.0 PHÒNG HỌP THƯỢNG ĐỈNH APEX & ĐẠT 52/52 KIỂM TOÁN LOCAL: (1) Sửa triệt để lỗi cache 21h/21H30/14-12; (2) Ban hành Nội quy 5 Điều bất biến tại 08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md; (3) Triển khai Kho Lưu Trữ Summit Archive Vault + Khóa Dọn Phòng Điều 5 (chờ Chủ tịch duyệt + tối thiểu 2H sau họp -> HTTP 409 lock); (4) Xuất bản Báo cáo Tổng kết Master CIO James kèm Kế hoạch Tuần 16/11-20/11 mang tính THAM KHẢO, thực thi CƠ ĐỘNG từng ngày; (5) Tránh trùng lặp: quét toàn bộ 12 mã VN + 5 mã US (rổ 6 mã cơ động MSH, HDB, DBC, BAF, SZC, HPG; loại VHC, HAH >26% NAV); (6) Phiên họp mới APEX-SUMMIT-20261116-0045 (00h45-01h15, nghiên cứu trước T-20p từ 00h25-00h45) đã sẵn sàng với 14/14 Phòng Ban.",
+  "sync_id": "SYNC-AG2P-20261116-020605",
+  "latest_user_request": "Tong hop Bao cao Hoi nghi 00h45, lap Ke hoach Tac chien Demo truoc phien 16/11 (co dong tinh chinh khi thi truong mo cua) va kich hoat Victor 24/7 bao cao trigger tai Phong Tac Chien.",
+  "latest_response_summary": "Da hoan thanh Kế hoạch Tác chiến Demo Trước Phiên 16/11 (DEMO-PRE-SESSION-20261116, tu dong tinh chinh theo dien bien thi truong) va nang cap Trung tam Canh bao Victor 24/7 giam sat lien tuc moi phien 12 ma (Buy-Zone: DBC/BAF/PVT; Near-Stop: HDB; Avoid-Knife: IDC/BSR). Hien thi live tren Tab 3 Phong Tac Chien & dong bo Vault.",
   "latest_completed_tasks": [
-    "08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md (Hiến Chương 5 Điều)",
-    "08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_Tuan_Co_Dong.md",
-    "data/summit_archive/APEX-SUMMIT-20261115-2345.json (Lưu trữ phiên cũ)",
-    "data/apex_active_meeting_state.json -> APEX-SUMMIT-20261116-0045 (00h45-01h15 ICT, T-20p 00h25-00h45)",
-    "Web Portal V10.0 + Cache-Control no-store + Archive API + Audit 52/52 PASS"
+    "Cap nhat data/weekly_tactical_plan_active.json tu Hoi nghi 00h45 APEX-SUMMIT-20261116-0045",
+    "Mo rong Victor 24/7 & War-Room giam sat 12 ma TCBS thuc te (HDB, MSH, BAF, DBC, SZC, HPG, IDC, BSR, PVT, TCB, MBB, OCB)",
+    "Xay dung build_victor_realtime_alert_center & build_demo_tactical_plan_tomorrow trong apex_tactical_war_room_engine.py",
+    "Nang cap vn3_portfolio_autonomous_sentinel.py quet dong SSOT 24/7 moi phien",
+    "Bo sung 2 panel SSR + JS live render (#wr-demo-pre-session-plan-panel & #victor-realtime-alert-center-panel) len Web Portal"
   ],
   "latest_strategic_decisions": {
-    "active_summit_id": "APEX-SUMMIT-20261116-0045",
-    "summit_window_ict": "00:45 - 01:15 (2026-11-16) | Prep T-20p: 00:25 - 00:45",
-    "agile_watchlist_6": [
-      "MSH",
-      "HDB",
-      "DBC",
-      "BAF",
-      "SZC",
-      "HPG"
+    "summit_id": "APEX-SUMMIT-20261116-0045",
+    "demo_plan_id": "DEMO-PRE-SESSION-20261116",
+    "is_pre_session_demo": true,
+    "victor_always_active_247": true,
+    "holdings": {
+      "HDB": "100 CP @ 22.057k (Stop 22.06k/21.7k, TP1 24.2k)",
+      "MSH": "100 CP @ 34.510k (Stop 33.09k, TP1 39.5k)"
+    },
+    "buy_zone_probe": [
+      "DBC (16.05k, BuyUp 74.0%)",
+      "BAF (30.95k, BuyUp 71.7%)",
+      "PVT (21.10k, BuyUp 55.9%)"
     ],
-    "rejected_overweight_lots": [
-      "VHC",
-      "HAH"
-    ],
-    "cleanup_rule": "Điều 5: Đợi Chủ tịch đọc + ký duyệt VÀ tối thiểu 2 giờ (120 phút) sau họp mới được lưu kho & dọn phòng"
+    "avoid_knife": [
+      "IDC (35.00k, BuyUp 26.8%)",
+      "BSR (25.35k, BuyUp 32.6%)"
+    ]
   },
   "portfolio_snapshot": {
     "total_nav_vnd": 18151471.0,

@@ -1,119 +1,249 @@
 {
-  "protocol": "APEX_WEEKLY_TACTICAL_ROADMAP_V1",
-  "schedule_rule": "Cập nhật định kỳ vào 21h30 tối Chủ Nhật hàng tuần sau Đại Hội Nghị Thượng Đỉnh Toàn Doanh Nghiệp",
-  "title": "BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN (ĐỊNH HƯỚNG THAM KHẢO CHO CHỦ TỊCH)",
-  "week_label": "Tuần 46 (09/11 – 13/11/2026)",
-  "basis": "Nghị Quyết Đại Hội Nghị Thượng Đỉnh Toàn Doanh Nghiệp Apex (Mã: APEX-SUMMIT-20261108-2100)",
-  "summit_meeting_time": "21:00:00 – 21:30:00 Ngày 08/11/2026",
-  "approved_by": "Chủ tịch Trần Quốc Thiên Phước (Ký duyệt lúc 23:08:16 Ngày 08/11/2026)",
-  "legal_stamp": "🛡️ BAN 12 TRỌNG NIÊM PHONG PHÁP LÝ THỂ CHẾ",
+  "protocol": "APEX_WEEKLY_TACTICAL_ROADMAP_V2",
+  "plan_id": "APEX-WEEKLY-PLAN-2026-W47-AGILE",
+  "created_at": "2026-11-16 01:55:00 ICT",
+  "schedule_rule": "Tổng hợp sau Đại Hội Nghị Thượng Đỉnh APEX-SUMMIT-20261116-0045 — Tự động hiệu chỉnh cơ động mỗi ngày theo Bảng điện Live",
+  "title": "BẢNG KẾ HOẠCH TÁC CHIẾN TUẦN 47 & DEMO PHIÊN THỨ HAI 16/11/2026 (THAM KHẢO CƠ ĐỘNG)",
+  "week_label": "Tuần 47 (16/11 – 20/11/2026)",
+  "meeting_id_source": "APEX-SUMMIT-20261116-0045",
+  "basis": "Nghị Quyết Đại Hội Nghị Thượng Đỉnh (APEX-SUMMIT-20261116-0045) + Đối soát Bảng giá TCBS 105C307855 lúc 01:44:28 16/11/2026",
+  "summit_meeting_time": "00:45:00 – 01:15:00 Ngày 16/11/2026",
+  "approved_by": "Chủ tịch Trần Quốc Thiên Phước (Trình duyệt bản Demo trước phiên 16/11/2026)",
+  "legal_stamp": "🛡️ BAN 12 TRỌNG NIÊM PHONG HIẾN CHƯƠNG — KẾ HOẠCH THAM KHẢO CƠ ĐỘNG",
   "is_reference_only": true,
-  "constitution_mandate": "⚠️ THỂ CHẾ BẤT BIẾN THEO CHỈ THỊ CỦA CHỦ TỊCH: Bảng kế hoạch tuần này CHỈ MANG TÍNH CHẤT THAM KHẢO ĐỊNH HƯỚNG DÀNH RIÊNG CHO CHỦ TỊCH, TUYỆT ĐỐI KHÔNG PHẢI KẾ HOẠCH CỨNG CỦA CẢ TUẦN vì thị trường chứng khoán liên tục biến động và đầy biến số. TOÀN BỘ 12 PHÒNG BAN NGHIÊM CẤM TỰ Ý XEM ĐÂY LÀ KẾ HOẠCH CHÍNH THỨC ĐỂ TỰ ĐỘNG THỰC THI. Mọi quyết định giải ngân, gia tăng hay phòng thủ BẮT BUỘC PHẢI ĐƯỢC THAY ĐỔI TỪNG NGÀY dựa trên Báo cáo KQKD, Báo cáo Vĩ mô và Sổ Lệnh Đầu Ngày (08h30) của từng phiên giao dịch!",
-  "next_rollover_summit": "21:00 Chủ Nhật Ngày 15/11/2026 (Tuần 47)",
+  "is_pre_session_demo": true,
+  "constitution_mandate": "⚠️ NGUYÊN TẮC CƠ ĐỘNG TUYỆT ĐỐI: Kế hoạch Tuần 47 và Bản Demo Tác chiến Phiên Thứ Hai (16/11/2026) CHỈ MANG TÍNH ĐỊNH HƯỚNG THAM KHẢO TRƯỚC GIỜ MỞ CỬA. Mọi quyết định giải ngân, gia tăng, chốt lời hay cắt lỗ thực tế sẽ TỰ ĐỘNG HIỆU CHỈNH CƠ ĐỘNG 100% theo dữ liệu bảng điện trực tiếp (VPS/TCBS), độ rộng thị trường (Breadth), lực Mua chủ động (Buy-Up %) và Cảnh báo thời gian thực của Victor (Ban 9) tại mọi khung giờ trong phiên!",
+  "agile_disclaimer": "BẢN DEMO TRƯỚC PHIÊN 16/11/2026 — TỰ ĐỘNG ĐỒNG BỘ VÀ TINH CHỈNH TỨC THỜI VÀO PHÒNG TÁC CHIẾN NGAY KHI THỊ TRƯỜNG BIẾN ĐỘNG.",
+  "next_rollover_summit": "Chủ Nhật Tuần 47 (22/11/2026)",
+  "ssot_baseline": {
+    "account_id": "105C307855",
+    "cash_vnd": 12516471,
+    "ssot_reference_nav_vnd": 18151471,
+    "live_tcbs_verified": {
+      "verified_at": "16/11/2026 01:44:28 ICT",
+      "stocks_market_value_vnd": 5740000,
+      "cost_basis_vnd": 5656700,
+      "unrealized_pnl_vnd": 83300,
+      "unrealized_pnl_pct": 1.47,
+      "live_nav_vnd": 18256471,
+      "cash_pct": 68.56,
+      "stocks_pct": 31.44,
+      "positions": {
+        "HDB": {
+          "shares": 100,
+          "avg_cost_vnd": 22057,
+          "live_price_vnd": 22600,
+          "market_val_vnd": 2260000,
+          "unrealized_pnl_vnd": 54300,
+          "unrealized_pnl_pct": 2.46
+        },
+        "MSH": {
+          "shares": 100,
+          "avg_cost_vnd": 34510,
+          "live_price_vnd": 34800,
+          "market_val_vnd": 3480000,
+          "unrealized_pnl_vnd": 29000,
+          "unrealized_pnl_pct": 0.84
+        }
+      }
+    }
+  },
+  "tomorrow_demo_schedule_2026_11_16": [
+    {
+      "slot": "08:30 – 09:00",
+      "phase": "PRE-ATO GIAO BAN & ĐỐI SOÁT QUA ĐÊM",
+      "action": "Minh Quân (Ban 7 VN) + Ban 1 VN cập nhật dư chấn Phố Wall/US10Y/Tỷ giá đêm trước; Victor chốt ngưỡng Stop Loss & Vùng gom LO động trước giờ ATO."
+    },
+    {
+      "slot": "09:00 – 10:00",
+      "phase": "ATO & BẪY MỞ CỬA (KỶ LUẬT CẤM FOMO)",
+      "action": "TUYỆT ĐỐI KHÔNG mua đuổi giá xanh ATO (MSH 34.8k, HDB 22.6k, BAF 30.95k). Victor quét thanh khoản giả Giá 2/Giá 3 và áp lực cung nhóm trụ/IDC/BSR."
+    },
+    {
+      "slot": "10:00 – 11:30",
+      "phase": "ĐO LỰC CẦU THỰC & CANH LƯỚT T+0",
+      "action": "Theo dõi tỷ lệ Mua chủ động (Buy-Up %) và độ rộng Breadth. Nếu MSH hoặc HDB nhúng giả về vùng hỗ trợ với Vol cạn ➔ Victor bật tín hiệu Lướt T+0 hạ giá vốn."
+    },
+    {
+      "slot": "13:00 – 13:45",
+      "phase": "HẤP THỤ HÀNG T+2.5 & CHỐT CẦU",
+      "action": "Đo lường áp lực bán khi hàng T+2.5 về tài khoản lúc 13h15. Kiểm tra mức độ giữ nền của BAF (30.5k–30.8k), DBC (15.9k–16.1k), HPG (20.9k–21.1k), SZC (20.6k–20.9k)."
+    },
+    {
+      "slot": "14:00 – 14:25",
+      "phase": "⭐ KHUNG GIỜ VÀNG BẤM CÒ LO & KIỂM ĐỊNH STOP 14H15",
+      "action": "90% hình thái nến ngày rõ nét. Kiểm định HDB tại 14h15 (giữ >= 22,060đ giữ nguyên / đóng < 21,700đ cắt dứt khoát). Nếu Breadth >= 38% & Buy-Up >= 60%, giải ngân LO tối đa 1 lô thăm dò (BAF hoặc DBC) giữ đệm Cash >= 50% NAV."
+    }
+  ],
   "days": [
     {
       "day_id": "mon",
-      "day_name": "Thứ Hai (09/11/2026)",
-      "theme": "Khảo Sát Hấp Thụ Hàng T+2 & Thăm Dò Nhịp 1 (30% NAV)",
-      "status": "COMPLETED",
-      "status_badge": "✅ ĐÃ THỰC THI XONG",
-      "guideline": "Đứng ngoài phiên sáng; Canh cạn cung Khung Giờ Vàng (14h00 – 14h25) để thăm dò Nhịp 1.",
-      "execution_actual": "Chủ tịch đã bấm cò khớp lệnh thành công 100 CP HDB (22,050 ₫) và 100 CP MSH (34,517 ₫) lúc 14:02. Vốn giải ngân thực tế: 5,650,000 ₫ (28.0% NAV). Két tiền mặt còn lại: 14,510,422 ₫ (72.0% NAV). Victor đã kích hoạt Stop 2xATR (HDB: 21,220 ₫, MSH: 33,090 ₫) bảo vệ thành quả.",
-      "cash_reserve_target": "72.0% NAV (14.51M)"
+      "day_name": "Thứ Hai (16/11/2026) — DEMO TÁC CHIẾN NGÀY MAI",
+      "theme": "Kiểm Định Đóng Cửa HDB (14h15) & Thăm Dò Cơ Động BAF / DBC Sau 14h00",
+      "status": "ACTIVE",
+      "status_badge": "🎯 DEMO SẴN SÀNG TRƯỚC PHIÊN",
+      "guideline": "Bảo vệ 200 CP có lãi đệm (HDB 22.6k +2.46%, MSH 34.8k +0.84%); CẤM FOMO ATO trước 10h00. Chỉ thăm dò tối đa 1 lô 100 CP (BAF vùng 30.4–30.85k hoặc DBC vùng 15.8–16.05k) sau 14h00 nếu Buy-Up >= 60% và Breadth >= 38%.",
+      "action_condition": "KỊCH BẢN A (Tích cực): VN-Index giữ >= 1,735, Breadth >= 45%, MSH/HDB giữ xanh ➔ Giữ gồng TP1 + Có thể thăm dò 1 lô DBC/BAF sau 14h00. KỊCH BẢN B (Giằng co): Lướt T+0 trên MSH nếu nhúng 33.9–34.2k. KỊCH BẢN C (Xấu): Áp lực bán mạnh, HDB xuyên 21,700đ sau 14h15 ➔ Khóa 100% mua mới, cắt dứt khoát bảo toàn > 68% Cash.",
+      "cash_reserve_target": "52% – 68.6% NAV (~9.4M – 12.52M đ)"
     },
     {
       "day_id": "tue",
-      "day_name": "Thứ Ba (10/11/2026)",
-      "theme": "Thẩm Định Lực Cầu Giữ Nền & Soi Tín Hiệu Test Cung BAF / IDC",
+      "day_name": "Thứ Ba (17/11/2026)",
+      "theme": "Hấp Thụ Phiên Mở Tuần & Xoay Vòng T+0 Trên Trục MSH / Theo Dõi DBC, SZC, HPG",
       "status": "UPCOMING",
-      "status_badge": "⏳ DỰ KIẾN THAM KHẢO",
-      "guideline": "Quan sát phản ứng giữ nền của HDB (quanh 22.0k) và MSH (quanh 34.5k). Theo dõi độ cạn Vol của BAF (vùng 30.5 – 30.8k) và IDC (vùng 34.2 – 34.6k).",
-      "action_condition": "NẾU HDB/MSH giữ nền xanh nhẹ với Vol thấp ➔ Giữ nguyên vị thế, KHÔNG mua đuổi. NẾU BAF/IDC xuất hiện nến Test Cung kiệt vol ➔ Đưa vào tầm ngắm ưu tiên phiên chiều. NẾU thị trường rung lắc gãy 1.700 ➔ Đứng yên bảo vệ 72% tiền mặt.",
-      "cash_reserve_target": ">= 70.0% NAV"
-    },
-    {
-      "day_id": "wed",
-      "day_name": "Thứ Tư (11/11/2026)",
-      "theme": "Hấp Thụ Hàng T+2 Phiên Mua Nhịp 1 & Đánh Giá Điểm Breakout",
-      "status": "UPCOMING",
-      "status_badge": "⏳ DỰ KIẾN THAM KHẢO",
-      "guideline": "Giữa tuần là thời điểm dòng tiền phân hóa mạnh. Đối soát luồng tiền 3 khối (Ngoại, Tự doanh, Cá nhân) từ Ban 1 VN.",
-      "action_condition": "NẾU HDB bứt phá vượt 22,800 ₫ hoặc MSH bứt qua 36,000 ₫ kèm Vol >= 150% MA20 ➔ Minh Quân xem xét trình Sổ lệnh Nhịp 2 (40% gia tăng). NẾU thanh khoản yếu hoặc có biến động xấu ➔ Tuyệt đối KHÔNG gia tăng.",
+      "status_badge": "⏳ THAM KHẢO CƠ ĐỘNG",
+      "guideline": "Đo lường phản ứng của nhóm Nông nghiệp (BAF/DBC), Dệt may (MSH) và Thép/KCN (HPG/SZC/IDC) trước biến động tỷ giá USD/VND và US10Y.",
+      "action_condition": "Nếu chưa giải ngân ở Thứ Hai và DBC (16.05k, Corr 0.082) hoặc SZC (20.85k) cạn cung test hỗ trợ ➔ Minh Quân cập nhật Sổ Lệnh Đầu Ngày 08h30 trình Chủ tịch.",
       "cash_reserve_target": ">= 50.0% NAV"
     },
     {
-      "day_id": "thu",
-      "day_name": "Thứ Năm (12/11/2026)",
-      "theme": "Hàng Nhịp 1 Về Tài Khoản (T+2.5) & Rà Soát Nâng Trailing Stop",
+      "day_id": "wed",
+      "day_name": "Thứ Tư (18/11/2026)",
+      "theme": "Kiểm Chứng Hàng T+2 Thứ Hai Về Tài Khoản & Chọn Ngành Dẫn Dắt (KCN / Thép / Dầu Khí)",
       "status": "UPCOMING",
-      "status_badge": "⏳ DỰ KIẾN THAM KHẢO",
-      "guideline": "13:15 chiều Thứ Năm, 100 CP HDB và 100 CP MSH của Chủ tịch chính thức về tài khoản khả dụng, sẵn sàng chốt lời hoặc cơ cấu bất cứ lúc nào.",
-      "action_condition": "NẾU vị thế có lãi >= +5% đến +8% ➔ Nâng Stop Loss lên giá vốn (Trailing Stop 0% rủi ro). NẾU chạm mục tiêu TP1 (HDB: 24.29k, MSH: 39.56k) ➔ Chủ động chốt lời 50% theo chiến thuật Scaling Out để đút tiền vào két.",
-      "cash_reserve_target": ">= 60.0% NAV"
+      "status_badge": "⏳ THAM KHẢO CƠ ĐỘNG",
+      "guideline": "13h15 hàng Thứ Hai về tài khoản. Quan sát lực hấp thụ của BAF/DBC và độ hồi phục của IDC (35.0k), BSR (25.35k), PVT (21.1k).",
+      "action_condition": "CHỈ xem xét mở vị thế SZC (20.85k) / HPG (21.05k) hoặc IDC (nếu Buy-Up quay lại >= 58% trên vùng 34.4–34.8k) khi VN-Index ổn định > 1,735 và Breadth > 45%.",
+      "cash_reserve_target": ">= 42.0% NAV"
+    },
+    {
+      "day_id": "thu",
+      "day_name": "Thứ Năm (19/11/2026)",
+      "theme": "Đáo Hạn / Chốt Lời Scaling Out 50% Khi Chạm TP1 & Nâng Trailing Stop",
+      "status": "UPCOMING",
+      "status_badge": "⏳ THAM KHẢO CƠ ĐỘNG",
+      "guideline": "Nếu HDB tiệm cận TP1 (24,200đ) hoặc MSH vượt vùng 37,500–39,500đ ➔ Nâng Stop Loss lên >= giá vốn; kích hoạt Scaling Out chốt lời 50% nếu RSI > 72.",
+      "action_condition": "Tuân thủ triệt để quy tắc bảo vệ thành quả, không để vị thế lãi biến thành lỗ.",
+      "cash_reserve_target": ">= 45.0% – 60.0% NAV"
     },
     {
       "day_id": "fri",
-      "day_name": "Thứ Sáu (13/11/2026)",
-      "theme": "Đóng Nến Tuần, Tổng Kết Hiệu Suất & Chuẩn Bị Hội Nghị Thượng Đỉnh",
+      "day_name": "Thứ Sáu (20/11/2026)",
+      "theme": "Đóng Nến Tuần 47, Kiểm Toán Walk-Forward Ban 5 & Chuẩn Bị Tổng Kết",
       "status": "UPCOMING",
-      "status_badge": "⏳ DỰ KIẾN THAM KHẢO",
-      "guideline": "Xác nhận xu hướng nến tuần của VN-Index. Ban 5 VN thực hiện kiểm toán Walk-Forward Hit Rate % và bóc tách Attribution.",
-      "action_condition": "KỶ LUẬT THÉP: CẤM mở vị thế mới vào chiều Thứ Sáu để tránh rủi ro tin tức cuối tuần. Khóa an toàn két tiền mặt. Bàn giao toàn bộ hồ sơ cho Master CIO James để chuẩn bị Đại Hội Nghị Thượng Đỉnh tối Chủ Nhật lúc 21h00.",
-      "cash_reserve_target": ">= 50.0% - 60.0% NAV"
+      "status_badge": "⏳ THAM KHẢO CƠ ĐỘNG",
+      "guideline": "Hạn chế mở vị thế mới rủi ro cao vào chiều Thứ Sáu nếu thị trường yếu; kiểm toán độ lệch dự báo vs thực tế cả tuần.",
+      "action_condition": "Khóa an toàn tỷ trọng tiền mặt tối thiểu >= 40%–60% NAV qua cuối tuần.",
+      "cash_reserve_target": ">= 45.0% – 60.0% NAV"
     }
   ],
   "approved_watchlist": [
     {
-      "symbol": "HDB",
-      "name": "HDBank (HOSE)",
-      "tier": "Core Compounder (Tiêu điểm 1)",
-      "weekly_limit": "Tối đa 300 CP (3 nhịp: 100 - 100 - 100)",
-      "executed_shares": 100,
-      "current_status": "ĐÃ KHỚP NHỊP 1 (100 CP @ 22,050 ₫)",
-      "entry_zone": "22,200 – 22,400 ₫",
-      "stop_loss_2xatr": "21,220 ₫ (-5.69%)",
-      "tp1": "24,290 ₫ (+8.68%)",
-      "tp2": "25,820 ₫ (+15.53%)",
-      "catalyst": "Tín dụng +22% Top 1 ngành, NIM 5.1%, CASA 18.2%, ROE 24.5%"
-    },
-    {
       "symbol": "MSH",
       "name": "May Sông Hồng (HOSE)",
-      "tier": "Tactical Alpha (Tiêu điểm 2)",
-      "weekly_limit": "Tối đa 200 CP (2 nhịp: 100 - 100)",
+      "tier": "Core Anchor (Đang giữ 100 CP)",
+      "weekly_limit": "Giữ 100 CP + Đánh T+0 hạ vốn (Tối đa 200 CP)",
       "executed_shares": 100,
-      "current_status": "ĐÃ KHỚP NHỊP 1 (100 CP @ 34,517 ₫)",
-      "entry_zone": "34,500 – 35,000 ₫",
-      "stop_loss_2xatr": "33,090 ₫ (-6.79%)",
-      "tp1": "39,560 ₫ (+13.68%)",
-      "tp2": "43,040 ₫ (+23.68%)",
-      "catalyst": "Nhà máy Sông Hồng 10 chạy 100% công suất, đơn hàng dệt may Mỹ hồi phục mạnh"
+      "current_status": "ĐANG NẮM GIỮ 100 CP @ 34,510đ (Live 34,800đ • +0.84%)",
+      "entry_zone": "Giữ 100 CP + Lướt T+0 (33,900 – 34,300 ₫)",
+      "stop_loss_2xatr": "33,090 ₫ (-4.91%)",
+      "tp1": "39,500 ₫ (+13.51%)",
+      "tp2": "43,000 ₫ (+23.56%)",
+      "catalyst": "OCF/LNST 1.42x, đơn hàng dệt may xuất khẩu hồi phục, Buy-Up 84.6%"
+    },
+    {
+      "symbol": "HDB",
+      "name": "HDBank (HOSE)",
+      "tier": "Core Holding (Đang giữ 100 CP)",
+      "weekly_limit": "Giữ 100 CP (Kiểm định Stop 14h15)",
+      "executed_shares": 100,
+      "current_status": "ĐANG NẮM GIỮ 100 CP @ 22,057đ (Live 22,600đ • +2.46%)",
+      "entry_zone": "Giữ vị thế nếu >= 22,060đ lúc 14h15 (Cắt < 21,700đ)",
+      "stop_loss_2xatr": "22,060 ₫ Cảnh báo / 21,700 ₫ Hard Stop",
+      "tp1": "24,200 ₫ (+7.08%)",
+      "tp2": "25,800 ₫ (+14.16%)",
+      "catalyst": "Tín dụng đầu ngành, ROE 23.8%, Buy-Up 74.5%, đệm lãi +54,300đ"
     },
     {
       "symbol": "BAF",
       "name": "Nông Nghiệp BAF (HOSE)",
-      "tier": "Standby Alpha (Dự bị 1)",
-      "weekly_limit": "Tối đa đúng 100 CP (Rào chắn nợ vay 2.420 tỷ)",
+      "tier": "Sniper Alpha #1 (Chăn nuôi 3F)",
+      "weekly_limit": "Tối đa đúng 1 lô 100 CP (~3.08M đ = 16.9% NAV)",
       "executed_shares": 0,
-      "current_status": "CHỜ TÍN HIỆU TEST CUNG (0 CP)",
-      "entry_zone": "30,500 – 30,800 ₫",
-      "stop_loss_2xatr": "29,650 ₫ (-4.05%)",
-      "tp1": "32,650 ₫ (+6.00%)",
-      "tp2": "35,500 ₫ (+15.26%)",
-      "catalyst": "Giá heo hơi > 65k/kg, tự chủ cám chay F-Feed, biên lãi gộp > 15%"
+      "current_status": "SÁT VÙNG MUA LO — Live 30,950đ (Buy-Up 71.7%)",
+      "entry_zone": "30,400 – 30,850 ₫ (LO sau 14h00)",
+      "stop_loss_2xatr": "29,650 ₫ Stop 60s (-4.20%)",
+      "tp1": "36,580 ₫ (+18.19%)",
+      "tp2": "39,610 ₫ (+27.98%)",
+      "catalyst": "OCF/LNST 1.18x, LNST +320%, rào chắn 1 lô kiểm soát nợ 2.42k tỷ"
+    },
+    {
+      "symbol": "DBC",
+      "name": "Tập Đoàn Dabaco (HOSE)",
+      "tier": "Agile Hedge #2 (Tương quan cực thấp 0.082)",
+      "weekly_limit": "1 – 2 lô 100 CP (~1.61M đ/lô = 8.8% NAV)",
+      "executed_shares": 0,
+      "current_status": "SẴN SÀNG THĂM DÒ — Live 16,050đ (Buy-Up 74.0%)",
+      "entry_zone": "15,800 – 16,050 ₫ (LO sau 14h00)",
+      "stop_loss_2xatr": "15,087 ₫ (-6.00%)",
+      "tp1": "18,970 ₫ (+18.19%)",
+      "tp2": "20,540 ₫ (+27.98%)",
+      "catalyst": "Tương quan 60D với HDB/MSH chỉ 0.082, size lô nhỏ siêu cơ động 8.8% NAV"
+    },
+    {
+      "symbol": "HPG",
+      "name": "Hòa Phát (HOSE)",
+      "tier": "Cyclical Steel #3 (Lô vừa 11.5% NAV)",
+      "weekly_limit": "Tối đa 1 lô 100 CP (~2.11M đ)",
+      "executed_shares": 0,
+      "current_status": "QUAN SÁT NỀN 21.0K — Live 21,050đ",
+      "entry_zone": "20,750 – 21,050 ₫ (Sau 14h00)",
+      "stop_loss_2xatr": "20,014 ₫ (-4.92%)",
+      "tp1": "24,880 ₫ (+18.19%)",
+      "tp2": "26,940 ₫ (+27.98%)",
+      "catalyst": "Dung Quất 2, đầu tư công giải ngân cuối năm, thanh khoản top đầu"
+    },
+    {
+      "symbol": "SZC",
+      "name": "Sonadezi Châu Đức (HOSE)",
+      "tier": "Industrial Park #4 (Lô vừa 11.4% NAV)",
+      "weekly_limit": "Tối đa 1 lô 100 CP (~2.09M đ)",
+      "executed_shares": 0,
+      "current_status": "THEO DÕI BÙNG NỔ — Live 20,850đ (+1.71%)",
+      "entry_zone": "20,400 – 20,800 ₫ (Canh test cung chiều)",
+      "stop_loss_2xatr": "19,599 ₫ (-6.00%)",
+      "tp1": "24,645 ₫ (+18.20%)",
+      "tp2": "26,688 ₫ (+28.00%)",
+      "catalyst": "FDI Bà Rịa - Vũng Tàu, quỹ đất KCN sạch giá vốn thấp"
     },
     {
       "symbol": "IDC",
-      "name": "IDICO (HNX)",
-      "tier": "Standby Alpha (Dự bị 2)",
-      "weekly_limit": "Tối đa 200 CP (2 nhịp: 100 - 100)",
+      "name": "Tổng Công Ty IDICO (HNX)",
+      "tier": "Standby Industrial (Đang chịu áp lực cung)",
+      "weekly_limit": "Tối đa 1 lô 100 CP (~3.50M đ = 19.2% NAV)",
       "executed_shares": 0,
-      "current_status": "CHỜ TÍN HIỆU CẠN VOL (0 CP)",
-      "entry_zone": "34,200 – 34,600 ₫",
-      "stop_loss_2xatr": "32,530 ₫ (-5.98%)",
-      "tp1": "38,660 ₫ (+11.73%)",
-      "tp2": "41,880 ₫ (+21.04%)",
-      "catalyst": "FCF dồi dào từ KCN Hựu Thạnh, tỷ lệ lấp đầy cao, cổ tức tiền mặt lớn"
+      "current_status": "CẢNH BÁO ÁP LỰC CUNG — Live 35,000đ (-1.96%, Buy-Up 26.8%)",
+      "entry_zone": "34,400 – 34,800 ₫ (CHỈ mua khi Buy-Up >= 58%)",
+      "stop_loss_2xatr": "32,530 ₫ (-7.06%)",
+      "tp1": "38,660 ₫ (+10.46%)",
+      "tp2": "42,000 ₫ (+20.00%)",
+      "catalyst": "5.2k tỷ người mua trả tiền trước, chờ cạn cung HNX sau 14h00"
+    },
+    {
+      "symbol": "BSR",
+      "name": "Lọc Hóa Dầu Bình Sơn (HOSE)",
+      "tier": "Energy Watchlist (Bảng giá TCBS)",
+      "weekly_limit": "Tối đa 1 lô 100 CP (~2.54M đ = 13.9% NAV)",
+      "executed_shares": 0,
+      "current_status": "CẤM BẮT ĐÁY SỚM — Live 25,350đ (-0.59%, sát đáy phiên)",
+      "entry_zone": "24,600 – 25,000 ₫ (Chờ tạo đáy cân bằng)",
+      "stop_loss_2xatr": "23,700 ₫ (-6.51%)",
+      "tp1": "27,800 ₫ (+9.66%)",
+      "tp2": "29,500 ₫ (+16.37%)",
+      "catalyst": "Crack spread & tiền mặt ròng lớn; chờ lực cầu chủ động quay lại"
+    },
+    {
+      "symbol": "PVT",
+      "name": "PVTrans (HOSE)",
+      "tier": "Shipping Energy Watchlist (Bảng giá TCBS)",
+      "weekly_limit": "Tối đa 1 lô 100 CP (~2.11M đ = 11.6% NAV)",
+      "executed_shares": 0,
+      "current_status": "GIỮ XANH TỐT — Live 21,100đ (+0.96%)",
+      "entry_zone": "20,700 – 21,000 ₫ (Canh rung lắc chiều)",
+      "stop_loss_2xatr": "19,550 ₫ (-7.35%)",
+      "tp1": "23,200 ₫ (+9.95%)",
+      "tp2": "24,800 ₫ (+17.54%)",
+      "catalyst": "Đội tàu trẻ hóa, doanh thu vận tải dầu khí ổn định USD"
     }
   ]
 }

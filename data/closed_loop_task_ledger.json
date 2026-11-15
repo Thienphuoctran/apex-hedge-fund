@@ -1,5 +1,50 @@
 [
   {
+    "task_id": "TASK-AG2P-20261116-020605",
+    "created_at": "2026-11-16T02:06:05.459900",
+    "command_raw": "Tong hop Bao cao Hoi nghi 00h45, lap Ke hoach Tac chien Demo truoc phien 16/11 (co dong tinh chinh khi thi truong mo cua) va kich hoat Victor 24/7 bao cao trigger tai Phong Tac Chien.",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Da hoan thanh Kế hoạch Tác chiến Demo Trước Phiên 16/11 (DEMO-PRE-SESSION-20261116, tu dong tinh chinh theo dien bien thi truong) va nang cap Trung tam Canh bao Victor 24/7 giam sat lien tuc moi phien 12 ma (Buy-Zone: DBC/BAF/PVT; Near-Stop: HDB; Avoid-Knife: IDC/BSR). Hien thi live tren Tab 3 Phong Tac Chien & dong bo Vault.",
+      "completed_tasks": [
+        "Cap nhat data/weekly_tactical_plan_active.json tu Hoi nghi 00h45 APEX-SUMMIT-20261116-0045",
+        "Mo rong Victor 24/7 & War-Room giam sat 12 ma TCBS thuc te (HDB, MSH, BAF, DBC, SZC, HPG, IDC, BSR, PVT, TCB, MBB, OCB)",
+        "Xay dung build_victor_realtime_alert_center & build_demo_tactical_plan_tomorrow trong apex_tactical_war_room_engine.py",
+        "Nang cap vn3_portfolio_autonomous_sentinel.py quet dong SSOT 24/7 moi phien",
+        "Bo sung 2 panel SSR + JS live render (#wr-demo-pre-session-plan-panel & #victor-realtime-alert-center-panel) len Web Portal"
+      ],
+      "active_decisions": {
+        "summit_id": "APEX-SUMMIT-20261116-0045",
+        "demo_plan_id": "DEMO-PRE-SESSION-20261116",
+        "is_pre_session_demo": true,
+        "victor_always_active_247": true,
+        "holdings": {
+          "HDB": "100 CP @ 22.057k (Stop 22.06k/21.7k, TP1 24.2k)",
+          "MSH": "100 CP @ 34.510k (Stop 33.09k, TP1 39.5k)"
+        },
+        "buy_zone_probe": [
+          "DBC (16.05k, BuyUp 74.0%)",
+          "BAF (30.95k, BuyUp 71.7%)",
+          "PVT (21.10k, BuyUp 55.9%)"
+        ],
+        "avoid_knife": [
+          "IDC (35.00k, BuyUp 26.8%)",
+          "BSR (25.35k, BuyUp 32.6%)"
+        ]
+      }
+    },
+    "logs": [
+      "02:06:05 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
     "task_id": "TASK-AG2P-20261116-004254",
     "created_at": "2026-11-16T00:42:54.966834",
     "command_raw": "Khắc phục hiển thị cũ 21h/21H30, ban hành Bộ Nội Quy 5 Điều Phòng Họp Thượng Đỉnh, xây dựng Kho Lưu Trữ + quy chế 2H sau duyệt, báo cáo tổng kết James cơ động theo ngày, và triệu tập họp lúc 12h45 (00h45 sáng 16/11/2026).",

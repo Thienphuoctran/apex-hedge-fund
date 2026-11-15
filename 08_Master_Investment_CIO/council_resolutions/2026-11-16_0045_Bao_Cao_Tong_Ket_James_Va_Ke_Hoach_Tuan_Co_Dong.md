@@ -2,7 +2,7 @@
 > **NGƯỜI TỔNG KẾT**: **Master CIO James (Ban 8 — Tổng Tư Lệnh)**  
 > **MÃ PHIÊN HỌP**: `APEX-SUMMIT-20261116-0045` (`00h45 – 01h15 (30 Phút)`)  
 > **KÍNH TRÌNH**: **Chủ tịch HĐQT Trần Quốc Thiên Phước** (Tài khoản TCBS `105C307855 (TCBS)`)  
-> **THỜI ĐIỂM PHÁT HÀNH**: `2026-11-16 00:42:54 ICT`  
+> **THỜI ĐIỂM PHÁT HÀNH**: `2026-11-16 02:07:07 ICT`  
 
 > ⚡ **CAM KẾT ĐẶC BIỆT (ĐIỀU 4 NỘI QUY)**: Bản Kế hoạch Tuần `16/11 – 20/11/2026` dưới đây **CHỈ MANG TÍNH THAM KHẢO ĐỊNH HƯỚNG**. Quyền thực thi thực tế sẽ **linh hoạt thay đổi từng ngày** bám theo bảng điện, dòng tiền `Buy-Up`, độ rộng `Breadth` và diễn biến vĩ mô tại `08h30` & Khung Giờ Vàng `14h00–14h25` mỗi phiên!
 

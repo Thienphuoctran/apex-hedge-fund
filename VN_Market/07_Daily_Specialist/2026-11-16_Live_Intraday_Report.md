@@ -1,5 +1,5 @@
 # [BAN 7 VN & BAN 9] BÁO CÁO TÁC CHIẾN LIVE INTRADAY — 2026-11-16
-**Cập nhật lúc:** `2026-11-16 00:41:56 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
+**Cập nhật lúc:** `2026-11-16 02:06:52 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
 **Trạng thái thị trường (`Market Regime`):** **`⚖️ GIẰNG CO PHÂN HÓA (CHỌN LỌC CỰC CHẶT)`**  
 **Chỉ thị điều hành:** VN-Index +0.01%, Độ rộng 36%, Basis +6.09đ. Thị trường phân hóa mạnh — Cấm FOMO giá xanh; chỉ giữ vị thế khỏe và rình giá chiết khấu.
 
@@ -29,6 +29,12 @@
 | **IDC** | 35,000 ₫ | -1.96% | 486,300 | 26.8% | 51.3 | -0.09 Tỷ | 🟡 THEO DÕI (Mục tiêu 34,500đ) |
 | **TCH** | 13,500 ₫ | +0.00% | 7,769,700 | 44.7% | 71.9 | +1.04 Tỷ | ⏳ QUÁ NÓNG (RSI 72 >= 70) — CẤM ĐUỔI |
 | **OCB** | 10,800 ₫ | +0.93% | 993,500 | 62.5% | 57.1 | +0.20 Tỷ | 🟡 THEO DÕI (Mục tiêu 10,600đ) |
+| **DBC** | 16,050 ₫ | +0.31% | 866,400 | 74.0% | 54.3 | +0.03 Tỷ | 🎯 TRONG VÙNG GOM — CHỜ 14H00 |
+| **HPG** | 21,050 ₫ | +0.00% | 9,460,100 | 43.4% | 50.2 | +2.46 Tỷ | 🟡 THEO DÕI (Mục tiêu 20,950đ) |
+| **SZC** | 20,850 ₫ | +1.71% | 1,508,300 | 51.8% | 67.1 | +0.07 Tỷ | 🟡 THEO DÕI (Mục tiêu 20,700đ) |
+| **BSR** | 25,350 ₫ | -0.59% | 3,713,300 | 32.6% | 29.8 | -0.55 Tỷ | 🟡 THEO DÕI (Mục tiêu 24,900đ) |
+| **PVT** | 21,100 ₫ | +0.96% | 3,619,300 | 55.9% | 40.7 | -0.59 Tỷ | 🟡 THEO DÕI (Mục tiêu 20,900đ) |
+| **TCB** | 21,850 ₫ | +1.39% | 7,633,700 | 61.8% | 49.4 | +5.30 Tỷ | 🟡 THEO DÕI (Mục tiêu 21,500đ) |
 
 ## 4. CẦU NỐI LIÊN THỊ TRƯỜNG MỸ → VN & BỘ LỌC BULL-TRAP THÍCH NGHI
 - **Spillover Phố Wall → VN:** `⚖️ TRUNG TÍNH PHÂN HÓA (CHỌN LỌC CỔ PHIẾU)` | Hệ số rủi ro: `1.00x` | Trần phân bổ mới: **`25% NAV`** (Gốc: 25%)

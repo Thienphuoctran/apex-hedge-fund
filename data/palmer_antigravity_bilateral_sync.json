@@ -1,5 +1,68 @@
 [
   {
+    "sync_id": "SYNC-AG2P-20261116-020605",
+    "timestamp": "2026-11-16 02:06:05",
+    "source": "ANTIGRAVITY",
+    "target": "PALMER",
+    "priority": "CRITICAL",
+    "user_request": "Tong hop Bao cao Hoi nghi 00h45, lap Ke hoach Tac chien Demo truoc phien 16/11 (co dong tinh chinh khi thi truong mo cua) va kich hoat Victor 24/7 bao cao trigger tai Phong Tac Chien.",
+    "response_summary": "Da hoan thanh Kế hoạch Tác chiến Demo Trước Phiên 16/11 (DEMO-PRE-SESSION-20261116, tu dong tinh chinh theo dien bien thi truong) va nang cap Trung tam Canh bao Victor 24/7 giam sat lien tuc moi phien 12 ma (Buy-Zone: DBC/BAF/PVT; Near-Stop: HDB; Avoid-Knife: IDC/BSR). Hien thi live tren Tab 3 Phong Tac Chien & dong bo Vault.",
+    "completed_tasks": [
+      "Cap nhat data/weekly_tactical_plan_active.json tu Hoi nghi 00h45 APEX-SUMMIT-20261116-0045",
+      "Mo rong Victor 24/7 & War-Room giam sat 12 ma TCBS thuc te (HDB, MSH, BAF, DBC, SZC, HPG, IDC, BSR, PVT, TCB, MBB, OCB)",
+      "Xay dung build_victor_realtime_alert_center & build_demo_tactical_plan_tomorrow trong apex_tactical_war_room_engine.py",
+      "Nang cap vn3_portfolio_autonomous_sentinel.py quet dong SSOT 24/7 moi phien",
+      "Bo sung 2 panel SSR + JS live render (#wr-demo-pre-session-plan-panel & #victor-realtime-alert-center-panel) len Web Portal"
+    ],
+    "active_decisions": {
+      "summit_id": "APEX-SUMMIT-20261116-0045",
+      "demo_plan_id": "DEMO-PRE-SESSION-20261116",
+      "is_pre_session_demo": true,
+      "victor_always_active_247": true,
+      "holdings": {
+        "HDB": "100 CP @ 22.057k (Stop 22.06k/21.7k, TP1 24.2k)",
+        "MSH": "100 CP @ 34.510k (Stop 33.09k, TP1 39.5k)"
+      },
+      "buy_zone_probe": [
+        "DBC (16.05k, BuyUp 74.0%)",
+        "BAF (30.95k, BuyUp 71.7%)",
+        "PVT (21.10k, BuyUp 55.9%)"
+      ],
+      "avoid_knife": [
+        "IDC (35.00k, BuyUp 26.8%)",
+        "BSR (25.35k, BuyUp 32.6%)"
+      ]
+    },
+    "system_state": {
+      "chairman_account": "TCBS 105C307855 (Trần Quốc Thiên Phước)",
+      "total_nav_vnd": 18151471.0,
+      "cash_vnd": 12516471.0,
+      "stock_market_val_vnd": 5635000.0,
+      "active_holdings": {
+        "HDB": {
+          "shares": 100,
+          "entry_price": 22057.0,
+          "current_price": 22350.0,
+          "market_val_vnd": 2235000.0,
+          "pnl_vnd": 29300.0,
+          "status": "HOLDING_T0_AVAILABLE"
+        },
+        "MSH": {
+          "shares": 100,
+          "entry_price": 34510.0,
+          "current_price": 34000.0,
+          "market_val_vnd": 3400000.0,
+          "pnl_vnd": -51000.0,
+          "status": "HOLDING_T0_AVAILABLE"
+        }
+      },
+      "realized_round1_profit": 167119.0,
+      "current_market_regime": "DAY_T1_HOLDING_AND_MONITORING"
+    },
+    "acknowledged_by_palmer": true,
+    "acknowledged_at": "2026-11-16 02:06:05"
+  },
+  {
     "sync_id": "SYNC-AG2P-20261116-004254",
     "timestamp": "2026-11-16 00:42:54",
     "source": "ANTIGRAVITY",

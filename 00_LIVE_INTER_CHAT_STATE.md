@@ -1,21 +1,21 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-16 00:42:54  
+**Thời gian cập nhật:** 2026-11-16 02:06:05  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261116-004254`  
+**Mã đồng bộ:** `SYNC-AG2P-20261116-020605`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Khắc phục hiển thị cũ 21h/21H30, ban hành Bộ Nội Quy 5 Điều Phòng Họp Thượng Đỉnh, xây dựng Kho Lưu Trữ + quy chế 2H sau duyệt, báo cáo tổng kết James cơ động theo ngày, và triệu tập họp lúc 12h45 (00h45 sáng 16/11/2026).
+* **Câu hỏi của Chủ tịch:** Tong hop Bao cao Hoi nghi 00h45, lap Ke hoach Tac chien Demo truoc phien 16/11 (co dong tinh chinh khi thi truong mo cua) va kich hoat Victor 24/7 bao cao trigger tai Phong Tac Chien.
 * **Kết luận & Quyết định thể chế:**
-ĐÃ HOÀN THÀNH NÂNG CẤP V10.0 PHÒNG HỌP THƯỢNG ĐỈNH APEX & ĐẠT 52/52 KIỂM TOÁN LOCAL: (1) Sửa triệt để lỗi cache 21h/21H30/14-12; (2) Ban hành Nội quy 5 Điều bất biến tại 08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md; (3) Triển khai Kho Lưu Trữ Summit Archive Vault + Khóa Dọn Phòng Điều 5 (chờ Chủ tịch duyệt + tối thiểu 2H sau họp -> HTTP 409 lock); (4) Xuất bản Báo cáo Tổng kết Master CIO James kèm Kế hoạch Tuần 16/11-20/11 mang tính THAM KHẢO, thực thi CƠ ĐỘNG từng ngày; (5) Tránh trùng lặp: quét toàn bộ 12 mã VN + 5 mã US (rổ 6 mã cơ động MSH, HDB, DBC, BAF, SZC, HPG; loại VHC, HAH >26% NAV); (6) Phiên họp mới APEX-SUMMIT-20261116-0045 (00h45-01h15, nghiên cứu trước T-20p từ 00h25-00h45) đã sẵn sàng với 14/14 Phòng Ban.
+Da hoan thanh Kế hoạch Tác chiến Demo Trước Phiên 16/11 (DEMO-PRE-SESSION-20261116, tu dong tinh chinh theo dien bien thi truong) va nang cap Trung tam Canh bao Victor 24/7 giam sat lien tuc moi phien 12 ma (Buy-Zone: DBC/BAF/PVT; Near-Stop: HDB; Avoid-Knife: IDC/BSR). Hien thi live tren Tab 3 Phong Tac Chien & dong bo Vault.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] 08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md (Hiến Chương 5 Điều)
-- [x] 08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_Tuan_Co_Dong.md
-- [x] data/summit_archive/APEX-SUMMIT-20261115-2345.json (Lưu trữ phiên cũ)
-- [x] data/apex_active_meeting_state.json -> APEX-SUMMIT-20261116-0045 (00h45-01h15 ICT, T-20p 00h25-00h45)
-- [x] Web Portal V10.0 + Cache-Control no-store + Archive API + Audit 52/52 PASS
+- [x] Cap nhat data/weekly_tactical_plan_active.json tu Hoi nghi 00h45 APEX-SUMMIT-20261116-0045
+- [x] Mo rong Victor 24/7 & War-Room giam sat 12 ma TCBS thuc te (HDB, MSH, BAF, DBC, SZC, HPG, IDC, BSR, PVT, TCB, MBB, OCB)
+- [x] Xay dung build_victor_realtime_alert_center & build_demo_tactical_plan_tomorrow trong apex_tactical_war_room_engine.py
+- [x] Nang cap vn3_portfolio_autonomous_sentinel.py quet dong SSOT 24/7 moi phien
+- [x] Bo sung 2 panel SSR + JS live render (#wr-demo-pre-session-plan-panel & #victor-realtime-alert-center-panel) len Web Portal
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
