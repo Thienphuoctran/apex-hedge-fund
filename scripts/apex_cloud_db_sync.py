@@ -772,6 +772,31 @@ class ApexCloudDBSync:
                     if res is not None:
                         cloud_ok = True
                         detail = "supabase-synced"
+                if alerts_list:
+                    alert_rows = [
+                        {
+                            "alert_id": str(al.get("alert_id", "")),
+                            "symbol": str(al.get("symbol", "")),
+                            "market": str(al.get("market", "VN")),
+                            "is_holding": bool(al.get("is_holding")),
+                            "priority": str(al.get("priority", "ALPHA_CATALYST")),
+                            "category": str(al.get("category", "MARKET_GENERAL")),
+                            "estimated_fair_value_impact_pct": float(al.get("estimated_fair_value_impact_pct", 0.0) or 0.0),
+                            "recommended_action": str(al.get("recommended_action", "HOLD_AND_MONITOR")),
+                            "title": str(al.get("title", "")),
+                            "payload_json": al,
+                            "detected_at": now_iso,
+                        }
+                        for al in alerts_list[:40]
+                        if al.get("alert_id")
+                    ]
+                    if alert_rows:
+                        _postgrest_request(
+                            "POST",
+                            "apex_live_catalyst_alerts",
+                            payload=alert_rows,
+                            query_params="on_conflict=alert_id",
+                        )
             except Exception as e:
                 detail = f"supabase-err: {e}"
             _record_sync_telemetry("apex_v6_intelligence_snapshots", cloud_ok, detail)

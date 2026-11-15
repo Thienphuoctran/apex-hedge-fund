@@ -1321,6 +1321,16 @@ class ApexCloudSupervisor:
                 t = threading.Thread(target=self.http_server.serve_forever, daemon=True)
                 t.start()
                 log_sup(f"🌐 [IMMORTAL WEB SERVER] Đang phục vụ tại http://0.0.0.0:{self.port} (Healthcheck: /api/health)")
+
+                def _prewarm_war_room():
+                    try:
+                        from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
+                        get_tactical_war_room_state(force_refresh=False)
+                        log_sup("⚡ [WARMUP] Đã nạp sẵn cache Living War-Room Snapshot thành công.")
+                    except Exception as _we:
+                        log_sup(f"⚠️ [WARMUP] Bỏ qua warmup ban đầu: {_we}")
+
+                threading.Thread(target=_prewarm_war_room, daemon=True).start()
             except Exception as e:
                 log_sup(f"[!] Cảnh báo mở Web Port {self.port}: {e}. Tiếp tục chạy 4 dịch vụ ngầm bình thường.")
                 self.http_server = None

@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-15 21:54:56",
-  "target_url": "http://127.0.0.1:51621",
+  "timestamp": "2026-11-15 22:12:24",
+  "target_url": "https://apex-hedge-fund.onrender.com",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -51,9 +51,9 @@
     },
     {
       "module": "Live_Endpoint",
-      "check": "GET /api/tactical_war_room khớp SSOT & không mock index",
-      "status": "PASSED",
-      "details": "WR Cash: 12,516,471 | VN-Index: 1734.93 | Picks: 6"
+      "check": "GET /api/tactical_war_room",
+      "status": "FAILED",
+      "details": "The read operation timed out"
     },
     {
       "module": "Live_Endpoint",
@@ -65,7 +65,7 @@
       "module": "Live_Endpoint",
       "check": "GET /api/reports",
       "status": "PASSED",
-      "details": "Tổng số báo cáo: 351"
+      "details": "Tổng số báo cáo: 372"
     },
     {
       "module": "Live_Endpoint",
@@ -185,13 +185,13 @@
       "module": "Phase3_EvolutionLegends",
       "check": "Self-Evolution Maturity IQ, Weights Invariants & 15 World Legends",
       "status": "PASSED",
-      "details": "Maturity: 86.9/100 | IQ: 162.6 | Legends: 15 | US=100 VN=1.0"
+      "details": "Maturity: 86.8/100 | IQ: 162.5 | Legends: 15 | US=100 VN=1.0"
     },
     {
       "module": "Phase3_LiveEndpoints",
       "check": "V5 Live Endpoints (/api/intelligence/search, /api/deep_brain, UI Panel)",
-      "status": "PASSED",
-      "details": "Search Ok: True | DeepBrain Ok: True | UI: True | WR Summary: True"
+      "status": "FAILED",
+      "details": "Search Ok: True | DeepBrain Ok: True | UI: True | WR Summary: False"
     },
     {
       "module": "Phase4_LiveBCTC_Catalysts",
@@ -219,7 +219,18 @@
     }
   ],
   "total_checks": 35,
-  "passed_checks": 35,
+  "passed_checks": 33,
   "warnings": [],
-  "errors": []
+  "errors": [
+    {
+      "module": "Live_Endpoint",
+      "check": "GET /api/tactical_war_room",
+      "details": "The read operation timed out"
+    },
+    {
+      "module": "Phase3_LiveEndpoints",
+      "check": "V5 Live Endpoints (/api/intelligence/search, /api/deep_brain, UI Panel)",
+      "details": "Search Ok: True | DeepBrain Ok: True | UI: True | WR Summary: False"
+    }
+  ]
 }

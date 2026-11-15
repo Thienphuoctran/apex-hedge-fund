@@ -349,6 +349,11 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
     worst_threat_level = 1
     threat_reasons: List[str] = []
 
+    if symbols:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=min(8, len(symbols))) as _ind_pool:
+            list(_ind_pool.map(lambda s: fetch_stock_indicators_live(s, ttl_seconds=300), symbols))
+
     for sym in symbols:
         meta = items[sym]
         q = live_quotes.get(sym, {})

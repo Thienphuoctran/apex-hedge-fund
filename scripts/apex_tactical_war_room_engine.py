@@ -186,10 +186,14 @@ def _ensure_project_root_in_path() -> None:
 
 
 def _get_live_snapshot(force_refresh: bool = False) -> Dict[str, Any]:
-    """Lấy toàn bộ snapshot thời gian thực từ Living Intraday Brain (cache 3s)."""
+    """Lấy toàn bộ snapshot thời gian thực từ Living Intraday Brain (cache 10s trong phiên, 30s ngoài giờ)."""
     _ensure_project_root_in_path()
     from scripts.apex_live_intraday_brain import compute_live_war_room_snapshot
-    return compute_live_war_room_snapshot(force_refresh=force_refresh, cache_ttl=3.0)
+    now_ict = get_ict_now()
+    hm = now_ict.hour * 60 + now_ict.minute
+    in_session = (now_ict.weekday() < 5) and (8 * 60 + 45 <= hm <= 15 * 60)
+    ttl = 10.0 if in_session else 30.0
+    return compute_live_war_room_snapshot(force_refresh=force_refresh, cache_ttl=ttl)
 
 
 def get_tactical_action_steps(

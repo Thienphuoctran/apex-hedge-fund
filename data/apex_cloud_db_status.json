@@ -1,8 +1,8 @@
 {
   "supabase_configured": false,
   "local_sqlite_mirror": true,
-  "last_target": "apex_v6_intelligence_snapshots",
+  "last_target": "apex_live_intraday_reports",
   "last_cloud_sync_ok": false,
-  "last_sync_at": "2026-11-15 21:55:08",
+  "last_sync_at": "2026-11-15 22:16:37",
   "detail": "local-sqlite-only"
 }
