@@ -745,17 +745,33 @@ try:
     wr_payload = globals().get("wr", {}) or {}
     depts_ws = wr_payload.get("department_live_workstation", []) or []
     rep_feed = wr_payload.get("latest_reports_feed", []) or []
-    all_ws_exist = all(
-        bool(d.get("latest_report_path")) and (BASE_DIR / str(d.get("latest_report_path"))).exists()
-        for d in depts_ws
-    )
-    all_feed_exist = (
-        len(rep_feed) >= 1
-        and all(
-            bool(r.get("rel_path")) and (BASE_DIR / str(r.get("rel_path"))).exists()
-            for r in rep_feed
-        )
-    )
+    is_remote_target = not (live_url.startswith("http://127.0.0.1") or live_url.startswith("http://localhost"))
+    _verified_remote_paths = {}
+
+    def _report_path_authentic(rel_p: str) -> bool:
+        if not rel_p:
+            return False
+        if (BASE_DIR / rel_p).exists():
+            return True
+        if is_remote_target:
+            if rel_p in _verified_remote_paths:
+                return _verified_remote_paths[rel_p]
+            try:
+                import urllib.parse
+                q = urllib.parse.urlencode({"path": rel_p})
+                req = urllib.request.Request(f"{live_url}/api/report?{q}")
+                with urllib.request.urlopen(req, timeout=10) as resp:
+                    payload = json.loads(resp.read().decode("utf-8", errors="ignore"))
+                    ok = bool(payload.get("ok")) and len(str(payload.get("content", ""))) > 50
+                    _verified_remote_paths[rel_p] = ok
+                    return ok
+            except Exception:
+                _verified_remote_paths[rel_p] = False
+                return False
+        return False
+
+    all_ws_exist = all(_report_path_authentic(str(d.get("latest_report_path") or "")) for d in depts_ws)
+    all_feed_exist = len(rep_feed) >= 1 and all(_report_path_authentic(str(r.get("rel_path") or "")) for r in rep_feed)
     check_ws_v8 = (len(depts_ws) == 14 and all_ws_exist and all_feed_exist)
     record_check(
         "Phase6_DepartmentWorkstationAndReportAuthenticity",

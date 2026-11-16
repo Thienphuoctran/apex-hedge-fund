@@ -1,6 +1,6 @@
 {
   "mesh_version": "V7.0_LIVING_ENTERPRISE",
-  "updated_at": "2026-11-16 02:07:07",
+  "updated_at": "2026-11-16 09:37:12",
   "roster_count": 14,
   "roster": [
     {
@@ -231,25 +231,31 @@
     }
   ],
   "latest_session": {
-    "session_id": "ENT-20261116-020707-FADB62",
-    "created_at": "2026-11-16 02:07:07",
-    "trigger_source": "SUMMIT_DIRECTIVE",
-    "target_ticker": "HDB",
+    "session_id": "ENT-20261116-093712-B519B4",
+    "created_at": "2026-11-16 09:37:12",
+    "trigger_source": "AUDIT",
+    "target_ticker": null,
     "focus_tickers": [
-      "HDB"
+      "HDB",
+      "MSH",
+      "BAF",
+      "FPT",
+      "MWG"
     ],
-    "directive": "Báo cáo ngắn phương án phòng thủ HDB tuần sau",
-    "final_verdict": "HOLD_RIDE_WINNER_T0_READY",
-    "action_plan": "GIỮ VỊ THẾ CHIẾN LƯỢC HDB: Đang cầm 100 CP @ 22,057 đ (P&L +29,300 đ). Khóa Stop cứng 22,060 đ, TP1 24,200 đ (Scaling Out 50/50), giữ nguyên 12,516,471 đ tiền mặt phòng thủ.",
+    "directive": "Họp giao ban toàn doanh nghiệp đánh giá danh mục 105C307855",
+    "final_verdict": "ENTERPRISE_STRATEGY_HOLD_SELECTIVE_14H",
+    "action_plan": "NGHỊ QUYẾT TOÀN DOANH NGHIỆP (TCBS 105C307855): Giữ vững kỷ luật 2 vị thế sống (HDB (100 CP @ 22,057đ -> 22,350đ, P&L +29,300đ), MSH (100 CP @ 34,510đ -> 34,000đ, P&L -51,000đ)) với đệm tiền mặt 12,516,471 đ (69.0% NAV), chặn đứng các mã vi phạm Điều 3/Điều 5 (FPT, MWG), chỉ giải ngân chọn lọc sau 14h00 theo trần Spillover 50% NAV.",
     "quorum_count": 14,
     "roster_total": 14,
-    "packet_count": 13,
-    "dissent_count": 3,
-    "veto_triggered": false,
-    "veto_reasons": [],
+    "packet_count": 14,
+    "dissent_count": 5,
+    "veto_triggered": true,
+    "veto_reasons": [
+      "[VETO LÔ 100 ĐIỀU 5] MWG tốn 7,370,000 đ/lô (40.6% NAV) vượt trần 33% NAV -> Cấm giải ngân."
+    ],
     "dissent_notes": [
-      "[SOÁT XÉT BCTC BAN 2] HDB: ROE=25.6%, P/E=6.1x, OCF/LNST=1.16x, D/E=1.27, Forensic=85/100 (AUDIT_CLEAN_EXCELLENT), MOS=+76.7%. Điểm cần thận trọng: Đòn bẩy D/E > 1.2x cần giám sát chi phí vốn & NIM.",
-      "[ĐIỀU KIỆN RỦI RO BAN 4] Khống chế rủi ro HDB: Stop 2xATR=5.65% (ngưỡng 21,323), Lô 100 CP = 12.4% NAV <= 18% tiêu chuẩn Kim Tự Tháp, Risk Multiplier liên thị trường 1.00x (Trần giải ngân 50% NAV). Đang nắm giữ 100 CP @ 22,057 đ (Stop cứng 22,060 đ); Chờ nến xác nhận sau 14h00 theo Điều 6."
+      "[PHẢN BIỆN XU HƯỚNG ĐIỀU 3] FPT giá 50,400 đ < MA20 (55,100 đ), RS=18, MOS=-2.6% -> Ban 3 phủ quyết bắt đáy.",
+      "[KIỂM SOÁT PHÂN BỔ BAN 4] NAV thực tế 18,151,471 đ (Tiền mặt 12,516,471 đ = 69.0%, Cổ phiếu 5,635,000 đ = 31.0%). Spillover US->VN 1.00x giới hạn giải ngân tối đa 50% NAV. Phản đối mọi đề xuất tăng tỷ trọng cổ phiếu quá 50% hoặc mua sáng trước 10h00."
     ],
     "ombudsman_audit_score": "10/10",
     "ten_articles_checks": [
@@ -261,7 +267,7 @@
       {
         "article": 2,
         "passed": true,
-        "note": "Có mặt 14/14 thực thể & 3 ý kiến phản biện/điều kiện"
+        "note": "Có mặt 14/14 thực thể & 5 ý kiến phản biện/điều kiện"
       },
       {
         "article": 3,
@@ -304,7 +310,7 @@
         "note": "Phụng sự trực tiếp Chủ tịch Trần Quốc Thiên Phước (TCBS 105C307855)"
       }
     ],
-    "constitutional_seal_sha256": "726eb688de54162acd94f5f78d12802b159a3a3ed5708f4ec2bb7b2d48c60ea8",
+    "constitutional_seal_sha256": "0932ba4fbd7f6ad6c93da978be66a5b7194ade9bf07a295c9589c217a537ad0e",
     "ssot_snapshot": {
       "account_id": "105C307855",
       "chairman_name": "Trần Quốc Thiên Phước",
@@ -350,7 +356,7 @@
       "company_name": "HDBank",
       "sector_name": "Ngân Hàng TMCP",
       "live_price": 22600.0,
-      "change_1d_pct": 0.44,
+      "change_1d_pct": 0.0,
       "ma20": 22468.0,
       "ma50": 21742.0,
       "rsi14": 47.1,
@@ -380,7 +386,7 @@
       "pillar_scores": {
         "bctc_quality": 86.4,
         "valuation_mos": 96.0,
-        "smart_money_flow": 85.0,
+        "smart_money_flow": 44.4,
         "technical_trend": 89.0
       },
       "held_position": {
@@ -448,7 +454,7 @@
         "dept_id": "BAN_3_SYNTHESIS",
         "ban_code": "Ban 3",
         "officer": "Phòng Tổng Hợp",
-        "vote": "APPROVE",
+        "vote": "VETO",
         "article": 3,
         "rationale": "HDB: RS=95/99, Giá 22,600.00 vs MA20 22,468.00."
       },
@@ -456,7 +462,7 @@
         "dept_id": "BAN_4_RISK",
         "ban_code": "Ban 4",
         "officer": "Hội Đồng Rủi Ro",
-        "vote": "CONDITIONAL",
+        "vote": "VETO",
         "article": 5,
         "rationale": "1 lô=12.4% NAV (OPTIMAL), Stop=5.65%."
       },
@@ -464,7 +470,7 @@
         "dept_id": "BAN_5_EVOLUTION",
         "ban_code": "Ban 5",
         "officer": "Chuyên Gia Tự Tiến Hóa",
-        "vote": "APPROVE",
+        "vote": "CONDITIONAL",
         "article": 3,
         "rationale": "IQ hệ thống=86.9/100; khóa ký ức không lặp sai lầm quá khổ/bắt dao rơi."
       },
@@ -482,13 +488,13 @@
         "officer": "Minh Quân",
         "vote": "APPROVE",
         "article": 6,
-        "rationale": "Thực thi theo Hiến chương 14h00–14h25; ưu tiên T+0/T+1 hạ giá vốn trên HDB & MSH."
+        "rationale": "Chấp hành lệnh VETO từ Ban 3/Ban 4, không đẩy lệnh."
       },
       {
         "dept_id": "BAN_7_US",
         "ban_code": "Ban 7 US",
         "officer": "Alex",
-        "vote": "APPROVE",
+        "vote": "CONDITIONAL",
         "article": 4,
         "rationale": "Cập nhật xung lực Mỹ (S&P500 -0.40%, US10Y 5.15%) phục vụ đối soát."
       },
@@ -496,9 +502,9 @@
         "dept_id": "BAN_8_CIO",
         "ban_code": "Ban 8",
         "officer": "Master CIO James",
-        "vote": "APPROVE",
+        "vote": "VETO",
         "article": 9,
-        "rationale": "Chốt phán quyết tối cao: HOLD_RIDE_WINNER_T0_READY."
+        "rationale": "Chốt phán quyết tối cao: ENTERPRISE_STRATEGY_HOLD_SELECTIVE_14H."
       },
       {
         "dept_id": "BAN_9_SENTINEL",
@@ -535,12 +541,20 @@
     ],
     "debate_points": [
       {
-        "speaker_dept": "BAN_2_BCTC",
-        "speaker": "Pháp Y Tài Chính (Ban 2)",
+        "speaker_dept": "BAN_3_SYNTHESIS",
+        "speaker": "Phòng Tổng Hợp (Ban 3)",
         "target_dept": "BAN_8_CIO",
-        "stance": "CONDITIONAL",
-        "article": 4,
-        "argument": "[SOÁT XÉT BCTC BAN 2] HDB: ROE=25.6%, P/E=6.1x, OCF/LNST=1.16x, D/E=1.27, Forensic=85/100 (AUDIT_CLEAN_EXCELLENT), MOS=+76.7%. Điểm cần thận trọng: Đòn bẩy D/E > 1.2x cần giám sát chi phí vốn & NIM."
+        "stance": "VETO",
+        "article": 3,
+        "argument": "[PHẢN BIỆN XU HƯỚNG ĐIỀU 3] FPT giá 50,400 đ < MA20 (55,100 đ), RS=18, MOS=-2.6% -> Ban 3 phủ quyết bắt đáy."
+      },
+      {
+        "speaker_dept": "BAN_4_RISK",
+        "speaker": "Hội Đồng Rủi Ro (Ban 4)",
+        "target_dept": "BAN_7_VN",
+        "stance": "VETO",
+        "article": 5,
+        "argument": "[VETO LÔ 100 ĐIỀU 5] MWG tốn 7,370,000 đ/lô (40.6% NAV) vượt trần 33% NAV -> Cấm giải ngân."
       },
       {
         "speaker_dept": "BAN_4_RISK",
@@ -548,22 +562,22 @@
         "target_dept": "BAN_7_VN",
         "stance": "CONDITIONAL",
         "article": 5,
-        "argument": "[ĐIỀU KIỆN RỦI RO BAN 4] Khống chế rủi ro HDB: Stop 2xATR=5.65% (ngưỡng 21,323), Lô 100 CP = 12.4% NAV <= 18% tiêu chuẩn Kim Tự Tháp, Risk Multiplier liên thị trường 1.00x (Trần giải ngân 50% NAV). Đang nắm giữ 100 CP @ 22,057 đ (Stop cứng 22,060 đ); Chờ nến xác nhận sau 14h00 theo Điều 6."
+        "argument": "[KIỂM SOÁT PHÂN BỔ BAN 4] NAV thực tế 18,151,471 đ (Tiền mặt 12,516,471 đ = 69.0%, Cổ phiếu 5,635,000 đ = 31.0%). Spillover US->VN 1.00x giới hạn giải ngân tối đa 50% NAV. Phản đối mọi đề xuất tăng tỷ trọng cổ phiếu quá 50% hoặc mua sáng trước 10h00."
       },
       {
         "speaker_dept": "BAN_7_VN",
         "speaker": "Minh Quân",
-        "target_dept": "BAN_9_SENTINEL",
+        "target_dept": "BAN_8_CIO",
         "stance": "APPROVE",
         "article": 6,
-        "argument": "[ĐỀ XUẤT THỰC THI BAN 7 VN] HDB đã khớp 100 CP @ 22,057 đ (Giá trị TT 2,235,000 đ, P&L +29,300 đ / +1.33%). Trạng thái HOLDING_T0_AVAILABLE: Giữ gồng lãi, sẵn sàng T+0/T+1 hạ giá vốn nếu nhúng hỗ trợ hoặc Scaling Out 50/50 tại TP1 24,200 đ; tuyệt đối cắt không do dự nếu thủng 22,060 đ."
+        "argument": "[CHIẾN LƯỢC THỰC THI BAN 7 VN] Danh mục hiện tại: HDB (100 CP @ 22,057đ -> 22,350đ, P&L +29,300đ), MSH (100 CP @ 34,510đ -> 34,000đ, P&L -51,000đ). Ưu tiên số 1: Quản trị vị thế T+0/T+1 trên HDB & MSH với Stop cứng chặt chẽ; chỉ mở thăm dò mới tối đa 1 lô (<=18% NAV) với mã đạt chuẩn như BAF vào Khung Giờ Vàng 14h00–14h25."
       }
     ],
     "packets": [
       {
-        "packet_id": "PKT-001-E34AEF",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-001-01830E",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_1_INDEPENDENT_SENSING",
         "from_dept": "BAN_1_US",
         "from_officer": "Dr. Elena Vance",
@@ -574,7 +588,7 @@
           "BAN_8_CIO"
         ],
         "topic": "GLOBAL_INTERMARKET_SPILLOVER",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
           "risk_multiplier": 1.0,
           "max_allocation_pct": 50,
@@ -593,9 +607,9 @@
         "summary": "Spillover US->VN: Risk Multiplier=1.00x, Trần phân bổ=50% NAV, S&P500 (-0.40%), VIX=19.30, DXY=103.41, US10Y=5.15%."
       },
       {
-        "packet_id": "PKT-002-CE5261",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-002-BE707C",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_1_INDEPENDENT_SENSING",
         "from_dept": "BAN_1_VN",
         "from_officer": "Vũ Minh",
@@ -606,7 +620,7 @@
           "BAN_8_CIO"
         ],
         "topic": "VN_MACRO_AND_SSOT_LIQUIDITY",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
           "account_id": "105C307855",
           "total_nav_vnd": 18151471.0,
@@ -626,9 +640,9 @@
         "summary": "SSOT TCBS 105C307855: NAV 18,151,471 đ | Tiền mặt 12,516,471 đ (69.0%) | Cổ phiếu 5,635,000 đ (31.0%) | Đã quét 145 mã VN."
       },
       {
-        "packet_id": "PKT-003-956E3D",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-003-645EC4",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_1_INDEPENDENT_SENSING",
         "from_dept": "BAN_10_IR",
         "from_officer": "Hiền",
@@ -642,7 +656,7 @@
         "ticker": "HDB",
         "metrics_payload": {
           "matched_news_count": 2,
-          "active_catalyst_alerts_for_focus": 1,
+          "active_catalyst_alerts_for_focus": 3,
           "total_alerts_system": 33,
           "primary_ir_url": "",
           "primary_catalyst": "Hưởng lợi hạn mức tăng trưởng tín dụng cao nhờ nhận chuyển giao ngân hàng yếu kém, ROE dẫn đầu ngành >25%."
@@ -654,12 +668,12 @@
           7
         ],
         "evidence_source": "scripts/apex_omni_intelligence_crawler.py + data/live_catalyst_alerts.json",
-        "summary": "Hiền Radar IR/CBTT: Thu thập 2 tin/CBTT khớp từ FTS5, 33 catalyst alerts toàn thị trường (1 trực tiếp tới HDB); IR chính thống: đang theo dõi."
+        "summary": "Hiền Radar IR/CBTT: Thu thập 2 tin/CBTT khớp từ FTS5, 33 catalyst alerts toàn thị trường (3 trực tiếp tới HDB); IR chính thống: đang theo dõi."
       },
       {
-        "packet_id": "PKT-004-A8ABCC",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-004-4AE1B6",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_1_INDEPENDENT_SENSING",
         "from_dept": "BAN_9_SENTINEL",
         "from_officer": "Victor",
@@ -669,7 +683,7 @@
           "BAN_8_CIO"
         ],
         "topic": "LIVE_PORTFOLIO_SENTINEL_CHECK",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
           "held_positions": [
             {
@@ -701,9 +715,9 @@
         "summary": "Victor Sentinel: Giám sát 2 vị thế đang mở (Thực lãi +167,119 đ | Tạm tính -21,700 đ), khóa tường lửa Read-Only Air-Gap 100% (Điều 8)."
       },
       {
-        "packet_id": "PKT-005-2857DF",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-005-8CA2DA",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_1_INDEPENDENT_SENSING",
         "from_dept": "BAN_5_EVOLUTION",
         "from_officer": "Chuyên Gia Tự Tiến Hóa (Ban 5)",
@@ -714,7 +728,7 @@
           "BAN_8_CIO"
         ],
         "topic": "WALK_FORWARD_MEMORY_AND_WEIGHTS",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
           "collective_iq_score": 86.9,
           "walk_forward_horizons": [
@@ -736,9 +750,9 @@
         "summary": "Ban 5 Tự Học: System Maturity Collective IQ=86.9/100; Trọng số chuẩn hóa VN=1.00, US=100; đối soát ký ức sai lầm ngăn lặp lại bẫy bắt đáy/mua quá khổ."
       },
       {
-        "packet_id": "PKT-006-43EA15",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-006-6173EF",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_2_FORENSIC_AND_LEGEND_VALUATION",
         "from_dept": "BAN_2_BCTC",
         "from_officer": "Pháp Y Tài Chính (Ban 2)",
@@ -775,9 +789,9 @@
         "summary": "Pháp y BCTC HDB: Giá 22,600.00, P/E=6.1x, ROE=25.6%, OCF/LNST=1.16x, D/E=1.27, Piotroski=9/9, Intrinsic=39,938, Biên an toàn MOS=+76.7%."
       },
       {
-        "packet_id": "PKT-007-56D6CF",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-007-64DE08",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_2_FORENSIC_AND_LEGEND_VALUATION",
         "from_dept": "BAN_6_ACADEMY",
         "from_officer": "Giám Đốc Học Viện (Ban 6)",
@@ -822,19 +836,19 @@
         "summary": "Học Viện 15 Huyền Thoại về HDB: Điểm đồng thuận=93.0, Verdict=LEGENDARY_CONSENSUS_BUY, Phản biện nổi bật: Jim Simons: Thống kê P(W)=55.0%, EV=+14.79%, Alpha=74.3."
       },
       {
-        "packet_id": "PKT-008-9DC24A",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-008-050DD0",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_3_ADVERSARIAL_DEBATE",
-        "from_dept": "BAN_2_BCTC",
-        "from_officer": "Pháp Y Tài Chính (Ban 2)",
+        "from_dept": "BAN_3_SYNTHESIS",
+        "from_officer": "Phòng Tổng Hợp (Ban 3)",
         "to_depts": [
           "BAN_8_CIO",
           "BAN_8_CIO",
           "BAN_12_OMBUDSMAN"
         ],
         "topic": "ADVERSARIAL_DEBATE_CHALLENGE",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
           "symbol": "HDB",
           "lot_100_cost_vnd": 2250000.0,
@@ -844,17 +858,17 @@
           "ma20": 22468.0,
           "rsi14": 47.1
         },
-        "stance": "CONDITIONAL",
+        "stance": "VETO",
         "constitutional_article": [
-          4
+          3
         ],
         "evidence_source": "Live Quantitative Rules + 10 Constitutional Articles",
-        "summary": "[SOÁT XÉT BCTC BAN 2] HDB: ROE=25.6%, P/E=6.1x, OCF/LNST=1.16x, D/E=1.27, Forensic=85/100 (AUDIT_CLEAN_EXCELLENT), MOS=+76.7%. Điểm cần thận trọng: Đòn bẩy D/E > 1.2x cần giám sát chi phí vốn & NIM."
+        "summary": "[PHẢN BIỆN XU HƯỚNG ĐIỀU 3] FPT giá 50,400 đ < MA20 (55,100 đ), RS=18, MOS=-2.6% -> Ban 3 phủ quyết bắt đáy."
       },
       {
-        "packet_id": "PKT-009-6578FF",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-009-8B11D8",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_3_ADVERSARIAL_DEBATE",
         "from_dept": "BAN_4_RISK",
         "from_officer": "Hội Đồng Rủi Ro (Ban 4)",
@@ -864,7 +878,37 @@
           "BAN_12_OMBUDSMAN"
         ],
         "topic": "ADVERSARIAL_DEBATE_CHALLENGE",
-        "ticker": "HDB",
+        "ticker": null,
+        "metrics_payload": {
+          "symbol": "HDB",
+          "lot_100_cost_vnd": 2250000.0,
+          "lot_100_nav_pct": 12.4,
+          "capital_fit_code": "OPTIMAL",
+          "rs_rating": 95,
+          "ma20": 22468.0,
+          "rsi14": 47.1
+        },
+        "stance": "VETO",
+        "constitutional_article": [
+          5
+        ],
+        "evidence_source": "Live Quantitative Rules + 10 Constitutional Articles",
+        "summary": "[VETO LÔ 100 ĐIỀU 5] MWG tốn 7,370,000 đ/lô (40.6% NAV) vượt trần 33% NAV -> Cấm giải ngân."
+      },
+      {
+        "packet_id": "PKT-010-1F3056",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
+        "stage": "STAGE_3_ADVERSARIAL_DEBATE",
+        "from_dept": "BAN_4_RISK",
+        "from_officer": "Hội Đồng Rủi Ro (Ban 4)",
+        "to_depts": [
+          "BAN_7_VN",
+          "BAN_8_CIO",
+          "BAN_12_OMBUDSMAN"
+        ],
+        "topic": "ADVERSARIAL_DEBATE_CHALLENGE",
+        "ticker": null,
         "metrics_payload": {
           "symbol": "HDB",
           "lot_100_cost_vnd": 2250000.0,
@@ -879,22 +923,22 @@
           5
         ],
         "evidence_source": "Live Quantitative Rules + 10 Constitutional Articles",
-        "summary": "[ĐIỀU KIỆN RỦI RO BAN 4] Khống chế rủi ro HDB: Stop 2xATR=5.65% (ngưỡng 21,323), Lô 100 CP = 12.4% NAV <= 18% tiêu chuẩn Kim Tự Tháp, Risk Multiplier liên thị trường 1.00x (Trần giải ngân 50% NAV). Đang nắm giữ 100 CP @ 22,057 đ (Stop cứng 22,060 đ); Chờ nến xác nhận sau 14h00 theo Điều 6."
+        "summary": "[KIỂM SOÁT PHÂN BỔ BAN 4] NAV thực tế 18,151,471 đ (Tiền mặt 12,516,471 đ = 69.0%, Cổ phiếu 5,635,000 đ = 31.0%). Spillover US->VN 1.00x giới hạn giải ngân tối đa 50% NAV. Phản đối mọi đề xuất tăng tỷ trọng cổ phiếu quá 50% hoặc mua sáng trước 10h00."
       },
       {
-        "packet_id": "PKT-010-569D93",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-011-84C6F6",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_3_ADVERSARIAL_DEBATE",
         "from_dept": "BAN_7_VN",
         "from_officer": "Minh Quân",
         "to_depts": [
-          "BAN_9_SENTINEL",
+          "BAN_8_CIO",
           "BAN_8_CIO",
           "BAN_12_OMBUDSMAN"
         ],
         "topic": "ADVERSARIAL_DEBATE_CHALLENGE",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
           "symbol": "HDB",
           "lot_100_cost_vnd": 2250000.0,
@@ -909,12 +953,12 @@
           6
         ],
         "evidence_source": "Live Quantitative Rules + 10 Constitutional Articles",
-        "summary": "[ĐỀ XUẤT THỰC THI BAN 7 VN] HDB đã khớp 100 CP @ 22,057 đ (Giá trị TT 2,235,000 đ, P&L +29,300 đ / +1.33%). Trạng thái HOLDING_T0_AVAILABLE: Giữ gồng lãi, sẵn sàng T+0/T+1 hạ giá vốn nếu nhúng hỗ trợ hoặc Scaling Out 50/50 tại TP1 24,200 đ; tuyệt đối cắt không do dự nếu thủng 22,060 đ."
+        "summary": "[CHIẾN LƯỢC THỰC THI BAN 7 VN] Danh mục hiện tại: HDB (100 CP @ 22,057đ -> 22,350đ, P&L +29,300đ), MSH (100 CP @ 34,510đ -> 34,000đ, P&L -51,000đ). Ưu tiên số 1: Quản trị vị thế T+0/T+1 trên HDB & MSH với Stop cứng chặt chẽ; chỉ mở thăm dò mới tối đa 1 lô (<=18% NAV) với mã đạt chuẩn như BAF vào Khung Giờ Vàng 14h00–14h25."
       },
       {
-        "packet_id": "PKT-011-F51F85",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-012-9CB6D6",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_4_ROLL_CALL_VOTE_AND_CIO_RESOLUTION",
         "from_dept": "BAN_8_CIO",
         "from_officer": "Master CIO James",
@@ -923,29 +967,31 @@
           "CHAIRMAN_PHUOC_TRAN"
         ],
         "topic": "CIO_FINAL_RESOLUTION",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
-          "final_verdict": "HOLD_RIDE_WINNER_T0_READY",
-          "veto_triggered": false,
-          "veto_reasons": [],
+          "final_verdict": "ENTERPRISE_STRATEGY_HOLD_SELECTIVE_14H",
+          "veto_triggered": true,
+          "veto_reasons": [
+            "[VETO LÔ 100 ĐIỀU 5] MWG tốn 7,370,000 đ/lô (40.6% NAV) vượt trần 33% NAV -> Cấm giải ngân."
+          ],
           "roll_call_summary": {
             "BAN_1_VN": "APPROVE",
             "BAN_1_US": "APPROVE",
             "BAN_2_BCTC": "CONDITIONAL",
-            "BAN_3_SYNTHESIS": "APPROVE",
-            "BAN_4_RISK": "CONDITIONAL",
-            "BAN_5_EVOLUTION": "APPROVE",
+            "BAN_3_SYNTHESIS": "VETO",
+            "BAN_4_RISK": "VETO",
+            "BAN_5_EVOLUTION": "CONDITIONAL",
             "BAN_6_ACADEMY": "CONDITIONAL",
             "BAN_7_VN": "APPROVE",
-            "BAN_7_US": "APPROVE",
-            "BAN_8_CIO": "APPROVE",
+            "BAN_7_US": "CONDITIONAL",
+            "BAN_8_CIO": "VETO",
             "BAN_9_SENTINEL": "APPROVE",
             "BAN_10_IR": "APPROVE",
             "BAN_11_MEDIA": "APPROVE",
             "BAN_12_OMBUDSMAN": "AUDIT_PASS"
           }
         },
-        "stance": "APPROVE",
+        "stance": "VETO",
         "constitutional_article": [
           1,
           2,
@@ -954,12 +1000,12 @@
           10
         ],
         "evidence_source": "Roll-Call Quorum + Constitutional Override Rules",
-        "summary": "Master CIO James chốt phán quyết [HOLD_RIDE_WINNER_T0_READY]: GIỮ VỊ THẾ CHIẾN LƯỢC HDB: Đang cầm 100 CP @ 22,057 đ (P&L +29,300 đ). Khóa Stop cứng 22,060 đ, TP1 24,200 đ (Scaling Out 50/50), giữ nguyên 12,516,471 đ tiền mặt phòng thủ."
+        "summary": "Master CIO James chốt phán quyết [ENTERPRISE_STRATEGY_HOLD_SELECTIVE_14H]: NGHỊ QUYẾT TOÀN DOANH NGHIỆP (TCBS 105C307855): Giữ vững kỷ luật 2 vị thế sống (HDB (100 CP @ 22,057đ -> 22,350đ, P&L +29,300đ), MSH (100 CP @ 34,510đ -> 34,000đ, P&L -51,000đ)) với đệm tiền mặt 12,516,471 đ (69.0% NAV), chặn đứng các mã vi phạm Điều 3/Điều 5 (FPT, MWG), chỉ giải ngân chọn lọc sau 14h00 theo trần Spillover 50% NAV."
       },
       {
-        "packet_id": "PKT-012-2A60C7",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-013-CF4288",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_5_OMBUDSMAN_CONSTITUTIONAL_AUDIT_AND_EXECUTION_MEMO",
         "from_dept": "BAN_12_OMBUDSMAN",
         "from_officer": "Kiểm Sát Viên Trọng",
@@ -968,7 +1014,7 @@
           "BAN_8_CIO"
         ],
         "topic": "CONSTITUTIONAL_AUDIT_AND_SEAL",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
           "ombudsman_audit_score": "10/10",
           "ten_articles_checks": [
@@ -980,7 +1026,7 @@
             {
               "article": 2,
               "passed": true,
-              "note": "Có mặt 14/14 thực thể & 3 ý kiến phản biện/điều kiện"
+              "note": "Có mặt 14/14 thực thể & 5 ý kiến phản biện/điều kiện"
             },
             {
               "article": 3,
@@ -1023,7 +1069,7 @@
               "note": "Phụng sự trực tiếp Chủ tịch Trần Quốc Thiên Phước (TCBS 105C307855)"
             }
           ],
-          "constitutional_seal_sha256": "726eb688de54162acd94f5f78d12802b159a3a3ed5708f4ec2bb7b2d48c60ea8"
+          "constitutional_seal_sha256": "0932ba4fbd7f6ad6c93da978be66a5b7194ade9bf07a295c9589c217a537ad0e"
         },
         "stance": "AUDIT_PASS",
         "constitutional_article": [
@@ -1039,12 +1085,12 @@
           10
         ],
         "evidence_source": "scripts/apex_constitution_enforcer.py (TEN_CONSTITUTIONAL_ARTICLES)",
-        "summary": "Kiểm Sát Viên Trọng (Ban 12): Đạt 10/10 Điều Luật Hiến Chương; Xác thực SSOT 105C307855 (Cash 12,516,471 đ + CP 5,635,000 đ); Niêm phong SHA-256: 726eb688de54162a..."
+        "summary": "Kiểm Sát Viên Trọng (Ban 12): Đạt 10/10 Điều Luật Hiến Chương; Xác thực SSOT 105C307855 (Cash 12,516,471 đ + CP 5,635,000 đ); Niêm phong SHA-256: 0932ba4fbd7f6ad6..."
       },
       {
-        "packet_id": "PKT-013-220DE2",
-        "session_id": "ENT-20261116-020707-FADB62",
-        "timestamp_ict": "2026-11-16 02:07:07",
+        "packet_id": "PKT-014-048C83",
+        "session_id": "ENT-20261116-093712-B519B4",
+        "timestamp_ict": "2026-11-16 09:37:12",
         "stage": "STAGE_5_OMBUDSMAN_CONSTITUTIONAL_AUDIT_AND_EXECUTION_MEMO",
         "from_dept": "BAN_11_MEDIA",
         "from_officer": "Khánh & Bảo",
@@ -1052,9 +1098,9 @@
           "CHAIRMAN_PHUOC_TRAN"
         ],
         "topic": "TRANSPARENT_ENTERPRISE_BRIEFING_MEMO",
-        "ticker": "HDB",
+        "ticker": null,
         "metrics_payload": {
-          "packets_total": 13,
+          "packets_total": 14,
           "quorum": 14
         },
         "stance": "INFO",
@@ -1063,42 +1109,14 @@
           10
         ],
         "evidence_source": "Enterprise Collaboration Mesh Output Formatter",
-        "summary": "Ban 11 đóng gói Biên bản Minh Bạch [ENT-20261116-020707-FADB62]: Đủ 14/14 Ban & Chuyên viên, 3 phản biện thực chất, Phán quyết HOLD_RIDE_WINNER_T0_READY."
+        "summary": "Ban 11 đóng gói Biên bản Minh Bạch [ENT-20261116-093712-B519B4]: Đủ 14/14 Ban & Chuyên viên, 5 phản biện thực chất, Phán quyết ENTERPRISE_STRATEGY_HOLD_SELECTIVE_14H."
       }
     ]
   },
   "recent_sessions": [
     {
-      "session_id": "ENT-20261116-020707-FADB62",
-      "created_at": "2026-11-16 02:07:07",
-      "trigger_source": "SUMMIT_DIRECTIVE",
-      "target_ticker": "HDB",
-      "directive": "Báo cáo ngắn phương án phòng thủ HDB tuần sau",
-      "final_verdict": "HOLD_RIDE_WINNER_T0_READY",
-      "quorum_count": 14,
-      "packet_count": 13,
-      "dissent_count": 3,
-      "veto_triggered": false,
-      "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "726eb688de54162acd94f5f78d12802b159a3a3ed5708f4ec2bb7b2d48c60ea8"
-    },
-    {
-      "session_id": "ENT-20261116-020706-D16F33",
-      "created_at": "2026-11-16 02:07:06",
-      "trigger_source": "AUDIT_SCRIPT",
-      "target_ticker": "HDB",
-      "directive": "Audit kiểm tra hợp lưu đa phòng ban HDB",
-      "final_verdict": "HOLD_RIDE_WINNER_T0_READY",
-      "quorum_count": 14,
-      "packet_count": 13,
-      "dissent_count": 3,
-      "veto_triggered": false,
-      "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "e4446bdc33a816d1963ba79872b3ffc3e46d304773cfe81c29ca113e4dca1dc2"
-    },
-    {
-      "session_id": "ENT-20261116-020705-767ABB",
-      "created_at": "2026-11-16 02:07:05",
+      "session_id": "ENT-20261116-093712-B519B4",
+      "created_at": "2026-11-16 09:37:12",
       "trigger_source": "AUDIT",
       "target_ticker": null,
       "directive": "Họp giao ban toàn doanh nghiệp đánh giá danh mục 105C307855",
@@ -1108,11 +1126,11 @@
       "dissent_count": 5,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "5e53a75ad6b01952c7bdb0d925f234b38567e63c688254dcdde0ac056754a2f0"
+      "constitutional_seal_sha256": "0932ba4fbd7f6ad6c93da978be66a5b7194ade9bf07a295c9589c217a537ad0e"
     },
     {
-      "session_id": "ENT-20261116-020705-040E07",
-      "created_at": "2026-11-16 02:07:05",
+      "session_id": "ENT-20261116-093711-E9B5B3",
+      "created_at": "2026-11-16 09:37:11",
       "trigger_source": "AUDIT",
       "target_ticker": "FPT",
       "directive": "Kiểm tra FPT",
@@ -1122,11 +1140,11 @@
       "dissent_count": 6,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "a733117a5eb4b40d84ee8ad2154691f328d0c9b52dadae2388325418128eee44"
+      "constitutional_seal_sha256": "c6e2ef0e62bcd8767459ea4a6ffe3e06b09f5b6364b9e06ecd0fe79161c2817a"
     },
     {
-      "session_id": "ENT-20261116-020705-8371A6",
-      "created_at": "2026-11-16 02:07:05",
+      "session_id": "ENT-20261116-093711-2DCFA3",
+      "created_at": "2026-11-16 09:37:11",
       "trigger_source": "AUDIT",
       "target_ticker": "MWG",
       "directive": "Kiểm tra MWG",
@@ -1136,11 +1154,11 @@
       "dissent_count": 6,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "f1d60ed55c73daebda1f3432ecf796585a134f8391dfdfc4fff0f593f795a145"
+      "constitutional_seal_sha256": "fc30f133002502747228b63741b46714378a59ddfbcddd5d37eb038cd461520a"
     },
     {
-      "session_id": "ENT-20261116-004536-084CE2",
-      "created_at": "2026-11-16 00:45:36",
+      "session_id": "ENT-20261116-092648-F1EC7A",
+      "created_at": "2026-11-16 09:26:48",
       "trigger_source": "AUDIT",
       "target_ticker": null,
       "directive": "Họp giao ban toàn doanh nghiệp đánh giá danh mục 105C307855",
@@ -1150,11 +1168,11 @@
       "dissent_count": 5,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "fd933c22d2e9245676634b6b5bb6592f5ad9fe523decf90426931082578cfaca"
+      "constitutional_seal_sha256": "d8388ebd95e8452614a2e3ae8221563dbd2818f108502997db0ecb627fcf303e"
     },
     {
-      "session_id": "ENT-20261116-004536-72DF33",
-      "created_at": "2026-11-16 00:45:36",
+      "session_id": "ENT-20261116-092648-528D86",
+      "created_at": "2026-11-16 09:26:48",
       "trigger_source": "AUDIT",
       "target_ticker": "FPT",
       "directive": "Kiểm tra FPT",
@@ -1164,11 +1182,11 @@
       "dissent_count": 6,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "847c0c1aa4149f698bbe11ce4179fa737734cc0b38fb3123e391ada3018fae08"
+      "constitutional_seal_sha256": "2daa79f5a94c5a33cf5d18c9dbf9ef6972e470720485eb63b73000839a653824"
     },
     {
-      "session_id": "ENT-20261116-004536-3D9E52",
-      "created_at": "2026-11-16 00:45:36",
+      "session_id": "ENT-20261116-092647-354892",
+      "created_at": "2026-11-16 09:26:47",
       "trigger_source": "AUDIT",
       "target_ticker": "MWG",
       "directive": "Kiểm tra MWG",
@@ -1178,39 +1196,11 @@
       "dissent_count": 6,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "ff2aa037f678ae7f0c194351504fb2fa2e789f6413957a17b94c4c2c1ccdb77e"
+      "constitutional_seal_sha256": "a3ed17de65b7a3c2aaee001a1ea3d1e81b444e888bf606642fab44cd109c0611"
     },
     {
-      "session_id": "ENT-20261116-004210-6E01D2",
-      "created_at": "2026-11-16 00:42:10",
-      "trigger_source": "SUMMIT_DIRECTIVE",
-      "target_ticker": "HDB",
-      "directive": "Báo cáo ngắn phương án phòng thủ HDB tuần sau",
-      "final_verdict": "HOLD_RIDE_WINNER_T0_READY",
-      "quorum_count": 14,
-      "packet_count": 13,
-      "dissent_count": 3,
-      "veto_triggered": false,
-      "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "e8d6da04b11dddcee7fbd40a735a865372112e74cba225ae4f05265e516e1159"
-    },
-    {
-      "session_id": "ENT-20261116-004209-7A1800",
-      "created_at": "2026-11-16 00:42:09",
-      "trigger_source": "AUDIT_SCRIPT",
-      "target_ticker": "HDB",
-      "directive": "Audit kiểm tra hợp lưu đa phòng ban HDB",
-      "final_verdict": "HOLD_RIDE_WINNER_T0_READY",
-      "quorum_count": 14,
-      "packet_count": 13,
-      "dissent_count": 3,
-      "veto_triggered": false,
-      "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "9c3a15b3a68f5c719480c5733bf512bb475539739fc527e8d7345d637307a432"
-    },
-    {
-      "session_id": "ENT-20261116-004209-9A9720",
-      "created_at": "2026-11-16 00:42:09",
+      "session_id": "ENT-20261116-091932-67F8C6",
+      "created_at": "2026-11-16 09:19:32",
       "trigger_source": "AUDIT",
       "target_ticker": null,
       "directive": "Họp giao ban toàn doanh nghiệp đánh giá danh mục 105C307855",
@@ -1220,11 +1210,11 @@
       "dissent_count": 5,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "42b34620150f85d5f41597664c864bc7f19c82a12dc0d81970a60e66186d9f41"
+      "constitutional_seal_sha256": "22e1b3b1bfdde6910e121c8f01476e470845dfeb590759703aeadc3391efc6e3"
     },
     {
-      "session_id": "ENT-20261116-004208-D8C4E5",
-      "created_at": "2026-11-16 00:42:08",
+      "session_id": "ENT-20261116-091932-FEC52C",
+      "created_at": "2026-11-16 09:19:32",
       "trigger_source": "AUDIT",
       "target_ticker": "FPT",
       "directive": "Kiểm tra FPT",
@@ -1234,11 +1224,11 @@
       "dissent_count": 6,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "010c325d590c69e8b486c001e0332b40aceb1f2f9debb7713cde4e84c35d6213"
+      "constitutional_seal_sha256": "7e87d5d03af413dcc7196e338281dad1b33c74f814b55834452e7b0376c453c6"
     },
     {
-      "session_id": "ENT-20261116-004208-056EB0",
-      "created_at": "2026-11-16 00:42:08",
+      "session_id": "ENT-20261116-091931-1CEF97",
+      "created_at": "2026-11-16 09:19:31",
       "trigger_source": "AUDIT",
       "target_ticker": "MWG",
       "directive": "Kiểm tra MWG",
@@ -1248,11 +1238,11 @@
       "dissent_count": 6,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "40fa832ab2048652b5c312cb88e2576f3c72bffcbb71faa46993cb47f82672cd"
+      "constitutional_seal_sha256": "91b90301f99dc46659821821239cbd10a67ce83a5b7aeb292036be45724eeeab"
     },
     {
-      "session_id": "ENT-20261115-235606-F567E8",
-      "created_at": "2026-11-15 23:56:06",
+      "session_id": "ENT-20261116-091419-67BB30",
+      "created_at": "2026-11-16 09:14:19",
       "trigger_source": "AUDIT",
       "target_ticker": null,
       "directive": "Họp giao ban toàn doanh nghiệp đánh giá danh mục 105C307855",
@@ -1262,11 +1252,11 @@
       "dissent_count": 5,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "310b96eb2bb0c4a03188930bc32711e4b71b8b09d3b8f549500f610725f61d6d"
+      "constitutional_seal_sha256": "6a2c542b5488433eb4ebe764fbaa9ebeee3f8998346ab0b25fcdebb617f6cf09"
     },
     {
-      "session_id": "ENT-20261115-235605-1A7278",
-      "created_at": "2026-11-15 23:56:05",
+      "session_id": "ENT-20261116-091419-80F0EE",
+      "created_at": "2026-11-16 09:14:19",
       "trigger_source": "AUDIT",
       "target_ticker": "FPT",
       "directive": "Kiểm tra FPT",
@@ -1276,15 +1266,71 @@
       "dissent_count": 6,
       "veto_triggered": true,
       "ombudsman_audit_score": "10/10",
-      "constitutional_seal_sha256": "b8bd9e93abe6cb387ce7bedd48d9f5e5e7b9f5935ecb90635779bf6af7ec59fc"
+      "constitutional_seal_sha256": "3fccbf07ea8ef8c37c32ed60cfc50fa38e517c33ec973f9bee29f61a19f497d3"
+    },
+    {
+      "session_id": "ENT-20261116-091419-FE4605",
+      "created_at": "2026-11-16 09:14:19",
+      "trigger_source": "AUDIT",
+      "target_ticker": "MWG",
+      "directive": "Kiểm tra MWG",
+      "final_verdict": "VETOED_CAPITAL_FIT_VIOLATION",
+      "quorum_count": 14,
+      "packet_count": 14,
+      "dissent_count": 6,
+      "veto_triggered": true,
+      "ombudsman_audit_score": "10/10",
+      "constitutional_seal_sha256": "f1dcccae1b5c4d9a9099f71b3dd83a6e14bd59430d2272df6e53f6ac79896c0f"
+    },
+    {
+      "session_id": "ENT-20261116-024442-05E409",
+      "created_at": "2026-11-16 02:44:42",
+      "trigger_source": "AUDIT",
+      "target_ticker": null,
+      "directive": "Họp giao ban toàn doanh nghiệp đánh giá danh mục 105C307855",
+      "final_verdict": "ENTERPRISE_STRATEGY_HOLD_SELECTIVE_14H",
+      "quorum_count": 14,
+      "packet_count": 14,
+      "dissent_count": 5,
+      "veto_triggered": true,
+      "ombudsman_audit_score": "10/10",
+      "constitutional_seal_sha256": "7dd39a0d1edd1b4925bcacc0caa7a00d7c40429ee8cf67e2d7db73c0dac07d57"
+    },
+    {
+      "session_id": "ENT-20261116-024442-A71DE6",
+      "created_at": "2026-11-16 02:44:42",
+      "trigger_source": "AUDIT",
+      "target_ticker": "FPT",
+      "directive": "Kiểm tra FPT",
+      "final_verdict": "VETOED_TREND_AND_VALUATION_RISK",
+      "quorum_count": 14,
+      "packet_count": 13,
+      "dissent_count": 6,
+      "veto_triggered": true,
+      "ombudsman_audit_score": "10/10",
+      "constitutional_seal_sha256": "5ee00fb26a5c3ee76742d981d987a78520ddd25dee43bb9c8a14e99197d5e994"
+    },
+    {
+      "session_id": "ENT-20261116-024441-810A84",
+      "created_at": "2026-11-16 02:44:41",
+      "trigger_source": "AUDIT",
+      "target_ticker": "MWG",
+      "directive": "Kiểm tra MWG",
+      "final_verdict": "VETOED_CAPITAL_FIT_VIOLATION",
+      "quorum_count": 14,
+      "packet_count": 14,
+      "dissent_count": 6,
+      "veto_triggered": true,
+      "ombudsman_audit_score": "10/10",
+      "constitutional_seal_sha256": "b43f809f50a94eb4ba492197c041f86311a4246246886feb8e9dc7f426dfdcb7"
     }
   ],
   "enterprise_kpi": {
     "total_sessions_recorded": 15,
     "quorum_rate_pct": 100.0,
-    "packets_in_latest_session": 13,
-    "dissent_events_in_latest_session": 3,
-    "veto_enforced_in_latest": false,
+    "packets_in_latest_session": 14,
+    "dissent_events_in_latest_session": 5,
+    "veto_enforced_in_latest": true,
     "ombudsman_audit_score": "10/10"
   }
 }

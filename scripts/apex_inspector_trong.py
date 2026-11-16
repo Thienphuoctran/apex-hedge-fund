@@ -387,13 +387,25 @@ class ApexInspectorTrong:
         DAILY_AUDITS_DIR.mkdir(parents=True, exist_ok=True)
         report_file = DAILY_AUDITS_DIR / f"{date_str}_Trong_Audit_Report.md"
 
+        weekdays_vi = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"]
+        weekday_str = weekdays_vi[now.weekday()]
+        cash_bal = float(st.get("cash_balance_vnd", 0.0) or 0.0)
+        nav_bal = float(st.get("total_nav_vnd", cash_bal) or 0.0)
+        positions = st.get("active_positions", {}) or {}
+        cash_pct = (cash_bal / nav_bal * 100.0) if nav_bal > 0 else 100.0
+        if len(positions) == 0:
+            ssot_line = f"`{cash_bal:,.0f} ₫` tiền mặt (100% Cash, 0 CP rủi ro)"
+        else:
+            pos_str = ", ".join(f"{sym} ({int(p.get('shares', 0))} CP)" for sym, p in positions.items())
+            ssot_line = f"NAV `{nav_bal:,.0f} ₫` | Tiền mặt `{cash_bal:,.0f} ₫` ({cash_pct:.1f}% Cash) | Đang giữ: `{pos_str}`"
+
         lines = [
             f"# BIÊN BẢN KIỂM SÁT THỂ CHẾ, KỶ LUẬT & TOÀN VẸN HỆ THỐNG ĐÊM 23H30",
             f"## (APEX INSTITUTIONAL OMBUDSMAN & AUDIT REPORT — {date_str})",
             f"",
             f"> **CƠ QUAN THỰC THI:** Ban 12 — Tổng Kiểm Sát Viên **Trọng**  ",
             f"> **KÍNH TRÌNH:** Chủ tịch Hội đồng Quản trị — **Trần Quốc Thiên Phước**  ",
-            f"> **THỜI ĐIỂM KIỂM SÁT:** `23:30:00 Thứ Bảy, ngày {now.strftime('%d/%m/%Y')}`  ",
+            f"> **THỜI ĐIỂM KIỂM SÁT:** `23:30:00 {weekday_str}, ngày {now.strftime('%d/%m/%Y')}`  ",
             f"> **TÌNH TRẠNG KỶ LUẬT CHUNG:** **{dept_audit['institutional_status']}** (Điểm Kỷ Luật: `{dept_audit['overall_discipline_score']}/100` | Điểm Chuyên Môn: `{dept_audit['overall_expertise_score']}/100`)  ",
             f"> **SỨC KHỎE KỸ THUẬT HỆ THỐNG:** `{tech_audit['system_health_score']}/100` (VPS Feed: `{tech_audit['vps_datafeed_status']}` | Số Lỗi Phát Hiện: `{tech_audit['issues_count']}`)  ",
             f"",
@@ -401,7 +413,7 @@ class ApexInspectorTrong:
             f"",
             f"## PHẦN I: KẾT QUẢ KIỂM TOÁN TOÀN VẸN HỆ THỐNG & KỸ THUẬT 24/24",
             f"",
-            f"1. **Tài sản & Số dư SSOT V2.0**: Đã đối soát chuẩn xác `20,167,119 ₫` tiền mặt (100% Cash, 0 CP rủi ro) tại két TCBS `105C307855`. Không có sai lệch.",
+            f"1. **Tài sản & Số dư SSOT V2.0**: Đã đối soát chuẩn xác {ssot_line} tại két TCBS `105C307855`. Không có sai lệch.",
             f"2. **Kết nối Dữ liệu Thị trường (VPS Live Feed)**: Hoạt động bình thường, độ trễ đạt `{tech_audit['vps_latency_ms']} ms` (< 200ms đạt chuẩn cao cấp).",
             f"3. **Kiểm tra Mã Nguồn & Tệp Dữ Liệu**: Đã quét toàn bộ các file JSON/Python, không phát hiện tệp bị lỗi cú pháp hay rò rỉ token bảo mật.",
             f"4. **Sổ Cái Ký Ức Liên Ngày**: Đã niêm phong mã băm SHA-256 an toàn, bảo đảm ngày mai nối tiếp 100% mạch công việc.",

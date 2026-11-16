@@ -282,13 +282,17 @@ class TrongInfrastructureSentinel:
 
         # Toàn vẹn tài sản: Cash + Market Value khớp với NAV (sai số < 1,000 đ)
         is_intact = (acc_id == "105C307855" and abs((cash + mkt_val) - nav) < 1000.0)
+        cash_pct = round((cash / nav * 100.0), 1) if nav > 0 else 100.0
+        pos_tickers = sorted(list(positions.keys())) if isinstance(positions, dict) else []
 
         return {
             "account_id": acc_id,
             "cash_balance_vnd": cash,
             "total_nav_vnd": nav,
             "total_market_val_vnd": mkt_val,
+            "cash_pct": cash_pct,
             "active_positions_count": len(positions),
+            "active_positions_tickers": pos_tickers,
             "ssot_is_intact": is_intact,
             "status": "SSOT_COHESION_VERIFIED" if is_intact else "SSOT_MISMATCH_ALERT"
         }
@@ -438,6 +442,21 @@ class TrongInfrastructureSentinel:
         else:
             dense_lines = "- *Tất cả các thư mục đều nằm trong mật độ tối ưu (<80 tệp/thư mục), không có nguy cơ nghẽn I/O.*\n"
 
+        pos_count = int(c7.get("active_positions_count", 0) or 0)
+        nav_vnd = float(c7.get("total_nav_vnd", c7.get("cash_balance_vnd", 0)) or 0)
+        cash_pct = float(c7.get("cash_pct", (c7["cash_balance_vnd"] / nav_vnd * 100.0) if nav_vnd > 0 else 100.0))
+        tickers_list = c7.get("active_positions_tickers", []) or []
+        tickers_str = ", ".join(tickers_list) if tickers_list else "0 CP"
+        if pos_count == 0:
+            ssot_summary_header = f"**`{c7['cash_balance_vnd']:,.0f} ₫` (100% Tiền Mặt)** | **`0 CP` Rủi Ro**"
+            ssot_positions_note = "`0 CP` *(100% Tiền mặt an toàn tuyệt đối)*"
+        else:
+            ssot_summary_header = (
+                f"**NAV `{nav_vnd:,.0f} ₫`** | **Cash `{c7['cash_balance_vnd']:,.0f} ₫` ({cash_pct:.1f}%)** | "
+                f"**Đang giữ `{pos_count} mã` ({tickers_str})**"
+            )
+            ssot_positions_note = f"`{pos_count} mã` ({tickers_str} — Thị giá `{float(c7.get('total_market_val_vnd', 0)):,.0f} ₫`, Cash đệm `{cash_pct:.1f}%`)"
+
         md = f"""# 🏛️ BÁO CÁO KIỂM TOÁN HẠ TẦNG, SỨC CHỨA & NGƯỠNG NÂNG CẤP HỆ THỐNG
 ## BAN 12 — TỔNG KIỂM SÁT VIÊN THỂ CHẾ TRỌNG & CỐ VẤN TỐI CAO PALMER
 
@@ -446,7 +465,7 @@ class TrongInfrastructureSentinel:
 > **KÍNH TRÌNH:** Chủ Tịch Hội Đồng Quản Trị — **Trần Quốc Thiên Phước** *(Tài khoản TCBS: `105C307855`)*  
 > **THỜI ĐIỂM KIỂM TOÁN:** `{tel["audit_timestamp"]}` *(Thời gian quét: `{tel["audit_duration_seconds"]}s`)*  
 > **ĐIỂM SỨC KHỎE HẠ TẦNG:** **`{tel["overall_infrastructure_health_score"]}/100`** — **ĐÁNH GIÁ: {tel["health_verdict"]}**  
-> **TRẠNG THÁI SSOT V2.0:** **`{c7["cash_balance_vnd"]:,.0f} ₫` (100% Tiền Mặt)** | **`0 CP` Rủi Ro**
+> **TRẠNG THÁI SSOT V2.0:** {ssot_summary_header}
 
 ---
 
@@ -492,8 +511,8 @@ pie title Phân Bố Dung Lượng Dự Án Apex ({c3["total_project_size_mb"]} 
 
 ### 7. Tính Toàn Vẹn Đơn Nguồn Sự Thật SSOT V2.0:
 * **Tài khoản TCBS:** `{c7["account_id"]}` *(Khớp chuẩn 100%)*.
-* **Số dư tiền mặt:** `{c7["cash_balance_vnd"]:,.0f} ₫` *(Khớp chuẩn 100%)*.
-* **Cổ phiếu rủi ro:** `{c7["active_positions_count"]} CP` *(100% Tiền mặt an toàn tuyệt đối)*.
+* **Tổng NAV:** `{nav_vnd:,.0f} ₫` | **Số dư tiền mặt:** `{c7["cash_balance_vnd"]:,.0f} ₫` *({cash_pct:.1f}% NAV — Khớp chuẩn 100%)*.
+* **Cổ phiếu đang nắm giữ:** {ssot_positions_note}.
 
 ---
 

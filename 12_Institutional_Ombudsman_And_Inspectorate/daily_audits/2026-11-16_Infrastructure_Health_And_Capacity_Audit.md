@@ -4,25 +4,25 @@
 > **CƠ QUAN THỰC THI:** Ban 12 Trọng (Tổng Kiểm Sát) phối hợp cùng Palmer (Cố Vấn Tối Cao)  
 > **GIÁM SÁT TỐI CAO:** Master CIO James (Ban 8)  
 > **KÍNH TRÌNH:** Chủ Tịch Hội Đồng Quản Trị — **Trần Quốc Thiên Phước** *(Tài khoản TCBS: `105C307855`)*  
-> **THỜI ĐIỂM KIỂM TOÁN:** `2026-11-16 02:41:01` *(Thời gian quét: `0.96s`)*  
-> **ĐIỂM SỨC KHỎE HẠ TẦNG:** **`85/100`** — **ĐÁNH GIÁ: CẦN LƯU Ý**  
-> **TRẠNG THÁI SSOT V2.0:** **`12,516,471 ₫` (100% Tiền Mặt)** | **`0 CP` Rủi Ro**
+> **THỜI ĐIỂM KIỂM TOÁN:** `2026-11-16 09:36:56` *(Thời gian quét: `1.48s`)*  
+> **ĐIỂM SỨC KHỎE HẠ TẦNG:** **`75/100`** — **ĐÁNH GIÁ: CẦN LƯU Ý**  
+> **TRẠNG THÁI SSOT V2.0:** **NAV `18,151,471 ₫`** | **Cash `12,516,471 ₫` (69.0%)** | **Đang giữ `2 mã` (HDB, MSH)**
 
 ---
 
 ## I. KẾT QUẢ KIỂM TOÁN 7 KHÂU CƠ SỞ HẠ TẦNG THỰC TẾ
 
 ```mermaid
-pie title Phân Bố Dung Lượng Dự Án Apex (53.87 MB / 1000 MB Quota GitHub)
-    "Dung Lượng Đã Dùng (5.39%)" : 53.87
-    "Dung Lượng Trống Còn Lại" : 946.13
+pie title Phân Bố Dung Lượng Dự Án Apex (53.6 MB / 1000 MB Quota GitHub)
+    "Dung Lượng Đã Dùng (5.36%)" : 53.6
+    "Dung Lượng Trống Còn Lại" : 946.4
 ```
 
 ### 1. Giám Sát Số Lượng Báo Cáo & Ngưỡng Kích Hoạt Nâng Cấp (Chỉ Thị 300 - 500 Báo Cáo):
-* **Số lượng báo cáo thể chế chính thức:** **`382 báo cáo`**.
-* **Tổng số văn bản Markdown toàn hệ thống:** **`610 tài liệu`**.
+* **Số lượng báo cáo thể chế chính thức:** **`385 báo cáo`**.
+* **Tổng số văn bản Markdown toàn hệ thống:** **`614 tài liệu`**.
 * **Trạng thái ngưỡng (Threshold Status):** **`GREEN_OPTIMAL_SQLITE_POWERED`** *(Mức độ khẩn cấp: `OPTIMAL`)*.
-* **Chỉ thị tác chiến của Trọng & Palmer:** *Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (382 báo cáo thể chế / 610 tệp MD hiện có).*
+* **Chỉ thị tác chiến của Trọng & Palmer:** *Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (385 báo cáo thể chế / 614 tệp MD hiện có).*
 
 ### 2. Mật Độ Tệp Tin Từng Thư Mục (Inode Density & Sharding):
 * **Tổng số thư mục đã rà soát:** `99 thư mục`.
@@ -31,13 +31,13 @@ pie title Phân Bố Dung Lượng Dự Án Apex (53.87 MB / 1000 MB Quota GitHu
 
 
 ### 3. Dung Lượng Đĩa & Khả Năng Lưu Trữ Dự Án (Storage Runway):
-* **Tổng số tệp tin đang hoạt động:** **`1191 tệp`**.
-* **Tổng dung lượng vật lý dự án:** **`53.87 MB`** *(Dung lượng kho data: `28.48 MB`)*.
-* **Hạn mức GitHub Quota đã dùng:** **`5.39%`** / `1,000 MB`.
+* **Tổng số tệp tin đang hoạt động:** **`1193 tệp`**.
+* **Tổng dung lượng vật lý dự án:** **`53.6 MB`** *(Dung lượng kho data: `28.15 MB`)*.
+* **Hạn mức GitHub Quota đã dùng:** **`5.36%`** / `1,000 MB`.
 * **Khả năng chịu tải (Runway):** **`Cực kỳ dồi dào (> 5 năm vận hành an toàn)`** — Tuyệt đối không có nguy cơ đầy đĩa.
 
 ### 4. Sức Khỏe Kho Mã Nguồn Git & Tiến Trình Đồng Bộ:
-* **Dung lượng thư mục `.git`:** `145.05 MB`.
+* **Dung lượng thư mục `.git`:** `145.48 MB`.
 * **Số lượng tệp chưa commit:** `23 tệp`.
 * **Nhánh hoạt động (Branch):** `main`.
 * **Trạng thái:** **`HEALTHY`**.
@@ -47,14 +47,14 @@ pie title Phân Bố Dung Lượng Dự Án Apex (53.87 MB / 1000 MB Quota GitHu
 * **Tệp log cần xoay vòng (>5 MB):** `0 tệp` *(Trạng thái: `HEALTHY`)*.
 
 ### 6. Tốc Độ Phản Hồi & Truy Xuất I/O (Latency Benchmark):
-* **Thời gian quét toàn bộ kho JSON:** **`81.15 ms`**.
-* **Thời gian nạp Đơn Nguồn Sự Thật SSOT:** **`0.43 ms`**.
+* **Thời gian quét toàn bộ kho JSON:** **`148.6 ms`**.
+* **Thời gian nạp Đơn Nguồn Sự Thật SSOT:** **`0.72 ms`**.
 * **Đánh giá phản hồi:** **`FAST_RESPONSIVE (<150ms)`** *(Đáp ứng hoàn hảo chuẩn thời gian thực < 150ms)*.
 
 ### 7. Tính Toàn Vẹn Đơn Nguồn Sự Thật SSOT V2.0:
 * **Tài khoản TCBS:** `105C307855` *(Khớp chuẩn 100%)*.
-* **Số dư tiền mặt:** `12,516,471 ₫` *(Khớp chuẩn 100%)*.
-* **Cổ phiếu rủi ro:** `2 CP` *(100% Tiền mặt an toàn tuyệt đối)*.
+* **Tổng NAV:** `18,151,471 ₫` | **Số dư tiền mặt:** `12,516,471 ₫` *(69.0% NAV — Khớp chuẩn 100%)*.
+* **Cổ phiếu đang nắm giữ:** `2 mã` (HDB, MSH — Thị giá `5,635,000 ₫`, Cash đệm `69.0%`).
 
 ---
 
