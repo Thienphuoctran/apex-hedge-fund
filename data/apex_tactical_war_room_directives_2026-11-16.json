@@ -314,5 +314,50 @@
     "role": "sentinel",
     "type": "sentinel_emergency",
     "content": "🚨 [BAN 9 CẢNH BÁO — HDB] Giá 22,300.00 (-1.33%) | Cách Stop 2xATR: +1.08% | SHORT 1 HỢP ĐỒNG VN30F1M"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_PLX_93841",
+    "key": "cbtt_2026-11-16_CRITICAL_PLX_93841",
+    "timestamp": "01:30:33",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PLX] Petrolimex (PLX) dự báo lãi kỷ lục gần 4.500 tỷ đồng trong năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_KDH_15644",
+    "key": "cbtt_2026-11-16_CRITICAL_KDH_15644",
+    "timestamp": "01:30:33",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — KDH] Doanh thu thuần giảm 83%, Khang Điền (KDH) vẫn được dự báo lãi ròng hơn 1.500 tỷ đồng năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_GMD_21405",
+    "key": "cbtt_2026-11-16_CRITICAL_GMD_21405",
+    "timestamp": "01:30:33",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — GMD] Lộ diện “con gà đẻ trứng vàng” của Gemadept (GMD), đóng góp gần 40% lợi nhuận trước thuế (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_PHR_57581",
+    "key": "cbtt_2026-11-16_CRITICAL_PHR_57581",
+    "timestamp": "01:30:33",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PHR] Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96% (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_HCM_28109",
+    "key": "cbtt_2026-11-16_CRITICAL_HCM_28109",
+    "timestamp": "01:30:33",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — HCM] Tập đoàn Trung Quốc đổ tiền xây nhà máy công nghệ cao 10.000 m² tại TP.HCM: Công ty con ở Việt Nam lãi gấp 1,6 lần cả tập đoàn mẹ (BCTC_KET_QUA_KINH_DOANH)"
   }
 ]

@@ -11,7 +11,7 @@
 
 | Phòng Ban Báo Cáo | Nhận Định Cốt Lõi Hôm Nay | Đánh Giá Chi Tiết Từ Phòng Ban | Quyết Định Điều Phối Khoa Học Của Minh Quân |
 | :--- | :--- | :--- | :--- |
-| **Ban 1 VN — Vĩ Mô & Chính Sách Tiền Tệ SBV (`vn-macro-monetary-agent`)** | **`VĨ MÔ ỔN ĐỊNH — TIỀN RẺ HỖ TRỢ SẢN XUẤT`** | Lãi suất tái cấp vốn SBV neo ở 4.5% hỗ trợ thanh khoản tối đa cho nền kinh tế; tỷ giá USD/VND 25,420đ đi ngang quanh đỉnh biên độ nhưng áp lực hạ nhiệt khi DXY lùi về 103.46. Tăng trưởng tín dụng YTD đạt 9.2% và giải ngân đầu tư công bứt phá 52.8%, tạo bệ phóng dòng tiền cực lớn cho nhóm Hạ tầng, Thép, Khu công nghiệp. | **Minh Quân duy trì 70% tỷ trọng danh mục vào Nhóm Cốt Lõi Tăng Trưởng (Core Compounders) và dành 15% cho Nhánh Alpha Đón Đầu Dòng Tiền.** |
+| **Ban 1 VN — Vĩ Mô & Chính Sách Tiền Tệ SBV (`vn-macro-monetary-agent`)** | **`VĨ MÔ ỔN ĐỊNH — TIỀN RẺ HỖ TRỢ SẢN XUẤT`** | Lãi suất tái cấp vốn SBV neo ở 4.5% hỗ trợ thanh khoản tối đa cho nền kinh tế; tỷ giá USD/VND 25,420đ đi ngang quanh đỉnh biên độ nhưng áp lực hạ nhiệt khi DXY lùi về 103.62. Tăng trưởng tín dụng YTD đạt 9.2% và giải ngân đầu tư công bứt phá 52.8%, tạo bệ phóng dòng tiền cực lớn cho nhóm Hạ tầng, Thép, Khu công nghiệp. | **Minh Quân duy trì 70% tỷ trọng danh mục vào Nhóm Cốt Lõi Tăng Trưởng (Core Compounders) và dành 15% cho Nhánh Alpha Đón Đầu Dòng Tiền.** |
 | **Ban 2 VN — Thẩm Định BCTC & Kiểm Toán VAS/TT200 (`vn-equity-bctc-agent`)** | **`ƯU TIÊN DOANH NGHIỆP IN TIỀN THẬT OCF/LNST > 1 & ALTMAN Z'' AN TOÀN`** | Kiểm toán chất lượng lợi nhuận cho thấy các mã HPG, FPT, MWG, DGC có dòng tiền thuần OCF vượt trội LNST (OCF/LNST 1.15x - 2.12x), dòng tiền tự do FCF dương hàng ngàn tỷ đồng, tỷ lệ hoàn thành kế hoạch ĐHCĐ > 100% và được kiểm toán bởi Big 4 (KPMG, PwC, EY) và Baker Tilly. Phát hiện cảnh báo đỏ (Red Flags) tại nhóm BĐS đòn bẩy cao nợ phình to và một số mã bán lẻ có chỉ số Altman Z'' rơi vào vùng nguy hiểm. | **Minh Quân kiên quyết loại bỏ 100% cổ phiếu dính bẫy lợi nhuận giấy; chỉ giải ngân vào các doanh nghiệp in tiền mặt thật.** |
 | **Ban 3 VN — Tổng Hợp & Đọc Vị Dòng Tiền VSA (`vn-synthesis-hub-agent`)** | **`XUẤT HIỆN NẾN TEST CUNG CẠN KIỆT (NO SUPPLY) TẠI NỀN HỖ TRỢ`** | Sau nhịp rũ bỏ phiên trước, các siêu cổ phiếu FPT, HPG, MWG, DGC đã hình thành nền tích lũy Wyckoff chặt chẽ với nến No Supply, khối lượng cạn kiệt 35%–45% so với MA20. Tỷ lệ Mua chủ động (Buy Up) trong phiên đạt 68.5%, xác nhận dòng tiền thông minh (Smart Money) gom hàng. | **Minh Quân áp dụng chiến thuật chia nhịp lệnh: 60% gom Limit giá chiết khấu tại nền và 40% gia tăng khi bứt phá kèm khối lượng lớn.** |
 | **Ban 4 VN — Hội Đồng Đầu Tư & Rủi Ro T+2.5 (`vn-investment-committee-agent`)** | **`KIỂM SOÁT TƯƠNG QUAN & KHÓA RỦI RO STOP 2xATR <= 7.0%`** | Định cỡ vị thế chuẩn hóa Position Sizing để mức tổn thất tối đa mỗi lệnh khi dính cắt lỗ không vượt quá 1.0% NAV. Tuân thủ nghiêm ngặt biên độ sàn HOSE (+/-7%) và chu kỳ thanh toán T+2.5; không mở mua mới đối với các mã cận ngày chốt quyền phát hành tăng vốn. | **Minh Quân gắn ngưỡng cắt lỗ tự động Stop 2xATR (khóa cứng <= 6.8%) cho toàn bộ sổ lệnh thực thi hôm nay.** |
@@ -70,18 +70,18 @@
 ---
 
 ## 📋 3. SỔ LỆNH ĐẦU TƯ KHOA HỌC PRE-ATO MASTER BLOTTER CỦA MINH QUÂN
-*Quy mô danh mục tham chiếu: **18,151,471 VNĐ** (Cấu trúc: **90% Core Compounders** + **10% Tiền mặt dự phòng Dry Powder**).*  
+*Quy mô danh mục tham chiếu: **20,145,422 VNĐ** (Cấu trúc: **90% Core Compounders** + **10% Tiền mặt dự phòng Dry Powder**).*  
 *Tuân thủ 100% quy chuẩn khớp lệnh LO, lô chẵn 100 CP, biên độ sàn HOSE (+/-7%) / HNX (+/-10%) và chu kỳ thanh toán T+2.5.*  
 *Chốt chặn Van An Toàn Toán Học Dual-Engine (`VN Inviolable Gate v2.0`): Đạt chuẩn **6/6 vị thế** (`Stop <= 7%`, `Blended R:R >= 2.0x`, `EV% >= +3.5%`, `OCF/LNST >= 1.0x`).*
 
 | Mã | Sàn | Phân Nhánh | Giá Hiện Tại | Khối Lượng (Lô 100) | Giá Trị (VNĐ) | Nhịp Gom 1 (60% Limit) | Nhịp Gom 2 (40% Breakout) | Cắt Lỗ (Stop 2xATR) | Chốt Lời TP1 / TP2 | Xác Suất P(W) | R:R | Kỳ Vọng EV% | Van An Toàn Toán Học |
 | :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`HDB`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **22,500 đ** | **300 CP** | 6,750,000 đ | **22,310 đ** | **22,820 đ** | **21,220 đ** *(-5.69%)* | 24,290 đ / 25,820 đ | `85%` | `1:2.59` | **`+8.8%`** | `PASSED (-1.16% NAV)` |
-| **`MSH`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **35,500 đ** | **200 CP** | 7,100,000 đ | **35,060 đ** | **36,220 đ** | **33,090 đ** *(-6.79%)* | 39,560 đ / 43,040 đ | `86%` | `1:3.13` | **`+13.1%`** | `PASSED (-1.46% NAV)` |
-| **`BAF`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **30,900 đ** | **200 CP** | 6,180,000 đ | **30,710 đ** | **31,210 đ** | **29,650 đ** *(-4.05%)* | 32,650 đ / 34,140 đ | `82%` | `1:2.59` | **`+5.89%`** | `PASSED (-0.76% NAV)` |
-| **`IDC`** | HNX | `TACTICAL RISING GEM (MidCap_Growth)` | **34,900 đ** | **200 CP** | 6,980,000 đ | **34,500 đ** | **35,570 đ** | **32,530 đ** *(-6.79%)* | 38,660 đ / 41,880 đ | `83%` | `1:2.95` | **`+11.61%`** | `PASSED (-1.44% NAV)` |
-| **`TCH`** | HOSE | `TACTICAL RISING GEM (MidCap_Growth)` | **13,500 đ** | **300 CP** | 4,050,000 đ | **13,350 đ** | **13,750 đ** | **12,580 đ** *(-6.81%)* | 14,880 đ / 16,060 đ | `78%` | `1:2.78` | **`+9.88%`** | `PASSED (-0.84% NAV)` |
-| **`OCB`** | HOSE | `TACTICAL RISING GEM (MidCap_Growth)` | **10,700 đ** | **300 CP** | 3,210,000 đ | **10,600 đ** | **10,870 đ** | **10,020 đ** *(-6.36%)* | 11,650 đ / 12,470 đ | `78%` | `1:2.6` | **`+8.51%`** | `PASSED (-0.62% NAV)` |
+| **`HDB`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **22,500 đ** | **300 CP** | 6,750,000 đ | **22,310 đ** | **22,820 đ** | **21,220 đ** *(-5.69%)* | 24,290 đ / 25,820 đ | `85%` | `1:2.59` | **`+8.8%`** | `PASSED (-1.05% NAV)` |
+| **`MSH`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **35,500 đ** | **200 CP** | 7,100,000 đ | **35,060 đ** | **36,220 đ** | **33,090 đ** *(-6.79%)* | 39,560 đ / 43,040 đ | `86%` | `1:3.13` | **`+13.1%`** | `PASSED (-1.32% NAV)` |
+| **`BAF`** | HOSE | `CORE COMPOUNDER (ROUND 2 LEADER)` | **30,900 đ** | **200 CP** | 6,180,000 đ | **30,710 đ** | **31,210 đ** | **29,650 đ** *(-4.05%)* | 32,650 đ / 34,140 đ | `82%` | `1:2.59` | **`+5.89%`** | `PASSED (-0.68% NAV)` |
+| **`IDC`** | HNX | `TACTICAL RISING GEM (MidCap_Growth)` | **34,900 đ** | **200 CP** | 6,980,000 đ | **34,500 đ** | **35,570 đ** | **32,530 đ** *(-6.79%)* | 38,660 đ / 41,880 đ | `83%` | `1:2.95` | **`+11.61%`** | `PASSED (-1.29% NAV)` |
+| **`TCH`** | HOSE | `TACTICAL RISING GEM (MidCap_Growth)` | **13,500 đ** | **300 CP** | 4,050,000 đ | **13,350 đ** | **13,750 đ** | **12,580 đ** *(-6.81%)* | 14,880 đ / 16,060 đ | `78%` | `1:2.78` | **`+9.88%`** | `PASSED (-0.75% NAV)` |
+| **`OCB`** | HOSE | `TACTICAL RISING GEM (MidCap_Growth)` | **10,700 đ** | **300 CP** | 3,210,000 đ | **10,600 đ** | **10,870 đ** | **10,020 đ** *(-6.36%)* | 11,650 đ / 12,470 đ | `78%` | `1:2.6` | **`+8.51%`** | `PASSED (-0.56% NAV)` |
 
 ---
 
@@ -89,7 +89,7 @@
 Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC Hợp Nhất Kiểm Toán và 5 Bậc Thầy Đầu Tư Thế Giới:
 
 ### 💎 4.1. Cổ Phiếu **`HDB`** — HDBank (HOSE)
-- **Phân nhánh danh mục**: `CORE COMPOUNDER (ROUND 2 LEADER)` | **Tỷ trọng**: **`37.19% NAV`** (`6,750,000 VNĐ` ~ **300 CP**)
+- **Phân nhánh danh mục**: `CORE COMPOUNDER (ROUND 2 LEADER)` | **Tỷ trọng**: **`33.51% NAV`** (`6,750,000 VNĐ` ~ **300 CP**)
 - **Kỳ vọng Toán học (`EV%`)**: **`+8.8%`** | **Xác suất Thắng `P(W)`**: **`85%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Cổ phiếu HDB giao dịch tại 22,500 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Tăng trưởng tín dụng & ROE dẫn đầu ngành, mảng tài chính tiêu dùng HD Saison khỏe Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
@@ -116,7 +116,7 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **21,220 đ** (khống chế rủi ro tối đa -5.69%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.2. Cổ Phiếu **`MSH`** — May Sông Hồng (HOSE)
-- **Phân nhánh danh mục**: `CORE COMPOUNDER (ROUND 2 LEADER)` | **Tỷ trọng**: **`39.12% NAV`** (`7,100,000 VNĐ` ~ **200 CP**)
+- **Phân nhánh danh mục**: `CORE COMPOUNDER (ROUND 2 LEADER)` | **Tỷ trọng**: **`35.24% NAV`** (`7,100,000 VNĐ` ~ **200 CP**)
 - **Kỳ vọng Toán học (`EV%`)**: **`+13.1%`** | **Xác suất Thắng `P(W)`**: **`86%`** | **Tỷ lệ `Reward/Risk`**: **`1:3.13`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Cổ phiếu MSH giao dịch tại 35,500 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Nhà máy Sông Hồng 10 và nhà máy tại Ai Cập chạy tối đa công suất đơn hàng FOB biên lãi cao, tiền mặt lớn Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
@@ -143,7 +143,7 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **33,090 đ** (khống chế rủi ro tối đa -6.79%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.3. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)
-- **Phân nhánh danh mục**: `CORE COMPOUNDER (ROUND 2 LEADER)` | **Tỷ trọng**: **`34.05% NAV`** (`6,180,000 VNĐ` ~ **200 CP**)
+- **Phân nhánh danh mục**: `CORE COMPOUNDER (ROUND 2 LEADER)` | **Tỷ trọng**: **`30.68% NAV`** (`6,180,000 VNĐ` ~ **200 CP**)
 - **Kỳ vọng Toán học (`EV%`)**: **`+5.89%`** | **Xác suất Thắng `P(W)`**: **`82%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Cổ phiếu BAF giao dịch tại 30,900 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Mô hình chăn nuôi 3F khép kín hợp tác tập đoàn Muyuan (Trung Quốc), nâng tổng đàn lên 1 triệu con Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
@@ -170,7 +170,7 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **29,650 đ** (khống chế rủi ro tối đa -4.05%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.4. Cổ Phiếu **`IDC`** — Tổng Công ty IDICO (HNX)
-- **Phân nhánh danh mục**: `TACTICAL RISING GEM (MidCap_Growth)` | **Tỷ trọng**: **`38.45% NAV`** (`6,980,000 VNĐ` ~ **200 CP**)
+- **Phân nhánh danh mục**: `TACTICAL RISING GEM (MidCap_Growth)` | **Tỷ trọng**: **`34.65% NAV`** (`6,980,000 VNĐ` ~ **200 CP**)
 - **Kỳ vọng Toán học (`EV%`)**: **`+11.61%`** | **Xác suất Thắng `P(W)`**: **`83%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.95`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Cổ phiếu IDC giao dịch tại 34,900 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Quỹ đất thương phẩm >700ha sẵn sàng cho thuê (Hựu Thạnh, Phú Mỹ 2), cổ tức tiền mặt 40% Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
@@ -197,7 +197,7 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **32,530 đ** (khống chế rủi ro tối đa -6.79%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.5. Cổ Phiếu **`TCH`** — Đầu tư Dịch vụ Tài chính Hoàng Huy (HOSE)
-- **Phân nhánh danh mục**: `TACTICAL RISING GEM (MidCap_Growth)` | **Tỷ trọng**: **`22.31% NAV`** (`4,050,000 VNĐ` ~ **300 CP**)
+- **Phân nhánh danh mục**: `TACTICAL RISING GEM (MidCap_Growth)` | **Tỷ trọng**: **`20.1% NAV`** (`4,050,000 VNĐ` ~ **300 CP**)
 - **Kỳ vọng Toán học (`EV%`)**: **`+9.88%`** | **Xác suất Thắng `P(W)`**: **`78%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.78`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Cổ phiếu TCH giao dịch tại 13,500 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Ông lớn BĐS Hải Phòng (Hoàng Huy New City Thủy Nguyên), tiền gửi ngân hàng >6,000 tỷ đồng, P/B < 0.9x Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
@@ -224,7 +224,7 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **12,580 đ** (khống chế rủi ro tối đa -6.81%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.6. Cổ Phiếu **`OCB`** — Ngân hàng Phương Đông (HOSE)
-- **Phân nhánh danh mục**: `TACTICAL RISING GEM (MidCap_Growth)` | **Tỷ trọng**: **`17.68% NAV`** (`3,210,000 VNĐ` ~ **300 CP**)
+- **Phân nhánh danh mục**: `TACTICAL RISING GEM (MidCap_Growth)` | **Tỷ trọng**: **`15.93% NAV`** (`3,210,000 VNĐ` ~ **300 CP**)
 - **Kỳ vọng Toán học (`EV%`)**: **`+8.51%`** | **Xác suất Thắng `P(W)`**: **`78%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.6`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
   Cổ phiếu OCB giao dịch tại 10,700 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Cổ đông chiến lược Aozora Nhật Bản, P/B chiết khấu sâu dưới giá trị sổ sách Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
@@ -255,28 +255,28 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 ## 🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC
 Bóc tách minh bạch các mã cổ phiếu đang suy giảm dòng tiền, đòn bẩy nợ cao hoặc có dấu hiệu xào nấu số liệu kế toán tại TTCK Việt Nam:
 
-### ⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,350 đ (-1.30%)
+### ⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: nan đ (+nan%)
 - **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-570 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
 - **Chỉ số Kế toán Pháp y**: OCF/LNST: `-0.62x` | Altman Z'': `10.06` | Nợ/Vốn chủ D/E: `0.38x` | FCF: `-570 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất PDR biến động -1.30%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 59.6/100.
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất PDR biến động +nan%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 59.6/100.
 - **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -0.62x, Dòng tiền tự do FCF = -570 tỷ VNĐ, Chỉ số Beneish M-Score = 0.41 (HIGH_RISK). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-320 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (469.0% doanh thu); CẢNH BÁO BENEISH M-SCORE (0.41 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (-0.90%)
+### ⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: nan đ (+nan%)
 - **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-660 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
 - **Chỉ số Kế toán Pháp y**: OCF/LNST: `-1.81x` | Altman Z'': `10.01` | Nợ/Vốn chủ D/E: `0.36x` | FCF: `-660 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất DXG biến động -0.90%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 62.6/100.
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất DXG biến động +nan%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 64.8/100.
 - **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -1.81x, Dòng tiền tự do FCF = -660 tỷ VNĐ, Chỉ số Beneish M-Score = -0.9 (HIGH_RISK). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-480 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (276.7% doanh thu); CẢNH BÁO BENEISH M-SCORE (-0.9 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,700 đ (-0.37%)
+### ⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: nan đ (+nan%)
 - **Trạng thái cảnh báo**: `CẢNH BÁO: BENEISH M-SCORE RỦI RO (-1.19)` | **Xếp hạng BCTC**: `BB (WATCH)`
 - **Chỉ số Kế toán Pháp y**: OCF/LNST: `1.23x` | Altman Z'': `11.74` | Nợ/Vốn chủ D/E: `0.24x` | FCF: `570 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất KBC biến động -0.37%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 69.2/100.
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất KBC biến động +nan%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 67.5/100.
 - **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = 1.23x, Dòng tiền tự do FCF = 570 tỷ VNĐ, Chỉ số Beneish M-Score = -1.19 (HIGH_RISK). Chi tiết Red Flags: Khoản phải thu chiếm tỷ trọng cao (254.1% doanh thu); CẢNH BÁO BENEISH M-SCORE (-1.19 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 14,300 đ (-1.38%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: BENEISH M-SCORE RỦI RO (-2.65)` | **Xếp hạng BCTC**: `AA`
+### ⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: nan đ (+nan%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: BENEISH M-SCORE RỦI RO (-2.65)` | **Xếp hạng BCTC**: `A`
 - **Chỉ số Kế toán Pháp y**: OCF/LNST: `0.91x` | Altman Z'': `2.70` | Nợ/Vốn chủ D/E: `1.12x` | FCF: `1,470 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất VND biến động -1.38%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 74.0/100.
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất VND biến động +nan%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 73.1/100.
 - **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = 0.91x, Dòng tiền tự do FCF = 1,470 tỷ VNĐ, Chỉ số Beneish M-Score = -2.65 (SAFE). Chi tiết Red Flags: Beneish M-Score = -2.65 (Cảnh báo chất lượng khoản phải thu / OCF). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
 ---

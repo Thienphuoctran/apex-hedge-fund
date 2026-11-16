@@ -4,11 +4,11 @@
 ---
 
 ## 🏛️ ĐỐI SOÁT TÀI KHOẢN THỰC CHIẾN CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC (TCBS: 105C307855)
-- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`18,151,471 VNĐ`**
+- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`20,145,422 VNĐ`**
 - **Vốn Thực Khớp (200 CP)**: **`5,656,700 VNĐ`**
 - **Giá Trị Thị Trường Sống**: **`5,635,000 VNĐ`**
 - **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color="#00C087">-21,700 VNĐ (-0.38%)</font>`** | **Lãi đã chốt**: **`+167,119 VNĐ`**
-- **Tiền Mặt Dry Powder Bảo Toàn**: **`12,516,471 VNĐ`**
+- **Tiền Mặt Dry Powder Bảo Toàn**: **`14,510,422 VNĐ`**
 - **Account Hit Rate Thực Chiến**: **`50.0%`** (1/2 mã đang giữ lãi dương)
 
 | Mã CK | Khối Lượng | Giá Vốn Thực Tế | Thị Giá Sống | Giá Trị Vốn | Giá Trị Thị Trường | Lãi/Lỗ Thực Tế | Ngưỡng Stop 2xATR | Trạng Thái Rủi Ro |
@@ -19,7 +19,7 @@
 ---
 
 ## 1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)
-- **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **35.3%**
+- **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **0.0%**
 - **Số lượng phiên lịch sử lưu trữ**: 16 phiên giao dịch.
 - **Trạng thái mô hình**: THÍCH NGHI ỔN ĐỊNH & LIÊN TỤC TIẾN HÓA.
 

@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-16 07:06:20",
+  "generated_at": "2026-11-16 18:32:14",
   "token_metrics": {
-    "total_raw_report_tokens": 68287,
-    "titan_digest_tokens": 1929,
+    "total_raw_report_tokens": 68091,
+    "titan_digest_tokens": 1930,
     "token_savings_percent": 97.2,
     "quality_preservation": "100% LOSSLESS (Full reports intact on disk)"
   },
   "deterministic_audit": {
-    "timestamp": "2026-11-16 07:06:20",
+    "timestamp": "2026-11-16 18:32:14",
     "bctc_vn_verified": 54,
     "bctc_red_flags_detected": [
       "UNKNOWN (M-Score=0.41, OCF/LNST=1.2)",
@@ -24,9 +24,9 @@
     "global_macro_ban1": {
       "exists": true,
       "path": "01_Macro_Geopolitics/2026-11-16_Macro_Report.md",
-      "size_kb": 21.7,
+      "size_kb": 21.2,
       "total_lines": 69,
-      "estimated_raw_tokens": 6349,
+      "estimated_raw_tokens": 6212,
       "sections_count": 5,
       "sections": [
         {
@@ -148,9 +148,9 @@
     "global_synthesis_ban3": {
       "exists": true,
       "path": "03_Synthesis_Memos/2026-11-16_Investment_Memo.md",
-      "size_kb": 19.3,
+      "size_kb": 19.6,
       "total_lines": 73,
-      "estimated_raw_tokens": 5635,
+      "estimated_raw_tokens": 5731,
       "sections_count": 4,
       "sections": [
         {
@@ -210,7 +210,7 @@
       "path": "04_Investment_Committee/2026-11-16_IC_Decision.md",
       "size_kb": 7.4,
       "total_lines": 39,
-      "estimated_raw_tokens": 2165,
+      "estimated_raw_tokens": 2164,
       "sections_count": 4,
       "sections": [
         {
@@ -260,9 +260,9 @@
     "global_learning_ban5": {
       "exists": true,
       "path": "05_Learning_And_Evolution/2026-11-16_Learning_And_Attribution_Report.md",
-      "size_kb": 10.2,
+      "size_kb": 10.1,
       "total_lines": 85,
-      "estimated_raw_tokens": 2994,
+      "estimated_raw_tokens": 2949,
       "sections_count": 8,
       "sections": [
         {
@@ -376,9 +376,9 @@
     "global_mentor_ban6": {
       "exists": true,
       "path": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-16_Mentor_Briefing.md",
-      "size_kb": 4.9,
+      "size_kb": 4.5,
       "total_lines": 47,
-      "estimated_raw_tokens": 1428,
+      "estimated_raw_tokens": 1306,
       "sections_count": 7,
       "sections": [
         {
@@ -566,7 +566,7 @@
       "path": "07_Daily_Investment_Specialist/2026-11-16_Daily_Specialist_Decision.md",
       "size_kb": 34.2,
       "total_lines": 197,
-      "estimated_raw_tokens": 9995,
+      "estimated_raw_tokens": 10004,
       "sections_count": 21,
       "sections": [
         {
@@ -1174,7 +1174,7 @@
       "path": "VN_Market/03_Synthesis_Memos/2026-11-16_VN_Investment_Memo.md",
       "size_kb": 5.4,
       "total_lines": 34,
-      "estimated_raw_tokens": 1578,
+      "estimated_raw_tokens": 1584,
       "sections_count": 3,
       "sections": [
         {
@@ -1458,7 +1458,7 @@
       "path": "VN_Market/05_Learning_And_Evolution/2026-11-16_VN_Learning_Report.md",
       "size_kb": 6.6,
       "total_lines": 51,
-      "estimated_raw_tokens": 1927,
+      "estimated_raw_tokens": 1926,
       "sections_count": 7,
       "sections": [
         {
@@ -1762,7 +1762,7 @@
       "path": "VN_Market/07_Daily_Specialist/2026-11-16_VN_Specialist_Decision.md",
       "size_kb": 46.0,
       "total_lines": 287,
-      "estimated_raw_tokens": 13468,
+      "estimated_raw_tokens": 13462,
       "sections_count": 22,
       "sections": [
         {
@@ -1869,25 +1869,25 @@
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,350 đ (-1.30%)",
+          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: nan đ (+nan%)",
           "start_line": 258,
           "end_line": 263
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (-0.90%)",
+          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: nan đ (+nan%)",
           "start_line": 264,
           "end_line": 269
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,700 đ (-0.37%)",
+          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: nan đ (+nan%)",
           "start_line": 270,
           "end_line": 275
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 14,300 đ (-1.38%)",
+          "title": "⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: nan đ (+nan%)",
           "start_line": 276,
           "end_line": 283
         },
@@ -2139,7 +2139,7 @@
         ],
         "PDR": [
           {
-            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,350 đ (-1.30%)",
+            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: nan đ (+nan%)",
             "start_line": 258,
             "file": "VN_Market/07_Daily_Specialist/2026-11-16_VN_Specialist_Decision.md",
             "end_line": 263
@@ -2147,7 +2147,7 @@
         ],
         "DXG": [
           {
-            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (-0.90%)",
+            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: nan đ (+nan%)",
             "start_line": 264,
             "file": "VN_Market/07_Daily_Specialist/2026-11-16_VN_Specialist_Decision.md",
             "end_line": 269
@@ -2155,7 +2155,7 @@
         ],
         "KBC": [
           {
-            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,700 đ (-0.37%)",
+            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: nan đ (+nan%)",
             "start_line": 270,
             "file": "VN_Market/07_Daily_Specialist/2026-11-16_VN_Specialist_Decision.md",
             "end_line": 275
@@ -2730,7 +2730,7 @@
       "path": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
       "size_kb": 9.8,
       "total_lines": 75,
-      "estimated_raw_tokens": 2874,
+      "estimated_raw_tokens": 2879,
       "sections_count": 7,
       "sections": [
         {
@@ -4191,7 +4191,7 @@
     ],
     "PDR": [
       {
-        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,350 đ (-1.30%)",
+        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: nan đ (+nan%)",
         "start_line": 258,
         "file": "VN_Market/07_Daily_Specialist/2026-11-16_VN_Specialist_Decision.md",
         "end_line": 263
@@ -4199,7 +4199,7 @@
     ],
     "DXG": [
       {
-        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,000 đ (-0.90%)",
+        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: nan đ (+nan%)",
         "start_line": 264,
         "file": "VN_Market/07_Daily_Specialist/2026-11-16_VN_Specialist_Decision.md",
         "end_line": 269
@@ -4207,7 +4207,7 @@
     ],
     "KBC": [
       {
-        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,700 đ (-0.37%)",
+        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: nan đ (+nan%)",
         "start_line": 270,
         "file": "VN_Market/07_Daily_Specialist/2026-11-16_VN_Specialist_Decision.md",
         "end_line": 275
