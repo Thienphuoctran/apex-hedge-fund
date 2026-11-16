@@ -1,7 +1,7 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-15T13:42:30.325740+00:00",
-  "trading_date": "2026-11-15",
+  "generated_at_utc": "2026-11-16T07:06:10.762652+00:00",
+  "trading_date": "2026-11-16",
   "cio_desk_verdict": "100% TIỀN MẶT (20,000,000 ₫) — ĐÃ TẤT TOÁN VÒNG 1 (LÃI RÒNG +167,119 ₫) & ĐỢI TẦM NGẮM VÒNG 2",
   "capital_summary": {
     "total_nav_usd": 787.4,
@@ -46,10 +46,10 @@
       "dollar_risk_at_stop": 0.0,
       "risk_nav_pct": 0.0,
       "tp1_usd": 206.87,
-      "tp2_usd": 276.56,
+      "tp2_usd": 268.76,
       "win_prob_pct": 74.0,
-      "reward_risk_ratio": 4.5,
-      "expected_value_pct": 29.16,
+      "reward_risk_ratio": 4.22,
+      "expected_value_pct": 27.73,
       "catalysts": "Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết công suất cả năm tới. Các tập đoàn siêu đám mây (Meta, Google, Microsoft) cam kết chi tiêu vốn (CapEx) vượt $200 tỷ USD cho hạ tầng AI.",
       "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `78.7/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+51.20%` • True FCF ex-SBC: `$16.06B` • Altman Z: `18.5` • Lynch PEG: `0.2x` • SEC EDGAR: Form 8-K (2026-11-12)]** — Vị thế độc tôn tuyệt đối với 85%+ thị phần chip gia tốc AI toàn cầu. Doanh thu tăng trưởng +62.5% YoY, FCF khổng lồ +$60.8B USD, biên gộp 75.1%. Hôm qua tăng +0.58% ngay khi VIX dịu lại.",
       "execution_instruction": "Giữ 70% vị thế đang lãi; đặt Limit 30% tại $202.56 (-0.35x ATR). Chốt lời TP1 tại $228.42 (+11.6%) và TP2 tại $328.95 (+60.7%). Khóa rủi ro bằng Stop 2xATR tại $192.75 (-5.81%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
@@ -105,7 +105,7 @@
       "reward_risk_ratio": 4.31,
       "expected_value_pct": 20.35,
       "catalysts": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.",
-      "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `83.1/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+30.76%` • True FCF ex-SBC: `$33.26B` • Altman Z: `16.12` • Lynch PEG: `0.72x` • SEC EDGAR: Form 6-K (2026-11-13)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
+      "bctc_thesis": "**[Hội Đồng 10 Đại Danh Thủ: `83.1/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+30.80%` • True FCF ex-SBC: `$33.15B` • Altman Z: `16.16` • Lynch PEG: `0.72x` • SEC EDGAR: Form 6-K (2026-11-13)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.",
       "execution_instruction": "Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO."
     },
     {
@@ -548,20 +548,20 @@
     "sandbox_math_verified": true,
     "portfolio_allocation_verified": "100% TIỀN MẶT (20,000,000 ₫) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +167,119 VNĐ",
     "max_risk_locked_pct": 0.0,
-    "timestamp": "2026-11-15 13:42:30 UTC"
+    "timestamp": "2026-11-16 07:06:10 UTC"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-15T13:42:30.324445",
-    "date_str": "2026-11-15",
-    "date_vn": "15/11/2026",
-    "time_vn": "13:42:30",
-    "weekday_index": 6,
-    "weekday_vn": "Chủ Nhật",
-    "full_time_label_vn": "13:42:30 Chủ Nhật, ngày 15/11/2026",
-    "market_phase": "WEEKEND_CLOSED",
-    "market_phase_vn": "Nghỉ cuối tuần (Chủ Nhật) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
+    "timestamp_iso": "2026-11-16T07:06:10.760728",
+    "date_str": "2026-11-16",
+    "date_vn": "16/11/2026",
+    "time_vn": "07:06:10",
+    "weekday_index": 0,
+    "weekday_vn": "Thứ Hai",
+    "full_time_label_vn": "07:06:10 Thứ Hai, ngày 16/11/2026",
+    "market_phase": "PRE_MARKET_PREPARATION",
+    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Hai) — Chuẩn bị kế hoạch tác chiến",
     "is_trading_hours": false,
-    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
+    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
   },
   "completed_orders_history": [],
   "next_round_watchlist": []

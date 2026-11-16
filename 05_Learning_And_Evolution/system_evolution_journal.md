@@ -251,3 +251,9 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 - **Ứng dụng danh mục thực chiến**: Khóa cứng kỷ luật OCF/LNST >= 1.0 | Đang giữ: HDB (100 CP), MSH (100 CP) | Tiền mặt: 12,516,471 ₫ (69.0% NAV).
 - **Tệp báo cáo đầy đủ**: `05_Learning_And_Evolution/2026-11-15_Autonomous_Learning_Report.md`
 ---
+## [Phiên Giao Dịch: 2026-11-16] — Tiến Hóa Mô Hình v5.0 & Kiểm Toán Walk-Forward
+- **Chế độ Vĩ mô**: VIX = 19.30 | Dầu WTI = $89.07 | US10Y = 5.15%.
+- **Trọng số Chấm điểm Thích nghi (Tổng 100%)**: Vĩ mô `25%` | BCTC/FCF `30%` | Định giá `25%` | Kỹ thuật `20%`.
+- **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `NVDA (1d), WMT (3d)` (chuyển sang `Locked Earnings Watchlist`).
+- **Realized Alpha vs S&P 500**: 1D `+0.81%` | 5D `-0.83%` | 20D `+5.06%`.
+- **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **79.2%**

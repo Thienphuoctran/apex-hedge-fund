@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-15T13:41:54.564347+00:00",
-  "scan_date": "2026-11-15",
+  "timestamp_utc": "2026-11-16T07:05:36.522507+00:00",
+  "scan_date": "2026-11-16",
   "total_us_filings_count": 371,
-  "total_vn_announcements_count": 32,
+  "total_vn_announcements_count": 60,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "8-K",
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 10
     },
+    "PHR": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96%",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 15 Nov 26 10:17:00 +0700",
+      "source_url": "https://cafef.vn/cao-su-phuoc-hoa-phr-bao-lai-tang-64-loi-nhuan-tu-hoat-dong-cot-loi-bat-ngo-lao-doc-96-188261115094010587.chn",
+      "total_announcements": 1
+    },
     "NKG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Con gái Chủ tịch Thép Nam Kim đăng ký mua 5 triệu cổ phiếu NKG",
@@ -291,6 +299,14 @@
       "published_at": "Sun, 15 Nov 26 08:14:00 +0700",
       "source_url": "https://cafef.vn/con-gai-chu-tich-thep-nam-kim-dang-ky-mua-5-trieu-co-phieu-nkg-188261115081418529.chn",
       "total_announcements": 3
+    },
+    "DIG": {
+      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "latest_title": "Đại gia Hàn Quốc vừa ký dự án 2 tỷ USD với Bộ Công thương: Có tới 56.200 nhân viên tại Việt Nam, từng thua kiện Novaland, bán hàng chục triệu cổ phiếu DIG trước \"cơn sóng thần\"",
+      "severity": "INFO",
+      "published_at": "Sun, 15 Nov 26 00:07:00 +0700",
+      "source_url": "https://cafef.vn/dai-gia-han-quoc-vua-ky-du-an-2-ty-usd-voi-bo-cong-thuong-co-toi-56200-nhan-vien-tai-viet-nam-tung-thua-kien-novaland-ban-hang-chuc-trieu-co-phieu-dig-truoc-con-song-than-188261113094400548.chn",
+      "total_announcements": 2
     },
     "HCM": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -306,7 +322,7 @@
       "severity": "INFO",
       "published_at": "Sun, 15 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/pnj-tung-lon-gap-9-lan-petrosetco-gap-4-lan-digiworld-bang-13-lan-fpt-retail-nay-bi-ca-3-dn-vuot-mat-chi-sau-11-thang-188261114223956507.chn",
-      "total_announcements": 1
+      "total_announcements": 3
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -314,7 +330,7 @@
       "severity": "INFO",
       "published_at": "Sun, 15 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/pnj-tung-lon-gap-9-lan-petrosetco-gap-4-lan-digiworld-bang-13-lan-fpt-retail-nay-bi-ca-3-dn-vuot-mat-chi-sau-11-thang-188261114223956507.chn",
-      "total_announcements": 6
+      "total_announcements": 7
     },
     "KDH": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -322,7 +338,7 @@
       "severity": "INFO",
       "published_at": "Sat, 14 Nov 26 12:42:00 +0700",
       "source_url": "https://cafef.vn/nhom-vinacapital-gom-hang-chuc-trieu-co-phieu-mot-doanh-nghiep-bat-dong-san-sau-khi-giam-58-188261112220857623.chn",
-      "total_announcements": 3
+      "total_announcements": 1
     },
     "DXG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -330,23 +346,71 @@
       "severity": "INFO",
       "published_at": "Sat, 14 Nov 26 07:24:00 +0700",
       "source_url": "https://cafef.vn/dragon-capital-nang-ty-le-so-huu-tai-bluemarq-group-len-hon-6-18826111406591622.chn",
+      "total_announcements": 1
+    },
+    "CEO": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Jensen Huang cân nhắc trở lại ghế CEO Nvidia nhưng 'vấp' cáo buộc gian dối",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 13:49:00 +0700",
+      "source_url": "https://cafef.vn/jensen-huang-can-nhac-tro-lai-ghe-ceo-nvidia-nhung-vap-cao-buoc-gian-doi-188261116134724249.chn",
+      "total_announcements": 15
+    },
+    "MBS": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Một sự kiện quan trọng trong tháng 12 có thể tác động mạnh đến chứng khoán",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 10:06:00 +0700",
+      "source_url": "https://cafef.vn/mot-su-kien-quan-trong-trong-thang-12-co-the-tac-dong-manh-den-chung-khoan-188261116095702147.chn",
       "total_announcements": 2
     },
-    "PVS": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "PVS sắp họp ĐHĐCĐ bất thường để bàn về nhân sự",
-      "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 08:27:00 +0700",
-      "source_url": "https://cafef.vn/pvs-sap-hop-dhdcd-bat-thuong-de-ban-ve-nhan-su-188261113082743059.chn",
+    "MWG": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Soi dòng tiền của Thế Giới Di Động và loạt đại gia bán lẻ: Hé lộ bài toán khó đằng sau con số lợi nhuận",
+      "severity": "CRITICAL",
+      "published_at": "Mon, 16 Nov 26 00:06:00 +0700",
+      "source_url": "https://cafef.vn/soi-dong-tien-cua-the-gioi-di-dong-va-loat-dai-gia-ban-le-he-lo-bai-toan-kho-dang-sau-con-so-loi-nhuan-188261115221421449.chn",
       "total_announcements": 1
     },
     "ACB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngày 15/11, gửi kỳ hạn 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "latest_title": "Dấu ấn thương hiệu ACB 2026: Tăng 18 bậc trên bảng xếp hạng toàn cầu, giá trị đạt 1,4 tỷ USD",
       "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 06:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-15-11-gui-ky-han-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261114225800103.chn",
+      "published_at": "Mon, 16 Nov 26 07:29:00 +0700",
+      "source_url": "https://cafef.vn/dau-an-thuong-hieu-acb-2026-tang-18-bac-tren-bang-xep-hang-toan-cau-gia-tri-dat-14-ty-usd-188261115232954927.chn",
       "total_announcements": 4
+    },
+    "SHB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Ngày 16/11, gửi 100 triệu tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 9 tháng?",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-16-11-gui-100-trieu-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-9-thang-188261115235833609.chn",
+      "total_announcements": 7
+    },
+    "LPB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Diễn biến mới tại cổ phiếu LPBank",
+      "severity": "INFO",
+      "published_at": "Sat, 14 Nov 26 11:09:00 +0700",
+      "source_url": "https://cafef.vn/dien-bien-moi-tai-co-phieu-lpbank-188261114111125298.chn",
+      "total_announcements": 1
+    },
+    "VIB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "VIB khởi động chương trình Siêu Tiệc Đáng Giá với đa tầng ưu đãi cho chủ thẻ",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 15:19:00 +0700",
+      "source_url": "https://cafef.vn/vib-khoi-dong-chuong-trinh-sieu-tiec-dang-gia-voi-da-tang-uu-dai-cho-chu-the-188261113151937047.chn",
+      "total_announcements": 1
+    },
+    "VIX": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại tiếp tục mua ròng, gom nhiều nhất một cổ phiếu chứng khoán",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 2026 13:08:13 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-tiep-tuc-mua-rong-gom-nhieu-nhat-mot-co-phieu-chung-khoan.htm",
+      "total_announcements": 2
     },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -372,7 +436,23 @@
       "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
       "total_announcements": 1
     },
+    "TPB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
+      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
+      "total_announcements": 1
+    },
     "VHM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
+      "severity": "INFO",
+      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
+      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
+      "total_announcements": 1
+    },
+    "VIC": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
       "severity": "INFO",
@@ -4839,6 +4919,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "PHR"
+      ],
+      "title": "Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96%",
+      "summary": "Dù lợi nhuận sau thuế quý III/2026 tăng 64% so với cùng kỳ, đạt 433 tỷ đồng, hoạt động kinh doanh cốt lõi của Cao su Phước Hòa (PHR) lại ghi nhận nhiều dấu hiệu suy yếu khi biên lợi nhuận gộp thu hẹp và chi phí hoạt động...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Sun, 15 Nov 26 10:17:00 +0700",
+      "source_url": "https://cafef.vn/cao-su-phuoc-hoa-phr-bao-lai-tang-64-loi-nhuan-tu-hoat-dong-cot-loi-bat-ngo-lao-doc-96-188261115094010587.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "NKG"
       ],
       "title": "Con gái Chủ tịch Thép Nam Kim đăng ký mua 5 triệu cổ phiếu NKG",
@@ -4847,6 +4939,18 @@
       "severity": "INFO",
       "published_at": "Sun, 15 Nov 26 08:14:00 +0700",
       "source_url": "https://cafef.vn/con-gai-chu-tich-thep-nam-kim-dang-ky-mua-5-trieu-co-phieu-nkg-188261115081418529.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "DIG"
+      ],
+      "title": "Đại gia Hàn Quốc vừa ký dự án 2 tỷ USD với Bộ Công thương: Có tới 56.200 nhân viên tại Việt Nam, từng thua kiện Novaland, bán hàng chục triệu cổ phiếu DIG trước \"cơn sóng thần\"",
+      "summary": "Dù từng nếm \"trái đắng\" trong các thương vụ tay ngang sang bất động sản và chứng khoán, tập đoàn nắm giữ 15% sản lượng giày Nike toàn cầu vẫn cho thấy tiềm lực tài chính khổng lồ khi chính thức hồi sinh siêu dự án nhiệt ...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Sun, 15 Nov 26 00:07:00 +0700",
+      "source_url": "https://cafef.vn/dai-gia-han-quoc-vua-ky-du-an-2-ty-usd-voi-bo-cong-thuong-co-toi-56200-nhan-vien-tai-viet-nam-tung-thua-kien-novaland-ban-hang-chuc-trieu-co-phieu-dig-truoc-con-song-than-188261113094400548.chn"
     },
     {
       "market": "VIETNAM",
@@ -4924,27 +5028,75 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "DXG",
-        "KDH"
+        "CEO"
       ],
-      "title": "Tỷ phú Bill Gates liên tục mua thêm hàng triệu cổ phiếu \"bắt đáy\" 2 công ty bất động sản Việt Nam",
-      "summary": "KDH và DXG đang có đợt phục hồi nhẹ sau khi giảm rất mạnh trong 1 năm qua....",
+      "title": "Jensen Huang cân nhắc trở lại ghế CEO Nvidia nhưng 'vấp' cáo buộc gian dối",
+      "summary": "Cựu CEO Nvidia Jensen Huang được cho là đang cân nhắc về vị trí lãnh đạo công ty, trong bối cảnh nhiều nhân vật có ảnh hưởng tại Thung lũng Silicon vận động hội đồng quản trị đưa ông trở lại. Tuy nhiên, những cáo buộc li...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 18:41:00 +0700",
-      "source_url": "https://cafef.vn/ty-phu-bill-gates-lien-tuc-mua-them-hang-trieu-co-phieu-bat-day-2-cong-ty-bat-dong-san-viet-nam-188261113184128892.chn"
+      "published_at": "Mon, 16 Nov 26 13:49:00 +0700",
+      "source_url": "https://cafef.vn/jensen-huang-can-nhac-tro-lai-ghe-ceo-nvidia-nhung-vap-cao-buoc-gian-doi-188261116134724249.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "MBS"
       ],
-      "title": "3 công ty quân đội muốn chi gần 1.500 tỷ đồng mua cổ phiếu MB, công ty đặc biệt của TP.HCM cũng tham gia",
-      "summary": "Ba công ty quân đội dự kiến chi gần 1.500 tỷ đồng mua cổ phiếu MB, trong đó một tổng công ty xây dựng đăng ký mua nhiều nhất. Danh sách còn có một công ty tài chính đặc biệt của TP.HCM, vừa báo lãi hàng nghìn tỷ đồng....",
+      "title": "Một sự kiện quan trọng trong tháng 12 có thể tác động mạnh đến chứng khoán",
+      "summary": "MBS cũng lưu ý rằng dù quý IV, đặc biệt là tháng 11 và tháng 12, thường là giai đoạn thuận lợi đối với thị trường cổ phiếu, yếu tố mùa vụ không phải lúc nào cũng đủ sức đảo ngược xu hướng....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 14:51:00 +0700",
-      "source_url": "https://cafef.vn/3-cong-ty-quan-doi-muon-chi-gan-1500-ty-dong-mua-co-phieu-mb-cong-ty-dac-biet-cua-tphcm-cung-tham-gia-1882611131448031.chn"
+      "published_at": "Mon, 16 Nov 26 10:06:00 +0700",
+      "source_url": "https://cafef.vn/mot-su-kien-quan-trong-trong-thang-12-co-the-tac-dong-manh-den-chung-khoan-188261116095702147.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Quán quân Đường Lên Đỉnh Olympia có bố mẹ đều làm tại Tập đoàn công nghệ, giành 50.000 USD sang Úc nhưng lại chọn đại học của tỷ phú Phạm Nhật Vượng",
+      "summary": "Thay vì sang Australia như nhiều nhà vô địch Olympia trước đó, nam sinh có bố mẹ đều làm việc tại FPT quyết định ở lại Việt Nam....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 10:00:00 +0700",
+      "source_url": "https://cafef.vn/mot-quan-quan-duong-len-dinh-olympia-co-bo-me-deu-lam-tai-fpt-gianh-50000-usd-sang-uc-nhung-lai-chon-dai-hoc-cua-ty-phu-pham-nhat-vuong-188261116100008258.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Jensen Huang cân nhắc trở lại ghế CEO Nvidia sau bê bối đời tư",
+      "summary": "Jensen Huang đang cân nhắc khả năng trở lại vị trí CEO Nvidia và đã thảo luận phương án này với những người thân tín, trong bối cảnh các đồng minh của ông tìm cách vận động sự ủng hộ từ giới công nghệ và Nhà Trắng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 09:16:00 +0700",
+      "source_url": "https://cafef.vn/jensen-huang-can-nhac-tro-lai-ghe-ceo-nvidia-sau-be-boi-doi-tu-188261116091648009.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT",
+        "MWG"
+      ],
+      "title": "Soi dòng tiền của Thế Giới Di Động và loạt đại gia bán lẻ: Hé lộ bài toán khó đằng sau con số lợi nhuận",
+      "summary": "FPT Retail lãi hơn gấp đôi nhưng dòng tiền kinh doanh chuyển sang âm, còn MWG giảm hơn một nửa. Hàng tồn kho và công nợ gia tăng, kéo theo áp lực về vốn và chi phí tài trợ tại các doanh nghiệp bán lẻ – phân phối....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Mon, 16 Nov 26 00:06:00 +0700",
+      "source_url": "https://cafef.vn/soi-dong-tien-cua-the-gioi-di-dong-va-loat-dai-gia-ban-le-he-lo-bai-toan-kho-dang-sau-con-so-loi-nhuan-188261115221421449.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "MBS"
+      ],
+      "title": "Giám đốc Nghiên cứu MBS gọi tên nhóm cổ phiếu có thể \"đánh bại\" VN-Index năm 2027",
+      "summary": "Trong bối cảnh triển vọng lợi nhuận toàn thị trường có thể chậm lại, bà Hiền cho rằng cơ hội đầu tư năm 2027 sẽ không phân bổ đồng đều, ngay cả giữa những doanh nghiệp trong cùng một ngành....",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Mon, 16 Nov 26 00:02:00 +0700",
+      "source_url": "https://cafef.vn/giam-doc-nghien-cuu-mbs-goi-ten-nhom-co-phieu-co-the-danh-bai-vn-index-nam-2027-188261114163224877.chn"
     },
     {
       "market": "VIETNAM",
@@ -4973,6 +5125,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "CEO"
+      ],
+      "title": "CEO Đoàn Văn Hiểu Em tiết lộ bước ngoặt mới: Sau gần 20 năm bán điện thoại, tivi, tủ lạnh, Điện Máy Xanh sẽ tìm cách kiếm tiền hoàn toàn khác",
+      "summary": "Sau hai năm gần như không mở thêm cửa hàng, CEO Đoàn Văn Hiểu Em cho biết Điện Máy Xanh đang chuẩn bị cho một giai đoạn tăng trưởng mới thay vì chỉ bán điện thoại, tivi, tủ lạnh…...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sat, 14 Nov 26 10:07:00 +0700",
+      "source_url": "https://cafef.vn/ceo-doan-van-hieu-em-tiet-lo-buoc-ngoat-moi-sau-gan-20-nam-ban-dien-thoai-tivi-tu-lanh-dien-may-xanh-se-tim-cach-kiem-tien-hoan-toan-khac-188261114085124144.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PNJ"
       ],
       "title": "Khai sai thuế, PNJ bị phạt gần 2 tỷ đồng",
@@ -4997,26 +5161,63 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "KDH"
+        "DIG"
       ],
-      "title": "Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền",
-      "summary": "Sau khi bán ra tổng cộng 710.000 cổ phiếu KDH trong phiên 12/11/2026, Dragon Capital không còn là cổ đông lớn tại Nhà Khang Điền....",
+      "title": "Người nhà Tổng Giám đốc DIC Corp đã mua 1 triệu cổ phiếu DIG",
+      "summary": "Bà Vũ Thị Thu Hương, vợ ông Nguyễn Quang Tín- Tổng Giám đốc của DIC Corp đã mua thành công 1 triệu cổ phiếu DIG như đăng ký....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 08:28:00 +0700",
-      "source_url": "https://cafef.vn/dragon-capital-khong-con-la-co-dong-lon-tai-nha-khang-dien-188261113082848084.chn"
+      "published_at": "Fri, 13 Nov 26 15:52:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-nha-tong-giam-doc-dic-corp-da-mua-1-trieu-co-phieu-dig-188261113150545165.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "PVS"
+        "CEO"
       ],
-      "title": "PVS sắp họp ĐHĐCĐ bất thường để bàn về nhân sự",
-      "summary": "PVS dự tổ chức cuộc họp ĐHĐCĐ bất thường vào ngày 29/12/2026 bằng hình thức trực tuyến nhằm thông qua các vấn đề về công tác nhân sự Thành viên HĐQT của công ty....",
+      "title": "Chủ tịch Hội các Nhà quản trị doanh nghiệp Việt Nam: Môi giới bất động sản phải có chứng chỉ, CEO điều hành cả doanh nghiệp lại không cần",
+      "summary": "Theo GS.TS Nguyễn Đức Thuận, Chủ tịch Hội các Nhà quản trị doanh nghiệp Việt Nam, một nghịch lý đang tồn tại là nhiều vị trí chuyên môn phải có chứng chỉ hành nghề, trong khi người điều hành toàn bộ doanh nghiệp có thể đ...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 08:27:00 +0700",
-      "source_url": "https://cafef.vn/pvs-sap-hop-dhdcd-bat-thuong-de-ban-ve-nhan-su-188261113082743059.chn"
+      "published_at": "Fri, 13 Nov 26 14:55:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-hoi-cac-nha-quan-tri-doanh-nghiep-viet-nam-moi-gioi-bat-dong-san-phai-co-chung-chi-ceo-dieu-hanh-ca-doanh-nghiep-lai-khong-can-188261113145553117.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Giá vàng miếng, vàng nhẫn 9999 chiều ngày 16/11 tại SJC, DOJI, PNJ, Bảo Tín Minh Châu, Bảo Tín Mạnh Hải,...",
+      "summary": "Vàng miếng SJC tiếp tục được các doanh nghiệp niêm yết quanh mức 137,5 – 138 triệu đồng/lượng ở chiều bán ra, trong khi giá vàng nhẫn cũng không thay đổi tại các thương hiệu....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 13:44:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-mieng-vang-nhan-9999-sang-16-11-tai-sjc-doji-pnj-bao-tin-minh-chau-bao-tin-manh-hai-18826111607421068.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB"
+      ],
+      "title": "Dấu ấn thương hiệu ACB 2026: Tăng 18 bậc trên bảng xếp hạng toàn cầu, giá trị đạt 1,4 tỷ USD",
+      "summary": "Năm 2026 ghi dấu bước tiến nổi bật của thương hiệu ACB khi tăng 18 bậc trên bảng xếp hạng Brand Finance Global Banking 500, đồng thời được Forbes Việt Nam định giá thương hiệu hơn 1,4 tỷ USD, tăng hơn 5 lần sau 5 năm....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 07:29:00 +0700",
+      "source_url": "https://cafef.vn/dau-an-thuong-hieu-acb-2026-tang-18-bac-tren-bang-xep-hang-toan-cau-gia-tri-dat-14-ty-usd-188261115232954927.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB",
+        "SHB"
+      ],
+      "title": "Ngày 16/11, gửi 100 triệu tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi sau 9 tháng?",
+      "summary": "Với khoản tiền gửi 100 triệu đồng kỳ hạn 9 tháng, số tiền lãi khách hàng nhận được tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB có sự chênh lệch đáng kể, tùy ngân hàng và hình thức gửi tại quầy hay trực tuy...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-16-11-gui-100-trieu-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-9-thang-188261115235833609.chn"
     },
     {
       "market": "VIETNAM",
@@ -5033,7 +5234,20 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
+        "SHB"
+      ],
+      "title": "Giữa tháng 11 gửi 500 triệu tại BIDV, Vietcombank, VietinBank, Agribank, SHB, BAC A Bank: Lãi tối đa bao nhiêu?",
+      "summary": "Lãi suất tiết kiệm giữa tháng 11 vẫn ổn định, không chênh lệch quá nhiều so với hồi đầu tháng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 15 Nov 26 12:53:00 +0700",
+      "source_url": "https://cafef.vn/giua-thang-11-gui-500-trieu-tai-bidv-vietcombank-vietinbank-agribank-shb-bac-a-bank-lai-toi-da-bao-nhieu-188261115125403534.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB",
+        "SHB"
       ],
       "title": "Ngày 15/11, gửi kỳ hạn 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
       "summary": "Với khoản tiền gửi 100 triệu đồng kỳ hạn 6 tháng, lãi suất tiết kiệm tại 7 ngân hàng có sự chênh lệch đáng kể giữa hình thức gửi tại quầy và online. Theo các biểu lãi suất được tổng hợp, số tiền lãi dự kiến dao động từ 2...",
@@ -5045,7 +5259,32 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
+        "SHB"
+      ],
+      "title": "SHB được Forbes Việt Nam vinh danh trong Top 10 thương hiệu dẫn đầu năm 2026",
+      "summary": "Ngày 12/11, tại lễ vinh danh 50 thương hiệu dẫn đầu năm 2026 do Forbes Việt Nam tổ chức, Ngân hàng TMCP Sài Gòn – Hà Nội (SHB) được xướng tên ở vị trí thứ 10 trong bảng xếp hạng, với giá trị thương hiệu đạt 836 triệu USD...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sat, 14 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/shb-duoc-forbes-viet-nam-vinh-danh-trong-top-10-thuong-hieu-dan-dau-nam-2026-188261114124719999.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "LPB"
+      ],
+      "title": "Diễn biến mới tại cổ phiếu LPBank",
+      "summary": "Chỉ trong 5 phiên giao dịch, hơn 248 triệu cổ phiếu LPB được chuyển nhượng qua phương thức thỏa thuận với tổng giá trị hơn 8.350 tỷ đồng. Hoạt động giao dịch diễn ra đặc biệt sôi động trong bối cảnh thị giá LPB đã giảm đ...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sat, 14 Nov 26 11:09:00 +0700",
+      "source_url": "https://cafef.vn/dien-bien-moi-tai-co-phieu-lpbank-188261114111125298.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB",
+        "SHB"
       ],
       "title": "Ngày 14/11, gửi dưới 1 tỷ đồng kỳ hạn 18 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
       "summary": "Với kỳ hạn 18 tháng, lãi suất huy động tại 7 ngân hàng được khảo sát có sự chênh lệch đáng kể giữa hình thức gửi tại quầy và gửi trực tuyến. Trong đó, lãi suất online cao nhất trong nhóm lên tới 7,4%/năm, trong khi một s...",
@@ -5053,6 +5292,18 @@
       "severity": "INFO",
       "published_at": "Sat, 14 Nov 26 02:00:00 +0700",
       "source_url": "https://cafef.vn/ngay-14-11-gui-duoi-1-ty-dong-ky-han-18-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261113224114723.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "VIB"
+      ],
+      "title": "VIB khởi động chương trình Siêu Tiệc Đáng Giá với đa tầng ưu đãi cho chủ thẻ",
+      "summary": "Mở mới thẻ tín dụng VIB One Card và Max Card trong mùa mua sắm cuối năm, khách hàng có cơ hội nhận voucher Lazada 1,3 triệu đồng, Blind Box The Masked Singer phiên bản giới hạn và miễn phí thường niên năm đầu. Song song,...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 26 15:19:00 +0700",
+      "source_url": "https://cafef.vn/vib-khoi-dong-chuong-trinh-sieu-tiec-dang-gia-voi-da-tang-uu-dai-cho-chu-the-188261113151937047.chn"
     },
     {
       "market": "VIETNAM",
@@ -5069,26 +5320,50 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
+        "HCM"
       ],
-      "title": "ACB vượt mốc thương hiệu 1,4 tỷ USD, vào Top 3 ngân hàng tư nhân giá trị nhất Việt Nam",
-      "summary": "ACB vừa được Forbes Việt Nam vinh danh trong danh sách Top 50 Thương hiệu dẫn đầu Việt Nam 2026 với giá trị thương hiệu đạt 1,403 tỷ USD....",
-      "event_type": "TIN_DOANH_NGHIEP",
+      "title": "Dự án Khu đô thị Tân Kiên (TP.HCM) được chấp thuận chủ trương đầu tư",
+      "summary": "Trong bối cảnh thị trường bất động sản còn đối mặt với nhiều thách thức về thanh khoản, chi phí vốn và áp lực pháp lý, Công ty Cổ phần Phát triển Bất động sản Văn Phú (mã chứng khoán: VPI) vẫn duy trì hoạt động kinh doan...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
       "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 07:30:00 +0700",
-      "source_url": "https://cafef.vn/acb-vuot-moc-thuong-hieu-14-ty-usd-vao-top-3-ngan-hang-tu-nhan-gia-tri-nhat-viet-nam-188261112233717134.chn"
+      "published_at": "Mon, 16 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/du-an-khu-do-thi-tan-kien-tphcm-duoc-chap-thuan-chu-truong-dau-tu-188261116113930346.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB"
+        "HCM"
       ],
-      "title": "Ngày 13/11, gửi dưới 1 tỷ đồng kỳ hạn 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "summary": "Lãi suất tiết kiệm kỳ hạn 6 tháng tại các ngân hàng đang có sự chênh lệch đáng kể giữa các nhà băng và giữa hai hình thức gửi tại quầy, gửi online. Với khoản tiền gửi dưới 1 tỷ đồng, số tiền lãi khách hàng nhận được sẽ p...",
+      "title": "TP.HCM đấu thầu lựa chọn nhà đầu tư đối với 6 khu đất gần 445ha",
+      "summary": "TP.HCM dự kiến đấu thầu lựa chọn nhà đầu tư thực hiện dự án tại 6 khu đất trên địa bàn với tổng diện tích khoảng 444,68 ha....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 11:45:00 +0700",
+      "source_url": "https://cafef.vn/tphcm-dau-thau-lua-chon-nha-dau-tu-doi-voi-6-khu-dat-gan-445ha-188261116110425381.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Căn hộ bàn giao thô ven biển: đáp số thỏa mãn cả gu sống lẫn gu đầu tư của cư dân trẻ",
+      "summary": "Lợi suất cho thuê dài hạn tại TP.HCM cũ hiện chỉ quanh 3%/năm, trong khi ở Vũng Tàu đạt khoảng 4,2%. Khoảng chênh ấy đang kéo nhiều nhà đầu tư về với căn hộ biển bàn giao thô Beachtro Tower bên biển Bãi Sau....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Fri, 13 Nov 26 01:31:00 +0700",
-      "source_url": "https://cafef.vn/ngay-13-11-gui-duoi-1-ty-dong-ky-han-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261112234438454.chn"
+      "published_at": "Mon, 16 Nov 26 11:30:00 +0700",
+      "source_url": "https://cafef.vn/can-ho-ban-giao-tho-ven-bien-dap-so-thoa-man-ca-gu-song-lan-gu-dau-tu-cua-cu-dan-tre-188261116112415111.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Thanh Phú Centre Point: Từ mạch giao thương lâu đời đến một “Tâm điểm trù phú”",
+      "summary": "Tại cửa ngõ phía Tây TP.HCM, BIM Land nhìn thấy cơ hội để kiến tạo một điểm đến mới, nơi những dòng chảy của con người, thương mại, trải nghiệm và cộng đồng cùng hội tụ, tạo nên sức sống mới cho cả khu vực....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/thanh-phu-centre-point-tu-mach-giao-thuong-lau-doi-den-mot-tam-diem-tru-phu-188261115225940231.chn"
     },
     {
       "market": "VIETNAM",
@@ -5129,26 +5404,38 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "VIX"
       ],
-      "title": "Giây phút kinh hoàng của chàng trai bị vùi lấp trong vụ nổ sập nhà ở TP.HCM",
-      "summary": "Khó thở, có lúc gần như ngất lịm, nạn nhân 17 tuổi sợ hãi nghĩ mình không thể qua khỏi, rồi anh nghe tiếng gọi của ba nên đã cố hết sức gọi ba thật to....",
+      "title": "Khối ngoại tiếp tục mua ròng, gom nhiều nhất một cổ phiếu chứng khoán",
+      "summary": "Điểm sáng trong phiên đến từ giao dịch của nhà đầu tư nước ngoài. Khối này mua ròng 337,5 tỷ đồng trên HoSE. VIX được mua ròng mạnh nhất với 308 tỷ đồng......",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sat, 14 Nov 26 14:00:00 +0700",
-      "source_url": "https://cafef.vn/giay-phut-kinh-hoang-cua-chang-trai-bi-vui-lap-trong-vu-no-sap-nha-o-tphcm-188261114124648267.chn"
+      "published_at": "Fri, 13 Nov 2026 13:08:13 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-tiep-tuc-mua-rong-gom-nhieu-nhat-mot-co-phieu-chung-khoan.htm"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "VIX"
       ],
-      "title": "Nguồn cung tăng tốc, thị trường căn hộ TP.HCM thêm sức hút",
-      "summary": "Hàng loạt dự án mới liên tiếp ra mắt, nguồn cung và sức mua cùng cải thiện, tạo thêm sức hấp dẫn cho thị trường căn hộ TP.HCM trong những tháng cuối năm 2026....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "title": "Khối ngoại bất ngờ mua ròng mạnh ở VIX, VN-Index đảo chiều thành công",
+      "summary": "Khoảng 5 phút cuối cùng của đợt khớp lệnh liên tục VN-Index đã đảo chiều thành công nhờ một số blue-chips mạnh lên. Tuy nhiên đây cũng chỉ là những dao động giá nhỏ, khiến chỉ số chỉ vừa đủ điểm trên tham chiếu....",
+      "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sat, 14 Nov 26 12:48:00 +0700",
-      "source_url": "https://cafef.vn/nguon-cung-tang-toc-thi-truong-can-ho-tphcm-them-suc-hut-188261114124809189.chn"
+      "published_at": "Fri, 13 Nov 2026 08:32:53 GMT",
+      "source_url": "https://vneconomy.vn/khoi-ngoai-bat-ngo-mua-rong-manh-o-vix-vn-index-dao-chieu-thanh-cong.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Chứng khoán Mỹ tụt điểm sau khi CEO của Nvidia mất chức, giá dầu thô tăng mạnh vì bài đăng của Tổng thống Trump",
+      "summary": "Thị trường chứng khoán Mỹ giảm điểm trong phiên giao dịch ngày thứ Năm (12/11), khi cổ phiếu Nvidia bị bán mạnh trong lúc nhà đầu tư đánh giá về tác động của việc CEO Jensen Huang bị cách chức do bê bối đời tư......",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 2026 01:23:04 GMT",
+      "source_url": "https://vneconomy.vn/chung-khoan-my-tut-diem-sau-khi-ceo-cua-nvidia-mat-chuc-gia-dau-tho-tang-manh-vi-bai-dang-cua-tong-thong-trump.htm"
     },
     {
       "market": "VIETNAM",
@@ -5167,7 +5454,9 @@
       "symbols": [
         "HDB",
         "POW",
-        "VHM"
+        "TPB",
+        "VHM",
+        "VIC"
       ],
       "title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
       "summary": "Giao dịch của nhà đầu tư nước ngoài ghi nhận sự phân hóa giữa các cổ phiếu. VIC được mua ròng mạnh nhất với 138,8 tỷ đồng, tiếp đến là POW với 78,1 tỷ đồng, VHM với 47 tỷ đồng, HDB với 42 tỷ đồng và TPB với 41,3 tỷ đồng....",
@@ -5179,14 +5468,62 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "CEO"
       ],
-      "title": "Vietnam Connect Forum 2026: Đầu tư vào Việt Nam - Cơ hội không chỉ nằm ở dòng vốn",
-      "summary": "VietinBank tổ chức Vietnam Connect Forum 2026 ngày 17/11 tại TP.HCM, cập nhật chính sách đầu tư, thuế, triển vọng kinh tế và kết nối đối tác cho doanh nghiệp FDI....",
+      "title": "Chứng khoán Mỹ mất điểm vì cổ phiếu Nvidia tiếp tục bị bán mạnh, giá dầu bấp bênh mốc 90 USD/thùng",
+      "summary": "Thị trường chứng khoán Mỹ giảm điểm trong phiên giao dịch ngày thứ Ba (10/11), khi báo cáo lạm phát tháng 10 nóng hơn dự báo và lực bán mạnh nhằm vào cổ phiếu Nvidia sau bê bối đời tư của CEO Jensen Huang gây sức ép lên ...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Mon, 09 Nov 2026 01:00:00 GMT",
-      "source_url": "https://vneconomy.vn/vietnam-connect-forum-2026-dau-tu-vao-viet-nam-co-hoi-khong-chi-nam-o-dong-von.htm"
+      "published_at": "Wed, 11 Nov 2026 01:22:25 GMT",
+      "source_url": "https://vneconomy.vn/chung-khoan-my-mat-diem-vi-co-phieu-nvidia-tiep-tuc-bi-ban-manh-gia-dau-bap-benh-moc-90-usdthung.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "SHB"
+      ],
+      "title": "SHB mừng sinh nhật 33 năm với 333 giải thưởng và nhiều ưu đãi dành cho khách hàng",
+      "summary": "Nhân dịp kỷ niệm 33 năm thành lập, Ngân hàng TMCP Sài Gòn – Hà Nội (SHB) triển khai chuỗi chương trình ưu đãi dành cho khách hàng cá nhân và doanh nghiệp. Trong đó, chương trình “33 năm cùng tỏa sáng – Trúng quà sang” ma...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 2026 03:14:29 GMT",
+      "source_url": "https://vneconomy.vn/shb-mung-sinh-nhat-33-nam-voi-333-giai-thuong-va-nhieu-uu-dai-danh-cho-khach-hang.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "SHB"
+      ],
+      "title": "Ra mắt SHB Rewards phiên bản mới: Tích điểm linh hoạt, đổi quà đa dạng",
+      "summary": "Nhân dịp sinh nhật SHB 33 tuổi, SHB Rewards phiên bản mới được ra mắt, mang đến cho khách hàng cá nhân nhiều lựa chọn sử dụng điểm, từ đổi e-voucher, hoàn tiền vào thẻ tín dụng đến quy đổi điểm sang các quyền lợi trong h...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 10 Nov 2026 02:00:00 GMT",
+      "source_url": "https://vneconomy.vn/ra-mat-shb-rewards-phien-ban-moi-tich-diem-linh-hoat-doi-qua-da-dang.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Rào cản ngăn Jensen Huang quay lại lãnh đạo Nvidia",
+      "summary": "Dù rất nhiều người muốn Jensen Huang quay về làm CEO, khả năng này hiện được đánh giá rất thấp và có thể gây thêm hỗn loạn cho công ty....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 16 Nov 2026 11:08:46 +0700",
+      "source_url": "https://vnexpress.net/rao-can-ngan-jensen-huang-quay-lai-lanh-dao-nvidia-5145134.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Alice Huang nghỉ việc tại Megaspeed từ cuối tháng 8/2025",
+      "summary": "Megaspeed cho biết Alice Huang, nữ doanh nhân liên quan đến bê bối ngoại tình với cựu CEO Nvidia Jensen Huang, đã rời công ty này từ 30/8/2025....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sun, 15 Nov 2026 22:35:05 +0700",
+      "source_url": "https://vnexpress.net/alice-huang-nghi-viec-tai-megaspeed-tu-cuoi-thang-8-2025-5144975.html"
     },
     {
       "market": "VIETNAM",
@@ -5215,6 +5552,54 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "CEO"
+      ],
+      "title": "Những doanh nghiệp vẫn thành công dù không còn CEO huyền thoại",
+      "summary": "Apple, Walmart và Disney từng khiến nhà đầu tư lo lắng khi CEO qua đời, nhưng các công ty này vẫn đang phát triển thịnh vượng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Sat, 14 Nov 2026 07:00:00 +0700",
+      "source_url": "https://vnexpress.net/nhung-doanh-nghiep-van-thanh-cong-du-khong-con-ceo-huyen-thoai-5144438.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Vì sao Nvidia chọn Colette Kress thay Jensen Huang?",
+      "summary": "Quyền lực hàng đầu dưới Jensen Huang và quan hệ sâu rộng với Phố Wall là cơ sở giúp Colette Kress trở thành CEO Nvidia tạm quyền....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 2026 16:11:35 +0700",
+      "source_url": "https://vnexpress.net/vi-sao-nvidia-chon-colette-kress-thay-jensen-huang-5144284.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Nhân viên Nvidia bênh vực Jensen Huang giữa bê bối đời tư",
+      "summary": "Hơn 1.600 bình luận trên diễn đàn nội bộ Nvidia kêu gọi HĐQT cân nhắc nguyện vọng nhân viên, trong đó nhiều người muốn Jensen Huang trở lại ghế CEO sau khi từ chức....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 2026 12:05:00 +0700",
+      "source_url": "https://vnexpress.net/nhan-vien-nvidia-benh-vuc-jensen-huang-giua-be-boi-doi-tu-5144180.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Tài sản của Jensen Huang giảm tiếp hơn 6 tỷ USD",
+      "summary": "Tài sản cựu CEO Nvidia giảm 6,4 tỷ USD hôm thứ Năm - mạnh nhất thế giới, sau khi ông thông báo từ chức....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 13 Nov 2026 07:23:33 +0700",
+      "source_url": "https://vnexpress.net/tai-san-cua-jensen-huang-giam-tiep-hon-6-ty-usd-5144093.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
       "title": "Giá vé máy bay Tết Đinh Mùi nhiều chặng tăng nhanh",
@@ -5223,6 +5608,42 @@
       "severity": "INFO",
       "published_at": "Fri, 13 Nov 2026 05:43:05 +0700",
       "source_url": "https://vnexpress.net/gia-ve-may-bay-tet-dinh-mui-nhieu-chang-tang-nhanh-5143344.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "CEO tạm quyền của Nvidia là ai?",
+      "summary": "Colette Kress gia nhập Nvidia năm 2013 và là lãnh đạo được biết đến nhiều nhất tại công ty, sau Jensen Huang....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 2026 22:45:18 +0700",
+      "source_url": "https://vnexpress.net/ceo-tam-quyen-cua-nvidia-la-ai-5144046.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Jensen Huang từng nói gì về chuyện kế nhiệm?",
+      "summary": "Vài tuần trước bê bối ngoại tình khiến CEO Nvidia Jensen Huang phải từ chức, ông từng phát biểu về chuyện sa thải và kế nhiệm....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 2026 22:00:15 +0700",
+      "source_url": "https://vnexpress.net/jensen-huang-tung-noi-gi-ve-chuyen-ke-nhiem-5144038.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Jensen Huang từ chức CEO Nvidia",
+      "summary": "Hãng chip giá trị nhất thế giới lần đầu thay CEO sau 33 năm, vì bê bối ngoại tình của Jensen Huang....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 12 Nov 2026 21:01:10 +0700",
+      "source_url": "https://vnexpress.net/jensen-huang-tu-chuc-ceo-nvidia-5143768.html"
     }
   ]
 }

@@ -242,5 +242,77 @@
     "role": "sentinel",
     "type": "sentinel_alert",
     "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 8 tín hiệu trọng yếu: HDB (22,600đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.39%)) • BAF (30,950đ: 🟢 ĐẠT VÙNG MUA LO (16.9% NAV)) • IDC (34,900đ: 🟢 ĐẠT VÙNG MUA LO (19.1% NAV)) • OCB (10,750đ: 🟠 ÁP LỰC CUNG (BuyUp 16.4%)) • SZC (20,750đ: 🟠 ÁP LỰC CUNG (BuyUp 18.9%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_PHR_24224",
+    "key": "cbtt_2026-11-16_CRITICAL_PHR_24224",
+    "timestamp": "14:05:36",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PHR] Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96% (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_HCM_28839",
+    "key": "cbtt_2026-11-16_CRITICAL_HCM_28839",
+    "timestamp": "14:05:36",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — HCM] Tập đoàn Trung Quốc đổ tiền xây nhà máy công nghệ cao 10.000 m² tại TP.HCM: Công ty con ở Việt Nam lãi gấp 1,6 lần cả tập đoàn mẹ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_FPT,MWG_94553",
+    "key": "cbtt_2026-11-16_CRITICAL_FPT,MWG_94553",
+    "timestamp": "14:05:36",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT,MWG] Soi dòng tiền của Thế Giới Di Động và loạt đại gia bán lẻ: Hé lộ bài toán khó đằng sau con số lợi nhuận (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-16_CRITICAL_MBS_99207",
+    "key": "cbtt_2026-11-16_CRITICAL_MBS_99207",
+    "timestamp": "14:05:36",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — MBS] Giám đốc Nghiên cứu MBS gọi tên nhóm cổ phiếu có thể \"đánh bại\" VN-Index năm 2027 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "sec_2026-11-16_AAPL_10-K_2026-11-03",
+    "key": "sec_2026-11-16_AAPL_10-K_2026-11-03",
+    "timestamp": "14:05:36",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-K — AAPL] 10-K (2026-11-03)"
+  },
+  {
+    "id": "sec_2026-11-16_GOOGL_10-Q_2026-10-29",
+    "key": "sec_2026-11-16_GOOGL_10-Q_2026-10-29",
+    "timestamp": "14:05:36",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — GOOGL] 10-Q (2026-10-29)"
+  },
+  {
+    "id": "sec_2026-11-16_AMZN_10-Q_2026-10-30",
+    "key": "sec_2026-11-16_AMZN_10-Q_2026-10-30",
+    "timestamp": "14:05:36",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — AMZN] 10-Q (2026-10-30)"
+  },
+  {
+    "id": "ban9_emg_2026-11-16_HDB_CRITICAL",
+    "key": "ban9_emg_2026-11-16_HDB_CRITICAL",
+    "timestamp": "14:06:17",
+    "sender": "Victor (Ban 9 Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_emergency",
+    "content": "🚨 [BAN 9 CẢNH BÁO — HDB] Giá 22,300.00 (-1.33%) | Cách Stop 2xATR: +1.08% | SHORT 1 HỢP ĐỒNG VN30F1M"
   }
 ]
