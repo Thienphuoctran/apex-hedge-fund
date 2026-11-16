@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (TOÀN THỊ TRƯỜNG 144+ MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-16 18:58:28  
-> **Số sự kiện ghi nhận:** 49 thông báo  
+> **Thời gian quét:** 2026-11-16 22:51:10  
+> **Số sự kiện ghi nhận:** 50 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -22,6 +22,7 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bất ngờ tỷ lệ sở hữu của gia đình bà Cao Thị Ngọc Dung tại PNJ | [Xem Link](https://cafef.vn/bat-ngo-ty-le-so-huu-cua-gia-dinh-ba-cao-thi-ngoc-dung-tai-pnj-18826111422324714.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Khang Điền 'rót' thêm 2.500 tỷ đồng vào công ty con | [Xem Link](https://cafef.vn/khang-dien-rot-them-2500-ty-dong-vao-cong-ty-con-188261114103943736.chn) |
 | **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CEO Đoàn Văn Hiểu Em tiết lộ bước ngoặt mới: Sau gần 20 năm bán điện thoại, tivi, tủ lạnh, Điện Máy Xanh sẽ tìm cách kiếm tiền hoàn toàn khác | [Xem Link](https://cafef.vn/ceo-doan-van-hieu-em-tiet-lo-buoc-ngoat-moi-sau-gan-20-nam-ban-dien-thoai-tivi-tu-lanh-dien-may-xanh-se-tim-cach-kiem-tien-hoan-toan-khac-188261114085124144.chn) |
+| **ACB, SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 17/11, gửi 200 triệu tại Techcombank, Sacombank, SHB, HDBank, MB, VPBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng? | [Xem Link](https://cafef.vn/ngay-17-11-gui-200-trieu-tai-techcombank-sacombank-shb-hdbank-mb-vpbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261116235213303.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | ACB: Một cổ đông đã bán sạch gần 51,5 triệu cổ phiếu | [Xem Link](https://cafef.vn/acb-mot-co-dong-da-ban-sach-gan-515-trieu-co-phieu-188261116234355182.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn 9999 chiều ngày 16/11 tại SJC, DOJI, PNJ, Bảo Tín Minh Châu, Bảo Tín Mạnh Hải,... | [Xem Link](https://cafef.vn/gia-vang-mieng-vang-nhan-9999-sang-16-11-tai-sjc-doji-pnj-bao-tin-minh-chau-bao-tin-manh-hai-18826111607421068.chn) |
 | **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Dấu ấn thương hiệu ACB 2026: Tăng 18 bậc trên bảng xếp hạng toàn cầu, giá trị đạt 1,4 tỷ USD | [Xem Link](https://cafef.vn/dau-an-thuong-hieu-acb-2026-tang-18-bac-tren-bang-xep-hang-toan-cau-gia-tri-dat-14-ty-usd-188261115232954927.chn) |
