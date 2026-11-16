@@ -64,7 +64,13 @@ def query_gemini_cio(prompt: str) -> Optional[str]:
         from google.genai import types
 
         portfolio_ctx = _get_live_portfolio_context()
-        client = genai.Client(api_key=api_key)
+        client = genai.Client(
+            api_key=api_key,
+            http_options=types.HttpOptions(
+                timeout=6000,
+                retry_options=types.HttpRetryOptions(attempts=1)
+            )
+        )
         system_instruction = (
             "Bạn là James — Tổng Tư Lệnh Master CIO (Ban 8), người đứng đầu bộ máy tác chiến Quỹ Đầu Tư Apex Hedge Fund của Chủ tịch Phước Trần.\n"
             f"Chủ tài khoản: Chủ tịch Phước Trần (TCBS: 105C307855). {portfolio_ctx}\n"

@@ -47,11 +47,7 @@ os.environ["PYTHONWARNINGS"] = "ignore"
 logging.getLogger("yfinance").setLevel(logging.CRITICAL)
 logging.getLogger("urllib3").setLevel(logging.CRITICAL)
 
-try:
-    import yfinance as yf
-    warnings.showwarning = lambda *args, **kwargs: None
-except ImportError:
-    yf = None
+yf = None  # Lazy-loaded only outside compact cloud mode if VPS datafeed returns empty
 
 try:
     import winsound
@@ -214,9 +210,10 @@ def fetch_live_quotes(symbols: List[str] = None) -> Dict[str, Dict[str, Any]]:
                 "is_live": False,
                 "data_source": "FALLBACK_SSOT",
             }))
-            if yf and quotes[sym]["price"] <= 0:
+            if quotes[sym]["price"] <= 0 and os.environ.get("APEX_CLOUD_COMPACT_MODE", "").strip().lower() not in ("1", "true", "yes"):
                 try:
-                    t = yf.Ticker(f"{sym}.VN")
+                    import yfinance as _yf_lazy
+                    t = _yf_lazy.Ticker(f"{sym}.VN")
                     h = t.history(period="1d")
                     if not h.empty:
                         p = float(h["Close"].iloc[-1])

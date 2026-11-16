@@ -97,7 +97,14 @@ def summarize_with_gemini_38_flash(title: str, raw_text: str) -> Optional[str]:
         if not api_key:
             return None
         from google import genai
-        client = genai.Client(api_key=api_key)
+        from google.genai import types
+        client = genai.Client(
+            api_key=api_key,
+            http_options=types.HttpOptions(
+                timeout=6000,
+                retry_options=types.HttpRetryOptions(attempts=1)
+            )
+        )
         prompt = (
             "Bạn là bộ lọc thông tin tinh gọn của Quỹ Apex (Chủ tịch Phước Trần, TCBS 105C307855).\n"
             "Hãy tóm tắt báo cáo/cảnh báo sau thành ĐÚNG 3 gạch đầu dòng ngắn gọn (tiếng Việt, mỗi dòng <= 18 từ), "

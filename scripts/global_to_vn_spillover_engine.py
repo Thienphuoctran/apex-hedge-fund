@@ -48,8 +48,48 @@ def _get_ict_now() -> datetime.datetime:
     )
 
 
-def _fetch_from_yfinance(tickers: List[str]) -> Dict[str, Dict[str, float]]:
+def _fetch_yahoo_chart_lightweight(tickers: List[str]) -> Dict[str, Dict[str, float]]:
+    """Thu thập giá qua Yahoo Chart JSON nhẹ (0 MB pandas/numpy — an toàn cho Render 512MB RAM)."""
+    import urllib.request
+    import urllib.parse
+
     out: Dict[str, Dict[str, float]] = {}
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; ApexSpillover/1.0)"}
+    for sym in tickers:
+        try:
+            q_sym = urllib.parse.quote(sym, safe="")
+            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{q_sym}?range=5d&interval=1d"
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=4) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            res_list = (data.get("chart") or {}).get("result") or []
+            if not res_list:
+                continue
+            meta = res_list[0].get("meta") or {}
+            closes_raw = ((res_list[0].get("indicators") or {}).get("quote") or [{}])[0].get("close") or []
+            closes = [float(c) for c in closes_raw if c is not None]
+            last_p = float(meta.get("regularMarketPrice") or (closes[-1] if closes else 0.0))
+            if last_p <= 0:
+                continue
+            prev_p = float(meta.get("chartPreviousClose") or meta.get("previousClose") or (closes[-2] if len(closes) >= 2 else last_p))
+            chg_1d = ((last_p - prev_p) / prev_p) * 100.0 if prev_p > 0 else 0.0
+            out[sym] = {
+                "last_price": round(last_p, 2),
+                "prev_close": round(prev_p, 2),
+                "change_1d_pct": round(chg_1d, 2),
+                "source": "YAHOO_HTTP_LIGHT",
+            }
+        except Exception:
+            continue
+    return out
+
+
+def _fetch_from_yfinance(tickers: List[str]) -> Dict[str, Dict[str, float]]:
+    out = _fetch_yahoo_chart_lightweight(tickers)
+    if len(out) >= 4:
+        return out
+    if os.environ.get("APEX_CLOUD_COMPACT_MODE", "").strip().lower() in ("1", "true", "yes"):
+        return out
     try:
         import yfinance as yf
         df = yf.download(

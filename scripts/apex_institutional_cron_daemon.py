@@ -860,12 +860,16 @@ def run_daemon(poll_interval: int = 15):
             executed_today = state["executed_milestones"][today_str]
 
             # Cơ chế Catch-Up bù cột mốc bị lỡ nếu Cloud Render vừa thức dậy sau khi ngủ đông
+            # Ở chế độ Cloud Compact (Render Free 512MB), chỉ chạy bù tối đa 1 cột mốc quan trọng mỗi chu kỳ để tránh tăng RAM đột ngột lúc khởi động
             catchup_core = ["07:30", "08:30", "15:15"]
             targets_to_run = []
             if current_hm in SCHEDULED_MILESTONES and current_hm not in executed_today:
                 targets_to_run.append(current_hm)
+            is_light_cron = os.environ.get("APEX_CLOUD_COMPACT_MODE", "").strip().lower() in ("1", "true", "yes")
             for cm in catchup_core:
                 if cm < current_hm and cm not in executed_today and cm not in targets_to_run:
+                    if is_light_cron and len(targets_to_run) >= 1:
+                        continue
                     log_event(f"🔄 [CATCH-UP] Bù cột mốc quan trọng {cm} bị lỡ do container thức dậy sau {cm}.")
                     targets_to_run.append(cm)
 

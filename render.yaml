@@ -5,6 +5,25 @@ services:
     plan: free
     region: singapore
     dockerfilePath: ./Dockerfile
+    buildFilter:
+      paths:
+        - scripts/**
+        - cloud_sentinel/**
+        - dashboard/**
+        - config/**
+        - VN_Market/scripts/**
+        - VN_Market/dashboard/**
+        - Dockerfile
+        - requirements.txt
+        - render.yaml
+      ignoredPaths:
+        - "**/*.md"
+        - data/**
+        - VN_Market/data/**
+        - .github/**
+        - logs/**
+        - scratch/**
+        - tests/**
     envVars:
       - key: PORT
         value: 10000
@@ -12,6 +31,16 @@ services:
         value: Asia/Ho_Chi_Minh
       - key: PYTHONUNBUFFERED
         value: "1"
+      - key: PYTHONOPTIMIZE
+        value: "1"
+      - key: MALLOC_ARENA_MAX
+        value: "2"
+      - key: APEX_CLOUD_COMPACT_MODE
+        value: "1"
+      - key: APEX_DISABLE_TELEGRAM_COPILOT
+        value: "1"
+      - key: TELEGRAM_POLLING_OWNER
+        value: "pc"
       - key: APEX_PORTAL_PIN
         sync: false
       - key: APEX_SESSION_SECRET

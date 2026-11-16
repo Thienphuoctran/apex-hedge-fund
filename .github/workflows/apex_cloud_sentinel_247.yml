@@ -1,4 +1,4 @@
-name: Apex Cloud Sentinel 24/7 & Institutional SSOT Guardian
+name: "Apex Cloud Sentinel 24/7 & Institutional SSOT Guardian"
 
 on:
   schedule:
@@ -18,30 +18,38 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: apex-repo-push
+  cancel-in-progress: false
+
 jobs:
   cloud_sentinel_guardian:
-    name: Victor Sentinel 24/7 & SSOT V2.0 Audit
+    name: "Victor Sentinel 24/7 & SSOT V2.0 Audit"
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
     steps:
-      - name: Checkout Apex Repository
+      - name: "Checkout Apex Repository"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python 3.11
+      - name: "Set up Python 3.11"
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install Cloud Dependencies
+      - name: "Install Cloud Dependencies"
         run: |
           python -m pip install --upgrade pip
-          pip install yfinance pandas requests numpy fastapi uvicorn
+          pip install -r requirements.txt pyyaml
 
-      - name: 1. Institutional SSOT V2.0 & Temporal Audit
+      - name: "0. YAML Workflow Preflight Gate"
+        run: |
+          python -c "import yaml, glob; [yaml.safe_load(open(p, encoding='utf-8')) for p in sorted(glob.glob('.github/workflows/*.yml'))]; print('✅ All workflow YAML files valid.')"
+
+      - name: "1. Institutional SSOT V2.0 & Temporal Audit"
         env:
           PYTHONIOENCODING: utf-8
         run: |
@@ -57,36 +65,41 @@ jobs:
           print(f'✅ [PASS] SSOT V2.0 Audit: Tài khoản 105C307855 | Cash={cash_bal:,.0f} đ | NAV={total_nav:,.0f} đ | Status={state.get(\"status\")}')
           "
 
-      - name: 2. Run 145-Stock Full Market Scanner & 10-Department Council Orchestrator
+      - name: "2. Run 145-Stock Full Market Scanner & 10-Department Council Orchestrator"
         env:
           PYTHONIOENCODING: utf-8
         run: |
           python scripts/apex_full_council_orchestrator.py
 
-      - name: 3. Run Victor Sentinel Audit Scan
+      - name: "3. Run Victor Sentinel Audit Scan"
         env:
           PYTHONIOENCODING: utf-8
         run: |
           python scripts/intraday_portfolio_sentinel.py --scan-once
 
-      - name: 4. Verify Cloud Sentinel Web App Health
+      - name: "4. Verify Cloud Sentinel Web App & Supervisor Health"
         env:
           PYTHONIOENCODING: utf-8
         run: |
           python -c "
           import cloud_sentinel.main as m
           assert m.app is not None, 'FastAPI app không khởi tạo được'
-          print('✅ [PASS] Cloud Sentinel Web Engine (FastAPI) sẵn sàng 100% cho Render/Docker.')
+          import scripts.start_apex_cloud_247 as sup
+          assert sup.ApexCloudSupervisor is not None, 'Supervisor không khởi tạo được'
+          print('✅ [PASS] Cloud Sentinel & Supervisor sẵn sàng 100% cho Render/Docker.')
           "
 
-      - name: 5. Ban 12 Trong: 24/7 Technical Integrity & 23h30 Institutional Audit
+      - name: "5. Ban 12 Trong - 24/7 Technical Integrity & 23h30 Institutional Audit"
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          python scripts/apex_inspector_trong.py --run-23h30-audit
-          python scripts/migrate_markdown_to_sqlite.py
+          if [ "${{ github.event.schedule }}" = "30 16 * * *" ] || [ "${{ github.event.inputs.action }}" = "full-audit" ]; then
+            python scripts/apex_inspector_trong.py --run-23h30-audit
+          else
+            python scripts/apex_inspector_trong.py --health-sweep
+          fi
 
-      - name: 6. Commit & Push Updated Status, Market Scan, Audit & Cross-Day Continuity Ledger
+      - name: "6. Commit & Push Updated Status, Market Scan, Audit & Cross-Day Continuity Ledger"
         run: |
           git config --global user.name "Apex Cloud Sentinel Bot"
           git config --global user.email "sentinel-bot@apex-fund.internal"
@@ -94,6 +107,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "Dữ liệu SSOT đã ở trạng thái tối ưu nhất, không có thay đổi mới."
           else
-            git commit -m "chore(sentinel): Automated 24/7 Cloud Sentinel, 145-Stock Scan, Trong Audit & Memory Sync [skip ci]"
+            git commit -m "chore(sentinel): Automated 24/7 Cloud Sentinel, 145-Stock Scan & Trong Audit [skip ci]"
+            git pull --rebase --autostash origin main || true
             git push origin HEAD || echo "Push failed or no upstream configured."
           fi

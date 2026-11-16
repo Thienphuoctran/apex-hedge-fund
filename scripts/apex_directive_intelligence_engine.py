@@ -729,7 +729,13 @@ class ApexDirectiveIntelligenceEngine:
             from google import genai
             from google.genai import types
 
-            client = genai.Client(api_key=api_key)
+            client = genai.Client(
+                api_key=api_key,
+                http_options=types.HttpOptions(
+                    timeout=6000,
+                    retry_options=types.HttpRetryOptions(attempts=1)
+                )
+            )
             prompt = (
                 f"Chủ tịch Phước Trần vừa đưa ra chỉ thị/chất vấn tại Đại Hội Nghị Thượng Đỉnh Apex:\n"
                 f"\"{query}\"\n\n"

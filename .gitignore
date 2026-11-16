@@ -57,3 +57,8 @@ data/logs/
 *.pid
 data/*.pid
 data/*.flag
+
+# SQLite Binary Vault & WAL/SHM (Auto-rebuilt from Markdown/Supabase; avoids Git binary bloat & push conflicts)
+data/apex_institutional_vault.db
+data/apex_institutional_vault.db-wal
+data/apex_institutional_vault.db-shm

@@ -26,6 +26,7 @@ Nhiệm vụ:
 
 import os
 import sys
+import gc
 import time
 import json
 import signal
@@ -37,6 +38,29 @@ import urllib.parse
 import re
 from pathlib import Path
 from typing import Dict, Any, Optional, List
+
+_SSE_LOCK = threading.Lock()
+_ACTIVE_SSE_CLIENTS = 0
+_MAX_SSE_CLIENTS = 4
+
+
+def _get_process_rss_mb() -> float:
+    """Đọc RSS thực tế (MB) của tiến trình hiện tại (Linux /proc hoặc fallback 0)."""
+    try:
+        status_p = Path("/proc/self/status")
+        if status_p.exists():
+            for line in status_p.read_text(encoding="utf-8", errors="ignore").splitlines():
+                if line.startswith("VmRSS:"):
+                    kb = float(line.split()[1])
+                    return round(kb / 1024.0, 1)
+    except Exception:
+        pass
+    try:
+        import resource  # type: ignore
+        ru = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+        return round(ru / 1024.0, 1) if sys.platform.startswith("linux") else round(ru / (1024.0 * 1024.0), 1)
+    except Exception:
+        return 0.0
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -343,7 +367,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             auth_on = False
             try:
                 from scripts.apex_cloud_db_sync import ApexCloudDBSync
-                cloud_status = ApexCloudDBSync.get_cloud_status()
+                cloud_status = ApexCloudDBSync.get_cloud_status(lightweight=True)
             except Exception:
                 pass
             try:
@@ -365,6 +389,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 "debt_vnd": float(port_state.get("debt_vnd", 0.0)),
                 "auth_enabled": auth_on,
                 "cloud_db": cloud_status,
+                "process_rss_mb": _get_process_rss_mb(),
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).astimezone(datetime.timezone(datetime.timedelta(hours=7))).strftime("%Y-%m-%d %H:%M:%S")
             }
             self.wfile.write(json.dumps(data, ensure_ascii=False).encode("utf-8"))
@@ -411,9 +436,6 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Cache-Control", "no-cache")
             self.end_headers()
             try:
-                import importlib
-                import scripts.apex_report_scanner
-                importlib.reload(scripts.apex_report_scanner)
                 from scripts.apex_report_scanner import scan_all_institutional_reports
                 date_filter = query.get("date", ["all"])[0]
                 dept_filter = query.get("dept", ["all"])[0]
@@ -533,11 +555,8 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Pragma", "no-cache")
             self.end_headers()
             try:
-                import importlib
                 import scripts.apex_autonomous_council_engine
                 import scripts.apex_summit_meeting_engine
-                importlib.reload(scripts.apex_autonomous_council_engine)
-                importlib.reload(scripts.apex_summit_meeting_engine)
                 preview = query.get("preview", ["0"])[0] in ("1", "true", "True")
                 archive_id = query.get("archive_id", [""])[0].strip() or None
                 st = scripts.apex_summit_meeting_engine.get_realtime_meeting_state(
@@ -557,11 +576,8 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Pragma", "no-cache")
             self.end_headers()
             try:
-                import importlib
                 import scripts.apex_autonomous_council_engine
                 import scripts.apex_summit_meeting_engine
-                importlib.reload(scripts.apex_autonomous_council_engine)
-                importlib.reload(scripts.apex_summit_meeting_engine)
                 meeting_id = query.get("meeting_id", [""])[0].strip()
                 if meeting_id:
                     sess = scripts.apex_autonomous_council_engine.get_archived_summit_by_id(meeting_id)
@@ -599,18 +615,25 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             return
 
         elif path == "/api/tactical_war_room/stream":
+            global _ACTIVE_SSE_CLIENTS
             try:
                 max_frames = int(query.get("max_frames", ["0"])[0] or 0)
             except Exception:
                 max_frames = 0
+            effective_max_frames = max_frames if max_frames > 0 else 150
+            with _SSE_LOCK:
+                if _ACTIVE_SSE_CLIENTS >= _MAX_SSE_CLIENTS:
+                    self.send_response(503)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"ok": False, "error": "SSE stream limit reached"}).encode("utf-8"))
+                    return
+                _ACTIVE_SSE_CLIENTS += 1
             self.send_response(200)
             self.send_header("Content-Type", "text/event-stream; charset=utf-8")
             self.send_header("Cache-Control", "no-cache")
-            if max_frames > 0:
-                self.send_header("Connection", "close")
-                self.close_connection = True
-            else:
-                self.send_header("Connection", "keep-alive")
+            self.send_header("Connection", "close")
+            self.close_connection = True
             self.send_header("Access-Control-Allow-Origin", "*")
             self.send_header("X-Accel-Buffering", "no")
             self.end_headers()
@@ -619,15 +642,15 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 from scripts.apex_web_portal_engine import generate_dynamic_tactical_stages_html
                 frame_idx = 0
                 while True:
-                    st = get_tactical_war_room_state()
+                    st = get_tactical_war_room_state(force_refresh=False)
                     st["tactical_stages_html"] = generate_dynamic_tactical_stages_html(wr_state=st)
                     payload = f"event: war_room_tick\ndata: {json.dumps(st, ensure_ascii=False)}\n\n"
                     self.wfile.write(payload.encode("utf-8"))
                     self.wfile.flush()
                     frame_idx += 1
-                    if max_frames > 0 and frame_idx >= max_frames:
+                    if frame_idx >= effective_max_frames:
                         break
-                    time.sleep(4)
+                    time.sleep(5)
             except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
                 return
             except Exception as e:
@@ -637,6 +660,9 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.flush()
                 except Exception:
                     pass
+            finally:
+                with _SSE_LOCK:
+                    _ACTIVE_SSE_CLIENTS = max(0, _ACTIVE_SSE_CLIENTS - 1)
             return
 
         elif path == "/api/spillover_and_slippage":
@@ -770,11 +796,8 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 except Exception:
                     pass
             try:
-                import importlib
                 import scripts.apex_report_scanner
                 import scripts.apex_web_portal_engine
-                importlib.reload(scripts.apex_report_scanner)
-                importlib.reload(scripts.apex_web_portal_engine)
                 reports = scripts.apex_report_scanner.scan_all_institutional_reports(limit=2000)
                 milestones = scripts.apex_report_scanner.get_daily_milestones_status()
                 dates = scripts.apex_report_scanner.get_available_archive_dates()
@@ -889,13 +912,15 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 from scripts.apex_summit_meeting_engine import add_chairman_directive
                 res = add_chairman_directive(user_msg)
 
-                # Gửi báo cáo nghiên cứu đồng bộ vào Telegram james_hq
-                try:
-                    from scripts.telegram_dispatcher import dispatch_message
-                    james_content = res.get('james_resp', {}).get('content', '')
-                    dispatch_message('james_hq', f"🏛️ *[CHỈ THỊ TẠI ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH]*\n👤 *Chủ tịch*: `{user_msg}`\n\n{james_content}")
-                except Exception:
-                    pass
+                # Gửi báo cáo nghiên cứu đồng bộ vào Telegram james_hq ở nền (không chặn HTTP response)
+                def _bg_dispatch_summit_msg(_msg=user_msg, _jc=res.get('james_resp', {}).get('content', '')):
+                    try:
+                        from scripts.telegram_dispatcher import dispatch_message
+                        dispatch_message('james_hq', f"🏛️ *[CHỈ THỊ TẠI ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH]*\n👤 *Chủ tịch*: `{_msg}`\n\n{_jc}")
+                    except Exception:
+                        pass
+
+                threading.Thread(target=_bg_dispatch_summit_msg, daemon=True).start()
 
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -917,29 +942,29 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             except Exception:
                 req_data = {}
             try:
-                import importlib
                 import scripts.apex_autonomous_council_engine
                 import scripts.apex_summit_meeting_engine
-                importlib.reload(scripts.apex_autonomous_council_engine)
-                importlib.reload(scripts.apex_summit_meeting_engine)
                 approved_by = str(req_data.get("approved_by") or "Chủ tịch Trần Quốc Thiên Phước").strip()
                 res = scripts.apex_autonomous_council_engine.approve_summit_resolution(approved_by=approved_by)
 
-                # Gửi thông báo đến Telegram james_hq
-                try:
-                    from scripts.telegram_dispatcher import dispatch_message
-                    mid = res.get("meeting_id", "APEX-SUMMIT")
-                    unlock_disp = (res.get("retention_status") or {}).get("min_cleanup_display", "+2H")
-                    dispatch_message(
-                        "james_hq",
-                        f"👑 *[CHỦ TỊCH ĐÃ KÝ DUYỆT NGHỊ QUYẾT THƯỢNG ĐỈNH ({mid})]*\n\n"
-                        f"👤 *Người ký*: `{approved_by}`\n"
-                        f"📜 *Văn kiện*: `{res.get('resolution_report_path', '08_Master_Investment_CIO/council_resolutions/')}`\n"
-                        f"⏳ *Quy chế dọn phòng (Điều 5)*: Được lưu trữ & dọn sạch sau tối thiểu 2 tiếng (`{unlock_disp}`)\n"
-                        f"🛡️ *Tổng Kiểm Sát Ban 12 Trọng*: Đã niêm phong pháp lý thể chế & đồng bộ Kho Lưu Trữ 100%!"
-                    )
-                except Exception:
-                    pass
+                # Gửi thông báo đến Telegram james_hq ở nền (không chặn HTTP response)
+                def _bg_dispatch_approve(_res=res, _by=approved_by):
+                    try:
+                        from scripts.telegram_dispatcher import dispatch_message
+                        mid = _res.get("meeting_id", "APEX-SUMMIT")
+                        unlock_disp = (_res.get("retention_status") or {}).get("min_cleanup_display", "+2H")
+                        dispatch_message(
+                            "james_hq",
+                            f"👑 *[CHỦ TỊCH ĐÃ KÝ DUYỆT NGHỊ QUYẾT THƯỢNG ĐỈNH ({mid})]*\n\n"
+                            f"👤 *Người ký*: `{_by}`\n"
+                            f"📜 *Văn kiện*: `{_res.get('resolution_report_path', '08_Master_Investment_CIO/council_resolutions/')}`\n"
+                            f"⏳ *Quy chế dọn phòng (Điều 5)*: Được lưu trữ & dọn sạch sau tối thiểu 2 tiếng (`{unlock_disp}`)\n"
+                            f"🛡️ *Tổng Kiểm Sát Ban 12 Trọng*: Đã niêm phong pháp lý thể chế & đồng bộ Kho Lưu Trữ 100%!"
+                        )
+                    except Exception:
+                        pass
+
+                threading.Thread(target=_bg_dispatch_approve, daemon=True).start()
 
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -962,11 +987,8 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             except Exception:
                 req_data = {}
             try:
-                import importlib
                 import scripts.apex_autonomous_council_engine
                 import scripts.apex_summit_meeting_engine
-                importlib.reload(scripts.apex_autonomous_council_engine)
-                importlib.reload(scripts.apex_summit_meeting_engine)
                 start_time_str = str(req_data.get("start_time") or "").strip() or None
                 duration_minutes = int(req_data.get("duration_minutes") or 30)
                 prep_minutes = int(req_data.get("prep_minutes") or 20)
@@ -1001,9 +1023,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             except Exception:
                 req_data = {}
             try:
-                import importlib
                 import scripts.apex_autonomous_council_engine
-                importlib.reload(scripts.apex_autonomous_council_engine)
                 force_flag = bool(req_data.get("force", False))
                 requested_by = str(req_data.get("requested_by") or "Chủ tịch Trần Quốc Thiên Phước").strip()
                 res = scripts.apex_autonomous_council_engine.clean_and_reset_summit_room(
@@ -1433,6 +1453,27 @@ class ApexCloudSupervisor:
         for k, cfg in SERVICES_CONFIG.items():
             self.services[k] = ManagedService(k, cfg)
 
+        self.is_render_cloud = bool(
+            os.environ.get("RENDER")
+            or os.environ.get("RENDER_SERVICE_ID")
+            or os.environ.get("APEX_CLOUD_COMPACT_MODE", "").strip().lower() in ("1", "true", "yes")
+        )
+        self.compact_cloud_mode = self.is_render_cloud and (not dry_run)
+        tg_owner = os.environ.get("TELEGRAM_POLLING_OWNER", "pc").strip().lower()
+        disable_tg = (
+            os.environ.get("APEX_DISABLE_TELEGRAM_COPILOT", "").strip().lower() in ("1", "true", "yes")
+            or (self.is_render_cloud and tg_owner != "cloud")
+        )
+        if not dry_run and disable_tg and "telegram_copilot" in self.services:
+            self.services["telegram_copilot"].enabled = False
+            self.services["telegram_copilot"].status = "DISABLED_PC_OWNER"
+
+        if self.compact_cloud_mode:
+            for consolidated_key in ("sentinel_monitor", "inspector_trong", "live_intraday_brain"):
+                if consolidated_key in self.services:
+                    self.services[consolidated_key].enabled = False
+                    self.services[consolidated_key].status = "IN_PROCESS_COMPACT"
+
     def _acquire_supervisor_lock(self) -> bool:
         current_pid = os.getpid()
         if SUPERVISOR_PID_FILE.exists():
@@ -1475,6 +1516,8 @@ class ApexCloudSupervisor:
             "last_heartbeat": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "system_platform": sys.platform,
             "python_executable": sys.executable,
+            "compact_cloud_mode": self.compact_cloud_mode,
+            "process_rss_mb": _get_process_rss_mb(),
             "chairman_account": "TCBS 105C307855 (Trần Quốc Thiên Phước)",
             "services": {k: s.get_info() for k, s in self.services.items()}
         }
@@ -1495,8 +1538,44 @@ class ApexCloudSupervisor:
         except Exception:
             pass
 
+    def _start_compact_inprocess_sentinel(self):
+        """Vòng lặp gộp Sentinel + War-Room + Trong Technical Sweep trong 1 thread gọn nhẹ (< 150MB RAM)."""
+        def _compact_worker():
+            log_sup("🛡️ [COMPACT CLOUD LOOP] Khởi chạy luồng hợp nhất Victor + War-Room + Ban 12 Trọng (Tiết kiệm ~300MB RAM).")
+            last_trong_ts = 0.0
+            while self.running:
+                try:
+                    from scripts.apex_live_intraday_brain import is_vn_trading_hours, compute_live_war_room_snapshot, sync_live_intraday_report
+                    from scripts.vn3_portfolio_autonomous_sentinel import fetch_live_quotes, check_triggers_and_alert, update_telemetry
+                    in_vn = is_vn_trading_hours()
+                    quotes = fetch_live_quotes()
+                    check_triggers_and_alert(quotes, notify_telegram=in_vn)
+                    update_telemetry(quotes)
+                    snap = compute_live_war_room_snapshot(force_refresh=in_vn)
+                    sync_live_intraday_report(snap, force_write=False)
+
+                    now_ts = time.time()
+                    if now_ts - last_trong_ts >= 900:
+                        try:
+                            from scripts.apex_inspector_trong import ApexInspectorTrong
+                            ApexInspectorTrong.audit_system_technical_integrity_247()
+                        except Exception:
+                            pass
+                        last_trong_ts = now_ts
+                    gc.collect()
+                    sleep_sec = 30 if in_vn else 90
+                except Exception as _ce:
+                    log_sup(f"⚠️ [COMPACT LOOP WARNING] {_ce}", echo=False)
+                    sleep_sec = 60
+                for _ in range(sleep_sec):
+                    if not self.running:
+                        break
+                    time.sleep(1)
+
+        threading.Thread(target=_compact_worker, daemon=True, name="ApexCompactCloudSentinel").start()
+
     def start_all(self):
-        log_sup("🌟 BẮT ĐẦU KHỞI ĐỘNG HỆ THỐNG APEX CLOUD SUPERVISOR 24/7...")
+        log_sup(f"🌟 BẮT ĐẦU KHỞI ĐỘNG HỆ THỐNG APEX CLOUD SUPERVISOR 24/7 (Compact={self.compact_cloud_mode})...")
         # Dọn dẹp các tệp PID con không còn hợp lệ trước khi khởi chạy
         child_pids = [DATA_DIR / "apex_cron_daemon.pid", DATA_DIR / "telegram_copilot.pid"]
         for pf in child_pids:
@@ -1509,42 +1588,54 @@ class ApexCloudSupervisor:
                 except Exception:
                     pf.unlink(missing_ok=True)
 
-        # Tự động đồng bộ toàn bộ báo cáo Markdown vào SQLite Lakehouse Vault V5.0
-        try:
-            log_sup("🔄 Đang đồng bộ thư viện báo cáo Markdown vào SQLite Lakehouse Vault V5.0...")
-            from scripts.migrate_markdown_to_sqlite import migrate_all_markdown_reports
-            migrate_all_markdown_reports()
-            log_sup("✅ Đồng bộ SQLite Lakehouse Vault thành công!")
-        except Exception as e_mig:
-            log_sup(f"⚠️ Cảnh báo đồng bộ SQLite ban đầu: {e_mig}")
-
-        for k, s in self.services.items():
-            s.start()
-        self._save_status()
+        # BƯỚC 1 (QUAN TRỌNG NHẤT CHO RENDER): Mở Web Port NGAY TỨC THÌ để triệt tiêu lỗi i/o timeout khi khởi động
         if self.enable_web:
             try:
                 class _DaemonThreadingHTTPServer(http.server.ThreadingHTTPServer):
                     daemon_threads = True
                     allow_reuse_address = True
+                    request_queue_size = 32
 
                 ApexSupervisorHTTPHandler.supervisor_ref = self
                 self.http_server = _DaemonThreadingHTTPServer(("0.0.0.0", self.port), ApexSupervisorHTTPHandler)
                 t = threading.Thread(target=self.http_server.serve_forever, daemon=True)
                 t.start()
-                log_sup(f"🌐 [IMMORTAL WEB SERVER] Đang phục vụ tại http://0.0.0.0:{self.port} (Healthcheck: /api/health)")
-
-                def _prewarm_war_room():
-                    try:
-                        from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
-                        get_tactical_war_room_state(force_refresh=False)
-                        log_sup("⚡ [WARMUP] Đã nạp sẵn cache Living War-Room Snapshot thành công.")
-                    except Exception as _we:
-                        log_sup(f"⚠️ [WARMUP] Bỏ qua warmup ban đầu: {_we}")
-
-                threading.Thread(target=_prewarm_war_room, daemon=True).start()
+                log_sup(f"🌐 [IMMORTAL WEB SERVER] Đã mở cổng http://0.0.0.0:{self.port} TỨC THÌ (Healthcheck: /api/health)")
             except Exception as e:
-                log_sup(f"[!] Cảnh báo mở Web Port {self.port}: {e}. Tiếp tục chạy 4 dịch vụ ngầm bình thường.")
+                log_sup(f"[!] Cảnh báo mở Web Port {self.port}: {e}. Tiếp tục chạy các dịch vụ ngầm bình thường.")
                 self.http_server = None
+
+        # BƯỚC 2: Khởi động các dịch vụ con được bật (Trong Compact Cloud Mode chỉ bật cron_daemon + tắt Telegram Cloud để chống 409)
+        for k, s in self.services.items():
+            if s.enabled:
+                s.start()
+            else:
+                log_sup(f"ℹ️ Dịch vụ '{k}' ở trạng thái {s.status} (tối ưu tài nguyên & chống xung đột).")
+        self._save_status()
+
+        # BƯỚC 3: Đồng bộ SQLite Lakehouse Vault V5.0 & pre-warm ở nền (không chặn cổng 10000)
+        def _bg_sqlite_sync_and_warmup():
+            try:
+                log_sup("🔄 [BG-SYNC] Đang đồng bộ thư viện báo cáo Markdown vào SQLite Lakehouse Vault V5.0...")
+                from scripts.migrate_markdown_to_sqlite import migrate_all_markdown_reports
+                migrate_all_markdown_reports()
+                gc.collect()
+                log_sup("✅ [BG-SYNC] Đồng bộ SQLite Lakehouse Vault thành công!")
+            except Exception as e_mig:
+                log_sup(f"⚠️ [BG-SYNC] Cảnh báo đồng bộ SQLite ban đầu: {e_mig}")
+            if self.enable_web:
+                try:
+                    from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
+                    get_tactical_war_room_state(force_refresh=False)
+                    gc.collect()
+                    log_sup("⚡ [WARMUP] Đã nạp sẵn cache Living War-Room Snapshot thành công.")
+                except Exception as _we:
+                    log_sup(f"⚠️ [WARMUP] Bỏ qua warmup ban đầu: {_we}")
+
+        threading.Thread(target=_bg_sqlite_sync_and_warmup, daemon=True, name="ApexBgSqliteSync").start()
+
+        if self.compact_cloud_mode:
+            self._start_compact_inprocess_sentinel()
 
         if not self.dry_run:
             log_sup("🌟 [APEX CLOUD SUPERVISOR 24/7] Đã sẵn sàng chạy ngầm 24/7. (Đã tắt broadcast khởi động lên Telegram để bảo vệ trải nghiệm của Chủ tịch).")
@@ -1581,6 +1672,11 @@ class ApexCloudSupervisor:
 
                 now = time.time()
                 if now - last_status_write >= 15:
+                    rss_mb = _get_process_rss_mb()
+                    if rss_mb > 240.0:
+                        gc.collect()
+                    if rss_mb > 360.0:
+                        log_sup(f"⚠️ [MEMORY GUARD] RSS Supervisor hiện đạt {rss_mb:.1f} MB (ngưỡng 512MB Render) -> Đã chạy gc.collect().")
                     self._save_status()
                     last_status_write = now
 

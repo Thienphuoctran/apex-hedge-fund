@@ -246,8 +246,9 @@ class ApexCloudDBSync:
     """Bộ điều phối đồng bộ Cloud DB (Supabase PostgREST) + Local SQLite Mirror."""
 
     @classmethod
-    def get_cloud_status(cls) -> Dict[str, Any]:
-        _ensure_local_tables()
+    def get_cloud_status(cls, lightweight: bool = False) -> Dict[str, Any]:
+        if not lightweight:
+            _ensure_local_tables()
         creds = _get_supabase_credentials()
         configured = bool(creds["url"] and creds["key"])
         telemetry = {}

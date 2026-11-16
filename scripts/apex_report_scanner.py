@@ -457,14 +457,6 @@ def scan_all_institutional_reports(
         datetime.timezone(datetime.timedelta(hours=7))
     ).strftime("%Y-%m-%d")
 
-    # Cơ chế dự phòng Flat-File luôn rà soát để không bao giờ bỏ sót báo cáo mới trên ổ đĩa
-    flat_reps = _flat_file_scan_all_institutional_reports(
-        date_filter=date_filter,
-        dept_filter=dept_filter,
-        shift_filter=shift_filter,
-        limit=limit
-    )
-
     try:
         from scripts.apex_database_engine import ApexDatabaseEngine, DB_PATH
         if DB_PATH.exists():
@@ -479,26 +471,19 @@ def scan_all_institutional_reports(
                     offset=offset
                 )
             if db_reps and len(db_reps) > 0:
-                seen_paths = set()
-                merged: List[Dict[str, Any]] = []
-                # Nếu chưa tìm kiếm từ khóa FTS, ưu tiên hợp nhất báo cáo mới trên đĩa nếu SQLite chưa kịp index
-                if not (search_query and search_query.strip()):
-                    for fr in flat_reps:
-                        rp = fr.get("rel_path")
-                        if rp and rp not in seen_paths:
-                            fr["is_today"] = (fr.get("date") == ict_today_str)
-                            merged.append(fr)
-                            seen_paths.add(rp)
                 for dr in db_reps:
-                    rp = dr.get("rel_path")
-                    if rp and rp not in seen_paths:
-                        dr["is_today"] = (dr.get("date") == ict_today_str)
-                        merged.append(dr)
-                        seen_paths.add(rp)
-                merged.sort(key=lambda x: (x.get("date", ""), x.get("sort_time", ""), x.get("mtime", 0)), reverse=True)
-                return merged[:limit]
+                    dr["is_today"] = (dr.get("date") == ict_today_str)
+                return db_reps[:limit]
     except Exception:
         pass
+
+    # Fallback: Chỉ quét Flat-File khi SQLite chưa sẵn sàng hoặc chưa có dữ liệu
+    flat_reps = _flat_file_scan_all_institutional_reports(
+        date_filter=date_filter,
+        dept_filter=dept_filter,
+        shift_filter=shift_filter,
+        limit=limit
+    )
 
     for fr in flat_reps:
         fr["is_today"] = (fr.get("date") == ict_today_str)
@@ -507,13 +492,22 @@ def scan_all_institutional_reports(
 
 def get_available_archive_dates() -> List[Dict[str, Any]]:
     """Lấy danh sách tất cả các ngày có báo cáo trong kho dữ liệu kèm số lượng báo cáo chuẩn unembargoed."""
-    all_reps = scan_all_institutional_reports(limit=1000)
     date_counts: Dict[str, int] = {}
     today_str = get_ict_now().strftime("%Y-%m-%d")
 
-    for r in all_reps:
-        d = r["date"]
-        date_counts[d] = date_counts.get(d, 0) + 1
+    try:
+        from scripts.apex_database_engine import ApexDatabaseEngine, DB_PATH
+        if DB_PATH.exists():
+            for d_str, cnt in ApexDatabaseEngine.get_archive_date_counts():
+                date_counts[d_str] = cnt
+    except Exception:
+        pass
+
+    if not date_counts:
+        all_reps = _flat_file_scan_all_institutional_reports(limit=1000)
+        for r in all_reps:
+            d = r["date"]
+            date_counts[d] = date_counts.get(d, 0) + 1
 
     sorted_dates = sorted(date_counts.keys(), reverse=True)
     result = []

@@ -58,12 +58,11 @@ class ApexDatabaseEngine:
         conn = sqlite3.connect(str(target_path), timeout=30.0, check_same_thread=False)
         conn.row_factory = sqlite3.Row
 
-        # Kích hoạt WAL Mode & tối ưu bộ nhớ đệm
+        # Kích hoạt WAL Mode & tối ưu bộ nhớ đệm (Giới hạn 4MB/connection để an toàn cho container RAM 512MB)
         conn.execute("PRAGMA journal_mode = WAL;")
         conn.execute("PRAGMA synchronous = NORMAL;")
-        conn.execute("PRAGMA cache_size = -64000;")  # 64 MB RAM cache
+        conn.execute("PRAGMA cache_size = -4000;")  # 4 MB RAM cache per connection
         conn.execute("PRAGMA foreign_keys = ON;")
-        conn.execute("PRAGMA temp_store = MEMORY;")
 
         return conn
 
@@ -493,6 +492,31 @@ class ApexDatabaseEngine:
 
         conn.close()
         return results
+
+    @classmethod
+    def get_archive_date_counts(cls) -> List[Tuple[str, int]]:
+        """Lấy số lượng báo cáo theo từng ngày trực tiếp từ SQLite (< 1ms, không quét đĩa)."""
+        if not DB_PATH.exists():
+            return []
+        now_dt = get_ict_now()
+        today_str = now_dt.strftime("%Y-%m-%d")
+        current_sort_time = now_dt.strftime("%H:%M:%S")
+        conn = cls.get_connection()
+        try:
+            cur = conn.cursor()
+            cur.execute(
+                """
+                SELECT date, COUNT(*) AS cnt
+                FROM institutional_reports
+                WHERE (date < ? OR (date = ? AND sort_time <= ?))
+                GROUP BY date
+                ORDER BY date DESC
+                """,
+                (today_str, today_str, current_sort_time),
+            )
+            return [(str(r["date"]), int(r["cnt"])) for r in cur.fetchall() if r["date"]]
+        finally:
+            conn.close()
 
     @classmethod
     def get_database_stats(cls) -> Dict[str, Any]:

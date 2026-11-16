@@ -9,10 +9,15 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Biến môi trường hệ thống
+# Biến môi trường hệ thống (Tối ưu RAM < 220MB cho Render Free 512MB + Chống xung đột Telegram 409)
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONOPTIMIZE=1 \
     PYTHONIOENCODING=utf-8 \
+    MALLOC_ARENA_MAX=2 \
+    APEX_CLOUD_COMPACT_MODE=1 \
+    APEX_DISABLE_TELEGRAM_COPILOT=1 \
+    TELEGRAM_POLLING_OWNER=pc \
     PORT=8000
 
 # Cài đặt curl và CA certificates để hỗ trợ healthcheck và HTTPS

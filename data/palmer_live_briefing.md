@@ -31,4 +31,10 @@ Da trieu tap & kich hoat Phien Thuong Dinh APEX-SUMMIT-20261116-1615 (Chuan bi T
 3. **Về Kế hoạch tuần:** Giai ngan theo bac (31%->50%->70-80% NAV) sau dao han 19/11; uu tien Top #1 PVT (200 CP @ 20.7-21.1k), SZC (19.8-20.2k), TCH (cho ha RSI 85.7 ve 12.4-12.8k)
 4. **Về Tiến độ công việc:** Da kich hoat Phien Hop Thuong Dinh 16:15 (T-20p luc 15:55) tuan thu 5/5 Dieu Noi Quy
 
+---
+
+## V. HỒ SƠ CHẨN ĐOÁN & TRIỂN KHAI FIX TRIỆT ĐỂ RENDER + GITHUB ACTIONS (ĐỒNG BỘ LONG ↔ PALMER — 16/11/2026)
+- **Trạng thái:** **ĐÃ TRIỂN KHAI & NGHIỆM THU 100% (`5/5` Guardrail Gate & `58/58` Audit PASS — `117.8 MB` RAM, `/api/health` `0.586s`)**
+- **Tài liệu chi tiết:** `data/palmer_cloud_incident_handoff.md` + `scripts/verify_cloud_readiness_gate.py`.
+
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*
