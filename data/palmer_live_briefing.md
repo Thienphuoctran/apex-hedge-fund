@@ -16,10 +16,10 @@ Da trieu tap & kich hoat Phien Thuong Dinh APEX-SUMMIT-20261116-1615 (Chuan bi T
 - [x] Xuat ban Ke hoach & Noi dung Chuan bi 16:15 (08_Master_Investment_CIO/2026-11-16_Ke_Hoach_Va_Noi_Dung_Chuan_Bi_Hop_Thuong_Dinh_16h15.md) & nang cap apex_autonomous_council_engine.py
 - [x] Kich hoat APEX-SUMMIT-20261116-1615 voi du 14/14 Ho so T-20p, tranh bien PVT Top #1 (200 CP) + MSH T+0 + SZC/TCH/BAF vs DBC, va KPI 2 Tang minh bach (1.5-2.2M co so / 3-4M khi mo khoa 70-80% NAV)
 
-## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
+## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT — XÁC THỰC 17:01 NGÀY 16/11)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
-- **Tổng NAV:** `18,151,471 ₫`
-- **Tiền mặt thực tế:** `12,516,471 ₫`
+- **Tổng NAV:** `20,145,422 ₫`
+- **Tiền mặt thực tế (Đã xác thực):** `14,510,422 ₫`
 - **Giá trị cổ phiếu:** `5,635,000 ₫`
 - **Vị thế nắm giữ (Ngày T+1):**
   * **HDB**: 100 CP | Giá vốn: 22,057 ₫ | Thị giá: 22,350 ₫ | PnL: +29,300 ₫ (HOLDING_T0_AVAILABLE)
@@ -36,5 +36,8 @@ Da trieu tap & kich hoat Phien Thuong Dinh APEX-SUMMIT-20261116-1615 (Chuan bi T
 ## V. HỒ SƠ CHẨN ĐOÁN & TRIỂN KHAI FIX TRIỆT ĐỂ RENDER + GITHUB ACTIONS (ĐỒNG BỘ LONG ↔ PALMER — 16/11/2026)
 - **Trạng thái:** **ĐÃ TRIỂN KHAI & NGHIỆM THU 100% (`5/5` Guardrail Gate & `58/58` Audit PASS — `117.8 MB` RAM, `/api/health` `0.586s`)**
 - **Tài liệu chi tiết:** `data/palmer_cloud_incident_handoff.md` + `scripts/verify_cloud_readiness_gate.py`.
+
+## VI. SẮC LỆNH SSOT `14,510,422 ₫` & CHỦ TRƯƠNG MẠO HIỂM CÓ CƠ SỞ ĐẠT KPI >= 4 TRIỆU TẾT (16/11 17:01)
+- Đã cập nhật Cash chuẩn **`14,510,422 ₫`** (`NAV ~20.15M ₫`) vào `current_portfolio_state.json`, ban hành `08_Master_Investment_CIO/calculated_risk_charter.md`, mở khóa 4 bậc công suất (`15%/50%/80%/85%`) & vá bug `Buy-Up` + `MORNING_FADE_LOCK`.
 
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*

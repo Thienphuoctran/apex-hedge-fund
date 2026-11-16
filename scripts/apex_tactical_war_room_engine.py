@@ -562,8 +562,11 @@ def build_victor_realtime_alert_center(
     breadth = market_ov.get("market_breadth", {}) or {}
     live_stocks = snap.get("live_stocks", []) or []
 
-    total_nav_vnd = float(port.get("total_nav_vnd") or 18256471.0)
-    cash_vnd = float(port.get("cash_vnd") or 12516471.0)
+    total_nav_vnd = float(port.get("total_nav_vnd") or 20145422.0)
+    cash_vnd = float(port.get("cash_vnd") or 14510422.0)
+    adv_ratio = float(breadth.get("advance_ratio_pct") or 50.0)
+    active_phase_id = str(phase_info.get("active_phase_id") or "")
+    is_morning_session = ("MORNING" in active_phase_id) or ("ATO" in active_phase_id)
     regime_id = str(regime.get("regime_id") or "SIDEWAY_CHOPPY")
     regime_label = str(regime.get("label") or "GIẰNG CO PHÂN HÓA")
     active_phase_name = str(phase_info.get("active_phase_name") or phase_info.get("active_phase_id") or "24/7 MONITOR")
@@ -625,13 +628,29 @@ def build_victor_realtime_alert_center(
                 recommended_action = (
                     f"Đang giữ đệm lãi tốt (Buy-Up {buy_up:.1f}%), giữ nguyên kỷ luật kiểm định lúc 14h15 (cắt nếu đóng thủng Hard Stop)."
                 )
+            elif is_morning_session and chg_pct >= 2.2 and (buy_up < 45.0 or adv_ratio < 42.0):
+                category = "MORNING_FADE_LOCK"
+                severity = "ACTION_SELL"
+                badge = f"⚡ MORNING-FADE LOCK ({chg_pct:+.1f}% | BuyUp {buy_up:.0f}%)"
+                condition_text = f"Kéo sáng {chg_pct:+.2f}% nhưng Buy-Up {buy_up:.1f}% / Breadth {adv_ratio:.0f}% yếu"
+                recommended_action = (
+                    f"KHÓA LÃI SÁNG: Bán chốt 50–100% vị thế vùng {price:,.0f}đ để tránh rơi lãi về chiều; chỉ cover lại khi nhúng -2.0%..-2.8%."
+                )
+            elif buy_up < 45.0:
+                category = "HOLDING_WEAK_DEMAND"
+                severity = "WARNING"
+                badge = f"⚠️ CẦU YẾU CẦN CANH ({buy_up:.0f}%)"
+                condition_text = f"Cách Stop +{dist_stop_pct:.2f}% • Buy-Up chỉ {buy_up:.1f}% (< 45%)"
+                recommended_action = (
+                    f"Cầu chủ động yếu ({buy_up:.1f}%). Tuyệt đối không mua thêm; sẵn sàng chốt giữ lãi nếu kéo xanh yếu lực hoặc siết Stop 14h15."
+                )
             else:
                 category = "HOLDING_PROFIT_HEALTHY"
                 severity = "INFO"
                 badge = f"🟢 LÃI ĐỆM AN TOÀN (BuyUp {buy_up:.0f}%)"
                 condition_text = f"Cách Stop +{dist_stop_pct:.2f}% • Còn +{dist_tp1_pct:.2f}% tới TP1 ({tp1:,.0f}đ)"
                 recommended_action = (
-                    f"Cầu chủ động {buy_up:.1f}% rất khỏe. Giữ nguyên vị thế gồng lãi; chỉ lướt T+0 nếu nhúng về vùng {round(price*0.978,-1):,.0f}đ."
+                    f"Cầu chủ động {buy_up:.1f}% ổn định. Giữ vị thế gồng lãi; chỉ lướt T+0 nếu nhúng về vùng {round(price*0.978,-1):,.0f}đ."
                 )
         else:
             # Kiểm tra các ngưỡng quan trọng của cổ phiếu TẦM NGẮM (WATCHLIST)

@@ -283,34 +283,45 @@ def classify_intraday_regime(market_overview: Dict[str, Any]) -> Dict[str, Any]:
     if vni_chg <= -0.80 or adv_ratio <= 32.0 or basis <= -8.0:
         return {
             "regime_id": "DEFENSIVE_SELLOFF",
-            "label": "🛡️ PHÒNG THỦ (ÁP LỰC BÁN RÕ RỆT)",
+            "label": "🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT)",
             "badge_color": "#ef4444",
-            "max_new_allocation_pct": 0,
+            "max_new_allocation_pct": 15,
             "guidance": (
-                f"VN-Index {vni_chg:+.2f}%, Độ rộng tích cực chỉ {adv_ratio:.0f}%, Basis {basis:+.2f}đ. "
-                "Tạm khóa giải ngân mới; ưu tiên bảo vệ tiền mặt & canh sát mốc Stop 2xATR."
+                f"VN-Index {vni_chg:+.2f}%, Độ rộng tích cực {adv_ratio:.0f}%, Basis {basis:+.2f}đ. "
+                "Tầng 1 Phòng thủ (trần giải ngân mới <= 15%): bảo vệ vốn, chỉ rình mã BCTC kim cương tại MA200 nếu đủ cầu."
             ),
         }
-    elif vni_chg >= 0.40 and adv_ratio >= 55.0 and basis >= -2.0:
+    elif vni_chg >= 0.65 and adv_ratio >= 62.0 and basis >= -1.0 and pace >= 1.15:
+        return {
+            "regime_id": "A_PLUS_CONVICTION",
+            "label": "🔥 ĐÁNH LỚN BẤT ĐỐI XỨNG A+ (KPI 4M+ TẾT)",
+            "badge_color": "#10b981",
+            "max_new_allocation_pct": 85,
+            "guidance": (
+                f"VN-Index {vni_chg:+.2f}%, Độ rộng {adv_ratio:.0f}% đồng thuận cao, Pace {pace:.2f}x, Ngoại {fn_net:+.1f} Tỷ. "
+                "Kích hoạt Tầng 3+ Mạo hiểm Có Cơ sở (tối đa 85% NAV, ưu tiên lô 200 CP vào mã Leader AAA/A+ có R:R >= 2.2x & Stop cứng)."
+            ),
+        }
+    elif vni_chg >= 0.40 and adv_ratio >= 52.0 and basis >= -2.0:
         return {
             "regime_id": "RISK_ON_BREAKOUT",
-            "label": "🚀 TÍCH CỰC (DÒNG TIỀN ĐỒNG THUẬN)",
+            "label": "🚀 TĂNG TỐC TẦNG 3 (DÒNG TIỀN ĐỒNG THUẬN)",
             "badge_color": "#10b981",
-            "max_new_allocation_pct": 50,
+            "max_new_allocation_pct": 80,
             "guidance": (
                 f"VN-Index {vni_chg:+.2f}%, Độ rộng {adv_ratio:.0f}% mã xanh, Pace {pace:.2f}x, Ngoại {fn_net:+.1f} Tỷ. "
-                "Cho phép giải ngân đúng điểm Limit LO tại Khung Giờ Vàng 14h00–14h25 khi mã giữ nền."
+                "Mở khóa Tầng 3 công suất (tối đa 80% NAV): giải ngân Limit LO chuẩn lô 200 CP trong khung 13h30–14h25 & sẵn sàng Scaling Out 50/50."
             ),
         }
     else:
         return {
             "regime_id": "SIDEWAY_CHOPPY",
-            "label": "⚖️ GIẰNG CO PHÂN HÓA (CHỌN LỌC CỰC CHẶT)",
+            "label": "⚖️ GIẰNG CO CHỌN LỌC TẦNG 2 (T+0 & LEADER)",
             "badge_color": "#fbbf24",
-            "max_new_allocation_pct": 25,
+            "max_new_allocation_pct": 50,
             "guidance": (
                 f"VN-Index {vni_chg:+.2f}%, Độ rộng {adv_ratio:.0f}%, Basis {basis:+.2f}đ. "
-                "Thị trường phân hóa mạnh — Cấm FOMO giá xanh; chỉ giữ vị thế khỏe và rình giá chiết khấu."
+                "Mở khóa Tầng 2 (tối đa 50% NAV): cấm FOMO ATO; ưu tiên mã có dữ liệu BCTC sạch & áp dụng Morning-Fade Lock khi kéo sáng cầu yếu."
             ),
         }
 
@@ -447,9 +458,9 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
                 sec_status = "TAKE_PROFIT"
                 sec_label = "🎯 ĐẠT TP1 — CHỐT LỜI 50% SCALING OUT"
                 action_code = "TP1_REACHED"
-            elif pnl_pct >= 5.0:
+            elif pnl_pct >= 4.0:
                 sec_status = "SAFE"
-                sec_label = "🛡️ LÃI >=5% — NÂNG STOP VỀ GIÁ VỐN"
+                sec_label = "🛡️ LÃI >=4% — KÉO STOP VỀ HÒA VỐN"
                 action_code = "TRAILING_BE_READY"
             else:
                 sec_status = "SAFE"
