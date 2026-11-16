@@ -75,16 +75,20 @@ def query_gemini_cio(prompt: str) -> Optional[str]:
             "- Luôn sẵn sàng nhận lệnh, phân chia công việc cho cấp dưới (Victor, Minh Quân, Alex, Ban 2, Ban 4) và cam kết 'Làm thật việc thật'."
         )
 
-        resp = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                system_instruction=system_instruction,
-                temperature=0.6
-            )
-        )
-        if resp and resp.text:
-            return resp.text.strip()
+        for model_name in ("gemini-3.8-flash", "gemini-2.5-flash"):
+            try:
+                resp = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=system_instruction,
+                        temperature=0.6
+                    )
+                )
+                if resp and resp.text:
+                    return resp.text.strip()
+            except Exception:
+                continue
     except Exception:
         pass
     return None

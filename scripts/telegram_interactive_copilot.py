@@ -660,6 +660,16 @@ def process_user_query(text: str) -> str:
     except Exception as e:
         print(f"[!] Lỗi bộ xử lý giao dịch tự động: {e}")
 
+    # 0.0A LỆNH TÌM KIẾM & MỤC LỤC BÁO CÁO CHUẨN HÓA (SQLITE VAULT FTS5)
+    if clean_text.startswith("/tim") or clean_text.startswith("tim ") or "tìm báo cáo" in clean_text:
+        q_kw = re.sub(r"^(?:/tim|tim|tìm báo cáo|tim bao cao)\s*", "", text.strip(), flags=re.IGNORECASE).strip()
+        from scripts.telegram_dispatcher import search_vault_reports
+        return search_vault_reports(q_kw, limit=5)
+
+    if any(clean_text.startswith(cmd) for cmd in ("/baocao", "/mucluc", "/reports", "/index")):
+        from scripts.telegram_dispatcher import build_daily_reports_index
+        return build_daily_reports_index()
+
     # 0.0 XỬ LÝ LỆNH TRA CỨU & CẤU HÌNH TCBS TCINVEST AN TOÀN (READ-ONLY SENTINEL)
     if clean_text.startswith("/set_tcbs_token") or clean_text.startswith("/token_tcbs"):
         token_parts = text.split(maxsplit=1)
@@ -758,6 +768,11 @@ def process_user_query(text: str) -> str:
             auth_badge = "🟢 *ĐÃ KẾT NỐI TCBS MCP (AI CONNECTOR)*" if is_live else "🟡 *CHẾ ĐỘ STANDBY AN TOÀN (SSOT)*"
             mcp_url = cash_info.get("mcp_url", "https://mcp.tcbs.com.vn/mcp/tcinvest/")
 
+            pos_dict = holdings.get("positions", {}) or {}
+            pos_desc = (
+                ", ".join(f"{s} ({int(p.get('shares', 0))} CP)" for s, p in pos_dict.items())
+                if pos_dict else "0 CP rủi ro"
+            )
             lines = [
                 "🏛️ *[BÁO CÁO TÀI SẢN & VỐN TCBS TCINVEST — APEX FUND]*",
                 f"👤 *Chủ tài khoản:* Chủ tịch Phước Trần (`105C307855`)",
@@ -768,7 +783,7 @@ def process_user_query(text: str) -> str:
                 "━━━━━━━━━━━━━━━━━━━",
                 f"💰 *Số dư Tiền Mặt Thực Tế:* `{cash_vnd:,.0f} ₫`",
                 f"💳 *Sức mua sẵn sàng:* `{cash_vnd:,.0f} ₫`",
-                f"📦 *Cổ phiếu nắm giữ:* `{len(holdings.get('positions', {}))} mã` (`0 CP` rủi ro — Đã tất toán Vòng 1)",
+                f"📦 *Cổ phiếu nắm giữ:* `{len(pos_dict)} mã` (`{pos_desc}`)",
                 "━━━━━━━━━━━━━━━━━━━",
                 "💡 *Ghi chú bảo mật:* Hệ thống chỉ giám sát dữ liệu và đồng bộ số liệu thời gian thực. Mọi giao dịch chuyển tiền/rút tiền đều bất khả thi nếu không có Smart OTP trên điện thoại Chủ tịch!"
             ]
@@ -898,24 +913,32 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                 up_id = u.get("update_id", 0)
                 offset = max(offset, up_id + 1)
 
-                # 1. Phát hiện thêm bot vào Group mới
+                # 1. Phát hiện thêm bot vào Group/Channel mới (Không ghi đè group_chat_id nếu đã cấu hình)
                 my_chat_member = u.get("my_chat_member", {})
                 if my_chat_member:
                     chat = my_chat_member.get("chat", {})
                     chat_type = chat.get("type", "")
-                    if chat_type in ["group", "supergroup"]:
-                        group_id = str(chat.get("id"))
-                        log_daemon(f"[!] PHÁT HIỆN BOT ĐƯỢC THÊM VÀO GROUP: {chat.get('title')} (ID: {group_id})")
-                        provision_all_topics_for_group(group_id)
-                        send_raw_telegram(
-                            bot_token=bot_token,
-                            chat_id=group_id,
-                            text="🎉 *[APEX FUND TRUNG TÂM TÁC CHIẾN]*\nPalmer và Victor đã vào vị trí! Đã tự động kích hoạt 4 phân luồng phòng ban thành công!"
-                        )
+                    chat_title = str(chat.get("title") or "")
+                    if chat_type in ["group", "supergroup", "channel"]:
+                        new_cid = str(chat.get("id"))
+                        cur_cfg = load_config()
+                        existing_gid = str(cur_cfg.get("group_chat_id") or "")
+                        if not existing_gid:
+                            log_daemon(f"[!] PHÁT HIỆN BOT ĐƯỢC THÊM VÀO GROUP CHÍNH: {chat_title} (ID: {new_cid})")
+                            provision_all_topics_for_group(new_cid)
+                        elif new_cid != existing_gid and any(w in chat_title.lower() for w in ["báo cáo", "bao cao", "report", "vault", "kho"]):
+                            from scripts.telegram_dispatcher import set_dedicated_reports_room
+                            set_dedicated_reports_room(new_cid, chat_title)
+                            send_raw_telegram(
+                                bot_token=bot_token,
+                                chat_id=new_cid,
+                                text=f"📑 *[ĐÃ LIÊN KẾT PHÒNG BÁO CÁO ĐỘC QUYỀN]*\nNhóm/Kênh `{chat_title}` (`{new_cid}`) từ nay chỉ nhận các Báo cáo chuẩn hóa gắn #hashtag!"
+                            )
 
-                # 2. Xử lý tin nhắn văn bản từ Chủ tịch
-                msg = u.get("message", {})
-                chat_id = str(msg.get("chat", {}).get("id", ""))
+                # 2. Xử lý tin nhắn văn bản hoặc channel_post từ Chủ tịch
+                msg = u.get("message", {}) or u.get("channel_post", {})
+                chat_obj = msg.get("chat", {})
+                chat_id = str(chat_obj.get("id", ""))
                 text = msg.get("text", "").strip()
                 thread_id = msg.get("message_thread_id")
 
@@ -923,6 +946,23 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                     continue
 
                 log_daemon(f"[+] Nhận tin nhắn từ {chat_id}: '{text}'")
+
+                if text.lower().strip().startswith("/link_reports_room"):
+                    from scripts.telegram_dispatcher import set_dedicated_reports_room, build_daily_reports_index
+                    room_title = str(chat_obj.get("title") or "Phòng Báo Cáo Độc Lập")
+                    set_dedicated_reports_room(chat_id, room_title)
+                    send_raw_telegram(
+                        bot_token=bot_token,
+                        chat_id=chat_id,
+                        text=(
+                            f"✅ *[ĐÃ GÁN PHÒNG BÁO CÁO RIÊNG BIỆT THÀNH CÔNG]*\n"
+                            f"• Phòng nhận: *{room_title}* (`{chat_id}`)\n"
+                            f"• Cơ chế: Từ nay toàn bộ Thẻ Báo Cáo chuẩn hóa & Thông báo tác chiến sẽ tập trung 100% về phòng này, không bị loãng!\n\n"
+                            + build_daily_reports_index()
+                        ),
+                        message_thread_id=thread_id
+                    )
+                    continue
 
                 if text in ["/start", "/menu", "menu", "bắt đầu"]:
                     welcome = (

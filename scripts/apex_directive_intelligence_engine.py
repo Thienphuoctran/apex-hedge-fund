@@ -740,10 +740,17 @@ class ApexDirectiveIntelligenceEngine:
                 f"- Kỷ luật Hiến Chương 10 Điều: 1 lô 100 CP bắt buộc <= 33% NAV (tối ưu <= 18% NAV), Stop Loss 2xATR (<= 7.5%), rủi ro <= 1.5% NAV/trade, Khung Giờ Vàng 14h00-14h25, CẤM FOMO ATO.\n\n"
                 f"Hãy đóng vai Master CIO James (Ban 8) và trả lời thật sắc sảo, quyết đoán trên đúng số liệu SSOT hiện tại, tuyệt đối không bịa số liệu cũ."
             )
-            resp = client.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=prompt
-            )
+            resp = None
+            for model_name in ("gemini-3.8-flash", "gemini-2.5-flash"):
+                try:
+                    resp = client.models.generate_content(
+                        model=model_name,
+                        contents=prompt
+                    )
+                    if resp and resp.text:
+                        break
+                except Exception:
+                    resp = None
             if resp and resp.text:
                 now_str = datetime.datetime.now().strftime("%H:%M:%S")
                 ts_base = int(time.time() * 1000)

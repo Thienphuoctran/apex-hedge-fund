@@ -71,6 +71,21 @@
       "description": "Ban 6 & Ban 5: Bản tin khai sáng 7h30, Kèm cặp tâm lý tránh FOMO ATO, Nhật ký học viên và Hồi tố Hit Rate %",
       "thread_id": 112,
       "icon_color": 9367192
+    },
+    "reports_vault": {
+      "key": "reports_vault",
+      "name": "📑 PHÒNG BÁO CÁO & TÌM KIẾM ĐỘC QUYỀN",
+      "description": "Phòng riêng biệt CHỈ nhận các Báo cáo chuẩn hóa gắn #hashtag tìm kiếm nhanh + Link mở Web Portal + Tóm tắt Gemini 3.8 Flash (Không lẫn tin chat loãng thông báo).",
+      "thread_id": 1776,
+      "icon_color": 7322096
     }
+  },
+  "dedicated_reports_chat_id": null,
+  "dedicated_reports_chat_title": null,
+  "anti_noise_routing": {
+    "block_private_fallback_for_reports": true,
+    "mirror_reports_to_vault_room": true,
+    "auto_pin_daily_index": true,
+    "portal_base_url": "https://apex-hedge-fund.onrender.com"
   }
 }
