@@ -1,22 +1,19 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-16 02:37:40  
+**Thời gian cập nhật:** 2026-11-16 09:13:14  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261116-023740`  
+**Mã đồng bộ:** `SYNC-AG2P-20261116-091314`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Tong thiet ke lai giao dien web toi uu chong cuon dai & hoan thien co che cap nhat du lieu thoi gian thực toan he thong va ra soat toan bo loi.
+* **Câu hỏi của Chủ tịch:** Cho ke hoach dau tu chinh thuc ngay hom nay (16/11/2026) co dong theo tung phien & cap nhat len Phong Tac Chien Web.
 * **Kết luận & Quyết định thể chế:**
-Hoan tat V11.0 Ergonomic Portal & Unified Real-Time Sync: Tab 3 War-Room gom gon 4 Sub-Deck, Tab 5 Summit gom 3 Sub-Deck, Sticky Top Nav + 5th KPI VN-Index + Dong bo real-time xuyen 7 Tabs, sua loi JS SyntaxError goc trong renderDemoPreSessionPlan & renderVictorRealtimeAlertCenter, kiem toan 58/58 PASSED.
+Da phat hanh KE HOACH DAU TU CHINH THUC HOM NAY (16/11/2026) co dong real-time qua tung phien, nang cap engine tu dong chuyen Demo -> Chinh thuc khi san mo cua (08h30-14h45) & tu dong dong bo Vault moi 60s tren Render Cloud.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Tai cau truc Tab 3 War-Room thanh 4 Sub-Deck (Lenh & Bao Dong 24/7, Victor Giam Sat, 14 Phong Ban & Hop That, Tinh Bao V5) + che do Mo Toan Bo qua _render_war_room_v8_decks()
-- [x] Tai cau truc Tab 5 Summit Room thanh 3 Sub-Deck (Phien Hop Live & Phe Duyet mac dinh tren man hinh dau, Diem Danh & Ho So T-20p, Trieu Tap & Hien Chuong 5 Dieu)
-- [x] Nang cap Sticky .tab-nav + 5th Live KPI VN-Index + Header Heartbeat #global-sync-heartbeat-txt + Non-blocking #portal-toast-notification
-- [x] Trien khai Unified Real-Time Sync Engine (initGlobalPortalRealtimeSync, syncAllPortalRealtime, renderGlobalCrossTabRealtime, syncSupervisorStatusRealtime)
-- [x] Phat hien & sua dut diem JS SyntaxError cu tai renderDemoPreSessionPlan() va renderVictorRealtimeAlertCenter() (onclick openReportModal escape)
-- [x] Tuan thu Modern Web Guidance (scrollIntoView nearest, hidden=until-found + beforematch, sticky thead, content-visibility: auto) & Dat 58/58 Kiem toan He thong
+- [x] Doi soat anh chup TCInvest 09:06 16/11/2026 (HDB 100 CP @ 22.06 -> 22.65 +2.7%, MSH 100 CP @ 34.51 -> 35.40 +2.6%, tong +148,300d, gia tri CP 5,805,000d) & bang dien live 09:09-09:12
+- [x] Nang cap build_demo_tactical_plan_tomorrow() trong scripts/apex_tactical_war_room_engine.py tu dong chuyen is_pre_session_demo=False trong gio giao dich, danh dau khung gio [DANG CHAY LIVE] va xuat Official_Adaptive_Tactical_Plan.md
+- [x] Dong bo tuan 47 (data/weekly_tactical_plan_active.json) va nhan nut Phong Tac Chien len Web & GitHub/Render Cloud
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
@@ -28,9 +25,9 @@ Hoan tat V11.0 Ergonomic Portal & Unified Real-Time Sync: Tab 3 War-Room gom gon
   * **MSH**: 100 CP | Giá vốn: 34,510 ₫ | Thị giá: 34,000 ₫ | PnL: -51,000 ₫ (HOLDING_T0_AVAILABLE)
 
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
-1. **Về BSR & BAF:** Giu ky luat theo doi tren Deck Lenh & Bao Dong 24/7, khong bat day truoc 14h00
-2. **Về HDB & MSH:** Giu 2 vi the HDB (100 CP) & MSH (100 CP), bao ve Stop 2xATR realtime qua Victor 24/7
-3. **Về Kế hoạch tuần:** Ke hoach tuan tham khao co dong theo bang dien; theo doi nhanh trong Sub-Deck Victor & Kich Ban
-4. **Về Tiến độ công việc:** Da nang cap xong Web Portal V11.0 (0 loi JS, 58/58 Kiem toan PASSED, SSOT Portfolio bao toan 100%)
+1. **Về BSR & BAF:** Giu ky luat cam FOMO phien sang; theo doi BSR (25.25) & BAF (30.90) qua nhip T+2.5 (13h15) den 14h00
+2. **Về HDB & MSH:** HDB (22.60-22.65k, +2.7%) & MSH (35.20-35.40k, +2.6%) dang lai dem; giu nguyen & canh HDB luc 14h15 (Hard Stop < 21.7k), co the luot T+0 MSH neu nhung 34.4k-34.8k
+3. **Về Kế hoạch tuần:** Giai ngan tham do toi da 1 lo LO sau 14h00 neu Buy-Up >= 60% & Breadth >= 38% (uu tien DBC 16.05k / HPG 20.95k / BAF theo bang dien chieu)
+4. **Về Tiến độ công việc:** Da kich hoat Ke Hoach Chinh Thuc 16/11/2026 & co che tu dong cap nhat real-time 60s tren Render Cloud
 
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*

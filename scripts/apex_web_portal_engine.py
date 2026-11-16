@@ -975,7 +975,7 @@ def _render_war_room_v8_decks(wr_state: Dict[str, Any]) -> Dict[str, str]:
                             Mã Kịch Bản: <strong style="color:#e2e8f0;">{_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('plan_id') or 'DEMO-PRE-SESSION'))}</strong> • Trạng thái thích nghi: <span style="color:#34d399; font-weight:700;">{_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('auto_adapt_status') or 'Sẵn sàng tự động cập nhật khi thị trường biến động'))}</span>
                         </div>
                     </div>
-                    <button onclick="openReportModal('{_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('report_rel_path') or '').replace(chr(92), '/'))}')" style="cursor: pointer; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.45); color: #7dd3fc; border-radius: 8px; padding: 6px 12px; font-size: 11px; font-weight: 800;">📄 Đọc Báo Cáo Demo Chi Tiết</button>
+                    <button onclick="openReportModal('{_h.escape(str((wr_state.get('demo_tactical_plan_tomorrow') or {}).get('report_rel_path') or '').replace(chr(92), '/'))}')" style="cursor: pointer; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.45); color: #7dd3fc; border-radius: 8px; padding: 6px 12px; font-size: 11px; font-weight: 800;">📄 Đọc Báo Cáo Kế Hoạch Chi Tiết</button>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-bottom: 10px;">
                     <div style="background: rgba(30, 41, 59, 0.75); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 8px; padding: 8px;">
@@ -7638,7 +7638,7 @@ def generate_portal_html(
                         '</div>' +
                         '<div style="font-size:11px; color:#94a3b8; margin-top:3px;">Mã Kịch Bản: <strong style="color:#e2e8f0;">' + esc(demo.plan_id) + '</strong> • Trạng thái thích nghi: <span style="color:#34d399; font-weight:700;">' + esc(demo.auto_adapt_status) + '</span></div>' +
                     '</div>' +
-                    (relPath ? '<button onclick="openReportModal(&#39;' + safeRel + '&#39;)" style="cursor:pointer; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.45); color:#7dd3fc; border-radius:8px; padding:6px 12px; font-size:11px; font-weight:800;">📄 Đọc Báo Cáo Demo Chi Tiết</button>' : '') +
+                    (relPath ? '<button onclick="openReportModal(&#39;' + safeRel + '&#39;)" style="cursor:pointer; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.45); color:#7dd3fc; border-radius:8px; padding:6px 12px; font-size:11px; font-weight:800;">📄 Đọc Báo Cáo Kế Hoạch Chi Tiết</button>' : '') +
                 '</div>' +
                 '<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:8px; margin-bottom:10px;">' +
                     '<div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:8px;"><div style="font-size:10px; color:#94a3b8;">TÀI KHOẢN TCBS • TỔNG NAV</div><div style="font-size:13px; font-weight:800; color:#f8fafc;">' + esc(pr.account_id || '105C307855') + ' • ' + fmt(pr.total_nav_vnd) + ' đ</div></div>' +

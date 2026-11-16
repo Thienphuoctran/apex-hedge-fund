@@ -827,31 +827,48 @@ def build_demo_tactical_plan_tomorrow(
     avoid_alerts = [a for a in victor_center.get("alerts", []) if a.get("category") == "BEARISH_PRESSURE_AVOID"]
     hold_alerts = [a for a in victor_center.get("alerts", []) if a.get("is_holding")]
 
-    hourly_roadmap = weekly_data.get("tomorrow_demo_schedule_2026_11_16") or [
+    vni_val = float(vni.get("value") or 0.0)
+    vni_chg_pct = float(vni.get("change_pct") or 0.0)
+    adv_cnt = int(breadth.get("advancers") or 0)
+    dec_cnt = int(breadth.get("decliners") or 0)
+    tot_br = adv_cnt + dec_cnt
+    breadth_pct_str = f"{(adv_cnt * 100.0 / tot_br):.1f}% xanh ({adv_cnt}T/{dec_cnt}G)" if tot_br > 0 else "Đang khớp ATO (chưa mở toàn bảng)"
+    buy_syms_str = ", ".join(f"{a['symbol']} ({a['probe_target']:,.0f}đ, BuyUp {a['buy_up_pct']:.0f}%)" for a in buy_alerts[:3]) or "Chưa có mã đạt Buy-Up >= 60%"
+    display_date = now.strftime("%d/%m/%Y")
+
+    def _slot_label(start_min: int, end_min: int, base_phase: str) -> str:
+        return f"{base_phase} ⚡ [ĐANG CHẠY LIVE]" if (in_market and start_min <= hm < end_min) else base_phase
+
+    hourly_roadmap = [
         {
             "slot": "08:30 – 09:00",
-            "phase": "PRE-ATO GIAO BAN & ĐỐI SOÁT QUA ĐÊM",
-            "action": "Minh Quân (Ban 7 VN) tổng hợp dư chấn Phố Wall/US10Y/Tỷ giá; Victor chốt ngưỡng Stop & Vùng mua LO trước giờ mở cửa."
+            "phase": _slot_label(8 * 60 + 30, 9 * 60, "PRE-ATO GIAO BAN & ĐỐI SOÁT QUA ĐÊM"),
+            "action": "Minh Quân (Ban 7 VN) đối soát Phố Wall/US10Y/DXY đêm qua; Victor chốt ngưỡng Stop 2xATR & vùng canh LO trước khi mở cửa."
         },
         {
             "slot": "09:00 – 10:00",
-            "phase": "ATO & KỶ LUẬT CẤM FOMO SÁNG",
-            "action": "TUYỆT ĐỐI KHÔNG mua đuổi giá xanh ATO. Victor quét bẫy Bull-Trap và theo dõi phản ứng HDB/MSH."
+            "phase": _slot_label(9 * 60, 10 * 60, "ATO & KỶ LUẬT CẤM FOMO ĐẦU PHIÊN"),
+            "action": "TUYỆT ĐỐI KHÔNG mua đuổi giá xanh ATO (MSH gáp +1.7%, HDB +0.2%). Victor đo lực Buy-Up thật và bẫy kê lệnh Giá 2/Giá 3."
         },
         {
             "slot": "10:00 – 11:30",
-            "phase": "SOI CẦU THỰC & CANH LƯỚT T+0",
-            "action": "Đo Buy-Up % và Breadth; nếu MSH/HDB nhúng vùng hỗ trợ Vol cạn ➔ chuẩn bị nhịp lướt T+0 hạ giá vốn."
+            "phase": _slot_label(10 * 60, 11 * 60 + 30, "SOI CẦU THỰC & CANH LƯỚT T+0 HẠ GIÁ VỐN"),
+            "action": "Theo dõi phản ứng cung vùng 22.65–22.75 ở HDB và lực giữ trend của MSH (35.4k). Nếu MSH nhúng giả về 34.4k–34.8k Vol cạn ➔ cân nhắc lướt T+0."
+        },
+        {
+            "slot": "11:30 – 13:00",
+            "phase": _slot_label(11 * 60 + 30, 13 * 60, "TỔNG KẾT PHIÊN SÁNG & CẬP NHẬT KỊCH BẢN CHIỀU"),
+            "action": "Chốt lại độ rộng thị trường, thanh khoản sáng và tự động hiệu chỉnh danh sách canh mua/phòng thủ cho phiên chiều."
         },
         {
             "slot": "13:00 – 13:45",
-            "phase": "HẤP THỤ HÀNG T+2.5 VỀ TÀI KHOẢN",
-            "action": "Kiểm tra lực hấp thụ cung sau 13h15 tại BAF, DBC, HPG, SZC và quan sát lực hồi phục của IDC, BSR."
+            "phase": _slot_label(13 * 60, 14 * 60, "HẤP THỤ HÀNG T+2.5 VỀ TÀI KHOẢN (13H15)"),
+            "action": "Kiểm tra lực hấp thụ cung T+2.5 ở BAF (30.5k–30.9k), BSR (24.9k–25.25k), IDC (34.4k–35.0k), DBC (15.9k–16.05k) và HPG (20.75k–21.0k)."
         },
         {
-            "slot": "14:00 – 14:25",
-            "phase": "⭐ KHUNG GIỜ VÀNG BẤM CÒ LO & KIỂM ĐỊNH 14H15",
-            "action": "Kiểm định HDB lúc 14h15 (giữ >= 22,060đ / cắt < 21,700đ). Nếu Breadth >= 38% & Buy-Up >= 60%, giải ngân tối đa 1 lô LO thăm dò (BAF hoặc DBC)."
+            "slot": "14:00 – 14:45",
+            "phase": _slot_label(14 * 60, 14 * 60 + 46, "⭐ KHUNG GIỜ VÀNG BẤM CÒ LO & KIỂM ĐỊNH 14H15"),
+            "action": f"Kiểm định HDB lúc 14h15 (giữ >= 22,060đ / cắt < 21,700đ). Nếu VN-Index ổn định & Buy-Up >= 60%, chỉ giải ngân LO tối đa 1 lô thăm dò: {buy_syms_str}."
         },
     ]
 
@@ -859,43 +876,54 @@ def build_demo_tactical_plan_tomorrow(
         {
             "id": "SCENARIO_A_BREAKOUT",
             "title": "Kịch Bản A: Tích Cực / Đồng Thuận Dòng Tiền",
-            "trigger": "VN-Index giữ >= 1,735, Độ rộng >= 45% mã xanh, Buy-Up >= 60%.",
-            "action": "Giữ nguyên 100 HDB + 100 MSH hướng TP1; giải ngân 1 lô LO thăm dò BAF (30.4–30.85k) hoặc DBC (15.8–16.05k) sau 14h00.",
+            "trigger": "VN-Index >= 1,735 (+0.2% trở lên), Độ rộng >= 45% mã xanh, Buy-Up >= 60%.",
+            "action": f"Giữ 100 HDB + 100 MSH gồng lãi về TP1; sau 14h00 giải ngân tối đa 1 lô LO thăm dò mã đạt chuẩn ({buy_syms_str}), giữ Cash >= 55% NAV.",
             "is_active_now": active_scenario_id == "SCENARIO_A_BREAKOUT",
         },
         {
             "id": "SCENARIO_B_ACCUMULATION",
-            "title": "Kịch Bản B: Giằng Co Phân Hóa / Tích Lũy (Đang Kích Hoạt)",
-            "trigger": "VN-Index biên hẹp, Độ rộng 32%–45% (hiện 36%).",
-            "action": "Chọn lọc cực chặt: Không đuổi xanh; canh lướt T+0 MSH nếu nhúng 33.9–34.3k; ưu tiên thăm dò lô nhỏ DBC (8.8% NAV) hoặc BAF đúng giá chiết khấu sau 14h00.",
+            "title": "Kịch Bản B: Giằng Co Phân Hóa / Tích Lũy (Thận Trọng)",
+            "trigger": f"VN-Index đi ngang ({vni_val:,.2f} • {vni_chg_pct:+.2f}%), Độ rộng: {breadth_pct_str}.",
+            "action": f"Không đua xanh phiên sáng; khóa kỷ luật chỉ bấm cò sau 14h00 nếu giữ nền ({buy_syms_str}). Bảo vệ lãi đệm MSH (+2.6%) & HDB (+2.7%).",
             "is_active_now": active_scenario_id == "SCENARIO_B_ACCUMULATION",
         },
         {
             "id": "SCENARIO_C_DEFENSE",
             "title": "Kịch Bản C: Đảo Chiều Bán Tháo / Phòng Thủ Khẩn",
-            "trigger": "VN-Index <= -0.8% hoặc Độ rộng <= 32% hoặc HDB đóng dưới 21,700đ sau 14h15.",
-            "action": "KHÓA 100% lệnh mua mới; cắt dứt khoát HDB nếu thủng Hard Stop; bảo toàn >= 68%–80% tiền mặt.",
+            "trigger": "VN-Index giảm >= -0.8% hoặc Độ rộng <= 32% hoặc HDB đóng dưới 21,700đ sau 14h15.",
+            "action": "KHÓA 100% lệnh mua mới (BAF/BSR/DBC/HPG); cắt dứt khoát HDB nếu thủng Hard Stop; giữ nguyên đệm tiền mặt >= 68% – 80% NAV.",
             "is_active_now": active_scenario_id == "SCENARIO_C_DEFENSE",
         },
     ]
 
-    report_rel_path = f"VN_Market/07_Daily_Specialist/{date_str}_Demo_PreSession_Tactical_Plan.md"
+    is_pre_session_demo = not in_market
+    demo_report_rel_path = f"VN_Market/07_Daily_Specialist/{date_str}_Demo_PreSession_Tactical_Plan.md"
+    official_report_rel_path = f"VN_Market/07_Daily_Specialist/{date_str}_Official_Adaptive_Tactical_Plan.md"
+    report_rel_path = official_report_rel_path if in_market else demo_report_rel_path
+    plan_title = (
+        f"KẾ HOẠCH ĐẦU TƯ CHÍNH THỨC HÔM NAY ({display_date}) — TỰ ĐỘNG CƠ ĐỘNG THEO TỪNG PHIÊN"
+        if in_market
+        else f"BẢN KẾ HOẠCH TÁC CHIẾN NGOÀI GIỜ / PHIÊN TIẾP THEO ({display_date}) — TỰ ĐỘNG CƠ ĐỘNG"
+    )
     result = {
-        "plan_id": f"DEMO-PRE-SESSION-{date_str.replace('-', '')}",
-        "title": "BẢN DEMO KẾ HOẠCH TÁC CHIẾN NGÀY MAI (PHIÊN 16/11/2026) — TỰ ĐỘNG CƠ ĐỘNG THEO THỊ TRƯỜNG",
-        "is_pre_session_demo": True,
-        "is_reference_only": True,
+        "plan_id": f"OFFICIAL-INTRADAY-{date_str.replace('-', '')}" if in_market else f"DEMO-PRE-SESSION-{date_str.replace('-', '')}",
+        "title": plan_title,
+        "is_pre_session_demo": is_pre_session_demo,
+        "is_reference_only": False if in_market else True,
         "live_market_open": in_market,
         "auto_adapt_status": (
-            "🟢 ĐANG TỰ ĐỘNG HIỆU CHỈNH TRONG PHIÊN LIVE"
+            f"🟢 KẾ HOẠCH CHÍNH THỨC ĐANG TỰ ĐỘNG HIỆU CHỈNH LIVE ({phase_info.get('active_phase_short', 'TRONG PHIÊN')})"
             if in_market
-            else "🟡 BẢN DEMO TRƯỚC GIỜ MỞ CỬA — SẼ TỰ ĐỘNG HIỆU CHỈNH NGAY KHI BẢNG ĐIỆN MỞ PHIÊN"
+            else "🟡 NGOÀI GIỜ GIAO DỊCH — SẼ TỰ ĐỘNG KÍCH HOẠT THÀNH KẾ HOẠCH CHÍNH THỨC LÚC 08H30"
         ),
         "generated_at": f"{date_str} {time_str} ICT",
-        "summit_basis": "Tổng hợp Nghị quyết Thượng đỉnh APEX-SUMMIT-20261116-0045 (00h45–01h15) & Bảng giá TCBS 105C307855",
+        "summit_basis": f"Dữ liệu LIVE {time_str} {display_date} + Nghị quyết APEX-SUMMIT-20261116-0045 + Bảng giá TCBS 105C307855",
         "constitution_note": (
-            "Đây là BẢN DEMO ĐỊNH HƯỚNG TRƯỚC PHIÊN 16/11/2026. Mọi vùng giá, tỷ trọng giải ngân và kịch bản "
-            "sẽ tự động tinh chỉnh ngay lập tức khi thị trường biến động và gửi báo cáo thẳng vào Phòng Tác Chiến."
+            f"KẾ HOẠCH ĐẦU TƯ CHÍNH THỨC NGÀY {display_date} (CƠ ĐỘNG REAL-TIME): Toàn bộ vùng giá mua LO, "
+            "ngưỡng cắt lỗ 2xATR, vị thế T+0 và 3 kịch bản được tự động hiệu chỉnh liên tục qua từng phiên "
+            "(ATO -> Sáng -> Nghỉ Trưa -> Hấp thụ T+2.5 -> Giờ Vàng 14h00 -> ATC) và đồng bộ thẳng lên Vault/Phòng Tác Chiến."
+            if in_market
+            else f"BẢN ĐỊNH HƯỚNG NGOÀI GIỜ CHO PHIÊN {display_date}. Mọi vùng giá và kịch bản tự động chuyển sang chế độ Live khi thị trường mở cửa 08h30."
         ),
         "portfolio_reconciled": {
             "account_id": "105C307855",
@@ -957,8 +985,9 @@ def build_demo_tactical_plan_tomorrow(
     }
 
     now_epoch = time.time()
-    report_path = BASE_DIR / report_rel_path
-    if force_write_report or (now_epoch - _DEMO_PLAN_LAST_WRITE_TS >= 60.0) or not report_path.exists():
+    report_path = BASE_DIR / demo_report_rel_path
+    official_path = BASE_DIR / official_report_rel_path
+    if force_write_report or (now_epoch - _DEMO_PLAN_LAST_WRITE_TS >= 60.0) or not report_path.exists() or not official_path.exists():
         _DEMO_PLAN_LAST_WRITE_TS = now_epoch
         try:
             report_path.parent.mkdir(parents=True, exist_ok=True)
@@ -979,25 +1008,30 @@ def build_demo_tactical_plan_tomorrow(
                 for row in hourly_roadmap
             )
             scen_md = "\n".join(
-                f"- {'🟢 **[ĐANG ƯU TIÊN]** ' if sc['is_active_now'] else ''}**{sc['title']}**: Điều kiện `{sc['trigger']}` ➔ {sc['action']}"
+                f"- {'🟢 **[ĐANG KÍCH HOẠT]** ' if sc['is_active_now'] else ''}**{sc['title']}**: Điều kiện `{sc['trigger']}` ➔ {sc['action']}"
                 for sc in contingency_modes
             )
-            demo_md = f"""# 🎯 BẢN DEMO KẾ HOẠCH TÁC CHIẾN NGÀY MAI (PHIÊN {date_str}) — TỰ ĐỘNG CƠ ĐỘNG THEO THỊ TRƯỜNG
-> **Nguồn Tổng Hợp**: `Nghị quyết Thượng Đỉnh APEX-SUMMIT-20261116-0045` + Nghiên cứu 14 Phòng Ban + Dữ liệu LIVE TCBS `105C307855`  
+            hdr_title = (
+                f"# 🎯 KẾ HOẠCH ĐẦU TƯ CHÍNH THỨC HÔM NAY ({display_date}) — CƠ ĐỘNG THEO TỪNG PHIÊN"
+                if in_market
+                else f"# 🎯 KẾ HOẠCH TÁC CHIẾN NGÀY {display_date} — TỰ ĐỘNG CƠ ĐỘNG THEO THỊ TRƯỜNG"
+            )
+            demo_md = f"""{hdr_title}
+> **Nguồn Tổng Hợp**: `{result['summit_basis']}`  
 > **Cập Nhật Mới Nhất**: `{date_str} {time_str} ICT` | **Trạng Thái**: `{result['auto_adapt_status']}`  
-> ⚠️ **BẢN DEMO TRƯỚC PHIÊN**: Chỉ dùng làm khung định hướng chiến lược. Khi thị trường ngày mai mở cửa hoặc biến động bất thường, Minh Quân (Ban 7 VN) & Victor (Ban 9) sẽ **tự động tinh chỉnh và gửi báo cáo mới nhất ngay vào Phòng Tác Chiến**!
+> ⚡ **CƠ CHẾ TỰ ĐỘNG THÍCH NGHI**: {result['constitution_note']}
 
 ---
 
-## I. ĐỐI SOÁT TÀI SẢN THỰC TẾ TRƯỚC PHIÊN (TCBS `105C307855`)
-- **Tổng Giá Trị Thị Trường Cổ Phiếu**: `{stocks_val_vnd:,.0f} ₫` (`+ {unrealized_pnl:,.0f} ₫` / `{unrealized_pct:+.2f}%` lãi đệm)
+## I. ĐỐI SOÁT TÀI SẢN THỰC TẾ LIVE (TCBS `105C307855`)
+- **Tổng Giá Trị Thị Trường Cổ Phiếu**: `{stocks_val_vnd:,.0f} ₫` (`{unrealized_pnl:+,.0f} ₫` / `{unrealized_pct:+.2f}%` so với giá vốn)
 - **Tiền Mặt Khả Dụng**: `{cash_vnd:,.0f} ₫` (`{cash_pct:.1f}% NAV`)
 - **Tổng Tài Sản Ròng Live (NAV)**: `{total_nav_vnd:,.0f} ₫`
-- **Thị Trường Nền**: `VN-Index {result['market_snapshot']['vn_index']:,.2f} ({result['market_snapshot']['vn_index_chg_pct']:+.2f}%)` • Độ rộng `{result['market_snapshot']['breadth_adv']}T / {result['market_snapshot']['breadth_dec']}G` • Chế độ `{result['market_snapshot']['regime_label']}`
+- **Thị Trường Nền**: `VN-Index {vni_val:,.2f} ({vni_chg_pct:+.2f}%)` • Độ rộng `{breadth_pct_str}` • Chế độ `{result['market_snapshot']['regime_label']}`
 
 ---
 
-## II. KẾ HOẠCH XỬ LÝ DANH MỤC ĐANG GIỮ & TẦM NGẮM BẮN TỈA (DEMO)
+## II. KẾ HOẠCH HÀNH ĐỘNG THEO DANH MỤC & TẦM NGẮM BẮN TỈA
 ### 1. Vị Thế Đang Nắm Giữ (Bảo Vệ Lãi Đệm & Chuẩn Bị T+0 / TP1)
 {hold_md}
 
@@ -1009,7 +1043,7 @@ def build_demo_tactical_plan_tomorrow(
 
 ---
 
-## III. LỘ TRÌNH 5 KHUNG GIỜ TÁC CHIẾN NGÀY MAI ({date_str})
+## III. LỘ TRÌNH 6 KHUNG GIỜ TÁC CHIẾN TRONG NGÀY ({display_date})
 | Khung Giờ (ICT) | Pha Tác Chiến | Hành Động Cơ Động Của Ban 7 VN & Ban 9 |
 | :---: | :--- | :--- |
 {sched_md}
@@ -1020,8 +1054,10 @@ def build_demo_tactical_plan_tomorrow(
 {scen_md}
 """
             report_path.write_text(demo_md, encoding="utf-8")
+            official_path.write_text(demo_md, encoding="utf-8")
             try:
                 from scripts.apex_live_intraday_brain import _upsert_report_into_vault
+                _upsert_report_into_vault(official_path, dept_id="ban_7_vn_specialist")
                 _upsert_report_into_vault(report_path, dept_id="ban_7_vn_specialist")
             except Exception:
                 pass

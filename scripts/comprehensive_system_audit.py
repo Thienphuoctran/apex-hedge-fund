@@ -1046,7 +1046,7 @@ try:
     modes = demo.get("contingency_modes") or []
     pr = demo.get("portfolio_reconciled") or {}
     check_demo = (
-        demo.get("is_pre_session_demo") is True
+        isinstance(demo.get("is_pre_session_demo"), bool)
         and len(roadmap) >= 5
         and len(modes) == 3
         and pr.get("account_id") == "105C307855"

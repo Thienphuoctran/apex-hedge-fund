@@ -20,30 +20,30 @@
     "cash_vnd": 12516471,
     "ssot_reference_nav_vnd": 18151471,
     "live_tcbs_verified": {
-      "verified_at": "16/11/2026 01:44:28 ICT",
-      "stocks_market_value_vnd": 5740000,
+      "verified_at": "16/11/2026 09:06:37 ICT",
+      "stocks_market_value_vnd": 5805000,
       "cost_basis_vnd": 5656700,
-      "unrealized_pnl_vnd": 83300,
-      "unrealized_pnl_pct": 1.47,
-      "live_nav_vnd": 18256471,
-      "cash_pct": 68.56,
-      "stocks_pct": 31.44,
+      "unrealized_pnl_vnd": 148300,
+      "unrealized_pnl_pct": 2.62,
+      "live_nav_vnd": 18321471,
+      "cash_pct": 68.32,
+      "stocks_pct": 31.68,
       "positions": {
         "HDB": {
           "shares": 100,
           "avg_cost_vnd": 22057,
-          "live_price_vnd": 22600,
-          "market_val_vnd": 2260000,
-          "unrealized_pnl_vnd": 54300,
-          "unrealized_pnl_pct": 2.46
+          "live_price_vnd": 22650,
+          "market_val_vnd": 2265000,
+          "unrealized_pnl_vnd": 59300,
+          "unrealized_pnl_pct": 2.69
         },
         "MSH": {
           "shares": 100,
           "avg_cost_vnd": 34510,
-          "live_price_vnd": 34800,
-          "market_val_vnd": 3480000,
-          "unrealized_pnl_vnd": 29000,
-          "unrealized_pnl_pct": 0.84
+          "live_price_vnd": 35400,
+          "market_val_vnd": 3540000,
+          "unrealized_pnl_vnd": 89000,
+          "unrealized_pnl_pct": 2.58
         }
       }
     }
@@ -78,11 +78,11 @@
   "days": [
     {
       "day_id": "mon",
-      "day_name": "Thứ Hai (16/11/2026) — DEMO TÁC CHIẾN NGÀY MAI",
-      "theme": "Kiểm Định Đóng Cửa HDB (14h15) & Thăm Dò Cơ Động BAF / DBC Sau 14h00",
+      "day_name": "Thứ Hai (16/11/2026) — KẾ HOẠCH CHÍNH THỨC HÔM NAY",
+      "theme": "Kiểm Định Đóng Cửa HDB (14h15) & Thăm Dò Cơ Động Sau 14h00",
       "status": "ACTIVE",
-      "status_badge": "🎯 DEMO SẴN SÀNG TRƯỚC PHIÊN",
-      "guideline": "Bảo vệ 200 CP có lãi đệm (HDB 22.6k +2.46%, MSH 34.8k +0.84%); CẤM FOMO ATO trước 10h00. Chỉ thăm dò tối đa 1 lô 100 CP (BAF vùng 30.4–30.85k hoặc DBC vùng 15.8–16.05k) sau 14h00 nếu Buy-Up >= 60% và Breadth >= 38%.",
+      "status_badge": "⚡ CHÍNH THỨC ĐANG CHẠY LIVE",
+      "guideline": "Bảo vệ 200 CP đang lãi +2.6% (HDB 22.65k +2.7%, MSH 35.4k +2.6%); CẤM FOMO ATO trước 10h00. Theo dõi Buy-Up % các mã đạt tầm ngắm (DBC 16.0k, HPG 21.15k, BAF 30.9k, BSR 25.25k) và chỉ giải ngân LO tối đa 1 lô sau 14h00 khi Buy-Up >= 60% và Breadth >= 38%.",
       "action_condition": "KỊCH BẢN A (Tích cực): VN-Index giữ >= 1,735, Breadth >= 45%, MSH/HDB giữ xanh ➔ Giữ gồng TP1 + Có thể thăm dò 1 lô DBC/BAF sau 14h00. KỊCH BẢN B (Giằng co): Lướt T+0 trên MSH nếu nhúng 33.9–34.2k. KỊCH BẢN C (Xấu): Áp lực bán mạnh, HDB xuyên 21,700đ sau 14h15 ➔ Khóa 100% mua mới, cắt dứt khoát bảo toàn > 68% Cash.",
       "cash_reserve_target": "52% – 68.6% NAV (~9.4M – 12.52M đ)"
     },

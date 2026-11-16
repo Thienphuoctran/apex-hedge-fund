@@ -1,22 +1,19 @@
 {
-  "last_updated": "2026-11-16 02:37:40",
+  "last_updated": "2026-11-16 09:13:14",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261116-023740",
-  "latest_user_request": "Tong thiet ke lai giao dien web toi uu chong cuon dai & hoan thien co che cap nhat du lieu thoi gian thực toan he thong va ra soat toan bo loi.",
-  "latest_response_summary": "Hoan tat V11.0 Ergonomic Portal & Unified Real-Time Sync: Tab 3 War-Room gom gon 4 Sub-Deck, Tab 5 Summit gom 3 Sub-Deck, Sticky Top Nav + 5th KPI VN-Index + Dong bo real-time xuyen 7 Tabs, sua loi JS SyntaxError goc trong renderDemoPreSessionPlan & renderVictorRealtimeAlertCenter, kiem toan 58/58 PASSED.",
+  "sync_id": "SYNC-AG2P-20261116-091314",
+  "latest_user_request": "Cho ke hoach dau tu chinh thuc ngay hom nay (16/11/2026) co dong theo tung phien & cap nhat len Phong Tac Chien Web.",
+  "latest_response_summary": "Da phat hanh KE HOACH DAU TU CHINH THUC HOM NAY (16/11/2026) co dong real-time qua tung phien, nang cap engine tu dong chuyen Demo -> Chinh thuc khi san mo cua (08h30-14h45) & tu dong dong bo Vault moi 60s tren Render Cloud.",
   "latest_completed_tasks": [
-    "Tai cau truc Tab 3 War-Room thanh 4 Sub-Deck (Lenh & Bao Dong 24/7, Victor Giam Sat, 14 Phong Ban & Hop That, Tinh Bao V5) + che do Mo Toan Bo qua _render_war_room_v8_decks()",
-    "Tai cau truc Tab 5 Summit Room thanh 3 Sub-Deck (Phien Hop Live & Phe Duyet mac dinh tren man hinh dau, Diem Danh & Ho So T-20p, Trieu Tap & Hien Chuong 5 Dieu)",
-    "Nang cap Sticky .tab-nav + 5th Live KPI VN-Index + Header Heartbeat #global-sync-heartbeat-txt + Non-blocking #portal-toast-notification",
-    "Trien khai Unified Real-Time Sync Engine (initGlobalPortalRealtimeSync, syncAllPortalRealtime, renderGlobalCrossTabRealtime, syncSupervisorStatusRealtime)",
-    "Phat hien & sua dut diem JS SyntaxError cu tai renderDemoPreSessionPlan() va renderVictorRealtimeAlertCenter() (onclick openReportModal escape)",
-    "Tuan thu Modern Web Guidance (scrollIntoView nearest, hidden=until-found + beforematch, sticky thead, content-visibility: auto) & Dat 58/58 Kiem toan He thong"
+    "Doi soat anh chup TCInvest 09:06 16/11/2026 (HDB 100 CP @ 22.06 -> 22.65 +2.7%, MSH 100 CP @ 34.51 -> 35.40 +2.6%, tong +148,300d, gia tri CP 5,805,000d) & bang dien live 09:09-09:12",
+    "Nang cap build_demo_tactical_plan_tomorrow() trong scripts/apex_tactical_war_room_engine.py tu dong chuyen is_pre_session_demo=False trong gio giao dich, danh dau khung gio [DANG CHAY LIVE] va xuat Official_Adaptive_Tactical_Plan.md",
+    "Dong bo tuan 47 (data/weekly_tactical_plan_active.json) va nhan nut Phong Tac Chien len Web & GitHub/Render Cloud"
   ],
   "latest_strategic_decisions": {
-    "regarding_bsr_baf": "Giu ky luat theo doi tren Deck Lenh & Bao Dong 24/7, khong bat day truoc 14h00",
-    "regarding_hdb_msh": "Giu 2 vi the HDB (100 CP) & MSH (100 CP), bao ve Stop 2xATR realtime qua Victor 24/7",
-    "regarding_weekly_plan": "Ke hoach tuan tham khao co dong theo bang dien; theo doi nhanh trong Sub-Deck Victor & Kich Ban",
-    "regarding_today_morning_tasks": "Da nang cap xong Web Portal V11.0 (0 loi JS, 58/58 Kiem toan PASSED, SSOT Portfolio bao toan 100%)"
+    "regarding_bsr_baf": "Giu ky luat cam FOMO phien sang; theo doi BSR (25.25) & BAF (30.90) qua nhip T+2.5 (13h15) den 14h00",
+    "regarding_hdb_msh": "HDB (22.60-22.65k, +2.7%) & MSH (35.20-35.40k, +2.6%) dang lai dem; giu nguyen & canh HDB luc 14h15 (Hard Stop < 21.7k), co the luot T+0 MSH neu nhung 34.4k-34.8k",
+    "regarding_weekly_plan": "Giai ngan tham do toi da 1 lo LO sau 14h00 neu Buy-Up >= 60% & Breadth >= 38% (uu tien DBC 16.05k / HPG 20.95k / BAF theo bang dien chieu)",
+    "regarding_today_morning_tasks": "Da kich hoat Ke Hoach Chinh Thuc 16/11/2026 & co che tu dong cap nhat real-time 60s tren Render Cloud"
   },
   "portfolio_snapshot": {
     "total_nav_vnd": 18151471.0,
@@ -42,9 +39,9 @@
     }
   },
   "directives_for_palmer_responses": {
-    "regarding_bsr_baf": "Giu ky luat theo doi tren Deck Lenh & Bao Dong 24/7, khong bat day truoc 14h00",
-    "regarding_hdb_msh": "Giu 2 vi the HDB (100 CP) & MSH (100 CP), bao ve Stop 2xATR realtime qua Victor 24/7",
-    "regarding_weekly_plan": "Ke hoach tuan tham khao co dong theo bang dien; theo doi nhanh trong Sub-Deck Victor & Kich Ban",
-    "regarding_today_morning_tasks": "Da nang cap xong Web Portal V11.0 (0 loi JS, 58/58 Kiem toan PASSED, SSOT Portfolio bao toan 100%)"
+    "regarding_bsr_baf": "Giu ky luat cam FOMO phien sang; theo doi BSR (25.25) & BAF (30.90) qua nhip T+2.5 (13h15) den 14h00",
+    "regarding_hdb_msh": "HDB (22.60-22.65k, +2.7%) & MSH (35.20-35.40k, +2.6%) dang lai dem; giu nguyen & canh HDB luc 14h15 (Hard Stop < 21.7k), co the luot T+0 MSH neu nhung 34.4k-34.8k",
+    "regarding_weekly_plan": "Giai ngan tham do toi da 1 lo LO sau 14h00 neu Buy-Up >= 60% & Breadth >= 38% (uu tien DBC 16.05k / HPG 20.95k / BAF theo bang dien chieu)",
+    "regarding_today_morning_tasks": "Da kich hoat Ke Hoach Chinh Thuc 16/11/2026 & co che tu dong cap nhat real-time 60s tren Render Cloud"
   }
 }
