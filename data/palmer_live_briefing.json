@@ -1,19 +1,20 @@
 {
-  "last_updated": "2026-11-16 09:13:14",
+  "last_updated": "2026-11-16 15:42:28",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261116-091314",
-  "latest_user_request": "Cho ke hoach dau tu chinh thuc ngay hom nay (16/11/2026) co dong theo tung phien & cap nhat len Phong Tac Chien Web.",
-  "latest_response_summary": "Da phat hanh KE HOACH DAU TU CHINH THUC HOM NAY (16/11/2026) co dong real-time qua tung phien, nang cap engine tu dong chuyen Demo -> Chinh thuc khi san mo cua (08h30-14h45) & tu dong dong bo Vault moi 60s tren Render Cloud.",
+  "sync_id": "SYNC-AG2P-20261116-154228",
+  "latest_user_request": "To chuc cuoc hop 16:15 (16/11/2026) kiem toan loi nhuan 2 tuan (< 300k: +190,419d) va lap phuong an dat KPI lai 3-4 trieu / 2 thang; Palmer & James gui ke hoach cho 14 phong ban chuan bi T-20p theo dung noi quy.",
+  "latest_response_summary": "Da trieu tap & kich hoat Phien Thuong Dinh APEX-SUMMIT-20261116-1615 (Chuan bi T-20p: 15h55-16h15 | Hop chinh: 16h15-16h45 | Giu phong toi thieu >= 18h45). 5 nhom lien Ban da hoan tat kiem toan so lieu thuc te & nop Ho so T-20p.",
   "latest_completed_tasks": [
-    "Doi soat anh chup TCInvest 09:06 16/11/2026 (HDB 100 CP @ 22.06 -> 22.65 +2.7%, MSH 100 CP @ 34.51 -> 35.40 +2.6%, tong +148,300d, gia tri CP 5,805,000d) & bang dien live 09:09-09:12",
-    "Nang cap build_demo_tactical_plan_tomorrow() trong scripts/apex_tactical_war_room_engine.py tu dong chuyen is_pre_session_demo=False trong gio giao dich, danh dau khung gio [DANG CHAY LIVE] va xuat Official_Adaptive_Tactical_Plan.md",
-    "Dong bo tuan 47 (data/weekly_tactical_plan_active.json) va nhan nut Phong Tac Chien len Web & GitHub/Render Cloud"
+    "Kiem toan SSOT dong cua 15:19 (16/11): HDB 22.30 (+24,300d) + MSH 34.50 (-1,000d) = +23,300d mo, cong V1 +167,119d = +190,419d (< 300k); canh bao lech Cash JSON 12.52M vs lich su 14.51M",
+    "Ban 5, Ban 4-7-9, Ban 2-3-10, Ban 1 & Ban 8-12 bóc tách 5 nguyen nhan goc re (69-72% tien nhan roi, khoa lo 100 CP, mat -125k lai sang-chieu 16/11, code bóp tran 25%-50%, ma sat 0.38%)",
+    "Xuat ban Ke hoach & Noi dung Chuan bi 16:15 (08_Master_Investment_CIO/2026-11-16_Ke_Hoach_Va_Noi_Dung_Chuan_Bi_Hop_Thuong_Dinh_16h15.md) & nang cap apex_autonomous_council_engine.py",
+    "Kich hoat APEX-SUMMIT-20261116-1615 voi du 14/14 Ho so T-20p, tranh bien PVT Top #1 (200 CP) + MSH T+0 + SZC/TCH/BAF vs DBC, va KPI 2 Tang minh bach (1.5-2.2M co so / 3-4M khi mo khoa 70-80% NAV)"
   ],
   "latest_strategic_decisions": {
-    "regarding_bsr_baf": "Giu ky luat cam FOMO phien sang; theo doi BSR (25.25) & BAF (30.90) qua nhip T+2.5 (13h15) den 14h00",
-    "regarding_hdb_msh": "HDB (22.60-22.65k, +2.7%) & MSH (35.20-35.40k, +2.6%) dang lai dem; giu nguyen & canh HDB luc 14h15 (Hard Stop < 21.7k), co the luot T+0 MSH neu nhung 34.4k-34.8k",
-    "regarding_weekly_plan": "Giai ngan tham do toi da 1 lo LO sau 14h00 neu Buy-Up >= 60% & Breadth >= 38% (uu tien DBC 16.05k / HPG 20.95k / BAF theo bang dien chieu)",
-    "regarding_today_morning_tasks": "Da kich hoat Ke Hoach Chinh Thuc 16/11/2026 & co che tu dong cap nhat real-time 60s tren Render Cloud"
+    "regarding_bsr_baf": "Loai BSR (UPCoM, Buy-Up 34.9%); BAF giu trong ro cho sau 19/11 neu Buy-Up >= 60% quanh 30.2-30.85k; khong mua trung DBC (dang duoi MA200 RS 28)",
+    "regarding_hdb_msh": "HDB (22.30k) dinh canh bao LLR 74% & sat Stop 22,060d (+1.08%) -> kiem dinh 14h15 ngay 17/11; MSH (34.50k) giu & danh T+0 33.7-35.4k + Morning-Fade Lock",
+    "regarding_weekly_plan": "Giai ngan theo bac (31%->50%->70-80% NAV) sau dao han 19/11; uu tien Top #1 PVT (200 CP @ 20.7-21.1k), SZC (19.8-20.2k), TCH (cho ha RSI 85.7 ve 12.4-12.8k)",
+    "regarding_today_morning_tasks": "Da kich hoat Phien Hop Thuong Dinh 16:15 (T-20p luc 15:55) tuan thu 5/5 Dieu Noi Quy"
   },
   "portfolio_snapshot": {
     "total_nav_vnd": 18151471.0,
@@ -39,9 +40,9 @@
     }
   },
   "directives_for_palmer_responses": {
-    "regarding_bsr_baf": "Giu ky luat cam FOMO phien sang; theo doi BSR (25.25) & BAF (30.90) qua nhip T+2.5 (13h15) den 14h00",
-    "regarding_hdb_msh": "HDB (22.60-22.65k, +2.7%) & MSH (35.20-35.40k, +2.6%) dang lai dem; giu nguyen & canh HDB luc 14h15 (Hard Stop < 21.7k), co the luot T+0 MSH neu nhung 34.4k-34.8k",
-    "regarding_weekly_plan": "Giai ngan tham do toi da 1 lo LO sau 14h00 neu Buy-Up >= 60% & Breadth >= 38% (uu tien DBC 16.05k / HPG 20.95k / BAF theo bang dien chieu)",
-    "regarding_today_morning_tasks": "Da kich hoat Ke Hoach Chinh Thuc 16/11/2026 & co che tu dong cap nhat real-time 60s tren Render Cloud"
+    "regarding_bsr_baf": "Loai BSR (UPCoM, Buy-Up 34.9%); BAF giu trong ro cho sau 19/11 neu Buy-Up >= 60% quanh 30.2-30.85k; khong mua trung DBC (dang duoi MA200 RS 28)",
+    "regarding_hdb_msh": "HDB (22.30k) dinh canh bao LLR 74% & sat Stop 22,060d (+1.08%) -> kiem dinh 14h15 ngay 17/11; MSH (34.50k) giu & danh T+0 33.7-35.4k + Morning-Fade Lock",
+    "regarding_weekly_plan": "Giai ngan theo bac (31%->50%->70-80% NAV) sau dao han 19/11; uu tien Top #1 PVT (200 CP @ 20.7-21.1k), SZC (19.8-20.2k), TCH (cho ha RSI 85.7 ve 12.4-12.8k)",
+    "regarding_today_morning_tasks": "Da kich hoat Phien Hop Thuong Dinh 16:15 (T-20p luc 15:55) tuan thu 5/5 Dieu Noi Quy"
   }
 }

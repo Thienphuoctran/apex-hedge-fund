@@ -1,21 +1,20 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-16 09:53:30  
+**Thời gian cập nhật:** 2026-11-16 15:42:28  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261116-095330`  
+**Mã đồng bộ:** `SYNC-AG2P-20261116-154228`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Chon Phuong an A ($0/thang - Cloud dung gemini-3.8-flash bao dong + hop James tren Antigravity) & thiet ke lai Telegram voi 1 phong chat rieng biet chi nhan bao cao chuan hoa + toi uu tim kiem.
+* **Câu hỏi của Chủ tịch:** To chuc cuoc hop 16:15 (16/11/2026) kiem toan loi nhuan 2 tuan (< 300k: +190,419d) va lap phuong an dat KPI lai 3-4 trieu / 2 thang; Palmer & James gui ke hoach cho 14 phong ban chuan bi T-20p theo dung noi quy.
 * **Kết luận & Quyết định thể chế:**
-Da trien khai tron ven Phuong an A (`gemini-3.8-flash` fallback `gemini-2.5-flash` cho James & Directive Engine) va kien truc Telegram V2.0 chong loang thong bao + tao thanh cong Phong Bao Cao Doc Quyen `📑 PHÒNG BÁO CÁO & TÌM KIẾM ĐỘC QUYỀN` (`reports_vault`, `thread_id=1776`), ho tro lenh `/tim`, `/baocao`, `/link_reports_room`.
+Da trieu tap & kich hoat Phien Thuong Dinh APEX-SUMMIT-20261116-1615 (Chuan bi T-20p: 15h55-16h15 | Hop chinh: 16h15-16h45 | Giu phong toi thieu >= 18h45). 5 nhom lien Ban da hoan tat kiem toan so lieu thuc te & nop Ho so T-20p.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Tao thanh cong Topic chuyen biet `📑 PHÒNG BÁO CÁO & TÌM KIẾM ĐỘC QUYỀN` (`thread_id=1776`) & ho tro `dedicated_reports_chat_id` (neu muon tach ra Group/Channel doc lap qua `/link_reports_room`).
-- [x] Nang cap `scripts/telegram_dispatcher.py` V2.0: chuan hoa The Tim Kiem `#hashtag` + nut mo thang Web Portal (`?open=`), chong fallback rac vao Private Chat, auto-mirror bao cao tu cac ban, tich hop `gemini-3.8-flash` tom tat 3 y chot & truy van FTS5 `institutional_reports`.
-- [x] Nang cap `scripts/telegram_interactive_copilot.py`: bo sung `/tim <tu khoa>`, `/baocao`, `/link_reports_room` & sua hien thi `/tcbs` dung vi the that.
-- [x] Nang cap `scripts/master_cio_james_agent.py` & `scripts/apex_directive_intelligence_engine.py` uu tien `gemini-3.8-flash` (Phuong an A $0/thang).
-- [x] Hoan tat kiem toan Live Render dat **58/58 PASSED (0 Errors)** & sua bao cao Ban 12 Trong dong bo SSOT.
+- [x] Kiem toan SSOT dong cua 15:19 (16/11): HDB 22.30 (+24,300d) + MSH 34.50 (-1,000d) = +23,300d mo, cong V1 +167,119d = +190,419d (< 300k); canh bao lech Cash JSON 12.52M vs lich su 14.51M
+- [x] Ban 5, Ban 4-7-9, Ban 2-3-10, Ban 1 & Ban 8-12 bóc tách 5 nguyen nhan goc re (69-72% tien nhan roi, khoa lo 100 CP, mat -125k lai sang-chieu 16/11, code bóp tran 25%-50%, ma sat 0.38%)
+- [x] Xuat ban Ke hoach & Noi dung Chuan bi 16:15 (08_Master_Investment_CIO/2026-11-16_Ke_Hoach_Va_Noi_Dung_Chuan_Bi_Hop_Thuong_Dinh_16h15.md) & nang cap apex_autonomous_council_engine.py
+- [x] Kich hoat APEX-SUMMIT-20261116-1615 voi du 14/14 Ho so T-20p, tranh bien PVT Top #1 (200 CP) + MSH T+0 + SZC/TCH/BAF vs DBC, va KPI 2 Tang minh bach (1.5-2.2M co so / 3-4M khi mo khoa 70-80% NAV)
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
@@ -27,9 +26,9 @@ Da trien khai tron ven Phuong an A (`gemini-3.8-flash` fallback `gemini-2.5-flas
   * **MSH**: 100 CP | Giá vốn: 34,510 ₫ | Thị giá: 34,000 ₫ | PnL: -51,000 ₫ (HOLDING_T0_AVAILABLE)
 
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
-1. **Về BSR & BAF:** Giu ky luat cam FOMO phien sang; theo doi BSR (25.25) & BAF (30.90) qua nhip T+2.5 (13h15) den 14h00
-2. **Về HDB & MSH:** HDB (22.60-22.65k, +2.7%) & MSH (35.20-35.40k, +2.6%) dang lai dem; giu nguyen & canh HDB luc 14h15 (Hard Stop < 21.7k), co the luot T+0 MSH neu nhung 34.4k-34.8k
-3. **Về Kế hoạch tuần:** Giai ngan tham do toi da 1 lo LO sau 14h00 neu Buy-Up >= 60% & Breadth >= 38% (uu tien DBC 16.05k / HPG 20.95k / BAF theo bang dien chieu)
-4. **Về Tiến độ công việc:** Da kich hoat Ke Hoach Chinh Thuc 16/11/2026 & co che tu dong cap nhat real-time 60s tren Render Cloud
+1. **Về BSR & BAF:** Loai BSR (UPCoM, Buy-Up 34.9%); BAF giu trong ro cho sau 19/11 neu Buy-Up >= 60% quanh 30.2-30.85k; khong mua trung DBC (dang duoi MA200 RS 28)
+2. **Về HDB & MSH:** HDB (22.30k) dinh canh bao LLR 74% & sat Stop 22,060d (+1.08%) -> kiem dinh 14h15 ngay 17/11; MSH (34.50k) giu & danh T+0 33.7-35.4k + Morning-Fade Lock
+3. **Về Kế hoạch tuần:** Giai ngan theo bac (31%->50%->70-80% NAV) sau dao han 19/11; uu tien Top #1 PVT (200 CP @ 20.7-21.1k), SZC (19.8-20.2k), TCH (cho ha RSI 85.7 ve 12.4-12.8k)
+4. **Về Tiến độ công việc:** Da kich hoat Phien Hop Thuong Dinh 16:15 (T-20p luc 15:55) tuan thu 5/5 Dieu Noi Quy
 
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*
