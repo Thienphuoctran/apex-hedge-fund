@@ -1,12 +1,12 @@
 {
-  "timestamp_utc": "2026-11-17T17:38:00.551304+00:00",
+  "timestamp_utc": "2026-11-17T21:42:31.692223+00:00",
   "scan_date": "2026-11-17",
-  "total_us_filings_count": 365,
-  "total_vn_announcements_count": 54,
+  "total_us_filings_count": 366,
+  "total_vn_announcements_count": 55,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "8-K",
-      "latest_filing_date": "2026-11-12",
+      "latest_filing_date": "2026-11-17",
       "event_type": "MATERIAL_EVENT_8K",
       "severity": "WARNING",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810",
@@ -37,16 +37,16 @@
       "total_recent_filings": 10
     },
     "AMZN": {
-      "latest_form": "10-Q",
-      "latest_filing_date": "2026-10-30",
-      "event_type": "EARNINGS_FINANCIAL_REPORT",
-      "severity": "CRITICAL",
+      "latest_form": "4",
+      "latest_filing_date": "2026-11-17",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724",
-      "total_recent_filings": 9
+      "total_recent_filings": 10
     },
     "META": {
       "latest_form": "144",
-      "latest_filing_date": "2026-11-16",
+      "latest_filing_date": "2026-11-17",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801",
@@ -82,7 +82,7 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617",
-      "total_recent_filings": 12
+      "total_recent_filings": 10
     },
     "TSM": {
       "latest_form": "6-K",
@@ -93,10 +93,10 @@
       "total_recent_filings": 12
     },
     "AMD": {
-      "latest_form": "10-Q",
-      "latest_filing_date": "2026-11-04",
-      "event_type": "EARNINGS_FINANCIAL_REPORT",
-      "severity": "CRITICAL",
+      "latest_form": "4",
+      "latest_filing_date": "2026-11-17",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488",
       "total_recent_filings": 11
     },
@@ -154,7 +154,7 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982",
-      "total_recent_filings": 11
+      "total_recent_filings": 12
     },
     "V": {
       "latest_form": "10-K",
@@ -173,10 +173,10 @@
       "total_recent_filings": 5
     },
     "LLY": {
-      "latest_form": "10-Q",
-      "latest_filing_date": "2026-10-29",
-      "event_type": "EARNINGS_FINANCIAL_REPORT",
-      "severity": "CRITICAL",
+      "latest_form": "4",
+      "latest_filing_date": "2026-11-17",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478",
       "total_recent_filings": 12
     },
@@ -282,7 +282,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
-      "total_recent_filings": 10
+      "total_recent_filings": 11
     },
     "PVS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -388,6 +388,22 @@
       "source_url": "https://cafef.vn/len-song-truc-tiep-giua-pho-wall-lanh-dao-ssi-khang-dinh-viet-nam-la-mot-trong-nhung-thi-truong-tot-nhat-the-gioi-188261117100250143.chn",
       "total_announcements": 2
     },
+    "ACB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Ngày 18/11, gửi dưới 100 triệu 3 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "severity": "INFO",
+      "published_at": "Wed, 18 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-18-11-gui-duoi-100-trieu-3-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261117233949257.chn",
+      "total_announcements": 6
+    },
+    "SHB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Ngày 18/11, gửi dưới 100 triệu 3 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "severity": "INFO",
+      "published_at": "Wed, 18 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-18-11-gui-duoi-100-trieu-3-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261117233949257.chn",
+      "total_announcements": 7
+    },
     "OCB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "OCB dành 2.000 tỷ đồng ưu đãi vốn vay sản xuất kinh doanh cuối năm",
@@ -420,22 +436,6 @@
       "source_url": "https://cafef.vn/vib-cho-vay-mua-o-to-lai-suat-uu-dai-tu-89-nam-cam-ket-tha-noi-khong-qua-15-sau-thoi-gian-co-dinh-18826111711130799.chn",
       "total_announcements": 1
     },
-    "ACB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngày 17/11, gửi 200 triệu tại Techcombank, Sacombank, SHB, HDBank, MB, VPBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng?",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 04:50:00 +0700",
-      "source_url": "https://cafef.vn/ngay-17-11-gui-200-trieu-tai-techcombank-sacombank-shb-hdbank-mb-vpbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261116235213303.chn",
-      "total_announcements": 5
-    },
-    "SHB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngày 17/11, gửi 200 triệu tại Techcombank, Sacombank, SHB, HDBank, MB, VPBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng?",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 04:50:00 +0700",
-      "source_url": "https://cafef.vn/ngay-17-11-gui-200-trieu-tai-techcombank-sacombank-shb-hdbank-mb-vpbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261116235213303.chn",
-      "total_announcements": 6
-    },
     "VIX": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Khối ngoại tiếp tục mua ròng, gom nhiều nhất một cổ phiếu chứng khoán",
@@ -454,6 +454,18 @@
     }
   },
   "us_filings": [
+    {
+      "market": "US_GLOBAL",
+      "symbol": "NVDA",
+      "company_name": "NVIDIA CORP",
+      "form": "8-K",
+      "filing_date": "2026-11-17",
+      "description": "8-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001045810-26-000088",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810"
+    },
     {
       "market": "US_GLOBAL",
       "symbol": "NVDA",
@@ -572,18 +584,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001696841-26-000012",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "NVDA",
-      "company_name": "NVIDIA CORP",
-      "form": "4",
-      "filing_date": "2026-09-18",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001588670-26-000014",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001045810"
     },
     {
@@ -962,6 +962,54 @@
       "market": "US_GLOBAL",
       "symbol": "AMZN",
       "company_name": "AMAZON COM INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001018724-26-000052",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMZN",
+      "company_name": "AMAZON COM INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001018724-26-000050",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMZN",
+      "company_name": "AMAZON COM INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001018724-26-000048",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMZN",
+      "company_name": "AMAZON COM INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001018724-26-000046",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMZN",
+      "company_name": "AMAZON COM INC",
       "form": "144",
       "filing_date": "2026-11-16",
       "description": "SEC Form 144",
@@ -1032,39 +1080,39 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "AMZN",
-      "company_name": "AMAZON COM INC",
-      "form": "10-Q",
-      "filing_date": "2026-10-30",
-      "description": "10-Q",
-      "event_type": "EARNINGS_FINANCIAL_REPORT",
-      "severity": "CRITICAL",
-      "accession_number": "0001018724-26-000040",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMZN",
-      "company_name": "AMAZON COM INC",
-      "form": "8-K",
-      "filing_date": "2026-10-29",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001018724-26-000038",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMZN",
-      "company_name": "AMAZON COM INC",
-      "form": "4",
-      "filing_date": "2026-10-05",
-      "description": "FORM 4",
+      "symbol": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "form": "144",
+      "filing_date": "2026-11-17",
+      "description": "SEC Form 144",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001936006-26-000026",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001018724"
+      "accession_number": "0001921094-26-001206",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "form": "144",
+      "filing_date": "2026-11-17",
+      "description": "SEC Form 144",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001921094-26-001205",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "form": "144",
+      "filing_date": "2026-11-17",
+      "description": "SEC Form 144",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001921094-26-001204",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
     },
     {
       "market": "US_GLOBAL",
@@ -1148,42 +1196,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001193125-26-450754",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "META",
-      "company_name": "Meta Platforms, Inc.",
-      "form": "8-K",
-      "filing_date": "2026-11-05",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001193125-26-450074",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "META",
-      "company_name": "Meta Platforms, Inc.",
-      "form": "424B5",
-      "filing_date": "2026-11-05",
-      "description": "424B5",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-448015",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "META",
-      "company_name": "Meta Platforms, Inc.",
-      "form": "4",
-      "filing_date": "2026-11-04",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000950103-26-016962",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001326801"
     },
     {
@@ -1579,19 +1591,7 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035844",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-17",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-035843",
+      "accession_number": "0001918704-26-035975",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1603,31 +1603,7 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-121229",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-17",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-121227",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-17",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001213900-26-121221",
+      "accession_number": "0001918704-26-035974",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1639,7 +1615,19 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035835",
+      "accession_number": "0001213900-26-121436",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-17",
+      "description": "PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-121431",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1651,7 +1639,31 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035831",
+      "accession_number": "0001918704-26-035965",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-17",
+      "description": "PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-121421",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-17",
+      "description": "PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-121419",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1663,7 +1675,7 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-121200",
+      "accession_number": "0001918704-26-035959",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1675,7 +1687,7 @@
       "description": "PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035826",
+      "accession_number": "0001213900-26-121416",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1687,31 +1699,7 @@
       "description": "PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035825",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-17",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-035823",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-17",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-035822",
+      "accession_number": "0001213900-26-121415",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1863,6 +1851,102 @@
       "symbol": "AMD",
       "company_name": "ADVANCED MICRO DEVICES INC",
       "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000211",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000209",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000207",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000205",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000203",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000201",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000199",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "144",
+      "filing_date": "2026-11-17",
+      "description": "SEC Form 144",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001950047-26-011199",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
       "filing_date": "2026-11-16",
       "description": "FORM 4",
       "event_type": "INSIDER_TRADING",
@@ -1892,102 +1976,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001950047-26-011119",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "8-K/A",
-      "filing_date": "2026-11-16",
-      "description": "8-K/A",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001193125-26-462340",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "4",
-      "filing_date": "2026-11-13",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000002488-26-000195",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "4",
-      "filing_date": "2026-11-13",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000002488-26-000193",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "144",
-      "filing_date": "2026-11-12",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001950047-26-010998",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "10-Q",
-      "filing_date": "2026-11-04",
-      "description": "10-Q",
-      "event_type": "EARNINGS_FINANCIAL_REPORT",
-      "severity": "CRITICAL",
-      "accession_number": "0000002488-26-000191",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "8-K",
-      "filing_date": "2026-11-03",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0000002488-26-000188",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "4",
-      "filing_date": "2026-10-19",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000002488-26-000184",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "144",
-      "filing_date": "2026-10-15",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001950047-26-010251",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
     },
     {
@@ -2608,10 +2596,10 @@
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
       "filing_date": "2026-11-17",
-      "description": "424B2",
+      "description": "FORM 424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035841",
+      "accession_number": "0001918704-26-035971",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2623,7 +2611,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035840",
+      "accession_number": "0001918704-26-035970",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2635,7 +2623,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035839",
+      "accession_number": "0001918704-26-035967",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2647,7 +2635,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035838",
+      "accession_number": "0001918704-26-035966",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2659,7 +2647,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035833",
+      "accession_number": "0001918704-26-035964",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2671,7 +2659,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035832",
+      "accession_number": "0001918704-26-035963",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2683,7 +2671,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035829",
+      "accession_number": "0001918704-26-035962",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2695,7 +2683,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035824",
+      "accession_number": "0001918704-26-035960",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2707,7 +2695,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035817",
+      "accession_number": "0001918704-26-035958",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2719,7 +2707,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035816",
+      "accession_number": "0001918704-26-035957",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2731,7 +2719,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035807",
+      "accession_number": "0001918704-26-035954",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2743,7 +2731,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-035801",
+      "accession_number": "0001918704-26-035952",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2755,7 +2743,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-465099",
+      "accession_number": "0001193125-26-465644",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2767,7 +2755,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-465051",
+      "accession_number": "0001193125-26-465636",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2779,7 +2767,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-465008",
+      "accession_number": "0001193125-26-465635",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2791,7 +2779,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-464969",
+      "accession_number": "0001193125-26-465629",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2803,7 +2791,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-464944",
+      "accession_number": "0001193125-26-465605",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2815,7 +2803,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-464926",
+      "accession_number": "0001193125-26-465572",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2827,7 +2815,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-464207",
+      "accession_number": "0001193125-26-465570",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2835,11 +2823,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-16",
+      "filing_date": "2026-11-17",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-463937",
+      "accession_number": "0001193125-26-465569",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2847,11 +2835,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-16",
+      "filing_date": "2026-11-17",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-463891",
+      "accession_number": "0001193125-26-465561",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2859,11 +2847,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-16",
+      "filing_date": "2026-11-17",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-463760",
+      "accession_number": "0001193125-26-465554",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2871,11 +2859,23 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-16",
+      "filing_date": "2026-11-17",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-463719",
+      "accession_number": "0001193125-26-465546",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-17",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-465509",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -3087,6 +3087,126 @@
       "symbol": "LLY",
       "company_name": "ELI LILLY & Co",
       "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000059478-26-000116",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001551715-26-000002",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000059478-26-000114",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001698766-26-000008",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001537067-26-000002",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001340823-26-000002",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001262388-26-000022",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000059478-26-000112",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000059478-26-000110",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
+      "filing_date": "2026-11-17",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001310215-26-000021",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "LLY",
+      "company_name": "ELI LILLY & Co",
+      "form": "4",
       "filing_date": "2026-11-10",
       "description": "FORM 4",
       "event_type": "INSIDER_TRADING",
@@ -3104,126 +3224,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001538604-26-000006",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "4",
-      "filing_date": "2026-11-03",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001741474-26-000006",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "4",
-      "filing_date": "2026-11-03",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001685556-26-000008",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "4",
-      "filing_date": "2026-11-03",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001752447-26-000006",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "4",
-      "filing_date": "2026-11-03",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001861052-26-000008",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "4",
-      "filing_date": "2026-11-03",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001955972-26-000010",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "4",
-      "filing_date": "2026-11-03",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0002071542-26-000006",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "4",
-      "filing_date": "2026-11-03",
-      "description": "FORM 4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0002096888-26-000008",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "144",
-      "filing_date": "2026-10-30",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000316011-26-000040",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "10-Q",
-      "filing_date": "2026-10-29",
-      "description": "10-Q",
-      "event_type": "EARNINGS_FINANCIAL_REPORT",
-      "severity": "CRITICAL",
-      "accession_number": "0000059478-26-000108",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "LLY",
-      "company_name": "ELI LILLY & Co",
-      "form": "8-K",
-      "filing_date": "2026-10-29",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0000059478-26-000104",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000059478"
     },
     {
@@ -4718,6 +4718,18 @@
       "market": "US_GLOBAL",
       "symbol": "MCD",
       "company_name": "MCDONALDS CORP",
+      "form": "8-K",
+      "filing_date": "2026-11-17",
+      "description": "FORM 8-K",
+      "event_type": "MATERIAL_EVENT_8K",
+      "severity": "WARNING",
+      "accession_number": "0001104659-26-129050",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "MCD",
+      "company_name": "MCDONALDS CORP",
       "form": "4",
       "filing_date": "2026-11-16",
       "description": "JON BANNER - FORM 4 (11.13.26)",
@@ -5053,6 +5065,19 @@
       "severity": "INFO",
       "published_at": "Tue, 17 Nov 26 08:25:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-9999-pnj-hom-nay-17-11-2026-bao-nhieu-1-chi-188261117071539702.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB",
+        "SHB"
+      ],
+      "title": "Ngày 18/11, gửi dưới 100 triệu 3 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Với khoản tiền gửi dưới 100 triệu đồng kỳ hạn 3 tháng, lãi suất tiết kiệm tại 7 ngân hàng có sự chênh lệch giữa hình thức gửi tại quầy và online. Vậy khách hàng có thể nhận được bao nhiêu tiền lãi khi gửi tiết kiệm trong...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Wed, 18 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-18-11-gui-duoi-100-trieu-3-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261117233949257.chn"
     },
     {
       "market": "VIETNAM",

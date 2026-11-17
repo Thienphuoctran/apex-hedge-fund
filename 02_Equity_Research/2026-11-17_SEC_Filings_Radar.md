@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)
-> **Thời gian quét:** 2026-11-17 17:38:00  
-> **Số lượng hồ sơ ghi nhận:** 365 hồ sơ SEC chính thức  
+> **Thời gian quét:** 2026-11-17 21:42:31  
+> **Số lượng hồ sơ ghi nhận:** 366 hồ sơ SEC chính thức  
 
 | Ticker | Loại Form | Mức Độ | Ngày Nộp | Mô Tả Hồ Sơ | Đường Dẫn SEC |
 | :--- | :---: | :---: | :---: | :--- | :---: |
+| **NVDA** | `8-K` | ⚠️ WARNING | 2026-11-17 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `8-K` | ⚠️ WARNING | 2026-11-12 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4` | ℹ️ INFO | 2026-11-06 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4/A` | ℹ️ INFO | 2026-10-13 | FORM 4/A | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
@@ -11,7 +12,6 @@
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-23 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-22 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `144` | ℹ️ INFO | 2026-09-21 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
-| **NVDA** | `4` | ℹ️ INFO | 2026-09-18 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-18 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-18 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-18 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
