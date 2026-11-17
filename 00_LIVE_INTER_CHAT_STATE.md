@@ -1,18 +1,19 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-17 14:52:14  
+**Thời gian cập nhật:** 2026-11-18 04:08:44  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261117-145214`  
+**Mã đồng bộ:** `SYNC-AG2P-20261118-040844`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Chốt sổ kết phiên 17/11/2026 theo ảnh TCInvest cuối ngày (MSH kéo ATC 35.05, 3/3 mã xanh +97,400đ)
+* **Câu hỏi của Chủ tịch:** Hoàn tất Phương án 1B: Trực 4 nhịp phiên Mỹ (21h30 -> 04h00 đóng cửa chính thức) + Họp Thượng Đỉnh 30p (04h05-04h35 sáng 18/11) & Cam kết KPI 4M
 * **Kết luận & Quyết định thể chế:**
-Đóng cửa 17/11/2026: Cả 3 mã cùng xanh +97,400đ (+1.1%). BAF 100 @ 31.21 -> 31.30 (+9,100đ, T+0 chờ về), HDB 100 @ 22.06 -> 22.40 (+34,300đ, +1.6%), MSH 100 @ 34.51 -> 35.05 (+54,000đ, +1.6% kéo mạnh ATC). Tiền mặt 11,389,522đ (56.2%) + Cổ 8,875,000đ (43.8%) = NAV 20,264,522đ.
+Mỹ 04:00 đóng cửa ^GSPC 7,340.73 (-1.02% sát MA200), ^IXIC -0.74%, ^VIX 25.89 (+13.01%), XLF -1.89% tệ nhất 12/12 ngành đỏ, AVGO +2.46%/NVDA -0.44% rút chân trước BCTC 1d AMC, VNM 16.665 (-0.86%), DXY 103.50, US10Y 5.103%. Hội đồng thống nhất cam kết KPI >=4M trong 2 tháng: ~50% (nâng 70-76% khi VIX<22 & hậu 19/11 mở 75-85% NAV) và trong 1 tháng: ~20%. Hôm nay 18/11 cấm mua trước 14h00; 14h00-14h25 tối đa <=2.85M nếu Buy-Up>=60%; bảo vệ HDB (cắt <22,060), MSH (Trail 34,600), BAF (Stop 30,050).
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Chốt giá đóng cửa 17/11/2026 vào PortfolioStateManager SSOT (NAV 20,264,522đ)
-- [x] Đồng bộ két tiền 11,389,522đ & 3 vị thế xanh BAF/HDB/MSH
+- [x] Quét đủ 4 nhịp Mỹ thời gian thực (21:30, 22:30, 01:00, 04:02) lưu us_live_session_log_2026-11-17.json
+- [x] Chạy Monte Carlo 20,000 lần & Họp Tranh biện 8 Ban thật 100% lúc 04h05
+- [x] Xuất Báo cáo James & Kế hoạch 18/11 vào Vault + Phòng Họp Thượng Đỉnh APEX-SUMMIT-20261118-0405
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)

@@ -1,0 +1,526 @@
+{
+  "meeting_id": "APEX-SUMMIT-20261118-0405",
+  "version": "10.1-RealTime-4Checkpoint-US-Close",
+  "title": "🏛️ ĐẠI HỘI THƯỢNG ĐỈNH PHƯƠNG ÁN 1B — TỔNG KẾT ĐÓNG CỬA MỸ 04:00 & CAM KẾT KPI 4 TRIỆU",
+  "topic": "Theo dõi 4 nhịp phiên Mỹ (21h30 -> 04h00 đóng cửa chính thức) — Tranh biện dự báo Mỹ/VN, Kế hoạch 18–19/11 & Cam kết toán học KPI 4M (1–2 tháng)",
+  "subtitle": "04h05 – 04h35 Sáng 18/11 (30 Phút) • 4 Nhịp Thật 21h30–04h00 • Chủ trì James & Palmer • Giám sát Trọng",
+  "room_status": "ACTIVE_SESSION",
+  "prep_start_time": "2026-11-17T21:10:00+07:00",
+  "start_time": "2026-11-18T04:05:00+07:00",
+  "end_time": "2026-11-18T04:35:00+07:00",
+  "duration_minutes": 30,
+  "prep_duration_minutes": 20,
+  "meeting_window_str": "04h05 – 04h35 (30 Phút, 18/11/2026)",
+  "prep_window_str": "21h10 -> 04h02 (Theo dõi 4 nhịp Mỹ thật)",
+  "charter_report_path": "08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md",
+  "summit_charter_rules": [
+    {
+      "code": "Điều 1",
+      "title": "Họp Thật, Hiện Diện 14/14 Ban & Tranh Biện Chuyên Môn",
+      "detail": "Đủ 14/14 Phòng Ban + Palmer + Nam (16/16) có mặt thật; tranh luận, phản biện chéo, đánh giá, bỏ phiếu có bảo lưu và tổng kết chuẩn tập đoàn lớn."
+    },
+    {
+      "code": "Điều 2",
+      "title": "Nghiên Cứu & Phân Tích Dữ Liệu Trước Giờ Họp 15–20 Phút",
+      "detail": "Trước giờ khai mạc 15–20 phút (T-20p -> T-0p), cả 14 Ban phải chủ động quét thông tin, đối soát BCTC/vĩ mô liên quan chủ đề và nộp Hồ sơ chuẩn bị."
+    },
+    {
+      "code": "Điều 3",
+      "title": "Minh Bạch Tuyệt Đối — 100% Dựa Trên Số Liệu Thực Tế",
+      "detail": "Mọi nhận định gắn chặt SSOT TCBS 105C307855, OCF/LNST, Beneish M, Altman Z'' và dữ liệu thị trường sống; cấm lặp văn mẫu cũ hoặc suy đoán cảm tính."
+    },
+    {
+      "code": "Điều 4",
+      "title": "Tổng Kết Của James & Kế Hoạch Tuần Tham Khảo Cơ Động Theo Ngày",
+      "detail": "Sau mỗi cuộc họp, Master CIO James tổng kết đầy đủ nội dung và Kế hoạch Tuần Sau (chỉ mang tính tham khảo; thực thi cơ động linh hoạt theo từng ngày)."
+    },
+    {
+      "code": "Điều 5",
+      "title": "Lưu Kho Vĩnh Viễn & Dọn Phòng Sau Phê Duyệt Tối Thiểu 2 Tiếng",
+      "detail": "Mọi cuộc họp được lưu vào Summit Archive Vault để xem lại. Phải đợi Chủ tịch đọc báo cáo, ký phê duyệt VÀ tối thiểu 2 tiếng (120p) sau họp mới dọn phòng."
+    }
+  ],
+  "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-18_0405_Bao_Cao_Tong_Ket_James_Va_Nghi_Quyet_Phien_My.md",
+  "agenda_report_path": "08_Master_Investment_CIO/2026-11-17_Cong_Dien_Trieu_Tap_21h30_My_Mo_Cua_Va_Hop_30P.md",
+  "mode": "OPTION_1B_REALTIME_US_CLOSE_DEBATE",
+  "chairman": "Chủ tịch Hội đồng Quản trị — Trần Quốc Thiên Phước",
+  "chairperson_host": "Master CIO James (Ban 8) & Palmer (Tổng Quản Trị)",
+  "permanent_inspector": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Chứng thực 4 nhịp thật)",
+  "attendance_roster": [
+    {
+      "id": "CHAIRMAN",
+      "ban_code": "Chủ Tọa",
+      "officer": "Chủ tịch Trần Quốc Thiên Phước",
+      "avatar": "👑",
+      "status": "CHAIRING",
+      "present": true
+    },
+    {
+      "id": "PALMER",
+      "ban_code": "Điều Phối",
+      "officer": "Palmer (Tổng Quản Trị)",
+      "avatar": "🏛️",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "NAM",
+      "ban_code": "Thư Ký",
+      "officer": "Nam (Điều Hành SSOT)",
+      "avatar": "💼",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_1_VN",
+      "ban_code": "Ban 1 VN",
+      "officer": "Vũ Minh (Trưởng Ban 1 VN)",
+      "avatar": "🇻🇳",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_1_US",
+      "ban_code": "Ban 1 US",
+      "officer": "Dr. Elena Vance (Trưởng Ban 1 US)",
+      "avatar": "🌐",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_2_BCTC",
+      "ban_code": "Ban 2",
+      "officer": "Lê Hoàng (Trưởng Ban 2 Pháp Y)",
+      "avatar": "🔬",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_3_SYNTHESIS",
+      "ban_code": "Ban 3",
+      "officer": "Trần Hưng (Công Tố Viên Ban 3)",
+      "avatar": "⚖️",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_4_RISK",
+      "ban_code": "Ban 4",
+      "officer": "TS. Bảo (Chủ Tịch Hội Đồng Ban 4)",
+      "avatar": "📐",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_5_EVOLUTION",
+      "ban_code": "Ban 5",
+      "officer": "Đặng Khoa (Trưởng Ban 5 Tiến Hóa)",
+      "avatar": "🧠",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_6_ACADEMY",
+      "ban_code": "Ban 6",
+      "officer": "Thầy Khải (Cố Vấn Học Viện Ban 6)",
+      "avatar": "🎓",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_7_VN",
+      "ban_code": "Ban 7 VN",
+      "officer": "Minh Quân (Ban 7 VN)",
+      "avatar": "⚡",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_7_US",
+      "ban_code": "Ban 7 US",
+      "officer": "Alex (Ban 7 Global)",
+      "avatar": "🦅",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_8_CIO",
+      "ban_code": "Ban 8",
+      "officer": "Master CIO James (Ban 8)",
+      "avatar": "🎖️",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_9_SENTINEL",
+      "ban_code": "Ban 9",
+      "officer": "Victor (Sentinel Ban 9)",
+      "avatar": "🛰️",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_10_IR",
+      "ban_code": "Ban 10",
+      "officer": "Hiền (Trinh Sát Trưởng Ban 10)",
+      "avatar": "📡",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_11_MEDIA",
+      "ban_code": "Ban 11",
+      "officer": "Khánh & Bảo (Ban 11)",
+      "avatar": "🎬",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    },
+    {
+      "id": "BAN_12_OMBUDSMAN",
+      "ban_code": "Ban 12",
+      "officer": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+      "avatar": "🛡️",
+      "status": "PRESENT_PREPARED",
+      "present": true
+    }
+  ],
+  "attendance_summary": "100% Khối chuyên môn + James + Palmer + Trọng (Theo dõi thật 4 nhịp 21h30–04h00)",
+  "timeline_stream": [
+    {
+      "id": "r1_prep_open_telemetry",
+      "minute": 1,
+      "time_str": "04:02:36",
+      "phase_step": 1,
+      "sender_name": "Hệ Thống Telemetry 4 Nhịp",
+      "department": "Ban Dữ Liệu Sống Liên Thị Trường",
+      "role": "Chốt Chuỗi 4 Mốc Thời Gian Thực (21h30 -> 04h00)",
+      "avatar": "📡",
+      "badge": "4 NHỊP DỮ LIỆU THẬT 100%",
+      "badge_color": "#38bdf8",
+      "content": "Chốt dữ liệu sống chính thức từ 4 nhịp `21:10 -> 21:30 -> 22:30 -> 01:00 -> 04:02`: `^GSPC 7,340.73 (-1.02% | L:7,288.34)`, `^IXIC 24,328.38 (-0.74% | L:23,989.09)`, `^DJI 50,761.21 (-1.64%)`, `^VIX 25.89 (+13.01% | đỉnh 27.73)`, `^TNX 5.103% (-0.35%)`, `DXY 103.499 (-0.05%)`, `WTI $85.67 (-0.06%)`, `VNM 16.665 (-0.86%)`, `EEM 58.28 (-1.04%)`. Toàn bộ 12/12 ngành GICS đỏ (`XLF -1.89%` tệ nhất), riêng Bán dẫn rút chân Power Hour (`AVGO +2.46%`, `NVDA -0.44%` từ đáy `$150.33`).",
+      "highlight": "Chuỗi log 4 nhịp thật chứng minh Amateur Hour 21h30 bẫy xanh Tech rồi VIX bùng nổ 25.89 giữa phiên",
+      "metrics": {
+        "SPX": "7,340.73 (-1.02%)",
+        "VIX": "25.89 (H:27.73)",
+        "VNM": "16.665 (-0.86%)",
+        "XLF": "-1.89%"
+      }
+    },
+    {
+      "id": "r1_ban1_us",
+      "minute": 4,
+      "time_str": "04:04:50",
+      "phase_step": 2,
+      "sender_name": "Trưởng Ban 1 US",
+      "department": "Ban 1 US — Vĩ Mô & Địa Chính Trị",
+      "role": "Báo Cáo Chế Độ Rủi Ro Mỹ & Dự Báo",
+      "avatar": "🌍",
+      "badge": "ELEVATED RISK-OFF",
+      "badge_color": "#ef4444",
+      "content": "^GSPC (`7,340.73`) vá sát mép `MA200 (7,340.32)` nhờ Bán dẫn hồi cuối phiên nhưng `^DJI (-1.64%)` test `MA200 (50,757)` và `XLF (-1.89%)` yếu nhất rổ. Dù `^TNX (5.103%)` & `DXY (103.499)` hạ nhiệt, `^VIX 25.89` & `BTC -1.38%` xác nhận dòng tiền vẫn phòng thủ. Ngắn hạn 18–20/11 giằng co quanh `7,288–7,420` chờ BCTC `NVDA`; trung hạn 1–2 tháng phân hóa chọn lọc. Bỏ phiếu: **ELEVATED RISK-OFF / GIỮ 50–55% CASH**.",
+      "highlight": "Ban 1 US: ^GSPC neo đúng MA200 (7,340), VIX 25.89 -> Bỏ phiếu ELEVATED RISK-OFF",
+      "metrics": {
+        "Mode": "ELEVATED RISK-OFF",
+        "MA200_SPX": "7,340.32",
+        "Cash_Target": "50-55%"
+      }
+    },
+    {
+      "id": "r1_ban2_us",
+      "minute": 6,
+      "time_str": "04:04:53",
+      "phase_step": 2,
+      "sender_name": "Trưởng Ban 2 US",
+      "department": "Ban 2 US — Cổ Phiếu & BCTC Toàn Cầu",
+      "role": "Giải Mã Dòng Tiền Tổ Chức & BCTC",
+      "avatar": "📊",
+      "badge": "NVDA BCTC 1D AMC",
+      "badge_color": "#38bdf8",
+      "content": "Tổ chức gom phòng thủ định giá ở `AVGO (+2.46%)` & `NVDA` (`155.46`, rút chân từ `$150.33`) ngay trước BCTC `NVDA` (`1d AMC`, Fwd P/E `10.27x`, FCF `$41.81B`, Rev `+105.9%`), trong khi xả `XLF (-1.89%)`, `TSM (-3.70%)`, `MSFT (-2.27%)`. Trong 1–2 tháng tới, dòng tiền ưu tiên FCF thực dương dày (`XOM`, `META`, `AVGO`, `NVDA` hậu BCTC) và phủ quyết hoàn toàn mã đốt tiền (`SMCI -$8.19B`, `GOOGL -$1.16B`, `TSLA P/E 180.7x`, `INTC`).",
+      "highlight": "Ban 2 US: Nhịp rút chân AI gắn với BCTC NVDA (1d AMC); phủ quyết mã đốt FCF",
+      "metrics": {
+        "AVGO": "+2.46%",
+        "NVDA_FwdPE": "10.27x",
+        "MSFT": "-2.27%"
+      }
+    },
+    {
+      "id": "r1_ban1_vn",
+      "minute": 9,
+      "time_str": "04:05:08",
+      "phase_step": 3,
+      "sender_name": "Vũ Minh (Ban 1 VN)",
+      "department": "Ban 1 VN — Vĩ Mô & SBV",
+      "role": "Truyền Dẫn Tỷ Giá & Chu Kỳ VN-Index",
+      "avatar": "🇻🇳",
+      "badge": "CAUTIOUS HOLD",
+      "badge_color": "#eab308",
+      "content": "`DXY 103.499 (-0.05%)` & `US10Y 5.103% (-0.35%)` giúp giảm áp lực tỷ giá (`~25,420đ`), tạo đệm để SBV giữ nguyên lãi suất `4.5%/3.0%`. Dự kiến VN-Index (`1,726.72`) phiên `18/11` có thể mở gap rung `1,710–1,720` rồi phân hóa qua đáo hạn `19/11`; riêng nhóm Bank vướng áp lực kép `XLF -1.89%` + `TT54/2026`. Sóng 1–2 tháng vẫn nghiêng Tăng chọn lọc hướng `1,760–1,800+` nhờ đầu tư công (`52.8%`) & tín dụng Q4 (`9.2% -> 15%`). Bỏ phiếu: **CAUTIOUS HOLD & SELECTIVE ACCUMULATE**.",
+      "highlight": "Ban 1 VN: DXY & US10Y dịu giúp SBV ổn định; VN-Index có thể rung 1,710-1,720 rồi phân hóa",
+      "metrics": {
+        "DXY": "103.50 (-0.05%)",
+        "VNI_Support": "1,710-1,720",
+        "Target_2M": "1,760-1,800+"
+      }
+    },
+    {
+      "id": "r2_ban3_prosecutor",
+      "minute": 13,
+      "time_str": "04:04:59",
+      "phase_step": 4,
+      "sender_name": "Trần Hưng (Công Tố Ban 3)",
+      "department": "Ban 3 VN — Công Tố Viên & Phản Biện",
+      "role": "Phủ Quyết Tấn Công & Phiếu Bảo Lưu Bắt Buộc",
+      "avatar": "⚖️",
+      "badge": "PHIẾU BẢO LƯU & VETO",
+      "badge_color": "#ef4444",
+      "content": "Bóc trần cú rút chân hẹp Power Hour: `VNM (-0.86%)` đứng im `0.00%` suốt cuối phiên, `^DJI -1.64%`, `12/12` GICS đỏ, `^VIX 25.89` -> đây là phân phối bậc thang chứ chưa phải tạo đáy! Ban 3 **PHỦ QUYẾT 100%** mọi lệnh mua mới trước `14h00` ngày `18/11` và phủ quyết khung `14h00–14h25` nếu `Buy-Up < 60%`. Đồng thời **BÁC BỎ ảo tưởng `KPI 4M / 1 tháng` (`P=22.4%`)** và bảo lưu chỉ duyệt `KPI 2 tháng` nếu `VIX` hạ nhiệt để đánh từ đáy 2 an toàn.",
+      "highlight": "Ban 3 Công tố: Bóc bẫy rút chân hẹp (VNM +0.00% Power Hour), PHỦ QUYẾT mua trước 14h00 & bác bỏ KPI 1 tháng",
+      "metrics": {
+        "VETO_Pre14h": "100%",
+        "BuyUp_Gate": ">= 60%",
+        "Veto_1M_KPI": "REJECTED"
+      }
+    },
+    {
+      "id": "r2_ban4_quant_mc",
+      "minute": 17,
+      "time_str": "04:05:24",
+      "phase_step": 5,
+      "sender_name": "TS. Bảo (Ban 4 VN Risk)",
+      "department": "Ban 4 VN — Hội Đồng Rủi Ro & Monte Carlo",
+      "role": "Phán Quyết Định Lượng 20,000 Lần Chạy",
+      "avatar": "🧮",
+      "badge": "MONTE CARLO 59.4% / 22.4%",
+      "badge_color": "#c084fc",
+      "content": "Kết quả **Monte Carlo 20,000 lần** (`NAV 20.26M + R1 167k`, `0% Margin`, phí `0.28%`, `Max Risk <= 4.5% NAV = 911,903₫` — 3 lệnh hiện dùng `1.75%` NAV thị giá, còn dư `556,903₫`): Theo trọng số chế độ hiện tại (`35% Def / 50% Base / 15% Tailwind`), xác suất đạt `>= 4M` trong **2 tháng là `59.4%`** (lên `76.7%` khi thuần `Base VIX < 22`), còn trong **1 tháng chỉ `22.4%–27.2%`**. Phê duyệt hạn mức mua mới ngày `18/11` tối đa `25% Cash` (`<= 2,847,380₫`) lúc `14h00–14h25`.",
+      "highlight": "Ban 4 Monte Carlo: Trọng số chế độ cho 59.4% (2M) & 22.4–27.2% (1M); trần giải ngân 18/11 <= 2.85M",
+      "metrics": {
+        "MC_2M_Weighted": "59.4%",
+        "MC_2M_Base": "76.7%",
+        "MC_1M": "22.4-27.2%",
+        "Max_Buy_1811": "2.85M"
+      }
+    },
+    {
+      "id": "r2_ban5_6_audit",
+      "minute": 19,
+      "time_str": "04:06:01",
+      "phase_step": 5,
+      "sender_name": "Ban 5 & Ban 6 VN",
+      "department": "Ban 5 Tự Học & Ban 6 Mentor",
+      "role": "Kiểm Toán Lãi <300k & Tâm Lý Giao Dịch",
+      "avatar": "🎓",
+      "badge": "DEFENSIVE_HOLD & VETO 1M",
+      "badge_color": "#f59e0b",
+      "content": "Kiểm toán 2 tuần lãi `< 300k` (`Hit Rate 35.3%` ngày `16/11`, từng hụt `335k` ngày `06/11`): nguyên nhân cốt lõi là đánh lô `100 CP` (= 50% chuẩn `200 CP` của Hiến chương) nên biên `+2–3%` không tạo đột phá. Tuy nhiên **PHỦ QUYẾT** ép `KPI 4M` trong 1 tháng (`+20%` vốn không margin khi `VIX 25.89`) vì dễ sinh 3 bẫy chết người (ép kèo B/C, phồng size, gồng lỗ `22,060đ`). Thống nhất dời nâng size lên `200 CP/mã` từ chiều `19–20/11` khi có kèo `A+`.",
+      "highlight": "Ban 5/6: Chỉ ra lỗi lô 100 CP làm lãi <300k, nhưng PHỦ QUYẾT chạy ép 1 tháng gây tâm lý ép kèo",
+      "metrics": {
+        "Prior_HitRate": "35.3%",
+        "Scale_Unlock": "Post 19/11 (200 CP)",
+        "Vote": "DEFENSIVE_HOLD"
+      }
+    },
+    {
+      "id": "r3_minh_quan_victor",
+      "minute": 23,
+      "time_str": "04:05:37",
+      "phase_step": 6,
+      "sender_name": "Minh Quân & Victor (Ban 7 & 9)",
+      "department": "Ban 7 Thực Thi & Ban 9 Giám Sát 24/7",
+      "role": "Kế Hoạch 18/11 & Cảnh Báo Gap Sáng",
+      "avatar": "⚡",
+      "badge": "RED_ALERT_GAP_RISK_18_11",
+      "badge_color": "#10b981",
+      "content": "**Victor:** Kích hoạt `RED_ALERT_GAP_RISK_18_11` — `HDB` (`22,400đ`) chịu rủi ro gap sáng cao nhất (`-0.9%..-1.6%` do `XLF -1.89%`, bật còi ngay nếu `<= 22,390đ` sát `22,060đ`); `MSH` (`35,050đ`) nhẹ hơn; `BAF` (`31,300đ`) kẹt `T+1` tới chiều `19/11` (bật PA phòng vệ nếu thủng `30,050đ`).\n**Minh Quân:** Thẳng thắn chiết khấu kịch bản `VIX > 25` kéo dài xuống **`~35%–42%` (2 tháng)** / **`~12%–18%` (1 tháng)**; sáng `18/11` tuyệt đối không FOMO ATO, giữ `7.8M–11.39M` Cash, tập trung bùng nổ từ **chiều `19/11`** (khi qua đáo hạn + `BAF` về) bằng `Scaling Out 50/50` + `T+0`.",
+      "highlight": "Victor gắn cờ gap HDB (<=22,390); Minh Quân giữ Cash qua sáng 18/11 chờ chiều 19/11 & cam kết 35-42%",
+      "metrics": {
+        "HDB_Alert": "<= 22,390đ",
+        "MSH_Trail": "34,600đ / 33,090đ",
+        "BAF_Stop": "30,050đ",
+        "MQ_Est_2M": "35-42%"
+      }
+    },
+    {
+      "id": "r4_james_verdict",
+      "minute": 27,
+      "time_str": "04:07:00",
+      "phase_step": 7,
+      "sender_name": "Master CIO James (Ban 8)",
+      "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
+      "role": "Phán Quyết Hòa Giải & Cam Kết Chính Thức",
+      "avatar": "🎖️",
+      "badge": "CAM KẾT 50% (2M) | 20% (1M)",
+      "badge_color": "#38bdf8",
+      "content": "Hòa giải độ vênh `35–42%` (Minh Quân) vs `59.4%` (Ban 4), toàn Hội đồng chốt **1 con số cam kết thống nhất, trung thực 100%** (`NAV 20.26M`, `0% Margin`, `Max Risk <= 4.5% NAV`):\n- **KPI `>= 4,000,000₫` trong 2 tháng:** **`~50%` (`48%–52%`)** dưới `VIX 25.89`; xác suất **nâng lên `70%–76%` khi `VIX < 22`** và mở tỷ trọng `75%–85% NAV` hậu `19/11` (`Scaling Out 50/50` + `T+0` có thể vượt **`4.5M–5.5M+`**).\n- **KPI `>= 4,000,000₫` trong 1 tháng:** **`~20%` (`18%–22%`)** — bác bỏ hứa suông 1 tháng.\n- **Lệnh `18/11`:** Cấm mua trước `14h00`; `14h00–14h25` tối đa **1 lô `<= 2.85M` (`25% Cash`)** chỉ nếu `VNI >= 1,710` & `Buy-Up >= 60%`. Giữ `HDB` (cắt `<22,060đ`), kéo Trailing Stop `MSH` lên `34,600đ`, giữ `BAF` chờ hàng về chiều `19/11`.",
+      "highlight": "James chốt: Cam kết 50% (2M, lên 70-76% khi VIX < 22) & 20% (1M); cấm mua 18/11 trước 14h00",
+      "metrics": {
+        "Commit_2M_Now": "~50% (48-52%)",
+        "Commit_2M_VIX22": "70-76%",
+        "Commit_1M": "~20% (18-22%)",
+        "Max_Buy_1811": "<= 2.85M"
+      }
+    },
+    {
+      "id": "r4_trong_certification",
+      "minute": 30,
+      "time_str": "04:08:30",
+      "phase_step": 8,
+      "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+      "department": "Ban 12 — Tổng Kiểm Sát Thể Chế & Kỷ Luật",
+      "role": "Chứng Thực 100% Làm Thật & Không Kịch Bản Cũ",
+      "avatar": "🛡️",
+      "badge": "CHỨNG THỰC 4 NHỊP THẬT",
+      "badge_color": "#f59e0b",
+      "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước: Ban 12 chứng thực phiên họp `APEX-SUMMIT-20261118-0405` đạt chuẩn **100% THỜI GIAN THỰC & ZERO KỊCH BẢN SOẠN SẴN**:\n1. Đã xác minh 4 bộ dữ liệu sống qua các mốc `21:10:47`, `21:30:32`, `22:30:23`, `01:00:23`, `04:02:36` (`us_live_session_log_2026-11-17.json`).\n2. Có tranh biện đối kháng thật giữa `Ban 3`, `Ban 4`, `Ban 5/6` và `Minh Quân` dẫn tới mức chiết khấu cam kết trung thực `50% (2M) / 20% (1M)`.\n3. Phòng họp khóa bảo lưu tối thiểu **02 giờ (tới `06:35` sáng `18/11`)** chờ Chủ tịch đọc & phê duyệt.",
+      "highlight": "Trọng chứng thực 4 nhịp timestamp thật + phản biện độc lập; khóa phòng >= 02 giờ chờ Chủ tịch duyệt",
+      "metrics": {
+        "RealTime_4Ticks": "VERIFIED",
+        "Canned_Script": "0% (ELIMINATED)",
+        "Hold_Until": "06:35 ICT"
+      }
+    }
+  ],
+  "dynamic_messages": [],
+  "james_executive_summary": {
+    "author": "Master CIO James (Ban 8 — Tổng Tư Lệnh)",
+    "generated_at": "2026-11-18T04:12:00+07:00",
+    "report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-18_0405_Bao_Cao_Tong_Ket_James_Va_Nghi_Quyet_Phien_My.md",
+    "summary_headline": "Tổng kết Phiên Mỹ 04:00 (VIX 25.89, SPX -1.02%, XLF -1.89%) | Kế hoạch 18/11 & Cam kết KPI 4M (~50% trong 2 tháng / ~20% trong 1 tháng)",
+    "is_reference_only": true,
+    "agility_mandate": "Kế hoạch cơ động từng phiên: Cấm mua mới trước 14h00 ngày 18/11; từ chiều 19/11 đánh lớn 75–85% NAV nếu VIX hạ < 22.",
+    "meeting_highlights": [
+      "Mỹ 04:00 Official Close: ^GSPC 7,340.73 (-1.02%) vá sát MA200 nhờ Bán dẫn rút chân (AVGO +2.46%, NVDA -0.44% trước BCTC 1d AMC), DXY 103.50 & US10Y 5.103% dịu; nhưng 12/12 GICS đỏ, VIX 25.89 (đỉnh 27.73) & XLF -1.89% tệ nhất.",
+      "Cam kết KPI >= 4,000,000₫ (NAV 20.26M, 0% Margin): Thống nhất toàn Hội đồng ~50% (48%–52%) trong 2 tháng ở chế độ VIX > 25 hiện tại — nâng lên 70%–76% khi VIX < 22 hậu đáo hạn 19/11; bác bỏ hứa suông 1 tháng (chỉ ~20% thực tế).",
+      "Quản trị danh mục 18/11: Giữ HDB (bật còi <= 22,390đ, cắt < 22,060đ), kéo Trailing Stop MSH lên 34,600đ, giữ BAF (T+1 về chiều 19/11, Stop 30,050đ).",
+      "Giải ngân 11.39M Cash: PHỦ QUYẾT mua trước 14h00 ngày 18/11; 14h00–14h25 tối đa 1 lô <= 2.85M (25% Cash) chỉ nếu VNI >= 1,710 & Buy-Up >= 60%, giữ phần lớn hỏa lực cho chiều 19/11 sau đáo hạn & BCTC NVDA."
+    ],
+    "daily_cadence": [
+      {
+        "day": "Thứ Tư (18/11 — Sáng)",
+        "focus": "Phòng thủ ATO gap dưới áp lực VIX 25.89 & XLF -1.89%",
+        "trigger": "Cấm mua/bình quân giá; Victor canh HDB <= 22,390đ (cắt nếu gãy < 22,060đ kèm xả)"
+      },
+      {
+        "day": "Thứ Tư (18/11 — Chiều 14h00-14h25)",
+        "focus": "Kiểm tra dòng tiền hấp thụ T+2 & chọn lọc tối đa 1 lô",
+        "trigger": "Chỉ giải ngân <= 2.85M nếu VNI >= 1,710 & Buy-Up >= 60% (nến Spring/No Supply); yếu thì giữ 0đ"
+      },
+      {
+        "day": "Thứ Năm (19/11 — Đáo hạn & Hàng BAF về)",
+        "focus": "Đón kết quả BCTC NVDA + qua đáo hạn VN30F1M",
+        "trigger": "Nếu VIX < 22 & VNI giữ hỗ trợ, mở khóa 75-85% NAV (200 CP/mã) + Scaling Out 50/50 + T+0"
+      }
+    ],
+    "watchlist_tickers": [
+      "HDB",
+      "MSH",
+      "BAF",
+      "DBC",
+      "TCH",
+      "HPG"
+    ],
+    "chairman_action_required": "Kính trình Chủ tịch đọc Báo cáo Tổng kết 04:35 & Kế hoạch 18/11 trước ATO 09h00."
+  },
+  "james_summary_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-18_0405_Bao_Cao_Tong_Ket_James_Va_Nghi_Quyet_Phien_My.md",
+  "tactical_plan_path": "VN_Market/07_Daily_Specialist/2026-11-18_Official_Adaptive_Tactical_Plan.md",
+  "archive_summary": {
+    "sessions": [
+      {
+        "meeting_id": "APEX-SUMMIT-20261116-0045",
+        "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (V10.0 — CHIẾN LƯỢC CƠ ĐỘNG TUẦN MỚI)",
+        "topic": "Thị trường Tuần Sau (16/11 – 20/11/2026) — Tranh biện Chiến lược Toàn Vũ Trụ & Kế hoạch Đầu tư Cơ động",
+        "meeting_window_str": "00h45 – 01h15 (30 Phút)",
+        "prep_window_str": "00h25 – 00h45 (Nghiên Cứu T-20p)",
+        "start_time": "2026-11-16T00:45:00+07:00",
+        "end_time": "2026-11-16T01:15:00+07:00",
+        "chairman_approved": false,
+        "approval_time": null,
+        "archived_at": "2026-11-18T04:08:44.427554+07:00",
+        "archived_display": "18/11/2026 04:08:44",
+        "archive_reason": "ARCHIVED_FOR_REALTIME_US_CLOSE_SUMMIT_20261118_0405",
+        "archived_by": "Palmer & Ban 11 Archive",
+        "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261116-0045.json",
+        "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261116-0045_Bien_Ban_Luu_Tru.md",
+        "james_summary_path": "08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_Tuan_Co_Dong.md",
+        "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md",
+        "turns_count": 26,
+        "prep_dossiers_count": 14,
+        "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện thật 100%)",
+        "summary_headline": "Tổng kết phiên 00h45 – 01h15 (30 Phút) — Kế hoạch Tuần 16/11–20/11 (Tham khảo cơ động từng ngày trên 6 mã trọng tâm)"
+      },
+      {
+        "meeting_id": "APEX-SUMMIT-20261116-1615",
+        "title": "🏛️ HỘI NGHỊ THƯỢNG ĐỈNH ĐẶC BIỆT 16H15 — KIỂM TOÁN LÃI 2 TUẦN & CHIẾN LƯỢC KPI 3–4 TRIỆU / 2 THÁNG",
+        "topic": "Kiểm Toán Lợi Nhuận 2 Tuần (< 300k: +190,419đ) & Phương Án Đầu Tư Đạt KPI 3–4 Triệu / 2 Tháng (16/11/2026)",
+        "meeting_window_str": "16h15 – 16h45 (30 Phút)",
+        "prep_window_str": "15h55 – 16h15 (Nghiên Cứu T-20p)",
+        "start_time": "2026-11-16T16:15:00+07:00",
+        "end_time": "2026-11-16T16:45:00+07:00",
+        "chairman_approved": false,
+        "approval_time": null,
+        "archived_at": "2026-11-16T17:04:11.842642+07:00",
+        "archived_display": "16/11/2026 17:04:11",
+        "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
+        "archived_by": "Palmer & Ban 11 Archive",
+        "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261116-1615.json",
+        "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261116-1615_Bien_Ban_Luu_Tru.md",
+        "james_summary_path": "08_Master_Investment_CIO/council_resolutions/2026-11-16_1615_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_KPI_2_Thang.md",
+        "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-16_1615_Nghi_Quyet_Thuong_Dinh_KPI_Loi_Nhuan.md",
+        "turns_count": 16,
+        "prep_dossiers_count": 14,
+        "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện thật 100%)",
+        "summary_headline": "Tổng kết phiên 16h15 – 16h45 (30 Phút) — Kiểm toán lãi 2 tuần (+190,419đ) & Lộ trình KPI 3–4 triệu / 2 tháng (Tham khảo cơ động từng phiên)"
+      },
+      {
+        "meeting_id": "APEX-SUMMIT-20261115-2345",
+        "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (V9.0 — CHIẾN LƯỢC TUẦN MỚI)",
+        "topic": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới",
+        "meeting_window_str": "23h45 – 00h15 (30 Phút)",
+        "prep_window_str": "23h30 – 23h45 (Chuẩn Bị T-15p)",
+        "start_time": "2026-11-15T23:45:00+07:00",
+        "end_time": "2026-11-16T00:15:00+07:00",
+        "chairman_approved": false,
+        "approval_time": null,
+        "archived_at": "2026-11-16T00:28:16.364279+07:00",
+        "archived_display": "16/11/2026 00:28:16",
+        "archive_reason": "PRESERVED_23H45_BEFORE_V10",
+        "archived_by": "Palmer & Ban 11 Archive",
+        "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261115-2345.json",
+        "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261115-2345_Bien_Ban_Luu_Tru.md",
+        "james_summary_path": null,
+        "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-15_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md",
+        "turns_count": 26,
+        "prep_dossiers_count": 14,
+        "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện thật 100%)",
+        "summary_headline": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới"
+      }
+    ],
+    "total_archived": 3,
+    "last_updated": "2026-11-18T04:08:44.482631+07:00"
+  },
+  "retention_status": {
+    "policy_hours": 2,
+    "policy_minutes": 120,
+    "room_status": "ACTIVE_SESSION",
+    "chairman_approved": false,
+    "approval_status": "PENDING_CHAIRMAN_APPROVAL",
+    "end_time": "2026-11-18T04:35:00+07:00",
+    "min_cleanup_time": "2026-11-18T06:35:00+07:00",
+    "min_cleanup_display": "06:35:00 18/11/2026",
+    "seconds_since_end": 0,
+    "hours_elapsed_since_end": 0.0,
+    "seconds_until_2h_unlock": 7200,
+    "time_gate_passed": false,
+    "can_clean_now": false,
+    "cleanup_status": "AWAITING_CHAIRMAN_APPROVAL",
+    "cleanup_lock_reason": "CHƯA THỂ DỌN PHÒNG: Đang chờ Chủ tịch Trần Quốc Thiên Phước đọc Báo cáo Tổng kết của James & bấm KÝ PHÊ DUYỆT (và đảm bảo mốc tối thiểu 2 tiếng: 06:35:00 18/11)."
+  },
+  "archived_meta": {
+    "archived_at": "2026-11-18T04:10:04.509206+07:00",
+    "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
+    "archived_by": "Palmer & Ban 11 Archive",
+    "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261118-0405.json",
+    "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261118-0405_Bien_Ban_Luu_Tru.md"
+  }
+}
