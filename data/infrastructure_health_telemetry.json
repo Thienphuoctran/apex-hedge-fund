@@ -1,6 +1,6 @@
 {
-  "audit_timestamp": "2026-11-17 05:25:44",
-  "audit_duration_seconds": 0.23,
+  "audit_timestamp": "2026-11-17 08:55:45",
+  "audit_duration_seconds": 0.16,
   "overall_infrastructure_health_score": 90,
   "health_verdict": "XUẤT SẮC",
   "appointed_officers": {
@@ -10,13 +10,13 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 408,
-    "total_markdown_documents": 647,
+    "operational_institutional_reports": 425,
+    "total_markdown_documents": 667,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (408 báo cáo thể chế / 647 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (425 báo cáo thể chế / 667 tệp MD hiện có)."
   },
   "check_2_directory_density": {
     "total_directories_scanned": 96,
@@ -32,17 +32,17 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1059,
-    "total_project_size_mb": 28.65,
-    "data_directory_size_mb": 3.5,
+    "total_active_files": 1083,
+    "total_project_size_mb": 29.45,
+    "data_directory_size_mb": 3.53,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "2.86%",
+    "github_quota_used_pct": "2.94%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 44.36,
-    "uncommitted_files_count": 20,
+    "git_directory_size_mb": 44.6,
+    "uncommitted_files_count": 16,
     "active_branch": "main",
     "status": "HEALTHY"
   },
@@ -54,19 +54,20 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 4.65,
+    "json_directory_scan_latency_ms": 2.35,
     "ssot_load_latency_ms": 0.2,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
   "check_7_ssot_and_capital_cohesion": {
     "account_id": "105C307855",
-    "cash_balance_vnd": 14510422.0,
-    "total_nav_vnd": 20145422.0,
-    "total_market_val_vnd": 5635000.0,
-    "cash_pct": 72.0,
-    "active_positions_count": 2,
+    "cash_balance_vnd": 11389522.0,
+    "total_nav_vnd": 20264522.0,
+    "total_market_val_vnd": 8875000.0,
+    "cash_pct": 56.2,
+    "active_positions_count": 3,
     "active_positions_tickers": [
+      "BAF",
       "HDB",
       "MSH"
     ],
