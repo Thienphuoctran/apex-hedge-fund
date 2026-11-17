@@ -1,28 +1,28 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-17 12:03:34  
+**Thời gian cập nhật:** 2026-11-17 14:52:14  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261117-120334`  
+**Mã đồng bộ:** `SYNC-AG2P-20261117-145214`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Chốt kế hoạch đầu tư chính xác ngày 17/11/2026 mục tiêu KPI > 4,000,000 đ & vá lỗi hiển thị 0.00k trên bảng tác chiến
+* **Câu hỏi của Chủ tịch:** Chốt sổ kết phiên 17/11/2026 theo ảnh TCInvest cuối ngày (MSH kéo ATC 35.05, 3/3 mã xanh +97,400đ)
 * **Kết luận & Quyết định thể chế:**
-Hoàn tất Kế hoạch Đầu tư 17/11/2026 (11:55 ICT) + Lộ trình 2 tháng > 4M và vá lỗi UI 0.00k tại Phòng Tác Chiến.
+Đóng cửa 17/11/2026: Cả 3 mã cùng xanh +97,400đ (+1.1%). BAF 100 @ 31.21 -> 31.30 (+9,100đ, T+0 chờ về), HDB 100 @ 22.06 -> 22.40 (+34,300đ, +1.6%), MSH 100 @ 34.51 -> 35.05 (+54,000đ, +1.6% kéo mạnh ATC). Tiền mặt 11,389,522đ (56.2%) + Cổ 8,875,000đ (43.8%) = NAV 20,264,522đ.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Phát hành 2026-11-17_Ke_Hoach_Dau_Tu_Chinh_Xac_KPI_4Trieu.md
-- [x] Upsert vào SQLite Vault (ban_7_vn_specialist)
-- [x] Vá bug 0.00k trong renderTacticalWarRoom() ở scripts/apex_web_portal_engine.py
+- [x] Chốt giá đóng cửa 17/11/2026 vào PortfolioStateManager SSOT (NAV 20,264,522đ)
+- [x] Đồng bộ két tiền 11,389,522đ & 3 vị thế xanh BAF/HDB/MSH
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
-- **Tổng NAV:** `20,145,422 ₫`
-- **Tiền mặt thực tế:** `14,510,422 ₫`
-- **Giá trị cổ phiếu:** `5,635,000 ₫`
+- **Tổng NAV:** `20,264,522 ₫`
+- **Tiền mặt thực tế:** `11,389,522 ₫`
+- **Giá trị cổ phiếu:** `8,875,000 ₫`
 - **Vị thế nắm giữ (Ngày T+1):**
-  * **HDB**: 100 CP | Giá vốn: 22,057 ₫ | Thị giá: 22,350 ₫ | PnL: +29,300 ₫ (HOLDING_T0_AVAILABLE)
-  * **MSH**: 100 CP | Giá vốn: 34,510 ₫ | Thị giá: 34,000 ₫ | PnL: -51,000 ₫ (HOLDING_T0_AVAILABLE)
+  * **HDB**: 100 CP | Giá vốn: 22,057 ₫ | Thị giá: 22,400 ₫ | PnL: +34,300 ₫ (HOLDING_T0_AVAILABLE)
+  * **MSH**: 100 CP | Giá vốn: 34,510 ₫ | Thị giá: 35,050 ₫ | PnL: +54,000 ₫ (HOLDING_T0_AVAILABLE)
+  * **BAF**: 100 CP | Giá vốn: 31,209 ₫ | Thị giá: 31,300 ₫ | PnL: +9,100 ₫ (HOLDING_T0)
 
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
 1. **Về BSR & BAF:** TUYỆT ĐỐI KHÔNG BẮT ĐÁY ĐẦU GIỜ CHIỀU; chờ Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong cung T+2.5
