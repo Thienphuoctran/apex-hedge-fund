@@ -32,5 +32,68 @@
     "role": "sentinel",
     "type": "sentinel_emergency",
     "content": "🚨 [BAN 9 CẢNH BÁO — HDB] Giá 22,300.00 (+0.00%) | Cách Stop 2xATR: +1.08% | SHORT 1 HỢP ĐỒNG VN30F1M"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_PLX_68807",
+    "key": "cbtt_2026-11-17_CRITICAL_PLX_68807",
+    "timestamp": "15:19:24",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PLX] Petrolimex (PLX) dự báo lãi kỷ lục gần 4.500 tỷ đồng trong năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_KDH_5721",
+    "key": "cbtt_2026-11-17_CRITICAL_KDH_5721",
+    "timestamp": "15:19:24",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — KDH] Doanh thu thuần giảm 83%, Khang Điền (KDH) vẫn được dự báo lãi ròng hơn 1.500 tỷ đồng năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_GMD_51123",
+    "key": "cbtt_2026-11-17_CRITICAL_GMD_51123",
+    "timestamp": "15:19:24",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — GMD] Lộ diện “con gà đẻ trứng vàng” của Gemadept (GMD), đóng góp gần 40% lợi nhuận trước thuế (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_CEO_60210",
+    "key": "cbtt_2026-11-17_CRITICAL_CEO_60210",
+    "timestamp": "15:19:24",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — CEO] Cổ phiếu Nvidia trải qua chuỗi giảm giá dài nhất 14 năm, điều gì sẽ xảy ra tiếp theo? (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "sec_2026-11-17_AAPL_10-K_2026-11-03",
+    "key": "sec_2026-11-17_AAPL_10-K_2026-11-03",
+    "timestamp": "15:19:24",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-K — AAPL] 10-K (2026-11-03)"
+  },
+  {
+    "id": "sec_2026-11-17_AMZN_10-Q_2026-10-30",
+    "key": "sec_2026-11-17_AMZN_10-Q_2026-10-30",
+    "timestamp": "15:19:24",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — AMZN] 10-Q (2026-10-30)"
+  },
+  {
+    "id": "sec_2026-11-17_TSLA_10-Q_2026-10-22",
+    "key": "sec_2026-11-17_TSLA_10-Q_2026-10-22",
+    "timestamp": "15:19:24",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — TSLA] 10-Q (2026-10-22)"
   }
 ]

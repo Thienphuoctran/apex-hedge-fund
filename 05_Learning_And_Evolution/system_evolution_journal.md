@@ -257,3 +257,10 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 - **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `NVDA (1d), WMT (3d)` (chuyển sang `Locked Earnings Watchlist`).
 - **Realized Alpha vs S&P 500**: 1D `+0.81%` | 5D `-0.83%` | 20D `+5.06%`.
 - **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **79.2%**
+
+## [Phiên Giao Dịch: 2026-11-17] — Tiến Hóa Mô Hình v5.0 & Kiểm Toán Walk-Forward
+- **Chế độ Vĩ mô**: VIX = 22.91 | Dầu WTI = $85.17 | US10Y = 5.12%.
+- **Trọng số Chấm điểm Thích nghi (Tổng 100%)**: Vĩ mô `25%` | BCTC/FCF `35%` | Định giá `20%` | Kỹ thuật `20%`.
+- **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `NVDA (0d), WMT (2d)` (chuyển sang `Locked Earnings Watchlist`).
+- **Realized Alpha vs S&P 500**: 1D `+1.41%` | 5D `+2.26%` | 20D `+4.92%`.
+- **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **81.5%**

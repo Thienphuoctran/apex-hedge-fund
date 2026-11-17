@@ -1,7 +1,7 @@
 {
-  "timestamp_utc": "2026-11-16T22:51:10.057980+00:00",
-  "scan_date": "2026-11-16",
-  "total_us_filings_count": 371,
+  "timestamp_utc": "2026-11-17T08:19:24.071277+00:00",
+  "scan_date": "2026-11-17",
+  "total_us_filings_count": 364,
   "total_vn_announcements_count": 50,
   "ticker_filing_summary": {
     "NVDA": {
@@ -22,17 +22,17 @@
     },
     "MSFT": {
       "latest_form": "4",
-      "latest_filing_date": "2026-11-12",
+      "latest_filing_date": "2026-11-16",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019",
       "total_recent_filings": 11
     },
     "GOOGL": {
-      "latest_form": "10-Q",
-      "latest_filing_date": "2026-10-29",
-      "event_type": "EARNINGS_FINANCIAL_REPORT",
-      "severity": "CRITICAL",
+      "latest_form": "4",
+      "latest_filing_date": "2026-11-16",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044",
       "total_recent_filings": 10
     },
@@ -66,7 +66,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655",
-      "total_recent_filings": 12
+      "total_recent_filings": 11
     },
     "AVGO": {
       "latest_form": "10-Q",
@@ -146,7 +146,7 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858",
-      "total_recent_filings": 12
+      "total_recent_filings": 11
     },
     "GS": {
       "latest_form": "424B2",
@@ -170,7 +170,7 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983",
-      "total_recent_filings": 9
+      "total_recent_filings": 5
     },
     "LLY": {
       "latest_form": "10-Q",
@@ -253,12 +253,12 @@
       "total_recent_filings": 11
     },
     "WMT": {
-      "latest_form": "8-K",
+      "latest_form": "4",
       "latest_filing_date": "2026-11-16",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169",
-      "total_recent_filings": 11
+      "total_recent_filings": 10
     },
     "COST": {
       "latest_form": "4",
@@ -284,13 +284,37 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 10
     },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Viettel tung chương trình hỗ trợ tới 370 tỷ đồng tại TP.HCM: Từ hộ kinh doanh đến các công ty đều có cơ hội nhận ưu đãi",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 15:00:00 +0700",
+      "source_url": "https://cafef.vn/viettel-tung-chuong-trinh-ho-tro-toi-370-ty-dong-tai-tphcm-tu-ho-kinh-doanh-den-cac-cong-ty-deu-co-co-hoi-nhan-uu-dai-188261117144459068.chn",
+      "total_announcements": 8
+    },
+    "FOX": {
+      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "latest_title": "DN thuộc Bộ Công an vừa có quyết định quan trọng liên quan đến tuyến cáp biển tham vọng của Viettel",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 14:38:00 +0700",
+      "source_url": "https://cafef.vn/dn-thuoc-bo-cong-an-vua-co-quyet-dinh-quan-trong-lien-quan-den-tuyen-cap-bien-tham-vong-cua-viettel-188261117135939587.chn",
+      "total_announcements": 1
+    },
+    "FPT": {
+      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "latest_title": "DN thuộc Bộ Công an vừa có quyết định quan trọng liên quan đến tuyến cáp biển tham vọng của Viettel",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 14:38:00 +0700",
+      "source_url": "https://cafef.vn/dn-thuoc-bo-cong-an-vua-co-quyet-dinh-quan-trong-lien-quan-den-tuyen-cap-bien-tham-vong-cua-viettel-188261117135939587.chn",
+      "total_announcements": 1
+    },
     "CEO": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "CEO hãng xe điện Trung Quốc tuyên bố \"Việt Nam sẽ làm nên chuyện lớn\", hé lộ hợp tác với hai nền tảng giao hàng hàng đầu",
+      "latest_title": "Bức thư 176.000 chữ ký và tương lai của cựu CEO Nvidia",
       "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 00:04:00 +0700",
-      "source_url": "https://cafef.vn/ceo-hang-xe-dien-trung-quoc-tuyen-bo-viet-nam-se-lam-nen-chuyen-lon-he-lo-hop-tac-voi-hai-nen-tang-giao-hang-hang-dau-188261116231110038.chn",
-      "total_announcements": 11
+      "published_at": "Tue, 17 Nov 26 06:50:00 +0700",
+      "source_url": "https://cafef.vn/buc-thu-176000-chu-ky-va-tuong-lai-cua-cuu-ceo-nvidia-18826111705504596.chn",
+      "total_announcements": 13
     },
     "PLX": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -316,52 +340,20 @@
       "source_url": "https://cafef.vn/lo-dien-con-ga-de-trung-vang-cua-gemadept-gmd-dong-gop-gan-40-loi-nhuan-truoc-thue-188261116221621331.chn",
       "total_announcements": 1
     },
-    "PHR": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96%",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 15 Nov 26 10:17:00 +0700",
-      "source_url": "https://cafef.vn/cao-su-phuoc-hoa-phr-bao-lai-tang-64-loi-nhuan-tu-hoat-dong-cot-loi-bat-ngo-lao-doc-96-188261115094010587.chn",
-      "total_announcements": 1
-    },
-    "NKG": {
+    "SSI": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Con gái Chủ tịch Thép Nam Kim đăng ký mua 5 triệu cổ phiếu NKG",
+      "latest_title": "Lên sóng trực tiếp giữa Phố Wall, lãnh đạo SSI khẳng định Việt Nam là một trong những thị trường tốt nhất thế giới",
       "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 08:14:00 +0700",
-      "source_url": "https://cafef.vn/con-gai-chu-tich-thep-nam-kim-dang-ky-mua-5-trieu-co-phieu-nkg-188261115081418529.chn",
-      "total_announcements": 2
-    },
-    "DIG": {
-      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "latest_title": "Đại gia Hàn Quốc vừa ký dự án 2 tỷ USD với Bộ Công thương: Có tới 56.200 nhân viên tại Việt Nam, từng thua kiện Novaland, bán hàng chục triệu cổ phiếu DIG trước \"cơn sóng thần\"",
-      "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 00:07:00 +0700",
-      "source_url": "https://cafef.vn/dai-gia-han-quoc-vua-ky-du-an-2-ty-usd-voi-bo-cong-thuong-co-toi-56200-nhan-vien-tai-viet-nam-tung-thua-kien-novaland-ban-hang-chuc-trieu-co-phieu-dig-truoc-con-song-than-188261113094400548.chn",
-      "total_announcements": 1
-    },
-    "HCM": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Tập đoàn Trung Quốc đổ tiền xây nhà máy công nghệ cao 10.000 m² tại TP.HCM: Công ty con ở Việt Nam lãi gấp 1,6 lần cả tập đoàn mẹ",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 15 Nov 26 00:04:00 +0700",
-      "source_url": "https://cafef.vn/tap-doan-trung-quoc-do-tien-xay-nha-may-cong-nghe-cao-10000-m-tai-tphcm-cong-ty-con-o-viet-nam-lai-gap-16-lan-ca-tap-doan-me-18826111423032855.chn",
-      "total_announcements": 8
-    },
-    "FPT": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "PNJ từng lớn gấp 9 lần Petrosetco, gấp 4 lần Digiworld, bằng 1,3 lần FPT Retail, nay bị cả 3 DN vượt mặt chỉ sau 11 tháng",
-      "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/pnj-tung-lon-gap-9-lan-petrosetco-gap-4-lan-digiworld-bang-13-lan-fpt-retail-nay-bi-ca-3-dn-vuot-mat-chi-sau-11-thang-188261114223956507.chn",
+      "published_at": "Tue, 17 Nov 26 10:02:00 +0700",
+      "source_url": "https://cafef.vn/len-song-truc-tiep-giua-pho-wall-lanh-dao-ssi-khang-dinh-viet-nam-la-mot-trong-nhung-thi-truong-tot-nhat-the-gioi-188261117100250143.chn",
       "total_announcements": 2
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "PNJ từng lớn gấp 9 lần Petrosetco, gấp 4 lần Digiworld, bằng 1,3 lần FPT Retail, nay bị cả 3 DN vượt mặt chỉ sau 11 tháng",
+      "latest_title": "Giá vàng 9999 PNJ hôm nay 17/11/2026 bao nhiêu 1 chỉ?",
       "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/pnj-tung-lon-gap-9-lan-petrosetco-gap-4-lan-digiworld-bang-13-lan-fpt-retail-nay-bi-ca-3-dn-vuot-mat-chi-sau-11-thang-188261114223956507.chn",
+      "published_at": "Tue, 17 Nov 26 08:25:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-9999-pnj-hom-nay-17-11-2026-bao-nhieu-1-chi-188261117071539702.chn",
       "total_announcements": 5
     },
     "MBS": {
@@ -370,14 +362,22 @@
       "severity": "INFO",
       "published_at": "Mon, 16 Nov 26 10:06:00 +0700",
       "source_url": "https://cafef.vn/mot-su-kien-quan-trong-trong-thang-12-co-the-tac-dong-manh-den-chung-khoan-188261116095702147.chn",
-      "total_announcements": 2
+      "total_announcements": 1
     },
-    "MWG": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Soi dòng tiền của Thế Giới Di Động và loạt đại gia bán lẻ: Hé lộ bài toán khó đằng sau con số lợi nhuận",
-      "severity": "CRITICAL",
-      "published_at": "Mon, 16 Nov 26 00:06:00 +0700",
-      "source_url": "https://cafef.vn/soi-dong-tien-cua-the-gioi-di-dong-va-loat-dai-gia-ban-le-he-lo-bai-toan-kho-dang-sau-con-so-loi-nhuan-188261115221421449.chn",
+    "MSB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "“Âm vang xứ Bạch Dương”: Hành trình khám phá những kiệt tác âm nhạc Nga và Đông Âu",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/am-vang-xu-bach-duong-hanh-trinh-kham-pha-nhung-kiet-tac-am-nhac-nga-va-dong-au-188261117102640079.chn",
+      "total_announcements": 1
+    },
+    "VIB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "VIB cho vay mua ô tô lãi suất ưu đãi từ 8,9%/năm, cam kết thả nổi không quá 15% sau thời gian cố định",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 13:04:00 +0700",
+      "source_url": "https://cafef.vn/vib-cho-vay-mua-o-to-lai-suat-uu-dai-tu-89-nam-cam-ket-tha-noi-khong-qua-15-sau-thoi-gian-co-dinh-18826111711130799.chn",
       "total_announcements": 1
     },
     "ACB": {
@@ -386,7 +386,7 @@
       "severity": "INFO",
       "published_at": "Tue, 17 Nov 26 04:50:00 +0700",
       "source_url": "https://cafef.vn/ngay-17-11-gui-200-trieu-tai-techcombank-sacombank-shb-hdbank-mb-vpbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261116235213303.chn",
-      "total_announcements": 6
+      "total_announcements": 5
     },
     "SHB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -394,7 +394,7 @@
       "severity": "INFO",
       "published_at": "Tue, 17 Nov 26 04:50:00 +0700",
       "source_url": "https://cafef.vn/ngay-17-11-gui-200-trieu-tai-techcombank-sacombank-shb-hdbank-mb-vpbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261116235213303.chn",
-      "total_announcements": 8
+      "total_announcements": 7
     },
     "LPB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -428,44 +428,12 @@
       "source_url": "https://vneconomy.vn/ngan-hang-nha-nuoc-bo-sung-thanh-khoan-vnd-chung-khoan-se-phan-ung-tich-cuc.htm",
       "total_announcements": 1
     },
-    "HDB": {
+    "NKG": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
+      "latest_title": "Con gái Chủ tịch Thép Nam Kim muốn mua 5 triệu cổ phiếu",
       "severity": "INFO",
-      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
-      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
-      "total_announcements": 1
-    },
-    "POW": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
-      "severity": "INFO",
-      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
-      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
-      "total_announcements": 1
-    },
-    "TPB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
-      "severity": "INFO",
-      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
-      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
-      "total_announcements": 1
-    },
-    "VHM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
-      "severity": "INFO",
-      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
-      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
-      "total_announcements": 1
-    },
-    "VIC": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
-      "severity": "INFO",
-      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
-      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm",
+      "published_at": "Sun, 15 Nov 2026 13:30:00 +0700",
+      "source_url": "https://vnexpress.net/con-gai-chu-tich-thep-nam-kim-muon-mua-5-trieu-co-phieu-5144864.html",
       "total_announcements": 1
     }
   },
@@ -727,6 +695,18 @@
       "symbol": "MSFT",
       "company_name": "MICROSOFT CORP",
       "form": "4",
+      "filing_date": "2026-11-16",
+      "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000789019-26-000236",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "form": "4",
       "filing_date": "2026-11-12",
       "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
       "event_type": "INSIDER_TRADING",
@@ -844,15 +824,27 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "MSFT",
-      "company_name": "MICROSOFT CORP",
-      "form": "8-K",
-      "filing_date": "2026-10-28",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001193125-26-436149",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000789019"
+      "symbol": "GOOGL",
+      "company_name": "Alphabet Inc.",
+      "form": "4",
+      "filing_date": "2026-11-16",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-464050",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GOOGL",
+      "company_name": "Alphabet Inc.",
+      "form": "4",
+      "filing_date": "2026-11-16",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-463983",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044"
     },
     {
       "market": "US_GLOBAL",
@@ -948,30 +940,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001193125-26-442116",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GOOGL",
-      "company_name": "Alphabet Inc.",
-      "form": "144",
-      "filing_date": "2026-10-29",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001921094-26-001121",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GOOGL",
-      "company_name": "Alphabet Inc.",
-      "form": "10-Q",
-      "filing_date": "2026-10-29",
-      "description": "10-Q",
-      "event_type": "EARNINGS_FINANCIAL_REPORT",
-      "severity": "CRITICAL",
-      "accession_number": "0001652044-26-000084",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001652044"
     },
     {
@@ -1456,18 +1424,6 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "PLTR",
-      "company_name": "Palantir Technologies Inc.",
-      "form": "144",
-      "filing_date": "2026-10-15",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001968582-26-001057",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001321655"
-    },
-    {
-      "market": "US_GLOBAL",
       "symbol": "AVGO",
       "company_name": "Broadcom Inc.",
       "form": "8-K",
@@ -1890,6 +1846,18 @@
       "market": "US_GLOBAL",
       "symbol": "AMD",
       "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
+      "filing_date": "2026-11-16",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000197",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
       "form": "144",
       "filing_date": "2026-11-16",
       "description": "SEC Form 144",
@@ -2004,18 +1972,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001950047-26-010251",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "8-K",
-      "filing_date": "2026-09-28",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0000002488-26-000182",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
     },
     {
@@ -2764,18 +2720,6 @@
     },
     {
       "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
-      "form": "424B2",
-      "filing_date": "2026-11-16",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-035743",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
-    },
-    {
-      "market": "US_GLOBAL",
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
@@ -3054,6 +2998,30 @@
       "market": "US_GLOBAL",
       "symbol": "BRK-B",
       "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-11-16",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-464003",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
+      "form": "4",
+      "filing_date": "2026-11-16",
+      "description": "4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-463989",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "BRK-B",
+      "company_name": "BERKSHIRE HATHAWAY INC",
       "form": "424B5",
       "filing_date": "2026-11-09",
       "description": "424B5",
@@ -3084,78 +3052,6 @@
       "event_type": "EARNINGS_FINANCIAL_REPORT",
       "severity": "CRITICAL",
       "accession_number": "0001193125-26-452412",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-11-03",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-445930",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-10-29",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-438090",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-10-23",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001728451-26-000005",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-10-05",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-414744",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-09-30",
-      "description": "4",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-409451",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BRK-B",
-      "company_name": "BERKSHIRE HATHAWAY INC",
-      "form": "4",
-      "filing_date": "2026-09-29",
-      "description": "PRIMARY DOCUMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001728451-26-000004",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0001067983"
     },
     {
@@ -4422,6 +4318,18 @@
       "market": "US_GLOBAL",
       "symbol": "WMT",
       "company_name": "Walmart Inc.",
+      "form": "4",
+      "filing_date": "2026-11-16",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001739859-26-000003",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "WMT",
+      "company_name": "Walmart Inc.",
       "form": "8-K",
       "filing_date": "2026-11-16",
       "description": "8-K",
@@ -4524,30 +4432,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001959173-26-007561",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "WMT",
-      "company_name": "Walmart Inc.",
-      "form": "8-K",
-      "filing_date": "2026-10-23",
-      "description": "8-K",
-      "event_type": "MATERIAL_EVENT_8K",
-      "severity": "WARNING",
-      "accession_number": "0001193125-26-429539",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "WMT",
-      "company_name": "Walmart Inc.",
-      "form": "424B5",
-      "filing_date": "2026-10-21",
-      "description": "424B5",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001193125-26-427928",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000104169"
     },
     {
@@ -4927,6 +4811,55 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "Viettel tung chương trình hỗ trợ tới 370 tỷ đồng tại TP.HCM: Từ hộ kinh doanh đến các công ty đều có cơ hội nhận ưu đãi",
+      "summary": "Viettel vừa công bố chương trình ưu đãi chuyển đổi số quy mô lớn tại TP.HCM, giúp các hộ kinh doanh và công ty tiếp cận công nghệ với chi phí thấp hơn, từ quản lý bán hàng đến điều hành và giao dịch điện tử....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 15:00:00 +0700",
+      "source_url": "https://cafef.vn/viettel-tung-chuong-trinh-ho-tro-toi-370-ty-dong-tai-tphcm-tu-ho-kinh-doanh-den-cac-cong-ty-deu-co-co-hoi-nhan-uu-dai-188261117144459068.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FOX",
+        "FPT"
+      ],
+      "title": "DN thuộc Bộ Công an vừa có quyết định quan trọng liên quan đến tuyến cáp biển tham vọng của Viettel",
+      "summary": "FPT Telecom (FOX) vừa thông qua nghị quyết đầu tư dự án tuyến cáp biển Việt Nam - Singapore (VTS), dự kiến hoàn thành vào năm 2028. Trước đó, Viettel đã hợp tác với Singtel để triển khai tuyến cáp này....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 14:38:00 +0700",
+      "source_url": "https://cafef.vn/dn-thuoc-bo-cong-an-vua-co-quyet-dinh-quan-trong-lien-quan-den-tuyen-cap-bien-tham-vong-cua-viettel-188261117135939587.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Đèo Cả huy động gần 900 nhân sự, hơn 200 máy móc thi công gói thầu 5.600 tỷ đồng, đặt mục tiêu hợp long cầu Long Thành vào tháng 3/2027",
+      "summary": "Gói thầu XL01 thuộc dự án mở rộng cao tốc TP.HCM - Long Thành đã đạt khoảng 80% khối lượng thi công. Liên danh nhà thầu do Tập đoàn Đèo Cả đứng đầu đang triển khai 33 mũi thi công, hướng tới mục tiêu hợp long cầu Long Th...",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 12:30:00 +0700",
+      "source_url": "https://cafef.vn/deo-ca-huy-dong-gan-900-nhan-su-hon-200-may-moc-thi-cong-goi-thau-5600-ty-dong-dat-muc-tieu-hop-long-cau-long-thanh-vao-thang-3-2027-188261117102711277.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Bức thư 176.000 chữ ký và tương lai của cựu CEO Nvidia",
+      "summary": "Nhiều tỷ phú và lãnh đạo công nghệ tại Thung lũng Silicon đã ký thư ngỏ gửi hội đồng quản trị Nvidia, kêu gọi đưa ông Jensen Huang trở lại vị trí CEO. Tính đến sáng 16/11, bức thư đã thu hút ít nhất 176.000 chữ ký....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 06:50:00 +0700",
+      "source_url": "https://cafef.vn/buc-thu-176000-chu-ky-va-tuong-lai-cua-cuu-ceo-nvidia-18826111705504596.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "CEO"
       ],
       "title": "CEO hãng xe điện Trung Quốc tuyên bố \"Việt Nam sẽ làm nên chuyện lớn\", hé lộ hợp tác với hai nền tảng giao hàng hàng đầu",
@@ -4975,75 +4908,26 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PHR"
+        "SSI"
       ],
-      "title": "Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96%",
-      "summary": "Dù lợi nhuận sau thuế quý III/2026 tăng 64% so với cùng kỳ, đạt 433 tỷ đồng, hoạt động kinh doanh cốt lõi của Cao su Phước Hòa (PHR) lại ghi nhận nhiều dấu hiệu suy yếu khi biên lợi nhuận gộp thu hẹp và chi phí hoạt động...",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 15 Nov 26 10:17:00 +0700",
-      "source_url": "https://cafef.vn/cao-su-phuoc-hoa-phr-bao-lai-tang-64-loi-nhuan-tu-hoat-dong-cot-loi-bat-ngo-lao-doc-96-188261115094010587.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "NKG"
-      ],
-      "title": "Con gái Chủ tịch Thép Nam Kim đăng ký mua 5 triệu cổ phiếu NKG",
-      "summary": "Bà Hồ Uyển Nhi, con gái ông Hồ Minh Quang - Chủ tịch HĐQT Thép Nam Kim đăng ký mua mua 5 triệu cổ phiếu NKG trong thời gian từ ngày 18/11 đến ngày 16/12/2026....",
+      "title": "Lên sóng trực tiếp giữa Phố Wall, lãnh đạo SSI khẳng định Việt Nam là một trong những thị trường tốt nhất thế giới",
+      "summary": "Theo ông Thomas Nguyễn, dấu mốc nâng hạng của FTSE đang thúc đẩy các định chế tài chính hàng đầu thế giới xây dựng hệ sinh thái hỗ trợ nhà đầu tư tiếp cận thị trường chứng khoán Việt Nam....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 08:14:00 +0700",
-      "source_url": "https://cafef.vn/con-gai-chu-tich-thep-nam-kim-dang-ky-mua-5-trieu-co-phieu-nkg-188261115081418529.chn"
+      "published_at": "Tue, 17 Nov 26 10:02:00 +0700",
+      "source_url": "https://cafef.vn/len-song-truc-tiep-giua-pho-wall-lanh-dao-ssi-khang-dinh-viet-nam-la-mot-trong-nhung-thi-truong-tot-nhat-the-gioi-188261117100250143.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "DIG"
-      ],
-      "title": "Đại gia Hàn Quốc vừa ký dự án 2 tỷ USD với Bộ Công thương: Có tới 56.200 nhân viên tại Việt Nam, từng thua kiện Novaland, bán hàng chục triệu cổ phiếu DIG trước \"cơn sóng thần\"",
-      "summary": "Dù từng nếm \"trái đắng\" trong các thương vụ tay ngang sang bất động sản và chứng khoán, tập đoàn nắm giữ 15% sản lượng giày Nike toàn cầu vẫn cho thấy tiềm lực tài chính khổng lồ khi chính thức hồi sinh siêu dự án nhiệt ...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 00:07:00 +0700",
-      "source_url": "https://cafef.vn/dai-gia-han-quoc-vua-ky-du-an-2-ty-usd-voi-bo-cong-thuong-co-toi-56200-nhan-vien-tai-viet-nam-tung-thua-kien-novaland-ban-hang-chuc-trieu-co-phieu-dig-truoc-con-song-than-188261113094400548.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Tập đoàn Trung Quốc đổ tiền xây nhà máy công nghệ cao 10.000 m² tại TP.HCM: Công ty con ở Việt Nam lãi gấp 1,6 lần cả tập đoàn mẹ",
-      "summary": "Một tập đoàn công nghệ Trung Quốc vừa ký hợp đồng xây dựng nhà máy tại TP.HCM. Đáng chú ý, công ty con tại Việt Nam đang ghi nhận kết quả kinh doanh vượt trội....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 15 Nov 26 00:04:00 +0700",
-      "source_url": "https://cafef.vn/tap-doan-trung-quoc-do-tien-xay-nha-may-cong-nghe-cao-10000-m-tai-tphcm-cong-ty-con-o-viet-nam-lai-gap-16-lan-ca-tap-doan-me-18826111423032855.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT",
         "PNJ"
       ],
-      "title": "PNJ từng lớn gấp 9 lần Petrosetco, gấp 4 lần Digiworld, bằng 1,3 lần FPT Retail, nay bị cả 3 DN vượt mặt chỉ sau 11 tháng",
-      "summary": "Kết phiên 13/11/2026, vốn hóa PNJ chỉ còn khoảng 7.650 tỷ đồng, thấp hơn Petrosetco, Digiworld và FPT Retail, ba doanh nghiệp mà cuối năm 2025 đều đứng sau doanh nghiệp trang sức này. Cuộc đổi ngôi chủ yếu đến từ việc PN...",
+      "title": "Giá vàng 9999 PNJ hôm nay 17/11/2026 bao nhiêu 1 chỉ?",
+      "summary": "Giá vàng hôm nay 17/11/2026, cập nhật mới nhất giá vàng 9999, vàng nhẫn trơn tại PNJ cùng các thương hiệu lớn trên thị trường....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/pnj-tung-lon-gap-9-lan-petrosetco-gap-4-lan-digiworld-bang-13-lan-fpt-retail-nay-bi-ca-3-dn-vuot-mat-chi-sau-11-thang-188261114223956507.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Ông lớn lốp xe Trung Quốc rót 500 triệu USD xây nhà máy tại Việt Nam, dự kiến sản xuất 6,5 triệu chiếc mỗi năm",
-      "summary": "Tập đoàn Zhongce Rubber, một trong 10 nhà sản xuất lốp xe lớn nhất thế giới, sẽ xây dựng nhà máy tại TP.HCM với tổng vốn đầu tư 500 triệu USD. Dự án dự kiến đạt công suất 6,5 triệu lốp xe mỗi năm sau khi hoàn thành cả ha...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Sat, 14 Nov 26 21:45:00 +0700",
-      "source_url": "https://cafef.vn/ong-lon-lop-xe-trung-quoc-rot-500-trieu-usd-xay-nha-may-tai-viet-nam-du-kien-san-xuat-65-trieu-chiec-moi-nam-188261114214557914.chn"
+      "published_at": "Tue, 17 Nov 26 08:25:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-9999-pnj-hom-nay-17-11-2026-bao-nhieu-1-chi-188261117071539702.chn"
     },
     {
       "market": "VIETNAM",
@@ -5084,63 +4968,38 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT",
-        "MWG"
-      ],
-      "title": "Soi dòng tiền của Thế Giới Di Động và loạt đại gia bán lẻ: Hé lộ bài toán khó đằng sau con số lợi nhuận",
-      "summary": "FPT Retail lãi hơn gấp đôi nhưng dòng tiền kinh doanh chuyển sang âm, còn MWG giảm hơn một nửa. Hàng tồn kho và công nợ gia tăng, kéo theo áp lực về vốn và chi phí tài trợ tại các doanh nghiệp bán lẻ – phân phối....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Mon, 16 Nov 26 00:06:00 +0700",
-      "source_url": "https://cafef.vn/soi-dong-tien-cua-the-gioi-di-dong-va-loat-dai-gia-ban-le-he-lo-bai-toan-kho-dang-sau-con-so-loi-nhuan-188261115221421449.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "MBS"
-      ],
-      "title": "Giám đốc Nghiên cứu MBS gọi tên nhóm cổ phiếu có thể \"đánh bại\" VN-Index năm 2027",
-      "summary": "Trong bối cảnh triển vọng lợi nhuận toàn thị trường có thể chậm lại, bà Hiền cho rằng cơ hội đầu tư năm 2027 sẽ không phân bổ đồng đều, ngay cả giữa những doanh nghiệp trong cùng một ngành....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Mon, 16 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/giam-doc-nghien-cuu-mbs-goi-ten-nhom-co-phieu-co-the-danh-bai-vn-index-nam-2027-188261114163224877.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "PNJ"
       ],
-      "title": "Bất ngờ tỷ lệ sở hữu của gia đình bà Cao Thị Ngọc Dung tại PNJ",
-      "summary": "Sau biến cố kim cương, các thành viên trong gia đình bà Cao Thị Ngọc Dung đã bán ra lượng lớn cổ phiếu PNJ với nhiều mục đích khác nhau....",
+      "title": "Giá vàng miếng SJC, vàng nhẫn 9999 đầu giờ chiều ngày 17/11",
+      "summary": "Giá mua vào - bán ra vàng miếng tại Bảo Tín Minh Châu, Bảo Tín Mạnh Hải, DOJI và PNJ đồng loạt tăng 500.000 đồng/lượng....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sun, 15 Nov 26 00:05:00 +0700",
-      "source_url": "https://cafef.vn/bat-ngo-ty-le-so-huu-cua-gia-dinh-ba-cao-thi-ngoc-dung-tai-pnj-18826111422324714.chn"
+      "published_at": "Tue, 17 Nov 26 14:03:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-mieng-sjc-vang-nhan-9999-sang-ngay-17-11-188261117023420471.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "MSB"
       ],
-      "title": "Khang Điền 'rót' thêm 2.500 tỷ đồng vào công ty con",
-      "summary": "Khang Điền vừa thông qua việc tăng tổng vốn đầu tư dự án Khu nhà ở 11A tại TP.HCM lên gần 12.948 tỷ đồng, đồng thời dự kiến góp thêm 2.500 tỷ đồng vào chủ đầu tư dự án này....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "title": "“Âm vang xứ Bạch Dương”: Hành trình khám phá những kiệt tác âm nhạc Nga và Đông Âu",
+      "summary": "Không chỉ tái hiện những giai điệu kinh điển của âm nhạc Nga và Đông Âu, “Âm vang xứ Bạch Dương” còn góp phần lan tỏa giá trị nghệ thuật hàn lâm trong đời sống đương đại. Chương trình tiếp tục nối dài chuỗi hoạt động ngh...",
+      "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sat, 14 Nov 26 12:39:00 +0700",
-      "source_url": "https://cafef.vn/khang-dien-rot-them-2500-ty-dong-vao-cong-ty-con-188261114103943736.chn"
+      "published_at": "Tue, 17 Nov 26 13:30:00 +0700",
+      "source_url": "https://cafef.vn/am-vang-xu-bach-duong-hanh-trinh-kham-pha-nhung-kiet-tac-am-nhac-nga-va-dong-au-188261117102640079.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "CEO"
+        "VIB"
       ],
-      "title": "CEO Đoàn Văn Hiểu Em tiết lộ bước ngoặt mới: Sau gần 20 năm bán điện thoại, tivi, tủ lạnh, Điện Máy Xanh sẽ tìm cách kiếm tiền hoàn toàn khác",
-      "summary": "Sau hai năm gần như không mở thêm cửa hàng, CEO Đoàn Văn Hiểu Em cho biết Điện Máy Xanh đang chuẩn bị cho một giai đoạn tăng trưởng mới thay vì chỉ bán điện thoại, tivi, tủ lạnh…...",
+      "title": "VIB cho vay mua ô tô lãi suất ưu đãi từ 8,9%/năm, cam kết thả nổi không quá 15% sau thời gian cố định",
+      "summary": "Mức lãi suất ưu đãi 8,9%/năm cố định trong 6 tháng áp dụng cho tất cả các dòng xe. Đặc biệt, VIB cam kết lãi suất thả nổi không vượt quá 15%/năm sau thời gian cố định, giúp khách hàng tối ưu tài chính và chủ động hơn tro...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sat, 14 Nov 26 10:07:00 +0700",
-      "source_url": "https://cafef.vn/ceo-doan-van-hieu-em-tiet-lo-buoc-ngoat-moi-sau-gan-20-nam-ban-dien-thoai-tivi-tu-lanh-dien-may-xanh-se-tim-cach-kiem-tien-hoan-toan-khac-188261114085124144.chn"
+      "published_at": "Tue, 17 Nov 26 13:04:00 +0700",
+      "source_url": "https://cafef.vn/vib-cho-vay-mua-o-to-lai-suat-uu-dai-tu-89-nam-cam-ket-tha-noi-khong-qua-15-sau-thoi-gian-co-dinh-18826111711130799.chn"
     },
     {
       "market": "VIETNAM",
@@ -5268,15 +5127,38 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "ACB",
-        "SHB"
+        "HCM"
       ],
-      "title": "Ngày 14/11, gửi dưới 1 tỷ đồng kỳ hạn 18 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "summary": "Với kỳ hạn 18 tháng, lãi suất huy động tại 7 ngân hàng được khảo sát có sự chênh lệch đáng kể giữa hình thức gửi tại quầy và gửi trực tuyến. Trong đó, lãi suất online cao nhất trong nhóm lên tới 7,4%/năm, trong khi một s...",
+      "title": "Cơ hội \"trúng\" nhà ngay trung tâm TP.HCM khi mua Diamond Sky",
+      "summary": "Mua nhà vốn là quyết định lớn với nhiều người, nhưng tại Diamond Sky, khi mua nhà còn có cơ hội “trúng” thêm một căn hộ gần 8 tỷ đồng từ chương trình “Mua nhà trúng nhà – Nhân đôi tổ ấm” do Van Phuc Group triển khai từ n...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sat, 14 Nov 26 02:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-14-11-gui-duoi-1-ty-dong-ky-han-18-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261113224114723.chn"
+      "published_at": "Tue, 17 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/co-hoi-trung-nha-ngay-trung-tam-tphcm-khi-mua-diamond-sky-188261116114027162.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Thị trường bất động sản TP.HCM đang đứng trước một bước chuyển quan trọng",
+      "summary": "Thay vì đo theo quy mô giao dịch và tốc độ tăng giá, giá trị của thị trường bất động sản ngày càng được xác định bằng khả năng chuyển hóa nguồn lực đất đai và vốn đầu tư thành tài sản, dòng tiền, hoạt động sản xuất và tă...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 07:59:00 +0700",
+      "source_url": "https://cafef.vn/thi-truong-bat-dong-san-tphcm-dang-dung-truoc-mot-buoc-chuyen-quan-trong-188261116161821418.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Diễn biến mới nhất về tuyến cao tốc nối thành phố giàu nhất cả nước tới siêu sân bay lớn nhất Việt Nam",
+      "summary": "Gói thầu dài gần 12km thuộc dự án mở rộng cao tốc TP.HCM - Long Thành đã cơ bản hoàn thành phần đường mới, dự kiến cuối tháng 11/2026 sẽ chuyển làn để nâng cấp phần đường hiện hữu....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 26 07:09:00 +0700",
+      "source_url": "https://cafef.vn/dien-bien-moi-nhat-ve-tuyen-cao-toc-noi-thanh-pho-giau-nhat-ca-nuoc-toi-sieu-san-bay-lon-nhat-viet-nam-188261116232355566.chn"
     },
     {
       "market": "VIETNAM",
@@ -5317,38 +5199,26 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "SSI"
       ],
-      "title": "TP.HCM đấu thầu lựa chọn nhà đầu tư đối với 6 khu đất gần 445ha",
-      "summary": "TP.HCM dự kiến đấu thầu lựa chọn nhà đầu tư thực hiện dự án tại 6 khu đất trên địa bàn với tổng diện tích khoảng 444,68 ha....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "title": "Giám đốc thị trường nước ngoài của SSI: Việt Nam là thị trường mới nổi tuyệt vời, kinh tế tăng trưởng nhất thế giới",
+      "summary": "Tham vọng của Việt Nam là đạt mức tăng trưởng từ 10% trở lên. Vì vậy, từ góc độ tăng trưởng kinh tế, thành thật mà nói rằng nó hiện không thua kém bất kỳ quốc gia nào trên toàn cầu....",
+      "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Mon, 16 Nov 26 11:45:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-dau-thau-lua-chon-nha-dau-tu-doi-voi-6-khu-dat-gan-445ha-188261116110425381.chn"
+      "published_at": "Tue, 17 Nov 2026 04:25:51 GMT",
+      "source_url": "https://vneconomy.vn/giam-doc-thi-truong-nuoc-ngoai-cua-ssi-viet-nam-la-thi-truong-moi-noi-tuyet-voi-kinh-te-tang-truong-nhat-the-gioi.htm"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "CEO"
       ],
-      "title": "Căn hộ bàn giao thô ven biển: đáp số thỏa mãn cả gu sống lẫn gu đầu tư của cư dân trẻ",
-      "summary": "Lợi suất cho thuê dài hạn tại TP.HCM cũ hiện chỉ quanh 3%/năm, trong khi ở Vũng Tàu đạt khoảng 4,2%. Khoảng chênh ấy đang kéo nhiều nhà đầu tư về với căn hộ biển bàn giao thô Beachtro Tower bên biển Bãi Sau....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 16 Nov 26 11:30:00 +0700",
-      "source_url": "https://cafef.vn/can-ho-ban-giao-tho-ven-bien-dap-so-thoa-man-ca-gu-song-lan-gu-dau-tu-cua-cu-dan-tre-188261116112415111.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Thanh Phú Centre Point: Từ mạch giao thương lâu đời đến một “Tâm điểm trù phú”",
-      "summary": "Tại cửa ngõ phía Tây TP.HCM, BIM Land nhìn thấy cơ hội để kiến tạo một điểm đến mới, nơi những dòng chảy của con người, thương mại, trải nghiệm và cộng đồng cùng hội tụ, tạo nên sức sống mới cho cả khu vực....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 16 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/thanh-phu-centre-point-tu-mach-giao-thuong-lau-doi-den-mot-tam-diem-tru-phu-188261115225940231.chn"
+      "title": "Cổ phiếu Nvidia trải qua chuỗi giảm giá dài nhất 14 năm, điều gì sẽ xảy ra tiếp theo?",
+      "summary": "Giá cổ phiếu Nvidia đã giảm 12,7% trong tuần trước, kéo dài chuỗi giảm giá lên 6 tuần liên tiếp, dài nhất trong 14 năm. Báo cáo kết quả kinh doanh ngày 17/11 sẽ là phép thử tiếp theo đối với hãng chip Mỹ, trong lúc công ...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Tue, 17 Nov 2026 00:36:02 GMT",
+      "source_url": "https://vneconomy.vn/co-phieu-nvidia-trai-qua-chuoi-giam-gia-dai-nhat-14-nam-dieu-gi-se-xay-ra-tiep-theo.htm"
     },
     {
       "market": "VIETNAM",
@@ -5401,22 +5271,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HDB",
-        "POW",
-        "TPB",
-        "VHM",
-        "VIC"
-      ],
-      "title": "VN-Index tăng nhẹ, dòng tiền phân hóa, khối ngoại mua ròng VIC",
-      "summary": "Giao dịch của nhà đầu tư nước ngoài ghi nhận sự phân hóa giữa các cổ phiếu. VIC được mua ròng mạnh nhất với 138,8 tỷ đồng, tiếp đến là POW với 78,1 tỷ đồng, VHM với 47 tỷ đồng, HDB với 42 tỷ đồng và TPB với 41,3 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Wed, 11 Nov 2026 15:21:23 GMT",
-      "source_url": "https://vneconomy.vn/vn-index-tang-nhe-dong-tien-phan-hoa-khoi-ngoai-mua-rong-vic.htm"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "SHB"
       ],
       "title": "SHB mừng sinh nhật 33 năm với 333 giải thưởng và nhiều ưu đãi dành cho khách hàng",
@@ -5443,12 +5297,48 @@
       "symbols": [
         "CEO"
       ],
+      "title": "Hai ông lớn tiền số Binance và OKX khẩu chiến",
+      "summary": "Mâu thuẫn giữa nhà sáng lập Binance CZ và CEO OKX Star Xu tái bùng phát với những cáo buộc về trách nhiệm bảo vệ người dùng sau vụ hack....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 2026 10:29:37 +0700",
+      "source_url": "https://vnexpress.net/hai-ong-lon-tien-so-binance-va-okx-khau-chien-5145555.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Nvidia 'không xem xét' khả năng đưa Jensen Huang trở lại vị trí CEO",
+      "summary": "Hội đồng quản trị Nvidia không xem xét khả năng đưa Jensen Huang trở lại vị trí CEO, theo CNBC....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 2026 08:14:20 +0700",
+      "source_url": "https://vnexpress.net/nvidia-khong-xem-xet-kha-nang-dua-jensen-huang-tro-lai-vi-tri-ceo-5145467.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
       "title": "Ông Trump không phản đối Jensen Huang quay về Nvidia",
       "summary": "Tổng thống Mỹ thể hiện quan điểm cởi mở với khả năng cựu CEO Nvidia được phục chức....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
       "published_at": "Tue, 17 Nov 2026 00:24:29 +0700",
       "source_url": "https://vnexpress.net/ong-trump-khong-phan-doi-jensen-huang-quay-ve-nvidia-5145423.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Vietcombank TP HCM nhận Huân chương Lao động hạng Nhất lần hai",
+      "summary": "Vietcombank chi nhánh TP HCM được trao Huân chương Lao động hạng Nhất lần thứ hai nhân dịp kỷ niệm 50 năm thành lập, tối 15/11....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Tue, 17 Nov 2026 09:30:00 +0700",
+      "source_url": "https://vnexpress.net/vietcombank-tp-hcm-nhan-huan-chuong-lao-dong-hang-nhat-lan-hai-5145537.html"
     },
     {
       "market": "VIETNAM",
@@ -5521,18 +5411,6 @@
       "severity": "INFO",
       "published_at": "Fri, 13 Nov 2026 16:11:35 +0700",
       "source_url": "https://vnexpress.net/vi-sao-nvidia-chon-colette-kress-thay-jensen-huang-5144284.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO"
-      ],
-      "title": "Nhân viên Nvidia bênh vực Jensen Huang giữa bê bối đời tư",
-      "summary": "Hơn 1.600 bình luận trên diễn đàn nội bộ Nvidia kêu gọi HĐQT cân nhắc nguyện vọng nhân viên, trong đó nhiều người muốn Jensen Huang trở lại ghế CEO sau khi từ chức....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 13 Nov 2026 12:05:00 +0700",
-      "source_url": "https://vnexpress.net/nhan-vien-nvidia-benh-vuc-jensen-huang-giua-be-boi-doi-tu-5144180.html"
     }
   ]
 }
