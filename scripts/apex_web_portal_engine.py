@@ -7010,45 +7010,52 @@ def generate_portal_html(
                 let topHtml = '';
                 let sbHtml = '';
                 data.dynamic_picks.forEach((p, idx) => {{
-                    const price = Number(p.price || 0);
-                    const probe = Number(p.probe_target || price);
+                    const tickerCode = String(p.code || p.symbol || '');
+                    const price = Number(p.price ?? p.current_price ?? 0);
+                    const _rawEz = String(p.entry_zone || '').replace(/₫/g, '').trim();
+                    const _ezParts = _rawEz.split(/[–-]/).map(s => Number(s.replace(/[^0-9.]/g, '').replace(/,/g, '')) || 0).filter(n => n > 0);
+                    const probe = Number(p.probe_target || (_ezParts.length > 0 ? Math.max(..._ezParts) : 0) || price);
                     const stop = Number(p.stop_loss || 0);
                     const tp1 = Number(p.tp1 || 0);
                     const tp2 = Number(p.tp2 || 0);
                     const rr = Number(p.rr_ratio || 0).toFixed(2);
-                    const ev = Number(p.ev_pct || 0);
+                    const ev = Number(p.ev_pct ?? p.expected_value_pct ?? 0);
+                    const holdShares = Number(p.holding_shares ?? p.shares ?? 0);
+                    const secLabel = String(p.security_label || p.action_label || '');
+                    const actionBadge = String(p.action_code || p.security_status || 'STANDBY');
                     const lotVal = ((probe > 0 ? probe : price) * 100).toLocaleString('en-US');
                     if (idx < 2 || p.is_holding) {{
                         const cls = (idx === 0 || p.is_holding) ? 'leader' : 'alpha';
                         const badgeCol = cls === 'leader' ? '#10b981' : '#38bdf8';
-                        const badgeTxt = p.is_holding ? `ĐANG GIỮ ${{p.holding_shares || 0}} CP` : String(p.tier || 'MỤC TIÊU').toUpperCase();
+                        const badgeTxt = p.is_holding ? `ĐANG GIỮ ${{holdShares}} CP` : String(p.tier || 'MỤC TIÊU').toUpperCase();
                         const stopPct = (price > 0 && stop > 0) ? ` (${{(((stop - price) / price) * 100).toFixed(1)}}%)` : '';
                         const tpStr = (tp1 > 0 && tp2 > 0) ? `${{(tp1/1000).toFixed(2)}}k / ${{(tp2/1000).toFixed(2)}}k` : (tp1 > 0 ? `${{(tp1/1000).toFixed(2)}}k` : 'N/A');
+                        const gomStr = p.entry_zone ? String(p.entry_zone) : `≤ ${{probe.toLocaleString('en-US')}} ₫`;
                         topHtml += `
                             <div class="stock-pick-card ${{cls}}">
                                 <div class="stock-card-top">
                                     <div>
-                                        <span class="stock-ticker">${{escHtml(p.code)}}</span>
-                                        <span class="stock-name">${{escHtml(p.name || p.code)}}</span>
+                                        <span class="stock-ticker">${{escHtml(tickerCode)}}</span>
+                                        <span class="stock-name">${{escHtml(p.name || tickerCode)}}</span>
                                     </div>
                                     <span style="font-size: 10px; font-weight: 800; color: ${{badgeCol}}; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 4px;">${{escHtml(badgeTxt)}}</span>
                                 </div>
                                 <div class="stock-stats-grid">
-                                    <div class="stock-stat-item"><span class="stat-label">Live / Mục tiêu Gom</span><span class="stat-val">${{price.toLocaleString('en-US')}} / ≤ ${{probe.toLocaleString('en-US')}} ₫</span></div>
+                                    <div class="stock-stat-item"><span class="stat-label">Live / Mục tiêu Gom</span><span class="stat-val">${{price.toLocaleString('en-US')}} / ${{escHtml(gomStr)}}</span></div>
                                     <div class="stock-stat-item"><span class="stat-label">Stop 2xATR</span><span class="stat-val loss">${{stop.toLocaleString('en-US')}} ₫${{stopPct}}</span></div>
                                     <div class="stock-stat-item"><span class="stat-label">Mục Tiêu TP1 / TP2</span><span class="stat-val gain">${{tpStr}}</span></div>
                                     <div class="stock-stat-item"><span class="stat-label">Tỷ Lệ R:R</span><span class="stat-val gold">1 : ${{rr}}</span></div>
                                     <div class="stock-stat-item"><span class="stat-label">Kỳ Vọng EV%</span><span class="stat-val gain">${{ev >= 0 ? '+' : ''}}${{ev.toFixed(1)}}%</span></div>
                                     <div class="stock-stat-item"><span class="stat-label">Vốn 100 CP</span><span class="stat-val">${{lotVal}} ₫</span></div>
                                 </div>
-                                <div class="stock-catalyst">⚡ <strong>${{escHtml(p.security_label || '')}}</strong> | ${{escHtml(p.catalyst || '')}}</div>
+                                <div class="stock-catalyst">⚡ <strong>${{escHtml(secLabel)}}</strong> | ${{escHtml(p.catalyst || '')}}</div>
                             </div>`;
                     }} else {{
                         sbHtml += `
                             <div class="stock-pick-card standby">
                                 <div style="display:flex; justify-content:space-between; align-items:center;">
-                                    <span class="stock-ticker">${{escHtml(p.code)}}</span>
-                                    <span style="font-size:10px; color:#94a3b8;">${{escHtml(p.action_code || 'STANDBY')}}</span>
+                                    <span class="stock-ticker">${{escHtml(tickerCode)}}</span>
+                                    <span style="font-size:10px; color:#94a3b8;">${{escHtml(actionBadge)}}</span>
                                 </div>
                                 <div style="font-size:11px; color:#cbd5e1;">Live ${{(price/1000).toFixed(2)}}k | Gom ${{(probe/1000).toFixed(2)}}k | Stop ${{(stop/1000).toFixed(2)}}k</div>
                                 <div style="font-size:10px; color:#94a3b8;">${{escHtml((p.catalyst || '').slice(0, 95))}}</div>
