@@ -2870,5 +2870,13 @@
     "topic_key": "assistant_nam",
     "date": "2026-11-17",
     "timestamp": "2026-11-17 00:21:24"
+  },
+  {
+    "message_id": 1974,
+    "chat_id": "-1004465270817",
+    "thread_id": 3,
+    "topic_key": "alerts",
+    "date": "2026-11-17",
+    "timestamp": "2026-11-17 05:25:42"
   }
 ]

@@ -1,6 +1,6 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-17T00:21:02.841827+00:00",
+  "generated_at_utc": "2026-11-17T05:25:34.764788+00:00",
   "trading_date": "2026-11-17",
   "cio_desk_verdict": "ĐANG NẮM GIỮ 2 MÃ CỔ PHIẾU — GIÁM SÁT STOP 2XATR & TP1/TP2",
   "capital_summary": {
@@ -588,13 +588,13 @@
     "timestamp": "2026-11-16 18:31:34 UTC"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-17T00:21:02.840862",
+    "timestamp_iso": "2026-11-17T05:25:34.763483",
     "date_str": "2026-11-17",
     "date_vn": "17/11/2026",
-    "time_vn": "00:21:02",
+    "time_vn": "05:25:34",
     "weekday_index": 1,
     "weekday_vn": "Thứ Ba",
-    "full_time_label_vn": "00:21:02 Thứ Ba, ngày 17/11/2026",
+    "full_time_label_vn": "05:25:34 Thứ Ba, ngày 17/11/2026",
     "market_phase": "PRE_MARKET_PREPARATION",
     "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Ba) — Chuẩn bị kế hoạch tác chiến",
     "is_trading_hours": false,

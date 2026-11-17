@@ -1,6 +1,6 @@
 # 🚨 [RED ALERT] BÁO CÁO BIẾN ĐỘNG KHẨN CẤP DANH MỤC & LIVE WAR-ROOM
 **Phòng Ban 9**: Ban Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Khẩn Cấp ("Victor")  
-**Thời gian phát hiện**: `2026-11-17 00:21:13` | **Mã Cổ Phiếu Báo Động**: **`HDB`** (VIETNAM)  
+**Thời gian phát hiện**: `2026-11-17 05:25:41` | **Mã Cổ Phiếu Báo Động**: **`HDB`** (VIETNAM)  
 **Mức độ khẩn cấp**: **`CRITICAL`** | **Trạng thái**: YÊU CẦU PHẢN ỨNG TỨC THỜI TRONG PHIÊN
 
 ---
@@ -10,9 +10,9 @@
 | :--- | :---: | :---: | :--- |
 | **Giá Hiện Tại** | **`22,300.00 VND`** | — | Giảm **`+0.00%`** so với tham chiếu |
 | **Khoảng Cách Đến Stop 2xATR** | **`+1.08%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`22,060.00 VND`** |
-| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`0.00x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
+| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`0.81x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
 | **Quy Mô Vốn Đang Rủi Ro** | **`2,205,700.00 VND`** | — | Số lượng đang nắm: `100 cổ phiếu` |
-| **Giá Trị Trung Bình VWAP** | **`22,300.00 VND`** | — | Vùng kháng cự ngắn hạn trong phiên |
+| **Giá Trị Trung Bình VWAP** | **`22,216.67 VND`** | — | Vùng kháng cự ngắn hạn trong phiên |
 
 ### Các Dị Thường Kích Hoạt Còi Báo Động:
 - **LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR**: Giá hiện tại 22300.0 chỉ còn cách Stop Loss (22060.0) 1.08% (Ngưỡng cảnh báo <= 1.5%).
@@ -47,7 +47,7 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 ### ✂️ PHƯƠNG ÁN B: PARTIAL TACTICAL DE-RISKING (HẠ TỶ TRỌNG CHỦ ĐỘNG 50%)
 * **Bản chất**: Giảm áp lực Margin và hạ rủi ro danh mục nếu hàng đã về tài khoản.
 * **Lệnh thực thi ngay**:
-  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`22,300.00 VND`), đặt bán **`50 cổ phiếu`** (50% vị thế).
+  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`22,216.67 VND`), đặt bán **`50 cổ phiếu`** (50% vị thế).
   - Thu hồi ngay dòng tiền mặt: **`~1,115,000.00 VND`** bổ sung vào quỹ Dry Powder.
 
 ---

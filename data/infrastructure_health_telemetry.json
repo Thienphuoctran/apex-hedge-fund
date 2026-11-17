@@ -1,7 +1,7 @@
 {
-  "audit_timestamp": "2026-11-17 00:21:22",
-  "audit_duration_seconds": 0.1,
-  "overall_infrastructure_health_score": 95,
+  "audit_timestamp": "2026-11-17 05:25:44",
+  "audit_duration_seconds": 0.23,
+  "overall_infrastructure_health_score": 90,
   "health_verdict": "XUẤT SẮC",
   "appointed_officers": {
     "sentinel_lead": "Ban 12 Trọng (Tổng Kiểm Sát Thể Chế & Liêm Chính)",
@@ -10,23 +10,30 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 406,
-    "total_markdown_documents": 643,
+    "operational_institutional_reports": 408,
+    "total_markdown_documents": 647,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (406 báo cáo thể chế / 643 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (408 báo cáo thể chế / 647 tệp MD hiện có)."
   },
   "check_2_directory_density": {
     "total_directories_scanned": 96,
-    "dense_directories_flagged": [],
-    "is_clean": true,
-    "status": "HEALTHY"
+    "dense_directories_flagged": [
+      {
+        "directory": "09_Realtime_Portfolio_Sentinel/incident_logs",
+        "file_count": 101,
+        "threshold": 100,
+        "recommendation": "Cần phân mảnh thư mục con theo Năm/Tháng (YYYY/MM) khi vượt 100 tệp."
+      }
+    ],
+    "is_clean": false,
+    "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1055,
-    "total_project_size_mb": 28.63,
+    "total_active_files": 1059,
+    "total_project_size_mb": 28.65,
     "data_directory_size_mb": 3.5,
     "github_quota_limit_mb": 1000.0,
     "github_quota_used_pct": "2.86%",
@@ -34,8 +41,8 @@
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 44.24,
-    "uncommitted_files_count": 21,
+    "git_directory_size_mb": 44.36,
+    "uncommitted_files_count": 20,
     "active_branch": "main",
     "status": "HEALTHY"
   },
@@ -47,8 +54,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 3.23,
-    "ssot_load_latency_ms": 0.18,
+    "json_directory_scan_latency_ms": 4.65,
+    "ssot_load_latency_ms": 0.2,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
