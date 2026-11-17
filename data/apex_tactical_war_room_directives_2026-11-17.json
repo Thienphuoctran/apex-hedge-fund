@@ -95,5 +95,50 @@
     "role": "specialist",
     "type": "sec_filing",
     "content": "[📊 SEC 10-Q — TSLA] 10-Q (2026-10-22)"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_PLX_43583",
+    "key": "cbtt_2026-11-17_CRITICAL_PLX_43583",
+    "timestamp": "00:38:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PLX] Petrolimex (PLX) dự báo lãi kỷ lục gần 4.500 tỷ đồng trong năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_KDH_82003",
+    "key": "cbtt_2026-11-17_CRITICAL_KDH_82003",
+    "timestamp": "00:38:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — KDH] Doanh thu thuần giảm 83%, Khang Điền (KDH) vẫn được dự báo lãi ròng hơn 1.500 tỷ đồng năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_GMD_72255",
+    "key": "cbtt_2026-11-17_CRITICAL_GMD_72255",
+    "timestamp": "00:38:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — GMD] Lộ diện “con gà đẻ trứng vàng” của Gemadept (GMD), đóng góp gần 40% lợi nhuận trước thuế (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_PNJ_57454",
+    "key": "cbtt_2026-11-17_CRITICAL_PNJ_57454",
+    "timestamp": "00:38:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Tổng Giám đốc Phan Quốc Công tạm lỗ 20 tỷ sau cú \"bắt đáy\" PNJ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-17_CRITICAL_SHS_71548",
+    "key": "cbtt_2026-11-17_CRITICAL_SHS_71548",
+    "timestamp": "00:38:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — SHS] Chứng khoán xuất hiện mức định giá hiếm thấy, CTCK chỉ điểm 8 cổ phiếu tiềm năng (BCTC_KET_QUA_KINH_DOANH)"
   }
 ]

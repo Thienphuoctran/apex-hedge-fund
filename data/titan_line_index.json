@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-17 08:20:27",
+  "generated_at": "2026-11-17 17:39:15",
   "token_metrics": {
-    "total_raw_report_tokens": 68234,
-    "titan_digest_tokens": 1932,
+    "total_raw_report_tokens": 68277,
+    "titan_digest_tokens": 1934,
     "token_savings_percent": 97.2,
     "quality_preservation": "100% LOSSLESS (Full reports intact on disk)"
   },
   "deterministic_audit": {
-    "timestamp": "2026-11-17 08:20:27",
+    "timestamp": "2026-11-17 17:39:15",
     "bctc_vn_verified": 54,
     "bctc_red_flags_detected": [
       "UNKNOWN (M-Score=0.41, OCF/LNST=1.2)",
@@ -24,9 +24,9 @@
     "global_macro_ban1": {
       "exists": true,
       "path": "01_Macro_Geopolitics/2026-11-17_Macro_Report.md",
-      "size_kb": 21.5,
+      "size_kb": 21.6,
       "total_lines": 69,
-      "estimated_raw_tokens": 6290,
+      "estimated_raw_tokens": 6326,
       "sections_count": 5,
       "sections": [
         {
@@ -148,9 +148,9 @@
     "global_synthesis_ban3": {
       "exists": true,
       "path": "03_Synthesis_Memos/2026-11-17_Investment_Memo.md",
-      "size_kb": 19.7,
+      "size_kb": 19.5,
       "total_lines": 73,
-      "estimated_raw_tokens": 5771,
+      "estimated_raw_tokens": 5707,
       "sections_count": 4,
       "sections": [
         {
@@ -210,7 +210,7 @@
       "path": "04_Investment_Committee/2026-11-17_IC_Decision.md",
       "size_kb": 7.4,
       "total_lines": 39,
-      "estimated_raw_tokens": 2164,
+      "estimated_raw_tokens": 2153,
       "sections_count": 4,
       "sections": [
         {
@@ -262,7 +262,7 @@
       "path": "05_Learning_And_Evolution/2026-11-17_Learning_And_Attribution_Report.md",
       "size_kb": 10.1,
       "total_lines": 85,
-      "estimated_raw_tokens": 2963,
+      "estimated_raw_tokens": 2952,
       "sections_count": 8,
       "sections": [
         {
@@ -1172,9 +1172,9 @@
     "vn_synthesis_ban3": {
       "exists": true,
       "path": "VN_Market/03_Synthesis_Memos/2026-11-17_VN_Investment_Memo.md",
-      "size_kb": 5.5,
+      "size_kb": 5.4,
       "total_lines": 34,
-      "estimated_raw_tokens": 1601,
+      "estimated_raw_tokens": 1584,
       "sections_count": 3,
       "sections": [
         {
@@ -1752,9 +1752,9 @@
     "vn_minh_quan_ban7": {
       "exists": true,
       "path": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
-      "size_kb": 45.8,
+      "size_kb": 46.0,
       "total_lines": 287,
-      "estimated_raw_tokens": 13403,
+      "estimated_raw_tokens": 13460,
       "sections_count": 22,
       "sections": [
         {
@@ -1819,13 +1819,13 @@
         },
         {
           "level": 3,
-          "title": "💎 4.1. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
+          "title": "💎 4.1. Cổ Phiếu **`MSH`** — May Sông Hồng (HOSE)",
           "start_line": 91,
           "end_line": 117
         },
         {
           "level": 3,
-          "title": "💎 4.2. Cổ Phiếu **`MSB`** — Ngân hàng Hàng Hải (HOSE)",
+          "title": "💎 4.2. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
           "start_line": 118,
           "end_line": 144
         },
@@ -1837,19 +1837,19 @@
         },
         {
           "level": 3,
-          "title": "💎 4.4. Cổ Phiếu **`LHG`** — Long Hậu (KCN Long Hậu) (HOSE)",
+          "title": "💎 4.4. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
           "start_line": 172,
           "end_line": 198
         },
         {
           "level": 3,
-          "title": "💎 4.5. Cổ Phiếu **`GDA`** — Tôn Đông Á (UPCOM)",
+          "title": "💎 4.5. Cổ Phiếu **`CTS`** — Chứng khoán VietinBank (HOSE)",
           "start_line": 199,
           "end_line": 225
         },
         {
           "level": 3,
-          "title": "💎 4.6. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
+          "title": "💎 4.6. Cổ Phiếu **`TCH`** — Đầu tư Dịch vụ Tài chính Hoàng Huy (HOSE)",
           "start_line": 226,
           "end_line": 254
         },
@@ -1861,25 +1861,25 @@
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,400 đ (+0.44%)",
+          "title": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: nan đ (+nan%)",
           "start_line": 258,
           "end_line": 263
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,150 đ (+1.83%)",
+          "title": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: nan đ (+nan%)",
           "start_line": 264,
           "end_line": 269
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,700 đ (-0.37%)",
+          "title": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: nan đ (+nan%)",
           "start_line": 270,
           "end_line": 275
         },
         {
           "level": 3,
-          "title": "⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 14,350 đ (+0.35%)",
+          "title": "⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: nan đ (+nan%)",
           "start_line": 276,
           "end_line": 283
         },
@@ -2037,63 +2037,47 @@
             "end_line": 90
           }
         ],
-        "BAF": [
+        "MSH": [
           {
-            "section": "💎 4.1. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
-            "start_line": 91,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
-            "end_line": 117
-          },
-          {
-            "section": "💎 4.1. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
+            "section": "💎 4.1. Cổ Phiếu **`MSH`** — May Sông Hồng (HOSE)",
             "start_line": 91,
             "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
             "end_line": 117
           }
         ],
-        "MSB": [
+        "HDB": [
           {
-            "section": "💎 4.2. Cổ Phiếu **`MSB`** — Ngân hàng Hàng Hải (HOSE)",
+            "section": "💎 4.2. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
             "start_line": 118,
             "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
             "end_line": 144
           }
         ],
-        "LHG": [
+        "BAF": [
           {
-            "section": "💎 4.4. Cổ Phiếu **`LHG`** — Long Hậu (KCN Long Hậu) (HOSE)",
+            "section": "💎 4.4. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
+            "start_line": 172,
+            "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
+            "end_line": 198
+          },
+          {
+            "section": "💎 4.4. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
             "start_line": 172,
             "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
             "end_line": 198
           }
         ],
-        "KCN": [
+        "CTS": [
           {
-            "section": "💎 4.4. Cổ Phiếu **`LHG`** — Long Hậu (KCN Long Hậu) (HOSE)",
-            "start_line": 172,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
-            "end_line": 198
-          }
-        ],
-        "GDA": [
-          {
-            "section": "💎 4.5. Cổ Phiếu **`GDA`** — Tôn Đông Á (UPCOM)",
+            "section": "💎 4.5. Cổ Phiếu **`CTS`** — Chứng khoán VietinBank (HOSE)",
             "start_line": 199,
             "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
             "end_line": 225
           }
         ],
-        "UPCOM": [
+        "TCH": [
           {
-            "section": "💎 4.5. Cổ Phiếu **`GDA`** — Tôn Đông Á (UPCOM)",
-            "start_line": 199,
-            "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
-            "end_line": 225
-          }
-        ],
-        "HDB": [
-          {
-            "section": "💎 4.6. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
+            "section": "💎 4.6. Cổ Phiếu **`TCH`** — Đầu tư Dịch vụ Tài chính Hoàng Huy (HOSE)",
             "start_line": 226,
             "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
             "end_line": 254
@@ -2131,7 +2115,7 @@
         ],
         "PDR": [
           {
-            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,400 đ (+0.44%)",
+            "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: nan đ (+nan%)",
             "start_line": 258,
             "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
             "end_line": 263
@@ -2139,7 +2123,7 @@
         ],
         "DXG": [
           {
-            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,150 đ (+1.83%)",
+            "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: nan đ (+nan%)",
             "start_line": 264,
             "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
             "end_line": 269
@@ -2147,7 +2131,7 @@
         ],
         "KBC": [
           {
-            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,700 đ (-0.37%)",
+            "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: nan đ (+nan%)",
             "start_line": 270,
             "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
             "end_line": 275
@@ -2158,9 +2142,9 @@
     "master_cio_ban8": {
       "exists": true,
       "path": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-      "size_kb": 30.5,
+      "size_kb": 30.7,
       "total_lines": 251,
-      "estimated_raw_tokens": 8929,
+      "estimated_raw_tokens": 8974,
       "sections_count": 27,
       "sections": [
         {
@@ -2231,13 +2215,13 @@
         },
         {
           "level": 4,
-          "title": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
+          "title": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
           "start_line": 109,
           "end_line": 114
         },
         {
           "level": 4,
-          "title": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
+          "title": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
           "start_line": 115,
           "end_line": 120
         },
@@ -2261,13 +2245,13 @@
         },
         {
           "level": 4,
-          "title": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+          "title": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
           "start_line": 143,
           "end_line": 149
         },
         {
           "level": 4,
-          "title": "🔹 MSB — Ngân hàng Hàng Hải (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
+          "title": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
           "start_line": 150,
           "end_line": 156
         },
@@ -2279,19 +2263,19 @@
         },
         {
           "level": 4,
-          "title": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+          "title": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
           "start_line": 164,
           "end_line": 170
         },
         {
           "level": 4,
-          "title": "🔹 GDA — Tôn Đông Á (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+          "title": "🔹 CTS — Chứng khoán VietinBank (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
           "start_line": 171,
           "end_line": 177
         },
         {
           "level": 4,
-          "title": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
+          "title": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
           "start_line": 178,
           "end_line": 186
         },
@@ -2470,9 +2454,9 @@
           },
           {
             "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
-            "start_line": 115,
+            "start_line": 109,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-            "end_line": 120
+            "end_line": 114
           },
           {
             "section": "🔹 MSFT — Microsoft Corp. (CORE COMPOUNDER)",
@@ -2481,33 +2465,33 @@
             "end_line": 128
           }
         ],
-        "AVGO": [
-          {
-            "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
-            "start_line": 109,
-            "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-            "end_line": 114
-          }
-        ],
-        "ALPHA": [
-          {
-            "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
-            "start_line": 109,
-            "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-            "end_line": 114
-          }
-        ],
         "TSM": [
           {
             "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
-            "start_line": 115,
+            "start_line": 109,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-            "end_line": 120
+            "end_line": 114
           }
         ],
         "TSMC": [
           {
             "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
+            "start_line": 109,
+            "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
+            "end_line": 114
+          }
+        ],
+        "AVGO": [
+          {
+            "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
+            "start_line": 115,
+            "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
+            "end_line": 120
+          }
+        ],
+        "ALPHA": [
+          {
+            "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
             "start_line": 115,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 120
@@ -2521,15 +2505,9 @@
             "end_line": 128
           }
         ],
-        "BAF": [
+        "MSH": [
           {
-            "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
-            "start_line": 143,
-            "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-            "end_line": 149
-          },
-          {
-            "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 143,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 149
@@ -2537,13 +2515,13 @@
         ],
         "ROUND": [
           {
-            "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 143,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 149
           },
           {
-            "section": "🔹 MSB — Ngân hàng Hàng Hải (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 150,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 156
@@ -2555,19 +2533,19 @@
             "end_line": 163
           },
           {
-            "section": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 164,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 170
           },
           {
-            "section": "🔹 GDA — Tôn Đông Á (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 CTS — Chứng khoán VietinBank (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 171,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 177
           },
           {
-            "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 178,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 186
@@ -2575,13 +2553,13 @@
         ],
         "MULTI": [
           {
-            "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 143,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 149
           },
           {
-            "section": "🔹 MSB — Ngân hàng Hàng Hải (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 150,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 156
@@ -2593,59 +2571,57 @@
             "end_line": 163
           },
           {
-            "section": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 164,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 170
           },
           {
-            "section": "🔹 GDA — Tôn Đông Á (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 CTS — Chứng khoán VietinBank (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 171,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 177
           },
           {
-            "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 178,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 186
           }
         ],
-        "MSB": [
+        "HDB": [
           {
-            "section": "🔹 MSB — Ngân hàng Hàng Hải (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 150,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 156
           }
         ],
-        "LHG": [
+        "BAF": [
           {
-            "section": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "start_line": 164,
+            "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
+            "end_line": 170
+          },
+          {
+            "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 164,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 170
           }
         ],
-        "KCN": [
+        "CTS": [
           {
-            "section": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
-            "start_line": 164,
-            "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-            "end_line": 170
-          }
-        ],
-        "GDA": [
-          {
-            "section": "🔹 GDA — Tôn Đông Á (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 CTS — Chứng khoán VietinBank (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 171,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 177
           }
         ],
-        "HDB": [
+        "TCH": [
           {
-            "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
+            "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
             "start_line": 178,
             "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
             "end_line": 186
@@ -2714,7 +2690,7 @@
       "path": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
       "size_kb": 10.0,
       "total_lines": 76,
-      "estimated_raw_tokens": 2917,
+      "estimated_raw_tokens": 2925,
       "sections_count": 7,
       "sections": [
         {
@@ -3438,9 +3414,9 @@
       },
       {
         "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
-        "start_line": 115,
+        "start_line": 109,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-        "end_line": 120
+        "end_line": 114
       }
     ],
     "TSMC": [
@@ -3452,9 +3428,9 @@
       },
       {
         "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
-        "start_line": 115,
+        "start_line": 109,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-        "end_line": 120
+        "end_line": 114
       }
     ],
     "GOOGL": [
@@ -3474,9 +3450,9 @@
       },
       {
         "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
-        "start_line": 109,
+        "start_line": 115,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-        "end_line": 114
+        "end_line": 120
       }
     ],
     "QUAN": [
@@ -4031,105 +4007,83 @@
         "end_line": 90
       }
     ],
-    "BAF": [
+    "MSH": [
       {
-        "section": "💎 4.1. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
+        "section": "💎 4.1. Cổ Phiếu **`MSH`** — May Sông Hồng (HOSE)",
         "start_line": 91,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 117
       },
       {
-        "section": "💎 4.1. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
-        "start_line": 91,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
-        "end_line": 117
-      },
-      {
-        "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
-        "start_line": 143,
-        "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-        "end_line": 149
-      },
-      {
-        "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 143,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 149
       }
     ],
-    "MSB": [
+    "HDB": [
       {
-        "section": "💎 4.2. Cổ Phiếu **`MSB`** — Ngân hàng Hàng Hải (HOSE)",
+        "section": "💎 4.2. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
         "start_line": 118,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 144
       },
       {
-        "section": "🔹 MSB — Ngân hàng Hàng Hải (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 150,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 156
       }
     ],
-    "LHG": [
+    "BAF": [
       {
-        "section": "💎 4.4. Cổ Phiếu **`LHG`** — Long Hậu (KCN Long Hậu) (HOSE)",
+        "section": "💎 4.4. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
         "start_line": 172,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 198
       },
       {
-        "section": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
-        "start_line": 164,
-        "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-        "end_line": 170
-      }
-    ],
-    "KCN": [
-      {
-        "section": "💎 4.4. Cổ Phiếu **`LHG`** — Long Hậu (KCN Long Hậu) (HOSE)",
+        "section": "💎 4.4. Cổ Phiếu **`BAF`** — Nông nghiệp BAF Việt Nam (HOSE)",
         "start_line": 172,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 198
       },
       {
-        "section": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "start_line": 164,
+        "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
+        "end_line": 170
+      },
+      {
+        "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 164,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 170
       }
     ],
-    "GDA": [
+    "CTS": [
       {
-        "section": "💎 4.5. Cổ Phiếu **`GDA`** — Tôn Đông Á (UPCOM)",
+        "section": "💎 4.5. Cổ Phiếu **`CTS`** — Chứng khoán VietinBank (HOSE)",
         "start_line": 199,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 225
       },
       {
-        "section": "🔹 GDA — Tôn Đông Á (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 CTS — Chứng khoán VietinBank (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 171,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 177
       }
     ],
-    "UPCOM": [
+    "TCH": [
       {
-        "section": "💎 4.5. Cổ Phiếu **`GDA`** — Tôn Đông Á (UPCOM)",
-        "start_line": 199,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
-        "end_line": 225
-      }
-    ],
-    "HDB": [
-      {
-        "section": "💎 4.6. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
+        "section": "💎 4.6. Cổ Phiếu **`TCH`** — Đầu tư Dịch vụ Tài chính Hoàng Huy (HOSE)",
         "start_line": 226,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 254
       },
       {
-        "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 178,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 186
@@ -4167,7 +4121,7 @@
     ],
     "PDR": [
       {
-        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,400 đ (+0.44%)",
+        "section": "⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: nan đ (+nan%)",
         "start_line": 258,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 263
@@ -4175,7 +4129,7 @@
     ],
     "DXG": [
       {
-        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,150 đ (+1.83%)",
+        "section": "⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: nan đ (+nan%)",
         "start_line": 264,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 269
@@ -4183,7 +4137,7 @@
     ],
     "KBC": [
       {
-        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,700 đ (-0.37%)",
+        "section": "⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: nan đ (+nan%)",
         "start_line": 270,
         "file": "VN_Market/07_Daily_Specialist/2026-11-17_VN_Specialist_Decision.md",
         "end_line": 275
@@ -4222,9 +4176,9 @@
       },
       {
         "section": "🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)",
-        "start_line": 115,
+        "start_line": 109,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-        "end_line": 120
+        "end_line": 114
       },
       {
         "section": "🔹 MSFT — Microsoft Corp. (CORE COMPOUNDER)",
@@ -4236,20 +4190,20 @@
     "ALPHA": [
       {
         "section": "🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))",
-        "start_line": 109,
+        "start_line": 115,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
-        "end_line": 114
+        "end_line": 120
       }
     ],
     "ROUND": [
       {
-        "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 143,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 149
       },
       {
-        "section": "🔹 MSB — Ngân hàng Hàng Hải (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 150,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 156
@@ -4261,19 +4215,19 @@
         "end_line": 163
       },
       {
-        "section": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 164,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 170
       },
       {
-        "section": "🔹 GDA — Tôn Đông Á (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 CTS — Chứng khoán VietinBank (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 171,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 177
       },
       {
-        "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 178,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 186
@@ -4281,13 +4235,13 @@
     ],
     "MULTI": [
       {
-        "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 MSH — May Sông Hồng (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 143,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 149
       },
       {
-        "section": "🔹 MSB — Ngân hàng Hàng Hải (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 150,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 156
@@ -4299,19 +4253,19 @@
         "end_line": 163
       },
       {
-        "section": "🔹 LHG — Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 BAF — Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 164,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 170
       },
       {
-        "section": "🔹 GDA — Tôn Đông Á (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 CTS — Chứng khoán VietinBank (SmallCap_HiddenGem) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 171,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 177
       },
       {
-        "section": "🔹 HDB — HDBank (VN30_LargeCap) (ROUND 2 MULTI-SECTOR SNIPER)",
+        "section": "🔹 TCH — Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth) (ROUND 2 MULTI-SECTOR SNIPER)",
         "start_line": 178,
         "file": "08_Master_Investment_CIO/2026-11-17_Master_CIO_Final_Decision.md",
         "end_line": 186
