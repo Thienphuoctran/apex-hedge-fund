@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17 08:55:43",
+  "generated_at": "2026-11-17 10:32:11",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "DIG,FPT",
+      "form_or_type": "NGHI_QUYET_HDQT_DU_AN",
+      "date": "Tue, 17 Nov 26 1",
+      "headline": "Loạt dự án lớn của FPT, DIG, Kinh Bắc và Aeon Mall... được gọi tên trong danh sách rà soát",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "HCM",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Tue, 17 Nov 26 1",
@@ -372,14 +380,6 @@
       "date": "Mon, 16 Nov 26 2",
       "headline": "Doanh thu thuần giảm 83%, Khang Điền (KDH) vẫn được dự báo lãi ròng hơn 1.500 tỷ đồng năm 2026",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "GMD",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Mon, 16 Nov 26 2",
-      "headline": "Lộ diện “con gà đẻ trứng vàng” của Gemadept (GMD), đóng góp gần 40% lợi nhuận trước thuế",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 364 hồ sơ SEC & 50 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 364 hồ sơ SEC & 49 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
