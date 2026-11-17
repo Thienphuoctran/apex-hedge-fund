@@ -23,5 +23,14 @@
     "role": "sentinel",
     "type": "sentinel_emergency",
     "content": "🚨 [BAN 9 CẢNH BÁO — HDB] Giá 22,300.00 (-1.33%) | Cách Stop 2xATR: +1.08% | SHORT 1 HỢP ĐỒNG VN30F1M"
+  },
+  {
+    "id": "ban9_emg_2026-11-17_HDB_CRITICAL",
+    "key": "ban9_emg_2026-11-17_HDB_CRITICAL",
+    "timestamp": "07:21:14",
+    "sender": "Victor (Ban 9 Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_emergency",
+    "content": "🚨 [BAN 9 CẢNH BÁO — HDB] Giá 22,300.00 (+0.00%) | Cách Stop 2xATR: +1.08% | SHORT 1 HỢP ĐỒNG VN30F1M"
   }
 ]

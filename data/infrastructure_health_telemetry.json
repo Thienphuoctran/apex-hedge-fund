@@ -1,8 +1,8 @@
 {
-  "audit_timestamp": "2026-11-16 09:36:56",
-  "audit_duration_seconds": 1.48,
-  "overall_infrastructure_health_score": 75,
-  "health_verdict": "CẦN LƯU Ý",
+  "audit_timestamp": "2026-11-17 00:21:22",
+  "audit_duration_seconds": 0.1,
+  "overall_infrastructure_health_score": 95,
+  "health_verdict": "XUẤT SẮC",
   "appointed_officers": {
     "sentinel_lead": "Ban 12 Trọng (Tổng Kiểm Sát Thể Chế & Liêm Chính)",
     "systems_architect": "Palmer (Cố Vấn Điều Hành Tối Cao & Trưởng Phòng Tổng Hệ Thống)",
@@ -10,87 +10,54 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 385,
-    "total_markdown_documents": 614,
+    "operational_institutional_reports": 406,
+    "total_markdown_documents": 643,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (385 báo cáo thể chế / 614 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (406 báo cáo thể chế / 643 tệp MD hiện có)."
   },
   "check_2_directory_density": {
-    "total_directories_scanned": 99,
+    "total_directories_scanned": 96,
     "dense_directories_flagged": [],
     "is_clean": true,
     "status": "HEALTHY"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1193,
-    "total_project_size_mb": 53.6,
-    "data_directory_size_mb": 28.15,
+    "total_active_files": 1055,
+    "total_project_size_mb": 28.63,
+    "data_directory_size_mb": 3.5,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "5.36%",
+    "github_quota_used_pct": "2.86%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 145.48,
-    "uncommitted_files_count": 23,
+    "git_directory_size_mb": 44.24,
+    "uncommitted_files_count": 21,
     "active_branch": "main",
     "status": "HEALTHY"
   },
   "check_5_log_files_and_rotation": {
-    "total_log_files_found": 8,
-    "log_files_details": [
-      {
-        "path": "data\\apex_cloud_supervisor.log",
-        "size_mb": 0.04
-      },
-      {
-        "path": "data\\apex_cron_daemon.log",
-        "size_mb": 0.06
-      },
-      {
-        "path": "data\\telegram_copilot_daemon.log",
-        "size_mb": 1.13
-      },
-      {
-        "path": "data\\logs\\cron_daemon.log",
-        "size_mb": 0.05
-      },
-      {
-        "path": "data\\logs\\inspector_trong.log",
-        "size_mb": 0.05
-      },
-      {
-        "path": "data\\logs\\live_intraday_brain.log",
-        "size_mb": 0.0
-      },
-      {
-        "path": "data\\logs\\sentinel_monitor.log",
-        "size_mb": 0.13
-      },
-      {
-        "path": "data\\logs\\telegram_copilot.log",
-        "size_mb": 0.38
-      }
-    ],
+    "total_log_files_found": 0,
+    "log_files_details": [],
     "rotation_threshold_mb": 5.0,
     "files_needing_rotation": [],
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 148.6,
-    "ssot_load_latency_ms": 0.72,
+    "json_directory_scan_latency_ms": 3.23,
+    "ssot_load_latency_ms": 0.18,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
   "check_7_ssot_and_capital_cohesion": {
     "account_id": "105C307855",
-    "cash_balance_vnd": 12516471.0,
-    "total_nav_vnd": 18151471.0,
+    "cash_balance_vnd": 14510422.0,
+    "total_nav_vnd": 20145422.0,
     "total_market_val_vnd": 5635000.0,
-    "cash_pct": 69.0,
+    "cash_pct": 72.0,
     "active_positions_count": 2,
     "active_positions_tickers": [
       "HDB",
