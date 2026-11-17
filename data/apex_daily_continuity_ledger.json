@@ -3,7 +3,7 @@
   "account_id": "105C307855",
   "chairman": "Trần Quốc Thiên Phước",
   "created_at": "2026-11-07 16:06:36",
-  "last_updated": "2026-11-17 08:55:36",
+  "last_updated": "2026-11-17 23:36:03",
   "historical_campaigns_completed": [
     {
       "campaign_id": "CAMPAIGN-VN-ROUND-01",
@@ -409,7 +409,7 @@
     },
     "2026-11-17": {
       "session_date": "2026-11-17",
-      "recorded_at": "2026-11-17 08:55:36",
+      "recorded_at": "2026-11-17 23:36:03",
       "total_stocks_scanned": 145,
       "total_sectors_scanned": 18,
       "market_breadth": {
@@ -422,7 +422,7 @@
       "top_leading_sectors": [
         {
           "sector_name": "Điện & Hạ Tầng Năng Lượng",
-          "score": 69.7,
+          "score": 69.8,
           "stage": "LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực)",
           "top_picks": [
             "NT2",
@@ -462,7 +462,7 @@
         },
         {
           "sector_name": "Ngân Hàng TMCP",
-          "score": 49.3,
+          "score": 49.4,
           "stage": "WEAKENING (Phân Hóa / Chững Lại)",
           "top_picks": [
             "HDB",
@@ -720,9 +720,9 @@
           "code": "FPT",
           "name": "Tập đoàn FPT",
           "price": 48500.0,
-          "rs_rating": 15,
+          "rs_rating": 16,
           "rejected_by": "Ban 3 VN (VSA/RS) & Ban 4 VN (Capital Fit)",
-          "rejection_reason": "Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 15/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV."
+          "rejection_reason": "Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 16/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV."
         },
         {
           "code": "DGC",
@@ -744,7 +744,7 @@
           "code": "FRT",
           "name": "Bán lẻ Kỹ thuật số FPT (Long Châu)",
           "price": 146000.0,
-          "rs_rating": 94,
+          "rs_rating": 93,
           "rejected_by": "Ban 4 VN (Quản trị Rủi ro Lô 100 CP)",
           "rejection_reason": "Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 146,000 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 72.05% tổng NAV (14,600,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30."
         },
@@ -781,8 +781,8 @@
   },
   "active_council_resolutions": {
     "resolution_id": "APEX-COUNCIL-12DEPT-2ASSIST-2026-11-17",
-    "generated_at": "08:55:13 Thứ Ba, ngày 17/11/2026",
-    "execution_time_seconds": 22.35,
+    "generated_at": "23:35:48 Thứ Ba, ngày 17/11/2026",
+    "execution_time_seconds": 15.18,
     "account_id": "105C307855",
     "account_cash_vnd": 11389522.0,
     "realized_pnl_round1_vnd": 167119.0,
@@ -800,146 +800,146 @@
       "what_we_did_last_session": "Phiên 2026-11-17: Hệ thống đã quét toàn diện 145 cổ phiếu thuộc 18 nhóm ngành trên 3 sàn HOSE/HNX/UPCoM. 10 Phòng ban đã họp tranh biện trực tiếp, loại bỏ thói quen chỉ nhìn vào 4 mã cũ (hạ bậc FPT do RS=18 gãy MA20, hạ bậc DGC do RS=22 yếu, loại MWG/FRT khỏi danh mục mua trực tiếp do 1 lô 100 CP chiếm >35% vốn 20M). Đã tuyển chọn bộ Tầm ngắm Vòng 2 đa ngành có RS 81-96 và BCTC hạng AAA/AA vừa khít quy mô vốn 20.16 triệu VNĐ.",
       "priority_watchlist": [
         {
-          "code": "BAF",
-          "name": "Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem)",
-          "sector": "Nông Nghiệp & Chăn Nuôi 3F",
-          "reference_price_vnd": 31250.0,
-          "ideal_buy_zone_vnd": 31070.0,
-          "breakout_trigger_vnd": 31550.0,
-          "stop_loss_2atr_vnd": 30050.0,
-          "tp1_vnd": 32930.0,
+          "code": "MSH",
+          "name": "May Sông Hồng (SmallCap_HiddenGem)",
+          "sector": "Dệt May Xuất Khẩu",
+          "reference_price_vnd": 35050.0,
+          "ideal_buy_zone_vnd": 34680.0,
+          "breakout_trigger_vnd": 35680.0,
+          "stop_loss_2atr_vnd": 32670.0,
+          "tp1_vnd": 38550.0,
           "target_shares_lot100": 200,
-          "allocated_capital_vnd": 6250000.0,
-          "rs_rating": 95,
-          "legends_score": 88.0
+          "allocated_capital_vnd": 7010000.0,
+          "rs_rating": 94,
+          "legends_score": 93.6
         },
         {
-          "code": "MSB",
-          "name": "Ngân hàng Hàng Hải (MidCap_Growth)",
+          "code": "HDB",
+          "name": "HDBank (VN30_LargeCap)",
           "sector": "Ngân Hàng TMCP",
-          "reference_price_vnd": 16250.0,
-          "ideal_buy_zone_vnd": 16150.0,
-          "breakout_trigger_vnd": 16410.0,
-          "stop_loss_2atr_vnd": 15600.0,
-          "tp1_vnd": 17160.0,
+          "reference_price_vnd": 22400.0,
+          "ideal_buy_zone_vnd": 22240.0,
+          "breakout_trigger_vnd": 22660.0,
+          "stop_loss_2atr_vnd": 21360.0,
+          "tp1_vnd": 23860.0,
           "target_shares_lot100": 300,
-          "allocated_capital_vnd": 4875000.0,
-          "rs_rating": 98,
-          "legends_score": 85.8
+          "allocated_capital_vnd": 6720000.0,
+          "rs_rating": 97,
+          "legends_score": 91.6
         },
         {
           "code": "NT2",
           "name": "Điện lực Dầu khí Nhơn Trạch 2 (SmallCap_HiddenGem)",
           "sector": "Điện & Hạ Tầng Năng Lượng",
           "reference_price_vnd": 24200.0,
-          "ideal_buy_zone_vnd": 24000.0,
-          "breakout_trigger_vnd": 24540.0,
-          "stop_loss_2atr_vnd": 22850.0,
-          "tp1_vnd": 26090.0,
+          "ideal_buy_zone_vnd": 23990.0,
+          "breakout_trigger_vnd": 24560.0,
+          "stop_loss_2atr_vnd": 22770.0,
+          "tp1_vnd": 26200.0,
           "target_shares_lot100": 200,
           "allocated_capital_vnd": 4840000.0,
-          "rs_rating": 97,
-          "legends_score": 84.7
+          "rs_rating": 96,
+          "legends_score": 84.6
         },
         {
-          "code": "LHG",
-          "name": "Long Hậu (KCN Long Hậu) (SmallCap_HiddenGem)",
-          "sector": "BĐS Khu Công Nghiệp & Cao Su",
-          "reference_price_vnd": 26700.0,
-          "ideal_buy_zone_vnd": 26560.0,
-          "breakout_trigger_vnd": 26940.0,
-          "stop_loss_2atr_vnd": 25740.0,
-          "tp1_vnd": 28050.0,
+          "code": "BAF",
+          "name": "Nông nghiệp BAF Việt Nam (SmallCap_HiddenGem)",
+          "sector": "Nông Nghiệp & Chăn Nuôi 3F",
+          "reference_price_vnd": 31300.0,
+          "ideal_buy_zone_vnd": 31120.0,
+          "breakout_trigger_vnd": 31600.0,
+          "stop_loss_2atr_vnd": 30100.0,
+          "tp1_vnd": 32980.0,
           "target_shares_lot100": 200,
-          "allocated_capital_vnd": 5340000.0,
-          "rs_rating": 86,
+          "allocated_capital_vnd": 6260000.0,
+          "rs_rating": 95,
           "legends_score": 88.0
         },
         {
-          "code": "GDA",
-          "name": "Tôn Đông Á (SmallCap_HiddenGem)",
-          "sector": "Thép & Kim Loại Công Nghiệp",
-          "reference_price_vnd": 13250.0,
-          "ideal_buy_zone_vnd": 13150.0,
-          "breakout_trigger_vnd": 13410.0,
-          "stop_loss_2atr_vnd": 12590.0,
-          "tp1_vnd": 14170.0,
-          "target_shares_lot100": 300,
-          "allocated_capital_vnd": 3975000.0,
-          "rs_rating": 90,
-          "legends_score": 83.3
+          "code": "CTS",
+          "name": "Chứng khoán VietinBank (SmallCap_HiddenGem)",
+          "sector": "Chứng Khoán & Đầu Tư",
+          "reference_price_vnd": 23000.0,
+          "ideal_buy_zone_vnd": 22740.0,
+          "breakout_trigger_vnd": 23430.0,
+          "stop_loss_2atr_vnd": 21440.0,
+          "tp1_vnd": 25390.0,
+          "target_shares_lot100": 200,
+          "allocated_capital_vnd": 4600000.0,
+          "rs_rating": 85,
+          "legends_score": 83.7
         },
         {
-          "code": "HDB",
-          "name": "HDBank (VN30_LargeCap)",
-          "sector": "Ngân Hàng TMCP",
-          "reference_price_vnd": 22300.0,
-          "ideal_buy_zone_vnd": 22130.0,
-          "breakout_trigger_vnd": 22580.0,
-          "stop_loss_2atr_vnd": 21190.0,
-          "tp1_vnd": 23860.0,
+          "code": "TCH",
+          "name": "Đầu tư Dịch vụ Tài chính Hoàng Huy (MidCap_Growth)",
+          "sector": "Bất Động Sản Dân Cư & Đô Thị",
+          "reference_price_vnd": 13250.0,
+          "ideal_buy_zone_vnd": 13090.0,
+          "breakout_trigger_vnd": 13510.0,
+          "stop_loss_2atr_vnd": 12350.0,
+          "tp1_vnd": 14730.0,
           "target_shares_lot100": 300,
-          "allocated_capital_vnd": 6690000.0,
-          "rs_rating": 97,
-          "legends_score": 91.6
+          "allocated_capital_vnd": 3975000.0,
+          "rs_rating": 88,
+          "legends_score": 82.6
         }
       ],
       "rejected_stocks": [
-        "FPT (Hạ bậc khỏi danh sách mua ngay: Giá thực tế (49,400 ₫) đang gãy dưới MA20 (53,002 ₫), sức mạnh giá RS rơi xuống 17/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 24.52% NAV.)",
-        "DGC (Tạm hoãn mua mới: Dù BCTC nhiều tiền mặt nhưng dòng tiền ngắn hạn đang yếu (RS = 24/99, giá 32,650 ₫ dưới MA20 33,092 ₫), tránh chôn vốn khi cổ phiếu chưa vào pha đẩy giá.)",
-        "MWG (Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 72,800 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 36.14% tổng NAV (7,280,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30.)",
-        "FRT (Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 144,900 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 71.93% tổng NAV (14,490,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30.)",
+        "FPT (Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 15/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV.)",
+        "DGC (Tạm hoãn mua mới: Dù BCTC nhiều tiền mặt nhưng dòng tiền ngắn hạn đang yếu (RS = 22/99, giá 32,350 ₫ dưới MA20 33,032 ₫), tránh chôn vốn khi cổ phiếu chưa vào pha đẩy giá.)",
+        "MWG (Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 73,000 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 36.02% tổng NAV (7,300,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30.)",
+        "FRT (Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 146,000 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 72.05% tổng NAV (14,600,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30.)",
         "DIG (Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = 0.55x (< 0.85x), Beneish M-Score = -1.87 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng).)",
         "DXG (Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = 0.6x (< 0.85x), Beneish M-Score = -1.91 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng).)",
         "LTG (Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = -0.5x (< 0.85x), Beneish M-Score = -0.98 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng).)"
       ],
       "walk_forward_verification": [
         {
-          "code": "BAF",
-          "ref_price_vnd": 31250.0,
-          "current_price_vnd": 31300.0,
-          "delta_pct": 0.16,
-          "ideal_buy_zone_vnd": 31070.0,
-          "status": "IN_BUY_ZONE"
+          "code": "MSH",
+          "ref_price_vnd": 35050.0,
+          "current_price_vnd": 35050.0,
+          "delta_pct": 0.0,
+          "ideal_buy_zone_vnd": 34680.0,
+          "status": "WAITING_PULLBACK_OR_BREAKOUT"
         },
         {
-          "code": "MSB",
-          "ref_price_vnd": 16250.0,
-          "current_price_vnd": 16350.0,
-          "delta_pct": 0.62,
-          "ideal_buy_zone_vnd": 16150.0,
-          "status": "WAITING_PULLBACK_OR_BREAKOUT"
+          "code": "HDB",
+          "ref_price_vnd": 22400.0,
+          "current_price_vnd": 22400.0,
+          "delta_pct": 0.0,
+          "ideal_buy_zone_vnd": 22240.0,
+          "status": "IN_BUY_ZONE"
         },
         {
           "code": "NT2",
           "ref_price_vnd": 24200.0,
           "current_price_vnd": 24200.0,
           "delta_pct": 0.0,
-          "ideal_buy_zone_vnd": 24000.0,
+          "ideal_buy_zone_vnd": 23990.0,
           "status": "IN_BUY_ZONE"
         },
         {
-          "code": "LHG",
-          "ref_price_vnd": 26700.0,
-          "current_price_vnd": 26600.0,
-          "delta_pct": -0.37,
-          "ideal_buy_zone_vnd": 26560.0,
+          "code": "BAF",
+          "ref_price_vnd": 31300.0,
+          "current_price_vnd": 31300.0,
+          "delta_pct": 0.0,
+          "ideal_buy_zone_vnd": 31120.0,
           "status": "IN_BUY_ZONE"
         },
         {
-          "code": "GDA",
+          "code": "CTS",
+          "ref_price_vnd": 23000.0,
+          "current_price_vnd": 23000.0,
+          "delta_pct": 0.0,
+          "ideal_buy_zone_vnd": 22740.0,
+          "status": "WAITING_PULLBACK_OR_BREAKOUT"
+        },
+        {
+          "code": "TCH",
           "ref_price_vnd": 13250.0,
-          "current_price_vnd": 13050.0,
-          "delta_pct": -1.51,
-          "ideal_buy_zone_vnd": 13150.0,
-          "status": "IN_BUY_ZONE"
-        },
-        {
-          "code": "HDB",
-          "ref_price_vnd": 22300.0,
-          "current_price_vnd": 22400.0,
-          "delta_pct": 0.45,
-          "ideal_buy_zone_vnd": 22130.0,
+          "current_price_vnd": 13250.0,
+          "delta_pct": 0.0,
+          "ideal_buy_zone_vnd": 13090.0,
           "status": "WAITING_PULLBACK_OR_BREAKOUT"
         }
       ]
@@ -955,7 +955,7 @@
         "dept_id": "BAN_01_MACRO_SECTOR",
         "dept_name": "Ban 1 VN — Phân Tích Vĩ Mô & Luân Chuyển 18 Nhóm Ngành (`vn-macro-monetary-agent`)",
         "head": "Chuyên gia Hoàng (Trưởng Ban Vĩ Mô)",
-        "quantitative_findings": "Quét trực tiếp 145 mã trên 18 ngành cho thấy độ rộng thị trường hiện đạt 23.4% mã nằm trên MA20 và 16.6% mã nằm trên MA200 -> Thị trường phân hóa mạnh, dòng tiền rút khỏi các cổ phiếu công nghệ/hóa chất định giá cao để xoay trục sang Top 5 ngành dẫn dắt: Điện & Hạ Tầng Năng Lượng (69.7đ), Bất Động Sản Dân Cư & Đô Thị (64.3đ), Thép & Kim Loại Công Nghiệp (64.1đ), Nông Nghiệp & Chăn Nuôi 3F (51.9đ), Ngân Hàng TMCP (49.3đ)."
+        "quantitative_findings": "Quét trực tiếp 145 mã trên 18 ngành cho thấy độ rộng thị trường hiện đạt 23.4% mã nằm trên MA20 và 16.6% mã nằm trên MA200 -> Thị trường phân hóa mạnh, dòng tiền rút khỏi các cổ phiếu công nghệ/hóa chất định giá cao để xoay trục sang Top 5 ngành dẫn dắt: Điện & Hạ Tầng Năng Lượng (69.8đ), Bất Động Sản Dân Cư & Đô Thị (64.3đ), Thép & Kim Loại Công Nghiệp (64.1đ), Nông Nghiệp & Chăn Nuôi 3F (51.9đ), Ngân Hàng TMCP (49.4đ)."
       },
       {
         "dept_id": "BAN_10_BCTC_SCOUT",
@@ -1501,9 +1501,9 @@
         "code": "FPT",
         "name": "Tập đoàn FPT",
         "price": 48500.0,
-        "rs_rating": 15,
+        "rs_rating": 16,
         "rejected_by": "Ban 3 VN (VSA/RS) & Ban 4 VN (Capital Fit)",
-        "rejection_reason": "Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 15/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV."
+        "rejection_reason": "Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 16/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV."
       },
       {
         "code": "DGC",
@@ -1525,7 +1525,7 @@
         "code": "FRT",
         "name": "Bán lẻ Kỹ thuật số FPT (Long Châu)",
         "price": 146000.0,
-        "rs_rating": 94,
+        "rs_rating": 93,
         "rejected_by": "Ban 4 VN (Quản trị Rủi ro Lô 100 CP)",
         "rejection_reason": "Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 146,000 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 72.05% tổng NAV (14,600,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30."
       },
@@ -1563,7 +1563,7 @@
     "FPT": {
       "rejected_on": "2026-11-17",
       "price_at_rejection": 48500.0,
-      "reason": "Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 15/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV.",
+      "reason": "Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 16/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV.",
       "rejected_by_department": "Ban 3 VN (VSA/RS) & Ban 4 VN (Capital Fit)"
     },
     "DGC": {
@@ -1605,7 +1605,7 @@
   },
   "handover_briefing_for_next_session": {
     "generated_from_session": "2026-11-17",
-    "generated_at": "2026-11-17 08:55:36",
+    "generated_at": "2026-11-17 23:36:03",
     "account_cash_vnd": 11389522.0,
     "portfolio_status": "ALL_CASH_STANDDOWN",
     "what_we_did_last_session": "Phiên 2026-11-17: Hệ thống đã quét toàn diện 145 cổ phiếu thuộc 18 nhóm ngành trên 3 sàn HOSE/HNX/UPCoM. 10 Phòng ban đã họp tranh biện trực tiếp, loại bỏ thói quen chỉ nhìn vào 4 mã cũ (hạ bậc FPT do RS=18 gãy MA20, hạ bậc DGC do RS=22 yếu, loại MWG/FRT khỏi danh mục mua trực tiếp do 1 lô 100 CP chiếm >35% vốn 20M). Đã tuyển chọn bộ Tầm ngắm Vòng 2 đa ngành có RS 81-96 và BCTC hạng AAA/AA vừa khít quy mô vốn 20.16 triệu VNĐ.",
@@ -1696,7 +1696,7 @@
       }
     ],
     "Rejected_Stocks_Do_Not_Repropose_Unless_Reversal": [
-      "FPT (Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 15/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV.)",
+      "FPT (Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 16/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV.)",
       "DGC (Tạm hoãn mua mới: Dù BCTC nhiều tiền mặt nhưng dòng tiền ngắn hạn đang yếu (RS = 22/99, giá 32,350 ₫ dưới MA20 33,032 ₫), tránh chôn vốn khi cổ phiếu chưa vào pha đẩy giá.)",
       "MWG (Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 73,000 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 36.02% tổng NAV (7,300,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30.)",
       "FRT (Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 146,000 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 72.05% tổng NAV (14,600,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30.)",

@@ -1,6 +1,6 @@
 {
   "session_date": "2026-11-17",
-  "recorded_at": "2026-11-17 08:55:36",
+  "recorded_at": "2026-11-17 23:36:03",
   "total_stocks_scanned": 145,
   "total_sectors_scanned": 18,
   "market_breadth": {
@@ -13,7 +13,7 @@
   "top_leading_sectors": [
     {
       "sector_name": "Điện & Hạ Tầng Năng Lượng",
-      "score": 69.7,
+      "score": 69.8,
       "stage": "LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực)",
       "top_picks": [
         "NT2",
@@ -53,7 +53,7 @@
     },
     {
       "sector_name": "Ngân Hàng TMCP",
-      "score": 49.3,
+      "score": 49.4,
       "stage": "WEAKENING (Phân Hóa / Chững Lại)",
       "top_picks": [
         "HDB",
@@ -311,9 +311,9 @@
       "code": "FPT",
       "name": "Tập đoàn FPT",
       "price": 48500.0,
-      "rs_rating": 15,
+      "rs_rating": 16,
       "rejected_by": "Ban 3 VN (VSA/RS) & Ban 4 VN (Capital Fit)",
-      "rejection_reason": "Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 15/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV."
+      "rejection_reason": "Hạ bậc khỏi danh sách mua ngay: Giá thực tế (48,500 ₫) đang gãy dưới MA20 (52,558 ₫), sức mạnh giá RS rơi xuống 16/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.93% NAV."
     },
     {
       "code": "DGC",
@@ -335,7 +335,7 @@
       "code": "FRT",
       "name": "Bán lẻ Kỹ thuật số FPT (Long Châu)",
       "price": 146000.0,
-      "rs_rating": 94,
+      "rs_rating": 93,
       "rejected_by": "Ban 4 VN (Quản trị Rủi ro Lô 100 CP)",
       "rejection_reason": "Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 146,000 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 72.05% tổng NAV (14,600,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30."
     },

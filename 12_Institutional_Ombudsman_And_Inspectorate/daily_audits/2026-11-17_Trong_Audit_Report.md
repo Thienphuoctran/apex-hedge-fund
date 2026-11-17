@@ -5,14 +5,14 @@
 > **KÍNH TRÌNH:** Chủ tịch Hội đồng Quản trị — **Trần Quốc Thiên Phước**  
 > **THỜI ĐIỂM KIỂM SÁT:** `23:30:00 Thứ Ba, ngày 17/11/2026`  
 > **TÌNH TRẠNG KỶ LUẬT CHUNG:** **KỶ LUẬT THÉP — LÀM THẬT VIỆC THẬT (ZERO CẨU THẢ)** (Điểm Kỷ Luật: `96.2/100` | Điểm Chuyên Môn: `94.1/100`)  
-> **SỨC KHỎE KỸ THUẬT HỆ THỐNG:** `100/100` (VPS Feed: `HEALTHY (7048.7ms)` | Số Lỗi Phát Hiện: `0`)  
+> **SỨC KHỎE KỸ THUẬT HỆ THỐNG:** `100/100` (VPS Feed: `HEALTHY (7151.0ms)` | Số Lỗi Phát Hiện: `0`)  
 
 ---
 
 ## PHẦN I: KẾT QUẢ KIỂM TOÁN TOÀN VẸN HỆ THỐNG & KỸ THUẬT 24/24
 
-1. **Tài sản & Số dư SSOT V2.0**: Đã đối soát chuẩn xác NAV `20,145,422 ₫` | Tiền mặt `14,510,422 ₫` (72.0% Cash) | Đang giữ: `HDB (100 CP), MSH (100 CP)` tại két TCBS `105C307855`. Không có sai lệch.
-2. **Kết nối Dữ liệu Thị trường (VPS Live Feed)**: Hoạt động bình thường, độ trễ đạt `7048.7 ms` (< 200ms đạt chuẩn cao cấp).
+1. **Tài sản & Số dư SSOT V2.0**: Đã đối soát chuẩn xác NAV `20,264,522 ₫` | Tiền mặt `11,389,522 ₫` (56.2% Cash) | Đang giữ: `HDB (100 CP), MSH (100 CP), BAF (100 CP)` tại két TCBS `105C307855`. Không có sai lệch.
+2. **Kết nối Dữ liệu Thị trường (VPS Live Feed)**: Hoạt động bình thường, độ trễ đạt `7151.0 ms` (< 200ms đạt chuẩn cao cấp).
 3. **Kiểm tra Mã Nguồn & Tệp Dữ Liệu**: Đã quét toàn bộ các file JSON/Python, không phát hiện tệp bị lỗi cú pháp hay rò rỉ token bảo mật.
 4. **Sổ Cái Ký Ức Liên Ngày**: Đã niêm phong mã băm SHA-256 an toàn, bảo đảm ngày mai nối tiếp 100% mạch công việc.
 
