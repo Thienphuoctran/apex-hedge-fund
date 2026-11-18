@@ -3821,6 +3821,727 @@
         "TSLA": -0.23
       },
       "nvda_news": []
+    },
+    "0425_NVDA_EARNINGS_AH": {
+      "timestamp_ict": "2026-11-19 04:23:43",
+      "source": "LIVE_STREAM",
+      "quotes": {
+        "ES=F": {
+          "last": 7325.75,
+          "prev": 7359.0,
+          "regular_close": 7325.75,
+          "high": 7411.25,
+          "low": 7322.5,
+          "chg_pct": -0.45,
+          "reg_chg_pct": -0.45,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18 10:42:00-05:00",
+          "slot_prices": {
+            "09:31": 7381.5,
+            "10:30": 7351.0,
+            "13:00": 7325.75,
+            "15:59": 7325.75
+          }
+        },
+        "NQ=F": {
+          "last": 27028.0,
+          "prev": 27075.5,
+          "regular_close": 27028.0,
+          "high": 27424.5,
+          "low": 26951.75,
+          "chg_pct": -0.18,
+          "reg_chg_pct": -0.18,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18 10:42:00-05:00",
+          "slot_prices": {
+            "09:31": 27283.75,
+            "10:30": 27168.75,
+            "13:00": 27028.0,
+            "15:59": 27028.0
+          }
+        },
+        "YM=F": {
+          "last": 50224.0,
+          "prev": 50815.0,
+          "regular_close": 50224.0,
+          "high": 51017.0,
+          "low": 50199.0,
+          "chg_pct": -1.16,
+          "reg_chg_pct": -1.16,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18",
+          "slot_prices": {}
+        },
+        "RTY=F": {
+          "last": 2714.6001,
+          "prev": 2711.2,
+          "regular_close": 2714.6001,
+          "high": 2737.0,
+          "low": 2694.3999,
+          "chg_pct": 0.13,
+          "reg_chg_pct": 0.13,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18",
+          "slot_prices": {}
+        },
+        "^GSPC": {
+          "last": 7323.63,
+          "prev": 7340.53,
+          "regular_close": 7323.63,
+          "high": 7367.68,
+          "low": 7285.76,
+          "chg_pct": -0.23,
+          "reg_chg_pct": -0.23,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:20:00.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {
+            "09:31": 7362.3599,
+            "10:30": 7332.1001,
+            "13:00": 7303.98,
+            "15:59": 7303.98
+          }
+        },
+        "^IXIC": {
+          "last": 24429.885,
+          "prev": 24328.383,
+          "regular_close": 24429.885,
+          "high": 24538.779,
+          "low": 24225.304,
+          "chg_pct": 0.42,
+          "reg_chg_pct": 0.42,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:23:56.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {
+            "09:31": 24501.6816,
+            "10:30": 24430.0273,
+            "13:00": 24322.707,
+            "15:59": 24322.707
+          }
+        },
+        "^DJI": {
+          "last": 50198.17,
+          "prev": 50759.42,
+          "regular_close": 50198.17,
+          "high": 50637.7,
+          "low": 50029.35,
+          "chg_pct": -1.11,
+          "reg_chg_pct": -1.11,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:20:01.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {
+            "09:31": 50590.2617,
+            "10:30": 50299.2109,
+            "13:00": 50089.7109,
+            "15:59": 50089.7109
+          }
+        },
+        "^RUT": {
+          "last": 2714.306,
+          "prev": 2701.871,
+          "regular_close": 2714.306,
+          "high": 2736.441,
+          "low": 2697.711,
+          "chg_pct": 0.46,
+          "reg_chg_pct": 0.46,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:08:00.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {}
+        },
+        "^VIX": {
+          "last": 24.56,
+          "prev": 25.46,
+          "regular_close": 24.56,
+          "high": 26.26,
+          "low": 23.45,
+          "chg_pct": -3.53,
+          "reg_chg_pct": -3.53,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:15:01.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {
+            "09:31": 24.12,
+            "10:30": 24.37,
+            "13:00": 24.69,
+            "15:59": 24.69
+          }
+        },
+        "^TNX": {
+          "last": 5.068,
+          "prev": 5.103,
+          "regular_close": 5.068,
+          "high": 5.129,
+          "low": 5.052,
+          "chg_pct": -0.69,
+          "reg_chg_pct": -0.69,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:23:46.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {
+            "09:31": 5.095,
+            "10:30": 5.08,
+            "13:00": 5.072,
+            "15:59": 5.072
+          }
+        },
+        "DX-Y.NYB": {
+          "last": 103.808,
+          "prev": 103.485,
+          "regular_close": 103.808,
+          "high": 103.911,
+          "low": 103.586,
+          "chg_pct": 0.31,
+          "reg_chg_pct": 0.31,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:23:55.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {
+            "09:31": 103.816,
+            "10:30": 103.817,
+            "13:00": 103.83,
+            "15:59": 103.83
+          }
+        },
+        "CL=F": {
+          "last": 83.12,
+          "prev": 86.01,
+          "regular_close": 83.12,
+          "high": 85.95,
+          "low": 81.97,
+          "chg_pct": -3.36,
+          "reg_chg_pct": -3.36,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:13:00.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {
+            "09:31": 84.09,
+            "10:30": 83.17,
+            "13:00": 82.94,
+            "15:59": 82.94
+          }
+        },
+        "GC=F": {
+          "last": 3727.8,
+          "prev": 3864.2,
+          "regular_close": 3727.8,
+          "high": 3859.3,
+          "low": 3721.8,
+          "chg_pct": -3.53,
+          "reg_chg_pct": -3.53,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:13:53.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {}
+        },
+        "BTC-USD": {
+          "last": 62451.4,
+          "prev": 63877.04,
+          "regular_close": 62451.4,
+          "high": 65182.79,
+          "low": 62220.84,
+          "chg_pct": -2.23,
+          "reg_chg_pct": -2.23,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:23:56.000-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {}
+        },
+        "VNM": {
+          "last": 16.7,
+          "prev": 16.67,
+          "regular_close": 16.7,
+          "high": 16.725,
+          "low": 16.605,
+          "chg_pct": 0.18,
+          "reg_chg_pct": 0.18,
+          "ah_price": null,
+          "ah_chg_vs_close_pct": null,
+          "bar_ts": "2026-11-18T16:00:00.139-0500",
+          "feed_source": "CNBC_REALTIME(REG_MKT)",
+          "slot_prices": {
+            "09:31": 16.6505,
+            "10:30": 16.67,
+            "13:00": 16.635,
+            "15:59": 16.635
+          }
+        },
+        "EEM": {
+          "last": 57.85,
+          "prev": 58.27,
+          "regular_close": 57.88,
+          "high": 58.375,
+          "low": 57.54,
+          "chg_pct": -0.72,
+          "reg_chg_pct": -0.67,
+          "ah_price": 57.85,
+          "ah_chg_vs_close_pct": -0.05,
+          "bar_ts": "2026-11-18T16:20:01.000-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {
+            "09:31": 58.315,
+            "10:30": 58.03,
+            "13:00": 57.765,
+            "15:59": 57.765
+          }
+        },
+        "SMH": {
+          "last": 460.4,
+          "prev": 460.1,
+          "regular_close": 459.54,
+          "high": 469.5,
+          "low": 452.85,
+          "chg_pct": 0.07,
+          "reg_chg_pct": -0.12,
+          "ah_price": 460.4,
+          "ah_chg_vs_close_pct": 0.19,
+          "bar_ts": "2026-11-18T16:23:26.599-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {
+            "09:31": 467.95,
+            "10:30": 460.78,
+            "13:00": 457.91,
+            "15:59": 457.91
+          }
+        },
+        "XLK": {
+          "last": 164.35,
+          "prev": 163.26,
+          "regular_close": 163.81,
+          "high": 165.39,
+          "low": 161.665,
+          "chg_pct": 0.67,
+          "reg_chg_pct": 0.34,
+          "ah_price": 164.35,
+          "ah_chg_vs_close_pct": 0.33,
+          "bar_ts": "2026-11-18T16:23:06.254-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {
+            "09:31": 165.0,
+            "10:30": 163.55,
+            "13:00": 162.83,
+            "15:59": 162.83
+          }
+        },
+        "XLF": {
+          "last": 56.42,
+          "prev": 57.07,
+          "regular_close": 56.42,
+          "high": 57.01,
+          "low": 56.38,
+          "chg_pct": -1.14,
+          "reg_chg_pct": -1.14,
+          "ah_price": 56.42,
+          "ah_chg_vs_close_pct": 0.0,
+          "bar_ts": "2026-11-18T16:23:48.278-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {
+            "09:31": 56.8044,
+            "10:30": 56.59,
+            "13:00": 56.39,
+            "15:59": 56.39
+          }
+        },
+        "XLE": {
+          "last": 61.3601,
+          "prev": 63.36,
+          "regular_close": 61.29,
+          "high": 63.28,
+          "low": 61.255,
+          "chg_pct": -3.16,
+          "reg_chg_pct": -3.27,
+          "ah_price": 61.3601,
+          "ah_chg_vs_close_pct": 0.11,
+          "bar_ts": "2026-11-18T16:17:43.704-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XLI": {
+          "last": 164.66,
+          "prev": 164.75,
+          "regular_close": 164.66,
+          "high": 165.845,
+          "low": 163.77,
+          "chg_pct": -0.05,
+          "reg_chg_pct": -0.05,
+          "ah_price": 164.66,
+          "ah_chg_vs_close_pct": 0.0,
+          "bar_ts": "2026-11-18T16:00:02.443-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XLY": {
+          "last": 119.2229,
+          "prev": 117.1,
+          "regular_close": 119.2,
+          "high": 119.98,
+          "low": 117.23,
+          "chg_pct": 1.81,
+          "reg_chg_pct": 1.79,
+          "ah_price": 119.2229,
+          "ah_chg_vs_close_pct": 0.02,
+          "bar_ts": "2026-11-18T16:05:43.084-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XLV": {
+          "last": 181.5409,
+          "prev": 185.24,
+          "regular_close": 181.17,
+          "high": 185.285,
+          "low": 180.74,
+          "chg_pct": -2.0,
+          "reg_chg_pct": -2.2,
+          "ah_price": 181.5409,
+          "ah_chg_vs_close_pct": 0.2,
+          "bar_ts": "2026-11-18T16:18:54.961-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XLP": {
+          "last": 91.06,
+          "prev": 91.46,
+          "regular_close": 91.18,
+          "high": 91.725,
+          "low": 90.59,
+          "chg_pct": -0.44,
+          "reg_chg_pct": -0.31,
+          "ah_price": 91.06,
+          "ah_chg_vs_close_pct": -0.13,
+          "bar_ts": "2026-11-18T16:22:50.870-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XLU": {
+          "last": 43.5239,
+          "prev": 43.42,
+          "regular_close": 43.55,
+          "high": 43.72,
+          "low": 43.19,
+          "chg_pct": 0.24,
+          "reg_chg_pct": 0.3,
+          "ah_price": 43.5239,
+          "ah_chg_vs_close_pct": -0.06,
+          "bar_ts": "2026-11-18T16:23:54.461-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XLRE": {
+          "last": 43.5422,
+          "prev": 43.59,
+          "regular_close": 43.62,
+          "high": 43.755,
+          "low": 43.25,
+          "chg_pct": -0.11,
+          "reg_chg_pct": 0.07,
+          "ah_price": 43.5422,
+          "ah_chg_vs_close_pct": -0.18,
+          "bar_ts": "2026-11-18T16:18:46.284-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XLC": {
+          "last": 105.65,
+          "prev": 105.26,
+          "regular_close": 105.58,
+          "high": 106.485,
+          "low": 105.18,
+          "chg_pct": 0.37,
+          "reg_chg_pct": 0.3,
+          "ah_price": 105.65,
+          "ah_chg_vs_close_pct": 0.07,
+          "bar_ts": "2026-11-18T16:04:40.782-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XLB": {
+          "last": 50.46,
+          "prev": 50.84,
+          "regular_close": 50.46,
+          "high": 50.73,
+          "low": 50.12,
+          "chg_pct": -0.75,
+          "reg_chg_pct": -0.75,
+          "ah_price": 50.46,
+          "ah_chg_vs_close_pct": 0.0,
+          "bar_ts": "2026-11-18T16:00:00.228-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "NVDA": {
+          "last": 151.1932,
+          "prev": 155.46,
+          "regular_close": 150.96,
+          "high": 159.7,
+          "low": 150.4,
+          "chg_pct": -2.74,
+          "reg_chg_pct": -2.89,
+          "ah_price": 151.1932,
+          "ah_chg_vs_close_pct": 0.15,
+          "bar_ts": "2026-11-18T16:23:54.845-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {
+            "09:31": 158.62,
+            "10:30": 153.57,
+            "13:00": 152.821,
+            "15:59": 152.821
+          }
+        },
+        "AVGO": {
+          "last": 354.4,
+          "prev": 341.6,
+          "regular_close": 354.05,
+          "high": 357.34,
+          "low": 340.74,
+          "chg_pct": 3.75,
+          "reg_chg_pct": 3.64,
+          "ah_price": 354.4,
+          "ah_chg_vs_close_pct": 0.1,
+          "bar_ts": "2026-11-18T16:23:41.645-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {
+            "09:31": 350.91,
+            "10:30": 353.3,
+            "13:00": 351.595,
+            "15:59": 351.595
+          }
+        },
+        "AMD": {
+          "last": 529.0,
+          "prev": 503.41,
+          "regular_close": 530.14,
+          "high": 532.17,
+          "low": 495.2,
+          "chg_pct": 5.08,
+          "reg_chg_pct": 5.31,
+          "ah_price": 529.0,
+          "ah_chg_vs_close_pct": -0.22,
+          "bar_ts": "2026-11-18T16:23:47.536-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {
+            "09:31": 519.15,
+            "10:30": 511.505,
+            "13:00": 506.94,
+            "15:59": 506.94
+          }
+        },
+        "TSM": {
+          "last": 364.13,
+          "prev": 359.69,
+          "regular_close": 362.62,
+          "high": 368.845,
+          "low": 356.77,
+          "chg_pct": 1.23,
+          "reg_chg_pct": 0.81,
+          "ah_price": 364.13,
+          "ah_chg_vs_close_pct": 0.42,
+          "bar_ts": "2026-11-18T16:23:54.998-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {
+            "09:31": 367.73,
+            "10:30": 363.46,
+            "13:00": 361.07,
+            "15:59": 361.07
+          }
+        },
+        "PANW": {
+          "last": 367.25,
+          "prev": 309.29,
+          "regular_close": 339.92,
+          "high": 342.36,
+          "low": 311.63,
+          "chg_pct": 18.74,
+          "reg_chg_pct": 9.9,
+          "ah_price": 367.25,
+          "ah_chg_vs_close_pct": 8.04,
+          "bar_ts": "2026-11-18T16:23:55.781-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "META": {
+          "last": 615.469,
+          "prev": 618.87,
+          "regular_close": 616.38,
+          "high": 620.81,
+          "low": 610.3,
+          "chg_pct": -0.55,
+          "reg_chg_pct": -0.4,
+          "ah_price": 615.469,
+          "ah_chg_vs_close_pct": -0.15,
+          "bar_ts": "2026-11-18T16:23:32.114-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "XOM": {
+          "last": 160.5993,
+          "prev": 167.21,
+          "regular_close": 160.58,
+          "high": 166.96,
+          "low": 160.55,
+          "chg_pct": -3.95,
+          "reg_chg_pct": -3.97,
+          "ah_price": 160.5993,
+          "ah_chg_vs_close_pct": 0.01,
+          "bar_ts": "2026-11-18T16:16:59.246-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "MSFT": {
+          "last": 507.5,
+          "prev": 506.24,
+          "regular_close": 508.29,
+          "high": 510.44,
+          "low": 501.08,
+          "chg_pct": 0.25,
+          "reg_chg_pct": 0.4,
+          "ah_price": 507.5,
+          "ah_chg_vs_close_pct": -0.16,
+          "bar_ts": "2026-11-18T16:23:34.720-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "AAPL": {
+          "last": 351.6,
+          "prev": 351.91,
+          "regular_close": 352.45,
+          "high": 356.42,
+          "low": 351.4706,
+          "chg_pct": -0.09,
+          "reg_chg_pct": 0.15,
+          "ah_price": 351.6,
+          "ah_chg_vs_close_pct": -0.24,
+          "bar_ts": "2026-11-18T16:23:33.709-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "GOOGL": {
+          "last": 283.0,
+          "prev": 280.2,
+          "regular_close": 282.44,
+          "high": 284.97,
+          "low": 279.69,
+          "chg_pct": 1.0,
+          "reg_chg_pct": 0.8,
+          "ah_price": 283.0,
+          "ah_chg_vs_close_pct": 0.2,
+          "bar_ts": "2026-11-18T16:23:49.648-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "AMZN": {
+          "last": 267.24,
+          "prev": 257.89,
+          "regular_close": 267.74,
+          "high": 268.29,
+          "low": 259.51,
+          "chg_pct": 3.63,
+          "reg_chg_pct": 3.82,
+          "ah_price": 267.24,
+          "ah_chg_vs_close_pct": -0.19,
+          "bar_ts": "2026-11-18T16:23:45.980-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        },
+        "TSLA": {
+          "last": 382.74,
+          "prev": 380.11,
+          "regular_close": 383.72,
+          "high": 389.27,
+          "low": 378.36,
+          "chg_pct": 0.69,
+          "reg_chg_pct": 0.95,
+          "ah_price": 382.74,
+          "ah_chg_vs_close_pct": -0.26,
+          "bar_ts": "2026-11-18T16:23:22.135-0500",
+          "feed_source": "CNBC_REALTIME(POST_MKT)",
+          "slot_prices": {}
+        }
+      },
+      "delta_vs_prev_pct": {
+        "ES=F": 0.0,
+        "NQ=F": 0.0,
+        "YM=F": 0.0,
+        "RTY=F": 0.0,
+        "^GSPC": 0.0,
+        "^IXIC": 0.0,
+        "^DJI": 0.0,
+        "^RUT": -0.06,
+        "^VIX": -0.49,
+        "^TNX": 0.08,
+        "DX-Y.NYB": 0.03,
+        "CL=F": 0.22,
+        "GC=F": -0.16,
+        "BTC-USD": -0.12,
+        "VNM": 0.0,
+        "EEM": 0.09,
+        "SMH": 0.11,
+        "XLK": 0.43,
+        "XLF": 0.04,
+        "XLE": 0.11,
+        "XLI": 0.0,
+        "XLY": 0.02,
+        "XLV": 0.14,
+        "XLP": -0.5,
+        "XLU": -0.24,
+        "XLRE": -0.18,
+        "XLC": 0.07,
+        "XLB": 0.0,
+        "NVDA": 0.07,
+        "AVGO": 0.35,
+        "AMD": 0.15,
+        "TSM": 0.33,
+        "PANW": 11.44,
+        "META": 0.08,
+        "XOM": 0.06,
+        "MSFT": 0.14,
+        "AAPL": -0.24,
+        "GOOGL": 0.13,
+        "AMZN": -0.03,
+        "TSLA": -0.11
+      },
+      "nvda_news": [
+        {
+          "title": "Nvidia interim CEO Colette Kress has taken over one of the most consequential companies on the planet; those who know her say she's up to the task",
+          "published": "Wed, 18 Nov 2026 20:26:19 +0000",
+          "link": "https://finance.yahoo.com/technology/article/nvidia-interim-ceo-colette-kress-has-taken-over-one-of-the-most-consequential-companies-on-the-planet-those-who-know-her-say-shes-up-to-the-task-210312776.html?.tsrc=rss"
+        },
+        {
+          "title": "How major US stock indexes fared Wednesday 11/18/2026",
+          "published": "Wed, 18 Nov 2026 21:20:09 +0000",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/major-us-stock-indexes-fared-212009825.html?.tsrc=rss"
+        },
+        {
+          "title": "Nvidia Just Demolished Earnings, but the Stock Is Still Plunging. The Reason Is Obvious.",
+          "published": "Wed, 18 Nov 2026 21:07:15 +0000",
+          "link": "https://www.fool.com/investing/2026/11/18/nvidia-just-demolished-earnings-but-the-stock-is-still-plunging-the-reason-is-obvious/?.tsrc=rss"
+        },
+        {
+          "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call",
+          "published": "Wed, 18 Nov 2026 21:04:10 +0000",
+          "link": "https://finance.yahoo.com/m/681ca0c6-76b1-321b-bdd4-bb83acc818fb/apple-stock-polishes-breakout.html?.tsrc=rss"
+        },
+        {
+          "title": "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
+          "published": "Wed, 18 Nov 2026 21:00:00 +0000",
+          "link": "https://www.marketwatch.com/story/nvidia-spooked-me-should-i-sell-my-stocks-or-ride-out-the-market-turmoil-560583c6?.tsrc=rss"
+        }
+      ]
     }
   },
   "expert_bulletins": [
@@ -3956,6 +4677,32 @@
         "VNM_ETF": "16.685 (+0.09%)",
         "NVDA_Rule": "Wait >=.50"
       }
+    },
+    {
+      "id": "summit_0430_ban1_us",
+      "time_str": "04:31:00 ICT",
+      "sender_name": "Elena (Ban 1 US)",
+      "highlight": "^VIX=24.56 (chưa < 23.5), SPX=7,323.63 < MA200 (7,340), US10Y 5.068%, DXY 103.81 -> Elevated Tension (50% Cash / 50% Selective)."
+    },
+    {
+      "id": "summit_0430_ban2_ban10",
+      "time_str": "04:34:00 ICT",
+      "sender_name": "Lê Hoàng (Ban 2 US) & Hiền (Ban 10)",
+      "highlight": "CONSTRUCTIVE ROTATION: NVDA Q3 FY27 ($115.8B +103% YoY) đã ra 17/11, giảm do CEO transition; PANW +8.04% AH ($367.25) -> Accumulate AMD/AVGO/MSFT/PLTR."
+    },
+    {
+      "id": "summit_0430_ban3_ban5_vn",
+      "time_str": "04:40:00 ICT",
+      "sender_name": "Ban 1-3-5-6 VN",
+      "highlight": "VETO HDB ngày 19/11 (chống Outcome Bias khi audit 48h). WTI -3.57% ($82.94) ép BSR/PVD, hỗ trợ PVT/GMD/BAF. Mặc định 0đ, ngoại lệ 1 lô <= 2.2M lúc 14h00-14h25."
+    },
+    {
+      "id": "summit_0430_james_trong",
+      "time_str": "04:55:00 ICT",
+      "sender_name": "Master CIO James & Trọng (Ban 12)",
+      "highlight": "APPROVED: Mặc định 0đ (Cash 67.2%); điều kiện 14h00-14h25 LO 100 CP PVT @ ~19,000 (Backup TCB @ 20,750) nếu Buy-Up >= 60% + Breadth >= 40-45% + VSA."
     }
-  ]
+  ],
+  "summit_finalized_at_ict": "2026-11-19 04:33:21 ICT",
+  "summit_status": "COMPLETED_LOCAL_AI_16_16"
 }

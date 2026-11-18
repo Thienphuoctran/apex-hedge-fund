@@ -1,6 +1,29 @@
 {
   "sessions": [
     {
+      "meeting_id": "APEX-SUMMIT-20261119-0430",
+      "title": "🏛️ HỘI NGHỊ THƯỢNG ĐỈNH ĐÊM 18–19/11 — ĐÓN BCTC NVDA, THEO DÕI VIX & CHỐT KỊCH BẢN ĐÁO HẠN 04H30",
+      "topic": "Theo dõi xuyên đêm phiên Mỹ (21h30 -> 04h00), đón BCTC NVDA (~04h20), đo VIX hạ nhiệt/căng thẳng & Họp Tổng Kết 04h30 sáng 19/11",
+      "meeting_window_str": "04h30 – 05h00 (30 Phút, 19/11/2026)",
+      "prep_window_str": "20h30 -> 04h25 (Trực 5 nhịp + Đón BCTC NVDA)",
+      "start_time": "2026-11-19T04:30:00+07:00",
+      "end_time": "2026-11-19T05:00:00+07:00",
+      "chairman_approved": false,
+      "approval_time": null,
+      "archived_at": "2026-11-19T04:33:21.785152+07:00",
+      "archived_display": "19/11/2026 04:33:21",
+      "archive_reason": "CONCLUDED_REALTIME_NVDA_VIX_0430",
+      "archived_by": "Ban 11 & Trọng Auto-Archiver",
+      "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261119-0430.json",
+      "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261119-0430_Bien_Ban_Luu_Tru.md",
+      "james_summary_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0430_Bao_Cao_Tong_Ket_James_NVDA_VIX_Va_Nghi_Quyet_Dao_Han.md",
+      "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0430_Bao_Cao_Tong_Ket_James_NVDA_VIX_Va_Nghi_Quyet_Dao_Han.md",
+      "turns_count": 10,
+      "prep_dossiers_count": 14,
+      "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện thật 100%)",
+      "summary_headline": "Tổng kết 04h30 (VIX 24.56 | NVDA AH +0.15%) | Chế độ ELEVATED_TENSION_CAUTIOUS_ROTATION & Kế hoạch Đáo hạn 19/11"
+    },
+    {
       "meeting_id": "APEX-SUMMIT-20261119-0045",
       "title": "🏛️ HỘI NGHỊ THƯỢNG ĐỈNH ĐẶC BIỆT 16H15 — KIỂM TOÁN LÃI 2 TUẦN & CHIẾN LƯỢC KPI 3–4 TRIỆU / 2 THÁNG",
       "topic": "Chiến Lược Thị Trường Tuần Sau (16/11 – 20/11/2026): Tranh Biện Đa Ngành 12 Mã VN & 5 Mã US, Thiết Kế Kế Hoạch Cơ Động Theo Ngày & Tối Ưu Lợi Nhuận Tài Khoản 105C307855",
@@ -116,6 +139,6 @@
       "summary_headline": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới"
     }
   ],
-  "total_archived": 5,
-  "last_updated": "2026-11-18T04:10:05.040433+07:00"
+  "total_archived": 6,
+  "last_updated": "2026-11-19T04:33:21.785152+07:00"
 }

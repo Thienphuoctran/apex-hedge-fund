@@ -2840,67 +2840,187 @@
     "timestamp": "2026-11-16 07:06:17"
   },
   {
-    "message_id": 1926,
+    "message_id": 1891,
     "chat_id": "-1004465270817",
-    "thread_id": 3,
-    "topic_key": "alerts",
+    "thread_id": 112,
+    "topic_key": "academy_learning",
     "date": "2026-11-16",
-    "timestamp": "2026-11-16 18:31:41"
+    "timestamp": "2026-11-16 17:03:30"
   },
   {
-    "message_id": 1937,
+    "message_id": 1893,
     "chat_id": "-1004465270817",
-    "thread_id": 3,
-    "topic_key": "alerts",
-    "date": "2026-11-17",
-    "timestamp": "2026-11-17 00:21:14"
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-16",
+    "timestamp": "2026-11-16 17:03:41"
   },
   {
-    "message_id": 1938,
+    "message_id": 1895,
+    "chat_id": "-1004465270817",
+    "thread_id": 4,
+    "topic_key": "morning_blotter",
+    "date": "2026-11-16",
+    "timestamp": "2026-11-16 17:03:55"
+  },
+  {
+    "message_id": 1897,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-16",
+    "timestamp": "2026-11-16 17:03:56"
+  },
+  {
+    "message_id": 1899,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-16",
+    "timestamp": "2026-11-16 17:03:58"
+  },
+  {
+    "message_id": 1901,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-16",
+    "timestamp": "2026-11-16 17:04:15"
+  },
+  {
+    "message_id": 1959,
+    "chat_id": "-1004465270817",
+    "thread_id": 112,
+    "topic_key": "academy_learning",
+    "date": "2026-11-17",
+    "timestamp": "2026-11-17 12:05:30"
+  },
+  {
+    "message_id": 1961,
     "chat_id": "-1004465270817",
     "thread_id": 6,
     "topic_key": "james_hq",
     "date": "2026-11-17",
-    "timestamp": "2026-11-17 00:21:23"
+    "timestamp": "2026-11-17 12:05:32"
   },
   {
-    "message_id": 1940,
-    "chat_id": "-1004465270817",
-    "thread_id": 106,
-    "topic_key": "assistant_nam",
-    "date": "2026-11-17",
-    "timestamp": "2026-11-17 00:21:24"
-  },
-  {
-    "message_id": 1974,
-    "chat_id": "-1004465270817",
-    "thread_id": 3,
-    "topic_key": "alerts",
-    "date": "2026-11-17",
-    "timestamp": "2026-11-17 05:25:42"
-  },
-  {
-    "message_id": 2030,
+    "message_id": 1963,
     "chat_id": "-1004465270817",
     "thread_id": 6,
     "topic_key": "james_hq",
     "date": "2026-11-17",
-    "timestamp": "2026-11-17 23:36:20"
+    "timestamp": "2026-11-17 12:05:41"
   },
   {
-    "message_id": 2032,
+    "message_id": 1965,
     "chat_id": "-1004465270817",
-    "thread_id": 106,
-    "topic_key": "assistant_nam",
+    "thread_id": 6,
+    "topic_key": "james_hq",
     "date": "2026-11-17",
-    "timestamp": "2026-11-17 23:36:22"
+    "timestamp": "2026-11-17 12:05:44"
   },
   {
-    "message_id": 2058,
+    "message_id": 1967,
     "chat_id": "-1004465270817",
-    "thread_id": 3,
-    "topic_key": "alerts",
+    "thread_id": 4,
+    "topic_key": "morning_blotter",
+    "date": "2026-11-17",
+    "timestamp": "2026-11-17 12:05:59"
+  },
+  {
+    "message_id": 1969,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-17",
+    "timestamp": "2026-11-17 12:06:15"
+  },
+  {
+    "message_id": 2020,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
     "date": "2026-11-18",
-    "timestamp": "2026-11-18 04:52:43"
+    "timestamp": "2026-11-18 04:09:13"
+  },
+  {
+    "message_id": 2022,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-18",
+    "timestamp": "2026-11-18 04:09:39"
+  },
+  {
+    "message_id": 2024,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-18",
+    "timestamp": "2026-11-18 04:09:42"
+  },
+  {
+    "message_id": 2099,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-18",
+    "timestamp": "2026-11-18 20:34:51"
+  },
+  {
+    "message_id": 2100,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-18",
+    "timestamp": "2026-11-18 20:36:16"
+  },
+  {
+    "message_id": 2118,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-18",
+    "timestamp": "2026-11-18 23:23:32"
+  },
+  {
+    "message_id": 2119,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-18",
+    "timestamp": "2026-11-18 23:23:36"
+  },
+  {
+    "message_id": 2135,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 04:02:59"
+  },
+  {
+    "message_id": 2137,
+    "chat_id": "-1004465270817",
+    "thread_id": 3,
+    "topic_key": "alerts",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 04:24:01"
+  },
+  {
+    "message_id": 2139,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 04:33:23"
+  },
+  {
+    "message_id": 2140,
+    "chat_id": "-1004465270817",
+    "thread_id": 1776,
+    "topic_key": "reports_vault",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 04:33:24"
   }
 ]
