@@ -1,19 +1,19 @@
 {
   "session_date": "2026-11-18",
-  "recorded_at": "2026-11-18 08:20:03",
+  "recorded_at": "2026-11-18 17:28:45",
   "total_stocks_scanned": 145,
   "total_sectors_scanned": 18,
   "market_breadth": {
-    "pct_stocks_above_ma20": 21.4,
-    "pct_stocks_above_ma200": 14.5,
+    "pct_stocks_above_ma20": 22.1,
+    "pct_stocks_above_ma200": 15.2,
     "accounting_clean_count": 138,
     "red_flag_warning_count": 7,
-    "emerging_rising_stocks_count": 9
+    "emerging_rising_stocks_count": 10
   },
   "top_leading_sectors": [
     {
       "sector_name": "Điện & Hạ Tầng Năng Lượng",
-      "score": 70.0,
+      "score": 69.9,
       "stage": "LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực)",
       "top_picks": [
         "POW",
@@ -43,7 +43,7 @@
     },
     {
       "sector_name": "Dệt May Xuất Khẩu",
-      "score": 44.1,
+      "score": 44.0,
       "stage": "WEAKENING (Phân Hóa / Chững Lại)",
       "top_picks": [
         "MSH",
@@ -53,7 +53,7 @@
     },
     {
       "sector_name": "Ngân Hàng TMCP",
-      "score": 44.0,
+      "score": 43.9,
       "stage": "WEAKENING (Phân Hóa / Chững Lại)",
       "top_picks": [
         "HDB",
@@ -277,12 +277,12 @@
       "day_change_pct": 1.52,
       "ma20": 22422.0,
       "ma50": 21458.0,
-      "rs_rating": 89,
+      "rs_rating": 88,
       "vsa_signal": "POCKET_PIVOT_BREAKOUT (Dòng tiền thông minh gom chủ động Vol lớn vượt nền)",
       "wyckoff_phase": "Phase B — CONSOLIDATION (Tích lũy hấp thụ nguồn cung T+2.5)",
       "bctc_tier": "AA (HIGH QUALITY)",
-      "legends_score": 84.0,
-      "actionable_alpha_score": 96.0,
+      "legends_score": 83.9,
+      "actionable_alpha_score": 95.9,
       "pe": 14.2,
       "pb": 1.75,
       "roe_pct": 13.6,
@@ -303,7 +303,7 @@
       "allocated_vnd": 4670000.0,
       "key_catalyst": "Định giá hấp dẫn trong nhóm CTCK ngân hàng quốc doanh, tự doanh hiệu quả",
       "target_buy_zone": "Gom thăm dò Limit LO quanh 23,090 ₫ - 23,350 ₫; Gia tăng khi vượt 23,780 ₫ trong Khung Giờ Vàng 14h00-14h25",
-      "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 84.0/100 | RS: 89/99) • P/E 14.2x, ROE 13.6%, OCF/LNST 1.12x • 1 lô 100 CP = 2,335,000 ₫ (11.54% NAV)"
+      "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 83.9/100 | RS: 88/99) • P/E 14.2x, ROE 13.6%, OCF/LNST 1.12x • 1 lô 100 CP = 2,335,000 ₫ (11.54% NAV)"
     }
   ],
   "rejected_or_downgraded_stocks": [
@@ -327,7 +327,7 @@
       "code": "MWG",
       "name": "Đầu tư Thế Giới Di Động",
       "price": 72600.0,
-      "rs_rating": 78,
+      "rs_rating": 77,
       "rejected_by": "Ban 4 VN (Quản trị Rủi ro Lô 100 CP)",
       "rejection_reason": "Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 72,600 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 35.89% tổng NAV (7,260,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30."
     },

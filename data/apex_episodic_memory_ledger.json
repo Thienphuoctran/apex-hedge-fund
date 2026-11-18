@@ -1,18 +1,18 @@
 {
   "system_name": "APEX HEDGE FUND — UNIFIED EPISODIC MEMORY & TEMPORAL AWARENESS LEDGER",
-  "last_synchronized": "08:20:03 Thứ Tư, ngày 18/11/2026",
+  "last_synchronized": "17:28:45 Thứ Tư, ngày 18/11/2026",
   "temporal_awareness": {
-    "timestamp_iso": "2026-11-18T08:20:03.005487",
+    "timestamp_iso": "2026-11-18T17:28:45.095446",
     "date_str": "2026-11-18",
     "date_vn": "18/11/2026",
-    "time_vn": "08:20:03",
+    "time_vn": "17:28:45",
     "weekday_index": 2,
     "weekday_vn": "Thứ Tư",
-    "full_time_label_vn": "08:20:03 Thứ Tư, ngày 18/11/2026",
-    "market_phase": "PRE_MARKET_PREPARATION",
-    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Tư) — Chuẩn bị kế hoạch tác chiến",
+    "full_time_label_vn": "17:28:45 Thứ Tư, ngày 18/11/2026",
+    "market_phase": "AFTER_HOURS_CLOSED",
+    "market_phase_vn": "Ngoài giờ giao dịch (Thứ Tư sau 15h00) — Sàn HOSE/HNX đã đóng cửa",
     "is_trading_hours": false,
-    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
+    "next_session_note": "Hệ thống thực hiện kiểm toán EOD, rà soát BCTC và chuẩn bị cho phiên kế tiếp."
   },
   "current_situational_awareness": {
     "account_id": "105C307855",
@@ -280,8 +280,8 @@
       "exchange": "HOSE",
       "sector": "Chứng Khoán & Đầu Tư",
       "price_vnd": 23350.0,
-      "rs_rating": 89,
-      "legends_score": 84.0,
+      "rs_rating": 88,
+      "legends_score": 83.9,
       "lot_100_nav_pct": 11.54,
       "target_shares": 200,
       "probe_buy_price": 23090.0,
@@ -289,7 +289,7 @@
       "tp1": 25760.0,
       "tp2": 27830.0,
       "target_buy_zone": "Gom thăm dò Limit LO quanh 23,090 ₫ - 23,350 ₫; Gia tăng khi vượt 23,780 ₫ trong Khung Giờ Vàng 14h00-14h25",
-      "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 84.0/100 | RS: 89/99) • P/E 14.2x, ROE 13.6%, OCF/LNST 1.12x • 1 lô 100 CP = 2,335,000 ₫ (11.54% NAV)"
+      "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 83.9/100 | RS: 88/99) • P/E 14.2x, ROE 13.6%, OCF/LNST 1.12x • 1 lô 100 CP = 2,335,000 ₫ (11.54% NAV)"
     }
   ]
 }
