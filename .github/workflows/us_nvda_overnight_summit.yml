@@ -2,21 +2,11 @@ name: "Overnight US, NVDA Earnings & 04:30 Summit (Cloud)"
 
 on:
   schedule:
-    # Mốc thời gian chuẩn UTC (= ICT - 7 tiếng) cho đêm 18/11 -> sáng 19/11/2026:
-    # 21:10 ICT 18/11 — Điểm danh T-20p trước mở cửa Mỹ
-    - cron: '10 14 18 11 *'
-    # 21:32 ICT 18/11 — Nhịp 1: Mở cửa Mỹ (Amateur Hour)
-    - cron: '32 14 18 11 *'
-    # 22:30 ICT 18/11 — Nhịp 2: Sau 10:30 EST xác nhận dòng tiền
-    - cron: '30 15 18 11 *'
-    # 01:00 ICT 19/11 — Nhịp 3: Giữa phiên Mỹ (Europe Close)
-    - cron: '0 18 18 11 *'
-    # 04:03 ICT 19/11 — Nhịp 4: Chốt nến đóng cửa chính thức NYSE/Nasdaq
-    - cron: '3 21 18 11 *'
-    # 04:25 ICT 19/11 — Nhịp 5: Đón BCTC NVDA (~04:20 ICT) & Phản ứng After-Hours / VIX
-    - cron: '25 21 18 11 *'
-    # 04:32 ICT 19/11 — Họp Tổng Kết Thượng Đỉnh 04h30 (16/16) & Kịch bản Đáo hạn 19/11
-    - cron: '32 21 18 11 *'
+    # Chạy dự phòng mỗi 15 phút xuyên đêm Mỹ 18/11 -> sáng 19/11 (16:00 - 22:45 UTC = 23:00 - 05:45 ICT)
+    # Engine tự động bỏ qua mốc đã ghi nên KHÔNG trùng tin; nếu slot trước bị GitHub trễ, slot sau tự backfill từ bar 1m sàn Mỹ.
+    - cron: '*/15 16-22 18 11 *'
+    # Các mốc cao điểm BCTC NVDA (~04:20 ICT) & Khai mạc Tổng kết 04:30 ICT (21:25, 21:33, 21:45 UTC)
+    - cron: '25,33,45 21 18 11 *'
   workflow_dispatch:
     inputs:
       checkpoint:

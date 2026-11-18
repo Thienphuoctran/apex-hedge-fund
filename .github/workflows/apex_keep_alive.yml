@@ -2,8 +2,9 @@ name: Apex Render Cloud Keep-Alive Ping (Market Hours)
 
 on:
   schedule:
-    # Ping mỗi 10 phút trong khung giờ 01:00 - 08:50 UTC (08:00 - 15:50 ICT), Thứ 2 - Thứ 6
+    # Ping mỗi 10 phút trong khung giờ VN (01:00 - 08:50 UTC) & trực xuyên đêm Mỹ / BCTC NVDA (16:00 - 22:50 UTC 18/11)
     - cron: '*/10 1-8 * * 1-5'
+    - cron: '*/10 16-22 18 11 *'
   workflow_dispatch:
     inputs:
       force_ping:
@@ -27,12 +28,17 @@ jobs:
             exit 0
           fi
           ICT_HM=$(TZ='Asia/Ho_Chi_Minh' date +%H%M)
-          echo "Current ICT HHMM: $ICT_HM"
+          ICT_DATE=$(TZ='Asia/Ho_Chi_Minh' date +%Y-%m-%d)
+          echo "Current ICT: $ICT_DATE $ICT_HM"
           if [ "$((10#$ICT_HM))" -ge 820 ] && [ "$((10#$ICT_HM))" -le 1505 ]; then
+            echo "in_window=true" >> "$GITHUB_OUTPUT"
+          elif [ "$ICT_DATE" = "2026-11-18" ] && [ "$((10#$ICT_HM))" -ge 2300 ]; then
+            echo "in_window=true" >> "$GITHUB_OUTPUT"
+          elif [ "$ICT_DATE" = "2026-11-19" ] && [ "$((10#$ICT_HM))" -le 530 ]; then
             echo "in_window=true" >> "$GITHUB_OUTPUT"
           else
             echo "in_window=false" >> "$GITHUB_OUTPUT"
-            echo "Ngoài khung giờ 08:20 - 15:05 ICT, bỏ qua ping."
+            echo "Ngoài khung giờ trực chiến, bỏ qua ping."
           fi
 
       - name: Ping Render Health Endpoint

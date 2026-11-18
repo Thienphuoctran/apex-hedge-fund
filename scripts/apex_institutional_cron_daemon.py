@@ -883,6 +883,19 @@ def run_daemon(poll_interval: int = 15):
                     save_state(state)
                     any_milestone_ok = True
 
+            # Phiên trực xuyên đêm Mỹ / BCTC NVDA -> Thượng đỉnh 04:30 (Render Backup Watchdog)
+            if (today_str == "2026-11-18" and current_hm >= "23:20") or (today_str == "2026-11-19" and current_hm <= "05:30"):
+                nvda_watch_slots = {"01:00", "01:05", "04:03", "04:10", "04:25", "04:32", "04:40"}
+                slot_key = f"NVDA_{current_hm}"
+                if (current_hm in nvda_watch_slots or now.minute in (0, 25, 32, 45)) and slot_key not in executed_today:
+                    log_event(f"🛰️ [US-NVDA-VIX WATCH] Chạy kiểm tra nhịp trực Mỹ ({current_hm} ICT)...")
+                    rc_nvda = _run_py_script("scripts/us_nvda_overnight_summit_engine.py", ["--checkpoint", "auto"], timeout=95)
+                    executed_today.append(slot_key)
+                    state["last_active"] = now.strftime("%Y-%m-%d %H:%M:%S")
+                    save_state(state)
+                    if rc_nvda == 0:
+                        any_milestone_ok = True
+
             if any_milestone_ok:
                 try:
                     from scripts.migrate_markdown_to_sqlite import migrate_all_markdown_reports

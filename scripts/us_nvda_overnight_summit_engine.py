@@ -137,11 +137,15 @@ def _fetch_single_ticker(sym: str) -> Tuple[str, Dict[str, Any]]:
         high_val = float(d5["High"].iloc[-1]) if d5 is not None and not d5.empty else reg_last
         low_val = float(d5["Low"].iloc[-1]) if d5 is not None and not d5.empty else reg_last
 
+        slot_prices: Dict[str, float] = {}
         if sym in INTRADAY_PRIORITY_TICKERS:
             m2 = tk.history(period="2d", interval="1m", prepost=True, auto_adjust=False)
             if m2 is not None and not m2.empty and "Close" in m2:
                 m2_clean = m2.dropna(subset=["Close"])
                 if not m2_clean.empty:
+                    if m2_clean.index.tz is not None:
+                        m2_clean = m2_clean.copy()
+                        m2_clean.index = m2_clean.index.tz_convert("America/New_York")
                     latest_price = float(m2_clean["Close"].iloc[-1])
                     idx_last = m2_clean.index[-1]
                     bar_ts = str(idx_last)
@@ -154,6 +158,11 @@ def _fetch_single_ticker(sym: str) -> Tuple[str, Dict[str, Any]]:
                         if not same_day.empty:
                             high_val = float(same_day["High"].max())
                             low_val = float(same_day["Low"].min())
+                            for hm_lbl, th, tm in [("09:31", 9, 31), ("10:30", 10, 30), ("13:00", 13, 0), ("15:59", 15, 59)]:
+                                sub = same_day[(same_day.index.hour < th) | ((same_day.index.hour == th) & (same_day.index.minute <= tm))]
+                                reg_sub = sub[(sub.index.hour > 9) | ((sub.index.hour == 9) & (sub.index.minute >= 30))]
+                                if not reg_sub.empty:
+                                    slot_prices[hm_lbl] = round(float(reg_sub["Close"].iloc[-1]), 4)
                             reg_bars = same_day[
                                 ((same_day.index.hour > 9) | ((same_day.index.hour == 9) & (same_day.index.minute >= 30)))
                                 & (same_day.index.hour < 16)
@@ -187,6 +196,7 @@ def _fetch_single_ticker(sym: str) -> Tuple[str, Dict[str, Any]]:
             "ah_price": round(ah_price, 4) if ah_price is not None else None,
             "ah_chg_vs_close_pct": ah_chg_pct,
             "bar_ts": bar_ts,
+            "slot_prices": slot_prices,
         }
     except Exception as exc:
         return sym, {"last": 0.0, "prev": 0.0, "chg_pct": 0.0, "error": str(exc)}
@@ -232,28 +242,55 @@ def fetch_nvda_news_rss(limit: int = 5) -> List[Dict[str, str]]:
     return headlines
 
 
-def determine_auto_checkpoints(now: datetime.datetime, log_data: Dict[str, Any]) -> List[str]:
-    """Xác định tự động nhịp cần chạy theo giờ ICT (theo đúng Plan)."""
-    checkpoints_done = set((log_data.get("checkpoints") or {}).keys())
-    hm = now.hour * 60 + now.minute
-    if now.date() == datetime.date(2026, 11, 18):
-        if hm < 21 * 60 + 20:
-            return ["2110_PREP"]
-        if hm < 22 * 60 + 5:
-            return ["2130_OPEN"]
-        return ["2230_POST_AMATEUR"]
-    # Sáng 19/11/2026
-    if hm < 3 * 60 + 30:
-        return ["0100_MID_SESSION"]
-    if hm < 4 * 60 + 18:
-        return ["0402_OFFICIAL_CLOSE"]
-    if hm < 4 * 60 + 28:
-        return ["0425_NVDA_EARNINGS_AH"]
-    out: List[str] = []
-    if "0425_NVDA_EARNINGS_AH" not in checkpoints_done:
-        out.append("0425_NVDA_EARNINGS_AH")
-    out.append("0430_SUMMIT")
+BACKFILL_SPECS: List[Tuple[str, datetime.datetime, str]] = [
+    ("2130_OPEN", datetime.datetime(2026, 11, 18, 21, 32, tzinfo=ICT_TZ), "09:31"),
+    ("2230_POST_AMATEUR", datetime.datetime(2026, 11, 18, 22, 30, tzinfo=ICT_TZ), "10:30"),
+    ("0100_MID_SESSION", datetime.datetime(2026, 11, 19, 1, 0, tzinfo=ICT_TZ), "13:00"),
+    ("0402_OFFICIAL_CLOSE", datetime.datetime(2026, 11, 19, 4, 2, tzinfo=ICT_TZ), "15:59"),
+]
+
+
+def _build_backfilled_quotes(quotes: Dict[str, Any], est_hm: str) -> Dict[str, Any]:
+    out: Dict[str, Any] = {}
+    for sym, q in quotes.items():
+        q_copy = copy.deepcopy(q)
+        slots = q_copy.get("slot_prices") or {}
+        if est_hm in slots and float(slots[est_hm] or 0) > 0:
+            bar_p = float(slots[est_hm])
+            prev_p = float(q_copy.get("prev") or bar_p)
+            q_copy["last"] = round(bar_p, 4)
+            q_copy["chg_pct"] = round(((bar_p / prev_p) - 1.0) * 100.0, 2) if prev_p > 0 else 0.0
+            q_copy["backfill_est"] = est_hm
+        out[sym] = q_copy
     return out
+
+
+def determine_auto_checkpoints(now: datetime.datetime, log_data: Dict[str, Any]) -> List[str]:
+    """Xác định tự động các nhịp còn thiếu + nhịp hiện tại (idempotent khi chạy cron */15)."""
+    checkpoints_done = set((log_data.get("checkpoints") or {}).keys())
+    summit_archived = (BASE_DIR / ARCHIVE_JSON_REL_PATH).exists()
+    targets: List[str] = []
+
+    if now >= datetime.datetime(2026, 11, 18, 21, 10, tzinfo=ICT_TZ) and now < datetime.datetime(2026, 11, 18, 21, 30, tzinfo=ICT_TZ):
+        if "2110_PREP" not in checkpoints_done:
+            targets.append("2110_PREP")
+        return targets
+
+    for cp_name, dt_thresh, _ in BACKFILL_SPECS:
+        if now >= dt_thresh and cp_name not in checkpoints_done:
+            targets.append(cp_name)
+
+    if datetime.datetime(2026, 11, 18, 23, 10, tzinfo=ICT_TZ) <= now < datetime.datetime(2026, 11, 19, 0, 50, tzinfo=ICT_TZ):
+        if "2320_LIVE_WATCH" not in checkpoints_done:
+            targets.append("2320_LIVE_WATCH")
+
+    if now >= datetime.datetime(2026, 11, 19, 4, 18, tzinfo=ICT_TZ) and "0425_NVDA_EARNINGS_AH" not in checkpoints_done:
+        targets.append("0425_NVDA_EARNINGS_AH")
+
+    if now >= datetime.datetime(2026, 11, 19, 4, 28, tzinfo=ICT_TZ) and not summit_archived:
+        targets.append("0430_SUMMIT")
+
+    return targets
 
 
 def _compute_deltas(quotes: Dict[str, Any], prev_cp: Optional[Dict[str, Any]]) -> Dict[str, float]:
@@ -401,6 +438,7 @@ def _format_checkpoint_turn(cp_name: str, now_ict: datetime.datetime, quotes: Di
         "2110_PREP": ("21h10 — ĐIỂM DANH T-20P TRƯỚC GIỜ MỞ CỬA MỸ", "#0ea5e9", "📡", "Trọng (Ban 12) & Telemetry"),
         "2130_OPEN": ("21h30 — NHỊP 1: MỞ CỬA PHIÊN MỸ (AMATEUR HOUR)", "#f59e0b", "🔔", "Ban 1 US & Telemetry"),
         "2230_POST_AMATEUR": ("22h30 — NHỊP 2: SAU AMATEUR HOUR (XÁC NHẬN DÒNG TIỀN)", "#f59e0b", "📊", "Ban 1 US & Alex Ban 7"),
+        "2320_LIVE_WATCH": ("23h20 — TÚC TRỰC GIỮA BUỔI: XẢ NVDA & ^GSPC THỦNG MA200 (4 BAN CHUYÊN TRÁCH)", "#ef4444", "🚨", "Ban 1 US, Ban 2/10, Alex Ban 7 & Victor Ban 9"),
         "0100_MID_SESSION": ("01h00 — NHỊP 3: GIỮA PHIÊN MỸ (NÉN CHỜ BCTC NVDA)", "#a855f7", "🌙", "Ban 1 US & Victor Ban 9"),
         "0402_OFFICIAL_CLOSE": ("04h02 — NHỊP 4: CHỐT NẾN ĐÓNG CỬA CHÍNH THỨC NYSE/NASDAQ", "#22c55e", "🏁", "Telemetry 5 Nhịp & Trọng Ban 12"),
         "0425_NVDA_EARNINGS_AH": ("04h25 — NHỊP 5: BCTC NVDA VỪA CÔNG BỐ & PHẢN ỨNG AFTER-HOURS / VIX", "#ef4444", "🔥", "Hiền (Ban 10), Lê Hoàng (Ban 2) & Elena (Ban 1 US)"),
@@ -708,6 +746,12 @@ def _write_summit_reports(
         )
     cp_table = "\n".join(cp_rows) if cp_rows else "| Chưa có nhịp nào | - | - | - | - | - |"
     news_md = "\n".join(f"- {n.get('title')} *({n.get('published', '')})*" for n in (verdict.get("ah_news") or [])[:5]) or "- Không ghi nhận tiêu đề RSS bổ sung tại thời điểm chạy; bám sát phản ứng giá thực tế `prepost=True`."
+    bulletins = log_data.get("expert_bulletins") or []
+    bulletins_md = "\n".join(
+        f"- **{b.get('sender_name', '')} (`{b.get('time_str', '')}`):** {b.get('highlight', '')}"
+        for b in bulletins
+    )
+    bulletins_section = f"\n\n### Nhận định Túc trực Giữa phiên của Các Ban Chuyên trách (`23h20 ICT`):\n{bulletins_md}\n" if bulletins_md else ""
 
     resolution_md = f"""# 🏛️ BÁO CÁO TỔNG KẾT MASTER CIO JAMES: BCTC `NVDA`, DIỄN BIẾN `^VIX` & KỊCH BẢN ĐÁO HẠN `19/11/2026`
 > **Mã phiên họp:** `{MEETING_ID}` (`CD-APEX-20261118-NVDA-0430`)  
@@ -724,7 +768,7 @@ def _write_summit_reports(
 {cp_table}
 
 ### Tin tức IR / RSS quanh giờ công bố `NVDA`:
-{news_md}
+{news_md}{bulletins_section}
 
 ---
 
@@ -828,7 +872,7 @@ def _sync_palmer_and_telegram(
     except Exception as exc:
         print(f"[!] Palmer sync warning: {exc}")
 
-    notify_checkpoints = {"2030_MOBILIZE", "2130_OPEN", "0402_OFFICIAL_CLOSE", "0425_NVDA_EARNINGS_AH", "0430_SUMMIT"}
+    notify_checkpoints = {"2030_MOBILIZE", "2130_OPEN", "2320_LIVE_WATCH", "0402_OFFICIAL_CLOSE", "0425_NVDA_EARNINGS_AH", "0430_SUMMIT"}
     if cp_name in notify_checkpoints:
         try:
             from scripts.telegram_dispatcher import dispatch_message
@@ -908,14 +952,25 @@ def run_checkpoint(cp_name: str, dry_run: bool = False) -> int:
         SESSION_LOG_FILE,
         {"session_date": "2026-11-18", "mode": "CLOUD_5_CHECKPOINT_NVDA_VIX_0430", "checkpoints": {}},
     )
+    cp_quotes = quotes
+    cp_ts_dt = now_ict
+    cp_source = "LIVE_STREAM"
+    for spec_name, dt_thresh, est_hm in BACKFILL_SPECS:
+        if cp_name == spec_name and (now_ict - dt_thresh).total_seconds() > 600:
+            cp_quotes = _build_backfilled_quotes(quotes, est_hm)
+            cp_ts_dt = dt_thresh
+            cp_source = f"EXCHANGE_1M_BAR_{est_hm}_EST"
+            break
+
     prev_keys = [k for k in (log_data.get("checkpoints") or {}).keys() if k != cp_name]
     prev_cp = log_data["checkpoints"][prev_keys[-1]] if prev_keys else None
 
     if cp_name != "0430_SUMMIT":
         log_data.setdefault("checkpoints", {})[cp_name] = {
-            "timestamp_ict": now_ict.strftime("%Y-%m-%d %H:%M:%S"),
-            "quotes": quotes,
-            "delta_vs_prev_pct": _compute_deltas(quotes, prev_cp),
+            "timestamp_ict": cp_ts_dt.strftime("%Y-%m-%d %H:%M:%S"),
+            "source": cp_source,
+            "quotes": cp_quotes,
+            "delta_vs_prev_pct": _compute_deltas(cp_quotes, prev_cp),
             "nvda_news": news,
         }
         if not dry_run:
@@ -926,7 +981,7 @@ def run_checkpoint(cp_name: str, dry_run: bool = False) -> int:
     dyn_msgs = list(cur_meeting.get("dynamic_messages") or []) if cur_meeting.get("meeting_id") == MEETING_ID else []
 
     if cp_name != "0430_SUMMIT":
-        new_turn = _format_checkpoint_turn(cp_name, now_ict, quotes, news)
+        new_turn = _format_checkpoint_turn(cp_name, cp_ts_dt, cp_quotes, news)
         dyn_msgs = [m for m in dyn_msgs if m.get("id") != new_turn["id"]]
         dyn_msgs.append(new_turn)
         state = _build_base_meeting_state(dossiers, dyn_msgs)
@@ -952,12 +1007,12 @@ def run_checkpoint(cp_name: str, dry_run: bool = False) -> int:
         _sync_palmer_and_telegram(
             cp_name=cp_name,
             summary_text=new_turn["content"],
-            tasks_done=[f"Hoàn tất nhịp {cp_name} ({now_ict.strftime('%H:%M:%S ICT')})"],
+            tasks_done=[f"Hoàn tất nhịp {cp_name} ({cp_ts_dt.strftime('%H:%M:%S ICT')})"],
             decisions={"checkpoint": cp_name, "vix": vix_now.get("last"), "nvda": nvda_now.get("last"), "nvda_ah": nvda_now.get("ah_price")},
             dry_run=dry_run,
             report_rel=AGENDA_REL_PATH,
         )
-        print(f"[{now_ict.strftime('%H:%M:%S ICT')}] Checkpoint {cp_name} OK | Dossiers={len(dossiers)} | DynMsgs={len(dyn_msgs)} | DryRun={dry_run}")
+        print(f"[{now_ict.strftime('%H:%M:%S ICT')}] Checkpoint {cp_name} ({cp_source}) OK | Dossiers={len(dossiers)} | DynMsgs={len(dyn_msgs)} | DryRun={dry_run}")
         return 0
 
     # 0430_SUMMIT
@@ -1014,7 +1069,7 @@ def main() -> int:
         "--checkpoint",
         default="auto",
         choices=[
-            "2030_MOBILIZE", "2110_PREP", "2130_OPEN", "2230_POST_AMATEUR",
+            "2030_MOBILIZE", "2110_PREP", "2130_OPEN", "2230_POST_AMATEUR", "2320_LIVE_WATCH",
             "0100_MID_SESSION", "0402_OFFICIAL_CLOSE", "0425_NVDA_EARNINGS_AH", "0430_SUMMIT", "auto",
         ],
     )

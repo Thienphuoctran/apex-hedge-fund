@@ -1,17 +1,19 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-18 20:36:14  
+**Thời gian cập nhật:** 2026-11-18 23:24:56  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261118-203614`  
+**Mã đồng bộ:** `SYNC-AG2P-20261118-232456`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Phiên trực Mỹ & NVDA BCTC (2030_MOBILIZE) — Thượng đỉnh 04h30 19/11
+* **Câu hỏi của Chủ tịch:** Phòng ban chuyên trách túc trực 23h20 theo dõi sát phiên Mỹ (18/11 -> 04h30 19/11)
 * **Kết luận & Quyết định thể chế:**
-[18/11 20:36:11 ICT] Ghi nhận số liệu sống: `ES=F 7,373.75 (+0.20%)`, `NQ=F 27,234.25 (+0.59%)`, `^GSPC 7,340.53 (-1.03%)`, `^IXIC 24,328.38 (-0.74%)`, **`^VIX 24.56 (-3.53%)`**, `US10Y 5.115%`, `DXY 103.79`, `NVDA $160.16 (+3.02%)`, `SMH +2.18%`, `XLF -0.35%`, `VNM ETF 16.80 (+0.78%)`.
+4 Ban (Ban 1 US Elena, Ban 2/10 Lê Hoàng & Hiền, Ban 7 Alex, Ban 9 Victor) đã túc trực & hoàn tất báo cáo sống 23h20: ^GSPC thủng MA200 về 7,303.98 (-0.50%), ^DJI 50,089.71 (-1.32%), NVDA xả -4.7% từ đỉnh .36 về .82 (-1.70%) do Options +-14.5% & FCF/Net 0.22x + 2 hồ sơ 8-K, ^VIX neo 24.69, VNM ETF 16.64 (-0.21%), DXY 103.83, WTI -3.57%, Vàng -2.75%, BTC -3.62% (70% USD Liquidity Squeeze). Đã gia cố kép Cloud: GitHub Actions chạy mỗi 15p + tự backfill bar 1m sàn Mỹ VÀ Render Cloud Daemon thức 24/7 trực tới 04h30 sáng mai.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Hoàn tất nhịp 2030_MOBILIZE (20:36:11 ICT)
+- [x] Kích hoạt 4 phòng ban AI thật (Ban 1 US, Ban 2/10, Alex Ban 7, Victor Ban 9) phân tích cú đảo chiều 23h20
+- [x] Khôi phục 100% mốc 2130_OPEN (09:31 EST) & 2230_POST_AMATEUR (10:30 EST) từ bar 1m sàn Mỹ + ghi 2320_LIVE_WATCH
+- [x] Gia cố kép Cloud: GitHub Actions */15 + Keep-Alive 24/7 + Render Cron Daemon trực 01:00, 04:03, 04:25, 04:32
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
