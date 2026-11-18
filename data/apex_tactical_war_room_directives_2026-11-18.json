@@ -1,0 +1,27 @@
+[
+  {
+    "id": "dir_2026-11-18_001",
+    "timestamp": "08:30:15",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "morning_brief",
+    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã kích hoạt Living War-Room V4.0 cho ngày 2026-11-18. Chế độ thị trường hiện tại: 🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT). Kỷ luật bất biến: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
+  },
+  {
+    "id": "dir_2026-11-18_002",
+    "timestamp": "08:32:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_brief",
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-18. Tổng NAV live: 20,169,522 đ | Tiền mặt thật: 11,389,522 đ (56.5% Cash) | Đang nắm giữ: 300 CP (100 HDB + 100 MSH + 100 BAF ≈ 8,780,000 đ) | Lãi đã chốt lũy kế: +167,119 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
+  },
+  {
+    "id": "ban9_emg_2026-11-18_HDB_CRITICAL",
+    "key": "ban9_emg_2026-11-18_HDB_CRITICAL",
+    "timestamp": "11:52:43",
+    "sender": "Victor (Ban 9 Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_emergency",
+    "content": "🚨 [BAN 9 CẢNH BÁO — HDB] Giá 22,050.00 (-1.56%) | Cách Stop 2xATR: -0.05% | SHORT 1 HỢP ĐỒNG VN30F1M"
+  }
+]
