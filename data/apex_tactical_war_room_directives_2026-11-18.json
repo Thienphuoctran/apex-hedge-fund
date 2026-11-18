@@ -95,5 +95,50 @@
     "role": "specialist",
     "type": "sec_filing",
     "content": "[📊 SEC 10-Q — PLTR] 10-Q (2026-11-03)"
+  },
+  {
+    "id": "cbtt_2026-11-18_CRITICAL_HAG_13953",
+    "key": "cbtt_2026-11-18_CRITICAL_HAG_13953",
+    "timestamp": "00:15:10",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — HAG] Dù Bầu Đức tuyên bố \"nếu 1-2 năm nữa mà lỗ, cứ kêu tôi ra chửi\": Cổ phiếu HAG xuống đáy 16 tháng, giảm gần 30% sau 1 năm (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-18_CRITICAL_PNJ_41669",
+    "key": "cbtt_2026-11-18_CRITICAL_PNJ_41669",
+    "timestamp": "00:15:10",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] PNJ thay Trưởng kiểm toán nội bộ sau quý lỗ 258 tỷ đồng, cắt giảm hơn 1.000 lao động (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-18_RED_FLAG_PNJ_36994",
+    "key": "cbtt_2026-11-18_RED_FLAG_PNJ_36994",
+    "timestamp": "00:15:10",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — PNJ] Nóng: Bảo Tín Minh Châu, PNJ, DOJI, SJC vào danh sách thanh tra năm 2027 (CANH_BAO_RUI_RO)"
+  },
+  {
+    "id": "cbtt_2026-11-18_CRITICAL_FPT_82154",
+    "key": "cbtt_2026-11-18_CRITICAL_FPT_82154",
+    "timestamp": "00:15:10",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT thủng đáy, loạt CTCK đưa ra khuyến nghị bất ngờ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-18_CRITICAL_FPT_60083",
+    "key": "cbtt_2026-11-18_CRITICAL_FPT_60083",
+    "timestamp": "00:15:10",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT công bố thông tin quan trọng (BCTC_KET_QUA_KINH_DOANH)"
   }
 ]

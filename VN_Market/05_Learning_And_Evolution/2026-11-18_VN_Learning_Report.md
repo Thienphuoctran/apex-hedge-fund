@@ -4,17 +4,17 @@
 ---
 
 ## 🏛️ ĐỐI SOÁT TÀI KHOẢN THỰC CHIẾN CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC (TCBS: 105C307855)
-- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`20,149,522 VNĐ`**
+- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`20,229,522 VNĐ`**
 - **Vốn Thực Khớp (200 CP)**: **`6,571,900 VNĐ`**
-- **Giá Trị Thị Trường Sống**: **`6,555,000 VNĐ`**
-- **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color="#00C087">-16,900 VNĐ (-0.26%)</font>`** | **Lãi đã chốt**: **`+166,419 VNĐ`**
+- **Giá Trị Thị Trường Sống**: **`6,635,000 VNĐ`**
+- **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color="#00C087">+63,100 VNĐ (+0.96%)</font>`** | **Lãi đã chốt**: **`+166,419 VNĐ`**
 - **Tiền Mặt Dry Powder Bảo Toàn**: **`13,594,522 VNĐ`**
-- **Account Hit Rate Thực Chiến**: **`0.0%`** (0/2 mã đang giữ lãi dương)
+- **Account Hit Rate Thực Chiến**: **`50.0%`** (1/2 mã đang giữ lãi dương)
 
 | Mã CK | Khối Lượng | Giá Vốn Thực Tế | Thị Giá Sống | Giá Trị Vốn | Giá Trị Thị Trường | Lãi/Lỗ Thực Tế | Ngưỡng Stop 2xATR | Trạng Thái Rủi Ro |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`MSH`** | **100 CP** | 34,510 ₫ | 34,500 ₫ | 3,451,000 ₫ | 3,400,000 ₫ | **-51,000 ₫ (-0.03%)** | 33,090 ₫ | 🟢 AN TOÀN |
-| **`BAF`** | **100 CP** | 31,209 ₫ | 31,050 ₫ | 3,120,900 ₫ | 3,105,000 ₫ | **-15,900 ₫ (-0.51%)** | 30,050 ₫ | 🟢 AN TOÀN |
+| **`MSH`** | **100 CP** | 34,510 ₫ | 35,200 ₫ | 3,451,000 ₫ | 3,520,000 ₫ | **+69,000 ₫ (+2.00%)** | 33,090 ₫ | 🟢 AN TOÀN |
+| **`BAF`** | **100 CP** | 31,209 ₫ | 31,150 ₫ | 3,120,900 ₫ | 3,115,000 ₫ | **-5,900 ₫ (-0.19%)** | 30,050 ₫ | 🟢 AN TOÀN |
 
 ---
 
