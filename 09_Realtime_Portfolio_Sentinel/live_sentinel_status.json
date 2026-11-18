@@ -1,80 +1,44 @@
 {
-  "last_scan_utc": "2026-11-18T07:51:35.950450",
+  "last_scan_utc": "2026-11-18T07:51:10.305889+00:00",
   "total_positions_monitored": 2,
   "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
-  "status": "ALL_NORMAL",
+  "status": "ACTIVE_MONITORING",
   "positions": [
     {
       "symbol": "MSH",
       "market": "VIETNAM",
-      "name": "May Sông Hồng (HOSE)",
-      "current_price": 35200.0,
-      "prev_close": 35050.0,
-      "change_pct": 0.43,
-      "stop_loss_2atr": 33090.0,
-      "stop_dist_pct": 5.99,
-      "tp1": 39500.0,
-      "tp2": 43000.0,
-      "tp1_dist_pct": 12.22,
-      "tp2_dist_pct": 22.16,
-      "volume_surge_ratio": 0.02,
-      "vwap_est": 34933.33,
-      "severity": "NORMAL",
-      "triggers_hit": [],
-      "upside_triggers_hit": [],
-      "hedging_solution": {
-        "instrument": "Hợp Đồng Tương Lai VN30F1M",
-        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
-        "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 3825.0
-      },
       "shares": 100,
-      "allocated_capital": 3451000.0,
-      "currency": "VND",
-      "bctc_thesis": "",
-      "catalysts": ""
+      "entry_price": 34510.0,
+      "current_price": 35200.0,
+      "stop_loss_2atr": 33090.0,
+      "tp1": 39500.0,
+      "distance_to_stop_pct": 5.99,
+      "distance_to_tp1_pct": 12.22,
+      "severity": "NORMAL"
     },
     {
       "symbol": "BAF",
       "market": "VIETNAM",
-      "name": "CTCP Nông Nghiệp BAF Việt Nam",
-      "current_price": 31150.0,
-      "prev_close": 31300.0,
-      "change_pct": -0.48,
-      "stop_loss_2atr": 30050.0,
-      "stop_dist_pct": 3.53,
-      "tp1": 33200.0,
-      "tp2": 36500.0,
-      "tp1_dist_pct": 6.58,
-      "tp2_dist_pct": 17.17,
-      "volume_surge_ratio": 0.17,
-      "vwap_est": 31066.67,
-      "severity": "NORMAL",
-      "triggers_hit": [],
-      "upside_triggers_hit": [],
-      "hedging_solution": {
-        "instrument": "Hợp Đồng Tương Lai VN30F1M",
-        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
-        "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 4229.5
-      },
       "shares": 100,
-      "allocated_capital": 3120900.0,
-      "currency": "VND",
-      "bctc_thesis": "",
-      "catalysts": ""
+      "entry_price": 31209.0,
+      "current_price": 31150.0,
+      "stop_loss_2atr": 30050.0,
+      "tp1": 33200.0,
+      "distance_to_stop_pct": 3.53,
+      "distance_to_tp1_pct": 6.58,
+      "severity": "NORMAL"
     }
   ],
   "wave_hunter_summary": {
     "vn_waves_count": 8,
     "us_waves_count": 6,
     "top_vn_wave_symbols": [
-      "KDH",
-      "BSR",
-      "VCG",
-      "PVD",
-      "VHC"
+      "HHV",
+      "POW",
+      "MSN",
+      "PC1",
+      "HPG"
     ],
     "top_us_wave_symbols": [
       "NVDA",
@@ -82,5 +46,46 @@
       "AVGO",
       "MSFT"
     ]
-  }
+  },
+  "temporal_context": {
+    "timestamp_iso": "2026-11-18T14:51:10.260892",
+    "date_str": "2026-11-18",
+    "date_vn": "18/11/2026",
+    "time_vn": "14:51:10",
+    "weekday_index": 2,
+    "weekday_vn": "Thứ Tư",
+    "full_time_label_vn": "14:51:10 Thứ Tư, ngày 18/11/2026",
+    "market_phase": "AFTER_HOURS_CLOSED",
+    "market_phase_vn": "Ngoài giờ giao dịch (Thứ Tư sau 15h00) — Sàn HOSE/HNX đã đóng cửa",
+    "is_trading_hours": false,
+    "next_session_note": "Hệ thống thực hiện kiểm toán EOD, rà soát BCTC và chuẩn bị cho phiên kế tiếp."
+  },
+  "cash_balance_vnd": 13594522.0,
+  "realized_pnl_vnd": 166419.0,
+  "positions_tracked": [
+    {
+      "symbol": "MSH",
+      "market": "VIETNAM",
+      "shares": 100,
+      "entry_price": 34510.0,
+      "current_price": 35200.0,
+      "stop_loss_2atr": 33090.0,
+      "tp1": 39500.0,
+      "distance_to_stop_pct": 5.99,
+      "distance_to_tp1_pct": 12.22,
+      "severity": "NORMAL"
+    },
+    {
+      "symbol": "BAF",
+      "market": "VIETNAM",
+      "shares": 100,
+      "entry_price": 31209.0,
+      "current_price": 31150.0,
+      "stop_loss_2atr": 30050.0,
+      "tp1": 33200.0,
+      "distance_to_stop_pct": 3.53,
+      "distance_to_tp1_pct": 6.58,
+      "severity": "NORMAL"
+    }
+  ]
 }
