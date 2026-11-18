@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-18T17:15:10.711381+00:00",
+  "timestamp_utc": "2026-11-18T21:21:54.366533+00:00",
   "scan_date": "2026-11-18",
-  "total_us_filings_count": 371,
-  "total_vn_announcements_count": 53,
+  "total_us_filings_count": 370,
+  "total_vn_announcements_count": 54,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "8-K",
@@ -94,7 +94,7 @@
     },
     "AMD": {
       "latest_form": "4",
-      "latest_filing_date": "2026-11-17",
+      "latest_filing_date": "2026-11-18",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488",
@@ -146,7 +146,7 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858",
-      "total_recent_filings": 12
+      "total_recent_filings": 11
     },
     "GS": {
       "latest_form": "424B2",
@@ -364,6 +364,22 @@
       "source_url": "https://cafef.vn/mang-nang-luong-tro-thanh-diem-sang-pc1-duoc-du-bao-lai-gan-1300-ty-dong-nam-2027-188261117153826278.chn",
       "total_announcements": 1
     },
+    "ACB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Ngày 19/11, gửi dưới 100 triệu 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "severity": "INFO",
+      "published_at": "Thu, 19 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-19-11-gui-duoi-100-trieu-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261118232517873.chn",
+      "total_announcements": 5
+    },
+    "SHB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Ngày 19/11, gửi dưới 100 triệu 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "severity": "INFO",
+      "published_at": "Thu, 19 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-19-11-gui-duoi-100-trieu-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261118232517873.chn",
+      "total_announcements": 5
+    },
     "VCB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Buồn của cổ đông Vietcombank khi VCB chạm đáy 3 năm: Bỏ 100 triệu đồng mua cổ phiếu 12 tháng trước nay còn 85 triệu, gửi tiết kiệm tại chính ngân hàng có 105 triệu",
@@ -372,14 +388,6 @@
       "source_url": "https://cafef.vn/buon-cua-co-dong-vietcombank-khi-vcb-cham-day-3-nam-bo-100-trieu-dong-mua-co-phieu-12-thang-truoc-nay-con-85-trieu-gui-tiet-kiem-tai-chinh-ngan-hang-co-105-trieu-188261118165450074.chn",
       "total_announcements": 2
     },
-    "ACB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Chọn thẻ khi chi tiêu ở nước ngoài: Đừng chỉ quan tâm phí mà bỏ quên tỷ giá",
-      "severity": "INFO",
-      "published_at": "Wed, 18 Nov 26 09:28:00 +0700",
-      "source_url": "https://cafef.vn/chon-the-khi-chi-tieu-o-nuoc-ngoai-dung-chi-quan-tam-phi-ma-bo-quen-ty-gia-188261118092855276.chn",
-      "total_announcements": 4
-    },
     "VND": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Chọn thẻ khi chi tiêu ở nước ngoài: Đừng chỉ quan tâm phí mà bỏ quên tỷ giá",
@@ -387,14 +395,6 @@
       "published_at": "Wed, 18 Nov 26 09:28:00 +0700",
       "source_url": "https://cafef.vn/chon-the-khi-chi-tieu-o-nuoc-ngoai-dung-chi-quan-tam-phi-ma-bo-quen-ty-gia-188261118092855276.chn",
       "total_announcements": 1
-    },
-    "SHB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngày 18/11, gửi dưới 100 triệu 3 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
-      "severity": "INFO",
-      "published_at": "Wed, 18 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-18-11-gui-duoi-100-trieu-3-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261117233949257.chn",
-      "total_announcements": 4
     },
     "OCB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -1635,7 +1635,7 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001213900-26-121706",
+      "accession_number": "0001918704-26-036103",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1647,7 +1647,19 @@
       "description": "PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036044",
+      "accession_number": "0001918704-26-036101",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-18",
+      "description": "PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001918704-26-036099",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1659,19 +1671,7 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036043",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-18",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-036042",
+      "accession_number": "0001918704-26-036097",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1683,31 +1683,7 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036035",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-18",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-036031",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-18",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-036030",
+      "accession_number": "0001918704-26-036094",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1719,19 +1695,7 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036029",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-18",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-036028",
+      "accession_number": "0001918704-26-036088",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1743,19 +1707,7 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036027",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "JPM",
-      "company_name": "JPMORGAN CHASE & CO",
-      "form": "424B2",
-      "filing_date": "2026-11-18",
-      "description": "PRICING SUPPLEMENT",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-036026",
+      "accession_number": "0001918704-26-036082",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1767,7 +1719,55 @@
       "description": "PRELIMINARY PRICING SUPPLEMENT",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036024",
+      "accession_number": "0001918704-26-036079",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-18",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-121786",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-18",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-121785",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-18",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-121783",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "JPM",
+      "company_name": "JPMORGAN CHASE & CO",
+      "form": "424B2",
+      "filing_date": "2026-11-18",
+      "description": "PRELIMINARY PRICING SUPPLEMENT",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001213900-26-121782",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000019617"
     },
     {
@@ -1919,6 +1919,18 @@
       "symbol": "AMD",
       "company_name": "ADVANCED MICRO DEVICES INC",
       "form": "4",
+      "filing_date": "2026-11-18",
+      "description": "FORM 4",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0000002488-26-000213",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "AMD",
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "form": "4",
       "filing_date": "2026-11-17",
       "description": "FORM 4",
       "event_type": "INSIDER_TRADING",
@@ -2032,18 +2044,6 @@
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
       "accession_number": "0001950047-26-011155",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "AMD",
-      "company_name": "ADVANCED MICRO DEVICES INC",
-      "form": "144",
-      "filing_date": "2026-11-16",
-      "description": "SEC Form 144",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001950047-26-011119",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000002488"
     },
     {
@@ -2667,7 +2667,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036047",
+      "accession_number": "0001918704-26-036102",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2679,7 +2679,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036045",
+      "accession_number": "0001918704-26-036090",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2691,7 +2691,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036040",
+      "accession_number": "0001918704-26-036089",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2703,7 +2703,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036038",
+      "accession_number": "0001918704-26-036084",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2711,11 +2711,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036010",
+      "accession_number": "0001918704-26-036083",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2723,11 +2723,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036009",
+      "accession_number": "0001918704-26-036078",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2735,11 +2735,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036008",
+      "accession_number": "0001918704-26-036077",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2747,11 +2747,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036007",
+      "accession_number": "0001918704-26-036076",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2759,11 +2759,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036006",
+      "accession_number": "0001918704-26-036075",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2771,11 +2771,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036005",
+      "accession_number": "0001918704-26-036068",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2783,23 +2783,11 @@
       "symbol": "BAC",
       "company_name": "BANK OF AMERICA CORP /DE/",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001918704-26-036002",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "BAC",
-      "company_name": "BANK OF AMERICA CORP /DE/",
-      "form": "424B2",
-      "filing_date": "2026-11-17",
-      "description": "424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0001918704-26-036001",
+      "accession_number": "0001918704-26-036067",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000070858"
     },
     {
@@ -2811,7 +2799,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-466604",
+      "accession_number": "0001193125-26-467137",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2823,7 +2811,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-466599",
+      "accession_number": "0001193125-26-467136",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2835,7 +2823,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-466563",
+      "accession_number": "0001193125-26-467106",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2847,7 +2835,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-466544",
+      "accession_number": "0001193125-26-467105",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2859,7 +2847,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-466523",
+      "accession_number": "0001193125-26-467103",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2871,7 +2859,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-466497",
+      "accession_number": "0001193125-26-467101",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2883,31 +2871,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-466490",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-18",
-      "description": "FORM 424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000950103-26-017734",
-      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
-    },
-    {
-      "market": "US_GLOBAL",
-      "symbol": "GS",
-      "company_name": "GOLDMAN SACHS GROUP INC",
-      "form": "424B2",
-      "filing_date": "2026-11-18",
-      "description": "FORM 424B2",
-      "event_type": "INSIDER_TRADING",
-      "severity": "INFO",
-      "accession_number": "0000950103-26-017732",
+      "accession_number": "0001193125-26-467066",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2919,7 +2883,7 @@
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-465945",
+      "accession_number": "0001193125-26-467035",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2927,11 +2891,11 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-465746",
+      "accession_number": "0001193125-26-467020",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -2939,11 +2903,35 @@
       "symbol": "GS",
       "company_name": "GOLDMAN SACHS GROUP INC",
       "form": "424B2",
-      "filing_date": "2026-11-17",
+      "filing_date": "2026-11-18",
       "description": "424B2",
       "event_type": "INSIDER_TRADING",
       "severity": "INFO",
-      "accession_number": "0001193125-26-465676",
+      "accession_number": "0001193125-26-466984",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-18",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-466976",
+      "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
+    },
+    {
+      "market": "US_GLOBAL",
+      "symbol": "GS",
+      "company_name": "GOLDMAN SACHS GROUP INC",
+      "form": "424B2",
+      "filing_date": "2026-11-18",
+      "description": "424B2",
+      "event_type": "INSIDER_TRADING",
+      "severity": "INFO",
+      "accession_number": "0001193125-26-466974",
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000886982"
     },
     {
@@ -5120,6 +5108,19 @@
       "severity": "INFO",
       "published_at": "Tue, 17 Nov 26 16:14:00 +0700",
       "source_url": "https://cafef.vn/buon-cua-fpt-18826111716112616.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB",
+        "SHB"
+      ],
+      "title": "Ngày 19/11, gửi dưới 100 triệu 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "summary": "Với khoản tiền gửi dưới 100 triệu đồng kỳ hạn 6 tháng, lãi suất tiết kiệm tại 7 ngân hàng lớncó sự chênh lệch đáng kể giữa hình thức gửi tại quầy và online. Vậy gửi tiền tại ngân hàng nào có lợi hơn?...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 19 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-19-11-gui-duoi-100-trieu-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261118232517873.chn"
     },
     {
       "market": "VIETNAM",

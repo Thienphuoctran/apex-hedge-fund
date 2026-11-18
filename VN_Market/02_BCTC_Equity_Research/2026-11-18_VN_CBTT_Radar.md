@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (TOÀN THỊ TRƯỜNG 144+ MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-18 17:15:10  
-> **Số sự kiện ghi nhận:** 53 thông báo  
+> **Thời gian quét:** 2026-11-18 21:21:54  
+> **Số sự kiện ghi nhận:** 54 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -21,6 +21,7 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | PNJ bất ngờ thay nhân sự tại vị trí quan trọng | [Xem Link](https://cafef.vn/pnj-bat-ngo-thay-nhan-su-tai-vi-tri-quan-trong-188261117173921207.chn) |
 | **PC1** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Mảng năng lượng trở thành điểm sáng, PC1 được dự báo lãi gần 1.300 tỷ đồng năm 2027 | [Xem Link](https://cafef.vn/mang-nang-luong-tro-thanh-diem-sang-pc1-duoc-du-bao-lai-gan-1300-ty-dong-nam-2027-188261117153826278.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của FPT | [Xem Link](https://cafef.vn/buon-cua-fpt-18826111716112616.chn) |
+| **ACB, SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 19/11, gửi dưới 100 triệu 6 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-19-11-gui-duoi-100-trieu-6-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261118232517873.chn) |
 | **LPB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 'Đột biến' giao dịch thỏa thuận nghìn tỷ cổ phiếu ngân hàng | [Xem Link](https://cafef.vn/dot-bien-giao-dich-thoa-thuan-nghin-ty-co-phieu-ngan-hang-188261118182242675.chn) |
 | **VCB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của cổ đông Vietcombank khi VCB chạm đáy 3 năm: Bỏ 100 triệu đồng mua cổ phiếu 12 tháng trước nay còn 85 triệu, gửi tiết kiệm tại chính ngân hàng có 105 triệu | [Xem Link](https://cafef.vn/buon-cua-co-dong-vietcombank-khi-vcb-cham-day-3-nam-bo-100-trieu-dong-mua-co-phieu-12-thang-truoc-nay-con-85-trieu-gui-tiet-kiem-tai-chinh-ngan-hang-co-105-trieu-188261118165450074.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn trơn 9999 chiều ngày 18/11 tại SJC, Bảo Tín Mạnh Hải, DOJI, PNJ... | [Xem Link](https://cafef.vn/gia-vang-sjc-vang-nhan-tron-9999-sang-ngay-18-11-188261118052841548.chn) |
