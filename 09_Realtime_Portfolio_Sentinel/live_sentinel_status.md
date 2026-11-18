@@ -1,26 +1,25 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-18 07:35:23`  
+*Cập nhật gần nhất*: `2026-11-18 08:20:14`  
 *Trạng thái hệ thống*: **`✅ TOÀN BỘ 9 PHÒNG BAN TRỰC CHIẾN 24/7 ỔN ĐỊNH`**  
-*Tổng số mã đang bảo vệ 2 đầu*: **`3 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
+*Tổng số mã đang bảo vệ 2 đầu*: **`2 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
 ## 1. Giám Sát Cổ Phiếu Đang Đầu Tư (Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR)
 | Mã CP | Thị Trường | Giá Hiện Tại | Biến Động | Ngưỡng Stop 2xATR | Cách Stop | Mục Tiêu TP1 | Cách TP1 | Vol Surge | Trạng Thái Tác Chiến |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`HDB`** | VIETNAM | `22,400.00 VND` | `+0.00%` | `22,060.00 VND` | `+1.52%` | `24,200.00 VND` | `+8.04%` | `0.0x` | ✅ Đang canh 2 đầu |
-| **`MSH`** | VIETNAM | `35,050.00 VND` | `+0.00%` | `33,090.00 VND` | `+5.59%` | `39,500.00 VND` | `+12.70%` | `0.0x` | ✅ Đang canh 2 đầu |
-| **`BAF`** | VIETNAM | `31,300.00 VND` | `+0.00%` | `30,050.00 VND` | `+3.99%` | `33,200.00 VND` | `+6.07%` | `0.0x` | ✅ Đang canh 2 đầu |
+| **`MSH`** | VIETNAM | `35,200.00 VND` | `+0.43%` | `33,090.00 VND` | `+5.99%` | `39,500.00 VND` | `+12.22%` | `0.0x` | ✅ Đang canh 2 đầu |
+| **`BAF`** | VIETNAM | `31,150.00 VND` | `-0.48%` | `30,050.00 VND` | `+3.53%` | `33,200.00 VND` | `+6.58%` | `0.2x` | ✅ Đang canh 2 đầu |
 
 ## 2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực
 | Chuyên Viên | Mã CP | Giá Hiện Tại | Tín Hiệu Sóng | Chất Lượng BCTC | Điểm Mua Chuẩn | Cắt Lỗ 2xATR | Chốt Lời TP1 |
 | :--- | :---: | :---: | :--- | :---: | :---: | :---: | :---: |
-| **Minh Quân (VN)** | **`HHV`** | `9,510 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AA** (`84.7/100`) | `9,462 ₫` | `9,064 ₫` | `10,446 ₫` |
-| **Minh Quân (VN)** | **`POW`** | `12,850 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`89.2/100`) | `12,786 ₫` | `12,307 ₫` | `13,990 ₫` |
-| **Minh Quân (VN)** | **`MSN`** | `71,500 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`89.5/100`) | `71,142 ₫` | `68,171 ₫` | `78,490 ₫` |
-| **Minh Quân (VN)** | **`PC1`** | `16,250 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`87.7/100`) | `16,169 ₫` | `15,489 ₫` | `17,848 ₫` |
-| **Minh Quân (VN)** | **`HPG`** | `21,050 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`88.1/100`) | `20,945 ₫` | `20,086 ₫` | `23,075 ₫` |
+| **Minh Quân (VN)** | **`KDH`** | `16,050 ₫` | ⚡ BÙNG NỔ DÒNG TIỀN / POCKET PIVOT | **AA** (`89.7/100`) | `15,970 ₫` | `14,926 ₫` | `18,975 ₫` |
+| **Minh Quân (VN)** | **`BSR`** | `24,000 ₫` | 💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND) | **AAA** (`87.0/100`) | `23,880 ₫` | `22,320 ₫` | `27,660 ₫` |
+| **Minh Quân (VN)** | **`VCG`** | `14,850 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`82.9/100`) | `14,776 ₫` | `13,907 ₫` | `16,830 ₫` |
+| **Minh Quân (VN)** | **`PVD`** | `15,500 ₫` | 💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND) | **AAA** (`88.4/100`) | `15,422 ₫` | `14,415 ₫` | `18,065 ₫` |
+| **Minh Quân (VN)** | **`VHC`** | `51,000 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`88.0/100`) | `50,745 ₫` | `48,671 ₫` | `55,890 ₫` |
 | **Alex (Global)** | **`NVDA`** | `$155.46` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`80.3/100`) | `$151.44` | `$132.47` | `$201.44` |
 | **Alex (Global)** | **`TSM`** | `$359.69` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`83.1/100`) | `$352.32` | `$317.59` | `$443.89` |
-| **Alex (Global)** | **`AVGO`** | `$341.60` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`80.9/100`) | `$334.41` | `$300.50` | `$423.80` |
+| **Alex (Global)** | **`AVGO`** | `$341.60` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`80.9/100`) | `$334.35` | `$300.17` | `$424.46` |
 
 ---
 

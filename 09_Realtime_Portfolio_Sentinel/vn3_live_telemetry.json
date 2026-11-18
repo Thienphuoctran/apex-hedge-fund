@@ -1,10 +1,10 @@
 {
-  "updated_at": "14:32:08 Thứ Tư, ngày 18/11/2026",
+  "updated_at": "08:20:03 Thứ Tư, ngày 18/11/2026",
   "account_id": "105C307855",
   "status": "ACTIVE_HOLDING",
   "cash_balance_vnd": 13594522.0,
   "dry_powder": 13594522.0,
-  "total_nav_vnd": 20149522.0,
+  "total_nav_vnd": 20229522.0,
   "realized_pnl_vnd": 166419.0,
   "positions": [
     {
@@ -13,21 +13,22 @@
       "shares": 100,
       "tradable_shares": 100,
       "entry_price": 34510.0,
-      "current_price": 34500.0,
+      "current_price": 35200.0,
       "cost_basis_vnd": 3451000.0,
-      "market_val_vnd": 3400000.0,
-      "unrealized_pnl_vnd": -51000.0,
-      "unrealized_pnl_pct": -1.48,
+      "market_val_vnd": 3520000.0,
+      "unrealized_pnl_vnd": 69000.0,
+      "unrealized_pnl_pct": 2.0,
       "stop_loss": 33090.0,
       "take_profit_tp1": 39500.0,
       "take_profit_tp2": 43000.0,
-      "status": "HOLDING_T0_AVAILABLE"
+      "status": "HOLDING_T0_AVAILABLE",
+      "available_shares": 100
     },
     {
       "symbol": "BAF",
       "shares": 100,
       "entry_price": 31209.0,
-      "current_price": 31050.0,
+      "current_price": 31150.0,
       "stop_loss": 30050.0,
       "take_profit_tp1": 33200.0,
       "take_profit_tp2": 36500.0,
@@ -36,7 +37,10 @@
       "pending_shares": 100,
       "status": "HOLDING_T0",
       "name": "CTCP Nông Nghiệp BAF Việt Nam",
-      "sector": "Nông nghiệp 3F"
+      "sector": "Nông nghiệp 3F",
+      "market_val_vnd": 3115000.0,
+      "unrealized_pnl_vnd": -5900.0,
+      "unrealized_pnl_pct": -0.19
     }
   ]
 }
