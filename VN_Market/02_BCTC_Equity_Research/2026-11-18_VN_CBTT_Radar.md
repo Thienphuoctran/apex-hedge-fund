@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (TOÀN THỊ TRƯỜNG 144+ MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-18 07:50:52  
-> **Số sự kiện ghi nhận:** 57 thông báo  
+> **Thời gian quét:** 2026-11-18 10:02:04  
+> **Số sự kiện ghi nhận:** 55 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -11,8 +11,7 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Viettel tung chương trình hỗ trợ tới 370 tỷ đồng tại TP.HCM: Từ hộ kinh doanh đến các công ty đều có cơ hội nhận ưu đãi | [Xem Link](https://cafef.vn/viettel-tung-chuong-trinh-ho-tro-toi-370-ty-dong-tai-tphcm-tu-ho-kinh-doanh-den-cac-cong-ty-deu-co-co-hoi-nhan-uu-dai-188261117144459068.chn) |
 | **FOX, FPT** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | DN thuộc Bộ Công an vừa có quyết định quan trọng liên quan đến tuyến cáp biển tham vọng của Viettel | [Xem Link](https://cafef.vn/dn-thuoc-bo-cong-an-vua-co-quyet-dinh-quan-trong-lien-quan-den-tuyen-cap-bien-tham-vong-cua-viettel-188261117135939587.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Đèo Cả huy động gần 900 nhân sự, hơn 200 máy móc thi công gói thầu 5.600 tỷ đồng, đặt mục tiêu hợp long cầu Long Thành vào tháng 3/2027 | [Xem Link](https://cafef.vn/deo-ca-huy-dong-gan-900-nhan-su-hon-200-may-moc-thi-cong-goi-thau-5600-ty-dong-dat-muc-tieu-hop-long-cau-long-thanh-vao-thang-3-2027-188261117102711277.chn) |
-| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bức thư 176.000 chữ ký và tương lai của cựu CEO Nvidia | [Xem Link](https://cafef.vn/buc-thu-176000-chu-ky-va-tuong-lai-cua-cuu-ceo-nvidia-18826111705504596.chn) |
-| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CEO hãng xe điện Trung Quốc tuyên bố "Việt Nam sẽ làm nên chuyện lớn", hé lộ hợp tác với hai nền tảng giao hàng hàng đầu | [Xem Link](https://cafef.vn/ceo-hang-xe-dien-trung-quoc-tuyen-bo-viet-nam-se-lam-nen-chuyen-lon-he-lo-hop-tac-voi-hai-nen-tang-giao-hang-hang-dau-188261116231110038.chn) |
+| **FRT, KDH** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại thẳng tay bán ròng hơn 1.100 tỷ đồng trong ngày VN-Index giảm sâu, "xả" mạnh loạt cổ phiếu hot | [Xem Link](https://cafef.vn/khoi-ngoai-thang-tay-ban-rong-hon-1100-ty-dong-trong-ngay-vn-index-giam-sau-xa-manh-loat-co-phieu-hot-18826111815273573.chn) |
 | **FPT** | `CO_TUC` | ⚠️ CHÚ Ý | Ông Trương Gia Bình sắp nhận gần 130 tỷ đồng cổ tức từ FPT giữa lúc cổ phiếu "trôi" về đáy 3 năm | [Xem Link](https://cafef.vn/ong-truong-gia-binh-sap-nhan-gan-130-ty-dong-co-tuc-tu-fpt-giua-luc-co-phieu-troi-ve-day-3-nam-188261118142411194.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT thủng đáy, loạt CTCK đưa ra khuyến nghị bất ngờ | [Xem Link](https://cafef.vn/fpt-thung-day-loat-ctck-dua-ra-khuyen-nghi-bat-ngo-188261118123609762.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT công bố thông tin quan trọng | [Xem Link](https://cafef.vn/fpt-cong-bo-thong-tin-quan-trong-188261118090644835.chn) |
@@ -23,7 +22,7 @@
 | **PC1** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Mảng năng lượng trở thành điểm sáng, PC1 được dự báo lãi gần 1.300 tỷ đồng năm 2027 | [Xem Link](https://cafef.vn/mang-nang-luong-tro-thanh-diem-sang-pc1-duoc-du-bao-lai-gan-1300-ty-dong-nam-2027-188261117153826278.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của FPT | [Xem Link](https://cafef.vn/buon-cua-fpt-18826111716112616.chn) |
 | **SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Lên sóng trực tiếp giữa Phố Wall, lãnh đạo SSI khẳng định Việt Nam là một trong những thị trường tốt nhất thế giới | [Xem Link](https://cafef.vn/len-song-truc-tiep-giua-pho-wall-lanh-dao-ssi-khang-dinh-viet-nam-la-mot-trong-nhung-thi-truong-tot-nhat-the-gioi-188261117100250143.chn) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng 9999 PNJ hôm nay 17/11/2026 bao nhiêu 1 chỉ? | [Xem Link](https://cafef.vn/gia-vang-9999-pnj-hom-nay-17-11-2026-bao-nhieu-1-chi-188261117071539702.chn) |
+| **VCB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Buồn của cổ đông Vietcombank khi VCB chạm đáy 3 năm: Bỏ 100 triệu đồng mua cổ phiếu 12 tháng trước nay còn 85 triệu, gửi tiết kiệm tại chính ngân hàng có 105 triệu | [Xem Link](https://cafef.vn/buon-cua-co-dong-vietcombank-khi-vcb-cham-day-3-nam-bo-100-trieu-dong-mua-co-phieu-12-thang-truoc-nay-con-85-trieu-gui-tiet-kiem-tai-chinh-ngan-hang-co-105-trieu-188261118165450074.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng miếng, vàng nhẫn trơn 9999 chiều ngày 18/11 tại SJC, Bảo Tín Mạnh Hải, DOJI, PNJ... | [Xem Link](https://cafef.vn/gia-vang-sjc-vang-nhan-tron-9999-sang-ngay-18-11-188261118052841548.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Techcombank và Techcombank OneU góp phần thắp sáng bản đồ "Việt Nam Rực Rỡ" thu hút gần 1000 câu chuyện tích cực | [Xem Link](https://cafef.vn/techcombank-va-techcombank-oneu-gop-phan-thap-sang-ban-do-viet-nam-ruc-ro-thu-hut-gan-1000-cau-chuyen-tich-cuc-188261118093909114.chn) |
 | **ACB, VND** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chọn thẻ khi chi tiêu ở nước ngoài: Đừng chỉ quan tâm phí mà bỏ quên tỷ giá | [Xem Link](https://cafef.vn/chon-the-khi-chi-tieu-o-nuoc-ngoai-dung-chi-quan-tam-phi-ma-bo-quen-ty-gia-188261118092855276.chn) |
@@ -48,7 +47,6 @@
 | **CEO** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Cổ phiếu Nvidia trải qua chuỗi giảm giá dài nhất 14 năm, điều gì sẽ xảy ra tiếp theo? | [Xem Link](https://vneconomy.vn/co-phieu-nvidia-trai-qua-chuoi-giam-gia-dai-nhat-14-nam-dieu-gi-se-xay-ra-tiep-theo.htm) |
 | **VIX** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại tiếp tục mua ròng, gom nhiều nhất một cổ phiếu chứng khoán | [Xem Link](https://vneconomy.vn/khoi-ngoai-tiep-tuc-mua-rong-gom-nhieu-nhat-mot-co-phieu-chung-khoan.htm) |
 | **VIX** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại bất ngờ mua ròng mạnh ở VIX, VN-Index đảo chiều thành công | [Xem Link](https://vneconomy.vn/khoi-ngoai-bat-ngo-mua-rong-manh-o-vix-vn-index-dao-chieu-thanh-cong.htm) |
-| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chứng khoán Mỹ tụt điểm sau khi CEO của Nvidia mất chức, giá dầu thô tăng mạnh vì bài đăng của Tổng thống Trump | [Xem Link](https://vneconomy.vn/chung-khoan-my-tut-diem-sau-khi-ceo-cua-nvidia-mat-chuc-gia-dau-tho-tang-manh-vi-bai-dang-cua-tong-thong-trump.htm) |
 | **SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SHB mừng sinh nhật 33 năm với 333 giải thưởng và nhiều ưu đãi dành cho khách hàng | [Xem Link](https://vneconomy.vn/shb-mung-sinh-nhat-33-nam-voi-333-giai-thuong-va-nhieu-uu-dai-danh-cho-khach-hang.htm) |
 | **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Nvidia nói 'không có ý định đưa Jensen Huang quay lại' | [Xem Link](https://vnexpress.net/chu-tich-nvidia-noi-khong-co-y-dinh-dua-jensen-huang-quay-lai-5145974.html) |
 | **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Quyền lực Nvidia ra sao khi không còn Jensen Huang? | [Xem Link](https://vnexpress.net/quyen-luc-nvidia-ra-sao-khi-khong-con-jensen-huang-5145629.html) |

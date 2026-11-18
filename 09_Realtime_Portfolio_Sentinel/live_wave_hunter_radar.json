@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18 08:20:14",
+  "generated_at": "2026-11-18 10:02:15",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -375,10 +375,10 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "CEO",
+      "symbol": "FRT,KDH",
       "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 17 Nov 26 0",
-      "headline": "Bức thư 176.000 chữ ký và tương lai của cựu CEO Nvidia",
+      "date": "Wed, 18 Nov 26 1",
+      "headline": "Khối ngoại thẳng tay bán ròng hơn 1.100 tỷ đồng trong ngày VN-Index giảm sâu, \"xả\" mạnh loạt cổ phiếu hot",
       "is_portfolio_holding": false
     }
   ],
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 57 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 370 hồ sơ SEC & 55 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

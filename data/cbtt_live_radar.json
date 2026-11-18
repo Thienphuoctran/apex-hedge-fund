@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-18T07:50:52.089618+00:00",
+  "timestamp_utc": "2026-11-18T10:02:04.367452+00:00",
   "scan_date": "2026-11-18",
   "total_us_filings_count": 370,
-  "total_vn_announcements_count": 57,
+  "total_vn_announcements_count": 55,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "8-K",
@@ -298,7 +298,7 @@
       "severity": "CRITICAL",
       "published_at": "Wed, 18 Nov 26 08:29:00 +0700",
       "source_url": "https://cafef.vn/pnj-thay-truong-kiem-toan-noi-bo-sau-quy-lo-258-ty-dong-cat-giam-hon-1000-lao-dong-188261118082759571.chn",
-      "total_announcements": 7
+      "total_announcements": 6
     },
     "PVS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -340,13 +340,21 @@
       "source_url": "https://cafef.vn/dn-thuoc-bo-cong-an-vua-co-quyet-dinh-quan-trong-lien-quan-den-tuyen-cap-bien-tham-vong-cua-viettel-188261117135939587.chn",
       "total_announcements": 1
     },
-    "CEO": {
+    "FRT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Bức thư 176.000 chữ ký và tương lai của cựu CEO Nvidia",
+      "latest_title": "Khối ngoại thẳng tay bán ròng hơn 1.100 tỷ đồng trong ngày VN-Index giảm sâu, \"xả\" mạnh loạt cổ phiếu hot",
       "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 06:50:00 +0700",
-      "source_url": "https://cafef.vn/buc-thu-176000-chu-ky-va-tuong-lai-cua-cuu-ceo-nvidia-18826111705504596.chn",
-      "total_announcements": 12
+      "published_at": "Wed, 18 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/khoi-ngoai-thang-tay-ban-rong-hon-1100-ty-dong-trong-ngay-vn-index-giam-sau-xa-manh-loat-co-phieu-hot-18826111815273573.chn",
+      "total_announcements": 1
+    },
+    "KDH": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Khối ngoại thẳng tay bán ròng hơn 1.100 tỷ đồng trong ngày VN-Index giảm sâu, \"xả\" mạnh loạt cổ phiếu hot",
+      "severity": "INFO",
+      "published_at": "Wed, 18 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/khoi-ngoai-thang-tay-ban-rong-hon-1100-ty-dong-trong-ngay-vn-index-giam-sau-xa-manh-loat-co-phieu-hot-18826111815273573.chn",
+      "total_announcements": 1
     },
     "SHS": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -370,6 +378,14 @@
       "severity": "INFO",
       "published_at": "Tue, 17 Nov 26 10:02:00 +0700",
       "source_url": "https://cafef.vn/len-song-truc-tiep-giua-pho-wall-lanh-dao-ssi-khang-dinh-viet-nam-la-mot-trong-nhung-thi-truong-tot-nhat-the-gioi-188261117100250143.chn",
+      "total_announcements": 2
+    },
+    "VCB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Buồn của cổ đông Vietcombank khi VCB chạm đáy 3 năm: Bỏ 100 triệu đồng mua cổ phiếu 12 tháng trước nay còn 85 triệu, gửi tiết kiệm tại chính ngân hàng có 105 triệu",
+      "severity": "INFO",
+      "published_at": "Wed, 18 Nov 26 16:52:00 +0700",
+      "source_url": "https://cafef.vn/buon-cua-co-dong-vietcombank-khi-vcb-cham-day-3-nam-bo-100-trieu-dong-mua-co-phieu-12-thang-truoc-nay-con-85-trieu-gui-tiet-kiem-tai-chinh-ngan-hang-co-105-trieu-188261118165450074.chn",
       "total_announcements": 2
     },
     "ACB": {
@@ -404,14 +420,6 @@
       "source_url": "https://cafef.vn/ocb-danh-2000-ty-dong-uu-dai-von-vay-san-xuat-kinh-doanh-cuoi-nam-188261117181724856.chn",
       "total_announcements": 1
     },
-    "VCB": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Cổ phiếu ngân hàng lớn nhất sàn chứng khoán Việt Nam rơi xuống đáy 19 tháng: Khối ngoại bán ròng hơn 7.300 tỷ đồng, thị giá giảm gần 31% từ đỉnh",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 17 Nov 26 15:31:00 +0700",
-      "source_url": "https://cafef.vn/co-phieu-ngan-hang-lon-nhat-san-chung-khoan-viet-nam-roi-xuong-day-19-thang-khoi-ngoai-ban-rong-hon-7300-ty-dong-thi-gia-giam-gan-31-tu-dinh-188261117153156458.chn",
-      "total_announcements": 1
-    },
     "MSB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "“Âm vang xứ Bạch Dương”: Hành trình khám phá những kiệt tác âm nhạc Nga và Đông Âu",
@@ -435,6 +443,14 @@
       "published_at": "Wed, 18 Nov 26 13:25:00 +0700",
       "source_url": "https://cafef.vn/moi-gioi-chot-hon-250-bds-cao-cap-ban-lien-14-can-cho-mot-khach-vip-va-ke-ve-deal-130-ty-dong-day-cang-thang-188261118132517098.chn",
       "total_announcements": 1
+    },
+    "CEO": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Cổ phiếu Nvidia trải qua chuỗi giảm giá dài nhất 14 năm, điều gì sẽ xảy ra tiếp theo?",
+      "severity": "CRITICAL",
+      "published_at": "Tue, 17 Nov 2026 00:36:02 GMT",
+      "source_url": "https://vneconomy.vn/co-phieu-nvidia-trai-qua-chuoi-giam-gia-dai-nhat-14-nam-dieu-gi-se-xay-ra-tiep-theo.htm",
+      "total_announcements": 9
     },
     "VIX": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4977,26 +4993,15 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "CEO"
+        "FRT",
+        "KDH"
       ],
-      "title": "Bức thư 176.000 chữ ký và tương lai của cựu CEO Nvidia",
-      "summary": "Nhiều tỷ phú và lãnh đạo công nghệ tại Thung lũng Silicon đã ký thư ngỏ gửi hội đồng quản trị Nvidia, kêu gọi đưa ông Jensen Huang trở lại vị trí CEO. Tính đến sáng 16/11, bức thư đã thu hút ít nhất 176.000 chữ ký....",
+      "title": "Khối ngoại thẳng tay bán ròng hơn 1.100 tỷ đồng trong ngày VN-Index giảm sâu, \"xả\" mạnh loạt cổ phiếu hot",
+      "summary": "Ở chiều mua, khối ngoại rót ròng 42 tỷ đồng vào KDH, gần gấp đôi mã đứng kế tiếp là FRT....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 06:50:00 +0700",
-      "source_url": "https://cafef.vn/buc-thu-176000-chu-ky-va-tuong-lai-cua-cuu-ceo-nvidia-18826111705504596.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO"
-      ],
-      "title": "CEO hãng xe điện Trung Quốc tuyên bố \"Việt Nam sẽ làm nên chuyện lớn\", hé lộ hợp tác với hai nền tảng giao hàng hàng đầu",
-      "summary": "Gogoro, hãng xe máy điện và đổi pin nổi tiếng Đài Loan (Trung Quốc), đang thử nghiệm mô hình đổi pin với hai nền tảng giao hàng lớn tại Việt Nam. CEO Henry Chiang đánh giá Việt Nam sẽ trở thành thị trường quan trọng tron...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 00:04:00 +0700",
-      "source_url": "https://cafef.vn/ceo-hang-xe-dien-trung-quoc-tuyen-bo-viet-nam-se-lam-nen-chuyen-lon-he-lo-hop-tac-voi-hai-nen-tang-giao-hang-hang-dau-188261116231110038.chn"
+      "published_at": "Wed, 18 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/khoi-ngoai-thang-tay-ban-rong-hon-1100-ty-dong-trong-ngay-vn-index-giam-sau-xa-manh-loat-co-phieu-hot-18826111815273573.chn"
     },
     {
       "market": "VIETNAM",
@@ -5121,14 +5126,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "PNJ"
+        "VCB"
       ],
-      "title": "Giá vàng 9999 PNJ hôm nay 17/11/2026 bao nhiêu 1 chỉ?",
-      "summary": "Giá vàng hôm nay 17/11/2026, cập nhật mới nhất giá vàng 9999, vàng nhẫn trơn tại PNJ cùng các thương hiệu lớn trên thị trường....",
+      "title": "Buồn của cổ đông Vietcombank khi VCB chạm đáy 3 năm: Bỏ 100 triệu đồng mua cổ phiếu 12 tháng trước nay còn 85 triệu, gửi tiết kiệm tại chính ngân hàng có 105 triệu",
+      "summary": "Cổ phiếu Vietcombank rơi xuống mức thấp nhất trong hơn 3 năm rưỡi, khiến khoản đầu tư 100 triệu đồng vào VCB cách đây một năm hiện chỉ còn giá trị tương đương 85,5 triệu đồng. Trong khi đó, nếu gửi tiết kiệm tại chính ng...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 08:25:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-9999-pnj-hom-nay-17-11-2026-bao-nhieu-1-chi-188261117071539702.chn"
+      "published_at": "Wed, 18 Nov 26 16:52:00 +0700",
+      "source_url": "https://cafef.vn/buon-cua-co-dong-vietcombank-khi-vcb-cham-day-3-nam-bo-100-trieu-dong-mua-co-phieu-12-thang-truoc-nay-con-85-trieu-gui-tiet-kiem-tai-chinh-ngan-hang-co-105-trieu-188261118165450074.chn"
     },
     {
       "market": "VIETNAM",
@@ -5421,18 +5426,6 @@
       "severity": "INFO",
       "published_at": "Fri, 13 Nov 2026 08:32:53 GMT",
       "source_url": "https://vneconomy.vn/khoi-ngoai-bat-ngo-mua-rong-manh-o-vix-vn-index-dao-chieu-thanh-cong.htm"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO"
-      ],
-      "title": "Chứng khoán Mỹ tụt điểm sau khi CEO của Nvidia mất chức, giá dầu thô tăng mạnh vì bài đăng của Tổng thống Trump",
-      "summary": "Thị trường chứng khoán Mỹ giảm điểm trong phiên giao dịch ngày thứ Năm (12/11), khi cổ phiếu Nvidia bị bán mạnh trong lúc nhà đầu tư đánh giá về tác động của việc CEO Jensen Huang bị cách chức do bê bối đời tư......",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 13 Nov 2026 01:23:04 GMT",
-      "source_url": "https://vneconomy.vn/chung-khoan-my-tut-diem-sau-khi-ceo-cua-nvidia-mat-chuc-gia-dau-tho-tang-manh-vi-bai-dang-cua-tong-thong-trump.htm"
     },
     {
       "market": "VIETNAM",
