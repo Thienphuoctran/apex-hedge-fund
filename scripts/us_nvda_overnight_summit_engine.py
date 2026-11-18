@@ -54,7 +54,7 @@ CORE_TICKERS: List[str] = [
     "^GSPC", "^IXIC", "^DJI", "^RUT", "^VIX", "^TNX", "DX-Y.NYB", "CL=F", "GC=F", "BTC-USD",
     "VNM", "EEM",
     "SMH", "XLK", "XLF", "XLE", "XLI", "XLY", "XLV", "XLP", "XLU", "XLRE", "XLC", "XLB",
-    "NVDA", "AVGO", "AMD", "TSM", "META", "XOM", "MSFT", "AAPL", "GOOGL", "AMZN", "TSLA",
+    "NVDA", "AVGO", "AMD", "TSM", "PANW", "META", "XOM", "MSFT", "AAPL", "GOOGL", "AMZN", "TSLA",
 ]
 INTRADAY_PRIORITY_TICKERS = {
     "ES=F", "NQ=F", "^GSPC", "^IXIC", "^DJI", "^VIX", "^TNX", "DX-Y.NYB", "CL=F",
@@ -202,6 +202,85 @@ def _fetch_single_ticker(sym: str) -> Tuple[str, Dict[str, Any]]:
         return sym, {"last": 0.0, "prev": 0.0, "chg_pct": 0.0, "error": str(exc)}
 
 
+CNBC_TO_YF: Dict[str, str] = {
+    ".SPX": "^GSPC", ".IXIC": "^IXIC", ".DJI": "^DJI", ".RUT": "^RUT",
+    ".VIX": "^VIX", "US10Y": "^TNX", ".DXY": "DX-Y.NYB", "@CL.1": "CL=F",
+    "@GC.1": "GC=F", "BTC.CM=": "BTC-USD",
+    "VNM": "VNM", "EEM": "EEM", "SMH": "SMH", "XLK": "XLK", "XLF": "XLF",
+    "XLE": "XLE", "XLI": "XLI", "XLY": "XLY", "XLV": "XLV", "XLP": "XLP",
+    "XLU": "XLU", "XLRE": "XLRE", "XLC": "XLC", "XLB": "XLB",
+    "NVDA": "NVDA", "AVGO": "AVGO", "AMD": "AMD", "TSM": "TSM", "PANW": "PANW", "META": "META",
+    "XOM": "XOM", "MSFT": "MSFT", "AAPL": "AAPL", "GOOGL": "GOOGL", "AMZN": "AMZN", "TSLA": "TSLA",
+}
+
+
+def _safe_float(val: Any, default: float = 0.0) -> float:
+    try:
+        if val is None or val == "":
+            return default
+        return float(str(val).replace(",", "").replace("%", "").strip())
+    except Exception:
+        return default
+
+
+def _fetch_cnbc_live_quotes() -> Dict[str, Dict[str, Any]]:
+    """Cào giá thời gian thực từng giây từ CNBC Quote WebService (không bị treo cache như Yahoo)."""
+    import urllib.parse
+    out: Dict[str, Dict[str, Any]] = {}
+    url = (
+        "https://quote.cnbc.com/quote-html-webservice/quote.htm?"
+        "partnerId=2&requestMethod=quick&exthrs=1&noform=1&fund=1&output=json&symbols="
+        + urllib.parse.quote("|".join(CNBC_TO_YF.keys()))
+    )
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            data = json.loads(resp.read().decode("utf-8", errors="ignore"))
+        for row in (data.get("QuickQuoteResult") or {}).get("QuickQuote") or []:
+            c_sym = row.get("symbol")
+            yf_sym = CNBC_TO_YF.get(c_sym)
+            if not yf_sym:
+                continue
+            reg_last = _safe_float(row.get("last"))
+            prev_c = _safe_float(row.get("previous_day_closing"))
+            hi = _safe_float(row.get("high"), reg_last)
+            lo = _safe_float(row.get("low"), reg_last)
+            mkt_status = str(row.get("curmktstatus") or "")
+            ext = row.get("ExtendedMktQuote") or {}
+            ah_price: Optional[float] = None
+            ah_chg_pct: Optional[float] = None
+            latest = reg_last
+            bar_ts = str(row.get("last_time") or "")
+            if mkt_status == "POST_MKT" and ext.get("last"):
+                p_ext = _safe_float(ext.get("last"))
+                if p_ext > 0:
+                    ah_price = round(p_ext, 4)
+                    latest = p_ext
+                    if reg_last > 0:
+                        ah_chg_pct = round(((p_ext / reg_last) - 1.0) * 100.0, 2)
+                    bar_ts = str(ext.get("last_time") or bar_ts)
+            if reg_last <= 0:
+                continue
+            chg_pct = round(((latest / prev_c) - 1.0) * 100.0, 2) if prev_c > 0 else _safe_float(row.get("change_pct"))
+            reg_chg = round(((reg_last / prev_c) - 1.0) * 100.0, 2) if prev_c > 0 else chg_pct
+            out[yf_sym] = {
+                "last": round(latest, 4),
+                "prev": round(prev_c, 4),
+                "regular_close": round(reg_last, 4),
+                "high": round(hi, 4),
+                "low": round(lo, 4),
+                "chg_pct": chg_pct,
+                "reg_chg_pct": reg_chg,
+                "ah_price": ah_price,
+                "ah_chg_vs_close_pct": ah_chg_pct,
+                "bar_ts": bar_ts,
+                "feed_source": f"CNBC_REALTIME({mkt_status})",
+            }
+    except Exception as exc:
+        print(f"[!] CNBC live fetch warning: {exc}")
+    return out
+
+
 def fetch_live_us_quotes() -> Dict[str, Any]:
     quotes: Dict[str, Any] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
@@ -209,6 +288,11 @@ def fetch_live_us_quotes() -> Dict[str, Any]:
         for fut in concurrent.futures.as_completed(futures):
             sym, payload = fut.result()
             quotes[sym] = payload
+    cnbc = _fetch_cnbc_live_quotes()
+    for sym, cq in cnbc.items():
+        slot_backup = (quotes.get(sym) or {}).get("slot_prices") or {}
+        cq["slot_prices"] = slot_backup
+        quotes[sym] = cq
     return {k: quotes[k] for k in CORE_TICKERS if k in quotes}
 
 

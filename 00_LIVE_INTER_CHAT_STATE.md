@@ -1,19 +1,19 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-18 23:24:56  
+**Thời gian cập nhật:** 2026-11-19 01:06:21  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261118-232456`  
+**Mã đồng bộ:** `SYNC-AG2P-20261119-010621`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Phòng ban chuyên trách túc trực 23h20 theo dõi sát phiên Mỹ (18/11 -> 04h30 19/11)
+* **Câu hỏi của Chủ tịch:** Cập nhật Nhịp 3 (01:05 ICT 19/11) — Dữ liệu thật CNBC & Xác minh BCTC NVDA
 * **Kết luận & Quyết định thể chế:**
-4 Ban (Ban 1 US Elena, Ban 2/10 Lê Hoàng & Hiền, Ban 7 Alex, Ban 9 Victor) đã túc trực & hoàn tất báo cáo sống 23h20: ^GSPC thủng MA200 về 7,303.98 (-0.50%), ^DJI 50,089.71 (-1.32%), NVDA xả -4.7% từ đỉnh .36 về .82 (-1.70%) do Options +-14.5% & FCF/Net 0.22x + 2 hồ sơ 8-K, ^VIX neo 24.69, VNM ETF 16.64 (-0.21%), DXY 103.83, WTI -3.57%, Vàng -2.75%, BTC -3.62% (70% USD Liquidity Squeeze). Đã gia cố kép Cloud: GitHub Actions chạy mỗi 15p + tự backfill bar 1m sàn Mỹ VÀ Render Cloud Daemon thức 24/7 trực tới 04h30 sáng mai.
+01:04 ICT (CNBC Live — phát hiện Yahoo Finance treo 10:52 EST): .SPX hồi lên 7,332.66 (-0.11% sát MA200 7,340), .IXIC đảo XANH 24,428.31 (+0.41%), .RUT +1.12%, ^VIX hạ nhiệt 24.16 (-5.11%), VNM ETF XANH 16.685 (+0.09%), CL=F giảm -4.63% (.03). Đính chính BCTC NVDA (nvidia.com): ĐÃ ra tối 17/11 AMC (.8B rev +103% YoY, Q4 , GM 74.8%) — NVDA giảm -2.31% (.87) thuần do Jensen Huang từ chức (Colette Kress Interim CEO), dòng tiền AI xoay sang AVGO (+2.82%) & AMD (+2.40%). Tối nay AMC theo dõi PANW lúc 04h05-04h20 & họp 04h30.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Kích hoạt 4 phòng ban AI thật (Ban 1 US, Ban 2/10, Alex Ban 7, Victor Ban 9) phân tích cú đảo chiều 23h20
-- [x] Khôi phục 100% mốc 2130_OPEN (09:31 EST) & 2230_POST_AMATEUR (10:30 EST) từ bar 1m sàn Mỹ + ghi 2320_LIVE_WATCH
-- [x] Gia cố kép Cloud: GitHub Actions */15 + Keep-Alive 24/7 + Render Cron Daemon trực 01:00, 04:03, 04:25, 04:32
+- [x] Nâng cấp engine dùng CNBC Real-Time API (chống treo Yahoo)
+- [x] Xác minh BCTC NVDA Q3 FY27 từ nvidia.com
+- [x] Cập nhật đánh giá 01h05 của Ban 1 US, Ban 2/10, Alex Ban 7
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)

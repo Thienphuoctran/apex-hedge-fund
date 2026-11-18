@@ -1,0 +1,39 @@
+{
+  "symbol": "NVDA",
+  "fiscal_quarter": "Q3 FY2027 (Ended Oct 25, 2026)",
+  "actual_release_date_et": "2026-11-17 AMC (~16:20 EST)",
+  "verified_sources": [
+    "nvidia.com",
+    "q4cdn.com",
+    "tomshardware.com",
+    "kiplinger.com",
+    "stockanalysis.com",
+    "moomoo.com",
+    "forbes.com"
+  ],
+  "results": {
+    "revenue_billion_usd": 115.8,
+    "revenue_yoy_pct": 103.0,
+    "revenue_qoq_pct": 20.0,
+    "revenue_consensus_billion_usd": 109.2,
+    "data_center_revenue_billion_usd": 107.6,
+    "data_center_yoy_pct": 110.0,
+    "vera_rubin_revenue_billion_usd": 20.0,
+    "gaap_gross_margin_pct": 74.8,
+    "non_gaap_gross_margin_pct": 74.9,
+    "net_income_billion_usd": 65.287,
+    "gaap_eps_usd": 2.7,
+    "non_gaap_eps_usd": 2.68,
+    "eps_consensus_usd": 2.47,
+    "q4_revenue_guidance_billion_usd": 130.0,
+    "q4_guidance_band_pct": 3.0,
+    "shareholder_returns_q3_billion_usd": 28.1
+  },
+  "governance_catalyst": {
+    "ceo_transition": "Jensen Huang resigned Nov 11, 2026 following internal conduct investigation; Board Chair Harvey Jones confirmed Board will NOT reinstate Jensen as CEO; CFO Colette Kress serves as Interim CEO.",
+    "market_interpretation": "Despite massive fundamental beat ($115.8B rev, $130B Q4 guide, 74.8% GAAP GM, $20B Vera Rubin), leadership transition uncertainty triggered a fade from +4% post-earnings/pre-market pop ($160.16) to ~$151.63 (-2.47% intraday Nov 18), while AI peers AVGO (+2.6%) and AMD (+2.2%) rallied and Nasdaq turned positive (+0.31%)."
+  },
+  "tonight_nov18_amc_watch": [
+    "PANW (Palo Alto Networks) & ~27 mid/small caps reporting Nov 18 AMC (~04:05-04:20 ICT Nov 19)"
+  ]
+}
