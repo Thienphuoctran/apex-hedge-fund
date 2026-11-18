@@ -81,7 +81,7 @@
     "Đối soát Ký ức Liên Ngày Walk-Forward SHA-256 mỗi sáng lúc 08h30"
   ],
   "enforced_strategy": "RISK_PARITY_STOP_2XATR",
-  "realized_cash_vnd": 11389522.0,
-  "realized_pnl_vnd": 167119.0,
-  "audit_timestamp": "2026-11-18_04h52_dynamic_sync"
+  "realized_cash_vnd": 13594522.0,
+  "realized_pnl_vnd": 166419.0,
+  "audit_timestamp": "2026-11-18_14h32_dynamic_sync"
 }

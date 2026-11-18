@@ -1,0 +1,13 @@
+{
+  "symbol": "HDB",
+  "exit_date": "2026-11-18",
+  "exit_time": "14:14:00 ICT",
+  "exit_price_vnd": 22050.0,
+  "entry_cost_basis_vnd": 22057.0,
+  "gross_pnl_vnd": -700.0,
+  "watch_until": "2026-11-20 15:00:00 ICT",
+  "chairman_mandate": "Theo dõi diễn biến HDB đến hết tuần (18-20/11); nếu HDB hồi tăng lại mạnh vượt ngưỡng thoát, báo cáo ngay và tổ chức Ban 5 + Minh Quân rút kinh nghiệm điểm thoát/Stop.",
+  "alert_rebound_trigger_vnd": 22600.0,
+  "alert_stop_breakdown_vnd": 21700.0,
+  "status": "ACTIVE_POST_EXIT_AUDIT_WATCH"
+}

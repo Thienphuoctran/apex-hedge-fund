@@ -1,115 +1,44 @@
 {
-  "last_scan_utc": "2026-11-18T04:53:19.085060",
-  "total_positions_monitored": 3,
-  "emergency_alerts_active": 1,
+  "last_scan_utc": "2026-11-18T07:32:08.716899+00:00",
+  "total_positions_monitored": 2,
+  "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
-  "status": "EMERGENCY_ALERT",
+  "status": "ACTIVE_MONITORING",
   "positions": [
-    {
-      "symbol": "HDB",
-      "market": "VIETNAM",
-      "name": "HDBank (HOSE)",
-      "current_price": 22050.0,
-      "prev_close": 22400.0,
-      "change_pct": -1.56,
-      "stop_loss_2atr": 22060.0,
-      "stop_dist_pct": -0.05,
-      "tp1": 24200.0,
-      "tp2": 25800.0,
-      "tp1_dist_pct": 9.75,
-      "tp2_dist_pct": 17.01,
-      "volume_surge_ratio": 0.66,
-      "vwap_est": 22150.0,
-      "severity": "CRITICAL",
-      "triggers_hit": [
-        {
-          "level": "LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR",
-          "desc": "Giá hiện tại 22050.0 chỉ còn cách Stop Loss (22060.0) -0.05% (Ngưỡng cảnh báo <= 1.5%)."
-        }
-      ],
-      "upside_triggers_hit": [],
-      "hedging_solution": {
-        "instrument": "Hợp Đồng Tương Lai VN30F1M",
-        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
-        "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 5984.5
-      },
-      "shares": 100,
-      "allocated_capital": 2205700.0,
-      "currency": "VND",
-      "bctc_thesis": "",
-      "catalysts": ""
-    },
     {
       "symbol": "MSH",
       "market": "VIETNAM",
-      "name": "May Sông Hồng (HOSE)",
-      "current_price": 34650.0,
-      "prev_close": 35050.0,
-      "change_pct": -1.14,
-      "stop_loss_2atr": 33090.0,
-      "stop_dist_pct": 4.5,
-      "tp1": 39500.0,
-      "tp2": 43000.0,
-      "tp1_dist_pct": 14.0,
-      "tp2_dist_pct": 24.1,
-      "volume_surge_ratio": 0.0,
-      "vwap_est": 34700.0,
-      "severity": "NORMAL",
-      "triggers_hit": [],
-      "upside_triggers_hit": [],
-      "hedging_solution": {
-        "instrument": "Hợp Đồng Tương Lai VN30F1M",
-        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
-        "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 3825.0
-      },
       "shares": 100,
-      "allocated_capital": 3451000.0,
-      "currency": "VND",
-      "bctc_thesis": "",
-      "catalysts": ""
+      "entry_price": 34510.0,
+      "current_price": 34500.0,
+      "stop_loss_2atr": 33090.0,
+      "tp1": 39500.0,
+      "distance_to_stop_pct": 4.09,
+      "distance_to_tp1_pct": 14.49,
+      "severity": "NORMAL"
     },
     {
       "symbol": "BAF",
       "market": "VIETNAM",
-      "name": "CTCP Nông Nghiệp BAF Việt Nam",
-      "current_price": 31100.0,
-      "prev_close": 31300.0,
-      "change_pct": -0.64,
-      "stop_loss_2atr": 30050.0,
-      "stop_dist_pct": 3.38,
-      "tp1": 33200.0,
-      "tp2": 36500.0,
-      "tp1_dist_pct": 6.75,
-      "tp2_dist_pct": 17.36,
-      "volume_surge_ratio": 0.05,
-      "vwap_est": 31050.0,
-      "severity": "NORMAL",
-      "triggers_hit": [],
-      "upside_triggers_hit": [],
-      "hedging_solution": {
-        "instrument": "Hợp Đồng Tương Lai VN30F1M",
-        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
-        "notional_hedged_vnd": 132000000.0,
-        "hedge_ratio_pct": 4229.5
-      },
       "shares": 100,
-      "allocated_capital": 3120900.0,
-      "currency": "VND",
-      "bctc_thesis": "",
-      "catalysts": ""
+      "entry_price": 31209.0,
+      "current_price": 31050.0,
+      "stop_loss_2atr": 30050.0,
+      "tp1": 33200.0,
+      "distance_to_stop_pct": 3.22,
+      "distance_to_tp1_pct": 6.92,
+      "severity": "NORMAL"
     }
   ],
   "wave_hunter_summary": {
     "vn_waves_count": 8,
     "us_waves_count": 6,
     "top_vn_wave_symbols": [
-      "BSR",
-      "IDC",
-      "PVD",
-      "DCM",
-      "VCB"
+      "HHV",
+      "POW",
+      "MSN",
+      "PC1",
+      "HPG"
     ],
     "top_us_wave_symbols": [
       "NVDA",
@@ -117,5 +46,46 @@
       "AVGO",
       "MSFT"
     ]
-  }
+  },
+  "temporal_context": {
+    "timestamp_iso": "2026-11-18T14:32:08.682785",
+    "date_str": "2026-11-18",
+    "date_vn": "18/11/2026",
+    "time_vn": "14:32:08",
+    "weekday_index": 2,
+    "weekday_vn": "Thứ Tư",
+    "full_time_label_vn": "14:32:08 Thứ Tư, ngày 18/11/2026",
+    "market_phase": "ATC_SESSION",
+    "market_phase_vn": "Phiên khớp lệnh định kỳ đóng cửa ATC (14h30-14h45 Thứ Tư)",
+    "is_trading_hours": true,
+    "next_session_note": "Đóng bảng lúc 14h45, tổng kết lúc 15h00."
+  },
+  "cash_balance_vnd": 13594522.0,
+  "realized_pnl_vnd": 166419.0,
+  "positions_tracked": [
+    {
+      "symbol": "MSH",
+      "market": "VIETNAM",
+      "shares": 100,
+      "entry_price": 34510.0,
+      "current_price": 34500.0,
+      "stop_loss_2atr": 33090.0,
+      "tp1": 39500.0,
+      "distance_to_stop_pct": 4.09,
+      "distance_to_tp1_pct": 14.49,
+      "severity": "NORMAL"
+    },
+    {
+      "symbol": "BAF",
+      "market": "VIETNAM",
+      "shares": 100,
+      "entry_price": 31209.0,
+      "current_price": 31050.0,
+      "stop_loss_2atr": 30050.0,
+      "tp1": 33200.0,
+      "distance_to_stop_pct": 3.22,
+      "distance_to_tp1_pct": 6.92,
+      "severity": "NORMAL"
+    }
+  ]
 }

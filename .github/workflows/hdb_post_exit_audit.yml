@@ -1,0 +1,55 @@
+name: "Ban 5 & Victor — HDB Post-Exit Audit Watch (Cloud)"
+
+on:
+  schedule:
+    # Tự động chạy lúc 14:50 ICT (07:50 UTC) vào Thứ Năm (19/11) & Thứ Sáu (20/11) ngay sau khi HOSE đóng cửa
+    - cron: '50 7 * * 4-5'
+  workflow_dispatch: # Cho phép Chủ tịch bấm chạy thủ công trên GitHub anytime
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apex-repo-push
+  cancel-in-progress: false
+
+jobs:
+  hdb_post_exit_audit:
+    name: "HDB Post-Exit Audit & Ban 5 Lesson Watch"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "Setup Python 3.11"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: "Install Dependencies"
+        run: |
+          pip install --upgrade pip
+          pip install yfinance requests pandas pyyaml
+
+      - name: "Run HDB Post-Exit Audit & Telegram Dispatch"
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python scripts/hdb_post_exit_cloud_audit.py
+
+      - name: "Commit & Push Audit Results"
+        run: |
+          git config --global user.name "Apex Cloud Learning Bot"
+          git config --global user.email "cloud-learning@apex-fund.internal"
+          git add data/hdb_post_exit_audit_watch.json VN_Market/05_Learning_And_Evolution/ 00_LIVE_INTER_CHAT_STATE.md data/palmer_* data/telegram_dedup_cache.json
+          if git diff --staged --quiet; then
+            echo "No HDB post-exit audit changes to commit."
+          else
+            git commit -m "chore(ban5): Cloud HDB post-exit audit & lesson report [skip ci]"
+            git pull --rebase --autostash origin main || true
+            git push origin HEAD || echo "Push skipped"
+          fi

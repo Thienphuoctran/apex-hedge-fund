@@ -1,47 +1,38 @@
 {
-  "last_updated": "2026-11-18 04:08:44",
+  "last_updated": "2026-11-18 14:15:36",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261118-040844",
-  "latest_user_request": "Hoàn tất Phương án 1B: Trực 4 nhịp phiên Mỹ (21h30 -> 04h00 đóng cửa chính thức) + Họp Thượng Đỉnh 30p (04h05-04h35 sáng 18/11) & Cam kết KPI 4M",
-  "latest_response_summary": "Mỹ 04:00 đóng cửa ^GSPC 7,340.73 (-1.02% sát MA200), ^IXIC -0.74%, ^VIX 25.89 (+13.01%), XLF -1.89% tệ nhất 12/12 ngành đỏ, AVGO +2.46%/NVDA -0.44% rút chân trước BCTC 1d AMC, VNM 16.665 (-0.86%), DXY 103.50, US10Y 5.103%. Hội đồng thống nhất cam kết KPI >=4M trong 2 tháng: ~50% (nâng 70-76% khi VIX<22 & hậu 19/11 mở 75-85% NAV) và trong 1 tháng: ~20%. Hôm nay 18/11 cấm mua trước 14h00; 14h00-14h25 tối đa <=2.85M nếu Buy-Up>=60%; bảo vệ HDB (cắt <22,060), MSH (Trail 34,600), BAF (Stop 30,050).",
+  "sync_id": "SYNC-AG2P-20261118-141536",
+  "latest_user_request": "Chủ tịch đã bán thoát 100 CP HDB @ 22.05 (ghi nhận 22,050đ) lúc 14:14 ngày 18/11 và yêu cầu theo dõi tiếp tới cuối tuần để báo cáo & rút kinh nghiệm nếu tăng lại",
+  "latest_response_summary": "SSOT cập nhật 14:14 18/11: Đã bán 100 CP HDB @ 22,050đ (hòa vốn -700đ trước thuế phí), thu về 2,205,000đ. Két tiền mặt tăng lên ~13,594,522đ (67.5% NAV). Còn giữ BAF 100 CP @ 31.05 (chờ về chiều 19/11) & MSH 100 CP @ 34.50 (6,555,000đ, -16,900đ). Đã gắn cờ giám sát HDB tới hết 20/11 tại data/hdb_post_exit_audit_watch.json để báo cáo & rút kinh nghiệm Ban 5 nếu hồi tăng lại.",
   "latest_completed_tasks": [
-    "Quét đủ 4 nhịp Mỹ thời gian thực (21:30, 22:30, 01:00, 04:02) lưu us_live_session_log_2026-11-17.json",
-    "Chạy Monte Carlo 20,000 lần & Họp Tranh biện 8 Ban thật 100% lúc 04h05",
-    "Xuất Báo cáo James & Kế hoạch 18/11 vào Vault + Phòng Họp Thượng Đỉnh APEX-SUMMIT-20261118-0405"
+    "Khớp bán 100 CP HDB @ 22,050đ vào PortfolioStateManager SSOT",
+    "Kích hoạt data/hdb_post_exit_audit_watch.json theo dõi HDB đến hết tuần 20/11"
   ],
   "latest_strategic_decisions": {
-    "kpi_commit_2m": "~50% (48-52%) khi VIX>25 -> 70-76% khi VIX<22 hậu 19/11",
-    "kpi_commit_1m": "~20% (18-22%) — bác bỏ hứa ảo 1 tháng",
-    "plan_18_11_am": "CẤM mua trước 14h00; giữ HDB (còi <=22,390 / cắt <22,060), MSH (Trail 34,600), BAF (Stop 30,050)",
-    "plan_18_11_pm": "14h00-14h25 tối đa 1 lô <= 2.85M (25% Cash) chỉ nếu VNI>=1,710 & Buy-Up>=60%; dồn lực cho chiều 19/11"
+    "cash_vnd": 13594522,
+    "stocks_vnd": 6555000,
+    "total_nav_vnd": 20149522,
+    "post_exit_watch": "HDB (exit 22,050đ) — theo dõi tới 20/11, báo cáo & rút kinh nghiệm Ban 5 nếu tăng lại >= 22,600đ"
   },
   "portfolio_snapshot": {
-    "total_nav_vnd": 20264522.0,
-    "cash_vnd": 11389522.0,
-    "stock_market_val_vnd": 8875000.0,
+    "total_nav_vnd": 20149522.0,
+    "cash_vnd": 13594522.0,
+    "stock_market_val_vnd": 6555000.0,
     "positions": {
-      "HDB": {
-        "shares": 100,
-        "entry_price": 22057.0,
-        "current_price": 22400.0,
-        "market_val_vnd": 2240000.0,
-        "pnl_vnd": 34300.0,
-        "status": "HOLDING_T0_AVAILABLE"
-      },
       "MSH": {
         "shares": 100,
         "entry_price": 34510.0,
-        "current_price": 35050.0,
-        "market_val_vnd": 3505000.0,
-        "pnl_vnd": 54000.0,
+        "current_price": 34500.0,
+        "market_val_vnd": 3450000.0,
+        "pnl_vnd": -1000.0,
         "status": "HOLDING_T0_AVAILABLE"
       },
       "BAF": {
         "shares": 100,
         "entry_price": 31209.0,
-        "current_price": 31300.0,
-        "market_val_vnd": 3130000.0,
-        "pnl_vnd": 9100.0,
+        "current_price": 31050.0,
+        "market_val_vnd": 3105000.0,
+        "pnl_vnd": -15900.0,
         "status": "HOLDING_T0"
       }
     }
