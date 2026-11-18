@@ -135,7 +135,7 @@
     }
   ],
   "tactical_regime": "HOLDING_WITH_RISK_PARITY_STOP",
-  "last_updated": "2026-11-18 17:28:45",
+  "last_updated": "2026-11-18 22:59:52",
   "tcbs_mcp_url": "https://mcp.tcbs.com.vn/mcp/tcinvest/",
   "current_campaign_phase": "ACTIVE_CAMPAIGN_HOLDING",
   "initial_capital_vnd": 20000000.0,
@@ -283,13 +283,13 @@
     }
   ],
   "temporal_context": {
-    "timestamp_iso": "2026-11-18T17:28:45.095446",
+    "timestamp_iso": "2026-11-18T22:59:52.124824",
     "date_str": "2026-11-18",
     "date_vn": "18/11/2026",
-    "time_vn": "17:28:45",
+    "time_vn": "22:59:52",
     "weekday_index": 2,
     "weekday_vn": "Thứ Tư",
-    "full_time_label_vn": "17:28:45 Thứ Tư, ngày 18/11/2026",
+    "full_time_label_vn": "22:59:52 Thứ Tư, ngày 18/11/2026",
     "market_phase": "AFTER_HOURS_CLOSED",
     "market_phase_vn": "Ngoài giờ giao dịch (Thứ Tư sau 15h00) — Sàn HOSE/HNX đã đóng cửa",
     "is_trading_hours": false,

@@ -1,7 +1,7 @@
 {
   "resolution_id": "APEX-COUNCIL-12DEPT-2ASSIST-2026-11-18",
-  "generated_at": "17:28:09 Thứ Tư, ngày 18/11/2026",
-  "execution_time_seconds": 36.02,
+  "generated_at": "22:59:26 Thứ Tư, ngày 18/11/2026",
+  "execution_time_seconds": 26.11,
   "account_id": "105C307855",
   "account_cash_vnd": 13594522.0,
   "realized_pnl_round1_vnd": 166419.0,
@@ -99,8 +99,8 @@
         "tp1_vnd": 25760.0,
         "target_shares_lot100": 200,
         "allocated_capital_vnd": 4670000.0,
-        "rs_rating": 89,
-        "legends_score": 84.0
+        "rs_rating": 88,
+        "legends_score": 83.9
       }
     ],
     "rejected_stocks": [
