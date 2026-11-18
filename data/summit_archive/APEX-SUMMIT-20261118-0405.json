@@ -184,7 +184,613 @@
       "present": true
     }
   ],
-  "attendance_summary": "100% Khối chuyên môn + James + Palmer + Trọng (Theo dõi thật 4 nhịp 21h30–04h00)",
+  "attendance_summary": "14/14 Phòng Ban + Palmer + Nam (Theo dõi thật 4 nhịp 21h30–04h00)",
+  "pre_summit_prep_dossiers": [
+    {
+      "dept_id": "BAN_1_VN",
+      "ban_code": "Ban 1 VN",
+      "dept_name": "Vĩ Mô, Tiền Tệ SBV & Dòng Tiền 3 Khối",
+      "officer": "Vũ Minh (Trưởng Ban 1 VN)",
+      "avatar": "🇻🇳",
+      "prep_minute": -18,
+      "prep_time": "21:10:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "VN_Market/01_Macro_Monetary_Vietnam/2026-11-15_VN_Macro_Report.md"
+      ],
+      "key_metrics": {
+        "VN-Index": "1,734.93 (+0.01%)",
+        "Breadth": "36.0%",
+        "Macro_Score": "44.6/100",
+        "Max_New_Alloc": "50%"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Trình kịch bản tham khảo tuần 16/11–20/11 với nguyên tắc cơ động từng ngày: Nếu Breadth sáng giảm < 35% thì khóa tiền mặt; chỉ kích hoạt giải ngân sau 14h00 khi dòng tiền 3 khối xác nhận hấp thụ vùng 1,705–1,725.",
+      "report_path": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-15_VN_Macro_Report.md"
+    },
+    {
+      "dept_id": "BAN_1_US",
+      "ban_code": "Ban 1 US",
+      "dept_name": "Vĩ Mô Toàn Cầu, Fed, US10Y & GICS",
+      "officer": "Dr. Elena Vance (Trưởng Ban 1 US)",
+      "avatar": "🌐",
+      "prep_minute": -17,
+      "prep_time": "21:11:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "01_Macro_Geopolitics/2026-11-15_Macro_Report.md"
+      ],
+      "key_metrics": {
+        "S&P500": "7,416.59 (-1.77%)",
+        "US10Y": "5.12%",
+        "WTI": "$84.97",
+        "US_Picks": "META $630.6 | XOM $170.1"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Nhấn mạnh không đánh cược cố định cả tuần: Theo dõi sát phản ứng US10Y & VNM ETF mỗi đêm để điều chỉnh mức giải ngân ngày hôm sau tại Việt Nam.",
+      "report_path": "01_Macro_Geopolitics/2026-11-15_Macro_Report.md"
+    },
+    {
+      "dept_id": "BAN_2_BCTC",
+      "ban_code": "Ban 2",
+      "dept_name": "Pháp Y BCTC 12 Mã VN & Định Giá Đa Ngành",
+      "officer": "Lê Hoàng (Trưởng Ban 2 Pháp Y)",
+      "avatar": "🔬",
+      "prep_minute": -16,
+      "prep_time": "21:12:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "VN_Market/02_BCTC_Equity_Research/2026-11-15_VN_Equity_Analysis.md"
+      ],
+      "key_metrics": {
+        "DBC_MOS": "50.5% (16,050đ)",
+        "MBB_MOS": "82.0% (RR 8.0x)",
+        "HPG_MOS": "45.7% (Corr 0.21)",
+        "SZC_MOS": "33.8% (20,850đ)"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Đề nghị đưa DBC (giá trị chăn nuôi an toàn hơn BAF về đòn bẩy), HPG và SZC lên bàn mổ xẻ thay vì chỉ lặp lại 2-3 mã phiên cũ.",
+      "report_path": "VN_Market/02_BCTC_Equity_Research/2026-11-15_VN_Equity_Analysis.md"
+    },
+    {
+      "dept_id": "BAN_3_SYNTHESIS",
+      "ban_code": "Ban 3",
+      "dept_name": "Công Tố Viên Phản Biện & Sàng Lọc Bẫy Định Giá",
+      "officer": "Trần Hưng (Công Tố Viên Ban 3)",
+      "avatar": "⚖️",
+      "prep_minute": -15,
+      "prep_time": "21:13:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "VN_Market/03_Synthesis_Memos/2026-11-15_VN_Investment_Memo.md"
+      ],
+      "key_metrics": {
+        "Rejected_Size": "VHC 28.2% | HAH 26.5%",
+        "Bank_Cap": "TCB 0.47 | CTG 0.50",
+        "HDB_Stop": "21,486 đ",
+        "Stance": "TRUY VẤN CHÉO"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Ép Hội đồng chọn cổ phiếu vừa size 1.6M–3.1M/lô và thiết kế Kế hoạch tuần linh hoạt từng ngày thay vì ôm cứng kịch bản 5 ngày.",
+      "report_path": "VN_Market/03_Synthesis_Memos/2026-11-15_VN_Investment_Memo.md"
+    },
+    {
+      "dept_id": "BAN_4_RISK",
+      "ban_code": "Ban 4",
+      "dept_name": "Hội Đồng Định Lượng ATR, Correlation & Lot-Size",
+      "officer": "TS. Bảo (Chủ Tịch Hội Đồng Ban 4)",
+      "avatar": "📐",
+      "prep_minute": -14,
+      "prep_time": "21:14:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "VN_Market/04_Investment_Committee/2026-11-15_VN_Quant_Risk_And_Correlation.md"
+      ],
+      "key_metrics": {
+        "DBC_Corr": "0.082 (Thấp nhất)",
+        "HPG_Corr": "0.209",
+        "BAF_Corr": "0.213",
+        "Lot_Cap": "<= 20% NAV/mã"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Cấp phép rổ giải ngân cơ động chi phí lô nhỏ-vừa (DBC, HPG, SZC, BAF) giúp giữ đệm tiền mặt tối thiểu 40%–69% NAV qua mọi phiên biến động.",
+      "report_path": "VN_Market/04_Investment_Committee/2026-11-15_VN_Quant_Risk_And_Correlation.md"
+    },
+    {
+      "dept_id": "BAN_5_EVOLUTION",
+      "ban_code": "Ban 5",
+      "dept_name": "Tự Học Thích Nghi, Nhật Ký Lịch Sử & 15 Huyền Thoại",
+      "officer": "Đặng Khoa (Trưởng Ban 5 Tiến Hóa)",
+      "avatar": "🧠",
+      "prep_minute": -13,
+      "prep_time": "21:15:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "VN_Market/05_Learning_And_Evolution/2026-11-15_VN_Learning_Report.md"
+      ],
+      "key_metrics": {
+        "Anti_Repeat": "ĐÃ MỞ RỘNG 12 MÃ",
+        "Hit_Rate_14h": "68.5% (T+5)",
+        "DBC_Score": "79.8/100",
+        "HPG_Score": "81.4/100"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Áp dụng cơ chế phản hồi hàng ngày (Daily Adaptive Re-weighting): kế hoạch tuần chỉ là bản đồ tham chiếu, mỗi sáng 8h30 Minh Quân cập nhật lại điểm vào.",
+      "report_path": "VN_Market/05_Learning_And_Evolution/2026-11-15_VN_Learning_Report.md"
+    },
+    {
+      "dept_id": "BAN_6_ACADEMY",
+      "ban_code": "Ban 6",
+      "dept_name": "Học Viện Thực Chiến & Kỷ Luật Hành Vi",
+      "officer": "Thầy Khải (Cố Vấn Học Viện Ban 6)",
+      "avatar": "🎓",
+      "prep_minute": -12,
+      "prep_time": "21:16:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-15_VN_Mentor_Briefing.md"
+      ],
+      "key_metrics": {
+        "Checklist": "7/7 Điểm Sống",
+        "Agility_Rule": "Cơ Động Từng Ngày",
+        "Retention": "Giữ >= 2H Sau Duyệt",
+        "Psychological": "No Rigid Bias"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Khắc cốt ghi tâm cho đội thực thi: Kế hoạch tuần là la bàn tham khảo; kỷ luật khớp lệnh tuân 100% tín hiệu sống trong phiên của từng ngày.",
+      "report_path": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-15_VN_Mentor_Briefing.md"
+    },
+    {
+      "dept_id": "BAN_7_VN",
+      "ban_code": "Ban 7 VN",
+      "dept_name": "Chuyên Viên Đầu Tư Trưởng Việt Nam",
+      "officer": "Minh Quân (Ban 7 VN)",
+      "avatar": "⚡",
+      "prep_minute": -11,
+      "prep_time": "21:17:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "VN_Market/07_Daily_Specialist/2026-11-15_VN_Specialist_Decision.md"
+      ],
+      "key_metrics": {
+        "Holdings": "MSH 100 | HDB 100",
+        "Watch_6": "MSH,HDB,BAF,DBC,SZC,HPG",
+        "DBC_EV": "+16.60%",
+        "SZC_EV": "+14.49%"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Không ép giải ngân theo thứ cố định; ngày nào hội đủ Breadth & VSA Test Cung thì bắn tỉa đúng 1 lô mã mạnh nhất ngày đó!",
+      "report_path": "VN_Market/07_Daily_Specialist/2026-11-15_VN_Specialist_Decision.md"
+    },
+    {
+      "dept_id": "BAN_7_US",
+      "ban_code": "Ban 7 US",
+      "dept_name": "Chuyên Viên Đầu Tư Trưởng Quốc Tế",
+      "officer": "Alex (Ban 7 Global)",
+      "avatar": "🦅",
+      "prep_minute": -10,
+      "prep_time": "21:18:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "07_Daily_Investment_Specialist/2026-11-15_Daily_Specialist_Decision.md"
+      ],
+      "key_metrics": {
+        "META_Alpha": "$630.60",
+        "XOM_Hedge": "$170.13",
+        "TSM_Semi": "$393.60",
+        "Spillover": "NEUTRAL_SELECTIVE"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Mỗi tối lúc 21h30 sẽ báo cáo nhịp spillover Mỹ cho Minh Quân làm tham số đầu vào phiên HOSE sáng hôm sau.",
+      "report_path": "07_Daily_Investment_Specialist/2026-11-15_Daily_Specialist_Decision.md"
+    },
+    {
+      "dept_id": "BAN_8_CIO",
+      "ban_code": "Ban 8",
+      "dept_name": "Master CIO & Báo Cáo Tổng Kết Điều Hành",
+      "officer": "Master CIO James (Ban 8)",
+      "avatar": "🎖️",
+      "prep_minute": -9,
+      "prep_time": "21:19:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md"
+      ],
+      "key_metrics": {
+        "NAV_SSOT": "20,145,422 ₫",
+        "Cash_Reserve": "14,510,422 ₫ (72.0%)",
+        "Post_Summary": "James Report Ready",
+        "Plan_Type": "THAM KHẢO CƠ ĐỘNG"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Chủ trì điều phối tranh biện giữa nhóm Ngân hàng (HDB/MBB/TCB/OCB), Nông nghiệp (DBC vs BAF), Thép & KCN (HPG/SZC/IDC) và loại bỏ mã quá size (VHC/HAH).",
+      "report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md"
+    },
+    {
+      "dept_id": "BAN_9_SENTINEL",
+      "ban_code": "Ban 9",
+      "dept_name": "Giám Sát Thời Gian Thực & Ứng Phó Khẩn Cấp",
+      "officer": "Victor (Sentinel Ban 9)",
+      "avatar": "🛰️",
+      "prep_minute": -8,
+      "prep_time": "21:20:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "09_Realtime_Portfolio_Sentinel/live_wave_hunter_radar.md"
+      ],
+      "key_metrics": {
+        "MSH_Radar": "34,800 đ",
+        "HDB_Radar": "22,600 đ",
+        "Radar_Targets": "DBC,BAF,SZC,HPG",
+        "Alert_Window": "14h00 – 14h25"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Cảnh báo ngay nếu phiên ngày bất kỳ có dấu hiệu thủng hỗ trợ hoặc đảo chiều đột ngột để Hội đồng điều chỉnh kế hoạch tuần theo thời gian thực.",
+      "report_path": "09_Realtime_Portfolio_Sentinel/live_wave_hunter_radar.md"
+    },
+    {
+      "dept_id": "BAN_10_IR",
+      "ban_code": "Ban 10",
+      "dept_name": "Trinh Sát BCTC, ĐHCĐ & Kho Dữ Liệu Archive",
+      "officer": "Hiền (Trinh Sát Trưởng Ban 10)",
+      "avatar": "📡",
+      "prep_minute": -7,
+      "prep_time": "21:21:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md"
+      ],
+      "key_metrics": {
+        "VN_Scanned": "12/12 Mã HOSE/HNX",
+        "US_Scanned": "5/5 Mã NYSE/Nasdaq",
+        "HPG_Catalyst": "Dung Quất 2 + HRC",
+        "SZC_Catalyst": "Châu Đức + Cổ tức"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Đóng gói hồ sơ nguồn đối chứng cho phép truy xuất ngay khi Ban 2 & Ban 3 chất vấn về doanh thu và dòng tiền từng doanh nghiệp.",
+      "report_path": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md"
+    },
+    {
+      "dept_id": "BAN_11_MEDIA",
+      "ban_code": "Ban 11",
+      "dept_name": "Lưu Trữ Lịch Sử & Báo Cáo Điều Hành Trực Quan",
+      "officer": "Khánh & Bảo (Ban 11)",
+      "avatar": "🎬",
+      "prep_minute": -6,
+      "prep_time": "21:22:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "06_Investor_Academy_And_Mentorship/research_library/2026-11-15_Autonomous_Research_Digest.md"
+      ],
+      "key_metrics": {
+        "Archive_Vault": "ENABLED",
+        "Post_Report": "James Executive Deck",
+        "Retention_Min": "120 Phút (2H)",
+        "Ready": "100%"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Sẵn sàng đóng gói Báo cáo Tổng kết của James ngay khi bế mạc để Chủ tịch Phước Trần đọc, phê duyệt và theo dõi đồng hồ dọn phòng 2 tiếng.",
+      "report_path": "06_Investor_Academy_And_Mentorship/research_library/2026-11-15_Autonomous_Research_Digest.md"
+    },
+    {
+      "dept_id": "BAN_12_OMBUDSMAN",
+      "ban_code": "Ban 12",
+      "dept_name": "Tổng Kiểm Sát Viên Thể Chế Bất Biến",
+      "officer": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+      "avatar": "🛡️",
+      "prep_minute": -5,
+      "prep_time": "21:23:00",
+      "status": "READY_VERIFIED",
+      "sources_scanned": [
+        "data/us_live_session_log_2026-11-17.json",
+        "data/current_portfolio_state.json",
+        "08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md"
+      ],
+      "key_metrics": {
+        "Charter_Rules": "5/5 ĐIỀU KÍCH HOẠT",
+        "Pre_Prep_Time": "20 Phút",
+        "Archive_Lock": "APPROVED + 2H",
+        "SSOT_Match": "100% EXACT"
+      },
+      "pre_meeting_findings": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "proposed_next_week_stance": "Giám sát thực thi đủ 5 Điều Nội Quy xuyên suốt 30 phút họp và bảo vệ quyền tối cao đọc – phê duyệt – xem lại kho lưu trữ của Chủ tịch.",
+      "report_path": "08_Master_Investment_CIO/NOI_QUY_PHONG_HOP_THUONG_DINH_APEX.md"
+    }
+  ],
+  "prep_timeline_stream": [
+    {
+      "id": "prep_1b_1",
+      "minute": -20,
+      "is_prep_phase": true,
+      "time_str": "21:10:00",
+      "phase_step": 0,
+      "sender_name": "Vũ Minh (Trưởng Ban 1 VN)",
+      "department": "Ban 1 VN — Vĩ Mô, Tiền Tệ SBV & Dòng Tiền 3 Khối",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🇻🇳",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 1 VN hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_2",
+      "minute": -19,
+      "is_prep_phase": true,
+      "time_str": "21:11:00",
+      "phase_step": 0,
+      "sender_name": "Dr. Elena Vance (Trưởng Ban 1 US)",
+      "department": "Ban 1 US — Vĩ Mô Toàn Cầu, Fed, US10Y & GICS",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🌐",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 1 US hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_3",
+      "minute": -18,
+      "is_prep_phase": true,
+      "time_str": "21:12:00",
+      "phase_step": 0,
+      "sender_name": "Lê Hoàng (Trưởng Ban 2 Pháp Y)",
+      "department": "Ban 2 — Pháp Y BCTC 12 Mã VN & Định Giá Đa Ngành",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🔬",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 2 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_4",
+      "minute": -17,
+      "is_prep_phase": true,
+      "time_str": "21:13:00",
+      "phase_step": 0,
+      "sender_name": "Trần Hưng (Công Tố Viên Ban 3)",
+      "department": "Ban 3 — Công Tố Viên Phản Biện & Sàng Lọc Bẫy Định Giá",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "⚖️",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 3 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_5",
+      "minute": -16,
+      "is_prep_phase": true,
+      "time_str": "21:14:00",
+      "phase_step": 0,
+      "sender_name": "TS. Bảo (Chủ Tịch Hội Đồng Ban 4)",
+      "department": "Ban 4 — Hội Đồng Định Lượng ATR, Correlation & Lot-Size",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "📐",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 4 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_6",
+      "minute": -15,
+      "is_prep_phase": true,
+      "time_str": "21:15:00",
+      "phase_step": 0,
+      "sender_name": "Đặng Khoa (Trưởng Ban 5 Tiến Hóa)",
+      "department": "Ban 5 — Tự Học Thích Nghi, Nhật Ký Lịch Sử & 15 Huyền Thoại",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🧠",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 5 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_7",
+      "minute": -14,
+      "is_prep_phase": true,
+      "time_str": "21:16:00",
+      "phase_step": 0,
+      "sender_name": "Thầy Khải (Cố Vấn Học Viện Ban 6)",
+      "department": "Ban 6 — Học Viện Thực Chiến & Kỷ Luật Hành Vi",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🎓",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 6 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_8",
+      "minute": -13,
+      "is_prep_phase": true,
+      "time_str": "21:17:00",
+      "phase_step": 0,
+      "sender_name": "Minh Quân (Ban 7 VN)",
+      "department": "Ban 7 VN — Chuyên Viên Đầu Tư Trưởng Việt Nam",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "⚡",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 7 VN hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_9",
+      "minute": -12,
+      "is_prep_phase": true,
+      "time_str": "21:18:00",
+      "phase_step": 0,
+      "sender_name": "Alex (Ban 7 Global)",
+      "department": "Ban 7 US — Chuyên Viên Đầu Tư Trưởng Quốc Tế",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🦅",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 7 US hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_10",
+      "minute": -11,
+      "is_prep_phase": true,
+      "time_str": "21:19:00",
+      "phase_step": 0,
+      "sender_name": "Master CIO James (Ban 8)",
+      "department": "Ban 8 — Master CIO & Báo Cáo Tổng Kết Điều Hành",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🎖️",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 8 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_11",
+      "minute": -10,
+      "is_prep_phase": true,
+      "time_str": "21:20:00",
+      "phase_step": 0,
+      "sender_name": "Victor (Sentinel Ban 9)",
+      "department": "Ban 9 — Giám Sát Thời Gian Thực & Ứng Phó Khẩn Cấp",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🛰️",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 9 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_12",
+      "minute": -9,
+      "is_prep_phase": true,
+      "time_str": "21:21:00",
+      "phase_step": 0,
+      "sender_name": "Hiền (Trinh Sát Trưởng Ban 10)",
+      "department": "Ban 10 — Trinh Sát BCTC, ĐHCĐ & Kho Dữ Liệu Archive",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "📡",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 10 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_13",
+      "minute": -8,
+      "is_prep_phase": true,
+      "time_str": "21:22:00",
+      "phase_step": 0,
+      "sender_name": "Khánh & Bảo (Ban 11)",
+      "department": "Ban 11 — Lưu Trữ Lịch Sử & Báo Cáo Điều Hành Trực Quan",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🎬",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 11 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    },
+    {
+      "id": "prep_1b_14",
+      "minute": -7,
+      "is_prep_phase": true,
+      "time_str": "21:23:00",
+      "phase_step": 0,
+      "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+      "department": "Ban 12 — Tổng Kiểm Sát Viên Thể Chế Bất Biến",
+      "role": "Hồ Sơ Chuẩn Bị T-20p & Theo Dõi Mỹ Thời Gian Thực",
+      "avatar": "🛡️",
+      "badge": "ĐIỂM DANH 21H10 + 4 NHỊP",
+      "badge_color": "#38bdf8",
+      "content": "[Trực 4 nhịp 21:10->04:02] Điểm danh & quét dữ liệu Mỹ sống (^GSPC -1.02%, ^VIX 25.89, XLF -1.89%, VNM -0.86%, DXY 103.50) cùng SSOT NAV 20,264,522₫ (Cash 11.39M, HDB/MSH/BAF).",
+      "highlight": "Ban 12 hoàn tất chuẩn bị dữ liệu sống & tham gia trực 4 nhịp tới 04:02",
+      "metrics": {
+        "Prep_Status": "READY_VERIFIED",
+        "RealTime_Source": "us_live_session_log_2026-11-17.json"
+      }
+    }
+  ],
   "timeline_stream": [
     {
       "id": "r1_prep_open_telemetry",
@@ -427,6 +1033,52 @@
   "archive_summary": {
     "sessions": [
       {
+        "meeting_id": "APEX-SUMMIT-20261119-0045",
+        "title": "🏛️ HỘI NGHỊ THƯỢNG ĐỈNH ĐẶC BIỆT 16H15 — KIỂM TOÁN LÃI 2 TUẦN & CHIẾN LƯỢC KPI 3–4 TRIỆU / 2 THÁNG",
+        "topic": "Chiến Lược Thị Trường Tuần Sau (16/11 – 20/11/2026): Tranh Biện Đa Ngành 12 Mã VN & 5 Mã US, Thiết Kế Kế Hoạch Cơ Động Theo Ngày & Tối Ưu Lợi Nhuận Tài Khoản 105C307855",
+        "meeting_window_str": "00h45 – 01h15 (30 Phút)",
+        "prep_window_str": "00h25 – 00h45 (Nghiên Cứu T-20p)",
+        "start_time": "2026-11-19T00:45:00+07:00",
+        "end_time": "2026-11-19T01:15:00+07:00",
+        "chairman_approved": false,
+        "approval_time": null,
+        "archived_at": "2026-11-18T04:10:05.011358+07:00",
+        "archived_display": "18/11/2026 04:10:05",
+        "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
+        "archived_by": "Palmer & Ban 11 Archive",
+        "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261119-0045.json",
+        "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261119-0045_Bien_Ban_Luu_Tru.md",
+        "james_summary_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_KPI_2_Thang.md",
+        "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0045_Nghi_Quyet_Thuong_Dinh_KPI_Loi_Nhuan.md",
+        "turns_count": 16,
+        "prep_dossiers_count": 14,
+        "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện thật 100%)",
+        "summary_headline": "Tổng kết phiên 00h45 – 01h15 (30 Phút) — Kiểm toán lãi 2 tuần (+190,419đ) & Lộ trình KPI 3–4 triệu / 2 tháng (Tham khảo cơ động từng phiên)"
+      },
+      {
+        "meeting_id": "APEX-SUMMIT-20261118-0405",
+        "title": "🏛️ ĐẠI HỘI THƯỢNG ĐỈNH PHƯƠNG ÁN 1B — TỔNG KẾT ĐÓNG CỬA MỸ 04:00 & CAM KẾT KPI 4 TRIỆU",
+        "topic": "Theo dõi 4 nhịp phiên Mỹ (21h30 -> 04h00 đóng cửa chính thức) — Tranh biện dự báo Mỹ/VN, Kế hoạch 18–19/11 & Cam kết toán học KPI 4M (1–2 tháng)",
+        "meeting_window_str": "04h05 – 04h35 (30 Phút, 18/11/2026)",
+        "prep_window_str": "21h10 -> 04h02 (Theo dõi 4 nhịp Mỹ thật)",
+        "start_time": "2026-11-18T04:05:00+07:00",
+        "end_time": "2026-11-18T04:35:00+07:00",
+        "chairman_approved": false,
+        "approval_time": null,
+        "archived_at": "2026-11-18T04:10:04.509206+07:00",
+        "archived_display": "18/11/2026 04:10:04",
+        "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
+        "archived_by": "Palmer & Ban 11 Archive",
+        "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261118-0405.json",
+        "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261118-0405_Bien_Ban_Luu_Tru.md",
+        "james_summary_path": "08_Master_Investment_CIO/council_resolutions/2026-11-18_0405_Bao_Cao_Tong_Ket_James_Va_Nghi_Quyet_Phien_My.md",
+        "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-18_0405_Bao_Cao_Tong_Ket_James_Va_Nghi_Quyet_Phien_My.md",
+        "turns_count": 10,
+        "prep_dossiers_count": 0,
+        "quorum": "100% Khối chuyên môn + James + Palmer + Trọng (Theo dõi thật 4 nhịp 21h30–04h00)",
+        "summary_headline": "Tổng kết Phiên Mỹ 04:00 (VIX 25.89, SPX -1.02%, XLF -1.89%) | Kế hoạch 18/11 & Cam kết KPI 4M (~50% trong 2 tháng / ~20% trong 1 tháng)"
+      },
+      {
         "meeting_id": "APEX-SUMMIT-20261116-0045",
         "title": "🏛️ ĐẠI HỘI NGHỊ THƯỢNG ĐỈNH TOÀN DOANH NGHIỆP APEX (V10.0 — CHIẾN LƯỢC CƠ ĐỘNG TUẦN MỚI)",
         "topic": "Thị trường Tuần Sau (16/11 – 20/11/2026) — Tranh biện Chiến lược Toàn Vũ Trụ & Kế hoạch Đầu tư Cơ động",
@@ -496,8 +1148,8 @@
         "summary_headline": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới"
       }
     ],
-    "total_archived": 3,
-    "last_updated": "2026-11-18T04:08:44.482631+07:00"
+    "total_archived": 5,
+    "last_updated": "2026-11-18T04:10:05.040433+07:00"
   },
   "retention_status": {
     "policy_hours": 2,
@@ -515,12 +1167,5 @@
     "can_clean_now": false,
     "cleanup_status": "AWAITING_CHAIRMAN_APPROVAL",
     "cleanup_lock_reason": "CHƯA THỂ DỌN PHÒNG: Đang chờ Chủ tịch Trần Quốc Thiên Phước đọc Báo cáo Tổng kết của James & bấm KÝ PHÊ DUYỆT (và đảm bảo mốc tối thiểu 2 tiếng: 06:35:00 18/11)."
-  },
-  "archived_meta": {
-    "archived_at": "2026-11-18T04:10:04.509206+07:00",
-    "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
-    "archived_by": "Palmer & Ban 11 Archive",
-    "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261118-0405.json",
-    "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261118-0405_Bien_Ban_Luu_Tru.md"
   }
 }

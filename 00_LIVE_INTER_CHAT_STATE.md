@@ -1,19 +1,17 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-18 14:51:10  
+**Thời gian cập nhật:** 2026-11-18 20:36:14  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261118-145110`  
+**Mã đồng bộ:** `SYNC-AG2P-20261118-203614`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Chốt tổng kết cuối ngày 18/11/2026 từ bảng giá TCInvest 14:48:33 (HDB 22.25, MSH 35.20, BAF 31.15; Tài sản CP 6,635,000đ, +63,100đ/+1.0%)
+* **Câu hỏi của Chủ tịch:** Phiên trực Mỹ & NVDA BCTC (2030_MOBILIZE) — Thượng đỉnh 04h30 19/11
 * **Kết luận & Quyết định thể chế:**
-EOD 18/11: VN-Index đóng cửa 1,703.01 (-23.71đ / -1.37%, 64 tăng / 272 giảm), VN30 1,806.54 (-30.59đ / -1.67%, 2 tăng / 26 giảm). Danh mục Chủ tịch: giữ 100 MSH @ 35.20 (+69,000đ / +2.0%) và 100 BAF @ 31.15 (-5,900đ / -0.2%, chiều 19/11 về TK) -> Tổng CP 6,635,000đ (+63,100đ / +1.0%), Cash ~13,594,522đ (67.2% NAV), Tổng NAV ~20,229,522đ (-0.17% vs 17/11 trong khi VN-Index -1.37%). HDB đóng cửa 22.25 (-0.15 vs TC, cao hơn giá bán 22.05 là +0.20 chưa tính phí, dưới ngưỡng báo động 22.60; vẫn tiếp tục theo dõi Cloud 19-20/11). Trọng tâm kế tiếp: BCTC NVDA ~04h20 sáng mai 19/11 & phiên đáo hạn phái sinh VN30F1M 19/11.
+[18/11 20:36:11 ICT] Ghi nhận số liệu sống: `ES=F 7,373.75 (+0.20%)`, `NQ=F 27,234.25 (+0.59%)`, `^GSPC 7,340.53 (-1.03%)`, `^IXIC 24,328.38 (-0.74%)`, **`^VIX 24.56 (-3.53%)`**, `US10Y 5.115%`, `DXY 103.79`, `NVDA $160.16 (+3.02%)`, `SMH +2.18%`, `XLF -0.35%`, `VNM ETF 16.80 (+0.78%)`.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Đối soát ảnh TCInvest 18/11 14:48:33 khớp 100% giá đóng cửa MSH 35.20 (+69k) & BAF 31.15 (-5.9k)
-- [x] Cập nhật SSOT PortfolioStateManager EOD 18/11 (NAV 20,229,522đ, Cash 13,594,522đ, Cổ phiếu 6,635,000đ)
-- [x] Xác nhận HDB đóng cửa 22.25 (< ngưỡng cảnh báo hồi 22.60), tiếp tục theo dõi trên Cloud GitHub Actions tới 20/11
+- [x] Hoàn tất nhịp 2030_MOBILIZE (20:36:11 ICT)
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
