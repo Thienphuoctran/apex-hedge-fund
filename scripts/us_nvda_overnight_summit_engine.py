@@ -287,7 +287,7 @@ def determine_auto_checkpoints(now: datetime.datetime, log_data: Dict[str, Any])
     if now >= datetime.datetime(2026, 11, 19, 4, 18, tzinfo=ICT_TZ) and "0425_NVDA_EARNINGS_AH" not in checkpoints_done:
         targets.append("0425_NVDA_EARNINGS_AH")
 
-    if now >= datetime.datetime(2026, 11, 19, 4, 28, tzinfo=ICT_TZ) and not summit_archived:
+    if now >= datetime.datetime(2026, 11, 19, 4, 42, tzinfo=ICT_TZ) and not summit_archived:
         targets.append("0430_SUMMIT")
 
     return targets
