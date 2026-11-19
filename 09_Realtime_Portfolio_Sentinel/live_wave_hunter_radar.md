@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-18 23:00:03`  
+*Cập nhật thời gian thực*: `2026-11-19 04:44:14`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -42,12 +42,12 @@
 
 | Mã CP | Ngành | Giá Hiện Tại | Điểm 10 Danh Thủ | Kỳ Vọng EV% & R:R | Điểm Mua Pullback | Cắt Lỗ 2xATR | Mục Tiêu TP1 | Chất Xúc Tác Cốt Lõi |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`NVDA`** | Semiconductors & AI | `$151.42` | **`80.3/100`** | `+29.2%` (`1:3.82`) | `$147.26` | `$127.64` | `$198.98` | Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết c... |
-| **`TSM`** | Global Chip Foundry | `$358.73` | **`83.1/100`** | `+25.7%` (`1:4.69`) | `$351.34` | `$316.50` | `$443.19` | Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói ... |
-| **`AVGO`** | Custom AI ASICs & Networking | `$348.68` | **`80.9/100`** | `+22.3%` (`1:3.82`) | `$341.38` | `$306.96` | `$432.12` | Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưở... |
-| **`MSFT`** | Enterprise Software & Cloud | `$501.85` | **`88.3/100`** | `+13.4%` (`1:3.41`) | `$495.63` | `$466.30` | `$572.95` | Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quy... |
-| **`V`** | Global Payment Network | `$417.08` | **`88.6/100`** | `+7.9%` (`1:2.92`) | `$413.63` | `$397.36` | `$456.52` | Khối lượng thanh toán toàn cầu tăng +8.5% YoY nhờ chi tiêu du lịch quốc tế bùng nổ. Visa đ... |
-| **`XOM`** | Integrated Oil & Gas | `$161.71` | **`83.2/100`** | `+9.0%` (`1:2.24`) | `$160.00` | `$151.94` | `$181.25` | Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông ch... |
+| **`NVDA`** | Semiconductors & AI | `$150.96` | **`80.3/100`** | `+29.4%` (`1:3.85`) | `$146.82` | `$127.28` | `$198.32` | Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết c... |
+| **`TSM`** | Global Chip Foundry | `$362.62` | **`83.1/100`** | `+25.1%` (`1:4.61`) | `$355.23` | `$320.38` | `$447.10` | Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói ... |
+| **`AVGO`** | Custom AI ASICs & Networking | `$354.05` | **`80.9/100`** | `+21.5%` (`1:3.71`) | `$346.75` | `$312.33` | `$437.49` | Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưở... |
+| **`MSFT`** | Enterprise Software & Cloud | `$508.29` | **`88.3/100`** | `+12.8%` (`1:3.26`) | `$502.07` | `$472.74` | `$579.39` | Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quy... |
+| **`V`** | Global Payment Network | `$415.22` | **`88.6/100`** | `+7.9%` (`1:2.91`) | `$411.77` | `$395.49` | `$454.68` | Khối lượng thanh toán toàn cầu tăng +8.5% YoY nhờ chi tiêu du lịch quốc tế bùng nổ. Visa đ... |
+| **`XOM`** | Integrated Oil & Gas | `$160.58` | **`83.2/100`** | `+9.2%` (`1:2.37`) | `$158.91` | `$151.04` | `$179.66` | Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông ch... |
 
 ---
 
