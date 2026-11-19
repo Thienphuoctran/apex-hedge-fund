@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-19T07:47:15.259555+00:00",
+  "timestamp_utc": "2026-11-19T10:10:45.740576+00:00",
   "scan_date": "2026-11-19",
   "total_us_filings_count": 367,
-  "total_vn_announcements_count": 59,
+  "total_vn_announcements_count": 57,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "8-K",
@@ -324,6 +324,14 @@
       "source_url": "https://cafef.vn/du-bau-duc-tuyen-bo-neu-1-2-nam-nua-ma-lo-cu-keu-toi-ra-chui-co-phieu-hag-xuong-day-16-thang-giam-gan-30-sau-1-nam-188261118112837196.chn",
       "total_announcements": 1
     },
+    "OCB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Người thân lãnh đạo OCB tiếp tục đăng ký bán cổ phiếu",
+      "severity": "INFO",
+      "published_at": "Thu, 19 Nov 26 16:29:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-than-lanh-dao-ocb-tiep-tuc-dang-ky-ban-co-phieu-188261119162939707.chn",
+      "total_announcements": 2
+    },
     "LPB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Sang tay thỏa thuận hơn 17.355 tỷ đồng giá trị cổ phiếu trong thời gian ngắn, thị trường hồi hộp chờ bức tranh cổ đông lớn LPBank được vén màn",
@@ -338,7 +346,7 @@
       "severity": "RED_FLAG",
       "published_at": "Wed, 18 Nov 26 17:11:00 +0700",
       "source_url": "https://cafef.vn/nong-bao-tin-minh-chau-pnj-doji-sjc-vao-danh-sach-thanh-tra-nam-2027-188261118165650139.chn",
-      "total_announcements": 6
+      "total_announcements": 4
     },
     "FRT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -355,22 +363,6 @@
       "published_at": "Wed, 18 Nov 26 15:45:00 +0700",
       "source_url": "https://cafef.vn/khoi-ngoai-thang-tay-ban-rong-hon-1100-ty-dong-trong-ngay-vn-index-giam-sau-xa-manh-loat-co-phieu-hot-18826111815273573.chn",
       "total_announcements": 2
-    },
-    "SHS": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Chứng khoán xuất hiện mức định giá hiếm thấy, CTCK chỉ điểm 8 cổ phiếu tiềm năng",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 18 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/chung-khoan-xuat-hien-muc-dinh-gia-hiem-thay-ctck-chi-diem-8-co-phieu-tiem-nang-188261117110310154.chn",
-      "total_announcements": 1
-    },
-    "PC1": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Mảng năng lượng trở thành điểm sáng, PC1 được dự báo lãi gần 1.300 tỷ đồng năm 2027",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 17 Nov 26 16:22:00 +0700",
-      "source_url": "https://cafef.vn/mang-nang-luong-tro-thanh-diem-sang-pc1-duoc-du-bao-lai-gan-1300-ty-dong-nam-2027-188261117153826278.chn",
-      "total_announcements": 1
     },
     "ACB": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -412,13 +404,13 @@
       "source_url": "https://cafef.vn/chon-the-khi-chi-tieu-o-nuoc-ngoai-dung-chi-quan-tam-phi-ma-bo-quen-ty-gia-188261118092855276.chn",
       "total_announcements": 1
     },
-    "OCB": {
+    "SSI": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "OCB dành 2.000 tỷ đồng ưu đãi vốn vay sản xuất kinh doanh cuối năm",
+      "latest_title": "SSI Research: Mặt bằng lãi suất ổn định nhưng khó giảm mạnh?",
       "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 18:17:00 +0700",
-      "source_url": "https://cafef.vn/ocb-danh-2000-ty-dong-uu-dai-von-vay-san-xuat-kinh-doanh-cuoi-nam-188261117181724856.chn",
-      "total_announcements": 1
+      "published_at": "Thu, 19 Nov 2026 08:58:06 GMT",
+      "source_url": "https://vneconomy.vn/ssi-research-mat-bang-lai-suat-on-dinh-nhung-kho-giam-manh.htm",
+      "total_announcements": 2
     },
     "VIC": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -434,14 +426,6 @@
       "severity": "INFO",
       "published_at": "Wed, 18 Nov 2026 15:02:23 GMT",
       "source_url": "https://vneconomy.vn/khoi-ngoai-ban-rong-dot-bien-len-1200-ty.htm",
-      "total_announcements": 1
-    },
-    "SSI": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Giám đốc thị trường nước ngoài của SSI: Việt Nam là thị trường mới nổi tuyệt vời, kinh tế tăng trưởng nhất thế giới",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 2026 04:25:51 GMT",
-      "source_url": "https://vneconomy.vn/giam-doc-thi-truong-nuoc-ngoai-cua-ssi-viet-nam-la-thi-truong-moi-noi-tuyet-voi-kinh-te-tang-truong-nhat-the-gioi.htm",
       "total_announcements": 1
     }
   },
@@ -4905,8 +4889,8 @@
       "symbols": [
         "FPT"
       ],
-      "title": "Vietcap định giá Long Châu hơn 44.000 tỷ đồng, gấp 18 lần FPT Shop: Hé lộ nhóm cổ đông đặc biệt nắm hơn 11% vốn",
-      "summary": "Theo báo cáo mới nhất của Vietcap, giá trị ước tính của chuỗi nhà thuốc Long Châu vượt xa FPT Shop. Cơ cấu cổ đông của chuỗi này cũng xuất hiện một nhóm sở hữu lượng cổ phần có giá trị hàng nghìn tỷ đồng....",
+      "title": "FPT Retail phát triển hai trụ cột bán lẻ, chú trọng công nghệ và trải nghiệm khách hàng",
+      "summary": "Với hai hệ thống FPT Shop và Long Châu, FPT Retail tiếp tục phát triển hoạt động bán lẻ công nghệ và chăm sóc sức khỏe, đồng thời chú trọng ứng dụng công nghệ, nâng cao chất lượng dịch vụ và đáp ứng nhu cầu ngày càng đa ...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
       "published_at": "Thu, 19 Nov 26 00:02:00 +0700",
@@ -4935,6 +4919,30 @@
       "severity": "CRITICAL",
       "published_at": "Wed, 18 Nov 26 12:16:00 +0700",
       "source_url": "https://cafef.vn/du-bau-duc-tuyen-bo-neu-1-2-nam-nua-ma-lo-cu-keu-toi-ra-chui-co-phieu-hag-xuong-day-16-thang-giam-gan-30-sau-1-nam-188261118112837196.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "OCB"
+      ],
+      "title": "Người thân lãnh đạo OCB tiếp tục đăng ký bán cổ phiếu",
+      "summary": "Bà Nguyễn Việt Triều, vợ ông Ngô Hà Bắc- Thành viên HĐQT của OCB vừa tiếp tục đăng ký bán ra 800.000 cổ phiếu do nhu cầu cá nhân....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 19 Nov 26 16:29:00 +0700",
+      "source_url": "https://cafef.vn/nguoi-than-lanh-dao-ocb-tiep-tuc-dang-ky-ban-co-phieu-188261119162939707.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Chuyện gì đang xảy ra với FPT?",
+      "summary": "Vốn hóa của FPT \"bốc hơi\" 21.500 tỷ trong một tháng, xuống còn 86.200 tỷ đồng....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 19 Nov 26 16:21:00 +0700",
+      "source_url": "https://cafef.vn/chuyen-gi-dang-xay-ra-voi-fpt-188261119160907863.chn"
     },
     {
       "market": "VIETNAM",
@@ -5044,66 +5052,6 @@
       "severity": "CRITICAL",
       "published_at": "Wed, 18 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/tong-giam-doc-phan-quoc-cong-tam-lo-20-ty-sau-cu-bat-day-pnj-188261117225619976.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "SHS"
-      ],
-      "title": "Chứng khoán xuất hiện mức định giá hiếm thấy, CTCK chỉ điểm 8 cổ phiếu tiềm năng",
-      "summary": "Theo SHS, mặt bằng định giá giảm trong khi kết quả kinh doanh của nhiều doanh nghiệp vẫn duy trì đà tăng trưởng tích cực....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 18 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/chung-khoan-xuat-hien-muc-dinh-gia-hiem-thay-ctck-chi-diem-8-co-phieu-tiem-nang-188261117110310154.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "PNJ bất ngờ thay nhân sự tại vị trí quan trọng",
-      "summary": "Sau khi miễn nhiệm, ông Nguyễn Anh Tuấn vẫn tiếp tục làm việc tại PNJ trên cương vị mới....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 18:39:00 +0700",
-      "source_url": "https://cafef.vn/pnj-bat-ngo-thay-nhan-su-tai-vi-tri-quan-trong-188261117173921207.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PC1"
-      ],
-      "title": "Mảng năng lượng trở thành điểm sáng, PC1 được dự báo lãi gần 1.300 tỷ đồng năm 2027",
-      "summary": "Sau 9 tháng đầu năm 2026, lợi nhuận sau thuế của Tập đoàn PC1 tăng 27% dù doanh thu giảm 15%. Động lực từ mảng năng lượng cùng sự cải thiện biên lợi nhuận được kỳ vọng giúp doanh nghiệp đạt lợi nhuận hơn 1.280 tỷ đồng tr...",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Tue, 17 Nov 26 16:22:00 +0700",
-      "source_url": "https://cafef.vn/mang-nang-luong-tro-thanh-diem-sang-pc1-duoc-du-bao-lai-gan-1300-ty-dong-nam-2027-188261117153826278.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Buồn của FPT",
-      "summary": "Diễn biến trên càng đáng chú ý khi FPT từng là một trong những cổ phiếu tăng trưởng nổi bật nhất thị trường....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 26 16:14:00 +0700",
-      "source_url": "https://cafef.vn/buon-cua-fpt-18826111716112616.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng SJC, vàng nhẫn 9999 sáng ngày 19/11",
-      "summary": "Giá vàng trong nước sáng 19/11 tiếp tục điều chỉnh giảm tại nhiều thương hiệu. Đáng chú ý, vàng nhẫn PNJ giảm tới 1,5 triệu đồng/lượng ở cả hai chiều mua vào và bán ra....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 19 Nov 26 10:37:00 +0700",
-      "source_url": "https://cafef.vn/gia-vang-sjc-vang-nhan-9999-sang-ngay-19-11-188261119020430468.chn"
     },
     {
       "market": "VIETNAM",
@@ -5306,6 +5254,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Vingroup của tỷ phú Phạm Nhật Vượng chính thức khởi công dự án nhà ở xã hội lớn nhất Việt Nam",
+      "summary": "Vingroup vừa khởi công khu nhà ở xã hội rộng 191,6ha tại TP.HCM, dự kiến cung cấp 45.000 căn hộ, đáp ứng nhu cầu an cư cho gần 68.000 người....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Thu, 19 Nov 26 15:22:00 +0700",
+      "source_url": "https://cafef.vn/vingroup-cua-ty-phu-pham-nhat-vuong-chinh-thuc-khoi-cong-du-an-nha-o-xa-hoi-lon-nhat-viet-nam-188261119151901347.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "Nguồn cung nhà liền thổ TP.HCM  tăng gần 40 lần, hơn 90% tập trung tại 2 khu vực có đại đô thị của Vinhomes, tỷ lệ hấp thụ 33%",
       "summary": "Theo Cushman & Wakefield, giá bán sơ cấp bình quân nhà liền thổ tại TP.HCM trong quý 3/2026 đạt 163,2 triệu đồng/m², giảm 49% so với cùng kỳ năm trước trong khi nguồn cung mới tăng gần 40 lần....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5352,14 +5312,14 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
+        "SSI"
       ],
-      "title": "Cận cảnh 'bộ não' điều hành siêu dự án chống ngập 10.000 tỷ ở TP.HCM",
-      "summary": "Nhà điều hành cống Mương Chuối, được ví như \"bộ não\" siêu dự án chống ngập 10.000 tỷ đồng ở TP.HCM, đã lắp đặt thiết bị, sẵn sàng vận hành từ cuối tháng 11....",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "title": "SSI Research: Mặt bằng lãi suất ổn định nhưng khó giảm mạnh?",
+      "summary": "Nhu cầu vốn của nền kinh tế vẫn ở mức cao trong bối cảnh hiện nay, trong khi hệ thống ngân hàng vẫn là kênh cung ứng vốn chủ đạo do các kênh huy động vốn dài hạn khác chưa thực sự phát huy vai trò. Đây vẫn là những yếu t...",
+      "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 18 Nov 26 14:49:00 +0700",
-      "source_url": "https://cafef.vn/can-canh-bo-nao-dieu-hanh-sieu-du-an-chong-ngap-10000-ty-o-tphcm-188261118144934426.chn"
+      "published_at": "Thu, 19 Nov 2026 08:58:06 GMT",
+      "source_url": "https://vneconomy.vn/ssi-research-mat-bang-lai-suat-on-dinh-nhung-kho-giam-manh.htm"
     },
     {
       "market": "VIETNAM",

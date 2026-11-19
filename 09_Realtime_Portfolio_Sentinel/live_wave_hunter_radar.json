@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19 08:31:12",
+  "generated_at": "2026-11-19 10:10:48",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -354,7 +354,7 @@
       "symbol": "FPT",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Thu, 19 Nov 26 0",
-      "headline": "Vietcap định giá Long Châu hơn 44.000 tỷ đồng, gấp 18 lần FPT Shop: Hé lộ nhóm cổ đông đặc biệt nắm hơn 11% vốn",
+      "headline": "FPT Retail phát triển hai trụ cột bán lẻ, chú trọng công nghệ và trải nghiệm khách hàng",
       "is_portfolio_holding": true
     },
     {
@@ -375,11 +375,11 @@
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "symbol": "OCB",
+      "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Thu, 19 Nov 26 1",
-      "headline": "Cổ phiếu FPT \"phá đáy\" hơn 3 năm, Vietcap hé lộ loạt thông tin đáng chú ý",
-      "is_portfolio_holding": true
+      "headline": "Người thân lãnh đạo OCB tiếp tục đăng ký bán cổ phiếu",
+      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 367 hồ sơ SEC & 59 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 367 hồ sơ SEC & 57 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",
