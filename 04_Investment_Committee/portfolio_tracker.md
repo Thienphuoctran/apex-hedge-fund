@@ -1,21 +1,21 @@
 # NHẬT KÝ THEO DÕI DANH MỤC ĐẦU TƯ QUỐC TẾ (INSTITUTIONAL PORTFOLIO TRACKER v5.0)
-**Cập nhật gần nhất**: 2026-11-18 | **Trạng thái**: 100% Tuân thủ Kỷ luật `Earnings Radar <= 7d` & `ATR Risk-Parity`
+**Cập nhật gần nhất**: 2026-11-19 | **Trạng thái**: 100% Tuân thủ Kỷ luật `Earnings Radar <= 7d` & `ATR Risk-Parity`
 
 ## 1. Danh Mục 10 Vị Thế Hoạt Động (`Active Risk-Parity Allocations — 60.0% NAV`)
 | Mã | Ngành | Giá Hiện Tại ($) | Vùng Giải Ngân | Stop `2xATR` ($) | Chandelier Stop ($) | TP1 ($) | TP2 ($) | Tỷ Trọng (% NAV) | Rủi Ro Tối Đa (% NAV) | Trạng Thái BCTC |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`PG`** | Consumer Household Staples | $170.48 | $167.07 – $171.33 | **$163.62** | $165.01 | $184.2 | $191.06 | **8.7%** | `-0.35%` | CLEAR (2027-01-21 BMO) |
-| **`COST`** | Membership Warehouse Retail | $1107.17 | $1038.74 – $1059.72 | **$1064.25** | $1070.02 | $1193.01 | $1235.93 | **8.2%** | `-0.32%` | CLEAR (2026-12-10 AMC) |
-| **`V`** | Global Payment Network | $417.08 | $408.74 – $419.17 | **$397.36** | $417.57 | $456.52 | $479.35 | **7.8%** | `-0.37%` | CLEAR (2027-01-26 AMC) |
-| **`ABBV`** | Biotech & Immunology | $289.18 | $283.4 – $290.63 | **$274.59** | $284.7 | $318.36 | $334.28 | **7.3%** | `-0.37%` | CLEAR (2026-10-30 BMO) |
-| **`JPM`** | Global Diversified Banking | $326.6 | $320.07 – $328.23 | **$309.87** | $338.89 | $360.06 | $373.48 | **6.8%** | `-0.35%` | CLEAR (2027-01-14 BMO) |
-| **`JNJ`** | Pharmaceuticals & MedTech | $276.64 | $271.11 – $278.02 | **$262.79** | $272.93 | $304.34 | $318.19 | **6.8%** | `-0.34%` | CLEAR (2027-01-26 BMO) |
-| **`MSFT`** | Enterprise Software & Cloud | $501.85 | $491.81 – $504.36 | **$466.3** | $514.72 | $572.95 | $636.12 | **5.4%** | `-0.38%` | CLEAR (2027-01-27 AMC) |
-| **`OXY`** | Upstream Oil & Carbon Capture | $54.2 | $53.12 – $54.47 | **$50.24** | $60.02 | $62.12 | $71.11 | **4.3%** | `-0.31%` | CLEAR (2026-11-09 AMC) |
-| **`TSM`** | Global Chip Foundry | $358.73 | $351.56 – $360.52 | **$316.5** | $388.08 | $443.19 | $586.69 | **2.7%** | `-0.32%` | CLEAR (2027-01-14 BMO) |
-| **`NVDA`** | Semiconductors & AI | $151.42 | $148.39 – $152.18 | **$127.64** | $192.46 | $198.98 | $253.67 | **2.0%** | `-0.31%` | JUST REPORTED (1d ago) — Đã qua rủi ro BCTC |
+| **`PG`** | Consumer Household Staples | $170.29 | $166.88 – $171.14 | **$163.43** | $165.01 | $184.01 | $190.87 | **9.2%** | `-0.37%` | CLEAR (2027-01-21 BMO) |
+| **`COST`** | Membership Warehouse Retail | $1096.62 | $1074.69 – $1102.1 | **$1053.0** | $1069.15 | $1183.86 | $1227.48 | **8.7%** | `-0.35%` | UPCOMING EARNINGS (21d, AMC) — Lưu ý biến động |
+| **`V`** | Global Payment Network | $415.22 | $406.92 – $417.3 | **$395.49** | $417.57 | $454.68 | $477.41 | **7.7%** | `-0.37%` | CLEAR (2027-01-26 AMC) |
+| **`ABBV`** | Biotech & Immunology | $286.01 | $280.29 – $287.44 | **$271.13** | $284.33 | $315.77 | $315.88 | **7.1%** | `-0.37%` | CLEAR (2026-10-30 BMO) |
+| **`JPM`** | Global Diversified Banking | $324.11 | $317.63 – $325.73 | **$307.11** | $338.55 | $358.11 | $373.48 | **6.6%** | `-0.35%` | CLEAR (2027-01-14 BMO) |
+| **`JNJ`** | Pharmaceuticals & MedTech | $272.7 | $267.25 – $274.06 | **$258.55** | $272.56 | $301.0 | $315.15 | **6.3%** | `-0.33%` | CLEAR (2027-01-26 BMO) |
+| **`MSFT`** | Enterprise Software & Cloud | $508.29 | $498.12 – $510.83 | **$472.47** | $514.37 | $579.93 | $636.12 | **5.4%** | `-0.38%` | CLEAR (2027-01-27 AMC) |
+| **`OXY`** | Upstream Oil & Carbon Capture | $53.76 | $52.68 – $54.03 | **$49.77** | $59.97 | $61.74 | $71.11 | **4.3%** | `-0.32%` | CLEAR (2026-11-09 AMC) |
+| **`TSM`** | Global Chip Foundry | $362.62 | $355.37 – $364.43 | **$320.38** | $388.08 | $447.1 | $586.69 | **2.7%** | `-0.31%` | CLEAR (2027-01-14 BMO) |
+| **`NVDA`** | Semiconductors & AI | $150.96 | $147.94 – $151.71 | **$127.11** | $192.38 | $198.66 | $253.67 | **2.0%** | `-0.32%` | JUST REPORTED (2d ago) — Đã qua rủi ro BCTC |
 
 ## 2. Danh Sách Khóa Mua Mới Chờ Qua BCTC (`Locked Earnings Watchlist <= 7 Ngày`)
 | Mã | Ngày BCTC | Số Ngày Còn Lại | Biên Độ Dự Kiến (`Options Implied Move`) | Chỉ Thị Của Ban 4 |
 | :--- | :---: | :---: | :---: | :--- |
-| **`WMT`** | `2026-11-19` (BMO) | **1 ngày** | `±5.69%` | **WAIT POST-EARNINGS** — Quan sát phản ứng giá sau BCTC ngày 2026-11-19 trước khi mở vị thế. |
+| **`WMT`** | `2026-11-19` (BMO) | **0 ngày** | `±5.69%` | **WAIT POST-EARNINGS** — Quan sát phản ứng giá sau BCTC ngày 2026-11-19 trước khi mở vị thế. |
