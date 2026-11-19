@@ -1,6 +1,6 @@
 {
   "session_date": "2026-11-19",
-  "recorded_at": "2026-11-19 08:31:05",
+  "recorded_at": "2026-11-19 23:08:25",
   "total_stocks_scanned": 145,
   "total_sectors_scanned": 18,
   "market_breadth": {
@@ -23,7 +23,7 @@
     },
     {
       "sector_name": "Bất Động Sản Dân Cư & Đô Thị",
-      "score": 62.5,
+      "score": 62.4,
       "stage": "LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực)",
       "top_picks": [
         "TCH",
@@ -53,7 +53,7 @@
     },
     {
       "sector_name": "Dệt May Xuất Khẩu",
-      "score": 44.4,
+      "score": 44.1,
       "stage": "WEAKENING (Phân Hóa / Chững Lại)",
       "top_picks": [
         "MSH",
@@ -343,7 +343,7 @@
       "code": "DIG",
       "name": "Tổng Công ty Đầu tư Phát triển Xây dựng (DIC Corp)",
       "price": 10100.0,
-      "rs_rating": 39,
+      "rs_rating": 38,
       "rejected_by": "Ban 2 VN (Pháp y Kế toán VAS/TT200)",
       "rejection_reason": "Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = 0.55x (< 0.85x), Beneish M-Score = -1.87 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng)."
     },

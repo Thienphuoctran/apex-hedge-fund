@@ -1,6 +1,6 @@
 # BIÊN BẢN HỌP THƯỢNG ĐỈNH 10 PHÒNG BAN & BÁO CÁO QUÉT TOÀN THỊ TRƯỜNG (145 MÃ / 18 NGÀNH)
 **Mã Nghị Quyết:** `APEX-COUNCIL-12DEPT-2ASSIST-2026-11-19`  
-**Thời điểm thực thi:** `08:30:49 Thứ Năm, ngày 19/11/2026` *(Thời gian xử lý: `16.59s`)*  
+**Thời điểm thực thi:** `23:08:14 Thứ Năm, ngày 19/11/2026` *(Thời gian xử lý: `10.36s`)*  
 **Tài khoản Chủ tịch:** TCBS `105C307855` — **Số dư Tiền mặt thực tế:** `13,594,522 ₫` (`0 CP` nắm giữ | Lãi ròng Vòng 1: `+166,419 ₫`)  
 
 ---
@@ -10,23 +10,23 @@
 | Hạng | Nhóm Ngành Kinh Tế | Số Mã Quét | Điểm Sức Mạnh Ngành | RS Trung Bình | % Mã Trên MA20 | Biến Động 1 Tháng | Trạng Thái Chu Kỳ Dòng Tiền | Top Cổ Phiếu Dẫn Dắt Ngành |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :--- | :--- |
 | **01** | **Điện & Hạ Tầng Năng Lượng** | 7 | **`67.3`** | `70.3` | `71.4%` | `+1.40%` | LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực) | **`NT2, POW, QTP`** |
-| **02** | **Bất Động Sản Dân Cư & Đô Thị** | 12 | **`62.5`** | `52.8` | `66.7%` | `+1.38%` | LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực) | **`TCH, NTL, VHM`** |
+| **02** | **Bất Động Sản Dân Cư & Đô Thị** | 12 | **`62.4`** | `52.6` | `66.7%` | `+1.38%` | LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực) | **`TCH, NTL, VHM`** |
 | **03** | **Nông Nghiệp & Chăn Nuôi 3F** | 6 | **`52.7`** | `56.0` | `50.0%` | `-7.87%` | IMPROVING (Đang Tích Lũy Thu Hút Dòng Tiền) | **`BAF, DBC, PAN`** |
 | **04** | **Thép & Kim Loại Công Nghiệp** | 6 | **`49.0`** | `58.8` | `33.3%` | `-2.60%` | WEAKENING (Phân Hóa / Chững Lại) | **`NKG, VGS, GDA`** |
-| **05** | **Dệt May Xuất Khẩu** | 5 | **`44.4`** | `63.2` | `20.0%` | `-2.02%` | WEAKENING (Phân Hóa / Chững Lại) | **`MSH, TNG, VGT`** |
-| **06** | **Ngân Hàng TMCP** | 17 | **`42.6`** | `66.7` | `17.6%` | `-3.51%` | WEAKENING (Phân Hóa / Chững Lại) | **`HDB, NAB, TCB`** |
-| **07** | **Chứng Khoán & Đầu Tư** | 13 | **`42.0`** | `51.5` | `30.8%` | `-1.81%` | WEAKENING (Phân Hóa / Chững Lại) | **`ORS, HCM, CTS`** |
+| **05** | **Dệt May Xuất Khẩu** | 5 | **`44.1`** | `62.4` | `20.0%` | `-2.19%` | WEAKENING (Phân Hóa / Chững Lại) | **`MSH, TNG, VGT`** |
+| **06** | **Ngân Hàng TMCP** | 17 | **`42.7`** | `66.8` | `17.6%` | `-3.51%` | WEAKENING (Phân Hóa / Chững Lại) | **`HDB, NAB, TCB`** |
+| **07** | **Chứng Khoán & Đầu Tư** | 13 | **`41.9`** | `51.2` | `30.8%` | `-1.81%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`ORS, HCM, CTS`** |
 | **08** | **Bán Lẻ & Phân Phối Hiện Đại** | 6 | **`39.2`** | `66.8` | `16.7%` | `-9.90%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`PET, HAX, DGW`** |
-| **09** | **Thực Phẩm & Đồ Uống Thiết Yếu** | 6 | **`38.9`** | `75.2` | `16.7%` | `-4.41%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`QNS, SAB, VNM`** |
-| **10** | **BĐS Khu Công Nghiệp & Cao Su** | 12 | **`36.4`** | `56.8` | `8.3%` | `-7.65%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`LHG, IDC, SZC`** |
-| **11** | **Đầu Tư Công, Xây Dựng & Vật Liệu** | 11 | **`33.2`** | `46.4` | `18.2%` | `-3.82%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`DPG, PTB, HHV`** |
-| **12** | **Thủy Sản Xuất Khẩu (Cá Tra & Tôm)** | 6 | **`29.8`** | `45.8` | `16.7%` | `-6.25%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`FMC, VHC, ANV`** |
+| **09** | **Thực Phẩm & Đồ Uống Thiết Yếu** | 6 | **`38.9`** | `75.3` | `16.7%` | `-4.41%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`QNS, SAB, VNM`** |
+| **10** | **BĐS Khu Công Nghiệp & Cao Su** | 12 | **`36.4`** | `56.9` | `8.3%` | `-7.65%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`LHG, IDC, SZC`** |
+| **11** | **Đầu Tư Công, Xây Dựng & Vật Liệu** | 11 | **`33.2`** | `46.4` | `18.2%` | `-4.00%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`DPG, PTB, HHV`** |
+| **12** | **Thủy Sản Xuất Khẩu (Cá Tra & Tôm)** | 6 | **`30.0`** | `46.3` | `16.7%` | `-6.13%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`FMC, VHC, ANV`** |
 | **13** | **Bảo Hiểm Nhân Thọ & Phi Nhân Thọ** | 3 | **`28.2`** | `62.7` | `0.0%` | `-8.89%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`MIG, BMI, BVH`** |
-| **14** | **Cảng Biển, Vận Tải Biển & Hàng Không** | 10 | **`27.8`** | `61.7` | `0.0%` | `-11.61%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`PVP, PVT, VOS`** |
+| **14** | **Cảng Biển, Vận Tải Biển & Hàng Không** | 10 | **`28.0`** | `62.3` | `0.0%` | `-11.56%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`PVP, PVT, VOS`** |
 | **15** | **Dầu Khí Thượng Nguồn & Phân Phối** | 6 | **`25.7`** | `57.0` | `0.0%` | `-15.18%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`BSR, PVS, PVD`** |
-| **16** | **Hóa Chất Cơ Bản & Phân Bón** | 7 | **`22.2`** | `41.3` | `0.0%` | `-12.22%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`BFC, DCM, CSV`** |
-| **17** | **Dược Phẩm & Bệnh Viện** | 5 | **`19.7`** | `43.8` | `0.0%` | `-8.24%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`DBD, TRA, TNH`** |
-| **18** | **Công Nghệ Thông Tin & Viễn Thông** | 7 | **`8.9`** | `19.7` | `0.0%` | `-13.80%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`ITD, ELC, FOX`** |
+| **16** | **Hóa Chất Cơ Bản & Phân Bón** | 7 | **`22.1`** | `41.1` | `0.0%` | `-12.30%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`BFC, DCM, CSV`** |
+| **17** | **Dược Phẩm & Bệnh Viện** | 5 | **`19.8`** | `44.0` | `0.0%` | `-8.24%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`DBD, TRA, TNH`** |
+| **18** | **Công Nghệ Thông Tin & Viễn Thông** | 7 | **`8.8`** | `19.6` | `0.0%` | `-13.79%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`ITD, ELC, FOX`** |
 
 ---
 
@@ -38,7 +38,7 @@
 
 ### 🏛️ Ban 1 VN — Phân Tích Vĩ Mô & Luân Chuyển 18 Nhóm Ngành (`vn-macro-monetary-agent`)
 - **Người chủ trì:** Chuyên gia Hoàng (Trưởng Ban Vĩ Mô)
-- **Báo cáo số liệu & Phản biện thực tế:** Quét trực tiếp 145 mã trên 18 ngành cho thấy độ rộng thị trường hiện đạt 22.1% mã nằm trên MA20 và 13.8% mã nằm trên MA200 -> Thị trường phân hóa mạnh, dòng tiền rút khỏi các cổ phiếu công nghệ/hóa chất định giá cao để xoay trục sang Top 5 ngành dẫn dắt: Điện & Hạ Tầng Năng Lượng (67.3đ), Bất Động Sản Dân Cư & Đô Thị (62.5đ), Nông Nghiệp & Chăn Nuôi 3F (52.7đ), Thép & Kim Loại Công Nghiệp (49.0đ), Dệt May Xuất Khẩu (44.4đ).
+- **Báo cáo số liệu & Phản biện thực tế:** Quét trực tiếp 145 mã trên 18 ngành cho thấy độ rộng thị trường hiện đạt 22.1% mã nằm trên MA20 và 13.8% mã nằm trên MA200 -> Thị trường phân hóa mạnh, dòng tiền rút khỏi các cổ phiếu công nghệ/hóa chất định giá cao để xoay trục sang Top 5 ngành dẫn dắt: Điện & Hạ Tầng Năng Lượng (67.3đ), Bất Động Sản Dân Cư & Đô Thị (62.4đ), Nông Nghiệp & Chăn Nuôi 3F (52.7đ), Thép & Kim Loại Công Nghiệp (49.0đ), Dệt May Xuất Khẩu (44.1đ).
 
 ### 🏛️ Ban 10 — Trinh Sát BCTC, Báo Cáo Thường Niên & IR (`hien-bctc-scout-agent`)
 - **Người chủ trì:** Hiền (Trưởng Ban Trinh Sát BCTC & IR)
@@ -94,7 +94,7 @@
 | **`DGC`** | Tập đoàn Hóa chất Đức Giang | `31,350 ₫` | `21/99` | **Ban 3 VN (Wyckoff/RS)** | Tạm hoãn mua mới: Dù BCTC nhiều tiền mặt nhưng dòng tiền ngắn hạn đang yếu (RS = 21/99, giá 31,350 ₫ dưới MA20 32,788 ₫), tránh chôn vốn khi cổ phiếu chưa vào pha đẩy giá. |
 | **`MWG`** | Đầu tư Thế Giới Di Động | `72,100 ₫` | `78/99` | **Ban 4 VN (Quản trị Rủi ro Lô 100 CP)** | Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 72,100 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 35.64% tổng NAV (7,210,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30. |
 | **`FRT`** | Bán lẻ Kỹ thuật số FPT (Long Châu) | `149,400 ₫` | `95/99` | **Ban 4 VN (Quản trị Rủi ro Lô 100 CP)** | Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 149,400 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 73.85% tổng NAV (14,940,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30. |
-| **`DIG`** | Tổng Công ty Đầu tư Phát triển Xây dựng (DIC Corp) | `10,100 ₫` | `39/99` | **Ban 2 VN (Pháp y Kế toán VAS/TT200)** | Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = 0.55x (< 0.85x), Beneish M-Score = -1.87 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng). |
+| **`DIG`** | Tổng Công ty Đầu tư Phát triển Xây dựng (DIC Corp) | `10,100 ₫` | `38/99` | **Ban 2 VN (Pháp y Kế toán VAS/TT200)** | Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = 0.55x (< 0.85x), Beneish M-Score = -1.87 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng). |
 | **`DXG`** | Tập đoàn Đất Xanh | `11,100 ₫` | `56/99` | **Ban 2 VN (Pháp y Kế toán VAS/TT200)** | Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = 0.6x (< 0.85x), Beneish M-Score = -1.91 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng). |
 | **`LTG`** | Tập đoàn Lộc Trời | `22,000 ₫` | `84/99` | **Ban 2 VN (Pháp y Kế toán VAS/TT200)** | Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = -0.5x (< 0.85x), Beneish M-Score = -0.98 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng). |
 
