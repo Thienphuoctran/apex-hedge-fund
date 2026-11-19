@@ -39,9 +39,24 @@ def run_pre_flight_audit():
     with open(anchor_file, "r", encoding="utf-8") as f:
         anchor_data = json.load(f)
 
-    cash = anchor_data.get("cash_balance_vnd") or anchor_data.get("realized_cash_vnd", 20199425.0)
-    print(f"[+] 1. Đã nạp Trạng thái Hiến Chương: {anchor_data.get('constitution_version', 'V1.0')} ({anchor_data.get('status')})")
-    print(f"[+] 2. Số dư Tiền mặt trong két TCBS: {cash:,.0f} ₫")
+    # Đọc trực tiếp SSOT từ current_portfolio_state.json để luôn khớp 100% số dư thực tế
+    ssot_data = {}
+    try:
+        sys.path.insert(0, str(BASE_DIR))
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        ssot_data = PortfolioStateManager.load_state() or {}
+    except Exception:
+        ssot_file = BASE_DIR / "data" / "current_portfolio_state.json"
+        if ssot_file.exists():
+            with open(ssot_file, "r", encoding="utf-8") as f:
+                ssot_data = json.load(f)
+
+    cash = float(ssot_data.get("cash_balance_vnd") or anchor_data.get("realized_cash_vnd") or anchor_data.get("cash_balance_vnd") or 0.0)
+    total_nav = float(ssot_data.get("total_nav_vnd") or anchor_data.get("total_nav_vnd") or cash)
+    active_pos = ssot_data.get("active_positions", {}) or {}
+    holdings_str = ", ".join(f"{sym} ({int(pos.get('shares', 0))} CP)" for sym, pos in active_pos.items() if int(pos.get("shares", 0) or 0) > 0) or "0 CP"
+    print(f"[+] 1. Đã nạp Trạng thái Hiến Chương: {anchor_data.get('constitution_version', 'V1.0')} ({ssot_data.get('status', anchor_data.get('status'))})")
+    print(f"[+] 2. Số dư Tiền mặt trong két TCBS: {cash:,.0f} ₫ | Tổng NAV: {total_nav:,.0f} ₫ | Đang nắm: {holdings_str}")
 
     # 2. Đọc và kiểm tra Sổ Nhật Ký Ban 5
     journal_path = BASE_DIR / "VN_Market" / "05_Learning_And_Evolution" / "vn_system_evolution_journal.md"

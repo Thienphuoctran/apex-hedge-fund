@@ -2,7 +2,7 @@
   "meeting_id": "APEX-SUMMIT-20261119-0430",
   "version": "10.2-RealTime-5Checkpoint-NVDA-VIX-0430",
   "title": "🏛️ HỘI NGHỊ THƯỢNG ĐỈNH ĐÊM 18–19/11 — ĐÓN BCTC NVDA, THEO DÕI VIX & CHỐT KỊCH BẢN ĐÁO HẠN 04H30",
-  "topic": "Theo dõi xuyên đêm phiên Mỹ (21h30 -> 04h00), đón BCTC NVDA (~04h20), đo VIX hạ nhiệt/căng thẳng & Họp Tổng Kết 04h30 sáng 19/11",
+  "topic": "Tổng Kết NVDA / PANW / ^VIX & Kế Hoạch Đáo Hạn VN30F1M 19/11 + Mở Công Suất Tuần Sau",
   "subtitle": "04h30 – 05h00 Sáng 19/11 (30 Phút) • 5 Nhịp Thật 21h30–04h25 • Chủ trì James & Palmer • Giám sát Trọng",
   "room_status": "ACTIVE_SESSION",
   "prep_start_time": "2026-11-19T04:10:00+07:00",
@@ -1013,276 +1013,98 @@
   ],
   "dynamic_messages": [
     {
-      "id": "live_cp_2030_MOBILIZE",
-      "minute": -1,
-      "time_str": "20:36:11",
-      "phase_step": 0,
-      "sender_name": "Palmer & Master CIO James",
-      "department": "Trực Xuyên Phiên Mỹ & Đón BCTC NVDA (5 Nhịp Thực)",
-      "role": "2030_MOBILIZE",
-      "avatar": "🏛️",
-      "badge": "20h30 — TRIỆU TẬP KHẨN 16/16 PHÒNG BAN & QUÉT PRE-MARKET",
+      "id": "dyn_chair_1795050200466",
+      "minute": 99,
+      "time_str": "08:03:20",
+      "phase_step": 99,
+      "sender_name": "Chủ tịch Trần Quốc Thiên Phước",
+      "department": "Hội Đồng Quản Trị Tối Cao",
+      "role": "Chủ Tọa Hội Nghị",
+      "avatar": "👑",
+      "badge": "CHỈ THỊ CỦA CHỦ TỊCH",
+      "badge_color": "#eab308",
+      "content": "Báo cáo ngắn phương án phòng thủ HDB tuần sau",
+      "highlight": "Chỉ thị can thiệp trực tiếp từ Chủ tịch",
+      "metrics": null
+    },
+    {
+      "id": "dyn_ai_1795050200482",
+      "minute": 99,
+      "time_str": "08:03:20",
+      "phase_step": 99,
+      "sender_name": "Master CIO James",
+      "department": "Ban 8 — Tổng Tư Lệnh Master CIO",
+      "role": "Chủ Trì Doanh Nghiệp V7.0",
+      "avatar": "🎖️",
+      "badge": "NGHỊ QUYẾT DOANH NGHIỆP",
       "badge_color": "#38bdf8",
-      "content": "[18/11 20:36:11 ICT] Ghi nhận số liệu sống: `ES=F 7,373.75 (+0.20%)`, `NQ=F 27,234.25 (+0.59%)`, `^GSPC 7,340.53 (-1.03%)`, `^IXIC 24,328.38 (-0.74%)`, **`^VIX 24.56 (-3.53%)`**, `US10Y 5.115%`, `DXY 103.79`, `NVDA $160.16 (+3.02%)`, `SMH +2.18%`, `XLF -0.35%`, `VNM ETF 16.80 (+0.78%)`.",
-      "highlight": "NVDA $160.16 (+3.02%) • ^VIX 24.56 [TRUNG TÍNH CAO (23.5–25.5)]",
+      "content": "Báo cáo Chủ tịch Phước Trần: Hội đồng Doanh nghiệp Sống Apex V7.0 vừa họp đủ mặt **14/14 Ban & Chuyên viên** (Phiên `ENT-20261119-080322-43EB8C` | **14 Gói Dữ Liệu** | **5 Phản biện/Điều kiện**).\n• **SSOT TCBS `105C307855`**: NAV **20,229,522 ₫** | Tiền mặt **13,594,522 ₫ (67.2%)** | Cổ phiếu **6,635,000 ₫** | Thực lãi **+166,419 ₫**.\n• **PHÁN QUYẾT TỐI CAO**: **`CONDITIONAL_PREPARE_AFTERNOON_14H`**\n• **Nghị quyết hành động**: ĐƯA VÀO TẦM NGẮM GIỜ VÀNG 14H00 HDB: MOS +76.7%, RS=95/99, 1 lô 100 CP = 2,250,000 đ (11.1% NAV). Chỉ cân nhắc giải ngân tối đa 1 lô từ két 13,594,522 đ vào 14h00–14h25 khi giữ vững MA20 (22,468 đ) và áp dụng Stop 20,973 đ.",
+      "highlight": "[CONDITIONAL_PREPARE_AFTERNOON_14H] 14/14 Ban | 14 Packets | 5 Phản biện | Audit 10/10",
       "metrics": {
-        "VIX": "24.56 (-3.53%)",
-        "NVDA": "$160.16",
-        "NQ_F": "27,234.25 (+0.59%)",
-        "VNM_ETF": "16.80 (+0.78%)"
+        "Session": "ENT-20261119-080322-43EB8C",
+        "Quorum": "14/14",
+        "Packets": 14,
+        "Dissent": 5,
+        "VETO": "NO",
+        "Audit": "10/10",
+        "Verdict": "CONDITIONAL_PREPARE_AFTERNOON_14H"
       }
     },
     {
-      "id": "live_cp_2130_OPEN",
-      "minute": -1,
-      "time_str": "21:32:00",
-      "phase_step": 0,
-      "sender_name": "Ban 1 US & Telemetry",
-      "department": "Trực Xuyên Phiên Mỹ & Đón BCTC NVDA (5 Nhịp Thực)",
-      "role": "2130_OPEN",
-      "avatar": "🔔",
-      "badge": "21h30 — NHỊP 1: MỞ CỬA PHIÊN MỸ (AMATEUR HOUR)",
+      "id": "dyn_ai_1795050200483",
+      "minute": 99,
+      "time_str": "08:03:20",
+      "phase_step": 99,
+      "sender_name": "Hội Đồng Tranh Biện Ban 2-3-4",
+      "department": "Liên Phòng Ban Đối Kháng Độc Lập",
+      "role": "Phản Biện & Phủ Quyết VETO",
+      "avatar": "⚖️",
+      "badge": "TRANH BIỆN SỐ LIỆU THẬT",
       "badge_color": "#f59e0b",
-      "content": "[18/11 21:32:00 ICT] Ghi nhận số liệu sống: `ES=F 7,381.50 (+0.31%)`, `NQ=F 27,283.75 (+0.77%)`, `^GSPC 7,362.36 (+0.30%)`, `^IXIC 24,501.68 (+0.71%)`, **`^VIX 24.12 (-5.26%)`**, `US10Y 5.095%`, `DXY 103.82`, `NVDA $158.62 (+2.03%)`, `SMH +1.71%`, `XLF -0.47%`, `VNM ETF 16.65 (-0.12%)`.",
-      "highlight": "NVDA $158.62 (+2.03%) • ^VIX 24.12 [TRUNG TÍNH CAO (23.5–25.5)]",
+      "content": "Biên bản Tranh biện Đối kháng & Trao đổi Số liệu Thật về `HDB`:\n• **[DISSENT | Điều 3] Phòng Tổng Hợp (Ban 3)**: [PHẢN BIỆN ĐIỀU 3] HDB có điểm yếu kỹ thuật/định giá: Giá 22,250 đ vs MA20 22,468 đ, RS=95, Biên an toàn=+76.7%. Không giải ngân đuổi; chỉ quan sát tái tích lũy.\n• **[CONDITIONAL | Điều 4] Pháp Y Tài Chính (Ban 2)**: [SOÁT XÉT BCTC BAN 2] HDB: ROE=25.6%, P/E=6.1x, OCF/LNST=1.16x, D/E=1.27, Forensic=85/100 (AUDIT_CLEAN_EXCELLENT), MOS=+76.7%. Điểm cần thận trọng: Đòn bẩy D/E > 1.2x cần giám sát chi phí vốn & NIM.\n• **[CONDITIONAL | Điều 5] Hội Đồng Rủi Ro (Ban 4)**: [ĐIỀU KIỆN RỦI RO BAN 4] Khống chế rủi ro HDB: Stop 2xATR=5.74% (ngưỡng 20,973), Lô 100 CP = 11.1% NAV <= 18% tiêu chuẩn Kim Tự Tháp, Risk Multiplier liên thị trường 0.58x (Trần giải ngân 29% NAV). Chờ nến xác nhận sau 14h00 theo Điều 6.\n• **[APPROVE | Điều 6] Minh Quân**: [ĐỀ XUẤT GIẢI NGÂN BAN 7 VN] HDB (RS=95, RSI=47.1, MOS=+76.7%, 1 lô=11.1% NAV): Cam kết không FOMO ATO; chỉ xem xét thăm dò 30% (1 lô 100 CP = 2,250,000 đ) trong Khung Giờ Vàng 14h00–14h25 khi lực Mua chủ động >= 60% và giữ MA20 (22,468 đ).",
+      "highlight": "5 ý kiến phản biện / điều kiện",
       "metrics": {
-        "VIX": "24.12 (-5.26%)",
-        "NVDA": "$158.62",
-        "NQ_F": "27,283.75 (+0.77%)",
-        "VNM_ETF": "16.65 (-0.12%)"
+        "Session": "ENT-20261119-080322-43EB8C",
+        "Quorum": "14/14",
+        "Packets": 14,
+        "Dissent": 5,
+        "VETO": "NO",
+        "Audit": "10/10",
+        "Verdict": "CONDITIONAL_PREPARE_AFTERNOON_14H"
       }
     },
     {
-      "id": "live_cp_2230_POST_AMATEUR",
-      "minute": -1,
-      "time_str": "22:30:00",
-      "phase_step": 0,
-      "sender_name": "Ban 1 US & Alex Ban 7",
-      "department": "Trực Xuyên Phiên Mỹ & Đón BCTC NVDA (5 Nhịp Thực)",
-      "role": "2230_POST_AMATEUR",
-      "avatar": "📊",
-      "badge": "22h30 — NHỊP 2: SAU AMATEUR HOUR (XÁC NHẬN DÒNG TIỀN)",
+      "id": "dyn_ai_1795050200484",
+      "minute": 99,
+      "time_str": "08:03:20",
+      "phase_step": 99,
+      "sender_name": "Minh Quân & Alex",
+      "department": "Ban 7 VN & Ban 7 US",
+      "role": "Chuyên Viên Thực Thi",
+      "avatar": "⚡",
+      "badge": "BIỂU QUYẾT & KỶ LUẬT",
+      "badge_color": "#f97316",
+      "content": "Biểu quyết điểm danh liên phòng ban (14/14):\nBan 1 VN: CONDITIONAL | Ban 1 US: CONDITIONAL | Ban 2: CONDITIONAL | Ban 3: DISSENT | Ban 4: CONDITIONAL | Ban 5: APPROVE | Ban 6: CONDITIONAL | Ban 7 VN: APPROVE\n• Thông số `HDB`: Giá `22,250.00` | MA20 `22,468.00` | RS `95/99` | P/E `6.1x` | ROE `25.6%` | OCF `1.16x` | MOS `+76.7%` | Lô 100=`11.1% NAV` (`OPTIMAL`).",
+      "highlight": "Chỉ hành động khi vượt qua VETO Ban 3 & Ban 4",
+      "metrics": null
+    },
+    {
+      "id": "dyn_trong_1795050200485",
+      "minute": 99,
+      "time_str": "08:03:20",
+      "phase_step": 99,
+      "sender_name": "Tổng Kiểm Sát Viên Trọng (Ban 12)",
+      "department": "Ban 12 — Tổng Kiểm Sát Thể Chế & Kỷ Luật",
+      "role": "Giám Sát Viên Thường Trực Bất Biến",
+      "avatar": "🛡️",
+      "badge": "KIỂM SÁT THỂ CHẾ",
       "badge_color": "#f59e0b",
-      "content": "[18/11 22:30:00 ICT] Ghi nhận số liệu sống: `ES=F 7,351.00 (-0.11%)`, `NQ=F 27,168.75 (+0.34%)`, `^GSPC 7,332.10 (-0.11%)`, `^IXIC 24,430.03 (+0.42%)`, **`^VIX 24.37 (-4.28%)`**, `US10Y 5.080%`, `DXY 103.82`, `NVDA $153.57 (-1.22%)`, `SMH +0.15%`, `XLF -0.84%`, `VNM ETF 16.67 (+0.00%)`.",
-      "highlight": "NVDA $153.57 (-1.22%) • ^VIX 24.37 [TRUNG TÍNH CAO (23.5–25.5)]",
+      "content": "Tổng Kiểm Sát Viên Trọng xác nhận: Đạt chuẩn 10/10 Điều Luật Hiến Chương! 14/14 Ban có mặt, 14 gói dữ liệu sống, niêm phong SHA-256: 0b2fcb674e891daa...",
+      "highlight": "Niêm phong chỉ thị & báo cáo vào Sổ Cái Thể Chế Apex V1.0",
       "metrics": {
-        "VIX": "24.37 (-4.28%)",
-        "NVDA": "$153.57",
-        "NQ_F": "27,168.75 (+0.34%)",
-        "VNM_ETF": "16.67 (+0.00%)"
-      }
-    },
-    {
-      "id": "live_cp_2320_LIVE_WATCH",
-      "minute": -1,
-      "time_str": "23:23:34",
-      "phase_step": 0,
-      "sender_name": "Ban 1 US, Ban 2/10, Alex Ban 7 & Victor Ban 9",
-      "department": "Trực Xuyên Phiên Mỹ & Đón BCTC NVDA (5 Nhịp Thực)",
-      "role": "2320_LIVE_WATCH",
-      "avatar": "🚨",
-      "badge": "23h20 — TÚC TRỰC GIỮA BUỔI: XẢ NVDA & ^GSPC THỦNG MA200 (4 BAN CHUYÊN TRÁCH)",
-      "badge_color": "#ef4444",
-      "content": "[18/11 23:23:34 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,303.98 (-0.50%)`, `^IXIC 24,322.71 (-0.02%)`, **`^VIX 24.69 (-3.02%)`**, `US10Y 5.072%`, `DXY 103.83`, `NVDA $152.82 (-1.70%)`, `SMH -0.48%`, `XLF -1.19%`, `VNM ETF 16.64 (-0.21%)`.",
-      "highlight": "NVDA $152.82 (-1.70%) • ^VIX 24.69 [TRUNG TÍNH CAO (23.5–25.5)]",
-      "metrics": {
-        "VIX": "24.69 (-3.02%)",
-        "NVDA": "$152.82",
-        "NQ_F": "27,028.00 (-0.18%)",
-        "VNM_ETF": "16.64 (-0.21%)"
-      }
-    },
-    {
-      "id": "expert_2320_ban1_us",
-      "minute": -1,
-      "time_str": "23:20:53",
-      "phase_step": 0,
-      "sender_name": "Dr. Elena Vance (Trưởng Ban 1 US)",
-      "department": "Ban 1 US — Vĩ Mô Toàn Cầu & Liên Thị Trường",
-      "role": "Túc trực 23h20 (Cross-Asset De-risking)",
-      "avatar": "🌐",
-      "badge": "BAN 1 US — TÚC TRỰC LIVE",
-      "badge_color": "#ef4444",
-      "content": "70% USD Liquidity Squeeze + 30% Growth Scare sau Failed Breakout MA200 (^GSPC 7,367.68 -> 7,303.98). Cả Vàng (-2.75% ,758), BTC (-3.62% ,546), WTI (-3.57% .94), XLV (-1.67%), XLF (-1.19%) bị bán đổi lấy USD (DXY 103.83, HYG/LQD 0.7082). Xác suất ^VIX lúc 04h30: 55% kẹt 23.5–25.5 (Defensive Chop), 25% vọt >=25.5 (nếu SPX thủng 7,300), chỉ 20% hạ <23.5.",
-      "highlight": "70% Dash for USD Cash • Khuyến nghị 55%–60% Cash (>=70% nếu VIX >=25.5)",
-      "metrics": {
-        "Regime": "Liquidity Squeeze",
-        "VIX_Prob_Mid": "55% (23.5-25.5)",
-        "VIX_High": "25% (>=25.5)"
-      }
-    },
-    {
-      "id": "expert_2320_ban2_ban10",
-      "minute": -1,
-      "time_str": "23:21:42",
-      "phase_step": 0,
-      "sender_name": "Lê Hoàng (Ban 2 US) & Hiền (Ban 10)",
-      "department": "Pháp Y BCTC NVDA & Trinh Sát SEC EDGAR",
-      "role": "Túc trực 23h20 (Phân tích NVDA trước 04h20)",
-      "avatar": "🔬",
-      "badge": "BAN 2 & 10 — PHÁP Y NVDA",
-      "badge_color": "#a855f7",
-      "content": "NVDA xả -4.7% từ đỉnh (.36 -> .82) trong khi AVGO (+2.93%, FCF/Net 0.80x, F-Score 9/9), AMD (+0.70%, > MA200 .74, Insider Buy +753k CP), TSM (+0.38%) xanh do 3 áp lực riêng tại NVDA: (1) Options Implied Move +-14.5% ép delta-hedging, (2) FCF/Net chỉ 0.22x (True FCF ex-SBC .06B), (3) Nộp 2 hồ sơ 8-K WARNING liên tiếp 12/11 & 17/11 + Net Insider Selling -3.58M CP. Trọng tâm 04h20: Gross Margin vs 74.67% & Q4 Guidance vs + (mốc AH sống còn: >.50 Risk-On vs <.80 thủng đáy 52W).",
-      "highlight": "Options Move +-14.5% • Soi Gross Margin vs 74.67% & ranh giới .50 / .80 lúc 04h20",
-      "metrics": {
-        "NVDA_FCF_Conv": "0.22x",
-        "NVDA_8K": "12/11 & 17/11",
-        "Key_Level": ".50 / .80"
-      }
-    },
-    {
-      "id": "expert_2320_alex_ban7",
-      "minute": -1,
-      "time_str": "23:19:56",
-      "phase_step": 0,
-      "sender_name": "Alex (Ban 7 Global)",
-      "department": "Thực Thi Chiến Thuật US & Global",
-      "role": "Túc trực 23h20 (Kịch bản nửa sau phiên Mỹ)",
-      "avatar": "🦅",
-      "badge": "ALEX BAN 7 — CHIẾN THUẬT US",
-      "badge_color": "#f59e0b",
-      "content": "Smart Money đang giảm đòn bẩy: 65–70% xác suất chỉ số tiếp tục ép dưới MA200 (7,280–7,335) tới 04h00; 30–35% vá sát 7,340 Power Hour. Cấm bắt đáy NVDA trước BCTC; 01h00 canh ^GSPC 7,300/7,340, NVDA –, ^VIX 25.5–26.0; 04h02 hủy toàn bộ Limit Buy qua đêm tránh rủi ro Gap After-Hours.",
-      "highlight": "Cấm bắt đáy NVDA trước BCTC • Hủy toàn bộ Limit Buy lúc 04h02 Power Hour",
-      "metrics": {
-        "P_Below_MA200": "65-70%",
-        "Watch_01h00": "SPX 7,300 / NVDA ",
-        "Rule_04h02": "Cancel All Limits"
-      }
-    },
-    {
-      "id": "expert_2320_victor_ban9",
-      "minute": -1,
-      "time_str": "23:19:57",
-      "phase_step": 0,
-      "sender_name": "Victor (Ban 9 Sentinel)",
-      "department": "Giám Sát Rủi Ro Danh Mục TCBS 105C307855",
-      "role": "Túc trực 23h20 (Cảnh báo Đáo hạn 19/11)",
-      "avatar": "🛰️",
-      "badge": "VICTOR BAN 9 — ĐÁO HẠN 19/11",
-      "badge_color": "#22c55e",
-      "content": "ATO 19/11 rủi ro test lại 1,690–1,700 (SPX < MA200, WTI -3.57%, EEM -0.87%, đáo hạn VN30F1M), nhưng 67.2% Cash (13.59M) + 0% Margin giúp NAV an toàn. MSH (35.2k, +2.0%, sẵn hàng): giữ trên 34.8k, báo động đỏ nếu thủng Trailing Stop 34,600đ. BAF (31.15k, -0.2%, chiều về TK): cấm hedge VN30F1M (~180.6M = 9x NAV) cho lô 3.11M; từ 13h00 cắt ngay nếu thủng 30,350–30,500đ / 30,050đ. Cash 13.59M: khóa trước 14h00, chỉ thăm dò <=3.5M-4.0M ở 14h00–14h25 nếu Buy-Up >=60% & VNI rút chân.",
-      "highlight": "MSH Trailing 34,600đ • BAF chờ về chiều 19/11 (Stop 30,050đ) • Cấm mua trước 14h00",
-      "metrics": {
-        "MSH_Trail": "34,600đ",
-        "BAF_Stop": "30,050đ",
-        "Probe_Cap": "<= 3.5-4.0M (>14h)"
-      }
-    },
-    {
-      "id": "live_cp_0100_MID_SESSION",
-      "minute": -1,
-      "time_str": "01:04:12",
-      "phase_step": 0,
-      "sender_name": "Ban 1 US & Victor Ban 9",
-      "department": "Trực Xuyên Phiên Mỹ & Đón BCTC NVDA (5 Nhịp Thực)",
-      "role": "0100_MID_SESSION",
-      "avatar": "🌙",
-      "badge": "01h00 — NHỊP 3: GIỮA PHIÊN MỸ (NÉN CHỜ BCTC NVDA)",
-      "badge_color": "#a855f7",
-      "content": "[19/11 01:04:12 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,332.66 (-0.11%)`, `^IXIC 24,428.31 (+0.41%)`, **`^VIX 24.16 (-5.11%)`**, `US10Y 5.062%`, `DXY 103.76`, `NVDA $151.87 (-2.31%)`, `SMH -0.62%`, `XLF -0.74%`, `VNM ETF 16.68 (+0.09%)`.",
-      "highlight": "NVDA $151.87 (-2.31%) • ^VIX 24.16 [TRUNG TÍNH CAO (23.5–25.5)]",
-      "metrics": {
-        "VIX": "24.16 (-5.11%)",
-        "NVDA": "$151.87",
-        "NQ_F": "27,028.00 (-0.18%)",
-        "VNM_ETF": "16.68 (+0.09%)"
-      }
-    },
-    {
-      "id": "expert_0105_ban1_us",
-      "minute": -1,
-      "time_str": "01:05:11",
-      "phase_step": 0,
-      "sender_name": "Dr. Elena Vance (Trưởng Ban 1 US)",
-      "department": "Ban 1 US — Cập Nhật Nhịp 3 (CNBC Live 13:04 EST)",
-      "role": "Đọc Vị Xoay Trục Từ Liquidity Squeeze Sang Oil Relief",
-      "avatar": "🌐",
-      "badge": "BAN 1 US — NHỊP 01H05 LIVE",
-      "badge_color": "#22c55e",
-      "content": "Dòng tiền chuyển pha rõ: 55% Sector Rotation + Deflationary Oil Relief / 45% Residual De-risking. .RUT bứt +1.12%, XLY +2.12%, 6/11 ngành GICS xanh, CL=F giảm -4.63% (.03) hạ nhiệt US10Y về 5.062% & kéo ^VIX lùi về 24.16 (-5.11%). VNM ETF chuyển XANH 16.685 (+0.09%). Xác suất ^VIX đóng cửa 04h00: 55% vùng 23.5-25.0 (Cash 45-50%), 35% hạ <23.5 nếu .SPX vá vượt >7,345 MA200 (chỉ 10% quay lại >25.0).",
-      "highlight": "Oil Relief kéo ^VIX hạ 24.16 & VNM +0.09% • 35% cửa ^VIX <23.5 (tăng từ 20%)",
-      "metrics": {
-        "Phase": "55% Rotation",
-        "VIX_Prob_Cool": "35% (<23.5)",
-        "VIX_Prob_Base": "55% (23.5-25.0)"
-      }
-    },
-    {
-      "id": "expert_0105_ban2_ban10",
-      "minute": -1,
-      "time_str": "01:05:15",
-      "phase_step": 0,
-      "sender_name": "Lê Hoàng (Ban 2 US) & Hiền (Ban 10)",
-      "department": "Pháp Y BCTC NVDA Đính Chính & Trinh Sát PANW",
-      "role": "Xác Minh NVDA Q3 FY27 (17/11 AMC) & Chuyển Giao CEO",
-      "avatar": "🔬",
-      "badge": "BAN 2 & 10 — XÁC MINH NVDA BCTC",
-      "badge_color": "#a855f7",
-      "content": "ĐÍNH CHÍNH CHÍNH THỨC (nvidia.com): NVDA ĐÃ ra BCTC Q3 FY27 tối 17/11 AMC — Rev .8B (+103% YoY vs .2B), Data Center .6B (Vera Rubin ~), GAAP GM 74.8%, EPS Non-GAAP .68 (vs .47), Q4 Guide ~. NVDA giảm -2.31% (.87) dù KQKD kỷ lục do Key-Man Governance Discount: Jensen Huang từ chức (11/11), Chủ tịch Harvey Jones xác nhận KHÔNG mời lại, Colette Kress làm Interim CEO. Dòng tiền AI xoay trực tiếp sang AVGO (+2.82%, FCF/Net 0.80x) & AMD (+2.40%, > MA200 .74, Insider Buy +753k CP). Vùng canh NVDA: .50-.00 (cấm bắt đáy nếu thủng 52W low .80). Tối nay 18/11 AMC (~04h05-04h20 ICT) theo dõi PANW.",
-      "highlight": "NVDA Rev .8B/Q4  đã ra 17/11; giảm do thay CEO -> Tiền AI chảy sang AVGO (+2.8%) & AMD (+2.4%)",
-      "metrics": {
-        "NVDA_Q3_Rev": ".8B (+103%)",
-        "NVDA_Q4_Guide": ".0B",
-        "CEO_Risk": "Colette Kress Interim"
-      }
-    },
-    {
-      "id": "expert_0105_alex_ban7",
-      "minute": -1,
-      "time_str": "01:05:13",
-      "phase_step": 0,
-      "sender_name": "Alex (Ban 7 Global)",
-      "department": "Chiến Thuật Power Hour & Liên Thông VN 19/11",
-      "role": "Túc Trực 01h05 (Canh MA200 7,340 & VNM +0.09%)",
-      "avatar": "🦅",
-      "badge": "ALEX BAN 7 — NHỊP 01H05",
-      "badge_color": "#38bdf8",
-      "content": "Healthy Rotation: Nếu Power Hour đóng nến .SPX > 7,340 (MA200) & ^VIX < 23.5, xác nhận Bear Trap -> mở lại Tích lũy chọn lọc (AVGO/AMD/AMZN, Stop <=7.5%/2xATR), nhưng CẤM BẮT DAO RƠI NVDA quanh .80-.87 tới khi cân bằng quản trị. Tín hiệu ^RUT +1.12% & VNM ETF xanh 16.685 (+0.09%) giúp VN-Index phiên đáo hạn 19/11 triệt tiêu nguy cơ hoảng loạn đầu phiên, thuận lợi cho MSH & BAF.",
-      "highlight": "SPX >7,340 & VIX <23.5 = Bear Trap • Cấm bắt dao rơi NVDA • VNM xanh giảm áp lực ATO 19/11",
-      "metrics": {
-        "SPX_Watch": "7,332 vs 7,340 MA200",
-        "VNM_ETF": "16.685 (+0.09%)",
-        "NVDA_Rule": "Wait >=.50"
-      }
-    },
-    {
-      "id": "live_cp_0402_OFFICIAL_CLOSE",
-      "minute": -1,
-      "time_str": "04:02:37",
-      "phase_step": 0,
-      "sender_name": "Telemetry 5 Nhịp & Trọng Ban 12",
-      "department": "Trực Xuyên Phiên Mỹ & Đón BCTC NVDA (5 Nhịp Thực)",
-      "role": "0402_OFFICIAL_CLOSE",
-      "avatar": "🏁",
-      "badge": "04h02 — NHỊP 4: CHỐT NẾN ĐÓNG CỬA CHÍNH THỨC NYSE/NASDAQ",
-      "badge_color": "#22c55e",
-      "content": "[19/11 04:02:37 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,323.55 (-0.23%)`, `^IXIC 24,429.88 (+0.42%)`, **`^VIX 24.68 (-3.06%)`**, `US10Y 5.064%`, `DXY 103.78`, `NVDA $151.08 (-2.82%)` | **After-Hours NVDA: `$151.08` (`+0.08%` vs close)**, `SMH -0.05%`, `XLF -1.17%`, `VNM ETF 16.70 (+0.18%)`.",
-      "highlight": "NVDA $151.08 (-2.82%) • ^VIX 24.68 [TRUNG TÍNH CAO (23.5–25.5)]",
-      "metrics": {
-        "VIX": "24.68 (-3.06%)",
-        "NVDA": "$151.08 (AH $151.08)",
-        "NQ_F": "27,028.00 (-0.18%)",
-        "VNM_ETF": "16.70 (+0.18%)"
-      }
-    },
-    {
-      "id": "live_cp_0425_NVDA_EARNINGS_AH",
-      "minute": -1,
-      "time_str": "04:23:43",
-      "phase_step": 0,
-      "sender_name": "Hiền (Ban 10), Lê Hoàng (Ban 2) & Elena (Ban 1 US)",
-      "department": "Trực Xuyên Phiên Mỹ & Đón BCTC NVDA (5 Nhịp Thực)",
-      "role": "0425_NVDA_EARNINGS_AH",
-      "avatar": "🔥",
-      "badge": "04h25 — NHỊP 5: BCTC NVDA VỪA CÔNG BỐ & PHẢN ỨNG AFTER-HOURS / VIX",
-      "badge_color": "#ef4444",
-      "content": "[19/11 04:23:43 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,323.63 (-0.23%)`, `^IXIC 24,429.88 (+0.42%)`, **`^VIX 24.56 (-3.53%)`**, `US10Y 5.068%`, `DXY 103.81`, `NVDA $151.19 (-2.74%)` | **After-Hours NVDA: `$151.19` (`+0.15%` vs close)**, `SMH +0.07%`, `XLF -1.14%`, `VNM ETF 16.70 (+0.18%)`. | Tin nóng NVDA: [Nvidia interim CEO Colette Kress has taken over one of the most consequential companies on the planet; those who know her say she's up to the task] ; [How major US stock indexes fared Wednesday 11/18/2026]",
-      "highlight": "NVDA $151.19 (-2.74%) • ^VIX 24.56 [TRUNG TÍNH CAO (23.5–25.5)]",
-      "metrics": {
-        "VIX": "24.56 (-3.53%)",
-        "NVDA": "$151.19 (AH $151.19)",
-        "NQ_F": "27,028.00 (-0.18%)",
-        "VNM_ETF": "16.70 (+0.18%)"
+        "compliance_score": "100/100",
+        "violations": 0,
+        "status": "CERTIFIED"
       }
     }
   ],
@@ -1290,6 +1112,29 @@
   "tactical_plan_path": "VN_Market/07_Daily_Specialist/2026-11-19_Official_Adaptive_Tactical_Plan.md",
   "archive_summary": {
     "sessions": [
+      {
+        "meeting_id": "APEX-SUMMIT-20261119-0430",
+        "title": "🏛️ HỘI NGHỊ THƯỢNG ĐỈNH ĐÊM 18–19/11 — ĐÓN BCTC NVDA, THEO DÕI VIX & CHỐT KỊCH BẢN ĐÁO HẠN 04H30",
+        "topic": "Tổng Kết NVDA / PANW / ^VIX & Kế Hoạch Đáo Hạn VN30F1M 19/11 + Mở Công Suất Tuần Sau",
+        "meeting_window_str": "04h30 – 05h00 (30 Phút, 19/11/2026)",
+        "prep_window_str": "20h30 -> 04h25 (Trực 5 nhịp + Đón BCTC NVDA)",
+        "start_time": "2026-11-19T04:30:00+07:00",
+        "end_time": "2026-11-19T05:00:00+07:00",
+        "chairman_approved": false,
+        "approval_time": null,
+        "archived_at": "2026-11-19T09:47:07.539365+07:00",
+        "archived_display": "19/11/2026 09:47:07",
+        "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
+        "archived_by": "Palmer & Ban 11 Archive",
+        "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261119-0430.json",
+        "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261119-0430_Bien_Ban_Luu_Tru.md",
+        "james_summary_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0430_Bao_Cao_Tong_Ket_James_NVDA_VIX_Va_Nghi_Quyet_Dao_Han.md",
+        "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0430_Bao_Cao_Tong_Ket_James_NVDA_VIX_Va_Nghi_Quyet_Dao_Han.md",
+        "turns_count": 10,
+        "prep_dossiers_count": 14,
+        "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện trong phòng họp & Trực 21h30–04h30)",
+        "summary_headline": "Tổng kết 04h30 (19/11): ^VIX 24.56 (chưa < 23.5), .SPX 7,323.63 < MA200 -> Elevated Tension; NVDA Q3 FY27 ($115.8B) giảm do CEO transition discount; PANW +8.04% AH ($367.25)."
+      },
       {
         "meeting_id": "APEX-SUMMIT-20261119-0045",
         "title": "🏛️ HỘI NGHỊ THƯỢNG ĐỈNH ĐẶC BIỆT 16H15 — KIỂM TOÁN LÃI 2 TUẦN & CHIẾN LƯỢC KPI 3–4 TRIỆU / 2 THÁNG",
@@ -1406,13 +1251,69 @@
         "summary_headline": "Dự Báo Thị Trường Tuần Sau (16/11 – 20/11/2026), Tranh Biện Chiến Lược & Đề Xuất Phương Án Đầu Tư Tối Ưu Hóa Lợi Nhuận Tuần Mới"
       }
     ],
-    "total_archived": 5,
-    "last_updated": "2026-11-19T04:33:21.858535+07:00"
+    "total_archived": 6,
+    "last_updated": "2026-11-19T09:47:27.674327+07:00"
   },
-  "retention_status": "Đã lưu trữ vĩnh viễn tại data/summit_archive_ledger.json & data/summit_archive/APEX-SUMMIT-20261119-0430.json lúc 04:33:21 ICT 19/11/2026",
+  "retention_status": {
+    "policy_hours": 2,
+    "policy_minutes": 120,
+    "room_status": "ACTIVE_SESSION",
+    "chairman_approved": false,
+    "approval_status": "PENDING_CHAIRMAN_APPROVAL",
+    "end_time": "2026-11-19T05:00:00+07:00",
+    "min_cleanup_time": "2026-11-19T07:00:00+07:00",
+    "min_cleanup_display": "07:00:00 19/11/2026",
+    "can_clean_now": false,
+    "cleanup_status": "AWAITING_CHAIRMAN_APPROVAL",
+    "cleanup_lock_reason": "Giữ nguyên biên bản APEX-SUMMIT-20261119-0430 làm chuẩn đối soát phiên 19/11."
+  },
   "meeting_title": "🏛️ HỘI NGHỊ THƯỢNG ĐỈNH 04H30 (19/11): TỔNG KẾT NVDA / PANW / ^VIX & KẾ HOẠCH ĐÁO HẠN VN30F1M",
   "meeting_status": "CONCLUDED",
   "status_badge": "ĐÃ TỔNG KẾT & CHỨNG THỰC 100% (16/16 ĐƠN VỊ)",
   "total_steps": 10,
-  "james_executive_summary": "Nghị quyết 04h30 ICT (19/11/2026): ^VIX chốt 24.68 / AH 24.56 (chưa < 23.5), .SPX 7,323.63 < MA200 (7,340) -> Chế độ ELEVATED TENSION / CAUTIOUS ROTATION. Xác nhận NVDA Q3 FY27 ($115.8B +103% YoY) công bố 17/11 AMC, giảm giá do CEO transition discount; đêm 18/11 AMC ghi nhận PANW bùng nổ +8.04% AH ($367.25). VNM ETF +0.18% ($16.70) & RUT +0.52% triệt tiêu rủi ro panic ATO tại VN. Phiên đáo hạn VN30F1M 19/11: VETO HDB/BSR/FPT; mặc định giải ngân 0đ (giữ 13,594,522đ Cash = 67.2% NAV); CHỈ mở tối đa 1 lô 100 CP PVT @ ~19,000đ (hoặc dự phòng TCB @ ~20,750đ) lúc 14:00-14:25 nếu đạt đủ Buy-Up >= 60% + Breadth >= 40-45% + VSA No Supply/Spring. Tổng rủi ro danh mục khóa <= 2.30% NAV."
+  "james_executive_summary": {
+    "author": "Master CIO James (Ban 8 — Tổng Tư Lệnh)",
+    "generated_at": "2026-11-19T09:47:27.640301+07:00",
+    "report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0430_Bao_Cao_Tong_Ket_James_NVDA_VIX_Va_Nghi_Quyet_Dao_Han.md",
+    "summary_headline": "Tổng kết 04h30 (19/11): ^VIX 24.56 (chưa < 23.5), .SPX 7,323.63 < MA200 -> Elevated Tension; NVDA Q3 FY27 ($115.8B) giảm do CEO transition discount; PANW +8.04% AH ($367.25).",
+    "is_reference_only": true,
+    "agility_mandate": "Khung tham khảo điều hành cơ động theo ngày — Thứ Năm 19/11 mặc định 0đ (ngoại lệ 100 CP PVT @ ~19,000đ lúc 14h00-14h25 khi Buy-Up >= 60%); Thứ Sáu 20/11 giữ trần <= 45-55% NAV; Thứ Hai–Tư tuần sau mở công suất 70-85% NAV rổ 13k–22.5k.",
+    "meeting_highlights": [
+      "NVDA Q3 FY27 ($115.8B +103% YoY) đã công bố tối 17/11 AMC; nhịp lùi về $150.96 là chiết khấu chuyển giao CEO.",
+      "PANW bứt phá +8.04% After-Hours ($367.25) xác nhận nhu cầu AI/Cyber; VNM ETF đóng xanh +0.18% ($16.70).",
+      "Danh mục SSOT TCBS 105C307855: NAV 20,229,522đ | Cash 13,594,522đ (67.2%) | MSH 100 CP (+69k) & BAF 100 CP (-5.9k, về chiều 19/11)."
+    ],
+    "daily_cadence": [
+      {
+        "day": "Thứ Năm 19/11 (09:00–13:45)",
+        "focus": "Phòng thủ đáo hạn VN30F1M & chờ BAF về TK",
+        "trigger": "0đ mua mới; giữ MSH Trail 34,600đ / BAF Hard 30,050đ"
+      },
+      {
+        "day": "Thứ Năm 19/11 (14:00–14:25)",
+        "focus": "Cửa Kép Khung Giờ Vàng",
+        "trigger": "Mặc định 0đ; chỉ mở 100 CP PVT @ ~19k (or TCB @ ~20.75k) nếu Buy-Up >= 60% + Breadth >= 45%"
+      },
+      {
+        "day": "Thứ Sáu 20/11 (Cuối tuần)",
+        "focus": "Khóa trần cổ phiếu <= 45-55% NAV",
+        "trigger": "Hoàn tất audit HDB 48h; cấm bung full lực qua cuối tuần"
+      },
+      {
+        "day": "Thứ Hai–Thứ Tư Tuần Sau (23–25/11)",
+        "focus": "Mở công suất 70–85% NAV rổ 13k–22.5k (200–300 CP/mã)",
+        "trigger": "PVT, TCB, MBB, HPG, TCH — chốt tỉa 50% tại +2.5%..+4.0% (+300k–+500k đ)"
+      }
+    ],
+    "watchlist_tickers": [
+      "PVT",
+      "TCB",
+      "MBB",
+      "HPG",
+      "TCH",
+      "MSH",
+      "BAF"
+    ],
+    "chairman_action_required": "Kính trình Chủ tịch bám sát Kế hoạch Tuần Sau (23-27/11) chuẩn công suất Tuần Đầu."
+  }
 }

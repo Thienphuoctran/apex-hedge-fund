@@ -180,7 +180,7 @@ def conduct_morning_war_room() -> Dict[str, Any]:
         pact_lines.append(
             f"| **`{sym}`** | {p.get('shares', 0)} CP | {p.get('entry_price', 0):,.0f} ₫ | "
             f"{p.get('current_price', 0):,.0f} ₫ | **{stop_val:,.0f} ₫** | **{tp1_val:,.0f} ₫** | "
-            f"Bảo toàn 100% tiền mặt 20,167,119 ₫, canh Khung Giờ Vàng 14h00-14h25 giải ngân Vòng 2 |"
+            f"Giữ Stop 2xATR • Tiền mặt `{cash_reserve:,.0f} ₫` • Chuẩn tuần sau 13k–22.5k (`200–300 CP/mã`) |"
         )
 
     pact_lines.extend([

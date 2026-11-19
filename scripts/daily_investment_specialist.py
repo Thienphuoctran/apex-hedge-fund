@@ -213,7 +213,7 @@ def main() -> int:
     gauges_today = {g["symbol"]: g for g in snap_today.get("macro_gauges", [])}
     gauges_prev = {g["symbol"]: g for g in snap_prev.get("macro_gauges", [])} if snap_prev else {}
 
-    vix_today = gauges_today.get("^VIX", {}).get("last_price", 19.42)
+    vix_today = gauges_today.get("^VIX", {}).get("last_price", 24.56)
     vix_prev = gauges_prev.get("^VIX", {}).get("last_price", 21.15)
     tnx_today = gauges_today.get("^TNX", {}).get("last_price", 4.93)
     tnx_prev = gauges_prev.get("^TNX", {}).get("last_price", 4.94)
@@ -402,7 +402,7 @@ def main() -> int:
             "tranche_split": "Đã khớp 80% • Chờ mua thêm 20% tại Limit $518.00",
             "market_events_and_catalysts": (
                 "Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. "
-                "Các quỹ phòng hộ toàn cầu tăng mua ròng cổ phiếu công nghệ có FCF lớn sau khi VIX hạ nhiệt về 19.42."
+                f"Các quỹ phòng hộ toàn cầu ưu tiên cổ phiếu công nghệ có FCF lớn khi VIX neo ở vùng {vix_today:.2f} đòi hỏi ưu tiên doanh nghiệp có FCF thực chất."
             ),
             "why_alex_invests": (
                 "MSFT là cỗ máy in tiền mặt vĩ đại nhất thế giới với FCF đạt +$74.1B USD, biên hoạt động trên 44%. "

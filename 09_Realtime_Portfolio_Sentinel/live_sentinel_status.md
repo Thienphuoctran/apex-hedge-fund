@@ -1,53 +1,49 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-18 23:00:03`  
+*Cập nhật gần nhất*: `2026-11-19 09:37:39`  
 *Trạng thái hệ thống*: **`✅ TOÀN BỘ 9 PHÒNG BAN TRỰC CHIẾN 24/7 ỔN ĐỊNH`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`2 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
 ## 1. Giám Sát Cổ Phiếu Đang Đầu Tư (Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR)
 | Mã CP | Thị Trường | Giá Hiện Tại | Biến Động | Ngưỡng Stop 2xATR | Cách Stop | Mục Tiêu TP1 | Cách TP1 | Vol Surge | Trạng Thái Tác Chiến |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`MSH`** | VIETNAM | `35,200.00 VND` | `+0.43%` | `33,090.00 VND` | `+5.99%` | `39,500.00 VND` | `+12.22%` | `0.0x` | ✅ Đang canh 2 đầu |
-| **`BAF`** | VIETNAM | `31,150.00 VND` | `-0.48%` | `30,050.00 VND` | `+3.53%` | `33,200.00 VND` | `+6.58%` | `0.2x` | ✅ Đang canh 2 đầu |
+| **`MSH`** | VIETNAM | `34,650.00 VND` | `-1.56%` | `33,090.00 VND` | `+4.50%` | `39,500.00 VND` | `+14.00%` | `0.0x` | ✅ Đang canh 2 đầu |
+| **`BAF`** | VIETNAM | `30,850.00 VND` | `-0.96%` | `30,050.00 VND` | `+2.59%` | `33,200.00 VND` | `+7.62%` | `0.0x` | ✅ Đang canh 2 đầu |
 
 ## 2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực
 | Chuyên Viên | Mã CP | Giá Hiện Tại | Tín Hiệu Sóng | Chất Lượng BCTC | Điểm Mua Chuẩn | Cắt Lỗ 2xATR | Chốt Lời TP1 |
 | :--- | :---: | :---: | :--- | :---: | :---: | :---: | :---: |
-| **Minh Quân (VN)** | **`BSR`** | `nan ₫` | 💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND) | **AAA** (`85.7/100`) | `nan ₫` | `nan ₫` | `nan ₫` |
-| **Minh Quân (VN)** | **`IDC`** | `20,000 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`93.9/100`) | `19,900 ₫` | `19,120 ₫` | `21,848 ₫` |
-| **Minh Quân (VN)** | **`PVD`** | `nan ₫` | 💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND) | **AAA** (`87.5/100`) | `nan ₫` | `nan ₫` | `nan ₫` |
-| **Minh Quân (VN)** | **`DCM`** | `nan ₫` | 💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND) | **AAA** (`93.1/100`) | `nan ₫` | `nan ₫` | `nan ₫` |
-| **Minh Quân (VN)** | **`VCB`** | `nan ₫` | 💎 CHIẾT KHẤU QUÁ BÁN SIÊU CỔ PHIẾU (OVERSOLD REBOUND) | **AAA** (`88.9/100`) | `nan ₫` | `nan ₫` | `nan ₫` |
-| **Alex (Global)** | **`NVDA`** | `$151.42` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`80.3/100`) | `$147.26` | `$127.64` | `$198.98` |
-| **Alex (Global)** | **`TSM`** | `$358.73` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`83.1/100`) | `$351.34` | `$316.50` | `$443.19` |
-| **Alex (Global)** | **`AVGO`** | `$348.68` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`80.9/100`) | `$341.38` | `$306.96` | `$432.12` |
+| **Minh Quân (VN)** | **`HHV`** | `9,500 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AA** (`84.7/100`) | `9,452 ₫` | `9,070 ₫` | `10,403 ₫` |
+| **Minh Quân (VN)** | **`HAH`** | `46,800 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`92.6/100`) | `46,566 ₫` | `44,314 ₫` | `52,020 ₫` |
+| **Minh Quân (VN)** | **`PC1`** | `16,600 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`87.7/100`) | `16,517 ₫` | `15,816 ₫` | `18,246 ₫` |
+| **Minh Quân (VN)** | **`MSN`** | `71,700 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`89.5/100`) | `71,342 ₫` | `68,529 ₫` | `78,360 ₫` |
+| **Minh Quân (VN)** | **`HPG`** | `21,000 ₫` | 🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING) | **AAA** (`88.1/100`) | `20,895 ₫` | `20,121 ₫` | `22,845 ₫` |
+| **Alex (Global)** | **`NVDA`** | `$150.96` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`80.3/100`) | `$146.82` | `$127.28` | `$198.32` |
+| **Alex (Global)** | **`TSM`** | `$362.62` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`83.1/100`) | `$355.23` | `$320.38` | `$447.10` |
+| **Alex (Global)** | **`AVGO`** | `$354.05` | 🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT | **AAA** (`80.9/100`) | `$346.75` | `$312.33` | `$437.49` |
 
 ---
 
-## 3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ Phiên Ngày Mai (Thứ Ba, 03/11/2026)
+## 3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ (2026-11-19)
 *Chỉ huy tác chiến*: **Victor (Trưởng Ban Giám Sát Rủi Ro Trong Phiên & Chỉ Huy Tác Chiến Khẩn Cấp - Ban 9)**  
-*Tài khoản giao dịch*: **Chủ tịch Phước Trần (TCBS: 105C307855 - Quy mô vốn: 20,000,000 VNĐ)**  
+*Tài khoản giao dịch*: **Chủ tịch Phước Trần (TCBS: 105C307855 - Tổng NAV: 20,229,522 VNĐ | Tiền mặt: 13,594,522 VNĐ [67.2%])**  
 
 | Mốc Thời Gian | Giai Đoạn Tác Chiến | Nhiệm Vụ Giám Sát Của Victor | Cơ Chế Phản Ứng & Kích Hoạt Còi Báo Động |
 | :---: | :--- | :--- | :--- |
-| **09h00 – 09h15** | **Khớp lệnh định kỳ ATO** | Giám sát giá mở cửa, bóc trần hiện tượng kê lệnh ảo, xác thực thanh khoản thực. | Tuyệt đối cấm giải ngân ATO; phát hiện bẫy tăng sớm Bull-Trap. |
-| **09h15 – 10h00** | **Biến động sớm phiên sáng** | Theo dõi dao động quán tính đầu ngày, không để tâm lý đám đông lôi kéo. | Cảnh giác bẫy giá xanh ảo; giữ kỷ luật thép kiên nhẫn quan sát. |
-| **10h00 – 11h15** | **TRỌNG TÂM PHIÊN SÁNG: Rà Soát Áp Lực Margin Call Chéo** | Đo lường áp lực bán giải chấp từ các CTCK lớn (VPS, SSI, TCBS, VNDirect); theo dõi áp lực xả chéo lan sang cổ phiếu trụ (HPG, TCB, MBB). | 🚨 **Báo Động Đỏ** nếu giá giảm $\ge -2.5\%$ kèm Vol lớn hoặc thủng VWAP. Nếu xuất hiện Washout hoảng loạn chạm hỗ trợ cứng với dòng tiền hấp thụ, gửi tín hiệu chuẩn bị gom thăm dò 30% cho Minh Quân. |
-| **11h15 – 11h30** | **Ổn định trước giờ nghỉ trưa** | Tổng hợp dòng tiền 3 khối (Tự Doanh, Khối Ngoại, Cá Nhân) và xác định vùng cân bằng. | Cập nhật báo cáo giữa phiên gửi Palmer & Master CIO James. |
-| **13h00 – 13h45** | **TRỌNG TÂM PHIÊN CHIỀU: Radar Đo Lường Lực Xả Hàng T+2** | Đo lường áp lực bán của lượng hàng bắt đáy T+2 về tài khoản; kiểm tra xem lực cầu tổ chức có vào hấp thụ và tạo nến rút chân hay không. | Đo lường tỷ lệ Mua chủ động (Active Buy / Buy Up vs Sell Down). Nếu Buy Up $\ge 60\% - 70\%$ và có nến Hammer / Bullish Engulfing tại VWAP, chuẩn bị lệnh giải ngân. |
-| **13h45 – 14h00** | **Chuyển giao thế trận** | Thẩm tra độ tin cậy của lực hấp thụ, kiểm tra danh mục xem có mã nào vi phạm Stop 2xATR. | Bật tín hiệu xanh (Green Light) chuẩn bị bước vào Khung Giờ Vàng. |
-| **14h00 – 14h25** | **KHUNG GIỜ VÀNG GIẢI NGÂN (GOLDEN EXECUTION WINDOW)** | Giám sát nến ngày định hình $\ge 90\%$; phối hợp với Minh Quân và Master CIO James phát tín hiệu xác nhận "MỞ KHUNG GIỜ VÀNG". | Phát tín hiệu xác nhận lên Telegram Topic 1 (alerts) để Chủ tịch Phước Trần bấm nút giải ngân theo Sổ Lệnh Master Blotter. |
-| **14h25** | **CẦU CHÌ AN TOÀN T+0 (T+0 SAFETY FUSE)** | Kiểm tra tự động các giao dịch T+0 trong phiên nếu có để yêu cầu bán trả hàng cân bằng kho. | Triệt tiêu 100% rủi ro qua đêm đối với phần hàng lướt sóng T+0. |
-| **14h30 – 14h45** | **Khớp lệnh định kỳ ATC** | Giám sát chốt giá đóng cửa, đối soát khối lượng thực khớp so với kế hoạch Master Blotter. | Cập nhật số liệu vào Ledger và bàn giao sang Ban 5 để kiểm toán tự học. |
+| **09h00 – 09h15** | **Khớp lệnh định kỳ ATO** | Giám sát giá mở cửa, bóc trần kê lệnh ảo, đo cung-cầu thực. | Tuyệt đối cấm giải ngân ATO; cảnh báo Bull-Trap đầu phiên. |
+| **09h15 – 10h00** | **Biến động sớm phiên sáng** | Theo dõi dao động quán tính đầu ngày, khóa nút mua trước 10h00. | Giữ kỷ luật quan sát, bảo vệ lãi đệm vị thế sẵn có. |
+| **10h00 – 11h30** | **Soi cầu thực & Bảo vệ vị thế** | Kiểm soát rủi ro rung lắc và theo dõi sát các ngưỡng Trailing/Hard Stop. | 🚨 **Báo Động Đỏ** nếu thủng hỗ trợ kèm bán chủ động > 60%. |
+| **13h00 – 13h45** | **Đo lực hấp thụ hàng T+2.5 về** | Đo áp lực hàng về tài khoản lúc 13h15 và sức hấp thụ tại VWAP. | Chuẩn bị kích hoạt lệnh chỉ khi Buy-Up >= 60% và Breadth >= 45%. |
+| **14h00 – 14h25** | **KHUNG GIỜ VÀNG BẤM CÒ LO** | Xác nhận hình thái nến ngày >= 90%; kiểm tra Cửa Kép & trần Thứ Sáu <= 55% NAV. | Chỉ mở lệnh LO đạt chuẩn R:R >= 1:2.0; sang đầu tuần sau nâng lên 70–85% NAV trên rổ `13k–22.5k` (`200–300 CP/mã`). |
+| **14h25 – 14h45** | **CẦU CHÌ GUARD-03 & ĐÓNG CỬA ATC** | Khóa mọi giao dịch T+0 trước 14h25; cấm đặt lệnh đuổi giá trong 15 phút ATC. | Đảm bảo trạng thái danh mục an toàn qua đêm, 0% Margin. |
 
 ---
 
-## 4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)
-| Mã CP | Tên Doanh Nghiệp | Vị Thế Cốt Lõi | Số Lượng CP | Giá Tham Chiếu / Vùng Canh Mua | Vốn Phân Bổ (VND) | % NAV | Ngưỡng Cắt Lỗ Stop 2xATR | Mục Tiêu Chốt Lời TP1 | Mục Tiêu Chốt Lời TP2 | Trạng Thái Trực Chiến |
-| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`HPG`** | Tập Đoàn Hòa Phát | Core Compounder (Vua Thép) | **400 CP** | `20,100 – 20,400 ₫` | `8,160,000 ₫` | `40.8%` | `19,400 ₫` (`-4.90%`) | `22,200 ₫` (`+8.82%`) | `23,800 ₫` (`+16.67%`) | 🟢 Sẵn sàng kích hoạt |
-| **`TCB`** | Techcombank | Core Compounder (Bank Leader) | **300 CP** | `21,000 – 21,300 ₫` | `6,420,000 ₫` | `32.1%` | `20,400 ₫` (`-4.67%`) | `23,200 ₫` (`+8.41%`) | `24,800 ₫` (`+15.89%`) | 🟢 Sẵn sàng kích hoạt |
-| **`MBB`** | Quân Đội (MBBank) | Tactical Oversold Rebound | **200 CP** | `18,400 – 18,650 ₫` | `3,750,000 ₫` | `18.75%` | `17,900 ₫` (`-4.53%`) | `20,400 ₫` (`+8.80%`) | `21,600 ₫` (`+15.20%`) | 🟢 Sẵn sàng kích hoạt |
-| **`TIỀN MẶT`** | Dự phòng chiến lược (Dry Powder) | Quản trị rủi ro & Lướt T+0 | — | — | `1,670,000 ₫` | `8.35%` | — | — | — | 🛡️ Sẵn sàng ứng cứu |
+## 4. Bảng Thông Số Danh Mục Thực Tế & Tiền Mặt SSOT (`2026-11-19`)
+| Mã CP | Tên Doanh Nghiệp | Vai Trò | Số Lượng CP | Vốn / Thị Giá | Giá Trị (VND) | % NAV | Hard Stop 2xATR | TP1 | TP2 | Trạng Thái Trực Chiến |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`MSH`** | May Sông Hồng (HOSE) | Vị thế Đang Nắm Giữ | **100 CP** | `Vốn 34,510 / Live 35,200 ₫` | `3,520,000 ₫` | `17.4%` | `33,090 ₫` | `39,500 ₫` | `43,000 ₫` | 🛡️ Đang bảo vệ 2 đầu |
+| **`BAF`** | CTCP Nông Nghiệp BAF Việt Nam | Vị thế Đang Nắm Giữ | **100 CP** | `Vốn 31,209 / Live 31,150 ₫` | `3,115,000 ₫` | `15.4%` | `30,050 ₫` | `33,200 ₫` | `36,500 ₫` | 🛡️ Đang bảo vệ 2 đầu |
+| **`TIỀN MẶT`** | Đạn Dự Phòng (Dry Powder) | Khóa an toàn & Bắn tỉa tuần sau | — | — | `13,594,522 ₫` | `67.2%` | — | — | — | 🛡️ Sẵn sàng bung đầu tuần sau |
 
 ---
 
@@ -58,18 +54,18 @@ Khi phát hiện dị thường kích hoạt Báo Động Đỏ (Flash Drop $\ge
    - Hành động: Mở lệnh Short Hợp đồng Tương lai VN30F1M tương ứng hệ số Beta danh mục để khóa băng mức lỗ cơ sở ngay lập tức.
 2. **Phương Án B — Tactical Partial De-risking (Hạ 30% - 50% vị thế)**:
    - Áp dụng khi cổ phiếu suy yếu chạm ngưỡng cảnh báo và hàng đã có sẵn trong tài khoản.
-   - Hành động: Canh nhịp nảy kỹ thuật tại VWAP khung M15 để đặt bán chủ động 30% - 50% vị thế nhằm giảm áp lực Margin và đưa vốn về Dry Powder.
+   - Hành động: Canh nhịp nảy kỹ thuật tại VWAP khung M15 để đặt bán chủ động 30% - 50% vị thế nhằm giảm áp lực và đưa vốn về Dry Powder.
 3. **Phương Án C — T+0 Intra-day Scalp (Lướt sóng đảo hàng hạ giá vốn)**:
-   - Áp dụng khi xuất hiện nhịp Washout / Bán tháo hoảng loạn do tin đồn thất thiệt trong khi tài khoản đã có sẵn cổ phiếu cũ.
-   - Hành động: Trích Dry Powder gom giá sàn/quá bán và bán trả ngay khi giá phục hồi 2%–3% trong ngày, hạ giá vốn mà không tăng rủi ro qua đêm.
+   - Áp dụng khi xuất hiện nhịp Washout / Bán tháo hoảng loạn trong khi tài khoản đã có sẵn cổ phiếu đủ T+2.5.
+   - Hành động: Trích Dry Powder gom giá quá bán và bán trả ngay trong ngày trước 14h25, hạ giá vốn mà không tăng rủi ro qua đêm.
 4. **Phương Án D — Disciplined Hold & Trailing Stop (Kiên định kỷ luật)**:
    - Áp dụng khi giá vẫn cách an toàn trên ngưỡng Stop 2xATR và BCTC/dòng tiền OCF của doanh nghiệp vững vàng.
-   - Hành động: Giữ nguyên vị thế, không bán tháo theo tâm lý hoảng loạn, nâng Trailing Stop bảo toàn lợi nhuận nếu giá tăng tốc.
+   - Hành động: Giữ nguyên vị thế, chốt tỉa 50% khi lãi đạt `+2.5%..+4.0%`, nâng Stop lên giá vốn cho phần còn lại.
 
 ---
 
 ## 6. Kênh Kết Nối Báo Động Telegram Topic 1 (alerts) & Tình Trạng Trực Chiến
 - **Kênh tiếp nhận cảnh báo**: Telegram Supergroup Topic 1 (`🚨 BÁO ĐỘNG ĐỎ & CANH 2 ĐẦU`, Thread ID: `3`).
-- **Bot truyền tin**: `@Chuyenvienvictor_bot` (Token: `9113394586:...`).
-- **Tình trạng đường truyền**: **`🟢 SẴN SÀNG 100% (ONLINE & VERIFIED)`** (Đã kiểm tra truyền tin thành công).
+- **Bot truyền tin**: `@Chuyenvienvictor_bot`.
+- **Tình trạng đường truyền**: **`🟢 SẴN SÀNG 100% (ONLINE & VERIFIED)`**.
 - **Chu kỳ streaming**: Mỗi `60 giây` trong suốt phiên giao dịch (09h00 - 11h30 & 13h00 - 14h45).

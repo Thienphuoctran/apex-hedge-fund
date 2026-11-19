@@ -1,43 +1,24 @@
-# 📦 BIÊN BẢN LƯU TRỮ HỘI NGHỊ THƯỢNG ĐỈNH (`04:30 ICT — 19/11/2026`)
-- **Mã Hội nghị (`meeting_id`):** `APEX-SUMMIT-20261119-0430`
-- **Loại hình:** Hội nghị Thượng đỉnh Liên phòng ban Toàn cầu & Việt Nam — Tổng kết Phiên Mỹ, Thẩm định BCTC `NVDA`/`PANW`, Diễn biến `^VIX` & Kế hoạch Phiên Đáo hạn `VN30F1M` `19/11/2026`
-- **Phương thức vận hành:** Chạy trực tiếp trên máy Chủ tịch Trần Quốc Thiên Phước (`16/16` Phòng ban & Chuyên viên AI thật trực chiến, dữ liệu live CNBC Real-Time API + Bảng giá VPS `18/11` + SSOT `TCBS 105C307855`)
-- **Trạng thái Kiểm toán Trọng (Ban 12):** **APPROVED** (`7/7` mốc log xuyên đêm đầy đủ, rủi ro mới `<= 0.72% NAV`, tổng rủi ro `<= 2.30% NAV < trần 4.5% NAV`)
+# BIÊN BẢN LƯU TRỮ PHIÊN HỌP THƯỢNG ĐỈNH `APEX-SUMMIT-20261119-0430`
+> **CHỦ ĐỀ**: `Tổng Kết NVDA / PANW / ^VIX & Kế Hoạch Đáo Hạn VN30F1M 19/11 + Mở Công Suất Tuần Sau`  
+> **KHUNG GIỜ HỌP**: `04h30 – 05h00 (30 Phút, 19/11/2026)` (Chuẩn bị: `20h30 -> 04h25 (Trực 5 nhịp + Đón BCTC NVDA)`)  
+> **PHÊ DUYỆT CHỦ TỊCH**: `None` (Chưa ký lúc lưu)  
+> **LÝ DO LƯU KHO**: `PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION` • **LƯU LÚC**: `2026-11-19 09:43:41 ICT`  
 
----
+## 1. TỔNG KẾT MASTER CIO JAMES & KẾ HOẠCH THAM KHẢO
+Tổng kết 04h30 (19/11): ^VIX 24.56 (chưa < 23.5), .SPX 7,323.63 < MA200 -> Elevated Tension; NVDA Q3 FY27 ($115.8B) giảm do CEO transition discount; PANW +8.04% AH ($367.25).
+> *Khung tham khảo điều hành cơ động theo ngày — Thứ Năm 19/11 mặc định 0đ (ngoại lệ 100 CP PVT @ ~19,000đ lúc 14h00-14h25 khi Buy-Up >= 60%); Thứ Sáu 20/11 giữ trần <= 45-55% NAV; Thứ Hai–Tư tuần sau mở công suất 70-85% NAV rổ 13k–22.5k.*
 
-## 1. ĐIỂM DANH 16/16 ĐƠN VỊ THAM DỰ & BỎ PHIẾU THỰC TẾ
+## 2. KẾT QUẢ BIỂU QUYẾT & SỔ LỆNH TRÌNH DUYỆT
 
-1. **Ban 1 Global (`macro-geopolitics-agent`)**: `^VIX 24.56`, `.SPX 7,323.63 < MA200 7,340`, `US10Y 5.068%`, `DXY 103.808` ➔ **Cautious High-Vol Rotation (`50% Cash / 50% Selective`)**.
-2. **Ban 2 Global (`equity-fundamental-agent`) & Ban 10 (`hien`)**: Xác nhận `NVDA` Q3 FY27 `$115.8B (+103% YoY)` ra tối `17/11 AMC`, giảm giá là do CEO transition discount; `PANW` `+8.04% AH ($367.25)` xác nhận chi tiêu AI + Cyber ➔ **`CONSTRUCTIVE ROTATION`**.
-3. **Ban 3 Global (`synthesis-hub-agent`)**: Sàng lọc top `AMD, AVGO, MSFT, PLTR`; tránh FOMO `PANW` gap & tránh `SMCI, GOOGL, COIN, QCOM, TSLA`.
-4. **Ban 4 Global (`investment-committee-agent`)**: Khóa trần biến động, yêu cầu `^VIX < 23.5` + `.SPX > 7,345` mới nâng tỷ trọng Mỹ lên `60%`.
-5. **Ban 5 Global (`performance-learning-agent`)**: Ghi nhận sửa sai dữ liệu nguồn khi Yahoo Finance đóng băng lúc `10:52:53 EST` bằng cách chuyển sang CNBC Real-Time API & historical `1m` backfill.
-6. **Ban 6 Global (`investor-mentorship-coach`)**: Chuyển hóa bài học phân biệt *Fundamental Beat vs Governance Discount* (`NVDA`) cho nhà đầu tư.
-7. **Ban 7 Global — Alex (`daily-investment-specialist-agent`)**: Giữ `40–50%` tiền mặt US, xác nhận hiệu ứng `VNM +0.18%` & `.RUT +0.52%` triệt tiêu rủi ro panic đầu giờ VN.
-8. **Ban 1 VN (`vn-macro-monetary-agent`)**: `WTI -3.57% ($82.94)` ép `BSR/PVD/GAS` nhưng bơm biên lợi nhuận cho `PVT/GMD/BAF`; `DXY 103.81` + `US10Y 5.068%` kìm nhóm Ngân hàng & SBV.
-9. **Ban 2 VN (`vn-equity-bctc-agent`)**: Đối chiếu `PVT` (`OCF/LNST 2.01x`, doanh thu USD), `TCB` (`ROE`, nền tảng vốn tốt) và bảo toàn chất lượng cơ bản `MSH`, `BAF`.
-10. **Ban 3 VN — Công tố (`vn-synthesis-hub-agent`)**: Giữ kỷ luật mặc định **`0 ₫`**, chặn bẫy Bull-Trap sáng đáo hạn `VN30F1M`, áp đặt bộ lọc `Buy-Up >= 60%` + `Độ rộng >= 40–45%` + `VSA No Supply/Spring`.
-11. **Ban 4 VN (`vn-investment-committee-agent`)**: Giới hạn lệnh điều kiện tối đa `1 lô 100 CP` (`<= 2.2M`), giữ tổng rủi ro Hard Stop toàn danh mục ở `2.23% – 2.30% NAV` (dưới trần `4.5%`).
-12. **Ban 5 VN (`vn-performance-learning-agent`)**: Áp đặt **VETO tạm thời `HDB` ngày `19/11`** để chống Outcome Bias / Revenge Trading trong khi `hdb_post_exit_audit.yml` đang chạy hậu kiểm tới `20/11`.
-13. **Ban 6 VN (`vn-investor-mentorship-coach`)**: Soạn chủ đề khai sáng `07h30`: *Process vs Outcome & Kỷ luật chống cạm bẫy Đáo hạn Phái sinh*.
-14. **Ban 7 VN — Minh Quân (`vn-daily-specialist-agent`)**: Chốt sổ lệnh 4 khung giờ ngày `19/11` với `#1 PVT (100 CP @ 19,000)` và `#2 TCB (100 CP @ 20,750)` tại Khung Giờ Vàng `14:00–14:25`.
-15. **Ban 9 — Victor (`live-portfolio-sentinel-agent`)**: Giữ nguyên vành đai `MSH (Trail 34,600 / Hard 33,090)` và lịch giám sát `BAF` về tài khoản `13:00–13:45 (Hard 30,050)`.
-16. **Ban 8 — Master CIO James & Ban 12 — Trọng (`master-cio-agent` & Kiểm sát)**: Ban hành Phán quyết Hợp nhất và Chứng nhận Đạt chuẩn Thể chế.
-17. *(Ghi nhận thêm đầu mối hạ tầng đồng bộ)* **Ban 11 (`Khánh / Bảo`)**, **Palmer Sync Bridge** & **Nam News**: Hoàn tất đồng bộ liên đoạn chat & hồ sơ lưu trữ.
 
----
-
-## 2. DỮ LIỆU CHỐT PHIÊN MỸ & AFTER-HOURS ĐƯỢC LƯU TRỮ (`04:23:43 ICT`)
-
-- **Chỉ số Mỹ:** `.SPX 7,323.63` (chốt phiên `7,323.55 -0.23%`) | `.IXIC 24,429.885 (+0.42%)` | `.DJI 50,198.17` (`-1.11%`) | `.RUT 2,715.843 (+0.52%)` | `^VIX 24.56` (chốt `24.68 -3.06%`)
-- **Liên thị trường:** `US10Y (^TNX) 5.068%` | `DXY 103.808` | `CL=F $83.12` (chốt `$82.94 -3.57%`) | `GC=F $3,727.80` (chốt `$3,733.60 -3.38%`) | `BTC $62,451.40` | `VNM $16.70 (+0.18%)` | `EEM $57.88` (`AH $57.85 -0.05%`)
-- **Cổ phiếu Trọng điểm (Close / AH):** `SMH 459.54 / 460.40 (+0.19%)` | `NVDA 150.96 / 151.1932 (+0.15%)` | `AVGO 354.05 (+3.39%) / 354.40 (+0.10%)` | `AMD 530.14 (+4.93%) / 529.00 (-0.22%)` | `TSM 362.62 (+0.90%) / 364.13 (+0.42%)` | `PANW 339.92 / 367.25 (+8.04%)` | `AMZN 267.74 (+3.66%) / 267.24` | `MSFT 508.29 / 507.50` | `AAPL 352.45 / 351.60` | `META 616.38 / 615.469` | `GOOGL 282.44 / 283.00` | `TSLA 383.72 / 382.74`.
-
----
-
-## 3. HỒ SƠ LIÊN KẾT ĐẦU RA
-
-- Nghị quyết Tổng kết James: `08_Master_Investment_CIO/council_resolutions/2026-11-19_0430_Bao_Cao_Tong_Ket_James_NVDA_VIX_Va_Nghi_Quyet_Dao_Han.md`
-- Kế hoạch Tác chiến VN `19/11`: `VN_Market/07_Daily_Specialist/2026-11-19_Official_Adaptive_Tactical_Plan.md`
-- Trạng thái Hội nghị & Lưu trữ JSON: `data/apex_active_meeting_state.json`, `data/summit_archive/APEX-SUMMIT-20261119-0430.json`, `data/summit_archive_ledger.json`
+## 3. TOÀN VĂN DIỄN BIẾN TRANH BIỆN (10 LƯỢT) & CHUẨN BỊ (14 BAN)
+- **[04:30:00] Master CIO James (Ban 8) (KHAI MẠC 04H30)**: Khai mạc Hội nghị Thượng đỉnh `APEX-SUMMIT-20261119-0430` với `16/16` đơn vị trực chiến xuyên đêm qua `7/7` mốc log CNBC Real-Time API (`20:36 -> 04:23 ICT`). Thị trường Mỹ đóng cửa: `.SPX 7,323.55 (-0.23%)`, `.IXIC 24,429.885 (+0.42%)`, `.DJI 50,198.05 (-1.11%)`, `.RUT 2,715.843 (+0.52%)`, **`^VIX 24.68 (-3.06%)` / AH `24.56`**. Trọng tâm: đánh giá `^VIX`, giải mã BCTC `NVDA` & `PANW`, và khóa kế hoạch phiên đáo hạn `VN30F1M` `19/11` cho tài khoản TCBS `105C307855` (`NAV 20,229,522đ | Cash 13,594,522đ [67.2%]`).
+- **[04:33:00] TS. Elena Vance (Ban 1 US) (ELEVATED TENSION)**: `^VIX` giảm từ đỉnh phiên `24.69` về `24.68` (AH `24.56`) nhưng **thất bại trong việc xuyên thủng `< 23.5`**, đồng thời `.SPX (7,323.63)` vẫn nằm dưới `MA200 (~7,340)`. Kết hợp `US10Y (^TNX) 5.068%` và `DXY 103.808` neo cao, đây là chế độ **`Elevated Tension / Cautious High-Vol Rotation`**. Đề xuất toàn cầu **`50% Cash / 50% Selective`**; chỉ nâng lên `60%` nếu `.SPX > 7,345` & `^VIX < 23.5`, ngược lại siết về `70% Cash` nếu `.SPX < 7,285.76` & `^VIX >= 25.5`.
+- **[04:36:00] Lê Hoàng (Ban 2 US) & Hiền (Ban 10 IR) (CONSTRUCTIVE ROTATION)**: Đính chính thực chứng từ `nvidia.com`: BCTC **Q3 FY27 của `NVDA` đã công bố tối `17/11 AMC`** với doanh thu **`$115.8B (+103% YoY vs ~$109.2B)`**, Data Center `$107.6B` (Vera Rubin `~$20B`), GAAP GM `74.8%`, Non-GAAP EPS `$2.68` (vs `$2.47`), Q4 Guide `~$130B (±3%)`, trả cổ đông `$28.1B`. Giá `NVDA` lùi về `$150.96` (AH `$151.19 +0.15%`) là **Chiết khấu Quản trị CEO** (Jensen Huang từ chức `11/11`, CFO Colette Kress làm Interim CEO). Tâm điểm đêm `18/11 AMC` là **`PANW`** bứt phá **`+8.04% AH ($367.25)`** nhờ Q1 FY27 Rev `$3.44B (+39% YoY)`, NGS ARR `$9.73B (+66% YoY)`, RPO `$21.0B`! Bỏ phiếu **`CONSTRUCTIVE ROTATION`**: **Accumulate** `AMD ($530.14 +4.93%)`, `AVGO ($354.05 +3.39%)`, `MSFT/PLTR`; **Watch** `PANW` chờ pullback `$345–$352`, `NVDA` đợi `>= $155.50+`; **Avoid** `SMCI, GOOGL, COIN, QCOM, TSLA`.
+- **[04:39:00] Alex (Ban 7 Global) (NO PANIC SPILLOVER)**: Đồng thuận với Ban 1-2 US: giữ `40–50%` tiền mặt ở thị trường Mỹ, không bắt dao rơi `NVDA` hay đuổi Gap `+8%` của `PANW`. Điểm cộng cực lớn cho Việt Nam sáng `19/11`: **`VNM ETF` đóng xanh nhẹ `$16.70 (+0.18%)`**, `.RUT +0.52%`, `.IXIC +0.42%`, `SMH AH +0.19%` (`$460.40`). Phiên Mỹ đã loại bỏ hoàn toàn kịch bản Gap-Down hoảng loạn lúc mở cửa ATO Việt Nam.
+- **[04:42:00] Victor (Ban 9 Sentinel) (SENTINEL LOCKED)**: Cảnh báo nhiễu động đáo hạn `VN30F1M` sáng nay quanh vùng `1,698–1,708`. Giữ nguyên chốt chặn bảo vệ danh mục TCBS `105C307855`: (1) **`MSH` (`100 CP` khả dụng, EOD `35,200đ`, lãi `+69,000đ / +2.0%`)**: giữ gồng, khóa **`Trail Stop 34,600đ`**, **`Hard Stop 33,090đ`**, `TP1 39,500đ`; (2) **`BAF` (`100 CP` `T+1` về chiều `19/11`, giá vốn `31,209đ`, EOD `31,150đ`)**: canh khung `13:00–13:45` hấp thụ hàng về, giữ nếu `>= 30,800đ`, cắt dứt khoát tại **`Hard Stop 30,050đ`**.
+- **[04:45:00] Ban 1 VN, Ban 3 Công Tố, Ban 5 & Ban 6 VN (VETO HDB & BSR)**: **Ban 1 VN:** `VNM +0.18%` chỉ mang tính cầm máu thụ động; **`WTI` rơi `-3.57%` (`$82.94`)** bất lợi ngắn hạn cho `BSR/PVD/GAS` nhưng mở biên lợi nhuận cho **`PVT/GMD/BAF`**; `DXY 103.81 + US10Y 5.068%` tiếp tục ghìm Ngân hàng. **Ban 5 & Ban 6 VN:** Chính thức **VETO `HDB` trong phiên `19/11`** (giữ kỷ luật chống *Outcome Bias / Revenge Buy* trong khi `hdb_post_exit_audit.yml` đang chạy 48h tới `20/11` sau lệnh bán `22,050đ`). **Ban 3 Công tố:** Mặc định giải ngân **`0 ₫`**; ngoại lệ duy nhất `01` lô `100 CP` lúc `14:00–14:25` khi hội tụ `Buy-Up >= 60–65%`, `Breadth >= 40–45%`, và `VSA No Supply / Spring`.
+- **[04:48:00] Ban 4 Risk & Minh Quân (Ban 7 VN) (KHUNG GIỜ VÀNG 14H00)**: Đối chiếu bảng giá đóng cửa thực tế VPS `18/11`: `PVT 19,000đ`, `TCB 20,750đ`, `MSH 35,200đ`, `BAF 31,150đ`, `HDB 22,250đ`, `IDC 34,200đ`, `HPG 20,450đ`, `BSR 24,050đ`. Tổng rủi ro Hard Stop hiện có trên `MSH + BAF` là `211,000 + 110,000 = 321,000đ (1.59% NAV)`, dư địa dưới trần `4.5% NAV (910,328đ)` còn `589,328đ`. Đề xuất trong Khung Giờ Vàng `14:00–14:25`, nếu đạt đủ bộ lọc Cửa Kép của Ban 3, cho phép bấm tối đa `1 lô 100 CP`: ưu tiên **`PVT @ 19,000đ (1.90M)`** (`Hard 17,700đ`, `TP1 21,600đ`, `R:R 1:2.00`) hoặc dự phòng **`TCB @ 20,750đ (2.075M)`** (`Hard 19,300đ`, `TP1 23,650đ`, `R:R 1:2.00`).
+- **[04:51:00] Ban 3 Công Tố vs Minh Quân (Ban 7 VN) (ĐỐI CHẤT CHUYÊN MÔN)**: **Ban 3 Công tố** chất vấn: *Phiên 19/11 là đáo hạn `VN30F1M`, `^VIX` vẫn `24.56 > 23.5`, tại sao không khóa `0đ` cả ngày?* **Minh Quân & Ban 2 VN** phản biện: *`PVT` không nằm trong rổ điều tiết phái sinh `VN30`, vừa hưởng lợi trực tiếp từ `WTI -3.57%`, vừa có `OCF/LNST 2.01x` và doanh thu neo USD phòng thủ `DXY 103.81`. Nhưng Minh Quân chấp nhận Cửa Kép nghiêm ngặt: **0% mua trước 14h00**, nếu lúc `14:00–14:25` không đạt đủ 3 bộ lọc `Buy-Up >= 60%` + `Độ rộng >= 40–45%` + `VSA No Supply/Spring`, tự động giữ `0đ` như Ban 3 yêu cầu.*
+- **[04:55:00] Master CIO James (Ban 8) (NGHỊ QUYẾT TỐI CAO)**: James tuyên phán quyết cuối cùng: (1) Xác nhận chế độ **`ELEVATED TENSION / CAUTIOUS HIGH-VOL ROTATION`** (`^VIX 24.56`); (2) Phê chuẩn **VETO ngày `19/11`** đối với `HDB, BSR, FPT, DGC, MWG, FRT` & BĐS nợ cao; (3) Trạng thái mặc định là **`0 ₫` (`13,594,522đ` Cash / `67.2% NAV`)**; (4) **Ngoại lệ Có Điều Kiện (`14:00–14:25`, `<= 2.2M / 100 CP`)**: ưu tiên **#1 `PVT` (`100 CP @ 19,000đ = 1.90M`, `Hard 17,700đ`, `TP1 21,600đ`, `R:R 1:2.00`, rủi ro tổng danh mục `451,000đ = 2.23% NAV`)**; **#2 `TCB` (`100 CP @ 20,750đ = 2.075M`, `Hard 19,300đ`, `TP1 23,650đ`, `R:R 1:2.00`, rủi ro tổng `466,000đ = 2.30% NAV`)** chỉ thay `PVT` nếu Ngân hàng dẫn sóng rõ. Cấm tuyệt đối mọi lệnh `ATO` và `ATC`.
+- **[04:58:00] Tổng Kiểm Sát Viên Trọng (Ban 12) (TRỌNG APPROVED 100%)**: Trọng (Ban 12) ký chứng nhận **APPROVED — ĐẠT CHUẨN THỂ CHẾ**: `16/16` phòng ban họp thật trên dữ liệu live CNBC Real-Time API (`7/7` mốc `20:36 -> 04:23 ICT`) & giá VPS `18/11` đối soát chính xác; đã đính chính kịp thời thực tế BCTC `NVDA` (`17/11 AMC`) vs `PANW` (`18/11 AMC`); tổng rủi ro Hard Stop danh mục khóa chặt dưới `2.30% NAV` (`< 4.5%` trần Hiến chương). Hoàn tất xuất 3 văn kiện chính thức, lưu Archive Vault `APEX-SUMMIT-20261119-0430`, đồng bộ Palmer & gửi Telegram cho Chủ tịch trước `05:00 ICT`.

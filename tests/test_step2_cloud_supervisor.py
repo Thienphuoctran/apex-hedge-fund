@@ -77,7 +77,7 @@ class TestStep2CloudSupervisor(unittest.TestCase):
         self.assertIn("supervisor_status", data)
         self.assertIn("services", data)
         self.assertIn("TCBS 105C307855", data["chairman_account"])
-        self.assertEqual(len(data["services"]), 3)
+        self.assertEqual(len(data["services"]), len(SERVICES_CONFIG))
 
     def test_04_supervisor_test_run_subprocess(self):
         """Diễn tập khởi động thực tế cả 3 tiến trình trong 6 giây qua lệnh CLI và tắt sạch sẽ."""
@@ -119,7 +119,7 @@ class TestStep2CloudSupervisor(unittest.TestCase):
         res = subprocess.run(cmd, cwd=str(BASE_DIR), env=sub_env, capture_output=True, encoding="utf-8", errors="replace", timeout=10)
         self.assertEqual(res.returncode, 0)
         self.assertIn("BẢNG ĐIỀU KHIỂN GIÁM SÁT APEX CLOUD SUPERVISOR 24/7", res.stdout)
-        self.assertIn("Apex Institutional 17-Milestones", res.stdout)
+        self.assertIn("Cron Daemon", res.stdout)
         self.assertIn("Victor - Ban 9", res.stdout)
         self.assertIn("Telegram Co-Pilot", res.stdout)
 

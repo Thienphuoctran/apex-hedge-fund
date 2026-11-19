@@ -1,19 +1,20 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-19 04:33:21  
+**Thời gian cập nhật:** 2026-11-19 09:47:27  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261119-043321`  
+**Mã đồng bộ:** `SYNC-AG2P-20261119-094727`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Tổng kết Hội nghị Thượng đỉnh 04h30 sáng 19/11/2026 (16/16 phòng ban AI thật trực chiến trên máy Chủ tịch)
+* **Câu hỏi của Chủ tịch:** Triển khai Hành động 1 & 2: Dẹp văn mẫu/chấm điểm ảo, đồng bộ SSOT, chuẩn hóa Kế hoạch Tuần Sau công suất cao chuẩn Tuần Đầu (70-85% NAV, 13k-22.5k, 200-300 CP/mã)
 * **Kết luận & Quyết định thể chế:**
-Hoàn tất Hội nghị 04h30 (APEX-SUMMIT-20261119-0430): ^VIX 24.56 (chưa < 23.5), .SPX 7,323.63 < MA200 -> Cautious High-Vol Rotation; NVDA Q3 FY27 ($115.8B +103% YoY) ra 17/11 giảm do CEO transition discount; PANW +8.04% AH ($367.25); VNM ETF +0.18% ($16.70). Kế hoạch đáo hạn VN30F1M 19/11 (TCBS 105C307855, NAV 20,229,522đ, Cash 13,594,522đ = 67.2%): MSH (Trail 34,600 / Hard 33,090), BAF (về chiều, Hard 30,050), VETO HDB/BSR/FPT; mặc định 0đ, điều kiện 14h00-14h25 LO 100 CP PVT @ ~19,000đ (Backup TCB @ 20,750đ) nếu Buy-Up >= 60% + Breadth >= 40-45% + VSA.
+Hoàn tất Hành động 1 & 2: (1) Gỡ bỏ toàn bộ điểm tự chấm ảo (98.5/100, P(W) 80.5%, 100/100) và văn mẫu Vòng 1 cũ ('20,167,119đ / 100% Cash / 03-05/11 / HDB holding') trong vn_daily_specialist, master_cio_allocator, eod_master_audit_engine, intraday_portfolio_sentinel, apex_tactical_war_room_engine, apex_institutional_cron_daemon, morning_war_room_hearing; (2) Đồng bộ SSOT TCBS 105C307855 (NAV 20,229,522đ, Cash 13,594,522đ = 67.2%, MSH 100 CP, BAF 100 CP) & số liệu Walk-Forward thật 35.3%; (3) Ban hành Kế hoạch Tuần Sau (23-27/11): Thứ Năm 19/11 mặc định 0đ (ngoại lệ 100 PVT), Thứ Sáu 20/11 giữ trần <= 45-55% NAV, Thứ Hai-Tư 23-25/11 bung công suất 70-85% NAV (14-17M đ) vào rổ 13k-22.5k thanh khoản >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/mã) và chốt tỉa 50% tại +2.5%..+4.0% (+300k..+500k đ).
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Ghi nhận đủ 7/7 mốc dữ liệu CNBC Real-Time API xuyên đêm (20:36 -> 04:23 ICT)
-- [x] Hoàn tất tranh luận & bỏ phiếu 16/16 đơn vị + Chứng nhận Kiểm toán Trọng (Ban 12)
-- [x] Xuất Nghị quyết James 04h30, Kế hoạch Tác chiến 19/11, Biên bản & Lưu kho APEX-SUMMIT-20261119-0430.json
+- [x] Đồng bộ pre_flight_compliance_check.py & institutional_compliance_anchor.json khớp SSOT 13,594,522đ Cash / 20,229,522đ NAV
+- [x] Sửa 7 script cốt lõi xóa sạch văn mẫu Vòng 1 & điểm ảo 98.5/100 / 80.5% P(W)
+- [x] Ban hành Kế hoạch Tuần Sau 23-27/11 công suất 70-85% NAV chuẩn Tuần Đầu & cập nhật weekly_tactical_plan_active.json
+- [x] Khôi phục trạng thái Hội nghị 04h30 APEX-SUMMIT-20261119-0430 chuẩn V10.0, vá Unittest & Comprehensive Audit
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)

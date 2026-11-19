@@ -136,17 +136,17 @@ def _get_live_portfolio_snapshot() -> Dict[str, Any]:
     try:
         from scripts.portfolio_state_manager import PortfolioStateManager
         st = PortfolioStateManager.load_state()
-        cash_vnd = float(st.get("cash_balance_vnd", 20167119.0))
+        cash_vnd = float(st.get("cash_balance_vnd", 13594522.0))
         active_pos = st.get("active_positions", {})
-        is_all_cash = (len(active_pos) == 0) or (st.get("status") in ("ALL_CASH_STANDDOWN", "ALL_POSITIONS_CLOSED_100_PERCENT_CASH"))
+        is_all_cash = (len(active_pos) == 0) or (st.get("status") in ("ALL_CASH_STANDDOWN", "ALL_POSITIONS_CLOSED"))
         total_nav = float(st.get("total_nav_vnd", cash_vnd))
         total_cost = float(st.get("total_cost_vnd", 0.0))
         total_mkt = float(st.get("total_market_val_vnd", 0.0))
         total_pnl = float(st.get("unrealized_pnl_vnd", 0.0))
         total_pnl_pct = 0.0
     except Exception:
-        cash_vnd = 20167119.0
-        total_nav = 20167119.0
+        cash_vnd = 13594522.0
+        total_nav = 20229522.0
         total_cost = 0.0
         total_mkt = 0.0
         total_pnl = 0.0
@@ -301,16 +301,20 @@ def execute_milestone(milestone_id: str) -> bool:
                 )
             bullets_md = "\n".join(bullet_lines)
 
+            snap_cbtt = _get_live_portfolio_snapshot()
+            ps_cbtt = _format_portfolio_summary(snap_cbtt)
             cbtt_file = BASE_DIR / "VN_Market" / "02_BCTC_Equity_Research" / f"{date_str}_VN_CBTT_Radar.md"
             cbtt_content = (
                 f"# BÁO CÁO RÀ SOÁT CÔNG BỐ THÔNG TIN ĐÊM QUA (BAN 10 — HIỀN & AGENT ZERO)\n"
                 f"**Ngày thực hiện**: `{date_str} 06:00 AM` | **Đối tượng**: 54 Siêu cổ phiếu Việt Nam & 35 Siêu cổ phiếu Mỹ\n"
                 f"**Tài khoản thẩm định**: TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)\n\n"
-                f"## 1. Kết quả kiểm toán Pháp y BCTC & IR trực tiếp cho danh mục và tầm ngắm Vòng 2 (Trạng thái hiện tại: 100% Tiền mặt 20,167,119 ₫, 0 CP)\n"
+                f"## 1. Kết quả kiểm toán Pháp y BCTC & IR trực tiếp (NAV: `{ps_cbtt['nav_str']}` | Tiền mặt: `{ps_cbtt['cash_str']}`)\n"
+                f"{ps_cbtt['md_positions']}\n\n"
+                f"## 2. Chi tiết Pháp y BCTC nhóm dẫn dắt\n"
                 f"{bullets_md}\n\n"
-                f"## 2. Kết quả kiểm tra tính toàn vẹn thông tin toàn thị trường\n"
-                f"- **Thị trường Việt Nam (HOSE/HNX)**: Đã quét cổng IR/SSC/Vietstock/CafeF. Không có biến cố bất thường (hoãn nộp BCTC, từ nhiệm kiểm toán, phạt thuế trọng yếu) đối với các cổ phiếu trong tầm ngắm (`FPT`, `DGC`, `HPG`, `TCB`, `MBB`).\n"
-                f"- **Thị trường Mỹ (SEC EDGAR)**: Đã rà soát Form 8-K, 10-Q, Form 4 của vũ trụ Phố Wall (`NVDA`, `TSM`, `AVGO`, `GOOGL`).\n"
+                f"## 3. Kết quả kiểm tra tính toàn vẹn thông tin toàn thị trường\n"
+                f"- **Thị trường Việt Nam (HOSE/HNX)**: Đã quét cổng IR/SSC/Vietstock/CafeF. Không có biến cố bất thường đối với rổ theo dõi (`MSH`, `BAF`, `PVT`, `TCB`, `MBB`, `HPG`, `TCH`).\n"
+                f"- **Thị trường Mỹ (SEC EDGAR)**: Đã rà soát Form 8-K, 10-Q, Form 4 của vũ trụ Phố Wall (`NVDA`, `PANW`, `AVGO`, `AMD`, `TSM`).\n"
             )
             write_md_safe(cbtt_file, cbtt_content)
 
@@ -320,7 +324,8 @@ def execute_milestone(milestone_id: str) -> bool:
                 "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n"
                 f"📅 *Ngày*: `{date_str}` | ⏰ `06:00 AM` | 👤 *TCBS*: `105C307855`\n"
                 "• Đã chạy `ZeroBrowserScout` & `ZeroForensicAuditor` rà soát 54 mã HOSE/HNX và 35 mã Phố Wall.\n"
-                "• Trạng thái Quỹ: 100% Tiền mặt (`20,167,119 ₫` - Đã tất toán Vòng 1 lãi `+167,119 ₫`). Hồ sơ BCTC tầm ngắm Vòng 2 đạt chuẩn CLEAN.\n"
+                f"• Trạng thái Quỹ: NAV `{ps_cbtt['nav_str']}` | Tiền mặt `{ps_cbtt['cash_str']}`.\n"
+                f"{ps_cbtt['tg_positions']}\n"
                 f"📁 Báo cáo đã lưu: `VN_Market/02_BCTC_Equity_Research/{date_str}_VN_CBTT_Radar.md`\n"
                 "👉 Dữ liệu đã bàn giao sang Ban 1 & Ban 2 thẩm định trước phiên!"
             )
@@ -353,7 +358,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 f"- **Tỷ giá USD/VND**: `{fx_rate:,.0f} VND/USD`\n"
                 f"- **Tăng trưởng tín dụng toàn hệ thống YTD**: `{credit_growth}%`\n\n"
                 f"## 2. Định hướng tác chiến cho Danh mục TCBS (`105C307855`)\n"
-                f"- Thanh khoản hệ thống ngân hàng và mặt bằng lãi suất tiếp tục ủng hộ nhóm Ngân hàng (`TCB`, `MBB`) và Sản xuất công nghiệp đầu ngành (`HPG`).\n"
+                f"- Thanh khoản và mặt bằng lãi suất ủng hộ các doanh nghiệp có dòng tiền thật `OCF/LNST >= 1.0x` trong rổ `13k–22.5k` (`PVT`, `TCB`, `MBB`, `HPG`, `TCH`).\n"
             )
             write_md_safe(macro_report_file, macro_content)
 
@@ -361,7 +366,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 "🌐 *[BAN 1 — VĨ MÔ SBV & TOÀN CẦU ĐẦU NGÀY]*\n"
                 f"📅 `{date_str}` lúc `07:00 AM` | Nguồn: `{sbv_source}`\n"
                 f"• SBV: Lãi suất tái cấp vốn `{refi_rate}%`, liên ngân hàng ON `{interbank_on}%`, tỷ giá USD/VND `{fx_rate:,.0f}`.\n"
-                f"• Tăng trưởng tín dụng YTD: `{credit_growth}%` — hỗ trợ trực tiếp nhóm Ngân hàng & Thép (`HPG`, `TCB`, `MBB`).\n"
+                f"• Tăng trưởng tín dụng YTD: `{credit_growth}%` — theo dõi nhóm thanh khoản lớn chuẩn bị cho công suất tuần mới.\n"
                 f"📁 Báo cáo chi tiết: `VN_Market/01_Macro_Monetary_Vietnam/{date_str}_VN_Macro_Report.md`"
             )
             _dispatch("radar_filings", msg)
@@ -379,15 +384,17 @@ def execute_milestone(milestone_id: str) -> bool:
         # ==============================================================================
         elif milestone_id == "07:30":
             _run_py_script("VN_Market/scripts/vn_mentor_engine.py", timeout=60)
+            snap_730 = _get_live_portfolio_snapshot()
+            ps_730 = _format_portfolio_summary(snap_730)
             coach_briefing_file = BASE_DIR / "VN_Market" / "06_Investor_Academy" / "daily_mentorship" / f"{date_str}_VN_Mentor_Briefing.md"
 
             msg = (
                 "🏛️ *[BAN 6 — BẢN TIN KHAI SÁNG BUỔI SÁNG 07H30]*\n"
-                "Kính gửi: **Chủ tịch Trần Quốc Thiên Phước** (*TCBS: `105C307855`*)\n\n"
+                f"Kính gửi: **Chủ tịch Trần Quốc Thiên Phước** (*TCBS: `105C307855`* | *NAV*: `{ps_730['nav_str']}` | *Cash*: `{ps_730['cash_str']}`)\n\n"
                 "💡 *3 NGUYÊN TẮC THÉP HÔM NAY*:\n"
-                "1. Tuyệt đối không FOMO ATO: 9h00-9h30 là giờ nhiễu loạn cung cầu, không mua đuổi giá xanh.\n"
-                "2. Giữ vững kỷ luật Khung Giờ Vàng: Hành động quyết định lúc 14h00-14h25 khi nến ngày định hình >= 90%.\n"
-                "3. Quản trị rủi ro hàng đầu: Bảo vệ 100% vốn & lãi (`20,167,119 ₫` tiền mặt), chỉ giải ngân Vòng 2 khi có biên an toàn và khóa Stop 2xATR.\n"
+                "1. Tuyệt đối không FOMO ATO: 9h00-10h00 là giờ nhiễu loạn cung cầu, không mua đuổi giá xanh.\n"
+                "2. Giữ vững kỷ luật Khung Giờ Vàng 14h00-14h25 & Cấm ATC từ 14h30.\n"
+                "3. Khóa trần Thứ Sáu <= 55% NAV; mở công suất 70-85% NAV vào đầu tuần Thứ Hai–Tư với chuẩn `13k-22.5k`, `200-300 CP/mã`.\n"
                 f"📁 Bản tin đầy đủ: `{coach_briefing_file.relative_to(BASE_DIR).as_posix()}`"
             )
             _dispatch("academy_learning", msg)
@@ -402,6 +409,8 @@ def execute_milestone(milestone_id: str) -> bool:
             _run_py_script("VN_Market/scripts/vn_audit_and_verify.py", timeout=60)
             _run_py_script("VN_Market/scripts/vn_quant_portfolio.py", timeout=60)
 
+            snap_800 = _get_live_portfolio_snapshot()
+            ps_800 = _format_portfolio_summary(snap_800)
             forensic_data = load_json_safe(BASE_DIR / "VN_Market" / "data" / "vn_forensic_audit.json")
             summary_f = forensic_data.get("summary", {})
             clean_cnt = summary_f.get("clean_count", 45)
@@ -411,7 +420,8 @@ def execute_milestone(milestone_id: str) -> bool:
                 "📡 *[BAN 2, BAN 3 & BAN 4 VN — HOÀN TẤT KIỂM TOÁN BCTC PHÁP Y & ĐỊNH LƯỢNG]*\n"
                 f"• Đã chạy `vn_bctc_analyzer`, `vn_forensic_accounting_engine`, `vn_audit_and_verify` & `vn_quant_portfolio` trên 54 mã.\n"
                 f"• Kết quả Pháp y BCTC: `{clean_cnt}` mã đạt chuẩn CLEAN, `{flag_cnt}` mã bị gắn cờ cảnh báo lợi nhuận giấy.\n"
-                "• Trạng thái danh mục: 100% TIỀN MẶT (20,167,119 ₫) — Top Tầm Ngắm Vòng 2 Đạt Chuẩn CLEAN: `HDB`, `MSH`, `BAF`, `IDC`.\n"
+                f"• SSOT thực tế: NAV `{ps_800['nav_str']}` | Tiền mặt `{ps_800['cash_str']}`.\n"
+                f"{ps_800['tg_positions']}\n"
                 f"📁 Báo cáo: `VN_Market/03_Synthesis_Memos/{date_str}_VN_Investment_Memo.md`\n"
                 "👉 Sẵn sàng chuyển giao dữ liệu sang Phiên Giao Ban 8h30!"
             )
@@ -438,7 +448,7 @@ def execute_milestone(milestone_id: str) -> bool:
         # 6. 08:45 - JAMES (MASTER CIO - BAN 8): CHẠY MASTER ALLOCATOR & BAN HÀNH BLOTTER
         # ==============================================================================
         elif milestone_id == "08:45":
-            _run_py_script("scripts/master_cio_allocator.py", args=["--capital-vnd", "20167119"], timeout=90)
+            _run_py_script("scripts/master_cio_allocator.py", timeout=90)
             snap = _get_live_portfolio_snapshot()
             ps = _format_portfolio_summary(snap)
             blotter_snap_file = BASE_DIR / "08_Master_Investment_CIO" / f"{date_str}_Master_Blotter_Snapshot.md"
@@ -639,14 +649,16 @@ def execute_milestone(milestone_id: str) -> bool:
                 log_event(f"[!] Warning James afternoon patrol: {e}")
 
             snap = _get_live_portfolio_snapshot()
+            ps_1515 = _format_portfolio_summary(snap)
             vn_learn = load_json_safe(BASE_DIR / "VN_Market" / "05_Learning_And_Evolution" / "vn_learning_telemetry.json")
-            hit_rate = vn_learn.get("overall_hit_rate_pct", 100.0)
+            hit_rate = vn_learn.get("overall_hit_rate_pct", 35.3)
 
             msg = (
                 "🏛️ *[BAN 5 & BAN 8 — BÁO CÁO HỒI TỐ WALK-FORWARD, TỰ HỌC & PHÚC TRA CUỐI NGÀY]*\n"
                 f"📅 Phiên giao dịch: `{date_str}` | Tài khoản: `105C307855`\n"
-                f"• Trạng thái kết phiên: **100% Tiền mặt (`0 CP`)** | Số dư TCBS: `{snap['cash_vnd']:,.0f} ₫` | Tổng NAV: `{snap['total_nav']:,.0f} ₫` (Lãi ròng Vòng 1 đã chốt: `+167,119 ₫`).\n"
-                f"• Walk-Forward Hit Rate: `{hit_rate:.1f}%` — Đã cập nhật trọng số `adaptive_weights_vn.json` và ghi biên bản sửa đổi vào Nhật ký Tiến hóa của Minh Quân & Alex.\n"
+                f"• SSOT kết phiên: Tổng NAV `{ps_1515['nav_str']}` | Tiền mặt `{ps_1515['cash_str']}`.\n"
+                f"{ps_1515['tg_positions']}\n"
+                f"• Walk-Forward Market Hit Rate: `{hit_rate:.1f}%` — Đã cập nhật trọng số `adaptive_weights_vn.json` và ghi biên bản sửa đổi thực chất vào Nhật ký Tiến hóa.\n"
                 f"📁 Báo cáo Tự học: `VN_Market/05_Learning_And_Evolution/{date_str}_VN_Learning_Report.md`\n"
                 f"📁 Biên bản Phúc tra EOD: `08_Master_Investment_CIO/eod_audit_logs/{date_str}_EOD_Master_Correction_Memo.md`"
             )
@@ -796,10 +808,12 @@ def execute_milestone(milestone_id: str) -> bool:
         # ==============================================================================
         elif milestone_id == "23:00":
             _run_py_script("scripts/eod_late_night_executive_council.py", timeout=90)
+            snap_23 = _get_live_portfolio_snapshot()
+            ps_23 = _format_portfolio_summary(snap_23)
             ledger_23 = load_json_safe(BASE_DIR / "08_Master_Investment_CIO" / "23h00_council_ledger.json")
             fin_snap = ledger_23.get("financial_snapshot", {})
             audit_sum = ledger_23.get("eod_audit_summary", {})
-            nav_v = fin_snap.get("total_nav_vnd", 20167119)
+            nav_v = fin_snap.get("total_nav_vnd", snap_23.get("total_nav", 20229522))
             nxt_day = ledger_23.get("next_trading_day", "Phiên kế tiếp")
             mq_act = audit_sum.get("minh_quan_corrective_action", "Tuân thủ kỷ luật Khung Giờ Vàng 14h00-14h25, lệnh LO.")
 
@@ -807,7 +821,8 @@ def execute_milestone(milestone_id: str) -> bool:
                 "🎖️ *[APEX MASTER CIO DESK — BIÊN BẢN HỘI NGHỊ 23H00 & TỰ KIỂM ĐIỂM 12 PHÒNG BAN]*\n"
                 f"Chủ tọa: **Master CIO James** | Ngày: `{date_str}`\n\n"
                 "1. **Điểm danh & Tự soi rọi**: Đầy đủ 12 phòng ban — Dựa vào đánh giá EOD để tự mổ xẻ lỗi sai và lập kế hoạch sửa sai bắt buộc.\n"
-                f"2. **Tài sản TCBS `105C307855`**: **100% Tiền mặt (`0 CP` nắm giữ)** | Tổng NAV thực tế: `{nav_v:,.0f} ₫` (Lãi ròng Vòng 1 đã thực nhận: `+167,119 ₫`).\n"
+                f"2. **Tài sản TCBS `105C307855`**: Tổng NAV `{nav_v:,.0f} ₫` | Tiền mặt `{ps_23['cash_str']}`.\n"
+                f"{ps_23['tg_positions']}\n"
                 f"3. **Chỉ thị kỷ luật cho {nxt_day}**: {mq_act}\n"
                 f"👉 Biên bản Hội nghị 23h00: `08_Master_Investment_CIO/{date_str}_23h00_EOD_Executive_Council_Meeting.md`\n"
                 f"👉 Báo cáo Tự kiểm điểm & Sửa sai 12 Ban: `05_Learning_And_Evolution/{date_str}_Departmental_Self_Criticism_Report.md`\n\n"

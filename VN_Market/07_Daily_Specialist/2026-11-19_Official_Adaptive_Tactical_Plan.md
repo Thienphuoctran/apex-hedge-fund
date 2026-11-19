@@ -1,56 +1,47 @@
-# 🎯 KẾ HOẠCH TÁC CHIẾN THÍCH NGHI — PHIÊN ĐÁO HẠN PHÁI SINH `VN30F1M` THỨ NĂM `19/11/2026`
-**Cơ quan ban hành:** Ban 7 VN (Minh Quân) — Phê duyệt bởi Ban 4 Risk, Master CIO James (Ban 8) & Kiểm sát Trọng (Ban 12)
-**Căn cứ Hội nghị:** `APEX-SUMMIT-20261119-0430` (`04:30 ICT 19/11/2026`)
-**Tài khoản thực thi:** TCBS `105C307855` — Chủ tịch Trần Quốc Thiên Phước (`0% Margin`)
+# 🎯 KẾ HOẠCH ĐẦU TƯ CHÍNH THỨC HÔM NAY (19/11/2026) — CƠ ĐỘNG THEO TỪNG PHIÊN
+> **Nguồn Tổng Hợp**: `Dữ liệu LIVE 09:43:43 19/11/2026 + Nghị quyết APEX-SUMMIT-20261119-0430 + SSOT TCBS 105C307855`  
+> **Cập Nhật Mới Nhất**: `2026-11-19 09:43:43 ICT` | **Trạng Thái**: `🟢 KẾ HOẠCH CHÍNH THỨC ĐANG TỰ ĐỘNG HIỆU CHỈNH LIVE (Phiên Sáng)`  
+> ⚡ **CƠ CHẾ TỰ ĐỘNG THÍCH NGHI**: KẾ HOẠCH THỰC CHIẾN CHÍNH THỨC NGÀY 19/11/2026 (SSOT: 100 MSH, 100 BAF • Cash 67.5%): Giữ kỷ luật mặc định 0đ qua đáo hạn VN30F1M, VETO HDB tới 20/11, Thứ Sáu khóa trần <= 45-55% NAV, mở công suất 70-85% NAV vào Thứ Hai–Tư tuần sau trên rổ 13k–22.5k (200–300 CP/mã).
 
 ---
 
-## 1. BỨC TRANH VỐN & DANH MỤC HIỆN HỮU (SSOT CHỐT SAU PHIÊN `18/11`)
-
-| Chỉ tiêu / Mã CP | Số lượng & Trạng thái | Giá vốn | Giá đóng cửa `18/11` | Giá trị / Lãi-Lỗ | Kế hoạch Kỷ luật Hôm nay (`19/11`) |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| **Tổng Tài sản (NAV)** | `0% Margin` | — | — | **`20,229,522 ₫`** | Trần tổng rủi ro tối đa toàn danh mục: `4.5% NAV = 910,328 ₫` |
-| **Tiền mặt (`Cash`)** | Sẵn sàng | — | — | **`13,594,522 ₫ (67.2%)`** | Mặc định giữ **`0 ₫` giải ngân mới**; ngoại lệ tối đa `1 lô <= 2.2M` |
-| **`MSH`** | `100 CP` (Khả dụng) | `34,510 ₫` | `35,200 ₫` | `3,520,000 ₫` (`+69,000 ₫ / +2.0%`) | `Trail Stop 34,600 ₫` \| `Hard Stop 33,090 ₫` \| `TP1 39,500 ₫` |
-| **`BAF`** | `100 CP` (`T+1`, về chiều `19/11`) | `31,209 ₫` | `31,150 ₫` | `3,115,000 ₫` (`-5,900 ₫ / -0.2%`) | Quan sát khi về tài khoản `13h00–13h45`; giữ `>= 30,800`, cắt nếu gãy `Hard Stop 30,050 ₫` \| `TP1 33,200 ₫` |
-| **`HDB`** | `0 CP` (Đã bán `22,050` chiều `18/11`) | — | `22,250 ₫` | — | **VETO TẠM THỜI `19/11`** (Đang chạy `hdb_post_exit_audit.yml` tới hết `20/11`, cấm Revenge Buy) |
-
-- **Rủi ro Hard Stop đang khóa trên `MSH + BAF`:** `211,000 ₫ + 110,000 ₫ = 321,000 ₫` (`1.59% NAV`).
-- **Ngân sách rủi ro còn lại dưới trần `4.5% NAV`:** `589,328 ₫` (`2.91% NAV`).
+## I. ĐỐI SOÁT TÀI SẢN THỰC TẾ LIVE (TCBS `105C307855`)
+- **Tổng Giá Trị Thị Trường Cổ Phiếu**: `6,550,000 ₫` (`-21,900 ₫` / `-0.33%` so với giá vốn)
+- **Tiền Mặt Khả Dụng**: `13,594,522 ₫` (`67.5% NAV`)
+- **Tổng Tài Sản Ròng Live (NAV)**: `20,144,522 ₫`
+- **Thị Trường Nền**: `VN-Index 1,698.09 (-0.29%)` • Độ rộng `43.0% xanh (101T/134G)` • Chế độ `⚖️ GIẰNG CO CHỌN LỌC TẦNG 2 (T+0 & LEADER)`
 
 ---
 
-## 2. XUNG LỰC TỪ PHIÊN MỸ & BCTC QUỐC TẾ (`04:23–04:25 ICT`)
+## II. KẾ HOẠCH HÀNH ĐỘNG THEO DANH MỤC & TẦM NGẮM BẮN TỈA
+### 1. Vị Thế Đang Nắm Giữ (Bảo Vệ Lãi Đệm & Chuẩn Bị T+0 / TP1)
+- **BAF**: Thị giá `30,850đ` | Stop `30,050đ` | TP1 `33,200đ` | Buy-Up `34.7%` — Đang giữ đệm lãi tốt (Buy-Up 34.7%), giữ nguyên kỷ luật kiểm định lúc 14h15 (cắt nếu đóng thủng Hard Stop).
+- **MSH**: Thị giá `34,650đ` | Stop `33,090đ` | TP1 `39,500đ` | Buy-Up `31.0%` — Cầu chủ động yếu (31.0%). Tuyệt đối không mua thêm; sẵn sàng chốt giữ lãi nếu kéo xanh yếu lực hoặc siết Stop 14h15.
 
-- **`^VIX` = `24.68 (-3.06%)` / AH `24.56`**: Hạ nhiệt từ đỉnh phiên `24.69` nhưng **chưa thủng `< 23.5`**; `.SPX = 7,323.55` (AH `7,323.63`) còn dưới `MA200 (7,340)`. Chế độ: **`Cautious High-Vol Rotation`**.
-- **BCTC `NVDA` (công bố `17/11 AMC`) & `PANW` (`18/11 AMC`):**
-  - `NVDA` Q3 FY27 doanh thu `$115.8B (+103% YoY)`, Data Center `$107.6B`, Q4 Guide `~$130B` — giá đóng `$150.96` (AH `$151.1932`) thuần túy do **chiết khấu chuyển giao CEO** (Jensen Huang từ chức `11/11`, CFO Colette Kress làm Interim CEO).
-  - `PANW` Q1 FY27 bứt phá **`+8.04%` After-Hours (`$367.25`)** với RPO `$21.0B` và NGS ARR `$9.73B (+66% YoY)`.
-- **Tác động chéo lên VN:** `VNM ETF` đóng `$16.70 (+0.18%)` và Russell 2000 `+0.52%` triệt tiêu nguy cơ hoảng loạn đầu phiên ATO. Ngược lại, `WTI` giảm **`-3.57%` (`$82.94`, AH `$83.12`)** tạo bất lợi ngắn hạn cho `BSR / PVD / GAS`, nhưng mở biên lợi nhuận cho **`PVT / GMD / BAF`**. `DXY 103.808` + `US10Y 5.068%` tiếp tục ghìm tỷ giá & dòng Ngân hàng.
+### 2. Mã Đạt Vùng Canh Mua LO Tiềm Năng (Thăm Dò Cơ Động Sau 14h00)
+- **HPG**: Giá `20,550đ` (Canh `21,040đ`, 1 lô `10.2% NAV`) | Buy-Up `62.4%` | Stop `20,150đ` | TP1 `22,670đ` — Đủ điều kiện theo dõi giải ngân 1 lô LO vùng 20,830–21,040đ trong Khung Giờ Vàng 14h00–14h25 (Stop 20,150đ).
 
----
-
-## 3. SỔ LỆNH ĐIỀU KIỆN `19/11/2026` (KHUNG GIỜ VÀNG `14:00 – 14:25`)
-
-> [!IMPORTANT]
-> **Quy tắc Cửa Kép Bắt Buộc:** Mặc định hôm nay là **`0 ₫` (Không giải ngân mới)**. Lệnh dưới đây **CHỈ** được phép bấm nút khi đồng thời đạt cả 3 tiêu chuẩn tại bảng điện lúc `14:00 – 14:25`:
-> 1. **Tỷ lệ Mua chủ động (`Buy-Up`) `>= 60%`**.
-> 2. **Độ rộng thị trường `>= 40–45%` số mã tăng điểm**.
-> 3. **Tín hiệu kỹ thuật VSA `No Supply` (cạn cung tại nền hỗ trợ) hoặc `Spring` rút chân thành công.**
-
-| Thứ tự | Mã CP | Khối lượng & Lệnh | Vùng Giá VPS `18/11` | Giá trị Lệnh (% NAV) | Hard Stop & Mất tối đa | TP1 (`R:R`) | Tổng Rủi ro Danh mục |
-| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **#1** | **`PVT`** | `100 CP` (`LO`) | `~19,000 ₫` | `1,900,000 ₫` (`9.39%`) | `17,700 ₫ (-6.84%)` / **`-130,000 ₫` (`0.64% NAV`)** | `21,600 ₫ (+13.68%)` / **`1:2.00`** | `451,000 ₫` (`2.23% NAV`) |
-| **#2 (Dự phòng)** | **`TCB`** | `100 CP` (`LO`) | `~20,750 ₫` | `2,075,000 ₫` (`10.26%`) | `19,300 ₫ (-6.99%)` / **`-145,000 ₫` (`0.72% NAV`)** | `23,650 ₫ (+13.98%)` / **`1:2.00`** | `466,000 ₫` (`2.30% NAV`) |
-
-- **Danh sách CẤM MUA (VETO) ngày `19/11`:** `HDB`, `BSR` (do `WTI -3.57%`), `FPT`, `DGC`, `MWG`, `FRT`, và các mã BĐS đòn bẩy cao.
-- **Lệnh cấm ATC (`14:30 – 14:45`):** Ngừng mọi thao tác mua/bán đuổi giá trong 15 phút ATC ngày đáo hạn `VN30F1M`.
+### 3. Nhóm Đang Chịu Áp Lực Cung (Cấm Bắt Đáy Sớm)
+- **OCB**: Giá `10,550đ` | Buy-Up `22.8%` — CẤM BẮT ĐÁY SỚM! Chỉ xem xét lại khi Buy-Up phục hồi >= 58% quanh vùng 10,650đ sau 14h00.
+- **IDC**: Giá `33,800đ` | Buy-Up `26.5%` — CẤM BẮT ĐÁY SỚM! Chỉ xem xét lại khi Buy-Up phục hồi >= 58% quanh vùng 34,600đ sau 14h00.
+- **TCH**: Giá `13,150đ` | Buy-Up `32.9%` — CẤM BẮT ĐÁY SỚM! Chỉ xem xét lại khi Buy-Up phục hồi >= 58% quanh vùng 13,350đ sau 14h00.
+- **MBB**: Giá `18,650đ` | Buy-Up `33.7%` — CẤM BẮT ĐÁY SỚM! Chỉ xem xét lại khi Buy-Up phục hồi >= 58% quanh vùng 19,140đ sau 14h00.
 
 ---
 
-## 4. LỊCH HÀNH ĐỘNG THEO 4 KHUNG GIỜ
+## III. LỘ TRÌNH 6 KHUNG GIỜ TÁC CHIẾN TRONG NGÀY (19/11/2026)
+| Khung Giờ (ICT) | Pha Tác Chiến | Hành Động Cơ Động Của Ban 7 VN & Ban 9 |
+| :---: | :--- | :--- |
+| `08:30 – 09:00` | **PRE-ATO GIAO BAN & ĐỐI SOÁT QUA ĐÊM** | Minh Quân & Victor đối soát Phố Wall (^VIX 24.56 / ES=F 7,372.50 / WTI -3.36%), khóa ngưỡng bảo vệ vị thế SSOT. |
+| `09:00 – 10:00` | **ATO & KỶ LUẬT CẤM FOMO ĐẦU PHIÊN ⚡ [ĐANG CHẠY LIVE]** | TUYỆT ĐỐI KHÔNG mua đuổi giá xanh ATO (ngày đáo hạn VN30F1M). Đo Buy-Up thật và tránh bẫy kê lệnh ảo. |
+| `10:00 – 11:30` | **BẢO VỆ LÃI ĐỆM & QUAN SÁT ĐỘ RỘNG** | Giám sát vị thế hiện hữu: BAF (Thị giá 30,850đ, Stop 30,050đ, TP1 33,200đ); MSH (Thị giá 34,650đ, Stop 33,090đ, TP1 39,500đ). Khóa Trailing Stop bảo vệ MSH tại 34,600đ / Hard Stop 33,090đ. |
+| `11:30 – 13:00` | **TỔNG KẾT PHIÊN SÁNG & CẬP NHẬT KỊCH BẢN CHIỀU** | Đánh giá độ rộng, thanh khoản sáng và xác nhận điều kiện cho Khung Giờ Vàng chiều. |
+| `13:00 – 13:45` | **HẤP THỤ HÀNG T+2.5 & CHÀO ĐÓN BAF VỀ TÀI KHOẢN** | Theo dõi 100 CP BAF về tài khoản (giữ nếu >= 30,800đ, cắt nếu gãy 30,050đ) và kiểm tra lực hấp thụ toàn thị trường. |
+| `14:00 – 14:45` | **⭐ KHUNG GIỜ VÀNG CỬA KÉP & CẤM ATC** | Mặc định 0đ (giữ 67.2% Cash); ngoại lệ chỉ bấm 100 CP PVT (~19,000đ) hoặc TCB (~20,750đ) lúc 14h00–14h25 khi Buy-Up >= 60% + Breadth >= 40-45%. CẤM lệnh ATC từ 14h30; Thứ Sáu khóa trần <= 45-55% NAV; sang Thứ Hai–Tư tuần sau mở 70-85% NAV rổ 13k–22.5k. |
 
-1. **`09:00 – 10:00`:** Tắt nút Mua. Để thị trường tiêu hóa cung-cầu ATO và biến động đáo hạn quanh `1,698–1,708`.
-2. **`10:00 – 11:30`:** Giám sát vị thế **`MSH`** (`Trail Stop 34,600 ₫`, `Hard Stop 33,090 ₫`, `TP1 39,500 ₫`).
-3. **`13:00 – 14:00`:** Kiểm tra **`100 CP BAF`** về tài khoản khả dụng. Xử lý dứt khoát nếu vi phạm `Hard Stop 30,050 ₫`; tiếp tục nắm giữ nếu giữ nền `>= 30,800 ₫`.
-4. **`14:00 – 14:25`:** Đánh giá 3 tiêu chuẩn Cửa Kép. Đạt 3/3 ➔ Nhập **`LO 100 CP PVT`** (hoặc `TCB` nếu nhóm Ngân hàng dẫn sóng rõ). Thiếu dù chỉ 1 tiêu chuẩn ➔ Giữ **`0 ₫`**, bảo toàn `13,594,522 ₫` Tiền mặt.
+---
+
+## IV. 3 KỊCH BẢN PHẢN ỨNG CƠ ĐỘNG THEO DIỄN BIẾN BẢNG ĐIỆN
+- **Kịch Bản A: Đồng Thuận Dòng Tiền (Cửa Kép Mở Khóa 14h00–14h25)**: Điều kiện `Độ rộng >= 45% mã xanh, Buy-Up >= 60%, xuất hiện nến VSA No Supply / Spring.` ➔ Giữ vị thế SSOT (100 MSH, 100 BAF); hôm nay đáo hạn 19/11 chỉ mở tối đa 1 lô thăm dò (PVT ~19k hoặc TCB ~20.75k); Thứ Sáu giữ <= 55% NAV; sang Thứ Hai–Tư tuần sau mở công suất 70–85% NAV (200–300 CP/mã vùng 13k–22.5k).
+- 🟢 **[ĐANG KÍCH HOẠT]** **Kịch Bản B: Giằng Co Phân Hóa / Phòng Thủ Đáo Hạn (Thận Trọng)**: Điều kiện `VN-Index đi ngang (1,698.09 • -0.29%), Độ rộng: 43.0% xanh (101T/134G).` ➔ Áp dụng mặc định 0đ giải ngân mới (giữ 13,594,522đ Cash = 67.5% NAV); bảo vệ MSH (Trail 34,600đ / Hard 33,090đ) & BAF (Hard 30,050đ). VETO HDB tới hết 20/11.
+- **Kịch Bản C: Đảo Chiều Bán Tháo / Phòng Thủ Khẩn**: Điều kiện `VN-Index giảm >= -0.8% hoặc Độ rộng <= 32% hoặc MSH/BAF vi phạm Hard Stop.` ➔ KHÓA 100% lệnh mua mới; cắt dứt khoát vị thế vi phạm Hard Stop; bảo toàn tiền mặt >= 67% – 85% NAV.

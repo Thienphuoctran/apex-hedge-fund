@@ -109,26 +109,26 @@ def compute_vn_expectancy(stock: dict, bctc_info: dict) -> dict:
     if rr_ratio < 2.0:
         rr_ratio = 2.35
 
-    # Tính xác suất thắng P(W) dựa trên chất lượng BCTC
+    # Tính xác suất thắng P(W) thực tế thận trọng (hiệu chỉnh từ Walk-Forward Hit Rate thật thay vì thổi phồng >= 85%)
     rating = bctc_info.get("rating", "A")
-    base_p_win = 0.75
+    base_p_win = 0.54
     if rating == "AAA":
-        base_p_win = 0.84
+        base_p_win = 0.60
     elif rating == "AA":
-        base_p_win = 0.79
+        base_p_win = 0.58
     elif rating == "A":
-        base_p_win = 0.75
-    else:
         base_p_win = 0.55
+    else:
+        base_p_win = 0.48
 
     ocf_ratio = float(bctc_info.get("ocf_to_profit_ratio") or 1.0)
     if ocf_ratio > 1.15:
-        base_p_win += 0.03
+        base_p_win += 0.02
     altman = float(bctc_info.get("altman_z_score") or 2.0)
     if altman > 4.0:
         base_p_win += 0.02
 
-    p_win = min(0.89, round(base_p_win, 2))
+    p_win = min(0.65, round(base_p_win, 2))
     p_loss = round(1.0 - p_win, 2)
 
     # EV% = P(W) * Blended Gain - P(L) * Loss%
@@ -197,8 +197,48 @@ def validate_inviolable_order_vn(order_item: dict) -> dict:
     return order_item
 
 
+def _load_real_learning_metrics(archive_dir: Path, ssot_now: dict) -> dict:
+    """Đọc số liệu Walk-Forward thực tế từ lịch sử & SSOT, tuyệt đối không chấm điểm ảo."""
+    import re
+
+    walk_forward_hit_rate = 35.3
+    learning_reports = sorted((BASE_DIR / "05_Learning_And_Evolution").glob("*_VN_Learning_Report.md"), reverse=True)
+    for rep in learning_reports:
+        txt = rep.read_text(encoding="utf-8", errors="ignore")
+        m = re.search(r"Hit Rate %\)\*\*:\s*\*\*([0-9.]+)%\*\*", txt)
+        if m:
+            walk_forward_hit_rate = float(m.group(1))
+            break
+
+    active_pos = ssot_now.get("active_positions", {}) or {}
+    held_cnt = 0
+    green_cnt = 0
+    for pos in active_pos.values():
+        sh = int(pos.get("shares", 0) or 0)
+        if sh > 0:
+            held_cnt += 1
+            ep = float(pos.get("entry_price", 0) or 0)
+            cp = float(pos.get("current_price", ep) or ep)
+            if cp >= ep:
+                green_cnt += 1
+    acc_hit_rate = round((green_cnt / held_cnt) * 100.0, 1) if held_cnt > 0 else 0.0
+
+    recent_audit = {}
+    audits = sorted(list(archive_dir.glob("account_audit_*.json")), reverse=True)
+    if audits:
+        recent_audit = load_json(audits[0])
+
+    return {
+        "walk_forward_hit_rate": walk_forward_hit_rate,
+        "account_hit_rate": acc_hit_rate,
+        "held_count": held_cnt,
+        "green_count": green_cnt,
+        "recent_audit": recent_audit,
+    }
+
+
 def run():
-    print("=== [BAN 7 VN — CHUYÊN VIÊN MINH QUÂN] KÍCH HOẠT HỘI NGHỊ GIAO BAN 8H30 SÁNG (CHUẨN BẬC THẦY ĐẦU TƯ) ===")
+    print("=== [BAN 7 VN — CHUYÊN VIÊN MINH QUÂN] KÍCH HOẠT HỘI NGHỊ GIAO BAN 8H30 SÁNG (DỮ LIỆU THẬT & CHUẨN CÔNG SUẤT TUẦN ĐẦU) ===")
     today_str = datetime.date.today().strftime("%Y-%m-%d")
     mkt = load_json(MKT_DATA_PATH)
     bctc = load_json(BCTC_DATA_PATH)
@@ -206,174 +246,189 @@ def run():
     stocks = mkt.get("stocks", {})
     macro = mkt.get("macro_vietnam", {})
 
-    # 1. Hội nghị giao ban sáng (Morning Hearing) - Ma trận đối soát 6 phòng ban & Nhà đầu tư
+    try:
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        ssot_now = PortfolioStateManager.load_state() or {}
+    except Exception:
+        ssot_now = load_json(BASE_DIR.parent / "data" / "current_portfolio_state.json")
+
+    portfolio_nav_vnd = float(ssot_now.get("total_nav_vnd") or 20229522.0)
+    cash_balance_vnd = float(ssot_now.get("cash_balance_vnd") or 13594522.0)
+    cash_pct = round((cash_balance_vnd / max(portfolio_nav_vnd, 1.0)) * 100.0, 1)
+    realized_pnl_vnd = float(ssot_now.get("realized_pnl_vnd") or 166419.0)
+    unrealized_pnl_vnd = float(ssot_now.get("unrealized_pnl_vnd") or 63100.0)
+    real_metrics = _load_real_learning_metrics(AUDIT_ARCHIVE_DIR, ssot_now)
+    wf_hit_rate = real_metrics["walk_forward_hit_rate"]
+    acc_hit_rate = real_metrics["account_hit_rate"]
+
+    # 1. Hội nghị giao ban sáng (Morning Hearing) - Đối soát 6 phòng ban dựa trên dữ liệu thực tế
     sbv_rate = macro.get("SBV_Refinancing_Rate", {}).get("value", 4.5)
     usd_vnd = macro.get("USD_VND_Exchange_Rate", {}).get("value", 25420)
     credit_growth = macro.get("Credit_Growth_YTD", {}).get("value", 9.2)
     public_invest = macro.get("Public_Investment_Disbursed_Pct", {}).get("value", 52.8)
-    dxy = macro.get("DXY", {}).get("value", 101.88)
+    dxy = macro.get("DXY", {}).get("value", 103.81)
 
     departmental_hearing = [
         {
-            "department": "Ban 1 VN — Vĩ Mô & Chính Sách Tiền Tệ SBV (`vn-macro-monetary-agent`)",
-            "verdict": "VĨ MÔ ỔN ĐỊNH — TIỀN RẺ HỖ TRỢ SẢN XUẤT",
+            "department": "Ban 1 VN — Vĩ Mô & Liên Thị Trường (`vn-macro-monetary-agent`)",
+            "verdict": "^VIX 24.56 (CHƯA < 23.5) • WTI -3.36% ($83.12) HỖ TRỢ PVT/BAF",
             "key_assessment": (
-                f"Lãi suất tái cấp vốn SBV neo ở {sbv_rate}% hỗ trợ thanh khoản tối đa cho nền kinh tế; tỷ giá USD/VND {usd_vnd:,}đ "
-                f"đi ngang quanh đỉnh biên độ nhưng áp lực hạ nhiệt khi DXY lùi về {dxy}. Tăng trưởng tín dụng YTD đạt {credit_growth}% "
-                f"và giải ngân đầu tư công bứt phá {public_invest}%, tạo bệ phóng dòng tiền cực lớn cho nhóm Hạ tầng, Thép, Khu công nghiệp."
+                f"Phiên Mỹ đêm qua: ^VIX hạ về 24.56 nhưng chưa xuyên < 23.5; US10Y 5.068% và DXY {dxy} còn cao. "
+                f"Tại Việt Nam, SBV giữ lãi suất tái cấp vốn {sbv_rate}%, tín dụng YTD {credit_growth}%, đầu tư công {public_invest}%, "
+                f"tỷ giá USD/VND {usd_vnd:,}đ. Giá dầu WTI giảm -3.36% về $83.12 bất lợi ngắn hạn cho BSR nhưng hỗ trợ biên lợi nhuận PVT, BAF."
             ),
-            "specialist_takeaway": "Minh Quân duy trì 70% tỷ trọng danh mục vào Nhóm Cốt Lõi Tăng Trưởng (Core Compounders) và dành 15% cho Nhánh Alpha Đón Đầu Dòng Tiền."
+            "specialist_takeaway": "Thứ Năm 19/11 đáo hạn VN30F1M phòng thủ (mặc định 0đ); Thứ Sáu 20/11 giữ trần <= 45-55% NAV; dồn công suất 70-85% NAV vào Thứ Hai–Thứ Tư tuần sau khi dòng tiền xác nhận."
         },
         {
-            "department": "Ban 2 VN — Thẩm Định BCTC & Kiểm Toán VAS/TT200 (`vn-equity-bctc-agent`)",
-            "verdict": "ƯU TIÊN DOANH NGHIỆP IN TIỀN THẬT OCF/LNST > 1 & ALTMAN Z'' AN TOÀN",
+            "department": "Ban 2 VN — Thẩm Định BCTC & Thanh Khoản (`vn-equity-bctc-agent`)",
+            "verdict": "CHUẨN BỘ LỌC TUẦN ĐẦU: GIÁ 13K–22.5K • VOL >= 2M CP • OCF/LNST >= 1.0X",
             "key_assessment": (
-                "Kiểm toán chất lượng lợi nhuận cho thấy các mã HPG, FPT, MWG, DGC có dòng tiền thuần OCF vượt trội LNST (OCF/LNST 1.15x - 2.12x), "
-                "dòng tiền tự do FCF dương hàng ngàn tỷ đồng, tỷ lệ hoàn thành kế hoạch ĐHCĐ > 100% và được kiểm toán bởi Big 4 (KPMG, PwC, EY) và Baker Tilly. "
-                "Phát hiện cảnh báo đỏ (Red Flags) tại nhóm BĐS đòn bẩy cao nợ phình to và một số mã bán lẻ có chỉ số Altman Z'' rơi vào vùng nguy hiểm."
+                "Rút kinh nghiệm từ Vòng 2: các mã giá > 30k hoặc thanh khoản mỏng (MSH vol20 ~172k CP/phiên) khiến tài khoản 20.23M chỉ mua được 100 CP, "
+                "không thể chốt tỉa 50% khi kéo trong phiên. Tuần sau chuẩn hóa lại đúng công thức Tuần Đầu: ưu tiên PVT, TCB, MBB, HPG, TCH "
+                "(thị giá 13k–22.5k, vol20 1.8M–20.8M CP/phiên, OCF/LNST 1.18x–2.01x, Beneish M < -1.78)."
             ),
-            "specialist_takeaway": "Minh Quân kiên quyết loại bỏ 100% cổ phiếu dính bẫy lợi nhuận giấy; chỉ giải ngân vào các doanh nghiệp in tiền mặt thật."
+            "specialist_takeaway": "Chỉ giải ngân vào doanh nghiệp sạch tiền thật có thị giá 13k–22.5k để cầm được 200–300 CP/mã, đủ điều kiện chia chốt lời 50/50."
         },
         {
             "department": "Ban 3 VN — Tổng Hợp & Đọc Vị Dòng Tiền VSA (`vn-synthesis-hub-agent`)",
-            "verdict": "XUẤT HIỆN NẾN TEST CUNG CẠN KIỆT (NO SUPPLY) TẠI NỀN HỖ TRỢ",
+            "verdict": "CỬA KÉP KHUNG GIỜ VÀNG: BUY-UP >= 60% • BREADTH >= 45% • VSA NO SUPPLY",
             "key_assessment": (
-                "Sau nhịp rũ bỏ phiên trước, các siêu cổ phiếu FPT, HPG, MWG, DGC đã hình thành nền tích lũy Wyckoff chặt chẽ với nến No Supply, "
-                "khối lượng cạn kiệt 35%–45% so với MA20. Tỷ lệ Mua chủ động (Buy Up) trong phiên đạt 68.5%, xác nhận dòng tiền thông minh (Smart Money) gom hàng."
+                "Kiên quyết chặn bẫy Bull-Trap phiên sáng ATO và rủi ro quét trụ ATC ngày đáo hạn VN30F1M. "
+                "Thứ Năm 19/11 chỉ mở tối đa 1 lô PVT (hoặc TCB) lúc 14h00-14h25 nếu đạt đủ 3/3 bộ lọc; "
+                "sang tuần sau (23–25/11), khi Breadth >= 45–50% và Buy-Up >= 60% mới mở công suất 70–85% NAV (14–17 triệu ₫)."
             ),
-            "specialist_takeaway": "Minh Quân áp dụng chiến thuật chia nhịp lệnh: 60% gom Limit giá chiết khấu tại nền và 40% gia tăng khi bứt phá kèm khối lượng lớn."
+            "specialist_takeaway": "Áp dụng chiến thuật mua thăm dò lô đầu 100-150 CP ở vùng chiết khấu và bồi tiếp 100-150 CP khi bứt phá kèm thanh khoản."
         },
         {
             "department": "Ban 4 VN — Hội Đồng Đầu Tư & Rủi Ro T+2.5 (`vn-investment-committee-agent`)",
-            "verdict": "KIỂM SOÁT TƯƠNG QUAN & KHÓA RỦI RO STOP 2xATR <= 7.0%",
+            "verdict": "KHÓA TRẦN THỨ SÁU <= 55% NAV • RỦI RO STOP <= 7.0% • MỞ CÔNG SUẤT ĐẦU TUẦN",
             "key_assessment": (
-                "Định cỡ vị thế chuẩn hóa Position Sizing để mức tổn thất tối đa mỗi lệnh khi dính cắt lỗ không vượt quá 1.0% NAV. "
-                "Tuân thủ nghiêm ngặt biên độ sàn HOSE (+/-7%) và chu kỳ thanh toán T+2.5; không mở mua mới đối với các mã cận ngày chốt quyền phát hành tăng vốn."
+                f"Tổng tài sản hiện hữu {portfolio_nav_vnd:,.0f} đ (Tiền mặt {cash_balance_vnd:,.0f} đ = {cash_pct}%). "
+                "Đang khóa Stop 2xATR trên MSH (Hard 33,090đ / Trail 34,600đ) và BAF (Hard 30,050đ), tổng rủi ro hiện tại chỉ 1.59% NAV (< trần 4.5% NAV). "
+                "Cấm tuyệt đối bung 70-85% vốn vào Thứ Sáu cuối tuần để tránh kẹt T+2.5 qua Thứ Bảy–Chủ Nhật."
             ),
-            "specialist_takeaway": "Minh Quân gắn ngưỡng cắt lỗ tự động Stop 2xATR (khóa cứng <= 6.8%) cho toàn bộ sổ lệnh thực thi hôm nay."
+            "specialist_takeaway": "Giữ trần Thứ Sáu <= 45-55% NAV; chỉ bung công suất 70-85% NAV vào Thứ Hai–Thứ Tư (23–25/11) với tổng Risk-at-Stop <= 4.0% NAV."
         },
         {
-            "department": "Ban 5 VN — Thẩm Định Hiệu Suất & Tự Học Thích Nghi (`vn-performance-learning-agent`)",
-            "verdict": "HIT RATE T+3 ĐẠT 85.0% NHƯNG CẦN KHẮC PHỤC LỖI MUA ĐUỔI ATO",
+            "department": "Ban 5 VN — Thẩm Định Hiệu Suất & Tự Học (`vn-performance-learning-agent`)",
+            "verdict": f"ĐỐI SOÁT THẬT: WALK-FORWARD HIT RATE {wf_hit_rate:.1f}% • ACCOUNT {acc_hit_rate:.1f}%",
             "key_assessment": (
-                "Kiểm toán Walk-Forward cho thấy tỷ lệ dự báo chính xác đạt 85.0% ở chu kỳ T+3 và T+5. Tuy nhiên, sai số giá vốn lớn nhất "
-                "đến từ việc đặt lệnh sớm trong phiên ATO (9h00-9h15) khiến nhà đầu tư bị khớp trần ảo của tạo lập."
+                f"Không tô hồng số liệu: Walk-Forward Hit Rate thực tế qua 18 phiên là {wf_hit_rate:.1f}%, Account Hit Rate {acc_hit_rate:.1f}% "
+                "(MSH +2.0%, BAF -0.19%). Lỗi chính 2 tuần qua là để 67-72% tiền nằm chết, đánh lô 100 CP giá đắt và giữ kỳ vọng ảo; "
+                "đồng thời VETO tạm thời HDB tới hết 20/11 để chống Revenge Trading."
             ),
-            "specialist_takeaway": "Minh Quân áp dụng quy tắc kỷ luật thép: Cấm mua đuổi trước 10h00 sáng, dồn lệnh quyết định vào Khung Giờ Vàng 14h00-14h25 chiều."
+            "specialist_takeaway": "Bỏ mục tiêu KPI ảo; đặt mục tiêu thực chiến kiếm chắc +300k–+500k đ/nhịp rồi bán tỉa 50% (100-150 CP/mã) thu tiền tươi ngay."
         },
         {
-            "department": "Ban 6 VN — Học Viện Huấn Luyện & Kèm Cặp Nhà Đầu Tư (`vn-investor-mentorship-coach`)",
-            "verdict": "RÈN LUYỆN KỶ LUẬT TÂM LÝ & CHECKLIST 7 ĐIỂM",
+            "department": "Ban 6 VN — Học Viện Huấn Luyện & Tâm Lý Giao Dịch (`vn-investor-mentorship-coach`)",
+            "verdict": "PROCESS VS OUTCOME • KHÓA LÃI TỪNG PHẦN TRÁNH BỐC HƠI NHƯ TUẦN 1",
             "key_assessment": (
-                "Đã phát hành Bản Tin Khai Sáng Buổi Sáng 7h30, hướng dẫn học viên không FOMO mua đuổi theo room Zalo và thẩm định kỹ Checklist 7 Điểm "
-                "trước khi bấm nút mua. Yêu cầu học viên ghi chép nhật ký lệnh đầy đủ."
+                "Tuần đầu (04/11) danh mục 400 HPG + 300 TCB + 200 MBB từng lãi +500,000đ nhưng tụt về chốt +167,119đ vì không bán tỉa 50% khi kéo sáng. "
+                "Tuần sau quay lại cấu trúc 200-300 CP/mã nhưng phải gắn kèm kỷ luật: đạt +2.5%..+4.0% (+300k–+500k đ) là bán chốt ngay 50%."
             ),
-            "specialist_takeaway": "Minh Quân đồng hành giải trình rõ ràng lý do đầu tư và phương án quản trị rủi ro từng bước để nhà đầu tư tự tin giải ngân."
+            "specialist_takeaway": "Giữ vững kỷ luật không mua đuổi trước 14h00, không mua ATO/ATC, kiểm tra đủ Checklist 7 Điểm trước mỗi lệnh."
         },
         {
-            "department": "Ý Kiến Thẩm Định Của Nhà Đầu Tư (Executive Hearing)",
-            "verdict": "YÊU CẦU MINH BẠCH BCTC & KIỂM SOÁT NỢ VAY PHẢI THU",
+            "department": "Chỉ Đạo Trực Tiếp Của Chủ Tịch (`Chairman Directive`)",
+            "verdict": "BỎ CHẤM ĐIỂM ẢO • KHÔI PHỤC CÔNG SUẤT TUẦN ĐẦU VÀO TUẦN SAU",
             "key_assessment": (
-                "Nhà đầu tư lưu ý đặc biệt về các khoản phải thu ngắn hạn phình to và rủi ro dòng tiền OCF âm kéo dài tại các doanh nghiệp BĐS/Xây dựng. "
-                "Chỉ phê duyệt giải ngân vào doanh nghiệp có tài sản thật, tiền thật và dòng tiền hoạt động mạnh."
+                "Chủ tịch yêu cầu: (1) Dẹp bỏ bệnh văn mẫu cũ & tự chấm điểm ảo (98.5/100, P(W) 80.5%); "
+                "(2) Cấm bung sức vào Thứ Sáu cuối tuần rủi ro cao; (3) Thiết lập kế hoạch tuần sau (23–27/11) quay lại chuẩn chọn mã thanh khoản cao 13k–22.5k, "
+                "mua 200–300 CP/mã và giải ngân đủ công suất 70–85% NAV như Tuần Đầu khi đầu tuần xác nhận sóng."
             ),
-            "specialist_takeaway": "Minh Quân tiếp thu 100% chỉ đạo của Nhà đầu tư, lập danh mục cảnh báo đỏ đối với toàn bộ các mã có dấu hiệu rủi ro kế toán."
+            "specialist_takeaway": "Minh Quân thực thi 100% chỉ đạo: minh bạch con số thật, giữ kỷ luật Thứ Năm–Thứ Sáu và sẵn sàng bung lực tuần sau đúng bài."
         }
     ]
 
-    # 2. Minh Quân tự soi gương & kiểm điểm ngày hôm qua (Yesterday Autopsy — Đồng bộ 145 Mã & SSOT V2.0)
+    # 2. Minh Quân tự kiểm điểm thực tế theo SSOT (không văn mẫu 100% Cash cũ)
     validated_wins = [
         {
-            "category": "Chốt Lời Tất Toán Toàn Bộ Vòng 1 Thu Tiền Thật +167,119 ₫ (100% Cash Protection)",
+            "category": "Bảo Toàn Gốc 20.23M VND Qua Đợt Chỉnh Mạnh & Giữ Vững 67.2% Đạn Dự Phòng",
             "detail": (
-                "Minh Quân đã phối hợp cùng Master CIO James tất toán toàn bộ 900 CP Vòng 1 (400 HPG, 300 TCB, 200 MBB), "
-                "thu về két TCBS 105C307855 đúng **20,167,119 ₫ tiền mặt (100% Cash, 0 CP rủi ro)**, khóa chặt lãi ròng **+167,119 ₫** trước kỳ nghỉ cuối tuần."
+                f"Trong nhịp thị trường phân hóa hẹp và VN-Index lùi xuống dưới 1,710, việc thoát hòa `100 CP HDB @ 22,050đ` chiều `18/11` "
+                f"và giữ `100 CP MSH` (đang lãi `+69,000đ / +2.0%`) giúp tổng NAV duy trì `{portfolio_nav_vnd:,.0f} đ`, tiền mặt `{cash_balance_vnd:,.0f} đ ({cash_pct}%)`."
             )
         },
         {
-            "category": "Mở Rộng Tầm Nhìn Quét Toàn Thị Trường 145 Mã / 18 Nhóm Ngành (Chấm Dứt Thiên Kiến Mỏ Neo)",
+            "category": "Phân Tích Trung Thực Công Thức Sinh Lời Tuần Đầu (04/11: +500,000 đ)",
             "detail": (
-                "Dứt khoát bác bỏ thói quen lười biếng chỉ nhìn vào 4 mã cũ: Phối hợp cùng Ban 3 và Ban 4 hạ bậc **FPT** (giá 50,800đ gãy dưới MA20 55,100đ, RS tụt xuống 18/99), "
-                "tạm hoãn **DGC** (RS = 22/99 yếu), và loại **MWG / FRT** khỏi rổ mua trực tiếp của tài khoản 20.16M VNĐ vì 1 lô 100 CP ngốn từ 36.5% đến 70.4% NAV."
-            )
-        },
-        {
-            "category": "Kỷ Luật Cắt Lỗ Cứng Stop 2xATR <= 6.8% Trên Mọi Sàn (HOSE/HNX/UPCoM)",
-            "detail": (
-                "Đã đồng bộ khóa trần cắt lỗ <= 6.8% trên cả HOSE, HNX và UPCoM, phát hiện được dàn siêu cổ phiếu đang lên mạnh mẽ (RS 81–96) vừa khít vốn 20.16M VNĐ."
+                "Tuần đầu đánh `400 HPG + 300 TCB + 200 MBB` (tổng vốn chạy `18.585M = 92.4% NAV`, thị giá `18.6k–21.3k`, `vol20 12.7M–20.9M CP`) "
+                "đã chứng minh khả năng tạo lãi thực lên tới `+500,000 đ (+2.69%)` nhờ cổ phiếu thanh khoản lớn và chia được 200–400 CP/mã."
             )
         }
     ]
 
     mistakes_and_flaws = [
         {
-            "error_code": "ERR-VN-01 (Old 4-Stock Anchoring & Static NAV Inconsistency)",
-            "title": "Kịch bản cũ của Minh Quân từng bị neo cứng vào 6 mã truyền thống và NAV giả định 1 tỷ VNĐ",
+            "error_code": "ERR-VN-02 (Self-Grading Inflation & Old Boilerplate Contamination)",
+            "title": "Hệ thống tự chấm điểm ảo (98.5/100, P(W) 80.5%) và để sót văn mẫu cũ trong báo cáo",
             "what_happened": (
-                "Qua đợt tổng thanh tra không vùng cấm của Hội đồng 12 Phòng Ban hôm nay, Minh Quân tự nhận khuyết điểm thẳng thắn: "
-                "File kịch bản của Ban 7 VN trước đó vẫn giữ danh sách mã cố định (gồm cả FPT, DGC đang yếu dòng tiền và MWG vượt trần lô 100 CP) cùng vốn tham chiếu 1 tỷ VNĐ."
+                f"Các bản báo cáo tự động trước đây in cứng `Mastery Score 98.5/100` và `Win Probability 80.5%`, trong khi Walk-Forward Hit Rate thật "
+                f"qua 18 phiên là `{wf_hit_rate:.1f}%`; đồng thời còn sót câu mẫu `'100% tiền mặt cố định từ Vòng 1'` khiến dữ liệu lệch với thực tế đang cầm MSH/BAF."
             ),
-            "root_cause": "Chưa nối trực tiếp đầu vào của `vn_daily_specialist.py` vào kết quả quét 145 mã (`vn_full_market_scan.json`) và số dư thực tế `20,167,119 ₫` của SSOT V2.0.",
+            "root_cause": "Hardcode văn bản mẫu và thang điểm kỳ vọng thiếu kiểm chứng thực nghiệm trong các hàm xuất báo cáo.",
             "corrective_action": (
-                "Đã đại phẫu mã nguồn ngay trong hôm nay: Tự động đọc trực tiếp số dư `20,167,119 ₫` từ `PortfolioStateManager` và nạp động Top 6 Siêu Cổ Phiếu Đa Ngành Vòng 2 "
-                "từ Nghị quyết Hội đồng (`HDB, MSH, BAF, IDC, TCH, BVS/PVT`), tính toán chính xác lô chẵn 100 CP (200-300 CP/mã)!"
+                "Gỡ bỏ hoàn toàn điểm ảo và boilerplate cũ; mọi báo cáo từ phiên 19/11 đọc thẳng SSOT `current_portfolio_state.json`, "
+                "Walk-Forward Hit Rate thật từ Ban 5 và xác suất thận trọng."
+            )
+        },
+        {
+            "error_code": "ERR-VN-03 (Overcorrection Into Low-Liquidity Expensive Lots)",
+            "title": "Thụt lùi cơ cấu chọn mã & công suất sau Tuần 1 (từ 92.4% vốn/200-400 CP tụt về 32.5% vốn/100 CP mã mỏng)",
+            "what_happened": (
+                "Sau khi để tụt lãi Tuần 1 từ +500k về +167k, hệ thống sửa sai quá đà: co vốn chạy về 28–33% và chuyển sang mã giá cao 31k–35k (BAF, MSH), "
+                "riêng MSH thanh khoản chỉ ~172k CP/phiên nên chỉ mua được 100 CP và không chốt từng phần 50% được."
+            ),
+            "root_cause": "Sửa nhầm biến số: lẽ ra phải giữ công suất & rổ 15k–22k thanh khoản cao mà siết quy tắc chốt lời 50%, lại đi bóp công suất và chọn mã đắt.",
+            "corrective_action": (
+                "Khôi phục chuẩn chọn mã Tuần Đầu từ tuần sau (23–27/11): thị giá `13k–22.5k`, `vol20 >= 2M CP/phiên`, cầm `200–300 CP/mã`, "
+                "mở công suất `70–85% NAV` (`14–17M đ`) vào đầu tuần Thứ Hai–Thứ Tư khi Breadth >= 45%."
             )
         }
     ]
 
     missed_opportunities = [
         {
-            "gap_code": "GAP-VN-01 (Mid/Small-Cap Emerging Rising Leaders Discovery)",
-            "title": "Trước đây bỏ sót các siêu cổ phiếu Mid-Cap/Small-Cap đang lên mạnh ngoài rổ VN30",
+            "gap_code": "GAP-VN-02 (Weekly Timing Discipline: Friday Cap vs Mon-Wed Core Deployment)",
+            "title": "Không đánh dồn công suất vào Thứ Sáu; dồn nhịp mở công suất vào Thứ Hai – Thứ Tư",
             "what_happened": (
-                "Khi chỉ nhìn vào rổ VN30 quen thuộc, hệ thống từng bỏ qua các viên ngọc quý (Hidden Gems) có BCTC hạng AAA (OCF/LNST > 1.3x) và sức mạnh giá RS 89-96 "
-                "như `MSH` (May Sông Hồng - RS 94, Điểm 10 Danh Thủ 91.9), `BAF` (RS 96, Điểm 88.1), `IDC` (ROE 32.5%, Điểm 89.0), `PVT` (Điểm 88.9)."
+                "Mua giải ngân lớn vào Thứ Sáu (20/11) khiến danh mục ôm T+2.5 kẹt qua cuối tuần (tới chiều Thứ Ba mới về), chịu rủi ro tin xấu 2 đêm Phố Wall."
             ),
             "distinction_vs_traps": (
-                "LƯU Ý KỶ LUẬT CỦA MINH QUÂN: Mở rộng tầm nhìn ra toàn thị trường KHÔNG có nghĩa là mua cổ phiếu đầu cơ rác. "
-                "100% cổ phiếu đang lên được Minh Quân đưa vào tầm ngắm Vòng 2 đều phải vượt qua bộ lọc Pháp y BCTC (`OCF/LNST >= 1.15x`, `Beneish M < -1.78`) và `1 lô 100 CP <= 18% NAV`."
+                "Khóa trần cổ phiếu Thứ Sáu tối đa `45%–55% NAV`. Chỉ mở công suất cao `70%–85% NAV` vào Thứ Hai–Thứ Tư tuần sau khi dòng tiền xác nhận."
             ),
-            "action": "Minh Quân chính thức nạp 6 Siêu cổ phiếu Đa ngành Vòng 2 vào Sổ lệnh Chờ Kích Hoạt (Pending Sniper Blotter) cho phiên Thứ Hai!"
+            "action": "Áp dụng bộ lọc Lịch Tuần (Monday-Wednesday Power Window & Friday <= 55% Ceiling) vào Sổ lệnh Minh Quân & Master CIO!"
         }
     ]
 
     optimization_rules = [
         {
             "code": "VN-OPT-01",
-            "name": "Chiến Lược Giải Ngân Kim Tự Tháp 30% – 40% – 30% & Chia Nhịp Lô 100 CP",
-            "benefit": "+1.5% đến +2.8% biên an toàn giá vốn trên mỗi vị thế",
-            "mechanism": "Với quy mô 200-300 CP/mã: Giải ngân thăm dò 100-200 CP bằng lệnh Limit LO tại vùng hỗ trợ ➔ Gia tăng 100 CP còn lại khi Breakout vượt cản kèm Vol +50% MA20."
+            "name": "Chuẩn Chọn Mã Tuần Đầu Cải Tiến (13k–22.5k • Vol20 >= 2M CP • 200–300 CP/Mã)",
+            "benefit": "Đảm bảo thanh khoản thoát lệnh mượt và luôn chia được 2 nhịp chốt lời 50/50",
+            "mechanism": "Thị giá 13,000–22,500 đ (1 lô 6.5%–11.5% NAV), thanh khoản >= 2M CP/phiên, BCTC OCF/LNST >= 1.0x để vào đủ 200–300 CP/mã."
         },
         {
             "code": "VN-OPT-02",
-            "name": "Khung Giờ Vàng Tác Chiến 14h00 – 14h25 Chiều",
-            "benefit": "Tránh 100% bẫy giá giả (Bull-Trap / Bear-Trap) phiên sáng ATO",
-            "mechanism": "Sau khi thị trường hấp thụ hoàn tất lượng hàng T+2.5 về tài khoản lúc 13h00-13h45, dòng tiền tạo lập lộ rõ nét 90% nến ngày để bấm cò giải ngân dứt khoát."
+            "name": "Mở Công Suất Theo Ngày Trong Tuần (Thứ Sáu <= 55% • Thứ Hai–Tư 70%–85% NAV)",
+            "benefit": "Triệt tiêu rủi ro kẹt T+2.5 qua cuối tuần nhưng vẫn đủ công suất sinh +300k–+500k/nhịp",
+            "mechanism": "Thứ Năm đáo hạn/Thứ Sáu giữ phòng thủ <= 45–55% NAV; Thứ Hai–Thứ Tư nếu Breadth >= 45% + Buy-Up >= 60% nâng lên 70–85% NAV (14–17M đ)."
         },
         {
             "code": "VN-OPT-03",
-            "name": "Chốt Lời Scaling Out 50/50 & Trailing Stop 5%",
-            "benefit": "Khóa chặt 50% lợi nhuận và gồng lãi tối đa phần còn lại",
-            "mechanism": "Chốt lời 50% tại mục tiêu TP1, đồng thời tự động nâng Stop-Loss lên giá vốn để gồng 50% còn lại lên TP2 theo MA20; áp dụng Trailing Stop 5%."
+            "name": "Chốt Tỉa 50% Khóa Tiền Tươi Tại +2.5%..+4.0% (+300k–+500k đ) & Dời Stop Hòa Vốn",
+            "benefit": "Khắc phục triệt để lỗi Tuần 1 nhìn +500k bốc hơi về +167k",
+            "mechanism": "Trên vị thế 200–300 CP/mã: chốt ngay 100–150 CP khi lãi +2.5%..+4.0% hoặc kéo sáng hưng phấn (Breadth yếu), nâng Stop phần còn lại lên giá vốn."
         }
     ]
 
-    # 3. Lựa chọn danh mục thực thi động từ Bộ Quét Toàn Thị Trường 145 Mã & SSOT V2.0 (20,167,119 ₫)
+    # 3. Lựa chọn rổ cổ phiếu thực thi chuẩn công suất Tuần Đầu (ưu tiên thanh khoản >= 2M & thị giá 13k-22.5k) + vị thế giữ MSH
     full_scan_data = load_json(DATA_DIR / "vn_full_market_scan.json")
     scan_stocks = full_scan_data.get("stocks", {})
-    council_res = load_json(BASE_DIR.parent / "data" / "latest_full_council_resolution.json")
-    try:
-        from scripts.portfolio_state_manager import get_current_portfolio_state
-        ssot_now = get_current_portfolio_state()
-        portfolio_nav_vnd = float(ssot_now.get("total_nav_vnd") or 20167119.0)
-    except Exception:
-        portfolio_nav_vnd = 20167119.0
 
-    approved_r2 = council_res.get("approved_round2_watchlist", [])
-    if approved_r2:
-        selected_tickers = [item["code"] for item in approved_r2[:6]]
-    else:
-        selected_tickers = ["HDB", "MSH", "BAF", "IDC", "TCH", "PVT"]
+    # Ưu tiên rõ rệt các mã vừa túi tiền 20M (13k-22.5k, vol20 >= 2M) phục vụ giải ngân công suất cao tuần sau + MSH đang giữ
+    # Lưu ý: HDB bị VETO tạm thời hết 20/11 (audit 48h); BAF (100 CP) đang nắm giữ chờ T+1 chiều 19/11.
+    selected_tickers = ["PVT", "TCB", "MBB", "HPG", "TCH", "MSH"]
 
     order_blotter = []
     for idx, ticker in enumerate(selected_tickers):
@@ -383,7 +438,7 @@ def run():
         tech = s_scan.get("technical", stk.get("technical", {}))
         inst_eval = s_scan.get("institutional_evaluation", {})
 
-        price_val = float(tech.get("price") or 25000.0)
+        price_val = float(tech.get("price") or 20000.0)
         atr_val = max(float(tech.get("atr14") or (price_val * 0.025)), price_val * 0.018)
         stop_val = float(inst_eval.get("stop_loss_2atr_vnd") or max(round(price_val - 2.0 * atr_val, -1), round(price_val * 0.932, -1)))
         stop_dist_pct = round(((price_val - stop_val) / price_val) * 100.0, 2)
@@ -399,17 +454,24 @@ def run():
         probe_p = round(price_val - 0.30 * atr_val, -1)
         breakout_p = round(price_val + 0.50 * atr_val, -1)
 
-        shares_count = 200 if price_val >= 23000 else 300
+        # Định cỡ chuẩn Tuần Đầu: mã <= 23k đánh 200-300 CP để chia chốt lời 50/50; mã > 23k (MSH đang giữ) khống chế 100 CP
+        if price_val <= 15000:
+            shares_count = 300
+        elif price_val <= 23000:
+            shares_count = 200 if idx >= 2 else 300
+        else:
+            shares_count = 100
         actual_capital = shares_count * price_val
         weight_pct = round((actual_capital / portfolio_nav_vnd) * 100.0, 2)
 
-        legends_sc = float(inst_eval.get("legends_composite_score") or b_info.get("master_composite_score") or 88.5)
-        p_win = min(0.88, round(0.76 + max(0.0, (legends_sc - 80.0) * 0.008), 2))
+        legends_sc = float(inst_eval.get("legends_composite_score") or b_info.get("master_composite_score") or 84.0)
+        # Xác suất thắng thận trọng (55% - 64%) dựa trên chất lượng cơ bản, không thổi phồng lên 88%
+        p_win = min(0.64, round(0.55 + max(0.0, (legends_sc - 80.0) * 0.005), 2))
         p_loss = round(1.0 - p_win, 2)
         ev_pct = round((p_win * blended_gain) - (p_loss * stop_dist_pct), 2)
 
         cap_tier = s_scan.get("cap_tier", "MidCap_Growth")
-        sleeve_label = "CORE COMPOUNDER (ROUND 2 LEADER)" if idx < 3 else f"TACTICAL RISING GEM ({cap_tier})"
+        sleeve_label = "CORE TUẦN SAU (13K-22.5K • 200-300 CP)" if price_val <= 23000 else f"HOLDING / THIN-VOL CAP 100 CP ({cap_tier})"
 
         ord_entry = {
             "code": ticker,
@@ -728,14 +790,16 @@ def run():
     # XUẤT FILE MARKDOWN BÁO CÁO 8H30 CHUẨN VIỆN SĨ (~35 KB)
     # =========================================================================
     decision_md_path = SPECIALIST_DIR / f"{today_str}_VN_Specialist_Decision.md"
+    avg_p_win_pct = round(sum(o["p_win"] for o in order_blotter) * 100.0 / max(len(order_blotter), 1), 1)
+    avg_ev_pct = round(sum(o["ev_pct"] for o in order_blotter) / max(len(order_blotter), 1), 2)
 
     md_lines = [
-        f"# [BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & TỰ HỌC TỐI ƯU LỢI NHUẬN — MINH QUÂN",
+        f"# [BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & KẾ HOẠCH CÔNG SUẤT TUẦN SAU — MINH QUÂN",
         f"**Chuyên viên phụ trách**: **`Minh Quân`** (Chuyên Viên Đầu Tư Trưởng & Quản Lý Thực Thi Danh Mục TTCK Việt Nam)  ",
         f"**Khung giờ hoạt động định kỳ**: `08:30 AM Mỗi Ngày` *(Sau khoảng đệm 1 tiếng để Nhà đầu tư đọc kỹ BCTC từ 07:30 – 08:30)*  ",
         f"**Ngày giao dịch**: `{today_str}` | **Thị trường tác chiến**: `HOSE, HNX (Chu kỳ thanh toán T+2.5, Quản trị biên độ 7% - 10%)`  ",
-        f"**Chỉ số Hoàn thiện Của Minh Quân (`Specialist Mastery Score`)**: **`98.5 / 100`** *(Đạt chuẩn Bậc Thầy Đầu Tư sau khi tích hợp 5 Hệ Thống Buffett, O'Neil, Wyckoff, Graham, Thorp)*  ",
-        f"**Kỳ vọng Toán học Danh mục (`Portfolio Weighted Expected Value`)**: **`+11.20%`** | **Xác suất Thắng Trung bình (`Win Probability`)**: **`80.5%`**",
+        f"**Tỷ lệ Thắng Danh Mục Thực Chiến (`Account Execution Hit Rate`)**: **`{acc_hit_rate:.1f}%`** (`{real_metrics['green_count']}/{real_metrics['held_count']}` vị thế có lãi) | **Walk-Forward Market Hit Rate (18 phiên)**: **`{wf_hit_rate:.1f}%`**  ",
+        f"**Xác suất Thắng Thận trọng Rổ Tầm ngắm (`Calibrated P(W)`)**: **`{avg_p_win_pct:.1f}%`** | **Kỳ vọng Toán học (`EV%`)**: **`+{avg_ev_pct:.2f}%`** | **Mục tiêu Khóa lãi Nhịp**: **`+300,000 ₫ – +500,000 ₫`** *(Chốt tỉa 50% thu tiền tươi ngay khi đạt +2.5%..+4.0%)*",
         "",
         "---",
         "",
@@ -754,7 +818,6 @@ def run():
 
     # BƯỚC 2: AUTO-MEMORY INJECTION VÀO SỔ LỆNH SÁNG
     injected_memories = injected_mem_pack.get("memories", [])
-    recent_audit = injected_mem_pack.get("recent_audit", {})
     md_lines.extend([
         "",
         "---",
@@ -774,18 +837,18 @@ def run():
         prio = "🔥 BẮT BUỘC (MANDATORY)" if m_id in ["MEM-VN-001", "MEM-VN-004", "MEM-VN-005"] else "🛡️ PHÒNG VỆ (GUARD)"
         md_lines.append(f"| **`{m_id}`** | `{cat}` | {trig} | **{tickers}** | {rule} | **{prio}** |")
 
-    if recent_audit:
-        acc_id = recent_audit.get("account_id", "105C307855")
-        nav_curr = recent_audit.get("current_nav_vnd", 20115000)
-        pnl = recent_audit.get("daily_pnl_vnd", 115000)
-        hit_r = recent_audit.get("hit_rate_pct", 100.0)
-        md_lines.extend([
-            "",
-            "> [!IMPORTANT]",
-            f"> **KẾT QUẢ KIỂM TOÁN TÀI KHOẢN GẦN NHẤT ĐƯỢC TỰ ĐỘNG LIÊN KẾT**:  ",
-            f"> - **Tài khoản TCBS**: `{acc_id}` | **Tổng NAV**: `{nav_curr:,} ₫` | **Lợi nhuận ngày**: `+{pnl:,} ₫ (+0.58%)` | **Hit Rate**: `{hit_r:.1f}%` (3/3 mã xanh ngát).  ",
-            f"> - **Kỷ luật thực thi**: Đã bảo toàn tiền mặt dự phòng 7.1% (Dry Powder), khống chế 0% margin. Minh Quân cam kết thực thi nghiêm 100% các quy tắc bộ nhớ trên vào sổ lệnh hôm nay!"
-        ])
+    held_desc = ", ".join(
+        f"{sym} ({int(p.get('shares', 0))} CP)"
+        for sym, p in (ssot_now.get("active_positions", {}) or {}).items()
+        if int(p.get("shares", 0) or 0) > 0
+    ) or "0 CP"
+    md_lines.extend([
+        "",
+        "> [!IMPORTANT]",
+        f"> **ĐỐI SOÁT TÀI KHOẢN THỰC TẾ SSOT (`{today_str}`)**:  ",
+        f"> - **Tài khoản TCBS**: `{ssot_now.get('account_id', '105C307855')}` | **Tổng NAV**: `{portfolio_nav_vnd:,.0f} ₫` | **Tiền mặt**: `{cash_balance_vnd:,.0f} ₫ ({cash_pct:.1f}%)` | **Đang nắm giữ**: `{held_desc}` | **Lãi/Lỗ tạm tính**: `{unrealized_pnl_vnd:+,.0f} ₫` (Đã chốt lũy kế: `{realized_pnl_vnd:+,.0f} ₫`).  ",
+        f"> - **Chuẩn thực thi tuần tới**: Tuyệt đối khóa trần Thứ Sáu <= 45–55% NAV; mở công suất 70–85% NAV (`14–17M ₫`) vào đầu tuần Thứ Hai–Thứ Tư (`13k–22.5k`, `vol20 >= 2M CP`, `200–300 CP/mã`) và chốt tỉa 50% khi đạt `+2.5%..+4.0%`!"
+    ])
 
     md_lines.extend([
         "",
@@ -914,14 +977,21 @@ def run():
         f.write("\n".join(md_lines))
     print(f"[HOÀN TẤT] Báo cáo chi tiết Minh Quân chuẩn Bậc Thầy Đầu Tư đã lưu tại: {decision_md_path} (Dung lượng: {decision_md_path.stat().st_size:,} bytes)")
 
-    # Lưu Sổ cái vn_daily_ledger.json (~35 KB) phục vụ Dashboard
+    # Lưu Sổ cái vn_daily_ledger.json phục vụ Dashboard & Master CIO
     ledger_data = {
         "date": today_str,
         "specialist": "Minh Quân",
         "title": "Chuyên Viên Đầu Tư Trưởng & Quản Lý Thực Thi TTCK Việt Nam",
-        "mastery_score": 98.5,
-        "portfolio_expected_value_pct": 11.20,
-        "portfolio_win_rate_pct": 80.5,
+        "walk_forward_market_hit_rate_pct": wf_hit_rate,
+        "account_execution_hit_rate_pct": acc_hit_rate,
+        "portfolio_expected_value_pct": avg_ev_pct,
+        "portfolio_win_rate_pct": avg_p_win_pct,
+        "weekly_capacity_mandate": {
+            "thursday_19_11": "Default 0 VND; conditional max 100 CP PVT (~19,000) or TCB (~20,750) at 14:00-14:25",
+            "friday_20_11": "Hard equity cap <= 45-55% NAV (no weekend T+2.5 overload)",
+            "mon_wed_next_week": "Open 70-85% NAV (14-17M VND) across 3 liquid 13k-22.5k leaders (200-300 CP/symbol, vol20 >= 2M) when Breadth >= 45%",
+            "partial_take_profit": "Sell 50% (100-150 CP/symbol) upon +2.5%..+4.0% (+300k..+500k VND), move stop to breakeven"
+        },
         "departmental_hearing": departmental_hearing,
         "yesterday_autopsy": {
             "validated_wins": validated_wins,
@@ -950,18 +1020,18 @@ def run():
     save_json(LEDGER_OUT, ledger_data)
     print(f"[HOÀN TẤT] Đã lưu Sổ cái dữ liệu cấu trúc tại: {LEDGER_OUT} (Dung lượng: {LEDGER_OUT.stat().st_size:,} bytes)")
 
-    # Cập nhật Nhật ký tiến hóa chuyên viên
+    # Cập nhật Nhật ký tiến hóa chuyên viên bằng số liệu thực tế
     journal_entry = f"""
-### 📅 Phiên Giao Dịch Ngày {today_str} — Đợt Huấn Luyện Bậc Thầy Đầu Tư & Quét Toàn Thị Trường 145 Mã
-- **Chỉ số Hoàn thiện**: `98.5 / 100` (Nâng cấp tối thượng với 5 Hệ Thống Buffett, O'Neil, Wyckoff, Graham, Thorp & 105 Tinh Hoa Đầu Tư).
-- **Tính Xác Thực Dữ Liệu**: 100% số liệu kiểm toán BCTC hợp nhất và đồng bộ trực tiếp với két tiền thật SSOT V2.0 (`{portfolio_nav_vnd:,.0f} ₫`).
-- **Danh mục Tầm ngắm Vòng 2 Đa Ngành**: Tuyển chọn {len(selected_tickers)} Siêu Cổ Phiếu Đang Lên ({', '.join(selected_tickers)}) từ 145 mã / 18 ngành.
-- **Tâm điểm cảnh báo**: Bóc trần rủi ro nợ vay và âm OCF tại các mã {', '.join(warning_tickers)}.
+### 📅 Phiên Giao Dịch Ngày {today_str} — Chuẩn Hóa Số Liệu Thật & Khôi Phục Công Suất Tuần Đầu
+- **Thực chứng Hiệu suất**: Walk-Forward Hit Rate (18 phiên) = `{wf_hit_rate:.1f}%` | Account Execution Hit Rate = `{acc_hit_rate:.1f}%` | Calibrated P(W) = `{avg_p_win_pct:.1f}%`.
+- **Đồng bộ SSOT TCBS `105C307855`**: NAV `{portfolio_nav_vnd:,.0f} ₫` | Tiền mặt `{cash_balance_vnd:,.0f} ₫ ({cash_pct:.1f}%)` | Đang nắm giữ `{held_desc}`.
+- **Rổ Tầm Ngắm Công Suất Cao Tuần Sau (13k–22.5k, Vol20 >= 2M CP, 200–300 CP/mã)**: `{', '.join(selected_tickers)}`.
+- **Kỷ luật Lịch Tuần**: Thứ Sáu giữ trần <= 45–55% NAV; Thứ Hai–Thứ Tư tuần sau nâng công suất lên 70–85% NAV (`14–17M ₫`) khi thị trường xác nhận dòng tiền, chốt tỉa 50% khi lãi `+300k–+500k ₫`.
 """
     with open(JOURNAL_OUT, "a", encoding="utf-8") as f:
         f.write(journal_entry)
 
-    print(f"=== Minh Quân đã hoàn tất khóa đào tạo Bậc Thầy Đầu Tư & phát hành quyết định xuất sắc! ===")
+    print(f"=== Minh Quân đã hoàn tất hiệu chỉnh dữ liệu thật & thiết lập kế hoạch công suất tuần sau! ===")
 
 
 if __name__ == "__main__":

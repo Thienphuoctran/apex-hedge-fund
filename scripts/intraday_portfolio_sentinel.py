@@ -1178,34 +1178,56 @@ def run_sentinel_audit(
     for uw in radar_data["alex_top_us_waves"][:3]:
         md_overview += f"| **Alex (Global)** | **`{uw['symbol']}`** | `${uw['price_usd']:,.2f}` | {uw['wave_type']} | **AAA** (`{uw['legends_score']:.1f}/100`) | `${uw['limit_entry_usd']:,.2f}` | `${uw['stop_2atr_usd']:,.2f}` | `${uw['tp1_usd']:,.2f}` |\n"
 
+    try:
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        ssot_st = PortfolioStateManager.load_state() or {}
+    except Exception:
+        ssot_st = {}
+    ssot_nav = float(ssot_st.get("total_nav_vnd") or 20229522.0)
+    ssot_cash = float(ssot_st.get("cash_balance_vnd") or 13594522.0)
+    ssot_cash_pct = round((ssot_cash / max(ssot_nav, 1.0)) * 100.0, 1)
+    ssot_pos = ssot_st.get("active_positions", {}) or {}
+    pos_rows_md = ""
+    for sym, p in ssot_pos.items():
+        sh = int(p.get("shares", 0) or 0)
+        if sh <= 0:
+            continue
+        ep = float(p.get("entry_price", 0) or 0)
+        cp = float(p.get("current_price", ep) or ep)
+        val_v = sh * cp
+        wt_p = round((val_v / max(ssot_nav, 1.0)) * 100.0, 1)
+        st_v = float(p.get("stop_loss", ep * 0.93) or 0)
+        tp1_v = float(p.get("take_profit_tp1", ep * 1.10) or 0)
+        tp2_v = float(p.get("take_profit_tp2", ep * 1.18) or 0)
+        pos_rows_md += (
+            f"| **`{sym}`** | {p.get('name', sym)} | Vị thế Đang Nắm Giữ | **{sh:,} CP** | `Vốn {ep:,.0f} / Live {cp:,.0f} ₫` | `{val_v:,.0f} ₫` | `{wt_p:.1f}%` | `{st_v:,.0f} ₫` | `{tp1_v:,.0f} ₫` | `{tp2_v:,.0f} ₫` | 🛡️ Đang bảo vệ 2 đầu |\n"
+        )
+    if not pos_rows_md:
+        pos_rows_md = "| **Chưa có CP** | - | - | `0 CP` | - | `0 ₫` | `0.0%` | - | - | - | Đang canh điểm mua |\n"
+
+    today_date_str = datetime.datetime.now().strftime("%Y-%m-%d")
     md_overview += f"""
 ---
 
-## 3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ Phiên Ngày Mai (Thứ Ba, 03/11/2026)
+## 3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ ({today_date_str})
 *Chỉ huy tác chiến*: **Victor (Trưởng Ban Giám Sát Rủi Ro Trong Phiên & Chỉ Huy Tác Chiến Khẩn Cấp - Ban 9)**  
-*Tài khoản giao dịch*: **Chủ tịch Phước Trần (TCBS: 105C307855 - Quy mô vốn: 20,000,000 VNĐ)**  
+*Tài khoản giao dịch*: **Chủ tịch Phước Trần (TCBS: 105C307855 - Tổng NAV: {ssot_nav:,.0f} VNĐ | Tiền mặt: {ssot_cash:,.0f} VNĐ [{ssot_cash_pct:.1f}%])**  
 
 | Mốc Thời Gian | Giai Đoạn Tác Chiến | Nhiệm Vụ Giám Sát Của Victor | Cơ Chế Phản Ứng & Kích Hoạt Còi Báo Động |
 | :---: | :--- | :--- | :--- |
-| **09h00 – 09h15** | **Khớp lệnh định kỳ ATO** | Giám sát giá mở cửa, bóc trần hiện tượng kê lệnh ảo, xác thực thanh khoản thực. | Tuyệt đối cấm giải ngân ATO; phát hiện bẫy tăng sớm Bull-Trap. |
-| **09h15 – 10h00** | **Biến động sớm phiên sáng** | Theo dõi dao động quán tính đầu ngày, không để tâm lý đám đông lôi kéo. | Cảnh giác bẫy giá xanh ảo; giữ kỷ luật thép kiên nhẫn quan sát. |
-| **10h00 – 11h15** | **TRỌNG TÂM PHIÊN SÁNG: Rà Soát Áp Lực Margin Call Chéo** | Đo lường áp lực bán giải chấp từ các CTCK lớn (VPS, SSI, TCBS, VNDirect); theo dõi áp lực xả chéo lan sang cổ phiếu trụ (HPG, TCB, MBB). | 🚨 **Báo Động Đỏ** nếu giá giảm $\\ge -2.5\\%$ kèm Vol lớn hoặc thủng VWAP. Nếu xuất hiện Washout hoảng loạn chạm hỗ trợ cứng với dòng tiền hấp thụ, gửi tín hiệu chuẩn bị gom thăm dò 30% cho Minh Quân. |
-| **11h15 – 11h30** | **Ổn định trước giờ nghỉ trưa** | Tổng hợp dòng tiền 3 khối (Tự Doanh, Khối Ngoại, Cá Nhân) và xác định vùng cân bằng. | Cập nhật báo cáo giữa phiên gửi Palmer & Master CIO James. |
-| **13h00 – 13h45** | **TRỌNG TÂM PHIÊN CHIỀU: Radar Đo Lường Lực Xả Hàng T+2** | Đo lường áp lực bán của lượng hàng bắt đáy T+2 về tài khoản; kiểm tra xem lực cầu tổ chức có vào hấp thụ và tạo nến rút chân hay không. | Đo lường tỷ lệ Mua chủ động (Active Buy / Buy Up vs Sell Down). Nếu Buy Up $\\ge 60\\% - 70\\%$ và có nến Hammer / Bullish Engulfing tại VWAP, chuẩn bị lệnh giải ngân. |
-| **13h45 – 14h00** | **Chuyển giao thế trận** | Thẩm tra độ tin cậy của lực hấp thụ, kiểm tra danh mục xem có mã nào vi phạm Stop 2xATR. | Bật tín hiệu xanh (Green Light) chuẩn bị bước vào Khung Giờ Vàng. |
-| **14h00 – 14h25** | **KHUNG GIỜ VÀNG GIẢI NGÂN (GOLDEN EXECUTION WINDOW)** | Giám sát nến ngày định hình $\\ge 90\\%$; phối hợp với Minh Quân và Master CIO James phát tín hiệu xác nhận "MỞ KHUNG GIỜ VÀNG". | Phát tín hiệu xác nhận lên Telegram Topic 1 (alerts) để Chủ tịch Phước Trần bấm nút giải ngân theo Sổ Lệnh Master Blotter. |
-| **14h25** | **CẦU CHÌ AN TOÀN T+0 (T+0 SAFETY FUSE)** | Kiểm tra tự động các giao dịch T+0 trong phiên nếu có để yêu cầu bán trả hàng cân bằng kho. | Triệt tiêu 100% rủi ro qua đêm đối với phần hàng lướt sóng T+0. |
-| **14h30 – 14h45** | **Khớp lệnh định kỳ ATC** | Giám sát chốt giá đóng cửa, đối soát khối lượng thực khớp so với kế hoạch Master Blotter. | Cập nhật số liệu vào Ledger và bàn giao sang Ban 5 để kiểm toán tự học. |
+| **09h00 – 09h15** | **Khớp lệnh định kỳ ATO** | Giám sát giá mở cửa, bóc trần kê lệnh ảo, đo cung-cầu thực. | Tuyệt đối cấm giải ngân ATO; cảnh báo Bull-Trap đầu phiên. |
+| **09h15 – 10h00** | **Biến động sớm phiên sáng** | Theo dõi dao động quán tính đầu ngày, khóa nút mua trước 10h00. | Giữ kỷ luật quan sát, bảo vệ lãi đệm vị thế sẵn có. |
+| **10h00 – 11h30** | **Soi cầu thực & Bảo vệ vị thế** | Kiểm soát rủi ro rung lắc và theo dõi sát các ngưỡng Trailing/Hard Stop. | 🚨 **Báo Động Đỏ** nếu thủng hỗ trợ kèm bán chủ động > 60%. |
+| **13h00 – 13h45** | **Đo lực hấp thụ hàng T+2.5 về** | Đo áp lực hàng về tài khoản lúc 13h15 và sức hấp thụ tại VWAP. | Chuẩn bị kích hoạt lệnh chỉ khi Buy-Up >= 60% và Breadth >= 45%. |
+| **14h00 – 14h25** | **KHUNG GIỜ VÀNG BẤM CÒ LO** | Xác nhận hình thái nến ngày >= 90%; kiểm tra Cửa Kép & trần Thứ Sáu <= 55% NAV. | Chỉ mở lệnh LO đạt chuẩn R:R >= 1:2.0; sang đầu tuần sau nâng lên 70–85% NAV trên rổ `13k–22.5k` (`200–300 CP/mã`). |
+| **14h25 – 14h45** | **CẦU CHÌ GUARD-03 & ĐÓNG CỬA ATC** | Khóa mọi giao dịch T+0 trước 14h25; cấm đặt lệnh đuổi giá trong 15 phút ATC. | Đảm bảo trạng thái danh mục an toàn qua đêm, 0% Margin. |
 
 ---
 
-## 4. Bảng Thông Số Trực Chiến 3 Mã Mục Tiêu TCBS (HPG, TCB, MBB — Vốn 20,000,000 VNĐ)
-| Mã CP | Tên Doanh Nghiệp | Vị Thế Cốt Lõi | Số Lượng CP | Giá Tham Chiếu / Vùng Canh Mua | Vốn Phân Bổ (VND) | % NAV | Ngưỡng Cắt Lỗ Stop 2xATR | Mục Tiêu Chốt Lời TP1 | Mục Tiêu Chốt Lời TP2 | Trạng Thái Trực Chiến |
-| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`HPG`** | Tập Đoàn Hòa Phát | Core Compounder (Vua Thép) | **400 CP** | `20,100 – 20,400 ₫` | `8,160,000 ₫` | `40.8%` | `19,400 ₫` (`-4.90%`) | `22,200 ₫` (`+8.82%`) | `23,800 ₫` (`+16.67%`) | 🟢 Sẵn sàng kích hoạt |
-| **`TCB`** | Techcombank | Core Compounder (Bank Leader) | **300 CP** | `21,000 – 21,300 ₫` | `6,420,000 ₫` | `32.1%` | `20,400 ₫` (`-4.67%`) | `23,200 ₫` (`+8.41%`) | `24,800 ₫` (`+15.89%`) | 🟢 Sẵn sàng kích hoạt |
-| **`MBB`** | Quân Đội (MBBank) | Tactical Oversold Rebound | **200 CP** | `18,400 – 18,650 ₫` | `3,750,000 ₫` | `18.75%` | `17,900 ₫` (`-4.53%`) | `20,400 ₫` (`+8.80%`) | `21,600 ₫` (`+15.20%`) | 🟢 Sẵn sàng kích hoạt |
-| **`TIỀN MẶT`** | Dự phòng chiến lược (Dry Powder) | Quản trị rủi ro & Lướt T+0 | — | — | `1,670,000 ₫` | `8.35%` | — | — | — | 🛡️ Sẵn sàng ứng cứu |
+## 4. Bảng Thông Số Danh Mục Thực Tế & Tiền Mặt SSOT (`{today_date_str}`)
+| Mã CP | Tên Doanh Nghiệp | Vai Trò | Số Lượng CP | Vốn / Thị Giá | Giá Trị (VND) | % NAV | Hard Stop 2xATR | TP1 | TP2 | Trạng Thái Trực Chiến |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+{pos_rows_md}| **`TIỀN MẶT`** | Đạn Dự Phòng (Dry Powder) | Khóa an toàn & Bắn tỉa tuần sau | — | — | `{ssot_cash:,.0f} ₫` | `{ssot_cash_pct:.1f}%` | — | — | — | 🛡️ Sẵn sàng bung đầu tuần sau |
 
 ---
 
@@ -1216,20 +1238,20 @@ Khi phát hiện dị thường kích hoạt Báo Động Đỏ (Flash Drop $\\g
    - Hành động: Mở lệnh Short Hợp đồng Tương lai VN30F1M tương ứng hệ số Beta danh mục để khóa băng mức lỗ cơ sở ngay lập tức.
 2. **Phương Án B — Tactical Partial De-risking (Hạ 30% - 50% vị thế)**:
    - Áp dụng khi cổ phiếu suy yếu chạm ngưỡng cảnh báo và hàng đã có sẵn trong tài khoản.
-   - Hành động: Canh nhịp nảy kỹ thuật tại VWAP khung M15 để đặt bán chủ động 30% - 50% vị thế nhằm giảm áp lực Margin và đưa vốn về Dry Powder.
+   - Hành động: Canh nhịp nảy kỹ thuật tại VWAP khung M15 để đặt bán chủ động 30% - 50% vị thế nhằm giảm áp lực và đưa vốn về Dry Powder.
 3. **Phương Án C — T+0 Intra-day Scalp (Lướt sóng đảo hàng hạ giá vốn)**:
-   - Áp dụng khi xuất hiện nhịp Washout / Bán tháo hoảng loạn do tin đồn thất thiệt trong khi tài khoản đã có sẵn cổ phiếu cũ.
-   - Hành động: Trích Dry Powder gom giá sàn/quá bán và bán trả ngay khi giá phục hồi 2%–3% trong ngày, hạ giá vốn mà không tăng rủi ro qua đêm.
+   - Áp dụng khi xuất hiện nhịp Washout / Bán tháo hoảng loạn trong khi tài khoản đã có sẵn cổ phiếu đủ T+2.5.
+   - Hành động: Trích Dry Powder gom giá quá bán và bán trả ngay trong ngày trước 14h25, hạ giá vốn mà không tăng rủi ro qua đêm.
 4. **Phương Án D — Disciplined Hold & Trailing Stop (Kiên định kỷ luật)**:
    - Áp dụng khi giá vẫn cách an toàn trên ngưỡng Stop 2xATR và BCTC/dòng tiền OCF của doanh nghiệp vững vàng.
-   - Hành động: Giữ nguyên vị thế, không bán tháo theo tâm lý hoảng loạn, nâng Trailing Stop bảo toàn lợi nhuận nếu giá tăng tốc.
+   - Hành động: Giữ nguyên vị thế, chốt tỉa 50% khi lãi đạt `+2.5%..+4.0%`, nâng Stop lên giá vốn cho phần còn lại.
 
 ---
 
 ## 6. Kênh Kết Nối Báo Động Telegram Topic 1 (alerts) & Tình Trạng Trực Chiến
 - **Kênh tiếp nhận cảnh báo**: Telegram Supergroup Topic 1 (`🚨 BÁO ĐỘNG ĐỎ & CANH 2 ĐẦU`, Thread ID: `3`).
-- **Bot truyền tin**: `@Chuyenvienvictor_bot` (Token: `9113394586:...`).
-- **Tình trạng đường truyền**: **`🟢 SẴN SÀNG 100% (ONLINE & VERIFIED)`** (Đã kiểm tra truyền tin thành công).
+- **Bot truyền tin**: `@Chuyenvienvictor_bot`.
+- **Tình trạng đường truyền**: **`🟢 SẴN SÀNG 100% (ONLINE & VERIFIED)`**.
 - **Chu kỳ streaming**: Mỗi `60 giây` trong suốt phiên giao dịch (09h00 - 11h30 & 13h00 - 14h45).
 """
 
@@ -1240,15 +1262,16 @@ Khi phát hiện dị thường kích hoạt Báo Động Đỏ (Flash Drop $\\g
 
 def broadcast_readiness_signal() -> bool:
     """Bắn bản tin xác nhận trạng thái trực chiến của Victor lên Telegram Topic 1 (alerts)."""
+    now_str = datetime.datetime.now().strftime("%d/%m/%Y")
     text = (
-        "🛡️ [VICTOR SENTINEL — BÁO CÁO TRẠNG THÁI TRỰC CHIẾN NGÀY 03/11/2026]\n"
+        f"🛡️ [VICTOR SENTINEL — BÁO CÁO TRẠNG THÁI TRỰC CHIẾN NGÀY {now_str}]\n"
         "Kính gửi: Chủ tịch Phước Trần & Master CIO James\n\n"
         "Victor — Trưởng Ban Giám Sát Rủi Ro Trong Phiên (Ban 9) báo cáo:\n"
-        "1. Trực chiến ngầm 60s/lần: ĐÃ THIẾT LẬP TOÀN BỘ 54 MÃ VN & 3 MÃ MỤC TIÊU (HPG, TCB, MBB).\n"
-        "2. Phiên sáng (09h00 - 11h30): Canh gác kỷ luật thép, kích hoạt radar quét áp lực Margin Call chéo lúc 10h00 - 11h15.\n"
-        "3. Phiên chiều (13h00 - 13h45): Thiết lập radar đo lường lực xả hàng T+2 và lực hấp thụ rút chân của dòng tiền lớn.\n"
-        "4. Khung Giờ Vàng (14h00 - 14h25): Sẵn sàng phát tín hiệu xác nhận giải ngân theo Sổ Lệnh Master Blotter.\n"
-        "5. Cầu chì an toàn T+0 (14h25): Kích hoạt kiểm tra triệt tiêu rủi ro qua đêm.\n\n"
+        "1. Trực chiến ngầm 60s/lần: ĐÃ THIẾT LẬP CANH 2 ĐẦU THEO ĐÚNG SSOT TCBS 105C307855.\n"
+        "2. Phiên sáng (09h00 - 11h30): Khóa mua đuổi ATO, theo dõi sát ngưỡng Trailing/Hard Stop.\n"
+        "3. Phiên chiều (13h00 - 13h45): Đo lực hấp thụ hàng T+2.5 về tài khoản.\n"
+        "4. Khung Giờ Vàng (14h00 - 14h25): Áp dụng Cửa Kép & chuẩn bị rổ 13k-22.5k cho tuần sau.\n"
+        "5. Cầu chì Guard-03 (14h25 - 14h45): Cấm giao dịch ATC.\n\n"
         "Tình trạng hệ thống: SẴN SÀNG TÁC CHIẾN 100%!"
     )
     try:
@@ -1266,10 +1289,8 @@ def broadcast_golden_window_signal() -> bool:
         "Kính gửi: Chủ tịch Phước Trần & Master CIO James\n\n"
         "Victor & Minh Quân xác nhận:\n"
         "✅ Nến ngày đã định hình >= 90%.\n"
-        "✅ Lực cầu tổ chức hấp thụ hoàn toàn hàng T+2 xả ra.\n"
-        "✅ Không có hiện tượng Margin Call bán tháo hoảng loạn.\n"
-        "✅ 3 siêu cổ phiếu HPG, TCB, MBB đạt điều kiện giải ngân an toàn.\n\n"
-        "LỆNH HÀNH ĐỘNG: PHÊ DUYỆT BẤM NÚT GIẢI NGÂN THEO SỔ LỆNH MASTER BLOTTER TCBS (105C307855)!"
+        "✅ Lực cầu chủ động Buy-Up >= 60% & Độ rộng thị trường đạt chuẩn.\n"
+        "✅ Phê duyệt kiểm tra điểm vào lệnh LO theo đúng kế hoạch phiên TCBS (105C307855)."
     )
     try:
         from scripts.telegram_dispatcher import dispatch_message

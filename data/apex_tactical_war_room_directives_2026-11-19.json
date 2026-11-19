@@ -1,0 +1,258 @@
+[
+  {
+    "id": "dir_2026-11-19_001",
+    "timestamp": "08:30:15",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "morning_brief",
+    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã kích hoạt Living War-Room V4.0 cho ngày 2026-11-19. Chế độ thị trường hiện tại: ⚖️ GIẰNG CO CHỌN LỌC TẦNG 2 (T+0 & LEADER). Kỷ luật bất biến: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
+  },
+  {
+    "id": "dir_2026-11-19_002",
+    "timestamp": "08:32:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_brief",
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-19. Tổng NAV live: 20,229,522 đ | Tiền mặt thật: 13,594,522 đ (67.2% Cash) | Đang nắm giữ: 200 CP (100 MSH + 100 BAF ≈ 6,635,000 đ) | Lãi đã chốt lũy kế: +166,419 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
+  },
+  {
+    "id": "cbtt_2026-11-19_CRITICAL_HAG_95607",
+    "key": "cbtt_2026-11-19_CRITICAL_HAG_95607",
+    "timestamp": "07:32:11",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — HAG] Dù Bầu Đức tuyên bố \"nếu 1-2 năm nữa mà lỗ, cứ kêu tôi ra chửi\": Cổ phiếu HAG xuống đáy 16 tháng, giảm gần 30% sau 1 năm (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-19_CRITICAL_PNJ_13508",
+    "key": "cbtt_2026-11-19_CRITICAL_PNJ_13508",
+    "timestamp": "07:32:13",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] PNJ thay Trưởng kiểm toán nội bộ sau quý lỗ 258 tỷ đồng, cắt giảm hơn 1.000 lao động (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-19_RED_FLAG_PNJ_24807",
+    "key": "cbtt_2026-11-19_RED_FLAG_PNJ_24807",
+    "timestamp": "07:32:13",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — PNJ] Nóng: Bảo Tín Minh Châu, PNJ, DOJI, SJC vào danh sách thanh tra năm 2027 (CANH_BAO_RUI_RO)"
+  },
+  {
+    "id": "cbtt_2026-11-19_CRITICAL_FPT_5145",
+    "key": "cbtt_2026-11-19_CRITICAL_FPT_5145",
+    "timestamp": "07:32:13",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT thủng đáy, loạt CTCK đưa ra khuyến nghị bất ngờ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-19_CRITICAL_FPT_24597",
+    "key": "cbtt_2026-11-19_CRITICAL_FPT_24597",
+    "timestamp": "07:32:13",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT công bố thông tin quan trọng (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "sec_2026-11-19_AAPL_10-K_2026-11-03",
+    "key": "sec_2026-11-19_AAPL_10-K_2026-11-03",
+    "timestamp": "07:32:13",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-K — AAPL] 10-K (2026-11-03)"
+  },
+  {
+    "id": "sec_2026-11-19_TSLA_10-Q_2026-10-22",
+    "key": "sec_2026-11-19_TSLA_10-Q_2026-10-22",
+    "timestamp": "07:32:13",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — TSLA] 10-Q (2026-10-22)"
+  },
+  {
+    "id": "sec_2026-11-19_PLTR_10-Q_2026-11-03",
+    "key": "sec_2026-11-19_PLTR_10-Q_2026-11-03",
+    "timestamp": "07:32:13",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — PLTR] 10-Q (2026-11-03)"
+  },
+  {
+    "id": "dir_2026-11-19_demo_tactical_plan_pre",
+    "timestamp": "08:02:10",
+    "sender": "James (Master CIO) & Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "demo_tactical_plan",
+    "content": "📋 [TỔNG HỢP THƯỢNG ĐỈNH 00H45 & KẾ HOẠCH TÁC CHIẾN 2026-11-19] Trạng thái: 🟡 NGOÀI GIỜ GIAO DỊCH — SẼ TỰ ĐỘNG KÍCH HOẠT THÀNH KẾ HOẠCH CHÍNH THỨC LÚC 08H30. Tài sản live: Cổ phiếu 6,635,000đ (PnL +63,100đ / +0.96%), Tiền mặt 13,594,522đ (67.2% NAV • Tổng NAV 20,229,522đ). Sẵn sàng vùng mua LO sau 14h00: Chưa có | Cấm bắt đáy: Không có. (Bản Demo tự động hiệu chỉnh ngay khi bảng điện ngày mai biến động!)"
+  },
+  {
+    "id": "2026-11-19_HDB_BUYZONE",
+    "key": "2026-11-19_HDB_BUYZONE",
+    "timestamp": "09:16:00",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — HDB ĐẠT VÙNG MUA LO] Giá 22,250 ₫ (+0.00%) sát mục tiêu 22,350 ₫, Mua chủ động 74.1%, Stop 22,060 ₫, TP1 24,200 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-19_SZC_BUYZONE",
+    "key": "2026-11-19_SZC_BUYZONE",
+    "timestamp": "09:16:00",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — SZC ĐẠT VÙNG MUA LO] Giá 19,250 ₫ (+0.79%) sát mục tiêu 20,700 ₫, Mua chủ động 84.2%, Stop 19,599 ₫, TP1 24,645 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-19_HPG_BUYZONE",
+    "key": "2026-11-19_HPG_BUYZONE",
+    "timestamp": "09:16:00",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — HPG ĐẠT VÙNG MUA LO] Giá 20,500 ₫ (+0.24%) sát mục tiêu 20,950 ₫, Mua chủ động 79.7%, Stop 20,014 ₫, TP1 24,881 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-19_IDC_BUYZONE",
+    "key": "2026-11-19_IDC_BUYZONE",
+    "timestamp": "09:16:01",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — IDC ĐẠT VÙNG MUA LO] Giá 33,900 ₫ (-0.88%) sát mục tiêu 34,600 ₫, Mua chủ động 63.4%, Stop 32,530 ₫, TP1 38,660 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-19_PVT_BUYZONE",
+    "key": "2026-11-19_PVT_BUYZONE",
+    "timestamp": "09:16:01",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — PVT ĐẠT VÙNG MUA LO] Giá 19,200 ₫ (+1.05%) sát mục tiêu 20,900 ₫, Mua chủ động 83.7%, Stop 19,550 ₫, TP1 23,200 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-19_TCB_BUYZONE",
+    "key": "2026-11-19_TCB_BUYZONE",
+    "timestamp": "09:16:01",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — TCB ĐẠT VÙNG MUA LO] Giá 20,750 ₫ (+0.00%) sát mục tiêu 21,500 ₫, Mua chủ động 81.5%, Stop 20,847 ₫, TP1 25,827 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "dir_2026-11-19_demo_tactical_plan_live",
+    "timestamp": "09:16:04",
+    "sender": "James (Master CIO) & Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "demo_tactical_plan",
+    "content": "📋 [TỔNG HỢP THƯỢNG ĐỈNH 00H45 & KẾ HOẠCH TÁC CHIẾN 2026-11-19] Trạng thái: 🟢 KẾ HOẠCH CHÍNH THỨC ĐANG TỰ ĐỘNG HIỆU CHỈNH LIVE (Phiên Sáng). Tài sản live: Cổ phiếu 6,585,000đ (PnL +13,100đ / +0.20%), Tiền mặt 13,594,522đ (67.4% NAV • Tổng NAV 20,179,522đ). Sẵn sàng vùng mua LO sau 14h00: SZC, PVT, TCB, HPG | Cấm bắt đáy: BSR, TCH. (Bản Demo tự động hiệu chỉnh ngay khi bảng điện ngày mai biến động!)"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_80705",
+    "timestamp": "09:16:04",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 10 tín hiệu trọng yếu: SZC (19,250đ: 🟢 ĐẠT VÙNG MUA LO (9.5% NAV)) • PVT (19,200đ: 🟢 ĐẠT VÙNG MUA LO (9.5% NAV)) • TCB (20,750đ: 🟢 ĐẠT VÙNG MUA LO (10.3% NAV)) • HPG (20,500đ: 🟢 ĐẠT VÙNG MUA LO (10.2% NAV)) • HDB (22,250đ: 🟢 ĐẠT VÙNG MUA LO (11.0% NAV)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_85543",
+    "timestamp": "09:16:07",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 9 tín hiệu trọng yếu: TCB (20,750đ: 🟢 ĐẠT VÙNG MUA LO (10.3% NAV)) • SZC (19,250đ: 🟢 ĐẠT VÙNG MUA LO (9.5% NAV)) • HDB (22,250đ: 🟢 ĐẠT VÙNG MUA LO (11.0% NAV)) • IDC (33,900đ: 🟢 ĐẠT VÙNG MUA LO (16.8% NAV)) • BAF (30,900đ: ⚠️ CẦU YẾU CẦN CANH (23%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_99100",
+    "timestamp": "09:37:42",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 9 tín hiệu trọng yếu: BAF (30,850đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.59%)) • OCB (10,600đ: 🟢 ĐẠT VÙNG MUA LO (5.3% NAV)) • IDC (33,900đ: 🟢 ĐẠT VÙNG MUA LO (16.8% NAV)) • TCB (20,850đ: 🟢 ĐẠT VÙNG MUA LO (10.4% NAV)) • HPG (20,550đ: 🟢 ĐẠT VÙNG MUA LO (10.2% NAV)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-19_near_stop_BAF",
+    "timestamp": "09:37:42",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "⚠️ [THEO DÕI CẬN NGƯỠNG BẢO VỆ — BAF] Giá live 30,850 đ hiện cách mốc Stop/Cảnh báo (30,050 đ) 2.59%. Tuyệt đối KHÔNG bình quân giá xuống; kiểm định nến lúc 14h15!"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_44316",
+    "timestamp": "09:40:46",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 6 tín hiệu trọng yếu: BAF (30,850đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.59%)) • OCB (10,600đ: 🟢 ĐẠT VÙNG MUA LO (5.3% NAV)) • IDC (33,900đ: 🟢 ĐẠT VÙNG MUA LO (16.8% NAV)) • TCB (20,850đ: 🟢 ĐẠT VÙNG MUA LO (10.4% NAV)) • MSH (34,650đ: ⚠️ CẦU YẾU CẦN CANH (34%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "2026-11-19_BAF_NEARSTOP",
+    "key": "2026-11-19_BAF_NEARSTOP",
+    "timestamp": "09:41:08",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "⚠️ [VICTOR CẢNH BÁO CẬN NGƯỠNG BẢO VỆ — BAF] Giá live 30,850 ₫ cách Stop/Cảnh báo 30,050 ₫ chỉ 2.59% (Lãi tạm -35,900 ₫ / Buy-Up 34.8%). Kiểm định nến 14h15!"
+  },
+  {
+    "id": "2026-11-19_OCB_BUYZONE",
+    "key": "2026-11-19_OCB_BUYZONE",
+    "timestamp": "09:41:08",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — OCB ĐẠT VÙNG MUA LO] Giá 10,600 ₫ (+0.00%) sát mục tiêu 10,650 ₫, Mua chủ động 73.8%, Stop 10,192 ₫, TP1 12,766 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_23078",
+    "timestamp": "09:41:09",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 7 tín hiệu trọng yếu: BAF (30,850đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.59%)) • OCB (10,600đ: 🟢 ĐẠT VÙNG MUA LO (5.3% NAV)) • IDC (33,900đ: 🟢 ĐẠT VÙNG MUA LO (16.8% NAV)) • TCB (20,850đ: 🟢 ĐẠT VÙNG MUA LO (10.4% NAV)) • MSH (34,650đ: ⚠️ CẦU YẾU CẦN CANH (34%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_52274",
+    "timestamp": "09:41:12",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 7 tín hiệu trọng yếu: BAF (30,850đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.59%)) • OCB (10,600đ: 🟢 ĐẠT VÙNG MUA LO (5.3% NAV)) • IDC (33,900đ: 🟢 ĐẠT VÙNG MUA LO (16.8% NAV)) • TCB (20,850đ: 🟢 ĐẠT VÙNG MUA LO (10.4% NAV)) • MSH (34,650đ: ⚠️ CẦU YẾU CẦN CANH (34%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_61710",
+    "timestamp": "09:43:13",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 6 tín hiệu trọng yếu: BAF (30,850đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.59%)) • OCB (10,650đ: 🟢 ĐẠT VÙNG MUA LO (5.3% NAV)) • TCB (20,850đ: 🟢 ĐẠT VÙNG MUA LO (10.4% NAV)) • MSH (34,650đ: ⚠️ CẦU YẾU CẦN CANH (31%)) • IDC (33,800đ: 🟠 ÁP LỰC CUNG (BuyUp 26.4%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_28475",
+    "timestamp": "09:43:33",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 6 tín hiệu trọng yếu: BAF (30,850đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.59%)) • TCB (20,850đ: 🟢 ĐẠT VÙNG MUA LO (10.4% NAV)) • MSH (34,650đ: ⚠️ CẦU YẾU CẦN CANH (31%)) • OCB (10,550đ: 🟠 ÁP LỰC CUNG (BuyUp 22.9%)) • IDC (33,800đ: 🟠 ÁP LỰC CUNG (BuyUp 26.5%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-19_victor_247_19246",
+    "timestamp": "09:43:43",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phiên Sáng)] Victor phát hiện 7 tín hiệu trọng yếu: BAF (30,850đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+2.59%)) • HPG (20,550đ: 🟢 ĐẠT VÙNG MUA LO (10.2% NAV)) • MSH (34,650đ: ⚠️ CẦU YẾU CẦN CANH (31%)) • OCB (10,550đ: 🟠 ÁP LỰC CUNG (BuyUp 22.8%)) • IDC (33,800đ: 🟠 ÁP LỰC CUNG (BuyUp 26.5%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  }
+]

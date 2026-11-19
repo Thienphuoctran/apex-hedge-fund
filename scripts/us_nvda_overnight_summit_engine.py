@@ -1109,7 +1109,7 @@ def run_checkpoint(cp_name: str, dry_run: bool = False) -> int:
         "report_path": RESOLUTION_REL_PATH,
         "summary_headline": f"Tổng kết 04h30: VIX {verdict['vix_latest']:.2f} | NVDA AH ${verdict['nvda_ah']:.2f} ({verdict['nvda_ah_chg']:+.2f}%) | {verdict['regime_code']}",
         "is_reference_only": True,
-        "agility_mandate": f"Kế hoạch đáo hạn 19/11: Khóa mua trước 14h00; {verdict['deploy_desc']} (Yêu cầu {verdict['buyup_req']}).",
+        "agility_mandate": f"Khung tham khảo hành động cơ động theo ngày — Khóa mua trước 14h00; {verdict['deploy_desc']} (Yêu cầu {verdict['buyup_req']}).",
         "meeting_highlights": [
             f"NVDA đóng cửa ${verdict['nvda_reg']:.2f} -> After-Hours ${verdict['nvda_ah']:.2f} ({verdict['nvda_ah_chg']:+.2f}%).",
             f"^VIX ghi nhận {verdict['vix_latest']:.2f} (close {verdict['vix_close']:.2f}) -> Chế độ {verdict['regime_code']}.",
@@ -1118,9 +1118,11 @@ def run_checkpoint(cp_name: str, dry_run: bool = False) -> int:
         "daily_cadence": [
             {"day": "Thứ Năm 19/11 (09:00–13:45)", "focus": "Chờ BAF về TK & né nhiễu đáo hạn VN30F1M", "trigger": "0đ mua mới; giữ MSH trên 34,600đ"},
             {"day": "Thứ Năm 19/11 (14:00–14:25)", "focus": "Khung Giờ Vàng giải ngân Cash 13.59M", "trigger": f"{verdict['deploy_desc']} khi Buy-Up {verdict['buyup_req']}"},
+            {"day": "Thứ Sáu 20/11 (Cuối tuần)", "focus": "Khóa trần cổ phiếu <= 45-55% NAV", "trigger": "Không bung full lực trước 2 ngày nghỉ cuối tuần"},
+            {"day": "Thứ Hai–Thứ Tư Tuần Sau (23–25/11)", "focus": "Mở công suất 70–85% NAV rổ 13k–22.5k (200–300 CP/mã)", "trigger": "Breadth >= 45% + Buy-Up >= 60%, chốt tỉa 50% tại +2.5%..+4.0%"},
         ],
-        "watchlist_tickers": ["MSH", "BAF", "HDB", "DBC", "HPG", "IDC", "NVDA"],
-        "chairman_action_required": "Kính trình Chủ tịch đọc Báo cáo Tổng Kết 04h30 & Kế hoạch Đáo Hạn 19/11 trước giờ mở cửa ATO.",
+        "watchlist_tickers": ["PVT", "TCB", "MBB", "HPG", "TCH", "MSH", "BAF"],
+        "chairman_action_required": "Kính trình Chủ tịch đọc Báo cáo Tổng Kết 04h30 & Kế hoạch Công suất Tuần Sau.",
     }
 
     if not dry_run:
