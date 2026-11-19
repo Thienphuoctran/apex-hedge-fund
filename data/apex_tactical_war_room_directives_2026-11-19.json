@@ -299,5 +299,50 @@
     "role": "specialist",
     "type": "cbtt_critical",
     "content": "[📊 BCTC MỚI — FPT] FPT thủng đáy, loạt CTCK đưa ra khuyến nghị bất ngờ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-19_CRITICAL_FPT_23210",
+    "key": "cbtt_2026-11-19_CRITICAL_FPT_23210",
+    "timestamp": "00:22:31",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT tăng giá 9% với 55 khách hàng Nhật Bản khiến doanh thu ký mới chậm lại, thêm 100 khách hàng vào năm sau (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-19_CRITICAL_CEO_15711",
+    "key": "cbtt_2026-11-19_CRITICAL_CEO_15711",
+    "timestamp": "00:22:32",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — CEO] Từng là nhà bán chạm mốc 2 triệu USD trên sàn thương mại điện tử, CEO Velasboost nói về nghịch lý: Bán 1 ăn 2 vẫn có thể lỗ thê thảm (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-19_CRITICAL_FPT_64566",
+    "key": "cbtt_2026-11-19_CRITICAL_FPT_64566",
+    "timestamp": "00:22:32",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] Cổ phiếu FPT \"phá đáy\" hơn 3 năm, Vietcap hé lộ loạt thông tin đáng chú ý (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-19_RED_FLAG_PNJ_35977",
+    "key": "cbtt_2026-11-19_RED_FLAG_PNJ_35977",
+    "timestamp": "00:22:32",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — PNJ] Nóng: Bảo Tín Minh Châu, PNJ, DOJI, SJC vào danh sách thanh tra năm 2027 (CANH_BAO_RUI_RO)"
+  },
+  {
+    "id": "cbtt_2026-11-19_CRITICAL_FPT_97507",
+    "key": "cbtt_2026-11-19_CRITICAL_FPT_97507",
+    "timestamp": "00:22:32",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT thủng đáy, loạt CTCK đưa ra khuyến nghị bất ngờ (BCTC_KET_QUA_KINH_DOANH)"
   }
 ]

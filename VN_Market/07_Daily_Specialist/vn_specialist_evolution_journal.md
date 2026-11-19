@@ -225,3 +225,9 @@
 - **Đồng bộ SSOT TCBS `105C307855`**: NAV `20,229,522 ₫` | Tiền mặt `13,594,522 ₫ (67.2%)` | Đang nắm giữ `MSH (100 CP), BAF (100 CP)`.
 - **Rổ Tầm Ngắm Công Suất Cao Tuần Sau (13k–22.5k, Vol20 >= 2M CP, 200–300 CP/mã)**: `PVT, TCB, MBB, HPG, TCH, MSH`.
 - **Kỷ luật Lịch Tuần**: Thứ Sáu giữ trần <= 45–55% NAV; Thứ Hai–Thứ Tư tuần sau nâng công suất lên 70–85% NAV (`14–17M ₫`) khi thị trường xác nhận dòng tiền, chốt tỉa 50% khi lãi `+300k–+500k ₫`.
+
+### 📅 Phiên Giao Dịch Ngày 2026-11-19 — Chuẩn Hóa Số Liệu Thật & Khôi Phục Công Suất Tuần Đầu
+- **Thực chứng Hiệu suất**: Walk-Forward Hit Rate (18 phiên) = `78.5%` | Account Execution Hit Rate = `50.0%` | Calibrated P(W) = `57.5%`.
+- **Đồng bộ SSOT TCBS `105C307855`**: NAV `20,229,522 ₫` | Tiền mặt `13,594,522 ₫ (67.2%)` | Đang nắm giữ `MSH (100 CP), BAF (100 CP)`.
+- **Rổ Tầm Ngắm Công Suất Cao Tuần Sau (13k–22.5k, Vol20 >= 2M CP, 200–300 CP/mã)**: `PVT, TCB, MBB, HPG, TCH, MSH`.
+- **Kỷ luật Lịch Tuần**: Thứ Sáu giữ trần <= 45–55% NAV; Thứ Hai–Thứ Tư tuần sau nâng công suất lên 70–85% NAV (`14–17M ₫`) khi thị trường xác nhận dòng tiền, chốt tỉa 50% khi lãi `+300k–+500k ₫`.

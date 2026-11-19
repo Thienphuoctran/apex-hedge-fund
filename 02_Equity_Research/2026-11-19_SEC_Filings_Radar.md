@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)
-> **Thời gian quét:** 2026-11-19 10:10:45  
-> **Số lượng hồ sơ ghi nhận:** 367 hồ sơ SEC chính thức  
+> **Thời gian quét:** 2026-11-19 17:22:31  
+> **Số lượng hồ sơ ghi nhận:** 368 hồ sơ SEC chính thức  
 
 | Ticker | Loại Form | Mức Độ | Ngày Nộp | Mô Tả Hồ Sơ | Đường Dẫn SEC |
 | :--- | :---: | :---: | :---: | :--- | :---: |
@@ -36,6 +36,7 @@
 | **MSFT** | `424B2` | ℹ️ INFO | 2026-11-02 | 424B2 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
 | **MSFT** | `424B2` | ℹ️ INFO | 2026-10-29 | 424B2 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
 | **MSFT** | `PX14A6G` | ℹ️ INFO | 2026-10-28 | SEC Form PX14A6G | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
+| **GOOGL** | `424B5` | ℹ️ INFO | 2026-11-19 | 424B5 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `4` | ℹ️ INFO | 2026-11-16 | 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `4` | ℹ️ INFO | 2026-11-16 | 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `144` | ℹ️ INFO | 2026-11-12 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
@@ -43,4 +44,3 @@
 | **GOOGL** | `144` | ℹ️ INFO | 2026-11-12 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `144` | ℹ️ INFO | 2026-11-12 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `8-K` | ⚠️ WARNING | 2026-11-05 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
-| **GOOGL** | `424B2` | ℹ️ INFO | 2026-11-04 | 424B2 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |

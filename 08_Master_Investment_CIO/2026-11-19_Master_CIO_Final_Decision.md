@@ -20,9 +20,9 @@ Dưới sự điều phối của Master CIO, dòng vốn được quản trị 
 | **TỔNG CỘNG (100% NAV)** | **100.0%** | **$787.40** | **20,000,000 ₫** | **Quản trị rủi ro 0% Margin • Stop <= 7.0%** |
 
 ### Chỉ Số Định Lượng Danh Mục Thận Trọng (`Calibrated Real Metrics`)
-- **Kỳ vọng Toán học Danh mục (EV%)**: **+5.89% / lệnh**
-- **Xác suất Thắng Thận trọng (Calibrated P(W))**: **70.5%** *(Không thổi phồng điểm ảo; hiệu chỉnh bám sát thực tế)*
-- **Tỷ lệ Lợi Nhuận / Rủi Ro Trung Bình (R:R)**: **1 : 2.60** (Chuẩn tối thiểu `>= 1:2.0`)
+- **Kỳ vọng Toán học Danh mục (EV%)**: **+5.81% / lệnh**
+- **Xác suất Thắng Thận trọng (Calibrated P(W))**: **71.0%** *(Không thổi phồng điểm ảo; hiệu chỉnh bám sát thực tế)*
+- **Tỷ lệ Lợi Nhuận / Rủi Ro Trung Bình (R:R)**: **1 : 2.59** (Chuẩn tối thiểu `>= 1:2.0`)
 - **Mức Rủi Ro Mất Vốn Tối Đa Trên 1 Vị Thế**: **1.05% NAV**
 
 ---
@@ -83,34 +83,34 @@ sequenceDiagram
 
 | Mã CP | Sàn / Ngành | Vốn Phân Bổ (USD / VNĐ) | Số Cổ Phiếu | Giá Hiện Tại | Điểm Vào Lệnh Tối Ưu (Chia Nhịp) | Ngưỡng Cắt Lỗ Stop 2xATR | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **NVDA** | Semiconductors & AI | **$0.00**<br/>(0 ₫) | **0 CP** | $150.96 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($150.96) • 40% Gia tăng Breakout • 30% Retest | **$139.64**<br/>(-7.5%) | TP1: **$198.66**<br/>TP2: **$253.67** | +29.4%<br/>(1:3.82) |
-| **TSM** | Global Chip Foundry | **$0.00**<br/>(0 ₫) | **0 CP** | $362.62 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($362.62) • 40% Gia tăng Breakout • 30% Retest | **$335.42**<br/>(-7.5%) | TP1: **$447.10**<br/>TP2: **$586.69** | +25.1%<br/>(1:4.61) |
-| **AVGO** | Custom AI ASICs & Networking | **$0.00**<br/>(0 ₫) | **0 CP** | $354.05 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($354.05) • 40% Gia tăng Breakout • 30% Retest | **$327.50**<br/>(-7.5%) | TP1: **$437.93**<br/>TP2: **$528.17** | +21.5%<br/>(1:3.70) |
-| **MSFT** | Enterprise Software & Cloud | **$0.00**<br/>(0 ₫) | **0 CP** | $508.29 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($508.29) • 40% Gia tăng Breakout • 30% Retest | **$472.47**<br/>(-7.05%) | TP1: **$579.93**<br/>TP2: **$636.12** | +12.9%<br/>(1:3.24) |
+| **NVDA** | Semiconductors & AI | **$0.00**<br/>(0 ₫) | **0 CP** | $149.43 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($149.43) • 40% Gia tăng Breakout • 30% Retest | **$138.22**<br/>(-7.5%) | TP1: **$196.45**<br/>TP2: **$246.67** | +28.5%<br/>(1:3.69) |
+| **TSM** | Global Chip Foundry | **$0.00**<br/>(0 ₫) | **0 CP** | $355.54 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($355.54) • 40% Gia tăng Breakout • 30% Retest | **$328.87**<br/>(-7.5%) | TP1: **$437.72**<br/>TP2: **$586.69** | +26.0%<br/>(1:4.86) |
+| **AVGO** | Custom AI ASICs & Networking | **$0.00**<br/>(0 ₫) | **0 CP** | $351.53 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($351.53) • 40% Gia tăng Breakout • 30% Retest | **$325.17**<br/>(-7.5%) | TP1: **$434.43**<br/>TP2: **$526.47** | +21.7%<br/>(1:3.75) |
+| **MSFT** | Enterprise Software & Cloud | **$0.00**<br/>(0 ₫) | **0 CP** | $508.34 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($508.34) • 40% Gia tăng Breakout • 30% Retest | **$471.67**<br/>(-7.21%) | TP1: **$581.68**<br/>TP2: **$636.12** | +13.0%<br/>(1:3.18) |
 
 ### Giải Trình Chi Tiết Từng Mã Mỹ Của Master CIO & Alex:
 
 #### 🔹 NVDA — NVIDIA Corp. (CORE COMPOUNDER)
-- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `80.3/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+51.20%` • True FCF ex-SBC: `$16.06B` • Altman Z: `18.5` • Lynch PEG: `0.19x` • SEC EDGAR: Form 8-K (2026-11-17)]** — Vị thế độc tôn tuyệt đối với 85%+ thị phần chip gia tốc AI toàn cầu. Doanh thu tăng trưởng +62.5% YoY, FCF khổng lồ +$60.8B USD, biên gộp 75.1%. Hôm qua tăng +0.58% ngay khi VIX dịu lại.
+- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `80.3/100` • Piotroski F-Score: `8/9` • EVA Spread (ROIC-WACC): `+51.20%` • True FCF ex-SBC: `$68.49B` • Altman Z: `17.01` • Lynch PEG: `0.18x` • SEC EDGAR: Form 8-K (2026-11-17)]** — Vị thế độc tôn tuyệt đối với 85%+ thị phần chip gia tốc AI toàn cầu. Doanh thu tăng trưởng +62.5% YoY, FCF khổng lồ +$60.8B USD, biên gộp 75.1%. Hôm qua tăng +0.58% ngay khi VIX dịu lại.
 - **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết công suất cả năm tới. Các tập đoàn siêu đám mây (Meta, Google, Microsoft) cam kết chi tiêu vốn (CapEx) vượt $200 tỷ USD cho hạ tầng AI.
 - **Cách thức thực thi tối ưu lợi nhuận (The "How")**: Giữ 70% vị thế đang lãi; đặt Limit 30% tại $202.56 (-0.35x ATR). Chốt lời TP1 tại $228.42 (+11.6%) và TP2 tại $328.95 (+60.7%). Khóa rủi ro bằng Stop 2xATR tại $192.75 (-5.81%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO.
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
 
 #### 🔹 TSM — Taiwan Semiconductor (TSMC) (CORE COMPOUNDER)
-- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `83.1/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+29.03%` • True FCF ex-SBC: `$28.38B` • Altman Z: `13.93` • Lynch PEG: `0.65x` • SEC EDGAR: Form 4 (2026-11-18)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
+- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `83.1/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+29.05%` • True FCF ex-SBC: `$28.29B` • Altman Z: `13.75` • Lynch PEG: `0.66x` • SEC EDGAR: Form 4 (2026-11-18)]** — Chuẩn hóa ADR tỷ giá thực tế: FCF đạt tới +$36.93B USD, biên lợi nhuận gộp 57.8%. Định giá P/E dự phóng chỉ 23.4x — cực rẻ so với vị thế nhà máy đúc chip duy nhất của nhân loại. Upside Phố Wall còn +43.9%.
 - **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia.
 - **Cách thức thực thi tối ưu lợi nhuận (The "How")**: Duy trì tổng tỷ trọng cụm NVDA + TSM = 10.5% NAV (tuân thủ trần rủi ro tương quan 14% của Ban 4). Chốt lời TP1 tại $457.59 (+12.7%) và TP2 tại $584.39 (+43.9%). Cắt lỗ Stop 2xATR tại $380.40 (-6.34%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO.
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
 
 #### 🔹 AVGO — Broadcom Inc. (TACTICAL ALPHA SLEEVE (MỚI))
-- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `80.9/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+11.98%` • True FCF ex-SBC: `$28.64B` • Altman Z: `13.91` • Lynch PEG: `0.34x` • SEC EDGAR: Form 10-Q (2026-09-10)]** — Cổ phiếu bị bán tháo quá đà lùi về vùng quá bán sâu (RSI chạm 33.9) tạo ra phân kỳ dương. Nội tại cực khỏe với FCF +$22.8B USD, biên gộp 76.2%. Hôm qua đã bật tăng mạnh +0.78% lên $326.08 xác nhận đáy ngắn hạn.
+- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `80.9/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+11.98%` • True FCF ex-SBC: `$28.64B` • Altman Z: `13.84` • Lynch PEG: `0.35x` • SEC EDGAR: Form 10-Q (2026-09-10)]** — Cổ phiếu bị bán tháo quá đà lùi về vùng quá bán sâu (RSI chạm 33.9) tạo ra phân kỳ dương. Nội tại cực khỏe với FCF +$22.8B USD, biên gộp 76.2%. Hôm qua đã bật tăng mạnh +0.78% lên $326.08 xác nhận đáy ngắn hạn.
 - **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưởng bùng nổ 3 con số. Việc sáp nhập VMware bắt đầu phát huy hiệu quả cắt giảm chi phí và gia tăng dòng tiền thuê bao phần mềm doanh nghiệp.
 - **Cách thức thực thi tối ưu lợi nhuận (The "How")**: Vào 60% tại $326.08 và 40% Limit tại $321.72. Tỷ lệ Reward/Risk đạt tới 4.70x với chốt lời TP1 tại $372.74 (+14.3%) và TP2 tại $530.14 (+62.6%). Cắt lỗ Stop 2xATR tại $302.75 (-7.15%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO.
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
 
 #### 🔹 MSFT — Microsoft Corp. (CORE COMPOUNDER)
-- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `88.3/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+13.32%` • True FCF ex-SBC: `$-4.63B` • Altman Z: `11.87` • Lynch PEG: `1.5x` • SEC EDGAR: Form 4 (2026-11-16)]** — MSFT là cỗ máy in tiền mặt vĩ đại nhất thế giới với FCF đạt +$74.1B USD, biên hoạt động trên 44%. Ban lãnh đạo (CEO & Giám đốc cấp cao) mua ròng +263,400 cổ phiếu theo SEC Form 4. Cổ phiếu giữ vững trên đường MA200 ($485.20) và vừa tăng +0.19%.
-- **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu ưu tiên cổ phiếu công nghệ có FCF lớn khi VIX neo ở vùng 24.56 đòi hỏi ưu tiên doanh nghiệp có FCF thực chất.
+- **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `88.3/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+13.32%` • True FCF ex-SBC: `$-4.63B` • Altman Z: `11.88` • Lynch PEG: `1.5x` • SEC EDGAR: Form 4 (2026-11-16)]** — MSFT là cỗ máy in tiền mặt vĩ đại nhất thế giới với FCF đạt +$74.1B USD, biên hoạt động trên 44%. Ban lãnh đạo (CEO & Giám đốc cấp cao) mua ròng +263,400 cổ phiếu theo SEC Form 4. Cổ phiếu giữ vững trên đường MA200 ($485.20) và vừa tăng +0.19%.
+- **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu ưu tiên cổ phiếu công nghệ có FCF lớn khi VIX neo ở vùng 28.75 đòi hỏi ưu tiên doanh nghiệp có FCF thực chất.
 - **Cách thức thực thi tối ưu lợi nhuận (The "How")**: Giữ 80% vị thế hiện tại; đặt lệnh Limit Buy 20% còn lại tại $518.00 (hỗ trợ MA20). Chốt lời bậc 1 (TP1) 40% vị thế tại $566.55 (+8.5%); khi chạm TP1, tự động nâng Stop-Loss về điểm hòa vốn $521.91 để gồng 60% còn lại lên TP2 $627.73 (+20.3%). Ngưỡng cắt lỗ bảo vệ vốn cứng: Stop 2xATR tại $499.59 (-4.28%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO.
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
 
@@ -121,21 +121,21 @@ sequenceDiagram
 
 | Mã CP | Sàn / Ngành | Vốn Phân Bổ (VNĐ / USD) | Số Cổ Phiếu (Lô Chẵn 100) | Thị Giá Hiện Tại | Pháp Y & Net Conviction (Bước 1 & 2) | Ngưỡng Cắt Lỗ Bắt Buộc | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **MSH** | HOSE • Dệt May Xuất Khẩu | **3,520,000 ₫**<br/>($138.58) | **100 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 35,200 ₫ | **Điểm 10 Danh Thủ:** `91.9/100`<br/>**RS Rating:** `94/99`<br/>**Phán quyết:** `HOLD_AND_PROTECT (HOLDING_T0_AVAILABLE)` | **33,090 ₫**<br/>(-5.99%) | TP1: **39,500 ₫**<br/>TP2: **43,000 ₫** | +5.59%<br/>(1:2.60) |
-| **BAF** | HOSE • Nông nghiệp 3F | **3,115,000 ₫**<br/>($122.64) | **100 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 31,150 ₫ | **Điểm 10 Danh Thủ:** `88.0/100`<br/>**RS Rating:** `95/99`<br/>**Phán quyết:** `HOLD_AND_PROTECT (HOLDING_T0)` | **30,050 ₫**<br/>(-3.53%) | TP1: **33,200 ₫**<br/>TP2: **36,500 ₫** | +6.20%<br/>(1:2.61) |
+| **MSH** | HOSE • Dệt May Xuất Khẩu | **3,520,000 ₫**<br/>($138.58) | **100 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 35,200 ₫ | **Điểm 10 Danh Thủ:** `93.6/100`<br/>**RS Rating:** `94/99`<br/>**Phán quyết:** `HOLD_AND_PROTECT (HOLDING_T0_AVAILABLE)` | **33,090 ₫**<br/>(-5.99%) | TP1: **39,500 ₫**<br/>TP2: **43,000 ₫** | +5.42%<br/>(1:2.60) |
+| **BAF** | HOSE • Nông nghiệp 3F | **3,115,000 ₫**<br/>($122.64) | **100 CP**<br/>(Lô chẵn 100 CP (Chuẩn HOSE/HNX)) | 31,150 ₫ | **Điểm 10 Danh Thủ:** `88.0/100`<br/>**RS Rating:** `95/99`<br/>**Phán quyết:** `HOLD_AND_PROTECT (HOLDING_T0)` | **30,050 ₫**<br/>(-3.53%) | TP1: **33,200 ₫**<br/>TP2: **36,500 ₫** | +6.20%<br/>(1:2.59) |
 
 ### Giải Trình Chi Tiết Từng Mã Việt Nam Của Master CIO & Minh Quân:
 
 #### 🔹 MSH — May Sông Hồng (HOSE) (ACTIVE HOLDING (HOLDING_T0_AVAILABLE))
 - **Trạng thái lệnh**: `HOLDING_T0_AVAILABLE` — **HOLD_AND_PROTECT (HOLDING_T0_AVAILABLE)**
-- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Thẩm định BCTC VAS/TT200 đạt chuẩn, Forensic 100.0/100 (CLEAN), Net Conviction +65.0/100.
+- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AAA (FORTRESS) (10 Danh Thủ: 93.6/100 | RS: 94/99) • P/E 9.8x, ROE 21.5%, OCF/LNST 1.42x • 1 lô 100 CP = 3,500,000 ₫ (17.3% NAV)
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Nhà máy Sông Hồng 10 và nhà máy tại Ai Cập chạy tối đa công suất đơn hàng FOB biên lãi cao, tiền mặt lớn
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Bảo vệ vị thế MSH (100 CP @ 34,510 ₫): Khóa Stop Loss cứng tại 33,090 ₫ (-5.99%); canh chốt lời Scaling Out 50% tại TP1 39,500 ₫, gồng 50% còn lại lên TP2 43,000 ₫. Cấm mua đuổi trước 14h00; chỉ giải ngân thêm nếu Khung Giờ Vàng 14h00-14h25 xác nhận Buy-Up >= 60%.
 - **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **211,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **1.05% Tổng NAV**).
 
 #### 🔹 BAF — CTCP Nông Nghiệp BAF Việt Nam (ACTIVE HOLDING (HOLDING_T0))
 - **Trạng thái lệnh**: `HOLDING_T0` — **HOLD_AND_PROTECT (HOLDING_T0)**
-- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AAA (FORTRESS) (10 Danh Thủ: 88.0/100 | RS: 95/99) • P/E 11.5x, ROE 16.2%, OCF/LNST 1.18x • 1 lô 100 CP = 3,080,000 ₫ (15.23% NAV)
+- **Chất lượng Báo cáo Tài chính (VAS / TT200)**: Hạng AAA (FORTRESS) (10 Danh Thủ: 88.0/100 | RS: 95/99) • P/E 11.5x, ROE 16.2%, OCF/LNST 1.18x • 1 lô 100 CP = 3,095,000 ₫ (15.3% NAV)
 - **Chất xúc tác tăng trưởng mạnh mẽ (Catalysts)**: Mô hình chăn nuôi 3F khép kín hợp tác tập đoàn Muyuan (Trung Quốc), nâng tổng đàn lên 1 triệu con
 - **Chỉ dẫn thực thi tối ưu giá vốn**: Bảo vệ vị thế BAF (100 CP @ 31,209 ₫): Khóa Stop Loss cứng tại 30,050 ₫ (-3.53%); canh chốt lời Scaling Out 50% tại TP1 33,200 ₫, gồng 50% còn lại lên TP2 36,500 ₫. Cấm mua đuổi trước 14h00; chỉ giải ngân thêm nếu Khung Giờ Vàng 14h00-14h25 xác nhận Buy-Up >= 60%.
 - **Kiểm soát rủi ro T+2.5**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **110,000 VNĐ** (nhịp thăm dò 50% chỉ chiếm **0.55% Tổng NAV**).
@@ -176,7 +176,7 @@ Toàn bộ danh mục chỉ được phép kích hoạt bấm cò khi vượt qu
 | **03** | **Sức Khỏe Doanh Nghiệp (FA)** | Tăng trưởng thực, dòng tiền `OCF/LNST >= 1.0x`, `Beneish M < -1.78`, không xào nấu BCTC. | 100% mã tầm ngắm đạt `OCF/LNST >= 1.0x`, không dùng hàng đầu cơ lỗ ròng. | ✅ **CÓ (PASS)** |
 | **04** | **Thanh Khoản & Thị Giá Phù Hợp 20M** | Thị giá **`13k–22.5k`** (`vol20 >= 2M CP`) để cầm được **`200–300 CP/mã`** cho chốt tỉa 50/50. | Đã chuyển trọng tâm sang `PVT, TCB, MBB, HPG, TCH` (từ bỏ mã đắt thanh khoản mỏng). | ✅ **CÓ (PASS)** |
 | **05** | **Điểm Mua Kỹ Thuật (TA)** | Chỉ đặt lệnh `LO` lúc `14h00–14h25` khi `Buy-Up >= 60%` + `VSA No Supply / Spring`. Cấm ATO/ATC. | Khóa cứng Khung Giờ Vàng `14h00–14h25` và cầu chì cấm `ATC`. | ✅ **CÓ (PASS)** |
-| **06** | **Tỷ Lệ Risk/Reward (R:R)** | Mục tiêu chốt lời gấp tối thiểu `2.0` lần điểm cắt lỗ (`R:R >= 2.0`), chốt tỉa 50% ở `+300k–+500k đ`. | R:R bình quân danh mục đạt **`1 : 2.60`**. | ✅ **CÓ (PASS)** |
+| **06** | **Tỷ Lệ Risk/Reward (R:R)** | Mục tiêu chốt lời gấp tối thiểu `2.0` lần điểm cắt lỗ (`R:R >= 2.0`), chốt tỉa 50% ở `+300k–+500k đ`. | R:R bình quân danh mục đạt **`1 : 2.59`**. | ✅ **CÓ (PASS)** |
 | **07** | **Quy Mô & Kỷ Luật Đi Vốn** | Khống chế rủi ro toàn danh mục `Risk-at-Stop <= 4.5% NAV`, không để tiền nhàn rỗi vào đầu tuần thuận. | Đang khóa rủi ro thực tế ở mức an toàn, sẵn sàng tăng tốc đầu tuần sau `23–25/11`. | ✅ **CÓ (PASS)** |
 
 ### 6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)
