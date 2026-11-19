@@ -1,20 +1,17 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-19 09:47:27  
+**Thời gian cập nhật:** 2026-11-19 16:50:58  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261119-094727`  
+**Mã đồng bộ:** `SYNC-AG2P-20261119-165058`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Triển khai Hành động 1 & 2: Dẹp văn mẫu/chấm điểm ảo, đồng bộ SSOT, chuẩn hóa Kế hoạch Tuần Sau công suất cao chuẩn Tuần Đầu (70-85% NAV, 13k-22.5k, 200-300 CP/mã)
+* **Câu hỏi của Chủ tịch:** Cloud Auto Check HDB hậu bán (2026-11-19)
 * **Kết luận & Quyết định thể chế:**
-Hoàn tất Hành động 1 & 2: (1) Gỡ bỏ toàn bộ điểm tự chấm ảo (98.5/100, P(W) 80.5%, 100/100) và văn mẫu Vòng 1 cũ ('20,167,119đ / 100% Cash / 03-05/11 / HDB holding') trong vn_daily_specialist, master_cio_allocator, eod_master_audit_engine, intraday_portfolio_sentinel, apex_tactical_war_room_engine, apex_institutional_cron_daemon, morning_war_room_hearing; (2) Đồng bộ SSOT TCBS 105C307855 (NAV 20,229,522đ, Cash 13,594,522đ = 67.2%, MSH 100 CP, BAF 100 CP) & số liệu Walk-Forward thật 35.3%; (3) Ban hành Kế hoạch Tuần Sau (23-27/11): Thứ Năm 19/11 mặc định 0đ (ngoại lệ 100 PVT), Thứ Sáu 20/11 giữ trần <= 45-55% NAV, Thứ Hai-Tư 23-25/11 bung công suất 70-85% NAV (14-17M đ) vào rổ 13k-22.5k thanh khoản >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/mã) và chốt tỉa 50% tại +2.5%..+4.0% (+300k..+500k đ).
+🟡 HDB hồi nhẹ +0.45% (22,150 đ vs giá thoát 22,050 đ) — HDB đóng cửa nhích nhẹ lên 22,150 đ (+0.45%). Sau trừ ~0.13% phí/thuế bán, mức hồi chưa vượt ngưỡng cảnh báo 22,600 đ; vẫn tiếp tục giữ kỷ luật bảo toàn vốn và chờ xác nhận lực cầu bền vững hậu đáo hạn.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Đồng bộ pre_flight_compliance_check.py & institutional_compliance_anchor.json khớp SSOT 13,594,522đ Cash / 20,229,522đ NAV
-- [x] Sửa 7 script cốt lõi xóa sạch văn mẫu Vòng 1 & điểm ảo 98.5/100 / 80.5% P(W)
-- [x] Ban hành Kế hoạch Tuần Sau 23-27/11 công suất 70-85% NAV chuẩn Tuần Đầu & cập nhật weekly_tactical_plan_active.json
-- [x] Khôi phục trạng thái Hội nghị 04h30 APEX-SUMMIT-20261119-0430 chuẩn V10.0, vá Unittest & Comprehensive Audit
+- [x] Xuất 2026-11-19_HDB_Post_Exit_Audit.md & cập nhật hdb_post_exit_audit_watch.json
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)

@@ -386,3 +386,5 @@
 - **Tỷ lệ dự báo chuẩn xác (Hit Rate %)**: **78.5%**
 - **Bài học đúc rút**: Phiên 2026-11-19: Mô hình mổ xẻ BCTC phát huy hiệu quả cao. Doanh nghiệp dòng tiền thật (OCF > LNST) duy trì sức chống chịu vượt trội khi thị trường phân hóa.
 - **Trọng số BCTC duy trì**: 36.0% | Dòng tiền: 26.0%
+
+- **[HDB Post-Exit Audit 2026-11-19 | 2026-11-19 23:50:43 ICT]**: 🟡 HDB hồi nhẹ +0.45% (22,150 đ vs giá thoát 22,050 đ) — HDB đóng cửa nhích nhẹ lên 22,150 đ (+0.45%). Sau trừ ~0.13% phí/thuế bán, mức hồi chưa vượt ngưỡng cảnh báo 22,600 đ; vẫn tiếp tục giữ kỷ luật bảo toàn vốn và chờ xác nhận lực cầu bền vững hậu đáo hạn.

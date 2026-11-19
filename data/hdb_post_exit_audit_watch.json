@@ -9,5 +9,16 @@
   "chairman_mandate": "Theo dõi diễn biến HDB đến hết tuần (18-20/11); nếu HDB hồi tăng lại mạnh vượt ngưỡng thoát, báo cáo ngay và tổ chức Ban 5 + Minh Quân rút kinh nghiệm điểm thoát/Stop.",
   "alert_rebound_trigger_vnd": 22600.0,
   "alert_stop_breakdown_vnd": 21700.0,
-  "status": "ACTIVE_POST_EXIT_AUDIT_WATCH"
+  "status": "ACTIVE_POST_EXIT_AUDIT_WATCH",
+  "daily_checks": [
+    {
+      "date": "2026-11-19",
+      "timestamp_ict": "2026-11-19 23:50:43 ICT",
+      "close_price_vnd": 22150.0,
+      "diff_vs_exit_pct": 0.45,
+      "verdict": "MILD_BOUNCE_MONITOR",
+      "source": "VPS_DIRECT",
+      "report_path": "VN_Market/05_Learning_And_Evolution/2026-11-19_HDB_Post_Exit_Audit.md"
+    }
+  ]
 }
