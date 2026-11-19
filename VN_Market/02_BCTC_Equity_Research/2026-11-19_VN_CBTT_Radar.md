@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (TOÀN THỊ TRƯỜNG 144+ MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-19 17:22:31  
-> **Số sự kiện ghi nhận:** 54 thông báo  
+> **Thời gian quét:** 2026-11-19 21:25:39  
+> **Số sự kiện ghi nhận:** 64 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -26,7 +26,7 @@
 | **FPT** | `CO_TUC` | ⚠️ CHÚ Ý | Ông Trương Gia Bình sắp nhận gần 130 tỷ đồng cổ tức từ FPT giữa lúc cổ phiếu "trôi" về đáy 3 năm | [Xem Link](https://cafef.vn/ong-truong-gia-binh-sap-nhan-gan-130-ty-dong-co-tuc-tu-fpt-giua-luc-co-phieu-troi-ve-day-3-nam-188261118142411194.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT thủng đáy, loạt CTCK đưa ra khuyến nghị bất ngờ | [Xem Link](https://cafef.vn/fpt-thung-day-loat-ctck-dua-ra-khuyen-nghi-bat-ngo-188261118123609762.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT công bố thông tin quan trọng | [Xem Link](https://cafef.vn/fpt-cong-bo-thong-tin-quan-trong-188261118090644835.chn) |
-| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bất ngờ sở hữu khối ngoại tại FPT khi thị giá "thủng đáy" 3 năm | [Xem Link](https://cafef.vn/bat-ngo-so-huu-khoi-ngoai-tai-fpt-khi-thi-gia-thung-day-3-nam-188261117221031335.chn) |
+| **ACB, SHB, VIB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 20/11, gửi dưới 100 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank, ACB và VIB nhận được bao nhiêu tiền lãi? | [Xem Link](https://cafef.vn/ngay-20-11-gui-duoi-100-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-acb-va-vib-nhan-duoc-bao-nhieu-tien-lai-18826111923160495.chn) |
 | **SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SHB dẫn đầu ngành Ngân hàng tại bảng xếp hạng Nơi làm việc tốt nhất Việt Nam 2026 | [Xem Link](https://cafef.vn/shb-dan-dau-nganh-ngan-hang-tai-bang-xep-hang-noi-lam-viec-tot-nhat-viet-nam-2026-18826111918395378.chn) |
 | **ACB** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | ACB: Nâng tầm tài sản theo dòng thời gian, linh hoạt đến từng khoản vốn | [Xem Link](https://cafef.vn/acb-nang-tam-tai-san-theo-dong-thoi-gian-linh-hoat-den-tung-khoan-von-188261119065743803.chn) |
 | **VIB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VIB chủ động đón cơ hội tối ưu thanh khoản từ giải pháp hoán đổi ngoại tệ của NHNN | [Xem Link](https://cafef.vn/vib-chu-dong-don-co-hoi-toi-uu-thanh-khoan-tu-giai-phap-hoan-doi-ngoai-te-cua-nhnn-188261119065406558.chn) |
@@ -43,7 +43,6 @@
 | **MSB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | “Âm vang xứ Bạch Dương”: Hành trình khám phá những kiệt tác âm nhạc Nga và Đông Âu | [Xem Link](https://cafef.vn/am-vang-xu-bach-duong-hanh-trinh-kham-pha-nhung-kiet-tac-am-nhac-nga-va-dong-au-188261117102640079.chn) |
 | **VIB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VIB cho vay mua ô tô lãi suất ưu đãi từ 8,9%/năm, cam kết thả nổi không quá 15% sau thời gian cố định | [Xem Link](https://cafef.vn/vib-cho-vay-mua-o-to-lai-suat-uu-dai-tu-89-nam-cam-ket-tha-noi-khong-qua-15-sau-thoi-gian-co-dinh-18826111711130799.chn) |
 | **ACB, SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ngày 17/11, gửi 200 triệu tại Techcombank, Sacombank, SHB, HDBank, MB, VPBank và ACB nhận được bao nhiêu tiền lãi sau 6 tháng? | [Xem Link](https://cafef.vn/ngay-17-11-gui-200-trieu-tai-techcombank-sacombank-shb-hdbank-mb-vpbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-sau-6-thang-188261116235213303.chn) |
-| **ACB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | ACB: Một cổ đông đã bán sạch gần 51,5 triệu cổ phiếu | [Xem Link](https://cafef.vn/acb-mot-co-dong-da-ban-sach-gan-515-trieu-co-phieu-188261116234355182.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá thuê đất khu công nghiệp phía Nam quý 3/2026: TP.HCM lập đỉnh mới, Tây Ninh giảm sâu hút khách | [Xem Link](https://cafef.vn/gia-thue-dat-khu-cong-nghiep-phia-nam-quy-3-2026-tphcm-lap-dinh-moi-tay-ninh-giam-sau-hut-khach-188261119204744743.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Vingroup của tỷ phú Phạm Nhật Vượng chính thức khởi công dự án nhà ở xã hội lớn nhất Việt Nam | [Xem Link](https://cafef.vn/vingroup-cua-ty-phu-pham-nhat-vuong-chinh-thuc-khoi-cong-du-an-nha-o-xa-hoi-lon-nhat-viet-nam-188261119151901347.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nguồn cung nhà liền thổ TP.HCM  tăng gần 40 lần, hơn 90% tập trung tại 2 khu vực có đại đô thị của Vinhomes, tỷ lệ hấp thụ 33% | [Xem Link](https://cafef.vn/nguon-cung-nha-lien-tho-tphcm-tang-gan-40-lan-hon-90-tap-trung-tai-2-khu-vuc-co-dai-do-thi-cua-vinhomes-ty-le-hap-thu-33-188261118155647611.chn) |
@@ -58,3 +57,14 @@
 | **CEO** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Cổ phiếu Nvidia trải qua chuỗi giảm giá dài nhất 14 năm, điều gì sẽ xảy ra tiếp theo? | [Xem Link](https://vneconomy.vn/co-phieu-nvidia-trai-qua-chuoi-giam-gia-dai-nhat-14-nam-dieu-gi-se-xay-ra-tiep-theo.htm) |
 | **VIB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VIB chủ động đón cơ hội tối ưu thanh khoản từ giải pháp hoán đổi ngoại tệ của Ngân hàng Nhà nước | [Xem Link](https://vneconomy.vn/vib-chu-dong-don-co-hoi-toi-uu-thanh-khoan-tu-giai-phap-hoan-doi-ngoai-te-cua-ngan-hang-nha-nuoc.htm) |
 | **SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SHB mừng sinh nhật 33 năm với 333 giải thưởng và nhiều ưu đãi dành cho khách hàng | [Xem Link](https://vneconomy.vn/shb-mung-sinh-nhat-33-nam-voi-333-giai-thuong-va-nhieu-uu-dai-danh-cho-khach-hang.htm) |
+| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nhiều giám đốc cấp cao PNJ đồng loạt từ nhiệm | [Xem Link](https://vnexpress.net/nhieu-giam-doc-cap-cao-pnj-dong-loat-tu-nhiem-5146804.html) |
+| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CEO tạm quyền Nvidia kêu gọi nhân viên 'tiến về phía trước' | [Xem Link](https://vnexpress.net/ceo-tam-quyen-nvidia-keu-goi-nhan-vien-tien-ve-phia-truoc-5146331.html) |
+| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Nvidia nói 'không có ý định đưa Jensen Huang quay lại' | [Xem Link](https://vnexpress.net/chu-tich-nvidia-noi-khong-co-y-dinh-dua-jensen-huang-quay-lai-5145974.html) |
+| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Quyền lực Nvidia ra sao khi không còn Jensen Huang? | [Xem Link](https://vnexpress.net/quyen-luc-nvidia-ra-sao-khi-khong-con-jensen-huang-5145629.html) |
+| **SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SHB tặng 333 giải thưởng nhân dịp sinh nhật | [Xem Link](https://vnexpress.net/shb-tang-333-giai-thuong-nhan-dip-sinh-nhat-5145506.html) |
+| **CEO** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Bạn đời của CZ lỗ hơn 100 triệu USD khi tiền số lao dốc | [Xem Link](https://vnexpress.net/ban-doi-cua-cz-lo-hon-100-trieu-usd-khi-tien-so-lao-doc-5145696.html) |
+| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hai ông lớn tiền số Binance và OKX khẩu chiến | [Xem Link](https://vnexpress.net/hai-ong-lon-tien-so-binance-va-okx-khau-chien-5145555.html) |
+| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nvidia 'không xem xét' khả năng đưa Jensen Huang trở lại vị trí CEO | [Xem Link](https://vnexpress.net/nvidia-khong-xem-xet-kha-nang-dua-jensen-huang-tro-lai-vi-tri-ceo-5145467.html) |
+| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ông Trump không phản đối Jensen Huang quay về Nvidia | [Xem Link](https://vnexpress.net/ong-trump-khong-phan-doi-jensen-huang-quay-ve-nvidia-5145423.html) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vissan đầu tư 1.558 tỷ đồng di dời nhà máy về Tây Ninh | [Xem Link](https://vnexpress.net/vissan-dau-tu-1-558-ty-dong-di-doi-nha-may-ve-tay-ninh-5145585.html) |
+| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Vietcombank TP HCM nhận Huân chương Lao động hạng Nhất lần hai | [Xem Link](https://vnexpress.net/vietcombank-tp-hcm-nhan-huan-chuong-lao-dong-hang-nhat-lan-hai-5145537.html) |
