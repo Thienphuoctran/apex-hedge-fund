@@ -1,6 +1,6 @@
 {
-  "audit_timestamp": "2026-11-19 04:44:16",
-  "audit_duration_seconds": 0.16,
+  "audit_timestamp": "2026-11-19 08:31:14",
+  "audit_duration_seconds": 0.26,
   "overall_infrastructure_health_score": 80,
   "health_verdict": "CẦN LƯU Ý",
   "appointed_officers": {
@@ -10,13 +10,13 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 462,
-    "total_markdown_documents": 707,
+    "operational_institutional_reports": 477,
+    "total_markdown_documents": 724,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (462 báo cáo thể chế / 707 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (477 báo cáo thể chế / 724 tệp MD hiện có)."
   },
   "check_2_directory_density": {
     "total_directories_scanned": 96,
@@ -32,16 +32,16 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1142,
-    "total_project_size_mb": 31.21,
-    "data_directory_size_mb": 4.16,
+    "total_active_files": 1163,
+    "total_project_size_mb": 31.88,
+    "data_directory_size_mb": 4.15,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "3.12%",
+    "github_quota_used_pct": "3.19%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 45.56,
+    "git_directory_size_mb": 45.75,
     "uncommitted_files_count": 16,
     "active_branch": "main",
     "status": "HEALTHY"
@@ -54,8 +54,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 3.1,
-    "ssot_load_latency_ms": 0.18,
+    "json_directory_scan_latency_ms": 4.98,
+    "ssot_load_latency_ms": 0.25,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
