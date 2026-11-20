@@ -3,7 +3,7 @@
   "account_id": "105C307855",
   "chairman": "Trần Quốc Thiên Phước",
   "created_at": "2026-11-07 16:06:36",
-  "last_updated": "2026-11-20 17:10:39",
+  "last_updated": "2026-11-20 22:43:32",
   "historical_campaigns_completed": [
     {
       "campaign_id": "CAMPAIGN-VN-ROUND-01",
@@ -1522,7 +1522,7 @@
     },
     "2026-11-20": {
       "session_date": "2026-11-20",
-      "recorded_at": "2026-11-20 17:10:39",
+      "recorded_at": "2026-11-20 22:43:32",
       "total_stocks_scanned": 145,
       "total_sectors_scanned": 18,
       "market_breadth": {
@@ -1894,8 +1894,8 @@
   },
   "active_council_resolutions": {
     "resolution_id": "APEX-COUNCIL-12DEPT-2ASSIST-2026-11-20",
-    "generated_at": "17:10:05 Thứ Sáu, ngày 20/11/2026",
-    "execution_time_seconds": 34.31,
+    "generated_at": "22:43:15 Thứ Sáu, ngày 20/11/2026",
+    "execution_time_seconds": 16.65,
     "account_id": "105C307855",
     "account_cash_vnd": 13594522.0,
     "realized_pnl_round1_vnd": 166419.0,
@@ -2682,7 +2682,7 @@
   },
   "handover_briefing_for_next_session": {
     "generated_from_session": "2026-11-20",
-    "generated_at": "2026-11-20 17:10:39",
+    "generated_at": "2026-11-20 22:43:32",
     "account_cash_vnd": 13594522.0,
     "portfolio_status": "ALL_CASH_STANDDOWN",
     "what_we_did_last_session": "Phiên 2026-11-20: Hệ thống đã quét toàn diện 145 cổ phiếu thuộc 18 nhóm ngành trên 3 sàn HOSE/HNX/UPCoM. 10 Phòng ban đã họp tranh biện trực tiếp, loại bỏ thói quen chỉ nhìn vào 4 mã cũ (hạ bậc FPT do RS=18 gãy MA20, hạ bậc DGC do RS=22 yếu, loại MWG/FRT khỏi danh mục mua trực tiếp do 1 lô 100 CP chiếm >35% vốn 20M). Đã tuyển chọn bộ Tầm ngắm Vòng 2 đa ngành có RS 81-96 và BCTC hạng AAA/AA vừa khít quy mô vốn 20.16 triệu VNĐ.",
