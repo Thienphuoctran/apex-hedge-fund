@@ -1,18 +1,18 @@
 {
   "system_name": "APEX HEDGE FUND — UNIFIED EPISODIC MEMORY & TEMPORAL AWARENESS LEDGER",
-  "last_synchronized": "08:13:27 Thứ Sáu, ngày 20/11/2026",
+  "last_synchronized": "17:10:39 Thứ Sáu, ngày 20/11/2026",
   "temporal_awareness": {
-    "timestamp_iso": "2026-11-20T08:13:27.651078",
+    "timestamp_iso": "2026-11-20T17:10:39.609515",
     "date_str": "2026-11-20",
     "date_vn": "20/11/2026",
-    "time_vn": "08:13:27",
+    "time_vn": "17:10:39",
     "weekday_index": 4,
     "weekday_vn": "Thứ Sáu",
-    "full_time_label_vn": "08:13:27 Thứ Sáu, ngày 20/11/2026",
-    "market_phase": "PRE_MARKET_PREPARATION",
-    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Sáu) — Chuẩn bị kế hoạch tác chiến",
+    "full_time_label_vn": "17:10:39 Thứ Sáu, ngày 20/11/2026",
+    "market_phase": "AFTER_HOURS_CLOSED",
+    "market_phase_vn": "Ngoài giờ giao dịch (Thứ Sáu sau 15h00) — Sàn HOSE/HNX đã đóng cửa",
     "is_trading_hours": false,
-    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
+    "next_session_note": "Hệ thống thực hiện kiểm toán EOD, rà soát BCTC và chuẩn bị cho phiên kế tiếp."
   },
   "current_situational_awareness": {
     "account_id": "105C307855",
