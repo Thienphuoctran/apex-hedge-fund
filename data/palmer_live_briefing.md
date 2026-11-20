@@ -1,17 +1,17 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-19 16:50:58  
+**Thời gian cập nhật:** 2026-11-20 16:25:23  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261119-165058`  
+**Mã đồng bộ:** `SYNC-AG2P-20261120-162523`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Cloud Auto Check HDB hậu bán (2026-11-19)
+* **Câu hỏi của Chủ tịch:** Cloud Auto Check HDB hậu bán (2026-11-20)
 * **Kết luận & Quyết định thể chế:**
-🟡 HDB hồi nhẹ +0.45% (22,150 đ vs giá thoát 22,050 đ) — HDB đóng cửa nhích nhẹ lên 22,150 đ (+0.45%). Sau trừ ~0.13% phí/thuế bán, mức hồi chưa vượt ngưỡng cảnh báo 22,600 đ; vẫn tiếp tục giữ kỷ luật bảo toàn vốn và chờ xác nhận lực cầu bền vững hậu đáo hạn.
+✅ XÁC NHẬN THOÁT CHUẨN: HDB ở 21,800 đ (-1.13% vs giá thoát 22,050 đ) — HDB đóng cửa tại 21,800 đ (-1.13% so với giá bán 22,050 đ). Quyết định thoát hòa vốn ngày 18/11 lúc VN-Index giảm về 1,710 (Breadth 16.5%) đã bảo vệ trọn vẹn ~2.20 triệu tiền mặt sạch qua vùng nhiễu đáo hạn.
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Xuất 2026-11-19_HDB_Post_Exit_Audit.md & cập nhật hdb_post_exit_audit_watch.json
+- [x] Xuất 2026-11-20_HDB_Post_Exit_Audit.md & cập nhật hdb_post_exit_audit_watch.json
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
