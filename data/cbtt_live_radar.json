@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-20T07:38:56.270580+00:00",
+  "timestamp_utc": "2026-11-20T09:57:00.826537+00:00",
   "scan_date": "2026-11-20",
   "total_us_filings_count": 375,
-  "total_vn_announcements_count": 56,
+  "total_vn_announcements_count": 55,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "144",
@@ -284,21 +284,21 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 11
     },
-    "PNJ": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Biến động nhân sự cấp cao tại PNJ: 4 giám đốc cao cấp cùng từ nhiệm trong tháng 11",
-      "severity": "INFO",
-      "published_at": "Fri, 20 Nov 26 12:00:00 +0700",
-      "source_url": "https://cafef.vn/bien-dong-nhan-su-cap-cao-tai-pnj-4-giam-doc-cao-cap-cung-tu-nhiem-trong-thang-11-188261120120107325.chn",
-      "total_announcements": 6
-    },
     "CEO": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "CEO SHS Nguyễn Duy Linh nhận thêm ghế Chủ tịch tại một công ty quản lý quỹ",
-      "severity": "INFO",
-      "published_at": "Fri, 20 Nov 26 09:35:00 +0700",
-      "source_url": "https://cafef.vn/ceo-shs-nguyen-duy-linh-nhan-them-ghe-chu-tich-tai-mot-cong-ty-quan-ly-quy-188261120093325582.chn",
-      "total_announcements": 10
+      "latest_event_type": "ESOP_PHAT_HANH",
+      "latest_title": "CEO PNJ: Tái cơ cấu triệt để là điều kiện tiên quyết để tồn tại",
+      "severity": "WARNING",
+      "published_at": "Fri, 20 Nov 26 15:30:00 +0700",
+      "source_url": "https://cafef.vn/ceo-pnj-tai-co-cau-triet-de-la-dieu-kien-tien-quyet-de-ton-tai-188261120152643876.chn",
+      "total_announcements": 9
+    },
+    "PNJ": {
+      "latest_event_type": "ESOP_PHAT_HANH",
+      "latest_title": "CEO PNJ: Tái cơ cấu triệt để là điều kiện tiên quyết để tồn tại",
+      "severity": "WARNING",
+      "published_at": "Fri, 20 Nov 26 15:30:00 +0700",
+      "source_url": "https://cafef.vn/ceo-pnj-tai-co-cau-triet-de-la-dieu-kien-tien-quyet-de-ton-tai-188261120152643876.chn",
+      "total_announcements": 7
     },
     "SHS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -314,7 +314,7 @@
       "severity": "CRITICAL",
       "published_at": "Fri, 20 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/fpt-tang-gia-9-voi-55-khach-hang-nhat-ban-khien-doanh-thu-ky-moi-cham-lai-them-100-khach-hang-vao-nam-sau-188261119232751757.chn",
-      "total_announcements": 12
+      "total_announcements": 13
     },
     "HCM": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -322,7 +322,7 @@
       "severity": "INFO",
       "published_at": "Thu, 19 Nov 26 18:33:00 +0700",
       "source_url": "https://cafef.vn/thoi-gian-di-lai-dang-thay-doi-cach-nguoi-mua-chon-can-ho-188261119183339342.chn",
-      "total_announcements": 8
+      "total_announcements": 7
     },
     "MSB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4935,6 +4935,19 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "CEO",
+        "PNJ"
+      ],
+      "title": "CEO PNJ: Tái cơ cấu triệt để là điều kiện tiên quyết để tồn tại",
+      "summary": "\"Phải cải tổ quyết liệt\" – tân Tổng giám đốc Phan Quốc Công nhìn nhận những sai lầm của bộ máy, đặc biệt ở mảng tài chính và quản trị rủi ro. Tái cấu trúc thượng tầng là bước đi cần thiết để PNJ giải quyết nghĩa vụ khách...",
+      "event_type": "ESOP_PHAT_HANH",
+      "severity": "WARNING",
+      "published_at": "Fri, 20 Nov 26 15:30:00 +0700",
+      "source_url": "https://cafef.vn/ceo-pnj-tai-co-cau-triet-de-la-dieu-kien-tien-quyet-de-ton-tai-188261120152643876.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PNJ"
       ],
       "title": "Biến động nhân sự cấp cao tại PNJ: 4 giám đốc cao cấp cùng từ nhiệm trong tháng 11",
@@ -5058,12 +5071,24 @@
       "symbols": [
         "FPT"
       ],
-      "title": "FPT Retail phát triển hai trụ cột bán lẻ, chú trọng công nghệ và trải nghiệm khách hàng",
-      "summary": "Với hai hệ thống FPT Shop và Long Châu, FPT Retail tiếp tục phát triển hoạt động bán lẻ công nghệ và chăm sóc sức khỏe, đồng thời chú trọng ứng dụng công nghệ, nâng cao chất lượng dịch vụ và đáp ứng nhu cầu ngày càng đa ...",
+      "title": "FPT mất gần một nửa vốn hóa từ đầu năm",
+      "summary": "Trong khi thị giá tiếp tục giảm sâu, hoạt động kinh doanh của FPT vẫn duy trì tăng trưởng....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Thu, 19 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/vietcap-dinh-gia-long-chau-hon-44000-ty-dong-gap-18-lan-fpt-shop-he-lo-nhom-co-dong-dac-biet-nam-hon-11-von-18826111822215302.chn"
+      "published_at": "Fri, 20 Nov 26 16:15:00 +0700",
+      "source_url": "https://cafef.vn/fpt-mat-gan-mot-nua-von-hoa-tu-dau-nam-188261120160917254.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Phiên 20/11: Khối ngoại thẳng tay bán ròng gần 900 tỷ đồng, xả mạnh FPT cùng loạt cổ phiếu ngân hàng hot",
+      "summary": "Giao dịch khối ngoại tiếp tục là điểm trừ khi nhà đầu tư nước ngoài bán ròng tổng cộng 895 tỷ đồng trên cả 3 sàn....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 20 Nov 26 15:45:00 +0700",
+      "source_url": "https://cafef.vn/phien-20-11-khoi-ngoai-thang-tay-ban-rong-gan-900-ty-dong-xa-manh-fpt-cung-loat-co-phieu-ngan-hang-hot-188261120154440739.chn"
     },
     {
       "market": "VIETNAM",
@@ -5410,18 +5435,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Nguồn cung nhà liền thổ TP.HCM  tăng gần 40 lần, hơn 90% tập trung tại 2 khu vực có đại đô thị của Vinhomes, tỷ lệ hấp thụ 33%",
-      "summary": "Theo Cushman & Wakefield, giá bán sơ cấp bình quân nhà liền thổ tại TP.HCM trong quý 3/2026 đạt 163,2 triệu đồng/m², giảm 49% so với cùng kỳ năm trước trong khi nguồn cung mới tăng gần 40 lần....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 19 Nov 26 10:37:00 +0700",
-      "source_url": "https://cafef.vn/nguon-cung-nha-lien-tho-tphcm-tang-gan-40-lan-hon-90-tap-trung-tai-2-khu-vuc-co-dai-do-thi-cua-vinhomes-ty-le-hap-thu-33-188261118155647611.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "SSI"
       ],
       "title": "SSI Research: Mặt bằng lãi suất ổn định nhưng khó giảm mạnh?",
@@ -5589,30 +5602,6 @@
       "severity": "CRITICAL",
       "published_at": "Tue, 17 Nov 2026 18:03:52 +0700",
       "source_url": "https://vnexpress.net/ban-doi-cua-cz-lo-hon-100-trieu-usd-khi-tien-so-lao-doc-5145696.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO"
-      ],
-      "title": "Hai ông lớn tiền số Binance và OKX khẩu chiến",
-      "summary": "Mâu thuẫn giữa nhà sáng lập Binance CZ và CEO OKX Star Xu tái bùng phát với những cáo buộc về trách nhiệm bảo vệ người dùng sau vụ hack....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 2026 10:29:37 +0700",
-      "source_url": "https://vnexpress.net/hai-ong-lon-tien-so-binance-va-okx-khau-chien-5145555.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO"
-      ],
-      "title": "Nvidia 'không xem xét' khả năng đưa Jensen Huang trở lại vị trí CEO",
-      "summary": "Hội đồng quản trị Nvidia không xem xét khả năng đưa Jensen Huang trở lại vị trí CEO, theo CNBC....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 2026 08:14:20 +0700",
-      "source_url": "https://vnexpress.net/nvidia-khong-xem-xet-kha-nang-dua-jensen-huang-tro-lai-vi-tri-ceo-5145467.html"
     }
   ]
 }

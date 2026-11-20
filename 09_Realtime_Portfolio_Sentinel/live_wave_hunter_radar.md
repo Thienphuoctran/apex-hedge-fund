@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-20 08:13:37`  
+*Cập nhật thời gian thực*: `2026-11-20 09:57:08`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -10,7 +10,7 @@
 | Phòng Ban Chuyên Trách | Trạng Thái Hoạt Động | Báo Cáo Tác Chiến Thời Gian Thực |
 | :--- | :---: | :--- |
 | **Ban 1 (Global & VN) — Vĩ Mô & Tiền Tệ SBV/Fed** | **🟢 ACTIVE 24/7** | Giám sát DXY, VIX, Lãi suất SBV & Tỷ giá USD/VND |
-| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 375 hồ sơ SEC & 56 tin CBTT |
+| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 375 hồ sơ SEC & 55 tin CBTT |
 | **Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff** | **🟢 ACTIVE 24/7** | Phát hiện 8 sóng cổ phiếu VN & 6 sóng cổ phiếu Mỹ đạt chuẩn AAA/AA |
 | **Ban 4 (Global & VN) — Hội Đồng Rủi Ro Định Lượng ATR** | **🟢 ACTIVE 24/7** | Khóa chặt Stop 2xATR <= 7.5% & R:R >= 1:2.0 |
 | **Ban 5 (Global & VN) — Tự Học Thích Nghi & Kiểm Định 4 Ngày** | **🟢 ACTIVE 24/7** | Điểm sức khỏe hệ thống đạt 100/100 (Zero Drift) |
@@ -60,7 +60,7 @@
 | `US_SEC_EDGAR` | **`GOOGL`** ⭐ **(ĐANG THEO DÕI)** | `SEC Form 424B5` | `2026-11-19` | Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`MSFT`** | `SEC Form 4` | `2026-11-16` | Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`AAPL`** | `SEC Form 10-K` | `2026-11-03` | Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100% |
+| `VIETNAM_CBTT` | **`CEO,PNJ`** | `ESOP_PHAT_HANH` | `Fri, 20 Nov 26 1` | CEO PNJ: Tái cơ cấu triệt để là điều kiện tiên quyết để tồn tại |
 | `VIETNAM_CBTT` | **`PNJ`** | `TIN_DOANH_NGHIEP` | `Fri, 20 Nov 26 1` | Biến động nhân sự cấp cao tại PNJ: 4 giám đốc cao cấp cùng từ nhiệm trong tháng 11 |
 | `VIETNAM_CBTT` | **`CEO,SHS`** | `TIN_DOANH_NGHIEP` | `Fri, 20 Nov 26 0` | CEO SHS Nguyễn Duy Linh nhận thêm ghế Chủ tịch tại một công ty quản lý quỹ |
 | `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `BCTC_KET_QUA_KINH_DOANH` | `Fri, 20 Nov 26 0` | FPT tăng giá 9% với 55 khách hàng Nhật Bản khiến doanh thu ký mới chậm lại, thêm 100 khách hàng vào năm sau |
-| `VIETNAM_CBTT` | **`CEO`** | `TIN_DOANH_NGHIEP` | `Thu, 19 Nov 26 1` | Nữ CEO Sunshine Group bất ngờ xin từ nhiệm thành viên HĐQT |

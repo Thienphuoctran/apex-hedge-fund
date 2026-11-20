@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (TOÀN THỊ TRƯỜNG 144+ MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-20 07:38:56  
-> **Số sự kiện ghi nhận:** 56 thông báo  
+> **Thời gian quét:** 2026-11-20 09:57:00  
+> **Số sự kiện ghi nhận:** 55 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **CEO, PNJ** | `ESOP_PHAT_HANH` | ⚠️ CHÚ Ý | CEO PNJ: Tái cơ cấu triệt để là điều kiện tiên quyết để tồn tại | [Xem Link](https://cafef.vn/ceo-pnj-tai-co-cau-triet-de-la-dieu-kien-tien-quyet-de-ton-tai-188261120152643876.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Biến động nhân sự cấp cao tại PNJ: 4 giám đốc cao cấp cùng từ nhiệm trong tháng 11 | [Xem Link](https://cafef.vn/bien-dong-nhan-su-cap-cao-tai-pnj-4-giam-doc-cao-cap-cung-tu-nhiem-trong-thang-11-188261120120107325.chn) |
 | **CEO, SHS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | CEO SHS Nguyễn Duy Linh nhận thêm ghế Chủ tịch tại một công ty quản lý quỹ | [Xem Link](https://cafef.vn/ceo-shs-nguyen-duy-linh-nhan-them-ghe-chu-tich-tai-mot-cong-ty-quan-ly-quy-188261120093325582.chn) |
 | **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT tăng giá 9% với 55 khách hàng Nhật Bản khiến doanh thu ký mới chậm lại, thêm 100 khách hàng vào năm sau | [Xem Link](https://cafef.vn/fpt-tang-gia-9-voi-55-khach-hang-nhat-ban-khien-doanh-thu-ky-moi-cham-lai-them-100-khach-hang-vao-nam-sau-188261119232751757.chn) |
@@ -14,7 +15,8 @@
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cổ phiếu của nhiều DN đầu ngành như FPT, Vietcombank, Vinamilk... đồng loạt xuống vùng giá thấp nhất trong nhiều tháng, thậm chí hơn 3 năm | [Xem Link](https://cafef.vn/co-phieu-gex-roi-xuong-day-18-thang-hon-20000-ty-von-hoa-bi-thoi-bay-trong-nua-nam-188261119083440262.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Vingroup khởi công dự án NƠXH hơn 64.000 tỷ đồng tại TP.HCM: Quy mô gần 45.000 căn hộ, 13 trường học, bệnh viện và 75 ha hồ nước, công viên | [Xem Link](https://cafef.vn/vingroup-khoi-cong-du-an-noxh-hon-64000-ty-dong-tai-tphcm-quy-mo-gan-45000-can-ho-13-truong-hoc-benh-vien-va-75-ha-ho-nuoc-cong-vien-188261119082710126.chn) |
 | **CEO** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Từng là nhà bán chạm mốc 2 triệu USD trên sàn thương mại điện tử, CEO Velasboost nói về nghịch lý: Bán 1 ăn 2 vẫn có thể lỗ thê thảm | [Xem Link](https://cafef.vn/tung-la-nha-ban-cham-moc-2-trieu-usd-tren-san-thuong-mai-dien-tu-ceo-velasboost-noi-ve-nghich-ly-ban-1-an-2-van-co-the-lo-the-tham-188261119073658091.chn) |
-| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT Retail phát triển hai trụ cột bán lẻ, chú trọng công nghệ và trải nghiệm khách hàng | [Xem Link](https://cafef.vn/vietcap-dinh-gia-long-chau-hon-44000-ty-dong-gap-18-lan-fpt-shop-he-lo-nhom-co-dong-dac-biet-nam-hon-11-von-18826111822215302.chn) |
+| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT mất gần một nửa vốn hóa từ đầu năm | [Xem Link](https://cafef.vn/fpt-mat-gan-mot-nua-von-hoa-tu-dau-nam-188261120160917254.chn) |
+| **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Phiên 20/11: Khối ngoại thẳng tay bán ròng gần 900 tỷ đồng, xả mạnh FPT cùng loạt cổ phiếu ngân hàng hot | [Xem Link](https://cafef.vn/phien-20-11-khoi-ngoai-thang-tay-ban-rong-gan-900-ty-dong-xa-manh-fpt-cung-loat-co-phieu-ngan-hang-hot-188261120154440739.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bán ròng hàng triệu cổ phiếu mỗi ngày, khối ngoại còn nắm bao nhiêu FPT? | [Xem Link](https://cafef.vn/ban-rong-hang-trieu-co-phieu-moi-ngay-khoi-ngoai-con-nam-bao-nhieu-fpt-188261119215103655.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cổ phiếu "thủng đáy", FPT bất ngờ hé lộ kế hoạch mới | [Xem Link](https://cafef.vn/co-phieu-thung-day-fpt-bat-ngo-he-lo-ke-hoach-moi-188261119214257171.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | 3 Giám đốc cao cấp của PNJ đồng loạt từ nhiệm | [Xem Link](https://cafef.vn/3-giam-doc-cao-cap-cua-pnj-dong-loat-tu-nhiem-188261119183338315.chn) |
@@ -43,7 +45,6 @@
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | KĐT Đại học Quốc tế 173.000 tỷ đồng hàng đầu châu Á do Vingroup của tỷ phú Phạm Nhật Vượng đầu tư vừa có thông tin quan trọng | [Xem Link](https://cafef.vn/kdt-dai-hoc-quoc-te-173000-ty-dong-hang-dau-chau-a-do-vingroup-cua-ty-phu-pham-nhat-vuong-dau-tu-vua-co-thong-tin-quan-trong-188261119220301371.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá thuê đất khu công nghiệp phía Nam quý 3/2026: TP.HCM lập đỉnh mới, Tây Ninh giảm sâu hút khách | [Xem Link](https://cafef.vn/gia-thue-dat-khu-cong-nghiep-phia-nam-quy-3-2026-tphcm-lap-dinh-moi-tay-ninh-giam-sau-hut-khach-188261119204744743.chn) |
 | **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Vingroup của tỷ phú Phạm Nhật Vượng chính thức khởi công dự án nhà ở xã hội lớn nhất Việt Nam | [Xem Link](https://cafef.vn/vingroup-cua-ty-phu-pham-nhat-vuong-chinh-thuc-khoi-cong-du-an-nha-o-xa-hoi-lon-nhat-viet-nam-188261119151901347.chn) |
-| **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nguồn cung nhà liền thổ TP.HCM  tăng gần 40 lần, hơn 90% tập trung tại 2 khu vực có đại đô thị của Vinhomes, tỷ lệ hấp thụ 33% | [Xem Link](https://cafef.vn/nguon-cung-nha-lien-tho-tphcm-tang-gan-40-lan-hon-90-tap-trung-tai-2-khu-vuc-co-dai-do-thi-cua-vinhomes-ty-le-hap-thu-33-188261118155647611.chn) |
 | **SSI** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SSI Research: Mặt bằng lãi suất ổn định nhưng khó giảm mạnh? | [Xem Link](https://vneconomy.vn/ssi-research-mat-bang-lai-suat-on-dinh-nhung-kho-giam-manh.htm) |
 | **FPT, VIC** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Dòng tiền vẫn dửng dưng, VN-Index có nguy cơ thủng đáy | [Xem Link](https://vneconomy.vn/dong-tien-van-dung-dung-vn-index-co-nguy-co-thung-day.htm) |
 | **BSR, FRT, KDH** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Khối ngoại bán ròng đột biến lên 1.200 tỷ | [Xem Link](https://vneconomy.vn/khoi-ngoai-ban-rong-dot-bien-len-1200-ty.htm) |
@@ -58,5 +59,3 @@
 | **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Quyền lực Nvidia ra sao khi không còn Jensen Huang? | [Xem Link](https://vnexpress.net/quyen-luc-nvidia-ra-sao-khi-khong-con-jensen-huang-5145629.html) |
 | **SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SHB tặng 333 giải thưởng nhân dịp sinh nhật | [Xem Link](https://vnexpress.net/shb-tang-333-giai-thuong-nhan-dip-sinh-nhat-5145506.html) |
 | **CEO** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Bạn đời của CZ lỗ hơn 100 triệu USD khi tiền số lao dốc | [Xem Link](https://vnexpress.net/ban-doi-cua-cz-lo-hon-100-trieu-usd-khi-tien-so-lao-doc-5145696.html) |
-| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Hai ông lớn tiền số Binance và OKX khẩu chiến | [Xem Link](https://vnexpress.net/hai-ong-lon-tien-so-binance-va-okx-khau-chien-5145555.html) |
-| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nvidia 'không xem xét' khả năng đưa Jensen Huang trở lại vị trí CEO | [Xem Link](https://vnexpress.net/nvidia-khong-xem-xet-kha-nang-dua-jensen-huang-tro-lai-vi-tri-ceo-5145467.html) |
