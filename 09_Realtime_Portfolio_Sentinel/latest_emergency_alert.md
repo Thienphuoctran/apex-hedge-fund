@@ -1,6 +1,6 @@
 # 🚨 [RED ALERT] BÁO CÁO BIẾN ĐỘNG KHẨN CẤP DANH MỤC & LIVE WAR-ROOM
 **Phòng Ban 9**: Ban Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Khẩn Cấp ("Victor")  
-**Thời gian phát hiện**: `2026-11-18 04:52:42` | **Mã Cổ Phiếu Báo Động**: **`HDB`** (VIETNAM)  
+**Thời gian phát hiện**: `2026-11-20 04:35:52` | **Mã Cổ Phiếu Báo Động**: **`BAF`** (VIETNAM)  
 **Mức độ khẩn cấp**: **`CRITICAL`** | **Trạng thái**: YÊU CẦU PHẢN ỨNG TỨC THỜI TRONG PHIÊN
 
 ---
@@ -8,14 +8,14 @@
 ## 1. Dữ Liệu Biến Động Thực Tế (Intraday Telemetry)
 | Chỉ Số Đo Lường | Giá Trị Thực Tế | Ngưỡng Cảnh Báo An Toàn | Đánh Giá Tình Trạng |
 | :--- | :---: | :---: | :--- |
-| **Giá Hiện Tại** | **`22,050.00 VND`** | — | Giảm **`-1.56%`** so với tham chiếu |
-| **Khoảng Cách Đến Stop 2xATR** | **`-0.05%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`22,060.00 VND`** |
-| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`0.66x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
-| **Quy Mô Vốn Đang Rủi Ro** | **`2,205,700.00 VND`** | — | Số lượng đang nắm: `100 cổ phiếu` |
-| **Giá Trị Trung Bình VWAP** | **`22,150.00 VND`** | — | Vùng kháng cự ngắn hạn trong phiên |
+| **Giá Hiện Tại** | **`30,450.00 VND`** | — | Giảm **`-1.62%`** so với tham chiếu |
+| **Khoảng Cách Đến Stop 2xATR** | **`+1.31%`** | `> 1.5%` | Ngưỡng cắt lỗ: **`30,050.00 VND`** |
+| **Tỷ Lệ Bùng Nổ Khối Lượng** | **`0.09x`** | `< 2.5x` | Khối lượng ở mức kiểm soát |
+| **Quy Mô Vốn Đang Rủi Ro** | **`3,120,900.00 VND`** | — | Số lượng đang nắm: `100 cổ phiếu` |
+| **Giá Trị Trung Bình VWAP** | **`30,283.33 VND`** | — | Vùng kháng cự ngắn hạn trong phiên |
 
 ### Các Dị Thường Kích Hoạt Còi Báo Động:
-- **LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR**: Giá hiện tại 22050.0 chỉ còn cách Stop Loss (22060.0) -0.05% (Ngưỡng cảnh báo <= 1.5%).
+- **LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR**: Giá hiện tại 30450.0 chỉ còn cách Stop Loss (30050.0) 1.31% (Ngưỡng cảnh báo <= 1.5%).
 
 
 ---
@@ -39,7 +39,7 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 * **Bản chất**: Cổ phiếu cơ sở bị giảm nhưng chưa về tài khoản hoặc không muốn bán tháo giá đáy.
 * **Lệnh thực thi ngay**:
   - **Hành động**: **`SHORT 1 HỢP ĐỒNG VN30F1M`**
-  - **Quy mô danh mục được bảo vệ**: `132,000,000.00 VND` (Bảo hộ **`5984.5%`** giá trị vị thế).
+  - **Quy mô danh mục được bảo vệ**: `132,000,000.00 VND` (Bảo hộ **`4229.5%`** giá trị vị thế).
 * **Kết quả**: Vị thế phái sinh Short sẽ sinh lời tương đương mức lỗ của cổ phiếu cơ sở, **khóa băng mức lỗ danh mục 100% tức thì**!
 
 ---
@@ -47,22 +47,22 @@ Nhà đầu tư hãy cùng Victor chọn 1 trong 4 phương án hành động sa
 ### ✂️ PHƯƠNG ÁN B: PARTIAL TACTICAL DE-RISKING (HẠ TỶ TRỌNG CHỦ ĐỘNG 50%)
 * **Bản chất**: Giảm áp lực Margin và hạ rủi ro danh mục nếu hàng đã về tài khoản.
 * **Lệnh thực thi ngay**:
-  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`22,150.00 VND`), đặt bán **`50 cổ phiếu`** (50% vị thế).
-  - Thu hồi ngay dòng tiền mặt: **`~1,102,500.00 VND`** bổ sung vào quỹ Dry Powder.
+  - Canh nhịp kéo nảy kỹ thuật về vùng VWAP (`30,283.33 VND`), đặt bán **`50 cổ phiếu`** (50% vị thế).
+  - Thu hồi ngay dòng tiền mặt: **`~1,522,500.00 VND`** bổ sung vào quỹ Dry Powder.
 
 ---
 
 ### ⚡ PHƯƠNG ÁN C: T+0 INTRA-DAY SCALP (LƯỚT SÓNG ĐẢO HÀNG HẠ GIÁ VỐN)
 * **Bản chất**: Dành cho trường hợp rũ bỏ kỹ thuật do tin giả (Washout), tài khoản đã có sẵn lượng hàng cũ.
 * **Lệnh thực thi ngay**:
-  - Trích một phần Dry Powder gom thêm một lượng cổ phiếu tại vùng giá quá bán: **`21,388.00 VND`** (-3% dưới giá hiện tại).
-  - Ngay khi lực cầu hồi phục kéo giá lên: **`22,601.00 VND`**, bán trả ngay số lượng hàng tương ứng có sẵn.
+  - Trích một phần Dry Powder gom thêm một lượng cổ phiếu tại vùng giá quá bán: **`29,536.00 VND`** (-3% dưới giá hiện tại).
+  - Ngay khi lực cầu hồi phục kéo giá lên: **`31,211.00 VND`**, bán trả ngay số lượng hàng tương ứng có sẵn.
   - Số cổ phiếu giữ nguyên nhưng hạ được giá vốn ngay trong ngày mà **không bị kẹt thêm vòng T+ mới**.
 
 ---
 
 ### 🧘 PHƯƠNG ÁN D: DISCIPLINED HOLD & RE-AFFIRM THESIS (GIỮ VỮNG TÂM LÝ KỶ LUẬT)
-* **Bản chất**: Nếu giá vẫn chưa chạm $Stop 2xATR$ (`22,060.00 VND`) và BCTC doanh nghiệp vẫn siêu tăng trưởng, không manh động bán tháo hoảng loạn cùng đám đông.
+* **Bản chất**: Nếu giá vẫn chưa chạm $Stop 2xATR$ (`30,050.00 VND`) và BCTC doanh nghiệp vẫn siêu tăng trưởng, không manh động bán tháo hoảng loạn cùng đám đông.
 * **Hành động**: Giữ nguyên trạng thái, tiếp tục để Victor giám sát sát sao mỗi 60 giây.
 
 ---

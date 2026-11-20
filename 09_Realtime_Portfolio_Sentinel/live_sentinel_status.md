@@ -1,13 +1,13 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-19 23:08:31`  
-*Trạng thái hệ thống*: **`✅ TOÀN BỘ 9 PHÒNG BAN TRỰC CHIẾN 24/7 ỔN ĐỊNH`**  
+*Cập nhật gần nhất*: `2026-11-20 04:35:53`  
+*Trạng thái hệ thống*: **`🚨 CÓ BIẾN ĐỘNG KHẨN CẤP`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`2 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
 ## 1. Giám Sát Cổ Phiếu Đang Đầu Tư (Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR)
 | Mã CP | Thị Trường | Giá Hiện Tại | Biến Động | Ngưỡng Stop 2xATR | Cách Stop | Mục Tiêu TP1 | Cách TP1 | Vol Surge | Trạng Thái Tác Chiến |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`MSH`** | VIETNAM | `35,000.00 VND` | `+0.00%` | `33,090.00 VND` | `+5.46%` | `39,500.00 VND` | `+12.86%` | `0.0x` | ✅ Đang canh 2 đầu |
-| **`BAF`** | VIETNAM | `30,950.00 VND` | `+0.00%` | `30,050.00 VND` | `+2.91%` | `33,200.00 VND` | `+7.27%` | `0.0x` | ✅ Đang canh 2 đầu |
+| **`MSH`** | VIETNAM | `34,250.00 VND` | `-2.14%` | `33,090.00 VND` | `+3.39%` | `39,500.00 VND` | `+15.33%` | `0.0x` | ⚠️ Cảnh giác giảm |
+| **`BAF`** | VIETNAM | `30,450.00 VND` | `-1.62%` | `30,050.00 VND` | `+1.31%` | `33,200.00 VND` | `+9.03%` | `0.1x` | 🚨 **Báo động cắt lỗ** |
 
 ## 2. Top Cơ Hội Sóng Mới Do Minh Quân & Alex Phát Hiện Thời Gian Thực
 | Chuyên Viên | Mã CP | Giá Hiện Tại | Tín Hiệu Sóng | Chất Lượng BCTC | Điểm Mua Chuẩn | Cắt Lỗ 2xATR | Chốt Lời TP1 |
@@ -23,7 +23,7 @@
 
 ---
 
-## 3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ (2026-11-19)
+## 3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ (2026-11-20)
 *Chỉ huy tác chiến*: **Victor (Trưởng Ban Giám Sát Rủi Ro Trong Phiên & Chỉ Huy Tác Chiến Khẩn Cấp - Ban 9)**  
 *Tài khoản giao dịch*: **Chủ tịch Phước Trần (TCBS: 105C307855 - Tổng NAV: 20,229,522 VNĐ | Tiền mặt: 13,594,522 VNĐ [67.2%])**  
 
@@ -38,7 +38,7 @@
 
 ---
 
-## 4. Bảng Thông Số Danh Mục Thực Tế & Tiền Mặt SSOT (`2026-11-19`)
+## 4. Bảng Thông Số Danh Mục Thực Tế & Tiền Mặt SSOT (`2026-11-20`)
 | Mã CP | Tên Doanh Nghiệp | Vai Trò | Số Lượng CP | Vốn / Thị Giá | Giá Trị (VND) | % NAV | Hard Stop 2xATR | TP1 | TP2 | Trạng Thái Trực Chiến |
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | **`MSH`** | May Sông Hồng (HOSE) | Vị thế Đang Nắm Giữ | **100 CP** | `Vốn 34,510 / Live 35,200 ₫` | `3,520,000 ₫` | `17.4%` | `33,090 ₫` | `39,500 ₫` | `43,000 ₫` | 🛡️ Đang bảo vệ 2 đầu |

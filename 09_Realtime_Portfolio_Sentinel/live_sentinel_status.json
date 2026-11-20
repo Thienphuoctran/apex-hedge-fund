@@ -1,27 +1,32 @@
 {
-  "last_scan_utc": "2026-11-19T23:08:31.287446",
+  "last_scan_utc": "2026-11-20T04:35:53.416820",
   "total_positions_monitored": 2,
-  "emergency_alerts_active": 0,
+  "emergency_alerts_active": 1,
   "take_profit_alerts_active": 0,
-  "status": "ALL_NORMAL",
+  "status": "EMERGENCY_ALERT",
   "positions": [
     {
       "symbol": "MSH",
       "market": "VIETNAM",
       "name": "May Sông Hồng (HOSE)",
-      "current_price": 35000.0,
+      "current_price": 34250.0,
       "prev_close": 35000.0,
-      "change_pct": 0.0,
+      "change_pct": -2.14,
       "stop_loss_2atr": 33090.0,
-      "stop_dist_pct": 5.46,
+      "stop_dist_pct": 3.39,
       "tp1": 39500.0,
       "tp2": 43000.0,
-      "tp1_dist_pct": 12.86,
-      "tp2_dist_pct": 22.86,
-      "volume_surge_ratio": 0.0,
-      "vwap_est": 35000.0,
-      "severity": "NORMAL",
-      "triggers_hit": [],
+      "tp1_dist_pct": 15.33,
+      "tp2_dist_pct": 25.55,
+      "volume_surge_ratio": 0.01,
+      "vwap_est": 34433.33,
+      "severity": "WARNING",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 1A — BIẾN ĐỘNG SỤT GIẢM CẦN QUAN SÁT (WARNING DROP)",
+          "desc": "Giá giảm -2.14% trong phiên (Vượt ngưỡng cảnh báo vàng -2.0%)."
+        }
+      ],
       "upside_triggers_hit": [],
       "hedging_solution": {
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
@@ -39,19 +44,24 @@
       "symbol": "BAF",
       "market": "VIETNAM",
       "name": "CTCP Nông Nghiệp BAF Việt Nam",
-      "current_price": 30950.0,
+      "current_price": 30450.0,
       "prev_close": 30950.0,
-      "change_pct": 0.0,
+      "change_pct": -1.62,
       "stop_loss_2atr": 30050.0,
-      "stop_dist_pct": 2.91,
+      "stop_dist_pct": 1.31,
       "tp1": 33200.0,
       "tp2": 36500.0,
-      "tp1_dist_pct": 7.27,
-      "tp2_dist_pct": 17.93,
-      "volume_surge_ratio": 0.0,
-      "vwap_est": 30950.0,
-      "severity": "NORMAL",
-      "triggers_hit": [],
+      "tp1_dist_pct": 9.03,
+      "tp2_dist_pct": 19.87,
+      "volume_surge_ratio": 0.09,
+      "vwap_est": 30283.33,
+      "severity": "CRITICAL",
+      "triggers_hit": [
+        {
+          "level": "LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR",
+          "desc": "Giá hiện tại 30450.0 chỉ còn cách Stop Loss (30050.0) 1.31% (Ngưỡng cảnh báo <= 1.5%)."
+        }
+      ],
       "upside_triggers_hit": [],
       "hedging_solution": {
         "instrument": "Hợp Đồng Tương Lai VN30F1M",

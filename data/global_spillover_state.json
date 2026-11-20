@@ -1,69 +1,68 @@
 {
-  "snapshot_date": "2026-11-18",
-  "updated_at": "2026-11-18 11:53:04",
-  "fetched_epoch": 1794977584.26,
-  "risk_multiplier": 0.5,
-  "max_allocation_pct": 25,
+  "snapshot_date": "2026-11-20",
+  "updated_at": "2026-11-20 11:35:36",
+  "fetched_epoch": 1795149336.05,
+  "risk_multiplier": 0.45,
+  "max_allocation_pct": 22,
   "overnight_bias": "DEFENSIVE_SHOCK",
   "bias_label": "🔴 BÁO ĐỘNG LIÊN THỊ TRƯỜNG — THU HẸP TỶ TRỌNG",
   "badge_color": "#ef4444",
   "drivers": [
-    "Bán tháo Phố Wall / VNM ETF (S&P -2.40%, VNM -2.63%) -> Thu hẹp quy mô giải ngân",
-    "VIX nhích cao (25.5) -> Hạn chế Margin & ưu tiên Stop chặt",
-    "Lợi suất US10Y neo cao (5.10%, +2.10%)"
+    "Bán tháo Phố Wall / VNM ETF (S&P -5.49%, VNM -3.76%) -> Thu hẹp quy mô giải ngân",
+    "VIX báo động cao (28.4) -> Tăng phòng thủ tiền mặt"
   ],
   "sector_tilts": [
-    "Dầu WTI giảm sâu (84.88$, -4.35%) -> Áp lực ngắn hạn họ Dầu khí"
+    "Dầu WTI giảm sâu (82.94$, -3.24%) -> Áp lực ngắn hạn họ Dầu khí"
   ],
   "metrics": {
     "SP500": {
-      "last_price": 7340.53,
-      "prev_close": 7520.93,
-      "change_1d_pct": -2.4,
+      "last_price": 7175.83,
+      "prev_close": 7592.4,
+      "change_1d_pct": -5.49,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "NASDAQ": {
-      "last_price": 24328.38,
-      "prev_close": 25065.87,
-      "change_1d_pct": -2.94,
+      "last_price": 23879.2,
+      "prev_close": 25366.09,
+      "change_1d_pct": -5.86,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "VIX": {
-      "last_price": 25.46,
-      "prev_close": 17.49,
-      "change_1d_pct": 45.57,
+      "last_price": 28.44,
+      "prev_close": 19.3,
+      "change_1d_pct": 47.36,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "US10Y": {
-      "last_price": 5.1,
-      "prev_close": 5.0,
-      "change_1d_pct": 2.1,
+      "last_price": 5.05,
+      "prev_close": 5.15,
+      "change_1d_pct": -1.98,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "DXY": {
-      "last_price": 103.63,
-      "prev_close": 103.17,
-      "change_1d_pct": 0.45,
+      "last_price": 103.8,
+      "prev_close": 103.55,
+      "change_1d_pct": 0.24,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "WTI_OIL": {
-      "last_price": 84.88,
-      "prev_close": 88.74,
-      "change_1d_pct": -4.35,
+      "last_price": 82.94,
+      "prev_close": 85.72,
+      "change_1d_pct": -3.24,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "VNM_ETF": {
-      "last_price": 16.67,
-      "prev_close": 17.12,
-      "change_1d_pct": -2.63,
+      "last_price": 16.38,
+      "prev_close": 17.02,
+      "change_1d_pct": -3.76,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "EEM_ETF": {
-      "last_price": 58.27,
-      "prev_close": 60.57,
-      "change_1d_pct": -3.8,
+      "last_price": 56.75,
+      "prev_close": 61.14,
+      "change_1d_pct": -7.18,
       "source": "YAHOO_HTTP_LIGHT"
     }
   },
-  "handoff_directive": "Alex (Ban 7 US) bàn giao trước 08h30 cho Minh Quân (Ban 7 VN): Hệ số rủi ro liên thị trường 0.50x | Trần giải ngân tối đa 25% NAV. Bán tháo Phố Wall / VNM ETF (S&P -2.40%, VNM -2.63%) -> Thu hẹp quy mô giải ngân"
+  "handoff_directive": "Alex (Ban 7 US) bàn giao trước 08h30 cho Minh Quân (Ban 7 VN): Hệ số rủi ro liên thị trường 0.45x | Trần giải ngân tối đa 22% NAV. Bán tháo Phố Wall / VNM ETF (S&P -5.49%, VNM -3.76%) -> Thu hẹp quy mô giải ngân"
 }
