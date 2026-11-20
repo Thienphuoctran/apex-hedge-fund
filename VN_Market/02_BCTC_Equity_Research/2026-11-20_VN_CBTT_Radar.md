@@ -1,6 +1,6 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (TOÀN THỊ TRƯỜNG 144+ MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-20 09:57:00  
-> **Số sự kiện ghi nhận:** 55 thông báo  
+> **Thời gian quét:** 2026-11-20 16:57:00  
+> **Số sự kiện ghi nhận:** 52 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
@@ -13,8 +13,6 @@
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thời gian đi lại đang thay đổi cách người mua chọn căn hộ | [Xem Link](https://cafef.vn/thoi-gian-di-lai-dang-thay-doi-cach-nguoi-mua-chon-can-ho-188261119183339342.chn) |
 | **MSB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cổ phiếu MSB lập đỉnh lịch sử, thiếu gia nhà Chủ tịch Trần Anh Tuấn lãi 67 tỷ đồng sau hơn 2 tháng mua 20 triệu cổ phiếu | [Xem Link](https://cafef.vn/co-phieu-msb-lap-dinh-lich-su-thieu-gia-nha-chu-tich-tran-anh-tuan-lai-67-ty-dong-sau-hon-2-thang-mua-20-trieu-co-phieu-188261119095306152.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cổ phiếu của nhiều DN đầu ngành như FPT, Vietcombank, Vinamilk... đồng loạt xuống vùng giá thấp nhất trong nhiều tháng, thậm chí hơn 3 năm | [Xem Link](https://cafef.vn/co-phieu-gex-roi-xuong-day-18-thang-hon-20000-ty-von-hoa-bi-thoi-bay-trong-nua-nam-188261119083440262.chn) |
-| **HCM** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | Vingroup khởi công dự án NƠXH hơn 64.000 tỷ đồng tại TP.HCM: Quy mô gần 45.000 căn hộ, 13 trường học, bệnh viện và 75 ha hồ nước, công viên | [Xem Link](https://cafef.vn/vingroup-khoi-cong-du-an-noxh-hon-64000-ty-dong-tai-tphcm-quy-mo-gan-45000-can-ho-13-truong-hoc-benh-vien-va-75-ha-ho-nuoc-cong-vien-188261119082710126.chn) |
-| **CEO** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Từng là nhà bán chạm mốc 2 triệu USD trên sàn thương mại điện tử, CEO Velasboost nói về nghịch lý: Bán 1 ăn 2 vẫn có thể lỗ thê thảm | [Xem Link](https://cafef.vn/tung-la-nha-ban-cham-moc-2-trieu-usd-tren-san-thuong-mai-dien-tu-ceo-velasboost-noi-ve-nghich-ly-ban-1-an-2-van-co-the-lo-the-tham-188261119073658091.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | FPT mất gần một nửa vốn hóa từ đầu năm | [Xem Link](https://cafef.vn/fpt-mat-gan-mot-nua-von-hoa-tu-dau-nam-188261120160917254.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Phiên 20/11: Khối ngoại thẳng tay bán ròng gần 900 tỷ đồng, xả mạnh FPT cùng loạt cổ phiếu ngân hàng hot | [Xem Link](https://cafef.vn/phien-20-11-khoi-ngoai-thang-tay-ban-rong-gan-900-ty-dong-xa-manh-fpt-cung-loat-co-phieu-ngan-hang-hot-188261120154440739.chn) |
 | **FPT** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Bán ròng hàng triệu cổ phiếu mỗi ngày, khối ngoại còn nắm bao nhiêu FPT? | [Xem Link](https://cafef.vn/ban-rong-hang-trieu-co-phieu-moi-ngay-khoi-ngoai-con-nam-bao-nhieu-fpt-188261119215103655.chn) |
@@ -58,4 +56,3 @@
 | **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Chủ tịch Nvidia nói 'không có ý định đưa Jensen Huang quay lại' | [Xem Link](https://vnexpress.net/chu-tich-nvidia-noi-khong-co-y-dinh-dua-jensen-huang-quay-lai-5145974.html) |
 | **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Quyền lực Nvidia ra sao khi không còn Jensen Huang? | [Xem Link](https://vnexpress.net/quyen-luc-nvidia-ra-sao-khi-khong-con-jensen-huang-5145629.html) |
 | **SHB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | SHB tặng 333 giải thưởng nhân dịp sinh nhật | [Xem Link](https://vnexpress.net/shb-tang-333-giai-thuong-nhan-dip-sinh-nhat-5145506.html) |
-| **CEO** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Bạn đời của CZ lỗ hơn 100 triệu USD khi tiền số lao dốc | [Xem Link](https://vnexpress.net/ban-doi-cua-cz-lo-hon-100-trieu-usd-khi-tien-so-lao-doc-5145696.html) |

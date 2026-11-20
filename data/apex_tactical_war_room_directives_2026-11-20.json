@@ -104,5 +104,50 @@
     "role": "specialist",
     "type": "sec_filing",
     "content": "[📊 SEC 10-Q — PLTR] 10-Q (2026-11-03)"
+  },
+  {
+    "id": "cbtt_2026-11-20_CRITICAL_FPT_90883",
+    "key": "cbtt_2026-11-20_CRITICAL_FPT_90883",
+    "timestamp": "23:57:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT tăng giá 9% với 55 khách hàng Nhật Bản khiến doanh thu ký mới chậm lại, thêm 100 khách hàng vào năm sau (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-20_CRITICAL_FPT_1989",
+    "key": "cbtt_2026-11-20_CRITICAL_FPT_1989",
+    "timestamp": "23:57:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] Cổ phiếu FPT \"phá đáy\" hơn 3 năm, Vietcap hé lộ loạt thông tin đáng chú ý (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-20_RED_FLAG_PNJ_34581",
+    "key": "cbtt_2026-11-20_RED_FLAG_PNJ_34581",
+    "timestamp": "23:57:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — PNJ] Nóng: Bảo Tín Minh Châu, PNJ, DOJI, SJC vào danh sách thanh tra năm 2027 (CANH_BAO_RUI_RO)"
+  },
+  {
+    "id": "cbtt_2026-11-20_CRITICAL_ACB_89586",
+    "key": "cbtt_2026-11-20_CRITICAL_ACB_89586",
+    "timestamp": "23:57:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — ACB] ACB: Nâng tầm tài sản theo dòng thời gian, linh hoạt đến từng khoản vốn (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-20_CRITICAL_CEO_2821",
+    "key": "cbtt_2026-11-20_CRITICAL_CEO_2821",
+    "timestamp": "23:57:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — CEO] Cổ phiếu Nvidia trải qua chuỗi giảm giá dài nhất 14 năm, điều gì sẽ xảy ra tiếp theo? (BCTC_KET_QUA_KINH_DOANH)"
   }
 ]
