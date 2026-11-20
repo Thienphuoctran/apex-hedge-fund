@@ -32,5 +32,77 @@
     "role": "sentinel",
     "type": "sentinel_emergency",
     "content": "🚨 [BAN 9 CẢNH BÁO — BAF] Giá 30,450.00 (-1.62%) | Cách Stop 2xATR: +1.31% | SHORT 1 HỢP ĐỒNG VN30F1M"
+  },
+  {
+    "id": "cbtt_2026-11-20_CRITICAL_FPT_20356",
+    "key": "cbtt_2026-11-20_CRITICAL_FPT_20356",
+    "timestamp": "14:38:56",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT tăng giá 9% với 55 khách hàng Nhật Bản khiến doanh thu ký mới chậm lại, thêm 100 khách hàng vào năm sau (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-20_CRITICAL_CEO_78503",
+    "key": "cbtt_2026-11-20_CRITICAL_CEO_78503",
+    "timestamp": "14:38:56",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — CEO] Từng là nhà bán chạm mốc 2 triệu USD trên sàn thương mại điện tử, CEO Velasboost nói về nghịch lý: Bán 1 ăn 2 vẫn có thể lỗ thê thảm (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-20_CRITICAL_FPT_14358",
+    "key": "cbtt_2026-11-20_CRITICAL_FPT_14358",
+    "timestamp": "14:38:56",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] Cổ phiếu FPT \"phá đáy\" hơn 3 năm, Vietcap hé lộ loạt thông tin đáng chú ý (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-20_RED_FLAG_PNJ_35111",
+    "key": "cbtt_2026-11-20_RED_FLAG_PNJ_35111",
+    "timestamp": "14:38:56",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — PNJ] Nóng: Bảo Tín Minh Châu, PNJ, DOJI, SJC vào danh sách thanh tra năm 2027 (CANH_BAO_RUI_RO)"
+  },
+  {
+    "id": "cbtt_2026-11-20_CRITICAL_ACB_54599",
+    "key": "cbtt_2026-11-20_CRITICAL_ACB_54599",
+    "timestamp": "14:38:56",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — ACB] ACB: Nâng tầm tài sản theo dòng thời gian, linh hoạt đến từng khoản vốn (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "sec_2026-11-20_AAPL_10-K_2026-11-03",
+    "key": "sec_2026-11-20_AAPL_10-K_2026-11-03",
+    "timestamp": "14:38:56",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-K — AAPL] 10-K (2026-11-03)"
+  },
+  {
+    "id": "sec_2026-11-20_TSLA_10-Q_2026-10-22",
+    "key": "sec_2026-11-20_TSLA_10-Q_2026-10-22",
+    "timestamp": "14:38:56",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — TSLA] 10-Q (2026-10-22)"
+  },
+  {
+    "id": "sec_2026-11-20_PLTR_10-Q_2026-11-03",
+    "key": "sec_2026-11-20_PLTR_10-Q_2026-11-03",
+    "timestamp": "14:38:56",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — PLTR] 10-Q (2026-11-03)"
   }
 ]

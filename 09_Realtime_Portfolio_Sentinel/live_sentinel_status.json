@@ -1,9 +1,9 @@
 {
-  "last_scan_utc": "2026-11-20T04:35:53.416820",
+  "last_scan_utc": "2026-11-20T07:39:34.469951",
   "total_positions_monitored": 2,
-  "emergency_alerts_active": 1,
+  "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
-  "status": "EMERGENCY_ALERT",
+  "status": "ALL_NORMAL",
   "positions": [
     {
       "symbol": "MSH",
@@ -44,24 +44,19 @@
       "symbol": "BAF",
       "market": "VIETNAM",
       "name": "CTCP Nông Nghiệp BAF Việt Nam",
-      "current_price": 30450.0,
+      "current_price": 30800.0,
       "prev_close": 30950.0,
-      "change_pct": -1.62,
+      "change_pct": -0.48,
       "stop_loss_2atr": 30050.0,
-      "stop_dist_pct": 1.31,
+      "stop_dist_pct": 2.44,
       "tp1": 33200.0,
       "tp2": 36500.0,
-      "tp1_dist_pct": 9.03,
-      "tp2_dist_pct": 19.87,
-      "volume_surge_ratio": 0.09,
-      "vwap_est": 30283.33,
-      "severity": "CRITICAL",
-      "triggers_hit": [
-        {
-          "level": "LEVEL 2 — BÁO ĐỘNG ĐỎ CẬN KỀ STOP LOSS 2xATR",
-          "desc": "Giá hiện tại 30450.0 chỉ còn cách Stop Loss (30050.0) 1.31% (Ngưỡng cảnh báo <= 1.5%)."
-        }
-      ],
+      "tp1_dist_pct": 7.79,
+      "tp2_dist_pct": 18.51,
+      "volume_surge_ratio": 0.17,
+      "vwap_est": 30533.33,
+      "severity": "NORMAL",
+      "triggers_hit": [],
       "upside_triggers_hit": [],
       "hedging_solution": {
         "instrument": "Hợp Đồng Tương Lai VN30F1M",
@@ -80,11 +75,11 @@
     "vn_waves_count": 8,
     "us_waves_count": 6,
     "top_vn_wave_symbols": [
-      "PVD",
-      "IDC",
-      "VCB",
-      "BID",
-      "DCM"
+      "STB",
+      "MSN",
+      "HPG",
+      "CTG",
+      "TCB"
     ],
     "top_us_wave_symbols": [
       "NVDA",

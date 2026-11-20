@@ -1,0 +1,221 @@
+{
+  "date": "2026-11-20",
+  "stocks": {
+    "VCB": {
+      "price": 50200.0,
+      "rating": "AAA"
+    },
+    "BID": {
+      "price": 30050.0,
+      "rating": "AAA"
+    },
+    "CTG": {
+      "price": 29850.0,
+      "rating": "AAA"
+    },
+    "TCB": {
+      "price": 20700.0,
+      "rating": "AAA"
+    },
+    "MBB": {
+      "price": 18350.0,
+      "rating": "AAA"
+    },
+    "ACB": {
+      "price": 19750.0,
+      "rating": "AAA"
+    },
+    "VPB": {
+      "price": 20500.0,
+      "rating": "AA"
+    },
+    "HDB": {
+      "price": 21650.0,
+      "rating": "AAA"
+    },
+    "STB": {
+      "price": 71600.0,
+      "rating": "AAA"
+    },
+    "VHM": {
+      "price": 59700.0,
+      "rating": "AA"
+    },
+    "VRE": {
+      "price": 23450.0,
+      "rating": "AAA"
+    },
+    "KDH": {
+      "price": 15350.0,
+      "rating": "AA"
+    },
+    "NLG": {
+      "price": 23000.0,
+      "rating": "AA"
+    },
+    "PDR": {
+      "price": 11050.0,
+      "rating": "BB (WATCH)"
+    },
+    "DXG": {
+      "price": 10900.0,
+      "rating": "BB (WATCH)"
+    },
+    "BCM": {
+      "price": 35650.0,
+      "rating": "AA"
+    },
+    "IDC": {
+      "price": 0,
+      "rating": "AAA"
+    },
+    "KBC": {
+      "price": 26350.0,
+      "rating": "BB (WATCH)"
+    },
+    "SZC": {
+      "price": 19150.0,
+      "rating": "AAA"
+    },
+    "VGC": {
+      "price": 38100.0,
+      "rating": "AAA"
+    },
+    "HPG": {
+      "price": 20400.0,
+      "rating": "AAA"
+    },
+    "HSG": {
+      "price": 10150.0,
+      "rating": "AAA"
+    },
+    "NKG": {
+      "price": 12100.0,
+      "rating": "AA"
+    },
+    "MWG": {
+      "price": 71100.0,
+      "rating": "AAA"
+    },
+    "FRT": {
+      "price": 146300.0,
+      "rating": "AA"
+    },
+    "MSN": {
+      "price": 69700.0,
+      "rating": "AAA"
+    },
+    "VNM": {
+      "price": 51800.0,
+      "rating": "AAA"
+    },
+    "PNJ": {
+      "price": 13500.0,
+      "rating": "AA"
+    },
+    "DGW": {
+      "price": 38800.0,
+      "rating": "AAA"
+    },
+    "FPT": {
+      "price": 45050.0,
+      "rating": "AAA"
+    },
+    "CMG": {
+      "price": 16150.0,
+      "rating": "AAA"
+    },
+    "SSI": {
+      "price": 19650.0,
+      "rating": "AAA"
+    },
+    "VND": {
+      "price": 14350.0,
+      "rating": "AA"
+    },
+    "VCI": {
+      "price": 18850.0,
+      "rating": "AAA"
+    },
+    "HCM": {
+      "price": 22950.0,
+      "rating": "AAA"
+    },
+    "MBS": {
+      "price": 0,
+      "rating": "AAA"
+    },
+    "GAS": {
+      "price": 70000.0,
+      "rating": "AA"
+    },
+    "PVS": {
+      "price": 0,
+      "rating": "AAA"
+    },
+    "PVD": {
+      "price": 16150.0,
+      "rating": "AAA"
+    },
+    "BSR": {
+      "price": 23550.0,
+      "rating": "AAA"
+    },
+    "POW": {
+      "price": 13300.0,
+      "rating": "AAA"
+    },
+    "REE": {
+      "price": 46550.0,
+      "rating": "AAA"
+    },
+    "PC1": {
+      "price": 16150.0,
+      "rating": "AAA"
+    },
+    "DGC": {
+      "price": 30900.0,
+      "rating": "AAA"
+    },
+    "DCM": {
+      "price": 30350.0,
+      "rating": "AAA"
+    },
+    "DPM": {
+      "price": 18400.0,
+      "rating": "AAA"
+    },
+    "GMD": {
+      "price": 50100.0,
+      "rating": "AAA"
+    },
+    "HAH": {
+      "price": 45500.0,
+      "rating": "AAA"
+    },
+    "PVT": {
+      "price": 18700.0,
+      "rating": "AAA"
+    },
+    "VCG": {
+      "price": 14350.0,
+      "rating": "AAA"
+    },
+    "HHV": {
+      "price": 9160.0,
+      "rating": "AA"
+    },
+    "DBC": {
+      "price": 16450.0,
+      "rating": "AAA"
+    },
+    "VHC": {
+      "price": 50600.0,
+      "rating": "AAA"
+    },
+    "DHG": {
+      "price": 83000.0,
+      "rating": "AA"
+    }
+  }
+}
