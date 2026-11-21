@@ -1,5 +1,5 @@
 # BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)
-*Cập nhật gần nhất*: `2026-11-20 22:43:38`  
+*Cập nhật gần nhất*: `2026-11-21 04:29:27`  
 *Trạng thái hệ thống*: **`✅ TOÀN BỘ 9 PHÒNG BAN TRỰC CHIẾN 24/7 ỔN ĐỊNH`**  
 *Tổng số mã đang bảo vệ 2 đầu*: **`2 mã`** | *Radar Săn Sóng Mới*: **`8 mã VN + 6 mã Mỹ`**
 
@@ -23,7 +23,7 @@
 
 ---
 
-## 3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ (2026-11-20)
+## 3. Lịch Trình Tác Chiến & Kịch Bản Phòng Thủ (2026-11-21)
 *Chỉ huy tác chiến*: **Victor (Trưởng Ban Giám Sát Rủi Ro Trong Phiên & Chỉ Huy Tác Chiến Khẩn Cấp - Ban 9)**  
 *Tài khoản giao dịch*: **Chủ tịch Phước Trần (TCBS: 105C307855 - Tổng NAV: 20,229,522 VNĐ | Tiền mặt: 13,594,522 VNĐ [67.2%])**  
 
@@ -38,7 +38,7 @@
 
 ---
 
-## 4. Bảng Thông Số Danh Mục Thực Tế & Tiền Mặt SSOT (`2026-11-20`)
+## 4. Bảng Thông Số Danh Mục Thực Tế & Tiền Mặt SSOT (`2026-11-21`)
 | Mã CP | Tên Doanh Nghiệp | Vai Trò | Số Lượng CP | Vốn / Thị Giá | Giá Trị (VND) | % NAV | Hard Stop 2xATR | TP1 | TP2 | Trạng Thái Trực Chiến |
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | **`MSH`** | May Sông Hồng (HOSE) | Vị thế Đang Nắm Giữ | **100 CP** | `Vốn 34,510 / Live 35,200 ₫` | `3,520,000 ₫` | `17.4%` | `33,090 ₫` | `39,500 ₫` | `43,000 ₫` | 🛡️ Đang bảo vệ 2 đầu |

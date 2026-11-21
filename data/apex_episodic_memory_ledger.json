@@ -1,18 +1,18 @@
 {
   "system_name": "APEX HEDGE FUND — UNIFIED EPISODIC MEMORY & TEMPORAL AWARENESS LEDGER",
-  "last_synchronized": "22:43:32 Thứ Sáu, ngày 20/11/2026",
+  "last_synchronized": "04:29:20 Thứ Bảy, ngày 21/11/2026",
   "temporal_awareness": {
-    "timestamp_iso": "2026-11-20T22:43:32.106730",
-    "date_str": "2026-11-20",
-    "date_vn": "20/11/2026",
-    "time_vn": "22:43:32",
-    "weekday_index": 4,
-    "weekday_vn": "Thứ Sáu",
-    "full_time_label_vn": "22:43:32 Thứ Sáu, ngày 20/11/2026",
-    "market_phase": "AFTER_HOURS_CLOSED",
-    "market_phase_vn": "Ngoài giờ giao dịch (Thứ Sáu sau 15h00) — Sàn HOSE/HNX đã đóng cửa",
+    "timestamp_iso": "2026-11-21T04:29:20.794510",
+    "date_str": "2026-11-21",
+    "date_vn": "21/11/2026",
+    "time_vn": "04:29:20",
+    "weekday_index": 5,
+    "weekday_vn": "Thứ Bảy",
+    "full_time_label_vn": "04:29:20 Thứ Bảy, ngày 21/11/2026",
+    "market_phase": "WEEKEND_CLOSED",
+    "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
     "is_trading_hours": false,
-    "next_session_note": "Hệ thống thực hiện kiểm toán EOD, rà soát BCTC và chuẩn bị cho phiên kế tiếp."
+    "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
   },
   "current_situational_awareness": {
     "account_id": "105C307855",
@@ -212,8 +212,8 @@
       "exchange": "HOSE",
       "sector": "Ngân Hàng TMCP",
       "price_vnd": 13000.0,
-      "rs_rating": 95,
-      "legends_score": 88.2,
+      "rs_rating": 96,
+      "legends_score": 88.3,
       "lot_100_nav_pct": 6.43,
       "target_shares": 300,
       "probe_buy_price": 12920.0,
@@ -221,7 +221,7 @@
       "tp1": 13760.0,
       "tp2": 14410.0,
       "target_buy_zone": "Gom thăm dò Limit LO quanh 12,920 ₫ - 13,000 ₫; Gia tăng khi vượt 13,140 ₫ trong Khung Giờ Vàng 14h00-14h25",
-      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 88.2/100 | RS: 95/99) • P/E 5.8x, ROE 19.5%, OCF/LNST 1.12x • 1 lô 100 CP = 1,300,000 ₫ (6.43% NAV)"
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 88.3/100 | RS: 96/99) • P/E 5.8x, ROE 19.5%, OCF/LNST 1.12x • 1 lô 100 CP = 1,300,000 ₫ (6.43% NAV)"
     },
     {
       "symbol": "BAF",
