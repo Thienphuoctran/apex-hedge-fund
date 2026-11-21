@@ -1,34 +1,33 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-19 09:47:27  
+**Thời gian cập nhật:** 2026-11-21 18:07:50  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261119-094727`  
+**Mã đồng bộ:** `SYNC-AG2P-20261121-180750`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** Triển khai Hành động 1 & 2: Dẹp văn mẫu/chấm điểm ảo, đồng bộ SSOT, chuẩn hóa Kế hoạch Tuần Sau công suất cao chuẩn Tuần Đầu (70-85% NAV, 13k-22.5k, 200-300 CP/mã)
+* **Yêu cầu gần nhất của Chủ tịch:** Trien khai He thong Tac chien Toan thi truong 09:00-16:00 tu dong + Push toan bo ban nang cap V3.0 len GitHub/Render Cloud
 * **Kết luận & Quyết định thể chế:**
-Hoàn tất Hành động 1 & 2: (1) Gỡ bỏ toàn bộ điểm tự chấm ảo (98.5/100, P(W) 80.5%, 100/100) và văn mẫu Vòng 1 cũ ('20,167,119đ / 100% Cash / 03-05/11 / HDB holding') trong vn_daily_specialist, master_cio_allocator, eod_master_audit_engine, intraday_portfolio_sentinel, apex_tactical_war_room_engine, apex_institutional_cron_daemon, morning_war_room_hearing; (2) Đồng bộ SSOT TCBS 105C307855 (NAV 20,229,522đ, Cash 13,594,522đ = 67.2%, MSH 100 CP, BAF 100 CP) & số liệu Walk-Forward thật 35.3%; (3) Ban hành Kế hoạch Tuần Sau (23-27/11): Thứ Năm 19/11 mặc định 0đ (ngoại lệ 100 PVT), Thứ Sáu 20/11 giữ trần <= 45-55% NAV, Thứ Hai-Tư 23-25/11 bung công suất 70-85% NAV (14-17M đ) vào rổ 13k-22.5k thanh khoản >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/mã) và chốt tỉa 50% tại +2.5%..+4.0% (+300k..+500k đ).
+Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Đồng bộ pre_flight_compliance_check.py & institutional_compliance_anchor.json khớp SSOT 13,594,522đ Cash / 20,229,522đ NAV
-- [x] Sửa 7 script cốt lõi xóa sạch văn mẫu Vòng 1 & điểm ảo 98.5/100 / 80.5% P(W)
-- [x] Ban hành Kế hoạch Tuần Sau 23-27/11 công suất 70-85% NAV chuẩn Tuần Đầu & cập nhật weekly_tactical_plan_active.json
-- [x] Khôi phục trạng thái Hội nghị 04h30 APEX-SUMMIT-20261119-0430 chuẩn V10.0, vá Unittest & Comprehensive Audit
+- [x] Trien khai He thong Tac chien Toan thi truong 09:00-16:00 tu dong + Push toan bo ban nang cap V3.0 len GitHub/Render Cloud
+- [x] Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở
+- [x] Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.
+- [x] Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)
 
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
-- **Tổng NAV:** `20,229,522 ₫`
-- **Tiền mặt thực tế:** `13,594,522 ₫`
-- **Giá trị cổ phiếu:** `6,635,000 ₫`
-- **Vị thế nắm giữ (Ngày T+1):**
-  * **MSH**: 100 CP | Giá vốn: 34,510 ₫ | Thị giá: 35,200 ₫ | PnL: +69,000 ₫ (HOLDING_T0_AVAILABLE)
-  * **BAF**: 100 CP | Giá vốn: 31,209 ₫ | Thị giá: 31,150 ₫ | PnL: -5,900 ₫ (HOLDING_T0)
+- **Tổng NAV ròng:** `20,051,117 ₫` (`100.0% Tiền mặt`)
+- **Tiền mặt ròng:** `20,051,117 ₫`
+- **Giá trị cổ phiếu:** `0 ₫`
+- **Vị thế cổ phiếu đang giữ:**
+  * **KHÔNG CÓ (`0 cổ phiếu` — Đang giữ `100.0% Tiền mặt` sạch qua cuối tuần)**
 
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
-1. **Về BSR & BAF:** TUYỆT ĐỐI KHÔNG BẮT ĐÁY ĐẦU GIỜ CHIỀU; chờ Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong cung T+2.5
-2. **Về HDB & MSH:** Đang giữ T+1 có lãi đệm, khóa quan sát không mua thêm hôm nay, chờ chiều mai 11/11 hàng về
-3. **Về Kế hoạch tuần:** Kế hoạch tuần tham khảo giải ngân 5.5M thăm dò, két 14.51M tiền mặt kiểm soát chặt chẽ
-4. **Về Tiến độ công việc:** Đã sửa toàn bộ báo cáo web portal, đồng bộ khớp 2 lệnh HDB/MSH, loại bỏ báo cáo ảo 6 mã 35 triệu
+1. **Vị thế hiện tại:** 100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.
+2. **Chế độ thị trường:** Chế độ sống: BEAR_WITH_SPRING_WATCH (ALL_CASH_STANDDOWN). Giải ngân chỉ mở khung 14h00-14h25 khi đạt điều kiện S1/S2/S3.
+3. **Kế hoạch Tuần 48:** Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).
+4. **Tiến độ nâng cấp hệ thống:** Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.
 
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*

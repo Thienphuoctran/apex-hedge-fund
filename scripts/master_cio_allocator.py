@@ -97,7 +97,10 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
     print(f"{'='*80}")
 
     cio_cfg = load_json(CIO_CONFIG_PATH)
-    fx_rate = cio_cfg.get("currency_settings", {}).get("exchange_rate_usd_vnd", 25400.0)
+    playbook = load_json(DATA_DIR / "apex_adaptive_contingency_playbook.json")
+    vn_live = load_json(VN_DIR / "data" / "vn_real_bctc_live.json")
+    fx_live = (((vn_live.get("macro_live") or {}).get("USD_VND_LIVE") or {}).get("value"))
+    fx_rate = float(fx_live) if fx_live else float(cio_cfg.get("currency_settings", {}).get("exchange_rate_usd_vnd", 25705.0))
 
     # Đọc SSOT V2.0 và Temporal Context trước để lấy đúng số dư thực tế của Chủ tịch
     try:
@@ -108,12 +111,16 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
         ssot_state = {}
         temporal_ctx = {}
 
-    # Xử lý tổng vốn ban đầu (Ưu tiên đọc từ SSOT V2.0 = 20,167,119 ₫ nếu không truyền tham số CLI)
+    # Xử lý tổng vốn ban đầu (Ưu tiên giá trị live trong Playbook / SSOT)
+    pb_nav = float((playbook.get("account_ssot") or {}).get("live_nav_vnd") or 0.0)
     if capital_usd is not None and capital_usd > 0:
         total_nav_usd = float(capital_usd)
         total_nav_vnd = total_nav_usd * fx_rate
     elif capital_vnd is not None and capital_vnd > 0:
         total_nav_vnd = float(capital_vnd)
+        total_nav_usd = total_nav_vnd / fx_rate
+    elif pb_nav > 0:
+        total_nav_vnd = pb_nav
         total_nav_usd = total_nav_vnd / fx_rate
     elif ssot_state.get("total_nav_vnd", 0) > 0:
         total_nav_vnd = float(ssot_state["total_nav_vnd"])
@@ -230,7 +237,7 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
             "risk_nav_pct": round(risk_nav_pct, 2),
             "tp1_usd": item.get("tp1_price", round(price * 1.08, 2)),
             "tp2_usd": item.get("tp2_price", round(price * 1.15, 2)),
-            "win_prob_pct": item.get("win_prob_pct", 80.0),
+            "win_prob_pct": min(62.0, float(item.get("win_prob_pct", 55.0) or 55.0)),
             "reward_risk_ratio": item.get("reward_risk_ratio", 2.2),
             "expected_value_pct": item.get("expected_value_pct", 6.5),
             "catalysts": item.get("market_events_and_catalysts", ""),
@@ -315,7 +322,8 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
             mos_pct = val_info.get("implied_margin_of_safety_pct", 35.0)
 
             entry_price = float(pos.get("entry_price", 0.0))
-            price = float(pos.get("current_price", item.get("current_price", entry_price)))
+            pb_hold = ((playbook.get("account_ssot") or {}).get("holdings") or {}).get(code, {})
+            price = float(pb_hold.get("close_19_11") or pos.get("current_price", item.get("current_price", entry_price)))
             actual_capital_vnd = shares * price
             actual_capital_usd = actual_capital_vnd / fx_rate
             total_vn_allocated_vnd += actual_capital_vnd
@@ -366,7 +374,7 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
                 "risk_nav_pct": round(risk_nav_pct, 2),
                 "tp1_vnd": round(tp1_val, 0),
                 "tp2_vnd": round(tp2_val, 0),
-                "win_prob_pct": round(float(item.get("p_win", 0.80)) * 100, 1) if item.get("p_win", 0.80) <= 1.0 else item.get("p_win", 80.0),
+                "win_prob_pct": min(62.0, round(float(item.get("p_win", 0.55)) * 100, 1) if float(item.get("p_win", 0.55)) <= 1.0 else float(item.get("p_win", 55.0))),
                 "reward_risk_ratio": item.get("rr_ratio", r2_item.get("rr_ratio", 2.50)),
                 "expected_value_pct": item.get("ev_pct", 6.20),
                 "catalysts": item.get("catalysts", r2_item.get("key_catalyst", "Theo dõi dòng tiền tổ chức và hấp thụ T+2.5")),
@@ -427,7 +435,7 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
                 "risk_nav_pct": round(risk_nav_pct, 2),
                 "tp1_vnd": item.get("tp1", round(price * 1.07, 0)),
                 "tp2_vnd": item.get("tp2", round(price * 1.12, 0)),
-                "win_prob_pct": round(float(item.get("p_win", 0.80)) * 100, 1) if item.get("p_win", 0.80) <= 1.0 else item.get("p_win", 80.0),
+                "win_prob_pct": min(62.0, round(float(item.get("p_win", 0.55)) * 100, 1) if float(item.get("p_win", 0.55)) <= 1.0 else float(item.get("p_win", 55.0))),
                 "reward_risk_ratio": item.get("rr_ratio", 2.25),
                 "expected_value_pct": item.get("ev_pct", 4.5),
                 "catalysts": item.get("catalysts", "Hưởng lợi từ chu kỳ kinh tế và dòng tiền tổ chức"),
@@ -454,7 +462,7 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
         if is_all_cash else f"PHÊ DUYỆT TÁC CHIẾN CÓ KỶ LUẬT (ĐANG NẮM: {held_syms_str} • TIỀN MẶT: {format_currency_vnd(actual_dry_powder_vnd)})"
     )
 
-    real_vn_pwin = round(sum(float(x.get("win_prob_pct", 60.0)) for x in master_vn_orders) / max(len(master_vn_orders), 1), 1) if master_vn_orders else 58.0
+    real_vn_pwin = min(62.0, round(sum(float(x.get("win_prob_pct", 52.0)) for x in master_vn_orders) / max(len(master_vn_orders), 1), 1)) if master_vn_orders else 57.1
     real_vn_rr = round(sum(float(x.get("reward_risk_ratio", 2.0)) for x in master_vn_orders) / max(len(master_vn_orders), 1), 2) if master_vn_orders else 2.25
     real_vn_ev = round(sum(float(x.get("expected_value_pct", 4.0)) for x in master_vn_orders) / max(len(master_vn_orders), 1), 2) if master_vn_orders else 4.20
 
@@ -463,6 +471,9 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "trading_date": today_str,
         "cio_desk_verdict": cio_verdict,
+        "active_market_regime": playbook.get("active_market_regime", {}),
+        "active_scenario_primary": playbook.get("active_scenario_primary", "S4_BEAR_DISTRIBUTION_SHIELD"),
+        "active_scenario_friday_exit": playbook.get("active_scenario_friday_exit", "S5_ACTIVE_HOLDINGS_FRIDAY_EXECUTION"),
         "capital_summary": {
             "total_nav_usd": round(total_nav_usd, 2),
             "total_nav_vnd": round(total_nav_vnd, 0),
@@ -490,6 +501,8 @@ def run_apex_allocation(capital_usd: float = None, capital_vnd: float = None, ru
         "orders_vietnam": master_vn_orders,
         "pending_round2_sniper_orders": pending_round2_sniper_orders,
         "emerging_rising_leaders": council_res.get("top_12_emerging_rising_leaders", []),
+        "adaptive_contingency_scenarios": playbook.get("scenarios", []),
+        "departmental_signoffs": playbook.get("departmental_charter_and_outputs", []),
         "agent_zero_validation": {
             "status": "VERIFIED_ALL_CASH_SYNCED" if is_all_cash else "VERIFIED_SSOT_AUDITED_OK",
             "sandbox_math_verified": True,
@@ -542,7 +555,7 @@ Dưới sự điều phối của Master CIO, dòng vốn được quản trị 
 | :--- | :---: | :---: | :---: | :--- |
 | **Thị Trường Toàn Cầu / Mỹ (US Equities)** | **{cap['global_allocated_pct']:.1f}%** | **${cap['global_allocated_usd']:,.2f}** | **{cap['global_allocated_vnd']:,.0f} ₫** | Dùng làm la bàn vĩ mô (`^VIX`, `US10Y`, `VNM ETF`), chưa phân bổ vốn trực tiếp khi NAV <= 50M. |
 | **Thị Trường Việt Nam (VN Equities)** | **{cap['vn_allocated_pct']:.1f}%** | **${cap['vn_allocated_usd']:,.2f}** | **{cap['vn_allocated_vnd']:,.0f} ₫** | Tập trung toàn lực (Focused Sniper Mode) theo SSOT thực tế. |
-| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **{cap['dry_powder_pct']:.1f}%** | **${cap['dry_powder_usd']:,.2f}** | **{cap['dry_powder_vnd']:,.0f} ₫** | Giữ an toàn phiên đáo hạn 19/11 & khóa trần Thứ Sáu <= 55% NAV; sẵn sàng bung 70–85% đầu tuần sau. |
+| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **{cap['dry_powder_pct']:.1f}%** | **${cap['dry_powder_usd']:,.2f}** | **{cap['dry_powder_vnd']:,.0f} ₫** | Đã tất toán sạch 20/11 (0 CP / 100% Cash); sẵn sàng bung 30–40% S3 Spring chiều 23/11 hoặc 75–85% khi đạt S1 Uptrend. |
 | **TỔNG CỘNG (100% NAV)** | **100.0%** | **${cap['total_nav_usd']:,.2f}** | **{cap['total_nav_vnd']:,.0f} ₫** | **Quản trị rủi ro 0% Margin • Stop <= 7.0%** |
 
 ### Chỉ Số Định Lượng Danh Mục Thận Trọng (`Calibrated Real Metrics`)
@@ -553,30 +566,26 @@ Dưới sự điều phối của Master CIO, dòng vốn được quản trị 
 
 ---
 
-## 1B. LỘ TRÌNH ĐIỀU PHỐI CÔNG SUẤT THEO NGÀY TRONG TUẦN (TỪ ĐÁO HẠN 19/11 ĐẾN TUẦN SAU 23–27/11)
+## 1B. MA TRẬN 5 KỊCH BẢN ỨNG BIẾN LINH HOẠT THEO THỊ TRƯỜNG (`S1..S5`)
+*(Thị trường diễn biến thế nào -> Toàn bộ 11 Ban chuyển trạng thái & kích hoạt đúng công thức vốn tương ứng)*
+"""
+    scenarios = blotter.get("adaptive_contingency_scenarios", [])
+    depts = blotter.get("departmental_signoffs", [])
+    mr_live = blotter.get("active_market_regime") or {}
+    cur_reg_str = str(mr_live.get("regime_id") or "BEAR_DOWNTREND")
 
-```mermaid
-graph LR
-    subgraph Now["PHIÊN ĐÁO HẠN 19/11 & THỨ SÁU 20/11"]
-        D1["Thứ Năm 19/11 (Đáo hạn VN30F1M)<br/>Giữ MSH & BAF • Mặc định 0đ (ngoại lệ 100 PVT 14h00)"]
-        D2["Thứ Sáu 20/11 (Cuối tuần)<br/>CẤM bung 70-85% • Khóa trần cổ phiếu <= 45-55% NAV"]
-        D1 --> D2
-    end
-    
-    subgraph NextWeek["TUẦN SAU (23/11 – 25/11): MỞ CÔNG SUẤT CHUẨN TUẦN ĐẦU"]
-        W1["Chọn rổ 13k–22.5k • Vol20 >= 2M CP<br/>(PVT, TCB, MBB/HPG/TCH: 200-300 CP/mã)"]
-        W2["Nâng công suất 70%–85% NAV (14–17M đ)<br/>Khi Breadth >= 45% & Buy-Up >= 60%"]
-        W3["Khóa tiền tươi: Chốt 50% (100-150 CP)<br/>khi lãi +2.5%..+4.0% (+300k–+500k đ)"]
-        W1 --> W2 --> W3
-    end
+    md += f"\n**Chế độ thị trường sống:** **`{cur_reg_str}`** (`VNI {mr_live.get('vnindex_close', 1689.62):,.2f}`, `Breadth>MA20 = {mr_live.get('breadth_above_ma20_pct', 25.7)}%`) | **Kịch bản đang chạy:** `{blotter.get('active_scenario_primary')}` + `{blotter.get('active_scenario_friday_exit')}`\n\n"
+    md += "| Kịch Bản | Trạng Thái Hiện Tại | Công Suất Vốn | Điều Kiện Kích Hoạt | Chiến Thuật & Mục Tiêu |\n"
+    md += "| :--- | :---: | :---: | :--- | :--- |\n"
+    for sc in scenarios:
+        conds = "; ".join(sc.get("trigger_conditions", [])[:2])
+        md += f"| **`{sc['scenario_id']}`** ({sc['name_vi']}) | `{sc.get('status_on_2026_11_19')}` | **{sc.get('target_equity_exposure_pct')}** | {conds} | {sc.get('expected_profit_range_vnd')} |\n"
 
-    Now ==> NextWeek
-```
+    md += "\n### Cơ Cấu 11 Đơn Vị Độc Lập & Phân Công Chuyên Môn:\n"
+    for d in depts:
+        md += f"- **{d['dept_name']}** (`{d['workload_share_pct']}%` NV — `{d['live_status']}`): {d['live_findings']}\n"
 
-### Chỉ Thị Thực Thi Cốt Lõi:
-1. **Bảo vệ vị thế hiện hữu (`MSH` & `BAF`):** Giữ `MSH` (`100 CP`, `Trail 34,600đ`, `Hard 33,090đ`, `TP1 39,500đ`) và kiểm tra `BAF` (`100 CP` về chiều `19/11`, `Hard 30,050đ`, `TP1 33,200đ`). Tuyệt đối VETO `HDB` đến hết `20/11`.
-2. **Kỷ luật cuối tuần (`Thứ Sáu 20/11`):** Khóa trần cổ phiếu `<= 45%–55% NAV`, không mở mới ồ ạt trước 2 ngày nghỉ cuối tuần.
-3. **Bứt phá đầu tuần sau (`Thứ Hai – Thứ Tư 23–25/11`):** Khôi phục đúng công thức sinh lời Tuần Đầu (`04/11`: `92.4% NAV / 900 CP`), giải ngân `70%–85% NAV` vào `3` mã `13k–22.5k` thanh khoản `>= 2M CP` (`200–300 CP/mã`) và bắt buộc chốt tỉa `50%` ngay khi đạt `+300k–+500k đ` để tránh bốc hơi lãi!
+    md += f"""
 
 ---
 
@@ -591,7 +600,7 @@ sequenceDiagram
 
     Note over Alex,MQ: Đối soát dữ liệu thực tế Phiên Mỹ & Chuẩn bị Công suất Tuần Sau
     Alex->>CIO: ^VIX=24.56 (chưa < 23.5), .SPX=7,323.63, ES=F=7,372.50, WTI=$83.12 (-3.36%), VNM ETF=$16.70 (+0.18%)
-    MQ->>CIO: SSOT hiện tại NAV {cap['total_nav_vnd']:,.0f} đ | Cash {cap['dry_powder_vnd']:,.0f} đ ({cap['dry_powder_pct']:.1f}%) | MSH + BAF
+    MQ->>CIO: SSOT hiện tại NAV {cap['total_nav_vnd']:,.0f} đ | Cash {cap['dry_powder_vnd']:,.0f} đ ({cap['dry_powder_pct']:.1f}%) | 0 CP (100% Tiền mặt — Sẵn sàng Tuần 48)
     CIO->>MQ: Chất vấn: Tại sao 2 tuần qua lãi mỏng và phải sửa gì ở rổ cổ phiếu?
     MQ->>CIO: Thừa nhận co vốn về 32.5% + mua mã đắt 31-35k (MSH vol mỏng 172k) chỉ cầm 100 CP nên không chốt 50/50 được
     CIO-->>MQ: CHỐT KỶ LUẬT: Thứ Sáu giữ <= 55% NAV; Thứ Hai–Tư tuần sau mở 70-85% NAV trên rổ 13k-22.5k (PVT, TCB, MBB/HPG/TCH 200-300 CP)
@@ -599,7 +608,7 @@ sequenceDiagram
 
 ### Luận Điểm Đồng Thuận Cốt Lõi:
 1. **Tiền Thật BCTC & Thanh Khoản Đủ Sâu**: Chỉ chọn cổ phiếu `OCF/LNST >= 1.0x`, `Beneish M < -1.78`, đồng thời thanh khoản `vol20 >= 2,000,000 CP/phiên` và thị giá `13k–22.5k` để khớp ra vào không trượt giá.
-2. **Đóng Khóa Rủi Ro Ngày Đáo Hạn & Cuối Tuần**: Không FOMO ATO sáng, không đặt lệnh ATC ngày đáo hạn `19/11`, không bung `70–85%` vốn vào Thứ Sáu cuối tuần.
+2. **Đóng Khóa Rủi Ro Đầu Phiên & Cuối Tuần**: Không FOMO ATO sáng, không đặt lệnh ATC cuối phiên, không bung `75–85%` vốn vào Thứ Sáu cuối tuần.
 3. **Chốt Lời Từng Phần Thu Tiền Tươi**: Với `200–300 CP/mã`, hễ đạt `+2.5%..+4.0%` (`+300k–+500k đ`) lập tức bán `50%` khóa tiền mặt thật về két.
 
 ---
@@ -671,7 +680,7 @@ graph LR
 
 ### Kiểm Thử 3 Kịch Bản Rủi Ro (Stress-Testing 3 Scenarios):
 1. **Kịch bản 1: Thị Trường Đi Ngang Hẹp (`Breadth < 45%`, `^VIX >= 24`)**:
-   - *Hành động*: Giữ trạng thái phòng thủ (`<= 55%` cổ phiếu), bảo vệ `MSH/BAF`, không mở lệnh mới ồ ạt; mục tiêu thực tế khóa từng nhịp vừa.
+   - *Hành động*: Giữ trạng thái phòng thủ (`<= 55%` cổ phiếu), giữ nguyên 100% tiền mặt hoặc vị thế nhỏ, không mở lệnh mới ồ ạt; mục tiêu thực tế khóa từng nhịp vừa.
 2. **Kịch bản 2: Thứ Sáu Cuối Tuần Rung Lắc Trước Ngày Nghỉ**:
    - *Hành động*: Khóa cứng trần cổ phiếu `<= 45%–55% NAV` vào Thứ Sáu để tránh rủi ro tin xấu 2 ngày cuối tuần.
 3. **Kịch bản 3: Tuần Sau (`23/11 – 25/11`) Đồng Thuận Sóng (`Breadth >= 45%`, `Buy-Up >= 60%`)**:
@@ -686,7 +695,7 @@ Toàn bộ danh mục chỉ được phép kích hoạt bấm cò khi vượt qu
 | STT | Hạng Mục Kiểm Tra | Tiêu Chí Xác Nhận Bắt Buộc Trước Khi Giải Ngân | Đánh Giá Thực Tế Hiện Tại | Trạng Thái |
 | :---: | :--- | :--- | :---: | :---: |
 | **01** | **Nguồn Vốn & Đạn Dự Phòng** | Không vay mượn, 0% Margin, khóa trần Thứ Sáu `<= 55%` NAV, giữ Dry Powder dự phòng. | `0% Margin`. Đang giữ `{cap['dry_powder_pct']:.1f}%` tiền mặt (`{cap['dry_powder_vnd']:,.0f} ₫`). | ✅ **CÓ (PASS)** |
-| **02** | **Xu Hướng Thị Trường (M)** | Bám sát diễn biến thật `^VIX` (`24.56`), `.SPX` (`7,323.63`) và Độ rộng HOSE (`Breadth >= 45%`). | Thận trọng phiên đáo hạn `19/11`; chuẩn bị bung lực đầu tuần sau nếu `Breadth >= 45%`. | ✅ **CẨN TRỌNG (OK)** |
+| **02** | **Xu Hướng Thị Trường (M)** | Bám sát diễn biến thật `^VIX` (`35.89`), `.SPX` (`6,910.39`) và Độ rộng HOSE (`Breadth >= 45%`). | Phiên 20/11 VNI 1,688.79 rút chân (CIR 100%, Br20 23.0%, Spring 3/5); khóa mua sáng Thứ Hai 23/11, chờ xác nhận 14h05–14h25. | ✅ **CẨN TRỌNG (OK)** |
 | **03** | **Sức Khỏe Doanh Nghiệp (FA)** | Tăng trưởng thực, dòng tiền `OCF/LNST >= 1.0x`, `Beneish M < -1.78`, không xào nấu BCTC. | 100% mã tầm ngắm đạt `OCF/LNST >= 1.0x`, không dùng hàng đầu cơ lỗ ròng. | ✅ **CÓ (PASS)** |
 | **04** | **Thanh Khoản & Thị Giá Phù Hợp 20M** | Thị giá **`13k–22.5k`** (`vol20 >= 2M CP`) để cầm được **`200–300 CP/mã`** cho chốt tỉa 50/50. | Đã chuyển trọng tâm sang `PVT, TCB, MBB, HPG, TCH` (từ bỏ mã đắt thanh khoản mỏng). | ✅ **CÓ (PASS)** |
 | **05** | **Điểm Mua Kỹ Thuật (TA)** | Chỉ đặt lệnh `LO` lúc `14h00–14h25` khi `Buy-Up >= 60%` + `VSA No Supply / Spring`. Cấm ATO/ATC. | Khóa cứng Khung Giờ Vàng `14h00–14h25` và cầu chì cấm `ATC`. | ✅ **CÓ (PASS)** |

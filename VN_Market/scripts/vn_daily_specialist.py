@@ -106,29 +106,50 @@ def compute_vn_expectancy(stock: dict, bctc_info: dict) -> dict:
     blended_gain = round(gain_tp1_pct * 0.5 + gain_tp2_pct * 0.5, 2)
 
     rr_ratio = round((tp2 - price) / max(price - stop_price, 1.0), 2)
-    if rr_ratio < 2.0:
-        rr_ratio = 2.35
+    rr_passed = bool(rr_ratio >= 2.0)
 
-    # Tính xác suất thắng P(W) thực tế thận trọng (hiệu chỉnh từ Walk-Forward Hit Rate thật thay vì thổi phồng >= 85%)
+    # Nạp xác suất thực nghiệm từ Backtest Walk-Forward (apex_empirical_calibration.json) & Market Regime sống
+    emp_base_wr = 0.52
+    live_regime = "SIDEWAY_CHOPPY"
+    try:
+        from pathlib import Path as _Path
+        _root_d = _Path(__file__).resolve().parent.parent.parent / "data"
+        _cal_p = _root_d / "apex_empirical_calibration.json"
+        if _cal_p.exists():
+            _cal_d = json.loads(_cal_p.read_text(encoding="utf-8"))
+            emp_base_wr = float((_cal_d.get("apex_v2_regime_gated") or {}).get("win_rate_pct") or 52.0) / 100.0
+        _v2_p = _root_d / "apex_quant_brain_v2_output.json"
+        if _v2_p.exists():
+            _v2_d = json.loads(_v2_p.read_text(encoding="utf-8"))
+            live_regime = str(((_v2_d.get("market_regime") or {}).get("regime_id")) or "SIDEWAY_CHOPPY")
+    except Exception:
+        pass
+
+    # Tính xác suất thắng P(W) thực tế thận trọng (neo từ empirical calibration + chế độ thị trường, trần cứng 62%)
     rating = bctc_info.get("rating", "A")
-    base_p_win = 0.54
+    base_p_win = emp_base_wr
     if rating == "AAA":
-        base_p_win = 0.60
+        base_p_win += 0.02
     elif rating == "AA":
-        base_p_win = 0.58
-    elif rating == "A":
-        base_p_win = 0.55
-    else:
-        base_p_win = 0.48
+        base_p_win += 0.01
+    elif rating not in ("A",):
+        base_p_win -= 0.06
 
-    ocf_ratio = float(bctc_info.get("ocf_to_profit_ratio") or 1.0)
+    ocf_ratio = float(bctc_info.get("ocf_to_profit_ratio") if bctc_info.get("ocf_to_profit_ratio") is not None else 1.0)
     if ocf_ratio > 1.15:
         base_p_win += 0.02
+    elif ocf_ratio < 0.65:
+        base_p_win -= 0.06
     altman = float(bctc_info.get("altman_z_score") or 2.0)
     if altman > 4.0:
-        base_p_win += 0.02
+        base_p_win += 0.01
 
-    p_win = min(0.65, round(base_p_win, 2))
+    if live_regime == "BEAR_DOWNTREND":
+        base_p_win -= 0.10
+    elif live_regime == "CHOPPY_CORRECTION":
+        base_p_win -= 0.05
+
+    p_win = round(min(0.62, max(0.30, base_p_win)), 2)
     p_loss = round(1.0 - p_win, 2)
 
     # EV% = P(W) * Blended Gain - P(L) * Loss%
@@ -149,6 +170,8 @@ def compute_vn_expectancy(stock: dict, bctc_info: dict) -> dict:
         "gain_tp2_pct": gain_tp2_pct,
         "blended_gain": blended_gain,
         "rr_ratio": rr_ratio,
+        "rr_passed": rr_passed,
+        "live_regime": live_regime,
         "p_win": p_win,
         "p_loss": p_loss,
         "ev_pct": ev_pct,
@@ -1020,16 +1043,31 @@ def run():
     save_json(LEDGER_OUT, ledger_data)
     print(f"[HOÀN TẤT] Đã lưu Sổ cái dữ liệu cấu trúc tại: {LEDGER_OUT} (Dung lượng: {LEDGER_OUT.stat().st_size:,} bytes)")
 
-    # Cập nhật Nhật ký tiến hóa chuyên viên bằng số liệu thực tế
-    journal_entry = f"""
-### 📅 Phiên Giao Dịch Ngày {today_str} — Chuẩn Hóa Số Liệu Thật & Khôi Phục Công Suất Tuần Đầu
-- **Thực chứng Hiệu suất**: Walk-Forward Hit Rate (18 phiên) = `{wf_hit_rate:.1f}%` | Account Execution Hit Rate = `{acc_hit_rate:.1f}%` | Calibrated P(W) = `{avg_p_win_pct:.1f}%`.
-- **Đồng bộ SSOT TCBS `105C307855`**: NAV `{portfolio_nav_vnd:,.0f} ₫` | Tiền mặt `{cash_balance_vnd:,.0f} ₫ ({cash_pct:.1f}%)` | Đang nắm giữ `{held_desc}`.
-- **Rổ Tầm Ngắm Công Suất Cao Tuần Sau (13k–22.5k, Vol20 >= 2M CP, 200–300 CP/mã)**: `{', '.join(selected_tickers)}`.
-- **Kỷ luật Lịch Tuần**: Thứ Sáu giữ trần <= 45–55% NAV; Thứ Hai–Thứ Tư tuần sau nâng công suất lên 70–85% NAV (`14–17M ₫`) khi thị trường xác nhận dòng tiền, chốt tỉa 50% khi lãi `+300k–+500k ₫`.
-"""
-    with open(JOURNAL_OUT, "a", encoding="utf-8") as f:
-        f.write(journal_entry)
+    # Cập nhật Nhật ký tiến hóa chuyên viên bất biến theo ngày (chống ghi trùng nhiều lần trong 1 ngày)
+    journal_entry = (
+        f"\n### 📅 Phiên Giao Dịch Ngày {today_str} — Chuẩn Hóa Số Liệu Thật & Khôi Phục Công Suất Tuần Đầu\n"
+        f"- **Thực chứng Hiệu suất**: Walk-Forward Hit Rate (Empirical V2) = `{wf_hit_rate:.1f}%` | Account Execution Hit Rate = `{acc_hit_rate:.1f}%` | Calibrated P(W) = `{avg_p_win_pct:.1f}%`.\n"
+        f"- **Đồng bộ SSOT TCBS `105C307855`**: NAV `{portfolio_nav_vnd:,.0f} ₫` | Tiền mặt `{cash_balance_vnd:,.0f} ₫ ({cash_pct:.1f}%)` | Đang nắm giữ `{held_desc}`.\n"
+        f"- **Rổ Tầm Ngắm Công Suất Cao Tuần Sau (13k–22.5k, Vol20 >= 2M CP, 200–300 CP/mã)**: `{', '.join(selected_tickers)}`.\n"
+        f"- **Kỷ luật Lịch Tuần**: Thứ Sáu giữ trần <= 45–55% NAV; Thứ Hai–Thứ Tư tuần sau nâng công suất lên 70–85% NAV (`14–17M ₫`) khi thị trường xác nhận dòng tiền, chốt tỉa 50% khi lãi `+300k–+500k ₫`.\n"
+    )
+    existing_j = ""
+    if JOURNAL_OUT.exists():
+        with open(JOURNAL_OUT, "r", encoding="utf-8") as f:
+            existing_j = f.read()
+    marker = "### 📅 Phiên Giao Dịch Ngày "
+    if marker in existing_j:
+        parts = existing_j.split(marker)
+        kept = [parts[0].rstrip()] + [
+            marker + sec.rstrip()
+            for sec in parts[1:]
+            if not sec.lstrip().startswith(today_str)
+        ]
+        new_j = "\n\n".join(p for p in kept if p) + "\n" + journal_entry
+    else:
+        new_j = (existing_j.rstrip() + "\n" + journal_entry).lstrip("\n")
+    with open(JOURNAL_OUT, "w", encoding="utf-8") as f:
+        f.write(new_j)
 
     print(f"=== Minh Quân đã hoàn tất hiệu chỉnh dữ liệu thật & thiết lập kế hoạch công suất tuần sau! ===")
 

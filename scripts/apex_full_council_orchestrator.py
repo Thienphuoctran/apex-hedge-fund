@@ -234,7 +234,9 @@ def run_full_10_department_council() -> Dict[str, Any]:
         v for v in stocks.values()
         if v["institutional_evaluation"]["is_accounting_clean"]
         and v["institutional_evaluation"]["capital_fit_code"] == "OPTIMAL"
-        and v["institutional_evaluation"]["legends_composite_score"] >= 81.0
+        and v["institutional_evaluation"]["legends_composite_score"] >= 74.0
+        and int(v["institutional_evaluation"].get("piotroski_f_score") or 0) >= 6
+        and float(v["technical"].get("avg_val20_ty") or 0.0) >= 15.0
         and v["technical"]["rs_rating"] >= 54
     ]
     all_clean_optimal.sort(
@@ -311,152 +313,48 @@ def run_full_10_department_council() -> Dict[str, Any]:
         if len(approved_round2_watchlist) >= 6:
             break
 
-    # Biên bản phát biểu và tranh luận của 10 Phòng Ban
-    departmental_reports = [
-        {
-            "dept_id": "BAN_05_CONTINUITY",
-            "dept_name": "Ban 5 VN — Thẩm Định Hiệu Suất & Trí Nhớ Liên Ngày (`vn-performance-learning-agent`)",
-            "head": "Dr. Kiên (Trưởng Ban Hồi Tố & Ký Ức)",
-            "quantitative_findings": (
-                f"Đã nạp Sổ cái Ký ức Liên Ngày (`apex_daily_continuity_ledger.json`). Xác nhận Vòng 1 (04/11 - 06/11) đã bán tất toán 100% "
-                f"(400 HPG, 300 TCB, 200 MBB), thu về {cash_vnd:,.0f} ₫ tiền mặt thực tế trên TCBS (Lãi ròng +{realized_pnl:,.0f} ₫). "
-                f"Kiểm điểm sai lầm hệ thống cũ: Bị mắc lỗi Thiên kiến Mỏ neo (Anchoring Bias) khi chỉ đề xuất lặp đi lặp lại 4 mã FPT, DGC, HPG, TCB. "
-                f"Kể từ phiên hôm nay, Ban 5 khóa chặt cơ chế lưu vết 145 mã qua từng ngày để ngày mai nối tiếp 100% dữ liệu hôm nay."
-            )
-        },
-        {
-            "dept_id": "BAN_01_MACRO_SECTOR",
-            "dept_name": "Ban 1 VN — Phân Tích Vĩ Mô & Luân Chuyển 18 Nhóm Ngành (`vn-macro-monetary-agent`)",
-            "head": "Chuyên gia Hoàng (Trưởng Ban Vĩ Mô)",
-            "quantitative_findings": (
-                f"Quét trực tiếp 145 mã trên 18 ngành cho thấy độ rộng thị trường hiện đạt {scan_data['market_breadth_summary']['pct_stocks_above_ma20']}% mã nằm trên MA20 "
-                f"và {scan_data['market_breadth_summary']['pct_stocks_above_ma200']}% mã nằm trên MA200 -> Thị trường phân hóa mạnh, dòng tiền rút khỏi các cổ phiếu công nghệ/hóa chất định giá cao "
-                f"để xoay trục sang Top 5 ngành dẫn dắt: {', '.join([s['sector_name'] + ' (' + str(s['sector_strength_score']) + 'đ)' for s in sectors[:5]])}."
-            )
-        },
-        {
-            "dept_id": "BAN_10_BCTC_SCOUT",
-            "dept_name": "Ban 10 — Trinh Sát BCTC, Báo Cáo Thường Niên & IR (`hien-bctc-scout-agent`)",
-            "head": "Hiền (Trưởng Ban Trinh Sát BCTC & IR)",
-            "quantitative_findings": (
-                f"Đã rà soát hồ sơ BCTC Quý 3/2026 và Thuyết minh BCTC của toàn bộ 145 doanh nghiệp trên 3 sàn HOSE, HNX, UPCoM. "
-                f"Xác thực {scan_data['market_breadth_summary']['accounting_clean_count']}/145 doanh nghiệp đạt chuẩn dòng tiền thật (OCF dương, kiểm toán chấp thuận toàn phần) "
-                f"và phát hiện {scan_data['market_breadth_summary']['red_flag_warning_count']} doanh nghiệp dính cờ đỏ kế toán cần đưa vào danh sách cấm."
-            )
-        },
-        {
-            "dept_id": "BAN_02_FORENSIC_10LEGENDS",
-            "dept_name": "Ban 2 VN — Pháp Y Kế Toán VAS/TT200 & Bộ Não 10 Đại Danh Thủ (`vn-equity-bctc-agent`)",
-            "head": "Chuyên gia Bảo (Trưởng Ban Pháp Y BCTC)",
-            "quantitative_findings": (
-                "Chấm điểm độc lập 145 mã qua lăng kính 10 Huyền Thoại Đầu Tư (Graham, Buffett, Munger, Lynch, Fisher, O'Neil, Minervini, Piotroski, Beneish, Druckenmiller). "
-                "Phát hiện ngoài nhóm VN30 quen thuộc, thị trường đang có những viên ngọc quý Mid-Cap/Small-Cap có BCTC cực kỳ xuất sắc: "
-                "MSH (May Sông Hồng: 91.9/100 điểm, OCF/LNST 1.42x, P/E 9.8x), HDB (91.4/100 điểm, ROE 25.6%, P/E 6.1x), "
-                "PVT (Vận tải Dầu khí: 88.9/100 điểm, OCF/LNST 1.48x, P/E 7.9x), IDC (KCN IDICO: 89.0/100 điểm, ROE 32.5%, OCF/LNST 1.48x), "
-                "BAF (88.1/100 điểm), TNG (86.4/100 điểm, P/E 8.4x), SZC (82.7/100 điểm)."
-            )
-        },
-        {
-            "dept_id": "BAN_03_RED_TEAM_DEBATE",
-            "dept_name": "Ban 3 VN — Phòng Tổng Hợp & Công Tố Viên Phản Biện Phe Bán (`vn-synthesis-hub-agent`)",
-            "head": "Chuyên gia Lâm (Trưởng Ban Phản Biện Đối Kháng)",
-            "quantitative_findings": (
-                "Thực hiện quyền Công tố viên bác bỏ thói quen chọn mã cũ thiếu căn cứ: "
-                "(1) BÁC BỎ MUA NGAY FPT: Giá thực tế 50,800 ₫ đang gãy dưới đường MA20 (55,100 ₫), chỉ số sức mạnh giá RS rơi xuống 18/99 (thuộc nhóm 20% cổ phiếu yếu nhất sàn lúc này); "
-                "(2) BÁC BỎ MUA NGAY DGC: Giá 33,000 ₫ nằm dưới MA20 (33,118 ₫), RS chỉ đạt 22/99, dòng tiền lớn chưa vào đẩy giá; "
-                "(3) ĐỒNG THUẬN CAO với các mã có RS từ 81 đến 96 và đang giữ vững cấu trúc Wyckoff Markup trên MA20 như HDB (RS 95), MSH (RS 94), BAF (RS 96), PVT (RS 95), TNG (RS 89), TCB (RS 86), IDC (RS 81), SZC."
-            )
-        },
-        {
-            "dept_id": "BAN_04_QUANT_RISK_LOT100",
-            "dept_name": "Ban 4 VN — Hội Đồng Quản Trị Rủi Ro & Cổng Kiểm Soát Lô Chẵn 100 CP (`vn-investment-committee-agent`)",
-            "head": "Tiến sĩ Phong (Trưởng Ban Định Lượng Rủi Ro)",
-            "quantitative_findings": (
-                f"Kiểm toán tương thích quy mô vốn thực tế {cash_vnd:,.0f} ₫ của Chủ tịch: "
-                "Loại các mã có thị giá >65,000 ₫ (như MWG 73,700 ₫ = 7.37M/lô 100 CP = 36.5% NAV; FRT = 70% NAV) vì 1 lô tối thiểu chiếm quá 1/3 tổng tài khoản, không thể đi vốn Kim Tự Tháp. "
-                "Phê duyệt 6 mã chủ lực Vòng 2 có thị giá 18,200 ₫ – 35,500 ₫ (1 lô 100 CP chỉ từ 1.82M – 3.55M VNĐ = 9.0% – 17.6% NAV), "
-                "cho phép giải ngân linh hoạt 200-300 CP/mã, khóa cứng Stop Loss 2xATR <= 6.8% và tỷ lệ R:R đạt từ 1:2.35 đến 1:2.60."
-            )
-        },
-        {
-            "dept_id": "BAN_06_ACADEMY_CHECKLIST",
-            "dept_name": "Ban 6 VN — Học Viện Huấn Luyện & Kiểm Toán Checklist 7 Điểm (`vn-investor-mentorship-coach`)",
-            "head": "Coach Thanh (Giám Đốc Học Viện Thực Chiến)",
-            "quantitative_findings": (
-                "Đã kiểm tra 100% bộ 6 ứng viên Vòng 2 mới qua Checklist 7 Điểm Bắt Buộc: "
-                "(1) Vốn nhàn rỗi 20.16M sẵn sàng; (2) Chọn đúng cổ phiếu nằm trên MA20 có RS > 80; (3) OCF/LNST > 1.15x tiền thật; "
-                "(4) Định giá PEG < 1.0x và có động lực mới; (5) Điểm mua có nền tích lũy VCP/No Supply; (6) R:R > 2.3:1; (7) Quy mô lô 100 CP vừa vặn 10%-17% NAV. Xác nhận PASS 7/7!"
-            )
-        },
-        {
-            "dept_id": "BAN_07_EXECUTION_DESK",
-            "dept_name": "Ban 7 VN & US — Bàn Thực Thi Chiến Thuật Minh Quân & Alex (`vn-daily-specialist-agent`)",
-            "head": "Minh Quân (Trưởng Bàn Thực Thi VN) & Alex (Trưởng Bàn Quốc Tế)",
-            "quantitative_findings": (
-                "Thiết lập kế hoạch tác chiến cho tuần mới: Hiện tại là cuối tuần (Thứ Bảy), giữ nguyên 100% tiền mặt 20,167,119 ₫. "
-                "Sáng Thứ Hai tuyệt đối không FOMO mua đuổi lệnh ATO (09h00-10h00). Canh đặt lệnh Limit LO thăm dò 30%-50% tại vùng giá chiết khấu hỗ trợ (Probe Price) "
-                "và giải ngân quyết định trong Khung Giờ Vàng 14h00 – 14h25 chiều đối với các mã giữ vững lực cầu chủ động > 60%."
-            )
-        },
-        {
-            "dept_id": "BAN_09_LIVE_SENTINEL",
-            "dept_name": "Ban 9 — Giám Sát Thời Gian Thực & Ứng Phó Khẩn Cấp (`live-portfolio-sentinel-agent`)",
-            "head": "Victor (Chỉ Huy Lá Chắn Thời Gian Thực 24/7)",
-            "quantitative_findings": (
-                f"Đã nạp toàn bộ {len(approved_round2_watchlist)} siêu cổ phiếu đa ngành Vòng 2 ({', '.join([x['code'] for x in approved_round2_watchlist])}) "
-                f"cùng Top 12 Cổ phiếu đang lên mạnh nhất ({', '.join(scan_data.get('top_12_emerging_rising_leaders', [])[:8])}) "
-                "vào Radar canh gác 24/7 trên cả Local Daemon và Cloud Sentinel. Tự động bắn pháo hiệu Telegram ngay khi cổ phiếu chạm vùng gom Limit hoặc bứt phá Pocket Pivot."
-            )
-        },
-        {
-            "dept_id": "BAN_11_VIRAL_STUDIO",
-            "dept_name": "Ban 11 — Sáng Tạo Nội Dung & Dựng Phim AI (`khanh-creator-agent` & `bao`)",
-            "head": "Khánh (Giám Đốc Sáng Tạo) & Bảo (Kỹ Sư Render AI)",
-            "quantitative_findings": (
-                "Phối hợp chặt chẽ cùng Ban 10 (Hiền) và Ban 2 chuyển hóa trực tiếp dữ liệu pháp y BCTC của các siêu cổ phiếu mới nổi (MSH, HDB, BAF, IDC, PVT) "
-                "thành kịch bản truyền thông số liệu thật 100%, tuyệt đối không giật tít câu view hoặc dùng số liệu chưa kiểm toán."
-            )
-        },
-        {
-            "dept_id": "BAN_12_OMBUDSMAN_TRONG",
-            "dept_name": "Ban 12 — Ban Kiểm Sát Thể Chế, Kỷ Luật & Toàn Vẹn Hệ Thống (`apex_inspector_trong`)",
-            "head": "Trọng (Tổng Kiểm Sát Viên Độc Lập)",
-            "quantitative_findings": (
-                "Thực hiện thanh tra không vùng cấm theo 10 Điều Luật Hiến Chương: Đã phát hiện và yêu cầu chấn chỉnh ngay 3 điểm yếu trong đợt nâng cấp chiều nay: "
-                "(1) Sửa trần cắt lỗ sàn HNX từ 8.5% về cứng <= 6.8% (khắc phục mã IDC từ -7.71% về -6.79%); "
-                "(2) Buộc kịch bản Minh Quân (`vn_daily_specialist.py`) và Sổ lệnh Master (`master_cio_allocator.py`) phải nạp động danh sách Vòng 2 từ bộ quét 145 mã thay vì neo cứng mã cũ; "
-                "(3) Buộc Giờ tự học 22h00 và Kiểm điểm 23h15 trích xuất trực tiếp dữ liệu quét thị trường thực tế."
-            )
-        },
-        {
-            "dept_id": "ASSISTANT_NAM_EXECUTIVE",
-            "dept_name": "Văn Phòng Trợ Lý Chủ Tịch — Trợ Lý Cá Nhân & Điều Phối Đời Sống (`assistant_nam_agent`)",
-            "head": "Nam (Trợ Lý Cá Nhân Cấp Cao của Chủ tịch Phước Trần)",
-            "quantitative_findings": (
-                f"Đã kết nối trực tiếp vào Sổ cái SSOT V2.0 ({cash_vnd:,.0f} ₫ tiền mặt, 0 CP), Bách Khoa 105 Tinh Hoa Đầu Tư và Radar 145 mã. "
-                "Đóng góp góc nhìn thực tế bảo vệ Chủ tịch: Mọi báo cáo gửi Chủ tịch phải ngắn gọn, quyết đoán (có giá mua LO, giá cắt lỗ, số lượng CP rõ ràng), "
-                "tuyệt đối không báo cáo 'nước đôi' gây mất thời gian của Chủ tịch."
-            )
-        },
-        {
-            "dept_id": "BAN_08_MASTER_CIO",
-            "dept_name": "Ban 8 — Ban Đầu Tư Tối Cao & Tổng Tư Lệnh Phân Bổ Vốn (`master-cio-agent`)",
-            "head": "Master CIO James (Tổng Tư Lệnh Tối Cao & Trợ Lý Chiến Lược Số 1)",
-            "quantitative_findings": (
-                f"Chủ tọa phê duyệt Nghị quyết Hội đồng Toàn Doanh Nghiệp (12 Phòng Ban + 2 Trợ Lý): Chấm dứt vĩnh viễn việc bó hẹp trong 4 mã cũ. "
-                f"Chính thức ban hành Danh mục Tầm ngắm Vòng 2 Đa Ngành gồm {len(approved_round2_watchlist)} Siêu cổ phiếu Hạng AAA/AA "
-                f"({', '.join([x['code'] + ' [' + x['sector_name'] + ']' for x in approved_round2_watchlist])}) "
-                f"cùng Radar 12 Cổ Phiếu Đang Lên Mạnh Nhất ({', '.join(scan_data.get('top_12_emerging_rising_leaders', []))}) "
-                f"được chọn lọc từ 145 mã toàn thị trường, đảm bảo hội tụ đủ 3 yếu tố: BCTC Tiền thật + Sức mạnh giá RS dẫn đầu + Vừa khít quy mô vốn 20,167,119 ₫."
-            )
-        }
-    ]
+    # Nạp Hồ sơ Tổ chức 11 Đơn vị Độc lập & Ma trận 5 Kịch bản Ứng biến (S1..S5)
+    pb_path = BASE_DIR / "data" / "apex_adaptive_contingency_playbook.json"
+    playbook: Dict[str, Any] = {}
+    if pb_path.exists():
+        try:
+            playbook = json.loads(pb_path.read_text(encoding="utf-8"))
+        except Exception:
+            playbook = {}
 
-    # Các công việc cần Chủ tịch thao tác thủ công vs Tự động 100%
-    manual_actions_required = [
-        "1. TRONG NGÀY NGHỈ CUỐI TUẦN (HÔM NAY): Chủ tịch KHÔNG CẦN thao tác thủ công bất kỳ việc gì. Tài khoản TCBS 105C307855 đang an toàn tuyệt đối với 100% Tiền mặt (20,167,119 ₫) và 0 CP rủi ro.",
-        "2. KHI MỞ CỬA PHIÊN THỨ HAI (09/11/2026): Do cơ chế bảo mật Read-Only Air-Gap bảo vệ tiền của Chủ tịch 100%, hệ thống AI KHÔNG tự ý đặt lệnh mua/bán vào tài khoản TCBS. Khi Victor & Minh Quân báo tín hiệu điểm mua chuẩn trong Khung Giờ Vàng (14h00 - 14h25) qua Telegram, Chủ tịch chỉ cần mở app TCInvest bấm đặt lệnh theo đúng Mã + Số lượng lô chẵn 100 CP + Giá Limit đã tính sẵn, sau đó nhắn xác nhận lên Telegram (ví dụ: 'Đã mua 200 MSH giá 35.2') để hệ thống tự động ghi sổ và canh chốt lời/cắt lỗ."
-    ]
+    charter_depts = playbook.get("departmental_charter_and_outputs", [])
+    if charter_depts:
+        departmental_reports = [
+            {
+                "dept_id": d["dept_id"],
+                "dept_name": d["dept_name"],
+                "head": d["lead_role"],
+                "quantitative_findings": f"[Thẩm quyền: {d['exclusive_authority']}] {d['live_findings']}",
+            }
+            for d in charter_depts
+        ]
+    else:
+        departmental_reports = [
+            {
+                "dept_id": "BAN_08_MASTER_CIO",
+                "dept_name": "Ban 8 — Ban Đầu Tư Tối Cao (Master CIO James)",
+                "head": "Master CIO James",
+                "quantitative_findings": f"Đã quét {len(stocks)} mã; hiện đang giữ NAV {nav_vnd:,.0f} ₫ (Cash {cash_vnd:,.0f} ₫).",
+            }
+        ]
+
+    active_pos = ssot.get("active_positions") or {}
+    if active_pos:
+        held_list = ", ".join(f"{int(p.get('shares', 0))} CP {sym}" for sym, p in active_pos.items() if int(p.get("shares", 0) or 0) > 0)
+        manual_actions_required = [
+            f"1. THỨ SÁU 20/11/2026 (KỊCH BẢN S5): Hoàn tất bán tất toán {held_list} theo 3 nhánh ứng biến (5A Kéo xanh bán LO: MSH 35,100–35,500đ / BAF 31,050–31,300đ; 5B Rung lắc chờ hồi > VWAP 10h15–11h15 hoặc 13h45–14h20; 5C Chốt chặn cứng MSH <= 34,200đ / BAF <= 30,200đ) để đưa tài khoản TCBS 105C307855 về 100% Tiền mặt (~20.19M ₫).",
+            "2. CUỐI TUẦN (20–22/11) & TUẦN 48 (23/11+): Không mở lệnh mua mới vào cuối tuần. Chính thức tính KPI Tuần 48 từ Thứ Hai 23/11 và chỉ giải ngân trong Khung Giờ Vàng 14h00–14h25 khi thị trường kích hoạt Kịch bản S1 (Uptrend 75-85% NAV), S2 (Đi ngang trên MA50 30-45% NAV) hoặc S3 (Spring rút chân 25-35% NAV).",
+        ]
+    else:
+        manual_actions_required = [
+            f"1. TÀI KHOẢN ĐANG GIỮ 100% TIỀN MẶT ({cash_vnd:,.0f} ₫): Tuyệt đối không FOMO ATO phiên sáng.",
+            "2. CHỜ KÍCH HOẠT KỊCH BẢN S1/S2/S3 TỪ BAN 7 & BAN 9 TRONG KHUNG GIỜ VÀNG 14H00–14H25.",
+        ]
 
     emerging_details = []
     for em_code in scan_data.get("top_12_emerging_rising_leaders", [])[:12]:
@@ -480,17 +378,23 @@ def run_full_10_department_council() -> Dict[str, Any]:
                 "stop_dist_pct": e_em["stop_dist_pct"],
                 "tp1": e_em["tp1_vnd"],
                 "rr_ratio": e_em["rr_ratio"],
-                "decisive_verdict": e_em.get("decisive_verdict", "STRONG_BUY_ROUND2_SNIPER")
+                "decisive_verdict": e_em.get("decisive_verdict", "SCENARIO_S2_S1_WATCHLIST")
             })
 
+    active_reg_id = str((playbook.get("active_market_regime") or {}).get("regime_id") or "BEAR_DOWNTREND")
+    port_status_str = "ACTIVE_HOLDINGS_FRIDAY_LIQUIDATION_PLANNED" if active_pos else "ALL_CASH_STANDDOWN"
+
     resolution_payload = {
-        "resolution_id": f"APEX-COUNCIL-12DEPT-2ASSIST-{today_str}",
+        "resolution_id": f"APEX-COUNCIL-11DEPT-ADAPTIVE-{today_str}",
         "generated_at": t_ctx["full_time_label_vn"],
         "execution_time_seconds": round(time.perf_counter() - start_t, 2),
         "account_id": "105C307855",
         "account_cash_vnd": cash_vnd,
+        "account_nav_vnd": float((playbook.get("account_ssot") or {}).get("live_nav_vnd") or nav_vnd),
         "realized_pnl_round1_vnd": realized_pnl,
-        "portfolio_status": "ALL_CASH_STANDDOWN",
+        "portfolio_status": port_status_str,
+        "active_market_regime": playbook.get("active_market_regime", {}),
+        "adaptive_contingency_scenarios": playbook.get("scenarios", []),
         "market_wide_scan_stats": {
             "total_stocks_scanned": scan_data["total_stocks_scanned"],
             "total_sectors_covered": scan_data["total_sectors_covered"],
@@ -507,8 +411,11 @@ def run_full_10_department_council() -> Dict[str, Any]:
         "manual_actions_required_from_chairman": manual_actions_required
     }
 
-    # BƯỚC 4: Đồng bộ danh sách Tầm ngắm Vòng 2 mới vào SSOT V2.0 (current_portfolio_state.json, master_execution_blotter.json, cloud_sentinel)
-    ssot["next_round_watchlist"] = [
+    # BƯỚC 4: Đồng bộ an toàn ONLY next_round_watchlist vào SSOT (cấm chạm active_positions hoặc cash_balance_vnd!)
+    ssot_fresh = get_current_portfolio_state()
+    orig_pos_dump = json.dumps(ssot_fresh.get("active_positions"), sort_keys=True, ensure_ascii=False)
+    orig_cash_val = float(ssot_fresh.get("cash_balance_vnd", 0.0) or 0.0)
+    ssot_fresh["next_round_watchlist"] = [
         {
             "symbol": w["code"],
             "name": w["name"],
@@ -528,13 +435,15 @@ def run_full_10_department_council() -> Dict[str, Any]:
         }
         for w in approved_round2_watchlist
     ]
-    PortfolioStateManager.save_state(ssot)
+    assert json.dumps(ssot_fresh.get("active_positions"), sort_keys=True, ensure_ascii=False) == orig_pos_dump
+    assert float(ssot_fresh.get("cash_balance_vnd", 0.0) or 0.0) == orig_cash_val
+    PortfolioStateManager.save_state(ssot_fresh)
 
     # Đồng bộ sang thư mục cloud_sentinel
     cloud_ssot = BASE_DIR / "cloud_sentinel" / "current_portfolio_state.json"
     if cloud_ssot.parent.exists():
         with open(cloud_ssot, "w", encoding="utf-8") as f:
-            json.dump(ssot, f, ensure_ascii=False, indent=2)
+            json.dump(ssot_fresh, f, ensure_ascii=False, indent=2)
 
     # BƯỚC 5: Lưu vào Sổ cái Trí Nhớ Liên Ngày Bất Biến (`ApexPersistentMemoryCore`)
     ApexPersistentMemoryCore.record_daily_session(
@@ -553,18 +462,21 @@ def run_full_10_department_council() -> Dict[str, Any]:
     # Xuất văn kiện Markdown Biên bản họp chi tiết
     COUNCIL_REPORT_DIR.mkdir(parents=True, exist_ok=True)
     md_path = COUNCIL_REPORT_DIR / f"{today_str}_Full_10Dept_Council_And_145Stocks_Scan.md"
-    write_council_markdown_report(md_path, resolution_payload, sectors)
+    write_council_markdown_report(md_path, resolution_payload, sectors, active_pos=active_pos)
 
-    print(f"[+] Đã lưu Nghị quyết Hội đồng 10 Phòng Ban tại: {md_path}")
-    print(f"[+] Đã đồng bộ Tầm ngắm Vòng 2 Đa Ngành ({', '.join([x['code'] for x in approved_round2_watchlist])}) vào SSOT V2.0 & Sổ cái Ký ức Liên Ngày!")
+    print(f"[+] Đã lưu Nghị quyết Hội đồng 11 Đơn vị Độc lập tại: {md_path}")
+    print(f"[+] Regime: {active_reg_id} | Watchlist ({', '.join([x['code'] for x in approved_round2_watchlist])}) đã đồng bộ an toàn!")
     return resolution_payload
 
 
-def write_council_markdown_report(out_path: Path, res: Dict[str, Any], sectors: List[Dict[str, Any]]) -> None:
-    md = f"""# BIÊN BẢN HỌP THƯỢNG ĐỈNH 10 PHÒNG BAN & BÁO CÁO QUÉT TOÀN THỊ TRƯỜNG (145 MÃ / 18 NGÀNH)
+def write_council_markdown_report(out_path: Path, res: Dict[str, Any], sectors: List[Dict[str, Any]], active_pos: Optional[Dict[str, Any]] = None) -> None:
+    held_str = ", ".join(f"{int(p.get('shares', 0))} CP {sym}" for sym, p in (active_pos or {}).items() if int(p.get("shares", 0) or 0) > 0) or "0 CP (100% Cash)"
+    mr = res.get("active_market_regime") or {}
+    md = f"""# BIÊN BẢN HỌP THƯỢNG ĐỈNH 11 ĐƠN VỊ ĐỘC LẬP & QUÉT TOÀN THỊ TRƯỜNG ({res['market_wide_scan_stats']['total_stocks_scanned']} MÃ / {res['market_wide_scan_stats']['total_sectors_covered']} NGÀNH)
 **Mã Nghị Quyết:** `{res['resolution_id']}`  
 **Thời điểm thực thi:** `{res['generated_at']}` *(Thời gian xử lý: `{res['execution_time_seconds']}s`)*  
-**Tài khoản Chủ tịch:** TCBS `105C307855` — **Số dư Tiền mặt thực tế:** `{res['account_cash_vnd']:,.0f} ₫` (`0 CP` nắm giữ | Lãi ròng Vòng 1: `+{res['realized_pnl_round1_vnd']:,.0f} ₫`)  
+**Tài khoản Chủ tịch:** TCBS `105C307855` — **NAV live:** `{res.get('account_nav_vnd', 20189522):,.0f} ₫` | **Tiền mặt:** `{res['account_cash_vnd']:,.0f} ₫` | **Đang giữ:** `{held_str}`  
+**Chế độ Thị trường sống:** `{mr.get('regime_id', 'BEAR_DOWNTREND')}` (`VNI {mr.get('vnindex_close', 1689.62):,.2f}`, `Breadth>MA20 = {mr.get('breadth_above_ma20_pct', 25.7)}%`)  
 
 ---
 
@@ -612,6 +524,13 @@ def write_council_markdown_report(out_path: Path, res: Dict[str, Any], sectors: 
             f"`{em['lot_100_nav_pct']}%` | `{em['stop_loss_2atr']:,.0f} ₫` (-{em['stop_dist_pct']}%) | "
             f"`{em['tp1']:,.0f} ₫` | **{em['decisive_verdict']}** |\n"
         )
+
+    md += "\n---\n\n## 4C. MA TRẬN 5 KỊCH BẢN ỨNG BIẾN LINH HOẠT THEO THỊ TRƯỜNG (`S1..S5`)\n\n"
+    md += "| Kịch Bản | Trạng Thái Hiện Tại | Công Suất Giải Ngân | Điều Kiện Kích Hoạt Chính | Mục Tiêu Lợi Nhuận / Phòng Thủ |\n"
+    md += "| :--- | :---: | :---: | :--- | :--- |\n"
+    for sc in res.get("adaptive_contingency_scenarios", []):
+        conds = "; ".join(sc.get("trigger_conditions", [])[:2])
+        md += f"| **`{sc['scenario_id']}`** ({sc['name_vi']}) | `{sc.get('status_on_2026_11_19')}` | **{sc.get('target_equity_exposure_pct')}** | {conds} | {sc.get('expected_profit_range_vnd')} |\n"
 
     md += "\n---\n\n## 5. BÁO CÁO TRÁCH NHIỆM: VIỆC HỆ THỐNG TỰ ĐỘNG 100% VS VIỆC CẦN CHỦ TỊCH THAO TÁC THỦ CÔNG\n\n"
     for item in res["manual_actions_required_from_chairman"]:

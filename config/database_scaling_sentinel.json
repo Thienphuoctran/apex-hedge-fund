@@ -19,9 +19,9 @@
     "telegram_trong_audit",
     "web_portal_kpi_banner"
   ],
-  "current_report_count": 385,
+  "current_report_count": 515,
   "status": "GREEN_OPTIMAL_SQLITE_POWERED",
-  "last_audit_time": "2026-11-16 09:36:56",
-  "total_markdown_documents": 614,
+  "last_audit_time": "2026-11-21 17:24:14",
+  "total_markdown_documents": 762,
   "supervising_officer": "Master CIO James (Ban 8)"
 }

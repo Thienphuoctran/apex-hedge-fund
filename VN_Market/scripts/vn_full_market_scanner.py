@@ -313,10 +313,31 @@ VN_FULL_UNIVERSE: Dict[str, Dict[str, Any]] = {
 
 
 def fetch_entrade_1y_history(symbol: str, timeout: int = 5) -> Dict[str, Any]:
-    """Lấy 250 phiên giao dịch (1 năm) OHLCV thực tế từ Entrade DNSE Chart API."""
+    """Lấy 1-2 năm OHLCV thực tế: ưu tiên VPS HistDataFeed cache trong data/real_ohlcv_cache, fallback Entrade DNSE API."""
+    sym = symbol.upper().strip()
+    cache_dir = ROOT_DIR / "data" / "real_ohlcv_cache"
+    cache_file = cache_dir / f"{sym}.json"
+    if cache_file.exists():
+        try:
+            age_h = (time.time() - cache_file.stat().st_mtime) / 3600.0
+            if age_h <= 36.0:
+                cached = json.loads(cache_file.read_text(encoding="utf-8"))
+                bars = cached.get("bars", [])
+                if len(bars) >= 30:
+                    tail = bars[-260:]
+                    return {
+                        "c": [float(b["close"]) for b in tail],
+                        "h": [float(b["high"]) for b in tail],
+                        "l": [float(b["low"]) for b in tail],
+                        "o": [float(b["open"]) for b in tail],
+                        "v": [int(b["volume"]) for b in tail],
+                    }
+        except Exception:
+            pass
+
     t_now = int(time.time())
     t_from = t_now - (86400 * 375)
-    url = f"https://services.entrade.com.vn/chart-api/v2/ohlcs/stock?symbol={symbol}&resolution=1D&from={t_from}&to={t_now}"
+    url = f"https://services.entrade.com.vn/chart-api/v2/ohlcs/stock?symbol={sym}&resolution=1D&from={t_from}&to={t_now}"
     req = urllib.request.Request(url, headers=HEADERS)
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -326,15 +347,36 @@ def fetch_entrade_1y_history(symbol: str, timeout: int = 5) -> Dict[str, Any]:
             lows = data.get("l", [])
             opens = data.get("o", [])
             vols = data.get("v", [])
+            ts_arr = data.get("t", [])
             if not closes or len(closes) < 15:
                 return {}
-            # Entrade trả về giá theo đơn vị nghìn đồng (ví dụ 20.35 -> 20,350 VND)
             scale = 1000.0 if closes[-1] < 600 else 1.0
             c_arr = [float(x) * scale for x in closes]
             h_arr = [float(x) * scale for x in highs]
             l_arr = [float(x) * scale for x in lows]
             o_arr = [float(x) * scale for x in opens]
             v_arr = [int(x) for x in vols]
+            if len(c_arr) >= 30:
+                try:
+                    cache_dir.mkdir(parents=True, exist_ok=True)
+                    tz_ict = datetime.timezone(datetime.timedelta(hours=7))
+                    bars_out = []
+                    for i in range(len(c_arr)):
+                        dt_s = (
+                            datetime.datetime.fromtimestamp(int(ts_arr[i]), tz=tz_ict).strftime("%Y-%m-%d")
+                            if i < len(ts_arr) else f"bar_{i}"
+                        )
+                        bars_out.append({
+                            "date": dt_s,
+                            "open": round(o_arr[i], 2) if i < len(o_arr) else round(c_arr[i], 2),
+                            "high": round(h_arr[i], 2) if i < len(h_arr) else round(c_arr[i], 2),
+                            "low": round(l_arr[i], 2) if i < len(l_arr) else round(c_arr[i], 2),
+                            "close": round(c_arr[i], 2),
+                            "volume": int(v_arr[i]) if i < len(v_arr) else 0,
+                        })
+                    cache_file.write_text(json.dumps({"symbol": sym, "source": "ENTRADE_CACHE", "bars": bars_out}), encoding="utf-8")
+                except Exception:
+                    pass
             return {"c": c_arr, "h": h_arr, "l": l_arr, "o": o_arr, "v": v_arr}
     except Exception:
         return {}
@@ -472,12 +514,22 @@ def compute_technical_and_vsa(hist: Dict[str, List[float]], live_quote: Optional
         vsa_signal = "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)"
         vsa_code = "NEUTRAL_TEST"
 
-    base_buy_up = 52.0 + (day_chg * 4.2) + ((rsi14 - 50.0) * 0.35)
-    if vsa_code in ("POCKET_PIVOT", "SOS_ABSORPTION"):
-        base_buy_up += 6.5
-    elif vsa_code == "NO_SUPPLY":
-        base_buy_up += 4.0
-    active_buy_pct = round(min(max(base_buy_up, 28.0), 84.0), 1)
+    # Chaikin Money Flow (CMF20) Proxy từ OHLCV thực tế
+    m_len = min(20, len(c), len(h), len(l), len(v))
+    mfv_sum = 0.0
+    vol_sum_20 = 0.0
+    for idx_m in range(len(c) - m_len, len(c)):
+        hi_m = h[idx_m] if idx_m < len(h) else c[idx_m]
+        lo_m = l[idx_m] if idx_m < len(l) else c[idx_m]
+        cl_m = c[idx_m]
+        vl_m = float(v[idx_m]) if idx_m < len(v) else 0.0
+        span_m = hi_m - lo_m
+        clv_m = (((cl_m - lo_m) - (hi_m - cl_m)) / span_m) if span_m > 0 else 0.0
+        mfv_sum += clv_m * vl_m
+        vol_sum_20 += vl_m
+    cmf20_val = (mfv_sum / vol_sum_20) if vol_sum_20 > 0 else 0.0
+    active_buy_pct = round(min(max(50.0 + cmf20_val * 50.0, 15.0), 85.0), 1)
+    avg_val20_ty = round((vol20 * curr_price) / 1e9, 2) if vol20 > 0 and curr_price > 0 else 0.0
 
     raw_rs = round(0.40 * ret_3m + 0.25 * ret_6m + 0.20 * ret_1y + 0.15 * p_vs_ma200, 2)
 
@@ -498,6 +550,7 @@ def compute_technical_and_vsa(hist: Dict[str, List[float]], live_quote: Optional
         "volume": int(curr_vol),
         "vol20": int(vol20),
         "vol_ratio": round(vol_ratio, 2),
+        "avg_val20_ty": avg_val20_ty,
         "price_vs_ma20": round(p_vs_ma20, 2),
         "price_vs_ma50": round(p_vs_ma50, 2),
         "price_vs_ma200": round(p_vs_ma200, 2),
@@ -509,6 +562,7 @@ def compute_technical_and_vsa(hist: Dict[str, List[float]], live_quote: Optional
         "vsa_signal": vsa_signal,
         "vsa_code": vsa_code,
         "active_buy_up_pct": active_buy_pct,
+        "active_buy_source": "CMF20_OHLCV_PROXY",
         "raw_rs_score": raw_rs
     }
 
@@ -566,25 +620,48 @@ def evaluate_10_legends_and_capital_fit(
     if tech.get("vsa_code") in ("POCKET_PIVOT", "NO_SUPPLY", "SOS_ABSORPTION", "VCP_BASE"):
         s_minervini = min(98.0, s_minervini + 15.0)
 
-    # 8. Joseph Piotroski F-Score (/9)
-    f_score = sum([
-        1 if roe > 0 else 0,
-        1 if ocf_r > 0 else 0,
-        1 if roe >= 14.0 else 0,
-        1 if ocf_r >= 1.05 else 0,
-        1 if pb <= 2.5 else 0,
-        1 if rev_g >= 10.0 else 0,
-        1 if prof_g >= 15.0 else 0,
-        1 if ocf_r >= 1.20 else 0,
-        1 if pe <= 16.0 and pe > 0 else 0,
-    ])
+    lm = meta.get("_live_metrics") or {}
+    is_bank = meta.get("accounting_regime") == "BANK_CAMELS_BASEL"
+    is_broker = meta.get("accounting_regime") == "BROKERAGE_FVTPL_MARGIN"
+    live_regime = str(meta.get("_live_regime") or "SIDEWAY_CHOPPY")
+
+    # 8. Joseph Piotroski F-Score (/9) - ưu tiên số thật đa kỳ từ Vietcap IQ
+    if lm.get("piotroski_f_score") is not None:
+        f_score = int(lm["piotroski_f_score"])
+    else:
+        f_score = sum([
+            1 if roe > 0 else 0,
+            1 if ocf_r > 0 else 0,
+            1 if roe >= 14.0 else 0,
+            1 if ocf_r >= 1.05 else 0,
+            1 if pb <= 2.5 else 0,
+            1 if rev_g >= 10.0 else 0,
+            1 if prof_g >= 15.0 else 0,
+            1 if ocf_r >= 1.20 else 0,
+            1 if pe <= 16.0 and pe > 0 else 0,
+        ])
     s_piotroski = round((f_score / 9.0) * 100.0, 1)
 
-    # 9. Messod Beneish M-Score & Richard Sloan Accrual (Forensic Guardrail)
-    beneish_m = round(-2.25 - (ocf_r - 1.0) * 0.85, 2)
-    sloan_accrual_pct = round((1.0 - ocf_r) * 12.5, 2)
-    is_accounting_clean = (beneish_m < -1.78) and (ocf_r >= 0.85) and (roe > 0)
-    s_forensic = 96.0 if (ocf_r >= 1.20 and beneish_m < -2.3) else (85.0 if is_accounting_clean else 25.0)
+    # 9. Messod Beneish M-Score & Richard Sloan Accrual (Forensic Guardrail từ BCTC thật)
+    if lm:
+        beneish_m = float(lm.get("beneish_m_score") if lm.get("beneish_m_score") is not None else -2.2)
+        sloan_accrual_pct = float(lm.get("sloan_accrual_pct") if lm.get("sloan_accrual_pct") is not None else 0.0)
+        ocf_ty_live = float(lm.get("ocf_ty") or 0.0)
+        if not is_bank and not is_broker:
+            is_accounting_clean = (
+                (f_score >= 5)
+                and (beneish_m <= -1.78)
+                and (ocf_ty_live > 0.0)
+                and (ocf_r >= 0.65)
+                and (roe > 0.0)
+            )
+        else:
+            is_accounting_clean = (f_score >= 5) and (roe >= 10.0)
+    else:
+        beneish_m = round(-2.25 - (ocf_r - 1.0) * 0.85, 2)
+        sloan_accrual_pct = round((1.0 - ocf_r) * 12.5, 2)
+        is_accounting_clean = (beneish_m < -1.78) and (ocf_r >= 0.85) and (roe > 0)
+    s_forensic = 96.0 if (is_accounting_clean and ocf_r >= 1.20 and beneish_m < -2.3) else (84.0 if is_accounting_clean else 22.0)
 
     # 10. Ray Dalio & Stanley Druckenmiller Risk/Reward Asymmetry
     atr = max(float(tech.get("atr14", price * 0.025)), price * 0.018)
@@ -615,7 +692,7 @@ def evaluate_10_legends_and_capital_fit(
 
     if not is_accounting_clean:
         bctc_tier = "C (WARNING / RED FLAG)"
-        legends_composite = min(legends_composite, 55.0)
+        legends_composite = min(legends_composite, 52.0)
     elif legends_composite >= 85.0:
         bctc_tier = "AAA (FORTRESS)"
     elif legends_composite >= 78.0:
@@ -625,10 +702,12 @@ def evaluate_10_legends_and_capital_fit(
     else:
         bctc_tier = "B (NEUTRAL)"
 
-    # KIỂM TOÁN TƯƠNG THÍCH QUY MÔ VỐN LÔ CHẴN 100 CP (BAN 4 VN GATEKEEPER)
+    # KIỂM TOÁN TƯƠNG THÍCH QUY MÔ VỐN LÔ CHẴN 100 CP & THANH KHOẢN (BAN 4 VN GATEKEEPER)
     lot_100_cost_vnd = price * 100.0
     lot_100_nav_pct = round((lot_100_cost_vnd / max(nav_vnd, 1.0)) * 100.0, 2)
     max_affordable_shares_35pct = int((nav_vnd * 0.35) // price // 100) * 100
+    avg_val_eff = float(tech.get("avg_val20_ty") or lm.get("avg_val_1m_ty") or 0.0)
+    is_thin_liquidity = (0.0 <= avg_val_eff < 15.0)
 
     if lot_100_nav_pct <= 18.0:
         capital_fit_status = "OPTIMAL_PYRAMID_FIT (1 lô 100 CP <= 18% NAV — Chia nhịp Kim Tự Tháp 200-400 CP chuẩn xác)"
@@ -643,21 +722,32 @@ def evaluate_10_legends_and_capital_fit(
         capital_fit_code = "OVERSIZED_LOT"
         capital_fit_bonus = -18.0
 
-    # Điểm xếp hạng thực thi tổng thể cho Tài khoản Chủ tịch (Tích hợp cả BCTC + Kỹ thuật + Tương thích vốn)
+    if is_thin_liquidity and capital_fit_code != "OVERSIZED_LOT":
+        capital_fit_bonus -= 12.0
+
+    # Điểm xếp hạng thực thi tổng thể cho Tài khoản Chủ tịch
     actionable_alpha_score = round(legends_composite + capital_fit_bonus + (4.0 if tech.get("vsa_code") in ("POCKET_PIVOT", "NO_SUPPLY", "SOS_ABSORPTION") else 0.0), 1)
 
-    # PHÁN QUYẾT DỨT KHOÁT 100% (ZERO WISHY-WASHY / KHÔNG NƯỚC ĐÔI)
+    # PHÁN QUYẾT DỨT KHOÁT GẮN VỚI CHẾ ĐỘ THỊ TRƯỜNG & KỊCH BẢN (KHÔNG HÔ MUA MÙ TRONG BEAR MARKET)
     is_rising_uptrend = (price >= float(tech.get("ma20", price))) and (rs_rating >= 75)
     if not is_accounting_clean:
-        decisive_verdict = "HARD_VETO_RED_FLAG (Cấm giải ngân tuyệt đối — Rủi ro kế toán / OCF yếu)"
+        decisive_verdict = "HARD_VETO_RED_FLAG (Cấm giải ngân tuyệt đối — Rủi ro kế toán / OCF âm hoặc F-Score yếu)"
     elif capital_fit_code == "OVERSIZED_LOT":
         decisive_verdict = "SKIP_OVERSIZED_LOT_20M (BCTC tốt nhưng 1 lô 100 CP > 33% NAV 20M — Loại khỏi rổ mua trực tiếp)"
-    elif legends_composite >= 82.0 and is_rising_uptrend and capital_fit_code == "OPTIMAL":
-        decisive_verdict = "STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)"
-    elif legends_composite >= 76.0 and is_rising_uptrend:
-        decisive_verdict = "ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)"
+    elif is_thin_liquidity:
+        decisive_verdict = f"SKIP_THIN_LIQUIDITY (Thanh khoản mỏng ~{avg_val_eff:.1f} tỷ/phiên < 15 tỷ — Dễ kẹt T+2.5)"
+    elif legends_composite >= 78.0 and is_rising_uptrend and capital_fit_code == "OPTIMAL":
+        if live_regime == "BEAR_DOWNTREND":
+            decisive_verdict = "SCENARIO_S2_S1_WATCHLIST (Chờ kích hoạt Kịch bản S2/S1 — Khung 14h00-14h25)"
+        else:
+            decisive_verdict = "STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)"
+    elif legends_composite >= 74.0 and is_rising_uptrend:
+        if live_regime == "BEAR_DOWNTREND":
+            decisive_verdict = "SCENARIO_S2_S1_WATCHLIST (Chờ kích hoạt Kịch bản S2/S1 — Khung 14h00-14h25)"
+        else:
+            decisive_verdict = "ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)"
     elif price < float(tech.get("ma20", price)) or rs_rating < 50:
-        decisive_verdict = "STAND_ASIDE_WEAK_MOMENTUM (Đứng ngoài — Giá dưới MA20 hoặc RS yếu, cấm bắt dao rơi)"
+        decisive_verdict = "STAND_ASIDE_WEAK_MOMENTUM (Đứng ngoài — Giá dưới MA20 hoặc RS yếu, chờ S1/S3)"
     else:
         decisive_verdict = "WATCHLIST_BASE_BUILDING (Theo dõi nền tích lũy — Chờ điểm nổ Pocket Pivot vượt MA20)"
 
@@ -710,17 +800,48 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
     except Exception:
         pass
 
-    # 1. Flatten all tickers across 18 sectors
+    # 1. Nạp BCTC thật Q3/2026 & Regime sống rồi trải phẳng toàn bộ 144 mã
+    live_bctc_stocks: Dict[str, Any] = {}
+    live_bctc_p = VN_DIR / "data" / "vn_real_bctc_live.json"
+    if live_bctc_p.exists():
+        try:
+            live_bctc_stocks = json.loads(live_bctc_p.read_text(encoding="utf-8")).get("stocks", {})
+        except Exception:
+            live_bctc_stocks = {}
+
+    live_regime = "SIDEWAY_CHOPPY"
+    v2_out_p = ROOT_DIR / "data" / "apex_quant_brain_v2_output.json"
+    if v2_out_p.exists():
+        try:
+            live_regime = str((json.loads(v2_out_p.read_text(encoding="utf-8")).get("market_regime") or {}).get("regime_id") or "SIDEWAY_CHOPPY")
+        except Exception:
+            pass
+
     all_meta: Dict[str, Dict[str, Any]] = {}
     for sec_key, sec_info in VN_FULL_UNIVERSE.items():
         for item in sec_info["stocks"]:
             code = item["code"].upper().strip()
-            all_meta[code] = {
+            meta_row = {
                 **item,
                 "sector_key": sec_key,
                 "sector_name": sec_info["sector_name"],
-                "accounting_regime": sec_info["accounting_regime"]
+                "accounting_regime": sec_info["accounting_regime"],
+                "data_authenticity": "SECTOR_BASELINE_ESTIMATE",
+                "_live_regime": live_regime,
             }
+            if code in live_bctc_stocks and live_bctc_stocks[code].get("latest_metrics"):
+                lm = live_bctc_stocks[code]["latest_metrics"]
+                meta_row.update({
+                    "pe": float(lm.get("pe_ttm") if lm.get("pe_ttm") is not None else meta_row["pe"]),
+                    "pb": float(lm.get("pb_live") if lm.get("pb_live") is not None else meta_row["pb"]),
+                    "roe": float(lm.get("roe_ttm_pct") if lm.get("roe_ttm_pct") is not None else meta_row["roe"]),
+                    "rev_g": float(lm.get("rev_growth_yoy") if lm.get("rev_growth_yoy") is not None else meta_row["rev_g"]),
+                    "prof_g": float(lm.get("profit_growth_yoy") if lm.get("profit_growth_yoy") is not None else meta_row["prof_g"]),
+                    "ocf_r": float(lm.get("ocf_to_profit_ratio") if lm.get("ocf_to_profit_ratio") is not None else meta_row["ocf_r"]),
+                    "_live_metrics": lm,
+                    "data_authenticity": f"VIETCAP_IQ_LIVE_BCTC ({lm.get('latest_quarter', '2026Q3')})",
+                })
+            all_meta[code] = meta_row
 
     all_codes = list(all_meta.keys())
     print(f"[*] [FULL MARKET SCANNER] Đang quét trực tiếp {len(all_codes)} cổ phiếu trên 18 nhóm ngành (HOSE, HNX, UPCoM)...")
@@ -787,6 +908,7 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
             "rev_growth_yoy": meta["rev_g"],
             "profit_growth_yoy": meta["prof_g"],
             "ocf_to_profit_ratio": meta["ocf_r"],
+            "data_authenticity": meta.get("data_authenticity", "SECTOR_BASELINE_ESTIMATE"),
             "key_catalyst": meta["catalyst"],
             "technical": tech,
             "institutional_evaluation": eval_res
@@ -863,11 +985,12 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
     clean_stocks = [v for v in scanned_stocks.values() if v["institutional_evaluation"]["is_accounting_clean"]]
     red_flag_stocks = [v for v in scanned_stocks.values() if not v["institutional_evaluation"]["is_accounting_clean"]]
 
-    # A. Top Actionable Super-Stocks for Chairman's Account (Optimal Lot-100 Fit + High 10-Legends Score + Diverse Sectors)
+    # A. Top Actionable Super-Stocks for Chairman's Account (Optimal Lot-100 Fit + High 10-Legends Score + Liquid >= 15 tỷ/phiên)
     optimal_fit_candidates = [
         v for v in clean_stocks
         if v["institutional_evaluation"]["capital_fit_code"] in ("OPTIMAL", "MODERATE")
-        and v["institutional_evaluation"]["legends_composite_score"] >= 76.0
+        and v["institutional_evaluation"]["legends_composite_score"] >= 74.0
+        and float(v["technical"].get("avg_val20_ty") or 0.0) >= 15.0
     ]
     optimal_fit_candidates.sort(
         key=lambda x: (
@@ -910,12 +1033,13 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
     ]
     oversized_lot_compounders.sort(key=lambda x: x["institutional_evaluation"]["legends_composite_score"], reverse=True)
 
-    # D. Top 12 Emerging Rising Stocks (Cổ Phiếu Đang Lên Mạnh Nhất Toàn Thị Trường: Giá >= MA20, RS >= 75, BCTC Sạch, Vừa Vốn)
+    # D. Top 12 Emerging Rising Stocks (Giá >= MA20, RS >= 75, BCTC Sạch, Vừa Vốn, Thanh khoản >= 15 tỷ/phiên)
     emerging_rising_leaders = [
         v for v in clean_stocks
         if v["institutional_evaluation"]["capital_fit_code"] in ("OPTIMAL", "MODERATE")
         and v["technical"]["price"] >= v["technical"]["ma20"]
         and v["technical"]["rs_rating"] >= 75
+        and float(v["technical"].get("avg_val20_ty") or 0.0) >= 15.0
     ]
     emerging_rising_leaders.sort(
         key=lambda x: (

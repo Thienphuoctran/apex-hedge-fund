@@ -105,13 +105,13 @@ def analyze_deep_bctc_and_valuation(symbol: str, prof: Optional[Dict[str, Any]] 
     sector_name = prof.get("sector_name", "Doanh nghiệp")
     is_bank = regime == "BANK_CAMELS_BASEL" or "Ngân Hàng" in sector_name
 
-    live_price = float(prof.get("live_price") or prof.get("last_close") or 0.0)
+    live_price = float(prof.get("live_price") or prof.get("last_close") or prof.get("current_price") or 0.0)
     pe = float(prof.get("pe", 0.0) or 0.0)
     pb = float(prof.get("pb", 0.0) or 0.0)
     roe = float(prof.get("roe", 0.0) or 0.0)
     rev_g = float(prof.get("rev_growth_yoy", 0.0) or 0.0)
     prof_g = float(prof.get("profit_growth_yoy", 0.0) or 0.0)
-    ocf_ratio = float(prof.get("ocf_ratio", 1.0) or 1.0)
+    ocf_ratio = float(prof["ocf_ratio"]) if prof.get("ocf_ratio") is not None else 1.0
     d_to_e = float(prof.get("debt_to_equity", 0.5) or 0.5)
     wacc = 11.5 if market == "VN" else 9.0
 
@@ -121,7 +121,11 @@ def analyze_deep_bctc_and_valuation(symbol: str, prof: Optional[Dict[str, Any]] 
         net_margin = round((float(prof.get("net_profit_ttm_ty", 0.0)) / float(prof["revenue_ttm_ty"])) * 100.0, 2)
     roic_est = round(roe * (0.85 if is_bank else max(0.55, 1.0 / (1.0 + d_to_e * 0.45))), 2)
     eva_spread = round(roic_est - wacc, 2)
-    piotroski = _compute_piotroski_score(prof, ocf_ratio, d_to_e)
+    piotroski = (
+        int(prof["piotroski_f_score_live"])
+        if prof.get("piotroski_f_score_live") is not None
+        else _compute_piotroski_score(prof, ocf_ratio, d_to_e)
+    )
 
     # 2. Chạy Động cơ Pháp y Kế toán VAS/TT200
     forensic_res: Dict[str, Any] = {
@@ -131,6 +135,7 @@ def analyze_deep_bctc_and_valuation(symbol: str, prof: Optional[Dict[str, Any]] 
         "red_flags_count": 0,
         "red_flags_detail": [],
     }
+    beneish_used = float(prof["beneish_m_score_live"]) if prof.get("beneish_m_score_live") is not None else (-2.65 if ocf_ratio >= 1.0 else (-2.10 if ocf_ratio >= 0.8 else -1.55))
     if market == "VN":
         try:
             from VN_Market.scripts.vn_forensic_accounting_engine import audit_vas_forensic_accounting
@@ -138,15 +143,19 @@ def analyze_deep_bctc_and_valuation(symbol: str, prof: Optional[Dict[str, Any]] 
             np_ty = float(prof.get("net_profit_ttm_ty", 120.0) or 120.0)
             rec_ty = float(prof.get("receivables_ty", 0.0) or 0.0)
             rec_pct = round((rec_ty / rev_ty) * 100.0, 1) if rev_ty > 0 and rec_ty > 0 else 15.0
-            beneish_est = -2.65 if ocf_ratio >= 1.0 else (-2.10 if ocf_ratio >= 0.8 else -1.55)
-            altman_est = 3.8 if d_to_e <= 0.8 else (2.4 if d_to_e <= 1.5 else 1.55)
-            sloan_est = round(max(-5.0, min(18.0, (1.0 - ocf_ratio) * 12.0)), 1)
+            other_rec_pct = (
+                float(prof["other_receivables_to_assets_pct"])
+                if prof.get("other_receivables_to_assets_pct") is not None
+                else min(25.0, rec_pct * 0.35)
+            )
+            altman_est = float(prof["altman_z_score_live"]) if prof.get("altman_z_score_live") is not None else (3.8 if d_to_e <= 0.8 else (2.4 if d_to_e <= 1.5 else 1.55))
+            sloan_est = float(prof["sloan_accrual_pct_live"]) if prof.get("sloan_accrual_pct_live") is not None else round(max(-5.0, min(18.0, (1.0 - ocf_ratio) * 12.0)), 1)
             payload = {
                 "code": sym,
                 "sector_name": sector_name,
                 "accounting_regime": regime,
                 "receivables_to_rev_pct": rec_pct,
-                "other_receivables_to_assets_pct": min(25.0, rec_pct * 0.35),
+                "other_receivables_to_assets_pct": other_rec_pct,
                 "cip_over_3yrs_ty": 0.0,
                 "revenue_ttm_ty": rev_ty,
                 "net_profit_ttm_ty": np_ty,
@@ -154,7 +163,7 @@ def analyze_deep_bctc_and_valuation(symbol: str, prof: Optional[Dict[str, Any]] 
                 "llr_coverage_pct": float(prof.get("llr_coverage_pct") or 115.0),
                 "car_pct": float(prof.get("car_pct") or 12.0),
                 "casa_pct": float(prof.get("casa_pct") or 22.0),
-                "beneish_m_score": beneish_est,
+                "beneish_m_score": beneish_used,
                 "altman_z_score": altman_est,
                 "ocf_to_profit_ratio": ocf_ratio,
                 "sloan_accrual_pct": sloan_est,
@@ -275,7 +284,11 @@ def analyze_deep_bctc_and_valuation(symbol: str, prof: Optional[Dict[str, Any]] 
         "net_margin_pct": net_margin,
         "rev_growth_yoy": rev_g,
         "profit_growth_yoy": prof_g,
+        "ocf_ty": float(prof["ocf_ty"]) if prof.get("ocf_ty") is not None else None,
         "ocf_ratio": ocf_ratio,
+        "beneish_m_score": beneish_used,
+        "avg_val_1m_ty": float(prof["avg_val_1m_ty"]) if prof.get("avg_val_1m_ty") is not None else None,
+        "latest_quarter": prof.get("latest_quarter", "STATIC"),
         "debt_to_equity": d_to_e,
         "piotroski_f_score": piotroski,
         "forensic": forensic_res,
@@ -300,8 +313,35 @@ def analyze_deep_bctc_and_valuation(symbol: str, prof: Optional[Dict[str, Any]] 
     }
 
 
+_EMP_REG_CACHE: Dict[str, Any] = {}
+
+
+def _load_empirical_and_regime() -> tuple[float, str]:
+    global _EMP_REG_CACHE
+    if _EMP_REG_CACHE:
+        return float(_EMP_REG_CACHE["emp_wr"]), str(_EMP_REG_CACHE["regime_id"])
+    emp_wr = 52.0
+    cur_reg = "SIDEWAY_CHOPPY"
+    try:
+        cal_p = DATA_DIR / "apex_empirical_calibration.json"
+        if cal_p.exists():
+            cal = json.loads(cal_p.read_text(encoding="utf-8"))
+            emp_wr = float((cal.get("apex_v2_regime_gated") or {}).get("win_rate_pct") or 52.0)
+    except Exception:
+        emp_wr = 52.0
+    try:
+        v2_p = DATA_DIR / "apex_quant_brain_v2_output.json"
+        if v2_p.exists():
+            v2 = json.loads(v2_p.read_text(encoding="utf-8"))
+            cur_reg = str(((v2.get("market_regime") or v2.get("regime_diagnosis") or {}).get("regime_id")) or "SIDEWAY_CHOPPY")
+    except Exception:
+        cur_reg = "SIDEWAY_CHOPPY"
+    _EMP_REG_CACHE = {"emp_wr": emp_wr, "regime_id": cur_reg}
+    return emp_wr, cur_reg
+
+
 def _compute_ev_and_kelly(alpha_score: float, analysis: Dict[str, Any], max_alloc_cap_pct: float) -> Dict[str, Any]:
-    """Tính P(Win), Stop Loss 2xATR (<=7.5%), TP1, R:R, EV% và Half-Kelly %."""
+    """Tính P(Win) hiệu chỉnh thực nghiệm, Stop Loss 2xATR (<=7.5%), TP1, R:R, EV% và Half-Kelly %."""
     px = float(analysis.get("live_price", 0.0) or 0.0)
     atr = float(analysis.get("atr14", 0.0) or 0.0)
     upside = float(analysis.get("valuation", {}).get("margin_of_safety_pct", 0.0) or 0.0)
@@ -312,18 +352,33 @@ def _compute_ev_and_kelly(alpha_score: float, analysis: Dict[str, Any], max_allo
     else:
         risk_pct = 6.0
 
-    # Target reward dựa trên hợp lưu Upside định giá và tối thiểu 2xRisk cho setup đạt chuẩn
-    reward_pct = round(max(risk_pct * 1.4, min(28.0, max(10.0, upside))), 2)
-    rr_ratio = round(reward_pct / risk_pct, 2) if risk_pct > 0 else 2.0
+    # Không ép sàn thưởng 10% cho cổ phiếu bị định giá đắt (upside <= 0)
+    if upside > 0:
+        reward_pct = round(max(risk_pct * 1.2, min(25.0, upside)), 2)
+    else:
+        reward_pct = round(max(4.0, risk_pct * 1.1), 2)
+    rr_ratio = round(reward_pct / risk_pct, 2) if risk_pct > 0 else 1.5
 
-    # Ước lượng xác suất thắng P(W) thực nghiệm từ Alpha Score & Forensic
+    # Hiệu chỉnh xác suất thắng P(W) thực nghiệm từ Backtest Walk-Forward & Market Regime sống (trần cứng 62%)
+    emp_wr, cur_reg = _load_empirical_and_regime()
     forensic_s = float(analysis.get("forensic", {}).get("forensic_score", 80.0))
-    p_win = min(0.84, max(0.32, 0.36 + (alpha_score - 50.0) * 0.009 + (forensic_s - 75.0) * 0.002))
+    is_bank = analysis.get("accounting_regime") == "BANK_CAMELS_BASEL"
+    ocf_ratio = float(analysis["ocf_ratio"]) if analysis.get("ocf_ratio") is not None else 1.0
+
+    emp_p = emp_wr / 100.0
+    p_win = emp_p + (alpha_score - 65.0) * 0.0025 + (forensic_s - 75.0) * 0.0015
+    if cur_reg == "BEAR_DOWNTREND":
+        p_win -= 0.10
+    elif cur_reg == "CHOPPY_CORRECTION":
+        p_win -= 0.05
+    if (not is_bank and ocf_ratio < 0.5) or forensic_s < 65.0:
+        p_win -= 0.08
+    p_win = min(0.62, max(0.28, p_win))
     ev_pct = round(p_win * reward_pct - (1.0 - p_win) * risk_pct, 2)
 
-    # Half-Kelly criterion f* = p - (1-p)/R:R
+    # Half-Kelly criterion f* = p - (1-p)/R:R (khóa = 0 khi BEAR_DOWNTREND)
     kelly_full = max(0.0, p_win - ((1.0 - p_win) / max(0.5, rr_ratio)))
-    half_kelly_pct = round(min(max_alloc_cap_pct, kelly_full * 50.0), 1)
+    half_kelly_pct = 0.0 if cur_reg == "BEAR_DOWNTREND" else round(min(max_alloc_cap_pct, kelly_full * 50.0), 1)
 
     stop_price = round(px * (1.0 - risk_pct / 100.0), 2 if analysis["market"] == "US" else 0) if px > 0 else 0.0
     tp1_price = round(px * (1.0 + (reward_pct * 0.65) / 100.0), 2 if analysis["market"] == "US" else 0) if px > 0 else 0.0
@@ -339,6 +394,8 @@ def _compute_ev_and_kelly(alpha_score: float, analysis: Dict[str, Any], max_allo
         "stop_loss_price": stop_price,
         "tp1_price": tp1_price,
         "tp2_price": tp2_price,
+        "live_regime_id": cur_reg,
+        "empirical_calibration_source": "apex_empirical_calibration.json",
     }
 
 
@@ -506,7 +563,55 @@ def run_full_market_alpha_optimization(force_live: bool = True) -> Dict[str, Any
     macro_score = round(max(20.0, min(92.0, 50.0 + (breadth_pct - 45.0) * 0.6 + vni_pct * 4.0 + (spill_mult - 1.0) * 30.0)), 1)
 
     universe = _load_master_universe()
-    # Chọn toàn bộ cổ phiếu nắm giữ + 54 mã BCTC sâu VN + 12 siêu cổ phiếu US để phân tích live nhanh gọn
+    # Phủ dữ liệu BCTC sống Q3/2026 từ Vietcap IQ Official (vn_real_bctc_live.json) lên toàn bộ universe
+    live_bctc_path = BASE_DIR / "VN_Market" / "data" / "vn_real_bctc_live.json"
+    if live_bctc_path.exists():
+        try:
+            live_stocks = json.loads(live_bctc_path.read_text(encoding="utf-8")).get("stocks", {})
+            for sym, item in live_stocks.items():
+                lm = item.get("latest_metrics") or {}
+                if not lm:
+                    continue
+                entry = dict(universe.get(sym, {}))
+                cur_px = float(lm.get("current_price") or entry.get("live_price") or 0.0)
+                entry.update({
+                    "symbol": sym,
+                    "market": "VN",
+                    "company_name": item.get("company_name") or entry.get("company_name", sym),
+                    "sector_name": item.get("sector_name") or entry.get("sector_name", "Doanh nghiệp"),
+                    "sector_code": entry.get("sector_code") or item.get("sector_key") or "Core",
+                    "accounting_regime": lm.get("accounting_regime") or entry.get("accounting_regime", "CORPORATE_VAS_TT200"),
+                    "deep_bctc_audited": True,
+                    "latest_quarter": lm.get("latest_quarter", "2026Q3"),
+                    "revenue_ttm_ty": float(lm.get("revenue_ttm_ty") or 0.0),
+                    "net_profit_ttm_ty": float(lm.get("net_profit_ttm_ty") or 0.0),
+                    "rev_growth_yoy": float(lm.get("rev_growth_yoy") or 0.0),
+                    "profit_growth_yoy": float(lm.get("profit_growth_yoy") or 0.0),
+                    "gross_margin_pct": float(lm.get("gross_margin_pct") or 0.0),
+                    "operating_margin_pct": float(lm.get("operating_margin_pct") or 0.0),
+                    "roe": float(lm.get("roe_ttm_pct") or 0.0),
+                    "ocf_ty": float(lm.get("ocf_ty") or 0.0),
+                    "fcf_ty": float(lm.get("fcf_ty") or 0.0),
+                    "ocf_ratio": float(lm["ocf_to_profit_ratio"]) if lm.get("ocf_to_profit_ratio") is not None else 0.0,
+                    "debt_to_equity": float(lm.get("debt_to_equity") or 0.0),
+                    "pe": float(lm.get("pe_ttm") or 0.0),
+                    "pb": float(lm.get("pb_live") or 0.0),
+                    "receivables_ty": float(lm.get("receivables_ty") or 0.0),
+                    "other_receivables_to_assets_pct": float(lm.get("other_receivables_to_assets_pct") or 0.0),
+                    "cash_and_equiv_ty": float(lm.get("cash_and_equiv_ty") or 0.0),
+                    "piotroski_f_score_live": lm.get("piotroski_f_score"),
+                    "beneish_m_score_live": lm.get("beneish_m_score"),
+                    "altman_z_score_live": lm.get("altman_z_score"),
+                    "sloan_accrual_pct_live": lm.get("sloan_accrual_pct"),
+                    "avg_val_1m_ty": float(lm.get("avg_val_1m_ty") or 0.0),
+                })
+                if not float(entry.get("live_price") or 0.0) and cur_px > 0:
+                    entry["live_price"] = cur_px
+                universe[sym] = entry
+        except Exception:
+            pass
+
+    # Chọn toàn bộ cổ phiếu nắm giữ + 80 mã BCTC sống VN + 12 siêu cổ phiếu US để phân tích live
     vn_candidates = [
         sym for sym, info in universe.items()
         if info.get("market") == "VN" and (info.get("deep_bctc_audited") or sym in active_pos or sym in ("HDB", "MSH", "BAF", "IDC", "TCH", "OCB"))
@@ -615,17 +720,23 @@ def run_full_market_alpha_optimization(force_live: bool = True) -> Dict[str, Any
         else:
             corr_guard = "CLEAR_DIVERSIFIED"
 
-        # Kiểm toán Lô 100 CP theo tiền mặt thật TCBS
+        # Kiểm toán Lô 100 CP theo tiền mặt thật TCBS & Khóa giải ngân trong BEAR_DOWNTREND
         lot100_cost = round(deep["live_price"] * 100.0, 0) if deep["market"] == "VN" and deep["live_price"] > 0 else 0.0
-        max_vnd_budget = cash_vnd * (min(max_alloc_cap, max(15.0, opt["half_kelly_pct"])) / 100.0)
-        suggested_lots = int(max_vnd_budget // lot100_cost) * 100 if lot100_cost > 0 else 0
-        if suggested_lots == 0 and lot100_cost > 0 and cash_vnd >= lot100_cost and opt["ev_pct"] > 0:
-            suggested_lots = 100
+        cur_regime = opt.get("live_regime_id", "SIDEWAY_CHOPPY")
+        if cur_regime == "BEAR_DOWNTREND":
+            suggested_lots = 0
+        else:
+            max_vnd_budget = cash_vnd * (min(max_alloc_cap, max(15.0, opt["half_kelly_pct"])) / 100.0)
+            suggested_lots = int(max_vnd_budget // lot100_cost) * 100 if lot100_cost > 0 else 0
+            if suggested_lots == 0 and lot100_cost > 0 and cash_vnd >= lot100_cost and opt["ev_pct"] > 0:
+                suggested_lots = 100
 
-        # Gắn nhãn hành động tối ưu
+        # Gắn nhãn hành động tối ưu (tuyệt đối không phát lệnh BUY trong BEAR_DOWNTREND)
         px = deep["live_price"]
         if deep["forensic"].get("red_flags_count", 0) > 0 and deep["forensic"].get("forensic_score", 100) < 70:
             action = "AVOID_RED_FLAG"
+        elif cur_regime == "BEAR_DOWNTREND":
+            action = "WAIT_UPTREND_REGIME"
         elif deep["rsi14"] > max_rsi:
             action = "WAIT_PULLBACK_OVERBOUGHT"
         elif alpha >= 68.0 and opt["ev_pct"] >= 3.0 and opt["rr_ratio"] >= 1.8 and bull_trap_clear:
@@ -680,9 +791,17 @@ def run_full_market_alpha_optimization(force_live: bool = True) -> Dict[str, Any
         dist_stop_pct = round(((live_px - stop_px) / live_px) * 100.0, 2) if live_px > 0 and stop_px > 0 else 0.0
         t0_buy_zone = round(float(deep_pos.get("ma20") or live_px * 0.985), 0)
 
+        has_forensic_flag = (
+            deep_pos.get("forensic", {}).get("red_flags_count", 0) > 0
+            or int(deep_pos.get("piotroski_f_score", 9) or 9) <= 4
+            or (deep_pos.get("accounting_regime") != "BANK_CAMELS_BASEL" and float(deep_pos.get("ocf_ratio") if deep_pos.get("ocf_ratio") is not None else 1.0) < 0)
+        )
         if live_px <= stop_px:
             rec_action = "CRITICAL_CUT_STOP"
             rec_note = f"Giá xuyên thủng Stop Loss {stop_px:,.0f}đ — Kỷ luật cắt lỗ bảo toàn vốn."
+        elif has_forensic_flag:
+            rec_action = "EXIT_FORENSIC_RED_FLAG"
+            rec_note = f"Cảnh báo BCTC thật (F-Score {deep_pos.get('piotroski_f_score')}/9, OCF/LNST {deep_pos.get('ocf_ratio')}x, Pháp y {deep_pos.get('forensic', {}).get('forensic_score')}/100) — Không nắm giữ dài hạn, ưu tiên cơ cấu thu tiền mặt."
         elif tp1_px > 0 and live_px >= tp1_px:
             rec_action = "SCALE_OUT_50_TP1"
             rec_note = f"Chạm mục tiêu TP1 {tp1_px:,.0f}đ — Chốt lời 50% ({shares//2} CP) & nâng Stop phần còn lại lên giá vốn {entry_px:,.0f}đ."
@@ -690,8 +809,8 @@ def run_full_market_alpha_optimization(force_live: bool = True) -> Dict[str, Any
             rec_action = "HOLD_RIDE_WINNER"
             rec_note = f"Lực mua chủ động khỏe ({deep_pos.get('buy_up_pct', 50):.1f}%), giữ lãi chạy về TP1 {tp1_px:,.0f}đ (cách Stop +{dist_stop_pct:.1f}%)."
         else:
-            rec_action = "HOLD_AND_T0_DIP"
-            rec_note = f"Giữ vị thế lõi BCTC sạch (Alpha {deep_pos.get('alpha_score', 70)}/100); canh lướt T+0 hạ giá vốn nếu rung lắc quanh {t0_buy_zone:,.0f}đ."
+            rec_action = "HOLD_WATCH_LIQUIDITY"
+            rec_note = f"Theo dõi vị thế (Alpha {deep_pos.get('alpha_score', 60)}/100, thanh khoản 1M ~{deep_pos.get('avg_val_1m_ty') or 0} tỷ/phiên); canh thu tiền mặt theo kế hoạch cơ cấu."
 
         holdings_optimizer.append({
             "symbol": sym,
@@ -751,8 +870,10 @@ def run_full_market_alpha_optimization(force_live: bool = True) -> Dict[str, Any
         "holdings_optimizer": holdings_optimizer,
         "correlation_matrix": corr_res,
         "top_vn_alpha_picks": analyzed_vn[:12],
+        "vn_rankings": analyzed_vn,
         "top_vn_affordable_now": top_vn_buy,
         "top_us_alpha_picks": analyzed_us[:8],
+        "us_rankings": analyzed_us,
         "omni_stats": omni_stats,
         "total_analyzed": len(analyzed_vn) + len(analyzed_us),
     }

@@ -3024,19 +3024,187 @@
     "timestamp": "2026-11-19 04:33:24"
   },
   {
-    "message_id": 2143,
+    "message_id": 2162,
+    "chat_id": "-1004465270817",
+    "thread_id": 112,
+    "topic_key": "academy_learning",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 08:02:13"
+  },
+  {
+    "message_id": 2164,
     "chat_id": "-1004465270817",
     "thread_id": 6,
     "topic_key": "james_hq",
-    "date": "2026-11-18",
-    "timestamp": "2026-11-18 23:00:06"
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 08:02:51"
   },
   {
-    "message_id": 2145,
+    "message_id": 2166,
     "chat_id": "-1004465270817",
-    "thread_id": 106,
-    "topic_key": "assistant_nam",
-    "date": "2026-11-18",
-    "timestamp": "2026-11-18 23:00:08"
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 08:02:54"
+  },
+  {
+    "message_id": 2168,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 08:02:56"
+  },
+  {
+    "message_id": 2170,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 08:03:24"
+  },
+  {
+    "message_id": 2179,
+    "chat_id": "-1004465270817",
+    "thread_id": 4,
+    "topic_key": "morning_blotter",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:16:10"
+  },
+  {
+    "message_id": 2180,
+    "chat_id": "-1004465270817",
+    "thread_id": 4,
+    "topic_key": "morning_blotter",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:41:15"
+  },
+  {
+    "message_id": 2182,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:43:15"
+  },
+  {
+    "message_id": 2184,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:43:17"
+  },
+  {
+    "message_id": 2186,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:43:30"
+  },
+  {
+    "message_id": 2188,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:46:38"
+  },
+  {
+    "message_id": 2190,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:46:53"
+  },
+  {
+    "message_id": 2192,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:46:55"
+  },
+  {
+    "message_id": 2194,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-19",
+    "timestamp": "2026-11-19 09:47:10"
+  },
+  {
+    "message_id": 2377,
+    "chat_id": "-1004465270817",
+    "thread_id": 112,
+    "topic_key": "academy_learning",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:03:34"
+  },
+  {
+    "message_id": 2379,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:04:45"
+  },
+  {
+    "message_id": 2381,
+    "chat_id": "-1004465270817",
+    "thread_id": 4,
+    "topic_key": "morning_blotter",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:04:50"
+  },
+  {
+    "message_id": 2383,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:05:00"
+  },
+  {
+    "message_id": 2385,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:05:02"
+  },
+  {
+    "message_id": 2387,
+    "chat_id": "-1004465270817",
+    "thread_id": 3,
+    "topic_key": "alerts",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:05:13"
+  },
+  {
+    "message_id": 2388,
+    "chat_id": "-1004465270817",
+    "thread_id": 1776,
+    "topic_key": "reports_vault",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:05:17"
+  },
+  {
+    "message_id": 2389,
+    "chat_id": "-1004465270817",
+    "thread_id": 112,
+    "topic_key": "academy_learning",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:05:18"
+  },
+  {
+    "message_id": 2391,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21 16:05:20"
   }
 ]

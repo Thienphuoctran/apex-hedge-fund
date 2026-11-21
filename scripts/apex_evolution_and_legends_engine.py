@@ -514,60 +514,78 @@ def _evaluate_legend_on_stock(legend_id: str, d: Dict[str, Any]) -> Tuple[float,
     p_win = float(opt.get("win_prob_pct", 55.0) or 55.0)
     risk_pct = float(opt.get("risk_pct", 6.0) or 6.0)
     is_bank = d.get("accounting_regime") == "BANK_CAMELS_BASEL"
+    ocf_ty = float(d["ocf_ty"]) if d.get("ocf_ty") is not None else (0.0 if ocf_r == 0.0 else 10.0)
+    beneish = float(d["beneish_m_score"]) if d.get("beneish_m_score") is not None else -2.5
+    avg_val_1m = float(d["avg_val_1m_ty"]) if d.get("avg_val_1m_ty") is not None else 50.0
+    cur_reg = str(d.get("live_regime_id") or "")
 
-    score = 55.0
+    score = 24.0
     reason = ""
 
     if legend_id == "buffett":
-        score = 45 + (20 if roe >= 18 else (10 if roe >= 12 else -5)) + (15 if ocf_r >= 1.1 else 5) + (12 if eva > 5 else 0) + (8 if mos > 10 else 0)
+        score = 24 + (22 if roe >= 18 else (12 if roe >= 12 else -6)) + (18 if ocf_r >= 1.1 else (8 if is_bank and ocf_r >= 0.7 else -4)) + (14 if eva > 5 else 0) + (10 if mos > 10 else 0)
         reason = f"ROE {roe:.1f}%, OCF/LNST {ocf_r:.2f}x, EVA {eva:+.1f}%, MOS {mos:+.1f}%"
     elif legend_id == "munger":
-        score = 42 + (18 if forensic >= 80 else 5) + (15 if f_score >= 7 else 4) + (15 if roic >= 15 else 3) + (10 if ocf_r >= 1.0 else -10)
+        score = 22 + (20 if forensic >= 80 else (6 if forensic >= 65 else -8)) + (18 if f_score >= 7 else (6 if f_score >= 5 else -10)) + (16 if roic >= 15 else 4) + (12 if ocf_r >= 1.0 or is_bank else -12)
         reason = f"Piotroski {f_score}/9, Pháp y {forensic:.0f}/100, ROIC {roic:.1f}%"
     elif legend_id == "graham":
-        graham_prod = pe * pb if (pe > 0 and pb > 0) else 30.0
-        score = 38 + min(30, max(-15, mos * 0.7)) + (18 if graham_prod <= 22.5 or (is_bank and pb <= 1.5) else (-8 if graham_prod > 60 else 5)) + (12 if d_e <= 1.0 or is_bank else -8)
+        graham_prod = pe * pb if (pe > 0 and pb > 0) else 60.0
+        score = 22 + min(30, max(-15, mos * 0.7)) + (20 if graham_prod <= 22.5 or (is_bank and pb <= 1.5) else (-12 if graham_prod > 60 else 5)) + (14 if d_e <= 1.0 or is_bank else -10)
         reason = f"Biên an toàn {mos:+.1f}%, P/E={pe:.1f}, P/B={pb:.2f}"
     elif legend_id == "klarman":
-        score = 40 + min(32, max(-12, mos * 0.75)) + (15 if ocf_r >= 1.0 else -8) + (10 if risk_pct <= 6.5 else 0)
+        score = 22 + min(32, max(-14, mos * 0.75)) + (16 if ocf_r >= 1.0 or is_bank else -10) + (12 if risk_pct <= 6.5 else 0)
         reason = f"Đệm MOS {mos:+.1f}%, Rủi ro Stop -{risk_pct:.1f}%"
     elif legend_id == "lynch":
-        score = 44 + (24 if peg <= 0.8 else (14 if peg <= 1.2 else -8)) + (18 if prof_g >= 18 else 6) + (10 if ocf_r >= 1.0 else 0)
+        score = 22 + (24 if 0 < peg <= 0.8 else (14 if 0 < peg <= 1.2 else -10)) + (20 if prof_g >= 18 else (6 if prof_g >= 0 else -12)) + (12 if ocf_r >= 1.0 or is_bank else 0)
         reason = f"PEG {peg:.2f}x, Tăng trưởng LN {prof_g:+.1f}% YoY"
     elif legend_id == "fisher":
-        score = 45 + (20 if rev_g >= 15 else (10 if rev_g >= 8 else 0)) + (18 if roe >= 18 else 5) + (12 if eva > 8 else 0)
+        score = 24 + (22 if rev_g >= 15 else (10 if rev_g >= 5 else -6)) + (20 if roe >= 18 else (6 if roe >= 10 else -6)) + (14 if eva > 8 else 0)
         reason = f"Doanh thu {rev_g:+.1f}% YoY, ROE {roe:.1f}% + Catalyst rõ"
     elif legend_id == "greenblatt":
-        ey = (100.0 / pe) if pe > 0 else 5.0
-        score = 40 + min(26, ey * 1.8) + min(28, max(0, roic * 0.85))
+        ey = (100.0 / pe) if pe > 0 else 0.0
+        score = 20 + min(28, ey * 1.8) + min(28, max(-5, roic * 0.9))
         reason = f"Earnings Yield ~{ey:.1f}% (P/E {pe:.1f}), ROIC {roic:.1f}%"
     elif legend_id == "oneil":
-        score = 42 + (20 if prof_g >= 20 else 8) + (18 if alpha >= 72 else 6) + (14 if buy_up >= 58 else 2)
+        score = 22 + (22 if prof_g >= 20 else (8 if prof_g >= 5 else -10)) + (18 if alpha >= 72 else 6) + (14 if buy_up >= 58 else 2)
         reason = f"CANSLIM LN {prof_g:+.1f}%, Buy-Up {buy_up:.1f}%, Alpha {alpha:.1f}"
     elif legend_id == "minervini":
         above_m = (1 if ma20 > 0 and px >= ma20 else 0) + (1 if ma50 > 0 and px >= ma50 else 0)
-        score = 38 + above_m * 18 + (14 if risk_pct <= 6.8 else 4) + (12 if 48 <= rsi <= 68 else (-8 if rsi < 35 else 2))
+        score = 20 + above_m * 20 + (16 if risk_pct <= 6.8 else 4) + (14 if 48 <= rsi <= 68 else (-10 if rsi < 38 else 2))
         reason = f"Trend MA20/50={above_m}/2, RSI {rsi:.1f}, Stop -{risk_pct:.1f}%"
     elif legend_id == "wyckoff":
-        score = 42 + min(30, max(-10, (buy_up - 48.0) * 1.4)) + (16 if ma20 > 0 and px >= ma20 * 0.985 else 2)
+        score = 22 + min(30, max(-12, (buy_up - 48.0) * 1.4)) + (18 if ma20 > 0 and px >= ma20 * 0.985 else -4)
         reason = f"Áp lực mua chủ động {buy_up:.1f}% (Nỗ lực vs Kết quả)"
     elif legend_id == "druckenmiller":
-        score = 40 + min(26, max(-10, ev * 1.4)) + (20 if rr >= 3.0 else (10 if rr >= 2.0 else -6)) + (10 if prof_g >= 15 else 0)
+        score = 22 + min(26, max(-12, ev * 1.4)) + (22 if rr >= 3.0 else (12 if rr >= 2.0 else -8)) + (12 if prof_g >= 15 else 0)
         reason = f"Bất đối xứng R:R 1:{rr:.2f}, EV {ev:+.2f}%"
     elif legend_id == "dalio":
-        score = 46 + (16 if risk_pct <= 6.5 else 4) + (16 if d_e <= 1.0 or is_bank else -6) + (14 if eva > 0 else -5)
+        score = 26 + (18 if risk_pct <= 6.5 else 4) + (18 if d_e <= 1.0 or is_bank else -8) + (16 if eva > 0 else -6)
         reason = f"Risk-Parity Stop -{risk_pct:.1f}%, EVA {eva:+.1f}%"
     elif legend_id == "marks":
-        score = 42 + (18 if forensic >= 78 else 2) + min(22, max(-15, mos * 0.55)) + (12 if rsi <= 66 else -10)
+        score = 22 + (20 if forensic >= 78 else (4 if forensic >= 60 else -10)) + min(24, max(-16, mos * 0.55)) + (14 if rsi <= 66 else -10)
         reason = f"Chu kỳ định giá MOS {mos:+.1f}%, RSI {rsi:.1f}, Pháp y {forensic:.0f}"
     elif legend_id == "soros":
-        score = 44 + (18 if prof_g >= 15 and rev_g >= 10 else 4) + (16 if rr >= 2.5 else 4) + (12 if buy_up >= 55 else 0)
+        score = 24 + (20 if prof_g >= 15 and rev_g >= 10 else (-6 if prof_g < 0 else 4)) + (18 if rr >= 2.5 else 4) + (14 if buy_up >= 55 else 0)
         reason = f"Phản xạ kỳ vọng LN {prof_g:+.1f}% & dòng tiền {buy_up:.1f}%"
     else:  # simons
-        score = 40 + min(26, max(-12, ev * 1.5)) + min(22, max(0, (p_win - 45.0) * 0.9)) + (10 if alpha >= 70 else 2)
+        score = 22 + min(26, max(-14, ev * 1.5)) + min(24, max(-8, (p_win - 45.0) * 1.0)) + (12 if alpha >= 70 else 2)
         reason = f"Thống kê P(W)={p_win:.1f}%, EV={ev:+.2f}%, Alpha={alpha:.1f}"
 
-    s_final = round(max(20.0, min(98.0, score)), 1)
+    # Phạt cứng rủi ro thực chứng (tránh lạm phát 15/15 BUY cho mã đốt tiền / định giá bong bóng / gãy xu hướng)
+    if (not is_bank) and (ocf_ty < 0 or ocf_r < 0.5) and legend_id in ("buffett", "munger", "graham", "klarman", "lynch", "marks", "dalio"):
+        score -= 22.0
+    if (pe <= 0 or pe > 35.0 or prof_g < -30.0) and legend_id in ("graham", "klarman", "greenblatt", "lynch", "marks", "oneil"):
+        score -= 18.0
+    if (f_score <= 4 or (not is_bank and beneish > -1.78)) and legend_id in ("munger", "buffett", "marks", "simons", "dalio"):
+        score -= 18.0
+    if (ma50 > 0 and px > 0 and px < ma50) and legend_id in ("minervini", "oneil", "wyckoff", "druckenmiller", "soros"):
+        score -= 14.0
+    if (0.0 < avg_val_1m < 15.0) and legend_id in ("oneil", "minervini", "druckenmiller", "simons"):
+        score -= 12.0
+    if cur_reg == "BEAR_DOWNTREND" and legend_id in ("druckenmiller", "soros", "marks", "oneil", "minervini", "wyckoff"):
+        score -= 10.0
+
+    s_final = round(max(5.0, min(95.0, score)), 1)
     stance = "BUY" if s_final >= 74.0 else ("ACCUMULATE" if s_final >= 64.0 else ("WATCH" if s_final >= 52.0 else "CAUTIOUS"))
     return s_final, stance, reason
 
@@ -637,23 +655,58 @@ def distill_world_legends_wisdom(
     deep_brain = _load_json_safe(DEEP_BRAIN_JSON, {})
     brain_map: Dict[str, Dict[str, Any]] = {}
     for x in (
-        deep_brain.get("top_vn_alpha_picks", []) + deep_brain.get("vn_rankings", [])
-        + deep_brain.get("top_us_alpha_picks", []) + deep_brain.get("us_rankings", [])
+        deep_brain.get("vn_rankings", []) + deep_brain.get("top_vn_alpha_picks", [])
+        + deep_brain.get("us_rankings", []) + deep_brain.get("top_us_alpha_picks", [])
     ):
         if x.get("symbol"):
             brain_map[x["symbol"].upper()] = x
+
+    live_vn_bctc = _load_json_safe(BASE_DIR / "VN_Market" / "data" / "vn_real_bctc_live.json", {}).get("stocks", {})
+    v2_out = _load_json_safe(DATA_DIR / "apex_quant_brain_v2_output.json", {})
+    cur_reg = str((v2_out.get("market_regime") or {}).get("regime_id") or "SIDEWAY_CHOPPY")
+    cal_out = _load_json_safe(DATA_DIR / "apex_empirical_calibration.json", {})
+    emp_wr = float((cal_out.get("apex_v2_regime_gated") or {}).get("win_rate_pct") or 57.1)
 
     from scripts.apex_deep_financial_brain import analyze_deep_bctc_and_valuation, _compute_ev_and_kelly
 
     ticker_evaluations: List[Dict[str, Any]] = []
     for sym in TARGET_EVAL_TICKERS:
-        data = brain_map.get(sym)
+        data = dict(brain_map.get(sym, {}))
         if not data:
             analysis = analyze_deep_bctc_and_valuation(sym)
             p = analysis["pillar_scores"]
             alpha = round(p["bctc_quality"] * 0.4 + p["valuation_mos"] * 0.25 + p["smart_money_flow"] * 0.2 + p["technical_trend"] * 0.15, 1)
             opt = _compute_ev_and_kelly(alpha, analysis, 50.0)
             data = {**analysis, "alpha_score": alpha, "optimizer": opt}
+
+        # Phủ số liệu BCTC Q3/2026 sống & chế độ thị trường trước khi 15 Huyền thoại chấm điểm
+        live_stk = live_vn_bctc.get(sym, {})
+        lm = live_stk.get("latest_metrics") or {}
+        if lm:
+            is_bank = lm.get("accounting_regime") == "BANK_CAMELS_BASEL"
+            ocf_r_live = float(lm["ocf_to_profit_ratio"]) if lm.get("ocf_to_profit_ratio") is not None else float(data.get("ocf_ratio") or 1.0)
+            ocf_ty_live = float(lm["ocf_ty"]) if lm.get("ocf_ty") is not None else float(data.get("ocf_ty") or 0.0)
+            f_live = int(lm["piotroski_f_score"]) if lm.get("piotroski_f_score") is not None else int(data.get("piotroski_f_score") or 5)
+            ben_live = float(lm["beneish_m_score"]) if lm.get("beneish_m_score") is not None else float(data.get("beneish_m_score") or -2.5)
+            forensic_dict = dict(data.get("forensic") or {})
+            if f_live <= 4 or (not is_bank and (ocf_ty_live < 0 or ben_live > -1.78)):
+                forensic_dict["forensic_score"] = min(float(forensic_dict.get("forensic_score", 70.0) or 70.0), 42.0)
+            data.update({
+                "accounting_regime": lm.get("accounting_regime", data.get("accounting_regime")),
+                "roe_pct": float(lm.get("roe_ttm_pct") or data.get("roe_pct") or 0.0),
+                "ocf_ty": ocf_ty_live,
+                "ocf_ratio": ocf_r_live,
+                "pe": float(lm.get("pe_ttm") if lm.get("pe_ttm") is not None else (data.get("pe") or 0.0)),
+                "pb": float(lm.get("pb_live") if lm.get("pb_live") is not None else (data.get("pb") or 0.0)),
+                "profit_growth_yoy": float(lm.get("profit_growth_yoy") if lm.get("profit_growth_yoy") is not None else (data.get("profit_growth_yoy") or 0.0)),
+                "rev_growth_yoy": float(lm.get("rev_growth_yoy") if lm.get("rev_growth_yoy") is not None else (data.get("rev_growth_yoy") or 0.0)),
+                "piotroski_f_score": f_live,
+                "beneish_m_score": ben_live,
+                "avg_val_1m_ty": float(lm.get("avg_val_1m_ty") or data.get("avg_val_1m_ty") or 0.0),
+                "live_price": float(data.get("live_price") or lm.get("current_price") or 0.0),
+                "forensic": forensic_dict,
+            })
+        data["live_regime_id"] = cur_reg
 
         votes = []
         for lg in legends:
@@ -678,6 +731,8 @@ def distill_world_legends_wisdom(
             else ("ACCUMULATE" if avg_score >= 63.0 and len(supporting) >= 8
                   else ("WATCHLIST" if avg_score >= 54.0 else "CAUTIOUS"))
         )
+        if cur_reg == "BEAR_DOWNTREND" and verdict in ("LEGENDARY_CONSENSUS_BUY", "ACCUMULATE"):
+            verdict = "WATCHLIST_BEAR_REGIME"
 
         ticker_evaluations.append({
             "symbol": sym,
@@ -706,7 +761,9 @@ def distill_world_legends_wisdom(
     school_attribution_matrix = {}
     sr_active = set((self_reflection or {}).get("active_symbols", []))
     base_brier = float((self_reflection or {}).get("system_maturity_iq", {}).get("brier_calibration_score", 0.12) or 0.12)
-    base_hit = float((self_reflection or {}).get("system_maturity_iq", {}).get("win_rate_pct", 78.0) or 78.0)
+    base_hit = min(65.0, float((self_reflection or {}).get("system_maturity_iq", {}).get("win_rate_pct") or emp_wr))
+    if cur_reg == "BEAR_DOWNTREND":
+        base_hit = emp_wr
     for sch in ["VALUE_MOAT", "GROWTH_GARP", "MOMENTUM_VCP_WYCKOFF", "MACRO_CYCLES_REFLEXIVITY", "QUANT_STATISTICAL"]:
         members = [lg["name"] for lg in legends if lg["school"] == sch]
         avg_sch = round(sum(t["school_breakdown"][sch] for t in ticker_evaluations) / max(1, len(ticker_evaluations)), 1)

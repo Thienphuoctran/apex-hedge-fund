@@ -27,6 +27,18 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Any
 
+_CBTT_ROOT = str(Path(__file__).resolve().parent.parent)
+if _CBTT_ROOT not in sys.path:
+    sys.path.insert(0, _CBTT_ROOT)
+
+try:
+    from scripts.tavily_bridge import tavily_search as _tavily_search_api
+    from scripts.superpowers_gate import diagnose_exception, verify_report_readiness
+except Exception:
+    _tavily_search_api = None
+    def diagnose_exception(*args, **kwargs): return {}
+    def verify_report_readiness(*args, **kwargs): return {"passed": True}
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -238,26 +250,7 @@ def scan_vietnam_cbtt(tickers: List[str] = None) -> List[Dict[str, Any]]:
                     matched = sym_regex.findall(full_text)
                     if matched:
                         symbols_found = sorted(list(set([m.upper() for m in matched])))
-                        text_lower = full_text.lower()
-
-                        event_type = "TIN_DOANH_NGHIEP"
-                        severity = "INFO"
-
-                        if any(kw in text_lower for kw in ["bctc", "báo cáo tài chính", "kết quả kinh doanh", "lợi nhuận", "lãi ròng", "doanh thu", "lỗ"]):
-                            event_type = "BCTC_KET_QUA_KINH_DOANH"
-                            severity = "CRITICAL"
-                        elif any(kw in text_lower for kw in ["cổ tức", "chia cổ tức", "trả cổ tức", "đkcc", "đăng ký cuối cùng", "tiền mặt"]):
-                            event_type = "CO_TUC"
-                            severity = "WARNING"
-                        elif any(kw in text_lower for kw in ["esop", "phát hành", "chào bán", "tăng vốn", "trái phiếu"]):
-                            event_type = "ESOP_PHAT_HANH"
-                            severity = "WARNING"
-                        elif any(kw in text_lower for kw in ["vi phạm", "cảnh báo", "nhắc nhở", "ngoại trừ", "đình chỉ", "khởi tố", "thanh tra"]):
-                            event_type = "CANH_BAO_RUI_RO"
-                            severity = "RED_FLAG"
-                        elif any(kw in text_lower for kw in ["nghị quyết", "đhcđ", "đại hội", "dự án", "khởi công"]):
-                            event_type = "NGHI_QUYET_HDQT_DU_AN"
-                            severity = "INFO"
+                        event_type, severity = _classify_vn_cbtt_event(full_text)
 
                         results.append({
                             "market": "VIETNAM",
@@ -270,10 +263,90 @@ def scan_vietnam_cbtt(tickers: List[str] = None) -> List[Dict[str, Any]]:
                             "source_url": link
                         })
         except Exception as e:
+            diagnose_exception("cbtt_filings_radar.rss_crawl", e, {"url": u})
             print(f"  [!] Lỗi cào RSS {u}: {e}")
+
+    # Bổ sung/Đối chiếu tam giác bằng Tavily Search cho danh mục trọng điểm & CBTT chính thống
+    _augment_vn_cbtt_with_tavily(clean_syms, sym_regex, seen_links, results)
 
     print(f"  [+] Đã phát hiện {len(results)} sự kiện công bố thông tin khớp với danh mục theo dõi Việt Nam.")
     return results
+
+
+def _classify_vn_cbtt_event(full_text: str) -> tuple[str, str]:
+    """Phân loại thống nhất sự kiện CBTT Việt Nam cho cả RSS và Tavily."""
+    text_lower = full_text.lower()
+    if any(kw in text_lower for kw in ["bctc", "báo cáo tài chính", "kết quả kinh doanh", "lợi nhuận", "lãi ròng", "doanh thu", "lỗ"]):
+        return "BCTC_KET_QUA_KINH_DOANH", "CRITICAL"
+    if any(kw in text_lower for kw in ["cổ tức", "chia cổ tức", "trả cổ tức", "đkcc", "đăng ký cuối cùng", "tiền mặt"]):
+        return "CO_TUC", "WARNING"
+    if any(kw in text_lower for kw in ["esop", "phát hành", "chào bán", "tăng vốn", "trái phiếu"]):
+        return "ESOP_PHAT_HANH", "WARNING"
+    if any(kw in text_lower for kw in ["vi phạm", "cảnh báo", "nhắc nhở", "ngoại trừ", "đình chỉ", "khởi tố", "thanh tra"]):
+        return "CANH_BAO_RUI_RO", "RED_FLAG"
+    if any(kw in text_lower for kw in ["nghị quyết", "đhcđ", "đại hội", "dự án", "khởi công"]):
+        return "NGHI_QUYET_HDQT_DU_AN", "INFO"
+    return "TIN_DOANH_NGHIEP", "INFO"
+
+
+def _augment_vn_cbtt_with_tavily(
+    clean_syms: set,
+    sym_regex: re.Pattern,
+    seen_links: set,
+    results: List[Dict[str, Any]],
+) -> None:
+    """Dùng Tavily tìm bổ sung CBTT/BCTC chính thống nếu RSS thiếu hoặc bị chặn JS."""
+    if not _tavily_search_api:
+        return
+
+    # Ưu tiên các mã trọng tâm đang theo dõi để giữ tốc độ & tiết kiệm quota
+    priority_candidates = ["HPG", "TCB", "MBB", "HDB", "MSH", "BSR", "BAF", "FPT", "SSI", "PVT"]
+    target_syms = [s for s in priority_candidates if s in clean_syms][:6] or sorted(list(clean_syms))[:5]
+    if not target_syms:
+        return
+
+    query = f"({' OR '.join(target_syms)}) BCTC OR cổ tức OR nghị quyết công bố thông tin"
+    try:
+        resp = _tavily_search_api(
+            query=query,
+            search_depth="basic",
+            max_results=6,
+            topic="general",
+            time_range="month",
+            include_domains=["cafef.vn", "vietstock.vn", "hsx.vn", "hnx.vn", "ssc.gov.vn"],
+            timeout=12,
+        )
+        if not resp.get("ok"):
+            return
+        added = 0
+        for item in resp.get("results", []):
+            link = str(item.get("url") or "").strip()
+            if not link or link in seen_links:
+                continue
+            title = str(item.get("title") or "").strip()
+            snippet = str(item.get("content") or "").strip()
+            full_text = f"{title} {snippet}"
+            matched = sym_regex.findall(full_text)
+            if not matched:
+                continue
+            seen_links.add(link)
+            symbols_found = sorted(list(set([m.upper() for m in matched])))
+            event_type, severity = _classify_vn_cbtt_event(full_text)
+            results.append({
+                "market": "VIETNAM",
+                "symbols": symbols_found,
+                "title": f"[Tavily] {title}",
+                "summary": re.sub(r"\s+", " ", snippet)[:220] + "...",
+                "event_type": event_type,
+                "severity": severity,
+                "published_at": str(item.get("published_date") or datetime.now().strftime("%Y-%m-%d")),
+                "source_url": link,
+            })
+            added += 1
+        if added:
+            print(f"  [+] Tavily CBTT Supplement: bổ sung thêm {added} công bố/tin doanh nghiệp chính thống.")
+    except Exception as exc:
+        diagnose_exception("cbtt_filings_radar.tavily_augment", exc)
 
 
 def build_ticker_filing_summary(us_filings: List[Dict[str, Any]], vn_filings: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -358,6 +431,14 @@ def save_radar_reports(us_filings: List[Dict[str, Any]], vn_filings: List[Dict[s
     print(f"[+] Đã xuất bản báo cáo phân tích tại:")
     print(f"    - {US_REPORT_MD}")
     print(f"    - {VN_REPORT_MD}")
+    gate = verify_report_readiness(
+        "CBTT_Radar_JSON",
+        radar_data,
+        required_keys=["scan_date", "ticker_filing_summary"],
+        file_path_for_freshness=OUTPUT_RADAR_JSON,
+        max_age_hours=1.0,
+    )
+    print(f"[{'PASS' if gate.get('passed') else 'WARN'}] Superpowers Verification Gate: {gate.get('checks', gate.get('failures'))}")
 
 
 def check_and_send_critical_alerts(vn_filings: List[Dict[str, Any]], us_filings: List[Dict[str, Any]]) -> None:

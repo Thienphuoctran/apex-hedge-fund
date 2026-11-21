@@ -316,48 +316,35 @@
     "content": "🚨 [BAN 9 CẢNH BÁO — HDB] Giá 22,300.00 (-1.33%) | Cách Stop 2xATR: +1.08% | SHORT 1 HỢP ĐỒNG VN30F1M"
   },
   {
-    "id": "cbtt_2026-11-16_CRITICAL_PLX_93841",
-    "key": "cbtt_2026-11-16_CRITICAL_PLX_93841",
-    "timestamp": "01:30:33",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — PLX] Petrolimex (PLX) dự báo lãi kỷ lục gần 4.500 tỷ đồng trong năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
+    "id": "dir_2026-11-16_victor_247_19179",
+    "timestamp": "17:03:31",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 8 tín hiệu trọng yếu: HDB (22,300đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+1.08%)) • MSH (34,500đ: ⚠️ CẦU YẾU CẦN CANH (16%)) • TCB (21,300đ: 🟠 ÁP LỰC CUNG (BuyUp 15.9%)) • TCH (13,050đ: 🟠 ÁP LỰC CUNG (BuyUp 29.4%)) • PVT (20,900đ: 🟠 ÁP LỰC CUNG (BuyUp 32.2%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
   },
   {
-    "id": "cbtt_2026-11-16_CRITICAL_KDH_15644",
-    "key": "cbtt_2026-11-16_CRITICAL_KDH_15644",
-    "timestamp": "01:30:33",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — KDH] Doanh thu thuần giảm 83%, Khang Điền (KDH) vẫn được dự báo lãi ròng hơn 1.500 tỷ đồng năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
+    "id": "dir_2026-11-16_regime_defensive",
+    "timestamp": "17:03:31",
+    "sender": "Victor (Ban 9 Live Sentinel) & Minh Quân (Ban 7 VN)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [CẢNH BÁO CHẾ ĐỘ PHÒNG THỦ] 🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT): VN-Index +0.11%, Độ rộng tích cực 32%, Basis -1.25đ. Tầng 1 Phòng thủ (trần giải ngân mới <= 15%): bảo vệ vốn, chỉ rình mã BCTC kim cương tại MA200 nếu đủ cầu. Khóa 100% lệnh mua mới (Hạn mức 0%), bảo vệ két tiền mặt 14,510,422 đ (71.9% NAV)!"
   },
   {
-    "id": "cbtt_2026-11-16_CRITICAL_GMD_21405",
-    "key": "cbtt_2026-11-16_CRITICAL_GMD_21405",
-    "timestamp": "01:30:33",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — GMD] Lộ diện “con gà đẻ trứng vàng” của Gemadept (GMD), đóng góp gần 40% lợi nhuận trước thuế (BCTC_KET_QUA_KINH_DOANH)"
+    "id": "dir_2026-11-16_victor_247_51909",
+    "timestamp": "17:04:14",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 8 tín hiệu trọng yếu: HDB (22,300đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+1.08%)) • MSH (34,500đ: ⚠️ CẦU YẾU CẦN CANH (16%)) • TCB (21,300đ: 🟠 ÁP LỰC CUNG (BuyUp 15.9%)) • TCH (13,050đ: 🟠 ÁP LỰC CUNG (BuyUp 29.4%)) • PVT (20,900đ: 🟠 ÁP LỰC CUNG (BuyUp 32.2%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
   },
   {
-    "id": "cbtt_2026-11-16_CRITICAL_PHR_57581",
-    "key": "cbtt_2026-11-16_CRITICAL_PHR_57581",
-    "timestamp": "01:30:33",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — PHR] Cao su Phước Hòa (PHR) báo lãi tăng 64%, lợi nhuận từ hoạt động cốt lõi bất ngờ “lao dốc” 96% (BCTC_KET_QUA_KINH_DOANH)"
-  },
-  {
-    "id": "cbtt_2026-11-16_CRITICAL_HCM_28109",
-    "key": "cbtt_2026-11-16_CRITICAL_HCM_28109",
-    "timestamp": "01:30:33",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — HCM] Tập đoàn Trung Quốc đổ tiền xây nhà máy công nghệ cao 10.000 m² tại TP.HCM: Công ty con ở Việt Nam lãi gấp 1,6 lần cả tập đoàn mẹ (BCTC_KET_QUA_KINH_DOANH)"
+    "id": "dir_2026-11-16_victor_247_75184",
+    "timestamp": "17:04:14",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 8 tín hiệu trọng yếu: HDB (22,300đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+1.08%)) • MSH (34,500đ: ⚠️ CẦU YẾU CẦN CANH (16%)) • TCB (21,300đ: 🟠 ÁP LỰC CUNG (BuyUp 15.9%)) • TCH (13,050đ: 🟠 ÁP LỰC CUNG (BuyUp 29.4%)) • PVT (20,900đ: 🟠 ÁP LỰC CUNG (BuyUp 32.2%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
   }
 ]

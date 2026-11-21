@@ -58,8 +58,15 @@ def main():
     print("=" * 80)
 
     if not args.cio_only:
-        # Bước 0: Quét Radar Công Bố Thông Tin BCTC & SEC EDGAR
-        run_cmd([sys.executable, str(SCRIPTS_DIR / "cbtt_filings_radar.py")], "Bước 0: Quét Radar Công Bố Thông Tin BCTC & SEC EDGAR Toàn Cầu & VN")
+        # Bước 0A: Cào BCTC Thật Q3/2026 (Vietcap IQ + VPS 2Y OHLCV + SEC EDGAR XBRL)
+        if not args.fast:
+            run_cmd([sys.executable, str(SCRIPTS_DIR / "apex_real_bctc_crawler.py"), "--with-us"], "Bước 0A: Làm Mới Kho BCTC Thật Q3/2026 & Giá EOD VPS + SEC EDGAR")
+
+        # Bước 0B: Cào Báo Chí, Vietcap AI News, CafeF CBTT, Cổng IR & Tavily Live Hàng Ngày
+        run_cmd([sys.executable, str(SCRIPTS_DIR / "apex_daily_internet_intel_crawler.py")], "Bước 0B: Cào Tình Báo Internet, Tin Doanh Nghiệp & IR Hàng Ngày (5 Lớp)")
+
+        # Bước 0C: Quét Radar Công Bố Thông Tin BCTC & SEC EDGAR
+        run_cmd([sys.executable, str(SCRIPTS_DIR / "cbtt_filings_radar.py")], "Bước 0C: Quét Radar Công Bố Thông Tin BCTC & SEC EDGAR Toàn Cầu & VN")
 
         # Bước 1: Chạy Hệ Thống Toàn Cầu (US Market)
         global_args = ["--fast"] if args.fast else []
@@ -97,6 +104,9 @@ def main():
 
     # Bước 8: Đồng Bộ Toàn Bộ Báo Cáo Vào SQLite Lakehouse Vault V5.0 (Chống Lệch Dữ Liệu Web Portal)
     run_cmd([sys.executable, str(SCRIPTS_DIR / "migrate_markdown_to_sqlite.py")], "Đồng Bộ Toàn Bộ Báo Cáo Mới Vào SQLite Lakehouse Vault V5.0")
+
+    # Bước 9: Đồng Bộ 2 Chiều Antigravity <-> Palmer (Live SSOT & Tình Báo Mới Nhất)
+    run_cmd([sys.executable, str(SCRIPTS_DIR / "palmer_antigravity_sync_bridge.py"), "--sync-current"], "Bước 9: Đồng Bộ Trạng Thái & Tình Báo Mới Nhất Sang Palmer")
 
     elapsed = time.time() - start_time
     print("\n" + "=" * 80)

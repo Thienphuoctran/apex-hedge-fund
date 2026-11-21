@@ -1,9 +1,9 @@
 # 🎖️ BIÊN BẢN GIAO BAN SOI GƯƠNG TỰ PHÊ BÌNH 8H30 SÁNG — NGÀY 2026-11-16
-*Thời gian họp*: `2026-11-16 09:26:14`  
+*Thời gian họp*: `2026-11-16 17:03:53`  
 *Chủ trì phiên họp*: **James — Master CIO (Ban 8)** & **Palmer (Quản Trị Hệ Thống)**  
 *Chuyên viên tuyên thệ*: **Minh Quân (Ban 7 VN)** & **Alex (Ban 7 Global)**  
 *Hội đồng thẩm định & tự học*: **Ban 5 (Performance & Adaptive Learning)**, **Hiền (Ban 10 — BCTC)** & **Victor (Ban 9 — Sentinel)**  
-*Phục vụ trực tiếp*: **Chủ tịch Trần Quốc Thiên Phước** *(TCBS: `105C307855` - NAV: `18,256,471 ₫`)*  
+*Phục vụ trực tiếp*: **Chủ tịch Trần Quốc Thiên Phước** *(TCBS: `105C307855` - NAV: `20,190,422 ₫`)*  
 
 ---
 ## I. TUYÊN THỆ TỰ KIỂM ĐIỂM & RÚT KINH NGHIỆM TỪ PHIÊN TRƯỚC (CLOSED-LOOP FEEDBACK)
@@ -31,14 +31,14 @@ Hệ thống phần mềm đã kích hoạt cơ chế tự động từ chối l
 
 ---
 ## III. RÀ SOÁT DANH MỤC THỰC TẾ TRƯỚC GIỜ MỞ CỬA (TCBS `105C307855`)
-- **Tổng NAV thực tế**: **`18,256,471 ₫`**
-- **Lợi nhuận tạm tính**: **`+83,300 ₫ (+1.47%)`**
-- **Tiền mặt dự phòng (Dry Powder)**: **`12,516,471 ₫`**
+- **Tổng NAV thực tế**: **`20,190,422 ₫`**
+- **Lợi nhuận tạm tính**: **`+23,300 ₫ (+0.41%)`**
+- **Tiền mặt dự phòng (Dry Powder)**: **`14,510,422 ₫`**
 
 | Mã Cổ Phiếu | Khối Lượng | Giá Vốn | Thị Giá Hiện Tại | Ngưỡng Cắt Lỗ Stop 2xATR | Mục Tiêu Chốt Lời TP1 | Kế Hoạch Tác Chiến Hôm Nay |
 | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`HDB`** | 100 CP | 22,057 ₫ | 22,600 ₫ | **22,060 ₫** | **24,200 ₫** | Bảo toàn 100% tiền mặt 20,167,119 ₫, canh Khung Giờ Vàng 14h00-14h25 giải ngân Vòng 2 |
-| **`MSH`** | 100 CP | 34,510 ₫ | 34,800 ₫ | **33,090 ₫** | **39,500 ₫** | Bảo toàn 100% tiền mặt 20,167,119 ₫, canh Khung Giờ Vàng 14h00-14h25 giải ngân Vòng 2 |
+| **`HDB`** | 100 CP | 22,057 ₫ | 22,300 ₫ | **22,060 ₫** | **24,200 ₫** | Bảo toàn 100% tiền mặt 20,167,119 ₫, canh Khung Giờ Vàng 14h00-14h25 giải ngân Vòng 2 |
+| **`MSH`** | 100 CP | 34,510 ₫ | 34,500 ₫ | **33,090 ₫** | **39,500 ₫** | Bảo toàn 100% tiền mặt 20,167,119 ₫, canh Khung Giờ Vàng 14h00-14h25 giải ngân Vòng 2 |
 
 ---
 ## IV. PHÊ DUYỆT CUỐI CÙNG TỪ TỔNG TƯ LỆNH MASTER CIO JAMES

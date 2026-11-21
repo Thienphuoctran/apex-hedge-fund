@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-16 09:36:45",
-  "target_url": "https://apex-hedge-fund.onrender.com",
+  "timestamp": "2026-11-16 17:03:39",
+  "target_url": "http://127.0.0.1:18999",
   "officers": [
     "Master CIO James (Ban 8)",
     "Tổng Kiểm Sát Viên Trọng (Ban 12)"
@@ -17,13 +17,13 @@
       "module": "SSOT_Integrity",
       "check": "Số dư tiền mặt SSOT hợp lệ (>= 0)",
       "status": "PASSED",
-      "details": "Cash: 12,516,471 đ"
+      "details": "Cash: 14,510,422 đ"
     },
     {
       "module": "SSOT_Integrity",
       "check": "Cân bằng kế toán NAV = Cash + MarketVal",
       "status": "PASSED",
-      "details": "NAV: 18,151,471 đ (diff 0.00)"
+      "details": "NAV: 20,145,422 đ (diff 0.00)"
     },
     {
       "module": "SSOT_Integrity",
@@ -35,7 +35,7 @@
       "module": "Living_Brain",
       "check": "Snapshot Brain khớp SSOT & Watchlist động",
       "status": "PASSED",
-      "details": "Brain Cash: 12,516,471 đ | Stocks: 12 | Regime: SIDEWAY_CHOPPY"
+      "details": "Brain Cash: 14,510,422 đ | Stocks: 12 | Regime: DEFENSIVE_SELLOFF"
     },
     {
       "module": "Living_Brain",
@@ -47,25 +47,25 @@
       "module": "Live_Endpoint",
       "check": "GET /api/health khớp SSOT Cash",
       "status": "PASSED",
-      "details": "Status: ok, Health Cash: 12,516,471 vs SSOT 12,516,471"
+      "details": "Status: ok, Health Cash: 14,510,422 vs SSOT 14,510,422"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room khớp SSOT & không mock index",
       "status": "PASSED",
-      "details": "WR Cash: 12,516,471 | VN-Index: 1746.41 | Picks: 12"
+      "details": "WR Cash: 14,510,422 | VN-Index: 1736.89 | Picks: 12"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/tactical_war_room/stream (SSE)",
       "status": "PASSED",
-      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 172818"
+      "details": "Content-Type: text/event-stream; charset=utf-8, Bytes: 162171"
     },
     {
       "module": "Live_Endpoint",
       "check": "GET /api/reports",
       "status": "PASSED",
-      "details": "Tổng số báo cáo: 384"
+      "details": "Tổng số báo cáo: 408"
     },
     {
       "module": "Live_Endpoint",
@@ -77,7 +77,7 @@
       "module": "Live_Endpoint",
       "check": "POST /api/command (/solenh)",
       "status": "PASSED",
-      "details": "Response length: 809"
+      "details": "Response length: 805"
     },
     {
       "module": "Live_Endpoint",
@@ -111,7 +111,7 @@
     },
     {
       "module": "Python_Code_Integrity",
-      "check": "Biên dịch sạch 135 scripts trong scripts/",
+      "check": "Biên dịch sạch 136 scripts trong scripts/",
       "status": "PASSED",
       "details": "Lỗi: 0"
     },
@@ -179,7 +179,7 @@
       "module": "Phase3_DeepBrain",
       "check": "Deep Financial Brain (DuPont, 3-Model Valuation, EV%/Half-Kelly)",
       "status": "PASSED",
-      "details": "Analyzed: 71 | NVDA ROE: 117.21% | HDB Fair: 39938.0"
+      "details": "Analyzed: 71 | NVDA ROE: 117.21% | HDB Fair: 39408.0"
     },
     {
       "module": "Phase3_EvolutionLegends",
@@ -221,7 +221,7 @@
       "module": "Phase5_EnterpriseRosterAndPackets",
       "check": "14 Thực Thể Độc Lập, Quorum 14/14, Data Packets & Niêm Phong SHA-256",
       "status": "PASSED",
-      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: d8388ebd95e8..."
+      "details": "Roster: 14 | Quorum: 14/14 | Packets: 14 | Audit: 10/10 | Seal: 0932ba4fbd7f..."
     },
     {
       "module": "Phase5_AdversarialDebateAndVeto",
@@ -233,7 +233,7 @@
       "module": "Phase5_ConstitutionalOmbudsmanAndZeroStaleSSOT",
       "check": "Kiểm Toán Viên Trọng & 0% Chuỗi Cứng Lỗi Thời SSOT (Directive + Summit)",
       "status": "PASSED",
-      "details": "Live NAV/Cash (18,151,471/12,516,471) synced; 0 stale strings in /tcbs & Summit state"
+      "details": "Live NAV/Cash (20,145,422/14,510,422) synced; 0 stale strings in /tcbs & Summit state"
     },
     {
       "module": "Phase5_LiveEnterpriseEndpoints",
@@ -245,13 +245,13 @@
       "module": "Phase5_CloudDB_V7_EnterpriseSync",
       "check": "Cloud DB V7 Enterprise Sessions Sync, SQLite Vault & Supabase RLS Migration",
       "status": "PASSED",
-      "details": "LocalSaved=True | VaultRows=19 | MigrationRLS=True | CloudSynced=False"
+      "details": "LocalSaved=True | VaultRows=20 | MigrationRLS=True | CloudSynced=False"
     },
     {
       "module": "Phase6_ZeroStaleHardcodedWebStrings",
       "check": "Zero stale hardcoded dates, prices, or old cash numbers in Portal HTML",
       "status": "PASSED",
-      "details": "HTML Bytes: 919164 | StaleFound: []"
+      "details": "HTML Bytes: 963808 | StaleFound: []"
     },
     {
       "module": "Phase6_VictorDeepSurveillanceAndAlphaWatchlist",
@@ -263,7 +263,7 @@
       "module": "Phase6_LiveExecutionMasterPlan",
       "check": "Dynamic Market-Adaptive Live Execution Master Plan & 3 Contingency Scenarios",
       "status": "PASSED",
-      "details": "PlanID: WAR-PLAN-20261116-0936 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
+      "details": "PlanID: WAR-PLAN-20261116-1703 | HoldActions: 2 | Orders: 4 | Scenarios: 3"
     },
     {
       "module": "Phase6_DepartmentWorkstationAndReportAuthenticity",
@@ -286,20 +286,20 @@
     {
       "module": "Phase7_SummitFull14DepartmentAttendanceAndDebate",
       "check": "Điểm danh 14/14 Phòng Ban có mặt 100% & Tranh biện đa chiều toàn vũ trụ (>= 35 lượt)",
-      "status": "PASSED",
-      "details": "PresentBans: 14/14 | TotalTurns: 48 | ActiveDeptVoices: 43 | ExpandedUniverse: True"
+      "status": "FAILED",
+      "details": "PresentBans: 14/14 | TotalTurns: 33 | ActiveDeptVoices: 32 | ExpandedUniverse: False"
     },
     {
       "module": "Phase7_SummitNextWeek0045ScheduleAndResolution",
       "check": "Lịch họp 00h45 (12h45 sáng, 30p) Chiến lược Thị trường Tuần Sau & Nghị quyết Markdown thật",
-      "status": "PASSED",
-      "details": "Start: 2026-11-16T00:45:00+07:00 | Dur: 30m | ResolutionOnDisk: True (08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Nghi_Quyet_Thuong_Dinh_Chien_Luoc_Tuan_Moi.md)"
+      "status": "FAILED",
+      "details": "Start: 2026-11-16T16:15:00+07:00 | Dur: 30m | ResolutionOnDisk: True (08_Master_Investment_CIO/council_resolutions/2026-11-16_1615_Nghi_Quyet_Thuong_Dinh_KPI_Loi_Nhuan.md)"
     },
     {
       "module": "Phase7_SummitCharterAndJamesSummaryAgilePlan",
       "check": "Hiến Chương 5 Điều & Báo Cáo Tổng Kết James (Kế hoạch Tuần tham khảo, thực thi cơ động theo ngày)",
       "status": "PASSED",
-      "details": "CharterRules: 5 | CharterMD: True | JamesMD: True (08_Master_Investment_CIO/council_resolutions/2026-11-16_0045_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_Tuan_Co_Dong.md) | Watchlist: 6"
+      "details": "CharterRules: 5 | CharterMD: True | JamesMD: True (08_Master_Investment_CIO/council_resolutions/2026-11-16_1615_Bao_Cao_Tong_Ket_James_Va_Ke_Hoach_KPI_2_Thang.md) | Watchlist: 6"
     },
     {
       "module": "Phase7_SummitScheduleAPIAndDynamicResolution",
@@ -311,7 +311,7 @@
       "module": "Phase7_SummitArchiveVaultAnd2HourCleanupRule",
       "check": "Kho Lưu Trữ Summit Archive Vault (/api/summit/archive) & Khóa Dọn Phòng 2H + Phê Duyệt (409 Lock)",
       "status": "PASSED",
-      "details": "ArchivedSessions: 2 | Has2345: True | HistReadOK: True | Rule5Lock409: True"
+      "details": "ArchivedSessions: 3 | Has2345: True | HistReadOK: True | Rule5Lock409: True"
     },
     {
       "module": "Phase7_SummitLiveInteractiveDirective",
@@ -329,7 +329,7 @@
       "module": "Phase8_PreSessionDemoTacticalPlan",
       "check": "Kế hoạch tác chiến Demo trước phiên cơ động 5 khung giờ & 3 kịch bản ứng biến",
       "status": "PASSED",
-      "details": "PlanID=OFFICIAL-INTRADAY-20261116 | Demo=False | Slots=6 | Modes=3 | Acc=105C307855"
+      "details": "PlanID=DEMO-PRE-SESSION-20261116 | Demo=True | Slots=6 | Modes=3 | Acc=105C307855"
     },
     {
       "module": "Phase8_DiskReportsAndWarRoomPortalUI",
@@ -357,7 +357,18 @@
     }
   ],
   "total_checks": 58,
-  "passed_checks": 58,
+  "passed_checks": 56,
   "warnings": [],
-  "errors": []
+  "errors": [
+    {
+      "module": "Phase7_SummitFull14DepartmentAttendanceAndDebate",
+      "check": "Điểm danh 14/14 Phòng Ban có mặt 100% & Tranh biện đa chiều toàn vũ trụ (>= 35 lượt)",
+      "details": "PresentBans: 14/14 | TotalTurns: 33 | ActiveDeptVoices: 32 | ExpandedUniverse: False"
+    },
+    {
+      "module": "Phase7_SummitNextWeek0045ScheduleAndResolution",
+      "check": "Lịch họp 00h45 (12h45 sáng, 30p) Chiến lược Thị trường Tuần Sau & Nghị quyết Markdown thật",
+      "details": "Start: 2026-11-16T16:15:00+07:00 | Dur: 30m | ResolutionOnDisk: True (08_Master_Investment_CIO/council_resolutions/2026-11-16_1615_Nghi_Quyet_Thuong_Dinh_KPI_Loi_Nhuan.md)"
+    }
+  ]
 }

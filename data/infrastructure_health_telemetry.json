@@ -1,8 +1,8 @@
 {
-  "audit_timestamp": "2026-11-18 23:00:05",
-  "audit_duration_seconds": 0.2,
-  "overall_infrastructure_health_score": 80,
-  "health_verdict": "CẦN LƯU Ý",
+  "audit_timestamp": "2026-11-21 17:24:14",
+  "audit_duration_seconds": 1.42,
+  "overall_infrastructure_health_score": 65,
+  "health_verdict": "BÁO ĐỘNG",
   "appointed_officers": {
     "sentinel_lead": "Ban 12 Trọng (Tổng Kiểm Sát Thể Chế & Liêm Chính)",
     "systems_architect": "Palmer (Cố Vấn Điều Hành Tối Cao & Trưởng Phòng Tổng Hệ Thống)",
@@ -10,20 +10,26 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 458,
-    "total_markdown_documents": 699,
+    "operational_institutional_reports": 515,
+    "total_markdown_documents": 762,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (458 báo cáo thể chế / 699 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (515 báo cáo thể chế / 762 tệp MD hiện có)."
   },
   "check_2_directory_density": {
-    "total_directories_scanned": 96,
+    "total_directories_scanned": 101,
     "dense_directories_flagged": [
       {
-        "directory": "09_Realtime_Portfolio_Sentinel/incident_logs",
-        "file_count": 102,
+        "directory": "data\\real_ohlcv_cache",
+        "file_count": 146,
+        "threshold": 100,
+        "recommendation": "Cần phân mảnh thư mục con theo Năm/Tháng (YYYY/MM) khi vượt 100 tệp."
+      },
+      {
+        "directory": "08_Master_Investment_CIO",
+        "file_count": 101,
         "threshold": 100,
         "recommendation": "Cần phân mảnh thư mục con theo Năm/Tháng (YYYY/MM) khi vượt 100 tệp."
       }
@@ -32,45 +38,131 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1131,
-    "total_project_size_mb": 30.98,
-    "data_directory_size_mb": 4.11,
+    "total_active_files": 1620,
+    "total_project_size_mb": 82.1,
+    "data_directory_size_mb": 52.95,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "3.1%",
+    "github_quota_used_pct": "8.21%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 45.38,
-    "uncommitted_files_count": 16,
+    "git_directory_size_mb": 40.89,
+    "uncommitted_files_count": 310,
     "active_branch": "main",
     "status": "HEALTHY"
   },
   "check_5_log_files_and_rotation": {
-    "total_log_files_found": 0,
-    "log_files_details": [],
+    "total_log_files_found": 9,
+    "log_files_details": [
+      {
+        "path": "data\\apex_cloud_supervisor.log",
+        "size_mb": 0.08
+      },
+      {
+        "path": "data\\apex_cron_daemon.log",
+        "size_mb": 0.08
+      },
+      {
+        "path": "data\\telegram_copilot_daemon.log",
+        "size_mb": 1.14
+      },
+      {
+        "path": "data\\logs\\cron_daemon.log",
+        "size_mb": 0.1
+      },
+      {
+        "path": "data\\logs\\inspector_trong.log",
+        "size_mb": 0.05
+      },
+      {
+        "path": "data\\logs\\live_intraday_brain.log",
+        "size_mb": 0.0
+      },
+      {
+        "path": "data\\logs\\sentinel_monitor.log",
+        "size_mb": 0.13
+      },
+      {
+        "path": "data\\logs\\telegram_copilot.log",
+        "size_mb": 0.4
+      },
+      {
+        "path": "data\\logs\\verify_gate_server.log",
+        "size_mb": 0.0
+      }
+    ],
     "rotation_threshold_mb": 5.0,
     "files_needing_rotation": [],
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 3.78,
-    "ssot_load_latency_ms": 0.21,
+    "json_directory_scan_latency_ms": 195.07,
+    "ssot_load_latency_ms": 0.64,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
   "check_7_ssot_and_capital_cohesion": {
     "account_id": "105C307855",
-    "cash_balance_vnd": 13594522.0,
-    "total_nav_vnd": 20229522.0,
-    "total_market_val_vnd": 6635000.0,
-    "cash_pct": 67.2,
-    "active_positions_count": 2,
-    "active_positions_tickers": [
-      "BAF",
-      "MSH"
-    ],
+    "cash_balance_vnd": 20051117.0,
+    "total_nav_vnd": 20051117.0,
+    "total_market_val_vnd": 0.0,
+    "cash_pct": 100.0,
+    "active_positions_count": 0,
+    "active_positions_tickers": [],
     "ssot_is_intact": true,
     "status": "SSOT_COHESION_VERIFIED"
+  },
+  "check_8_semantic_and_superpowers_gate": {
+    "semantic_consistency": {
+      "audited_reports": 21,
+      "clean_reports": 19,
+      "violation_reports": 2,
+      "violations_details": [
+        {
+          "file": "VN_Market/07_Daily_Specialist/2026-11-21_Demo_PreSession_Tactical_Plan.md",
+          "status": "VIOLATION",
+          "issues": [
+            "Xuất hiện mã cấm ngoài danh mục Vòng 2 (MBB) trong kế hoạch tác chiến/săn mồi"
+          ]
+        },
+        {
+          "file": "VN_Market/07_Daily_Specialist/2026-11-21_Official_Adaptive_Tactical_Plan.md",
+          "status": "VIOLATION",
+          "issues": [
+            "Xuất hiện mã cấm ngoài danh mục Vòng 2 (MBB) trong kế hoạch tác chiến/săn mồi"
+          ]
+        }
+      ],
+      "semantic_audit_passed": false,
+      "status": "SEMANTIC_CONFLICT_DETECTED"
+    },
+    "superpowers_247_gate": {
+      "tavily_api_ready": true,
+      "ssot_gate": {
+        "source": "SSOT_Portfolio",
+        "passed": true,
+        "checks": [
+          "SSOT_Portfolio: có dữ liệu",
+          "SSOT_Portfolio: đủ trường bắt buộc",
+          "SSOT_Portfolio: độ tươi đạt chuẩn (0.1h)"
+        ],
+        "failures": [],
+        "verified_at": "2026-11-21 17:24:15"
+      },
+      "cbtt_gate": {
+        "source": "CBTT_Radar",
+        "passed": true,
+        "checks": [
+          "CBTT_Radar: có dữ liệu",
+          "CBTT_Radar: đủ trường bắt buộc",
+          "CBTT_Radar: độ tươi đạt chuẩn (57.9h)"
+        ],
+        "failures": [],
+        "verified_at": "2026-11-21 17:24:15"
+      },
+      "diagnostics_logged_events": 0,
+      "overall_ok": true
+    }
   }
 }

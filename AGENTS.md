@@ -428,3 +428,22 @@ Mọi hành vi, quyết định phân tích, dự báo, giải ngân và báo c�
 4. ⛔ **CẤM** báo cáo lý thuyết khống, cấm che giấu lỗ, cấm thuật ngữ hoa mỹ tô hồng (Điều 7).
 5. ⛔ **CẤM** tự ý thao tác tài chính vượt ngoài quyền hạn Read-Only Air-Gap (Điều 8).
 
+---
+
+# TÍCH HỢP CÔNG CỤ TAVILY & QUY TRÌNH SUPERPOWERS CHO 12 PHÒNG BAN APEX
+
+*(Cập nhật 2026-11-21 theo chỉ thị của Chủ tịch Phước Trần — giữ nguyên 100% mã nguồn Python, database và 10 Điều Luật Thể Chế ở trên)*
+
+1. **Bộ công cụ tìm kiếm & thẩm định thực tế `Tavily` (`tavily_tavily` MCP + Skills)**:
+   - **Ban 10 (`hien` — IR & BCTC Scout)**: Dùng `tavily_map`, `tavily_search` (`include_domains`: `hsx.vn`, `hnx.vn`, `ssc.gov.vn`, `vietstock.vn`, `cafef.vn`, cổng IR doanh nghiệp) và `tavily_extract` để săn link gốc BCTC, Báo cáo Thường niên, Nghị quyết ĐHĐCĐ và CBTT chính thống (Zero Fabrication).
+   - **Ban 1 (Vĩ mô VN & Global)**: Dùng `tavily_search` (`topic="news"`, `time_range="day"`/`"week"`) + `tavily_research` để cập nhật tức thời OMO/SBV, tỷ giá USD/VND, Fed Watch, DXY, VIX, dòng vốn ETF và giá hàng hóa.
+   - **Ban 2 (BCTC & Định giá DN)**: Dùng `tavily_extract` (`extract_depth="advanced"`) + `tavily_research` + `tavily-entity` để đối chiếu tam giác giải trình lợi nhuận, tiến độ dự án thực địa và cảnh báo Red Flags ngoài BCTC.
+   - **Ban 3, Ban 4, Ban 6, Ban 7 (`Minh Quân`, `Alex`), Ban 8 (`James`) & Ban 11 (`Khánh`)**: Dùng `tavily_search` xác minh catalyst/tin đồn trước giờ giao dịch (chống FOMO phiên sáng), thu thập case study thị trường và dữ liệu truyền thông.
+   - **Bảo mật bắt buộc**: Chỉ gửi truy vấn thông tin thị trường/doanh nghiệp công khai lên Tavily; tuyệt đối **cấm** đưa số tài khoản `105C307855`, số dư, OTP hoặc bí mật nội bộ vào từ khóa tìm kiếm.
+
+2. **Bộ quy trình kỷ luật kỹ thuật `Superpowers`**:
+   - **Mọi nâng cấp tính năng/chiến lược mới (James, Minh Quân, Alex, Ban 3-4)**: Kích hoạt `brainstorming` → `writing-plans` → `executing-plans` (lập phương án rõ ràng, làm chắc từng bước).
+   - **Họp đa phòng ban / Phân tích song song**: Áp dụng `dispatching-parallel-agents` để Ban 1, Ban 2, Ban 3, Ban 4 phản biện độc lập trước khi hợp nhất.
+   - **Ban 5 (Hồi tố) & Ban 12 (`Trọng` — Kiểm sát viên)**: Khi kiểm tra lỗi script, sai lệch số liệu hay nghiệm thu hệ thống cuối ngày, bắt buộc dùng `systematic-debugging` (truy gốc nguyên nhân, cấm đoán mò), `requesting-code-review` và `verification-before-completion` (chạy kiểm tra thực tế có log chứng minh 0 lỗi mới được báo đạt chuẩn).
+   - **Tham chiếu ma trận đầy đủ**: Xem `c:\Users\phuoc\Downloads\antigravity\Trợ lí cá nhân\playbooks\tavily_superpowers_department_ops.md`.
+

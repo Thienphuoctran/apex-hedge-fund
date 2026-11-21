@@ -40,5 +40,29 @@
     "event_type": "IDS_INTEGRITY_SCAN",
     "severity": "INFO",
     "details": "Quét IDS hoàn tất: Status=SECURE_GREEN, SHA256=ba9092c512a2, Cash=20,167,119 VND"
+  },
+  {
+    "timestamp": "2026-11-19 08:02:17",
+    "event_type": "IDS_INTEGRITY_SCAN",
+    "severity": "INFO",
+    "details": "Quét IDS hoàn tất: Status=SECURE_GREEN, SHA256=5a8146c8b6fc, Cash=13,594,522 VND"
+  },
+  {
+    "timestamp": "2026-11-19 09:16:12",
+    "event_type": "IDS_INTEGRITY_SCAN",
+    "severity": "INFO",
+    "details": "Quét IDS hoàn tất: Status=SECURE_GREEN, SHA256=5a8146c8b6fc, Cash=13,594,522 VND"
+  },
+  {
+    "timestamp": "2026-11-19 09:41:16",
+    "event_type": "IDS_INTEGRITY_SCAN",
+    "severity": "INFO",
+    "details": "Quét IDS hoàn tất: Status=SECURE_GREEN, SHA256=5a8146c8b6fc, Cash=13,594,522 VND"
+  },
+  {
+    "timestamp": "2026-11-19 09:46:23",
+    "event_type": "IDS_INTEGRITY_SCAN",
+    "severity": "INFO",
+    "details": "Quét IDS hoàn tất: Status=SECURE_GREEN, SHA256=5a8146c8b6fc, Cash=13,594,522 VND"
   }
 ]

@@ -1315,5 +1315,12 @@
       "BAF"
     ],
     "chairman_action_required": "Kính trình Chủ tịch bám sát Kế hoạch Tuần Sau (23-27/11) chuẩn công suất Tuần Đầu."
+  },
+  "archived_meta": {
+    "archived_at": "2026-11-21T16:05:16.714515+07:00",
+    "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
+    "archived_by": "Palmer & Ban 11 Archive",
+    "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261119-0430.json",
+    "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261119-0430_Bien_Ban_Luu_Tru.md"
   }
 }

@@ -88,13 +88,16 @@ def derive_wyckoff_and_vsa(price, day_chg, ma20, ma50, ma200, rsi14, atr14, vol_
         vsa_signal = "NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)"
         vsa_code = "NEUTRAL_TEST"
 
-    # 3. Ước lượng Tỷ lệ Mua Chủ Động (Active Buy Up %)
-    base_buy_up = 52.0 + (day_chg * 4.2) + ((rsi14 - 50.0) * 0.35)
-    if vsa_code in ("POCKET_PIVOT", "SOS_ABSORPTION"):
-        base_buy_up += 6.5
-    elif vsa_code == "NO_SUPPLY":
-        base_buy_up += 4.0
-    active_buy_pct = round(min(max(base_buy_up, 28.0), 82.0), 1)
+    # 3. Chaikin Money Flow (CMF20) Proxy cho Tỷ lệ Mua Chủ Động từ OHLCV thực tế
+    try:
+        h20 = hist.tail(20)
+        hl_span = (h20["High"] - h20["Low"]).replace(0.0, float("nan"))
+        clv = (((h20["Close"] - h20["Low"]) - (h20["High"] - h20["Close"])) / hl_span).fillna(0.0)
+        vol_sum = float(h20["Volume"].sum())
+        cmf20 = float((clv * h20["Volume"]).sum() / vol_sum) if vol_sum > 0 else 0.0
+        active_buy_pct = round(min(max(50.0 + cmf20 * 50.0, 15.0), 85.0), 1)
+    except Exception:
+        active_buy_pct = 50.0
 
     # 4. Chandelier Trailing Stop (High 22d proxy - 2.5x ATR14)
     high_proxy = max(price, ma20 * 1.015)
@@ -252,8 +255,33 @@ def fetch_single_ticker(ticker_info):
 
     print(f"Fetching {code} ({symbol}) [{exchange}]...")
     try:
+        import pandas as pd
+        from pathlib import Path
+        root_dir = str(Path(__file__).resolve().parent.parent.parent)
+        if root_dir not in sys.path:
+            sys.path.insert(0, root_dir)
+
+        hist = None
+        ohlcv_source = "VPS_HIST_LIVE"
+        try:
+            from scripts.apex_real_bctc_crawler import fetch_vps_ohlcv_single
+            vps_sym = "VNINDEX" if code.upper() in ("VNINDEX", "^VNINDEX") else code.upper()
+            _, bars, src_flag = fetch_vps_ohlcv_single(vps_sym, days_back=420, ttl_hours=4.0)
+            if bars and len(bars) >= 30:
+                df_bars = pd.DataFrame(bars)
+                df_bars["Date"] = pd.to_datetime(df_bars["date"])
+                df_bars = df_bars.set_index("Date")[["open", "high", "low", "close", "volume"]].rename(
+                    columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"}
+                )
+                hist = df_bars.tail(260)
+                ohlcv_source = f"VPS_{src_flag}"
+        except Exception:
+            hist = None
+
         t = yf.Ticker(symbol)
-        hist = t.history(period="1y")
+        if hist is None or len(hist) < 30:
+            hist = t.history(period="1y")
+            ohlcv_source = "YFINANCE_FALLBACK"
 
         info = {}
         try:
@@ -262,6 +290,9 @@ def fetch_single_ticker(ticker_info):
             pass
 
         tech = calculate_technical_indicators(hist)
+        tech["active_buy_source"] = "CMF20_OHLCV_PROXY"
+        tech["ohlcv_source"] = ohlcv_source
+        tech["fetch_ok"] = bool(hist is not None and len(hist) > 0 and float(tech.get("price", 0) or 0) > 0)
 
         def to_ty_vnd(val):
             if isinstance(val, (int, float)) and not math.isnan(val) and val != 0:
@@ -335,7 +366,9 @@ def fetch_single_ticker(ticker_info):
             "beta": 1.0,
             "yf_fundamentals": {},
             "technical": {
-                "price": 20000.0,
+                "price": 0.0,
+                "fetch_ok": False,
+                "error": str(e),
                 "day_change_pct": 0.0,
                 "ma20": 20000.0,
                 "ma50": 20000.0,
@@ -384,11 +417,44 @@ def fetch_macro_indicators():
         except Exception:
             pass
 
-    macro_data["SBV_Refinancing_Rate"] = {"value": 4.5, "unit": "%", "status": "Hỗ trợ thanh khoản"}
-    macro_data["SBV_Discount_Rate"] = {"value": 3.0, "unit": "%", "status": "Ổn định"}
-    macro_data["USD_VND_Exchange_Rate"] = {"value": 25420, "unit": "VND", "trend": "Đi ngang quanh đỉnh biên độ"}
-    macro_data["Credit_Growth_YTD"] = {"value": 9.2, "unit": "%", "target": "15.0%"}
-    macro_data["Public_Investment_Disbursed_Pct"] = {"value": 52.8, "unit": "%", "target": "95% kế hoạch"}
+    # Đọc vĩ mô sống (USD/VND & GDP VN) từ vn_real_bctc_live.json nếu đã cào; chỉ gắn nhãn SBV tariff reference cho lãi suất điều hành
+    live_macro = {}
+    try:
+        from pathlib import Path
+        live_path = Path(__file__).resolve().parent.parent / "data" / "vn_real_bctc_live.json"
+        if live_path.exists():
+            live_macro = json.loads(live_path.read_text(encoding="utf-8")).get("macro_live", {})
+    except Exception:
+        live_macro = {}
+
+    usd_live = live_macro.get("USD_VND_LIVE", {})
+    usd_val = float(usd_live.get("value") or 0.0)
+    gdp_live = live_macro.get("VN_GDP_GROWTH_LIVE", {})
+
+    macro_data["SBV_Refinancing_Rate"] = {"value": 4.5, "unit": "%", "status": "Lãi suất điều hành SBV", "source": "SBV_OFFICIAL_TARIFF_REFERENCE"}
+    macro_data["SBV_Discount_Rate"] = {"value": 3.0, "unit": "%", "status": "Ổn định", "source": "SBV_OFFICIAL_TARIFF_REFERENCE"}
+    macro_data["USD_VND_Exchange_Rate"] = {
+        "value": round(usd_val, 1) if usd_val > 0 else None,
+        "unit": "VND",
+        "trend": "Live Yahoo USDVND=X" if usd_val > 0 else "Unavailable",
+        "source": usd_live.get("source", "YAHOO_USDVND_LIVE" if usd_val > 0 else "UNAVAILABLE"),
+    }
+    if gdp_live:
+        gdp_vals = gdp_live.get("values")
+        gdp_val = gdp_live.get("value")
+        if gdp_val is None and isinstance(gdp_vals, list) and len(gdp_vals) >= 2:
+            try:
+                gdp_val = float(str(gdp_vals[1]).replace(",", ""))
+            except Exception:
+                gdp_val = None
+        macro_data["VN_GDP_Growth_Live"] = {
+            "value": gdp_val,
+            "period": gdp_live.get("period", ""),
+            "unit": "%",
+            "source": gdp_live.get("source", "WICHART_VIETNAMBIZ_LIVE"),
+        }
+    macro_data["Credit_Growth_YTD"] = {"value": None, "unit": "%", "target": "15.0%", "source": "SBV_OFFICIAL_TARIFF_REFERENCE_NO_SCRAPE"}
+    macro_data["Public_Investment_Disbursed_Pct"] = {"value": None, "unit": "%", "target": "95% kế hoạch", "source": "MOF_OFFICIAL_REFERENCE_NO_SCRAPE"}
     return macro_data
 
 

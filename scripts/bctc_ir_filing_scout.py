@@ -30,6 +30,17 @@ import ssl
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 
+_SCOUT_ROOT = str(Path(__file__).resolve().parent.parent)
+if _SCOUT_ROOT not in sys.path:
+    sys.path.insert(0, _SCOUT_ROOT)
+
+try:
+    from scripts.tavily_bridge import tavily_search as _tavily_bctc_search
+    from scripts.superpowers_gate import diagnose_exception
+except Exception:
+    _tavily_bctc_search = None
+    def diagnose_exception(*args, **kwargs): return {}
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 if hasattr(sys.stderr, "reconfigure"):
@@ -558,11 +569,36 @@ def format_telegram_bctc_card(ticker: str) -> str:
         f"• 🏛️ *Nghị quyết ĐHĐCĐ & Biên bản họp*: [Tài liệu ĐHĐCĐ {clean_sym}]({agm_url})",
         f"• 📊 *Kho Lưu Trữ Vietstock*: [Vietstock Documents Hub]({vietstock_url})",
         f"• 📰 *Kho Lưu Trữ CafeF*: [CafeF Documents Hub]({cafef_url})\n",
+    ]
+
+    if _tavily_bctc_search:
+        try:
+            _t_res = _tavily_bctc_search(
+                f"{clean_sym} báo cáo tài chính nghị quyết công bố thông tin",
+                search_depth="basic",
+                max_results=2,
+                topic="general",
+                time_range="month",
+                include_domains=["cafef.vn", "vietstock.vn", "hsx.vn", "hnx.vn"],
+                timeout=10,
+            )
+            if _t_res.get("ok") and _t_res.get("results"):
+                lines.append("🔎 *CÔNG BỐ MỚI NHẤT TÌM THẤY QUA TAVILY (BAN 10 HIỀN)*:")
+                for item in _t_res["results"][:2]:
+                    t_title = str(item.get("title") or "").strip()[:90]
+                    t_url = str(item.get("url") or "").strip()
+                    if t_title and t_url:
+                        lines.append(f"• [{t_title}]({t_url})")
+                lines.append("")
+        except Exception as _exc:
+            diagnose_exception("bctc_ir_filing_scout.tavily_card", _exc, {"ticker": clean_sym})
+
+    lines.extend([
         f"💡 *GHI CHÚ CHIẾN LƯỢC TỪ MASTER CIO JAMES*:",
         f"• _{note_str}_",
         f"• *Ngữ cảnh mùa*: {season['active_season_name']}.",
         f"👉 *Chỉ đạo của James*: Sau khi Chủ tịch đọc các tài liệu trên, Chủ tịch có thể phản hồi các thông tin thực tế (tiến độ dự án, văn hóa lãnh đạo). Ban 2 VN sẽ lập tức 'tiêu hóa' để cập nhật định giá!"
-    ]
+    ])
 
     return "\n".join(lines)
 

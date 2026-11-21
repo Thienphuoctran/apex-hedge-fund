@@ -90,13 +90,15 @@ class PalmerAntigravitySyncBridge:
         # Đọc trạng thái danh mục mới nhất từ PortfolioStateManager
         from scripts.portfolio_state_manager import PortfolioStateManager
         st = PortfolioStateManager.load_state()
-        cash_vnd = float(st.get("cash_balance_vnd", 14510422.0))
-        positions = st.get("active_positions", {})
+        cash_vnd = float(st.get("cash_balance_vnd", 0.0) or 0.0)
+        positions = st.get("active_positions", {}) or {}
         
         stock_market_val = 0.0
         pos_details = {}
         for sym, pos in positions.items():
             sh = int(pos.get("shares", 0))
+            if sh <= 0:
+                continue
             ep = float(pos.get("entry_price", 0.0))
             cp = float(pos.get("current_price", ep))
             val = sh * cp
@@ -107,10 +109,21 @@ class PalmerAntigravitySyncBridge:
                 "current_price": cp,
                 "market_val_vnd": val,
                 "pnl_vnd": val - (sh * ep),
-                "status": pos.get("status", "HOLDING_T1")
+                "status": pos.get("status", "HOLDING")
             }
         
         total_nav = cash_vnd + stock_market_val
+        cash_pct = round((cash_vnd / total_nav) * 100.0, 2) if total_nav > 0 else 100.0
+        v2_file = DATA_DIR / "apex_quant_brain_v2_output.json"
+        live_regime = st.get("tactical_regime", "CASH_100_DEFENSE_WEEKEND_REST")
+        if v2_file.exists():
+            try:
+                v2_d = json.loads(v2_file.read_text(encoding="utf-8"))
+                mr_id = (v2_d.get("market_regime") or {}).get("regime_id")
+                if mr_id:
+                    live_regime = f"{mr_id} ({st.get('status', 'CASH_RESERVE_100_PERCENT')})"
+            except Exception:
+                pass
 
         packet = {
             "sync_id": sync_id,
@@ -124,12 +137,15 @@ class PalmerAntigravitySyncBridge:
             "active_decisions": active_decisions,
             "system_state": {
                 "chairman_account": "TCBS 105C307855 (Trần Quốc Thiên Phước)",
+                "status": st.get("status", "CASH_RESERVE_100_PERCENT"),
+                "current_campaign_phase": st.get("current_campaign_phase", "TRIAL_CLOSED_100_CASH_WEEK48_PREP"),
                 "total_nav_vnd": total_nav,
                 "cash_vnd": cash_vnd,
+                "cash_pct": cash_pct,
                 "stock_market_val_vnd": stock_market_val,
                 "active_holdings": pos_details,
-                "realized_round1_profit": float(st.get("realized_pnl_vnd", 167119.0)),
-                "current_market_regime": "DAY_T1_HOLDING_AND_MONITORING"
+                "realized_pnl_vnd": float(st.get("realized_pnl_vnd", 0.0) or 0.0),
+                "current_market_regime": live_regime
             },
             "acknowledged_by_palmer": True,
             "acknowledged_at": now.strftime("%Y-%m-%d %H:%M:%S")
@@ -141,6 +157,11 @@ class PalmerAntigravitySyncBridge:
         cls.save_sync_ledger(ledger)
 
         # 2. Cập nhật Bộ Nhớ Trực Tuyến Live Briefing cho Palmer
+        default_holdings_dir = (
+            "100% TIỀN MẶT (0 CP đang giữ — BAF & MSH đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn cổ phiếu."
+            if not pos_details
+            else ", ".join(f"{sym}: {d['shares']} CP @ {d['current_price']:,.0f}₫" for sym, d in pos_details.items())
+        )
         live_briefing = {
             "last_updated": now.strftime("%Y-%m-%d %H:%M:%S"),
             "last_synced_by": "ANTIGRAVITY",
@@ -150,16 +171,24 @@ class PalmerAntigravitySyncBridge:
             "latest_completed_tasks": completed_tasks,
             "latest_strategic_decisions": active_decisions,
             "portfolio_snapshot": {
+                "status": st.get("status", "CASH_RESERVE_100_PERCENT"),
                 "total_nav_vnd": total_nav,
                 "cash_vnd": cash_vnd,
+                "cash_pct": cash_pct,
                 "stock_market_val_vnd": stock_market_val,
-                "positions": pos_details
+                "positions": pos_details,
+                "current_market_regime": live_regime,
             },
             "directives_for_palmer_responses": {
-                "regarding_bsr_baf": active_decisions.get("regarding_bsr_baf", "TUYỆT ĐỐI KHÔNG BẮT ĐÁY ĐẦU GIỜ CHIỀU; chờ Khung Giờ Vàng 14h00-14h25 khi hấp thụ xong cung T+2.5"),
-                "regarding_hdb_msh": active_decisions.get("regarding_hdb_msh", "Đang giữ T+1 có lãi đệm, khóa quan sát không mua thêm hôm nay, chờ chiều mai 11/11 hàng về"),
-                "regarding_weekly_plan": active_decisions.get("regarding_weekly_plan", "Kế hoạch tuần tham khảo giải ngân 5.5M thăm dò, két 14.51M tiền mặt kiểm soát chặt chẽ"),
-                "regarding_today_morning_tasks": active_decisions.get("regarding_today_morning_tasks", "Đã sửa toàn bộ báo cáo web portal, đồng bộ khớp 2 lệnh HDB/MSH, loại bỏ báo cáo ảo 6 mã 35 triệu")
+                "current_holdings_directive": active_decisions.get("current_holdings_directive", default_holdings_dir),
+                "market_regime_directive": active_decisions.get("market_regime_directive", f"Chế độ sống: {live_regime}. Giải ngân chỉ mở khung 14h00-14h25 khi đạt điều kiện S1/S2/S3."),
+                "weekly_plan_directive": active_decisions.get("weekly_plan_directive", "Cuối tuần 20-22/11 nghỉ ngơi 100% Cash. Tuần 48 (23/11) đánh rổ Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) theo Ma trận 4 kịch bản S1-S4."),
+                "upgrade_progress_directive": active_decisions.get("upgrade_progress_directive", "Đã triển khai crawler Internet/BCTC/IR đa nguồn hàng ngày (Giai đoạn 1) và đồng bộ 2 chiều về Palmer."),
+                # Backward-compatible aliases (trỏ về thông tin mới nhất, không chứa dữ liệu cũ)
+                "regarding_bsr_baf": active_decisions.get("current_holdings_directive", default_holdings_dir),
+                "regarding_hdb_msh": active_decisions.get("market_regime_directive", f"Chế độ sống: {live_regime}."),
+                "regarding_weekly_plan": active_decisions.get("weekly_plan_directive", "Tuần 48 (23/11) sẵn sàng 100% Cash với Ma trận S1-S4."),
+                "regarding_today_morning_tasks": active_decisions.get("upgrade_progress_directive", "Đã hoàn tất đồng bộ Palmer <-> Antigravity V2.0.")
             }
         }
 
@@ -272,16 +301,24 @@ class PalmerAntigravitySyncBridge:
         directives = live.get("directives_for_palmer_responses", {})
         lines.extend([
             "\n🎯 *CHỈ THỊ ĐỒNG NHẤT CỦA HỆ THỐNG:*",
-            f"• *Về BSR & BAF:* {directives.get('regarding_bsr_baf')}",
-            f"• *Về HDB & MSH (T+1):* {directives.get('regarding_hdb_msh')}",
-            f"• *Về Kế hoạch tuần:* {directives.get('regarding_weekly_plan')}",
-            f"• *Về Tiến độ sáng nay:* {directives.get('regarding_today_morning_tasks')}"
+            f"• *Vị thế hiện tại:* {directives.get('current_holdings_directive', directives.get('regarding_bsr_baf'))}",
+            f"• *Chế độ thị trường:* {directives.get('market_regime_directive', directives.get('regarding_hdb_msh'))}",
+            f"• *Kế hoạch Tuần 48:* {directives.get('weekly_plan_directive', directives.get('regarding_weekly_plan'))}",
+            f"• *Tiến độ nâng cấp:* {directives.get('upgrade_progress_directive', directives.get('regarding_today_morning_tasks'))}"
         ])
         return "\n".join(lines)
 
     @classmethod
     def _export_live_briefing_md(cls, data: Dict[str, Any]) -> None:
         try:
+            snap = data.get("portfolio_snapshot", {})
+            cash_val = float(snap.get("cash_vnd", 0.0) or 0.0)
+            nav_val = float(snap.get("total_nav_vnd", cash_val) or 0.0)
+            stk_val = float(snap.get("stock_market_val_vnd", 0.0) or 0.0)
+            cash_pct = float(snap.get("cash_pct", (cash_val / nav_val * 100.0) if nav_val > 0 else 100.0))
+            pos = snap.get("positions", {}) or {}
+            dirs = data.get("directives_for_palmer_responses", {})
+
             content = f"""# APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
 **Thời gian cập nhật:** {data.get('last_updated')}  
 **Người đồng bộ gần nhất:** {data.get('last_synced_by')}  
@@ -290,7 +327,7 @@ class PalmerAntigravitySyncBridge:
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Câu hỏi của Chủ tịch:** {data.get('latest_user_request')}
+* **Yêu cầu gần nhất của Chủ tịch:** {data.get('latest_user_request')}
 * **Kết luận & Quyết định thể chế:**
 {data.get('latest_response_summary')}
 
@@ -299,25 +336,26 @@ class PalmerAntigravitySyncBridge:
             for task in data.get("latest_completed_tasks", []):
                 content += f"- [x] {task}\n"
 
-            snap = data.get("portfolio_snapshot", {})
             content += f"""
 ## III. TRẠNG THÁI DANH MỤC THỜI GIAN THỰC (SSOT)
 - **Tài khoản thụ hưởng:** TCBS `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
-- **Tổng NAV:** `{snap.get('total_nav_vnd', 20160422):,.0f} ₫`
-- **Tiền mặt thực tế:** `{snap.get('cash_vnd', 14510422):,.0f} ₫`
-- **Giá trị cổ phiếu:** `{snap.get('stock_market_val_vnd', 5650000):,.0f} ₫`
-- **Vị thế nắm giữ (Ngày T+1):**
+- **Tổng NAV ròng:** `{nav_val:,.0f} ₫` (`{cash_pct:.1f}% Tiền mặt`)
+- **Tiền mặt ròng:** `{cash_val:,.0f} ₫`
+- **Giá trị cổ phiếu:** `{stk_val:,.0f} ₫`
+- **Vị thế cổ phiếu đang giữ:**
 """
-            for sym, p in snap.get("positions", {}).items():
-                content += f"  * **{sym}**: {p.get('shares')} CP | Giá vốn: {p.get('entry_price'):,.0f} ₫ | Thị giá: {p.get('current_price'):,.0f} ₫ | PnL: {p.get('pnl_vnd'):+,.0f} ₫ ({p.get('status')})\n"
+            if pos:
+                for sym, p in pos.items():
+                    content += f"  * **{sym}**: {p.get('shares')} CP | Giá vốn: {p.get('entry_price'):,.0f} ₫ | Thị giá: {p.get('current_price'):,.0f} ₫ | PnL: {p.get('pnl_vnd'):+,.0f} ₫ ({p.get('status')})\n"
+            else:
+                content += "  * **KHÔNG CÓ (`0 cổ phiếu` — Đang giữ `100.0% Tiền mặt` sạch qua cuối tuần)**\n"
 
-            dirs = data.get("directives_for_palmer_responses", {})
             content += f"""
 ## IV. NGUYÊN TẮC PHÁT NGÔN ĐỒNG BỘ TUYỆT ĐỐI CHO PALMER
-1. **Về BSR & BAF:** {dirs.get('regarding_bsr_baf')}
-2. **Về HDB & MSH:** {dirs.get('regarding_hdb_msh')}
-3. **Về Kế hoạch tuần:** {dirs.get('regarding_weekly_plan')}
-4. **Về Tiến độ công việc:** {dirs.get('regarding_today_morning_tasks')}
+1. **Vị thế hiện tại:** {dirs.get('current_holdings_directive', dirs.get('regarding_bsr_baf'))}
+2. **Chế độ thị trường:** {dirs.get('market_regime_directive', dirs.get('regarding_hdb_msh'))}
+3. **Kế hoạch Tuần 48:** {dirs.get('weekly_plan_directive', dirs.get('regarding_weekly_plan'))}
+4. **Tiến độ nâng cấp hệ thống:** {dirs.get('upgrade_progress_directive', dirs.get('regarding_today_morning_tasks'))}
 
 *Lưu ý thể chế: Palmer và Antigravity là một thực thể thống nhất. Tuyệt đối không đưa ra thông tin lệch pha hoặc dùng dữ liệu cũ.*
 """
@@ -362,28 +400,33 @@ class PalmerAntigravitySyncBridge:
         try:
             mem_content = TRO_LI_MEMORY_MD.read_text(encoding="utf-8")
             snap = data.get("portfolio_snapshot", {})
-            pos = snap.get("positions", {})
+            pos = snap.get("positions", {}) or {}
             dirs = data.get("directives_for_palmer_responses", {})
+            cash_val = float(snap.get("cash_vnd", 0.0) or 0.0)
+            nav_val = float(snap.get("total_nav_vnd", cash_val) or 0.0)
+            stk_val = float(snap.get("stock_market_val_vnd", 0.0) or 0.0)
+            cash_pct = float(snap.get("cash_pct", (cash_val / nav_val * 100.0) if nav_val > 0 else 100.0))
 
             section_header = "## 6. SỔ CÁI ĐỒNG BỘ DỮ LIỆU TỨC THỜI TỪ MASTER CIO JAMES (INTER-CHAT SYNC)"
             pos_bullets = []
             for sym, p in pos.items():
-                pos_bullets.append(f"• **{sym}**: {p.get('shares')} CP | Giá vốn: {p.get('entry_price'):,.0f} ₫ | Thị giá: {p.get('current_price'):,.0f} ₫ | PnL: {p.get('pnl_vnd'):+,.0f} ₫ (T+1)")
-            pos_str = "\n".join(pos_bullets) if pos_bullets else "• 100% Tiền mặt"
+                pos_bullets.append(f"• **{sym}**: {p.get('shares')} CP | Giá vốn: {p.get('entry_price'):,.0f} ₫ | Thị giá: {p.get('current_price'):,.0f} ₫ | PnL: {p.get('pnl_vnd'):+,.0f} ₫ ({p.get('status', 'HOLDING')})")
+            pos_str = "\n".join(pos_bullets) if pos_bullets else "• **KHÔNG CÓ (`0 CP` — Đang giữ `100.0% Tiền mặt` sạch qua cuối tuần)**"
 
             sync_block = f"""{section_header}
 > [!IMPORTANT]
 > **Dữ liệu sống từ phòng chat Chứng khoán của Master CIO James (Cập nhật: {data.get('last_updated')})**:
 > - **Tài khoản TCBS**: `105C307855` (Chủ tịch Trần Quốc Thiên Phước)
-> - **Tổng NAV**: `{snap.get('total_nav_vnd', 20160422):,.0f} ₫` | **Tiền mặt**: `{snap.get('cash_vnd', 14510422):,.0f} ₫` (72.0% Cash) | **Cổ phiếu**: `{snap.get('stock_market_val_vnd', 5650000):,.0f} ₫`
-> - **Vị thế nắm giữ (Ngày T+1)**:
+> - **Tổng NAV**: `{nav_val:,.0f} ₫` | **Tiền mặt**: `{cash_val:,.0f} ₫` ({cash_pct:.1f}% Cash) | **Cổ phiếu**: `{stk_val:,.0f} ₫`
+> - **Vị thế nắm giữ hiện tại**:
 {pos_str}
-> - **Chỉ thị tác chiến của James**:
->   * BSR & BAF: {dirs.get('regarding_bsr_baf')}
->   * HDB & MSH: {dirs.get('regarding_hdb_msh')}
->   * Kế hoạch tuần: {dirs.get('regarding_weekly_plan')}
+> - **Chỉ thị tác chiến thống nhất (James <-> Palmer)**:
+>   * Vị thế: {dirs.get('current_holdings_directive', dirs.get('regarding_bsr_baf'))}
+>   * Thị trường: {dirs.get('market_regime_directive', dirs.get('regarding_hdb_msh'))}
+>   * Kế hoạch Tuần 48: {dirs.get('weekly_plan_directive', dirs.get('regarding_weekly_plan'))}
+>   * Nâng cấp hệ thống: {dirs.get('upgrade_progress_directive', dirs.get('regarding_today_morning_tasks'))}
 >   * Yêu cầu gần nhất của Chủ tịch: _{data.get('latest_user_request')}_
->   * Quyết định của James: {data.get('latest_response_summary')}
+>   * Kết luận của James: {data.get('latest_response_summary')}
 """
             if section_header in mem_content:
                 parts = mem_content.split(section_header)
@@ -396,24 +439,72 @@ class PalmerAntigravitySyncBridge:
             print(f"[!] Lỗi cập nhật Trợ lí cá nhân MEMORY.md: {e}")
 
 
+    @classmethod
+    def sync_current_ssot(cls, note: str = "") -> Dict[str, Any]:
+        """Đọc trực tiếp SSOT + kế hoạch tuần + dữ liệu cào Internet mới nhất để đồng bộ sang Palmer."""
+        from scripts.portfolio_state_manager import PortfolioStateManager
+        st = PortfolioStateManager.load_state()
+        cash_vnd = float(st.get("cash_balance_vnd", 0.0) or 0.0)
+        pos = st.get("active_positions") or {}
+
+        weekly_plan_path = DATA_DIR / "weekly_tactical_plan_active.json"
+        weekly_summary = "Tuần 48 (23/11): Rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) theo Ma trận 4 kịch bản S1–S4."
+        if weekly_plan_path.exists():
+            try:
+                wp = json.loads(weekly_plan_path.read_text(encoding="utf-8"))
+                weekly_summary = wp.get("constitution_mandate") or weekly_summary
+            except Exception:
+                pass
+
+        intel_path = DATA_DIR / "apex_daily_internet_intel.json"
+        intel_note = "Chưa chạy quét Internet hôm nay."
+        if intel_path.exists():
+            try:
+                intel = json.loads(intel_path.read_text(encoding="utf-8"))
+                counts = intel.get("summary_counts") or {}
+                intel_note = (
+                    f"Cào sống ngày {intel.get('crawled_at')}: {counts.get('total_news_articles', 0)} bài báo RSS/CBTT, "
+                    f"{counts.get('tickers_with_live_news', 0)} mã có tin doanh nghiệp Vietcap/CafeF, "
+                    f"{counts.get('verified_ir_portals', 0)} cổng IR HTTP-200, "
+                    f"{counts.get('tavily_live_hits', 0)} kết quả Tavily, "
+                    f"{counts.get('sec_edgar_filings', 0)} hồ sơ SEC EDGAR."
+                )
+            except Exception:
+                pass
+
+        completed = [
+            f"Xác nhận SSOT tài khoản TCBS 105C307855: Cash {cash_vnd:,.0f} ₫ | {len(pos)} vị thế mở",
+            f"Đồng bộ dữ liệu cào Internet/BCTC: {intel_note}",
+            "Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)",
+        ]
+        if note:
+            completed.insert(0, note)
+
+        return cls.broadcast_from_antigravity_to_palmer(
+            user_request=note or "Đồng bộ trạng thái SSOT & Dữ liệu cào Internet/BCTC mới nhất giữa James và Palmer",
+            response_summary=weekly_summary,
+            completed_tasks=completed,
+            active_decisions={
+                "current_holdings_directive": (
+                    f"100% TIỀN MẶT ({cash_vnd:,.0f} ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu."
+                    if not pos
+                    else f"Đang giữ {len(pos)} mã, Cash {cash_vnd:,.0f} ₫."
+                ),
+                "weekly_plan_directive": weekly_summary,
+                "upgrade_progress_directive": intel_note,
+            },
+        )
+
+
 if __name__ == "__main__":
-    print("[*] Kiểm thử PalmerAntigravitySyncBridge...")
-    pkt = PalmerAntigravitySyncBridge.broadcast_from_antigravity_to_palmer(
-        user_request="Tình hình thị trường bây giờ như này, BSR và BAF đang chạm đáy thế chúng ta có nên vào không",
-        response_summary="TUYỆT ĐỐI CHƯA NÊN VÀO LÚC 13H00! BSR và BAF đang bị áp lực đè bán và đối mặt bão cung T+2.5 (13h00-13h45). Giữ 14.51M tiền mặt chờ Khung Giờ Vàng 14h00-14h25.",
-        completed_tasks=[
-            "Thẩm định định lượng bảng điện BSR (25.60, đè bán 25.65-25.75 gần 80k CP) và BAF (30.85, đè bán 68.8k CP)",
-            "Xác lập nguyên tắc chặn bão cung T+2.5 từ 13h00 đến 13h45",
-            "Bảo vệ 2 vị thế T+1 HDB (+1.13%) và MSH (+1.16%) giữ nguyên quan sát",
-            "Kích hoạt Ban 9 Victor Sentinel theo dõi sát sao bảng điện phiên chiều"
-        ],
-        active_decisions={
-            "regarding_bsr_baf": "Không bắt đáy lúc 13h00; chờ test cung Khung Giờ Vàng 14h00-14h25",
-            "regarding_hdb_msh": "HDB (+1.13%) và MSH (+1.16%) T+1 lãi đệm, cấm mua thêm hôm nay",
-            "regarding_weekly_plan": "Kế hoạch tuần tham khảo 5.5M giải ngân thăm dò, két 14.51M tiền mặt sẵn sàng",
-            "regarding_today_morning_tasks": "Sửa toàn bộ báo cáo web portal, đồng bộ 2 lệnh HDB/MSH, loại bỏ báo cáo ảo 6 mã 35 triệu"
-        }
-    )
+    import argparse
+    parser = argparse.ArgumentParser(description="Apex Bilateral Sync Bridge (Antigravity <-> Palmer)")
+    parser.add_argument("--sync-current", action="store_true", help="Đồng bộ trực tiếp SSOT và dữ liệu Internet mới nhất sang Palmer")
+    parser.add_argument("--note", type=str, default="", help="Ghi chú đồng bộ tùy chọn")
+    args = parser.parse_args()
+
+    print("[*] Thực thi PalmerAntigravitySyncBridge (Live SSOT)...")
+    pkt = PalmerAntigravitySyncBridge.sync_current_ssot(note=args.note)
     print(f"[+] Thành công! Sync ID: {pkt['sync_id']}")
     print("\n--- NỘI DUNG PALMER TRÍCH XUẤT ---")
     print(PalmerAntigravitySyncBridge.get_latest_briefing_for_palmer())

@@ -2,7 +2,7 @@
 > **CHỦ ĐỀ**: `Tổng Kết NVDA / PANW / ^VIX & Kế Hoạch Đáo Hạn VN30F1M 19/11 + Mở Công Suất Tuần Sau`  
 > **KHUNG GIỜ HỌP**: `04h30 – 05h00 (30 Phút, 19/11/2026)` (Chuẩn bị: `20h30 -> 04h25 (Trực 5 nhịp + Đón BCTC NVDA)`)  
 > **PHÊ DUYỆT CHỦ TỊCH**: `None` (Chưa ký lúc lưu)  
-> **LÝ DO LƯU KHO**: `PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION` • **LƯU LÚC**: `2026-11-19 09:43:41 ICT`  
+> **LÝ DO LƯU KHO**: `PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION` • **LƯU LÚC**: `2026-11-21 16:05:16 ICT`  
 
 ## 1. TỔNG KẾT MASTER CIO JAMES & KẾ HOẠCH THAM KHẢO
 Tổng kết 04h30 (19/11): ^VIX 24.56 (chưa < 23.5), .SPX 7,323.63 < MA200 -> Elevated Tension; NVDA Q3 FY27 ($115.8B) giảm do CEO transition discount; PANW +8.04% AH ($367.25).

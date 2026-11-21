@@ -10,18 +10,18 @@
       "end_time": "2026-11-19T05:00:00+07:00",
       "chairman_approved": false,
       "approval_time": null,
-      "archived_at": "2026-11-19T09:43:54.386914+07:00",
-      "archived_display": "19/11/2026 09:43:54",
-      "archive_reason": "CONCLUDED_REALTIME_NVDA_VIX_0430",
-      "archived_by": "Ban 11 & Trọng Auto-Archiver",
+      "archived_at": "2026-11-21T16:05:16.714515+07:00",
+      "archived_display": "21/11/2026 16:05:16",
+      "archive_reason": "PRESERVED_BEFORE_NEW_SUMMIT_ACTIVATION",
+      "archived_by": "Palmer & Ban 11 Archive",
       "archive_json_path": "data/summit_archive/APEX-SUMMIT-20261119-0430.json",
       "archive_md_path": "08_Master_Investment_CIO/summit_archive/APEX-SUMMIT-20261119-0430_Bien_Ban_Luu_Tru.md",
       "james_summary_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0430_Bao_Cao_Tong_Ket_James_NVDA_VIX_Va_Nghi_Quyet_Dao_Han.md",
       "resolution_report_path": "08_Master_Investment_CIO/council_resolutions/2026-11-19_0430_Bao_Cao_Tong_Ket_James_NVDA_VIX_Va_Nghi_Quyet_Dao_Han.md",
       "turns_count": 10,
       "prep_dossiers_count": 14,
-      "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện thật 100%)",
-      "summary_headline": "Tổng kết 04h30 (VIX 24.56 | NVDA AH +0.15%) | Chế độ ELEVATED_TENSION_CAUTIOUS_ROTATION & Kế hoạch Đáo hạn 19/11"
+      "quorum": "14/14 Phòng Ban + Palmer + Nam (16/16 Hiện diện trong phòng họp & Trực 21h30–04h30)",
+      "summary_headline": "Tổng kết 04h30 (19/11): ^VIX 24.56 (chưa < 23.5), .SPX 7,323.63 < MA200 -> Elevated Tension; NVDA Q3 FY27 ($115.8B) giảm do CEO transition discount; PANW +8.04% AH ($367.25)."
     },
     {
       "meeting_id": "APEX-SUMMIT-20261119-0045",
@@ -140,5 +140,5 @@
     }
   ],
   "total_archived": 6,
-  "last_updated": "2026-11-19T09:43:54.386914+07:00"
+  "last_updated": "2026-11-21T16:05:16.761237+07:00"
 }

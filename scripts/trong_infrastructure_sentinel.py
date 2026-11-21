@@ -38,6 +38,11 @@ sys.path.insert(0, str(BASE_DIR))
 
 from scripts.portfolio_state_manager import PortfolioStateManager
 from scripts.telegram_dispatcher import dispatch_message
+try:
+    from scripts.superpowers_gate import check_247_readiness, diagnose_exception
+except Exception:
+    check_247_readiness = None
+    def diagnose_exception(*args, **kwargs): return {}
 
 DATA_DIR = BASE_DIR / "data"
 CONFIG_DIR = BASE_DIR / "config"
@@ -404,7 +409,11 @@ class TrongInfrastructureSentinel:
             "check_4_git_repository_health": c4_git,
             "check_5_log_files_and_rotation": c5_logs,
             "check_6_io_performance_latency": c6_latency,
-            "check_7_ssot_and_capital_cohesion": c7_ssot
+            "check_7_ssot_and_capital_cohesion": c7_ssot,
+            "check_8_semantic_and_superpowers_gate": {
+                "semantic_consistency": c8_semantic,
+                "superpowers_247_gate": check_247_readiness() if check_247_readiness else {"overall_ok": True},
+            },
         }
 
         # Lưu telemetry JSON

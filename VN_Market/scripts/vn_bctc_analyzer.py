@@ -930,7 +930,8 @@ def evaluate_bctc_quality(code, d, stk_mkt):
     return {
         "code": code,
         "accounting_regime": regime,
-        "data_authenticity": "VERIFIED_AUDITED_VAS_TT200_AND_LIVE_YFINANCE (100% Real Data)",
+        "data_authenticity": d.get("_data_authenticity", "STATIC_FALLBACK_UNVERIFIED"),
+        "latest_quarter": d.get("_latest_quarter", "STATIC_UNVERIFIED"),
         "audit_firm": d.get("audit_firm", "Big4 Audited"),
         "rating": rating,
         "price_direction": direction,
@@ -961,14 +962,14 @@ def evaluate_bctc_quality(code, d, stk_mkt):
         "key_catalyst": d["key_catalyst"],
         "strengths": strengths,
         "red_flags": red_flags,
-        "beneish_m_score": forensic["beneish_m_score"],
-        "beneish_status": forensic["beneish_status"],
-        "altman_z_score": forensic["altman_z_score"],
-        "altman_zone": forensic["altman_zone"],
-        "sloan_accrual_pct": forensic["sloan_accrual_pct"],
+        "beneish_m_score": d.get("beneish_m_score_live") if d.get("beneish_m_score_live") is not None else forensic["beneish_m_score"],
+        "beneish_status": (d.get("_live_metrics") or {}).get("beneish_status") or forensic["beneish_status"],
+        "altman_z_score": d.get("altman_z_score_live") if d.get("altman_z_score_live") is not None else forensic["altman_z_score"],
+        "altman_zone": (d.get("_live_metrics") or {}).get("altman_zone") or forensic["altman_zone"],
+        "sloan_accrual_pct": d.get("sloan_accrual_pct_live") if d.get("sloan_accrual_pct_live") is not None else forensic["sloan_accrual_pct"],
         "master_legends_audit": masters,
         "master_composite_score": masters["master_composite_score"],
-        "piotroski_f_score": masters["piotroski_f_score"],
+        "piotroski_f_score": int(d["piotroski_f_score_live"]) if d.get("piotroski_f_score_live") is not None else masters["piotroski_f_score"],
         "graham_intrinsic_value_vnd": masters["graham_intrinsic_value_vnd"],
         "graham_margin_of_safety_pct": masters["graham_margin_of_safety_pct"],
         "lynch_peg_ratio": masters["lynch_peg_ratio"],
@@ -979,12 +980,65 @@ def evaluate_bctc_quality(code, d, stk_mkt):
 
 
 def run():
-    print("=== [VN BCTC ANALYZER v3.0] KIỂM TOÁN BCTC 54/54 MÃ & HỘI ĐỒNG 10 ĐẠI DANH THỦ ===")
+    print("=== [VN BCTC ANALYZER v4.0] KIỂM TOÁN BCTC THỰC TẾ Q3/2026 (VIETCAP IQ LIVE) & 10 ĐẠI DANH THỦ ===")
     os.makedirs(os.path.dirname(BCTC_OUTPUT_PATH), exist_ok=True)
     os.makedirs(os.path.dirname(REPORT_MD_PATH), exist_ok=True)
 
     with open(MARKET_DATA_PATH, "r", encoding="utf-8") as f:
         market_data = json.load(f)
+
+    # Nạp BCTC thật đa kỳ từ Vietcap IQ Official (vn_real_bctc_live.json) để thay thế dữ liệu tĩnh
+    live_bctc_path = os.path.join(os.path.dirname(BCTC_OUTPUT_PATH), "vn_real_bctc_live.json")
+    live_stocks = {}
+    if os.path.exists(live_bctc_path):
+        try:
+            with open(live_bctc_path, "r", encoding="utf-8") as lf:
+                live_stocks = json.load(lf).get("stocks", {})
+            print(f"[+] Đã nạp {len(live_stocks)} bộ BCTC thật Vietcap IQ từ {live_bctc_path}")
+        except Exception as e:
+            print(f"[!] Cảnh báo lỗi đọc vn_real_bctc_live.json: {e}")
+
+    for sym, live_item in live_stocks.items():
+        lm = live_item.get("latest_metrics") or {}
+        if not lm:
+            continue
+        base_entry = dict(BCTC_DATABASE.get(sym, {}))
+        latest_q = lm.get("latest_quarter", "LIVE")
+        base_entry.update({
+            "accounting_regime": lm.get("accounting_regime", base_entry.get("accounting_regime", "CORPORATE_VAS_TT200")),
+            "audit_firm": "Vietcap IQ Audited/Quarterly Live",
+            "_data_authenticity": f"VIETCAP_IQ_LIVE_BCTC ({latest_q})",
+            "_latest_quarter": latest_q,
+            "_live_metrics": lm,
+            "revenue_ttm_ty": float(lm.get("revenue_ttm_ty") or 0.0),
+            "net_profit_ttm_ty": float(lm.get("net_profit_ttm_ty") or 0.0),
+            "rev_growth_yoy": float(lm.get("rev_growth_yoy") or 0.0),
+            "profit_growth_yoy": float(lm.get("profit_growth_yoy") or 0.0),
+            "gross_margin_pct": float(lm.get("gross_margin_pct") or 0.0),
+            "operating_margin_pct": float(lm.get("operating_margin_pct") or 0.0),
+            "roe_est_pct": float(lm.get("roe_ttm_pct") or 0.0),
+            "ocf_ty": float(lm.get("ocf_ty") or 0.0),
+            "free_cash_flow_ty": float(lm.get("fcf_ty") or 0.0),
+            "ocf_to_profit_ratio": float(lm.get("ocf_to_profit_ratio") or 0.0),
+            "cash_and_equiv_ty": float(lm.get("cash_and_equiv_ty") or 0.0),
+            "total_debt_ty": float(lm.get("total_debt_ty") or 0.0),
+            "net_cash_ty": float(lm.get("net_cash_ty") or 0.0),
+            "debt_to_equity": float(lm.get("debt_to_equity") or 0.0),
+            "receivables_to_rev_pct": float(lm.get("receivables_to_rev_pct") or 0.0),
+            "other_receivables_to_assets_pct": float(lm.get("other_receivables_to_assets_pct") or 0.0),
+            "unearned_revenue_ty": float(lm.get("unearned_revenue_ty") or 0.0),
+            "piotroski_f_score_live": lm.get("piotroski_f_score"),
+            "beneish_m_score_live": lm.get("beneish_m_score"),
+            "altman_z_score_live": lm.get("altman_z_score"),
+            "sloan_accrual_pct_live": lm.get("sloan_accrual_pct"),
+            "pe_live": lm.get("pe_ttm"),
+            "pb_live": lm.get("pb_live"),
+        })
+        if lm.get("nim_proxy_pct") is not None:
+            base_entry["nim_pct"] = float(lm["nim_proxy_pct"])
+        if lm.get("cir_pct") is not None:
+            base_entry["cir_pct"] = float(lm["cir_pct"])
+        BCTC_DATABASE[sym] = base_entry
 
     stocks = market_data.get("stocks", {})
     bctc_results = {}
@@ -993,6 +1047,8 @@ def run():
     for code, stk in stocks.items():
         if code in BCTC_DATABASE:
             raw_bctc = dict(BCTC_DATABASE[code])
+            if "_data_authenticity" not in raw_bctc:
+                raw_bctc["_data_authenticity"] = "STATIC_FALLBACK_UNVERIFIED"
             verified_count += 1
         else:
             # Nếu phát sinh mã mới ngoài 54 mã, trích xuất trực tiếp từ yf_fundamentals thực tế

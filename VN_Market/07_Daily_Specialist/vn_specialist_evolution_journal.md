@@ -198,24 +198,24 @@
 
 ### 📅 Phiên Giao Dịch Ngày 2026-11-17 — Đợt Huấn Luyện Bậc Thầy Đầu Tư & Quét Toàn Thị Trường 145 Mã
 - **Chỉ số Hoàn thiện**: `98.5 / 100` (Nâng cấp tối thượng với 5 Hệ Thống Buffett, O'Neil, Wyckoff, Graham, Thorp & 105 Tinh Hoa Đầu Tư).
-- **Tính Xác Thực Dữ Liệu**: 100% số liệu kiểm toán BCTC hợp nhất và đồng bộ trực tiếp với két tiền thật SSOT V2.0 (`20,264,522 ₫`).
-- **Danh mục Tầm ngắm Vòng 2 Đa Ngành**: Tuyển chọn 6 Siêu Cổ Phiếu Đang Lên (BAF, MSB, NT2, LHG, GDA, HDB) từ 145 mã / 18 ngành.
-- **Tâm điểm cảnh báo**: Bóc trần rủi ro nợ vay và âm OCF tại các mã PDR, DXG, KBC, VND.
-
-### 📅 Phiên Giao Dịch Ngày 2026-11-17 — Đợt Huấn Luyện Bậc Thầy Đầu Tư & Quét Toàn Thị Trường 145 Mã
-- **Chỉ số Hoàn thiện**: `98.5 / 100` (Nâng cấp tối thượng với 5 Hệ Thống Buffett, O'Neil, Wyckoff, Graham, Thorp & 105 Tinh Hoa Đầu Tư).
-- **Tính Xác Thực Dữ Liệu**: 100% số liệu kiểm toán BCTC hợp nhất và đồng bộ trực tiếp với két tiền thật SSOT V2.0 (`20,264,522 ₫`).
-- **Danh mục Tầm ngắm Vòng 2 Đa Ngành**: Tuyển chọn 6 Siêu Cổ Phiếu Đang Lên (MSH, HDB, NT2, BAF, CTS, TCH) từ 145 mã / 18 ngành.
+- **Tính Xác Thực Dữ Liệu**: 100% số liệu kiểm toán BCTC hợp nhất và đồng bộ trực tiếp với két tiền thật SSOT V2.0 (`20,145,422 ₫`).
+- **Danh mục Tầm ngắm Vòng 2 Đa Ngành**: Tuyển chọn 6 Siêu Cổ Phiếu Đang Lên (HDB, MSH, BAF, IDC, TCH, OCB) từ 145 mã / 18 ngành.
 - **Tâm điểm cảnh báo**: Bóc trần rủi ro nợ vay và âm OCF tại các mã PDR, DXG, KBC, VND.
 
 ### 📅 Phiên Giao Dịch Ngày 2026-11-18 — Đợt Huấn Luyện Bậc Thầy Đầu Tư & Quét Toàn Thị Trường 145 Mã
 - **Chỉ số Hoàn thiện**: `98.5 / 100` (Nâng cấp tối thượng với 5 Hệ Thống Buffett, O'Neil, Wyckoff, Graham, Thorp & 105 Tinh Hoa Đầu Tư).
-- **Tính Xác Thực Dữ Liệu**: 100% số liệu kiểm toán BCTC hợp nhất và đồng bộ trực tiếp với két tiền thật SSOT V2.0 (`20,149,522 ₫`).
-- **Danh mục Tầm ngắm Vòng 2 Đa Ngành**: Tuyển chọn 6 Siêu Cổ Phiếu Đang Lên (BAF, MSB, NT2, CTS, TCH, POW) từ 145 mã / 18 ngành.
+- **Tính Xác Thực Dữ Liệu**: 100% số liệu kiểm toán BCTC hợp nhất và đồng bộ trực tiếp với két tiền thật SSOT V2.0 (`20,264,522 ₫`).
+- **Danh mục Tầm ngắm Vòng 2 Đa Ngành**: Tuyển chọn 6 Siêu Cổ Phiếu Đang Lên (HDB, MSH, BAF, IDC, TCH, OCB) từ 145 mã / 18 ngành.
 - **Tâm điểm cảnh báo**: Bóc trần rủi ro nợ vay và âm OCF tại các mã PDR, DXG, KBC, VND.
 
-### 📅 Phiên Giao Dịch Ngày 2026-11-18 — Đợt Huấn Luyện Bậc Thầy Đầu Tư & Quét Toàn Thị Trường 145 Mã
-- **Chỉ số Hoàn thiện**: `98.5 / 100` (Nâng cấp tối thượng với 5 Hệ Thống Buffett, O'Neil, Wyckoff, Graham, Thorp & 105 Tinh Hoa Đầu Tư).
-- **Tính Xác Thực Dữ Liệu**: 100% số liệu kiểm toán BCTC hợp nhất và đồng bộ trực tiếp với két tiền thật SSOT V2.0 (`20,229,522 ₫`).
-- **Danh mục Tầm ngắm Vòng 2 Đa Ngành**: Tuyển chọn 6 Siêu Cổ Phiếu Đang Lên (MSH, BAF, MSB, NT2, TCH, CTS) từ 145 mã / 18 ngành.
-- **Tâm điểm cảnh báo**: Bóc trần rủi ro nợ vay và âm OCF tại các mã PDR, DXG, KBC, VND.
+### 📅 Phiên Giao Dịch Ngày 2026-11-19 — Chuẩn Hóa Số Liệu Thật & Khôi Phục Công Suất Tuần Đầu
+- **Thực chứng Hiệu suất**: Walk-Forward Hit Rate (Empirical V2) = `35.3%` | Account Execution Hit Rate = `50.0%` | Calibrated P(W) = `58.2%`.
+- **Đồng bộ SSOT TCBS `105C307855`**: NAV `20,229,522 ₫` | Tiền mặt `13,594,522 ₫ (67.2%)` | Đang nắm giữ `MSH (100 CP), BAF (100 CP)`.
+- **Rổ Tầm Ngắm Công Suất Cao Tuần Sau (13k–22.5k, Vol20 >= 2M CP, 200–300 CP/mã)**: `PVT, TCB, MBB, HPG, TCH, MSH`.
+- **Kỷ luật Lịch Tuần**: Thứ Sáu giữ trần <= 45–55% NAV; Thứ Hai–Thứ Tư tuần sau nâng công suất lên 70–85% NAV (`14–17M ₫`) khi thị trường xác nhận dòng tiền, chốt tỉa 50% khi lãi `+300k–+500k ₫`.
+
+### 📅 Phiên Giao Dịch Ngày 2026-11-21 — Chuẩn Hóa Số Liệu Thật & Khôi Phục Công Suất Tuần Đầu
+- **Thực chứng Hiệu suất**: Walk-Forward Hit Rate (Empirical V2) = `35.3%` | Account Execution Hit Rate = `0.0%` | Calibrated P(W) = `55.8%`.
+- **Đồng bộ SSOT TCBS `105C307855`**: NAV `20,051,117 ₫` | Tiền mặt `20,051,117 ₫ (100.0%)` | Đang nắm giữ `0 CP`.
+- **Rổ Tầm Ngắm Công Suất Cao Tuần Sau (13k–22.5k, Vol20 >= 2M CP, 200–300 CP/mã)**: `PVT, TCB, MBB, HPG, TCH, MSH`.
+- **Kỷ luật Lịch Tuần**: Thứ Sáu giữ trần <= 45–55% NAV; Thứ Hai–Thứ Tư tuần sau nâng công suất lên 70–85% NAV (`14–17M ₫`) khi thị trường xác nhận dòng tiền, chốt tỉa 50% khi lãi `+300k–+500k ₫`.

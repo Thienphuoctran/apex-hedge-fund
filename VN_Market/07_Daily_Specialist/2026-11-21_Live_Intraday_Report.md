@@ -1,0 +1,44 @@
+# [BAN 7 VN & BAN 9] BÁO CÁO TÁC CHIẾN LIVE INTRADAY — 2026-11-21
+**Cập nhật lúc:** `2026-11-21 16:05:10 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
+**Trạng thái thị trường (`Market Regime`):** **`🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT)`**  
+**Chỉ thị điều hành:** VN-Index -0.05%, Độ rộng tích cực 31%, Basis -6.64đ. Tầng 1 Phòng thủ (trần giải ngân mới <= 15%): bảo vệ vốn, chỉ rình mã BCTC kim cương tại MA200 nếu đủ cầu.
+
+---
+
+## 1. BỨC TRANH BẢNG ĐIỆN THỜI GIAN THỰC
+- **VN-Index:** `1,688.79` (-0.83 / `-0.05%`) | GTGD: `15,933.0 Tỷ` | Pace 20 phiên: `1.32x`
+- **VN30-Index:** `1,786.84` (-1.67 / `-0.09%`) | Phái sinh Basis: `-6.64đ (Phái sinh chiết khấu thủng)`
+- **Độ rộng & Khối ngoại:** `96 Tăng / 217 Giảm / 65 Đứng` (`31% ÁP LỰC BÁN`) | Khối ngoại VN30: `-71.6 Tỷ (Bán ròng VN30)`
+
+## 2. TRẠNG THÁI TÀI SẢN & VỊ THẾ NẮM GIỮ (LIVE PNL)
+- **Tiền mặt khả dụng:** `20,051,117 ₫` (`100.0% NAV`)
+- **Giá trị cổ phiếu sống:** `0 ₫` (`0.0% NAV` • `0 CP`)
+- **Tổng NAV LIVE:** **`20,051,117 ₫`** | **PnL Tạm Tính:** **`+0 ₫ (+0.00%)`** | Lãi đã chốt V1: `+51,117 ₫`
+
+> Danh mục hiện đang nắm **100% Tiền Mặt** (`0 CP` rủi ro).
+
+## 3. RADA GIÁM SÁT WATCHLIST TẦM NGẮM & BUY-UP PRESSURE
+| Mã | Giá Live | Đổi % | Volume | Buy-Up Thực | RSI(14) | Ngoại Ròng | Trạng Thái Tác Chiến |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **PVT** | 18,650 ₫ | +0.81% | 2,714,600 | 54.7% | 26.5 | +0.47 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **TCB** | 21,200 ₫ | +2.91% | 13,200,600 | 66.8% | 44.3 | +1.58 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **MBB** | 18,250 ₫ | -2.41% | 13,388,200 | 38.5% | 29.3 | -5.74 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **HPG** | 20,450 ₫ | +0.00% | 15,652,000 | 69.7% | 41.9 | +0.72 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **TCH** | 13,900 ₫ | +4.91% | 15,750,900 | 81.4% | 70.2 | +3.50 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **MSH** | 35,000 ₫ | +0.00% | 164,900 | 73.2% | 58.6 | +0.01 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **TPB** | 12,350 ₫ | +0.00% | 9,079,300 | 80.2% | 44.7 | -1.03 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **HDB** | 21,800 ₫ | -1.58% | 20,050,300 | 64.3% | 42.5 | -10.39 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **CTG** | 30,100 ₫ | +0.33% | 7,685,600 | 67.6% | 41.2 | -2.55 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **VPB** | 20,500 ₫ | -1.91% | 17,274,800 | 67.4% | 30.0 | -2.65 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **BAF** | 30,800 ₫ | -0.48% | 1,622,800 | 70.6% | 54.4 | -0.21 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **DBC** | 16,300 ₫ | -2.69% | 2,692,800 | 44.1% | 53.6 | -0.45 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+
+## 4. CẦU NỐI LIÊN THỊ TRƯỜNG MỸ → VN & BỘ LỌC BULL-TRAP THÍCH NGHI
+- **Spillover Phố Wall → VN:** `🔴 BÁO ĐỘNG LIÊN THỊ TRƯỜNG — THU HẸP TỶ TRỌNG` | Hệ số rủi ro: `0.45x` | Trần phân bổ mới: **`10% NAV`** (Gốc: 15%)
+- **Chỉ báo Đêm qua:** S&P 500 `6910.39` (`-8.61%`) | DXY `103.84` | VIX `35.89` | US10Y `4.91%` | WTI Oil `83.41$`
+- **Hồi tố Thực thi & Bull-Trap Filter:** BuyUp >= `58.0%` | RSI Max <= `70.0` | Độ rộng Min >= `32.0%` | Slippage TB: `+0.0 bps`
+
+## 5. KẾ HOẠCH TRIỂN KHAI TÁC CHIẾN ĐẦU TƯ THEO PHIÊN (MINH QUÂN & VICTOR)
+- **Quản trị Sức mua & Tường lửa Hiến chương:** Két tiền mặt `20,051,117 ₫` (`100.0% NAV`). Hạn mức giải ngân bổ sung tối đa theo chế độ `🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT)` là **`2,005,112 ₫`** (cấm lô 100 CP vượt `33% NAV` = `6,616,869 ₫`).
+- **Phòng thủ Cổ phiếu Đang Giữ:** Theo dõi sát độ lệch Stop 2xATR trên `0 CP`; tuyệt đối tuân thủ Stop cứng và tận dụng biên độ phiên T+0/T+1 hạ giá vốn nếu nhúng về vùng hỗ trợ MA20.
+- **Kỷ luật Thời điểm Thực thi:** Chỉ kê lệnh `LO` chủ động trong Khung Giờ Vàng `14:00 – 14:25` khi Buy-Up >= `58%` và không mua đuổi giá xanh ATO.

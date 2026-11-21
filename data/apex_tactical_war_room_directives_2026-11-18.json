@@ -5,7 +5,7 @@
     "sender": "Minh Quân (Ban 7 VN)",
     "role": "specialist",
     "type": "morning_brief",
-    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã kích hoạt Living War-Room V4.0 cho ngày 2026-11-18. Chế độ thị trường hiện tại: 🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT). Kỷ luật bất biến: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
+    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã kích hoạt Living War-Room V4.0 cho ngày 2026-11-18. Chế độ thị trường hiện tại: ⚖️ GIẰNG CO CHỌN LỌC TẦNG 2 (T+0 & LEADER). Kỷ luật bất biến: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
   },
   {
     "id": "dir_2026-11-18_002",
@@ -13,66 +13,125 @@
     "sender": "Victor (Ban 9 Live Sentinel)",
     "role": "sentinel",
     "type": "sentinel_brief",
-    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-18. Tổng NAV live: 20,169,522 đ | Tiền mặt thật: 11,389,522 đ (56.5% Cash) | Đang nắm giữ: 300 CP (100 HDB + 100 MSH + 100 BAF ≈ 8,780,000 đ) | Lãi đã chốt lũy kế: +167,119 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-18. Tổng NAV live: 20,264,522 đ | Tiền mặt thật: 11,389,522 đ (56.2% Cash) | Đang nắm giữ: 300 CP (100 HDB + 100 MSH + 100 BAF ≈ 8,875,000 đ) | Lãi đã chốt lũy kế: +167,119 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
   },
   {
-    "id": "ban9_emg_2026-11-18_HDB_CRITICAL",
-    "key": "ban9_emg_2026-11-18_HDB_CRITICAL",
-    "timestamp": "11:52:43",
-    "sender": "Victor (Ban 9 Sentinel)",
+    "id": "2026-11-18_HDB_NEARSTOP",
+    "key": "2026-11-18_HDB_NEARSTOP",
+    "timestamp": "04:09:00",
+    "sender": "Victor (Ban 9 Live Sentinel)",
     "role": "sentinel",
-    "type": "sentinel_emergency",
-    "content": "🚨 [BAN 9 CẢNH BÁO — HDB] Giá 22,050.00 (-1.56%) | Cách Stop 2xATR: -0.05% | SHORT 1 HỢP ĐỒNG VN30F1M"
+    "type": "sentinel_alert",
+    "content": "⚠️ [VICTOR CẢNH BÁO CẬN NGƯỠNG BẢO VỆ — HDB] Giá live 22,400 ₫ cách Stop/Cảnh báo 22,060 ₫ chỉ 1.52% (Lãi tạm +34,300 ₫ / Buy-Up 66.7%). Kiểm định nến 14h15!"
   },
   {
-    "id": "cbtt_2026-11-18_CRITICAL_HAG_10101",
-    "key": "cbtt_2026-11-18_CRITICAL_HAG_10101",
-    "timestamp": "14:50:52",
+    "id": "2026-11-18_IDC_BUYZONE",
+    "key": "2026-11-18_IDC_BUYZONE",
+    "timestamp": "04:09:05",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — IDC ĐẠT VÙNG MUA LO] Giá 34,400 ₫ (-0.58%) sát mục tiêu 34,600 ₫, Mua chủ động 56.4%, Stop 32,530 ₫, TP1 38,660 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "dir_2026-11-18_demo_tactical_plan_pre",
+    "timestamp": "04:09:08",
+    "sender": "James (Master CIO) & Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "demo_tactical_plan",
+    "content": "📋 [TỔNG HỢP THƯỢNG ĐỈNH 00H45 & KẾ HOẠCH TÁC CHIẾN 2026-11-18] Trạng thái: 🟡 NGOÀI GIỜ GIAO DỊCH — SẼ TỰ ĐỘNG KÍCH HOẠT THÀNH KẾ HOẠCH CHÍNH THỨC LÚC 08H30. Tài sản live: Cổ phiếu 8,875,000đ (PnL +97,400đ / +1.11%), Tiền mặt 11,389,522đ (56.2% NAV • Tổng NAV 20,264,522đ). Sẵn sàng vùng mua LO sau 14h00: TCH, IDC, TCB | Cấm bắt đáy: PVT, BSR, SZC. (Bản Demo tự động hiệu chỉnh ngay khi bảng điện ngày mai biến động!)"
+  },
+  {
+    "id": "dir_2026-11-18_victor_247_19973",
+    "timestamp": "04:09:08",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 7 tín hiệu trọng yếu: HDB (22,400đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+1.52%)) • TCH (13,250đ: 🟢 ĐẠT VÙNG MUA LO (6.5% NAV)) • IDC (34,400đ: 🟢 ĐẠT VÙNG MUA LO (17.0% NAV)) • TCB (21,150đ: 🟢 ĐẠT VÙNG MUA LO (10.4% NAV)) • PVT (19,800đ: 🟠 ÁP LỰC CUNG (BuyUp 19.3%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-18_near_stop_HDB",
+    "timestamp": "04:09:08",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "⚠️ [THEO DÕI CẬN NGƯỠNG BẢO VỆ — HDB] Giá live 22,400 đ hiện cách mốc Stop/Cảnh báo (22,060 đ) 1.52%. Tuyệt đối KHÔNG bình quân giá xuống; kiểm định nến lúc 14h15!"
+  },
+  {
+    "id": "2026-11-18_TCB_BUYZONE",
+    "key": "2026-11-18_TCB_BUYZONE",
+    "timestamp": "04:09:08",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — TCB ĐẠT VÙNG MUA LO] Giá 21,150 ₫ (-0.70%) sát mục tiêu 21,500 ₫, Mua chủ động 55.4%, Stop 20,847 ₫, TP1 25,827 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-18_MBB_BUYZONE",
+    "key": "2026-11-18_MBB_BUYZONE",
+    "timestamp": "04:09:08",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — MBB ĐẠT VÙNG MUA LO] Giá 18,950 ₫ (-0.26%) sát mục tiêu 19,000 ₫, Mua chủ động 69.2%, Stop 18,478 ₫, TP1 22,635 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "dir_2026-11-18_victor_247_7439",
+    "timestamp": "04:10:07",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 7 tín hiệu trọng yếu: HDB (22,400đ: 🟡 CẬN NGƯỠNG BẢO VỆ (+1.52%)) • TCH (13,250đ: 🟢 ĐẠT VÙNG MUA LO (6.5% NAV)) • IDC (34,400đ: 🟢 ĐẠT VÙNG MUA LO (17.0% NAV)) • TCB (21,150đ: 🟢 ĐẠT VÙNG MUA LO (10.4% NAV)) • PVT (19,800đ: 🟠 ÁP LỰC CUNG (BuyUp 19.3%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "cbtt_2026-11-18_CRITICAL_PLX_99557",
+    "key": "cbtt_2026-11-18_CRITICAL_PLX_99557",
+    "timestamp": "07:33:59",
     "sender": "Hiền (Ban 10 CBTT Radar)",
     "role": "specialist",
     "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — HAG] Dù Bầu Đức tuyên bố \"nếu 1-2 năm nữa mà lỗ, cứ kêu tôi ra chửi\": Cổ phiếu HAG xuống đáy 16 tháng, giảm gần 30% sau 1 năm (BCTC_KET_QUA_KINH_DOANH)"
+    "content": "[📊 BCTC MỚI — PLX] Petrolimex (PLX) dự báo lãi kỷ lục gần 4.500 tỷ đồng trong năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
   },
   {
-    "id": "cbtt_2026-11-18_CRITICAL_PNJ_6443",
-    "key": "cbtt_2026-11-18_CRITICAL_PNJ_6443",
-    "timestamp": "14:50:52",
+    "id": "cbtt_2026-11-18_CRITICAL_KDH_55639",
+    "key": "cbtt_2026-11-18_CRITICAL_KDH_55639",
+    "timestamp": "07:33:59",
     "sender": "Hiền (Ban 10 CBTT Radar)",
     "role": "specialist",
     "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — PNJ] PNJ thay Trưởng kiểm toán nội bộ sau quý lỗ 258 tỷ đồng, cắt giảm hơn 1.000 lao động (BCTC_KET_QUA_KINH_DOANH)"
+    "content": "[📊 BCTC MỚI — KDH] Doanh thu thuần giảm 83%, Khang Điền (KDH) vẫn được dự báo lãi ròng hơn 1.500 tỷ đồng năm 2026 (BCTC_KET_QUA_KINH_DOANH)"
   },
   {
-    "id": "cbtt_2026-11-18_CRITICAL_FPT_94613",
-    "key": "cbtt_2026-11-18_CRITICAL_FPT_94613",
-    "timestamp": "14:50:52",
+    "id": "cbtt_2026-11-18_CRITICAL_GMD_55586",
+    "key": "cbtt_2026-11-18_CRITICAL_GMD_55586",
+    "timestamp": "07:33:59",
     "sender": "Hiền (Ban 10 CBTT Radar)",
     "role": "specialist",
     "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — FPT] FPT thủng đáy, loạt CTCK đưa ra khuyến nghị bất ngờ (BCTC_KET_QUA_KINH_DOANH)"
+    "content": "[📊 BCTC MỚI — GMD] Lộ diện “con gà đẻ trứng vàng” của Gemadept (GMD), đóng góp gần 40% lợi nhuận trước thuế (BCTC_KET_QUA_KINH_DOANH)"
   },
   {
-    "id": "cbtt_2026-11-18_CRITICAL_FPT_72178",
-    "key": "cbtt_2026-11-18_CRITICAL_FPT_72178",
-    "timestamp": "14:50:52",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — FPT] FPT công bố thông tin quan trọng (BCTC_KET_QUA_KINH_DOANH)"
-  },
-  {
-    "id": "cbtt_2026-11-18_CRITICAL_PNJ_97435",
-    "key": "cbtt_2026-11-18_CRITICAL_PNJ_97435",
-    "timestamp": "14:50:52",
+    "id": "cbtt_2026-11-18_CRITICAL_PNJ_52426",
+    "key": "cbtt_2026-11-18_CRITICAL_PNJ_52426",
+    "timestamp": "07:33:59",
     "sender": "Hiền (Ban 10 CBTT Radar)",
     "role": "specialist",
     "type": "cbtt_critical",
     "content": "[📊 BCTC MỚI — PNJ] Tổng Giám đốc Phan Quốc Công tạm lỗ 20 tỷ sau cú \"bắt đáy\" PNJ (BCTC_KET_QUA_KINH_DOANH)"
   },
   {
+    "id": "cbtt_2026-11-18_CRITICAL_SHS_26264",
+    "key": "cbtt_2026-11-18_CRITICAL_SHS_26264",
+    "timestamp": "07:33:59",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — SHS] Chứng khoán xuất hiện mức định giá hiếm thấy, CTCK chỉ điểm 8 cổ phiếu tiềm năng (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
     "id": "sec_2026-11-18_AAPL_10-K_2026-11-03",
     "key": "sec_2026-11-18_AAPL_10-K_2026-11-03",
-    "timestamp": "14:50:52",
+    "timestamp": "07:33:59",
     "sender": "Hiền (Ban 10 SEC EDGAR)",
     "role": "specialist",
     "type": "sec_filing",
@@ -81,7 +140,7 @@
   {
     "id": "sec_2026-11-18_TSLA_10-Q_2026-10-22",
     "key": "sec_2026-11-18_TSLA_10-Q_2026-10-22",
-    "timestamp": "14:50:52",
+    "timestamp": "07:33:59",
     "sender": "Hiền (Ban 10 SEC EDGAR)",
     "role": "specialist",
     "type": "sec_filing",
@@ -90,55 +149,10 @@
   {
     "id": "sec_2026-11-18_PLTR_10-Q_2026-11-03",
     "key": "sec_2026-11-18_PLTR_10-Q_2026-11-03",
-    "timestamp": "14:50:52",
+    "timestamp": "07:33:59",
     "sender": "Hiền (Ban 10 SEC EDGAR)",
     "role": "specialist",
     "type": "sec_filing",
     "content": "[📊 SEC 10-Q — PLTR] 10-Q (2026-11-03)"
-  },
-  {
-    "id": "cbtt_2026-11-18_CRITICAL_HAG_13953",
-    "key": "cbtt_2026-11-18_CRITICAL_HAG_13953",
-    "timestamp": "00:15:10",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — HAG] Dù Bầu Đức tuyên bố \"nếu 1-2 năm nữa mà lỗ, cứ kêu tôi ra chửi\": Cổ phiếu HAG xuống đáy 16 tháng, giảm gần 30% sau 1 năm (BCTC_KET_QUA_KINH_DOANH)"
-  },
-  {
-    "id": "cbtt_2026-11-18_CRITICAL_PNJ_41669",
-    "key": "cbtt_2026-11-18_CRITICAL_PNJ_41669",
-    "timestamp": "00:15:10",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — PNJ] PNJ thay Trưởng kiểm toán nội bộ sau quý lỗ 258 tỷ đồng, cắt giảm hơn 1.000 lao động (BCTC_KET_QUA_KINH_DOANH)"
-  },
-  {
-    "id": "cbtt_2026-11-18_RED_FLAG_PNJ_36994",
-    "key": "cbtt_2026-11-18_RED_FLAG_PNJ_36994",
-    "timestamp": "00:15:10",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "sentinel",
-    "type": "cbtt_red_flag",
-    "content": "[🔴 RED FLAG — PNJ] Nóng: Bảo Tín Minh Châu, PNJ, DOJI, SJC vào danh sách thanh tra năm 2027 (CANH_BAO_RUI_RO)"
-  },
-  {
-    "id": "cbtt_2026-11-18_CRITICAL_FPT_82154",
-    "key": "cbtt_2026-11-18_CRITICAL_FPT_82154",
-    "timestamp": "00:15:10",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — FPT] FPT thủng đáy, loạt CTCK đưa ra khuyến nghị bất ngờ (BCTC_KET_QUA_KINH_DOANH)"
-  },
-  {
-    "id": "cbtt_2026-11-18_CRITICAL_FPT_60083",
-    "key": "cbtt_2026-11-18_CRITICAL_FPT_60083",
-    "timestamp": "00:15:10",
-    "sender": "Hiền (Ban 10 CBTT Radar)",
-    "role": "specialist",
-    "type": "cbtt_critical",
-    "content": "[📊 BCTC MỚI — FPT] FPT công bố thông tin quan trọng (BCTC_KET_QUA_KINH_DOANH)"
   }
 ]

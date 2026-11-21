@@ -247,19 +247,34 @@ def run_scale_invariance_test(ticker_data: Dict[str, Any], k: float = 0.382) -> 
     phải giữ nguyên 100% khi quy mô tài chính nhân hệ số vô hướng k.
     Sai lệch > 10^-5 là bằng chứng trực tiếp của lỗi ảo giác số học.
     """
-    # 1. Chạy với dữ liệu nguyên bản
-    res_orig = audit_vas_forensic_accounting(ticker_data)
-    
-    # 2. Nhân toàn bộ con số tuyệt đối với hệ số k
-    scaled_data = dict(ticker_data)
+    # 1. Tính lại các tỷ số từ số tuyệt đối gốc nếu thiếu rồi chạy kiểm toán bản gốc
+    orig_data = dict(ticker_data)
+    if orig_data.get("net_profit_ttm_ty"):
+        orig_data["ocf_to_profit_ratio"] = round(float(orig_data.get("ocf_ty", 0)) / float(orig_data["net_profit_ttm_ty"]), 2)
+    if orig_data.get("total_assets_ty") and orig_data.get("other_receivables_ty") is not None:
+        orig_data["other_receivables_to_assets_pct"] = round(float(orig_data["other_receivables_ty"]) / float(orig_data["total_assets_ty"]) * 100.0, 2)
+    res_orig = audit_vas_forensic_accounting(orig_data)
+
+    # 2. Nhân toàn bộ con số tuyệt đối với hệ số k và TÍNH LẠI tỷ số từ các tổng đã nhân k
+    scaled_data = dict(orig_data)
     scale_keys = [
         "revenue_ttm_ty", "net_profit_ttm_ty", "ocf_ty", "free_cash_flow_ty",
-        "cash_and_equiv_ty", "total_debt_ty", "net_cash_ty", "cip_over_3yrs_ty"
+        "cash_and_equiv_ty", "total_debt_ty", "net_cash_ty", "cip_over_3yrs_ty",
+        "total_assets_ty", "equity_ty", "receivables_ty", "other_receivables_ty", "unearned_revenue_ty", "cip_ty"
     ]
     for key in scale_keys:
         if key in scaled_data and scaled_data[key] is not None:
             scaled_data[key] = scaled_data[key] * k
-            
+
+    if scaled_data.get("net_profit_ttm_ty"):
+        scaled_data["ocf_to_profit_ratio"] = round(float(scaled_data.get("ocf_ty", 0)) / float(scaled_data["net_profit_ttm_ty"]), 2)
+    if scaled_data.get("total_assets_ty") and scaled_data.get("other_receivables_ty") is not None:
+        scaled_data["other_receivables_to_assets_pct"] = round(float(scaled_data["other_receivables_ty"]) / float(scaled_data["total_assets_ty"]) * 100.0, 2)
+    if scaled_data.get("revenue_ttm_ty") and scaled_data.get("receivables_ty") is not None:
+        scaled_data["receivables_to_rev_pct"] = round(float(scaled_data["receivables_ty"]) / float(scaled_data["revenue_ttm_ty"]) * 100.0, 2)
+    if scaled_data.get("equity_ty"):
+        scaled_data["debt_to_equity"] = round(float(scaled_data.get("total_debt_ty", 0)) / float(scaled_data["equity_ty"]), 2)
+
     res_scaled = audit_vas_forensic_accounting(scaled_data)
     
     # 3. So sánh độ lệch các chỉ số không thứ nguyên (dimensionless ratios)
@@ -332,38 +347,82 @@ def run_step1_forensic_audit(target_tickers: List[str] = ["HPG", "TCB", "MBB"]) 
     audit_results = {}
     robustness_tests = {}
     
+    import os as _os
+    import json as _json
+    live_path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "data", "vn_real_bctc_live.json")
+    live_stocks = {}
+    if _os.path.exists(live_path):
+        try:
+            with open(live_path, "r", encoding="utf-8") as lf:
+                live_stocks = _json.load(lf).get("stocks", {})
+        except Exception:
+            live_stocks = {}
+
     for sym in target_tickers:
-        if sym in bctc_db:
-            raw = bctc_db[sym]
-            # Bổ sung dữ liệu mô phỏng chi phí dở dang kéo dài để kiểm thử
-            if sym == "HPG":
-                # Hòa Phát có dự án Dung Quất 2, nhưng là dự án mới triển khai dưới 3 năm và đang chạy thử lò cao, dở dang hợp lệ
-                raw["cip_over_3yrs_ty"] = 0.0
-                raw["other_receivables_to_assets_pct"] = 4.2
-            elif sym == "TCB":
-                raw["cip_over_3yrs_ty"] = 0.0
-                raw["other_receivables_to_assets_pct"] = 2.1
-            elif sym == "MBB":
-                raw["cip_over_3yrs_ty"] = 0.0
-                raw["other_receivables_to_assets_pct"] = 1.8
-                
+        if sym in live_stocks and live_stocks[sym].get("latest_metrics"):
+            lm = live_stocks[sym]["latest_metrics"]
+            raw = dict(bctc_db.get(sym, {}))
+            raw.update({
+                "accounting_regime": lm.get("accounting_regime", raw.get("accounting_regime", "CORPORATE_VAS_TT200")),
+                "revenue_ttm_ty": float(lm.get("revenue_ttm_ty") or 0.0),
+                "net_profit_ttm_ty": float(lm.get("net_profit_ttm_ty") or 0.0),
+                "ocf_ty": float(lm.get("ocf_ty") or 0.0),
+                "free_cash_flow_ty": float(lm.get("fcf_ty") or 0.0),
+                "ocf_to_profit_ratio": float(lm.get("ocf_to_profit_ratio") or 0.0),
+                "cash_and_equiv_ty": float(lm.get("cash_and_equiv_ty") or 0.0),
+                "total_debt_ty": float(lm.get("total_debt_ty") or 0.0),
+                "net_cash_ty": float(lm.get("net_cash_ty") or 0.0),
+                "total_assets_ty": float(lm.get("total_assets_ty") or 0.0),
+                "equity_ty": float(lm.get("equity_ty") or 0.0),
+                "receivables_ty": float(lm.get("receivables_ty") or 0.0),
+                "other_receivables_ty": float(lm.get("other_receivables_ty") or 0.0),
+                "other_receivables_to_assets_pct": float(lm.get("other_receivables_to_assets_pct") or 0.0),
+                "cip_ty": float(lm.get("cip_ty") or 0.0),
+                "cip_over_3yrs_ty": 0.0,
+            })
+            # Chạy kiểm toán pháp y trên số liệu Q3/2026 thật từ Vietcap IQ
+            fa = audit_vas_forensic_accounting(raw)
+        elif sym in bctc_db:
+            raw = dict(bctc_db[sym])
             # Chạy kiểm toán pháp y
             fa = audit_vas_forensic_accounting(raw)
-            # Chạy 2 bài test khử ảo giác
+        else:
+            raw = None
+            fa = None
+
+        if raw is not None and fa is not None:
+            # Chạy 2 bài test khử ảo giác trên dữ liệu thực tế
             scale_test = run_scale_invariance_test(raw, k=0.382)
             anon_test = run_entity_anonymization_test(raw)
-            
+
             audit_results[sym] = fa
             robustness_tests[sym] = {
                 "scale_invariance_test": scale_test,
                 "entity_anonymization_test": anon_test
             }
-            
-    # Quét toàn bộ 54 mã để kiểm tra tỷ lệ sạch BCTC toàn vũ trụ
+
+    # Quét toàn bộ vũ trụ VN (ưu tiên BCTC Q3/2026 sống từ Vietcap IQ)
     clean_count = 0
     warning_count = 0
     flagged_count = 0
-    for sym, raw_item in bctc_db.items():
+    scan_symbols = list(dict.fromkeys(list(bctc_db.keys()) + list(live_stocks.keys())))
+    for sym in scan_symbols:
+        raw_item = dict(bctc_db.get(sym, {}))
+        if sym in live_stocks and live_stocks[sym].get("latest_metrics"):
+            lm = live_stocks[sym]["latest_metrics"]
+            raw_item.update({
+                "accounting_regime": lm.get("accounting_regime", raw_item.get("accounting_regime", "CORPORATE_VAS_TT200")),
+                "revenue_ttm_ty": float(lm.get("revenue_ttm_ty") or 0.0),
+                "net_profit_ttm_ty": float(lm.get("net_profit_ttm_ty") or 0.0),
+                "ocf_ty": float(lm.get("ocf_ty") or 0.0),
+                "free_cash_flow_ty": float(lm.get("fcf_ty") or 0.0),
+                "ocf_to_profit_ratio": float(lm.get("ocf_to_profit_ratio") or 0.0),
+                "cash_and_equiv_ty": float(lm.get("cash_and_equiv_ty") or 0.0),
+                "total_debt_ty": float(lm.get("total_debt_ty") or 0.0),
+                "net_cash_ty": float(lm.get("net_cash_ty") or 0.0),
+                "other_receivables_to_assets_pct": float(lm.get("other_receivables_to_assets_pct") or 0.0),
+                "cip_over_3yrs_ty": 0.0,
+            })
         res = audit_vas_forensic_accounting(raw_item)
         if res["forensic_verdict"] == "AUDIT_CLEAN_EXCELLENT":
             clean_count += 1
@@ -374,7 +433,7 @@ def run_step1_forensic_audit(target_tickers: List[str] = ["HPG", "TCB", "MBB"]) 
             
     summary = {
         "timestamp": datetime.datetime.now().isoformat(),
-        "total_universe_scanned": len(bctc_db),
+        "total_universe_scanned": len(scan_symbols),
         "clean_companies_count": clean_count,
         "minor_warning_count": warning_count,
         "high_risk_flagged_count": flagged_count,

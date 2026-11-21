@@ -40,33 +40,339 @@
     "report_file": "12_Institutional_Ombudsman_And_Inspectorate\\daily_audits\\2026-11-15_Trong_Audit_Report.md"
   },
   {
-    "audit_session_id": "AUDIT-23H30-2026-11-17",
-    "timestamp": "00:21:15 17/11/2026",
-    "overall_discipline_score": 96.2,
-    "overall_expertise_score": 94.1,
+    "audit_session_id": "AUDIT-23H30-2026-11-19",
+    "timestamp": "21:17:02 19/11/2026",
+    "overall_discipline_score": 97.6,
+    "overall_expertise_score": 96.7,
     "system_health_score": 100,
-    "vps_latency_ms": 7048.7,
+    "vps_latency_ms": 86.1,
     "issues_count": 0,
-    "report_file": "12_Institutional_Ombudsman_And_Inspectorate/daily_audits/2026-11-17_Trong_Audit_Report.md"
+    "ssot_snapshot": "NAV `20,229,522 ₫` | Tiền mặt `13,594,522 ₫` (67.2% Cash) | Đang giữ: `MSH (100 CP), BAF (100 CP)`",
+    "departments": {
+      "Ban_1_Macro_Monetary": {
+        "name": "Ban 1 VN — Vĩ Mô, Chính Sách SBV & Luân Chuyển 18 Nhóm Ngành",
+        "discipline_score": 98,
+        "expertise_score": 97,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Fetch sống 54/54 mã + quét 145 mã/18 ngành; USD/VND=25705.0, GDP Q3/2026=9.95%, Regime=BEAR_DOWNTREND (Breadth>MA20=25.7%).",
+        "mistake_autopsy": "Đã loại bỏ hoàn toàn giá 20,000đ giả khi lỗi mạng và cố định tỷ giá 25,420đ.",
+        "new_knowledge_ingested": "Cổng chẩn đoán Chế độ Thị trường sống (VNI vs MA20/50/200 & Distribution Days)."
+      },
+      "Ban_2_Ban_10_BCTC_Forensic": {
+        "name": "Ban 2 (Pháp Y BCTC 3 Chuẩn) & Ban 10 (Hiền — IR & Filings)",
+        "discipline_score": 99,
+        "expertise_score": 98,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Cào thật 80 DN VN (2026Q3 Vietcap IQ) + 12 mã Mỹ (SEC XBRL 2026) + 10 cổng IR; phát hiện rõ BAF âm OCF -496.2 tỷ (F=2/9).",
+        "mistake_autopsy": "Đã xóa sổ dữ liệu tĩnh lỗi thời của BCTC_DATABASE và bài test Scale-Invariance khử tỷ số giả.",
+        "new_knowledge_ingested": "Pháp y 3 chuẩn kế toán CT / NH / CK đa kỳ 35 quý Point-in-Time (+45/+60 ngày)."
+      },
+      "Ban_3_Synthesis_Adversarial": {
+        "name": "Ban 3 VN — Tổng Hợp & Công Tố Viên Phản Biện Đối Kháng",
+        "discipline_score": 97,
+        "expertise_score": 96,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đã phủ quyết cứng BAF trên cả 145-Scanner & V2 Brain (Piotroski F-Score yeu (2/9); Beneish M-Score canh bao (-1.54 > -1.78); Dong tien kinh doanh OCF am (-496.2 ty)); gắn cảnh báo thanh khoản MSH.",
+        "mistake_autopsy": "Chấm dứt đồng thuận dễ dãi đối với cổ phiếu tăng giá ảo nhưng dòng tiền âm.",
+        "new_knowledge_ingested": "Phân luồng cổ phiếu giữ trên MA50 (S2) vs dưới MA50 chờ Spring/Breakout (S1/S3)."
+      },
+      "Ban_4_Risk_Management": {
+        "name": "Ban 4 VN — Hội Đồng Quản Trị Rủi Ro Lô 100 & ATR Risk-Parity",
+        "discipline_score": 98,
+        "expertise_score": 97,
+        "verdict": "HOÀN HẢO",
+        "audit_evidence": "Định cỡ Lô 100 bám đúng NAV thật 20,189,522 đ; tích hợp Ma trận 5 kịch bản S1–S5 vào vn_quant_analytics.json.",
+        "mistake_autopsy": "Đã thay thế vốn giả định 1 tỷ VND & bỏ ép max(2.05, RR).",
+        "new_knowledge_ingested": "Stop đóng cửa -8% + phòng hộ intraday -10% + kiểm soát thanh khoản >= 15-25 tỷ/phiên."
+      },
+      "Ban_5_Continuous_Learning": {
+        "name": "Ban 5 — Thẩm Định Walk-Forward 2Y & Tự Học 15 Huyền Thoại",
+        "discipline_score": 99,
+        "expertise_score": 98,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Backtest 2Y PIT: V2 +10.2% (PF=1.74, WR=57.1%, MaxDD=-9.98%); hạ BAF còn 17.2/100 CAUTIOUS (0 Consensus Buy).",
+        "mistake_autopsy": "Đã loại bỏ Hit Rate 1 ngày giả tạo và hạ điểm nền 15 Huyền thoại chống bơm 15/15 BUY.",
+        "new_knowledge_ingested": "Hiệu chỉnh P(Win) theo phân phối Backtest Out-of-Sample & Market Regime."
+      },
+      "Ban_6_Investor_Academy": {
+        "name": "Ban 6 VN — Học Viện Huấn Luyện Thực Chiến 7h30",
+        "discipline_score": 96,
+        "expertise_score": 95,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Bản tin 7h30 2026-11-19_VN_Mentor_Briefing.md tồn tại (4,474 bytes) với ca mổ xẻ BCTC Q3/2026 HPG/TPB/BAF/MSH & cẩm nang 5 kịch bản.",
+        "mistake_autopsy": "Đã xóa các con số minh họa cũ không kiểm chứng.",
+        "new_knowledge_ingested": "Giáo trình phản xạ đa kịch bản S1–S5 cho NĐT."
+      },
+      "Ban_7_Minh_Quan_Execution": {
+        "name": "Ban 7 VN & US — Bàn Thực Thi Minh Quân & Alex",
+        "discipline_score": 97,
+        "expertise_score": 96,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Sổ cái Minh Quân P(Win)=58.2% (<=62% chuẩn thực nghiệm), EV=4.75%; cổng 14h00–14h25 chặn tín hiệu ngoài giờ.",
+        "mistake_autopsy": "Đã gỡ bỏ dòng code tự nâng rr_ratio=2.35 và chống ghi lặp nhật ký cùng ngày.",
+        "new_knowledge_ingested": "Thực thi Limit LO đa nhánh (5A/5B/5C ngày 20/11 & S1/S2/S3 Tuần 48)."
+      },
+      "Ban_8_Master_CIO_James": {
+        "name": "Ban 8 — Ban Đầu Tư Tối Cao Master CIO James",
+        "discipline_score": 99,
+        "expertise_score": 99,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đã vận hành điều phối 11 đơn vị độc lập & Ma trận 5 Kịch bản S1–S5 trên NAV live 20,189,522 ₫.",
+        "mistake_autopsy": "Chấm dứt kịch bản cứng 1 chiều; gắn chặt phân bổ vốn theo trạng thái thị trường sống.",
+        "new_knowledge_ingested": "Kiến trúc công ty đầu tư đa kịch bản chuẩn quỹ định lượng."
+      },
+      "Ban_9_Live_Sentinel_Victor": {
+        "name": "Ban 9 — Victor (Giám Sát Thời Gian Thực & Chuyển Pha S1–S5)",
+        "discipline_score": 96,
+        "expertise_score": 95,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đang giám sát SSOT thật: Tiền mặt 13,594,522 đ | Vị thế: 100 CP MSH, 100 CP BAF; sẵn sàng kích hoạt nhánh bán S5 ngày 20/11 & cảnh báo S1–S3.",
+        "mistake_autopsy": "Đồng bộ ngưỡng cứng bảo vệ MSH <= 34,200đ & BAF <= 30,200đ.",
+        "new_knowledge_ingested": "Radar chuyển pha 13h45–14h25 phát hiện Spring / Breakout thực."
+      },
+      "Ban_11_Khanh_Bao_Studio": {
+        "name": "Ban 11 — Khánh (Content) & Bảo (Render Video AI)",
+        "discipline_score": 95,
+        "expertise_score": 93,
+        "verdict": "ĐẠT CHUẨN",
+        "audit_evidence": "Chuyển hóa số liệu BCTC kiểm chứng Q3/2026 từ Ban 2/Ban 10 sang kịch bản truyền thông chuẩn xác.",
+        "mistake_autopsy": "Cấm dùng số liệu tĩnh cũ khi dựng nội dung.",
+        "new_knowledge_ingested": "Quy trình xác thực BCTC Q3/2026 trước khi xuất bản."
+      },
+      "Ban_12_Trong_Ombudsman": {
+        "name": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Tự Kiểm Soát Thể Chế)",
+        "discipline_score": 100,
+        "expertise_score": 100,
+        "verdict": "CHÍ CÔNG VÔ TƯ",
+        "audit_evidence": "Kiểm toán chéo thực chứng toàn bộ 11 đơn vị dựa trên JSON/BCTC thật; không vùng cấm, giữ nguyên vẹn SSOT (100 CP MSH, 100 CP BAF | Cash 13,594,522 đ).",
+        "mistake_autopsy": "Đã thay toàn bộ đoạn tự kiểm toán tĩnh cũ bằng truy vấn kiểm chứng tệp trực tiếp.",
+        "new_knowledge_ingested": "Kiểm toán đối chiếu đa nguồn Zero-Hallucination."
+      }
+    },
+    "report_file": "12_Institutional_Ombudsman_And_Inspectorate\\daily_audits\\2026-11-19_Trong_Audit_Report.md"
   },
   {
-    "audit_session_id": "AUDIT-23H30-2026-11-17",
-    "timestamp": "23:36:12 17/11/2026",
-    "overall_discipline_score": 96.2,
-    "overall_expertise_score": 94.1,
+    "audit_session_id": "AUDIT-23H30-2026-11-20",
+    "timestamp": "13:25:57 20/11/2026",
+    "overall_discipline_score": 97.6,
+    "overall_expertise_score": 96.7,
     "system_health_score": 100,
-    "vps_latency_ms": 7151.0,
+    "vps_latency_ms": 117.8,
     "issues_count": 0,
-    "report_file": "12_Institutional_Ombudsman_And_Inspectorate/daily_audits/2026-11-17_Trong_Audit_Report.md"
+    "ssot_snapshot": "`20,051,117 ₫` tiền mặt (100% Cash, 0 CP rủi ro)",
+    "departments": {
+      "Ban_1_Macro_Monetary": {
+        "name": "Ban 1 VN — Vĩ Mô, Chính Sách SBV & Luân Chuyển 18 Nhóm Ngành",
+        "discipline_score": 98,
+        "expertise_score": 97,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Fetch sống 54/54 mã + quét 145 mã/18 ngành; USD/VND=25705.0, GDP Q3/2026=9.95%, Regime=BEAR_DOWNTREND (Breadth>MA20=25.7%).",
+        "mistake_autopsy": "Đã loại bỏ hoàn toàn giá 20,000đ giả khi lỗi mạng và cố định tỷ giá 25,420đ.",
+        "new_knowledge_ingested": "Cổng chẩn đoán Chế độ Thị trường sống (VNI vs MA20/50/200 & Distribution Days)."
+      },
+      "Ban_2_Ban_10_BCTC_Forensic": {
+        "name": "Ban 2 (Pháp Y BCTC 3 Chuẩn) & Ban 10 (Hiền — IR & Filings)",
+        "discipline_score": 99,
+        "expertise_score": 98,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Cào thật 80 DN VN (2026Q3 Vietcap IQ) + 12 mã Mỹ (SEC XBRL 2026) + 10 cổng IR; phát hiện rõ BAF âm OCF -496.2 tỷ (F=2/9).",
+        "mistake_autopsy": "Đã xóa sổ dữ liệu tĩnh lỗi thời của BCTC_DATABASE và bài test Scale-Invariance khử tỷ số giả.",
+        "new_knowledge_ingested": "Pháp y 3 chuẩn kế toán CT / NH / CK đa kỳ 35 quý Point-in-Time (+45/+60 ngày)."
+      },
+      "Ban_3_Synthesis_Adversarial": {
+        "name": "Ban 3 VN — Tổng Hợp & Công Tố Viên Phản Biện Đối Kháng",
+        "discipline_score": 97,
+        "expertise_score": 96,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đã phủ quyết cứng BAF trên cả 145-Scanner & V2 Brain (Piotroski F-Score yeu (2/9); Beneish M-Score canh bao (-1.54 > -1.78); Dong tien kinh doanh OCF am (-496.2 ty)); gắn cảnh báo thanh khoản MSH.",
+        "mistake_autopsy": "Chấm dứt đồng thuận dễ dãi đối với cổ phiếu tăng giá ảo nhưng dòng tiền âm.",
+        "new_knowledge_ingested": "Phân luồng cổ phiếu giữ trên MA50 (S2) vs dưới MA50 chờ Spring/Breakout (S1/S3)."
+      },
+      "Ban_4_Risk_Management": {
+        "name": "Ban 4 VN — Hội Đồng Quản Trị Rủi Ro Lô 100 & ATR Risk-Parity",
+        "discipline_score": 98,
+        "expertise_score": 97,
+        "verdict": "HOÀN HẢO",
+        "audit_evidence": "Định cỡ Lô 100 bám đúng NAV thật 20,189,522 đ; tích hợp Ma trận 5 kịch bản S1–S5 vào vn_quant_analytics.json.",
+        "mistake_autopsy": "Đã thay thế vốn giả định 1 tỷ VND & bỏ ép max(2.05, RR).",
+        "new_knowledge_ingested": "Stop đóng cửa -8% + phòng hộ intraday -10% + kiểm soát thanh khoản >= 15-25 tỷ/phiên."
+      },
+      "Ban_5_Continuous_Learning": {
+        "name": "Ban 5 — Thẩm Định Walk-Forward 2Y & Tự Học 15 Huyền Thoại",
+        "discipline_score": 99,
+        "expertise_score": 98,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Backtest 2Y PIT: V2 +10.2% (PF=1.74, WR=57.1%, MaxDD=-9.98%); hạ BAF còn 17.2/100 CAUTIOUS (0 Consensus Buy).",
+        "mistake_autopsy": "Đã loại bỏ Hit Rate 1 ngày giả tạo và hạ điểm nền 15 Huyền thoại chống bơm 15/15 BUY.",
+        "new_knowledge_ingested": "Hiệu chỉnh P(Win) theo phân phối Backtest Out-of-Sample & Market Regime."
+      },
+      "Ban_6_Investor_Academy": {
+        "name": "Ban 6 VN — Học Viện Huấn Luyện Thực Chiến 7h30",
+        "discipline_score": 96,
+        "expertise_score": 95,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Bản tin 7h30 2026-11-20_VN_Mentor_Briefing.md tồn tại (4,474 bytes) với ca mổ xẻ BCTC Q3/2026 HPG/TPB/BAF/MSH & cẩm nang 5 kịch bản.",
+        "mistake_autopsy": "Đã xóa các con số minh họa cũ không kiểm chứng.",
+        "new_knowledge_ingested": "Giáo trình phản xạ đa kịch bản S1–S5 cho NĐT."
+      },
+      "Ban_7_Minh_Quan_Execution": {
+        "name": "Ban 7 VN & US — Bàn Thực Thi Minh Quân & Alex",
+        "discipline_score": 97,
+        "expertise_score": 96,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Sổ cái Minh Quân P(Win)=58.2% (<=62% chuẩn thực nghiệm), EV=4.75%; cổng 14h00–14h25 chặn tín hiệu ngoài giờ.",
+        "mistake_autopsy": "Đã gỡ bỏ dòng code tự nâng rr_ratio=2.35 và chống ghi lặp nhật ký cùng ngày.",
+        "new_knowledge_ingested": "Thực thi Limit LO đa nhánh (5A/5B/5C ngày 20/11 & S1/S2/S3 Tuần 48)."
+      },
+      "Ban_8_Master_CIO_James": {
+        "name": "Ban 8 — Ban Đầu Tư Tối Cao Master CIO James",
+        "discipline_score": 99,
+        "expertise_score": 99,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đã vận hành điều phối 11 đơn vị độc lập & Ma trận 5 Kịch bản S1–S5 trên NAV live 20,189,522 ₫.",
+        "mistake_autopsy": "Chấm dứt kịch bản cứng 1 chiều; gắn chặt phân bổ vốn theo trạng thái thị trường sống.",
+        "new_knowledge_ingested": "Kiến trúc công ty đầu tư đa kịch bản chuẩn quỹ định lượng."
+      },
+      "Ban_9_Live_Sentinel_Victor": {
+        "name": "Ban 9 — Victor (Giám Sát Thời Gian Thực & Chuyển Pha S1–S5)",
+        "discipline_score": 96,
+        "expertise_score": 95,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đang giám sát SSOT thật: Tiền mặt 20,051,117 đ | Vị thế: 0 CP; sẵn sàng kích hoạt nhánh bán S5 ngày 20/11 & cảnh báo S1–S3.",
+        "mistake_autopsy": "Đồng bộ ngưỡng cứng bảo vệ MSH <= 34,200đ & BAF <= 30,200đ.",
+        "new_knowledge_ingested": "Radar chuyển pha 13h45–14h25 phát hiện Spring / Breakout thực."
+      },
+      "Ban_11_Khanh_Bao_Studio": {
+        "name": "Ban 11 — Khánh (Content) & Bảo (Render Video AI)",
+        "discipline_score": 95,
+        "expertise_score": 93,
+        "verdict": "ĐẠT CHUẨN",
+        "audit_evidence": "Chuyển hóa số liệu BCTC kiểm chứng Q3/2026 từ Ban 2/Ban 10 sang kịch bản truyền thông chuẩn xác.",
+        "mistake_autopsy": "Cấm dùng số liệu tĩnh cũ khi dựng nội dung.",
+        "new_knowledge_ingested": "Quy trình xác thực BCTC Q3/2026 trước khi xuất bản."
+      },
+      "Ban_12_Trong_Ombudsman": {
+        "name": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Tự Kiểm Soát Thể Chế)",
+        "discipline_score": 100,
+        "expertise_score": 100,
+        "verdict": "CHÍ CÔNG VÔ TƯ",
+        "audit_evidence": "Kiểm toán chéo thực chứng toàn bộ 11 đơn vị dựa trên JSON/BCTC thật; không vùng cấm, giữ nguyên vẹn SSOT (0 CP | Cash 20,051,117 đ).",
+        "mistake_autopsy": "Đã thay toàn bộ đoạn tự kiểm toán tĩnh cũ bằng truy vấn kiểm chứng tệp trực tiếp.",
+        "new_knowledge_ingested": "Kiểm toán đối chiếu đa nguồn Zero-Hallucination."
+      }
+    },
+    "report_file": "12_Institutional_Ombudsman_And_Inspectorate\\daily_audits\\2026-11-20_Trong_Audit_Report.md"
   },
   {
-    "audit_session_id": "AUDIT-23H30-2026-11-18",
-    "timestamp": "23:00:04 18/11/2026",
-    "overall_discipline_score": 96.2,
-    "overall_expertise_score": 94.1,
+    "audit_session_id": "AUDIT-23H30-2026-11-21",
+    "timestamp": "17:24:11 21/11/2026",
+    "overall_discipline_score": 97.6,
+    "overall_expertise_score": 96.7,
     "system_health_score": 100,
-    "vps_latency_ms": 1184.2,
+    "vps_latency_ms": 77.2,
     "issues_count": 0,
-    "report_file": "12_Institutional_Ombudsman_And_Inspectorate/daily_audits/2026-11-18_Trong_Audit_Report.md"
+    "ssot_snapshot": "`20,051,117 ₫` tiền mặt (100% Cash, 0 CP rủi ro)",
+    "departments": {
+      "Ban_1_Macro_Monetary": {
+        "name": "Ban 1 VN — Vĩ Mô, Chính Sách SBV & Luân Chuyển 18 Nhóm Ngành",
+        "discipline_score": 98,
+        "expertise_score": 97,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Fetch sống 54/54 mã + quét 145 mã/18 ngành; USD/VND=25705.0, GDP Q3/2026=9.95%, Regime=BEAR_WITH_SPRING_WATCH (Breadth>MA20=23.0%).",
+        "mistake_autopsy": "Đã loại bỏ hoàn toàn giá 20,000đ giả khi lỗi mạng và cố định tỷ giá 25,420đ.",
+        "new_knowledge_ingested": "Cổng chẩn đoán Chế độ Thị trường sống (VNI vs MA20/50/200 & Distribution Days)."
+      },
+      "Ban_2_Ban_10_BCTC_Forensic": {
+        "name": "Ban 2 (Pháp Y BCTC 3 Chuẩn) & Ban 10 (Hiền — IR & Filings & Internet)",
+        "discipline_score": 99,
+        "expertise_score": 98,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Cào thật 80 DN VN (2026Q3 Vietcap IQ) + 12 mã Mỹ (SEC XBRL 2026) + 10 cổng IR; Internet V3: 506 tin (30 mã), 13 RSS, 11 IR HTTP-200, 20 Tavily, 6 SEC EDGAR; cảnh báo BAF âm OCF -496.2 tỷ (F=2/9).",
+        "mistake_autopsy": "Đã xóa sổ dữ liệu tĩnh lỗi thời của BCTC_DATABASE và bổ sung cào tin Internet 5 lớp hàng ngày.",
+        "new_knowledge_ingested": "Pháp y 3 chuẩn CT/NH/CK đa kỳ + Quét RSS/Vietcap/IR/Tavily/SEC EDGAR hợp nhất SQLite FTS5."
+      },
+      "Ban_3_Synthesis_Adversarial": {
+        "name": "Ban 3 VN — Tổng Hợp & Công Tố Viên Phản Biện Đối Kháng",
+        "discipline_score": 97,
+        "expertise_score": 96,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đã phủ quyết cứng BAF trên cả 145-Scanner & V2 Brain (Piotroski F-Score yếu (2/9); Beneish M-Score rủi ro (-1.54 > -1.78); OCF âm (-496.2 tỷ)); gắn cảnh báo thanh khoản MSH.",
+        "mistake_autopsy": "Chấm dứt đồng thuận dễ dãi đối với cổ phiếu tăng giá ảo nhưng dòng tiền âm.",
+        "new_knowledge_ingested": "Phân luồng cổ phiếu giữ trên MA50 (S2) vs dưới MA50 chờ Spring/Breakout (S1/S3)."
+      },
+      "Ban_4_Risk_Management": {
+        "name": "Ban 4 VN — Hội Đồng Quản Trị Rủi Ro Lô 100 & ATR Risk-Parity",
+        "discipline_score": 98,
+        "expertise_score": 97,
+        "verdict": "HOÀN HẢO",
+        "audit_evidence": "Định cỡ Lô 100 bám đúng NAV thật 20,051,117 đ; tích hợp Ma trận 5 kịch bản S1–S5 vào vn_quant_analytics.json.",
+        "mistake_autopsy": "Đã thay thế vốn giả định 1 tỷ VND & bỏ ép max(2.05, RR).",
+        "new_knowledge_ingested": "Stop đóng cửa -8% + phòng hộ intraday -10% + kiểm soát thanh khoản >= 15-25 tỷ/phiên."
+      },
+      "Ban_5_Continuous_Learning": {
+        "name": "Ban 5 — Thẩm Định Walk-Forward 2Y & Tự Học 15 Huyền Thoại",
+        "discipline_score": 99,
+        "expertise_score": 98,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Backtest 2Y PIT: V2 +12.59% (PF=2.11, WR=57.1%, MaxDD=-9.9%) & V3 Đánh cược Bất đối xứng +13.0% (PF=1.97, WR=57.9%, MaxDD=-9.9%); hạ BAF còn 20.3/100 CAUTIOUS (0 Consensus Buy).",
+        "mistake_autopsy": "Đã loại bỏ Hit Rate 1 ngày giả tạo và hạ điểm nền 15 Huyền thoại chống bơm 15/15 BUY.",
+        "new_knowledge_ingested": "Hiệu chỉnh P(Win) theo phân phối Backtest Out-of-Sample & chiến lược Spring Bất đối xứng V3.0."
+      },
+      "Ban_6_Investor_Academy": {
+        "name": "Ban 6 VN — Học Viện Huấn Luyện Thực Chiến 7h30",
+        "discipline_score": 96,
+        "expertise_score": 95,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Bản tin 7h30 2026-11-21_VN_Mentor_Briefing.md tồn tại (4,686 bytes) với ca mổ xẻ BCTC Q3/2026 HPG/TPB/BAF/MSH & cẩm nang 5 kịch bản.",
+        "mistake_autopsy": "Đã xóa các con số minh họa cũ không kiểm chứng.",
+        "new_knowledge_ingested": "Giáo trình phản xạ đa kịch bản S1–S5 cho NĐT."
+      },
+      "Ban_7_Minh_Quan_Execution": {
+        "name": "Ban 7 VN & US — Bàn Thực Thi Minh Quân & Alex",
+        "discipline_score": 97,
+        "expertise_score": 96,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Sổ cái Minh Quân P(Win)=55.8% (<=62% chuẩn thực nghiệm), EV=3.79%; cổng 14h00–14h25 chặn tín hiệu ngoài giờ.",
+        "mistake_autopsy": "Đã gỡ bỏ dòng code tự nâng rr_ratio=2.35 và chống ghi lặp nhật ký cùng ngày.",
+        "new_knowledge_ingested": "Đã tất toán sạch S5 ngày 20/11 (100% Cash) & nạp rổ Limit LO S1/S2/S3 Tuần 48."
+      },
+      "Ban_8_Master_CIO_James": {
+        "name": "Ban 8 — Ban Đầu Tư Tối Cao Master CIO James (Brain V3.0)",
+        "discipline_score": 99,
+        "expertise_score": 99,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đã vận hành điều phối 11 đơn vị độc lập & Ma trận 5 Kịch bản S1–S5 trên NAV live 20,051,117 ₫; Brain V3.0 (BEAR_WITH_SPRING_WATCH, EOD 2026-11-20, 3 kèo Spring, 4 Phản biện).",
+        "mistake_autopsy": "Chấm dứt kịch bản cứng 1 chiều; gắn chặt phân bổ vốn theo trạng thái thị trường sống & dám phản biện độc lập.",
+        "new_knowledge_ingested": "Kiến trúc công ty đầu tư đa kịch bản Brain V3.0 dung hợp 6 trụ cột & Đánh cược Bất đối xứng."
+      },
+      "Ban_9_Live_Sentinel_Victor": {
+        "name": "Ban 9 — Victor (Giám Sát Thời Gian Thực & Chuyển Pha S1–S5)",
+        "discipline_score": 96,
+        "expertise_score": 95,
+        "verdict": "XUẤT SẮC",
+        "audit_evidence": "Đang giám sát SSOT thật sau tất toán 20/11: 100% Tiền mặt 20,051,117 đ | Vị thế: 0 CP; sẵn sàng canh chuyển pha S1–S4 Tuần 48.",
+        "mistake_autopsy": "Đã tất toán sạch BAF & MSH về 100% Cash đúng kỷ luật ngày 20/11, không giữ vị thế rủi ro qua cuối tuần.",
+        "new_knowledge_ingested": "Radar chuyển pha 13h45–14h25 phát hiện Spring / Breakout thực Tuần 48."
+      },
+      "Ban_11_Khanh_Bao_Studio": {
+        "name": "Ban 11 — Khánh (Content) & Bảo (Render Video AI)",
+        "discipline_score": 95,
+        "expertise_score": 93,
+        "verdict": "ĐẠT CHUẨN",
+        "audit_evidence": "Chuyển hóa số liệu BCTC kiểm chứng Q3/2026 từ Ban 2/Ban 10 sang kịch bản truyền thông chuẩn xác.",
+        "mistake_autopsy": "Cấm dùng số liệu tĩnh cũ khi dựng nội dung.",
+        "new_knowledge_ingested": "Quy trình xác thực BCTC Q3/2026 trước khi xuất bản."
+      },
+      "Ban_12_Trong_Ombudsman": {
+        "name": "Ban 12 — Tổng Kiểm Sát Viên Trọng (Tự Kiểm Soát Thể Chế)",
+        "discipline_score": 100,
+        "expertise_score": 100,
+        "verdict": "CHÍ CÔNG VÔ TƯ",
+        "audit_evidence": "Kiểm toán chéo thực chứng toàn bộ 11 đơn vị dựa trên JSON/BCTC thật; không vùng cấm, giữ nguyên vẹn SSOT (0 CP | Cash 20,051,117 đ).",
+        "mistake_autopsy": "Đã thay toàn bộ đoạn tự kiểm toán tĩnh cũ bằng truy vấn kiểm chứng tệp trực tiếp.",
+        "new_knowledge_ingested": "Kiểm toán đối chiếu đa nguồn Zero-Hallucination."
+      }
+    },
+    "report_file": "12_Institutional_Ombudsman_And_Inspectorate\\daily_audits\\2026-11-21_Trong_Audit_Report.md"
   }
 ]

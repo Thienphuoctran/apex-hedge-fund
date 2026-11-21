@@ -1,6 +1,6 @@
 {
   "vault_version": "VN-Mem0-Contextual-Vault-v2.2",
-  "updated_at": "2026-11-18",
+  "updated_at": "2026-11-21",
   "contextual_memories": [
     {
       "memory_id": "MEM-VN-001",
@@ -64,7 +64,7 @@
     {
       "memory_id": "MEM-EVO-VN-001",
       "category": "SELF_REFLECTION_AUTOPSY",
-      "regime_trigger": "Đánh giá tự động ngày 2026-11-15 | Cash 12,516,471₫ | Lỗi thực thi=1",
+      "regime_trigger": "Đánh giá tự động ngày 2026-11-21 | Cash 20,051,117₫ | Lỗi thực thi=1",
       "affected_tickers": [
         "HDB",
         "MSH",

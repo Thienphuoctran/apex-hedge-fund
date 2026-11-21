@@ -1,5 +1,1126 @@
 [
   {
+    "task_id": "TASK-AG2P-20261121-180750",
+    "created_at": "2026-11-21T18:07:50.962991",
+    "command_raw": "Trien khai He thong Tac chien Toan thi truong 09:00-16:00 tu dong + Push toan bo ban nang cap V3.0 len GitHub/Render Cloud",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+      "completed_tasks": [
+        "Trien khai He thong Tac chien Toan thi truong 09:00-16:00 tu dong + Push toan bo ban nang cap V3.0 len GitHub/Render Cloud",
+        "Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở",
+        "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+        "Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)"
+      ],
+      "active_decisions": {
+        "current_holdings_directive": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
+        "weekly_plan_directive": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+        "upgrade_progress_directive": "Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+      }
+    },
+    "logs": [
+      "18:07:50 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261121-172416",
+    "created_at": "2026-11-21T17:24:16.773001",
+    "command_raw": "Hoàn tất nâng cấp toàn diện Giai đoạn 1–4: Crawler Internet thực (506 tin/13 RSS/11 IR/20 Tavily/6 SEC), Đầu não Tự chủ V3.0 (+13.00% backtest, 4 Phản biện, 3 kèo Spring bất đối xứng), 11 Phòng ban đồng bộ EOD 20/11 & Ban 12 Trọng nghiệm thu — Sẵn sàng Tuần 48 (23/11) với 100% Cash 20,051,117 đ",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+      "completed_tasks": [
+        "Hoàn tất nâng cấp toàn diện Giai đoạn 1–4: Crawler Internet thực (506 tin/13 RSS/11 IR/20 Tavily/6 SEC), Đầu não Tự chủ V3.0 (+13.00% backtest, 4 Phản biện, 3 kèo Spring bất đối xứng), 11 Phòng ban đồng bộ EOD 20/11 & Ban 12 Trọng nghiệm thu — Sẵn sàng Tuần 48 (23/11) với 100% Cash 20,051,117 đ",
+        "Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở",
+        "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+        "Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)"
+      ],
+      "active_decisions": {
+        "current_holdings_directive": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
+        "weekly_plan_directive": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+        "upgrade_progress_directive": "Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+      }
+    },
+    "logs": [
+      "17:24:16 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261121-165203",
+    "created_at": "2026-11-21T16:52:03.873484",
+    "command_raw": "Hoàn tất Giai đoạn 1: Đồng bộ 2 chiều Palmer <-> James 100% & Triển khai hệ thống cào Internet/BCTC/IR đa nguồn hàng ngày V3.0",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+      "completed_tasks": [
+        "Hoàn tất Giai đoạn 1: Đồng bộ 2 chiều Palmer <-> James 100% & Triển khai hệ thống cào Internet/BCTC/IR đa nguồn hàng ngày V3.0",
+        "Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở",
+        "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+        "Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)"
+      ],
+      "active_decisions": {
+        "current_holdings_directive": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
+        "weekly_plan_directive": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+        "upgrade_progress_directive": "Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+      }
+    },
+    "logs": [
+      "16:52:03 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261121-164959",
+    "created_at": "2026-11-21T16:49:59.883726",
+    "command_raw": "Hoàn tất Giai đoạn 1: Đồng bộ 2 chiều Palmer <-> James 100% & Triển khai hệ thống cào Internet/BCTC/IR đa nguồn hàng ngày V3.0",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+      "completed_tasks": [
+        "Hoàn tất Giai đoạn 1: Đồng bộ 2 chiều Palmer <-> James 100% & Triển khai hệ thống cào Internet/BCTC/IR đa nguồn hàng ngày V3.0",
+        "Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở",
+        "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+        "Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)"
+      ],
+      "active_decisions": {
+        "current_holdings_directive": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
+        "weekly_plan_directive": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+        "upgrade_progress_directive": "Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+      }
+    },
+    "logs": [
+      "16:49:59 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-095707",
+    "created_at": "2026-11-19T09:57:07.356743",
+    "command_raw": "Tất toán toàn bộ cổ phiếu đang giữ hôm nay 19/11 về 100% tiền mặt, reset KPI từ tuần sau 23/11 mục tiêu +300k+/tuần",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Chủ tịch quyết định tất toán hết 100 CP MSH (khả dụng, đặt LO vùng 34.70-35.00đ) và 100 CP BAF (khả dụng từ 13h00, đặt LO vùng 30.95-31.30đ hoặc thoát trước 14h25), không mua mới hôm nay 19/11 và Thứ Sáu 20/11 để đưa danh mục về 100% Cash (~20.15M ₫, tiền bán về chiều Thứ Hai 23/11). Reset đồng hồ KPI từ Thứ Hai 23/11: mục tiêu thực chiến +300,000 ₫+/tuần thuận sóng (không hứa đảm bảo cứng mọi tuần bất chấp thị trường gãy) bằng công suất 70-85% NAV (14-17M ₫) vào rổ 13k-22.5k Vol >=2M (HPG, TCB, MBB, PVT, TCH: 200-300 CP/mã) và chốt tỉa 50% khi lãi +300k..+500k ₫.",
+      "completed_tasks": [
+        "Cập nhật weekly_tactical_plan_active.json sang lộ trình tất toán 19/11 & reset KPI Tuần 48 (23/11)",
+        "Đồng bộ Palmer & 00_LIVE_INTER_CHAT_STATE.md"
+      ],
+      "active_decisions": {
+        "regarding_bsr_baf": "BAF 100 CP chiều 19/11 (từ 13h00) hàng về sẽ bán tất toán LO vùng hồi 30.95-31.30đ (hoặc thoát gọn trước 14h25). Không giữ qua tuần, BSR tiếp tục đứng ngoài.",
+        "regarding_hdb_msh": "HDB đã thoát hòa 22.05đ hôm qua (đúng). MSH 100 CP khả dụng đặt LO vùng 34.70-35.00đ để tất toán thu tiền mặt trong ngày 19/11 (không quăng MP vì Vol mỏng).",
+        "regarding_weekly_plan": "Nghỉ giải ngân Thứ Năm 19/11 & Thứ Sáu 20/11 (100% Cash ~20.15M ₫). Reset KPI từ Thứ Hai 23/11 với mục tiêu +300k+/tuần trên tuần thuận sóng (70-85% NAV, rổ 13k-22.5k, chốt tỉa 50%); tuần thị trường xấu ưu tiên giữ 0 ₫ lỗ thay vì cố ép lệnh.",
+        "regarding_today_morning_tasks": "Đã cập nhật kế hoạch tất toán về 100% Cash ngày 19/11 và giao ước KPI thực tế tuần sau cho Palmer."
+      }
+    },
+    "logs": [
+      "09:57:07 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-095146",
+    "created_at": "2026-11-19T09:51:46.848859",
+    "command_raw": "Phân tích bảng điện 09:49 ngày 19/11/2026 & lập kế hoạch tác chiến chuẩn hôm nay",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Tại 09:49 ngày 19/11 (đáo hạn VN30F1M), cổ phiếu đang tạm -16,900đ (-0.26%: MSH 34.70 +19k, BAF 30.85 -35.9k), tổng NAV ~20,149,522đ (Cash 13,594,522đ = 67.5%). ALLSHARE yếu (80 xanh/120 đỏ = 30.9%, GTGD 818 tỷ), trụ VIC/VJC/GAS bị ép; HDB về 22.05 chứng minh VETO đúng. Chiến thuật hôm nay: 0đ buổi sáng; 13h đón 100 BAF về (giữ >=30.75, Hard Stop 30.05); MSH giữ nếu >=34.60 (thoát bảo vệ lãi nếu thủng 34.50); 14h00-14h25 mặc định 0đ, chỉ mở tối đa 100-200 CP TCB (20.80) hoặc HPG (20.55) nếu Breadth >=42-45% & Buy-Up >=60%; cấm ATC; giữ đạn bung 70-85% NAV đầu tuần sau 23-25/11.",
+      "completed_tasks": [
+        "Đọc bảng điện live TCBS 09:18 & 09:49 ngày 19/11/2026",
+        "Chốt kịch bản xử lý MSH, BAF chiều về & điều kiện giải ngân 14h00-14h25"
+      ],
+      "active_decisions": {
+        "regarding_bsr_baf": "BAF 100 CP (30.85) chiều 19/11 hàng về: giữ nếu >=30.75, có thể thoát hòa/lãi nhẹ quanh 31.20-31.35 nếu thị trường yếu; cắt dứt khoát tại Hard Stop 30.05. BSR (24.00) tiếp tục đứng ngoài.",
+        "regarding_hdb_msh": "HDB (22.05) VETO hết 20/11 (thoát hòa hôm qua chuẩn xác). MSH (34.70, Vol sáng mỏng 6.7K) thoát bảo vệ lãi nếu gãy 34.50 buổi chiều, Hard Stop 33.09.",
+        "regarding_weekly_plan": "Thứ Năm 19/11 mặc định 0đ (ngoại lệ 14h00-14h25 tối đa 100-200 CP TCB 20.80 hoặc HPG 20.55 nếu Breadth >=42-45%); Thứ Sáu <=45-55% NAV; Thứ Hai-Tư 23-25/11 mở công suất 70-85% NAV vào HPG/TCB/MBB/PVT/TCH (200-300 CP/mã).",
+        "regarding_today_morning_tasks": "Đã đối soát live TCBS 09:49 ngày 19/11 và phát hành kế hoạch tác chiến 4 khung giờ trong ngày."
+      }
+    },
+    "logs": [
+      "09:51:46 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-094727",
+    "created_at": "2026-11-19T09:47:27.699499",
+    "command_raw": "Triển khai Hành động 1 & 2: Dẹp văn mẫu/chấm điểm ảo, đồng bộ SSOT, chuẩn hóa Kế hoạch Tuần Sau công suất cao chuẩn Tuần Đầu (70-85% NAV, 13k-22.5k, 200-300 CP/mã)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất Hành động 1 & 2: (1) Gỡ bỏ toàn bộ điểm tự chấm ảo (98.5/100, P(W) 80.5%, 100/100) và văn mẫu Vòng 1 cũ ('20,167,119đ / 100% Cash / 03-05/11 / HDB holding') trong vn_daily_specialist, master_cio_allocator, eod_master_audit_engine, intraday_portfolio_sentinel, apex_tactical_war_room_engine, apex_institutional_cron_daemon, morning_war_room_hearing; (2) Đồng bộ SSOT TCBS 105C307855 (NAV 20,229,522đ, Cash 13,594,522đ = 67.2%, MSH 100 CP, BAF 100 CP) & số liệu Walk-Forward thật 35.3%; (3) Ban hành Kế hoạch Tuần Sau (23-27/11): Thứ Năm 19/11 mặc định 0đ (ngoại lệ 100 PVT), Thứ Sáu 20/11 giữ trần <= 45-55% NAV, Thứ Hai-Tư 23-25/11 bung công suất 70-85% NAV (14-17M đ) vào rổ 13k-22.5k thanh khoản >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/mã) và chốt tỉa 50% tại +2.5%..+4.0% (+300k..+500k đ).",
+      "completed_tasks": [
+        "Đồng bộ pre_flight_compliance_check.py & institutional_compliance_anchor.json khớp SSOT 13,594,522đ Cash / 20,229,522đ NAV",
+        "Sửa 7 script cốt lõi xóa sạch văn mẫu Vòng 1 & điểm ảo 98.5/100 / 80.5% P(W)",
+        "Ban hành Kế hoạch Tuần Sau 23-27/11 công suất 70-85% NAV chuẩn Tuần Đầu & cập nhật weekly_tactical_plan_active.json",
+        "Khôi phục trạng thái Hội nghị 04h30 APEX-SUMMIT-20261119-0430 chuẩn V10.0, vá Unittest & Comprehensive Audit"
+      ],
+      "active_decisions": {
+        "summit_id": "APEX-SUMMIT-20261119-0430",
+        "thursday_19_11": "Mac dinh 0d (giu 13.59M Cash); ngoai le 14h00-14h25 toi da 100 PVT (~19k) hoac TCB (~20.75k); VETO HDB toi 20/11",
+        "friday_20_11": "Khoa tran co phieu <= 45-55% NAV (cam bung full suc truoc cuoi tuan)",
+        "next_week_23_27_11": "Mo cong suat 70-85% NAV (14-17M d) vao Mon-Wed tren ro 13k-22.5k, vol20 >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/ma)",
+        "take_profit_rule": "Chot tia 50% (100-150 CP/ma) ngay khi dat +2.5%..+4.0% (+300k..+500k d) va nang Stop phan con lai ve gia von"
+      }
+    },
+    "logs": [
+      "09:47:27 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-094354",
+    "created_at": "2026-11-19T09:43:54.432300",
+    "command_raw": "Triển khai Hành động 1 & 2: Dẹp văn mẫu/chấm điểm ảo, đồng bộ SSOT, chuẩn hóa Kế hoạch Tuần Sau công suất cao chuẩn Tuần Đầu (70-85% NAV, 13k-22.5k, 200-300 CP/mã)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất Hành động 1 & 2: (1) Gỡ bỏ toàn bộ điểm tự chấm ảo (98.5/100, P(W) 80.5%, 100/100) và văn mẫu Vòng 1 cũ ('20,167,119đ / 100% Cash / 03-05/11 / HDB holding') trong vn_daily_specialist, master_cio_allocator, eod_master_audit_engine, intraday_portfolio_sentinel, apex_tactical_war_room_engine, apex_institutional_cron_daemon, morning_war_room_hearing; (2) Đồng bộ SSOT TCBS 105C307855 (NAV 20,229,522đ, Cash 13,594,522đ = 67.2%, MSH 100 CP, BAF 100 CP) & số liệu Walk-Forward thật 35.3%; (3) Ban hành Kế hoạch Tuần Sau (23-27/11): Thứ Năm 19/11 mặc định 0đ (ngoại lệ 100 PVT), Thứ Sáu 20/11 giữ trần <= 45-55% NAV, Thứ Hai-Tư 23-25/11 bung công suất 70-85% NAV (14-17M đ) vào rổ 13k-22.5k thanh khoản >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/mã) và chốt tỉa 50% tại +2.5%..+4.0% (+300k..+500k đ).",
+      "completed_tasks": [
+        "Đồng bộ pre_flight_compliance_check.py & institutional_compliance_anchor.json khớp SSOT 13,594,522đ Cash / 20,229,522đ NAV",
+        "Sửa 7 script cốt lõi xóa sạch văn mẫu Vòng 1 & điểm ảo 98.5/100 / 80.5% P(W)",
+        "Ban hành Kế hoạch Tuần Sau 23-27/11 công suất 70-85% NAV chuẩn Tuần Đầu & cập nhật weekly_tactical_plan_active.json",
+        "Khôi phục trạng thái Hội nghị 04h30 APEX-SUMMIT-20261119-0430 chuẩn V10.0, vá Unittest & Comprehensive Audit"
+      ],
+      "active_decisions": {
+        "summit_id": "APEX-SUMMIT-20261119-0430",
+        "thursday_19_11": "Mac dinh 0d (giu 13.59M Cash); ngoai le 14h00-14h25 toi da 100 PVT (~19k) hoac TCB (~20.75k); VETO HDB toi 20/11",
+        "friday_20_11": "Khoa tran co phieu <= 45-55% NAV (cam bung full suc truoc cuoi tuan)",
+        "next_week_23_27_11": "Mo cong suat 70-85% NAV (14-17M d) vao Mon-Wed tren ro 13k-22.5k, vol20 >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/ma)",
+        "take_profit_rule": "Chot tia 50% (100-150 CP/ma) ngay khi dat +2.5%..+4.0% (+300k..+500k d) va nang Stop phan con lai ve gia von"
+      }
+    },
+    "logs": [
+      "09:43:54 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-093702",
+    "created_at": "2026-11-19T09:37:02.254474",
+    "command_raw": "Triển khai Hành động 1 & 2: Dẹp văn mẫu/chấm điểm ảo, đồng bộ SSOT, chuẩn hóa Kế hoạch Tuần Sau công suất cao chuẩn Tuần Đầu (70-85% NAV, 13k-22.5k, 200-300 CP/mã)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất Hành động 1 & 2: (1) Gỡ bỏ toàn bộ điểm tự chấm ảo (98.5/100, P(W) 80.5%, 100/100) và văn mẫu Vòng 1 cũ ('20,167,119đ / 100% Cash / 03-05/11 / HDB holding') trong vn_daily_specialist, master_cio_allocator, eod_master_audit_engine, intraday_portfolio_sentinel, apex_tactical_war_room_engine, apex_institutional_cron_daemon, morning_war_room_hearing; (2) Đồng bộ SSOT TCBS 105C307855 (NAV 20,229,522đ, Cash 13,594,522đ = 67.2%, MSH 100 CP, BAF 100 CP) & số liệu Walk-Forward thật 35.3%; (3) Ban hành Kế hoạch Tuần Sau (23-27/11): Thứ Năm 19/11 mặc định 0đ (ngoại lệ 100 PVT), Thứ Sáu 20/11 giữ trần <= 45-55% NAV, Thứ Hai-Tư 23-25/11 bung công suất 70-85% NAV (14-17M đ) vào rổ 13k-22.5k thanh khoản >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/mã) và chốt tỉa 50% tại +2.5%..+4.0% (+300k..+500k đ).",
+      "completed_tasks": [
+        "Đồng bộ pre_flight_compliance_check.py & institutional_compliance_anchor.json khớp SSOT 13,594,522đ Cash / 20,229,522đ NAV",
+        "Sửa 7 script cốt lõi xóa sạch văn mẫu Vòng 1 & điểm ảo 98.5/100 / 80.5% P(W)",
+        "Ban hành Kế hoạch Tuần Sau 23-27/11 công suất 70-85% NAV chuẩn Tuần Đầu & cập nhật weekly_tactical_plan_active.json",
+        "Khôi phục trạng thái Hội nghị 04h30 APEX-SUMMIT-20261119-0430 chuẩn V10.0, vá Unittest & Comprehensive Audit"
+      ],
+      "active_decisions": {
+        "summit_id": "APEX-SUMMIT-20261119-0430",
+        "thursday_19_11": "Mac dinh 0d (giu 13.59M Cash); ngoai le 14h00-14h25 toi da 100 PVT (~19k) hoac TCB (~20.75k); VETO HDB toi 20/11",
+        "friday_20_11": "Khoa tran co phieu <= 45-55% NAV (cam bung full suc truoc cuoi tuan)",
+        "next_week_23_27_11": "Mo cong suat 70-85% NAV (14-17M d) vao Mon-Wed tren ro 13k-22.5k, vol20 >= 2M CP (PVT, TCB, MBB, HPG, TCH: 200-300 CP/ma)",
+        "take_profit_rule": "Chot tia 50% (100-150 CP/ma) ngay khi dat +2.5%..+4.0% (+300k..+500k d) va nang Stop phan con lai ve gia von"
+      }
+    },
+    "logs": [
+      "09:37:02 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-080357",
+    "created_at": "2026-11-19T08:03:57.675976",
+    "command_raw": "Thực hiện đợt Tổng Rà Soát Chất Lượng & Sức Khỏe 9 Phòng Ban Định Kỳ 4 Ngày (19/11/2026) do Phòng Tổng Hệ Thống (Apex Central System Governance) chủ trì",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất Tổng Rà Soát 9 Phòng Ban 19/11/2026: Điểm sức khỏe định kỳ 4 ngày 100/100 (149/149 scripts, 9/9 Ban, R:R>=2.0, Stop<=7.5%, 54/54 BCTC VN, 367 SEC + 54 CBTT, Telegram & Git OK; đã gửi Telegram). Kiểm toán sâu Guardrail Gate & Unittest phát hiện thêm một số điểm cần Chủ tịch duyệt sửa: Comprehensive Audit 54/58 (4 lỗi Phase 6/7 + model gemini-3.8-flash/2.5-flash 400/404), Unittest 29/36 pass (5 fail, 2 error do test còn assert cấu trúc Vòng 1), pre_flight_compliance_check đọc nhầm cash_balance_vnd cũ (20.16M thay vì 13.59M), và boilerplate Vòng 1 còn sót trong live_sentinel_status.md & Master_CIO_Final_Decision.md. Toàn bộ đề xuất khắc phục ở trạng thái CHỜ DUYỆT (Read-Only).",
+      "completed_tasks": [
+        "Chạy scripts/system_health_audit.py --force -> 100/100 (lưu 05_Learning_And_Evolution/system_health_audit/2026-11-19_4Day_System_Audit_Report.md & gửi Telegram)",
+        "Chạy kiểm toán chéo Ban 12 (apex_semantic_consistency_auditor.py) -> 37/37 báo cáo CLEAN, 0 vi phạm",
+        "Chạy kiểm toán Cloud Readiness & Comprehensive System Audit (verify_cloud_readiness_gate.py) -> 4/5 chốt chặn PASS (RAM Compact 118MB < 260MB), Comprehensive Audit 54/58 (4 lỗi Phase 6/7)",
+        "Chạy kiểm toán Unittest (tests/) -> 29/36 PASS, 5 FAIL, 2 ERROR (test assertions lệch cấu trúc mới)",
+        "Kiểm tra SSOT danh mục thực tế: NAV 20,229,522đ | Cash 13,594,522đ (67.2%) | MSH 100 CP @ 35,200đ (+69,000đ) & BAF 100 CP @ 31,150đ (-5,900đ)"
+      ],
+      "active_decisions": {
+        "regarding_bsr_baf": "Giữ 100 CP BAF (giá vốn 31,209đ, thị giá 31,150đ, Stop 30,050đ, TP1 33,200đ); VETO HDB/BSR/FPT theo Nghị quyết 04h30; cấm bắt đáy trước 14h00",
+        "regarding_hdb_msh": "Giữ bảo vệ 100 CP MSH (giá vốn 34,510đ, thị giá 35,200đ, +69,000đ, Stop 33,090đ, TP1 39,500đ); không giữ HDB (đã chốt thoát 18/11)",
+        "regarding_weekly_plan": "Kế hoạch đáo hạn VN30F1M 19/11: Két 13,594,522đ (67.2% Cash); chỉ kích hoạt lệnh mới 14h00-14h25 nếu đạt điều kiện Buy-Up >= 60% + Breadth + VSA",
+        "regarding_today_morning_tasks": "Đã hoàn tất Tổng Rà Soát 9 Phòng Ban 19/11/2026 (Audit Report 100/100 đã xuất & gửi Telegram) kèm danh sách 4 hạng mục lệch chuẩn kỹ thuật đang CHỜ CHỦ TỊCH DUYỆT SỬA."
+      }
+    },
+    "logs": [
+      "08:03:57 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-073436",
+    "created_at": "2026-11-19T07:34:36.473907",
+    "command_raw": "Thực thi quy trình Tổng Hợp Quỹ Đầu Tư Apex Master Unified Hedge Fund (Toàn diện 9 Phòng ban: US Global + Việt Nam + Master CIO Blotter + Telegram Morning Delivery) sáng 19/11/2026",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất 100% chu trình 9 Phòng ban sáng 19/11/2026 (127.1s): Quét 367 hồ sơ SEC EDGAR + 54 CBTT VN; Kiểm toán 35 mã US + 54 mã VN (PASSED_100_PERCENT); Chế độ Focused VN Sniper Mode (NAV 20,229,522đ, Cash 13,594,522đ = 67.2%, giữ MSH 100 CP @ 35,200đ & BAF 100 CP @ 31,150đ); Ban 9 Victor xác nhận 2 vị thế ỔN ĐỊNH; Đã gửi 3 bản tin sáng Telegram tới Chủ tịch Phước Trần và đồng bộ SQLite Lakehouse V5.0 + Titan Indexer.",
+      "completed_tasks": [
+        "Bước 0: Quét Radar CBTT VN (54 sự kiện) & SEC EDGAR (367 hồ sơ) + cảnh báo Telegram",
+        "Bước 1-2: Hoàn tất 7 Phòng ban Toàn cầu & Alex + 7 Phòng ban Việt Nam & Minh Quân",
+        "Bước 3-4: Ban 8 Master CIO xuất Master Blotter (2026-11-19_Master_CIO_Final_Decision.md) & Ban 9 Victor kiểm tra 2 vị thế MSH/BAF ỔN ĐỊNH",
+        "Bước 5-8: Giao 3 bản tin sáng Telegram thành công, lập chỉ mục Titan (tiết kiệm 97.1% token) & đồng bộ 476 báo cáo vào SQLite Lakehouse V5.0"
+      ],
+      "active_decisions": {
+        "regarding_bsr_baf": "Giữ 100 CP BAF (giá vốn 31,209đ, thị giá 31,150đ, Stop 30,050đ, TP1 33,200đ); VETO HDB/BSR/FPT theo Nghị quyết 04h30; cấm bắt đáy trước 14h00",
+        "regarding_hdb_msh": "Giữ bảo vệ 100 CP MSH (giá vốn 34,510đ, thị giá 35,200đ, +69,000đ, Stop 33,090đ, TP1 39,500đ); không giữ HDB (đã chốt thoát 18/11)",
+        "regarding_weekly_plan": "Kế hoạch đáo hạn VN30F1M 19/11: Két 13,594,522đ (67.2% Cash); chỉ kích hoạt lệnh mới 14h00-14h25 nếu đạt điều kiện Buy-Up >= 60% + Breadth + VSA",
+        "regarding_today_morning_tasks": "Đã chạy toàn bộ quy trình Master Unified Fund sáng 19/11/2026, phát 3 bản tin Telegram sáng, đồng bộ Titan Indexer & SQLite Lakehouse V5.0"
+      }
+    },
+    "logs": [
+      "07:34:36 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-043321",
+    "created_at": "2026-11-19T04:33:21.889032",
+    "command_raw": "Tổng kết Hội nghị Thượng đỉnh 04h30 sáng 19/11/2026 (16/16 phòng ban AI thật trực chiến trên máy Chủ tịch)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất Hội nghị 04h30 (APEX-SUMMIT-20261119-0430): ^VIX 24.56 (chưa < 23.5), .SPX 7,323.63 < MA200 -> Cautious High-Vol Rotation; NVDA Q3 FY27 ($115.8B +103% YoY) ra 17/11 giảm do CEO transition discount; PANW +8.04% AH ($367.25); VNM ETF +0.18% ($16.70). Kế hoạch đáo hạn VN30F1M 19/11 (TCBS 105C307855, NAV 20,229,522đ, Cash 13,594,522đ = 67.2%): MSH (Trail 34,600 / Hard 33,090), BAF (về chiều, Hard 30,050), VETO HDB/BSR/FPT; mặc định 0đ, điều kiện 14h00-14h25 LO 100 CP PVT @ ~19,000đ (Backup TCB @ 20,750đ) nếu Buy-Up >= 60% + Breadth >= 40-45% + VSA.",
+      "completed_tasks": [
+        "Ghi nhận đủ 7/7 mốc dữ liệu CNBC Real-Time API xuyên đêm (20:36 -> 04:23 ICT)",
+        "Hoàn tất tranh luận & bỏ phiếu 16/16 đơn vị + Chứng nhận Kiểm toán Trọng (Ban 12)",
+        "Xuất Nghị quyết James 04h30, Kế hoạch Tác chiến 19/11, Biên bản & Lưu kho APEX-SUMMIT-20261119-0430.json"
+      ],
+      "active_decisions": {
+        "summit_id": "APEX-SUMMIT-20261119-0430",
+        "vix_regime": "ELEVATED_TENSION_CAUTIOUS_ROTATION (^VIX 24.56 AH, .SPX 7,323.63 < MA200)",
+        "default_deployment_19_11": "0 VND (Giu 13,594,522d Cash = 67.2% NAV)",
+        "veto_list": [
+          "HDB (audit 48h toi 20/11)",
+          "BSR (WTI -3.57%)",
+          "FPT",
+          "DGC",
+          "MWG",
+          "FRT"
+        ],
+        "conditional_orders_1400_1425": "Toi da 100 CP PVT @ ~19,000d (Hard 17,700 / TP1 21,600) hoac backup TCB @ ~20,750d (Hard 19,300 / TP1 23,650) chi khi Buy-Up >= 60% + Breadth >= 40-45% + VSA",
+        "existing_positions": "MSH 100 CP (Trail 34,600 / Hard 33,090 / TP1 39,500) & BAF 100 CP T+1 ve chieu 19/11 (Hard 30,050 / TP1 33,200)",
+        "prohibited_windows": "Cam tuyet doi mua truoc 14:00 va cam lenh ATO/ATC ngay dao han VN30F1M"
+      }
+    },
+    "logs": [
+      "04:33:21 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-042359",
+    "created_at": "2026-11-19T04:23:59.577005",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (0425_NVDA_EARNINGS_AH) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[19/11 04:23:43 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,323.63 (-0.23%)`, `^IXIC 24,429.88 (+0.42%)`, **`^VIX 24.56 (-3.53%)`**, `US10Y 5.068%`, `DXY 103.81`, `NVDA $151.19 (-2.74%)` | **After-Hours NVDA: `$151.19` (`+0.15%` vs close)**, `SMH +0.07%`, `XLF -1.14%`, `VNM ETF 16.70 (+0.18%)`. | Tin nóng NVDA: [Nvidia interim CEO Colette Kress has taken over one of the most consequential companies on the planet; those who know her say she's up to the task] ; [How major US stock indexes fared Wednesday 11/18/2026]",
+      "completed_tasks": [
+        "Hoàn tất nhịp 0425_NVDA_EARNINGS_AH (04:23:43 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "0425_NVDA_EARNINGS_AH",
+        "vix": 24.56,
+        "nvda": 151.1932,
+        "nvda_ah": 151.1932
+      }
+    },
+    "logs": [
+      "04:23:59 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-040258",
+    "created_at": "2026-11-19T04:02:58.478223",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (0402_OFFICIAL_CLOSE) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[19/11 04:02:37 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,323.55 (-0.23%)`, `^IXIC 24,429.88 (+0.42%)`, **`^VIX 24.68 (-3.06%)`**, `US10Y 5.064%`, `DXY 103.78`, `NVDA $151.08 (-2.82%)` | **After-Hours NVDA: `$151.08` (`+0.08%` vs close)**, `SMH -0.05%`, `XLF -1.17%`, `VNM ETF 16.70 (+0.18%)`.",
+      "completed_tasks": [
+        "Hoàn tất nhịp 0402_OFFICIAL_CLOSE (04:02:37 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "0402_OFFICIAL_CLOSE",
+        "vix": 24.68,
+        "nvda": 151.08,
+        "nvda_ah": 151.08
+      }
+    },
+    "logs": [
+      "04:02:58 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-010621",
+    "created_at": "2026-11-19T01:06:21.416312",
+    "command_raw": "Cập nhật Nhịp 3 (01:05 ICT 19/11) — Dữ liệu thật CNBC & Xác minh BCTC NVDA",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "01:04 ICT (CNBC Live — phát hiện Yahoo Finance treo 10:52 EST): .SPX hồi lên 7,332.66 (-0.11% sát MA200 7,340), .IXIC đảo XANH 24,428.31 (+0.41%), .RUT +1.12%, ^VIX hạ nhiệt 24.16 (-5.11%), VNM ETF XANH 16.685 (+0.09%), CL=F giảm -4.63% (.03). Đính chính BCTC NVDA (nvidia.com): ĐÃ ra tối 17/11 AMC (.8B rev +103% YoY, Q4 , GM 74.8%) — NVDA giảm -2.31% (.87) thuần do Jensen Huang từ chức (Colette Kress Interim CEO), dòng tiền AI xoay sang AVGO (+2.82%) & AMD (+2.40%). Tối nay AMC theo dõi PANW lúc 04h05-04h20 & họp 04h30.",
+      "completed_tasks": [
+        "Nâng cấp engine dùng CNBC Real-Time API (chống treo Yahoo)",
+        "Xác minh BCTC NVDA Q3 FY27 từ nvidia.com",
+        "Cập nhật đánh giá 01h05 của Ban 1 US, Ban 2/10, Alex Ban 7"
+      ],
+      "active_decisions": {
+        "checkpoint": "0100_MID_SESSION",
+        "spx": 7332.66,
+        "ixic": 24428.31,
+        "vix": 24.16,
+        "nvda": 151.87,
+        "vnm_etf": 16.685
+      }
+    },
+    "logs": [
+      "01:06:21 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-010422",
+    "created_at": "2026-11-19T01:04:22.958030",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (0100_MID_SESSION) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[19/11 01:04:12 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,332.66 (-0.11%)`, `^IXIC 24,428.31 (+0.41%)`, **`^VIX 24.16 (-5.11%)`**, `US10Y 5.062%`, `DXY 103.76`, `NVDA $151.87 (-2.31%)`, `SMH -0.62%`, `XLF -0.74%`, `VNM ETF 16.68 (+0.09%)`.",
+      "completed_tasks": [
+        "Hoàn tất nhịp 0100_MID_SESSION (01:04:12 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "0100_MID_SESSION",
+        "vix": 24.16,
+        "nvda": 151.87,
+        "nvda_ah": null
+      }
+    },
+    "logs": [
+      "01:04:22 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261119-010032",
+    "created_at": "2026-11-19T01:00:32.960347",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (0100_MID_SESSION) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[19/11 01:00:29 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,303.98 (-0.50%)`, `^IXIC 24,322.71 (-0.02%)`, **`^VIX 24.69 (-3.02%)`**, `US10Y 5.072%`, `DXY 103.83`, `NVDA $152.82 (-1.70%)`, `SMH -0.48%`, `XLF -1.19%`, `VNM ETF 16.64 (-0.21%)`.",
+      "completed_tasks": [
+        "Hoàn tất nhịp 0100_MID_SESSION (01:00:29 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "0100_MID_SESSION",
+        "vix": 24.69,
+        "nvda": 152.821,
+        "nvda_ah": null
+      }
+    },
+    "logs": [
+      "01:00:32 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-232456",
+    "created_at": "2026-11-18T23:24:56.717460",
+    "command_raw": "Phòng ban chuyên trách túc trực 23h20 theo dõi sát phiên Mỹ (18/11 -> 04h30 19/11)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "4 Ban (Ban 1 US Elena, Ban 2/10 Lê Hoàng & Hiền, Ban 7 Alex, Ban 9 Victor) đã túc trực & hoàn tất báo cáo sống 23h20: ^GSPC thủng MA200 về 7,303.98 (-0.50%), ^DJI 50,089.71 (-1.32%), NVDA xả -4.7% từ đỉnh .36 về .82 (-1.70%) do Options +-14.5% & FCF/Net 0.22x + 2 hồ sơ 8-K, ^VIX neo 24.69, VNM ETF 16.64 (-0.21%), DXY 103.83, WTI -3.57%, Vàng -2.75%, BTC -3.62% (70% USD Liquidity Squeeze). Đã gia cố kép Cloud: GitHub Actions chạy mỗi 15p + tự backfill bar 1m sàn Mỹ VÀ Render Cloud Daemon thức 24/7 trực tới 04h30 sáng mai.",
+      "completed_tasks": [
+        "Kích hoạt 4 phòng ban AI thật (Ban 1 US, Ban 2/10, Alex Ban 7, Victor Ban 9) phân tích cú đảo chiều 23h20",
+        "Khôi phục 100% mốc 2130_OPEN (09:31 EST) & 2230_POST_AMATEUR (10:30 EST) từ bar 1m sàn Mỹ + ghi 2320_LIVE_WATCH",
+        "Gia cố kép Cloud: GitHub Actions */15 + Keep-Alive 24/7 + Render Cron Daemon trực 01:00, 04:03, 04:25, 04:32"
+      ],
+      "active_decisions": {
+        "checkpoint": "2320_LIVE_WATCH",
+        "spx": 7303.98,
+        "vix": 24.69,
+        "nvda": 152.82,
+        "regime": "DEFENSIVE_LIQUIDITY_SQUEEZE_WATCH",
+        "msh_trailing": 34600,
+        "baf_stop": 30050
+      }
+    },
+    "logs": [
+      "23:24:56 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-232335",
+    "created_at": "2026-11-18T23:23:35.839301",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (2320_LIVE_WATCH) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[18/11 23:23:34 ICT] Ghi nhận số liệu sống: `ES=F 7,325.75 (-0.45%)`, `NQ=F 27,028.00 (-0.18%)`, `^GSPC 7,303.98 (-0.50%)`, `^IXIC 24,322.71 (-0.02%)`, **`^VIX 24.69 (-3.02%)`**, `US10Y 5.072%`, `DXY 103.83`, `NVDA $152.82 (-1.70%)`, `SMH -0.48%`, `XLF -1.19%`, `VNM ETF 16.64 (-0.21%)`.",
+      "completed_tasks": [
+        "Hoàn tất nhịp 2320_LIVE_WATCH (23:23:34 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "2320_LIVE_WATCH",
+        "vix": 24.69,
+        "nvda": 152.821,
+        "nvda_ah": null
+      }
+    },
+    "logs": [
+      "23:23:35 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-232334",
+    "created_at": "2026-11-18T23:23:34.368720",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (2230_POST_AMATEUR) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[18/11 22:30:00 ICT] Ghi nhận số liệu sống: `ES=F 7,351.00 (-0.11%)`, `NQ=F 27,168.75 (+0.34%)`, `^GSPC 7,332.10 (-0.11%)`, `^IXIC 24,430.03 (+0.42%)`, **`^VIX 24.37 (-4.28%)`**, `US10Y 5.080%`, `DXY 103.82`, `NVDA $153.57 (-1.22%)`, `SMH +0.15%`, `XLF -0.84%`, `VNM ETF 16.67 (+0.00%)`.",
+      "completed_tasks": [
+        "Hoàn tất nhịp 2230_POST_AMATEUR (22:30:00 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "2230_POST_AMATEUR",
+        "vix": 24.69,
+        "nvda": 152.821,
+        "nvda_ah": null
+      }
+    },
+    "logs": [
+      "23:23:34 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-232331",
+    "created_at": "2026-11-18T23:23:31.717464",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (2130_OPEN) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[18/11 21:32:00 ICT] Ghi nhận số liệu sống: `ES=F 7,381.50 (+0.31%)`, `NQ=F 27,283.75 (+0.77%)`, `^GSPC 7,362.36 (+0.30%)`, `^IXIC 24,501.68 (+0.71%)`, **`^VIX 24.12 (-5.26%)`**, `US10Y 5.095%`, `DXY 103.82`, `NVDA $158.62 (+2.03%)`, `SMH +1.71%`, `XLF -0.47%`, `VNM ETF 16.65 (-0.12%)`.",
+      "completed_tasks": [
+        "Hoàn tất nhịp 2130_OPEN (21:32:00 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "2130_OPEN",
+        "vix": 24.69,
+        "nvda": 152.821,
+        "nvda_ah": null
+      }
+    },
+    "logs": [
+      "23:23:31 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-203614",
+    "created_at": "2026-11-18T20:36:14.857761",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (2030_MOBILIZE) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[18/11 20:36:11 ICT] Ghi nhận số liệu sống: `ES=F 7,373.75 (+0.20%)`, `NQ=F 27,234.25 (+0.59%)`, `^GSPC 7,340.53 (-1.03%)`, `^IXIC 24,328.38 (-0.74%)`, **`^VIX 24.56 (-3.53%)`**, `US10Y 5.115%`, `DXY 103.79`, `NVDA $160.16 (+3.02%)`, `SMH +2.18%`, `XLF -0.35%`, `VNM ETF 16.80 (+0.78%)`.",
+      "completed_tasks": [
+        "Hoàn tất nhịp 2030_MOBILIZE (20:36:11 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "2030_MOBILIZE",
+        "vix": 24.56,
+        "nvda": 160.16,
+        "nvda_ah": null
+      }
+    },
+    "logs": [
+      "20:36:14 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-203450",
+    "created_at": "2026-11-18T20:34:50.487734",
+    "command_raw": "Phiên trực Mỹ & NVDA BCTC (2030_MOBILIZE) — Thượng đỉnh 04h30 19/11",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "[18/11 20:34:46 ICT] Ghi nhận số liệu sống: `ES=F 7,373.25 (+0.19%)`, `NQ=F 27,226.00 (+0.56%)`, `^GSPC 7,340.53 (-1.03%)`, `^IXIC 24,328.38 (-0.74%)`, **`^VIX 24.64 (-3.22%)`**, `US10Y 5.103%`, `DXY 103.80`, `NVDA $160.20 (+2.60%)`, `SMH +1.83%`, `XLF -2.25%`, `VNM ETF 16.80 (-0.06%)`.",
+      "completed_tasks": [
+        "Hoàn tất nhịp 2030_MOBILIZE (20:34:46 ICT)"
+      ],
+      "active_decisions": {
+        "checkpoint": "2030_MOBILIZE",
+        "vix": 24.64,
+        "nvda": 160.1961,
+        "nvda_ah": null
+      }
+    },
+    "logs": [
+      "20:34:50 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-145110",
+    "created_at": "2026-11-18T14:51:10.343357",
+    "command_raw": "Chốt tổng kết cuối ngày 18/11/2026 từ bảng giá TCInvest 14:48:33 (HDB 22.25, MSH 35.20, BAF 31.15; Tài sản CP 6,635,000đ, +63,100đ/+1.0%)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "EOD 18/11: VN-Index đóng cửa 1,703.01 (-23.71đ / -1.37%, 64 tăng / 272 giảm), VN30 1,806.54 (-30.59đ / -1.67%, 2 tăng / 26 giảm). Danh mục Chủ tịch: giữ 100 MSH @ 35.20 (+69,000đ / +2.0%) và 100 BAF @ 31.15 (-5,900đ / -0.2%, chiều 19/11 về TK) -> Tổng CP 6,635,000đ (+63,100đ / +1.0%), Cash ~13,594,522đ (67.2% NAV), Tổng NAV ~20,229,522đ (-0.17% vs 17/11 trong khi VN-Index -1.37%). HDB đóng cửa 22.25 (-0.15 vs TC, cao hơn giá bán 22.05 là +0.20 chưa tính phí, dưới ngưỡng báo động 22.60; vẫn tiếp tục theo dõi Cloud 19-20/11). Trọng tâm kế tiếp: BCTC NVDA ~04h20 sáng mai 19/11 & phiên đáo hạn phái sinh VN30F1M 19/11.",
+      "completed_tasks": [
+        "Đối soát ảnh TCInvest 18/11 14:48:33 khớp 100% giá đóng cửa MSH 35.20 (+69k) & BAF 31.15 (-5.9k)",
+        "Cập nhật SSOT PortfolioStateManager EOD 18/11 (NAV 20,229,522đ, Cash 13,594,522đ, Cổ phiếu 6,635,000đ)",
+        "Xác nhận HDB đóng cửa 22.25 (< ngưỡng cảnh báo hồi 22.60), tiếp tục theo dõi trên Cloud GitHub Actions tới 20/11"
+      ],
+      "active_decisions": {
+        "eod_date": "2026-11-18",
+        "vnindex_close": 1703.01,
+        "vn30_close": 1806.54,
+        "hdb_close": 22.25,
+        "msh_close": 35.2,
+        "baf_close": 31.15,
+        "cash_pct": 67.2,
+        "next_catalyst": "NVDA Earnings ~04:20 ICT 19/11 + VN30F1M Expiry 19/11 + BAF T+2.5 Settlement 19/11 afternoon"
+      }
+    },
+    "logs": [
+      "14:51:10 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-141536",
+    "created_at": "2026-11-18T14:15:36.861119",
+    "command_raw": "Chủ tịch đã bán thoát 100 CP HDB @ 22.05 (ghi nhận 22,050đ) lúc 14:14 ngày 18/11 và yêu cầu theo dõi tiếp tới cuối tuần để báo cáo & rút kinh nghiệm nếu tăng lại",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "SSOT cập nhật 14:14 18/11: Đã bán 100 CP HDB @ 22,050đ (hòa vốn -700đ trước thuế phí), thu về 2,205,000đ. Két tiền mặt tăng lên ~13,594,522đ (67.5% NAV). Còn giữ BAF 100 CP @ 31.05 (chờ về chiều 19/11) & MSH 100 CP @ 34.50 (6,555,000đ, -16,900đ). Đã gắn cờ giám sát HDB tới hết 20/11 tại data/hdb_post_exit_audit_watch.json để báo cáo & rút kinh nghiệm Ban 5 nếu hồi tăng lại.",
+      "completed_tasks": [
+        "Khớp bán 100 CP HDB @ 22,050đ vào PortfolioStateManager SSOT",
+        "Kích hoạt data/hdb_post_exit_audit_watch.json theo dõi HDB đến hết tuần 20/11"
+      ],
+      "active_decisions": {
+        "cash_vnd": 13594522,
+        "stocks_vnd": 6555000,
+        "total_nav_vnd": 20149522,
+        "post_exit_watch": "HDB (exit 22,050đ) — theo dõi tới 20/11, báo cáo & rút kinh nghiệm Ban 5 nếu tăng lại >= 22,600đ"
+      }
+    },
+    "logs": [
+      "14:15:36 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-080220",
+    "created_at": "2026-11-18T08:02:20.046845",
+    "command_raw": "Thực hiện đợt Tổng Rà Soát Chất Lượng & Sức Khỏe 9 Phòng Ban Định Kỳ 4 Ngày do Phòng Tổng Hệ Thống (Apex Central System Governance) chủ trì",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất Đợt Tổng Rà Soát Chất Lượng & Sức Khỏe 9 Phòng Ban Định Kỳ 4 Ngày (18/11/2026) — Tổng điểm: 100/100 (XUẤT SẮC). 147/147 Python scripts hợp lệ; 9/9 phòng ban đạt chuẩn; 7 lệnh Master Blotter đạt chuẩn R:R >= 1:2.0 & Stop <= 7.5%; 54/54 BCTC VN xác thực; Telegram & GitHub khỏe mạnh. Đã gửi báo cáo qua Telegram @Chuyenvienvictor_bot; kỳ rà soát kế tiếp: 22/11/2026.",
+      "completed_tasks": [
+        "Chạy scripts/system_health_audit.py --force: Điểm sức khỏe tổng thể 100/100 (Lần kiểm toán thứ 21)",
+        "Kiểm toán 147/147 Python scripts (0 lỗi cú pháp), quy chuẩn thể chế, Titan Optimizer (tiết kiệm 97.1% token)",
+        "Thẩm định 9/9 Phòng ban chuyên trách (Ban 1 đến Ban 9 Global & VN) đạt 100/100",
+        "Kiểm tra Pre-Flight Compliance Check (10 Điều luật Hiến chương & 5 Điều cấm tuyệt đối)",
+        "Xuất báo cáo tại 05_Learning_And_Evolution/system_health_audit/2026-11-18_4Day_System_Audit_Report.md & gửi Telegram",
+        "Cập nhật lịch rà soát tiếp theo vào 2026-11-22 trong data/system_audit_state.json"
+      ],
+      "active_decisions": {
+        "regarding_bsr_baf": "Đang nắm giữ 100 CP BAF @ 31,209đ (Thị giá 31,300đ, Stop 30,050đ, TP1 33,200đ); không mua đuổi trước 14h00",
+        "regarding_hdb_msh": "Giữ 100 CP HDB @ 22,057đ (Thị giá 22,400đ, Stop 22,060đ, TP1 24,200đ) và 100 CP MSH @ 34,510đ (Thị giá 35,050đ, Stop 33,090đ, TP1 39,500đ)",
+        "regarding_weekly_plan": "Tiền mặt còn 11,389,522 VND (56.2% NAV); giải ngân mới chỉ xem xét Khung Giờ Vàng 14h00-14h25 nếu Buy-Up >= 60%",
+        "regarding_today_morning_tasks": "Đã chạy trọn vẹn 9 Phòng ban sáng 18/11/2026, phát sóng Telegram Morning Delivery và hoàn tất Tổng Rà Soát 4 Ngày đạt 100/100"
+      }
+    },
+    "logs": [
+      "08:02:20 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-073614",
+    "created_at": "2026-11-18T07:36:14.445085",
+    "command_raw": "Thực thi quy trình Tổng Hợp Quỹ Đầu Tư Apex Master Unified Hedge Fund (Toàn diện 9 Phòng ban: US Global + Việt Nam + Master CIO Blotter + Telegram Morning Delivery)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất 100% chu trình 9 Phòng ban sáng 18/11/2026 trong 108.4s (NAV: 20,264,522 VND | Cổ phiếu: HDB 100, MSH 100, BAF 100 = 8,875,000 VND | Tiền mặt: 11,389,522 VND). Sức khỏe hệ thống 100/100; đã gửi 3 bản tin Morning Blotter qua Telegram; đồng bộ Titan Indexer (tiết kiệm 97.1% token) & SQLite Vault V5.0.",
+      "completed_tasks": [
+        "Bước 0: Quét Radar SEC EDGAR (370 hồ sơ US) & VN CBTT (55 sự kiện 145 mã)",
+        "Bước 1: Hoàn tất 7 Phòng ban Toàn cầu & Alex (35/35 mã, Top US: NVDA, TSM, AVGO, MSFT)",
+        "Bước 2: Hoàn tất 7 Phòng ban Việt Nam & Minh Quân (54/54 mã BCTC thật, Top Radar: HHV, POW, MSN, PC1, HPG)",
+        "Bước 3: Ban 8 Master CIO xuất 2026-11-18_Master_CIO_Final_Decision.md & master_execution_blotter.json (khớp SSOT HDB/MSH/BAF)",
+        "Bước 4: Ban 9 Victor Sentinel rà soát HDB/MSH/BAF trạng thái ỔN ĐỊNH",
+        "Bước 5: Gửi 3 tin nhắn Bản tin Khai Sáng & Sổ Lệnh Master Blotter qua Telegram Bot thành công",
+        "Bước 6-8: Kiểm tra 4 ngày đạt 100/100, Titan Optimizer 97.1%, SQLite Lakehouse Vault V5.0"
+      ],
+      "active_decisions": {
+        "regarding_bsr_baf": "Đang nắm giữ 100 CP BAF @ 31,209đ (Thị giá 31,300đ, Stop 30,050đ, TP1 33,200đ); không mua đuổi trước 14h00",
+        "regarding_hdb_msh": "Giữ 100 CP HDB @ 22,057đ (Thị giá 22,400đ, Stop 22,060đ, TP1 24,200đ) và 100 CP MSH @ 34,510đ (Thị giá 35,050đ, Stop 33,090đ, TP1 39,500đ)",
+        "regarding_weekly_plan": "Tiền mặt còn 11,389,522 VND (56.2% NAV); giải ngân mới chỉ xem xét Khung Giờ Vàng 14h00-14h25 nếu Buy-Up >= 60%",
+        "regarding_today_morning_tasks": "Đã chạy trọn vẹn 9 Phòng ban sáng 18/11/2026 và phát sóng Telegram Morning Delivery thành công"
+      }
+    },
+    "logs": [
+      "07:36:14 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-040844",
+    "created_at": "2026-11-18T04:08:44.533854",
+    "command_raw": "Hoàn tất Phương án 1B: Trực 4 nhịp phiên Mỹ (21h30 -> 04h00 đóng cửa chính thức) + Họp Thượng Đỉnh 30p (04h05-04h35 sáng 18/11) & Cam kết KPI 4M",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Mỹ 04:00 đóng cửa ^GSPC 7,340.73 (-1.02% sát MA200), ^IXIC -0.74%, ^VIX 25.89 (+13.01%), XLF -1.89% tệ nhất 12/12 ngành đỏ, AVGO +2.46%/NVDA -0.44% rút chân trước BCTC 1d AMC, VNM 16.665 (-0.86%), DXY 103.50, US10Y 5.103%. Hội đồng thống nhất cam kết KPI >=4M trong 2 tháng: ~50% (nâng 70-76% khi VIX<22 & hậu 19/11 mở 75-85% NAV) và trong 1 tháng: ~20%. Hôm nay 18/11 cấm mua trước 14h00; 14h00-14h25 tối đa <=2.85M nếu Buy-Up>=60%; bảo vệ HDB (cắt <22,060), MSH (Trail 34,600), BAF (Stop 30,050).",
+      "completed_tasks": [
+        "Quét đủ 4 nhịp Mỹ thời gian thực (21:30, 22:30, 01:00, 04:02) lưu us_live_session_log_2026-11-17.json",
+        "Chạy Monte Carlo 20,000 lần & Họp Tranh biện 8 Ban thật 100% lúc 04h05",
+        "Xuất Báo cáo James & Kế hoạch 18/11 vào Vault + Phòng Họp Thượng Đỉnh APEX-SUMMIT-20261118-0405"
+      ],
+      "active_decisions": {
+        "kpi_commit_2m": "~50% (48-52%) khi VIX>25 -> 70-76% khi VIX<22 hậu 19/11",
+        "kpi_commit_1m": "~20% (18-22%) — bác bỏ hứa ảo 1 tháng",
+        "plan_18_11_am": "CẤM mua trước 14h00; giữ HDB (còi <=22,390 / cắt <22,060), MSH (Trail 34,600), BAF (Stop 30,050)",
+        "plan_18_11_pm": "14h00-14h25 tối đa 1 lô <= 2.85M (25% Cash) chỉ nếu VNI>=1,710 & Buy-Up>=60%; dồn lực cho chiều 19/11"
+      }
+    },
+    "logs": [
+      "04:08:44 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261118-010119",
+    "created_at": "2026-11-18T01:01:19.149326",
+    "command_raw": "Cập nhật Nhịp 3/4 lúc 01:00 ICT (18/11) — Cảnh báo VIX 25.69 & Flight-to-Safety",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "01:00_MID_SESSION: Mỹ đảo chiều giảm diện rộng (12/12 ngành GICS đỏ). VIX nhảy vọt lên 25.69 (+12.28%), S&P500 -1.21%, Nasdaq -1.16%, Dow -1.55%, VNM -1.27%, EEM -1.34%, BTC -1.70%, US10Y hạ về 5.093% do dòng tiền trú ẩn trái phiếu. Victor kích hoạt cảnh báo rủi ro gap sáng 18/11 cho HDB/MSH/BAF, chờ nến đóng cửa 04:00 chính thức để họp 04:05.",
+      "completed_tasks": [
+        "Quét Nhịp 3/4 lúc 01:00:23 lưu us_live_session_log_2026-11-17.json",
+        "Kích hoạt cảnh báo VIX > 24 tới Victor Ban 9"
+      ],
+      "active_decisions": {
+        "nhip_3_0100": "VIX 25.69 (+12.28%), SPX -1.21%, IXIC -1.16%, DJI -1.55%, VNM -1.27%, 12/12 GICS Red",
+        "victor_flag": "MORNING_GAP_RISK_WARNING_ACTIVE",
+        "next_checkpoint": "04:02_OFFICIAL_CLOSE_AND_SUMMIT"
+      }
+    },
+    "logs": [
+      "01:01:19 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261117-223147",
+    "created_at": "2026-11-17T22:31:47.128054",
+    "command_raw": "Cập nhật Nhịp 2/4 lúc 22:30 ICT — Theo dõi xuyên phiên Mỹ (Phương án 1B)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "22:30_POST_AMATEUR (qua Amateur Hour & tin 22h00): Công nghệ/Bán dẫn đảo chiều xả mạnh so với phút mở cửa 21:30 (SMH +0.30% -> -1.11%, XLK +0.43% -> -0.93%, NVDA +0.37% -> -1.78%, TSM -3.90%, EEM -1.16%, VNM -0.68%), trong khi XLB +1.02% / XLE +0.49% / AVGO +1.25% giữ xanh và VIX dịu nhẹ về 22.78 (-0.44%). Spillover hạ 0.65x -> 0.50x. Tiếp tục trực Nhịp 3 lúc 01:00 sáng 18/11.",
+      "completed_tasks": [
+        "Quét 31 mã Mỹ lúc 22:30:23 ICT lưu data/us_live_session_log_2026-11-17.json",
+        "Cập nhật global_spillover_state.json (0.50x)"
+      ],
+      "active_decisions": {
+        "nhip_2_2230": "Tech/Semi dao chieu giam (SMH -1.11%, NVDA -1.78%, TSM -3.90%), EEM -1.16%, VNM -0.68%, VIX 22.78 (-0.44%)",
+        "next_checkpoint": "01:00_MID_SESSION (18/11/2026)"
+      }
+    },
+    "logs": [
+      "22:31:47 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261117-211241",
+    "created_at": "2026-11-17T21:12:41.803188",
+    "command_raw": "Điểm danh T-20p (21:10 ICT 17/11/2026) — Giai đoạn chuẩn bị trước Mỹ mở cửa 21h30",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất điểm danh T-20p & thu dữ liệu Pre-Market Mỹ thật lúc 21:10:47 ICT (ES=F -0.15%, NQ=F -0.07%, YM=F -0.57%, VIX 23.05, US10Y 5.145%, DXY 103.678, WTI .06 +2.41%, VNM 16.81 -0.41%, SMH +0.05%, NVDA +0.35%). Toàn bộ 7 khối trưởng (James Ban 8, Ban 1 US, Ban 2 US, Ban 3 VN Công tố, Ban 4 VN Rủi ro, Minh Quân Ban 7 VN, Victor Ban 9) đã nộp hồ sơ T-20p, khóa SSOT 20,264,522đ và sẵn sàng Nhịp 1 Mỹ mở cửa lúc 21:30.",
+      "completed_tasks": [
+        "Quét 25 mã Pre-Market Mỹ thật lúc 21:10:47 lưu data/us_live_session_log_2026-11-17.json",
+        "Hoàn tất điểm danh & Pre-Summit Prep T-20p của các Ban"
+      ],
+      "active_decisions": {
+        "pre_market_2110": "VIX 23.05 (+0.74%), US10Y 5.145%, WTI .06 (+2.41%), VNM 16.81 (-0.41%)",
+        "next_trigger": "21:30_OPEN (Nhịp 1/4 Mỹ mở cửa thời gian thực)"
+      }
+    },
+    "logs": [
+      "21:12:41 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261117-151738",
+    "created_at": "2026-11-17T15:17:38.177544",
+    "command_raw": "Chủ tịch chốt Phương án 1B: 14 Ban trực xuyên suốt phiên Mỹ 21h30 -> 04h00 sáng 18/11 rồi họp tổng kết 30p (04h05-04h35), thẩm định KPI 4M (2 tháng & bứt tốc 1 tháng)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Đã chuyển sang Công điện CD-APEX-20261117-1B: 21h10 chuẩn bị; theo dõi sống 4 nhịp Mỹ (21h30, 22h30, 01h00, 04h00 đóng cửa chính thức); 04h05-04h35 sáng 18/11 họp tổng kết & tranh biện 30p thật 100% trên nến đóng cửa, chốt chiến lược 18/11 & trả lời % cam kết KPI 4M (2 tháng vs 1 tháng).",
+      "completed_tasks": [
+        "Cập nhật Công điện CD-APEX-20261117-1B (Phương án 1B)",
+        "Upsert Vault ban_8_master_cio"
+      ],
+      "active_decisions": {
+        "option_selected": "PHUONG_AN_1B_FULL_US_SESSION_TO_0400_CLOSE",
+        "checkpoints": [
+          "21:10 Prep T-20p",
+          "21:30 US Open (Nhip 1)",
+          "22:30 Post-Amateur Hour (Nhip 2)",
+          "01:00 Europe Close (Nhip 3)",
+          "04:02 US Official Close + 30m Live Summit Debate"
+        ],
+        "kpi_scope": "Danh gia toan hoc % dat KPI >= 4,000,000d trong 2 thang va kha nang but toc dat 4M ngay trong 1 thang"
+      }
+    },
+    "logs": [
+      "15:17:38 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261117-150415",
+    "created_at": "2026-11-17T15:04:15.782254",
+    "command_raw": "Lệnh Chủ tịch lúc 15h00: Phổ biến & triệu tập 14/14 Phòng ban lúc 21h30 tối nay (17/11) theo dõi mở cửa Mỹ thời gian thực + họp tổng kết 30p (chủ trì James & Palmer, giám sát Trọng)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Đã phát hành Công điện CD-APEX-20261117-2130: 21h10-21h30 chuẩn bị T-20p (Điều 2); 21h30-21h50 theo dõi mở cửa Mỹ thời gian thực (CẤM kịch bản soạn sẵn); 21h50-22h20 họp tranh biện 30p chốt dự báo, kế hoạch đầu tư tiếp theo và % cam kết KPI > 4tr dưới sự đồng chủ trì James & Palmer, giám sát Ban 12 Trọng.",
+      "completed_tasks": [
+        "Phát hành Công điện CD-APEX-20261117-2130",
+        "Upsert công điện vào SQLite Vault (ban_8_master_cio)"
+      ],
+      "active_decisions": {
+        "tonight_2110_prep": "16/16 điểm danh & cào dữ liệu Pre-Market Mỹ + SSOT 20,264,522đ (Điều 2)",
+        "tonight_2130_watch": "Theo dõi mở cửa Mỹ thời gian thực 20p (S&P500, Nasdaq, VIX, US10Y, DXY, WTI, VNM/EEM)",
+        "tonight_2150_summit_30p": "Họp tổng kết 30p tranh biện thật từ số liệu 21h30, đồng chủ trì James & Palmer, Trọng kiểm sát",
+        "kpi_commitment_audit": "Thẩm định định lượng % xác suất đạt KPI > 4,000,000đ và khả năng vượt mốc 4M"
+      }
+    },
+    "logs": [
+      "15:04:15 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261117-145214",
+    "created_at": "2026-11-17T14:52:14.722825",
+    "command_raw": "Chốt sổ kết phiên 17/11/2026 theo ảnh TCInvest cuối ngày (MSH kéo ATC 35.05, 3/3 mã xanh +97,400đ)",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Đóng cửa 17/11/2026: Cả 3 mã cùng xanh +97,400đ (+1.1%). BAF 100 @ 31.21 -> 31.30 (+9,100đ, T+0 chờ về), HDB 100 @ 22.06 -> 22.40 (+34,300đ, +1.6%), MSH 100 @ 34.51 -> 35.05 (+54,000đ, +1.6% kéo mạnh ATC). Tiền mặt 11,389,522đ (56.2%) + Cổ 8,875,000đ (43.8%) = NAV 20,264,522đ.",
+      "completed_tasks": [
+        "Chốt giá đóng cửa 17/11/2026 vào PortfolioStateManager SSOT (NAV 20,264,522đ)",
+        "Đồng bộ két tiền 11,389,522đ & 3 vị thế xanh BAF/HDB/MSH"
+      ],
+      "active_decisions": {
+        "eod_nav_vnd": 20264522,
+        "eod_cash_vnd": 11389522,
+        "eod_stocks_vnd": 8875000,
+        "eod_open_pnl_vnd": 97400,
+        "next_session_18_11": "Bảo vệ 3 vị thế xanh qua T-1 đáo hạn 19/11; rình giải ngân thêm 1-2 mã nếu có nhịp ép giá đẹp hoặc chờ sau 19/11 bung 75-85% NAV"
+      }
+    },
+    "logs": [
+      "14:52:14 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261117-143256",
+    "created_at": "2026-11-17T14:32:56.899294",
+    "command_raw": "Chủ tịch đã khớp 100 CP BAF @ 31.21 (TCInvest 14:31) trong phiên ATC 17/11/2026",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "SSOT cập nhật: BAF 100 CP (T+0, vốn 31.21, Stop 30,050đ, TP1 33,200đ), HDB 100 CP @ 22.06 -> 22.40 (+1.6%), MSH 100 CP @ 34.51 -> 34.10 (-1.2%). Cash: 11,389,522 đ (56.5%), Stocks: 8,780,000 đ (43.5%), NAV: 20,169,522 đ. ATC bị trụ kéo giảm (ALLSHARE -0.86%, VIC -8đ, HPG 21.00, BSR 24.20, PVT 19.90) -> không đặt thêm bất kỳ lệnh ATC nào, giữ nguyên 56.5% Cash qua đáo hạn 19/11.",
+      "completed_tasks": [
+        "Ghi nhận khớp lệnh 100 CP BAF @ 31,209đ (3,120,900đ) vào PortfolioStateManager SSOT",
+        "Đồng bộ két tiền mặt còn lại: 11,389,522 đ (56.5% NAV)"
+      ],
+      "active_decisions": {
+        "cash_vnd": 11389522,
+        "stocks_vnd": 8780000,
+        "total_nav_vnd": 20169522,
+        "baf_t0": "100 CP @ 31,209đ | Stop cứng 30,050đ | TP1 33,200đ | TP2 36,500đ (Về TK chiều 19/11)",
+        "hdb_guard": "100 CP @ 22,057đ -> 22,400đ (+1.6%) | Bảo toàn vốn 22,060đ",
+        "msh_guard": "100 CP @ 34,510đ -> 34,100đ (-1.2%) | Stop cứng 33,090đ",
+        "atc_and_next": "KHÔNG đặt thêm lệnh ATC hôm nay; giữ 56.5% tiền qua phiên 18-19/11 rồi đánh lớn sau đáo hạn"
+      }
+    },
+    "logs": [
+      "14:32:56 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261117-140011",
+    "created_at": "2026-11-17T14:00:11.840531",
+    "command_raw": "Lập kế hoạch hành động từ 14h00 ngày 17/11/2026 theo diễn biến live 13:55",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "13:59 ICT: VNI 1,726.17 (-0.62%), Breadth tụt 33.7% -> 30.9%, Regime DEFENSIVE_SELLOFF. Bảo vệ HDB (giữ >= 22,100đ lúc 14h15, cắt < 22,060đ), MSH (không mua thêm/T+0 vì BU 39%, Stop 33,090đ). Cấm bắt PVT/BSR/SZC/IDC. Chỉ rình tối đa 1 lô LO thấp (BAF 30.9-31.15k hoặc HPG 20.95-21.05k) nếu VNI >= 1,720 lúc 14h15; nếu VNI < 1,720 thì giữ 72-83% tiền chờ sau đáo hạn 19/11.",
+      "completed_tasks": [
+        "Chốt chiến lược từ 14h00 ngày 17/11/2026 theo dữ liệu 13:55-13:59 ICT"
+      ],
+      "active_decisions": {
+        "regime_14h00": "DEFENSIVE_SELLOFF (Breadth 30.9%)",
+        "hdb_14h15": "Giữ >= 22,100đ / Cắt < 22,060đ kèm BU < 45%",
+        "msh_14h00": "Không mua thêm, Stop cứng 33,090đ",
+        "max_new_probe_14h15": "Tối đa 1 kèo LO thấp nếu VNI >= 1,720: BAF (30.9-31.15k) hoặc HPG (20.95-21.05k); không khớp thì giữ tiền qua đáo hạn 19/11"
+      }
+    },
+    "logs": [
+      "14:00:11 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
+    "task_id": "TASK-AG2P-20261117-120334",
+    "created_at": "2026-11-17T12:03:34.042416",
+    "command_raw": "Chốt kế hoạch đầu tư chính xác ngày 17/11/2026 mục tiêu KPI > 4,000,000 đ & vá lỗi hiển thị 0.00k trên bảng tác chiến",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "Hoàn tất Kế hoạch Đầu tư 17/11/2026 (11:55 ICT) + Lộ trình 2 tháng > 4M và vá lỗi UI 0.00k tại Phòng Tác Chiến.",
+      "completed_tasks": [
+        "Phát hành 2026-11-17_Ke_Hoach_Dau_Tu_Chinh_Xac_KPI_4Trieu.md",
+        "Upsert vào SQLite Vault (ban_7_vn_specialist)",
+        "Vá bug 0.00k trong renderTacticalWarRoom() ở scripts/apex_web_portal_engine.py"
+      ],
+      "active_decisions": {
+        "hdb_guard_14h15": "Giữ >= 22,100đ, cắt dứt khoát nếu < 22,060đ kèm Buy-Up < 45%",
+        "msh_guard": "Không mua thêm giữ qua đêm, Stop cứng 33,090đ, chỉ T+0 nếu nhúng 33.6-33.8k bật cầu >= 55%",
+        "baf_priority_1": "LO 100 CP vùng 30,900-31,250đ lúc 14h00-14h25 nếu Buy-Up >= 60%, Stop 30,150đ",
+        "msb_priority_2": "LO 200 CP vùng 16,000-16,250đ lúc 14h00-14h25 nếu Buy-Up >= 58%, Stop 15,550đ",
+        "dbc_pullback": "Chờ rũ 200 CP vùng 16,100-16,350đ, cấm đu xanh 16.7k",
+        "no_knife_catching": "Cấm bắt đáy PVT/BSR/SZC hôm nay"
+      }
+    },
+    "logs": [
+      "12:03:34 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
     "task_id": "TASK-AG2P-20261116-091314",
     "created_at": "2026-11-16T09:13:14.216622",
     "command_raw": "Cho ke hoach dau tu chinh thuc ngay hom nay (16/11/2026) co dong theo tung phien & cap nhat len Phong Tac Chien Web.",

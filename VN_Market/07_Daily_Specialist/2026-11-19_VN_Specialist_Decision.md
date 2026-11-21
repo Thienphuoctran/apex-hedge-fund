@@ -11,7 +11,7 @@
 
 | Phòng Ban Báo Cáo | Nhận Định Cốt Lõi Hôm Nay | Đánh Giá Chi Tiết Từ Phòng Ban | Quyết Định Điều Phối Khoa Học Của Minh Quân |
 | :--- | :--- | :--- | :--- |
-| **Ban 1 VN — Vĩ Mô & Liên Thị Trường (`vn-macro-monetary-agent`)** | **`^VIX 24.56 (CHƯA < 23.5) • WTI -3.36% ($83.12) HỖ TRỢ PVT/BAF`** | Phiên Mỹ đêm qua: ^VIX hạ về 24.56 nhưng chưa xuyên < 23.5; US10Y 5.068% và DXY 103.81 còn cao. Tại Việt Nam, SBV giữ lãi suất tái cấp vốn 4.5%, tín dụng YTD 9.2%, đầu tư công 52.8%, tỷ giá USD/VND 25,420đ. Giá dầu WTI giảm -3.36% về $83.12 bất lợi ngắn hạn cho BSR nhưng hỗ trợ biên lợi nhuận PVT, BAF. | **Thứ Năm 19/11 đáo hạn VN30F1M phòng thủ (mặc định 0đ); Thứ Sáu 20/11 giữ trần <= 45-55% NAV; dồn công suất 70-85% NAV vào Thứ Hai–Thứ Tư tuần sau khi dòng tiền xác nhận.** |
+| **Ban 1 VN — Vĩ Mô & Liên Thị Trường (`vn-macro-monetary-agent`)** | **`^VIX 24.56 (CHƯA < 23.5) • WTI -3.36% ($83.12) HỖ TRỢ PVT/BAF`** | Phiên Mỹ đêm qua: ^VIX hạ về 24.56 nhưng chưa xuyên < 23.5; US10Y 5.068% và DXY 103.7 còn cao. Tại Việt Nam, SBV giữ lãi suất tái cấp vốn 4.5%, tín dụng YTD None%, đầu tư công None%, tỷ giá USD/VND 25,705.0đ. Giá dầu WTI giảm -3.36% về $83.12 bất lợi ngắn hạn cho BSR nhưng hỗ trợ biên lợi nhuận PVT, BAF. | **Thứ Năm 19/11 đáo hạn VN30F1M phòng thủ (mặc định 0đ); Thứ Sáu 20/11 giữ trần <= 45-55% NAV; dồn công suất 70-85% NAV vào Thứ Hai–Thứ Tư tuần sau khi dòng tiền xác nhận.** |
 | **Ban 2 VN — Thẩm Định BCTC & Thanh Khoản (`vn-equity-bctc-agent`)** | **`CHUẨN BỘ LỌC TUẦN ĐẦU: GIÁ 13K–22.5K • VOL >= 2M CP • OCF/LNST >= 1.0X`** | Rút kinh nghiệm từ Vòng 2: các mã giá > 30k hoặc thanh khoản mỏng (MSH vol20 ~172k CP/phiên) khiến tài khoản 20.23M chỉ mua được 100 CP, không thể chốt tỉa 50% khi kéo trong phiên. Tuần sau chuẩn hóa lại đúng công thức Tuần Đầu: ưu tiên PVT, TCB, MBB, HPG, TCH (thị giá 13k–22.5k, vol20 1.8M–20.8M CP/phiên, OCF/LNST 1.18x–2.01x, Beneish M < -1.78). | **Chỉ giải ngân vào doanh nghiệp sạch tiền thật có thị giá 13k–22.5k để cầm được 200–300 CP/mã, đủ điều kiện chia chốt lời 50/50.** |
 | **Ban 3 VN — Tổng Hợp & Đọc Vị Dòng Tiền VSA (`vn-synthesis-hub-agent`)** | **`CỬA KÉP KHUNG GIỜ VÀNG: BUY-UP >= 60% • BREADTH >= 45% • VSA NO SUPPLY`** | Kiên quyết chặn bẫy Bull-Trap phiên sáng ATO và rủi ro quét trụ ATC ngày đáo hạn VN30F1M. Thứ Năm 19/11 chỉ mở tối đa 1 lô PVT (hoặc TCB) lúc 14h00-14h25 nếu đạt đủ 3/3 bộ lọc; sang tuần sau (23–25/11), khi Breadth >= 45–50% và Buy-Up >= 60% mới mở công suất 70–85% NAV (14–17 triệu ₫). | **Áp dụng chiến thuật mua thăm dò lô đầu 100-150 CP ở vùng chiết khấu và bồi tiếp 100-150 CP khi bứt phá kèm thanh khoản.** |
 | **Ban 4 VN — Hội Đồng Đầu Tư & Rủi Ro T+2.5 (`vn-investment-committee-agent`)** | **`KHÓA TRẦN THỨ SÁU <= 55% NAV • RỦI RO STOP <= 7.0% • MỞ CÔNG SUẤT ĐẦU TUẦN`** | Tổng tài sản hiện hữu 20,229,522 đ (Tiền mặt 13,594,522 đ = 67.2%). Đang khóa Stop 2xATR trên MSH (Hard 33,090đ / Trail 34,600đ) và BAF (Hard 30,050đ), tổng rủi ro hiện tại chỉ 1.59% NAV (< trần 4.5% NAV). Cấm tuyệt đối bung 70-85% vốn vào Thứ Sáu cuối tuần để tránh kẹt T+2.5 qua Thứ Bảy–Chủ Nhật. | **Giữ trần Thứ Sáu <= 45-55% NAV; chỉ bung công suất 70-85% NAV vào Thứ Hai–Thứ Tư (23–25/11) với tổng Risk-at-Stop <= 4.0% NAV.** |
@@ -272,29 +272,29 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 ## 🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC
 Bóc tách minh bạch các mã cổ phiếu đang suy giảm dòng tiền, đòn bẩy nợ cao hoặc có dấu hiệu xào nấu số liệu kế toán tại TTCK Việt Nam:
 
-### ⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,400 đ (+0.00%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-570 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
-- **Chỉ số Kế toán Pháp y**: OCF/LNST: `-0.62x` | Altman Z'': `10.06` | Nợ/Vốn chủ D/E: `0.38x` | FCF: `-570 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất PDR biến động +0.00%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 59.6/100.
-- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -0.62x, Dòng tiền tự do FCF = -570 tỷ VNĐ, Chỉ số Beneish M-Score = 0.41 (HIGH_RISK). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-320 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (469.0% doanh thu); CẢNH BÁO BENEISH M-SCORE (0.41 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
+### ⚠️ Cổ Phiếu **`PDR`** — Bất Động Sản Phát Đạt (HOSE) | Thị giá: 11,300 đ (-0.88%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-1,563.2 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
+- **Chỉ số Kế toán Pháp y**: OCF/LNST: `-2.45x` | Altman Z'': `5.41` | Nợ/Vốn chủ D/E: `1.22x` | FCF: `-1,563.2 tỷ VNĐ`
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất PDR biến động -0.88%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 66.0/100.
+- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -2.45x, Dòng tiền tự do FCF = -1,563.2 tỷ VNĐ, Chỉ số Beneish M-Score = -1.38 (HIGH_RISK). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-1,313.2 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (1253.7% doanh thu); CẢNH BÁO BENEISH M-SCORE (5.59 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,150 đ (+0.00%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-660 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
-- **Chỉ số Kế toán Pháp y**: OCF/LNST: `-1.81x` | Altman Z'': `10.01` | Nợ/Vốn chủ D/E: `0.36x` | FCF: `-660 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất DXG biến động +0.00%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 62.6/100.
-- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -1.81x, Dòng tiền tự do FCF = -660 tỷ VNĐ, Chỉ số Beneish M-Score = -0.9 (HIGH_RISK). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-480 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (276.7% doanh thu); CẢNH BÁO BENEISH M-SCORE (-0.9 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
+### ⚠️ Cổ Phiếu **`DXG`** — Tập Đoàn Đất Xanh (HOSE) | Thị giá: 11,100 đ (-0.45%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-846.8 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
+- **Chỉ số Kế toán Pháp y**: OCF/LNST: `-5.82x` | Altman Z'': `7.65` | Nợ/Vốn chủ D/E: `0.37x` | FCF: `-846.8 tỷ VNĐ`
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất DXG biến động -0.45%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 58.6/100.
+- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -5.82x, Dòng tiền tự do FCF = -846.8 tỷ VNĐ, Chỉ số Beneish M-Score = -2.18 (SAFE). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-666.8 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (265.9% doanh thu); CẢNH BÁO BENEISH M-SCORE (-0.96 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,700 đ (+0.00%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: BENEISH M-SCORE RỦI RO (-1.19)` | **Xếp hạng BCTC**: `BB (WATCH)`
-- **Chỉ số Kế toán Pháp y**: OCF/LNST: `1.23x` | Altman Z'': `11.74` | Nợ/Vốn chủ D/E: `0.24x` | FCF: `570 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất KBC biến động +0.00%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 69.2/100.
-- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = 1.23x, Dòng tiền tự do FCF = 570 tỷ VNĐ, Chỉ số Beneish M-Score = -1.19 (HIGH_RISK). Chi tiết Red Flags: Khoản phải thu chiếm tỷ trọng cao (254.1% doanh thu); CẢNH BÁO BENEISH M-SCORE (-1.19 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
+### ⚠️ Cổ Phiếu **`KBC`** — Phát Triển Đô Thị Kinh Bắc (HOSE) | Thị giá: 26,450 đ (+0.00%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: ÂM DÒNG TIỀN FCF (-10,244.1 TỶ VNĐ)` | **Xếp hạng BCTC**: `BB (WATCH)`
+- **Chỉ số Kế toán Pháp y**: OCF/LNST: `-5.36x` | Altman Z'': `8.48` | Nợ/Vốn chủ D/E: `1.65x` | FCF: `-10,244.1 tỷ VNĐ`
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất KBC biến động +0.00%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 71.4/100.
+- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = -5.36x, Dòng tiền tự do FCF = -10,244.1 tỷ VNĐ, Chỉ số Beneish M-Score = -1.82 (SAFE). Chi tiết Red Flags: Dòng tiền kinh doanh OCF âm (-9,394.1 tỷ VND) — Rủi ro lợi nhuận giấy; Khoản phải thu chiếm tỷ trọng cao (159.8% doanh thu); CẢNH BÁO BENEISH M-SCORE (-1.08 > -1.78). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
-### ⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 14,350 đ (+0.00%)
-- **Trạng thái cảnh báo**: `CẢNH BÁO: BENEISH M-SCORE RỦI RO (-2.65)` | **Xếp hạng BCTC**: `AA`
-- **Chỉ số Kế toán Pháp y**: OCF/LNST: `0.91x` | Altman Z'': `2.70` | Nợ/Vốn chủ D/E: `1.12x` | FCF: `1,470 tỷ VNĐ`
-- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất VND biến động +0.00%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 74.0/100.
-- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = 0.91x, Dòng tiền tự do FCF = 1,470 tỷ VNĐ, Chỉ số Beneish M-Score = -2.65 (SAFE). Chi tiết Red Flags: Beneish M-Score = -2.65 (Cảnh báo chất lượng khoản phải thu / OCF). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
+### ⚠️ Cổ Phiếu **`VND`** — Chứng Khoán VNDIRECT (HOSE) | Thị giá: 14,150 đ (+1.07%)
+- **Trạng thái cảnh báo**: `CẢNH BÁO: BENEISH M-SCORE RỦI RO (-2.45)` | **Xếp hạng BCTC**: `AA`
+- **Chỉ số Kế toán Pháp y**: OCF/LNST: `5.44x` | Altman Z'': `2.86` | Nợ/Vốn chủ D/E: `1.04x` | FCF: `11,244.1 tỷ VNĐ`
+- **Tại sao cổ phiếu biến động tiêu cực**: Phiên gần nhất VND biến động +1.07%: Áp lực khoản phải thu chiếm tỷ trọng cao hoặc dòng tiền kinh doanh OCF âm/suy yếu khiến cổ phiếu thiếu lực đỡ từ dòng tiền tổ chức, điểm Hội Đồng 10 Đại Danh Thủ chỉ đạt 81.6/100.
+- **Thực trạng rủi ro BCTC**: [CẢNH BÁO RỦI RO KẾ TOÁN PHÁP Y] Tỷ lệ OCF/LNST = 5.44x, Dòng tiền tự do FCF = 11,244.1 tỷ VNĐ, Chỉ số Beneish M-Score = -2.45 (SAFE). Chi tiết Red Flags: Beneish M-Score = -2.45 (Cảnh báo chất lượng khoản phải thu / OCF). Minh Quân khuyến nghị đứng ngoài quan sát, tuyệt đối không FOMO mua đuổi!
 
 ---
 

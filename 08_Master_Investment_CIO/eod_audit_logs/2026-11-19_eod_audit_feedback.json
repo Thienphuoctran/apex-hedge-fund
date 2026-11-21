@@ -1,0 +1,46 @@
+{
+  "audit_date": "2026-11-19",
+  "auditor": "Apex Master CIO Supreme Audit Desk",
+  "verdict": "CONDITIONAL PASS — YÊU CẦU 3 SỬA ĐỔI CHIẾN THUẬT BẮT BUỘC",
+  "integrity_score_overall": 94.5,
+  "alex_audit": {
+    "specialist": "Alex (Ban 7 Global)",
+    "score": 52.0,
+    "strengths": [
+      "Kỳ vọng [MSFT]: R:R = 1:3.26, EV = +12.8%.",
+      "Kỳ vọng [V]: R:R = 1:2.91, EV = +7.9%.",
+      "Kỳ vọng [JPM]: R:R = 1:2.76, EV = +7.9%.",
+      "Kỳ vọng [PG]: R:R = 1:2.79, EV = +6.9%."
+    ],
+    "critical_flaws_caught": [
+      "LỖI TƯƠNG QUAN BÁN DẪN (SECTOR CONCENTRATION): Alex đề xuất cả NVDA (15%), AVGO (14%), TSM (13%) tổng cộng chiếm tới 42% danh mục US. Mặc dù đây là các siêu cổ phiếu FCF khủng, nhưng mức độ tương quan cụm (Cluster Correlation) lên tới 0.78, khuếch đại rủi ro khi có tin xấu về kiểm soát xuất khẩu chip.",
+      "LỖI GIẢ ĐỊNH LIMIT PULLBACK: Với mã TSM, lệnh Limit -0.35x ATR tại $401.63 có xác suất khớp trong phiên chỉ đạt 45% do lực cầu đúc chip 2nm quá mạnh. Cần điều chỉnh mức chiết khấu về -0.20x ATR để tránh rủi ro mất hàng (Missed Fill Risk)."
+    ],
+    "mandatory_corrective_action": "Alex phải cập nhật trần rủi ro tương quan Bán dẫn khống chế <= 28% NAV và tinh chỉnh lại độ sâu lệnh Limit Pullback vào specialist_evolution_journal.md."
+  },
+  "minh_quan_audit": {
+    "specialist": "Minh Quân (Ban 7 VN)",
+    "score": 95.0,
+    "strengths": [
+      "Chuẩn hóa lô [MSH]: 100 CP tuân thủ 100% quy định sàn HOSE.",
+      "Kỷ luật cắt lỗ [MSH]: Stop 5.99% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.",
+      "Tỷ lệ R:R [MSH]: 1:3.13 đạt chuẩn kỳ vọng toán học dương.",
+      "Chuẩn hóa lô [BAF]: 100 CP tuân thủ 100% quy định sàn HOSE.",
+      "Kỷ luật cắt lỗ [BAF]: Stop 3.53% (Stop 2xATR) nằm trong biên độ an toàn tuyệt đối.",
+      "Tỷ lệ R:R [BAF]: 1:2.59 đạt chuẩn kỳ vọng toán học dương."
+    ],
+    "critical_flaws_caught": [
+      "KỶ LUẬT KHUNG GIỜ VÀNG (TIMING DISCIPLINE): Với danh mục hiện hữu (MSH, BAF), tuyệt đối không FOMO mua đuổi ATO trước 10h00 sáng; mọi lệnh mở mới chỉ bấm cò lúc 14h00–14h25 khi Buy-Up >= 60%.",
+      "CHUẨN CÔNG SUẤT TUẦN SAU & KHÓA LÃI TỪNG PHẦN (NAV 20,229,522 ₫ | Cash 13,594,522 ₫): Khóa trần Thứ Sáu <= 45–55% NAV; sang Thứ Hai–Thứ Tư tuần sau ưu tiên rổ 13k–22.5k thanh khoản >= 2M CP (200–300 CP/mã: PVT, TCB, MBB/HPG/TCH) để nâng công suất lên 70–85% NAV và chốt 50% khi lãi +2.5%..+4.0%."
+    ],
+    "mandatory_corrective_action": "Minh Quân tuân thủ kỷ luật thép trên danh mục thực tế (MSH, BAF): giữ Stop 2xATR bảo vệ MSH/BAF, VETO HDB tới hết 20/11, và chuẩn bị rổ 200–300 CP/mã cho tuần sau."
+  },
+  "departmental_audit": {
+    "Ban 1 & Ban 1 VN (Vĩ mô & Địa chính trị)": "ĐÁNH GIÁ TRUNG THỰC: Bám sát ^VIX=24.56 (chưa < 23.5), US10Y 5.068%, DXY 103.81, WTI -3.36% ($83.12) và VNM ETF +0.18% để giữ kỷ luật phiên đáo hạn.",
+    "Ban 2 & Ban 2 VN (Thẩm định BCTC & Thanh khoản)": "ĐÁNH GIÁ TRUNG THỰC: Đã chấn chỉnh lỗi chọn mã giá cao thanh khoản mỏng (MSH vol20 ~172k CP); tuần tới quay lại chuẩn 13k–22.5k, vol20 >= 2M CP, OCF/LNST >= 1.0x (PVT, TCB, MBB, HPG, TCH).",
+    "Ban 3 & Ban 3 VN (Tổng hợp & Sàng lọc)": "ĐÁNH GIÁ TRUNG THỰC: Kiên quyết khóa cửa trước 14h00 và dùng Cửa Kép Buy-Up >= 60% + Breadth >= 45% + VSA No Supply.",
+    "Ban 4 & Ban 4 VN (Quản trị Rủi ro Định lượng)": "ĐÁNH GIÁ TRUNG THỰC: Bảo vệ MSH, BAF với Stop 2xATR <= 7.0%, khóa trần Thứ Sáu <= 45-55% NAV, mở công suất 70-85% NAV đầu tuần sau.",
+    "Ban 5 & Ban 5 VN (Tự học Thích nghi)": "ĐÁNH GIÁ TRUNG THỰC: Walk-Forward Market Hit Rate thực tế qua 18 phiên là 35.3% (Account 50.0%). Dẹp bỏ điểm tự chấm 98.5/100 hay 100% ảo, đặt mục tiêu chốt tỉa 50% khóa +300k–+500k đ/nhịp."
+  },
+  "corrective_actions_dispatched": []
+}

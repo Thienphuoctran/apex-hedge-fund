@@ -4,23 +4,24 @@
 ---
 
 ## 🏛️ ĐỐI SOÁT TÀI KHOẢN THỰC CHIẾN CHỦ TỊCH TRẦN QUỐC THIÊN PHƯỚC (TCBS: 105C307855)
-- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`20,229,522 VNĐ`**
-- **Vốn Thực Khớp (200 CP)**: **`6,571,900 VNĐ`**
-- **Giá Trị Thị Trường Sống**: **`6,635,000 VNĐ`**
-- **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color="#00C087">+63,100 VNĐ (+0.96%)</font>`** | **Lãi đã chốt**: **`+166,419 VNĐ`**
-- **Tiền Mặt Dry Powder Bảo Toàn**: **`13,594,522 VNĐ`**
-- **Account Hit Rate Thực Chiến**: **`50.0%`** (1/2 mã đang giữ lãi dương)
+- **Tổng Giá Trị Tài Sản Ròng (NAV)**: **`20,264,522 VNĐ`**
+- **Vốn Thực Khớp (300 CP)**: **`8,777,600 VNĐ`**
+- **Giá Trị Thị Trường Sống**: **`8,875,000 VNĐ`**
+- **Lợi Nhuận Tạm Tính (PnL Thực)**: **`<font color="#00C087">+97,400 VNĐ (+1.11%)</font>`** | **Lãi đã chốt**: **`+167,119 VNĐ`**
+- **Tiền Mặt Dry Powder Bảo Toàn**: **`11,389,522 VNĐ`**
+- **Account Hit Rate Thực Chiến**: **`66.7%`** (2/3 mã đang giữ lãi dương)
 
 | Mã CK | Khối Lượng | Giá Vốn Thực Tế | Thị Giá Sống | Giá Trị Vốn | Giá Trị Thị Trường | Lãi/Lỗ Thực Tế | Ngưỡng Stop 2xATR | Trạng Thái Rủi Ro |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`MSH`** | **100 CP** | 34,510 ₫ | 35,200 ₫ | 3,451,000 ₫ | 3,520,000 ₫ | **+69,000 ₫ (+2.00%)** | 33,090 ₫ | 🟢 AN TOÀN |
-| **`BAF`** | **100 CP** | 31,209 ₫ | 31,150 ₫ | 3,120,900 ₫ | 3,115,000 ₫ | **-5,900 ₫ (-0.19%)** | 30,050 ₫ | 🟢 AN TOÀN |
+| **`HDB`** | **100 CP** | 22,057 ₫ | 22,400 ₫ | 2,205,700 ₫ | 2,235,000 ₫ | **+29,300 ₫ (+1.56%)** | 22,060 ₫ | 🟢 AN TOÀN |
+| **`MSH`** | **100 CP** | 34,510 ₫ | 35,050 ₫ | 3,451,000 ₫ | 3,400,000 ₫ | **-51,000 ₫ (+1.56%)** | 33,090 ₫ | 🟢 AN TOÀN |
+| **`BAF`** | **100 CP** | 31,209 ₫ | 31,300 ₫ | 3,120,900 ₫ | 3,130,000 ₫ | **+9,100 ₫ (+0.29%)** | 30,050 ₫ | 🟢 AN TOÀN |
 
 ---
 
 ## 1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)
-- **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **78.5%**
-- **Số lượng phiên lịch sử lưu trữ**: 18 phiên giao dịch.
+- **Tỷ lệ Dự Báo Chuẩn Xác Toàn Danh Mục (Hit Rate %)**: **35.3%**
+- **Số lượng phiên lịch sử lưu trữ**: 17 phiên giao dịch.
 - **Trạng thái mô hình**: THÍCH NGHI ỔN ĐỊNH & LIÊN TỤC TIẾN HÓA.
 
 ## 2. BÓC TÁCH NGUYÊN NHÂN HIỆU SUẤT (PERFORMANCE ATTRIBUTION)

@@ -20,7 +20,10 @@ WORKSPACE_DIR = Path(r"C:\Users\phuoc\Downloads\antigravity\Chứng khoán")
 CLAUDE_MEM_DB = Path(r"C:\Users\phuoc\.claude-mem\claude-mem.db")
 APEX_VAULT_DB = WORKSPACE_DIR / "data" / "apex_institutional_vault.db"
 STATE_FILE = WORKSPACE_DIR / "00_LIVE_INTER_CHAT_STATE.md"
-PORTFOLIO_FILE = WORKSPACE_DIR / "VN_Market" / "data" / "current_portfolio_state.json"
+PORTFOLIO_FILE = WORKSPACE_DIR / "data" / "current_portfolio_state.json"
+BRAIN_V3_FILE = WORKSPACE_DIR / "data" / "apex_autonomous_brain_v3_output.json"
+INTEL_FILE = WORKSPACE_DIR / "data" / "apex_daily_internet_intel.json"
+WEEKLY_PLAN_FILE = WORKSPACE_DIR / "data" / "weekly_tactical_plan_active.json"
 
 
 def get_current_state_snapshot():
@@ -123,59 +126,126 @@ def query_institutional_memory(keyword: str = "", limit: int = 5):
     return memories
 
 
+def _load_json_safe(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _purge_stale_hardcoded_memories():
+    """Xóa các bản ghi ký ức giả tĩnh cũ (09/11 - 11/11) nếu còn sót trong claude-mem.db."""
+    if not CLAUDE_MEM_DB.exists():
+        return
+    try:
+        conn = sqlite3.connect(CLAUDE_MEM_DB)
+        cur = conn.cursor()
+        exists = cur.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='apex_institutional_memory'"
+        ).fetchone()
+        if exists:
+            cur.execute(
+                """
+                DELETE FROM apex_institutional_memory
+                WHERE title LIKE '%100 HDB & 100 MSH%'
+                   OR content LIKE '%14,510,422%'
+                   OR content LIKE '%14.51M%'
+                   OR content LIKE '%72.0% Cash%'
+                """
+            )
+            conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f"[MEMORY BRIDGE] Cảnh báo khi dọn ký ức cũ: {e}")
+
+
 def sync_core_apex_memory():
     """
-    Đồng bộ hóa tức thì trạng thái danh mục then chốt vào kho ký ức.
+    Đồng bộ hóa tức thì trạng thái danh mục thực tế (SSOT động), Brain V3.0 và crawler Internet vào kho ký ức.
     """
     snap = get_current_state_snapshot()
-    
-    # Ký ức then chốt 1: Lệnh đã khớp Vòng 2
-    mem_title_1 = "DANH MỤC THỰC TẾ ĐÃ KHỚP LỆNH: 100 HDB & 100 MSH (T+2.5 VỀ KÉT 13H00)"
+    portfolio = snap.get("portfolio") or _load_json_safe(PORTFOLIO_FILE)
+    v3_out = _load_json_safe(BRAIN_V3_FILE)
+    intel_out = _load_json_safe(INTEL_FILE)
+    weekly_plan = _load_json_safe(WEEKLY_PLAN_FILE)
+
+    account_id = str(portfolio.get("account_id") or "105C307855")
+    status_str = str(portfolio.get("status") or "ALL_CASH_STANDDOWN")
+    cash_vnd = float(portfolio.get("cash_balance_vnd") or 0.0)
+    nav_vnd = float(portfolio.get("total_nav_vnd") or cash_vnd)
+    positions = portfolio.get("active_positions") or {}
+    cash_pct = (cash_vnd / nav_vnd * 100.0) if nav_vnd > 0 else 100.0
+
+    if not positions:
+        pos_summary = "0 cổ phiếu đang nắm giữ (Đã bán khớp hết 100 BAF @ 30,350đ lúc 13:08 & 100 MSH @ 34,300đ lúc 13:12 ngày 20/11/2026)"
+        pos_md_block = "- Cổ phiếu đang giữ: **0 CP (`ALL_CASH_STANDDOWN`)** — Đã tất toán sạch 100% BAF & MSH trưa `20/11/2026`."
+    else:
+        pos_items = [
+            f"{sym} ({int(p.get('shares', 0))} CP @ {float(p.get('entry_price') or p.get('avg_cost') or 0):,.0f} đ)"
+            for sym, p in positions.items()
+        ]
+        pos_summary = "; ".join(pos_items)
+        pos_md_block = "\n".join(f"  * **{item}**" for item in pos_items)
+
+    mr = v3_out.get("market_regime") or {}
+    regime_id = str(mr.get("regime_id") or "BEAR_WITH_SPRING_WATCH")
+    vni_close = float(mr.get("vnindex_close") or 0.0)
+    as_of = str(mr.get("as_of_date") or "")
+    br20 = float(mr.get("breadth_above_ma20_pct") or 0.0)
+    strikes = v3_out.get("asymmetric_conviction_strikes") or []
+    strike_names = ", ".join(
+        f"{s.get('symbol')} ({int(s.get('shares_lot100') or 0)} CP @ {float(s.get('limit_entry_vnd') or 0):,.0f}đ)"
+        for s in strikes[:3]
+    ) or "TPB, HDB, CTG"
+
+    sc = intel_out.get("summary_counts") or {}
+    crawled_at = str(intel_out.get("crawled_at") or snap["timestamp"])
+    mandate = str(weekly_plan.get("constitution_mandate") or "")[:320]
+
+    _purge_stale_hardcoded_memories()
+
+    mem_title_1 = f"TRẠNG THÁI SSOT THỰC TẾ: {cash_pct:.1f}% TIỀN MẶT ({cash_vnd:,.0f} đ) | {len(positions)} CP"
     mem_body_1 = (
-        "Chủ tịch Trần Quốc Thiên Phước (TCBS 105C307855) đã khớp thành công 100 CP HDB (@22,050 ₫) "
-        "và 100 CP MSH (@34,517 ₫) trong phiên 09/11/2026. "
-        "Tổng giá trị cổ phiếu: 5,650,000 ₫ (28.0% NAV). "
-        "Tiền mặt thực tế còn lại: 14,510,422 ₫ (72.0% Cash). "
-        "Tổng NAV: 20,160,422 ₫. "
-        "Chiều nay 11/11/2026 lúc 13h00, 200 CP này chính thức về tài khoản khả dụng. "
-        "TUYỆT ĐỐI CẤM NHẮC MUA LẠI HOẶC GIỤC MUA GOM NHỊP 1 HDB/MSH."
+        f"Chủ tịch Trần Quốc Thiên Phước (TCBS {account_id}): Trạng thái `{status_str}`. "
+        f"Tổng NAV: {nav_vnd:,.0f} đ | Tiền mặt thực tế: {cash_vnd:,.0f} đ ({cash_pct:.1f}% Cash). "
+        f"Vị thế cổ phiếu: {pos_summary}. "
+        f"TUYỆT ĐỐI KHÔNG BÁO CÒN NẮM GIỮ 100 HDB HOẶC 100 MSH HOẶC 100 BAF."
     )
     inject_memory_to_claude_mem(mem_title_1, mem_body_1, category="portfolio_ssot")
 
-    # Ký ức then chốt 2: Quy tắc điều hành và bảo vệ vốn
-    mem_title_2 = "QUY TẮC BẢO VỆ VỐN VÀ KHUNG GIỜ VÀNG 14H00-14H25"
+    mem_title_2 = f"CHẾ ĐỘ BRAIN V3.0 ({regime_id}) & KHUNG GIỜ VÀNG 14H05-14H25"
     mem_body_2 = (
-        "1. Két tiền mặt 14.51M là bất khả xâm phạm. "
-        "2. Không FOMO mua đuổi giá xanh trước 10h00 sáng. "
-        "3. Phiên chiều 13h00-13h45: Quan sát hấp thụ hàng T+2 về tài khoản. "
-        "4. Khung Giờ Vàng 14h00-14h25: Nâng Stop giá vốn cho HDB (22,050) và MSH (34,517) để gồng lãi không rủi ro; "
-        "chỉ giải ngân thăm dò tối đa 5.5M nếu BAF/IDC/BSR xuất hiện nến Test Cung bứt phá."
+        f"1. Thị trường EOD {as_of}: VN-Index {vni_close:,.2f}, Breadth>MA20={br20:.1f}%, Regime={regime_id}. "
+        f"2. Không FOMO ATO sáng hay trước 14h00; chỉ kích hoạt lệnh LO khung 14h05–14h25 theo 4 nhánh S1–S4. "
+        f"3. Rổ Đánh cược Bất đối xứng V3.0 Tuần 48: {strike_names} (khóa Stop -5.5%). "
+        f"4. Intel Crawler ({crawled_at}): {sc.get('total_news_articles', 0)} tin, {sc.get('rss_sources_online', 0)} RSS, "
+        f"{sc.get('verified_ir_portals', 0)} IR HTTP-200, {sc.get('tavily_live_hits', 0)} Tavily, {sc.get('sec_edgar_filings', 0)} SEC."
     )
     inject_memory_to_claude_mem(mem_title_2, mem_body_2, category="institutional_policy")
 
-    # Cập nhật placeholder file của Antigravity rules
     rule_file = Path(r"C:\Users\phuoc\.agents\rules\claude-mem-context.md")
     if rule_file.parent.exists():
         rule_content = f"""<claude-mem-context>
-# APEX INSTITUTIONAL ACTIVE MEMORY (SSOT V2.0)
+# APEX INSTITUTIONAL ACTIVE MEMORY (SSOT V3.0 LIVE)
 **Thời gian đồng bộ:** {snap['timestamp']}
-**Chủ tịch:** Trần Quốc Thiên Phước | Tài khoản TCBS: 105C307855 | Tổng NAV: 20,160,422 ₫
+**Chủ tịch:** Trần Quốc Thiên Phước | Tài khoản TCBS: `{account_id}` | Tổng NAV: **`{nav_vnd:,.0f} ₫`**
 
-## 1. Trạng Thái Danh Mục Thực Tế:
-- Tiền mặt két: **14,510,422 ₫** (~72.0% Cash)
-- Cổ phiếu nắm giữ (T+2.5 khả dụng chiều nay 13h00):
-  * **100 HDB**: Giá vốn 22,050 ₫ | Live: ~22.25k | Stop 2xATR: 21,220 ₫ | LÃI ĐỆM
-  * **100 MSH**: Giá vốn 34,517 ₫ | Live: ~34.60k | Stop 2xATR: 33,090 ₫ | LÃI ĐỆM
-- Tổng lãi chốt Vòng 1: +167,119 ₫ (Đã tất toán 100% HPG, TCB, MBB)
+## 1. Trạng Thái Danh Mục Thực Tế (SSOT):
+- Trạng thái: **`{status_str}`**
+- Tiền mặt thực tế trong két: **`{cash_vnd:,.0f} ₫`** (`{cash_pct:.1f}% Cash`)
+{pos_md_block}
 
-## 2. Kỷ Luật Tác Chiến Bất Biến:
-- CẤM nhắc mua lại HDB hoặc MSH (đã khớp xong từ phiên 09/11).
-- Phiên hôm nay 11/11: Chờ 13h00 hàng về, Khung Giờ Vàng 14h00-14h25 nâng Stop giá vốn gồng lãi.
-- Kế hoạch giải ngân mới: Chỉ thăm dò tối đa 5.5M nếu BAF/IDC/BSR có setup A+.
+## 2. Đầu Não Tự Chủ Brain V3.0 & Dữ Liệu Sống:
+- Thị trường EOD `{as_of}`: VN-Index **`{vni_close:,.2f}`** | Breadth>MA20: **`{br20:.1f}%`** | Regime: **`{regime_id}`**
+- Internet Intel (`{crawled_at}`): `{sc.get('total_news_articles', 0)}` tin (`{sc.get('tickers_with_live_news', 0)}` mã), `{sc.get('rss_sources_online', 0)}` RSS, `{sc.get('verified_ir_portals', 0)}` cổng IR HTTP-200, `{sc.get('tavily_live_hits', 0)}` Tavily, `{sc.get('sec_edgar_filings', 0)}` SEC EDGAR.
+- Kèo S3 Spring V3.0 dự kiến chiều Thứ Hai (`14h05–14h25`): `{strike_names}` (chỉ kích hoạt nếu đạt điều kiện; thủng đáy giữ `100%` Tiền mặt S4).
+- Chỉ thị Tuần 48: {mandate}
 </claude-mem-context>
 """
         rule_file.write_text(rule_content, encoding="utf-8")
-        print("[MEMORY BRIDGE] Đã cập nhật claude-mem-context.md cho Antigravity Rules!")
+        print("[MEMORY BRIDGE] Đã cập nhật claude-mem-context.md động theo SSOT V3.0!")
 
     return True
 

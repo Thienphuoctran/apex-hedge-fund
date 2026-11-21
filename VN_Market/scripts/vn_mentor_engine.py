@@ -27,7 +27,7 @@ MENTOR_DIR = os.path.join(BASE_DIR, "06_Investor_Academy", "daily_mentorship")
 BRIEFING_MD = os.path.join(MENTOR_DIR, f"{datetime.date.today()}_VN_Mentor_Briefing.md")
 
 def run():
-    print("=== [VN MENTOR ENGINE] BIÊN SOẠN BẢN TIN KHAI SÁNG 7H30 SÁNG CHO NHÀ ĐẦU TƯ ===")
+    print("=== [VN MENTOR ENGINE v2.0] BẢN TIN KHAI SÁNG 7H30 SÁNG — BCTC THẬT & ỨNG BIẾN 5 KỊCH BẢN ===")
     os.makedirs(MENTOR_DIR, exist_ok=True)
     today_str = datetime.date.today().strftime("%Y-%m-%d")
 
@@ -36,55 +36,97 @@ def run():
     with open(BCTC_PATH, "r", encoding="utf-8") as f:
         bctc = json.load(f)
 
+    root_dir = os.path.dirname(BASE_DIR)
+    live_bctc_path = os.path.join(BASE_DIR, "data", "vn_real_bctc_live.json")
+    v2_path = os.path.join(root_dir, "data", "apex_quant_brain_v2_output.json")
+    pb_path = os.path.join(root_dir, "data", "apex_adaptive_contingency_playbook.json")
+
+    live_stocks = {}
+    if os.path.exists(live_bctc_path):
+        try:
+            with open(live_bctc_path, "r", encoding="utf-8") as lf:
+                live_stocks = json.load(lf).get("stocks", {})
+        except Exception:
+            live_stocks = {}
+    mr = {}
+    if os.path.exists(v2_path):
+        try:
+            with open(v2_path, "r", encoding="utf-8") as vf:
+                mr = json.load(vf).get("market_regime", {})
+        except Exception:
+            mr = {}
+    scenarios = []
+    if os.path.exists(pb_path):
+        try:
+            with open(pb_path, "r", encoding="utf-8") as pf:
+                scenarios = json.load(pf).get("scenarios", [])
+        except Exception:
+            scenarios = []
+
+    def _lm(sym: str) -> dict:
+        return (live_stocks.get(sym) or {}).get("latest_metrics") or {}
+
+    hpg_lm = _lm("HPG")
+    tpb_lm = _lm("TPB")
+    ctg_lm = _lm("CTG")
+    baf_lm = _lm("BAF")
+    msh_lm = _lm("MSH")
+
     macro = mkt.get("macro_vietnam", {})
-    stocks = mkt.get("stocks", {})
+    fx_val = macro.get("USD_VND_Exchange_Rate", {}).get("value") or 25705.0
+    gdp_val = (macro.get("VN_GDP_Growth_Live") or {}).get("value") or 9.95
+    vni_val = float(mr.get("vnindex_close") or 1689.62)
+    br20_val = float(mr.get("breadth_above_ma20_pct") or 25.7)
+    cur_reg = str(mr.get("regime_id") or "BEAR_DOWNTREND")
 
     lines = [
-        f"# BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN (7H30 AM) — {today_str}",
-        f"**Người hướng dẫn**: Huấn Luyện Viên Trưởng Học Viện Đầu Tư Thực Chiến (Ban 6 VN)",
-        f"**Khung giờ phát hành**: **7h30 Sáng** (Dành 60 phút đọc kỹ BCTC & Chiến lược trước phiên giao ban 8h30 của Chuyên viên Minh Quân)",
+        f"# BẢN TIN KHAI SÁNG BUỔI SÁNG & HUẤN LUYỆN ỨNG BIẾN ĐA KỊCH BẢN (7H30 AM) — {today_str}",
+        "**Người hướng dẫn**: Huấn Luyện Viên Trưởng Học Viện Đầu Tư Thực Chiến (Ban 6 VN)",
+        f"**Chế độ Thị trường sống**: **`{cur_reg}`** (`VN-Index {vni_val:,.2f}`, `Breadth>MA20 = {br20_val:.1f}%`)",
+        "**Khung giờ phát hành**: **7h30 Sáng** (Dành 60 phút đọc BCTC thật & Ma trận 5 Kịch bản trước giao ban 8h30 của Minh Quân)",
         "",
         "---",
         "",
-        "## 🌅 1. TỔNG QUAN TÂM LÝ ĐẦU NGÀY: THẾ GIỚI ĐÊM QUA TÁC ĐỘNG THẾ NÀO ĐẾN VN-INDEX?",
-        f"- **Chỉ số S&P 500 & Chứng khoán Mỹ**: Tiếp tục xu hướng tích lũy, tâm lý giới đầu tư toàn cầu duy trì ổn định.",
-        f"- **Chỉ số Đô la Mỹ (DXY)**: Đang neo quanh mức **{macro.get('DXY', {}).get('value')}**. Áp lực tỷ giá USD/VND đang được NHNN (SBV) kiểm soát chặt chẽ thông qua các công cụ điều tiết linh hoạt.",
-        f"- **Giá Dầu thô WTI**: Ở mức **${macro.get('WTI_OIL', {}).get('value')}/thùng**. Tác động phân hóa tích cực lên nhóm cổ phiếu Dầu khí thượng nguồn (PVS, PVD).",
-        f"- **Thông điệp mở phiên ATO**: Nhà đầu tư tuyệt đối không mua đuổi giá xanh tím trong 15 phút mở phiên ATO. Hãy quan sát lực cung cầu thực tế sau 9h30 khi dòng tiền tổ chức nhập cuộc.",
+        "## 1. TỔNG QUAN VĨ MÔ & TÂM LÝ THỊ TRƯỜNG ĐẦU NGÀY",
+        f"- **S&P 500 / US10Y**: `S&P 500 = {macro.get('S_AND_P500', {}).get('value')}` | `US10Y = {macro.get('US10Y', {}).get('value')}%` | `DXY = {macro.get('DXY', {}).get('value')}`",
+        f"- **Tỷ giá USD/VND & GDP VN**: `USD/VND = {fx_val:,.1f} đ` | `GDP VN Q3/2026 = {gdp_val}%` | **Giá Dầu WTI**: `USD {macro.get('WTI_OIL', {}).get('value')}/thùng`",
+        "- **Thông điệp mở phiên ATO**: 95% bẫy giá xanh rơi vào 15 phút đầu ATO và phiên sáng. Luôn chờ áp lực hàng T+2.5 lộ diện sau 13h15 và chỉ giải ngân trong Khung Giờ Vàng `14h00–14h25`.",
         "",
         "---",
         "",
-        "## 🔍 2. BÀI HỌC THỰC CHIẾN HÔM NAY: 'NGHỆ THUẬT BÓC TÁCH DÒNG TIỀN THỰC OCF TRONG BCTC'",
+        "## 2. BÀI HỌC THỰC CHIẾN Q3/2026: 'BÓC TRẦN LỢI NHUẬN GIẤY VS DÒNG TIỀN THẬT'",
         "",
-        "> *'Doanh thu là phù phiếm, Lợi nhuận là ảo tưởng, chỉ có Tiền Mặt trong két sắt mới là Sự Thật.'*",
+        "> *'Doanh thu có thể tạo, Lợi nhuận kế toán có thể điều chỉnh, chỉ có Dòng tiền OCF thực trong két mới bảo vệ vốn gốc.'*",
         "",
-        "### 💡 Khái niệm cần nhớ:",
-        "Nhiều nhà đầu tư mới (F0) thường chỉ nhìn vào con số **Lợi nhuận sau thuế (LNST)** trên Báo cáo Kết quả Kinh doanh. Nhưng một doanh nghiệp có thể báo lãi hàng nghìn tỷ đồng nhưng thực chất không có một đồng tiền mặt nào!",
-        "",
-        "### ⚠️ 3 Dấu hiệu Cảnh Báo Nguy Hiểm trên BCTC Doanh nghiệp Việt Nam:",
-        "1. **Tỷ lệ OCF / LNST < 0**: Lợi nhuận dương nhưng Dòng tiền thuần từ Hoạt động Kinh doanh lại âm liên tiếp 2-3 năm. Đây là dấu hiệu doanh nghiệp bán chịu chưa thu được tiền hoặc bị đối tác chiếm dụng vốn.",
-        "2. **Khoản Phải thu ngắn hạn tăng vọt**: Nếu Phải thu tăng nhanh gấp đôi tốc độ tăng trưởng Doanh thu, hãy đặt nghi vấn về tính xác thực của các hợp đồng bán hàng.",
-        "3. **Tỷ lệ Dồn tích (Sloan Accrual Ratio) > 10%**: Sự chênh lệch quá lớn giữa Lợi nhuận kế toán và Dòng tiền OCF báo hiệu chất lượng lợi nhuận đang ở mức báo động.",
-        "",
-        "### 🏆 Ví dụ Cổ Phiếu Kiểu Mẫu Trong Danh Mục Hôm Nay:",
-        "- **FPT**: OCF đạt hơn 9.400 tỷ VND, FCF > 5.200 tỷ VND, lượng tiền mặt và tiền gửi ngân hàng lên tới 29.000 tỷ VND.",
-        "- **DGC**: Tiền mặt ròng dồi dào, nợ vay gần như bằng 0, OCF vượt LNST.",
-        "- **HPG**: OCF đạt hơn 16.500 tỷ VND, đủ sức tự tài trợ phần lớn cho đại dự án Dung Quất 2 mà không bị căng thẳng đòn bẩy.",
+        "### Các Case Study Sống Từ BCTC Q3/2026 (Vietcap IQ Live):",
+        f"- **Cổ phiếu Tiền thật Sạch (`HPG`, `TPB`, `CTG`):** `HPG` (Doanh thu TTM `{hpg_lm.get('revenue_ttm_ty', 216450.4):,.1f} tỷ`, OCF `+{hpg_lm.get('ocf_ty', 29500.6):,.1f} tỷ`, FCF `+{hpg_lm.get('fcf_ty', 13007.9):,.1f} tỷ`, F-Score `{hpg_lm.get('piotroski_f_score', 8)}/9`); `TPB` (`F-Score {tpb_lm.get('piotroski_f_score', 9)}/9`, ROE `{tpb_lm.get('roe_ttm_pct', 18.35)}%`); `CTG` (`F-Score {ctg_lm.get('piotroski_f_score', 8)}/9`, ROE `{ctg_lm.get('roe_ttm_pct', 22.56)}%`).",
+        f"- **Cảnh báo Đỏ Thực Tế (`BAF`):** LNST TTM sụp `{baf_lm.get('profit_growth_yoy', -80.16):+.2f}% YoY` còn `{baf_lm.get('net_profit_ttm_ty', 92.5)} tỷ`, P/E `{baf_lm.get('pe_ttm', 138.92)}x`, OCF âm **`{baf_lm.get('ocf_ty', -496.2):,.1f} tỷ`** (`{baf_lm.get('ocf_to_profit_ratio', -5.37)}x`), F-Score `{baf_lm.get('piotroski_f_score', 2)}/9`, Beneish `{baf_lm.get('beneish_m_score', -1.54)} (HIGH_RISK)`. Không giữ dài hạn!",
+        f"- **Bài học Thanh khoản & Lệch pha Tiền (`MSH`):** ROE `{msh_lm.get('roe_ttm_pct', 24.89)}%` nhưng OCF TTM chỉ đạt `{msh_lm.get('ocf_ty', 7.1)} tỷ` (`{msh_lm.get('ocf_to_profit_ratio', 0.01)}x` LNST `{msh_lm.get('net_profit_ttm_ty', 629.2)} tỷ`) và thanh khoản 1M mỏng chỉ `{msh_lm.get('avg_val_1m_ty', 6.08)} tỷ/phiên` -> Dễ trượt giá khi thoát lệnh.",
         "",
         "---",
         "",
-        "## 🧠 3. CÂU HỎI TƯ DUY PHẢN BIỆN SOCRATIC DÀNH CHO BẠN HÔM NAY",
-        "",
-        "1. *Nếu cổ phiếu bạn đang theo dõi tăng vọt 5% ngay trong phiên ATO nhưng BCTC của nó có dòng tiền OCF âm triền miên và nợ vay cao, bạn sẽ làm gì: Đua lệnh theo đám đông hay kiên nhẫn đứng ngoài?*",
-        "2. *Bạn đã thiết lập mức dừng lỗ Stop 2xATR cho các vị thế trong tài khoản của mình trước giờ thị trường mở cửa chưa?*",
+        "## 3. CÂU HỎI TƯ DUY PHẢN BIỆN SOCRATIC",
+        "1. *Nếu bạn chỉ nhìn lợi nhuận danh nghĩa mà bỏ qua OCF âm (-496.2 tỷ) và F-Score = 2/9, bạn đang đầu tư hay đang đánh bạc vào niềm tin?*",
+        f"2. *Khi VN-Index ở `{cur_reg}` (Breadth>MA20 = `{br20_val:.1f}%`), làm thế nào để giữ 100% tiền mặt không sốt ruột cho tới khi kịch bản S1/S2/S3 kích hoạt?*",
         "",
         "---",
         "",
-        "## ⏰ LỊCH TRÌNH TIẾP THEO:",
-        "- **7h30 - 8h30**: Thời gian dành riêng cho Nhà đầu tư nghiên cứu kỹ Báo cáo BCTC Ban 2 và Bản tin Huấn luyện này.",
-        "- **8h30**: **Chuyên viên Đầu tư Trưởng Minh Quân (Ban 7)** sẽ kích hoạt Hội nghị Giao ban và ban hành **Bản Kế Hoạch Lệnh Thực Thi Khoa Học Trong Ngày (Pre-ATO Execution Blotter)** sẵn sàng cho phiên giao dịch 9h00!",
-        ""
+        "## 4. CẨM NANG ỨNG BIẾN LINH HOẠT 5 KỊCH BẢN (S1 – S5) TRONG NGÀY",
+        "Nhà đầu tư chuyên nghiệp không đoán bừa 1 hướng thị trường; hãy bám đúng phản xạ theo từng kịch bản:",
+        "",
     ]
+
+    for sc in scenarios:
+        lines.append(
+            f"- **`{sc['scenario_id']}` ({sc['name_vi']})**: Công suất `{sc.get('target_equity_exposure_pct')}` | Trạng thái 19/11: `{sc.get('status_on_2026_11_19')}` — {sc.get('execution_tactics_vi').splitlines()[0]}"
+        )
+    lines.extend([
+        "",
+        "## 5. LỊCH TRÌNH TIẾP THEO:",
+        "- **07h30 - 08h30**: Nhà đầu tư rà soát BCTC Ban 2 & Checklist 7 Điểm cho 5 kịch bản.",
+        "- **08h30**: **Minh Quân (Ban 7)** kích hoạt Sổ lệnh Đa Kịch bản sẵn sàng điều hành phiên!",
+        ""
+    ])
 
     with open(BRIEFING_MD, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))

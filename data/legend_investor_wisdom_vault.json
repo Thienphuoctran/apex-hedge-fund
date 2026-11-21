@@ -1,22 +1,19 @@
 {
-  "generated_at": "2026-11-15 21:51:25 (ICT)",
-  "trading_date": "2026-11-15",
+  "generated_at": "2026-11-21 17:18:27 (ICT)",
+  "trading_date": "2026-11-21",
   "total_legends": 15,
   "total_heuristics_linked": 105,
   "self_reflection": {
-    "evaluated_at": "2026-11-15 21:51:25 (ICT)",
+    "evaluated_at": "2026-11-21 17:18:27 (ICT)",
     "account_id": "105C307855",
-    "cash_balance_vnd": 12516471.0,
-    "realized_pnl_vnd": 167119.0,
-    "active_symbols": [
-      "HDB",
-      "MSH"
-    ],
+    "cash_balance_vnd": 20051117.0,
+    "realized_pnl_vnd": 51117.0,
+    "active_symbols": [],
     "classification_counts": {
       "COMMISSION_ERROR": 1,
       "OMISSION_ERROR": 1,
       "DISCIPLINED_PASS": 1,
-      "EXECUTION_EXCELLENCE": 3
+      "EXECUTION_EXCELLENCE": 1
     },
     "events": [
       {
@@ -34,31 +31,17 @@
         "lesson": "Không bấm lệnh vội vàng trước khi kiểm tra thanh khoản hấp thụ T+2.5; hạn chế turnover không có biên EV >= +5%."
       },
       {
-        "category": "EXECUTION_EXCELLENCE",
-        "ref": "HOLD-HDB",
-        "timestamp": "2026-11-15",
-        "summary": "Vị thế 100 CP HDB @ 22,057₫ -> Live 22,600₫ (+54,300₫ / +2.46%), trên Stop 22,060₫.",
-        "lesson": "Giải ngân thăm dò HDB đúng cổ phiếu BCTC OCF/LNST >= 1.1x giúp tạo đệm lãi an toàn khi thị trường rung lắc."
-      },
-      {
-        "category": "EXECUTION_EXCELLENCE",
-        "ref": "HOLD-MSH",
-        "timestamp": "2026-11-15",
-        "summary": "Vị thế 100 CP MSH @ 34,510₫ -> Live 34,800₫ (+29,000₫ / +0.84%), trên Stop 33,090₫.",
-        "lesson": "Giải ngân thăm dò MSH đúng cổ phiếu BCTC OCF/LNST >= 1.1x giúp tạo đệm lãi an toàn khi thị trường rung lắc."
-      },
-      {
         "category": "OMISSION_ERROR",
-        "ref": "OMIT-2026-11-15",
-        "timestamp": "2026-11-15",
-        "summary": "Còn 12,516,471₫ tiền nhàn rỗi chưa kích hoạt thêm mã Top EV% đủ tiền lô 100: BAF (GOLDEN_BUY_ZONE @ 30,950₫, BuyUp 71.7%), DBC (EV +16.60%, R:R 1:4.67).",
+        "ref": "OMIT-2026-11-21",
+        "timestamp": "2026-11-21",
+        "summary": "Còn 20,051,117₫ tiền nhàn rỗi chưa kích hoạt thêm mã Top EV% đủ tiền lô 100: OCB (GOLDEN_BUY_ZONE @ 10,600₫, BuyUp 72.8%), TCB (GOLDEN_BUY_ZONE @ 20,750₫, BuyUp 81.5%), PVT (GOLDEN_BUY_ZONE @ 19,200₫, BuyUp 83.7%).",
         "lesson": "Chủ động chuẩn bị sẵn lệnh LO 100 CP trong khung 14h00-14h25 khi mã Top EV% chạm vùng mua VSA và độ rộng VN-Index ổn định."
       },
       {
         "category": "DISCIPLINED_PASS",
-        "ref": "PASS-2026-11-15",
-        "timestamp": "2026-11-15",
-        "summary": "Giữ 68.6% tiền mặt bảo vệ NAV trước nhịp rung lắc tuần, cấm bắt đáy BSR/BAF trước 14h00 và loại bỏ nhóm định giá đắt (COST (MOS -30.2%), AAPL (MOS -30.3%)).",
+        "ref": "PASS-2026-11-21",
+        "timestamp": "2026-11-21",
+        "summary": "Giữ 68.6% tiền mặt bảo vệ NAV trước nhịp rung lắc tuần, cấm bắt đáy BSR/BAF trước 14h00 và loại bỏ nhóm định giá đắt (NKG (MOS -22.5%), HCM (MOS -31.9%), FTS (MOS -13.3%)).",
         "lesson": "Không mua khi biên an toàn âm và tuyệt đối không bắt dao rơi phiên sáng là kỷ luật bảo vệ vốn số 1 của Quỹ."
       }
     ],
@@ -66,53 +49,53 @@
       "T+3": {
         "horizon": "T+3",
         "signal_samples": 0,
-        "historical_eval_samples": 23,
-        "hit_rate_pct": 72.0,
-        "avg_return_pct": 2.83,
-        "brier_score": 0.1065,
-        "data_source": "Historical Prediction Tracker (23 mẫu chuẩn hóa)",
+        "historical_eval_samples": 26,
+        "hit_rate_pct": 77.8,
+        "avg_return_pct": 3.58,
+        "brier_score": 0.1332,
+        "data_source": "Historical Prediction Tracker (26 mẫu chuẩn hóa)",
         "regime_edge": "Lọc trượt giá & né Bull-Trap ngắn hạn đầu phiên"
       },
       "T+5": {
         "horizon": "T+5",
         "signal_samples": 0,
-        "historical_eval_samples": 23,
-        "hit_rate_pct": 78.3,
-        "avg_return_pct": 3.96,
-        "brier_score": 0.0986,
-        "data_source": "Historical Prediction Tracker (23 mẫu chuẩn hóa)",
+        "historical_eval_samples": 26,
+        "hit_rate_pct": 84.6,
+        "avg_return_pct": 4.84,
+        "brier_score": 0.1233,
+        "data_source": "Historical Prediction Tracker (26 mẫu chuẩn hóa)",
         "regime_edge": "Chu kỳ hấp thụ hàng T+2.5 & kiểm tra cung cầu"
       },
       "T+10": {
         "horizon": "T+10",
         "signal_samples": 0,
-        "historical_eval_samples": 23,
-        "hit_rate_pct": 81.4,
-        "avg_return_pct": 4.57,
-        "brier_score": 0.0947,
-        "data_source": "Historical Prediction Tracker (23 mẫu chuẩn hóa)",
+        "historical_eval_samples": 26,
+        "hit_rate_pct": 88.0,
+        "avg_return_pct": 5.53,
+        "brier_score": 0.1184,
+        "data_source": "Historical Prediction Tracker (26 mẫu chuẩn hóa)",
         "regime_edge": "Chu kỳ xác nhận dòng tiền tổ chức / gom nền"
       },
       "T+20": {
         "horizon": "T+20",
         "signal_samples": 0,
-        "historical_eval_samples": 23,
-        "hit_rate_pct": 84.6,
-        "avg_return_pct": 5.23,
-        "brier_score": 0.0907,
-        "data_source": "Historical Prediction Tracker (23 mẫu chuẩn hóa)",
+        "historical_eval_samples": 26,
+        "hit_rate_pct": 91.4,
+        "avg_return_pct": 6.26,
+        "brier_score": 0.1134,
+        "data_source": "Historical Prediction Tracker (26 mẫu chuẩn hóa)",
         "regime_edge": "Chu kỳ hội tụ Giá Nội Tại (MOS%) & KQKD Quý"
       }
     },
     "system_maturity_iq": {
-      "maturity_score": 86.9,
-      "collective_iq": 162.6,
-      "win_rate_pct": 76.2,
-      "trade_win_rate_pct": 75.0,
-      "prediction_hit_rate_pct": 78.3,
-      "brier_calibration_score": 0.0986,
+      "maturity_score": 78.4,
+      "collective_iq": 156.4,
+      "win_rate_pct": 62.1,
+      "trade_win_rate_pct": 50.0,
+      "prediction_hit_rate_pct": 84.6,
+      "brier_calibration_score": 0.1233,
       "stop_loss_adherence_pct": 100.0,
-      "omission_recovery_rate_pct": 75.0,
+      "omission_recovery_rate_pct": 50.0,
       "heuristics_mastered_count": 105,
       "memory_vault_items": {
         "global": 4,
@@ -121,10 +104,10 @@
     },
     "weights_audit": {
       "us_scoring_weights": {
-        "macro_sector_fit": 24,
-        "fundamental_and_fcf": 32,
-        "valuation_and_upside": 25,
-        "technical_and_risk_reward": 19
+        "macro_sector_fit": 26,
+        "fundamental_and_fcf": 33,
+        "valuation_and_upside": 21,
+        "technical_and_risk_reward": 20
       },
       "us_sum": 100,
       "vn_weights": {
@@ -142,41 +125,41 @@
     "T+3": {
       "horizon": "T+3",
       "signal_samples": 0,
-      "historical_eval_samples": 23,
-      "hit_rate_pct": 72.0,
-      "avg_return_pct": 2.83,
-      "brier_score": 0.1065,
-      "data_source": "Historical Prediction Tracker (23 mẫu chuẩn hóa)",
+      "historical_eval_samples": 26,
+      "hit_rate_pct": 77.8,
+      "avg_return_pct": 3.58,
+      "brier_score": 0.1332,
+      "data_source": "Historical Prediction Tracker (26 mẫu chuẩn hóa)",
       "regime_edge": "Lọc trượt giá & né Bull-Trap ngắn hạn đầu phiên"
     },
     "T+5": {
       "horizon": "T+5",
       "signal_samples": 0,
-      "historical_eval_samples": 23,
-      "hit_rate_pct": 78.3,
-      "avg_return_pct": 3.96,
-      "brier_score": 0.0986,
-      "data_source": "Historical Prediction Tracker (23 mẫu chuẩn hóa)",
+      "historical_eval_samples": 26,
+      "hit_rate_pct": 84.6,
+      "avg_return_pct": 4.84,
+      "brier_score": 0.1233,
+      "data_source": "Historical Prediction Tracker (26 mẫu chuẩn hóa)",
       "regime_edge": "Chu kỳ hấp thụ hàng T+2.5 & kiểm tra cung cầu"
     },
     "T+10": {
       "horizon": "T+10",
       "signal_samples": 0,
-      "historical_eval_samples": 23,
-      "hit_rate_pct": 81.4,
-      "avg_return_pct": 4.57,
-      "brier_score": 0.0947,
-      "data_source": "Historical Prediction Tracker (23 mẫu chuẩn hóa)",
+      "historical_eval_samples": 26,
+      "hit_rate_pct": 88.0,
+      "avg_return_pct": 5.53,
+      "brier_score": 0.1184,
+      "data_source": "Historical Prediction Tracker (26 mẫu chuẩn hóa)",
       "regime_edge": "Chu kỳ xác nhận dòng tiền tổ chức / gom nền"
     },
     "T+20": {
       "horizon": "T+20",
       "signal_samples": 0,
-      "historical_eval_samples": 23,
-      "hit_rate_pct": 84.6,
-      "avg_return_pct": 5.23,
-      "brier_score": 0.0907,
-      "data_source": "Historical Prediction Tracker (23 mẫu chuẩn hóa)",
+      "historical_eval_samples": 26,
+      "hit_rate_pct": 91.4,
+      "avg_return_pct": 6.26,
+      "brier_score": 0.1134,
+      "data_source": "Historical Prediction Tracker (26 mẫu chuẩn hóa)",
       "regime_edge": "Chu kỳ hội tụ Giá Nội Tại (MOS%) & KQKD Quý"
     }
   },
@@ -189,11 +172,11 @@
         "Benjamin Graham",
         "Seth Klarman"
       ],
-      "universe_avg_score": 84.6,
-      "holdings_alignment_score": 96.5,
-      "estimated_hit_rate_pct": 86.9,
-      "brier_calibration_score": 0.0715,
-      "recommended_tilt": "+2% OVERWEIGHT"
+      "universe_avg_score": 51.8,
+      "holdings_alignment_score": 51.8,
+      "estimated_hit_rate_pct": 62.1,
+      "brier_calibration_score": 0.1666,
+      "recommended_tilt": "-1% DISCIPLINE_FILTER"
     },
     "GROWTH_GARP": {
       "school": "GROWTH_GARP",
@@ -202,11 +185,11 @@
         "Philip Fisher",
         "Joel Greenblatt"
       ],
-      "universe_avg_score": 83.3,
-      "holdings_alignment_score": 87.9,
-      "estimated_hit_rate_pct": 80.4,
-      "brier_calibration_score": 0.0785,
-      "recommended_tilt": "+2% OVERWEIGHT"
+      "universe_avg_score": 54.6,
+      "holdings_alignment_score": 54.6,
+      "estimated_hit_rate_pct": 62.1,
+      "brier_calibration_score": 0.1581,
+      "recommended_tilt": "-1% DISCIPLINE_FILTER"
     },
     "MOMENTUM_VCP_WYCKOFF": {
       "school": "MOMENTUM_VCP_WYCKOFF",
@@ -215,11 +198,11 @@
         "Mark Minervini",
         "Richard Wyckoff"
       ],
-      "universe_avg_score": 73.4,
-      "holdings_alignment_score": 92.0,
-      "estimated_hit_rate_pct": 92.0,
-      "brier_calibration_score": 0.075,
-      "recommended_tilt": "+2% OVERWEIGHT"
+      "universe_avg_score": 32.7,
+      "holdings_alignment_score": 32.7,
+      "estimated_hit_rate_pct": 52.0,
+      "brier_calibration_score": 0.1918,
+      "recommended_tilt": "-1% DISCIPLINE_FILTER"
     },
     "MACRO_CYCLES_REFLEXIVITY": {
       "school": "MACRO_CYCLES_REFLEXIVITY",
@@ -229,22 +212,22 @@
         "Howard Marks",
         "George Soros"
       ],
-      "universe_avg_score": 82.1,
-      "holdings_alignment_score": 90.8,
-      "estimated_hit_rate_pct": 84.3,
-      "brier_calibration_score": 0.076,
-      "recommended_tilt": "+2% OVERWEIGHT"
+      "universe_avg_score": 50.8,
+      "holdings_alignment_score": 50.8,
+      "estimated_hit_rate_pct": 62.1,
+      "brier_calibration_score": 0.1699,
+      "recommended_tilt": "-1% DISCIPLINE_FILTER"
     },
     "QUANT_STATISTICAL": {
       "school": "QUANT_STATISTICAL",
       "legends": [
         "Jim Simons"
       ],
-      "universe_avg_score": 73.4,
-      "holdings_alignment_score": 83.1,
-      "estimated_hit_rate_pct": 86.3,
-      "brier_calibration_score": 0.0831,
-      "recommended_tilt": "+2% OVERWEIGHT"
+      "universe_avg_score": 36.4,
+      "holdings_alignment_score": 36.4,
+      "estimated_hit_rate_pct": 52.0,
+      "brier_calibration_score": 0.1918,
+      "recommended_tilt": "-1% DISCIPLINE_FILTER"
     }
   },
   "school_summary": {
@@ -255,7 +238,7 @@
         "Benjamin Graham",
         "Seth Klarman"
       ],
-      "universe_avg_score": 84.6
+      "universe_avg_score": 51.8
     },
     "GROWTH_GARP": {
       "legends": [
@@ -263,7 +246,7 @@
         "Philip Fisher",
         "Joel Greenblatt"
       ],
-      "universe_avg_score": 83.3
+      "universe_avg_score": 54.6
     },
     "MOMENTUM_VCP_WYCKOFF": {
       "legends": [
@@ -271,7 +254,7 @@
         "Mark Minervini",
         "Richard Wyckoff"
       ],
-      "universe_avg_score": 73.4
+      "universe_avg_score": 32.7
     },
     "MACRO_CYCLES_REFLEXIVITY": {
       "legends": [
@@ -280,13 +263,13 @@
         "Howard Marks",
         "George Soros"
       ],
-      "universe_avg_score": 82.1
+      "universe_avg_score": 50.8
     },
     "QUANT_STATISTICAL": {
       "legends": [
         "Jim Simons"
       ],
-      "universe_avg_score": 73.4
+      "universe_avg_score": 36.4
     }
   },
   "legends_profiles": [
@@ -690,815 +673,489 @@
     {
       "symbol": "HDB",
       "market": "VN",
-      "company_name": "HDBank",
-      "live_price": 22600.0,
-      "alpha_score": 74.3,
-      "ev_pct": 14.79,
-      "consensus_legends_score": 93.0,
-      "supporting_legends_count": 15,
-      "cautious_legends_count": 0,
-      "legends_verdict": "LEGENDARY_CONSENSUS_BUY",
+      "company_name": "Ngân hàng Thương mại Cổ phần Phát Triển Thành phố Hồ Chí Minh",
+      "live_price": 22150.0,
+      "alpha_score": 61.3,
+      "ev_pct": 9.54,
+      "consensus_legends_score": 70.4,
+      "supporting_legends_count": 10,
+      "cautious_legends_count": 3,
+      "legends_verdict": "ACCUMULATE",
       "top_3_advocates": [
         {
           "name": "Warren Buffett",
-          "score": 98.0,
-          "reason": "ROE 25.6%, OCF/LNST 1.16x, EVA +10.3%, MOS +76.7%"
-        },
-        {
-          "name": "Charlie Munger",
-          "score": 98.0,
-          "reason": "Piotroski 9/9, Pháp y 85/100, ROIC 21.8%"
+          "score": 88,
+          "reason": "ROE 23.7%, OCF/LNST 2.46x, EVA +8.7%, MOS +60.2%"
         },
         {
           "name": "Benjamin Graham",
-          "score": 98.0,
-          "reason": "Biên an toàn +76.7%, P/E=6.1, P/B=1.42"
+          "score": 86,
+          "reason": "Biên an toàn +60.2%, P/E=7.3, P/B=1.50"
+        },
+        {
+          "name": "Seth Klarman",
+          "score": 82,
+          "reason": "Đệm MOS +60.2%, Rủi ro Stop -4.5%"
         }
       ],
       "key_dissent": {
-        "name": "Jim Simons",
-        "score": 81.2,
-        "reason": "Thống kê P(W)=55.0%, EV=+14.79%, Alpha=74.3"
+        "name": "Richard Wyckoff",
+        "score": 44.3,
+        "reason": "Áp lực mua chủ động 51.1% (Nỗ lực vs Kết quả)"
       },
       "school_breakdown": {
-        "VALUE_MOAT": 97.8,
-        "GROWTH_GARP": 91.8,
-        "MOMENTUM_VCP_WYCKOFF": 93.3,
-        "MACRO_CYCLES_REFLEXIVITY": 91.7,
-        "QUANT_STATISTICAL": 81.2
+        "VALUE_MOAT": 83.0,
+        "GROWTH_GARP": 73.5,
+        "MOMENTUM_VCP_WYCKOFF": 55.4,
+        "MACRO_CYCLES_REFLEXIVITY": 72.3,
+        "QUANT_STATISTICAL": 48.3
       },
       "all_15_votes": [
         {
           "legend_id": "buffett",
           "name": "Warren Buffett",
           "school": "VALUE_MOAT",
-          "score": 98.0,
+          "score": 88,
           "stance": "BUY",
-          "reason": "ROE 25.6%, OCF/LNST 1.16x, EVA +10.3%, MOS +76.7%"
+          "reason": "ROE 23.7%, OCF/LNST 2.46x, EVA +8.7%, MOS +60.2%"
         },
         {
           "legend_id": "munger",
           "name": "Charlie Munger",
           "school": "VALUE_MOAT",
-          "score": 98.0,
+          "score": 76,
           "stance": "BUY",
-          "reason": "Piotroski 9/9, Pháp y 85/100, ROIC 21.8%"
+          "reason": "Piotroski 6/9, Pháp y 85/100, ROIC 20.2%"
         },
         {
           "legend_id": "graham",
           "name": "Benjamin Graham",
           "school": "VALUE_MOAT",
-          "score": 98.0,
+          "score": 86,
           "stance": "BUY",
-          "reason": "Biên an toàn +76.7%, P/E=6.1, P/B=1.42"
+          "reason": "Biên an toàn +60.2%, P/E=7.3, P/B=1.50"
         },
         {
           "legend_id": "klarman",
           "name": "Seth Klarman",
           "school": "VALUE_MOAT",
-          "score": 97,
+          "score": 82,
           "stance": "BUY",
-          "reason": "Đệm MOS +76.7%, Rủi ro Stop -4.9%"
+          "reason": "Đệm MOS +60.2%, Rủi ro Stop -4.5%"
         },
         {
           "legend_id": "lynch",
           "name": "Peter Lynch",
           "school": "GROWTH_GARP",
-          "score": 96,
+          "score": 78,
           "stance": "BUY",
-          "reason": "PEG 0.21x, Tăng trưởng LN +28.5% YoY"
+          "reason": "PEG 0.23x, Tăng trưởng LN +33.0% YoY"
         },
         {
           "legend_id": "fisher",
           "name": "Philip Fisher",
           "school": "GROWTH_GARP",
-          "score": 95,
+          "score": 80,
           "stance": "BUY",
-          "reason": "Doanh thu +22.8% YoY, ROE 25.6% + Catalyst rõ"
+          "reason": "Doanh thu +16.5% YoY, ROE 23.7% + Catalyst rõ"
         },
         {
           "legend_id": "greenblatt",
           "name": "Joel Greenblatt",
           "school": "GROWTH_GARP",
-          "score": 84.5,
-          "stance": "BUY",
-          "reason": "Earnings Yield ~16.4% (P/E 6.1), ROIC 21.8%"
+          "score": 62.6,
+          "stance": "WATCH",
+          "reason": "Earnings Yield ~13.6% (P/E 7.3), ROIC 20.2%"
         },
         {
           "legend_id": "oneil",
           "name": "William O'Neil",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "CANSLIM LN +28.5%, Buy-Up 74.5%, Alpha 74.3"
+          "score": 52,
+          "stance": "WATCH",
+          "reason": "CANSLIM LN +33.0%, Buy-Up 51.1%, Alpha 61.3"
         },
         {
           "legend_id": "minervini",
           "name": "Mark Minervini",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "Trend MA20/50=2/2, RSI 56.1, Stop -4.9%"
+          "score": 70,
+          "stance": "ACCUMULATE",
+          "reason": "Trend MA20/50=1/2, RSI 48.1, Stop -4.5%"
         },
         {
           "legend_id": "wyckoff",
           "name": "Richard Wyckoff",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 88,
-          "stance": "BUY",
-          "reason": "Áp lực mua chủ động 74.5% (Nỗ lực vs Kết quả)"
+          "score": 44.3,
+          "stance": "CAUTIOUS",
+          "reason": "Áp lực mua chủ động 51.1% (Nỗ lực vs Kết quả)"
         },
         {
           "legend_id": "druckenmiller",
           "name": "Stanley Druckenmiller",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 90.7,
-          "stance": "BUY",
-          "reason": "Bất đối xứng R:R 1:5.68, EV +14.79%"
+          "score": 69.4,
+          "stance": "ACCUMULATE",
+          "reason": "Bất đối xứng R:R 1:5.49, EV +9.54%"
         },
         {
           "legend_id": "dalio",
           "name": "Ray Dalio",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 92,
+          "score": 78,
           "stance": "BUY",
-          "reason": "Risk-Parity Stop -4.9%, EVA +10.3%"
+          "reason": "Risk-Parity Stop -4.5%, EVA +8.7%"
         },
         {
           "legend_id": "marks",
           "name": "Howard Marks",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "Chu kỳ định giá MOS +76.7%, RSI 56.1, Pháp y 85"
-        },
-        {
-          "legend_id": "soros",
-          "name": "George Soros",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 90,
-          "stance": "BUY",
-          "reason": "Phản xạ kỳ vọng LN +28.5% & dòng tiền 74.5%"
-        },
-        {
-          "legend_id": "simons",
-          "name": "Jim Simons",
-          "school": "QUANT_STATISTICAL",
-          "score": 81.2,
-          "stance": "BUY",
-          "reason": "Thống kê P(W)=55.0%, EV=+14.79%, Alpha=74.3"
-        }
-      ]
-    },
-    {
-      "symbol": "MSH",
-      "market": "VN",
-      "company_name": "May Sông Hồng",
-      "live_price": 34800.0,
-      "alpha_score": 85.6,
-      "ev_pct": 18.43,
-      "consensus_legends_score": 90.0,
-      "supporting_legends_count": 15,
-      "cautious_legends_count": 0,
-      "legends_verdict": "LEGENDARY_CONSENSUS_BUY",
-      "top_3_advocates": [
-        {
-          "name": "Warren Buffett",
-          "score": 98.0,
-          "reason": "ROE 21.5%, OCF/LNST 1.42x, EVA +6.0%, MOS +47.2%"
-        },
-        {
-          "name": "Charlie Munger",
-          "score": 98.0,
-          "reason": "Piotroski 7/9, Pháp y 100/100, ROIC 17.6%"
-        },
-        {
-          "name": "Benjamin Graham",
-          "score": 98.0,
-          "reason": "Biên an toàn +47.2%, P/E=9.8, P/B=1.95"
-        }
-      ],
-      "key_dissent": {
-        "name": "Joel Greenblatt",
-        "score": 73.3,
-        "reason": "Earnings Yield ~10.2% (P/E 9.8), ROIC 17.6%"
-      },
-      "school_breakdown": {
-        "VALUE_MOAT": 95.2,
-        "GROWTH_GARP": 84.1,
-        "MOMENTUM_VCP_WYCKOFF": 90.7,
-        "MACRO_CYCLES_REFLEXIVITY": 90.0,
-        "QUANT_STATISTICAL": 85.0
-      },
-      "all_15_votes": [
-        {
-          "legend_id": "buffett",
-          "name": "Warren Buffett",
-          "school": "VALUE_MOAT",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "ROE 21.5%, OCF/LNST 1.42x, EVA +6.0%, MOS +47.2%"
-        },
-        {
-          "legend_id": "munger",
-          "name": "Charlie Munger",
-          "school": "VALUE_MOAT",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "Piotroski 7/9, Pháp y 100/100, ROIC 17.6%"
-        },
-        {
-          "legend_id": "graham",
-          "name": "Benjamin Graham",
-          "school": "VALUE_MOAT",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "Biên an toàn +47.2%, P/E=9.8, P/B=1.95"
-        },
-        {
-          "legend_id": "klarman",
-          "name": "Seth Klarman",
-          "school": "VALUE_MOAT",
-          "score": 87,
-          "stance": "BUY",
-          "reason": "Đệm MOS +47.2%, Rủi ro Stop -7.5%"
-        },
-        {
-          "legend_id": "lynch",
-          "name": "Peter Lynch",
-          "school": "GROWTH_GARP",
-          "score": 96,
-          "stance": "BUY",
-          "reason": "PEG 0.28x, Tăng trưởng LN +48.0% YoY"
-        },
-        {
-          "legend_id": "fisher",
-          "name": "Philip Fisher",
-          "school": "GROWTH_GARP",
-          "score": 83,
-          "stance": "BUY",
-          "reason": "Doanh thu +18.0% YoY, ROE 21.5% + Catalyst rõ"
-        },
-        {
-          "legend_id": "greenblatt",
-          "name": "Joel Greenblatt",
-          "school": "GROWTH_GARP",
-          "score": 73.3,
-          "stance": "ACCUMULATE",
-          "reason": "Earnings Yield ~10.2% (P/E 9.8), ROIC 17.6%"
-        },
-        {
-          "legend_id": "oneil",
-          "name": "William O'Neil",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "CANSLIM LN +48.0%, Buy-Up 84.6%, Alpha 85.6"
-        },
-        {
-          "legend_id": "minervini",
-          "name": "Mark Minervini",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 90,
-          "stance": "BUY",
-          "reason": "Trend MA20/50=2/2, RSI 58.7, Stop -7.5%"
-        },
-        {
-          "legend_id": "wyckoff",
-          "name": "Richard Wyckoff",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 88,
-          "stance": "BUY",
-          "reason": "Áp lực mua chủ động 84.6% (Nỗ lực vs Kết quả)"
-        },
-        {
-          "legend_id": "druckenmiller",
-          "name": "Stanley Druckenmiller",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 95.8,
-          "stance": "BUY",
-          "reason": "Bất đối xứng R:R 1:3.73, EV +18.43%"
-        },
-        {
-          "legend_id": "dalio",
-          "name": "Ray Dalio",
           "school": "MACRO_CYCLES_REFLEXIVITY",
           "score": 80,
           "stance": "BUY",
-          "reason": "Risk-Parity Stop -7.5%, EVA +6.0%"
-        },
-        {
-          "legend_id": "marks",
-          "name": "Howard Marks",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "Chu kỳ định giá MOS +47.2%, RSI 58.7, Pháp y 100"
+          "reason": "Chu kỳ định giá MOS +60.2%, RSI 48.1, Pháp y 85"
         },
         {
           "legend_id": "soros",
           "name": "George Soros",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 90,
-          "stance": "BUY",
-          "reason": "Phản xạ kỳ vọng LN +48.0% & dòng tiền 84.6%"
+          "score": 62,
+          "stance": "WATCH",
+          "reason": "Phản xạ kỳ vọng LN +33.0% & dòng tiền 51.1%"
         },
         {
           "legend_id": "simons",
           "name": "Jim Simons",
           "school": "QUANT_STATISTICAL",
-          "score": 85.0,
-          "stance": "BUY",
-          "reason": "Thống kê P(W)=55.0%, EV=+18.43%, Alpha=85.6"
-        }
-      ]
-    },
-    {
-      "symbol": "BAF",
-      "market": "VN",
-      "company_name": "Nông nghiệp BAF Việt Nam",
-      "live_price": 30950.0,
-      "alpha_score": 78.0,
-      "ev_pct": 17.22,
-      "consensus_legends_score": 88.6,
-      "supporting_legends_count": 15,
-      "cautious_legends_count": 0,
-      "legends_verdict": "LEGENDARY_CONSENSUS_BUY",
-      "top_3_advocates": [
-        {
-          "name": "Benjamin Graham",
-          "score": 98.0,
-          "reason": "Biên an toàn +43.5%, P/E=11.5, P/B=1.72"
-        },
-        {
-          "name": "Mark Minervini",
-          "score": 98.0,
-          "reason": "Trend MA20/50=2/2, RSI 62.9, Stop -3.9%"
-        },
-        {
-          "name": "Seth Klarman",
-          "score": 97,
-          "reason": "Đệm MOS +43.5%, Rủi ro Stop -3.9%"
-        }
-      ],
-      "key_dissent": {
-        "name": "Joel Greenblatt",
-        "score": 66.9,
-        "reason": "Earnings Yield ~8.7% (P/E 11.5), ROIC 13.2%"
-      },
-      "school_breakdown": {
-        "VALUE_MOAT": 90.2,
-        "GROWTH_GARP": 77.6,
-        "MOMENTUM_VCP_WYCKOFF": 93.3,
-        "MACRO_CYCLES_REFLEXIVITY": 92.5,
-        "QUANT_STATISTICAL": 84.8
-      },
-      "all_15_votes": [
-        {
-          "legend_id": "buffett",
-          "name": "Warren Buffett",
-          "school": "VALUE_MOAT",
-          "score": 78,
-          "stance": "BUY",
-          "reason": "ROE 16.2%, OCF/LNST 1.18x, EVA +1.7%, MOS +43.5%"
-        },
-        {
-          "legend_id": "munger",
-          "name": "Charlie Munger",
-          "school": "VALUE_MOAT",
-          "score": 88,
-          "stance": "BUY",
-          "reason": "Piotroski 7/9, Pháp y 100/100, ROIC 13.2%"
-        },
-        {
-          "legend_id": "graham",
-          "name": "Benjamin Graham",
-          "school": "VALUE_MOAT",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "Biên an toàn +43.5%, P/E=11.5, P/B=1.72"
-        },
-        {
-          "legend_id": "klarman",
-          "name": "Seth Klarman",
-          "school": "VALUE_MOAT",
-          "score": 97,
-          "stance": "BUY",
-          "reason": "Đệm MOS +43.5%, Rủi ro Stop -3.9%"
-        },
-        {
-          "legend_id": "lynch",
-          "name": "Peter Lynch",
-          "school": "GROWTH_GARP",
-          "score": 96,
-          "stance": "BUY",
-          "reason": "PEG 0.33x, Tăng trưởng LN +320.0% YoY"
-        },
-        {
-          "legend_id": "fisher",
-          "name": "Philip Fisher",
-          "school": "GROWTH_GARP",
-          "score": 70,
-          "stance": "ACCUMULATE",
-          "reason": "Doanh thu +28.0% YoY, ROE 16.2% + Catalyst rõ"
-        },
-        {
-          "legend_id": "greenblatt",
-          "name": "Joel Greenblatt",
-          "school": "GROWTH_GARP",
-          "score": 66.9,
-          "stance": "ACCUMULATE",
-          "reason": "Earnings Yield ~8.7% (P/E 11.5), ROIC 13.2%"
-        },
-        {
-          "legend_id": "oneil",
-          "name": "William O'Neil",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "CANSLIM LN +320.0%, Buy-Up 71.7%, Alpha 78.0"
-        },
-        {
-          "legend_id": "minervini",
-          "name": "Mark Minervini",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "Trend MA20/50=2/2, RSI 62.9, Stop -3.9%"
-        },
-        {
-          "legend_id": "wyckoff",
-          "name": "Richard Wyckoff",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 88,
-          "stance": "BUY",
-          "reason": "Áp lực mua chủ động 71.7% (Nỗ lực vs Kết quả)"
-        },
-        {
-          "legend_id": "druckenmiller",
-          "name": "Stanley Druckenmiller",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 94.1,
-          "stance": "BUY",
-          "reason": "Bất đối xứng R:R 1:7.22, EV +17.22%"
-        },
-        {
-          "legend_id": "dalio",
-          "name": "Ray Dalio",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 92,
-          "stance": "BUY",
-          "reason": "Risk-Parity Stop -3.9%, EVA +1.7%"
-        },
-        {
-          "legend_id": "marks",
-          "name": "Howard Marks",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "Chu kỳ định giá MOS +43.5%, RSI 62.9, Pháp y 100"
-        },
-        {
-          "legend_id": "soros",
-          "name": "George Soros",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 90,
-          "stance": "BUY",
-          "reason": "Phản xạ kỳ vọng LN +320.0% & dòng tiền 71.7%"
-        },
-        {
-          "legend_id": "simons",
-          "name": "Jim Simons",
-          "school": "QUANT_STATISTICAL",
-          "score": 84.8,
-          "stance": "BUY",
-          "reason": "Thống kê P(W)=55.0%, EV=+17.22%, Alpha=78.0"
+          "score": 48.3,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=+9.54%, Alpha=61.3"
         }
       ]
     },
     {
       "symbol": "TCB",
       "market": "VN",
-      "company_name": "Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)",
-      "live_price": 21850.0,
-      "alpha_score": 74.8,
-      "ev_pct": 16.05,
-      "consensus_legends_score": 87.2,
-      "supporting_legends_count": 15,
-      "cautious_legends_count": 0,
-      "legends_verdict": "LEGENDARY_CONSENSUS_BUY",
+      "company_name": "Ngân hàng Thương mại Cổ phần Kỹ thương Việt Nam",
+      "live_price": 20600.0,
+      "alpha_score": 60.7,
+      "ev_pct": 10.11,
+      "consensus_legends_score": 56.6,
+      "supporting_legends_count": 6,
+      "cautious_legends_count": 8,
+      "legends_verdict": "WATCHLIST",
       "top_3_advocates": [
         {
           "name": "Benjamin Graham",
-          "score": 98.0,
-          "reason": "Biên an toàn +59.4%, P/E=7.4, P/B=1.12"
+          "score": 86,
+          "reason": "Biên an toàn +51.8%, P/E=7.9, P/B=1.14"
         },
         {
           "name": "Seth Klarman",
-          "score": 97,
-          "reason": "Đệm MOS +59.4%, Rủi ro Stop -4.6%"
-        },
-        {
-          "name": "Peter Lynch",
-          "score": 96,
-          "reason": "PEG 0.28x, Tăng trưởng LN +26.4% YoY"
-        }
-      ],
-      "key_dissent": {
-        "name": "Philip Fisher",
-        "score": 70,
-        "reason": "Doanh thu +21.5% YoY, ROE 16.8% + Catalyst rõ"
-      },
-      "school_breakdown": {
-        "VALUE_MOAT": 90.2,
-        "GROWTH_GARP": 80.8,
-        "MOMENTUM_VCP_WYCKOFF": 84.4,
-        "MACRO_CYCLES_REFLEXIVITY": 92.1,
-        "QUANT_STATISTICAL": 83.1
-      },
-      "all_15_votes": [
-        {
-          "legend_id": "buffett",
-          "name": "Warren Buffett",
-          "school": "VALUE_MOAT",
-          "score": 78,
-          "stance": "BUY",
-          "reason": "ROE 16.8%, OCF/LNST 1.16x, EVA +2.8%, MOS +59.4%"
-        },
-        {
-          "legend_id": "munger",
-          "name": "Charlie Munger",
-          "school": "VALUE_MOAT",
-          "score": 88,
-          "stance": "BUY",
-          "reason": "Piotroski 9/9, Pháp y 100/100, ROIC 14.3%"
-        },
-        {
-          "legend_id": "graham",
-          "name": "Benjamin Graham",
-          "school": "VALUE_MOAT",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "Biên an toàn +59.4%, P/E=7.4, P/B=1.12"
-        },
-        {
-          "legend_id": "klarman",
-          "name": "Seth Klarman",
-          "school": "VALUE_MOAT",
-          "score": 97,
-          "stance": "BUY",
-          "reason": "Đệm MOS +59.4%, Rủi ro Stop -4.6%"
-        },
-        {
-          "legend_id": "lynch",
-          "name": "Peter Lynch",
-          "school": "GROWTH_GARP",
-          "score": 96,
-          "stance": "BUY",
-          "reason": "PEG 0.28x, Tăng trưởng LN +26.4% YoY"
-        },
-        {
-          "legend_id": "fisher",
-          "name": "Philip Fisher",
-          "school": "GROWTH_GARP",
-          "score": 70,
-          "stance": "ACCUMULATE",
-          "reason": "Doanh thu +21.5% YoY, ROE 16.8% + Catalyst rõ"
-        },
-        {
-          "legend_id": "greenblatt",
-          "name": "Joel Greenblatt",
-          "school": "GROWTH_GARP",
-          "score": 76.5,
-          "stance": "BUY",
-          "reason": "Earnings Yield ~13.5% (P/E 7.4), ROIC 14.3%"
-        },
-        {
-          "legend_id": "oneil",
-          "name": "William O'Neil",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "CANSLIM LN +26.4%, Buy-Up 61.8%, Alpha 74.8"
-        },
-        {
-          "legend_id": "minervini",
-          "name": "Mark Minervini",
-          "school": "MOMENTUM_VCP_WYCKOFF",
           "score": 82,
-          "stance": "BUY",
-          "reason": "Trend MA20/50=1/2, RSI 49.4, Stop -4.6%"
+          "reason": "Đệm MOS +51.8%, Rủi ro Stop -4.7%"
         },
         {
-          "legend_id": "wyckoff",
-          "name": "Richard Wyckoff",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 77.3,
-          "stance": "BUY",
-          "reason": "Áp lực mua chủ động 61.8% (Nỗ lực vs Kết quả)"
-        },
-        {
-          "legend_id": "druckenmiller",
-          "name": "Stanley Druckenmiller",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 92.5,
-          "stance": "BUY",
-          "reason": "Bất đối xứng R:R 1:6.10, EV +16.05%"
-        },
-        {
-          "legend_id": "dalio",
-          "name": "Ray Dalio",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 92,
-          "stance": "BUY",
-          "reason": "Risk-Parity Stop -4.6%, EVA +2.8%"
-        },
-        {
-          "legend_id": "marks",
           "name": "Howard Marks",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "Chu kỳ định giá MOS +59.4%, RSI 49.4, Pháp y 100"
-        },
-        {
-          "legend_id": "soros",
-          "name": "George Soros",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 90,
-          "stance": "BUY",
-          "reason": "Phản xạ kỳ vọng LN +26.4% & dòng tiền 61.8%"
-        },
-        {
-          "legend_id": "simons",
-          "name": "Jim Simons",
-          "school": "QUANT_STATISTICAL",
-          "score": 83.1,
-          "stance": "BUY",
-          "reason": "Thống kê P(W)=55.0%, EV=+16.05%, Alpha=74.8"
-        }
-      ]
-    },
-    {
-      "symbol": "IDC",
-      "market": "VN",
-      "company_name": "Tổng Công ty IDICO",
-      "live_price": 35000.0,
-      "alpha_score": 78.5,
-      "ev_pct": 16.24,
-      "consensus_legends_score": 84.7,
-      "supporting_legends_count": 14,
-      "cautious_legends_count": 1,
-      "legends_verdict": "LEGENDARY_CONSENSUS_BUY",
-      "top_3_advocates": [
-        {
-          "name": "Warren Buffett",
-          "score": 98.0,
-          "reason": "ROE 32.5%, OCF/LNST 1.58x, EVA +15.4%, MOS +49.5%"
-        },
-        {
-          "name": "Charlie Munger",
-          "score": 98.0,
-          "reason": "Piotroski 9/9, Pháp y 100/100, ROIC 26.9%"
-        },
-        {
-          "name": "Peter Lynch",
-          "score": 96,
-          "reason": "PEG 0.31x, Tăng trưởng LN +31.8% YoY"
+          "score": 80,
+          "reason": "Chu kỳ định giá MOS +51.8%, RSI 34.0, Pháp y 100"
         }
       ],
       "key_dissent": {
         "name": "Richard Wyckoff",
-        "score": 48,
-        "reason": "Áp lực mua chủ động 26.8% (Nỗ lực vs Kết quả)"
+        "score": 5.0,
+        "reason": "Áp lực mua chủ động 36.2% (Nỗ lực vs Kết quả)"
       },
       "school_breakdown": {
-        "VALUE_MOAT": 92.0,
-        "GROWTH_GARP": 90.8,
-        "MOMENTUM_VCP_WYCKOFF": 67.3,
-        "MACRO_CYCLES_REFLEXIVITY": 86.2,
-        "QUANT_STATISTICAL": 83.4
+        "VALUE_MOAT": 74.5,
+        "GROWTH_GARP": 61.5,
+        "MOMENTUM_VCP_WYCKOFF": 18.3,
+        "MACRO_CYCLES_REFLEXIVITY": 65.5,
+        "QUANT_STATISTICAL": 49.2
       },
       "all_15_votes": [
         {
           "legend_id": "buffett",
           "name": "Warren Buffett",
           "school": "VALUE_MOAT",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "ROE 32.5%, OCF/LNST 1.58x, EVA +15.4%, MOS +49.5%"
+          "score": 54,
+          "stance": "WATCH",
+          "reason": "ROE 15.2%, OCF/LNST 1.05x, EVA +1.4%, MOS +51.8%"
         },
         {
           "legend_id": "munger",
           "name": "Charlie Munger",
           "school": "VALUE_MOAT",
-          "score": 98.0,
+          "score": 76,
           "stance": "BUY",
-          "reason": "Piotroski 9/9, Pháp y 100/100, ROIC 26.9%"
+          "reason": "Piotroski 7/9, Pháp y 100/100, ROIC 12.9%"
         },
         {
           "legend_id": "graham",
           "name": "Benjamin Graham",
           "school": "VALUE_MOAT",
-          "score": 85,
+          "score": 86,
           "stance": "BUY",
-          "reason": "Biên an toàn +49.5%, P/E=9.8, P/B=2.85"
+          "reason": "Biên an toàn +51.8%, P/E=7.9, P/B=1.14"
         },
         {
           "legend_id": "klarman",
           "name": "Seth Klarman",
           "school": "VALUE_MOAT",
-          "score": 87,
+          "score": 82,
           "stance": "BUY",
-          "reason": "Đệm MOS +49.5%, Rủi ro Stop -7.3%"
+          "reason": "Đệm MOS +51.8%, Rủi ro Stop -4.7%"
         },
         {
           "legend_id": "lynch",
           "name": "Peter Lynch",
           "school": "GROWTH_GARP",
-          "score": 96,
+          "score": 78,
           "stance": "BUY",
-          "reason": "PEG 0.31x, Tăng trưởng LN +31.8% YoY"
+          "reason": "PEG 0.25x, Tăng trưởng LN +30.3% YoY"
         },
         {
           "legend_id": "fisher",
           "name": "Philip Fisher",
           "school": "GROWTH_GARP",
-          "score": 95,
-          "stance": "BUY",
-          "reason": "Doanh thu +19.6% YoY, ROE 32.5% + Catalyst rõ"
+          "score": 52,
+          "stance": "WATCH",
+          "reason": "Doanh thu +24.6% YoY, ROE 15.2% + Catalyst rõ"
         },
         {
           "legend_id": "greenblatt",
           "name": "Joel Greenblatt",
           "school": "GROWTH_GARP",
-          "score": 81.3,
-          "stance": "BUY",
-          "reason": "Earnings Yield ~10.2% (P/E 9.8), ROIC 26.9%"
+          "score": 54.5,
+          "stance": "WATCH",
+          "reason": "Earnings Yield ~12.7% (P/E 7.9), ROIC 12.9%"
         },
         {
           "legend_id": "oneil",
           "name": "William O'Neil",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 82,
-          "stance": "BUY",
-          "reason": "CANSLIM LN +31.8%, Buy-Up 26.8%, Alpha 78.5"
+          "score": 38.0,
+          "stance": "CAUTIOUS",
+          "reason": "CANSLIM LN +30.3%, Buy-Up 36.2%, Alpha 60.7"
         },
         {
           "legend_id": "minervini",
           "name": "Mark Minervini",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 72,
-          "stance": "ACCUMULATE",
-          "reason": "Trend MA20/50=1/2, RSI 51.3, Stop -7.3%"
+          "score": 12.0,
+          "stance": "CAUTIOUS",
+          "reason": "Trend MA20/50=0/2, RSI 34.0, Stop -4.7%"
         },
         {
           "legend_id": "wyckoff",
           "name": "Richard Wyckoff",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 48,
+          "score": 5.0,
           "stance": "CAUTIOUS",
-          "reason": "Áp lực mua chủ động 26.8% (Nỗ lực vs Kết quả)"
+          "reason": "Áp lực mua chủ động 36.2% (Nỗ lực vs Kết quả)"
         },
         {
           "legend_id": "druckenmiller",
           "name": "Stanley Druckenmiller",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 92.7,
-          "stance": "BUY",
-          "reason": "Bất đối xứng R:R 1:3.86, EV +16.24%"
+          "score": 56.2,
+          "stance": "WATCH",
+          "reason": "Bất đối xứng R:R 1:5.38, EV +10.11%"
         },
         {
           "legend_id": "dalio",
           "name": "Ray Dalio",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 80,
+          "score": 78,
           "stance": "BUY",
-          "reason": "Risk-Parity Stop -7.3%, EVA +15.4%"
+          "reason": "Risk-Parity Stop -4.7%, EVA +1.4%"
         },
         {
           "legend_id": "marks",
           "name": "Howard Marks",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 94,
+          "score": 80,
           "stance": "BUY",
-          "reason": "Chu kỳ định giá MOS +49.5%, RSI 51.3, Pháp y 100"
+          "reason": "Chu kỳ định giá MOS +51.8%, RSI 34.0, Pháp y 100"
         },
         {
           "legend_id": "soros",
           "name": "George Soros",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 78,
-          "stance": "BUY",
-          "reason": "Phản xạ kỳ vọng LN +31.8% & dòng tiền 26.8%"
+          "score": 48.0,
+          "stance": "CAUTIOUS",
+          "reason": "Phản xạ kỳ vọng LN +30.3% & dòng tiền 36.2%"
         },
         {
           "legend_id": "simons",
           "name": "Jim Simons",
           "school": "QUANT_STATISTICAL",
-          "score": 83.4,
+          "score": 49.2,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=+10.11%, Alpha=60.7"
+        }
+      ]
+    },
+    {
+      "symbol": "VCB",
+      "market": "VN",
+      "company_name": "Ngân hàng Thương mại Cổ phần Ngoại thương Việt Nam",
+      "live_price": 50800.0,
+      "alpha_score": 61.1,
+      "ev_pct": 10.24,
+      "consensus_legends_score": 54.3,
+      "supporting_legends_count": 7,
+      "cautious_legends_count": 7,
+      "legends_verdict": "WATCHLIST",
+      "top_3_advocates": [
+        {
+          "name": "Peter Lynch",
+          "score": 78,
+          "reason": "PEG 0.55x, Tăng trưởng LN +18.6% YoY"
+        },
+        {
+          "name": "Ray Dalio",
+          "score": 78,
+          "reason": "Risk-Parity Stop -4.4%, EVA +3.4%"
+        },
+        {
+          "name": "Benjamin Graham",
+          "score": 76.3,
+          "reason": "Biên an toàn +29.0%, P/E=10.1, P/B=1.65"
+        }
+      ],
+      "key_dissent": {
+        "name": "Richard Wyckoff",
+        "score": 5.0,
+        "reason": "Áp lực mua chủ động 42.4% (Nỗ lực vs Kết quả)"
+      },
+      "school_breakdown": {
+        "VALUE_MOAT": 72.0,
+        "GROWTH_GARP": 60.4,
+        "MOMENTUM_VCP_WYCKOFF": 13.7,
+        "MACRO_CYCLES_REFLEXIVITY": 63.6,
+        "QUANT_STATISTICAL": 49.4
+      },
+      "all_15_votes": [
+        {
+          "legend_id": "buffett",
+          "name": "Warren Buffett",
+          "school": "VALUE_MOAT",
+          "score": 64,
+          "stance": "ACCUMULATE",
+          "reason": "ROE 17.5%, OCF/LNST 2.19x, EVA +3.4%, MOS +29.0%"
+        },
+        {
+          "legend_id": "munger",
+          "name": "Charlie Munger",
+          "school": "VALUE_MOAT",
+          "score": 76,
           "stance": "BUY",
-          "reason": "Thống kê P(W)=55.0%, EV=+16.24%, Alpha=78.5"
+          "reason": "Piotroski 9/9, Pháp y 100/100, ROIC 14.9%"
+        },
+        {
+          "legend_id": "graham",
+          "name": "Benjamin Graham",
+          "school": "VALUE_MOAT",
+          "score": 76.3,
+          "stance": "BUY",
+          "reason": "Biên an toàn +29.0%, P/E=10.1, P/B=1.65"
+        },
+        {
+          "legend_id": "klarman",
+          "name": "Seth Klarman",
+          "school": "VALUE_MOAT",
+          "score": 71.8,
+          "stance": "ACCUMULATE",
+          "reason": "Đệm MOS +29.0%, Rủi ro Stop -4.4%"
+        },
+        {
+          "legend_id": "lynch",
+          "name": "Peter Lynch",
+          "school": "GROWTH_GARP",
+          "score": 78,
+          "stance": "BUY",
+          "reason": "PEG 0.55x, Tăng trưởng LN +18.6% YoY"
+        },
+        {
+          "legend_id": "fisher",
+          "name": "Philip Fisher",
+          "school": "GROWTH_GARP",
+          "score": 52,
+          "stance": "WATCH",
+          "reason": "Doanh thu +30.1% YoY, ROE 17.5% + Catalyst rõ"
+        },
+        {
+          "legend_id": "greenblatt",
+          "name": "Joel Greenblatt",
+          "school": "GROWTH_GARP",
+          "score": 51.2,
+          "stance": "CAUTIOUS",
+          "reason": "Earnings Yield ~9.9% (P/E 10.1), ROIC 14.9%"
+        },
+        {
+          "legend_id": "oneil",
+          "name": "William O'Neil",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 24.0,
+          "stance": "CAUTIOUS",
+          "reason": "CANSLIM LN +18.6%, Buy-Up 42.4%, Alpha 61.1"
+        },
+        {
+          "legend_id": "minervini",
+          "name": "Mark Minervini",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 12.0,
+          "stance": "CAUTIOUS",
+          "reason": "Trend MA20/50=0/2, RSI 25.0, Stop -4.4%"
+        },
+        {
+          "legend_id": "wyckoff",
+          "name": "Richard Wyckoff",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Áp lực mua chủ động 42.4% (Nỗ lực vs Kết quả)"
+        },
+        {
+          "legend_id": "druckenmiller",
+          "name": "Stanley Druckenmiller",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 56.3,
+          "stance": "WATCH",
+          "reason": "Bất đối xứng R:R 1:5.63, EV +10.24%"
+        },
+        {
+          "legend_id": "dalio",
+          "name": "Ray Dalio",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 78,
+          "stance": "BUY",
+          "reason": "Risk-Parity Stop -4.4%, EVA +3.4%"
+        },
+        {
+          "legend_id": "marks",
+          "name": "Howard Marks",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 72.0,
+          "stance": "ACCUMULATE",
+          "reason": "Chu kỳ định giá MOS +29.0%, RSI 25.0, Pháp y 100"
+        },
+        {
+          "legend_id": "soros",
+          "name": "George Soros",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 48.0,
+          "stance": "CAUTIOUS",
+          "reason": "Phản xạ kỳ vọng LN +18.6% & dòng tiền 42.4%"
+        },
+        {
+          "legend_id": "simons",
+          "name": "Jim Simons",
+          "school": "QUANT_STATISTICAL",
+          "score": 49.4,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=+10.24%, Alpha=61.1"
         }
       ]
     },
@@ -1506,56 +1163,56 @@
       "symbol": "MSFT",
       "market": "US",
       "company_name": "Microsoft Corp.",
-      "live_price": 521.8,
-      "alpha_score": 72.2,
-      "ev_pct": 5.07,
-      "consensus_legends_score": 75.9,
-      "supporting_legends_count": 12,
-      "cautious_legends_count": 2,
-      "legends_verdict": "LEGENDARY_CONSENSUS_BUY",
+      "live_price": 508.29,
+      "alpha_score": 67.3,
+      "ev_pct": 4.47,
+      "consensus_legends_score": 51.8,
+      "supporting_legends_count": 6,
+      "cautious_legends_count": 8,
+      "legends_verdict": "CAUTIOUS",
       "top_3_advocates": [
         {
           "name": "Warren Buffett",
-          "score": 98.0,
-          "reason": "ROE 34.2%, OCF/LNST 1.37x, EVA +21.4%, MOS +13.4%"
+          "score": 88,
+          "reason": "ROE 34.2%, OCF/LNST 1.37x, EVA +21.4%, MOS +16.1%"
         },
         {
           "name": "Charlie Munger",
-          "score": 98.0,
+          "score": 88,
           "reason": "Piotroski 8/9, Pháp y 88/100, ROIC 30.4%"
         },
         {
-          "name": "Peter Lynch",
-          "score": 96,
-          "reason": "PEG 0.67x, Tăng trưởng LN +32.3% YoY"
+          "name": "Philip Fisher",
+          "score": 80,
+          "reason": "Doanh thu +18.8% YoY, ROE 34.2% + Catalyst rõ"
         }
       ],
       "key_dissent": {
-        "name": "Stanley Druckenmiller",
-        "score": 51.1,
-        "reason": "Bất đối xứng R:R 1:1.99, EV +5.07%"
+        "name": "Richard Wyckoff",
+        "score": 9.6,
+        "reason": "Áp lực mua chủ động 52.0% (Nỗ lực vs Kết quả)"
       },
       "school_breakdown": {
-        "VALUE_MOAT": 78.1,
-        "GROWTH_GARP": 88.4,
-        "MOMENTUM_VCP_WYCKOFF": 72.5,
-        "MACRO_CYCLES_REFLEXIVITY": 69.1,
-        "QUANT_STATISTICAL": 66.6
+        "VALUE_MOAT": 65.4,
+        "GROWTH_GARP": 71.3,
+        "MOMENTUM_VCP_WYCKOFF": 19.9,
+        "MACRO_CYCLES_REFLEXIVITY": 50.3,
+        "QUANT_STATISTICAL": 40.7
       },
       "all_15_votes": [
         {
           "legend_id": "buffett",
           "name": "Warren Buffett",
           "school": "VALUE_MOAT",
-          "score": 98.0,
+          "score": 88,
           "stance": "BUY",
-          "reason": "ROE 34.2%, OCF/LNST 1.37x, EVA +21.4%, MOS +13.4%"
+          "reason": "ROE 34.2%, OCF/LNST 1.37x, EVA +21.4%, MOS +16.1%"
         },
         {
           "legend_id": "munger",
           "name": "Charlie Munger",
           "school": "VALUE_MOAT",
-          "score": 98.0,
+          "score": 88,
           "stance": "BUY",
           "reason": "Piotroski 8/9, Pháp y 88/100, ROIC 30.4%"
         },
@@ -1563,31 +1220,31 @@
           "legend_id": "graham",
           "name": "Benjamin Graham",
           "school": "VALUE_MOAT",
-          "score": 51.4,
+          "score": 35.3,
           "stance": "CAUTIOUS",
-          "reason": "Biên an toàn +13.4%, P/E=21.6, P/B=8.24"
+          "reason": "Biên an toàn +16.1%, P/E=21.0, P/B=8.02"
         },
         {
           "legend_id": "klarman",
           "name": "Seth Klarman",
           "school": "VALUE_MOAT",
-          "score": 65.0,
-          "stance": "ACCUMULATE",
-          "reason": "Đệm MOS +13.4%, Rủi ro Stop -6.7%"
+          "score": 50.1,
+          "stance": "CAUTIOUS",
+          "reason": "Đệm MOS +16.1%, Rủi ro Stop -7.0%"
         },
         {
           "legend_id": "lynch",
           "name": "Peter Lynch",
           "school": "GROWTH_GARP",
-          "score": 96,
+          "score": 78,
           "stance": "BUY",
-          "reason": "PEG 0.67x, Tăng trưởng LN +32.3% YoY"
+          "reason": "PEG 0.65x, Tăng trưởng LN +32.3% YoY"
         },
         {
           "legend_id": "fisher",
           "name": "Philip Fisher",
           "school": "GROWTH_GARP",
-          "score": 95,
+          "score": 80,
           "stance": "BUY",
           "reason": "Doanh thu +18.8% YoY, ROE 34.2% + Catalyst rõ"
         },
@@ -1595,73 +1252,236 @@
           "legend_id": "greenblatt",
           "name": "Joel Greenblatt",
           "school": "GROWTH_GARP",
-          "score": 74.2,
-          "stance": "BUY",
-          "reason": "Earnings Yield ~4.6% (P/E 21.6), ROIC 30.4%"
+          "score": 55.9,
+          "stance": "WATCH",
+          "reason": "Earnings Yield ~4.8% (P/E 21.0), ROIC 30.4%"
         },
         {
           "legend_id": "oneil",
           "name": "William O'Neil",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 82,
-          "stance": "BUY",
-          "reason": "CANSLIM LN +32.3%, Buy-Up 52.0%, Alpha 72.2"
+          "score": 38.0,
+          "stance": "CAUTIOUS",
+          "reason": "CANSLIM LN +32.3%, Buy-Up 52.0%, Alpha 67.3"
         },
         {
           "legend_id": "minervini",
           "name": "Mark Minervini",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 72,
-          "stance": "ACCUMULATE",
-          "reason": "Trend MA20/50=1/2, RSI 48.0, Stop -6.7%"
+          "score": 12.0,
+          "stance": "CAUTIOUS",
+          "reason": "Trend MA20/50=0/2, RSI 42.9, Stop -7.0%"
         },
         {
           "legend_id": "wyckoff",
           "name": "Richard Wyckoff",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 63.6,
-          "stance": "WATCH",
+          "score": 9.6,
+          "stance": "CAUTIOUS",
           "reason": "Áp lực mua chủ động 52.0% (Nỗ lực vs Kết quả)"
         },
         {
           "legend_id": "druckenmiller",
           "name": "Stanley Druckenmiller",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 51.1,
+          "score": 38.3,
           "stance": "CAUTIOUS",
-          "reason": "Bất đối xứng R:R 1:1.99, EV +5.07%"
+          "reason": "Bất đối xứng R:R 1:2.30, EV +4.47%"
         },
         {
           "legend_id": "dalio",
           "name": "Ray Dalio",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 80,
-          "stance": "BUY",
-          "reason": "Risk-Parity Stop -6.7%, EVA +21.4%"
+          "score": 64,
+          "stance": "ACCUMULATE",
+          "reason": "Risk-Parity Stop -7.0%, EVA +21.4%"
         },
         {
           "legend_id": "marks",
           "name": "Howard Marks",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 79.4,
-          "stance": "BUY",
-          "reason": "Chu kỳ định giá MOS +13.4%, RSI 48.0, Pháp y 88"
+          "score": 64.9,
+          "stance": "ACCUMULATE",
+          "reason": "Chu kỳ định giá MOS +16.1%, RSI 42.9, Pháp y 88"
         },
         {
           "legend_id": "soros",
           "name": "George Soros",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 66,
-          "stance": "ACCUMULATE",
+          "score": 34.0,
+          "stance": "CAUTIOUS",
           "reason": "Phản xạ kỳ vọng LN +32.3% & dòng tiền 52.0%"
         },
         {
           "legend_id": "simons",
           "name": "Jim Simons",
           "school": "QUANT_STATISTICAL",
-          "score": 66.6,
+          "score": 40.7,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=+4.47%, Alpha=67.3"
+        }
+      ]
+    },
+    {
+      "symbol": "MSH",
+      "market": "VN",
+      "company_name": "Công ty Cổ phần May Sông Hồng",
+      "live_price": 35000.0,
+      "alpha_score": 57.7,
+      "ev_pct": 5.6,
+      "consensus_legends_score": 49.4,
+      "supporting_legends_count": 4,
+      "cautious_legends_count": 8,
+      "legends_verdict": "CAUTIOUS",
+      "top_3_advocates": [
+        {
+          "name": "Mark Minervini",
+          "score": 78.0,
+          "reason": "Trend MA20/50=2/2, RSI 58.6, Stop -6.3%"
+        },
+        {
+          "name": "Richard Wyckoff",
+          "score": 70,
+          "reason": "Áp lực mua chủ động 76.9% (Nỗ lực vs Kết quả)"
+        },
+        {
+          "name": "Joel Greenblatt",
+          "score": 66.1,
+          "reason": "Earnings Yield ~16.0% (P/E 6.3), ROIC 20.1%"
+        }
+      ],
+      "key_dissent": {
+        "name": "Peter Lynch",
+        "score": 20.0,
+        "reason": "PEG 1.05x, Tăng trưởng LN +5.6% YoY"
+      },
+      "school_breakdown": {
+        "VALUE_MOAT": 43.0,
+        "GROWTH_GARP": 46.0,
+        "MOMENTUM_VCP_WYCKOFF": 62.0,
+        "MACRO_CYCLES_REFLEXIVITY": 53.5,
+        "QUANT_STATISTICAL": 30.4
+      },
+      "all_15_votes": [
+        {
+          "legend_id": "buffett",
+          "name": "Warren Buffett",
+          "school": "VALUE_MOAT",
+          "score": 44.0,
+          "stance": "CAUTIOUS",
+          "reason": "ROE 24.9%, OCF/LNST 0.01x, EVA +8.6%, MOS +53.1%"
+        },
+        {
+          "legend_id": "munger",
+          "name": "Charlie Munger",
+          "school": "VALUE_MOAT",
+          "score": 30.0,
+          "stance": "CAUTIOUS",
+          "reason": "Piotroski 6/9, Pháp y 80/100, ROIC 20.1%"
+        },
+        {
+          "legend_id": "graham",
+          "name": "Benjamin Graham",
+          "school": "VALUE_MOAT",
+          "score": 64.0,
           "stance": "ACCUMULATE",
-          "reason": "Thống kê P(W)=55.0%, EV=+5.07%, Alpha=72.2"
+          "reason": "Biên an toàn +53.1%, P/E=6.3, P/B=1.53"
+        },
+        {
+          "legend_id": "klarman",
+          "name": "Seth Klarman",
+          "school": "VALUE_MOAT",
+          "score": 34.0,
+          "stance": "CAUTIOUS",
+          "reason": "Đệm MOS +53.1%, Rủi ro Stop -6.3%"
+        },
+        {
+          "legend_id": "lynch",
+          "name": "Peter Lynch",
+          "school": "GROWTH_GARP",
+          "score": 20.0,
+          "stance": "CAUTIOUS",
+          "reason": "PEG 1.05x, Tăng trưởng LN +5.6% YoY"
+        },
+        {
+          "legend_id": "fisher",
+          "name": "Philip Fisher",
+          "school": "GROWTH_GARP",
+          "score": 52,
+          "stance": "WATCH",
+          "reason": "Doanh thu +2.5% YoY, ROE 24.9% + Catalyst rõ"
+        },
+        {
+          "legend_id": "greenblatt",
+          "name": "Joel Greenblatt",
+          "school": "GROWTH_GARP",
+          "score": 66.1,
+          "stance": "ACCUMULATE",
+          "reason": "Earnings Yield ~16.0% (P/E 6.3), ROIC 20.1%"
+        },
+        {
+          "legend_id": "oneil",
+          "name": "William O'Neil",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 38.0,
+          "stance": "CAUTIOUS",
+          "reason": "CANSLIM LN +5.6%, Buy-Up 76.9%, Alpha 57.7"
+        },
+        {
+          "legend_id": "minervini",
+          "name": "Mark Minervini",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 78.0,
+          "stance": "BUY",
+          "reason": "Trend MA20/50=2/2, RSI 58.6, Stop -6.3%"
+        },
+        {
+          "legend_id": "wyckoff",
+          "name": "Richard Wyckoff",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 70,
+          "stance": "ACCUMULATE",
+          "reason": "Áp lực mua chủ động 76.9% (Nỗ lực vs Kết quả)"
+        },
+        {
+          "legend_id": "druckenmiller",
+          "name": "Stanley Druckenmiller",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 39.8,
+          "stance": "CAUTIOUS",
+          "reason": "Bất đối xứng R:R 1:3.96, EV +5.60%"
+        },
+        {
+          "legend_id": "dalio",
+          "name": "Ray Dalio",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 56.0,
+          "stance": "WATCH",
+          "reason": "Risk-Parity Stop -6.3%, EVA +8.6%"
+        },
+        {
+          "legend_id": "marks",
+          "name": "Howard Marks",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 58.0,
+          "stance": "WATCH",
+          "reason": "Chu kỳ định giá MOS +53.1%, RSI 58.6, Pháp y 80"
+        },
+        {
+          "legend_id": "soros",
+          "name": "George Soros",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 60,
+          "stance": "WATCH",
+          "reason": "Phản xạ kỳ vọng LN +5.6% & dòng tiền 76.9%"
+        },
+        {
+          "legend_id": "simons",
+          "name": "Jim Simons",
+          "school": "QUANT_STATISTICAL",
+          "score": 30.4,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=+5.60%, Alpha=57.7"
         }
       ]
     },
@@ -1669,253 +1489,90 @@
       "symbol": "NVDA",
       "market": "US",
       "company_name": "NVIDIA Corp.",
-      "live_price": 158.97,
-      "alpha_score": 65.2,
-      "ev_pct": 11.06,
-      "consensus_legends_score": 75.4,
-      "supporting_legends_count": 13,
-      "cautious_legends_count": 2,
-      "legends_verdict": "LEGENDARY_CONSENSUS_BUY",
+      "live_price": 150.96,
+      "alpha_score": 63.0,
+      "ev_pct": 8.28,
+      "consensus_legends_score": 46.4,
+      "supporting_legends_count": 3,
+      "cautious_legends_count": 11,
+      "legends_verdict": "CAUTIOUS",
       "top_3_advocates": [
         {
           "name": "Philip Fisher",
-          "score": 95,
+          "score": 80,
           "reason": "Doanh thu +105.9% YoY, ROE 117.2% + Catalyst rõ"
         },
         {
-          "name": "Howard Marks",
-          "score": 94,
-          "reason": "Chu kỳ định giá MOS +53.1%, RSI 23.7, Pháp y 88"
+          "name": "Joel Greenblatt",
+          "score": 67.8,
+          "reason": "Earnings Yield ~11.0% (P/E 9.1), ROIC 108.9%"
         },
         {
-          "name": "Warren Buffett",
-          "score": 90,
-          "reason": "ROE 117.2%, OCF/LNST 0.70x, EVA +99.9%, MOS +53.1%"
+          "name": "Peter Lynch",
+          "score": 66,
+          "reason": "PEG 0.26x, Tăng trưởng LN +127.8% YoY"
         }
       ],
       "key_dissent": {
         "name": "Mark Minervini",
-        "score": 34,
-        "reason": "Trend MA20/50=0/2, RSI 23.7, Stop -7.5%"
+        "score": 5.0,
+        "reason": "Trend MA20/50=0/2, RSI 21.1, Stop -7.5%"
       },
       "school_breakdown": {
-        "VALUE_MOAT": 76.5,
-        "GROWTH_GARP": 89.0,
-        "MOMENTUM_VCP_WYCKOFF": 51.2,
-        "MACRO_CYCLES_REFLEXIVITY": 84.4,
-        "QUANT_STATISTICAL": 67.6
+        "VALUE_MOAT": 48.0,
+        "GROWTH_GARP": 71.3,
+        "MOMENTUM_VCP_WYCKOFF": 17.5,
+        "MACRO_CYCLES_REFLEXIVITY": 52.4,
+        "QUANT_STATISTICAL": 28.4
       },
       "all_15_votes": [
         {
           "legend_id": "buffett",
           "name": "Warren Buffett",
           "school": "VALUE_MOAT",
-          "score": 90,
-          "stance": "BUY",
-          "reason": "ROE 117.2%, OCF/LNST 0.70x, EVA +99.9%, MOS +53.1%"
+          "score": 48.0,
+          "stance": "CAUTIOUS",
+          "reason": "ROE 117.2%, OCF/LNST 0.70x, EVA +99.9%, MOS +49.7%"
         },
         {
           "legend_id": "munger",
           "name": "Charlie Munger",
           "school": "VALUE_MOAT",
-          "score": 80,
-          "stance": "BUY",
+          "score": 46.0,
+          "stance": "CAUTIOUS",
           "reason": "Piotroski 7/9, Pháp y 88/100, ROIC 108.9%"
         },
         {
           "legend_id": "graham",
           "name": "Benjamin Graham",
           "school": "VALUE_MOAT",
-          "score": 72,
-          "stance": "ACCUMULATE",
-          "reason": "Biên an toàn +53.1%, P/E=10.0, P/B=16.76"
+          "score": 54,
+          "stance": "WATCH",
+          "reason": "Biên an toàn +49.7%, P/E=9.1, P/B=23.33"
         },
         {
           "legend_id": "klarman",
           "name": "Seth Klarman",
           "school": "VALUE_MOAT",
-          "score": 64,
-          "stance": "ACCUMULATE",
-          "reason": "Đệm MOS +53.1%, Rủi ro Stop -7.5%"
+          "score": 44,
+          "stance": "CAUTIOUS",
+          "reason": "Đệm MOS +49.7%, Rủi ro Stop -7.5%"
         },
         {
           "legend_id": "lynch",
           "name": "Peter Lynch",
           "school": "GROWTH_GARP",
-          "score": 86,
-          "stance": "BUY",
-          "reason": "PEG 0.29x, Tăng trưởng LN +127.8% YoY"
+          "score": 66,
+          "stance": "ACCUMULATE",
+          "reason": "PEG 0.26x, Tăng trưởng LN +127.8% YoY"
         },
         {
           "legend_id": "fisher",
           "name": "Philip Fisher",
           "school": "GROWTH_GARP",
-          "score": 95,
-          "stance": "BUY",
-          "reason": "Doanh thu +105.9% YoY, ROE 117.2% + Catalyst rõ"
-        },
-        {
-          "legend_id": "greenblatt",
-          "name": "Joel Greenblatt",
-          "school": "GROWTH_GARP",
-          "score": 85.9,
-          "stance": "BUY",
-          "reason": "Earnings Yield ~10.0% (P/E 10.0), ROIC 108.9%"
-        },
-        {
-          "legend_id": "oneil",
-          "name": "William O'Neil",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 70,
-          "stance": "ACCUMULATE",
-          "reason": "CANSLIM LN +127.8%, Buy-Up 52.0%, Alpha 65.2"
-        },
-        {
-          "legend_id": "minervini",
-          "name": "Mark Minervini",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 34,
-          "stance": "CAUTIOUS",
-          "reason": "Trend MA20/50=0/2, RSI 23.7, Stop -7.5%"
-        },
-        {
-          "legend_id": "wyckoff",
-          "name": "Richard Wyckoff",
-          "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 49.6,
-          "stance": "CAUTIOUS",
-          "reason": "Áp lực mua chủ động 52.0% (Nỗ lực vs Kết quả)"
-        },
-        {
-          "legend_id": "druckenmiller",
-          "name": "Stanley Druckenmiller",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 85.5,
-          "stance": "BUY",
-          "reason": "Bất đối xứng R:R 1:3.73, EV +11.06%"
-        },
-        {
-          "legend_id": "dalio",
-          "name": "Ray Dalio",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
           "score": 80,
           "stance": "BUY",
-          "reason": "Risk-Parity Stop -7.5%, EVA +99.9%"
-        },
-        {
-          "legend_id": "marks",
-          "name": "Howard Marks",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 94,
-          "stance": "BUY",
-          "reason": "Chu kỳ định giá MOS +53.1%, RSI 23.7, Pháp y 88"
-        },
-        {
-          "legend_id": "soros",
-          "name": "George Soros",
-          "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 78,
-          "stance": "BUY",
-          "reason": "Phản xạ kỳ vọng LN +127.8% & dòng tiền 52.0%"
-        },
-        {
-          "legend_id": "simons",
-          "name": "Jim Simons",
-          "school": "QUANT_STATISTICAL",
-          "score": 67.6,
-          "stance": "ACCUMULATE",
-          "reason": "Thống kê P(W)=55.0%, EV=+11.06%, Alpha=65.2"
-        }
-      ]
-    },
-    {
-      "symbol": "FPT",
-      "market": "VN",
-      "company_name": "CTCP FPT",
-      "live_price": 50100.0,
-      "alpha_score": 66.7,
-      "ev_pct": 2.55,
-      "consensus_legends_score": 67.1,
-      "supporting_legends_count": 9,
-      "cautious_legends_count": 6,
-      "legends_verdict": "ACCUMULATE",
-      "top_3_advocates": [
-        {
-          "name": "Charlie Munger",
-          "score": 98.0,
-          "reason": "Piotroski 9/9, Pháp y 100/100, ROIC 23.4%"
-        },
-        {
-          "name": "Philip Fisher",
-          "score": 95,
-          "reason": "Doanh thu +21.2% YoY, ROE 28.2% + Catalyst rõ"
-        },
-        {
-          "name": "Warren Buffett",
-          "score": 92,
-          "reason": "ROE 28.2%, OCF/LNST 1.25x, EVA +11.9%, MOS -2.6%"
-        }
-      ],
-      "key_dissent": {
-        "name": "Mark Minervini",
-        "score": 34,
-        "reason": "Trend MA20/50=0/2, RSI 30.9, Stop -7.4%"
-      },
-      "school_breakdown": {
-        "VALUE_MOAT": 70.8,
-        "GROWTH_GARP": 82.9,
-        "MOMENTUM_VCP_WYCKOFF": 51.7,
-        "MACRO_CYCLES_REFLEXIVITY": 66.0,
-        "QUANT_STATISTICAL": 54.8
-      },
-      "all_15_votes": [
-        {
-          "legend_id": "buffett",
-          "name": "Warren Buffett",
-          "school": "VALUE_MOAT",
-          "score": 92,
-          "stance": "BUY",
-          "reason": "ROE 28.2%, OCF/LNST 1.25x, EVA +11.9%, MOS -2.6%"
-        },
-        {
-          "legend_id": "munger",
-          "name": "Charlie Munger",
-          "school": "VALUE_MOAT",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "Piotroski 9/9, Pháp y 100/100, ROIC 23.4%"
-        },
-        {
-          "legend_id": "graham",
-          "name": "Benjamin Graham",
-          "school": "VALUE_MOAT",
-          "score": 40.2,
-          "stance": "CAUTIOUS",
-          "reason": "Biên an toàn -2.6%, P/E=22.8, P/B=5.80"
-        },
-        {
-          "legend_id": "klarman",
-          "name": "Seth Klarman",
-          "school": "VALUE_MOAT",
-          "score": 53.0,
-          "stance": "WATCH",
-          "reason": "Đệm MOS -2.6%, Rủi ro Stop -7.4%"
-        },
-        {
-          "legend_id": "lynch",
-          "name": "Peter Lynch",
-          "school": "GROWTH_GARP",
-          "score": 86,
-          "stance": "BUY",
-          "reason": "PEG 1.00x, Tăng trưởng LN +22.8% YoY"
-        },
-        {
-          "legend_id": "fisher",
-          "name": "Philip Fisher",
-          "school": "GROWTH_GARP",
-          "score": 95,
-          "stance": "BUY",
-          "reason": "Doanh thu +21.2% YoY, ROE 28.2% + Catalyst rõ"
+          "reason": "Doanh thu +105.9% YoY, ROE 117.2% + Catalyst rõ"
         },
         {
           "legend_id": "greenblatt",
@@ -1923,234 +1580,560 @@
           "school": "GROWTH_GARP",
           "score": 67.8,
           "stance": "ACCUMULATE",
-          "reason": "Earnings Yield ~4.4% (P/E 22.8), ROIC 23.4%"
+          "reason": "Earnings Yield ~11.0% (P/E 9.1), ROIC 108.9%"
         },
         {
           "legend_id": "oneil",
           "name": "William O'Neil",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 70,
-          "stance": "ACCUMULATE",
-          "reason": "CANSLIM LN +22.8%, Buy-Up 53.1%, Alpha 66.7"
+          "score": 38.0,
+          "stance": "CAUTIOUS",
+          "reason": "CANSLIM LN +127.8%, Buy-Up 52.0%, Alpha 63.0"
         },
         {
           "legend_id": "minervini",
           "name": "Mark Minervini",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 34,
+          "score": 5.0,
           "stance": "CAUTIOUS",
-          "reason": "Trend MA20/50=0/2, RSI 30.9, Stop -7.4%"
+          "reason": "Trend MA20/50=0/2, RSI 21.1, Stop -7.5%"
         },
         {
           "legend_id": "wyckoff",
           "name": "Richard Wyckoff",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 51.1,
+          "score": 9.6,
           "stance": "CAUTIOUS",
-          "reason": "Áp lực mua chủ động 53.1% (Nỗ lực vs Kết quả)"
+          "reason": "Áp lực mua chủ động 52.0% (Nỗ lực vs Kết quả)"
         },
         {
           "legend_id": "druckenmiller",
           "name": "Stanley Druckenmiller",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 47.6,
-          "stance": "CAUTIOUS",
-          "reason": "Bất đối xứng R:R 1:1.40, EV +2.55%"
+          "score": 53.6,
+          "stance": "WATCH",
+          "reason": "Bất đối xứng R:R 1:3.33, EV +8.28%"
         },
         {
           "legend_id": "dalio",
           "name": "Ray Dalio",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 80,
-          "stance": "BUY",
-          "reason": "Risk-Parity Stop -7.4%, EVA +11.9%"
+          "score": 46.0,
+          "stance": "CAUTIOUS",
+          "reason": "Risk-Parity Stop -7.5%, EVA +99.9%"
         },
         {
           "legend_id": "marks",
           "name": "Howard Marks",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 70.6,
-          "stance": "ACCUMULATE",
-          "reason": "Chu kỳ định giá MOS -2.6%, RSI 30.9, Pháp y 100"
+          "score": 62.0,
+          "stance": "WATCH",
+          "reason": "Chu kỳ định giá MOS +49.7%, RSI 21.1, Pháp y 88"
         },
         {
           "legend_id": "soros",
           "name": "George Soros",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 66,
-          "stance": "ACCUMULATE",
-          "reason": "Phản xạ kỳ vọng LN +22.8% & dòng tiền 53.1%"
+          "score": 48.0,
+          "stance": "CAUTIOUS",
+          "reason": "Phản xạ kỳ vọng LN +127.8% & dòng tiền 52.0%"
         },
         {
           "legend_id": "simons",
           "name": "Jim Simons",
           "school": "QUANT_STATISTICAL",
-          "score": 54.8,
-          "stance": "WATCH",
-          "reason": "Thống kê P(W)=55.0%, EV=+2.55%, Alpha=66.7"
+          "score": 28.4,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=+8.28%, Alpha=63.0"
         }
       ]
     },
     {
-      "symbol": "VCB",
+      "symbol": "IDC",
       "market": "VN",
-      "company_name": "Ngân hàng TMCP Ngoại Thương Việt Nam (Vietcombank)",
-      "live_price": 53800.0,
-      "alpha_score": 55.2,
-      "ev_pct": 2.26,
-      "consensus_legends_score": 64.3,
-      "supporting_legends_count": 6,
-      "cautious_legends_count": 6,
-      "legends_verdict": "WATCHLIST",
+      "company_name": "Tổng Công ty IDICO - CTCP",
+      "live_price": 34200.0,
+      "alpha_score": 57.1,
+      "ev_pct": 7.67,
+      "consensus_legends_score": 40.7,
+      "supporting_legends_count": 1,
+      "cautious_legends_count": 13,
+      "legends_verdict": "CAUTIOUS",
       "top_3_advocates": [
         {
-          "name": "Charlie Munger",
-          "score": 98.0,
-          "reason": "Piotroski 9/9, Pháp y 100/100, ROIC 17.2%"
+          "name": "Benjamin Graham",
+          "score": 77.7,
+          "reason": "Biên an toàn +31.0%, P/E=7.8, P/B=1.53"
         },
         {
-          "name": "Warren Buffett",
-          "score": 92,
-          "reason": "ROE 20.2%, OCF/LNST 1.12x, EVA +5.7%, MOS -28.7%"
+          "name": "Joel Greenblatt",
+          "score": 57.6,
+          "reason": "Earnings Yield ~12.8% (P/E 7.8), ROIC 16.2%"
         },
         {
-          "name": "Ray Dalio",
-          "score": 92,
-          "reason": "Risk-Parity Stop -4.2%, EVA +5.7%"
+          "name": "Stanley Druckenmiller",
+          "score": 54.7,
+          "reason": "Bất đối xứng R:R 1:3.56, EV +7.67%"
         }
       ],
       "key_dissent": {
-        "name": "Benjamin Graham",
-        "score": 40,
-        "reason": "Biên an toàn -28.7%, P/E=14.8, P/B=2.65"
+        "name": "Charlie Munger",
+        "score": 5.0,
+        "reason": "Piotroski 4/9, Pháp y 42/100, ROIC 16.2%"
       },
       "school_breakdown": {
-        "VALUE_MOAT": 70.8,
-        "GROWTH_GARP": 63.9,
-        "MOMENTUM_VCP_WYCKOFF": 56.4,
-        "MACRO_CYCLES_REFLEXIVITY": 66.5,
-        "QUANT_STATISTICAL": 54.4
+        "VALUE_MOAT": 38.0,
+        "GROWTH_GARP": 43.2,
+        "MOMENTUM_VCP_WYCKOFF": 42.0,
+        "MACRO_CYCLES_REFLEXIVITY": 43.9,
+        "QUANT_STATISTICAL": 27.5
       },
       "all_15_votes": [
         {
           "legend_id": "buffett",
           "name": "Warren Buffett",
           "school": "VALUE_MOAT",
-          "score": 92,
-          "stance": "BUY",
-          "reason": "ROE 20.2%, OCF/LNST 1.12x, EVA +5.7%, MOS -28.7%"
+          "score": 34.0,
+          "stance": "CAUTIOUS",
+          "reason": "ROE 20.6%, OCF/LNST 0.65x, EVA +4.8%, MOS +31.0%"
         },
         {
           "legend_id": "munger",
           "name": "Charlie Munger",
           "school": "VALUE_MOAT",
-          "score": 98.0,
-          "stance": "BUY",
-          "reason": "Piotroski 9/9, Pháp y 100/100, ROIC 17.2%"
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Piotroski 4/9, Pháp y 42/100, ROIC 16.2%"
         },
         {
           "legend_id": "graham",
           "name": "Benjamin Graham",
           "school": "VALUE_MOAT",
-          "score": 40,
-          "stance": "CAUTIOUS",
-          "reason": "Biên an toàn -28.7%, P/E=14.8, P/B=2.65"
+          "score": 77.7,
+          "stance": "BUY",
+          "reason": "Biên an toàn +31.0%, P/E=7.8, P/B=1.53"
         },
         {
           "legend_id": "klarman",
           "name": "Seth Klarman",
           "school": "VALUE_MOAT",
-          "score": 53,
-          "stance": "WATCH",
-          "reason": "Đệm MOS -28.7%, Rủi ro Stop -4.2%"
+          "score": 35.2,
+          "stance": "CAUTIOUS",
+          "reason": "Đệm MOS +31.0%, Rủi ro Stop -7.0%"
         },
         {
           "legend_id": "lynch",
           "name": "Peter Lynch",
           "school": "GROWTH_GARP",
-          "score": 52,
-          "stance": "WATCH",
-          "reason": "PEG 1.42x, Tăng trưởng LN +10.4% YoY"
+          "score": 34,
+          "stance": "CAUTIOUS",
+          "reason": "PEG 0.78x, Tăng trưởng LN -1.0% YoY"
         },
         {
           "legend_id": "fisher",
           "name": "Philip Fisher",
           "school": "GROWTH_GARP",
-          "score": 73,
-          "stance": "ACCUMULATE",
-          "reason": "Doanh thu +8.6% YoY, ROE 20.2% + Catalyst rõ"
+          "score": 38,
+          "stance": "CAUTIOUS",
+          "reason": "Doanh thu -4.7% YoY, ROE 20.6% + Catalyst rõ"
         },
         {
           "legend_id": "greenblatt",
           "name": "Joel Greenblatt",
           "school": "GROWTH_GARP",
-          "score": 66.8,
-          "stance": "ACCUMULATE",
-          "reason": "Earnings Yield ~6.8% (P/E 14.8), ROIC 17.2%"
+          "score": 57.6,
+          "stance": "WATCH",
+          "reason": "Earnings Yield ~12.8% (P/E 7.8), ROIC 16.2%"
         },
         {
           "legend_id": "oneil",
           "name": "William O'Neil",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 58,
-          "stance": "WATCH",
-          "reason": "CANSLIM LN +10.4%, Buy-Up 57.5%, Alpha 55.2"
+          "score": 32,
+          "stance": "CAUTIOUS",
+          "reason": "CANSLIM LN -1.0%, Buy-Up 72.5%, Alpha 57.1"
         },
         {
           "legend_id": "minervini",
           "name": "Mark Minervini",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 54,
-          "stance": "WATCH",
-          "reason": "Trend MA20/50=0/2, RSI 37.7, Stop -4.2%"
+          "score": 46,
+          "stance": "CAUTIOUS",
+          "reason": "Trend MA20/50=1/2, RSI 45.9, Stop -7.0%"
         },
         {
           "legend_id": "wyckoff",
           "name": "Richard Wyckoff",
           "school": "MOMENTUM_VCP_WYCKOFF",
-          "score": 57.3,
-          "stance": "WATCH",
-          "reason": "Áp lực mua chủ động 57.5% (Nỗ lực vs Kết quả)"
+          "score": 48,
+          "stance": "CAUTIOUS",
+          "reason": "Áp lực mua chủ động 72.5% (Nỗ lực vs Kết quả)"
         },
         {
           "legend_id": "druckenmiller",
           "name": "Stanley Druckenmiller",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 53.2,
+          "score": 54.7,
           "stance": "WATCH",
-          "reason": "Bất đối xứng R:R 1:2.35, EV +2.26%"
+          "reason": "Bất đối xứng R:R 1:3.56, EV +7.67%"
         },
         {
           "legend_id": "dalio",
           "name": "Ray Dalio",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 92,
-          "stance": "BUY",
-          "reason": "Risk-Parity Stop -4.2%, EVA +5.7%"
+          "score": 46.0,
+          "stance": "CAUTIOUS",
+          "reason": "Risk-Parity Stop -7.0%, EVA +4.8%"
         },
         {
           "legend_id": "marks",
           "name": "Howard Marks",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 57,
-          "stance": "WATCH",
-          "reason": "Chu kỳ định giá MOS -28.7%, RSI 37.7, Pháp y 100"
+          "score": 25.0,
+          "stance": "CAUTIOUS",
+          "reason": "Chu kỳ định giá MOS +31.0%, RSI 45.9, Pháp y 42"
         },
         {
           "legend_id": "soros",
           "name": "George Soros",
           "school": "MACRO_CYCLES_REFLEXIVITY",
-          "score": 64,
-          "stance": "ACCUMULATE",
-          "reason": "Phản xạ kỳ vọng LN +10.4% & dòng tiền 57.5%"
+          "score": 50,
+          "stance": "CAUTIOUS",
+          "reason": "Phản xạ kỳ vọng LN -1.0% & dòng tiền 72.5%"
         },
         {
           "legend_id": "simons",
           "name": "Jim Simons",
           "school": "QUANT_STATISTICAL",
-          "score": 54.4,
+          "score": 27.5,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=+7.67%, Alpha=57.1"
+        }
+      ]
+    },
+    {
+      "symbol": "FPT",
+      "market": "VN",
+      "company_name": "Công ty Cổ phần FPT",
+      "live_price": 45700.0,
+      "alpha_score": 42.9,
+      "ev_pct": 3.66,
+      "consensus_legends_score": 35.3,
+      "supporting_legends_count": 0,
+      "cautious_legends_count": 13,
+      "legends_verdict": "CAUTIOUS",
+      "top_3_advocates": [
+        {
+          "name": "Joel Greenblatt",
+          "score": 60.0,
+          "reason": "Earnings Yield ~12.1% (P/E 8.2), ROIC 20.2%"
+        },
+        {
+          "name": "Benjamin Graham",
+          "score": 59.3,
+          "reason": "Biên an toàn +36.2%, P/E=8.2, P/B=1.93"
+        },
+        {
+          "name": "Howard Marks",
+          "score": 53.9,
+          "reason": "Chu kỳ định giá MOS +36.2%, RSI 21.4, Pháp y 80"
+        }
+      ],
+      "key_dissent": {
+        "name": "Mark Minervini",
+        "score": 5.0,
+        "reason": "Trend MA20/50=0/2, RSI 21.4, Stop -7.5%"
+      },
+      "school_breakdown": {
+        "VALUE_MOAT": 37.6,
+        "GROWTH_GARP": 47.3,
+        "MOMENTUM_VCP_WYCKOFF": 11.3,
+        "MACRO_CYCLES_REFLEXIVITY": 40.8,
+        "QUANT_STATISTICAL": 39.5
+      },
+      "all_15_votes": [
+        {
+          "legend_id": "buffett",
+          "name": "Warren Buffett",
+          "school": "VALUE_MOAT",
+          "score": 44.0,
+          "stance": "CAUTIOUS",
+          "reason": "ROE 23.7%, OCF/LNST 0.49x, EVA +8.7%, MOS +36.2%"
+        },
+        {
+          "legend_id": "munger",
+          "name": "Charlie Munger",
+          "school": "VALUE_MOAT",
+          "score": 30.0,
+          "stance": "CAUTIOUS",
+          "reason": "Piotroski 6/9, Pháp y 80/100, ROIC 20.2%"
+        },
+        {
+          "legend_id": "graham",
+          "name": "Benjamin Graham",
+          "school": "VALUE_MOAT",
+          "score": 59.3,
           "stance": "WATCH",
-          "reason": "Thống kê P(W)=55.0%, EV=+2.26%, Alpha=55.2"
+          "reason": "Biên an toàn +36.2%, P/E=8.2, P/B=1.93"
+        },
+        {
+          "legend_id": "klarman",
+          "name": "Seth Klarman",
+          "school": "VALUE_MOAT",
+          "score": 17.2,
+          "stance": "CAUTIOUS",
+          "reason": "Đệm MOS +36.2%, Rủi ro Stop -7.5%"
+        },
+        {
+          "legend_id": "lynch",
+          "name": "Peter Lynch",
+          "school": "GROWTH_GARP",
+          "score": 30.0,
+          "stance": "CAUTIOUS",
+          "reason": "PEG 0.58x, Tăng trưởng LN +14.8% YoY"
+        },
+        {
+          "legend_id": "fisher",
+          "name": "Philip Fisher",
+          "school": "GROWTH_GARP",
+          "score": 52,
+          "stance": "WATCH",
+          "reason": "Doanh thu -10.7% YoY, ROE 23.7% + Catalyst rõ"
+        },
+        {
+          "legend_id": "greenblatt",
+          "name": "Joel Greenblatt",
+          "school": "GROWTH_GARP",
+          "score": 60.0,
+          "stance": "WATCH",
+          "reason": "Earnings Yield ~12.1% (P/E 8.2), ROIC 20.2%"
+        },
+        {
+          "legend_id": "oneil",
+          "name": "William O'Neil",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 24.0,
+          "stance": "CAUTIOUS",
+          "reason": "CANSLIM LN +14.8%, Buy-Up 40.4%, Alpha 42.9"
+        },
+        {
+          "legend_id": "minervini",
+          "name": "Mark Minervini",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Trend MA20/50=0/2, RSI 21.4, Stop -7.5%"
+        },
+        {
+          "legend_id": "wyckoff",
+          "name": "Richard Wyckoff",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Áp lực mua chủ động 40.4% (Nỗ lực vs Kết quả)"
+        },
+        {
+          "legend_id": "druckenmiller",
+          "name": "Stanley Druckenmiller",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 35.1,
+          "stance": "CAUTIOUS",
+          "reason": "Bất đối xứng R:R 1:3.33, EV +3.66%"
+        },
+        {
+          "legend_id": "dalio",
+          "name": "Ray Dalio",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 42.0,
+          "stance": "CAUTIOUS",
+          "reason": "Risk-Parity Stop -7.5%, EVA +8.7%"
+        },
+        {
+          "legend_id": "marks",
+          "name": "Howard Marks",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 53.9,
+          "stance": "WATCH",
+          "reason": "Chu kỳ định giá MOS +36.2%, RSI 21.4, Pháp y 80"
+        },
+        {
+          "legend_id": "soros",
+          "name": "George Soros",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 32.0,
+          "stance": "CAUTIOUS",
+          "reason": "Phản xạ kỳ vọng LN +14.8% & dòng tiền 40.4%"
+        },
+        {
+          "legend_id": "simons",
+          "name": "Jim Simons",
+          "school": "QUANT_STATISTICAL",
+          "score": 39.5,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=+3.66%, Alpha=42.9"
+        }
+      ]
+    },
+    {
+      "symbol": "BAF",
+      "market": "VN",
+      "company_name": "Công ty Cổ phần Nông nghiệp BAF Việt Nam",
+      "live_price": 30950.0,
+      "alpha_score": 25.9,
+      "ev_pct": -1.5,
+      "consensus_legends_score": 20.3,
+      "supporting_legends_count": 1,
+      "cautious_legends_count": 13,
+      "legends_verdict": "CAUTIOUS",
+      "top_3_advocates": [
+        {
+          "name": "Mark Minervini",
+          "score": 90,
+          "reason": "Trend MA20/50=2/2, RSI 58.0, Stop -3.6%"
+        },
+        {
+          "name": "Richard Wyckoff",
+          "score": 58.8,
+          "reason": "Áp lực mua chủ động 61.4% (Nỗ lực vs Kết quả)"
+        },
+        {
+          "name": "Philip Fisher",
+          "score": 40,
+          "reason": "Doanh thu +37.1% YoY, ROE 2.1% + Catalyst rõ"
+        }
+      ],
+      "key_dissent": {
+        "name": "Warren Buffett",
+        "score": 5.0,
+        "reason": "ROE 2.1%, OCF/LNST -5.37x, EVA -10.2%, MOS -36.7%"
+      },
+      "school_breakdown": {
+        "VALUE_MOAT": 5.0,
+        "GROWTH_GARP": 16.7,
+        "MOMENTUM_VCP_WYCKOFF": 54.3,
+        "MACRO_CYCLES_REFLEXIVITY": 14.5,
+        "QUANT_STATISTICAL": 13.8
+      },
+      "all_15_votes": [
+        {
+          "legend_id": "buffett",
+          "name": "Warren Buffett",
+          "school": "VALUE_MOAT",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "ROE 2.1%, OCF/LNST -5.37x, EVA -10.2%, MOS -36.7%"
+        },
+        {
+          "legend_id": "munger",
+          "name": "Charlie Munger",
+          "school": "VALUE_MOAT",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Piotroski 2/9, Pháp y 42/100, ROIC 1.3%"
+        },
+        {
+          "legend_id": "graham",
+          "name": "Benjamin Graham",
+          "school": "VALUE_MOAT",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Biên an toàn -36.7%, P/E=137.4, P/B=2.88"
+        },
+        {
+          "legend_id": "klarman",
+          "name": "Seth Klarman",
+          "school": "VALUE_MOAT",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Đệm MOS -36.7%, Rủi ro Stop -3.6%"
+        },
+        {
+          "legend_id": "lynch",
+          "name": "Peter Lynch",
+          "school": "GROWTH_GARP",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "PEG 3.97x, Tăng trưởng LN -80.2% YoY"
+        },
+        {
+          "legend_id": "fisher",
+          "name": "Philip Fisher",
+          "school": "GROWTH_GARP",
+          "score": 40,
+          "stance": "CAUTIOUS",
+          "reason": "Doanh thu +37.1% YoY, ROE 2.1% + Catalyst rõ"
+        },
+        {
+          "legend_id": "greenblatt",
+          "name": "Joel Greenblatt",
+          "school": "GROWTH_GARP",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Earnings Yield ~0.7% (P/E 137.4), ROIC 1.3%"
+        },
+        {
+          "legend_id": "oneil",
+          "name": "William O'Neil",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 14.0,
+          "stance": "CAUTIOUS",
+          "reason": "CANSLIM LN -80.2%, Buy-Up 61.4%, Alpha 25.9"
+        },
+        {
+          "legend_id": "minervini",
+          "name": "Mark Minervini",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 90,
+          "stance": "BUY",
+          "reason": "Trend MA20/50=2/2, RSI 58.0, Stop -3.6%"
+        },
+        {
+          "legend_id": "wyckoff",
+          "name": "Richard Wyckoff",
+          "school": "MOMENTUM_VCP_WYCKOFF",
+          "score": 58.8,
+          "stance": "WATCH",
+          "reason": "Áp lực mua chủ động 61.4% (Nỗ lực vs Kết quả)"
+        },
+        {
+          "legend_id": "druckenmiller",
+          "name": "Stanley Druckenmiller",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 11.9,
+          "stance": "CAUTIOUS",
+          "reason": "Bất đối xứng R:R 1:1.10, EV -1.50%"
+        },
+        {
+          "legend_id": "dalio",
+          "name": "Ray Dalio",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Risk-Parity Stop -3.6%, EVA -10.2%"
+        },
+        {
+          "legend_id": "marks",
+          "name": "Howard Marks",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 5.0,
+          "stance": "CAUTIOUS",
+          "reason": "Chu kỳ định giá MOS -36.7%, RSI 58.0, Pháp y 42"
+        },
+        {
+          "legend_id": "soros",
+          "name": "George Soros",
+          "school": "MACRO_CYCLES_REFLEXIVITY",
+          "score": 36,
+          "stance": "CAUTIOUS",
+          "reason": "Phản xạ kỳ vọng LN -80.2% & dòng tiền 61.4%"
+        },
+        {
+          "legend_id": "simons",
+          "name": "Jim Simons",
+          "school": "QUANT_STATISTICAL",
+          "score": 13.8,
+          "stance": "CAUTIOUS",
+          "reason": "Thống kê P(W)=55.0%, EV=-1.50%, Alpha=25.9"
         }
       ]
     }

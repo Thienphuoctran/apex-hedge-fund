@@ -122,6 +122,7 @@ def record_signal_if_new(
     regime_id: str = "SIDEWAY_CHOPPY",
     trading_date: Optional[str] = None,
     signal_time: Optional[str] = None,
+    allow_off_hours: bool = False,
 ) -> Optional[Dict[str, Any]]:
     sym = symbol.upper().strip()
     if not sym or signal_price <= 0:
@@ -129,7 +130,19 @@ def record_signal_if_new(
     now_ict = _get_ict_now()
     t_date = trading_date or now_ict.strftime("%Y-%m-%d")
     t_time = signal_time or now_ict.strftime("%H:%M:%S")
-    sig_id = f"SIG_{t_date}_{sym}_{signal_type.upper()}"
+
+    # Golden Window 14:00-14:25 ICT gate for Mon-Fri BUY/ACCUMULATE/EXPLORE/LONG signals
+    sig_upper = signal_type.upper()
+    if not allow_off_hours and any(tok in sig_upper for tok in ("BUY", "ACCUMULATE", "EXPLORE", "LONG")):
+        try:
+            dt_obj = datetime.date.fromisoformat(t_date)
+            hhmm = str(t_time)[:5]
+            if not (0 <= dt_obj.weekday() <= 4 and "14:00" <= hhmm <= "14:25"):
+                return None
+        except Exception:
+            return None
+
+    sig_id = f"SIG_{t_date}_{sym}_{sig_upper}"
 
     with _TRACKER_LOCK:
         records = _load_tracker_list()

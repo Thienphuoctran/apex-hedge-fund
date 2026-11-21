@@ -1,0 +1,111 @@
+[
+  {
+    "id": "dir_2026-11-21_001",
+    "timestamp": "08:30:15",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "morning_brief",
+    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã kích hoạt Living War-Room V4.0 cho ngày 2026-11-21. Chế độ thị trường hiện tại: 🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT). Kỷ luật bất biến: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
+  },
+  {
+    "id": "dir_2026-11-21_002",
+    "timestamp": "08:32:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_brief",
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-21. Tổng NAV live: 20,051,117 đ | Tiền mặt thật: 20,051,117 đ (100.0% Cash) | Đang nắm giữ: 0 CP (0 CP ≈ 0 đ) | Lãi đã chốt lũy kế: +51,117 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
+  },
+  {
+    "id": "2026-11-21_HDB_BUYZONE",
+    "key": "2026-11-21_HDB_BUYZONE",
+    "timestamp": "16:03:32",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — HDB ĐẠT VÙNG MUA LO] Giá 21,800 ₫ (-1.58%) sát mục tiêu 22,350 ₫, Mua chủ động 64.3%, Stop 22,060 ₫, TP1 24,200 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-21_BAF_BUYZONE",
+    "key": "2026-11-21_BAF_BUYZONE",
+    "timestamp": "16:03:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — BAF ĐẠT VÙNG MUA LO] Giá 30,800 ₫ (-0.48%) sát mục tiêu 30,850 ₫, Mua chủ động 70.6%, Stop 29,650 ₫, TP1 36,580 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-21_HPG_BUYZONE",
+    "key": "2026-11-21_HPG_BUYZONE",
+    "timestamp": "16:03:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — HPG ĐẠT VÙNG MUA LO] Giá 20,450 ₫ (+0.00%) sát mục tiêu 20,950 ₫, Mua chủ động 69.7%, Stop 20,014 ₫, TP1 24,881 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-21_IDC_BUYZONE",
+    "key": "2026-11-21_IDC_BUYZONE",
+    "timestamp": "16:03:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — IDC ĐẠT VÙNG MUA LO] Giá 34,200 ₫ (+0.00%) sát mục tiêu 34,600 ₫, Mua chủ động 71.5%, Stop 32,530 ₫, TP1 38,660 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "2026-11-21_TCB_BUYZONE",
+    "key": "2026-11-21_TCB_BUYZONE",
+    "timestamp": "16:03:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🟢 [VICTOR RADAR — TCB ĐẠT VÙNG MUA LO] Giá 21,200 ₫ (+2.91%) sát mục tiêu 21,500 ₫, Mua chủ động 66.8%, Stop 20,847 ₫, TP1 25,827 ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+  },
+  {
+    "id": "dir_2026-11-21_demo_tactical_plan_pre",
+    "timestamp": "16:03:43",
+    "sender": "James (Master CIO) & Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "demo_tactical_plan",
+    "content": "📋 [TỔNG HỢP THƯỢNG ĐỈNH 00H45 & KẾ HOẠCH TÁC CHIẾN 2026-11-21] Trạng thái: 🟡 NGOÀI GIỜ GIAO DỊCH — SẼ TỰ ĐỘNG KÍCH HOẠT THÀNH KẾ HOẠCH CHÍNH THỨC LÚC 08H30. Tài sản live: Cổ phiếu 0đ (PnL +0đ / +0.00%), Tiền mặt 20,051,117đ (100.0% NAV • Tổng NAV 20,051,117đ). Sẵn sàng vùng mua LO sau 14h00: Chưa có | Cấm bắt đáy: MBB, DBC. (Bản Demo tự động hiệu chỉnh ngay khi bảng điện ngày mai biến động!)"
+  },
+  {
+    "id": "dir_2026-11-21_victor_247_19618",
+    "timestamp": "16:03:43",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 2 tín hiệu trọng yếu: MBB (18,250đ: 🟠 ÁP LỰC CUNG (BuyUp 38.5%)) • DBC (16,300đ: 🟠 ÁP LỰC CUNG (BuyUp 44.1%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-21_regime_defensive",
+    "timestamp": "16:03:43",
+    "sender": "Victor (Ban 9 Live Sentinel) & Minh Quân (Ban 7 VN)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [CẢNH BÁO CHẾ ĐỘ PHÒNG THỦ] 🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT): VN-Index -0.05%, Độ rộng tích cực 31%, Basis -6.64đ. Tầng 1 Phòng thủ (trần giải ngân mới <= 15%): bảo vệ vốn, chỉ rình mã BCTC kim cương tại MA200 nếu đủ cầu. Khóa 100% lệnh mua mới (Hạn mức 0%), bảo vệ két tiền mặt 20,051,117 đ (100.0% NAV)!"
+  },
+  {
+    "id": "dir_2026-11-21_victor_247_59742",
+    "timestamp": "16:04:23",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 2 tín hiệu trọng yếu: MBB (18,250đ: 🟠 ÁP LỰC CUNG (BuyUp 38.5%)) • DBC (16,300đ: 🟠 ÁP LỰC CUNG (BuyUp 44.1%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-21_victor_247_37720",
+    "timestamp": "16:05:11",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 2 tín hiệu trọng yếu: MBB (18,250đ: 🟠 ÁP LỰC CUNG (BuyUp 38.5%)) • DBC (16,300đ: 🟠 ÁP LỰC CUNG (BuyUp 44.1%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-21_victor_247_22615",
+    "timestamp": "16:05:22",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 2 tín hiệu trọng yếu: MBB (18,250đ: 🟠 ÁP LỰC CUNG (BuyUp 38.5%)) • DBC (16,300đ: 🟠 ÁP LỰC CUNG (BuyUp 44.1%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  }
+]
