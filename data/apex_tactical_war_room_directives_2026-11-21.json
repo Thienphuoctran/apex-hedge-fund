@@ -107,5 +107,13 @@
     "role": "sentinel",
     "type": "sentinel_alert",
     "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 2 tín hiệu trọng yếu: MBB (18,250đ: 🟠 ÁP LỰC CUNG (BuyUp 38.5%)) • DBC (16,300đ: 🟠 ÁP LỰC CUNG (BuyUp 44.1%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-21_victor_247_46180",
+    "timestamp": "18:38:58",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Phố Wall Ca Tối)] Victor phát hiện 2 tín hiệu trọng yếu: MBB (18,250đ: 🟠 ÁP LỰC CUNG (BuyUp 38.5%)) • DBC (16,300đ: 🟠 ÁP LỰC CUNG (BuyUp 44.1%)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
   }
 ]

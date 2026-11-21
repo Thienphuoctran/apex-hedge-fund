@@ -1,5 +1,5 @@
 # [BAN 7 VN & BAN 9] BÁO CÁO TÁC CHIẾN LIVE INTRADAY — 2026-11-21
-**Cập nhật lúc:** `2026-11-21 16:05:10 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
+**Cập nhật lúc:** `2026-11-21 18:38:56 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
 **Trạng thái thị trường (`Market Regime`):** **`🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT)`**  
 **Chỉ thị điều hành:** VN-Index -0.05%, Độ rộng tích cực 31%, Basis -6.64đ. Tầng 1 Phòng thủ (trần giải ngân mới <= 15%): bảo vệ vốn, chỉ rình mã BCTC kim cương tại MA200 nếu đủ cầu.
 

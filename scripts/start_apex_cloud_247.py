@@ -598,6 +598,37 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
 
+        elif path == "/api/daily_live_warroom":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                def _load_j(rel_p, default_val):
+                    fp = BASE_DIR / rel_p
+                    if not fp.exists():
+                        return default_val
+                    try:
+                        return json.loads(fp.read_text(encoding="utf-8"))
+                    except Exception:
+                        return default_val
+
+                wr_live = _load_j("data/live_warroom_state.json", {})
+                hist_all = _load_j("data/live_warroom_intraday_history.json", {})
+                today_key = str(wr_live.get("date") or datetime.datetime.now().strftime("%Y-%m-%d"))
+                payload = {
+                    "ok": True,
+                    "live_warroom": wr_live,
+                    "history_today": (hist_all.get(today_key) or [])[-30:] if isinstance(hist_all, dict) else [],
+                    "brain_v3": _load_j("data/apex_autonomous_brain_v3_output.json", {}),
+                    "weekly_plan": _load_j("data/weekly_tactical_plan_active.json", {}),
+                }
+                self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode("utf-8"))
+            return
+
         elif path == "/api/tactical_war_room":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")

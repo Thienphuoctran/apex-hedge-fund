@@ -620,7 +620,7 @@ class ApexInspectorTrong:
         if send_telegram:
             try:
                 dispatch_message(topic_key="james_hq", text=telegram_summary)
-                dispatch_message(topic_key="assistant_nam", text=telegram_summary)
+                dispatch_message(topic_key="daily_warroom", text=telegram_summary)
             except Exception as e_tg:
                 print(f"[!] Warning sending Telegram summary: {e_tg}")
 

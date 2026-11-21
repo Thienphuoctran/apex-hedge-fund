@@ -1,6 +1,6 @@
 # NHẬT KÝ TÁC CHIẾN THỜI GIAN THỰC TOÀN THỊ TRƯỜNG — 2026-11-21
 
-> **Cập nhật lần cuối:** `2026-11-21 18:05:49 ICT` | **Pha phiên:** `WEEKEND_STANDBY` | **Nhãn:** `EOD_WRAP_FINAL`  
+> **Cập nhật lần cuối:** `2026-11-21 18:38:56 ICT` | **Pha phiên:** `WEEKEND_STANDBY` | **Nhãn:** `CLI_ONCE`  
 > **Tài khoản SSOT (`105C307855`):** `ALL_CASH_STANDDOWN` | Tiền mặt: **`20,051,117 ₫`** | Vị thế mở: `0`
 
 ## 1. BỨC TRANH BẢNG ĐIỆN TOÀN THỊ TRƯỜNG (`144/145` MÃ LIVE)

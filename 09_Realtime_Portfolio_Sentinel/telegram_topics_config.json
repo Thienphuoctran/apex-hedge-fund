@@ -1,5 +1,5 @@
 {
-  "system_title": "Apex Hedge Fund — Telegram Multi-Topic & Bidirectional AI Co-Pilot Architecture",
+  "system_title": "Apex Hedge Fund — Telegram 3-Room Architecture (Assistant / Daily War-Room / Master CIO James)",
   "architect": "Palmer — Apex Central System Governance",
   "bot_username": "Chuyenvienvictor_bot",
   "bot_token": "9113394586:AAEV3JfSShG3Sl6YEIeqwIky7cTT0XYYccw",
@@ -7,84 +7,36 @@
   "private_chat_id": "8332675283",
   "group_chat_id": "-1004465270817",
   "topics_enabled": true,
+  "assistant_room_standby": true,
   "fallback_to_private_if_unconfigured": true,
   "topics": {
-    "james_hq": {
-      "key": "james_hq",
-      "name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
-      "description": "Kênh tương tác trực tiếp 1:1 giữa Chủ tịch Phước Trần & Master CIO James: Chỉ huy tác chiến toàn diện, giao việc và nghiệm thu",
-      "thread_id": 6,
-      "icon_color": 16766590
-    },
     "assistant_nam": {
       "key": "assistant_nam",
-      "name": "💼 VĂN PHÒNG TRỢ LÝ NAM",
-      "description": "Trợ lý cá nhân đắc lực trang bị Gemini 3.8 Flash: Giải đáp thường ngày, sắp xếp công việc, email, lịch trình và trao đổi 24/7",
+      "name": "💼 1. PHÒNG TRỢ LÝ CÁ NHÂN",
+      "description": "Phòng Trợ lý cá nhân của Chủ tịch (để chế độ chờ Standby để Chủ tịch tự thiết lập sau).",
       "thread_id": 106,
       "icon_color": 7322352
     },
-    "alerts": {
-      "key": "alerts",
-      "name": "🚨 BAN 9 — GIÁM SÁT REALTIME & BÁO ĐỘNG ĐỎ",
-      "description": "Victor Sentinel: Giám sát bảng điện HOSE 73ms, Canh Chốt Lời TP1/TP2 & Canh Cắt Lỗ Stop 2xATR cho HPG, TCB, MBB",
-      "thread_id": 3,
-      "icon_color": 16478046
-    },
-    "morning_blotter": {
-      "key": "morning_blotter",
-      "name": "☀️ BAN 7 VN — MINH QUÂN EXECUTION DESK",
-      "description": "Minh Quân: Quản lý Sổ Lệnh Master Blotter, Khung Giờ Vàng 14h00-14h25, Đi lệnh Kim Tự Tháp 30-40-30 & Kỹ thuật T+0",
+    "daily_warroom": {
+      "key": "daily_warroom",
+      "name": "⚡ 2. PHÒNG TÁC CHIẾN MỖI NGÀY (09H00–16H00)",
+      "description": "Phòng Tác chiến Toàn thị trường (09h00–16h00): Thông báo kế hoạch, tiến độ 145 mã, biến động kế hoạch trong ngày & tổng kết cuối ngày.",
       "thread_id": 4,
       "icon_color": 16766590
     },
-    "hien_desk": {
-      "key": "hien_desk",
-      "name": "🌸 BAN 10 — BÀN LÀM VIỆC CỦA HIỀN (BCTC & IR)",
-      "description": "Bàn làm việc độc quyền của Hiền: Rà soát BCTC, Báo cáo Thường niên, trích xuất dòng tiền thật OCF/LNST và xuất bản Báo cáo 21h00 tối theo lệnh Chủ tịch",
-      "thread_id": 189,
-      "icon_color": 7322352
-    },
-    "khanh_studio": {
-      "key": "khanh_studio",
-      "name": "🎬 BAN 11 — STUDIO VIDEO VIRAL (KHÁNH & BẢO)",
-      "description": "Ban Sáng Tạo Nội Dung & Video Viral: Khánh lên kịch bản video TikTok/Reels 60s lúc 21h15, chuyển giao Render Job cho Bảo dựng phim, kiếm tiền Affiliate & iCopy",
-      "thread_id": 190,
+    "james_hq": {
+      "key": "james_hq",
+      "name": "🎖️ 3. PHÒNG CỦA JAMES (KẾ HOẠCH HOÀN CHỈNH)",
+      "description": "Phòng độc quyền của Master CIO James: Gửi các bản Kế hoạch Tác chiến Hoàn chỉnh trong ngày & Sổ lệnh Master Blotter cho Chủ tịch.",
+      "thread_id": 6,
       "icon_color": 16766590
-    },
-    "radar_filings": {
-      "key": "radar_filings",
-      "name": "📡 BAN 1, 2 & 3 — RADAR VĨ MÔ & ALPHA RANKING",
-      "description": "Ban 1, Ban 2 & Ban 3: Cập nhật vĩ mô SBV, thanh khoản 3 khối, thẩm định pháp y kế toán VAS/TT200 và phân hạng siêu cổ phiếu Top Leader vs Traps",
-      "thread_id": 5,
-      "icon_color": 7322352
-    },
-    "quant_risk": {
-      "key": "quant_risk",
-      "name": "⚖️ BAN 4 — QUẢN TRỊ RỦI RO & HỘI ĐỒNG ĐẦU TƯ",
-      "description": "Ban 4: Định cỡ vị thế ATR Risk-Parity, Ma trận tương quan danh mục, Kiểm thử Stress-Test 3 kịch bản khủng hoảng",
-      "thread_id": 111,
-      "icon_color": 16766590
-    },
-    "academy_learning": {
-      "key": "academy_learning",
-      "name": "🏛️ BAN 6 & 5 — HỌC VIỆN HUẤN LUYỆN & TIẾN HÓA",
-      "description": "Ban 6 & Ban 5: Bản tin khai sáng 7h30, Kèm cặp tâm lý tránh FOMO ATO, Nhật ký học viên và Hồi tố Hit Rate %",
-      "thread_id": 112,
-      "icon_color": 9367192
-    },
-    "reports_vault": {
-      "key": "reports_vault",
-      "name": "📑 PHÒNG BÁO CÁO & TÌM KIẾM ĐỘC QUYỀN",
-      "description": "Phòng riêng biệt CHỈ nhận các Báo cáo chuẩn hóa gắn #hashtag tìm kiếm nhanh + Link mở Web Portal + Tóm tắt Gemini 3.8 Flash (Không lẫn tin chat loãng thông báo).",
-      "thread_id": 1776,
-      "icon_color": 7322096
     }
   },
   "dedicated_reports_chat_id": null,
   "dedicated_reports_chat_title": null,
   "anti_noise_routing": {
     "block_private_fallback_for_reports": true,
-    "mirror_reports_to_vault_room": true,
+    "mirror_reports_to_vault_room": false,
     "auto_pin_daily_index": true,
     "portal_base_url": "https://apex-hedge-fund.onrender.com"
   }

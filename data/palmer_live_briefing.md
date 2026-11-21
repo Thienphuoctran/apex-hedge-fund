@@ -1,17 +1,17 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-21 18:07:50  
+**Thời gian cập nhật:** 2026-11-21 18:39:27  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261121-180750`  
+**Mã đồng bộ:** `SYNC-AG2P-20261121-183927`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Yêu cầu gần nhất của Chủ tịch:** Trien khai He thong Tac chien Toan thi truong 09:00-16:00 tu dong + Push toan bo ban nang cap V3.0 len GitHub/Render Cloud
+* **Yêu cầu gần nhất của Chủ tịch:** Hoan tat 4 Giai doan tinh chinh: Auto-start 09h00 Thu Hai (23/11), Telegram 3 Phong (Tro Ly, Tac Chien Moi Ngay, James), Web Portal 3 Phong cap nhat lien tuc & Push Cloud
 * **Kết luận & Quyết định thể chế:**
 Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Trien khai He thong Tac chien Toan thi truong 09:00-16:00 tu dong + Push toan bo ban nang cap V3.0 len GitHub/Render Cloud
+- [x] Hoan tat 4 Giai doan tinh chinh: Auto-start 09h00 Thu Hai (23/11), Telegram 3 Phong (Tro Ly, Tac Chien Moi Ngay, James), Web Portal 3 Phong cap nhat lien tuc & Push Cloud
 - [x] Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở
 - [x] Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.
 - [x] Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)

@@ -157,14 +157,9 @@ def build_search_optimized_card(
     time_str = now_ict.strftime("%H:%M")
 
     topic_map = {
-        "alerts": ("🚨 BÁO ĐỘNG ĐỎ", "#KHAN_CAP #BAN_9_VICTOR"),
-        "morning_blotter": ("☀️ SỔ LỆNH & TÁC CHIẾN", "#SOLENH #BAN_7_VN #TACTICAL"),
-        "radar_filings": ("📡 RADAR VĨ MÔ & ALPHA", "#RADAR #BAN_1_2_3"),
-        "hien_desk": ("🌸 BCTC & IR (HIỀN)", "#BCTC #IR #BAN_10"),
-        "quant_risk": ("⚖️ QUẢN TRỊ RỦI RO", "#RISK #BAN_4"),
-        "academy_learning": ("🏛️ HỌC VIỆN & TIẾN HÓA", "#DAOTAO #BAN_5_6"),
-        "james_hq": ("🎖️ CHỈ HUY MASTER CIO", "#MASTER_CIO #BAN_8"),
-        "reports_vault": ("📑 BÁO CÁO CHUẨN HÓA", "#BAOCAO_CHINH_THUC"),
+        "daily_warroom": ("⚡ PHÒNG TÁC CHIẾN MỖI NGÀY", "#TAC_CHIEN_NGAY #V3_WARROOM"),
+        "james_hq": ("🎖️ PHÒNG CỦA JAMES", "#MASTER_CIO #KE_HOACH_HOAN_CHINH"),
+        "assistant_nam": ("💼 PHÒNG TRỢ LÝ CÁ NHÂN", "#TRO_LY"),
     }
     badge, base_tags = topic_map.get(topic_key, ("📑 BÁO CÁO HỆ THỐNG", f"#{topic_key.upper()}"))
     summary = summarize_with_gemini_38_flash(title, raw_text) if use_ai_summary else None
@@ -431,6 +426,18 @@ def dispatch_report_card(
     return ok
 
 
+LEGACY_TOPIC_ALIAS_MAP: Dict[str, str] = {
+    "morning_blotter": "daily_warroom",
+    "alerts": "daily_warroom",
+    "radar_filings": "daily_warroom",
+    "quant_risk": "daily_warroom",
+    "academy_learning": "daily_warroom",
+    "hien_desk": "daily_warroom",
+    "khanh_studio": "daily_warroom",
+    "reports_vault": "daily_warroom",
+}
+
+
 def dispatch_message(
     topic_key: str,
     text: str,
@@ -440,14 +447,14 @@ def dispatch_message(
     parse_mode: Optional[str] = "Markdown",
     report_rel_path: Optional[str] = None,
     mirror_to_reports_vault: bool = True,
-    use_ai_summary: bool = False
+    use_ai_summary: bool = False,
+    allow_assistant_standby: bool = False,
 ) -> bool:
     """
-    Định tuyến tin nhắn chống loãng thông báo:
-    1. Nếu gửi vào 'reports_vault': ưu tiên Group/Channel độc lập (dedicated_reports_chat_id) nếu đã liên kết,
-       nếu chưa thì gửi vào Topic riêng biệt 'PHÒNG BÁO CÁO & TÌM KIẾM ĐỘC QUYỀN'.
-    2. Chặn rơi rác về Private Chat nếu các script cũ dùng topic_key không hợp lệ ('copilot_chat', 'general'...).
-    3. Tự động nhân bản 1 Thẻ Báo Cáo tinh gọn có #hashtag + Link mở Web Portal vào Phòng Báo Cáo riêng biệt.
+    Định tuyến tin nhắn chuẩn 3 Phòng Telegram:
+      1. `assistant_nam`: Phòng Trợ lý Cá nhân (mặc định standby, chặn bot tự spam nếu chưa mở).
+      2. `daily_warroom`: Phòng Tác chiến Mỗi ngày (hợp nhất toàn bộ báo cáo/biến động kế hoạch trong ngày).
+      3. `james_hq`: Phòng của Master CIO James (gửi Kế hoạch Tác chiến Hoàn chỉnh trong ngày).
     """
     cfg = load_config()
     bot_token = cfg.get("bot_token", "")
@@ -457,9 +464,13 @@ def dispatch_message(
     topics = cfg.get("topics", {})
     anti_noise = cfg.get("anti_noise_routing", {}) or {}
 
-    effective_key = topic_key
-    if topic_key not in topics and not force_private:
-        effective_key = "reports_vault"
+    effective_key = LEGACY_TOPIC_ALIAS_MAP.get(topic_key, topic_key)
+    if effective_key not in topics and not force_private:
+        effective_key = "daily_warroom" if "daily_warroom" in topics else ("james_hq" if "james_hq" in topics else effective_key)
+
+    if effective_key == "assistant_nam" and bool(cfg.get("assistant_room_standby", True)) and not allow_assistant_standby:
+        print("[Telegram 3-Room] Phòng Trợ Lý đang ở chế độ Standby theo chỉ thị Chủ tịch (bỏ qua tin tự động).")
+        return True
 
     target_topic = topics.get(effective_key, {})
     thread_id = target_topic.get("thread_id")
@@ -495,11 +506,10 @@ def dispatch_message(
         )
 
     if primary_ok:
-        mirror_sources = {"alerts", "morning_blotter", "radar_filings", "hien_desk", "quant_risk", "academy_learning", "james_hq"}
         if (
             mirror_to_reports_vault
-            and anti_noise.get("mirror_reports_to_vault_room", True)
-            and effective_key in mirror_sources
+            and anti_noise.get("mirror_reports_to_vault_room", False)
+            and "reports_vault" in topics
             and len(text.strip()) >= 280
             and effective_key != "reports_vault"
         ):

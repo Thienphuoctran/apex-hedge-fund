@@ -1,6 +1,6 @@
 # 🎯 KẾ HOẠCH TÁC CHIẾN NGÀY 21/11/2026 — TỰ ĐỘNG CƠ ĐỘNG THEO THỊ TRƯỜNG
-> **Nguồn Tổng Hợp**: `Dữ liệu LIVE 16:05:19 21/11/2026 + Nghị quyết APEX-SUMMIT-20261119-0430 + SSOT TCBS 105C307855`  
-> **Cập Nhật Mới Nhất**: `2026-11-21 16:05:19 ICT` | **Trạng Thái**: `🟡 NGOÀI GIỜ GIAO DỊCH — SẼ TỰ ĐỘNG KÍCH HOẠT THÀNH KẾ HOẠCH CHÍNH THỨC LÚC 08H30`  
+> **Nguồn Tổng Hợp**: `Dữ liệu LIVE 18:38:56 21/11/2026 + Nghị quyết APEX-SUMMIT-20261119-0430 + SSOT TCBS 105C307855`  
+> **Cập Nhật Mới Nhất**: `2026-11-21 18:38:56 ICT` | **Trạng Thái**: `🟡 NGOÀI GIỜ GIAO DỊCH — SẼ TỰ ĐỘNG KÍCH HOẠT THÀNH KẾ HOẠCH CHÍNH THỨC LÚC 08H30`  
 > ⚡ **CƠ CHẾ TỰ ĐỘNG THÍCH NGHI**: BẢN ĐỊNH HƯỚNG NGOÀI GIỜ CHO PHIÊN 21/11/2026 (SSOT: 0 CP • Cash 100.0%). Tự động chuyển Live lúc 08h30.
 
 ---
@@ -21,7 +21,7 @@
 - Chưa có mã đạt vùng canh mua.
 
 ### 3. Nhóm Đang Chịu Áp Lực Cung (Cấm Bắt Đáy Sớm)
-- **MBB**: Giá `18,250đ` | Buy-Up `38.5%` — CẤM BẮT ĐÁY SỚM! Chỉ xem xét lại khi Buy-Up phục hồi >= 58% quanh vùng 18,600đ sau 14h00.
+- **MBB**: Giá `18,250đ` | Buy-Up `38.5%` — CẤM BẮT ĐÁY SỚM! Chỉ xem xét lại khi Buy-Up phục hồi >= 58% quanh vùng 18,150đ sau 14h00.
 - **DBC**: Giá `16,300đ` | Buy-Up `44.1%` — CẤM BẮT ĐÁY SỚM! Chỉ xem xét lại khi Buy-Up phục hồi >= 58% quanh vùng 16,050đ sau 14h00.
 
 ---

@@ -31,6 +31,22 @@
         "SSI",
         "HDB"
       ]
+    },
+    {
+      "ts": "2026-11-21 18:38:56 ICT",
+      "phase": "WEEKEND_STANDBY",
+      "vn_index": 1688.79,
+      "vn_index_chg_pct": -0.05,
+      "live_breadth_ma20_pct": 19.4,
+      "avg_buy_up_pct": 59.3,
+      "scanned_live_count": 144,
+      "live_regime": "S4_BEAR_CASH_SHIELD",
+      "verdict_code": "STANDBY_AUDIT_S4_BEAR_CASH_SHIELD",
+      "top_leaders": [
+        "NAB",
+        "SSI",
+        "HDB"
+      ]
     }
   ]
 }

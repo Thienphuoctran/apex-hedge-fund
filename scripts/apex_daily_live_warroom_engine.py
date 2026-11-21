@@ -233,6 +233,7 @@ def run_live_recon_and_decision(
     refresh_intel: bool = False,
     send_telegram: bool = False,
     tag: str = "SCHEDULED_CHECK",
+    event_type: Optional[str] = None,
 ) -> Dict[str, Any]:
     now_ict = _ict_now()
     today_str = now_ict.strftime("%Y-%m-%d")
@@ -488,18 +489,19 @@ def run_live_recon_and_decision(
     _write_json(LIVE_STATE_FILE, snapshot)
     _append_intraday_history(today_str, snapshot)
     _write_live_warroom_markdown(snapshot)
+    _refresh_static_web_portal_safely()
 
-    if send_telegram and phase in ("GOLDEN_WINDOW_DECISION", "MIDDAY_LUNCH_BREAK"):
-        try:
-            tg_msg = (
-                f"🏛️ *[WAR-ROOM LIVE {now_ict.strftime('%H:%M')}]* `{live_regime}`\n"
-                f"• VNI: `{vni_val:,.2f}` ({vni_chg:+.2f}%) | Br20: `{live_br20:.1f}%` | BuyUp: `{avg_buy_up:.1f}%`\n"
-                f"• Quét sống: `{len(quotes)}/{len(symbols)}` mã | Cash SSOT: `{cash_vnd:,.0f} ₫`\n"
-                f"• Phán quyết: {verdict_vi}"
-            )
-            dispatch_message("james_hq", tg_msg)
-        except Exception as e_tg:
-            _log(f"[WARN] Telegram dispatch error: {e_tg}")
+    resolved_event = event_type
+    if resolved_event is None:
+        if tag == "OPENING_0900_KICKOFF":
+            resolved_event = "OPENING_0900_KICKOFF"
+        elif phase == "GOLDEN_WINDOW_DECISION" or tag == "GOLDEN_WINDOW_VERDICT":
+            resolved_event = "GOLDEN_WINDOW_VERDICT"
+        elif phase == "MIDDAY_LUNCH_BREAK" or tag == "MIDDAY_BRIEFING":
+            resolved_event = "MIDDAY_BRIEFING"
+
+    if send_telegram and resolved_event:
+        _dispatch_daily_warroom_and_james(snapshot, event_type=resolved_event, brain_v3=brain_v3)
 
     _log(
         f"[CYCLE OK] phase={phase} | scanned={len(quotes)}/{len(symbols)} | "
@@ -507,6 +509,120 @@ def run_live_recon_and_decision(
         f"Regime={live_regime}"
     )
     return snapshot
+
+
+def _refresh_static_web_portal_safely() -> None:
+    """Cập nhật dashboard/index.html tự động sau mỗi nhịp quét War-Room để Web Portal luôn đồng bộ 3 phòng."""
+    try:
+        import scripts.apex_report_scanner as rscan
+        import scripts.apex_web_portal_engine as portal_eng
+
+        sup_file = DATA_DIR / "apex_cloud_supervisor_status.json"
+        status_data = _read_json(sup_file, {"supervisor_status": "ACTIVE_DAILY_WARROOM"})
+        reports = rscan.scan_all_institutional_reports(limit=2000)
+        milestones = rscan.get_daily_milestones_status()
+        dates = rscan.get_available_archive_dates()
+        html = portal_eng.generate_portal_html(status_data, reports, milestones, available_dates=dates)
+        out_html = BASE_DIR / "dashboard" / "index.html"
+        out_html.parent.mkdir(parents=True, exist_ok=True)
+        tmp = out_html.with_suffix(".tmp")
+        tmp.write_text(html, encoding="utf-8")
+        tmp.replace(out_html)
+    except Exception as e:
+        _log(f"[WARN] Không thể refresh dashboard/index.html: {e}")
+
+
+def _dispatch_daily_warroom_and_james(
+    snap: Dict[str, Any],
+    event_type: str,
+    brain_v3: Optional[Dict[str, Any]] = None,
+    eod_summary_path: Optional[Path] = None,
+) -> None:
+    """
+    Định tuyến thông báo chuẩn 2 phòng tác chiến Telegram (Giữ Phòng Trợ Lý ở chế độ standby):
+      - `daily_warroom`: Kế hoạch trong ngày, công việc phòng ban, thay đổi kịch bản tức thời & tổng kết cuối ngày.
+      - `james_hq`: Bản kế hoạch tác chiến hoàn chỉnh trong ngày của Master CIO James (09:00, 14:05, EOD).
+    """
+    try:
+        r = snap["recon_summary"]
+        d = snap["decision_brain"]
+        s = snap["ssot_snapshot"]
+        top5 = snap.get("top_5_live_leaders") or []
+        orders = d.get("proposed_lo_orders") or []
+        b3 = brain_v3 if brain_v3 is not None else _read_json(DATA_DIR / "apex_autonomous_brain_v3_output.json", {})
+        strikes = b3.get("asymmetric_conviction_strikes") or []
+        challenges = b3.get("independent_chairman_challenges") or []
+
+        top5_txt = ", ".join(f"{x['symbol']} ({x['live_price']:,.0f}đ | {x['change_pct']:+.1f}% | BuyUp {x['buy_up_pct']:.0f}%)" for x in top5[:5]) or "Chưa có mã đạt chuẩn"
+        orders_txt = "\n".join(
+            f"  • *{o['symbol']}*: `{o['shares_lot100']} CP` @ LO `{o['limit_lo_vnd']:,.0f}đ` | Stop `{o['stop_vnd']:,.0f}đ` | TP1 `{o['tp1_vnd']:,.0f}đ`"
+            for o in orders
+        ) or "  • Không mở mua mới — Giữ nguyên 100% Tiền mặt bảo toàn vốn."
+
+        # 1. Gửi Phòng 2: daily_warroom
+        if event_type == "OPENING_0900_KICKOFF":
+            wr_msg = (
+                f"⚡ *[MỞ PHIÊN 09H00 — PHÒNG TÁC CHIẾN MỖI NGÀY]* `{snap['timestamp_ict']}`\n"
+                f"• Quét toàn thị trường: `{r['scanned_live_count']}/{r['universe_total']}` mã | VNI: `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`)\n"
+                f"• Breadth>MA20: `{r['live_breadth_ma20_pct']:.1f}%` | Buy-Up: `{r['avg_buy_up_pct']:.1f}%` | Internet/BCTC: `{r['internet_articles']}` tin\n"
+                f"• *Trạng thái sống:* `{d['live_regime']}` ({d['target_allocation_pct']})\n"
+                f"• *Lịch nhịp trong ngày:* `09:00 Mở cửa` ➔ `11:35 Giữa phiên` ➔ `14:05 Khung Giờ Vàng` ➔ `15:45 Tổng kết & Nghỉ 16h00`\n"
+                f"• *Top 5 BCTC sạch:* {top5_txt}\n"
+                f"• *Chỉ thị:* Khóa nút Mua chống FOMO ATO trước `14h05`; liên tục bám sát bảng điện."
+            )
+        elif event_type == "REGIME_OR_PLAN_CHANGE":
+            wr_msg = (
+                f"🔔 *[BIẾN ĐỘNG KẾ HOẠCH TRONG NGÀY]* `{snap['timestamp_ict']}`\n"
+                f"• VNI: `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`) | Br20: `{r['live_breadth_ma20_pct']:.1f}%` | Buy-Up: `{r['avg_buy_up_pct']:.1f}%`\n"
+                f"• *Chế độ mới:* `{d['live_regime']}` (`{d['target_allocation_pct']}`)\n"
+                f"• *Cập nhật hành động:* {d['verdict_vi']}\n"
+                f"• *Top 5 dẫn dắt:* {top5_txt}"
+            )
+        elif event_type == "EOD_WRAP_FINAL":
+            wr_msg = (
+                f"🏁 *[TỔNG KẾT CUỐI NGÀY & BÀI HỌC]* `{snap['date']}`\n"
+                f"• Đóng cửa VNI: `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`) | Quét: `{r['scanned_live_count']}/{r['universe_total']}` mã\n"
+                f"• SSOT `{s['account_id']}`: `{s['status']}` | Tiền mặt: `{s['cash_vnd']:,.0f} ₫` (`{s['open_positions_count']} CP`)\n"
+                f"• Phán quyết cuối phiên: `{d['live_regime']}`\n"
+                f"• Hồ sơ bài học: `{eod_summary_path.name if eod_summary_path else snap['date'] + '_EOD_WarRoom_Summary_And_Lessons.md'}`\n"
+                f"• Trạng thái: Đã tổng kết xong, hệ thống nghỉ ngơi lúc `16:00`."
+            )
+        else:
+            wr_msg = (
+                f"⚡ *[CẬP NHẬT TÁC CHIẾN {event_type}]* `{snap['timestamp_ict']}`\n"
+                f"• VNI: `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`) | Br20: `{r['live_breadth_ma20_pct']:.1f}%` | Buy-Up: `{r['avg_buy_up_pct']:.1f}%`\n"
+                f"• *Chế độ sống:* `{d['live_regime']}` | Cash SSOT: `{s['cash_vnd']:,.0f} ₫`\n"
+                f"• *Chỉ thị:* {d['verdict_vi']}\n"
+                f"• *Lệnh dự kiến:*\n{orders_txt}"
+            )
+        dispatch_message("daily_warroom", wr_msg, mirror_to_reports_vault=False)
+
+        # 2. Gửi Phòng 3: james_hq (Kế hoạch tác chiến hoàn chỉnh trong ngày của James)
+        if event_type in ("OPENING_0900_KICKOFF", "GOLDEN_WINDOW_VERDICT", "EOD_WRAP_FINAL"):
+            strikes_txt = "\n".join(
+                f"  • *{st['symbol']}* (V3 `{st.get('fusion_v3_score', '-')}` | F=`{st.get('f_score', '-')}/9`): `{st.get('shares_lot100', 0)} CP` @ LO `{float(st.get('limit_entry_vnd', 0)):,.0f}đ` | Stop `{float(st.get('stop_loss_vnd', 0)):,.0f}đ` | TP1 `{float(st.get('tp1_swing_vnd', 0)):,.0f}đ` (Rủi ro `{st.get('max_nav_risk_pct', '-')}% NAV`)"
+                for st in strikes[:3]
+            ) or "  • Chưa nạp kèo Spring."
+            chal_txt = "\n".join(
+                f"  - *{c.get('challenge_id', 'CHAL')}*: {str(c.get('action_mandate', ''))[:140]}"
+                for c in challenges[:4]
+            ) or "  - Giữ kỷ luật quản trị rủi ro."
+            james_msg = (
+                f"🎖️ *[KẾ HOẠCH TÁC CHIẾN HOÀN CHỈNH — MASTER CIO JAMES]*\n"
+                f"🕒 `{snap['timestamp_ict']}` | Nhịp: `{event_type}` | SSOT `{s['account_id']}`: `{s['cash_vnd']:,.0f} ₫` (`{s['status']}`)\n"
+                f"━━━━━━━━━━━━━━━━━━━\n"
+                f"📊 *Thị trường sống (`{r['scanned_live_count']}/{r['universe_total']}` mã):* VNI `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`) | Br20 `{r['live_breadth_ma20_pct']:.1f}%` | Buy-Up `{r['avg_buy_up_pct']:.1f}%` | Chế độ: `{d['live_regime']}`\n"
+                f"🎯 *Phán quyết Master CIO:* {d['verdict_vi']}\n"
+                f"📌 *Ma trận 4 nhánh (`14h05–14h25`):*\n"
+                f"  • `S4 Bear Shield`: VNI < 1,666 hoặc Buy-Up < 48% ➔ Đứng ngoài `100% Cash`.\n"
+                f"  • `S3 Spring V3.0`: VNI >= 1,678, Br20 >= 24%, Vol >= 1.05x, Buy-Up >= 58% ➔ Đánh `30–40% NAV` (max 2 mã).\n"
+                f"  • `S2 Sideways` (`30–45% NAV`) | `S1 Bull Breakout` (`75–85% NAV`).\n"
+                f"🧾 *Rổ Kèo Đánh Cược Bất Đối Xứng V3.0 (Stop -5.5%):*\n{strikes_txt}\n"
+                f"🧠 *Phản biện Độc lập Brain V3.0:*\n{chal_txt}"
+            )
+            dispatch_message("james_hq", james_msg, mirror_to_reports_vault=False)
+    except Exception as e:
+        _log(f"[WARN] Lỗi gửi thông báo Telegram 2 phòng: {e}")
 
 
 def _append_intraday_history(today_str: str, snap: Dict[str, Any]) -> None:
@@ -650,15 +766,10 @@ def run_eod_wrap(fast_test: bool = False, send_telegram: bool = False) -> Path:
 """
     summary_md.write_text(content, encoding="utf-8")
     _append_evolution_journal(today_str, snap, len(hist))
+    _refresh_static_web_portal_safely()
 
     if send_telegram:
-        try:
-            dispatch_message(
-                "james_hq",
-                f"🏁 *[EOD WAR-ROOM {today_str}]* VNI `{r['vn_index']:,.2f}` ({r['vn_index_chg_pct']:+.2f}%) | Regime `{d['live_regime']}` | Cash SSOT `{s['cash_vnd']:,.0f} ₫` | Đã tổng kết & rút bài học.",
-            )
-        except Exception:
-            pass
+        _dispatch_daily_warroom_and_james(snap, event_type="EOD_WRAP_FINAL", eod_summary_path=summary_md)
 
     _log(f"[EOD WRAP DONE] Đã xuất báo cáo tổng kết tại: {summary_md}")
     return summary_md
@@ -714,10 +825,28 @@ def run_daemon(send_telegram: bool = True) -> None:
     try:
         _log("[DAEMON START] Khởi động Hệ thống Tác chiến Toàn thị trường 09:00–16:00 ICT...")
         last_intel_ts = 0.0
+        opening_kickoff_done = False
         midday_done = False
         golden_1400_refreshed = False
+        golden_verdict_sent = False
         atc_done = False
         eod_done = False
+        prev_regime: Optional[str] = None
+        prev_verdict_code: Optional[str] = None
+        prev_pos_sig: Optional[str] = None
+
+        def _check_and_emit_change(snap_obj: Dict[str, Any]) -> None:
+            nonlocal prev_regime, prev_verdict_code, prev_pos_sig
+            cur_reg = snap_obj["decision_brain"]["live_regime"]
+            cur_vc = snap_obj["decision_brain"]["verdict_code"]
+            cur_pos = json.dumps(snap_obj["ssot_snapshot"].get("position_alerts") or [], sort_keys=True)
+            changed = (
+                prev_regime is not None
+                and (cur_reg != prev_regime or cur_vc != prev_verdict_code or cur_pos != prev_pos_sig)
+            )
+            prev_regime, prev_verdict_code, prev_pos_sig = cur_reg, cur_vc, cur_pos
+            if changed and send_telegram:
+                _dispatch_daily_warroom_and_james(snap_obj, event_type="REGIME_OR_PLAN_CHANGE")
 
         while not STOP_FLAG:
             now = _ict_now()
@@ -735,37 +864,69 @@ def run_daemon(send_telegram: bool = True) -> None:
                 _log("[SESSION_CLOSED_RESTING] Đã 16:00 ICT — Hệ thống tổng kết xong và nghỉ ngơi.")
                 break
 
+            if "09:00" <= hm < "15:15" and not opening_kickoff_done:
+                snap0 = run_live_recon_and_decision(
+                    refresh_intel=True,
+                    send_telegram=send_telegram,
+                    tag="OPENING_0900_KICKOFF",
+                    event_type="OPENING_0900_KICKOFF",
+                )
+                opening_kickoff_done = True
+                last_intel_ts = time.time()
+                prev_regime = snap0["decision_brain"]["live_regime"]
+                prev_verdict_code = snap0["decision_brain"]["verdict_code"]
+                prev_pos_sig = json.dumps(snap0["ssot_snapshot"].get("position_alerts") or [], sort_keys=True)
+                _sleep_interruptible(180)
+                continue
+
             if "09:00" <= hm < "11:30":
                 do_intel = (time.time() - last_intel_ts) >= 1800
-                run_live_recon_and_decision(refresh_intel=do_intel, send_telegram=False, tag="MORNING_LIVE_SCAN")
+                snap = run_live_recon_and_decision(refresh_intel=do_intel, send_telegram=False, tag="MORNING_LIVE_SCAN")
                 if do_intel:
                     last_intel_ts = time.time()
+                _check_and_emit_change(snap)
                 _sleep_interruptible(180)
 
             elif "11:30" <= hm < "13:00":
                 if not midday_done:
-                    run_live_recon_and_decision(refresh_intel=False, send_telegram=send_telegram, tag="MIDDAY_BRIEFING")
+                    snap = run_live_recon_and_decision(refresh_intel=False, send_telegram=send_telegram, tag="MIDDAY_BRIEFING", event_type="MIDDAY_BRIEFING")
                     midday_done = True
+                    prev_regime = snap["decision_brain"]["live_regime"]
+                    prev_verdict_code = snap["decision_brain"]["verdict_code"]
                 _sleep_interruptible(60)
 
             elif "13:00" <= hm < "14:00":
                 do_intel = (time.time() - last_intel_ts) >= 1800
-                run_live_recon_and_decision(refresh_intel=do_intel, send_telegram=False, tag="AFTERNOON_T2_SCAN")
+                snap = run_live_recon_and_decision(refresh_intel=do_intel, send_telegram=False, tag="AFTERNOON_T2_SCAN")
                 if do_intel:
                     last_intel_ts = time.time()
+                _check_and_emit_change(snap)
                 _sleep_interruptible(180)
 
             elif "14:00" <= hm <= "14:25":
                 do_intel = not golden_1400_refreshed
-                run_live_recon_and_decision(refresh_intel=do_intel, send_telegram=send_telegram, tag="GOLDEN_WINDOW_VERDICT")
+                send_now = send_telegram and not golden_verdict_sent
+                snap = run_live_recon_and_decision(
+                    refresh_intel=do_intel,
+                    send_telegram=send_now,
+                    tag="GOLDEN_WINDOW_VERDICT",
+                    event_type="GOLDEN_WINDOW_VERDICT" if send_now else None,
+                )
                 golden_1400_refreshed = True
+                if send_now:
+                    golden_verdict_sent = True
+                    prev_regime = snap["decision_brain"]["live_regime"]
+                    prev_verdict_code = snap["decision_brain"]["verdict_code"]
+                else:
+                    _check_and_emit_change(snap)
                 if do_intel:
                     last_intel_ts = time.time()
                 _sleep_interruptible(60)
 
             elif "14:25" < hm < "15:15":
                 if hm >= "14:46" and not atc_done:
-                    run_live_recon_and_decision(refresh_intel=False, send_telegram=False, tag="ATC_CLOSE_CAPTURE")
+                    snap = run_live_recon_and_decision(refresh_intel=False, send_telegram=False, tag="ATC_CLOSE_CAPTURE")
+                    _check_and_emit_change(snap)
                     atc_done = True
                 _sleep_interruptible(60)
 

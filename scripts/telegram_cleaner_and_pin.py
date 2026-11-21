@@ -118,7 +118,7 @@ def auto_clean_old_operational_messages(
     Mặc định: Dọn dẹp sạch sẽ Topic 3 (Alerts) và Topic 4 (Sổ lệnh) để bàn làm việc luôn tinh tươm.
     """
     if topic_keys is None:
-        topic_keys = ["alerts", "morning_blotter"]
+        topic_keys = ["daily_warroom"]
 
     cfg = load_config()
     bot_token = cfg.get("bot_token")

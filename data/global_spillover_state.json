@@ -1,7 +1,7 @@
 {
   "snapshot_date": "2026-11-21",
-  "updated_at": "2026-11-21 17:10:38",
-  "fetched_epoch": 1795255838.49,
+  "updated_at": "2026-11-21 18:38:56",
+  "fetched_epoch": 1795261136.58,
   "risk_multiplier": 0.45,
   "max_allocation_pct": 22,
   "overnight_bias": "DEFENSIVE_SHOCK",

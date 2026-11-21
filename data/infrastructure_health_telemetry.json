@@ -1,6 +1,6 @@
 {
-  "audit_timestamp": "2026-11-21 17:24:14",
-  "audit_duration_seconds": 1.42,
+  "audit_timestamp": "2026-11-21 18:39:26",
+  "audit_duration_seconds": 0.52,
   "overall_infrastructure_health_score": 65,
   "health_verdict": "BÁO ĐỘNG",
   "appointed_officers": {
@@ -11,15 +11,15 @@
   },
   "check_1_report_counts_and_thresholds": {
     "operational_institutional_reports": 515,
-    "total_markdown_documents": 762,
+    "total_markdown_documents": 765,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (515 báo cáo thể chế / 762 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (515 báo cáo thể chế / 765 tệp MD hiện có)."
   },
   "check_2_directory_density": {
-    "total_directories_scanned": 101,
+    "total_directories_scanned": 102,
     "dense_directories_flagged": [
       {
         "directory": "data\\real_ohlcv_cache",
@@ -38,22 +38,22 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1620,
-    "total_project_size_mb": 82.1,
-    "data_directory_size_mb": 52.95,
+    "total_active_files": 1628,
+    "total_project_size_mb": 82.73,
+    "data_directory_size_mb": 52.97,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "8.21%",
+    "github_quota_used_pct": "8.27%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 40.89,
-    "uncommitted_files_count": 310,
+    "git_directory_size_mb": 39.16,
+    "uncommitted_files_count": 21,
     "active_branch": "main",
     "status": "HEALTHY"
   },
   "check_5_log_files_and_rotation": {
-    "total_log_files_found": 9,
+    "total_log_files_found": 10,
     "log_files_details": [
       {
         "path": "data\\apex_cloud_supervisor.log",
@@ -70,6 +70,10 @@
       {
         "path": "data\\logs\\cron_daemon.log",
         "size_mb": 0.1
+      },
+      {
+        "path": "data\\logs\\daily_warroom_engine.log",
+        "size_mb": 0.0
       },
       {
         "path": "data\\logs\\inspector_trong.log",
@@ -97,8 +101,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 195.07,
-    "ssot_load_latency_ms": 0.64,
+    "json_directory_scan_latency_ms": 58.7,
+    "ssot_load_latency_ms": 0.55,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
@@ -115,8 +119,8 @@
   },
   "check_8_semantic_and_superpowers_gate": {
     "semantic_consistency": {
-      "audited_reports": 21,
-      "clean_reports": 19,
+      "audited_reports": 24,
+      "clean_reports": 22,
       "violation_reports": 2,
       "violations_details": [
         {
@@ -145,10 +149,10 @@
         "checks": [
           "SSOT_Portfolio: có dữ liệu",
           "SSOT_Portfolio: đủ trường bắt buộc",
-          "SSOT_Portfolio: độ tươi đạt chuẩn (0.1h)"
+          "SSOT_Portfolio: độ tươi đạt chuẩn (1.3h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-21 17:24:15"
+        "verified_at": "2026-11-21 18:39:26"
       },
       "cbtt_gate": {
         "source": "CBTT_Radar",
@@ -156,10 +160,10 @@
         "checks": [
           "CBTT_Radar: có dữ liệu",
           "CBTT_Radar: đủ trường bắt buộc",
-          "CBTT_Radar: độ tươi đạt chuẩn (57.9h)"
+          "CBTT_Radar: độ tươi đạt chuẩn (59.1h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-21 17:24:15"
+        "verified_at": "2026-11-21 18:39:26"
       },
       "diagnostics_logged_events": 0,
       "overall_ok": true

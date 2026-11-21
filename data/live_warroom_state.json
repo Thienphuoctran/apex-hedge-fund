@@ -1,7 +1,7 @@
 {
-  "timestamp_ict": "2026-11-21 18:05:49 ICT",
+  "timestamp_ict": "2026-11-21 18:38:56 ICT",
   "date": "2026-11-21",
-  "tag": "EOD_WRAP_FINAL",
+  "tag": "CLI_ONCE",
   "phase": "WEEKEND_STANDBY",
   "ssot_snapshot": {
     "account_id": "105C307855",

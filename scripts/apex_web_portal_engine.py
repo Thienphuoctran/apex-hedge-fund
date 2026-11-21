@@ -1121,6 +1121,193 @@ def _render_war_room_v8_command_floor_html(wr_state: Dict[str, Any]) -> str:
     )
 
 
+def _load_json_portal(rel_path: str, default: Any = None) -> Any:
+    p = BASE_DIR / rel_path
+    if not p.exists():
+        return {} if default is None else default
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return {} if default is None else default
+
+
+def _render_daily_auto_warroom_v3_banner_html() -> str:
+    """Render Bảng Tác Chiến Toàn Thị Trường Hàng Ngày (09h00–16h00) từ data/live_warroom_state.json."""
+    st = _load_json_portal("data/live_warroom_state.json", {})
+    b3 = _load_json_portal("data/apex_autonomous_brain_v3_output.json", {})
+    today_str = str(st.get("date") or get_ict_now().strftime("%Y-%m-%d"))
+    ts = html_lib.escape(str(st.get("timestamp_ict") or "Đang chờ phiên 09h00"))
+    phase = html_lib.escape(str(st.get("phase") or "STANDBY"))
+    r = st.get("recon_summary") or {}
+    d = st.get("decision_brain") or {}
+    s = st.get("ssot_snapshot") or {}
+
+    regime = html_lib.escape(str(d.get("live_regime") or "S4_BEAR_CASH_SHIELD"))
+    alloc = html_lib.escape(str(d.get("target_allocation_pct") or "0.0% NAV"))
+    verdict = html_lib.escape(str(d.get("verdict_vi") or "Hệ thống Tác chiến 145 mã sẵn sàng lúc 09h00 Thứ Hai."))
+    reg_col = "#34d399" if "S1" in regime else ("#38bdf8" if "S2" in regime else ("#fbbf24" if "S3" in regime else "#f87171"))
+
+    leaders = st.get("top_5_live_leaders") or []
+    leaders_rows = "".join(
+        f"<tr style='border-bottom:1px solid rgba(148,163,184,0.14);'>"
+        f"<td style='padding:7px 9px; font-weight:800; color:#38bdf8;'>{html_lib.escape(str(x.get('symbol','')))}</td>"
+        f"<td style='padding:7px 9px; color:#cbd5e1;'>{html_lib.escape(str(x.get('sector','')))}</td>"
+        f"<td style='padding:7px 9px; font-family:monospace; color:#f8fafc;'>{float(x.get('live_price',0)):,.0f} đ</td>"
+        f"<td style='padding:7px 9px; font-weight:700; color:{'#34d399' if float(x.get('change_pct',0))>=0 else '#f87171'};'>{float(x.get('change_pct',0)):+.2f}%</td>"
+        f"<td style='padding:7px 9px; font-weight:700; color:#34d399;'>{float(x.get('buy_up_pct',50)):.1f}%</td>"
+        f"<td style='padding:7px 9px; color:#fbbf24;'>F={int(x.get('f_score',0))}/9 • RS={int(x.get('rs_rating',0))}</td>"
+        f"<td style='padding:7px 9px; font-weight:800; color:#34d399;'>{float(x.get('live_score',0)):.1f}</td>"
+        f"</tr>"
+        for x in leaders[:5]
+    ) or "<tr><td colspan='7' style='padding:10px; color:#94a3b8;'>Đang chờ dữ liệu quét live 145 mã.</td></tr>"
+
+    strikes = d.get("proposed_lo_orders") or b3.get("asymmetric_conviction_strikes") or []
+    order_rows = "".join(
+        f"<tr style='border-bottom:1px solid rgba(148,163,184,0.14);'>"
+        f"<td style='padding:7px 9px; font-weight:800; color:#fbbf24;'>{html_lib.escape(str(o.get('symbol','')))}</td>"
+        f"<td style='padding:7px 9px; font-family:monospace; color:#f8fafc;'>{int(o.get('shares_lot100',0))} CP</td>"
+        f"<td style='padding:7px 9px; font-family:monospace; color:#38bdf8;'>{float(o.get('limit_lo_vnd') or o.get('limit_entry_vnd') or 0):,.0f} đ</td>"
+        f"<td style='padding:7px 9px; font-family:monospace; color:#f87171;'>{float(o.get('stop_vnd') or o.get('stop_loss_vnd') or 0):,.0f} đ</td>"
+        f"<td style='padding:7px 9px; font-family:monospace; color:#34d399;'>{float(o.get('tp1_vnd') or o.get('tp1_swing_vnd') or 0):,.0f} đ</td>"
+        f"<td style='padding:7px 9px; font-family:monospace; color:#cbd5e1;'>{float(o.get('capital_vnd',0)):,.0f} đ</td>"
+        f"</tr>"
+        for o in strikes[:4]
+    ) or "<tr><td colspan='6' style='padding:10px; color:#94a3b8;'>Không mở mua mới — Giữ 100% Tiền mặt.</td></tr>"
+
+    dangers = st.get("top_5_danger_alerts") or []
+    danger_rows = "".join(
+        f"<tr style='border-bottom:1px solid rgba(148,163,184,0.14);'>"
+        f"<td style='padding:7px 9px; font-weight:800; color:#f87171;'>{html_lib.escape(str(a.get('symbol','')))}</td>"
+        f"<td style='padding:7px 9px; font-family:monospace; color:#e2e8f0;'>{float(a.get('live_price',0)):,.0f} đ ({float(a.get('change_pct',0)):+.2f}%)</td>"
+        f"<td style='padding:7px 9px; color:#fbbf24;'>F={int(a.get('f_score',0))}/9 • {html_lib.escape(str(a.get('beneish_status','')))}</td>"
+        f"<td style='padding:7px 9px; color:#fca5a5;'>{html_lib.escape(str(a.get('reason','')))}</td>"
+        f"</tr>"
+        for a in dangers[:5]
+    ) or "<tr><td colspan='4' style='padding:10px; color:#94a3b8;'>Không có cảnh báo bổ sung.</td></tr>"
+
+    vni_val = float(r.get("vn_index") or 0.0)
+    vni_chg = float(r.get("vn_index_chg_pct") or 0.0)
+    br20 = float(r.get("live_breadth_ma20_pct") or 0.0)
+    buy_up = float(r.get("avg_buy_up_pct") or 0.0)
+    vol_pace = float(r.get("volume_pace_ratio") or 1.0)
+    fnet = float(r.get("foreign_net_ty") or 0.0)
+    scanned_cnt = int(r.get("scanned_live_count") or 0)
+    univ_tot = int(r.get("universe_total") or 145)
+    news_cnt = int(r.get("internet_articles") or 0)
+    cash_vnd = float(s.get("cash_vnd") or 20051117.0)
+
+    return f"""
+    <div id="daily-auto-warroom-v3-panel" style="background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(30,41,59,0.92)); border: 1px solid rgba(56,189,248,0.45); border-radius: 14px; padding: 18px; margin-bottom: 16px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+            <div>
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span style="background:rgba(16,185,129,0.18); color:#34d399; border:1px solid rgba(16,185,129,0.45); padding:3px 10px; border-radius:999px; font-size:11px; font-weight:800;">● TỰ ĐỘNG 09H00–16H00</span>
+                    <h3 style="margin:0; font-size:15.5px; font-weight:900; color:#f8fafc;">Tác Chiến Chứng Khoán Toàn Thị Trường Hàng Ngày (09h00–16h00)</h3>
+                </div>
+                <div style="font-size:12px; color:#94a3b8; margin-top:4px;">
+                    Cập nhật liên tục bởi Đội Trinh Sát 145 Mã + Internet/BCTC V3.0: <strong id="auto-wr-ts" style="color:#38bdf8;">{ts}</strong> • Pha: <strong id="auto-wr-phase" style="color:#fbbf24;">{phase}</strong>
+                </div>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+                <span id="auto-wr-regime-badge" style="background:rgba(15,23,42,0.9); border:1px solid {reg_col}; color:{reg_col}; padding:5px 12px; border-radius:8px; font-size:12px; font-weight:800;">{regime} • {alloc}</span>
+                <button onclick="refreshDailyAutoWarRoomPanel()" class="btn-read" style="padding:6px 12px; font-size:12px;">🔄 Quét Đồng Bộ Live</button>
+            </div>
+        </div>
+
+        <div id="auto-wr-verdict" style="background:rgba(15,23,42,0.85); border-left:4px solid {reg_col}; border-radius:8px; padding:10px 14px; font-size:13px; color:#f8fafc; font-weight:600; margin-bottom:12px;">
+            🎯 {verdict}
+        </div>
+
+        <div id="auto-wr-metrics" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; margin-bottom:14px;">
+            <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">QUÉT BẢNG ĐIỆN</div><div style="font-size:15px; font-weight:900; color:#38bdf8;">{scanned_cnt}/{univ_tot} mã</div></div>
+            <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">VN-INDEX LIVE</div><div style="font-size:15px; font-weight:900; color:#f8fafc;">{vni_val:,.2f} ({vni_chg:+.2f}%)</div></div>
+            <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">BREADTH &gt; MA20</div><div style="font-size:15px; font-weight:900; color:#fbbf24;">{br20:.1f}%</div></div>
+            <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">BUY-UP / VOL PACE</div><div style="font-size:15px; font-weight:900; color:#34d399;">{buy_up:.1f}% • {vol_pace:.2f}x</div></div>
+            <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">KHỐI NGOẠI / TIN V3</div><div style="font-size:15px; font-weight:900; color:#cbd5e1;">{fnet:+.1f} tỷ • {news_cnt} tin</div></div>
+            <div style="background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.35); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#6ee7b7;">TIỀN MẶT SSOT</div><div style="font-size:15px; font-weight:900; color:#34d399;">{cash_vnd:,.0f} đ</div></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:12px; margin-bottom:12px;">
+            <div style="background:rgba(15,23,42,0.78); border:1px solid rgba(148,163,184,0.22); border-radius:10px; padding:12px; overflow-x:auto;">
+                <div style="font-size:12px; font-weight:800; color:#34d399; margin-bottom:8px;">🏆 TOP 5 SIÊU CỔ PHIẾU BCTC SẠCH DẪN DẮT THỜI GIAN THỰC</div>
+                <table style="width:100%; border-collapse:collapse; font-size:11.5px;">
+                    <thead><tr style="color:#94a3b8; border-bottom:1px solid rgba(148,163,184,0.25); text-align:left;"><th style="padding:6px;">Mã</th><th style="padding:6px;">Ngành</th><th style="padding:6px;">Giá Live</th><th style="padding:6px;">% Ngày</th><th style="padding:6px;">BuyUp</th><th style="padding:6px;">BCTC/RS</th><th style="padding:6px;">Điểm</th></tr></thead>
+                    <tbody id="auto-wr-leaders-tbody">{leaders_rows}</tbody>
+                </table>
+            </div>
+            <div style="background:rgba(15,23,42,0.78); border:1px solid rgba(148,163,184,0.22); border-radius:10px; padding:12px; overflow-x:auto;">
+                <div style="font-size:12px; font-weight:800; color:#fbbf24; margin-bottom:8px;">🎯 SỔ LỆNH LO KHUNG GIỜ VÀNG 14H05–14H25 / RỔ KÈO V3.0</div>
+                <table style="width:100%; border-collapse:collapse; font-size:11.5px;">
+                    <thead><tr style="color:#94a3b8; border-bottom:1px solid rgba(148,163,184,0.25); text-align:left;"><th style="padding:6px;">Mã</th><th style="padding:6px;">KL</th><th style="padding:6px;">Giá LO</th><th style="padding:6px;">Stop</th><th style="padding:6px;">TP1</th><th style="padding:6px;">Vốn</th></tr></thead>
+                    <tbody id="auto-wr-orders-tbody">{order_rows}</tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="background:rgba(15,23,42,0.78); border:1px solid rgba(239,68,68,0.28); border-radius:10px; padding:12px; overflow-x:auto; margin-bottom:12px;">
+            <div style="font-size:12px; font-weight:800; color:#f87171; margin-bottom:8px;">🚨 CẢNH BÁO RỦI RO &amp; MÃ CẤM GIAO DỊCH (BCTC CỜ ĐỎ / BÁN THÁO)</div>
+            <table style="width:100%; border-collapse:collapse; font-size:11.5px;">
+                <thead><tr style="color:#94a3b8; border-bottom:1px solid rgba(148,163,184,0.25); text-align:left;"><th style="padding:6px;">Mã</th><th style="padding:6px;">Giá Live</th><th style="padding:6px;">BCTC / Beneish</th><th style="padding:6px;">Lý Do Cảnh Báo</th></tr></thead>
+                <tbody id="auto-wr-danger-tbody">{danger_rows}</tbody>
+            </table>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <button onclick="openReportModal('08_Master_Investment_CIO/live_sessions/{today_str}_Live_WarRoom_Log.md')" class="btn-read" style="padding:6px 12px; font-size:11.5px;">📄 Mở Nhật Ký Quét Live ({today_str})</button>
+            <button onclick="openReportModal('08_Master_Investment_CIO/live_sessions/{today_str}_EOD_WarRoom_Summary_And_Lessons.md')" class="btn-read" style="padding:6px 12px; font-size:11.5px;">🏁 Mở Tổng Kết &amp; Bài Học EOD</button>
+            <button onclick="openReportModal('08_Master_Investment_CIO/2026-11-21_Week48_Autonomous_V3_Battle_Plan.md')" class="btn-read" style="padding:6px 12px; font-size:11.5px;">🎖️ Mở Kế Hoạch Tuần 48 (Brain V3.0)</button>
+        </div>
+    </div>
+    """
+
+
+def _render_james_v3_command_card_html(ssot: Dict[str, Any]) -> str:
+    """Render Trung Tâm Chỉ Huy James V3.0, Két Tiền Thật & Chiến Lược Bất Đối Xứng trong Phòng 3."""
+    b3 = _load_json_portal("data/apex_autonomous_brain_v3_output.json", {})
+    cal = _load_json_portal("data/apex_empirical_calibration.json", {})
+    v3c = cal.get("apex_v3_asymmetric_conviction") or {}
+    basec = cal.get("baseline_always_invested") or {}
+    strikes = b3.get("asymmetric_conviction_strikes") or []
+    chals = b3.get("independent_chairman_challenges") or []
+
+    strike_cards = "".join(
+        f"<div style='background:rgba(15,23,42,0.82); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:12px;'>"
+        f"<div style='display:flex; justify-content:space-between; align-items:center;'>"
+        f"<strong style='color:#fbbf24; font-size:14px;'>{html_lib.escape(str(st.get('symbol','')))} • V3 {st.get('fusion_v3_score','-')}đ</strong>"
+        f"<span style='font-size:11px; color:#34d399; font-weight:800;'>F={st.get('f_score','-')}/9 • RS={st.get('rs_rating','-')}</span></div>"
+        f"<div style='font-size:12px; color:#e2e8f0; margin-top:6px;'>LO <strong>{int(st.get('shares_lot100',0))} CP @ {float(st.get('limit_entry_vnd',0)):,.0f} đ</strong> ({float(st.get('capital_vnd',0)):,.0f} đ = {float(st.get('nav_weight_pct',0)):.1f}% NAV)</div>"
+        f"<div style='font-size:11.5px; color:#94a3b8; margin-top:4px;'>Stop: <span style='color:#f87171;'>{float(st.get('stop_loss_vnd',0)):,.0f} đ</span> (Rủi ro {float(st.get('max_nav_risk_pct',0)):.2f}% NAV) • TP1: <span style='color:#34d399;'>{float(st.get('tp1_swing_vnd',0)):,.0f} đ</span> • TP2: <span style='color:#38bdf8;'>{float(st.get('tp2_trend_vnd',0)):,.0f} đ</span></div>"
+        f"</div>"
+        for st in strikes[:3]
+    ) or "<div style='color:#94a3b8;'>Đang đồng bộ rổ kèo V3.0...</div>"
+
+    chal_items = "".join(
+        f"<li style='margin-bottom:5px;'><strong style='color:#fbbf24;'>{html_lib.escape(str(c.get('challenge_id','')))}</strong>: {html_lib.escape(str(c.get('action_mandate','')))}</li>"
+        for c in chals[:4]
+    )
+
+    return f"""
+    <div style="background: linear-gradient(135deg, rgba(30,27,75,0.88), rgba(15,23,42,0.95)); border: 1px solid rgba(192,132,252,0.45); border-radius: 16px; padding: 20px; margin-bottom: 22px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+            <div>
+                <h3 style="margin:0; font-size:17px; font-weight:900; color:#fff;">🎖️ PHÒNG 3 — TRUNG TÂM CHỈ HUY JAMES V3.0, KÉT TIỀN THẬT &amp; ĐÁNH CƯỢC BẤT ĐỐI XỨNG</h3>
+                <div style="font-size:12px; color:#cbd5e1; margin-top:4px;">SSOT TCBS <code>105C307855</code>: <strong style="color:#34d399;">{ssot['cash_str']}</strong> ({ssot['cash_pct']:.1f}% Tiền mặt • {ssot['total_shares']} CP) • Backtest 2Y V3.0: <strong style="color:#34d399;">+{float(v3c.get('total_return_pct',13.0)):.2f}%</strong> (MaxDD {float(v3c.get('max_drawdown_pct',-9.9)):.2f}%, Payoff {float(v3c.get('payoff_ratio',3.04)):.2f}x) vs Baseline {float(basec.get('total_return_pct',-22.08)):.2f}%</div>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button onclick="openReportModal('08_Master_Investment_CIO/2026-11-21_Week48_Autonomous_V3_Battle_Plan.md')" class="btn-read" style="padding:7px 12px; font-size:12px;">📋 Kế Hoạch Tuần 48</button>
+                <button onclick="openReportModal('08_Master_Investment_CIO/2026-11-21_Apex_Autonomous_Brain_V3_Report.md')" class="btn-read" style="padding:7px 12px; font-size:12px;">🧠 Báo Cáo Brain V3.0</button>
+                <button onclick="openReportModal('12_Institutional_Ombudsman_And_Inspectorate/daily_audits/2026-11-21_Trong_Audit_Report.md')" class="btn-read" style="padding:7px 12px; font-size:12px;">⚖️ Kiểm Toán Trọng</button>
+            </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:14px;">{strike_cards}</div>
+        <div style="background:rgba(15,23,42,0.75); border:1px solid rgba(251,191,36,0.28); border-radius:10px; padding:12px;">
+            <div style="font-size:12px; font-weight:800; color:#fbbf24; margin-bottom:6px;">🧠 4 PHẢN BIỆN ĐỘC LẬP CỦA ĐẦU NÃO V3.0 (BẮT BUỘC TUÂN THỦ)</div>
+            <ul style="margin:0; padding-left:18px; font-size:12px; color:#cbd5e1; line-height:1.55;">{chal_items}</ul>
+        </div>
+    </div>
+    """
+
+
 def generate_portal_html(
     supervisor_data: Dict[str, Any],
     initial_reports: List[Dict[str, Any]],
@@ -1184,6 +1371,8 @@ def generate_portal_html(
     wr_v8_depts_html = wr_v8_decks.get("departments_html", "")
     wr_phase_label_safe = _html.escape(str((wr_state.get("phase_info", {}) or {}).get("phase_name") or wr_phase_id or "PHÒNG TÁC CHIẾN LIVE"))
     wr_regime_label_safe = _html.escape(str((wr_state.get("intraday_regime", {}) or {}).get("label") or "TÍCH LŨY CHỌN LỌC"))
+    auto_wr_banner_html = _render_daily_auto_warroom_v3_banner_html()
+    james_v3_card_html = _render_james_v3_command_card_html(ssot)
 
     auth_logout_btn_html = ""
     try:
@@ -3871,31 +4060,18 @@ def generate_portal_html(
         </section>
 
         {db_milestone_banner}
-        <!-- TABS NAV -->
+        <!-- TABS NAV (TINH GỌN ĐÚNG 3 PHÒNG THEO CHỈ THỊ CHỦ TỊCH) -->
         <nav class="tab-nav">
             <button class="tab-btn active" onclick="switchTab('reports')">
                 <span>📑</span> <span>1. Thư Viện Báo Cáo 18 Cột Mốc</span>
                 <span class="tab-badge" id="nav-total-count">{total_reports_count}</span>
             </button>
-            <button class="tab-btn" onclick="switchTab('portfolio')">
-                <span>🎯</span> <span>2. Tầm Ngắm Vòng 2 & TradingView</span>
-            </button>
             <button class="tab-btn" id="btn-tab-war-room" onclick="switchTab('war-room')">
-                <span>⚡</span> <span>3. Phòng Tác Chiến Trong Ngày (Minh Quân & Victor)</span>
-                <span class="live-badge" style="background: rgba(239, 68, 68, 0.25); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.5); padding: 2px 8px; font-size: 10.5px; margin-left: 4px; border-radius: 9999px; animation: pulse 2s infinite;">● TRỰC CHIẾN LIVE</span>
+                <span>⚡</span> <span>2. Phòng Tác Chiến Trong Ngày (09h00–16h00)</span>
+                <span class="live-badge" style="background: rgba(16, 185, 129, 0.22); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); padding: 2px 8px; font-size: 10.5px; margin-left: 4px; border-radius: 9999px;">● TỰ ĐỘNG 145 MÃ LIVE</span>
             </button>
-            <button class="tab-btn" onclick="switchTab('james-command')">
-                <span>🎖️</span> <span>4. Bàn Chỉ Huy Master CIO James</span>
-            </button>
-            <button class="tab-btn" id="btn-tab-summit" onclick="switchTab('summit-room')">
-                <span>🏛️</span> <span>5. Phòng Họp Thượng Đỉnh Trực Tuyến</span>
-                <span class="live-badge" id="summit-nav-badge" style="padding: 2px 8px; font-size: 10.5px; margin-left: 4px; border-radius: 9999px;">● HỌP 00H45</span>
-            </button>
-            <button class="tab-btn" onclick="switchTab('timeline')">
-                <span>⏰</span> <span>6. Tiến Độ 18 Cột Mốc Ngày</span>
-            </button>
-            <button class="tab-btn" onclick="switchTab('supervisor')">
-                <span>🛡️</span> <span>7. Giám Sát Cụm Container 24/7</span>
+            <button class="tab-btn" onclick="switchTab('portfolio')">
+                <span>🎖️</span> <span>3. Trung Tâm Chỉ Huy James V3.0, Két Tiền Thật &amp; TradingView</span>
             </button>
         </nav>
 
@@ -3994,15 +4170,16 @@ def generate_portal_html(
         </main>
 
         <!-- ========================================================
-             TAB 2: TẦM NGẮM VÒNG 2 & TRADINGVIEW (LIVE HOSE)
+             PHÒNG 3: TRUNG TÂM CHỈ HUY JAMES V3.0, KÉT TIỀN THẬT & TRADINGVIEW
              ======================================================== -->
         <section id="tab-portfolio" class="tab-pane">
+            {james_v3_card_html}
             <!-- TRADINGVIEW LIVE HOSE CHART WIDGET -->
             <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 22px; margin-bottom: 22px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
                     <div>
                         <h3 style="font-size: 17px; color: #fff; display: flex; align-items: center; gap: 10px; font-weight: 800;">
-                            <span>📈</span> <span>BIỂU ĐỒ NẾN KỸ THUẬT REALTIME TRADINGVIEW (LIVE SÀN HOSE)</span>
+                            <span>📈</span> <span>BIỂU ĐỒ NẾN KỸ THUẬT REALTIME TRADINGVIEW (RỔ BRAIN V3.0 TUẦN 48)</span>
                         </h3>
                         <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 5px;">
                             Soi trực tiếp Candlestick, Khối lượng Volume, MA20/MA50, RSI & MACD trên sàn HOSE • Cập nhật trực tiếp từng giây
@@ -4010,12 +4187,11 @@ def generate_portal_html(
                     </div>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="tv-symbol-buttons">
                         <button class="tv-btn active" onclick="switchTVSymbol('HOSE:VNINDEX', this)">📈 VN-INDEX</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:HDB', this)">🏦 HDB (Đang giữ)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:MSH', this)">🧵 MSH (Đang giữ)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:BAF', this)">🐷 BAF (Alpha Watchlist)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HNX:IDC', this)">🏗️ IDC (Alpha Watchlist)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('UPCOM:BSR', this)">🛢️ BSR (Dầu Khí)</button>
-                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:DPR', this)">🌳 DPR (Cao Su)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:TPB', this)">🏦 TPB (V3 #1 • 85.9đ)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:CTG', this)">🏦 CTG (V3 #2 • 82.9đ)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:HPG', this)">🏗️ HPG (V3 #3 • 78.1đ)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:HDB', this)">🏦 HDB (V3 #4 • 75.1đ)</button>
+                        <button class="tv-btn" onclick="switchTVSymbol('HOSE:VPB', this)">🏦 VPB (V3 #5 • 73.7đ)</button>
                     </div>
                 </div>
                 <div id="tv_chart_container" style="height: 540px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color);"></div>
@@ -4074,6 +4250,7 @@ def generate_portal_html(
              ======================================================== -->
         <section id="tab-war-room" class="tab-pane">
             <div class="war-room-wrap">
+                {auto_wr_banner_html}
                 <!-- TOP RIBBON: MARKET PHASE & REALTIME CLOCKS -->
                 <div class="war-room-ribbon">
                     <div class="war-room-ribbon-top">
@@ -4608,7 +4785,7 @@ def generate_portal_html(
         <!-- ========================================================
              TAB 4: BÀN CHỈ HUY MASTER CIO JAMES (SPLIT-VIEW 2 CỘT)
              ======================================================== -->
-        <section id="tab-james-command" class="tab-pane">
+        <section id="tab-james-command" class="tab-pane" style="display: none !important;">
             <div class="james-split-container">
                 <!-- CỘT TRÁI (68%): LUỒNG TƯƠNG TÁC ĐIỀU HÀNH -->
                 <div class="james-main-panel">
@@ -4711,7 +4888,7 @@ def generate_portal_html(
         <!-- ========================================================
              TAB 5: PHÒNG HỌP THƯỢNG ĐỈNH TRỰC TUYẾN V10.0 (HIẾN CHƯƠNG 5 ĐIỀU + KHO LƯU TRỮ)
              ======================================================== -->
-        <section id="tab-summit-room" class="tab-pane">
+        <section id="tab-summit-room" class="tab-pane" style="display: none !important;">
             <div class="summit-container">
                 <!-- Banner chế độ xem lại Kho Lưu Trữ (ẩn mặc định) -->
                 <div id="summit-archive-view-banner" style="display:none; background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(15, 23, 42, 0.92)); border: 1px solid rgba(168, 85, 247, 0.55); border-radius: 12px; padding: 12px 16px; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
@@ -5038,7 +5215,7 @@ def generate_portal_html(
         <!-- ========================================================
              TAB 6: 18 CỘT MỐC TÁC CHIẾN 24H
              ======================================================== -->
-        <section id="tab-timeline" class="tab-pane">
+        <section id="tab-timeline" class="tab-pane" style="display: none !important;">
             <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 20px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
                     <h3 style="font-size: 16px; color: #fff; font-weight: 800; margin: 0;">⏰ BẢNG TIẾN ĐỘ 18 CỘT MỐC TÁC CHIẾN 24H (TỰ ĐỘNG CHẠY ENGINE THẬT)</h3>
@@ -5066,7 +5243,7 @@ def generate_portal_html(
         <!-- ========================================================
              TAB 7: SUPERVISOR & 4 DAEMONS 24/7
              ======================================================== -->
-        <section id="tab-supervisor" class="tab-pane">
+        <section id="tab-supervisor" class="tab-pane" style="display: none !important;">
             <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 20px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
                     <h3 style="font-size: 16px; color: #fff; font-weight: 800; margin: 0;">🛡️ TRẠNG THÁI 4 TIẾN TRÌNH TỰ HÀNH 24/24 (WATCHDOG AUTO-RECOVERY)</h3>
@@ -6905,12 +7082,91 @@ def generate_portal_html(
             }}, 5000);
         }}
 
+        async function refreshDailyAutoWarRoomPanel() {{
+            try {{
+                const res = await fetch('/api/daily_live_warroom');
+                if (!res.ok) return;
+                const payload = await res.json();
+                const wr = payload && payload.live_warroom;
+                if (!wr) return;
+                const r = wr.recon_summary || {{}};
+                const d = wr.decision_brain || {{}};
+                const s = wr.ssot_snapshot || {{}};
+
+                const tsEl = document.getElementById('auto-wr-ts');
+                if (tsEl) tsEl.innerText = wr.timestamp_ict || '';
+                const phEl = document.getElementById('auto-wr-phase');
+                if (phEl) phEl.innerText = wr.phase || '';
+                const regEl = document.getElementById('auto-wr-regime-badge');
+                if (regEl) regEl.innerText = `${{d.live_regime || 'S4'}} • ${{d.target_allocation_pct || ''}}`;
+                const vEl = document.getElementById('auto-wr-verdict');
+                if (vEl) vEl.innerText = '🎯 ' + (d.verdict_vi || '');
+
+                const mEl = document.getElementById('auto-wr-metrics');
+                if (mEl) {{
+                    const vniVal = Number(r.vn_index || 0).toLocaleString('en-US', {{minimumFractionDigits:2, maximumFractionDigits:2}});
+                    const vniChg = Number(r.vn_index_chg_pct || 0);
+                    const vniSign = vniChg >= 0 ? '+' : '';
+                    const cashStr = Number(s.cash_vnd || 0).toLocaleString('en-US');
+                    mEl.innerHTML = `
+                        <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">QUÉT BẢNG ĐIỆN</div><div style="font-size:15px; font-weight:900; color:#38bdf8;">${{r.scanned_live_count || 0}}/${{r.universe_total || 145}} mã</div></div>
+                        <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">VN-INDEX LIVE</div><div style="font-size:15px; font-weight:900; color:#f8fafc;">${{vniVal}} (${{vniSign}}${{vniChg.toFixed(2)}}%)</div></div>
+                        <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">BREADTH &gt; MA20</div><div style="font-size:15px; font-weight:900; color:#fbbf24;">${{Number(r.live_breadth_ma20_pct || 0).toFixed(1)}}%</div></div>
+                        <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">BUY-UP / VOL PACE</div><div style="font-size:15px; font-weight:900; color:#34d399;">${{Number(r.avg_buy_up_pct || 0).toFixed(1)}}% • ${{Number(r.volume_pace_ratio || 1).toFixed(2)}}x</div></div>
+                        <div style="background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.22); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#94a3b8;">KHỐI NGOẠI / TIN V3</div><div style="font-size:15px; font-weight:900; color:#cbd5e1;">${{Number(r.foreign_net_ty || 0).toFixed(1)}} tỷ • ${{r.internet_articles || 0}} tin</div></div>
+                        <div style="background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.35); border-radius:8px; padding:9px 12px;"><div style="font-size:10.5px; color:#6ee7b7;">TIỀN MẶT SSOT</div><div style="font-size:15px; font-weight:900; color:#34d399;">${{cashStr}} đ</div></div>
+                    `;
+                }}
+
+                const lBody = document.getElementById('auto-wr-leaders-tbody');
+                if (lBody && Array.isArray(wr.top_5_live_leaders)) {{
+                    lBody.innerHTML = wr.top_5_live_leaders.slice(0, 5).map(x => {{
+                        const chg = Number(x.change_pct || 0);
+                        const chgCol = chg >= 0 ? '#34d399' : '#f87171';
+                        return `<tr style="border-bottom:1px solid rgba(148,163,184,0.14);">
+                            <td style="padding:7px 9px; font-weight:800; color:#38bdf8;">${{escHtml(x.symbol)}}</td>
+                            <td style="padding:7px 9px; color:#cbd5e1;">${{escHtml(x.sector)}}</td>
+                            <td style="padding:7px 9px; font-family:monospace; color:#f8fafc;">${{Number(x.live_price || 0).toLocaleString('en-US')}} đ</td>
+                            <td style="padding:7px 9px; font-weight:700; color:${{chgCol}};">${{chg >= 0 ? '+' : ''}}${{chg.toFixed(2)}}%</td>
+                            <td style="padding:7px 9px; font-weight:700; color:#34d399;">${{Number(x.buy_up_pct || 0).toFixed(1)}}%</td>
+                            <td style="padding:7px 9px; color:#fbbf24;">F=${{x.f_score || 0}}/9 • RS=${{x.rs_rating || 0}}</td>
+                            <td style="padding:7px 9px; font-weight:800; color:#34d399;">${{Number(x.live_score || 0).toFixed(1)}}</td>
+                        </tr>`;
+                    }}).join('');
+                }}
+
+                const oBody = document.getElementById('auto-wr-orders-tbody');
+                if (oBody) {{
+                    const orders = (d.proposed_lo_orders && d.proposed_lo_orders.length) ? d.proposed_lo_orders : ((payload.brain_v3 && payload.brain_v3.asymmetric_conviction_strikes) || []);
+                    oBody.innerHTML = orders.length ? orders.slice(0, 4).map(o => `<tr style="border-bottom:1px solid rgba(148,163,184,0.14);">
+                        <td style="padding:7px 9px; font-weight:800; color:#fbbf24;">${{escHtml(o.symbol)}}</td>
+                        <td style="padding:7px 9px; font-family:monospace; color:#f8fafc;">${{o.shares_lot100 || 0}} CP</td>
+                        <td style="padding:7px 9px; font-family:monospace; color:#38bdf8;">${{Number(o.limit_lo_vnd || o.limit_entry_vnd || 0).toLocaleString('en-US')}} đ</td>
+                        <td style="padding:7px 9px; font-family:monospace; color:#f87171;">${{Number(o.stop_vnd || o.stop_loss_vnd || 0).toLocaleString('en-US')}} đ</td>
+                        <td style="padding:7px 9px; font-family:monospace; color:#34d399;">${{Number(o.tp1_vnd || o.tp1_swing_vnd || 0).toLocaleString('en-US')}} đ</td>
+                        <td style="padding:7px 9px; font-family:monospace; color:#cbd5e1;">${{Number(o.capital_vnd || 0).toLocaleString('en-US')}} đ</td>
+                    </tr>`).join('') : '<tr><td colspan="6" style="padding:10px; color:#94a3b8;">Không mở mua mới — Giữ 100% Tiền mặt.</td></tr>';
+                }}
+
+                const dBody = document.getElementById('auto-wr-danger-tbody');
+                if (dBody && Array.isArray(wr.top_5_danger_alerts)) {{
+                    dBody.innerHTML = wr.top_5_danger_alerts.slice(0, 5).map(a => `<tr style="border-bottom:1px solid rgba(148,163,184,0.14);">
+                        <td style="padding:7px 9px; font-weight:800; color:#f87171;">${{escHtml(a.symbol)}}</td>
+                        <td style="padding:7px 9px; font-family:monospace; color:#e2e8f0;">${{Number(a.live_price || 0).toLocaleString('en-US')}} đ (${{Number(a.change_pct || 0).toFixed(2)}}%)</td>
+                        <td style="padding:7px 9px; color:#fbbf24;">F=${{a.f_score || 0}}/9 • ${{escHtml(a.beneish_status)}}</td>
+                        <td style="padding:7px 9px; color:#fca5a5;">${{escHtml(a.reason)}}</td>
+                    </tr>`).join('');
+                }}
+            }} catch (_) {{}}
+        }}
+
         async function loadTacticalWarRoomData() {{
             try {{
                 const res = await fetch('/api/tactical_war_room');
                 if (!res.ok) return;
                 const data = await res.json();
                 renderTacticalWarRoom(data);
+                refreshDailyAutoWarRoomPanel();
             }} catch (err) {{
                 console.warn('Error loading tactical war room data:', err);
             }}
@@ -8043,6 +8299,7 @@ def generate_portal_html(
             try {{
                 await Promise.allSettled([
                     loadTacticalWarRoomData(),
+                    refreshDailyAutoWarRoomPanel(),
                     syncSupervisorStatusRealtime(),
                     typeof pollSummitMeeting === 'function' ? pollSummitMeeting() : Promise.resolve(),
                     typeof loadEnterpriseMeshState === 'function' ? loadEnterpriseMeshState() : Promise.resolve(),
@@ -8059,12 +8316,14 @@ def generate_portal_html(
         function initGlobalPortalRealtimeSync() {{
             initSubDeckBeforeMatch();
             initTacticalWarRoom(false);
+            refreshDailyAutoWarRoomPanel();
             syncSupervisorStatusRealtime();
             if (window._globalRealtimeInterval) clearInterval(window._globalRealtimeInterval);
             window._globalRealtimeInterval = setInterval(() => {{
                 const nowMs = Date.now();
                 const staleSse = !window._lastWarRoomTickMs || (nowMs - window._lastWarRoomTickMs > 18000);
                 if (staleSse) loadTacticalWarRoomData();
+                refreshDailyAutoWarRoomPanel();
                 syncSupervisorStatusRealtime();
             }}, 10000);
         }}
