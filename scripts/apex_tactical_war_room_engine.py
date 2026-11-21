@@ -562,8 +562,8 @@ def build_victor_realtime_alert_center(
     breadth = market_ov.get("market_breadth", {}) or {}
     live_stocks = snap.get("live_stocks", []) or []
 
-    total_nav_vnd = float(port.get("total_nav_vnd") or 20145422.0)
-    cash_vnd = float(port.get("cash_vnd") or 14510422.0)
+    total_nav_vnd = float(port.get("total_nav_vnd") if port.get("total_nav_vnd") is not None else 20051117.0)
+    cash_vnd = float(port.get("cash_vnd") if port.get("cash_vnd") is not None else 20051117.0)
     adv_ratio = float(breadth.get("advance_ratio_pct") or 50.0)
     active_phase_id = str(phase_info.get("active_phase_id") or "")
     is_morning_session = ("MORNING" in active_phase_id) or ("ATO" in active_phase_id)
@@ -826,10 +826,10 @@ def build_demo_tactical_plan_tomorrow(
     breadth = mkt.get("market_breadth", {}) or {}
     weekly_data = _load_v8_json_safe("data/weekly_tactical_plan_active.json")
 
-    cash_vnd = float(port.get("cash_vnd") or 12516471.0)
-    stocks_val_vnd = float(port.get("stocks_val_vnd") or 5740000.0)
-    total_nav_vnd = float(port.get("total_nav_vnd") or (cash_vnd + stocks_val_vnd))
-    cash_pct = float(port.get("cash_pct") or round((cash_vnd / max(total_nav_vnd, 1.0)) * 100.0, 1))
+    cash_vnd = float(port.get("cash_vnd") if port.get("cash_vnd") is not None else 20051117.0)
+    stocks_val_vnd = float(port.get("stocks_val_vnd") if port.get("stocks_val_vnd") is not None else 0.0)
+    total_nav_vnd = float(port.get("total_nav_vnd") if port.get("total_nav_vnd") is not None else (cash_vnd + stocks_val_vnd))
+    cash_pct = float(port.get("cash_pct") if port.get("cash_pct") is not None else round((cash_vnd / max(total_nav_vnd, 1.0)) * 100.0, 1))
     unrealized_pnl = float(port.get("unrealized_pnl_vnd") or 0.0)
     unrealized_pct = float(port.get("unrealized_pnl_pct") or 0.0)
     holdings = port.get("holdings", []) or []
@@ -872,55 +872,55 @@ def build_demo_tactical_plan_tomorrow(
         {
             "slot": "08:30 – 09:00",
             "phase": _slot_label(8 * 60 + 30, 9 * 60, "PRE-ATO GIAO BAN & ĐỐI SOÁT QUA ĐÊM"),
-            "action": "Minh Quân & Victor đối soát Phố Wall (^VIX 24.56 / ES=F 7,372.50 / WTI -3.36%), khóa ngưỡng bảo vệ vị thế SSOT."
+            "action": f"Kiểm tra SSOT {cash_pct:.1f}% Cash ({cash_vnd:,.0f} ₫ / {held_str}), quét tin Internet/BCTC Q3/2026 & khởi động động cơ quét sống 145 mã."
         },
         {
             "slot": "09:00 – 10:00",
             "phase": _slot_label(9 * 60, 10 * 60, "ATO & KỶ LUẬT CẤM FOMO ĐẦU PHIÊN"),
-            "action": "TUYỆT ĐỐI KHÔNG mua đuổi giá xanh ATO (ngày đáo hạn VN30F1M). Đo Buy-Up thật và tránh bẫy kê lệnh ảo."
+            "action": "TUYỆT ĐỐI KHÔNG mua đuổi giá xanh ATO/sáng (CHAL_03). Quét bảng điện 145 mã, đo Buy-Up % và độ rộng Breadth > MA20 thực tế."
         },
         {
             "slot": "10:00 – 11:30",
-            "phase": _slot_label(10 * 60, 11 * 60 + 30, "BẢO VỆ LÃI ĐỆM & QUAN SÁT ĐỘ RỘNG"),
-            "action": f"Giám sát vị thế hiện hữu: {held_trail_notes}. Khóa Trailing Stop bảo vệ MSH tại 34,600đ / Hard Stop 33,090đ."
+            "phase": _slot_label(10 * 60, 11 * 60 + 30, "QUÉT DÒNG TIỀN 18 NGÀNH & GIÁM SÁT LIVE"),
+            "action": f"Giám sát vị thế: {held_trail_notes}. Lọc trực tiếp Top 5 cổ phiếu BCTC sạch dẫn dắt dòng tiền 18 nhóm ngành."
         },
         {
             "slot": "11:30 – 13:00",
             "phase": _slot_label(11 * 60 + 30, 13 * 60, "TỔNG KẾT PHIÊN SÁNG & CẬP NHẬT KỊCH BẢN CHIỀU"),
-            "action": "Đánh giá độ rộng, thanh khoản sáng và xác nhận điều kiện cho Khung Giờ Vàng chiều."
+            "action": "Giao ban giữa phiên (11h35): Cập nhật báo cáo dòng tiền 18 ngành lên Web Portal & Phòng Tác Chiến Mỗi Ngày trên Telegram."
         },
         {
-            "slot": "13:00 – 13:45",
-            "phase": _slot_label(13 * 60, 14 * 60, "HẤP THỤ HÀNG T+2.5 & CHÀO ĐÓN BAF VỀ TÀI KHOẢN"),
-            "action": "Theo dõi 100 CP BAF về tài khoản (giữ nếu >= 30,800đ, cắt nếu gãy 30,050đ) và kiểm tra lực hấp thụ toàn thị trường."
+            "slot": "13:00 – 14:00",
+            "phase": _slot_label(13 * 60, 14 * 60, "HẤP THỤ HÀNG T+2 & KIỂM ĐỊNH CẦU CHIỀU"),
+            "action": "Quan sát lực hấp thụ hàng T+2 buổi chiều; kiểm định mốc hỗ trợ VN-Index 1,678 (Spring) và đáy 1,666.41 (20/11)."
         },
         {
             "slot": "14:00 – 14:45",
-            "phase": _slot_label(14 * 60, 14 * 60 + 46, "⭐ KHUNG GIỜ VÀNG CỬA KÉP & CẤM ATC"),
-            "action": "Mặc định 0đ (giữ 67.2% Cash); ngoại lệ chỉ bấm 100 CP PVT (~19,000đ) hoặc TCB (~20,750đ) lúc 14h00–14h25 khi Buy-Up >= 60% + Breadth >= 40-45%. CẤM lệnh ATC từ 14h30; Thứ Sáu khóa trần <= 45-55% NAV; sang Thứ Hai–Tư tuần sau mở 70-85% NAV rổ 13k–22.5k."
+            "phase": _slot_label(14 * 60, 14 * 60 + 46, "⭐ KHUNG GIỜ VÀNG QUYẾT ĐỊNH & CẤM ATC"),
+            "action": "⭐ KHUNG GIỜ VÀNG (14h05–14h25): Kích hoạt S3 Spring V3.0 (30–40% NAV: TPB 300 @ 12,250đ, CTG 100 @ 29,950đ, HDB 200 @ 21,700đ, Stop -5.5%) nếu VNI >= 1,678 & Buy-Up >= 58%; hoặc S1 (75–85%) / S2 (30–45%); thủng 1,666 giữ S4 100% Tiền mặt!"
         },
     ]
 
     contingency_modes = [
         {
             "id": "SCENARIO_A_BREAKOUT",
-            "title": "Kịch Bản A: Đồng Thuận Dòng Tiền (Cửa Kép Mở Khóa 14h00–14h25)",
-            "trigger": "Độ rộng >= 45% mã xanh, Buy-Up >= 60%, xuất hiện nến VSA No Supply / Spring.",
-            "action": f"Giữ vị thế SSOT ({held_str}); hôm nay đáo hạn 19/11 chỉ mở tối đa 1 lô thăm dò (PVT ~19k hoặc TCB ~20.75k); Thứ Sáu giữ <= 55% NAV; sang Thứ Hai–Tư tuần sau mở công suất 70–85% NAV (200–300 CP/mã vùng 13k–22.5k).",
+            "title": "Kịch Bản S1/S3: Đồng Thuận Sóng Hoặc Spring Bất Đối Xứng (14h05–14h25)",
+            "trigger": "S3 Spring: VNI >= 1,678, Br20 >= 24%, Vol >= 1.05x, Buy-Up >= 58% | S1 Uptrend: VNI > MA20 & Br20 >= 50%.",
+            "action": f"Hiện tại SSOT {cash_vnd:,.0f}đ ({cash_pct:.1f}% Cash). Đạt S3 bấm tối đa 2 mã (30–40% NAV: TPB 300 @ 12,250đ, CTG 100 @ 29,950đ, HDB 200 @ 21,700đ, Stop -5.5%); đạt S1 bung 75–85% NAV (TPB, HDB, HPG, VPB).",
             "is_active_now": active_scenario_id == "SCENARIO_A_BREAKOUT",
         },
         {
             "id": "SCENARIO_B_ACCUMULATION",
-            "title": "Kịch Bản B: Giằng Co Phân Hóa / Phòng Thủ Đáo Hạn (Thận Trọng)",
-            "trigger": f"VN-Index đi ngang ({vni_val:,.2f} • {vni_chg_pct:+.2f}%), Độ rộng: {breadth_pct_str}.",
-            "action": f"Áp dụng mặc định 0đ giải ngân mới (giữ {cash_vnd:,.0f}đ Cash = {cash_pct:.1f}% NAV); bảo vệ MSH (Trail 34,600đ / Hard 33,090đ) & BAF (Hard 30,050đ). VETO HDB tới hết 20/11.",
+            "title": "Kịch Bản S2: Giằng Co Phân Hóa / Bắn Tỉa Chọn Lọc",
+            "trigger": f"VN-Index đi ngang giữ nền ({vni_val:,.2f} • {vni_chg_pct:+.2f}%), Độ rộng: {breadth_pct_str}.",
+            "action": f"Giữ kỷ luật trước 14h05; nếu đạt S2 (Breadth 30–50%) giải ngân chọn lọc 30–45% NAV vào HDB/TPB, Stop -5.5%, TP1 +6.5%..+9.0% Scaling Out 50/50.",
             "is_active_now": active_scenario_id == "SCENARIO_B_ACCUMULATION",
         },
         {
             "id": "SCENARIO_C_DEFENSE",
-            "title": "Kịch Bản C: Đảo Chiều Bán Tháo / Phòng Thủ Khẩn",
-            "trigger": "VN-Index giảm >= -0.8% hoặc Độ rộng <= 32% hoặc MSH/BAF vi phạm Hard Stop.",
-            "action": "KHÓA 100% lệnh mua mới; cắt dứt khoát vị thế vi phạm Hard Stop; bảo toàn tiền mặt >= 67% – 85% NAV.",
+            "title": "Kịch Bản S4: Áp Lực Bán / Thủng Đáy — Lá Chắn 100% Tiền Mặt",
+            "trigger": "VN-Index thủng đáy 1,666.41 hoặc Buy-Up < 48% hoặc mất ngưỡng an toàn xu hướng.",
+            "action": f"KHÓA 100% lệnh mua mới; giữ nguyên 100% Tiền mặt sạch ({cash_vnd:,.0f} ₫) bảo toàn 0 ₫ thua lỗ.",
             "is_active_now": active_scenario_id == "SCENARIO_C_DEFENSE",
         },
     ]
@@ -930,12 +930,12 @@ def build_demo_tactical_plan_tomorrow(
     official_report_rel_path = f"VN_Market/07_Daily_Specialist/{date_str}_Official_Adaptive_Tactical_Plan.md"
     report_rel_path = official_report_rel_path if in_market else demo_report_rel_path
     plan_title = (
-        f"KẾ HOẠCH ĐẦU TƯ CHÍNH THỨC HÔM NAY ({display_date}) — NGHỊ QUYẾT 04H30 & CHUẨN CÔNG SUẤT TUẦN SAU"
+        f"KẾ HOẠCH ĐẦU TƯ CHÍNH THỨC HÔM NAY ({display_date}) — BRAIN V3.0 & TÁC CHIẾN 145 MÃ"
         if in_market
-        else f"BẢN KẾ HOẠCH TÁC CHIẾN NGOÀI GIỜ ({display_date}) — NGHỊ QUYẾT 04H30 & CHUẨN CÔNG SUẤT TUẦN SAU"
+        else f"KẾ HOẠCH TÁC CHIẾN SẴN SÀNG TUẦN 48 ({display_date}) — BRAIN V3.0 & 100% CASH"
     )
     result = {
-        "plan_id": f"OFFICIAL-INTRADAY-{date_str.replace('-', '')}" if in_market else f"DEMO-PRE-SESSION-{date_str.replace('-', '')}",
+        "plan_id": f"OFFICIAL-V3-{date_str.replace('-', '')}" if in_market else f"READY-V3-{date_str.replace('-', '')}",
         "title": plan_title,
         "is_pre_session_demo": is_pre_session_demo,
         "is_reference_only": False if in_market else True,
@@ -943,14 +943,14 @@ def build_demo_tactical_plan_tomorrow(
         "auto_adapt_status": (
             f"🟢 KẾ HOẠCH CHÍNH THỨC ĐANG TỰ ĐỘNG HIỆU CHỈNH LIVE ({phase_info.get('active_phase_short', 'TRONG PHIÊN')})"
             if in_market
-            else "🟡 NGOÀI GIỜ GIAO DỊCH — SẼ TỰ ĐỘNG KÍCH HOẠT THÀNH KẾ HOẠCH CHÍNH THỨC LÚC 08H30"
+            else "🟡 NGOÀI GIỜ GIAO DỊCH — TỰ ĐỘNG BẬT QUÉT LIVE LÚC 09H00 THỨ HAI"
         ),
         "generated_at": f"{date_str} {time_str} ICT",
-        "summit_basis": f"Dữ liệu LIVE {time_str} {display_date} + Nghị quyết APEX-SUMMIT-20261119-0430 + SSOT TCBS 105C307855",
+        "summit_basis": f"Dữ liệu LIVE {time_str} {display_date} + Brain V3.0 (145 mã + BCTC Q3/2026) + SSOT TCBS 105C307855",
         "constitution_note": (
-            f"KẾ HOẠCH THỰC CHIẾN CHÍNH THỨC NGÀY {display_date} (SSOT: {held_str} • Cash {cash_pct:.1f}%): Giữ kỷ luật mặc định 0đ qua đáo hạn VN30F1M, VETO HDB tới 20/11, Thứ Sáu khóa trần <= 45-55% NAV, mở công suất 70-85% NAV vào Thứ Hai–Tư tuần sau trên rổ 13k–22.5k (200–300 CP/mã)."
+            f"KẾ HOẠCH THỰC CHIẾN BRAIN V3.0 NGÀY {display_date} (SSOT: {held_str} • Cash {cash_pct:.1f}%): Không FOMO trước 14h05, cấm BAF/VIX/CII/CEO; kích hoạt S1/S2/S3/S4 tự chủ theo bảng điện."
             if in_market
-            else f"BẢN ĐỊNH HƯỚNG NGOÀI GIỜ CHO PHIÊN {display_date} (SSOT: {held_str} • Cash {cash_pct:.1f}%). Tự động chuyển Live lúc 08h30."
+            else f"SẴN SÀNG KHỞI ĐỘNG 09H00 THỨ HAI {display_date} (SSOT: {held_str} • Cash {cash_pct:.1f}% = {cash_vnd:,.0f} ₫). Rổ tầm ngắm V3.0: TPB, HDB, CTG, HPG, VPB."
         ),
         "portfolio_reconciled": {
             "account_id": "105C307855",
@@ -1127,6 +1127,7 @@ def evaluate_and_trigger_tactical_alerts(
     holdings = port.get("holdings", [])
 
     existing_ids = {d.get("id") for d in directives}
+    prev_len = len(directives)
     changed = False
     t_now_str = now.strftime("%H:%M:%S")
 
@@ -1310,6 +1311,19 @@ def evaluate_and_trigger_tactical_alerts(
 
     if changed:
         save_directives_history(directives, date_str)
+        if (not is_weekend) and prev_len < len(directives):
+            try:
+                from scripts.telegram_dispatcher import dispatch_message
+                for new_d in directives[prev_len:]:
+                    d_type = str(new_d.get("type") or "")
+                    c_txt = str(new_d.get("content") or "")
+                    if not c_txt:
+                        continue
+                    dispatch_message("daily_warroom", c_txt, mirror_to_reports_vault=False)
+                    if d_type in ("specialist_directive", "demo_tactical_plan") and in_golden_window:
+                        dispatch_message("james_hq", c_txt, mirror_to_reports_vault=False)
+            except Exception:
+                pass
     return directives
 
 
@@ -2029,27 +2043,26 @@ def _build_live_execution_master_plan(
     contingency_scenarios = [
         {
             "scenario_id": "SCENARIO_BULL_BREAKOUT",
-            "title": "Kịch Bản 1: Dòng Tiền Đồng Thuận Sau 14h00 (Cửa Kép Mở Khóa)",
-            "trigger": f"VN-Index ({vni_val:,.2f}) giữ nền, Độ rộng >= 45% mã xanh và Buy-Up nhóm dẫn dắt >= 60%.",
+            "title": "Kịch Bản S1/S3: Đồng Thuận Sóng Hoặc Đánh Úp Spring V3.0 (14h05–14h25)",
+            "trigger": f"VN-Index ({vni_val:,.2f}) >= 1,678, Br20 >= 24%, Vol >= 1.05x, Buy-Up >= 58% (S3) hoặc VNI > MA20 & Br20 >= 50% (S1).",
             "portfolio_action": (
-                f"Giữ nguyên vị thế SSOT ({held_str_v8}); hôm nay 19/11 chỉ mở tối đa 1 lô thăm dò (PVT ~19k hoặc TCB ~20.75k); "
-                "Thứ Sáu giữ <= 45-55% NAV; sang Thứ Hai–Tư tuần sau nâng công suất lên 70-85% NAV rổ 13k–22.5k (200–300 CP/mã)."
+                f"SSOT {held_str_v8}. Đạt S3 bấm 30–40% NAV (tối đa 2 mã từ TPB 300 @ 12,250đ, CTG 100 @ 29,950đ, HDB 200 @ 21,700đ, Stop -5.5%); đạt S1 bung 75–85% NAV (TPB, HDB, HPG, VPB)."
             ),
-            "cash_target_pct": max(35.0, round(100.0 - max_new_alloc_pct, 1)),
+            "cash_target_pct": max(20.0, round(100.0 - max_new_alloc_pct, 1)),
         },
         {
             "scenario_id": "SCENARIO_BASE_ABSORPTION",
-            "title": "Kịch Bản 2: Rung Lắc Phân Hóa / Phòng Thủ Đáo Hạn (Base Case)",
-            "trigger": "VN-Index giằng co biên hẹp quanh tham chiếu, độ rộng phân hóa chờ hấp thụ T+2.5.",
-            "portfolio_action": f"Mặc định giải ngân 0đ (giữ {cash_pct:.1f}% tiền mặt); bảo vệ MSH (Trail 34,600đ / Hard 33,090đ) và theo dõi BAF (Hard 30,050đ) về chiều; VETO HDB hết 20/11.",
+            "title": "Kịch Bản S2: Giằng Co Phân Hóa / Bắn Tỉa Chọn Lọc",
+            "trigger": "VN-Index giữ nền hỗ trợ, độ rộng 30–50%, dòng tiền luân chuyển phân hóa.",
+            "portfolio_action": f"Giữ kỷ luật trước 14h05 ({cash_pct:.1f}% tiền mặt); nếu đạt S2 giải ngân chọn lọc 30–45% NAV vào HDB/TPB, Stop -5.5%, TP1 +6.5%..+9.0% Scaling Out 50/50.",
             "cash_target_pct": round(cash_pct, 1),
         },
         {
             "scenario_id": "SCENARIO_BEAR_DEFENSE",
-            "title": "Kịch Bản 3: Đảo Chiều Giảm Sâu / Gãy Hỗ Trợ",
-            "trigger": "Áp lực bán chủ động > 60% kéo danh mục áp sát Stop 2xATR hoặc ^VIX >= 25.5.",
-            "portfolio_action": "Ngừng 100% lệnh mua mới; cắt dứt khoát nếu thủng Hard Stop 2xATR, bảo toàn đệm tiền mặt >= 70% NAV.",
-            "cash_target_pct": 85.0,
+            "title": "Kịch Bản S4: Xuyên Đáy / Đảo Chiều Bán Tháo — Lá Chắn 100% Tiền Mặt",
+            "trigger": "VN-Index thủng đáy 1,666.41 hoặc Buy-Up < 48% hoặc áp lực bán tháo diện rộng.",
+            "portfolio_action": "Ngừng 100% lệnh mua mới; cắt dứt khoát vị thế chạm Stop -5.5%, bảo toàn 100% tiền mặt.",
+            "cash_target_pct": 100.0,
         },
     ]
 

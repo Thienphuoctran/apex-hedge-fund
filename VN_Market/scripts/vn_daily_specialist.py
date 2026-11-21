@@ -294,53 +294,51 @@ def run():
     departmental_hearing = [
         {
             "department": "Ban 1 VN — Vĩ Mô & Liên Thị Trường (`vn-macro-monetary-agent`)",
-            "verdict": "^VIX 24.56 (CHƯA < 23.5) • WTI -3.36% ($83.12) HỖ TRỢ PVT/BAF",
+            "verdict": "BEAR_WITH_SPRING_WATCH (VNI 1,688.79 • CIR 100% • SPRING 3/5)",
             "key_assessment": (
-                f"Phiên Mỹ đêm qua: ^VIX hạ về 24.56 nhưng chưa xuyên < 23.5; US10Y 5.068% và DXY {dxy} còn cao. "
+                f"Phiên Mỹ & Vĩ mô sống: VIX 35.89, SP500 6,910.39, DXY {dxy} và US10Y cao. "
                 f"Tại Việt Nam, SBV giữ lãi suất tái cấp vốn {sbv_rate}%, tín dụng YTD {credit_growth}%, đầu tư công {public_invest}%, "
-                f"tỷ giá USD/VND {usd_vnd:,}đ. Giá dầu WTI giảm -3.36% về $83.12 bất lợi ngắn hạn cho BSR nhưng hỗ trợ biên lợi nhuận PVT, BAF."
+                f"tỷ giá USD/VND {usd_vnd:,}đ. Phiên 20/11 VNI đạp 1,666.41 rồi rút chân đóng đỉnh 1,688.79 (Br20=23.0%, Spring 3/5)."
             ),
-            "specialist_takeaway": "Thứ Năm 19/11 đáo hạn VN30F1M phòng thủ (mặc định 0đ); Thứ Sáu 20/11 giữ trần <= 45-55% NAV; dồn công suất 70-85% NAV vào Thứ Hai–Thứ Tư tuần sau khi dòng tiền xác nhận."
+            "specialist_takeaway": "Khóa mua sáng Thứ Hai 23/11; chiều 14h05–14h25 chỉ kích hoạt S3 Spring V3.0 (30–40% NAV) nếu VNI >= 1,678, Br20 >= 24%, Vol >= 1.05x, Buy-Up >= 58%; ngược lại giữ 100% Cash."
         },
         {
             "department": "Ban 2 VN — Thẩm Định BCTC & Thanh Khoản (`vn-equity-bctc-agent`)",
-            "verdict": "CHUẨN BỘ LỌC TUẦN ĐẦU: GIÁ 13K–22.5K • VOL >= 2M CP • OCF/LNST >= 1.0X",
+            "verdict": "BCTC Q3/2026 SẠCH • CẤM TUYỆT ĐỐI BAF/VIX/CII/CEO",
             "key_assessment": (
-                "Rút kinh nghiệm từ Vòng 2: các mã giá > 30k hoặc thanh khoản mỏng (MSH vol20 ~172k CP/phiên) khiến tài khoản 20.23M chỉ mua được 100 CP, "
-                "không thể chốt tỉa 50% khi kéo trong phiên. Tuần sau chuẩn hóa lại đúng công thức Tuần Đầu: ưu tiên PVT, TCB, MBB, HPG, TCH "
-                "(thị giá 13k–22.5k, vol20 1.8M–20.8M CP/phiên, OCF/LNST 1.18x–2.01x, Beneish M < -1.78)."
+                "Kho dữ liệu thật 80 DN Q3/2026 Vietcap IQ + 506 tin Internet đã sàng lọc top dẫn dắt sạch: "
+                "TPB (F=9/9), CTG (F=8/9), HPG (F=8/9), HDB (F=6/9, RS=90), VPB (F=7/9) — thanh khoản hàng trăm tỷ/phiên, "
+                "đồng thời loại bỏ vĩnh viễn BAF (OCF -496.2 tỷ, F=2/9, Beneish HIGH_RISK) và hàng đầu cơ lỗ."
             ),
-            "specialist_takeaway": "Chỉ giải ngân vào doanh nghiệp sạch tiền thật có thị giá 13k–22.5k để cầm được 200–300 CP/mã, đủ điều kiện chia chốt lời 50/50."
+            "specialist_takeaway": "Chỉ giải ngân vào doanh nghiệp BCTC sạch dòng tiền thật, đủ thanh khoản ra vào Lô 100 linh hoạt."
         },
         {
             "department": "Ban 3 VN — Tổng Hợp & Đọc Vị Dòng Tiền VSA (`vn-synthesis-hub-agent`)",
-            "verdict": "CỬA KÉP KHUNG GIỜ VÀNG: BUY-UP >= 60% • BREADTH >= 45% • VSA NO SUPPLY",
+            "verdict": "KHUNG GIỜ VÀNG 14H05–14H25 • 4 PHẢN BIỆN ĐỘC LẬP V3.0",
             "key_assessment": (
-                "Kiên quyết chặn bẫy Bull-Trap phiên sáng ATO và rủi ro quét trụ ATC ngày đáo hạn VN30F1M. "
-                "Thứ Năm 19/11 chỉ mở tối đa 1 lô PVT (hoặc TCB) lúc 14h00-14h25 nếu đạt đủ 3/3 bộ lọc; "
-                "sang tuần sau (23–25/11), khi Breadth >= 45–50% và Buy-Up >= 60% mới mở công suất 70–85% NAV (14–17 triệu ₫)."
+                "Kiên quyết chặn bẫy Bull-Trap sáng Thứ Hai (dư nợ margin toàn sàn cao). "
+                "Nếu 14h05–14h25 xuất hiện Spring thật (Buy-Up >= 58%, Vol >= 1.05x) mới kích hoạt tối đa 2 kèo S3 (30–40% NAV); "
+                "khi Breadth >= 50% (S1) mới mở 75–85% NAV."
             ),
-            "specialist_takeaway": "Áp dụng chiến thuật mua thăm dò lô đầu 100-150 CP ở vùng chiết khấu và bồi tiếp 100-150 CP khi bứt phá kèm thanh khoản."
+            "specialist_takeaway": "Thăm dò Limit LO quanh vùng rút chân 14h05–14h25 và luôn cài Stop cứng -5.5% ngay khi khớp."
         },
         {
             "department": "Ban 4 VN — Hội Đồng Đầu Tư & Rủi Ro T+2.5 (`vn-investment-committee-agent`)",
-            "verdict": "KHÓA TRẦN THỨ SÁU <= 55% NAV • RỦI RO STOP <= 7.0% • MỞ CÔNG SUẤT ĐẦU TUẦN",
+            "verdict": f"100% CASH SẠCH ({cash_balance_vnd:,.0f} đ) • KHÓA RỦI RO RỔ <= 2.0% NAV",
             "key_assessment": (
-                f"Tổng tài sản hiện hữu {portfolio_nav_vnd:,.0f} đ (Tiền mặt {cash_balance_vnd:,.0f} đ = {cash_pct}%). "
-                "Đang khóa Stop 2xATR trên MSH (Hard 33,090đ / Trail 34,600đ) và BAF (Hard 30,050đ), tổng rủi ro hiện tại chỉ 1.59% NAV (< trần 4.5% NAV). "
-                "Cấm tuyệt đối bung 70-85% vốn vào Thứ Sáu cuối tuần để tránh kẹt T+2.5 qua Thứ Bảy–Chủ Nhật."
+                f"Tổng tài sản hiện hữu {portfolio_nav_vnd:,.0f} đ (Tiền mặt {cash_balance_vnd:,.0f} đ = {cash_pct}% | 0 CP sau tất toán sạch BAF & MSH chiều 20/11). "
+                "Chuẩn Tuần 48: Mỗi lệnh Stop -5.5% khóa rủi ro <= 1.2% NAV, tổng rổ S3 không vượt 2.0% NAV."
             ),
-            "specialist_takeaway": "Giữ trần Thứ Sáu <= 45-55% NAV; chỉ bung công suất 70-85% NAV vào Thứ Hai–Thứ Tư (23–25/11) với tổng Risk-at-Stop <= 4.0% NAV."
+            "specialist_takeaway": "Giữ 100% Cash nếu S4 kích hoạt; nếu mở S3 chỉ dùng 30–40% NAV vào tối đa 2 mã sạch."
         },
         {
             "department": "Ban 5 VN — Thẩm Định Hiệu Suất & Tự Học (`vn-performance-learning-agent`)",
-            "verdict": f"ĐỐI SOÁT THẬT: WALK-FORWARD HIT RATE {wf_hit_rate:.1f}% • ACCOUNT {acc_hit_rate:.1f}%",
+            "verdict": f"BACKTEST V3 +13.00% (PAYOFF 3.04X) • HIT RATE {wf_hit_rate:.1f}%",
             "key_assessment": (
-                f"Không tô hồng số liệu: Walk-Forward Hit Rate thực tế qua 18 phiên là {wf_hit_rate:.1f}%, Account Hit Rate {acc_hit_rate:.1f}% "
-                "(MSH +2.0%, BAF -0.19%). Lỗi chính 2 tuần qua là để 67-72% tiền nằm chết, đánh lô 100 CP giá đắt và giữ kỳ vọng ảo; "
-                "đồng thời VETO tạm thời HDB tới hết 20/11 để chống Revenge Trading."
+                f"Không tô hồng số liệu: Walk-Forward Hit Rate thực tế là {wf_hit_rate:.1f}%, Account Hit Rate {acc_hit_rate:.1f}%. "
+                "Thực nghiệm 2 năm (431 phiên) chứng minh V3 Đánh cược Bất đối xứng đạt +13.00% (MaxDD -9.90%, WinRate 57.9%) vượt trội Baseline (-22.08%)."
             ),
-            "specialist_takeaway": "Bỏ mục tiêu KPI ảo; đặt mục tiêu thực chiến kiếm chắc +300k–+500k đ/nhịp rồi bán tỉa 50% (100-150 CP/mã) thu tiền tươi ngay."
+            "specialist_takeaway": "Chốt tỉa 50% tại TP1 (+7.5%..+9.0%) thu tiền tươi, nâng Stop phần còn lại về giá vốn."
         },
         {
             "department": "Ban 6 VN — Học Viện Huấn Luyện & Tâm Lý Giao Dịch (`vn-investor-mentorship-coach`)",
@@ -449,9 +447,8 @@ def run():
     full_scan_data = load_json(DATA_DIR / "vn_full_market_scan.json")
     scan_stocks = full_scan_data.get("stocks", {})
 
-    # Ưu tiên rõ rệt các mã vừa túi tiền 20M (13k-22.5k, vol20 >= 2M) phục vụ giải ngân công suất cao tuần sau + MSH đang giữ
-    # Lưu ý: HDB bị VETO tạm thời hết 20/11 (audit 48h); BAF (100 CP) đang nắm giữ chờ T+1 chiều 19/11.
-    selected_tickers = ["PVT", "TCB", "MBB", "HPG", "TCH", "MSH"]
+    # Rổ tầm ngắm Brain V3.0 Tuần 48 (BCTC Q3/2026 sạch, đủ thanh khoản)
+    selected_tickers = ["TPB", "HDB", "CTG", "HPG", "VPB", "TCB"]
 
     order_blotter = []
     for idx, ticker in enumerate(selected_tickers):

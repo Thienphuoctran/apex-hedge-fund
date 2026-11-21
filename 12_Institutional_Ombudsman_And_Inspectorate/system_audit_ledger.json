@@ -265,11 +265,11 @@
   },
   {
     "audit_session_id": "AUDIT-23H30-2026-11-21",
-    "timestamp": "18:39:25 21/11/2026",
+    "timestamp": "19:05:32 21/11/2026",
     "overall_discipline_score": 97.6,
     "overall_expertise_score": 96.7,
     "system_health_score": 100,
-    "vps_latency_ms": 78.9,
+    "vps_latency_ms": 76.4,
     "issues_count": 0,
     "ssot_snapshot": "`20,051,117 ₫` tiền mặt (100% Cash, 0 CP rủi ro)",
     "departments": {
@@ -332,7 +332,7 @@
         "discipline_score": 97,
         "expertise_score": 96,
         "verdict": "XUẤT SẮC",
-        "audit_evidence": "Sổ cái Minh Quân P(Win)=55.8% (<=62% chuẩn thực nghiệm), EV=3.79%; cổng 14h00–14h25 chặn tín hiệu ngoài giờ.",
+        "audit_evidence": "Sổ cái Minh Quân P(Win)=57.2% (<=62% chuẩn thực nghiệm), EV=3.37%; cổng 14h00–14h25 chặn tín hiệu ngoài giờ.",
         "mistake_autopsy": "Đã gỡ bỏ dòng code tự nâng rr_ratio=2.35 và chống ghi lặp nhật ký cùng ngày.",
         "new_knowledge_ingested": "Đã tất toán sạch S5 ngày 20/11 (100% Cash) & nạp rổ Limit LO S1/S2/S3 Tuần 48."
       },

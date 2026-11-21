@@ -1,8 +1,8 @@
 {
-  "audit_timestamp": "2026-11-21 18:39:26",
-  "audit_duration_seconds": 0.52,
-  "overall_infrastructure_health_score": 65,
-  "health_verdict": "BÁO ĐỘNG",
+  "audit_timestamp": "2026-11-21 19:05:32",
+  "audit_duration_seconds": 0.56,
+  "overall_infrastructure_health_score": 85,
+  "health_verdict": "CẦN LƯU Ý",
   "appointed_officers": {
     "sentinel_lead": "Ban 12 Trọng (Tổng Kiểm Sát Thể Chế & Liêm Chính)",
     "systems_architect": "Palmer (Cố Vấn Điều Hành Tối Cao & Trưởng Phòng Tổng Hệ Thống)",
@@ -39,16 +39,16 @@
   },
   "check_3_disk_and_storage_footprint": {
     "total_active_files": 1628,
-    "total_project_size_mb": 82.73,
-    "data_directory_size_mb": 52.97,
+    "total_project_size_mb": 82.72,
+    "data_directory_size_mb": 52.98,
     "github_quota_limit_mb": 1000.0,
     "github_quota_used_pct": "8.27%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 39.16,
-    "uncommitted_files_count": 21,
+    "git_directory_size_mb": 39.74,
+    "uncommitted_files_count": 20,
     "active_branch": "main",
     "status": "HEALTHY"
   },
@@ -101,8 +101,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 58.7,
-    "ssot_load_latency_ms": 0.55,
+    "json_directory_scan_latency_ms": 64.55,
+    "ssot_load_latency_ms": 0.45,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
@@ -120,26 +120,11 @@
   "check_8_semantic_and_superpowers_gate": {
     "semantic_consistency": {
       "audited_reports": 24,
-      "clean_reports": 22,
-      "violation_reports": 2,
-      "violations_details": [
-        {
-          "file": "VN_Market/07_Daily_Specialist/2026-11-21_Demo_PreSession_Tactical_Plan.md",
-          "status": "VIOLATION",
-          "issues": [
-            "Xuất hiện mã cấm ngoài danh mục Vòng 2 (MBB) trong kế hoạch tác chiến/săn mồi"
-          ]
-        },
-        {
-          "file": "VN_Market/07_Daily_Specialist/2026-11-21_Official_Adaptive_Tactical_Plan.md",
-          "status": "VIOLATION",
-          "issues": [
-            "Xuất hiện mã cấm ngoài danh mục Vòng 2 (MBB) trong kế hoạch tác chiến/săn mồi"
-          ]
-        }
-      ],
-      "semantic_audit_passed": false,
-      "status": "SEMANTIC_CONFLICT_DETECTED"
+      "clean_reports": 24,
+      "violation_reports": 0,
+      "violations_details": [],
+      "semantic_audit_passed": true,
+      "status": "SEMANTIC_CONSISTENCY_PERFECT"
     },
     "superpowers_247_gate": {
       "tavily_api_ready": true,
@@ -149,10 +134,10 @@
         "checks": [
           "SSOT_Portfolio: có dữ liệu",
           "SSOT_Portfolio: đủ trường bắt buộc",
-          "SSOT_Portfolio: độ tươi đạt chuẩn (1.3h)"
+          "SSOT_Portfolio: độ tươi đạt chuẩn (1.8h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-21 18:39:26"
+        "verified_at": "2026-11-21 19:05:33"
       },
       "cbtt_gate": {
         "source": "CBTT_Radar",
@@ -160,10 +145,10 @@
         "checks": [
           "CBTT_Radar: có dữ liệu",
           "CBTT_Radar: đủ trường bắt buộc",
-          "CBTT_Radar: độ tươi đạt chuẩn (59.1h)"
+          "CBTT_Radar: độ tươi đạt chuẩn (59.6h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-21 18:39:26"
+        "verified_at": "2026-11-21 19:05:33"
       },
       "diagnostics_logged_events": 0,
       "overall_ok": true

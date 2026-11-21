@@ -614,7 +614,17 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                     except Exception:
                         return default_val
 
+                wr_file = BASE_DIR / "data/live_warroom_state.json"
                 wr_live = _load_j("data/live_warroom_state.json", {})
+                now_ict_api = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+                in_win = (now_ict_api.weekday() < 5) and ("09:00" <= now_ict_api.strftime("%H:%M") <= "16:00")
+                is_stale = (not wr_file.exists()) or (in_win and (time.time() - wr_file.stat().st_mtime > 120))
+                if (not wr_live) or is_stale:
+                    try:
+                        from scripts.apex_daily_live_warroom_engine import run_live_recon_and_decision
+                        wr_live = run_live_recon_and_decision(refresh_intel=False, send_telegram=False, tag="API_ON_DEMAND")
+                    except Exception:
+                        pass
                 hist_all = _load_j("data/live_warroom_intraday_history.json", {})
                 today_key = str(wr_live.get("date") or datetime.datetime.now().strftime("%Y-%m-%d"))
                 payload = {
@@ -1572,8 +1582,9 @@ class ApexCloudSupervisor:
     def _start_compact_inprocess_sentinel(self):
         """Vòng lặp gộp Sentinel + War-Room + Trong Technical Sweep trong 1 thread gọn nhẹ (< 150MB RAM)."""
         def _compact_worker():
-            log_sup("🛡️ [COMPACT CLOUD LOOP] Khởi chạy luồng hợp nhất Victor + War-Room + Ban 12 Trọng (Tiết kiệm ~300MB RAM).")
+            log_sup("🛡️ [COMPACT CLOUD LOOP] Khởi chạy luồng hợp nhất Victor + War-Room + Quét 145 Mã + Ban 12 Trọng (Tiết kiệm ~300MB RAM).")
             last_trong_ts = 0.0
+            last_warroom_145_ts = 0.0
             while self.running:
                 try:
                     from scripts.apex_live_intraday_brain import is_vn_trading_hours, compute_live_war_room_snapshot, sync_live_intraday_report
@@ -1586,6 +1597,14 @@ class ApexCloudSupervisor:
                     sync_live_intraday_report(snap, force_write=False)
 
                     now_ts = time.time()
+                    if now_ts - last_warroom_145_ts >= (120 if in_vn else 300):
+                        try:
+                            from scripts.apex_daily_live_warroom_engine import run_live_recon_and_decision
+                            run_live_recon_and_decision(refresh_intel=False, send_telegram=in_vn, tag="CLOUD_247_SYNC")
+                        except Exception as _we:
+                            log_sup(f"⚠️ [CLOUD 145-STOCK SYNC WARNING] {_we}", echo=False)
+                        last_warroom_145_ts = now_ts
+
                     if now_ts - last_trong_ts >= 900:
                         try:
                             from scripts.apex_inspector_trong import ApexInspectorTrong

@@ -125,37 +125,47 @@ def build_unified_watchlist() -> Dict[str, Any]:
         if bsym:
             brain_picks_map[bsym] = bp
 
-    # Fallback thông số định lượng từ Nghị quyết Thượng Đỉnh 00h45 & Bảng giá TCBS thực tế
+    # Thông số định lượng rổ Brain V3.0 Tuần 48 (BCTC Q3/2026 sạch — Cấm BAF/VIX/CII/CEO)
+    v3_data = _load_json_safe(DATA_DIR / "apex_autonomous_brain_v3_output.json")
     summit_tcbs_defaults: Dict[str, Dict[str, Any]] = {
-        "HDB": {"name": "HDBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 22600.0, "probe_price": 22350.0, "stop_loss": 22060.0, "tp1": 24200.0, "tp2": 25800.0, "catalyst": "Tín dụng +22%, ROE 23.8%, Kiểm định 14h15 (>= 22,060đ / Cắt < 21,700đ)"},
-        "MSH": {"name": "May Sông Hồng", "exchange": "HOSE", "sector": "Dệt May Xuất Khẩu", "fallback_price": 34800.0, "probe_price": 34100.0, "stop_loss": 33090.0, "tp1": 39500.0, "tp2": 43000.0, "catalyst": "OCF/LNST 1.42x, đơn hàng Mỹ phục hồi, Nòng cốt giữ & lướt T+0"},
-        "BAF": {"name": "Nông Nghiệp BAF", "exchange": "HOSE", "sector": "Nông Nghiệp 3F", "fallback_price": 30950.0, "probe_price": 30850.0, "stop_loss": 29650.0, "tp1": 36580.0, "tp2": 39610.0, "catalyst": "OCF/LNST 1.18x, LNST +320%, Giới hạn 1 lô 100 CP + Stop 60s tại 29,650đ"},
-        "DBC": {"name": "Tập Đoàn Dabaco", "exchange": "HOSE", "sector": "Nông Nghiệp Chăn Nuôi", "fallback_price": 16050.0, "probe_price": 16050.0, "stop_loss": 15087.0, "tp1": 18971.0, "tp2": 20544.0, "catalyst": "Tương quan 60D cực thấp 0.082 với danh mục; Lô nhỏ 1.61Mđ = 8.8% NAV siêu cơ động"},
-        "SZC": {"name": "Sonadezi Châu Đức", "exchange": "HOSE", "sector": "BĐS Khu Công Nghiệp", "fallback_price": 20850.0, "probe_price": 20700.0, "stop_loss": 19599.0, "tp1": 24645.0, "tp2": 26688.0, "catalyst": "Quỹ đất KCN Bà Rịa - Vũng Tàu giá vốn thấp, size lô vừa 11.4% NAV"},
-        "HPG": {"name": "Tập Đoàn Hòa Phát", "exchange": "HOSE", "sector": "Thép & Vật Liệu", "fallback_price": 21050.0, "probe_price": 20950.0, "stop_loss": 20014.0, "tp1": 24881.0, "tp2": 26944.0, "catalyst": "Dung Quất 2, đầu tư công, size lô 2.11Mđ = 11.5% NAV"},
-        "IDC": {"name": "Tổng Công Ty IDICO", "exchange": "HNX", "sector": "BĐS Khu Công Nghiệp", "fallback_price": 35000.0, "probe_price": 34600.0, "stop_loss": 32530.0, "tp1": 38660.0, "tp2": 42000.0, "catalyst": "5.2k tỷ người mua trả tiền trước; chỉ xem xét khi Buy-Up >= 58%"},
-        "BSR": {"name": "Lọc Hóa Dầu Bình Sơn", "exchange": "HOSE", "sector": "Dầu Khí & Năng Lượng", "fallback_price": 25350.0, "probe_price": 24900.0, "stop_loss": 23700.0, "tp1": 27800.0, "tp2": 29500.0, "catalyst": "Tiền mặt ròng lớn; chờ tạo đáy cân bằng cung cầu trước khi vào"},
-        "PVT": {"name": "Tổng Công Ty Vận Tải Dầu Khí", "exchange": "HOSE", "sector": "Vận Tải Dầu Khí", "fallback_price": 21100.0, "probe_price": 20900.0, "stop_loss": 19550.0, "tp1": 23200.0, "tp2": 24800.0, "catalyst": "Đội tàu trẻ hóa, giá cước ổn định USD, lô 100 vừa sức mua 11.6% NAV"},
-        "TCB": {"name": "Techcombank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 21850.0, "probe_price": 21500.0, "stop_loss": 20847.0, "tp1": 25827.0, "tp2": 27968.0, "catalyst": "CASA top đầu ngành, ngân hàng bán lẻ & IB hàng đầu"},
-        "MBB": {"name": "Ngân Hàng Quân Đội", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 19150.0, "probe_price": 19000.0, "stop_loss": 18478.0, "tp1": 22635.0, "tp2": 24512.0, "catalyst": "Tăng trưởng tín dụng cao, tỷ lệ bao phủ nợ xấu an toàn"},
-        "OCB": {"name": "Ngân Hàng Phương Đông", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 10800.0, "probe_price": 10650.0, "stop_loss": 10192.0, "tp1": 12766.0, "tp2": 13824.0, "catalyst": "Định giá P/B thấp, theo dõi chất lượng nợ xấu quý mới"},
+        "TPB": {"name": "TPBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 12350.0, "probe_price": 12250.0, "stop_loss": 11600.0, "tp1": 13350.0, "tp2": 14450.0, "catalyst": "Brain V3 #1 (85.9đ): F-Score 9/9, số hóa sinh trắc học VNeID"},
+        "CTG": {"name": "VietinBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 30100.0, "probe_price": 29950.0, "stop_loss": 28300.0, "tp1": 32650.0, "tp2": 35350.0, "catalyst": "Brain V3 #2 (82.9đ): F-Score 8/9, ROE 22.56%, tín dụng dự án lớn"},
+        "HDB": {"name": "HDBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 21800.0, "probe_price": 21700.0, "stop_loss": 20500.0, "tp1": 23650.0, "tp2": 25600.0, "catalyst": "Brain V3 #4 (75.1đ): RS 90, ROE 23.73%, hợp tác vốn MUFG Nhật Bản"},
+        "HPG": {"name": "Tập Đoàn Hòa Phát", "exchange": "HOSE", "sector": "Thép & Vật Liệu", "fallback_price": 20450.0, "probe_price": 19900.0, "stop_loss": 18800.0, "tp1": 21900.0, "tp2": 23600.0, "catalyst": "Brain V3 #3 (78.1đ): F-Score 8/9, Dung Quất 2, News 100/100"},
+        "VPB": {"name": "VPBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 20500.0, "probe_price": 20300.0, "stop_loss": 19200.0, "tp1": 22350.0, "tp2": 24200.0, "catalyst": "Brain V3 #5 (73.7đ): F-Score 7/9, LNST Q3 +51% YoY"},
+        "TCB": {"name": "Techcombank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 21200.0, "probe_price": 21000.0, "stop_loss": 19850.0, "tp1": 23100.0, "tp2": 25000.0, "catalyst": "CASA top đầu ngành, ngân hàng bán lẻ & IB hàng đầu"},
+        "NAB": {"name": "Nam A Bank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 13000.0, "probe_price": 12900.0, "stop_loss": 12200.0, "tp1": 14150.0, "tp2": 15300.0, "catalyst": "RS 95, F-Score 8/9, P/E 5.8x, thanh khoản & động lượng tốt"},
+        "SSI": {"name": "Chứng Khoán SSI", "exchange": "HOSE", "sector": "Chứng Khoán & Đầu Tư", "fallback_price": 20000.0, "probe_price": 19800.0, "stop_loss": 18700.0, "tp1": 21800.0, "tp2": 23600.0, "catalyst": "Đầu ngành chứng khoán, F-Score 8/9, hưởng lợi thanh khoản"},
+        "PVT": {"name": "Tổng Công Ty Vận Tải Dầu Khí", "exchange": "HOSE", "sector": "Vận Tải Dầu Khí", "fallback_price": 18650.0, "probe_price": 18450.0, "stop_loss": 17450.0, "tp1": 20300.0, "tp2": 21950.0, "catalyst": "F-Score 9/9, OCF/LNST 2.38x, đội tàu trẻ hóa, giá cước USD"},
+        "NT2": {"name": "Điện Lực Nhơn Trạch 2", "exchange": "HOSE", "sector": "Điện & Năng Lượng", "fallback_price": 23850.0, "probe_price": 23600.0, "stop_loss": 22300.0, "tp1": 25950.0, "tp2": 28100.0, "catalyst": "Hết nợ vay dài hạn, RS 97, sản lượng điện khí phục hồi"},
+        "PVP": {"name": "Vận Tải Dầu Khí TBD", "exchange": "HOSE", "sector": "Vận Tải Dầu Khí", "fallback_price": 16750.0, "probe_price": 16550.0, "stop_loss": 15650.0, "tp1": 18250.0, "tp2": 19750.0, "catalyst": "F-Score khỏe, P/E 7.4x, vận tải dầu thô ổn định"},
+        "CTS": {"name": "Chứng Khoán VietinBank", "exchange": "HOSE", "sector": "Chứng Khoán & Đầu Tư", "fallback_price": 23400.0, "probe_price": 23150.0, "stop_loss": 21900.0, "tp1": 25500.0, "tp2": 27600.0, "catalyst": "CTCK ngân hàng quốc doanh, RS 85, tự doanh hiệu quả"},
     }
 
+    forbidden_watch = {"BAF", "MSH", "VIX", "CII", "CEO"}
     ordered_symbols: List[str] = []
     for sym in active_positions.keys():
         s_up = sym.upper().strip()
         if s_up and s_up not in ordered_symbols:
             ordered_symbols.append(s_up)
+    for st_v3 in (v3_data.get("asymmetric_conviction_strikes") or []):
+        s_up = str(st_v3.get("symbol") or "").upper().strip()
+        if s_up and s_up not in forbidden_watch and s_up not in ordered_symbols:
+            ordered_symbols.append(s_up)
+    for r_v3 in (v3_data.get("top_15_overall_universe") or []):
+        s_up = str(r_v3.get("symbol") or "").upper().strip()
+        if s_up and s_up not in forbidden_watch and s_up not in ordered_symbols:
+            ordered_symbols.append(s_up)
     for sym in ledger_map.keys():
-        if sym not in ordered_symbols:
+        if sym not in forbidden_watch and sym not in ordered_symbols:
             ordered_symbols.append(sym)
     for sym in master_map.keys():
-        if sym not in ordered_symbols:
+        if sym not in forbidden_watch and sym not in ordered_symbols:
             ordered_symbols.append(sym)
     for sym in weekly_map.keys():
-        if sym not in ordered_symbols:
+        if sym not in forbidden_watch and sym not in ordered_symbols:
             ordered_symbols.append(sym)
-    for sym in ("BAF", "DBC", "HPG", "SZC", "IDC", "BSR", "PVT", "TCB", "MBB", "OCB"):
+    for sym in ("TPB", "HDB", "CTG", "HPG", "VPB", "TCB", "NAB", "SSI", "PVT", "NT2", "PVP", "CTS"):
         if sym not in ordered_symbols:
             ordered_symbols.append(sym)
 

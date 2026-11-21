@@ -1,5 +1,5 @@
 # [BAN 7 VN & BAN 9] BÁO CÁO TÁC CHIẾN LIVE INTRADAY — 2026-11-21
-**Cập nhật lúc:** `2026-11-21 18:38:56 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
+**Cập nhật lúc:** `2026-11-21 19:05:31 (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  
 **Trạng thái thị trường (`Market Regime`):** **`🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT)`**  
 **Chỉ thị điều hành:** VN-Index -0.05%, Độ rộng tích cực 31%, Basis -6.64đ. Tầng 1 Phòng thủ (trần giải ngân mới <= 15%): bảo vệ vốn, chỉ rình mã BCTC kim cương tại MA200 nếu đủ cầu.
 
@@ -20,18 +20,18 @@
 ## 3. RADA GIÁM SÁT WATCHLIST TẦM NGẮM & BUY-UP PRESSURE
 | Mã | Giá Live | Đổi % | Volume | Buy-Up Thực | RSI(14) | Ngoại Ròng | Trạng Thái Tác Chiến |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **PVT** | 18,650 ₫ | +0.81% | 2,714,600 | 54.7% | 26.5 | +0.47 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
-| **TCB** | 21,200 ₫ | +2.91% | 13,200,600 | 66.8% | 44.3 | +1.58 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
-| **MBB** | 18,250 ₫ | -2.41% | 13,388,200 | 38.5% | 29.3 | -5.74 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
-| **HPG** | 20,450 ₫ | +0.00% | 15,652,000 | 69.7% | 41.9 | +0.72 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
-| **TCH** | 13,900 ₫ | +4.91% | 15,750,900 | 81.4% | 70.2 | +3.50 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
-| **MSH** | 35,000 ₫ | +0.00% | 164,900 | 73.2% | 58.6 | +0.01 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
 | **TPB** | 12,350 ₫ | +0.00% | 9,079,300 | 80.2% | 44.7 | -1.03 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
 | **HDB** | 21,800 ₫ | -1.58% | 20,050,300 | 64.3% | 42.5 | -10.39 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
 | **CTG** | 30,100 ₫ | +0.33% | 7,685,600 | 67.6% | 41.2 | -2.55 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **HPG** | 20,450 ₫ | +0.00% | 15,652,000 | 69.7% | 41.9 | +0.72 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **VHM** | 60,400 ₫ | +0.00% | 6,228,300 | 85.0% | 39.5 | -3.23 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **MWG** | 71,700 ₫ | -0.55% | 3,188,400 | 58.4% | 40.7 | -0.16 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
 | **VPB** | 20,500 ₫ | -1.91% | 17,274,800 | 67.4% | 30.0 | -2.65 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
-| **BAF** | 30,800 ₫ | -0.48% | 1,622,800 | 70.6% | 54.4 | -0.21 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
-| **DBC** | 16,300 ₫ | -2.69% | 2,692,800 | 44.1% | 53.6 | -0.45 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **TCB** | 21,200 ₫ | +2.91% | 13,200,600 | 66.8% | 44.3 | +1.58 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **POW** | 13,300 ₫ | -1.85% | 7,409,500 | 59.8% | 61.5 | +15.21 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **SHB** | 10,450 ₫ | +0.00% | 28,513,000 | 79.8% | 40.3 | -4.99 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **BSR** | 23,600 ₫ | +0.43% | 8,057,200 | 52.4% | 23.3 | -3.76 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
+| **PVT** | 18,650 ₫ | +0.81% | 2,714,600 | 54.7% | 26.5 | +0.47 Tỷ | 🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng 31%) |
 
 ## 4. CẦU NỐI LIÊN THỊ TRƯỜNG MỸ → VN & BỘ LỌC BULL-TRAP THÍCH NGHI
 - **Spillover Phố Wall → VN:** `🔴 BÁO ĐỘNG LIÊN THỊ TRƯỜNG — THU HẸP TỶ TRỌNG` | Hệ số rủi ro: `0.45x` | Trần phân bổ mới: **`10% NAV`** (Gốc: 15%)

@@ -4442,7 +4442,7 @@ def generate_portal_html(
                             <div class="quick-prompts-row">
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Minh Quân báo cáo tiến độ hiện tại')">💬 Báo cáo tiến độ</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Cho tôi xem kế hoạch tuần')" style="border-color: #fbbf24; color: #fbbf24; font-weight: 700;">📅 Soi Kế Hoạch Tuần</button>
-                                <button class="btn-quick-prompt" onclick="sendQuickTactical('Soi giá live HDB và MSH')">🎯 Soi HDB &amp; MSH</button>
+                                <button class="btn-quick-prompt" onclick="sendQuickTactical('Soi giá live TPB, HDB và CTG')">🎯 Soi TPB, HDB &amp; CTG</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Kịch bản ứng phó nếu thị trường bất ngờ sập 15 điểm')">🛡️ Kịch bản thị trường sập</button>
                                 <button class="btn-quick-prompt" onclick="sendQuickTactical('Victor kiểm tra két tiền mặt SSOT và sức mua')">💰 Két tiền &amp; Sức mua</button>
                             </div>
