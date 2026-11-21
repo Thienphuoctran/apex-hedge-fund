@@ -1,6 +1,6 @@
 {
-  "audit_timestamp": "2026-11-21 19:05:32",
-  "audit_duration_seconds": 0.56,
+  "audit_timestamp": "2026-11-21 21:44:47",
+  "audit_duration_seconds": 0.22,
   "overall_infrastructure_health_score": 85,
   "health_verdict": "CẦN LƯU Ý",
   "appointed_officers": {
@@ -10,19 +10,19 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 515,
+    "operational_institutional_reports": 516,
     "total_markdown_documents": 765,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (515 báo cáo thể chế / 765 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (516 báo cáo thể chế / 765 tệp MD hiện có)."
   },
   "check_2_directory_density": {
-    "total_directories_scanned": 102,
+    "total_directories_scanned": 99,
     "dense_directories_flagged": [
       {
-        "directory": "data\\real_ohlcv_cache",
+        "directory": "data/real_ohlcv_cache",
         "file_count": 146,
         "threshold": 100,
         "recommendation": "Cần phân mảnh thư mục con theo Năm/Tháng (YYYY/MM) khi vượt 100 tệp."
@@ -38,71 +38,30 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1628,
-    "total_project_size_mb": 82.72,
-    "data_directory_size_mb": 52.98,
+    "total_active_files": 1451,
+    "total_project_size_mb": 47.11,
+    "data_directory_size_mb": 18.64,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "8.27%",
+    "github_quota_used_pct": "4.71%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 39.74,
-    "uncommitted_files_count": 20,
+    "git_directory_size_mb": 48.84,
+    "uncommitted_files_count": 13,
     "active_branch": "main",
     "status": "HEALTHY"
   },
   "check_5_log_files_and_rotation": {
-    "total_log_files_found": 10,
-    "log_files_details": [
-      {
-        "path": "data\\apex_cloud_supervisor.log",
-        "size_mb": 0.08
-      },
-      {
-        "path": "data\\apex_cron_daemon.log",
-        "size_mb": 0.08
-      },
-      {
-        "path": "data\\telegram_copilot_daemon.log",
-        "size_mb": 1.14
-      },
-      {
-        "path": "data\\logs\\cron_daemon.log",
-        "size_mb": 0.1
-      },
-      {
-        "path": "data\\logs\\daily_warroom_engine.log",
-        "size_mb": 0.0
-      },
-      {
-        "path": "data\\logs\\inspector_trong.log",
-        "size_mb": 0.05
-      },
-      {
-        "path": "data\\logs\\live_intraday_brain.log",
-        "size_mb": 0.0
-      },
-      {
-        "path": "data\\logs\\sentinel_monitor.log",
-        "size_mb": 0.13
-      },
-      {
-        "path": "data\\logs\\telegram_copilot.log",
-        "size_mb": 0.4
-      },
-      {
-        "path": "data\\logs\\verify_gate_server.log",
-        "size_mb": 0.0
-      }
-    ],
+    "total_log_files_found": 0,
+    "log_files_details": [],
     "rotation_threshold_mb": 5.0,
     "files_needing_rotation": [],
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 64.55,
-    "ssot_load_latency_ms": 0.45,
+    "json_directory_scan_latency_ms": 3.02,
+    "ssot_load_latency_ms": 0.18,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
@@ -127,17 +86,17 @@
       "status": "SEMANTIC_CONSISTENCY_PERFECT"
     },
     "superpowers_247_gate": {
-      "tavily_api_ready": true,
+      "tavily_api_ready": false,
       "ssot_gate": {
         "source": "SSOT_Portfolio",
         "passed": true,
         "checks": [
           "SSOT_Portfolio: có dữ liệu",
           "SSOT_Portfolio: đủ trường bắt buộc",
-          "SSOT_Portfolio: độ tươi đạt chuẩn (1.8h)"
+          "SSOT_Portfolio: độ tươi đạt chuẩn (0.0h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-21 19:05:33"
+        "verified_at": "2026-11-21 21:44:47"
       },
       "cbtt_gate": {
         "source": "CBTT_Radar",
@@ -145,13 +104,13 @@
         "checks": [
           "CBTT_Radar: có dữ liệu",
           "CBTT_Radar: đủ trường bắt buộc",
-          "CBTT_Radar: độ tươi đạt chuẩn (59.6h)"
+          "CBTT_Radar: độ tươi đạt chuẩn (0.0h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-21 19:05:33"
+        "verified_at": "2026-11-21 21:44:47"
       },
       "diagnostics_logged_events": 0,
-      "overall_ok": true
+      "overall_ok": false
     }
   }
 }
