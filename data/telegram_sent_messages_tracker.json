@@ -3238,5 +3238,21 @@
     "topic_key": "daily_warroom",
     "date": "2026-11-21",
     "timestamp": "2026-11-21 21:44:49"
+  },
+  {
+    "message_id": 2506,
+    "chat_id": "-1004465270817",
+    "thread_id": 6,
+    "topic_key": "james_hq",
+    "date": "2026-11-22",
+    "timestamp": "2026-11-22 21:55:48"
+  },
+  {
+    "message_id": 2507,
+    "chat_id": "-1004465270817",
+    "thread_id": 4,
+    "topic_key": "daily_warroom",
+    "date": "2026-11-22",
+    "timestamp": "2026-11-22 21:55:49"
   }
 ]

@@ -127,7 +127,7 @@
     }
   ],
   "tactical_regime": "PATIENT_PREDATOR_100_CASH_STANDDOWN",
-  "last_updated": "2026-11-22 03:42:29",
+  "last_updated": "2026-11-22 21:55:44",
   "tcbs_mcp_url": "https://mcp.tcbs.com.vn/mcp/tcinvest/",
   "current_campaign_phase": "ROUND_1_COMPLETED_100_CASH_WAITING_ROUND_2",
   "initial_capital_vnd": 20000000.0,
@@ -275,13 +275,13 @@
     }
   ],
   "temporal_context": {
-    "timestamp_iso": "2026-11-22T03:42:29.449925",
+    "timestamp_iso": "2026-11-22T21:55:44.788965",
     "date_str": "2026-11-22",
     "date_vn": "22/11/2026",
-    "time_vn": "03:42:29",
+    "time_vn": "21:55:44",
     "weekday_index": 6,
     "weekday_vn": "Chủ Nhật",
-    "full_time_label_vn": "03:42:29 Chủ Nhật, ngày 22/11/2026",
+    "full_time_label_vn": "21:55:44 Chủ Nhật, ngày 22/11/2026",
     "market_phase": "WEEKEND_CLOSED",
     "market_phase_vn": "Nghỉ cuối tuần (Chủ Nhật) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
     "is_trading_hours": false,

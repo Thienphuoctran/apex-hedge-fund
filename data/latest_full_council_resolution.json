@@ -1,7 +1,7 @@
 {
   "resolution_id": "APEX-COUNCIL-11DEPT-ADAPTIVE-2026-11-22",
-  "generated_at": "03:42:03 Chủ Nhật, ngày 22/11/2026",
-  "execution_time_seconds": 25.69,
+  "generated_at": "21:55:19 Chủ Nhật, ngày 22/11/2026",
+  "execution_time_seconds": 24.91,
   "account_id": "105C307855",
   "account_cash_vnd": 20051117.0,
   "account_nav_vnd": 20051117.0,
@@ -429,8 +429,8 @@
   },
   "previous_session_continuity": {
     "has_previous_memory": true,
-    "last_session_date": "2026-11-21",
-    "what_we_did_last_session": "Phiên 2026-11-21: Hệ thống đã quét toàn diện 145 cổ phiếu thuộc 18 nhóm ngành trên 3 sàn HOSE/HNX/UPCoM. 10 Phòng ban đã họp tranh biện trực tiếp, loại bỏ thói quen chỉ nhìn vào 4 mã cũ (hạ bậc FPT do RS=18 gãy MA20, hạ bậc DGC do RS=22 yếu, loại MWG/FRT khỏi danh mục mua trực tiếp do 1 lô 100 CP chiếm >35% vốn 20M). Đã tuyển chọn bộ Tầm ngắm Vòng 2 đa ngành có RS 81-96 và BCTC hạng AAA/AA vừa khít quy mô vốn 20.16 triệu VNĐ.",
+    "last_session_date": "2026-11-22",
+    "what_we_did_last_session": "Phiên 2026-11-22: Hệ thống đã quét toàn diện 145 cổ phiếu thuộc 18 nhóm ngành trên 3 sàn HOSE/HNX/UPCoM. 10 Phòng ban đã họp tranh biện trực tiếp, loại bỏ thói quen chỉ nhìn vào 4 mã cũ (hạ bậc FPT do RS=18 gãy MA20, hạ bậc DGC do RS=22 yếu, loại MWG/FRT khỏi danh mục mua trực tiếp do 1 lô 100 CP chiếm >35% vốn 20M). Đã tuyển chọn bộ Tầm ngắm Vòng 2 đa ngành có RS 81-96 và BCTC hạng AAA/AA vừa khít quy mô vốn 20.16 triệu VNĐ.",
     "priority_watchlist": [
       {
         "code": "NAB",
