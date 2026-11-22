@@ -1,6 +1,6 @@
 {
-  "audit_timestamp": "2026-11-21 21:44:47",
-  "audit_duration_seconds": 0.22,
+  "audit_timestamp": "2026-11-22 03:42:38",
+  "audit_duration_seconds": 0.25,
   "overall_infrastructure_health_score": 85,
   "health_verdict": "CẦN LƯU Ý",
   "appointed_officers": {
@@ -10,13 +10,13 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 516,
-    "total_markdown_documents": 765,
+    "operational_institutional_reports": 514,
+    "total_markdown_documents": 766,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (516 báo cáo thể chế / 765 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (514 báo cáo thể chế / 766 tệp MD hiện có)."
   },
   "check_2_directory_density": {
     "total_directories_scanned": 99,
@@ -38,16 +38,16 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1451,
-    "total_project_size_mb": 47.11,
-    "data_directory_size_mb": 18.64,
+    "total_active_files": 1453,
+    "total_project_size_mb": 47.16,
+    "data_directory_size_mb": 18.67,
     "github_quota_limit_mb": 1000.0,
-    "github_quota_used_pct": "4.71%",
+    "github_quota_used_pct": "4.72%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 48.84,
+    "git_directory_size_mb": 48.98,
     "uncommitted_files_count": 13,
     "active_branch": "main",
     "status": "HEALTHY"
@@ -60,8 +60,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 3.02,
-    "ssot_load_latency_ms": 0.18,
+    "json_directory_scan_latency_ms": 4.7,
+    "ssot_load_latency_ms": 0.19,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
@@ -78,8 +78,8 @@
   },
   "check_8_semantic_and_superpowers_gate": {
     "semantic_consistency": {
-      "audited_reports": 24,
-      "clean_reports": 24,
+      "audited_reports": 1,
+      "clean_reports": 1,
       "violation_reports": 0,
       "violations_details": [],
       "semantic_audit_passed": true,
@@ -96,7 +96,7 @@
           "SSOT_Portfolio: độ tươi đạt chuẩn (0.0h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-21 21:44:47"
+        "verified_at": "2026-11-22 03:42:38"
       },
       "cbtt_gate": {
         "source": "CBTT_Radar",
@@ -107,7 +107,7 @@
           "CBTT_Radar: độ tươi đạt chuẩn (0.0h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-21 21:44:47"
+        "verified_at": "2026-11-22 03:42:38"
       },
       "diagnostics_logged_events": 0,
       "overall_ok": false

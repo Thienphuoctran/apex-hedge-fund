@@ -1,7 +1,7 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-21T21:44:45.234475+00:00",
-  "trading_date": "2026-11-21",
+  "generated_at_utc": "2026-11-22T03:42:29.451238+00:00",
+  "trading_date": "2026-11-22",
   "cio_desk_verdict": "100% TIỀN MẶT (20,051,117 ₫) — ĐÃ TẤT TOÁN VÒNG 1 (LÃI RÒNG +51,117 ₫) & ĐỢI TẦM NGẮM VÒNG 2",
   "active_market_regime": {
     "as_of_date": "2026-11-20",
@@ -983,18 +983,18 @@
     "sandbox_math_verified": true,
     "portfolio_allocation_verified": "100% TIỀN MẶT (20,051,117 VNĐ) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +51,117 VNĐ",
     "max_risk_locked_pct": 0.0,
-    "timestamp": "21:44:45 Thứ Bảy, ngày 21/11/2026"
+    "timestamp": "03:42:29 Chủ Nhật, ngày 22/11/2026"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-21T21:44:45.233585",
-    "date_str": "2026-11-21",
-    "date_vn": "21/11/2026",
-    "time_vn": "21:44:45",
-    "weekday_index": 5,
-    "weekday_vn": "Thứ Bảy",
-    "full_time_label_vn": "21:44:45 Thứ Bảy, ngày 21/11/2026",
+    "timestamp_iso": "2026-11-22T03:42:29.449925",
+    "date_str": "2026-11-22",
+    "date_vn": "22/11/2026",
+    "time_vn": "03:42:29",
+    "weekday_index": 6,
+    "weekday_vn": "Chủ Nhật",
+    "full_time_label_vn": "03:42:29 Chủ Nhật, ngày 22/11/2026",
     "market_phase": "WEEKEND_CLOSED",
-    "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
+    "market_phase_vn": "Nghỉ cuối tuần (Chủ Nhật) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
     "is_trading_hours": false,
     "next_session_note": "Phiên giao dịch tiếp theo mở cửa lúc 09:00 sáng Thứ Hai."
   },
