@@ -1,17 +1,17 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-22 22:58:46  
+**Thời gian cập nhật:** 2026-11-22 23:11:07  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261122-225846`  
+**Mã đồng bộ:** `SYNC-AG2P-20261122-231107`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Yêu cầu gần nhất của Chủ tịch:** Hoàn thiện cơ chế tự động sang ngày mới 18 cột mốc (không báo cáo DONE giả), Sổ Nhật Ký Hôm Nay & Bằng Chứng Làm Việc 5 Khối, và Full 5/5 Daemons Watchdog tự khởi động cùng Windows
+* **Yêu cầu gần nhất của Chủ tịch:** Gia cố tự khởi động Windows thuần ASCII 8.3 (chống lỗi font Chứng khoán), thêm 23:30 Trọng Audit + làm mới Tin Hiền 06:00 & WarRoom 09:00 hàng ngày, và 4 Sidecar Automations T2-T6 bền vững qua tắt/bật máy
 * **Kết luận & Quyết định thể chế:**
 Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Hoàn thiện cơ chế tự động sang ngày mới 18 cột mốc (không báo cáo DONE giả), Sổ Nhật Ký Hôm Nay & Bằng Chứng Làm Việc 5 Khối, và Full 5/5 Daemons Watchdog tự khởi động cùng Windows
+- [x] Gia cố tự khởi động Windows thuần ASCII 8.3 (chống lỗi font Chứng khoán), thêm 23:30 Trọng Audit + làm mới Tin Hiền 06:00 & WarRoom 09:00 hàng ngày, và 4 Sidecar Automations T2-T6 bền vững qua tắt/bật máy
 - [x] Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở
 - [x] Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.
 - [x] Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)

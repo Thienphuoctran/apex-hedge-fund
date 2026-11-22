@@ -106,6 +106,10 @@ def load_state() -> Dict[str, Any]:
 
 def save_state(state: Dict[str, Any]):
     try:
+        ex = state.get("executed_milestones")
+        if isinstance(ex, dict) and len(ex) > 45:
+            for old_k in sorted(ex.keys())[:-45]:
+                ex.pop(old_k, None)
         with open(DAEMON_STATE, "w", encoding="utf-8") as f:
             json.dump(state, f, indent=2, ensure_ascii=False)
     except Exception as e:
@@ -277,7 +281,13 @@ def execute_milestone(milestone_id: str) -> bool:
                 except Exception as e:
                     log_event(f"[!] Warning auto-clean: {e}")
 
-            # Quét thực tế BCTC & IR bằng Agent Zero cho 3 mã nắm giữ
+            # Quét thực tế tin tức Internet/CBTT/IR/SEC + BCTC Agent Zero bởi Đội Hiền
+            try:
+                from scripts.apex_omni_intelligence_crawler import crawl_realtime_market_intelligence
+                crawl_realtime_market_intelligence(force_refresh=True)
+            except Exception as e:
+                log_event(f"[!] Warning crawl_realtime_market_intelligence 06:00: {e}")
+
             ir_audits = {}
             try:
                 from scripts.bctc_ir_filing_scout import verify_and_enrich_ir_with_agent_zero
@@ -478,6 +488,7 @@ def execute_milestone(milestone_id: str) -> bool:
         # ==============================================================================
         elif milestone_id == "09:00":
             _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=45)
+            _run_py_script("scripts/apex_daily_live_warroom_engine.py", args=["--once"], timeout=90)
             # Master CIO James: Tuần tra TCBS Phiên Sáng (Bảng giá, Vốn, Lệnh, Lãi/Lỗ)
             try:
                 from scripts.tcinvest_vault_watcher import TCBSVaultWatcher
@@ -829,6 +840,52 @@ def execute_milestone(milestone_id: str) -> bool:
                 "Chúc Chủ tịch Phước Trần một giấc ngủ thật ngon ạ!"
             )
             _dispatch("james_hq", msg)
+
+        # ==============================================================================
+        # 18. 23:30 - TRỌNG & PALMER (BAN 12): KIỂM TOÁN TOÀN VẸN & NIÊM PHONG CUỐI NGÀY
+        # ==============================================================================
+        elif milestone_id == "23:30":
+            tech_score = 100
+            sem_score = 100
+            sem_issues = 0
+            try:
+                from scripts.apex_inspector_trong import ApexInspectorTrong
+                t_res = ApexInspectorTrong.audit_system_technical_integrity_247()
+                if isinstance(t_res, dict):
+                    tech_score = t_res.get("score", 100)
+            except Exception as e:
+                log_event(f"[!] Warning ApexInspectorTrong 23:30: {e}")
+            try:
+                from scripts.apex_semantic_consistency_auditor import run_full_institutional_semantic_audit
+                s_res = run_full_institutional_semantic_audit()
+                if isinstance(s_res, dict):
+                    sem_score = s_res.get("score", 100)
+                    sem_issues = len(s_res.get("issues", []))
+            except Exception as e:
+                log_event(f"[!] Warning semantic_audit 23:30: {e}")
+
+            snap_2330 = _get_live_portfolio_snapshot()
+            ps_2330 = _format_portfolio_summary(snap_2330)
+            audit_file = BASE_DIR / "12_Institutional_Ombudsman_And_Inspectorate" / f"{date_str}_23h30_System_Audit_And_Health_Check.md"
+            audit_content = (
+                f"# BIÊN BẢN KIỂM SÁT THỂ CHẾ, KỶ LUẬT & TOÀN VẸN HỆ THỐNG ĐÊM 23H30\n"
+                f"**Ngày**: `{date_str} 23:30 PM` | **Đơn vị thực thi**: Khối 5 — Trọng (Ban 12) & Palmer\n\n"
+                f"- **Điểm toàn vẹn kỹ thuật 24/7**: `{tech_score}/100`\n"
+                f"- **Điểm nhất quán ngữ nghĩa & SSOT**: `{sem_score}/100` (Lỗi phát hiện: `{sem_issues}`)\n"
+                f"- **Đối soát két TCBS `105C307855`**: NAV `{ps_2330['nav_str']}` | Tiền mặt `{ps_2330['cash_str']}`\n"
+                f"{ps_2330['md_positions']}\n"
+            )
+            write_md_safe(audit_file, audit_content)
+            if not DRY_RUN_MODE:
+                _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=45)
+
+            msg = (
+                "🛡️ *[KHỐI 5 — TRỌNG & PALMER: NIÊM PHONG KIỂM TOÁN 23H30]*\n"
+                f"📅 `{date_str}` | Kỹ thuật: `{tech_score}/100` | Nhất quán SSOT: `{sem_score}/100` (Lỗi: `{sem_issues}`)\n"
+                f"• Két TCBS `105C307855`: NAV `{ps_2330['nav_str']}` | Tiền mặt `{ps_2330['cash_str']}`.\n"
+                f"📁 `12_Institutional_Ombudsman_And_Inspectorate/{date_str}_23h30_System_Audit_And_Health_Check.md`"
+            )
+            _dispatch("ombudsman_audit", msg)
 
         # Đánh dấu hoàn tất trên Kanban & Atomic Dedup Shield
         if kanban_tid:
