@@ -328,3 +328,10 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 ### [WAR-ROOM EOD 2026-11-21]
 - **Chu kỳ quét thực tế:** `2` nhịp (`144/145` mã) | VNI `1,688.79` (`-0.05%`) | Br20 `19.4%` | Regime `S4_BEAR_CASH_SHIELD`.
 - **Bài học tự tiến hóa:** Giữ kỷ luật cổng `14h05–14h25`, ưu tiên BCTC sạch (`NAB, SSI, HDB`), loại tuyệt đối mã cờ đỏ.
+
+## [Phiên Giao Dịch: 2026-11-22] — Tiến Hóa Mô Hình v5.0 & Kiểm Toán Walk-Forward
+- **Chế độ Vĩ mô**: VIX = 35.89 | Dầu WTI = $83.41 | US10Y = 4.91%.
+- **Trọng số Chấm điểm Thích nghi (Tổng 100%)**: Vĩ mô `25%` | BCTC/FCF `35%` | Định giá `20%` | Kỹ thuật `20%`.
+- **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `AAPL, BRK-B, AMD, PLTR` (chuyển sang `Locked Earnings Watchlist`).
+- **Realized Alpha vs S&P 500**: 1D `+3.25%` | 5D `+5.35%` | 20D `+8.17%`.
+- **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **84.6%**

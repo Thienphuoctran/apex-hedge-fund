@@ -1,8 +1,8 @@
 {
   "supabase_configured": false,
   "local_sqlite_mirror": true,
-  "last_target": "apex_portfolio_ssot",
+  "last_target": "apex_war_room_directives",
   "last_cloud_sync_ok": false,
-  "last_sync_at": "2026-11-22 10:42:29",
+  "last_sync_at": "2026-11-23 03:06:00",
   "detail": "local-sqlite-only"
 }

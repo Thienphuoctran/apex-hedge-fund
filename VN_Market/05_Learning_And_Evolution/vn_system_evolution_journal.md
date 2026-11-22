@@ -322,3 +322,9 @@
 - **Trạng thái mô hình**: `ĐẠT CHUẨN THỰC NGHIỆM (EMPIRICAL PF=1.74 >= 1.1 & SIDEWAY_CHOPPY)`
 - **Bài học đúc rút**: Phiên 2026-11-21 (SIDEWAY_CHOPPY): Backtest thực nghiệm 2Y Hit Rate=57.1% (PF=1.74, Return +10.20%, 14 lệnh); tiếp tục giữ kỷ luật cắt lỗ T+2.5.
 - **Trọng số BCTC duy trì**: 36.0% | Dòng tiền: 26.0%
+
+### 📅 Nhật Ký Tiến Hóa Hệ Thống — Ngày 2026-11-22
+- **Out-of-Sample Walk-Forward Win Rate**: **57.1%** (14 lệnh, PF=`1.74`, Return=`+10.20%`, MaxDD=`-9.98%`) | Độ rộng 1D tăng giá (`daily_market_advance_pct`): `37.0%`
+- **Trạng thái mô hình**: `ĐẠT CHUẨN THỰC NGHIỆM (EMPIRICAL PF=1.74 >= 1.1 & SIDEWAY_CHOPPY)`
+- **Bài học đúc rút**: Phiên 2026-11-22 (SIDEWAY_CHOPPY): Backtest thực nghiệm 2Y Hit Rate=57.1% (PF=1.74, Return +10.20%, 14 lệnh); tiếp tục giữ kỷ luật cắt lỗ T+2.5.
+- **Trọng số BCTC duy trì**: 36.0% | Dòng tiền: 26.0%

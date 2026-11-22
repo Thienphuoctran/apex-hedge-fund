@@ -1,13 +1,13 @@
 {
   "data_provenance": "VIETCAP_IQ_OFFICIAL_LIVE_AND_VPS_2Y_OHLCV",
-  "crawled_at": "2026-11-21 16:48:28",
-  "elapsed_sec": 22.89,
+  "crawled_at": "2026-11-23 03:05:00",
+  "elapsed_sec": 10.7,
   "coverage_stats": {
     "requested_vn_tickers": 80,
     "bctc_loaded": 80,
     "bctc_status": {
-      "LIVE": 80,
-      "CACHE": 0,
+      "LIVE": 0,
+      "CACHE": 80,
       "FAILED": 0
     },
     "bctc_failures": [],
@@ -15,8 +15,8 @@
       "2026Q3": 80
     },
     "ohlcv_status": {
-      "LIVE": 82,
-      "CACHE": 0,
+      "LIVE": 0,
+      "CACHE": 82,
       "FAILED": 0
     },
     "us_sec_edgar": {
@@ -25,7 +25,7 @@
     }
   },
   "macro_live": {
-    "fetched_at": "2026-11-21 16:48:18",
+    "fetched_at": "2026-11-23 03:04:49",
     "SP500": {
       "value": 6910.39,
       "change_pct": -3.7,
@@ -68,7 +68,7 @@
     },
     "USD_VND_LIVE": {
       "value": 25705.0,
-      "change_pct": 0.06,
+      "change_pct": -0.16,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "VN_GDP_GROWTH_LIVE": {

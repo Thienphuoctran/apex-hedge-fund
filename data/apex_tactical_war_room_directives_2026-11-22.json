@@ -1,0 +1,81 @@
+[
+  {
+    "id": "dir_2026-11-22_001",
+    "timestamp": "08:30:15",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "morning_brief",
+    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã kích hoạt Living War-Room V4.0 cho ngày 2026-11-22. Chế độ thị trường hiện tại: 🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT). Kỷ luật bất biến: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
+  },
+  {
+    "id": "dir_2026-11-22_002",
+    "timestamp": "08:32:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_brief",
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-22. Tổng NAV live: 20,051,117 đ | Tiền mặt thật: 20,051,117 đ (100.0% Cash) | Đang nắm giữ: 0 CP (0 CP ≈ 0 đ) | Lãi đã chốt lũy kế: +51,117 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
+  },
+  {
+    "id": "cbtt_2026-11-22_CRITICAL_PNJ_6310",
+    "key": "cbtt_2026-11-22_CRITICAL_PNJ_6310",
+    "timestamp": "03:05:39",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Tài sản PNJ hơn 20.000 tỷ, vốn hoá còn dưới 7.000 tỷ, một DN tài sản 5.000 tỷ có vốn hoá 600 tỷ, Viettel Post, HAGL chung cảnh ngộ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-22_CRITICAL_ACV_27314",
+    "key": "cbtt_2026-11-22_CRITICAL_ACV_27314",
+    "timestamp": "03:06:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — ACV] Cổ phiếu ACV xuống đáy 6 năm, vốn hóa DN quản lý sân bay lớn nhất Việt Nam giảm hơn 100.000 tỷ đồng sau 10 tháng (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-22_CRITICAL_CEO,PNJ_4122",
+    "key": "cbtt_2026-11-22_CRITICAL_CEO,PNJ_4122",
+    "timestamp": "03:06:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — CEO,PNJ] CEO Phan Quốc Công: Tình hình tài chính hết sức khẩn cấp, PNJ không còn khả năng đáp ứng cam kết mua lại kim cương bằng tiền sau 120 ngày (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-22_CRITICAL_PNJ_67604",
+    "key": "cbtt_2026-11-22_CRITICAL_PNJ_67604",
+    "timestamp": "03:06:00",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] PNJ thay đổi chính sách thu đổi: Vàng nhận tiền sau 1 ngày, kim cương chờ 4 tháng (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "sec_2026-11-22_AAPL_10-K_2026-11-03",
+    "key": "sec_2026-11-22_AAPL_10-K_2026-11-03",
+    "timestamp": "03:06:00",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-K — AAPL] 10-K (2026-11-03)"
+  },
+  {
+    "id": "sec_2026-11-22_TSLA_10-Q_2026-10-22",
+    "key": "sec_2026-11-22_TSLA_10-Q_2026-10-22",
+    "timestamp": "03:06:00",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — TSLA] 10-Q (2026-10-22)"
+  },
+  {
+    "id": "sec_2026-11-22_AVGO_10-Q_2026-09-10",
+    "key": "sec_2026-11-22_AVGO_10-Q_2026-09-10",
+    "timestamp": "03:06:00",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — AVGO] 10-Q (2026-09-10)"
+  }
+]
