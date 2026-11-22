@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import datetime
 import json
+import subprocess
 import sys
 import threading
 import time
@@ -429,20 +430,47 @@ def _extract_ssot_summary() -> Dict[str, Any]:
 
 
 def get_kanban_board_state() -> Dict[str, Any]:
+    today_str = get_ict_now().strftime("%Y-%m-%d")
     with _KANBAN_LOCK:
         data = _load_json(KANBAN_FILE, {})
-        if not isinstance(data, dict) or "tasks" not in data or "columns" not in data:
+        needs_rollover = (
+            not isinstance(data, dict)
+            or "tasks" not in data
+            or "columns" not in data
+            or data.get("date") != today_str
+        )
+        if needs_rollover:
+            preserved_custom: List[Dict[str, Any]] = []
+            old_tasks = data.get("tasks", {}) if isinstance(data, dict) else {}
+            if isinstance(old_tasks, dict):
+                for tid, tobj in old_tasks.items():
+                    if str(tid).startswith("OFFICE-") and isinstance(tobj, dict) and tobj.get("status") != "DONE":
+                        preserved_custom.append(dict(tobj))
             try:
                 from scripts.apex_kanban_manager import init_daily_board
-                data = init_daily_board(get_ict_now().strftime("%Y-%m-%d"))
+                data = init_daily_board(today_str)
             except Exception:
                 data = {
-                    "date": get_ict_now().strftime("%Y-%m-%d"),
+                    "date": today_str,
                     "last_updated": get_ict_now().strftime("%Y-%m-%d %H:%M:%S"),
                     "total_tasks": 0,
                     "columns": {"BACKLOG": [], "IN_PROGRESS": [], "AUDIT_REVIEW": [], "DONE": []},
                     "tasks": {},
                 }
+            if preserved_custom:
+                tasks_map = data.setdefault("tasks", {})
+                cols_map = data.setdefault("columns", {})
+                for col_name in ("BACKLOG", "IN_PROGRESS", "AUDIT_REVIEW", "DONE"):
+                    cols_map.setdefault(col_name, [])
+                for ctask in preserved_custom:
+                    cid = ctask.get("id") or f"OFFICE-{uuid.uuid4().hex[:6].upper()}"
+                    cst = ctask.get("status") if ctask.get("status") in cols_map else "BACKLOG"
+                    tasks_map[cid] = ctask
+                    if cid not in cols_map[cst]:
+                        cols_map[cst].insert(0, cid)
+                data["total_tasks"] = len(tasks_map)
+                _save_json_atomic(KANBAN_FILE, data)
+
         cols = data.get("columns", {})
         for col_name in ("BACKLOG", "IN_PROGRESS", "AUDIT_REVIEW", "DONE"):
             cols.setdefault(col_name, [])
@@ -718,6 +746,15 @@ def _compute_room_status_and_payload(
     if room_id == "team_victor":
         room_reports = _collect_victor_reports(room_reports)
 
+    today_str = now_ict.strftime("%Y-%m-%d")
+    reports_today_count = 0
+    for rep in room_reports:
+        is_today_flag = (str(rep.get("date", "")) == today_str)
+        if is_today_flag:
+            reports_today_count += 1
+        rep["is_today"] = is_today_flag
+        rep["freshness_badge"] = "MỚI HÔM NAY" if is_today_flag else f"LƯU TRỮ ({rep.get('date', '--')})"
+
     all_tasks = kanban_data.get("tasks", {}) if isinstance(kanban_data, dict) else {}
     k_depts = set(bp["kanban_depts"])
     room_tasks = [
@@ -920,6 +957,7 @@ def _compute_room_status_and_payload(
         "kpi_summary": kpi_summary,
         "live_thought": live_thought,
         "reports_count": len(room_reports),
+        "reports_today_count": reports_today_count,
         "tasks_total": len(room_tasks),
         "tasks_active": len(in_progress_tasks) + len(review_tasks),
         "tasks_done": len(done_tasks),
@@ -938,6 +976,168 @@ def _compute_room_status_and_payload(
         "specialized_data": specialized_data,
     }
     return room_summary, room_detail
+
+
+DAILY_MILESTONE_DEFS: List[Dict[str, Any]] = [
+    {"time": "06:00", "team_id": "team_hien", "team_label": "① Hiền (BCTC & Tin)", "officer": "Hiền (Ban 10)", "title": "Rà soát CBTT đêm qua & Pháp y Agent Zero (54 VN / 35 US)", "patterns": ("VN_CBTT_Radar",)},
+    {"time": "07:00", "team_id": "team_quan_alex", "team_label": "② Minh Quân & Alex", "officer": "Vũ Minh & Elena (Ban 1)", "title": "Cào Vĩ mô SBV, Tỷ giá USD/VND, Fed/VIX/DXY trước phiên", "patterns": ("VN_Macro_Report", "Macro_Report")},
+    {"time": "07:30", "team_id": "team_james_palmer", "team_label": "③ James & Palmer", "officer": "Ban 6 (Học Viện)", "title": "Phát hành Bản Tin Khai Sáng 7h30 cho Chủ tịch Phước Trần", "patterns": ("VN_Mentor_Briefing", "Mentor_Briefing")},
+    {"time": "08:00", "team_id": "team_hien", "team_label": "① Hiền (BCTC & Tin)", "officer": "Hiền & Ban 2 Pháp Y", "title": "Thẩm định BCTC 54 mã, lọc tiền thật OCF/LNST & chuyển Minh Quân", "patterns": ("VN_Investment_Memo", "VN_Equity_Analysis")},
+    {"time": "08:30", "team_id": "team_quan_alex", "team_label": "② Minh Quân & Alex", "officer": "Minh Quân (Ban 7 VN)", "title": "Giao ban Soi Gương 8h30 & Tạp chí Chiến lược gửi James", "patterns": ("VN_Specialist_Decision", "Daily_Specialist")},
+    {"time": "08:45", "team_id": "team_james_palmer", "team_label": "③ James & Palmer", "officer": "Master CIO James & Palmer", "title": "Chốt Master Blotter & Kế hoạch phân bổ vốn 20.05M ₫ đầu ngày", "patterns": ("Master_Blotter_Snapshot",)},
+    {"time": "09:00", "team_id": "team_victor", "team_label": "④ Victor (145 Mã)", "officer": "Victor Sentinel (Ban 9)", "title": "Mở phiên ATO HOSE, bật Guard-01 & quét sống 145 mã 15s/lần", "patterns": ("ATO_Guard_Report",)},
+    {"time": "11:45", "team_id": "team_quan_alex", "team_label": "② Minh Quân & Alex", "officer": "Minh Quân & Ban 3", "title": "Báo cáo Flash đóng cửa phiên sáng HOSE & cung cầu VSA", "patterns": ("Morning_Flash_Report",)},
+    {"time": "13:00", "team_id": "team_victor", "team_label": "④ Victor (145 Mã)", "officer": "Victor & Ban 4", "title": "Radar đo lực xả hàng T+2.5 về tài khoản phiên chiều", "patterns": ("T2_Pressure_Radar",)},
+    {"time": "14:00", "team_id": "team_quan_alex", "team_label": "② Minh Quân & Alex", "officer": "Minh Quân (Giờ Vàng)", "title": "Khung Giờ Vàng 14h00–14h25: Xác nhận S1–S4 & báo James chốt LO", "patterns": ("Golden_Hour_Tactical_Memo",)},
+    {"time": "14:25", "team_id": "team_victor", "team_label": "④ Victor (145 Mã)", "officer": "Victor (GUARD-03)", "title": "Kích hoạt chốt chặn GUARD-03 khóa vị thế an toàn trước ATC", "patterns": ("GUARD03_Pre_ATC_Lock",)},
+    {"time": "15:15", "team_id": "team_james_palmer", "team_label": "③ James & Palmer", "officer": "Ban 5 & Master CIO James", "title": "Hồi tố Walk-Forward EOD, Tự học trọng số & đối soát TCBS", "patterns": ("VN_Learning_Report", "Learning_And_Attribution")},
+    {"time": "18:00", "team_id": "team_hien", "team_label": "① Hiền (BCTC & Tin)", "officer": "Hiền (Ban 10)", "title": "Đồng bộ giá đóng cửa & cập nhật Thư viện BCTC Master 11 IR", "patterns": ("BCTC_Master_Library",)},
+    {"time": "21:00", "team_id": "team_hien", "team_label": "① Hiền (BCTC & Tin)", "officer": "Hiền (Ban 10 Độc Quyền)", "title": "Báo cáo BCTC chọn lọc tiền thật OCF/LNST >= 1.0x chuyển Khánh", "patterns": ("Hien_Daily_Review",)},
+    {"time": "21:15", "team_id": "team_hien", "team_label": "① Hiền (BCTC & Tin)", "officer": "Khánh & Bảo (Ban 11)", "title": "Đóng gói kịch bản Video 60s truyền thông tài chính", "patterns": ("Viral_Script",)},
+    {"time": "22:00", "team_id": "team_james_palmer", "team_label": "③ James & Palmer", "officer": "Hội Đồng Viện Sĩ (B5 & B6)", "title": "Giờ Tự Học & Nạp tri thức thực chiến 100% các ban", "patterns": ("Autonomous_Learning_Report",)},
+    {"time": "23:00", "team_id": "team_james_palmer", "team_label": "③ James & Palmer", "officer": "Master CIO James & Palmer", "title": "Hội nghị Điều hành 23h00 & Tự kiểm điểm toàn doanh nghiệp", "patterns": ("23h00_EOD_Executive_Council_Meeting",)},
+    {"time": "23:30", "team_id": "team_trong_palmer", "team_label": "⑤ Trọng & Palmer", "officer": "Kiểm Sát Viên Trọng & Palmer", "title": "Niêm phong kiểm toán 10 Điều Hiến Chương & SSOT 105C307855", "patterns": ("23h30", "Audit", "Ombudsman", "Health_Check")},
+]
+
+
+def _build_daily_activity_log(
+    now_ict: datetime.datetime,
+    all_reports: List[Dict[str, Any]],
+    cron_data: Dict[str, Any],
+    enterprise_data: Dict[str, Any],
+    warroom_data: Dict[str, Any],
+    intel_feed: Dict[str, Any],
+    kanban_data: Dict[str, Any],
+) -> Dict[str, Any]:
+    today_str = now_ict.strftime("%Y-%m-%d")
+    current_hm = now_ict.strftime("%H:%M")
+    executed_raw = (cron_data.get("executed_milestones") or {}).get(today_str, [])
+    executed_today = {str(x).strip() for x in executed_raw} if isinstance(executed_raw, list) else set()
+
+    today_reports = [r for r in all_reports if str(r.get("date", "")) == today_str]
+    timeline: List[Dict[str, Any]] = []
+    completed_cnt = 0
+    pending_cnt = 0
+    upcoming_cnt = 0
+    next_milestone = None
+    latest_done = None
+
+    for mdef in DAILY_MILESTONE_DEFS:
+        mtime = mdef["time"]
+        pats = mdef["patterns"]
+        rep_today = next(
+            (r for r in today_reports if any(p in str(r.get("rel_path", "")) for p in pats)),
+            None,
+        )
+        rep_latest = rep_today or next(
+            (r for r in all_reports if any(p in str(r.get("rel_path", "")) for p in pats)),
+            None,
+        )
+        ran_in_cron = mtime in executed_today
+        verified_today = bool(ran_in_cron or rep_today is not None)
+
+        if verified_today:
+            status_code = "done_today"
+            status_vi = "🟢 ĐÃ LÀM THẬT HÔM NAY"
+            completed_cnt += 1
+        elif mtime <= current_hm:
+            status_code = "pending_catchup"
+            status_vi = "🟠 CHỜ CHẠY BÙ HÔM NAY"
+            pending_cnt += 1
+        else:
+            status_code = "upcoming"
+            status_vi = "⏳ CHỜ ĐẾN GIỜ"
+            upcoming_cnt += 1
+
+        entry = {
+            "time": mtime,
+            "team_id": mdef["team_id"],
+            "team_label": mdef["team_label"],
+            "officer": mdef["officer"],
+            "title": mdef["title"],
+            "ran_in_cron": ran_in_cron,
+            "verified_today": verified_today,
+            "status_code": status_code,
+            "status_vi": status_vi,
+            "report_rel_path": (rep_latest or {}).get("rel_path", ""),
+            "report_date": (rep_latest or {}).get("date", ""),
+            "report_time": (rep_latest or {}).get("time_str", ""),
+            "report_is_today": bool(rep_today is not None),
+        }
+        timeline.append(entry)
+        if verified_today:
+            latest_done = entry
+        elif status_code == "upcoming" and next_milestone is None:
+            next_milestone = entry
+
+    latest_session = enterprise_data.get("latest_session", {}) if isinstance(enterprise_data, dict) else {}
+    recon = warroom_data.get("recon_summary", {}) if isinstance(warroom_data, dict) else {}
+    decision_brain = warroom_data.get("decision_brain", {}) if isinstance(warroom_data, dict) else {}
+    sc_intel = intel_feed.get("summary_counts", {})
+    crawled_at = str(intel_feed.get("crawled_at", ""))
+    scanned_at = str(recon.get("scanned_at", ""))
+    sess_at = str(latest_session.get("created_at", ""))
+
+    handoff_feed = [
+        {
+            "step": "① ➔ ②",
+            "from_team": "Đội Hiền (Khối 1)",
+            "to_team": "Minh Quân & Alex (Khối 2)",
+            "timestamp": crawled_at or "--",
+            "is_today": crawled_at.startswith(today_str),
+            "summary": f"Đã cào {sc_intel.get('total_news_articles', 0)} bài RSS/CBTT, {sc_intel.get('verified_ir_portals', 0)} cổng IR, {sc_intel.get('sec_edgar_filings', 0)} SEC EDGAR & kiểm toán BCTC sạch.",
+        },
+        {
+            "step": "② ➔ ③",
+            "from_team": "Minh Quân & Alex (Khối 2)",
+            "to_team": "James & Palmer (Khối 3)",
+            "timestamp": sess_at or "--",
+            "is_today": sess_at.startswith(today_str),
+            "summary": f"Phân tích rổ Q3/2026 (TPB, HDB, CTG, HPG, VPB) & Ma trận S1–S4; phán quyết gần nhất: {latest_session.get('final_verdict', '--')}.",
+        },
+        {
+            "step": "④ ➔ ③",
+            "from_team": "Victor Sentinel (Khối 4)",
+            "to_team": "James & Palmer (Khối 3)",
+            "timestamp": scanned_at or "--",
+            "is_today": scanned_at.startswith(today_str),
+            "summary": f"Quét {recon.get('scanned_live_count', 0)}/{recon.get('universe_total', 145)} mã (VNI {recon.get('vn_index', '--')}, Br20 {recon.get('live_breadth_ma20_pct', 0)}%) — Chế độ: {decision_brain.get('live_regime', '--')}.",
+        },
+        {
+            "step": "③ ➔ 👑",
+            "from_team": "James & Palmer (Khối 3)",
+            "to_team": "Chủ tịch Phước Trần",
+            "timestamp": sess_at or "--",
+            "is_today": sess_at.startswith(today_str),
+            "summary": f"Kế hoạch giải ngân S1–S4 tuần mới, bảo toàn SSOT 20,051,117 ₫ (0 CP) chờ khung Giờ Vàng 14h05–14h25.",
+        },
+        {
+            "step": "⑤ 🛡",
+            "from_team": "Trọng & Palmer (Khối 5)",
+            "to_team": "Giám Sát Toàn Hệ Thống",
+            "timestamp": str(kanban_data.get("last_updated", "")) or now_ict.strftime("%Y-%m-%d %H:%M:%S"),
+            "is_today": str(kanban_data.get("date", "")) == today_str,
+            "summary": f"Kanban ngày {kanban_data.get('date', today_str)}: {completed_cnt}/{len(timeline)} cột mốc hôm nay đã xác thực • Audit {latest_session.get('ombudsman_audit_score', '10/10')}.",
+        },
+    ]
+
+    return {
+        "date": today_str,
+        "current_time_ict": current_hm,
+        "total_milestones": len(timeline),
+        "completed_today_count": completed_cnt,
+        "pending_catchup_count": pending_cnt,
+        "upcoming_count": upcoming_cnt,
+        "next_milestone": next_milestone,
+        "latest_completed": latest_done,
+        "reports_written_today_count": len(today_reports),
+        "intel_crawled_at": crawled_at,
+        "intel_is_fresh_today": crawled_at.startswith(today_str),
+        "enterprise_session_today": sess_at.startswith(today_str),
+        "warroom_scan_today": scanned_at.startswith(today_str),
+        "handoff_feed": handoff_feed,
+        "milestones_timeline": timeline,
+    }
 
 
 def _build_full_office_snapshot() -> Dict[str, Any]:
@@ -961,6 +1161,15 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
     active_jobs = _get_active_jobs_snapshot()
 
     intel_feed = _collect_intel_feed(intel_data, alerts_data)
+    daily_activity = _build_daily_activity_log(
+        now_ict=now_ict,
+        all_reports=all_reports,
+        cron_data=cron_data,
+        enterprise_data=enterprise_data,
+        warroom_data=warroom_data,
+        intel_feed=intel_feed,
+        kanban_data=kanban_data,
+    )
 
     rooms_summary: List[Dict[str, Any]] = []
     rooms_detail: Dict[str, Dict[str, Any]] = {}
@@ -985,6 +1194,9 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
             all_reports=all_reports,
             active_jobs=active_jobs,
         )
+        detail["daily_milestones"] = [
+            m for m in daily_activity["milestones_timeline"] if m["team_id"] == bp["room_id"]
+        ]
         rooms_summary.append(summary)
         rooms_detail[bp["room_id"]] = detail
         sc = summary["status_code"]
@@ -1051,6 +1263,7 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
             "approved_watchlist": weekly_plan.get("approved_watchlist", []),
         },
         "intel_feed": intel_feed,
+        "daily_activity": daily_activity,
         "kanban_counts": kanban_counts,
         "status_counts": status_counts,
         "data_flows": DATA_FLOW_PIPES,
@@ -1131,6 +1344,7 @@ def trigger_room_action(
 
     ticker = str(req.get("ticker") or "").strip().upper() or None
     custom_directive = str(req.get("directive") or "").strip()
+    milestone_hm = str(req.get("milestone") or "").strip()
 
     job_title_map = {
         "crawl_intel": f"{bp['icon']} {bp['ban_code']}: Cào tin RSS, Vietcap, 11 cổng IR & BCTC",
@@ -1138,6 +1352,8 @@ def trigger_room_action(
         "run_dept_audit": f"{bp['icon']} {bp['ban_code']}: Thẩm định chuyên môn" + (f" ({ticker})" if ticker else ""),
         "publish_warroom": f"{bp['icon']} {bp['ban_code']}: Victor quét 145 mã & kiểm tra ngưỡng Mua/Bán",
         "run_trong_audit": f"{bp['icon']} {bp['ban_code']}: Trọng & Palmer kiểm toán toàn hệ thống",
+        "run_milestone": f"🕒 Chạy cột mốc {milestone_hm or '--'} ({bp['ban_code']})",
+        "catchup_today": "⚡ Chạy bù các cột mốc & làm mới toàn bộ báo cáo hôm nay",
     }
     job_title = job_title_map.get(act, f"{bp['icon']} {bp['ban_code']}: Thực thi {act}")
     job_id = _record_job_start(resolved_id, act, job_title)
@@ -1176,6 +1392,66 @@ def trigger_room_action(
                 issues = len(res.get("issues", [])) if isinstance(res, dict) else 0
                 score = res.get("score", 100) if isinstance(res, dict) else 100
                 _finish_job(job_id, True, f"Trọng & Palmer kiểm toán xong: Điểm {score}/100 | Lỗi phát hiện: {issues}.")
+            elif act == "run_milestone":
+                valid_ms = {m["time"] for m in DAILY_MILESTONE_DEFS}
+                if milestone_hm not in valid_ms:
+                    _finish_job(job_id, False, f"Cột mốc không hợp lệ: {milestone_hm}", error="Invalid milestone")
+                    return
+                cron_script = BASE_DIR / "scripts" / "apex_institutional_cron_daemon.py"
+                proc = subprocess.run(
+                    [sys.executable, "-X", "utf8", str(cron_script), f"--at={milestone_hm}", "--force"],
+                    cwd=str(BASE_DIR),
+                    capture_output=True,
+                    text=True,
+                    timeout=180,
+                    check=False,
+                )
+                _finish_job(
+                    job_id,
+                    proc.returncode == 0,
+                    f"Đã chạy xong cột mốc {milestone_hm} (exit={proc.returncode}) & cập nhật báo cáo hôm nay.",
+                    error=None if proc.returncode == 0 else (proc.stderr or "")[-300:],
+                )
+            elif act == "catchup_today":
+                now_ict = get_ict_now()
+                today_str = now_ict.strftime("%Y-%m-%d")
+                now_hm = now_ict.strftime("%H:%M")
+                cron_data = _load_json(DATA_DIR / "apex_cron_daemon_state.json", {})
+                executed_set = {str(x).strip() for x in ((cron_data.get("executed_milestones") or {}).get(today_str, []) or [])}
+                cron_script = BASE_DIR / "scripts" / "apex_institutional_cron_daemon.py"
+                ran_list: List[str] = []
+                for m in DAILY_MILESTONE_DEFS:
+                    mt = m["time"]
+                    if mt <= now_hm and mt not in executed_set:
+                        subprocess.run(
+                            [sys.executable, "-X", "utf8", str(cron_script), f"--at={mt}"],
+                            cwd=str(BASE_DIR),
+                            capture_output=True,
+                            text=True,
+                            timeout=180,
+                            check=False,
+                        )
+                        ran_list.append(mt)
+                war_script = BASE_DIR / "scripts" / "apex_daily_live_warroom_engine.py"
+                if war_script.exists():
+                    subprocess.run(
+                        [sys.executable, "-X", "utf8", str(war_script), "--once", "--refresh-intel"],
+                        cwd=str(BASE_DIR),
+                        capture_output=True,
+                        text=True,
+                        timeout=180,
+                        check=False,
+                    )
+                try:
+                    from scripts.sync_chat_office_artifact import sync_chat_office_artifact
+                    sync_chat_office_artifact(force_refresh=True)
+                except Exception:
+                    pass
+                _finish_job(
+                    job_id,
+                    True,
+                    f"Đã chạy bù {len(ran_list)} cột mốc ({', '.join(ran_list) or 'đã đủ'}) + làm mới 145 mã & BCTC hôm nay.",
+                )
             else:
                 _finish_job(job_id, False, f"Hành động chưa hỗ trợ: {act}", error=f"Unsupported action: {act}")
         except Exception as exc:

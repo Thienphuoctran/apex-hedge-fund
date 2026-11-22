@@ -103,12 +103,16 @@ class TestVirtualOfficeV1(unittest.TestCase):
         self.assertAlmostEqual(st["ssot"]["cash_vnd"], 20051117.0, places=0)
         self.assertEqual(st["ssot"]["holdings_count"], 0)
         self.assertGreater(len(st["intel_feed"]["feed_items"]), 0)
+        act = st.get("daily_activity", {})
+        self.assertEqual(act.get("total_milestones"), 18)
+        self.assertEqual(len(act.get("milestones_timeline", [])), 18)
+        self.assertEqual(len(act.get("handoff_feed", [])), 5)
         watchlist_syms = [w["symbol"] for w in st["weekly_plan_summary"]["approved_watchlist"]]
         for expected_sym in ("TPB", "HDB", "CTG", "HPG", "VPB"):
             self.assertIn(expected_sym, watchlist_syms)
 
     def test_03_all_6_room_details_and_legacy_aliases(self):
-        """Tất cả 6 phòng trả chi tiết hợp lệ; 5 Khối nghiệp vụ có báo cáo thật & LEGACY_ROOM_ALIAS tương thích ngược."""
+        """Tất cả 6 phòng trả chi tiết hợp lệ; 5 Khối nghiệp vụ có báo cáo thật & is_today + LEGACY_ROOM_ALIAS."""
         for bp in ROOMS_BLUEPRINT:
             rid = bp["room_id"]
             detail_res = get_virtual_office_room_detail(rid)
@@ -117,6 +121,9 @@ class TestVirtualOfficeV1(unittest.TestCase):
             self.assertEqual(room["room_id"], rid)
             if rid != "room_lounge":
                 self.assertGreater(len(room["recent_reports"]), 0, f"{rid} bị thiếu báo cáo thật")
+                for rep in room["recent_reports"]:
+                    self.assertIn("is_today", rep)
+                    self.assertIn("freshness_badge", rep)
 
         for old_id, new_id in (
             ("room_ban_10", "team_hien"),
@@ -226,6 +233,15 @@ class TestVirtualOfficeV1(unittest.TestCase):
         sa, res_a = self._post("/api/office/room_action", {"room_id": "team_james_palmer", "action": "sync_office"})
         self.assertEqual(sa, 200)
         self.assertTrue(res_a["ok"])
+
+    def test_06_new_day_rollover_no_fake_done(self):
+        """Đảm bảo sang ngày mới không tự đánh dấu DONE giả khi cột mốc chưa thật sự chạy."""
+        from unittest.mock import patch
+        from scripts.apex_kanban_manager import init_daily_board
+        with patch("scripts.apex_kanban_manager.save_kanban"):
+            board = init_daily_board("2099-01-01")
+        self.assertEqual(board["date"], "2099-01-01")
+        self.assertEqual(len(board["columns"]["DONE"]), 0)
 
 
 if __name__ == "__main__":

@@ -840,6 +840,12 @@ def execute_milestone(milestone_id: str) -> bool:
 
         if not DRY_RUN_MODE:
             mark_milestone_dispatched(date_str, milestone_id, note=f"Completed {milestone_id} via V3.0 Orchestrator")
+            try:
+                from scripts.sync_chat_office_artifact import sync_chat_office_artifact
+                sync_chat_office_artifact(force_refresh=True)
+                log_event(f"🔄 Đã đồng bộ Chat Artifact Văn phòng 2.5D sau cột mốc {milestone_id}.")
+            except Exception as sync_art_err:
+                log_event(f"⚠️ [ARTIFACT SYNC] Cảnh báo làm mới Artifact sau {milestone_id}: {sync_art_err}")
 
         log_event(f"✅ HOÀN TẤT CỘT MỐC: {milestone_id}")
         return True
@@ -874,18 +880,20 @@ def run_daemon(poll_interval: int = 15):
 
             executed_today = state["executed_milestones"][today_str]
 
-            # Cơ chế Catch-Up bù cột mốc bị lỡ nếu Cloud Render vừa thức dậy sau khi ngủ đông
-            # Ở chế độ Cloud Compact (Render Free 512MB), chỉ chạy bù tối đa 1 cột mốc quan trọng mỗi chu kỳ để tránh tăng RAM đột ngột lúc khởi động
+            # Cơ chế Catch-Up bù cột mốc bị lỡ:
+            # - Trên PC Windows (local): bù tuần tự TẤT CẢ cột mốc trong SCHEDULED_MILESTONES (<= current_hm) chưa chạy hôm nay để ngày mới không bị thiếu báo cáo khi Chủ tịch bật máy lúc 07h30+.
+            # - Trên Cloud Compact (Render Free 512MB): giữ nhẹ, bù tối đa 1 cột mốc cốt lõi mỗi chu kỳ.
             catchup_core = ["07:30", "08:30", "15:15"]
             targets_to_run = []
             if current_hm in SCHEDULED_MILESTONES and current_hm not in executed_today:
                 targets_to_run.append(current_hm)
             is_light_cron = os.environ.get("APEX_CLOUD_COMPACT_MODE", "").strip().lower() in ("1", "true", "yes")
-            for cm in catchup_core:
-                if cm < current_hm and cm not in executed_today and cm not in targets_to_run:
+            catchup_candidates = catchup_core if is_light_cron else SCHEDULED_MILESTONES
+            for cm in catchup_candidates:
+                if cm <= current_hm and cm not in executed_today and cm not in targets_to_run:
                     if is_light_cron and len(targets_to_run) >= 1:
                         continue
-                    log_event(f"🔄 [CATCH-UP] Bù cột mốc quan trọng {cm} bị lỡ do container thức dậy sau {cm}.")
+                    log_event(f"🔄 [CATCH-UP] Bù cột mốc {cm} ngày {today_str} (đảm bảo dữ liệu ngày mới đầy đủ khi bật máy).")
                     targets_to_run.append(cm)
 
             any_milestone_ok = False

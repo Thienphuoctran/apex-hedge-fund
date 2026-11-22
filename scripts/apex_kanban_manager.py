@@ -228,20 +228,56 @@ def save_kanban(data: dict) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
+def _load_executed_milestones_today(date_str: str) -> set[str]:
+    cron_state_file = DATA_DIR / "apex_cron_daemon_state.json"
+    if not cron_state_file.exists():
+        return set()
+    try:
+        raw = json.loads(cron_state_file.read_text(encoding="utf-8"))
+        executed = (raw.get("executed_milestones") or {}).get(date_str, [])
+        if isinstance(executed, list):
+            return {str(x).strip() for x in executed}
+    except Exception:
+        pass
+    return set()
+
+
+def _is_output_written_on_date(output_rel: str, date_str: str) -> bool:
+    if not output_rel or "{" in output_rel:
+        return False
+    low = output_rel.lower()
+    if not (low.endswith(".md") or low.endswith(".json")):
+        return False
+    p = BASE_DIR / output_rel
+    if not p.exists():
+        return False
+    try:
+        mtime_dt = datetime.datetime.fromtimestamp(p.stat().st_mtime)
+        return mtime_dt.strftime("%Y-%m-%d") == date_str
+    except Exception:
+        return False
+
+
 def init_daily_board(date_str: str) -> dict:
     tasks = []
-    now_time = datetime.datetime.now().strftime("%H:%M")
+    now_ict = datetime.datetime.now(datetime.timezone.utc).astimezone(
+        datetime.timezone(datetime.timedelta(hours=7))
+    )
+    now_time = now_ict.strftime("%H:%M")
+    executed_today = _load_executed_milestones_today(date_str)
 
     for t in DEFAULT_DAILY_TASKS:
         item = dict(t)
         item["output"] = item["output"].replace("{date}", date_str)
         item["created_at"] = f"{date_str} {t['scheduled_time']}"
-        # Đánh dấu sơ bộ nếu qua giờ
         sched = t["scheduled_time"].split("-")[0]
-        if sched <= now_time and sched not in ["09:00", "09:00-15:00"]:
+
+        ran_in_cron = sched in executed_today
+        file_written = _is_output_written_on_date(item["output"], date_str)
+        if ran_in_cron or (sched not in ("09:00", "09:00-15:00") and file_written):
             item["status"] = "DONE"
             item["completed_at"] = f"{date_str} {sched}"
-        elif sched in ["09:00", "09:00-15:00"] and "09:00" <= now_time <= "15:00":
+        elif t["scheduled_time"] in ("09:00", "09:00-15:00") and "09:00" <= now_time <= "15:00":
             item["status"] = "IN_PROGRESS"
         else:
             item["status"] = "BACKLOG"

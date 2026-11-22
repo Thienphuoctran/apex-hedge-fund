@@ -218,6 +218,10 @@
                 <button class="office-dock-btn active" data-dock="overview-map">
                     <span>🏛️</span><span>Toàn cảnh HQ</span>
                 </button>
+                <button class="office-dock-btn" data-dock="activity">
+                    <span>🕒</span><span>Nhật ký hôm nay</span>
+                    <span class="office-dock-badge" id="dock-badge-activity">0/18</span>
+                </button>
                 <button class="office-dock-btn" data-dock="kanban">
                     <span>📋</span><span>Công việc</span>
                     <span class="office-dock-badge" id="dock-badge-kanban">0</span>
@@ -1223,6 +1227,10 @@
         const kbBadge = document.getElementById("dock-badge-kanban");
         if (kbBadge) kbBadge.innerText = String(kCounts.total || 0);
 
+        const actData = data.daily_activity || {};
+        const actBadge = document.getElementById("dock-badge-activity");
+        if (actBadge) actBadge.innerText = `${actData.completed_today_count || 0}/${actData.total_milestones || 18}`;
+
         const intelCnt = ((data.intel_feed || {}).summary_counts || {}).total_news_articles || 0;
         const intelBadge = document.getElementById("dock-badge-intel");
         if (intelBadge) intelBadge.innerText = String(intelCnt);
@@ -1450,13 +1458,28 @@
             ? r.recent_reports.map((rep) => `
                 <button class="office-report-item" data-rel-path="${esc(rep.rel_path)}">
                     <div style="min-width:0;">
+                        <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px;">
+                            <span style="font-size:9.5px;font-weight:800;padding:1px 6px;border-radius:9999px;background:${rep.is_today ? "#dcfce7" : "#f1f5f9"};color:${rep.is_today ? "#166534" : "#475569"};">${rep.is_today ? "🟢 MỚI HÔM NAY" : `⚪ LƯU TRỮ (${esc(rep.date)})`}</span>
+                            <span style="font-size:10px;color:#64748b;">${esc(rep.time_str)} • ${esc(rep.shift_label)}</span>
+                        </div>
                         <div style="font-size:12px;font-weight:700;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(rep.title)}</div>
-                        <div style="font-size:10.5px;color:#64748b;">${esc(rep.date)} ${esc(rep.time_str)} • ${esc(rep.shift_label)}</div>
                     </div>
                     <span style="font-size:11px;font-weight:700;color:#4f46e5;flex-shrink:0;">${typeof window.openReportModal === "function" ? "Đọc →" : "Copy lệnh →"}</span>
                 </button>
             `).join("")
             : `<div style="font-size:12px;color:#64748b;">Chưa có tệp báo cáo Markdown riêng trong khối này.</div>`;
+
+        const milestonesHtml = (r.daily_milestones || []).length
+            ? r.daily_milestones.map((m) => `
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:11px;background:#ffffff;border:1px solid ${m.verified_today ? "#86efac" : "#e2e8f0"};border-radius:8px;padding:6px 8px;margin-bottom:4px;">
+                    <div style="min-width:0;">
+                        <div><strong>${esc(m.time)}</strong> • ${esc(m.status_vi)}</div>
+                        <div style="color:#475569;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.title)}</div>
+                    </div>
+                    <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('${esc(r.room_id)}','run_milestone',{milestone:'${esc(m.time)}'})" style="flex-shrink:0;">▶ Chạy</button>
+                </div>
+            `).join("")
+            : "";
 
         const votesHtml = (r.latest_votes || []).map((v) => `
             <div style="font-size:11.5px;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:7px 9px;margin-bottom:5px;">
@@ -1517,6 +1540,15 @@
             ${renderSpecializedSection(r)}
 
             ${votesHtml ? `<div class="office-section-box"><div class="office-section-title"><span>🗣️ Phát Ngôn Hội Đồng Gần Nhất</span></div>${votesHtml}</div>` : ""}
+
+            ${milestonesHtml ? `
+            <div class="office-section-box">
+                <div class="office-section-title">
+                    <span>🕒 Cột Mốc Hôm Nay Của Khối (${(r.daily_milestones || []).filter((x) => x.verified_today).length}/${(r.daily_milestones || []).length})</span>
+                    <button class="office-btn-sm" onclick="window.ApexVirtualOffice.openDockModal('activity')">Mở Nhật ký 18 mốc</button>
+                </div>
+                ${milestonesHtml}
+            </div>` : ""}
 
             <div class="office-section-box">
                 <div class="office-section-title">
@@ -1715,7 +1747,8 @@
         });
         const backdrop = document.getElementById("office-modal-backdrop");
         if (backdrop) backdrop.classList.add("open");
-        if (mode === "kanban") renderKanbanModal();
+        if (mode === "activity") renderActivityModal();
+        else if (mode === "kanban") renderKanbanModal();
         else if (mode === "intel") renderIntelModal();
         else if (mode === "summary") renderSummaryModal();
         else if (mode === "lounge") renderLoungeModal();
@@ -1732,8 +1765,72 @@
     }
 
     function refreshActiveModalIfNeeded() {
-        if (state.activeModal === "intel") renderIntelModal();
+        if (state.activeModal === "activity") renderActivityModal();
+        else if (state.activeModal === "intel") renderIntelModal();
         else if (state.activeModal === "summary") renderSummaryModal();
+    }
+
+    function renderActivityModal() {
+        const d = state.liveData || {};
+        const act = d.daily_activity || {};
+        const timeline = act.milestones_timeline || [];
+        const handoffs = act.handoff_feed || [];
+        document.getElementById("office-modal-icon").innerText = "🕒";
+        document.getElementById("office-modal-title").innerText = `Nhật Ký Hoạt Động & Bằng Chứng Làm Việc Ngày ${act.date || "--"}`;
+        document.getElementById("office-modal-sub").innerText = `Giờ hiện tại: ${act.current_time_ict || "--"} ICT • Đã làm thật hôm nay: ${act.completed_today_count || 0}/${act.total_milestones || 18} cột mốc • Báo cáo mới hôm nay: ${act.reports_written_today_count || 0} tệp`;
+
+        const body = document.getElementById("office-modal-body");
+        body.innerHTML = `
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-bottom:12px;">
+                <div class="office-section-box"><div class="office-section-title">🟢 Đã Làm Thật Hôm Nay</div><strong style="font-size:18px;color:#059669;">${esc(act.completed_today_count || 0)}/${esc(act.total_milestones || 18)}</strong><div style="font-size:11px;color:#64748b;">Cột mốc đã xuất bản trong ngày</div></div>
+                <div class="office-section-box"><div class="office-section-title">🟠 Chờ Chạy Bù</div><strong style="font-size:18px;color:#d97706;">${esc(act.pending_catchup_count || 0)}</strong><div style="font-size:11px;color:#64748b;">Mốc đã qua giờ khi máy chưa bật</div></div>
+                <div class="office-section-box"><div class="office-section-title">📑 Tệp Báo Cáo Mới Hôm Nay</div><strong style="font-size:18px;color:#4f46e5;">${esc(act.reports_written_today_count || 0)} tệp</strong><div style="font-size:11px;color:#64748b;">Tin Hiền hôm nay: ${act.intel_is_fresh_today ? "✅ Có" : "⏳ Chờ quét"}</div></div>
+                <div class="office-section-box" style="display:flex;flex-direction:column;justify-content:center;gap:6px;">
+                    <button class="office-ctrl-btn primary" onclick="window.ApexVirtualOffice.triggerRoomAction('team_hien','catchup_today',{})">⚡ Chạy Bù &amp; Cập Nhật Hôm Nay</button>
+                    <div style="font-size:10.5px;color:#64748b;text-align:center;">Kế tiếp: ${act.next_milestone ? `${esc(act.next_milestone.time)} (${esc(act.next_milestone.team_label)})` : "Đã hết lịch hôm nay"}</div>
+                </div>
+            </div>
+
+            <div class="office-section-box" style="margin-bottom:12px;">
+                <div class="office-section-title"><span>🤝 Sổ Giao Nhận Liên Phòng Ban (Hiền ➔ Quân &amp; Alex ➔ James &amp; Palmer ◀── Victor | Trọng &amp; Palmer)</span></div>
+                ${handoffs.map((h) => `
+                    <div class="office-news-item" style="margin-bottom:6px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px;">
+                            <div style="font-size:12px;font-weight:800;color:#0f172a;">
+                                <span style="color:#4f46e5;">${esc(h.step)}</span> ${esc(h.from_team)} ➔ ${esc(h.to_team)}
+                            </div>
+                            <span style="font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:9999px;background:${h.is_today ? "#dcfce7" : "#f1f5f9"};color:${h.is_today ? "#166534" : "#475569"};">
+                                ${h.is_today ? "🟢 Hôm nay" : "⚪ Kỳ gần nhất"} • ${esc(h.timestamp)}
+                            </span>
+                        </div>
+                        <div style="font-size:11.5px;color:#334155;">${esc(h.summary)}</div>
+                    </div>
+                `).join("")}
+            </div>
+
+            <div class="office-section-box">
+                <div class="office-section-title"><span>📋 Bằng Chứng Làm Việc 18 Cột Mốc Trong Ngày (${esc(act.date || "--")})</span></div>
+                <table class="office-table">
+                    <thead><tr><th>Giờ</th><th>Khối &amp; Phụ Trách</th><th>Nhiệm Vụ Chuyên Môn</th><th>Trạng Thái Hôm Nay</th><th>Thao Tác</th></tr></thead>
+                    <tbody>
+                        ${timeline.map((m) => `
+                            <tr>
+                                <td style="font-family:'JetBrains Mono',monospace;font-weight:800;">${esc(m.time)}</td>
+                                <td><strong>${esc(m.team_label)}</strong><div style="font-size:10.5px;color:#64748b;">${esc(m.officer)}</div></td>
+                                <td>${esc(m.title)}<div style="font-size:10.5px;color:#64748b;">${m.report_rel_path ? `${m.report_is_today ? "🟢 File mới hôm nay" : `File gần nhất (${esc(m.report_date)})`}: ${esc(m.report_rel_path)}` : "Chưa có tệp xuất"}</div></td>
+                                <td><span style="font-size:11px;font-weight:800;color:${m.status_code === "done_today" ? "#059669" : (m.status_code === "pending_catchup" ? "#d97706" : "#64748b")};">${esc(m.status_vi)}</span></td>
+                                <td>
+                                    <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                                        ${m.report_rel_path ? `<button class="office-btn-sm" onclick="window.openReportModal ? window.openReportModal('${esc(m.report_rel_path)}') : window.ApexVirtualOffice.openRoomDrawer('${esc(m.team_id)}')">📖 Đọc</button>` : ""}
+                                        <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('${esc(m.team_id)}','run_milestone',{milestone:'${esc(m.time)}'})">▶ Chạy</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        `).join("")}
+                    </tbody>
+                </table>
+            </div>
+        `;
     }
 
     async function renderKanbanModal() {

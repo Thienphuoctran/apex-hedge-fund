@@ -1810,10 +1810,11 @@ class ApexCloudSupervisor:
                     request_queue_size = 32
 
                 ApexSupervisorHTTPHandler.supervisor_ref = self
-                self.http_server = _DaemonThreadingHTTPServer(("0.0.0.0", self.port), ApexSupervisorHTTPHandler)
+                bind_host = os.environ.get("APEX_BIND_HOST", "0.0.0.0").strip() or "0.0.0.0"
+                self.http_server = _DaemonThreadingHTTPServer((bind_host, self.port), ApexSupervisorHTTPHandler)
                 t = threading.Thread(target=self.http_server.serve_forever, daemon=True)
                 t.start()
-                log_sup(f"🌐 [IMMORTAL WEB SERVER] Đã mở cổng http://0.0.0.0:{self.port} TỨC THÌ (Healthcheck: /api/health)")
+                log_sup(f"🌐 [IMMORTAL WEB SERVER] Đã mở cổng http://{bind_host}:{self.port} TỨC THÌ (Healthcheck: /api/health)")
             except Exception as e:
                 log_sup(f"[!] Cảnh báo mở Web Port {self.port}: {e}. Tiếp tục chạy các dịch vụ ngầm bình thường.")
                 self.http_server = None
