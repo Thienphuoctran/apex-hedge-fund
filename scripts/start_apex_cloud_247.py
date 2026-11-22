@@ -822,6 +822,77 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
 
+        elif path == "/api/office/live_status":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_virtual_office_engine import get_virtual_office_live_state
+                force_flag = query.get("force", ["0"])[0] in ("1", "true", "yes")
+                payload = get_virtual_office_live_state(force_refresh=force_flag)
+                self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/office/room":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_virtual_office_engine import get_virtual_office_room_detail
+                room_id = query.get("id", [""])[0].strip()
+                force_flag = query.get("force", ["0"])[0] in ("1", "true", "yes")
+                payload = get_virtual_office_room_detail(room_id=room_id, force_refresh=force_flag)
+                self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/office/kanban":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_virtual_office_engine import get_kanban_board_state
+                board = get_kanban_board_state()
+                self.wfile.write(json.dumps({"ok": True, **board}, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/office/jobs":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_virtual_office_engine import get_jobs_list
+                self.wfile.write(json.dumps({"ok": True, "jobs": get_jobs_list()}, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path in ("/api/office/assets/office.css", "/api/office/assets/office.js"):
+            fname = "office.css" if path.endswith(".css") else "office.js"
+            ctype = "text/css; charset=utf-8" if fname.endswith(".css") else "application/javascript; charset=utf-8"
+            asset_path = BASE_DIR / "dashboard" / "office" / fname
+            if not asset_path.exists():
+                self.send_response(404)
+                self.send_header("Content-Type", "text/plain; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(f"Asset not found: {fname}".encode("utf-8"))
+                return
+            self.send_response(200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            self.wfile.write(asset_path.read_bytes())
+            return
+
         else:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -1311,6 +1382,79 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.send_header("Cache-Control", "no-cache")
                 self.end_headers()
                 self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+        elif parsed_url.path == "/api/office/room_action":
+            try:
+                content_length = int(self.headers.get("Content-Length", 0))
+                raw_body = self.rfile.read(content_length).decode("utf-8") if content_length > 0 else "{}"
+                req_data = json.loads(raw_body) if raw_body.strip() else {}
+            except Exception:
+                req_data = {}
+            try:
+                from scripts.apex_virtual_office_engine import trigger_room_action
+                room_id = str(req_data.get("room_id") or "").strip()
+                action = str(req_data.get("action") or "").strip()
+                res = trigger_room_action(room_id=room_id, action=action, payload=req_data)
+                status_code = 200 if res.get("ok") else 400
+                self.send_response(status_code)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+        elif parsed_url.path == "/api/office/kanban":
+            try:
+                content_length = int(self.headers.get("Content-Length", 0))
+                raw_body = self.rfile.read(content_length).decode("utf-8") if content_length > 0 else "{}"
+                req_data = json.loads(raw_body) if raw_body.strip() else {}
+            except Exception:
+                req_data = {}
+            try:
+                from scripts.apex_virtual_office_engine import (
+                    create_kanban_task,
+                    move_kanban_task,
+                    delete_kanban_task,
+                )
+                op = str(req_data.get("op") or "").strip().lower()
+                if op == "create":
+                    res = create_kanban_task(
+                        title=str(req_data.get("title") or ""),
+                        dept=str(req_data.get("dept") or "Ban 8"),
+                        assignee=str(req_data.get("assignee") or "Trưởng Ban"),
+                        priority=str(req_data.get("priority") or "HIGH"),
+                        scheduled_time=str(req_data.get("scheduled_time") or ""),
+                        output_note=str(req_data.get("output") or ""),
+                        status=str(req_data.get("status") or "BACKLOG"),
+                    )
+                elif op == "move":
+                    res = move_kanban_task(
+                        task_id=str(req_data.get("task_id") or "").strip(),
+                        new_status=str(req_data.get("status") or "").strip(),
+                    )
+                elif op == "delete":
+                    res = delete_kanban_task(task_id=str(req_data.get("task_id") or "").strip())
+                else:
+                    raise ValueError(f"Thao tác Kanban không hợp lệ: {op}")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except ValueError as ve:
+                self.send_response(400)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(ve)}, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.send_response(500)
                 self.send_header("Content-Type", "application/json; charset=utf-8")

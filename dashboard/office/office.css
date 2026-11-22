@@ -1,0 +1,672 @@
+/* ============================================================================
+   APEX VIRTUAL OFFICE 2.5D — LIGHT MODERN ISOMETRIC HQ STYLESHEET
+   Scoped strictly inside .apex-office-shell so existing dark-mode tabs & modals
+   remain 100% untouched.
+   ============================================================================ */
+
+.apex-office-shell {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 230px);
+    min-height: 660px;
+    max-height: 860px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: radial-gradient(circle at 30% 20%, #effbe4 0%, #ddf2cb 52%, #cbe6b5 100%);
+    border: 1px solid rgba(134, 239, 172, 0.7);
+    box-shadow: 0 20px 50px rgba(2, 6, 23, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0f172a;
+    user-select: none;
+}
+
+.apex-office-shell.is-fullscreen {
+    position: fixed;
+    inset: 12px;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    z-index: 950;
+    border-radius: 16px;
+}
+
+.apex-office-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+    touch-action: none;
+}
+
+.apex-office-canvas:active {
+    cursor: grabbing;
+}
+
+/* HUD GLASS CARDS */
+.office-hud-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(203, 213, 225, 0.85);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    color: #0f172a;
+}
+
+/* TOP LEFT: STATUS LEGEND & FILTER */
+.office-hud-topleft {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 15;
+    padding: 10px 12px;
+    min-width: 186px;
+}
+
+.office-hud-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.office-filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.office-filter-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+    transition: all 0.15s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.office-filter-item:hover {
+    background: #f1f5f9;
+}
+
+.office-filter-item.active {
+    background: #eef2ff;
+    border-color: #a5b4fc;
+    color: #3730a3;
+}
+
+.office-dot-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.office-status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.office-status-dot.working { background: #10b981; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); }
+.office-status-dot.waiting_approval { background: #f59e0b; box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2); }
+.office-status-dot.alert_veto { background: #ef4444; box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25); }
+.office-status-dot.standby { background: #64748b; box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.15); }
+
+.office-filter-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 1px 7px;
+    border-radius: 9999px;
+}
+
+/* TOP CENTER: ENTERPRISE LIVE TICKER & JOB BANNER */
+.office-hud-topcenter {
+    position: absolute;
+    top: 14px;
+    left: 44%;
+    transform: translateX(-50%);
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    max-width: min(490px, calc(100% - 620px));
+    pointer-events: none;
+}
+
+.office-live-pill {
+    pointer-events: auto;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.office-job-banner {
+    pointer-events: auto;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    background: rgba(236, 253, 245, 0.96);
+    border: 1px solid #6ee7b7;
+    color: #065f46;
+    font-size: 11.5px;
+    font-weight: 700;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.18);
+}
+
+.office-job-banner.show {
+    display: inline-flex;
+}
+
+/* TOP RIGHT: ZOOM & ACTION CONTROLS */
+.office-hud-topright {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+}
+
+.office-ctrl-btn {
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #1e293b;
+    border-radius: 9px;
+    padding: 6px 11px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.office-ctrl-btn:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    transform: translateY(-1px);
+}
+
+.office-ctrl-btn.primary {
+    background: #4f46e5;
+    border-color: #4338ca;
+    color: #ffffff;
+}
+
+.office-ctrl-btn.primary:hover {
+    background: #4338ca;
+}
+
+/* BOTTOM FLOATING DOCK */
+.office-hud-dock {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 18;
+    padding: 6px 8px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: calc(100% - 28px);
+    overflow-x: auto;
+}
+
+.office-dock-btn {
+    border: 1px solid transparent;
+    background: transparent;
+    color: #334155;
+    border-radius: 9999px;
+    padding: 7px 13px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+.office-dock-btn:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.office-dock-btn.active {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.office-dock-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 800;
+    background: #e2e8f0;
+    color: #1e293b;
+    padding: 1px 6px;
+    border-radius: 9999px;
+}
+
+.office-dock-btn.active .office-dock-badge {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+.office-dock-sep {
+    width: 1px;
+    height: 20px;
+    background: #cbd5e1;
+    margin: 0 2px;
+    flex-shrink: 0;
+}
+
+/* SIDE DRAWER (SLIDE FROM RIGHT ON ROOM CLICK) */
+.office-drawer {
+    position: absolute;
+    top: 64px;
+    right: 14px;
+    bottom: 72px;
+    width: 450px;
+    max-width: calc(100% - 28px);
+    z-index: 25;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    border: 1px solid #cbd5e1;
+    border-radius: 18px;
+    box-shadow: -8px 16px 40px rgba(15, 23, 42, 0.16);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(calc(100% + 30px));
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+    overflow: hidden;
+    user-select: text;
+}
+
+.office-drawer.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.office-drawer-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    background: #f8fafc;
+}
+
+.office-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.office-drawer-close {
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #475569;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.office-drawer-close:hover {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
+
+.office-section-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 11px 12px;
+}
+
+.office-section-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #475569;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.office-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.office-status-pill.working { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+.office-status-pill.waiting_approval { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+.office-status-pill.alert_veto { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.office-status-pill.standby { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+.office-btn-action {
+    width: 100%;
+    border: none;
+    background: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 12.5px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.office-btn-action:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+
+.office-btn-action:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.office-btn-sm {
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #1e293b;
+    border-radius: 7px;
+    padding: 4px 9px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.12s ease;
+}
+
+.office-btn-sm:hover {
+    background: #eef2ff;
+    border-color: #818cf8;
+    color: #3730a3;
+}
+
+.office-report-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 9px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.14s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.office-report-item:hover {
+    border-color: #6366f1;
+    background: #eef2ff;
+}
+
+.office-news-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 9px 11px;
+    margin-bottom: 7px;
+}
+
+.office-news-item:last-child {
+    margin-bottom: 0;
+}
+
+/* OFFICE OVERLAY MODALS (KANBAN / INTEL / OVERVIEW / LOUNGE) */
+.office-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 40;
+    background: rgba(15, 23, 42, 0.48);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    user-select: text;
+}
+
+.office-modal-backdrop.open {
+    display: flex;
+}
+
+.office-modal-box {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 18px;
+    box-shadow: 0 24px 64px rgba(15, 23, 42, 0.25);
+    width: min(1080px, 100%);
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #0f172a;
+}
+
+.office-modal-header {
+    padding: 14px 18px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.office-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 18px;
+}
+
+/* KANBAN GRID */
+.office-kanban-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(210px, 1fr));
+    gap: 12px;
+    align-items: start;
+}
+
+.office-kanban-col {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px;
+    min-height: 300px;
+    max-height: 460px;
+    display: flex;
+    flex-direction: column;
+}
+
+.office-kanban-list {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 2px;
+}
+
+.office-kanban-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #6366f1;
+    border-radius: 9px;
+    padding: 9px 10px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.office-kanban-card.prio-CRITICAL,
+.office-kanban-card.prio-SUPREME {
+    border-left-color: #ef4444;
+}
+
+.office-kanban-card.prio-HIGH {
+    border-left-color: #f59e0b;
+}
+
+.office-input,
+.office-select {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 12.5px;
+    background: #ffffff;
+    color: #0f172a;
+    outline: none;
+}
+
+.office-input:focus,
+.office-select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+/* LOUNGE / POOL / SIMULATOR */
+.office-lounge-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.office-lounge-tab {
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    border-radius: 9px;
+    padding: 7px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.office-lounge-tab.active {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+}
+
+.office-pool-canvas {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    border-radius: 14px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+    cursor: crosshair;
+    touch-action: none;
+}
+
+.office-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.office-table th {
+    text-align: left;
+    padding: 8px 10px;
+    background: #f1f5f9;
+    color: #475569;
+    font-weight: 800;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.office-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+}
+
+@media (max-width: 960px) {
+    .office-hud-topcenter {
+        display: none;
+    }
+    .office-kanban-grid {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .apex-office-shell {
+        height: 580px;
+        min-height: 560px;
+    }
+    .office-hud-topleft {
+        display: none;
+    }
+    .office-drawer {
+        top: 56px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+    }
+    .office-kanban-grid {
+        grid-template-columns: 1fr;
+    }
+}

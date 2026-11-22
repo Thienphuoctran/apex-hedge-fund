@@ -1500,6 +1500,7 @@ def generate_portal_html(
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <link rel="stylesheet" href="/api/office/assets/office.css?v=1">
     <style>
         :root {{
             --bg-base: #070a12;
@@ -4060,25 +4061,36 @@ def generate_portal_html(
         </section>
 
         {db_milestone_banner}
-        <!-- TABS NAV (TINH GỌN ĐÚNG 3 PHÒNG THEO CHỈ THỊ CHỦ TỊCH) -->
+        <!-- TABS NAV (VĂN PHÒNG 2.5D LÀM MÀN HÌNH CHÍNH + 3 PHÒNG CHUYÊN SÂU) -->
         <nav class="tab-nav">
-            <button class="tab-btn active" onclick="switchTab('reports')">
-                <span>📑</span> <span>1. Thư Viện Báo Cáo 18 Cột Mốc</span>
+            <button class="tab-btn active" id="btn-tab-office" onclick="switchTab('office')">
+                <span>🏢</span> <span>0. Văn Phòng 2.5D (Trụ Sở)</span>
+                <span class="live-badge" style="background: rgba(16, 185, 129, 0.22); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); padding: 2px 7px; font-size: 10px; margin-left: 3px; border-radius: 9999px;">● 12 BAN LIVE</span>
+            </button>
+            <button class="tab-btn" onclick="switchTab('reports')">
+                <span>📑</span> <span>1. Thư Viện Báo Cáo</span>
                 <span class="tab-badge" id="nav-total-count">{total_reports_count}</span>
             </button>
             <button class="tab-btn" id="btn-tab-war-room" onclick="switchTab('war-room')">
-                <span>⚡</span> <span>2. Phòng Tác Chiến Trong Ngày (09h00–16h00)</span>
-                <span class="live-badge" style="background: rgba(16, 185, 129, 0.22); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); padding: 2px 8px; font-size: 10.5px; margin-left: 4px; border-radius: 9999px;">● TỰ ĐỘNG 145 MÃ LIVE</span>
+                <span>⚡</span> <span>2. Phòng Tác Chiến Live</span>
+                <span class="live-badge" style="background: rgba(16, 185, 129, 0.22); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); padding: 2px 7px; font-size: 10px; margin-left: 3px; border-radius: 9999px;">● 145 MÃ LIVE</span>
             </button>
             <button class="tab-btn" onclick="switchTab('portfolio')">
-                <span>🎖️</span> <span>3. Trung Tâm Chỉ Huy James V3.0, Két Tiền Thật &amp; TradingView</span>
+                <span>🎖️</span> <span>3. Chỉ Huy James &amp; TradingView</span>
             </button>
         </nav>
 
         <!-- ========================================================
+             TAB 0 (MÀN HÌNH CHÍNH): VĂN PHÒNG TRỰC QUAN 2.5D ISOMETRIC
+             ======================================================== -->
+        <main id="tab-office" class="tab-pane active">
+            <div id="apex-virtual-office-root" class="apex-office-shell"></div>
+        </main>
+
+        <!-- ========================================================
              TAB 1: THƯ VIỆN BÁO CÁO (PHÂN LOẠI 2 TẦNG CHUYÊN NGHIỆP)
              ======================================================== -->
-        <main id="tab-reports" class="tab-pane active">
+        <main id="tab-reports" class="tab-pane">
             <div class="library-controller">
                 <!-- TẦNG 1: THỜI GIAN & CA TÁC CHIẾN -->
                 <div class="time-filter-section">
@@ -5475,6 +5487,10 @@ def generate_portal_html(
             const targetPane = document.getElementById('tab-' + tabId);
             if (targetPane) targetPane.classList.add('active');
 
+            if (window.ApexVirtualOffice) {{
+                if (tabId === 'office') window.ApexVirtualOffice.onShow();
+                else window.ApexVirtualOffice.onHide();
+            }}
             if (tabId === 'portfolio') {{
                 setTimeout(() => initTradingViewWidget(currentTVSymbol), 100);
             }}
@@ -7775,7 +7791,7 @@ def generate_portal_html(
                 if (topCash) topCash.innerText = cashStr;
                 const topCashSub = document.getElementById('top-kpi-cash-sub');
                 if (topCashSub) {{
-                    const sh = Number(pr.total_shares || 200);
+                    const sh = Number(pr.total_shares ?? 0);
                     topCashSub.innerHTML = `<span style="color:#34d399; font-weight:700;">${{cashPct.toFixed(1)}}% Cash</span> • ${{sh}} CP (${{stockStr}} • ${{stockPct.toFixed(1)}}% NAV)`;
                 }}
                 const pCashTxt = document.getElementById('portfolio-cash-txt');
@@ -7783,7 +7799,7 @@ def generate_portal_html(
                 const pCashBar = document.getElementById('portfolio-cash-bar');
                 if (pCashBar) pCashBar.style.width = `${{Math.max(0, Math.min(100, cashPct)).toFixed(1)}}%`;
                 const pStkTxt = document.getElementById('portfolio-stock-txt');
-                if (pStkTxt) pStkTxt.innerText = `${{stockPct.toFixed(1)}}% (${{stockStr}} • ${{Number(pr.total_shares || 200)}} CP)`;
+                if (pStkTxt) pStkTxt.innerText = `${{stockPct.toFixed(1)}}% (${{stockStr}} • ${{Number(pr.total_shares ?? 0)}} CP)`;
                 const pStkBar = document.getElementById('portfolio-stock-bar');
                 if (pStkBar) pStkBar.style.width = `${{Math.max(0, Math.min(100, stockPct)).toFixed(1)}}%`;
             }}
@@ -8762,6 +8778,9 @@ def generate_portal_html(
             startLiveClockTicker();
             initGlobalPortalRealtimeSync();
             loadEnterpriseMeshState();
+            if (window.ApexVirtualOffice) {{
+                window.ApexVirtualOffice.init();
+            }}
         }});
 
         // LÀM MỚI DỮ LIỆU (KHÔNG CHẶN MÀN HÌNH / KHÔNG RELOAD NẾU API KHỎE)
@@ -8812,6 +8831,7 @@ def generate_portal_html(
             }}
         }}
     </script>
+    <script src="/api/office/assets/office.js?v=1"></script>
 </body>
 </html>
 """
