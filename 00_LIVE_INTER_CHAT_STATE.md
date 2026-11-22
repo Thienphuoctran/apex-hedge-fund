@@ -1,17 +1,17 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-22 20:21:31  
+**Thời gian cập nhật:** 2026-11-22 21:57:00  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261122-202131`  
+**Mã đồng bộ:** `SYNC-AG2P-20261122-215700`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Yêu cầu gần nhất của Chủ tịch:** Hoan tat nang cap Van Phong Truc Quan 2.5D Isometric Sang Hien Dai lam man hinh chinh Web Portal (12 phong ban song, Kanban 4 cot, Bang tin IR Hien, Ma tran S1-S4, Ban Bi-a & Mo phong von 20.05M, fix 0 CP KPI)
+* **Yêu cầu gần nhất của Chủ tịch:** Nâng cấp hoàn thiện Văn phòng 2.5D 5 Khối Chuyên Trách (Hiền -> Minh Quân & Alex -> James & Palmer <- Victor | Trọng & Palmer), Chat Artifact, 4 lịch Cron trong chat và Auto-Start Windows
 * **Kết luận & Quyết định thể chế:**
 Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Hoan tat nang cap Van Phong Truc Quan 2.5D Isometric Sang Hien Dai lam man hinh chinh Web Portal (12 phong ban song, Kanban 4 cot, Bang tin IR Hien, Ma tran S1-S4, Ban Bi-a & Mo phong von 20.05M, fix 0 CP KPI)
+- [x] Nâng cấp hoàn thiện Văn phòng 2.5D 5 Khối Chuyên Trách (Hiền -> Minh Quân & Alex -> James & Palmer <- Victor | Trọng & Palmer), Chat Artifact, 4 lịch Cron trong chat và Auto-Start Windows
 - [x] Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở
 - [x] Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-21 16:49:29: 506 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.
 - [x] Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)

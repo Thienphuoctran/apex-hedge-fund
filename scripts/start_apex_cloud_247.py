@@ -341,6 +341,14 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(render_pin_login_html().encode("utf-8"))
         return False
 
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.send_header("Access-Control-Max-Age", "3600")
+        self.end_headers()
+
     def do_GET(self):
         parsed_url = urllib.parse.urlparse(self.path)
         path = parsed_url.path
@@ -825,6 +833,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
         elif path == "/api/office/live_status":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.send_header("Cache-Control", "no-cache")
             self.end_headers()
             try:
@@ -839,6 +848,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
         elif path == "/api/office/room":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.send_header("Cache-Control", "no-cache")
             self.end_headers()
             try:
@@ -854,6 +864,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
         elif path == "/api/office/kanban":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.send_header("Cache-Control", "no-cache")
             self.end_headers()
             try:
@@ -867,6 +878,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
         elif path == "/api/office/jobs":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.send_header("Cache-Control", "no-cache")
             self.end_headers()
             try:
@@ -883,11 +895,13 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             if not asset_path.exists():
                 self.send_response(404)
                 self.send_header("Content-Type", "text/plain; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
                 self.end_headers()
                 self.wfile.write(f"Asset not found: {fname}".encode("utf-8"))
                 return
             self.send_response(200)
             self.send_header("Content-Type", ctype)
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.send_header("Cache-Control", "no-cache")
             self.end_headers()
             self.wfile.write(asset_path.read_bytes())
@@ -1403,12 +1417,14 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 status_code = 200 if res.get("ok") else 400
                 self.send_response(status_code)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
                 self.send_header("Cache-Control", "no-cache")
                 self.end_headers()
                 self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.send_response(500)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
@@ -1429,8 +1445,8 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 if op == "create":
                     res = create_kanban_task(
                         title=str(req_data.get("title") or ""),
-                        dept=str(req_data.get("dept") or "Ban 8"),
-                        assignee=str(req_data.get("assignee") or "Trưởng Ban"),
+                        dept=str(req_data.get("dept") or "Khối 3 (James & Palmer)"),
+                        assignee=str(req_data.get("assignee") or "Trưởng Khối"),
                         priority=str(req_data.get("priority") or "HIGH"),
                         scheduled_time=str(req_data.get("scheduled_time") or ""),
                         output_note=str(req_data.get("output") or ""),
@@ -1447,17 +1463,20 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                     raise ValueError(f"Thao tác Kanban không hợp lệ: {op}")
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
                 self.send_header("Cache-Control", "no-cache")
                 self.end_headers()
                 self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
             except ValueError as ve:
                 self.send_response(400)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(ve)}, ensure_ascii=False).encode("utf-8"))
             except Exception as e:
                 self.send_response(500)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return

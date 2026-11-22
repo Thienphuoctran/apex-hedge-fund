@@ -8,7 +8,7 @@
     position: relative;
     width: 100%;
     height: calc(100vh - 230px);
-    min-height: 660px;
+    min-height: 600px;
     max-height: 860px;
     border-radius: 18px;
     overflow: hidden;
@@ -152,8 +152,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    max-width: min(490px, calc(100% - 620px));
+    gap: 5px;
+    max-width: min(580px, calc(100% - 540px));
     pointer-events: none;
 }
 

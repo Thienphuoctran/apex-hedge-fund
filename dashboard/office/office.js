@@ -17,16 +17,49 @@
     };
 
     const FLOW_TONE_COLORS = {
+        pink: "#ec4899",
         emerald: "#10b981",
         sky: "#0ea5e9",
-        violet: "#8b5cf6",
+        violet: "#7c3aed",
         rose: "#f43f5e",
         purple: "#c026d3",
-        amber: "#f59e0b",
-        red: "#ef4444",
+        amber: "#d97706",
+        red: "#dc2626",
         orange: "#f97316",
         blue: "#3b82f6",
     };
+
+    function getApiBase() {
+        if (window.APEX_OFFICE_API_BASE) return window.APEX_OFFICE_API_BASE;
+        if (window.location && (window.location.protocol === "http:" || window.location.protocol === "https:") && window.location.host) {
+            return "";
+        }
+        return "http://127.0.0.1:8000";
+    }
+
+    function copyTextSafe(txt, successMsg) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(txt).then(() => showToast(successMsg, "success")).catch(() => fallbackCopy(txt, successMsg));
+        } else {
+            fallbackCopy(txt, successMsg);
+        }
+    }
+
+    function fallbackCopy(txt, successMsg) {
+        try {
+            const ta = document.createElement("textarea");
+            ta.value = txt;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+            showToast(successMsg, "success");
+        } catch (_) {
+            showToast("Không copy tự động được — Chủ tịch bôi đen copy thủ công nhé.", "warn");
+        }
+    }
 
     const state = {
         initialized: false,
@@ -77,14 +110,21 @@
     function showToast(msg, type) {
         if (typeof window.showPortalToast === "function") {
             window.showPortalToast(msg, type || "info");
+            return;
         }
+        const el = document.getElementById("office-local-toast");
+        if (!el) return;
+        el.innerText = msg;
+        el.style.display = "block";
+        clearTimeout(el._timer);
+        el._timer = setTimeout(() => { el.style.display = "none"; }, 3200);
     }
 
     function isoToScreen(gx, gy, gz) {
         const cx = state.width * 0.5 + state.panX;
         const cy = state.height * 0.5 + state.panY;
-        const centerGx = 4.4;
-        const centerGy = 3.1;
+        const centerGx = 4.0;
+        const centerGy = 4.05;
         const rx = gx - centerGx;
         const ry = gy - centerGy;
         return {
@@ -99,36 +139,37 @@
         const dx = (sx - cx) / (ISO_X * state.zoom);
         const dy = (sy - cy) / (ISO_Y * state.zoom);
         return {
-            gx: (dx + dy) * 0.5 + 4.4,
-            gy: (dy - dx) * 0.5 + 3.1,
+            gx: (dx + dy) * 0.5 + 4.0,
+            gy: (dy - dx) * 0.5 + 4.05,
         };
     }
 
     function resetView() {
         const w = state.width || 1100;
         const h = state.height || 680;
-        state.zoom = Math.min(1.06, Math.max(0.62, Math.min((w - 80) / 1160, (h - 90) / 620)));
-        state.panX = 24;
-        state.panY = 12;
+        state.zoom = Math.min(1.02, Math.max(0.56, Math.min((w - 110) / 1180, (h - 120) / 620)));
+        state.panX = 36;
+        state.panY = 18;
     }
 
     function buildShellDOM(root) {
         root.innerHTML = `
             <canvas class="apex-office-canvas" id="office-iso-canvas"></canvas>
+            <div id="office-local-toast" style="display:none;position:absolute;top:68px;left:50%;transform:translateX(-50%);z-index:60;background:#0f172a;color:#f8fafc;padding:8px 16px;border-radius:9999px;font-size:12px;font-weight:700;box-shadow:0 8px 24px rgba(15,23,42,0.28);"></div>
 
             <!-- TOP LEFT: STATUS LEGEND & FILTER -->
             <div class="office-hud-card office-hud-topleft">
                 <div class="office-hud-title">
-                    <span>🏢 Trạng Thái 12 Ban</span>
+                    <span>🏢 Sơ Đồ 5 Khối + Tiện Ích</span>
                     <button class="office-btn-sm" id="office-filter-reset" style="font-size:10px;padding:2px 6px;">Tất cả</button>
                 </div>
                 <div class="office-filter-list" id="office-filter-list">
                     <button class="office-filter-item" data-filter="working">
-                        <span class="office-dot-label"><span class="office-status-dot working"></span> Đang làm</span>
+                        <span class="office-dot-label"><span class="office-status-dot working"></span> Đang tác chiến</span>
                         <span class="office-filter-count" id="cnt-filter-working">0</span>
                     </button>
                     <button class="office-filter-item" data-filter="waiting_approval">
-                        <span class="office-dot-label"><span class="office-status-dot waiting_approval"></span> Chờ duyệt</span>
+                        <span class="office-dot-label"><span class="office-status-dot waiting_approval"></span> Chờ duyệt / S1–S4</span>
                         <span class="office-filter-count" id="cnt-filter-waiting_approval">0</span>
                     </button>
                     <button class="office-filter-item" data-filter="alert_veto">
@@ -136,13 +177,13 @@
                         <span class="office-filter-count" id="cnt-filter-alert_veto">0</span>
                     </button>
                     <button class="office-filter-item" data-filter="standby">
-                        <span class="office-dot-label"><span class="office-status-dot standby"></span> Trực nhẹ</span>
+                        <span class="office-dot-label"><span class="office-status-dot standby"></span> Trực 24/7 / Nhẹ</span>
                         <span class="office-filter-count" id="cnt-filter-standby">0</span>
                     </button>
                 </div>
             </div>
 
-            <!-- TOP CENTER: LIVE TICKER & JOB BANNER -->
+            <!-- TOP CENTER: LIVE TICKER & WORKFLOW BANNER -->
             <div class="office-hud-topcenter">
                 <div class="office-hud-card office-live-pill" id="office-live-pill">
                     <span>🏦 TCBS <strong style="color:#4f46e5;">105C307855</strong></span>
@@ -152,6 +193,9 @@
                     <span>📊 <strong id="office-hud-vni">VNI --</strong></span>
                     <span style="color:#cbd5e1;">|</span>
                     <span id="office-hud-regime" style="color:#b45309;">Đang đồng bộ...</span>
+                </div>
+                <div class="office-hud-card" style="pointer-events:auto;padding:3px 12px;border-radius:9999px;font-size:10.5px;font-weight:700;color:#334155;">
+                    ① Hiền (BCTC) ➔ ② Quân &amp; Alex (Thị trường) ➔ ③ James &amp; Palmer (Kế hoạch) ◀ ④ Victor | ⑤ Trọng &amp; Palmer
                 </div>
                 <div class="office-job-banner" id="office-job-banner">
                     <span class="office-status-dot working"></span>
@@ -165,7 +209,7 @@
                 <button class="office-ctrl-btn" id="office-btn-zoom-in" title="Phóng to">＋</button>
                 <button class="office-ctrl-btn" id="office-btn-zoom-out" title="Thu nhỏ">－</button>
                 <button class="office-ctrl-btn" id="office-btn-fullscreen" title="Phóng rộng toàn màn hình">⛶</button>
-                <button class="office-ctrl-btn primary" id="office-btn-convene">⚡ Họp 14 Ban</button>
+                <button class="office-ctrl-btn primary" id="office-btn-convene">⚡ Họp 5 Khối</button>
                 <button class="office-ctrl-btn" id="office-btn-sync" title="Đồng bộ dữ liệu live">🔄</button>
             </div>
 
@@ -382,8 +426,8 @@
             showToast("Đã đồng bộ dữ liệu sống toàn văn phòng Apex!", "success");
         };
         document.getElementById("office-btn-convene").onclick = async () => {
-            await triggerRoomAction("room_ban_8", "convene_dept", {
-                directive: "Hội nghị giao ban toàn doanh nghiệp đánh giá danh mục & kịch bản Tuần 48"
+            await triggerRoomAction("team_james_palmer", "convene_dept", {
+                directive: "Hội nghị giao ban 5 Khối theo quy trình: Hiền -> Minh Quân & Alex -> James & Palmer <- Victor"
             });
         };
 
@@ -427,6 +471,21 @@
                     resetView();
                     return;
                 }
+                if (target === "tab-reports") {
+                    openRoomDrawer("team_hien");
+                    showToast("Đang mở Khối 1 (Hiền) & danh sách báo cáo thật (mở localhost:8000 để xem Thư viện 18 Cột Mốc).", "info");
+                    return;
+                }
+                if (target === "tab-war-room") {
+                    openRoomDrawer("team_victor");
+                    showToast("Đang mở Khối 4 (Victor) & Radar 145 Mã Live.", "info");
+                    return;
+                }
+                if (target === "tab-portfolio") {
+                    openRoomDrawer("team_james_palmer");
+                    showToast("Đang mở Khối 3 (James & Palmer) — Kế hoạch đầu tư.", "info");
+                    return;
+                }
                 openDockModal(target);
             };
         });
@@ -442,9 +501,9 @@
     function focusOnRoom(room) {
         const cx = room.gx + room.gw * 0.5;
         const cy = room.gy + room.gd * 0.5;
-        state.zoom = 1.25;
-        state.panX = -((cx - 4.4) - (cy - 3.1)) * ISO_X * state.zoom;
-        state.panY = -((cx - 4.4) + (cy - 3.1)) * ISO_Y * state.zoom;
+        state.zoom = 1.15;
+        state.panX = -((cx - 4.0) - (cy - 4.05)) * ISO_X * state.zoom;
+        state.panY = -((cx - 4.0) + (cy - 4.05)) * ISO_Y * state.zoom;
     }
 
     function hitTestRoom(sx, sy) {
@@ -526,36 +585,34 @@
     }
 
     function drawCampusBase(ctx) {
-        // Large campus lawn slab
-        const c0 = isoToScreen(-1.7, -0.7, 0);
-        const c1 = isoToScreen(10.5, -0.7, 0);
-        const c2 = isoToScreen(10.5, 6.7, 0);
-        const c3 = isoToScreen(-1.7, 6.7, 0);
+        // Large campus lawn slab for 5 Executive Teams + Lounge + Park
+        const c0 = isoToScreen(-1.9, -0.5, 0);
+        const c1 = isoToScreen(8.6, -0.5, 0);
+        const c2 = isoToScreen(8.6, 8.4, 0);
+        const c3 = isoToScreen(-1.9, 8.4, 0);
 
-        // Campus drop shadow & platform thickness
-        const b0 = isoToScreen(-1.7, -0.7, -0.22);
-        const b1 = isoToScreen(10.5, -0.7, -0.22);
-        const b2 = isoToScreen(10.5, 6.7, -0.22);
-        const b3 = isoToScreen(-1.7, 6.7, -0.22);
+        const b0 = isoToScreen(-1.9, -0.5, -0.22);
+        const b1 = isoToScreen(8.6, -0.5, -0.22);
+        const b2 = isoToScreen(8.6, 8.4, -0.22);
+        const b3 = isoToScreen(-1.9, 8.4, -0.22);
         drawPoly(ctx, [c3, c2, b2, b3], "#b7dba0");
         drawPoly(ctx, [c1, c2, b2, b1], "#9ecb85");
         drawPoly(ctx, [c0, c1, c2, c3], "#dff4cf", "#b6de9a", 1.5);
 
-        // Subtle grass tile lines
         ctx.save();
         ctx.strokeStyle = "rgba(134, 197, 94, 0.22)";
         ctx.lineWidth = 1;
-        for (let gx = -1; gx <= 10; gx += 1) {
-            const a = isoToScreen(gx, -0.7, 0);
-            const b = isoToScreen(gx, 6.7, 0);
+        for (let gx = -1; gx <= 8; gx += 1) {
+            const a = isoToScreen(gx, -0.5, 0);
+            const b = isoToScreen(gx, 8.4, 0);
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
             ctx.stroke();
         }
-        for (let gy = 0; gy <= 6; gy += 1) {
-            const a = isoToScreen(-1.7, gy, 0);
-            const b = isoToScreen(10.5, gy, 0);
+        for (let gy = 0; gy <= 8; gy += 1) {
+            const a = isoToScreen(-1.9, gy, 0);
+            const b = isoToScreen(8.6, gy, 0);
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -563,13 +620,12 @@
         }
         ctx.restore();
 
-        // Main paved campus walkways (corridors)
+        // Main wide corridors between the 5 Teams & Lounge
         const walkways = [
-            { x1: 0.0, y1: 1.75, x2: 9.8, y2: 2.2 },
-            { x1: 0.0, y1: 3.85, x2: 9.8, y2: 4.3 },
-            { x1: 2.3, y1: 0.1, x2: 2.75, y2: 6.0 },
-            { x1: 4.9, y1: 0.1, x2: 5.32, y2: 6.0 },
-            { x1: 7.4, y1: 0.1, x2: 7.8, y2: 6.0 },
+            { x1: 0.2, y1: 2.35, x2: 7.9, y2: 3.05 },
+            { x1: 0.2, y1: 5.15, x2: 7.9, y2: 5.85 },
+            { x1: 3.5, y1: 0.3, x2: 4.25, y2: 7.7 },
+            { x1: 3.95, y1: 3.0, x2: 4.65, y2: 7.7 },
         ];
         for (const wk of walkways) {
             const p0 = isoToScreen(wk.x1, wk.y1, 0.01);
@@ -580,7 +636,7 @@
         }
 
         // Park pond in bottom-left lawn
-        const pondCenter = isoToScreen(-0.85, 5.4, 0.02);
+        const pondCenter = isoToScreen(-1.05, 6.1, 0.02);
         ctx.save();
         ctx.beginPath();
         ctx.ellipse(pondCenter.x, pondCenter.y, 44 * state.zoom, 22 * state.zoom, 0, 0, Math.PI * 2);
@@ -687,14 +743,16 @@
         ctx.restore();
     }
 
-    function drawDataFlows(ctx, t) {
+    function drawDataFlows(ctx, t, layer) {
         const flows = (state.liveData && state.liveData.data_flows) || [];
         const rooms = (state.liveData && state.liveData.rooms) || [];
         const roomMap = {};
         for (const r of rooms) roomMap[r.room_id] = r;
 
         const hasRunningJob = rooms.some((r) => r.active_job && r.active_job.status === "RUNNING");
-        const speed = hasRunningJob ? 0.55 : 0.25;
+        const speed = hasRunningJob ? 0.52 : 0.24;
+        const drawLines = !layer || layer === "lines";
+        const drawBadges = !layer || layer === "badges";
 
         ctx.save();
         for (let i = 0; i < flows.length; i++) {
@@ -703,31 +761,59 @@
             const dst = roomMap[f.to];
             if (!src || !dst) continue;
 
-            const p1 = isoToScreen(src.gx + src.gw * 0.5, src.gy + src.gd * 0.5, 0.04);
-            const p2 = isoToScreen(dst.gx + dst.gw * 0.5, dst.gy + dst.gd * 0.5, 0.04);
+            const p1 = isoToScreen(src.gx + src.gw * 0.5, src.gy + src.gd * 0.5, 0.06);
+            const p2 = isoToScreen(dst.gx + dst.gw * 0.5, dst.gy + dst.gd * 0.5, 0.06);
             const col = FLOW_TONE_COLORS[f.tone] || "#4f46e5";
 
-            ctx.strokeStyle = col + "38";
-            ctx.lineWidth = 2 * state.zoom;
-            ctx.setLineDash([5 * state.zoom, 5 * state.zoom]);
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.stroke();
-            ctx.setLineDash([]);
+            if (drawLines) {
+                ctx.strokeStyle = col + "66";
+                ctx.lineWidth = 2.6 * state.zoom;
+                ctx.setLineDash([6 * state.zoom, 5 * state.zoom]);
+                ctx.beginPath();
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
 
-            // Animated moving data packet
-            const phase = (t * speed + i * 0.17) % 1;
-            const px = p1.x + (p2.x - p1.x) * phase;
-            const py = p1.y + (p2.y - p1.y) * phase;
-            ctx.fillStyle = col;
-            ctx.beginPath();
-            ctx.arc(px, py, 3.8 * state.zoom, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = "#ffffff";
-            ctx.beginPath();
-            ctx.arc(px, py, 1.5 * state.zoom, 0, Math.PI * 2);
-            ctx.fill();
+            if (drawBadges) {
+                // Midpoints sit inside corridors between teams; draw arrow, badge & animated packet cleanly on top
+                const mx = (p1.x + p2.x) * 0.5;
+                const my = (p1.y + p2.y) * 0.5;
+                const ang = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+                const aSize = 6.5 * state.zoom;
+                ctx.fillStyle = col;
+                ctx.beginPath();
+                ctx.moveTo(mx + Math.cos(ang) * aSize, my + Math.sin(ang) * aSize);
+                ctx.lineTo(mx + Math.cos(ang + 2.4) * aSize, my + Math.sin(ang + 2.4) * aSize);
+                ctx.lineTo(mx + Math.cos(ang - 2.4) * aSize, my + Math.sin(ang - 2.4) * aSize);
+                ctx.closePath();
+                ctx.fill();
+
+                if (f.label && state.zoom >= 0.72) {
+                    ctx.font = `700 ${Math.max(8, Math.round(9.5 * state.zoom))}px "Plus Jakarta Sans", sans-serif`;
+                    const tw = ctx.measureText(f.label).width + 12 * state.zoom;
+                    const th = 16 * state.zoom;
+                    drawRoundRect(ctx, mx - tw * 0.5, my - th - 6 * state.zoom, tw, th, 8 * state.zoom, "rgba(255,255,255,0.95)", col + "99", 1);
+                    ctx.fillStyle = col;
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "middle";
+                    ctx.fillText(f.label, mx, my - th * 0.5 - 6 * state.zoom);
+                }
+
+                // Animated moving data packet
+                const phase = (t * speed + i * 0.19) % 1;
+                const px = p1.x + (p2.x - p1.x) * phase;
+                const py = p1.y + (p2.y - p1.y) * phase;
+                ctx.fillStyle = col;
+                ctx.beginPath();
+                ctx.arc(px, py, 4.3 * state.zoom, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = "#ffffff";
+                ctx.beginPath();
+                ctx.arc(px, py, 1.7 * state.zoom, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
         ctx.restore();
     }
@@ -780,77 +866,80 @@
     function drawRoomFurniture(ctx, r, t) {
         const isWorking = r.status_code === "working";
         const screenGlow = isWorking ? "#38bdf8" : (r.status_code === "alert_veto" ? "#f87171" : "#94a3b8");
-        const cx = r.gx + r.gw * 0.5;
-        const cy = r.gy + r.gd * 0.5;
 
         if (r.furniture === "billiard_lounge") {
-            // Billiard table
-            drawIsoBox(ctx, r.gx + 0.45, r.gy + 0.45, 0.08, 0.95, 0.58, 0.34, {
+            drawIsoBox(ctx, r.gx + 0.65, r.gy + 0.45, 0.08, 1.35, 0.72, 0.36, {
                 top: "#15803d", left: "#78350f", right: "#92400e", stroke: "#451a03"
             });
-            // Colored pool balls
             const balls = [
-                { dx: 0.65, dy: 0.68, c: "#ffffff" },
-                { dx: 1.05, dy: 0.62, c: "#ef4444" },
-                { dx: 1.12, dy: 0.75, c: "#eab308" },
-                { dx: 1.18, dy: 0.68, c: "#2563eb" },
+                { dx: 0.9, dy: 0.8, c: "#ffffff" },
+                { dx: 1.45, dy: 0.72, c: "#ef4444" },
+                { dx: 1.55, dy: 0.88, c: "#eab308" },
+                { dx: 1.65, dy: 0.8, c: "#2563eb" },
             ];
             for (const b of balls) {
-                const p = isoToScreen(r.gx + b.dx, r.gy + b.dy, 0.44);
+                const p = isoToScreen(r.gx + b.dx, r.gy + b.dy, 0.46);
                 ctx.fillStyle = b.c;
                 ctx.beginPath();
-                ctx.arc(p.x, p.y, 2.8 * state.zoom, 0, Math.PI * 2);
+                ctx.arc(p.x, p.y, 3.2 * state.zoom, 0, Math.PI * 2);
                 ctx.fill();
             }
             return;
         }
 
-        if (r.furniture === "cio_roundtable") {
-            // Executive desk + monitors
-            drawIsoBox(ctx, cx - 0.55, cy - 0.35, 0.08, 1.15, 0.65, 0.32, {
+        if (r.furniture === "cio_command_suite") {
+            // Executive command roundtable + triple wall monitor
+            drawIsoBox(ctx, r.gx + 0.85, r.gy + 0.55, 0.08, 1.65, 0.85, 0.34, {
                 top: "#e0e7ff", left: "#c7d2fe", right: "#a5b4fc", stroke: "#6366f1"
             });
-            drawIsoBox(ctx, cx - 0.25, cy - 0.28, 0.4, 0.5, 0.08, 0.32, {
+            drawIsoBox(ctx, r.gx + 1.15, r.gy + 0.62, 0.42, 0.95, 0.1, 0.36, {
                 top: "#1e293b", left: screenGlow, right: "#0f172a", stroke: "#0f172a"
             });
             return;
         }
 
-        if (r.furniture === "video_studio") {
-            // Studio desk + tripod light
-            drawIsoBox(ctx, r.gx + 0.35, r.gy + 0.35, 0.08, 0.9, 0.45, 0.3, {
-                top: "#ffedd5", left: "#fed7aa", right: "#fdba74", stroke: "#ea580c"
+        if (r.furniture === "victor_radar_wall") {
+            // Live trading radar terminal desk
+            drawIsoBox(ctx, r.gx + 0.65, r.gy + 0.42, 0.08, 1.65, 0.58, 0.34, {
+                top: "#fef3c7", left: "#fde68a", right: "#fcd34d", stroke: "#d97706"
             });
-            const cam = isoToScreen(r.gx + 1.45, r.gy + 0.7, 0.55);
-            ctx.fillStyle = "#1e293b";
-            ctx.beginPath();
-            ctx.arc(cam.x, cam.y, 6 * state.zoom, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = "#fef08a";
-            ctx.beginPath();
-            ctx.arc(cam.x, cam.y, 3.2 * state.zoom, 0, Math.PI * 2);
-            ctx.fill();
+            drawIsoBox(ctx, r.gx + 0.8, r.gy + 0.46, 0.42, 1.25, 0.09, 0.38, {
+                top: "#0f172a", left: "#f59e0b", right: "#1e293b", stroke: "#0f172a"
+            });
             return;
         }
 
-        // Standard office desk + glowing monitor + cabinet
-        drawIsoBox(ctx, r.gx + 0.38, r.gy + 0.32, 0.08, 1.05, 0.46, 0.3, {
+        if (r.furniture === "audit_vault") {
+            // Ombudsman inspection table + SHA-256 vault
+            drawIsoBox(ctx, r.gx + 0.65, r.gy + 0.42, 0.08, 1.45, 0.58, 0.32, {
+                top: "#ffffff", left: "#fecaca", right: "#fca5a5", stroke: "#dc2626"
+            });
+            drawIsoBox(ctx, r.gx + r.gw - 0.65, r.gy + 0.25, 0.08, 0.44, 0.44, 0.64, {
+                top: "#94a3b8", left: "#64748b", right: "#475569", stroke: "#1e293b"
+            });
+            return;
+        }
+
+        // Dual workstations for Team Hiền & Team Minh Quân & Alex
+        drawIsoBox(ctx, r.gx + 0.45, r.gy + 0.36, 0.08, 1.15, 0.5, 0.32, {
             top: "#ffffff", left: "#e2e8f0", right: "#cbd5e1", stroke: "#94a3b8"
         });
-        drawIsoBox(ctx, r.gx + 0.56, r.gy + 0.36, 0.38, 0.46, 0.08, 0.28, {
+        drawIsoBox(ctx, r.gx + 0.62, r.gy + 0.4, 0.4, 0.52, 0.08, 0.3, {
             top: "#1e293b", left: screenGlow, right: "#0f172a", stroke: "#0f172a"
         });
-        // Filing cabinet / whiteboard corner
-        drawIsoBox(ctx, r.gx + r.gw - 0.42, r.gy + 0.2, 0.08, 0.28, 0.32, 0.52, {
-            top: "#f8fafc", left: "#cbd5e1", right: r.accent || "#64748b", stroke: "#94a3b8"
+
+        drawIsoBox(ctx, r.gx + 1.85, r.gy + 0.36, 0.08, 1.05, 0.5, 0.32, {
+            top: "#ffffff", left: "#e2e8f0", right: "#cbd5e1", stroke: "#94a3b8"
+        });
+        drawIsoBox(ctx, r.gx + 2.02, r.gy + 0.4, 0.4, 0.5, 0.08, 0.3, {
+            top: "#1e293b", left: screenGlow, right: "#0f172a", stroke: "#0f172a"
         });
 
-        // Working screen pulse dot
         if (isWorking || r.status_code === "alert_veto") {
-            const led = isoToScreen(r.gx + 0.78, r.gy + 0.42, 0.56);
+            const led = isoToScreen(r.gx + 0.88, r.gy + 0.46, 0.58);
             ctx.fillStyle = r.status_code === "alert_veto" ? "#ef4444" : (Math.sin(t * 7) > 0 ? "#10b981" : "#34d399");
             ctx.beginPath();
-            ctx.arc(led.x, led.y, 3 * state.zoom, 0, Math.PI * 2);
+            ctx.arc(led.x, led.y, 3.2 * state.zoom, 0, Math.PI * 2);
             ctx.fill();
         }
     }
@@ -925,9 +1014,11 @@
         // Furniture & AI avatars
         drawRoomFurniture(ctx, r, t);
         const avatars = r.avatars || [];
+        const avStep = avatars.length > 1 ? Math.min(0.68, (r.gw - 0.85) / (avatars.length - 1)) : 0;
+        const avStart = avatars.length > 1 ? Math.max(0.48, (r.gw - avStep * (avatars.length - 1)) * 0.5) : r.gw * 0.5;
         avatars.forEach((av, i) => {
-            const ax = r.gx + 0.68 + i * 0.52;
-            const ay = r.gy + r.gd - 0.45;
+            const ax = r.gx + avStart + i * avStep;
+            const ay = r.gy + r.gd - 0.42;
             drawAvatar(ctx, ax, ay, 0.08, av, r.status_code, t, i);
         });
 
@@ -1022,16 +1113,16 @@
             ctx.clearRect(0, 0, state.width, state.height);
 
             drawCampusBase(ctx);
-            drawDataFlows(ctx, state.animTime);
+            drawDataFlows(ctx, state.animTime, "lines");
 
-            // Trees around campus perimeter
+            // Trees around 5-Team campus perimeter (clear of rooms & walkways)
             const trees = [
-                [-1.1, 0.3, 1.0], [-1.2, 2.2, 0.9], [-1.0, 3.6, 1.1],
-                [10.1, 1.8, 0.95], [10.1, 4.0, 1.0], [10.0, 6.2, 0.9],
-                [2.5, 6.3, 0.85], [5.1, 6.3, 0.9], [7.6, 6.3, 0.85],
+                [-1.3, 0.4, 1.0], [-1.4, 2.5, 0.95], [-1.2, 4.4, 1.05],
+                [8.25, 0.7, 0.95], [8.25, 3.8, 1.0], [8.25, 7.2, 0.9],
+                [0.8, 8.05, 0.85], [4.2, 8.05, 0.9], [7.2, 8.05, 0.85],
             ];
             for (const tr of trees) {
-                if (tr[1] < 3.0) drawTree(ctx, tr[0], tr[1], tr[2]);
+                if (tr[1] < 3.6) drawTree(ctx, tr[0], tr[1], tr[2]);
             }
 
             // Sort rooms back-to-front by isometric depth (gx + gy)
@@ -1041,11 +1132,14 @@
                 drawRoom(ctx, r, state.animTime);
             }
 
+            // Draw workflow midpoint badges & moving packets in walkways cleanly above room edges
+            drawDataFlows(ctx, state.animTime, "badges");
+
             // Foreground trees & Ferris wheel in bottom-left park
             for (const tr of trees) {
-                if (tr[1] >= 3.0) drawTree(ctx, tr[0], tr[1], tr[2]);
+                if (tr[1] >= 3.6) drawTree(ctx, tr[0], tr[1], tr[2]);
             }
-            drawFerrisWheel(ctx, -0.75, 5.95, state.animTime);
+            drawFerrisWheel(ctx, -1.0, 7.0, state.animTime);
 
             ctx.restore();
         }
@@ -1070,13 +1164,24 @@
     // LIVE DATA FETCH & HUD UPDATES
     // ========================================================================
     async function fetchLiveState(forceRefresh) {
+        if (!state.liveData && window.APEX_OFFICE_BOOTSTRAP_BUNDLE) {
+            state.liveData = window.APEX_OFFICE_BOOTSTRAP_BUNDLE;
+            if (!state.kanbanData && window.APEX_OFFICE_BOOTSTRAP_BUNDLE.kanban_board) {
+                state.kanbanData = window.APEX_OFFICE_BOOTSTRAP_BUNDLE.kanban_board;
+            }
+            updateHUD(state.liveData);
+        }
         try {
-            const url = "/api/office/live_status" + (forceRefresh ? "?force=1" : "");
-            const res = await fetch(url, { cache: "no-store" });
+            const url = getApiBase() + "/api/office/live_status" + (forceRefresh ? "?force=1" : "");
+            const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+            const timer = ctrl ? setTimeout(() => ctrl.abort(), 3800) : null;
+            const res = await fetch(url, { cache: "no-store", signal: ctrl ? ctrl.signal : undefined });
+            if (timer) clearTimeout(timer);
             if (!res.ok) return;
             const data = await res.json();
             if (!data || !data.ok) return;
             state.liveData = data;
+            if (data.kanban_board) state.kanbanData = data.kanban_board;
             updateHUD(data);
             if (state.selectedRoomId && document.getElementById("office-room-drawer").classList.contains("open")) {
                 loadAndRenderRoomDrawer(state.selectedRoomId, forceRefresh);
@@ -1085,7 +1190,10 @@
                 refreshActiveModalIfNeeded();
             }
         } catch (err) {
-            // Giữ ổn định giao diện khi mất mạng tạm thời
+            if (!state.liveData && window.APEX_OFFICE_BOOTSTRAP_BUNDLE) {
+                state.liveData = window.APEX_OFFICE_BOOTSTRAP_BUNDLE;
+                updateHUD(state.liveData);
+            }
         }
     }
 
@@ -1171,31 +1279,54 @@
 
     async function loadAndRenderRoomDrawer(roomId, force) {
         try {
-            const res = await fetch(`/api/office/room?id=${encodeURIComponent(roomId)}${force ? "&force=1" : ""}`, { cache: "no-store" });
+            const url = `${getApiBase()}/api/office/room?id=${encodeURIComponent(roomId)}${force ? "&force=1" : ""}`;
+            const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+            const timer = ctrl ? setTimeout(() => ctrl.abort(), 3500) : null;
+            const res = await fetch(url, { cache: "no-store", signal: ctrl ? ctrl.signal : undefined });
+            if (timer) clearTimeout(timer);
             const data = await res.json();
-            if (!data.ok || !data.room) {
-                document.getElementById("office-drawer-body").innerHTML = `<div style="color:#ef4444;">Không tải được phòng: ${esc(data.error || roomId)}</div>`;
+            if (data && data.ok && data.room) {
+                renderRoomDrawerContent(data.room);
                 return;
             }
-            renderRoomDrawerContent(data.room);
-        } catch (err) {
-            document.getElementById("office-drawer-body").innerHTML = `<div style="color:#ef4444;">Lỗi kết nối: ${esc(err.message)}</div>`;
+        } catch (_) {
+            // Fallback offline từ bundle nhúng sẵn trong Artifact Chat
+        }
+        const bndl = window.APEX_OFFICE_BOOTSTRAP_BUNDLE || {};
+        const detailMap = bndl.rooms_detail || {};
+        const fallbackList = ((state.liveData || {}).rooms) || bndl.rooms || [];
+        const localRoom = detailMap[roomId] || fallbackList.find((x) => x.room_id === roomId);
+        if (localRoom) {
+            renderRoomDrawerContent(localRoom);
+        } else {
+            document.getElementById("office-drawer-body").innerHTML = `<div style="color:#ef4444;">Không tìm thấy phòng ban: ${esc(roomId)}</div>`;
         }
     }
 
     function renderSpecializedSection(r) {
         const sp = r.specialized_data || {};
-        if (r.room_id === "room_ban_10") {
+        if (r.room_id === "team_hien") {
             const news = sp.latest_news || [];
             const sc = sp.summary_counts || {};
+            const picks = sp.top_vn_alpha || [];
             return `
                 <div class="office-section-box">
                     <div class="office-section-title">
-                        <span>📰 Băng Tin IR &amp; CBTT Sống (${esc(sc.total_news_articles || 0)} bài)</span>
+                        <span>📰 Băng Tin IR &amp; Pháp Y BCTC (${esc(sc.total_news_articles || 0)} bài • ${picks.length} Alpha)</span>
                         <button class="office-btn-sm" onclick="window.ApexVirtualOffice.openDockModal('intel')">Xem Toàn Bộ</button>
                     </div>
                     <div style="font-size:11px;color:#64748b;margin-bottom:8px;">Cập nhật: ${esc(sp.crawled_at || "--")} • ${esc(sc.verified_ir_portals || 0)} cổng IR • ${esc(sc.sec_edgar_filings || 0)} hồ sơ SEC EDGAR</div>
-                    ${news.slice(0, 5).map((n) => `
+                    ${picks.slice(0, 4).map((p) => `
+                        <div class="office-news-item" style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+                            <div>
+                                <strong style="font-size:12px;">${esc(p.symbol)}</strong>
+                                <span style="font-size:11px;color:#64748b;">(${esc(p.alpha_score)}đ • F=${esc(p.piotroski_f_score)}/9 • ROE ${esc(p.roe_pct)}%)</span>
+                                <div style="font-size:11px;color:#059669;">OCF/LNST: ${esc(p.ocf_ratio)}x • MOS: ${esc(p.margin_of_safety_pct)}%</div>
+                            </div>
+                            <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('team_quan_alex','convene_dept',{ticker:'${esc(p.symbol)}',directive:'Phân tích thị trường & điểm mua mã ${esc(p.symbol)} từ hồ sơ BCTC Hiền'})">➔ Đẩy Quân &amp; Alex</button>
+                        </div>
+                    `).join("")}
+                    ${news.slice(0, 4).map((n) => `
                         <div class="office-news-item">
                             <div style="display:flex;justify-content:space-between;gap:6px;margin-bottom:3px;">
                                 <strong style="font-size:11px;color:#db2777;">${esc(n.symbol)}</strong>
@@ -1204,22 +1335,25 @@
                             <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:5px;">${esc(n.title)}</div>
                             <div style="display:flex;gap:6px;flex-wrap:wrap;">
                                 ${n.source_url ? `<a href="${esc(n.source_url)}" target="_blank" rel="noopener noreferrer" class="office-btn-sm" style="text-decoration:none;">🔗 Nguồn</a>` : ""}
-                                <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('room_ban_2','convene_dept',{ticker:'${esc(n.symbol)}',directive:'Thẩm định BCTC & tin mới mã ${esc(n.symbol)} từ Hiền Ban 10'})">⚡ Họp Ban 2 &amp; James</button>
+                                <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('team_quan_alex','convene_dept',{ticker:'${esc(n.symbol)}',directive:'Thẩm định catalyst & điểm vào mã ${esc(n.symbol)} từ tin Hiền'})">➔ Gửi Quân &amp; Alex</button>
                             </div>
                         </div>
                     `).join("")}
                 </div>
             `;
         }
-        if (r.room_id === "room_ban_7") {
+        if (r.room_id === "team_quan_alex") {
             const wl = sp.approved_watchlist || [];
+            const rules = sp.risk_rules || [];
+            const rm = (sp.spillover || {}).risk_multiplier || 1.0;
             return `
                 <div class="office-section-box">
                     <div class="office-section-title">
-                        <span>🎯 Rổ BCTC Q3/2026 &amp; Giờ Vàng 14h00–14h25</span>
+                        <span>🎯 Phân Tích Thị Trường &amp; Rổ Q3/2026 (Mult ${esc(rm)}x)</span>
                         <button class="office-btn-sm" onclick="window.ApexVirtualOffice.openDockModal('summary')">Ma trận S1–S4</button>
                     </div>
-                    <div style="font-size:11.5px;color:#334155;margin-bottom:8px;">${esc(sp.constitution_mandate || "")}</div>
+                    <div style="font-size:11.5px;color:#334155;margin-bottom:6px;">${esc(sp.constitution_mandate || "")}</div>
+                    ${rules.length ? `<div style="font-size:11px;color:#7c3aed;background:#f5f3ff;border-radius:8px;padding:6px 8px;margin-bottom:8px;">${rules.map((rl) => `• ${esc(rl)}`).join("<br>")}</div>` : ""}
                     ${wl.map((w) => `
                         <div class="office-news-item">
                             <div style="display:flex;justify-content:space-between;font-size:12px;">
@@ -1227,37 +1361,23 @@
                                 <span style="color:#7c3aed;font-weight:700;">${esc(w.weekly_limit)}</span>
                             </div>
                             <div style="font-size:11px;color:#475569;margin-top:3px;">${esc(w.entry_zone)} | Stop: ${esc(w.stop_loss_2xatr)}</div>
-                        </div>
-                    `).join("")}
-                </div>
-            `;
-        }
-        if (r.room_id === "room_ban_2") {
-            const picks = sp.top_vn_alpha || [];
-            return `
-                <div class="office-section-box">
-                    <div class="office-section-title"><span>🔬 Top Alpha Pháp Y BCTC VN</span></div>
-                    ${picks.slice(0, 6).map((p) => `
-                        <div class="office-news-item" style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
-                            <div>
-                                <strong style="font-size:12px;">${esc(p.symbol)}</strong>
-                                <span style="font-size:11px;color:#64748b;">(${esc(p.alpha_score)}đ • F=${esc(p.piotroski_f_score)}/9 • ROE ${esc(p.roe_pct)}%)</span>
-                                <div style="font-size:11px;color:#059669;">OCF/LNST: ${esc(p.ocf_ratio)}x • MOS: ${esc(p.margin_of_safety_pct)}%</div>
+                            <div style="margin-top:5px;">
+                                <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('team_james_palmer','convene_dept',{ticker:'${esc(w.symbol)}',directive:'Trình James & Palmer chốt kế hoạch giải ngân ${esc(w.symbol)} (${esc(w.entry_zone)})'})">🎖️ Trình James Chốt Kế Hoạch</button>
                             </div>
-                            <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('room_ban_2','convene_dept',{ticker:'${esc(p.symbol)}'})">Soi ${esc(p.symbol)}</button>
                         </div>
                     `).join("")}
                 </div>
             `;
         }
-        if (r.room_id === "room_ban_8") {
+        if (r.room_id === "team_james_palmer") {
             const ssot = sp.ssot || {};
             const ls = sp.latest_session || {};
+            const t10 = ((sp.walk_forward || {})["T+10"] || {}).hit_rate_pct || "--";
             return `
                 <div class="office-section-box">
-                    <div class="office-section-title"><span>🎖️ Két Tiền Thật &amp; Phiên Hội Đồng Gần Nhất</span></div>
+                    <div class="office-section-title"><span>🎖️ Két Tiền Thật &amp; Kế Hoạch Đầu Tư Trình Chủ Tịch</span></div>
                     <div style="font-size:12px;color:#0f172a;margin-bottom:6px;">
-                        💰 Tiền mặt: <strong style="color:#059669;">${esc(ssot.cash_str)}</strong> (${esc(ssot.cash_pct)}%) • Vị thế: <strong>${esc(ssot.holdings_count)} CP</strong>
+                        💰 Tiền mặt: <strong style="color:#059669;">${esc(ssot.cash_str)}</strong> (${esc(ssot.cash_pct)}%) • Vị thế: <strong>${esc(ssot.holdings_count)} CP</strong> • T+10 Hit Rate: <strong>${esc(t10)}%</strong>
                     </div>
                     <div style="font-size:11.5px;background:#ffffff;border:1px solid #e2e8f0;border-radius:9px;padding:8px;">
                         <div><strong>Phiên:</strong> ${esc(ls.session_id || "--")} (${esc(ls.quorum_count || 0)}/${esc(ls.roster_total || 14)} Ban)</div>
@@ -1267,28 +1387,37 @@
                 </div>
             `;
         }
-        if (r.room_id === "room_ban_9") {
+        if (r.room_id === "team_victor") {
             const rec = sp.recon_summary || {};
             const sectors = sp.top_5_sectors || [];
+            const tw = sp.trigger_watch || [];
             return `
                 <div class="office-section-box">
-                    <div class="office-section-title"><span>🚨 Radar Bảng Điện 145 Mã</span></div>
+                    <div class="office-section-title">
+                        <span>🚨 Radar Bảng Điện 145 Mã &amp; Ngưỡng Báo James</span>
+                        <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('team_james_palmer','convene_dept',{directive:'Victor báo cáo mã chạm ngưỡng từ Radar 145 mã sang James xử lý ngay'})">⚡ Báo James Ngay</button>
+                    </div>
                     <div style="font-size:12px;margin-bottom:6px;">
                         VN-Index: <strong>${esc(rec.vn_index || "--")}</strong> (${esc(rec.vn_index_chg_pct || 0)}%) • Breadth MA20: <strong>${esc(rec.live_breadth_ma20_pct || 0)}%</strong> • BuyUp: <strong>${esc(rec.avg_buy_up_pct || 0)}%</strong>
                     </div>
-                    <div style="display:flex;flex-wrap:wrap;gap:5px;">
+                    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;">
                         ${sectors.slice(0, 5).map((s) => `<span class="office-btn-sm">${esc(s.sector)}: ${Number(s.avg_change_pct) >= 0 ? "+" : ""}${esc(s.avg_change_pct)}%</span>`).join("")}
                     </div>
+                    ${tw.map((w) => `
+                        <div class="office-news-item" style="font-size:11.5px;">
+                            <strong>${esc(w.symbol)}</strong> • Mua: <span style="color:#059669;">${esc(w.buy_zone)}</span> • Stop: <span style="color:#dc2626;">${esc(w.stop)}</span> • TP1: <strong>${esc(w.tp1)}</strong>
+                        </div>
+                    `).join("")}
                 </div>
             `;
         }
-        if (r.room_id === "room_ban_12") {
+        if (r.room_id === "team_trong_palmer") {
             const aud = sp.latest_audit_entry || {};
             return `
                 <div class="office-section-box">
-                    <div class="office-section-title"><span>🛡️ Kiểm Toán 10 Điều Hiến Chương</span></div>
+                    <div class="office-section-title"><span>🛡️ Kiểm Toán 10 Điều Hiến Chương &amp; Toàn Hệ Thống</span></div>
                     <div style="font-size:12px;">
-                        <div>Điểm Hội Đồng: <strong>${esc(sp.ombudsman_audit_score || "10/10")}</strong> • Kỷ luật: <strong>${esc(aud.overall_discipline_score || 100)}</strong></div>
+                        <div>Điểm Hội Đồng: <strong>${esc(sp.ombudsman_audit_score || "10/10")}</strong> • Kỷ luật: <strong>${esc(aud.overall_discipline_score || 100)}</strong> • Vấn đề mở: <strong>${esc(aud.issues_count || 0)}</strong></div>
                         <div style="font-size:11px;color:#64748b;margin-top:4px;word-break:break-all;">SHA-256: <code>${esc(sp.constitutional_seal_sha256 || "--")}</code></div>
                     </div>
                 </div>
@@ -1304,22 +1433,30 @@
         const body = document.getElementById("office-drawer-body");
         if (!body) return;
 
-        const stMeta = STATUS_META[r.status_code] || STATUS_META.standby;
         if (iconEl) iconEl.innerText = r.icon || "🏢";
         if (titleEl) titleEl.innerText = `${r.ban_code}: ${r.name}`;
-        if (subEl) subEl.innerText = `Phụ trách: ${(r.officers || []).join(", ")} • ${r.wing}`;
+        if (subEl) subEl.innerText = `${r.lead_title || ""} • Phụ trách: ${(r.officers || []).join(", ")}`;
+
+        const subDeptHtml = (r.sub_departments || []).length
+            ? `<div style="display:flex;flex-direction:column;gap:4px;margin-top:8px;">${r.sub_departments.map((sd) => {
+                const txt = typeof sd === "string"
+                    ? esc(sd)
+                    : `<strong>${esc(sd.code || sd.name || "")}</strong>${sd.role ? `: <span style="color:#475569;">${esc(sd.role)}</span>` : ""}`;
+                return `<div style="font-size:11px;background:#ffffff;border:1px solid #cbd5e1;border-radius:7px;padding:4px 8px;color:#0f172a;">${txt}</div>`;
+            }).join("")}</div>`
+            : "";
 
         const reportsHtml = (r.recent_reports || []).length
             ? r.recent_reports.map((rep) => `
-                <button class="office-report-item" onclick="window.openReportModal && window.openReportModal('${esc(rep.rel_path)}')">
+                <button class="office-report-item" data-rel-path="${esc(rep.rel_path)}">
                     <div style="min-width:0;">
                         <div style="font-size:12px;font-weight:700;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(rep.title)}</div>
                         <div style="font-size:10.5px;color:#64748b;">${esc(rep.date)} ${esc(rep.time_str)} • ${esc(rep.shift_label)}</div>
                     </div>
-                    <span style="font-size:11px;font-weight:700;color:#4f46e5;flex-shrink:0;">Đọc →</span>
+                    <span style="font-size:11px;font-weight:700;color:#4f46e5;flex-shrink:0;">${typeof window.openReportModal === "function" ? "Đọc →" : "Copy lệnh →"}</span>
                 </button>
             `).join("")
-            : `<div style="font-size:12px;color:#64748b;">Chưa có tệp báo cáo Markdown riêng trong phòng này.</div>`;
+            : `<div style="font-size:12px;color:#64748b;">Chưa có tệp báo cáo Markdown riêng trong khối này.</div>`;
 
         const votesHtml = (r.latest_votes || []).map((v) => `
             <div style="font-size:11.5px;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:7px 9px;margin-bottom:5px;">
@@ -1337,20 +1474,42 @@
 
         const pa = r.primary_action || {};
         const isJobRunning = r.active_job && r.active_job.status === "RUNNING";
+        const defaultCmd = r.chat_template || `Palmer giao việc cho ${r.ban_code}: rà soát và báo cáo ngay.`;
 
         body.innerHTML = `
             <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
                 <span class="office-status-pill ${esc(r.status_code)}">● ${esc(r.status_label_vi)}</span>
-                <span style="font-size:11px;font-weight:700;color:${r.veto_power ? "#dc2626" : "#64748b"};">${r.veto_power ? "🛡️ Có quyền Phủ quyết VETO" : "📡 Ban Chuyên Môn"}</span>
+                <span style="font-size:11px;font-weight:700;color:${r.veto_power ? "#dc2626" : "#64748b"};">${r.veto_power ? "🛡️ Có quyền Phủ quyết VETO" : "📡 Khối Chuyên Môn"}</span>
+            </div>
+
+            <div class="office-section-box" style="background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 100%);border-color:#c7d2fe;">
+                <div class="office-section-title"><span>💬 Giao Việc Trực Tiếp Sang Khung Chat Palmer</span></div>
+                <div style="font-size:11px;color:#475569;margin-bottom:6px;">Luồng bàn giao: <strong>${esc(r.handoff_to || "")}</strong></div>
+                <textarea id="drawer-palmer-cmd" class="office-input" rows="2" style="width:100%;resize:vertical;font-size:11.5px;line-height:1.4;">${esc(defaultCmd)}</textarea>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;">
+                    <select id="drawer-cmd-ticker" class="office-select" style="font-size:11px;padding:4px 8px;">
+                        <option value="">-- Gắn mã CP --</option>
+                        <option value="TPB">TPB</option>
+                        <option value="HDB">HDB</option>
+                        <option value="CTG">CTG</option>
+                        <option value="HPG">HPG</option>
+                        <option value="VPB">VPB</option>
+                        <option value="MSH">MSH</option>
+                        <option value="BAF">BAF</option>
+                        <option value="NVDA">NVDA</option>
+                    </select>
+                    <button class="office-btn-sm" id="drawer-copy-palmer-btn" style="background:#4f46e5;color:#fff;border-color:#4f46e5;flex:1;">📋 Copy Lệnh Dán Sang Chat</button>
+                </div>
             </div>
 
             <div class="office-section-box">
-                <div class="office-section-title"><span>⏱️ Lịch Chạy &amp; Chỉ Số Sống</span></div>
+                <div class="office-section-title"><span>⏱️ Lịch Chạy &amp; Cơ Cấu Bộ Phận</span></div>
                 <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:4px;">${esc(r.kpi_summary)}</div>
                 <div style="font-size:11.5px;color:#475569;">${esc(r.schedule)}</div>
+                ${subDeptHtml}
                 <div style="margin-top:10px;">
                     <button class="office-btn-action" id="drawer-primary-action-btn" ${isJobRunning ? "disabled" : ""}>
-                        ${isJobRunning ? "⏳ Đang chạy tác vụ..." : esc(pa.label || "⚡ Chạy Tác Vụ Phòng Ban")}
+                        ${isJobRunning ? "⏳ Đang chạy tác vụ..." : esc(pa.label || "⚡ Chạy Tác Vụ Khối")}
                     </button>
                 </div>
             </div>
@@ -1361,7 +1520,7 @@
 
             <div class="office-section-box">
                 <div class="office-section-title">
-                    <span>📑 Báo Cáo Thật Của Phòng (${(r.recent_reports || []).length})</span>
+                    <span>📑 Báo Cáo Thật Của Khối (${(r.recent_reports || []).length})</span>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:6px;">${reportsHtml}</div>
             </div>
@@ -1371,7 +1530,7 @@
                     <span>📋 Nhiệm Vụ Kanban (${(r.kanban_tasks || []).length})</span>
                     <button class="office-btn-sm" onclick="window.ApexVirtualOffice.openDockModal('kanban')">Mở Bảng Kanban</button>
                 </div>
-                ${tasksHtml || `<div style="font-size:11.5px;color:#64748b;">Chưa có thẻ việc gán riêng cho phòng này.</div>`}
+                ${tasksHtml || `<div style="font-size:11.5px;color:#64748b;">Chưa có thẻ việc gán riêng cho khối này.</div>`}
                 <div style="display:flex;gap:6px;margin-top:8px;">
                     <input type="text" id="drawer-new-task-input" class="office-input" style="flex:1;" placeholder="Giao nhanh việc mới cho ${esc(r.ban_code)}...">
                     <button class="office-btn-sm" id="drawer-new-task-btn" style="background:#0f172a;color:#fff;border-color:#0f172a;">+ Giao</button>
@@ -1379,13 +1538,40 @@
             </div>
         `;
 
+        // Bind report click (Portal modal OR copy-to-chat command in Artifact sandbox)
+        body.querySelectorAll(".office-report-item[data-rel-path]").forEach((btn) => {
+            btn.onclick = () => {
+                const rel = btn.getAttribute("data-rel-path");
+                if (typeof window.openReportModal === "function") {
+                    window.openReportModal(rel);
+                } else {
+                    copyTextSafe(`Palmer hãy đọc và tóm tắt chi tiết báo cáo ${rel}`, `Đã copy lệnh đọc báo cáo — Dán sang khung chat Palmer!`);
+                }
+            };
+        });
+
+        const tickerSel = document.getElementById("drawer-cmd-ticker");
+        const cmdBox = document.getElementById("drawer-palmer-cmd");
+        if (tickerSel && cmdBox) {
+            tickerSel.onchange = () => {
+                const sym = tickerSel.value;
+                if (!sym) return;
+                cmdBox.value = defaultCmd.includes("...") ? defaultCmd : `${defaultCmd.replace(/\.$/, "")} Trọng tâm mã ${sym}.`;
+            };
+        }
+        const copyBtn = document.getElementById("drawer-copy-palmer-btn");
+        if (copyBtn && cmdBox) {
+            copyBtn.onclick = () => copyTextSafe(cmdBox.value.trim(), "Đã copy chỉ thị — Chủ tịch dán sang chat cho Palmer thực thi ngay!");
+        }
+
         const actionBtn = document.getElementById("drawer-primary-action-btn");
         if (actionBtn) {
             actionBtn.onclick = () => {
                 if (pa.action === "open_lounge_modal") {
                     openDockModal("lounge");
                 } else {
-                    triggerRoomAction(r.room_id, pa.action, {});
+                    const sym = tickerSel ? tickerSel.value : "";
+                    triggerRoomAction(r.room_id, pa.action, sym ? { ticker: sym } : {});
                 }
             };
         }
@@ -1396,11 +1582,10 @@
                 const inp = document.getElementById("drawer-new-task-input");
                 const title = (inp && inp.value || "").trim();
                 if (!title) return;
-                const deptVal = r.ban_code === "Ban 1 VN/US" ? "Ban 1" : (r.ban_code === "Ban 7 VN/US" ? "Ban 7 VN" : (r.ban_code === "Ban 5 & 6" ? "Ban 6" : r.ban_code));
                 await createKanbanTask({
                     title,
-                    dept: deptVal,
-                    assignee: (r.officers || ["Trưởng Ban"])[0],
+                    dept: r.ban_code,
+                    assignee: (r.officers || ["Trưởng Khối"])[0],
                     priority: "HIGH",
                 });
                 inp.value = "";
@@ -1413,8 +1598,10 @@
     // ROOM ACTIONS & KANBAN API CALLS
     // ========================================================================
     async function triggerRoomAction(roomId, action, payload) {
+        const rooms = ((state.liveData || {}).rooms) || [];
+        const rm = rooms.find((x) => x.room_id === roomId);
         try {
-            const res = await fetch("/api/office/room_action", {
+            const res = await fetch(getApiBase() + "/api/office/room_action", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ room_id: roomId, action: action, ...(payload || {}) }),
@@ -1429,66 +1616,97 @@
             scheduleNextPoll();
             return data;
         } catch (err) {
-            showToast("Lỗi kết nối server: " + err.message, "error");
-            return { ok: false, error: err.message };
+            const cmd = (payload && payload.directive) || (rm && rm.chat_template) || `Palmer kích hoạt ${roomId} (${action})`;
+            copyTextSafe(cmd, "Sandbox Chat đã copy lệnh sang clipboard — Chủ tịch dán sang khung chat Palmer!");
+            return { ok: false, error: err.message, copied_cmd: cmd };
         }
     }
 
     async function createKanbanTask(taskPayload) {
-        const res = await fetch("/api/office/kanban", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ op: "create", ...taskPayload }),
-        });
-        const data = await res.json();
-        if (data.ok) {
-            state.kanbanData = data.board;
-            showToast("Đã giao nhiệm vụ mới vào Kanban!", "success");
-            await fetchLiveState(true);
-        } else {
-            showToast(data.error || "Lỗi giao việc", "error");
+        try {
+            const res = await fetch(getApiBase() + "/api/office/kanban", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ op: "create", ...taskPayload }),
+            });
+            const data = await res.json();
+            if (data.ok) {
+                state.kanbanData = data.board;
+                showToast("Đã giao nhiệm vụ mới vào Kanban!", "success");
+                await fetchLiveState(true);
+            } else {
+                showToast(data.error || "Lỗi giao việc", "error");
+            }
+            return data;
+        } catch (_) {
+            const kb = state.kanbanData || { columns: { BACKLOG: [], IN_PROGRESS: [], AUDIT_REVIEW: [], DONE: [] }, tasks: {} };
+            const tid = "OFFICE-" + Date.now();
+            kb.tasks = kb.tasks || {};
+            kb.columns = kb.columns || { BACKLOG: [], IN_PROGRESS: [], AUDIT_REVIEW: [], DONE: [] };
+            kb.tasks[tid] = {
+                task_id: tid,
+                title: taskPayload.title || "Nhiệm vụ mới",
+                dept: taskPayload.dept || "Khối 3",
+                assignee: taskPayload.assignee || "Palmer & James",
+                priority: taskPayload.priority || "HIGH",
+                status: "BACKLOG",
+                scheduled_time: taskPayload.scheduled_time || "LIVE",
+            };
+            kb.columns.BACKLOG = [tid].concat(kb.columns.BACKLOG || []);
+            state.kanbanData = kb;
+            copyTextSafe(`Palmer giao việc cho ${taskPayload.dept || "Khối"}: ${taskPayload.title}`, "Đã thêm trên bản xem trước & copy lệnh giao việc sang chat!");
+            return { ok: true, board: kb, offline: true };
         }
-        return data;
     }
 
     async function moveKanbanTask(taskId, newStatus) {
-        const res = await fetch("/api/office/kanban", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ op: "move", task_id: taskId, status: newStatus }),
-        });
-        const data = await res.json();
-        if (data.ok) {
-            state.kanbanData = data.board;
-            showToast(`Đã chuyển nhiệm vụ sang ${newStatus}`, "success");
-            await fetchLiveState(true);
-            if (state.activeModal === "kanban") renderKanbanModal();
-        } else {
-            showToast(data.error || "Lỗi chuyển trạng thái", "error");
+        try {
+            const res = await fetch(getApiBase() + "/api/office/kanban", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ op: "move", task_id: taskId, status: newStatus }),
+            });
+            const data = await res.json();
+            if (data.ok) {
+                state.kanbanData = data.board;
+                showToast(`Đã chuyển nhiệm vụ sang ${newStatus}`, "success");
+                await fetchLiveState(true);
+                if (state.activeModal === "kanban") renderKanbanModal();
+            } else {
+                showToast(data.error || "Lỗi chuyển trạng thái", "error");
+            }
+            return data;
+        } catch (err) {
+            showToast("Đang ở chế độ xem trước Artifact — mở localhost:8000 để ghi đĩa Kanban.", "warn");
+            return { ok: false, error: err.message };
         }
-        return data;
     }
 
     async function deleteKanbanTask(taskId) {
-        const res = await fetch("/api/office/kanban", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ op: "delete", task_id: taskId }),
-        });
-        const data = await res.json();
-        if (data.ok) {
-            state.kanbanData = data.board;
-            showToast("Đã xóa thẻ việc bổ sung.", "info");
-            await fetchLiveState(true);
-            if (state.activeModal === "kanban") renderKanbanModal();
-        } else {
-            showToast(data.error || "Không thể xóa thẻ này", "warn");
+        try {
+            const res = await fetch(getApiBase() + "/api/office/kanban", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ op: "delete", task_id: taskId }),
+            });
+            const data = await res.json();
+            if (data.ok) {
+                state.kanbanData = data.board;
+                showToast("Đã xóa thẻ việc bổ sung.", "info");
+                await fetchLiveState(true);
+                if (state.activeModal === "kanban") renderKanbanModal();
+            } else {
+                showToast(data.error || "Không thể xóa thẻ này", "warn");
+            }
+            return data;
+        } catch (err) {
+            showToast("Đang ở chế độ xem trước Artifact — mở localhost:8000 để xóa thẻ đĩa.", "warn");
+            return { ok: false, error: err.message };
         }
-        return data;
     }
 
     // ========================================================================
-    // DOCK MODALS (STEP 3 WILL ENHANCE POOL & SIMULATOR TO FULL RICHNESS)
+    // DOCK MODALS (5-TEAM KANBAN / INTEL / S1-S4 / LOUNGE)
     // ========================================================================
     function openDockModal(mode) {
         state.activeModal = mode;
@@ -1520,15 +1738,22 @@
 
     async function renderKanbanModal() {
         document.getElementById("office-modal-icon").innerText = "📋";
-        document.getElementById("office-modal-title").innerText = "Bảng Giao Việc Kanban 12 Phòng Ban";
+        document.getElementById("office-modal-title").innerText = "Bảng Giao Việc Kanban 5 Khối Chuyên Trách";
         document.getElementById("office-modal-sub").innerText = "Chuẩn Mesa Protocol • Đồng bộ trực tiếp data/apex_kanban_board.json";
         const body = document.getElementById("office-modal-body");
         body.innerHTML = `<div style="padding:20px;text-align:center;color:#64748b;">⏳ Đang tải Kanban...</div>`;
         try {
-            const res = await fetch("/api/office/kanban", { cache: "no-store" });
+            const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+            const timer = ctrl ? setTimeout(() => ctrl.abort(), 3000) : null;
+            const res = await fetch(getApiBase() + "/api/office/kanban", { cache: "no-store", signal: ctrl ? ctrl.signal : undefined });
+            if (timer) clearTimeout(timer);
             const data = await res.json();
-            state.kanbanData = data;
-        } catch (e) {}
+            if (data && data.tasks) state.kanbanData = data;
+        } catch (e) {
+            if (!state.kanbanData && window.APEX_OFFICE_BOOTSTRAP_BUNDLE && window.APEX_OFFICE_BOOTSTRAP_BUNDLE.kanban_board) {
+                state.kanbanData = window.APEX_OFFICE_BOOTSTRAP_BUNDLE.kanban_board;
+            }
+        }
         const kb = state.kanbanData || { columns: {}, tasks: {} };
         const cols = [
             { id: "BACKLOG", title: "⏳ Chuẩn Bị Giao", next: "IN_PROGRESS", nextLbl: "Bắt đầu →" },
@@ -1538,18 +1763,13 @@
         ];
         body.innerHTML = `
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;background:#f8fafc;padding:10px;border-radius:12px;border:1px solid #e2e8f0;">
-                <input id="kb-new-title" class="office-input" style="flex:1;min-width:220px;" placeholder="Nội dung công việc giao cho Phòng Ban...">
+                <input id="kb-new-title" class="office-input" style="flex:1;min-width:220px;" placeholder="Nội dung công việc giao cho 5 Khối...">
                 <select id="kb-new-dept" class="office-select">
-                    <option value="Ban 8">Ban 8 (Master CIO James)</option>
-                    <option value="Ban 10">Ban 10 (Hiền BCTC & IR)</option>
-                    <option value="Ban 2">Ban 2 (Pháp Y BCTC)</option>
-                    <option value="Ban 1">Ban 1 (Vĩ Mô SBV)</option>
-                    <option value="Ban 3">Ban 3 (Tổng Hợp CANSLIM)</option>
-                    <option value="Ban 4">Ban 4 (Rủi Ro ATR)</option>
-                    <option value="Ban 7 VN">Ban 7 VN (Minh Quân)</option>
-                    <option value="Ban 9">Ban 9 (Victor 145 Mã)</option>
-                    <option value="Ban 11">Ban 11 (Khánh & Bảo)</option>
-                    <option value="Ban 12">Ban 12 (Kiểm Sát Trọng)</option>
+                    <option value="Khối 1 (Hiền)">① Khối 1 — Hiền (BCTC &amp; Dữ Liệu)</option>
+                    <option value="Khối 2 (Quân & Alex)">② Khối 2 — Minh Quân &amp; Alex (Thị Trường)</option>
+                    <option value="Khối 3 (James & Palmer)">③ Khối 3 — James &amp; Palmer (Kế Hoạch Đầu Tư)</option>
+                    <option value="Khối 4 (Victor)">④ Khối 4 — Victor (Giám Sát 145 Mã Live)</option>
+                    <option value="Khối 5 (Trọng & Palmer)">⑤ Khối 5 — Trọng &amp; Palmer (Giám Sát Toàn HT)</option>
                 </select>
                 <select id="kb-new-prio" class="office-select">
                     <option value="CRITICAL">CRITICAL</option>
@@ -1613,13 +1833,13 @@
         const items = intel.feed_items || [];
         const sc = intel.summary_counts || {};
         document.getElementById("office-modal-icon").innerText = "📰";
-        document.getElementById("office-modal-title").innerText = "Băng Tin IR, CBTT & BCTC Sống (Hiền — Ban 10)";
+        document.getElementById("office-modal-title").innerText = "Băng Tin IR, CBTT & BCTC Sống (Khối 1 — Trưởng phòng Hiền)";
         document.getElementById("office-modal-sub").innerText = `Cào lúc ${intel.crawled_at || "--"} • ${sc.total_news_articles || 0} bài RSS/CBTT • ${sc.verified_ir_portals || 0} cổng IR • ${sc.sec_edgar_filings || 0} SEC EDGAR`;
         const body = document.getElementById("office-modal-body");
         body.innerHTML = `
             <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
                 <input id="intel-filter-input" class="office-input" style="min-width:240px;flex:1;" placeholder="Lọc theo mã (TPB, HDB, HPG, CTG, NVDA...) hoặc từ khóa...">
-                <button class="office-ctrl-btn primary" onclick="window.ApexVirtualOffice.triggerRoomAction('room_ban_10','crawl_intel',{})">📡 + Cập Nhật Băng Tin Ngay</button>
+                <button class="office-ctrl-btn primary" onclick="window.ApexVirtualOffice.triggerRoomAction('team_hien','crawl_intel',{})">📡 + Cập Nhật Băng Tin Ngay</button>
             </div>
             <div id="intel-feed-list"></div>
         `;
@@ -1639,8 +1859,8 @@
                     <div style="font-size:12px;color:#475569;margin-bottom:8px;">${esc(n.summary)}</div>
                     <div style="display:flex;gap:8px;flex-wrap:wrap;">
                         ${n.source_url ? `<a href="${esc(n.source_url)}" target="_blank" rel="noopener noreferrer" class="office-btn-sm" style="text-decoration:none;">🔗 Mở Bài Gốc</a>` : ""}
-                        <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('room_ban_2','convene_dept',{ticker:'${esc(n.symbol)}',directive:'Phân tích BCTC & tin catalyst mã ${esc(n.symbol)}'})">🔬 Đẩy Ban 2 Thẩm Định</button>
-                        <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('room_ban_11','convene_dept',{ticker:'${esc(n.symbol)}',directive:'Soạn kịch bản Video 60s cho mã ${esc(n.symbol)} từ băng tin Hiền'})">🎬 Đẩy Khánh Tạo Kịch Bản</button>
+                        <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('team_quan_alex','convene_dept',{ticker:'${esc(n.symbol)}',directive:'Phân tích BCTC & điểm vào mã ${esc(n.symbol)} từ băng tin Khối 1 Hiền'})">➔ Đẩy Quân &amp; Alex</button>
+                        <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('team_james_palmer','convene_dept',{ticker:'${esc(n.symbol)}',directive:'Trình James & Palmer xem xét catalyst mã ${esc(n.symbol)}'})">🎖️ Báo Cáo James</button>
                     </div>
                 </div>
             `).join("") || `<div style="padding:20px;text-align:center;color:#64748b;">Không có tin khớp từ khóa.</div>`;
@@ -1670,7 +1890,7 @@
         body.innerHTML = `
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-bottom:14px;">
                 <div class="office-section-box"><div class="office-section-title">💰 Tiền Mặt Ròng SSOT</div><strong style="font-size:18px;color:#059669;">${esc(ssot.cash_str)}</strong><div style="font-size:11px;color:#64748b;">${esc(ssot.cash_pct)}% Tiền mặt • ${esc(ssot.holdings_count)} vị thế mở</div></div>
-                <div class="office-section-box"><div class="office-section-title">🏛️ Hội Đồng 14 Ban</div><strong style="font-size:15px;color:#4f46e5;">${esc(es.final_verdict || "--")}</strong><div style="font-size:11px;color:#64748b;">Điểm danh: ${esc(es.quorum_count || 0)}/${esc(es.roster_total || 14)} • Audit ${esc(es.ombudsman_audit_score || "10/10")}</div></div>
+                <div class="office-section-box"><div class="office-section-title">🏛️ Hội Đồng 5 Khối Chuyên Trách</div><strong style="font-size:15px;color:#4f46e5;">${esc(es.final_verdict || "--")}</strong><div style="font-size:11px;color:#64748b;">Điểm danh: ${esc(es.quorum_count || 0)}/${esc(es.roster_total || 14)} Ban • Audit ${esc(es.ombudsman_audit_score || "10/10")}</div></div>
                 <div class="office-section-box"><div class="office-section-title">📡 Thị Trường Live</div><strong style="font-size:15px;">VNI ${esc((d.market_live || {}).vn_index || "--")}</strong><div style="font-size:11px;color:#64748b;">Chế độ: ${esc((d.market_live || {}).live_regime || "--")} • Daemons: ${esc(sup.services_count || 5)}</div></div>
             </div>
             <div class="office-section-box" style="margin-bottom:14px;">
@@ -2059,8 +2279,8 @@
                 if (!chosen.length) { showToast("Chủ tịch vui lòng chọn ít nhất 1 lô 100 CP.", "warn"); return; }
                 await createKanbanTask({
                     title: `[Mô phỏng S1–S3] Kịch bản: ${chosen.join(" + ")} (${allocPct.toFixed(1)}% NAV)`,
-                    dept: "Ban 7 VN",
-                    assignee: "Minh Quân",
+                    dept: "Khối 2 (Quân & Alex)",
+                    assignee: "Minh Quân & Alex",
                     priority: "HIGH",
                     scheduled_time: "14:00",
                 });

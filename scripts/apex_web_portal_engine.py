@@ -4061,11 +4061,11 @@ def generate_portal_html(
         </section>
 
         {db_milestone_banner}
-        <!-- TABS NAV (VĂN PHÒNG 2.5D LÀM MÀN HÌNH CHÍNH + 3 PHÒNG CHUYÊN SÂU) -->
+        <!-- TABS NAV (VĂN PHÒNG 2.5D 5 KHỐI LÀM MÀN HÌNH CHÍNH + 3 PHÒNG CHUYÊN SÂU) -->
         <nav class="tab-nav">
             <button class="tab-btn active" id="btn-tab-office" onclick="switchTab('office')">
-                <span>🏢</span> <span>0. Văn Phòng 2.5D (Trụ Sở)</span>
-                <span class="live-badge" style="background: rgba(16, 185, 129, 0.22); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); padding: 2px 7px; font-size: 10px; margin-left: 3px; border-radius: 9999px;">● 12 BAN LIVE</span>
+                <span>🏢</span> <span>0. Văn Phòng 2.5D (5 Khối)</span>
+                <span class="live-badge" style="background: rgba(16, 185, 129, 0.22); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); padding: 2px 7px; font-size: 10px; margin-left: 3px; border-radius: 9999px;">● 5 KHỐI LIVE</span>
             </button>
             <button class="tab-btn" onclick="switchTab('reports')">
                 <span>📑</span> <span>1. Thư Viện Báo Cáo</span>

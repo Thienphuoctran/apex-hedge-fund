@@ -1,17 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-APEX VIRTUAL OFFICE 2.5D LIVE ENGINE (BACKEND REAL-TIME DATA & ACTION HUB)
+APEX VIRTUAL OFFICE 2.5D LIVE ENGINE — SƠ ĐỒ TỔ CHỨC 5 KHỐI + 1 KHU TIỆN ÍCH (V2.0)
 File: scripts/apex_virtual_office_engine.py
-Cơ quan chủ quản: Palmer — Apex Central System Governance
+Cơ quan chủ quản: Palmer & Kiểm Sát Viên Trọng (Khối 5 — Giám Sát Toàn Hệ Thống)
 Phục vụ: Chủ tịch Trần Quốc Thiên Phước (Tài khoản TCBS: 105C307855)
 
-Nguyên tắc kiến trúc:
-1. Thuần Python chuẩn (KHÔNG import pandas / numpy / yfinance) để bảo vệ RAM < 220 MB trên Render Free 512 MB.
-2. Đọc 100% dữ liệu sống thực tế (SSOT 105C307855, Enterprise Mesh 14 thực thể, Kanban, Daemon Supervisor,
-   Living War-Room 145 mã, Omni Internet Crawler, Deep Brain BCTC, Global Spillover, 15 Huyền thoại, Kiểm toán Trọng).
-3. Cung cấp API cho Bản đồ Văn phòng 2.5D Sáng Hiện Đại: trạng thái từng phòng, luồng gói tin nối phòng,
-   Side Drawer chi tiết chuyên môn + báo cáo thật của riêng Ban, và bộ điều phối tác vụ nền không nghẽn HTTP.
+SƠ ĐỒ TỔ CHỨC CHÍNH THỨC THEO CHỈ THỊ CHỦ TỊCH (22/11/2026):
+1. Khối 1 (`team_hien`) — Trưởng phòng: Hiền
+   Cào dữ liệu Internet, CBTT, Cổng IR, SEC EDGAR, Pháp y BCTC & Phân tích Tài chính (Ban 10, Ban 2, Ban 11)
+   ──▶ Bàn giao báo cáo sang Khối 2 (Minh Quân & Alex).
+2. Khối 2 (`team_quan_alex`) — Đồng Trưởng phòng: Minh Quân (VN) & Alex (US) (chịu trách nhiệm trước James)
+   Phân tích thị trường & thẩm định báo cáo từ đội Hiền (Ban 7 VN/US, Ban 1 Vĩ mô, Ban 3 CANSLIM/VSA, Ban 4 Rủi ro ATR)
+   ──▶ Gửi phân tích & đề xuất lên Khối 3 (Master CIO James & Palmer).
+3. Khối 3 (`team_james_palmer`) — Lãnh đạo: Master CIO James & Palmer
+   Tiếp nhận báo cáo từ Minh Quân & Alex + báo động chạm ngưỡng từ Victor ──▶ Hoàn thiện Kế hoạch Đầu tư trình Chủ tịch!
+   (Kèm Ban 5 Tự tiến hóa & Ban 6 Học viện 15 Huyền thoại tham mưu).
+4. Khối 4 (`team_victor`) — Trưởng phòng: Victor (Ban 9 Sentinel)
+   Giám sát bảng điện 145 mã trong suốt phiên; chạm ngưỡng Mua/Bán trong kế hoạch ──▶ Báo ngay về James triển khai tức thì!
+5. Khối 5 (`team_trong_palmer`) — Đồng Giám sát: Kiểm Sát Viên Trọng (Ban 12) & Palmer
+   Giám sát toàn bộ hoạt động 4 Khối & toàn hệ thống 24/7 (10 Điều Hiến Chương, SSOT, niêm phong SHA-256).
+6. Khu Tiện Ích (`room_lounge`) — Công Viên Apex, Bàn Bi-a 6 lỗ & Mô phỏng Chia Vốn 20.05M ₫.
+
+Thuần Python chuẩn (KHÔNG import pandas / numpy / yfinance) để tối ưu RAM < 220 MB cho Render Free 512 MB.
 """
 
 from __future__ import annotations
@@ -72,7 +83,7 @@ def _get_cached_reports(force_refresh: bool = False) -> List[Dict[str, Any]]:
             return list(_REPORTS_CACHE["items"])
     try:
         from scripts.apex_report_scanner import scan_all_institutional_reports
-        items = scan_all_institutional_reports(limit=300)
+        items = scan_all_institutional_reports(limit=350)
         if not isinstance(items, list):
             items = []
     except Exception:
@@ -83,336 +94,260 @@ def _get_cached_reports(force_refresh: bool = False) -> List[Dict[str, Any]]:
     return list(items)
 
 
-# Quy hoạch 12 Phòng Vật Lý trên Bản đồ 2.5D Isometric (Sắp xếp 3 dãy hành lang mạch lạc)
+# ==============================================================================
+# QUY HOẠCH 5 KHỐI CHUYÊN MÔN + 1 KHU TIỆN ÍCH (RỘNG RÃI, MẠCH LẠC, RÕ TRƯỞNG PHÒNG)
+# ==============================================================================
 ROOMS_BLUEPRINT: List[Dict[str, Any]] = [
     {
-        "room_id": "room_ban_10",
-        "ban_code": "Ban 10",
-        "name": "Phòng Băng Tin IR & BCTC",
-        "short_name": "Băng tin IR (Hiền)",
-        "wing": "Tình Báo & Dữ Liệu",
+        "room_id": "team_hien",
+        "step_badge": "①",
+        "ban_code": "Khối 1 — Đội Hiền",
+        "name": "Khối Cào Dữ Liệu, BCTC & Phân Tích Tài Chính",
+        "short_name": "① Đội Hiền (Dữ liệu & BCTC)",
+        "wing": "Bước 1: Đầu Vào Dữ Liệu & Pháp Y Tài Chính",
+        "lead_title": "Trưởng phòng: Hiền",
+        "handoff_to": "Chuyển báo cáo sang ② Minh Quân & Alex",
         "icon": "🌸",
         "accent": "#ec4899",
         "floor_tint": "#fdf2f8",
-        "officers": ["Hiền (IR Scout)"],
-        "avatars": [{"name": "Hiền", "color": "#ec4899", "role": "IR & Filings"}],
-        "gx": 0.2,
-        "gy": 0.1,
-        "gw": 2.1,
-        "gd": 1.65,
-        "dept_ids": ["ban_10_hien", "ban_10_cbtt"],
-        "roster_ids": ["BAN_10_IR"],
-        "kanban_depts": ["Ban 10"],
-        "schedule": "18:00 & 21:00 hàng ngày (Cào RSS, Vietcap, 11 cổng IR, EDGAR)",
-        "milestone_hours": [(18, 0), (21, 0)],
-        "always_on_247": True,
-        "veto_power": False,
-        "furniture": "news_ticker",
-        "primary_action": {"action": "crawl_intel", "label": "📡 Cào Tin & CBTT Sống Ngay"},
-    },
-    {
-        "room_id": "room_ban_1",
-        "ban_code": "Ban 1 VN/US",
-        "name": "Phòng Vĩ Mô SBV & Toàn Cầu",
-        "short_name": "Vĩ mô (Minh & Elena)",
-        "wing": "Tình Báo & Dữ Liệu",
-        "icon": "🌐",
-        "accent": "#0ea5e9",
-        "floor_tint": "#f0f9ff",
-        "officers": ["Vũ Minh (VN)", "Dr. Elena Vance (US)"],
-        "avatars": [
-            {"name": "Vũ Minh", "color": "#0284c7", "role": "Vĩ mô SBV"},
-            {"name": "Elena", "color": "#38bdf8", "role": "Global Macro"},
+        "officers": ["Hiền (Trưởng phòng)", "Ban 2 Pháp Y BCTC", "Khánh & Bảo (Ban 11)"],
+        "sub_departments": [
+            {"code": "Ban 10 (Hiền)", "role": "Cào RSS/CBTT, Vietcap/CafeF, 11 cổng IR & SEC EDGAR"},
+            {"code": "Ban 2 (Pháp Y)", "role": "Kiểm toán tiền thật OCF/LNST, Piotroski F-Score, Beneish M, MOS"},
+            {"code": "Ban 11 (Khánh & Bảo)", "role": "Đóng gói dữ liệu tài chính trực quan & kịch bản truyền thông"},
         ],
-        "gx": 2.75,
-        "gy": 0.1,
-        "gw": 2.1,
-        "gd": 1.65,
-        "dept_ids": ["ban_1_macro", "ban_1_vn_macro"],
-        "roster_ids": ["BAN_1_VN", "BAN_1_US"],
-        "kanban_depts": ["Ban 1", "Ban 1 & 3"],
-        "schedule": "07:00 hàng ngày & Phiên đêm Phố Wall (DXY, VIX, US10Y, SBV)",
-        "milestone_hours": [(7, 0)],
-        "always_on_247": False,
-        "veto_power": False,
-        "furniture": "macro_map",
-        "primary_action": {"action": "convene_dept", "label": "🌐 Cập Nhật Luận Điểm Vĩ Mô"},
-    },
-    {
-        "room_id": "room_ban_2",
-        "ban_code": "Ban 2",
-        "name": "Phòng Pháp Y BCTC & Định Giá",
-        "short_name": "Pháp Y BCTC",
-        "wing": "Tình Báo & Dữ Liệu",
-        "icon": "🔍",
-        "accent": "#10b981",
-        "floor_tint": "#ecfdf5",
-        "officers": ["Chuyên Gia Pháp Y BCTC"],
-        "avatars": [{"name": "Pháp Y B2", "color": "#059669", "role": "OCF & MOS"}],
-        "gx": 5.3,
-        "gy": 0.1,
-        "gw": 2.1,
-        "gd": 1.65,
-        "dept_ids": ["ban_2_equity", "ban_2_vn_equity"],
-        "roster_ids": ["BAN_2_BCTC"],
-        "kanban_depts": ["Ban 2", "Ban 2 & 3"],
-        "schedule": "08:00 hàng ngày & Soi rổ Q3/2026 (OCF/LNST, Beneish M, MOS)",
-        "milestone_hours": [(8, 0)],
-        "always_on_247": False,
+        "avatars": [
+            {"name": "Hiền (TP)", "color": "#db2777", "role": "Trưởng phòng"},
+            {"name": "Pháp Y B2", "color": "#10b981", "role": "BCTC & OCF"},
+            {"name": "Khánh B11", "color": "#f97316", "role": "Đóng gói tin"},
+        ],
+        "gx": 0.4,
+        "gy": 0.3,
+        "gw": 3.1,
+        "gd": 2.05,
+        "dept_ids": ["ban_10_hien", "ban_10_cbtt", "ban_2_equity", "ban_2_vn_equity", "ban_11_khanh"],
+        "roster_ids": ["BAN_10_IR", "BAN_2_BCTC", "BAN_11_MEDIA"],
+        "kanban_depts": ["Ban 10", "Ban 2", "Ban 2 & 3", "Ban 11"],
+        "schedule": "Cào sống trước 08:00, 18:00 & 21:00 — Chuyển ngay báo cáo BCTC sạch sang Minh Quân & Alex",
+        "milestone_hours": [(8, 0), (18, 0), (21, 0), (21, 15)],
+        "always_on_247": True,
         "veto_power": True,
-        "furniture": "forensic_desk",
-        "primary_action": {"action": "convene_dept", "label": "🔬 Thẩm Định Pháp Y Rổ Q3/2026"},
+        "furniture": "hien_data_hub",
+        "primary_action": {"action": "crawl_intel", "label": "📡 Hiền Cào Tin & BCTC Sống Ngay"},
+        "chat_template": "Giao Khối 1 (Hiền) cào dữ liệu mới nhất & mổ xẻ BCTC cho các mã trọng điểm (TPB, HDB, CTG, HPG, VPB) rồi bàn giao ngay sang Khối 2 (Minh Quân & Alex).",
     },
     {
-        "room_id": "room_ban_3",
-        "ban_code": "Ban 3",
-        "name": "Phòng Tổng Hợp CANSLIM & VSA",
-        "short_name": "Tổng Hợp (Ban 3)",
-        "wing": "Chiến Lược & Hội Đồng",
-        "icon": "🎯",
-        "accent": "#8b5cf6",
+        "room_id": "team_quan_alex",
+        "step_badge": "②",
+        "ban_code": "Khối 2 — Đội Minh Quân & Alex",
+        "name": "Khối Phân Tích Thị Trường & Tín Hiệu",
+        "short_name": "② Minh Quân & Alex (Thị trường)",
+        "wing": "Bước 2: Phân Tích Thị Trường & Báo Cáo Đội Hiền",
+        "lead_title": "Đồng Trưởng phòng: Minh Quân (VN) & Alex (US) — Báo cáo trực tiếp James",
+        "handoff_to": "Trình phân tích & sổ lệnh lên ③ Master CIO James & Palmer",
+        "icon": "⚡",
+        "accent": "#7c3aed",
         "floor_tint": "#f5f3ff",
-        "officers": ["Trưởng Phòng Tổng Hợp"],
-        "avatars": [{"name": "Sàng Lọc B3", "color": "#7c3aed", "role": "CANSLIM/VSA"}],
-        "gx": 0.2,
-        "gy": 2.2,
-        "gw": 2.0,
-        "gd": 1.65,
-        "dept_ids": ["ban_3_synthesis", "ban_3_debates", "ban_3_vn_synthesis"],
-        "roster_ids": ["BAN_3_SYNTHESIS"],
-        "kanban_depts": ["Ban 3", "Ban 1 & 3", "Ban 2 & 3", "Ban 3 & Victor"],
-        "schedule": "08:00, 11:45 & Tranh biện phản biện Bull vs Bear",
-        "milestone_hours": [(8, 0), (11, 45)],
+        "officers": ["Minh Quân (Trưởng phòng VN)", "Alex (Trưởng phòng US)", "Vũ Minh & Elena (Ban 1)", "Ban 3 & Ban 4"],
+        "sub_departments": [
+            {"code": "Ban 7 VN (Minh Quân)", "role": "Phân tích thị trường VN, thẩm định BCTC đội Hiền, Ma trận S1–S4 & Giờ Vàng 14h05–14h25"},
+            {"code": "Ban 7 US (Alex)", "role": "Phân tích Phố Wall/Quốc tế & xung lan tỏa sang Việt Nam"},
+            {"code": "Ban 1 (Vũ Minh & Elena)", "role": "Vĩ mô SBV, Tỷ giá USD/VND, Fed/VIX/DXY/US10Y"},
+            {"code": "Ban 3 & Ban 4", "role": "Sàng lọc CANSLIM/VSA (Điều 3 MA20) & Khóa rủi ro ATR, trần lô ≤ 33% NAV"},
+        ],
+        "avatars": [
+            {"name": "Minh Quân", "color": "#7c3aed", "role": "TP Thị trường VN"},
+            {"name": "Alex (US)", "color": "#db2777", "role": "TP Thị trường US"},
+            {"name": "Vũ Minh", "color": "#0284c7", "role": "Vĩ mô SBV"},
+            {"name": "Rủi Ro B4", "color": "#e11d48", "role": "ATR & Stop"},
+        ],
+        "gx": 4.25,
+        "gy": 0.3,
+        "gw": 3.45,
+        "gd": 2.05,
+        "dept_ids": [
+            "ban_7_specialist", "ban_7_vn_specialist",
+            "ban_1_macro", "ban_1_vn_macro",
+            "ban_3_synthesis", "ban_3_debates", "ban_3_vn_synthesis",
+            "ban_4_risk", "ban_4_vn_risk",
+        ],
+        "roster_ids": ["BAN_7_VN", "BAN_7_US", "BAN_1_VN", "BAN_1_US", "BAN_3_SYNTHESIS", "BAN_4_RISK"],
+        "kanban_depts": ["Ban 7 VN", "Ban 7 & 8", "Ban 1", "Ban 1 & 3", "Ban 3", "Ban 4", "Ban 4 & Victor", "Ban 4 & 9"],
+        "schedule": "07:00 Vĩ mô, 08:30 Pre-ATO, 11:35 Giữa phiên & 14:05–14:25 Khung Giờ Vàng",
+        "milestone_hours": [(7, 0), (8, 30), (11, 35), (14, 5)],
         "always_on_247": False,
         "veto_power": True,
-        "furniture": "screener_desk",
-        "primary_action": {"action": "convene_dept", "label": "⚔️ Phản Biện & Sàng Lọc Alpha"},
+        "furniture": "market_analysis_floor",
+        "primary_action": {"action": "convene_dept", "label": "📊 Chạy Phân Tích Thị Trường & Gửi Lên James"},
+        "chat_template": "Giao Khối 2 (Minh Quân & Alex) phân tích thị trường hôm nay cùng báo cáo BCTC từ đội Hiền, lọc CANSLIM/ATR và gửi đề xuất kịch bản S1–S4 lên cho James & Palmer.",
     },
     {
-        "room_id": "room_ban_8",
-        "ban_code": "Ban 8",
-        "name": "Phòng Tổng Tư Lệnh Master CIO",
-        "short_name": "Master CIO James",
-        "wing": "Bộ Chỉ Huy Tối Cao",
+        "room_id": "team_james_palmer",
+        "step_badge": "③",
+        "ban_code": "Khối 3 — James & Palmer",
+        "name": "Ban Điều Hành Tối Cao & Hoạch Định Kế Hoạch Đầu Tư",
+        "short_name": "③ James & Palmer (Kế hoạch Đầu tư)",
+        "wing": "Bước 3: Hoàn Thiện Kế Hoạch Đầu Tư & Trình Chủ Tịch",
+        "lead_title": "Tổng Tư Lệnh: Master CIO James & Palmer (Tiếp nhận Minh Quân, Alex & Victor)",
+        "handoff_to": "Hoàn thiện Bản Kế Hoạch Đầu Tư Chuyên Môn Nhất ──▶ TRÌNH CHỦ TỊCH PHƯỚC TRẦN",
         "icon": "🎖️",
         "accent": "#4f46e5",
         "floor_tint": "#eef2ff",
-        "officers": ["Master CIO James"],
-        "avatars": [{"name": "James CIO", "color": "#4338ca", "role": "Tổng Tư Lệnh"}],
-        "gx": 2.65,
-        "gy": 2.2,
-        "gw": 2.3,
-        "gd": 1.7,
-        "dept_ids": ["ban_8_cio", "ban_8_council", "ban_8_enterprise"],
-        "roster_ids": ["BAN_8_CIO"],
-        "kanban_depts": ["Ban 8", "Ban 7 & 8"],
-        "schedule": "08:45 Sổ Lệnh, 14:25 Duyệt Khớp, 23:00 Thượng Đỉnh & Trực 24/7",
-        "milestone_hours": [(8, 45), (14, 25), (23, 0)],
+        "officers": ["Master CIO James", "Palmer (Điều hành)", "Ban 5 & Ban 6 (Tham mưu)"],
+        "sub_departments": [
+            {"code": "Ban 8 (Master CIO James)", "role": "Chốt phân bổ vốn 20.05M ₫, phán quyết S1–S4 & kế hoạch triển khai tức thì khi Victor báo chạm ngưỡng"},
+            {"code": "Palmer (Điều Hành)", "role": "Đồng bộ 100% báo cáo, quản trị tiến độ & tương tác trực tiếp cùng Chủ tịch"},
+            {"code": "Ban 5 & Ban 6", "role": "Tham mưu 15 Huyền thoại đầu tư, Walk-Forward Hit Rate & đúc rút bài học EOD"},
+        ],
+        "avatars": [
+            {"name": "James CIO", "color": "#4338ca", "role": "Tổng Tư Lệnh"},
+            {"name": "Palmer", "color": "#0ea5e9", "role": "Điều hành & HT"},
+            {"name": "Học Viện", "color": "#2563eb", "role": "15 Huyền thoại"},
+        ],
+        "gx": 0.4,
+        "gy": 3.05,
+        "gw": 3.55,
+        "gd": 2.1,
+        "dept_ids": ["ban_8_cio", "ban_8_council", "ban_8_enterprise", "ban_5_learning", "ban_6_mentorship", "ban_6_vn_coach"],
+        "roster_ids": ["BAN_8_CIO", "BAN_5_EVOLUTION", "BAN_6_ACADEMY"],
+        "kanban_depts": ["Ban 8", "Ban 7 & 8", "Ban 5", "Ban 5 VN", "Ban 6"],
+        "schedule": "Trực chỉ huy 24/7 • Chốt kế hoạch 09:00 / 11:35 / 14:05 / 15:45 & phản ứng tức thời theo Victor",
+        "milestone_hours": [(8, 45), (9, 0), (14, 5), (15, 45), (23, 0)],
         "always_on_247": True,
         "veto_power": True,
-        "furniture": "cio_roundtable",
-        "primary_action": {"action": "convene_dept", "label": "🏛️ Triệu Tập Họp 14 Ban Ngay"},
+        "furniture": "cio_command_suite",
+        "primary_action": {"action": "convene_dept", "label": "🏛️ Họp 5 Khối & Chốt Kế Hoạch Trình Chủ Tịch"},
+        "chat_template": "Yêu cầu Khối 3 (James & Palmer) tổng hợp báo cáo từ Minh Quân, Alex và cảnh báo từ Victor để chốt ngay Bản Kế Hoạch Đầu Tư chi tiết (Kịch bản S1–S4, giá LO, Stop, TP) trình tôi duyệt.",
     },
     {
-        "room_id": "room_ban_12",
-        "ban_code": "Ban 12",
-        "name": "Phòng Kiểm Sát Viên Trọng",
-        "short_name": "Kiểm Sát Trọng",
-        "wing": "Bộ Chỉ Huy Tối Cao",
-        "icon": "⚖️",
-        "accent": "#ef4444",
-        "floor_tint": "#fef2f2",
-        "officers": ["Kiểm Sát Viên Trọng"],
-        "avatars": [{"name": "Trọng B12", "color": "#dc2626", "role": "Thanh Tra SHA-256"}],
-        "gx": 5.35,
-        "gy": 2.2,
-        "gw": 2.05,
-        "gd": 1.65,
-        "dept_ids": ["ban_12_ombudsman"],
-        "roster_ids": ["BAN_12_OMBUDSMAN"],
-        "kanban_depts": ["Ban 12"],
-        "schedule": "Giám sát 10 Điều Hiến Chương 24/7 & Thanh tra 23:30",
-        "milestone_hours": [(23, 30)],
-        "always_on_247": True,
-        "veto_power": True,
-        "furniture": "audit_vault",
-        "primary_action": {"action": "run_trong_audit", "label": "🛡️ Chạy Kiểm Toán Tuân Thủ Ngay"},
-    },
-    {
-        "room_id": "room_ban_4",
-        "ban_code": "Ban 4",
-        "name": "Phòng Quản Trị Rủi Ro Định Lượng",
-        "short_name": "Rủi Ro ATR (Ban 4)",
-        "wing": "Chiến Lược & Hội Đồng",
-        "icon": "🛡️",
-        "accent": "#f43f5e",
-        "floor_tint": "#fff1f2",
-        "officers": ["Hội Đồng Quản Trị Rủi Ro"],
-        "avatars": [{"name": "Quant Rủi Ro", "color": "#e11d48", "role": "ATR & Trần 33%"}],
-        "gx": 7.8,
-        "gy": 2.2,
-        "gw": 1.95,
-        "gd": 1.65,
-        "dept_ids": ["ban_4_risk", "ban_4_vn_risk"],
-        "roster_ids": ["BAN_4_RISK"],
-        "kanban_depts": ["Ban 4", "Ban 4 & Victor", "Ban 4 & 9"],
-        "schedule": "13:00 T+2, 14:25 Guard-03 & Khóa Stop 2xATR <= 7.5%",
-        "milestone_hours": [(13, 0), (14, 25)],
-        "always_on_247": False,
-        "veto_power": True,
-        "furniture": "risk_shield",
-        "primary_action": {"action": "convene_dept", "label": "⚖️ Kiểm Tra Trần Rủi Ro & Stop 2xATR"},
-    },
-    {
-        "room_id": "room_ban_5_6",
-        "ban_code": "Ban 5 & 6",
-        "name": "Học Viện 15 Huyền Thoại & Tự Tiến Hóa",
-        "short_name": "Học Viện & Tự Học",
-        "wing": "Tri Thức & Tự Tiến Hóa",
-        "icon": "🎓",
-        "accent": "#2563eb",
-        "floor_tint": "#eff6ff",
-        "officers": ["Giám Đốc Học Viện (Ban 6)", "Chuyên Gia Tự Học (Ban 5)"],
-        "avatars": [
-            {"name": "Ban 5 AI", "color": "#d97706", "role": "Walk-Forward"},
-            {"name": "Coach B6", "color": "#2563eb", "role": "15 Huyền Thoại"},
-        ],
-        "gx": 0.2,
-        "gy": 4.3,
-        "gw": 2.1,
-        "gd": 1.65,
-        "dept_ids": ["ban_5_learning", "ban_6_mentorship", "ban_6_vn_coach"],
-        "roster_ids": ["BAN_5_EVOLUTION", "BAN_6_ACADEMY"],
-        "kanban_depts": ["Ban 5", "Ban 5 VN", "Ban 6"],
-        "schedule": "07:30 Khai Sáng, 15:15 Walk-Forward, 22:00 Tự Học Thích Nghi",
-        "milestone_hours": [(7, 30), (15, 15), (22, 0)],
-        "always_on_247": False,
-        "veto_power": False,
-        "furniture": "academy_library",
-        "primary_action": {"action": "convene_dept", "label": "🧠 Hội Đồng 15 Huyền Thoại Chấm Điểm"},
-    },
-    {
-        "room_id": "room_ban_7",
-        "ban_code": "Ban 7 VN/US",
-        "name": "Phòng Thực Thi Sổ Lệnh & Giờ Vàng",
-        "short_name": "Minh Quân & Alex",
-        "wing": "Sàn Giao Dịch & Thực Thi",
-        "icon": "⚡",
-        "accent": "#c026d3",
-        "floor_tint": "#fdf4ff",
-        "officers": ["Minh Quân (VN)", "Alex (US)"],
-        "avatars": [
-            {"name": "Minh Quân", "color": "#a21caf", "role": "Giờ Vàng 14h00"},
-            {"name": "Alex", "color": "#db2777", "role": "US Markets"},
-        ],
-        "gx": 2.75,
-        "gy": 4.3,
-        "gw": 2.15,
-        "gd": 1.65,
-        "dept_ids": ["ban_7_specialist", "ban_7_vn_specialist"],
-        "roster_ids": ["BAN_7_VN", "BAN_7_US"],
-        "kanban_depts": ["Ban 7 VN", "Ban 7 & 8"],
-        "schedule": "08:30 Pre-ATO, Khung Giờ Vàng 14:00–14:25 (Ma trận S1–S4)",
-        "milestone_hours": [(8, 30), (14, 0), (14, 25)],
-        "always_on_247": False,
-        "veto_power": True,
-        "furniture": "trading_desk",
-        "primary_action": {"action": "publish_warroom", "label": "⚡ Xuất Bản Sổ Lệnh & Ma Trận S1–S4"},
-    },
-    {
-        "room_id": "room_ban_9",
-        "ban_code": "Ban 9",
-        "name": "Phòng Trực Chiến Bảng Điện 145 Mã",
-        "short_name": "Victor (145 Mã Live)",
-        "wing": "Sàn Giao Dịch & Thực Thi",
+        "room_id": "team_victor",
+        "step_badge": "④",
+        "ban_code": "Khối 4 — Phòng Victor",
+        "name": "Phòng Giám Sát Thị Trường & Cảnh Báo Chạm Ngưỡng Live",
+        "short_name": "④ Victor (Giám sát 145 Mã Live)",
+        "wing": "Giám Sát Trong Phiên 09h00–15h00 & Báo Ngay Về James",
+        "lead_title": "Trưởng phòng: Victor Sentinel (Ban 9)",
+        "handoff_to": "Chạm ngưỡng MUA / BÁN trong kế hoạch ──▶ BÁO NGAY VỀ ③ JAMES TRIỂN KHAI",
         "icon": "🚨",
         "accent": "#d97706",
         "floor_tint": "#fffbeb",
-        "officers": ["Victor Sentinel"],
-        "avatars": [{"name": "Victor B9", "color": "#d97706", "role": "Radar 145 Mã"}],
-        "gx": 5.3,
-        "gy": 4.3,
-        "gw": 2.15,
-        "gd": 1.65,
+        "officers": ["Victor Sentinel (Trưởng phòng Ban 9)"],
+        "sub_departments": [
+            {"code": "Radar 145 Mã Live", "role": "Quét bảng điện liên tục trong phiên: VN-Index, Breadth > MA20, Buy-Up %, dòng tiền 18 ngành"},
+            {"code": "Bộ Kích Hoạt Ngưỡng Mua/Bán", "role": "Canh sát từng mức giá kế hoạch (TPB 12,250 | HDB 21,700 | CTG 29,950 | Stop -5.5% | TP1 +9%) — chạm là báo ngay James!"},
+        ],
+        "avatars": [
+            {"name": "Victor B9", "color": "#d97706", "role": "Giám sát Live"},
+        ],
+        "gx": 4.65,
+        "gy": 3.05,
+        "gw": 3.05,
+        "gd": 2.1,
         "dept_ids": ["ban_9_sentinel"],
         "roster_ids": ["BAN_9_SENTINEL"],
         "kanban_depts": ["Ban 9", "Ban 9 & System", "Ban 3 & Victor", "Ban 4 & Victor", "Ban 4 & 9"],
-        "schedule": "Quét Live 145 mã (09:00–15:00) & Bảo vệ tường lửa 24/7",
-        "milestone_hours": [(9, 0), (13, 0), (14, 25)],
+        "schedule": "Giám sát liên tục 09:00–15:00 T2–T6 & Bảo vệ tài khoản 24/7",
+        "milestone_hours": [(9, 0), (13, 0), (14, 5), (14, 25)],
         "always_on_247": True,
         "veto_power": True,
-        "furniture": "radar_wall",
-        "primary_action": {"action": "publish_warroom", "label": "📡 Quét Nhanh 145 Mã & Bảo Vệ Vốn"},
+        "furniture": "victor_radar_wall",
+        "primary_action": {"action": "publish_warroom", "label": "🚨 Quét 145 Mã & Kiểm Tra Ngưỡng Mua/Bán Ngay"},
+        "chat_template": "Yêu cầu Khối 4 (Victor) quét ngay bảng điện 145 mã, kiểm tra xem có mã nào trong rổ Tuần 48 (TPB, HDB, CTG, HPG, VPB) chạm ngưỡng Mua/Bán không và báo cáo tức thời cho James.",
     },
     {
-        "room_id": "room_ban_11",
-        "ban_code": "Ban 11",
-        "name": "Studio Truyền Thông & Video AI",
-        "short_name": "Studio Khánh & Bảo",
-        "wing": "Tri Thức & Tự Tiến Hóa",
-        "icon": "🎬",
-        "accent": "#ea580c",
-        "floor_tint": "#fff7ed",
-        "officers": ["Khánh (Content)", "Bảo (AI Render)"],
-        "avatars": [
-            {"name": "Khánh", "color": "#ea580c", "role": "Kịch bản 60s"},
-            {"name": "Bảo", "color": "#fb923c", "role": "Render Video"},
+        "room_id": "team_trong_palmer",
+        "step_badge": "⑤",
+        "ban_code": "Khối 5 — Trọng & Palmer",
+        "name": "Ban Giám Sát, Kiểm Toán & Quản Trị Toàn Hệ Thống",
+        "short_name": "⑤ Trọng & Palmer (Giám sát Toàn HT)",
+        "wing": "Giám Sát Toàn Bộ 4 Khối, 10 Điều Hiến Chương & Auto-Run 24/7",
+        "lead_title": "Đồng Giám sát: Kiểm Sát Viên Trọng (Ban 12) & Palmer",
+        "handoff_to": "Giám sát kỷ luật, SSOT 105C307855 & niêm phong SHA-256 cho toàn hệ thống",
+        "icon": "⚖️",
+        "accent": "#dc2626",
+        "floor_tint": "#fef2f2",
+        "officers": ["Kiểm Sát Viên Trọng (Ban 12)", "Palmer (Tổng Hệ Thống)"],
+        "sub_departments": [
+            {"code": "Ban 12 (Kiểm Sát Trọng)", "role": "Kiểm toán 10 Điều Hiến Chương, đối chiếu SSOT, phát VETO chống sai số & niêm phong SHA-256"},
+            {"code": "Palmer (Tổng Hệ Thống)", "role": "Giám sát vận hành tự động 24/7, khởi động cùng Windows, đồng bộ Web/Chat/Cloud"},
         ],
-        "gx": 7.8,
-        "gy": 4.3,
-        "gw": 1.95,
-        "gd": 1.65,
-        "dept_ids": ["ban_11_khanh"],
-        "roster_ids": ["BAN_11_MEDIA"],
-        "kanban_depts": ["Ban 11"],
-        "schedule": "21:15 hàng ngày (Kịch bản & Render Video 9:16 từ BCTC Hiền)",
-        "milestone_hours": [(21, 15)],
-        "always_on_247": False,
-        "veto_power": False,
-        "furniture": "video_studio",
-        "primary_action": {"action": "convene_dept", "label": "🎬 Lên Ý Tưởng Kịch Bản Từ BCTC"},
+        "avatars": [
+            {"name": "Trọng B12", "color": "#dc2626", "role": "Kiểm Sát Viên"},
+            {"name": "Palmer HT", "color": "#0f172a", "role": "Giám sát 24/7"},
+        ],
+        "gx": 0.4,
+        "gy": 5.85,
+        "gw": 3.55,
+        "gd": 1.85,
+        "dept_ids": ["ban_12_ombudsman"],
+        "roster_ids": ["BAN_12_OMBUDSMAN"],
+        "kanban_depts": ["Ban 12", "Ban 9 & System"],
+        "schedule": "Giám sát toàn hệ thống 24/7 & Tổng kiểm toán 15:45 / 23:30",
+        "milestone_hours": [(15, 45), (23, 30)],
+        "always_on_247": True,
+        "veto_power": True,
+        "furniture": "audit_vault",
+        "primary_action": {"action": "run_trong_audit", "label": "🛡️ Chạy Kiểm Toán Toàn Hệ Thống Ngay"},
+        "chat_template": "Yêu cầu Khối 5 (Trọng & Palmer) kiểm toán toàn bộ hoạt động 4 Khối hôm nay, đối chiếu số dư SSOT TCBS 105C307855 và báo cáo tình trạng sức khỏe toàn hệ thống cho tôi.",
     },
     {
         "room_id": "room_lounge",
+        "step_badge": "★",
         "ban_code": "Khu Tiện Ích",
-        "name": "Công Viên Apex, Bàn Bi-a & Mô Phỏng",
-        "short_name": "Giải Trí & Mô Phỏng",
-        "wing": "Tiện Ích Chủ Tịch",
+        "name": "Công Viên Apex, Bàn Bi-a & Mô Phỏng Vốn 20.05M",
+        "short_name": "🎱 Giải Trí & Mô Phỏng Vốn",
+        "wing": "Thư Giãn Chủ Tịch & Giả Lập Phân Bổ Vốn Chuẩn Điều 5",
+        "lead_title": "Khu tiện ích riêng cho Chủ tịch Phước Trần",
+        "handoff_to": "Lưu kịch bản chia vốn What-If trực tiếp vào Kanban cho Minh Quân",
         "icon": "🎱",
         "accent": "#16a34a",
         "floor_tint": "#f0fdf4",
         "officers": ["Trợ Lý Sảnh Apex"],
-        "avatars": [{"name": "Palmer", "color": "#16a34a", "role": "Thư ký Chủ tịch"}],
-        "gx": 7.8,
-        "gy": 0.1,
-        "gw": 1.95,
-        "gd": 1.65,
+        "sub_departments": [
+            {"code": "Bàn Bi-a 6 Lỗ", "role": "Giải trí thư giãn nhẹ nhàng trong lúc chờ phiên 14h05"},
+            {"code": "Bộ Mô Phỏng Vốn 20.05M ₫", "role": "Thử chia lô 100 CP, tự kiểm tra trần 33% NAV & Stop 1.5% NAV"},
+        ],
+        "avatars": [{"name": "Sảnh Apex", "color": "#16a34a", "role": "Tiện ích"}],
+        "gx": 4.65,
+        "gy": 5.85,
+        "gw": 3.05,
+        "gd": 1.85,
         "dept_ids": [],
         "roster_ids": [],
         "kanban_depts": [],
-        "schedule": "Mở cửa 24/7 — Bàn Bi-a thư giãn & Giả lập chia vốn 20.05M ₫",
+        "schedule": "Mở cửa 24/7 — Giải trí & Giả lập kịch bản vốn",
         "milestone_hours": [],
         "always_on_247": True,
         "veto_power": False,
         "furniture": "billiard_lounge",
         "primary_action": {"action": "open_lounge_modal", "label": "🎱 Mở Bàn Bi-a & Mô Phỏng Vốn"},
+        "chat_template": "Mở giúp tôi bảng mô phỏng chia vốn 20,051,117 ₫ cho kịch bản S3 Spring (TPB, HDB, CTG, HPG).",
     },
 ]
 
 ROOMS_BY_ID: Dict[str, Dict[str, Any]] = {r["room_id"]: r for r in ROOMS_BLUEPRINT}
 
+# Ánh xạ tương thích ngược ID phòng cũ -> Khối mới
+LEGACY_ROOM_ALIAS: Dict[str, str] = {
+    "room_ban_10": "team_hien",
+    "room_ban_2": "team_hien",
+    "room_ban_11": "team_hien",
+    "room_ban_1": "team_quan_alex",
+    "room_ban_3": "team_quan_alex",
+    "room_ban_4": "team_quan_alex",
+    "room_ban_7": "team_quan_alex",
+    "room_ban_8": "team_james_palmer",
+    "room_ban_5_6": "team_james_palmer",
+    "room_ban_9": "team_victor",
+    "room_ban_12": "team_trong_palmer",
+}
 
 DATA_FLOW_PIPES: List[Dict[str, str]] = [
-    {"id": "flow_10_2", "from": "room_ban_10", "to": "room_ban_2", "label": "Tin IR/BCTC", "tone": "emerald"},
-    {"id": "flow_1_3", "from": "room_ban_1", "to": "room_ban_3", "label": "Xung Vĩ Mô", "tone": "sky"},
-    {"id": "flow_2_3", "from": "room_ban_2", "to": "room_ban_3", "label": "Pháp Y OCF/MOS", "tone": "emerald"},
-    {"id": "flow_3_8", "from": "room_ban_3", "to": "room_ban_8", "label": "Sàng Lọc Alpha", "tone": "violet"},
-    {"id": "flow_4_8", "from": "room_ban_4", "to": "room_ban_8", "label": "Cỡ Lô ATR", "tone": "rose"},
-    {"id": "flow_7_8", "from": "room_ban_7", "to": "room_ban_8", "label": "Sổ Lệnh S1–S4", "tone": "purple"},
-    {"id": "flow_9_8", "from": "room_ban_9", "to": "room_ban_8", "label": "Nhịp 145 Mã", "tone": "amber"},
-    {"id": "flow_8_12", "from": "room_ban_8", "to": "room_ban_12", "label": "Kiểm Toán SHA-256", "tone": "red"},
-    {"id": "flow_10_11", "from": "room_ban_10", "to": "room_ban_11", "label": "Chất Liệu Video", "tone": "orange"},
-    {"id": "flow_56_8", "from": "room_ban_5_6", "to": "room_ban_8", "label": "15 Huyền Thoại", "tone": "blue"},
+    {"id": "flow_hien_to_qa", "from": "team_hien", "to": "team_quan_alex", "label": "①→② BCTC & Tin", "tone": "pink"},
+    {"id": "flow_qa_to_james", "from": "team_quan_alex", "to": "team_james_palmer", "label": "②→③ Thị trường", "tone": "violet"},
+    {"id": "flow_victor_to_james", "from": "team_victor", "to": "team_james_palmer", "label": "④→③ Chạm ngưỡng!", "tone": "amber"},
+    {"id": "flow_trong_audit_james", "from": "team_trong_palmer", "to": "team_james_palmer", "label": "⑤ Giám sát 10Đ", "tone": "red"},
+    {"id": "flow_trong_audit_victor", "from": "team_trong_palmer", "to": "team_victor", "label": "⑤ Kiểm SSOT", "tone": "red"},
 ]
 
 
@@ -450,7 +385,6 @@ def _finish_job(job_id: str, ok: bool, summary: str, error: Optional[str] = None
                 j["summary"] = summary
                 j["error"] = error
                 break
-    # Làm mới cache ngay để giao diện nhận diện kết quả mới nhất
     with _CACHE_LOCK:
         _LIVE_CACHE["ts"] = 0.0
         _REPORTS_CACHE["ts"] = 0.0
@@ -519,7 +453,7 @@ def get_kanban_board_state() -> Dict[str, Any]:
 def create_kanban_task(
     title: str,
     dept: str,
-    assignee: str = "Trưởng Ban",
+    assignee: str = "Trưởng Phòng",
     priority: str = "HIGH",
     scheduled_time: str = "",
     output_note: str = "",
@@ -547,8 +481,8 @@ def create_kanban_task(
         task_obj = {
             "id": task_id,
             "title": clean_title,
-            "dept": (dept or "Ban 8").strip(),
-            "assignee": (assignee or "Trưởng Ban").strip(),
+            "dept": (dept or "Khối 3 — James & Palmer").strip(),
+            "assignee": (assignee or "Trưởng Phòng").strip(),
             "scheduled_time": sched,
             "status": clean_status,
             "priority": clean_prio,
@@ -706,12 +640,41 @@ def _collect_intel_feed(intel_data: Dict[str, Any], alerts_data: Dict[str, Any])
     }
 
 
+def _collect_victor_reports(existing_reports: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    res = list(existing_reports)
+    sentinel_dir = BASE_DIR / "09_Realtime_Portfolio_Sentinel"
+    if sentinel_dir.exists() and len(res) < 10:
+        md_files = sorted(
+            [p for p in sentinel_dir.glob("*.md") if p.name.lower() != "readme.md"],
+            key=lambda p: p.stat().st_mtime,
+            reverse=True,
+        )
+        seen_rel = {r["rel_path"] for r in res}
+        for md_p in md_files:
+            rel = f"09_Realtime_Portfolio_Sentinel/{md_p.name}"
+            if rel in seen_rel:
+                continue
+            mtime_dt = datetime.datetime.fromtimestamp(md_p.stat().st_mtime)
+            date_part = md_p.name[:10] if len(md_p.name) >= 10 and md_p.name[4] == "-" else mtime_dt.strftime("%Y-%m-%d")
+            res.append({
+                "rel_path": rel,
+                "title": md_p.stem.replace("_", " "),
+                "date": date_part,
+                "time_str": mtime_dt.strftime("%H:%M"),
+                "shift_label": "🚨 Giám Sát Phiên",
+                "dept_name": "Khối 4: Victor Sentinel",
+                "icon": "🚨",
+            })
+            if len(res) >= 10:
+                break
+    return res
+
+
 def _compute_room_status_and_payload(
     bp: Dict[str, Any],
     now_ict: datetime.datetime,
     ssot: Dict[str, Any],
     supervisor_data: Dict[str, Any],
-    cron_data: Dict[str, Any],
     enterprise_data: Dict[str, Any],
     kanban_data: Dict[str, Any],
     warroom_data: Dict[str, Any],
@@ -737,7 +700,6 @@ def _compute_room_status_and_payload(
     room_packets = [p for p in packets if p.get("from_dept") in bp["roster_ids"]]
     room_votes = [v for v in roll_calls if v.get("dept_id") in bp["roster_ids"]]
 
-    # Lọc báo cáo thật thuộc phòng này
     dept_id_set = set(bp["dept_ids"])
     room_reports = [
         {
@@ -751,48 +713,23 @@ def _compute_room_status_and_payload(
         }
         for r in all_reports
         if r.get("dept_id") in dept_id_set
-    ][:8]
+    ][:10]
 
-    # Bổ sung báo cáo thật cho Ban 9 (09_Realtime_Portfolio_Sentinel/*.md) nếu scanner chính chưa quét thư mục này
-    if room_id == "room_ban_9" and len(room_reports) < 8:
-        sentinel_dir = BASE_DIR / "09_Realtime_Portfolio_Sentinel"
-        if sentinel_dir.exists():
-            md_files = sorted(
-                [p for p in sentinel_dir.glob("*.md") if p.name.lower() != "readme.md"],
-                key=lambda p: p.stat().st_mtime,
-                reverse=True,
-            )
-            seen_rel = {r["rel_path"] for r in room_reports}
-            for md_p in md_files:
-                rel = f"09_Realtime_Portfolio_Sentinel/{md_p.name}"
-                if rel in seen_rel:
-                    continue
-                mtime_dt = datetime.datetime.fromtimestamp(md_p.stat().st_mtime)
-                date_part = md_p.name[:10] if len(md_p.name) >= 10 and md_p.name[4] == "-" else mtime_dt.strftime("%Y-%m-%d")
-                room_reports.append({
-                    "rel_path": rel,
-                    "title": md_p.stem.replace("_", " "),
-                    "date": date_part,
-                    "time_str": mtime_dt.strftime("%H:%M"),
-                    "shift_label": "🚨 Trực Chiến Phiên",
-                    "dept_name": "Ban 9: Victor Sentinel",
-                    "icon": "🚨",
-                })
-                if len(room_reports) >= 8:
-                    break
+    if room_id == "team_victor":
+        room_reports = _collect_victor_reports(room_reports)
 
-    # Lọc Kanban tasks của phòng này
     all_tasks = kanban_data.get("tasks", {}) if isinstance(kanban_data, dict) else {}
     k_depts = set(bp["kanban_depts"])
-    room_tasks = [t for t in all_tasks.values() if isinstance(t, dict) and t.get("dept") in k_depts]
+    room_tasks = [
+        t for t in all_tasks.values()
+        if isinstance(t, dict) and (t.get("dept") in k_depts or bp["ban_code"] in str(t.get("dept", "")))
+    ]
     in_progress_tasks = [t for t in room_tasks if t.get("status") == "IN_PROGRESS"]
     review_tasks = [t for t in room_tasks if t.get("status") == "AUDIT_REVIEW"]
     done_tasks = [t for t in room_tasks if t.get("status") == "DONE"]
 
-    # Job đang chạy tại phòng này
     running_job = next((j for j in active_jobs if j.get("room_id") == room_id and j.get("status") == "RUNNING"), None)
 
-    # Xác định trạng thái phòng dựa trên dữ liệu sống
     is_weekday = now_ict.weekday() < 5
     hm = now_ict.hour * 60 + now_ict.minute
     is_market_hours = is_weekday and (9 * 60 <= hm <= 15 * 60)
@@ -800,13 +737,6 @@ def _compute_room_status_and_payload(
     near_milestone = any(abs((h * 60 + m) - hm) <= 20 for h, m in bp.get("milestone_hours", []))
 
     veto_triggered = bool(latest_session.get("veto_triggered", False))
-    dissent_notes = [
-        note for note in (latest_session.get("dissent_notes") or [])
-        if (room_id == "room_ban_3" and "ĐIỀU 3" in note.upper())
-        or (room_id == "room_ban_2" and "BAN 2" in note.upper())
-        or (room_id == "room_ban_4" and "BAN 4" in note.upper())
-    ]
-
     decision_brain = warroom_data.get("decision_brain", {}) if isinstance(warroom_data, dict) else {}
     proposed_orders = decision_brain.get("proposed_lo_orders", []) or []
     has_upcoming_week = any(d.get("status") == "UPCOMING" for d in (weekly_plan.get("days") or []) if isinstance(d, dict))
@@ -817,76 +747,54 @@ def _compute_room_status_and_payload(
 
     if running_job:
         status_code = "working"
-        status_label_vi = "Đang chạy tác vụ"
-    elif (veto_triggered and bp.get("veto_power") and room_id in ("room_ban_3", "room_ban_4", "room_ban_12", "room_ban_8")) or (
-        room_id == "room_ban_12" and int(latest_aud.get("issues_count", 0) or 0) > 0
+        status_label_vi = "Đang thực thi"
+    elif (veto_triggered and room_id in ("team_quan_alex", "team_james_palmer", "team_trong_palmer")) or (
+        room_id == "team_trong_palmer" and int(latest_aud.get("issues_count", 0) or 0) > 0
     ):
         status_code = "alert_veto"
         status_label_vi = "Cờ đỏ / VETO"
-    elif review_tasks or (room_id in ("room_ban_7", "room_ban_8") and (len(proposed_orders) > 0 or is_golden_hour or (room_id == "room_ban_7" and has_upcoming_week))):
+    elif review_tasks or (room_id in ("team_quan_alex", "team_james_palmer") and (len(proposed_orders) > 0 or is_golden_hour or (room_id == "team_quan_alex" and has_upcoming_week))):
         status_code = "waiting_approval"
-        status_label_vi = "Chờ duyệt S1–S4" if (has_upcoming_week and not is_market_hours) else "Chờ duyệt"
-    elif in_progress_tasks or (is_market_hours and room_id in ("room_ban_9", "room_ban_7", "room_ban_4", "room_ban_8")):
+        status_label_vi = "Sẵn sàng S1–S4" if (has_upcoming_week and not is_market_hours) else "Chờ duyệt"
+    elif in_progress_tasks or (is_market_hours and room_id in ("team_victor", "team_quan_alex", "team_james_palmer")):
         status_code = "working"
-        status_label_vi = "Đang làm"
+        status_label_vi = "Đang tác chiến"
     elif near_milestone and is_weekday:
         status_code = "working"
-        status_label_vi = "Đang chạy cột mốc"
-    elif room_id == "room_ban_10" and (intel_feed.get("freshness") or {}).get("is_fresh_under_24h"):
+        status_label_vi = "Chạy cột mốc"
+    elif room_id == "team_hien" and (intel_feed.get("freshness") or {}).get("is_fresh_under_24h"):
         status_code = "working"
-        status_label_vi = "Băng tin sống"
-    elif room_id == "room_ban_9" and services.get("sentinel_monitor", {}).get("status") in ("RUNNING", "IN_PROCESS_COMPACT"):
+        status_label_vi = "Dữ liệu sống < 24h"
+    elif room_id == "team_victor":
         status_code = "working" if is_market_hours else "standby"
-        status_label_vi = "Quét 145 mã" if is_market_hours else "Canh ngoài giờ"
-    elif room_id == "room_ban_12" and services.get("inspector_trong", {}).get("status") in ("RUNNING", "IN_PROCESS_COMPACT"):
-        status_code = "working" if near_milestone else "standby"
-        status_label_vi = "Đang kiểm toán" if near_milestone else "Giám sát 24/7"
-    elif room_id == "room_ban_8":
-        status_code = "waiting_approval" if (ssot["holdings_count"] == 0 and is_golden_hour) else "standby"
-        status_label_vi = "Chờ duyệt S1–S4" if status_code == "waiting_approval" else "Trực chỉ huy 24/7"
+        status_label_vi = "Canh 145 mã Live" if is_market_hours else "Trực ngưỡng ngoài giờ"
+    elif room_id == "team_trong_palmer":
+        status_code = "standby"
+        status_label_vi = "Giám sát 24/7"
+    elif room_id == "team_james_palmer":
+        status_code = "standby"
+        status_label_vi = "Trực chỉ huy 24/7"
     elif room_id == "room_lounge":
         status_code = "standby"
         status_label_vi = "Mở 24/7"
 
-    # Tạo KPI tóm tắt & Bong bóng suy nghĩ (live_thought) sát chuyên môn từng Ban
     recon = warroom_data.get("recon_summary", {}) if isinstance(warroom_data, dict) else {}
     kpi_summary = ""
     live_thought = ""
     specialized_data: Dict[str, Any] = {}
 
-    if room_id == "room_ban_10":
+    if room_id == "team_hien":
         sc = intel_feed["summary_counts"]
-        kpi_summary = f"{sc['total_news_articles']} tin • {sc['verified_ir_portals']} IR • {sc['sec_edgar_filings']} EDGAR"
-        live_thought = f"Đã cào {sc['total_news_articles']} bài ({sc['tickers_with_live_news']} mã có tin)"
+        top_vn = brain_data.get("top_vn_alpha_picks", [])[:8]
+        kpi_summary = f"{sc['total_news_articles']} tin • {sc['verified_ir_portals']} IR • {len(top_vn)} Alpha BCTC Q3"
+        live_thought = f"Hiền: {sc['total_news_articles']} tin & BCTC sạch ➔ Gửi Quân & Alex"
         specialized_data = {
             "crawled_at": intel_feed["crawled_at"],
             "summary_counts": sc,
             "freshness": intel_feed["freshness"],
-            "latest_news": intel_feed["feed_items"][:12],
+            "latest_news": intel_feed["feed_items"][:10],
             "ir_portals": intel_feed["ir_portals"][:8],
             "sec_edgar_filings": intel_feed["sec_edgar_filings"],
-        }
-    elif room_id == "room_ban_1":
-        rm = spillover_data.get("risk_multiplier", 1.0)
-        vix_val = (spillover_data.get("metrics", {}).get("VIX") or {}).get("last_price", "--")
-        sp_chg = (spillover_data.get("metrics", {}).get("SP500") or {}).get("change_1d_pct", "--")
-        kpi_summary = f"Mult {rm}x • VIX {vix_val} • S&P {sp_chg}%"
-        live_thought = f"Spillover {rm}x | Trần NAV {spillover_data.get('max_allocation_pct', 30)}%"
-        specialized_data = {
-            "spillover": spillover_data,
-            "vn_index": recon.get("vn_index"),
-            "vn_index_chg_pct": recon.get("vn_index_chg_pct"),
-            "foreign_net_ty": recon.get("foreign_net_ty"),
-        }
-    elif room_id == "room_ban_2":
-        top_vn = brain_data.get("top_vn_alpha_picks", [])[:8]
-        top_us = brain_data.get("top_us_alpha_picks", [])[:5]
-        kpi_summary = f"{len(top_vn)} Alpha VN • {len(top_us)} Alpha US (Q3/2026)"
-        top_sym = top_vn[0].get("symbol") if top_vn else "TPB"
-        top_sc = top_vn[0].get("alpha_score") if top_vn else "--"
-        live_thought = f"Top BCTC: {top_sym} ({top_sc}đ) • Rổ Q3 sạch"
-        specialized_data = {
-            "generated_at": brain_data.get("generated_at", ""),
             "top_vn_alpha": [
                 {
                     "symbol": p.get("symbol"),
@@ -895,71 +803,34 @@ def _compute_room_status_and_payload(
                     "alpha_score": p.get("alpha_score"),
                     "piotroski_f_score": p.get("piotroski_f_score"),
                     "roe_pct": p.get("roe_pct"),
-                    "pe": p.get("pe"),
                     "ocf_ratio": p.get("ocf_ratio"),
                     "margin_of_safety_pct": (p.get("valuation") or {}).get("margin_of_safety_pct"),
                 }
                 for p in top_vn
             ],
-            "top_us_alpha": [
-                {
-                    "symbol": p.get("symbol"),
-                    "company_name": p.get("company_name"),
-                    "live_price": p.get("live_price"),
-                    "alpha_score": p.get("alpha_score"),
-                    "roe_pct": p.get("roe_pct"),
-                    "pe": p.get("pe"),
-                }
-                for p in top_us
-            ],
-            "approved_watchlist": weekly_plan.get("approved_watchlist", []),
         }
-    elif room_id == "room_ban_3":
-        kpi_summary = f"Tranh biện {latest_session.get('dissent_count', 0)} ý kiến • Điều 3 MA20"
-        live_thought = dissent_notes[0][:56] + "..." if dissent_notes else "Đang lọc CANSLIM & VSA"
-        specialized_data = {
-            "dissent_notes": latest_session.get("dissent_notes", []),
-            "debate_points": (latest_session.get("debate_points") or [])[:8],
-            "target_metrics": latest_session.get("target_metrics", {}),
-        }
-    elif room_id == "room_ban_4":
-        kpi_summary = "Trần lô ≤ 33% NAV • Stop 2xATR ≤ 7.5% • R:R ≥ 1:2"
-        live_thought = f"Khống chế rủi ro NAV {ssot['nav_str']}"
-        specialized_data = {
-            "risk_rules": [
-                "Điều 5: Trần giá trị 1 lô 100 CP ≤ 33% NAV",
-                "Rủi ro cắt lỗ tối đa 1 lệnh ≤ 1.5% NAV (~300,000 ₫)",
-                "Stop Loss 2xATR(14) khóa cứng ≤ 7.5%",
-                "Tỷ lệ Risk/Reward tối thiểu ≥ 1:2.0",
-            ],
-            "watchlist_risk": weekly_plan.get("approved_watchlist", []),
-            "correlation_matrix": (brain_data.get("correlation_matrix") or {}).get("held_symbols", []),
-        }
-    elif room_id == "room_ban_5_6":
-        wf = (legends_data.get("self_reflection") or {}).get("multi_horizon_walk_forward") or {}
-        t5_hit = (wf.get("T+5") or {}).get("hit_rate_pct", "--")
-        t10_hit = (wf.get("T+10") or {}).get("hit_rate_pct", "--")
-        kpi_summary = f"15 Huyền thoại • Hit Rate T+5: {t5_hit}% | T+10: {t10_hit}%"
-        live_thought = f"15 Danh thủ • Walk-Forward T+10: {t10_hit}%"
-        specialized_data = {
-            "total_legends": legends_data.get("total_legends", 15),
-            "walk_forward": wf,
-            "reflection_events": ((legends_data.get("self_reflection") or {}).get("events") or [])[:6],
-            "school_summary": legends_data.get("school_summary", {}),
-        }
-    elif room_id == "room_ban_7":
-        kpi_summary = f"5 mã Q3/2026 • Khung Giờ Vàng 14h00–14h25"
-        live_thought = f"Tuần 48: S1–S4 | {decision_brain.get('live_regime', 'STANDBY')}"
+    elif room_id == "team_quan_alex":
+        rm = spillover_data.get("risk_multiplier", 1.0)
+        vix_val = (spillover_data.get("metrics", {}).get("VIX") or {}).get("last_price", "--")
+        kpi_summary = f"Rổ 5 mã Q3 (TPB,HDB,CTG,HPG,VPB) • Mult {rm}x • VIX {vix_val}"
+        live_thought = f"Quân & Alex: Lọc S1–S4 (14h05) ➔ Trình James"
         specialized_data = {
             "week_label": weekly_plan.get("week_label", ""),
             "constitution_mandate": weekly_plan.get("constitution_mandate", ""),
             "approved_watchlist": weekly_plan.get("approved_watchlist", []),
-            "weekly_days": weekly_plan.get("days", []),
-            "proposed_lo_orders": proposed_orders,
+            "spillover": spillover_data,
+            "dissent_notes": latest_session.get("dissent_notes", []),
+            "risk_rules": [
+                "Điều 5: Trần lô 100 CP ≤ 33% NAV",
+                "Stop Loss cứng -5.5% (tối đa ≤ 1.5% NAV/lệnh)",
+                "Cấm mua FOMO trước 14h00 — chỉ hành động 14h05–14h25",
+            ],
         }
-    elif room_id == "room_ban_8":
-        kpi_summary = f"Két {ssot['cash_str']} ({ssot['cash_pct']:.0f}% Cash) • {ssot['holdings_count']} CP"
-        live_thought = f"Tuần 48: S1–S4 | Két {ssot['cash_str']}"
+    elif room_id == "team_james_palmer":
+        wf = (legends_data.get("self_reflection") or {}).get("multi_horizon_walk_forward") or {}
+        t10_hit = (wf.get("T+10") or {}).get("hit_rate_pct", "--")
+        kpi_summary = f"Két {ssot['cash_str']} ({ssot['cash_pct']:.0f}% Cash) • {ssot['holdings_count']} CP • T+10 {t10_hit}%"
+        live_thought = f"James & Palmer: Két {ssot['cash_str']} • Chờ 09h00 T2"
         specialized_data = {
             "ssot": ssot,
             "latest_session": {
@@ -974,33 +845,30 @@ def _compute_room_status_and_payload(
                 "veto_triggered": veto_triggered,
                 "veto_reasons": latest_session.get("veto_reasons", []),
             },
-            "services": services,
+            "walk_forward": wf,
+            "total_legends": legends_data.get("total_legends", 15),
         }
-    elif room_id == "room_ban_9":
+    elif room_id == "team_victor":
         vni = recon.get("vn_index", "--")
         br = recon.get("live_breadth_ma20_pct", "--")
         scanned = recon.get("scanned_live_count", 0)
         total_u = recon.get("universe_total", 145)
-        kpi_summary = f"VNI {vni} • Br20 {br}% • {scanned}/{total_u} mã"
-        live_thought = f"Quét {scanned}/{total_u} mã | {decision_brain.get('live_regime', 'STANDBY')}"
+        kpi_summary = f"VNI {vni} • Br20 {br}% • {scanned}/{total_u} mã • Canh ngưỡng LO"
+        live_thought = f"Victor: Canh 145 mã • Chạm ngưỡng báo ngay James"
         specialized_data = {
             "recon_summary": recon,
             "decision_brain": decision_brain,
             "top_5_sectors": warroom_data.get("top_5_sectors", []),
+            "trigger_watch": [
+                {"symbol": w.get("symbol"), "buy_zone": w.get("entry_zone"), "stop": w.get("stop_loss_2xatr"), "tp1": w.get("tp1")}
+                for w in weekly_plan.get("approved_watchlist", [])
+            ],
         }
-    elif room_id == "room_ban_11":
-        kpi_summary = f"{len(room_reports)} kịch bản & gói tin • Render 9:16"
-        live_thought = "Sẵn sàng đóng gói BCTC thành Video 60s"
-        specialized_data = {
-            "source_intel_at": intel_feed["crawled_at"],
-            "featured_tickers": [w.get("symbol") for w in weekly_plan.get("approved_watchlist", [])],
-        }
-    elif room_id == "room_ban_12":
-        latest_aud = audit_ledger[-1] if audit_ledger else {}
+    elif room_id == "team_trong_palmer":
         seal = str(latest_session.get("constitutional_seal_sha256", ""))[:16]
         score = latest_session.get("ombudsman_audit_score", "10/10")
-        kpi_summary = f"Audit {score} • SHA {seal or '--'}..."
-        live_thought = f"Điểm kỷ luật {latest_aud.get('overall_discipline_score', 100)} • 10 Điều Luật"
+        kpi_summary = f"Audit {score} • Kỷ luật {latest_aud.get('overall_discipline_score', 97.6)} • SHA {seal or '--'}..."
+        live_thought = f"Trọng & Palmer: 10/10 Hiến Chương • SSOT chuẩn"
         specialized_data = {
             "ombudsman_audit_score": score,
             "constitutional_seal_sha256": latest_session.get("constitutional_seal_sha256", ""),
@@ -1014,10 +882,11 @@ def _compute_room_status_and_payload(
                 "system_health_score": latest_aud.get("system_health_score", ""),
                 "issues_count": latest_aud.get("issues_count", 0),
             },
+            "services": services,
         }
     else:
         kpi_summary = f"Vốn giả lập {ssot['nav_str']} • Bàn Bi-a 6 lỗ"
-        live_thought = "Thư giãn & Thử phân bổ 20.05M ₫"
+        live_thought = "Thư giãn & Giả lập chia vốn 20.05M ₫"
         specialized_data = {
             "cash_vnd": ssot["cash_vnd"],
             "watchlist": weekly_plan.get("approved_watchlist", []),
@@ -1026,14 +895,18 @@ def _compute_room_status_and_payload(
 
     room_summary = {
         "room_id": room_id,
+        "step_badge": bp["step_badge"],
         "ban_code": bp["ban_code"],
         "name": bp["name"],
         "short_name": bp["short_name"],
         "wing": bp["wing"],
+        "lead_title": bp["lead_title"],
+        "handoff_to": bp["handoff_to"],
         "icon": bp["icon"],
         "accent": bp["accent"],
         "floor_tint": bp["floor_tint"],
         "officers": bp["officers"],
+        "sub_departments": bp["sub_departments"],
         "avatars": bp["avatars"],
         "gx": bp["gx"],
         "gy": bp["gy"],
@@ -1052,6 +925,7 @@ def _compute_room_status_and_payload(
         "tasks_done": len(done_tasks),
         "active_job": running_job,
         "primary_action": bp["primary_action"],
+        "chat_template": bp["chat_template"],
     }
 
     room_detail = {
@@ -1098,7 +972,6 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
             now_ict=now_ict,
             ssot=ssot,
             supervisor_data=supervisor_data,
-            cron_data=cron_data,
             enterprise_data=enterprise_data,
             kanban_data=kanban_data,
             warroom_data=warroom_data,
@@ -1136,6 +1009,8 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
 
     return {
         "ok": True,
+        "org_model": "APEX_5_TEAMS_EXECUTIVE_WORKFLOW_V2",
+        "workflow_chain": "① Hiền (Dữ liệu & BCTC) ➔ ② Minh Quân & Alex (Thị trường) ➔ ③ James & Palmer (Kế hoạch Đầu tư) ◀── ④ Victor (Giám sát Live) | ⑤ Trọng & Palmer (Giám sát Toàn HT)",
         "generated_at": now_ict.strftime("%Y-%m-%d %H:%M:%S"),
         "weekday_vn": ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"][now_ict.weekday()],
         "is_market_hours": (now_ict.weekday() < 5) and (9 * 60 <= (now_ict.hour * 60 + now_ict.minute) <= 15 * 60),
@@ -1201,21 +1076,31 @@ def get_virtual_office_live_state(force_refresh: bool = False) -> Dict[str, Any]
             _LIVE_CACHE["ts"] = time.time()
             _LIVE_CACHE["payload"] = snap
 
-    # Bản trả ra gọn nhẹ không kèm toàn bộ _rooms_detail nặng
-    light = {k: v for k, v in snap.items() if k != "_rooms_detail"}
-    return light
+    return {k: v for k, v in snap.items() if k != "_rooms_detail"}
+
+
+def get_virtual_office_full_bundle(force_refresh: bool = False) -> Dict[str, Any]:
+    """Trả trọn gói cả live_state + rooms_detail + kanban (dùng để nhúng vào Chat Artifact)."""
+    get_virtual_office_live_state(force_refresh=force_refresh)
+    with _CACHE_LOCK:
+        snap = _LIVE_CACHE["payload"] or {}
+    return {
+        **{k: v for k, v in snap.items() if k != "_rooms_detail"},
+        "rooms_detail": snap.get("_rooms_detail", {}),
+        "kanban_board": get_kanban_board_state(),
+    }
 
 
 def get_virtual_office_room_detail(room_id: str, force_refresh: bool = False) -> Dict[str, Any]:
-    if room_id not in ROOMS_BY_ID:
-        return {"ok": False, "error": f"Không tồn tại phòng ban: {room_id}"}
-    # Đảm bảo cache được nạp
+    resolved_id = LEGACY_ROOM_ALIAS.get(room_id, room_id)
+    if resolved_id not in ROOMS_BY_ID:
+        return {"ok": False, "error": f"Không tồn tại khối phòng ban: {room_id}"}
     get_virtual_office_live_state(force_refresh=force_refresh)
     with _CACHE_LOCK:
         snap = _LIVE_CACHE["payload"]
-    detail = (snap or {}).get("_rooms_detail", {}).get(room_id)
+    detail = (snap or {}).get("_rooms_detail", {}).get(resolved_id)
     if not detail:
-        return {"ok": False, "error": f"Không lấy được chi tiết phòng: {room_id}"}
+        return {"ok": False, "error": f"Không lấy được chi tiết khối: {resolved_id}"}
     return {
         "ok": True,
         "generated_at": (snap or {}).get("generated_at", ""),
@@ -1229,10 +1114,11 @@ def trigger_room_action(
     action: str,
     payload: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
-    if room_id not in ROOMS_BY_ID:
-        return {"ok": False, "error": f"Không tồn tại phòng: {room_id}"}
+    resolved_id = LEGACY_ROOM_ALIAS.get(room_id, room_id)
+    if resolved_id not in ROOMS_BY_ID:
+        return {"ok": False, "error": f"Không tồn tại khối: {room_id}"}
 
-    bp = ROOMS_BY_ID[room_id]
+    bp = ROOMS_BY_ID[resolved_id]
     req = payload or {}
     act = (action or "").strip() or bp["primary_action"]["action"]
 
@@ -1247,14 +1133,14 @@ def trigger_room_action(
     custom_directive = str(req.get("directive") or "").strip()
 
     job_title_map = {
-        "crawl_intel": f"{bp['icon']} {bp['ban_code']}: Cào tin RSS, Vietcap, 11 cổng IR & EDGAR",
-        "convene_dept": f"{bp['icon']} {bp['ban_code']}: Họp 14 Ban & Phân tích chuyên sâu" + (f" ({ticker})" if ticker else ""),
+        "crawl_intel": f"{bp['icon']} {bp['ban_code']}: Cào tin RSS, Vietcap, 11 cổng IR & BCTC",
+        "convene_dept": f"{bp['icon']} {bp['ban_code']}: Họp 5 Khối & Chốt Kế Hoạch" + (f" ({ticker})" if ticker else ""),
         "run_dept_audit": f"{bp['icon']} {bp['ban_code']}: Thẩm định chuyên môn" + (f" ({ticker})" if ticker else ""),
-        "publish_warroom": f"{bp['icon']} {bp['ban_code']}: Quét 145 mã & Xuất bản Sổ Lệnh War-Room",
-        "run_trong_audit": f"{bp['icon']} {bp['ban_code']}: Kiểm toán Hiến chương & SSOT",
+        "publish_warroom": f"{bp['icon']} {bp['ban_code']}: Victor quét 145 mã & kiểm tra ngưỡng Mua/Bán",
+        "run_trong_audit": f"{bp['icon']} {bp['ban_code']}: Trọng & Palmer kiểm toán toàn hệ thống",
     }
     job_title = job_title_map.get(act, f"{bp['icon']} {bp['ban_code']}: Thực thi {act}")
-    job_id = _record_job_start(room_id, act, job_title)
+    job_id = _record_job_start(resolved_id, act, job_title)
 
     def _worker():
         try:
@@ -1262,36 +1148,36 @@ def trigger_room_action(
                 from scripts.apex_omni_intelligence_crawler import crawl_realtime_market_intelligence
                 res = crawl_realtime_market_intelligence(force_refresh=True)
                 total = res.get("total_items", 0)
-                _finish_job(job_id, True, f"Hoàn tất cào sống: {total} bản tin / hồ sơ mới nhất lúc {res.get('crawled_at', '')}.")
+                _finish_job(job_id, True, f"Đội Hiền hoàn tất cào sống: {total} bản tin lúc {res.get('crawled_at', '')} — đã sẵn sàng chuyển Minh Quân & Alex.")
             elif act in ("convene_dept", "run_dept_audit"):
                 from scripts.apex_enterprise_collaboration_mesh import run_enterprise_work_session
-                directive = custom_directive or f"[{bp['ban_code']}] Rà soát chiến lược Tuần 48 & danh mục rổ BCTC Q3/2026"
+                directive = custom_directive or f"[{bp['ban_code']}] Rà soát theo quy trình Hiền -> Minh Quân & Alex -> James & Palmer"
                 sess = run_enterprise_work_session(
                     directive=directive,
                     ticker=ticker,
-                    trigger_source=f"OFFICE_{room_id.upper()}",
+                    trigger_source=f"OFFICE_{resolved_id.upper()}",
                     sync_cloud=False,
                 )
                 verdict = sess.get("final_verdict", "DONE")
                 sid = sess.get("session_id", "")
-                _finish_job(job_id, True, f"Hoàn tất phiên {sid}: {verdict} ({sess.get('quorum_count', 14)}/{sess.get('roster_total', 14)} Ban tham dự).")
+                _finish_job(job_id, True, f"Hoàn tất phiên {sid}: {verdict} ({sess.get('quorum_count', 14)}/{sess.get('roster_total', 14)} thành viên).")
             elif act == "publish_warroom":
                 from scripts.apex_tactical_war_room_engine import publish_war_room_tactical_report
                 res = publish_war_room_tactical_report(
-                    trigger_reason=f"OFFICE_{room_id.upper()}",
+                    trigger_reason=f"OFFICE_{resolved_id.upper()}",
                     target_ticker=ticker,
                 )
                 ok_flag = bool(res.get("ok", True))
-                msg = res.get("message") or res.get("rel_path") or "Đã cập nhật dữ liệu War-Room 145 mã."
+                msg = res.get("message") or res.get("rel_path") or "Victor đã hoàn tất quét 145 mã & đồng bộ báo cáo cho James."
                 _finish_job(job_id, ok_flag, str(msg))
             elif act == "run_trong_audit":
                 from scripts.apex_semantic_consistency_auditor import run_full_institutional_semantic_audit
                 res = run_full_institutional_semantic_audit()
                 issues = len(res.get("issues", [])) if isinstance(res, dict) else 0
                 score = res.get("score", 100) if isinstance(res, dict) else 100
-                _finish_job(job_id, True, f"Kiểm toán Trọng hoàn tất: Điểm {score}/100 | Lỗi phát hiện: {issues}.")
+                _finish_job(job_id, True, f"Trọng & Palmer kiểm toán xong: Điểm {score}/100 | Lỗi phát hiện: {issues}.")
             else:
-                _finish_job(job_id, False, f"Hành động chưa được hỗ trợ: {act}", error=f"Unsupported action: {act}")
+                _finish_job(job_id, False, f"Hành động chưa hỗ trợ: {act}", error=f"Unsupported action: {act}")
         except Exception as exc:
             _finish_job(job_id, False, f"Lỗi khi chạy tác vụ {act}: {exc}", error=str(exc))
 
@@ -1302,7 +1188,7 @@ def trigger_room_action(
         "ok": True,
         "immediate": False,
         "job_id": job_id,
-        "room_id": room_id,
+        "room_id": resolved_id,
         "action": act,
         "title": job_title,
         "message": f"Đã kích hoạt tác vụ nền ({job_id}). Văn phòng sẽ tự động cập nhật khi hoàn tất.",
