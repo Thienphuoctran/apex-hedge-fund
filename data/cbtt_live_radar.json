@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-23T08:00:53.464306+00:00",
+  "timestamp_utc": "2026-11-23T10:39:02.812106+00:00",
   "scan_date": "2026-11-23",
   "total_us_filings_count": 373,
-  "total_vn_announcements_count": 52,
+  "total_vn_announcements_count": 54,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "144",
@@ -286,10 +286,26 @@
     },
     "PNJ": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Quỹ ngoại vừa bán 6,6 triệu cổ phiếu PNJ bất ngờ đóng cửa sau 33 năm, từng quản lý hơn 300.000 tỷ tài sản",
+      "latest_title": "Lãnh đạo thứ 5 của PNJ rời ghế trong tháng 11: Giám đốc Marketing",
       "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 14:37:00 +0700",
-      "source_url": "https://cafef.vn/quy-ngoai-vua-ban-66-trieu-co-phieu-pnj-bat-ngo-dong-cua-sau-33-nam-tung-quan-ly-hon-300000-ty-tai-san-188261123134727989.chn",
+      "published_at": "Mon, 23 Nov 26 16:56:00 +0700",
+      "source_url": "https://cafef.vn/lanh-dao-thu-5-cua-pnj-roi-ghe-trong-thang-11-giam-doc-marketing-188261123165743692.chn",
+      "total_announcements": 15
+    },
+    "CEO": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Cựu CEO PNJ làm cuộc cải tổ 'F5 lũy thừa 2 nhân F1' để thay đổi nhanh như xe đua, tân CEO lại 'chê' bộ máy cồng kềnh, phải cải tổ từ gốc",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 15:55:00 +0700",
+      "source_url": "https://cafef.vn/cuu-ceo-pnj-lam-cuoc-cai-to-f5-luy-thua-2-nhan-f1-de-thay-doi-nhanh-nhu-xe-dua-tan-ceo-lai-che-bo-may-cong-kenh-phai-cai-to-tu-goc-188261123151451161.chn",
+      "total_announcements": 5
+    },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Intel muốn nâng vị thế TP.HCM trong chuỗi bán dẫn toàn cầu, Sun Group cam kết làm trục đại lộ ven sông Sài Gòn",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 15:12:00 +0700",
+      "source_url": "https://cafef.vn/intel-muon-nang-vi-the-tphcm-trong-chuoi-ban-dan-toan-cau-sun-group-cam-ket-lam-truc-dai-lo-ven-song-sai-gon-188261123140726741.chn",
       "total_announcements": 13
     },
     "ACB": {
@@ -340,44 +356,12 @@
       "source_url": "https://cafef.vn/quy-dau-tu-cua-ssi-ban-sach-acb-vci-vinhomes-giam-gan-90-co-phieu-fpt-va-nam-gan-40-tai-san-bang-tien-mat-188261123103553645.chn",
       "total_announcements": 1
     },
-    "CEO": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Cổ phiếu PNJ lao dốc sau phát ngôn gây sốc của tân CEO",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 12:43:00 +0700",
-      "source_url": "https://cafef.vn/co-phieu-pnj-lao-doc-sau-phat-ngon-gay-soc-cua-tan-ceo-188261123122449301.chn",
-      "total_announcements": 3
-    },
-    "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "TP.HCM thu hồi gần 4 ha đất của liên doanh Sabeco và tập đoàn Mỹ: Từng là nơi sản xuất hơn 1 tỷ vỏ lon mỗi năm",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 10:15:00 +0700",
-      "source_url": "https://cafef.vn/tphcm-thu-hoi-gan-4-ha-dat-cua-lien-doanh-sabeco-va-tap-doan-my-tung-la-noi-san-xuat-hon-1-ty-vo-lon-moi-nam-188261123100232446.chn",
-      "total_announcements": 11
-    },
     "REE": {
       "latest_event_type": "ESOP_PHAT_HANH",
       "latest_title": "REE 'rót' thêm 1.400 tỷ đồng tăng vốn cho REE Energy",
       "severity": "WARNING",
       "published_at": "Sun, 22 Nov 26 16:54:00 +0700",
       "source_url": "https://cafef.vn/ree-rot-them-1400-ty-dong-tang-von-cho-ree-energy-188261122165412009.chn",
-      "total_announcements": 1
-    },
-    "ACV": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Cổ phiếu ACV xuống đáy 6 năm, vốn hóa DN quản lý sân bay lớn nhất Việt Nam giảm hơn 100.000 tỷ đồng sau 10 tháng",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 22 Nov 26 09:42:00 +0700",
-      "source_url": "https://cafef.vn/co-phieu-acv-xuong-day-6-nam-von-hoa-dn-quan-ly-san-bay-lon-nhat-viet-nam-giam-hon-100000-ty-dong-sau-10-thang-1882611220940554.chn",
-      "total_announcements": 1
-    },
-    "MWG": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ông Nguyễn Đức Tài: Tôi không quan tâm đến khái niệm nhân tài, Thế Giới Di Động sẵn sàng tạo môi trường để cá nước ngọt bơi tung tăng trong nước ngọt",
-      "severity": "INFO",
-      "published_at": "Sun, 22 Nov 26 08:45:00 +0700",
-      "source_url": "https://cafef.vn/ong-nguyen-duc-tai-toi-khong-quan-tam-den-khai-niem-nhan-tai-the-gioi-di-dong-san-sang-tao-moi-truong-de-ca-nuoc-ngot-boi-tung-tang-trong-nuoc-ngot-18826112115311643.chn",
       "total_announcements": 1
     },
     "MBS": {
@@ -418,7 +402,7 @@
       "severity": "INFO",
       "published_at": "Mon, 23 Nov 26 03:00:00 +0700",
       "source_url": "https://cafef.vn/ngay-23-11-gui-duoi-500-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261122224452882.chn",
-      "total_announcements": 5
+      "total_announcements": 4
     },
     "MSB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4977,6 +4961,43 @@
       "symbols": [
         "PNJ"
       ],
+      "title": "Lãnh đạo thứ 5 của PNJ rời ghế trong tháng 11: Giám đốc Marketing",
+      "summary": "Sau 4 lãnh đạo phụ trách tài chính, chiến lược, nhân sự và bán lẻ, PNJ tiếp tục công bố thông tin từ nhiệm của Giám đốc cao cấp phụ trách Marketing, nối dài chuỗi thay đổi trong bộ máy điều hành doanh nghiệp....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 16:56:00 +0700",
+      "source_url": "https://cafef.vn/lanh-dao-thu-5-cua-pnj-roi-ghe-trong-thang-11-giam-doc-marketing-188261123165743692.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO",
+        "PNJ"
+      ],
+      "title": "Cựu CEO PNJ làm cuộc cải tổ 'F5 lũy thừa 2 nhân F1' để thay đổi nhanh như xe đua, tân CEO lại 'chê' bộ máy cồng kềnh, phải cải tổ từ gốc",
+      "summary": "PNJ từng giới thiệu chiến lược F5 Refresh đã giúp cấu trúc công ty trở nên phẳng hơn, nhân viên có thể trao đổi trực tiếp với lãnh đạo cao nhất. Tuy nhiên, đến tháng 11/2026, CEO mới lại nhận định bộ máy cồng kềnh, nhiều...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 15:55:00 +0700",
+      "source_url": "https://cafef.vn/cuu-ceo-pnj-lam-cuoc-cai-to-f5-luy-thua-2-nhan-f1-de-thay-doi-nhanh-nhu-xe-dua-tan-ceo-lai-che-bo-may-cong-kenh-phai-cai-to-tu-goc-188261123151451161.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Intel muốn nâng vị thế TP.HCM trong chuỗi bán dẫn toàn cầu, Sun Group cam kết làm trục đại lộ ven sông Sài Gòn",
+      "summary": "Các nhà đầu tư lớn là Intel Products Vietnam và Sun Group đã nói về những cam kết đầu tư tại TP.HCM, dựa trên quy hoạch tổng thể tầm nhìn 100 của địa phương....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 15:12:00 +0700",
+      "source_url": "https://cafef.vn/intel-muon-nang-vi-the-tphcm-trong-chuoi-ban-dan-toan-cau-sun-group-cam-ket-lam-truc-dai-lo-ven-song-sai-gon-188261123140726741.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
       "title": "Quỹ ngoại vừa bán 6,6 triệu cổ phiếu PNJ bất ngờ đóng cửa sau 33 năm, từng quản lý hơn 300.000 tỷ tài sản",
       "summary": "Sau hơn ba thập kỷ hoạt động, một tên tuổi lâu năm trong ngành quản lý tài sản Canada bất ngờ tuyên bố rút lui khỏi thị trường....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5061,30 +5082,6 @@
       "severity": "WARNING",
       "published_at": "Sun, 22 Nov 26 16:54:00 +0700",
       "source_url": "https://cafef.vn/ree-rot-them-1400-ty-dong-tang-von-cho-ree-energy-188261122165412009.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACV"
-      ],
-      "title": "Cổ phiếu ACV xuống đáy 6 năm, vốn hóa DN quản lý sân bay lớn nhất Việt Nam giảm hơn 100.000 tỷ đồng sau 10 tháng",
-      "summary": "Cổ phiếu ACV của Tổng công ty Cảng hàng không Việt Nam tiếp tục giảm sâu, xuống mức thấp nhất kể từ tháng 9/2020. Diễn biến này xảy ra trong bối cảnh lợi nhuận quý III/2026 của doanh nghiệp giảm hơn 35% so với cùng kỳ....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Sun, 22 Nov 26 09:42:00 +0700",
-      "source_url": "https://cafef.vn/co-phieu-acv-xuong-day-6-nam-von-hoa-dn-quan-ly-san-bay-lon-nhat-viet-nam-giam-hon-100000-ty-dong-sau-10-thang-1882611220940554.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "MWG"
-      ],
-      "title": "Ông Nguyễn Đức Tài: Tôi không quan tâm đến khái niệm nhân tài, Thế Giới Di Động sẵn sàng tạo môi trường để cá nước ngọt bơi tung tăng trong nước ngọt",
-      "summary": "Từ triết lý dùng người, đối đãi với khách hàng đến tư duy kinh doanh, Chủ tịch MWG Nguyễn Đức Tài có nhiều phát ngôn thẳng thắn, khác biệt và giàu tính chiêm nghiệm....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 22 Nov 26 08:45:00 +0700",
-      "source_url": "https://cafef.vn/ong-nguyen-duc-tai-toi-khong-quan-tam-den-khai-niem-nhan-tai-the-gioi-di-dong-san-sang-tao-moi-truong-de-ca-nuoc-ngot-boi-tung-tang-trong-nuoc-ngot-18826112115311643.chn"
     },
     {
       "market": "VIETNAM",
@@ -5224,11 +5221,11 @@
       "symbols": [
         "PNJ"
       ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 23/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng tới 1,5 triệu đồng/lượng",
-      "summary": "Giá vàng trong nước mở đầu phiên sáng 23/11 đi ngang, với vàng miếng SJC giữ mức 133,5 triệu đồng/lượng và vàng nhẫn cao nhất 133,3 triệu đồng/lượng. Trên thị trường quốc tế, giá vàng thế giới vừa trải qua một tuần lao d...",
+      "title": "Giá vàng nhẫn trơn, vàng miếng chiều 23/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+      "summary": "Giá vàng trong nước chiều 23/11 tiếp tục duy trì mức tăng mạnh so với cuối phiên trước, với vàng miếng SJC tại nhiều thương hiệu giữ mức 135 triệu đồng/lượng, tăng 1,5 triệu đồng/lượng. Tuy nhiên, so với buổi sáng, giá v...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 09:42:00 +0700",
+      "published_at": "Mon, 23 Nov 26 15:06:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-23-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-toi-15-trieu-dong-luong-188261122221338839.chn"
     },
     {
@@ -5405,14 +5402,26 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "SHB"
+        "HCM"
       ],
-      "title": "SHB dẫn đầu ngành Ngân hàng tại bảng xếp hạng Nơi làm việc tốt nhất Việt Nam 2026",
-      "summary": "Theo kết quả khảo sát Nơi Làm Việc Tốt Nhất Việt Nam 2026 do Anphabe công bố tối 18/11, Ngân hàng TMCP Sài Gòn – Hà Nội (SHB) lần đầu tiên vươn lên vị trí số 1 ngành Ngân hàng trong Khối Doanh nghiệp vừa, đồng thời thuộc...",
+      "title": "Sun Group sẽ đưa dự án Rạch Chiếc thành tổ hợp thể thao giải trí chất lượng cao",
+      "summary": "5 lĩnh vực tập đoàn này cam kết đầu tư mạnh tại TP.HCM, đặc biệt là hạ tầng chiến lược và thể thao, giải trí, đưa công nghiệp văn hóa thành động lực phát triển mới....",
+      "event_type": "NGHI_QUYET_HDQT_DU_AN",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 16:32:00 +0700",
+      "source_url": "https://cafef.vn/sun-group-se-dua-du-an-rach-chiec-thanh-to-hop-the-thao-giai-tri-chat-luong-cao-188261123160012638.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Chủ tịch Quốc hội: Quy hoạch TP.HCM phải xác định có sản phẩm cho dân thụ hưởng",
+      "summary": "Chủ tịch Quốc hội Trần Thanh Mẫn yêu cầu Quy hoạch TP.HCM phải thật sự đi vào cuộc sống; phải xác định làm lúc nào xong để có sản phẩm cho Nhân dân thụ hưởng....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Thu, 19 Nov 26 19:30:00 +0700",
-      "source_url": "https://cafef.vn/shb-dan-dau-nganh-ngan-hang-tai-bang-xep-hang-noi-lam-viec-tot-nhat-viet-nam-2026-18826111918395378.chn"
+      "published_at": "Mon, 23 Nov 26 14:25:41 +0700",
+      "source_url": "https://cafef.vn/chu-tich-quoc-hoi-quy-hoach-tphcm-phai-xac-dinh-co-san-pham-cho-dan-thu-huong-188261123142541767.chn"
     },
     {
       "market": "VIETNAM",
@@ -5437,18 +5446,6 @@
       "severity": "INFO",
       "published_at": "Mon, 23 Nov 26 08:58:00 +0700",
       "source_url": "https://cafef.vn/tphcm-chot-quy-hoach-100-nam-sieu-do-thi-27-trieu-dan-dat-cuoc-vao-960km-metro-18826112309031519.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Hôm nay, chính thức khai thác đoạn cao tốc 10 làn xe, vốn gần 15.000 tỷ đồng nối thành phố giàu nhất nước ta với siêu sân bay lớn nhất Việt Nam",
-      "summary": "Từ 0h ngày 22/11, phương tiện lưu thông trên cao tốc TP.HCM - Long Thành sẽ được chuyển sang phần đường mới mở rộng đoạn từ sau cầu dẫn Long Thành đến nút giao Quốc lộ 51, tạo mặt bằng để thi công nâng cấp đường hiện hữu...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 22 Nov 26 10:27:00 +0700",
-      "source_url": "https://cafef.vn/hom-nay-chinh-thuc-khai-thac-doan-cao-toc-10-lan-xe-von-gan-15000-ty-dong-noi-thanh-pho-giau-nhat-nuoc-ta-voi-sieu-san-bay-lon-nhat-viet-nam-1882611212227425.chn"
     },
     {
       "market": "VIETNAM",
@@ -5505,18 +5502,6 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Tính đến 16/11/2026, có 71 mã bị cắt margin trên HOSE",
-      "summary": "Sở Giao dịch Chứng khoán TP.HCM (HOSE) thông báo danh sách bổ sung chứng khoán không đủ điều kiện giao dịch ký quỹ....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Tue, 17 Nov 2026 08:40:47 GMT",
-      "source_url": "https://vneconomy.vn/tinh-den-16112026-co-71-ma-bi-cat-margin-tren-hose.htm"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "VIB"
       ],
       "title": "VIB chủ động đón cơ hội tối ưu thanh khoản từ giải pháp hoán đổi ngoại tệ của Ngân hàng Nhà nước",
@@ -5525,6 +5510,42 @@
       "severity": "INFO",
       "published_at": "Thu, 19 Nov 2026 01:00:00 GMT",
       "source_url": "https://vneconomy.vn/vib-chu-dong-don-co-hoi-toi-uu-thanh-khoan-tu-giai-phap-hoan-doi-ngoai-te-cua-ngan-hang-nha-nuoc.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO"
+      ],
+      "title": "Ông Trump giục Nvidia phục chức cho Jensen Huang",
+      "summary": "Tổng thống Donald Trump liên tục kêu gọi Nvidia khôi phục chức vụ CEO cho Jensen Huang vì lợi ích của tập đoàn này lẫn nước Mỹ....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 2026 16:14:15 +0700",
+      "source_url": "https://vnexpress.net/ong-trump-giuc-nvidia-phuc-chuc-cho-jensen-huang-5148098.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
+      "title": "Cổ phiếu PNJ chạm sàn",
+      "summary": "Cổ phiếu PNJ mất hết biên độ trong phiên đầu tuần, xuống 12.600 đồng, sau khi người đứng đầu ban điều hành chia sẻ tình hình tài chính đang rất khó khăn....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 2026 16:01:07 +0700",
+      "source_url": "https://vnexpress.net/co-phieu-pnj-cham-san-5148100.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "TP HCM, Hà Nội có thể phát triển điện mặt trời mái nhà nhiều nhất cả nước",
+      "summary": "Bộ Công Thương đề xuất phân bổ cho TP HCM, Hà Nội chỉ tiêu phát triển lần lượt 628 MW và 510 MW điện mặt trời mái nhà đến hết năm 2027, cao nhất cả nước....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 2026 14:44:40 +0700",
+      "source_url": "https://vnexpress.net/tp-hcm-ha-noi-co-the-phat-trien-dien-mat-troi-mai-nha-nhieu-nhat-ca-nuoc-5147917.html"
     },
     {
       "market": "VIETNAM",
@@ -5609,18 +5630,6 @@
       "severity": "INFO",
       "published_at": "Sat, 21 Nov 2026 09:00:00 +0700",
       "source_url": "https://vnexpress.net/momo-trien-khai-loat-uu-dai-trong-chuong-trinh-kich-cau-cua-tp-hcm-5147316.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Loạt giám đốc cấp cao PNJ từ nhiệm",
-      "summary": "PNJ thông qua đơn từ nhiệm của 3 giám đốc cấp cao phụ trách chiến lược, nhân sự và khách hàng - bán lẻ, hiệu lực từ cuối tháng này....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 20 Nov 2026 03:13:28 +0700",
-      "source_url": "https://vnexpress.net/loat-giam-doc-cap-cao-pnj-tu-nhiem-5146804.html"
     }
   ]
 }
