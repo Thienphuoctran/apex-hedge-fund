@@ -1,8 +1,8 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-23T08:02:02.217033+00:00",
+  "generated_at_utc": "2026-11-23T08:44:34.527200+00:00",
   "trading_date": "2026-11-23",
-  "cio_desk_verdict": "SẴN SÀNG TIỀN MẶT (20,000,000 ₫) — ĐANG THEO DÕI ĐIỂM GIẢI NGÂN ĐẠT CHUẨN",
+  "cio_desk_verdict": "100% TIỀN MẶT (20,051,117 ₫) — ĐÃ TẤT TOÁN VÒNG 1 (LÃI RÒNG +51,117 ₫) & ĐỢI TẦM NGẮM VÒNG 2",
   "active_market_regime": {
     "as_of_date": "2026-11-20",
     "vnindex_close": 1688.79,
@@ -93,17 +93,17 @@
   "active_scenario_primary": "S3_PANIC_WASHOUT_SPRING_REBOUND (WATCH_23_11)",
   "active_scenario_friday_exit": "S5_ACTIVE_HOLDINGS_FRIDAY_EXECUTION",
   "capital_summary": {
-    "total_nav_usd": 778.06,
-    "total_nav_vnd": 20000000.0,
+    "total_nav_usd": 780.05,
+    "total_nav_vnd": 20051117.0,
     "fx_rate_usd_vnd": 25705.0,
     "global_allocated_usd": 0.0,
     "global_allocated_vnd": 0.0,
     "global_allocated_pct": 0.0,
-    "vn_allocated_vnd": 0,
-    "vn_allocated_usd": 0,
+    "vn_allocated_vnd": 0.0,
+    "vn_allocated_usd": 0.0,
     "vn_allocated_pct": 0.0,
-    "dry_powder_usd": 778.06,
-    "dry_powder_vnd": 20000000.0,
+    "dry_powder_usd": 780.05,
+    "dry_powder_vnd": 20051117.0,
     "dry_powder_pct": 100.0,
     "realized_pnl_vnd": 51117.0
   },
@@ -1015,25 +1015,165 @@
     }
   ],
   "agent_zero_validation": {
-    "status": "VERIFIED_ALL_CASH_SYNCED",
+    "status": "VERIFIED_100_PERCENT_CASH_SYNCED",
     "sandbox_math_verified": true,
-    "portfolio_allocation_verified": "CHƯA GIẢI NGÂN (20,000,000 ₫) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +51,117 VNĐ",
+    "portfolio_allocation_verified": "100% TIỀN MẶT (20,051,117 VNĐ) | 0 CP NẮM GIỮ | LÃI ĐÃ CHỐT +51,117 VNĐ",
     "max_risk_locked_pct": 0.0,
-    "timestamp": "2026-11-23 08:02:02 UTC"
+    "timestamp": "08:44:34 Thứ Hai, ngày 23/11/2026"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-23T08:02:02.215973",
+    "timestamp_iso": "2026-11-23T08:44:34.525981",
     "date_str": "2026-11-23",
     "date_vn": "23/11/2026",
-    "time_vn": "08:02:02",
+    "time_vn": "08:44:34",
     "weekday_index": 0,
     "weekday_vn": "Thứ Hai",
-    "full_time_label_vn": "08:02:02 Thứ Hai, ngày 23/11/2026",
+    "full_time_label_vn": "08:44:34 Thứ Hai, ngày 23/11/2026",
     "market_phase": "PRE_MARKET_PREPARATION",
     "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Hai) — Chuẩn bị kế hoạch tác chiến",
     "is_trading_hours": false,
     "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
   },
-  "completed_orders_history": [],
-  "next_round_watchlist": []
+  "completed_orders_history": [
+    {
+      "campaign_id": "CAMPAIGN-VN-ROUND-01",
+      "period": "2026-11-04 -> 2026-11-06",
+      "status": "CLOSED_AND_SETTLED_100_PERCENT_CASH",
+      "initial_capital_vnd": 20000000.0,
+      "final_cash_tcbs_vnd": 20167119.0,
+      "net_realized_profit_after_tax_fee_vnd": 167119.0,
+      "net_return_pct": 0.8356,
+      "positions_traded_and_closed": [
+        {
+          "symbol": "HPG",
+          "shares_bought": 400,
+          "shares_sold": 400,
+          "remaining_shares": 0,
+          "entry_price": 21156.0,
+          "exit_status": "SOLD_100_PERCENT"
+        },
+        {
+          "symbol": "TCB",
+          "shares_bought": 300,
+          "shares_sold": 300,
+          "remaining_shares": 0,
+          "entry_price": 21356.0,
+          "exit_status": "SOLD_100_PERCENT"
+        },
+        {
+          "symbol": "MBB",
+          "shares_bought": 200,
+          "shares_sold": 200,
+          "remaining_shares": 0,
+          "entry_price": 18606.0,
+          "exit_status": "SOLD_100_PERCENT"
+        }
+      ],
+      "lesson_learned": "Chốt lời dứt khoát toàn bộ 900 CP trước kỳ nghỉ cuối tuần, bảo toàn 100% vốn + lãi thực nhận 20,167,119 ₫ trên TCInvest, triệt tiêu 100% rủi ro qua tuần (0% Weekend Risk)."
+    }
+  ],
+  "next_round_watchlist": [
+    {
+      "symbol": "NAB",
+      "name": "Nam A Bank (MidCap_Growth)",
+      "exchange": "HOSE",
+      "sector": "Ngân Hàng TMCP",
+      "price_vnd": 13200.0,
+      "rs_rating": 97,
+      "legends_score": 88.2,
+      "lot_100_nav_pct": 6.58,
+      "target_shares": 300,
+      "probe_buy_price": 13120.0,
+      "stop_loss_2atr": 12660.0,
+      "tp1": 13960.0,
+      "tp2": 14610.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 13,120 ₫ - 13,200 ₫; Gia tăng khi vượt 13,340 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 88.2/100 | RS: 97/99) • P/E 5.8x, ROE 19.5%, OCF/LNST 1.12x • 1 lô 100 CP = 1,320,000 ₫ (6.58% NAV)"
+    },
+    {
+      "symbol": "NT2",
+      "name": "Điện lực Dầu khí Nhơn Trạch 2 (SmallCap_HiddenGem)",
+      "exchange": "HOSE",
+      "sector": "Điện & Hạ Tầng Năng Lượng",
+      "price_vnd": 23800.0,
+      "rs_rating": 96,
+      "legends_score": 84.6,
+      "lot_100_nav_pct": 11.87,
+      "target_shares": 200,
+      "probe_buy_price": 23610.0,
+      "stop_loss_2atr": 22540.0,
+      "tp1": 25560.0,
+      "tp2": 27070.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 23,610 ₫ - 23,800 ₫; Gia tăng khi vượt 24,110 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 84.6/100 | RS: 96/99) • P/E 16.5x, ROE 9.5%, OCF/LNST 1.4x • 1 lô 100 CP = 2,380,000 ₫ (11.87% NAV)"
+    },
+    {
+      "symbol": "CTS",
+      "name": "Chứng khoán VietinBank (SmallCap_HiddenGem)",
+      "exchange": "HOSE",
+      "sector": "Chứng Khoán & Đầu Tư",
+      "price_vnd": 24150.0,
+      "rs_rating": 89,
+      "legends_score": 83.9,
+      "lot_100_nav_pct": 12.04,
+      "target_shares": 200,
+      "probe_buy_price": 23910.0,
+      "stop_loss_2atr": 22560.0,
+      "tp1": 26380.0,
+      "tp2": 28290.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 23,910 ₫ - 24,150 ₫; Gia tăng khi vượt 24,550 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AA (HIGH QUALITY) (10 Danh Thủ: 83.9/100 | RS: 89/99) • P/E 14.2x, ROE 13.6%, OCF/LNST 1.12x • 1 lô 100 CP = 2,415,000 ₫ (12.04% NAV)"
+    },
+    {
+      "symbol": "PVP",
+      "name": "Vận tải Dầu khí Thái Bình Dương (SmallCap_HiddenGem)",
+      "exchange": "HOSE",
+      "sector": "Cảng Biển, Vận Tải Biển & Hàng Không",
+      "price_vnd": 16700.0,
+      "rs_rating": 91,
+      "legends_score": 85.2,
+      "lot_100_nav_pct": 8.33,
+      "target_shares": 300,
+      "probe_buy_price": 16530.0,
+      "stop_loss_2atr": 15580.0,
+      "tp1": 18270.0,
+      "tp2": 19620.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 16,530 ₫ - 16,700 ₫; Gia tăng khi vượt 16,980 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 85.2/100 | RS: 91/99) • P/E 7.4x, ROE 13.8%, OCF/LNST 1.4x • 1 lô 100 CP = 1,670,000 ₫ (8.33% NAV)"
+    },
+    {
+      "symbol": "BSR",
+      "name": "Lọc Hóa dầu Bình Sơn (VN30_LargeCap)",
+      "exchange": "UPCOM",
+      "sector": "Dầu Khí Thượng Nguồn & Phân Phối",
+      "price_vnd": 23500.0,
+      "rs_rating": 81,
+      "legends_score": 86.3,
+      "lot_100_nav_pct": 11.72,
+      "target_shares": 200,
+      "probe_buy_price": 23250.0,
+      "stop_loss_2atr": 21900.0,
+      "tp1": 25830.0,
+      "tp2": 27830.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 23,250 ₫ - 23,500 ₫; Gia tăng khi vượt 23,920 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 86.3/100 | RS: 81/99) • P/E 4.23x, ROE 39.67%, OCF/LNST 0.7x • 1 lô 100 CP = 2,350,000 ₫ (11.72% NAV)"
+    },
+    {
+      "symbol": "VPB",
+      "name": "VPBank (VN30_LargeCap)",
+      "exchange": "HOSE",
+      "sector": "Ngân Hàng TMCP",
+      "price_vnd": 20450.0,
+      "rs_rating": 78,
+      "legends_score": 86.1,
+      "lot_100_nav_pct": 10.2,
+      "target_shares": 300,
+      "probe_buy_price": 20270.0,
+      "stop_loss_2atr": 19250.0,
+      "tp1": 22130.0,
+      "tp2": 23570.0,
+      "target_buy_zone": "Gom thăm dò Limit LO quanh 20,270 ₫ - 20,450 ₫; Gia tăng khi vượt 20,750 ₫ trong Khung Giờ Vàng 14h00-14h25",
+      "bctc_highlight": "Hạng AAA (FORTRESS) (10 Danh Thủ: 86.1/100 | RS: 78/99) • P/E 6.57x, ROE 17.34%, OCF/LNST 2.03x • 1 lô 100 CP = 2,045,000 ₫ (10.2% NAV)"
+    }
+  ]
 }
