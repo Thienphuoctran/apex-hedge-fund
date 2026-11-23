@@ -1,7 +1,7 @@
 {
   "snapshot_date": "2026-11-23",
-  "updated_at": "2026-11-23 03:05:58",
-  "fetched_epoch": 1795377958.15,
+  "updated_at": "2026-11-23 15:01:12",
+  "fetched_epoch": 1795420872.9,
   "risk_multiplier": 0.45,
   "max_allocation_pct": 22,
   "overnight_bias": "DEFENSIVE_SHOCK",
@@ -12,7 +12,7 @@
     "VIX báo động cao (35.9) -> Tăng phòng thủ tiền mặt"
   ],
   "sector_tilts": [
-    "Dầu WTI giảm sâu (83.41$, -3.02%) -> Áp lực ngắn hạn họ Dầu khí"
+    "Ưu tiên cổ phiếu có OCF > LNST, Buy-Up chủ động > 60% và nền giá chặt"
   ],
   "metrics": {
     "SP500": {
@@ -29,8 +29,8 @@
     },
     "VIX": {
       "last_price": 35.89,
-      "prev_close": 22.91,
-      "change_1d_pct": 56.66,
+      "prev_close": 19.3,
+      "change_1d_pct": 85.96,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "US10Y": {
@@ -40,15 +40,15 @@
       "source": "YAHOO_HTTP_LIGHT"
     },
     "DXY": {
-      "last_price": 103.84,
-      "prev_close": 103.49,
-      "change_1d_pct": 0.34,
+      "last_price": 103.59,
+      "prev_close": 103.86,
+      "change_1d_pct": -0.26,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "WTI_OIL": {
-      "last_price": 83.41,
-      "prev_close": 86.01,
-      "change_1d_pct": -3.02,
+      "last_price": 83.0,
+      "prev_close": 83.26,
+      "change_1d_pct": -0.31,
       "source": "YAHOO_HTTP_LIGHT"
     },
     "VNM_ETF": {

@@ -1,19 +1,18 @@
 {
-  "last_updated": "2026-11-23 11:27:48",
+  "last_updated": "2026-11-23 08:02:06",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261123-112748",
-  "latest_user_request": "Vá dứt điểm Master Blotter 2026-11-23 khỏi mẫu T+1/BAF cũ & lập Kế hoạch tác chiến chiều 23/11",
+  "sync_id": "SYNC-AG2P-20261123-080206",
+  "latest_user_request": "Đồng bộ trạng thái SSOT & Dữ liệu cào Internet/BCTC mới nhất giữa James và Palmer",
   "latest_response_summary": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
   "latest_completed_tasks": [
-    "Vá dứt điểm Master Blotter 2026-11-23 khỏi mẫu T+1/BAF cũ & lập Kế hoạch tác chiến chiều 23/11",
     "Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở",
-    "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-23 11:22:29: 509 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+    "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-23 15:00:14: 510 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 10 cổng IR HTTP-200, 0 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
     "Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)"
   ],
   "latest_strategic_decisions": {
     "current_holdings_directive": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
     "weekly_plan_directive": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
-    "upgrade_progress_directive": "Cào sống ngày 2026-11-23 11:22:29: 509 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+    "upgrade_progress_directive": "Cào sống ngày 2026-11-23 15:00:14: 510 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 10 cổng IR HTTP-200, 0 kết quả Tavily, 6 hồ sơ SEC EDGAR."
   },
   "portfolio_snapshot": {
     "status": "ALL_CASH_STANDDOWN",
@@ -28,10 +27,10 @@
     "current_holdings_directive": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
     "market_regime_directive": "Chế độ sống: BEAR_WITH_SPRING_WATCH (ALL_CASH_STANDDOWN). Giải ngân chỉ mở khung 14h00-14h25 khi đạt điều kiện S1/S2/S3.",
     "weekly_plan_directive": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
-    "upgrade_progress_directive": "Cào sống ngày 2026-11-23 11:22:29: 509 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+    "upgrade_progress_directive": "Cào sống ngày 2026-11-23 15:00:14: 510 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 10 cổng IR HTTP-200, 0 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
     "regarding_bsr_baf": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
     "regarding_hdb_msh": "Chế độ sống: BEAR_WITH_SPRING_WATCH (ALL_CASH_STANDDOWN).",
     "regarding_weekly_plan": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
-    "regarding_today_morning_tasks": "Cào sống ngày 2026-11-23 11:22:29: 509 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+    "regarding_today_morning_tasks": "Cào sống ngày 2026-11-23 15:00:14: 510 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 10 cổng IR HTTP-200, 0 kết quả Tavily, 6 hồ sơ SEC EDGAR."
   }
 }

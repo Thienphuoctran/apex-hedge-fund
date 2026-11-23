@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-22T20:05:39.861980+00:00",
-  "scan_date": "2026-11-22",
+  "timestamp_utc": "2026-11-23T08:00:53.464306+00:00",
+  "scan_date": "2026-11-23",
   "total_us_filings_count": 373,
-  "total_vn_announcements_count": 49,
+  "total_vn_announcements_count": 52,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "144",
@@ -285,20 +285,76 @@
       "total_recent_filings": 11
     },
     "PNJ": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Tài sản PNJ hơn 20.000 tỷ, vốn hoá còn dưới 7.000 tỷ, một DN tài sản 5.000 tỷ có vốn hoá 600 tỷ, Viettel Post, HAGL chung cảnh ngộ",
-      "severity": "CRITICAL",
-      "published_at": "Mon, 23 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/tai-san-pnj-hon-20000-ty-von-hoa-con-duoi-7000-ty-mot-dn-tai-san-5000-ty-co-von-hoa-600-ty-viettel-post-hagl-chung-canh-ngo-188261122215629291.chn",
-      "total_announcements": 12
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Quỹ ngoại vừa bán 6,6 triệu cổ phiếu PNJ bất ngờ đóng cửa sau 33 năm, từng quản lý hơn 300.000 tỷ tài sản",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 14:37:00 +0700",
+      "source_url": "https://cafef.vn/quy-ngoai-vua-ban-66-trieu-co-phieu-pnj-bat-ngo-dong-cua-sau-33-nam-tung-quan-ly-hon-300000-ty-tai-san-188261123134727989.chn",
+      "total_announcements": 13
+    },
+    "ACB": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "Quỹ đầu tư của SSI bán sạch ACB, VCI, Vinhomes, giảm gần 90% cổ phiếu FPT và nắm gần 40% tài sản bằng tiền mặt",
+      "severity": "WARNING",
+      "published_at": "Mon, 23 Nov 26 13:36:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-cua-ssi-ban-sach-acb-vci-vinhomes-giam-gan-90-co-phieu-fpt-va-nam-gan-40-tai-san-bang-tien-mat-188261123103553645.chn",
+      "total_announcements": 7
+    },
+    "FPT": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "Quỹ đầu tư của SSI bán sạch ACB, VCI, Vinhomes, giảm gần 90% cổ phiếu FPT và nắm gần 40% tài sản bằng tiền mặt",
+      "severity": "WARNING",
+      "published_at": "Mon, 23 Nov 26 13:36:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-cua-ssi-ban-sach-acb-vci-vinhomes-giam-gan-90-co-phieu-fpt-va-nam-gan-40-tai-san-bang-tien-mat-188261123103553645.chn",
+      "total_announcements": 8
+    },
+    "HDB": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "Quỹ đầu tư của SSI bán sạch ACB, VCI, Vinhomes, giảm gần 90% cổ phiếu FPT và nắm gần 40% tài sản bằng tiền mặt",
+      "severity": "WARNING",
+      "published_at": "Mon, 23 Nov 26 13:36:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-cua-ssi-ban-sach-acb-vci-vinhomes-giam-gan-90-co-phieu-fpt-va-nam-gan-40-tai-san-bang-tien-mat-188261123103553645.chn",
+      "total_announcements": 2
+    },
+    "SSI": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "Quỹ đầu tư của SSI bán sạch ACB, VCI, Vinhomes, giảm gần 90% cổ phiếu FPT và nắm gần 40% tài sản bằng tiền mặt",
+      "severity": "WARNING",
+      "published_at": "Mon, 23 Nov 26 13:36:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-cua-ssi-ban-sach-acb-vci-vinhomes-giam-gan-90-co-phieu-fpt-va-nam-gan-40-tai-san-bang-tien-mat-188261123103553645.chn",
+      "total_announcements": 2
+    },
+    "TCB": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "Quỹ đầu tư của SSI bán sạch ACB, VCI, Vinhomes, giảm gần 90% cổ phiếu FPT và nắm gần 40% tài sản bằng tiền mặt",
+      "severity": "WARNING",
+      "published_at": "Mon, 23 Nov 26 13:36:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-cua-ssi-ban-sach-acb-vci-vinhomes-giam-gan-90-co-phieu-fpt-va-nam-gan-40-tai-san-bang-tien-mat-188261123103553645.chn",
+      "total_announcements": 1
+    },
+    "VCI": {
+      "latest_event_type": "CO_TUC",
+      "latest_title": "Quỹ đầu tư của SSI bán sạch ACB, VCI, Vinhomes, giảm gần 90% cổ phiếu FPT và nắm gần 40% tài sản bằng tiền mặt",
+      "severity": "WARNING",
+      "published_at": "Mon, 23 Nov 26 13:36:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-cua-ssi-ban-sach-acb-vci-vinhomes-giam-gan-90-co-phieu-fpt-va-nam-gan-40-tai-san-bang-tien-mat-188261123103553645.chn",
+      "total_announcements": 1
+    },
+    "CEO": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Cổ phiếu PNJ lao dốc sau phát ngôn gây sốc của tân CEO",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 12:43:00 +0700",
+      "source_url": "https://cafef.vn/co-phieu-pnj-lao-doc-sau-phat-ngon-gay-soc-cua-tan-ceo-188261123122449301.chn",
+      "total_announcements": 3
     },
     "HCM": {
-      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "latest_title": "Việt Nam sắp có thêm nhà máy biến rác thành điện trị giá 1.150 tỷ đồng: Huy động gần 500 kỹ sư, 14 nhà thầu hoàn thành chỉ sau 16 tháng khởi công",
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "TP.HCM thu hồi gần 4 ha đất của liên doanh Sabeco và tập đoàn Mỹ: Từng là nơi sản xuất hơn 1 tỷ vỏ lon mỗi năm",
       "severity": "INFO",
-      "published_at": "Sun, 22 Nov 26 21:33:00 +0700",
-      "source_url": "https://cafef.vn/viet-nam-sap-co-them-nha-may-nha-may-bien-rac-thanh-dien-tri-gia-1150-ty-dong-huy-dong-gan-500-ky-su-14-nha-thau-hoan-thanh-chi-sau-16-thang-khoi-cong-188261122192734329.chn",
-      "total_announcements": 10
+      "published_at": "Mon, 23 Nov 26 10:15:00 +0700",
+      "source_url": "https://cafef.vn/tphcm-thu-hoi-gan-4-ha-dat-cua-lien-doanh-sabeco-va-tap-doan-my-tung-la-noi-san-xuat-hon-1-ty-vo-lon-moi-nam-188261123100232446.chn",
+      "total_announcements": 11
     },
     "REE": {
       "latest_event_type": "ESOP_PHAT_HANH",
@@ -324,37 +380,37 @@
       "source_url": "https://cafef.vn/ong-nguyen-duc-tai-toi-khong-quan-tam-den-khai-niem-nhan-tai-the-gioi-di-dong-san-sang-tao-moi-truong-de-ca-nuoc-ngot-boi-tung-tang-trong-nuoc-ngot-18826112115311643.chn",
       "total_announcements": 1
     },
-    "CEO": {
+    "MBS": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Dàn lãnh đạo rời PNJ: Người tốt nghiệp Oxford, người có MBA tại Mỹ, Anh, Australia, CEO Phan Quốc Công đánh giá “đông quản lý nhưng chưa đủ người có năng lực dẫn dắt chuyển đổi”",
+      "latest_title": "Kịch bản từng xuất hiện năm 2022 có nguy cơ lặp lại trên thị trường chứng khoán Việt Nam",
       "severity": "INFO",
-      "published_at": "Sat, 21 Nov 26 10:18:00 +0700",
-      "source_url": "https://cafef.vn/dan-lanh-dao-roi-pnj-nguoi-tot-nghiep-oxford-nguoi-co-mba-tai-my-anh-australia-ceo-phan-quoc-cong-danh-gia-dong-quan-ly-nhung-chua-du-nguoi-co-nang-luc-dan-dat-chuyen-doi-188261121101152303.chn",
-      "total_announcements": 5
+      "published_at": "Mon, 23 Nov 26 09:24:00 +0700",
+      "source_url": "https://cafef.vn/kich-ban-tung-xuat-hien-nam-2022-co-nguy-co-lap-lai-tren-thi-truong-chung-khoan-viet-nam-188261123091410539.chn",
+      "total_announcements": 1
     },
-    "FPT": {
+    "STB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "FPT bốc hơi 23.000 tỷ đồng vốn hóa sau một tháng, 27 quỹ ồ ạt “xả hàng”",
+      "latest_title": "Cổ phiếu ngân hàng nào bị nhà đầu tư nước ngoài bán ròng mạnh nhất từ đầu năm?",
       "severity": "INFO",
-      "published_at": "Sun, 22 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/fpt-boc-hoi-23000-ty-dong-von-hoa-sau-mot-thang-27-quy-o-at-xa-hang-188261120150520578.chn",
-      "total_announcements": 8
+      "published_at": "Mon, 23 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/co-phieu-ngan-hang-nao-bi-nha-dau-tu-nuoc-ngoai-ban-rong-manh-nhat-tu-dau-nam-188261122234006725.chn",
+      "total_announcements": 1
     },
-    "OCB": {
+    "VCB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Người thân lãnh đạo OCB tiếp tục đăng ký bán cổ phiếu",
+      "latest_title": "Cổ phiếu ngân hàng nào bị nhà đầu tư nước ngoài bán ròng mạnh nhất từ đầu năm?",
       "severity": "INFO",
-      "published_at": "Thu, 19 Nov 26 16:29:00 +0700",
-      "source_url": "https://cafef.vn/nguoi-than-lanh-dao-ocb-tiep-tuc-dang-ky-ban-co-phieu-188261119162939707.chn",
-      "total_announcements": 4
+      "published_at": "Mon, 23 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/co-phieu-ngan-hang-nao-bi-nha-dau-tu-nuoc-ngoai-ban-rong-manh-nhat-tu-dau-nam-188261122234006725.chn",
+      "total_announcements": 1
     },
-    "ACB": {
+    "VPB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Ngày 23/11, gửi dưới 500 triệu đồng kỳ hạn 12 tháng tại MB, VPBank, Techcombank, Sacombank, SHB, HDBank và ACB nhận được bao nhiêu tiền lãi?",
+      "latest_title": "Cổ phiếu ngân hàng nào bị nhà đầu tư nước ngoài bán ròng mạnh nhất từ đầu năm?",
       "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 03:00:00 +0700",
-      "source_url": "https://cafef.vn/ngay-23-11-gui-duoi-500-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261122224452882.chn",
-      "total_announcements": 6
+      "published_at": "Mon, 23 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/co-phieu-ngan-hang-nao-bi-nha-dau-tu-nuoc-ngoai-ban-rong-manh-nhat-tu-dau-nam-188261122234006725.chn",
+      "total_announcements": 1
     },
     "SHB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -364,39 +420,15 @@
       "source_url": "https://cafef.vn/ngay-23-11-gui-duoi-500-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261122224452882.chn",
       "total_announcements": 5
     },
-    "HDB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Khối ngoại bán ròng hơn 47.000 tỷ đồng cổ phiếu ngân hàng từ đầu năm 2026, tâm điểm ACB, VCB, STB, HDB và VPB",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-ban-rong-hon-47000-ty-dong-co-phieu-ngan-hang-tam-diem-acb-vcb-stb-hdb-va-vpb-188261122234006725.chn",
-      "total_announcements": 1
-    },
-    "STB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Khối ngoại bán ròng hơn 47.000 tỷ đồng cổ phiếu ngân hàng từ đầu năm 2026, tâm điểm ACB, VCB, STB, HDB và VPB",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-ban-rong-hon-47000-ty-dong-co-phieu-ngan-hang-tam-diem-acb-vcb-stb-hdb-va-vpb-188261122234006725.chn",
-      "total_announcements": 1
-    },
-    "VCB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Khối ngoại bán ròng hơn 47.000 tỷ đồng cổ phiếu ngân hàng từ đầu năm 2026, tâm điểm ACB, VCB, STB, HDB và VPB",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-ban-rong-hon-47000-ty-dong-co-phieu-ngan-hang-tam-diem-acb-vcb-stb-hdb-va-vpb-188261122234006725.chn",
-      "total_announcements": 1
-    },
-    "VPB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Khối ngoại bán ròng hơn 47.000 tỷ đồng cổ phiếu ngân hàng từ đầu năm 2026, tâm điểm ACB, VCB, STB, HDB và VPB",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-ban-rong-hon-47000-ty-dong-co-phieu-ngan-hang-tam-diem-acb-vcb-stb-hdb-va-vpb-188261122234006725.chn",
-      "total_announcements": 1
-    },
     "MSB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Ngày 23/11, gửi dưới 100 triệu đồng kỳ hạn 1 tháng tại LPBank, MSB, Nam A Bank, VIB và OCB nhận được bao nhiêu tiền lãi?",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 01:00:00 +0700",
+      "source_url": "https://cafef.vn/ngay-23-11-gui-duoi-100-trieu-dong-ky-han-1-thang-tai-lpbank-msb-nam-a-bank-vib-va-ocb-nhan-duoc-bao-nhieu-tien-lai-188261122223854439.chn",
+      "total_announcements": 3
+    },
+    "OCB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Ngày 23/11, gửi dưới 100 triệu đồng kỳ hạn 1 tháng tại LPBank, MSB, Nam A Bank, VIB và OCB nhận được bao nhiêu tiền lãi?",
       "severity": "INFO",
@@ -412,21 +444,29 @@
       "source_url": "https://cafef.vn/ngay-23-11-gui-duoi-100-trieu-dong-ky-han-1-thang-tai-lpbank-msb-nam-a-bank-vib-va-ocb-nhan-duoc-bao-nhieu-tien-lai-188261122223854439.chn",
       "total_announcements": 5
     },
-    "SSI": {
+    "KBC": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "SSI Research: Mặt bằng lãi suất ổn định nhưng khó giảm mạnh?",
+      "latest_title": "Kinh Bắc có thêm một công ty con gián tiếp",
       "severity": "INFO",
-      "published_at": "Thu, 19 Nov 2026 08:58:06 GMT",
-      "source_url": "https://vneconomy.vn/ssi-research-mat-bang-lai-suat-on-dinh-nhung-kho-giam-manh.htm",
+      "published_at": "Mon, 23 Nov 26 12:20:00 +0700",
+      "source_url": "https://cafef.vn/kinh-bac-co-them-mot-cong-ty-con-gian-tiep-188261123120836272.chn",
+      "total_announcements": 1
+    },
+    "VHM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Blue-chips phục hồi kéo xanh điểm số, thanh khoản vẫn cực thấp",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 2026 05:09:32 GMT",
+      "source_url": "https://vneconomy.vn/blue-chips-phuc-hoi-keo-xanh-diem-so-thanh-khoan-van-cuc-thap.htm",
       "total_announcements": 1
     },
     "VIC": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Dòng tiền vẫn dửng dưng, VN-Index có nguy cơ thủng đáy",
+      "latest_title": "Blue-chips phục hồi kéo xanh điểm số, thanh khoản vẫn cực thấp",
       "severity": "INFO",
-      "published_at": "Thu, 19 Nov 2026 05:00:13 GMT",
-      "source_url": "https://vneconomy.vn/dong-tien-van-dung-dung-vn-index-co-nguy-co-thung-day.htm",
-      "total_announcements": 1
+      "published_at": "Mon, 23 Nov 2026 05:09:32 GMT",
+      "source_url": "https://vneconomy.vn/blue-chips-phuc-hoi-keo-xanh-diem-so-thanh-khoan-van-cuc-thap.htm",
+      "total_announcements": 2
     },
     "BSR": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -4937,6 +4977,60 @@
       "symbols": [
         "PNJ"
       ],
+      "title": "Quỹ ngoại vừa bán 6,6 triệu cổ phiếu PNJ bất ngờ đóng cửa sau 33 năm, từng quản lý hơn 300.000 tỷ tài sản",
+      "summary": "Sau hơn ba thập kỷ hoạt động, một tên tuổi lâu năm trong ngành quản lý tài sản Canada bất ngờ tuyên bố rút lui khỏi thị trường....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 14:37:00 +0700",
+      "source_url": "https://cafef.vn/quy-ngoai-vua-ban-66-trieu-co-phieu-pnj-bat-ngo-dong-cua-sau-33-nam-tung-quan-ly-hon-300000-ty-tai-san-188261123134727989.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "ACB",
+        "FPT",
+        "HDB",
+        "SSI",
+        "TCB",
+        "VCI"
+      ],
+      "title": "Quỹ đầu tư của SSI bán sạch ACB, VCI, Vinhomes, giảm gần 90% cổ phiếu FPT và nắm gần 40% tài sản bằng tiền mặt",
+      "summary": "Theo báo cáo tháng 10/2026, quỹ đầu tư SSI-SCA có quy mô hơn 1.245 tỷ đồng, trong đó tiền và các khoản tương đương tiền chiếm 39,88% tài sản ròng. Danh mục cổ phiếu tập trung chủ yếu vào nhóm ngân hàng, với HDB và TCB gi...",
+      "event_type": "CO_TUC",
+      "severity": "WARNING",
+      "published_at": "Mon, 23 Nov 26 13:36:00 +0700",
+      "source_url": "https://cafef.vn/quy-dau-tu-cua-ssi-ban-sach-acb-vci-vinhomes-giam-gan-90-co-phieu-fpt-va-nam-gan-40-tai-san-bang-tien-mat-188261123103553645.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "CEO",
+        "PNJ"
+      ],
+      "title": "Cổ phiếu PNJ lao dốc sau phát ngôn gây sốc của tân CEO",
+      "summary": "Sau khi Tổng Giám đốc Phan Quốc Công thừa nhận tình hình tài chính đang hết sức khẩn cấp, cổ phiếu PNJ tiếp tục giảm mạnh trong phiên sáng 23/11, có thời điểm chạm mức giá sàn 12.600 đồng/cổ phiếu....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 12:43:00 +0700",
+      "source_url": "https://cafef.vn/co-phieu-pnj-lao-doc-sau-phat-ngon-gay-soc-cua-tan-ceo-188261123122449301.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "TP.HCM thu hồi gần 4 ha đất của liên doanh Sabeco và tập đoàn Mỹ: Từng là nơi sản xuất hơn 1 tỷ vỏ lon mỗi năm",
+      "summary": "Khu đất rộng gần 40.000 m² trên Xa lộ Hà Nội từng đặt một nhà máy sản xuất lon nhôm quy mô lớn...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 10:15:00 +0700",
+      "source_url": "https://cafef.vn/tphcm-thu-hoi-gan-4-ha-dat-cua-lien-doanh-sabeco-va-tap-doan-my-tung-la-noi-san-xuat-hon-1-ty-vo-lon-moi-nam-188261123100232446.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "PNJ"
+      ],
       "title": "Tài sản PNJ hơn 20.000 tỷ, vốn hoá còn dưới 7.000 tỷ, một DN tài sản 5.000 tỷ có vốn hoá 600 tỷ, Viettel Post, HAGL chung cảnh ngộ",
       "summary": "Chốt phiên 20/11/2026, vốn hóa Kosy chỉ còn 619 tỷ đồng dù tổng tài sản vượt 5.000 tỷ đồng. PNJ có hơn 20.000 tỷ đồng tài sản nhưng được thị trường định giá chưa tới 7.000 tỷ đồng. Đằng sau khoảng cách này là những câu c...",
       "event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -4995,52 +5089,50 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "HCM"
-      ],
-      "title": "Công ty của con trai tỷ phú Nguyễn Thị Phương Thảo phát triển nền tảng số trong chương trình kích cầu hơn 30.000 tỷ đồng của TP.HCM",
-      "summary": "Galaxy Technology Services, doanh nghiệp thuộc hệ sinh thái công nghệ do con trai tỷ phú Nguyễn Thị Phương Thảo gián tiếp sở hữu, là đơn vị phát triển nền tảng du lịch số HELLO của TP.HCM. Nền tảng này nằm trong chương t...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 22 Nov 26 00:03:00 +0700",
-      "source_url": "https://cafef.vn/cong-ty-cua-con-trai-ty-phu-nguyen-thi-phuong-thao-phat-trien-nen-tang-so-trong-chuong-trinh-kich-cau-hon-30000-ty-dong-cua-tphcm-188261121230323303.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Việt Nam vừa có nhà máy 32 ha, vốn đầu tư 6.200 tỷ: Công suất 1,2 triệu tấn/năm, sở hữu dây chuyền công nghệ đặc biệt",
-      "summary": "Nhà máy vừa khánh thành tại TP.HCM được trang bị hệ thống sản xuất hiện đại, trong đó có dây chuyền công nghệ lần đầu được một công ty thép thuần Việt sở hữu....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Sun, 22 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/viet-nam-vua-co-nha-may-32-ha-von-dau-tu-6200-ty-cong-suat-12-trieu-tan-nam-so-huu-day-chuyen-cong-nghe-dac-biet-188261121150747413.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO",
         "PNJ"
       ],
-      "title": "Dàn lãnh đạo rời PNJ: Người tốt nghiệp Oxford, người có MBA tại Mỹ, Anh, Australia, CEO Phan Quốc Công đánh giá “đông quản lý nhưng chưa đủ người có năng lực dẫn dắt chuyển đổi”",
-      "summary": "Trong số 4 giám đốc cao cấp vừa xin từ nhiệm tại PNJ, có 3 người sở hữu bằng thạc sĩ từ các trường đại học tại Mỹ, Anh và Australia. Cựu CEO Lê Trí Thông tốt nghiệp MBA tại Đại học Oxford, làm lãnh đạo tại nhiều tập đoàn...",
+      "title": "“Cá mập” vừa rời ghế cổ đông lớn PNJ bất ngờ thông báo đóng quỹ",
+      "summary": "Nhóm quỹ này vừa bán ra lượng lớn cổ phiếu PNJ vào đầu tháng 10 qua đó không còn là cổ đông lớn....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Sat, 21 Nov 26 10:18:00 +0700",
-      "source_url": "https://cafef.vn/dan-lanh-dao-roi-pnj-nguoi-tot-nghiep-oxford-nguoi-co-mba-tai-my-anh-australia-ceo-phan-quoc-cong-danh-gia-dong-quan-ly-nhung-chua-du-nguoi-co-nang-luc-dan-dat-chuyen-doi-188261121101152303.chn"
+      "published_at": "Mon, 23 Nov 26 13:47:00 +0700",
+      "source_url": "https://cafef.vn/ca-map-vua-roi-ghe-co-dong-lon-pnj-bat-ngo-thong-bao-dong-quy-188261123134529196.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "CEO",
-        "PNJ"
+        "FPT"
       ],
-      "title": "CEO Phan Quốc Công: Tình hình tài chính hết sức khẩn cấp, PNJ không còn khả năng đáp ứng cam kết mua lại kim cương bằng tiền sau 120 ngày",
-      "summary": "CEO PNJ Phan Quốc Công thừa nhận doanh số hiện không đủ bù đắp chi phí vận hành, doanh nghiệp liên tục thua lỗ hàng tháng....",
+      "title": "‘Cơn mưa’ cổ tức tiền mặt cuối năm, cao nhất lên tới 40%",
+      "summary": "Thị trường chứng khoán cuối tháng 11/2026 đón làn sóng chốt quyền nhận cổ tức tiền mặt sôi động. Hàng loạt doanh nghiệp lớn như FPT, May Sông Hồng, Sabeco công bố kế hoạch chia lợi nhuận hấp dẫn, với tỷ lệ chi trả cao nh...",
       "event_type": "BCTC_KET_QUA_KINH_DOANH",
       "severity": "CRITICAL",
-      "published_at": "Sat, 21 Nov 26 09:16:00 +0700",
-      "source_url": "https://cafef.vn/ceo-phan-quoc-cong-tinh-hinh-tai-chinh-het-suc-khan-cap-pnj-khong-con-kha-nang-dap-ung-cam-ket-mua-lai-kim-cuong-bang-tien-sau-120-ngay-188261121091618292.chn"
+      "published_at": "Mon, 23 Nov 26 13:21:00 +0700",
+      "source_url": "https://cafef.vn/con-mua-co-tuc-tien-mat-cuoi-nam-cao-nhat-len-toi-40-188261123132147558.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "MBS"
+      ],
+      "title": "Kịch bản từng xuất hiện năm 2022 có nguy cơ lặp lại trên thị trường chứng khoán Việt Nam",
+      "summary": "MBS đánh giá diễn biến đáng lo ngại không chỉ nằm ở việc VN-Index đánh mất mốc 1.700 điểm mà còn ở sự suy yếu của những cổ phiếu vốn hóa lớn....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 09:24:00 +0700",
+      "source_url": "https://cafef.vn/kich-ban-tung-xuat-hien-nam-2022-co-nguy-co-lap-lai-tren-thi-truong-chung-khoan-viet-nam-188261123091410539.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "FPT"
+      ],
+      "title": "Chủ tịch công ty nhận trăm tỷ cổ tức",
+      "summary": "Ông Trương Gia Bình - Chủ tịch Hội đồng quản trị FPT - sẽ nhận về khoảng gần 130 tỷ đồng trong đợt tạm ứng cổ tức lần 1 năm 2026, ông Bùi Đức Thịnh - Chủ tịch Hội đồng quản trị May Sông Hồng - dự kiến nhận gần 110 tỷ đồn...",
+      "event_type": "CO_TUC",
+      "severity": "WARNING",
+      "published_at": "Mon, 23 Nov 26 08:24:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-cong-ty-nhan-tram-ty-co-tuc-188261123072438247.chn"
     },
     {
       "market": "VIETNAM",
@@ -5130,62 +5222,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "FPT"
-      ],
-      "title": "Bán ròng hàng triệu cổ phiếu mỗi ngày, khối ngoại còn nắm bao nhiêu FPT?",
-      "summary": "Từng là cổ phiếu kín room ngoại trong hàng trăm ngày, FPT hiện chứng kiến sự đảo chiều mạnh về cơ cấu sở hữu khi tỷ lệ nắm giữ của nhà đầu tư nước ngoài giảm xuống còn 25,38%....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 20 Nov 26 00:05:00 +0700",
-      "source_url": "https://cafef.vn/ban-rong-hang-trieu-co-phieu-moi-ngay-khoi-ngoai-con-nam-bao-nhieu-fpt-188261119215103655.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Cổ phiếu \"thủng đáy\", FPT bất ngờ hé lộ kế hoạch mới",
-      "summary": "Việc ứng dụng AI đang tạo điều kiện để FPT cải thiện đơn giá dịch vụ, thay vì chỉ cạnh tranh bằng chi phí nhân công....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Fri, 20 Nov 26 00:01:00 +0700",
-      "source_url": "https://cafef.vn/co-phieu-thung-day-fpt-bat-ngo-he-lo-ke-hoach-moi-188261119214257171.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "PNJ"
       ],
-      "title": "3 Giám đốc cao cấp của PNJ đồng loạt từ nhiệm",
-      "summary": "Thời gian gần đây, PNJ liên tục có biến động nhân sự cao cấp....",
+      "title": "Giá vàng nhẫn trơn, vàng miếng sáng 23/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng tới 1,5 triệu đồng/lượng",
+      "summary": "Giá vàng trong nước mở đầu phiên sáng 23/11 đi ngang, với vàng miếng SJC giữ mức 133,5 triệu đồng/lượng và vàng nhẫn cao nhất 133,3 triệu đồng/lượng. Trên thị trường quốc tế, giá vàng thế giới vừa trải qua một tuần lao d...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Thu, 19 Nov 26 18:32:00 +0700",
-      "source_url": "https://cafef.vn/3-giam-doc-cao-cap-cua-pnj-dong-loat-tu-nhiem-188261119183338315.chn"
+      "published_at": "Mon, 23 Nov 26 09:42:00 +0700",
+      "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-23-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-toi-15-trieu-dong-luong-188261122221338839.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "OCB"
+        "ACB",
+        "HDB",
+        "STB",
+        "VCB",
+        "VPB"
       ],
-      "title": "Người thân lãnh đạo OCB tiếp tục đăng ký bán cổ phiếu",
-      "summary": "Bà Nguyễn Việt Triều, vợ ông Ngô Hà Bắc- Thành viên HĐQT của OCB vừa tiếp tục đăng ký bán ra 800.000 cổ phiếu do nhu cầu cá nhân....",
+      "title": "Cổ phiếu ngân hàng nào bị nhà đầu tư nước ngoài bán ròng mạnh nhất từ đầu năm?",
+      "summary": "Từ đầu năm 2026 đến nay, nhà đầu tư nước ngoài đã bán ròng hơn 47.000 tỷ đồng tại nhóm cổ phiếu ngân hàng, vượt xa mức bán ròng của cả năm 2025. Trong đó, ACB, VCB, STB, HDB và VPB là 5 cổ phiếu chịu áp lực bán ròng lớn ...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Thu, 19 Nov 26 16:29:00 +0700",
-      "source_url": "https://cafef.vn/nguoi-than-lanh-dao-ocb-tiep-tuc-dang-ky-ban-co-phieu-188261119162939707.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "Chuyện gì đang xảy ra với FPT?",
-      "summary": "Vốn hóa của FPT \"bốc hơi\" 21.500 tỷ trong một tháng, xuống còn 86.200 tỷ đồng....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 19 Nov 26 16:21:00 +0700",
-      "source_url": "https://cafef.vn/chuyen-gi-dang-xay-ra-voi-fpt-188261119160907863.chn"
+      "published_at": "Mon, 23 Nov 26 08:00:00 +0700",
+      "source_url": "https://cafef.vn/co-phieu-ngan-hang-nao-bi-nha-dau-tu-nuoc-ngoai-ban-rong-manh-nhat-tu-dau-nam-188261122234006725.chn"
     },
     {
       "market": "VIETNAM",
@@ -5199,22 +5259,6 @@
       "severity": "INFO",
       "published_at": "Mon, 23 Nov 26 03:00:00 +0700",
       "source_url": "https://cafef.vn/ngay-23-11-gui-duoi-500-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-188261122224452882.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "ACB",
-        "HDB",
-        "STB",
-        "VCB",
-        "VPB"
-      ],
-      "title": "Khối ngoại bán ròng hơn 47.000 tỷ đồng cổ phiếu ngân hàng từ đầu năm 2026, tâm điểm ACB, VCB, STB, HDB và VPB",
-      "summary": "Từ đầu năm 2026 đến nay, nhà đầu tư nước ngoài đã bán ròng hơn 47.000 tỷ đồng tại nhóm cổ phiếu ngân hàng, vượt xa mức bán ròng của cả năm 2025. Trong đó, ACB, VCB, STB, HDB và VPB là 5 cổ phiếu chịu áp lực bán ròng lớn ...",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 26 01:00:00 +0700",
-      "source_url": "https://cafef.vn/khoi-ngoai-ban-rong-hon-47000-ty-dong-co-phieu-ngan-hang-tam-diem-acb-vcb-stb-hdb-va-vpb-188261122234006725.chn"
     },
     {
       "market": "VIETNAM",
@@ -5373,6 +5417,30 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "KBC"
+      ],
+      "title": "Kinh Bắc có thêm một công ty con gián tiếp",
+      "summary": "Công ty cổ phần Đầu tư hạ tầng Kinh Bắc Quảng Trị trở thành công ty con do KBC sở hữu gián tiếp 97,87%....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 12:20:00 +0700",
+      "source_url": "https://cafef.vn/kinh-bac-co-them-mot-cong-ty-con-gian-tiep-188261123120836272.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "TP.HCM 'chốt' quy hoạch 100 năm: Siêu đô thị 27 triệu dân 'đặt cược' vào 960km metro?",
+      "summary": "Đến năm 2050, TP.HCM đặt mục tiêu hoàn thành 18 tuyến MRT dài khoảng 960km và khoảng 450km LRT/tramway, phục vụ một đô thị khoảng 27 triệu dân. Theo quy hoạch 100 năm vừa được phê duyệt, metro còn là khung để sắp xếp lại...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 26 08:58:00 +0700",
+      "source_url": "https://cafef.vn/tphcm-chot-quy-hoach-100-nam-sieu-do-thi-27-trieu-dan-dat-cuoc-vao-960km-metro-18826112309031519.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "HCM"
       ],
       "title": "Hôm nay, chính thức khai thác đoạn cao tốc 10 làn xe, vốn gần 15.000 tỷ đồng nối thành phố giàu nhất nước ta với siêu sân bay lớn nhất Việt Nam",
@@ -5381,6 +5449,19 @@
       "severity": "INFO",
       "published_at": "Sun, 22 Nov 26 10:27:00 +0700",
       "source_url": "https://cafef.vn/hom-nay-chinh-thuc-khai-thac-doan-cao-toc-10-lan-xe-von-gan-15000-ty-dong-noi-thanh-pho-giau-nhat-nuoc-ta-voi-sieu-san-bay-lon-nhat-viet-nam-1882611212227425.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "VHM",
+        "VIC"
+      ],
+      "title": "Blue-chips phục hồi kéo xanh điểm số, thanh khoản vẫn cực thấp",
+      "summary": "Sức mạnh của VIC, VHM cùng một số blue-chips ngân hàng đã giúp VN-Index phục hồi khá tốt trong phiên sáng nay. Nền thanh khoản cực nhỏ ở rổ VN30 xác nhận áp lực bán nhẹ trong nhóm này, nhưng các mã vừa và nhỏ vẫn chưa có...",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 2026 05:09:32 GMT",
+      "source_url": "https://vneconomy.vn/blue-chips-phuc-hoi-keo-xanh-diem-so-thanh-khoan-van-cuc-thap.htm"
     },
     {
       "market": "VIETNAM",
@@ -5444,6 +5525,18 @@
       "severity": "INFO",
       "published_at": "Thu, 19 Nov 2026 01:00:00 GMT",
       "source_url": "https://vneconomy.vn/vib-chu-dong-don-co-hoi-toi-uu-thanh-khoan-tu-giai-phap-hoan-doi-ngoai-te-cua-ngan-hang-nha-nuoc.htm"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "7 thành viên mới của Trung tâm tài chính quốc tế TP HCM dự kiến huy động 5 tỷ USD",
+      "summary": "Dragon Capital, Mekong Capital, quỹ đầu tư Singapore CMIA Capital Partners là ba trong 7 thành viên mới của VIFC-HCMC, dự kiến huy động 5 tỷ USD giai đoạn 2027-2030....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Mon, 23 Nov 2026 13:01:18 +0700",
+      "source_url": "https://vnexpress.net/7-thanh-vien-moi-cua-trung-tam-tai-chinh-quoc-te-tp-hcm-du-kien-huy-dong-5-ty-usd-5147995.html"
     },
     {
       "market": "VIETNAM",
@@ -5528,18 +5621,6 @@
       "severity": "INFO",
       "published_at": "Fri, 20 Nov 2026 03:13:28 +0700",
       "source_url": "https://vnexpress.net/loat-giam-doc-cap-cao-pnj-tu-nhiem-5146804.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO"
-      ],
-      "title": "CEO tạm quyền Nvidia kêu gọi nhân viên 'tiến về phía trước'",
-      "summary": "Colette Kress vừa có cuộc họp đầu tiên với tất cả nhân viên sau khi Jensen Huang từ chức, theo nguồn tin của CNBC....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 19 Nov 2026 05:50:00 +0700",
-      "source_url": "https://vnexpress.net/ceo-tam-quyen-nvidia-keu-goi-nhan-vien-tien-ve-phia-truoc-5146331.html"
     }
   ]
 }

@@ -1,28 +1,28 @@
 {
   "engine": "APEX_DAILY_INTERNET_INTEL_CRAWLER_V3",
-  "crawled_at": "2026-11-23 03:05:00",
+  "crawled_at": "2026-11-23 15:00:14",
   "crawl_date": "2026-11-23",
-  "elapsed_sec": 19.59,
+  "elapsed_sec": 21.6,
   "summary_counts": {
-    "total_news_articles": 511,
+    "total_news_articles": 510,
     "corp_vietcap_cafef_articles": 270,
     "rss_articles": 250,
     "rss_sources_online": 13,
     "tickers_with_live_news": 30,
-    "verified_ir_portals": 11,
+    "verified_ir_portals": 10,
     "tavily_live_hits": 0,
     "sec_edgar_filings": 6,
-    "sqlite_fts_indexed": 511
+    "sqlite_fts_indexed": 510
   },
   "bctc_and_ohlcv_freshness": {
     "vn_bctc_exists": true,
     "us_bctc_exists": true,
-    "vn_crawled_at": "2026-11-23 03:05:00",
+    "vn_crawled_at": "2026-11-23 15:00:14",
     "vn_age_hours": 0.0,
     "vn_stocks_count": 80,
     "latest_ohlcv_bar_date": "2026-11-20",
     "vnindex_last_close": 1688.79,
-    "us_crawled_at": "2026-11-23 03:05:00",
+    "us_crawled_at": "2026-11-23 15:00:14",
     "us_stocks_count": 12,
     "is_fresh_under_24h": true,
     "latest_quarter_distribution": {
@@ -111,90 +111,103 @@
     "BID": {
       "symbol": "BID",
       "news_count": 9,
-      "avg_sentiment": 0.063,
+      "avg_sentiment": 0.136,
       "positive_count": 3,
       "negative_count": 1,
-      "latest_headline": "BID: Ngân hàng lớn nhất Việt Nam đặt mục tiêu tăng trưởng tín dụng 16% năm 2027, lên kế hoạch phát hành riêng lẻ 780 triệu cổ phiếu",
-      "latest_date": "2026-11-22 16:41:00",
+      "latest_headline": "BID: Nợ xấu BIDV tăng hơn 12.500 tỉ đồng, hé lộ áp lực từ các khoản vay mua nhà hết ưu đãi",
+      "latest_date": "2026-11-23 11:46:00",
       "errors": [],
       "top_items": [
         {
           "symbol": "BID",
           "source_channel": "VIETCAP_AI_NEWS",
           "source_name": "Vietcap/FireAnt",
-          "title": "BID: Ngân hàng lớn nhất Việt Nam đặt mục tiêu tăng trưởng tín dụng 16% năm 2027, lên kế hoạch phát hành riêng lẻ 780 triệu cổ phiếu",
-          "summary": "BIDV đặt mục tiêu tăng trưởng tín dụng khoảng 16% trong năm 2027, đồng thời lên kế hoạch phát hành riêng lẻ 780 triệu cổ phiếu và huy động thêm 25.000–28.000 tỷ đồng qua kênh trái phiếu.",
-          "url": "https://fireant.vn/bai-viet/bid-ngan-hang-lon-nhat-viet-nam-dat-muc-tieu-tang-truong-tin-dung-16-nam-2027-len-ke-hoach-phat-hanh-rieng-le-780-trieu-co-phieu/42876063",
-          "published_at": "2026-11-22 16:41:00",
-          "sentiment_label": "Neutral",
-          "sentiment_score": 0.16,
-          "category": "DIVIDEND_ESOP",
-          "urgency": "MEDIUM"
-        },
-        {
-          "symbol": "BID",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Tạp chí Diễn đàn Doanh nghiệp",
-          "title": "BID: Đòn bẩy tăng trưởng của BIDV",
-          "summary": "Bất chấp áp lực lên biên lãi thuần (NIM), đà tăng trưởng lợi nhuận cốt lõi của Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV, HOSE: BID) vẫn rất mạnh mẽ.",
-          "url": "https://diendandoanhnghiep.vn/don-bay-tang-truong-cua-bidv-10187851.html",
-          "published_at": "2026-11-22 11:35:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.61,
-          "category": "BCTC_EARNINGS",
+          "title": "BID: Nợ xấu BIDV tăng hơn 12.500 tỉ đồng, hé lộ áp lực từ các khoản vay mua nhà hết ưu đãi",
+          "summary": "Sau 9 tháng, nợ xấu của BIDV tăng gần 36%, lên hơn 47.486 tỉ đồng. Trong đó, ngân hàng ghi nhận một phần nợ xấu từ các khoản cho vay mua nhà gia tăng khi những chương trình ưu đãi lãi suất giai đoạn 2023-2025 dần hết hiệu lực.",
+          "url": "https://fireant.vn/bai-viet/bid-no-xau-bidv-tang-hon-12500-ti-dong-he-lo-ap-luc-tu-cac-khoan-vay-mua-nha-het-uu-dai/42884656",
+          "published_at": "2026-11-23 11:46:00",
+          "sentiment_label": "Negative",
+          "sentiment_score": -0.45,
+          "category": "MACRO_SBV_FED",
           "urgency": "HIGH"
         },
         {
           "symbol": "BID",
           "source_channel": "VIETCAP_AI_NEWS",
           "source_name": "Vietcap/Người quan sát",
-          "title": "BID: 62.000 tỷ đồng dư nợ mua nhà tại BIDV dự kiến tăng lãi suất thêm 2-3% trong 12 tháng tới, cảnh báo nguy cơ nợ xấu gia tăng",
-          "summary": "MBS vừa có báo cáo cập nhật nội dung buổi gặp gỡ nhà đầu tư của BIDV.",
-          "url": "https://nguoiquansat.vn/62-000-ty-dong-du-no-mua-nha-tai-bidv-du-kien-tang-lai-suat-them-2-3-trong-12-thang-toi-canh-bao-nguy-co-no-xau-gia-tang-329472.html",
-          "published_at": "2026-11-22 09:34:00",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.65,
-          "category": "RISK_WARNING",
-          "urgency": "HIGH"
-        },
-        {
-          "symbol": "BID",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/FireAnt",
-          "title": "BID: Lãi suất BIDV hôm nay, gửi 100 triệu đồng nhận lãi suất 6,8%",
-          "summary": "Theo khảo sát của Lao Động ngày 21.11.2026, BIDV áp dụng khung lãi suất tiết kiệm cho khách hàng cá nhân trong khoảng 0,1-6,8%/năm.",
-          "url": "https://fireant.vn/bai-viet/bid-lai-suat-bidv-hom-nay-gui-100-trieu-dong-nhan-lai-suat-6-8/42874422",
-          "published_at": "2026-11-21 21:16:00",
-          "sentiment_label": "Neutral",
-          "sentiment_score": 0.0,
-          "category": "MACRO_SBV_FED",
-          "urgency": "HIGH"
-        },
-        {
-          "symbol": "BID",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/FireAnt",
-          "title": "BID: BIDV triển khai 14 chương trình tín dụng ưu đãi với quy mô 500.000 tỷ đồng",
-          "summary": "Trong quý 4/2026, ngân hàng BIDV triển khai 14 chương trình tín dụng ưu đãi quy mô 500.000 tỷ đồng, lãi suất từ 6%/năm, đồng thời giảm lãi vay hỗ trợ khách hàng.",
-          "url": "https://fireant.vn/bai-viet/bid-bidv-trien-khai-14-chuong-trinh-tin-dung-uu-dai-voi-quy-mo-500000-ty-dong/42872290",
-          "published_at": "2026-11-21 10:58:00",
+          "title": "BID: Ngân hàng có tổng tài sản lớn nhất Việt Nam sắp phát hành gần 1,4 tỷ cổ phiếu",
+          "summary": "BIDV dự kiến phát hành gần 1,4 tỷ cổ phiếu trả cổ tức với tỷ lệ 17,96%, qua đó nâng vốn điều lệ lên hơn 91.700 tỷ đồng.",
+          "url": "https://nguoiquansat.vn/ngan-hang-co-tong-tai-san-lon-nhat-viet-nam-sap-phat-hanh-gan-1-4-ty-co-phieu-329630.html",
+          "published_at": "2026-11-23 11:09:00",
           "sentiment_label": "Positive",
           "sentiment_score": 0.45,
-          "category": "MACRO_SBV_FED",
-          "urgency": "HIGH"
+          "category": "DIVIDEND_ESOP",
+          "urgency": "MEDIUM"
+        },
+        {
+          "symbol": "BID",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/FireAnt",
+          "title": "BID: \"Ông lớn\" ngân hàng chuẩn bị chia cổ tức tỷ lệ gần 18%",
+          "summary": "Nếu phát hành đủ số cổ phiếu dự kiến, vốn điều lệ ngân hàng sẽ tăng lên khoảng 91.754,8 tỷ đồng.",
+          "url": "https://fireant.vn/bai-viet/bid-ong-lon-ngan-hang-chuan-bi-chia-co-tuc-ty-le-gan-18/42880031",
+          "published_at": "2026-11-23 09:50:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.61,
+          "category": "DIVIDEND_ESOP",
+          "urgency": "MEDIUM"
+        },
+        {
+          "symbol": "BID",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Người quan sát",
+          "title": "BID: BIDV hạn chế đăng nhập ứng dụng ngân hàng với một số khách hàng",
+          "summary": "Quy định này nhằm bảo vệ thông tin và tài sản khách hàng trước nguy cơ bị tấn công từ mã độc DarkSword.",
+          "url": "https://nguoiquansat.vn/bidv-han-che-dang-nhap-ung-dung-ngan-hang-voi-mot-so-khach-hang-329593.html",
+          "published_at": "2026-11-23 09:22:00",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "BID",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/FireAnt",
+          "title": "BID: BIDV tiếp sức nguồn vốn hướng tới tăng trưởng hai con số",
+          "summary": "BIDV tiếp sức nguồn vốn hướng tới tăng trưởng hai con số",
+          "url": "https://fireant.vn/bai-viet/bid-bidv-tiep-suc-nguon-von-huong-toi-tang-truong-hai-con-so/42877097",
+          "published_at": "2026-11-23 05:45:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.61,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
         }
       ]
     },
     "BSR": {
       "symbol": "BSR",
       "news_count": 9,
-      "avg_sentiment": 0.118,
-      "positive_count": 4,
+      "avg_sentiment": 0.168,
+      "positive_count": 5,
       "negative_count": 1,
-      "latest_headline": "BSR: Khánh thành công trình nhà đa năng chào mừng 65 năm Ngày truyền thống Petrovietnam",
-      "latest_date": "2026-11-22 10:50:00",
+      "latest_headline": "BSR: Lợi nhuận nhóm dầu khí gấp 3,2 lần, BSR đóng góp hơn nửa",
+      "latest_date": "2026-11-23 10:12:00",
       "errors": [],
       "top_items": [
+        {
+          "symbol": "BSR",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/FireAnt",
+          "title": "BSR: Lợi nhuận nhóm dầu khí gấp 3,2 lần, BSR đóng góp hơn nửa",
+          "summary": "Bảy doanh nghiệp dầu khí niêm yết lãi 16.263 tỷ đồng quý III, gấp 3,2 lần cùng kỳ, riêng BSR đóng góp 55%, 5 mã khác giảm lãi so với quý trước.",
+          "url": "https://fireant.vn/bai-viet/bsr-loi-nhuan-nhom-dau-khi-gap-3-2-lan-bsr-dong-gop-hon-nua/42881256",
+          "published_at": "2026-11-23 10:12:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "BCTC_EARNINGS",
+          "urgency": "HIGH"
+        },
         {
           "symbol": "BSR",
           "source_channel": "VIETCAP_AI_NEWS",
@@ -246,19 +259,6 @@
           "sentiment_score": -0.45,
           "category": "MACRO_SBV_FED",
           "urgency": "HIGH"
-        },
-        {
-          "symbol": "BSR",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/FireAnt",
-          "title": "BSR: Chính sách đất đai mở đường cho nền nông nghiệp quy mô lớn",
-          "summary": "Dự thảo Luật Đất đai sửa đổi đề xuất nhiều chính sách theo hướng đơn giản hóa thủ tục, tạo điều kiện tích tụ, tập trung đất đai và nâng cao hiệu quả sử dụng đất nông nghiệp.",
-          "url": "https://fireant.vn/bai-viet/bsr-chinh-sach-dat-dai-mo-duong-cho-nen-nong-nghiep-quy-mo-lon/42811169",
-          "published_at": "2026-11-17 16:53:00",
-          "sentiment_label": "Neutral",
-          "sentiment_score": 0.0,
-          "category": "MARKET_GENERAL",
-          "urgency": "NORMAL"
         }
       ]
     },
@@ -650,13 +650,26 @@
     "GAS": {
       "symbol": "GAS",
       "news_count": 9,
-      "avg_sentiment": 0.187,
-      "positive_count": 4,
-      "negative_count": 2,
-      "latest_headline": "GAS: Hà Tĩnh đặt mục tiêu khởi công kho LNG hơn 26.700 tỷ đồng của PV GAS trong tháng 12/2026",
-      "latest_date": "2026-11-22 20:22:00",
+      "avg_sentiment": 0.087,
+      "positive_count": 3,
+      "negative_count": 3,
+      "latest_headline": "GAS: Nghịch lý: VN-Index neo ở vùng cao, loạt Bluechips đình đám \"cưa đôi\" từ đỉnh, nhiều mã ngụp lặn dưới đáy",
+      "latest_date": "2026-11-23 00:03:00.000000",
       "errors": [],
       "top_items": [
+        {
+          "symbol": "GAS",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/CafeF",
+          "title": "GAS: Nghịch lý: VN-Index neo ở vùng cao, loạt Bluechips đình đám \"cưa đôi\" từ đỉnh, nhiều mã ngụp lặn dưới đáy",
+          "summary": "Trong khi VN-Index vẫn neo quanh vùng 1.700 điểm, chỉ thấp hơn hơn 5% so với cuối năm 2025, không ít cổ phiếu bluechip lại đang trải qua những đợt điều chỉnh sâu.",
+          "url": "https://cafef.vn/nghich-ly-vn-index-neo-o-vung-cao-loat-bluechips-dinh-dam-cua-doi-tu-dinh-nhieu-ma-ngup-lan-duoi-day-188261121183458581.chn",
+          "published_at": "2026-11-23 00:03:00.000000",
+          "sentiment_label": "Negative",
+          "sentiment_score": -0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
         {
           "symbol": "GAS",
           "source_channel": "VIETCAP_AI_NEWS",
@@ -708,19 +721,6 @@
           "sentiment_score": 0.45,
           "category": "MACRO_SBV_FED",
           "urgency": "HIGH"
-        },
-        {
-          "symbol": "GAS",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Tạp chí Diễn đàn Doanh nghiệp",
-          "title": "GAS: PV GAS khởi động Dự án triển khai áp dụng các nguyên tắc quản trị doanh nghiệp của OECD",
-          "summary": "Chiều ngày 05/11/2026, tại trụ sở Tổng công ty Khí Việt Nam (PV GAS), PV GAS tổ chức cuộc họp khởi động Dự án áp dụng các nguyên tắc quản trị doanh nghiệp của Tổ chức Hợp tác và Phát triển Kinh tế (OECD).",
-          "url": "https://diendandoanhnghiep.vn/pv-gas-khoi-dong-du-an-trien-khai-ap-dung-cac-nguyen-tac-quan-tri-doanh-nghiep-cua-oecd-10187548.html",
-          "published_at": "2026-11-16 11:49:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.45,
-          "category": "MARKET_GENERAL",
-          "urgency": "NORMAL"
         }
       ]
     },
@@ -1882,13 +1882,26 @@
     "VCB": {
       "symbol": "VCB",
       "news_count": 9,
-      "avg_sentiment": -0.146,
-      "positive_count": 1,
-      "negative_count": 4,
-      "latest_headline": "VCB: Vietcombank mất hơn 210.000 tỷ đồng vốn hóa, khối ngoại liên tục bán ròng",
-      "latest_date": "2026-11-20 17:43:00",
+      "avg_sentiment": -0.041,
+      "positive_count": 2,
+      "negative_count": 3,
+      "latest_headline": "VCB: Vietcombank tích hợp thanh toán và quản lý doanh thu cửa hàng",
+      "latest_date": "2026-11-23 10:34:00",
       "errors": [],
       "top_items": [
+        {
+          "symbol": "VCB",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/FireAnt",
+          "title": "VCB: Vietcombank tích hợp thanh toán và quản lý doanh thu cửa hàng",
+          "summary": "Vietcombank chính thức ra mắt VCB Merchant Up, ứng dụng thanh toán và quản lý kinh doanh dành cho hộ kinh doanh và doanh nghiệp (đơn vị). Chủ cơ sở kinh doanh có thể theo dõi doanh thu theo thời gian thực, phân quyền cho nhân viên và xử lý hoàn tiền ngay trên ứng dụng.",
+          "url": "https://fireant.vn/bai-viet/vcb-vietcombank-tich-hop-thanh-toan-va-quan-ly-doanh-thu-cua-hang/42882340",
+          "published_at": "2026-11-23 10:34:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "BCTC_EARNINGS",
+          "urgency": "HIGH"
+        },
         {
           "symbol": "VCB",
           "source_channel": "VIETCAP_AI_NEWS",
@@ -1940,19 +1953,6 @@
           "sentiment_score": -0.45,
           "category": "MARKET_GENERAL",
           "urgency": "NORMAL"
-        },
-        {
-          "symbol": "VCB",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Người quan sát",
-          "title": "VCB: Cổ phiếu Vietcombank xuống đáy 19 tháng dù lợi nhuận trước thuế lập kỷ lục",
-          "summary": "Thị giá VCB liên tục đi xuống cùng áp lực bán ròng của khối ngoại, trái chiều với đà tăng lợi nhuận và quy mô tài sản của Vietcombank.",
-          "url": "https://nguoiquansat.vn/co-phieu-vietcombank-xuong-day-19-thang-du-loi-nhuan-truoc-thue-lap-ky-luc-328711.html",
-          "published_at": "2026-11-17 20:38:00",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.49,
-          "category": "BCTC_EARNINGS",
-          "urgency": "HIGH"
         }
       ]
     },
@@ -2344,22 +2344,6 @@
   },
   "rss_source_health": [
     {
-      "source": "CafeF - Chứng khoán",
-      "market": "VN",
-      "url": "https://cafef.vn/thi-truong-chung-khoan.rss",
-      "ok": true,
-      "count": 20,
-      "error": null
-    },
-    {
-      "source": "CafeF - Doanh nghiệp",
-      "market": "VN",
-      "url": "https://cafef.vn/doanh-nghiep.rss",
-      "ok": true,
-      "count": 20,
-      "error": null
-    },
-    {
       "source": "Vietstock - Cổ phiếu",
       "market": "VN",
       "url": "https://vietstock.vn/830/chung-khoan/co-phieu.rss",
@@ -2384,11 +2368,19 @@
       "error": null
     },
     {
-      "source": "MarketWatch Top Stories",
-      "market": "US",
-      "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+      "source": "CafeF - Chứng khoán",
+      "market": "VN",
+      "url": "https://cafef.vn/thi-truong-chung-khoan.rss",
       "ok": true,
-      "count": 10,
+      "count": 20,
+      "error": null
+    },
+    {
+      "source": "CafeF - Doanh nghiệp",
+      "market": "VN",
+      "url": "https://cafef.vn/doanh-nghiep.rss",
+      "ok": true,
+      "count": 20,
       "error": null
     },
     {
@@ -2408,19 +2400,19 @@
       "error": null
     },
     {
-      "source": "VnExpress - Kinh doanh",
-      "market": "VN",
-      "url": "https://vnexpress.net/rss/kinh-doanh.rss",
-      "ok": true,
-      "count": 20,
-      "error": null
-    },
-    {
       "source": "CNBC Economy",
       "market": "US",
       "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258",
       "ok": true,
       "count": 20,
+      "error": null
+    },
+    {
+      "source": "MarketWatch Top Stories",
+      "market": "US",
+      "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+      "ok": true,
+      "count": 10,
       "error": null
     },
     {
@@ -2435,6 +2427,14 @@
       "source": "Vietstock - Doanh nghiệp",
       "market": "VN",
       "url": "https://vietstock.vn/739/kinh-doanh/doanh-nghiep.rss",
+      "ok": true,
+      "count": 20,
+      "error": null
+    },
+    {
+      "source": "VnExpress - Kinh doanh",
+      "market": "VN",
+      "url": "https://vnexpress.net/rss/kinh-doanh.rss",
       "ok": true,
       "count": 20,
       "error": null
@@ -2531,13 +2531,12 @@
       "symbol": "CTG",
       "company_name": "Ngân hàng TMCP Công Thương VN (VietinBank)",
       "portal_url": "https://www.vietinbank.vn/vi/nha-dau-tu",
-      "http_status": 200,
-      "ok": true,
-      "page_title": "Nhà đầu tư | Ngân hàng Thương mại Cổ phần Công Thương Việt Nam",
+      "http_status": null,
+      "ok": false,
+      "page_title": "",
       "bctc_links_found": 0,
       "sample_bctc_links": [],
-      "error": null,
-      "final_url": "https://www.vietinbank.vn/nha-dau-tu"
+      "error": "HTTP Error 405: Not Allowed"
     },
     {
       "symbol": "FPT",
@@ -3082,6 +3081,54 @@
       "published_at": "2026-11-20 15:37:00"
     },
     {
+      "item_id": "d3a3147b87df19b9",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.45,
+      "tickers": [
+        "TPB"
+      ],
+      "sector": "TPB",
+      "title": "TPB: Một chạm thay cho chữ ký, TPBank số hóa giao dịch tại quầy bằng sinh trắc học và ký số qua VNeID",
+      "summary": "TPBank chính thức triển khai phương thức xác thực sinh trắc học và ký số qua ứng dụng VNeID cho khách hàng cá nhân khi giao dịch tại quầy. Khách hàng có thể hoàn tất thủ tục nhanh chóng mà không cần ký tay trên chứng từ giấy. Giải pháp giúp tinh giản quy trình, nâng cao trải nghiệm và đưa TPBank tiến gần hơn tới mô hìn",
+      "source_name": "Vietcap/FireAnt",
+      "source_url": "https://fireant.vn/bai-viet/tpb-mot-cham-thay-cho-chu-ky-tpbank-so-hoa-giao-dich-tai-quay-bang-sinh-trac-hoc-va-ky-so-qua-vneid/42849003",
+      "published_at": "2026-11-19 16:59:00"
+    },
+    {
+      "item_id": "e697054b1d2a4549",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.45,
+      "tickers": [
+        "TPB"
+      ],
+      "sector": "TPB",
+      "title": "TPB: TPBank chính thức đưa xác thực sinh trắc học và ký số qua VNeID vào giao dịch tại quầy",
+      "summary": "Ngân hàng TMCP Tiên Phong (TPBank) chính thức triển khai phương thức xác thực sinh trắc học và ký số qua ứng dụng VNeID cho khách hàng cá nhân khi giao dịch tại quầy. Khách hàng có thể hoàn tất thủ tục nhanh chóng mà không cần ký tay trên chứng từ giấy. Giải pháp giúp tinh giản quy trình, nâng cao trải nghiệm và đưa TP",
+      "source_name": "Vietcap/FireAnt",
+      "source_url": "https://fireant.vn/bai-viet/tpb-tpbank-chinh-thuc-dua-xac-thuc-sinh-trac-hoc-va-ky-so-qua-vneid-vao-giao-dich-tai-quay/42847506",
+      "published_at": "2026-11-19 15:04:00"
+    },
+    {
+      "item_id": "9e31a5dc6b82e240",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.45,
+      "tickers": [
+        "TPB"
+      ],
+      "sector": "TPB",
+      "title": "TPB: TPBank được bổ sung hoạt động cung cấp dịch vụ bù trừ, thanh toán giao dịch chứng khoán",
+      "summary": "Ngân hàng Nhà nước Việt Nam vừa chấp thuận bổ sung hoạt động cung cấp dịch vụ bù trừ, thanh toán giao dịch chứng khoán vào Giấy phép thành lập và hoạt động của Ngân hàng TMCP Tiên Phong (TPBank).",
+      "source_name": "Vietcap/FireAnt",
+      "source_url": "https://fireant.vn/bai-viet/tpb-tpbank-duoc-bo-sung-hoat-dong-cung-cap-dich-vu-bu-tru-thanh-toan-giao-dich-chung-khoan/42810780",
+      "published_at": "2026-11-17 16:12:00"
+    },
+    {
       "item_id": "6adf2185527cdf82",
       "market": "VN",
       "category": "MARKET_GENERAL",
@@ -3194,54 +3241,6 @@
       "published_at": "2026-11-18 18:25:00"
     },
     {
-      "item_id": "d3a3147b87df19b9",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.45,
-      "tickers": [
-        "TPB"
-      ],
-      "sector": "TPB",
-      "title": "TPB: Một chạm thay cho chữ ký, TPBank số hóa giao dịch tại quầy bằng sinh trắc học và ký số qua VNeID",
-      "summary": "TPBank chính thức triển khai phương thức xác thực sinh trắc học và ký số qua ứng dụng VNeID cho khách hàng cá nhân khi giao dịch tại quầy. Khách hàng có thể hoàn tất thủ tục nhanh chóng mà không cần ký tay trên chứng từ giấy. Giải pháp giúp tinh giản quy trình, nâng cao trải nghiệm và đưa TPBank tiến gần hơn tới mô hìn",
-      "source_name": "Vietcap/FireAnt",
-      "source_url": "https://fireant.vn/bai-viet/tpb-mot-cham-thay-cho-chu-ky-tpbank-so-hoa-giao-dich-tai-quay-bang-sinh-trac-hoc-va-ky-so-qua-vneid/42849003",
-      "published_at": "2026-11-19 16:59:00"
-    },
-    {
-      "item_id": "e697054b1d2a4549",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.45,
-      "tickers": [
-        "TPB"
-      ],
-      "sector": "TPB",
-      "title": "TPB: TPBank chính thức đưa xác thực sinh trắc học và ký số qua VNeID vào giao dịch tại quầy",
-      "summary": "Ngân hàng TMCP Tiên Phong (TPBank) chính thức triển khai phương thức xác thực sinh trắc học và ký số qua ứng dụng VNeID cho khách hàng cá nhân khi giao dịch tại quầy. Khách hàng có thể hoàn tất thủ tục nhanh chóng mà không cần ký tay trên chứng từ giấy. Giải pháp giúp tinh giản quy trình, nâng cao trải nghiệm và đưa TP",
-      "source_name": "Vietcap/FireAnt",
-      "source_url": "https://fireant.vn/bai-viet/tpb-tpbank-chinh-thuc-dua-xac-thuc-sinh-trac-hoc-va-ky-so-qua-vneid-vao-giao-dich-tai-quay/42847506",
-      "published_at": "2026-11-19 15:04:00"
-    },
-    {
-      "item_id": "9e31a5dc6b82e240",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.45,
-      "tickers": [
-        "TPB"
-      ],
-      "sector": "TPB",
-      "title": "TPB: TPBank được bổ sung hoạt động cung cấp dịch vụ bù trừ, thanh toán giao dịch chứng khoán",
-      "summary": "Ngân hàng Nhà nước Việt Nam vừa chấp thuận bổ sung hoạt động cung cấp dịch vụ bù trừ, thanh toán giao dịch chứng khoán vào Giấy phép thành lập và hoạt động của Ngân hàng TMCP Tiên Phong (TPBank).",
-      "source_name": "Vietcap/FireAnt",
-      "source_url": "https://fireant.vn/bai-viet/tpb-tpbank-duoc-bo-sung-hoat-dong-cung-cap-dich-vu-bu-tru-thanh-toan-giao-dich-chung-khoan/42810780",
-      "published_at": "2026-11-17 16:12:00"
-    },
-    {
       "item_id": "9090ab5e6b8016f1",
       "market": "VN",
       "category": "MARKET_GENERAL",
@@ -3274,7 +3273,7 @@
       "published_at": "2026-11-16 22:35:00"
     },
     {
-      "item_id": "563e6a24ce51861d",
+      "item_id": "1a266b0bfed9dffb",
       "market": "VN",
       "category": "MARKET_GENERAL",
       "urgency": "NORMAL",
@@ -3285,11 +3284,11 @@
         "VPB"
       ],
       "sector": "HDB",
-      "title": "Khối ngoại bán ròng hơn 47.000 tỷ đồng cổ phiếu ngân hàng từ đầu năm 2026, tâm điểm ACB, VCB, STB, HDB và VPB",
+      "title": "Cổ phiếu ngân hàng nào bị nhà đầu tư nước ngoài bán ròng mạnh nhất từ đầu năm?",
       "summary": "Từ đầu năm 2026 đến nay, nhà đầu tư nước ngoài đã bán ròng hơn 47.000 tỷ đồng tại nhóm cổ phiếu ngân hàng, vượt xa mức bán ròng của cả năm 2025. Trong đó, ACB, VCB, STB, HDB và VPB là 5 cổ phiếu chịu áp lực bán ròng lớn nhất, với tổng giá trị hơn 32.700 tỷ đồng.",
       "source_name": "CafeF - Tài chính Ngân hàng",
-      "source_url": "https://cafef.vn/khoi-ngoai-ban-rong-hon-47000-ty-dong-co-phieu-ngan-hang-tam-diem-acb-vcb-stb-hdb-va-vpb-188261122234006725.chn",
-      "published_at": "Mon, 23 Nov 26 01:00:00 +0700"
+      "source_url": "https://cafef.vn/co-phieu-ngan-hang-nao-bi-nha-dau-tu-nuoc-ngoai-ban-rong-manh-nhat-tu-dau-nam-188261122234006725.chn",
+      "published_at": "Mon, 23 Nov 26 08:00:00 +0700"
     },
     {
       "item_id": "f91c176819584b0d",
@@ -3306,6 +3305,86 @@
       "source_name": "Vietcap/Markettimes",
       "source_url": "https://markettimes.vn/no-can-chu-y-tang-manh-vietinbank-ctg-manh-tay-trich-lap-du-phong-rui-ro-tin-dung-gan-21-000-ty-dong-sau-9-thang-134717.html",
       "published_at": "2026-11-21 18:51:00"
+    },
+    {
+      "item_id": "f5a95c31d898e364",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "TPB"
+      ],
+      "sector": "TPB",
+      "title": "TPB: Thẻ tín dụng nội địa tăng 63%, vượt 7,4 triệu thẻ",
+      "summary": "Đến hết tháng 9/2026, cả nước có hơn 7,4 triệu thẻ tín dụng nội địa lưu hành, tăng 63% so với cùng kỳ, mở thêm kênh vay chính thức cho người lao động.",
+      "source_name": "Vietcap/FireAnt",
+      "source_url": "https://fireant.vn/bai-viet/tpb-the-tin-dung-noi-dia-tang-63-vuot-7-4-trieu-the/42847968",
+      "published_at": "2026-11-19 15:22:00"
+    },
+    {
+      "item_id": "8c80f8f58e891142",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "TPB"
+      ],
+      "sector": "TPB",
+      "title": "TPB: Nghị quyết HĐQT số 47/2026 ngày 19/11/2026",
+      "summary": "[TPB - CafeF Doanh nghiệp @ 20/11/2026 14:11] TPB: Nghị quyết HĐQT số 47/2026 ngày 19/11/2026",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/TPB-3025583/tpb-nghi-quyet-hdqt-so-472026-ngay-19112026.chn?utm_source=du-lieu.chn",
+      "published_at": "20/11/2026 14:11"
+    },
+    {
+      "item_id": "14f06863b0209efb",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "TPB"
+      ],
+      "sector": "TPB",
+      "title": "TPB: Quyết định TGĐ về thay đổi địa điểm hoạt động của PGD Bình Tân",
+      "summary": "[TPB - CafeF Doanh nghiệp @ 17/11/2026 18:04] TPB: Quyết định TGĐ về thay đổi địa điểm hoạt động của PGD Bình Tân",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/TPB-3023652/tpb-quyet-dinh-tgd-ve-thay-doi-dia-diem-hoat-dong-cua-pgd-binh-tan.chn?utm_source=du-lieu.chn",
+      "published_at": "17/11/2026 18:04"
+    },
+    {
+      "item_id": "13a05228b47181cf",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "TPB"
+      ],
+      "sector": "TPB",
+      "title": "TPB: Thông báo chào bán trái phiếu ra công chúng đợt 1 và Bản cáo bạch (kèm Giấy chứng nhận)",
+      "summary": "[TPB - CafeF Doanh nghiệp @ 13/11/2026 18:16] TPB: Thông báo chào bán trái phiếu ra công chúng đợt 1 và Bản cáo bạch (kèm Giấy chứng nhận)",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/TPB-3021301/tpb-thong-bao-chao-ban-trai-phieu-ra-cong-chung-dot-1-va-ban-cao-bach-kem-giay-chung-nhan.chn?utm_source=du-lieu.chn",
+      "published_at": "13/11/2026 18:16"
+    },
+    {
+      "item_id": "e5b3c0335f0b1f47",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "TPB"
+      ],
+      "sector": "TPB",
+      "title": "TPB: Giấy chứng nhận đăng ký chào bán trái phiếu ra công chúng",
+      "summary": "[TPB - CafeF Doanh nghiệp @ 10/11/2026 00:00] TPB: Giấy chứng nhận đăng ký chào bán trái phiếu ra công chúng",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/TPB-3018761/tpb-giay-chung-nhan-dang-ky-chao-ban-trai-phieu-ra-cong-chung.chn?utm_source=du-lieu.chn",
+      "published_at": "10/11/2026 00:00"
     },
     {
       "item_id": "241b033fbeb8ace1",
@@ -3450,86 +3529,6 @@
       "source_name": "CafeF Doanh nghiệp",
       "source_url": "https://cafef.vn/vietinbank-chinh-thuc-hoan-tat-ban-toa-thap-vietinbank-tower-dap-chieu-16-nam-o-ciputra-188261118174959886.chn?utm_source=du-lieu.chn",
       "published_at": "18/11/2026 17:49"
-    },
-    {
-      "item_id": "f48cc4c849eeb4b4",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "CTG"
-      ],
-      "sector": "CTG",
-      "title": "CTG: Thông báo thay đổi nhân sự (kèm Quyết định HĐQT)",
-      "summary": "[CTG - CafeF Doanh nghiệp @ 17/11/2026 18:09] CTG: Thông báo thay đổi nhân sự (kèm Quyết định HĐQT)",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/CTG-3023659/ctg-thong-bao-thay-doi-nhan-su-kem-quyet-dinh-hdqt.chn?utm_source=du-lieu.chn",
-      "published_at": "17/11/2026 18:09"
-    },
-    {
-      "item_id": "c3ff3afb621687b6",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "CTG"
-      ],
-      "sector": "CTG",
-      "title": "CTG: HĐQT thông qua mẫu Hợp đồng cung cấp và sử dụng các dịch vụ thanh toán và quản lý dòng tiền với VietinBank Gold",
-      "summary": "[CTG - CafeF Doanh nghiệp @ 06/11/2026 00:00] CTG: HĐQT thông qua mẫu Hợp đồng cung cấp và sử dụng các dịch vụ thanh toán và quản lý dòng tiền với VietinBank Gold",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/CTG-3016348/ctg-hdqt-thong-qua-mau-hop-dong-cung-cap-va-su-dung-cac-dich-vu-thanh-toan-va-quan-ly-dong-tien-voi-vietinbank-gold.chn?utm_source=du-lieu.chn",
-      "published_at": "06/11/2026 00:00"
-    },
-    {
-      "item_id": "f5a95c31d898e364",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "TPB"
-      ],
-      "sector": "TPB",
-      "title": "TPB: Thẻ tín dụng nội địa tăng 63%, vượt 7,4 triệu thẻ",
-      "summary": "Đến hết tháng 9/2026, cả nước có hơn 7,4 triệu thẻ tín dụng nội địa lưu hành, tăng 63% so với cùng kỳ, mở thêm kênh vay chính thức cho người lao động.",
-      "source_name": "Vietcap/FireAnt",
-      "source_url": "https://fireant.vn/bai-viet/tpb-the-tin-dung-noi-dia-tang-63-vuot-7-4-trieu-the/42847968",
-      "published_at": "2026-11-19 15:22:00"
-    },
-    {
-      "item_id": "8c80f8f58e891142",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "TPB"
-      ],
-      "sector": "TPB",
-      "title": "TPB: Nghị quyết HĐQT số 47/2026 ngày 19/11/2026",
-      "summary": "[TPB - CafeF Doanh nghiệp @ 20/11/2026 14:11] TPB: Nghị quyết HĐQT số 47/2026 ngày 19/11/2026",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/TPB-3025583/tpb-nghi-quyet-hdqt-so-472026-ngay-19112026.chn?utm_source=du-lieu.chn",
-      "published_at": "20/11/2026 14:11"
-    },
-    {
-      "item_id": "14f06863b0209efb",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "TPB"
-      ],
-      "sector": "TPB",
-      "title": "TPB: Quyết định TGĐ về thay đổi địa điểm hoạt động của PGD Bình Tân",
-      "summary": "[TPB - CafeF Doanh nghiệp @ 17/11/2026 18:04] TPB: Quyết định TGĐ về thay đổi địa điểm hoạt động của PGD Bình Tân",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/TPB-3023652/tpb-quyet-dinh-tgd-ve-thay-doi-dia-diem-hoat-dong-cua-pgd-binh-tan.chn?utm_source=du-lieu.chn",
-      "published_at": "17/11/2026 18:04"
     }
   ]
 }

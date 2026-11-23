@@ -1,16 +1,16 @@
 # BÁO CÁO TÌNH BÁO THỊ TRƯỜNG, BCTC & INTERNET SỐNG HÀNG NGÀY (2026-11-23)
-> **Thời điểm cào dữ liệu thật:** `2026-11-23 03:05:00 ICT` (Thời gian chạy: `19.59s`)  
+> **Thời điểm cào dữ liệu thật:** `2026-11-23 15:00:14 ICT` (Thời gian chạy: `21.6s`)  
 > **Cơ quan thực thi:** Ban 2 (Pháp y BCTC) & Ban 10 (`Hiền` IR Scout) — Giai đoạn 1 Nâng cấp Toàn diện
 
 ---
 
 ## I. TỔNG QUAN NGUỒN DỮ LIỆU ĐÃ CÀO TRỰC TIẾP TRÊN INTERNET HÔM NAY
-- **Tổng bài báo RSS / Tin doanh nghiệp / CBTT hợp nhất:** **`511` mục sống** (`13/13` kênh RSS online).
+- **Tổng bài báo RSS / Tin doanh nghiệp / CBTT hợp nhất:** **`510` mục sống** (`13/13` kênh RSS online).
 - **Tin doanh nghiệp Vietcap AI & CafeF theo mã:** **`30/30` mã trọng điểm VN**.
-- **Cổng Quan hệ Cổ đông (IR) doanh nghiệp HTTP 200:** **`11/11` cổng xác thực**.
+- **Cổng Quan hệ Cổ đông (IR) doanh nghiệp HTTP 200:** **`10/11` cổng xác thực**.
 - **Tìm kiếm Web nâng cao Tavily:** **`0` kết quả sống** trên 4 chuyên đề Vĩ mô & Doanh nghiệp.
 - **Hồ sơ SEC EDGAR Mỹ mới nhất (`10-Q/10-K/8-K`):** **`6` tập đoàn**.
-- **Kho BCTC & Giá EOD VPS:** `80` DN VN (`{'2026Q3': 80}`), thanh giá cuối `2026-11-20` (`VNINDEX = 1688.79`), cập nhật `2026-11-23 03:05:00` (`0.0h` trước).
+- **Kho BCTC & Giá EOD VPS:** `80` DN VN (`{'2026Q3': 80}`), thanh giá cuối `2026-11-20` (`VNINDEX = 1688.79`), cập nhật `2026-11-23 15:00:14` (`0.0h` trước).
 
 ## II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO
 
@@ -44,7 +44,7 @@
 - **ACB** (Ngân hàng TMCP Á Châu (ACB)): `HTTP 200` | Tìm thấy `0` link BCTC/tài liệu tại https://acb.com.vn/quan-he-co-dong
 - **BAF** (CTCP Nông nghiệp BAF Việt Nam): `HTTP 200` | Tìm thấy `33` link BCTC/tài liệu tại https://baf.vn/quan-he-co-dong/
 - **BID** (Ngân hàng TMCP Đầu tư & PT VN (BIDV)): `HTTP 200` | Tìm thấy `22` link BCTC/tài liệu tại https://bidv.com.vn/vn/quan-he-nha-dau-tu
-- **CTG** (Ngân hàng TMCP Công Thương VN (VietinBank)): `HTTP 200` | Tìm thấy `0` link BCTC/tài liệu tại https://www.vietinbank.vn/vi/nha-dau-tu
+- **CTG** (Ngân hàng TMCP Công Thương VN (VietinBank)): `LỖI (HTTP Error 405: Not Allowed)` | Tìm thấy `0` link BCTC/tài liệu tại https://www.vietinbank.vn/vi/nha-dau-tu
 - **FPT** (CTCP FPT): `HTTP 200` | Tìm thấy `11` link BCTC/tài liệu tại https://fpt.com/vi/nha-dau-tu
 - **HDB** (Ngân hàng TMCP Phát triển TP.HCM (HDBank)): `HTTP 200` | Tìm thấy `0` link BCTC/tài liệu tại https://hdbank.com.vn/vi/investor/thong-tin-nha-dau-tu/bao-cao-tai-chinh
 - **HPG** (CTCP Tập đoàn Hòa Phát): `HTTP 200` | Tìm thấy `45` link BCTC/tài liệu tại https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh
@@ -76,6 +76,6 @@
 - `[Vietcap/FireAnt]` (`HDB`, Sent `+0.61`): [HDB: HDBank hợp tác MUFG mở rộng huy động vốn quốc tế, thúc đẩy đầu tư Việt-Nhật](https://fireant.vn/bai-viet/hdb-hdbank-hop-tac-mufg-mo-rong-huy-dong-von-quoc-te-thuc-day-dau-tu-viet-nhat/42872289)
 - `[Vietcap/Người quan sát]` (`HDB`, Sent `+0.61`): [HDB: HDBank và MUFG mở rộng hợp tác thị trường vốn, thúc đẩy dòng vốn đầu tư Việt Nam-Nhật Bản](https://nguoiquansat.vn/hdbank-va-mufg-mo-rong-hop-tac-thi-truong-von-thuc-day-dong-von-dau-tu-viet-nam-nhat-ban-329359.html)
 - `[Vietcap/FireAnt]` (`HDB`, Sent `+0.61`): [HDB: HDBank được cấp phép chào bán 20.000 tỷ đồng trái phiếu ra công chúng](https://fireant.vn/bai-viet/hdb-hdbank-duoc-cap-phep-chao-ban-20000-ty-dong-trai-phieu-ra-cong-chung/42867810)
-- `[Vietcap/FireAnt]` (`VPB`, Sent `+0.45`): [VPB: VPBank kết nối kinh nghiệm quốc tế với nhu cầu quản trị gia sản tại Việt Nam](https://fireant.vn/bai-viet/vpb-vpbank-ket-noi-kinh-nghiem-quoc-te-voi-nhu-cau-quan-tri-gia-san-tai-viet-nam/42869713)
-- `[Vietcap/FireAnt]` (`VPB`, Sent `+0.45`): [VPB: VPBank Diamond nâng tầm trải nghiệm chuyển tiền với dịch vụ cá nhân hóa](https://fireant.vn/bai-viet/vpb-vpbank-diamond-nang-tam-trai-nghiem-chuyen-tien-voi-dich-vu-ca-nhan-hoa/42787061)
-- `[Vietcap/FireAnt]` (`VPB`, Sent `+0.45`): [VPB: Dòng tiền tuần qua: Ngân hàng Nhà nước bơm vốn, VPBank huy động 730 triệu USD](https://fireant.vn/bai-viet/vpb-dong-tien-tuan-qua-ngan-hang-nha-nuoc-bom-von-vpbank-huy-dong-730-trieu-usd/42780788)
+- `[Vietcap/FireAnt]` (`TPB`, Sent `+0.45`): [TPB: Một chạm thay cho chữ ký, TPBank số hóa giao dịch tại quầy bằng sinh trắc học và ký số qua VNeID](https://fireant.vn/bai-viet/tpb-mot-cham-thay-cho-chu-ky-tpbank-so-hoa-giao-dich-tai-quay-bang-sinh-trac-hoc-va-ky-so-qua-vneid/42849003)
+- `[Vietcap/FireAnt]` (`TPB`, Sent `+0.45`): [TPB: TPBank chính thức đưa xác thực sinh trắc học và ký số qua VNeID vào giao dịch tại quầy](https://fireant.vn/bai-viet/tpb-tpbank-chinh-thuc-dua-xac-thuc-sinh-trac-hoc-va-ky-so-qua-vneid-vao-giao-dich-tai-quay/42847506)
+- `[Vietcap/FireAnt]` (`TPB`, Sent `+0.45`): [TPB: TPBank được bổ sung hoạt động cung cấp dịch vụ bù trừ, thanh toán giao dịch chứng khoán](https://fireant.vn/bai-viet/tpb-tpbank-duoc-bo-sung-hoat-dong-cung-cap-dich-vu-bu-tru-thanh-toan-giao-dich-chung-khoan/42810780)
