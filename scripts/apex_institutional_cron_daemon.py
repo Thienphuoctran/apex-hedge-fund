@@ -194,12 +194,99 @@ def _get_live_portfolio_snapshot() -> Dict[str, Any]:
     }
 
 
+def _load_live_tactical_context() -> Dict[str, Any]:
+    """Đọc dữ liệu sống từ War-Room, BCTC Tuần 48 và Intel để báo cáo luôn phản ánh thị trường thật."""
+    wr = load_json_safe(DATA_DIR / "live_warroom_state.json")
+    wp = load_json_safe(DATA_DIR / "weekly_tactical_plan_active.json")
+    recon = wr.get("recon_summary", {}) if isinstance(wr, dict) else {}
+    brain = wr.get("decision_brain", {}) if isinstance(wr, dict) else {}
+    leaders = wr.get("top_5_live_leaders", []) if isinstance(wr, dict) else []
+    dangers = wr.get("top_5_danger_alerts", []) if isinstance(wr, dict) else []
+    sectors = wr.get("top_5_sectors", []) if isinstance(wr, dict) else []
+    watchlist = wp.get("approved_watchlist", []) if isinstance(wp, dict) else []
+    return {
+        "timestamp_ict": wr.get("timestamp_ict", ""),
+        "phase": wr.get("phase", ""),
+        "recon": recon,
+        "brain": brain,
+        "leaders": leaders,
+        "dangers": dangers,
+        "sectors": sectors,
+        "watchlist": watchlist,
+    }
+
+
+def _build_actionable_plan_md(snap: Dict[str, Any], ps: Dict[str, str], session_label: str) -> str:
+    """Sinh phần Kế Hoạch Đầu Tư & Sổ Lệnh Thực Chiến có số liệu định lượng cụ thể."""
+    ctx = _load_live_tactical_context()
+    rec = ctx["recon"]
+    brain = ctx["brain"]
+    vni = rec.get("vn_index", "--")
+    vni_chg = rec.get("vn_index_chg_pct", 0.0)
+    ma20 = rec.get("vn_index_ma20", "--")
+    br20 = rec.get("live_breadth_ma20_pct", 0.0)
+    buyup = rec.get("avg_buy_up_pct", 0.0)
+    regime = brain.get("live_regime", "S4_BEAR_CASH_SHIELD")
+    target_alloc = brain.get("target_allocation_pct", "0.0% NAV (100% CASH)")
+    is_cash = snap.get("is_all_cash", True)
+
+    lines = [
+        f"## 2. Bức Tranh Thị Trường Thực Tế ({session_label} | {ctx['timestamp_ict'] or 'LIVE'})",
+        f"- **VN-Index**: `{vni}` (`{vni_chg:+.2f}%` | `MA20`: `{ma20}`) | **Độ rộng > MA20**: `{br20}%` | **Mua chủ động (Buy-Up)**: `{buyup}%`",
+        f"- **Chế độ Hệ Thống**: **`{regime}`** | **Mục tiêu giải ngân hiện tại**: **`{target_alloc}`**",
+    ]
+    if ctx["sectors"]:
+        sec_str = ", ".join(f"{s.get('sector')} ({float(s.get('avg_change_pct', 0)):+.2f}%)" for s in ctx["sectors"][:3])
+        lines.append(f"- **Top 3 Ngành Giữ Giá Tốt Nhất**: {sec_str}")
+
+    if not is_cash:
+        lines.append("")
+        lines.append("## 3. Quản Trị Vị Thế Đang Mở & Ngưỡng Cắt Lỗ / Chốt Lời")
+        lines.append(ps["md_positions"])
+    else:
+        lines.append("")
+        lines.append("## 3. Kế Hoạch Giải Ngân Chuyên Sâu Cho Két Sạch (`100% Cash = " + ps["cash_str"] + "`)")
+        lines.append("- **Nguyên tắc Khung Giờ Vàng (`14h05–14h25`)**: Không bắt dao rơi hay mua đuổi giá xanh đầu phiên; chỉ bấm lệnh **LO lô 100 CP** lúc `14h05–14h25` khi độ rộng và lực cầu rút chân đạt chuẩn:")
+        lines.append("  - **Nhánh S4 (Giữ nguyên nếu `Br20 < 28%`, `VNI` tiếp tục suy yếu)**: **GIỮ `100% TIỀN MẶT`**, bảo toàn trọn vẹn `" + ps["cash_str"] + "`.")
+        lines.append("  - **Nhánh S3 / S2 (Nếu `14h05–14h25` có rút chân + `Buy-Up >= 55%` hoặc `Br20 >= 28–30%`)**: Giải ngân thăm dò **`20% – 36% NAV`** (~`3.7M – 7.4M ₫`), ưu tiên mã đạt điểm BCTC sạch & giữ nền:")
+
+    if ctx["watchlist"]:
+        lines.append("")
+        lines.append("| Mã | Mục tiêu & Tỷ trọng (Điều 5 ≤ 33% NAV) | Vùng Chờ Mua LO (`14h05–14h25`) | Stop Cứng (`-5.5%`) | Chốt Lời `TP1 / TP2` |")
+        lines.append("| :--- | :--- | :--- | :--- | :--- |")
+        for w in ctx["watchlist"][:5]:
+            lines.append(
+                f"| **`{w.get('symbol')}`** | {w.get('weekly_limit', '--')} | {w.get('entry_zone', '--')} | `{w.get('stop_loss_2xatr', '--')}` | `{w.get('tp1', '--')} / {w.get('tp2', '--')}` |"
+            )
+
+    if ctx["leaders"]:
+        lines.append("")
+        lines.append("## 4. Top Cổ Phiếu Dẫn Sóng Sống Trên Bảng Điện (Victor 145 Mã)")
+        for ld in ctx["leaders"][:5]:
+            lines.append(
+                f"- **`{ld.get('symbol')}`**: Giá `{float(ld.get('live_price', 0)):,.0f} ₫` (`{float(ld.get('change_pct', 0)):+.2f}%`) | "
+                f"Buy-Up `{ld.get('buy_up_pct', 0)}%` | F-Score `{ld.get('f_score', '--')}/9` | RS `{ld.get('rs_rating', '--')}` | `MA20`: `{float(ld.get('ma20', 0)):,.0f} ₫`"
+            )
+
+    if ctx["dangers"]:
+        bad_syms = ", ".join(f"`{d.get('symbol')}` (F={d.get('f_score')}/9)" for d in ctx["dangers"][:5])
+        lines.append(f"\n- **⛔ Danh Sách CẤM Giao Dịch (Cờ Đỏ BCTC)**: {bad_syms}")
+
+    return "\n".join(lines) + "\n"
+
+
 def _format_portfolio_summary(snap: Dict[str, Any]) -> Dict[str, str]:
-    """Tạo chuỗi tóm tắt vị thế động hỗ trợ cả 100% tiền mặt lẫn cổ phiếu Vòng 2."""
+    """Tạo chuỗi tóm tắt vị thế động hỗ trợ cả 100% tiền mặt lẫn vị thế đang mở."""
     items = snap.get("items", {})
-    cash = snap.get("cash_vnd", 14510422.0)
-    nav = snap.get("total_nav", 20160422.0)
+    cash = snap.get("cash_vnd", 20051117.0)
+    nav = snap.get("total_nav", 20051117.0)
     is_cash_only = snap.get("is_all_cash", False)
+
+    ctx = _load_live_tactical_context()
+    rec = ctx["recon"]
+    brain = ctx["brain"]
+    watch_syms = ", ".join(f"`{w.get('symbol')}`" for w in ctx["watchlist"][:5]) or "`TPB`, `HDB`, `CTG`, `HPG`, `VPB`"
+    regime_note = f"{brain.get('live_regime', 'S4_BEAR_CASH_SHIELD')} (VNI {rec.get('vn_index', '--')}, Br20 {rec.get('live_breadth_ma20_pct', '--')}%)"
 
     lines_md = []
     lines_tg = []
@@ -215,8 +302,10 @@ def _format_portfolio_summary(snap: Dict[str, Any]) -> Dict[str, str]:
             lines_md.append(f"- `{sym} ({sh} CP)`: Giá vốn `{ep:,.0f} ₫` | Live: `{cp:,.0f} ₫` (PnL: `{pnl_v:+,.0f} ₫` / `{pnl_p:+.2f}%`) | Stop 2xATR: `{st:,.0f} ₫` | TP1: `{tp:,.0f} ₫`")
             lines_tg.append(f"• `{sym} ({sh} CP)`: `{cp:,.0f} ₫` ({pnl_p:+.2f}%) | Stop: `{st:,.0f}` | TP1: `{tp:,.0f}`")
     else:
-        lines_md.append("- Danh mục hiện tại: 100% Tiền Mặt (0 CP). Đang theo dõi Radar Vòng 2: `BAF`, `IDC`.")
-        lines_tg.append("• Danh mục: 100% Tiền Mặt. Radar Vòng 2: `BAF`, `IDC`.")
+        lines_md.append(f"- Danh mục hiện tại: **100% Tiền Mặt (`{cash:,.0f} ₫`, `0 CP`)** | Chế độ: `{regime_note}`.")
+        lines_md.append(f"- Rổ BCTC sạch theo dõi (S1–S4 Tuần 48): {watch_syms} (chỉ giải ngân khung `14h05–14h25` khi đạt điều kiện).")
+        lines_tg.append(f"• Danh mục: **100% Tiền Mặt (`{cash:,.0f} ₫`, `0 CP`)** | `{regime_note}`")
+        lines_tg.append(f"• Rổ canh 14h05–14h25: {watch_syms}")
 
     return {
         "md_positions": "\n".join(lines_md),
@@ -455,41 +544,37 @@ def execute_milestone(milestone_id: str) -> bool:
                 log_event("[DRY-RUN] Bỏ qua publish_morning_magazine_card gửi mạng.")
 
         # ==============================================================================
-        # 6. 08:45 - JAMES (MASTER CIO - BAN 8): CHẠY MASTER ALLOCATOR & BAN HÀNH BLOTTER
+        # 6. 08:45 - JAMES & PALMER (KHỐI 3): CHẠY MASTER ALLOCATOR & BAN HÀNH BLOTTER
         # ==============================================================================
         elif milestone_id == "08:45":
             _run_py_script("scripts/master_cio_allocator.py", timeout=90)
             snap = _get_live_portfolio_snapshot()
             ps = _format_portfolio_summary(snap)
+            plan_body_md = _build_actionable_plan_md(snap, ps, "Đầu Ngày 08:45 Trước ATO")
             blotter_snap_file = BASE_DIR / "08_Master_Investment_CIO" / f"{date_str}_Master_Blotter_Snapshot.md"
             snap_content = (
-                f"# SỔ LỆNH MASTER BLOTTER NGÀY {date_str} (MASTER CIO JAMES — BAN 8)\n"
-                f"**Chủ tịch**: Trần Quốc Thiên Phước | **TCBS**: `105C307855` | **Tổng NAV**: `{ps['nav_str']}`\n\n"
-                f"## 1. Trạng thái danh mục sở hữu thực tế\n"
-                f"{ps['md_positions']}\n"
-                f"- **Tiền mặt két TCInvest**: `{ps['cash_str']}` | **Tổng NAV**: `{ps['nav_str']}`\n\n"
-                f"## 2. Kỷ luật tác chiến phiên hôm nay\n"
-                f"- **Kỷ luật Hiến chương**: Danh mục ở trạng thái T+1 (hàng chờ về). 100% ÁN BINH BẤT ĐỘNG, bảo vệ an toàn vị thế, không mua gia tăng khi hàng chưa về tài khoản!\n"
+                f"# SỔ LỆNH MASTER BLOTTER & KẾ HOẠCH ĐẦU TƯ NGÀY {date_str} (JAMES & PALMER — KHỐI 3)\n"
+                f"**Chủ tịch**: Trần Quốc Thiên Phước | **TCBS**: `105C307855` | **Tổng NAV**: `{ps['nav_str']}` | **Tiền mặt**: `{ps['cash_str']}`\n\n"
+                f"## 1. Trạng thái két tiền & vị thế thực tế\n"
+                f"{ps['md_positions']}\n\n"
+                f"{plan_body_md}"
             )
             write_md_safe(blotter_snap_file, snap_content)
 
             msg = (
-                "🎖️ *[BAN 8 — MASTER CIO JAMES: PHÊ DUYỆT SỔ LỆNH MASTER BLOTTER]*\n"
-                f"Chủ tịch: **Trần Quốc Thiên Phước** | Tài khoản: `105C307855` | NAV: `{ps['nav_str']}`\n\n"
-                "📋 *TRẠNG THÁI DANH MỤC THỰC TẾ & KỶ LUẬT THỂ CHẾ*:\n"
+                "🎖️ *[KHỐI 3 — JAMES & PALMER: SỔ LỆNH & KẾ HOẠCH ĐẦU TƯ NGÀY MỚI]*\n"
+                f"Chủ tịch: **Trần Quốc Thiên Phước** | `105C307855` | NAV: `{ps['nav_str']}`\n\n"
                 f"{ps['tg_positions']}\n"
-                f"🛡️ *Tiền mặt két TCBS*: `{ps['cash_str']}`\n"
-                "👉 Kỷ luật phiên hôm nay: Án binh bất động 100%, bảo vệ an toàn vị thế T+1, không FOMO mua đuổi!"
+                f"📁 Chi tiết bảng giá LO / Stop / TP1–TP2: `08_Master_Investment_CIO/{date_str}_Master_Blotter_Snapshot.md`"
             )
             _dispatch("morning_blotter", msg)
 
         # ==============================================================================
-        # 7. 09:00 - VICTOR (SENTINEL - BAN 9): QUÉT REALTIME & KÍCH HOẠT CẦU CHÌ GUARD-01
+        # 7. 09:00 - VICTOR (KHỐI 4): QUÉT REALTIME 145 MÃ & KÍCH HOẠT CẦU CHÌ GUARD-01
         # ==============================================================================
         elif milestone_id == "09:00":
             _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=45)
             _run_py_script("scripts/apex_daily_live_warroom_engine.py", args=["--once"], timeout=90)
-            # Master CIO James: Tuần tra TCBS Phiên Sáng (Bảng giá, Vốn, Lệnh, Lãi/Lỗ)
             try:
                 from scripts.tcinvest_vault_watcher import TCBSVaultWatcher
                 watcher = TCBSVaultWatcher()
@@ -498,138 +583,124 @@ def execute_milestone(milestone_id: str) -> bool:
                 log_event(f"[!] Warning James morning patrol: {e}")
             snap = _get_live_portfolio_snapshot()
             ps = _format_portfolio_summary(snap)
+            plan_body_md = _build_actionable_plan_md(snap, ps, "Mở Phiên ATO 09:00")
 
             ato_file = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / f"{date_str}_ATO_Guard_Report.md"
             ato_content = (
-                f"# BÁO CÁO GIÁM SÁT ATO & KÍCH HOẠT CẦU CHÌ GUARD-01 (VICTOR SENTINEL — BAN 9)\n"
-                f"**Thời gian quét**: `{date_str} 09:00:00 AM` | **Độ trễ bảng điện**: `< 150ms`\n"
-                f"**Trạng thái tài sản thực tế trong danh mục TCBS (`105C307855`)**:\n"
-                f"{ps['md_positions']}\n"
-                f"- **Tiền mặt két TCInvest**: `{ps['cash_str']}` | **Tổng NAV**: `{ps['nav_str']}`\n\n"
-                f"## Chỉ thị cầu chì GUARD-01 & ZeroMarketWatcher\n"
-                f"- **KHÓA LỆNH MUA ĐUỔI ATO**: Cấm tuyệt đối giải ngân mua mới khi bảng điện nhảy giá xanh đầu phiên (09:00 - 09:30).\n"
-                f"- **GIÁM SÁT TỰ ĐỘNG 15 GIÂY/LẦN**: Victor Sentinel theo dõi sát sao từng bước giá để bảo vệ vị thế T+1 của Chủ tịch.\n"
+                f"# BÁO CÁO GIÁM SÁT ATO & CANH NGƯỠNG 145 MÃ (VICTOR SENTINEL — KHỐI 4)\n"
+                f"**Thời gian quét**: `{date_str} 09:00:00 AM` | **Tài khoản**: TCBS `105C307855`\n\n"
+                f"## 1. Trạng thái két tiền & vị thế thực tế\n"
+                f"{ps['md_positions']}\n\n"
+                f"{plan_body_md}"
             )
             write_md_safe(ato_file, ato_content)
 
             msg_ato = (
-                "🚨 *[BAN 9 — VICTOR SENTINEL: KÍCH HOẠT CẦU CHÌ CHẶN BẪY ATO (GUARD-01)]*\n"
-                f"⏰ Mở cửa phiên: `09:00 AM` | 📡 Bảng điện: HOSE Realtime\n\n"
-                "📊 *TRẠNG THÁI DANH MỤC THỰC TẾ TRONG PHIÊN ATO*:\n"
+                "🚨 *[KHỐI 4 — VICTOR SENTINEL: MỞ PHIÊN ATO & CANH NGƯỠNG 145 MÃ]*\n"
+                f"⏰ `09:00 AM` | 🛡️ Két TCBS `105C307855`: `{ps['cash_str']}`\n"
                 f"{ps['tg_positions']}\n"
-                f"🛡️ *Tiền mặt bảo toàn*: `{ps['cash_str']}`\n\n"
-                "⛔ *CHỈ THỊ CẦU CHÌ GUARD-01*:\n"
-                "1. Tuyệt đối KHÔNG mua đuổi khi bảng điện nhảy giá xanh ATO.\n"
-                "2. Giữ vững kỷ luật bảo toàn vốn, giữ chặt vị thế T+1, không FOMO mua gia tăng!\n"
-                "👉 Victor Sentinel đang quét liên tục mỗi 15 giây bảo vệ tài khoản Chủ tịch!"
+                "⛔ Khóa FOMO ATO trước `14h05`; có mã chạm ngưỡng Mua/Bán sẽ báo ngay về James!"
             )
             _dispatch("alerts", msg_ato)
             _dispatch("morning_blotter", msg_ato)
 
         # ==============================================================================
-        # 8. 11:45 - BAN 1 & 3 VN: BÁO CÁO FLASH KHỚP LỆNH SÁNG & KIỂM ĐỊNH SỔ LỆNH VSA
+        # 8. 11:45 - MINH QUÂN & BAN 3 (KHỐI 2): FLASH KHỚP LỆNH SÁNG & KẾ HOẠCH CHIỀU
         # ==============================================================================
         elif milestone_id == "11:45":
             _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=45)
+            _run_py_script("scripts/apex_daily_live_warroom_engine.py", args=["--once"], timeout=90)
             snap = _get_live_portfolio_snapshot()
             ps = _format_portfolio_summary(snap)
+            plan_body_md = _build_actionable_plan_md(snap, ps, "Kết Phiên Sáng 11:45 & Kế Hoạch Chiều")
 
             flash_file = BASE_DIR / "VN_Market" / "03_Synthesis_Memos" / f"{date_str}_Morning_Flash_Report.md"
             flash_content = (
-                f"# BÁO CÁO FLASH KHỚP LỆNH PHIÊN SÁNG (BAN 1 & BAN 3 VN)\n"
-                f"**Thời gian**: `{date_str} 11:45 AM` (Tạm đóng phiên sáng HOSE)\n\n"
+                f"# BÁO CÁO FLASH PHIÊN SÁNG & KẾ HOẠCH TÁC CHIẾN CHIỀU (KHỐI 2 — MINH QUÂN & ALEX)\n"
+                f"**Thời gian**: `{date_str} 11:45 AM` | **Tài khoản**: TCBS `105C307855`\n\n"
                 f"## 1. Trạng thái tài khoản TCBS `105C307855`\n"
-                f"{ps['md_positions']}\n"
-                f"- **Tổng giá trị cổ phiếu**: `{snap['total_mkt']:,.0f} ₫` | **Tiền mặt dự phòng**: `{ps['cash_str']}` | **Tổng NAV**: `{ps['nav_str']}`\n\n"
-                f"## 2. Phân tích Cung Cầu & Dòng Tiền\n"
-                f"- Áp lực bán toàn sàn ở mức trung bình. Cấu trúc tích lũy của danh mục được giữ vững an toàn.\n"
+                f"{ps['md_positions']}\n\n"
+                f"{plan_body_md}"
             )
             write_md_safe(flash_file, flash_content)
 
             msg = (
-                "📊 *[BAN 1 & 3 VN — BÁO CÁO FLASH KHỚP LỆNH PHIÊN SÁNG 11H45]*\n"
+                "📊 *[KHỐI 2 — BÁO CÁO KẾT PHIÊN SÁNG 11H45 & KỊCH BẢN CHIỀU]*\n"
                 f"{ps['tg_positions']}\n"
-                f"• Tổng NAV hiện tại: `{ps['nav_str']}` | Tiền mặt: `{ps['cash_str']}`\n"
-                f"📁 Báo cáo: `VN_Market/03_Synthesis_Memos/{date_str}_Morning_Flash_Report.md`"
+                f"📁 Xem bảng giá LO / Stop / TP chi tiết tại: `VN_Market/03_Synthesis_Memos/{date_str}_Morning_Flash_Report.md`"
             )
             _dispatch("radar_filings", msg)
 
         # ==============================================================================
-        # 9. 13:00 - BAN 4 & VICTOR: RADAR ĐO LỰC HẤP THỤ HÀNG T+2.5 VỀ TÀI KHOẢN
+        # 9. 13:00 - VICTOR & BAN 4: RADAR ĐO LỰC HẤP THỤ HÀNG T+2.5 PHIÊN CHIỀU
         # ==============================================================================
         elif milestone_id == "13:00":
             snap = _get_live_portfolio_snapshot()
             ps = _format_portfolio_summary(snap)
+            plan_body_md = _build_actionable_plan_md(snap, ps, "Mở Phiên Chiều 13:00 — Soi Lực Hấp Thụ T+2.5")
 
             t2_file = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / f"{date_str}_T2_Pressure_Radar.md"
             t2_content = (
-                f"# RADAR ĐO LỰC HẤP THỤ HÀNG T+2.5 VỀ TÀI KHOẢN (BAN 4 & VICTOR SENTINEL)\n"
-                f"**Thời gian quét**: `{date_str} 13:00 - 13:45 PM`\n"
-                f"- Lượng cổ phiếu T+2.5 trên toàn thị trường đã về tài khoản nhà đầu tư.\n"
-                f"- Danh mục Chủ tịch ({ps['nav_str']}) đang được bảo vệ an toàn:\n"
-                f"{ps['md_positions']}\n"
-                f"- Tiền mặt két TCBS: `{ps['cash_str']}` an toàn 100%.\n"
+                f"# RADAR ĐO LỰC HẤP THỤ HÀNG T+2.5 PHIÊN CHIỀU (KHỐI 4 — VICTOR & BAN 4)\n"
+                f"**Thời gian quét**: `{date_str} 13:00 PM` | **Tài khoản**: TCBS `105C307855`\n\n"
+                f"## 1. Trạng thái két tiền & vị thế\n"
+                f"{ps['md_positions']}\n\n"
+                f"{plan_body_md}"
             )
             write_md_safe(t2_file, t2_content)
 
             msg = (
-                "🛡️ *[BAN 4 & VICTOR — RADAR ĐO LỰC HẤP THỤ HÀNG T+2.5 LÚC 13H00]*\n"
-                "• Khung giờ nhạy cảm `13:00 - 13:45`: Đang đo lường lực cầu hấp thụ lượng hàng T+2.5 về tài khoản toàn thị trường.\n"
+                "🛡️ *[KHỐI 4 — VICTOR SENTINEL: RADAR CHIỀU 13H00]*\n"
                 f"{ps['tg_positions']}\n"
-                f"• Tiền mặt an toàn trong két: `{ps['cash_str']}` | Tổng NAV: `{ps['nav_str']}`.\n"
-                "👉 Kỷ luật phiên hôm nay: Án binh bất động, kiên nhẫn quan sát, không mở vị thế mới khi hàng chưa về!"
+                "👉 Đang đo lực hấp thụ T+2.5 (`13:00–13:45`), chuẩn bị chốt S1–S4 lúc `14:05`!"
             )
             _dispatch("alerts", msg)
 
         # ==============================================================================
-        # 10. 14:00 - MINH QUÂN (BAN 7): KHUNG GIỜ VÀNG QUYẾT ĐỊNH (14h00 - 14h25)
+        # 10. 14:00 - MINH QUÂN & JAMES: KHUNG GIỜ VÀNG QUYẾT ĐỊNH (14h00 - 14h25)
         # ==============================================================================
         elif milestone_id == "14:00":
+            _run_py_script("scripts/apex_daily_live_warroom_engine.py", args=["--once"], timeout=90)
             snap = _get_live_portfolio_snapshot()
             ps = _format_portfolio_summary(snap)
+            plan_body_md = _build_actionable_plan_md(snap, ps, "Khung Giờ Vàng 14:00–14:25")
 
             golden_file = BASE_DIR / "08_Master_Investment_CIO" / f"{date_str}_Golden_Hour_Tactical_Memo.md"
             golden_content = (
-                f"# KHUNG GIỜ VÀNG TÁC CHIẾN 14H00 - 14H25 (BAN 7 VN — MINH QUÂN)\n"
-                f"**Thời gian**: `{date_str} 14:00 PM` | **Tài khoản**: TCBS `105C307855`\n"
-                f"- Hình thái nến ngày đã định hình >= 90%.\n"
-                f"- **Trạng thái tài khoản thực tế**:\n"
-                f"{ps['md_positions']}\n"
-                f"- **Chỉ thị hành động**: Hôm nay là phiên T+1 (hàng chưa về). KỶ LUẬT THÉP BẤT BIẾN: 100% ÁN BINH BẤT ĐỘNG, bảo toàn `{ps['cash_str']}` tiền mặt!\n"
+                f"# KHUNG GIỜ VÀNG TÁC CHIẾN 14H00–14H25 (MINH QUÂN & MASTER CIO JAMES)\n"
+                f"**Thời gian**: `{date_str} 14:00 PM` | **Tài khoản**: TCBS `105C307855`\n\n"
+                f"## 1. Trạng thái két tiền & vị thế\n"
+                f"{ps['md_positions']}\n\n"
+                f"{plan_body_md}"
             )
             write_md_safe(golden_file, golden_content)
 
             msg = (
-                "☀️ *[BAN 7 VN — MINH QUÂN: BƯỚC VÀO KHUNG GIỜ VÀNG 14H00 - 14H25]*\n"
-                "🎯 *Thời điểm nến ngày định hình >= 90%*:\n"
+                "☀️ *[KHỐI 2 & 3 — KHUNG GIỜ VÀNG 14H00–14H25]*\n"
                 f"{ps['tg_positions']}\n"
-                f"• Tiền mặt dự phòng: `{ps['cash_str']}` | Tổng NAV: `{ps['nav_str']}`.\n"
-                "👉 KỶ LUẬT BẤT BIẾN: Hàng đang chờ về (T+1), TUYỆT ĐỐI ÁN BINH BẤT ĐỘNG, KHÔNG MUA GIA TĂNG!"
+                f"📁 Bảng Sổ lệnh & Ngưỡng kích hoạt: `08_Master_Investment_CIO/{date_str}_Golden_Hour_Tactical_Memo.md`"
             )
             _dispatch("morning_blotter", msg)
 
         # ==============================================================================
-        # 11. 14:25 - VICTOR & MINH QUÂN: CẦU CHÌ AN TOÀN T+0 (GUARD-03) KHÓA TRƯỚC ATC
+        # 11. 14:25 - VICTOR & MINH QUÂN: CẦU CHÌ KHÓA SỔ TRƯỚC ATC (GUARD-03)
         # ==============================================================================
         elif milestone_id == "14:25":
             snap = _get_live_portfolio_snapshot()
             ps = _format_portfolio_summary(snap)
+            plan_body_md = _build_actionable_plan_md(snap, ps, "Chốt Chặn 14:25 Trước Phiên ATC")
             guard3_file = BASE_DIR / "VN_Market" / "04_Investment_Committee" / f"{date_str}_GUARD03_Pre_ATC_Lock.md"
             guard3_content = (
-                f"# BIÊN BẢN KÍCH HOẠT CẦU CHÌ AN TOÀN GUARD-03 (KHÓA TRƯỚC ATC)\n"
-                f"**Thời gian**: `{date_str} 14:25 PM` | **Đơn vị phối hợp**: Ban 9 (Victor) & Ban 7 (Minh Quân)\n"
-                f"- Đã rà soát 100% lệnh trong phiên: Không có lệnh lướt sóng T+0 treo qua đêm.\n"
-                f"- Trạng thái tài khoản được khóa an toàn tuyệt đối:\n"
-                f"{ps['md_positions']}\n"
-                f"- Tiền mặt dự phòng: **`{ps['cash_str']}`** | Tổng NAV: **`{ps['nav_str']}`**.\n"
-                f"- Triệt tiêu hoàn toàn rủi ro biến động giá ảo trong phiên ATC (14h30 - 14h45).\n"
+                f"# BIÊN BẢN CHỐT CHẶN GUARD-03 TRƯỚC ATC (14H25)\n"
+                f"**Thời gian**: `{date_str} 14:25 PM` | **Tài khoản**: TCBS `105C307855`\n\n"
+                f"## 1. Trạng thái két tiền & vị thế\n"
+                f"{ps['md_positions']}\n\n"
+                f"{plan_body_md}"
             )
             write_md_safe(guard3_file, guard3_content)
 
             msg = (
-                "⚡ *[BAN 9 & 7 — KÍCH HOẠT CẦU CHÌ AN TOÀN T+0 (GUARD-03) LÚC 14H25]*\n"
-                "• Bây giờ là `14:25`: Toàn bộ sổ lệnh trong phiên được khóa cố định trước khi bước vào phiên ATC.\n"
-                f"• Kho hàng chuẩn TCBS `105C307855`: Tiền mặt `{ps['cash_str']}` | Tổng NAV `{ps['nav_str']}` | Margin `0.0%`.\n"
+                "⚡ *[KHỐI 4 & 2 — CHỐT CHẶN GUARD-03 TRƯỚC ATC 14H25]*\n"
                 f"{ps['tg_positions']}"
             )
             _dispatch("alerts", msg)

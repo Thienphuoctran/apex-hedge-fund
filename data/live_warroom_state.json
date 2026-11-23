@@ -1,8 +1,8 @@
 {
-  "timestamp_ict": "2026-11-21 19:05:30 ICT",
-  "date": "2026-11-21",
-  "tag": "CLI_ONCE",
-  "phase": "WEEKEND_STANDBY",
+  "timestamp_ict": "2026-11-23 11:27:15 ICT",
+  "date": "2026-11-23",
+  "tag": "API_ON_DEMAND",
+  "phase": "MORNING_RECON_ANTI_FOMO",
   "ssot_snapshot": {
     "account_id": "105C307855",
     "status": "ALL_CASH_STANDDOWN",
@@ -14,160 +14,151 @@
   "recon_summary": {
     "universe_total": 145,
     "scanned_live_count": 144,
-    "vn_index": 1688.79,
+    "vn_index": 1688.03,
     "vn_index_chg_pct": -0.05,
-    "vn_index_ma20": 1730.89,
-    "vn_index_ma50": 1748.05,
-    "volume_pace_ratio": 1.32,
-    "turnover_ty": 15933.0,
-    "foreign_net_ty": -71.6,
-    "advance_count": 37,
-    "decline_count": 78,
-    "unchanged_count": 29,
+    "vn_index_ma20": 1726.99,
+    "vn_index_ma50": 1746.0,
+    "volume_pace_ratio": 0.66,
+    "turnover_ty": 4548.2,
+    "foreign_net_ty": -17.8,
+    "advance_count": 30,
+    "decline_count": 90,
+    "unchanged_count": 24,
     "ceiling_count": 0,
     "floor_count": 0,
-    "live_breadth_ma20_pct": 19.4,
-    "avg_buy_up_pct": 59.3,
-    "internet_articles": 506,
-    "internet_crawled_at": "2026-11-21 16:49:29"
+    "live_breadth_ma20_pct": 16.0,
+    "avg_buy_up_pct": 55.3,
+    "internet_articles": 509,
+    "internet_crawled_at": "2026-11-23 11:22:29"
   },
   "decision_brain": {
     "live_regime": "S4_BEAR_CASH_SHIELD",
     "target_allocation_pct": "0.0% NAV (100% CASH)",
-    "verdict_code": "STANDBY_AUDIT_S4_BEAR_CASH_SHIELD",
-    "verdict_vi": "TRẠNG THÁI CHỜ (WEEKEND_STANDBY): Quét sống 144/145 mã | Chế độ sống: S4_BEAR_CASH_SHIELD | SSOT 20,051,117 ₫ (0 CP).",
+    "verdict_code": "ANTI_FOMO_MORNING_WAIT_14H00",
+    "verdict_vi": "PHIÊN THEO DÕI (MORNING_RECON_ANTI_FOMO): Khóa nút Mua đến 14h05 | Chế độ sống: S4_BEAR_CASH_SHIELD | Giữ 100% Cash (20,051,117 ₫).",
     "proposed_lo_orders": []
   },
   "top_5_sectors": [
     {
-      "sector": "Dầu Khí Thượng Nguồn & Phân Phối",
-      "avg_change_pct": 1.01,
+      "sector": "Dược Phẩm & Bệnh Viện",
+      "avg_change_pct": 0.03,
+      "stocks": 5
+    },
+    {
+      "sector": "Thực Phẩm & Đồ Uống Thiết Yếu",
+      "avg_change_pct": -0.02,
       "stocks": 6
     },
     {
-      "sector": "Chứng Khoán & Đầu Tư",
-      "avg_change_pct": 0.35,
-      "stocks": 13
+      "sector": "Dệt May Xuất Khẩu",
+      "avg_change_pct": -0.18,
+      "stocks": 5
     },
     {
-      "sector": "Hóa Chất Cơ Bản & Phân Bón",
-      "avg_change_pct": 0.24,
-      "stocks": 7
+      "sector": "Bảo Hiểm Nhân Thọ & Phi Nhân Thọ",
+      "avg_change_pct": -0.23,
+      "stocks": 3
     },
     {
-      "sector": "Bất Động Sản Dân Cư & Đô Thị",
-      "avg_change_pct": -0.09,
-      "stocks": 12
-    },
-    {
-      "sector": "Thép & Kim Loại Công Nghiệp",
-      "avg_change_pct": -0.1,
-      "stocks": 6
+      "sector": "Cảng Biển, Vận Tải Biển & Hàng Không",
+      "avg_change_pct": -0.24,
+      "stocks": 10
     }
   ],
   "bottom_3_sectors": [
     {
-      "sector": "Nông Nghiệp & Chăn Nuôi 3F",
-      "avg_change_pct": -1.06,
-      "stocks": 5
-    },
-    {
-      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
-      "avg_change_pct": -1.09,
+      "sector": "Thủy Sản Xuất Khẩu (Cá Tra & Tôm)",
+      "avg_change_pct": -0.66,
       "stocks": 6
     },
     {
-      "sector": "Điện & Hạ Tầng Năng Lượng",
-      "avg_change_pct": -1.28,
-      "stocks": 7
+      "sector": "Đầu Tư Công, Xây Dựng & Vật Liệu",
+      "avg_change_pct": -0.67,
+      "stocks": 11
+    },
+    {
+      "sector": "Bán Lẻ & Phân Phối Hiện Đại",
+      "avg_change_pct": -1.86,
+      "stocks": 6
     }
   ],
   "top_5_live_leaders": [
     {
       "symbol": "NAB",
       "sector": "Ngân Hàng TMCP",
-      "live_price": 13000.0,
-      "change_pct": 0.78,
-      "volume": 2523300,
-      "buy_up_pct": 73.7,
+      "live_price": 13200.0,
+      "change_pct": 1.54,
+      "volume": 2251300,
+      "buy_up_pct": 67.7,
       "f_score": 8,
       "rs_rating": 95,
       "avg_val20_ty": 36.2,
       "ma20": 12730.0,
-      "live_score": 104.19,
+      "live_score": 105.26,
       "headline": ""
     },
     {
-      "symbol": "SSI",
-      "sector": "Chứng Khoán & Đầu Tư",
-      "live_price": 20000.0,
-      "change_pct": 2.3,
-      "volume": 25745000,
-      "buy_up_pct": 65.2,
+      "symbol": "PVP",
+      "sector": "Cảng Biển, Vận Tải Biển & Hàng Không",
+      "live_price": 16700.0,
+      "change_pct": -0.3,
+      "volume": 177400,
+      "buy_up_pct": 60.7,
       "f_score": 8,
-      "rs_rating": 63,
-      "avg_val20_ty": 390.9,
-      "ma20": 19890.0,
-      "live_score": 101.32,
-      "headline": ""
-    },
-    {
-      "symbol": "HDB",
-      "sector": "Ngân Hàng TMCP",
-      "live_price": 21800.0,
-      "change_pct": -1.58,
-      "volume": 20050300,
-      "buy_up_pct": 64.3,
-      "f_score": 6,
-      "rs_rating": 94,
-      "avg_val20_ty": 308.1,
-      "ma20": 22310.0,
-      "live_score": 100.49,
+      "rs_rating": 92,
+      "avg_val20_ty": 17.6,
+      "ma20": 18165.0,
+      "live_score": 99.88,
       "headline": ""
     },
     {
       "symbol": "MSB",
       "sector": "Ngân Hàng TMCP",
-      "live_price": 16550.0,
-      "change_pct": 0.0,
-      "volume": 4007100,
-      "buy_up_pct": 62.8,
+      "live_price": 16500.0,
+      "change_pct": -0.3,
+      "volume": 528900,
+      "buy_up_pct": 73.2,
       "f_score": 6,
       "rs_rating": 98,
       "avg_val20_ty": 137.8,
       "ma20": 16202.0,
-      "live_score": 99.7,
+      "live_score": 99.28,
       "headline": ""
     },
     {
-      "symbol": "BFC",
-      "sector": "Hóa Chất Cơ Bản & Phân Bón",
-      "live_price": 59000.0,
-      "change_pct": 5.36,
-      "volume": 82500,
-      "buy_up_pct": 71.0,
-      "f_score": 9,
-      "rs_rating": 97,
-      "avg_val20_ty": 3.9,
-      "ma20": 56850.0,
-      "live_score": 98.9,
+      "symbol": "VPB",
+      "sector": "Ngân Hàng TMCP",
+      "live_price": 20450.0,
+      "change_pct": -0.24,
+      "volume": 5811100,
+      "buy_up_pct": 67.3,
+      "f_score": 7,
+      "rs_rating": 79,
+      "avg_val20_ty": 279.0,
+      "ma20": 22105.0,
+      "live_score": 96.86,
+      "headline": ""
+    },
+    {
+      "symbol": "HDB",
+      "sector": "Ngân Hàng TMCP",
+      "live_price": 21350.0,
+      "change_pct": -2.06,
+      "volume": 8116800,
+      "buy_up_pct": 31.9,
+      "f_score": 6,
+      "rs_rating": 94,
+      "avg_val20_ty": 308.1,
+      "ma20": 22310.0,
+      "live_score": 96.82,
       "headline": ""
     }
   ],
   "top_5_danger_alerts": [
     {
-      "symbol": "CEO",
-      "live_price": 11500.0,
-      "change_pct": -2.54,
-      "f_score": 5,
-      "beneish_status": "SAFE",
-      "ocf_ty": null,
-      "reason": "CẤM GIAO DỊCH (Cờ đỏ BCTC/Đầu cơ)"
-    },
-    {
       "symbol": "BAF",
-      "live_price": 30800.0,
-      "change_pct": -0.48,
+      "live_price": 30450.0,
+      "change_pct": -1.14,
       "f_score": 2,
       "beneish_status": "HIGH_RISK",
       "ocf_ty": -496.2,
@@ -175,29 +166,38 @@
     },
     {
       "symbol": "VIX",
-      "live_price": 12700.0,
-      "change_pct": 0.0,
+      "live_price": 12600.0,
+      "change_pct": -0.79,
       "f_score": 3,
       "beneish_status": "SAFE",
       "ocf_ty": -4877.3,
       "reason": "CẤM GIAO DỊCH (Cờ đỏ BCTC/Đầu cơ)"
     },
     {
-      "symbol": "ANV",
-      "live_price": 15750.0,
-      "change_pct": -2.78,
-      "f_score": 4,
+      "symbol": "CEO",
+      "live_price": 11500.0,
+      "change_pct": 0.0,
+      "f_score": 5,
       "beneish_status": "SAFE",
-      "ocf_ty": 502.7,
+      "ocf_ty": null,
       "reason": "CẤM GIAO DỊCH (Cờ đỏ BCTC/Đầu cơ)"
     },
     {
-      "symbol": "DBC",
-      "live_price": 16300.0,
-      "change_pct": -2.69,
+      "symbol": "PNJ",
+      "live_price": 12750.0,
+      "change_pct": -5.56,
+      "f_score": 2,
+      "beneish_status": "HIGH_RISK",
+      "ocf_ty": -2578.0,
+      "reason": "CẤM GIAO DỊCH (Cờ đỏ BCTC/Đầu cơ)"
+    },
+    {
+      "symbol": "TCH",
+      "live_price": 13400.0,
+      "change_pct": -3.6,
       "f_score": 4,
       "beneish_status": "SAFE",
-      "ocf_ty": 1767.1,
+      "ocf_ty": -2607.7,
       "reason": "CẤM GIAO DỊCH (Cờ đỏ BCTC/Đầu cơ)"
     }
   ]
