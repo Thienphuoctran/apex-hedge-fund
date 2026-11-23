@@ -77,5 +77,41 @@
     "role": "specialist",
     "type": "sec_filing",
     "content": "[📊 SEC 10-Q — AVGO] 10-Q (2026-09-10)"
+  },
+  {
+    "id": "cbtt_2026-11-23_CRITICAL_PNJ_91193",
+    "key": "cbtt_2026-11-23_CRITICAL_PNJ_91193",
+    "timestamp": "03:13:08",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Tài sản PNJ hơn 20.000 tỷ, vốn hoá còn dưới 7.000 tỷ, một DN tài sản 5.000 tỷ có vốn hoá 600 tỷ, Viettel Post, HAGL chung cảnh ngộ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-23_CRITICAL_PNJ_44626",
+    "key": "cbtt_2026-11-23_CRITICAL_PNJ_44626",
+    "timestamp": "03:13:08",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Ngày buồn của PNJ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-23_CRITICAL_FPT_32687",
+    "key": "cbtt_2026-11-23_CRITICAL_FPT_32687",
+    "timestamp": "03:13:08",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] ‘Cơn mưa’ cổ tức tiền mặt cuối năm, cao nhất lên tới 40% (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-23_CRITICAL_PNJ_6234",
+    "key": "cbtt_2026-11-23_CRITICAL_PNJ_6234",
+    "timestamp": "03:13:08",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] PNJ thay đổi chính sách thu đổi: Vàng nhận tiền sau 1 ngày, kim cương chờ 4 tháng (BCTC_KET_QUA_KINH_DOANH)"
   }
 ]

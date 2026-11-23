@@ -11,7 +11,7 @@
 - **Tỷ giá thị trường USD/VND (Yahoo Live)**: **`25,705.0 VND/USD`**
 - **Tăng trưởng GDP Việt Nam (Quý 3/2026 WiChart Live)**: **`9.95%`**
 - **Tăng trưởng tín dụng**: `Reference mục tiêu 15.0%` | **Đầu tư công**: `Reference kế hoạch 95% kế hoạch`
-- **Chỉ số DXY thế giới**: `103.59` | **Lợi suất US10Y**: `4.91%` | **Dầu WTI**: `USD 83.02/thùng`
+- **Chỉ số DXY thế giới**: `104.34` | **Lợi suất US10Y**: `4.92%` | **Dầu WTI**: `USD 80.01/thùng`
 
 ---
 
@@ -24,7 +24,7 @@
 | **CTG** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 30,100 | +0.33% | 5.62 | 1.14 | **95.4/100** | 8/9 | 66 | `NEUTRAL_TEST` | 1.63x | **AAA** |
 | **TCB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 21,200 | +2.91% | 7.7 | 1.18 | **92.9/100** | 7/9 | 86 | `NEUTRAL_TEST` | 1.05x | **AAA** |
 | **MBB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 18,250 | -2.41% | 5.16 | 1.16 | **95.9/100** | 5/9 | 63 | `NEUTRAL_TEST` | 1.85x | **AAA** |
-| **ACB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 19,600 | -2.24% | 7.42 | 1.1 | **83.6/100** | 7/9 | 65 | `NEUTRAL_TEST` | 0.23x | **AAA** |
+| **ACB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 19,600 | -2.24% | 7.25 | 1.1 | **83.6/100** | 7/9 | 65 | `NEUTRAL_TEST` | 0.23x | **AAA** |
 | **VPB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 20,500 | -1.91% | 6.69 | 1.15 | **93.2/100** | 7/9 | 83 | `HIGH_SUPPLY` | 2.03x | **AA** |
 | **HDB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 21,800 | -1.58% | 7.73 | 1.58 | **96.8/100** | 6/9 | 98 | `NEUTRAL_TEST` | 2.46x | **AAA** |
 | **STB** | HOSE | Ngân Hàng & Dịch Vụ Tài Chính | 70,800 | +2.61% | 10.48 | 2.05 | **76.8/100** | 7/9 | 95 | `POCKET_PIVOT` | 49.16x | **AA** |
@@ -50,7 +50,7 @@
 | **DGW** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 38,950 | -2.62% | 9.31 | 2.58 | **83.9/100** | 7/9 | 75 | `NEUTRAL_TEST` | 0.15x | **AAA** |
 | **FPT** | HOSE | Công Nghệ Thông Tin & Viễn Thông | 45,000 | -1.53% | 9.0 | 2.06 | **87.8/100** | 6/9 | 21 | `NEUTRAL_TEST` | 0.49x | **AAA** |
 | **CMG** | HOSE | Công Nghệ Thông Tin & Viễn Thông | 16,200 | -1.22% | 10.14 | 1.15 | **77.8/100** | 5/9 | 20 | `NEUTRAL_TEST` | 1.7x | **AA** |
-| **SSI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 20,000 | +2.30% | 12.42 | 1.52 | **91.4/100** | 8/9 | 74 | `POCKET_PIVOT` | 3.09x | **AAA** |
+| **SSI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 20,000 | +2.30% | 12.67 | 1.52 | **91.4/100** | 8/9 | 74 | `POCKET_PIVOT` | 3.09x | **AAA** |
 | **VND** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 14,700 | +3.89% | 10.59 | 1.01 | **81.6/100** | 9/9 | 41 | `POCKET_PIVOT` | 5.44x | **AA** |
 | **VCI** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 18,700 | -1.06% | 15.06 | 1.28 | **74.0/100** | 3/9 | 30 | `NEUTRAL_TEST` | -6.95x | **AA** |
 | **HCM** | HOSE | Dịch Vụ Chứng Khoán & Môi Giới | 23,000 | +0.00% | 17.53 | 1.71 | **79.2/100** | 7/9 | 87 | `NO_SUPPLY` | 1.84x | **AA** |
@@ -64,7 +64,7 @@
 | **PC1** | HOSE | Dầu Khí & Tiện Ích Năng Lượng | 16,200 | -1.82% | 8.0 | 1.11 | **92.0/100** | 8/9 | 60 | `NEUTRAL_TEST` | 2.47x | **AAA** |
 | **DGC** | HOSE | Hóa Chất & Phân Bón | 31,000 | -1.12% | 6.53 | 0.89 | **78.3/100** | 4/9 | 24 | `NEUTRAL_TEST` | 0.73x | **AA** |
 | **DCM** | HOSE | Hóa Chất & Phân Bón | 30,400 | +0.83% | 6.92 | 1.36 | **90.9/100** | 6/9 | 57 | `NEUTRAL_TEST` | 0.94x | **AAA** |
-| **DPM** | HOSE | Hóa Chất & Phân Bón | 18,400 | -0.81% | 11.46 | 1.1 | **87.2/100** | 9/9 | 29 | `NEUTRAL_TEST` | 1.24x | **AAA** |
+| **DPM** | HOSE | Hóa Chất & Phân Bón | 18,400 | -0.81% | 11.04 | 1.1 | **87.2/100** | 9/9 | 29 | `NEUTRAL_TEST` | 1.24x | **AAA** |
 | **GMD** | HOSE | Cảng Biển & Logistics Vận Tải | 50,000 | -2.34% | 13.56 | 2.37 | **92.1/100** | 7/9 | 93 | `HIGH_SUPPLY` | 0.76x | **AAA** |
 | **HAH** | HOSE | Cảng Biển & Logistics Vận Tải | 45,700 | -1.30% | 6.96 | 1.62 | **93.6/100** | 5/9 | 47 | `NEUTRAL_TEST` | 1.61x | **AAA** |
 | **PVT** | HOSE | Cảng Biển & Logistics Vận Tải | 18,650 | +0.81% | 6.61 | 0.99 | **90.7/100** | 9/9 | 80 | `NEUTRAL_TEST` | 2.38x | **AAA** |

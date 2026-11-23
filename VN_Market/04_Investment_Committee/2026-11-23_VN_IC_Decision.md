@@ -9,8 +9,8 @@
 ### 🎯 **SSI** — Chứng Khoán SSI (HOSE)
 - **Trạng thái hiện tại (`BEAR_WITH_SPRING_WATCH`)**: **`WAIT_SCENARIO_TRIGGER (Chỉ mở lệnh khi khớp điều kiện S1 / S2 / S3)`**
 - **Điểm IC Tổng Hợp**: **90.1/100** | **Điểm 10 Đại Danh Thủ**: **91.4/100** | Xếp Hạng BCTC: **AAA** | F-Score: **8/9**
-- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **31,052 ₫** (MoS = **+55.3%**) | PEG = **0.55x**
-- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 91.4/100, Piotroski F-Score: 8/9, Lynch PEG: 0.55x, Graham MoS: +55.3%), Tiền thật OCF/LNST = 3.09x, FCF = 13,503.3 tỷ VNĐ, tín hiệu VSA: POCKET_PIVOT_BREAKOUT (Dòng tiền thông minh gom chủ động Vol lớn vượt nền).
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **30,536 ₫** (MoS = **+52.7%**) | PEG = **0.56x**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 91.4/100, Piotroski F-Score: 8/9, Lynch PEG: 0.56x, Graham MoS: +52.7%), Tiền thật OCF/LNST = 3.09x, FCF = 13,503.3 tỷ VNĐ, tín hiệu VSA: POCKET_PIVOT_BREAKOUT (Dòng tiền thông minh gom chủ động Vol lớn vượt nền).
 - **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
 - **Phán quyết (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
 - **Cỡ lệnh tham chiếu Lô 100**: `100 CP` (~2,486,339 VND) | Stop: **18,857 VND** | TP1/TP2: **21,486 / 22,571 VND** (R:R **1:1.82**)

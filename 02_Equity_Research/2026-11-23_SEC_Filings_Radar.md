@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)
-> **Thời gian quét:** 2026-11-23 10:39:02  
-> **Số lượng hồ sơ ghi nhận:** 373 hồ sơ SEC chính thức  
+> **Thời gian quét:** 2026-11-23 20:13:08  
+> **Số lượng hồ sơ ghi nhận:** 376 hồ sơ SEC chính thức  
 
 | Ticker | Loại Form | Mức Độ | Ngày Nộp | Mô Tả Hồ Sơ | Đường Dẫn SEC |
 | :--- | :---: | :---: | :---: | :--- | :---: |
+| **NVDA** | `8-K` | ⚠️ WARNING | 2026-11-23 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `144` | ℹ️ INFO | 2026-11-19 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `8-K` | ⚠️ WARNING | 2026-11-17 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `8-K` | ⚠️ WARNING | 2026-11-12 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
@@ -13,7 +14,6 @@
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-23 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-22 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `144` | ℹ️ INFO | 2026-09-21 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
-| **NVDA** | `4` | ℹ️ INFO | 2026-09-18 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **NVDA** | `4` | ℹ️ INFO | 2026-09-18 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001045810) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-11-19 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
 | **AAPL** | `4` | ℹ️ INFO | 2026-11-18 | FORM 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000320193) |
@@ -36,6 +36,7 @@
 | **MSFT** | `424B2` | ℹ️ INFO | 2026-11-02 | 424B2 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
 | **MSFT** | `424B2` | ℹ️ INFO | 2026-10-29 | 424B2 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
 | **MSFT** | `PX14A6G` | ℹ️ INFO | 2026-10-28 | SEC Form PX14A6G | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0000789019) |
+| **GOOGL** | `424B2` | ℹ️ INFO | 2026-11-23 | 424B2 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `424B5` | ℹ️ INFO | 2026-11-19 | 424B5 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `4` | ℹ️ INFO | 2026-11-16 | 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `4` | ℹ️ INFO | 2026-11-16 | 4 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
@@ -43,4 +44,3 @@
 | **GOOGL** | `144` | ℹ️ INFO | 2026-11-12 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `144` | ℹ️ INFO | 2026-11-12 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
 | **GOOGL** | `144` | ℹ️ INFO | 2026-11-12 | SEC Form 144 | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |
-| **GOOGL** | `8-K` | ⚠️ WARNING | 2026-11-05 | 8-K | [Xem SEC](https://www.sec.gov/edgar/browse/?CIK=0001652044) |

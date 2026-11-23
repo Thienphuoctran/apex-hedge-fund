@@ -1,7 +1,7 @@
 {
   "data_provenance": "VIETCAP_IQ_OFFICIAL_LIVE_AND_VPS_2Y_OHLCV",
-  "crawled_at": "2026-11-23 15:00:14",
-  "elapsed_sec": 7.22,
+  "crawled_at": "2026-11-24 03:12:20",
+  "elapsed_sec": 9.42,
   "coverage_stats": {
     "requested_vn_tickers": 80,
     "bctc_loaded": 80,
@@ -25,45 +25,45 @@
     }
   },
   "macro_live": {
-    "fetched_at": "2026-11-23 15:00:07",
+    "fetched_at": "2026-11-24 03:12:11",
     "SP500": {
-      "value": 6910.39,
-      "change_pct": -3.7,
+      "value": 7238.61,
+      "change_pct": 4.75,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "NASDAQ": {
-      "value": 22617.73,
-      "change_pct": -5.28,
+      "value": 24064.97,
+      "change_pct": 6.4,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "VIX": {
-      "value": 35.89,
-      "change_pct": 26.2,
+      "value": 27.29,
+      "change_pct": -23.96,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "US10Y": {
-      "value": 4.91,
-      "change_pct": -2.77,
+      "value": 4.92,
+      "change_pct": 0.2,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "DXY": {
-      "value": 103.6,
-      "change_pct": -0.21,
+      "value": 104.34,
+      "change_pct": 0.51,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "WTI_OIL": {
-      "value": 82.94,
-      "change_pct": -1.24,
+      "value": 80.0,
+      "change_pct": -4.74,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "GOLD": {
-      "value": 3624.1,
-      "change_pct": 3.09,
+      "value": 3642.6,
+      "change_pct": 3.62,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "VNM_ETF": {
-      "value": 16.22,
-      "change_pct": -0.98,
+      "value": 16.7,
+      "change_pct": 2.99,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "USD_VND_LIVE": {
