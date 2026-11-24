@@ -621,6 +621,7 @@ def evaluate_10_legends_and_capital_fit(
         s_minervini = min(98.0, s_minervini + 15.0)
 
     lm = meta.get("_live_metrics") or {}
+    bctc_verified = bool(meta.get("bctc_verified", False))
     is_bank = meta.get("accounting_regime") == "BANK_CAMELS_BASEL"
     is_broker = meta.get("accounting_regime") == "BROKERAGE_FVTPL_MARGIN"
     live_regime = str(meta.get("_live_regime") or "SIDEWAY_CHOPPY")
@@ -629,21 +630,11 @@ def evaluate_10_legends_and_capital_fit(
     if lm.get("piotroski_f_score") is not None:
         f_score = int(lm["piotroski_f_score"])
     else:
-        f_score = sum([
-            1 if roe > 0 else 0,
-            1 if ocf_r > 0 else 0,
-            1 if roe >= 14.0 else 0,
-            1 if ocf_r >= 1.05 else 0,
-            1 if pb <= 2.5 else 0,
-            1 if rev_g >= 10.0 else 0,
-            1 if prof_g >= 15.0 else 0,
-            1 if ocf_r >= 1.20 else 0,
-            1 if pe <= 16.0 and pe > 0 else 0,
-        ])
+        f_score = 0
     s_piotroski = round((f_score / 9.0) * 100.0, 1)
 
-    # 9. Messod Beneish M-Score & Richard Sloan Accrual (Forensic Guardrail từ BCTC thật)
-    if lm:
+    # 9. Messod Beneish M-Score & Richard Sloan Accrual (Forensic Guardrail từ BCTC thật — Điều 2 cấm dùng số giả)
+    if bctc_verified and lm:
         beneish_m = float(lm.get("beneish_m_score") if lm.get("beneish_m_score") is not None else -2.2)
         sloan_accrual_pct = float(lm.get("sloan_accrual_pct") if lm.get("sloan_accrual_pct") is not None else 0.0)
         ocf_ty_live = float(lm.get("ocf_ty") or 0.0)
@@ -658,10 +649,10 @@ def evaluate_10_legends_and_capital_fit(
         else:
             is_accounting_clean = (f_score >= 5) and (roe >= 10.0)
     else:
-        beneish_m = round(-2.25 - (ocf_r - 1.0) * 0.85, 2)
-        sloan_accrual_pct = round((1.0 - ocf_r) * 12.5, 2)
-        is_accounting_clean = (beneish_m < -1.78) and (ocf_r >= 0.85) and (roe > 0)
-    s_forensic = 96.0 if (is_accounting_clean and ocf_r >= 1.20 and beneish_m < -2.3) else (84.0 if is_accounting_clean else 22.0)
+        beneish_m = 0.0
+        sloan_accrual_pct = 0.0
+        is_accounting_clean = False
+    s_forensic = 96.0 if (is_accounting_clean and ocf_r >= 1.20 and beneish_m < -2.3) else (84.0 if is_accounting_clean else 20.0)
 
     # 10. Ray Dalio & Stanley Druckenmiller Risk/Reward Asymmetry
     atr = max(float(tech.get("atr14", price * 0.025)), price * 0.018)
@@ -690,7 +681,10 @@ def evaluate_10_legends_and_capital_fit(
         1
     )
 
-    if not is_accounting_clean:
+    if not bctc_verified:
+        bctc_tier = "UNVERIFIED_BLOCKED"
+        legends_composite = min(legends_composite, 35.0)
+    elif not is_accounting_clean:
         bctc_tier = "C (WARNING / RED FLAG)"
         legends_composite = min(legends_composite, 52.0)
     elif legends_composite >= 85.0:
@@ -730,7 +724,9 @@ def evaluate_10_legends_and_capital_fit(
 
     # PHÁN QUYẾT DỨT KHOÁT GẮN VỚI CHẾ ĐỘ THỊ TRƯỜNG & KỊCH BẢN (KHÔNG HÔ MUA MÙ TRONG BEAR MARKET)
     is_rising_uptrend = (price >= float(tech.get("ma20", price))) and (rs_rating >= 75)
-    if not is_accounting_clean:
+    if not bctc_verified:
+        decisive_verdict = "UNVERIFIED_BCTC_BLOCKED (Chưa có BCTC kiểm toán sống — Bị chặn theo Điều 2 Hiến Pháp V2.0)"
+    elif not is_accounting_clean:
         decisive_verdict = "HARD_VETO_RED_FLAG (Cấm giải ngân tuyệt đối — Rủi ro kế toán / OCF âm hoặc F-Score yếu)"
     elif capital_fit_code == "OVERSIZED_LOT":
         decisive_verdict = "SKIP_OVERSIZED_LOT_20M (BCTC tốt nhưng 1 lô 100 CP > 33% NAV 20M — Loại khỏi rổ mua trực tiếp)"
@@ -800,7 +796,7 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
     except Exception:
         pass
 
-    # 1. Nạp BCTC thật Q3/2026 & Regime sống rồi trải phẳng toàn bộ 144 mã
+    # 1. Nạp BCTC thật đa kỳ & Regime sống rồi trải phẳng toàn bộ vũ trụ
     live_bctc_stocks: Dict[str, Any] = {}
     live_bctc_p = VN_DIR / "data" / "vn_real_bctc_live.json"
     if live_bctc_p.exists():
@@ -810,10 +806,12 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
             live_bctc_stocks = {}
 
     live_regime = "SIDEWAY_CHOPPY"
+    v4_out_p = ROOT_DIR / "data" / "apex_brain_v4_output.json"
     v2_out_p = ROOT_DIR / "data" / "apex_quant_brain_v2_output.json"
-    if v2_out_p.exists():
+    reg_p = v4_out_p if v4_out_p.exists() else v2_out_p
+    if reg_p.exists():
         try:
-            live_regime = str((json.loads(v2_out_p.read_text(encoding="utf-8")).get("market_regime") or {}).get("regime_id") or "SIDEWAY_CHOPPY")
+            live_regime = str((json.loads(reg_p.read_text(encoding="utf-8")).get("market_regime") or {}).get("regime_id") or "SIDEWAY_CHOPPY")
         except Exception:
             pass
 
@@ -826,20 +824,39 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
                 "sector_key": sec_key,
                 "sector_name": sec_info["sector_name"],
                 "accounting_regime": sec_info["accounting_regime"],
-                "data_authenticity": "SECTOR_BASELINE_ESTIMATE",
+                "bctc_verified": False,
+                "data_authenticity": "UNVERIFIED_NO_LIVE_BCTC",
                 "_live_regime": live_regime,
             }
-            if code in live_bctc_stocks and live_bctc_stocks[code].get("latest_metrics"):
-                lm = live_bctc_stocks[code]["latest_metrics"]
+            live_entry = live_bctc_stocks.get(code) or {}
+            lm = live_entry.get("latest_metrics") or {}
+            is_ver = bool(
+                live_entry.get("is_verified_real_bctc", lm.get("is_verified_real_bctc", False))
+                and lm.get("latest_quarter") not in (None, "", "SUMMARY_ONLY", "N/A")
+            )
+            if lm and is_ver:
                 meta_row.update({
-                    "pe": float(lm.get("pe_ttm") if lm.get("pe_ttm") is not None else meta_row["pe"]),
-                    "pb": float(lm.get("pb_live") if lm.get("pb_live") is not None else meta_row["pb"]),
-                    "roe": float(lm.get("roe_ttm_pct") if lm.get("roe_ttm_pct") is not None else meta_row["roe"]),
-                    "rev_g": float(lm.get("rev_growth_yoy") if lm.get("rev_growth_yoy") is not None else meta_row["rev_g"]),
-                    "prof_g": float(lm.get("profit_growth_yoy") if lm.get("profit_growth_yoy") is not None else meta_row["prof_g"]),
-                    "ocf_r": float(lm.get("ocf_to_profit_ratio") if lm.get("ocf_to_profit_ratio") is not None else meta_row["ocf_r"]),
+                    "pe": float(lm.get("pe_ttm") if lm.get("pe_ttm") is not None else 0.0),
+                    "pb": float(lm.get("pb_live") if lm.get("pb_live") is not None else 0.0),
+                    "roe": float(lm.get("roe_ttm_pct") if lm.get("roe_ttm_pct") is not None else 0.0),
+                    "rev_g": float(lm.get("rev_growth_yoy") if lm.get("rev_growth_yoy") is not None else 0.0),
+                    "prof_g": float(lm.get("profit_growth_yoy") if lm.get("profit_growth_yoy") is not None else 0.0),
+                    "ocf_r": float(lm.get("ocf_to_profit_ratio") if lm.get("ocf_to_profit_ratio") is not None else 0.0),
                     "_live_metrics": lm,
-                    "data_authenticity": f"VIETCAP_IQ_LIVE_BCTC ({lm.get('latest_quarter', '2026Q3')})",
+                    "bctc_verified": True,
+                    "latest_quarter": str(lm.get("latest_quarter") or ""),
+                    "data_authenticity": f"{live_entry.get('data_source', 'VIETCAP_IQ_LIVE_BCTC')} ({lm.get('latest_quarter', '')})",
+                })
+            else:
+                meta_row.update({
+                    "pe": 0.0,
+                    "pb": 0.0,
+                    "roe": 0.0,
+                    "rev_g": 0.0,
+                    "prof_g": 0.0,
+                    "ocf_r": 0.0,
+                    "bctc_verified": False,
+                    "latest_quarter": "UNVERIFIED",
                 })
             all_meta[code] = meta_row
 
@@ -893,6 +910,7 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
         rs = rs_rating_map[code]
         eval_res = evaluate_10_legends_and_capital_fit(meta, tech, rs, nav_vnd)
 
+        lm_rec = meta.get("_live_metrics") or {}
         full_record = {
             "code": code,
             "symbol": f"{code}.VN",
@@ -902,13 +920,18 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
             "sector_key": meta["sector_key"],
             "sector_name": meta["sector_name"],
             "accounting_regime": meta["accounting_regime"],
+            "bctc_verified": bool(meta.get("bctc_verified", False)),
+            "latest_quarter": meta.get("latest_quarter", "UNVERIFIED"),
+            "prof_accel_qoq_pct": lm_rec.get("prof_accel_qoq_pct"),
+            "rev_q_yoy_pct": lm_rec.get("rev_q_yoy_pct"),
+            "prof_q_yoy_pct": lm_rec.get("prof_q_yoy_pct"),
             "pe": meta["pe"],
             "pb": meta["pb"],
             "roe_pct": meta["roe"],
             "rev_growth_yoy": meta["rev_g"],
             "profit_growth_yoy": meta["prof_g"],
             "ocf_to_profit_ratio": meta["ocf_r"],
-            "data_authenticity": meta.get("data_authenticity", "SECTOR_BASELINE_ESTIMATE"),
+            "data_authenticity": meta.get("data_authenticity", "UNVERIFIED_NO_LIVE_BCTC"),
             "key_catalyst": meta["catalyst"],
             "technical": tech,
             "institutional_evaluation": eval_res
@@ -981,9 +1004,16 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
 
     sector_rotation_ranking.sort(key=lambda x: x["sector_strength_score"], reverse=True)
 
-    # 8. Build Categorized Market-Wide Rankings
-    clean_stocks = [v for v in scanned_stocks.values() if v["institutional_evaluation"]["is_accounting_clean"]]
-    red_flag_stocks = [v for v in scanned_stocks.values() if not v["institutional_evaluation"]["is_accounting_clean"]]
+    # 8. Build Categorized Market-Wide Rankings (strictly requiring bctc_verified == True)
+    clean_stocks = [
+        v for v in scanned_stocks.values()
+        if v.get("bctc_verified") and v["institutional_evaluation"]["is_accounting_clean"]
+    ]
+    unverified_stocks = [v for v in scanned_stocks.values() if not v.get("bctc_verified")]
+    red_flag_stocks = [
+        v for v in scanned_stocks.values()
+        if (not v.get("bctc_verified")) or (not v["institutional_evaluation"]["is_accounting_clean"])
+    ]
 
     # A. Top Actionable Super-Stocks for Chairman's Account (Optimal Lot-100 Fit + High 10-Legends Score + Liquid >= 15 tỷ/phiên)
     optimal_fit_candidates = [
@@ -1063,6 +1093,8 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
         "market_breadth_summary": {
             "pct_stocks_above_ma20": round((above_ma20_total / max(1, len(scanned_stocks))) * 100.0, 1),
             "pct_stocks_above_ma200": round((above_ma200_total / max(1, len(scanned_stocks))) * 100.0, 1),
+            "bctc_verified_count": sum(1 for v in scanned_stocks.values() if v.get("bctc_verified")),
+            "bctc_unverified_list": [v["code"] for v in unverified_stocks],
             "accounting_clean_count": len(clean_stocks),
             "red_flag_warning_count": len(red_flag_stocks),
             "emerging_rising_stocks_count": len(emerging_rising_leaders)
@@ -1083,10 +1115,10 @@ def run_full_market_scan(nav_vnd: float = 20167119.0) -> Dict[str, Any]:
     print(f"[+] [HOÀN TẤT QUÉT TOÀN THỊ TRƯỜNG] Đã quét & thẩm định {len(scanned_stocks)} mã / {len(sector_rotation_ranking)} ngành trong {elapsed_sec}s!")
     print(f"    • Độ rộng thị trường: {payload['market_breadth_summary']['pct_stocks_above_ma20']}% mã nằm trên MA20 | {payload['market_breadth_summary']['pct_stocks_above_ma200']}% mã nằm trên MA200")
     print(f"    • Top 5 Ngành Dẫn Dắt Dòng Tiền: {', '.join([s['sector_name'] + ' (' + str(s['sector_strength_score']) + 'đ)' for s in sector_rotation_ranking[:5]])}")
-    print(f"    • Top 12 Siêu Cổ Phiếu Đa Ngành Phù Hợp Quy Mô Vốn 20.16M VNĐ: {', '.join(payload['top_12_diversified_actionable_discoveries'])}")
+    print(f"    • Top 12 Siêu Cổ Phiếu Đa Ngành Phù Hợp Quy Mô Vốn {nav_vnd/1e6:.2f}M VNĐ: {', '.join(payload['top_12_diversified_actionable_discoveries'])}")
     print(f"    • Top 12 Cổ Phiếu Đang Lên Mạnh Nhất (Emerging Rising Leaders): {', '.join(payload['top_12_emerging_rising_leaders'])}")
     print(f"    • Top 10 Mid/Small-Cap Hidden Gems: {', '.join(payload['top_10_mid_small_cap_hidden_gems'])}")
-    print(f"    • Các mã Bluechip thị giá quá cao (1 lô 100 CP > 33% NAV 20M cần lưu ý): {', '.join(payload['oversized_lot_institutional_compounders'])}")
+    print(f"    • Các mã Bluechip thị giá quá cao (1 lô 100 CP > 33% NAV {nav_vnd/1e6:.2f}M cần lưu ý): {', '.join(payload['oversized_lot_institutional_compounders'])}")
     return payload
 
 

@@ -1389,7 +1389,7 @@ def run_enterprise_work_session(
             {
                 "dept_id": "BAN_7_VN", "ban_code": "Ban 7 VN", "officer": "Minh Quân",
                 "vote": stances["BAN_7_VN"], "article": 6,
-                "rationale": "Thực thi theo Hiến chương 14h00–14h25; ưu tiên T+0/T+1 hạ giá vốn trên HDB & MSH."
+                "rationale": "Thực thi theo Hiến chương 14h05–14h25; ưu tiên bảo toàn vốn & tối ưu T+2.5 trên danh mục SSOT đang giữ."
                 if not eval_res["veto_triggered"] else "Chấp hành lệnh VETO từ Ban 3/Ban 4, không đẩy lệnh.",
             },
             {

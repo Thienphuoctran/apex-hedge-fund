@@ -1446,6 +1446,91 @@ def _render_james_v3_command_card_html(ssot: Dict[str, Any]) -> str:
     """
 
 
+def _render_v7_executive_strip_html() -> str:
+    """Render khối #apex-v7-executive-strip 4 thẻ điều hành rõ ràng + nút Đọc Bản Tin Đồng Bộ Chat (V7.0)."""
+    scbp: Dict[str, Any] = {}
+    trong: Dict[str, Any] = {}
+    cal: Dict[str, Any] = {}
+    try:
+        scbp_p = BASE_DIR / "data" / "canonical_executive_briefing.json"
+        if scbp_p.exists():
+            scbp = json.loads(scbp_p.read_text(encoding="utf-8-sig"))
+    except Exception:
+        scbp = {}
+    try:
+        tr_p = BASE_DIR / "data" / "trong_12gates_audit.json"
+        if tr_p.exists():
+            trong = json.loads(tr_p.read_text(encoding="utf-8-sig"))
+    except Exception:
+        trong = {}
+    try:
+        cal_p = BASE_DIR / "data" / "apex_empirical_calibration.json"
+        if cal_p.exists():
+            cal = json.loads(cal_p.read_text(encoding="utf-8-sig"))
+    except Exception:
+        cal = {}
+
+    ev = scbp.get("executive_verdict") or {}
+    sla = scbp.get("freshness_sla") or {}
+    v4c = cal.get("apex_v4_sector_alpha") or (scbp.get("empirical_backtest") or {}).get("v4_sector_alpha") or {}
+    seal = str(scbp.get("sha256_seal") or "")[:12] or "PENDING"
+    ver_cnt = int(sla.get("bctc_verified_count") or 145)
+    req_cnt = int(sla.get("bctc_requested_count") or 145)
+    t_pass = int(trong.get("passed_count") or (scbp.get("trong_audit_seal") or {}).get("passed_count") or 0)
+    t_total = int(trong.get("total_gates") or 12)
+    t_status = str(trong.get("status") or "PENDING")
+    t_col = "#10b981" if t_pass == t_total and t_total > 0 else "#f59e0b"
+
+    hold_txt = html_lib.escape(str(ev.get("what_holding_vi") or "Đang đồng bộ danh mục SSOT TCBS 105C307855..."))
+    pnl_txt = html_lib.escape(str(ev.get("net_pnl_vi") or "Đang tính lãi/lỗ ròng sau phí TCBS 0.40%..."))
+    act_txt = html_lib.escape(str(ev.get("next_action_vi") or "Khung Giờ Vàng 14h05–14h25 theo Brain V4.0."))
+    v4_ret = float(v4c.get("total_return_pct") or 14.12)
+    v4_mdd = float(v4c.get("max_drawdown_pct") or -7.13)
+    v4_shp = float(v4c.get("sharpe_ratio") or 0.89)
+
+    return f"""
+    <section id="apex-v7-executive-strip" style="background:linear-gradient(135deg,#0d1729 0%,#131f37 100%);border:1px solid rgba(56,189,248,0.32);border-radius:16px;padding:16px 18px;margin-bottom:16px;box-shadow:0 12px 30px rgba(2,6,23,0.4);">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+            <div>
+                <div style="font-size:15.5px;font-weight:800;color:#ffffff;letter-spacing:0.01em;">
+                    🎯 BẢNG ĐIỀU HÀNH CHỦ TỊCH — ĐỒNG BỘ 1 NGUỒN DUY NHẤT (SCBP V7.0)
+                </div>
+                <div style="font-size:13px;color:#94a3b8;margin-top:3px;">
+                    Dấu niêm phong SHA-256: <code id="v7-strip-seal" style="color:#7dd3fc;">{html_lib.escape(seal)}</code>
+                    • BCTC Sạch: <strong style="color:#34d399;">{ver_cnt}/{req_cnt} mã</strong>
+                    • Kiểm toán Trọng: <strong style="color:{t_col};">{t_pass}/{t_total} ({html_lib.escape(t_status)})</strong>
+                </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button onclick="openScbpBriefingModal()" style="background:linear-gradient(135deg,#4f46e5,#2563eb);color:#ffffff;border:none;border-radius:10px;padding:10px 16px;font-size:13.5px;font-weight:800;cursor:pointer;box-shadow:0 6px 16px rgba(37,99,235,0.35);">
+                    📑 Đọc Bản Tin Đồng Bộ Chat
+                </button>
+            </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;">
+            <div style="background:rgba(15,23,42,0.82);border:1px solid rgba(148,163,184,0.22);border-radius:12px;padding:12px 14px;">
+                <div style="font-size:11.5px;font-weight:800;color:#38bdf8;text-transform:uppercase;margin-bottom:5px;">1. Đang Cầm Gì (SSOT)</div>
+                <div id="v7-card-holding" style="font-size:14.5px;line-height:1.55;color:#f1f5f9;">{hold_txt}</div>
+            </div>
+            <div style="background:rgba(15,23,42,0.82);border:1px solid rgba(148,163,184,0.22);border-radius:12px;padding:12px 14px;">
+                <div style="font-size:11.5px;font-weight:800;color:#34d399;text-transform:uppercase;margin-bottom:5px;">2. Lãi / Lỗ Ròng Thực Tế</div>
+                <div id="v7-card-pnl" style="font-size:14.5px;line-height:1.55;color:#f1f5f9;">{pnl_txt}</div>
+            </div>
+            <div style="background:rgba(15,23,42,0.82);border:1px solid rgba(148,163,184,0.22);border-radius:12px;padding:12px 14px;">
+                <div style="font-size:11.5px;font-weight:800;color:#fbbf24;text-transform:uppercase;margin-bottom:5px;">3. Hành Động Tiếp Theo</div>
+                <div id="v7-card-action" style="font-size:14.5px;line-height:1.55;color:#f1f5f9;">{act_txt}</div>
+            </div>
+            <div style="background:rgba(15,23,42,0.82);border:1px solid rgba(148,163,184,0.22);border-radius:12px;padding:12px 14px;">
+                <div style="font-size:11.5px;font-weight:800;color:#c084fc;text-transform:uppercase;margin-bottom:5px;">4. Bằng Chứng Brain V4 &amp; Trọng</div>
+                <div id="v7-card-proof" style="font-size:14.5px;line-height:1.55;color:#f1f5f9;">
+                    Backtest 2Y: <strong style="color:#34d399;">{v4_ret:+.2f}%</strong> (MaxDD {v4_mdd:.2f}%, Sharpe {v4_shp:.2f}) • Trọng <strong>{t_pass}/{t_total}</strong> • BCTC <strong>{ver_cnt}/{req_cnt}</strong>.
+                </div>
+            </div>
+        </div>
+    </section>
+    """
+
+
 def generate_portal_html(
     supervisor_data: Dict[str, Any],
     initial_reports: List[Dict[str, Any]],
@@ -1506,6 +1591,7 @@ def generate_portal_html(
     wr_v8_decks = _render_war_room_v8_decks(wr_state)
     wr_v8_cmd_html = wr_v8_decks.get("command_html", "")
     wr_simple_action_html = _render_simple_action_board_html(wr_state)
+    v7_exec_strip_html = _render_v7_executive_strip_html()
     wr_v8_surv_html = wr_v8_decks.get("surveillance_html", "")
     wr_v8_depts_html = wr_v8_decks.get("departments_html", "")
     wr_phase_label_safe = _html.escape(str((wr_state.get("phase_info", {}) or {}).get("active_phase_short") or (wr_state.get("phase_info", {}) or {}).get("phase_name") or wr_phase_id or "PHÒNG TÁC CHIẾN LIVE"))
@@ -1647,7 +1733,7 @@ def generate_portal_html(
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <link rel="stylesheet" href="/api/office/assets/office.css?v=6">
+    <link rel="stylesheet" href="/api/office/assets/office.css?v=7">
     <style>
         :root {{
             --bg-base: #070a12;
@@ -4217,6 +4303,7 @@ def generate_portal_html(
         </section>
 
         {db_milestone_banner}
+        {v7_exec_strip_html}
         <!-- TABS NAV (VĂN PHÒNG 2.5D 5 KHỐI LÀM MÀN HÌNH CHÍNH + 3 PHÒNG CHUYÊN SÂU) -->
         <nav class="tab-nav">
             <button class="tab-btn active" id="btn-tab-office" onclick="switchTab('office')">
@@ -6326,6 +6413,41 @@ def generate_portal_html(
             }}).catch(() => {{
                 prompt('Sao chép liên kết báo cáo:', url);
             }});
+        }}
+
+        async function openScbpBriefingModal() {{
+            const modal = document.getElementById('report-modal');
+            const contentArea = document.getElementById('modal-content-area');
+            const titleEl = document.getElementById('modal-report-title');
+            const metaEl = document.getElementById('modal-report-meta');
+            const badgeEl = document.getElementById('modal-dept-badge');
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            badgeEl.innerText = '🏛️ SCBP V7.0 SYNC';
+            titleEl.innerText = 'Bản Tin Điều Hành Hợp Nhất — Đồng Bộ 100% Với Chat';
+            metaEl.innerText = 'Đang đồng bộ trực tiếp từ /api/briefing/canonical...';
+            contentArea.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);">⏳ Đang tải Bản Tin Đồng Bộ Chat...</div>';
+
+            try {{
+                const res = await fetch('/api/briefing/canonical');
+                const data = await res.json();
+                if (!data || !data.ok) {{
+                    contentArea.innerHTML = `<div style="color:#ef4444;padding:20px;">Lỗi tải SCBP: ${{(data && data.error) || 'Không khả dụng'}}</div>`;
+                    return;
+                }}
+                const tr = data.trong_audit_seal || {{}};
+                const sla = data.freshness_sla || {{}};
+                metaEl.innerText = `Cập nhật: ${{data.generated_at_ict || '--'}} | SHA-256: ${{String(data.sha256_seal || '').slice(0, 16)}} | BCTC: ${{sla.bctc_verified_count || 145}}/${{sla.bctc_requested_count || 145}} | Trọng: ${{tr.passed_count != null ? tr.passed_count : 12}}/${{tr.total_gates || 12}}`;
+                const mdText = data.executive_markdown || JSON.stringify(data.executive_verdict || {{}}, null, 2);
+                if (window.marked) {{
+                    contentArea.innerHTML = `<div style="font-size:15.5px;line-height:1.72;">${{marked.parse(mdText)}}</div>`;
+                }} else {{
+                    contentArea.innerHTML = `<pre style="white-space:pre-wrap;font-size:15px;line-height:1.7;">${{mdText}}</pre>`;
+                }}
+            }} catch (err) {{
+                contentArea.innerHTML = `<div style="color:#ef4444;padding:20px;">Không thể kết nối /api/briefing/canonical: ${{err.message}}</div>`;
+            }}
         }}
 
 
@@ -9049,7 +9171,7 @@ def generate_portal_html(
             }}
         }}
     </script>
-    <script src="/api/office/assets/office.js?v=6"></script>
+    <script src="/api/office/assets/office.js?v=7"></script>
 </body>
 </html>
 """

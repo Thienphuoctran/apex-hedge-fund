@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: "Setup Python"
+      - name: "Set up Python"
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -38,10 +38,16 @@ jobs:
           pip install yfinance requests pandas
 
       - name: "Run CBTT Filings & SEC Radar 24/7"
+        env:
+          TZ: "Asia/Ho_Chi_Minh"
+          APEX_ALLOW_CLOUD_TELEGRAM_PUSH: "0"
         run: |
           python scripts/cbtt_filings_radar.py || echo "CBTT radar completed with warnings"
 
       - name: "Run Victor Sentinel Intraday Scan"
+        env:
+          TZ: "Asia/Ho_Chi_Minh"
+          APEX_ALLOW_CLOUD_TELEGRAM_PUSH: "0"
         run: |
           python scripts/intraday_portfolio_sentinel.py --scan-once
 
@@ -49,6 +55,7 @@ jobs:
         run: |
           git config --global user.name "Apex Cloud Sentinel"
           git config --global user.email "cloud-sentinel@apex-fund.internal"
+          git checkout -- data/current_portfolio_state.json || true
           git add data/cbtt_live_radar.json 02_Equity_Research/ VN_Market/02_BCTC_Equity_Research/ 09_Realtime_Portfolio_Sentinel/
           if git diff --staged --quiet; then
             echo "No new filings."

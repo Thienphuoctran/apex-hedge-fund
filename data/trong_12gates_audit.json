@@ -1,0 +1,84 @@
+{
+  "version": "CONSTITUTION_V2.0_12GATES",
+  "audited_at_ict": "2026-11-24 21:53:52",
+  "passed_count": 12,
+  "total_gates": 12,
+  "all_passed": true,
+  "status": "PASS_ALL_12",
+  "gates": [
+    {
+      "gate_id": "G01_SSOT_ACCOUNT_IDENTITY",
+      "article": 1,
+      "passed": true,
+      "detail": "account_id=105C307855"
+    },
+    {
+      "gate_id": "G02_SSOT_ACCOUNTING_BALANCE",
+      "article": 1,
+      "passed": true,
+      "detail": "Cash=15,541,117 + Hold=4,510,000 = 20,051,117 vs NAV=20,051,117 (diff=0đ)"
+    },
+    {
+      "gate_id": "G03_BCTC_REAL_COVERAGE",
+      "article": 2,
+      "passed": true,
+      "detail": "Verified real BCTC: 145/145 (100.0%)"
+    },
+    {
+      "gate_id": "G04_ZERO_UNVERIFIED_BUY_LEAK",
+      "article": 2,
+      "passed": true,
+      "detail": "0 violations"
+    },
+    {
+      "gate_id": "G05_EXCHANGE_CALENDAR_HOLIDAY_LOCK",
+      "article": 6,
+      "passed": true,
+      "detail": "session=HOLIDAY_CLOSED, invalid_holiday_buys=[]"
+    },
+    {
+      "gate_id": "G06_LOT100_DYNAMIC_NAV_CAP",
+      "article": 5,
+      "passed": true,
+      "detail": "All picks <= 33% NAV/lot"
+    },
+    {
+      "gate_id": "G07_RISK_REWARD_AND_STOP_CAP",
+      "article": 5,
+      "passed": true,
+      "detail": "All picks R:R >= 2.0 & Stop <= 7.5%"
+    },
+    {
+      "gate_id": "G08_NO_MORNING_FOMO",
+      "article": 6,
+      "passed": true,
+      "detail": "ict_hour=21:53, morning_buys=[]"
+    },
+    {
+      "gate_id": "G09_SCBP_SINGLE_SOURCE_SYNC",
+      "article": 7,
+      "passed": true,
+      "detail": "SCBP seal=64f1bc9d72b0... synced=True"
+    },
+    {
+      "gate_id": "G10_TELEGRAM_SINGLE_OWNER_SHIELD",
+      "article": 8,
+      "passed": true,
+      "detail": "render_guard=True, dedup_cache_ok=True"
+    },
+    {
+      "gate_id": "G11_BACKTEST_EMPIRICAL_VALIDITY",
+      "article": 3,
+      "passed": true,
+      "detail": "V4 Ret=+14.12% MaxDD=-7.13% Sharpe=0.89 vs V3=-1.70%"
+    },
+    {
+      "gate_id": "G12_ZERO_SECRET_AND_JSON_INTEGRITY",
+      "article": 9,
+      "passed": true,
+      "detail": "All JSON stores valid"
+    }
+  ],
+  "inspector": "Trọng (Ban 12 — Kiểm Sát Viên Độc Lập)",
+  "saved_at_ict": "2026-11-24 21:53:53 ICT"
+}

@@ -98,7 +98,7 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
             "time_range": "09:15 – 11:30",
             "start_hm": 9 * 60 + 15,
             "end_hm": 11 * 60 + 30,
-            "action": "Đo lường tỷ lệ Mua chủ động (Buy Up), phát hiện bẫy kê lệnh ảo Giá 2/Giá 3, theo dõi biến động HDB & MSH.",
+            "action": "Đo lường tỷ lệ Mua chủ động (Buy Up), phát hiện bẫy kê lệnh ảo Giá 2/Giá 3 và biến động danh mục SSOT đang giữ.",
             "rule": "Không mua đuổi khi RSI > 60 hoặc khi cổ phiếu đang tăng xanh nhưng chưa có nền tích lũy."
         },
         {
@@ -936,7 +936,7 @@ def build_demo_tactical_plan_tomorrow(
         {
             "slot": "13:00 – 14:00",
             "phase": _slot_label(13 * 60, 14 * 60, "HẤP THỤ HÀNG T+2 & KIỂM ĐỊNH CẦU CHIỀU"),
-            "action": "Quan sát lực hấp thụ hàng T+2 buổi chiều; kiểm định mốc hỗ trợ VN-Index 1,678 (Spring) và đáy 1,666.41 (20/11)."
+            "action": "Quan sát lực hấp thụ hàng T+2 buổi chiều; kiểm định mốc hỗ trợ VN-Index theo đường MA20/MA50 và độ rộng Br20."
         },
         {
             "slot": "14:00 – 14:45",

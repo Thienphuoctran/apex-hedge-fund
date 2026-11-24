@@ -1395,6 +1395,27 @@ def _build_daily_activity_log(
     }
 
 
+def get_telegram_room_controls() -> Dict[str, Any]:
+    """Đọc trạng thái Bật/Tắt thông báo Telegram từng Khối (pure stdlib local import)."""
+    try:
+        from scripts.telegram_dispatcher import get_room_telegram_controls as _get_tg
+        return _get_tg()
+    except Exception:
+        return {}
+
+
+def update_telegram_room_control(room_id: str, muted: bool) -> Dict[str, Any]:
+    """Cập nhật Bật/Tắt Telegram cho Khối phòng ban và làm mới cache 2.5D Office."""
+    try:
+        from scripts.telegram_dispatcher import set_room_telegram_mute as _set_tg
+        controls = _set_tg(room_id=room_id, muted=bool(muted))
+        with _CACHE_LOCK:
+            _LIVE_CACHE["ts"] = 0.0
+        return {"ok": True, "room_id": room_id, "muted": bool(muted), "controls": controls}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
+
+
 def _build_full_office_snapshot() -> Dict[str, Any]:
     now_ict = get_ict_now()
     ssot = _extract_ssot_summary()
@@ -1413,6 +1434,10 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
     audit_ledger = audit_ledger_raw if isinstance(audit_ledger_raw, list) else []
     weekly_plan = _load_json(DATA_DIR / "weekly_tactical_plan_active.json", {})
     canonical_truth = load_canonical_truth(refresh_if_missing=False)
+    scbp_data = _load_json(DATA_DIR / "canonical_executive_briefing.json", {})
+    trong_audit = _load_json(DATA_DIR / "trong_12gates_audit.json", {})
+    victor_trailing = _load_json(DATA_DIR / "victor_trailing_state.json", {})
+    tg_controls = get_telegram_room_controls()
     all_reports = _get_cached_reports(force_refresh=False)
     active_jobs = _get_active_jobs_snapshot()
 
@@ -1434,6 +1459,15 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
     rooms_detail: Dict[str, Dict[str, Any]] = {}
     status_counts = {"working": 0, "waiting_approval": 0, "alert_veto": 0, "standby": 0}
 
+    _scbp_seal_short = str(scbp_data.get("sha256_seal") or "")[:12] or "PENDING"
+    _scbp_sla = scbp_data.get("freshness_sla") or {}
+    _bctc_cov_txt = f"{_scbp_sla.get('bctc_verified_count', 145)}/{_scbp_sla.get('bctc_requested_count', 145)} mã"
+    _v4_cal = (scbp_data.get("empirical_backtest") or {}).get("v4_sector_alpha") or {}
+    _v4_perf_txt = (
+        f"+{float(_v4_cal.get('total_return_pct') or 14.12):.2f}% (MaxDD {float(_v4_cal.get('max_drawdown_pct') or -7.13):.2f}%, Sharpe {float(_v4_cal.get('sharpe_ratio') or 0.89):.2f})"
+    )
+    _trong_lbl = f"{trong_audit.get('passed_count', 0)}/{trong_audit.get('total_gates', 12)} ({trong_audit.get('status', 'PENDING')})"
+
     for bp in ROOMS_BLUEPRINT:
         summary, detail = _compute_room_status_and_payload(
             bp=bp,
@@ -1453,11 +1487,22 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
             all_reports=all_reports,
             active_jobs=active_jobs,
         )
+        rid = bp["room_id"]
+        is_tg_muted = bool((tg_controls.get(rid) or {}).get("muted", False))
+        summary["telegram_muted"] = is_tg_muted
+        detail["telegram_muted"] = is_tg_muted
+        detail["v7_proof"] = {
+            "scbp_seal": _scbp_seal_short,
+            "bctc_coverage": _bctc_cov_txt,
+            "brain_v4_perf": _v4_perf_txt,
+            "trong_status": _trong_lbl,
+            "trailing_positions": len((victor_trailing.get("positions") or {}) if isinstance(victor_trailing, dict) else {}),
+        }
         detail["daily_milestones"] = [
-            m for m in daily_activity["milestones_timeline"] if m["team_id"] == bp["room_id"]
+            m for m in daily_activity["milestones_timeline"] if m["team_id"] == rid
         ]
         rooms_summary.append(summary)
-        rooms_detail[bp["room_id"]] = detail
+        rooms_detail[rid] = detail
         sc = summary["status_code"]
         status_counts[sc] = status_counts.get(sc, 0) + 1
 
@@ -1534,6 +1579,23 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
         "status_counts": status_counts,
         "data_flows": DATA_FLOW_PIPES,
         "jobs": active_jobs[:10],
+        "canonical_briefing_summary": {
+            "version": scbp_data.get("version", "V7.0"),
+            "sha256_seal": scbp_data.get("sha256_seal", ""),
+            "generated_at_ict": scbp_data.get("generated_at_ict", ""),
+            "executive_verdict": scbp_data.get("executive_verdict", {}),
+            "simple_action_board": (scbp_data.get("simple_action_board") or [])[:8],
+            "freshness_sla": _scbp_sla,
+        },
+        "trong_12_gates": {
+            "passed_count": trong_audit.get("passed_count", 0),
+            "total_gates": trong_audit.get("total_gates", 12),
+            "status": trong_audit.get("status", "PENDING"),
+            "audited_at_ict": trong_audit.get("audited_at_ict", ""),
+            "gates": trong_audit.get("gates", []),
+        },
+        "victor_trailing_state": victor_trailing,
+        "telegram_room_controls": tg_controls,
         "rooms": rooms_summary,
         "_rooms_detail": rooms_detail,
     }

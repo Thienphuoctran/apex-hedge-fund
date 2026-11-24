@@ -1,9 +1,7 @@
 name: "Ban 5 & Victor — HDB Post-Exit Audit Watch (Cloud)"
 
 on:
-  schedule:
-    # Tự động chạy lúc 14:50 ICT (07:50 UTC) vào Thứ Năm (19/11) & Thứ Sáu (20/11) ngay sau khi HOSE đóng cửa
-    - cron: '50 7 * * 4-5'
+  # schedule disabled (superseded by continuous Learning V7); manual dispatch preserved
   workflow_dispatch: # Cho phép Chủ tịch bấm chạy thủ công trên GitHub anytime
 
 permissions:

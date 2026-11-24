@@ -1,0 +1,113 @@
+{
+  "version": "V7.0",
+  "generated_at_ict": "2026-11-24 21:40:30 ICT",
+  "account_id": "105C307855",
+  "chairman": "Trần Quốc Thiên Phước",
+  "fee_model_tcbs": {
+    "buy_fee_pct": 0.15,
+    "sell_fee_pct": 0.15,
+    "sell_tax_pct": 0.1,
+    "roundtrip_actual_pct": 0.4,
+    "backtest_conservative_roundtrip_pct": 0.6
+  },
+  "capital_summary": {
+    "initial_capital_vnd": 20000000.0,
+    "total_nav_vnd": 20051117.0,
+    "cash_balance_vnd": 15541117.0,
+    "invested_market_val_vnd": 4510000.0,
+    "total_cost_vnd": 4510000.0,
+    "cash_pct": 77.5,
+    "invested_pct": 22.5,
+    "realized_net_pnl_vnd": 51117.0,
+    "open_net_pnl_after_fee_vnd": -18040.0,
+    "total_net_return_vs_initial_vnd": 51117.0,
+    "total_net_return_pct": 0.26
+  },
+  "closed_campaigns_count": 1,
+  "closed_campaigns_wins": 1,
+  "closed_win_rate_pct": 100.0,
+  "closed_campaigns": [
+    {
+      "campaign_id": "CAMPAIGN-VN-ROUND-01",
+      "period": "2026-11-04 -> 2026-11-06",
+      "status": "CLOSED_AND_SETTLED_100_PERCENT_CASH",
+      "initial_capital_vnd": 20000000.0,
+      "final_cash_tcbs_vnd": 20167119.0,
+      "net_realized_profit_after_tax_fee_vnd": 167119.0,
+      "net_return_pct": 0.8356,
+      "positions_traded_and_closed": [
+        {
+          "symbol": "HPG",
+          "shares_bought": 400,
+          "shares_sold": 400,
+          "remaining_shares": 0,
+          "entry_price": 21156.0,
+          "exit_status": "SOLD_100_PERCENT"
+        },
+        {
+          "symbol": "TCB",
+          "shares_bought": 300,
+          "shares_sold": 300,
+          "remaining_shares": 0,
+          "entry_price": 21356.0,
+          "exit_status": "SOLD_100_PERCENT"
+        },
+        {
+          "symbol": "MBB",
+          "shares_bought": 200,
+          "shares_sold": 200,
+          "remaining_shares": 0,
+          "entry_price": 18606.0,
+          "exit_status": "SOLD_100_PERCENT"
+        }
+      ],
+      "lesson_learned": "Chốt lời dứt khoát toàn bộ 900 CP trước kỳ nghỉ cuối tuần, bảo toàn 100% vốn + lãi thực nhận 20,167,119 ₫ trên TCInvest, triệt tiêu 100% rủi ro qua tuần (0% Weekend Risk)."
+    }
+  ],
+  "open_positions_count": 2,
+  "open_positions": [
+    {
+      "symbol": "TPB",
+      "shares": 200,
+      "entry_price_vnd": 12300.0,
+      "current_price_vnd": 12350.0,
+      "cost_vnd": 2460000.0,
+      "market_val_vnd": 2470000.0,
+      "gross_pnl_vnd": 10000.0,
+      "est_fees_tax_vnd": 9865,
+      "net_pnl_after_fee_vnd": 135.0,
+      "net_pnl_pct": 0.01,
+      "buy_date": "2026-11-23",
+      "t_plus_2_5_sellable_after": "2026-11-26 13:00 ICT",
+      "can_sell_today": false,
+      "stop_loss_vnd": 11600.0,
+      "tp1_vnd": 13530.0,
+      "trailing_mode": "INITIAL_2ATR",
+      "highest_since_entry_vnd": 12350.0,
+      "score_v4": 0.0,
+      "nav_weight_pct": 12.3
+    },
+    {
+      "symbol": "HPG",
+      "shares": 100,
+      "entry_price_vnd": 20500.0,
+      "current_price_vnd": 20400.0,
+      "cost_vnd": 2050000.0,
+      "market_val_vnd": 2040000.0,
+      "gross_pnl_vnd": -10000.0,
+      "est_fees_tax_vnd": 8175,
+      "net_pnl_after_fee_vnd": -18175.0,
+      "net_pnl_pct": -0.89,
+      "buy_date": "2026-11-23",
+      "t_plus_2_5_sellable_after": "2026-11-26 13:00 ICT",
+      "can_sell_today": false,
+      "stop_loss_vnd": 19300.0,
+      "tp1_vnd": 22550.0,
+      "trailing_mode": "INITIAL_2ATR",
+      "highest_since_entry_vnd": 20500.0,
+      "score_v4": 0.0,
+      "nav_weight_pct": 10.2
+    }
+  ],
+  "recent_trades_count": 11
+}

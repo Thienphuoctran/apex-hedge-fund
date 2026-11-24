@@ -153,9 +153,22 @@ class PalmerAntigravitySyncBridge:
         ledger.insert(0, packet)
         cls.save_sync_ledger(ledger)
 
-        # 2. Cập nhật Bộ Nhớ Trực Tuyến Live Briefing cho Palmer
+        # 2. Cập nhật Bộ Nhớ Trực Tuyến Live Briefing cho Palmer (gắn niêm phong SCBP SHA-256)
+        scbp_seal = ""
+        scbp_ver = "V7.0"
+        scbp_md = ""
+        scbp_path = DATA_DIR / "canonical_executive_briefing.json"
+        if scbp_path.exists():
+            try:
+                _scbp = json.loads(scbp_path.read_text(encoding="utf-8-sig"))
+                scbp_seal = str(_scbp.get("sha256_seal") or "")
+                scbp_ver = str(_scbp.get("version") or "V7.0")
+                scbp_md = str(_scbp.get("executive_markdown") or "")
+            except Exception:
+                pass
+
         default_holdings_dir = (
-            "100% TIỀN MẶT (0 CP đang giữ — BAF & MSH đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn cổ phiếu."
+            f"100% TIỀN MẶT ({cash_vnd:,.0f} ₫, 0 CP đang giữ — Tài khoản sạch theo SSOT)."
             if not pos_details
             else ", ".join(f"{sym}: {d['shares']} CP @ {d['current_price']:,.0f}₫" for sym, d in pos_details.items())
         )
@@ -163,12 +176,15 @@ class PalmerAntigravitySyncBridge:
             "last_updated": now.strftime("%Y-%m-%d %H:%M:%S"),
             "last_synced_by": "ANTIGRAVITY",
             "sync_id": sync_id,
+            "scbp_version": scbp_ver,
+            "scbp_sha256": scbp_seal,
+            "executive_markdown": scbp_md,
             "latest_user_request": user_request,
             "latest_response_summary": response_summary,
             "latest_completed_tasks": completed_tasks,
             "latest_strategic_decisions": active_decisions,
             "portfolio_snapshot": {
-                "status": st.get("status", "CASH_RESERVE_100_PERCENT"),
+                "status": st.get("status", "ACTIVE_POSITION_OPEN"),
                 "total_nav_vnd": total_nav,
                 "cash_vnd": cash_vnd,
                 "cash_pct": cash_pct,
@@ -178,14 +194,9 @@ class PalmerAntigravitySyncBridge:
             },
             "directives_for_palmer_responses": {
                 "current_holdings_directive": active_decisions.get("current_holdings_directive", default_holdings_dir),
-                "market_regime_directive": active_decisions.get("market_regime_directive", f"Chế độ sống: {live_regime}. Giải ngân chỉ mở khung 14h00-14h25 khi đạt điều kiện S1/S2/S3."),
-                "weekly_plan_directive": active_decisions.get("weekly_plan_directive", "Cuối tuần 20-22/11 nghỉ ngơi 100% Cash. Tuần 48 (23/11) đánh rổ Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) theo Ma trận 4 kịch bản S1-S4."),
-                "upgrade_progress_directive": active_decisions.get("upgrade_progress_directive", "Đã triển khai crawler Internet/BCTC/IR đa nguồn hàng ngày (Giai đoạn 1) và đồng bộ 2 chiều về Palmer."),
-                # Backward-compatible aliases (trỏ về thông tin mới nhất, không chứa dữ liệu cũ)
-                "regarding_bsr_baf": active_decisions.get("current_holdings_directive", default_holdings_dir),
-                "regarding_hdb_msh": active_decisions.get("market_regime_directive", f"Chế độ sống: {live_regime}."),
-                "regarding_weekly_plan": active_decisions.get("weekly_plan_directive", "Tuần 48 (23/11) sẵn sàng 100% Cash với Ma trận S1-S4."),
-                "regarding_today_morning_tasks": active_decisions.get("upgrade_progress_directive", "Đã hoàn tất đồng bộ Palmer <-> Antigravity V2.0.")
+                "market_regime_directive": active_decisions.get("market_regime_directive", f"Chế độ sống: {live_regime}. Giải ngân chỉ mở khung 14h05-14h25 khi đạt điều kiện Brain V4."),
+                "weekly_plan_directive": active_decisions.get("weekly_plan_directive", "Vận hành chuẩn Hiến Chương V2.0 theo Sổ lệnh Brain V4.0 và BCTC sạch 145/145 mã."),
+                "upgrade_progress_directive": active_decisions.get("upgrade_progress_directive", "Đã hoàn tất đồng bộ SCBP V7.0, 12 Cổng Trọng & Cầu nối Palmer.")
             }
         }
 
@@ -324,10 +335,11 @@ class PalmerAntigravitySyncBridge:
             pos = snap.get("positions", {}) or {}
             dirs = data.get("directives_for_palmer_responses", {})
 
-            content = f"""# APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
+            content = f"""# APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC V7.0)
 **Thời gian cập nhật:** {data.get('last_updated')}  
 **Người đồng bộ gần nhất:** {data.get('last_synced_by')}  
 **Mã đồng bộ:** `{data.get('sync_id')}`  
+**Mã niêm phong SCBP SHA-256:** `{data.get('scbp_sha256', 'UNSEALED')}`  
 
 ---
 
@@ -335,6 +347,8 @@ class PalmerAntigravitySyncBridge:
 * **Yêu cầu gần nhất của Chủ tịch:** {data.get('latest_user_request')}
 * **Kết luận & Quyết định thể chế:**
 {data.get('latest_response_summary')}
+
+{data.get('executive_markdown', '')}
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
 """
@@ -453,13 +467,20 @@ class PalmerAntigravitySyncBridge:
         pos = st.get("active_positions") or {}
 
         weekly_plan_path = DATA_DIR / "weekly_tactical_plan_active.json"
-        weekly_summary = "Tuần 48 (23/11): Rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) theo Ma trận 4 kịch bản S1–S4."
+        weekly_summary = "Vận hành chuẩn Hiến Chương V2.0 theo bộ lọc Brain V4.0 (145/145 BCTC sạch) và Sổ lệnh động % NAV."
         if weekly_plan_path.exists():
             try:
                 wp = json.loads(weekly_plan_path.read_text(encoding="utf-8"))
                 weekly_summary = wp.get("constitution_mandate") or weekly_summary
             except Exception:
                 pass
+
+        # Đảm bảo Single Canonical Briefing Packet (SCBP V7.0) luôn mới nhất trước khi đóng gói đồng bộ Palmer
+        try:
+            from scripts.apex_unified_briefing_builder import build_canonical_executive_briefing
+            build_canonical_executive_briefing()
+        except Exception as _e_scbp:
+            print(f"[!] Cảnh báo build SCBP trong sync_current_ssot: {_e_scbp}")
 
         intel_path = DATA_DIR / "apex_daily_internet_intel.json"
         intel_note = "Chưa chạy quét Internet hôm nay."

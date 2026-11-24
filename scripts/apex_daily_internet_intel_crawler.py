@@ -126,28 +126,76 @@ SEC_TOP_CIKS: Dict[str, str] = {
     "META": "0001326801",
 }
 
-TAVILY_QUERIES: List[Dict[str, Any]] = [
-    {
-        "topic_id": "VN_MACRO_MARGIN",
-        "title_vi": "Vĩ mô VN-Index, Dư nợ Margin Kỷ lục & Thanh khoản Ngân hàng Nhà nước",
-        "query": "VN-Index dư nợ margin chứng khoán quý 3 2026 ngân hàng nhà nước tỷ giá lãi suất",
-    },
-    {
-        "topic_id": "VN_BANKS_LEADERS",
-        "title_vi": "Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng (TPB, HDB, CTG, VPB)",
-        "query": "TPBank TPB HDBank HDB VietinBank CTG VPBank lợi nhuận quý 3 2026 tăng trưởng tín dụng",
-    },
-    {
-        "topic_id": "HPG_DUNG_QUAT_2",
-        "title_vi": "Hòa Phát (HPG) — Tiến độ Dung Quất 2, HRC & Nhu cầu Thép",
-        "query": "Hòa Phát HPG Dung Quất 2 sản lượng thép quý 3 quý 4 2026",
-    },
-    {
-        "topic_id": "US_MACRO_AI_TECH",
-        "title_vi": "Vĩ mô Mỹ (Fed, US10Y) & Nhóm Big Tech / AI (NVDA, Anthropic, GOOGL, AMZN)",
-        "query": "Federal Reserve US 10Y yield Nvidia Anthropic IPO Google Amazon AI outlook November 2026",
-    },
-]
+def _build_dynamic_tavily_queries() -> List[Dict[str, Any]]:
+    """Tao truy van Tavily theo quy/thang/nam thuc te, khong gan cung thoi gian."""
+    now_ict = datetime.datetime.now(datetime.timezone.utc).astimezone(datetime.timezone(datetime.timedelta(hours=7)))
+    yr = now_ict.year
+    prev_q = ((now_ict.month - 1) // 3) or 4
+    q_yr = yr if prev_q < 4 else (yr - 1)
+    mo_str = now_ict.strftime("%B %Y")
+    return [
+        {
+            "topic_id": "VN_MACRO_MARGIN",
+            "title_vi": f"Vĩ mô VN-Index, Dư nợ Margin & Thanh khoản Ngân hàng Nhà nước (Q{prev_q}/{q_yr})",
+            "query": f"VN-Index dư nợ margin chứng khoán quý {prev_q} {q_yr} ngân hàng nhà nước tỷ giá lãi suất {yr}",
+        },
+        {
+            "topic_id": "VN_BANKS_LEADERS",
+            "title_vi": "Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB)",
+            "query": f"TPBank TPB HDBank HDB VietinBank CTG Nam A Bank NAB lợi nhuận quý {prev_q} {q_yr} tăng trưởng tín dụng",
+        },
+        {
+            "topic_id": "HPG_DUNG_QUAT_2",
+            "title_vi": "Hòa Phát (HPG) & Ngành Thép — Tiến độ Dung Quất 2, HRC & Bảo hộ",
+            "query": f"Hòa Phát HPG Dung Quất 2 sản lượng thép HRC quý {prev_q} {yr}",
+        },
+        {
+            "topic_id": "US_MACRO_AI_TECH",
+            "title_vi": f"Vĩ mô Mỹ (Fed, US10Y, VIX) & Big Tech / AI ({mo_str})",
+            "query": f"Federal Reserve US 10Y yield VIX Nvidia Google Amazon AI outlook {mo_str}",
+        },
+    ]
+
+
+def _resolve_dynamic_priority_tickers() -> List[str]:
+    """Hop nhat PRIORITY_VN_TICKERS + SSOT holdings/watchlist + Top 15 Alpha tu Brain V4/V3."""
+    ordered: List[str] = []
+    seen = set()
+
+    def _add(sym: str) -> None:
+        s = str(sym or "").upper().strip()
+        if s and s not in seen:
+            seen.add(s)
+            ordered.append(s)
+
+    ssot_p = DATA_DIR / "current_portfolio_state.json"
+    if ssot_p.exists():
+        try:
+            ssot = json.loads(ssot_p.read_text(encoding="utf-8"))
+            for s in (ssot.get("active_positions") or {}).keys():
+                _add(s)
+            for w in (ssot.get("next_round_watchlist") or []):
+                _add((w or {}).get("symbol", ""))
+        except Exception:
+            pass
+
+    for brain_name in ("apex_brain_v4_output.json", "apex_autonomous_brain_v3_output.json"):
+        bp = DATA_DIR / brain_name
+        if bp.exists():
+            try:
+                bd = json.loads(bp.read_text(encoding="utf-8"))
+                for row in (bd.get("ranked_universe") or bd.get("top_picks") or [])[:15]:
+                    _add((row or {}).get("symbol", ""))
+                break
+            except Exception:
+                pass
+
+    for s in PRIORITY_VN_TICKERS:
+        _add(s)
+    return ordered
+
+
+TAVILY_QUERIES: List[Dict[str, Any]] = _build_dynamic_tavily_queries()
 
 POS_KW = (
     "tăng trưởng", "bứt phá", "kỷ lục", "lãi ròng tăng", "vượt kế hoạch", "chia cổ tức",
@@ -492,14 +540,14 @@ def _fetch_sec_recent_filings() -> List[Dict[str, Any]]:
 
 
 def _run_tavily_queries() -> List[Dict[str, Any]]:
-    """Layer 4C helper: Truy vấn Tavily Search API 4 chuyên đề nóng."""
+    """Layer 4C helper: Truy vấn Tavily Search API 4 chuyên đề nóng (thời gian động)."""
     try:
         from scripts.tavily_bridge import tavily_search
     except Exception:
         return []
 
     outputs: List[Dict[str, Any]] = []
-    for qspec in TAVILY_QUERIES:
+    for qspec in _build_dynamic_tavily_queries():
         res = tavily_search(
             query=qspec["query"],
             search_depth="advanced",
@@ -707,12 +755,13 @@ def run_daily_intelligence_crawl(refresh_bctc: bool = False) -> Dict[str, Any]:
     layer1 = check_layer1_bctc_and_ohlcv_freshness()
     print(f"    VN BCTC: {layer1.get('vn_stocks_count')} mã | Last bar: {layer1.get('latest_ohlcv_bar_date')} | Age: {layer1.get('vn_age_hours')}h")
 
-    # Layer 2 (30 priority tickers concurrent)
-    print(f">>> [Layer 2] Cào Vietcap AI News + CafeF Tin DN & CBTT cho {len(PRIORITY_VN_TICKERS)} mã...")
+    # Layer 2 (Dynamic priority tickers: SSOT + Top Alpha + Priority 30)
+    target_tickers = _resolve_dynamic_priority_tickers()
+    print(f">>> [Layer 2] Cào Vietcap AI News + CafeF Tin DN & CBTT cho {len(target_tickers)} mã (SSOT + Alpha + Trọng điểm)...")
     ticker_intel: Dict[str, Dict[str, Any]] = {}
     corp_items_for_omni: List[Dict[str, Any]] = []
     with ThreadPoolExecutor(max_workers=8) as pool:
-        futs = {pool.submit(_crawl_single_ticker_news, sym): sym for sym in PRIORITY_VN_TICKERS}
+        futs = {pool.submit(_crawl_single_ticker_news, sym): sym for sym in target_tickers}
         for fut in as_completed(futs):
             tp = fut.result()
             sym = tp["symbol"]
@@ -794,10 +843,20 @@ def run_daily_intelligence_crawl(refresh_bctc: bool = False) -> Dict[str, Any]:
     elapsed = round(time.time() - t0, 2)
 
     daily_intel = {
-        "engine": "APEX_DAILY_INTERNET_INTEL_CRAWLER_V3",
+        "engine": "APEX_DAILY_INTERNET_INTEL_CRAWLER_V7",
         "crawled_at": crawled_at_str,
         "crawl_date": crawl_date_str,
         "elapsed_sec": elapsed,
+        "target_tickers_count": len(target_tickers),
+        "freshness_sla": {
+            "crawled_at_ict": crawled_at_str,
+            "bctc_age_hours": layer1.get("vn_age_hours"),
+            "bctc_stocks_count": layer1.get("vn_stocks_count", 0),
+            "latest_ohlcv_bar_date": layer1.get("latest_ohlcv_bar_date"),
+            "rss_sources_online": rss_online_count,
+            "ir_portals_ok": ir_ok_count,
+            "sla_status": "HEALTHY" if (layer1.get("is_fresh_under_24h") and rss_online_count >= 8) else "DEGRADED",
+        },
         "summary_counts": {
             "total_news_articles": len(merged_items),
             "corp_vietcap_cafef_articles": len(corp_items_for_omni),

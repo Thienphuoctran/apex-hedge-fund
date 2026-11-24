@@ -61,6 +61,70 @@ from scripts.vn_market_calendar import get_vn_market_session_state
 SENTINEL_DIR = BASE_DIR / "09_Realtime_Portfolio_Sentinel"
 TELEMETRY_JSON = SENTINEL_DIR / "vn3_live_telemetry.json"
 TELEMETRY_MD = SENTINEL_DIR / "vn3_live_telemetry.md"
+VICTOR_TRAILING_FILE = BASE_DIR / "data" / "victor_trailing_state.json"
+
+
+def _load_victor_trailing_state() -> Dict[str, Any]:
+    if VICTOR_TRAILING_FILE.exists():
+        try:
+            data = json.loads(VICTOR_TRAILING_FILE.read_text(encoding="utf-8-sig"))
+            if isinstance(data, dict):
+                return data
+        except Exception:
+            pass
+    return {"version": "V7.0", "updated_at": "", "positions": {}}
+
+
+def _save_victor_trailing_state(payload: Dict[str, Any]) -> None:
+    try:
+        VICTOR_TRAILING_FILE.parent.mkdir(parents=True, exist_ok=True)
+        tmp = VICTOR_TRAILING_FILE.with_suffix(".tmp")
+        tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp.replace(VICTOR_TRAILING_FILE)
+    except Exception:
+        pass
+
+
+def compute_dynamic_trailing_stop(
+    sym: str,
+    entry_px: float,
+    live_px: float,
+    base_stop_px: float,
+    trailing_state: Dict[str, Any],
+) -> Dict[str, Any]:
+    """Cập nhật đỉnh cao nhất từ giá vốn & tính Trailing Stop (hòa vốn +6%, trailing -5% từ +11%)."""
+    pos_map = trailing_state.setdefault("positions", {})
+    prev = pos_map.get(sym) if isinstance(pos_map.get(sym), dict) else {}
+    prev_high = float(prev.get("highest_since_entry") or 0.0)
+    high = max(prev_high, entry_px, live_px)
+    gain_pct = ((high - entry_px) / entry_px * 100.0) if entry_px > 0 else 0.0
+
+    trailing_5pct = round(high * 0.95, -1) if high > 0 else base_stop_px
+    breakeven_px = round(entry_px * 1.005, -1) if entry_px > 0 else base_stop_px
+    if gain_pct >= 11.0:
+        eff_stop = max(base_stop_px, breakeven_px, trailing_5pct)
+        mode = "TRAILING_5PCT_PROFIT"
+    elif gain_pct >= 6.0:
+        eff_stop = max(base_stop_px, breakeven_px)
+        mode = "BREAKEVEN_LOCKED"
+    else:
+        eff_stop = base_stop_px
+        mode = "INITIAL_2ATR"
+
+    row = {
+        "symbol": sym,
+        "entry_price": round(entry_px, 0),
+        "live_price": round(live_px, 0),
+        "highest_since_entry": round(high, 0),
+        "max_gain_pct": round(gain_pct, 2),
+        "base_stop_vnd": round(base_stop_px, 0),
+        "trailing_stop_5pct": round(trailing_5pct, 0),
+        "effective_stop_vnd": round(eff_stop, 0),
+        "stop_mode": mode,
+        "updated_at": _ict_now().strftime("%Y-%m-%d %H:%M:%S"),
+    }
+    pos_map[sym] = row
+    return row
 
 WATCHLIST_FALLBACKS: Dict[str, Dict[str, Any]] = {
     "TPB": {"name": "TPBank", "entry_price": 12300.0, "stop_loss": 11600.0, "stop_warning": 11850.0, "sell_target_min": 13350.0, "sell_target_max": 14450.0, "probe_target": 12250.0},
@@ -251,6 +315,8 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
 
     ssot_state = load_dynamic_ssot_state()
     cfg_map = ssot_state["config"]
+    trailing_state = _load_victor_trailing_state()
+    trailing_state["updated_at"] = f"{date_str} {now_str}"
     triggered_events: List[Dict[str, Any]] = []
 
     for sym, cfg in cfg_map.items():
@@ -262,6 +328,16 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
         chg_pct = float(q.get("change_pct") or 0.0)
 
         if cfg["is_holding"]:
+            t_row = compute_dynamic_trailing_stop(
+                sym=sym,
+                entry_px=float(cfg.get("entry_price") or price),
+                live_px=price,
+                base_stop_px=float(cfg.get("stop_loss") or 0.0),
+                trailing_state=trailing_state,
+            )
+            eff_stop = float(t_row.get("effective_stop_vnd") or cfg.get("stop_loss") or 0.0)
+            cfg["effective_stop"] = eff_stop
+            cfg["stop_mode"] = t_row.get("stop_mode", "INITIAL_2ATR")
             cost = cfg["shares"] * cfg["entry_price"]
             market_val = cfg["shares"] * price
             pnl_trade = market_val - cost
@@ -291,20 +367,20 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
                     if notify_telegram and in_market_hours:
                         dispatch_message("daily_warroom", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=key, cooldown_seconds=14400, is_intraday_alert=True)
 
-            elif cfg["stop_loss"] > 0 and price <= cfg["stop_loss"]:
+            elif eff_stop > 0 and price <= eff_stop:
                 key = f"{date_str}_{sym}_STOP"
                 triggered_events.append({"symbol": sym, "type": "STOP_LOSS_BREACH", "price": price, "buy_up": buy_up})
                 if key not in alerted_triggers:
                     alerted_triggers.add(key)
                     sound_beep(2000, 500, 4)
                     msg_ui = (
-                        f"🔴 [CHẠM NGƯỠNG BÁN CẮT LỖ — {sym}] Giá {price:,.0f} đ <= Stop {cfg['stop_loss']:,.0f} đ! "
+                        f"🔴 [CHẠM NGƯỠNG BÁN CẮT LỖ ({cfg['stop_mode']}) — {sym}] Giá {price:,.0f} đ <= Stop {eff_stop:,.0f} đ! "
                         f"Hành động: TIẾN HÀNH BÁN cắt lỗ dứt khoát nếu không rút chân trước 14h15!"
                     )
                     msg_tg = (
-                        f"🔴 <b>CHẠM NGƯỠNG BÁN CẮT LỖ — {sym}</b> ({now_str})\n"
-                        f"• Giá hiện tại: <b>{price:,.0f} đ</b> (thủng Stop {cfg['stop_loss']:,.0f} đ • {pnl_pct_trade:+.2f}%)\n"
-                        f"• 👉 <b>Hành động: TIẾN HÀNH BÁN cắt lỗ dứt khoát</b> (kiểm định 14h15)\n"
+                        f"🔴 <b>CHẠM NGƯỠNG BÁN ({cfg['stop_mode']}) — {sym}</b> ({now_str})\n"
+                        f"• Giá hiện tại: <b>{price:,.0f} đ</b> (thủng Stop {eff_stop:,.0f} đ • {pnl_pct_trade:+.2f}%)\n"
+                        f"• 👉 <b>Hành động: TIẾN HÀNH BÁN dứt khoát</b> (kiểm định 14h15)\n"
                         f"• 🛡️ Quản trị: Khóa rủi ro danh mục, tuyệt đối không trung bình giá xuống."
                     )
                     try:
@@ -316,13 +392,13 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
                         dispatch_message("daily_warroom", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=key, cooldown_seconds=14400, is_intraday_alert=True, priority="CRITICAL_STOP")
                         dispatch_message("james_hq", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=f"{key}_JAMES", cooldown_seconds=14400, is_intraday_alert=True, priority="CRITICAL_STOP")
 
-            elif cfg["stop_loss"] > 0 and ((price - cfg["stop_loss"]) / price * 100.0) <= 2.6:
+            elif eff_stop > 0 and ((price - eff_stop) / price * 100.0) <= 2.6:
                 key = f"{date_str}_{sym}_NEARSTOP"
                 triggered_events.append({"symbol": sym, "type": "NEAR_STOP_WARNING", "price": price, "buy_up": buy_up})
                 if key not in alerted_triggers:
                     alerted_triggers.add(key)
                     msg_ui = (
-                        f"🟡 [CẬN NGƯỠNG BẢO VỆ — {sym}] Giá {price:,.0f} đ (cách Stop {cfg['stop_loss']:,.0f} đ chỉ {((price - cfg['stop_loss']) / price * 100.0):.2f}%). "
+                        f"🟡 [CẬN NGƯỠNG BẢO VỆ ({cfg['stop_mode']}) — {sym}] Giá {price:,.0f} đ (cách Stop {eff_stop:,.0f} đ chỉ {((price - eff_stop) / price * 100.0):.2f}%). "
                         f"Hành động: TẠM ĐỢI — Chưa bán, theo dõi nến 14h15!"
                     )
                     try:
@@ -357,6 +433,8 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
                         )
                         dispatch_message("daily_warroom", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=key, cooldown_seconds=14400, is_intraday_alert=True)
 
+    _save_victor_trailing_state(trailing_state)
+
     # Đồng bộ trực tiếp trạng thái War-Room & Trigger Report 24/7
     try:
         from scripts.apex_tactical_war_room_engine import get_tactical_war_room_state
@@ -373,6 +451,8 @@ def update_telemetry(quotes: Dict[str, Dict[str, Any]]) -> None:
     cfg_map = ssot_state["config"]
     cash_vnd = ssot_state["cash_vnd"]
     realized_pnl = ssot_state["realized_pnl"]
+    trailing_state = _load_victor_trailing_state()
+    trailing_state["updated_at"] = now_dt
 
     total_cost = 0.0
     total_market_val = 0.0
@@ -389,6 +469,15 @@ def update_telemetry(quotes: Dict[str, Dict[str, Any]]) -> None:
         vol = int(q.get("volume") or 0)
 
         if cfg["is_holding"]:
+            t_row = compute_dynamic_trailing_stop(
+                sym=sym,
+                entry_px=float(cfg.get("entry_price") or price),
+                live_px=price,
+                base_stop_px=float(cfg.get("stop_loss") or 0.0),
+                trailing_state=trailing_state,
+            )
+            eff_stop = float(t_row.get("effective_stop_vnd") or cfg.get("stop_loss") or 0.0)
+            cfg["stop_loss"] = eff_stop
             shares = cfg["shares"]
             entry = cfg["entry_price"]
             cost = shares * entry
@@ -452,6 +541,7 @@ def update_telemetry(quotes: Dict[str, Dict[str, Any]]) -> None:
         "realized_pnl_vnd": realized_pnl,
         "positions": positions_summary,
     }
+    _save_victor_trailing_state(trailing_state)
     SENTINEL_DIR.mkdir(parents=True, exist_ok=True)
     with open(TELEMETRY_JSON, "w", encoding="utf-8") as f:
         json.dump(telemetry_data, f, indent=2, ensure_ascii=False)

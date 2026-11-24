@@ -15,7 +15,7 @@ Co quan chu quan: Ban 1-4 (Macro, BCTC, Synthesis, Quant Risk) & Ban 8 (Master C
    - Structural Trend & Momentum (25%): Minervini 8-Point Stage 2 count (/8), Cross-Sectional RS Rating (1-99), 20D/63D returns.
    - Micro-Structure & Liquidity (10%): VCP Tightness (ATR10/ATR40), Volume dry-up/accumulation, >= 25B/day, Lot-100 20M fit.
 3. Empirically Calibrated Expectancy & Hard Risk Gates (from data/apex_empirical_calibration.json).
-4. Concrete Week 48 (23/11/2026) Tactical Execution Plan for TCBS 105C307855 (~20.19M VND).
+4. Concrete Dynamic Tactical Execution Plan for TCBS 105C307855 based on live SSOT NAV.
 """
 
 import datetime
@@ -486,11 +486,11 @@ def run_quant_brain_v2(refresh_quotes: bool = True) -> Dict[str, Any]:
         p_win = round(min(0.62, max(0.32, adj_p)), 3)
         ev_emp_pct = round((p_win * min(emp_avg_win, 18.0)) - ((1.0 - p_win) * stop_dist_pct) - 0.60, 2)
 
-        # Lot-100 suitability for 20M account (30-33% NAV slot ~ 6.6M -> px <= 33,000 allows >= 200 CP)
+        # Lot-100 suitability scaled dynamically to account NAV (33% NAV max slot -> px allows >= 200 CP)
         max_slot_vnd = nav_vnd * 0.33
         affordable_shares = int(max_slot_vnd // (px * 100.0)) * 100 if px > 0 else 0
         lot100_suitability = (
-            "IDEAL_200+_SHARES" if affordable_shares >= 200 else ("SINGLE_100_LOT" if affordable_shares == 100 else "TOO_EXPENSIVE_FOR_20M")
+            "IDEAL_200+_SHARES" if affordable_shares >= 200 else ("SINGLE_100_LOT" if affordable_shares == 100 else "TOO_EXPENSIVE_FOR_NAV")
         )
 
         if cur_reg in ("BEAR_DOWNTREND", "CHOPPY_CORRECTION"):
@@ -621,8 +621,8 @@ def run_quant_brain_v2(refresh_quotes: bool = True) -> Dict[str, Any]:
         f"- **CHE DO HIEN TAI:** **`{regime_diag['regime_id']}`** -> **Tran giai ngan moi: `{regime_diag['max_equity_exposure_pct']}% NAV`**",
         f"- **Ket luan tac chien:** **{regime_diag['verdict_vn']}**",
         "",
-        "## 2. TOP 10 CO PHIEU SACH BCTC & VUA SIZE TAI KHOAN 20M VND CHO TUAN 48 (23/11)",
-        "*(Tieu chuan: F-Score >= 6/9, Beneish SAFE, OCF tot, Thanh khoan >= 25 ty/phien, Thi gia <= 33,000d de cam >= 200 CP chia chot 50/50)*",
+        f"## 2. TOP 10 CO PHIEU SACH BCTC & PHU HOP QUY MO VON {nav_vnd/1e6:.2f}M VND ({now_ict.strftime('%Y-%m-%d')})",
+        "*(Tieu chuan: F-Score >= 6/9, Beneish SAFE, OCF tot, Thanh khoan >= 25 ty/phien, Lot 100 CP <= 33% NAV)*",
         "| Hang | Ma | Nganh | Diem V2 | F-Score | ROE% | P/E | OCF/LN | Gia Live | AvgVal20 | RS | Trang Thai |",
         "| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |",
     ]

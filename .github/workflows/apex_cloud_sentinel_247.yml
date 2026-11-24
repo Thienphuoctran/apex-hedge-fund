@@ -27,6 +27,9 @@ jobs:
     name: "Victor Sentinel 24/7 & SSOT V2.0 Audit"
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      TZ: "Asia/Ho_Chi_Minh"
+      APEX_ALLOW_CLOUD_TELEGRAM_PUSH: "0"
 
     steps:
       - name: "Checkout Apex Repository"
@@ -103,6 +106,7 @@ jobs:
         run: |
           git config --global user.name "Apex Cloud Sentinel Bot"
           git config --global user.email "sentinel-bot@apex-fund.internal"
+          git checkout -- data/current_portfolio_state.json || true
           git add data/ VN_Market/data/ 08_Master_Investment_CIO/ 09_Realtime_Portfolio_Sentinel/ 12_Institutional_Ombudsman_And_Inspectorate/ cloud_sentinel/
           if git diff --staged --quiet; then
             echo "Dữ liệu SSOT đã ở trạng thái tối ưu nhất, không có thay đổi mới."

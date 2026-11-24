@@ -38,11 +38,13 @@ from scripts.singleton_dedup_manager import (
     is_milestone_already_dispatched,
     mark_milestone_dispatched
 )
-from scripts.telegram_dispatcher import dispatch_message
+from scripts.telegram_dispatcher import dispatch_message, send_single_eod_digest
 from scripts.vn_market_calendar import get_vn_market_session_state
 from scripts.apex_canonical_truth import build_and_save_canonical_truth, load_canonical_truth
 
-TRADING_ONLY_MILESTONES = {"09:00", "11:45", "13:00", "14:00", "14:25", "15:15"}
+TRADING_ONLY_MILESTONES = {
+    "09:00", "11:45", "13:00", "13:30", "14:00", "14:05", "14:20", "14:25", "15:15", "15:45"
+}
 
 try:
     from scripts.apex_agent_zero_engine import ApexAgentZeroController
@@ -56,8 +58,8 @@ DAEMON_LOG.parent.mkdir(parents=True, exist_ok=True)
 
 SCHEDULED_MILESTONES = [
     "06:00", "07:00", "07:30", "08:00", "08:30", "08:45",
-    "09:00", "11:45", "13:00", "14:00", "14:25", "15:15",
-    "18:00", "21:00", "21:15", "22:00", "23:00", "23:30"
+    "09:00", "11:45", "13:00", "13:30", "14:00", "14:05", "14:20", "14:25", "15:15", "15:45",
+    "18:00", "20:30", "21:00", "21:15", "22:00", "23:00", "23:30"
 ]
 
 DRY_RUN_MODE = False
@@ -362,10 +364,15 @@ def execute_milestone(milestone_id: str) -> bool:
         "09:00": ("TASK-0900-OPENING", "ban_9_sentinel", 2000, 800),
         "11:45": ("TASK-1145-FLASH", "ban_3_synthesis", 3000, 1200),
         "13:00": ("TASK-1300-T2RADAR", "ban_4_risk", 3500, 1200),
+        "13:30": ("TASK-1330-PREP14H", "ban_7_specialist", 4000, 1500),
         "14:00": ("TASK-1400-GOLDENHOUR", "ban_7_specialist", 4500, 1600),
+        "14:05": ("TASK-1405-GOLDENSTRIKE", "ban_8_cio", 5000, 1800),
+        "14:20": ("TASK-1420-PREATCPLAN", "ban_8_cio", 4500, 1600),
         "14:25": ("TASK-1425-GUARD03", "ban_4_risk", 2000, 800),
         "15:15": ("TASK-1515-WALKFORWARD", "ban_5_learning", 5000, 2000),
+        "15:45": ("TASK-1545-EOD-DIGEST", "ban_8_cio", 6000, 2200),
         "18:00": ("TASK-1800-BCTCLIBRARY", "ban_10_hien", 4000, 1500),
+        "20:30": ("TASK-2030-FULLBCTC145", "ban_10_hien", 7500, 3000),
         "21:00": ("TASK-2100-HIENBCTC", "ban_10_hien", 6500, 2500),
         "21:15": ("TASK-2115-KHANHVIDEO", "ban_11_khanh", 7500, 3200),
         "22:00": ("TASK-2200-EVOLUTION", "ban_5_learning", 4500, 1800),
@@ -500,11 +507,14 @@ def execute_milestone(milestone_id: str) -> bool:
             _dispatch("james_hq", msg)
 
         # ==============================================================================
-        # 18. 23:30 - BAN 12 TRỌNG: PHIÊN KIỂM SÁT THỂ CHẾ, KỶ LUẬT & TOÀN VẸN HỆ THỐNG
+        # 18. 23:30 - BAN 12 TRỌNG: PHIÊN KIỂM SÁT THỂ CHẾ, 12 CỔNG V7.0 & TOÀN VẸN HỆ THỐNG
         # ==============================================================================
         elif milestone_id == "23:30":
+            _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=90)
+            _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
             _run_py_script("scripts/apex_inspector_trong.py", args=["--run-23h30-audit"], timeout=180)
-            log_event("[+] Đã thực thi phiên kiểm sát thể chế 23h30 của Ban 12 Trọng.")
+            _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+            log_event("[+] Đã thực thi phiên kiểm sát thể chế 23h30 & 12 Cổng V7.0 của Ban 12 Trọng.")
 
         # ==============================================================================
         # 3. 07:30 - BAN 6: CHẠY ENGINE BẢN TIN KHAI SÁNG BUỔI SÁNG GỬI CHỦ TỊCH
@@ -735,44 +745,54 @@ def execute_milestone(milestone_id: str) -> bool:
             _dispatch("morning_blotter", msg)
 
         # ==============================================================================
+        # 11b. 13:30 - MINH QUÂN & JAMES: NGHIÊN CỨU CHUẨN BỊ CHO KHUNG 14H00
+        # ==============================================================================
+        elif milestone_id == "13:30":
+            _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=60)
+            _run_py_script("scripts/apex_brain_v4_profit_engine.py", timeout=90)
+            _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+            _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
+            log_event("[+] Hoàn tất phiên chuẩn bị 13:30 trước Giờ Vàng 14:00.")
+
+        # ==============================================================================
+        # 11c. 14:05 & 14:20 - KHUNG GIỜ VÀNG & CHỐT KẾ HOẠCH TRƯỚC ATC
+        # ==============================================================================
+        elif milestone_id in ("14:05", "14:20"):
+            _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=60)
+            _run_py_script("scripts/apex_daily_live_warroom_engine.py", args=["--once"], timeout=90)
+            _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+            _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
+            log_event(f"[+] Hoàn tất đồng bộ Khung Vàng {milestone_id}.")
+
+        # ==============================================================================
         # 12. 15:15 - BAN 5 & BAN 8: HỒI TỐ WALK-FORWARD, TỰ HỌC THÍCH NGHI & PHÚC TRA EOD
         # ==============================================================================
         elif milestone_id == "15:15":
-            # 12.1 Cập nhật giá đóng cửa mới nhất từ Sentinel
             _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=45)
-            # 12.2 Chạy động cơ tự học & hồi tố Walk-Forward TTCK Việt Nam (Ban 5 VN)
             _run_py_script("VN_Market/scripts/vn_performance_learning.py", timeout=60)
-            # 12.3 Chạy động cơ tự học & hồi tố Quốc tế (Ban 5 Global)
             _run_py_script("scripts/performance_learning_engine.py", timeout=60)
-            # 12.4 Chạy động cơ Kiểm toán Phúc tra Cuối ngày & Tự động ghi lỗi vào Sổ tay Tiến hóa (Ban 8 Master CIO)
             eod_args = ["--date", date_str]
             if not DRY_RUN_MODE:
                 eod_args.append("--force")
             _run_py_script("scripts/eod_master_audit_engine.py", args=eod_args, timeout=60)
+            _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+            _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
 
-            # Master CIO James: Tuần tra TCBS Phiên Chiều & Khóa Lãi/Lỗ Cuối Ngày
-            try:
-                from scripts.tcinvest_vault_watcher import TCBSVaultWatcher
-                watcher = TCBSVaultWatcher()
-                watcher.run_session_patrol_audit(session_name="afternoon", dispatch_telegram=(not DRY_RUN_MODE))
-            except Exception as e:
-                log_event(f"[!] Warning James afternoon patrol: {e}")
-
-            snap = _get_live_portfolio_snapshot()
-            ps_1515 = _format_portfolio_summary(snap)
-            vn_learn = load_json_safe(BASE_DIR / "VN_Market" / "05_Learning_And_Evolution" / "vn_learning_telemetry.json")
-            hit_rate = vn_learn.get("overall_hit_rate_pct", 35.3)
-
-            msg = (
-                "🏛️ *[BAN 5 & BAN 8 — BÁO CÁO HỒI TỐ WALK-FORWARD, TỰ HỌC & PHÚC TRA CUỐI NGÀY]*\n"
-                f"📅 Phiên giao dịch: `{date_str}` | Tài khoản: `105C307855`\n"
-                f"• SSOT kết phiên: Tổng NAV `{ps_1515['nav_str']}` | Tiền mặt `{ps_1515['cash_str']}`.\n"
-                f"{ps_1515['tg_positions']}\n"
-                f"• Walk-Forward Market Hit Rate: `{hit_rate:.1f}%` — Đã cập nhật trọng số `adaptive_weights_vn.json` và ghi biên bản sửa đổi thực chất vào Nhật ký Tiến hóa.\n"
-                f"📁 Báo cáo Tự học: `VN_Market/05_Learning_And_Evolution/{date_str}_VN_Learning_Report.md`\n"
-                f"📁 Biên bản Phúc tra EOD: `08_Master_Investment_CIO/eod_audit_logs/{date_str}_EOD_Master_Correction_Memo.md`"
-            )
-            _dispatch("academy_learning", msg)
+        # ==============================================================================
+        # 12b. 15:45 - TỔNG KẾT EOD DUY NHẤT (SCBP + TRỌNG 12 CỔNG + 1 BẢN TELEGRAM DIGEST)
+        # ==============================================================================
+        elif milestone_id == "15:45":
+            _run_py_script("scripts/apex_daily_live_warroom_engine.py", args=["--once"], timeout=90)
+            _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=60)
+            _run_py_script("scripts/apex_brain_v4_profit_engine.py", timeout=90)
+            _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
+            _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+            _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
+            if not DRY_RUN_MODE:
+                try:
+                    send_single_eod_digest()
+                except Exception as _e_dig:
+                    log_event(f"[!] Warning send_single_eod_digest 15:45: {_e_dig}")
 
         # ==============================================================================
         # 13. 18:00 - BAN 10 (HIỀN): CHẠY ENGINE CẬP NHẬT THƯ VIỆN BCTC MASTER SAU PHIÊN
@@ -792,13 +812,16 @@ def execute_milestone(milestone_id: str) -> bool:
             )
             write_md_safe(library_file, lib_content)
 
-            msg = (
-                "📡 *[BAN 10 — HIỀN: XUẤT BẢN THƯ VIỆN BCTC MASTER SAU PHIÊN]*\n"
-                f"• Đã chạy `bctc_ir_filing_scout.py` cập nhật dữ liệu đóng cửa & BCTC của `{count_ir}` siêu cổ phiếu đầu ngành.\n"
-                "• Đối soát dòng tiền thật `OCF/LNST`, chỉ số nợ vay và tiến độ dự án mới.\n"
-                "👉 Chuẩn bị dữ liệu cho Báo cáo Rà Soát Độc Quyền lúc 21h00 tối!"
-            )
-            _dispatch("radar_filings", msg)
+        # ==============================================================================
+        # 13b. 20:30 - HIỀN & JAMES: CÀO FULL 145/145 BCTC + OHLCV + INTERNET INTEL + BRAIN V4
+        # ==============================================================================
+        elif milestone_id == "20:30":
+            _run_py_script("scripts/apex_real_bctc_crawler.py", args=["--full-universe"], timeout=180)
+            _run_py_script("VN_Market/scripts/vn_full_market_scanner.py", timeout=120)
+            _run_py_script("scripts/apex_daily_internet_intel_crawler.py", timeout=120)
+            _run_py_script("scripts/apex_brain_v4_profit_engine.py", timeout=120)
+            _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+            _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
 
         # ==============================================================================
         # 14. 21:00 - BAN 10 (HIỀN): BÁO CÁO ĐỘC QUYỀN BCTC & KQKD TIỀN THẬT OCF

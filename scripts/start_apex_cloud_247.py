@@ -903,6 +903,74 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
 
+        elif path == "/api/briefing/canonical":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                scbp_file = BASE_DIR / "data" / "canonical_executive_briefing.json"
+                if (not scbp_file.exists()) or query.get("refresh", ["0"])[0] == "1":
+                    from scripts.apex_unified_briefing_builder import build_canonical_executive_briefing
+                    payload = build_canonical_executive_briefing()
+                else:
+                    payload = json.loads(scbp_file.read_text(encoding="utf-8-sig"))
+                self.wfile.write(json.dumps({"ok": True, **payload}, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                log_sup(f"[API /api/briefing/canonical Error] {e}")
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/system/health_v7":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                def _rj(rel):
+                    fp = BASE_DIR / rel
+                    return json.loads(fp.read_text(encoding="utf-8-sig")) if fp.exists() else {}
+                scbp = _rj("data/canonical_executive_briefing.json")
+                trong = _rj("data/trong_12gates_audit.json")
+                cal = _rj("data/apex_empirical_calibration.json")
+                sidecars_dir = Path.home() / ".gemini" / "config" / "sidecars"
+                apex_sidecars = sorted([p.name for p in sidecars_dir.glob("apex-daily-*") if (p / "sidecar.json").exists()]) if sidecars_dir.exists() else []
+                payload = {
+                    "ok": True,
+                    "version": "V7.0",
+                    "scbp_sha256": scbp.get("sha256_seal", ""),
+                    "freshness_sla": scbp.get("freshness_sla", {}),
+                    "trong_12_gates": {
+                        "passed_count": trong.get("passed_count", 0),
+                        "total_gates": trong.get("total_gates", 12),
+                        "status": trong.get("status", "PENDING"),
+                    },
+                    "brain_v4_backtest": cal.get("apex_v4_sector_alpha", {}),
+                    "automations_registered": len(apex_sidecars),
+                    "automation_names": apex_sidecars,
+                }
+                self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                log_sup(f"[API /api/system/health_v7 Error] {e}")
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif path == "/api/office/telegram_controls":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_virtual_office_engine import get_telegram_room_controls
+                self.wfile.write(json.dumps({"ok": True, "controls": get_telegram_room_controls()}, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                log_sup(f"[API GET /api/office/telegram_controls Error] {e}")
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
         elif path in ("/api/office/assets/office.css", "/api/office/assets/office.js"):
             fname = "office.css" if path.endswith(".css") else "office.js"
             ctype = "text/css; charset=utf-8" if fname.endswith(".css") else "application/javascript; charset=utf-8"
@@ -1414,6 +1482,33 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
             except Exception as e:
                 self.send_response(500)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+        elif parsed_url.path == "/api/office/telegram_controls":
+            try:
+                content_length = int(self.headers.get("Content-Length", 0))
+                raw_body = self.rfile.read(content_length).decode("utf-8") if content_length > 0 else "{}"
+                req_data = json.loads(raw_body) if raw_body.strip() else {}
+            except Exception:
+                req_data = {}
+            try:
+                from scripts.apex_virtual_office_engine import update_telegram_room_control
+                room_id = str(req_data.get("room_id") or "").strip()
+                muted = bool(req_data.get("muted", False))
+                res = update_telegram_room_control(room_id=room_id, muted=muted)
+                status_code = 200 if res.get("ok") else 400
+                self.send_response(status_code)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                log_sup(f"[API POST /api/office/telegram_controls Error] {e}")
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return

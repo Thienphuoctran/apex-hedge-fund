@@ -502,6 +502,7 @@ def fetch_vn_market_indices_live(ttl_seconds: int = 4) -> Dict[str, Any]:
     độ rộng Tăng/Giảm, khối ngoại VN30 ròng và Volume Pace Ratio 100% LIVE.
     """
     now_ts = time.time()
+    t0_feed = time.perf_counter()
     with _CACHE_LOCK:
         if _MARKET_CACHE["data"] is not None and (now_ts - _MARKET_CACHE["ts"] < ttl_seconds):
             return _MARKET_CACHE["data"]
@@ -695,7 +696,14 @@ def fetch_vn_market_indices_live(ttl_seconds: int = 4) -> Dict[str, Any]:
                 "unchanged": unc,
                 "advance_ratio_pct": adv_ratio,
                 "sentiment": sent_lbl,
-            }
+            },
+            "feed_telemetry": {
+                "source": "VPS_BGAPIDATAFEED_LIVE" if vni["value"] > 0 else "HISTDATA_OFFLINE_FALLBACK",
+                "latency_ms": round((time.perf_counter() - t0_feed) * 1000.0, 1),
+                "fetched_at_ict": now_ict.strftime("%Y-%m-%d %H:%M:%S"),
+                "exchange_time": vni.get("time", ""),
+                "is_live": vni["value"] > 0,
+            },
         }
     except Exception as e:
         print(f"[!] Lỗi tải chỉ số thị trường VN live: {e}")

@@ -215,10 +215,11 @@ def diagnose_autonomous_regime_v3(
         regime_id = "BEAR_WITH_SPRING_WATCH"
         max_exp_pct = 0.0
         max_pos = 2
+        as_of_d = vni_bars[-1]["date"]
         verdict_vn = (
-            f"PHÒNG THỦ TIỀN MẶT KÈM CẢNH GIÁC ĐÁNH ÚP SPRING: Phiên 20/11 đã rút chân mạnh "
+            f"PHÒNG THỦ TIỀN MẶT KÈM CẢNH GIÁC ĐÁNH ÚP SPRING: Phiên {as_of_d} rút chân mạnh "
             f"(CloseInRange={vni_candle['close_in_range_pct']}%, Br20={br20}%, Vol={vni_candle['vol_vs_vol20']}x vs chuẩn 1.05x). "
-            f"Giữ 100% Cash sáng Thứ Hai 23/11; SẴN SÀNG KÍCH HOẠT ĐÁNH CƯỢC BẤT ĐỐI XỨNG 30–40% NAV lúc 14h05–14h25 nếu giữ >= 1,678 & Buy-Up >= 58%!"
+            f"Giữ tiền mặt kỷ luật phiên sáng; chỉ kích hoạt giải ngân có chọn lọc lúc 14h05–14h25 khi giữ nền & Buy-Up >= 58%!"
         )
     elif 1680.0 <= vni < vni_ma20 and 30.0 <= br20 <= 50.0:
         regime_id = "SIDEWAYS_ROTATION"
@@ -275,7 +276,7 @@ def diagnose_autonomous_regime_v3(
             "spillover_mult": spill.get("risk_multiplier", 1.0),
         },
         "re_entry_checklist": [
-            f"Điều kiện đánh úp Spring Thứ Hai 23/11 (30–40% NAV): VNI giữ >= 1,678 và chiều 14h05–14h25 có Vol >= 1.05x MA20, Buy-Up >= 58%, Br20 >= 24%",
+            f"Điều kiện Spring chọn lọc (30–40% NAV): VNI giữ nền hồi phục và chiều 14h05–14h25 có Vol >= 1.05x MA20, Buy-Up >= 58%, Br20 >= 24%",
             f"Điều kiện Uptrend Chủ lực S1 (75–85% NAV): VNI > MA20 ({vni_ma20:.1f}) & > MA50 ({vni_ma50:.1f}), Br20 >= 52%, Br50 >= 50%, DistDays <= 4 (hiện: {dist_days})",
         ],
     }
@@ -291,6 +292,7 @@ def _build_chairman_challenges(
     v2 = cal.get("apex_v2_regime_gated") or {}
     v3 = cal.get("apex_v3_asymmetric_conviction") or {}
     vni = regime_diag["vnindex_close"]
+    as_of_d = regime_diag["as_of_date"]
     candle = regime_diag["vni_candle_structure"]
     br20 = regime_diag["breadth_above_ma20_pct"]
 
@@ -301,34 +303,33 @@ def _build_chairman_challenges(
             "stance": "PHẢN BIỆN SỰ QUÁ THẬN TRỌNG (KÊU GỌI QUYẾT ĐOÁN CÓ TÍNH TOÁN KHI CÓ ĐIỂM UỐN)",
             "thesis": (
                 f"Nếu hệ thống V2 giữ 100% Tiền mặt suốt {v2.get('pct_weeks_in_cash_defensive', 62.8)}% số tuần, ta an toàn nhưng dễ lỡ các con sóng bật đầu tiên. "
-                f"Phiên Thứ Sáu 20/11, VN-Index đạp về {regime_diag['vnindex_low']:,.2f} rồi kéo rút chân đóng đúng đỉnh phiên {vni:,.2f} (CloseInRange = {candle['close_in_range_pct']}%, Br20 = {br20}%). "
-                f"Backtest 2 năm chứng minh chiến thuật V3 (chỉ thêm kèo Spring khi Br 24–45%, Vol >= 1.05x & RS >= 78 với Stop -5.5%) nâng lãi thực lên {v3.get('total_return_pct', 13.0):+.2f}% "
-                f"(Sharpe {v3.get('sharpe_ratio', 0.73)}, WinRate {v3.get('win_rate_pct', 57.9)}%) mà MaxDD vẫn khóa cứng ở {v3.get('max_drawdown_pct', -9.9)}%!"
+                f"Phiên {as_of_d}, VN-Index thấp nhất {regime_diag['vnindex_low']:,.2f} và đóng tại {vni:,.2f} (CloseInRange = {candle['close_in_range_pct']}%, Br20 = {br20}%). "
+                f"Backtest 2 năm chứng minh chiến thuật mở rộng có chọn lọc kiểm soát MaxDD và cải thiện hiệu suất."
             ),
-            "action_mandate": f"Chiều Thứ Hai 23/11 (14h05–14h25), nếu VNI giữ >= 1,678 và dòng tiền chủ động xác nhận (Buy-Up >= 58%, Vol tăng), James CHỦ ĐỘNG BẤM CÒ đánh cược 30–40% NAV vào {top_names} thay vì ngồi nhìn."
+            "action_mandate": f"Khung 14h05–14h25, nếu VNI giữ nền & dòng tiền chủ động xác nhận (Buy-Up >= 58%, Vol tăng), CHỦ ĐỘNG BẤM CÒ chọn lọc vào {top_names}."
         },
         {
             "challenge_id": "CHAL_02_VETO_TIKTOK_RECKLESS_BETS",
-            "stance": "PHẢN BIỆN TƯ DUY ĐÁNH CƯỢC MÙ QUÁNG VÀO MÃ RẺ THỊ GIÁ (VIX, CII, CEO, BAF)",
+            "stance": "PHẢN BIỆN TƯ DUY ĐÁNH CƯỢC MÙ QUÁNG VÀO MÃ RẺ THỊ GIÁ",
             "thesis": (
-                f"Mạo hiểm KHÔNG đồng nghĩa với nhắm mắt bắt đáy cổ phiếu lỗ dòng tiền. Dữ liệu Backtest chứng minh chiến lược giữ hàng bất chấp bối cảnh ({base.get('total_return_pct', -22.08):+.2f}%, MaxDD {base.get('max_drawdown_pct', -34.3)}%) "
-                f"hay bắt đáy khi Breadth < 24% và hàng yếu (-4.38% đến -10.61% trong kiểm thử) đều đốt vốn."
+                f"Mạo hiểm KHÔNG đồng nghĩa với nhắm mắt bắt đáy cổ phiếu lỗ dòng tiền. Dữ liệu Backtest chứng minh chiến lược giữ hàng bất chấp bối cảnh ({base.get('total_return_pct', -7.5):+.2f}%, MaxDD {base.get('max_drawdown_pct', -25.3)}%) "
+                f"đều đốt vốn."
             ),
-            "action_mandate": "CẤM TUYỆT ĐỐI giải ngân vào mã F-Score < 6, OCF âm hay gãy dưới MA200 (BAF, VIX, CII, CEO). Mọi kèo mạo hiểm chỉ thực hiện trên mã dẫn dắt BCTC sạch Q3/2026."
+            "action_mandate": "CẤM TUYỆT ĐỐI giải ngân vào mã F-Score < 6, OCF âm hay gãy dưới MA200. Mọi kèo chỉ thực hiện trên mã dẫn dắt BCTC sạch Q3."
         },
         {
             "challenge_id": "CHAL_03_MORNING_TRAP_GUARDRAIL",
-            "stance": "PHẢN BIỆN TÂM LÝ NÔN NÓNG MUA SÁNG THỨ HAI (ANTI-FOMO ATO/10H00)",
+            "stance": "PHẢN BIỆN TÂM LÝ NÔN NÓNG MUA SÁNG (ANTI-FOMO ATO/10H00)",
             "thesis": (
-                "Cú kéo cuối phiên Thứ Sáu 20/11 thường tạo tâm lý hưng phấn giả đầu sáng Thứ Hai, trong khi dư nợ Margin toàn sàn cuối Q3/2026 đang gần 460 nghìn tỷ đồng (lãi suất 13–16%) sẵn sàng xả giải chấp khi cầu yếu."
+                "Cú kéo cuối phiên thường tạo tâm lý hưng phấn giả đầu sáng hôm sau khi nguồn cung T+2.5 & dư nợ Margin vẫn có thể chốt lời."
             ),
-            "action_mandate": "Khoá 100% nút Mua trước 14h00 sáng Thứ Hai 23/11. Để thị trường test xong lực cung T+ buổi sáng & đầu giờ chiều, chỉ bấm lệnh LO sau 14h05."
+            "action_mandate": "Khoá 100% nút Mua trước 14h00 sáng. Để thị trường test xong lực cung T+ buổi sáng & đầu giờ chiều, chỉ bấm lệnh LO sau 14h05."
         },
         {
             "challenge_id": "CHAL_04_BEAR_CAPITAL_PRESERVATION",
-            "stance": "SẴN SÀNG ĐỨNG NGOÀI 0% NẾU CÚ RÚT CHÂN THỨ SÁU CHỈ LÀ BULL-TRAP",
-            "thesis": "Tín hiệu 20/11 có Vol/Vol20 mới đạt 0.95x (chưa đủ 1.05x xác nhận đồng thuận tuyệt đối) và VNI (1,688.79) vẫn nằm dưới MA20 (1,730.89) & MA50 (1,748.05).",
-            "action_mandate": "Nếu chiều Thứ Hai 23/11 VNI xuyên lại mốc 1,666 hoặc Buy-Up < 48%, tự động kích hoạt lá chắn S4: GIỮ NGUYÊN 100% TIỀN MẶT (20.05M ₫) bảo toàn 0 ₫ thua lỗ."
+            "stance": "SẴN SÀNG PHÒNG THỦ NẾU CÚ RÚT CHÂN CHỈ LÀ BULL-TRAP",
+            "thesis": f"VNI ({vni:,.2f}) vẫn cần kiểm chứng lại MA20 ({regime_diag['vnindex_ma20']:,.1f}) & MA50 ({regime_diag['vnindex_ma50']:,.1f}).",
+            "action_mandate": "Nếu chiều Buy-Up < 48% hoặc gãy nền, tự động kích hoạt lá chắn S4 giữ tiền mặt bảo toàn vốn."
         },
     ]
 
@@ -647,7 +648,7 @@ def run_autonomous_brain_v3(refresh_quotes: bool = False) -> Dict[str, Any]:
             "rs_rating": cand["technical"]["rs_rating"],
             "news_catalyst_score": cand["news_catalyst_intel"]["news_catalyst_score"],
             "latest_headline": cand["news_catalyst_intel"]["latest_headline"],
-            "close_20_11": px,
+            "close_latest": px,
             "limit_entry_vnd": entry_px,
             "shares_lot100": shares,
             "capital_vnd": cap_vnd,
@@ -658,8 +659,8 @@ def run_autonomous_brain_v3(refresh_quotes: bool = False) -> Dict[str, Any]:
             "rr_ratio_tp1": round((tp1_px - entry_px) / max(1.0, entry_px - stop_px), 2),
             "rr_ratio_tp2": round((tp2_px - entry_px) / max(1.0, entry_px - stop_px), 2),
             "max_risk_vnd": max_risk_vnd,
-            "max_nav_risk_pct": max_nav_risk_pct,
-            "trigger_rule": "Chi bam lenh LO khung 14h05–14h25 Thu Hai 23/11 neu VNI >= 1,678, Buy-Up >= 58% & Vol tang",
+            "max_nav_risk_pct": round((max_risk_vnd / max(nav_vnd, 1.0)) * 100.0, 2),
+            "trigger_rule": "Chi bam lenh LO khung 14h05–14h25 neu dat dieu kien Buy-Up >= 58% & qua cong Trong",
         })
 
     challenges = _build_chairman_challenges(regime_diag, cal, clean_20m_watchlist)
@@ -703,7 +704,7 @@ def run_autonomous_brain_v3(refresh_quotes: bool = False) -> Dict[str, Any]:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUT_V3_JSON.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    # Sync backward-compatible V2 output file with live 20/11 EOD metrics & V3 fusion scores
+    # Sync backward-compatible V2 output file with live EOD metrics & V3 fusion scores
     v2_compat = dict(output)
     v2_compat["engine"] = "APEX_QUANT_BRAIN_V2_BACKED_BY_V3_FUSION"
     OUT_V2_COMPAT_JSON.write_text(json.dumps(v2_compat, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -712,13 +713,15 @@ def run_autonomous_brain_v3(refresh_quotes: bool = False) -> Dict[str, Any]:
     CIO_DIR.mkdir(parents=True, exist_ok=True)
     date_str = now_ict.strftime("%Y-%m-%d")
     md_path = CIO_DIR / f"{date_str}_Apex_Autonomous_Brain_V3_Report.md"
+    cash_pct = round((cash_vnd / max(1.0, nav_vnd)) * 100.0, 1)
+    n_hold = len(ssot.get("active_positions") or {})
     lines = [
         f"# [BRAIN V3.0 TỰ CHỦ & ĐÁNH CƯỢC BẤT ĐỐI XỨNG] BÁO CÁO ĐẦU NÃO CHIẾN LƯỢC ({date_str})",
-        f"> **Cập nhật:** `{output['generated_at']}` | **Dữ liệu đóng tuần mới nhất:** `EOD {regime_diag['as_of_date']}` + `506` tin Internet V3.0  ",
-        f"> **Vốn sạch thực tế SSOT:** `{nav_vnd:,.0f} ₫` (`100% Tiền mặt`, `0 CP` đang giữ)",
+        f"> **Cập nhật:** `{output['generated_at']}` | **Dữ liệu mới nhất:** `EOD {regime_diag['as_of_date']}` + Internet Intel",
+        f"> **Tài khoản SSOT:** NAV `{nav_vnd:,.0f} ₫` (`{cash_pct}%` Tiền mặt, `{n_hold}` vị thế đang giữ)",
         "",
-        "## 1. CHẨN ĐOÁN TỰ CHỦ BỞI BỘ NÃO 5 TRẠNG THÁI (BAO GỒM NẾN RÚT CHÂN `20/11`)",
-        f"- **VN-Index đóng tuần `20/11`:** `{regime_diag['vnindex_close']}` (`{regime_diag['vnindex_1d_pct']:+.2f}%` | Thấp nhất: `{regime_diag['vnindex_low']}` -> Rút chân đóng đúng đỉnh: `CloseInRange = {regime_diag['vni_candle_structure']['close_in_range_pct']}%`, `Vol = {regime_diag['vni_candle_structure']['vol_vs_vol20']}x MA20`)",
+        f"## 1. CHẨN ĐOÁN TỰ CHỦ BỞI BỘ NÃO THỊ TRƯỜNG ({regime_diag['as_of_date']})",
+        f"- **VN-Index ({regime_diag['as_of_date']}):** `{regime_diag['vnindex_close']}` (`{regime_diag['vnindex_1d_pct']:+.2f}%` | Thấp nhất: `{regime_diag['vnindex_low']}` -> `CloseInRange = {regime_diag['vni_candle_structure']['close_in_range_pct']}%`, `Vol = {regime_diag['vni_candle_structure']['vol_vs_vol20']}x MA20`)",
         f"- **Hệ thống MA:** MA20 `{regime_diag['vnindex_ma20']}` (`{regime_diag['vni_vs_ma20_pct']:+.2f}%`) | MA50 `{regime_diag['vnindex_ma50']}` (`{regime_diag['vni_vs_ma50_pct']:+.2f}%`) | MA200 `{regime_diag['vnindex_ma200']}`",
         f"- **Độ rộng (`Breadth`):** `> MA20: {regime_diag['breadth_above_ma20_pct']}%` | `> MA50: {regime_diag['breadth_above_ma50_pct']}%` | `DistDays: {regime_diag['distribution_days_20d']}` | Điểm Spring: `{regime_diag['spring_inflection_score']}`",
         f"- **TRẠNG THÁI HIỆN TẠI:** **`{cur_reg}`** — {regime_diag['verdict_vn']}",
@@ -735,8 +738,8 @@ def run_autonomous_brain_v3(refresh_quotes: bool = False) -> Dict[str, Any]:
 
     lines.extend([
         "",
-        "## 4. RỔ TOP 10 DUNG HỢP 6 TRỤ CỘT (BCTC Q3/2026 + TIN TỨC INTERNET + KỸ THUẬT)",
-        "| Hạng | Mã | Điểm V3 | BCTC (F) | Tin News (P) | Giá 20/11 | AvgVal20 | RS | Trạng Thái |",
+        "## 4. RỔ TOP 10 DUNG HỢP 6 TRỤ CỘT (BCTC Q3 + TIN TỨC INTERNET + KỸ THUẬT)",
+        f"| Hạng | Mã | Điểm V3 | BCTC (F) | Tin News (P) | Giá ({regime_diag['as_of_date']}) | AvgVal20 | RS | Trạng Thái |",
         "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |",
     ])
     for idx, x in enumerate(clean_20m_watchlist, 1):

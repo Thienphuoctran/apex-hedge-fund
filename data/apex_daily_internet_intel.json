@@ -1,32 +1,43 @@
 {
-  "engine": "APEX_DAILY_INTERNET_INTEL_CRAWLER_V3",
-  "crawled_at": "2026-11-24 13:31:13",
+  "engine": "APEX_DAILY_INTERNET_INTEL_CRAWLER_V7",
+  "crawled_at": "2026-11-24 20:56:35",
   "crawl_date": "2026-11-24",
-  "elapsed_sec": 20.84,
+  "elapsed_sec": 32.45,
+  "target_tickers_count": 34,
+  "freshness_sla": {
+    "crawled_at_ict": "2026-11-24 20:56:35",
+    "bctc_age_hours": 0.04,
+    "bctc_stocks_count": 145,
+    "latest_ohlcv_bar_date": "2026-11-23",
+    "rss_sources_online": 13,
+    "ir_portals_ok": 11,
+    "sla_status": "HEALTHY"
+  },
   "summary_counts": {
-    "total_news_articles": 505,
-    "corp_vietcap_cafef_articles": 270,
+    "total_news_articles": 521,
+    "corp_vietcap_cafef_articles": 286,
     "rss_articles": 250,
     "rss_sources_online": 13,
-    "tickers_with_live_news": 30,
+    "tickers_with_live_news": 34,
     "verified_ir_portals": 11,
     "tavily_live_hits": 20,
     "sec_edgar_filings": 6,
-    "sqlite_fts_indexed": 505
+    "sqlite_fts_indexed": 521
   },
   "bctc_and_ohlcv_freshness": {
     "vn_bctc_exists": true,
     "us_bctc_exists": true,
-    "vn_crawled_at": "2026-11-24 07:31:29",
-    "vn_age_hours": 6.0,
-    "vn_stocks_count": 80,
+    "vn_crawled_at": "2026-11-24 20:53:59",
+    "vn_age_hours": 0.04,
+    "vn_stocks_count": 145,
     "latest_ohlcv_bar_date": "2026-11-23",
     "vnindex_last_close": 1697.14,
     "us_crawled_at": "2026-11-24 07:31:29",
     "us_stocks_count": 12,
     "is_fresh_under_24h": true,
     "latest_quarter_distribution": {
-      "2026Q3": 80
+      "2026Q3": 144,
+      "2024Q1": 1
     },
     "vnindex_last_date": "2026-11-23"
   },
@@ -34,13 +45,39 @@
     "BAF": {
       "symbol": "BAF",
       "news_count": 9,
-      "avg_sentiment": 0.036,
+      "avg_sentiment": 0.068,
       "positive_count": 2,
       "negative_count": 1,
-      "latest_headline": "BAF: Cổ phiếu ưu đãi nhưng người lao động ngại mua, vì sao?",
-      "latest_date": "2026-11-12 04:05:00",
+      "latest_headline": "BAF: BAF khởi động dự án chế biến thực phẩm quy mô gần 1.3 ngàn tỷ",
+      "latest_date": "2026-11-24 17:15:00",
       "errors": [],
       "top_items": [
+        {
+          "symbol": "BAF",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Vietstock",
+          "title": "BAF: BAF khởi động dự án chế biến thực phẩm quy mô gần 1.3 ngàn tỷ",
+          "summary": "Theo thông tin công bố, gần 1 tháng sau khi nhận giấy chứng nhận đăng ký đầu tư, Công ty TNHH Chế biến thực phẩm BAF Bình Định - công ty con của CTCP Nông nghiệp BAF Việt Nam (HOSE: BAF) chính thức khởi công Dự án Nhà máy chế biến thực phẩm BAF Gia Lai.",
+          "url": "https://vietstock.vn/2026/11/baf-khoi-dong-du-an-che-bien-thuc-pham-quy-mo-gan-13-ngan-ty-737-1517390.htm",
+          "published_at": "2026-11-24 17:15:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.61,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "BAF",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/VietnamFinance",
+          "title": "BAF: 'Rót' hơn 1.200 tỷ đồng vào dự án nhà máy chế biến thực phẩm tại Gia Lai",
+          "summary": "Gia Lai đang trở thành điểm chiến lược hội tụ đầy đủ hệ sinh thái khép kín 3F (Feed – Farm – Food) và Nông nghiệp tuần hoàn của BAF tại khu vực miền Trung – Tây Nguyên, đánh dấu bằng hàng loạt các dự án được đầu tư quy mô lớn, trong đó mới đây nhất là Nhà máy chế biến thực phẩm BAF Gia Lai với vốn đầu tư 1.250 tỷ đồng.",
+          "url": "https://vietnamfinance.vn/baf-rot-hon-1200-ty-dong-vao-du-an-nha-may-che-bien-thuc-pham-tai-gia-lai-d154158.html",
+          "published_at": "2026-11-24 16:03:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
         {
           "symbol": "BAF",
           "source_channel": "VIETCAP_AI_NEWS",
@@ -79,32 +116,6 @@
           "sentiment_score": 0.0,
           "category": "MA_INSIDER",
           "urgency": "MEDIUM"
-        },
-        {
-          "symbol": "BAF",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/CafeF",
-          "title": "BAF: BAF thành lập liên doanh với tập đoàn lớn thế giới về chăn nuôi gia cầm",
-          "summary": "Công ty Cổ phần Nông nghiệp BAF Việt Nam (BAF) chính thức ký kết hợp tác thành lập liên doanh cùng Tập đoàn HKY (Shandong Hekangyuan - Trung Quốc); triển khai chuỗi dự án chăn nuôi gia cầm thương phẩm, sản xuất con giống, ấp trứng và giết mổ theo mô hình công nghệ cao dựa trên định hướng phát triển chuỗi giá trị và khả",
-          "url": "https://cafef.vn/baf-thanh-lap-lien-doanh-voi-tap-doan-lon-the-gioi-ve-chan-nuoi-gia-cam-188261103210442797.chn",
-          "published_at": "2026-11-03 21:04:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.45,
-          "category": "MARKET_GENERAL",
-          "urgency": "NORMAL"
-        },
-        {
-          "symbol": "BAF",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Nhà đầu tư",
-          "title": "BAF: Tăng trưởng 'lệch pha' trong cuộc đua mở rộng chuỗi chăn nuôi",
-          "summary": "BAF ghi nhận doanh thu tăng trưởng mạnh trong 9 tháng đầu năm, nhưng lợi nhuận giảm 9% do chi phí gia tăng trong quá trình mở rộng hệ thống trang trại và chuỗi chăn nuôi.",
-          "url": "https://nhadautu.vn/baf-tang-truong-lech-pha-trong-cuoc-dua-mo-rong-chuoi-chan-nuoi-d108497.html",
-          "published_at": "2026-11-01 08:05:00",
-          "sentiment_label": "Neutral",
-          "sentiment_score": 0.32,
-          "category": "BCTC_EARNINGS",
-          "urgency": "HIGH"
         }
       ]
     },
@@ -493,80 +504,146 @@
         }
       ]
     },
-    "DGC": {
-      "symbol": "DGC",
+    "CTS": {
+      "symbol": "CTS",
       "news_count": 9,
-      "avg_sentiment": -0.091,
-      "positive_count": 2,
-      "negative_count": 4,
-      "latest_headline": "DGC: Hóa chất Đức Giang (DGC) bất ngờ báo lãi công ty mẹ tăng hơn 800%, hé lộ khoản thu 2.000 tỷ đồng",
-      "latest_date": "2026-11-01 11:13:00",
+      "avg_sentiment": 0.181,
+      "positive_count": 4,
+      "negative_count": 1,
+      "latest_headline": "CTS: BRAVO và Chứng khoán VietinBank: Hành trình hợp tác chuyển đổi số, hoàn thiện nền tảng quản trị doanh nghiệp",
+      "latest_date": "2026-10-28 09:41:00",
       "errors": [],
       "top_items": [
         {
-          "symbol": "DGC",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Người quan sát",
-          "title": "DGC: Hóa chất Đức Giang (DGC) bất ngờ báo lãi công ty mẹ tăng hơn 800%, hé lộ khoản thu 2.000 tỷ đồng",
-          "summary": "Trong quý III/2026, công ty mẹ ghi nhận khoản lợi nhuận 2.000 tỷ đồng từ một đơn vị thành viên trong tập đoàn, cao gấp hơn 15 lần cùng kỳ.",
-          "url": "https://nguoiquansat.vn/hoa-chat-duc-giang-dgc-bat-ngo-bao-lai-cong-ty-me-tang-hon-800-he-lo-khoan-thu-2-000-ty-dong-325448.html",
-          "published_at": "2026-11-01 11:13:00",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.45,
-          "category": "BCTC_EARNINGS",
-          "urgency": "HIGH"
-        },
-        {
-          "symbol": "DGC",
+          "symbol": "CTS",
           "source_channel": "VIETCAP_AI_NEWS",
           "source_name": "Vietcap/Nhà đầu tư",
-          "title": "DGC: Hóa Chất Đức Giang giữ nhịp xuất khẩu, lợi nhuận dần hồi phục",
-          "summary": "Lợi nhuận quý III của Hóa chất Đức Giang cải thiện so với quý trước nhưng vẫn thấp hơn đáng kể so với cùng kỳ. Xuất khẩu giữ được tăng trưởng, trong khi doanh thu nội địa giảm sâu và chi phí nguyên liệu tiếp tục gây sức ép lên biên lợi nhuận.",
-          "url": "https://nhadautu.vn/hoa-chat-duc-giang-giu-nhip-xuat-khau-loi-nhuan-dan-hoi-phuc-d108584.html",
-          "published_at": "2026-10-31 11:01:00",
-          "sentiment_label": "Neutral",
-          "sentiment_score": -0.04,
-          "category": "BCTC_EARNINGS",
-          "urgency": "HIGH"
+          "title": "CTS: BRAVO và Chứng khoán VietinBank: Hành trình hợp tác chuyển đổi số, hoàn thiện nền tảng quản trị doanh nghiệp",
+          "summary": "Trong lĩnh vực chứng khoán, nơi tốc độ xử lý, tính chính xác và khả năng kết nối dữ liệu đóng vai trò quan trọng, chuyển đổi số không chỉ dừng lại ở các hoạt động giao dịch mà còn mở rộng sang công tác quản trị và điều hành doanh nghiệp. Một nền tảng quản trị có khả năng liên thông dữ liệu, chuẩn hóa quy trình và linh ",
+          "url": "https://nhadautu.vn/bravo-va-chung-khoan-vietinbank-hanh-trinh-hop-tac-chuyen-doi-so-hoan-thien-nen-tang-quan-tri-doanh-nghiep-d108505.html",
+          "published_at": "2026-10-28 09:41:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.61,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
         },
         {
-          "symbol": "DGC",
+          "symbol": "CTS",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/VietnamFinance",
+          "title": "CTS: Tự doanh 'hụt hơi', Chứng khoán VietinBank báo lãi quý III giảm 98%",
+          "summary": "Kết quả kinh doanh của Chứng khoán VietinBank lao dốc trong bối cảnh nguồn thu từ hoạt động tự doanh và môi giới sụt giảm, trong khi chi phí lãi vay tăng mạnh.",
+          "url": "https://vietnamfinance.vn/tu-doanh-hut-hoi-chung-khoan-vietinbank-bao-lai-quy-iii-giam-98-d152596.html",
+          "published_at": "2026-10-24 10:11:00",
+          "sentiment_label": "Negative",
+          "sentiment_score": -0.65,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "CTS",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Nhà đầu tư",
+          "title": "CTS: VBSE ký kết hợp tác với Manulife Investments phân phối chứng chỉ quỹ mở",
+          "summary": "Ngày 16/10/2026, Công ty Cổ phần Chứng khoán VietinBank (VBSE, HoSE: CTS) và Công ty TNHH Quản lý Quỹ Manulife Investment (Việt Nam) (Manulife Investments (Vietnam)) chính thức ký kết hợp tác phân phối chứng chỉ quỹ mở Manulife, mở rộng lựa chọn đầu tư cho khách hàng thông qua hệ thống giao dịch của VBSE.",
+          "url": "https://nhadautu.vn/vbse-ky-ket-hop-tac-voi-manulife-investments-phan-phoi-chung-chi-quy-mo-d108368.html",
+          "published_at": "2026-10-20 09:41:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.61,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "CTS",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Nhà đầu tư",
+          "title": "CTS: VBSE chính thức đưa Chi nhánh Hà Nội đi vào hoạt động từ ngày 30/9/2026",
+          "summary": "Công ty Cổ phần Chứng khoán VietinBank (VBSE, HoSE: CTS) chính thức đưa Chi nhánh Hà Nội đi vào hoạt động từ ngày 30/9/2026, đánh dấu bước mở rộng mạng lưới và tăng cường khả năng phục vụ nhà đầu tư tại khu vực Thủ đô và các tỉnh, thành phố phía Bắc.",
+          "url": "https://nhadautu.vn/vbse-chinh-thuc-dua-chi-nhanh-ha-noi-di-vao-hoat-dong-tu-ngay-30-9-2026-d107973.html",
+          "published_at": "2026-09-30 11:24:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.61,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "CTS",
           "source_channel": "VIETCAP_AI_NEWS",
           "source_name": "Vietcap/FireAnt",
-          "title": "DGC: Hóa chất Đức Giang báo lãi 9 tháng giảm gần một nửa",
-          "summary": "Khai trường 25 tạm dừng hoạt động để phục vụ điều tra khiến Hóa chất Đức Giang phải sử dụng quặng nhập khẩu và mua ngoài, gia tăng áp lực lên giá vốn của công ty trong quý 3/2026.",
-          "url": "https://fireant.vn/bai-viet/dgc-hoa-chat-duc-giang-bao-lai-9-thang-giam-gan-mot-nua/42560140",
-          "published_at": "2026-10-30 15:09:00",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.45,
+          "title": "CTS: Chứng khoán VietinBank (VBSE) đồng hành cùng IR Awards 2026",
+          "summary": "Năm 2026 đánh dấu lần thứ 9 liên tiếp CTCP Chứng khoán VietinBank (HoSE: CTS, VBSE) tham gia Hội đồng bình chọn IR Awards, đồng hành cùng một trong những giải thưởng uy tín về hoạt động Quan hệ Nhà đầu tư (IR) tại Việt Nam.",
+          "url": "https://fireant.vn/bai-viet/cts-chung-khoan-vietinbank-vbse-dong-hanh-cung-ir-awards-2026/42008819",
+          "published_at": "2026-09-29 18:34:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        }
+      ]
+    },
+    "DGC": {
+      "symbol": "DGC",
+      "news_count": 4,
+      "avg_sentiment": -0.01,
+      "positive_count": 1,
+      "negative_count": 1,
+      "latest_headline": "Hóa chất Đức Giang (DGC) có quý thứ 2 liên tiếp lợi nhuận tăng trưởng so với quý trước",
+      "latest_date": "30/10/2026 07:49",
+      "errors": [
+        "Vietcap:The read operation timed out"
+      ],
+      "top_items": [
+        {
+          "symbol": "DGC",
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Hóa chất Đức Giang (DGC) có quý thứ 2 liên tiếp lợi nhuận tăng trưởng so với quý trước",
+          "summary": "[DGC - CafeF Doanh nghiệp @ 30/10/2026 07:49] Hóa chất Đức Giang (DGC) có quý thứ 2 liên tiếp lợi nhuận tăng trưởng so với quý trước",
+          "url": "https://cafef.vn/hoa-chat-duc-giang-dgc-co-quy-thu-2-lien-tiep-loi-nhuan-tang-truong-so-voi-quy-truoc-188261030074930184.chn?utm_source=du-lieu.chn",
+          "published_at": "30/10/2026 07:49",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.16,
           "category": "BCTC_EARNINGS",
           "urgency": "HIGH"
         },
         {
           "symbol": "DGC",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Người quan sát",
-          "title": "DGC: Sau biến số nguồn cung từ Trung Quốc, Hóa chất Đức Giang (DGC) dồn lực cho 'át chủ bài' 12.000 tỷ đồng",
-          "summary": "Sau thời gian chậm tiến độ vì vướng nguồn cung thiết bị từ Trung Quốc, dự án Nghi Sơn đang được Hóa chất Đức Giang (DGC) tăng tốc triển khai, hướng tới vận hành thương mại từ quý I/2027.",
-          "url": "https://nguoiquansat.vn/sau-bien-so-nguon-cung-tu-trung-quoc-hoa-chat-duc-giang-dgc-don-luc-cho-at-chu-bai-12-000-ty-dong-324961.html",
-          "published_at": "2026-10-29 17:06:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.45,
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "DGC: Công văn công bố BCTC quý 3/2026 và giải trình",
+          "summary": "[DGC - CafeF Doanh nghiệp @ 29/10/2026 17:02] DGC: Công văn công bố BCTC quý 3/2026 và giải trình",
+          "url": "https://cafef.vn/du-lieu/DGC-3009791/dgc-cong-van-cong-bo-bctc-quy-32026-va-giai-trinh.chn?utm_source=du-lieu.chn",
+          "published_at": "29/10/2026 17:02",
+          "sentiment_label": "Negative",
+          "sentiment_score": -0.2,
+          "category": "BCTC_EARNINGS",
+          "urgency": "HIGH"
+        },
+        {
+          "symbol": "DGC",
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "DGC: Nghị quyết HĐQT thông qua nội dung đề nghị điều chinh Chủ trương đầu tư và Giấy chứng nhận đăng ký đầu tư “Dự án số 1, Tổ hợp Hóa chất Đức Giang Nghi Sơn\"",
+          "summary": "[DGC - CafeF Doanh nghiệp @ 15/10/2026 00:00] DGC: Nghị quyết HĐQT thông qua nội dung đề nghị điều chinh Chủ trương đầu tư và Giấy chứng nhận đăng ký đầu tư “Dự án số 1, Tổ hợp Hóa chất Đức Giang Nghi Sơn\"",
+          "url": "https://cafef.vn/du-lieu/DGC-2998794/dgc-nghi-quyet-hdqt-thong-qua-noi-dung-de-nghi-dieu-chinh-chu-truong-dau-tu-va-giay-chung-nhan-dang-ky-dau-tu-du-an-so-1-to-hop-hoa-chat-duc-giang-nghi-son.chn?utm_source=du-lieu.chn",
+          "published_at": "15/10/2026 00:00",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
           "category": "MARKET_GENERAL",
           "urgency": "NORMAL"
         },
         {
           "symbol": "DGC",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Tin nhanh chứng khoán",
-          "title": "DGC: Hoá chất Đức Giang (DGC): Lợi nhuận sau thuế 9 tháng giảm 45,9% khi khai trường 25 vẫn dừng hoạt động",
-          "summary": "CTCP Tập đoàn Hoá chất Đức Giang (mã DGC – sàn HOSE) ghi nhận lãi sau thuế 506,68 tỷ đồng trong quý III/2026, luỹ kế 9 tháng đầu năm 2026 lãi sau thuế 1.369,4 tỷ đồng, giảm 45,9% so với cùng kỳ và hoàn thành 85,6% kế hoạch năm.",
-          "url": "https://www.tinnhanhchungkhoan.vn/hoa-chat-duc-giang-dgc-loi-nhuan-sau-thue-9-thang-giam-459-khi-khai-truong-25-van-dung-hoat-dong-post400420.html",
-          "published_at": "2026-10-29 13:29:00",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.29,
-          "category": "BCTC_EARNINGS",
-          "urgency": "HIGH"
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "DGC: Nghị quyết HĐQT về việc đề cử ứng viên tham gia bầu bổ sung thành viên HĐQT",
+          "summary": "[DGC - CafeF Doanh nghiệp @ 10/09/2026 00:00] DGC: Nghị quyết HĐQT về việc đề cử ứng viên tham gia bầu bổ sung thành viên HĐQT",
+          "url": "https://cafef.vn/du-lieu/DGC-2973430/dgc-nghi-quyet-hdqt-ve-viec-de-cu-ung-vien-tham-gia-bau-bo-sung-thanh-vien-hdqt.chn?utm_source=du-lieu.chn",
+          "published_at": "10/09/2026 00:00",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
         }
       ]
     },
@@ -803,78 +880,67 @@
     },
     "HDG": {
       "symbol": "HDG",
-      "news_count": 9,
-      "avg_sentiment": -0.36,
+      "news_count": 4,
+      "avg_sentiment": -0.2,
       "positive_count": 0,
-      "negative_count": 7,
-      "latest_headline": "HDG: Doanh nhân U80 quê Hà Tĩnh đi xây nhà, làm thủy điện có khối tài sản gần 2.000 tỷ đồng",
-      "latest_date": "2026-11-06 00:05:00",
-      "errors": [],
+      "negative_count": 3,
+      "latest_headline": "HDG: Giải trình biến động KQKD trên BCTC quý 3/2026 so với cùng kỳ năm trước",
+      "latest_date": "02/11/2026 16:57",
+      "errors": [
+        "Vietcap:The read operation timed out"
+      ],
       "top_items": [
         {
           "symbol": "HDG",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/CafeF",
-          "title": "HDG: Doanh nhân U80 quê Hà Tĩnh đi xây nhà, làm thủy điện có khối tài sản gần 2.000 tỷ đồng",
-          "summary": "Ít ai biết rằng, người đặt nền móng cho doanh nghiệp đứng sau những dự án bất động sản lớn tại Hà Nội và TP.HCM lại từng là một sĩ quan quân đội mang quân hàm đại tá.",
-          "url": "https://cafef.vn/doanh-nhan-u80-que-ha-tinh-di-xay-nha-lam-thuy-dien-co-khoi-tai-san-gan-2000-ty-dong-188261105223358594.chn",
-          "published_at": "2026-11-06 00:05:00",
-          "sentiment_label": "Neutral",
-          "sentiment_score": 0.0,
-          "category": "MARKET_GENERAL",
-          "urgency": "NORMAL"
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "HDG: Giải trình biến động KQKD trên BCTC quý 3/2026 so với cùng kỳ năm trước",
+          "summary": "[HDG - CafeF Doanh nghiệp @ 02/11/2026 16:57] HDG: Giải trình biến động KQKD trên BCTC quý 3/2026 so với cùng kỳ năm trước",
+          "url": "https://cafef.vn/du-lieu/HDG-3012734/hdg-giai-trinh-bien-dong-kqkd-tren-bctc-quy-32026-so-voi-cung-ky-nam-truoc.chn?utm_source=du-lieu.chn",
+          "published_at": "02/11/2026 16:57",
+          "sentiment_label": "Negative",
+          "sentiment_score": -0.2,
+          "category": "BCTC_EARNINGS",
+          "urgency": "HIGH"
         },
         {
           "symbol": "HDG",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Vnbusiness",
-          "title": "HDG: Hà Đô đối mặt áp lực kép: Lợi nhuận giảm, dự phòng nợ khó đòi gần 940 tỷ đồng",
-          "summary": "Lợi nhuận sau thuế quý III/2026 của Tập đoàn Hà Đô giảm hơn 32% so với cùng kỳ. Đáng chú ý, khoản dự phòng phải thu khó đòi tăng thêm hơn 352 tỷ đồng sau 9 tháng, trong khi doanh nghiệp vừa bị xử phạt và truy thu thuế hơn 3 tỷ đồng.",
-          "url": "https://vnbusiness.vn/ha-do-doi-mat-ap-luc-kep-loi-nhuan-giam-du-phong-no-kho-doi-gan-940-ty-dong.html",
-          "published_at": "2026-11-04 10:42:00",
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Tập đoàn Hà Đô bị phạt và truy thu thuế hơn 3 tỷ đồng",
+          "summary": "[HDG - CafeF Doanh nghiệp @ 19/10/2026 16:14] Tập đoàn Hà Đô bị phạt và truy thu thuế hơn 3 tỷ đồng",
+          "url": "https://cafef.vn/tap-doan-ha-do-bi-phat-va-truy-thu-thue-hon-3-ty-dong-188261019155547581.chn?utm_source=du-lieu.chn",
+          "published_at": "19/10/2026 16:14",
           "sentiment_label": "Negative",
-          "sentiment_score": -0.65,
+          "sentiment_score": -0.2,
           "category": "RISK_WARNING",
           "urgency": "HIGH"
         },
         {
           "symbol": "HDG",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/FireAnt",
-          "title": "HDG: Biên lãi thu hẹp kéo lợi nhuận Hà Đô đi lùi trong quý 3/2026",
-          "summary": "Biên lợi nhuận gộp của Hà Đô giảm từ 69,5% xuống 60,3% trong quý 3/2026, cùng với doanh thu sụt giảm khiến lợi nhuận sau thuế còn gần 228 tỷ đồng, giảm 32,3% so với cùng kỳ năm trước.",
-          "url": "https://fireant.vn/bai-viet/hdg-bien-lai-thu-hep-keo-loi-nhuan-ha-do-di-lui-trong-quy-3-2026/42615412",
-          "published_at": "2026-11-03 18:30:00",
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "HDG: Thông báo Quyết định của Thuế Tp. Hà Nội về việc xử phạt vi phạm hành chính về thuế",
+          "summary": "[HDG - CafeF Doanh nghiệp @ 19/10/2026 13:21] HDG: Thông báo Quyết định của Thuế Tp. Hà Nội về việc xử phạt vi phạm hành chính về thuế",
+          "url": "https://cafef.vn/du-lieu/HDG-3001217/hdg-thong-bao-quyet-dinh-cua-thue-tp-ha-noi-ve-viec-xu-phat-vi-pham-hanh-chinh-ve-thue.chn?utm_source=du-lieu.chn",
+          "published_at": "19/10/2026 13:21",
           "sentiment_label": "Negative",
-          "sentiment_score": -0.65,
-          "category": "BCTC_EARNINGS",
+          "sentiment_score": -0.4,
+          "category": "RISK_WARNING",
           "urgency": "HIGH"
         },
         {
           "symbol": "HDG",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Vietstock",
-          "title": "HDG: Mảng năng lượng hụt thu khiến lợi nhuận Hà Đô giảm hơn 40% trong quý 3",
-          "summary": "CTCP Tập đoàn Hà Đô (HOSE: HDG) vừa công bố BCTC hợp nhất quý 3/2026 với lợi nhuận ròng 163 tỷ đồng, giảm đến 43% so với cùng kỳ năm trước. Theo giải trình từ Doanh nghiệp, sự sụt giảm này là do nguồn thu ở mảng năng lượng đi xuống, trong khi các hoạt động khác của Công ty vẫn duy trì ổn định.",
-          "url": "https://vietstock.vn/2026/11/mang-nang-luong-hut-thu-khien-loi-nhuan-ha-do-giam-hon-40-trong-quy-3-737-1510573.htm",
-          "published_at": "2026-11-02 19:23:22",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.85,
-          "category": "BCTC_EARNINGS",
-          "urgency": "HIGH"
-        },
-        {
-          "symbol": "HDG",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Tin nhanh chứng khoán",
-          "title": "HDG: Hà Đô (HDG): Lợi nhuận quý III/2026 giảm 32,3%, trích lập 865,8 tỷ đồng liên quan hai dự án năng lượng",
-          "summary": "CTCP Tập đoàn Hà Đô (mã HDG - sàn HOSE) lãi 228 tỷ đồng trong quý III; lũy kế 9 tháng đầu năm 2026 lãi 614,22 tỷ đồng, tăng 7,6% so với cùng kỳ và hoàn thành 53,4% kế hoạch năm.",
-          "url": "https://www.tinnhanhchungkhoan.vn/ha-do-hdg-loi-nhuan-quy-iii2026-giam-323-trich-lap-8658-ty-dong-lien-quan-hai-du-an-nang-luong-post400656.html",
-          "published_at": "2026-11-02 16:18:00",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.29,
-          "category": "BCTC_EARNINGS",
-          "urgency": "HIGH"
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Hà Đô nhận chuyển nhượng cổ phần Điện gió Bình Gia từ 2 lãnh đạo",
+          "summary": "[HDG - CafeF Doanh nghiệp @ 22/09/2026 08:05] Hà Đô nhận chuyển nhượng cổ phần Điện gió Bình Gia từ 2 lãnh đạo",
+          "url": "https://cafef.vn/ha-do-nhan-chuyen-nhuong-co-phan-dien-gio-binh-gia-tu-2-lanh-dao-188260922073631542.chn?utm_source=du-lieu.chn",
+          "published_at": "22/09/2026 08:05",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
         }
       ]
     },
@@ -1188,48 +1254,24 @@
     },
     "MSN": {
       "symbol": "MSN",
-      "news_count": 9,
-      "avg_sentiment": 0.168,
-      "positive_count": 4,
+      "news_count": 4,
+      "avg_sentiment": 0.0,
+      "positive_count": 0,
       "negative_count": 0,
-      "latest_headline": "MSN: Tiền ngoại vào Masan (MSN)",
-      "latest_date": "2026-11-17 17:06:00",
-      "errors": [],
+      "latest_headline": "Sáu \"gia tộc\" trên sàn sau gần 11 tháng: Vingroup thêm gần 500.000 tỷ đồng, họ Hòa Phát vượt họ FPT",
+      "latest_date": "24/11/2026 07:52",
+      "errors": [
+        "Vietcap:The read operation timed out"
+      ],
       "top_items": [
         {
           "symbol": "MSN",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Người quan sát",
-          "title": "MSN: Tiền ngoại vào Masan (MSN)",
-          "summary": "Bất chấp khối ngoại bán 360 tỷ đồng trên toàn thị trường trong phiên 17/11, cổ phiếu Masan (MSN) vẫn hút ròng hơn trăm tỷ.",
-          "url": "https://nguoiquansat.vn/tien-ngoai-vao-masan-msn-328681.html",
-          "published_at": "2026-11-17 17:06:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.45,
-          "category": "MARKET_GENERAL",
-          "urgency": "NORMAL"
-        },
-        {
-          "symbol": "MSN",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Vnbusiness",
-          "title": "MSN: Vừa đón thêm cổ đông ngoại, người nội bộ Masan có động thái gây chú ý",
-          "summary": "Con gái Chủ tịch Masan Nguyễn Đăng Quang đăng ký bán toàn bộ cổ phiếu MSN nắm giữ, trong bối cảnh tập đoàn liên tiếp có những động thái tái cơ cấu và mở rộng hợp tác với đối tác ngoại.",
-          "url": "https://vnbusiness.vn/vua-don-them-co-dong-ngoai-nguoi-noi-bo-masan-co-dong-thai-gay-chu-y.html",
-          "published_at": "2026-11-11 10:37:00",
-          "sentiment_label": "Neutral",
-          "sentiment_score": 0.16,
-          "category": "MA_INSIDER",
-          "urgency": "MEDIUM"
-        },
-        {
-          "symbol": "MSN",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Người quan sát",
-          "title": "MSN: Con gái Chủ tịch Masan (MSN) đăng ký bán hết cổ phiếu, thu xếp hơn 600 tỷ cho dự án riêng",
-          "summary": "Giao dịch cổ phiếu Masan (MSN) dự kiến được thực hiện theo phương thức thỏa thuận vào ngày 13/11/2026, nhằm thu xếp vốn đầu tư cho dự án kinh doanh cá nhân.",
-          "url": "https://nguoiquansat.vn/con-gai-chu-tich-masan-msn-dang-ky-ban-het-co-phieu-thu-xep-hon-600-ty-cho-du-an-rieng-327368.html",
-          "published_at": "2026-11-10 22:47:00",
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Sáu \"gia tộc\" trên sàn sau gần 11 tháng: Vingroup thêm gần 500.000 tỷ đồng, họ Hòa Phát vượt họ FPT",
+          "summary": "[MSN - CafeF Doanh nghiệp @ 24/11/2026 07:52] Sáu \"gia tộc\" trên sàn sau gần 11 tháng: Vingroup thêm gần 500.000 tỷ đồng, họ Hòa Phát vượt họ FPT",
+          "url": "https://cafef.vn/sau-gia-toc-tren-san-sau-gan-11-thang-vingroup-them-gan-500000-ty-dong-ho-hoa-phat-vuot-ho-fpt-188261123235903489.chn?utm_source=du-lieu.chn",
+          "published_at": "24/11/2026 07:52",
           "sentiment_label": "Neutral",
           "sentiment_score": 0.0,
           "category": "MARKET_GENERAL",
@@ -1237,27 +1279,40 @@
         },
         {
           "symbol": "MSN",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Vietstock",
-          "title": "MSN: Masan bổ nhiệm Giám đốc Chiến lược & Đầu tư và Giám đốc Nhân sự Tập đoàn",
-          "summary": "Ngày 04/11/2026, CTCP Tập đoàn Masan (HOSE: MSN) công bố bổ nhiệm lãnh đạo cấp cao của Tập đoàn, cùng báo cáo trực tiếp cho Tổng Giám đốc Tập đoàn.",
-          "url": "https://vietstock.vn/2026/11/masan-bo-nhiem-giam-doc-chien-luoc-dau-tu-va-giam-doc-nhan-su-tap-doan-214-1511345.htm",
-          "published_at": "2026-11-04 09:48:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.45,
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Từ chiếc ly ăn được đến đường sắt cao tốc, ông Phạm Nhật Vượng, bà Nguyễn Thị Phương Thảo và các tỷ phú đã làm gì với cuộc sống của chúng ta?",
+          "summary": "[MSN - CafeF Doanh nghiệp @ 14/11/2026 00:02] Từ chiếc ly ăn được đến đường sắt cao tốc, ông Phạm Nhật Vượng, bà Nguyễn Thị Phương Thảo và các tỷ phú đã làm gì với cuộc sống của chúng ta?",
+          "url": "https://cafef.vn/tu-chiec-ly-an-duoc-den-duong-sat-cao-toc-ong-pham-nhat-vuong-ba-nguyen-thi-phuong-thao-va-cac-ty-phu-da-lam-gi-voi-cuoc-song-cua-chung-ta-188261113234819332.chn?utm_source=du-lieu.chn",
+          "published_at": "14/11/2026 00:02",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
           "category": "MARKET_GENERAL",
           "urgency": "NORMAL"
         },
         {
           "symbol": "MSN",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Tin nhanh chứng khoán",
-          "title": "MSN: Masan (MSN) bổ nhiệm hai lãnh đạo cấp cao",
-          "summary": "Công ty Cổ phần Tập đoàn Masan (mã MSN – sàn HOSE) công bố bổ nhiệm hai lãnh đạo cấp cao của Tập đoàn vào vị trí Giám đốc Chiến lược & Đầu tư Tập đoàn và Giám đốc Nhân sự Tập đoàn.",
-          "url": "https://www.tinnhanhchungkhoan.vn/masan-msn-bo-nhiem-hai-lanh-dao-cap-cao-post400773.html",
-          "published_at": "2026-11-04 09:30:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.45,
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "MSN: Con ông Nguyễn Đăng Quang - Chủ tịch HĐQT đã bán 8.496.800 cp",
+          "summary": "[MSN - CafeF Doanh nghiệp @ 13/11/2026 00:00] MSN: Con ông Nguyễn Đăng Quang - Chủ tịch HĐQT đã bán 8.496.800 cp",
+          "url": "https://cafef.vn/du-lieu/MSN-3021239/msn-con-ong-nguyen-dang-quang-chu-tich-hdqt-da-ban-8496800-cp.chn?utm_source=du-lieu.chn",
+          "published_at": "13/11/2026 00:00",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "MSN",
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Yến Linh muốn bán cổ phiếu Masan, dồn hơn 600 tỷ cho dự án kinh doanh riêng",
+          "summary": "[MSN - CafeF Doanh nghiệp @ 10/11/2026 20:26] Yến Linh muốn bán cổ phiếu Masan, dồn hơn 600 tỷ cho dự án kinh doanh riêng",
+          "url": "https://cafef.vn/yen-linh-muon-ban-co-phieu-masan-don-hon-600-ty-cho-du-an-kinh-doanh-rieng-188261110202745539.chn?utm_source=du-lieu.chn",
+          "published_at": "10/11/2026 20:26",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
           "category": "MARKET_GENERAL",
           "urgency": "NORMAL"
         }
@@ -1337,6 +1392,160 @@
           "sentiment_score": 0.45,
           "category": "MA_INSIDER",
           "urgency": "MEDIUM"
+        }
+      ]
+    },
+    "NAB": {
+      "symbol": "NAB",
+      "news_count": 9,
+      "avg_sentiment": 0.268,
+      "positive_count": 5,
+      "negative_count": 0,
+      "latest_headline": "NAB: Ngân hàng đón đầu xu hướng kinh tế bạc với giải pháp đặc quyền toàn diện",
+      "latest_date": "2026-11-19 13:44:00",
+      "errors": [],
+      "top_items": [
+        {
+          "symbol": "NAB",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Người quan sát",
+          "title": "NAB: Ngân hàng đón đầu xu hướng kinh tế bạc với giải pháp đặc quyền toàn diện",
+          "summary": "Thông qua việc tăng cường hợp tác đa ngành, các ngân hàng có thể kiến tạo những hệ sinh thái toàn diện, đáp ứng trọn vẹn kỳ vọng ngày càng đa dạng của khách hàng.",
+          "url": "https://nguoiquansat.vn/ngan-hang-don-dau-xu-huong-kinh-te-bac-voi-giai-phap-dac-quyen-toan-dien-329026.html",
+          "published_at": "2026-11-19 13:44:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "NAB",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/FireAnt",
+          "title": "NAB: Nam A Bank điều chỉnh tiến độ sử dụng vốn từ đợt chào bán trái phiếu năm 2025",
+          "summary": "Nam A Bank vừa ban hành Nghị quyết điều chỉnh tiến độ sử dụng vốn từ chợt chào bán trái phiếu ra công chúng năm 2025.",
+          "url": "https://fireant.vn/bai-viet/nab-nam-a-bank-dieu-chinh-tien-do-su-dung-von-tu-dot-chao-ban-trai-phieu-nam-2025/42797607",
+          "published_at": "2026-11-17 09:16:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "NAB",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Người quan sát",
+          "title": "NAB: Nam A Bank 8 năm liên tiếp nhận giải thưởng Thanh toán quốc tế xuất sắc",
+          "summary": "Những ghi nhận liên tiếp từ các tổ chức quốc tế uy tín tiếp tục khẳng định năng lực hoạt động và vị thế ngày càng vững chắc của Nam A Bank trên thị trường tài chính khu vực.",
+          "url": "https://nguoiquansat.vn/nam-a-bank-8-nam-lien-tiep-nhan-giai-thuong-thanh-toan-quoc-te-xuat-sac-328565.html",
+          "published_at": "2026-11-17 08:56:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "NAB",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Người quan sát",
+          "title": "NAB: Kiến tạo nền tảng nhân lực, nhân tài cho kỷ nguyên công nghệ lượng tử",
+          "summary": "Trong bối cảnh công nghệ lượng tử phát triển nhanh chóng, mở ra những đột phá trong tính toán, truyền thông, an ninh thông tin và nhiều lĩnh vực ứng dụng khác, nhu cầu về nguồn nhân lực chuyên sâu ngày càng trở nên cấp thiết.",
+          "url": "https://nguoiquansat.vn/kien-tao-nen-tang-nhan-luc-nhan-tai-cho-ky-nguyen-cong-nghe-luong-tu-328136.html",
+          "published_at": "2026-11-14 13:27:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "NAB",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/FireAnt",
+          "title": "NAB: Global Brands Magazine vinh danh Nam A Bank là “Ngân hàng Bán lẻ Sáng tạo nhất Việt Nam 2026”",
+          "summary": "Nam A Bank vừa được Global Brands Magazine vinh danh với giải thưởng “Most Innovative Retail Bank Vietnam 2026” - “Ngân hàng Bán lẻ Sáng tạo nhất Việt Nam 2026”, ghi nhận những nỗ lực đổi mới trong phát triển sản phẩm, dịch vụ và nâng cao trải nghiệm khách hàng.",
+          "url": "https://fireant.vn/bai-viet/nab-global-brands-magazine-vinh-danh-nam-a-bank-la-ngan-hang-ban-le-sang-tao-nhat-viet-nam-2026/42775517",
+          "published_at": "2026-11-13 18:10:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.61,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        }
+      ]
+    },
+    "NKG": {
+      "symbol": "NKG",
+      "news_count": 9,
+      "avg_sentiment": 0.068,
+      "positive_count": 3,
+      "negative_count": 2,
+      "latest_headline": "NKG: Thép Nam Kim tính bơm thêm 1,500 tỷ đồng vào nhà máy Phú Mỹ trước kế hoạch sáp nhập",
+      "latest_date": "2026-11-24 12:15:28",
+      "errors": [],
+      "top_items": [
+        {
+          "symbol": "NKG",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Vietstock",
+          "title": "NKG: Thép Nam Kim tính bơm thêm 1,500 tỷ đồng vào nhà máy Phú Mỹ trước kế hoạch sáp nhập",
+          "summary": "Sau khi khánh thành nhà máy Tôn Nam Kim Phú Mỹ có vốn đầu tư khoảng 6,200 tỷ đồng, Thép Nam Kim tiếp tục trình cổ đông phương án rót thêm tối đa 1,500 tỷ đồng vào công ty con để phục vụ dự án. Doanh nghiệp đồng thời lên kế hoạch sáp nhập pháp nhân này vào công ty mẹ trong năm 2027-2028.",
+          "url": "https://vietstock.vn/2026/11/thep-nam-kim-tinh-bom-them-1500-ty-dong-vao-nha-may-phu-my-truoc-ke-hoach-sap-nhap-737-1517381.htm",
+          "published_at": "2026-11-24 12:15:28",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MA_INSIDER",
+          "urgency": "MEDIUM"
+        },
+        {
+          "symbol": "NKG",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/VietnamFinance",
+          "title": "NKG: Nợ vay vượt 8.600 tỷ, Thép Nam Kim tính rót thêm 1.500 tỷ vào Phú Mỹ trước khi sáp nhập",
+          "summary": "Sau khi khánh thành nhà máy 6.200 tỷ đồng, Thép Nam Kim tiếp tục đề xuất bổ sung tối đa 1.500 tỷ đồng vốn điều lệ cho công ty con Nam Kim Phú Mỹ, trước khi tiến hành sáp nhập pháp nhân này vào công ty mẹ. Kế hoạch được đưa ra trong bối cảnh dư nợ vay đã vượt 8.600 tỷ đồng, kéo theo áp lực tài chính ngày càng lớn.",
+          "url": "https://vietnamfinance.vn/no-vay-vuot-8600-ty-thep-nam-kim-tinh-rot-them-1500-ty-vao-phu-my-truoc-khi-sap-nhap-d154119.html",
+          "published_at": "2026-11-23 18:55:00",
+          "sentiment_label": "Negative",
+          "sentiment_score": -0.45,
+          "category": "MA_INSIDER",
+          "urgency": "MEDIUM"
+        },
+        {
+          "symbol": "NKG",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Vietstock",
+          "title": "NKG: NKG đưa nhà máy thép 6,200 tỷ đồng vào hoạt động",
+          "summary": "Ngày 21/11, CTCP Thép Nam Kim (HOSE: NKG) khánh thành Nhà máy Tôn Nam Kim Phú Mỹ tại Khu công nghiệp Mỹ Xuân B1 - Đại Dương, TP.HCM. Dự án có tổng vốn đầu tư khoảng 6,200 tỷ đồng, công suất thiết kế 1.2 triệu tấn mỗi năm, qua đó nâng tổng công suất thiết kế của doanh nghiệp lên hơn 2.2 triệu tấn.",
+          "url": "https://vietstock.vn/2026/11/nkg-dua-nha-may-thep-6200-ty-dong-vao-hoat-dong-737-1516827.htm",
+          "published_at": "2026-11-22 11:52:36",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "NKG",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/FireAnt",
+          "title": "NKG: Tôn Nam Kim khánh thành nhà máy 6.200 tỷ đồng",
+          "summary": "Với tổng vốn đầu tư khoảng 6.200 tỷ đồng, diện tích 32,2 ha và công suất thiết kế 1,2 triệu tấn mỗi năm, Nhà máy Tôn Nam Kim Phú Mỹ đánh dấu bước mở rộng quy mô sản xuất, nâng cao năng lực cung ứng thép chất lượng cao của Công ty Cổ phần Thép Nam Kim.",
+          "url": "https://fireant.vn/bai-viet/nkg-ton-nam-kim-khanh-thanh-nha-may-6200-ty-dong/42873575",
+          "published_at": "2026-11-21 16:47:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.61,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "NKG",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Người quan sát",
+          "title": "NKG: Bán phá giá, EU áp thuế lên tới 16% với một số mặt hàng thép Việt Nam",
+          "summary": "Các doanh nghiệp Việt Nam sẽ chịu mức thuế 16% khi xuất khẩu một số sản phẩm thép cán nguội dạng phẳng sang EU.",
+          "url": "https://nguoiquansat.vn/ban-pha-gia-eu-ap-thue-len-toi-16-voi-mot-so-mat-hang-thep-viet-nam-328620.html",
+          "published_at": "2026-11-17 13:36:00",
+          "sentiment_label": "Negative",
+          "sentiment_score": -0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
         }
       ]
     },
@@ -1567,6 +1776,83 @@
           "sentiment_label": "Positive",
           "sentiment_score": 0.77,
           "category": "BCTC_EARNINGS",
+          "urgency": "HIGH"
+        }
+      ]
+    },
+    "PVP": {
+      "symbol": "PVP",
+      "news_count": 9,
+      "avg_sentiment": 0.286,
+      "positive_count": 5,
+      "negative_count": 0,
+      "latest_headline": "PVP: Một cổ phiếu trên HOSE tăng dựng đứng lên đỉnh lịch sử, sắp họp cổ đông bất thường",
+      "latest_date": "2026-10-07 19:00:00",
+      "errors": [],
+      "top_items": [
+        {
+          "symbol": "PVP",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/CafeF",
+          "title": "PVP: Một cổ phiếu trên HOSE tăng dựng đứng lên đỉnh lịch sử, sắp họp cổ đông bất thường",
+          "summary": "Diễn biến tích cực của thị giá diễn ra đúng thời điểm doanh nghiệp chuẩn bị tổ chức ĐHĐCĐ bất thường năm 2026.",
+          "url": "https://cafef.vn/mot-co-phieu-tren-hose-tang-dung-dung-len-dinh-lich-su-sap-hop-co-dong-bat-thuong-188261007153931973.chn",
+          "published_at": "2026-10-07 19:00:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MARKET_GENERAL",
+          "urgency": "NORMAL"
+        },
+        {
+          "symbol": "PVP",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Markettimes",
+          "title": "PVP: Một cổ phiếu dầu khí “bốc đầu\" kịch trần, lên đỉnh lịch sử trước thềm họp bất thường",
+          "summary": "PVP đã tăng khoảng 27% trong vòng 2 tháng, đưa vốn hóa thị trường lần đầu chạm mức 2.126 tỷ đồng.",
+          "url": "https://markettimes.vn/mot-co-phieu-dau-khi-boc-dau-kich-tran-len-dinh-lich-su-truoc-them-hop-bat-thuong-131880.html",
+          "published_at": "2026-09-26 22:43:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MACRO_SBV_FED",
+          "urgency": "HIGH"
+        },
+        {
+          "symbol": "PVP",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Vietstock",
+          "title": "PVP: PVTrans Pacific họp bất thường để bàn chuyện mua thêm tàu dầu mới",
+          "summary": "CTCP Vận tải Dầu khí Thái Bình Dương (PVTrans Pacific, HOSE: PVP) thông báo chốt danh sách cổ đông để tổ chức họp ĐHĐCĐ bất thường vào ngày 23/10. Ngày đăng ký cuối cùng để thực hiện quyền tham gia họp là 28/09.",
+          "url": "https://vietstock.vn/2026/09/pvtrans-pacific-hop-bat-thuong-de-ban-chuyen-mua-them-tau-dau-moi-737-1491359.htm",
+          "published_at": "2026-09-11 16:51:36",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MACRO_SBV_FED",
+          "urgency": "HIGH"
+        },
+        {
+          "symbol": "PVP",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Tin nhanh chứng khoán",
+          "title": "PVP: Pacific (PVP): Lợi nhuận 6 tháng gấp 2,5 lần cùng kỳ, tăng tốc thực hiện chiến lược trẻ hóa đội tàu",
+          "summary": "(ĐTCK) Công ty Cổ phần Vận tải Dầu khí Thái Bình Dương (HOSE: PVP) vừa công bố báo cáo tài chính quý II/2026 với kết quả kinh doanh tăng trưởng mạnh mẽ, phản ánh hiệu quả từ việc mở rộng hoạt động vận tải, nâng cao hiệu suất khai thác đội tàu và duy trì nền tảng tài chính an toàn.",
+          "url": "https://www.tinnhanhchungkhoan.vn/pacific-pvp-loi-nhuan-6-thang-gap-25-lan-cung-ky-tang-toc-thuc-hien-chien-luoc-tre-hoa-doi-tau-post394625.html",
+          "published_at": "2026-07-24 13:55:33",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.77,
+          "category": "BCTC_EARNINGS",
+          "urgency": "HIGH"
+        },
+        {
+          "symbol": "PVP",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/Vietstock",
+          "title": "PVP: PVTrans Pacific: Xu hướng dịch chuyển dòng chảy thương mại đang mở ra cơ hội cho ngành vận tải dầu khí",
+          "summary": "Theo thông tin từ cuộc họp thường niên của CTCP Vận tải Dầu khí Thái Bình Dương (PVTrans Pacific, HOSE: PVP), nhu cầu vận chuyển dầu thô từ các mỏ trong nước về nhà máy lọc dầu Dung Quất cũng như nhu cầu vận chuyển dầu nhập khẩu hiện nay tăng đáng kể so với trước đây.",
+          "url": "https://vietstock.vn/2026/06/pvtrans-pacific-xu-huong-dich-chuyen-dong-chay-thuong-mai-dang-mo-ra-co-hoi-cho-nganh-van-tai-dau-khi-737-1458874.htm",
+          "published_at": "2026-06-26 13:02:03",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "MACRO_SBV_FED",
           "urgency": "HIGH"
         }
       ]
@@ -1882,13 +2168,26 @@
     "VCB": {
       "symbol": "VCB",
       "news_count": 9,
-      "avg_sentiment": 0.059,
-      "positive_count": 3,
-      "negative_count": 2,
-      "latest_headline": "VCB: Vietcombank tiết lộ thị phần 17% tại một mảng kinh doanh, giao dịch đạt 164 tỷ USD",
-      "latest_date": "2026-11-23 15:10:00",
+      "avg_sentiment": 0.141,
+      "positive_count": 4,
+      "negative_count": 1,
+      "latest_headline": "VCB: Vietcombank tất toán sớm lô trái phiếu phát hành năm 2021",
+      "latest_date": "2026-11-24 17:18:00",
       "errors": [],
       "top_items": [
+        {
+          "symbol": "VCB",
+          "source_channel": "VIETCAP_AI_NEWS",
+          "source_name": "Vietcap/FireAnt",
+          "title": "VCB: Vietcombank tất toán sớm lô trái phiếu phát hành năm 2021",
+          "summary": "Vietcombank vừa mua lại toàn bộ lô trái phiếu mã VCBH2131003 có tổng giá trị phát hành 600 tỷ đồng, qua đó tất toán lô trái phiếu này trước thời điểm đáo hạn 5 năm.",
+          "url": "https://fireant.vn/bai-viet/vcb-vietcombank-tat-toan-som-lo-trai-phieu-phat-hanh-nam-2021/42896129",
+          "published_at": "2026-11-24 17:18:00",
+          "sentiment_label": "Positive",
+          "sentiment_score": 0.45,
+          "category": "DIVIDEND_ESOP",
+          "urgency": "MEDIUM"
+        },
         {
           "symbol": "VCB",
           "source_channel": "VIETCAP_AI_NEWS",
@@ -1940,19 +2239,6 @@
           "sentiment_score": 0.61,
           "category": "MARKET_GENERAL",
           "urgency": "NORMAL"
-        },
-        {
-          "symbol": "VCB",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Vnbusiness",
-          "title": "VCB: Lợi nhuận lập kỷ lục, cổ phiếu Vietcombank vẫn giảm gần 33%",
-          "summary": "Dù ghi nhận lợi nhuận trước thuế Vietcombank 9 tháng cao nhất lịch sử, cổ phiếu VCB vẫn liên tục đi xuống, kéo vốn hóa ngân hàng mất hơn 205.000 tỷ đồng và định giá P/B về mức thấp nhất trong hơn một thập kỷ.",
-          "url": "https://vnbusiness.vn/loi-nhuan-lap-ky-luc-co-phieu-vietcombank-van-giam-gan-33.html",
-          "published_at": "2026-11-19 10:25:32",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.29,
-          "category": "BCTC_EARNINGS",
-          "urgency": "HIGH"
         }
       ]
     },
@@ -2189,35 +2475,24 @@
     },
     "VNM": {
       "symbol": "VNM",
-      "news_count": 9,
-      "avg_sentiment": 0.121,
-      "positive_count": 3,
-      "negative_count": 1,
-      "latest_headline": "VNM: ĐHĐCĐ bất thường của JC&C: Thông qua chia ‘cổ tức đặc biệt’, hé lộ kế hoạch thoái vốn VNM",
-      "latest_date": "2026-11-24 09:32:00",
-      "errors": [],
+      "news_count": 4,
+      "avg_sentiment": 0.0,
+      "positive_count": 0,
+      "negative_count": 0,
+      "latest_headline": "Cổ phiếu Vinamilk xuống đáy 13 tháng",
+      "latest_date": "19/11/2026 10:43",
+      "errors": [
+        "Vietcap:The read operation timed out"
+      ],
       "top_items": [
         {
           "symbol": "VNM",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Vietstock",
-          "title": "VNM: ĐHĐCĐ bất thường của JC&C: Thông qua chia ‘cổ tức đặc biệt’, hé lộ kế hoạch thoái vốn VNM",
-          "summary": "Theo biên bản công bố từ Jardine Matheson Southeast Asia Limited (tên cũ là Jardine Cycle & Carriage Limited) vào cuối tháng 10, ĐHĐCĐ bất thường diễn ra ngày 01/10/2026 đã thông qua phương án chia cổ tức đặc biệt như đã đề cập trước đây. Bên cạnh đó, ban lãnh đạo hé lộ một số kế hoạch đầu tư, bao gồm cả việc thoái vốn",
-          "url": "https://vietstock.vn/2026/11/dhdcd-bat-thuong-cua-jcc-thong-qua-chia-8216co-tuc-dac-biet8217-he-lo-ke-hoach-thoai-von-vnm-737-1517185.htm",
-          "published_at": "2026-11-24 09:32:00",
-          "sentiment_label": "Neutral",
-          "sentiment_score": 0.16,
-          "category": "DIVIDEND_ESOP",
-          "urgency": "MEDIUM"
-        },
-        {
-          "symbol": "VNM",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/Markettimes",
-          "title": "VNM: Chứng khoán Việt Nam sau 3 thập kỷ: Kênh dẫn vốn hàng triệu tỷ đồng cho nền kinh tế",
-          "summary": "Thị trường chứng khoán Việt Nam đang đứng trước cơ hội chuyển mình từ một kênh đầu tư ngày càng sôi động thành một trụ cột quan trọng của hệ thống tài chính quốc gia.",
-          "url": "https://markettimes.vn/chung-khoan-viet-nam-sau-3-thap-ky-kenh-dan-von-hang-trieu-ty-dong-cho-nen-kinh-te-134762.html",
-          "published_at": "2026-11-23 22:04:00",
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Cổ phiếu Vinamilk xuống đáy 13 tháng",
+          "summary": "[VNM - CafeF Doanh nghiệp @ 19/11/2026 10:43] Cổ phiếu Vinamilk xuống đáy 13 tháng",
+          "url": "https://cafef.vn/co-phieu-vinamilk-xuong-day-13-thang-188261119104347096.chn?utm_source=du-lieu.chn",
+          "published_at": "19/11/2026 10:43",
           "sentiment_label": "Neutral",
           "sentiment_score": 0.0,
           "category": "MARKET_GENERAL",
@@ -2225,42 +2500,42 @@
         },
         {
           "symbol": "VNM",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/FireAnt",
-          "title": "VNM: Khối ngoại xả mạnh, cổ phiếu Vinamilk chạm đáy trong hơn một năm qua",
-          "summary": "Cổ phiếu Vinamilk tiếp tục giảm trong phiên sáng 19/11, sau khi rơi xuống mức thấp nhất trong hơn một năm qua ở phiên trước đó. Diễn biến này trái chiều với kết quả kinh doanh tăng trưởng tích cực ở cả thị trường nội địa và quốc tế của doanh nghiệp.",
-          "url": "https://fireant.vn/bai-viet/vnm-khoi-ngoai-xa-manh-co-phieu-vinamilk-cham-day-trong-hon-mot-nam-qua/42842847",
-          "published_at": "2026-11-19 13:15:00",
-          "sentiment_label": "Negative",
-          "sentiment_score": -0.29,
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Cổ phiếu của nhiều DN đầu ngành như FPT, Vietcombank, Vinamilk... đồng loạt xuống vùng giá thấp nhất trong nhiều tháng, thậm chí hơn 3 năm",
+          "summary": "[VNM - CafeF Doanh nghiệp @ 19/11/2026 08:40] Cổ phiếu của nhiều DN đầu ngành như FPT, Vietcombank, Vinamilk... đồng loạt xuống vùng giá thấp nhất trong nhiều tháng, thậm chí hơn 3 năm",
+          "url": "https://cafef.vn/co-phieu-cua-nhieu-dn-dau-nganh-nhu-fpt-vietcombank-vinamilk-dong-loat-xuong-vung-gia-thap-nhat-trong-nhieu-thang-tham-chi-hon-3-nam-188261119083440262.chn?utm_source=du-lieu.chn",
+          "published_at": "19/11/2026 08:40",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
           "category": "MARKET_GENERAL",
           "urgency": "NORMAL"
         },
         {
           "symbol": "VNM",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/FireAnt",
-          "title": "VNM: Vinamilk khẳng định sức mạnh thương hiệu, năng lực kinh doanh qua 2 bảng xếp hạng",
-          "summary": "Vinamilk là một trong 5 doanh nghiệp được vinh danh trụ hạng bền vững suốt 15 năm, cho thấy sức bền kinh doanh và giá trị thương hiệu được bồi đắp qua nửa thế kỷ phát triển.",
-          "url": "https://fireant.vn/bai-viet/vnm-vinamilk-khang-dinh-suc-manh-thuong-hieu-nang-luc-kinh-doanh-qua-2-bang-xep-hang/42792466",
-          "published_at": "2026-11-16 14:23:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.61,
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "Cú chốt của nữ tướng Mai Kiều Liên và quả ngọt: Những người bỏ ra 53 triệu đồng mua Vinamilk giờ có hơn 1,2 tỷ",
+          "summary": "[VNM - CafeF Doanh nghiệp @ 09/11/2026 00:01] Cú chốt của nữ tướng Mai Kiều Liên và quả ngọt: Những người bỏ ra 53 triệu đồng mua Vinamilk giờ có hơn 1,2 tỷ",
+          "url": "https://cafef.vn/cu-chot-cua-nu-tuong-mai-kieu-lien-va-qua-ngot-nhung-nguoi-bo-ra-53-trieu-dong-mua-vinamilk-gio-co-hon-12-ty-188261108183324202.chn?utm_source=du-lieu.chn",
+          "published_at": "09/11/2026 00:01",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
           "category": "MARKET_GENERAL",
           "urgency": "NORMAL"
         },
         {
           "symbol": "VNM",
-          "source_channel": "VIETCAP_AI_NEWS",
-          "source_name": "Vietcap/FireAnt",
-          "title": "VNM: Vinamilk dẫn đầu danh sách 50 thương hiệu của FORBES, 15 năm liên tiếp vào top 50 công ty kinh doanh hiệu quả nhất Việt Nam",
-          "summary": "Vinamilk ghi dấu ấn tại hai bảng xếp hạng doanh nghiệp năm 2026 khi dẫn đầu danh sách 50 Thương hiệu dẫn đầu Việt Nam của Forbes Việt Nam với giá trị thương hiệu khoảng 3,32 tỷ USD, đồng thời có năm thứ 15 liên tiếp góp mặt trong Top 50 Công ty kinh doanh hiệu quả nhất Việt Nam của Nhịp Cầu Đầu Tư. Đặc biệt, Vinamilk l",
-          "url": "https://fireant.vn/bai-viet/vnm-vinamilk-dan-dau-danh-sach-50-thuong-hieu-cua-forbes-15-nam-lien-tiep-vao-top-50-cong-ty-kinh-doanh-hieu-qua-nhat-viet-nam/42787035",
-          "published_at": "2026-11-16 11:12:00",
-          "sentiment_label": "Positive",
-          "sentiment_score": 0.61,
-          "category": "MARKET_GENERAL",
-          "urgency": "NORMAL"
+          "source_channel": "CAFEF_TYPE_1",
+          "source_name": "CafeF Doanh nghiệp",
+          "title": "VNM: 11.11.2026, ngày GDKHQ tạm ứng cổ tức đợt 1 năm 2026 bằng tiền mặt (2.500 đ/cp)",
+          "summary": "[VNM - CafeF Doanh nghiệp @ 02/11/2026 00:00] VNM: 11.11.2026, ngày GDKHQ tạm ứng cổ tức đợt 1 năm 2026 bằng tiền mặt (2.500 đ/cp)",
+          "url": "https://cafef.vn/du-lieu/VNM-3012108/vnm-11112026-ngay-gdkhq-tam-ung-co-tuc-dot-1-nam-2026-bang-tien-mat-2500-dcp.chn?utm_source=du-lieu.chn",
+          "published_at": "02/11/2026 00:00",
+          "sentiment_label": "Neutral",
+          "sentiment_score": 0.0,
+          "category": "DIVIDEND_ESOP",
+          "urgency": "MEDIUM"
         }
       ]
     },
@@ -2344,9 +2619,25 @@
   },
   "rss_source_health": [
     {
+      "source": "VnExpress - Kinh doanh",
+      "market": "VN",
+      "url": "https://vnexpress.net/rss/kinh-doanh.rss",
+      "ok": true,
+      "count": 20,
+      "error": null
+    },
+    {
       "source": "CafeF - Doanh nghiệp",
       "market": "VN",
       "url": "https://cafef.vn/doanh-nghiep.rss",
+      "ok": true,
+      "count": 20,
+      "error": null
+    },
+    {
+      "source": "CafeF - Chứng khoán",
+      "market": "VN",
+      "url": "https://cafef.vn/thi-truong-chung-khoan.rss",
       "ok": true,
       "count": 20,
       "error": null
@@ -2368,25 +2659,9 @@
       "error": null
     },
     {
-      "source": "VnExpress - Kinh doanh",
+      "source": "VnEconomy - Tài chính",
       "market": "VN",
-      "url": "https://vnexpress.net/rss/kinh-doanh.rss",
-      "ok": true,
-      "count": 20,
-      "error": null
-    },
-    {
-      "source": "CafeF - Chứng khoán",
-      "market": "VN",
-      "url": "https://cafef.vn/thi-truong-chung-khoan.rss",
-      "ok": true,
-      "count": 20,
-      "error": null
-    },
-    {
-      "source": "Vietstock - Cổ phiếu",
-      "market": "VN",
-      "url": "https://vietstock.vn/830/chung-khoan/co-phieu.rss",
+      "url": "https://vneconomy.vn/tai-chinh.rss",
       "ok": true,
       "count": 20,
       "error": null
@@ -2395,14 +2670,6 @@
       "source": "VnEconomy - Chứng khoán",
       "market": "VN",
       "url": "https://vneconomy.vn/chung-khoan.rss",
-      "ok": true,
-      "count": 20,
-      "error": null
-    },
-    {
-      "source": "VnEconomy - Tài chính",
-      "market": "VN",
-      "url": "https://vneconomy.vn/tai-chinh.rss",
       "ok": true,
       "count": 20,
       "error": null
@@ -2424,17 +2691,17 @@
       "error": null
     },
     {
-      "source": "CNBC Top News",
-      "market": "US",
-      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
+      "source": "Vietstock - Cổ phiếu",
+      "market": "VN",
+      "url": "https://vietstock.vn/830/chung-khoan/co-phieu.rss",
       "ok": true,
       "count": 20,
       "error": null
     },
     {
-      "source": "CNBC Economy",
+      "source": "CNBC Top News",
       "market": "US",
-      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258",
+      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
       "ok": true,
       "count": 20,
       "error": null
@@ -2445,6 +2712,14 @@
       "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
       "ok": true,
       "count": 10,
+      "error": null
+    },
+    {
+      "source": "CNBC Economy",
+      "market": "US",
+      "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258",
+      "ok": true,
+      "count": 20,
       "error": null
     }
   ],
@@ -2691,164 +2966,164 @@
   "tavily_intelligence": [
     {
       "topic_id": "VN_MACRO_MARGIN",
-      "title_vi": "Vĩ mô VN-Index, Dư nợ Margin Kỷ lục & Thanh khoản Ngân hàng Nhà nước",
-      "query": "VN-Index dư nợ margin chứng khoán quý 3 2026 ngân hàng nhà nước tỷ giá lãi suất",
+      "title_vi": "Vĩ mô VN-Index, Dư nợ Margin & Thanh khoản Ngân hàng Nhà nước (Q3/2026)",
+      "query": "VN-Index dư nợ margin chứng khoán quý 3 2026 ngân hàng nhà nước tỷ giá lãi suất 2026",
       "ok": true,
-      "answer": "The sources indicate that the VN-Index has experienced fluctuations and that the margin lending market has been active, with dư nợ margin reaching a record high of 457.5 trillion VND in the third quarter. The interest rates for margin lending are high, with some investors considering high-interest loans to buy stocks when the VN-Index was at 1673, expecting a 31% profit in the next 10 trading sessions. Additionally, the sources mention that the lending rates of state-owned banks remain high desp",
+      "answer": "The sources indicate that the VN-Index dư nợ margin for the third quarter of 2026 reached a record high of 457.5 trillion VND. The lending rate for securities firms was at its highest level ever, with 81 securities firms having a total lending amount of nearly 459.955 trillion VND. The interest income from lending increased by 37.1% to 12.843 trillion VND, contributing 52% to the total industry profit. However, the difference between lending yield and average cost of funds for the top 10 firms d",
       "hits_count": 5,
       "hits": [
         {
           "title": "Chứng khoán Phú Hưng - PHS on Facebook: \"📅 BẢN TIN CHỨNG KHOÁN SÁNG 23/11/2026 📉 VN‑Index có thể giảm sâu hơn 1.600 điểm VN‑Index đã giảm hơn…\"",
           "url": "https://www.facebook.com/PhuHungSecuritiesCorporation/posts/-b%E1%BA%A3n-tin-ch%E1%BB%A9ng-kho%C3%A1n-s%C3%A1ng-23112026-vnindex-c%C3%B3-th%E1%BB%83-gi%E1%BA%A3m-s%C3%A2u-h%C6%A1n-1600-%C4%91i%E1%BB%83mvnindex-/1147141791028588",
           "snippet": "📉 Tỷ lệ LDR giảm cuối quý 3/2026, nguyên nhân là dư địa thực hay hiệu ứng chính sách? Tỷ lệ cho vay trên huy động (LDR) trung bình của 29 ngân hàng giảm trong quý 3/2026, phần lớn do quy định cho phép tính 50% tiền gửi Kho bạc Nhà nước vào nguồn vốn huy động, giảm áp lực ngắn hạn nhưng tăng yêu cầu quản trị thanh khoản",
-          "score": 0.45586467
+          "score": 0.46590385
         },
         {
           "title": "71 mã chứng khoán bị cắt margin trên HOSE tính đến 16/11/2026 - VnEconomy",
           "url": "https://vneconomy.vn/tinh-den-16112026-co-71-ma-bi-cat-margin-tren-hose.htm",
           "snippet": "Google News Facebook; \"Chia sẻ lên Facebook\") Twitter; \"Chia sẻ lên Twitter\") Email; \"Gửi email\") Copy Link; \"Sao chép liên kết\") Chia sẻ; \"Chia sẻ\") ## Bài liên quan Chứng khoán ### Rủi ro tiềm ẩn, mỗi quý nhà đầu tư vay margin đang phải gánh chi phí lãi khoảng 13 nghìn tỷ đồng Chứng khoán ### Tính đến 26/10, có 67 mã",
-          "score": 0.43482125
+          "score": 0.43608165
         },
         {
           "title": "Công ty chứng khoán trong cuộc đua hiệu quả vốn | Thời báo Tài chính Việt Nam",
           "url": "https://thoibaotaichinhvietnam.vn/cong-ty-chung-khoan-trong-cuoc-dua-hieu-qua-von-207423-207423.html",
           "snippet": "Trong khi mảng môi giới thu hẹp, hoạt động cho vay tiếp tục hấp thụ lượng vốn lớn. Theo số liệu thống kê của TCBS, dư nợ cho vay của 81 công ty chứng khoán đạt gần 459.955 tỷ đồng cuối quý III, mức cao nhất từ trước đến nay. Thu nhập lãi cho vay tăng 37,1%, lên 12.843 tỷ đồng, đưa mảng cho vay đóng góp 52% lợi nhuận gộ",
-          "score": 0.27289566
-        },
-        {
-          "title": "Nguyễn Thuận on Facebook: \"Vay lãi suất cao và dùng margin 1:1 mua cổ phiếu khi Vn-Index ở 1673, lời 31% trong 10 phiên tới.\"",
-          "url": "https://www.facebook.com/thuanphaisinhvn/posts/vay-l%C3%A3i-su%E1%BA%A5t-cao-v%C3%A0-d%C3%B9ng-margin-11-mua-c%E1%BB%95-phi%E1%BA%BFu-khi-vn-index-%E1%BB%9F-1673-l%E1%BB%9Di-31-trong/4289267531205271",
-          "snippet": "# Nguyễn Thuận on Facebook: \"Vay lãi suất cao và dùng margin 1:1 mua cổ phiếu khi Vn-Index ở 1673, lời 31% trong 10 phiên tới.\" Vay lãi suất cao và dùng margin 1:1 mua cổ phiếu khi Vn-Index ở 1673, lời 31% trong 10 phiên tới. - Author: Nguyễn Thuận - Posted: 2026-11-23T03:02:49+00:00 - Reactions: 7 - Comment count: 0 -",
-          "score": 0.25367606
+          "score": 0.27347738
         },
         {
           "title": "17/11: Đọc gì trước giờ giao dịch chứng khoán?",
           "url": "https://www.phs.vn/tin-tuc/1711-doc-gi-truoc-gio-giao-dich-chung-khoan/6449639",
           "snippet": "\\ Ngn hàng Nhà nước chuyển từ giữ trần sang dựng sàn tỷ giá. Chính phủ nng hạn mức vay thương mại nước ngoài trung, dài hạn tự vay, tự trả năm 2026 lên tối đa 10 tỷ USD, đúng lúc Ngn hàng Nhà nước (NHNN) chuyển sang mua vào USD theo lịch cố định. Sau nhiều năm bán ròng ngoại tệ để hỗ trợ tỷ giá, các công cụ điều hành đ",
-          "score": 0.25256836
+          "score": 0.26038948
+        },
+        {
+          "title": "Công ty chứng khoán trong cuộc đua hiệu quả vốn - Thời báo Tài chính",
+          "url": "https://baomoi.com/cong-ty-chung-khoan-trong-cuoc-dua-hieu-qua-von-c56587833.epi",
+          "snippet": "Trong khi mảng môi giới thu hẹp, hoạt động cho vay tiếp tục hấp thụ lượng vốn lớn. Theo số liệu thống kê của TCBS, dư nợ cho vay của 81 công ty chứng khoán đạt gần 459.955 tỷ đồng cuối quý III, mức cao nhất từ trước đến nay. Thu nhập lãi cho vay tăng 37,1%, lên 12.843 tỷ đồng, đưa mảng cho vay đóng góp 52% lợi nhuận gộ",
+          "score": 0.23704566
         }
       ],
       "error": null
     },
     {
       "topic_id": "VN_BANKS_LEADERS",
-      "title_vi": "Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng (TPB, HDB, CTG, VPB)",
-      "query": "TPBank TPB HDBank HDB VietinBank CTG VPBank lợi nhuận quý 3 2026 tăng trưởng tín dụng",
+      "title_vi": "Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB)",
+      "query": "TPBank TPB HDBank HDB VietinBank CTG Nam A Bank NAB lợi nhuận quý 3 2026 tăng trưởng tín dụng",
       "ok": true,
-      "answer": "The sources indicate that in the third quarter of 2026, several banks experienced significant growth in their lending activities. Specifically, VPBank's loans increased by 28.2%, with an absolute increase of 270,000 billion VND, while HDBank's loans grew by 32.1%. Additionally, the sources mention that VietinBank (CTG) led in terms of absolute loan amounts from other financial institutions, with over 433.445 trillion VND. VPBank also showed a notable increase in inter-bank deposits and loans, ri",
+      "answer": "According to the sources, TPBank (TPB) reported a profit before tax of 2.981 trillion đồng in the third quarter of 2026, a 56.7% increase compared to the same period last year. The sources also indicate that the total lending and borrowing between banks in Vietnam was significant, with PGBank (PGB) leading at 29.972 trillion đồng, followed by Nam A Bank (NAB) at 148.796 trillion đồng. VietinBank (CTG) had the largest absolute amount of lending and borrowing from other financial institutions at 4",
       "hits_count": 5,
       "hits": [
-        {
-          "title": "Tiền gửi và cho vay tại các ngân hàng: Nhiều nhà băng tăng trưởng tín dụng vượt xa huy động",
-          "url": "https://kinhtemoitruong.vn/tien-gui-va-cho-vay-tai-cac-ngan-hang-nhieu-nha-bang-tang-truong-tin-dung-vuot-xa-huy-dong-120050.html",
-          "snippet": "Với TCB, ngân hàng đã bổ sung nguồn vốn thông qua giấy tờ có giá và nguồn vốn từ các định chế tài chính quốc tế. Tiền gửi khách hàng đi ngang trong quý III, khiến việc đa dạng hóa nguồn huy động trở thành một yếu tố đáng chú ý trong cân đối nguồn vốn. Tại Ngân hàng TMCP Việt Nam Thịnh Vượng (VPBank, mã VPB), tín dụng t",
-          "score": 0.5786863
-        },
-        {
-          "title": "Tiền gửi và cho vay tại các ngân hàng: Nhiều nhà băng tăng trưởng tín dụng vượt xa huy động",
-          "url": "https://baomoi.com/tien-gui-va-cho-vay-tai-cac-ngan-hang-nhieu-nha-bang-tang-truong-tin-dung-vuot-xa-huy-dong-c56542054.epi",
-          "snippet": "Với TCB, ngân hàng đã bổ sung nguồn vốn thông qua giấy tờ có giá và nguồn vốn từ các định chế tài chính quốc tế. Tiền gửi khách hàng đi ngang trong quý III, khiến việc đa dạng hóa nguồn huy động trở thành một yếu tố đáng chú ý trong cân đối nguồn vốn. Tại Ngân hàng TMCP Việt Nam Thịnh Vượng (VPBank, mã VPB), tín dụng t",
-          "score": 0.5786863
-        },
-        {
-          "title": "Ngân hàng mở rộng cung ứng vốn cho nền kinh tế — Banker.vn",
-          "url": "https://banker.vn/bai-viet/ngan-hang-mo-rong-cung-ung-von-cho-nen-kinh-te-11b483",
-          "snippet": "Tăng trưởng tín dụng ghi nhận sự tham gia tích cực của nhiều ngân hàng. Trong đó, VPBank tăng 28,2%, tương ứng tăng thêm 270.000 tỷ đồng; HDBank tăng 32,1%, tăng thêm 181.000 tỷ đồng; MB tăng 18,5%, tăng thêm 205.000 tỷ đồng; Techcombank tăng 16,7%, tăng thêm 137.000 tỷ đồng. Ở nhóm ngân hàng quốc doanh, BIDV tăng thêm",
-          "score": 0.5488549
-        },
         {
           "title": "Văn Nguyên Stocks on Facebook: \"TPB: P/B CHƯA ĐẾN 1 LẦN, LỢI NHUẬN TĂNG HƠN 50% — VẬY TẠI SAO VẪN BỊ CHÊ? Nhiều anh em cứ thấy ngân …\"",
           "url": "https://www.facebook.com/groups/diendanchungkhoanvietnam.tt/posts/2278874383049459",
           "snippet": "# Văn Nguyên Stocks on Facebook: \"TPB: P/B CHƯA ĐẾN 1 LẦN, LỢI NHUẬN TĂNG HƠN 50% — VẬY TẠI SAO VẪN BỊ CHÊ? Nhiều anh em cứ thấy ngân …\" TPB: P/B CHƯA ĐẾN 1 LẦN, LỢI NHUẬN TĂNG HƠN 50% — VẬY TẠI SAO VẪN BỊ CHÊ? Nhiều anh em cứ thấy ngân hàng có nợ xấu tăng là lắc đầu, nhất là những mã từng có giai đoạn tăng trưởng tín ",
-          "score": 0.5371628
+          "score": 0.5263884
         },
         {
-          "title": "Các ngân hàng 'vay mượn' nhau hàng triệu tỉ đồng, ai dẫn đầu? · Stockbiz",
-          "url": "https://stockbiz.vn/tin-tuc/cac-ngan-hang-vay-muon-nhau-hang-trieu-ti-dong-ai-dan-dau/42876552",
-          "snippet": "VietinBank dẫn đầu quy mô, VPBank tăng mạnh nhất Theo dữ liệu WiData cung cấp cho Tuổi Trẻ, tổng hợp từ báo cáo tài chính của 28 ngân hàng niêm yết, đến cuối quý 3-2026, tổng tiền gửi và vay từ các tổ chức tín dụng khác đạt gần 3,75 triệu tỉ đồng. Con số này tăng khoảng 5,2% so với cuối năm 2025 và chiếm 15,8% tổng ngu",
-          "score": 0.514042
+          "title": "Các ngân hàng 'vay mượn' nhau hàng triệu tỉ đồng, ai dẫn đầu? - Tuổi Trẻ Online",
+          "url": "https://tuoitre.vn/cac-ngan-hang-vay-muon-nhau-hang-trieu-ti-dong-ai-dan-dau-100261122161106563.htm",
+          "snippet": "Dữ liệu cho thấy PGBank (PGB) đứng đầu về tỉ trọng, khi tiền gửi và vay từ các tổ chức tín dụng khác đạt gần 29.972 tỉ đồng, chiếm 32,35% tổng nguồn vốn tại cuối quý 3-2026. Theo sát là Nam A Bank (NAB), với gần 148.796 tỉ đồng, tương đương 32,15% tổng nguồn vốn. SeABank (SSB) cũng ghi nhận tỉ trọng trên 30%, với số dư",
+          "score": 0.46684557
+        },
+        {
+          "title": "CFO Vietnam Network on Facebook: \"QUÁ NÓNG...Các ngân hàng đang vay 'nóng' lẫn nhau hàng triệu tỷ đồng\"",
+          "url": "https://www.facebook.com/groups/cdo.platform/posts/1827154951564059",
+          "snippet": "tổng nguồn vốn. Giá trị khoản mục này tại cuối quý III/2026 đạt gần 29.972 tỷ đồng. Nam A Bank (NAB) đứng ngay sau với gần 148.796 tỷ đồng, tương đương 32,15% tổng nguồn vốn. SeABank (SSB) cũng ghi nhận tỷ trọng vượt 30%, đạt 30,63%, với số dư hơn 131.504 tỷ đồng. Một số ngân hàng khác có mức độ sử dụng nguồn vốn liên ",
+          "score": 0.43296224
+        },
+        {
+          "title": "Tín dụng chuyển từ bất động sản sang hạ tầng",
+          "url": "https://baodautu.vn/tin-dung-chuyen-tu-bat-dong-san-sang-ha-tang-d746339.html",
+          "snippet": "Đáng chú ý, tín dụng xây dựng tăng tốc mạnh, trong khi cho vay kinh doanh bất động sản chững lại. Dữ liệu 16 ngân hàng công bố số liệu chi tiết cho thấy, cho vay ở lĩnh vực xây dựng có mức tăng mạnh nhất trong quý III/2026 (+15.4% so với quý trước), đưa tăng trưởng lũy kế lên 25,4% trong 9 tháng đầu năm 2026. Diễn biến",
+          "score": 0.4241734
+        },
+        {
+          "title": "Các ngân hàng đang vay 'nóng' lẫn nhau hàng triệu tỷ đồng",
+          "url": "https://www.24h.com.vn/kinh-doanh/cac-ngan-hang-dang-vay-nong-lan-nhau-hang-trieu-ty-dong-c161a1813450.html",
+          "snippet": "Cụ thể, PGBank (PGB) có tỷ trọng tiền gửi và vay từ các tổ chức tín dụng khác cao nhất, đạt 32,35% tổng nguồn vốn. Giá trị khoản mục này tại cuối quý III/2026 đạt gần 29.972 tỷ đồng. Nam A Bank (NAB) đứng ngay sau với gần 148.796 tỷ đồng, tương đương 32,15% tổng nguồn vốn. SeABank (SSB) cũng ghi nhận tỷ trọng vượt 30%,",
+          "score": 0.39560106
         }
       ],
       "error": null
     },
     {
       "topic_id": "HPG_DUNG_QUAT_2",
-      "title_vi": "Hòa Phát (HPG) — Tiến độ Dung Quất 2, HRC & Nhu cầu Thép",
-      "query": "Hòa Phát HPG Dung Quất 2 sản lượng thép quý 3 quý 4 2026",
+      "title_vi": "Hòa Phát (HPG) & Ngành Thép — Tiến độ Dung Quất 2, HRC & Bảo hộ",
+      "query": "Hòa Phát HPG Dung Quất 2 sản lượng thép HRC quý 3 2026",
       "ok": true,
-      "answer": "According to the sources, Hòa Phát HPG Dung Quất 2 has been operating at 90-95% of its designed capacity in the third quarter of 2026, contributing significantly to the company's production and revenue growth. The company's total steel output for the first nine months of 2026 reached approximately 5.5 million tons, with hot-rolled coil (HRC) production exceeding 2 million tons, marking a 64% year-over-year increase. The Dung Quất 2 project has driven a substantial jump in the company's growth ra",
+      "answer": "In the third quarter of 2026, Hòa Phát HPG Dung Quất 2 achieved a significant increase in steel production, particularly in hot-rolled coil (HRC) with a volume of over 2 million tons, marking a 64% year-over-year growth. The complex operated at 90-95% of its designed capacity, contributing to the company's overall production of approximately 5.5 million tons of HRC by the end of the third quarter. This surge in production was a major driver behind the company's substantial profit margins, with a",
       "hits_count": 5,
       "hits": [
         {
           "title": "[MoneyF Opinion] Hòa Phát tăng tốc lợi nhuận, Dung Quất 2 tiến sát công suất tối đa: Động lực tăng trưởng còn dư địa đến đâu? | MoneyF",
           "url": "https://moneyf.vn/moneyf-opinion-hoa-phat-tang-toc-loi-nhuan-dung-qu-w5puzwl5",
           "snippet": "Đáng chú ý, biên lợi nhuận ròng của doanh nghiệp đạt 13,2%, mức cao nhất kể từ giai đoạn tăng trưởng mạnh năm 2022. Đây là tín hiệu cho thấy hiệu quả hoạt động của HPG đang được cải thiện đáng kể, đặc biệt trong bối cảnh tổ hợp Dung Quất 2 đóng góp ngày càng lớn vào quy mô sản xuất và doanh thu. Xét về sản lượng, trong",
-          "score": 0.65742844
-        },
-        {
-          "title": "Hòa Phát (HPG) - Lợi nhuận trên đà tăng trường",
-          "url": "https://24hmoney.vn/news/hoa-phat-hpg-loi-nhuan-tren-da-tang-truong-c30a2859427.html",
-          "snippet": "Tính đến hết Quý 3/2026, tổng sản lượng HRC của doanh nghiệp đã đạt xấp xỉ 5,5 triệu tấn, chúng tôi ước tính tương đương mức vận hành khoảng 90% - 95% công suất thiết kế của tổ hợp Dung Quất 2. Sự đóng góp từ dự án trọng điểm này đã tạo ra bước nhảy vọt về quy mô, đưa tốc độ tăng trưởng doanh thu từ mức khiêm tốn 15-20",
-          "score": 0.65654814
+          "score": 0.77982527
         },
         {
           "title": "Lãng tử buôn nước mắm on Facebook: \"HPG - Lợi nhuận trên đà tăng trưởng Thép Hòa Phát (HPG) vừa công bố BCTC Quý III/2026 với kết quả lợ…\"",
           "url": "https://www.facebook.com/langtubuonnuocmam/posts/hpg-l%E1%BB%A3i-nhu%E1%BA%ADn-tr%C3%AAn-%C4%91%C3%A0-t%C4%83ng-tr%C6%B0%E1%BB%9Fngth%C3%A9p-h%C3%B2a-ph%C3%A1t-hpg-v%E1%BB%ABa-c%C3%B4ng-b%E1%BB%91-bctc-qu%C3%BD-iii2026-/1760721436059373",
-          "snippet": "☑️Đầu tư công & BĐS: Giải ngân đầu tư công 10 tháng đạt 74,1% kế hoạch; các luật BĐS mới tháo gỡ pháp lý giúp hỗ trợ nhu cầu thép xây dựng giai đoạn cuối năm. ☑️Dung Quất 2 chạm trần công suất: Tổng sản lượng HRC 9 tháng đạt ~5,5 triệu tấn (90-95% công suất), khiến dư địa tăng trưởng sản lượng đột biến sẽ thu hẹp dần. ",
-          "score": 0.654674
+          "snippet": "✅KQKD Quý III/2026 bùng nổ: Doanh thu đạt 62.214 tỷ đồng (+71% yoy); LNST đạt 8.217 tỷ đồng (+106% yoy); biên lãi ròng đạt 13,2% (cao nhất từ năm 2022). Lũy kế 9 tháng, LNST đạt 23.582 tỷ đồng (+104% yoy, vượt 7% kế hoạch cả năm). ✅Sản lượng & Giá bán tăng trưởng mạnh: Sản lượng bán thép các loại đạt 3,8 triệu tấn (+54",
+          "score": 0.73810315
         },
         {
-          "title": "Lịch sử giá cổ phiếu HPG (2007 – 2026) : Giải mã chu kỳ 20 năm và điểm “bắt đáy” 2026",
-          "url": "https://www.finhay.com.vn/lich-su-gia-co-phieu-hpg",
-          "snippet": "Dự án Dung Quất 2 của HPG Dung Quất 2 đã vận hành, đưa tổng công suất thép thô lên 16 triệu tấn/năm. Báo cáo kết quả quý III/2026 của Hòa Phát ghi nhận 9 tháng đạt 171.539 tỷ đồng doanh thu và 23.746 tỷ đồng LNST, tăng lần lượt 54% và 104%. Sản lượng tạo bệ phóng cho quy mô, nhưng cần tách khoản đóng góp bất động sản m",
-          "score": 0.6190684
+          "title": "Sáu \"gia tộc\" trên sàn sau gần 11 tháng: Vingroup thêm gần 500.000 tỷ đồng, họ Hòa Phát vượt họ FPT",
+          "url": "https://cafef.vn/sau-gia-toc-tren-san-sau-gan-11-thang-vingroup-them-gan-500000-ty-dong-ho-hoa-phat-vuot-ho-fpt-188261123235903489.chn",
+          "snippet": "Họ Hòa Phát của ông Trần Đình Long đứng thứ tư với 179.076 tỷ đồng, giảm 20.100 tỷ đồng, tương đương giảm 10,1%. Con số này đã bao gồm 6.840 tỷ đồng vốn hóa của HPA, cổ phiếu thuộc mảng nông nghiệp, bắt đầu giao dịch từ ngày 06/02. Tính riêng HPG, vốn hóa giảm 26.940 tỷ đồng, tương đương giảm 13,5%, xuống 172.200 tỷ đồ",
+          "score": 0.7265227
         },
         {
-          "title": "Giá than mỡ neo cao, biên lợi nhuận ngành thép đối mặt áp lực trong quý IV/2026",
-          "url": "https://kinhtemoitruong.vn/gia-than-mo-neo-cao-bien-loi-nhuan-nganh-thep-doi-mat-ap-luc-trong-quy-iv2026-120040.html",
-          "snippet": "Theo báo cáo, trong quý III/2026, Hòa Phát tiêu thụ khoảng 3,8 triệu tấn thép, tăng 54% so với cùng kỳ năm trước và tăng 8% so với quý II. Lợi thế từ tổ hợp Dung Quất 2 cũng được thể hiện qua sự cải thiện biên lợi nhuận. Biên gộp của doanh nghiệp đã tăng từ khoảng 13-14% trong năm 2024 lên 19% trong hai quý gần nhất. T",
-          "score": 0.5911923
+          "title": "CTCP Chứng Khoán Hải Phòng on Facebook: \"HPG | LỢI NHUẬN TỪ MẢNG THÉP TĂNG ĐỘT BIẾN NHỜ MỞ RỘNG CÔNG SUẤT TỪ DỰ ÁN DUNG QUẤT 2 HASECO công bố…\"",
+          "url": "https://www.facebook.com/haseco.securities/posts/hpg-l%E1%BB%A3i-nhu%E1%BA%ADn-t%E1%BB%AB-m%E1%BA%A3ng-th%C3%A9p-t%C4%83ng-%C4%91%E1%BB%99t-bi%E1%BA%BFn-nh%E1%BB%9D-m%E1%BB%9F-r%E1%BB%99ng-c%C3%B4ng-su%E1%BA%A5t-t%E1%BB%AB-d%E1%BB%B1-%C3%A1n-dung-qu%E1%BA%A5/1136926629119561",
+          "snippet": "↗ Động lực tăng trưởng cốt lõi từ sản lượng và hàng rào phòng vệ thương mại: • Sản lượng tiêu thụ Q3 đạt 3,8 triệu tấn (+54% YoY): Trong đó thép HRC đạt 2,08 triệu tấn (+64% YoY) nhờ đóng góp công suất mới từ Dung Quất 2. Xuất khẩu thép tăng vọt 165% lên 1,15 triệu tấn nhằm tối ưu công suất. • Cải thiện biên lợi nhuận:",
+          "score": 0.7026321
+        },
+        {
+          "title": "HPG lãi hơn 8.200 tỷ quý 3/2026, Dung Quất 2 có mở siêu chu kỳ tăng trưởng?",
+          "url": "https://www.facebook.com/groups/962456300121838/posts/1103686929332107",
+          "snippet": "Vị thế độc tôn khu vực: Chiếm 35% thị phần thép xây dựng nội địa, dẫn đầu thị phần HRC và sở hữu công suất 16 triệu tấn thép thô/năm – lớn nhất Đông Nam Á – HPG",
+          "score": 0.6997676
         }
       ],
       "error": null
     },
     {
       "topic_id": "US_MACRO_AI_TECH",
-      "title_vi": "Vĩ mô Mỹ (Fed, US10Y) & Nhóm Big Tech / AI (NVDA, Anthropic, GOOGL, AMZN)",
-      "query": "Federal Reserve US 10Y yield Nvidia Anthropic IPO Google Amazon AI outlook November 2026",
+      "title_vi": "Vĩ mô Mỹ (Fed, US10Y, VIX) & Big Tech / AI (November 2026)",
+      "query": "Federal Reserve US 10Y yield VIX Nvidia Google Amazon AI outlook November 2026",
       "ok": true,
-      "answer": "Anthropic's IPO on November 19, 2026, raised more than $100 billion, making it the biggest in history, and valued the company at around $1.5 trillion. The IPO saw significant retail buying, with Vanda Research projecting $250 million in net retail buying on the first trading day, more than double what SpaceX received. The AI industry, including companies like Nvidia, faced skepticism, but Anthropic remains compelling. The 10-year Treasury yield was 5.09% on November 24, 2026, and analysts are di",
+      "answer": "The Federal Reserve's 10-year yield was 5.127% on November 17, 2026, and fell to 4.912% by November 20, 2026. The VIX spiked to 40 points on November 17, 2026, and fell to 28.5 points by November 20, 2026. The S&P 500, Nasdaq, and Dow all experienced significant declines, with the S&P 500 entering a correction, falling 8.61% for the week. Nvidia's stock fell 22.92% over the week, and the semiconductor index dropped 43% from its June peak. The sources do not provide specific outlooks for AI, Goog",
       "hits_count": 5,
       "hits": [
         {
-          "title": "What to Expect From the Anthropic IPO",
-          "url": "https://etfdb.com/equity-etf-content-hub/expectations-anthropic-ipo",
-          "snippet": "## Key Takeaways: Anthropic debuts on the Nasdaq on November 19, 2026. A report from Vanda Research projects Anthropic could see about $250 million in net retail buying on its first trading day, over double what SpaceX received. Anthropic’s market debut comes as the AI industry and Nvidia face some skepticism, though A",
-          "score": 0.6348829
+          "title": "Market Quick Take - New US chip curbs weigh on tech before Nvidia results - 17 November 2026 | Saxo",
+          "url": "https://www.home.saxo/en-sg/content/articles/macro/market-quick-take---new-us-chip-curbs-weigh-on-tech-before-nvidia-results---17-november-2026-17112026",
+          "snippet": "Treasuries posted modest gains on Monday, coinciding with safe-haven demand during the tech sell-off. The 10-year yield is 5.127% at 05:00 CET, the 2-year 4.821% and the 30-year 5.477%, leaving the 2s10s spread near 31bp, and the 5s30s curve steepened by 3bp on Monday. Last week five- and ten-year yields rose 32bp and ",
+          "score": 0.5684158
         },
         {
-          "title": "Expert Comment: What does Anthropic’s breathtaking valuation mean for the AI market? | Oxford University",
-          "url": "https://www.ox.ac.uk/news/2026-11-23-expert-comment-what-does-anthropics-breathtaking-valuation-mean-for-the-ai-market",
-          "snippet": "Clearly, what we have seen in a record-breaking stock market debut is not a mere extrapolation of Anthropic’s current financial figures: according to the company’s IPO prospectus, while it is not (yet) profitable, its revenue for the first nine months of 2026 was already around 33 billion USD. An astonishing number for",
-          "score": 0.5245773
+          "title": "Stock Market Correction 2026: Is Fear Taking Over? | Greenbush Financial Group",
+          "url": "https://www.greenbushfinancial.com/all-blogs/stock-market-correction-2026",
+          "snippet": "That could provide support for borrowing, business investment, and potentially stock market valuations. We should be careful not to assume that lower oil prices automatically lead to lower interest rates. Oil prices can decline because of weakening demand, and the Fed considers a broad range of economic indicators. Nev",
+          "score": 0.47049332
         },
         {
-          "title": "Futures Climb as Nvidia's 75% Growth Outlook Steers Focus to FOMC Minutes, Anthropic Debut — BigGo Finance",
-          "url": "https://finance.biggo.com/news/be1166b8-3935-41ed-91a8-73163958d1e3",
-          "snippet": "| Asset | Level / Move | --- | | 10-year Treasury yield | 5.09% | | 2-year Treasury yield | 4.79% | | WTI crude | about $83.00 a barrel, -1.95% | | Brent crude | about $91.85 a barrel, -1.39% | | Spot gold | about $3,770.39 an ounce, -2.03% | | U.S. dollar index | 103.8350, +0.21% | | Bitcoin | $64,683, -0.29% over 24 ",
-          "score": 0.5241207
+          "title": "Stock Market Close November 20, 2026: S&P 500, Dow, Nasdaq",
+          "url": "https://portfolio-terminal.com/blog/stock-market-week-in-review-november-20-2026",
+          "snippet": "## The scorecard | Close | Nov. 13 | Nov. 20 | Week | ------| | S&P 500 | 7,561.67 | 6,910.39 | −8.61% | | Nasdaq | 25,136.27 | 22,617.73 | −10.02% | | Dow | 52,347.55 | 48,147.33 | −8.02% | | Russell 2000 | 2,790.49 | 2,581.79 | −7.48% | | 10-year yield | 5.154% | 4.912% | −0.24 | | VIX | 19.30 | 35.89 | +16.59 | | Do",
+          "score": 0.46833465
         },
         {
-          "title": "AI giant Anthropic raises more than $100 billion in record-setting IPO : NPR",
-          "url": "https://www.npr.org/2026/11/19/nx-s1-6042558/anthropic-ipo-breaks-records-100-billion",
-          "snippet": "The company's seven founders also sold more than 23 million shares as part of the IPO. On top of that, Anthropic's prospectus included plans to put an additional $26 billion worth of shares into the market through private placements with companies including Google, Microsoft and Nvidia. The total haul is more than $107",
-          "score": 0.51119804
+          "title": "📊Chart of the day: VIX - inverted curve and a reading close to 30. Peak of fear or just the beginning? | XTB",
+          "url": "https://www.xtb.com/int/market-analysis/news-and-research/chart-of-the-day-vix-inverted-curve-and-a-reading-close-to-30-peak-of-fear-or-just-the-beginning",
+          "snippet": "Wall Street's fear index experienced its sharpest spike on Friday since the trade war of April 2025. VIX hit 40 pts during the session, and the VIX futures contract expiring in December ended the day at 28.5 pts, up from 19.1 pts a week earlier. The S&P 500 fell 3.7% that day, and the Nasdaq 100 dropped 5.6%. The S&P 5",
+          "score": 0.43512127
         },
         {
-          "title": "AI stocks sell off after Anthropic’s record IPO as Wall Street splits on whether it’s the top | Fortune",
-          "url": "https://fortune.com/2026/11/20/ai-stocks-selloff-anthropic-record-ipo-wall-street-split-top",
-          "snippet": "Snider expects earnings to keep driving returns. The index’s forward price-to-earnings ratio has fallen 19% this year to about 18 times, near its 10-year average, his team wrote. They expect earnings growth to slow from roughly 30% in 2026 to 18% in 2027 as AI capex growth cools, with the AI trade moving from infrastru",
-          "score": 0.4864764
+          "title": "Global bond yields plunge as AI rout triggers flight to safety By Investing.com",
+          "url": "https://www.investing.com/news/forex-news/global-bond-yields-plunge-as-ai-rout-triggers-flight-to-safety-5040733",
+          "snippet": "Investing.com - Global sovereign bond yields plunged on Friday, staging synchronized rally as a brutal sell-off across the global technology and artificial intelligence sectors sent spooked investors fleeing directly into the safety of government debt. The broad-based liquidation was triggered as the record-breaking ma",
+          "score": 0.36026397
         }
       ],
       "error": null
@@ -3046,6 +3321,22 @@
       "published_at": "2026-11-23 16:17:00"
     },
     {
+      "item_id": "c97ab3ef77675f45",
+      "market": "VN",
+      "category": "BCTC_EARNINGS",
+      "urgency": "HIGH",
+      "sentiment_score": 0.45,
+      "tickers": [
+        "HPG"
+      ],
+      "sector": "HPG",
+      "title": "HPG: Giá nguyên liệu hạ nhiệt, doanh nghiệp thép nào sẽ hưởng lợi nhất",
+      "summary": "Giá nguyên liệu đầu vào có xu hướng giảm được kỳ vọng tạo điều kiện cải thiện lợi nhuận ngành thép trong năm 2027. Tuy nhiên TCBS cho rằng mức độ hưởng lợi sẽ không đồng đều giữa các doanh nghiệp, phụ thuộc vào công nghệ sản xuất, giá bán và khả năng quản lý hàng tồn kho.",
+      "source_name": "Vietcap/FireAnt",
+      "source_url": "https://fireant.vn/bai-viet/hpg-gia-nguyen-lieu-ha-nhiet-doanh-nghiep-thep-nao-se-huong-loi-nhat/42818191",
+      "published_at": "2026-11-18 09:53:00"
+    },
+    {
       "item_id": "d94a5f16ca923181",
       "market": "VN",
       "category": "BCTC_EARNINGS",
@@ -3062,20 +3353,20 @@
       "published_at": "2026-11-18 20:15:00"
     },
     {
-      "item_id": "c97ab3ef77675f45",
+      "item_id": "183ad3c689d12846",
       "market": "VN",
-      "category": "BCTC_EARNINGS",
+      "category": "MACRO_SBV_FED",
       "urgency": "HIGH",
-      "sentiment_score": 0.45,
+      "sentiment_score": 0.0,
       "tickers": [
-        "HPG"
+        "HDB"
       ],
-      "sector": "HPG",
-      "title": "HPG: Giá nguyên liệu hạ nhiệt, doanh nghiệp thép nào sẽ hưởng lợi nhất",
-      "summary": "Giá nguyên liệu đầu vào có xu hướng giảm được kỳ vọng tạo điều kiện cải thiện lợi nhuận ngành thép trong năm 2027. Tuy nhiên TCBS cho rằng mức độ hưởng lợi sẽ không đồng đều giữa các doanh nghiệp, phụ thuộc vào công nghệ sản xuất, giá bán và khả năng quản lý hàng tồn kho.",
-      "source_name": "Vietcap/FireAnt",
-      "source_url": "https://fireant.vn/bai-viet/hpg-gia-nguyen-lieu-ha-nhiet-doanh-nghiep-thep-nao-se-huong-loi-nhat/42818191",
-      "published_at": "2026-11-18 09:53:00"
+      "sector": "HDB",
+      "title": "HDB: Thông báo nhận được Quyết định của NHNN về việc sửa đổi nội dung về trụ sở chính tại Giấy phép thành lập và hoạt động",
+      "summary": "[HDB - CafeF Doanh nghiệp @ 20/11/2026 17:16] HDB: Thông báo nhận được Quyết định của NHNN về việc sửa đổi nội dung về trụ sở chính tại Giấy phép thành lập và hoạt động",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/HDB-3025816/hdb-thong-bao-nhan-duoc-quyet-dinh-cua-nhnn-ve-viec-sua-doi-noi-dung-ve-tru-so-chinh-tai-giay-phep-thanh-lap-va-hoat-dong.chn?utm_source=du-lieu.chn",
+      "published_at": "20/11/2026 17:16"
     },
     {
       "item_id": "3f87916afb4df81d",
@@ -3108,22 +3399,6 @@
       "source_name": "Vietcap/Người quan sát",
       "source_url": "https://nguoiquansat.vn/vpbank-tiep-tuc-ha-lai-suat-huy-dong-tai-mot-so-ky-han-328274.html",
       "published_at": "2026-11-15 14:36:00"
-    },
-    {
-      "item_id": "183ad3c689d12846",
-      "market": "VN",
-      "category": "MACRO_SBV_FED",
-      "urgency": "HIGH",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "HDB"
-      ],
-      "sector": "HDB",
-      "title": "HDB: Thông báo nhận được Quyết định của NHNN về việc sửa đổi nội dung về trụ sở chính tại Giấy phép thành lập và hoạt động",
-      "summary": "[HDB - CafeF Doanh nghiệp @ 20/11/2026 17:16] HDB: Thông báo nhận được Quyết định của NHNN về việc sửa đổi nội dung về trụ sở chính tại Giấy phép thành lập và hoạt động",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/HDB-3025816/hdb-thong-bao-nhan-duoc-quyet-dinh-cua-nhnn-ve-viec-sua-doi-noi-dung-ve-tru-so-chinh-tai-giay-phep-thanh-lap-va-hoat-dong.chn?utm_source=du-lieu.chn",
-      "published_at": "20/11/2026 17:16"
     },
     {
       "item_id": "43fd5ee4be402d10",
@@ -3174,22 +3449,6 @@
       "published_at": "2026-11-23 14:30:00"
     },
     {
-      "item_id": "05eb511a457407d0",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.61,
-      "tickers": [
-        "VPB"
-      ],
-      "sector": "VPB",
-      "title": "VPB: Ngân hàng đẩy mạnh huy động vốn ngoại, hút hàng tỷ USD",
-      "summary": "Nhiều ngân hàng trong nước đang mở rộng kênh huy động ngoại tệ trung và dài hạn, phục vụ nhu cầu tín dụng và các dự án trọng điểm của nền kinh tế.",
-      "source_name": "Vietcap/FireAnt",
-      "source_url": "https://fireant.vn/bai-viet/vpb-ngan-hang-day-manh-huy-dong-von-ngoai-hut-hang-ty-usd/42781671",
-      "published_at": "2026-11-15 21:17:00"
-    },
-    {
       "item_id": "5c33df5d9f2727ac",
       "market": "VN",
       "category": "MARKET_GENERAL",
@@ -3220,6 +3479,22 @@
       "source_name": "Vietcap/Người quan sát",
       "source_url": "https://nguoiquansat.vn/hdbank-va-mufg-mo-rong-hop-tac-thi-truong-von-thuc-day-dong-von-dau-tu-viet-nam-nhat-ban-329359.html",
       "published_at": "2026-11-21 10:31:00"
+    },
+    {
+      "item_id": "05eb511a457407d0",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.61,
+      "tickers": [
+        "VPB"
+      ],
+      "sector": "VPB",
+      "title": "VPB: Ngân hàng đẩy mạnh huy động vốn ngoại, hút hàng tỷ USD",
+      "summary": "Nhiều ngân hàng trong nước đang mở rộng kênh huy động ngoại tệ trung và dài hạn, phục vụ nhu cầu tín dụng và các dự án trọng điểm của nền kinh tế.",
+      "source_name": "Vietcap/FireAnt",
+      "source_url": "https://fireant.vn/bai-viet/vpb-ngan-hang-day-manh-huy-dong-von-ngoai-hut-hang-ty-usd/42781671",
+      "published_at": "2026-11-15 21:17:00"
     },
     {
       "item_id": "d3a3147b87df19b9",
@@ -3268,6 +3543,38 @@
       "source_name": "Vietcap/FireAnt",
       "source_url": "https://fireant.vn/bai-viet/tpb-tpbank-duoc-bo-sung-hoat-dong-cung-cap-dich-vu-bu-tru-thanh-toan-giao-dich-chung-khoan/42810780",
       "published_at": "2026-11-17 16:12:00"
+    },
+    {
+      "item_id": "e7c5b4081ca5dbe6",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.45,
+      "tickers": [
+        "HPG"
+      ],
+      "sector": "HPG",
+      "title": "HPG: Tập đoàn Trung Quốc đến thăm tổ hợp thép 7 tỷ USD của tỷ phú Trần Đình Long, hé lộ lĩnh vực muốn hợp tác",
+      "summary": "Đoàn công tác Baowu Zhiwei vừa tìm hiểu năng lực sản xuất của Hòa Phát Dung Quất và thảo luận về các lĩnh vực có tiềm năng hợp tác trong thời gian tới.",
+      "source_name": "Vietcap/Người quan sát",
+      "source_url": "https://nguoiquansat.vn/tap-doan-trung-quoc-den-tham-to-hop-thep-7-ty-usd-cua-ty-phu-tran-dinh-long-he-lo-linh-vuc-muon-hop-tac-329735.html",
+      "published_at": "2026-11-23 19:23:00"
+    },
+    {
+      "item_id": "9090ab5e6b8016f1",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.45,
+      "tickers": [
+        "HPG"
+      ],
+      "sector": "HPG",
+      "title": "HPG: Hòa Phát (HPG) làm việc với doanh nghiệp Hàn Quốc phát triển dòng thép đặc biệt phục vụ ngành ô tô",
+      "summary": "Sau 5 năm hợp tác cung ứng thép dây cuộn carbon cao, Hòa Phát và đối tác Hàn Quốc đang tăng cường nghiên cứu, phát triển các sản phẩm có yêu cầu kỹ thuật khắt khe hơn.",
+      "source_name": "Vietcap/Người quan sát",
+      "source_url": "https://nguoiquansat.vn/hoa-phat-hpg-lam-viec-voi-doanh-nghiep-han-quoc-phat-trien-dong-thep-dac-biet-phuc-vu-nganh-o-to-328578.html",
+      "published_at": "2026-11-17 09:36:00"
     },
     {
       "item_id": "656733b75a89984a",
@@ -3364,38 +3671,6 @@
       "source_name": "Vietcap/FireAnt",
       "source_url": "https://fireant.vn/bai-viet/vpb-dong-tien-tuan-qua-ngan-hang-nha-nuoc-bom-von-vpbank-huy-dong-730-trieu-usd/42780788",
       "published_at": "2026-11-15 13:55:00"
-    },
-    {
-      "item_id": "e7c5b4081ca5dbe6",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.45,
-      "tickers": [
-        "HPG"
-      ],
-      "sector": "HPG",
-      "title": "HPG: Tập đoàn Trung Quốc đến thăm tổ hợp thép 7 tỷ USD của tỷ phú Trần Đình Long, hé lộ lĩnh vực muốn hợp tác",
-      "summary": "Đoàn công tác Baowu Zhiwei vừa tìm hiểu năng lực sản xuất của Hòa Phát Dung Quất và thảo luận về các lĩnh vực có tiềm năng hợp tác trong thời gian tới.",
-      "source_name": "Vietcap/Người quan sát",
-      "source_url": "https://nguoiquansat.vn/tap-doan-trung-quoc-den-tham-to-hop-thep-7-ty-usd-cua-ty-phu-tran-dinh-long-he-lo-linh-vuc-muon-hop-tac-329735.html",
-      "published_at": "2026-11-23 19:23:00"
-    },
-    {
-      "item_id": "9090ab5e6b8016f1",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.45,
-      "tickers": [
-        "HPG"
-      ],
-      "sector": "HPG",
-      "title": "HPG: Hòa Phát (HPG) làm việc với doanh nghiệp Hàn Quốc phát triển dòng thép đặc biệt phục vụ ngành ô tô",
-      "summary": "Sau 5 năm hợp tác cung ứng thép dây cuộn carbon cao, Hòa Phát và đối tác Hàn Quốc đang tăng cường nghiên cứu, phát triển các sản phẩm có yêu cầu kỹ thuật khắt khe hơn.",
-      "source_name": "Vietcap/Người quan sát",
-      "source_url": "https://nguoiquansat.vn/hoa-phat-hpg-lam-viec-voi-doanh-nghiep-han-quoc-phat-trien-dong-thep-dac-biet-phuc-vu-nganh-o-to-328578.html",
-      "published_at": "2026-11-17 09:36:00"
     },
     {
       "item_id": "1a266b0bfed9dffb",
@@ -3512,118 +3787,6 @@
       "published_at": "10/11/2026 00:00"
     },
     {
-      "item_id": "12b8608c097722b9",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "CTG"
-      ],
-      "sector": "CTG",
-      "title": "VietinBank chính thức hoàn tất bán tòa tháp VietinBank Tower 'đắp chiếu' 16 năm ở Ciputra",
-      "summary": "[CTG - CafeF Doanh nghiệp @ 18/11/2026 17:49] VietinBank chính thức hoàn tất bán tòa tháp VietinBank Tower 'đắp chiếu' 16 năm ở Ciputra",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/vietinbank-chinh-thuc-hoan-tat-ban-toa-thap-vietinbank-tower-dap-chieu-16-nam-o-ciputra-188261118174959886.chn?utm_source=du-lieu.chn",
-      "published_at": "18/11/2026 17:49"
-    },
-    {
-      "item_id": "483d2a1868f99630",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "CTG"
-      ],
-      "sector": "CTG",
-      "title": "CTG: Miễn nhiệm bà Lê Như Hoa - Phó Tổng giám đốc từ 1.12.2026 (kèm Quyết định HĐQT)",
-      "summary": "[CTG - CafeF Doanh nghiệp @ 17/11/2026 00:00] CTG: Miễn nhiệm bà Lê Như Hoa - Phó Tổng giám đốc từ 1.12.2026 (kèm Quyết định HĐQT)",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/CTG-3023659/ctg-mien-nhiem-ba-le-nhu-hoa-pho-tong-giam-doc-tu-1122026-kem-quyet-dinh-hdqt.chn?utm_source=du-lieu.chn",
-      "published_at": "17/11/2026 00:00"
-    },
-    {
-      "item_id": "c3ff3afb621687b6",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "CTG"
-      ],
-      "sector": "CTG",
-      "title": "CTG: HĐQT thông qua mẫu Hợp đồng cung cấp và sử dụng các dịch vụ thanh toán và quản lý dòng tiền với VietinBank Gold",
-      "summary": "[CTG - CafeF Doanh nghiệp @ 06/11/2026 00:00] CTG: HĐQT thông qua mẫu Hợp đồng cung cấp và sử dụng các dịch vụ thanh toán và quản lý dòng tiền với VietinBank Gold",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/CTG-3016348/ctg-hdqt-thong-qua-mau-hop-dong-cung-cap-va-su-dung-cac-dich-vu-thanh-toan-va-quan-ly-dong-tien-voi-vietinbank-gold.chn?utm_source=du-lieu.chn",
-      "published_at": "06/11/2026 00:00"
-    },
-    {
-      "item_id": "241b033fbeb8ace1",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "VPB"
-      ],
-      "sector": "VPB",
-      "title": "VPB: Nghị quyết HĐQT phê duyệt, chấp thuận phương án mua lại trước hạn Trái phiếu VPB12516",
-      "summary": "[VPB - CafeF Doanh nghiệp @ 06/11/2026 00:00] VPB: Nghị quyết HĐQT phê duyệt, chấp thuận phương án mua lại trước hạn Trái phiếu VPB12516",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/VPB-3016273/vpb-nghi-quyet-hdqt-phe-duyet-chap-thuan-phuong-an-mua-lai-truoc-han-trai-phieu-vpb12516.chn?utm_source=du-lieu.chn",
-      "published_at": "06/11/2026 00:00"
-    },
-    {
-      "item_id": "a3a7564fbb00f0c7",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "VPB"
-      ],
-      "sector": "VPB",
-      "title": "Lần đầu tiên có 9 doanh nghiệp Việt Nam lãi trên 10.000 tỷ trong một quý",
-      "summary": "[VPB - CafeF Doanh nghiệp @ 03/11/2026 06:52] Lần đầu tiên có 9 doanh nghiệp Việt Nam lãi trên 10.000 tỷ trong một quý",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/lan-dau-tien-co-9-doanh-nghiep-viet-nam-lai-tren-10000-ty-trong-mot-quy-188261103001852396.chn?utm_source=du-lieu.chn",
-      "published_at": "03/11/2026 06:52"
-    },
-    {
-      "item_id": "f226a510323e1e4f",
-      "market": "VN",
-      "category": "MARKET_GENERAL",
-      "urgency": "NORMAL",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "VPB"
-      ],
-      "sector": "VPB",
-      "title": "VPB: CBTT sửa đổi nội dung vốn điều lệ tại điều lệ ngân hàng",
-      "summary": "[VPB - CafeF Doanh nghiệp @ 28/10/2026 10:33] VPB: CBTT sửa đổi nội dung vốn điều lệ tại điều lệ ngân hàng",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/VPB-3008510/vpb-cbtt-sua-doi-noi-dung-von-dieu-le-tai-dieu-le-ngan-hang.chn?utm_source=du-lieu.chn",
-      "published_at": "28/10/2026 10:33"
-    },
-    {
-      "item_id": "108d6746f8759fc1",
-      "market": "VN",
-      "category": "DIVIDEND_ESOP",
-      "urgency": "MEDIUM",
-      "sentiment_score": 0.0,
-      "tickers": [
-        "VPB"
-      ],
-      "sector": "VPB",
-      "title": "VPB: 3.11.2026, giao dịch 2.066.076.399 cp niêm yết bổ sung",
-      "summary": "[VPB - CafeF Doanh nghiệp @ 28/10/2026 00:00] VPB: 3.11.2026, giao dịch 2.066.076.399 cp niêm yết bổ sung",
-      "source_name": "CafeF Doanh nghiệp",
-      "source_url": "https://cafef.vn/du-lieu/VPB-3008511/vpb-3112026-giao-dich-2066076399-cp-niem-yet-bo-sung.chn?utm_source=du-lieu.chn",
-      "published_at": "28/10/2026 00:00"
-    },
-    {
       "item_id": "38a1e73eede5d17b",
       "market": "VN",
       "category": "MARKET_GENERAL",
@@ -3654,6 +3817,118 @@
       "source_name": "CafeF Doanh nghiệp",
       "source_url": "https://cafef.vn/ty-phu-tran-dinh-long-bat-tay-tap-doan-han-quoc-phat-trien-loai-thep-dac-biet-cho-lop-o-to-tai-nha-may-thep-12-trieu-tannam-188261118084837799.chn?utm_source=du-lieu.chn",
       "published_at": "18/11/2026 09:51"
+    },
+    {
+      "item_id": "393216c5af83cb7c",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HPG"
+      ],
+      "sector": "HPG",
+      "title": "HPG: Nghị quyết HĐQT thông qua việc góp vốn thành lập CTCP Năng lượng tái tạo Hòa Phát",
+      "summary": "[HPG - CafeF Doanh nghiệp @ 16/11/2026 00:00] HPG: Nghị quyết HĐQT thông qua việc góp vốn thành lập CTCP Năng lượng tái tạo Hòa Phát",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/HPG-3022449/hpg-nghi-quyet-hdqt-thong-qua-viec-gop-von-thanh-lap-ctcp-nang-luong-tai-tao-hoa-phat.chn?utm_source=du-lieu.chn",
+      "published_at": "16/11/2026 00:00"
+    },
+    {
+      "item_id": "dbaece344654cdf7",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HPG"
+      ],
+      "sector": "HPG",
+      "title": "Công ty con của Hòa Phát được thuê đất đợt 2 làm khu công nghiệp Hoàng Diệu",
+      "summary": "[HPG - CafeF Doanh nghiệp @ 12/11/2026 13:20] Công ty con của Hòa Phát được thuê đất đợt 2 làm khu công nghiệp Hoàng Diệu",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/cong-ty-con-cua-hoa-phat-duoc-thue-dat-dot-2-lam-khu-cong-nghiep-hoang-dieu-18826111213210335.chn?utm_source=du-lieu.chn",
+      "published_at": "12/11/2026 13:20"
+    },
+    {
+      "item_id": "9b32dafcccfd18e0",
+      "market": "VN",
+      "category": "DIVIDEND_ESOP",
+      "urgency": "MEDIUM",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HDB"
+      ],
+      "sector": "HDB",
+      "title": "HDB: HDBank dự kiến phát hành 20.000 tỷ đồng trái phiếu ra công chúng",
+      "summary": "HDBank dự kiến phát hành tối đa 200 triệu trái phiếu với tổng giá trị 20.000 tỷ đồng, chia thành 3 đợt từ quý IV/2026 đến quý IV/2027.",
+      "source_name": "Vietcap/Người quan sát",
+      "source_url": "https://nguoiquansat.vn/hdbank-du-kien-phat-hanh-20-000-ty-dong-trai-phieu-ra-cong-chung-329239.html",
+      "published_at": "2026-11-20 15:43:00"
+    },
+    {
+      "item_id": "59c028293a91814d",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HDB"
+      ],
+      "sector": "HDB",
+      "title": "HDB: Nghị quyết HĐQT về việc lấy ý kiến cổ đông bằng văn bản lần 3 năm 2026",
+      "summary": "[HDB - CafeF Doanh nghiệp @ 20/11/2026 17:24] HDB: Nghị quyết HĐQT về việc lấy ý kiến cổ đông bằng văn bản lần 3 năm 2026",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/HDB-3025821/hdb-nghi-quyet-hdqt-ve-viec-lay-y-kien-co-dong-bang-van-ban-lan-3-nam-2026.chn?utm_source=du-lieu.chn",
+      "published_at": "20/11/2026 17:24"
+    },
+    {
+      "item_id": "3d6917f5af3abebb",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HDB"
+      ],
+      "sector": "HDB",
+      "title": "HDB: Thông báo về việc thay đổi địa điểm và tên gọi PGD Tân Hòa",
+      "summary": "[HDB - CafeF Doanh nghiệp @ 20/11/2026 10:17] HDB: Thông báo về việc thay đổi địa điểm và tên gọi PGD Tân Hòa",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/HDB-3025429/hdb-thong-bao-ve-viec-thay-doi-dia-diem-va-ten-goi-pgd-tan-hoa.chn?utm_source=du-lieu.chn",
+      "published_at": "20/11/2026 10:17"
+    },
+    {
+      "item_id": "d4ed900f1682b3d6",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "HDB"
+      ],
+      "sector": "HDB",
+      "title": "HDB: Thông báo Giấy chứng nhận đăng ký chào bán trái phiếu ra công chúng",
+      "summary": "[HDB - CafeF Doanh nghiệp @ 19/11/2026 17:23] HDB: Thông báo Giấy chứng nhận đăng ký chào bán trái phiếu ra công chúng",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/du-lieu/HDB-3025074/hdb-thong-bao-giay-chung-nhan-dang-ky-chao-ban-trai-phieu-ra-cong-chung.chn?utm_source=du-lieu.chn",
+      "published_at": "19/11/2026 17:23"
+    },
+    {
+      "item_id": "12b8608c097722b9",
+      "market": "VN",
+      "category": "MARKET_GENERAL",
+      "urgency": "NORMAL",
+      "sentiment_score": 0.0,
+      "tickers": [
+        "CTG"
+      ],
+      "sector": "CTG",
+      "title": "VietinBank chính thức hoàn tất bán tòa tháp VietinBank Tower 'đắp chiếu' 16 năm ở Ciputra",
+      "summary": "[CTG - CafeF Doanh nghiệp @ 18/11/2026 17:49] VietinBank chính thức hoàn tất bán tòa tháp VietinBank Tower 'đắp chiếu' 16 năm ở Ciputra",
+      "source_name": "CafeF Doanh nghiệp",
+      "source_url": "https://cafef.vn/vietinbank-chinh-thuc-hoan-tat-ban-toa-thap-vietinbank-tower-dap-chieu-16-nam-o-ciputra-188261118174959886.chn?utm_source=du-lieu.chn",
+      "published_at": "18/11/2026 17:49"
     }
   ]
 }

@@ -164,10 +164,15 @@ class TestV6TelegramAndOfficeUX(unittest.TestCase):
 
     def test_04_portal_and_25d_ux_upgrades_present(self):
         """Kiểm tra HTML Portal và tài sản 2.5D chứa Bảng Đơn Giản, Proof Console và kích thước rộng mới."""
+        import re as _re
         css = (BASE_DIR / "dashboard" / "office" / "office.css").read_text(encoding="utf-8")
         js = (BASE_DIR / "dashboard" / "office" / "office.js").read_text(encoding="utf-8")
-        self.assertIn("min-height: 700px", css)
-        self.assertIn("width: 530px", css)
+        mh = _re.search(r"\.apex-office-shell\s*\{[^}]*min-height:\s*(\d+)px", css)
+        dw = _re.search(r"\.office-drawer\s*\{[^}]*width:\s*(\d+)px", css)
+        self.assertIsNotNone(mh)
+        self.assertIsNotNone(dw)
+        self.assertGreaterEqual(int(mh.group(1)), 700)
+        self.assertGreaterEqual(int(dw.group(1)), 530)
         self.assertIn("office-proof-box", css)
         self.assertIn("ISO_X = 84", js)
         self.assertIn("drawer-live-job-box", js)

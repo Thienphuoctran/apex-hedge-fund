@@ -1,12 +1,7 @@
 name: "Overnight US, NVDA Earnings & 04:30 Summit (Cloud)"
 
 on:
-  schedule:
-    # Chạy dự phòng mỗi 15 phút xuyên đêm Mỹ 18/11 -> sáng 19/11 (16:00 - 22:45 UTC = 23:00 - 05:45 ICT)
-    # Engine tự động bỏ qua mốc đã ghi nên KHÔNG trùng tin; nếu slot trước bị GitHub trễ, slot sau tự backfill từ bar 1m sàn Mỹ.
-    - cron: '*/15 16-22 18 11 *'
-    # Các mốc cao điểm BCTC NVDA (~04:20 ICT) & Khai mạc Tổng kết 04:30 ICT (21:25, 21:33, 21:45 UTC)
-    - cron: '25,33,45 21 18 11 *'
+  # schedule disabled (one-off historical run); manual execution preserved
   workflow_dispatch:
     inputs:
       checkpoint:

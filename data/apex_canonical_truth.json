@@ -1,10 +1,10 @@
 {
   "schema_version": "APEX_CANONICAL_TRUTH_V5",
-  "generated_at_ict": "2026-11-24 15:00:32 ICT",
+  "generated_at_ict": "2026-11-24 21:40:30 ICT",
   "date": "2026-11-24",
   "market_session": {
     "date_ict": "2026-11-24",
-    "time_ict": "15:00:32",
+    "time_ict": "21:40:30",
     "weekday_vi": "Thứ Ba",
     "is_trading_day": false,
     "is_holiday": true,
@@ -79,8 +79,8 @@
     "vn_index_chg_pct": 0.49,
     "vn_index_ma20": 1727.57,
     "vn_index_ma50": 1746.23,
-    "breadth_above_ma20_pct": 19.4,
-    "avg_buy_up_pct": 59.4,
+    "breadth_above_ma20_pct": 20.8,
+    "avg_buy_up_pct": 59.3,
     "advance_ratio_pct": 58.6,
     "volume_pace_ratio": 1.09,
     "foreign_net_ty": -36.9,
@@ -96,7 +96,7 @@
     "spillover_multiplier": 1.0,
     "max_new_allocation_pct": 0,
     "target_exposure_label": "0% mở mới hôm nay • Mở lại Thứ Tư 25/11/2026",
-    "guidance": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Mọi giá bảng điện hiện tại là giá đóng cửa tham chiếu phiên trước (2026-11-23); trạng thái EOD phiên trước là S3_SPRING_STRIKE_READY (VNI 1,697.14 +0.49%, Br20 19.4%). Do 24/11 là ngày nghỉ lễ (Ngày Văn hóa Việt Nam (24/11)), lịch thanh toán T+2 dịch thêm 1 ngày làm việc: tiền bán 20/11 về 25/11; cổ phiếu mua 23/11 về chiều 26/11/2026. Kế hoạch Nhịp 2 giữ nguyên hiệu lực cho phiên mở cửa kế tiếp (Thứ Tư 25/11/2026).",
+    "guidance": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Mọi giá bảng điện hiện tại là giá đóng cửa tham chiếu phiên trước (2026-11-23); trạng thái EOD phiên trước là S3_SPRING_STRIKE_READY (VNI 1,697.14 +0.49%, Br20 20.8%). Do 24/11 là ngày nghỉ lễ (Ngày Văn hóa Việt Nam (24/11)), lịch thanh toán T+2 dịch thêm 1 ngày làm việc: tiền bán 20/11 về 25/11; cổ phiếu mua 23/11 về chiều 26/11/2026. Kế hoạch Nhịp 2 giữ nguyên hiệu lực cho phiên mở cửa kế tiếp (Thứ Tư 25/11/2026).",
     "reference_eod_regime": {
       "regime_id": "S3_SPRING_STRIKE_READY",
       "label": "🟡 HỒI PHỤC KỸ THUẬT / SPRING S3 (DƯỚI MA20 — THĂM DÒ CÓ CHỌN LỌC)",
@@ -104,7 +104,7 @@
       "badge_color": "#fbbf24",
       "max_new_allocation_pct": 25,
       "target_exposure_label": "20% – 45% NAV (Thăm dò có chọn lọc)",
-      "guidance": "VNI 1,697.14 (+0.49%) rút chân hồi phục với Buy-Up=59.4%, NHƯNG vẫn dưới MA20 (1,727.6) và Br20=19.4% (< 28%). Thăm dò chọn lọc tối đa <= 25% sức mua còn lại trong khung 14h05–14h25; cấm FOMO mua đuổi Gap sáng."
+      "guidance": "VNI 1,697.14 (+0.49%) rút chân hồi phục với Buy-Up=59.3%, NHƯNG vẫn dưới MA20 (1,727.6) và Br20=20.8% (< 28%). Thăm dò chọn lọc tối đa <= 25% sức mua còn lại trong khung 14h05–14h25; cấm FOMO mua đuổi Gap sáng."
     },
     "is_closed_override": true
   },
@@ -231,8 +231,8 @@
     "title": "BIÊN BẢN HỌP ĐẠI HỘI ĐỒNG 5 KHỐI CHUYÊN TRÁCH — PHIÊN TỐI `21:00` (`23/11/2026`)"
   },
   "latest_chat_sync": {
-    "sync_id": "SYNC-AG2P-20261124-145801",
-    "last_updated": "2026-11-24 14:58:01",
+    "sync_id": "SYNC-AG2P-20261124-214030",
+    "last_updated": "2026-11-24 21:40:30",
     "latest_user_request": "Đồng bộ trạng thái SSOT, Lịch phiên & Chân lý Hợp nhất V5.0 giữa James, Palmer, Web Portal & Văn phòng 2.5D"
   },
   "executive_directive_vi": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026).",

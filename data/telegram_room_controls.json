@@ -1,0 +1,49 @@
+{
+  "updated_at": "2026-11-24 21:54:00 ICT",
+  "rooms": {
+    "team_hien": {
+      "label": "Khối 1 — Đội Hiền (Dữ liệu & BCTC)",
+      "topic_keys": [
+        "hien_desk",
+        "radar_filings"
+      ],
+      "muted": false,
+      "updated_at": ""
+    },
+    "team_quan_alex": {
+      "label": "Khối 2 — Đội Minh Quân & Alex",
+      "topic_keys": [
+        "daily_warroom",
+        "morning_blotter"
+      ],
+      "muted": false,
+      "updated_at": ""
+    },
+    "team_james_palmer": {
+      "label": "Khối 3 — James & Palmer (Điều hành)",
+      "topic_keys": [
+        "james_hq",
+        "assistant_nam"
+      ],
+      "muted": false,
+      "updated_at": ""
+    },
+    "team_victor": {
+      "label": "Khối 4 — Victor (Cảnh giới Live)",
+      "topic_keys": [
+        "alerts"
+      ],
+      "muted": false,
+      "updated_at": "2026-11-24 21:54:00 ICT"
+    },
+    "team_trong_palmer": {
+      "label": "Khối 5 — Trọng & Palmer (Kiểm sát)",
+      "topic_keys": [
+        "reports_vault",
+        "quant_risk"
+      ],
+      "muted": false,
+      "updated_at": ""
+    }
+  }
+}

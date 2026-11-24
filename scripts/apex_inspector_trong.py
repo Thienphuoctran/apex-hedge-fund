@@ -564,9 +564,9 @@ class ApexInspectorTrong:
             f"",
             f"## PHẦN III: MỔ XẺ LỖI SAI ĐÃ KHẮC PHỤC & CHUẨN ĐA KỊCH BẢN V3.0",
             f"",
-            f"1. **Cào dữ liệu Internet thực & BCTC Q3/2026 chuẩn xác (Phase 1):** Toàn bộ các Ban kết nối trực tiếp BCTC Vietcap IQ (80/80 mã VN), SEC XBRL (12 mã Mỹ) cùng crawler Internet 5 lớp (RSS, Vietcap/CafeF, cổng IR HTTP-200, Tavily, SEC EDGAR), dứt khoát gắn cờ đỏ `BAF` (`OCF -496.2 tỷ`, `F=2/9`).",
-            f"2. **Đầu não Tự chủ Brain V3.0 & Đánh cược Bất đối xứng (Phase 2 & 3):** Đồng bộ toàn bộ 11 phòng ban trên EOD `20/11/2026`, bổ sung 4 Phản biện Độc lập chống thiên kiến và kèo Spring V3.0 đã kiểm chứng Backtest 2 năm (`+13.00%`, `MaxDD -9.90%`) cho Tuần 48.",
-            f"3. **Kỷ Luật Vốn Lô 100 CP & Khung Giờ Vàng `14h00–14h25`:** Khóa cứng xác suất thực chứng `<= 62%`, Stop Loss `-5.5%` rõ ràng, giữ `100%` tiền mặt (`20,051,117 ₫`) sẵn sàng cho Thứ Hai `23/11` và cấm mua đuổi ATO.",
+            f"1. **Cào dữ liệu Internet thực & BCTC Q3/2026 chuẩn xác (V7.0):** Toàn bộ hệ thống kết nối trực tiếp BCTC Vietcap IQ + đa nguồn dự phòng (145/145 mã VN), SEC XBRL (12 mã Mỹ) cùng crawler Internet 5 lớp (RSS, Vietcap/CafeF, cổng IR HTTP-200, Tavily, SEC EDGAR).",
+            f"2. **Đầu não Tự chủ Brain V4.0 & Luân chuyển 18 Ngành:** Đồng bộ 5 Khối Chuyên Trách trên EOD mới nhất, kiểm chứng Backtest 2 năm không Look-Ahead (`APEX_V4_SECTOR_ALPHA`), áp dụng 12 Chốt Chặn Hiến Pháp V2.0.",
+            f"3. **Kỷ Luật Vốn Lô 100 CP (% NAV sống) & Khung Giờ Vàng `14h05–14h25`:** Định cỡ động theo NAV TCBS `105C307855`, khóa Stop Loss cứng, Breakeven Lock & Trailing Stop, cấm FOMO trước 10h00.",
             f"",
             f"---",
             f"",
@@ -673,16 +673,55 @@ class ApexInspectorTrong:
             time.sleep(poll_interval_sec)
 
 
+def run_v7_12gates_audit(persist: bool = True) -> dict:
+    """Chạy kiểm sát Hiến Chương V2.0 (12 Cổng G01-G12) bởi Trọng và lưu dấu niêm phong."""
+    import json
+    import sys
+    from datetime import datetime, timezone, timedelta
+    from pathlib import Path
+
+    root_dir = Path(__file__).resolve().parent.parent
+    if str(root_dir) not in sys.path:
+        sys.path.insert(0, str(root_dir))
+
+    from scripts.apex_constitution_enforcer import ApexConstitutionEnforcer
+
+    result = ApexConstitutionEnforcer.run_12_constitutional_gates(base_dir=root_dir)
+    result["inspector"] = "Trọng (Ban 12 — Kiểm Sát Viên Độc Lập)"
+    result["saved_at_ict"] = datetime.now(timezone(timedelta(hours=7))).strftime("%Y-%m-%d %H:%M:%S ICT")
+
+    if persist:
+        out_path = root_dir / "data" / "trong_12gates_audit.json"
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    return result
+
+
+ApexInspectorTrong.run_v7_12gates_audit = staticmethod(run_v7_12gates_audit)
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Apex Institutional Ombudsman Engine (Trọng)")
     parser.add_argument("--run-23h30-audit", action="store_true", help="Chạy đầy đủ quy trình kiểm sát 23h30 và gửi báo cáo Telegram")
     parser.add_argument("--health-sweep", action="store_true", help="Quét kiểm tra toàn vẹn kỹ thuật 24/24")
+    parser.add_argument("--run-v7-gates", action="store_true", help="Chạy kiểm sát Hiến Chương V2.0 (12 Cổng G01-G12) và lưu data/trong_12gates_audit.json")
     parser.add_argument("--daemon", action="store_true", help="Chạy vòng lặp túc trực 24/24 (giám sát kỹ thuật và tự động kiểm sát 23h30)")
     args = parser.parse_args()
 
     if args.daemon:
         ApexInspectorTrong.run_daemon_loop(poll_interval_sec=60)
+        return
+
+    if args.run_v7_gates:
+        res = run_v7_12gates_audit(persist=True)
+        print(f"\n=== TRỌNG — KIỂM SÁT HIẾN CHƯƠNG V2.0 ({res.get('passed_count')}/{res.get('total_gates')} GATES | {res.get('status')}) ===")
+        for g in res.get("gates", []):
+            icon = "PASS" if g.get("passed") else "FAIL"
+            gid = g.get("gate_id") or g.get("id")
+            art = g.get("article")
+            print(f"  [{icon}] {gid} (Điều {art}): {g.get('detail')}")
         return
 
     if args.health_sweep:

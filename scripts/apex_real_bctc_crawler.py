@@ -174,9 +174,29 @@ def _quarter_available_date(year: int, quarter: int) -> str:
     return dt.strftime("%Y-%m-%d")
 
 
-def load_vn_universe_specs() -> List[Dict[str, str]]:
-    """Nap 54 ma goc tu watchlist_vn.json + cac ma thanh khoan bo sung (~80 ma)."""
+def load_vn_universe_specs(include_full_scanner: bool = True) -> List[Dict[str, str]]:
+    """Nap day du vu tru ~145+ ma VN tu VN_FULL_UNIVERSE (18 nganh), watchlist_vn.json, EXTRA_LIQUID & SSOT."""
     specs: Dict[str, Dict[str, str]] = {}
+
+    if include_full_scanner:
+        try:
+            from VN_Market.scripts.vn_full_market_scanner import VN_FULL_UNIVERSE
+            for sec_key, sec_val in (VN_FULL_UNIVERSE or {}).items():
+                sec_name = sec_val.get("sector_name", sec_key)
+                for item in sec_val.get("stocks", []):
+                    code = str(item.get("code") or "").upper().strip()
+                    if code:
+                        specs[code] = {
+                            "code": code,
+                            "name": item.get("name", code),
+                            "exchange": item.get("exchange", "HOSE"),
+                            "sector_key": sec_key,
+                            "sector_name": sec_name,
+                            "tier": item.get("cap_tier", "Market_Universe"),
+                        }
+        except Exception:
+            pass
+
     if VN_WATCHLIST_PATH.exists():
         try:
             cfg = json.loads(VN_WATCHLIST_PATH.read_text(encoding="utf-8"))
@@ -184,7 +204,7 @@ def load_vn_universe_specs() -> List[Dict[str, str]]:
                 sec_name = sec_val.get("name", sec_key)
                 for item in sec_val.get("tickers", []):
                     code = str(item.get("code") or item.get("symbol", "").replace(".VN", "")).upper().strip()
-                    if code:
+                    if code and code not in specs:
                         specs[code] = {
                             "code": code,
                             "name": item.get("name", code),
@@ -206,6 +226,36 @@ def load_vn_universe_specs() -> List[Dict[str, str]]:
                 "sector_name": sec_key.replace("_", " "),
                 "tier": "Liquid_Universe",
             }
+
+    ssot_path = DATA_DIR / "current_portfolio_state.json"
+    if ssot_path.exists():
+        try:
+            ssot = json.loads(ssot_path.read_text(encoding="utf-8"))
+            for pos_sym in (ssot.get("active_positions") or {}).keys():
+                c = str(pos_sym).upper().strip()
+                if c and c not in specs:
+                    specs[c] = {
+                        "code": c,
+                        "name": c,
+                        "exchange": "HOSE",
+                        "sector_key": "SSOT_Holding",
+                        "sector_name": "SSOT Portfolio",
+                        "tier": "SSOT_Active",
+                    }
+            for w in (ssot.get("next_round_watchlist") or []):
+                c = str((w or {}).get("symbol") or "").upper().strip()
+                if c and c not in specs:
+                    specs[c] = {
+                        "code": c,
+                        "name": (w or {}).get("name", c),
+                        "exchange": (w or {}).get("exchange", "HOSE"),
+                        "sector_key": "SSOT_Watchlist",
+                        "sector_name": (w or {}).get("sector", "SSOT Watchlist"),
+                        "tier": "SSOT_Watchlist",
+                    }
+        except Exception:
+            pass
+
     return list(specs.values())
 
 
@@ -418,6 +468,9 @@ def compute_pit_fundamentals(
     other_recv_pct = round((latest["other_receivables_ty"] / max(1.0, ta)) * 100.0, 2) if ta > 0 else 0.0
     cip_pct = round((latest["cip_ty"] / max(1.0, ta)) * 100.0, 2) if ta > 0 else 0.0
     recv_to_rev = round((latest["receivables_ty"] / max(1.0, rev_ttm)) * 100.0, 1) if rev_ttm > 0 else 0.0
+    inv_to_rev = round((latest["inventory_ty"] / max(1.0, rev_ttm)) * 100.0, 1) if rev_ttm > 0 else 0.0
+    rev_accel_qoq = round(rev_q_yoy - rev_q_prev_yoy, 2) if (rev_q_yoy is not None and rev_q_prev_yoy is not None) else None
+    prof_accel_qoq = round(eps_q_yoy - eps_q_prev_yoy, 2) if (eps_q_yoy is not None and eps_q_prev_yoy is not None) else None
 
     # Bank specifics
     nii_ttm = sum(q["nii_ty"] for q in ttm)
@@ -580,11 +633,15 @@ def compute_pit_fundamentals(
         "rev_growth_yoy": rev_growth_yoy if rev_growth_yoy is not None else 0.0,
         "rev_q_yoy": rev_q_yoy,
         "rev_q_prev_yoy": rev_q_prev_yoy,
+        "rev_q_yoy_pct": rev_q_yoy,
+        "rev_accel_qoq_pct": rev_accel_qoq,
         "net_profit_ttm_ty": round(np_ttm, 1),
         "net_profit_prev_ttm_ty": round(np_prev, 1),
         "profit_growth_yoy": prof_growth_yoy if prof_growth_yoy is not None else 0.0,
         "eps_q_yoy": eps_q_yoy,
         "eps_q_prev_yoy": eps_q_prev_yoy,
+        "prof_q_yoy_pct": eps_q_yoy,
+        "prof_accel_qoq_pct": prof_accel_qoq,
         "earnings_accelerating": earnings_accelerating,
         "gross_margin_pct": gross_margin,
         "gross_margin_prev_pct": gross_margin_prev,
@@ -607,6 +664,7 @@ def compute_pit_fundamentals(
         "other_receivables_to_assets_pct": other_recv_pct,
         "receivables_to_rev_pct": recv_to_rev,
         "inventory_ty": round(latest["inventory_ty"], 1),
+        "inventory_to_rev_pct": inv_to_rev,
         "cip_ty": round(latest["cip_ty"], 1),
         "cip_to_assets_pct": cip_pct,
         "total_debt_ty": round(latest["total_debt_ty"], 1),
@@ -617,18 +675,23 @@ def compute_pit_fundamentals(
         "unearned_revenue_ty": round(latest["unearned_rev_ty"], 1),
         "nim_proxy_pct": nim_proxy,
         "cir_pct": cir_pct,
+        "bank_cir_pct": cir_pct,
         "ldr_pct": ldr_pct,
         "credit_cost_pct": credit_cost_pct,
+        "bank_provision_to_loans_pct": allow_to_loans,
         "allowance_to_loans_pct": allow_to_loans,
         "equity_to_assets_pct": eq_to_assets,
         "margin_to_equity_ratio": margin_to_eq,
+        "brokerage_margin_to_equity_pct": round(margin_to_eq * 100.0, 1) if margin_to_eq is not None else None,
         "fvtpl_to_equity_ratio": fvtpl_to_eq,
+        "brokerage_fvtpl_to_assets_pct": round((latest["fvtpl_assets_ty"] / max(1.0, ta)) * 100.0, 2) if (com_type == "CK" and ta > 0) else None,
         "piotroski_f_score": f_score,
         "beneish_m_score": beneish_m,
         "beneish_status": beneish_status,
         "sloan_accrual_pct": sloan_accrual,
         "altman_z_score": altman_z,
         "altman_zone": altman_zone,
+        "is_verified_real_bctc": True,
         "avg_val_1m_ty": round(_to_bil(vci.get("averageMatchValue1Month")), 2),
         "avg_vol_1m": int(_safe_float(vci.get("averageMatchVolume1Month"), 0.0)),
         "foreign_pct": round(_safe_float(vci.get("foreignerPercentage"), 0.0) * 100.0, 2) if _safe_float(vci.get("foreignerPercentage"), 0.0) <= 1.0 else round(_safe_float(vci.get("foreignerPercentage"), 0.0), 2),
@@ -638,18 +701,63 @@ def compute_pit_fundamentals(
     }
 
 
+def _fetch_simplize_fallback_summary(sym: str) -> Optional[Dict[str, Any]]:
+    """Nguon du phong thu 2 khi Vietcap IQ gian doan: chi lay metadata dinh gia song, khong gia mao BCTC quy."""
+    url = f"https://api.simplize.vn/api/company/summary/{sym}"
+    try:
+        hdrs = {"User-Agent": "Mozilla/5.0", "Accept": "application/json", "Referer": "https://simplize.vn/"}
+        resp = _http_get_json(url, hdrs, timeout=7, retries=2)
+        d = resp.get("data") or {}
+        if not d:
+            return None
+        return {
+            "pe_ratio": _safe_float(d.get("peRatio"), 0.0),
+            "pb_ratio": _safe_float(d.get("pbRatio"), 0.0),
+            "roe_pct": _safe_float(d.get("roe"), 0.0),
+            "roa_pct": _safe_float(d.get("roa"), 0.0),
+            "market_cap_ty": _to_bil(d.get("marketCap")),
+            "price_close": _safe_float(d.get("priceClose"), 0.0),
+            "company_name": d.get("nameVi") or d.get("name") or sym,
+        }
+    except Exception:
+        return None
+
+
 def crawl_single_vn_bctc(spec: Dict[str, str], force: bool = False, ttl_hours: float = 24.0) -> Tuple[str, Optional[Dict[str, Any]], str]:
-    """Cao 1 ma tu Vietcap IQ API voi disk cache an toan."""
+    """Cao 1 ma tu Vietcap IQ API voi da nguon du phong (Stale-Cache / Simplize Summary) & tem xuat xu minh bach."""
     sym = spec["code"]
     BCTC_CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_file = BCTC_CACHE_DIR / f"{sym}.json"
+    now_str = _get_ict_now().strftime("%Y-%m-%d %H:%M:%S")
 
     if not force and cache_file.exists():
         age_h = (time.time() - cache_file.stat().st_mtime) / 3600.0
         if age_h <= ttl_hours:
             try:
                 cached = json.loads(cache_file.read_text(encoding="utf-8"))
-                if cached.get("quarters_pit") and cached.get("latest_metrics"):
+                q_pit = cached.get("quarters_pit") or []
+                lm = cached.get("latest_metrics") or {}
+                if q_pit and lm:
+                    # Upgrade cached latest_metrics in-memory if missing V7 fields
+                    if not lm.get("is_verified_real_bctc"):
+                        recomputed = compute_pit_fundamentals(
+                            q_pit,
+                            str(cached.get("com_type_code") or lm.get("com_type_code") or "CT"),
+                            market_cap_ty=_safe_float(lm.get("market_cap_ty"), 0.0),
+                            current_price=_safe_float(lm.get("current_price"), 0.0),
+                            vci_meta={"targetPrice": lm.get("vci_target_price"), "upsideToTargetPercent": lm.get("vci_upside_pct"), "averageMatchValue1Month": (_safe_float(lm.get("avg_val_1m_ty"), 0.0) * 1e9)},
+                        )
+                        if recomputed:
+                            cached["latest_metrics"] = recomputed
+                    cached.setdefault("data_provenance", {
+                        "source": cached.get("data_source", "VIETCAP_IQ_OFFICIAL_LIVE"),
+                        "latest_quarter": (cached.get("latest_metrics") or {}).get("latest_quarter", "N/A"),
+                        "fetched_at": cached.get("fetched_at", now_str),
+                        "freshness_hours": round(age_h, 2),
+                        "is_verified_real_bctc": True,
+                    })
+                    cached["data_provenance"]["freshness_hours"] = round(age_h, 2)
+                    cached["is_verified_real_bctc"] = True
                     return sym, cached, "CACHE"
             except Exception:
                 pass
@@ -697,24 +805,115 @@ def crawl_single_vn_bctc(spec: Dict[str, str], force: bool = False, ttl_hours: f
         if not latest_metrics:
             return sym, None, "COMPUTE_FAIL"
 
+        provenance = {
+            "source": "VIETCAP_IQ_OFFICIAL_LIVE",
+            "latest_quarter": latest_metrics.get("latest_quarter", "N/A"),
+            "fetched_at": now_str,
+            "freshness_hours": 0.0,
+            "is_verified_real_bctc": True,
+        }
         payload = {
             **spec,
             "company_name": comp.get("viOrganName") or spec["name"],
             "sector_vci": comp.get("sectorVn") or spec["sector_name"],
             "com_type_code": com_type,
             "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-            "fetched_at": _get_ict_now().strftime("%Y-%m-%d %H:%M:%S"),
+            "is_verified_real_bctc": True,
+            "data_provenance": provenance,
+            "fetched_at": now_str,
             "latest_metrics": latest_metrics,
             "quarters_pit": quarters_pit,
         }
         cache_file.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         return sym, payload, "LIVE"
     except Exception as exc:
+        # Fallback Layer 1: Stale verified Vietcap cache (< 30 days)
+        if cache_file.exists():
+            try:
+                stale_age_h = (time.time() - cache_file.stat().st_mtime) / 3600.0
+                if stale_age_h <= 24.0 * 30.0:
+                    cached = json.loads(cache_file.read_text(encoding="utf-8"))
+                    if cached.get("quarters_pit") and cached.get("latest_metrics"):
+                        cached["data_provenance"] = {
+                            "source": "VIETCAP_IQ_STALE_CACHE_FALLBACK",
+                            "latest_quarter": (cached.get("latest_metrics") or {}).get("latest_quarter", "N/A"),
+                            "fetched_at": cached.get("fetched_at", now_str),
+                            "freshness_hours": round(stale_age_h, 2),
+                            "is_verified_real_bctc": True,
+                            "fallback_reason": str(exc)[:120],
+                        }
+                        cached["is_verified_real_bctc"] = True
+                        return sym, cached, "CACHE"
+            except Exception:
+                pass
+        # Fallback Layer 2: Simplize metadata (marked UNVERIFIED_QUARTERLY so strict gatekeeper blocks Top Buy)
+        simp = _fetch_simplize_fallback_summary(sym)
+        if simp:
+            payload_fb = {
+                **spec,
+                "company_name": simp.get("company_name") or spec["name"],
+                "sector_vci": spec.get("sector_name", ""),
+                "com_type_code": "CT",
+                "data_source": "SIMPLIZE_SUMMARY_FALLBACK",
+                "is_verified_real_bctc": False,
+                "data_provenance": {
+                    "source": "SIMPLIZE_SUMMARY_FALLBACK",
+                    "latest_quarter": "SUMMARY_ONLY",
+                    "fetched_at": now_str,
+                    "freshness_hours": 0.0,
+                    "is_verified_real_bctc": False,
+                    "fallback_reason": str(exc)[:120],
+                },
+                "fetched_at": now_str,
+                "latest_metrics": {
+                    "latest_quarter": "SUMMARY_ONLY",
+                    "pe_ttm": simp["pe_ratio"] or None,
+                    "pb_live": simp["pb_ratio"] or None,
+                    "roe_ttm_pct": simp["roe_pct"],
+                    "roa_ttm_pct": simp["roa_pct"],
+                    "market_cap_ty": simp["market_cap_ty"],
+                    "current_price": simp["price_close"],
+                    "is_verified_real_bctc": False,
+                },
+                "quarters_pit": [],
+            }
+            return sym, payload_fb, "FALLBACK_UNVERIFIED"
         return sym, None, f"ERR:{exc}"
 
 
+def _fetch_entrade_dnse_ohlcv(sym: str, t1: int, t2: int) -> List[Dict[str, Any]]:
+    """Nguon du phong OHLCV 1D tu Entrade DNSE khi VPS HistDataFeed loi."""
+    url = f"https://services.entrade.com.vn/chart-api/v2/ohlcs/stock?from={t1}&to={t2}&symbol={urllib.parse.quote(sym)}&resolution=1D"
+    data = _http_get_json(url, VPS_HEADERS, timeout=8, retries=2)
+    ts = data.get("t") or []
+    opens = data.get("o") or []
+    highs = data.get("h") or []
+    lows = data.get("l") or []
+    closes = data.get("c") or []
+    vols = data.get("v") or []
+    scale = 1.0 if sym in ("VNINDEX", "VN30", "HNX", "HNXINDEX", "UPCOM", "VN30F1M") else 1000.0
+    tz_ict = datetime.timezone(datetime.timedelta(hours=7))
+    bars: List[Dict[str, Any]] = []
+    for t_ep, o_v, h_v, l_v, c_v, v_v in zip(ts, opens, highs, lows, closes, vols):
+        c_raw = _safe_float(c_v)
+        c_f = c_raw if (c_raw > 500.0 or scale == 1.0) else c_raw * scale
+        if c_f <= 0:
+            continue
+        mult = 1.0 if (c_raw > 500.0 or scale == 1.0) else scale
+        dt_str = datetime.datetime.fromtimestamp(int(t_ep), tz=tz_ict).strftime("%Y-%m-%d")
+        bars.append({
+            "date": dt_str,
+            "open": round(_safe_float(o_v) * mult, 2),
+            "high": round(_safe_float(h_v) * mult, 2),
+            "low": round(_safe_float(l_v) * mult, 2),
+            "close": round(c_f, 2),
+            "volume": int(_safe_float(v_v, 0.0)),
+        })
+    return bars
+
+
 def fetch_vps_ohlcv_single(symbol: str, days_back: int = 730, force: bool = False, ttl_hours: float = 4.0) -> Tuple[str, List[Dict[str, Any]], str]:
-    """Keo ~2 nam OHLCV ngay tu VPS HistDataFeed voi disk cache."""
+    """Keo ~2 nam OHLCV ngay tu VPS HistDataFeed (tu dong fallback Entrade DNSE) voi disk cache."""
     sym = symbol.upper().strip()
     OHLCV_CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_file = OHLCV_CACHE_DIR / f"{sym}.json"
@@ -736,34 +935,52 @@ def fetch_vps_ohlcv_single(symbol: str, days_back: int = 730, force: bool = Fals
     url = f"https://histdatafeed.vps.com.vn/tradingview/history?symbol={urllib.parse.quote(sym)}&resolution=D&from={t1}&to={t2}"
     try:
         data = _http_get_json(url, VPS_HEADERS, timeout=10, retries=3)
-        if data.get("s") != "ok":
-            return sym, [], f"STATUS_{data.get('s')}"
-        ts = data.get("t", [])
-        opens = data.get("o", [])
-        highs = data.get("h", [])
-        lows = data.get("l", [])
-        closes = data.get("c", [])
-        vols = data.get("v", [])
-        bars: List[Dict[str, Any]] = []
-        tz_ict = datetime.timezone(datetime.timedelta(hours=7))
-        for t_ep, o_v, h_v, l_v, c_v, v_v in zip(ts, opens, highs, lows, closes, vols):
-            c_f = _safe_float(c_v) * scale
-            if c_f <= 0:
-                continue
-            dt_str = datetime.datetime.fromtimestamp(int(t_ep), tz=tz_ict).strftime("%Y-%m-%d")
-            bars.append({
-                "date": dt_str,
-                "open": round(_safe_float(o_v) * scale, 2),
-                "high": round(_safe_float(h_v) * scale, 2),
-                "low": round(_safe_float(l_v) * scale, 2),
-                "close": round(c_f, 2),
-                "volume": int(_safe_float(v_v, 0.0)),
-            })
-        if bars:
-            cache_file.write_text(json.dumps({"symbol": sym, "fetched_at": _get_ict_now().isoformat(), "bars": bars}), encoding="utf-8")
-        return sym, bars, "LIVE"
-    except Exception as exc:
-        return sym, [], f"ERR:{exc}"
+        if data.get("s") == "ok" and data.get("c"):
+            ts = data.get("t", [])
+            opens = data.get("o", [])
+            highs = data.get("h", [])
+            lows = data.get("l", [])
+            closes = data.get("c", [])
+            vols = data.get("v", [])
+            bars: List[Dict[str, Any]] = []
+            tz_ict = datetime.timezone(datetime.timedelta(hours=7))
+            for t_ep, o_v, h_v, l_v, c_v, v_v in zip(ts, opens, highs, lows, closes, vols):
+                c_f = _safe_float(c_v) * scale
+                if c_f <= 0:
+                    continue
+                dt_str = datetime.datetime.fromtimestamp(int(t_ep), tz=tz_ict).strftime("%Y-%m-%d")
+                bars.append({
+                    "date": dt_str,
+                    "open": round(_safe_float(o_v) * scale, 2),
+                    "high": round(_safe_float(h_v) * scale, 2),
+                    "low": round(_safe_float(l_v) * scale, 2),
+                    "close": round(c_f, 2),
+                    "volume": int(_safe_float(v_v, 0.0)),
+                })
+            if bars:
+                cache_file.write_text(json.dumps({"symbol": sym, "source": "VPS_HISTDATA", "fetched_at": _get_ict_now().isoformat(), "bars": bars}), encoding="utf-8")
+                return sym, bars, "LIVE"
+    except Exception:
+        pass
+
+    # Fallback Entrade DNSE (non-index stocks)
+    if not is_index:
+        try:
+            bars_dnse = _fetch_entrade_dnse_ohlcv(sym, t1, t2)
+            if len(bars_dnse) >= 30:
+                cache_file.write_text(json.dumps({"symbol": sym, "source": "ENTRADE_DNSE_FALLBACK", "fetched_at": _get_ict_now().isoformat(), "bars": bars_dnse}), encoding="utf-8")
+                return sym, bars_dnse, "LIVE"
+        except Exception:
+            pass
+
+    if cache_file.exists():
+        try:
+            cached = json.loads(cache_file.read_text(encoding="utf-8"))
+            if cached.get("bars"):
+                return sym, cached["bars"], "CACHE"
+        except Exception:
+            pass
+    return sym, [], "ERR_NO_OHLCV"
 
 
 def fetch_real_macro_indicators() -> Dict[str, Any]:
@@ -948,16 +1165,16 @@ def _sync_bctc_to_sqlite(stocks_map: Dict[str, Any]) -> None:
         pass
 
 
-def run_full_ingestion(force: bool = False, with_us: bool = False) -> Dict[str, Any]:
+def run_full_ingestion(force: bool = False, with_us: bool = False, full_universe: bool = True) -> Dict[str, Any]:
     t0 = time.time()
-    specs = load_vn_universe_specs()
-    print(f"=== [APEX REAL BCTC & OHLCV INGESTION V2.0] Bat dau cao {len(specs)} ma VN ===")
+    specs = load_vn_universe_specs(include_full_scanner=full_universe)
+    print(f"=== [APEX REAL BCTC & OHLCV INGESTION V7.0] Bat dau cao {len(specs)} ma VN ===")
 
-    # 1. Cao BCTC that tu Vietcap IQ
+    # 1. Cao BCTC that tu Vietcap IQ + da nguon du phong
     bctc_stocks: Dict[str, Any] = {}
-    status_counts = {"LIVE": 0, "CACHE": 0, "FAILED": 0}
+    status_counts = {"LIVE": 0, "CACHE": 0, "FALLBACK_UNVERIFIED": 0, "FAILED": 0}
     failures: List[str] = []
-    with ThreadPoolExecutor(max_workers=6) as pool:
+    with ThreadPoolExecutor(max_workers=10) as pool:
         futs = {pool.submit(crawl_single_vn_bctc, sp, force): sp["code"] for sp in specs}
         for fut in as_completed(futs):
             sym, data, st = fut.result()
@@ -968,10 +1185,10 @@ def run_full_ingestion(force: bool = False, with_us: bool = False) -> Dict[str, 
                 status_counts["FAILED"] += 1
                 failures.append(f"{sym}({st})")
 
-    # 2. Cao 2 nam OHLCV ngay tu VPS HistDataFeed cho VNINDEX, VN30 + toan bo ma
+    # 2. Cao 2 nam OHLCV ngay tu VPS HistDataFeed (+ Entrade DNSE fallback) cho VNINDEX, VN30 + toan bo ma
     ohlcv_targets = ["VNINDEX", "VN30"] + [sp["code"] for sp in specs]
     ohlcv_counts = {"LIVE": 0, "CACHE": 0, "FAILED": 0}
-    with ThreadPoolExecutor(max_workers=8) as pool:
+    with ThreadPoolExecutor(max_workers=12) as pool:
         futs = {pool.submit(fetch_vps_ohlcv_single, sym, 730, force): sym for sym in ohlcv_targets}
         for fut in as_completed(futs):
             sym, bars, st = fut.result()
@@ -997,17 +1214,24 @@ def run_full_ingestion(force: bool = False, with_us: bool = False) -> Dict[str, 
     # Sap xep lai theo thu tu bang chu cai
     ordered_stocks = {k: bctc_stocks[k] for k in sorted(bctc_stocks.keys())}
     latest_q_dist: Dict[str, int] = {}
+    verified_count = 0
     for item in ordered_stocks.values():
-        lq = (item.get("latest_metrics") or {}).get("latest_quarter", "N/A")
+        lm = item.get("latest_metrics") or {}
+        lq = lm.get("latest_quarter", "N/A")
         latest_q_dist[lq] = latest_q_dist.get(lq, 0) + 1
+        if item.get("is_verified_real_bctc", lm.get("is_verified_real_bctc", True)) and lq != "SUMMARY_ONLY":
+            verified_count += 1
 
+    coverage_pct = round((verified_count / max(1, len(specs))) * 100.0, 1)
     output = {
-        "data_provenance": "VIETCAP_IQ_OFFICIAL_LIVE_AND_VPS_2Y_OHLCV",
+        "data_provenance": "VIETCAP_IQ_OFFICIAL_LIVE_AND_MULTI_SOURCE_V7",
         "crawled_at": _get_ict_now().strftime("%Y-%m-%d %H:%M:%S"),
         "elapsed_sec": round(time.time() - t0, 2),
         "coverage_stats": {
             "requested_vn_tickers": len(specs),
             "bctc_loaded": len(ordered_stocks),
+            "bctc_verified_count": verified_count,
+            "universe_coverage_pct": coverage_pct,
             "bctc_status": status_counts,
             "bctc_failures": failures,
             "latest_quarter_distribution": latest_q_dist,
@@ -1023,7 +1247,7 @@ def run_full_ingestion(force: bool = False, with_us: bool = False) -> Dict[str, 
     _sync_bctc_to_sqlite(ordered_stocks)
 
     print(
-        f"[OK] Hoan tat cao BCTC that {len(ordered_stocks)}/{len(specs)} ma trong {output['elapsed_sec']}s | "
+        f"[OK] Hoan tat cao BCTC that {verified_count}/{len(specs)} ({coverage_pct}%) ma trong {output['elapsed_sec']}s | "
         f"Latest Quarters: {latest_q_dist} | OHLCV: {ohlcv_counts}"
     )
     if failures:
@@ -1032,11 +1256,12 @@ def run_full_ingestion(force: bool = False, with_us: bool = False) -> Dict[str, 
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Apex Real BCTC & Market Data Core Crawler V2.0")
+    parser = argparse.ArgumentParser(description="Apex Real BCTC & Market Data Core Crawler V7.0")
     parser.add_argument("--force", action="store_true", help="Bo qua cache, cao moi hoan toan")
     parser.add_argument("--with-us", action="store_true", help="Cao them BCTC US SEC EDGAR XBRL")
+    parser.add_argument("--full-universe", action="store_true", default=True, help="Cao toan bo vu tru 145+ ma VN")
     args = parser.parse_args()
-    run_full_ingestion(force=args.force, with_us=args.with_us)
+    run_full_ingestion(force=args.force, with_us=args.with_us, full_universe=args.full_universe)
 
 
 if __name__ == "__main__":

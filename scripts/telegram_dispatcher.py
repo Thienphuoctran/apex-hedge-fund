@@ -32,7 +32,84 @@ if hasattr(sys.stdout, "reconfigure"):
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG_PATH = BASE_DIR / "09_Realtime_Portfolio_Sentinel" / "telegram_topics_config.json"
 DEDUP_CACHE_FILE = BASE_DIR / "data" / "telegram_dedup_cache.json"
+ROOM_CONTROLS_FILE = BASE_DIR / "data" / "telegram_room_controls.json"
 _ICT_TZ = datetime.timezone(datetime.timedelta(hours=7))
+
+DEFAULT_ROOM_CONTROLS: Dict[str, Dict[str, Any]] = {
+    "team_hien": {
+        "label": "Khối 1 — Đội Hiền (Dữ liệu & BCTC)",
+        "topic_keys": ["hien_desk", "radar_filings"],
+        "muted": False,
+        "updated_at": "",
+    },
+    "team_quan_alex": {
+        "label": "Khối 2 — Đội Minh Quân & Alex",
+        "topic_keys": ["daily_warroom", "morning_blotter"],
+        "muted": False,
+        "updated_at": "",
+    },
+    "team_james_palmer": {
+        "label": "Khối 3 — James & Palmer (Điều hành)",
+        "topic_keys": ["james_hq", "assistant_nam"],
+        "muted": False,
+        "updated_at": "",
+    },
+    "team_victor": {
+        "label": "Khối 4 — Victor (Cảnh giới Live)",
+        "topic_keys": ["alerts"],
+        "muted": False,
+        "updated_at": "",
+    },
+    "team_trong_palmer": {
+        "label": "Khối 5 — Trọng & Palmer (Kiểm sát)",
+        "topic_keys": ["reports_vault", "quant_risk"],
+        "muted": False,
+        "updated_at": "",
+    },
+}
+
+
+def get_room_telegram_controls() -> Dict[str, Dict[str, Any]]:
+    """Đọc trạng thái Bật/Tắt thông báo Telegram từng Khối (5 Khối)."""
+    out = {k: dict(v) for k, v in DEFAULT_ROOM_CONTROLS.items()}
+    if ROOM_CONTROLS_FILE.exists():
+        try:
+            saved = json.loads(ROOM_CONTROLS_FILE.read_text(encoding="utf-8-sig"))
+            rooms = saved.get("rooms") if isinstance(saved.get("rooms"), dict) else saved
+            if isinstance(rooms, dict):
+                for rid, cfg in rooms.items():
+                    if rid in out and isinstance(cfg, dict):
+                        out[rid]["muted"] = bool(cfg.get("muted", False))
+                        out[rid]["updated_at"] = str(cfg.get("updated_at") or "")
+        except Exception:
+            pass
+    return out
+
+
+def set_room_telegram_mute(room_id: str, muted: bool) -> Dict[str, Dict[str, Any]]:
+    """Lưu trạng thái Tắt/Bật Telegram cho 1 Khối (hoặc 'all') xuống data/telegram_room_controls.json."""
+    controls = get_room_telegram_controls()
+    now_str = _get_ict_now().strftime("%Y-%m-%d %H:%M:%S ICT")
+    targets = list(controls.keys()) if room_id == "all" else ([room_id] if room_id in controls else [])
+    for rid in targets:
+        controls[rid]["muted"] = bool(muted)
+        controls[rid]["updated_at"] = now_str
+    ROOM_CONTROLS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    tmp = ROOM_CONTROLS_FILE.with_suffix(".tmp")
+    tmp.write_text(json.dumps({"updated_at": now_str, "rooms": controls}, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.replace(ROOM_CONTROLS_FILE)
+    return controls
+
+
+def _resolve_room_id_for_topic(topic_key: Optional[str]) -> Optional[str]:
+    if not topic_key:
+        return None
+    tk = str(topic_key).strip().lower()
+    controls = get_room_telegram_controls()
+    for rid, cfg in controls.items():
+        if tk in [str(x).lower() for x in (cfg.get("topic_keys") or [])]:
+            return rid
+    return None
 
 
 def _get_ict_now() -> datetime.datetime:
@@ -281,13 +358,21 @@ def set_dedicated_reports_room(chat_id: str, title: Optional[str] = None) -> Dic
 def should_block_outbound_telegram(
     is_intraday_alert: bool = False,
     priority: str = "NORMAL",
+    topic_key: Optional[str] = None,
+    room_id: Optional[str] = None,
 ) -> Tuple[bool, str]:
     """
-    [OUTBOUND GUARD] Chống gửi trùng giữa Cloud & PC và chặn tin biến động trong ngày nghỉ lễ/sàn đóng cửa.
+    [OUTBOUND GUARD] Chống gửi trùng giữa Cloud & PC, chặn tin ngày nghỉ lễ và tôn trọng nút Tắt Telegram từng phòng.
     """
     prio = str(priority or "NORMAL").upper()
     if prio == "CRITICAL_STOP":
         return False, "CRITICAL_OVERRIDE"
+
+    target_room = room_id or _resolve_room_id_for_topic(topic_key)
+    if target_room:
+        controls = get_room_telegram_controls()
+        if controls.get(target_room, {}).get("muted", False):
+            return True, f"ROOM_MUTED:{target_room}"
 
     is_cloud_env = (
         os.environ.get("RENDER", "").strip().lower() == "true"
@@ -454,6 +539,7 @@ def send_raw_telegram(
     blocked, reason = should_block_outbound_telegram(
         is_intraday_alert=is_intraday_alert,
         priority=priority,
+        topic_key=getattr(send_raw_telegram, "_current_topic_key", None),
     )
     if blocked:
         print(f"[Telegram Guard] Chặn gửi tin tự động ({reason}).")
@@ -613,6 +699,7 @@ def dispatch_message(
     blocked, reason = should_block_outbound_telegram(
         is_intraday_alert=is_intraday_alert,
         priority=priority,
+        topic_key=topic_key,
     )
     if blocked:
         print(f"[Telegram Guard] Bỏ qua gửi tin topic '{topic_key}' ({reason}).")
@@ -781,6 +868,65 @@ def check_recent_group_id() -> Optional[str]:
     except Exception as e:
         print(f"[!] Lỗi quét group id: {e}")
     return None
+
+
+def send_single_eod_digest(force: bool = False) -> bool:
+    """
+    [ANTI-SPAM V7.0] Gửi DUY NHẤT 1 bản Tổng Kết Cuối Ngày (EOD Digest) chuẩn hóa từ SCBP
+    thay thế mọi tin nhắn rời rạc cuối phiên.
+    """
+    import html as _html_mod
+
+    now_ict = _get_ict_now()
+    today_str = now_ict.strftime("%Y-%m-%d")
+    scbp_path = BASE_DIR / "data" / "canonical_executive_briefing.json"
+    scbp: Dict[str, Any] = {}
+    if scbp_path.exists():
+        try:
+            scbp = json.loads(scbp_path.read_text(encoding="utf-8-sig"))
+        except Exception:
+            scbp = {}
+    if not scbp or not scbp.get("sha256_seal"):
+        try:
+            from scripts.apex_unified_briefing_builder import build_canonical_executive_briefing
+            scbp = build_canonical_executive_briefing()
+        except Exception as e:
+            print(f"[!] Không build được SCBP cho EOD Digest: {e}")
+            return False
+
+    ev = scbp.get("executive_verdict") or {}
+    sla = scbp.get("freshness_sla") or {}
+    trong = scbp.get("trong_audit_seal") or {}
+    board = (scbp.get("simple_action_board") or [])[:5]
+    seal = str(scbp.get("sha256_seal") or "")[:12]
+
+    lines = [
+        f"📊 <b>BẢN TIN TỔNG KẾT EOD DUY NHẤT — APEX V7.0</b> ({_html_mod.escape(today_str)})",
+        f"🔐 <b>SCBP Seal:</b> <code>{_html_mod.escape(seal)}</code> | <b>Trọng:</b> {trong.get('passed_count', 0)}/{trong.get('total_gates', 12)} | <b>BCTC:</b> {sla.get('bctc_verified_count', 0)}/{sla.get('bctc_requested_count', 145)}",
+        "",
+        f"1️⃣ <b>Đang cầm:</b> {_html_mod.escape(str(ev.get('what_holding_vi') or ''))}",
+        f"2️⃣ <b>Lãi/Lỗ ròng:</b> {_html_mod.escape(str(ev.get('net_pnl_vi') or ''))}",
+        f"3️⃣ <b>Hành động tới:</b> {_html_mod.escape(str(ev.get('next_action_vi') or ''))}",
+        "",
+        "🎯 <b>BẢNG HÀNH ĐỘNG NHANH:</b>",
+    ]
+    for row in board:
+        lines.append(
+            f"• <b>{_html_mod.escape(str(row.get('symbol') or ''))}</b>: {_html_mod.escape(str(row.get('action_label_vi') or ''))} "
+            f"(Giá {float(row.get('price_vnd') or 0):,.0f}đ | Stop {float(row.get('stop_loss_vnd') or 0):,.0f}đ | TP1 {float(row.get('tp1_vnd') or 0):,.0f}đ)"
+        )
+
+    msg_html = "\n".join(lines)[:3750]
+    return dispatch_message(
+        topic_key="james_hq",
+        text=msg_html,
+        parse_mode="HTML",
+        mirror_to_reports_vault=False,
+        event_key=f"EOD_SINGLE_DIGEST_{today_str}",
+        cooldown_seconds=(60 if force else 43200),
+        is_intraday_alert=False,
+        priority="HIGH_CONVICTION",
+    )
 
 
 if __name__ == "__main__":

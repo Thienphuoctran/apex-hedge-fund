@@ -1,0 +1,30 @@
+{
+  "version": "V7.0",
+  "updated_at": "2026-11-24 21:54:38",
+  "positions": {
+    "TPB": {
+      "symbol": "TPB",
+      "entry_price": 12300.0,
+      "live_price": 12350.0,
+      "highest_since_entry": 12350.0,
+      "max_gain_pct": 0.41,
+      "base_stop_vnd": 11600.0,
+      "trailing_stop_5pct": 11730.0,
+      "effective_stop_vnd": 11600.0,
+      "stop_mode": "INITIAL_2ATR",
+      "updated_at": "2026-11-24 21:54:38"
+    },
+    "HPG": {
+      "symbol": "HPG",
+      "entry_price": 20500.0,
+      "live_price": 20400.0,
+      "highest_since_entry": 20500.0,
+      "max_gain_pct": 0.0,
+      "base_stop_vnd": 19300.0,
+      "trailing_stop_5pct": 19480.0,
+      "effective_stop_vnd": 19300.0,
+      "stop_mode": "INITIAL_2ATR",
+      "updated_at": "2026-11-24 21:54:38"
+    }
+  }
+}
