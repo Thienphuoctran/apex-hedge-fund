@@ -147,6 +147,7 @@ class TestApexV7MasterArchitecture(unittest.TestCase):
             "scripts/apex_canonical_truth.py",
             "scripts/apex_virtual_office_engine.py",
             "scripts/apex_unified_briefing_builder.py",
+            "scripts/james_daily_ops_activator.py",
         ]
         for rel in pure_modules:
             src = (ROOT_DIR / rel).read_text(encoding="utf-8")
@@ -158,6 +159,35 @@ class TestApexV7MasterArchitecture(unittest.TestCase):
                 elif isinstance(node, ast.ImportFrom) and node.module:
                     imports.add(node.module.split(".")[0])
             self.assertEqual(imports & banned, set(), f"{rel} has heavy imports: {imports & banned}")
+
+    def test_08_james_daily_ops_one_phrase_activation(self):
+        import datetime as _dt
+        from scripts.james_daily_ops_activator import get_daily_ops_schedule_plan
+        from scripts.master_cio_james_agent import handle_james_chat
+
+        ict = _dt.timezone(_dt.timedelta(hours=7))
+        # Early morning 01:57 on Wednesday 2026-11-25 -> all 8 slots upcoming
+        plan_morning = get_daily_ops_schedule_plan(now_ict=_dt.datetime(2026, 11, 25, 1, 57, tzinfo=ict))
+        self.assertTrue(plan_morning["is_trading_day"])
+        self.assertEqual(plan_morning["upcoming_count"], 8)
+        self.assertEqual(plan_morning["passed_count"], 0)
+
+        # Mid-day 13:15 on Wednesday 2026-11-25 -> 4 slots passed (08:30..13:00), 4 remaining (13:30..15:45)
+        plan_mid = get_daily_ops_schedule_plan(now_ict=_dt.datetime(2026, 11, 25, 13, 15, tzinfo=ict))
+        self.assertEqual(plan_mid["upcoming_count"], 4)
+        self.assertEqual([s["time"] for s in plan_mid["upcoming_slots"]], ["13:30", "14:05", "14:20", "15:45"])
+
+        # Skill file exists & has all 8 crons
+        skill_p = ROOT_DIR / ".agents" / "skills" / "james-daily-ops-activation" / "SKILL.md"
+        self.assertTrue(skill_p.exists())
+        skill_txt = skill_p.read_text(encoding="utf-8")
+        for expr in ("30 8 * * 1-5", "0 9 * * 1-5", "35 11 * * 1-5", "0 13 * * 1-5", "30 13 * * 1-5", "5 14 * * 1-5", "20 14 * * 1-5", "45 15 * * 1-5"):
+            self.assertIn(expr, skill_txt)
+
+        # handle_james_chat activation phrase works
+        reply = handle_james_chat("hãy bật tác vụ tác chiến trong ngày")
+        self.assertIn("KÍCH HOẠT TÁC VỤ TÁC CHIẾN TRONG NGÀY", reply)
+        self.assertTrue((ROOT_DIR / "data" / "james_daily_ops_schedule_state.json").exists())
 
 
 if __name__ == "__main__":

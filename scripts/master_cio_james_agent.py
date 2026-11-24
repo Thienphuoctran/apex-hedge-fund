@@ -200,6 +200,37 @@ def handle_james_chat(user_text: str) -> str:
         except Exception as e:
             return f"[!] Lỗi phân tích Deep Brain: {e}"
 
+    # 0.08 KÍCH HOẠT TÁC VỤ TÁC CHIẾN 8 KHUNG GIỜ TRONG NGÀY (ONE-PHRASE DAILY OPS)
+    activation_triggers = [
+        "bật tác vụ tác chiến",
+        "bật lịch tác chiến",
+        "kích hoạt tác vụ tác chiến",
+        "kích hoạt lịch tác chiến",
+        "bật 8 mốc tác chiến",
+        "bật lịch phòng james",
+        "lên lịch tác chiến trong ngày",
+    ]
+    if any(k in text_lower for k in activation_triggers):
+        try:
+            from scripts.james_daily_ops_activator import arm_daily_ops_in_james
+
+            res = arm_daily_ops_in_james(room_name="JAMES_CHAT_OR_TELEGRAM")
+            lines = [
+                "🎖️ *[MASTER CIO JAMES — ĐÃ KÍCH HOẠT TÁC VỤ TÁC CHIẾN TRONG NGÀY V7.0]*",
+                f"📅 Ngày: `{res['date_ict']}` | Trạng thái sàn: `{res['market_status_code']}` | Mở lại: `{res['next_trading_day']}`",
+                f"⏰ Đã khóa lịch **{res['upcoming_count']}/{res['total_slots']}** khung giờ còn lại hôm nay (chi tiết trong `data/james_daily_ops_schedule_state.json`):",
+            ]
+            for sl in res.get("upcoming_slots", []):
+                lines.append(f"• `{sl['time']}` (`{sl['cron_expr']}`) — {sl['title']}")
+            if res.get("passed_slots"):
+                lines.append("• _Mốc đã qua giờ hôm nay:_ " + ", ".join(p["time"] for p in res["passed_slots"]))
+            lines.append(
+                "\n💡 _Lưu ý: Trên đoạn chat Antigravity IDE của phòng James, Agent sẽ tự kích hoạt đủ các timer `schedule` tương ứng để báo cáo nổ trực tiếp ngay trong phòng._"
+            )
+            return "\n".join(lines)
+        except Exception as e_act:
+            return f"[!] Lỗi kích hoạt lịch tác chiến trong ngày: {e_act}"
+
     # 0.1 CHUYỂN TIẾP TRỰC TIẾP CÁC LỆNH HỆ THỐNG (/tcbs, /baomat, /danhmuc, mua/bán...) SANG BỘ XỬ LÝ TRUNG TÂM
     direct_commands = [
         "/tcbs", "tcbs", "tcinvest", "tài khoản tcbs", "số dư tcbs", "bảng giá tcbs",

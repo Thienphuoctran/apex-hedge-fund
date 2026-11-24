@@ -15,6 +15,9 @@
 > 
 > 3. **CƠ CHẾ ĐỒNG BỘ 1 NGUỒN DUY NHẤT NGAY KHI HOÀN THÀNH CÔNG VIỆC**:
 >    - Khi hoàn thành tác vụ phân tích hoặc nâng cấp, bắt buộc chạy `python scripts/apex_unified_briefing_builder.py` và `python scripts/palmer_antigravity_sync_bridge.py --sync-current` để `SCBP`, `00_LIVE_INTER_CHAT_STATE.md`, Web Portal `127.0.0.1:8000` và Văn phòng 2.5D khớp 100% theo mã băm SHA-256.
+>
+> 4. **CƠ CHẾ KÍCH HOẠT 1 CÂU TÁC VỤ TÁC CHIẾN TRONG NGÀY TẠI PHÒNG JAMES (ONE-PHRASE DAILY OPS)**:
+>    - Bất cứ khi nào Chủ tịch nhắn *"hãy bật tác vụ tác chiến trong ngày"* (hoặc *"bật lịch tác chiến hôm nay"*, *"kích hoạt 8 mốc tác chiến"*, *"bật lịch phòng James"*) tại **phòng James** hoặc bất kỳ phòng chat Antigravity nào, Agent **BẮT BUỘC** đọc `.agents/skills/james-daily-ops-activation/SKILL.md`, chạy `python -X utf8 scripts/james_daily_ops_activator.py --arm-today`, kiểm tra `manage_task(Action="list")` để chống trùng, và gọi song song tool `schedule` (`ExactTiming=True`, `MaxIterations=1` cho các mốc còn lại trong ngày: `08:30`, `09:00`, `11:35`, `13:00`, `13:30`, `14:05`, `14:20`, `15:45`) để báo cáo tự động nổ trực tiếp ngay trong đoạn chat đó.
 
 ---
 

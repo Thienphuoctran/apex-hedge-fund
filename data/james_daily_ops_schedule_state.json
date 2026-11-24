@@ -1,0 +1,61 @@
+{
+  "version": "V7.0",
+  "armed_at_ict": "2026-11-25 02:04:57 ICT",
+  "date_ict": "2026-11-25",
+  "room_name": "JAMES_CHAT_OR_TELEGRAM",
+  "recurring_weekdays": false,
+  "is_trading_day": true,
+  "market_status_code": "PRE_MARKET",
+  "next_trading_day": "2026-11-26",
+  "armed_slots": [
+    {
+      "time": "08:30",
+      "slot_id": "0830_PREATO",
+      "cron_expr": "30 8 * * 1-5",
+      "title": "Chuẩn Bị Trước ATO & Quét Tin/BCTC (08h30)"
+    },
+    {
+      "time": "09:00",
+      "slot_id": "0900_OPEN_ATO",
+      "cron_expr": "0 9 * * 1-5",
+      "title": "Mở Phiên ATO & Chốt Chặn Chống FOMO (09h00)"
+    },
+    {
+      "time": "11:35",
+      "slot_id": "1135_NOON_CLOSE",
+      "cron_expr": "35 11 * * 1-5",
+      "title": "Chốt Phiên Sáng & Đánh Giá Cung Cầu (11h35)"
+    },
+    {
+      "time": "13:00",
+      "slot_id": "1300_AFTERNOON_T25",
+      "cron_expr": "0 13 * * 1-5",
+      "title": "Bắt Đầu Phiên Chiều & Radar Hàng T+2.5 (13h00)"
+    },
+    {
+      "time": "13:30",
+      "slot_id": "1330_PREP_14H",
+      "cron_expr": "30 13 * * 1-5",
+      "title": "Nghiên Cứu Thị Trường Chuẩn Bị Cho 14h00 (13h30)"
+    },
+    {
+      "time": "14:05",
+      "slot_id": "1405_GOLDEN_HOUR",
+      "cron_expr": "5 14 * * 1-5",
+      "title": "Khung Giờ Vàng Quyết Định Giải Ngân (14h05)"
+    },
+    {
+      "time": "14:20",
+      "slot_id": "1420_PRE_ATC",
+      "cron_expr": "20 14 * * 1-5",
+      "title": "Nghiên Cứu & Chốt Kế Hoạch Trước ATC (14h20)"
+    },
+    {
+      "time": "15:45",
+      "slot_id": "1545_EOD_WRAP",
+      "cron_expr": "45 15 * * 1-5",
+      "title": "Tổng Kết EOD, Tự Học & Kiểm Toán Trọng (15h45)"
+    }
+  ],
+  "skipped_passed_slots": []
+}

@@ -1,6 +1,6 @@
 {
   "version": "CONSTITUTION_V2.0_12GATES",
-  "audited_at_ict": "2026-11-24 21:53:52",
+  "audited_at_ict": "2026-11-25 02:04:50",
   "passed_count": 12,
   "total_gates": 12,
   "all_passed": true,
@@ -34,7 +34,7 @@
       "gate_id": "G05_EXCHANGE_CALENDAR_HOLIDAY_LOCK",
       "article": 6,
       "passed": true,
-      "detail": "session=HOLIDAY_CLOSED, invalid_holiday_buys=[]"
+      "detail": "session=PRE_MARKET, invalid_holiday_buys=[]"
     },
     {
       "gate_id": "G06_LOT100_DYNAMIC_NAV_CAP",
@@ -52,13 +52,13 @@
       "gate_id": "G08_NO_MORNING_FOMO",
       "article": 6,
       "passed": true,
-      "detail": "ict_hour=21:53, morning_buys=[]"
+      "detail": "ict_hour=02:04, morning_buys=[]"
     },
     {
       "gate_id": "G09_SCBP_SINGLE_SOURCE_SYNC",
       "article": 7,
       "passed": true,
-      "detail": "SCBP seal=64f1bc9d72b0... synced=True"
+      "detail": "SCBP seal=ad476e9143e5... synced=True"
     },
     {
       "gate_id": "G10_TELEGRAM_SINGLE_OWNER_SHIELD",
@@ -80,5 +80,5 @@
     }
   ],
   "inspector": "Trọng (Ban 12 — Kiểm Sát Viên Độc Lập)",
-  "saved_at_ict": "2026-11-24 21:53:53 ICT"
+  "saved_at_ict": "2026-11-25 02:04:50 ICT"
 }

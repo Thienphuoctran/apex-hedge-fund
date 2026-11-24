@@ -140,7 +140,11 @@ def generate_dynamic_tactical_stages_html(
     else:
         standby_bullets = "Rổ Watchlist SSOT"
 
-    msess = (wr_state or {}).get("market_session") or get_vn_market_session_state(now_ict=now, market_overview=(wr_state or {}).get("market_overview"))
+    msess_wr = (wr_state or {}).get("market_session")
+    if isinstance(msess_wr, dict) and msess_wr.get("date_ict") == now.strftime("%Y-%m-%d"):
+        msess = msess_wr
+    else:
+        msess = get_vn_market_session_state(now_ict=now, market_overview=(wr_state or {}).get("market_overview"))
     is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
     if is_closed:
         truth = load_canonical_truth(refresh_if_missing=False)
