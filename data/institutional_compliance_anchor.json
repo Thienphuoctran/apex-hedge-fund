@@ -5,7 +5,7 @@
   "account_id": "105C307855",
   "cash_balance_vnd": 13594522.0,
   "total_nav_vnd": 20229522.0,
-  "status": "ALL_POSITIONS_CLOSED_100_PERCENT_CASH",
+  "status": "ACTIVE_HOLDING",
   "ten_commandments": [
     {
       "article": 1,
@@ -81,9 +81,9 @@
     "Chốt lời Scaling Out 50/50 tại TP1",
     "Đối soát Ký ức Liên Ngày Walk-Forward SHA-256 mỗi sáng lúc 08h30"
   ],
-  "enforced_strategy": "100_PERCENT_CASH_PROTECTED",
-  "realized_cash_vnd": 20051117.0,
+  "enforced_strategy": "RISK_PARITY_STOP_2XATR",
+  "realized_cash_vnd": 15541117.0,
   "realized_pnl_vnd": 51117.0,
   "last_updated": "2026-11-19 09:20:00",
-  "audit_timestamp": "2026-11-23_04h18_dynamic_sync"
+  "audit_timestamp": "2026-11-24_07h16_dynamic_sync"
 }

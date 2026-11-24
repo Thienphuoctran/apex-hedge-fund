@@ -1,10 +1,31 @@
 {
-  "updated_at": "04:18:58 Thứ Hai, ngày 23/11/2026",
+  "updated_at": "07:16:36 Thứ Ba, ngày 24/11/2026",
   "account_id": "105C307855",
-  "status": "ALL_CASH_STANDDOWN",
-  "cash_balance_vnd": 20051117.0,
-  "dry_powder": 20051117.0,
+  "status": "ACTIVE_HOLDING",
+  "cash_balance_vnd": 15541117.0,
+  "dry_powder": 15541117.0,
   "total_nav_vnd": 20051117.0,
   "realized_pnl_vnd": 51117.0,
-  "positions": []
+  "positions": [
+    {
+      "symbol": "TPB",
+      "shares": 200,
+      "entry_price": 12300.0,
+      "current_price": 12350.0,
+      "stop_loss": 11600.0,
+      "take_profit_tp1": 13350.0,
+      "take_profit_tp2": 14450.0,
+      "bought_at": "2026-11-23 14:19:49"
+    },
+    {
+      "symbol": "HPG",
+      "shares": 100,
+      "entry_price": 20500.0,
+      "current_price": 20400.0,
+      "stop_loss": 19300.0,
+      "take_profit_tp1": 22300.0,
+      "take_profit_tp2": 24100.0,
+      "bought_at": "2026-11-23 14:28:04"
+    }
+  ]
 }

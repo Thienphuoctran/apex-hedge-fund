@@ -1,19 +1,80 @@
 {
-  "last_scan_utc": "2026-11-23T04:18:58.504468+00:00",
-  "total_positions_monitored": 0,
+  "last_scan_utc": "2026-11-24T07:16:39.562218",
+  "total_positions_monitored": 2,
   "emergency_alerts_active": 0,
   "take_profit_alerts_active": 0,
-  "status": "ALL_CASH_STANDDOWN_0_SHARES",
-  "positions": [],
+  "status": "ALL_NORMAL",
+  "positions": [
+    {
+      "symbol": "TPB",
+      "market": "VIETNAM",
+      "name": "TPB",
+      "current_price": 12350.0,
+      "prev_close": 12350.0,
+      "change_pct": 0.0,
+      "stop_loss_2atr": 11600.0,
+      "stop_dist_pct": 6.07,
+      "tp1": 13350.0,
+      "tp2": 14450.0,
+      "tp1_dist_pct": 8.1,
+      "tp2_dist_pct": 17.0,
+      "volume_surge_ratio": 0.62,
+      "vwap_est": 12283.33,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "upside_triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 5365.9
+      },
+      "shares": 200,
+      "allocated_capital": 2460000.0,
+      "currency": "VND",
+      "bctc_thesis": "",
+      "catalysts": ""
+    },
+    {
+      "symbol": "HPG",
+      "market": "VIETNAM",
+      "name": "HPG",
+      "current_price": 20400.0,
+      "prev_close": 20450.0,
+      "change_pct": -0.24,
+      "stop_loss_2atr": 19300.0,
+      "stop_dist_pct": 5.39,
+      "tp1": 22300.0,
+      "tp2": 24100.0,
+      "tp1_dist_pct": 9.31,
+      "tp2_dist_pct": 18.14,
+      "volume_surge_ratio": 0.8,
+      "vwap_est": 20366.67,
+      "severity": "NORMAL",
+      "triggers_hit": [],
+      "upside_triggers_hit": [],
+      "hedging_solution": {
+        "instrument": "Hợp Đồng Tương Lai VN30F1M",
+        "action": "SHORT 1 HỢP ĐỒNG VN30F1M",
+        "notional_hedged_vnd": 132000000.0,
+        "hedge_ratio_pct": 6439.0
+      },
+      "shares": 100,
+      "allocated_capital": 2050000.0,
+      "currency": "VND",
+      "bctc_thesis": "",
+      "catalysts": ""
+    }
+  ],
   "wave_hunter_summary": {
     "vn_waves_count": 8,
     "us_waves_count": 6,
     "top_vn_wave_symbols": [
       "HHV",
-      "HAH",
-      "PC1",
-      "MSN",
-      "HPG"
+      "CTG",
+      "VPB",
+      "HDB",
+      "PC1"
     ],
     "top_us_wave_symbols": [
       "NVDA",
@@ -21,21 +82,5 @@
       "AVGO",
       "MSFT"
     ]
-  },
-  "temporal_context": {
-    "timestamp_iso": "2026-11-23T04:18:58.501768",
-    "date_str": "2026-11-23",
-    "date_vn": "23/11/2026",
-    "time_vn": "04:18:58",
-    "weekday_index": 0,
-    "weekday_vn": "Thứ Hai",
-    "full_time_label_vn": "04:18:58 Thứ Hai, ngày 23/11/2026",
-    "market_phase": "PRE_MARKET_PREPARATION",
-    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Hai) — Chuẩn bị kế hoạch tác chiến",
-    "is_trading_hours": false,
-    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
-  },
-  "cash_balance_vnd": 20051117.0,
-  "realized_pnl_vnd": 51117.0,
-  "positions_tracked": []
+  }
 }
