@@ -127,7 +127,7 @@
     }
   ],
   "tactical_regime": "PATIENT_PREDATOR_100_CASH_STANDDOWN",
-  "last_updated": "2026-11-23 08:44:34",
+  "last_updated": "2026-11-24 02:58:16",
   "tcbs_mcp_url": "https://mcp.tcbs.com.vn/mcp/tcinvest/",
   "current_campaign_phase": "ROUND_1_COMPLETED_100_CASH_WAITING_ROUND_2",
   "initial_capital_vnd": 20000000.0,
@@ -275,15 +275,15 @@
     }
   ],
   "temporal_context": {
-    "timestamp_iso": "2026-11-23T08:44:34.525981",
-    "date_str": "2026-11-23",
-    "date_vn": "23/11/2026",
-    "time_vn": "08:44:34",
-    "weekday_index": 0,
-    "weekday_vn": "Thứ Hai",
-    "full_time_label_vn": "08:44:34 Thứ Hai, ngày 23/11/2026",
+    "timestamp_iso": "2026-11-24T02:58:16.194240",
+    "date_str": "2026-11-24",
+    "date_vn": "24/11/2026",
+    "time_vn": "02:58:16",
+    "weekday_index": 1,
+    "weekday_vn": "Thứ Ba",
+    "full_time_label_vn": "02:58:16 Thứ Ba, ngày 24/11/2026",
     "market_phase": "PRE_MARKET_PREPARATION",
-    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Hai) — Chuẩn bị kế hoạch tác chiến",
+    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Ba) — Chuẩn bị kế hoạch tác chiến",
     "is_trading_hours": false,
     "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
   },

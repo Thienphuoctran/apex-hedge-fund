@@ -1,7 +1,7 @@
 {
-  "audit_timestamp": "2026-11-23 08:44:37",
-  "audit_duration_seconds": 0.34,
-  "overall_infrastructure_health_score": 75,
+  "audit_timestamp": "2026-11-24 02:58:23",
+  "audit_duration_seconds": 0.19,
+  "overall_infrastructure_health_score": 85,
   "health_verdict": "CẦN LƯU Ý",
   "appointed_officers": {
     "sentinel_lead": "Ban 12 Trọng (Tổng Kiểm Sát Thể Chế & Liêm Chính)",
@@ -10,13 +10,13 @@
     "commissioner": "Chủ tịch HĐQT Trần Quốc Thiên Phước"
   },
   "check_1_report_counts_and_thresholds": {
-    "operational_institutional_reports": 555,
-    "total_markdown_documents": 811,
+    "operational_institutional_reports": 559,
+    "total_markdown_documents": 815,
     "threshold_min": 50000,
     "threshold_max": 100000,
     "status": "GREEN_OPTIMAL_SQLITE_POWERED",
     "urgency": "OPTIMAL",
-    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (555 báo cáo thể chế / 811 tệp MD hiện có)."
+    "action_guidance": "Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (559 báo cáo thể chế / 815 tệp MD hiện có)."
   },
   "check_2_directory_density": {
     "total_directories_scanned": 100,
@@ -38,16 +38,16 @@
     "status": "WARNING_SHARDING_ADVISED"
   },
   "check_3_disk_and_storage_footprint": {
-    "total_active_files": 1516,
-    "total_project_size_mb": 49.06,
-    "data_directory_size_mb": 18.71,
+    "total_active_files": 1521,
+    "total_project_size_mb": 49.11,
+    "data_directory_size_mb": 18.74,
     "github_quota_limit_mb": 1000.0,
     "github_quota_used_pct": "4.91%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 50.56,
+    "git_directory_size_mb": 50.72,
     "uncommitted_files_count": 13,
     "active_branch": "main",
     "status": "HEALTHY"
@@ -60,8 +60,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 6.13,
-    "ssot_load_latency_ms": 0.23,
+    "json_directory_scan_latency_ms": 3.8,
+    "ssot_load_latency_ms": 0.15,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
@@ -78,21 +78,12 @@
   },
   "check_8_semantic_and_superpowers_gate": {
     "semantic_consistency": {
-      "audited_reports": 24,
-      "clean_reports": 23,
-      "violation_reports": 1,
-      "violations_details": [
-        {
-          "file": "08_Master_Investment_CIO/2026-11-23_Master_Blotter_Snapshot.md",
-          "status": "VIOLATION",
-          "issues": [
-            "Xuất hiện mã cấm ngoài danh mục Vòng 2 (PVT) trong kế hoạch tác chiến/săn mồi",
-            "Xuất hiện mã cấm ngoài danh mục Vòng 2 (HPG) trong kế hoạch tác chiến/săn mồi"
-          ]
-        }
-      ],
-      "semantic_audit_passed": false,
-      "status": "SEMANTIC_CONFLICT_DETECTED"
+      "audited_reports": 4,
+      "clean_reports": 4,
+      "violation_reports": 0,
+      "violations_details": [],
+      "semantic_audit_passed": true,
+      "status": "SEMANTIC_CONSISTENCY_PERFECT"
     },
     "superpowers_247_gate": {
       "tavily_api_ready": false,
@@ -105,7 +96,7 @@
           "SSOT_Portfolio: độ tươi đạt chuẩn (0.0h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-23 08:44:37"
+        "verified_at": "2026-11-24 02:58:24"
       },
       "cbtt_gate": {
         "source": "CBTT_Radar",
@@ -116,7 +107,7 @@
           "CBTT_Radar: độ tươi đạt chuẩn (0.0h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-23 08:44:37"
+        "verified_at": "2026-11-24 02:58:24"
       },
       "diagnostics_logged_events": 0,
       "overall_ok": false
