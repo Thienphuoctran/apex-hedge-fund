@@ -1,10 +1,10 @@
 {
   "schema_version": "APEX_CANONICAL_TRUTH_V5",
-  "generated_at_ict": "2026-11-25 02:04:49 ICT",
+  "generated_at_ict": "2026-11-25 02:31:43 ICT",
   "date": "2026-11-25",
   "market_session": {
     "date_ict": "2026-11-25",
-    "time_ict": "02:04:49",
+    "time_ict": "02:31:43",
     "weekday_vi": "Thứ Tư",
     "is_trading_day": true,
     "is_holiday": false,
@@ -226,13 +226,13 @@
     ]
   },
   "latest_council_resolution": {
-    "file_name": "2026-11-23_2100_Dai_Hoi_Dong_5_Khoi_Chien_Luoc.md",
-    "rel_path": "08_Master_Investment_CIO/council_resolutions/2026-11-23_2100_Dai_Hoi_Dong_5_Khoi_Chien_Luoc.md",
-    "title": "BIÊN BẢN HỌP ĐẠI HỘI ĐỒNG 5 KHỐI CHUYÊN TRÁCH — PHIÊN TỐI `21:00` (`23/11/2026`)"
+    "file_name": "2026-11-23_Full_10Dept_Council_And_145Stocks_Scan.md",
+    "rel_path": "08_Master_Investment_CIO/council_resolutions/2026-11-23_Full_10Dept_Council_And_145Stocks_Scan.md",
+    "title": "BIÊN BẢN HỌP THƯỢNG ĐỈNH 11 ĐƠN VỊ ĐỘC LẬP & QUÉT TOÀN THỊ TRƯỜNG (145 MÃ / 18 NGÀNH)"
   },
   "latest_chat_sync": {
-    "sync_id": "SYNC-AG2P-20261125-020449",
-    "last_updated": "2026-11-25 02:04:49",
+    "sync_id": "SYNC-AG2P-20261124-193143",
+    "last_updated": "2026-11-24 19:31:43",
     "latest_user_request": "Đồng bộ trạng thái SSOT, Lịch phiên & Chân lý Hợp nhất V5.0 giữa James, Palmer, Web Portal & Văn phòng 2.5D"
   },
   "executive_directive_vi": "🟡 HỒI PHỤC KỸ THUẬT / SPRING S3 (DƯỚI MA20 — THĂM DÒ CÓ CHỌN LỌC) | Danh mục SSOT: 200 TPB + 100 HPG (22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Trần mở mới tối đa: 25% sức mua (chỉ kê LO lúc 14h05–14h25).",

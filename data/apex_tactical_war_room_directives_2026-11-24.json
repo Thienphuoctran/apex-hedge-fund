@@ -38,5 +38,77 @@
     "role": "sentinel",
     "type": "sentinel_alert",
     "content": "🛡️ [GIÁM SÁT PHIÊN CHIỀU LIVE] Danh mục hiện hữu: 200 TPB @ Live 12,350 đ (+0.00%, Stop 11,600 đ) | 100 HPG @ Live 20,400 đ (+0.00%, Stop 19,300 đ). Két tiền mặt bảo toàn: 15,541,117 đ (77.5% NAV • Tổng NAV 20,051,117 đ). Chế độ thị trường: 🚀 TĂNG TỐC TẦNG 3 (DÒNG TIỀN ĐỒNG THUẬN)."
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_ACB_77062",
+    "key": "cbtt_2026-11-24_CRITICAL_ACB_77062",
+    "timestamp": "02:30:57",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — ACB] Ông lớn thiết bị điện Hàn Quốc tiếp tục rót vốn vào Bắc Ninh, doanh thu tại Việt Nam dự kiến hơn 4.000 tỷ, tăng hơn gấp đôi sau 4 năm (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_PNJ_25115",
+    "key": "cbtt_2026-11-24_CRITICAL_PNJ_25115",
+    "timestamp": "02:30:57",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Bài toán khó để PNJ huy động 8.000 tỷ \"chữa cháy\": Bất ngờ lời giải có thể đến từ khoản lỗ kỷ lục (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_FPT_44848",
+    "key": "cbtt_2026-11-24_CRITICAL_FPT_44848",
+    "timestamp": "02:30:57",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT Software dự kiến doanh thu lập kỷ lục trong quý 4 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_PNJ_87223",
+    "key": "cbtt_2026-11-24_CRITICAL_PNJ_87223",
+    "timestamp": "02:30:57",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Ngày buồn của PNJ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_FPT_84841",
+    "key": "cbtt_2026-11-24_CRITICAL_FPT_84841",
+    "timestamp": "02:30:57",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] ‘Cơn mưa’ cổ tức tiền mặt cuối năm, cao nhất lên tới 40% (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "sec_2026-11-24_AAPL_10-K_2026-11-03",
+    "key": "sec_2026-11-24_AAPL_10-K_2026-11-03",
+    "timestamp": "02:30:57",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-K — AAPL] 10-K (2026-11-03)"
+  },
+  {
+    "id": "sec_2026-11-24_TSLA_10-Q_2026-10-22",
+    "key": "sec_2026-11-24_TSLA_10-Q_2026-10-22",
+    "timestamp": "02:30:57",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — TSLA] 10-Q (2026-10-22)"
+  },
+  {
+    "id": "sec_2026-11-24_AVGO_10-Q_2026-09-10",
+    "key": "sec_2026-11-24_AVGO_10-Q_2026-09-10",
+    "timestamp": "02:30:57",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — AVGO] 10-Q (2026-09-10)"
   }
 ]
