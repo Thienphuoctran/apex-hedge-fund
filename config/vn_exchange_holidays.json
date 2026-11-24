@@ -1,0 +1,104 @@
+{
+  "schema": "VN_EXCHANGE_HOLIDAYS_V1",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "exchanges": ["HOSE", "HNX", "UPCOM"],
+  "notes": "Lịch nghỉ lễ chính thức HOSE/HNX/UPCoM 2026–2027, bao gồm Ngày Văn hóa Việt Nam 24/11 theo Nghị quyết số 28/2026/QH16.",
+  "holidays": {
+    "2026-01-01": {
+      "name_vi": "Tết Dương lịch 2026",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2026-02-16": {
+      "name_vi": "Nghỉ Tết Nguyên Đán Bính Ngọ 2026",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2026"
+    },
+    "2026-02-17": {
+      "name_vi": "Mùng 1 Tết Nguyên Đán Bính Ngọ 2026",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2026"
+    },
+    "2026-02-18": {
+      "name_vi": "Mùng 2 Tết Nguyên Đán Bính Ngọ 2026",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2026"
+    },
+    "2026-02-19": {
+      "name_vi": "Mùng 3 Tết Nguyên Đán Bính Ngọ 2026",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2026"
+    },
+    "2026-02-20": {
+      "name_vi": "Mùng 4 Tết Nguyên Đán Bính Ngọ 2026",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2026"
+    },
+    "2026-04-27": {
+      "name_vi": "Nghỉ bù Giỗ Tổ Hùng Vương (10/3 Âm lịch)",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2026"
+    },
+    "2026-04-30": {
+      "name_vi": "Ngày Giải phóng miền Nam 30/4",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2026-05-01": {
+      "name_vi": "Ngày Quốc tế Lao động 1/5",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2026-09-01": {
+      "name_vi": "Nghỉ lễ Quốc khánh (liền kề 02/9)",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2026"
+    },
+    "2026-09-02": {
+      "name_vi": "Ngày Quốc khánh nước CHXHCN Việt Nam 02/9",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2026-11-24": {
+      "name_vi": "Ngày Văn hóa Việt Nam (24/11)",
+      "authority": "Nghị quyết số 28/2026/QH16 — HOSE & HNX nghỉ giao dịch toàn ngày"
+    },
+    "2027-01-01": {
+      "name_vi": "Tết Dương lịch 2027",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2027-02-05": {
+      "name_vi": "Nghỉ Tết Nguyên Đán Đinh Mùi 2027",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2027"
+    },
+    "2027-02-08": {
+      "name_vi": "Nghỉ Tết Nguyên Đán Đinh Mùi 2027",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2027"
+    },
+    "2027-02-09": {
+      "name_vi": "Nghỉ Tết Nguyên Đán Đinh Mùi 2027",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2027"
+    },
+    "2027-02-10": {
+      "name_vi": "Nghỉ Tết Nguyên Đán Đinh Mùi 2027",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2027"
+    },
+    "2027-02-11": {
+      "name_vi": "Nghỉ Tết Nguyên Đán Đinh Mùi 2027",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2027"
+    },
+    "2027-04-16": {
+      "name_vi": "Giỗ Tổ Hùng Vương (10/3 Âm lịch)",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2027-04-30": {
+      "name_vi": "Ngày Giải phóng miền Nam 30/4",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2027-05-03": {
+      "name_vi": "Nghỉ bù Ngày Quốc tế Lao động 1/5",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2027-09-02": {
+      "name_vi": "Ngày Quốc khánh 02/9",
+      "authority": "Bộ luật Lao động 2019 — HOSE/HNX nghỉ giao dịch"
+    },
+    "2027-09-03": {
+      "name_vi": "Nghỉ lễ Quốc khánh (liền kề 02/9)",
+      "authority": "Thông báo nghỉ lễ HOSE/HNX 2027"
+    },
+    "2027-11-24": {
+      "name_vi": "Ngày Văn hóa Việt Nam (24/11)",
+      "authority": "Nghị quyết số 28/2026/QH16 — HOSE & HNX nghỉ giao dịch toàn ngày"
+    }
+  }
+}

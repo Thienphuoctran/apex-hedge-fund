@@ -40,6 +40,11 @@ def get_ict_now() -> datetime.datetime:
     return utc_now.astimezone(ict_tz)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from scripts.vn_market_calendar import get_vn_market_session_state
+from scripts.apex_canonical_truth import load_canonical_truth
 
 
 def _load_live_ssot_summary() -> Dict[str, Any]:
@@ -134,6 +139,71 @@ def generate_dynamic_tactical_stages_html(
         )
     else:
         standby_bullets = "Rổ Watchlist SSOT"
+
+    msess = (wr_state or {}).get("market_session") or get_vn_market_session_state(now_ict=now, market_overview=(wr_state or {}).get("market_overview"))
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
+    if is_closed:
+        truth = load_canonical_truth(refresh_if_missing=False)
+        council = truth.get("latest_council_resolution") or {}
+        plan = truth.get("approved_plan") or {}
+        targets = [t for t in (plan.get("priority_targets") or []) if int(t.get("executed_shares") or 0) == 0][:3]
+        targets_html = "".join(
+            f"<div>• <strong>{html_lib.escape(str(t.get('symbol', '')))}</strong>: "
+            f"{html_lib.escape(str(t.get('entry_zone', '')))} | Stop: {html_lib.escape(str(t.get('stop_loss_2xatr', '')))}</div>"
+            for t in targets
+        ) or "<div>• Theo Nghị quyết Đại Hội Đồng mới nhất.</div>"
+        status_label_safe = html_lib.escape(str(msess.get("status_label_vi") or "SÀN HOSE/HNX ĐÓNG CỬA"))
+        auth_safe = html_lib.escape(str(msess.get("holiday_authority") or msess.get("stale_feed_reason") or "Lịch nghỉ lễ chính thức HOSE/HNX"))
+        prev_td_safe = html_lib.escape(str(msess.get("prev_trading_day_vi") or msess.get("prev_trading_day") or "--"))
+        next_td_safe = html_lib.escape(str(msess.get("next_trading_day_vi") or msess.get("next_trading_day") or "--"))
+        settlement_safe = html_lib.escape(str(msess.get("settlement_note_vi") or ""))
+        council_name_safe = html_lib.escape(str(council.get("title") or council.get("file_name") or "Nghị quyết Hội đồng 5 Khối"))
+        directive_safe = html_lib.escape(str(truth.get("executive_directive_vi") or ""))
+        ref_reg_id = html_lib.escape(str(((regime.get("reference_eod_regime") or {}).get("regime_id")) or "S3_SPRING_STRIKE_READY"))
+
+        return f"""
+        <div style="display: flex; flex-direction: column; gap: 10px;" id="afternoon-tactical-stages">
+            <div id="closed-stage-1-card" class="action-plan-hero-card" style="border: 1.5px solid rgba(245, 158, 11, 0.65); background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(15, 23, 42, 0.94)); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+                    <span class="action-plan-tag" style="background: rgba(245, 158, 11, 0.25); color: #fbbf24; font-weight: 800; border-color: rgba(245, 158, 11, 0.5);">
+                        🎌 KHÔNG GIAO DỊCH HÔM NAY (0% MỞ MỚI)
+                    </span>
+                    <span style="font-size: 11px; font-weight: 800; color: #fbbf24; font-family: monospace;">Mở lại: {next_td_safe}</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 800; color: #fef3c7;">
+                    1. TRẠNG THÁI SÀN HOSE / HNX: {status_label_safe}
+                </div>
+                <div style="font-size: 11px; color: #e2e8f0; line-height: 1.55;">
+                    • <strong>Căn cứ thể chế:</strong> {auth_safe}<br/>
+                    • <strong>Dữ liệu bảng điện bên cạnh:</strong> Là ảnh chụp giá đóng cửa tham chiếu phiên trước (<strong>{prev_td_safe}</strong> • Chế độ EOD: <code>{ref_reg_id}</code>). Hệ thống khóa 100% tín hiệu mua/bán intraday hôm nay.
+                </div>
+            </div>
+
+            <div id="closed-stage-2-card" style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-size: 10px; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.16); padding: 2px 8px; border-radius: 4px;">📅 LỊCH THANH TOÁN T+2 &amp; BẢO VỆ VỊ THẾ</span>
+                    <span style="font-size: 11px; font-weight: 800; color: #34d399; font-family: monospace;">Cash {cash_str} ({cash_pct:.1f}%)</span>
+                </div>
+                <div style="font-size: 11px; color: #cbd5e1; line-height: 1.55;">
+                    • {settlement_safe}<br/>
+                    • Vị thế giữ qua lễ: <strong>{total_shares} CP ({holdings_desc})</strong>:
+                    <div style="margin-left: 8px; margin-top: 3px; display: flex; flex-direction: column; gap: 2px;">{holdings_bullets}</div>
+                </div>
+            </div>
+
+            <div id="closed-stage-3-card" style="background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(16, 185, 129, 0.45); border-radius: 9px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-size: 10px; font-weight: 800; color: #34d399; background: rgba(16, 185, 129, 0.18); padding: 2px 8px; border-radius: 4px;">🏛️ ĐỒNG BỘ HỘI ĐỒNG 5 KHỐI &amp; CHAT</span>
+                    <span style="font-size: 10.5px; font-weight: 700; color: #94a3b8;">Nhịp 2 • {next_td_safe} (14:05–14:25)</span>
+                </div>
+                <div style="font-size: 11.5px; font-weight: 700; color: #34d399;">{council_name_safe}</div>
+                <div style="font-size: 11px; color: #e2e8f0; line-height: 1.5;">
+                    {directive_safe}
+                    <div style="margin-top: 5px; margin-left: 6px; display: flex; flex-direction: column; gap: 2px; color: #cbd5e1;">{targets_html}</div>
+                </div>
+            </div>
+        </div>
+        """
 
     # Morning: 08:30 - 11:30
     if hm < 11 * 60 + 30:
@@ -1135,6 +1205,12 @@ def _render_daily_auto_warroom_v3_banner_html() -> str:
     """Render Bảng Tác Chiến Toàn Thị Trường Hàng Ngày (09h00–16h00) từ data/live_warroom_state.json."""
     st = _load_json_portal("data/live_warroom_state.json", {})
     b3 = _load_json_portal("data/apex_autonomous_brain_v3_output.json", {})
+    truth = load_canonical_truth(refresh_if_missing=False)
+    msess = st.get("market_session") or truth.get("market_session") or get_vn_market_session_state()
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
+    council = truth.get("latest_council_resolution") or {}
+    council_rel = html_lib.escape(str(council.get("rel_path") or "08_Master_Investment_CIO/council_resolutions/2026-11-23_2100_Dai_Hoi_Dong_5_Khoi_Chien_Luoc.md"))
+
     today_str = str(st.get("date") or get_ict_now().strftime("%Y-%m-%d"))
     ts = html_lib.escape(str(st.get("timestamp_ict") or "Đang chờ phiên 09h00"))
     phase = html_lib.escape(str(st.get("phase") or "STANDBY"))
@@ -1142,10 +1218,16 @@ def _render_daily_auto_warroom_v3_banner_html() -> str:
     d = st.get("decision_brain") or {}
     s = st.get("ssot_snapshot") or {}
 
-    regime = html_lib.escape(str(d.get("live_regime") or "S4_BEAR_CASH_SHIELD"))
-    alloc = html_lib.escape(str(d.get("target_allocation_pct") or "0.0% NAV"))
-    verdict = html_lib.escape(str(d.get("verdict_vi") or "Hệ thống Tác chiến 145 mã sẵn sàng lúc 09h00 Thứ Hai."))
-    reg_col = "#34d399" if "S1" in regime else ("#38bdf8" if "S2" in regime else ("#fbbf24" if "S3" in regime else "#f87171"))
+    can_reg = st.get("canonical_regime") or truth.get("canonical_regime") or {}
+    regime = html_lib.escape(str(d.get("live_regime") or can_reg.get("regime_id") or "S4_BEAR_CASH_SHIELD"))
+    alloc = html_lib.escape(str(d.get("target_allocation_pct") or can_reg.get("target_exposure_label") or "0.0% NAV"))
+    verdict = html_lib.escape(str(d.get("verdict_vi") or truth.get("executive_directive_vi") or "Hệ thống Tác chiến 145 mã sẵn sàng."))
+    reg_col = "#fbbf24" if is_closed else ("#34d399" if "S1" in regime else ("#38bdf8" if "S2" in regime else ("#fbbf24" if "S3" in regime else "#f87171")))
+    auto_badge_html = (
+        '<span id="auto-wr-live-badge" style="background:rgba(245,158,11,0.18); color:#fbbf24; border:1px solid rgba(245,158,11,0.45); padding:3px 10px; border-radius:999px; font-size:11px; font-weight:800;">🎌 SÀN HOSE/HNX NGHỈ GIAO DỊCH</span>'
+        if is_closed else
+        '<span id="auto-wr-live-badge" style="background:rgba(16,185,129,0.18); color:#34d399; border:1px solid rgba(16,185,129,0.45); padding:3px 10px; border-radius:999px; font-size:11px; font-weight:800;">● TỰ ĐỘNG 09H00–16H00</span>'
+    )
 
     leaders = st.get("top_5_live_leaders") or []
     leaders_rows = "".join(
@@ -1201,7 +1283,7 @@ def _render_daily_auto_warroom_v3_banner_html() -> str:
         <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
             <div>
                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <span style="background:rgba(16,185,129,0.18); color:#34d399; border:1px solid rgba(16,185,129,0.45); padding:3px 10px; border-radius:999px; font-size:11px; font-weight:800;">● TỰ ĐỘNG 09H00–16H00</span>
+                    {auto_badge_html}
                     <h3 style="margin:0; font-size:15.5px; font-weight:900; color:#f8fafc;">Tác Chiến Chứng Khoán Toàn Thị Trường Hàng Ngày (09h00–16h00)</h3>
                 </div>
                 <div style="font-size:12px; color:#94a3b8; margin-top:4px;">
@@ -1255,7 +1337,7 @@ def _render_daily_auto_warroom_v3_banner_html() -> str:
         <div style="display:flex; flex-wrap:wrap; gap:8px;">
             <button onclick="openReportModal('08_Master_Investment_CIO/live_sessions/{today_str}_Live_WarRoom_Log.md')" class="btn-read" style="padding:6px 12px; font-size:11.5px;">📄 Mở Nhật Ký Quét Live ({today_str})</button>
             <button onclick="openReportModal('08_Master_Investment_CIO/live_sessions/{today_str}_EOD_WarRoom_Summary_And_Lessons.md')" class="btn-read" style="padding:6px 12px; font-size:11.5px;">🏁 Mở Tổng Kết &amp; Bài Học EOD</button>
-            <button onclick="openReportModal('08_Master_Investment_CIO/2026-11-21_Week48_Autonomous_V3_Battle_Plan.md')" class="btn-read" style="padding:6px 12px; font-size:11.5px;">🎖️ Mở Kế Hoạch Tuần 48 (Brain V3.0)</button>
+            <button onclick="openReportModal('{council_rel}')" class="btn-read" style="padding:6px 12px; font-size:11.5px;">🎖️ Nghị Quyết Hội Đồng Mới Nhất</button>
         </div>
     </div>
     """
@@ -1369,8 +1451,16 @@ def generate_portal_html(
     wr_v8_cmd_html = wr_v8_decks.get("command_html", "")
     wr_v8_surv_html = wr_v8_decks.get("surveillance_html", "")
     wr_v8_depts_html = wr_v8_decks.get("departments_html", "")
-    wr_phase_label_safe = _html.escape(str((wr_state.get("phase_info", {}) or {}).get("phase_name") or wr_phase_id or "PHÒNG TÁC CHIẾN LIVE"))
+    wr_phase_label_safe = _html.escape(str((wr_state.get("phase_info", {}) or {}).get("active_phase_short") or (wr_state.get("phase_info", {}) or {}).get("phase_name") or wr_phase_id or "PHÒNG TÁC CHIẾN LIVE"))
     wr_regime_label_safe = _html.escape(str((wr_state.get("intraday_regime", {}) or {}).get("label") or "TÍCH LŨY CHỌN LỌC"))
+    wr_msess = wr_state.get("market_session") or (wr_state.get("phase_info", {}) or {}).get("market_session") or get_vn_market_session_state()
+    wr_is_closed = (not wr_msess.get("is_trading_day", True)) or bool(wr_msess.get("stale_feed_detected", False))
+    wr_is_open_js = "false" if wr_is_closed else "true"
+    wr_pulse_badge_html = (
+        '<span id="wr-live-pulse-badge" class="war-room-live-pulse" style="background:rgba(245,158,11,0.18); color:#fbbf24; border-color:rgba(245,158,11,0.45);"><span class="war-room-live-dot" style="background:#fbbf24; animation:none;"></span> 🎌 SÀN NGHỈ LỄ — ĐÓNG CỬA</span>'
+        if wr_is_closed else
+        '<span id="wr-live-pulse-badge" class="war-room-live-pulse"><span class="war-room-live-dot"></span> TRỰC CHIẾN LIVE</span>'
+    )
     auto_wr_banner_html = _render_daily_auto_warroom_v3_banner_html()
     james_v3_card_html = _render_james_v3_command_card_html(ssot)
 
@@ -4039,9 +4129,9 @@ def generate_portal_html(
                 <div class="kpi-sub" id="top-kpi-cash-sub"><span style="color: #34d399; font-weight: 700;">{ssot['cash_pct']:.1f}% Cash</span> • {ssot['total_shares']} CP ({ssot['stocks_str']} • {ssot['stocks_pct']:.1f}% NAV)</div>
             </div>
             <div class="kpi-card" style="--card-accent: #38bdf8;">
-                <div class="kpi-lbl">📈 Lãi Ròng Thu Về Vòng 1</div>
+                <div class="kpi-lbl">📈 Lãi Ròng Thực Chốt</div>
                 <div class="kpi-val" style="color: #38bdf8;">{ssot['realized_str']}</div>
-                <div class="kpi-sub">Đã tất toán 100% (HPG, TCB, MBB)</div>
+                <div class="kpi-sub">Lãi thực chốt tích lũy đã kiểm toán (SSOT)</div>
             </div>
             <div class="kpi-card" style="--card-accent: #c084fc;">
                 <div class="kpi-lbl">📑 Báo Cáo Hôm Nay ({today_str})</div>
@@ -4267,7 +4357,7 @@ def generate_portal_html(
                 <div class="war-room-ribbon">
                     <div class="war-room-ribbon-top">
                         <div class="war-room-title-box">
-                            <span class="war-room-live-pulse"><span class="war-room-live-dot"></span> TRỰC CHIẾN LIVE</span>
+                            {wr_pulse_badge_html}
                             <div>
                                 <div class="war-room-title">⚡ PHÒNG TÁC CHIẾN ĐẦU TƯ TRONG NGÀY (APEX DAILY TACTICAL WAR-ROOM)</div>
                                 <div class="war-room-subtitle">Chủ tịch: <strong>Trần Quốc Thiên Phước</strong> (TCBS: <code>105C307855</code>) | Trực chiến: <strong>Minh Quân</strong> (Ban 7 VN) &amp; <strong>Victor</strong> (Ban 9 Live Sentinel) | Standby: <strong>Alex</strong> (Ban 7 US)</div>
@@ -6956,6 +7046,7 @@ def generate_portal_html(
            TAB 3: WAR ROOM JAVASCRIPT ENGINE (REALTIME 24/24)
            ======================================================== */
         let warRoomPollingInterval = null;
+        window.APEX_WARROOM_MARKET_OPEN = {wr_is_open_js};
 
         function startLiveClockTicker() {{
             function tick() {{
@@ -6975,6 +7066,10 @@ def generate_portal_html(
                 if (nyEl) nyEl.innerText = countStr;
                 const alexNyEl = document.getElementById('alex-ny-countdown');
                 if (alexNyEl) alexNyEl.innerText = countStr;
+
+                if (window.APEX_WARROOM_MARKET_OPEN === false) {{
+                    return;
+                }}
 
                 // Live dynamic switcher for 3 afternoon stages
                 const curMinutes = now.getHours() * 60 + now.getMinutes();
@@ -7115,6 +7210,21 @@ def generate_portal_html(
                 if (phEl) phEl.innerText = wr.phase || '';
                 const regEl = document.getElementById('auto-wr-regime-badge');
                 if (regEl) regEl.innerText = `${{d.live_regime || 'S4'}} • ${{d.target_allocation_pct || ''}}`;
+                const liveBadgeEl = document.getElementById('auto-wr-live-badge');
+                const wrClosed = Boolean(wr.market_session && (!wr.market_session.is_trading_day || wr.market_session.stale_feed_detected));
+                if (liveBadgeEl) {{
+                    if (wrClosed) {{
+                        liveBadgeEl.style.background = 'rgba(245,158,11,0.18)';
+                        liveBadgeEl.style.color = '#fbbf24';
+                        liveBadgeEl.style.borderColor = 'rgba(245,158,11,0.45)';
+                        liveBadgeEl.innerText = '🎌 SÀN HOSE/HNX NGHỈ GIAO DỊCH';
+                    }} else {{
+                        liveBadgeEl.style.background = 'rgba(16,185,129,0.18)';
+                        liveBadgeEl.style.color = '#34d399';
+                        liveBadgeEl.style.borderColor = 'rgba(16,185,129,0.45)';
+                        liveBadgeEl.innerText = '● TỰ ĐỘNG 09H00–16H00';
+                    }}
+                }}
                 const vEl = document.getElementById('auto-wr-verdict');
                 if (vEl) vEl.innerText = '🎯 ' + (d.verdict_vi || '');
 
@@ -7198,6 +7308,24 @@ def generate_portal_html(
 
         function renderTacticalWarRoom(data) {{
             if (!data) return;
+
+            const msess = data.market_session || (data.phase_info && data.phase_info.market_session) || null;
+            const isClosed = Boolean(msess && (!msess.is_trading_day || msess.stale_feed_detected));
+            window.APEX_WARROOM_MARKET_OPEN = !isClosed;
+            const pulseEl = document.getElementById('wr-live-pulse-badge');
+            if (pulseEl) {{
+                if (isClosed) {{
+                    pulseEl.style.background = 'rgba(245,158,11,0.18)';
+                    pulseEl.style.color = '#fbbf24';
+                    pulseEl.style.borderColor = 'rgba(245,158,11,0.45)';
+                    pulseEl.innerHTML = '<span class="war-room-live-dot" style="background:#fbbf24; animation:none;"></span> 🎌 SÀN NGHỈ LỄ — ĐÓNG CỬA';
+                }} else {{
+                    pulseEl.style.background = '';
+                    pulseEl.style.color = '';
+                    pulseEl.style.borderColor = '';
+                    pulseEl.innerHTML = '<span class="war-room-live-dot"></span> TRỰC CHIẾN LIVE';
+                }}
+            }}
 
             // 0. Dynamic Stages HTML update
             if (data.tactical_stages_html) {{

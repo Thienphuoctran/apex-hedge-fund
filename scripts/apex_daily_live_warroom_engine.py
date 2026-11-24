@@ -55,6 +55,8 @@ LOG_FILE = DATA_DIR / "logs" / "daily_warroom_engine.log"
 sys.path.insert(0, str(BASE_DIR))
 from scripts.vietnam_realtime_feed import fetch_vn_market_indices_live, get_realtime_vn_quotes_batch
 from scripts.telegram_dispatcher import dispatch_message
+from scripts.vn_market_calendar import get_vn_market_session_state
+from scripts.apex_canonical_truth import classify_canonical_regime, build_and_save_canonical_truth
 
 FORBIDDEN_TICKERS = {"BAF", "VIX", "CII", "CEO"}
 STOP_FLAG = False
@@ -366,6 +368,7 @@ def run_live_recon_and_decision(
     nav_vnd = float(ssot.get("total_nav_vnd") or cash_vnd)
     active_pos = ssot.get("active_positions") or {}
     position_alerts: List[Dict[str, Any]] = []
+    stocks_mkt_val = 0.0
     for psym, pinfo in active_pos.items():
         shares = int(pinfo.get("shares") or 0)
         if shares <= 0:
@@ -373,6 +376,7 @@ def run_live_recon_and_decision(
         q = quotes.get(psym) or {}
         cur_p = float(q.get("price") or pinfo.get("current_price") or pinfo.get("entry_price") or 0.0)
         entry_p = float(pinfo.get("entry_price") or pinfo.get("avg_cost") or cur_p)
+        stocks_mkt_val += shares * cur_p
         pnl_pct = round((cur_p - entry_p) / entry_p * 100.0, 2) if entry_p > 0 else 0.0
         sig = "HOLD"
         if pnl_pct <= -5.5:
@@ -381,29 +385,47 @@ def run_live_recon_and_decision(
             sig = "SCALING_OUT_TP1_50PCT"
         position_alerts.append({"symbol": psym, "shares": shares, "entry": entry_p, "live": cur_p, "pnl_pct": pnl_pct, "signal": sig})
 
-    # Regime & Instant Investment Decision
-    if vni_val > vni_ma20 and vni_val > vni_ma50 and live_br20 >= 50.0 and avg_buy_up >= 58.0:
-        live_regime = "S1_BULL_BREAKOUT"
-        target_alloc_pct = "75% - 85% NAV"
-    elif 30.0 <= live_br20 < 50.0 and vni_val >= 1678.0 and avg_buy_up >= 52.0:
-        live_regime = "S2_SIDEWAYS_SNIPER"
-        target_alloc_pct = "30% - 45% NAV"
-    elif vni_val >= 1678.0 and live_br20 >= 24.0 and avg_buy_up >= 58.0 and vol_pace >= 1.05:
-        live_regime = "S3_SPRING_STRIKE_READY"
-        target_alloc_pct = "30% - 40% NAV"
-    else:
-        live_regime = "S4_BEAR_CASH_SHIELD"
-        target_alloc_pct = "0.0% NAV (100% CASH)"
+    live_nav_vnd = cash_vnd + stocks_mkt_val if position_alerts else nav_vnd
+    invested_pct = round((stocks_mkt_val / live_nav_vnd * 100.0), 1) if live_nav_vnd > 0 else 0.0
+    cash_pct = round(100.0 - invested_pct, 1)
+    holdings_desc = " + ".join(f"{pa['shares']} {pa['symbol']}" for pa in position_alerts) if position_alerts else "0 CP"
+
+    # Lịch phiên & Phát hiện dữ liệu đóng băng + Chế độ Thị trường Hợp nhất
+    session_state = get_vn_market_session_state(now_ict=now_ict, market_overview=idx_live)
+    is_live_trading_day = bool(session_state.get("is_trading_day")) and not bool(session_state.get("stale_feed_detected"))
+    if not is_live_trading_day:
+        phase = str(session_state.get("status_code") or "HOLIDAY_CLOSED")
+
+    br_dict = idx_live.get("market_breadth") or {}
+    adv_ratio = float(br_dict.get("advance_ratio_pct") or ((adv / (adv + dec) * 100.0) if (adv + dec) > 0 else 50.0))
+    basis_pts = float((idx_live.get("vn30_index") or {}).get("basis_pts") or 0.0)
+    canonical_reg = classify_canonical_regime(
+        vn_index=vni_val,
+        vn_index_chg_pct=vni_chg,
+        vni_ma20=vni_ma20,
+        vni_ma50=vni_ma50,
+        br20_pct=live_br20,
+        buy_up_pct=avg_buy_up,
+        adv_ratio=adv_ratio,
+        session_state=session_state,
+        has_open_positions=bool(position_alerts),
+        current_invested_pct=invested_pct,
+        vol_pace=vol_pace,
+        basis=basis_pts,
+        foreign_net_ty=foreign_ty,
+    )
+    live_regime = str(canonical_reg.get("regime_id") or "S4_BEAR_CASH_SHIELD")
+    target_alloc_pct = str(canonical_reg.get("target_exposure_label") or "0.0% NAV")
 
     v3_strikes = brain_v3.get("asymmetric_conviction_strikes") or []
     strike_orders: List[Dict[str, Any]] = []
-    if live_regime in ("S1_BULL_BREAKOUT", "S2_SIDEWAYS_SNIPER", "S3_SPRING_STRIKE_READY"):
+    if is_live_trading_day and live_regime in ("S1_BULL_BREAKOUT", "S2_SIDEWAYS_SNIPER", "S3_SPRING_STRIKE_READY"):
         if live_regime == "S3_SPRING_STRIKE_READY" and v3_strikes:
             for st_item in v3_strikes[:2]:
                 sym = st_item["symbol"]
                 live_px = float((quotes.get(sym) or {}).get("price") or st_item.get("close_20_11") or 0.0)
                 lo_px = _round_vn_tick(live_px * 0.995) if live_px > 0 else float(st_item.get("limit_entry_vnd") or 0.0)
-                sh = int(st_item.get("shares_lot100") or _round_lot100(nav_vnd * 0.18, lo_px))
+                sh = int(st_item.get("shares_lot100") or _round_lot100(live_nav_vnd * 0.18, lo_px))
                 strike_orders.append({
                     "symbol": sym,
                     "shares_lot100": sh,
@@ -415,7 +437,7 @@ def run_live_recon_and_decision(
         else:
             for cand in scored_stocks[:2]:
                 lo_px = _round_vn_tick(cand["live_price"] * 0.995)
-                sh = _round_lot100(nav_vnd * (0.35 if live_regime == "S1_BULL_BREAKOUT" else 0.18), lo_px)
+                sh = _round_lot100(live_nav_vnd * (0.35 if live_regime == "S1_BULL_BREAKOUT" else 0.18), lo_px)
                 if sh >= 100:
                     strike_orders.append({
                         "symbol": cand["symbol"],
@@ -426,31 +448,51 @@ def run_live_recon_and_decision(
                         "capital_vnd": round(sh * lo_px, 0),
                     })
 
-    if phase == "GOLDEN_WINDOW_DECISION":
-        verdict_code = f"GOLDEN_WINDOW_EXECUTE_{live_regime}" if strike_orders else "GOLDEN_WINDOW_HOLD_100PCT_CASH"
+    if not is_live_trading_day:
+        verdict_code = str(session_state.get("status_code") or "HOLIDAY_CLOSED")
+        ref_reg_id = str((canonical_reg.get("reference_eod_regime") or {}).get("regime_id") or "S3_SPRING_STRIKE_READY")
         verdict_vi = (
-            f"KHUNG GIỜ VÀNG 14H05–14H25: Kích hoạt {live_regime} ({target_alloc_pct})"
+            f"{session_state['status_label_vi']} | Không giao dịch mới hôm nay (0%). "
+            f"SSOT: {holdings_desc} ({invested_pct:.1f}% NAV) + Két {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% NAV). "
+            f"Tham chiếu EOD phiên trước ({session_state['prev_trading_day']}): {ref_reg_id} (VNI {vni_val:,.2f} {vni_chg:+.2f}%)."
+        )
+    elif phase == "GOLDEN_WINDOW_DECISION":
+        verdict_code = f"GOLDEN_WINDOW_EXECUTE_{live_regime}" if strike_orders else "GOLDEN_WINDOW_HOLD_POSITION"
+        verdict_vi = (
+            f"KHUNG GIỜ VÀNG 14H05–14H25: Kích hoạt {live_regime} ({target_alloc_pct}) | SSOT {holdings_desc} + Két {cash_vnd:,.0f} ₫"
             if strike_orders
-            else f"KHUNG GIỜ VÀNG 14H05–14H25: Kích hoạt {live_regime} — GIỮ NGUYÊN 100% TIỀN MẶT ({cash_vnd:,.0f} ₫)"
+            else f"KHUNG GIỜ VÀNG 14H05–14H25: {live_regime} — Không mở thêm | Giữ {holdings_desc} + Két {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% Cash)"
         )
     elif phase in ("MORNING_RECON_ANTI_FOMO", "AFTERNOON_T2_ABSORPTION"):
         verdict_code = "ANTI_FOMO_MORNING_WAIT_14H00"
-        verdict_vi = f"PHIÊN THEO DÕI ({phase}): Khóa nút Mua đến 14h05 | Chế độ sống: {live_regime} | Giữ 100% Cash ({cash_vnd:,.0f} ₫)."
+        verdict_vi = (
+            f"PHIÊN THEO DÕI ({phase}): Khóa nút Mua mới đến 14h05 | Chế độ hợp nhất: {live_regime} | "
+            f"SSOT: {holdings_desc} ({invested_pct:.1f}%) + Két {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% Cash)."
+        )
     else:
         verdict_code = f"STANDBY_AUDIT_{live_regime}"
-        verdict_vi = f"TRẠNG THÁI CHỜ ({phase}): Quét sống {len(quotes)}/{len(symbols)} mã | Chế độ sống: {live_regime} | SSOT {cash_vnd:,.0f} ₫ (0 CP)."
+        verdict_vi = (
+            f"TRẠNG THÁI CHỜ ({phase}): Quét {len(quotes)}/{len(symbols)} mã | Chế độ hợp nhất: {live_regime} | "
+            f"SSOT: {holdings_desc} ({invested_pct:.1f}%) + Két {cash_vnd:,.0f} ₫ ({cash_pct:.1f}% Cash)."
+        )
 
     snapshot = {
         "timestamp_ict": now_ict.strftime("%Y-%m-%d %H:%M:%S ICT"),
         "date": today_str,
         "tag": tag,
         "phase": phase,
+        "exchange_time": str(idx_live.get("exchange_time") or ""),
+        "market_session": session_state,
+        "canonical_regime": canonical_reg,
         "ssot_snapshot": {
             "account_id": str(ssot.get("account_id") or "105C307855"),
-            "status": str(ssot.get("status") or "ALL_CASH_STANDDOWN"),
-            "nav_vnd": nav_vnd,
+            "status": str(ssot.get("status") or ("ACTIVE_HOLDING" if position_alerts else "ALL_CASH_STANDDOWN")),
+            "nav_vnd": round(live_nav_vnd, 0),
             "cash_vnd": cash_vnd,
-            "open_positions_count": sum(1 for p in active_pos.values() if int(p.get("shares") or 0) > 0),
+            "cash_pct": cash_pct,
+            "invested_pct": invested_pct,
+            "holdings_desc": holdings_desc,
+            "open_positions_count": len(position_alerts),
             "position_alerts": position_alerts,
         },
         "recon_summary": {
@@ -487,6 +529,10 @@ def run_live_recon_and_decision(
     }
 
     _write_json(LIVE_STATE_FILE, snapshot)
+    try:
+        build_and_save_canonical_truth(now_ict=now_ict, live_warroom_override=snapshot, market_overview_override=idx_live)
+    except Exception as e_ct:
+        _log(f"[WARN] Không thể cập nhật apex_canonical_truth.json: {e_ct}")
     _append_intraday_history(today_str, snapshot)
     _write_live_warroom_markdown(snapshot)
     _refresh_static_web_portal_safely()
@@ -814,9 +860,10 @@ def run_daemon(send_telegram: bool = True) -> None:
 
     now = _ict_now()
     hm_init = now.strftime("%H:%M")
-    if now.weekday() >= 5 or hm_init >= "16:00":
-        _log(f"[STANDBY] Ngoài giờ giao dịch (weekday={now.weekday()}, time={hm_init}). Chạy 1 nhịp đồng bộ rồi nghỉ.")
-        run_live_recon_and_decision(refresh_intel=False, send_telegram=False, tag="OFF_HOURS_STANDBY")
+    init_session = get_vn_market_session_state(now_ict=now)
+    if (not init_session.get("is_trading_day")) or hm_init >= "16:00":
+        _log(f"[STANDBY] Sàn đóng cửa / Ngoài giờ ({init_session.get('status_code')}, time={hm_init}). Chạy 1 nhịp đồng bộ rồi nghỉ.")
+        run_live_recon_and_decision(refresh_intel=False, send_telegram=False, tag=str(init_session.get("status_code") or "OFF_HOURS_STANDBY"))
         return
 
     if not _acquire_pid_lock():

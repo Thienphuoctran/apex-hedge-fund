@@ -781,16 +781,33 @@
             }
 
             if (drawBadges) {
-                // Midpoints sit inside corridors between teams; draw arrow, badge & animated packet cleanly on top
-                const mx = (p1.x + p2.x) * 0.5;
-                const my = (p1.y + p2.y) * 0.5;
+                // Anchor badges in clear walkways so flow pills never collide with team room title pills
+                let labelT = 0.5;
+                let offX = 0;
+                let offY = 0;
+                if (f.id === "flow_trong_audit_james") {
+                    labelT = 0.68;
+                    offX = -46 * state.zoom;
+                    offY = 12 * state.zoom;
+                } else if (f.id === "flow_trong_audit_victor") {
+                    labelT = 0.54;
+                    offX = 16 * state.zoom;
+                    offY = 6 * state.zoom;
+                } else if (f.id === "flow_victor_to_james") {
+                    labelT = 0.48;
+                    offY = -10 * state.zoom;
+                }
+                const mx = p1.x + (p2.x - p1.x) * labelT + offX;
+                const my = p1.y + (p2.y - p1.y) * labelT + offY;
+                const amx = (p1.x + p2.x) * 0.5;
+                const amy = (p1.y + p2.y) * 0.5;
                 const ang = Math.atan2(p2.y - p1.y, p2.x - p1.x);
                 const aSize = 6.5 * state.zoom;
                 ctx.fillStyle = col;
                 ctx.beginPath();
-                ctx.moveTo(mx + Math.cos(ang) * aSize, my + Math.sin(ang) * aSize);
-                ctx.lineTo(mx + Math.cos(ang + 2.4) * aSize, my + Math.sin(ang + 2.4) * aSize);
-                ctx.lineTo(mx + Math.cos(ang - 2.4) * aSize, my + Math.sin(ang - 2.4) * aSize);
+                ctx.moveTo(amx + Math.cos(ang) * aSize, amy + Math.sin(ang) * aSize);
+                ctx.lineTo(amx + Math.cos(ang + 2.4) * aSize, amy + Math.sin(ang + 2.4) * aSize);
+                ctx.lineTo(amx + Math.cos(ang - 2.4) * aSize, amy + Math.sin(ang - 2.4) * aSize);
                 ctx.closePath();
                 ctx.fill();
 
@@ -1210,18 +1227,33 @@
 
         const ssot = data.ssot || {};
         const mkt = data.market_live || {};
+        const msess = data.market_session || {};
+        const isClosed = Boolean(msess && (msess.is_trading_day === false || msess.stale_feed_detected === true));
+
         const cashEl = document.getElementById("office-hud-cash");
-        if (cashEl) cashEl.innerText = `${ssot.cash_str || "--"} (${Number(ssot.cash_pct || 100).toFixed(0)}%)`;
+        if (cashEl) {
+            const hDesc = ssot.holdings_desc ? ` • ${ssot.holdings_desc}` : "";
+            cashEl.innerText = `${ssot.cash_str || "--"} (${Number(ssot.cash_pct || 100).toFixed(0)}%${hDesc})`;
+        }
 
         const vniEl = document.getElementById("office-hud-vni");
         if (vniEl) {
             const vni = mkt.vn_index ? Number(mkt.vn_index).toFixed(2) : "--";
             const chg = mkt.vn_index_chg_pct != null ? `${Number(mkt.vn_index_chg_pct) >= 0 ? "+" : ""}${Number(mkt.vn_index_chg_pct).toFixed(2)}%` : "";
-            vniEl.innerText = `VNI ${vni} ${chg}`.trim();
+            const refTag = isClosed ? " (EOD)" : "";
+            vniEl.innerText = `VNI ${vni} ${chg}${refTag}`.trim();
         }
 
         const regEl = document.getElementById("office-hud-regime");
-        if (regEl) regEl.innerText = `${mkt.live_regime || "STANDBY"} • ${data.generated_at || ""}`;
+        if (regEl) {
+            if (isClosed) {
+                regEl.style.color = "#d97706";
+                regEl.innerText = `${msess.short_badge_vi || "🎌 SÀN ĐÓNG CỬA"} • ${data.generated_at || ""}`;
+            } else {
+                regEl.style.color = "";
+                regEl.innerText = `${mkt.regime_badge_vi || mkt.live_regime || "STANDBY"} • ${data.generated_at || ""}`;
+            }
+        }
 
         const kCounts = data.kanban_counts || {};
         const kbBadge = document.getElementById("dock-badge-kanban");
@@ -1455,18 +1487,22 @@
             : "";
 
         const reportsHtml = (r.recent_reports || []).length
-            ? r.recent_reports.map((rep) => `
-                <button class="office-report-item" data-rel-path="${esc(rep.rel_path)}">
+            ? r.recent_reports.map((rep) => {
+                const pillBg = rep.is_pinned ? "#fef3c7" : (rep.is_today ? "#dcfce7" : "#f1f5f9");
+                const pillCol = rep.is_pinned ? "#b45309" : (rep.is_today ? "#166534" : "#475569");
+                const pillTxt = rep.is_pinned ? esc(rep.freshness_badge || "⭐ GHIM CHỈ ĐẠO") : (rep.is_today ? "🟢 MỚI HÔM NAY" : `⚪ LƯU TRỮ (${esc(rep.date)})`);
+                return `
+                <button class="office-report-item" data-rel-path="${esc(rep.rel_path)}" style="${rep.is_pinned ? "border-color:#f59e0b;background:linear-gradient(135deg,#fffbeb 0%,#ffffff 100%);" : ""}">
                     <div style="min-width:0;">
                         <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px;">
-                            <span style="font-size:9.5px;font-weight:800;padding:1px 6px;border-radius:9999px;background:${rep.is_today ? "#dcfce7" : "#f1f5f9"};color:${rep.is_today ? "#166534" : "#475569"};">${rep.is_today ? "🟢 MỚI HÔM NAY" : `⚪ LƯU TRỮ (${esc(rep.date)})`}</span>
+                            <span style="font-size:9.5px;font-weight:800;padding:1px 6px;border-radius:9999px;background:${pillBg};color:${pillCol};">${pillTxt}</span>
                             <span style="font-size:10px;color:#64748b;">${esc(rep.time_str)} • ${esc(rep.shift_label)}</span>
                         </div>
                         <div style="font-size:12px;font-weight:700;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(rep.title)}</div>
                     </div>
                     <span style="font-size:11px;font-weight:700;color:#4f46e5;flex-shrink:0;">${typeof window.openReportModal === "function" ? "Đọc →" : "Copy lệnh →"}</span>
-                </button>
-            `).join("")
+                </button>`;
+            }).join("")
             : `<div style="font-size:12px;color:#64748b;">Chưa có tệp báo cáo Markdown riêng trong khối này.</div>`;
 
         const milestonesHtml = (r.daily_milestones || []).length

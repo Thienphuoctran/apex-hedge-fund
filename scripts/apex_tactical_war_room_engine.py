@@ -40,8 +40,12 @@ except Exception:
     pass
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 DATA_DIR = BASE_DIR / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
+from scripts.vn_market_calendar import get_vn_market_session_state
+from scripts.apex_canonical_truth import load_canonical_truth
 # Định tuyến directives phân luồng theo ngày hiện tại để bảo đảm tính tiến hóa liên tục
 def get_daily_directives_file(date_str: Optional[str] = None) -> Path:
     if not date_str:
@@ -164,16 +168,36 @@ def get_current_market_phase(now: Optional[datetime.datetime] = None) -> Dict[st
         diff_min = (24 * 60 - hm) + ny_open_minutes
     countdown_ny_str = f"{diff_min // 60}h {diff_min % 60:02d}m"
 
+    msess = get_vn_market_session_state(now_ict=now)
+    is_closed = (not msess.get("is_trading_day")) or bool(msess.get("stale_feed_detected"))
+    if is_closed:
+        active_id = str(msess.get("status_code") or "HOLIDAY_CLOSED")
+        active_name = str(msess.get("status_label_vi") or "SÀN HOSE/HNX ĐÓNG CỬA")
+        active_short = str(msess.get("short_badge_vi") or "SÀN ĐÓNG CỬA")
+        active_time = f"Đóng cửa cả ngày • Mở lại {msess.get('next_trading_day', '--')}"
+        active_action = str(msess.get("settlement_note_vi") or "")
+        active_rule = f"Khóa 100% đặt lệnh mới trong ngày nghỉ; mọi kế hoạch Nhịp 2 chuyển sang phiên kế tiếp ({msess.get('next_trading_day_vi', '--')})."
+    else:
+        active_id = current_phase["id"]
+        active_name = current_phase["name"]
+        active_short = current_phase["short_name"]
+        active_time = current_phase["time_range"]
+        active_action = current_phase["action"]
+        active_rule = current_phase["rule"]
+
     return {
         "current_time_str": now.strftime("%H:%M:%S"),
         "current_date_str": now.strftime("%Y-%m-%d"),
         "is_weekend": is_weekend,
-        "active_phase_id": current_phase["id"],
-        "active_phase_name": current_phase["name"],
-        "active_phase_short": current_phase["short_name"],
-        "active_phase_time": current_phase["time_range"],
-        "active_phase_action": current_phase["action"],
-        "active_phase_rule": current_phase["rule"],
+        "is_holiday": bool(msess.get("is_holiday")),
+        "is_trading_day": bool(msess.get("is_trading_day")),
+        "market_session": msess,
+        "active_phase_id": active_id,
+        "active_phase_name": active_name,
+        "active_phase_short": active_short,
+        "active_phase_time": active_time,
+        "active_phase_action": active_action,
+        "active_phase_rule": active_rule,
         "phases_list": phases_definition,
         "countdown_to_wall_street": countdown_ny_str
     }
@@ -358,28 +382,47 @@ def get_tactical_action_steps(
         }
     ]
 
+    msess = snap.get("market_session") or get_vn_market_session_state(now, market_overview=snap.get("market_overview"))
+    is_closed = (not msess.get("is_trading_day")) or bool(msess.get("stale_feed_detected"))
+
     active_step = None
-    for s in steps:
-        if s["status"] == "ACTIVE":
-            active_step = s
-            break
-    if active_step is None:
-        if hm >= 14 * 60 + 45 or hm < 8 * 60 + 30:
-            active_step = {
-                "step_id": 9,
-                "time_range": "14:45 – 24:00",
-                "title": "Tổng Kết Phiên VN & Chuyển Giao Trực Chiến Sang Phố Wall Cho Alex",
-                "role": "Alex (Ban 7 US) & Victor",
-                "status": "ACTIVE",
-                "what_to_do": (
-                    f"Thị trường Việt Nam đã đóng cửa. Danh mục live gồm {total_shares} CP ({holdings_desc} • {stocks_val_vnd:,.0f} đ) "
-                    f"và két tiền mặt {cash_vnd:,.0f} đ ({cash_pct:.1f}% NAV) — Tổng NAV: {total_nav_vnd:,.0f} đ. "
-                    f"Victor giám sát 24/7, chuyển giao ca tối sang Phân khu Phố Wall của Alex lúc 21h30."
-                ),
-                "constitution_rule": "Hiến chương Điều 9: Kỷ luật lưu trữ nhật ký và bảo vệ tài sản xuyên lục địa."
-            }
-        else:
-            active_step = steps[0]
+    if is_closed:
+        truth = load_canonical_truth(refresh_if_missing=False)
+        council = truth.get("latest_council_resolution") or {}
+        active_step = {
+            "step_id": 0,
+            "time_range": f"Đóng cửa • Mở lại {msess.get('next_trading_day', '--')}",
+            "title": str(msess.get("status_label_vi") or "SÀN HOSE/HNX NGHỈ GIAO DỊCH"),
+            "role": "Master CIO James & Minh Quân (Đồng bộ Hội đồng & Chat)",
+            "status": "ACTIVE",
+            "what_to_do": (
+                f"{truth.get('executive_directive_vi') or msess.get('settlement_note_vi')} "
+                f"(Nghị quyết tham chiếu: {council.get('file_name', '2026-11-23_2100_Dai_Hoi_Dong_5_Khoi_Chien_Luoc.md')})."
+            ),
+            "constitution_rule": f"Khóa 100% lệnh mới (0% hôm nay). Bảo toàn {hold_details} & Két {cash_vnd:,.0f} đ ({cash_pct:.1f}% NAV).",
+        }
+    else:
+        for s in steps:
+            if s["status"] == "ACTIVE":
+                active_step = s
+                break
+        if active_step is None:
+            if hm >= 14 * 60 + 45 or hm < 8 * 60 + 30:
+                active_step = {
+                    "step_id": 9,
+                    "time_range": "14:45 – 24:00",
+                    "title": "Tổng Kết Phiên VN & Chuyển Giao Trực Chiến Sang Phố Wall Cho Alex",
+                    "role": "Alex (Ban 7 US) & Victor",
+                    "status": "ACTIVE",
+                    "what_to_do": (
+                        f"Thị trường Việt Nam đã đóng cửa. Danh mục live gồm {total_shares} CP ({holdings_desc} • {stocks_val_vnd:,.0f} đ) "
+                        f"và két tiền mặt {cash_vnd:,.0f} đ ({cash_pct:.1f}% NAV) — Tổng NAV: {total_nav_vnd:,.0f} đ. "
+                        f"Victor giám sát 24/7, chuyển giao ca tối sang Phân khu Phố Wall của Alex lúc 21h30."
+                    ),
+                    "constitution_rule": "Hiến chương Điều 9: Kỷ luật lưu trữ nhật ký và bảo vệ tài sản xuyên lục địa."
+                }
+            else:
+                active_step = steps[0]
 
     return {
         "current_step": active_step,
@@ -1112,14 +1155,16 @@ def evaluate_and_trigger_tactical_alerts(
     """
     now = get_ict_now()
     hm = now.hour * 60 + now.minute
-    is_weekend = bool(phase_info.get("is_weekend", now.weekday() >= 5))
-    in_market_hours = (not is_weekend) and (9 * 60 <= hm <= 14 * 60 + 45)
-    in_golden_window = (not is_weekend) and (13 * 60 + 45 <= hm <= 14 * 60 + 25)
+    msess = phase_info.get("market_session") or get_vn_market_session_state(now)
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
+    is_weekend = bool(phase_info.get("is_weekend", now.weekday() >= 5)) or is_closed
+    in_market_hours = (not is_closed) and (not is_weekend) and (9 * 60 <= hm <= 14 * 60 + 45)
+    in_golden_window = (not is_closed) and (not is_weekend) and (13 * 60 + 45 <= hm <= 14 * 60 + 25)
 
     snap = snapshot or {}
     port = snap.get("portfolio_live", {})
     regime = snap.get("intraday_regime", {})
-    regime_id = regime.get("regime_id", "SIDEWAY_CHOPPY")
+    regime_id = regime.get("regime_id", "S4_BEAR_CASH_SHIELD")
 
     cash_vnd = float(port.get("cash_vnd", 0.0))
     cash_pct = float(port.get("cash_pct", 100.0))
@@ -1131,12 +1176,32 @@ def evaluate_and_trigger_tactical_alerts(
     changed = False
     t_now_str = now.strftime("%H:%M:%S")
 
+    if is_closed:
+        hol_msg_id = f"dir_{date_str}_{msess.get('status_code', 'HOLIDAY_CLOSED')}"
+        if hol_msg_id not in existing_ids:
+            truth = load_canonical_truth(refresh_if_missing=False)
+            directives.append({
+                "id": hol_msg_id,
+                "timestamp": t_now_str,
+                "sender": "Master CIO James & Minh Quân (Ban 8 & Ban 7 VN)",
+                "role": "specialist",
+                "type": "holiday_notice",
+                "content": str(truth.get("executive_directive_vi") or msess.get("status_label_vi")),
+            })
+            existing_ids.add(hol_msg_id)
+            changed = True
+        if changed:
+            save_directives_history(directives, date_str)
+        return directives
+
     # 0. Báo cáo Bản Demo Kế hoạch Tác chiến (Pre-Session hoặc Chế độ Tự động hiệu chỉnh trong phiên)
     if demo_plan:
         demo_msg_id = f"dir_{date_str}_demo_tactical_plan_{'live' if in_market_hours else 'pre'}"
         if demo_msg_id not in existing_ids:
             buy_syms = ", ".join(b["symbol"] for b in demo_plan.get("buy_zone_candidates", [])[:4]) or "Chưa có"
             avoid_syms = ", ".join(a["symbol"] for a in demo_plan.get("avoid_or_wait_candidates", [])[:3]) or "Không có"
+            truth = load_canonical_truth(refresh_if_missing=False)
+            res_name = ((truth.get("latest_council_resolution") or {}).get("file_name")) or "Hội Đồng 5 Khối"
             directives.append({
                 "id": demo_msg_id,
                 "timestamp": t_now_str,
@@ -1144,12 +1209,11 @@ def evaluate_and_trigger_tactical_alerts(
                 "role": "specialist",
                 "type": "demo_tactical_plan",
                 "content": (
-                    f"📋 [TỔNG HỢP THƯỢNG ĐỈNH 00H45 & KẾ HOẠCH TÁC CHIẾN {date_str}] "
+                    f"📋 [NGHỊ QUYẾT {res_name} • KẾ HOẠCH {date_str}] "
                     f"Trạng thái: {demo_plan.get('auto_adapt_status')}. "
                     f"Tài sản live: Cổ phiếu {float(port.get('stocks_val_vnd', 0)):,.0f}đ (PnL {float(port.get('unrealized_pnl_vnd', 0)):+,.0f}đ / {float(port.get('unrealized_pnl_pct', 0)):+.2f}%), "
                     f"Tiền mặt {cash_vnd:,.0f}đ ({cash_pct:.1f}% NAV • Tổng NAV {total_nav:,.0f}đ). "
-                    f"Sẵn sàng vùng mua LO sau 14h00: {buy_syms} | Cấm bắt đáy: {avoid_syms}. "
-                    f"(Bản Demo tự động hiệu chỉnh ngay khi bảng điện ngày mai biến động!)"
+                    f"Sẵn sàng vùng mua LO khung 14h05–14h25: {buy_syms} | Cấm bắt đáy: {avoid_syms}."
                 ),
             })
             existing_ids.add(demo_msg_id)
@@ -1452,8 +1516,17 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
     snap = _get_live_snapshot(force_refresh=force_refresh)
 
     phase_info = get_current_market_phase(now)
-    action_plan = get_tactical_action_steps(now, snapshot=snap)
     market_overview = snap.get("market_overview", {})
+    msess = snap.get("market_session") or get_vn_market_session_state(now, market_overview=market_overview)
+    if (not msess.get("is_trading_day")) or msess.get("stale_feed_detected"):
+        phase_info["market_session"] = msess
+        phase_info["is_holiday"] = bool(msess.get("is_holiday"))
+        phase_info["is_trading_day"] = bool(msess.get("is_trading_day"))
+        phase_info["stale_feed_detected"] = bool(msess.get("stale_feed_detected"))
+        phase_info["active_phase_id"] = str(msess.get("status_code") or "HOLIDAY_CLOSED")
+        phase_info["active_phase_name"] = str(msess.get("status_label_vi") or phase_info["active_phase_name"])
+        phase_info["active_phase_short"] = str(msess.get("short_badge_vi") or phase_info["active_phase_short"])
+    action_plan = get_tactical_action_steps(now, snapshot=snap)
     live_stocks = snap.get("live_stocks", [])
     dynamic_picks = snap.get("dynamic_picks", [])
     regime = snap.get("intraday_regime", {})
@@ -1475,8 +1548,14 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
 
     threat_info = _compute_threat_from_snapshot(snap)
     regime_label = regime.get("label", "GIẰNG CO PHÂN HÓA")
+    truth_snap = load_canonical_truth(refresh_if_missing=False)
 
-    if phase_info["active_phase_id"] == "PRE_ATO":
+    if (not msess.get("is_trading_day")) or bool(msess.get("stale_feed_detected")):
+        tactical_message = str(truth_snap.get("executive_directive_vi") or (
+            f"{msess['status_label_vi']}. Giữ nguyên {total_shares} CP ({holdings_desc} • {stocks_val_vnd:,.0f} đ) "
+            f"& Két tiền mặt {cash_vnd:,.0f} đ ({cash_pct:.1f}% NAV). Không giao dịch mới hôm nay."
+        ))
+    elif phase_info["active_phase_id"] == "PRE_ATO":
         tactical_message = (
             f"Minh Quân báo cáo: Két tiền mặt thực tế {cash_vnd:,.0f} đ ({cash_pct:.1f}% NAV) "
             f"| Danh mục {total_shares} CP ({holdings_desc}). Chế độ: {regime_label}. TUYỆT ĐỐI KHÔNG ĐUA LỆNH ATO!"
@@ -1650,8 +1729,10 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
         "account_id": "105C307855",
         "trading_date": phase_info["current_date_str"],
         "server_time": phase_info["current_time_str"],
+        "market_session": msess,
         "phase_info": phase_info,
         "intraday_regime": regime,
+        "canonical_truth": truth_snap,
         "tactical_message": tactical_message,
         "action_plan": action_plan,
         "market_overview": market_overview,

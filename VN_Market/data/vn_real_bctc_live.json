@@ -1,7 +1,7 @@
 {
   "data_provenance": "VIETCAP_IQ_OFFICIAL_LIVE_AND_VPS_2Y_OHLCV",
-  "crawled_at": "2026-11-23 03:05:00",
-  "elapsed_sec": 10.7,
+  "crawled_at": "2026-11-24 07:31:29",
+  "elapsed_sec": 13.57,
   "coverage_stats": {
     "requested_vn_tickers": 80,
     "bctc_loaded": 80,
@@ -15,8 +15,8 @@
       "2026Q3": 80
     },
     "ohlcv_status": {
-      "LIVE": 0,
-      "CACHE": 82,
+      "LIVE": 28,
+      "CACHE": 54,
       "FAILED": 0
     },
     "us_sec_edgar": {
@@ -25,45 +25,45 @@
     }
   },
   "macro_live": {
-    "fetched_at": "2026-11-23 03:04:49",
+    "fetched_at": "2026-11-24 07:31:16",
     "SP500": {
-      "value": 6910.39,
-      "change_pct": -3.7,
+      "value": 7237.17,
+      "change_pct": 4.73,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "NASDAQ": {
-      "value": 22617.73,
-      "change_pct": -5.28,
+      "value": 24089.56,
+      "change_pct": 6.51,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "VIX": {
-      "value": 35.89,
-      "change_pct": 26.2,
+      "value": 26.62,
+      "change_pct": -25.83,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "US10Y": {
-      "value": 4.91,
-      "change_pct": -2.77,
+      "value": 4.92,
+      "change_pct": 0.12,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "DXY": {
-      "value": 103.84,
-      "change_pct": -0.06,
+      "value": 104.32,
+      "change_pct": 0.49,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "WTI_OIL": {
-      "value": 83.41,
-      "change_pct": 0.24,
+      "value": 80.39,
+      "change_pct": -4.27,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "GOLD": {
-      "value": 3515.4,
-      "change_pct": -4.62,
+      "value": 3637.2,
+      "change_pct": 3.46,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "VNM_ETF": {
-      "value": 16.22,
-      "change_pct": -0.98,
+      "value": 16.71,
+      "change_pct": 3.02,
       "source": "YAHOO_FINANCE_LIVE"
     },
     "USD_VND_LIVE": {
@@ -98,7 +98,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:06",
+      "fetched_at": "2026-11-23 15:15:15",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -1573,9 +1573,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 19600.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 19750.0
     },
     "ANV": {
       "code": "ANV",
@@ -1588,7 +1588,7 @@
       "sector_vci": "Thực phẩm và đồ uống",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:15",
+      "fetched_at": "2026-11-23 15:15:24",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -3064,8 +3064,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 15750.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 15550.0
     },
     "BAF": {
       "code": "BAF",
@@ -3078,7 +3078,7 @@
       "sector_vci": "Thực phẩm và đồ uống",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:13",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 22,
@@ -4034,7 +4034,7 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 30800.0
     },
     "BCM": {
@@ -4048,7 +4048,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -5523,9 +5523,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 36000.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 36150.0
     },
     "BID": {
       "code": "BID",
@@ -5538,7 +5538,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:06",
+      "fetched_at": "2026-11-23 15:15:15",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -7013,9 +7013,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 30050.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 30100.0
     },
     "BMP": {
       "code": "BMP",
@@ -7028,7 +7028,7 @@
       "sector_vci": "Xây dựng và Vật liệu",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:15",
+      "fetched_at": "2026-11-23 15:15:24",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -8504,8 +8504,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 128500.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 130000.0
     },
     "BSI": {
       "code": "BSI",
@@ -8518,7 +8518,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:14",
+      "fetched_at": "2026-11-23 15:15:23",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -9994,8 +9994,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 27200.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 27500.0
     },
     "BSR": {
       "code": "BSR",
@@ -10008,7 +10008,7 @@
       "sector_vci": "Dầu khí",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:20",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 33,
@@ -11403,9 +11403,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 488,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 23600.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 23500.0
     },
     "CMG": {
       "code": "CMG",
@@ -11418,7 +11418,7 @@
       "sector_vci": "Công nghệ Thông tin",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:10",
+      "fetched_at": "2026-11-23 15:15:19",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -12893,9 +12893,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 16200.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 16650.0
     },
     "CTD": {
       "code": "CTD",
@@ -12908,7 +12908,7 @@
       "sector_vci": "Xây dựng và Vật liệu",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:15",
+      "fetched_at": "2026-11-23 15:15:24",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -14384,8 +14384,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 72800.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 73200.0
     },
     "CTG": {
       "code": "CTG",
@@ -14398,7 +14398,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:06",
+      "fetched_at": "2026-11-23 15:15:15",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -15873,9 +15873,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 30100.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 30350.0
     },
     "CTR": {
       "code": "CTR",
@@ -15888,7 +15888,7 @@
       "sector_vci": "Xây dựng và Vật liệu",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:15",
+      "fetched_at": "2026-11-23 15:15:24",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -17364,8 +17364,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 58000.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 60500.0
     },
     "DBC": {
       "code": "DBC",
@@ -17378,7 +17378,7 @@
       "sector_vci": "Thực phẩm và đồ uống",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:12",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -18853,9 +18853,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 16300.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 16400.0
     },
     "DCM": {
       "code": "DCM",
@@ -18868,7 +18868,7 @@
       "sector_vci": "Hóa chất",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:21",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -20343,9 +20343,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 30400.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 30550.0
     },
     "DGC": {
       "code": "DGC",
@@ -20358,7 +20358,7 @@
       "sector_vci": "Hóa chất",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:21",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -21833,9 +21833,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 31000.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 30550.0
     },
     "DGW": {
       "code": "DGW",
@@ -21848,7 +21848,7 @@
       "sector_vci": "Bán lẻ",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:09",
+      "fetched_at": "2026-11-23 15:15:18",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -23323,9 +23323,9 @@
           "fvtpl_assets_ty": 199.89
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 38950.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 38750.0
     },
     "DHG": {
       "code": "DHG",
@@ -23338,7 +23338,7 @@
       "sector_vci": "Y tế",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:12",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -24813,9 +24813,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 83000.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 83700.0
     },
     "DPM": {
       "code": "DPM",
@@ -24828,7 +24828,7 @@
       "sector_vci": "Hóa chất",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:21",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -26303,9 +26303,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 18400.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 18300.0
     },
     "DPR": {
       "code": "DPR",
@@ -26318,7 +26318,7 @@
       "sector_vci": "Hóa chất",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:16",
+      "fetched_at": "2026-11-23 15:15:26",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -27794,7 +27794,7 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 32900.0
     },
     "DXG": {
@@ -27808,7 +27808,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -29283,9 +29283,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 10950.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 10850.0
     },
     "FPT": {
       "code": "FPT",
@@ -29298,7 +29298,7 @@
       "sector_vci": "Công nghệ Thông tin",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:09",
+      "fetched_at": "2026-11-23 15:15:18",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -29368,8 +29368,8 @@
         "avg_vol_1m": 10865208,
         "foreign_pct": 24.97,
         "max_foreign_pct": 49.0,
-        "vci_target_price": 77800.0,
-        "vci_upside_pct": 0.73
+        "vci_target_price": 64400.0,
+        "vci_upside_pct": 0.43
       },
       "quarters_pit": [
         {
@@ -30773,9 +30773,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 45000.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 46850.0
     },
     "FRT": {
       "code": "FRT",
@@ -30788,7 +30788,7 @@
       "sector_vci": "Bán lẻ",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:09",
+      "fetched_at": "2026-11-23 15:15:18",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -32263,8 +32263,8 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 148000.0
     },
     "FTS": {
@@ -32278,7 +32278,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:14",
+      "fetched_at": "2026-11-23 15:15:23",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -33754,8 +33754,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 18150.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 18750.0
     },
     "GAS": {
       "code": "GAS",
@@ -33768,7 +33768,7 @@
       "sector_vci": "Điện, nước & xăng dầu khí đốt",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:20",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -35243,9 +35243,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 70500.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 69300.0
     },
     "GMD": {
       "code": "GMD",
@@ -35258,7 +35258,7 @@
       "sector_vci": "Hàng & Dịch vụ Công nghiệp",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:12",
+      "fetched_at": "2026-11-23 15:15:21",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -36733,9 +36733,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 50000.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 51900.0
     },
     "GVR": {
       "code": "GVR",
@@ -36748,7 +36748,7 @@
       "sector_vci": "Hóa chất",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:16",
+      "fetched_at": "2026-11-23 15:15:25",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 33,
@@ -38144,8 +38144,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 27300.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 27850.0
     },
     "HAH": {
       "code": "HAH",
@@ -38158,7 +38158,7 @@
       "sector_vci": "Hàng & Dịch vụ Công nghiệp",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:12",
+      "fetched_at": "2026-11-23 15:15:21",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -39633,9 +39633,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 45700.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 46200.0
     },
     "HCM": {
       "code": "HCM",
@@ -39648,7 +39648,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:10",
+      "fetched_at": "2026-11-23 15:15:19",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -41123,8 +41123,8 @@
           "fvtpl_assets_ty": 9362.55
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 23000.0
     },
     "HDB": {
@@ -41138,7 +41138,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -42613,8 +42613,8 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 21800.0
     },
     "HDG": {
@@ -42628,7 +42628,7 @@
       "sector_vci": "Điện, nước & xăng dầu khí đốt",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:15",
+      "fetched_at": "2026-11-23 15:15:25",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -44104,8 +44104,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 16100.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 16750.0
     },
     "HHV": {
       "code": "HHV",
@@ -44118,7 +44118,7 @@
       "sector_vci": "Xây dựng và Vật liệu",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:12",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 28,
@@ -45313,9 +45313,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 9190.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 9210.0
     },
     "HPG": {
       "code": "HPG",
@@ -45328,7 +45328,7 @@
       "sector_vci": "Tài nguyên Cơ bản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:08",
+      "fetched_at": "2026-11-23 15:15:17",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -46803,9 +46803,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 20450.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 20400.0
     },
     "HSG": {
       "code": "HSG",
@@ -46818,7 +46818,7 @@
       "sector_vci": "Tài nguyên Cơ bản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:08",
+      "fetched_at": "2026-11-23 15:15:17",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -48293,8 +48293,8 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 10150.0
     },
     "IDC": {
@@ -48308,7 +48308,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:08",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 34,
@@ -49743,9 +49743,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 34200.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 34800.0
     },
     "KBC": {
       "code": "KBC",
@@ -49758,7 +49758,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:08",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -51233,9 +51233,9 @@
           "fvtpl_assets_ty": 1862.36
         }
       ],
-      "ohlcv_bars_count": 494,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 26400.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 26500.0
     },
     "KDH": {
       "code": "KDH",
@@ -51248,7 +51248,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -52723,9 +52723,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 15400.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 15350.0
     },
     "LPB": {
       "code": "LPB",
@@ -52738,7 +52738,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:13",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -54214,7 +54214,7 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 34250.0
     },
     "MBB": {
@@ -54228,7 +54228,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:06",
+      "fetched_at": "2026-11-23 15:15:15",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -55703,9 +55703,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 18250.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 18100.0
     },
     "MBS": {
       "code": "MBS",
@@ -55718,7 +55718,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:10",
+      "fetched_at": "2026-11-23 15:15:19",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -57193,8 +57193,8 @@
           "fvtpl_assets_ty": 4913.94
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 15500.0
     },
     "MSB": {
@@ -57208,7 +57208,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:14",
+      "fetched_at": "2026-11-23 15:15:23",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -58684,8 +58684,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 16550.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 16450.0
     },
     "MSH": {
       "code": "MSH",
@@ -58698,7 +58698,7 @@
       "sector_vci": "Hàng cá nhân & Gia dụng",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:15",
+      "fetched_at": "2026-11-23 15:15:24",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -60174,8 +60174,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 35000.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 34800.0
     },
     "MSN": {
       "code": "MSN",
@@ -60188,7 +60188,7 @@
       "sector_vci": "Thực phẩm và đồ uống",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:09",
+      "fetched_at": "2026-11-23 15:15:18",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -61663,9 +61663,9 @@
           "fvtpl_assets_ty": 6536.37
         }
       ],
-      "ohlcv_bars_count": 494,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 69900.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 69100.0
     },
     "MWG": {
       "code": "MWG",
@@ -61678,7 +61678,7 @@
       "sector_vci": "Bán lẻ",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:08",
+      "fetched_at": "2026-11-23 15:15:17",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -63153,9 +63153,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 71700.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 70900.0
     },
     "NKG": {
       "code": "NKG",
@@ -63168,7 +63168,7 @@
       "sector_vci": "Tài nguyên Cơ bản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:08",
+      "fetched_at": "2026-11-23 15:15:17",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -64643,8 +64643,8 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 12150.0
     },
     "NLG": {
@@ -64658,7 +64658,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -66133,9 +66133,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 23200.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 23650.0
     },
     "OCB": {
       "code": "OCB",
@@ -66148,7 +66148,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:13",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -67624,8 +67624,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 10600.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 10650.0
     },
     "PC1": {
       "code": "PC1",
@@ -67638,7 +67638,7 @@
       "sector_vci": "Xây dựng và Vật liệu",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:21",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -69113,9 +69113,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 16200.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 16350.0
     },
     "PDR": {
       "code": "PDR",
@@ -69128,7 +69128,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -70603,9 +70603,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 494,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 11150.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 11200.0
     },
     "PHR": {
       "code": "PHR",
@@ -70618,7 +70618,7 @@
       "sector_vci": "Hóa chất",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:16",
+      "fetched_at": "2026-11-23 15:15:26",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -72094,8 +72094,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 27500.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 27900.0
     },
     "PLX": {
       "code": "PLX",
@@ -72108,7 +72108,7 @@
       "sector_vci": "Dầu khí",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:16",
+      "fetched_at": "2026-11-23 15:15:25",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -73584,8 +73584,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 30950.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 30700.0
     },
     "PNJ": {
       "code": "PNJ",
@@ -73598,7 +73598,7 @@
       "sector_vci": "Hàng cá nhân & Gia dụng",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:09",
+      "fetched_at": "2026-11-23 15:15:18",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -75073,9 +75073,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 13500.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 12600.0
     },
     "POW": {
       "code": "POW",
@@ -75088,7 +75088,7 @@
       "sector_vci": "Điện, nước & xăng dầu khí đốt",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:20",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -76563,9 +76563,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 13300.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 13700.0
     },
     "PVD": {
       "code": "PVD",
@@ -76578,7 +76578,7 @@
       "sector_vci": "Dầu khí",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:20",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -78053,9 +78053,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 16200.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 16300.0
     },
     "PVS": {
       "code": "PVS",
@@ -78068,7 +78068,7 @@
       "sector_vci": "Dầu khí",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:20",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -79543,9 +79543,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 26700.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 26900.0
     },
     "PVT": {
       "code": "PVT",
@@ -79558,7 +79558,7 @@
       "sector_vci": "Hàng & Dịch vụ Công nghiệp",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:12",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -81033,9 +81033,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 18650.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 18850.0
     },
     "REE": {
       "code": "REE",
@@ -81048,7 +81048,7 @@
       "sector_vci": "Điện, nước & xăng dầu khí đốt",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:11",
+      "fetched_at": "2026-11-23 15:15:20",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -82523,9 +82523,9 @@
           "fvtpl_assets_ty": 733.14
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 46550.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 46500.0
     },
     "SHB": {
       "code": "SHB",
@@ -82538,7 +82538,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:14",
+      "fetched_at": "2026-11-23 15:15:23",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -84014,8 +84014,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 10450.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 10500.0
     },
     "SHS": {
       "code": "SHS",
@@ -84028,7 +84028,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:14",
+      "fetched_at": "2026-11-23 15:15:23",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -85504,8 +85504,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 13200.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 13400.0
     },
     "SIP": {
       "code": "SIP",
@@ -85518,7 +85518,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:16",
+      "fetched_at": "2026-11-23 15:15:25",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 31,
@@ -86834,8 +86834,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 43000.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 42400.0
     },
     "SSI": {
       "code": "SSI",
@@ -86848,7 +86848,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:10",
+      "fetched_at": "2026-11-23 15:15:19",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -88323,9 +88323,9 @@
           "fvtpl_assets_ty": 44310.76
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 20000.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 19750.0
     },
     "STB": {
       "code": "STB",
@@ -88338,7 +88338,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -89813,9 +89813,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 494,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 70800.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 69700.0
     },
     "SZC": {
       "code": "SZC",
@@ -89828,7 +89828,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:08",
+      "fetched_at": "2026-11-23 15:15:17",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -91303,9 +91303,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 19050.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 19000.0
     },
     "TCB": {
       "code": "TCB",
@@ -91318,7 +91318,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:06",
+      "fetched_at": "2026-11-23 15:15:15",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -92793,9 +92793,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 21200.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 20750.0
     },
     "TCH": {
       "code": "TCH",
@@ -92808,7 +92808,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:13",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -94284,8 +94284,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 13900.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 13300.0
     },
     "TNG": {
       "code": "TNG",
@@ -94298,7 +94298,7 @@
       "sector_vci": "Hàng cá nhân & Gia dụng",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:15",
+      "fetched_at": "2026-11-23 15:15:24",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -95774,8 +95774,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 16600.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 16700.0
     },
     "TPB": {
       "code": "TPB",
@@ -95788,7 +95788,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:13",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -97264,7 +97264,7 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 12350.0
     },
     "VCB": {
@@ -97278,7 +97278,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:06",
+      "fetched_at": "2026-11-23 15:15:15",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -98753,9 +98753,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 50200.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 50300.0
     },
     "VCG": {
       "code": "VCG",
@@ -98768,7 +98768,7 @@
       "sector_vci": "Xây dựng và Vật liệu",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:12",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -100243,8 +100243,8 @@
           "fvtpl_assets_ty": 93.15
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 14500.0
     },
     "VCI": {
@@ -100258,7 +100258,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:10",
+      "fetched_at": "2026-11-23 15:15:19",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -101733,9 +101733,9 @@
           "fvtpl_assets_ty": 4237.32
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 18700.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 18800.0
     },
     "VGC": {
       "code": "VGC",
@@ -101748,7 +101748,7 @@
       "sector_vci": "Xây dựng và Vật liệu",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:08",
+      "fetched_at": "2026-11-23 15:15:17",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -103223,9 +103223,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 38150.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 38400.0
     },
     "VHC": {
       "code": "VHC",
@@ -103238,7 +103238,7 @@
       "sector_vci": "Thực phẩm và đồ uống",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:12",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -104713,9 +104713,9 @@
           "fvtpl_assets_ty": 44.47
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 50500.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 50200.0
     },
     "VHM": {
       "code": "VHM",
@@ -104728,7 +104728,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:15",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -106203,9 +106203,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 60400.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 61500.0
     },
     "VIB": {
       "code": "VIB",
@@ -106218,7 +106218,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:13",
+      "fetched_at": "2026-11-23 15:15:22",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -107694,8 +107694,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 13350.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 13400.0
     },
     "VIX": {
       "code": "VIX",
@@ -107708,7 +107708,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:14",
+      "fetched_at": "2026-11-23 15:15:23",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -109184,8 +109184,8 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 12700.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 12650.0
     },
     "VND": {
       "code": "VND",
@@ -109198,7 +109198,7 @@
       "sector_vci": "Dịch vụ tài chính",
       "com_type_code": "CK",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:10",
+      "fetched_at": "2026-11-23 15:15:19",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -110673,9 +110673,9 @@
           "fvtpl_assets_ty": 22612.07
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 14700.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 14450.0
     },
     "VNM": {
       "code": "VNM",
@@ -110688,7 +110688,7 @@
       "sector_vci": "Thực phẩm và đồ uống",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:09",
+      "fetched_at": "2026-11-23 15:15:18",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -112163,9 +112163,9 @@
           "fvtpl_assets_ty": 1.27
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 51400.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 52300.0
     },
     "VOS": {
       "code": "VOS",
@@ -112178,7 +112178,7 @@
       "sector_vci": "Hàng & Dịch vụ Công nghiệp",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:15",
+      "fetched_at": "2026-11-23 15:15:25",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -113654,7 +113654,7 @@
         }
       ],
       "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
+      "last_bar_date": "2026-11-23",
       "last_close_vps": 10400.0
     },
     "VPB": {
@@ -113668,7 +113668,7 @@
       "sector_vci": "Ngân hàng",
       "com_type_code": "NH",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -115143,9 +115143,9 @@
           "fvtpl_assets_ty": 0.0
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 20500.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 20450.0
     },
     "VRE": {
       "code": "VRE",
@@ -115158,7 +115158,7 @@
       "sector_vci": "Bất động sản",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:07",
+      "fetched_at": "2026-11-23 15:15:16",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -116633,9 +116633,9 @@
           "fvtpl_assets_ty": 2202.9
         }
       ],
-      "ohlcv_bars_count": 496,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 23500.0
+      "ohlcv_bars_count": 286,
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 23450.0
     },
     "VSC": {
       "code": "VSC",
@@ -116648,7 +116648,7 @@
       "sector_vci": "Hàng & Dịch vụ Công nghiệp",
       "com_type_code": "CT",
       "data_source": "VIETCAP_IQ_OFFICIAL_LIVE",
-      "fetched_at": "2026-11-21 16:48:16",
+      "fetched_at": "2026-11-23 15:15:25",
       "latest_metrics": {
         "latest_quarter": "2026Q3",
         "quarters_count": 35,
@@ -118124,8 +118124,8 @@
         }
       ],
       "ohlcv_bars_count": 495,
-      "last_bar_date": "2026-11-20",
-      "last_close_vps": 12950.0
+      "last_bar_date": "2026-11-23",
+      "last_close_vps": 13100.0
     }
   }
 }

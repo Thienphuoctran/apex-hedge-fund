@@ -1,84 +1,148 @@
 {
-  "timestamp_ict": "2026-11-23 11:27:15 ICT",
-  "date": "2026-11-23",
-  "tag": "API_ON_DEMAND",
-  "phase": "MORNING_RECON_ANTI_FOMO",
+  "timestamp_ict": "2026-11-24 13:41:48 ICT",
+  "date": "2026-11-24",
+  "tag": "CLI_ONCE",
+  "phase": "HOLIDAY_CLOSED",
+  "exchange_time": "15:05:00",
+  "market_session": {
+    "date_ict": "2026-11-24",
+    "time_ict": "13:41:48",
+    "weekday_vi": "Thứ Ba",
+    "is_trading_day": false,
+    "is_holiday": true,
+    "is_weekend": false,
+    "holiday_name": "Ngày Văn hóa Việt Nam (24/11)",
+    "holiday_authority": "Nghị quyết số 28/2026/QH16 — HOSE & HNX nghỉ giao dịch toàn ngày",
+    "is_live_session": false,
+    "stale_feed_detected": false,
+    "stale_feed_reason": "",
+    "exchange_time_hms": "15:05:00",
+    "status_code": "HOLIDAY_CLOSED",
+    "status_label_vi": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026)",
+    "short_badge_vi": "🎌 NGHỈ LỄ 24/11 (Mở lại 25/11)",
+    "prev_trading_day": "2026-11-23",
+    "prev_trading_day_vi": "Thứ Hai 23/11/2026",
+    "next_trading_day": "2026-11-25",
+    "next_trading_day_vi": "Thứ Tư 25/11/2026",
+    "settlement_note_vi": "Do 24/11 là ngày nghỉ lễ (Ngày Văn hóa Việt Nam (24/11)), lịch thanh toán T+2 dịch thêm 1 ngày làm việc: tiền bán 20/11 về 25/11; cổ phiếu mua 23/11 về chiều 26/11/2026."
+  },
+  "canonical_regime": {
+    "regime_id": "MARKET_HOLIDAY_CLOSED",
+    "label": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026)",
+    "short_label": "🎌 NGHỈ LỄ 24/11 (Mở lại 25/11)",
+    "badge_color": "#f59e0b",
+    "base_max_allocation_pct": 0,
+    "spillover_multiplier": 1.0,
+    "max_new_allocation_pct": 0,
+    "target_exposure_label": "0% mở mới hôm nay • Mở lại Thứ Tư 25/11/2026",
+    "guidance": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Mọi giá bảng điện hiện tại là giá đóng cửa tham chiếu phiên trước (2026-11-23); trạng thái EOD phiên trước là S3_SPRING_STRIKE_READY (VNI 1,697.14 +0.49%, Br20 19.4%). Do 24/11 là ngày nghỉ lễ (Ngày Văn hóa Việt Nam (24/11)), lịch thanh toán T+2 dịch thêm 1 ngày làm việc: tiền bán 20/11 về 25/11; cổ phiếu mua 23/11 về chiều 26/11/2026. Kế hoạch Nhịp 2 giữ nguyên hiệu lực cho phiên mở cửa kế tiếp (Thứ Tư 25/11/2026).",
+    "reference_eod_regime": {
+      "regime_id": "S3_SPRING_STRIKE_READY",
+      "label": "🟡 HỒI PHỤC KỸ THUẬT / SPRING S3 (DƯỚI MA20 — THĂM DÒ CÓ CHỌN LỌC)",
+      "short_label": "S3_SPRING_STRIKE_READY",
+      "badge_color": "#fbbf24",
+      "max_new_allocation_pct": 25,
+      "target_exposure_label": "20% – 45% NAV (Thăm dò có chọn lọc)",
+      "guidance": "VNI 1,697.14 (+0.49%) rút chân hồi phục với Buy-Up=59.4%, NHƯNG vẫn dưới MA20 (1,727.6) và Br20=19.4% (< 28%). Thăm dò chọn lọc tối đa <= 25% sức mua còn lại trong khung 14h05–14h25; cấm FOMO mua đuổi Gap sáng."
+    },
+    "is_closed_override": true
+  },
   "ssot_snapshot": {
     "account_id": "105C307855",
-    "status": "ALL_CASH_STANDDOWN",
+    "status": "ACTIVE_HOLDING",
     "nav_vnd": 20051117.0,
-    "cash_vnd": 20051117.0,
-    "open_positions_count": 0,
-    "position_alerts": []
+    "cash_vnd": 15541117.0,
+    "cash_pct": 77.5,
+    "invested_pct": 22.5,
+    "holdings_desc": "200 TPB + 100 HPG",
+    "open_positions_count": 2,
+    "position_alerts": [
+      {
+        "symbol": "TPB",
+        "shares": 200,
+        "entry": 12300.0,
+        "live": 12350.0,
+        "pnl_pct": 0.41,
+        "signal": "HOLD"
+      },
+      {
+        "symbol": "HPG",
+        "shares": 100,
+        "entry": 20500.0,
+        "live": 20400.0,
+        "pnl_pct": -0.49,
+        "signal": "HOLD"
+      }
+    ]
   },
   "recon_summary": {
     "universe_total": 145,
     "scanned_live_count": 144,
-    "vn_index": 1688.03,
-    "vn_index_chg_pct": -0.05,
-    "vn_index_ma20": 1726.99,
-    "vn_index_ma50": 1746.0,
-    "volume_pace_ratio": 0.66,
-    "turnover_ty": 4548.2,
-    "foreign_net_ty": -17.8,
-    "advance_count": 30,
-    "decline_count": 90,
-    "unchanged_count": 24,
+    "vn_index": 1697.14,
+    "vn_index_chg_pct": 0.49,
+    "vn_index_ma20": 1727.57,
+    "vn_index_ma50": 1746.23,
+    "volume_pace_ratio": 1.37,
+    "turnover_ty": 12690.9,
+    "foreign_net_ty": -36.9,
+    "advance_count": 68,
+    "decline_count": 48,
+    "unchanged_count": 28,
     "ceiling_count": 0,
-    "floor_count": 0,
-    "live_breadth_ma20_pct": 16.0,
-    "avg_buy_up_pct": 55.3,
-    "internet_articles": 509,
-    "internet_crawled_at": "2026-11-23 11:22:29"
+    "floor_count": 1,
+    "live_breadth_ma20_pct": 19.4,
+    "avg_buy_up_pct": 59.4,
+    "internet_articles": 505,
+    "internet_crawled_at": "2026-11-24 13:31:13"
   },
   "decision_brain": {
-    "live_regime": "S4_BEAR_CASH_SHIELD",
-    "target_allocation_pct": "0.0% NAV (100% CASH)",
-    "verdict_code": "ANTI_FOMO_MORNING_WAIT_14H00",
-    "verdict_vi": "PHIÊN THEO DÕI (MORNING_RECON_ANTI_FOMO): Khóa nút Mua đến 14h05 | Chế độ sống: S4_BEAR_CASH_SHIELD | Giữ 100% Cash (20,051,117 ₫).",
+    "live_regime": "MARKET_HOLIDAY_CLOSED",
+    "target_allocation_pct": "0% mở mới hôm nay • Mở lại Thứ Tư 25/11/2026",
+    "verdict_code": "HOLIDAY_CLOSED",
+    "verdict_vi": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026) | Không giao dịch mới hôm nay (0%). SSOT: 200 TPB + 100 HPG (22.5% NAV) + Két 15,541,117 ₫ (77.5% NAV). Tham chiếu EOD phiên trước (2026-11-23): S3_SPRING_STRIKE_READY (VNI 1,697.14 +0.49%).",
     "proposed_lo_orders": []
   },
   "top_5_sectors": [
     {
-      "sector": "Dược Phẩm & Bệnh Viện",
-      "avg_change_pct": 0.03,
-      "stocks": 5
+      "sector": "Công Nghệ Thông Tin & Viễn Thông",
+      "avg_change_pct": 3.48,
+      "stocks": 7
     },
     {
-      "sector": "Thực Phẩm & Đồ Uống Thiết Yếu",
-      "avg_change_pct": -0.02,
-      "stocks": 6
-    },
-    {
-      "sector": "Dệt May Xuất Khẩu",
-      "avg_change_pct": -0.18,
-      "stocks": 5
-    },
-    {
-      "sector": "Bảo Hiểm Nhân Thọ & Phi Nhân Thọ",
-      "avg_change_pct": -0.23,
-      "stocks": 3
+      "sector": "Điện & Hạ Tầng Năng Lượng",
+      "avg_change_pct": 1.46,
+      "stocks": 7
     },
     {
       "sector": "Cảng Biển, Vận Tải Biển & Hàng Không",
-      "avg_change_pct": -0.24,
+      "avg_change_pct": 0.67,
       "stocks": 10
+    },
+    {
+      "sector": "Chứng Khoán & Đầu Tư",
+      "avg_change_pct": 0.55,
+      "stocks": 13
+    },
+    {
+      "sector": "Bảo Hiểm Nhân Thọ & Phi Nhân Thọ",
+      "avg_change_pct": 0.47,
+      "stocks": 3
     }
   ],
   "bottom_3_sectors": [
     {
-      "sector": "Thủy Sản Xuất Khẩu (Cá Tra & Tôm)",
-      "avg_change_pct": -0.66,
+      "sector": "Dầu Khí Thượng Nguồn & Phân Phối",
+      "avg_change_pct": -0.26,
       "stocks": 6
     },
     {
-      "sector": "Đầu Tư Công, Xây Dựng & Vật Liệu",
-      "avg_change_pct": -0.67,
-      "stocks": 11
+      "sector": "Thủy Sản Xuất Khẩu (Cá Tra & Tôm)",
+      "avg_change_pct": -0.63,
+      "stocks": 6
     },
     {
       "sector": "Bán Lẻ & Phân Phối Hiện Đại",
-      "avg_change_pct": -1.86,
+      "avg_change_pct": -1.38,
       "stocks": 6
     }
   ],
@@ -88,13 +152,55 @@
       "sector": "Ngân Hàng TMCP",
       "live_price": 13200.0,
       "change_pct": 1.54,
-      "volume": 2251300,
-      "buy_up_pct": 67.7,
+      "volume": 4115500,
+      "buy_up_pct": 67.9,
       "f_score": 8,
-      "rs_rating": 95,
-      "avg_val20_ty": 36.2,
-      "ma20": 12730.0,
-      "live_score": 105.26,
+      "rs_rating": 97,
+      "avg_val20_ty": 36.5,
+      "ma20": 12735.0,
+      "live_score": 105.36,
+      "headline": ""
+    },
+    {
+      "symbol": "CTS",
+      "sector": "Chứng Khoán & Đầu Tư",
+      "live_price": 24150.0,
+      "change_pct": 3.21,
+      "volume": 3404000,
+      "buy_up_pct": 65.0,
+      "f_score": 7,
+      "rs_rating": 85,
+      "avg_val20_ty": 52.9,
+      "ma20": 22552.0,
+      "live_score": 102.99,
+      "headline": ""
+    },
+    {
+      "symbol": "HDB",
+      "sector": "Ngân Hàng TMCP",
+      "live_price": 21800.0,
+      "change_pct": 0.0,
+      "volume": 17912100,
+      "buy_up_pct": 67.4,
+      "f_score": 6,
+      "rs_rating": 94,
+      "avg_val20_ty": 301.1,
+      "ma20": 22285.0,
+      "live_score": 101.2,
+      "headline": ""
+    },
+    {
+      "symbol": "OCB",
+      "sector": "Ngân Hàng TMCP",
+      "live_price": 10650.0,
+      "change_pct": 0.47,
+      "volume": 645500,
+      "buy_up_pct": 57.8,
+      "f_score": 6,
+      "rs_rating": 90,
+      "avg_val20_ty": 23.8,
+      "ma20": 10678.0,
+      "live_score": 100.46,
       "headline": ""
     },
     {
@@ -102,75 +208,33 @@
       "sector": "Cảng Biển, Vận Tải Biển & Hàng Không",
       "live_price": 16700.0,
       "change_pct": -0.3,
-      "volume": 177400,
-      "buy_up_pct": 60.7,
+      "volume": 384600,
+      "buy_up_pct": 60.3,
       "f_score": 8,
       "rs_rating": 92,
-      "avg_val20_ty": 17.6,
-      "ma20": 18165.0,
+      "avg_val20_ty": 17.5,
+      "ma20": 18160.0,
       "live_score": 99.88,
-      "headline": ""
-    },
-    {
-      "symbol": "MSB",
-      "sector": "Ngân Hàng TMCP",
-      "live_price": 16500.0,
-      "change_pct": -0.3,
-      "volume": 528900,
-      "buy_up_pct": 73.2,
-      "f_score": 6,
-      "rs_rating": 98,
-      "avg_val20_ty": 137.8,
-      "ma20": 16202.0,
-      "live_score": 99.28,
-      "headline": ""
-    },
-    {
-      "symbol": "VPB",
-      "sector": "Ngân Hàng TMCP",
-      "live_price": 20450.0,
-      "change_pct": -0.24,
-      "volume": 5811100,
-      "buy_up_pct": 67.3,
-      "f_score": 7,
-      "rs_rating": 79,
-      "avg_val20_ty": 279.0,
-      "ma20": 22105.0,
-      "live_score": 96.86,
-      "headline": ""
-    },
-    {
-      "symbol": "HDB",
-      "sector": "Ngân Hàng TMCP",
-      "live_price": 21350.0,
-      "change_pct": -2.06,
-      "volume": 8116800,
-      "buy_up_pct": 31.9,
-      "f_score": 6,
-      "rs_rating": 94,
-      "avg_val20_ty": 308.1,
-      "ma20": 22310.0,
-      "live_score": 96.82,
       "headline": ""
     }
   ],
   "top_5_danger_alerts": [
     {
-      "symbol": "BAF",
-      "live_price": 30450.0,
-      "change_pct": -1.14,
-      "f_score": 2,
-      "beneish_status": "HIGH_RISK",
-      "ocf_ty": -496.2,
-      "reason": "CẤM GIAO DỊCH (Cờ đỏ BCTC/Đầu cơ)"
-    },
-    {
       "symbol": "VIX",
-      "live_price": 12600.0,
-      "change_pct": -0.79,
+      "live_price": 12650.0,
+      "change_pct": -0.39,
       "f_score": 3,
       "beneish_status": "SAFE",
       "ocf_ty": -4877.3,
+      "reason": "CẤM GIAO DỊCH (Cờ đỏ BCTC/Đầu cơ)"
+    },
+    {
+      "symbol": "BAF",
+      "live_price": 30800.0,
+      "change_pct": 0.0,
+      "f_score": 2,
+      "beneish_status": "HIGH_RISK",
+      "ocf_ty": -496.2,
       "reason": "CẤM GIAO DỊCH (Cờ đỏ BCTC/Đầu cơ)"
     },
     {
@@ -184,8 +248,8 @@
     },
     {
       "symbol": "PNJ",
-      "live_price": 12750.0,
-      "change_pct": -5.56,
+      "live_price": 12600.0,
+      "change_pct": -6.67,
       "f_score": 2,
       "beneish_status": "HIGH_RISK",
       "ocf_ty": -2578.0,
@@ -193,8 +257,8 @@
     },
     {
       "symbol": "TCH",
-      "live_price": 13400.0,
-      "change_pct": -3.6,
+      "live_price": 13300.0,
+      "change_pct": -4.32,
       "f_score": 4,
       "beneish_status": "SAFE",
       "ocf_ty": -2607.7,

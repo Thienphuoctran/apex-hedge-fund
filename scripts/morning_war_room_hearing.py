@@ -32,6 +32,9 @@ sys.path.insert(0, str(BASE_DIR))
 
 from scripts.hardcoded_guardrails_engine import GUARDRAIL_RULES, evaluate_order_against_guardrails
 from scripts.bctc_ir_filing_scout import extract_live_bctc_fundamentals
+from scripts.portfolio_state_manager import PortfolioStateManager
+from scripts.vn_market_calendar import get_vn_market_session_state
+from scripts.apex_canonical_truth import load_canonical_truth
 
 OUTPUT_DIR = BASE_DIR / "08_Master_Investment_CIO"
 AUDIT_LOGS_DIR = OUTPUT_DIR / "eod_audit_logs"
@@ -62,49 +65,91 @@ def _load_latest_eod_audit_feedback() -> Dict[str, Any]:
     return {}
 
 
+def _is_obsolete_feedback_text(txt: str, active_syms: set) -> bool:
+    """Loại bỏ phản hồi EOD cũ đề cập mã đã tất toán hoàn toàn hoặc hết hiệu lực."""
+    legacy_markers = ("VETO HDB tới hết 20/11", "PVT, TCB, MSH, BAF", "bán hết 100 BAF", "tất toán sạch 20/11")
+    if any(m in txt for m in legacy_markers):
+        return True
+    for closed_sym in ("MSH", "BAF", "PVT", "TCB"):
+        if closed_sym in txt and closed_sym not in active_syms:
+            return True
+    return False
+
+
 def conduct_morning_war_room() -> Dict[str, Any]:
     now = datetime.datetime.now()
     now_str = now.strftime("%Y-%m-%d %H:%M:%S")
     today_date = now.strftime("%Y-%m-%d")
 
-    # 1. Tải danh mục thực tế của Chủ tịch từ Telemetry & Master Blotter
-    portfolio_data = _load_json_safe(TELEMETRY_PATH)
+    truth = load_canonical_truth(refresh_if_missing=False)
+    msess = truth.get("market_session") or get_vn_market_session_state()
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
+
+    # 1. Tải danh mục thực tế từ SSOT PortfolioStateManager (KHÔNG dùng telemetry cũ!)
+    ssot_st = PortfolioStateManager.load_state()
     blotter_data = _load_json_safe(BLOTTER_PATH)
+    active_pos_dict = ssot_st.get("active_positions") if isinstance(ssot_st.get("active_positions"), dict) else {}
 
-    summary = portfolio_data.get("portfolio_summary", {})
-    total_nav = portfolio_data.get("total_nav", summary.get("total_nav_vnd", 20449425.0))
-    total_pnl = portfolio_data.get("total_unrealized_pnl", summary.get("total_unrealized_pnl_vnd", 234600.0))
-    total_pnl_pct = portfolio_data.get("total_unrealized_pnl_pct", summary.get("total_unrealized_pnl_pct", 1.26))
-    cash_reserve = portfolio_data.get("dry_powder", summary.get("cash_reserve_vnd", 1409425.0))
+    cash_reserve = float(ssot_st.get("cash_balance_vnd", 0.0) or 0.0)
+    positions: List[Dict[str, Any]] = []
+    stocks_mkt_val = 0.0
+    cost_val = 0.0
+    for sym, pinfo in active_pos_dict.items():
+        if not isinstance(pinfo, dict):
+            continue
+        sh = int(pinfo.get("shares") or 0)
+        if sh <= 0:
+            continue
+        ep = float(pinfo.get("entry_price") or 0.0)
+        cp = float(pinfo.get("current_price") or ep)
+        stocks_mkt_val += sh * cp
+        cost_val += sh * ep
+        positions.append({
+            "symbol": sym.upper(),
+            "shares": sh,
+            "entry_price": ep,
+            "current_price": cp,
+            "stop_loss": float(pinfo.get("stop_loss") or 0.0),
+            "sell_target_min": float(pinfo.get("take_profit_tp1") or 0.0),
+        })
 
-    positions = portfolio_data.get("positions", [])
+    total_nav = cash_reserve + stocks_mkt_val
+    total_pnl = stocks_mkt_val - cost_val
+    total_pnl_pct = round((total_pnl / cost_val) * 100.0, 2) if cost_val > 0 else 0.0
+    active_syms = {p["symbol"] for p in positions}
+
     blotter_vn_map = {
         o.get("symbol"): o for o in blotter_data.get("orders_vietnam", []) if o.get("symbol")
     }
 
-    # 2. Đọc bài học động từ Biên bản Kiểm toán EOD hôm trước & Bộ nhớ Ngữ cảnh Ban 5
+    # 2. Đọc bài học động từ Biên bản Kiểm toán EOD hôm trước & lọc bỏ rác lịch sử lỗi thời
     latest_audit = _load_latest_eod_audit_feedback()
-    audit_date_ref = latest_audit.get("audit_date", "Phiên trước")
+    audit_date_ref = str(latest_audit.get("audit_date") or "Phiên gần nhất")
+    try:
+        ad_dt = datetime.date.fromisoformat(audit_date_ref[:10])
+        audit_too_old = (now.date() - ad_dt).days > 2
+    except Exception:
+        audit_too_old = True
+
     mq_audit = latest_audit.get("minh_quan_audit", {})
     alex_audit = latest_audit.get("alex_audit", {})
-
     yesterday_mistakes: List[str] = []
 
-    # 2.1 Nạp các lỗi thực tế bị Master CIO bắt trong phiên kiểm toán EOD gần nhất
-    for idx, flaw in enumerate(mq_audit.get("critical_flaws_caught", []), start=1):
-        yesterday_mistakes.append(f"[EOD AUDIT {audit_date_ref} - MINH QUÂN #{idx}] {flaw}")
+    if not audit_too_old:
+        for idx, flaw in enumerate(mq_audit.get("critical_flaws_caught", []), start=1):
+            if not _is_obsolete_feedback_text(str(flaw), active_syms):
+                yesterday_mistakes.append(f"[EOD AUDIT {audit_date_ref} - MINH QUÂN #{idx}] {flaw}")
 
-    if mq_audit.get("mandatory_corrective_action"):
-        yesterday_mistakes.append(
-            f"[CHỈ THỊ SỬA ĐỔI BẮT BUỘC CHO MINH QUÂN] {mq_audit['mandatory_corrective_action']}"
-        )
+        if mq_audit.get("mandatory_corrective_action") and not _is_obsolete_feedback_text(str(mq_audit["mandatory_corrective_action"]), active_syms):
+            yesterday_mistakes.append(
+                f"[CHỈ THỊ SỬA ĐỔI BẮT BUỘC CHO MINH QUÂN] {mq_audit['mandatory_corrective_action']}"
+            )
 
-    if alex_audit.get("mandatory_corrective_action"):
-        yesterday_mistakes.append(
-            f"[CHỈ THỊ SỬA ĐỔI BẮT BUỘC CHO ALEX (US)] {alex_audit['mandatory_corrective_action']}"
-        )
+        if alex_audit.get("mandatory_corrective_action") and not _is_obsolete_feedback_text(str(alex_audit["mandatory_corrective_action"]), active_syms):
+            yesterday_mistakes.append(
+                f"[CHỈ THỊ SỬA ĐỔI BẮT BUỘC CHO ALEX (US)] {alex_audit['mandatory_corrective_action']}"
+            )
 
-    # 2.2 Nạp các bài học từ Kho bộ nhớ ngữ cảnh (`vn_contextual_memory_vault.json`)
     vault_data = _load_json_safe(MEMORY_VAULT_PATH)
     memories = vault_data.get("contextual_memories", [])
     for mem in memories[:3]:
@@ -112,13 +157,15 @@ def conduct_morning_war_room() -> Dict[str, Any]:
         cat = mem.get("category", "")
         lesson = mem.get("lesson_learned", "")
         rule = mem.get("actionable_rule", "")
-        yesterday_mistakes.append(f"[{mem_id} • {cat}] Bài học: {lesson} -> Hành động: {rule}")
+        combined = f"[{mem_id} • {cat}] Bài học: {lesson} -> Hành động: {rule}"
+        if not _is_obsolete_feedback_text(combined, active_syms):
+            yesterday_mistakes.append(combined)
 
     if not yesterday_mistakes:
         yesterday_mistakes = [
-            "1. LỖI THỜI ĐIỂM (ATO Timing Risk): Cấm 100% đua lệnh xanh trước 10h00, chỉ hành động trong Khung Giờ Vàng 14h00-14h25.",
-            "2. LỖI BỎ LỠ (Omission Error): Bắt buộc giải ngân thăm dò tại nền Test Cung cạn Vol khi OCF/LNST >= 1.0x.",
-            "3. KỶ LUẬT CẦU CHÌ 14H25: Khóa cứng trạng thái trước phiên ATC, không để vị thế T+0 treo qua đêm."
+            "1. LỖI THỜI ĐIỂM (ATO Timing Risk): Cấm 100% đua lệnh Gap xanh trước 10h00 khi VNI < MA20, chỉ hành động trong Khung Giờ Vàng 14h05–14h25.",
+            "2. KIỂM TOÁN TIỀN THẬT BCTC (Beneish/OCF): Loại tuyệt đối mã lợi nhuận giấy (BAF, PNJ, VIX, TCH, CEO, POW), chỉ tập trung mã F-Score >= 7/9 & OCF/LNST >= 1.0x.",
+            "3. ĐỒNG BỘ CHÂN LÝ HỢP NHẤT: Kiểm tra lịch nghỉ lễ HOSE/HNX & exchange_time từ bảng điện trước khi phát bất kỳ tín hiệu giao dịch nào."
         ]
 
     # 3. Thẩm định trạng thái 5 Khóa Chốt Kỷ Luật Thép
@@ -132,17 +179,21 @@ def conduct_morning_war_room() -> Dict[str, Any]:
         })
 
     # 4. Lập Biên Bản Kỷ Luật Giao Ban Sáng (Pact of Discipline)
+    session_banner = (
+        f"> [!IMPORTANT]\n> **{msess.get('status_label_vi')}**  \n> {msess.get('settlement_note_vi')} — Hôm nay khóa 100% lệnh mới (`0%`), giữ vững kỷ luật cho phiên mở lại **{msess.get('next_trading_day_vi')}**.\n\n"
+        if is_closed else ""
+    )
     pact_lines = [
         f"# 🎖️ BIÊN BẢN GIAO BAN SOI GƯƠNG TỰ PHÊ BÌNH 8H30 SÁNG — NGÀY {today_date}",
-        f"*Thời gian họp*: `{now_str}`  ",
+        f"*Thời gian họp*: `{now_str}` | *Trạng thái sàn*: `{msess.get('short_badge_vi', 'LIVE')}`  ",
         f"*Chủ trì phiên họp*: **James — Master CIO (Ban 8)** & **Palmer (Quản Trị Hệ Thống)**  ",
         f"*Chuyên viên tuyên thệ*: **Minh Quân (Ban 7 VN)** & **Alex (Ban 7 Global)**  ",
         f"*Hội đồng thẩm định & tự học*: **Ban 5 (Performance & Adaptive Learning)**, **Hiền (Ban 10 — BCTC)** & **Victor (Ban 9 — Sentinel)**  ",
         f"*Phục vụ trực tiếp*: **Chủ tịch Trần Quốc Thiên Phước** *(TCBS: `105C307855` - NAV: `{total_nav:,.0f} ₫`)*  \n",
-        "---",
+        session_banner + "---",
         "## I. TUYÊN THỆ TỰ KIỂM ĐIỂM & RÚT KINH NGHIỆM TỪ PHIÊN TRƯỚC (CLOSED-LOOP FEEDBACK)",
         f"Kính thưa Chủ tịch Phước Trần và Tổng Tư Lệnh Master CIO James, tôi là **Minh Quân** cùng **Alex**. "
-        f"Trước khi giờ mở phiên ATO bắt đầu, chúng tôi xin đọc to biên bản phúc tra EOD (`{audit_date_ref}`) và các bài học xương máu từ Kho Bộ Nhớ Ngữ Cảnh:",
+        f"Trước giờ phiên mới (`{'SÀN ĐÓNG CỬA NGÀY LỄ — RÀ SOÁT KỶ LUẬT' if is_closed else audit_date_ref}`), chúng tôi tuyên thệ tuân thủ:",
         ""
     ]
     for m in yesterday_mistakes:
@@ -161,34 +212,40 @@ def conduct_morning_war_room() -> Dict[str, Any]:
         pact_lines.append(f"| **`{g['id']}`** | {g['name']} | **{g['status']}** | _{g['lesson']}_ |")
 
     pnl_sign = "+" if total_pnl >= 0 else ""
+    next_td_vi = msess.get("next_trading_day_vi") or msess.get("next_trading_day") or "Phiên kế tiếp"
     pact_lines.extend([
         "\n---",
-        "## III. RÀ SOÁT DANH MỤC THỰC TẾ TRƯỚC GIỜ MỞ CỬA (TCBS `105C307855`)",
+        "## III. RÀ SOÁT DANH MỤC THỰC TẾ THEO SSOT (TCBS `105C307855`)",
         f"- **Tổng NAV thực tế**: **`{total_nav:,.0f} ₫`**",
         f"- **Lợi nhuận tạm tính**: **`{pnl_sign}{total_pnl:,.0f} ₫ ({pnl_sign}{total_pnl_pct:.2f}%)`**",
-        f"- **Tiền mặt dự phòng (Dry Powder)**: **`{cash_reserve:,.0f} ₫`**",
+        f"- **Tiền mặt dự phòng (Dry Powder)**: **`{cash_reserve:,.0f} ₫`** (`{(cash_reserve/total_nav*100.0) if total_nav>0 else 100.0:.1f}% NAV`)",
         "",
-        "| Mã Cổ Phiếu | Khối Lượng | Giá Vốn | Thị Giá Hiện Tại | Ngưỡng Cắt Lỗ Stop 2xATR | Mục Tiêu Chốt Lời TP1 | Kế Hoạch Tác Chiến Hôm Nay |",
+        "| Mã Cổ Phiếu | Khối Lượng | Giá Vốn | Thị Giá Hiện Tại | Ngưỡng Cắt Lỗ Stop 2xATR | Mục Tiêu Chốt Lời TP1 | Kế Hoạch Tác Chiến |",
         "| :---: | :---: | :---: | :---: | :---: | :---: | :--- |"
     ])
 
-    for p in positions:
-        sym = p.get("symbol", "")
-        b_order = blotter_vn_map.get(sym, {})
-        stop_val = p.get("stop_loss") or p.get("stop_loss_2atr") or b_order.get("stop_loss_2atr_vnd", 0)
-        tp1_val = p.get("sell_target_min") or b_order.get("tp1_vnd", 0)
-        pact_lines.append(
-            f"| **`{sym}`** | {p.get('shares', 0)} CP | {p.get('entry_price', 0):,.0f} ₫ | "
-            f"{p.get('current_price', 0):,.0f} ₫ | **{stop_val:,.0f} ₫** | **{tp1_val:,.0f} ₫** | "
-            f"Giữ Stop 2xATR • Tiền mặt `{cash_reserve:,.0f} ₫` • Chuẩn tuần sau 13k–22.5k (`200–300 CP/mã`) |"
-        )
+    if positions:
+        for p in positions:
+            sym = p.get("symbol", "")
+            b_order = blotter_vn_map.get(sym, {})
+            stop_val = p.get("stop_loss") or p.get("stop_loss_2atr") or b_order.get("stop_loss_2atr_vnd", 0)
+            tp1_val = p.get("sell_target_min") or b_order.get("tp1_vnd", 0)
+            pact_lines.append(
+                f"| **`{sym}`** | {p.get('shares', 0)} CP | {p.get('entry_price', 0):,.0f} ₫ | "
+                f"{p.get('current_price', 0):,.0f} ₫ | **{stop_val:,.0f} ₫** | **{tp1_val:,.0f} ₫** | "
+                f"Giữ Stop 2xATR • Két `{cash_reserve:,.0f} ₫` • Chờ T+2 về & Nhịp 2 lúc `14h05–14h25` ({next_td_vi}) |"
+            )
+    else:
+        pact_lines.append(f"| **TIỀN MẶT** | `0 CP` | `--` | `--` | `--` | `--` | Két sạch `{cash_reserve:,.0f} ₫` (100% Cash) |")
 
+    council_name = ((truth.get("latest_council_resolution") or {}).get("file_name")) or "Hội Đồng 5 Khối"
     pact_lines.extend([
         "\n---",
         "## IV. PHÊ DUYỆT CUỐI CÙNG TỪ TỔNG TƯ LỆNH MASTER CIO JAMES",
-        "- **Kiểm tra cam kết Minh Quân & Alex**: ✅ **ĐÃ THÔNG QUA 100% — ĐÃ NẠP CHỈ THỊ SỬA ĐỔI EOD VÀO SỔ LỆNH HÔM NAY.**",
+        f"- **Nghị quyết tham chiếu**: `{council_name}`",
+        f"- **Chỉ thị hợp nhất**: {truth.get('executive_directive_vi', 'Tuân thủ kỷ luật 14h05–14h25.')}",
         "- **Trạng thái phần mềm Guardrails**: ✅ **ĐÃ KHÓA CỨNG — KHÔNG AI CÓ THỂ PHÁ VỠ KỶ LUẬT.**",
-        "- **Lệnh điều hành phiên hôm nay**: 🎖️ **CHẤP THUẬN PHÁT HÀNH SỔ LỆNH MASTER BLOTTER!**",
+        f"- **Lệnh điều hành hôm nay**: {'🎌 **KHÓA GIAO DỊCH NGÀY NGHỈ LỄ (0%) — CHUẨN BỊ CHO ' + next_td_vi.upper() + '**' if is_closed else '🎖️ **CHẤP THUẬN PHÁT HÀNH SỔ LỆNH MASTER BLOTTER!**'}",
         "- *Chữ ký phê duyệt*: **James — Apex Master CIO (Ban 8)** *(Đã ký số hệ thống lúc 08:30)*"
     ])
 

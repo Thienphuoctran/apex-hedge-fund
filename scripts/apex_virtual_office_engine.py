@@ -45,6 +45,11 @@ DATA_DIR = BASE_DIR / "data"
 KANBAN_FILE = DATA_DIR / "apex_kanban_board.json"
 AUDIT_LEDGER_FILE = BASE_DIR / "12_Institutional_Ombudsman_And_Inspectorate" / "system_audit_ledger.json"
 
+from scripts.vn_market_calendar import get_vn_market_session_state
+from scripts.apex_canonical_truth import load_canonical_truth
+
+TRADING_ONLY_MILESTONE_TIMES = {"09:00", "11:45", "13:00", "14:00", "14:25", "15:15"}
+
 _CACHE_LOCK = threading.Lock()
 _LIVE_CACHE: Dict[str, Any] = {"ts": 0.0, "payload": None}
 _REPORTS_CACHE: Dict[str, Any] = {"ts": 0.0, "items": []}
@@ -405,6 +410,11 @@ def _extract_ssot_summary() -> Dict[str, Any]:
     active_pos = st.get("active_positions", {})
     if not isinstance(active_pos, dict):
         active_pos = {}
+    holdings_desc = " + ".join(
+        f"{int(p.get('shares', 0))} {s}"
+        for s, p in active_pos.items()
+        if isinstance(p, dict) and int(p.get("shares", 0)) > 0
+    ) or "0 CP"
     cash_pct = round((cash_vnd / total_nav_vnd) * 100.0, 1) if total_nav_vnd > 0 else 100.0
     return {
         "account_id": str(st.get("account_id", "105C307855")),
@@ -421,7 +431,8 @@ def _extract_ssot_summary() -> Dict[str, Any]:
         "stocks_pct": round(100.0 - cash_pct, 1),
         "realized_pnl_vnd": float(st.get("realized_pnl_vnd", 0.0)),
         "unrealized_pnl_vnd": float(st.get("unrealized_pnl_vnd", 0.0)),
-        "holdings_count": len(active_pos),
+        "holdings_count": sum(1 for p in active_pos.values() if isinstance(p, dict) and int(p.get("shares", 0)) > 0),
+        "holdings_desc": holdings_desc,
         "active_positions": active_pos,
         "cash_verified_note": str(st.get("cash_verified_note", "")),
         "next_round_watchlist": st.get("next_round_watchlist", []),
@@ -746,14 +757,53 @@ def _compute_room_status_and_payload(
     if room_id == "team_victor":
         room_reports = _collect_victor_reports(room_reports)
 
+    if room_id == "team_james_palmer":
+        truth_pin = load_canonical_truth(refresh_if_missing=False)
+        council_info = truth_pin.get("latest_council_resolution") or {}
+        pinned_entries: List[Dict[str, Any]] = []
+        c_rel = str(council_info.get("rel_path") or "").strip()
+        if c_rel and (BASE_DIR / c_rel).exists():
+            c_stat = (BASE_DIR / c_rel).stat()
+            c_dt = datetime.datetime.fromtimestamp(c_stat.st_mtime)
+            pinned_entries.append({
+                "rel_path": c_rel,
+                "title": str(council_info.get("title") or c_rel),
+                "date": c_dt.strftime("%Y-%m-%d"),
+                "time_str": "21:00",
+                "shift_label": "🏛️ Nghị Quyết 5 Khối",
+                "dept_name": "Khối 3: Hội Đồng & Chat",
+                "icon": "🏛️",
+                "is_pinned": True,
+                "is_today": True,
+                "freshness_badge": "⭐ NGHỊ QUYẾT HỘI ĐỒNG 21H",
+            })
+        if (BASE_DIR / "00_LIVE_INTER_CHAT_STATE.md").exists():
+            ic_stat = (BASE_DIR / "00_LIVE_INTER_CHAT_STATE.md").stat()
+            ic_dt = datetime.datetime.fromtimestamp(ic_stat.st_mtime)
+            pinned_entries.append({
+                "rel_path": "00_LIVE_INTER_CHAT_STATE.md",
+                "title": "Hồ Sơ Đồng Bộ 2 Chiều Chat <-> Hệ Thống (Live SSOT)",
+                "date": ic_dt.strftime("%Y-%m-%d"),
+                "time_str": ic_dt.strftime("%H:%M"),
+                "shift_label": "💬 Đồng Bộ Chat",
+                "dept_name": "Khối 3: Hội Đồng & Chat",
+                "icon": "💬",
+                "is_pinned": True,
+                "is_today": True,
+                "freshness_badge": "💬 ĐỒNG BỘ CHAT LIVE",
+            })
+        seen_rels = {p["rel_path"] for p in pinned_entries}
+        room_reports = (pinned_entries + [r for r in room_reports if r.get("rel_path") not in seen_rels])[:10]
+
     today_str = now_ict.strftime("%Y-%m-%d")
     reports_today_count = 0
     for rep in room_reports:
-        is_today_flag = (str(rep.get("date", "")) == today_str)
+        is_today_flag = bool(rep.get("is_today")) or (str(rep.get("date", "")) == today_str)
         if is_today_flag:
             reports_today_count += 1
         rep["is_today"] = is_today_flag
-        rep["freshness_badge"] = "MỚI HÔM NAY" if is_today_flag else f"LƯU TRỮ ({rep.get('date', '--')})"
+        if not rep.get("freshness_badge"):
+            rep["freshness_badge"] = "MỚI HÔM NAY" if is_today_flag else f"LƯU TRỮ ({rep.get('date', '--')})"
 
     all_tasks = kanban_data.get("tasks", {}) if isinstance(kanban_data, dict) else {}
     k_depts = set(bp["kanban_depts"])
@@ -767,16 +817,18 @@ def _compute_room_status_and_payload(
 
     running_job = next((j for j in active_jobs if j.get("room_id") == room_id and j.get("status") == "RUNNING"), None)
 
-    is_weekday = now_ict.weekday() < 5
+    msess = get_vn_market_session_state(now_ict=now_ict)
+    is_trading_day = bool(msess.get("is_trading_day", True))
+    is_weekday = is_trading_day
     hm = now_ict.hour * 60 + now_ict.minute
-    is_market_hours = is_weekday and (9 * 60 <= hm <= 15 * 60)
-    is_golden_hour = is_weekday and (14 * 60 <= hm <= 14 * 60 + 25)
-    near_milestone = any(abs((h * 60 + m) - hm) <= 20 for h, m in bp.get("milestone_hours", []))
+    is_market_hours = bool(msess.get("is_live_session", False))
+    is_golden_hour = is_trading_day and (14 * 60 <= hm <= 14 * 60 + 25)
+    near_milestone = is_trading_day and any(abs((h * 60 + m) - hm) <= 20 for h, m in bp.get("milestone_hours", []))
 
     veto_triggered = bool(latest_session.get("veto_triggered", False))
     decision_brain = warroom_data.get("decision_brain", {}) if isinstance(warroom_data, dict) else {}
     proposed_orders = decision_brain.get("proposed_lo_orders", []) or []
-    has_upcoming_week = any(d.get("status") == "UPCOMING" for d in (weekly_plan.get("days") or []) if isinstance(d, dict))
+    has_upcoming_week = any(d.get("status") in ("ACTIVE", "UPCOMING") for d in (weekly_plan.get("days") or []) if isinstance(d, dict))
     latest_aud = audit_ledger[-1] if audit_ledger else {}
 
     status_code = "standby"
@@ -790,9 +842,9 @@ def _compute_room_status_and_payload(
     ):
         status_code = "alert_veto"
         status_label_vi = "Cờ đỏ / VETO"
-    elif review_tasks or (room_id in ("team_quan_alex", "team_james_palmer") and (len(proposed_orders) > 0 or is_golden_hour or (room_id == "team_quan_alex" and has_upcoming_week))):
+    elif review_tasks or (room_id in ("team_quan_alex", "team_james_palmer") and (len(proposed_orders) > 0 or is_golden_hour or (not is_trading_day and has_upcoming_week))):
         status_code = "waiting_approval"
-        status_label_vi = "Sẵn sàng S1–S4" if (has_upcoming_week and not is_market_hours) else "Chờ duyệt"
+        status_label_vi = f"Nghỉ lễ • Sẵn phiên {msess['next_trading_day'][8:10]}/{msess['next_trading_day'][5:7]}" if not is_trading_day else ("Sẵn sàng S1–S4" if not is_market_hours else "Chờ duyệt")
     elif in_progress_tasks or (is_market_hours and room_id in ("team_victor", "team_quan_alex", "team_james_palmer")):
         status_code = "working"
         status_label_vi = "Đang tác chiến"
@@ -804,7 +856,7 @@ def _compute_room_status_and_payload(
         status_label_vi = "Dữ liệu sống < 24h"
     elif room_id == "team_victor":
         status_code = "working" if is_market_hours else "standby"
-        status_label_vi = "Canh 145 mã Live" if is_market_hours else "Trực ngưỡng ngoài giờ"
+        status_label_vi = "Canh 145 mã Live" if is_market_hours else ("Nghỉ lễ • Trực 24/7" if not is_trading_day else "Trực ngưỡng ngoài giờ")
     elif room_id == "team_trong_palmer":
         status_code = "standby"
         status_label_vi = "Giám sát 24/7"
@@ -849,8 +901,13 @@ def _compute_room_status_and_payload(
     elif room_id == "team_quan_alex":
         rm = spillover_data.get("risk_multiplier", 1.0)
         vix_val = (spillover_data.get("metrics", {}).get("VIX") or {}).get("last_price", "--")
-        kpi_summary = f"Rổ 5 mã Q3 (TPB,HDB,CTG,HPG,VPB) • Mult {rm}x • VIX {vix_val}"
-        live_thought = f"Quân & Alex: Lọc S1–S4 (14h05) ➔ Trình James"
+        wl_syms = ",".join(str(w.get("symbol") or "") for w in (weekly_plan.get("approved_watchlist") or [])[:5] if w.get("symbol")) or "TPB,HPG,CTG,NAB,CTS"
+        kpi_summary = f"Rổ Hội Đồng ({wl_syms}) • Mult {rm}x • VIX {vix_val}"
+        live_thought = (
+            f"Quân & Alex: Sàn nghỉ lễ ({msess['short_badge_vi']}) • Giữ kế hoạch phiên {msess['next_trading_day'][8:10]}/{msess['next_trading_day'][5:7]}"
+            if not is_trading_day
+            else "Quân & Alex: Lọc S1–S4 (14h05) ➔ Trình James"
+        )
         specialized_data = {
             "week_label": weekly_plan.get("week_label", ""),
             "constitution_mandate": weekly_plan.get("constitution_mandate", ""),
@@ -866,8 +923,12 @@ def _compute_room_status_and_payload(
     elif room_id == "team_james_palmer":
         wf = (legends_data.get("self_reflection") or {}).get("multi_horizon_walk_forward") or {}
         t10_hit = (wf.get("T+10") or {}).get("hit_rate_pct", "--")
-        kpi_summary = f"Két {ssot['cash_str']} ({ssot['cash_pct']:.0f}% Cash) • {ssot['holdings_count']} CP • T+10 {t10_hit}%"
-        live_thought = f"James & Palmer: Két {ssot['cash_str']} • Chờ 09h00 T2"
+        kpi_summary = f"Giữ {ssot['holdings_desc']} ({ssot['stocks_pct']:.1f}%) • Két {ssot['cash_str']} ({ssot['cash_pct']:.0f}%) • T+10 {t10_hit}%"
+        live_thought = (
+            f"James & Palmer: {ssot['holdings_desc']} • Két {ssot['cash_str']} ({msess['short_badge_vi']})"
+            if not is_trading_day
+            else f"James & Palmer: {ssot['holdings_desc']} • Két {ssot['cash_str']} ({ssot['cash_pct']:.0f}% Cash)"
+        )
         specialized_data = {
             "ssot": ssot,
             "latest_session": {
@@ -1008,9 +1069,14 @@ def _build_daily_activity_log(
     warroom_data: Dict[str, Any],
     intel_feed: Dict[str, Any],
     kanban_data: Dict[str, Any],
+    ssot: Optional[Dict[str, Any]] = None,
+    weekly_plan: Optional[Dict[str, Any]] = None,
+    canonical_truth: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     today_str = now_ict.strftime("%Y-%m-%d")
     current_hm = now_ict.strftime("%H:%M")
+    msess = (canonical_truth or {}).get("market_session") or get_vn_market_session_state(now_ict=now_ict)
+    is_trading_day = bool(msess.get("is_trading_day", True))
     executed_raw = (cron_data.get("executed_milestones") or {}).get(today_str, [])
     executed_today = {str(x).strip() for x in executed_raw} if isinstance(executed_raw, list) else set()
 
@@ -1019,6 +1085,7 @@ def _build_daily_activity_log(
     completed_cnt = 0
     pending_cnt = 0
     upcoming_cnt = 0
+    holiday_cnt = 0
     next_milestone = None
     latest_done = None
 
@@ -1034,20 +1101,25 @@ def _build_daily_activity_log(
             None,
         )
         ran_in_cron = mtime in executed_today
-        verified_today = bool(ran_in_cron or rep_today is not None)
-
-        if verified_today:
-            status_code = "done_today"
-            status_vi = "🟢 ĐÃ LÀM THẬT HÔM NAY"
-            completed_cnt += 1
-        elif mtime <= current_hm:
-            status_code = "pending_catchup"
-            status_vi = "🟠 CHỜ CHẠY BÙ HÔM NAY"
-            pending_cnt += 1
+        if (not is_trading_day) and (mtime in TRADING_ONLY_MILESTONE_TIMES):
+            verified_today = False
+            status_code = "holiday_skipped"
+            status_vi = "🎌 NGHỈ LỄ HOSE/HNX" if msess.get("is_holiday") else "🛑 NGHỈ CUỐI TUẦN"
+            holiday_cnt += 1
         else:
-            status_code = "upcoming"
-            status_vi = "⏳ CHỜ ĐẾN GIỜ"
-            upcoming_cnt += 1
+            verified_today = bool(ran_in_cron or rep_today is not None)
+            if verified_today:
+                status_code = "done_today"
+                status_vi = "🟢 ĐÃ LÀM THẬT HÔM NAY"
+                completed_cnt += 1
+            elif mtime <= current_hm:
+                status_code = "pending_catchup"
+                status_vi = "🟠 CHỜ CHẠY BÙ HÔM NAY"
+                pending_cnt += 1
+            else:
+                status_code = "upcoming"
+                status_vi = "⏳ CHỜ ĐẾN GIỜ"
+                upcoming_cnt += 1
 
         entry = {
             "time": mtime,
@@ -1073,9 +1145,14 @@ def _build_daily_activity_log(
     latest_session = enterprise_data.get("latest_session", {}) if isinstance(enterprise_data, dict) else {}
     recon = warroom_data.get("recon_summary", {}) if isinstance(warroom_data, dict) else {}
     decision_brain = warroom_data.get("decision_brain", {}) if isinstance(warroom_data, dict) else {}
+    can_reg = (canonical_truth or {}).get("canonical_regime") or (warroom_data.get("canonical_regime") or {})
+    reg_id = str(can_reg.get("regime_id") or decision_brain.get("live_regime") or "--")
+    ssot_live = ssot or _extract_ssot_summary()
+    wl_syms = ", ".join(str(w.get("symbol") or "") for w in ((weekly_plan or {}).get("approved_watchlist") or [])[:6] if w.get("symbol")) or "TPB, HPG, CTG, NAB, CTS"
+
     sc_intel = intel_feed.get("summary_counts", {})
     crawled_at = str(intel_feed.get("crawled_at", ""))
-    scanned_at = str(recon.get("scanned_at", ""))
+    scanned_at = str(warroom_data.get("timestamp_ict") or recon.get("scanned_at") or "")
     sess_at = str(latest_session.get("created_at", ""))
 
     handoff_feed = [
@@ -1091,9 +1168,9 @@ def _build_daily_activity_log(
             "step": "② ➔ ③",
             "from_team": "Minh Quân & Alex (Khối 2)",
             "to_team": "James & Palmer (Khối 3)",
-            "timestamp": sess_at or "--",
-            "is_today": sess_at.startswith(today_str),
-            "summary": f"Phân tích rổ Q3/2026 (TPB, HDB, CTG, HPG, VPB) & Ma trận S1–S4; phán quyết gần nhất: {latest_session.get('final_verdict', '--')}.",
+            "timestamp": sess_at or crawled_at or "--",
+            "is_today": sess_at.startswith(today_str) or crawled_at.startswith(today_str),
+            "summary": f"Phân tích rổ Hội đồng ({wl_syms}) & Ma trận S1–S4; chế độ hợp nhất hiện tại: {reg_id}.",
         },
         {
             "step": "④ ➔ ③",
@@ -1101,15 +1178,15 @@ def _build_daily_activity_log(
             "to_team": "James & Palmer (Khối 3)",
             "timestamp": scanned_at or "--",
             "is_today": scanned_at.startswith(today_str),
-            "summary": f"Quét {recon.get('scanned_live_count', 0)}/{recon.get('universe_total', 145)} mã (VNI {recon.get('vn_index', '--')}, Br20 {recon.get('live_breadth_ma20_pct', 0)}%) — Chế độ: {decision_brain.get('live_regime', '--')}.",
+            "summary": f"{msess.get('short_badge_vi')} | Tham chiếu {recon.get('scanned_live_count', 0)}/{recon.get('universe_total', 145)} mã (VNI {recon.get('vn_index', '--')}, Br20 {recon.get('live_breadth_ma20_pct', 0)}%).",
         },
         {
             "step": "③ ➔ 👑",
             "from_team": "James & Palmer (Khối 3)",
             "to_team": "Chủ tịch Phước Trần",
-            "timestamp": sess_at or "--",
-            "is_today": sess_at.startswith(today_str),
-            "summary": f"Kế hoạch giải ngân S1–S4 tuần mới, bảo toàn SSOT 20,051,117 ₫ (0 CP) chờ khung Giờ Vàng 14h05–14h25.",
+            "timestamp": (canonical_truth or {}).get("generated_at_ict") or now_ict.strftime("%Y-%m-%d %H:%M:%S"),
+            "is_today": True,
+            "summary": f"SSOT: {ssot_live['holdings_count']} mã ({ssot_live['holdings_desc']}) + Két {ssot_live['cash_str']} ({ssot_live['cash_pct']:.1f}% Cash) | {msess.get('short_badge_vi')}.",
         },
         {
             "step": "⑤ 🛡",
@@ -1117,7 +1194,7 @@ def _build_daily_activity_log(
             "to_team": "Giám Sát Toàn Hệ Thống",
             "timestamp": str(kanban_data.get("last_updated", "")) or now_ict.strftime("%Y-%m-%d %H:%M:%S"),
             "is_today": str(kanban_data.get("date", "")) == today_str,
-            "summary": f"Kanban ngày {kanban_data.get('date', today_str)}: {completed_cnt}/{len(timeline)} cột mốc hôm nay đã xác thực • Audit {latest_session.get('ombudsman_audit_score', '10/10')}.",
+            "summary": f"Ngày {today_str} ({msess.get('short_badge_vi')}): {completed_cnt}/{len(timeline)} mốc chạy thật ({holiday_cnt} mốc nghỉ lễ bỏ qua) • Audit {latest_session.get('ombudsman_audit_score', '10/10')}.",
         },
     ]
 
@@ -1128,6 +1205,7 @@ def _build_daily_activity_log(
         "completed_today_count": completed_cnt,
         "pending_catchup_count": pending_cnt,
         "upcoming_count": upcoming_cnt,
+        "holiday_skipped_count": holiday_cnt,
         "next_milestone": next_milestone,
         "latest_completed": latest_done,
         "reports_written_today_count": len(today_reports),
@@ -1157,6 +1235,7 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
     audit_ledger_raw = _load_json(AUDIT_LEDGER_FILE, [])
     audit_ledger = audit_ledger_raw if isinstance(audit_ledger_raw, list) else []
     weekly_plan = _load_json(DATA_DIR / "weekly_tactical_plan_active.json", {})
+    canonical_truth = load_canonical_truth(refresh_if_missing=False)
     all_reports = _get_cached_reports(force_refresh=False)
     active_jobs = _get_active_jobs_snapshot()
 
@@ -1169,6 +1248,9 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
         warroom_data=warroom_data,
         intel_feed=intel_feed,
         kanban_data=kanban_data,
+        ssot=ssot,
+        weekly_plan=weekly_plan,
+        canonical_truth=canonical_truth,
     )
 
     rooms_summary: List[Dict[str, Any]] = []
@@ -1218,6 +1300,9 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
 
     today_str = now_ict.strftime("%Y-%m-%d")
     executed_today = (cron_data.get("executed_milestones") or {}).get(today_str, [])
+    msess = canonical_truth.get("market_session") or get_vn_market_session_state(now_ict=now_ict)
+    can_reg = canonical_truth.get("canonical_regime") or warroom_data.get("canonical_regime") or {}
+    live_reg_id = str(can_reg.get("regime_id") or decision_brain.get("live_regime") or "S4_BEAR_CASH_SHIELD")
 
     return {
         "ok": True,
@@ -1225,13 +1310,17 @@ def _build_full_office_snapshot() -> Dict[str, Any]:
         "workflow_chain": "① Hiền (Dữ liệu & BCTC) ➔ ② Minh Quân & Alex (Thị trường) ➔ ③ James & Palmer (Kế hoạch Đầu tư) ◀── ④ Victor (Giám sát Live) | ⑤ Trọng & Palmer (Giám sát Toàn HT)",
         "generated_at": now_ict.strftime("%Y-%m-%d %H:%M:%S"),
         "weekday_vn": ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"][now_ict.weekday()],
-        "is_market_hours": (now_ict.weekday() < 5) and (9 * 60 <= (now_ict.hour * 60 + now_ict.minute) <= 15 * 60),
+        "is_market_hours": bool(msess.get("is_live_session", False)),
+        "market_session": msess,
+        "canonical_regime": can_reg,
+        "executive_directive_vi": canonical_truth.get("executive_directive_vi", ""),
         "ssot": ssot,
         "market_live": {
-            "phase": warroom_data.get("phase", "WEEKEND_STANDBY"),
-            "live_regime": decision_brain.get("live_regime", "S4_BEAR_CASH_SHIELD"),
-            "target_allocation_pct": decision_brain.get("target_allocation_pct", "0.0% NAV (100% CASH)"),
-            "verdict_vi": decision_brain.get("verdict_vi", ""),
+            "phase": warroom_data.get("phase", msess.get("status_code", "STANDBY")),
+            "live_regime": live_reg_id,
+            "regime_badge_vi": can_reg.get("short_label") or live_reg_id,
+            "target_allocation_pct": can_reg.get("target_exposure_label") or decision_brain.get("target_allocation_pct", "0.0% NAV"),
+            "verdict_vi": decision_brain.get("verdict_vi") or canonical_truth.get("executive_directive_vi", ""),
             "vn_index": recon.get("vn_index", 0),
             "vn_index_chg_pct": recon.get("vn_index_chg_pct", 0),
             "breadth_ma20_pct": recon.get("live_breadth_ma20_pct", 0),

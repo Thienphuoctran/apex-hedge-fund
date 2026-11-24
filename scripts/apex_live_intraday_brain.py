@@ -18,6 +18,7 @@ Nhiệm vụ (Hạng mục 1.2 War-Room V4.0):
 
 import sys
 import os
+import re
 import json
 import time
 import datetime
@@ -44,6 +45,8 @@ from scripts.vietnam_realtime_feed import (
     fetch_stock_indicators_live,
     _compute_session_elapsed_fraction,
 )
+from scripts.vn_market_calendar import get_vn_market_session_state, is_vn_trading_day
+from scripts.apex_canonical_truth import classify_canonical_regime, build_and_save_canonical_truth
 
 _BRAIN_LOCK = threading.Lock()
 _SNAPSHOT_CACHE: Dict[str, Any] = {"ts": 0.0, "ssot_sig": None, "data": None}
@@ -83,13 +86,30 @@ def _load_json_safe(path: Path) -> Dict[str, Any]:
         return {}
 
 
+def _extract_vnd_prices(text: Any) -> List[float]:
+    """Trích xuất giá cổ phiếu VNĐ (>= 1,000 đ) từ chuỗi mô tả trong kế hoạch tuần/nghị quyết."""
+    if not text:
+        return []
+    cleaned = re.sub(r"\([^)]*\)", "", str(text))
+    cleaned = re.sub(r"\b\d{1,2}[h:]\d{2}\b", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\bMA\d+\b", "", cleaned, flags=re.IGNORECASE)
+    vals: List[float] = []
+    for m in re.findall(r"(\d{1,3}(?:,\d{3})+|\d{4,6})", cleaned):
+        try:
+            v = float(m.replace(",", ""))
+            if 1000.0 <= v <= 500000.0:
+                vals.append(v)
+        except Exception:
+            pass
+    return vals
+
+
 def build_unified_watchlist() -> Dict[str, Any]:
     """
     Hợp nhất Watchlist động từ:
     1) SSOT `data/current_portfolio_state.json` (Mã đang nắm giữ)
-    2) `VN_Market/07_Daily_Specialist/vn_daily_ledger.json` (Sổ lệnh Minh Quân)
-    3) `08_Master_Investment_CIO/master_execution_blotter.json` (Sổ lệnh Master CIO James)
-    4) `data/weekly_tactical_plan_active.json` (Nếu có)
+    2) `data/weekly_tactical_plan_active.json` (Nghị quyết Đại Hội Đồng mới nhất — ưu tiên #1 cho Standby!)
+    3) `VN_Market/07_Daily_Specialist/vn_daily_ledger.json` & `master_execution_blotter.json`
     """
     ssot = _load_json_safe(DATA_DIR / "current_portfolio_state.json")
     vn_ledger = _load_json_safe(VN_SPEC_DIR / "vn_daily_ledger.json")
@@ -125,29 +145,34 @@ def build_unified_watchlist() -> Dict[str, Any]:
         if bsym:
             brain_picks_map[bsym] = bp
 
-    # Thông số định lượng rổ Brain V3.0 Tuần 48 (BCTC Q3/2026 sạch — Cấm BAF/VIX/CII/CEO)
     v3_data = _load_json_safe(DATA_DIR / "apex_autonomous_brain_v3_output.json")
     summit_tcbs_defaults: Dict[str, Dict[str, Any]] = {
-        "TPB": {"name": "TPBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 12350.0, "probe_price": 12250.0, "stop_loss": 11600.0, "tp1": 13350.0, "tp2": 14450.0, "catalyst": "Brain V3 #1 (85.9đ): F-Score 9/9, số hóa sinh trắc học VNeID"},
-        "CTG": {"name": "VietinBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 30100.0, "probe_price": 29950.0, "stop_loss": 28300.0, "tp1": 32650.0, "tp2": 35350.0, "catalyst": "Brain V3 #2 (82.9đ): F-Score 8/9, ROE 22.56%, tín dụng dự án lớn"},
-        "HDB": {"name": "HDBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 21800.0, "probe_price": 21700.0, "stop_loss": 20500.0, "tp1": 23650.0, "tp2": 25600.0, "catalyst": "Brain V3 #4 (75.1đ): RS 90, ROE 23.73%, hợp tác vốn MUFG Nhật Bản"},
-        "HPG": {"name": "Tập Đoàn Hòa Phát", "exchange": "HOSE", "sector": "Thép & Vật Liệu", "fallback_price": 20450.0, "probe_price": 19900.0, "stop_loss": 18800.0, "tp1": 21900.0, "tp2": 23600.0, "catalyst": "Brain V3 #3 (78.1đ): F-Score 8/9, Dung Quất 2, News 100/100"},
-        "VPB": {"name": "VPBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 20500.0, "probe_price": 20300.0, "stop_loss": 19200.0, "tp1": 22350.0, "tp2": 24200.0, "catalyst": "Brain V3 #5 (73.7đ): F-Score 7/9, LNST Q3 +51% YoY"},
+        "TPB": {"name": "TPBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 12350.0, "probe_price": 12250.0, "stop_loss": 11600.0, "tp1": 13350.0, "tp2": 14450.0, "catalyst": "F-Score 9/9, OCF/LNST 4.00x, số hóa VNeID & bù trừ CK"},
+        "CTG": {"name": "VietinBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 30350.0, "probe_price": 30150.0, "stop_loss": 28500.0, "tp1": 33200.0, "tp2": 35800.0, "catalyst": "Ưu tiên #1 Nhịp 2: F=8/9, OCF 1.63x, ROE 22.56%, bán tháp Ciputra"},
+        "NAB": {"name": "Nam A Bank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 13200.0, "probe_price": 13100.0, "stop_loss": 12400.0, "tp1": 14400.0, "tp2": 15700.0, "catalyst": "Ưu tiên #2 Nhịp 2: Top 1 Leader vượt MA20/MA50, RS=97, F=8/9, Buy-Up 67.9%"},
+        "CTS": {"name": "Chứng Khoán VietinBank", "exchange": "HOSE", "sector": "Chứng Khoán & Đầu Tư", "fallback_price": 24150.0, "probe_price": 23800.0, "stop_loss": 22300.0, "tp1": 26600.0, "tp2": 29000.0, "catalyst": "Dự phòng Nhóm Chứng Khoán: Vượt MA20/MA50, F=7/9, RS=85, OCF/LNST 1.12x"},
+        "HPG": {"name": "Tập Đoàn Hòa Phát", "exchange": "HOSE", "sector": "Thép & Vật Liệu", "fallback_price": 20400.0, "probe_price": 20200.0, "stop_loss": 19300.0, "tp1": 22300.0, "tp2": 24100.0, "catalyst": "F-Score 8/9, OCF 1.08x, FCF 6,451 tỷ, Dung Quất 2 đạt 90–95% công suất"},
+        "HDB": {"name": "HDBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 21800.0, "probe_price": 21800.0, "stop_loss": 20500.0, "tp1": 23650.0, "tp2": 25600.0, "catalyst": "ROE 23.73%, đối tác MUFG; theo dõi khi khối ngoại ngừng bán ròng"},
+        "VPB": {"name": "VPBank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 20450.0, "probe_price": 20300.0, "stop_loss": 19350.0, "tp1": 23450.0, "tp2": 25200.0, "catalyst": "F-Score 7/9, OCF 2.03x, tăng trưởng tín dụng 28.2%"},
         "TCB": {"name": "Techcombank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 21200.0, "probe_price": 21000.0, "stop_loss": 19850.0, "tp1": 23100.0, "tp2": 25000.0, "catalyst": "CASA top đầu ngành, ngân hàng bán lẻ & IB hàng đầu"},
-        "NAB": {"name": "Nam A Bank", "exchange": "HOSE", "sector": "Ngân Hàng TMCP", "fallback_price": 13000.0, "probe_price": 12900.0, "stop_loss": 12200.0, "tp1": 14150.0, "tp2": 15300.0, "catalyst": "RS 95, F-Score 8/9, P/E 5.8x, thanh khoản & động lượng tốt"},
-        "SSI": {"name": "Chứng Khoán SSI", "exchange": "HOSE", "sector": "Chứng Khoán & Đầu Tư", "fallback_price": 20000.0, "probe_price": 19800.0, "stop_loss": 18700.0, "tp1": 21800.0, "tp2": 23600.0, "catalyst": "Đầu ngành chứng khoán, F-Score 8/9, hưởng lợi thanh khoản"},
-        "PVT": {"name": "Tổng Công Ty Vận Tải Dầu Khí", "exchange": "HOSE", "sector": "Vận Tải Dầu Khí", "fallback_price": 18650.0, "probe_price": 18450.0, "stop_loss": 17450.0, "tp1": 20300.0, "tp2": 21950.0, "catalyst": "F-Score 9/9, OCF/LNST 2.38x, đội tàu trẻ hóa, giá cước USD"},
+        "PVT": {"name": "Tổng Công Ty Vận Tải Dầu Khí", "exchange": "HOSE", "sector": "Vận Tải Dầu Khí", "fallback_price": 18850.0, "probe_price": 18650.0, "stop_loss": 17800.0, "tp1": 20700.0, "tp2": 22300.0, "catalyst": "F-Score 9/9, OCF/LNST 2.38x, >55 tàu vận tải quốc tế"},
         "NT2": {"name": "Điện Lực Nhơn Trạch 2", "exchange": "HOSE", "sector": "Điện & Năng Lượng", "fallback_price": 23850.0, "probe_price": 23600.0, "stop_loss": 22300.0, "tp1": 25950.0, "tp2": 28100.0, "catalyst": "Hết nợ vay dài hạn, RS 97, sản lượng điện khí phục hồi"},
-        "PVP": {"name": "Vận Tải Dầu Khí TBD", "exchange": "HOSE", "sector": "Vận Tải Dầu Khí", "fallback_price": 16750.0, "probe_price": 16550.0, "stop_loss": 15650.0, "tp1": 18250.0, "tp2": 19750.0, "catalyst": "F-Score khỏe, P/E 7.4x, vận tải dầu thô ổn định"},
-        "CTS": {"name": "Chứng Khoán VietinBank", "exchange": "HOSE", "sector": "Chứng Khoán & Đầu Tư", "fallback_price": 23400.0, "probe_price": 23150.0, "stop_loss": 21900.0, "tp1": 25500.0, "tp2": 27600.0, "catalyst": "CTCK ngân hàng quốc doanh, RS 85, tự doanh hiệu quả"},
+        "SSI": {"name": "Chứng Khoán SSI", "exchange": "HOSE", "sector": "Chứng Khoán & Đầu Tư", "fallback_price": 20000.0, "probe_price": 19800.0, "stop_loss": 18700.0, "tp1": 21800.0, "tp2": 23600.0, "catalyst": "Đầu ngành chứng khoán, F-Score 8/9"},
+        "PVP": {"name": "Vận Tải Dầu Khí TBD", "exchange": "HOSE", "sector": "Vận Tải Dầu Khí", "fallback_price": 16750.0, "probe_price": 16550.0, "stop_loss": 15650.0, "tp1": 18250.0, "tp2": 19750.0, "catalyst": "F-Score khỏe, P/E 7.4x"},
     }
 
-    forbidden_watch = {"BAF", "MSH", "VIX", "CII", "CEO"}
+    forbidden_watch = {"BAF", "MSH", "VIX", "CII", "CEO", "PNJ", "TCH", "POW"}
     ordered_symbols: List[str] = []
+    # 1. Đang nắm giữ trong SSOT
     for sym in active_positions.keys():
         s_up = sym.upper().strip()
-        if s_up and s_up not in ordered_symbols:
+        if s_up and int((active_positions.get(sym) or {}).get("shares") or 0) > 0 and s_up not in ordered_symbols:
             ordered_symbols.append(s_up)
+    # 2. Danh mục ưu tiên đã duyệt bởi Đại Hội Đồng trong weekly_tactical_plan_active.json
+    for sym in weekly_map.keys():
+        if sym not in forbidden_watch and sym not in ordered_symbols:
+            ordered_symbols.append(sym)
+    # 3. Các mã Brain V3 / Ledger / Master Blotter còn lại
     for st_v3 in (v3_data.get("asymmetric_conviction_strikes") or []):
         s_up = str(st_v3.get("symbol") or "").upper().strip()
         if s_up and s_up not in forbidden_watch and s_up not in ordered_symbols:
@@ -162,14 +187,10 @@ def build_unified_watchlist() -> Dict[str, Any]:
     for sym in master_map.keys():
         if sym not in forbidden_watch and sym not in ordered_symbols:
             ordered_symbols.append(sym)
-    for sym in weekly_map.keys():
-        if sym not in forbidden_watch and sym not in ordered_symbols:
-            ordered_symbols.append(sym)
-    for sym in ("TPB", "HDB", "CTG", "HPG", "VPB", "TCB", "NAB", "SSI", "PVT", "NT2", "PVP", "CTS"):
+    for sym in ("TPB", "HPG", "CTG", "NAB", "CTS", "HDB", "VPB", "PVT", "TCB", "NT2", "SSI", "PVP"):
         if sym not in ordered_symbols:
             ordered_symbols.append(sym)
 
-    # Mở rộng tối đa 12 mã cốt lõi & Danh mục quan tâm TCBS trong 1 batch HTTP VPS (< 220ms)
     ordered_symbols = ordered_symbols[:12]
 
     unified_items: Dict[str, Dict[str, Any]] = {}
@@ -184,82 +205,101 @@ def build_unified_watchlist() -> Dict[str, Any]:
 
         is_holding = bool(pos and int(pos.get("shares", 0)) > 0)
         entry_price = float(pos.get("entry_price") or 0.0)
+
+        wkl_cur_prices = _extract_vnd_prices(wkl.get("current_status"))
+        wkl_entry_prices = _extract_vnd_prices(wkl.get("entry_zone"))
+        wkl_stop_prices = _extract_vnd_prices(wkl.get("stop_loss_2xatr"))
+        wkl_tp1_prices = _extract_vnd_prices(wkl.get("tp1"))
+        wkl_tp2_prices = _extract_vnd_prices(wkl.get("tp2"))
+        wkl_limit_shares = re.findall(r"(\d{3,4})\s*CP", str(wkl.get("weekly_limit") or ""))
+
         fallback_price = float(
             pos.get("current_price")
+            or (wkl_cur_prices[0] if wkl_cur_prices else 0.0)
+            or sdef.get("fallback_price")
+            or bp.get("live_price")
             or ldg.get("current_price")
             or mst.get("current_price_vnd")
-            or bp.get("live_price")
-            or sdef.get("fallback_price")
             or entry_price
             or 0.0
         )
         stop_loss = float(
             pos.get("stop_loss")
-            or ldg.get("stop_loss")
-            or mst.get("stop_loss_2atr_vnd")
+            or (wkl_stop_prices[0] if wkl_stop_prices else 0.0)
             or sdef.get("stop_loss")
             or bp_opt.get("stop_loss_price")
-            or (round(fallback_price * 0.935, -1) if fallback_price > 0 else 0.0)
+            or ldg.get("stop_loss")
+            or mst.get("stop_loss_2atr_vnd")
+            or (round(fallback_price * 0.945, -1) if fallback_price > 0 else 0.0)
         )
         tp1 = float(
             pos.get("take_profit_tp1")
-            or ldg.get("tp1")
-            or mst.get("tp1_vnd")
+            or (wkl_tp1_prices[0] if wkl_tp1_prices else 0.0)
             or sdef.get("tp1")
             or bp_opt.get("tp1_price")
+            or ldg.get("tp1")
+            or mst.get("tp1_vnd")
             or (round(fallback_price * 1.10, -1) if fallback_price > 0 else 0.0)
         )
         tp2 = float(
             pos.get("take_profit_tp2")
-            or ldg.get("tp2")
-            or mst.get("tp2_vnd")
+            or (wkl_tp2_prices[0] if wkl_tp2_prices else 0.0)
             or sdef.get("tp2")
             or bp_opt.get("tp2_price")
+            or ldg.get("tp2")
+            or mst.get("tp2_vnd")
             or (round(fallback_price * 1.18, -1) if fallback_price > 0 else 0.0)
         )
-        probe_price = float(
-            ldg.get("probe_price_60")
-            or mst.get("limit_pullback_price_vnd")
-            or sdef.get("probe_price")
-            or fallback_price
-        )
-        breakout_price = float(ldg.get("breakout_price_40") or (round(probe_price * 1.025, -1) if probe_price > 0 else 0.0))
+        if wkl_entry_prices:
+            probe_price = float(wkl_entry_prices[0])
+            breakout_price = float(wkl_entry_prices[-1] if len(wkl_entry_prices) > 1 else round(probe_price * 1.01, -1))
+        else:
+            probe_price = float(sdef.get("probe_price") or ldg.get("probe_price_60") or mst.get("limit_pullback_price_vnd") or fallback_price)
+            breakout_price = float(ldg.get("breakout_price_40") or (round(probe_price * 1.02, -1) if probe_price > 0 else 0.0))
 
-        name = pos.get("name") or ldg.get("name") or mst.get("name") or wkl.get("name") or bp.get("company_name") or sdef.get("name") or sym
-        exchange = ldg.get("exchange") or mst.get("exchange") or sdef.get("exchange") or "HOSE"
+        name = pos.get("name") or wkl.get("name") or sdef.get("name") or bp.get("company_name") or ldg.get("name") or mst.get("name") or sym
+        exchange = sdef.get("exchange") or ldg.get("exchange") or mst.get("exchange") or "HOSE"
         if exchange and f"({exchange})" not in name:
             display_name = f"{name} ({exchange})"
         else:
             display_name = name
 
         catalyst = (
-            ldg.get("catalysts")
-            or mst.get("catalysts")
-            or wkl.get("catalyst")
+            wkl.get("catalyst")
             or sdef.get("catalyst")
-            or "Cổ phiếu đạt chuẩn lọc BCTC OCF/LNST > 1x & RS Rating cao"
+            or ldg.get("catalysts")
+            or mst.get("catalysts")
+            or "Cổ phiếu đạt chuẩn lọc BCTC OCF/LNST >= 1.0x & RS Rating cao"
         )
-        sleeve = ldg.get("sleeve") or mst.get("sleeve") or wkl.get("tier") or ("CORE HOLDING" if is_holding else "STANDBY ALPHA")
+        sleeve = wkl.get("tier") or ("CORE HOLDING" if is_holding else (ldg.get("sleeve") or mst.get("sleeve") or "STANDBY ALPHA"))
+        planned_sh = int(wkl_limit_shares[0]) if wkl_limit_shares else int(ldg.get("shares") or mst.get("shares") or 100)
+
+        entry_zone_label = ""
+        if wkl_entry_prices and len(wkl_entry_prices) >= 2:
+            entry_zone_label = f"{wkl_entry_prices[0]:,.0f} – {wkl_entry_prices[1]:,.0f} ₫"
+        elif probe_price > 0:
+            entry_zone_label = f"{round(probe_price * 0.995, -1):,.0f} – {round(probe_price * 1.005, -1):,.0f} ₫"
 
         unified_items[sym] = {
             "symbol": sym,
             "display_name": display_name,
             "exchange": exchange,
-            "sector": ldg.get("sector") or mst.get("sector") or bp.get("sector_name") or sdef.get("sector") or "Cổ phiếu Dẫn Dắt",
+            "sector": bp.get("sector_name") or sdef.get("sector") or ldg.get("sector") or mst.get("sector") or "Cổ phiếu Dẫn Dắt",
             "sleeve": sleeve,
             "is_holding": is_holding,
             "shares": int(pos.get("shares", 0)) if is_holding else 0,
             "tradable_shares": int(pos.get("tradable_shares", pos.get("shares", 0))) if is_holding else 0,
-            "planned_shares": int(ldg.get("shares") or mst.get("shares") or 100),
+            "planned_shares": planned_sh,
             "entry_price": entry_price,
             "fallback_price": fallback_price,
             "probe_price": probe_price,
             "breakout_price": breakout_price,
+            "entry_zone_label": entry_zone_label,
             "stop_loss": stop_loss,
             "tp1": tp1,
             "tp2": tp2,
             "rr_ratio": float(ldg.get("rr_ratio") or mst.get("reward_risk_ratio") or 2.5),
-            "win_prob_pct": float(ldg.get("win_prob_pct") or mst.get("win_prob_pct") or 80.0),
+            "win_prob_pct": float(ldg.get("win_prob_pct") or mst.get("win_prob_pct") or 75.0),
             "expected_value_pct": float(ldg.get("expected_value_pct") or mst.get("expected_value_pct") or 8.5),
             "catalyst": catalyst,
         }
@@ -268,72 +308,55 @@ def build_unified_watchlist() -> Dict[str, Any]:
         "ssot": ssot,
         "vn_ledger": vn_ledger,
         "master_blotter": master_blotter,
+        "weekly_plan": weekly_plan,
         "symbols": ordered_symbols,
         "items": unified_items,
     }
 
 
-def classify_intraday_regime(market_overview: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Đánh giá chế độ thị trường trong phiên (Market Regime Intraday):
-    - RISK_ON_BREAKOUT
-    - SIDEWAY_CHOPPY
-    - DEFENSIVE_SELLOFF
-    """
+def classify_intraday_regime(
+    market_overview: Dict[str, Any],
+    now_ict: Optional[datetime.datetime] = None,
+    has_open_positions: bool = False,
+    current_invested_pct: float = 0.0,
+) -> Dict[str, Any]:
+    """Đánh giá Chế độ Thị trường HỢP NHẤT qua apex_canonical_truth + vn_market_calendar."""
+    if now_ict is None:
+        now_ict = get_ict_now()
     vni = market_overview.get("vn_index", {})
     vn30 = market_overview.get("vn30_index", {})
     breadth = market_overview.get("market_breadth", {})
 
-    vni_chg = float(vni.get("change_pct") or 0.0)
+    warroom_state = _load_json_safe(DATA_DIR / "live_warroom_state.json")
+    recon = warroom_state.get("recon_summary") if isinstance(warroom_state.get("recon_summary"), dict) else {}
+
+    vni_val = float(vni.get("value") or recon.get("vn_index") or 0.0)
+    vni_chg = float(vni.get("change_pct") if vni.get("value") else (recon.get("vn_index_chg_pct") or 0.0))
+    vni_ma20 = float(vni.get("ma20") or recon.get("vn_index_ma20") or 0.0)
+    vni_ma50 = float(vni.get("ma50") or recon.get("vn_index_ma50") or 0.0)
+    br20_pct = float(recon.get("live_breadth_ma20_pct") or 0.0)
+    buy_up_pct = float(recon.get("avg_buy_up_pct") or 50.0)
     adv_ratio = float(breadth.get("advance_ratio_pct") or 50.0)
     basis = float(vn30.get("basis_pts") or 0.0)
-    pace = float(vni.get("volume_pace_ratio") or 1.0)
-    fn_net = float(vni.get("raw_foreign_net_ty") or 0.0)
+    pace = float(vni.get("volume_pace_ratio") or recon.get("volume_pace_ratio") or 1.0)
+    fn_net = float(vni.get("raw_foreign_net_ty") or recon.get("foreign_net_ty") or 0.0)
 
-    if vni_chg <= -0.80 or adv_ratio <= 32.0 or basis <= -8.0:
-        return {
-            "regime_id": "DEFENSIVE_SELLOFF",
-            "label": "🛡️ PHÒNG THỦ CHỌN LỌC (ÁP LỰC BÁN RÕ RỆT)",
-            "badge_color": "#ef4444",
-            "max_new_allocation_pct": 15,
-            "guidance": (
-                f"VN-Index {vni_chg:+.2f}%, Độ rộng tích cực {adv_ratio:.0f}%, Basis {basis:+.2f}đ. "
-                "Tầng 1 Phòng thủ (trần giải ngân mới <= 15%): bảo vệ vốn, chỉ rình mã BCTC kim cương tại MA200 nếu đủ cầu."
-            ),
-        }
-    elif vni_chg >= 0.65 and adv_ratio >= 62.0 and basis >= -1.0 and pace >= 1.15:
-        return {
-            "regime_id": "A_PLUS_CONVICTION",
-            "label": "🔥 ĐÁNH LỚN BẤT ĐỐI XỨNG A+ (KPI 4M+ TẾT)",
-            "badge_color": "#10b981",
-            "max_new_allocation_pct": 85,
-            "guidance": (
-                f"VN-Index {vni_chg:+.2f}%, Độ rộng {adv_ratio:.0f}% đồng thuận cao, Pace {pace:.2f}x, Ngoại {fn_net:+.1f} Tỷ. "
-                "Kích hoạt Tầng 3+ Mạo hiểm Có Cơ sở (tối đa 85% NAV, ưu tiên lô 200 CP vào mã Leader AAA/A+ có R:R >= 2.2x & Stop cứng)."
-            ),
-        }
-    elif vni_chg >= 0.40 and adv_ratio >= 52.0 and basis >= -2.0:
-        return {
-            "regime_id": "RISK_ON_BREAKOUT",
-            "label": "🚀 TĂNG TỐC TẦNG 3 (DÒNG TIỀN ĐỒNG THUẬN)",
-            "badge_color": "#10b981",
-            "max_new_allocation_pct": 80,
-            "guidance": (
-                f"VN-Index {vni_chg:+.2f}%, Độ rộng {adv_ratio:.0f}% mã xanh, Pace {pace:.2f}x, Ngoại {fn_net:+.1f} Tỷ. "
-                "Mở khóa Tầng 3 công suất (tối đa 80% NAV): giải ngân Limit LO chuẩn lô 200 CP trong khung 13h30–14h25 & sẵn sàng Scaling Out 50/50."
-            ),
-        }
-    else:
-        return {
-            "regime_id": "SIDEWAY_CHOPPY",
-            "label": "⚖️ GIẰNG CO CHỌN LỌC TẦNG 2 (T+0 & LEADER)",
-            "badge_color": "#fbbf24",
-            "max_new_allocation_pct": 50,
-            "guidance": (
-                f"VN-Index {vni_chg:+.2f}%, Độ rộng {adv_ratio:.0f}%, Basis {basis:+.2f}đ. "
-                "Mở khóa Tầng 2 (tối đa 50% NAV): cấm FOMO ATO; ưu tiên mã có dữ liệu BCTC sạch & áp dụng Morning-Fade Lock khi kéo sáng cầu yếu."
-            ),
-        }
+    session_state = get_vn_market_session_state(now_ict=now_ict, market_overview=market_overview)
+    return classify_canonical_regime(
+        vn_index=vni_val,
+        vn_index_chg_pct=vni_chg,
+        vni_ma20=vni_ma20,
+        vni_ma50=vni_ma50,
+        br20_pct=br20_pct,
+        buy_up_pct=buy_up_pct,
+        adv_ratio=adv_ratio,
+        session_state=session_state,
+        has_open_positions=has_open_positions,
+        current_invested_pct=current_invested_pct,
+        vol_pace=pace,
+        basis=basis,
+        foreign_net_ty=fn_net,
+    )
 
 
 def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float = 3.0) -> Dict[str, Any]:
@@ -362,8 +385,20 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
     symbols = watchlist_ctx["symbols"]
     items = watchlist_ctx["items"]
 
+    active_pos_raw = ssot.get("active_positions") if isinstance(ssot.get("active_positions"), dict) else {}
+    has_open_pos = any(int((p or {}).get("shares") or 0) > 0 for p in active_pos_raw.values() if isinstance(p, dict))
+    nav_ssot = float(ssot.get("total_nav_vnd") or ssot.get("cash_balance_vnd") or 1.0)
+    stk_ssot = float(ssot.get("total_market_val_vnd") or 0.0)
+    invested_pct_ssot = round((stk_ssot / nav_ssot) * 100.0, 1) if nav_ssot > 0 else 0.0
+
     market_overview = fetch_vn_market_indices_live(ttl_seconds=4)
-    regime = classify_intraday_regime(market_overview)
+    session_state = get_vn_market_session_state(now_ict=now_ict, market_overview=market_overview)
+    regime = classify_intraday_regime(
+        market_overview,
+        now_ict=now_ict,
+        has_open_positions=has_open_pos,
+        current_invested_pct=invested_pct_ssot,
+    )
     live_quotes = get_realtime_vn_quotes_batch(symbols) if symbols else {}
     pace_fraction = _compute_session_elapsed_fraction(now_ict)
 
@@ -395,11 +430,16 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
     min_br_filter = float(ad_filters.get("min_breadth_pct", 32.0))
     adv_ratio_cur = float(market_overview.get("market_breadth", {}).get("advance_ratio_pct", 50.0))
 
-    base_cap = int(regime.get("max_new_allocation_pct", 25))
+    base_cap = int(regime.get("max_new_allocation_pct", 0))
     sp_mult = float(global_spillover.get("risk_multiplier", 1.0))
     regime["base_max_allocation_pct"] = base_cap
     regime["spillover_multiplier"] = sp_mult
-    regime["max_new_allocation_pct"] = int(max(10, min(80, round(base_cap * sp_mult))))
+    if bool(regime.get("is_closed_override")) or base_cap <= 0:
+        regime["max_new_allocation_pct"] = 0
+    else:
+        regime["max_new_allocation_pct"] = int(max(10, min(80, round(base_cap * sp_mult))))
+
+    is_market_closed = bool(regime.get("is_closed_override")) or (not bool(session_state.get("is_trading_day"))) or bool(session_state.get("stale_feed_detected"))
 
     cash_vnd = float(ssot.get("cash_balance_vnd", 0.0))
     realized_pnl_vnd = float(ssot.get("realized_pnl_vnd", 167119.0))
@@ -498,9 +538,14 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
                 "status": "HOLDING_T0_AVAILABLE",
             })
         else:
-            # Cổ phiếu tầm ngắm (Standby) với Bộ Lọc Bull-Trap Thích Nghi
+            # Cổ phiếu tầm ngắm (Standby) với Bộ Lọc Bull-Trap Thích Nghi & Khóa Ngày Nghỉ
             probe_p = meta["probe_price"] or curr_p
-            if regime["regime_id"] == "DEFENSIVE_SELLOFF" or (adv_ratio_cur < min_br_filter and buy_up < min_bu_filter):
+            if is_market_closed:
+                sec_status = "MARKET_CLOSED"
+                next_dm = f"{session_state['next_trading_day'][8:10]}/{session_state['next_trading_day'][5:7]}"
+                sec_label = f"⏸️ CHỜ MỞ SÀN {next_dm} (LO {probe_p:,.0f}đ)"
+                action_code = "STANDBY_MARKET_CLOSED"
+            elif regime["regime_id"] == "S4_BEAR_CASH_SHIELD" or (adv_ratio_cur < min_br_filter and buy_up < min_bu_filter):
                 sec_status = "PAUSED"
                 sec_label = f"🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng {adv_ratio_cur:.0f}%)"
                 action_code = "STANDBY_DEFENSIVE_PAUSE"
@@ -561,7 +606,7 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
             "security_label": sec_label,
             "action_code": action_code,
             "catalyst": meta["catalyst"],
-            "is_live": bool(q.get("is_live", False)),
+            "is_live": bool(q.get("is_live", False)) and (not is_market_closed),
             "data_source": q.get("data_source", "FALLBACK_STATIC"),
         }
         live_stocks.append(stock_row)
@@ -575,8 +620,11 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
             "current_price": curr_p,
             "change_pct": pct,
             "entry_zone": (
-                f"{round(meta['probe_price']*0.99, -1):,.0f} – {round(meta['probe_price']*1.005, -1):,.0f} ₫"
-                if meta["probe_price"] > 0 else "Theo tín hiệu"
+                meta.get("entry_zone_label")
+                or (
+                    f"{round(meta['probe_price']*0.99, -1):,.0f} – {round(meta['probe_price']*1.005, -1):,.0f} ₫"
+                    if meta["probe_price"] > 0 else "Theo tín hiệu"
+                )
             ),
             "stop_loss": stop_p,
             "stop_pct": round(((stop_p - curr_p) / curr_p) * 100.0, 1) if curr_p > 0 and stop_p > 0 else -6.5,
@@ -590,8 +638,8 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
             "catalyst": meta["catalyst"],
         })
 
-    if regime["regime_id"] == "DEFENSIVE_SELLOFF" and live_holdings:
-        worst_threat_level = max(worst_threat_level, 3)
+    if regime["regime_id"] in ("S4_BEAR_CASH_SHIELD", "DEFENSIVE_SELLOFF") and live_holdings:
+        worst_threat_level = max(worst_threat_level, 2)
 
     live_nav_vnd = cash_vnd + total_live_stocks_val
     live_un_pnl = total_live_stocks_val - total_cost_basis
@@ -599,20 +647,26 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
     cash_pct = round((cash_vnd / live_nav_vnd) * 100.0, 1) if live_nav_vnd > 0 else 100.0
     stocks_pct = round(100.0 - cash_pct, 1)
     total_shares = sum(h["shares"] for h in live_holdings)
+    holdings_desc = " + ".join(f"{h['shares']} {h['symbol']}" for h in live_holdings) or "0 CP"
 
-    threat_map = {
-        1: ("LEVEL_1_SAFE_POSITION_ACTIVE", f"🟢 CẤP 1 — AN TOÀN ({cash_pct:.1f}% Tiền mặt • {total_shares} CP nằm trên vùng an toàn)"),
-        2: ("LEVEL_2_WATCH", f"🟡 CẤP 2 — GIÁM SÁT NHẸ ({', '.join(threat_reasons) or 'Thị trường giằng co'})"),
-        3: ("LEVEL_3_ELEVATED_DEFENSE", f"🟠 CẤP 3 — PHÒNG THỦ CHỦ ĐỘNG ({', '.join(threat_reasons) or regime['label']})"),
-        4: ("LEVEL_4_HIGH_ALERT", f"🔴 CẤP 4 — CẢNH BÁO CAO ({', '.join(threat_reasons)})"),
-        5: ("LEVEL_5_EMERGENCY_STOP", f"🚨 CẤP 5 — KHẨN CẤP STOP LOSS ({', '.join(threat_reasons)})"),
-    }
-    threat_level_id, threat_label = threat_map.get(worst_threat_level, threat_map[1])
+    if is_market_closed:
+        threat_level_id = f"LEVEL_1_{session_state['status_code']}"
+        threat_label = f"⏸️ SÀN ĐÓNG CỬA ({session_state['short_badge_vi']}) — Giữ nguyên {total_shares} CP ({holdings_desc}) & Két {cash_pct:.1f}%"
+    else:
+        threat_map = {
+            1: ("LEVEL_1_SAFE_POSITION_ACTIVE", f"🟢 CẤP 1 — AN TOÀN ({cash_pct:.1f}% Tiền mặt • {total_shares} CP nằm trên vùng an toàn)"),
+            2: ("LEVEL_2_WATCH", f"🟡 CẤP 2 — GIÁM SÁT NHẸ ({', '.join(threat_reasons) or 'Thị trường giằng co'})"),
+            3: ("LEVEL_3_ELEVATED_DEFENSE", f"🟠 CẤP 3 — PHÒNG THỦ CHỦ ĐỘNG ({', '.join(threat_reasons) or regime['label']})"),
+            4: ("LEVEL_4_HIGH_ALERT", f"🔴 CẤP 4 — CẢNH BÁO CAO ({', '.join(threat_reasons)})"),
+            5: ("LEVEL_5_EMERGENCY_STOP", f"🚨 CẤP 5 — KHẨN CẤP STOP LOSS ({', '.join(threat_reasons)})"),
+        }
+        threat_level_id, threat_label = threat_map.get(worst_threat_level, threat_map[1])
 
     snapshot = {
         "generated_at": now_ict.strftime("%Y-%m-%d %H:%M:%S"),
         "trading_date": now_ict.strftime("%Y-%m-%d"),
         "server_time": now_ict.strftime("%H:%M:%S"),
+        "market_session": session_state,
         "market_overview": market_overview,
         "intraday_regime": regime,
         "live_stocks": live_stocks,
@@ -630,7 +684,7 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
             "total_shares": total_shares,
             "holdings_count": len(live_holdings),
             "holdings": live_holdings,
-            "holdings_desc": " + ".join(f"{h['shares']} {h['symbol']}" for h in live_holdings) or "0 CP",
+            "holdings_desc": holdings_desc,
         },
         "threat": {
             "level_num": worst_threat_level,
@@ -755,6 +809,8 @@ def sync_live_intraday_report(snapshot: Dict[str, Any], force_write: bool = Fals
 
     date_str = snapshot["trading_date"]
     gen_at = snapshot["generated_at"]
+    msess = snapshot.get("market_session") or {}
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
     mkt = snapshot["market_overview"]
     vni = mkt["vn_index"]
     vn30 = mkt["vn30_index"]
@@ -762,15 +818,26 @@ def sync_live_intraday_report(snapshot: Dict[str, Any], force_write: bool = Fals
     reg = snapshot["intraday_regime"]
     pf = snapshot["portfolio_live"]
 
+    report_title = (
+        f"# [BAN 7 VN & BAN 9] BÁO CÁO NGHỈ LỄ / ĐÓNG CỬA SÀN & CHUẨN BỊ PHIÊN KẾ TIẾP — {date_str}"
+        if is_closed
+        else f"# [BAN 7 VN & BAN 9] BÁO CÁO TÁC CHIẾN LIVE INTRADAY — {date_str}"
+    )
+    market_note = (
+        f"> **Trạng thái phiên:** {msess.get('status_label_vi')} | Bảng giá bên dưới là **dữ liệu đóng cửa tham chiếu phiên {msess.get('prev_trading_day', '--')}**, khóa đặt lệnh mới (`0%`) hôm nay.\n> **Lịch thanh toán & mở lại:** {msess.get('settlement_note_vi')}\n"
+        if is_closed
+        else ""
+    )
+
     lines = [
-        f"# [BAN 7 VN & BAN 9] BÁO CÁO TÁC CHIẾN LIVE INTRADAY — {date_str}",
+        report_title,
         f"**Cập nhật lúc:** `{gen_at} (ICT)` | **Tài khoản SSOT:** `TCBS 105C307855`  ",
         f"**Trạng thái thị trường (`Market Regime`):** **`{reg['label']}`**  ",
         f"**Chỉ thị điều hành:** {reg['guidance']}",
         "",
-        "---",
+        market_note + "---" if market_note else "---",
         "",
-        "## 1. BỨC TRANH BẢNG ĐIỆN THỜI GIAN THỰC",
+        "## 1. BỨC TRANH BẢNG ĐIỆN" + (" (THAM CHIẾU ĐÓNG CỬA PHIÊN TRƯỚC)" if is_closed else " THỜI GIAN THỰC"),
         f"- **VN-Index:** `{vni['value']:,.2f}` ({vni['change_pts']:+.2f} / `{vni['change_pct']:+.2f}%`) | GTGD: `{vni['turnover_ty_vnd']}` | Pace 20 phiên: `{vni['volume_pace_ratio']:.2f}x`",
         f"- **VN30-Index:** `{vn30['value']:,.2f}` ({vn30['change_pts']:+.2f} / `{vn30['change_pct']:+.2f}%`) | Phái sinh Basis: `{vn30['basis_vn30f']}`",
         f"- **Độ rộng & Khối ngoại:** `{br['advancers']} Tăng / {br['decliners']} Giảm / {br['unchanged']} Đứng` (`{br['sentiment']}`) | Khối ngoại VN30: `{vni['foreign_net_ty_vnd']}`",
@@ -845,7 +912,7 @@ def sync_live_intraday_report(snapshot: Dict[str, Any], force_write: bool = Fals
 def is_vn_trading_hours(now: Optional[datetime.datetime] = None) -> bool:
     if now is None:
         now = get_ict_now()
-    if now.weekday() >= 5:
+    if not is_vn_trading_day(now.date()):
         return False
     hm = now.hour * 60 + now.minute
     return (8 * 60 + 55) <= hm <= (14 * 60 + 48)

@@ -535,10 +535,17 @@ def get_available_archive_dates() -> List[Dict[str, Any]]:
 
 
 def get_daily_milestones_status() -> List[Dict[str, Any]]:
-    """Tính toán tiến độ 18 Cột Mốc Tác Chiến trong ngày so khớp với giờ Việt Nam."""
+    """Tính toán tiến độ 18 Cột Mốc Tác Chiến trong ngày so khớp với giờ Việt Nam & Lịch Nghỉ Lễ HOSE/HNX."""
     now_vn = get_ict_now()
     now_hm = now_vn.strftime("%H:%M")
-    is_weekend = now_vn.weekday() in (5, 6)
+    try:
+        from scripts.vn_market_calendar import get_vn_market_session_state
+        msess = get_vn_market_session_state(now_ict=now_vn)
+        is_closed_day = not bool(msess.get("is_trading_day", True))
+        is_holiday = bool(msess.get("is_holiday", False))
+    except Exception:
+        is_closed_day = now_vn.weekday() in (5, 6)
+        is_holiday = False
     trading_milestones = {"09:00", "11:45", "13:00", "14:00", "14:25", "15:15"}
 
     milestones_def = [
@@ -564,10 +571,10 @@ def get_daily_milestones_status() -> List[Dict[str, Any]]:
 
     status_list = []
     for time_milestone, tid, name, dept_code, icon, shift in milestones_def:
-        if is_weekend and time_milestone in trading_milestones:
-            status = "WEEKEND_STANDBY"
-            status_label = "NGHỈ GIAO DỊCH CUỐI TUẦN"
-            color = "#64748b"
+        if is_closed_day and time_milestone in trading_milestones:
+            status = "HOLIDAY_STANDBY" if is_holiday else "WEEKEND_STANDBY"
+            status_label = "🎌 NGHỈ LỄ HOSE/HNX" if is_holiday else "NGHỈ GIAO DỊCH CUỐI TUẦN"
+            color = "#d97706" if is_holiday else "#64748b"
         elif now_hm > time_milestone:
             status = "COMPLETED"
             status_label = "ĐÃ HOÀN TẤT"

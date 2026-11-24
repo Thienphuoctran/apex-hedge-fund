@@ -1,7 +1,7 @@
 {
   "meeting_time": "23:00:00",
-  "meeting_date": "2026-11-19",
-  "next_trading_day": "Thứ Sáu (20/11/2026)",
+  "meeting_date": "2026-11-23",
+  "next_trading_day": "Thứ Ba (24/11/2026)",
   "chairman_observed": "Trần Quốc Thiên Phước",
   "presiding_officer": "Master CIO James (Ban 8)",
   "council_status": "CONCLUDED_AND_RATIFIED",
@@ -9,42 +9,42 @@
     "minh_quan_score": 95.0,
     "alex_score": 52.0,
     "vn_walk_forward_hit_rate_pct": 100.0,
-    "minh_quan_corrective_action": "Minh Quân tuân thủ kỷ luật thép trên danh mục thực tế (MSH, BAF): giữ Stop 2xATR bảo vệ MSH/BAF, VETO HDB tới hết 20/11, và chuẩn bị rổ 200–300 CP/mã cho tuần sau.",
+    "minh_quan_corrective_action": "Minh Quân tuân thủ kỷ luật thép trên danh mục thực tế (PVT, TCB, MSH, BAF): giữ Stop 2xATR bảo vệ MSH/BAF, VETO HDB tới hết 20/11, và chuẩn bị rổ 200–300 CP/mã cho tuần sau.",
     "alex_corrective_action": "Alex phải cập nhật trần rủi ro tương quan Bán dẫn khống chế <= 28% NAV và tinh chỉnh lại độ sâu lệnh Limit Pullback vào specialist_evolution_journal.md."
   },
   "financial_snapshot": {
     "account_tcbs": "105C307855",
-    "total_nav_vnd": 20229522.0,
-    "cost_basis_vnd": 6571900.0,
-    "market_value_vnd": 6635000.0,
-    "unrealized_pnl_vnd": 63100.0,
-    "unrealized_pnl_pct": 0.96,
-    "cash_dry_powder_vnd": 13594522.0,
-    "cash_dry_powder_pct": 67.2,
+    "total_nav_vnd": 20051117.0,
+    "cost_basis_vnd": 4510000.0,
+    "market_value_vnd": 4510000.0,
+    "unrealized_pnl_vnd": 0.0,
+    "unrealized_pnl_pct": 0.0,
+    "cash_dry_powder_vnd": 15541117.0,
+    "cash_dry_powder_pct": 77.51,
     "leverage_margin_pct": 0.0,
     "holdings": [
       {
-        "symbol": "MSH",
-        "shares": 100,
-        "cost": 34510.0,
-        "close": 35200.0,
-        "pnl_vnd": 69000.0,
-        "pnl_pct": 2.0,
-        "tp1": 39500.0,
-        "stop_2atr": 33090.0
+        "symbol": "TPB",
+        "shares": 200,
+        "cost": 12300.0,
+        "close": 12350.0,
+        "pnl_vnd": 10000.0,
+        "pnl_pct": 0.41,
+        "tp1": 13350.0,
+        "stop_2atr": 11600.0
       },
       {
-        "symbol": "BAF",
+        "symbol": "HPG",
         "shares": 100,
-        "cost": 31209.0,
-        "close": 31150.0,
-        "pnl_vnd": -5900.0,
-        "pnl_pct": -0.19,
-        "tp1": 33200.0,
-        "stop_2atr": 30050.0
+        "cost": 20500.0,
+        "close": 20400.0,
+        "pnl_vnd": -10000.0,
+        "pnl_pct": -0.49,
+        "tp1": 22300.0,
+        "stop_2atr": 19300.0
       }
     ],
-    "settlement_status": "100% Tiền mặt (20,167,119 ₫, 0 CP) khả dụng trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên Thứ Sáu (20/11/2026)."
+    "settlement_status": "100% Tiền mặt (20,167,119 ₫, 0 CP) khả dụng trên tiểu khoản 105C307855. Sẵn sàng tác chiến phiên Thứ Ba (24/11/2026)."
   },
   "attendance_roster": [
     {

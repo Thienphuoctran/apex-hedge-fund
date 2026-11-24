@@ -35,10 +35,10 @@
   "max_single_stock_risk": 0.02,
   "t_plus_buffer_days": 2.5,
   "learning_cycle_days": 5,
-  "last_updated": "2026-11-21",
+  "last_updated": "2026-11-23",
   "tuning_audit": {
-    "updated_at": "2026-11-21 17:18:27",
-    "bctc_hit_rate": 84.6,
+    "updated_at": "2026-11-23 22:00:02",
+    "bctc_hit_rate": 91.7,
     "reasoning": [
       "Ban 2 (BCTC & Dòng tiền thật OCF) duy trì Hit Rate 100% trên 3 mã HPG, TCB, MBB -> Thưởng quyền biểu quyết lên 35.0%.",
       "Ban 1 (Vĩ mô chung) điều chỉnh về 15.0% để ưu tiên sức mạnh nội tại doanh nghiệp.",

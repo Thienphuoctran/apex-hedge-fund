@@ -39,6 +39,10 @@ from scripts.singleton_dedup_manager import (
     mark_milestone_dispatched
 )
 from scripts.telegram_dispatcher import dispatch_message
+from scripts.vn_market_calendar import get_vn_market_session_state
+from scripts.apex_canonical_truth import build_and_save_canonical_truth, load_canonical_truth
+
+TRADING_ONLY_MILESTONES = {"09:00", "11:45", "13:00", "14:00", "14:25", "15:15"}
 
 try:
     from scripts.apex_agent_zero_engine import ApexAgentZeroController
@@ -217,8 +221,13 @@ def _load_live_tactical_context() -> Dict[str, Any]:
 
 
 def _build_actionable_plan_md(snap: Dict[str, Any], ps: Dict[str, str], session_label: str) -> str:
-    """Sinh phần Kế Hoạch Đầu Tư & Sổ Lệnh Thực Chiến có số liệu định lượng cụ thể."""
+    """Sinh phần Kế Hoạch Đầu Tư & Sổ Lệnh Thực Chiến có số liệu định lượng cụ thể, đồng bộ Canonical Truth."""
     ctx = _load_live_tactical_context()
+    truth = load_canonical_truth(refresh_if_missing=False)
+    msess = truth.get("market_session") or get_vn_market_session_state()
+    can_reg = truth.get("canonical_regime") or {}
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
+
     rec = ctx["recon"]
     brain = ctx["brain"]
     vni = rec.get("vn_index", "--")
@@ -226,15 +235,20 @@ def _build_actionable_plan_md(snap: Dict[str, Any], ps: Dict[str, str], session_
     ma20 = rec.get("vn_index_ma20", "--")
     br20 = rec.get("live_breadth_ma20_pct", 0.0)
     buyup = rec.get("avg_buy_up_pct", 0.0)
-    regime = brain.get("live_regime", "S4_BEAR_CASH_SHIELD")
-    target_alloc = brain.get("target_allocation_pct", "0.0% NAV (100% CASH)")
+    regime = can_reg.get("regime_id") or brain.get("live_regime", "S4_BEAR_CASH_SHIELD")
     is_cash = snap.get("is_all_cash", True)
+    target_alloc = can_reg.get("target_exposure_label") or brain.get("target_allocation_pct") or (
+        "0.0% NAV (100% CASH)" if is_cash else f"Đang giữ vị thế SSOT ({ps['cash_str']} Cash còn lại)"
+    )
 
     lines = [
-        f"## 2. Bức Tranh Thị Trường Thực Tế ({session_label} | {ctx['timestamp_ict'] or 'LIVE'})",
-        f"- **VN-Index**: `{vni}` (`{vni_chg:+.2f}%` | `MA20`: `{ma20}`) | **Độ rộng > MA20**: `{br20}%` | **Mua chủ động (Buy-Up)**: `{buyup}%`",
-        f"- **Chế độ Hệ Thống**: **`{regime}`** | **Mục tiêu giải ngân hiện tại**: **`{target_alloc}`**",
+        f"## 2. Bức Tranh Thị Trường & Trạng Thái Sàn ({session_label} | {ctx['timestamp_ict'] or 'LIVE'})",
+        f"- **Lịch Giao Dịch HOSE/HNX**: **{msess.get('status_label_vi')}**",
+        f"- **VN-Index**{' *(tham chiếu đóng cửa phiên trước)*' if is_closed else ''}: `{vni}` (`{vni_chg:+.2f}%` | `MA20`: `{ma20}`) | **Độ rộng > MA20**: `{br20}%` | **Mua chủ động (Buy-Up)**: `{buyup}%`",
+        f"- **Chế độ Hệ Thống Hợp Nhất**: **`{regime}`** | **Phân bổ mục tiêu**: **`{target_alloc}`**",
     ]
+    if is_closed:
+        lines.append(f"- **Lịch thanh toán T+2 & Mở lại**: {msess.get('settlement_note_vi')} *(Mở lại: `{msess.get('next_trading_day_vi')}`)*.")
     if ctx["sectors"]:
         sec_str = ", ".join(f"{s.get('sector')} ({float(s.get('avg_change_pct', 0)):+.2f}%)" for s in ctx["sectors"][:3])
         lines.append(f"- **Top 3 Ngành Giữ Giá Tốt Nhất**: {sec_str}")
@@ -317,9 +331,21 @@ def _format_portfolio_summary(snap: Dict[str, Any]) -> Dict[str, str]:
 
 def execute_milestone(milestone_id: str) -> bool:
     """Thực thi chuẩn hóa 17 cột mốc tác chiến — 100% chạy Engine thật, cào số liệu thật & tự học thật."""
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(datetime.timezone.utc).astimezone(datetime.timezone(datetime.timedelta(hours=7)))
     date_str = now.strftime("%Y-%m-%d")
-    log_event(f"🚀 BẮT ĐẦU THỰC THI CỘT MỐC: {milestone_id}")
+    msess = get_vn_market_session_state(now_ict=now)
+    log_event(f"🚀 BẮT ĐẦU THỰC THI CỘT MỐC: {milestone_id} (Phiên: {msess.get('status_code')})")
+
+    # [HOLIDAY / CLOSED SESSION SHIELD] Bỏ qua các mốc intraday nếu sàn HOSE/HNX nghỉ lễ hoặc cuối tuần
+    if (not msess.get("is_trading_day")) and (milestone_id in TRADING_ONLY_MILESTONES) and (not FORCE_RUN_MODE):
+        log_event(f"🎌 [HOLIDAY_SKIPPED] Bỏ qua mốc intraday {milestone_id} vì {msess.get('status_label_vi')}")
+        try:
+            build_and_save_canonical_truth(now_ict=now)
+            from scripts.sync_chat_office_artifact import sync_chat_office_artifact
+            sync_chat_office_artifact(force_refresh=True)
+        except Exception:
+            pass
+        return True
 
     # [ATOMIC DEDUP SHIELD] Chặn thực thi trùng lặp trong ngày (trừ khi chạy --force hoặc --dry-run)
     if not FORCE_RUN_MODE and not DRY_RUN_MODE and is_milestone_already_dispatched(date_str, milestone_id):
@@ -402,6 +428,8 @@ def execute_milestone(milestone_id: str) -> bool:
 
             snap_cbtt = _get_live_portfolio_snapshot()
             ps_cbtt = _format_portfolio_summary(snap_cbtt)
+            ctx_cbtt = _load_live_tactical_context()
+            wl_syms = ", ".join(f"`{w.get('symbol')}`" for w in ctx_cbtt.get("watchlist", [])[:7]) or "`TPB`, `HPG`, `CTG`, `NAB`, `CTS`"
             cbtt_file = BASE_DIR / "VN_Market" / "02_BCTC_Equity_Research" / f"{date_str}_VN_CBTT_Radar.md"
             cbtt_content = (
                 f"# BÁO CÁO RÀ SOÁT CÔNG BỐ THÔNG TIN ĐÊM QUA (BAN 10 — HIỀN & AGENT ZERO)\n"
@@ -412,7 +440,7 @@ def execute_milestone(milestone_id: str) -> bool:
                 f"## 2. Chi tiết Pháp y BCTC nhóm dẫn dắt\n"
                 f"{bullets_md}\n\n"
                 f"## 3. Kết quả kiểm tra tính toàn vẹn thông tin toàn thị trường\n"
-                f"- **Thị trường Việt Nam (HOSE/HNX)**: Đã quét cổng IR/SSC/Vietstock/CafeF. Không có biến cố bất thường đối với rổ theo dõi (`MSH`, `BAF`, `PVT`, `TCB`, `MBB`, `HPG`, `TCH`).\n"
+                f"- **Thị trường Việt Nam (HOSE/HNX)**: Đã quét cổng IR/SSC/Vietcap/CafeF. Không có biến cố bất thường đối với rổ theo dõi ({wl_syms}).\n"
                 f"- **Thị trường Mỹ (SEC EDGAR)**: Đã rà soát Form 8-K, 10-Q, Form 4 của vũ trụ Phố Wall (`NVDA`, `PANW`, `AVGO`, `AMD`, `TSM`).\n"
             )
             write_md_safe(cbtt_file, cbtt_content)
@@ -873,13 +901,14 @@ def execute_milestone(milestone_id: str) -> bool:
             iq_score = kb_state.get("collective_iq_score", 158.5)
             curr_topic = kb_state.get("active_curriculum_today", "Phân tích chuỗi giá trị & Con hào kinh tế (Moats)")
 
+            wl_str_22 = ", ".join(str(w.get("symbol")) for w in _load_live_tactical_context().get("watchlist", [])[:6]) or "TPB, HPG, CTG, NAB, CTS"
             msg = (
                 "📚 *[HỘI ĐỒNG VIỆN SĨ APEX — GIỜ TỰ HỌC & NẠP TRI THỨC THỰC CHẤT 22H00]*\n"
                 f"Chủ trì: **Ban 5 (Tự Học)**, **Ban 6 (Học Viện)** & **Ban 12 (Trọng)**\n\n"
                 f"• *Chuyên đề hôm nay*: **{curr_topic}**\n"
                 f"• *Tham gia nghiên cứu*: **100% Đầy đủ 12 Phòng Ban** (Ban 1 đến Ban 12) cọ xát dữ liệu thật.\n"
                 f"• *Chỉ số Collective IQ hệ thống*: **`{iq_score}` điểm** (+6.5 điểm sau phiên nghiên cứu).\n"
-                f"• *Ứng dụng thực chiến*: Nạp quy tắc thẩm định BCTC tiền thật $OCF/LNST \\ge 1.0$ cho Watchlist Vòng 2 (HDB, MSH, BAF, IDC).\n"
+                f"• *Ứng dụng thực chiến*: Nạp quy tắc thẩm định BCTC tiền thật $OCF/LNST \\ge 1.0$ cho rổ mục tiêu ({wl_str_22}).\n"
                 f"👉 Chi tiết báo cáo tự học: `05_Learning_And_Evolution/{date_str}_Autonomous_Learning_Report.md`."
             )
             _dispatch("academy_learning", msg)
@@ -1012,12 +1041,17 @@ def run_daemon(poll_interval: int = 15):
             # - Trên PC Windows (local): bù tuần tự TẤT CẢ cột mốc trong SCHEDULED_MILESTONES (<= current_hm) chưa chạy hôm nay để ngày mới không bị thiếu báo cáo khi Chủ tịch bật máy lúc 07h30+.
             # - Trên Cloud Compact (Render Free 512MB): giữ nhẹ, bù tối đa 1 cột mốc cốt lõi mỗi chu kỳ.
             catchup_core = ["07:30", "08:30", "15:15"]
+            msess_loop = get_vn_market_session_state(now_ict=now)
+            is_trading_today = bool(msess_loop.get("is_trading_day"))
             targets_to_run = []
             if current_hm in SCHEDULED_MILESTONES and current_hm not in executed_today:
-                targets_to_run.append(current_hm)
+                if is_trading_today or current_hm not in TRADING_ONLY_MILESTONES:
+                    targets_to_run.append(current_hm)
             is_light_cron = os.environ.get("APEX_CLOUD_COMPACT_MODE", "").strip().lower() in ("1", "true", "yes")
             catchup_candidates = catchup_core if is_light_cron else SCHEDULED_MILESTONES
             for cm in catchup_candidates:
+                if not is_trading_today and cm in TRADING_ONLY_MILESTONES:
+                    continue
                 if cm <= current_hm and cm not in executed_today and cm not in targets_to_run:
                     if is_light_cron and len(targets_to_run) >= 1:
                         continue

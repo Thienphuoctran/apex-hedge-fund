@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dir_2026-11-24_HOLIDAY_CLOSED",
+    "timestamp": "13:34:25",
+    "sender": "Master CIO James & Minh Quân (Ban 8 & Ban 7 VN)",
+    "role": "specialist",
+    "type": "holiday_notice",
+    "content": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026)."
+  },
+  {
+    "id": "dir_2026-11-24_victor_holiday_standby",
+    "timestamp": "13:35:00",
+    "sender": "Victor (Ban 9 Live Sentinel) — SSOT Guard",
+    "role": "sentinel",
+    "type": "sentinel_brief",
+    "content": "🛡️ [STANDBY BẢO VỆ DANH MỤC NGÀY LỄ 24/11] Không kích hoạt giao dịch intraday khi HOSE/HNX đóng cửa. Danh mục thực TCBS 105C307855: Tổng NAV 20,051,117 ₫ | Tiền mặt thật 15,541,117 ₫ (77.5%) | Cổ phiếu: 200 TPB (giá vốn 12,300 ₫, Stop 11,600 ₫) + 100 HPG (giá vốn 20,500 ₫, Stop 19,300 ₫) | Lãi chốt lũy kế: +51,117 ₫. Tự động tái kích hoạt quét live 09h00 Thứ Tư 25/11/2026."
+  },
+  {
+    "id": "dir_2026-11-24_demo_tactical_plan_live",
+    "timestamp": "13:40:38",
+    "sender": "James (Master CIO) & Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "demo_tactical_plan",
+    "content": "📋 [TỔNG HỢP THƯỢNG ĐỈNH 00H45 & KẾ HOẠCH TÁC CHIẾN 2026-11-24] Trạng thái: 🟢 KẾ HOẠCH CHÍNH THỨC ĐANG TỰ ĐỘNG HIỆU CHỈNH LIVE (Hấp Thụ Hàng T+2). Tài sản live: Cổ phiếu 4,510,000đ (PnL +0đ / +0.00%), Tiền mặt 15,541,117đ (77.5% NAV • Tổng NAV 20,051,117đ). Sẵn sàng vùng mua LO sau 14h00: SHB, VIB, VHM, POW | Cấm bắt đáy: Không có. (Bản Demo tự động hiệu chỉnh ngay khi bảng điện ngày mai biến động!)"
+  },
+  {
+    "id": "dir_2026-11-24_victor_247_21898",
+    "timestamp": "13:40:38",
+    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN (Hấp Thụ Hàng T+2)] Victor phát hiện 4 tín hiệu trọng yếu: SHB (10,500đ: 🟢 ĐẠT VÙNG MUA LO (5.2% NAV)) • VIB (13,400đ: 🟢 ĐẠT VÙNG MUA LO (6.7% NAV)) • VHM (61,500đ: 🟢 ĐẠT VÙNG MUA LO (30.7% NAV)) • POW (13,700đ: 🟢 ĐẠT VÙNG MUA LO (6.8% NAV)). Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
+  },
+  {
+    "id": "dir_2026-11-24_holding_sentinel",
+    "timestamp": "13:40:38",
+    "sender": "Victor (Ban 9 Live Sentinel) & Minh Quân (Ban 7 VN)",
+    "role": "sentinel",
+    "type": "sentinel_alert",
+    "content": "🛡️ [GIÁM SÁT PHIÊN CHIỀU LIVE] Danh mục hiện hữu: 200 TPB @ Live 12,350 đ (+0.00%, Stop 11,600 đ) | 100 HPG @ Live 20,400 đ (+0.00%, Stop 19,300 đ). Két tiền mặt bảo toàn: 15,541,117 đ (77.5% NAV • Tổng NAV 20,051,117 đ). Chế độ thị trường: 🚀 TĂNG TỐC TẦNG 3 (DÒNG TIỀN ĐỒNG THUẬN)."
+  }
+]

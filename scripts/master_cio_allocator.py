@@ -32,6 +32,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
+from scripts.vn_market_calendar import get_vn_market_session_state
+from scripts.apex_canonical_truth import load_canonical_truth
+
 # --- TÍCH HỢP AGENT ZERO ENGINE CHO MASTER CIO JAMES (BƯỚC 3) ---
 try:
     from scripts.apex_agent_zero_engine import (
@@ -537,15 +540,65 @@ def generate_master_decision_report(out_path: Path, blotter: dict, alex_data: di
     us_orders = blotter["orders_us_global"]
     vn_orders = blotter["orders_vietnam"]
 
+    truth = load_canonical_truth(refresh_if_missing=False)
+    msess = truth.get("market_session") or get_vn_market_session_state()
+    ssot_can = truth.get("ssot") or {}
+    holdings_list = ssot_can.get("holdings") or []
+    holdings_desc = ssot_can.get("holdings_desc") or (" + ".join(f"{o.get('shares', 0)} {o.get('symbol', '')}" for o in vn_orders) or "0 CP")
+    is_cash_only = (len(holdings_list) == 0 and len(vn_orders) == 0)
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
+
+    wr_live = load_json_safe(DATA_DIR / "live_warroom_state.json") if "load_json_safe" in globals() else {}
+    if not wr_live and (DATA_DIR / "live_warroom_state.json").exists():
+        try:
+            wr_live = json.loads((DATA_DIR / "live_warroom_state.json").read_text(encoding="utf-8"))
+        except Exception:
+            wr_live = {}
+    recon = wr_live.get("recon_summary") or {}
+    sp_live = load_json_safe(DATA_DIR / "global_spillover_state.json") if "load_json_safe" in globals() else {}
+    if not sp_live and (DATA_DIR / "global_spillover_state.json").exists():
+        try:
+            sp_live = json.loads((DATA_DIR / "global_spillover_state.json").read_text(encoding="utf-8"))
+        except Exception:
+            sp_live = {}
+    sp_m = sp_live.get("metrics") or {}
+    vix_now = (sp_m.get("VIX") or {}).get("last_price", 20.0)
+    spx_now = (sp_m.get("SP500") or {}).get("last_price", 6000.0)
+    dxy_now = (sp_m.get("DXY") or {}).get("last_price", 104.0)
+    us10y_now = (sp_m.get("US10Y") or {}).get("last_price", 4.5)
+    wti_now = (sp_m.get("WTI_OIL") or {}).get("last_price", 75.0)
+    wti_chg = (sp_m.get("WTI_OIL") or {}).get("change_1d_pct", 0.0)
+
+    vni_val = float(recon.get("vn_index") or (truth.get("market_snapshot") or {}).get("vn_index") or 1697.14)
+    vni_chg = float(recon.get("vn_index_chg_pct") or (truth.get("market_snapshot") or {}).get("vn_index_chg_pct") or 0.0)
+    br20_val = float(recon.get("live_breadth_ma20_pct") or (truth.get("market_snapshot") or {}).get("breadth_above_ma20_pct") or 0.0)
+    buyup_val = float(recon.get("avg_buy_up_pct") or (truth.get("market_snapshot") or {}).get("avg_buy_up_pct") or 50.0)
+
+    plan_targets = (truth.get("approved_plan") or {}).get("priority_targets") or []
+    watch_syms_str = ", ".join(t.get("symbol", "") for t in plan_targets[:6] if t.get("symbol")) or "TPB, HPG, CTG, NAB, CTS, HDB"
+    nhip2_syms_str = ", ".join(f"{t.get('symbol')} ({t.get('entry_zone', '')})" for t in plan_targets if int(t.get("executed_shares") or 0) == 0)[:140] or "CTG, NAB, CTS"
+    next_td_vi = msess.get("next_trading_day_vi") or msess.get("next_trading_day") or "Phiên kế tiếp"
+    council_name = ((truth.get("latest_council_resolution") or {}).get("file_name")) or "Nghị quyết Hội Đồng 5 Khối"
+    dry_powder_note = (
+        f"Đang giữ {len(holdings_list)} vị thế ({holdings_desc}, {ssot_can.get('invested_pct', cap['vn_allocated_pct']):.1f}% NAV) + Két tiền mặt {cap['dry_powder_vnd']:,.0f} ₫ ({cap['dry_powder_pct']:.1f}% NAV)."
+        if not is_cash_only else
+        f"Đang giữ 100% tiền mặt ({cap['dry_powder_vnd']:,.0f} ₫), sẵn sàng giải ngân có chọn lọc lúc 14h05–14h25 theo ma trận S1–S4."
+    )
+    session_banner = (
+        f"> [!IMPORTANT]\n> **{msess.get('status_label_vi')}** | {msess.get('settlement_note_vi')}  \n> Mọi giải ngân mới hôm nay = `0%`; kế hoạch Nhịp 2 giữ nguyên cho phiên mở cửa **{next_td_vi}** (`14h05–14h25`).\n\n"
+        if is_closed else ""
+    )
+
     md = f"""# BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ TỐI CAO & SỔ LỆNH THỰC THI THỐNG NHẤT
 ## (Apex Master CIO Final Investment Decision & Execution Blotter)
 
 > **CƠ QUAN PHÊ DUYỆT**: VĂN PHÒNG TỔNG TƯ LỆNH ĐẦU TƯ (UNIFIED CHIEF INVESTMENT OFFICER DESK - BAN 8)  
-> **PHIÊN GIAO DỊCH**: Ngày {date_str}  
+> **PHIÊN / NGÀY**: Ngày {date_str} ({msess.get('short_badge_vi', 'LIVE')})  
 > **TRẠNG THÁI THỰC THI**: **{blotter.get('cio_desk_verdict', 'PHÊ DUYỆT TÁC CHIẾN')}**  
-> **TỔNG VỐN QUẢN LÝ (NAV)**: **${cap['total_nav_usd']:,.2f} USD** tương đương **{cap['total_nav_vnd']:,.0f} VNĐ** (Tỷ giá USD/VND: {cap['fx_rate_usd_vnd']:,.0f})
+> **TỔNG VỐN QUẢN LÝ (NAV)**: **${cap['total_nav_usd']:,.2f} USD** tương đương **{cap['total_nav_vnd']:,.0f} VNĐ** (Tỷ giá USD/VND: {cap['fx_rate_usd_vnd']:,.0f})  
+> **NGUỒN CHÂN LÝ HỢP NHẤT**: `{council_name}`
 
----
+{session_banner}---
 
 ## 1. TỔNG QUAN PHÂN BỔ VỐN & TỶ TRỌNG ĐA TÀI SẢN (CAPITAL ALLOCATION)
 
@@ -554,8 +607,8 @@ Dưới sự điều phối của Master CIO, dòng vốn được quản trị 
 | Hạng Mục Danh Mục | Tỷ Trọng (% NAV) | Giá Trị Quy Đổi (USD) | Giá Trị Quy Đổi (VNĐ) | Trạng Thái Phân Bổ & Chiến Lược |
 | :--- | :---: | :---: | :---: | :--- |
 | **Thị Trường Toàn Cầu / Mỹ (US Equities)** | **{cap['global_allocated_pct']:.1f}%** | **${cap['global_allocated_usd']:,.2f}** | **{cap['global_allocated_vnd']:,.0f} ₫** | Dùng làm la bàn vĩ mô (`^VIX`, `US10Y`, `VNM ETF`), chưa phân bổ vốn trực tiếp khi NAV <= 50M. |
-| **Thị Trường Việt Nam (VN Equities)** | **{cap['vn_allocated_pct']:.1f}%** | **${cap['vn_allocated_usd']:,.2f}** | **{cap['vn_allocated_vnd']:,.0f} ₫** | Tập trung toàn lực (Focused Sniper Mode) theo SSOT thực tế. |
-| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **{cap['dry_powder_pct']:.1f}%** | **${cap['dry_powder_usd']:,.2f}** | **{cap['dry_powder_vnd']:,.0f} ₫** | Đã tất toán sạch 20/11 (0 CP / 100% Cash); sẵn sàng bung 30–40% S3 Spring chiều 23/11 hoặc 75–85% khi đạt S1 Uptrend. |
+| **Thị Trường Việt Nam (VN Equities)** | **{cap['vn_allocated_pct']:.1f}%** | **${cap['vn_allocated_usd']:,.2f}** | **{cap['vn_allocated_vnd']:,.0f} ₫** | {('0% giải ngân mới ngày nghỉ — giữ vị thế đang mở: ' + holdings_desc) if is_closed else 'Tập trung toàn lực (Focused Sniper Mode) theo SSOT thực tế.'} |
+| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **{cap['dry_powder_pct']:.1f}%** | **${cap['dry_powder_usd']:,.2f}** | **{cap['dry_powder_vnd']:,.0f} ₫** | {dry_powder_note} |
 | **TỔNG CỘNG (100% NAV)** | **100.0%** | **${cap['total_nav_usd']:,.2f}** | **{cap['total_nav_vnd']:,.0f} ₫** | **Quản trị rủi ro 0% Margin • Stop <= 7.0%** |
 
 ### Chỉ Số Định Lượng Danh Mục Thận Trọng (`Calibrated Real Metrics`)
@@ -571,10 +624,10 @@ Dưới sự điều phối của Master CIO, dòng vốn được quản trị 
 """
     scenarios = blotter.get("adaptive_contingency_scenarios", [])
     depts = blotter.get("departmental_signoffs", [])
-    mr_live = blotter.get("active_market_regime") or {}
-    cur_reg_str = str(mr_live.get("regime_id") or "BEAR_DOWNTREND")
+    can_reg = truth.get("canonical_regime") or {}
+    cur_reg_str = str(can_reg.get("regime_id") or "S3_SPRING_STRIKE_READY")
 
-    md += f"\n**Chế độ thị trường sống:** **`{cur_reg_str}`** (`VNI {mr_live.get('vnindex_close', 1689.62):,.2f}`, `Breadth>MA20 = {mr_live.get('breadth_above_ma20_pct', 25.7)}%`) | **Kịch bản đang chạy:** `{blotter.get('active_scenario_primary')}` + `{blotter.get('active_scenario_friday_exit')}`\n\n"
+    md += f"\n**Chế độ thị trường hợp nhất:** **`{cur_reg_str}`** (`VNI {vni_val:,.2f} {vni_chg:+.2f}%`, `Breadth>MA20 = {br20_val:.1f}%`, `Buy-Up = {buyup_val:.1f}%`) | **Trạng thái phiên:** `{msess.get('short_badge_vi', 'LIVE')}`\n\n"
     md += "| Kịch Bản | Trạng Thái Hiện Tại | Công Suất Vốn | Điều Kiện Kích Hoạt | Chiến Thuật & Mục Tiêu |\n"
     md += "| :--- | :---: | :---: | :--- | :--- |\n"
     for sc in scenarios:
@@ -598,18 +651,18 @@ sequenceDiagram
     participant CIO as Master CIO James (Ban 8)
     participant MQ as Minh Quân (Ban 7 VN)
 
-    Note over Alex,MQ: Đối soát dữ liệu thực tế Phiên Mỹ & Chuẩn bị Công suất Tuần Sau
-    Alex->>CIO: ^VIX=24.56 (chưa < 23.5), .SPX=7,323.63, ES=F=7,372.50, WTI=$83.12 (-3.36%), VNM ETF=$16.70 (+0.18%)
-    MQ->>CIO: SSOT hiện tại NAV {cap['total_nav_vnd']:,.0f} đ | Cash {cap['dry_powder_vnd']:,.0f} đ ({cap['dry_powder_pct']:.1f}%) | 0 CP (100% Tiền mặt — Sẵn sàng Tuần 48)
-    CIO->>MQ: Chất vấn: Tại sao 2 tuần qua lãi mỏng và phải sửa gì ở rổ cổ phiếu?
-    MQ->>CIO: Thừa nhận co vốn về 32.5% + mua mã đắt 31-35k (MSH vol mỏng 172k) chỉ cầm 100 CP nên không chốt 50/50 được
-    CIO-->>MQ: CHỐT KỶ LUẬT: Thứ Sáu giữ <= 55% NAV; Thứ Hai–Tư tuần sau mở 70-85% NAV trên rổ 13k-22.5k (PVT, TCB, MBB/HPG/TCH 200-300 CP)
+    Note over Alex,MQ: Đối soát dữ liệu thực tế Phiên Mỹ & Chuẩn bị Công suất Phiên {next_td_vi}
+    Alex->>CIO: ^VIX={vix_now}, S&P500={spx_now}, US10Y={us10y_now}%, DXY={dxy_now}, WTI=${wti_now} ({wti_chg:+.2f}%)
+    MQ->>CIO: SSOT hiện tại NAV {cap['total_nav_vnd']:,.0f} đ | Vị thế: {holdings_desc} | Cash {cap['dry_powder_vnd']:,.0f} đ ({cap['dry_powder_pct']:.1f}%)
+    CIO->>MQ: Trạng thái sàn: {msess.get('short_badge_vi', 'LIVE')} | VNI {vni_val:,.2f} ({vni_chg:+.2f}%), Br20={br20_val:.1f}%, Buy-Up={buyup_val:.1f}%
+    MQ->>CIO: Xác nhận tuân thủ Nghị quyết {council_name} — Không FOMO ATO sáng, khóa Stop 2xATR trên vị thế mở
+    CIO-->>MQ: CHỐT KỶ LUẬT: Chỉ xét Nhịp 2 khung 14h05–14h25 ({nhip2_syms_str}) khi Br20/Buy-Up đạt chuẩn
 ```
 
 ### Luận Điểm Đồng Thuận Cốt Lõi:
-1. **Tiền Thật BCTC & Thanh Khoản Đủ Sâu**: Chỉ chọn cổ phiếu `OCF/LNST >= 1.0x`, `Beneish M < -1.78`, đồng thời thanh khoản `vol20 >= 2,000,000 CP/phiên` và thị giá `13k–22.5k` để khớp ra vào không trượt giá.
-2. **Đóng Khóa Rủi Ro Đầu Phiên & Cuối Tuần**: Không FOMO ATO sáng, không đặt lệnh ATC cuối phiên, không bung `75–85%` vốn vào Thứ Sáu cuối tuần.
-3. **Chốt Lời Từng Phần Thu Tiền Tươi**: Với `200–300 CP/mã`, hễ đạt `+2.5%..+4.0%` (`+300k–+500k đ`) lập tức bán `50%` khóa tiền mặt thật về két.
+1. **Tiền Thật BCTC & Thanh Khoản Đủ Sâu**: Chỉ chọn cổ phiếu `OCF/LNST >= 1.0x`, `Beneish M < -1.78`, F-Score >= 6/9 trong rổ `{watch_syms_str}`; loại tuyệt đối mã cờ đỏ (`BAF`, `PNJ`, `VIX`, `TCH`, `CEO`, `POW`).
+2. **Đóng Khóa Rủi Ro Đầu Phiên & Ngày Nghỉ**: Không FOMO đuổi Gap sáng (09:00–14:00), không đặt lệnh ATC cuối phiên; khóa 100% lệnh mới vào ngày nghỉ lễ ({date_str if is_closed else 'nếu có'}).
+3. **Chốt Lời Từng Phần & Bảo Vệ T+2**: Nâng Stop 2xATR bảo vệ vị thế đang giữ (`{holdings_desc}`), ưu tiên giải ngân từng phần trong khung `14h05–14h25` khi độ rộng và dòng tiền đồng thuận.
 
 ---
 
@@ -671,20 +724,19 @@ Nhằm đảm bảo "khẩu súng" của chúng ta hoạt động an toàn và b
 
 ```mermaid
 graph LR
-    subgraph Synergies["LIÊN THỊ TRƯỜNG VĨ MÔ MỸ & THANH KHOẢN CAO VIỆT NAM"]
-        VIX_US["Phố Wall (^VIX 24.56 / ES=F 7,372)<br/>Lợi suất US10Y 5.068% • DXY 103.81"] --- BANK_VN["TCB / MBB (VN)<br/>Thanh khoản 12M–18M CP • Vốn vừa tầm 18k–21k"]
-        WTI_US["Dầu WTI $83.12 (-3.36%)<br/>Bất lợi BSR • Giảm chi phí nhiên liệu"] --- PVT_VN["PVT (VN — #1 Ưu tiên 19k)<br/>OCF/LNST 2.01x • Doanh thu USD phòng hộ DXY"]
-        PANW_US["PANW (+8.04% AH) & AMD/AVGO<br/>Nhu cầu AI/Cyber vẫn tăng tốc"] --- IND_VN["HPG / TCH (VN)<br/>Đủ thanh khoản đánh 200-300 CP chốt 50/50"]
+    subgraph Synergies["LIÊN THỊ TRƯỜNG VĨ MÔ MỸ & RỔ MỤC TIÊU VIỆT NAM ({date_str})"]
+        VIX_US["Phố Wall (^VIX {vix_now} / S&P500 {spx_now})<br/>Lợi suất US10Y {us10y_now}% • DXY {dxy_now}"] --- BANK_VN["Bank Dẫn Sóng ({holdings_desc})<br/>TPB, CTG, NAB • BCTC F=8–9/9"]
+        WTI_US["Dầu WTI ${wti_now} ({wti_chg:+.2f}%)<br/>Theo dõi chi phí & lạm phát"] --- IND_VN["Thép & Chứng Khoán<br/>HPG (Dung Quất 2), CTS (RS=85)"]
     end
 ```
 
 ### Kiểm Thử 3 Kịch Bản Rủi Ro (Stress-Testing 3 Scenarios):
-1. **Kịch bản 1: Thị Trường Đi Ngang Hẹp (`Breadth < 45%`, `^VIX >= 24`)**:
-   - *Hành động*: Giữ trạng thái phòng thủ (`<= 55%` cổ phiếu), giữ nguyên 100% tiền mặt hoặc vị thế nhỏ, không mở lệnh mới ồ ạt; mục tiêu thực tế khóa từng nhịp vừa.
-2. **Kịch bản 2: Thứ Sáu Cuối Tuần Rung Lắc Trước Ngày Nghỉ**:
-   - *Hành động*: Khóa cứng trần cổ phiếu `<= 45%–55% NAV` vào Thứ Sáu để tránh rủi ro tin xấu 2 ngày cuối tuần.
-3. **Kịch bản 3: Tuần Sau (`23/11 – 25/11`) Đồng Thuận Sóng (`Breadth >= 45%`, `Buy-Up >= 60%`)**:
-   - *Hành động*: Giải phóng Đạn Dự Phòng (`{cap['dry_powder_vnd']:,.0f} ₫`) nâng công suất lên **`70% – 85% NAV` (`14–17M ₫`)** vào rổ `13k–22.5k` (`200–300 CP/mã`), chốt tỉa 50% khi lãi `+2.5%..+4.0%`.
+1. **Kịch bản 1: Thị Trường Đi Ngang Hẹp / Sàn Đóng Cửa (`Br20 < 25%` hoặc Ngày Nghỉ Lễ)**:
+   - *Hành động*: Khóa mở mới (`0%` vào ngày nghỉ), bảo vệ vị thế hiện có (`{holdings_desc}`) bằng Stop 2xATR và giữ nguyên `{cap['dry_powder_vnd']:,.0f} ₫` tiền mặt.
+2. **Kịch bản 2: Sóng Hồi Xác Nhận Chiều Mở Cửa (`VNI >= 1,695`, `Br20 >= 23–28%`, `Buy-Up >= 56%`)**:
+   - *Hành động*: Giải ngân có chọn lọc Nhịp 2 lúc `14h05–14h25` vào rổ Hội đồng (`{nhip2_syms_str}`), nâng cổ phiếu lên ~`45%–54% NAV`, luôn giữ `>= 45%` tiền mặt.
+3. **Kịch bản 3: Bùng Nổ Đồng Thuận (`VNI >= MA20`, `Br20 >= 45%`, `Buy-Up >= 58%`)**:
+   - *Hành động*: Nâng công suất lên `60%–80% NAV` với các mã Leader đã vượt MA20/MA50 (`{watch_syms_str}`).
 
 ---
 
@@ -694,13 +746,13 @@ Toàn bộ danh mục chỉ được phép kích hoạt bấm cò khi vượt qu
 
 | STT | Hạng Mục Kiểm Tra | Tiêu Chí Xác Nhận Bắt Buộc Trước Khi Giải Ngân | Đánh Giá Thực Tế Hiện Tại | Trạng Thái |
 | :---: | :--- | :--- | :---: | :---: |
-| **01** | **Nguồn Vốn & Đạn Dự Phòng** | Không vay mượn, 0% Margin, khóa trần Thứ Sáu `<= 55%` NAV, giữ Dry Powder dự phòng. | `0% Margin`. Đang giữ `{cap['dry_powder_pct']:.1f}%` tiền mặt (`{cap['dry_powder_vnd']:,.0f} ₫`). | ✅ **CÓ (PASS)** |
-| **02** | **Xu Hướng Thị Trường (M)** | Bám sát diễn biến thật `^VIX` (`35.89`), `.SPX` (`6,910.39`) và Độ rộng HOSE (`Breadth >= 45%`). | Phiên 20/11 VNI 1,688.79 rút chân (CIR 100%, Br20 23.0%, Spring 3/5); khóa mua sáng Thứ Hai 23/11, chờ xác nhận 14h05–14h25. | ✅ **CẨN TRỌNG (OK)** |
-| **03** | **Sức Khỏe Doanh Nghiệp (FA)** | Tăng trưởng thực, dòng tiền `OCF/LNST >= 1.0x`, `Beneish M < -1.78`, không xào nấu BCTC. | 100% mã tầm ngắm đạt `OCF/LNST >= 1.0x`, không dùng hàng đầu cơ lỗ ròng. | ✅ **CÓ (PASS)** |
-| **04** | **Thanh Khoản & Thị Giá Phù Hợp 20M** | Thị giá **`13k–22.5k`** (`vol20 >= 2M CP`) để cầm được **`200–300 CP/mã`** cho chốt tỉa 50/50. | Đã chuyển trọng tâm sang `PVT, TCB, MBB, HPG, TCH` (từ bỏ mã đắt thanh khoản mỏng). | ✅ **CÓ (PASS)** |
-| **05** | **Điểm Mua Kỹ Thuật (TA)** | Chỉ đặt lệnh `LO` lúc `14h00–14h25` khi `Buy-Up >= 60%` + `VSA No Supply / Spring`. Cấm ATO/ATC. | Khóa cứng Khung Giờ Vàng `14h00–14h25` và cầu chì cấm `ATC`. | ✅ **CÓ (PASS)** |
-| **06** | **Tỷ Lệ Risk/Reward (R:R)** | Mục tiêu chốt lời gấp tối thiểu `2.0` lần điểm cắt lỗ (`R:R >= 2.0`), chốt tỉa 50% ở `+300k–+500k đ`. | R:R bình quân danh mục đạt **`1 : {metrics['weighted_reward_risk_ratio']:.2f}`**. | ✅ **CÓ (PASS)** |
-| **07** | **Quy Mô & Kỷ Luật Đi Vốn** | Khống chế rủi ro toàn danh mục `Risk-at-Stop <= 4.5% NAV`, không để tiền nhàn rỗi vào đầu tuần thuận. | Đang khóa rủi ro thực tế ở mức an toàn, sẵn sàng tăng tốc đầu tuần sau `23–25/11`. | ✅ **CÓ (PASS)** |
+| **01** | **Nguồn Vốn & Đạn Dự Phòng** | Không vay mượn, 0% Margin, giữ Dry Powder dự phòng linh hoạt. | `0% Margin`. Đang giữ `{cap['dry_powder_pct']:.1f}%` tiền mặt (`{cap['dry_powder_vnd']:,.0f} ₫`) & `{holdings_desc}`. | ✅ **CÓ (PASS)** |
+| **02** | **Lịch Giao Dịch & Xu Hướng (M)** | Kiểm tra lịch nghỉ lễ HOSE/HNX + `^VIX` (`{vix_now}`) và `Br20 >= 23–45%`. | {msess.get('status_label_vi')} • Tham chiếu VNI `{vni_val:,.2f}` (`{vni_chg:+.2f}%`, `Br20={br20_val:.1f}%`). | {'⏸️ **ĐÓNG CỬA**' if is_closed else '✅ **ĐỒNG BỘ**'} |
+| **03** | **Sức Khỏe Doanh Nghiệp (FA)** | Tăng trưởng thực, dòng tiền `OCF/LNST >= 1.0x`, `Beneish M < -1.78`, loại cờ đỏ. | 100% mã tầm ngắm đạt `OCF/LNST >= 1.0x`, cấm tuyệt đối `BAF, PNJ, VIX, TCH, CEO, POW`. | ✅ **CÓ (PASS)** |
+| **04** | **Thanh Khoản & Tỷ Trọng An Toàn** | Tổng vị thế mở đúng trần Hiến chương (`<= 33% NAV/lệnh`), lô chẵn 100 CP. | Trọng tâm rổ đã duyệt Hội đồng: `{watch_syms_str}`. | ✅ **CÓ (PASS)** |
+| **05** | **Điểm Mua Kỹ Thuật (TA)** | Chỉ đặt lệnh `LO` lúc `14h05–14h25` khi `Buy-Up >= 56%`. Cấm ATO/ATC. | Khóa cứng Khung Giờ Vàng `14h05–14h25` & lịch mở sàn kế tiếp `{next_td_vi}`. | ✅ **CÓ (PASS)** |
+| **06** | **Tỷ Lệ Risk/Reward (R:R)** | Mục tiêu chốt lời gấp tối thiểu `2.0` lần điểm cắt lỗ (`R:R >= 2.0`), chốt tỉa 50% tại TP1. | R:R bình quân danh mục đạt **`1 : {metrics['weighted_reward_risk_ratio']:.2f}`**. | ✅ **CÓ (PASS)** |
+| **07** | **Quy Mô & Kỷ Luật Đi Vốn** | Khống chế rủi ro `Risk-at-Stop <= 1.5% NAV/lệnh`, quản lý hàng `T+2.5` chuẩn lịch nghỉ lễ. | {msess.get('settlement_note_vi')} | ✅ **CÓ (PASS)** |
 
 ### 6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)
 

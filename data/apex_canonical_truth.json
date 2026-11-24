@@ -1,0 +1,245 @@
+{
+  "schema_version": "APEX_CANONICAL_TRUTH_V5",
+  "generated_at_ict": "2026-11-24 13:41:48 ICT",
+  "date": "2026-11-24",
+  "market_session": {
+    "date_ict": "2026-11-24",
+    "time_ict": "13:41:48",
+    "weekday_vi": "Thứ Ba",
+    "is_trading_day": false,
+    "is_holiday": true,
+    "is_weekend": false,
+    "holiday_name": "Ngày Văn hóa Việt Nam (24/11)",
+    "holiday_authority": "Nghị quyết số 28/2026/QH16 — HOSE & HNX nghỉ giao dịch toàn ngày",
+    "is_live_session": false,
+    "stale_feed_detected": false,
+    "stale_feed_reason": "",
+    "exchange_time_hms": "15:05:00",
+    "status_code": "HOLIDAY_CLOSED",
+    "status_label_vi": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026)",
+    "short_badge_vi": "🎌 NGHỈ LỄ 24/11 (Mở lại 25/11)",
+    "prev_trading_day": "2026-11-23",
+    "prev_trading_day_vi": "Thứ Hai 23/11/2026",
+    "next_trading_day": "2026-11-25",
+    "next_trading_day_vi": "Thứ Tư 25/11/2026",
+    "settlement_note_vi": "Do 24/11 là ngày nghỉ lễ (Ngày Văn hóa Việt Nam (24/11)), lịch thanh toán T+2 dịch thêm 1 ngày làm việc: tiền bán 20/11 về 25/11; cổ phiếu mua 23/11 về chiều 26/11/2026."
+  },
+  "ssot": {
+    "account_id": "105C307855",
+    "chairman": "Trần Quốc Thiên Phước",
+    "status": "ACTIVE_HOLDING",
+    "cash_vnd": 15541117.0,
+    "stocks_val_vnd": 4510000.0,
+    "cost_basis_vnd": 4510000.0,
+    "total_nav_vnd": 20051117.0,
+    "cash_pct": 77.5,
+    "invested_pct": 22.5,
+    "realized_pnl_vnd": 51117.0,
+    "unrealized_pnl_vnd": 0.0,
+    "unrealized_pnl_pct": 0.0,
+    "open_positions_count": 2,
+    "total_shares": 300,
+    "holdings_desc": "200 TPB + 100 HPG",
+    "holdings": [
+      {
+        "symbol": "TPB",
+        "shares": 200,
+        "entry_price": 12300.0,
+        "current_price": 12350.0,
+        "market_val_vnd": 2470000.0,
+        "cost_basis_vnd": 2460000.0,
+        "unrealized_pnl_vnd": 10000.0,
+        "unrealized_pnl_pct": 0.41,
+        "stop_loss": 11600.0,
+        "tp1": 13350.0,
+        "tp2": 14450.0,
+        "bought_at": "2026-11-23 14:19:49",
+        "t2_settlement_date": "2026-11-26"
+      },
+      {
+        "symbol": "HPG",
+        "shares": 100,
+        "entry_price": 20500.0,
+        "current_price": 20400.0,
+        "market_val_vnd": 2040000.0,
+        "cost_basis_vnd": 2050000.0,
+        "unrealized_pnl_vnd": -10000.0,
+        "unrealized_pnl_pct": -0.49,
+        "stop_loss": 19300.0,
+        "tp1": 22300.0,
+        "tp2": 24100.0,
+        "bought_at": "2026-11-23 14:28:04",
+        "t2_settlement_date": "2026-11-26"
+      }
+    ],
+    "last_updated": "2026-11-24 11:36:49"
+  },
+  "market_snapshot": {
+    "vn_index": 1697.14,
+    "vn_index_chg_pct": 0.49,
+    "vn_index_ma20": 1727.57,
+    "vn_index_ma50": 1746.23,
+    "breadth_above_ma20_pct": 19.4,
+    "avg_buy_up_pct": 59.4,
+    "advance_ratio_pct": 54.7,
+    "volume_pace_ratio": 1.37,
+    "foreign_net_ty": -36.9,
+    "basis_pts": -1.82,
+    "snapshot_note": "Giá đóng cửa tham chiếu phiên 2026-11-23"
+  },
+  "canonical_regime": {
+    "regime_id": "MARKET_HOLIDAY_CLOSED",
+    "label": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026)",
+    "short_label": "🎌 NGHỈ LỄ 24/11 (Mở lại 25/11)",
+    "badge_color": "#f59e0b",
+    "base_max_allocation_pct": 0,
+    "spillover_multiplier": 1.0,
+    "max_new_allocation_pct": 0,
+    "target_exposure_label": "0% mở mới hôm nay • Mở lại Thứ Tư 25/11/2026",
+    "guidance": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Mọi giá bảng điện hiện tại là giá đóng cửa tham chiếu phiên trước (2026-11-23); trạng thái EOD phiên trước là S3_SPRING_STRIKE_READY (VNI 1,697.14 +0.49%, Br20 19.4%). Do 24/11 là ngày nghỉ lễ (Ngày Văn hóa Việt Nam (24/11)), lịch thanh toán T+2 dịch thêm 1 ngày làm việc: tiền bán 20/11 về 25/11; cổ phiếu mua 23/11 về chiều 26/11/2026. Kế hoạch Nhịp 2 giữ nguyên hiệu lực cho phiên mở cửa kế tiếp (Thứ Tư 25/11/2026).",
+    "reference_eod_regime": {
+      "regime_id": "S3_SPRING_STRIKE_READY",
+      "label": "🟡 HỒI PHỤC KỸ THUẬT / SPRING S3 (DƯỚI MA20 — THĂM DÒ CÓ CHỌN LỌC)",
+      "short_label": "S3_SPRING_STRIKE_READY",
+      "badge_color": "#fbbf24",
+      "max_new_allocation_pct": 25,
+      "target_exposure_label": "20% – 45% NAV (Thăm dò có chọn lọc)",
+      "guidance": "VNI 1,697.14 (+0.49%) rút chân hồi phục với Buy-Up=59.4%, NHƯNG vẫn dưới MA20 (1,727.6) và Br20=19.4% (< 28%). Thăm dò chọn lọc tối đa <= 25% sức mua còn lại trong khung 14h05–14h25; cấm FOMO mua đuổi Gap sáng."
+    },
+    "is_closed_override": true
+  },
+  "approved_plan": {
+    "plan_id": "APEX-WEEKLY-PLAN-2026-W47-W48-CAPACITY",
+    "meeting_id_source": "APEX-SUMMIT-5BLOCKS-20261123-2100",
+    "constitution_mandate": "Thứ Hai 23/11 (13:45 & 14:21): Chủ tịch khớp thăm dò chuẩn 22.5% NAV gồm 200 CP TPB @ 12,300đ (EOD 12,350đ) và 100 CP HPG @ 20,500đ (EOD 20,400đ), giữ 15,541,117 ₫ Tiền mặt (77.5% NAV). Nghị quyết Hội đồng 21h00 ngày 23/11: Tuyệt đối KHÔNG mua đuổi Gap xanh ATO sáng 24/11 theo Phố Wall; chỉ xét giải ngân thêm Nhịp 2 lúc 14h05–14h25 khi Br20 >= 23-28% & VNI giữ nền, ưu tiên CTG (100 CP) + NAB (200 CP) hoặc CTS (100 CP), nâng tối đa 45-54% NAV và giữ >= 45% tiền mặt chờ hàng T+ về chiều 25/11.",
+    "priority_targets": [
+      {
+        "symbol": "TPB",
+        "name": "TPBank (HOSE)",
+        "tier": "ĐANG NẮM GIỮ 200 CP @ 12,300đ (EOD 23/11: 12,350đ | F=9/9 • OCF 4.00x • Giữ trên MA50 12,293)",
+        "weekly_limit": "200 CP đang giữ (12.3% NAV) — Gia tăng thêm 200 CP khi vượt MA20 12,685đ",
+        "entry_zone": "Đang giữ 200 CP; chỉ gia tăng 14h05–14h25 khi vượt MA20 (12,685₫) kèm Vol >= 9M",
+        "stop_loss_2xatr": "11,600 ₫ (-5.7% / Max lỗ 140,000 ₫ = 0.70% NAV)",
+        "tp1": "13,350 ₫ (+8.5%, chốt 100 CP)",
+        "tp2": "14,450 ₫ (+17.5%, R:R > 1:3)",
+        "executed_shares": 200,
+        "catalyst": "Số hóa giao dịch VNeID, bù trừ CK & BCTC Q3/2026 điểm tuyệt đối F=9/9"
+      },
+      {
+        "symbol": "HPG",
+        "name": "Hòa Phát (HOSE)",
+        "tier": "ĐANG NẮM GIỮ 100 CP @ 20,500đ (EOD 23/11: 20,400đ | F=8/9 • OCF 1.08x • RSI 34.0)",
+        "weekly_limit": "100 CP đang giữ (10.2% NAV) — Gia tăng khi vượt MA20 20,970đ",
+        "entry_zone": "Giữ nguyên vị thế; chờ vượt MA20 (20,970₫) hoặc về hàng 25/11 mới xét thêm",
+        "stop_loss_2xatr": "19,300 ₫ (-5.9% / Max lỗ 120,000 ₫ = 0.60% NAV)",
+        "tp1": "22,300 ₫ (+8.8%)",
+        "tp2": "24,100 ₫ (+17.6%)",
+        "executed_shares": 100,
+        "catalyst": "Dung Quất 2 vận hành 90-95% công suất, HRC +64% YoY, lập CTCP Năng lượng tái tạo"
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank (HOSE)",
+        "tier": "ƯU TIÊN #1 NHỊP 2 (24/11) • F=8/9 • OCF 1.63x • ROE 22.56% • Buy-Up 68.9%",
+        "weekly_limit": "100 CP (~3.02M ₫ = 15.0% NAV — LO Khung 14h05–14h25)",
+        "entry_zone": "Nhánh A/B (14h05–14h25): LO 30,000 – 30,300 ₫ (Không đuổi > 30,500₫)",
+        "stop_loss_2xatr": "28,500 ₫ (-5.5% / Max lỗ ~165,000 ₫ = 0.82% NAV)",
+        "tp1": "33,200 ₫ (+10.1%, R:R 1.9)",
+        "tp2": "35,800 ₫ (+18.7%, R:R 3.4)",
+        "executed_shares": 0,
+        "catalyst": "Hoàn tất bán VietinBank Tower ở Ciputra + bộ đệm dự phòng 21,000 tỷ"
+      },
+      {
+        "symbol": "NAB",
+        "name": "Nam A Bank (HOSE)",
+        "tier": "ƯU TIÊN #2 NHỊP 2 (24/11) • Leader Vượt MA20/MA50 • F=8/9 • RS=97 • Buy-Up 67.9%",
+        "weekly_limit": "200 CP (~2.62M ₫ = 13.1% NAV — LO Khung 14h05–14h25)",
+        "entry_zone": "Nhánh A/B (14h05–14h25): LO 13,000 – 13,200 ₫ (Không đuổi > 13,350₫)",
+        "stop_loss_2xatr": "12,400 ₫ (-5.3% / Max lỗ ~140,000 ₫ = 0.70% NAV)",
+        "tp1": "14,400 ₫ (+10.0%, R:R 2.0)",
+        "tp2": "15,700 ₫ (+19.8%, R:R 3.7)",
+        "executed_shares": 0,
+        "catalyst": "Top 1 Victor Live Leader 23/11, F=8/9, P/E 5.8x, ROE 19.5%, vượt MA20/MA50 trước thị trường"
+      },
+      {
+        "symbol": "CTS",
+        "name": "Chứng khoán VietinBank (HOSE)",
+        "tier": "DỰ PHÒNG NHÓM CHỨNG KHOÁN • Leader Vượt MA20/MA50 • F=7/9 • RS=85 • Buy-Up 65.0%",
+        "weekly_limit": "100 CP (~2.38M ₫ = 11.9% NAV — thay thế nếu CK bứt phá chiều 24/11)",
+        "entry_zone": "Nhánh A/B (14h05–14h25): LO 23,500 – 24,000 ₫ (Không đuổi > 24,300₫)",
+        "stop_loss_2xatr": "22,300 ₫ (-6.1% / Max lỗ ~145,000 ₫ = 0.72% NAV)",
+        "tp1": "26,600 ₫ (+12.0%, R:R 2.0)",
+        "tp2": "29,000 ₫ (+22.1%, R:R 3.6)",
+        "executed_shares": 0,
+        "catalyst": "Top 2 Victor Live Leader 23/11, CTCK ngân hàng quốc doanh OCF/LNST 1.12x"
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank (HOSE)",
+        "tier": "THEO DÕI DỰ PHÒNG S1/S2 • F=6/9 • ROE 23.73% • Buy-Up 67.4% (Lưu ý ngoại bán -9.86 tỷ)",
+        "weekly_limit": "100–200 CP (chỉ xét khi ngoại ngừng bán ròng & vượt MA50 22,011₫)",
+        "entry_zone": "Chờ vượt giữ trên 22,000₫ với khối ngoại hết xả mới cân nhắc sau CTG/NAB",
+        "stop_loss_2xatr": "20,500 ₫ (-5.5%)",
+        "tp1": "23,650 ₫ (+8.5%)",
+        "tp2": "25,600 ₫ (+17.4%)",
+        "executed_shares": 0,
+        "catalyst": "Hợp tác MUFG mở rộng vốn quốc tế, thanh khoản cực sâu"
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank (HOSE)",
+        "tier": "DỰ PHÒNG S1 • F=7/9 • OCF 2.03x • ROE 17.34%",
+        "weekly_limit": "100–200 CP (chỉ kích hoạt khi S1 Uptrend vượt lại MA20 21,948₫)",
+        "entry_zone": "Chỉ kích hoạt khi S1 Breakout vượt MA20/MA50",
+        "stop_loss_2xatr": "19,350 ₫ (-5.4%)",
+        "tp1": "23,450 ₫",
+        "tp2": "25,200 ₫",
+        "executed_shares": 0,
+        "catalyst": "Tăng trưởng tín dụng 28.2%, huy động vốn ngoại mạnh"
+      }
+    ],
+    "blacklist_veto": [
+      {
+        "symbol": "BAF",
+        "reason": "F-Score 2/9, OCF -496.2 tỷ, Beneish HIGH_RISK"
+      },
+      {
+        "symbol": "PNJ",
+        "reason": "F-Score 2/9, OCF -2,578 tỷ"
+      },
+      {
+        "symbol": "VIX",
+        "reason": "F-Score 3/9, OCF -4,877.3 tỷ"
+      },
+      {
+        "symbol": "TCH",
+        "reason": "F-Score 4/9, suy yếu cầu"
+      },
+      {
+        "symbol": "CEO",
+        "reason": "F-Score 5/9, thanh khoản/cầu yếu"
+      },
+      {
+        "symbol": "POW",
+        "reason": "Cảnh báo Pháp y: Beneish M=-1.57, OCF/LNST=0.20x, RSI 76.6 quá mua"
+      }
+    ]
+  },
+  "latest_council_resolution": {
+    "file_name": "2026-11-23_2100_Dai_Hoi_Dong_5_Khoi_Chien_Luoc.md",
+    "rel_path": "08_Master_Investment_CIO/council_resolutions/2026-11-23_2100_Dai_Hoi_Dong_5_Khoi_Chien_Luoc.md",
+    "title": "BIÊN BẢN HỌP ĐẠI HỘI ĐỒNG 5 KHỐI CHUYÊN TRÁCH — PHIÊN TỐI `21:00` (`23/11/2026`)"
+  },
+  "latest_chat_sync": {
+    "sync_id": "SYNC-AG2P-20261124-133528",
+    "last_updated": "2026-11-24 13:35:28",
+    "latest_user_request": "Tổng đại tu đồng bộ APEX UNIFIED CANONICAL BRAIN V5.0 (Lịch nghỉ lễ 24/11 + Stale-Feed Detector + Hợp nhất Chat/Portal/2.5D/Cloud)"
+  },
+  "executive_directive_vi": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026).",
+  "consistency_audit": {
+    "single_canonical_brain": true,
+    "holiday_calendar_enforced": true,
+    "stale_feed_detector_active": true,
+    "contradictions_count": 0
+  }
+}

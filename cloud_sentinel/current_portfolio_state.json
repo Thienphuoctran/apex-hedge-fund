@@ -1,16 +1,37 @@
 {
   "account_id": "105C307855",
   "chairman": "Trần Quốc Thiên Phước",
-  "status": "ALL_CASH_STANDDOWN",
-  "cash_balance_vnd": 20051117.0,
+  "status": "ACTIVE_HOLDING",
+  "cash_balance_vnd": 15541117.0,
   "total_nav_vnd": 20051117.0,
-  "total_market_val_vnd": 0.0,
-  "total_cost_vnd": 0.0,
+  "total_market_val_vnd": 4510000.0,
+  "total_cost_vnd": 4510000.0,
   "realized_pnl_vnd": 51117.0,
   "unrealized_pnl_vnd": 0.0,
   "cash_verified_note": "Chủ tịch xác nhận bán hết 100 BAF @ 30.35 (13:08) và 100 MSH @ 34.30 (13:12) ngày 20/11/2026 theo ảnh TCBS Sổ lệnh. Đã về 100% tiền mặt ròng ~20,051,117 ₫ (trước phí bán ~8,405 ₫), nghỉ ngơi cuối tuần 20-22/11 chuẩn bị Tuần 48.",
   "risk_mandate": "AUTONOMOUS_V2_5_SCENARIO_MATRIX_WEEK48_START",
-  "active_positions": {},
+  "active_positions": {
+    "TPB": {
+      "symbol": "TPB",
+      "shares": 200,
+      "entry_price": 12300.0,
+      "current_price": 12350.0,
+      "stop_loss": 11600.0,
+      "take_profit_tp1": 13350.0,
+      "take_profit_tp2": 14450.0,
+      "bought_at": "2026-11-23 14:19:49"
+    },
+    "HPG": {
+      "symbol": "HPG",
+      "shares": 100,
+      "entry_price": 20500.0,
+      "current_price": 20400.0,
+      "stop_loss": 19300.0,
+      "take_profit_tp1": 22300.0,
+      "take_profit_tp2": 24100.0,
+      "bought_at": "2026-11-23 14:28:04"
+    }
+  },
   "trade_history": [
     {
       "trade_id": "TRD-20261106-001",
@@ -124,12 +145,34 @@
       "trade_pnl_vnd": -25459.0,
       "cash_after_trade": 20051117.0,
       "reason": "Chủ tịch khớp hết lệnh bán 100 CP MSH @ 34,300đ lúc 13:12 ngày 20/11/2026 (theo ảnh TCBS Sổ lệnh), thu về 100% tiền mặt nghỉ cuối tuần chuẩn bị Tuần 48."
+    },
+    {
+      "trade_id": "TRD-20261123141949",
+      "timestamp": "2026-11-23 14:19:49",
+      "action": "BUY",
+      "symbol": "TPB",
+      "shares": 200,
+      "buy_price": 12300.0,
+      "total_cost_vnd": 2460000.0,
+      "cash_after_trade": 17591117.0,
+      "reason": "Chủ tịch khớp hết 200 CP TPB @ 12,300đ (2,460,000đ) theo ảnh Sổ lệnh TCBS ngày 23/11/2026"
+    },
+    {
+      "trade_id": "TRD-20261123142804",
+      "timestamp": "2026-11-23 14:28:04",
+      "action": "BUY",
+      "symbol": "HPG",
+      "shares": 100,
+      "buy_price": 20500.0,
+      "total_cost_vnd": 2050000.0,
+      "cash_after_trade": 15541117.0,
+      "reason": "Chủ tịch sửa lệnh HPG lên 20.50 lúc 14:21 và khớp hết 100 CP @ 20,500đ (2,050,000đ) theo ảnh Sổ lệnh TCBS 14:26:26 ngày 23/11/2026"
     }
   ],
-  "tactical_regime": "PATIENT_PREDATOR_100_CASH_STANDDOWN",
-  "last_updated": "2026-11-23 04:18:58",
+  "tactical_regime": "HOLDING_WITH_RISK_PARITY_STOP",
+  "last_updated": "2026-11-24 11:36:49",
   "tcbs_mcp_url": "https://mcp.tcbs.com.vn/mcp/tcinvest/",
-  "current_campaign_phase": "ROUND_1_COMPLETED_100_CASH_WAITING_ROUND_2",
+  "current_campaign_phase": "ACTIVE_CAMPAIGN_HOLDING",
   "initial_capital_vnd": 20000000.0,
   "pending_active_orders": [],
   "next_round_watchlist": [
@@ -275,17 +318,17 @@
     }
   ],
   "temporal_context": {
-    "timestamp_iso": "2026-11-23T04:18:58.501768",
-    "date_str": "2026-11-23",
-    "date_vn": "23/11/2026",
-    "time_vn": "04:18:58",
-    "weekday_index": 0,
-    "weekday_vn": "Thứ Hai",
-    "full_time_label_vn": "04:18:58 Thứ Hai, ngày 23/11/2026",
-    "market_phase": "PRE_MARKET_PREPARATION",
-    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Hai) — Chuẩn bị kế hoạch tác chiến",
+    "timestamp_iso": "2026-11-24T11:36:49.804491",
+    "date_str": "2026-11-24",
+    "date_vn": "24/11/2026",
+    "time_vn": "11:36:49",
+    "weekday_index": 1,
+    "weekday_vn": "Thứ Ba",
+    "full_time_label_vn": "11:36:49 Thứ Ba, ngày 24/11/2026",
+    "market_phase": "LUNCH_BREAK",
+    "market_phase_vn": "Nghỉ trưa giữa hai phiên (Thứ Ba) — Sàn tạm nghỉ 11h30-13h00",
     "is_trading_hours": false,
-    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
+    "next_session_note": "Phiên chiều mở cửa lúc 13:00 (Hàng T+2.5 về tài khoản)."
   },
   "debt_vnd": 47.0
 }

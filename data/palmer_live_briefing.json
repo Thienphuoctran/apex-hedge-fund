@@ -1,37 +1,55 @@
 {
-  "last_updated": "2026-11-23 11:27:48",
+  "last_updated": "2026-11-24 13:35:28",
   "last_synced_by": "ANTIGRAVITY",
-  "sync_id": "SYNC-AG2P-20261123-112748",
-  "latest_user_request": "Vá dứt điểm Master Blotter 2026-11-23 khỏi mẫu T+1/BAF cũ & lập Kế hoạch tác chiến chiều 23/11",
-  "latest_response_summary": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
+  "sync_id": "SYNC-AG2P-20261124-133528",
+  "latest_user_request": "Tổng đại tu đồng bộ APEX UNIFIED CANONICAL BRAIN V5.0 (Lịch nghỉ lễ 24/11 + Stale-Feed Detector + Hợp nhất Chat/Portal/2.5D/Cloud)",
+  "latest_response_summary": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026).",
   "latest_completed_tasks": [
-    "Vá dứt điểm Master Blotter 2026-11-23 khỏi mẫu T+1/BAF cũ & lập Kế hoạch tác chiến chiều 23/11",
-    "Xác nhận SSOT tài khoản TCBS 105C307855: Cash 20,051,117 ₫ | 0 vị thế mở",
-    "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-23 11:22:29: 509 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+    "Tổng đại tu đồng bộ APEX UNIFIED CANONICAL BRAIN V5.0 (Lịch nghỉ lễ 24/11 + Stale-Feed Detector + Hợp nhất Chat/Portal/2.5D/Cloud)",
+    "Xác nhận SSOT tài khoản TCBS 105C307855: Cash 15,541,117 ₫ | 2 vị thế mở",
+    "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-24 13:31:13: 505 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
     "Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)"
   ],
   "latest_strategic_decisions": {
-    "current_holdings_directive": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
-    "weekly_plan_directive": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
-    "upgrade_progress_directive": "Cào sống ngày 2026-11-23 11:22:29: 509 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+    "current_holdings_directive": "Đang giữ 2 mã (200 TPB + 100 HPG = 22.5% NAV), Két tiền mặt 15,541,117 ₫ (77.5% NAV).",
+    "market_regime_directive": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026).",
+    "weekly_plan_directive": "Thứ Hai 23/11 (13:45 & 14:21): Chủ tịch khớp thăm dò chuẩn 22.5% NAV gồm 200 CP TPB @ 12,300đ (EOD 12,350đ) và 100 CP HPG @ 20,500đ (EOD 20,400đ), giữ 15,541,117 ₫ Tiền mặt (77.5% NAV). Nghị quyết Hội đồng 21h00 ngày 23/11: Tuyệt đối KHÔNG mua đuổi Gap xanh ATO sáng 24/11 theo Phố Wall; chỉ xét giải ngân thêm Nhịp 2 lúc 14h05–14h25 khi Br20 >= 23-28% & VNI giữ nền, ưu tiên CTG (100 CP) + NAB (200 CP) hoặc CTS (100 CP), nâng tối đa 45-54% NAV và giữ >= 45% tiền mặt chờ hàng T+ về chiều 25/11.",
+    "upgrade_progress_directive": "🎌 NGHỈ LỄ 24/11 (Mở lại 25/11) • Cào sống ngày 2026-11-24 13:31:13: 505 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
   },
   "portfolio_snapshot": {
-    "status": "ALL_CASH_STANDDOWN",
+    "status": "ACTIVE_HOLDING",
     "total_nav_vnd": 20051117.0,
-    "cash_vnd": 20051117.0,
-    "cash_pct": 100.0,
-    "stock_market_val_vnd": 0.0,
-    "positions": {},
-    "current_market_regime": "BEAR_WITH_SPRING_WATCH (ALL_CASH_STANDDOWN)"
+    "cash_vnd": 15541117.0,
+    "cash_pct": 77.51,
+    "stock_market_val_vnd": 4510000.0,
+    "positions": {
+      "TPB": {
+        "shares": 200,
+        "entry_price": 12300.0,
+        "current_price": 12350.0,
+        "market_val_vnd": 2470000.0,
+        "pnl_vnd": 10000.0,
+        "status": "HOLDING"
+      },
+      "HPG": {
+        "shares": 100,
+        "entry_price": 20500.0,
+        "current_price": 20400.0,
+        "market_val_vnd": 2040000.0,
+        "pnl_vnd": -10000.0,
+        "status": "HOLDING"
+      }
+    },
+    "current_market_regime": "MARKET_HOLIDAY_CLOSED (🎌 NGHỈ LỄ 24/11 (Mở lại 25/11))"
   },
   "directives_for_palmer_responses": {
-    "current_holdings_directive": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
-    "market_regime_directive": "Chế độ sống: BEAR_WITH_SPRING_WATCH (ALL_CASH_STANDDOWN). Giải ngân chỉ mở khung 14h00-14h25 khi đạt điều kiện S1/S2/S3.",
-    "weekly_plan_directive": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
-    "upgrade_progress_directive": "Cào sống ngày 2026-11-23 11:22:29: 509 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
-    "regarding_bsr_baf": "100% TIỀN MẶT (20,051,117 ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu.",
-    "regarding_hdb_msh": "Chế độ sống: BEAR_WITH_SPRING_WATCH (ALL_CASH_STANDDOWN).",
-    "regarding_weekly_plan": "Thứ Sáu 20/11 (13:08 & 13:12): Đã bán hết 100 CP BAF @ 30.35 (3,035,000đ) và 100 CP MSH @ 34.30 (3,430,000đ), đưa danh mục về 100% tiền mặt ròng (~20,051,117 ₫). Cuối tuần 20–22/11: Nghỉ ngơi hoàn toàn 100% Cash. Từ Thứ Hai 23/11 (Tuần 48): Reset đồng hồ KPI mới (~20.05M ₫) với rổ BCTC Q3/2026 sạch (TPB, HDB, HPG, CTG, VPB) và Ma trận tự chủ 4 Kịch bản Thị trường S1–S4 (chỉ giải ngân trong khung 14h00–14h25 khi bảng điện đạt điều kiện; giữ 0% nếu tiếp tục BEAR_DOWNTREND).",
-    "regarding_today_morning_tasks": "Cào sống ngày 2026-11-23 11:22:29: 509 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+    "current_holdings_directive": "Đang giữ 2 mã (200 TPB + 100 HPG = 22.5% NAV), Két tiền mặt 15,541,117 ₫ (77.5% NAV).",
+    "market_regime_directive": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026).",
+    "weekly_plan_directive": "Thứ Hai 23/11 (13:45 & 14:21): Chủ tịch khớp thăm dò chuẩn 22.5% NAV gồm 200 CP TPB @ 12,300đ (EOD 12,350đ) và 100 CP HPG @ 20,500đ (EOD 20,400đ), giữ 15,541,117 ₫ Tiền mặt (77.5% NAV). Nghị quyết Hội đồng 21h00 ngày 23/11: Tuyệt đối KHÔNG mua đuổi Gap xanh ATO sáng 24/11 theo Phố Wall; chỉ xét giải ngân thêm Nhịp 2 lúc 14h05–14h25 khi Br20 >= 23-28% & VNI giữ nền, ưu tiên CTG (100 CP) + NAB (200 CP) hoặc CTS (100 CP), nâng tối đa 45-54% NAV và giữ >= 45% tiền mặt chờ hàng T+ về chiều 25/11.",
+    "upgrade_progress_directive": "🎌 NGHỈ LỄ 24/11 (Mở lại 25/11) • Cào sống ngày 2026-11-24 13:31:13: 505 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+    "regarding_bsr_baf": "Đang giữ 2 mã (200 TPB + 100 HPG = 22.5% NAV), Két tiền mặt 15,541,117 ₫ (77.5% NAV).",
+    "regarding_hdb_msh": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026).",
+    "regarding_weekly_plan": "Thứ Hai 23/11 (13:45 & 14:21): Chủ tịch khớp thăm dò chuẩn 22.5% NAV gồm 200 CP TPB @ 12,300đ (EOD 12,350đ) và 100 CP HPG @ 20,500đ (EOD 20,400đ), giữ 15,541,117 ₫ Tiền mặt (77.5% NAV). Nghị quyết Hội đồng 21h00 ngày 23/11: Tuyệt đối KHÔNG mua đuổi Gap xanh ATO sáng 24/11 theo Phố Wall; chỉ xét giải ngân thêm Nhịp 2 lúc 14h05–14h25 khi Br20 >= 23-28% & VNI giữ nền, ưu tiên CTG (100 CP) + NAB (200 CP) hoặc CTS (100 CP), nâng tối đa 45-54% NAV và giữ >= 45% tiền mặt chờ hàng T+ về chiều 25/11.",
+    "regarding_today_morning_tasks": "🎌 NGHỈ LỄ 24/11 (Mở lại 25/11) • Cào sống ngày 2026-11-24 13:31:13: 505 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR."
   }
 }

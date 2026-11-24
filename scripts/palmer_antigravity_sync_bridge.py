@@ -114,16 +114,13 @@ class PalmerAntigravitySyncBridge:
         
         total_nav = cash_vnd + stock_market_val
         cash_pct = round((cash_vnd / total_nav) * 100.0, 2) if total_nav > 0 else 100.0
-        v2_file = DATA_DIR / "apex_quant_brain_v2_output.json"
-        live_regime = st.get("tactical_regime", "CASH_100_DEFENSE_WEEKEND_REST")
-        if v2_file.exists():
-            try:
-                v2_d = json.loads(v2_file.read_text(encoding="utf-8"))
-                mr_id = (v2_d.get("market_regime") or {}).get("regime_id")
-                if mr_id:
-                    live_regime = f"{mr_id} ({st.get('status', 'CASH_RESERVE_100_PERCENT')})"
-            except Exception:
-                pass
+
+        from scripts.vn_market_calendar import get_vn_market_session_state
+        from scripts.apex_canonical_truth import build_and_save_canonical_truth
+        msess = get_vn_market_session_state()
+        truth = build_and_save_canonical_truth()
+        can_reg = truth.get("canonical_regime") or {}
+        live_regime = f"{can_reg.get('regime_id', 'S3_SPRING_STRIKE_READY')} ({msess.get('short_badge_vi', 'LIVE')})"
 
         packet = {
             "sync_id": sync_id,
@@ -197,6 +194,14 @@ class PalmerAntigravitySyncBridge:
 
         # 3. Xuất file Markdown để con người & agent đọc trực tiếp
         cls._export_live_briefing_md(live_briefing)
+
+        # 3b. Cập nhật lại Canonical Truth & Văn phòng 2.5D Chat Artifact cho đồng nhất 100%
+        try:
+            build_and_save_canonical_truth()
+            from scripts.sync_chat_office_artifact import sync_chat_office_artifact
+            sync_chat_office_artifact(force_refresh=True)
+        except Exception as e_sync_art:
+            print(f"[!] Cảnh báo làm mới Canonical/Artifact sau sync: {e_sync_art}")
 
         # 4. Đồng bộ vào Closed-Loop Task Ledger để Palmer tra cứu
         try:
@@ -480,18 +485,26 @@ class PalmerAntigravitySyncBridge:
         if note:
             completed.insert(0, note)
 
+        from scripts.apex_canonical_truth import build_and_save_canonical_truth
+        truth_now = build_and_save_canonical_truth()
+        ssot_can = truth_now.get("ssot") or {}
+        msess_now = truth_now.get("market_session") or {}
+        holdings_desc = ssot_can.get("holdings_desc") or "0 CP"
+        exec_dir = truth_now.get("executive_directive_vi") or weekly_summary
+
         return cls.broadcast_from_antigravity_to_palmer(
-            user_request=note or "Đồng bộ trạng thái SSOT & Dữ liệu cào Internet/BCTC mới nhất giữa James và Palmer",
-            response_summary=weekly_summary,
+            user_request=note or "Đồng bộ trạng thái SSOT, Lịch phiên & Chân lý Hợp nhất V5.0 giữa James, Palmer, Web Portal & Văn phòng 2.5D",
+            response_summary=exec_dir,
             completed_tasks=completed,
             active_decisions={
                 "current_holdings_directive": (
-                    f"100% TIỀN MẶT ({cash_vnd:,.0f} ₫, 0 CP đang giữ — BAF @ 30,350đ & MSH @ 34,300đ đã bán khớp hết trưa 20/11). Tuyệt đối không báo còn nắm giữ cổ phiếu."
+                    f"100% TIỀN MẶT ({cash_vnd:,.0f} ₫, 0 CP đang giữ)."
                     if not pos
-                    else f"Đang giữ {len(pos)} mã, Cash {cash_vnd:,.0f} ₫."
+                    else f"Đang giữ {len(pos)} mã ({holdings_desc} = {ssot_can.get('invested_pct', 0):.1f}% NAV), Két tiền mặt {cash_vnd:,.0f} ₫ ({ssot_can.get('cash_pct', 0):.1f}% NAV)."
                 ),
+                "market_regime_directive": exec_dir,
                 "weekly_plan_directive": weekly_summary,
-                "upgrade_progress_directive": intel_note,
+                "upgrade_progress_directive": f"{msess_now.get('short_badge_vi', '')} • {intel_note}",
             },
         )
 
