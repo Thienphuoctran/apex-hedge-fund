@@ -921,8 +921,8 @@ def _evaluate_portfolio_wide_debate(snaps: Dict[str, Dict[str, Any]], inputs: Di
     # Đề xuất vận hành thực thi của Minh Quân (Ban 7 VN)
     mq_note = (
         f"[CHIẾN LƯỢC THỰC THI BAN 7 VN] Danh mục hiện tại: {h_desc}. "
-        f"Ưu tiên số 1: Quản trị vị thế T+0/T+1 trên HDB & MSH với Stop cứng chặt chẽ; "
-        f"chỉ mở thăm dò mới tối đa 1 lô (<=18% NAV) với mã đạt chuẩn như BAF vào Khung Giờ Vàng 14h00–14h25."
+        f"Ưu tiên số 1: Quản trị vị thế đang giữ với Stop cứng chặt chẽ; "
+        f"chỉ mở thăm dò mới tối đa 1 lô (<=18% NAV) với mã đạt chuẩn Hội đồng (CTG/NAB/CTS) vào Khung Giờ Vàng 14h00–14h25 phiên giao dịch."
     )
     debate_points.append({
         "speaker_dept": "BAN_7_VN", "speaker": "Minh Quân",
@@ -1304,6 +1304,25 @@ def run_enterprise_work_session(
         else:
             eval_res = _evaluate_portfolio_wide_debate(snaps, inputs)
 
+        # Kiểm tra lịch phiên nghỉ lễ / đóng cửa sàn từ Nguồn Chân Lý Hợp Nhất V5.0
+        try:
+            from scripts.vn_market_calendar import get_vn_market_session_state
+            msess = get_vn_market_session_state(now_ict=now_ict)
+            if (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False)):
+                next_td = str(msess.get("next_trading_day") or "")
+                next_dm = f"{next_td[8:10]}/{next_td[5:7]}/{next_td[:4]}" if len(next_td) >= 10 else "phiên kế tiếp"
+                held_names = ", ".join(
+                    f"{p['shares']} {p['symbol']}" for p in inputs.get("active_positions", [])
+                ) or "0 CP"
+                eval_res["final_verdict"] = "HOLIDAY_STANDBY_PREPARE_NEXT_SESSION"
+                eval_res["action_plan"] = (
+                    f"{msess.get('status_label_vi') or 'Sàn HOSE/HNX đóng cửa'}. "
+                    f"Giữ nguyên vị thế SSOT ({held_names} • Tiền mặt {inputs['cash_vnd']:,.0f} đ). "
+                    f"Chuyển toàn bộ kế hoạch giải ngân chọn lọc sang Khung Giờ Vàng 14h05–14h25 ngày mở lại ({next_dm})."
+                )
+        except Exception:
+            pass
+
         for dp in eval_res["debate_points"]:
             _emit(
                 "STAGE_3_ADVERSARIAL_DEBATE",
@@ -1500,9 +1519,12 @@ def run_enterprise_work_session(
         )
 
         # Tổng hợp payload phiên làm việc
+        date_part_str = ts_str[:10]
+        report_rel_path = f"08_Master_Investment_CIO/enterprise_sessions/{date_part_str}_Enterprise_Work_Session.md"
         session_payload: Dict[str, Any] = {
             "session_id": session_id,
             "created_at": ts_str,
+            "report_rel_path": report_rel_path,
             "trigger_source": trigger_source,
             "target_ticker": target_ticker,
             "focus_tickers": focus_tickers,

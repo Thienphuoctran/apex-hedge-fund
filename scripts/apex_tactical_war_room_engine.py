@@ -22,6 +22,7 @@ import os
 import sys
 import json
 import time
+import hashlib
 import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional
@@ -1137,6 +1138,100 @@ def build_demo_tactical_plan_tomorrow(
     return result
 
 
+def build_simple_action_board(
+    live_stocks: List[Dict[str, Any]],
+    phase_info: Dict[str, Any],
+    regime: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    """
+    Bảng Hành Động Đơn Giản (MUA / BÁN / ĐỢI) dành cho Chủ tịch:
+    Mỗi mã chỉ đúng 4 thông tin trực diện: Mã CP, Giá hiện tại, Ngưỡng đang chạm, Hành động cụ thể.
+    """
+    msess = phase_info.get("market_session") or {}
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
+    next_day = str(msess.get("next_trading_day") or "")
+    next_dm = f"{next_day[8:10]}/{next_day[5:7]}" if len(next_day) >= 10 else "phiên tới"
+    regime_id = str(regime.get("regime_id") or "")
+    rows: List[Dict[str, Any]] = []
+
+    for s in (live_stocks or []):
+        code = str(s.get("code") or "").upper().strip()
+        if not code:
+            continue
+        is_holding = bool(s.get("is_holding"))
+        price = float(s.get("price") or 0.0)
+        chg_pct = float(s.get("change_pct") or 0.0)
+        act = str(s.get("action_code") or "STANDBY_WATCH")
+        probe = float(s.get("probe_target") or 0.0)
+        stop_p = float(s.get("stop_loss") or 0.0)
+        tp1_p = float(s.get("tp1") or 0.0)
+        buy_up = float(s.get("active_buy_pct") or 50.0)
+
+        if is_holding:
+            if act == "STOP_TRIGGERED" and not is_closed:
+                simple_code = "BAN_CAT_LO"
+                badge = "🔴 CHẠM NGƯỠNG BÁN CẮT LỖ"
+                action_vi = f"TIẾN HÀNH BÁN cắt lỗ dứt khoát quanh {price:,.0f}đ (Stop {stop_p:,.0f}đ) nếu không rút chân trước 14h15."
+            elif act in ("TP1_REACHED", "TP2_REACHED") and not is_closed:
+                simple_code = "BAN_CHOT_LOI"
+                badge = "💰 ĐẠT NGƯỠNG BÁN CHỐT LỜI"
+                action_vi = f"TIẾN HÀNH BÁN chốt lời 50% vị thế bằng lệnh LO vùng {price:,.0f}đ (vượt TP1 {tp1_p:,.0f}đ)."
+            elif act == "NEAR_STOP_WARNING" and not is_closed:
+                simple_code = "DOI"
+                badge = "🟡 CẬN NGƯỠNG BẢO VỆ"
+                action_vi = f"TẠM ĐỢI — Chưa bán, quan sát nến 14h15 (Stop bảo vệ {stop_p:,.0f}đ)."
+            else:
+                simple_code = "DOI"
+                badge = "🛡️ ĐANG NẮM GIỮ AN TOÀN"
+                if is_closed:
+                    action_vi = f"ĐỢI MỞ SÀN {next_dm} — Giữ nguyên vị thế (Chốt lời {tp1_p:,.0f}đ • Cắt lỗ {stop_p:,.0f}đ)."
+                else:
+                    action_vi = f"ĐỢI — Giữ nguyên vị thế (Chốt lời tại {tp1_p:,.0f}đ • Cắt lỗ {stop_p:,.0f}đ)."
+        else:
+            has_targets = (probe > 0 and stop_p > 0 and tp1_p > 0)
+            if is_closed:
+                simple_code = "DOI"
+                badge = f"⏸️ NGHỈ SÀN (Mở lại {next_dm})"
+                if has_targets:
+                    action_vi = f"ĐỢI {next_dm} (14h05–14h25) — Canh mua LO vùng {probe:,.0f}đ | Stop {stop_p:,.0f}đ | TP1 {tp1_p:,.0f}đ."
+                else:
+                    action_vi = f"ĐỢI {next_dm} — Chỉ theo dõi quan sát."
+            elif act in ("BUY_ZONE", "STANDBY_BUY_ZONE") and has_targets and regime_id != "DEFENSIVE_SELLOFF":
+                simple_code = "MUA"
+                badge = "🟢 ĐẠT MỨC MUA"
+                action_vi = f"ĐẶT MUA LO 100 CP vùng {round(probe*0.99,-1):,.0f}–{probe:,.0f}đ (14h05–14h25) | Stop {stop_p:,.0f}đ | TP1 {tp1_p:,.0f}đ."
+            elif act == "STANDBY_DEFENSIVE_PAUSE":
+                simple_code = "DOI"
+                badge = "⛔ KHÔNG MUA / TRÁNH BẪY"
+                action_vi = f"ĐỢI — Không bắt đáy sớm khi cầu yếu (BuyUp {buy_up:.0f}%)."
+            elif has_targets:
+                simple_code = "DOI"
+                badge = "🟡 CHƯA ĐẠT ĐIỂM MUA"
+                action_vi = f"ĐỢI giá về vùng {probe:,.0f}đ (Hiện {price:,.0f}đ • TP1 {tp1_p:,.0f}đ)."
+            else:
+                simple_code = "DOI"
+                badge = "🔵 THEO DÕI"
+                action_vi = "ĐỢI — Chưa kích hoạt điểm mua chuẩn."
+
+        rows.append({
+            "symbol": code,
+            "is_holding": is_holding,
+            "price": price,
+            "change_pct": chg_pct,
+            "buy_up_pct": buy_up,
+            "probe_target": probe,
+            "stop_loss": stop_p,
+            "tp1": tp1_p,
+            "simple_action_code": simple_code,
+            "status_badge": badge,
+            "action_text_vi": action_vi,
+        })
+
+    order_rank = {"BAN_CAT_LO": 0, "BAN_CHOT_LOI": 1, "MUA": 2, "DOI": 3}
+    rows.sort(key=lambda r: (order_rank.get(r["simple_action_code"], 9), 0 if r["is_holding"] else 1, -r["buy_up_pct"]))
+    return rows
+
+
 def evaluate_and_trigger_tactical_alerts(
     live_stocks: List[Dict[str, Any]],
     phase_info: Dict[str, Any],
@@ -1147,11 +1242,11 @@ def evaluate_and_trigger_tactical_alerts(
     demo_plan: Optional[Dict[str, Any]] = None,
 ) -> List[Dict[str, Any]]:
     """
-    CƠ CHẾ CẢNH BÁO TÁC CHIẾN ĐỘNG THEO THỜI GIAN THỰC TRÊN MỌI PHIÊN HOẠT ĐỘNG:
-    - Chạy liên tục trên MỌI phiên (Pre-ATO, Sáng, Trưa, Chiều, Giờ Vàng, ATC, Sau giờ/Demo).
-    - Tự động kích hoạt cảnh báo Stop Loss 2xATR, Cận Stop, Đạt TP1/TP2 cho MỌI mã đang nắm giữ.
-    - Bắn báo cáo biến động quan trọng (Đạt vùng mua LO, Áp lực bán mạnh / Cấm bắt đáy) cho các mã theo dõi.
-    - Tự động phát thông báo Bản Demo Kế hoạch Tác chiến & trạng thái hiệu chỉnh cơ động vào Phòng Tác Chiến.
+    CƠ CHẾ CẢNH BÁO ĐƠN GIẢN & CHỐNG SPAM TELEGRAM V6.0:
+    - Trong ngày nghỉ lễ / đóng băng dữ liệu: Chỉ ghi nhận 1 thông báo nghỉ lễ duy nhất, KHÓA bắn Telegram intraday.
+    - Không bắn rác "ÁP LỰC CUNG" hay lặp lại "TĂNG TỐC TẦNG 3" lên Telegram.
+    - Telegram chỉ gửi tin ngắn gọn 4 dòng (Đạt mức MUA / Chạm ngưỡng BÁN / Cận Stop ĐỢI) có event_key & cooldown dài.
+    - Gộp các mã đạt vùng mua Khung Giờ Vàng (có probe_target > 0 & stop_loss > 0 & tp1 > 0) thành 1 tin tổng hợp duy nhất.
     """
     now = get_ict_now()
     hm = now.hour * 60 + now.minute
@@ -1175,6 +1270,7 @@ def evaluate_and_trigger_tactical_alerts(
     prev_len = len(directives)
     changed = False
     t_now_str = now.strftime("%H:%M:%S")
+    tg_queue: List[Dict[str, Any]] = []
 
     if is_closed:
         hol_msg_id = f"dir_{date_str}_{msess.get('status_code', 'HOLIDAY_CLOSED')}"
@@ -1194,7 +1290,7 @@ def evaluate_and_trigger_tactical_alerts(
             save_directives_history(directives, date_str)
         return directives
 
-    # 0. Báo cáo Bản Demo Kế hoạch Tác chiến (Pre-Session hoặc Chế độ Tự động hiệu chỉnh trong phiên)
+    # 0. Thẻ kế hoạch ngày trên Web War-Room (không gửi spam Telegram)
     if demo_plan:
         demo_msg_id = f"dir_{date_str}_demo_tactical_plan_{'live' if in_market_hours else 'pre'}"
         if demo_msg_id not in existing_ids:
@@ -1210,63 +1306,59 @@ def evaluate_and_trigger_tactical_alerts(
                 "type": "demo_tactical_plan",
                 "content": (
                     f"📋 [NGHỊ QUYẾT {res_name} • KẾ HOẠCH {date_str}] "
-                    f"Trạng thái: {demo_plan.get('auto_adapt_status')}. "
-                    f"Tài sản live: Cổ phiếu {float(port.get('stocks_val_vnd', 0)):,.0f}đ (PnL {float(port.get('unrealized_pnl_vnd', 0)):+,.0f}đ / {float(port.get('unrealized_pnl_pct', 0)):+.2f}%), "
-                    f"Tiền mặt {cash_vnd:,.0f}đ ({cash_pct:.1f}% NAV • Tổng NAV {total_nav:,.0f}đ). "
-                    f"Sẵn sàng vùng mua LO khung 14h05–14h25: {buy_syms} | Cấm bắt đáy: {avoid_syms}."
+                    f"Cổ phiếu {float(port.get('stocks_val_vnd', 0)):,.0f}đ | Tiền mặt {cash_vnd:,.0f}đ ({cash_pct:.1f}% NAV • Tổng {total_nav:,.0f}đ). "
+                    f"Canh mua 14h05–14h25: {buy_syms} | Tránh: {avoid_syms}."
                 ),
             })
             existing_ids.add(demo_msg_id)
             changed = True
 
-    # 0b. Báo cáo Radar Biến Động 24/7 của Victor trên MỌI phiên làm việc
+    # 0b. Ghi nhận tóm tắt biến động lên Web War-Room (deterministic md5, KHÔNG bắn spam Telegram)
     if victor_center:
         v_alerts = victor_center.get("alerts", []) or []
-        important_alerts = [
+        actionable_alerts = [
             a for a in v_alerts
-            if a.get("severity") in ("CRITICAL", "ACTION_SELL", "HIGH", "OPPORTUNITY", "WARNING")
+            if a.get("severity") in ("CRITICAL", "ACTION_SELL", "HIGH", "OPPORTUNITY")
+            and (a.get("is_holding") or (float(a.get("probe_target") or 0) > 0 and float(a.get("stop_loss") or 0) > 0))
         ]
-        if important_alerts:
-            sig_tag = "|".join(f"{a['symbol']}:{a['category']}" for a in important_alerts[:6])
-            pulse_id = f"dir_{date_str}_victor_247_{abs(hash(sig_tag)) % 100000}"
+        if actionable_alerts:
+            sig_tag = "|".join(f"{a['symbol']}:{a['category']}" for a in actionable_alerts[:6])
+            sig_hex = hashlib.md5(sig_tag.encode("utf-8")).hexdigest()[:8]
+            pulse_id = f"dir_{date_str}_victor_summary_{sig_hex}"
             if pulse_id not in existing_ids:
                 brief_items = " • ".join(
                     f"{a['symbol']} ({a['price']:,.0f}đ: {a['trigger_badge']})"
-                    for a in important_alerts[:5]
+                    for a in actionable_alerts[:5]
                 )
                 directives.append({
                     "id": pulse_id,
                     "timestamp": t_now_str,
-                    "sender": "Victor (Ban 9 Live Sentinel — 24/7 Radar)",
+                    "sender": "Victor (Ban 9 Live Sentinel)",
                     "role": "sentinel",
-                    "type": "sentinel_alert",
-                    "content": (
-                        f"🚨 [BÁO CÁO BIẾN ĐỘNG QUAN TRỌNG — MỌI PHIÊN ({phase_info.get('active_phase_short', 'LIVE')})] "
-                        f"Victor phát hiện {len(important_alerts)} tín hiệu trọng yếu: {brief_items}. "
-                        f"Xem chi tiết khoảng cách Mua LO / Chốt lời TP1 / Cắt lỗ Stop ngay tại Bảng Trung Tâm Cảnh Báo Victor bên dưới!"
-                    ),
+                    "type": "sentinel_summary",
+                    "content": f"📡 [TỔNG HỢP BIẾN ĐỘNG ({phase_info.get('active_phase_short', 'LIVE')})] {brief_items}.",
                 })
                 existing_ids.add(pulse_id)
                 changed = True
 
-    # 1. Cảnh báo Chế độ Thị trường Phòng thủ (trên mọi phiên nếu chế độ DEFENSIVE_SELLOFF xuất hiện)
+    # 1. Cảnh báo Chế độ Phòng thủ trên Web War-Room
     def_id = f"dir_{date_str}_regime_defensive"
     if regime_id == "DEFENSIVE_SELLOFF" and def_id not in existing_ids:
         directives.append({
             "id": def_id,
             "timestamp": t_now_str,
-            "sender": "Victor (Ban 9 Live Sentinel) & Minh Quân (Ban 7 VN)",
+            "sender": "Victor & Minh Quân",
             "role": "sentinel",
             "type": "sentinel_alert",
             "content": (
-                f"🚨 [CẢNH BÁO CHẾ ĐỘ PHÒNG THỦ] {regime.get('label')}: {regime.get('guidance')} "
-                f"Khóa 100% lệnh mua mới (Hạn mức 0%), bảo vệ két tiền mặt {cash_vnd:,.0f} đ ({cash_pct:.1f}% NAV)!"
+                f"🛑 [CHẾ ĐỘ PHÒNG THỦ] Khóa mua mới (0% NAV). "
+                f"Hành động: ĐỢI & bảo toàn tiền mặt {cash_vnd:,.0f} đ ({cash_pct:.1f}% NAV)."
             )
         })
         existing_ids.add(def_id)
         changed = True
 
-    # 2. Cảnh báo realtime trên từng vị thế đang nắm giữ trong SSOT (kích hoạt trên MỌI phiên)
+    # 2. Cảnh báo ĐƠN GIẢN trên từng vị thế ĐANG NẮM GIỮ (Cắt lỗ / Chốt lời / Cận Stop)
     for s in live_stocks:
         if not s.get("is_holding"):
             continue
@@ -1280,114 +1372,136 @@ def evaluate_and_trigger_tactical_alerts(
         if act == "STOP_TRIGGERED":
             aid = f"dir_{date_str}_stop_breached_{code}"
             if aid not in existing_ids:
+                msg_ui = (
+                    f"🔴 [CHẠM NGƯỠNG BÁN CẮT LỖ — {code}] Giá {price:,.0f} đ <= Stop {stop_p:,.0f} đ. "
+                    f"Hành động: TIẾN HÀNH BÁN cắt lỗ dứt khoát nếu không rút chân trước 14h15!"
+                )
                 directives.append({
-                    "id": aid,
-                    "timestamp": t_now_str,
-                    "sender": "Victor (Ban 9 Live Sentinel)",
-                    "role": "sentinel",
-                    "type": "sentinel_alert",
-                    "content": (
-                        f"🚨 [BÁO ĐỘNG ĐỎ CẮT LỖ 2xATR — {code}] Giá live {price:,.0f} đ đã chạm/thủng ngưỡng Stop Loss {stop_p:,.0f} đ! "
-                        f"Kính trình Chủ tịch kiểm tra khớp cắt lỗ kỷ luật để khóa rủi ro <= 0.35% NAV!"
-                    )
+                    "id": aid, "timestamp": t_now_str, "sender": "Victor (Ban 9)", "role": "sentinel",
+                    "type": "sentinel_alert", "content": msg_ui,
                 })
                 existing_ids.add(aid)
                 changed = True
+                if in_market_hours:
+                    tg_msg = (
+                        f"🔴 <b>CHẠM NGƯỠNG BÁN CẮT LỖ — {code}</b> ({t_now_str})\n"
+                        f"• Giá hiện tại: <b>{price:,.0f} đ</b> (chạm Stop {stop_p:,.0f} đ)\n"
+                        f"• 👉 <b>Hành động: TIẾN HÀNH BÁN cắt lỗ dứt khoát</b> (kiểm định 14h15)\n"
+                        f"• 🛡️ Quản trị: Khóa lỗ bảo vệ danh mục, không mua trung bình giá xuống."
+                    )
+                    tg_queue.append({"topic": "daily_warroom", "text": tg_msg, "event_key": f"{date_str}_{code}_STOP", "cooldown": 14400, "priority": "CRITICAL_STOP"})
+                    tg_queue.append({"topic": "james_hq", "text": tg_msg, "event_key": f"{date_str}_{code}_STOP_J", "cooldown": 14400, "priority": "CRITICAL_STOP"})
+
         elif act == "NEAR_STOP_WARNING" or (stop_p > 0 and 0 < float(s.get("dist_to_stop_pct", 99.0)) <= 2.6):
             aid = f"dir_{date_str}_near_stop_{code}"
             if aid not in existing_ids:
+                dist = float(s.get("dist_to_stop_pct", 0.0))
+                msg_ui = (
+                    f"🟡 [CẬN NGƯỠNG BẢO VỆ — {code}] Giá {price:,.0f} đ (cách Stop {stop_p:,.0f} đ còn {dist:.2f}%). "
+                    f"Hành động: TẠM ĐỢI — Chưa bán, theo dõi nến 14h15."
+                )
                 directives.append({
-                    "id": aid,
-                    "timestamp": t_now_str,
-                    "sender": "Victor (Ban 9 Live Sentinel)",
-                    "role": "sentinel",
-                    "type": "sentinel_alert",
-                    "content": (
-                        f"⚠️ [THEO DÕI CẬN NGƯỠNG BẢO VỆ — {code}] Giá live {price:,.0f} đ hiện cách mốc Stop/Cảnh báo ({stop_p:,.0f} đ) "
-                        f"{s.get('dist_to_stop_pct', 0):.2f}%. Tuyệt đối KHÔNG bình quân giá xuống; kiểm định nến lúc 14h15!"
-                    )
+                    "id": aid, "timestamp": t_now_str, "sender": "Victor (Ban 9)", "role": "sentinel",
+                    "type": "sentinel_alert", "content": msg_ui,
                 })
                 existing_ids.add(aid)
                 changed = True
+                if in_market_hours:
+                    tg_msg = (
+                        f"🟡 <b>CẬN NGƯỠNG BẢO VỆ — {code}</b> ({t_now_str})\n"
+                        f"• Giá hiện tại: <b>{price:,.0f} đ</b> (cách Stop {stop_p:,.0f} đ còn {dist:.2f}%)\n"
+                        f"• 👉 <b>Hành động: TẠM ĐỢI</b> — Chưa bán, theo dõi nến 14h15\n"
+                        f"• 🛡️ Quản trị: Chốt lời TP1 {tp1_p:,.0f} đ | Cắt lỗ nếu thủng {stop_p:,.0f} đ."
+                    )
+                    tg_queue.append({"topic": "daily_warroom", "text": tg_msg, "event_key": f"{date_str}_{code}_NEARSTOP", "cooldown": 21600, "priority": "NORMAL"})
+
         elif act in ("TP1_REACHED", "TP2_REACHED"):
             aid = f"dir_{date_str}_{act.lower()}_{code}"
             if aid not in existing_ids:
                 target_label = f"TP2 ({tp2_p:,.0f} đ)" if act == "TP2_REACHED" else f"TP1 ({tp1_p:,.0f} đ)"
+                msg_ui = (
+                    f"💰 [CHẠM NGƯỠNG BÁN CHỐT LỜI — {code}] Giá {price:,.0f} đ >= {target_label}. "
+                    f"Hành động: TIẾN HÀNH BÁN chốt lời 50% vị thế bằng lệnh LO!"
+                )
                 directives.append({
-                    "id": aid,
-                    "timestamp": t_now_str,
-                    "sender": "Minh Quân (Ban 7 VN) & Victor",
-                    "role": "specialist",
-                    "type": "specialist_directive",
-                    "content": (
-                        f"🎯 [ĐẠT MỤC TIÊU CHỐT LỜI — {code}] Giá live {price:,.0f} đ đã chạm {target_label}! "
-                        f"Đề xuất Scaling Out chốt lời 50% vị thế và nâng Stop Loss phần còn lại lên giá hòa vốn!"
-                    )
+                    "id": aid, "timestamp": t_now_str, "sender": "Minh Quân & Victor", "role": "specialist",
+                    "type": "specialist_directive", "content": msg_ui,
                 })
                 existing_ids.add(aid)
                 changed = True
+                if in_market_hours:
+                    tg_msg = (
+                        f"💰 <b>CHẠM NGƯỠNG BÁN CHỐT LỜI — {code}</b> ({t_now_str})\n"
+                        f"• Giá hiện tại: <b>{price:,.0f} đ</b> (vượt {target_label})\n"
+                        f"• 👉 <b>Hành động: TIẾN HÀNH BÁN chốt lời 50%</b> bằng lệnh LO\n"
+                        f"• 🛡️ Quản trị: Giữ 50% còn lại gồng lãi, nâng Stop về giá vốn."
+                    )
+                    tg_queue.append({"topic": "daily_warroom", "text": tg_msg, "event_key": f"{date_str}_{code}_{act}", "cooldown": 14400, "priority": "NORMAL"})
+                    tg_queue.append({"topic": "james_hq", "text": tg_msg, "event_key": f"{date_str}_{code}_{act}_J", "cooldown": 14400, "priority": "NORMAL"})
 
-    # 3. Tóm tắt giám sát vị thế buổi chiều (khi có holdings và đang trong phiên chiều)
-    hold_id = f"dir_{date_str}_holding_sentinel"
-    if holdings and in_market_hours and (13 * 60 <= hm <= 14 * 60 + 45) and hold_id not in existing_ids:
-        summary_parts = []
-        for h in holdings:
-            summary_parts.append(
-                f"{h.get('shares', 0)} {h.get('symbol')} @ Live {float(h.get('current_price', 0)):,.0f} đ ({float(h.get('pnl_pct', 0)):+.2f}%, Stop {float(h.get('stop_loss', 0)):,.0f} đ)"
-            )
-        directives.append({
-            "id": hold_id,
-            "timestamp": t_now_str,
-            "sender": "Victor (Ban 9 Live Sentinel) & Minh Quân (Ban 7 VN)",
-            "role": "sentinel",
-            "type": "sentinel_alert",
-            "content": (
-                f"🛡️ [GIÁM SÁT PHIÊN CHIỀU LIVE] Danh mục hiện hữu: {' | '.join(summary_parts)}. "
-                f"Két tiền mặt bảo toàn: {cash_vnd:,.0f} đ ({cash_pct:.1f}% NAV • Tổng NAV {total_nav:,.0f} đ). "
-                f"Chế độ thị trường: {regime.get('label', 'N/A')}."
-            )
-        })
-        existing_ids.add(hold_id)
-        changed = True
-
-    # 4. Tín hiệu mua mới trong Khung Giờ Vàng (chỉ bắn khi chưa cầm mã đó và Regime không DEFENSIVE)
+    # 3. GỘP TÍN HIỆU ĐẠT MỨC MUA KHUNG GIỜ VÀNG THÀNH 1 TIN TỔNG HỢP DUY NHẤT (chỉ mã có đủ Target > 0 & Stop > 0)
     if in_golden_window and regime_id != "DEFENSIVE_SELLOFF":
+        golden_candidates = []
         for s in live_stocks:
             if s.get("is_holding"):
                 continue
+            probe_t = float(s.get("probe_target") or 0.0)
+            stop_t = float(s.get("stop_loss") or 0.0)
+            tp1_t = float(s.get("tp1") or 0.0)
+            if probe_t <= 0 or stop_t <= 0 or tp1_t <= 0:
+                continue
             if s.get("action_code") in ("BUY_ZONE", "STANDBY_BUY_ZONE") and float(s.get("active_buy_pct", 0.0)) >= 55.0:
-                bid = f"dir_{date_str}_golden_buy_{s['code']}"
-                if bid not in existing_ids:
-                    directives.append({
-                        "id": bid,
-                        "timestamp": t_now_str,
-                        "sender": "Minh Quân (Ban 7 VN)",
-                        "role": "specialist",
-                        "type": "specialist_directive",
-                        "content": (
-                            f"🎯 [TÍN HIỆU KHUNG GIỜ VÀNG — {s['code']}] Giá live {s['price']:,.0f} đ vào vùng gom "
-                            f"(Mục tiêu <= {s['probe_target']:,.0f} đ), Mua chủ động {s['active_buy_pct']:.1f}%, "
-                            f"Stop {s['stop_loss']:,.0f} đ, TP1 {s['tp1']:,.0f} đ. Xin Chủ tịch xem xét giải ngân LO!"
-                        )
-                    })
-                    existing_ids.add(bid)
-                    changed = True
+                golden_candidates.append(s)
+
+        if golden_candidates:
+            top_buys = golden_candidates[:3]
+            bundle_id = f"dir_{date_str}_golden_buy_bundle"
+            if bundle_id not in existing_ids:
+                lines_ui = " | ".join(
+                    f"{b['code']} @ LO {float(b['probe_target']):,.0f}đ (Stop {float(b['stop_loss']):,.0f}đ, TP1 {float(b['tp1']):,.0f}đ)"
+                    for b in top_buys
+                )
+                directives.append({
+                    "id": bundle_id,
+                    "timestamp": t_now_str,
+                    "sender": "Minh Quân (Ban 7 VN)",
+                    "role": "specialist",
+                    "type": "specialist_directive",
+                    "content": f"🟢 [ĐẠT MỨC MUA KHUNG GIỜ VÀNG] Hành động: ĐẶT MUA LO 100 CP/mã — {lines_ui}",
+                })
+                existing_ids.add(bundle_id)
+                changed = True
+
+                lines_tg = "\n".join(
+                    f"• <b>{b['code']}</b>: Giá {float(b['price']):,.0f} đ → 👉 <b>ĐẶT MUA LO 100 CP @ {float(b['probe_target']):,.0f} đ</b> (TP1 {float(b['tp1']):,.0f} đ | Cắt lỗ {float(b['stop_loss']):,.0f} đ)"
+                    for b in top_buys
+                )
+                tg_bundle = (
+                    f"🟢 <b>TÍN HIỆU ĐẠT MỨC MUA (KHUNG GIỜ VÀNG)</b> ({t_now_str})\n"
+                    f"{lines_tg}\n"
+                    f"• 🛡️ Kỷ luật: Chỉ giải ngân bằng lệnh LO trong khung 14h05–14h25."
+                )
+                tg_queue.append({"topic": "daily_warroom", "text": tg_bundle, "event_key": f"{date_str}_GOLDEN_BUY_BUNDLE", "cooldown": 14400, "priority": "NORMAL"})
+                tg_queue.append({"topic": "james_hq", "text": tg_bundle, "event_key": f"{date_str}_GOLDEN_BUY_BUNDLE_J", "cooldown": 14400, "priority": "NORMAL"})
 
     if changed:
         save_directives_history(directives, date_str)
-        if (not is_weekend) and prev_len < len(directives):
-            try:
-                from scripts.telegram_dispatcher import dispatch_message
-                for new_d in directives[prev_len:]:
-                    d_type = str(new_d.get("type") or "")
-                    c_txt = str(new_d.get("content") or "")
-                    if not c_txt:
-                        continue
-                    dispatch_message("daily_warroom", c_txt, mirror_to_reports_vault=False)
-                    if d_type in ("specialist_directive", "demo_tactical_plan") and in_golden_window:
-                        dispatch_message("james_hq", c_txt, mirror_to_reports_vault=False)
-            except Exception:
-                pass
+    if tg_queue and (not is_weekend):
+        try:
+            from scripts.telegram_dispatcher import dispatch_message
+            for item in tg_queue:
+                dispatch_message(
+                    item["topic"],
+                    item["text"],
+                    parse_mode="HTML",
+                    mirror_to_reports_vault=False,
+                    event_key=item["event_key"],
+                    cooldown_seconds=item["cooldown"],
+                    is_intraday_alert=True,
+                    priority=item["priority"],
+                )
+        except Exception:
+            pass
     return directives
 
 
@@ -1737,6 +1851,7 @@ def get_tactical_war_room_state(force_refresh: bool = False) -> Dict[str, Any]:
         "action_plan": action_plan,
         "market_overview": market_overview,
         "live_stocks": live_stocks,
+        "simple_action_board": build_simple_action_board(live_stocks, phase_info, regime),
         "dynamic_picks": dynamic_picks,
         "minh_quan_blueprint": {
             "specialist_name": "Minh Quân",

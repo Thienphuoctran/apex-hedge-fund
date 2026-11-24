@@ -888,6 +888,21 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
             return
 
+        elif path == "/api/office/job":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            try:
+                from scripts.apex_virtual_office_engine import get_job_detail
+                job_id = query.get("id", [""])[0].strip()
+                payload = get_job_detail(job_id)
+                self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}, ensure_ascii=False).encode("utf-8"))
+            return
+
         elif path in ("/api/office/assets/office.css", "/api/office/assets/office.js"):
             fname = "office.css" if path.endswith(".css") else "office.js"
             ctype = "text/css; charset=utf-8" if fname.endswith(".css") else "application/javascript; charset=utf-8"
@@ -930,7 +945,7 @@ class ApexSupervisorHTTPHandler(http.server.BaseHTTPRequestHandler):
                 html = scripts.apex_web_portal_engine.generate_portal_html(status_data, reports, milestones, available_dates=dates)
             except Exception as e:
                 import traceback
-                log_supervisor(f"[CRITICAL_PORTAL_RENDER_ERROR] {traceback.format_exc()}")
+                log_sup(f"[CRITICAL_PORTAL_RENDER_ERROR] {traceback.format_exc()}")
                 print(f"[CRITICAL_PORTAL_RENDER_ERROR] {traceback.format_exc()}", flush=True)
                 html = generate_supervisor_dashboard_html(status_data)
             self.wfile.write(html.encode("utf-8"))
@@ -1753,8 +1768,12 @@ class ApexCloudSupervisor:
                     from scripts.apex_live_intraday_brain import is_vn_trading_hours, compute_live_war_room_snapshot, sync_live_intraday_report
                     from scripts.vn3_portfolio_autonomous_sentinel import fetch_live_quotes, check_triggers_and_alert, update_telemetry
                     in_vn = is_vn_trading_hours()
+                    allow_tg_push = in_vn and (
+                        os.environ.get("APEX_ALLOW_CLOUD_TELEGRAM_PUSH", "0").strip() == "1"
+                        or os.environ.get("TELEGRAM_POLLING_OWNER", "").strip().lower() != "pc"
+                    )
                     quotes = fetch_live_quotes()
-                    check_triggers_and_alert(quotes, notify_telegram=in_vn)
+                    check_triggers_and_alert(quotes, notify_telegram=allow_tg_push)
                     update_telemetry(quotes)
                     snap = compute_live_war_room_snapshot(force_refresh=in_vn)
                     sync_live_intraday_report(snap, force_write=False)
@@ -1763,7 +1782,7 @@ class ApexCloudSupervisor:
                     if now_ts - last_warroom_145_ts >= (120 if in_vn else 300):
                         try:
                             from scripts.apex_daily_live_warroom_engine import run_live_recon_and_decision
-                            run_live_recon_and_decision(refresh_intel=False, send_telegram=in_vn, tag="CLOUD_247_SYNC")
+                            run_live_recon_and_decision(refresh_intel=False, send_telegram=allow_tg_push, tag="CLOUD_247_SYNC")
                         except Exception as _we:
                             log_sup(f"⚠️ [CLOUD 145-STOCK SYNC WARNING] {_we}", echo=False)
                         last_warroom_145_ts = now_ts

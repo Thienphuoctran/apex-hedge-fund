@@ -278,34 +278,157 @@ def set_dedicated_reports_room(chat_id: str, title: Optional[str] = None) -> Dic
     return cfg
 
 
-def is_duplicate_message(chat_id: str, thread_id: Optional[int], text: str, window_seconds: int = 300) -> bool:
-    """[DEDUP SHIELD] Chặn đứng 100% tin nhắn gửi trùng lặp trong cùng topic trong 5 phút."""
-    try:
-        norm_text = "".join(text.split())
-        key_raw = f"{chat_id}_{thread_id}_{norm_text}"
-        msg_hash = hashlib.md5(key_raw.encode("utf-8")).hexdigest()
-        now_ts = time.time()
+def should_block_outbound_telegram(
+    is_intraday_alert: bool = False,
+    priority: str = "NORMAL",
+) -> Tuple[bool, str]:
+    """
+    [OUTBOUND GUARD] Chống gửi trùng giữa Cloud & PC và chặn tin biến động trong ngày nghỉ lễ/sàn đóng cửa.
+    """
+    prio = str(priority or "NORMAL").upper()
+    if prio == "CRITICAL_STOP":
+        return False, "CRITICAL_OVERRIDE"
 
-        cache = {}
+    is_cloud_env = (
+        os.environ.get("RENDER", "").strip().lower() == "true"
+        or os.environ.get("APEX_CLOUD_COMPACT_MODE", "").strip() == "1"
+    )
+    polling_owner = os.environ.get("TELEGRAM_POLLING_OWNER", "").strip().lower()
+    allow_cloud_push = os.environ.get("APEX_ALLOW_CLOUD_TELEGRAM_PUSH", "0").strip() == "1"
+    if is_cloud_env and polling_owner == "pc" and not allow_cloud_push:
+        return True, "CLOUD_SINGLE_OWNER_PC"
+
+    if is_intraday_alert:
+        try:
+            from scripts.vn_market_calendar import get_vn_market_session_state
+            msess = get_vn_market_session_state(now_ict=_get_ict_now())
+            if (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False)):
+                return True, f"HOLIDAY_OR_CLOSED_MARKET:{msess.get('status_code', 'CLOSED')}"
+        except Exception:
+            pass
+
+    return False, "ALLOWED"
+
+
+def _clean_plain_fallback_text(text: str) -> str:
+    """Loại bỏ ký tự Markdown thô (*, `, _ biên) nếu phải fallback sang plain text."""
+    cleaned = re.sub(r"[*`]", "", text or "")
+    cleaned = re.sub(r"(?<!\w)_|_(?!\w)", "", cleaned)
+    return cleaned
+
+
+def is_duplicate_message(
+    chat_id: str,
+    thread_id: Optional[int],
+    text: str,
+    window_seconds: int = 1800,
+    event_key: Optional[str] = None,
+    priority: str = "NORMAL",
+) -> bool:
+    """
+    [4-LAYER DEDUP SHIELD + QUOTA BREAKER]
+    1) Event Key Cooldown (VD: 2026-11-24_HPG_STOP).
+    2) Semantic Hash bỏ qua con số dao động nhỏ (BuyUp 39.3% -> 39.4% không gửi lại).
+    3) Exact Hash chống bắn đúp đồng thời.
+    4) Quota Circuit Breaker: Tối đa 6 tin/giờ & 25 tin/ngày mỗi phòng (trừ CRITICAL_STOP).
+    """
+    try:
+        now_ict = _get_ict_now()
+        today_str = now_ict.strftime("%Y-%m-%d")
+        now_ts = time.time()
+        prio = str(priority or "NORMAL").upper()
+        win_sec = max(60, int(window_seconds or 1800))
+
+        raw_cache: Dict[str, Any] = {}
         if DEDUP_CACHE_FILE.exists():
             try:
                 with open(DEDUP_CACHE_FILE, "r", encoding="utf-8") as f:
-                    cache = json.load(f)
+                    loaded = json.load(f)
+                    if isinstance(loaded, dict):
+                        raw_cache = loaded
             except Exception:
-                cache = {}
+                raw_cache = {}
 
-        cache = {k: v for k, v in cache.items() if now_ts - v.get("ts", 0) < 3600}
+        if "events" in raw_cache and isinstance(raw_cache.get("events"), dict):
+            events: Dict[str, Any] = dict(raw_cache.get("events") or {})
+            quotas: Dict[str, Any] = dict(raw_cache.get("quotas") or {})
+        else:
+            # Tương thích ngược từ cấu trúc dict phẳng cũ
+            events = {
+                k: v for k, v in raw_cache.items()
+                if isinstance(v, dict) and "ts" in v
+            }
+            quotas = {}
 
-        if msg_hash in cache:
-            elapsed = now_ts - cache[msg_hash].get("ts", 0)
-            if elapsed < window_seconds:
-                print(f"[!] [DEDUP SHIELD] Phát hiện tin nhắn trùng lặp (đã gửi cách đây {elapsed:.1f}s). Tự động chặn ngay!")
+        # Dọn cache quá 24h & quota ngoài ngày hôm nay
+        events = {
+            k: v for k, v in events.items()
+            if isinstance(v, dict) and (now_ts - float(v.get("ts", 0))) < 86400
+        }
+        cleaned_quotas: Dict[str, Any] = {}
+        for qk, qv in quotas.items():
+            if isinstance(qv, dict) and qv.get("date") == today_str:
+                ts_list = [float(x) for x in (qv.get("timestamps") or []) if (now_ts - float(x)) < 86400]
+                cleaned_quotas[qk] = {"date": today_str, "timestamps": ts_list}
+        quotas = cleaned_quotas
+
+        q_key = f"{chat_id}_{thread_id}"
+        q_rec = quotas.get(q_key, {"date": today_str, "timestamps": []})
+        day_ts = list(q_rec.get("timestamps") or [])
+        hour_ts = [t for t in day_ts if (now_ts - float(t)) < 3600]
+
+        if prio != "CRITICAL_STOP":
+            if len(hour_ts) >= 6:
+                print(f"[!] [QUOTA BREAKER] Topic {q_key} đã đạt trần 6 tin/giờ ({len(hour_ts)}). Tự động chặn chống spam!")
+                return True
+            if len(day_ts) >= 25:
+                print(f"[!] [QUOTA BREAKER] Topic {q_key} đã đạt trần 25 tin/ngày ({len(day_ts)}). Tự động chặn chống spam!")
                 return True
 
-        cache[msg_hash] = {"ts": now_ts, "thread_id": thread_id, "preview": text[:60]}
+        ev_id: Optional[str] = None
+        if event_key:
+            ev_digest = hashlib.sha256(str(event_key).encode("utf-8")).hexdigest()[:24]
+            ev_id = f"{chat_id}_{thread_id}_EV_{ev_digest}"
+            if ev_id in events:
+                elapsed = now_ts - float(events[ev_id].get("ts", 0))
+                if elapsed < win_sec:
+                    print(f"[!] [EVENT COOLDOWN] Event '{event_key}' đã gửi cách đây {elapsed:.0f}s (< {win_sec}s). Chặn trùng!")
+                    return True
+
+        # Semantic hash: loại bỏ mọi số liệu/thời gian dao động nhỏ (39.3% -> #, 11:08 -> #)
+        semantic_norm = re.sub(r"\d[\d.,:%+-]*", "#", str(text or ""))
+        semantic_norm = re.sub(r"\s+", " ", semantic_norm).strip()
+        sem_digest = hashlib.sha256(semantic_norm.encode("utf-8")).hexdigest()[:24]
+        sem_id = f"{chat_id}_{thread_id}_SEM_{sem_digest}"
+        if prio != "CRITICAL_STOP" and sem_id in events:
+            elapsed = now_ts - float(events[sem_id].get("ts", 0))
+            if elapsed < win_sec:
+                print(f"[!] [SEMANTIC DEDUP] Tin cùng mẫu biến động đã gửi cách đây {elapsed:.0f}s (< {win_sec}s). Chặn spam!")
+                return True
+
+        exact_norm = "".join(str(text or "").split())
+        exact_digest = hashlib.sha256(f"{chat_id}_{thread_id}_{exact_norm}".encode("utf-8")).hexdigest()[:24]
+        exact_id = f"{chat_id}_{thread_id}_EX_{exact_digest}"
+        if exact_id in events:
+            elapsed = now_ts - float(events[exact_id].get("ts", 0))
+            if elapsed < win_sec:
+                print(f"[!] [EXACT DEDUP] Tin trùng khớp tuyệt đối cách đây {elapsed:.0f}s. Chặn ngay!")
+                return True
+
+        entry_meta = {"ts": now_ts, "thread_id": thread_id, "preview": str(text or "")[:64]}
+        if ev_id:
+            events[ev_id] = dict(entry_meta, event_key=str(event_key))
+        events[sem_id] = dict(entry_meta)
+        events[exact_id] = dict(entry_meta)
+
+        day_ts.append(now_ts)
+        quotas[q_key] = {"date": today_str, "timestamps": day_ts[-40:]}
+
         DEDUP_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
-        with open(DEDUP_CACHE_FILE, "w", encoding="utf-8") as f:
-            json.dump(cache, f, indent=2)
+        tmp = DEDUP_CACHE_FILE.with_suffix(".tmp")
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump({"events": events, "quotas": quotas}, f, indent=2, ensure_ascii=False)
+        tmp.replace(DEDUP_CACHE_FILE)
 
         return False
     except Exception:
@@ -318,13 +441,32 @@ def send_raw_telegram(
     text: str,
     message_thread_id: Optional[int] = None,
     reply_markup: Optional[Dict[str, Any]] = None,
-    parse_mode: Optional[str] = "Markdown"
+    parse_mode: Optional[str] = "Markdown",
+    event_key: Optional[str] = None,
+    cooldown_seconds: int = 1800,
+    is_intraday_alert: bool = False,
+    priority: str = "NORMAL",
 ) -> bool:
-    """Gửi tin nhắn Telegram thô, tự động chia nhỏ nếu > 4000 ký tự."""
+    """Gửi tin nhắn Telegram có 4 lớp khiên chống spam + HTML/Markdown an toàn."""
     if not bot_token or not chat_id:
         return False
 
-    if is_duplicate_message(chat_id, message_thread_id, text):
+    blocked, reason = should_block_outbound_telegram(
+        is_intraday_alert=is_intraday_alert,
+        priority=priority,
+    )
+    if blocked:
+        print(f"[Telegram Guard] Chặn gửi tin tự động ({reason}).")
+        return False
+
+    if is_duplicate_message(
+        chat_id,
+        message_thread_id,
+        text,
+        window_seconds=cooldown_seconds,
+        event_key=event_key,
+        priority=priority,
+    ):
         return True
 
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
@@ -366,12 +508,20 @@ def send_raw_telegram(
             if parse_mode:
                 try:
                     payload.pop("parse_mode", None)
+                    payload["text"] = _clean_plain_fallback_text(chunk) if parse_mode == "Markdown" else re.sub(r"<[^>]+>", "", chunk)
                     data = json.dumps(payload).encode("utf-8")
                     req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
                     with urllib.request.urlopen(req, timeout=10) as resp:
                         res = json.loads(resp.read().decode("utf-8"))
                         if res.get("ok"):
                             sent = True
+                            msg_id = res.get("result", {}).get("message_id")
+                            if msg_id:
+                                try:
+                                    from scripts.telegram_cleaner_and_pin import record_message
+                                    record_message(msg_id, chat_id, message_thread_id, getattr(send_raw_telegram, "_current_topic_key", "general"))
+                                except Exception:
+                                    pass
                 except Exception as e2:
                     print(f"[!] Lỗi kết nối Telegram (plain text fallback): {e2}")
 
@@ -449,13 +599,25 @@ def dispatch_message(
     mirror_to_reports_vault: bool = True,
     use_ai_summary: bool = False,
     allow_assistant_standby: bool = False,
+    event_key: Optional[str] = None,
+    cooldown_seconds: int = 1800,
+    is_intraday_alert: bool = False,
+    priority: str = "NORMAL",
 ) -> bool:
     """
-    Định tuyến tin nhắn chuẩn 3 Phòng Telegram:
+    Định tuyến tin nhắn chuẩn 3 Phòng Telegram kèm 4 lớp chống spam:
       1. `assistant_nam`: Phòng Trợ lý Cá nhân (mặc định standby, chặn bot tự spam nếu chưa mở).
       2. `daily_warroom`: Phòng Tác chiến Mỗi ngày (hợp nhất toàn bộ báo cáo/biến động kế hoạch trong ngày).
       3. `james_hq`: Phòng của Master CIO James (gửi Kế hoạch Tác chiến Hoàn chỉnh trong ngày).
     """
+    blocked, reason = should_block_outbound_telegram(
+        is_intraday_alert=is_intraday_alert,
+        priority=priority,
+    )
+    if blocked:
+        print(f"[Telegram Guard] Bỏ qua gửi tin topic '{topic_key}' ({reason}).")
+        return False
+
     cfg = load_config()
     bot_token = cfg.get("bot_token", "")
     group_chat_id = cfg.get("group_chat_id")
@@ -489,7 +651,11 @@ def dispatch_message(
             text=formatted_text,
             message_thread_id=None,
             reply_markup=reply_markup,
-            parse_mode=parse_mode
+            parse_mode=parse_mode,
+            event_key=event_key,
+            cooldown_seconds=cooldown_seconds,
+            is_intraday_alert=is_intraday_alert,
+            priority=priority,
         )
         if ok_ded:
             return True
@@ -502,7 +668,11 @@ def dispatch_message(
             text=formatted_text,
             message_thread_id=int(thread_id),
             reply_markup=reply_markup,
-            parse_mode=parse_mode
+            parse_mode=parse_mode,
+            event_key=event_key,
+            cooldown_seconds=cooldown_seconds,
+            is_intraday_alert=is_intraday_alert,
+            priority=priority,
         )
 
     if primary_ok:
@@ -529,7 +699,11 @@ def dispatch_message(
                     reply_markup=card_markup,
                     force_private=False,
                     parse_mode="Markdown",
-                    mirror_to_reports_vault=False
+                    mirror_to_reports_vault=False,
+                    event_key=(f"MIRROR_{event_key}" if event_key else None),
+                    cooldown_seconds=cooldown_seconds,
+                    is_intraday_alert=is_intraday_alert,
+                    priority=priority,
                 )
             except Exception:
                 pass
@@ -540,7 +714,7 @@ def dispatch_message(
         print(f"[Anti-Noise] Đã chặn fallback rác về Private Chat cho topic '{topic_key}'.")
         return False
 
-    fallback_badge = f"🔖 *[{topic_name}]*\n"
+    fallback_badge = f"🔖 *[{topic_name}]*\n" if parse_mode == "Markdown" else f"🔖 <b>[{topic_name}]</b>\n"
     if fallback_badge not in formatted_text:
         formatted_text = f"{fallback_badge}{formatted_text}"
 
@@ -549,7 +723,11 @@ def dispatch_message(
         chat_id=str(private_chat_id),
         text=formatted_text,
         reply_markup=reply_markup,
-        parse_mode=parse_mode
+        parse_mode=parse_mode,
+        event_key=event_key,
+        cooldown_seconds=cooldown_seconds,
+        is_intraday_alert=is_intraday_alert,
+        priority=priority,
     )
 
 

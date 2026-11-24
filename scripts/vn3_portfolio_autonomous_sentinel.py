@@ -56,24 +56,25 @@ except ImportError:
 
 from scripts.telegram_dispatcher import dispatch_message
 from scripts.vietnam_realtime_feed import fetch_vps_quotes
+from scripts.vn_market_calendar import get_vn_market_session_state
 
 SENTINEL_DIR = BASE_DIR / "09_Realtime_Portfolio_Sentinel"
 TELEMETRY_JSON = SENTINEL_DIR / "vn3_live_telemetry.json"
 TELEMETRY_MD = SENTINEL_DIR / "vn3_live_telemetry.md"
 
 WATCHLIST_FALLBACKS: Dict[str, Dict[str, Any]] = {
-    "HDB": {"name": "HDBank", "entry_price": 22057.0, "stop_loss": 22060.0, "stop_warning": 22300.0, "sell_target_min": 24200.0, "sell_target_max": 25800.0, "probe_target": 22350.0},
-    "MSH": {"name": "May Sông Hồng", "entry_price": 34510.0, "stop_loss": 33090.0, "stop_warning": 33700.0, "sell_target_min": 39500.0, "sell_target_max": 43000.0, "probe_target": 34100.0},
-    "BAF": {"name": "Nông Nghiệp BAF", "entry_price": 30850.0, "stop_loss": 29650.0, "stop_warning": 30000.0, "sell_target_min": 36580.0, "sell_target_max": 39610.0, "probe_target": 30850.0},
-    "DBC": {"name": "Tập Đoàn Dabaco", "entry_price": 16050.0, "stop_loss": 15087.0, "stop_warning": 15350.0, "sell_target_min": 18971.0, "sell_target_max": 20544.0, "probe_target": 16050.0},
-    "SZC": {"name": "Sonadezi Châu Đức", "entry_price": 20700.0, "stop_loss": 19599.0, "stop_warning": 19900.0, "sell_target_min": 24645.0, "sell_target_max": 26688.0, "probe_target": 20700.0},
-    "HPG": {"name": "Tập Đoàn Hòa Phát", "entry_price": 20950.0, "stop_loss": 20014.0, "stop_warning": 20300.0, "sell_target_min": 24881.0, "sell_target_max": 26944.0, "probe_target": 20950.0},
-    "IDC": {"name": "Tổng Công Ty IDICO", "entry_price": 34600.0, "stop_loss": 32530.0, "stop_warning": 33100.0, "sell_target_min": 38660.0, "sell_target_max": 42000.0, "probe_target": 34600.0},
-    "BSR": {"name": "Lọc Hóa Dầu Bình Sơn", "entry_price": 24900.0, "stop_loss": 23700.0, "stop_warning": 24100.0, "sell_target_min": 27800.0, "sell_target_max": 29500.0, "probe_target": 24900.0},
-    "PVT": {"name": "PVTrans", "entry_price": 20900.0, "stop_loss": 19550.0, "stop_warning": 19900.0, "sell_target_min": 23200.0, "sell_target_max": 24800.0, "probe_target": 20900.0},
-    "TCB": {"name": "Techcombank", "entry_price": 21500.0, "stop_loss": 20847.0, "stop_warning": 21100.0, "sell_target_min": 25827.0, "sell_target_max": 27968.0, "probe_target": 21500.0},
-    "MBB": {"name": "Ngân Hàng Quân Đội", "entry_price": 19000.0, "stop_loss": 18478.0, "stop_warning": 18750.0, "sell_target_min": 22635.0, "sell_target_max": 24512.0, "probe_target": 19000.0},
-    "OCB": {"name": "Ngân Hàng Phương Đông", "entry_price": 10650.0, "stop_loss": 10192.0, "stop_warning": 10350.0, "sell_target_min": 12766.0, "sell_target_max": 13824.0, "probe_target": 10650.0},
+    "TPB": {"name": "TPBank", "entry_price": 12300.0, "stop_loss": 11600.0, "stop_warning": 11850.0, "sell_target_min": 13350.0, "sell_target_max": 14450.0, "probe_target": 12250.0},
+    "HPG": {"name": "Tập Đoàn Hòa Phát", "entry_price": 20500.0, "stop_loss": 19300.0, "stop_warning": 19700.0, "sell_target_min": 22300.0, "sell_target_max": 24100.0, "probe_target": 20200.0},
+    "CTG": {"name": "VietinBank", "entry_price": 30150.0, "stop_loss": 28500.0, "stop_warning": 29100.0, "sell_target_min": 33200.0, "sell_target_max": 35800.0, "probe_target": 30150.0},
+    "NAB": {"name": "Nam A Bank", "entry_price": 13100.0, "stop_loss": 12400.0, "stop_warning": 12650.0, "sell_target_min": 14400.0, "sell_target_max": 15700.0, "probe_target": 13100.0},
+    "CTS": {"name": "Chứng Khoán VietinBank", "entry_price": 23800.0, "stop_loss": 22300.0, "stop_warning": 22800.0, "sell_target_min": 26600.0, "sell_target_max": 29000.0, "probe_target": 23800.0},
+    "HDB": {"name": "HDBank", "entry_price": 21800.0, "stop_loss": 20500.0, "stop_warning": 20950.0, "sell_target_min": 23650.0, "sell_target_max": 25600.0, "probe_target": 21800.0},
+    "VPB": {"name": "VPBank", "entry_price": 20300.0, "stop_loss": 19350.0, "stop_warning": 19700.0, "sell_target_min": 23450.0, "sell_target_max": 25200.0, "probe_target": 20300.0},
+    "TCB": {"name": "Techcombank", "entry_price": 21000.0, "stop_loss": 19850.0, "stop_warning": 20250.0, "sell_target_min": 23100.0, "sell_target_max": 25000.0, "probe_target": 21000.0},
+    "PVT": {"name": "PVTrans", "entry_price": 18650.0, "stop_loss": 17800.0, "stop_warning": 18150.0, "sell_target_min": 20700.0, "sell_target_max": 22300.0, "probe_target": 18650.0},
+    "NT2": {"name": "Điện Lực Nhơn Trạch 2", "entry_price": 23600.0, "stop_loss": 22300.0, "stop_warning": 22750.0, "sell_target_min": 25950.0, "sell_target_max": 28100.0, "probe_target": 23600.0},
+    "SSI": {"name": "Chứng Khoán SSI", "entry_price": 19800.0, "stop_loss": 18700.0, "stop_warning": 19100.0, "sell_target_min": 21800.0, "sell_target_max": 23600.0, "probe_target": 19800.0},
+    "PVP": {"name": "Vận Tải Dầu Khí TBD", "entry_price": 16550.0, "stop_loss": 15650.0, "stop_warning": 15950.0, "sell_target_min": 18250.0, "sell_target_max": 19750.0, "probe_target": 16550.0},
 }
 
 alerted_triggers = set()
@@ -235,16 +236,18 @@ def _ict_now() -> datetime.datetime:
 
 def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram: bool = True) -> List[Dict[str, Any]]:
     """
-    Quét toàn bộ mã đang nắm giữ & watchlist trên MỌI phiên làm việc:
-    - Chốt lời TP1/TP2 hoặc Cắt lỗ Stop 2xATR / Cận Stop cho vị thế nắm giữ.
-    - Đạt vùng canh mua LO kèm Mua chủ động >= 55% hoặc Cảnh báo áp lực cung cho mã Watchlist.
-    - Đồng bộ trực tiếp vào Phòng Tác Chiến & Trigger Center của Victor.
+    Quét toàn bộ mã đang nắm giữ & watchlist trên phiên giao dịch hợp lệ:
+    - Chốt lời TP1/TP2 hoặc Cắt lỗ Stop 2xATR / Cận Stop cho vị thế nắm giữ (tin ngắn gọn 4 dòng).
+    - Đạt vùng canh mua LO kèm Mua chủ động >= 55% trong Khung Giờ Vàng.
+    - Khóa tuyệt đối thông báo intraday trong ngày nghỉ lễ / cuối tuần / dữ liệu đóng băng.
     """
     now = _ict_now()
     now_str = now.strftime("%H:%M:%S")
     date_str = now.strftime("%Y-%m-%d")
     hm = now.hour * 60 + now.minute
-    in_market_hours = (now.weekday() < 5) and (9 * 60 <= hm <= 14 * 60 + 45)
+    msess = get_vn_market_session_state(now_ict=now)
+    is_closed = (not msess.get("is_trading_day", True)) or bool(msess.get("stale_feed_detected", False))
+    in_market_hours = (not is_closed) and (now.weekday() < 5) and (9 * 60 <= hm <= 14 * 60 + 45)
 
     ssot_state = load_dynamic_ssot_state()
     cfg_map = ssot_state["config"]
@@ -265,79 +268,94 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
             pnl_pct_trade = (pnl_trade / cost) * 100.0 if cost > 0 else 0.0
 
             if cfg["sell_target_min"] > 0 and price >= cfg["sell_target_min"]:
-                key = f"{date_str}_{sym}_TP1_{int(price)}"
+                key = f"{date_str}_{sym}_TP1"
                 triggered_events.append({"symbol": sym, "type": "TP1_REACHED", "price": price, "buy_up": buy_up})
                 if key not in alerted_triggers:
                     alerted_triggers.add(key)
                     sound_beep(1900, 350, 3)
-                    msg = (
-                        f"🎯 [VICTOR BÁO ĐỘNG ĐẠT NGƯỠNG CHỐT LỜI — {sym}] "
-                        f"Thị giá {price:,.0f} ₫ đã chạm TP1 ({cfg['sell_target_min']:,.0f} ₫)! "
-                        f"Lãi ròng: {pnl_trade:+,.0f} ₫ ({pnl_pct_trade:+.2f}%). Đề xuất chốt 50% vị thế bằng lệnh LO!"
+                    msg_ui = (
+                        f"💰 [ĐẠT NGƯỠNG BÁN CHỐT LỜI — {sym}] Giá {price:,.0f} đ >= TP1 ({cfg['sell_target_min']:,.0f} đ). "
+                        f"Hành động: TIẾN HÀNH BÁN chốt lời 50% vị thế!"
+                    )
+                    msg_tg = (
+                        f"💰 <b>CHẠM NGƯỠNG BÁN CHỐT LỜI — {sym}</b> ({now_str})\n"
+                        f"• Giá hiện tại: <b>{price:,.0f} đ</b> (vượt TP1 {cfg['sell_target_min']:,.0f} đ • Lãi {pnl_pct_trade:+.2f}%)\n"
+                        f"• 👉 <b>Hành động: TIẾN HÀNH BÁN chốt lời 50%</b> bằng lệnh LO tại {price:,.0f} đ\n"
+                        f"• 🛡️ Quản trị: Giữ 50% còn lại hướng TP2 {cfg.get('tp2', 0):,.0f} đ (kéo Stop về giá vốn)."
                     )
                     try:
                         from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
-                        push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg, role="sentinel", alert_key=key, date_str=date_str)
+                        push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg_ui, role="sentinel", alert_key=key, date_str=date_str)
                     except Exception:
                         pass
                     if notify_telegram and in_market_hours:
-                        dispatch_message("alerts", msg)
-                        dispatch_message("james_hq", msg)
+                        dispatch_message("daily_warroom", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=key, cooldown_seconds=14400, is_intraday_alert=True)
 
             elif cfg["stop_loss"] > 0 and price <= cfg["stop_loss"]:
-                key = f"{date_str}_{sym}_STOP_{int(price)}"
+                key = f"{date_str}_{sym}_STOP"
                 triggered_events.append({"symbol": sym, "type": "STOP_LOSS_BREACH", "price": price, "buy_up": buy_up})
                 if key not in alerted_triggers:
                     alerted_triggers.add(key)
                     sound_beep(2000, 500, 4)
-                    msg = (
-                        f"🚨 [VICTOR BÁO ĐỘNG ĐỎ CẮT LỖ — {sym}] "
-                        f"Thị giá {price:,.0f} ₫ chạm/thủng Stop 2xATR ({cfg['stop_loss']:,.0f} ₫)! "
-                        f"Chủ tịch kiểm tra xử lý kỷ luật nếu không rút chân trước 14h15."
+                    msg_ui = (
+                        f"🔴 [CHẠM NGƯỠNG BÁN CẮT LỖ — {sym}] Giá {price:,.0f} đ <= Stop {cfg['stop_loss']:,.0f} đ! "
+                        f"Hành động: TIẾN HÀNH BÁN cắt lỗ dứt khoát nếu không rút chân trước 14h15!"
+                    )
+                    msg_tg = (
+                        f"🔴 <b>CHẠM NGƯỠNG BÁN CẮT LỖ — {sym}</b> ({now_str})\n"
+                        f"• Giá hiện tại: <b>{price:,.0f} đ</b> (thủng Stop {cfg['stop_loss']:,.0f} đ • {pnl_pct_trade:+.2f}%)\n"
+                        f"• 👉 <b>Hành động: TIẾN HÀNH BÁN cắt lỗ dứt khoát</b> (kiểm định 14h15)\n"
+                        f"• 🛡️ Quản trị: Khóa rủi ro danh mục, tuyệt đối không trung bình giá xuống."
                     )
                     try:
                         from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
-                        push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg, role="sentinel", alert_key=key, date_str=date_str)
+                        push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg_ui, role="sentinel", alert_key=key, date_str=date_str)
                     except Exception:
                         pass
                     if notify_telegram and in_market_hours:
-                        dispatch_message("alerts", msg)
-                        dispatch_message("james_hq", msg)
+                        dispatch_message("daily_warroom", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=key, cooldown_seconds=14400, is_intraday_alert=True, priority="CRITICAL_STOP")
+                        dispatch_message("james_hq", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=f"{key}_JAMES", cooldown_seconds=14400, is_intraday_alert=True, priority="CRITICAL_STOP")
 
             elif cfg["stop_loss"] > 0 and ((price - cfg["stop_loss"]) / price * 100.0) <= 2.6:
                 key = f"{date_str}_{sym}_NEARSTOP"
                 triggered_events.append({"symbol": sym, "type": "NEAR_STOP_WARNING", "price": price, "buy_up": buy_up})
                 if key not in alerted_triggers:
                     alerted_triggers.add(key)
-                    msg = (
-                        f"⚠️ [VICTOR CẢNH BÁO CẬN NGƯỠNG BẢO VỆ — {sym}] "
-                        f"Giá live {price:,.0f} ₫ cách Stop/Cảnh báo {cfg['stop_loss']:,.0f} ₫ chỉ {((price - cfg['stop_loss']) / price * 100.0):.2f}% "
-                        f"(Lãi tạm {pnl_trade:+,.0f} ₫ / Buy-Up {buy_up:.1f}%). Kiểm định nến 14h15!"
+                    msg_ui = (
+                        f"🟡 [CẬN NGƯỠNG BẢO VỆ — {sym}] Giá {price:,.0f} đ (cách Stop {cfg['stop_loss']:,.0f} đ chỉ {((price - cfg['stop_loss']) / price * 100.0):.2f}%). "
+                        f"Hành động: TẠM ĐỢI — Chưa bán, theo dõi nến 14h15!"
                     )
                     try:
                         from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
-                        push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg, role="sentinel", alert_key=key, date_str=date_str)
+                        push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg_ui, role="sentinel", alert_key=key, date_str=date_str)
                     except Exception:
                         pass
         else:
             probe_p = float(cfg.get("probe_target") or 0.0)
-            if probe_p > 0 and price <= probe_p * 1.012 and buy_up >= 55.0:
+            stop_p = float(cfg.get("stop_loss") or 0.0)
+            tp1_p = float(cfg.get("tp1") or 0.0)
+            if probe_p > 0 and stop_p > 0 and tp1_p > 0 and price <= probe_p * 1.012 and buy_up >= 55.0:
                 key = f"{date_str}_{sym}_BUYZONE"
                 triggered_events.append({"symbol": sym, "type": "BUY_ZONE_REACHED", "price": price, "buy_up": buy_up})
-                if key not in alerted_triggers:
+                if key not in alerted_triggers and in_market_hours:
                     alerted_triggers.add(key)
-                    msg = (
-                        f"🟢 [VICTOR RADAR — {sym} ĐẠT VÙNG MUA LO] "
-                        f"Giá {price:,.0f} ₫ ({chg_pct:+.2f}%) sát mục tiêu {probe_p:,.0f} ₫, Mua chủ động {buy_up:.1f}%, "
-                        f"Stop {cfg['stop_loss']:,.0f} ₫, TP1 {cfg['tp1']:,.0f} ₫. Sẵn sàng canh Khung Giờ Vàng 14h00–14h25!"
+                    msg_ui = (
+                        f"🟢 [ĐẠT MỨC MUA — {sym}] Giá {price:,.0f} đ (mục tiêu <= {probe_p:,.0f} đ), BuyUp {buy_up:.1f}%. "
+                        f"Hành động: ĐẶT MUA LO sau 14h05 | Stop {stop_p:,.0f} đ | TP1 {tp1_p:,.0f} đ."
                     )
                     try:
                         from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
-                        push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg, role="sentinel", alert_key=key, date_str=date_str)
+                        push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg_ui, role="sentinel", alert_key=key, date_str=date_str)
                     except Exception:
                         pass
                     if notify_telegram and in_market_hours and (13 * 60 + 45 <= hm <= 14 * 60 + 25):
-                        dispatch_message("alerts", msg)
+                        msg_tg = (
+                            f"🟢 <b>CỔ PHIẾU ĐẠT MỨC MUA — {sym}</b> ({now_str})\n"
+                            f"• Giá hiện tại: <b>{price:,.0f} đ</b> (sát mục tiêu gom {probe_p:,.0f} đ • BuyUp {buy_up:.1f}%)\n"
+                            f"• 👉 <b>Hành động: ĐẶT MUA LO 100 CP</b> vùng {probe_p:,.0f} đ (Khung 14h05–14h25)\n"
+                            f"• 🛡️ Quản trị: Chốt lời TP1 {tp1_p:,.0f} đ | Cắt lỗ {stop_p:,.0f} đ."
+                        )
+                        dispatch_message("daily_warroom", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=key, cooldown_seconds=14400, is_intraday_alert=True)
 
     # Đồng bộ trực tiếp trạng thái War-Room & Trigger Report 24/7
     try:

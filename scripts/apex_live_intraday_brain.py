@@ -254,7 +254,7 @@ def build_unified_watchlist() -> Dict[str, Any]:
             probe_price = float(wkl_entry_prices[0])
             breakout_price = float(wkl_entry_prices[-1] if len(wkl_entry_prices) > 1 else round(probe_price * 1.01, -1))
         else:
-            probe_price = float(sdef.get("probe_price") or ldg.get("probe_price_60") or mst.get("limit_pullback_price_vnd") or fallback_price)
+            probe_price = float(sdef.get("probe_price") or ldg.get("probe_price_60") or mst.get("limit_pullback_price_vnd") or 0.0)
             breakout_price = float(ldg.get("breakout_price_40") or (round(probe_price * 1.02, -1) if probe_price > 0 else 0.0))
 
         name = pos.get("name") or wkl.get("name") or sdef.get("name") or bp.get("company_name") or ldg.get("name") or mst.get("name") or sym
@@ -302,6 +302,7 @@ def build_unified_watchlist() -> Dict[str, Any]:
             "win_prob_pct": float(ldg.get("win_prob_pct") or mst.get("win_prob_pct") or 75.0),
             "expected_value_pct": float(ldg.get("expected_value_pct") or mst.get("expected_value_pct") or 8.5),
             "catalyst": catalyst,
+            "is_blacklisted": sym in forbidden_watch,
         }
 
     return {
@@ -538,13 +539,26 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
                 "status": "HOLDING_T0_AVAILABLE",
             })
         else:
-            # Cổ phiếu tầm ngắm (Standby) với Bộ Lọc Bull-Trap Thích Nghi & Khóa Ngày Nghỉ
-            probe_p = meta["probe_price"] or curr_p
+            # Cổ phiếu tầm ngắm (Standby) với Bộ Lọc Bull-Trap Thích Nghi, Khóa Ngày Nghỉ & Guard Target > 0
+            raw_probe = float(meta.get("probe_price") or 0.0)
+            probe_p = raw_probe if raw_probe > 0 else curr_p
+            has_valid_targets = (raw_probe > 0 and stop_p > 0 and tp1_p > 0 and not bool(meta.get("is_blacklisted")))
             if is_market_closed:
                 sec_status = "MARKET_CLOSED"
                 next_dm = f"{session_state['next_trading_day'][8:10]}/{session_state['next_trading_day'][5:7]}"
-                sec_label = f"⏸️ CHỜ MỞ SÀN {next_dm} (LO {probe_p:,.0f}đ)"
+                if has_valid_targets:
+                    sec_label = f"⏸️ CHỜ MỞ SÀN {next_dm} (LO {raw_probe:,.0f}đ)"
+                else:
+                    sec_label = f"⏸️ CHỜ MỞ SÀN {next_dm} (THEO DÕI)"
                 action_code = "STANDBY_MARKET_CLOSED"
+            elif bool(meta.get("is_blacklisted")):
+                sec_status = "PAUSED"
+                sec_label = "⛔ CẤM ĐUỔI / BLACKLIST BCTC"
+                action_code = "STANDBY_DEFENSIVE_PAUSE"
+            elif not has_valid_targets:
+                sec_status = "STANDBY"
+                sec_label = "🔵 THEO DÕI (Chưa có ngưỡng mua)"
+                action_code = "STANDBY_WATCH"
             elif regime["regime_id"] == "S4_BEAR_CASH_SHIELD" or (adv_ratio_cur < min_br_filter and buy_up < min_bu_filter):
                 sec_status = "PAUSED"
                 sec_label = f"🛑 HOÃN KÈO (BULL-TRAP GUARD: Độ rộng {adv_ratio_cur:.0f}%)"
@@ -553,7 +567,7 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
                 sec_status = "OVERBOUGHT"
                 sec_label = f"⏳ QUÁ NÓNG (RSI {rsi14:.0f} >= {max_rsi_buy:.0f}) — CẤM ĐUỔI"
                 action_code = "STANDBY_OVERBOUGHT"
-            elif curr_p > 0 and curr_p <= probe_p * 1.008 and buy_up >= max(50.0, min_bu_filter - 4.0):
+            elif curr_p > 0 and curr_p <= raw_probe * 1.008 and buy_up >= max(50.0, min_bu_filter - 4.0):
                 sec_status = "BUY_ZONE"
                 sec_label = "🎯 TRONG VÙNG GOM — CHỜ 14H00"
                 action_code = "STANDBY_BUY_ZONE"
@@ -574,7 +588,7 @@ def compute_live_war_room_snapshot(force_refresh: bool = False, cache_ttl: float
                         pass
             else:
                 sec_status = "STANDBY"
-                sec_label = f"🟡 THEO DÕI (Mục tiêu {probe_p:,.0f}đ)"
+                sec_label = f"🟡 THEO DÕI (Mục tiêu {raw_probe:,.0f}đ)"
                 action_code = "STANDBY_WATCH"
 
         stock_row = {

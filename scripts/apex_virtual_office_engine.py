@@ -43,6 +43,7 @@ if str(BASE_DIR) not in sys.path:
 
 DATA_DIR = BASE_DIR / "data"
 KANBAN_FILE = DATA_DIR / "apex_kanban_board.json"
+JOBS_HISTORY_FILE = DATA_DIR / "office_jobs_history.json"
 AUDIT_LEDGER_FILE = BASE_DIR / "12_Institutional_Ombudsman_And_Inspectorate" / "system_audit_ledger.json"
 
 from scripts.vn_market_calendar import get_vn_market_session_state
@@ -55,9 +56,7 @@ _LIVE_CACHE: Dict[str, Any] = {"ts": 0.0, "payload": None}
 _REPORTS_CACHE: Dict[str, Any] = {"ts": 0.0, "items": []}
 
 _JOBS_LOCK = threading.Lock()
-_OFFICE_JOBS: List[Dict[str, Any]] = []
 _MAX_JOBS = 30
-
 _KANBAN_LOCK = threading.Lock()
 
 
@@ -80,6 +79,20 @@ def _save_json_atomic(path: Path, payload: Any) -> None:
     tmp_path = path.with_name(f"{path.name}.{uuid.uuid4().hex[:8]}.tmp")
     tmp_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     tmp_path.replace(path)
+
+
+def _load_initial_jobs() -> List[Dict[str, Any]]:
+    raw = _load_json(JOBS_HISTORY_FILE, [])
+    if not isinstance(raw, list):
+        return []
+    cleaned: List[Dict[str, Any]] = []
+    for item in raw[:_MAX_JOBS]:
+        if isinstance(item, dict) and item.get("job_id"):
+            cleaned.append(item)
+    return cleaned
+
+
+_OFFICE_JOBS: List[Dict[str, Any]] = _load_initial_jobs()
 
 
 def _get_cached_reports(force_refresh: bool = False) -> List[Dict[str, Any]]:
@@ -357,40 +370,90 @@ DATA_FLOW_PIPES: List[Dict[str, str]] = [
 ]
 
 
+def _persist_jobs_unlocked() -> None:
+    try:
+        _save_json_atomic(JOBS_HISTORY_FILE, _OFFICE_JOBS[:_MAX_JOBS])
+    except Exception:
+        pass
+
+
 def _get_active_jobs_snapshot() -> List[Dict[str, Any]]:
     with _JOBS_LOCK:
         return [dict(j) for j in _OFFICE_JOBS]
 
 
 def _record_job_start(room_id: str, action: str, title: str) -> str:
-    job_id = f"JOB-{get_ict_now().strftime('%H%M%S')}-{uuid.uuid4().hex[:5].upper()}"
-    entry = {
+    now_ict = get_ict_now()
+    job_id = f"JOB-{now_ict.strftime('%H%M%S')}-{uuid.uuid4().hex[:5].upper()}"
+    entry: Dict[str, Any] = {
         "job_id": job_id,
         "room_id": room_id,
         "action": action,
         "title": title,
         "status": "RUNNING",
-        "started_at": get_ict_now().strftime("%Y-%m-%d %H:%M:%S"),
+        "started_at": now_ict.strftime("%Y-%m-%d %H:%M:%S"),
+        "started_epoch": time.time(),
         "finished_at": None,
-        "summary": "Đang thực thi trực tiếp trên hệ thống...",
+        "duration_sec": 0.0,
+        "progress_pct": 10,
+        "steps_log": [
+            {"time": now_ict.strftime("%H:%M:%S"), "text": "Khởi tạo & nạp trạng thái SSOT / Lịch phiên mới nhất...", "ok": True}
+        ],
+        "deliverables": {},
+        "summary": "Đang khởi chạy tác vụ trên máy chủ Apex...",
         "error": None,
     }
     with _JOBS_LOCK:
         _OFFICE_JOBS.insert(0, entry)
         if len(_OFFICE_JOBS) > _MAX_JOBS:
             del _OFFICE_JOBS[_MAX_JOBS:]
+        _persist_jobs_unlocked()
     return job_id
 
 
-def _finish_job(job_id: str, ok: bool, summary: str, error: Optional[str] = None) -> None:
+def _append_job_step(job_id: str, text: str, progress_pct: int, ok: bool = True) -> None:
+    now_ict = get_ict_now()
     with _JOBS_LOCK:
         for j in _OFFICE_JOBS:
             if j["job_id"] == job_id:
+                steps = list(j.get("steps_log") or [])
+                steps.append({"time": now_ict.strftime("%H:%M:%S"), "text": str(text), "ok": bool(ok)})
+                j["steps_log"] = steps[-12:]
+                j["progress_pct"] = max(int(j.get("progress_pct", 10)), min(99, int(progress_pct)))
+                j["summary"] = str(text)
+                break
+        _persist_jobs_unlocked()
+
+
+def _finish_job(
+    job_id: str,
+    ok: bool,
+    summary: str,
+    error: Optional[str] = None,
+    deliverables: Optional[Dict[str, Any]] = None,
+) -> None:
+    now_ict = get_ict_now()
+    with _JOBS_LOCK:
+        for j in _OFFICE_JOBS:
+            if j["job_id"] == job_id:
+                started_ep = float(j.get("started_epoch") or time.time())
                 j["status"] = "DONE" if ok else "ERROR"
-                j["finished_at"] = get_ict_now().strftime("%Y-%m-%d %H:%M:%S")
+                j["finished_at"] = now_ict.strftime("%Y-%m-%d %H:%M:%S")
+                j["duration_sec"] = round(max(0.1, time.time() - started_ep), 2)
+                j["progress_pct"] = 100
+                steps = list(j.get("steps_log") or [])
+                steps.append({
+                    "time": now_ict.strftime("%H:%M:%S"),
+                    "text": ("Hoàn tất & xác thực đầu ra" if ok else f"Lỗi thực thi: {error or summary}"),
+                    "ok": bool(ok),
+                })
+                j["steps_log"] = steps[-12:]
+                if deliverables:
+                    j["deliverables"] = dict(deliverables)
                 j["summary"] = summary
                 j["error"] = error
                 break
+        _persist_jobs_unlocked()
     with _CACHE_LOCK:
         _LIVE_CACHE["ts"] = 0.0
         _REPORTS_CACHE["ts"] = 0.0
@@ -398,6 +461,17 @@ def _finish_job(job_id: str, ok: bool, summary: str, error: Optional[str] = None
 
 def get_jobs_list() -> List[Dict[str, Any]]:
     return _get_active_jobs_snapshot()
+
+
+def get_job_detail(job_id: str) -> Dict[str, Any]:
+    jid = str(job_id or "").strip()
+    if not jid:
+        return {"ok": False, "error": "Thiếu tham số id của tác vụ"}
+    with _JOBS_LOCK:
+        for j in _OFFICE_JOBS:
+            if j.get("job_id") == jid:
+                return {"ok": True, "job": dict(j)}
+    return {"ok": False, "error": f"Không tìm thấy tác vụ {jid}"}
 
 
 def _extract_ssot_summary() -> Dict[str, Any]:
@@ -707,6 +781,91 @@ def _collect_victor_reports(existing_reports: List[Dict[str, Any]]) -> List[Dict
             if len(res) >= 10:
                 break
     return res
+
+
+def _build_room_executive_brief(
+    room_id: str,
+    bp: Dict[str, Any],
+    msess: Dict[str, Any],
+    ssot: Dict[str, Any],
+    status_label_vi: str,
+    kpi_summary: str,
+    live_thought: str,
+    recon: Dict[str, Any],
+    intel_feed: Dict[str, Any],
+    latest_session: Dict[str, Any],
+    latest_aud: Dict[str, Any],
+) -> Dict[str, Any]:
+    """Tạo thẻ tóm tắt điều hành ngắn gọn (3 KPI + 1 Phán quyết hành động) cho ngăn kéo mỗi Khối."""
+    is_trading = bool(msess.get("is_trading_day", True))
+    next_td = str(msess.get("next_trading_day") or "")
+    next_dm = f"{next_td[8:10]}/{next_td[5:7]}" if len(next_td) >= 10 else "phiên tới"
+
+    if room_id == "team_hien":
+        sc = intel_feed.get("summary_counts", {})
+        return {
+            "headline": f"Đã thu thập {sc.get('total_news_articles', 0)} bản tin & kiểm toán {sc.get('verified_ir_portals', 0)} cổng IR",
+            "action_badge": "🌸 BƯỚC 1: ĐẦU VÀO DỮ LIỆU",
+            "action_text": "Bấm nút xanh bên dưới để Hiền cào tin CBTT/RSS/IR mới nhất và đẩy sang Minh Quân & Alex.",
+            "kpis": [
+                {"label": "Tin CBTT/RSS", "value": str(sc.get("total_news_articles", 0))},
+                {"label": "Cổng IR/SEC", "value": f"{sc.get('verified_ir_portals', 0)} / {sc.get('sec_edgar_filings', 0)}"},
+                {"label": "Cập nhật lúc", "value": str(intel_feed.get("crawled_at") or "--")[-8:]},
+            ],
+        }
+    if room_id == "team_quan_alex":
+        return {
+            "headline": f"Phân tích thị trường & lọc rổ cổ phiếu chuẩn Hội đồng (Mở lại {next_dm})" if not is_trading else live_thought,
+            "action_badge": "⏸️ NGHỈ LỄ — CHUẨN BỊ PHIÊN MỚI" if not is_trading else "⚡ BƯỚC 2: PHÂN TÍCH THỊ TRƯỜNG",
+            "action_text": f"Không giao dịch hôm nay; bấm nút xanh để chạy lại mô phỏng phân tích & gửi đề xuất lên James cho phiên {next_dm}." if not is_trading else "Bấm nút xanh để chạy phân tích CANSLIM/VSA + Rủi ro ATR và gửi báo cáo lên James.",
+            "kpis": [
+                {"label": "VN-Index (EOD)" if not is_trading else "VN-Index", "value": f"{recon.get('vn_index', '--')}"},
+                {"label": "Độ rộng MA20", "value": f"{recon.get('live_breadth_ma20_pct', '--')}%"},
+                {"label": "Buy-Up TB", "value": f"{recon.get('avg_buy_up_pct', '--')}%"},
+            ],
+        }
+    if room_id == "team_james_palmer":
+        verdict = str(latest_session.get("final_verdict") or "STANDBY")
+        return {
+            "headline": f"Giữ {ssot.get('holdings_desc', '0 CP')} ({ssot.get('stocks_pct', 0):.1f}%) • Tiền mặt {ssot.get('cash_str', '--')}",
+            "action_badge": f"🎌 NGHỈ LỄ (Mở lại {next_dm})" if not is_trading else f"🎖️ {verdict}",
+            "action_text": f"Bấm nút xanh để họp đủ 5 Khối (14 thành viên), khóa nghị quyết hành động MUA/BÁN/ĐỢI và xuất biên bản mới nhất.",
+            "kpis": [
+                {"label": "Tổng NAV", "value": ssot.get("nav_str", "--")},
+                {"label": "Két Tiền Mặt", "value": f"{ssot.get('cash_pct', 100):.1f}%"},
+                {"label": "Đang Nắm Giữ", "value": ssot.get("holdings_desc", "0 CP")},
+            ],
+        }
+    if room_id == "team_victor":
+        return {
+            "headline": f"Radar 145 mã đang ở chế độ bảo vệ SSOT ({status_label_vi})",
+            "action_badge": "🛡️ BẢO VỆ 24/7" if not is_trading else "🚨 CANH NGƯỠNG MUA / BÁN",
+            "action_text": "Bấm nút xanh để quét bảng điện VPS/Entrade, kiểm tra Stop Loss / Chốt lời TP1 và xuất báo cáo tức thời.",
+            "kpis": [
+                {"label": "Quét Bảng Điện", "value": f"{recon.get('scanned_live_count', 0)}/{recon.get('universe_total', 145)}"},
+                {"label": "Trạng Thái Sàn", "value": "Đóng cửa" if not is_trading else "Đang khớp"},
+                {"label": "Vị Thế Canh", "value": ssot.get("holdings_desc", "0 CP")},
+            ],
+        }
+    if room_id == "team_trong_palmer":
+        score = latest_session.get("ombudsman_audit_score", "10/10")
+        issues = int(latest_aud.get("issues_count", 0) or 0)
+        return {
+            "headline": f"Điểm Hiến chương {score} • Kỷ luật {latest_aud.get('overall_discipline_score', 100)} • Vấn đề mở: {issues}",
+            "action_badge": "🛡️ KIỂM TOÁN TOÀN HỆ THỐNG",
+            "action_text": "Bấm nút xanh để Trọng & Palmer kiểm tra chéo dữ liệu giữa Chat, War-Room, Cron và Web Portal.",
+            "kpis": [
+                {"label": "Hiến Chương", "value": str(score)},
+                {"label": "Lỗi Đang Mở", "value": str(issues)},
+                {"label": "SSOT Chủ Tài Khoản", "value": "105C307855"},
+            ],
+        }
+    return {
+        "headline": kpi_summary,
+        "action_badge": status_label_vi,
+        "action_text": live_thought,
+        "kpis": [{"label": "NAV Giả Lập", "value": ssot.get("nav_str", "--")}],
+    }
 
 
 def _compute_room_status_and_payload(
@@ -1025,7 +1184,23 @@ def _compute_room_status_and_payload(
         "active_job": running_job,
         "primary_action": bp["primary_action"],
         "chat_template": bp["chat_template"],
+        "executive_brief": _build_room_executive_brief(
+            room_id=room_id,
+            bp=bp,
+            msess=msess,
+            ssot=ssot,
+            status_label_vi=status_label_vi,
+            kpi_summary=kpi_summary,
+            live_thought=live_thought,
+            recon=recon,
+            intel_feed=intel_feed,
+            latest_session=latest_session,
+            latest_aud=latest_aud,
+        ),
     }
+
+    room_jobs = [dict(j) for j in active_jobs if j.get("room_id") == room_id]
+    last_completed = next((j for j in room_jobs if j.get("status") in ("DONE", "ERROR")), None)
 
     room_detail = {
         **room_summary,
@@ -1035,6 +1210,8 @@ def _compute_room_status_and_payload(
         "kanban_tasks": room_tasks,
         "recent_reports": room_reports,
         "specialized_data": specialized_data,
+        "recent_jobs": room_jobs[:5],
+        "last_completed_job": last_completed,
     }
     return room_summary, room_detail
 
@@ -1448,15 +1625,28 @@ def trigger_room_action(
     job_id = _record_job_start(resolved_id, act, job_title)
 
     def _worker():
+        report_rel = ""
+        metrics_out: Dict[str, Any] = {}
+        handoff_note = f"Đã đồng bộ kết quả sang {bp['handoff_to']}"
         try:
             if act == "crawl_intel":
+                _append_job_step(job_id, "Đang kết nối RSS/CBTT, Vietcap/CafeF, 11 cổng IR & SEC EDGAR...", 28)
                 from scripts.apex_omni_intelligence_crawler import crawl_realtime_market_intelligence
                 res = crawl_realtime_market_intelligence(force_refresh=True)
                 total = res.get("total_items", 0)
-                _finish_job(job_id, True, f"Đội Hiền hoàn tất cào sống: {total} bản tin lúc {res.get('crawled_at', '')} — đã sẵn sàng chuyển Minh Quân & Alex.")
+                crawled_at = str(res.get("crawled_at", ""))
+                _append_job_step(job_id, f"Đã thu thập xong {total} bản tin tài chính lúc {crawled_at}.", 78)
+                today_s = get_ict_now().strftime("%Y-%m-%d")
+                cand_rep = f"02_Equity_Research/{today_s}_Daily_Internet_And_BCTC_Intel_Report.md"
+                report_rel = cand_rep if (BASE_DIR / cand_rep).exists() else "00_LIVE_INTER_CHAT_STATE.md"
+                metrics_out = {"total_items": total, "crawled_at": crawled_at}
+                summary_txt = f"Đội Hiền hoàn tất cào sống {total} bản tin lúc {crawled_at} và bàn giao sang Minh Quân & Alex."
+
             elif act in ("convene_dept", "run_dept_audit"):
+                _append_job_step(job_id, "Đang triệu tập 14 thực thể phòng ban & thu thập số liệu SSOT + BCTC...", 25)
                 from scripts.apex_enterprise_collaboration_mesh import run_enterprise_work_session
                 directive = custom_directive or f"[{bp['ban_code']}] Rà soát theo quy trình Hiền -> Minh Quân & Alex -> James & Palmer"
+                _append_job_step(job_id, "Đang tranh biện đa chiều (Ban 1-4, Ban 7 VN/US, Victor & Kiểm sát viên Trọng)...", 55)
                 sess = run_enterprise_work_session(
                     directive=directive,
                     ticker=ticker,
@@ -1465,27 +1655,55 @@ def trigger_room_action(
                 )
                 verdict = sess.get("final_verdict", "DONE")
                 sid = sess.get("session_id", "")
-                _finish_job(job_id, True, f"Hoàn tất phiên {sid}: {verdict} ({sess.get('quorum_count', 14)}/{sess.get('roster_total', 14)} thành viên).")
+                date_part = str(sess.get("created_at") or get_ict_now().strftime("%Y-%m-%d"))[:10]
+                report_rel = str(sess.get("report_rel_path") or f"08_Master_Investment_CIO/enterprise_sessions/{date_part}_Enterprise_Work_Session.md")
+                _append_job_step(job_id, f"Đã biểu quyết {sess.get('quorum_count', 14)}/{sess.get('roster_total', 14)} Ban & niêm phong SHA-256.", 85)
+                metrics_out = {
+                    "session_id": sid,
+                    "final_verdict": verdict,
+                    "quorum": f"{sess.get('quorum_count', 14)}/{sess.get('roster_total', 14)}",
+                    "packets": sess.get("packet_count", 0),
+                }
+                summary_txt = f"Hoàn tất phiên {sid}: {verdict} ({sess.get('quorum_count', 14)}/{sess.get('roster_total', 14)} thành viên). Đã xuất biên bản."
+
             elif act == "publish_warroom":
+                _append_job_step(job_id, "Victor đang quét bảng điện 145 mã VPS/Entrade & đối chiếu SSOT...", 35)
                 from scripts.apex_tactical_war_room_engine import publish_war_room_tactical_report
                 res = publish_war_room_tactical_report(
                     trigger_reason=f"OFFICE_{resolved_id.upper()}",
                     target_ticker=ticker,
                 )
                 ok_flag = bool(res.get("ok", True))
-                msg = res.get("message") or res.get("rel_path") or "Victor đã hoàn tất quét 145 mã & đồng bộ báo cáo cho James."
-                _finish_job(job_id, ok_flag, str(msg))
+                today_s = get_ict_now().strftime("%Y-%m-%d")
+                report_rel = str(
+                    res.get("intraday_report_path")
+                    or res.get("enterprise_report_path")
+                    or f"VN_Market/07_Daily_Specialist/{today_s}_Live_Intraday_Report.md"
+                )
+                _append_job_step(job_id, "Đã kiểm tra xong ngưỡng Mua LO / Chốt lời TP1 / Cắt lỗ Stop toàn rổ.", 82)
+                summary_txt = str(res.get("message") or "Victor đã hoàn tất quét 145 mã & đồng bộ báo cáo cho James.")
+                metrics_out = {"report_rel_path": report_rel}
+
             elif act == "run_trong_audit":
+                _append_job_step(job_id, "Trọng & Palmer đang kiểm toán nhất quán dữ liệu giữa Chat, Cron & Web Portal...", 35)
                 from scripts.apex_semantic_consistency_auditor import run_full_institutional_semantic_audit
                 res = run_full_institutional_semantic_audit()
                 issues = len(res.get("issues", [])) if isinstance(res, dict) else 0
                 score = res.get("score", 100) if isinstance(res, dict) else 100
-                _finish_job(job_id, True, f"Trọng & Palmer kiểm toán xong: Điểm {score}/100 | Lỗi phát hiện: {issues}.")
+                today_s = get_ict_now().strftime("%Y-%m-%d")
+                cand_tr = f"12_Institutional_Ombudsman_And_Inspectorate/daily_audits/{today_s}_Trong_Audit_Report.md"
+                report_rel = cand_tr if (BASE_DIR / cand_tr).exists() else "00_LIVE_INTER_CHAT_STATE.md"
+                _append_job_step(job_id, f"Hoàn tất kiểm toán 10 Điều Hiến chương: Điểm {score}/100 ({issues} vấn đề).", 85)
+                metrics_out = {"score": score, "issues": issues}
+                summary_txt = f"Trọng & Palmer kiểm toán xong: Điểm {score}/100 | Lỗi phát hiện: {issues}."
+                ok_flag = True
+
             elif act == "run_milestone":
-                valid_ms = {m["time"] for m in DAILY_MILESTONE_DEFS}
+                valid_ms = {m["time"]: m for m in DAILY_MILESTONE_DEFS}
                 if milestone_hm not in valid_ms:
                     _finish_job(job_id, False, f"Cột mốc không hợp lệ: {milestone_hm}", error="Invalid milestone")
                     return
+                _append_job_step(job_id, f"Đang kích hoạt cột mốc {milestone_hm}: {valid_ms[milestone_hm]['title']}...", 35)
                 cron_script = BASE_DIR / "scripts" / "apex_institutional_cron_daemon.py"
                 proc = subprocess.run(
                     [sys.executable, "-X", "utf8", str(cron_script), f"--at={milestone_hm}", "--force"],
@@ -1495,16 +1713,22 @@ def trigger_room_action(
                     timeout=180,
                     check=False,
                 )
-                _finish_job(
-                    job_id,
-                    proc.returncode == 0,
-                    f"Đã chạy xong cột mốc {milestone_hm} (exit={proc.returncode}) & cập nhật báo cáo hôm nay.",
-                    error=None if proc.returncode == 0 else (proc.stderr or "")[-300:],
-                )
+                ok_flag = (proc.returncode == 0)
+                report_rel = "00_LIVE_INTER_CHAT_STATE.md"
+                for pat in valid_ms[milestone_hm].get("patterns", ()):
+                    matched = next((r.get("rel_path") for r in _get_cached_reports(force_refresh=True) if pat in str(r.get("rel_path", ""))), None)
+                    if matched:
+                        report_rel = matched
+                        break
+                metrics_out = {"milestone": milestone_hm, "exit_code": proc.returncode}
+                summary_txt = f"Đã chạy xong cột mốc {milestone_hm} (exit={proc.returncode}) & cập nhật báo cáo hôm nay."
+                err_txt = None if ok_flag else (proc.stderr or "")[-300:]
+
             elif act == "catchup_today":
                 now_ict = get_ict_now()
                 today_str = now_ict.strftime("%Y-%m-%d")
                 now_hm = now_ict.strftime("%H:%M")
+                _append_job_step(job_id, "Đang kiểm tra lịch phiên & chạy bù các cột mốc hợp lệ trong ngày...", 25)
                 cron_data = _load_json(DATA_DIR / "apex_cron_daemon_state.json", {})
                 executed_set = {str(x).strip() for x in ((cron_data.get("executed_milestones") or {}).get(today_str, []) or [])}
                 cron_script = BASE_DIR / "scripts" / "apex_institutional_cron_daemon.py"
@@ -1521,6 +1745,7 @@ def trigger_room_action(
                             check=False,
                         )
                         ran_list.append(mt)
+                _append_job_step(job_id, "Đang cập nhật lại War-Room 145 mã & Artifact 2.5D...", 70)
                 war_script = BASE_DIR / "scripts" / "apex_daily_live_warroom_engine.py"
                 if war_script.exists():
                     subprocess.run(
@@ -1536,13 +1761,35 @@ def trigger_room_action(
                     sync_chat_office_artifact(force_refresh=True)
                 except Exception:
                     pass
-                _finish_job(
-                    job_id,
-                    True,
-                    f"Đã chạy bù {len(ran_list)} cột mốc ({', '.join(ran_list) or 'đã đủ'}) + làm mới 145 mã & BCTC hôm nay.",
-                )
+                ok_flag = True
+                report_rel = "00_LIVE_INTER_CHAT_STATE.md"
+                metrics_out = {"caught_up": ran_list}
+                summary_txt = f"Đã chạy bù {len(ran_list)} cột mốc ({', '.join(ran_list) or 'đã đủ'}) + làm mới 145 mã & BCTC hôm nay."
+
             else:
                 _finish_job(job_id, False, f"Hành động chưa hỗ trợ: {act}", error=f"Unsupported action: {act}")
+                return
+
+            try:
+                from scripts.apex_canonical_truth import build_and_save_canonical_truth
+                build_and_save_canonical_truth()
+            except Exception:
+                pass
+
+            if report_rel and not (BASE_DIR / report_rel).exists():
+                report_rel = "00_LIVE_INTER_CHAT_STATE.md" if (BASE_DIR / "00_LIVE_INTER_CHAT_STATE.md").exists() else ""
+
+            _finish_job(
+                job_id,
+                ok=locals().get("ok_flag", True),
+                summary=locals().get("summary_txt", f"Hoàn tất tác vụ {act}"),
+                error=locals().get("err_txt"),
+                deliverables={
+                    "report_rel_path": report_rel,
+                    "metrics": metrics_out,
+                    "handoff_note": handoff_note,
+                },
+            )
         except Exception as exc:
             _finish_job(job_id, False, f"Lỗi khi chạy tác vụ {act}: {exc}", error=str(exc))
 

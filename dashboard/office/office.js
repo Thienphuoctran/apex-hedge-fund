@@ -5,9 +5,9 @@
 (function () {
     "use strict";
 
-    const ISO_X = 64;
-    const ISO_Y = 32;
-    const ISO_Z = 28;
+    const ISO_X = 84;
+    const ISO_Y = 42;
+    const ISO_Z = 34;
 
     const STATUS_META = {
         working: { label: "Đang làm", color: "#10b981", pillBg: "#dcfce7", pillText: "#166534" },
@@ -79,6 +79,10 @@
         dragMoved: false,
         hoveredRoomId: null,
         selectedRoomId: null,
+        drawerTab: "overview",
+        activeRoomJob: null,
+        jobPollTimer: null,
+        jobElapsedTimer: null,
         statusFilter: "all",
         liveData: null,
         roomDetailCache: {},
@@ -123,8 +127,8 @@
     function isoToScreen(gx, gy, gz) {
         const cx = state.width * 0.5 + state.panX;
         const cy = state.height * 0.5 + state.panY;
-        const centerGx = 4.0;
-        const centerGy = 4.05;
+        const centerGx = 3.95;
+        const centerGy = 3.85;
         const rx = gx - centerGx;
         const ry = gy - centerGy;
         return {
@@ -139,17 +143,19 @@
         const dx = (sx - cx) / (ISO_X * state.zoom);
         const dy = (sy - cy) / (ISO_Y * state.zoom);
         return {
-            gx: (dx + dy) * 0.5 + 4.0,
-            gy: (dy - dx) * 0.5 + 4.05,
+            gx: (dx + dy) * 0.5 + 3.95,
+            gy: (dy - dx) * 0.5 + 3.85,
         };
     }
 
     function resetView() {
-        const w = state.width || 1100;
-        const h = state.height || 680;
-        state.zoom = Math.min(1.02, Math.max(0.56, Math.min((w - 110) / 1180, (h - 120) / 620)));
-        state.panX = 36;
-        state.panY = 18;
+        const w = state.width || 1200;
+        const h = state.height || 720;
+        const zoomW = (w - 140) / 1160;
+        const zoomH = (h - 140) / 580;
+        state.zoom = Math.min(1.26, Math.max(0.76, Math.min(zoomW, zoomH)));
+        state.panX = state.selectedRoomId ? -Math.min(250, Math.round(w * 0.2)) : 0;
+        state.panY = 16;
     }
 
     function buildShellDOM(root) {
@@ -194,8 +200,12 @@
                     <span style="color:#cbd5e1;">|</span>
                     <span id="office-hud-regime" style="color:#b45309;">Đang đồng bộ...</span>
                 </div>
-                <div class="office-hud-card" style="pointer-events:auto;padding:3px 12px;border-radius:9999px;font-size:10.5px;font-weight:700;color:#334155;">
-                    ① Hiền (BCTC) ➔ ② Quân &amp; Alex (Thị trường) ➔ ③ James &amp; Palmer (Kế hoạch) ◀ ④ Victor | ⑤ Trọng &amp; Palmer
+                <div class="office-quick-rooms" id="office-quick-rooms">
+                    <button class="office-quick-pill" data-room="team_hien">① Hiền</button>
+                    <button class="office-quick-pill" data-room="team_quan_alex">② Quân &amp; Alex</button>
+                    <button class="office-quick-pill" data-room="team_james_palmer">③ James &amp; Palmer</button>
+                    <button class="office-quick-pill" data-room="team_victor">④ Victor</button>
+                    <button class="office-quick-pill" data-room="team_trong_palmer">⑤ Trọng</button>
                 </div>
                 <div class="office-job-banner" id="office-job-banner">
                     <span class="office-status-dot working"></span>
@@ -447,6 +457,14 @@
         // Drawer close
         document.getElementById("office-drawer-close").onclick = closeRoomDrawer;
 
+        // Quick 5-Team jump bar
+        document.querySelectorAll("#office-quick-rooms .office-quick-pill").forEach((btn) => {
+            btn.onclick = () => {
+                const rid = btn.getAttribute("data-room");
+                if (rid) openRoomDrawer(rid);
+            };
+        });
+
         // Modal close
         document.getElementById("office-modal-close").onclick = closeDockModal;
         document.getElementById("office-modal-backdrop").addEventListener("click", (e) => {
@@ -505,9 +523,10 @@
     function focusOnRoom(room) {
         const cx = room.gx + room.gw * 0.5;
         const cy = room.gy + room.gd * 0.5;
-        state.zoom = 1.15;
-        state.panX = -((cx - 4.0) - (cy - 4.05)) * ISO_X * state.zoom;
-        state.panY = -((cx - 4.0) + (cy - 4.05)) * ISO_Y * state.zoom;
+        state.zoom = 1.24;
+        const drawerShift = state.selectedRoomId ? -Math.min(240, Math.round((state.width || 1200) * 0.19)) : 0;
+        state.panX = -((cx - 3.95) - (cy - 3.85)) * ISO_X * state.zoom + drawerShift;
+        state.panY = -((cx - 3.95) + (cy - 3.85)) * ISO_Y * state.zoom;
     }
 
     function hitTestRoom(sx, sy) {
@@ -589,16 +608,16 @@
     }
 
     function drawCampusBase(ctx) {
-        // Large campus lawn slab for 5 Executive Teams + Lounge + Park
-        const c0 = isoToScreen(-1.9, -0.5, 0);
-        const c1 = isoToScreen(8.6, -0.5, 0);
-        const c2 = isoToScreen(8.6, 8.4, 0);
-        const c3 = isoToScreen(-1.9, 8.4, 0);
+        // Large centered campus lawn slab for 5 Executive Teams + Lounge + Park
+        const c0 = isoToScreen(-0.85, -0.25, 0);
+        const c1 = isoToScreen(8.35, -0.25, 0);
+        const c2 = isoToScreen(8.35, 8.15, 0);
+        const c3 = isoToScreen(-0.85, 8.15, 0);
 
-        const b0 = isoToScreen(-1.9, -0.5, -0.22);
-        const b1 = isoToScreen(8.6, -0.5, -0.22);
-        const b2 = isoToScreen(8.6, 8.4, -0.22);
-        const b3 = isoToScreen(-1.9, 8.4, -0.22);
+        const b0 = isoToScreen(-0.85, -0.25, -0.22);
+        const b1 = isoToScreen(8.35, -0.25, -0.22);
+        const b2 = isoToScreen(8.35, 8.15, -0.22);
+        const b3 = isoToScreen(-0.85, 8.15, -0.22);
         drawPoly(ctx, [c3, c2, b2, b3], "#b7dba0");
         drawPoly(ctx, [c1, c2, b2, b1], "#9ecb85");
         drawPoly(ctx, [c0, c1, c2, c3], "#dff4cf", "#b6de9a", 1.5);
@@ -606,17 +625,17 @@
         ctx.save();
         ctx.strokeStyle = "rgba(134, 197, 94, 0.22)";
         ctx.lineWidth = 1;
-        for (let gx = -1; gx <= 8; gx += 1) {
-            const a = isoToScreen(gx, -0.5, 0);
-            const b = isoToScreen(gx, 8.4, 0);
+        for (let gx = 0; gx <= 8; gx += 1) {
+            const a = isoToScreen(gx, -0.25, 0);
+            const b = isoToScreen(gx, 8.15, 0);
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
             ctx.stroke();
         }
         for (let gy = 0; gy <= 8; gy += 1) {
-            const a = isoToScreen(-1.9, gy, 0);
-            const b = isoToScreen(8.6, gy, 0);
+            const a = isoToScreen(-0.85, gy, 0);
+            const b = isoToScreen(8.35, gy, 0);
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -640,7 +659,7 @@
         }
 
         // Park pond in bottom-left lawn
-        const pondCenter = isoToScreen(-1.05, 6.1, 0.02);
+        const pondCenter = isoToScreen(-0.32, 6.1, 0.02);
         ctx.save();
         ctx.beginPath();
         ctx.ellipse(pondCenter.x, pondCenter.y, 44 * state.zoom, 22 * state.zoom, 0, 0, Math.PI * 2);
@@ -1043,14 +1062,14 @@
             drawAvatar(ctx, ax, ay, 0.08, av, r.status_code, t, i);
         });
 
-        // Floating Room Name Pill above top corner
+        // Floating Room Name Pill above top corner (bigger & crisp)
         const tagPos = isoToScreen(r.gx + r.gw * 0.48, r.gy + 0.1, 1.05);
         const stMeta = STATUS_META[r.status_code] || STATUS_META.standby;
         const labelTxt = `${r.icon} ${r.short_name}`;
-        ctx.font = `800 ${Math.max(10, Math.round(11.5 * z))}px "Plus Jakarta Sans", sans-serif`;
+        ctx.font = `800 ${Math.max(11, Math.round(12.5 * z))}px "Plus Jakarta Sans", sans-serif`;
         const textW = ctx.measureText(labelTxt).width;
-        const pillW = textW + 46 * z;
-        const pillH = 24 * z;
+        const pillW = textW + 52 * z;
+        const pillH = 27 * z;
         const px = tagPos.x - pillW * 0.5;
         const py = tagPos.y - pillH * 0.5;
 
@@ -1138,9 +1157,9 @@
 
             // Trees around 5-Team campus perimeter (clear of rooms & walkways)
             const trees = [
-                [-1.3, 0.4, 1.0], [-1.4, 2.5, 0.95], [-1.2, 4.4, 1.05],
-                [8.25, 0.7, 0.95], [8.25, 3.8, 1.0], [8.25, 7.2, 0.9],
-                [0.8, 8.05, 0.85], [4.2, 8.05, 0.9], [7.2, 8.05, 0.85],
+                [-0.42, 0.4, 1.0], [-0.45, 2.5, 0.95], [-0.38, 4.4, 1.0],
+                [8.05, 0.7, 0.95], [8.05, 3.8, 1.0], [8.05, 7.1, 0.9],
+                [0.8, 7.9, 0.85], [4.2, 7.9, 0.9], [7.2, 7.9, 0.85],
             ];
             for (const tr of trees) {
                 if (tr[1] < 3.6) drawTree(ctx, tr[0], tr[1], tr[2]);
@@ -1160,7 +1179,7 @@
             for (const tr of trees) {
                 if (tr[1] >= 3.6) drawTree(ctx, tr[0], tr[1], tr[2]);
             }
-            drawFerrisWheel(ctx, -1.0, 7.0, state.animTime);
+            drawFerrisWheel(ctx, -0.35, 7.0, state.animTime);
 
             ctx.restore();
         }
@@ -1295,10 +1314,36 @@
     }
 
     // ========================================================================
-    // ROOM SIDE DRAWER (REAL DETAILS, PACKETS, REPORTS & 1-CLICK ACTIONS)
+    // ROOM SIDE DRAWER (3-TAB EXECUTIVE CONSOLE + LIVE PROOF-OF-WORK ENGINE)
     // ========================================================================
+    function syncQuickRoomPills() {
+        document.querySelectorAll("#office-quick-rooms .office-quick-pill").forEach((btn) => {
+            btn.classList.toggle("active", btn.getAttribute("data-room") === state.selectedRoomId);
+        });
+    }
+
+    function stopJobPolling() {
+        if (state.jobPollTimer) {
+            clearInterval(state.jobPollTimer);
+            state.jobPollTimer = null;
+        }
+        if (state.jobElapsedTimer) {
+            clearInterval(state.jobElapsedTimer);
+            state.jobElapsedTimer = null;
+        }
+    }
+
     async function openRoomDrawer(roomId) {
+        const prevRoom = state.selectedRoomId;
         state.selectedRoomId = roomId;
+        if (prevRoom !== roomId) {
+            state.drawerTab = "overview";
+        }
+        syncQuickRoomPills();
+        // Shift campus smoothly to the left so right drawer never obscures rooms
+        state.panX = -Math.min(250, Math.round((state.width || 1200) * 0.2));
+        state.panY = 16;
+
         const drawer = document.getElementById("office-room-drawer");
         const body = document.getElementById("office-drawer-body");
         if (!drawer || !body) return;
@@ -1310,6 +1355,9 @@
 
     function closeRoomDrawer() {
         state.selectedRoomId = null;
+        stopJobPolling();
+        syncQuickRoomPills();
+        resetView();
         const drawer = document.getElementById("office-room-drawer");
         if (drawer) {
             drawer.classList.remove("open");
@@ -1466,6 +1514,115 @@
         return "";
     }
 
+    function renderProofConsoleHTML(job, roomObj) {
+        if (!job) {
+            return `
+                <div class="office-proof-box" id="drawer-live-job-box">
+                    <div style="font-weight:700;color:#475569;">📋 Nhật Ký Thực Thi Thời Gian Thực</div>
+                    <div style="font-size:12px;color:#64748b;margin-top:3px;">Bấm nút xanh dương phía trên để hệ thống thực thi tác vụ thật, hiển thị tiến trình từng bước và xuất báo cáo xác thực ngay tại đây.</div>
+                </div>
+            `;
+        }
+        const st = String(job.status || "RUNNING").toUpperCase();
+        const cls = st === "DONE" ? "done" : (st === "ERROR" ? "error" : "running");
+        const pct = st === "DONE" || st === "ERROR" ? 100 : Math.max(10, Number(job.progress_pct || 15));
+        const dur = job.duration_sec ? `${Number(job.duration_sec).toFixed(1)}s` : "đang đo...";
+        const statusTitle = st === "RUNNING"
+            ? `⏳ ĐANG THỰC THI (${pct}%)`
+            : (st === "DONE" ? `✅ ĐÃ HOÀN THÀNH & XÁC THỰC (${dur})` : `❌ LỖI THỰC THI (${dur})`);
+        const statusCol = st === "DONE" ? "#059669" : (st === "ERROR" ? "#dc2626" : "#2563eb");
+        const steps = Array.isArray(job.steps_log) ? job.steps_log : [];
+        const deliv = job.deliverables || {};
+        const repPath = deliv.report_rel_path || "";
+
+        return `
+            <div class="office-proof-box ${cls}" id="drawer-live-job-box">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+                    <strong style="color:${statusCol};font-size:12.5px;">${statusTitle}</strong>
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#64748b;">${esc(job.job_id || "")} • ${esc(job.finished_at || job.started_at || "")}</span>
+                </div>
+                <div style="font-size:12.5px;font-weight:700;color:#0f172a;margin-top:4px;">${esc(job.summary || job.title || "")}</div>
+                <div class="office-progress-wrap"><div class="office-progress-bar" style="width:${pct}%;"></div></div>
+                ${steps.length ? `<div class="office-step-list">${steps.map((s) => `
+                    <div class="office-step-item">
+                        <span style="color:${s.ok === false ? "#dc2626" : "#059669"};font-weight:800;">${s.ok === false ? "✗" : "✔"}</span>
+                        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#64748b;flex-shrink:0;">${esc(s.time || "")}</span>
+                        <span>${esc(s.text || "")}</span>
+                    </div>
+                `).join("")}</div>` : ""}
+                ${deliv.handoff_note ? `<div style="margin-top:6px;font-size:11.5px;color:#4f46e5;font-weight:700;">🤝 ${esc(deliv.handoff_note)}</div>` : ""}
+                ${repPath ? `
+                    <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+                        <button class="office-deliverable-btn" data-open-report="${esc(repPath)}">📄 Mở Báo Cáo Vừa Tạo</button>
+                        <span style="font-size:11px;color:#475569;word-break:break-all;"><code>${esc(repPath)}</code></span>
+                    </div>
+                ` : ""}
+            </div>
+        `;
+    }
+
+    function bindProofReportButtons(container) {
+        if (!container) return;
+        container.querySelectorAll("[data-open-report]").forEach((btn) => {
+            btn.onclick = () => {
+                const rel = btn.getAttribute("data-open-report");
+                if (!rel) return;
+                if (typeof window.openReportModal === "function") {
+                    window.openReportModal(rel);
+                } else {
+                    copyTextSafe(`Palmer hãy đọc và tóm tắt chi tiết báo cáo ${rel}`, "Đã copy lệnh đọc báo cáo — Dán sang chat Palmer!");
+                }
+            };
+        });
+    }
+
+    function updateProofConsoleInPlace(job, roomObj) {
+        const box = document.getElementById("drawer-live-job-box");
+        if (box) {
+            box.outerHTML = renderProofConsoleHTML(job, roomObj);
+            const newBox = document.getElementById("drawer-live-job-box");
+            bindProofReportButtons(newBox);
+        }
+        const actionBtn = document.getElementById("drawer-primary-action-btn");
+        if (actionBtn && roomObj && roomObj.primary_action) {
+            const isRunning = job && job.status === "RUNNING";
+            actionBtn.disabled = Boolean(isRunning);
+            actionBtn.innerText = isRunning ? "⏳ Đang thực thi trên máy chủ..." : String(roomObj.primary_action.label || "⚡ Chạy Tác Vụ Khối");
+        }
+    }
+
+    function startJobPolling(jobId, roomObj) {
+        stopJobPolling();
+        if (!jobId) return;
+        const roomId = roomObj ? roomObj.room_id : state.selectedRoomId;
+        state.jobPollTimer = setInterval(async () => {
+            try {
+                const res = await fetch(`${getApiBase()}/api/office/job?id=${encodeURIComponent(jobId)}`, { cache: "no-store" });
+                const data = await res.json();
+                if (!data || !data.ok || !data.job) return;
+                state.activeRoomJob = data.job;
+                if (state.selectedRoomId === roomId) {
+                    updateProofConsoleInPlace(data.job, roomObj);
+                }
+                if (data.job.status === "DONE" || data.job.status === "ERROR") {
+                    stopJobPolling();
+                    showToast(
+                        data.job.status === "DONE"
+                            ? `✅ Hoàn tất (${data.job.duration_sec}s): ${data.job.summary}`
+                            : `⚠️ Tác vụ gặp lỗi: ${data.job.summary}`,
+                        data.job.status === "DONE" ? "success" : "error"
+                    );
+                    await fetchLiveState(true);
+                    if (state.selectedRoomId === roomId) {
+                        await loadAndRenderRoomDrawer(roomId, true);
+                    }
+                }
+            } catch (_) {
+                // Keep polling silently on transient network blip
+            }
+        }, 750);
+    }
+
     function renderRoomDrawerContent(r) {
         const iconEl = document.getElementById("drawer-room-icon");
         const titleEl = document.getElementById("drawer-room-title");
@@ -1473,44 +1630,64 @@
         const body = document.getElementById("office-drawer-body");
         if (!body) return;
 
+        // Preserve user scroll & draft prompt when background refresh arrives
+        const prevScroll = body.scrollTop;
+        const prevCmdEl = document.getElementById("drawer-palmer-cmd");
+        const prevCmdDirty = prevCmdEl && document.activeElement === prevCmdEl ? prevCmdEl.value : null;
+
         if (iconEl) iconEl.innerText = r.icon || "🏢";
         if (titleEl) titleEl.innerText = `${r.ban_code}: ${r.name}`;
         if (subEl) subEl.innerText = `${r.lead_title || ""} • Phụ trách: ${(r.officers || []).join(", ")}`;
 
+        const eb = r.executive_brief || {};
+        const kpis = Array.isArray(eb.kpis) ? eb.kpis : [];
+        const currentJob = (state.activeRoomJob && state.activeRoomJob.room_id === r.room_id)
+            ? state.activeRoomJob
+            : (r.active_job || r.last_completed_job || (r.recent_jobs && r.recent_jobs[0]) || null);
+        if (currentJob && currentJob.status === "RUNNING" && !state.jobPollTimer) {
+            state.activeRoomJob = currentJob;
+            setTimeout(() => startJobPolling(currentJob.job_id, r), 120);
+        }
+
+        const freshRelPath = currentJob && currentJob.status === "DONE" && currentJob.deliverables
+            ? String(currentJob.deliverables.report_rel_path || "")
+            : "";
+
         const subDeptHtml = (r.sub_departments || []).length
-            ? `<div style="display:flex;flex-direction:column;gap:4px;margin-top:8px;">${r.sub_departments.map((sd) => {
+            ? `<div style="display:flex;flex-direction:column;gap:5px;margin-top:8px;">${r.sub_departments.map((sd) => {
                 const txt = typeof sd === "string"
                     ? esc(sd)
                     : `<strong>${esc(sd.code || sd.name || "")}</strong>${sd.role ? `: <span style="color:#475569;">${esc(sd.role)}</span>` : ""}`;
-                return `<div style="font-size:11px;background:#ffffff;border:1px solid #cbd5e1;border-radius:7px;padding:4px 8px;color:#0f172a;">${txt}</div>`;
+                return `<div style="font-size:12px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;padding:6px 9px;color:#0f172a;">${txt}</div>`;
             }).join("")}</div>`
             : "";
 
         const reportsHtml = (r.recent_reports || []).length
             ? r.recent_reports.map((rep) => {
-                const pillBg = rep.is_pinned ? "#fef3c7" : (rep.is_today ? "#dcfce7" : "#f1f5f9");
-                const pillCol = rep.is_pinned ? "#b45309" : (rep.is_today ? "#166534" : "#475569");
-                const pillTxt = rep.is_pinned ? esc(rep.freshness_badge || "⭐ GHIM CHỈ ĐẠO") : (rep.is_today ? "🟢 MỚI HÔM NAY" : `⚪ LƯU TRỮ (${esc(rep.date)})`);
+                const isJustCreated = freshRelPath && rep.rel_path === freshRelPath;
+                const pillBg = isJustCreated ? "#d1fae5" : (rep.is_pinned ? "#fef3c7" : (rep.is_today ? "#dcfce7" : "#f1f5f9"));
+                const pillCol = isJustCreated ? "#047857" : (rep.is_pinned ? "#b45309" : (rep.is_today ? "#166534" : "#475569"));
+                const pillTxt = isJustCreated ? "🆕 VỪA TẠO" : (rep.is_pinned ? esc(rep.freshness_badge || "⭐ GHIM CHỈ ĐẠO") : (rep.is_today ? "🟢 MỚI HÔM NAY" : `⚪ LƯU TRỮ (${esc(rep.date)})`));
                 return `
-                <button class="office-report-item" data-rel-path="${esc(rep.rel_path)}" style="${rep.is_pinned ? "border-color:#f59e0b;background:linear-gradient(135deg,#fffbeb 0%,#ffffff 100%);" : ""}">
+                <button class="office-report-item" data-rel-path="${esc(rep.rel_path)}" style="${isJustCreated ? "border-color:#10b981;background:#ecfdf5;" : (rep.is_pinned ? "border-color:#f59e0b;background:linear-gradient(135deg,#fffbeb 0%,#ffffff 100%);" : "")}">
                     <div style="min-width:0;">
-                        <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px;">
-                            <span style="font-size:9.5px;font-weight:800;padding:1px 6px;border-radius:9999px;background:${pillBg};color:${pillCol};">${pillTxt}</span>
-                            <span style="font-size:10px;color:#64748b;">${esc(rep.time_str)} • ${esc(rep.shift_label)}</span>
+                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;flex-wrap:wrap;">
+                            <span style="font-size:10px;font-weight:800;padding:1px 7px;border-radius:9999px;background:${pillBg};color:${pillCol};">${pillTxt}</span>
+                            <span style="font-size:11px;color:#64748b;">${esc(rep.time_str)} • ${esc(rep.shift_label)}</span>
                         </div>
-                        <div style="font-size:12px;font-weight:700;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(rep.title)}</div>
+                        <div style="font-size:13px;font-weight:700;color:#0f172a;line-height:1.35;">${esc(rep.title)}</div>
                     </div>
-                    <span style="font-size:11px;font-weight:700;color:#4f46e5;flex-shrink:0;">${typeof window.openReportModal === "function" ? "Đọc →" : "Copy lệnh →"}</span>
+                    <span style="font-size:11.5px;font-weight:800;color:#4f46e5;flex-shrink:0;">${typeof window.openReportModal === "function" ? "Đọc →" : "Copy →"}</span>
                 </button>`;
             }).join("")
-            : `<div style="font-size:12px;color:#64748b;">Chưa có tệp báo cáo Markdown riêng trong khối này.</div>`;
+            : `<div style="font-size:12.5px;color:#64748b;">Chưa có tệp báo cáo Markdown riêng trong khối này.</div>`;
 
         const milestonesHtml = (r.daily_milestones || []).length
             ? r.daily_milestones.map((m) => `
-                <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:11px;background:#ffffff;border:1px solid ${m.verified_today ? "#86efac" : "#e2e8f0"};border-radius:8px;padding:6px 8px;margin-bottom:4px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;background:#ffffff;border:1px solid ${m.verified_today ? "#86efac" : "#e2e8f0"};border-radius:9px;padding:7px 9px;margin-bottom:5px;">
                     <div style="min-width:0;">
                         <div><strong>${esc(m.time)}</strong> • ${esc(m.status_vi)}</div>
-                        <div style="color:#475569;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.title)}</div>
+                        <div style="color:#475569;font-size:11.5px;">${esc(m.title)}</div>
                     </div>
                     <button class="office-btn-sm" onclick="window.ApexVirtualOffice.triggerRoomAction('${esc(r.room_id)}','run_milestone',{milestone:'${esc(m.time)}'})" style="flex-shrink:0;">▶ Chạy</button>
                 </div>
@@ -1518,93 +1695,133 @@
             : "";
 
         const votesHtml = (r.latest_votes || []).map((v) => `
-            <div style="font-size:11.5px;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:7px 9px;margin-bottom:5px;">
+            <div style="font-size:12px;background:#ffffff;border:1px solid #e2e8f0;border-radius:9px;padding:8px 10px;margin-bottom:6px;">
                 <div><strong>${esc(v.officer)}</strong> • Phiếu: <strong style="color:#4f46e5;">${esc(v.vote)}</strong></div>
-                <div style="color:#475569;margin-top:2px;">${esc(v.rationale)}</div>
+                <div style="color:#475569;margin-top:3px;line-height:1.45;">${esc(v.rationale)}</div>
             </div>
         `).join("");
 
         const tasksHtml = (r.kanban_tasks || []).map((t) => `
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:11.5px;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:6px 8px;margin-bottom:4px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:12px;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:6px 9px;margin-bottom:5px;">
                 <span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(t.scheduled_time)} • ${esc(t.title)}</span>
                 <span class="office-btn-sm" style="flex-shrink:0;">${esc(t.status)}</span>
             </div>
         `).join("");
 
         const pa = r.primary_action || {};
-        const isJobRunning = r.active_job && r.active_job.status === "RUNNING";
+        const isJobRunning = currentJob && currentJob.status === "RUNNING";
         const defaultCmd = r.chat_template || `Palmer giao việc cho ${r.ban_code}: rà soát và báo cáo ngay.`;
+        const curTab = state.drawerTab || "overview";
 
         body.innerHTML = `
             <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
                 <span class="office-status-pill ${esc(r.status_code)}">● ${esc(r.status_label_vi)}</span>
-                <span style="font-size:11px;font-weight:700;color:${r.veto_power ? "#dc2626" : "#64748b"};">${r.veto_power ? "🛡️ Có quyền Phủ quyết VETO" : "📡 Khối Chuyên Môn"}</span>
+                <span style="font-size:11.5px;font-weight:700;color:${r.veto_power ? "#dc2626" : "#64748b"};">${r.veto_power ? "🛡️ Quyền Phủ Quyết VETO" : "📡 Khối Chuyên Môn"}</span>
             </div>
 
-            <div class="office-section-box" style="background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 100%);border-color:#c7d2fe;">
-                <div class="office-section-title"><span>💬 Giao Việc Trực Tiếp Sang Khung Chat Palmer</span></div>
-                <div style="font-size:11px;color:#475569;margin-bottom:6px;">Luồng bàn giao: <strong>${esc(r.handoff_to || "")}</strong></div>
-                <textarea id="drawer-palmer-cmd" class="office-input" rows="2" style="width:100%;resize:vertical;font-size:11.5px;line-height:1.4;">${esc(defaultCmd)}</textarea>
-                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;">
-                    <select id="drawer-cmd-ticker" class="office-select" style="font-size:11px;padding:4px 8px;">
-                        <option value="">-- Gắn mã CP --</option>
-                        <option value="TPB">TPB</option>
-                        <option value="HDB">HDB</option>
-                        <option value="CTG">CTG</option>
-                        <option value="HPG">HPG</option>
-                        <option value="VPB">VPB</option>
-                        <option value="MSH">MSH</option>
-                        <option value="BAF">BAF</option>
-                        <option value="NVDA">NVDA</option>
-                    </select>
-                    <button class="office-btn-sm" id="drawer-copy-palmer-btn" style="background:#4f46e5;color:#fff;border-color:#4f46e5;flex:1;">📋 Copy Lệnh Dán Sang Chat</button>
+            <div class="office-exec-verdict">
+                <div style="font-size:11px;font-weight:800;color:#4f46e5;letter-spacing:0.04em;text-transform:uppercase;">${esc(eb.action_badge || r.wing || "")}</div>
+                <div style="font-size:13.5px;font-weight:800;color:#0f172a;margin-top:3px;line-height:1.35;">${esc(eb.headline || r.kpi_summary || "")}</div>
+                <div style="font-size:12px;color:#475569;margin-top:4px;">${esc(eb.action_text || r.schedule || "")}</div>
+                ${kpis.length ? `<div class="office-kpi-strip">${kpis.map((k) => `
+                    <div class="office-kpi-card">
+                        <div class="office-kpi-label">${esc(k.label)}</div>
+                        <div class="office-kpi-val" title="${esc(k.value)}">${esc(k.value)}</div>
+                    </div>
+                `).join("")}</div>` : ""}
+            </div>
+
+            <button class="office-btn-action" id="drawer-primary-action-btn" ${isJobRunning ? "disabled" : ""}>
+                ${isJobRunning ? "⏳ Đang thực thi trên máy chủ..." : esc(pa.label || "⚡ Chạy Tác Vụ Khối")}
+            </button>
+
+            ${renderProofConsoleHTML(currentJob, r)}
+
+            <div class="office-drawer-tabs" id="drawer-subtabs">
+                <button class="office-drawer-tab ${curTab === "overview" ? "active" : ""}" data-dtab="overview">📌 Tổng Quan</button>
+                <button class="office-drawer-tab ${curTab === "reports" ? "active" : ""}" data-dtab="reports">📑 Báo Cáo (${(r.recent_reports || []).length})</button>
+                <button class="office-drawer-tab ${curTab === "ops" ? "active" : ""}" data-dtab="ops">⚙️ Lịch &amp; Giao Việc</button>
+            </div>
+
+            <div id="dtab-panel-overview" style="display:${curTab === "overview" ? "flex" : "none"};flex-direction:column;gap:10px;">
+                ${renderSpecializedSection(r)}
+                <div class="office-section-box">
+                    <div class="office-section-title"><span>🏛️ Cơ Cấu &amp; Lịch Vận Hành Khối</span></div>
+                    <div style="font-size:12px;color:#475569;margin-bottom:4px;">${esc(r.schedule)}</div>
+                    ${subDeptHtml}
                 </div>
             </div>
 
-            <div class="office-section-box">
-                <div class="office-section-title"><span>⏱️ Lịch Chạy &amp; Cơ Cấu Bộ Phận</span></div>
-                <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:4px;">${esc(r.kpi_summary)}</div>
-                <div style="font-size:11.5px;color:#475569;">${esc(r.schedule)}</div>
-                ${subDeptHtml}
-                <div style="margin-top:10px;">
-                    <button class="office-btn-action" id="drawer-primary-action-btn" ${isJobRunning ? "disabled" : ""}>
-                        ${isJobRunning ? "⏳ Đang chạy tác vụ..." : esc(pa.label || "⚡ Chạy Tác Vụ Khối")}
-                    </button>
+            <div id="dtab-panel-reports" style="display:${curTab === "reports" ? "flex" : "none"};flex-direction:column;gap:10px;">
+                <div class="office-section-box">
+                    <div class="office-section-title">
+                        <span>📑 Báo Cáo Thật Của Khối (${(r.recent_reports || []).length})</span>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:7px;">${reportsHtml}</div>
                 </div>
             </div>
 
-            ${renderSpecializedSection(r)}
+            <div id="dtab-panel-ops" style="display:${curTab === "ops" ? "flex" : "none"};flex-direction:column;gap:10px;">
+                ${milestonesHtml ? `
+                <div class="office-section-box">
+                    <div class="office-section-title">
+                        <span>🕒 Cột Mốc Hôm Nay (${(r.daily_milestones || []).filter((x) => x.verified_today).length}/${(r.daily_milestones || []).length})</span>
+                        <button class="office-btn-sm" onclick="window.ApexVirtualOffice.openDockModal('activity')">Mở Nhật ký 18 mốc</button>
+                    </div>
+                    ${milestonesHtml}
+                </div>` : ""}
 
-            ${votesHtml ? `<div class="office-section-box"><div class="office-section-title"><span>🗣️ Phát Ngôn Hội Đồng Gần Nhất</span></div>${votesHtml}</div>` : ""}
+                ${votesHtml ? `<div class="office-section-box"><div class="office-section-title"><span>🗣️ Phát Ngôn Hội Đồng Gần Nhất</span></div>${votesHtml}</div>` : ""}
 
-            ${milestonesHtml ? `
-            <div class="office-section-box">
-                <div class="office-section-title">
-                    <span>🕒 Cột Mốc Hôm Nay Của Khối (${(r.daily_milestones || []).filter((x) => x.verified_today).length}/${(r.daily_milestones || []).length})</span>
-                    <button class="office-btn-sm" onclick="window.ApexVirtualOffice.openDockModal('activity')">Mở Nhật ký 18 mốc</button>
+                <div class="office-section-box">
+                    <div class="office-section-title">
+                        <span>📋 Nhiệm Vụ Kanban (${(r.kanban_tasks || []).length})</span>
+                        <button class="office-btn-sm" onclick="window.ApexVirtualOffice.openDockModal('kanban')">Mở Bảng Kanban</button>
+                    </div>
+                    ${tasksHtml || `<div style="font-size:12px;color:#64748b;">Chưa có thẻ việc gán riêng cho khối này.</div>`}
+                    <div style="display:flex;gap:6px;margin-top:8px;">
+                        <input type="text" id="drawer-new-task-input" class="office-input" style="flex:1;" placeholder="Giao nhanh việc mới cho ${esc(r.ban_code)}...">
+                        <button class="office-btn-sm" id="drawer-new-task-btn" style="background:#0f172a;color:#fff;border-color:#0f172a;">+ Giao</button>
+                    </div>
                 </div>
-                ${milestonesHtml}
-            </div>` : ""}
 
-            <div class="office-section-box">
-                <div class="office-section-title">
-                    <span>📑 Báo Cáo Thật Của Khối (${(r.recent_reports || []).length})</span>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:6px;">${reportsHtml}</div>
-            </div>
-
-            <div class="office-section-box">
-                <div class="office-section-title">
-                    <span>📋 Nhiệm Vụ Kanban (${(r.kanban_tasks || []).length})</span>
-                    <button class="office-btn-sm" onclick="window.ApexVirtualOffice.openDockModal('kanban')">Mở Bảng Kanban</button>
-                </div>
-                ${tasksHtml || `<div style="font-size:11.5px;color:#64748b;">Chưa có thẻ việc gán riêng cho khối này.</div>`}
-                <div style="display:flex;gap:6px;margin-top:8px;">
-                    <input type="text" id="drawer-new-task-input" class="office-input" style="flex:1;" placeholder="Giao nhanh việc mới cho ${esc(r.ban_code)}...">
-                    <button class="office-btn-sm" id="drawer-new-task-btn" style="background:#0f172a;color:#fff;border-color:#0f172a;">+ Giao</button>
+                <div class="office-section-box" style="background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 100%);border-color:#c7d2fe;">
+                    <div class="office-section-title"><span>💬 Giao Việc Sang Khung Chat Palmer</span></div>
+                    <div style="font-size:11.5px;color:#475569;margin-bottom:6px;">Luồng bàn giao: <strong>${esc(r.handoff_to || "")}</strong></div>
+                    <textarea id="drawer-palmer-cmd" class="office-input" rows="2" style="width:100%;resize:vertical;font-size:12px;line-height:1.45;">${esc(prevCmdDirty !== null ? prevCmdDirty : defaultCmd)}</textarea>
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;">
+                        <select id="drawer-cmd-ticker" class="office-select" style="font-size:11.5px;padding:4px 8px;">
+                            <option value="">-- Gắn mã CP --</option>
+                            <option value="TPB">TPB</option>
+                            <option value="HPG">HPG</option>
+                            <option value="CTG">CTG</option>
+                            <option value="NAB">NAB</option>
+                            <option value="CTS">CTS</option>
+                            <option value="HDB">HDB</option>
+                            <option value="VPB">VPB</option>
+                            <option value="NVDA">NVDA</option>
+                        </select>
+                        <button class="office-btn-sm" id="drawer-copy-palmer-btn" style="background:#4f46e5;color:#fff;border-color:#4f46e5;flex:1;">📋 Copy Lệnh Dán Sang Chat</button>
+                    </div>
                 </div>
             </div>
         `;
+
+        // Bind Proof Console report button
+        bindProofReportButtons(document.getElementById("drawer-live-job-box"));
+
+        // Bind 3-tab switcher
+        body.querySelectorAll("#drawer-subtabs .office-drawer-tab").forEach((tb) => {
+            tb.onclick = () => {
+                const chosen = tb.getAttribute("data-dtab") || "overview";
+                state.drawerTab = chosen;
+                body.querySelectorAll("#drawer-subtabs .office-drawer-tab").forEach((x) => x.classList.toggle("active", x.getAttribute("data-dtab") === chosen));
+                ["overview", "reports", "ops"].forEach((k) => {
+                    const p = document.getElementById("dtab-panel-" + k);
+                    if (p) p.style.display = k === chosen ? "flex" : "none";
+                });
+            };
+        });
 
         // Bind report click (Portal modal OR copy-to-chat command in Artifact sandbox)
         body.querySelectorAll(".office-report-item[data-rel-path]").forEach((btn) => {
@@ -1639,7 +1856,7 @@
                     openDockModal("lounge");
                 } else {
                     const sym = tickerSel ? tickerSel.value : "";
-                    triggerRoomAction(r.room_id, pa.action, sym ? { ticker: sym } : {});
+                    triggerRoomAction(r.room_id, pa.action, sym ? { ticker: sym } : {}, r);
                 }
             };
         }
@@ -1660,14 +1877,16 @@
                 await loadAndRenderRoomDrawer(r.room_id, true);
             };
         }
+
+        if (prevScroll > 0) body.scrollTop = prevScroll;
     }
 
     // ========================================================================
     // ROOM ACTIONS & KANBAN API CALLS
     // ========================================================================
-    async function triggerRoomAction(roomId, action, payload) {
+    async function triggerRoomAction(roomId, action, payload, roomObj) {
         const rooms = ((state.liveData || {}).rooms) || [];
-        const rm = rooms.find((x) => x.room_id === roomId);
+        const rm = roomObj || rooms.find((x) => x.room_id === roomId);
         try {
             const res = await fetch(getApiBase() + "/api/office/room_action", {
                 method: "POST",
@@ -1679,7 +1898,27 @@
                 showToast("Không thực thi được tác vụ: " + (data.error || "Lỗi"), "error");
                 return data;
             }
-            showToast(data.message || "Đã kích hoạt tác vụ!", "success");
+            if (data.job_id) {
+                state.activeRoomJob = {
+                    job_id: data.job_id,
+                    room_id: roomId,
+                    action: action,
+                    title: data.title || "Đang thực thi...",
+                    status: "RUNNING",
+                    progress_pct: 12,
+                    started_at: new Date().toLocaleTimeString("vi-VN"),
+                    steps_log: [{ time: new Date().toLocaleTimeString("vi-VN"), text: "Đã tiếp nhận lệnh trên máy chủ Apex — Đang chạy...", ok: true }],
+                    summary: data.message || "Đang xử lý...",
+                };
+                if (state.selectedRoomId !== roomId) {
+                    await openRoomDrawer(roomId);
+                } else {
+                    updateProofConsoleInPlace(state.activeRoomJob, rm);
+                }
+                startJobPolling(data.job_id, rm || { room_id: roomId, primary_action: { label: "⚡ Chạy Tác Vụ Khối" } });
+            } else {
+                showToast(data.message || "Đã đồng bộ xong!", "success");
+            }
             await fetchLiveState(true);
             scheduleNextPoll();
             return data;

@@ -1,10 +1,10 @@
 {
   "schema_version": "APEX_CANONICAL_TRUTH_V5",
-  "generated_at_ict": "2026-11-24 13:41:48 ICT",
+  "generated_at_ict": "2026-11-24 15:00:32 ICT",
   "date": "2026-11-24",
   "market_session": {
     "date_ict": "2026-11-24",
-    "time_ict": "13:41:48",
+    "time_ict": "15:00:32",
     "weekday_vi": "Thứ Ba",
     "is_trading_day": false,
     "is_holiday": true,
@@ -81,10 +81,10 @@
     "vn_index_ma50": 1746.23,
     "breadth_above_ma20_pct": 19.4,
     "avg_buy_up_pct": 59.4,
-    "advance_ratio_pct": 54.7,
-    "volume_pace_ratio": 1.37,
+    "advance_ratio_pct": 58.6,
+    "volume_pace_ratio": 1.09,
     "foreign_net_ty": -36.9,
-    "basis_pts": -1.82,
+    "basis_pts": 0.0,
     "snapshot_note": "Giá đóng cửa tham chiếu phiên 2026-11-23"
   },
   "canonical_regime": {
@@ -231,9 +231,9 @@
     "title": "BIÊN BẢN HỌP ĐẠI HỘI ĐỒNG 5 KHỐI CHUYÊN TRÁCH — PHIÊN TỐI `21:00` (`23/11/2026`)"
   },
   "latest_chat_sync": {
-    "sync_id": "SYNC-AG2P-20261124-133528",
-    "last_updated": "2026-11-24 13:35:28",
-    "latest_user_request": "Tổng đại tu đồng bộ APEX UNIFIED CANONICAL BRAIN V5.0 (Lịch nghỉ lễ 24/11 + Stale-Feed Detector + Hợp nhất Chat/Portal/2.5D/Cloud)"
+    "sync_id": "SYNC-AG2P-20261124-145801",
+    "last_updated": "2026-11-24 14:58:01",
+    "latest_user_request": "Đồng bộ trạng thái SSOT, Lịch phiên & Chân lý Hợp nhất V5.0 giữa James, Palmer, Web Portal & Văn phòng 2.5D"
   },
   "executive_directive_vi": "🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026).",
   "consistency_audit": {

@@ -7,9 +7,9 @@
 .apex-office-shell {
     position: relative;
     width: 100%;
-    height: calc(100vh - 230px);
-    min-height: 600px;
-    max-height: 860px;
+    height: calc(100vh - 125px);
+    min-height: 700px;
+    max-height: 1080px;
     border-radius: 18px;
     overflow: hidden;
     background: radial-gradient(circle at 30% 20%, #effbe4 0%, #ddf2cb 52%, #cbe6b5 100%);
@@ -145,16 +145,46 @@
 /* TOP CENTER: ENTERPRISE LIVE TICKER & JOB BANNER */
 .office-hud-topcenter {
     position: absolute;
-    top: 14px;
-    left: 44%;
+    top: 12px;
+    left: 50%;
     transform: translateX(-50%);
     z-index: 15;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    max-width: min(580px, calc(100% - 540px));
+    max-width: min(650px, calc(100% - 480px));
     pointer-events: none;
+}
+
+.office-quick-rooms {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.office-quick-pill {
+    border: 1px solid #cbd5e1;
+    background: rgba(255, 255, 255, 0.94);
+    color: #1e293b;
+    border-radius: 9999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    transition: all 0.14s ease;
+    white-space: nowrap;
+}
+
+.office-quick-pill:hover,
+.office-quick-pill.active {
+    background: #4f46e5;
+    border-color: #4338ca;
+    color: #ffffff;
 }
 
 .office-live-pill {
@@ -301,20 +331,20 @@
 /* SIDE DRAWER (SLIDE FROM RIGHT ON ROOM CLICK) */
 .office-drawer {
     position: absolute;
-    top: 64px;
+    top: 62px;
     right: 14px;
     bottom: 72px;
-    width: 450px;
-    max-width: calc(100% - 28px);
+    width: 530px;
+    max-width: calc(100% - 24px);
     z-index: 25;
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(16px);
     border: 1px solid #cbd5e1;
     border-radius: 18px;
-    box-shadow: -8px 16px 40px rgba(15, 23, 42, 0.16);
+    box-shadow: -10px 18px 44px rgba(15, 23, 42, 0.2);
     display: flex;
     flex-direction: column;
-    transform: translateX(calc(100% + 30px));
+    transform: translateX(calc(100% + 34px));
     opacity: 0;
     pointer-events: none;
     transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
@@ -341,10 +371,162 @@
 .office-drawer-body {
     flex: 1;
     overflow-y: auto;
-    padding: 14px 16px 20px;
+    padding: 14px 16px 22px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* EXECUTIVE VERDICT & 3-KPI STRIP */
+.office-exec-verdict {
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    border: 1px solid #c7d2fe;
+    border-radius: 12px;
+    padding: 12px 13px;
+}
+
+.office-kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    margin-top: 9px;
+}
+
+.office-kpi-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    padding: 7px 9px;
+}
+
+.office-kpi-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+    letter-spacing: 0.03em;
+}
+
+.office-kpi-val {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* LIVE PROOF-OF-WORK CONSOLE */
+.office-proof-box {
+    border-radius: 12px;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    font-size: 12.5px;
+    transition: all 0.2s ease;
+}
+
+.office-proof-box.running {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+    border-color: #60a5fa;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+}
+
+.office-proof-box.done {
+    background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+    border-color: #34d399;
+}
+
+.office-proof-box.error {
+    background: #fef2f2;
+    border-color: #f87171;
+}
+
+.office-progress-wrap {
+    width: 100%;
+    height: 7px;
+    background: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.office-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb 0%, #10b981 100%);
+    border-radius: 9999px;
+    transition: width 0.35s ease;
+}
+
+.office-step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.office-step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 12px;
+    color: #334155;
+}
+
+.office-deliverable-btn {
+    margin-top: 9px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #10b981;
+    background: #10b981;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.25);
+}
+
+.office-deliverable-btn:hover {
+    background: #059669;
+}
+
+/* DRAWER SUB-TABS */
+.office-drawer-tabs {
+    display: flex;
+    gap: 5px;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.office-drawer-tab {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #475569;
+    padding: 7px 8px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.office-drawer-tab:hover {
+    color: #0f172a;
+}
+
+.office-drawer-tab.active {
+    background: #ffffff;
+    color: #4f46e5;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
 }
 
 .office-drawer-close {

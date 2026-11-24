@@ -433,6 +433,62 @@ def _render_war_room_weekly_html(wr_state: Dict[str, Any]) -> Dict[str, str]:
     }
 
 
+def _render_simple_action_board_html(wr_state: Dict[str, Any]) -> str:
+    """Render Bảng Hành Động Đơn Giản (MUA / BÁN / ĐỢI) ở đầu Tab 2 Phòng Tác Chiến."""
+    rows = wr_state.get("simple_action_board") or []
+    badge_style_map = {
+        "MUA": ("#10b981", "rgba(16,185,129,0.16)", "🟢 ĐẶT MUA"),
+        "BAN_CHOT_LOI": ("#38bdf8", "rgba(56,189,248,0.18)", "💰 BÁN CHỐT LỜI"),
+        "BAN_CAT_LO": ("#ef4444", "rgba(239,68,68,0.22)", "🔴 BÁN CẮT LỖ"),
+        "DOI": ("#fbbf24", "rgba(245,158,11,0.15)", "🟡 ĐỢI / GIỮ"),
+    }
+    row_html_parts: List[str] = []
+    for r in rows[:10]:
+        sym = html_lib.escape(str(r.get("symbol") or ""))
+        price = float(r.get("price") or 0.0)
+        chg = float(r.get("change_pct") or 0.0)
+        code = str(r.get("simple_action_code") or "DOI")
+        col, bg, short_lbl = badge_style_map.get(code, badge_style_map["DOI"])
+        status_b = html_lib.escape(str(r.get("status_badge") or ""))
+        act_txt = html_lib.escape(str(r.get("action_text_vi") or ""))
+        hold_tag = " <span style='font-size:10px;background:rgba(56,189,248,0.18);color:#7dd3fc;padding:1px 6px;border-radius:9999px;font-weight:700;'>ĐANG GIỮ</span>" if r.get("is_holding") else ""
+        chg_col = "#34d399" if chg > 0 else ("#f87171" if chg < 0 else "#cbd5e1")
+        row_html_parts.append(
+            f"<tr>"
+            f"<td><strong style='color:#ffffff;font-size:13.5px;'>{sym}</strong>{hold_tag}</td>"
+            f"<td style='font-family:JetBrains Mono,monospace;font-weight:700;color:{chg_col};'>{price:,.0f} đ <span style='font-size:11px;'>({chg:+.2f}%)</span></td>"
+            f"<td><span style='display:inline-block;padding:3px 9px;border-radius:9999px;font-size:11px;font-weight:800;color:{col};background:{bg};border:1px solid {col}55;'>{short_lbl}</span><div style='font-size:11px;color:#94a3b8;margin-top:2px;'>{status_b}</div></td>"
+            f"<td style='font-size:13px;color:#f1f5f9;font-weight:600;'>{act_txt}</td>"
+            f"</tr>"
+        )
+    tbody_html = "\n".join(row_html_parts) or "<tr><td colspan='4' style='color:#94a3b8;padding:12px;'>Đang tải bảng hành động đơn giản...</td></tr>"
+    return f"""
+    <div id="wr-simple-action-board" style="background:linear-gradient(135deg,#0f172a 0%,#162033 100%);border:1px solid rgba(56,189,248,0.35);border-radius:14px;padding:14px 16px;margin-bottom:16px;box-shadow:0 8px 24px rgba(2,6,23,0.35);">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+            <div>
+                <div style="font-size:14.5px;font-weight:800;color:#ffffff;">🎯 BẢNG HÀNH ĐỘNG ĐƠN GIẢN (MUA / BÁN / ĐỢI)</div>
+                <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Tóm gọn hành động trực tiếp cho từng cổ phiếu — nhìn 2 giây biết ngay nên MUA, BÁN hay ĐỢI.</div>
+            </div>
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="standard-table" style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="width:120px;">Mã CP</th>
+                        <th style="width:140px;">Giá Hiện Tại</th>
+                        <th style="width:200px;">Quyết Định Nhanh</th>
+                        <th>Hành Động Cụ Thể</th>
+                    </tr>
+                </thead>
+                <tbody id="wr-simple-action-board-tbody">
+                    {tbody_html}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    """
+
+
 def _render_war_room_picks_html(wr_state: Dict[str, Any]) -> str:
     picks = wr_state.get("dynamic_picks") or []
     if not picks:
@@ -1449,6 +1505,7 @@ def generate_portal_html(
     wr_tab4_watchlist_html = _render_tab4_live_watchlist_html(wr_state)
     wr_v8_decks = _render_war_room_v8_decks(wr_state)
     wr_v8_cmd_html = wr_v8_decks.get("command_html", "")
+    wr_simple_action_html = _render_simple_action_board_html(wr_state)
     wr_v8_surv_html = wr_v8_decks.get("surveillance_html", "")
     wr_v8_depts_html = wr_v8_decks.get("departments_html", "")
     wr_phase_label_safe = _html.escape(str((wr_state.get("phase_info", {}) or {}).get("active_phase_short") or (wr_state.get("phase_info", {}) or {}).get("phase_name") or wr_phase_id or "PHÒNG TÁC CHIẾN LIVE"))
@@ -1590,7 +1647,7 @@ def generate_portal_html(
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <link rel="stylesheet" href="/api/office/assets/office.css?v=1">
+    <link rel="stylesheet" href="/api/office/assets/office.css?v=6">
     <style>
         :root {{
             --bg-base: #070a12;
@@ -1616,27 +1673,27 @@ def generate_portal_html(
             background: var(--bg-base);
             color: var(--text-main);
             min-height: 100vh;
-            padding: 20px 24px;
+            padding: 12px 18px;
             background-image: 
                 radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.03) 0%, transparent 40%),
                 radial-gradient(circle at 85% 85%, rgba(192, 132, 252, 0.03) 0%, transparent 40%);
             background-attachment: fixed;
         }}
-        .container {{ max-width: 1420px; margin: 0 auto; }}
+        .container {{ max-width: 1480px; margin: 0 auto; }}
         
         /* HEADER */
         .portal-header {{
             background: linear-gradient(135deg, #0e1524 0%, #141d30 100%);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 22px 28px;
-            margin-bottom: 22px;
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin-bottom: 12px;
             box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 18px;
+            gap: 14px;
         }}
         .brand-title {{
             display: flex;
@@ -1689,15 +1746,15 @@ def generate_portal_html(
         /* KPI STATS ROW */
         .kpi-grid {{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-            margin-bottom: 22px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 12px;
+            margin-bottom: 12px;
         }}
         .kpi-card {{
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 20px 22px;
+            border-radius: 12px;
+            padding: 13px 16px;
             position: relative;
             overflow: hidden;
             transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
@@ -2421,7 +2478,7 @@ def generate_portal_html(
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
             border-radius: 18px;
-            max-width: 960px;
+            max-width: 1020px;
             margin: 0 auto;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
             overflow: hidden;
@@ -2429,7 +2486,7 @@ def generate_portal_html(
         .modal-header {{
             background: var(--bg-card);
             border-bottom: 1px solid var(--border-color);
-            padding: 22px 28px;
+            padding: 20px 28px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -2438,11 +2495,11 @@ def generate_portal_html(
             z-index: 10;
         }}
         .modal-body {{
-            padding: 36px 42px;
-            line-height: 1.8;
+            padding: 32px 42px;
+            line-height: 1.78;
             font-size: 15.5px;
-            color: #e2e8f0;
-            max-height: 80vh;
+            color: #f1f5f9;
+            max-height: 82vh;
             overflow-y: auto;
         }}
 
@@ -2454,11 +2511,20 @@ def generate_portal_html(
             letter-spacing: -0.01em;
         }}
         .markdown-body h1 {{ font-size: 24px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }}
-        .markdown-body h2 {{ font-size: 19px; }}
+        .markdown-body h2 {{ font-size: 19px; color: #e2e8f0; border-left: 4px solid #38bdf8; padding-left: 10px; }}
         .markdown-body h3 {{ font-size: 16px; color: #38bdf8; }}
         .markdown-body p {{ margin-bottom: 16px; }}
         .markdown-body ul, .markdown-body ol {{ margin: 0 0 18px 24px; }}
         .markdown-body li {{ margin-bottom: 8px; }}
+        .markdown-body blockquote {{
+            border-left: 4px solid #6366f1;
+            background: rgba(99, 102, 241, 0.08);
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 10px 10px 0;
+            color: #e2e8f0;
+        }}
+        .markdown-body hr {{ border: none; border-top: 1px solid var(--border-color); margin: 24px 0; }}
         .markdown-body table {{
             width: 100%;
             border-collapse: collapse;
@@ -4442,6 +4508,7 @@ def generate_portal_html(
 
                 <!-- SUB-DECK 1 (MẶC ĐỊNH): LỆNH & BÁO ĐỘNG 24/7 + 3 CỘT TÁC CHIẾN -->
                 <div id="deck-command" class="wr-deck-pane active" data-wr-deck="deck-command">
+                {wr_simple_action_html}
                 {wr_v8_cmd_html}
 
                 <!-- 3 COLUMNS TACTICAL COMMAND -->
@@ -7335,6 +7402,29 @@ def generate_portal_html(
                 }}
             }}
 
+            // 0b. Simple Action Board update (MUA / BAN / DOI)
+            const sabTbody = document.getElementById('wr-simple-action-board-tbody');
+            if (sabTbody && Array.isArray(data.simple_action_board)) {{
+                const bMap = {{
+                    'MUA': ['#10b981', 'rgba(16,185,129,0.16)', '🟢 ĐẶT MUA'],
+                    'BAN_CHOT_LOI': ['#38bdf8', 'rgba(56,189,248,0.18)', '💰 BÁN CHỐT LỜI'],
+                    'BAN_CAT_LO': ['#ef4444', 'rgba(239,68,68,0.22)', '🔴 BÁN CẮT LỖ'],
+                    'DOI': ['#fbbf24', 'rgba(245,158,11,0.15)', '🟡 ĐỢI / GIỮ']
+                }};
+                sabTbody.innerHTML = data.simple_action_board.slice(0, 10).map(r => {{
+                    const st = bMap[r.simple_action_code] || bMap['DOI'];
+                    const chg = Number(r.change_pct || 0);
+                    const chgCol = chg > 0 ? '#34d399' : (chg < 0 ? '#f87171' : '#cbd5e1');
+                    const holdTag = r.is_holding ? " <span style='font-size:10px;background:rgba(56,189,248,0.18);color:#7dd3fc;padding:1px 6px;border-radius:9999px;font-weight:700;'>ĐANG GIỮ</span>" : "";
+                    return `<tr>
+                        <td><strong style="color:#ffffff;font-size:13.5px;">${{escHtml(r.symbol || '')}}</strong>${{holdTag}}</td>
+                        <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:${{chgCol}};">${{Number(r.price || 0).toLocaleString('en-US')}} đ <span style="font-size:11px;">(${{chg >= 0 ? '+' : ''}}${{chg.toFixed(2)}}%)</span></td>
+                        <td><span style="display:inline-block;padding:3px 9px;border-radius:9999px;font-size:11px;font-weight:800;color:${{st[0]}};background:${{st[1]}};border:1px solid ${{st[0]}}55;">${{st[2]}}</span><div style="font-size:11px;color:#94a3b8;margin-top:2px;">${{escHtml(r.status_badge || '')}}</div></td>
+                        <td style="font-size:13px;color:#f1f5f9;font-weight:600;">${{escHtml(r.action_text_vi || '')}}</td>
+                    </tr>`;
+                }}).join('');
+            }}
+
             // 1. Clocks & Regime Pill
             if (data.server_time) {{
                 const clockEl = document.getElementById('war-room-clock');
@@ -8959,7 +9049,7 @@ def generate_portal_html(
             }}
         }}
     </script>
-    <script src="/api/office/assets/office.js?v=1"></script>
+    <script src="/api/office/assets/office.js?v=6"></script>
 </body>
 </html>
 """

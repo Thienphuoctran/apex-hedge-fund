@@ -590,6 +590,7 @@ def _dispatch_daily_warroom_and_james(
       - `james_hq`: Bản kế hoạch tác chiến hoàn chỉnh trong ngày của Master CIO James (09:00, 14:05, EOD).
     """
     try:
+        import html as _html
         r = snap["recon_summary"]
         d = snap["decision_brain"]
         s = snap["ssot_snapshot"]
@@ -599,74 +600,79 @@ def _dispatch_daily_warroom_and_james(
         strikes = b3.get("asymmetric_conviction_strikes") or []
         challenges = b3.get("independent_chairman_challenges") or []
 
-        top5_txt = ", ".join(f"{x['symbol']} ({x['live_price']:,.0f}đ | {x['change_pct']:+.1f}% | BuyUp {x['buy_up_pct']:.0f}%)" for x in top5[:5]) or "Chưa có mã đạt chuẩn"
+        top5_txt = ", ".join(
+            f"{_html.escape(str(x['symbol']))} ({x['live_price']:,.0f}đ | {x['change_pct']:+.1f}% | BuyUp {x['buy_up_pct']:.0f}%)"
+            for x in top5[:5]
+        ) or "Chưa có mã đạt chuẩn"
         orders_txt = "\n".join(
-            f"  • *{o['symbol']}*: `{o['shares_lot100']} CP` @ LO `{o['limit_lo_vnd']:,.0f}đ` | Stop `{o['stop_vnd']:,.0f}đ` | TP1 `{o['tp1_vnd']:,.0f}đ`"
+            f"  • <b>{_html.escape(str(o['symbol']))}</b>: MUA LO <code>{o['shares_lot100']} CP</code> @ <b>{o['limit_lo_vnd']:,.0f}đ</b> | Cắt lỗ <code>{o['stop_vnd']:,.0f}đ</code> | Chốt lời <code>{o['tp1_vnd']:,.0f}đ</code>"
             for o in orders
-        ) or "  • Không mở mua mới — Giữ nguyên 100% Tiền mặt bảo toàn vốn."
+        ) or "  • ĐỢI — Chưa giải ngân mới, bảo toàn tiền mặt."
 
-        # 1. Gửi Phòng 2: daily_warroom
+        # 1. Gửi Phòng 2: daily_warroom (HTML gọn gàng, không rò rỉ Markdown thô)
         if event_type == "OPENING_0900_KICKOFF":
             wr_msg = (
-                f"⚡ *[MỞ PHIÊN 09H00 — PHÒNG TÁC CHIẾN MỖI NGÀY]* `{snap['timestamp_ict']}`\n"
-                f"• Quét toàn thị trường: `{r['scanned_live_count']}/{r['universe_total']}` mã | VNI: `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`)\n"
-                f"• Breadth>MA20: `{r['live_breadth_ma20_pct']:.1f}%` | Buy-Up: `{r['avg_buy_up_pct']:.1f}%` | Internet/BCTC: `{r['internet_articles']}` tin\n"
-                f"• *Trạng thái sống:* `{d['live_regime']}` ({d['target_allocation_pct']})\n"
-                f"• *Lịch nhịp trong ngày:* `09:00 Mở cửa` ➔ `11:35 Giữa phiên` ➔ `14:05 Khung Giờ Vàng` ➔ `15:45 Tổng kết & Nghỉ 16h00`\n"
-                f"• *Top 5 BCTC sạch:* {top5_txt}\n"
-                f"• *Chỉ thị:* Khóa nút Mua chống FOMO ATO trước `14h05`; liên tục bám sát bảng điện."
+                f"⚡ <b>MỞ PHIÊN 09H00 — PHÒNG TÁC CHIẾN</b> (<code>{_html.escape(str(snap['timestamp_ict']))}</code>)\n"
+                f"• Thị trường: VNI <b>{r['vn_index']:,.2f}</b> (<code>{r['vn_index_chg_pct']:+.2f}%</code>) | Br20: <b>{r['live_breadth_ma20_pct']:.1f}%</b> | Buy-Up: <b>{r['avg_buy_up_pct']:.1f}%</b>\n"
+                f"• Chế độ: <b>{_html.escape(str(d['live_regime']))}</b> ({_html.escape(str(d['target_allocation_pct']))})\n"
+                f"• Hành động: ĐỢI trước 14h05, không đua xanh ATO.\n"
+                f"• Theo dõi trọng tâm: {top5_txt}"
             )
         elif event_type == "REGIME_OR_PLAN_CHANGE":
             wr_msg = (
-                f"🔔 *[BIẾN ĐỘNG KẾ HOẠCH TRONG NGÀY]* `{snap['timestamp_ict']}`\n"
-                f"• VNI: `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`) | Br20: `{r['live_breadth_ma20_pct']:.1f}%` | Buy-Up: `{r['avg_buy_up_pct']:.1f}%`\n"
-                f"• *Chế độ mới:* `{d['live_regime']}` (`{d['target_allocation_pct']}`)\n"
-                f"• *Cập nhật hành động:* {d['verdict_vi']}\n"
-                f"• *Top 5 dẫn dắt:* {top5_txt}"
+                f"🔔 <b>CẬP NHẬT BIẾN ĐỘNG KẾ HOẠCH</b> (<code>{_html.escape(str(snap['timestamp_ict']))}</code>)\n"
+                f"• VNI: <b>{r['vn_index']:,.2f}</b> (<code>{r['vn_index_chg_pct']:+.2f}%</code>) | Br20: <b>{r['live_breadth_ma20_pct']:.1f}%</b> | Buy-Up: <b>{r['avg_buy_up_pct']:.1f}%</b>\n"
+                f"• Chế độ: <b>{_html.escape(str(d['live_regime']))}</b> (<code>{_html.escape(str(d['target_allocation_pct']))}</code>)\n"
+                f"• 👉 Hành động: {_html.escape(str(d['verdict_vi']))}\n"
+                f"• Trọng tâm: {top5_txt}"
             )
         elif event_type == "EOD_WRAP_FINAL":
+            rep_name = eod_summary_path.name if eod_summary_path else f"{snap['date']}_EOD_WarRoom_Summary_And_Lessons.md"
             wr_msg = (
-                f"🏁 *[TỔNG KẾT CUỐI NGÀY & BÀI HỌC]* `{snap['date']}`\n"
-                f"• Đóng cửa VNI: `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`) | Quét: `{r['scanned_live_count']}/{r['universe_total']}` mã\n"
-                f"• SSOT `{s['account_id']}`: `{s['status']}` | Tiền mặt: `{s['cash_vnd']:,.0f} ₫` (`{s['open_positions_count']} CP`)\n"
-                f"• Phán quyết cuối phiên: `{d['live_regime']}`\n"
-                f"• Hồ sơ bài học: `{eod_summary_path.name if eod_summary_path else snap['date'] + '_EOD_WarRoom_Summary_And_Lessons.md'}`\n"
-                f"• Trạng thái: Đã tổng kết xong, hệ thống nghỉ ngơi lúc `16:00`."
+                f"🏁 <b>TỔNG KẾT CUỐI NGÀY</b> (<code>{_html.escape(str(snap['date']))}</code>)\n"
+                f"• Đóng cửa VNI: <b>{r['vn_index']:,.2f}</b> (<code>{r['vn_index_chg_pct']:+.2f}%</code>) | Quét {r['scanned_live_count']}/{r['universe_total']} mã\n"
+                f"• Tài khoản SSOT <code>{_html.escape(str(s['account_id']))}</code>: Tiền mặt <b>{s['cash_vnd']:,.0f} đ</b> | {s['open_positions_count']} vị thế mở\n"
+                f"• Chế độ: <b>{_html.escape(str(d['live_regime']))}</b> | Hồ sơ: <code>{_html.escape(rep_name)}</code>"
             )
         else:
             wr_msg = (
-                f"⚡ *[CẬP NHẬT TÁC CHIẾN {event_type}]* `{snap['timestamp_ict']}`\n"
-                f"• VNI: `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`) | Br20: `{r['live_breadth_ma20_pct']:.1f}%` | Buy-Up: `{r['avg_buy_up_pct']:.1f}%`\n"
-                f"• *Chế độ sống:* `{d['live_regime']}` | Cash SSOT: `{s['cash_vnd']:,.0f} ₫`\n"
-                f"• *Chỉ thị:* {d['verdict_vi']}\n"
-                f"• *Lệnh dự kiến:*\n{orders_txt}"
+                f"⚡ <b>CẬP NHẬT TÁC CHIẾN {_html.escape(str(event_type))}</b> (<code>{_html.escape(str(snap['timestamp_ict']))}</code>)\n"
+                f"• VNI: <b>{r['vn_index']:,.2f}</b> (<code>{r['vn_index_chg_pct']:+.2f}%</code>) | Br20: <b>{r['live_breadth_ma20_pct']:.1f}%</b> | Buy-Up: <b>{r['avg_buy_up_pct']:.1f}%</b>\n"
+                f"• 👉 Hành động: {_html.escape(str(d['verdict_vi']))}\n"
+                f"• Lệnh dự kiến:\n{orders_txt}"
             )
-        dispatch_message("daily_warroom", wr_msg, mirror_to_reports_vault=False)
+        dispatch_message(
+            "daily_warroom",
+            wr_msg,
+            parse_mode="HTML",
+            mirror_to_reports_vault=False,
+            event_key=f"{snap.get('date')}_{event_type}",
+            cooldown_seconds=7200,
+            is_intraday_alert=True,
+        )
 
         # 2. Gửi Phòng 3: james_hq (Kế hoạch tác chiến hoàn chỉnh trong ngày của James)
         if event_type in ("OPENING_0900_KICKOFF", "GOLDEN_WINDOW_VERDICT", "EOD_WRAP_FINAL"):
             strikes_txt = "\n".join(
-                f"  • *{st['symbol']}* (V3 `{st.get('fusion_v3_score', '-')}` | F=`{st.get('f_score', '-')}/9`): `{st.get('shares_lot100', 0)} CP` @ LO `{float(st.get('limit_entry_vnd', 0)):,.0f}đ` | Stop `{float(st.get('stop_loss_vnd', 0)):,.0f}đ` | TP1 `{float(st.get('tp1_swing_vnd', 0)):,.0f}đ` (Rủi ro `{st.get('max_nav_risk_pct', '-')}% NAV`)"
+                f"  • <b>{_html.escape(str(st['symbol']))}</b>: MUA LO <code>{st.get('shares_lot100', 0)} CP</code> @ <b>{float(st.get('limit_entry_vnd', 0)):,.0f}đ</b> | Cắt lỗ <code>{float(st.get('stop_loss_vnd', 0)):,.0f}đ</code> | Chốt lời <code>{float(st.get('tp1_swing_vnd', 0)):,.0f}đ</code>"
                 for st in strikes[:3]
-            ) or "  • Chưa nạp kèo Spring."
-            chal_txt = "\n".join(
-                f"  - *{c.get('challenge_id', 'CHAL')}*: {str(c.get('action_mandate', ''))[:140]}"
-                for c in challenges[:4]
-            ) or "  - Giữ kỷ luật quản trị rủi ro."
+            ) or "  • ĐỢI — Chưa kích hoạt lệnh mua mới."
             james_msg = (
-                f"🎖️ *[KẾ HOẠCH TÁC CHIẾN HOÀN CHỈNH — MASTER CIO JAMES]*\n"
-                f"🕒 `{snap['timestamp_ict']}` | Nhịp: `{event_type}` | SSOT `{s['account_id']}`: `{s['cash_vnd']:,.0f} ₫` (`{s['status']}`)\n"
-                f"━━━━━━━━━━━━━━━━━━━\n"
-                f"📊 *Thị trường sống (`{r['scanned_live_count']}/{r['universe_total']}` mã):* VNI `{r['vn_index']:,.2f}` (`{r['vn_index_chg_pct']:+.2f}%`) | Br20 `{r['live_breadth_ma20_pct']:.1f}%` | Buy-Up `{r['avg_buy_up_pct']:.1f}%` | Chế độ: `{d['live_regime']}`\n"
-                f"🎯 *Phán quyết Master CIO:* {d['verdict_vi']}\n"
-                f"📌 *Ma trận 4 nhánh (`14h05–14h25`):*\n"
-                f"  • `S4 Bear Shield`: VNI < 1,666 hoặc Buy-Up < 48% ➔ Đứng ngoài `100% Cash`.\n"
-                f"  • `S3 Spring V3.0`: VNI >= 1,678, Br20 >= 24%, Vol >= 1.05x, Buy-Up >= 58% ➔ Đánh `30–40% NAV` (max 2 mã).\n"
-                f"  • `S2 Sideways` (`30–45% NAV`) | `S1 Bull Breakout` (`75–85% NAV`).\n"
-                f"🧾 *Rổ Kèo Đánh Cược Bất Đối Xứng V3.0 (Stop -5.5%):*\n{strikes_txt}\n"
-                f"🧠 *Phản biện Độc lập Brain V3.0:*\n{chal_txt}"
+                f"🎖️ <b>KẾ HOẠCH TÁC CHIẾN — MASTER CIO JAMES</b>\n"
+                f"🕒 <code>{_html.escape(str(snap['timestamp_ict']))}</code> | Nhịp: <code>{_html.escape(str(event_type))}</code> | SSOT: <b>{s['cash_vnd']:,.0f} đ</b>\n"
+                f"📊 VNI <b>{r['vn_index']:,.2f}</b> (<code>{r['vn_index_chg_pct']:+.2f}%</code>) | Br20 <b>{r['live_breadth_ma20_pct']:.1f}%</b> | Buy-Up <b>{r['avg_buy_up_pct']:.1f}%</b> | <b>{_html.escape(str(d['live_regime']))}</b>\n"
+                f"🎯 <b>Phán quyết:</b> {_html.escape(str(d['verdict_vi']))}\n"
+                f"🧾 <b>Bảng lệnh hành động:</b>\n{strikes_txt}"
             )
-            dispatch_message("james_hq", james_msg, mirror_to_reports_vault=False)
+            dispatch_message(
+                "james_hq",
+                james_msg,
+                parse_mode="HTML",
+                mirror_to_reports_vault=False,
+                event_key=f"{snap.get('date')}_JAMES_{event_type}",
+                cooldown_seconds=7200,
+                is_intraday_alert=True,
+            )
     except Exception as e:
         _log(f"[WARN] Lỗi gửi thông báo Telegram 2 phòng: {e}")
 

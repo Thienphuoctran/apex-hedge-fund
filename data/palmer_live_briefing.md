@@ -1,17 +1,16 @@
 # APEX EXECUTIVE LIVE BRIEFING (ANTIGRAVITY <-> PALMER SYNC)
-**Thời gian cập nhật:** 2026-11-24 13:35:28  
+**Thời gian cập nhật:** 2026-11-24 14:58:01  
 **Người đồng bộ gần nhất:** ANTIGRAVITY  
-**Mã đồng bộ:** `SYNC-AG2P-20261124-133528`  
+**Mã đồng bộ:** `SYNC-AG2P-20261124-145801`  
 
 ---
 
 ## I. YÊU CẦU & KẾT QUẢ PHÂN TÍCH MỚI NHẤT CỦA CHỦ TỊCH
-* **Yêu cầu gần nhất của Chủ tịch:** Tổng đại tu đồng bộ APEX UNIFIED CANONICAL BRAIN V5.0 (Lịch nghỉ lễ 24/11 + Stale-Feed Detector + Hợp nhất Chat/Portal/2.5D/Cloud)
+* **Yêu cầu gần nhất của Chủ tịch:** Đồng bộ trạng thái SSOT, Lịch phiên & Chân lý Hợp nhất V5.0 giữa James, Palmer, Web Portal & Văn phòng 2.5D
 * **Kết luận & Quyết định thể chế:**
 🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026). Danh mục SSOT TCBS 105C307855 giữ nguyên: 200 TPB + 100 HPG (4,510,000 ₫ = 22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Hàng T+2: 200 TPB về chiều 26/11, 100 HPG về chiều 26/11. Mọi giải ngân mới Nhịp 2 (ưu tiên 100 CTG @ 30,000–30,300 & 200 NAB @ 13,000–13,200, dự phòng 100 CTS) chỉ xét trong Khung Giờ Vàng 14h05–14h25 phiên mở lại (Thứ Tư 25/11/2026).
 
 ## II. CÁC CÔNG VIỆC ĐÃ HOÀN TẤT THỰC SỰ
-- [x] Tổng đại tu đồng bộ APEX UNIFIED CANONICAL BRAIN V5.0 (Lịch nghỉ lễ 24/11 + Stale-Feed Detector + Hợp nhất Chat/Portal/2.5D/Cloud)
 - [x] Xác nhận SSOT tài khoản TCBS 105C307855: Cash 15,541,117 ₫ | 2 vị thế mở
 - [x] Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-24 13:31:13: 505 bài báo RSS/CBTT, 30 mã có tin doanh nghiệp Vietcap/CafeF, 11 cổng IR HTTP-200, 20 kết quả Tavily, 6 hồ sơ SEC EDGAR.
 - [x] Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)
