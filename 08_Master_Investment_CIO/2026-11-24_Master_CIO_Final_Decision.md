@@ -3,8 +3,8 @@
 
 > **CƠ QUAN PHÊ DUYỆT**: VĂN PHÒNG TỔNG TƯ LỆNH ĐẦU TƯ (UNIFIED CHIEF INVESTMENT OFFICER DESK - BAN 8)  
 > **PHIÊN / NGÀY**: Ngày 2026-11-24 (🎌 NGHỈ LỄ 24/11 (Mở lại 25/11))  
-> **TRẠNG THÁI THỰC THI**: **PHÊ DUYỆT TÁC CHIẾN CÓ KỶ LUẬT (ĐANG NẮM: TPB 200 CP, HPG 100 CP • TIỀN MẶT: 15,541,175 ₫)**  
-> **TỔNG VỐN QUẢN LÝ (NAV)**: **$780.05 USD** tương đương **20,051,117 VNĐ** (Tỷ giá USD/VND: 25,705)  
+> **TRẠNG THÁI THỰC THI**: **PHÊ DUYỆT TÁC CHIẾN CÓ KỶ LUẬT (ĐANG NẮM: TPB 200 CP, HPG 100 CP • TIỀN MẶT: 15,490,058 ₫)**  
+> **TỔNG VỐN QUẢN LÝ (NAV)**: **$778.06 USD** tương đương **20,000,000 VNĐ** (Tỷ giá USD/VND: 25,705)  
 > **NGUỒN CHÂN LÝ HỢP NHẤT**: `2026-11-23_2100_Dai_Hoi_Dong_5_Khoi_Chien_Luoc.md`
 
 > [!IMPORTANT]
@@ -20,9 +20,9 @@ Dưới sự điều phối của Master CIO, dòng vốn được quản trị 
 | Hạng Mục Danh Mục | Tỷ Trọng (% NAV) | Giá Trị Quy Đổi (USD) | Giá Trị Quy Đổi (VNĐ) | Trạng Thái Phân Bổ & Chiến Lược |
 | :--- | :---: | :---: | :---: | :--- |
 | **Thị Trường Toàn Cầu / Mỹ (US Equities)** | **0.0%** | **$0.00** | **0 ₫** | Dùng làm la bàn vĩ mô (`^VIX`, `US10Y`, `VNM ETF`), chưa phân bổ vốn trực tiếp khi NAV <= 50M. |
-| **Thị Trường Việt Nam (VN Equities)** | **22.5%** | **$175.45** | **4,510,000 ₫** | 0% giải ngân mới ngày nghỉ — giữ vị thế đang mở: 200 TPB + 100 HPG |
-| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **77.5%** | **$604.60** | **15,541,175 ₫** | Đang giữ 2 vị thế (200 TPB + 100 HPG, 22.5% NAV) + Két tiền mặt 15,541,175 ₫ (77.5% NAV). |
-| **TỔNG CỘNG (100% NAV)** | **100.0%** | **$780.05** | **20,051,117 ₫** | **Quản trị rủi ro 0% Margin • Stop <= 7.0%** |
+| **Thị Trường Việt Nam (VN Equities)** | **22.6%** | **$175.45** | **4,510,000 ₫** | 0% giải ngân mới ngày nghỉ — giữ vị thế đang mở: 200 TPB + 100 HPG |
+| **Tiền Mặt & Đạn Dự Phòng (Dry Powder)** | **77.5%** | **$602.61** | **15,490,058 ₫** | Đang giữ 2 vị thế (200 TPB + 100 HPG, 22.5% NAV) + Két tiền mặt 15,490,058 ₫ (77.5% NAV). |
+| **TỔNG CỘNG (100% NAV)** | **100.0%** | **$778.06** | **20,000,000 ₫** | **Quản trị rủi ro 0% Margin • Stop <= 7.0%** |
 
 ### Chỉ Số Định Lượng Danh Mục Thận Trọng (`Calibrated Real Metrics`)
 - **Kỳ vọng Toán học Danh mục (EV%)**: **+3.35% / lệnh**
@@ -72,7 +72,7 @@ sequenceDiagram
 
     Note over Alex,MQ: Đối soát dữ liệu thực tế Phiên Mỹ & Chuẩn bị Công suất Phiên Thứ Tư 25/11/2026
     Alex->>CIO: ^VIX=26.62, S&P500=7237.17, US10Y=4.92%, DXY=104.29, WTI=$79.73 (-4.18%)
-    MQ->>CIO: SSOT hiện tại NAV 20,051,117 đ | Vị thế: 200 TPB + 100 HPG | Cash 15,541,175 đ (77.5%)
+    MQ->>CIO: SSOT hiện tại NAV 20,000,000 đ | Vị thế: 200 TPB + 100 HPG | Cash 15,490,058 đ (77.5%)
     CIO->>MQ: Trạng thái sàn: 🎌 NGHỈ LỄ 24/11 (Mở lại 25/11) | VNI 1,697.14 (+0.49%), Br20=19.4%, Buy-Up=59.4%
     MQ->>CIO: Xác nhận tuân thủ Nghị quyết 2026-11-23_2100_Dai_Hoi_Dong_5_Khoi_Chien_Luoc.md — Không FOMO ATO sáng, khóa Stop 2xATR trên vị thế mở
     CIO-->>MQ: CHỐT KỶ LUẬT: Chỉ xét Nhịp 2 khung 14h05–14h25 (CTG (Nhánh A/B (14h05–14h25): LO 30,000 – 30,300 ₫ (Không đuổi > 30,500₫)), NAB (Nhánh A/B (14h05–14h25): LO 13,000 – 13,200 ₫ (Không đuổi >) khi Br20/Buy-Up đạt chuẩn
@@ -90,7 +90,7 @@ sequenceDiagram
 
 | Mã CP | Sàn / Ngành | Vốn Phân Bổ (USD / VNĐ) | Số Cổ Phiếu | Giá Hiện Tại | Điểm Vào Lệnh Tối Ưu (Chia Nhịp) | Ngưỡng Cắt Lỗ Stop 2xATR | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **AVGO** | Custom AI ASICs & Networking | **$0.00**<br/>(0 ₫) | **0 CP** | $313.55 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($313.55) • 40% Gia tăng Breakout • 30% Retest | **$290.03**<br/>(-7.5%) | TP1: **$408.57**<br/>TP2: **$525.51** | +28.9%<br/>(1:3.94) |
+| **AVGO** | Custom AI ASICs & Networking | **$0.00**<br/>(0 ₫) | **0 CP** | $313.55 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($313.55) • 40% Gia tăng Breakout • 30% Retest | **$290.03**<br/>(-7.5%) | TP1: **$408.59**<br/>TP2: **$525.51** | +28.9%<br/>(1:3.94) |
 | **TSM** | Global Chip Foundry | **$0.00**<br/>(0 ₫) | **0 CP** | $363.60 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($363.60) • 40% Gia tăng Breakout • 30% Retest | **$336.33**<br/>(-7.5%) | TP1: **$467.38**<br/>TP2: **$586.69** | +26.6%<br/>(1:3.82) |
 | **NVDA** | Semiconductors & AI | **$0.00**<br/>(0 ₫) | **0 CP** | $165.05 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($165.05) • 40% Gia tăng Breakout • 30% Retest | **$152.67**<br/>(-7.5%) | TP1: **$227.53**<br/>TP2: **$244.55** | +24.9%<br/>(1:2.43) |
 | **MSFT** | Enterprise Software & Cloud | **$0.00**<br/>(0 ₫) | **0 CP** | $492.50 | Kim Tự Tháp 30-40-30: 30% Thăm dò ($492.50) • 40% Gia tăng Breakout • 30% Retest | **$455.56**<br/>(-7.5%) | TP1: **$569.56**<br/>TP2: **$637.36** | +14.8%<br/>(1:3.39) |
@@ -117,14 +117,14 @@ sequenceDiagram
 
 #### 🔹 MSFT — Microsoft Corp. (CORE COMPOUNDER)
 - **Tại sao đầu tư (The "Why")**: **[Hội Đồng 10 Đại Danh Thủ: `88.3/100` • Piotroski F-Score: `9/9` • EVA Spread (ROIC-WACC): `+13.32%` • True FCF ex-SBC: `$-4.63B` • Altman Z: `11.59` • Lynch PEG: `1.43x` • SEC EDGAR: Form 4 (2026-11-16)]** — MSFT là cỗ máy in tiền mặt vĩ đại nhất thế giới với FCF đạt +$74.1B USD, biên hoạt động trên 44%. Ban lãnh đạo (CEO & Giám đốc cấp cao) mua ròng +263,400 cổ phiếu theo SEC Form 4. Cổ phiếu giữ vững trên đường MA200 ($485.20) và vừa tăng +0.19%.
-- **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu ưu tiên cổ phiếu công nghệ có FCF lớn khi VIX neo ở vùng 26.62 đòi hỏi ưu tiên doanh nghiệp có FCF thực chất.
+- **Chất xúc tác kích hoạt đà tăng (Catalysts)**: Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu ưu tiên cổ phiếu công nghệ có FCF lớn khi VIX neo ở vùng 27.73 đòi hỏi ưu tiên doanh nghiệp có FCF thực chất.
 - **Cách thức thực thi tối ưu lợi nhuận (The "How")**: Giữ 80% vị thế hiện tại; đặt lệnh Limit Buy 20% còn lại tại $518.00 (hỗ trợ MA20). Chốt lời bậc 1 (TP1) 40% vị thế tại $566.55 (+8.5%); khi chạm TP1, tự động nâng Stop-Loss về điểm hòa vốn $521.91 để gồng 60% còn lại lên TP2 $627.73 (+20.3%). Ngưỡng cắt lỗ bảo vệ vốn cứng: Stop 2xATR tại $499.59 (-4.28%). | Chiến lược: Chốt lời từng phần Scaling Out 50% tại TP1, nâng Stop lên giá vốn để gồng lãi 50% còn lại theo MA10/MA20. Tuyệt đối không FOMO.
 - **Quản trị rủi ro**: Rủi ro mất vốn tối đa nếu chạm Stop 2xATR là **$0.00 USD** (chỉ chiếm **0.00% Tổng NAV**).
 
 ---
 
 ## 4. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN VIỆT NAM (HOSE / HNX)
-**Tổng Vốn Phân Bổ: 4,510,000 VNĐ ($175.45 USD - 22.5% NAV) | Chuyên Viên Thực Thi: Minh Quân**
+**Tổng Vốn Phân Bổ: 4,510,000 VNĐ ($175.45 USD - 22.6% NAV) | Chuyên Viên Thực Thi: Minh Quân**
 
 | Mã CP | Sàn / Ngành | Vốn Phân Bổ (VNĐ / USD) | Số Cổ Phiếu (Lô Chẵn 100) | Thị Giá Hiện Tại | Pháp Y & Net Conviction (Bước 1 & 2) | Ngưỡng Cắt Lỗ Bắt Buộc | Mốc Chốt Lời (TP1 / TP2) | EV% & R:R |
 | :---: | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
@@ -163,7 +163,7 @@ graph LR
 
 ### Kiểm Thử 3 Kịch Bản Rủi Ro (Stress-Testing 3 Scenarios):
 1. **Kịch bản 1: Thị Trường Đi Ngang Hẹp / Sàn Đóng Cửa (`Br20 < 25%` hoặc Ngày Nghỉ Lễ)**:
-   - *Hành động*: Khóa mở mới (`0%` vào ngày nghỉ), bảo vệ vị thế hiện có (`200 TPB + 100 HPG`) bằng Stop 2xATR và giữ nguyên `15,541,175 ₫` tiền mặt.
+   - *Hành động*: Khóa mở mới (`0%` vào ngày nghỉ), bảo vệ vị thế hiện có (`200 TPB + 100 HPG`) bằng Stop 2xATR và giữ nguyên `15,490,058 ₫` tiền mặt.
 2. **Kịch bản 2: Sóng Hồi Xác Nhận Chiều Mở Cửa (`VNI >= 1,695`, `Br20 >= 23–28%`, `Buy-Up >= 56%`)**:
    - *Hành động*: Giải ngân có chọn lọc Nhịp 2 lúc `14h05–14h25` vào rổ Hội đồng (`CTG (Nhánh A/B (14h05–14h25): LO 30,000 – 30,300 ₫ (Không đuổi > 30,500₫)), NAB (Nhánh A/B (14h05–14h25): LO 13,000 – 13,200 ₫ (Không đuổi >`), nâng cổ phiếu lên ~`45%–54% NAV`, luôn giữ `>= 45%` tiền mặt.
 3. **Kịch bản 3: Bùng Nổ Đồng Thuận (`VNI >= MA20`, `Br20 >= 45%`, `Buy-Up >= 58%`)**:
@@ -177,7 +177,7 @@ Toàn bộ danh mục chỉ được phép kích hoạt bấm cò khi vượt qu
 
 | STT | Hạng Mục Kiểm Tra | Tiêu Chí Xác Nhận Bắt Buộc Trước Khi Giải Ngân | Đánh Giá Thực Tế Hiện Tại | Trạng Thái |
 | :---: | :--- | :--- | :---: | :---: |
-| **01** | **Nguồn Vốn & Đạn Dự Phòng** | Không vay mượn, 0% Margin, giữ Dry Powder dự phòng linh hoạt. | `0% Margin`. Đang giữ `77.5%` tiền mặt (`15,541,175 ₫`) & `200 TPB + 100 HPG`. | ✅ **CÓ (PASS)** |
+| **01** | **Nguồn Vốn & Đạn Dự Phòng** | Không vay mượn, 0% Margin, giữ Dry Powder dự phòng linh hoạt. | `0% Margin`. Đang giữ `77.5%` tiền mặt (`15,490,058 ₫`) & `200 TPB + 100 HPG`. | ✅ **CÓ (PASS)** |
 | **02** | **Lịch Giao Dịch & Xu Hướng (M)** | Kiểm tra lịch nghỉ lễ HOSE/HNX + `^VIX` (`26.62`) và `Br20 >= 23–45%`. | 🎌 NGHỈ LỄ NGÀY VĂN HÓA VIỆT NAM (24/11) — HOSE/HNX ĐÓNG CỬA (Mở lại Thứ Tư 25/11/2026) • Tham chiếu VNI `1,697.14` (`+0.49%`, `Br20=19.4%`). | ⏸️ **ĐÓNG CỬA** |
 | **03** | **Sức Khỏe Doanh Nghiệp (FA)** | Tăng trưởng thực, dòng tiền `OCF/LNST >= 1.0x`, `Beneish M < -1.78`, loại cờ đỏ. | 100% mã tầm ngắm đạt `OCF/LNST >= 1.0x`, cấm tuyệt đối `BAF, PNJ, VIX, TCH, CEO, POW`. | ✅ **CÓ (PASS)** |
 | **04** | **Thanh Khoản & Tỷ Trọng An Toàn** | Tổng vị thế mở đúng trần Hiến chương (`<= 33% NAV/lệnh`), lô chẵn 100 CP. | Trọng tâm rổ đã duyệt Hội đồng: `TPB, HPG, CTG, NAB, CTS, HDB`. | ✅ **CÓ (PASS)** |

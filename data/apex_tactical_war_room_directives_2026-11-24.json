@@ -38,5 +38,77 @@
     "role": "sentinel",
     "type": "sentinel_alert",
     "content": "🛡️ [GIÁM SÁT PHIÊN CHIỀU LIVE] Danh mục hiện hữu: 200 TPB @ Live 12,350 đ (+0.00%, Stop 11,600 đ) | 100 HPG @ Live 20,400 đ (+0.00%, Stop 19,300 đ). Két tiền mặt bảo toàn: 15,541,117 đ (77.5% NAV • Tổng NAV 20,051,117 đ). Chế độ thị trường: 🚀 TĂNG TỐC TẦNG 3 (DÒNG TIỀN ĐỒNG THUẬN)."
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_PNJ_51009",
+    "key": "cbtt_2026-11-24_CRITICAL_PNJ_51009",
+    "timestamp": "17:16:45",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Ngày buồn của PNJ (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_FPT_51920",
+    "key": "cbtt_2026-11-24_CRITICAL_FPT_51920",
+    "timestamp": "17:16:45",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] ‘Cơn mưa’ cổ tức tiền mặt cuối năm, cao nhất lên tới 40% (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_PNJ_58411",
+    "key": "cbtt_2026-11-24_CRITICAL_PNJ_58411",
+    "timestamp": "17:16:45",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] PNJ thay đổi chính sách thu đổi: Vàng nhận tiền sau 1 ngày, kim cương chờ 4 tháng (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-24_RED_FLAG_HCM_79119",
+    "key": "cbtt_2026-11-24_RED_FLAG_HCM_79119",
+    "timestamp": "17:16:45",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — HCM] Đánh sập đường dây rửa tiền hơn 9.000 tỷ đồng qua đánh bạc trực tuyến (CANH_BAO_RUI_RO)"
+  },
+  {
+    "id": "cbtt_2026-11-24_CRITICAL_HCM_14177",
+    "key": "cbtt_2026-11-24_CRITICAL_HCM_14177",
+    "timestamp": "17:16:45",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — HCM] Doanh nghiệp bất động sản “gánh” 3.300 tỷ đồng trái phiếu bị phạt vì chậm công bố thông tin (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "sec_2026-11-24_AAPL_10-K_2026-11-03",
+    "key": "sec_2026-11-24_AAPL_10-K_2026-11-03",
+    "timestamp": "17:16:45",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-K — AAPL] 10-K (2026-11-03)"
+  },
+  {
+    "id": "sec_2026-11-24_TSLA_10-Q_2026-10-22",
+    "key": "sec_2026-11-24_TSLA_10-Q_2026-10-22",
+    "timestamp": "17:16:45",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — TSLA] 10-Q (2026-10-22)"
+  },
+  {
+    "id": "sec_2026-11-24_AVGO_10-Q_2026-09-10",
+    "key": "sec_2026-11-24_AVGO_10-Q_2026-09-10",
+    "timestamp": "17:16:45",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — AVGO] 10-Q (2026-09-10)"
   }
 ]
