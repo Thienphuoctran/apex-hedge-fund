@@ -1,5 +1,35 @@
 [
   {
+    "task_id": "TASK-AG2P-20261125-090112",
+    "created_at": "2026-11-25T09:01:12.944175",
+    "command_raw": "Đồng bộ trạng thái SSOT, Lịch phiên & Chân lý Hợp nhất V5.0 giữa James, Palmer, Web Portal & Văn phòng 2.5D",
+    "source": "ANTIGRAVITY_TO_PALMER_SYNC",
+    "assigned_department": "CENTRAL_SYSTEM_GOVERNANCE_PALMER",
+    "assigned_department_name": "Phòng Quản Trị Hệ Thống & Cố Vấn Tối Cao Palmer",
+    "assigned_officer": "Palmer & Antigravity",
+    "topic_key": "james_hq",
+    "topic_name": "🎖️ BỘ CHỈ HUY TỔNG TƯ LỆNH JAMES",
+    "status": "COMPLETED",
+    "action_type": "BILATERAL_SYNC_BROADCAST",
+    "execution_result": {
+      "summary": "🟡 HỒI PHỤC KỸ THUẬT / SPRING S3 (DƯỚI MA20 — THĂM DÒ CÓ CHỌN LỌC) | Danh mục SSOT: 200 TPB + 100 HPG (22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Trần mở mới tối đa: 25% sức mua (chỉ kê LO lúc 14h05–14h25).",
+      "completed_tasks": [
+        "Xác nhận SSOT tài khoản TCBS 105C307855: Cash 15,541,117 ₫ | 2 vị thế mở",
+        "Đồng bộ dữ liệu cào Internet/BCTC: Cào sống ngày 2026-11-25 15:58:58: 541 bài báo RSS/CBTT, 39 mã có tin doanh nghiệp Vietcap/CafeF, 10 cổng IR HTTP-200, 0 kết quả Tavily, 6 hồ sơ SEC EDGAR.",
+        "Đồng bộ 2 chiều sang data/palmer_live_briefing.*, 00_LIVE_INTER_CHAT_STATE.md và Trợ lí cá nhân (MEMORY.md)"
+      ],
+      "active_decisions": {
+        "current_holdings_directive": "Đang giữ 2 mã (200 TPB + 100 HPG = 22.5% NAV), Két tiền mặt 15,541,117 ₫ (77.5% NAV).",
+        "market_regime_directive": "🟡 HỒI PHỤC KỸ THUẬT / SPRING S3 (DƯỚI MA20 — THĂM DÒ CÓ CHỌN LỌC) | Danh mục SSOT: 200 TPB + 100 HPG (22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Trần mở mới tối đa: 25% sức mua (chỉ kê LO lúc 14h05–14h25).",
+        "weekly_plan_directive": "Thứ Hai 23/11 (13:45 & 14:21): Chủ tịch khớp thăm dò chuẩn 22.5% NAV gồm 200 CP TPB @ 12,300đ (EOD 12,350đ) và 100 CP HPG @ 20,500đ (EOD 20,400đ), giữ 15,541,117 ₫ Tiền mặt (77.5% NAV). Nghị quyết Hội đồng 21h00 ngày 23/11: Tuyệt đối KHÔNG mua đuổi Gap xanh ATO sáng 24/11 theo Phố Wall; chỉ xét giải ngân thêm Nhịp 2 lúc 14h05–14h25 khi Br20 >= 23-28% & VNI giữ nền, ưu tiên CTG (100 CP) + NAB (200 CP) hoặc CTS (100 CP), nâng tối đa 45-54% NAV và giữ >= 45% tiền mặt chờ hàng T+ về chiều 25/11.",
+        "upgrade_progress_directive": "🌙 ĐÃ ĐÓNG CỬA (25/11) • Cào sống ngày 2026-11-25 15:58:58: 541 bài báo RSS/CBTT, 39 mã có tin doanh nghiệp Vietcap/CafeF, 10 cổng IR HTTP-200, 0 kết quả Tavily, 6 hồ sơ SEC EDGAR."
+      }
+    },
+    "logs": [
+      "09:01:12 - Đã phổ biến trực tiếp và đồng bộ 100% sang Palmer"
+    ]
+  },
+  {
     "task_id": "TASK-AG2P-20261124-193143",
     "created_at": "2026-11-24T19:31:43.115259",
     "command_raw": "Đồng bộ trạng thái SSOT, Lịch phiên & Chân lý Hợp nhất V5.0 giữa James, Palmer, Web Portal & Văn phòng 2.5D",

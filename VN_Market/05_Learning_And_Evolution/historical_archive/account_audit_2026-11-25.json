@@ -1,0 +1,39 @@
+{
+  "account_id": "105C307855",
+  "owner": "Trần Quốc Thiên Phước",
+  "total_nav_vnd": 20051117.0,
+  "total_cost_vnd": 4510000.0,
+  "total_market_val_vnd": 4510000.0,
+  "unrealized_pnl_vnd": 0.0,
+  "unrealized_pnl_pct": 0.0,
+  "realized_pnl_vnd": 51117.0,
+  "cash_reserve_vnd": 15541117.0,
+  "account_hit_rate": 50.0,
+  "total_shares": 300,
+  "positions": [
+    {
+      "symbol": "TPB",
+      "shares": 200,
+      "entry_price": 12300.0,
+      "current_price": 12350.0,
+      "cost_vnd": 2460000.0,
+      "market_value_vnd": 2470000.0,
+      "pnl_vnd": 10000.0,
+      "pnl_pct": 0.41,
+      "stop_loss_2atr": 11600.0,
+      "status": "🟢 AN TOÀN"
+    },
+    {
+      "symbol": "HPG",
+      "shares": 100,
+      "entry_price": 20500.0,
+      "current_price": 20400.0,
+      "cost_vnd": 2050000.0,
+      "market_value_vnd": 2040000.0,
+      "pnl_vnd": -10000.0,
+      "pnl_pct": -0.49,
+      "stop_loss_2atr": 19300.0,
+      "status": "🟢 AN TOÀN"
+    }
+  ]
+}
