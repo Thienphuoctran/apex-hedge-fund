@@ -1,6 +1,6 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-25T00:56:35.695346+00:00",
+  "generated_at_utc": "2026-11-25T05:50:22.180592+00:00",
   "trading_date": "2026-11-25",
   "cio_desk_verdict": "ĐANG NẮM GIỮ 2 MÃ CỔ PHIẾU — GIÁM SÁT STOP 2XATR & TP1/TP2",
   "active_market_regime": {
@@ -1059,17 +1059,17 @@
     "timestamp": "2026-11-24 19:31:31 UTC"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-25T07:56:35.693890",
+    "timestamp_iso": "2026-11-25T12:50:22.179684",
     "date_str": "2026-11-25",
     "date_vn": "25/11/2026",
-    "time_vn": "07:56:35",
+    "time_vn": "12:50:22",
     "weekday_index": 2,
     "weekday_vn": "Thứ Tư",
-    "full_time_label_vn": "07:56:35 Thứ Tư, ngày 25/11/2026",
-    "market_phase": "PRE_MARKET_PREPARATION",
-    "market_phase_vn": "Trước giờ mở cửa phiên sáng (Thứ Tư) — Chuẩn bị kế hoạch tác chiến",
+    "full_time_label_vn": "12:50:22 Thứ Tư, ngày 25/11/2026",
+    "market_phase": "LUNCH_BREAK",
+    "market_phase_vn": "Nghỉ trưa giữa hai phiên (Thứ Tư) — Sàn tạm nghỉ 11h30-13h00",
     "is_trading_hours": false,
-    "next_session_note": "Đợi qua 09:15 (sau ATO) để quan sát cung cầu thực chất."
+    "next_session_note": "Phiên chiều mở cửa lúc 13:00 (Hàng T+2.5 về tài khoản)."
   },
   "completed_orders_history": [],
   "next_round_watchlist": []
