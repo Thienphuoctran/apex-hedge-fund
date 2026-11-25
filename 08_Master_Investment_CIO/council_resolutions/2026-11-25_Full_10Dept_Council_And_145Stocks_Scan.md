@@ -1,6 +1,6 @@
 # BIÊN BẢN HỌP THƯỢNG ĐỈNH 11 ĐƠN VỊ ĐỘC LẬP & QUÉT TOÀN THỊ TRƯỜNG (145 MÃ / 18 NGÀNH)
 **Mã Nghị Quyết:** `APEX-COUNCIL-11DEPT-ADAPTIVE-2026-11-25`  
-**Thời điểm thực thi:** `12:49:58 Thứ Tư, ngày 25/11/2026` *(Thời gian xử lý: `23.93s`)*  
+**Thời điểm thực thi:** `16:40:16 Thứ Tư, ngày 25/11/2026` *(Thời gian xử lý: `12.07s`)*  
 **Tài khoản Chủ tịch:** TCBS `105C307855` — **NAV live:** `20,051,117 ₫` | **Tiền mặt:** `15,541,117 ₫` | **Đang giữ:** `200 CP TPB, 100 CP HPG`  
 **Chế độ Thị trường sống:** `BEAR_WITH_SPRING_WATCH` (`VNI 1,688.79`, `Breadth>MA20 = 23.0%`)  
 
@@ -10,24 +10,24 @@
 
 | Hạng | Nhóm Ngành Kinh Tế | Số Mã Quét | Điểm Sức Mạnh Ngành | RS Trung Bình | % Mã Trên MA20 | Biến Động 1 Tháng | Trạng Thái Chu Kỳ Dòng Tiền | Top Cổ Phiếu Dẫn Dắt Ngành |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :--- | :--- |
-| **01** | **Điện & Hạ Tầng Năng Lượng** | 7 | **`66.7`** | `70.4` | `57.1%` | `+2.35%` | LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực) | **`NT2, HDG, REE`** |
-| **02** | **Bất Động Sản Dân Cư & Đô Thị** | 12 | **`57.8`** | `47.9` | `58.3%` | `+1.85%` | IMPROVING (Đang Tích Lũy Thu Hút Dòng Tiền) | **`VHM, DIG, VIC`** |
-| **03** | **Thực Phẩm & Đồ Uống Thiết Yếu** | 6 | **`50.8`** | `81.5` | `33.3%` | `-3.44%` | WEAKENING (Phân Hóa / Chững Lại) | **`VNM, SAB, QNS`** |
-| **04** | **Thép & Kim Loại Công Nghiệp** | 6 | **`43.5`** | `57.7` | `16.7%` | `-2.16%` | WEAKENING (Phân Hóa / Chững Lại) | **`HPG, NKG, GDA`** |
-| **05** | **Ngân Hàng TMCP** | 17 | **`41.9`** | `65.1` | `17.6%` | `-4.74%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`HDB, NAB, VPB`** |
-| **06** | **Chứng Khoán & Đầu Tư** | 13 | **`41.6`** | `50.5` | `30.8%` | `-0.92%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`SSI, MBS`** |
-| **07** | **BĐS Khu Công Nghiệp & Cao Su** | 12 | **`39.8`** | `58.7` | `16.7%` | `-7.82%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`GVR, VGC, SZC`** |
-| **08** | **Dệt May Xuất Khẩu** | 5 | **`38.8`** | `64.0` | `0.0%` | `-4.48%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`VGT`** |
-| **09** | **Nông Nghiệp & Chăn Nuôi 3F** | 6 | **`38.7`** | `45.2` | `33.3%` | `-11.91%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`HAG, PAN`** |
-| **10** | **Bán Lẻ & Phân Phối Hiện Đại** | 6 | **`38.3`** | `64.8` | `16.7%` | `-10.59%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **``** |
-| **11** | **Thủy Sản Xuất Khẩu (Cá Tra & Tôm)** | 6 | **`31.2`** | `49.0` | `16.7%` | `-7.27%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`FMC`** |
-| **12** | **Đầu Tư Công, Xây Dựng & Vật Liệu** | 11 | **`30.6`** | `45.8` | `18.2%` | `-3.67%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`HHV, FCN, PLC`** |
-| **13** | **Cảng Biển, Vận Tải Biển & Hàng Không** | 10 | **`28.8`** | `64.1` | `0.0%` | `-9.78%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`PVP, PVT, GMD`** |
-| **14** | **Bảo Hiểm Nhân Thọ & Phi Nhân Thọ** | 3 | **`27.6`** | `61.3` | `0.0%` | `-9.37%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`MIG`** |
-| **15** | **Hóa Chất Cơ Bản & Phân Bón** | 7 | **`27.2`** | `43.0` | `14.3%` | `-9.48%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`DCM, DPM, BFC`** |
-| **16** | **Dầu Khí Thượng Nguồn & Phân Phối** | 6 | **`26.8`** | `59.5` | `0.0%` | `-15.04%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`BSR, PVS, PLX`** |
-| **17** | **Dược Phẩm & Bệnh Viện** | 5 | **`20.8`** | `46.2` | `0.0%` | `-9.31%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`TRA, IMP, DHG`** |
-| **18** | **Công Nghệ Thông Tin & Viễn Thông** | 7 | **`11.8`** | `26.3` | `0.0%` | `-10.15%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`ITD, ELC, CTR`** |
+| **01** | **Điện & Hạ Tầng Năng Lượng** | 7 | **`63.4`** | `71.1` | `57.1%` | `+1.53%` | LEADING (Ngành Dẫn Dắt Dòng Tiền Chủ Lực) | **`NT2, HDG, REE`** |
+| **02** | **Thực Phẩm & Đồ Uống Thiết Yếu** | 6 | **`46.4`** | `82.8` | `16.7%` | `-3.86%` | WEAKENING (Phân Hóa / Chững Lại) | **`VNM, SAB, QNS`** |
+| **03** | **Bất Động Sản Dân Cư & Đô Thị** | 12 | **`45.1`** | `46.4` | `25.0%` | `+0.00%` | WEAKENING (Phân Hóa / Chững Lại) | **`VHM, DIG, VIC`** |
+| **04** | **Thép & Kim Loại Công Nghiệp** | 6 | **`42.1`** | `54.7` | `16.7%` | `-3.96%` | WEAKENING (Phân Hóa / Chững Lại) | **`HPG, NKG, TLH`** |
+| **05** | **BĐS Khu Công Nghiệp & Cao Su** | 12 | **`40.0`** | `59.3` | `16.7%` | `-8.38%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`GVR, VGC, SZC`** |
+| **06** | **Ngân Hàng TMCP** | 17 | **`39.2`** | `65.5` | `17.6%` | `-5.45%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`HDB, OCB, NAB`** |
+| **07** | **Dệt May Xuất Khẩu** | 5 | **`38.8`** | `64.0` | `0.0%` | `-5.04%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`VGT`** |
+| **08** | **Nông Nghiệp & Chăn Nuôi 3F** | 6 | **`38.7`** | `45.3` | `33.3%` | `-12.25%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`HAG, PAN`** |
+| **09** | **Bán Lẻ & Phân Phối Hiện Đại** | 6 | **`38.3`** | `64.8` | `16.7%` | `-11.46%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **``** |
+| **10** | **Cảng Biển, Vận Tải Biển & Hàng Không** | 10 | **`31.9`** | `64.3` | `10.0%` | `-10.47%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`PVP, PVT, GMD`** |
+| **11** | **Đầu Tư Công, Xây Dựng & Vật Liệu** | 11 | **`31.1`** | `46.8` | `18.2%` | `-4.46%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`HHV, PLC, FCN`** |
+| **12** | **Chứng Khoán & Đầu Tư** | 13 | **`29.6`** | `47.8` | `7.7%` | `-3.11%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`SSI, MBS`** |
+| **13** | **Bảo Hiểm Nhân Thọ & Phi Nhân Thọ** | 3 | **`29.4`** | `65.3` | `0.0%` | `-8.40%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`MIG`** |
+| **14** | **Hóa Chất Cơ Bản & Phân Bón** | 7 | **`27.7`** | `44.0` | `14.3%` | `-9.93%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`DCM, DPM, BFC`** |
+| **15** | **Dầu Khí Thượng Nguồn & Phân Phối** | 6 | **`26.2`** | `58.3` | `0.0%` | `-16.16%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`BSR, PVS, PLX`** |
+| **16** | **Thủy Sản Xuất Khẩu (Cá Tra & Tôm)** | 6 | **`22.3`** | `49.5` | `0.0%` | `-8.19%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`FMC`** |
+| **17** | **Dược Phẩm & Bệnh Viện** | 5 | **`21.6`** | `48.0` | `0.0%` | `-10.01%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`TRA, IMP, DHG`** |
+| **18** | **Công Nghệ Thông Tin & Viễn Thông** | 7 | **`12.2`** | `27.1` | `0.0%` | `-10.68%` | LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | **`ITD, ELC, CTR`** |
 
 ---
 
@@ -83,11 +83,11 @@
 
 | Mã CP | Tên Doanh Nghiệp | Giá Hiện Tại | RS Rating | Phòng Ban Phủ Quyết | Lý Do Bác Bỏ / Hạ Bậc Dựa Trên Số Liệu Thực Tế |
 | :---: | :--- | :---: | :---: | :--- | :--- |
-| **`FPT`** | Tập đoàn FPT | `46,900 ₫` | `16/99` | **Ban 3 VN (VSA/RS) & Ban 4 VN (Capital Fit)** | Hạ bậc khỏi danh sách mua ngay: Giá thực tế (46,900 ₫) đang gãy dưới MA20 (50,395 ₫), sức mạnh giá RS rơi xuống 16/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 23.39% NAV. |
-| **`DGC`** | Tập đoàn Hóa chất Đức Giang | `30,950 ₫` | `20/99` | **Ban 3 VN (Wyckoff/RS)** | Tạm hoãn mua mới: Dù BCTC nhiều tiền mặt nhưng dòng tiền ngắn hạn đang yếu (RS = 20/99, giá 30,950 ₫ dưới MA20 32,595 ₫), tránh chôn vốn khi cổ phiếu chưa vào pha đẩy giá. |
-| **`MWG`** | Đầu tư Thế Giới Di Động | `70,900 ₫` | `71/99` | **Ban 4 VN (Quản trị Rủi ro Lô 100 CP)** | Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 70,900 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 35.36% tổng NAV (7,090,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30. |
-| **`FRT`** | Bán lẻ Kỹ thuật số FPT (Long Châu) | `146,400 ₫` | `94/99` | **Ban 4 VN (Quản trị Rủi ro Lô 100 CP)** | Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 146,400 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 73.01% tổng NAV (14,640,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30. |
-| **`DXG`** | Tập đoàn Đất Xanh | `10,850 ₫` | `40/99` | **Ban 2 VN (Pháp y Kế toán VAS/TT200)** | Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = -5.82x (< 0.85x), Beneish M-Score = -2.18 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng). |
+| **`FPT`** | Tập đoàn FPT | `46,050 ₫` | `16/99` | **Ban 3 VN (VSA/RS) & Ban 4 VN (Capital Fit)** | Hạ bậc khỏi danh sách mua ngay: Giá thực tế (46,050 ₫) đang gãy dưới MA20 (50,352 ₫), sức mạnh giá RS rơi xuống 16/99 (yếu hơn 82% thị trường), 1 lô 100 CP chiếm 22.97% NAV. |
+| **`DGC`** | Tập đoàn Hóa chất Đức Giang | `30,950 ₫` | `22/99` | **Ban 3 VN (Wyckoff/RS)** | Tạm hoãn mua mới: Dù BCTC nhiều tiền mặt nhưng dòng tiền ngắn hạn đang yếu (RS = 22/99, giá 30,950 ₫ dưới MA20 32,595 ₫), tránh chôn vốn khi cổ phiếu chưa vào pha đẩy giá. |
+| **`MWG`** | Đầu tư Thế Giới Di Động | `69,900 ₫` | `68/99` | **Ban 4 VN (Quản trị Rủi ro Lô 100 CP)** | Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 69,900 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 34.86% tổng NAV (6,990,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30. |
+| **`FRT`** | Bán lẻ Kỹ thuật số FPT (Long Châu) | `146,200 ₫` | `94/99` | **Ban 4 VN (Quản trị Rủi ro Lô 100 CP)** | Loại khỏi rổ giải ngân trực tiếp của TK 20.16M VNĐ: Thị giá 146,200 ₫ khiến 1 lô tối thiểu 100 CP chiếm tới 72.91% tổng NAV (14,620,000 ₫), vi phạm trần phân bổ rủi ro và không thể chia nhịp 30-40-30. |
+| **`DXG`** | Tập đoàn Đất Xanh | `10,500 ₫` | `35/99` | **Ban 2 VN (Pháp y Kế toán VAS/TT200)** | Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = -5.82x (< 0.85x), Beneish M-Score = -2.18 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng). |
 | **`LTG`** | Tập đoàn Lộc Trời | `5,300 ₫` | `22/99` | **Ban 2 VN (Pháp y Kế toán VAS/TT200)** | Cấm giải ngân tuyệt đối: Dòng tiền kinh doanh OCF/LNST = -805.4x (< 0.85x), Beneish M-Score = -1.98 (Cảnh báo rủi ro lợi nhuận giấy / nợ đọng). |
 
 ---
@@ -96,12 +96,12 @@
 
 | Mã CP | Sàn | Nhóm Ngành | Giá Hiện Tại | RS (1-99) | Điểm 10 Danh Thủ | P/E | ROE | OCF/LNST | 1 Lô 100 CP (% NAV) | KL Khuyến Nghị | Vùng Gom Limit | Stop 2xATR | Chốt Lời TP1 / TP2 | Động Lực Tăng Trưởng Cốt Lõi |
 | :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`NT2`** | HOSE | Điện & Hạ Tầng Năng Lượng | **`23,850 ₫`** | **`97`** | **`90.7/100`** (AAA) | `4.7x` | `29.39%` | `0.84x` | `2,385,000 ₫` (`11.89%`) | **`200 CP`** | `23,660 ₫` | `22,590 ₫` (-5.28%) | `25,610 ₫` / `27,120 ₫` | Không còn nợ vay dài hạn, sản lượng huy động điện khí miền Nam phục hồi mạnh |
-| **`MSB`** | HOSE | Ngân Hàng TMCP | **`16,350 ₫`** | **`98`** | **`84.7/100`** (AA) | `9.83x` | `14.33%` | `1.74x` | `1,635,000 ₫` (`8.15%`) | **`300 CP`** | `16,270 ₫` | `15,760 ₫` (-3.61%) | `17,170 ₫` / `17,880 ₫` | CASA thuộc top 4 toàn ngành, định giá P/B < 0.9x hấp dẫn |
-| **`PVP`** | HOSE | Cảng Biển, Vận Tải Biển & Hàng Không | **`16,850 ₫`** | **`91`** | **`87.1/100`** (AAA) | `5.38x` | `16.15%` | `1.97x` | `1,685,000 ₫` (`8.4%`) | **`300 CP`** | `16,690 ₫` | `15,790 ₫` (-6.29%) | `18,340 ₫` / `19,620 ₫` | Công ty con cốt lõi của PVT vận chuyển dầu thô cho Lọc dầu Dung Quất, P/B < 1.0x |
-| **`HAG`** | HOSE | Nông Nghiệp & Chăn Nuôi 3F | **`13,900 ₫`** | **`68`** | **`76.4/100`** (A) | `5.31x` | `21.41%` | `0.79x` | `1,390,000 ₫` (`6.93%`) | **`300 CP`** | `13,820 ₫` | `13,360 ₫` (-3.88%) | `14,650 ₫` / `15,290 ₫` | Diện tích sầu riêng bước vào kỳ thu hoạch chính vụ xuất sang Trung Quốc, cần lưu ý nợ vay cao |
-| **`BSR`** | UPCOM | Dầu Khí Thượng Nguồn & Phân Phối | **`23,400 ₫`** | **`81`** | **`86.3/100`** (AAA) | `4.21x` | `39.67%` | `0.7x` | `2,340,000 ₫` (`11.67%`) | **`200 CP`** | `23,160 ₫` | `21,810 ₫` (-6.79%) | `25,670 ₫` / `27,620 ₫` | Kho tiền mặt ròng >28,000 tỷ đồng, chính thức được chấp thuận chuyển sàn lên HOSE |
-| **`TCB`** | HOSE | Ngân Hàng TMCP | **`20,700 ₫`** | **`80`** | **`80.5/100`** (AA) | `7.7x` | `15.2%` | `1.05x` | `2,070,000 ₫` (`10.32%`) | **`300 CP`** | `20,550 ₫` | `19,710 ₫` (-4.78%) | `22,090 ₫` / `23,280 ₫` | CASA 40.5% đầu ngành, CAR 15.2%, động lực IPO TCBS |
+| **`NT2`** | HOSE | Điện & Hạ Tầng Năng Lượng | **`23,950 ₫`** | **`97`** | **`90.7/100`** (AAA) | `4.7x` | `29.39%` | `0.84x` | `2,395,000 ₫` (`11.94%`) | **`200 CP`** | `23,760 ₫` | `22,690 ₫` (-5.26%) | `25,710 ₫` / `27,220 ₫` | Không còn nợ vay dài hạn, sản lượng huy động điện khí miền Nam phục hồi mạnh |
+| **`MSB`** | HOSE | Ngân Hàng TMCP | **`16,250 ₫`** | **`98`** | **`84.7/100`** (AA) | `9.83x` | `14.33%` | `1.74x` | `1,625,000 ₫` (`8.1%`) | **`300 CP`** | `16,170 ₫` | `15,660 ₫` (-3.63%) | `17,070 ₫` / `17,770 ₫` | CASA thuộc top 4 toàn ngành, định giá P/B < 0.9x hấp dẫn |
+| **`PVP`** | HOSE | Cảng Biển, Vận Tải Biển & Hàng Không | **`16,500 ₫`** | **`90`** | **`87.0/100`** (AAA) | `5.38x` | `16.15%` | `1.97x` | `1,650,000 ₫` (`8.23%`) | **`300 CP`** | `16,340 ₫` | `15,440 ₫` (-6.42%) | `17,990 ₫` / `19,270 ₫` | Công ty con cốt lõi của PVT vận chuyển dầu thô cho Lọc dầu Dung Quất, P/B < 1.0x |
+| **`BSR`** | UPCOM | Dầu Khí Thượng Nguồn & Phân Phối | **`23,000 ₫`** | **`80`** | **`86.2/100`** (AAA) | `4.21x` | `39.67%` | `0.7x` | `2,300,000 ₫` (`11.47%`) | **`200 CP`** | `22,760 ₫` | `21,440 ₫` (-6.78%) | `25,270 ₫` / `27,220 ₫` | Kho tiền mặt ròng >28,000 tỷ đồng, chính thức được chấp thuận chuyển sàn lên HOSE |
+| **`HAG`** | HOSE | Nông Nghiệp & Chăn Nuôi 3F | **`13,900 ₫`** | **`69`** | **`75.0/100`** (A) | `5.31x` | `21.41%` | `0.79x` | `1,390,000 ₫` (`6.93%`) | **`300 CP`** | `13,820 ₫` | `13,360 ₫` (-3.88%) | `14,650 ₫` / `15,290 ₫` | Diện tích sầu riêng bước vào kỳ thu hoạch chính vụ xuất sang Trung Quốc, cần lưu ý nợ vay cao |
+| **`TPB`** | HOSE | Ngân Hàng TMCP | **`12,200 ₫`** | **`74`** | **`85.8/100`** (AAA) | `4.66x` | `18.35%` | `4.0x` | `1,220,000 ₫` (`6.08%`) | **`300 CP`** | `12,100 ₫` | `11,550 ₫` (-5.33%) | `13,110 ₫` / `13,890 ₫` | Ngân hàng số LiveBank dẫn đầu giới trẻ, NIM phục hồi |
 
 ---
 
@@ -109,11 +109,12 @@
 
 | Mã CP | Sàn | Nhóm Ngành | Phân Khúc | Giá Hiện Tại | Đà Tăng 1M | RS (1-99) | Điểm 10 Danh Thủ | 1 Lô 100 CP (% NAV) | Stop 2xATR | Chốt Lời TP1 | Phán Quyết Dứt Khoát Của Hội Đồng |
 | :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`NT2`** | HOSE | Điện & Hạ Tầng Năng Lượng | `SmallCap_HiddenGem` | **`23,850 ₫`** | `+3.05%` | **`97`** | `90.7/100` | `11.89%` | `22,590 ₫` (-5.28%) | `25,610 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
-| **`NAB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | **`13,050 ₫`** | `+3.98%` | **`96`** | `88.7/100` | `6.51%` | `12,500 ₫` (-4.21%) | `13,820 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
-| **`MSB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | **`16,350 ₫`** | `+5.48%` | **`98`** | `84.7/100` | `8.15%` | `15,760 ₫` (-3.61%) | `17,170 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
-| **`SAB`** | HOSE | Thực Phẩm & Đồ Uống Thiết Yếu | `VN30_LargeCap` | **`44,150 ₫`** | `+2.56%` | **`87`** | `73.4/100` | `22.02%` | `42,560 ₫` (-3.6%) | `46,380 ₫` | **WATCHLIST_BASE_BUILDING (Theo dõi nền tích lũy — Chờ điểm nổ Pocket Pivot vượt MA20)** |
-| **`REE`** | HOSE | Điện & Hạ Tầng Năng Lượng | `MidCap_Growth` | **`47,800 ₫`** | `+4.14%` | **`76`** | `72.7/100` | `23.84%` | `45,600 ₫` (-4.6%) | `50,880 ₫` | **WATCHLIST_BASE_BUILDING (Theo dõi nền tích lũy — Chờ điểm nổ Pocket Pivot vượt MA20)** |
+| **`NT2`** | HOSE | Điện & Hạ Tầng Năng Lượng | `SmallCap_HiddenGem` | **`23,950 ₫`** | `+3.48%` | **`97`** | `90.7/100` | `11.94%` | `22,690 ₫` (-5.26%) | `25,710 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`MSB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | **`16,250 ₫`** | `+4.84%` | **`98`** | `84.7/100` | `8.1%` | `15,660 ₫` (-3.63%) | `17,070 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`NAB`** | HOSE | Ngân Hàng TMCP | `MidCap_Growth` | **`12,800 ₫`** | `+1.99%` | **`95`** | `88.8/100` | `6.38%` | `12,250 ₫` (-4.3%) | `13,570 ₫` | **STRONG_BUY_ROUND2_SNIPER (Phê duyệt Mua Chủ Lực Vòng 2 — Đặt lệnh LO Khung 14h00-14h25)** |
+| **`GMD`** | HOSE | Cảng Biển, Vận Tải Biển & Hàng Không | `MidCap_Growth` | **`52,500 ₫`** | `-5.06%` | **`94`** | `85.6/100` | `26.18%` | `49,330 ₫` (-6.04%) | `56,940 ₫` | **ACCUMULATE_RISING_LEADER (Cổ phiếu đang lên mạnh — Canh gom nhịp Pullback LO)** |
+| **`SAB`** | HOSE | Thực Phẩm & Đồ Uống Thiết Yếu | `VN30_LargeCap` | **`44,050 ₫`** | `+2.32%` | **`88`** | `71.8/100` | `21.97%` | `42,460 ₫` (-3.61%) | `46,270 ₫` | **WATCHLIST_BASE_BUILDING (Theo dõi nền tích lũy — Chờ điểm nổ Pocket Pivot vượt MA20)** |
+| **`REE`** | HOSE | Điện & Hạ Tầng Năng Lượng | `MidCap_Growth` | **`47,200 ₫`** | `+2.83%` | **`78`** | `72.9/100` | `23.54%` | `45,000 ₫` (-4.66%) | `50,280 ₫` | **WATCHLIST_BASE_BUILDING (Theo dõi nền tích lũy — Chờ điểm nổ Pocket Pivot vượt MA20)** |
 
 ---
 
