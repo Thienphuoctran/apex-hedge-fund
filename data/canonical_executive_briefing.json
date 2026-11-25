@@ -1,11 +1,11 @@
 {
   "version": "V7.0",
-  "generated_at_ict": "2026-11-25 16:01:12 ICT",
+  "generated_at_ict": "2026-11-26 01:41:09 ICT",
   "market_date": "2026-11-23",
   "session_state": {
-    "date_ict": "2026-11-25",
-    "time_ict": "16:01:12",
-    "weekday_vi": "Thứ Tư",
+    "date_ict": "2026-11-26",
+    "time_ict": "01:41:09",
+    "weekday_vi": "Thứ Năm",
     "is_trading_day": true,
     "is_holiday": false,
     "is_weekend": false,
@@ -15,14 +15,14 @@
     "stale_feed_detected": false,
     "stale_feed_reason": "",
     "exchange_time_hms": "",
-    "status_code": "AFTER_HOURS",
-    "status_label_vi": "🌙 ĐÃ ĐÓNG CỬA PHIÊN 25/11 — CHUYỂN GIAO PHỐ WALL CA TỐI",
-    "short_badge_vi": "🌙 ĐÃ ĐÓNG CỬA (25/11)",
-    "prev_trading_day": "2026-11-23",
-    "prev_trading_day_vi": "Thứ Hai 23/11/2026",
-    "next_trading_day": "2026-11-26",
-    "next_trading_day_vi": "Thứ Năm 26/11/2026",
-    "settlement_note_vi": "Phiên giao dịch bình thường ngày 25/11/2026; T+2 về chiều 27/11/2026."
+    "status_code": "PRE_MARKET",
+    "status_label_vi": "🌅 TRƯỚC GIỜ MỞ CỬA HOSE (Chuẩn bị giao ban trước 09h00)",
+    "short_badge_vi": "🌅 PRE-MARKET",
+    "prev_trading_day": "2026-11-25",
+    "prev_trading_day_vi": "Thứ Tư 25/11/2026",
+    "next_trading_day": "2026-11-27",
+    "next_trading_day_vi": "Thứ Sáu 27/11/2026",
+    "settlement_note_vi": "Phiên giao dịch bình thường ngày 26/11/2026; T+2 về chiều 30/11/2026."
   },
   "market_regime": {
     "regime_id": "S3_SPRING_STRIKE_READY",
@@ -49,7 +49,7 @@
   },
   "real_performance_ledger": {
     "version": "V7.0",
-    "generated_at_ict": "2026-11-25 16:01:12 ICT",
+    "generated_at_ict": "2026-11-26 01:41:09 ICT",
     "account_id": "105C307855",
     "chairman": "Trần Quốc Thiên Phước",
     "fee_model_tcbs": {
@@ -163,7 +163,7 @@
   "executive_verdict": {
     "what_holding_vi": "Đang giữ 2 mã: TPB (200 CP @ 12,300đ → 12,350đ), HPG (100 CP @ 20,500đ → 20,400đ) (22.5% NAV), Két tiền mặt 15,541,117đ (77.5% NAV).",
     "net_pnl_vi": "Tổng NAV 20,051,117đ | Đã chốt trước đó: +51,117đ (WinRate đóng 100.0%) | Danh mục đang mở sau phí TCBS 0.40%: -18,040đ.",
-    "next_action_vi": "🌙 ĐÃ ĐÓNG CỬA (25/11): Cấm FOMO sáng; kiểm tra hàng T+2.5 lúc 13h00, chuẩn bị lúc 13h30 và chỉ giải ngân khung 14h05–14h25 khi Buy-Up >= 58%. Ứng viên top Brain V4: MSB vùng 16,350đ (Stop 15,300đ / TP1 18,650đ).",
+    "next_action_vi": "🌅 PRE-MARKET: Cấm FOMO sáng; kiểm tra hàng T+2.5 lúc 13h00, chuẩn bị lúc 13h30 và chỉ giải ngân khung 14h05–14h25 khi Buy-Up >= 58%. Ứng viên top Brain V4: MSB vùng 16,350đ (Stop 15,300đ / TP1 18,650đ).",
     "risk_guard_vi": "Mọi điểm mua bắt buộc R:R >= 1:2.0, Stop 2xATR <= 7.5%, 1 lô 100 CP <= 33% NAV, BCTC verified 100%, Trailing Stop bảo vệ +6% dời hòa vốn."
   },
   "simple_action_board": [
@@ -2889,7 +2889,7 @@
     "bctc_verified_count": 145,
     "bctc_requested_count": 145,
     "bctc_coverage_pct": 100.0,
-    "bctc_crawled_at": "2026-11-25 15:58:58",
+    "bctc_crawled_at": "2026-11-26 01:39:13",
     "brain_v4_generated_at": "2026-11-24 21:40:26 ICT",
     "warroom_timestamp_ict": "2026-11-24 21:37:29 ICT"
   },
@@ -2899,6 +2899,6 @@
     "total_gates": 12,
     "audited_at_ict": "2026-11-25 02:04:50"
   },
-  "executive_markdown": "# BẢN TIN ĐIỀU HÀNH HỢP NHẤT APEX V7.0 (SCBP)\n- **Thời gian:** `2026-11-25 16:01:12 ICT` | **Trạng thái sàn:** `🌙 ĐÃ ĐÓNG CỬA (25/11)`\n- **Tài khoản TCBS:** `105C307855` (Chủ tịch Trần Quốc Thiên Phước) | **Chế độ:** `S3_SPRING_STRIKE_READY`\n\n## 1. TRẢ LỜI TRỰC DIỆN 4 CÂU HỎI CHỦ TỊCH\n1. **Đang cầm gì?** Đang giữ 2 mã: TPB (200 CP @ 12,300đ → 12,350đ), HPG (100 CP @ 20,500đ → 20,400đ) (22.5% NAV), Két tiền mặt 15,541,117đ (77.5% NAV).\n2. **Lãi / Lỗ ròng thực tế?** Tổng NAV 20,051,117đ | Đã chốt trước đó: +51,117đ (WinRate đóng 100.0%) | Danh mục đang mở sau phí TCBS 0.40%: -18,040đ.\n3. **Hành động tiếp theo & mốc giá?** 🌙 ĐÃ ĐÓNG CỬA (25/11): Cấm FOMO sáng; kiểm tra hàng T+2.5 lúc 13h00, chuẩn bị lúc 13h30 và chỉ giải ngân khung 14h05–14h25 khi Buy-Up >= 58%. Ứng viên top Brain V4: MSB vùng 16,350đ (Stop 15,300đ / TP1 18,650đ).\n4. **Kỷ luật Rủi ro & Hiến Chương?** Mọi điểm mua bắt buộc R:R >= 1:2.0, Stop 2xATR <= 7.5%, 1 lô 100 CP <= 33% NAV, BCTC verified 100%, Trailing Stop bảo vệ +6% dời hòa vốn.\n\n## 2. BẢNG HÀNH ĐỘNG ĐƠN GIẢN HÓA (CHẠM LÀ HIỂU)\n- **TPB** [GIỮ & ĐỢI HÀNG VỀ (2026-11-26 13:00 ICT)] • Giá `12,350đ` | Stop `11,600đ` | TP1 `13,530đ` | R:R `1:1.57`\n- **HPG** [GIỮ & ĐỢI HÀNG VỀ (2026-11-26 13:00 ICT)] • Giá `20,400đ` | Stop `19,300đ` | TP1 `22,550đ` | R:R `1:1.95`\n- **MSB** [CHỜ NHỊP 14H05 CANH MUA LO 16,350đ] • Giá `16,450đ` | Stop `15,300đ` | TP1 `18,650đ` | R:R `1:2.19`\n- **CTG** [CHỜ NHỊP 14H05 CANH MUA LO 30,200đ] • Giá `30,350đ` | Stop `28,250đ` | TP1 `34,450đ` | R:R `1:2.18`\n- **HDB** [CHỜ NHỊP 14H05 CANH MUA LO 21,650đ] • Giá `21,800đ` | Stop `20,250đ` | TP1 `24,700đ` | R:R `1:2.18`\n\n## 3. ĐỐI SOÁT DỮ LIỆU & KIỂM TOÁN THỰC NGHIỆM\n- **Kho BCTC Sạch:** `145/145 mã (100.0%)` (Cập nhật `2026-11-25 15:58:58`)\n- **Backtest Walk-Forward:** Brain V4 `14.12%` (MaxDD `-7.13%`, Sharpe `0.89`) vs V3 `-1.7%`\n- **Kiểm Sát Viên Trọng:** `12/12 Cổng (PASS_ALL_12)`\n- **Niêm phong SCBP SHA-256:** `6cc6fbddc2c30e5ba010bc3b3acc09d7f2e2d9bc6ac322245f2362abbe5c7ea4`\n",
-  "sha256_seal": "6cc6fbddc2c30e5ba010bc3b3acc09d7f2e2d9bc6ac322245f2362abbe5c7ea4"
+  "executive_markdown": "# BẢN TIN ĐIỀU HÀNH HỢP NHẤT APEX V7.0 (SCBP)\n- **Thời gian:** `2026-11-26 01:41:09 ICT` | **Trạng thái sàn:** `🌅 PRE-MARKET`\n- **Tài khoản TCBS:** `105C307855` (Chủ tịch Trần Quốc Thiên Phước) | **Chế độ:** `S3_SPRING_STRIKE_READY`\n\n## 1. TRẢ LỜI TRỰC DIỆN 4 CÂU HỎI CHỦ TỊCH\n1. **Đang cầm gì?** Đang giữ 2 mã: TPB (200 CP @ 12,300đ → 12,350đ), HPG (100 CP @ 20,500đ → 20,400đ) (22.5% NAV), Két tiền mặt 15,541,117đ (77.5% NAV).\n2. **Lãi / Lỗ ròng thực tế?** Tổng NAV 20,051,117đ | Đã chốt trước đó: +51,117đ (WinRate đóng 100.0%) | Danh mục đang mở sau phí TCBS 0.40%: -18,040đ.\n3. **Hành động tiếp theo & mốc giá?** 🌅 PRE-MARKET: Cấm FOMO sáng; kiểm tra hàng T+2.5 lúc 13h00, chuẩn bị lúc 13h30 và chỉ giải ngân khung 14h05–14h25 khi Buy-Up >= 58%. Ứng viên top Brain V4: MSB vùng 16,350đ (Stop 15,300đ / TP1 18,650đ).\n4. **Kỷ luật Rủi ro & Hiến Chương?** Mọi điểm mua bắt buộc R:R >= 1:2.0, Stop 2xATR <= 7.5%, 1 lô 100 CP <= 33% NAV, BCTC verified 100%, Trailing Stop bảo vệ +6% dời hòa vốn.\n\n## 2. BẢNG HÀNH ĐỘNG ĐƠN GIẢN HÓA (CHẠM LÀ HIỂU)\n- **TPB** [GIỮ & ĐỢI HÀNG VỀ (2026-11-26 13:00 ICT)] • Giá `12,350đ` | Stop `11,600đ` | TP1 `13,530đ` | R:R `1:1.57`\n- **HPG** [GIỮ & ĐỢI HÀNG VỀ (2026-11-26 13:00 ICT)] • Giá `20,400đ` | Stop `19,300đ` | TP1 `22,550đ` | R:R `1:1.95`\n- **MSB** [CHỜ NHỊP 14H05 CANH MUA LO 16,350đ] • Giá `16,450đ` | Stop `15,300đ` | TP1 `18,650đ` | R:R `1:2.19`\n- **CTG** [CHỜ NHỊP 14H05 CANH MUA LO 30,200đ] • Giá `30,350đ` | Stop `28,250đ` | TP1 `34,450đ` | R:R `1:2.18`\n- **HDB** [CHỜ NHỊP 14H05 CANH MUA LO 21,650đ] • Giá `21,800đ` | Stop `20,250đ` | TP1 `24,700đ` | R:R `1:2.18`\n\n## 3. ĐỐI SOÁT DỮ LIỆU & KIỂM TOÁN THỰC NGHIỆM\n- **Kho BCTC Sạch:** `145/145 mã (100.0%)` (Cập nhật `2026-11-26 01:39:13`)\n- **Backtest Walk-Forward:** Brain V4 `14.12%` (MaxDD `-7.13%`, Sharpe `0.89`) vs V3 `-1.7%`\n- **Kiểm Sát Viên Trọng:** `12/12 Cổng (PASS_ALL_12)`\n- **Niêm phong SCBP SHA-256:** `67c98fe9ef447804c0faded4d06badd09ef2db50d2407ed92bda8b84871ad184`\n",
+  "sha256_seal": "67c98fe9ef447804c0faded4d06badd09ef2db50d2407ed92bda8b84871ad184"
 }

@@ -86,5 +86,50 @@
     "role": "specialist",
     "type": "sec_filing",
     "content": "[📊 SEC 10-Q — AVGO] 10-Q (2026-09-10)"
+  },
+  {
+    "id": "cbtt_2026-11-25_CRITICAL_PVS_30589",
+    "key": "cbtt_2026-11-25_CRITICAL_PVS_30589",
+    "timestamp": "01:40:16",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PVS] PVS ước tính doanh thu 34.000 tỷ, lãi 1.900 tỷ đồng năm 2026: Lợi nhuận thực tế hai năm gần nhất có gì lạ? (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-25_CRITICAL_ACB_264",
+    "key": "cbtt_2026-11-25_CRITICAL_ACB_264",
+    "timestamp": "01:40:16",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — ACB] Ông lớn thiết bị điện Hàn Quốc tiếp tục rót vốn vào Bắc Ninh, doanh thu tại Việt Nam dự kiến hơn 4.000 tỷ, tăng hơn gấp đôi sau 4 năm (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-25_CRITICAL_PNJ_39197",
+    "key": "cbtt_2026-11-25_CRITICAL_PNJ_39197",
+    "timestamp": "01:40:16",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Bài toán khó để PNJ huy động 8.000 tỷ \"chữa cháy\": Bất ngờ lời giải có thể đến từ khoản lỗ kỷ lục (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-25_CRITICAL_FPT_24426",
+    "key": "cbtt_2026-11-25_CRITICAL_FPT_24426",
+    "timestamp": "01:40:16",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT Software dự kiến doanh thu lập kỷ lục trong quý 4 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-25_RED_FLAG_HCM_8356",
+    "key": "cbtt_2026-11-25_RED_FLAG_HCM_8356",
+    "timestamp": "01:40:16",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — HCM] Đánh sập đường dây rửa tiền hơn 9.000 tỷ đồng qua đánh bạc trực tuyến (CANH_BAO_RUI_RO)"
   }
 ]

@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-25",
-  "last_updated": "2026-11-24 19:31:43",
+  "date": "2026-11-26",
+  "last_updated": "2026-11-25 18:41:09",
   "total_tasks": 17,
   "columns": {
     "BACKLOG": [
@@ -36,7 +36,7 @@
       "status": "BACKLOG",
       "priority": "HIGH",
       "output": "data/telegram_sent_messages_tracker.json",
-      "created_at": "2026-11-25 06:00"
+      "created_at": "2026-11-26 06:00"
     },
     "TASK-0700-MACRO": {
       "id": "TASK-0700-MACRO",
@@ -46,8 +46,8 @@
       "scheduled_time": "07:00",
       "status": "BACKLOG",
       "priority": "HIGH",
-      "output": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-25_VN_Macro_Report.md",
-      "created_at": "2026-11-25 07:00"
+      "output": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-26_VN_Macro_Report.md",
+      "created_at": "2026-11-26 07:00"
     },
     "TASK-0730-COACH": {
       "id": "TASK-0730-COACH",
@@ -57,8 +57,8 @@
       "scheduled_time": "07:30",
       "status": "BACKLOG",
       "priority": "HIGH",
-      "output": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-25_VN_Mentor_Briefing.md",
-      "created_at": "2026-11-25 07:30"
+      "output": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-26_VN_Mentor_Briefing.md",
+      "created_at": "2026-11-26 07:30"
     },
     "TASK-0800-ALPHA": {
       "id": "TASK-0800-ALPHA",
@@ -68,8 +68,8 @@
       "scheduled_time": "08:00",
       "status": "BACKLOG",
       "priority": "CRITICAL",
-      "output": "VN_Market/03_Synthesis_Memos/2026-11-25_VN_Investment_Memo.md",
-      "created_at": "2026-11-25 08:00"
+      "output": "VN_Market/03_Synthesis_Memos/2026-11-26_VN_Investment_Memo.md",
+      "created_at": "2026-11-26 08:00"
     },
     "TASK-0830-MAGAZINE": {
       "id": "TASK-0830-MAGAZINE",
@@ -80,7 +80,7 @@
       "status": "BACKLOG",
       "priority": "CRITICAL",
       "output": "08_Master_Investment_CIO/master_execution_blotter.json",
-      "created_at": "2026-11-25 08:30"
+      "created_at": "2026-11-26 08:30"
     },
     "TASK-0900-OPENING": {
       "id": "TASK-0900-OPENING",
@@ -91,7 +91,7 @@
       "status": "BACKLOG",
       "priority": "HIGH",
       "output": "Telegram Topic 3 (alerts)",
-      "created_at": "2026-11-25 09:00"
+      "created_at": "2026-11-26 09:00"
     },
     "TASK-0900-STREAMING": {
       "id": "TASK-0900-STREAMING",
@@ -102,7 +102,7 @@
       "status": "BACKLOG",
       "priority": "CRITICAL",
       "output": "09_Realtime_Portfolio_Sentinel/portfolio_tracker.md",
-      "created_at": "2026-11-25 09:00-15:00"
+      "created_at": "2026-11-26 09:00-15:00"
     },
     "TASK-1145-FLASH": {
       "id": "TASK-1145-FLASH",
@@ -112,8 +112,8 @@
       "scheduled_time": "11:45",
       "status": "BACKLOG",
       "priority": "MEDIUM",
-      "output": "VN_Market/03_Synthesis_Memos/2026-11-25_Morning_Flash_Report.md",
-      "created_at": "2026-11-25 11:45"
+      "output": "VN_Market/03_Synthesis_Memos/2026-11-26_Morning_Flash_Report.md",
+      "created_at": "2026-11-26 11:45"
     },
     "TASK-1300-T2RADAR": {
       "id": "TASK-1300-T2RADAR",
@@ -123,8 +123,8 @@
       "scheduled_time": "13:00",
       "status": "BACKLOG",
       "priority": "HIGH",
-      "output": "09_Realtime_Portfolio_Sentinel/2026-11-25_T2_Pressure_Radar.md",
-      "created_at": "2026-11-25 13:00"
+      "output": "09_Realtime_Portfolio_Sentinel/2026-11-26_T2_Pressure_Radar.md",
+      "created_at": "2026-11-26 13:00"
     },
     "TASK-1400-GOLDENHOUR": {
       "id": "TASK-1400-GOLDENHOUR",
@@ -134,8 +134,8 @@
       "scheduled_time": "14:00",
       "status": "BACKLOG",
       "priority": "CRITICAL",
-      "output": "08_Master_Investment_CIO/2026-11-25_Golden_Hour_Tactical_Memo.md",
-      "created_at": "2026-11-25 14:00"
+      "output": "08_Master_Investment_CIO/2026-11-26_Golden_Hour_Tactical_Memo.md",
+      "created_at": "2026-11-26 14:00"
     },
     "TASK-1425-GUARD03": {
       "id": "TASK-1425-GUARD03",
@@ -146,7 +146,7 @@
       "status": "BACKLOG",
       "priority": "CRITICAL",
       "output": "Telegram Topic 3 (alerts)",
-      "created_at": "2026-11-25 14:25"
+      "created_at": "2026-11-26 14:25"
     },
     "TASK-1515-WALKFORWARD": {
       "id": "TASK-1515-WALKFORWARD",
@@ -156,8 +156,8 @@
       "scheduled_time": "15:15",
       "status": "BACKLOG",
       "priority": "HIGH",
-      "output": "VN_Market/05_Learning_And_Evolution/2026-11-25_VN_Learning_Report.md",
-      "created_at": "2026-11-25 15:15"
+      "output": "VN_Market/05_Learning_And_Evolution/2026-11-26_VN_Learning_Report.md",
+      "created_at": "2026-11-26 15:15"
     },
     "TASK-1800-BCTCLIBRARY": {
       "id": "TASK-1800-BCTCLIBRARY",
@@ -167,8 +167,8 @@
       "scheduled_time": "18:00",
       "status": "BACKLOG",
       "priority": "MEDIUM",
-      "output": "VN_Market/02_BCTC_Equity_Research/2026-11-25_BCTC_Master_Library.md",
-      "created_at": "2026-11-25 18:00"
+      "output": "VN_Market/02_BCTC_Equity_Research/2026-11-26_BCTC_Master_Library.md",
+      "created_at": "2026-11-26 18:00"
     },
     "TASK-2100-HIENBCTC": {
       "id": "TASK-2100-HIENBCTC",
@@ -178,8 +178,8 @@
       "scheduled_time": "21:00",
       "status": "BACKLOG",
       "priority": "CRITICAL",
-      "output": "VN_Market/02_BCTC_Equity_Research/2026-11-25_Hien_Daily_Review.md",
-      "created_at": "2026-11-25 21:00"
+      "output": "VN_Market/02_BCTC_Equity_Research/2026-11-26_Hien_Daily_Review.md",
+      "created_at": "2026-11-26 21:00"
     },
     "TASK-2115-KHANHVIDEO": {
       "id": "TASK-2115-KHANHVIDEO",
@@ -189,8 +189,8 @@
       "scheduled_time": "21:15",
       "status": "BACKLOG",
       "priority": "HIGH",
-      "output": "11_Viral_Content_Creation/2026-11-25_Viral_Script_Khanh_HPG.md",
-      "created_at": "2026-11-25 21:15"
+      "output": "11_Viral_Content_Creation/2026-11-26_Viral_Script_Khanh_HPG.md",
+      "created_at": "2026-11-26 21:15"
     },
     "TASK-2200-EVOLUTION": {
       "id": "TASK-2200-EVOLUTION",
@@ -201,7 +201,7 @@
       "status": "BACKLOG",
       "priority": "HIGH",
       "output": "05_Learning_And_Evolution/system_evolution_journal.md",
-      "created_at": "2026-11-25 22:00"
+      "created_at": "2026-11-26 22:00"
     },
     "TASK-2300-COUNCIL": {
       "id": "TASK-2300-COUNCIL",
@@ -211,8 +211,8 @@
       "scheduled_time": "23:00",
       "status": "BACKLOG",
       "priority": "SUPREME",
-      "output": "08_Master_Investment_CIO/2026-11-25_23h00_EOD_Executive_Council_Meeting.md",
-      "created_at": "2026-11-25 23:00"
+      "output": "08_Master_Investment_CIO/2026-11-26_23h00_EOD_Executive_Council_Meeting.md",
+      "created_at": "2026-11-26 23:00"
     }
   }
 }

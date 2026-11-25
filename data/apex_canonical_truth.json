@@ -1,11 +1,11 @@
 {
   "schema_version": "APEX_CANONICAL_TRUTH_V5",
-  "generated_at_ict": "2026-11-25 16:01:12 ICT",
-  "date": "2026-11-25",
+  "generated_at_ict": "2026-11-26 01:41:09 ICT",
+  "date": "2026-11-26",
   "market_session": {
-    "date_ict": "2026-11-25",
-    "time_ict": "16:01:12",
-    "weekday_vi": "Thứ Tư",
+    "date_ict": "2026-11-26",
+    "time_ict": "01:41:09",
+    "weekday_vi": "Thứ Năm",
     "is_trading_day": true,
     "is_holiday": false,
     "is_weekend": false,
@@ -15,14 +15,14 @@
     "stale_feed_detected": false,
     "stale_feed_reason": "",
     "exchange_time_hms": "15:05:00",
-    "status_code": "AFTER_HOURS",
-    "status_label_vi": "🌙 ĐÃ ĐÓNG CỬA PHIÊN 25/11 — CHUYỂN GIAO PHỐ WALL CA TỐI",
-    "short_badge_vi": "🌙 ĐÃ ĐÓNG CỬA (25/11)",
-    "prev_trading_day": "2026-11-23",
-    "prev_trading_day_vi": "Thứ Hai 23/11/2026",
-    "next_trading_day": "2026-11-26",
-    "next_trading_day_vi": "Thứ Năm 26/11/2026",
-    "settlement_note_vi": "Phiên giao dịch bình thường ngày 25/11/2026; T+2 về chiều 27/11/2026."
+    "status_code": "PRE_MARKET",
+    "status_label_vi": "🌅 TRƯỚC GIỜ MỞ CỬA HOSE (Chuẩn bị giao ban trước 09h00)",
+    "short_badge_vi": "🌅 PRE-MARKET",
+    "prev_trading_day": "2026-11-25",
+    "prev_trading_day_vi": "Thứ Tư 25/11/2026",
+    "next_trading_day": "2026-11-27",
+    "next_trading_day_vi": "Thứ Sáu 27/11/2026",
+    "settlement_note_vi": "Phiên giao dịch bình thường ngày 26/11/2026; T+2 về chiều 30/11/2026."
   },
   "ssot": {
     "account_id": "105C307855",
@@ -231,8 +231,8 @@
     "title": "BIÊN BẢN HỌP THƯỢNG ĐỈNH 11 ĐƠN VỊ ĐỘC LẬP & QUÉT TOÀN THỊ TRƯỜNG (145 MÃ / 18 NGÀNH)"
   },
   "latest_chat_sync": {
-    "sync_id": "SYNC-AG2P-20261125-090112",
-    "last_updated": "2026-11-25 09:01:12",
+    "sync_id": "SYNC-AG2P-20261125-184109",
+    "last_updated": "2026-11-25 18:41:09",
     "latest_user_request": "Đồng bộ trạng thái SSOT, Lịch phiên & Chân lý Hợp nhất V5.0 giữa James, Palmer, Web Portal & Văn phòng 2.5D"
   },
   "executive_directive_vi": "🟡 HỒI PHỤC KỸ THUẬT / SPRING S3 (DƯỚI MA20 — THĂM DÒ CÓ CHỌN LỌC) | Danh mục SSOT: 200 TPB + 100 HPG (22.5% NAV) + Tiền mặt 15,541,117 ₫ (77.5% NAV). Trần mở mới tối đa: 25% sức mua (chỉ kê LO lúc 14h05–14h25).",

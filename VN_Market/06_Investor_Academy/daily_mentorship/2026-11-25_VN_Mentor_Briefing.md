@@ -6,8 +6,8 @@
 ---
 
 ## 1. TỔNG QUAN VĨ MÔ & TÂM LÝ THỊ TRƯỜNG ĐẦU NGÀY
-- **S&P 500 / US10Y**: `S&P 500 = 7201.09` | `US10Y = 4.9%` | `DXY = 103.99`
-- **Tỷ giá USD/VND & GDP VN**: `USD/VND = 25,775.0 đ` | `GDP VN Q3/2026 = 9.95%` | **Giá Dầu WTI**: `USD 81.17/thùng`
+- **S&P 500 / US10Y**: `S&P 500 = 7161.93` | `US10Y = 4.84%` | `DXY = 103.6`
+- **Tỷ giá USD/VND & GDP VN**: `USD/VND = 25,825.0 đ` | `GDP VN Q3/2026 = 9.95%` | **Giá Dầu WTI**: `USD 83.5/thùng`
 - **Thông điệp mở phiên ATO**: 95% bẫy giá xanh rơi vào 15 phút đầu ATO và phiên sáng. Luôn chờ áp lực hàng T+2.5 lộ diện sau 13h15 và chỉ giải ngân trong Khung Giờ Vàng `14h00–14h25`.
 
 ---

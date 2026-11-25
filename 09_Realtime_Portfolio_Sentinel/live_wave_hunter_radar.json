@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25 18:09:28",
+  "generated_at": "2026-11-25 18:41:06",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -127,15 +127,15 @@
       "bctc_rating": "AAA",
       "legends_score": 93.6,
       "ocf_ratio": 1.61,
-      "graham_mos_pct": 93.9,
+      "graham_mos_pct": 92.2,
       "wave_type": "🟢 TÍCH LŨY NỀN CHẶT (WYCKOFF NO-SUPPLY SPRING)",
-      "signal_strength": 87.8,
+      "signal_strength": 87.5,
       "entry_zone_vnd": 45969.0,
       "stop_2atr_vnd": 44000.0,
       "tp1_vnd": 50820.0,
       "tp2_vnd": 53350.0,
       "catalyst": "Đưa vào khai thác 4 tàu container đóng mới 1.800 TEU cùng mặt bằng giá cho thuê tàu định hạn (Time Charter) duy trì ở mức cao.",
-      "action_note": "Cạn cung tại nền hỗ trợ, Biên an toàn Graham +93.9%. Điểm gom thăm dò an toàn!"
+      "action_note": "Cạn cung tại nền hỗ trợ, Biên an toàn Graham +92.2%. Điểm gom thăm dò an toàn!"
     },
     {
       "symbol": "VGC",
@@ -187,85 +187,85 @@
       "symbol": "AVGO",
       "name": "Broadcom Inc.",
       "sector": "Custom AI ASICs & Networking",
-      "price_usd": 301.08,
+      "price_usd": 291.66,
       "legends_score": 80.9,
-      "ev_pct": 31.43,
-      "rr_ratio": 4.12,
+      "ev_pct": 33.02,
+      "rr_ratio": 4.42,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 292.68,
-      "stop_2atr_usd": 253.08,
-      "tp1_usd": 397.08,
+      "limit_entry_usd": 283.57,
+      "stop_2atr_usd": 245.42,
+      "tp1_usd": 384.14,
       "catalyst": "Mảng chip tùy biến AI ASICs (thiết kế chip AI riêng cho Google TPU và Meta MTIA) tăng trưởng bùng nổ 3 con số. Việc sáp nhập VMware bắt đầu phát huy hiệu quả cắt giảm chi phí và gia tăng dòng tiền thuê bao phần mềm doanh nghiệp."
     },
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor (TSMC)",
       "sector": "Global Chip Foundry",
-      "price_usd": 349.2,
+      "price_usd": 337.57,
       "legends_score": 83.1,
-      "ev_pct": 28.98,
-      "rr_ratio": 3.99,
+      "ev_pct": 30.57,
+      "rr_ratio": 4.34,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 340.0,
-      "stop_2atr_usd": 296.62,
-      "tp1_usd": 454.36,
+      "limit_entry_usd": 328.78,
+      "stop_2atr_usd": 287.34,
+      "tp1_usd": 438.03,
       "catalyst": "Công suất đúc chip tiến trình 3nm và 2nm kín đơn hàng đến tận năm 2027. Năng lực đóng gói tiên tiến CoWoS tăng gấp đôi để đáp ứng nhu cầu khát chip AI của Apple và Nvidia."
     },
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corp.",
       "sector": "Semiconductors & AI",
-      "price_usd": 155.38,
+      "price_usd": 146.97,
       "legends_score": 79.2,
-      "ev_pct": 28.7,
-      "rr_ratio": 2.61,
+      "ev_pct": 31.29,
+      "rr_ratio": 2.81,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 149.73,
-      "stop_2atr_usd": 123.08,
-      "tp1_usd": 219.98,
+      "limit_entry_usd": 141.43,
+      "stop_2atr_usd": 115.31,
+      "tp1_usd": 210.29,
       "catalyst": "Kiến trúc chip AI thế hệ mới Blackwell đã bước vào giai đoạn sản xuất đại trà và bán hết công suất cả năm tới. Các tập đoàn siêu đám mây (Meta, Google, Microsoft) cam kết chi tiêu vốn (CapEx) vượt $200 tỷ USD cho hạ tầng AI."
     },
     {
       "symbol": "MSFT",
       "name": "Microsoft Corp.",
       "sector": "Enterprise Software & Cloud",
-      "price_usd": 496.13,
+      "price_usd": 489.84,
       "legends_score": 88.3,
-      "ev_pct": 13.93,
-      "rr_ratio": 3.61,
+      "ev_pct": 14.39,
+      "rr_ratio": 3.84,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 490.0,
-      "stop_2atr_usd": 461.14,
-      "tp1_usd": 566.11,
-      "catalyst": "Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu ưu tiên cổ phiếu công nghệ có FCF lớn khi VIX neo ở vùng 27.75 đòi hỏi ưu tiên doanh nghiệp có FCF thực chất."
-    },
-    {
-      "symbol": "V",
-      "name": "Visa Inc.",
-      "sector": "Global Payment Network",
-      "price_usd": 416.78,
-      "legends_score": 88.6,
-      "ev_pct": 7.78,
-      "rr_ratio": 2.93,
-      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 413.38,
-      "stop_2atr_usd": 397.36,
-      "tp1_usd": 455.62,
-      "catalyst": "Khối lượng thanh toán toàn cầu tăng +8.5% YoY nhờ chi tiêu du lịch quốc tế bùng nổ. Visa đã công bố KQKD quý vừa qua vượt kỳ vọng và an toàn tuyệt đối với lịch BCTC (còn 87 ngày tới kỳ tiếp theo). Nhịp lùi -0.62% hôm nay thuần túy là do dòng tiền xoay tua ngắn hạn, tạo cơ hội gom hàng chiết khấu."
+      "limit_entry_usd": 483.87,
+      "stop_2atr_usd": 455.73,
+      "tp1_usd": 558.06,
+      "catalyst": "Doanh thu điện toán đám mây Azure AI tăng tốc +34% YoY; quan hệ hợp tác chiến lược độc quyền với OpenAI tiếp tục mở rộng. Các quỹ phòng hộ toàn cầu ưu tiên cổ phiếu công nghệ có FCF lớn khi VIX neo ở vùng 28.57 đòi hỏi ưu tiên doanh nghiệp có FCF thực chất."
     },
     {
       "symbol": "XOM",
       "name": "Exxon Mobil Corp.",
       "sector": "Integrated Oil & Gas",
-      "price_usd": 158.23,
+      "price_usd": 159.52,
       "legends_score": 83.2,
-      "ev_pct": 9.02,
-      "rr_ratio": 3.04,
+      "ev_pct": 8.29,
+      "rr_ratio": 3.19,
       "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
-      "limit_entry_usd": 156.86,
-      "stop_2atr_usd": 150.39,
-      "tp1_usd": 173.91,
+      "limit_entry_usd": 158.29,
+      "stop_2atr_usd": 152.5,
+      "tp1_usd": 173.56,
       "catalyst": "Giá dầu thô WTI neo vững ở $102.95/thùng trong bối cảnh rủi ro địa chính trị Trung Đông chưa giải tỏa. Dự án thu giữ carbon trực tiếp (DAC STRATOS) tiến gần ngày vận hành thương mại, mở ra nguồn tín chỉ carbon khổng lồ."
+    },
+    {
+      "symbol": "V",
+      "name": "Visa Inc.",
+      "sector": "Global Payment Network",
+      "price_usd": 424.69,
+      "legends_score": 88.6,
+      "ev_pct": 6.92,
+      "rr_ratio": 2.79,
+      "wave_type": "🚀 SIÊU CỔ PHIẾU FCF MỸ — SẴN SÀNG NHỊP PULLBACK / BREAKOUT",
+      "limit_entry_usd": 421.51,
+      "stop_2atr_usd": 406.51,
+      "tp1_usd": 461.05,
+      "catalyst": "Khối lượng thanh toán toàn cầu tăng +8.5% YoY nhờ chi tiêu du lịch quốc tế bùng nổ. Visa đã công bố KQKD quý vừa qua vượt kỳ vọng và an toàn tuyệt đối với lịch BCTC (còn 87 ngày tới kỳ tiếp theo). Nhịp lùi -0.62% hôm nay thuần túy là do dòng tiền xoay tua ngắn hạn, tạo cơ hội gom hàng chiết khấu."
     }
   ],
   "live_cbtt_and_sec_disclosures": [
@@ -315,6 +315,14 @@
       "form_or_type": "SEC Form 10-K",
       "date": "2026-11-03",
       "headline": "Hồ sơ SEC EARNINGS_FINANCIAL_REPORT đã kiểm chứng 100%",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "CEO",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Wed, 25 Nov 26 1",
+      "headline": "Đề xuất lương CEO Trung tâm tài chính quốc tế Đà Nẵng tới 850 triệu đồng/tháng",
       "is_portfolio_holding": false
     },
     {
@@ -372,14 +380,6 @@
       "date": "Tue, 24 Nov 26 1",
       "headline": "Những doanh nghiệp vươn mình: Từ tăng trưởng vượt bậc đến khát vọng ghi dấu toàn cầu",
       "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "PNJ",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Tue, 24 Nov 26 0",
-      "headline": "Ông Mai Hữu Tín và 2 thành viên HĐQT độc lập của PNJ cùng viết đơn từ nhiệm",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 372 hồ sơ SEC & 57 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 380 hồ sơ SEC & 56 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

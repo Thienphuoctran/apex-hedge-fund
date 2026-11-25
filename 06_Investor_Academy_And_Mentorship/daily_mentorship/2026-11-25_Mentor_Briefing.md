@@ -7,28 +7,28 @@
 ---
 
 ### PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)
-- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 27.75 (>= 20)**
-- **Bản chất chiến lược**: Chỉ số VIX ở mức 27.75 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
+- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 28.57 (>= 20)**
+- **Bản chất chiến lược**: Chỉ số VIX ở mức 28.57 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
 - **Công thức / Quy tắc vàng**:
   > Quy tắc Kỷ luật Thép: Khi VIX >= 20, phần Satellite tuyệt đối KHÔNG sử dụng Margin, giữ tối thiểu 40% tiền mặt/T-Bills.
 - **Thực tế thị trường hôm nay (2026-11-25)**: 
-  - VIX hiện tại: **27.75** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.90%** | Dầu WTI: **$81.06**.
-  - Độ rộng thị trường (`Market Breadth`): **51.4%** cổ phiếu giữ trên MA200.
+  - VIX hiện tại: **28.57** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.84%** | Dầu WTI: **$83.46**.
+  - Độ rộng thị trường (`Market Breadth`): **45.7%** cổ phiếu giữ trên MA200.
 
 ---
 
 ### PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)
-- **Mã cổ phiếu mổ xẻ**: **`MSFT`** (Giá khớp thực tế: **$496.13**).
+- **Mã cổ phiếu mổ xẻ**: **`MSFT`** (Giá khớp thực tế: **$489.84**).
 - **Phân loại chiến lược**: Trụ cột **Danh Mục Core (`8.0% NAV`)** — Đã qua kỳ BCTC an toàn.
 - **Góc nhìn Quỹ Đầu Tư (Số liệu Kiểm toán v5.0)**:
   1. **Nội tại doanh nghiệp & Dòng tiền thực (Ban 2)**:
-     - Forward P/E: **`20.5x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
+     - Forward P/E: **`20.24x`** | Dòng tiền tự do GAAP FCF: **`+$2.99B USD`** | Dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC`): **`+$-4.63B USD`**.
      - Hiệu suất sinh lời trên vốn đầu tư (`ROIC`): **`22.53%`** vs Chi phí vốn (`WACC`): **`9.2%`** -> Tạo giá trị kinh tế ròng **`EVA Spread = +13.33%`**.
-     - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.75%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.52%`**)*.
+     - Điểm sức khỏe tài chính **`Piotroski F-Score = 9/9`** | Tỷ suất cổ tức chuẩn hóa: **`0.76%`** *(Thực nhận sau thuế Mỹ 30% WHT cho NĐT Việt Nam: **`0.53%`**)*.
   2. **Định lượng & Quản trị rủi ro 2 Tầng (Ban 4)**:
-     - Biến động `ATR(14)` = **$17.50**.
-     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$461.14** (`-4.28%`).
-     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$515.41**.
+     - Biến động `ATR(14)` = **$17.05**.
+     - **Tầng 1 — Cắt lỗ bảo vệ vốn ban đầu (`Stop 2xATR`)**: **$455.73** (`-4.28%`).
+     - **Tầng 2 — Chặn lãi động theo xu hướng (`Chandelier Trailing Stop 22d - 2.5xATR`)**: **$516.52**.
 - **Bài tập Paper Trading hôm nay**:
   - Chạy lệnh mô phỏng: `python scripts/paper_trading_simulator.py buy --symbol MSFT --shares 10 --type Core`.
 

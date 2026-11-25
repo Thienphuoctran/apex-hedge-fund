@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-11-25 09:01:00",
+  "timestamp": "2026-11-25 18:40:55",
   "total_tickers": 54,
   "macro_vietnam": {
     "DXY": {
-      "value": 103.99,
-      "change_pct": 0.17
+      "value": 103.6,
+      "change_pct": -0.2
     },
     "US10Y": {
-      "value": 4.9,
-      "change_pct": -0.28
+      "value": 4.84,
+      "change_pct": -1.39
     },
     "WTI_OIL": {
-      "value": 81.17,
-      "change_pct": -1.07
+      "value": 83.5,
+      "change_pct": 1.77
     },
     "GOLD": {
-      "value": 3564.0,
-      "change_pct": 0.06
+      "value": 3565.4,
+      "change_pct": 0.1
     },
     "S_AND_P500": {
-      "value": 7201.09,
-      "change_pct": -0.5
+      "value": 7161.93,
+      "change_pct": -0.54
     },
     "SBV_Refinancing_Rate": {
       "value": 4.5,
@@ -35,7 +35,7 @@
       "source": "SBV_OFFICIAL_TARIFF_REFERENCE"
     },
     "USD_VND_Exchange_Rate": {
-      "value": 25775.0,
+      "value": 25825.0,
       "unit": "VND",
       "trend": "Live Yahoo USDVND=X",
       "source": "YAHOO_FINANCE_LIVE"
@@ -118,7 +118,7 @@
         "fetch_ok": true,
         "rs_rating": 38
       },
-      "last_updated": "2026-11-25 09:00:47",
+      "last_updated": "2026-11-25 18:40:41",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -180,7 +180,7 @@
         "fetch_ok": true,
         "rs_rating": 32
       },
-      "last_updated": "2026-11-25 09:00:47",
+      "last_updated": "2026-11-25 18:40:41",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -242,7 +242,7 @@
         "fetch_ok": true,
         "rs_rating": 69
       },
-      "last_updated": "2026-11-25 09:00:47",
+      "last_updated": "2026-11-25 18:40:41",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -304,7 +304,7 @@
         "fetch_ok": true,
         "rs_rating": 81
       },
-      "last_updated": "2026-11-25 09:00:48",
+      "last_updated": "2026-11-25 18:40:41",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -366,7 +366,7 @@
         "fetch_ok": true,
         "rs_rating": 54
       },
-      "last_updated": "2026-11-25 09:00:48",
+      "last_updated": "2026-11-25 18:40:42",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -428,7 +428,7 @@
         "fetch_ok": true,
         "rs_rating": 63
       },
-      "last_updated": "2026-11-25 09:00:48",
+      "last_updated": "2026-11-25 18:40:42",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -490,7 +490,7 @@
         "fetch_ok": true,
         "rs_rating": 84
       },
-      "last_updated": "2026-11-25 09:00:48",
+      "last_updated": "2026-11-25 18:40:42",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -552,7 +552,7 @@
         "fetch_ok": true,
         "rs_rating": 96
       },
-      "last_updated": "2026-11-25 09:00:49",
+      "last_updated": "2026-11-25 18:40:42",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -614,7 +614,7 @@
         "fetch_ok": true,
         "rs_rating": 93
       },
-      "last_updated": "2026-11-25 09:00:49",
+      "last_updated": "2026-11-25 18:40:43",
       "sector_key": "Ngan_Hang",
       "sector_name": "Ngân Hàng & Dịch Vụ Tài Chính"
     },
@@ -676,7 +676,7 @@
         "fetch_ok": true,
         "rs_rating": 80
       },
-      "last_updated": "2026-11-25 09:00:49",
+      "last_updated": "2026-11-25 18:40:43",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -738,7 +738,7 @@
         "fetch_ok": true,
         "rs_rating": 41
       },
-      "last_updated": "2026-11-25 09:00:49",
+      "last_updated": "2026-11-25 18:40:43",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -800,7 +800,7 @@
         "fetch_ok": true,
         "rs_rating": 27
       },
-      "last_updated": "2026-11-25 09:00:50",
+      "last_updated": "2026-11-25 18:40:43",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -862,7 +862,7 @@
         "fetch_ok": true,
         "rs_rating": 56
       },
-      "last_updated": "2026-11-25 09:00:50",
+      "last_updated": "2026-11-25 18:40:44",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -924,7 +924,7 @@
         "fetch_ok": true,
         "rs_rating": 26
       },
-      "last_updated": "2026-11-25 09:00:50",
+      "last_updated": "2026-11-25 18:40:44",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -986,7 +986,7 @@
         "fetch_ok": true,
         "rs_rating": 42
       },
-      "last_updated": "2026-11-25 09:00:50",
+      "last_updated": "2026-11-25 18:40:44",
       "sector_key": "Bat_Dong_San_Dan_Cu",
       "sector_name": "Bất Động Sản Dân Cư"
     },
@@ -1048,7 +1048,7 @@
         "fetch_ok": true,
         "rs_rating": 24
       },
-      "last_updated": "2026-11-25 09:00:51",
+      "last_updated": "2026-11-25 18:40:45",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1110,7 +1110,7 @@
         "fetch_ok": true,
         "rs_rating": 89
       },
-      "last_updated": "2026-11-25 09:00:51",
+      "last_updated": "2026-11-25 18:40:45",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1172,7 +1172,7 @@
         "fetch_ok": true,
         "rs_rating": 53
       },
-      "last_updated": "2026-11-25 09:00:51",
+      "last_updated": "2026-11-25 18:40:45",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1234,7 +1234,7 @@
         "fetch_ok": true,
         "rs_rating": 44
       },
-      "last_updated": "2026-11-25 09:00:51",
+      "last_updated": "2026-11-25 18:40:45",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1296,7 +1296,7 @@
         "fetch_ok": true,
         "rs_rating": 72
       },
-      "last_updated": "2026-11-25 09:00:52",
+      "last_updated": "2026-11-25 18:40:46",
       "sector_key": "Bat_Dong_San_KCN",
       "sector_name": "Bất Động Sản Khu Công Nghiệp"
     },
@@ -1358,7 +1358,7 @@
         "fetch_ok": true,
         "rs_rating": 51
       },
-      "last_updated": "2026-11-25 09:00:52",
+      "last_updated": "2026-11-25 18:40:46",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1420,7 +1420,7 @@
         "fetch_ok": true,
         "rs_rating": 45
       },
-      "last_updated": "2026-11-25 09:00:52",
+      "last_updated": "2026-11-25 18:40:46",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1482,7 +1482,7 @@
         "fetch_ok": true,
         "rs_rating": 90
       },
-      "last_updated": "2026-11-25 09:00:52",
+      "last_updated": "2026-11-25 18:40:46",
       "sector_key": "Thep_Vat_Lieu",
       "sector_name": "Thép & Vật Liệu Xây Dựng"
     },
@@ -1544,7 +1544,7 @@
         "fetch_ok": true,
         "rs_rating": 75
       },
-      "last_updated": "2026-11-25 09:00:53",
+      "last_updated": "2026-11-25 18:40:47",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1606,7 +1606,7 @@
         "fetch_ok": true,
         "rs_rating": 98
       },
-      "last_updated": "2026-11-25 09:00:53",
+      "last_updated": "2026-11-25 18:40:47",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1668,7 +1668,7 @@
         "fetch_ok": true,
         "rs_rating": 78
       },
-      "last_updated": "2026-11-25 09:00:53",
+      "last_updated": "2026-11-25 18:40:47",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1679,7 +1679,7 @@
       "exchange": "HOSE",
       "tier": "VN30_MegaCap",
       "weight_target": 0.03,
-      "pe": 10.63,
+      "pe": 10.7,
       "pb": 3.18,
       "roe_pct": 30.0,
       "market_cap_ty_vnd": 109722.7,
@@ -1696,7 +1696,7 @@
         "gross_margin_pct": 42.14,
         "operating_margin_pct": 18.05,
         "profit_margin_pct": 16.19,
-        "eps_vnd": 4937.0,
+        "eps_vnd": 4908.0,
         "bvps_vnd": 16494.0
       },
       "technical": {
@@ -1730,7 +1730,7 @@
         "fetch_ok": true,
         "rs_rating": 65
       },
-      "last_updated": "2026-11-25 09:00:53",
+      "last_updated": "2026-11-25 18:40:48",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1792,7 +1792,7 @@
         "fetch_ok": true,
         "rs_rating": 18
       },
-      "last_updated": "2026-11-25 09:00:54",
+      "last_updated": "2026-11-25 18:40:48",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1854,7 +1854,7 @@
         "fetch_ok": true,
         "rs_rating": 77
       },
-      "last_updated": "2026-11-25 09:00:54",
+      "last_updated": "2026-11-25 18:40:48",
       "sector_key": "Ban_Le_Tieu_Dung",
       "sector_name": "Bán Lẻ & Tiêu Dùng Thiết Yếu"
     },
@@ -1916,7 +1916,7 @@
         "fetch_ok": true,
         "rs_rating": 21
       },
-      "last_updated": "2026-11-25 09:00:54",
+      "last_updated": "2026-11-25 18:40:48",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -1978,7 +1978,7 @@
         "fetch_ok": true,
         "rs_rating": 20
       },
-      "last_updated": "2026-11-25 09:00:54",
+      "last_updated": "2026-11-25 18:40:49",
       "sector_key": "Cong_Nghe_Vien_Thong",
       "sector_name": "Công Nghệ Thông Tin & Viễn Thông"
     },
@@ -2040,7 +2040,7 @@
         "fetch_ok": true,
         "rs_rating": 59
       },
-      "last_updated": "2026-11-25 09:00:55",
+      "last_updated": "2026-11-25 18:40:49",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2102,7 +2102,7 @@
         "fetch_ok": true,
         "rs_rating": 39
       },
-      "last_updated": "2026-11-25 09:00:55",
+      "last_updated": "2026-11-25 18:40:49",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2164,7 +2164,7 @@
         "fetch_ok": true,
         "rs_rating": 29
       },
-      "last_updated": "2026-11-25 09:00:55",
+      "last_updated": "2026-11-25 18:40:49",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2226,7 +2226,7 @@
         "fetch_ok": true,
         "rs_rating": 86
       },
-      "last_updated": "2026-11-25 09:00:55",
+      "last_updated": "2026-11-25 18:40:50",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2288,7 +2288,7 @@
         "fetch_ok": true,
         "rs_rating": 33
       },
-      "last_updated": "2026-11-25 09:00:56",
+      "last_updated": "2026-11-25 18:40:50",
       "sector_key": "Chung_Khoan",
       "sector_name": "Dịch Vụ Chứng Khoán & Môi Giới"
     },
@@ -2350,7 +2350,7 @@
         "fetch_ok": true,
         "rs_rating": 68
       },
-      "last_updated": "2026-11-25 09:00:56",
+      "last_updated": "2026-11-25 18:40:50",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2412,7 +2412,7 @@
         "fetch_ok": true,
         "rs_rating": 48
       },
-      "last_updated": "2026-11-25 09:00:56",
+      "last_updated": "2026-11-25 18:40:50",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2474,7 +2474,7 @@
         "fetch_ok": true,
         "rs_rating": 66
       },
-      "last_updated": "2026-11-25 09:00:56",
+      "last_updated": "2026-11-25 18:40:51",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2536,7 +2536,7 @@
         "fetch_ok": true,
         "rs_rating": 87
       },
-      "last_updated": "2026-11-25 09:00:57",
+      "last_updated": "2026-11-25 18:40:51",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2598,7 +2598,7 @@
         "fetch_ok": true,
         "rs_rating": 92
       },
-      "last_updated": "2026-11-25 09:00:57",
+      "last_updated": "2026-11-25 18:40:51",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2660,7 +2660,7 @@
         "fetch_ok": true,
         "rs_rating": 71
       },
-      "last_updated": "2026-11-25 09:00:57",
+      "last_updated": "2026-11-25 18:40:51",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2722,7 +2722,7 @@
         "fetch_ok": true,
         "rs_rating": 62
       },
-      "last_updated": "2026-11-25 09:00:57",
+      "last_updated": "2026-11-25 18:40:52",
       "sector_key": "Dau_Khi_Nang_Luong",
       "sector_name": "Dầu Khí & Tiện Ích Năng Lượng"
     },
@@ -2784,7 +2784,7 @@
         "fetch_ok": true,
         "rs_rating": 23
       },
-      "last_updated": "2026-11-25 09:00:58",
+      "last_updated": "2026-11-25 18:40:52",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2846,7 +2846,7 @@
         "fetch_ok": true,
         "rs_rating": 60
       },
-      "last_updated": "2026-11-25 09:00:58",
+      "last_updated": "2026-11-25 18:40:52",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2908,7 +2908,7 @@
         "fetch_ok": true,
         "rs_rating": 30
       },
-      "last_updated": "2026-11-25 09:00:58",
+      "last_updated": "2026-11-25 18:40:52",
       "sector_key": "Hoa_Chat_Phan_Bon",
       "sector_name": "Hóa Chất & Phân Bón"
     },
@@ -2970,7 +2970,7 @@
         "fetch_ok": true,
         "rs_rating": 95
       },
-      "last_updated": "2026-11-25 09:00:58",
+      "last_updated": "2026-11-25 18:40:53",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -2981,7 +2981,7 @@
       "exchange": "HOSE",
       "tier": "MidCap",
       "weight_target": 0.025,
-      "pe": 6.81,
+      "pe": 6.88,
       "pb": 1.62,
       "roe_pct": 26.77,
       "market_cap_ty_vnd": 8710.7,
@@ -2998,7 +2998,7 @@
         "gross_margin_pct": 39.0,
         "operating_margin_pct": 36.21,
         "profit_margin_pct": 23.71,
-        "eps_vnd": 6795.0,
+        "eps_vnd": 6721.0,
         "bvps_vnd": 28545.0
       },
       "technical": {
@@ -3032,7 +3032,7 @@
         "fetch_ok": true,
         "rs_rating": 50
       },
-      "last_updated": "2026-11-25 09:00:59",
+      "last_updated": "2026-11-25 18:40:53",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -3094,7 +3094,7 @@
         "fetch_ok": true,
         "rs_rating": 83
       },
-      "last_updated": "2026-11-25 09:00:59",
+      "last_updated": "2026-11-25 18:40:53",
       "sector_key": "Cang_Bien_Van_Tai",
       "sector_name": "Cảng Biển & Logistics Vận Tải"
     },
@@ -3156,7 +3156,7 @@
         "fetch_ok": true,
         "rs_rating": 35
       },
-      "last_updated": "2026-11-25 09:00:59",
+      "last_updated": "2026-11-25 18:40:53",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -3218,7 +3218,7 @@
         "fetch_ok": true,
         "rs_rating": 36
       },
-      "last_updated": "2026-11-25 09:00:59",
+      "last_updated": "2026-11-25 18:40:54",
       "sector_key": "Xay_Dung_Ha_Tang_Dau_Tu_Cong",
       "sector_name": "Hạ Tầng Xây Dựng & Đầu Tư Công"
     },
@@ -3280,7 +3280,7 @@
         "fetch_ok": true,
         "rs_rating": 47
       },
-      "last_updated": "2026-11-25 09:01:00",
+      "last_updated": "2026-11-25 18:40:54",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -3342,7 +3342,7 @@
         "fetch_ok": true,
         "rs_rating": 57
       },
-      "last_updated": "2026-11-25 09:01:00",
+      "last_updated": "2026-11-25 18:40:54",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     },
@@ -3404,7 +3404,7 @@
         "fetch_ok": true,
         "rs_rating": 74
       },
-      "last_updated": "2026-11-25 09:01:00",
+      "last_updated": "2026-11-25 18:40:54",
       "sector_key": "Nong_Nghiep_Duoc_Pham",
       "sector_name": "Thủy Sản, Nông Nghiệp & Dược Phẩm"
     }

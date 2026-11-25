@@ -6,12 +6,12 @@
 
 ## 1. BẢNG KIỂM TOÁN VĨ MÔ & CHỈ SỐ ĐỊNH LƯỢNG CHÍNH SÁCH TIỀN TỆ
 - **Chế độ Thị trường sống (Market Regime)**: **`SPRING_WATCH_RECOVERY`** (`VN-Index 1,697.14 (+0.49%)`, `MA20 1,727.6`, `MA50 1,746.2`, `Breadth>MA20 = 24.7%`, `6` ngày phân phối)
-- **Chỉ số Định lượng Chính sách Tiền tệ SBV**: **`ACCOMMODATIVE_WITH_FX_WATCH (-0.05 | Tỷ giá 25,775 VND/USD | Regime: SPRING_WATCH_RECOVERY)`**
+- **Chỉ số Định lượng Chính sách Tiền tệ SBV**: **`DEFENSIVE_FX_PRESSURE (-0.03 | Áp lực tỷ giá 25,825 VND/USD)`**
 - **Lãi suất Tái cấp vốn SBV**: `4.5%` | **Tái chiết khấu**: `3.0%` (`SBV_OFFICIAL_TARIFF_REFERENCE`)
-- **Tỷ giá thị trường USD/VND (Yahoo Live)**: **`25,775.0 VND/USD`**
+- **Tỷ giá thị trường USD/VND (Yahoo Live)**: **`25,825.0 VND/USD`**
 - **Tăng trưởng GDP Việt Nam (Quý 3/2026 WiChart Live)**: **`9.95%`**
 - **Tăng trưởng tín dụng**: `Reference mục tiêu 15.0%` | **Đầu tư công**: `Reference kế hoạch 95% kế hoạch`
-- **Chỉ số DXY thế giới**: `103.99` | **Lợi suất US10Y**: `4.9%` | **Dầu WTI**: `USD 81.17/thùng`
+- **Chỉ số DXY thế giới**: `103.6` | **Lợi suất US10Y**: `4.84%` | **Dầu WTI**: `USD 83.5/thùng`
 
 ---
 
@@ -45,7 +45,7 @@
 | **MWG** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 70,900 | -1.12% | 9.01 | 2.18 | **91.7/100** | 8/9 | 75 | `NEUTRAL_TEST` | 0.22x | **AAA** |
 | **FRT** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 148,000 | +0.00% | 19.24 | 4.99 | **80.4/100** | 6/9 | 98 | `VCP_BASE` | -0.85x | **BB (WATCH)** |
 | **MSN** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 69,100 | -1.14% | 11.02 | 2.3 | **85.2/100** | 6/9 | 78 | `NEUTRAL_TEST` | 0.13x | **AAA** |
-| **VNM** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 52,300 | +1.75% | 10.63 | 3.18 | **90.7/100** | 7/9 | 65 | `NEUTRAL_TEST` | 0.83x | **AAA** |
+| **VNM** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 52,300 | +1.75% | 10.7 | 3.18 | **90.7/100** | 7/9 | 65 | `NEUTRAL_TEST` | 0.83x | **AAA** |
 | **PNJ** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 12,600 | -6.67% | 4.12 | 0.5 | **67.2/100** | 2/9 | 18 | `HIGH_SUPPLY` | -1.53x | **BB (WATCH)** |
 | **DGW** | HOSE | Bán Lẻ & Tiêu Dùng Thiết Yếu | 38,750 | -0.51% | 9.35 | 2.59 | **83.9/100** | 7/9 | 77 | `NEUTRAL_TEST` | 0.15x | **AAA** |
 | **FPT** | HOSE | Công Nghệ Thông Tin & Viễn Thông | 46,850 | +4.11% | 8.85 | 2.03 | **87.8/100** | 6/9 | 21 | `NEUTRAL_TEST` | 0.49x | **AAA** |
@@ -66,7 +66,7 @@
 | **DCM** | HOSE | Hóa Chất & Phân Bón | 30,550 | +0.49% | 6.92 | 1.36 | **90.9/100** | 6/9 | 60 | `NEUTRAL_TEST` | 0.94x | **AAA** |
 | **DPM** | HOSE | Hóa Chất & Phân Bón | 18,300 | -0.54% | 10.86 | 1.08 | **87.2/100** | 9/9 | 30 | `NEUTRAL_TEST` | 1.24x | **AAA** |
 | **GMD** | HOSE | Cảng Biển & Logistics Vận Tải | 51,900 | +3.80% | 13.71 | 2.4 | **92.1/100** | 7/9 | 95 | `NEUTRAL_TEST` | 0.76x | **AAA** |
-| **HAH** | HOSE | Cảng Biển & Logistics Vận Tải | 46,200 | +1.09% | 6.81 | 1.62 | **93.6/100** | 5/9 | 50 | `NEUTRAL_TEST` | 1.61x | **AAA** |
+| **HAH** | HOSE | Cảng Biển & Logistics Vận Tải | 46,200 | +1.09% | 6.88 | 1.62 | **93.6/100** | 5/9 | 50 | `NEUTRAL_TEST` | 1.61x | **AAA** |
 | **PVT** | HOSE | Cảng Biển & Logistics Vận Tải | 18,850 | +1.07% | 6.45 | 0.97 | **90.7/100** | 9/9 | 83 | `NEUTRAL_TEST` | 2.38x | **AAA** |
 | **VCG** | HOSE | Hạ Tầng Xây Dựng & Đầu Tư Công | 14,500 | +0.00% | 8.87 | 0.85 | **67.0/100** | 3/9 | 35 | `NEUTRAL_TEST` | -0.75x | **A** |
 | **HHV** | HOSE | Hạ Tầng Xây Dựng & Đầu Tư Công | 9,210 | +0.22% | 7.3 | 0.45 | **84.7/100** | 8/9 | 36 | `NEUTRAL_TEST` | 3.34x | **AAA** |
