@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-26 08:46:58",
+  "generated_at": "2026-11-26 18:27:03",
   "token_metrics": {
-    "total_raw_report_tokens": 68671,
-    "titan_digest_tokens": 1970,
-    "token_savings_percent": 97.1,
+    "total_raw_report_tokens": 70283,
+    "titan_digest_tokens": 1976,
+    "token_savings_percent": 97.2,
     "quality_preservation": "100% LOSSLESS (Full reports intact on disk)"
   },
   "deterministic_audit": {
-    "timestamp": "2026-11-26 08:46:58",
+    "timestamp": "2026-11-26 18:27:03",
     "bctc_vn_verified": 54,
     "bctc_red_flags_detected": [
       "UNKNOWN (M-Score=-1.77, OCF/LNST=1.2)",
@@ -30,7 +30,7 @@
       "path": "01_Macro_Geopolitics/2026-11-26_Macro_Report.md",
       "size_kb": 21.3,
       "total_lines": 69,
-      "estimated_raw_tokens": 6218,
+      "estimated_raw_tokens": 6227,
       "sections_count": 5,
       "sections": [
         {
@@ -101,50 +101,250 @@
     },
     "global_equity_ban2": {
       "exists": true,
-      "path": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-      "size_kb": 5.2,
-      "total_lines": 46,
-      "estimated_raw_tokens": 1524,
-      "sections_count": 1,
+      "path": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+      "size_kb": 10.6,
+      "total_lines": 81,
+      "estimated_raw_tokens": 3096,
+      "sections_count": 11,
       "sections": [
         {
           "level": 1,
-          "title": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
+          "title": "BÁO CÁO TÌNH BÁO THỊ TRƯỜNG, BCTC & INTERNET SỐNG HÀNG NGÀY (2026-11-27)",
           "start_line": 1,
-          "end_line": 46
+          "end_line": 6
+        },
+        {
+          "level": 2,
+          "title": "I. TỔNG QUAN NGUỒN DỮ LIỆU ĐÃ CÀO TRỰC TIẾP TRÊN INTERNET HÔM NAY",
+          "start_line": 7,
+          "end_line": 14
+        },
+        {
+          "level": 2,
+          "title": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+          "start_line": 15,
+          "end_line": 32
+        },
+        {
+          "level": 2,
+          "title": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+          "start_line": 33,
+          "end_line": 34
+        },
+        {
+          "level": 3,
+          "title": "🔍 Vĩ mô VN-Index, Dư nợ Margin & Thanh khoản Ngân hàng Nhà nước (Q3/2026) (`0 nguồn`)",
+          "start_line": 35,
+          "end_line": 36
+        },
+        {
+          "level": 3,
+          "title": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+          "start_line": 37,
+          "end_line": 38
+        },
+        {
+          "level": 3,
+          "title": "🔍 Hòa Phát (HPG) & Ngành Thép — Tiến độ Dung Quất 2, HRC & Bảo hộ (`0 nguồn`)",
+          "start_line": 39,
+          "end_line": 40
+        },
+        {
+          "level": 3,
+          "title": "🔍 Vĩ mô Mỹ (Fed, US10Y, VIX) & Big Tech / AI (November 2026) (`0 nguồn`)",
+          "start_line": 41,
+          "end_line": 42
+        },
+        {
+          "level": 3,
+          "title": "🏛️ Kiểm Chứng Cổng IR Doanh Nghiệp Trực Tiếp",
+          "start_line": 43,
+          "end_line": 55
+        },
+        {
+          "level": 3,
+          "title": "🇺🇸 Hồ Sơ SEC EDGAR Mỹ Mới Nhất",
+          "start_line": 56,
+          "end_line": 64
+        },
+        {
+          "level": 2,
+          "title": "IV. TOP TIÊU ĐIỂM BÁO CHÍ TÀI CHÍNH MỚI CÀO",
+          "start_line": 65,
+          "end_line": 81
         }
       ],
       "tickers": {
-        "RADAR": [
+        "QUAN": [
           {
-            "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
-            "start_line": 1,
-            "file": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-            "end_line": 46
+            "section": "I. TỔNG QUAN NGUỒN DỮ LIỆU ĐÃ CÀO TRỰC TIẾP TRÊN INTERNET HÔM NAY",
+            "start_line": 7,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 14
+          }
+        ],
+        "NAY": [
+          {
+            "section": "I. TỔNG QUAN NGUỒN DỮ LIỆU ĐÃ CÀO TRỰC TIẾP TRÊN INTERNET HÔM NAY",
+            "start_line": 7,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 14
+          }
+        ],
+        "II": [
+          {
+            "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+            "start_line": 15,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 32
+          }
+        ],
+        "DOANH": [
+          {
+            "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+            "start_line": 15,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 32
+          },
+          {
+            "section": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+            "start_line": 33,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 34
           }
         ],
         "TIN": [
           {
-            "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
-            "start_line": 1,
-            "file": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-            "end_line": 46
+            "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+            "start_line": 15,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 32
+          }
+        ],
+        "VS": [
+          {
+            "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+            "start_line": 15,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 32
+          }
+        ],
+        "RO": [
+          {
+            "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+            "start_line": 15,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 32
+          }
+        ],
+        "III": [
+          {
+            "section": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+            "start_line": 33,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 34
+          }
+        ],
+        "WEB": [
+          {
+            "section": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+            "start_line": 33,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 34
+          }
+        ],
+        "IR": [
+          {
+            "section": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+            "start_line": 33,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 34
+          },
+          {
+            "section": "🏛️ Kiểm Chứng Cổng IR Doanh Nghiệp Trực Tiếp",
+            "start_line": 43,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 55
+          }
+        ],
+        "VN": [
+          {
+            "section": "🔍 Vĩ mô VN-Index, Dư nợ Margin & Thanh khoản Ngân hàng Nhà nước (Q3/2026) (`0 nguồn`)",
+            "start_line": 35,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 36
+          }
+        ],
+        "TPB": [
+          {
+            "section": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+            "start_line": 37,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 38
+          }
+        ],
+        "HDB": [
+          {
+            "section": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+            "start_line": 37,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 38
+          }
+        ],
+        "CTG": [
+          {
+            "section": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+            "start_line": 37,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 38
+          }
+        ],
+        "NAB": [
+          {
+            "section": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+            "start_line": 37,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 38
+          }
+        ],
+        "HPG": [
+          {
+            "section": "🔍 Hòa Phát (HPG) & Ngành Thép — Tiến độ Dung Quất 2, HRC & Bảo hộ (`0 nguồn`)",
+            "start_line": 39,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 40
+          }
+        ],
+        "HRC": [
+          {
+            "section": "🔍 Hòa Phát (HPG) & Ngành Thép — Tiến độ Dung Quất 2, HRC & Bảo hộ (`0 nguồn`)",
+            "start_line": 39,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 40
+          }
+        ],
+        "AI": [
+          {
+            "section": "🔍 Vĩ mô Mỹ (Fed, US10Y, VIX) & Big Tech / AI (November 2026) (`0 nguồn`)",
+            "start_line": 41,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 42
           }
         ],
         "EDGAR": [
           {
-            "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
-            "start_line": 1,
-            "file": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-            "end_line": 46
+            "section": "🇺🇸 Hồ Sơ SEC EDGAR Mỹ Mới Nhất",
+            "start_line": 56,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 64
           }
         ],
-        "US": [
+        "IV": [
           {
-            "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
-            "start_line": 1,
-            "file": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-            "end_line": 46
+            "section": "IV. TOP TIÊU ĐIỂM BÁO CHÍ TÀI CHÍNH MỚI CÀO",
+            "start_line": 65,
+            "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+            "end_line": 81
           }
         ]
       }
@@ -266,7 +466,7 @@
       "path": "05_Learning_And_Evolution/2026-11-26_Learning_And_Attribution_Report.md",
       "size_kb": 10.1,
       "total_lines": 85,
-      "estimated_raw_tokens": 2958,
+      "estimated_raw_tokens": 2963,
       "sections_count": 8,
       "sections": [
         {
@@ -842,7 +1042,7 @@
       "path": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-26_VN_Macro_Report.md",
       "size_kb": 2.4,
       "total_lines": 26,
-      "estimated_raw_tokens": 691,
+      "estimated_raw_tokens": 711,
       "sections_count": 5,
       "sections": [
         {
@@ -1756,7 +1956,7 @@
       "path": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
       "size_kb": 47.5,
       "total_lines": 300,
-      "estimated_raw_tokens": 13896,
+      "estimated_raw_tokens": 13904,
       "sections_count": 22,
       "sections": [
         {
@@ -2156,7 +2356,7 @@
       "path": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
       "size_kb": 29.1,
       "total_lines": 210,
-      "estimated_raw_tokens": 8511,
+      "estimated_raw_tokens": 8509,
       "sections_count": 23,
       "sections": [
         {
@@ -2655,10 +2855,10 @@
         "end_line": 7
       },
       {
-        "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
-        "start_line": 1,
-        "file": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-        "end_line": 46
+        "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+        "start_line": 15,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 32
       },
       {
         "section": "BẢN TIN HUẤN LUYỆN ĐẦU TƯ THỰC CHIẾN BUỔI SÁNG (MORNING MENTOR BRIEFING v5.0)",
@@ -2707,38 +2907,396 @@
         "end_line": 26
       },
       {
-        "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
-        "start_line": 1,
-        "file": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-        "end_line": 46
-      },
-      {
         "section": "3. SỔ LỆNH THỰC THI MASTER — MẶT TRẬN TOÀN CẦU / PHỐ WALL (US EQUITIES)",
         "start_line": 84,
         "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
         "end_line": 93
       }
     ],
-    "RADAR": [
+    "QUAN": [
       {
-        "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
-        "start_line": 1,
-        "file": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-        "end_line": 46
+        "section": "I. TỔNG QUAN NGUỒN DỮ LIỆU ĐÃ CÀO TRỰC TIẾP TRÊN INTERNET HÔM NAY",
+        "start_line": 7,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 14
       },
       {
-        "section": "BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)",
+        "section": "THƯ VIỆN QUAN HỆ CỔ ĐÔNG (IR) & NGUỒN CÔNG BỐ BCTC CHÍNH THỐNG TTCK VIỆT NAM",
         "start_line": 1,
-        "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
+        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
+        "end_line": 8
+      },
+      {
+        "section": "1. TỔNG QUAN VĨ MÔ & TÂM LÝ THỊ TRƯỜNG ĐẦU NGÀY",
+        "start_line": 8,
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-26_VN_Mentor_Briefing.md",
+        "end_line": 14
+      },
+      {
+        "section": "1. TỔNG QUAN PHÂN BỔ VỐN & TỶ TRỌNG ĐA TÀI SẢN (CAPITAL ALLOCATION)",
+        "start_line": 12,
+        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
+        "end_line": 22
+      },
+      {
+        "section": "5. MA TRẬN TƯƠNG QUAN & KIỂM THỬ SỨC CHỊU ĐỰNG KHỦNG HOẢNG (STRESS-TESTING)",
+        "start_line": 148,
+        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
+        "end_line": 159
+      }
+    ],
+    "NAY": [
+      {
+        "section": "I. TỔNG QUAN NGUỒN DỮ LIỆU ĐÃ CÀO TRỰC TIẾP TRÊN INTERNET HÔM NAY",
+        "start_line": 7,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 14
+      },
+      {
+        "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
+        "start_line": 20,
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-26_Mentor_Briefing.md",
+        "end_line": 36
+      }
+    ],
+    "II": [
+      {
+        "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+        "start_line": 15,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 32
+      }
+    ],
+    "DOANH": [
+      {
+        "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+        "start_line": 15,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 32
+      },
+      {
+        "section": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+        "start_line": 33,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 34
+      },
+      {
+        "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
+        "start_line": 268,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 270
+      },
+      {
+        "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
+        "start_line": 268,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 270
+      }
+    ],
+    "VS": [
+      {
+        "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+        "start_line": 15,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 32
+      },
+      {
+        "section": "1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)",
+        "start_line": 21,
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-26_VN_Learning_Report.md",
+        "end_line": 26
+      },
+      {
+        "section": "2. BÀI HỌC THỰC CHIẾN Q3/2026: 'BÓC TRẦN LỢI NHUẬN GIẤY VS DÒNG TIỀN THẬT'",
+        "start_line": 15,
+        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-26_VN_Mentor_Briefing.md",
+        "end_line": 18
+      },
+      {
+        "section": "2. BIÊN BẢN ĐỐI SOÁT LIÊN THỊ TRƯỜNG: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
+        "start_line": 60,
+        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
+        "end_line": 76
+      }
+    ],
+    "RO": [
+      {
+        "section": "II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO",
+        "start_line": 15,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 32
+      },
+      {
+        "section": "[BAN 4 — INVESTMENT COMMITTEE] NGHỊ QUYẾT PHÊ DUYỆT DANH MỤC ĐẦU TƯ & KIỂM SOÁT RỦI RO ĐỊNH LƯỢNG",
+        "start_line": 1,
+        "file": "04_Investment_Committee/2026-11-26_IC_Decision.md",
+        "end_line": 6
+      },
+      {
+        "section": "🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)",
+        "start_line": 23,
+        "file": "07_Daily_Investment_Specialist/2026-11-26_Daily_Specialist_Decision.md",
+        "end_line": 38
+      },
+      {
+        "section": "2. BẢNG 2: TOP CỔ PHIẾU CẢNH BÁO RỦI RO / CỜ ĐỎ BCTC Q3/2026 (`TOP HIGH-RISK TRAPS`)",
+        "start_line": 24,
+        "file": "VN_Market/03_Synthesis_Memos/2026-11-26_VN_Investment_Memo.md",
+        "end_line": 36
+      },
+      {
+        "section": "🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)",
+        "start_line": 24,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 42
+      }
+    ],
+    "III": [
+      {
+        "section": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+        "start_line": 33,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 34
+      }
+    ],
+    "WEB": [
+      {
+        "section": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+        "start_line": 33,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 34
+      }
+    ],
+    "IR": [
+      {
+        "section": "III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG",
+        "start_line": 33,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 34
+      },
+      {
+        "section": "🏛️ Kiểm Chứng Cổng IR Doanh Nghiệp Trực Tiếp",
+        "start_line": 43,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 55
+      },
+      {
+        "section": "THƯ VIỆN QUAN HỆ CỔ ĐÔNG (IR) & NGUỒN CÔNG BỐ BCTC CHÍNH THỐNG TTCK VIỆT NAM",
+        "start_line": 1,
+        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
+        "end_line": 8
+      },
+      {
+        "section": "1. Nguyên Tắc Thép Của Ban Radar BCTC & IR",
+        "start_line": 9,
+        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
+        "end_line": 14
+      }
+    ],
+    "VN": [
+      {
+        "section": "🔍 Vĩ mô VN-Index, Dư nợ Margin & Thanh khoản Ngân hàng Nhà nước (Q3/2026) (`0 nguồn`)",
+        "start_line": 35,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 36
+      },
+      {
+        "section": "Chương trình: 4 Tiếng/Ngày • Mô hình Core & Satellite • Thực hành Paper Trading & VN Localization",
+        "start_line": 3,
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-26_Mentor_Briefing.md",
+        "end_line": 8
+      },
+      {
+        "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
+        "start_line": 37,
+        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-26_Mentor_Briefing.md",
+        "end_line": 45
+      },
+      {
+        "section": "[BAN 1 VN] BÁO CÁO VĨ MÔ, CHÍNH SÁCH TIỀN TỆ SBV & LUÂN CHUYỂN 18 NHÓM NGÀNH — 2026-11-26",
+        "start_line": 1,
+        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-26_VN_Macro_Report.md",
+        "end_line": 6
+      },
+      {
+        "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ THEO ĐA KỊCH BẢN — 2026-11-26",
+        "start_line": 1,
+        "file": "VN_Market/03_Synthesis_Memos/2026-11-26_VN_Investment_Memo.md",
         "end_line": 5
+      },
+      {
+        "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
+        "start_line": 36,
+        "file": "VN_Market/05_Learning_And_Evolution/2026-11-26_VN_Learning_Report.md",
+        "end_line": 45
+      },
+      {
+        "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & KẾ HOẠCH CÔNG SUẤT TUẦN SAU — MINH QUÂN",
+        "start_line": 1,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 9
+      },
+      {
+        "section": "2.4. Ba Thuật Toán Nâng Cấp Để Tối Ưu Hóa Lợi Nhuận Cho TTCK Việt Nam (`VN Profit Optimization Upgrades`)",
+        "start_line": 65,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 74
+      }
+    ],
+    "TPB": [
+      {
+        "section": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+        "start_line": 37,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 38
+      },
+      {
+        "section": "💎 4.1. Cổ Phiếu **`TPB`** — TPBank (HOSE)",
+        "start_line": 94,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 120
+      },
+      {
+        "section": "🔹 TPB — TPBank (ACTIVE HOLDING (ACTIVE_HOLDING))",
+        "start_line": 132,
+        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
+        "end_line": 138
+      }
+    ],
+    "HDB": [
+      {
+        "section": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+        "start_line": 37,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 38
+      },
+      {
+        "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
+        "start_line": 9,
+        "file": "VN_Market/04_Investment_Committee/2026-11-26_VN_IC_Decision.md",
+        "end_line": 17
+      },
+      {
+        "section": "💎 4.2. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
+        "start_line": 121,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 147
+      }
+    ],
+    "CTG": [
+      {
+        "section": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+        "start_line": 37,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 38
+      },
+      {
+        "section": "📌 CTG — Ngân hàng TMCP Công Thương Việt Nam (VietinBank) (HOSE)",
+        "start_line": 145,
+        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
+        "end_line": 160
+      },
+      {
+        "section": "🎯 **CTG** — Công Thương Việt Nam (VietinBank) (HOSE)",
+        "start_line": 18,
+        "file": "VN_Market/04_Investment_Committee/2026-11-26_VN_IC_Decision.md",
+        "end_line": 26
+      },
+      {
+        "section": "💎 4.3. Cổ Phiếu **`CTG`** — VietinBank (HOSE)",
+        "start_line": 148,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 174
+      }
+    ],
+    "NAB": [
+      {
+        "section": "🔍 Kết quả Kinh doanh & Tín dụng Nhóm Ngân hàng Đầu ngành (TPB, HDB, CTG, NAB) (`0 nguồn`)",
+        "start_line": 37,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 38
+      }
+    ],
+    "HPG": [
+      {
+        "section": "🔍 Hòa Phát (HPG) & Ngành Thép — Tiến độ Dung Quất 2, HRC & Bảo hộ (`0 nguồn`)",
+        "start_line": 39,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 40
+      },
+      {
+        "section": "📌 HPG — CTCP Tập đoàn Hòa Phát (HOSE)",
+        "start_line": 17,
+        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
+        "end_line": 32
+      },
+      {
+        "section": "🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)",
+        "start_line": 45,
+        "file": "VN_Market/04_Investment_Committee/2026-11-26_VN_IC_Decision.md",
+        "end_line": 53
+      },
+      {
+        "section": "💎 4.4. Cổ Phiếu **`HPG`** — Tập đoàn Hòa Phát (HOSE)",
+        "start_line": 175,
+        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
+        "end_line": 207
+      },
+      {
+        "section": "🔹 HPG — Tập đoàn Hòa Phát (ACTIVE HOLDING (ACTIVE_HOLDING))",
+        "start_line": 139,
+        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
+        "end_line": 147
+      }
+    ],
+    "HRC": [
+      {
+        "section": "🔍 Hòa Phát (HPG) & Ngành Thép — Tiến độ Dung Quất 2, HRC & Bảo hộ (`0 nguồn`)",
+        "start_line": 39,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 40
+      }
+    ],
+    "AI": [
+      {
+        "section": "🔍 Vĩ mô Mỹ (Fed, US10Y, VIX) & Big Tech / AI (November 2026) (`0 nguồn`)",
+        "start_line": 41,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 42
+      },
+      {
+        "section": "4.7. NVDA — NVIDIA Corp. (Semiconductors & AI)",
+        "start_line": 149,
+        "file": "07_Daily_Investment_Specialist/2026-11-26_Daily_Specialist_Decision.md",
+        "end_line": 158
+      },
+      {
+        "section": "4.10. AVGO — Broadcom Inc. (Custom AI ASICs & Networking)",
+        "start_line": 179,
+        "file": "07_Daily_Investment_Specialist/2026-11-26_Daily_Specialist_Decision.md",
+        "end_line": 190
+      },
+      {
+        "section": "6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)",
+        "start_line": 184,
+        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
+        "end_line": 195
       }
     ],
     "EDGAR": [
       {
-        "section": "RADAR CÔNG BỐ THÔNG TIN & SEC EDGAR FILINGS (35 US LEADERS)",
-        "start_line": 1,
-        "file": "02_Equity_Research/2026-11-26_SEC_Filings_Radar.md",
-        "end_line": 46
+        "section": "🇺🇸 Hồ Sơ SEC EDGAR Mỹ Mới Nhất",
+        "start_line": 56,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 64
+      }
+    ],
+    "IV": [
+      {
+        "section": "IV. TOP TIÊU ĐIỂM BÁO CHÍ TÀI CHÍNH MỚI CÀO",
+        "start_line": 65,
+        "file": "02_Equity_Research/2026-11-27_Daily_Internet_And_BCTC_Intel_Report.md",
+        "end_line": 81
       }
     ],
     "HUB": [
@@ -2769,32 +3327,6 @@
         "start_line": 8,
         "file": "05_Learning_And_Evolution/2026-11-26_Learning_And_Attribution_Report.md",
         "end_line": 29
-      }
-    ],
-    "RO": [
-      {
-        "section": "[BAN 4 — INVESTMENT COMMITTEE] NGHỊ QUYẾT PHÊ DUYỆT DANH MỤC ĐẦU TƯ & KIỂM SOÁT RỦI RO ĐỊNH LƯỢNG",
-        "start_line": 1,
-        "file": "04_Investment_Committee/2026-11-26_IC_Decision.md",
-        "end_line": 6
-      },
-      {
-        "section": "🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)",
-        "start_line": 23,
-        "file": "07_Daily_Investment_Specialist/2026-11-26_Daily_Specialist_Decision.md",
-        "end_line": 38
-      },
-      {
-        "section": "2. BẢNG 2: TOP CỔ PHIẾU CẢNH BÁO RỦI RO / CỜ ĐỎ BCTC Q3/2026 (`TOP HIGH-RISK TRAPS`)",
-        "start_line": 24,
-        "file": "VN_Market/03_Synthesis_Memos/2026-11-26_VN_Investment_Memo.md",
-        "end_line": 36
-      },
-      {
-        "section": "🧠 1.5. BỘ NHỚ QUẢN TRỊ RỦI RO & BÀI HỌC THỰC CHIẾN TỰ ĐỘNG NẠP (`Auto-Injected Contextual Memory`)",
-        "start_line": 24,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 42
       }
     ],
     "WALK": [
@@ -2879,50 +3411,6 @@
         "end_line": 47
       }
     ],
-    "VN": [
-      {
-        "section": "Chương trình: 4 Tiếng/Ngày • Mô hình Core & Satellite • Thực hành Paper Trading & VN Localization",
-        "start_line": 3,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-26_Mentor_Briefing.md",
-        "end_line": 8
-      },
-      {
-        "section": "PHẦN 3: CHUYÊN ĐỀ ĐẶC BIỆT CHO NHÀ ĐẦU TƯ VIỆT NAM (`VN LOCALIZATION LAYER`)",
-        "start_line": 37,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-26_Mentor_Briefing.md",
-        "end_line": 45
-      },
-      {
-        "section": "[BAN 1 VN] BÁO CÁO VĨ MÔ, CHÍNH SÁCH TIỀN TỆ SBV & LUÂN CHUYỂN 18 NHÓM NGÀNH — 2026-11-26",
-        "start_line": 1,
-        "file": "VN_Market/01_Macro_Monetary_Vietnam/2026-11-26_VN_Macro_Report.md",
-        "end_line": 6
-      },
-      {
-        "section": "[BAN 3 VN] BIÊN BẢN TỔNG HỢP & SÀNG LỌC CƠ HỘI ĐẦU TƯ THEO ĐA KỊCH BẢN — 2026-11-26",
-        "start_line": 1,
-        "file": "VN_Market/03_Synthesis_Memos/2026-11-26_VN_Investment_Memo.md",
-        "end_line": 5
-      },
-      {
-        "section": "4. KHO BỘ NHỚ SAI SỐ & HÀNH VI DÀI HẠN (`VN Mem0 Contextual Memory Vault`)",
-        "start_line": 36,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-26_VN_Learning_Report.md",
-        "end_line": 45
-      },
-      {
-        "section": "[BAN 7 VN] BÁO CÁO QUYẾT ĐỊNH ĐẦU TƯ KHOA HỌC TRONG NGÀY & KẾ HOẠCH CÔNG SUẤT TUẦN SAU — MINH QUÂN",
-        "start_line": 1,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 9
-      },
-      {
-        "section": "2.4. Ba Thuật Toán Nâng Cấp Để Tối Ưu Hóa Lợi Nhuận Cho TTCK Việt Nam (`VN Profit Optimization Upgrades`)",
-        "start_line": 65,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 74
-      }
-    ],
     "VI": [
       {
         "section": "PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)",
@@ -2954,14 +3442,6 @@
       }
     ],
     "CA": [
-      {
-        "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
-        "start_line": 20,
-        "file": "06_Investor_Academy_And_Mentorship/daily_mentorship/2026-11-26_Mentor_Briefing.md",
-        "end_line": 36
-      }
-    ],
-    "NAY": [
       {
         "section": "PHẦN 2: BÓC TÁCH CA THỰC CHIẾN HÔM NAY (LIVE CASE STUDY: `MSFT`)",
         "start_line": 20,
@@ -3199,26 +3679,6 @@
         "end_line": 107
       }
     ],
-    "AI": [
-      {
-        "section": "4.7. NVDA — NVIDIA Corp. (Semiconductors & AI)",
-        "start_line": 149,
-        "file": "07_Daily_Investment_Specialist/2026-11-26_Daily_Specialist_Decision.md",
-        "end_line": 158
-      },
-      {
-        "section": "4.10. AVGO — Broadcom Inc. (Custom AI ASICs & Networking)",
-        "start_line": 179,
-        "file": "07_Daily_Investment_Specialist/2026-11-26_Daily_Specialist_Decision.md",
-        "end_line": 190
-      },
-      {
-        "section": "6B. Chứng Nhận Đồng Bộ 5 Nâng Cấp Kiến Trúc AI Toàn Diện (2026 Institutional Upgrade Audit)",
-        "start_line": 184,
-        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
-        "end_line": 195
-      }
-    ],
     "TSM": [
       {
         "section": "4.8. TSM — Taiwan Semiconductor (TSMC) (Global Chip Foundry)",
@@ -3269,46 +3729,6 @@
         "end_line": 101
       }
     ],
-    "QUAN": [
-      {
-        "section": "THƯ VIỆN QUAN HỆ CỔ ĐÔNG (IR) & NGUỒN CÔNG BỐ BCTC CHÍNH THỐNG TTCK VIỆT NAM",
-        "start_line": 1,
-        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
-        "end_line": 8
-      },
-      {
-        "section": "1. TỔNG QUAN VĨ MÔ & TÂM LÝ THỊ TRƯỜNG ĐẦU NGÀY",
-        "start_line": 8,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-26_VN_Mentor_Briefing.md",
-        "end_line": 14
-      },
-      {
-        "section": "1. TỔNG QUAN PHÂN BỔ VỐN & TỶ TRỌNG ĐA TÀI SẢN (CAPITAL ALLOCATION)",
-        "start_line": 12,
-        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
-        "end_line": 22
-      },
-      {
-        "section": "5. MA TRẬN TƯƠNG QUAN & KIỂM THỬ SỨC CHỊU ĐỰNG KHỦNG HOẢNG (STRESS-TESTING)",
-        "start_line": 148,
-        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
-        "end_line": 159
-      }
-    ],
-    "IR": [
-      {
-        "section": "THƯ VIỆN QUAN HỆ CỔ ĐÔNG (IR) & NGUỒN CÔNG BỐ BCTC CHÍNH THỐNG TTCK VIỆT NAM",
-        "start_line": 1,
-        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
-        "end_line": 8
-      },
-      {
-        "section": "1. Nguyên Tắc Thép Của Ban Radar BCTC & IR",
-        "start_line": 9,
-        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
-        "end_line": 14
-      }
-    ],
     "TTCK": [
       {
         "section": "THƯ VIỆN QUAN HỆ CỔ ĐÔNG (IR) & NGUỒN CÔNG BỐ BCTC CHÍNH THỐNG TTCK VIỆT NAM",
@@ -3333,32 +3753,6 @@
         "start_line": 65,
         "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
         "end_line": 74
-      }
-    ],
-    "HPG": [
-      {
-        "section": "📌 HPG — CTCP Tập đoàn Hòa Phát (HOSE)",
-        "start_line": 17,
-        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
-        "end_line": 32
-      },
-      {
-        "section": "🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)",
-        "start_line": 45,
-        "file": "VN_Market/04_Investment_Committee/2026-11-26_VN_IC_Decision.md",
-        "end_line": 53
-      },
-      {
-        "section": "💎 4.4. Cổ Phiếu **`HPG`** — Tập đoàn Hòa Phát (HOSE)",
-        "start_line": 175,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 207
-      },
-      {
-        "section": "🔹 HPG — Tập đoàn Hòa Phát (ACTIVE HOLDING (ACTIVE_HOLDING))",
-        "start_line": 139,
-        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
-        "end_line": 147
       }
     ],
     "CTCP": [
@@ -3517,26 +3911,6 @@
         "end_line": 144
       }
     ],
-    "CTG": [
-      {
-        "section": "📌 CTG — Ngân hàng TMCP Công Thương Việt Nam (VietinBank) (HOSE)",
-        "start_line": 145,
-        "file": "VN_Market/02_BCTC_Equity_Research/BCTC_OFFICIAL_FILINGS_LIBRARY.md",
-        "end_line": 160
-      },
-      {
-        "section": "🎯 **CTG** — Công Thương Việt Nam (VietinBank) (HOSE)",
-        "start_line": 18,
-        "file": "VN_Market/04_Investment_Committee/2026-11-26_VN_IC_Decision.md",
-        "end_line": 26
-      },
-      {
-        "section": "💎 4.3. Cổ Phiếu **`CTG`** — VietinBank (HOSE)",
-        "start_line": 148,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 174
-      }
-    ],
     "DGC": [
       {
         "section": "📌 DGC — CTCP Tập đoàn Hóa chất Đức Giang (HOSE)",
@@ -3593,20 +3967,6 @@
         "start_line": 1,
         "file": "VN_Market/04_Investment_Committee/2026-11-26_VN_IC_Decision.md",
         "end_line": 6
-      }
-    ],
-    "HDB": [
-      {
-        "section": "🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)",
-        "start_line": 9,
-        "file": "VN_Market/04_Investment_Committee/2026-11-26_VN_IC_Decision.md",
-        "end_line": 17
-      },
-      {
-        "section": "💎 4.2. Cổ Phiếu **`HDB`** — HDBank (HOSE)",
-        "start_line": 121,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 147
       }
     ],
     "TP": [
@@ -3691,26 +4051,6 @@
         "start_line": 6,
         "file": "VN_Market/05_Learning_And_Evolution/2026-11-26_VN_Learning_Report.md",
         "end_line": 20
-      }
-    ],
-    "VS": [
-      {
-        "section": "1. KẾT QUẢ ĐỐI SOÁT DỰ BÁO VS THỰC TẾ (WALK-FORWARD POST-MORTEM)",
-        "start_line": 21,
-        "file": "VN_Market/05_Learning_And_Evolution/2026-11-26_VN_Learning_Report.md",
-        "end_line": 26
-      },
-      {
-        "section": "2. BÀI HỌC THỰC CHIẾN Q3/2026: 'BÓC TRẦN LỢI NHUẬN GIẤY VS DÒNG TIỀN THẬT'",
-        "start_line": 15,
-        "file": "VN_Market/06_Investor_Academy/daily_mentorship/2026-11-26_VN_Mentor_Briefing.md",
-        "end_line": 18
-      },
-      {
-        "section": "2. BIÊN BẢN ĐỐI SOÁT LIÊN THỊ TRƯỜNG: ALEX (MỸ) VS MINH QUÂN (VIỆT NAM)",
-        "start_line": 60,
-        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
-        "end_line": 76
       }
     ],
     "POST": [
@@ -3869,40 +4209,12 @@
         "end_line": 93
       }
     ],
-    "TPB": [
-      {
-        "section": "💎 4.1. Cổ Phiếu **`TPB`** — TPBank (HOSE)",
-        "start_line": 94,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 120
-      },
-      {
-        "section": "🔹 TPB — TPBank (ACTIVE HOLDING (ACTIVE_HOLDING))",
-        "start_line": 132,
-        "file": "08_Master_Investment_CIO/2026-11-26_Master_CIO_Final_Decision.md",
-        "end_line": 138
-      }
-    ],
     "VPB": [
       {
         "section": "💎 4.5. Cổ Phiếu **`VPB`** — VPBank (HOSE)",
         "start_line": 208,
         "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
         "end_line": 234
-      }
-    ],
-    "DOANH": [
-      {
-        "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
-        "start_line": 268,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 270
-      },
-      {
-        "section": "🚨 5. TÂM ĐIỂM CẢNH BÁO: CÁC DOANH NGHIỆP THUA LỖ RÒNG, CHÁY DÒNG TIỀN KINH DOANH (`OCF < 0`) HOẶC DÍNH BẪY BCTC",
-        "start_line": 268,
-        "file": "VN_Market/07_Daily_Specialist/2026-11-26_VN_Specialist_Decision.md",
-        "end_line": 270
       }
     ],
     "THUA": [
@@ -4030,6 +4342,14 @@
       }
     ],
     "GIAN": [
+      {
+        "section": "BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)",
+        "start_line": 1,
+        "file": "09_Realtime_Portfolio_Sentinel/live_sentinel_status.md",
+        "end_line": 5
+      }
+    ],
+    "RADAR": [
       {
         "section": "BẢNG GIÁM SÁT THỜI GIAN THỰC 2 ĐẦU & RADAR SĂN SÓNG 24/7 (PALMER & VICTOR SENTINEL)",
         "start_line": 1,

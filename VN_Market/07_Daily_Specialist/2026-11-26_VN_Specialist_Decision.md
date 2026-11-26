@@ -3,7 +3,7 @@
 **Khung giờ hoạt động định kỳ**: `08:30 AM Mỗi Ngày` *(Sau khoảng đệm 1 tiếng để Nhà đầu tư đọc kỹ BCTC từ 07:30 – 08:30)*  
 **Ngày giao dịch**: `2026-11-26` | **Thị trường tác chiến**: `HOSE, HNX (Chu kỳ thanh toán T+2.5, Quản trị biên độ 7% - 10%)`  
 **Tỷ lệ Thắng Danh Mục Thực Chiến (`Account Execution Hit Rate`)**: **`50.0%`** (`1/2` vị thế có lãi) | **Walk-Forward Market Hit Rate (18 phiên)**: **`35.3%`**  
-**Xác suất Thắng Thận trọng Rổ Tầm ngắm (`Calibrated P(W)`)**: **`56.8%`** | **Kỳ vọng Toán học (`EV%`)**: **`+3.42%`** | **Mục tiêu Khóa lãi Nhịp**: **`+300,000 ₫ – +500,000 ₫`** *(Chốt tỉa 50% thu tiền tươi ngay khi đạt +2.5%..+4.0%)*
+**Xác suất Thắng Thận trọng Rổ Tầm ngắm (`Calibrated P(W)`)**: **`57.0%`** | **Kỳ vọng Toán học (`EV%`)**: **`+3.47%`** | **Mục tiêu Khóa lãi Nhịp**: **`+300,000 ₫ – +500,000 ₫`** *(Chốt tỉa 50% thu tiền tươi ngay khi đạt +2.5%..+4.0%)*
 
 ---
 
@@ -11,7 +11,7 @@
 
 | Phòng Ban Báo Cáo | Nhận Định Cốt Lõi Hôm Nay | Đánh Giá Chi Tiết Từ Phòng Ban | Quyết Định Điều Phối Khoa Học Của Minh Quân |
 | :--- | :--- | :--- | :--- |
-| **Ban 1 VN — Vĩ Mô & Liên Thị Trường (`vn-macro-monetary-agent`)** | **`BEAR_WITH_SPRING_WATCH (VNI 1,688.79 • CIR 100% • SPRING 3/5)`** | Phiên Mỹ & Vĩ mô sống: VIX 35.89, SP500 6,910.39, DXY 103.74 và US10Y cao. Tại Việt Nam, SBV giữ lãi suất tái cấp vốn 4.5%, tín dụng YTD None%, đầu tư công None%, tỷ giá USD/VND 25,825.0đ. Phiên 20/11 VNI đạp 1,666.41 rồi rút chân đóng đỉnh 1,688.79 (Br20=23.0%, Spring 3/5). | **Khóa mua sáng Thứ Hai 23/11; chiều 14h05–14h25 chỉ kích hoạt S3 Spring V3.0 (30–40% NAV) nếu VNI >= 1,678, Br20 >= 24%, Vol >= 1.05x, Buy-Up >= 58%; ngược lại giữ 100% Cash.** |
+| **Ban 1 VN — Vĩ Mô & Liên Thị Trường (`vn-macro-monetary-agent`)** | **`BEAR_WITH_SPRING_WATCH (VNI 1,688.79 • CIR 100% • SPRING 3/5)`** | Phiên Mỹ & Vĩ mô sống: VIX 35.89, SP500 6,910.39, DXY 103.78 và US10Y cao. Tại Việt Nam, SBV giữ lãi suất tái cấp vốn 4.5%, tín dụng YTD None%, đầu tư công None%, tỷ giá USD/VND 25,825.0đ. Phiên 20/11 VNI đạp 1,666.41 rồi rút chân đóng đỉnh 1,688.79 (Br20=23.0%, Spring 3/5). | **Khóa mua sáng Thứ Hai 23/11; chiều 14h05–14h25 chỉ kích hoạt S3 Spring V3.0 (30–40% NAV) nếu VNI >= 1,678, Br20 >= 24%, Vol >= 1.05x, Buy-Up >= 58%; ngược lại giữ 100% Cash.** |
 | **Ban 2 VN — Thẩm Định BCTC & Thanh Khoản (`vn-equity-bctc-agent`)** | **`BCTC Q3/2026 SẠCH • CẤM TUYỆT ĐỐI BAF/VIX/CII/CEO`** | Kho dữ liệu thật 80 DN Q3/2026 Vietcap IQ + 506 tin Internet đã sàng lọc top dẫn dắt sạch: TPB (F=9/9), CTG (F=8/9), HPG (F=8/9), HDB (F=6/9, RS=90), VPB (F=7/9) — thanh khoản hàng trăm tỷ/phiên, đồng thời loại bỏ vĩnh viễn BAF (OCF -496.2 tỷ, F=2/9, Beneish HIGH_RISK) và hàng đầu cơ lỗ. | **Chỉ giải ngân vào doanh nghiệp BCTC sạch dòng tiền thật, đủ thanh khoản ra vào Lô 100 linh hoạt.** |
 | **Ban 3 VN — Tổng Hợp & Đọc Vị Dòng Tiền VSA (`vn-synthesis-hub-agent`)** | **`KHUNG GIỜ VÀNG 14H05–14H25 • 4 PHẢN BIỆN ĐỘC LẬP V3.0`** | Kiên quyết chặn bẫy Bull-Trap sáng Thứ Hai (dư nợ margin toàn sàn cao). Nếu 14h05–14h25 xuất hiện Spring thật (Buy-Up >= 58%, Vol >= 1.05x) mới kích hoạt tối đa 2 kèo S3 (30–40% NAV); khi Breadth >= 50% (S1) mới mở 75–85% NAV. | **Thăm dò Limit LO quanh vùng rút chân 14h05–14h25 và luôn cài Stop cứng -5.5% ngay khi khớp.** |
 | **Ban 4 VN — Hội Đồng Đầu Tư & Rủi Ro T+2.5 (`vn-investment-committee-agent`)** | **`100% CASH SẠCH (15,541,117 đ) • KHÓA RỦI RO RỔ <= 2.0% NAV`** | Tổng tài sản hiện hữu 20,051,117 đ (Tiền mặt 15,541,117 đ = 77.5% | 0 CP sau tất toán sạch BAF & MSH chiều 20/11). Chuẩn Tuần 48: Mỗi lệnh Stop -5.5% khóa rủi ro <= 1.2% NAV, tổng rổ S3 không vượt 2.0% NAV. | **Giữ 100% Cash nếu S4 kích hoạt; nếu mở S3 chỉ dùng 30–40% NAV vào tối đa 2 mã sạch.** |
@@ -79,12 +79,12 @@
 
 | Mã | Sàn | Phân Nhánh | Giá Hiện Tại | Khối Lượng (Lô 100) | Giá Trị (VNĐ) | Nhịp Gom 1 (60% Limit) | Nhịp Gom 2 (40% Breakout) | Cắt Lỗ (Stop 2xATR) | Chốt Lời TP1 / TP2 | Xác Suất P(W) | R:R | Kỳ Vọng EV% | Van An Toàn Toán Học |
 | :---: | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`TPB`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **11,950 đ** | **300 CP** | 3,585,000 đ | **11,850 đ** | **12,110 đ** | **11,300 đ** *(-5.44%)* | 12,860 đ / 13,640 đ | `56%` | `1:2.6` | **`+3.86%`** | `PASSED (-0.53% NAV)` |
-| **`HDB`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **21,300 đ** | **300 CP** | 6,390,000 đ | **21,150 đ** | **21,560 đ** | **20,280 đ** *(-4.79%)* | 22,730 đ / 23,960 đ | `60%` | `1:2.61` | **`+3.84%`** | `PASSED (-0.84% NAV)` |
-| **`CTG`** | HOSE | `HOLDING / THIN-VOL CAP 100 CP (VN30_LargeCap)` | **29,600 đ** | **100 CP** | 2,960,000 đ | **29,430 đ** | **29,880 đ** | **28,460 đ** *(-3.85%)* | 31,190 đ / 32,550 đ | `56%` | `1:2.59` | **`+2.6%`** | `PASSED (-0.31% NAV)` |
-| **`HPG`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **19,950 đ** | **200 CP** | 3,990,000 đ | **19,830 đ** | **20,150 đ** | **19,150 đ** *(-4.01%)* | 21,070 đ / 22,030 đ | `55%` | `1:2.6` | **`+2.61%`** | `PASSED (-0.44% NAV)` |
-| **`VPB`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **19,950 đ** | **200 CP** | 3,990,000 đ | **19,770 đ** | **20,250 đ** | **18,760 đ** *(-5.96%)* | 21,610 đ / 23,030 đ | `57%` | `1:2.59` | **`+4.39%`** | `PASSED (-0.65% NAV)` |
-| **`TCB`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **20,150 đ** | **200 CP** | 4,030,000 đ | **20,000 đ** | **20,400 đ** | **19,160 đ** *(-4.91%)* | 21,540 đ / 22,730 đ | `55%` | `1:2.61` | **`+3.21%`** | `PASSED (-0.54% NAV)` |
+| **`TPB`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **12,000 đ** | **300 CP** | 3,600,000 đ | **11,900 đ** | **12,160 đ** | **11,350 đ** *(-5.42%)* | 12,910 đ / 13,690 đ | `56%` | `1:2.6` | **`+3.84%`** | `PASSED (-0.54% NAV)` |
+| **`HDB`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **21,400 đ** | **300 CP** | 6,420,000 đ | **21,250 đ** | **21,660 đ** | **20,380 đ** *(-4.77%)* | 22,830 đ / 24,060 đ | `61%` | `1:2.61` | **`+3.97%`** | `PASSED (-0.84% NAV)` |
+| **`CTG`** | HOSE | `HOLDING / THIN-VOL CAP 100 CP (VN30_LargeCap)` | **29,400 đ** | **100 CP** | 2,940,000 đ | **29,230 đ** | **29,680 đ** | **28,260 đ** *(-3.88%)* | 30,990 đ / 32,350 đ | `56%` | `1:2.59` | **`+2.62%`** | `PASSED (-0.31% NAV)` |
+| **`HPG`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **19,600 đ** | **200 CP** | 3,920,000 đ | **19,480 đ** | **19,800 đ** | **18,800 đ** *(-4.08%)* | 20,720 đ / 21,680 đ | `55%` | `1:2.6` | **`+2.65%`** | `PASSED (-0.44% NAV)` |
+| **`VPB`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **19,700 đ** | **200 CP** | 3,940,000 đ | **19,520 đ** | **20,000 đ** | **18,510 đ** *(-6.04%)* | 21,360 đ / 22,780 đ | `57%` | `1:2.59` | **`+4.44%`** | `PASSED (-0.65% NAV)` |
+| **`TCB`** | HOSE | `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **19,650 đ** | **200 CP** | 3,930,000 đ | **19,500 đ** | **19,900 đ** | **18,660 đ** *(-5.04%)* | 21,040 đ / 22,230 đ | `55%` | `1:2.61` | **`+3.29%`** | `PASSED (-0.54% NAV)` |
 
 ---
 
@@ -92,93 +92,93 @@
 Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC Hợp Nhất Kiểm Toán và 5 Bậc Thầy Đầu Tư Thế Giới:
 
 ### 💎 4.1. Cổ Phiếu **`TPB`** — TPBank (HOSE)
-- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`17.88% NAV`** (`3,585,000 VNĐ` ~ **300 CP**)
-- **Kỳ vọng Toán học (`EV%`)**: **`+3.86%`** | **Xác suất Thắng `P(W)`**: **`56%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.6`**
+- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`17.95% NAV`** (`3,600,000 VNĐ` ~ **300 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+3.84%`** | **Xác suất Thắng `P(W)`**: **`56%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.6`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu TPB giao dịch tại 11,950 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Ngân hàng số LiveBank dẫn đầu giới trẻ, NIM phục hồi Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu TPB giao dịch tại 12,000 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Ngân hàng số LiveBank dẫn đầu giới trẻ, NIM phục hồi Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `84.3/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `35,403 đ` (MoS `+196.3%`) • Lynch PEG: `0.21x` • EVA Spread: `+5.5%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+  **[Hội Đồng 10 Đại Danh Thủ: `84.5/100` • Piotroski F-Score: `9/9` • Graham Intrinsic: `35,551 đ` (MoS `+196.3%`) • Lynch PEG: `0.21x` • EVA Spread: `+5.5%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
 
 **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Doanh nghiệp đầu ngành `Ngân Hàng TMCP` sở hữu lợi thế cạnh tranh bền vững, ROE thực tế đạt `15.1%`, biên lợi nhuận hoạt động cao và chất xúc tác cốt lõi: Ngân hàng số LiveBank dẫn đầu giới trẻ, NIM phục hồi.
 
 **Bộ Tiêu Chí CANSLIM (William O'Neil)**:
 - **C & A (Earnings & Annual Growth)**: Tăng trưởng doanh thu `+12.94% YoY`, tăng trưởng lợi nhuận `+29.23% YoY`.
-- **L (Leader RS Rating)**: Sức mạnh giá tương đối RS đạt **`76/99`** (Thuộc nhóm dẫn dắt mạnh nhất sàn, vượt xa các mã cũ đang suy yếu).
+- **L (Leader RS Rating)**: Sức mạnh giá tương đối RS đạt **`78/99`** (Thuộc nhóm dẫn dắt mạnh nhất sàn, vượt xa các mã cũ đang suy yếu).
 - **S & M (Supply/Demand & Wyckoff)**: Tín hiệu VSA `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)` trong pha `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Không bắt dao rơi)`.
 
 **Kế Toán Pháp Y & Tiền Thật (Graham, Sloan & Beneish Audit)**:
 - Tỷ lệ Tiền Thật: **OCF / LNST = `4.0x`** (> 1.0x xác nhận lợi nhuận bằng tiền mặt thật 100%).
 - Chỉ số chống gian lận: **Modified Beneish M-Score = `-2.55`** (< -1.78 vùng an toàn tuyệt đối).
-- Định giá Graham & Lynch: Giá trị nội tại Graham **`35,403 ₫`** (Biên an toàn MoS **`+196.3%`**), PEG = **`0.21x`**.
+- Định giá Graham & Lynch: Giá trị nội tại Graham **`35,551 ₫`** (Biên an toàn MoS **`+196.3%`**), PEG = **`0.21x`**.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 90 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **11,850 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 120 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **12,110 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 1 (30% Vị thế — 90 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **11,900 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 120 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **12,160 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
 - **Nhịp 3 (30% Vị thế — 90 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
-- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**12,860 đ**, lãi +7.62%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**13,640 đ**, lãi +14.14%).
-- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **11,300 đ** (khống chế rủi ro tối đa -5.44%, triệt tiêu bài toán bất đối xứng của thua lỗ).
+- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**12,910 đ**, lãi +7.58%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**13,690 đ**, lãi +14.08%).
+- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **11,350 đ** (khống chế rủi ro tối đa -5.42%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.2. Cổ Phiếu **`HDB`** — HDBank (HOSE)
-- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`31.87% NAV`** (`6,390,000 VNĐ` ~ **300 CP**)
-- **Kỳ vọng Toán học (`EV%`)**: **`+3.84%`** | **Xác suất Thắng `P(W)`**: **`60%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.61`**
+- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`32.02% NAV`** (`6,420,000 VNĐ` ~ **300 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+3.97%`** | **Xác suất Thắng `P(W)`**: **`61%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.61`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu HDB giao dịch tại 21,300 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Tăng trưởng tín dụng & ROE dẫn đầu ngành, mảng tài chính tiêu dùng HD Saison khỏe Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu HDB giao dịch tại 21,400 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Tăng trưởng tín dụng & ROE dẫn đầu ngành, mảng tài chính tiêu dùng HD Saison khỏe Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `90.3/100` • Piotroski F-Score: `6/9` • Graham Intrinsic: `36,457 đ` (MoS `+71.2%`) • Lynch PEG: `0.28x` • EVA Spread: `+10.0%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+  **[Hội Đồng 10 Đại Danh Thủ: `91.7/100` • Piotroski F-Score: `6/9` • Graham Intrinsic: `36,628 đ` (MoS `+71.2%`) • Lynch PEG: `0.28x` • EVA Spread: `+10.0%` • Wyckoff VSA: `NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung giữ nền)`]**
 
 **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Doanh nghiệp đầu ngành `Ngân Hàng TMCP` sở hữu lợi thế cạnh tranh bền vững, ROE thực tế đạt `19.5%`, biên lợi nhuận hoạt động cao và chất xúc tác cốt lõi: Tăng trưởng tín dụng & ROE dẫn đầu ngành, mảng tài chính tiêu dùng HD Saison khỏe.
 
 **Bộ Tiêu Chí CANSLIM (William O'Neil)**:
 - **C & A (Earnings & Annual Growth)**: Tăng trưởng doanh thu `+16.52% YoY`, tăng trưởng lợi nhuận `+33.02% YoY`.
 - **L (Leader RS Rating)**: Sức mạnh giá tương đối RS đạt **`95/99`** (Thuộc nhóm dẫn dắt mạnh nhất sàn, vượt xa các mã cũ đang suy yếu).
-- **S & M (Supply/Demand & Wyckoff)**: Tín hiệu VSA `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)` trong pha `Phase C/D — RE-ACCUMULATION (Tích lũy lại / Test cung trên MA200)`.
+- **S & M (Supply/Demand & Wyckoff)**: Tín hiệu VSA `NO_SUPPLY_TEST_CUNG (Nến biên hẹp, Vol cạn < 0.8x MA20 — Cạn cung giữ nền)` trong pha `Phase C/D — RE-ACCUMULATION (Tích lũy lại / Test cung trên MA200)`.
 
 **Kế Toán Pháp Y & Tiền Thật (Graham, Sloan & Beneish Audit)**:
 - Tỷ lệ Tiền Thật: **OCF / LNST = `2.46x`** (> 1.0x xác nhận lợi nhuận bằng tiền mặt thật 100%).
 - Chỉ số chống gian lận: **Modified Beneish M-Score = `-2.55`** (< -1.78 vùng an toàn tuyệt đối).
-- Định giá Graham & Lynch: Giá trị nội tại Graham **`36,457 ₫`** (Biên an toàn MoS **`+71.2%`**), PEG = **`0.28x`**.
+- Định giá Graham & Lynch: Giá trị nội tại Graham **`36,628 ₫`** (Biên an toàn MoS **`+71.2%`**), PEG = **`0.28x`**.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 90 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **21,150 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 120 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **21,560 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 1 (30% Vị thế — 90 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **21,250 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 120 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **21,660 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
 - **Nhịp 3 (30% Vị thế — 90 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
-- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**22,730 đ**, lãi +6.71%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**23,960 đ**, lãi +12.49%).
-- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **20,280 đ** (khống chế rủi ro tối đa -4.79%, triệt tiêu bài toán bất đối xứng của thua lỗ).
+- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**22,830 đ**, lãi +6.68%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**24,060 đ**, lãi +12.43%).
+- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **20,380 đ** (khống chế rủi ro tối đa -4.77%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.3. Cổ Phiếu **`CTG`** — VietinBank (HOSE)
-- **Phân nhánh danh mục**: `HOLDING / THIN-VOL CAP 100 CP (VN30_LargeCap)` | **Tỷ trọng**: **`14.76% NAV`** (`2,960,000 VNĐ` ~ **100 CP**)
-- **Kỳ vọng Toán học (`EV%`)**: **`+2.6%`** | **Xác suất Thắng `P(W)`**: **`56%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
+- **Phân nhánh danh mục**: `HOLDING / THIN-VOL CAP 100 CP (VN30_LargeCap)` | **Tỷ trọng**: **`14.66% NAV`** (`2,940,000 VNĐ` ~ **100 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+2.62%`** | **Xác suất Thắng `P(W)`**: **`56%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu CTG giao dịch tại 29,600 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Chu kỳ giảm chi phí trích lập dự phòng, lợi nhuận bứt tốc Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu CTG giao dịch tại 29,400 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Chu kỳ giảm chi phí trích lập dự phòng, lợi nhuận bứt tốc Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `81.5/100` • Piotroski F-Score: `8/9` • Graham Intrinsic: `65,145 đ` (MoS `+120.1%`) • Lynch PEG: `0.22x` • EVA Spread: `+9.0%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+  **[Hội Đồng 10 Đại Danh Thủ: `81.4/100` • Piotroski F-Score: `8/9` • Graham Intrinsic: `64,705 đ` (MoS `+120.1%`) • Lynch PEG: `0.22x` • EVA Spread: `+9.0%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
 
 **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Doanh nghiệp đầu ngành `Ngân Hàng TMCP` sở hữu lợi thế cạnh tranh bền vững, ROE thực tế đạt `18.5%`, biên lợi nhuận hoạt động cao và chất xúc tác cốt lõi: Chu kỳ giảm chi phí trích lập dự phòng, lợi nhuận bứt tốc.
 
 **Bộ Tiêu Chí CANSLIM (William O'Neil)**:
 - **C & A (Earnings & Annual Growth)**: Tăng trưởng doanh thu `+21.62% YoY`, tăng trưởng lợi nhuận `+27.67% YoY`.
-- **L (Leader RS Rating)**: Sức mạnh giá tương đối RS đạt **`66/99`** (Thuộc nhóm dẫn dắt mạnh nhất sàn, vượt xa các mã cũ đang suy yếu).
+- **L (Leader RS Rating)**: Sức mạnh giá tương đối RS đạt **`65/99`** (Thuộc nhóm dẫn dắt mạnh nhất sàn, vượt xa các mã cũ đang suy yếu).
 - **S & M (Supply/Demand & Wyckoff)**: Tín hiệu VSA `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)` trong pha `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Không bắt dao rơi)`.
 
 **Kế Toán Pháp Y & Tiền Thật (Graham, Sloan & Beneish Audit)**:
 - Tỷ lệ Tiền Thật: **OCF / LNST = `1.63x`** (> 1.0x xác nhận lợi nhuận bằng tiền mặt thật 100%).
 - Chỉ số chống gian lận: **Modified Beneish M-Score = `-2.55`** (< -1.78 vùng an toàn tuyệt đối).
-- Định giá Graham & Lynch: Giá trị nội tại Graham **`65,145 ₫`** (Biên an toàn MoS **`+120.1%`**), PEG = **`0.22x`**.
+- Định giá Graham & Lynch: Giá trị nội tại Graham **`64,705 ₫`** (Biên an toàn MoS **`+120.1%`**), PEG = **`0.22x`**.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 30 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **29,430 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 40 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **29,880 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 1 (30% Vị thế — 30 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **29,230 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 40 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **29,680 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
 - **Nhịp 3 (30% Vị thế — 30 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
-- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**31,190 đ**, lãi +5.37%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**32,550 đ**, lãi +9.97%).
-- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **28,460 đ** (khống chế rủi ro tối đa -3.85%, triệt tiêu bài toán bất đối xứng của thua lỗ).
+- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**30,990 đ**, lãi +5.41%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**32,350 đ**, lãi +10.03%).
+- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **28,260 đ** (khống chế rủi ro tối đa -3.88%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.4. Cổ Phiếu **`HPG`** — Tập đoàn Hòa Phát (HOSE)
-- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`19.9% NAV`** (`3,990,000 VNĐ` ~ **200 CP**)
-- **Kỳ vọng Toán học (`EV%`)**: **`+2.61%`** | **Xác suất Thắng `P(W)`**: **`55%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.6`**
+- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`19.55% NAV`** (`3,920,000 VNĐ` ~ **200 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+2.65%`** | **Xác suất Thắng `P(W)`**: **`55%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.6`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu HPG giao dịch tại 19,950 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Dung Quất 2 bổ sung 5.6 triệu tấn HRC/năm + Thuế chống bán phá giá HRC bảo hộ nội địa Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu HPG giao dịch tại 19,600 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Dung Quất 2 bổ sung 5.6 triệu tấn HRC/năm + Thuế chống bán phá giá HRC bảo hộ nội địa Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `78.5/100` • Piotroski F-Score: `8/9` • Graham Intrinsic: `54,361 đ` (MoS `+172.5%`) • Lynch PEG: `0.08x` • EVA Spread: `+6.7%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+  **[Hội Đồng 10 Đại Danh Thủ: `76.5/100` • Piotroski F-Score: `8/9` • Graham Intrinsic: `53,408 đ` (MoS `+172.5%`) • Lynch PEG: `0.08x` • EVA Spread: `+6.7%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
 
 **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Nhà sản xuất thép lò cao khép kín quy mô lớn nhất Đông Nam Á với công suất vượt trội, chi phí biến đổi trên mỗi tấn thép rẻ hơn đối thủ 15%–20%. Được bảo hộ chiến lược bởi chính sách thuế chống bán phá giá HRC và sở hữu hệ sinh thái cảng nước sâu riêng giúp tối ưu hóa chi phí vận chuyển than/quặng.
 
@@ -199,46 +199,46 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - Đơn vị kiểm toán: **KPMG (Big 4 Toàn Cầu)** xác nhận ý kiến Chấp nhận toàn phần, hoàn thành **106.7%** kế hoạch ĐHCĐ.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 60 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **19,830 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 80 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **20,150 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 1 (30% Vị thế — 60 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **19,480 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 80 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **19,800 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
 - **Nhịp 3 (30% Vị thế — 60 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
-- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**21,070 đ**, lãi +5.61%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**22,030 đ**, lãi +10.43%).
-- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **19,150 đ** (khống chế rủi ro tối đa -4.01%, triệt tiêu bài toán bất đối xứng của thua lỗ).
+- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**20,720 đ**, lãi +5.71%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**21,680 đ**, lãi +10.61%).
+- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **18,800 đ** (khống chế rủi ro tối đa -4.08%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.5. Cổ Phiếu **`VPB`** — VPBank (HOSE)
-- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`19.9% NAV`** (`3,990,000 VNĐ` ~ **200 CP**)
-- **Kỳ vọng Toán học (`EV%`)**: **`+4.39%`** | **Xác suất Thắng `P(W)`**: **`57%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
+- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`19.65% NAV`** (`3,940,000 VNĐ` ~ **200 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+4.44%`** | **Xác suất Thắng `P(W)`**: **`57%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.59`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu VPB giao dịch tại 19,950 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Hậu thuẫn vốn từ SMBC (CAR >17%), FE Credit phục hồi có lãi Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu VPB giao dịch tại 19,700 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: Hậu thuẫn vốn từ SMBC (CAR >17%), FE Credit phục hồi có lãi Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `86.0/100` • Piotroski F-Score: `7/9` • Graham Intrinsic: `47,780 đ` (MoS `+139.5%`) • Lynch PEG: `0.16x` • EVA Spread: `+4.7%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+  **[Hội Đồng 10 Đại Danh Thủ: `85.9/100` • Piotroski F-Score: `7/9` • Graham Intrinsic: `47,181 đ` (MoS `+139.5%`) • Lynch PEG: `0.16x` • EVA Spread: `+4.7%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
 
 **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Doanh nghiệp đầu ngành `Ngân Hàng TMCP` sở hữu lợi thế cạnh tranh bền vững, ROE thực tế đạt `14.2%`, biên lợi nhuận hoạt động cao và chất xúc tác cốt lõi: Hậu thuẫn vốn từ SMBC (CAR >17%), FE Credit phục hồi có lãi.
 
 **Bộ Tiêu Chí CANSLIM (William O'Neil)**:
 - **C & A (Earnings & Annual Growth)**: Tăng trưởng doanh thu `+25.77% YoY`, tăng trưởng lợi nhuận `+51.01% YoY`.
-- **L (Leader RS Rating)**: Sức mạnh giá tương đối RS đạt **`77/99`** (Thuộc nhóm dẫn dắt mạnh nhất sàn, vượt xa các mã cũ đang suy yếu).
-- **S & M (Supply/Demand & Wyckoff)**: Tín hiệu VSA `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)` trong pha `Phase E (Bear) — MARKDOWN (Đè giá dưới MA200 — Không bắt dao rơi)`.
+- **L (Leader RS Rating)**: Sức mạnh giá tương đối RS đạt **`76/99`** (Thuộc nhóm dẫn dắt mạnh nhất sàn, vượt xa các mã cũ đang suy yếu).
+- **S & M (Supply/Demand & Wyckoff)**: Tín hiệu VSA `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)` trong pha `Phase A — SELLING CLIMAX / OVERSOLD (Quá bán cạn kiệt chờ cân bằng)`.
 
 **Kế Toán Pháp Y & Tiền Thật (Graham, Sloan & Beneish Audit)**:
 - Tỷ lệ Tiền Thật: **OCF / LNST = `2.03x`** (> 1.0x xác nhận lợi nhuận bằng tiền mặt thật 100%).
 - Chỉ số chống gian lận: **Modified Beneish M-Score = `-2.55`** (< -1.78 vùng an toàn tuyệt đối).
-- Định giá Graham & Lynch: Giá trị nội tại Graham **`47,780 ₫`** (Biên an toàn MoS **`+139.5%`**), PEG = **`0.16x`**.
+- Định giá Graham & Lynch: Giá trị nội tại Graham **`47,181 ₫`** (Biên an toàn MoS **`+139.5%`**), PEG = **`0.16x`**.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 60 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **19,770 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 80 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **20,250 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 1 (30% Vị thế — 60 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **19,520 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 80 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **20,000 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
 - **Nhịp 3 (30% Vị thế — 60 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
-- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**21,610 đ**, lãi +8.32%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**23,030 đ**, lãi +15.44%).
-- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **18,760 đ** (khống chế rủi ro tối đa -5.96%, triệt tiêu bài toán bất đối xứng của thua lỗ).
+- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**21,360 đ**, lãi +8.43%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**22,780 đ**, lãi +15.63%).
+- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **18,510 đ** (khống chế rủi ro tối đa -6.04%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ### 💎 4.6. Cổ Phiếu **`TCB`** — Techcombank (HOSE)
-- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`20.1% NAV`** (`4,030,000 VNĐ` ~ **200 CP**)
-- **Kỳ vọng Toán học (`EV%`)**: **`+3.21%`** | **Xác suất Thắng `P(W)`**: **`55%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.61`**
+- **Phân nhánh danh mục**: `CORE TUẦN SAU (13K-22.5K • 200-300 CP)` | **Tỷ trọng**: **`19.6% NAV`** (`3,930,000 VNĐ` ~ **200 CP**)
+- **Kỳ vọng Toán học (`EV%`)**: **`+3.29%`** | **Xác suất Thắng `P(W)`**: **`55%`** | **Tỷ lệ `Reward/Risk`**: **`1:2.61`**
 - **1. Biến động thị trường & Các sự kiện / Chất xúc tác kích hoạt (`Market Events & Catalysts`)**:
-  Cổ phiếu TCB giao dịch tại 20,150 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: CASA 40.5% đầu ngành, CAR 15.2%, động lực IPO TCBS Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
+  Cổ phiếu TCB giao dịch tại 19,650 đ, tích lũy chặt chẽ trên đường MA50 ngày. Chất xúc tác kích hoạt mạnh: CASA 40.5% đầu ngành, CAR 15.2%, động lực IPO TCBS Dòng tiền khối ngoại và tự doanh duy trì mua ròng tích cực trong các phiên gần nhất khi thị trường chung xác nhận đáy trung hạn.
 - **2. Tại sao Minh Quân quyết định đầu tư? (Khung Phân Tích 5 Bậc Thầy Đầu Tư & BCTC Kiểm Toán)**:
-  **[Hội Đồng 10 Đại Danh Thủ: `79.2/100` • Piotroski F-Score: `7/9` • Graham Intrinsic: `38,456 đ` (MoS `+90.8%`) • Lynch PEG: `0.28x` • EVA Spread: `+3.0%` • Wyckoff VSA: `NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ)`]**
+  **[Hội Đồng 10 Đại Danh Thủ: `78.5/100` • Piotroski F-Score: `7/9` • Graham Intrinsic: `37,502 đ` (MoS `+90.8%`) • Lynch PEG: `0.28x` • EVA Spread: `+3.0%` • Wyckoff VSA: `SUPPLY_OVERCOMING_DEMAND (Áp lực cung bán ròng khối lượng lớn)`]**
 
 **Lợi thế Con Hào Kinh Tế (Buffett Economic Moat)**: Ngân hàng TMCP tư nhân số 1 Việt Nam về lợi thế huy động vốn giá rẻ với tỷ lệ **CASA đạt 40.5%** nhờ tính năng Sinh lời tự động (Auto-earning) và hệ sinh thái khách hàng thu nhập cao (Affluent). Bộ đệm an toàn vốn **CAR Basel II đạt 15.2%** cao nhất toàn hệ thống ngân hàng.
 
@@ -257,11 +257,11 @@ Dưới đây là giải trình minh bạch của Minh Quân dựa trên BCTC H�
 - Điểm số Piotroski F-Score = **9/9**; Đơn vị kiểm toán: **Ernst & Young (Big 4 Toàn Cầu)** chấp thuận toàn phần.
 - **3. Cách thức đầu tư để tối ưu hóa lợi nhuận cao nhất (`How to Maximize Profit & Manage Risk`)**:
   Áp dụng triệt để chiến lược giải ngân Kim Tự Tháp 30% - 40% - 30% kết hợp Khung Giờ Vàng 14h00 – 14h25:
-- **Nhịp 1 (30% Vị thế — 60 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **20,000 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
-- **Nhịp 2 (40% Vị thế — 80 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **20,400 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
+- **Nhịp 1 (30% Vị thế — 60 CP)**: Đặt lệnh Chờ Mua Giới Hạn (Limit Order LO) tại vùng giá chiết khấu **19,500 đ** trong phiên sáng (tuyệt đối không đua lệnh xanh ATO).
+- **Nhịp 2 (40% Vị thế — 80 CP)**: Giải ngân gia tăng trong Khung Giờ Vàng 14h00-14h25 khi giá bứt phá vượt cản **19,900 đ** kèm thanh khoản Buy Up tăng vọt >= +50% MA20.
 - **Nhịp 3 (30% Vị thế — 60 CP)**: Hoàn tất vị thế khi giá Retest thành công đường hỗ trợ.
-- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**21,540 đ**, lãi +6.9%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**22,730 đ**, lãi +12.8%).
-- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **19,160 đ** (khống chế rủi ro tối đa -4.91%, triệt tiêu bài toán bất đối xứng của thua lỗ).
+- **Kế hoạch Chốt Lời Scaling Out 50/50**: Đạt mục tiêu TP1 (**21,040 đ**, lãi +7.07%) -> Chốt lời 50% vị thế đút túi lợi nhuận; đồng thời lập tức nâng ngưỡng Stop lên giá vốn để gồng 50% còn lại lên TP2 (**22,230 đ**, lãi +13.13%).
+- **Ngưỡng Cắt Lỗ Kỷ Luật Khóa Rủi Ro**: Cắt lỗ dứt khoát nếu giá đóng cửa thủng **18,660 đ** (khống chế rủi ro tối đa -5.04%, triệt tiêu bài toán bất đối xứng của thua lỗ).
 
 ---
 

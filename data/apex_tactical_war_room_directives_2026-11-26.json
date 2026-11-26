@@ -104,5 +104,41 @@
     "role": "sentinel",
     "type": "sentinel_warning",
     "content": "⚠️ [BIẾN ĐỘNG MẠNH — HPG] Giá 19,600 (-2.24%) | Cách Stop: +1.53%."
+  },
+  {
+    "id": "cbtt_2026-11-26_CRITICAL_HPG_30062",
+    "key": "cbtt_2026-11-26_CRITICAL_HPG_30062",
+    "timestamp": "01:25:40",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — HPG] Hưởng lợi lớn từ HRC, “vua thép” Hòa Phát (HPG) được dự báo lãi 7.500 tỷ đồng trong quý IV (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-26_CRITICAL_PNJ_6196",
+    "key": "cbtt_2026-11-26_CRITICAL_PNJ_6196",
+    "timestamp": "01:25:40",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Vietcap hạ 68% giá mục tiêu PNJ, dự báo có lãi trở lại vào năm 2027 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-26_RED_FLAG_HCM_58053",
+    "key": "cbtt_2026-11-26_RED_FLAG_HCM_58053",
+    "timestamp": "01:25:40",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — HCM] Đánh sập đường dây rửa tiền hơn 9.000 tỷ đồng qua đánh bạc trực tuyến (CANH_BAO_RUI_RO)"
+  },
+  {
+    "id": "cbtt_2026-11-26_RED_FLAG_HCM_5960",
+    "key": "cbtt_2026-11-26_RED_FLAG_HCM_5960",
+    "timestamp": "01:25:40",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — HCM] TDW vi phạm thuế, vào danh sách 74 mã bị cắt margin trên HOSE (CANH_BAO_RUI_RO)"
   }
 ]

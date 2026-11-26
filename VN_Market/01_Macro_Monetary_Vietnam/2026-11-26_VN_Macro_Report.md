@@ -14,13 +14,13 @@
 
 ## 2. XẾP HẠNG LUÂN CHUYỂN 18 NHÓM NGÀNH THỰC TẾ (TỪ BỘ QUÉT 145 MÃ)
 ### Nhóm Ngành Dẫn Dắt / Giữ Nhịp Tương Đối Tốt Nhất:
-  1. **Điện & Hạ Tầng Năng Lượng** (`50.9đ`, RS TB `70.3`, Breadth>MA20 `28.6%`, Ret 1M `-0.95%`) — WEAKENING (Phân Hóa / Chững Lại) | Top ngành: `NT2, HDG, QTP`
-  2. **Thực Phẩm & Đồ Uống Thiết Yếu** (`47.8đ`, RS TB `85.8`, Breadth>MA20 `16.7%`, Ret 1M `-4.39%`) — WEAKENING (Phân Hóa / Chững Lại) | Top ngành: `VNM, QNS, SAB`
-  3. **Ngân Hàng TMCP** (`36.2đ`, RS TB `66.8`, Breadth>MA20 `5.9%`, Ret 1M `-7.06%`) — LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | Top ngành: `NAB, OCB, HDB`
-  4. **Thép & Kim Loại Công Nghiệp** (`32.5đ`, RS TB `53.7`, Breadth>MA20 `0.0%`, Ret 1M `-6.34%`) — LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | Top ngành: `HPG, NKG, TLH`
-  5. **Dệt May Xuất Khẩu** (`31.1đ`, RS TB `58.0`, Breadth>MA20 `0.0%`, Ret 1M `-9.83%`) — LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | Top ngành: `VGT`
+  1. **Điện & Hạ Tầng Năng Lượng** (`56.0đ`, RS TB `71.9`, Breadth>MA20 `42.9%`, Ret 1M `-0.60%`) — IMPROVING (Đang Tích Lũy Thu Hút Dòng Tiền) | Top ngành: `NT2, HDG, PC1`
+  2. **Thực Phẩm & Đồ Uống Thiết Yếu** (`53.3đ`, RS TB `87.0`, Breadth>MA20 `33.3%`, Ret 1M `-3.72%`) — IMPROVING (Đang Tích Lũy Thu Hút Dòng Tiền) | Top ngành: `VNM, SAB, QNS`
+  3. **Ngân Hàng TMCP** (`35.8đ`, RS TB `65.9`, Breadth>MA20 `5.9%`, Ret 1M `-7.66%`) — LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | Top ngành: `HDB, NAB, MSB`
+  4. **Đầu Tư Công, Xây Dựng & Vật Liệu** (`33.8đ`, RS TB `47.9`, Breadth>MA20 `18.2%`, Ret 1M `-6.92%`) — LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | Top ngành: `HHV, PLC, FCN`
+  5. **Thép & Kim Loại Công Nghiệp** (`32.5đ`, RS TB `53.8`, Breadth>MA20 `0.0%`, Ret 1M `-6.95%`) — LAGGING (Ngành Yếu / Dòng Tiền Rút Ra) | Top ngành: `HPG, NKG, TLH`
 
 ### Nhóm Ngành Suy Yếu / Dòng Tiền Rút Ra (Tránh Đuổi Giá):
-  - **Chứng Khoán & Đầu Tư** (`23.4đ`, RS TB `47.7`, Ret 1M `-5.44%`)
-  - **Thủy Sản Xuất Khẩu (Cá Tra & Tôm)** (`22.0đ`, RS TB `48.8`, Ret 1M `-10.59%`)
-  - **Công Nghệ Thông Tin & Viễn Thông** (`12.2đ`, RS TB `27.1`, Ret 1M `-12.30%`)
+  - **Thủy Sản Xuất Khẩu (Cá Tra & Tôm)** (`21.9đ`, RS TB `48.7`, Ret 1M `-11.43%`)
+  - **Bất Động Sản Dân Cư & Đô Thị** (`21.8đ`, RS TB `43.8`, Ret 1M `-4.66%`)
+  - **Công Nghệ Thông Tin & Viễn Thông** (`12.9đ`, RS TB `28.6`, Ret 1M `-12.72%`)

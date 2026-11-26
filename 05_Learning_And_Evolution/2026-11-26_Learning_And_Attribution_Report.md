@@ -7,29 +7,29 @@
 
 ## 🏛️ ĐỐI SOÁT & KIỂM TOÁN DANH MỤC THỰC THI PHỐ WALL CỦA CHUYÊN VIÊN ALEX (BAN 7 GLOBAL)
 *Mục tiêu*: Chuẩn bị nền tảng định lượng và dữ liệu kiểm toán thực chiến phục vụ lộ trình mở rộng quy mô vốn tham gia Phố Wall (US Equities) sau 6 tháng của **Chủ tịch Trần Quốc Thiên Phước**.
-- **Tỷ Lệ Dự Báo Chuẩn Xác Của Alex (Wall Street Hit Rate %)**: **`80.0%`** (8/10 mã đạt chuẩn sinh lời / giữ vững nền an toàn)
-- **Lợi Thế Tiết Kiệm Giá Vốn (Chiến Thuật 60/40 Pullback Limit)**: **`+$3,432.49 USD`**
+- **Tỷ Lệ Dự Báo Chuẩn Xác Của Alex (Wall Street Hit Rate %)**: **`100.0%`** (10/10 mã đạt chuẩn sinh lời / giữ vững nền an toàn)
+- **Lợi Thế Tiết Kiệm Giá Vốn (Chiến Thuật 60/40 Pullback Limit)**: **`+$3,407.70 USD`**
 - **Alpha Thực Tế So Với S&P 500 (5D Realized Alpha vs ^GSPC)**: **`+2.02%`**
 - **Trạng Thái Vi Phạm Stop 2xATR**: **`0.0%`** (100% vị thế tuân thủ tuyệt đối ranh giới phòng thủ, cách ngưỡng Stop an toàn).
 
 | Mã CP | Tên Tập Đoàn | Nhóm Ngành | Hành Động | Vốn Phân Bổ (USD) | Giá Mua Limit | Thị Giá Hôm Nay | Lãi/Lỗ Tạm Tính | Khoảng Cách Stop 2xATR | Trạng Thái Tác Chiến |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`MSFT`** | Microsoft Corp. | Enterprise Software & Cloud | `HOLD & TRAIL WINNER (Giữ & Gồng lãi chủ lực)` | $80,000.00 | $483.87 | $489.93 | **+1.25%** | +7.0% | 🟢 LÃI TÍCH CỰC |
-| **`V`** | Visa Inc. | Global Payment Network | `SCALE-IN AT DISCOUNT (Khớp thêm nhịp chỉnh -0.62%)` | $75,000.00 | $421.51 | $424.39 | **+0.68%** | +4.2% | 🟢 GIỮ NỀN AN TOÀN |
-| **`JPM`** | JPMorgan Chase & Co. | Global Diversified Banking | `ACCUMULATE AT MA200 (Tích lũy sát hỗ trợ)` | $70,000.00 | $314.38 | $316.74 | **+0.75%** | +4.8% | 🟢 GIỮ NỀN AN TOÀN |
-| **`PG`** | Procter & Gamble | Consumer Household Staples | `SCALE-IN AT DISCOUNT (Mua gom nhịp lùi -1.00%)` | $65,000.00 | $172.85 | $173.23 | **+0.22%** | +3.2% | 🟢 GIỮ NỀN AN TOÀN |
-| **`XOM`** | Exxon Mobil Corp. | Integrated Oil & Gas | `HOLD & TRAIL WINNER (Giữ & Hưởng lợi Dầu > $102)` | $65,000.00 | $158.29 | $158.08 | **-0.13%** | +3.5% | 🟡 ĐANG RETEST |
-| **`JNJ`** | Johnson & Johnson | Pharmaceuticals & MedTech | `SCALE-IN AT DISCOUNT (Mua gom nhịp lùi -1.08%)` | $60,000.00 | $274.24 | $273.94 | **-0.11%** | +3.8% | 🟡 ĐANG RETEST |
-| **`NVDA`** | NVIDIA Corp. | Semiconductors & AI | `HOLD & ADD ON DIP (Gồng lãi +0.58% • Cắt lỗ chặt)` | $55,000.00 | $141.43 | $149.30 | **+5.56%** | +22.8% | 🟢 LÃI TÍCH CỰC |
-| **`TSM`** | Taiwan Semiconductor (TSMC) | Global Chip Foundry | `HOLD & ADD ON DIP (Gồng lãi +0.35% • Chuẩn hóa USD)` | $50,000.00 | $328.78 | $342.34 | **+4.12%** | +16.1% | 🟢 LÃI TÍCH CỰC |
-| **`GOOGL`** | Alphabet Inc. | Search & Hyperscale Cloud | `NEW TACTICAL BUY (Mở mới từ Bài học Tối ưu Lợi nhuận)` | $42,000.00 | $266.78 | $273.10 | **+2.37%** | +9.3% | 🟢 LÃI TÍCH CỰC |
-| **`AVGO`** | Broadcom Inc. | Custom AI ASICs & Networking | `NEW TACTICAL BUY (Mở mới Quá bán Chất lượng cao)` | $38,000.00 | $283.57 | $300.86 | **+6.10%** | +18.4% | 🟢 LÃI TÍCH CỰC |
+| **`MSFT`** | Microsoft Corp. | Enterprise Software & Cloud | `HOLD & TRAIL WINNER (Giữ & Gồng lãi chủ lực)` | $80,000.00 | $483.96 | $489.93 | **+1.23%** | +7.0% | 🟢 LÃI TÍCH CỰC |
+| **`V`** | Visa Inc. | Global Payment Network | `SCALE-IN AT DISCOUNT (Khớp thêm nhịp chỉnh -0.62%)` | $75,000.00 | $421.17 | $424.39 | **+0.76%** | +4.3% | 🟢 GIỮ NỀN AN TOÀN |
+| **`JPM`** | JPMorgan Chase & Co. | Global Diversified Banking | `ACCUMULATE AT MA200 (Tích lũy sát hỗ trợ)` | $70,000.00 | $314.03 | $316.74 | **+0.86%** | +4.9% | 🟢 GIỮ NỀN AN TOÀN |
+| **`PG`** | Procter & Gamble | Consumer Household Staples | `SCALE-IN AT DISCOUNT (Mua gom nhịp lùi -1.00%)` | $65,000.00 | $172.13 | $173.23 | **+0.64%** | +3.6% | 🟢 GIỮ NỀN AN TOÀN |
+| **`XOM`** | Exxon Mobil Corp. | Integrated Oil & Gas | `HOLD & TRAIL WINNER (Giữ & Hưởng lợi Dầu > $102)` | $65,000.00 | $156.85 | $158.08 | **+0.78%** | +4.5% | 🟢 GIỮ NỀN AN TOÀN |
+| **`JNJ`** | Johnson & Johnson | Pharmaceuticals & MedTech | `SCALE-IN AT DISCOUNT (Mua gom nhịp lùi -1.08%)` | $60,000.00 | $271.67 | $273.94 | **+0.84%** | +4.7% | 🟢 GIỮ NỀN AN TOÀN |
+| **`NVDA`** | NVIDIA Corp. | Semiconductors & AI | `HOLD & ADD ON DIP (Gồng lãi +0.58% • Cắt lỗ chặt)` | $55,000.00 | $143.76 | $149.30 | **+3.85%** | +21.2% | 🟢 LÃI TÍCH CỰC |
+| **`TSM`** | Taiwan Semiconductor (TSMC) | Global Chip Foundry | `HOLD & ADD ON DIP (Gồng lãi +0.35% • Chuẩn hóa USD)` | $50,000.00 | $333.55 | $342.34 | **+2.64%** | +14.7% | 🟢 LÃI TÍCH CỰC |
+| **`GOOGL`** | Alphabet Inc. | Search & Hyperscale Cloud | `NEW TACTICAL BUY (Mở mới từ Bài học Tối ưu Lợi nhuận)` | $42,000.00 | $269.03 | $273.10 | **+1.51%** | +8.5% | 🟢 LÃI TÍCH CỰC |
+| **`AVGO`** | Broadcom Inc. | Custom AI ASICs & Networking | `NEW TACTICAL BUY (Mở mới Quá bán Chất lượng cao)` | $38,000.00 | $292.76 | $300.86 | **+2.77%** | +15.4% | 🟢 LÃI TÍCH CỰC |
 
 ---
 
 ## 1. Bảng Đo Lường Hiệu Suất & Độ Chuẩn Xác Của Dự Báo (Prediction Telemetry)
 - **Tổng số Tài sản Được Theo Dõi Toàn Cầu**: **`35 Cổ phiếu`** & **`12 ETF Ngành GICS`**
-- **Trạng thái Thị trường Hiện tại**: **`Standard Growth`** (`VIX` = **27.04**, `US10Y` = **4.85%**, `WTI Oil` = **$83.83/thùng**)
+- **Trạng thái Thị trường Hiện tại**: **`Standard Growth`** (`VIX` = **26.80**, `US10Y` = **4.85%**, `WTI Oil` = **$84.77/thùng**)
 - **Tỷ lệ Dự Báo Chuẩn Xác (Walk-Forward Hit Rate)**: **`76.2%`** (`16 Thắng` / `5 Thua` / `14 Tích lũy`)
 - **Hiệu quả Bộ Lọc Rủi Ro (Avoidance Score)**: **100%** (Cảnh báo thành công các bẫy suy yếu `TSLA`, `COIN`, `QCOM`, `SMCI`, `INTC`).
 
@@ -58,14 +58,14 @@
 
 ## 4. Nhật Ký Bài Học Thị Trường Tích Lũy Ngày Hôm Nay (Market Lessons Learned)
 
-- **Bài học 1 (Thanh khoản & Biến động VIX = 27.04 >= 20)**: Khi VIX vượt ngưỡng 20, hệ thống nâng trọng số FCF lên **35%** (Tổng 4 trụ cột = `25% + 35% + 20% + 20% = 100%`) và giữ đệm tiền mặt tối thiểu **40% NAV**.
+- **Bài học 1 (Thanh khoản & Biến động VIX = 26.80 >= 20)**: Khi VIX vượt ngưỡng 20, hệ thống nâng trọng số FCF lên **35%** (Tổng 4 trụ cột = `25% + 35% + 20% + 20% = 100%`) và giữ đệm tiền mặt tối thiểu **40% NAV**.
 - **Bài học 2 (Kỷ luật Khóa Mua Mới Trước BCTC <= 7 Ngày)**: Hệ thống đã tự động khóa giải ngân mới và loại khỏi bảng phân bổ Risk-Parity đối với 4 mã sắp công bố BCTC (`AAPL, BRK-B, AMD, PLTR`), trong khi các mã vừa công bố xong (`XOM, CVX`) đã thoát rủi ro nhảy gap sự kiện.
 - **Bài học 3 (Độ tin cậy của True FCF ex-SBC, EVA Spread & SEC Form 4)**: Các doanh nghiệp có dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC > 0`), `ROIC > WACC` và giao dịch nội bộ mua ròng (`MSFT`, `JPM`, `PG`) giữ giá vượt trội trong các phiên chỉ số chung điều chỉnh.
 
 ---
 
 ## 5. Tinh Chỉnh Thích Nghi Trọng Số Chấm Điểm (`Adaptive Weight Tuning — Tổng = 100%`)
-Dựa trên mức biến động thực tế hôm nay (`VIX = 27.04`):
+Dựa trên mức biến động thực tế hôm nay (`VIX = 26.80`):
 - **Trụ cột 1 — Vĩ mô & Chu kỳ Ngành (`Macro & Sector Fit`)**: **`25%`**
 - **Trụ cột 2 — Sức khỏe BCTC & Dòng tiền (`Fundamental & True FCF`)**: **`35%`**
 - **Trụ cột 3 — Định giá & Dư địa Tăng giá (`Valuation & Consensus Upside`)**: **`20%`**

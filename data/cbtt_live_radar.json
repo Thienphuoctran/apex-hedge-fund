@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-26T10:44:25.627782+00:00",
+  "timestamp_utc": "2026-11-26T18:25:40.268927+00:00",
   "scan_date": "2026-11-26",
   "total_us_filings_count": 381,
-  "total_vn_announcements_count": 54,
+  "total_vn_announcements_count": 51,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -285,12 +285,20 @@
       "total_recent_filings": 11
     },
     "HPG": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "Hưởng lợi lớn từ HRC, “vua thép” Hòa Phát (HPG) được dự báo lãi 7.500 tỷ đồng trong quý IV",
-      "severity": "CRITICAL",
-      "published_at": "Thu, 26 Nov 26 17:01:00 +0700",
-      "source_url": "https://cafef.vn/huong-loi-lon-tu-hrc-vua-thep-hoa-phat-hpg-duoc-du-bao-lai-7500-ty-dong-trong-quy-iv-188261126161100056.chn",
-      "total_announcements": 1
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Cổ phiếu Hòa Phát rơi xuống mức thấp nhất 18 tháng",
+      "severity": "INFO",
+      "published_at": "Fri, 27 Nov 26 00:04:00 +0700",
+      "source_url": "https://cafef.vn/co-phieu-hoa-phat-roi-xuong-muc-thap-nhat-18-thang-188261127000458313.chn",
+      "total_announcements": 2
+    },
+    "HCM": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Nhà thầu Việt lắp đặt kết cấu thép khổng lồ 1.260 tấn, cao bằng tòa nhà 5 tầng ở độ cao 110 m, giúp tháp đôi 235 m ngay chợ Bến Thành chống chao đảo trước gió bão",
+      "severity": "INFO",
+      "published_at": "Fri, 27 Nov 26 00:00:00 +0700",
+      "source_url": "https://cafef.vn/nha-thau-viet-lap-dat-ket-cau-thep-khong-lo-1260-tan-cao-bang-toa-nha-5-tang-o-do-cao-110-m-giup-thap-doi-235-m-ngay-cho-ben-thanh-chong-chao-dao-truoc-gio-bao-188261126224212173.chn",
+      "total_announcements": 11
     },
     "NTL": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -306,15 +314,7 @@
       "severity": "INFO",
       "published_at": "Thu, 26 Nov 26 13:48:00 +0700",
       "source_url": "https://cafef.vn/nu-lanh-dao-8x-vua-duoc-bo-nhiem-lam-pho-tong-giam-doc-cong-ty-dau-khi-lon-nhat-san-chung-khoan-188261126133323102.chn",
-      "total_announcements": 2
-    },
-    "HCM": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Living Heritage kỳ 4 – “Hồ đôi Vọng Nguyệt”, đêm nghệ thuật đặc biệt cùng Sir Niels Lan Doky tại IKI Gallery",
-      "severity": "INFO",
-      "published_at": "Thu, 26 Nov 26 12:30:00 +0700",
-      "source_url": "https://cafef.vn/living-heritage-ky-4-ho-doi-vong-nguyet-dem-nghe-thuat-dac-biet-cung-sir-niels-lan-doky-tai-iki-gallery-188261126122716253.chn",
-      "total_announcements": 11
+      "total_announcements": 1
     },
     "CEO": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -322,14 +322,38 @@
       "severity": "INFO",
       "published_at": "Wed, 25 Nov 26 19:59:00 +0700",
       "source_url": "https://cafef.vn/de-xuat-luong-ceo-trung-tam-tai-chinh-quoc-te-da-nang-toi-850-trieu-dong-thang-188261125190438201.chn",
-      "total_announcements": 11
+      "total_announcements": 10
     },
-    "PVS": {
-      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "latest_title": "PVS ước tính doanh thu 34.000 tỷ, lãi 1.900 tỷ đồng năm 2026: Lợi nhuận thực tế hai năm gần nhất có gì lạ?",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 25 Nov 26 10:36:00 +0700",
-      "source_url": "https://cafef.vn/pvs-uoc-tinh-doanh-thu-34000-ty-lai-1900-ty-dong-nam-2026-loi-nhuan-thuc-te-hai-nam-gan-nhat-co-gi-la-188261125103014843.chn",
+    "BID": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Hiện tượng đáng chú ý tại FPT, VCB và BID sau phiên VN-Index giảm sâu gần 60 điểm",
+      "severity": "INFO",
+      "published_at": "Fri, 27 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/hien-tuong-dang-chu-y-tai-fpt-vcb-va-bid-sau-phien-vn-index-giam-sau-gan-60-diem-188261126155203138.chn",
+      "total_announcements": 1
+    },
+    "FPT": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Hiện tượng đáng chú ý tại FPT, VCB và BID sau phiên VN-Index giảm sâu gần 60 điểm",
+      "severity": "INFO",
+      "published_at": "Fri, 27 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/hien-tuong-dang-chu-y-tai-fpt-vcb-va-bid-sau-phien-vn-index-giam-sau-gan-60-diem-188261126155203138.chn",
+      "total_announcements": 2
+    },
+    "VCB": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Hiện tượng đáng chú ý tại FPT, VCB và BID sau phiên VN-Index giảm sâu gần 60 điểm",
+      "severity": "INFO",
+      "published_at": "Fri, 27 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/hien-tuong-dang-chu-y-tai-fpt-vcb-va-bid-sau-phien-vn-index-giam-sau-gan-60-diem-188261126155203138.chn",
+      "total_announcements": 3
+    },
+    "CTD": {
+      "latest_event_type": "TIN_DOANH_NGHIEP",
+      "latest_title": "Chủ tịch Coteccons mua thành công cổ phiếu CTD như đăng ký",
+      "severity": "INFO",
+      "published_at": "Thu, 26 Nov 26 23:02:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-coteccons-mua-thanh-cong-co-phieu-ctd-nhu-dang-ky-188261126213143244.chn",
       "total_announcements": 1
     },
     "PNJ": {
@@ -338,17 +362,9 @@
       "severity": "CRITICAL",
       "published_at": "Thu, 26 Nov 26 10:52:00 +0700",
       "source_url": "https://cafef.vn/vietcap-ha-68-gia-muc-tieu-pnj-du-bao-co-lai-tro-lai-vao-nam-2027-188261126104600253.chn",
-      "total_announcements": 12
+      "total_announcements": 10
     },
     "DGC": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Thấy gì từ việc loạt \"ngôi sao\" một thời PNJ, FPT, DGC lao dốc 60-85% từ đỉnh?",
-      "severity": "INFO",
-      "published_at": "Thu, 26 Nov 26 00:02:00 +0700",
-      "source_url": "https://cafef.vn/thay-gi-tu-viec-loat-ngoi-sao-mot-thoi-pnj-fpt-dgc-lao-doc-60-85-tu-dinh-188261125110420162.chn",
-      "total_announcements": 1
-    },
-    "FPT": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Thấy gì từ việc loạt \"ngôi sao\" một thời PNJ, FPT, DGC lao dốc 60-85% từ đỉnh?",
       "severity": "INFO",
@@ -372,14 +388,6 @@
       "source_url": "https://cafef.vn/acv-phai-xac-dinh-ro-thoi-diem-cong-bo-thong-tin-khai-thac-san-bay-long-thanh-188261125191450836.chn",
       "total_announcements": 1
     },
-    "BAF": {
-      "latest_event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "latest_title": "BAF tiếp tục mở rộng quy mô đầu tư, khởi công dự án chế biến thực phẩm mới 1.250 tỷ đồng tại Gia Lai",
-      "severity": "INFO",
-      "published_at": "Wed, 25 Nov 26 08:39:00 +0700",
-      "source_url": "https://cafef.vn/baf-tiep-tuc-mo-rong-quy-mo-dau-tu-khoi-cong-du-an-che-bien-thuc-pham-moi-1250-ty-dong-tai-gia-lai-188261125083917014.chn",
-      "total_announcements": 1
-    },
     "VIB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "VIB Privilege Banking: Giữ quyền chủ động trong thế giới thay đổi nhanh",
@@ -395,14 +403,6 @@
       "published_at": "Thu, 26 Nov 26 06:36:00 +0700",
       "source_url": "https://cafef.vn/ngay-26-11-gui-100-trieu-dong-ky-han-12-thang-tai-mb-vpbank-techcombank-sacombank-shb-hdbank-va-acb-nhan-duoc-bao-nhieu-tien-lai-18826112522380546.chn",
       "total_announcements": 4
-    },
-    "VCB": {
-      "latest_event_type": "TIN_DOANH_NGHIEP",
-      "latest_title": "Một năm, hai thái cực của cổ phiếu Vietcombank: Tháng 1 lập đỉnh lịch sử, tháng 11 rơi xuống đáy gần 4 năm",
-      "severity": "INFO",
-      "published_at": "Wed, 25 Nov 26 00:00:00 +0700",
-      "source_url": "https://cafef.vn/mot-nam-hai-thai-cuc-cua-co-phieu-vietcombank-thang-1-lap-dinh-lich-su-thang-11-roi-xuong-day-gan-4-nam-18826112423534886.chn",
-      "total_announcements": 2
     },
     "MSB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -5073,6 +5073,30 @@
       "symbols": [
         "HPG"
       ],
+      "title": "Cổ phiếu Hòa Phát rơi xuống mức thấp nhất 18 tháng",
+      "summary": "Cổ phiếu HPG của Tập đoàn Hòa Phát giảm 2,2% trong phiên 26/11, xuống còn 19.600 đồng/cổ phiếu, mức thấp nhất kể từ tháng 6/2025....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 27 Nov 26 00:04:00 +0700",
+      "source_url": "https://cafef.vn/co-phieu-hoa-phat-roi-xuong-muc-thap-nhat-18-thang-188261127000458313.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
+      "title": "Nhà thầu Việt lắp đặt kết cấu thép khổng lồ 1.260 tấn, cao bằng tòa nhà 5 tầng ở độ cao 110 m, giúp tháp đôi 235 m ngay chợ Bến Thành chống chao đảo trước gió bão",
+      "summary": "Mất 8 tháng chuẩn bị và khoảng 2 tháng thi công, đội ngũ kỹ sư Việt Nam vừa hoàn thành một trong những hạng mục kết cấu phức tạp nhất của công trình giữa trung tâm TP.HCM....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Fri, 27 Nov 26 00:00:00 +0700",
+      "source_url": "https://cafef.vn/nha-thau-viet-lap-dat-ket-cau-thep-khong-lo-1260-tan-cao-bang-toa-nha-5-tang-o-do-cao-110-m-giup-thap-doi-235-m-ngay-cho-ben-thanh-chong-chao-dao-truoc-gio-bao-188261126224212173.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HPG"
+      ],
       "title": "Hưởng lợi lớn từ HRC, “vua thép” Hòa Phát (HPG) được dự báo lãi 7.500 tỷ đồng trong quý IV",
       "summary": "Sau khi ghi nhận lợi nhuận quý III/2026 vượt xa kỳ vọng, CTCP Tập đoàn Hòa Phát (HoSE: HPG) được BSC Research dự báo tiếp tục duy trì mức lãi ròng 7.000-7.500 tỷ đồng trong quý IV, nhờ sản lượng tiêu thụ tăng và biên lợi...",
       "event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -5131,26 +5155,28 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "GAS"
+        "BID",
+        "FPT",
+        "VCB"
       ],
-      "title": "PV GAS bổ nhiệm nữ Phó Tổng giám đốc",
-      "summary": "PV GAS bổ nhiệm bà Phan Thị Phương Anh giữ chức Phó Tổng giám đốc công ty kể từ ngày 20/11/2026 trong thời hạn 5 năm....",
+      "title": "Hiện tượng đáng chú ý tại FPT, VCB và BID sau phiên VN-Index giảm sâu gần 60 điểm",
+      "summary": "Phiên 26/11, có tới 6 cổ phiếu trong rổ VN30 thiết lập đáy mới của năm 2026, trong đó nhiều mã đã trở về vùng giá thấp nhất trong hơn 3 năm....",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Wed, 25 Nov 26 13:52:00 +0700",
-      "source_url": "https://cafef.vn/pv-gas-bo-nhiem-nu-pho-tong-giam-doc-188261125135236246.chn"
+      "published_at": "Fri, 27 Nov 26 00:01:00 +0700",
+      "source_url": "https://cafef.vn/hien-tuong-dang-chu-y-tai-fpt-vcb-va-bid-sau-phien-vn-index-giam-sau-gan-60-diem-188261126155203138.chn"
     },
     {
       "market": "VIETNAM",
       "symbols": [
-        "PVS"
+        "CTD"
       ],
-      "title": "PVS ước tính doanh thu 34.000 tỷ, lãi 1.900 tỷ đồng năm 2026: Lợi nhuận thực tế hai năm gần nhất có gì lạ?",
-      "summary": "Chứng khoán Vietcap kỳ vọng kết quả kinh doanh thực tế của PVS sẽ cao hơn đáng kể so với số liệu ước tính sơ bộ....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 25 Nov 26 10:36:00 +0700",
-      "source_url": "https://cafef.vn/pvs-uoc-tinh-doanh-thu-34000-ty-lai-1900-ty-dong-nam-2026-loi-nhuan-thuc-te-hai-nam-gan-nhat-co-gi-la-188261125103014843.chn"
+      "title": "Chủ tịch Coteccons mua thành công cổ phiếu CTD như đăng ký",
+      "summary": "Ông Bolat Duisenov- Chủ tịch HĐQT của Coteccons đã vào mua thành công 350.000 cổ phiếu CTD như đăng ký....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 26 Nov 26 23:02:00 +0700",
+      "source_url": "https://cafef.vn/chu-tich-coteccons-mua-thanh-cong-co-phieu-ctd-nhu-dang-ky-188261126213143244.chn"
     },
     {
       "market": "VIETNAM",
@@ -5241,37 +5267,13 @@
     {
       "market": "VIETNAM",
       "symbols": [
-        "BAF"
-      ],
-      "title": "BAF tiếp tục mở rộng quy mô đầu tư, khởi công dự án chế biến thực phẩm mới 1.250 tỷ đồng tại Gia Lai",
-      "summary": "Tiếp nối đà phát triển mạnh mẽ của hệ thống 03 nhà máy sản xuất thức ăn chăn nuôi và hơn 50 trang trại chăn nuôi công nghệ cao trải dài khắp cả nước, việc khởi công Nhà máy chế biến thực phẩm BAF Gia Lai thể hiện sự quyế...",
-      "event_type": "NGHI_QUYET_HDQT_DU_AN",
-      "severity": "INFO",
-      "published_at": "Wed, 25 Nov 26 08:39:00 +0700",
-      "source_url": "https://cafef.vn/baf-tiep-tuc-mo-rong-quy-mo-dau-tu-khoi-cong-du-an-che-bien-thuc-pham-moi-1250-ty-dong-tai-gia-lai-188261125083917014.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
         "PNJ"
       ],
-      "title": "Bài toán khó để PNJ huy động 8.000 tỷ \"chữa cháy\": Bất ngờ lời giải có thể đến từ khoản lỗ kỷ lục",
-      "summary": "Thị giá PNJ chỉ bằng chưa đến một nửa giá trị sổ sách đặt ra bài toán khó trong việc chào bán cổ phiếu với giá không thấp hơn giá trị sổ sách. Tuy nhiên, nếu PNJ lỗ kỷ lục đúng như kế hoạch, câu chuyện sẽ rất khác....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 25 Nov 26 02:01:00 +0700",
-      "source_url": "https://cafef.vn/bai-toan-kho-de-pnj-huy-dong-8000-ty-chua-chay-bat-ngo-loi-giai-co-the-den-tu-khoan-lo-ky-luc-188261125020201109.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Giá vàng nhẫn trơn, vàng miếng chiều 26/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng",
-      "summary": "Giá bán vàng miếng SJC tại cả 5 thương hiệu được khảo sát đồng loạt tăng 400.000 đồng/lượng so với cuối phiên hôm qua, lên mức 134,5 triệu đồng/lượng. Trong khi đó, giá vàng nhẫn ghi nhận mức tăng tới 500.000 đồng/lượng ...",
+      "title": "Giá vàng nhẫn trơn, vàng miếng chiều tối 26/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng tới 1 triệu đồng/lượng",
+      "summary": "Chốt phiên 26/11, giá vàng miếng SJC đồng loạt tăng 400.000 đồng/lượng lên mức 134,5 triệu đồng/lượng, trong khi vàng nhẫn tăng tới 1 triệu đồng/lượng. Trái với diễn biến trong nước, giá vàng thế giới giảm 0,57%, xuống c...",
       "event_type": "TIN_DOANH_NGHIEP",
       "severity": "INFO",
-      "published_at": "Thu, 26 Nov 26 13:42:00 +0700",
+      "published_at": "Thu, 26 Nov 26 20:32:00 +0700",
       "source_url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-26-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-188261126071729871.chn"
     },
     {
@@ -5464,6 +5466,18 @@
       "symbols": [
         "HCM"
       ],
+      "title": "Mực nước hai bên cống ngăn triều TP.HCM chênh hơn 2m khi vận hành",
+      "summary": "Sau đợt vận hành thử đồng bộ 8 cống ngăn triều, mực nước hai bên công trình chênh tối đa 2,05 m, tuy nhiên, triều vẫn xâm nhập qua các vị trí chưa khép kín....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 26 Nov 26 19:23:00 +0700",
+      "source_url": "https://cafef.vn/muc-nuoc-hai-ben-cong-ngan-trieu-tphcm-chenh-hon-2m-khi-van-hanh-188261126190236414.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
+        "HCM"
+      ],
       "title": "‏Phương án n‏‏ội thất bàn giao linh hoạt tại Qtopia Phước Hải - TP.HCM ‏",
       "summary": "‏Phương án bàn giao nội thất tác động trực tiếp đến chi phí của nhà đầu tư, tối ưu trải nghiệm nghỉ dưỡng‏‏, k‏‏ế hoạch khai thác căn hộ bên biển....",
       "event_type": "TIN_DOANH_NGHIEP",
@@ -5494,42 +5508,6 @@
       "severity": "INFO",
       "published_at": "Thu, 26 Nov 26 10:27:00 +0700",
       "source_url": "https://cafef.vn/can-canh-8-cong-ngan-trieu-gan-10000-ty-dong-vua-dong-loat-van-hanh-tai-thanh-pho-giau-nhat-viet-nam-hang-loat-khu-vuc-se-thoat-canh-ngap-do-trieu-cuong-188261126082525711.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Trả lương cao vẫn 'đỏ mắt' tìm thợ xây ở TP.HCM",
-      "summary": "Thợ xây thu nhập tới 20 triệu đồng/tháng nhưng các nhà thầu vẫn trầy trật tìm người và vấn đề tăng lương chưa phải là lời giải gốc rễ cho bài toán nhân lực....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 26 Nov 26 08:56:00 +0700",
-      "source_url": "https://cafef.vn/tra-luong-cao-van-do-mat-tim-tho-xay-o-tphcm-188261126085121196.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Giải mã sức hút Imperia Sensa Park trong làn sóng phát triển TOD tại khu Đông",
-      "summary": "Khi TP.HCM đẩy mạnh phát triển đô thị đa cực, hạ tầng giao thông công cộng đang mở ra những cơ hội mới cho thị trường bất động sản, đặc biệt tại khu Đông - nơi Imperia Sensa Park sở hữu lợi thế vị thế chiến lược....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Thu, 26 Nov 26 08:00:00 +0700",
-      "source_url": "https://cafef.vn/giai-ma-suc-hut-imperia-sensa-park-trong-lan-song-phat-trien-tod-tai-khu-dong-188261125154802192.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "HCM"
-      ],
-      "title": "Điều chưa từng thấy tại thị trường BĐS TPHCM trong nhiều năm qua",
-      "summary": "Lượng tiêu thụ căn hộ sơ cấp tại TP.HCM trong quý III/2026 giảm 72% so với cùng kỳ năm trước. Trong cùng kỳ, nhiều doanh nghiệp địa ốc cũng ghi nhận doanh thu giảm từ 82% đến 96%....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Thu, 26 Nov 26 06:37:00 +0700",
-      "source_url": "https://cafef.vn/thanh-khoan-can-ho-tphcm-giam-72-doanh-nghiep-bat-dong-san-co-noi-mat-toi-96-doanh-thu-188261125135258218.chn"
     },
     {
       "market": "VIETNAM",
@@ -5652,6 +5630,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HCM"
+      ],
+      "title": "TP HCM mời Singapore phát triển 3 nhóm hạ tầng chiến lược",
+      "summary": "TP HCM mời gọi đối tác Singapore hợp tác phát triển hạ tầng trung tâm tài chính, hạ tầng kết nối và các khu công nghệ số....",
+      "event_type": "TIN_DOANH_NGHIEP",
+      "severity": "INFO",
+      "published_at": "Thu, 26 Nov 2026 20:14:00 +0700",
+      "source_url": "https://vnexpress.net/tp-hcm-moi-singapore-phat-trien-3-nhom-ha-tang-chien-luoc-5149290.html"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "PNJ"
       ],
       "title": "PNJ hạ giá vàng nhẫn trơn xuống thấp hơn nhiều thương hiệu lớn",
@@ -5708,30 +5698,6 @@
       "severity": "INFO",
       "published_at": "Mon, 23 Nov 2026 23:18:04 +0700",
       "source_url": "https://vnexpress.net/co-phieu-nvidia-tang-hon-35-khi-jensen-huang-tro-ve-5148259.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Thêm 4 lãnh đạo cấp cao PNJ xin từ nhiệm",
-      "summary": "PNJ nhận đơn từ nhiệm của Giám đốc Marketing và 3 thành viên độc lập HĐQT, trong đó có Chủ tịch Ủy ban Kiểm toán Nguyễn Tuấn Hải....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 2026 22:25:51 +0700",
-      "source_url": "https://vnexpress.net/them-4-lanh-dao-cap-cao-pnj-xin-tu-nhiem-5148235.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO"
-      ],
-      "title": "Jensen Huang quay về làm CEO Nvidia",
-      "summary": "Hãng chip Mỹ tái bổ nhiệm Jensen Huang làm CEO, chỉ hơn một tuần sau khi ông từ chức....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 2026 21:14:03 +0700",
-      "source_url": "https://vnexpress.net/jensen-huang-quay-ve-lam-ceo-nvidia-5148234.html"
     }
   ]
 }

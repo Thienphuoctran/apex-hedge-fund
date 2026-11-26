@@ -1,0 +1,27 @@
+[
+  {
+    "id": "dir_2026-11-27_001",
+    "timestamp": "08:30:15",
+    "sender": "Minh Quân (Ban 7 VN)",
+    "role": "specialist",
+    "type": "morning_brief",
+    "content": "Kính trình Chủ tịch Trần Quốc Thiên Phước! Minh Quân đã kích hoạt Living War-Room V4.0 cho ngày 2026-11-27. Chế độ thị trường hiện tại: 🛡️ S4 BEAR SHIELD (PHÒNG THỦ CẨN TRỌNG). Kỷ luật bất biến: KHÔNG ĐUA LỆNH ATO, kiên nhẫn chờ Khung Giờ Vàng 14h00 - 14h25!"
+  },
+  {
+    "id": "dir_2026-11-27_002",
+    "timestamp": "08:32:40",
+    "sender": "Victor (Ban 9 Live Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_brief",
+    "content": "Báo cáo Chủ tịch! Victor túc trực 24/7 bảo vệ danh mục SSOT ngày 2026-11-27. Tổng NAV live: 19,901,117 đ | Tiền mặt thật: 15,541,117 đ (78.1% Cash) | Đang nắm giữ: 300 CP (200 TPB + 100 HPG ≈ 4,360,000 đ) | Lãi đã chốt lũy kế: +51,117 đ. Bảng giá & Orderbook 3 bước giá đang được quét liên tục!"
+  },
+  {
+    "id": "ban9_warn_2026-11-26_HPG",
+    "key": "ban9_warn_2026-11-26_HPG",
+    "timestamp": "01:26:29",
+    "sender": "Victor (Ban 9 Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_warning",
+    "content": "⚠️ [BIẾN ĐỘNG MẠNH — HPG] Giá 19,600 (-2.24%) | Cách Stop: +1.53%."
+  }
+]

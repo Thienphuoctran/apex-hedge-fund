@@ -9,8 +9,8 @@
 ### 🎯 **HDB** — Phát Triển TP.HCM (HDBank) (HOSE)
 - **Trạng thái hiện tại (`SPRING_WATCH_RECOVERY`)**: **`WAIT_SCENARIO_TRIGGER (Chỉ mở lệnh khi khớp điều kiện S1 / S2 / S3)`**
 - **Điểm IC Tổng Hợp**: **88.4/100** | **Điểm 10 Đại Danh Thủ**: **96.8/100** | Xếp Hạng BCTC: **AAA** | F-Score: **6/9**
-- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **53,260 ₫** (MoS = **+144.3%**) | PEG = **0.29x**
-- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 96.8/100, Piotroski F-Score: 6/9, Lynch PEG: 0.29x, Graham MoS: +144.3%), Tiền thật OCF/LNST = 2.46x, FCF = 46,551.1 tỷ VNĐ, tín hiệu VSA: DRY_VOLUME_BASE (Siết nền biên độ hẹp VCP — Chờ điểm nổ Volume).
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **53,076 ₫** (MoS = **+143.5%**) | PEG = **0.29x**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 96.8/100, Piotroski F-Score: 6/9, Lynch PEG: 0.29x, Graham MoS: +143.5%), Tiền thật OCF/LNST = 2.46x, FCF = 46,551.1 tỷ VNĐ, tín hiệu VSA: DRY_VOLUME_BASE (Siết nền biên độ hẹp VCP — Chờ điểm nổ Volume).
 - **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
 - **Phán quyết (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
 - **Cỡ lệnh tham chiếu Lô 100**: `100 CP` (~2,747,003 VND) | Stop: **20,779 VND** | TP1/TP2: **23,128 / 24,098 VND** (R:R **1:1.82**)
@@ -18,8 +18,8 @@
 ### 🎯 **CTG** — Công Thương Việt Nam (VietinBank) (HOSE)
 - **Trạng thái hiện tại (`SPRING_WATCH_RECOVERY`)**: **`WAIT_SCENARIO_TRIGGER (Chỉ mở lệnh khi khớp điều kiện S1 / S2 / S3)`**
 - **Điểm IC Tổng Hợp**: **86.7/100** | **Điểm 10 Đại Danh Thủ**: **94.1/100** | Xếp Hạng BCTC: **AAA** | F-Score: **8/9**
-- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **104,892 ₫** (MoS = **+245.6%**) | PEG = **0.21x**
-- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 94.1/100, Piotroski F-Score: 8/9, Lynch PEG: 0.21x, Graham MoS: +245.6%), Tiền thật OCF/LNST = 1.63x, FCF = 67,891.0 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **103,202 ₫** (MoS = **+240.0%**) | PEG = **0.21x**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 94.1/100, Piotroski F-Score: 8/9, Lynch PEG: 0.21x, Graham MoS: +240.0%), Tiền thật OCF/LNST = 1.63x, FCF = 67,891.0 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
 - **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
 - **Phán quyết (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
 - **Cỡ lệnh tham chiếu Lô 100**: `100 CP` (~3,328,485 VND) | Stop: **29,214 VND** | TP1/TP2: **31,827 / 32,906 VND** (R:R **1:1.82**)
@@ -36,8 +36,8 @@
 ### 🎯 **SSI** — Chứng Khoán SSI (HOSE)
 - **Trạng thái hiện tại (`SPRING_WATCH_RECOVERY`)**: **`WAIT_SCENARIO_TRIGGER (Chỉ mở lệnh khi khớp điều kiện S1 / S2 / S3)`**
 - **Điểm IC Tổng Hợp**: **85.0/100** | **Điểm 10 Đại Danh Thủ**: **89.4/100** | Xếp Hạng BCTC: **AAA** | F-Score: **8/9**
-- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **31,536 ₫** (MoS = **+59.7%**) | PEG = **0.53x**
-- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 89.4/100, Piotroski F-Score: 8/9, Lynch PEG: 0.53x, Graham MoS: +59.7%), Tiền thật OCF/LNST = 3.09x, FCF = 13,503.3 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **31,063 ₫** (MoS = **+57.3%**) | PEG = **0.54x**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 89.4/100, Piotroski F-Score: 8/9, Lynch PEG: 0.54x, Graham MoS: +57.3%), Tiền thật OCF/LNST = 3.09x, FCF = 13,503.3 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
 - **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
 - **Phán quyết (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
 - **Cỡ lệnh tham chiếu Lô 100**: `100 CP` (~2,145,470 VND) | Stop: **18,629 VND** | TP1/TP2: **21,208 / 22,273 VND** (R:R **1:1.82**)
@@ -45,8 +45,8 @@
 ### 🎯 **HPG** — Tập Đoàn Hòa Phát (HOSE)
 - **Trạng thái hiện tại (`SPRING_WATCH_RECOVERY`)**: **`WAIT_SCENARIO_TRIGGER (Chỉ mở lệnh khi khớp điều kiện S1 / S2 / S3)`**
 - **Điểm IC Tổng Hợp**: **84.3/100** | **Điểm 10 Đại Danh Thủ**: **91.1/100** | Xếp Hạng BCTC: **AAA** | F-Score: **8/9**
-- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **61,806 ₫** (MoS = **+203.0%**) | PEG = **0.14x**
-- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 91.1/100, Piotroski F-Score: 8/9, Lynch PEG: 0.14x, Graham MoS: +203.0%), Tiền thật OCF/LNST = 1.07x, FCF = 5,000.5999999999985 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **63,225 ₫** (MoS = **+209.9%**) | PEG = **0.13x**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 91.1/100, Piotroski F-Score: 8/9, Lynch PEG: 0.13x, Graham MoS: +209.9%), Tiền thật OCF/LNST = 1.07x, FCF = 5,000.5999999999985 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
 - **Phản biện Rủi ro (`Bear Agent`)**: Áp lực rung lắc T+2.5 phiên chiều; nội tại BCTC kiểm toán và điểm số 10 Đại Danh Thủ đồng thuận tuyệt đối.
 - **Phán quyết (`Master CIO`)**: **UNANIMOUS_APPROVAL (Đồng thuận tuyệt đối Bull & Risk IC)**
 - **Cỡ lệnh tham chiếu Lô 100**: `100 CP` (~3,087,872 VND) | Stop: **19,600 VND** | TP1/TP2: **21,440 / 22,200 VND** (R:R **1:1.82**)
@@ -63,8 +63,8 @@
 ### 🎯 **BSR** — Lọc Hóa Dầu Bình Sơn (UPCOM)
 - **Trạng thái hiện tại (`SPRING_WATCH_RECOVERY`)**: **`WAIT_SCENARIO_TRIGGER (Chỉ mở lệnh khi khớp điều kiện S1 / S2 / S3)`**
 - **Điểm IC Tổng Hợp**: **83.6/100** | **Điểm 10 Đại Danh Thủ**: **91.2/100** | Xếp Hạng BCTC: **AAA** | F-Score: **7/9**
-- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **100,360 ₫** (MoS = **+327.1%**) | PEG = **0.09x**
-- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 91.2/100, Piotroski F-Score: 7/9, Lynch PEG: 0.09x, Graham MoS: +327.1%), Tiền thật OCF/LNST = 0.7x, FCF = 18,061.7 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **100,801 ₫** (MoS = **+328.9%**) | PEG = **0.09x**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 91.2/100, Piotroski F-Score: 7/9, Lynch PEG: 0.09x, Graham MoS: +328.9%), Tiền thật OCF/LNST = 0.7x, FCF = 18,061.7 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
 - **Phản biện Rủi ro (`Bear Agent`)**: PHỦ QUYẾT CẤU TRÚC: Gãy sâu dưới cấu trúc MA200
 - **Phán quyết (`Master CIO`)**: **ABSOLUTE_VETO (Loại khỏi danh mục giải ngân)**
 - **Cỡ lệnh tham chiếu Lô 100**: `100 CP` (~1,744,447 VND) | Stop: **21,879 VND** | TP1/TP2: **25,608 / 27,148 VND** (R:R **1:1.82**)
@@ -72,8 +72,8 @@
 ### 🎯 **DPM** — Tổng Công Ty Phân Bón & Hóa Chất Dầu Khí (HOSE)
 - **Trạng thái hiện tại (`SPRING_WATCH_RECOVERY`)**: **`WAIT_SCENARIO_TRIGGER (Chỉ mở lệnh khi khớp điều kiện S1 / S2 / S3)`**
 - **Điểm IC Tổng Hợp**: **83.3/100** | **Điểm 10 Đại Danh Thủ**: **87.2/100** | Xếp Hạng BCTC: **AAA** | F-Score: **9/9**
-- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **35,721 ₫** (MoS = **+95.2%**) | PEG = **0.23x**
-- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 87.2/100, Piotroski F-Score: 9/9, Lynch PEG: 0.23x, Graham MoS: +95.2%), Tiền thật OCF/LNST = 1.24x, FCF = 1,602.7 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
+- **Định giá Graham & Lynch**: Giá trị nội tại Graham = **34,625 ₫** (MoS = **+89.2%**) | PEG = **0.24x**
+- **Luận điểm Bảo vệ (`Bull Agent`)**: BCTC hạng AAA (Điểm 10 Danh Thủ: 87.2/100, Piotroski F-Score: 9/9, Lynch PEG: 0.24x, Graham MoS: +89.2%), Tiền thật OCF/LNST = 1.24x, FCF = 1,602.7 tỷ VNĐ, tín hiệu VSA: NEUTRAL_SUPPLY_TESTING (Cung cầu giằng co kiểm định vùng hỗ trợ).
 - **Phản biện Rủi ro (`Bear Agent`)**: PHỦ QUYẾT CẤU TRÚC: Gãy sâu dưới cấu trúc MA200
 - **Phán quyết (`Master CIO`)**: **ABSOLUTE_VETO (Loại khỏi danh mục giải ngân)**
 - **Cỡ lệnh tham chiếu Lô 100**: `100 CP` (~2,686,850 VND) | Stop: **17,486 VND** | TP1/TP2: **19,358 / 20,132 VND** (R:R **1:1.82**)

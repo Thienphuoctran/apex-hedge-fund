@@ -7,12 +7,12 @@
 ---
 
 ### PHẦN 1: BÀI HỌC VI MÔ CỦA NGÀY (DAILY MICRO-LESSON — 3 PHÚT)
-- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 27.04 (>= 20)**
-- **Bản chất chiến lược**: Chỉ số VIX ở mức 27.04 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
+- **Chủ đề**: **Vận Hành Mô Hình Quỹ Core & Satellite Trong Bối Cảnh VIX = 26.80 (>= 20)**
+- **Bản chất chiến lược**: Chỉ số VIX ở mức 26.80 phản ánh biến động cao. Chiến lược 2 Động cơ (Core & Satellite) ưu tiên nắm giữ các pháo đài tiền mặt (True FCF ex-SBC dương mạnh) và khóa chặt cắt lỗ 2xATR(14).
 - **Công thức / Quy tắc vàng**:
   > Quy tắc Kỷ luật Thép: Khi VIX >= 20, phần Satellite tuyệt đối KHÔNG sử dụng Margin, giữ tối thiểu 40% tiền mặt/T-Bills.
 - **Thực tế thị trường hôm nay (2026-11-26)**: 
-  - VIX hiện tại: **27.04** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.85%** | Dầu WTI: **$83.83**.
+  - VIX hiện tại: **26.80** *(Dưới ngưỡng 20)* | Lợi suất US10Y: **4.85%** | Dầu WTI: **$84.77**.
   - Độ rộng thị trường (`Market Breadth`): **45.7%** cổ phiếu giữ trên MA200.
 
 ---
