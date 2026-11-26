@@ -4,7 +4,7 @@
 > **CƠ QUAN THỰC THI:** Ban 12 Trọng (Tổng Kiểm Sát) phối hợp cùng Palmer (Cố Vấn Tối Cao)  
 > **GIÁM SÁT TỐI CAO:** Master CIO James (Ban 8)  
 > **KÍNH TRÌNH:** Chủ Tịch Hội Đồng Quản Trị — **Trần Quốc Thiên Phước** *(Tài khoản TCBS: `105C307855`)*  
-> **THỜI ĐIỂM KIỂM TOÁN:** `2026-11-26 07:34:28` *(Thời gian quét: `0.31s`)*  
+> **THỜI ĐIỂM KIỂM TOÁN:** `2026-11-26 12:41:26` *(Thời gian quét: `0.24s`)*  
 > **ĐIỂM SỨC KHỎE HẠ TẦNG:** **`80/100`** — **ĐÁNH GIÁ: CẦN LƯU Ý**  
 > **TRẠNG THÁI SSOT V2.0:** **NAV `20,051,117 ₫`** | **Cash `15,541,117 ₫` (77.5%)** | **Đang giữ `2 mã` (HPG, TPB)**
 
@@ -13,16 +13,16 @@
 ## I. KẾT QUẢ KIỂM TOÁN 7 KHÂU CƠ SỞ HẠ TẦNG THỰC TẾ
 
 ```mermaid
-pie title Phân Bố Dung Lượng Dự Án Apex (60.64 MB / 1000 MB Quota GitHub)
-    "Dung Lượng Đã Dùng (6.06%)" : 60.64
-    "Dung Lượng Trống Còn Lại" : 939.36
+pie title Phân Bố Dung Lượng Dự Án Apex (60.65 MB / 1000 MB Quota GitHub)
+    "Dung Lượng Đã Dùng (6.06%)" : 60.65
+    "Dung Lượng Trống Còn Lại" : 939.35
 ```
 
 ### 1. Giám Sát Số Lượng Báo Cáo & Ngưỡng Kích Hoạt Nâng Cấp (Chỉ Thị 300 - 500 Báo Cáo):
-* **Số lượng báo cáo thể chế chính thức:** **`594 báo cáo`**.
-* **Tổng số văn bản Markdown toàn hệ thống:** **`853 tài liệu`**.
+* **Số lượng báo cáo thể chế chính thức:** **`596 báo cáo`**.
+* **Tổng số văn bản Markdown toàn hệ thống:** **`855 tài liệu`**.
 * **Trạng thái ngưỡng (Threshold Status):** **`GREEN_OPTIMAL_SQLITE_POWERED`** *(Mức độ khẩn cấp: `OPTIMAL`)*.
-* **Chỉ thị tác chiến của Trọng & Palmer:** *Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (594 báo cáo thể chế / 853 tệp MD hiện có).*
+* **Chỉ thị tác chiến của Trọng & Palmer:** *Hạ tầng V5.0 vận hành hoàn hảo với kiến trúc SQLite Lakehouse Vault (WAL Mode + FTS5 Search). Sức chứa an toàn lên tới 100,000 báo cáo (596 báo cáo thể chế / 855 tệp MD hiện có).*
 
 ### 2. Mật Độ Tệp Tin Từng Thư Mục (Inode Density & Sharding):
 * **Tổng số thư mục đã rà soát:** `101 thư mục`.
@@ -33,14 +33,14 @@ pie title Phân Bố Dung Lượng Dự Án Apex (60.64 MB / 1000 MB Quota GitHu
 
 
 ### 3. Dung Lượng Đĩa & Khả Năng Lưu Trữ Dự Án (Storage Runway):
-* **Tổng số tệp tin đang hoạt động:** **`1651 tệp`**.
-* **Tổng dung lượng vật lý dự án:** **`60.64 MB`** *(Dung lượng kho data: `28.93 MB`)*.
+* **Tổng số tệp tin đang hoạt động:** **`1654 tệp`**.
+* **Tổng dung lượng vật lý dự án:** **`60.65 MB`** *(Dung lượng kho data: `28.93 MB`)*.
 * **Hạn mức GitHub Quota đã dùng:** **`6.06%`** / `1,000 MB`.
 * **Khả năng chịu tải (Runway):** **`Cực kỳ dồi dào (> 5 năm vận hành an toàn)`** — Tuyệt đối không có nguy cơ đầy đĩa.
 
 ### 4. Sức Khỏe Kho Mã Nguồn Git & Tiến Trình Đồng Bộ:
-* **Dung lượng thư mục `.git`:** `55.24 MB`.
-* **Số lượng tệp chưa commit:** `16 tệp`.
+* **Dung lượng thư mục `.git`:** `55.27 MB`.
+* **Số lượng tệp chưa commit:** `18 tệp`.
 * **Nhánh hoạt động (Branch):** `main`.
 * **Trạng thái:** **`HEALTHY`**.
 
@@ -49,8 +49,8 @@ pie title Phân Bố Dung Lượng Dự Án Apex (60.64 MB / 1000 MB Quota GitHu
 * **Tệp log cần xoay vòng (>5 MB):** `0 tệp` *(Trạng thái: `HEALTHY`)*.
 
 ### 6. Tốc Độ Phản Hồi & Truy Xuất I/O (Latency Benchmark):
-* **Thời gian quét toàn bộ kho JSON:** **`5.38 ms`**.
-* **Thời gian nạp Đơn Nguồn Sự Thật SSOT:** **`0.21 ms`**.
+* **Thời gian quét toàn bộ kho JSON:** **`4.4 ms`**.
+* **Thời gian nạp Đơn Nguồn Sự Thật SSOT:** **`0.19 ms`**.
 * **Đánh giá phản hồi:** **`FAST_RESPONSIVE (<150ms)`** *(Đáp ứng hoàn hảo chuẩn thời gian thực < 150ms)*.
 
 ### 7. Tính Toàn Vẹn Đơn Nguồn Sự Thật SSOT V2.0:
