@@ -1,7 +1,7 @@
 {
   "events": {
     "-1004465270817_6_SEM_9cebf8c9c8977927ee2c4f7e": {
-      "ts": 1795568207.1533716,
+      "ts": 1795653269.0358603,
       "thread_id": 6,
       "preview": "⚖️ *[BAN 12 — BÁO CÁO KIỂM SÁT THỂ CHẾ V2.0]*\n👤 *Tổng Kiểm Sát V"
     },
@@ -11,7 +11,7 @@
       "preview": "⚖️ *[BAN 12 — BÁO CÁO KIỂM SÁT THỂ CHẾ V2.0]*\n👤 *Tổng Kiểm Sát V"
     },
     "-1004465270817_4_SEM_9cebf8c9c8977927ee2c4f7e": {
-      "ts": 1795568208.0302966,
+      "ts": 1795653269.7046726,
       "thread_id": 4,
       "preview": "⚖️ *[BAN 12 — BÁO CÁO KIỂM SÁT THỂ CHẾ V2.0]*\n👤 *Tổng Kiểm Sát V"
     },
@@ -19,19 +19,29 @@
       "ts": 1795568208.0302966,
       "thread_id": 4,
       "preview": "⚖️ *[BAN 12 — BÁO CÁO KIỂM SÁT THỂ CHẾ V2.0]*\n👤 *Tổng Kiểm Sát V"
+    },
+    "-1004465270817_6_EX_8bbc68d0a10d68e0d03b8cfa": {
+      "ts": 1795653269.0358603,
+      "thread_id": 6,
+      "preview": "⚖️ *[BAN 12 — BÁO CÁO KIỂM SÁT THỂ CHẾ V2.0]*\n👤 *Tổng Kiểm Sát V"
+    },
+    "-1004465270817_4_EX_a042da40b37eeaa2beb452e1": {
+      "ts": 1795653269.7046726,
+      "thread_id": 4,
+      "preview": "⚖️ *[BAN 12 — BÁO CÁO KIỂM SÁT THỂ CHẾ V2.0]*\n👤 *Tổng Kiểm Sát V"
     }
   },
   "quotas": {
     "-1004465270817_6": {
-      "date": "2026-11-25",
+      "date": "2026-11-26",
       "timestamps": [
-        1795568207.1533716
+        1795653269.0358603
       ]
     },
     "-1004465270817_4": {
-      "date": "2026-11-25",
+      "date": "2026-11-26",
       "timestamps": [
-        1795568208.0302966
+        1795653269.7046726
       ]
     }
   }
