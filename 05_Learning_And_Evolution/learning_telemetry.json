@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-25T18:40:17.249048+00:00",
+  "updated_at": "2026-11-26T08:46:21.882839+00:00",
   "hit_rate_pct": 76.2,
   "wins_count": 16,
   "losses_count": 5,
   "neutral_count": 14,
   "total_predictions": 35,
-  "vix_value": 28.57,
-  "vix_regime": "VIX 28.57 (High Volatility >= 20)",
+  "vix_value": 27.04,
+  "vix_regime": "VIX 27.04 (High Volatility >= 20)",
   "scoring_weights": {
     "macro_sector_fit": 25,
     "fundamental_and_fcf": 35,
@@ -23,21 +23,21 @@
   "walk_forward_horizons": {
     "T_minus_1d": {
       "horizon": "T-1 (1 Phiên)",
-      "portfolio_return_pct": 0.04,
-      "sp500_benchmark_pct": -0.58,
-      "realized_alpha_pct": 0.62
+      "portfolio_return_pct": -0.18,
+      "sp500_benchmark_pct": -0.25,
+      "realized_alpha_pct": 0.07
     },
     "T_minus_5d": {
       "horizon": "T-5 (1 Tuần)",
-      "portfolio_return_pct": 0.33,
-      "sp500_benchmark_pct": -2.24,
-      "realized_alpha_pct": 2.57
+      "portfolio_return_pct": 0.1,
+      "sp500_benchmark_pct": -1.92,
+      "realized_alpha_pct": 2.02
     },
     "T_minus_20d": {
       "horizon": "T-20 (1 Tháng)",
-      "portfolio_return_pct": 0.58,
-      "sp500_benchmark_pct": -7.29,
-      "realized_alpha_pct": 7.87
+      "portfolio_return_pct": 0.34,
+      "sp500_benchmark_pct": -6.99,
+      "realized_alpha_pct": 7.33
     }
   },
   "top_attribution_items": [
@@ -48,15 +48,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
       "entry_price": 203.46,
-      "current_price": 146.97,
-      "stop_2atr": 123.08,
-      "tp1_price": 210.29,
-      "pnl_pct": -27.76,
-      "alpha_vs_sp500_pct": -25.52,
+      "current_price": 149.3,
+      "stop_2atr": 115.31,
+      "tp1_price": 212.62,
+      "pnl_pct": -26.62,
+      "alpha_vs_sp500_pct": -24.7,
       "status_tag": "WATCHING",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (-27.76%)"
+      "evaluation_note": "Đang quan sát tạo nền (-26.62%)"
     },
     {
       "symbol": "MSFT",
@@ -65,15 +65,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
       "entry_price": 520.94,
-      "current_price": 489.84,
-      "stop_2atr": 461.14,
-      "tp1_price": 558.06,
-      "pnl_pct": -5.97,
-      "alpha_vs_sp500_pct": -3.73,
+      "current_price": 489.93,
+      "stop_2atr": 455.73,
+      "tp1_price": 558.15,
+      "pnl_pct": -5.95,
+      "alpha_vs_sp500_pct": -4.03,
       "status_tag": "DRAWDOWN",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Chạm cảnh báo lùi giá (-5.97%, Stop $461.14)"
+      "evaluation_note": "Chạm cảnh báo lùi giá (-5.95%, Stop $455.73)"
     },
     {
       "symbol": "AAPL",
@@ -82,15 +82,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
       "entry_price": 346.38,
-      "current_price": 354.59,
-      "stop_2atr": 337.77,
-      "tp1_price": 386.17,
-      "pnl_pct": 2.37,
-      "alpha_vs_sp500_pct": 4.61,
+      "current_price": 355.58,
+      "stop_2atr": 338.8,
+      "tp1_price": 387.7,
+      "pnl_pct": 2.66,
+      "alpha_vs_sp500_pct": 4.58,
       "status_tag": "OUTPERFORM",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+2.37%, Alpha +4.61%)"
+      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+2.66%, Alpha +4.58%)"
     },
     {
       "symbol": "GOOGL",
@@ -99,32 +99,32 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim)",
       "entry_price": 278.79,
-      "current_price": 270.85,
-      "stop_2atr": 255.48,
-      "tp1_price": 317.35,
-      "pnl_pct": -2.85,
-      "alpha_vs_sp500_pct": -0.61,
+      "current_price": 273.1,
+      "stop_2atr": 247.6,
+      "tp1_price": 319.6,
+      "pnl_pct": -2.04,
+      "alpha_vs_sp500_pct": -0.12,
       "status_tag": "RISK_AVOIDED",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Phòng vệ thành công — Tránh được nhịp sụt giảm (-2.85%)"
+      "evaluation_note": "Phòng vệ thành công — Tránh được nhịp sụt giảm (-2.04%)"
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com Inc.",
       "sector": "E-Commerce & AWS Cloud",
       "prediction_date": "2026-10-30",
-      "prediction_direction": "BULLISH — TÍCH LŨY / TĂNG TRƯỞNG (Uptrend Leader)",
+      "prediction_direction": "NEUTRAL — ĐI NGANG / QUAN SÁT (Hold & Watch)",
       "entry_price": 238.13,
-      "current_price": 244.77,
-      "stop_2atr": 230.71,
-      "tp1_price": 286.61,
-      "pnl_pct": 2.79,
-      "alpha_vs_sp500_pct": 5.03,
-      "status_tag": "OUTPERFORM",
+      "current_price": 244.43,
+      "stop_2atr": 223.85,
+      "tp1_price": 286.27,
+      "pnl_pct": 2.65,
+      "alpha_vs_sp500_pct": 4.57,
+      "status_tag": "STABLE_HOLD",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Tăng trưởng / Vượt trội S&P 500 (+2.79%, Alpha +5.03%)"
+      "evaluation_note": "Giữ nhịp ổn định hơn thị trường chung (+2.65%)"
     },
     {
       "symbol": "META",
@@ -133,15 +133,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
       "entry_price": 620.75,
-      "current_price": 605.9,
-      "stop_2atr": 540.06,
-      "tp1_price": 702.08,
-      "pnl_pct": -2.39,
-      "alpha_vs_sp500_pct": -0.15,
-      "status_tag": "WATCHING",
-      "is_win": false,
+      "current_price": 609.89,
+      "stop_2atr": 557.81,
+      "tp1_price": 707.15,
+      "pnl_pct": -1.75,
+      "alpha_vs_sp500_pct": 0.17,
+      "status_tag": "STABLE_HOLD",
+      "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (-2.39%)"
+      "evaluation_note": "Giữ nhịp ổn định hơn thị trường chung (-1.75%)"
     },
     {
       "symbol": "TSLA",
@@ -150,15 +150,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim)",
       "entry_price": 398.55,
-      "current_price": 377.68,
-      "stop_2atr": 341.72,
-      "tp1_price": 457.88,
-      "pnl_pct": -5.24,
-      "alpha_vs_sp500_pct": -3.0,
+      "current_price": 380.14,
+      "stop_2atr": 337.58,
+      "tp1_price": 460.34,
+      "pnl_pct": -4.62,
+      "alpha_vs_sp500_pct": -2.7,
       "status_tag": "RISK_AVOIDED",
       "is_win": true,
       "hit_stop": false,
-      "evaluation_note": "Phòng vệ thành công — Tránh được nhịp sụt giảm (-5.24%)"
+      "evaluation_note": "Phòng vệ thành công — Tránh được nhịp sụt giảm (-4.62%)"
     },
     {
       "symbol": "TSM",
@@ -167,15 +167,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
       "entry_price": 404.71,
-      "current_price": 337.57,
-      "stop_2atr": 296.62,
-      "tp1_price": 438.03,
-      "pnl_pct": -16.59,
-      "alpha_vs_sp500_pct": -14.35,
+      "current_price": 342.34,
+      "stop_2atr": 287.34,
+      "tp1_price": 442.8,
+      "pnl_pct": -15.41,
+      "alpha_vs_sp500_pct": -13.49,
       "status_tag": "WATCHING",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (-16.59%)"
+      "evaluation_note": "Đang quan sát tạo nền (-15.41%)"
     },
     {
       "symbol": "AVGO",
@@ -184,15 +184,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
       "entry_price": 323.55,
-      "current_price": 291.66,
-      "stop_2atr": 253.08,
-      "tp1_price": 384.14,
-      "pnl_pct": -9.86,
-      "alpha_vs_sp500_pct": -7.62,
+      "current_price": 300.86,
+      "stop_2atr": 245.42,
+      "tp1_price": 393.4,
+      "pnl_pct": -7.01,
+      "alpha_vs_sp500_pct": -5.09,
       "status_tag": "WATCHING",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (-9.86%)"
+      "evaluation_note": "Đang quan sát tạo nền (-7.01%)"
     },
     {
       "symbol": "AMD",
@@ -201,15 +201,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "TACTICAL REBOUND — QUÁ BÁN CHỜ HỒI PHỤC (Oversold Value)",
       "entry_price": 499.48,
-      "current_price": 396.2,
-      "stop_2atr": 302.08,
-      "tp1_price": 606.06,
-      "pnl_pct": -20.68,
-      "alpha_vs_sp500_pct": -18.44,
+      "current_price": 406.03,
+      "stop_2atr": 291.27,
+      "tp1_price": 615.89,
+      "pnl_pct": -18.71,
+      "alpha_vs_sp500_pct": -16.79,
       "status_tag": "WATCHING",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (-20.68%)"
+      "evaluation_note": "Đang quan sát tạo nền (-18.71%)"
     },
     {
       "symbol": "INTC",
@@ -218,15 +218,15 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "NEUTRAL — ĐI NGANG / QUAN SÁT (Hold & Watch)",
       "entry_price": 64.41,
-      "current_price": 52.81,
-      "stop_2atr": 45.0,
-      "tp1_price": 72.09,
-      "pnl_pct": -18.01,
-      "alpha_vs_sp500_pct": -15.77,
+      "current_price": 54.47,
+      "stop_2atr": 43.17,
+      "tp1_price": 73.81,
+      "pnl_pct": -15.43,
+      "alpha_vs_sp500_pct": -13.51,
       "status_tag": "WATCHING",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Đang quan sát tạo nền (-18.01%)"
+      "evaluation_note": "Đang quan sát tạo nền (-15.43%)"
     },
     {
       "symbol": "QCOM",
@@ -235,19 +235,19 @@
       "prediction_date": "2026-10-30",
       "prediction_direction": "BEARISH — XU HƯỚNG GIẢM / RỦI RO CAO (Avoid / Trim)",
       "entry_price": 163.8,
-      "current_price": 165.72,
-      "stop_2atr": 143.14,
-      "tp1_price": 205.34,
-      "pnl_pct": 1.17,
-      "alpha_vs_sp500_pct": 3.41,
+      "current_price": 168.66,
+      "stop_2atr": 145.91,
+      "tp1_price": 209.06,
+      "pnl_pct": 2.97,
+      "alpha_vs_sp500_pct": 4.89,
       "status_tag": "FALSE_ALARM",
       "is_win": false,
       "hit_stop": false,
-      "evaluation_note": "Phục hồi kỹ thuật ngắn hạn (+1.17%)"
+      "evaluation_note": "Phục hồi kỹ thuật ngắn hạn (+2.97%)"
     }
   ],
   "latest_lessons": [
-    "**Bài học 1 (Thanh khoản & Biến động VIX = 28.57 >= 20)**: Khi VIX vượt ngưỡng 20, hệ thống nâng trọng số FCF lên **35%** (Tổng 4 trụ cột = `25% + 35% + 20% + 20% = 100%`) và giữ đệm tiền mặt tối thiểu **40% NAV**.",
+    "**Bài học 1 (Thanh khoản & Biến động VIX = 27.04 >= 20)**: Khi VIX vượt ngưỡng 20, hệ thống nâng trọng số FCF lên **35%** (Tổng 4 trụ cột = `25% + 35% + 20% + 20% = 100%`) và giữ đệm tiền mặt tối thiểu **40% NAV**.",
     "**Bài học 2 (Kỷ luật Khóa Mua Mới Trước BCTC <= 7 Ngày)**: Hệ thống đã tự động khóa giải ngân mới và loại khỏi bảng phân bổ Risk-Parity đối với 4 mã sắp công bố BCTC (`AAPL, BRK-B, AMD, PLTR`), trong khi các mã vừa công bố xong (`XOM, CVX`) đã thoát rủi ro nhảy gap sự kiện.",
     "**Bài học 3 (Độ tin cậy của True FCF ex-SBC, EVA Spread & SEC Form 4)**: Các doanh nghiệp có dòng tiền thực sau trừ thưởng cổ phiếu (`True FCF ex-SBC > 0`), `ROIC > WACC` và giao dịch nội bộ mua ròng (`MSFT`, `JPM`, `PG`) giữ giá vượt trội trong các phiên chỉ số chung điều chỉnh."
   ],

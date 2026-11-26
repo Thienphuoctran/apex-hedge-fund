@@ -23,5 +23,86 @@
     "role": "sentinel",
     "type": "sentinel_warning",
     "content": "⚠️ [BIẾN ĐỘNG MẠNH — TPB] Giá 11,950 (-2.05%) | Cách Stop: +2.93%."
+  },
+  {
+    "id": "cbtt_2026-11-26_CRITICAL_PVS_99881",
+    "key": "cbtt_2026-11-26_CRITICAL_PVS_99881",
+    "timestamp": "15:46:20",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PVS] PVS ước tính doanh thu 34.000 tỷ, lãi 1.900 tỷ đồng năm 2026: Lợi nhuận thực tế hai năm gần nhất có gì lạ? (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-26_CRITICAL_PNJ_29883",
+    "key": "cbtt_2026-11-26_CRITICAL_PNJ_29883",
+    "timestamp": "15:46:20",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Vietcap hạ 68% giá mục tiêu PNJ, dự báo có lãi trở lại vào năm 2027 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-26_CRITICAL_PNJ_37005",
+    "key": "cbtt_2026-11-26_CRITICAL_PNJ_37005",
+    "timestamp": "15:46:20",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — PNJ] Bài toán khó để PNJ huy động 8.000 tỷ \"chữa cháy\": Bất ngờ lời giải có thể đến từ khoản lỗ kỷ lục (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-26_CRITICAL_FPT_71412",
+    "key": "cbtt_2026-11-26_CRITICAL_FPT_71412",
+    "timestamp": "15:46:20",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "specialist",
+    "type": "cbtt_critical",
+    "content": "[📊 BCTC MỚI — FPT] FPT Software dự kiến doanh thu lập kỷ lục trong quý 4 (BCTC_KET_QUA_KINH_DOANH)"
+  },
+  {
+    "id": "cbtt_2026-11-26_RED_FLAG_HCM_88481",
+    "key": "cbtt_2026-11-26_RED_FLAG_HCM_88481",
+    "timestamp": "15:46:20",
+    "sender": "Hiền (Ban 10 CBTT Radar)",
+    "role": "sentinel",
+    "type": "cbtt_red_flag",
+    "content": "[🔴 RED FLAG — HCM] Đánh sập đường dây rửa tiền hơn 9.000 tỷ đồng qua đánh bạc trực tuyến (CANH_BAO_RUI_RO)"
+  },
+  {
+    "id": "sec_2026-11-26_TSLA_10-Q_2026-10-22",
+    "key": "sec_2026-11-26_TSLA_10-Q_2026-10-22",
+    "timestamp": "15:46:20",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — TSLA] 10-Q (2026-10-22)"
+  },
+  {
+    "id": "sec_2026-11-26_AVGO_10-Q_2026-09-10",
+    "key": "sec_2026-11-26_AVGO_10-Q_2026-09-10",
+    "timestamp": "15:46:20",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — AVGO] 10-Q (2026-09-10)"
+  },
+  {
+    "id": "sec_2026-11-26_INTC_10-Q_2026-10-30",
+    "key": "sec_2026-11-26_INTC_10-Q_2026-10-30",
+    "timestamp": "15:46:20",
+    "sender": "Hiền (Ban 10 SEC EDGAR)",
+    "role": "specialist",
+    "type": "sec_filing",
+    "content": "[📊 SEC 10-Q — INTC] 10-Q (2026-10-30)"
+  },
+  {
+    "id": "ban9_warn_2026-11-26_HPG",
+    "key": "ban9_warn_2026-11-26_HPG",
+    "timestamp": "15:46:56",
+    "sender": "Victor (Ban 9 Sentinel)",
+    "role": "sentinel",
+    "type": "sentinel_warning",
+    "content": "⚠️ [BIẾN ĐỘNG MẠNH — HPG] Giá 19,600 (-2.24%) | Cách Stop: +1.53%."
   }
 ]

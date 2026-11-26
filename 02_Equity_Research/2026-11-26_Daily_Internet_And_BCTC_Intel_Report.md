@@ -1,33 +1,33 @@
 # BÁO CÁO TÌNH BÁO THỊ TRƯỜNG, BCTC & INTERNET SỐNG HÀNG NGÀY (2026-11-26)
-> **Thời điểm cào dữ liệu thật:** `2026-11-26 01:39:14 ICT` (Thời gian chạy: `42.67s`)  
+> **Thời điểm cào dữ liệu thật:** `2026-11-26 15:45:24 ICT` (Thời gian chạy: `42.38s`)  
 > **Cơ quan thực thi:** Ban 2 (Pháp y BCTC) & Ban 10 (`Hiền` IR Scout) — Giai đoạn 1 Nâng cấp Toàn diện
 
 ---
 
 ## I. TỔNG QUAN NGUỒN DỮ LIỆU ĐÃ CÀO TRỰC TIẾP TRÊN INTERNET HÔM NAY
-- **Tổng bài báo RSS / Tin doanh nghiệp / CBTT hợp nhất:** **`540` mục sống** (`13/13` kênh RSS online).
+- **Tổng bài báo RSS / Tin doanh nghiệp / CBTT hợp nhất:** **`538` mục sống** (`13/13` kênh RSS online).
 - **Tin doanh nghiệp Vietcap AI & CafeF theo mã:** **`39/30` mã trọng điểm VN**.
 - **Cổng Quan hệ Cổ đông (IR) doanh nghiệp HTTP 200:** **`10/11` cổng xác thực**.
 - **Tìm kiếm Web nâng cao Tavily:** **`0` kết quả sống** trên 4 chuyên đề Vĩ mô & Doanh nghiệp.
 - **Hồ sơ SEC EDGAR Mỹ mới nhất (`10-Q/10-K/8-K`):** **`6` tập đoàn**.
-- **Kho BCTC & Giá EOD VPS:** `145` DN VN (`{'2026Q3': 144, '2024Q1': 1}`), thanh giá cuối `2026-11-23` (`VNINDEX = 1697.14`), cập nhật `2026-11-26 01:39:13` (`0.0h` trước).
+- **Kho BCTC & Giá EOD VPS:** `145` DN VN (`{'2026Q3': 144, '2024Q1': 1}`), thanh giá cuối `2026-11-23` (`VNINDEX = 1697.14`), cập nhật `2026-11-26 15:45:23` (`0.0h` trước).
 
 ## II. TÌNH BÁO DOANH NGHIỆP & TIN TỨC RỔ TUẦN 48 VS NHÓM RỦI RO
 
 | Mã | Số Tin | Sentiment TB | Tin Mới Nhất (Vietcap AI / CafeF CBTT) |
 | :--- | :---: | :---: | :--- |
-| **TPB** | `9` | `+0.22` | `2026-11-19 16:59:00` — TPB: Một chạm thay cho chữ ký, TPBank số hóa giao dịch tại quầy bằng sinh trắc học và ký số qua VNeID |
-| **HDB** | `9` | `+0.22` | `2026-11-25 17:00:14` — HDB: VIFC-HCMC mở 'luồng xanh' 7 ngày hút vốn ngoại, chuyên gia dự báo chứng khoán có dư địa sinh lời 40% trong 2027 |
-| **HPG** | `9` | `+0.32` | `2026-11-23 19:23:00` — HPG: Tập đoàn Trung Quốc đến thăm tổ hợp thép 7 tỷ USD của tỷ phú Trần Đình Long, hé lộ lĩnh vực muốn hợp tác |
-| **CTG** | `9` | `+0.22` | `2026-11-21 18:51:00` — CTG: Nợ cần chú ý tăng mạnh, VietinBank mạnh tay trích lập dự phòng rủi ro tín dụng gần 21.000 tỷ đồng sau 9 tháng |
+| **TPB** | `9` | `+0.20` | `2026-11-26 12:46:00` — TPB: Dấu ấn ESG của TPBank cực Nam Tổ quốc: Từ 27 giếng nước ngọt đến 20ha rừng phòng hộ |
+| **HDB** | `9` | `+0.15` | `2026-11-26 11:09:00` — HDB: HDBank thông báo chào bán trái phiếu ra công chúng – đợt chào bán 1 |
+| **HPG** | `9` | `+0.32` | `2026-11-26 11:37:00` — HPG: 'Vua thép' Hòa Phát (HPG) được dự báo lãi tới 7.500 tỷ đồng trong quý IV/2026 |
+| **CTG** | `9` | `+0.07` | `2026-11-26 14:24:48` — CTG: VietinBank tiếp tục huy động 4,000 tỷ từ chào bán trái phiếu đợt 2 |
 | **VPB** | `9` | `+0.22` | `2026-11-25 09:59:00` — VPB: VPBank dự kiến tất toán sớm lô trái phiếu 2.000 tỷ đồng |
 | **MBB** | `9` | `+0.34` | `2026-11-25 21:17:00` — MBB: Góp mặt trong Top 10 thương hiệu tăng trưởng nhanh nhất ASEAN giai đoạn 2023 - 2026 |
-| **TCB** | `9` | `+0.20` | `2026-11-25 11:51:00` — TCB: Techcombank phát hành 3.000 tỷ đồng trái phiếu |
-| **FPT** | `9` | `+0.31` | `2026-11-25 09:08:00` — FPT: Từ hiện đại hóa hệ thống đến an ninh mạng: 4 động lực tăng trưởng mới của FPT |
-| **BAF** | `9` | `+0.20` | `2026-11-25 15:15:00` — BAF: Nhà máy 1.250 tỷ đồng mở rộng năng lực chế biến thực phẩm của BAF |
-| **MSH** | `9` | `+0.17` | `2026-11-17 16:04:00` — MSH: May Sông Hồng (MSH) chi 450 tỷ đồng tạm ứng cổ tức, tỷ lệ 40% |
+| **TCB** | `9` | `+0.20` | `2026-11-26 14:25:00` — TCB: Một Phó tổng giám đốc của Techcombank từ nhiệm |
+| **FPT** | `9` | `+0.26` | `2026-11-26 06:25:00` — FPT: Đầu tư AI và bài toán hiệu quả kinh doanh |
+| **BAF** | `4` | `+0.00` | `20/11/2026 00:00` — BAF: Nhận được công văn của UBCKNN về tài liệu báo cáo kết quả phát hành cổ phiếu theo chương trình lựa chọn cho NLĐ |
+| **MSH** | `4` | `-0.10` | `20/11/2026 00:00` — MSH: 26.11.2026, ngày GDKHQ tạm ứng cổ tức năm 2026 bằng tiền (4.000 đ/cp) |
 | **VIX** | `4` | `+0.00` | `30/10/2026 00:00` — VIX: Nghị quyết HĐQT thông qua hạn mức tín dụng tại Techcombank |
-| **CII** | `4` | `+0.00` | `25/11/2026 15:33` — CII: Báo cáo kết quả đợt chào bán trái phiếu CII426001 |
+| **CII** | `4` | `+0.00` | `26/11/2026 14:17` — CII: Nhận được công văn của UBCKNN về tài liệu báo cáo kết quả chào bán trái phiếu chuyển đổi ra công chúng |
 | **CEO** | `4` | `+0.00` | `02/11/2026 15:23` — CEO: Báo cáo tài chính quý 3/2026 (công ty mẹ) |
 
 ## III. TÌNH BÁO WEB TAVILY & CỔNG IR DOANH NGHIỆP CHÍNH THỐNG
@@ -64,18 +64,18 @@
 
 ## IV. TOP TIÊU ĐIỂM BÁO CHÍ TÀI CHÍNH MỚI CÀO
 
-- `[Vietcap/FireAnt]` (`TPB`, Sent `+0.61`): [TPB: Thương hiệu quốc gia 2026: TPBank tiếp tục khẳng định vị thế ngân hàng số tiên phong](https://fireant.vn/bai-viet/tpb-thuong-hieu-quoc-gia-2026-tpbank-tiep-tuc-khang-dinh-vi-the-ngan-hang-so-tien-phong/42787837)
-- `[Vietcap/Vietstock]` (`HDB`, Sent `+0.61`): [HDB: Bốn động lực lớn kỳ vọng kích hoạt dòng vốn ngoại vào thị trường chứng khoán Việt Nam từ năm 2027](https://vietstock.vn/2026/11/bon-dong-luc-lon-ky-vong-kich-hoat-dong-von-ngoai-vao-thi-truong-chung-khoan-viet-nam-tu-nam-2027-830-1517555.htm)
-- `[Vietcap/FireAnt]` (`HPG`, Sent `+0.45`): [HPG: Giá nguyên liệu hạ nhiệt, doanh nghiệp thép nào sẽ hưởng lợi nhất](https://fireant.vn/bai-viet/hpg-gia-nguyen-lieu-ha-nhiet-doanh-nghiep-thep-nao-se-huong-loi-nhat/42818191)
-- `[Vietcap/FireAnt]` (`CTG`, Sent `+0.45`): [CTG: VietinBank chính thức hoàn tất bán tòa tháp VietinBank Tower 'đắp chiếu' 16 năm ở Ciputra](https://fireant.vn/bai-viet/ctg-vietinbank-chinh-thuc-hoan-tat-ban-toa-thap-vietinbank-tower-dap-chieu-16-nam-o-ciputra/42831924)
-- `[Vietcap/FireAnt]` (`HDB`, Sent `+0.00`): [HDB: Lãi suất HDBank mới nhất, gửi 500 triệu đồng nhận 42 triệu đồng tiền lãi](https://fireant.vn/bai-viet/hdb-lai-suat-hdbank-moi-nhat-gui-500-trieu-dong-nhan-42-trieu-dong-tien-lai/42900475)
-- `[CafeF Doanh nghiệp]` (`HDB`, Sent `+0.00`): [HDB: Thông báo nhận được Quyết định của NHNN về việc sửa đổi nội dung về trụ sở chính tại Giấy phép thành lập và hoạt động](https://cafef.vn/du-lieu/HDB-3025816/hdb-thong-bao-nhan-duoc-quyet-dinh-cua-nhnn-ve-viec-sua-doi-noi-dung-ve-tru-so-chinh-tai-giay-phep-thanh-lap-va-hoat-dong.chn?utm_source=du-lieu.chn)
 - `[CafeF Doanh nghiệp]` (`CTG`, Sent `+0.00`): [VietinBank tăng tốc chặng về đích 2026: Vững vàng chất lượng tài sản, dẫn đầu hiệu quả vận hành](https://cafef.vn/vietinbank-tang-toc-chang-ve-dich-2026-vung-vang-chat-luong-tai-san-dan-dau-hieu-qua-van-hanh-188261113182727616.chn?utm_source=du-lieu.chn)
+- `[CafeF Doanh nghiệp]` (`HDB`, Sent `+0.00`): [HDB: Thông báo nhận được Quyết định của NHNN về việc sửa đổi nội dung về trụ sở chính tại Giấy phép thành lập và hoạt động](https://cafef.vn/du-lieu/HDB-3025816/hdb-thong-bao-nhan-duoc-quyet-dinh-cua-nhnn-ve-viec-sua-doi-noi-dung-ve-tru-so-chinh-tai-giay-phep-thanh-lap-va-hoat-dong.chn?utm_source=du-lieu.chn)
 - `[Vietcap/Người quan sát]` (`VPB`, Sent `+0.00`): [VPB: VPBank tiếp tục hạ lãi suất huy động tại một số kỳ hạn](https://nguoiquansat.vn/vpbank-tiep-tuc-ha-lai-suat-huy-dong-tai-mot-so-ky-han-328274.html)
 - `[Vietcap/FireAnt]` (`HPG`, Sent `+0.77`): [HPG: Tập đoàn Hòa Phát: Top 2 doanh nghiệp tư nhân lớn nhất Việt Nam, theo bảng xếp hạng VNR500](https://fireant.vn/bai-viet/hpg-tap-doan-hoa-phat-top-2-doanh-nghiep-tu-nhan-lon-nhat-viet-nam-theo-bang-xep-hang-vnr500/42856385)
 - `[Vietcap/FireAnt]` (`HPG`, Sent `+0.77`): [HPG: Tập đoàn Hòa Phát 3 năm liền trong Top 2 doanh nghiệp tư nhân lớn nhất Việt Nam](https://fireant.vn/bai-viet/hpg-tap-doan-hoa-phat-3-nam-lien-trong-top-2-doanh-nghiep-tu-nhan-lon-nhat-viet-nam/42850927)
 - `[Vietcap/FireAnt]` (`VPB`, Sent `+0.61`): [VPB: Ngân hàng đẩy mạnh huy động vốn ngoại, hút hàng tỷ USD](https://fireant.vn/bai-viet/vpb-ngan-hang-day-manh-huy-dong-von-ngoai-hut-hang-ty-usd/42781671)
+- `[Vietcap/FireAnt]` (`TPB`, Sent `+0.45`): [TPB: Dấu ấn ESG của TPBank cực Nam Tổ quốc: Từ 27 giếng nước ngọt đến 20ha rừng phòng hộ](https://fireant.vn/bai-viet/tpb-dau-an-esg-cua-tpbank-cuc-nam-to-quoc-tu-27-gieng-nuoc-ngot-den-20ha-rung-phong-ho/42924177)
 - `[Vietcap/FireAnt]` (`TPB`, Sent `+0.45`): [TPB: Một chạm thay cho chữ ký, TPBank số hóa giao dịch tại quầy bằng sinh trắc học và ký số qua VNeID](https://fireant.vn/bai-viet/tpb-mot-cham-thay-cho-chu-ky-tpbank-so-hoa-giao-dich-tai-quay-bang-sinh-trac-hoc-va-ky-so-qua-vneid/42849003)
 - `[Vietcap/FireAnt]` (`TPB`, Sent `+0.45`): [TPB: TPBank chính thức đưa xác thực sinh trắc học và ký số qua VNeID vào giao dịch tại quầy](https://fireant.vn/bai-viet/tpb-tpbank-chinh-thuc-dua-xac-thuc-sinh-trac-hoc-va-ky-so-qua-vneid-vao-giao-dich-tai-quay/42847506)
 - `[Vietcap/FireAnt]` (`TPB`, Sent `+0.45`): [TPB: TPBank được bổ sung hoạt động cung cấp dịch vụ bù trừ, thanh toán giao dịch chứng khoán](https://fireant.vn/bai-viet/tpb-tpbank-duoc-bo-sung-hoat-dong-cung-cap-dich-vu-bu-tru-thanh-toan-giao-dich-chung-khoan/42810780)
+- `[Vietcap/Người quan sát]` (`HPG`, Sent `+0.45`): [HPG: 'Vua thép' Hòa Phát (HPG) được dự báo lãi tới 7.500 tỷ đồng trong quý IV/2026](https://nguoiquansat.vn/vua-thep-hoa-phat-hpg-duoc-du-bao-lai-toi-7-500-ty-dong-trong-quy-iv-2026-330168.html)
+- `[Vietcap/Người quan sát]` (`HPG`, Sent `+0.45`): [HPG: 'Miếng bánh' 4-5 triệu tấn thép cao cấp tại Việt Nam bị Nhật - Hàn chiếm 40% thị phần: Hòa Phát mở đường giành lại sân nhà](https://nguoiquansat.vn/mieng-banh-4-5-trieu-tan-thep-cao-cap-tai-viet-nam-bi-nhat-han-chiem-40-thi-phan-hoa-phat-mo-duong-gianh-lai-san-nha-330077.html)
 - `[Vietcap/Người quan sát]` (`HPG`, Sent `+0.45`): [HPG: Tập đoàn Trung Quốc đến thăm tổ hợp thép 7 tỷ USD của tỷ phú Trần Đình Long, hé lộ lĩnh vực muốn hợp tác](https://nguoiquansat.vn/tap-doan-trung-quoc-den-tham-to-hop-thep-7-ty-usd-cua-ty-phu-tran-dinh-long-he-lo-linh-vuc-muon-hop-tac-329735.html)
+- `[Vietcap/Người quan sát]` (`CTG`, Sent `+0.45`): [CTG: VietinBank sắp chào bán 4.000 tỷ đồng trái phiếu](https://nguoiquansat.vn/vietinbank-sap-chao-ban-4-000-ty-dong-trai-phieu-330199.html)
+- `[Vietcap/FireAnt]` (`HDB`, Sent `+0.45`): [HDB: HDBank Global Capital Summit 2026: Hội tụ trí tuệ quốc tế, kết nối dòng vốn toàn cầu với khát vọng Việt Nam](https://fireant.vn/bai-viet/hdb-hdbank-global-capital-summit-2026-hoi-tu-tri-tue-quoc-te-ket-noi-dong-von-toan-cau-voi-khat-vong-viet-nam/42912887)

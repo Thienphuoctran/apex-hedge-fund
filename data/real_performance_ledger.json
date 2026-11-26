@@ -1,6 +1,6 @@
 {
   "version": "V7.0",
-  "generated_at_ict": "2026-11-26 01:41:09 ICT",
+  "generated_at_ict": "2026-11-26 15:46:59 ICT",
   "account_id": "105C307855",
   "chairman": "Trần Quốc Thiên Phước",
   "fee_model_tcbs": {
@@ -79,7 +79,7 @@
       "net_pnl_pct": 0.01,
       "buy_date": "2026-11-23",
       "t_plus_2_5_sellable_after": "2026-11-26 13:00 ICT",
-      "can_sell_today": false,
+      "can_sell_today": true,
       "stop_loss_vnd": 11600.0,
       "tp1_vnd": 13530.0,
       "trailing_mode": "INITIAL_2ATR",
@@ -100,7 +100,7 @@
       "net_pnl_pct": -0.89,
       "buy_date": "2026-11-23",
       "t_plus_2_5_sellable_after": "2026-11-26 13:00 ICT",
-      "can_sell_today": false,
+      "can_sell_today": true,
       "stop_loss_vnd": 19300.0,
       "tp1_vnd": 22550.0,
       "trailing_mode": "INITIAL_2ATR",

@@ -349,3 +349,10 @@ File này lưu trữ liên tục toàn bộ quá trình học tập, đối soá
 - **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `AAPL, BRK-B, AMD, PLTR` (chuyển sang `Locked Earnings Watchlist`).
 - **Realized Alpha vs S&P 500**: 1D `+1.15%` | 5D `+1.28%` | 20D `+6.45%`.
 - **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **76.2%**
+
+## [Phiên Giao Dịch: 2026-11-26] — Tiến Hóa Mô Hình v5.0 & Kiểm Toán Walk-Forward
+- **Chế độ Vĩ mô**: VIX = 27.04 | Dầu WTI = $83.83 | US10Y = 4.85%.
+- **Trọng số Chấm điểm Thích nghi (Tổng 100%)**: Vĩ mô `25%` | BCTC/FCF `35%` | Định giá `20%` | Kỹ thuật `20%`.
+- **Kiểm toán Kỷ luật BCTC**: Đã khóa giải ngân mới đối với `AAPL, BRK-B, AMD, PLTR` (chuyển sang `Locked Earnings Watchlist`).
+- **Realized Alpha vs S&P 500**: 1D `+0.07%` | 5D `+2.02%` | 20D `+7.33%`.
+- **Tỷ lệ Dự báo Chuẩn xác Tổng hợp**: **76.2%**

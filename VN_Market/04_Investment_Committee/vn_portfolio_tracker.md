@@ -1,4 +1,4 @@
-# SỔ THEO DÕI DANH MỤC TẦM NGẮM CHUẨN ĐỊNH LƯỢNG TTCK VIỆT NAM (Cập nhật: 2026-11-25 | Regime: SPRING_WATCH_RECOVERY)
+# SỔ THEO DÕI DANH MỤC TẦM NGẮM CHUẨN ĐỊNH LƯỢNG TTCK VIỆT NAM (Cập nhật: 2026-11-26 | Regime: SPRING_WATCH_RECOVERY)
 
 | Mã CK | Sàn | Giá Tham Chiếu | Điểm IC | Điểm 10 Danh Thủ | Tỷ Trọng | Khối Lượng (Lô 100) | Cắt Lỗ Stop | Mục Tiêu TP1 | Mục Tiêu TP2 | Trạng Thái |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
