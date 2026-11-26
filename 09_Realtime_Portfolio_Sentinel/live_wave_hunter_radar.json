@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26 16:16:48",
+  "generated_at": "2026-11-26 17:44:29",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -319,6 +319,14 @@
     },
     {
       "market": "VIETNAM_CBTT",
+      "symbol": "HPG",
+      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "date": "Thu, 26 Nov 26 1",
+      "headline": "Hưởng lợi lớn từ HRC, “vua thép” Hòa Phát (HPG) được dự báo lãi 7.500 tỷ đồng trong quý IV",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
       "symbol": "NTL",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Thu, 26 Nov 26 1",
@@ -372,14 +380,6 @@
       "date": "Thu, 26 Nov 26 1",
       "headline": "Vietcap hạ 68% giá mục tiêu PNJ, dự báo có lãi trở lại vào năm 2027",
       "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "CEO",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Thu, 26 Nov 26 0",
-      "headline": "Từng mất gần triệu USD chỉ trong 1 tháng, CEO chứng khoán tiết lộ điều tự hào nhất sau 20 năm",
-      "is_portfolio_holding": false
     }
   ],
   "departments_heartbeat": [
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 381 hồ sơ SEC & 56 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 381 hồ sơ SEC & 54 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-11-26T08:46:20.557658+00:00",
+  "timestamp_utc": "2026-11-26T10:44:25.627782+00:00",
   "scan_date": "2026-11-26",
   "total_us_filings_count": 381,
-  "total_vn_announcements_count": 56,
+  "total_vn_announcements_count": 54,
   "ticker_filing_summary": {
     "NVDA": {
       "latest_form": "4",
@@ -284,6 +284,14 @@
       "sec_url": "https://www.sec.gov/edgar/browse/?CIK=0000063908",
       "total_recent_filings": 11
     },
+    "HPG": {
+      "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "latest_title": "Hưởng lợi lớn từ HRC, “vua thép” Hòa Phát (HPG) được dự báo lãi 7.500 tỷ đồng trong quý IV",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 26 Nov 26 17:01:00 +0700",
+      "source_url": "https://cafef.vn/huong-loi-lon-tu-hrc-vua-thep-hoa-phat-hpg-duoc-du-bao-lai-7500-ty-dong-trong-quy-iv-188261126161100056.chn",
+      "total_announcements": 1
+    },
     "NTL": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
       "latest_title": "Ông Đinh Quang Chiến sở hữu 1.240 tỷ đồng cổ phiếu, liên tục gom hàng chục triệu cổ phiếu bất động sản, điện, cảng biển",
@@ -314,7 +322,7 @@
       "severity": "INFO",
       "published_at": "Wed, 25 Nov 26 19:59:00 +0700",
       "source_url": "https://cafef.vn/de-xuat-luong-ceo-trung-tam-tai-chinh-quoc-te-da-nang-toi-850-trieu-dong-thang-188261125190438201.chn",
-      "total_announcements": 12
+      "total_announcements": 11
     },
     "PVS": {
       "latest_event_type": "BCTC_KET_QUA_KINH_DOANH",
@@ -330,7 +338,7 @@
       "severity": "CRITICAL",
       "published_at": "Thu, 26 Nov 26 10:52:00 +0700",
       "source_url": "https://cafef.vn/vietcap-ha-68-gia-muc-tieu-pnj-du-bao-co-lai-tro-lai-vao-nam-2027-188261126104600253.chn",
-      "total_announcements": 13
+      "total_announcements": 12
     },
     "DGC": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -346,7 +354,7 @@
       "severity": "INFO",
       "published_at": "Thu, 26 Nov 26 00:02:00 +0700",
       "source_url": "https://cafef.vn/thay-gi-tu-viec-loat-ngoi-sao-mot-thoi-pnj-fpt-dgc-lao-doc-60-85-tu-dinh-188261125110420162.chn",
-      "total_announcements": 2
+      "total_announcements": 1
     },
     "SHB": {
       "latest_event_type": "TIN_DOANH_NGHIEP",
@@ -5063,6 +5071,18 @@
     {
       "market": "VIETNAM",
       "symbols": [
+        "HPG"
+      ],
+      "title": "Hưởng lợi lớn từ HRC, “vua thép” Hòa Phát (HPG) được dự báo lãi 7.500 tỷ đồng trong quý IV",
+      "summary": "Sau khi ghi nhận lợi nhuận quý III/2026 vượt xa kỳ vọng, CTCP Tập đoàn Hòa Phát (HoSE: HPG) được BSC Research dự báo tiếp tục duy trì mức lãi ròng 7.000-7.500 tỷ đồng trong quý IV, nhờ sản lượng tiêu thụ tăng và biên lợi...",
+      "event_type": "BCTC_KET_QUA_KINH_DOANH",
+      "severity": "CRITICAL",
+      "published_at": "Thu, 26 Nov 26 17:01:00 +0700",
+      "source_url": "https://cafef.vn/huong-loi-lon-tu-hrc-vua-thep-hoa-phat-hpg-duoc-du-bao-lai-7500-ty-dong-trong-quy-iv-188261126161100056.chn"
+    },
+    {
+      "market": "VIETNAM",
+      "symbols": [
         "NTL"
       ],
       "title": "Ông Đinh Quang Chiến sở hữu 1.240 tỷ đồng cổ phiếu, liên tục gom hàng chục triệu cổ phiếu bất động sản, điện, cảng biển",
@@ -5241,18 +5261,6 @@
       "severity": "CRITICAL",
       "published_at": "Wed, 25 Nov 26 02:01:00 +0700",
       "source_url": "https://cafef.vn/bai-toan-kho-de-pnj-huy-dong-8000-ty-chua-chay-bat-ngo-loi-giai-co-the-den-tu-khoan-lo-ky-luc-188261125020201109.chn"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "FPT"
-      ],
-      "title": "FPT Software dự kiến doanh thu lập kỷ lục trong quý 4",
-      "summary": "VNDIRECT dự báo hoạt động kinh doanh FPT Software sẽ tăng trưởng tại tất cả các thị trường trong quý IV, dẫn đầu bởi Nhật Bản với mức tăng 13,3% và khu vực châu Âu – Trung Đông tăng 24,3%....",
-      "event_type": "BCTC_KET_QUA_KINH_DOANH",
-      "severity": "CRITICAL",
-      "published_at": "Wed, 25 Nov 26 00:12:00 +0700",
-      "source_url": "https://cafef.vn/fpt-software-du-kien-doanh-thu-lap-ky-luc-trong-quy-4-188261124205750774.chn"
     },
     {
       "market": "VIETNAM",
@@ -5724,30 +5732,6 @@
       "severity": "INFO",
       "published_at": "Mon, 23 Nov 2026 21:14:03 +0700",
       "source_url": "https://vnexpress.net/jensen-huang-quay-ve-lam-ceo-nvidia-5148234.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "CEO"
-      ],
-      "title": "Ông Trump giục Nvidia phục chức cho Jensen Huang",
-      "summary": "Tổng thống Donald Trump liên tục kêu gọi Nvidia khôi phục chức vụ CEO cho Jensen Huang vì lợi ích của tập đoàn này lẫn nước Mỹ....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 2026 16:14:15 +0700",
-      "source_url": "https://vnexpress.net/ong-trump-giuc-nvidia-phuc-chuc-cho-jensen-huang-5148098.html"
-    },
-    {
-      "market": "VIETNAM",
-      "symbols": [
-        "PNJ"
-      ],
-      "title": "Cổ phiếu PNJ chạm sàn",
-      "summary": "Cổ phiếu PNJ mất hết biên độ trong phiên đầu tuần, xuống 12.600 đồng, sau khi người đứng đầu ban điều hành chia sẻ tình hình tài chính đang rất khó khăn....",
-      "event_type": "TIN_DOANH_NGHIEP",
-      "severity": "INFO",
-      "published_at": "Mon, 23 Nov 2026 16:01:07 +0700",
-      "source_url": "https://vnexpress.net/co-phieu-pnj-cham-san-5148100.html"
     }
   ]
 }

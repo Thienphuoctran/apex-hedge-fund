@@ -1,9 +1,10 @@
 # RADAR CÔNG BỐ THÔNG TIN, BCTC & NGHỊ QUYẾT HĐQT (TOÀN THỊ TRƯỜNG 144+ MÃ TTCK VIỆT NAM)
-> **Thời gian quét:** 2026-11-26 08:46:20  
-> **Số sự kiện ghi nhận:** 56 thông báo  
+> **Thời gian quét:** 2026-11-26 17:44:25  
+> **Số sự kiện ghi nhận:** 54 thông báo  
 
 | Mã CK | Phân Loại Sự Kiện | Mức Độ | Tiêu Đề Công Bố | Nguồn Tin |
 | :--- | :---: | :---: | :--- | :---: |
+| **HPG** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Hưởng lợi lớn từ HRC, “vua thép” Hòa Phát (HPG) được dự báo lãi 7.500 tỷ đồng trong quý IV | [Xem Link](https://cafef.vn/huong-loi-lon-tu-hrc-vua-thep-hoa-phat-hpg-duoc-du-bao-lai-7500-ty-dong-trong-quy-iv-188261126161100056.chn) |
 | **NTL** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ông Đinh Quang Chiến sở hữu 1.240 tỷ đồng cổ phiếu, liên tục gom hàng chục triệu cổ phiếu bất động sản, điện, cảng biển | [Xem Link](https://cafef.vn/ong-dinh-quang-chien-so-huu-1240-ty-dong-co-phieu-lien-tuc-gom-hang-chuc-trieu-co-phieu-bat-dong-san-dien-cang-bien-188261126121554825.chn) |
 | **GAS** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Nữ lãnh đạo 8X vừa được bổ nhiệm làm Phó Tổng giám đốc công ty dầu khí lớn nhất sàn chứng khoán | [Xem Link](https://cafef.vn/nu-lanh-dao-8x-vua-duoc-bo-nhiem-lam-pho-tong-giam-doc-cong-ty-dau-khi-lon-nhat-san-chung-khoan-188261126133323102.chn) |
 | **HCM** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Living Heritage kỳ 4 – “Hồ đôi Vọng Nguyệt”, đêm nghệ thuật đặc biệt cùng Sir Niels Lan Doky tại IKI Gallery | [Xem Link](https://cafef.vn/living-heritage-ky-4-ho-doi-vong-nguyet-dem-nghe-thuat-dac-biet-cung-sir-niels-lan-doky-tai-iki-gallery-188261126122716253.chn) |
@@ -19,7 +20,6 @@
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | PNJ bán vàng với giá thấp nhất thị trường giữa lúc “tình hình tài chính hết sức khẩn cấp” | [Xem Link](https://cafef.vn/pnj-ban-vang-voi-gia-thap-nhat-thi-truong-giua-luc-tinh-hinh-tai-chinh-het-suc-khan-cap-188261125131811819.chn) |
 | **BAF** | `NGHI_QUYET_HDQT_DU_AN` | ℹ️ TIN TỨC | BAF tiếp tục mở rộng quy mô đầu tư, khởi công dự án chế biến thực phẩm mới 1.250 tỷ đồng tại Gia Lai | [Xem Link](https://cafef.vn/baf-tiep-tuc-mo-rong-quy-mo-dau-tu-khoi-cong-du-an-che-bien-thuc-pham-moi-1250-ty-dong-tai-gia-lai-188261125083917014.chn) |
 | **PNJ** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | Bài toán khó để PNJ huy động 8.000 tỷ "chữa cháy": Bất ngờ lời giải có thể đến từ khoản lỗ kỷ lục | [Xem Link](https://cafef.vn/bai-toan-kho-de-pnj-huy-dong-8000-ty-chua-chay-bat-ngo-loi-giai-co-the-den-tu-khoan-lo-ky-luc-188261125020201109.chn) |
-| **FPT** | `BCTC_KET_QUA_KINH_DOANH` | 🔥 BCTC MỚI | FPT Software dự kiến doanh thu lập kỷ lục trong quý 4 | [Xem Link](https://cafef.vn/fpt-software-du-kien-doanh-thu-lap-ky-luc-trong-quy-4-188261124205750774.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Giá vàng nhẫn trơn, vàng miếng chiều 26/11 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải đồng loạt tăng | [Xem Link](https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-26-11-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-dong-loat-tang-188261126071729871.chn) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Tài chính PNJ trong tình trạng khẩn cấp: Ngân hàng nào là chủ nợ lớn nhất? | [Xem Link](https://cafef.vn/tai-chinh-pnj-trong-tinh-trang-khan-cap-ngan-hang-nao-la-chu-no-lon-nhat-18826112611260398.chn) |
 | **VIB** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | VIB Privilege Banking: Giữ quyền chủ động trong thế giới thay đổi nhanh | [Xem Link](https://cafef.vn/vib-privilege-banking-giu-quyen-chu-dong-trong-the-gioi-thay-doi-nhanh-188261126081518571.chn) |
@@ -58,5 +58,3 @@
 | **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cổ phiếu Nvidia tăng hơn 35% khi Jensen Huang trở về | [Xem Link](https://vnexpress.net/co-phieu-nvidia-tang-hon-35-khi-jensen-huang-tro-ve-5148259.html) |
 | **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Thêm 4 lãnh đạo cấp cao PNJ xin từ nhiệm | [Xem Link](https://vnexpress.net/them-4-lanh-dao-cap-cao-pnj-xin-tu-nhiem-5148235.html) |
 | **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Jensen Huang quay về làm CEO Nvidia | [Xem Link](https://vnexpress.net/jensen-huang-quay-ve-lam-ceo-nvidia-5148234.html) |
-| **CEO** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Ông Trump giục Nvidia phục chức cho Jensen Huang | [Xem Link](https://vnexpress.net/ong-trump-giuc-nvidia-phuc-chuc-cho-jensen-huang-5148098.html) |
-| **PNJ** | `TIN_DOANH_NGHIEP` | ℹ️ TIN TỨC | Cổ phiếu PNJ chạm sàn | [Xem Link](https://vnexpress.net/co-phieu-pnj-cham-san-5148100.html) |
