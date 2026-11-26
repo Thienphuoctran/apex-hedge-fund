@@ -48,8 +48,17 @@ def load_telegram_credentials() -> tuple[str, str]:
 
 
 def send_telegram_message(bot_token: str, chat_id: str, text: str) -> bool:
-    if not bot_token or not chat_id:
-        print("[!] Lỗi: Thiếu Telegram bot_token hoặc chat_id.")
+    if str(BASE_DIR) not in sys.path:
+        sys.path.insert(0, str(BASE_DIR))
+    try:
+        from scripts.telegram_dispatcher import dispatch_message, should_block_outbound_telegram
+        blocked, reason = should_block_outbound_telegram(topic_key="daily_warroom", priority="NORMAL")
+        if blocked:
+            print(f"[Telegram Guard] Bỏ qua telegram_eod_audit_reporter ({reason}).")
+            return False
+        return dispatch_message(topic_key="daily_warroom", text=text)
+    except Exception as _e:
+        print(f"[Telegram Guard] Từ chối gửi thẳng ({_e}).")
         return False
 
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"

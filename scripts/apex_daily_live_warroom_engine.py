@@ -864,6 +864,14 @@ def run_daemon(send_telegram: bool = True) -> None:
     signal.signal(signal.SIGINT, _handle_signal)
     signal.signal(signal.SIGTERM, _handle_signal)
 
+    try:
+        from scripts.apex_standby_controller import is_standby_mode_active
+        if is_standby_mode_active():
+            _log("[STANDBY HIBERNATION] Chế độ Ngủ Đông đang BẬT — Tạm dừng War-Room giao dịch intraday (chỉ giữ cào dữ liệu, EOD James+Palmer & Victor 5p Recovery).")
+            return
+    except Exception:
+        pass
+
     now = _ict_now()
     hm_init = now.strftime("%H:%M")
     init_session = get_vn_market_session_state(now_ict=now)

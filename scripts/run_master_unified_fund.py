@@ -51,6 +51,16 @@ def main():
     parser.add_argument("--run-eod", action="store_true", help="Chạy kiểm toán phúc tra cuối ngày EOD (Chỉ dùng sau 15:30)")
     args = parser.parse_args()
 
+    if str(BASE_DIR) not in sys.path:
+        sys.path.insert(0, str(BASE_DIR))
+    try:
+        from scripts.apex_standby_controller import is_standby_mode_active
+        if is_standby_mode_active():
+            print("⏸️ [STANDBY HIBERNATION] Hệ thống đang Ngủ Đông chờ thị trường phục hồi — tạm dừng run_master_unified_fund (không chạy giao dịch hay gửi Telegram sáng).")
+            return
+    except Exception:
+        pass
+
     start_time = time.time()
     print("=" * 80)
     print(" ⭐ HỆ THỐNG QUỸ ĐẦU TƯ ĐỊNH LƯỢNG ĐA TẦNG — TOÀN CẦU & VIỆT NAM (APEX MASTER CIO)")

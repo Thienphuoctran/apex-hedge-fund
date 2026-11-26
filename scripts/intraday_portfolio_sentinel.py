@@ -482,12 +482,19 @@ def compute_anomaly_metrics(position: Dict[str, Any], quote: Dict[str, Any], con
 
 def send_telegram_alert(config: Dict[str, Any], text: str):
     try:
-        from scripts.telegram_dispatcher import dispatch_message
-        if dispatch_message("alerts", text):
+        if str(BASE_DIR) not in sys.path:
+            sys.path.insert(0, str(BASE_DIR))
+        from scripts.telegram_dispatcher import dispatch_message, should_block_outbound_telegram
+        blocked, reason = should_block_outbound_telegram(is_intraday_alert=True, topic_key="alerts", priority="NORMAL")
+        if blocked:
+            print(f"  [Telegram Guard] Bỏ qua intraday_portfolio_sentinel ({reason}).")
+            return
+        if dispatch_message("alerts", text, is_intraday_alert=True):
             print("  [+] Đã gửi tin nhắn cảnh báo qua Telegram Dispatcher!")
             return
-    except Exception:
-        pass
+    except Exception as _e_disp:
+        print(f"  [Telegram Guard] Không gọi được dispatcher ({_e_disp}), chặn fallback gửi thẳng.")
+        return
     """Sends message to Telegram Bot if enabled."""
     tg_cfg = config.get("notification_channels", {}).get("telegram", {})
     if not tg_cfg.get("enabled", False):

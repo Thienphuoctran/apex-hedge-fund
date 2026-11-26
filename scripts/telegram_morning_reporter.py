@@ -47,41 +47,25 @@ def load_telegram_credentials() -> tuple[str, str]:
     return bot_token, chat_id
 
 
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
 try:
-    from scripts.telegram_dispatcher import dispatch_message
+    from scripts.telegram_dispatcher import dispatch_message, should_block_outbound_telegram
 except ImportError:
     dispatch_message = None
+    should_block_outbound_telegram = None
 
 def send_telegram_message(bot_token: str, chat_id: str, text: str) -> bool:
+    if should_block_outbound_telegram:
+        blocked, reason = should_block_outbound_telegram(topic_key="morning_blotter", priority="NORMAL")
+        if blocked:
+            print(f"[Telegram Guard] Bỏ qua Bản tin Khai Sáng ({reason}).")
+            return False
     if dispatch_message:
         return dispatch_message(topic_key="morning_blotter", text=text)
-    if not bot_token or not chat_id:
-        print("[!] Lỗi: Thiếu Telegram bot_token hoặc chat_id.")
-        return False
-        
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    payload = {
-        "chat_id": chat_id,
-        "text": text,
-        "parse_mode": "Markdown",
-        "disable_web_page_preview": True
-    }
-    
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
-    
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            res_data = json.loads(resp.read().decode("utf-8"))
-            if res_data.get("ok"):
-                print("[+] Đã gửi Bản tin Sáng thành công tới Telegram của Nhà Đầu Tư Phước Trần!")
-                return True
-            else:
-                print(f"[!] Telegram API error: {res_data}")
-                return False
-    except Exception as e:
-        print(f"[!] Lỗi kết nối Telegram API: {e}")
-        return False
+    print("[Telegram Guard] Thiếu dispatcher chuẩn — từ chối gửi thẳng Telegram để tránh rò rỉ Standby.")
+    return False
 
 
 def build_morning_briefing(blotter: Dict[str, Any]) -> List[str]:

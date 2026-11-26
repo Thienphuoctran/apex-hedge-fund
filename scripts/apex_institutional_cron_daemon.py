@@ -41,6 +41,7 @@ from scripts.singleton_dedup_manager import (
 from scripts.telegram_dispatcher import dispatch_message, send_single_eod_digest
 from scripts.vn_market_calendar import get_vn_market_session_state
 from scripts.apex_canonical_truth import build_and_save_canonical_truth, load_canonical_truth
+from scripts.apex_standby_controller import is_standby_mode_active
 
 TRADING_ONLY_MILESTONES = {
     "09:00", "11:45", "13:00", "13:30", "14:00", "14:05", "14:20", "14:25", "15:15", "15:45"
@@ -352,6 +353,56 @@ def execute_milestone(milestone_id: str) -> bool:
     # [ATOMIC DEDUP SHIELD] Chặn thực thi trùng lặp trong ngày (trừ khi chạy --force hoặc --dry-run)
     if not FORCE_RUN_MODE and not DRY_RUN_MODE and is_milestone_already_dispatched(date_str, milestone_id):
         log_event(f"🛡️ [DEDUP SHIELD] Cột mốc {milestone_id} ngày {date_str} ĐÃ ĐƯỢC XUẤT BẢN TRƯỚC ĐÓ. Chặn phát sóng trùng lặp!")
+        return True
+
+    # [MARKET HIBERNATION STANDBY MODE] Chỉ giữ Cào dữ liệu + EOD James/Palmer + Victor 24/7
+    if is_standby_mode_active():
+        if milestone_id == "06:00":
+            log_event("⏸️ [STANDBY] 06:00 Chạy cào CBTT/IR im lặng (không gửi Telegram).")
+            if not DRY_RUN_MODE:
+                _run_py_script("scripts/bctc_ir_filing_scout.py", timeout=90)
+            return True
+        if milestone_id == "07:00":
+            log_event("⏸️ [STANDBY] 07:00 Chạy cập nhật dữ liệu Vĩ mô/Giá im lặng (không gửi Telegram).")
+            if not DRY_RUN_MODE:
+                _run_py_script("scripts/macro_sentiment_fetcher.py", timeout=90)
+                _run_py_script("scripts/market_data_fetcher.py", timeout=120)
+            return True
+        if milestone_id == "18:00":
+            log_event("⏸️ [STANDBY] 18:00 Chạy cào thư viện BCTC IR sau phiên im lặng.")
+            if not DRY_RUN_MODE:
+                _run_py_script("scripts/bctc_ir_filing_scout.py", timeout=90)
+            return True
+        if milestone_id == "20:30":
+            log_event("⏸️ [STANDBY] 20:30 Duy trì full cào dữ liệu 145 mã BCTC + OHLCV + Internet Intel + Brain V4 + Trọng + Palmer Sync (không spam Telegram).")
+            if not DRY_RUN_MODE:
+                _run_py_script("scripts/apex_real_bctc_crawler.py", args=["--full-universe"], timeout=180)
+                _run_py_script("VN_Market/scripts/vn_full_market_scanner.py", timeout=120)
+                _run_py_script("scripts/apex_daily_internet_intel_crawler.py", timeout=120)
+                _run_py_script("scripts/apex_brain_v4_profit_engine.py", timeout=120)
+                _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+                _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
+            return True
+        if milestone_id == "15:45":
+            log_event("⏸️ [STANDBY] 15:45 James & Palmer tổng hợp EOD duy nhất (không kích hoạt giao dịch War-Room).")
+            if not DRY_RUN_MODE:
+                _run_py_script("scripts/vn3_portfolio_autonomous_sentinel.py", args=["--scan-once"], timeout=60)
+                _run_py_script("scripts/apex_daily_internet_intel_crawler.py", timeout=120)
+                _run_py_script("scripts/apex_brain_v4_profit_engine.py", timeout=90)
+                _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+                _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
+                try:
+                    send_single_eod_digest()
+                except Exception as _e_sb_eod:
+                    log_event(f"[!] Warning send_single_eod_digest 15:45 (Standby): {_e_sb_eod}")
+            return True
+        if milestone_id == "23:30":
+            log_event("⏸️ [STANDBY] 23:30 Kiểm tra toàn vẹn Trọng + đồng bộ Palmer im lặng (không gửi Telegram).")
+            if not DRY_RUN_MODE:
+                _run_py_script("scripts/apex_inspector_trong.py", args=["--run-v7-gates"], timeout=60)
+                _run_py_script("scripts/palmer_antigravity_sync_bridge.py", args=["--sync-current"], timeout=60)
+            return True
+        log_event(f"⏸️ [STANDBY HIBERNATION] Tạm dừng cột mốc '{milestone_id}' theo chỉ thị Chủ tịch (chờ Victor báo thị trường phục hồi).")
         return True
 
     milestone_meta_map = {

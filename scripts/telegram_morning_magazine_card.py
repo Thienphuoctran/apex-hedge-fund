@@ -173,6 +173,15 @@ def publish_morning_magazine_card(target_date: Optional[str] = None) -> bool:
 
     """Xuất bản Thẻ Tạp Chí Buổi Sáng và Tự Động Ghim (Auto-Pin) lên Topic 4"""
 
+    try:
+        from scripts.telegram_dispatcher import should_block_outbound_telegram
+        blocked, reason = should_block_outbound_telegram(topic_key="morning_blotter", priority="NORMAL")
+        if blocked:
+            print(f"[Telegram Guard] Bỏ qua Morning Magazine Card ({reason}).")
+            return False
+    except Exception:
+        pass
+
     cfg = load_config()
 
     bot_token = cfg.get("bot_token")

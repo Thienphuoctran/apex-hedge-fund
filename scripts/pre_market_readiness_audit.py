@@ -42,17 +42,25 @@ TELEGRAM_BOT_TOKEN = "9113394586:AAEV3JfSShG3Sl6YEIeqwIky7cTT0XYYccw"
 TELEGRAM_CHAT_ID = "8332675283"
 
 
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
 try:
-    from scripts.telegram_dispatcher import dispatch_message
+    from scripts.telegram_dispatcher import dispatch_message, should_block_outbound_telegram
 except ImportError:
     dispatch_message = None
+    should_block_outbound_telegram = None
 
 def send_telegram(text: str) -> bool:
     """Gửi thông báo Telegram tới Chủ tịch Phước Trần."""
+    if should_block_outbound_telegram:
+        blocked, reason = should_block_outbound_telegram(topic_key="morning_blotter", priority="NORMAL")
+        if blocked:
+            print(f"[Telegram Guard] Bỏ qua pre_market_readiness_audit ({reason}).")
+            return False
     if dispatch_message:
         return dispatch_message(topic_key="morning_blotter", text=text)
-    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        return False
+    return False
     
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {

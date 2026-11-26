@@ -305,12 +305,21 @@ def build_canonical_executive_briefing() -> Dict[str, Any]:
 
     ssot = _read_json(SSOT_PATH, default={}) or {}
     brain_v4 = _read_json(BRAIN_V4_PATH, default={}) or {}
+    from scripts.filing_gate import SYMBOLS, analysis_summary, market_summary, summary, vendor_coverage
+    for field in ("tactical_round2_candidates","top_15_overall_universe","bottom_10_avoid"):
+        brain_v4[field] = [r for r in (brain_v4.get(field) or []) if r.get("symbol") not in SYMBOLS]
+    filing_pilot = summary()
+    filing_market = market_summary()
+    filing_research = analysis_summary()
+    from scripts.filing_handoff import summary as handoff_summary
+    filing_handoff = handoff_summary()
+    # The executive board is a decision surface; market screening remains in Brain's own report.
+    brain_v4["tactical_round2_candidates"] = []
     warroom = _read_json(WARROOM_PATH, default={}) or {}
     victor_trailing = _read_json(VICTOR_TRAILING_PATH, default={}) or {}
     trong_audit = _read_json(TRONG_AUDIT_PATH, default={}) or {}
     calibration = _read_json(CALIBRATION_PATH, default={}) or {}
     real_bctc = _read_json(REAL_BCTC_PATH, default={}) or {}
-    full_scan = _read_json(FULL_SCAN_PATH, default={}) or {}
 
     ledger = _compute_real_performance_ledger(ssot, brain_v4, victor_trailing, now_ict)
     _write_json_atomic(REAL_LEDGER_OUT, ledger)
@@ -350,7 +359,17 @@ def build_canonical_executive_briefing() -> Dict[str, Any]:
         if cands
         else "Chưa có kèo vượt ngưỡng lọc Brain V4.0"
     )
-    if not session_state.get("is_trading_day", False):
+    from scripts.apex_standby_controller import load_standby_config
+    sb_cfg = load_standby_config()
+    standby_active = bool(sb_cfg.get("standby_active", False))
+
+    if standby_active:
+        next_action_vi = (
+            "⏸️ CHẾ ĐỘ NGỦ ĐÔNG BẢO TOÀN VỐN (HIBERNATION): Tạm dừng giao dịch & báo cáo intraday; "
+            "duy trì cào dữ liệu BCTC/Internet hàng ngày, chỉ gửi báo cáo EOD James + Palmer cuối ngày, "
+            "và Victor (Ban 9) trực 24/7 rà đáy/phục hồi (nhắc Telegram 5 phút/lần ngay khi thị trường XANH đạt ngưỡng đầu tư)."
+        )
+    elif not session_state.get("is_trading_day", False):
         next_action_vi = (
             f"{session_state.get('short_badge_vi', 'SÀN ĐÓNG CỬA')}. "
             f"Giữ nguyên vị thế hiện tại, sẵn sàng theo dõi phiên kế tiếp ({session_state.get('next_trading_day')}) "
@@ -369,12 +388,17 @@ def build_canonical_executive_briefing() -> Dict[str, Any]:
     )
 
     cov = real_bctc.get("coverage_stats") or {}
-    req_n = int(cov.get("requested_vn_tickers") or full_scan.get("universe_count") or 145)
-    ver_n = int(cov.get("bctc_verified_count") or full_scan.get("bctc_verified_count") or req_n)
+    req_n, ver_n = vendor_coverage(real_bctc)
+    pit_method = calibration.get("pit_availability_method") or "legacy_assumed_release_lag"
+    pit_label = "ngày công bố gốc" if pit_method == "official_filing" else "kết quả lịch sử dùng độ trễ giả định +45/+60 ngày"
     v4_cal = calibration.get("apex_v4_sector_alpha") or {}
     v3_cal = calibration.get("apex_v3_asymmetric_conviction") or {}
 
     freshness_sla = {
+        "filing_pilot": filing_pilot,
+        "filing_market_vn": filing_market,
+        "filing_research_vn": filing_research,
+        "filing_handoff": filing_handoff,
         "bctc_verified_count": ver_n,
         "bctc_requested_count": req_n,
         "bctc_coverage_pct": round(ver_n / max(1, req_n) * 100.0, 1),
@@ -411,10 +435,28 @@ def build_canonical_executive_briefing() -> Dict[str, Any]:
     md_lines.extend([
         "",
         "## 3. ĐỐI SOÁT DỮ LIỆU & KIỂM TOÁN THỰC NGHIỆM",
-        f"- **Kho BCTC Sạch:** `{freshness_sla['bctc_verified_count']}/{freshness_sla['bctc_requested_count']} mã ({freshness_sla['bctc_coverage_pct']}%)` (Cập nhật `{freshness_sla['bctc_crawled_at']}`)",
-        f"- **Backtest Walk-Forward:** Brain V4 `{v4_cal.get('total_return_pct', '+14.12')}%` (MaxDD `{v4_cal.get('max_drawdown_pct', '-7.13')}%`, Sharpe `{v4_cal.get('sharpe_ratio', 0.89)}`) vs V3 `{v3_cal.get('total_return_pct', '-1.70')}%`",
+        f"- **Đối chiếu mẫu ba bảng theo PDF gốc (TPB, HPG, FPT):** {filing_pilot['verified_count']}/3.",
+        f"- **Độ phủ dữ liệu nhà cung cấp theo tiêu chí cũ:** `{freshness_sla['bctc_verified_count']}/{freshness_sla['bctc_requested_count']} mã ({freshness_sla['bctc_coverage_pct']}%)` (Cập nhật `{freshness_sla['bctc_crawled_at']}`)",
+        f"- **Backtest Walk-Forward ({pit_label}):** Brain V4 `{v4_cal.get('total_return_pct', '—')}%` (MaxDD `{v4_cal.get('max_drawdown_pct', '—')}%`, Sharpe `{v4_cal.get('sharpe_ratio', '—')}`) vs V3 `{v3_cal.get('total_return_pct', '—')}%`",
         f"- **Kiểm Sát Viên Trọng:** `{trong_seal['passed_count']}/{trong_seal['total_gates']} Cổng ({trong_seal['status']})`",
     ])
+    if filing_market:
+        md_lines.append(
+            f"- **Kho BCTC gốc Việt Nam:** {filing_market['active_latest_quarter']}/{filing_market['active_universe']} mã đang theo dõi "
+            f"có bản quý {filing_market['expected_quarter']}, gồm {filing_market['latest_quarter_consolidated']} mã có bản hợp nhất."
+        )
+    if filing_research:
+        md_lines.append(
+            f"- **Hồ sơ nghiên cứu từ PDF gốc:** {filing_research['ready']}/{filing_research['pilot_count']} "
+            f"mã thí điểm đã có hồ sơ và {filing_research['queued']} mã chờ đối chiếu."
+        )
+    if filing_handoff:
+        counts = filing_handoff["counts"]
+        md_lines.append(
+            f"- **Bàn giao Hiền → Phân tích → Trọng → James → Victor:** "
+            f"{counts['research_accepted']}/{counts['pilot']} hồ sơ nghiên cứu được tiếp nhận, "
+            f"{counts['returned_or_reopen']} hồ sơ trả lại hoặc mở lại."
+        )
     executive_markdown = "\n".join(md_lines)
 
     core_payload: Dict[str, Any] = {
@@ -445,11 +487,13 @@ def build_canonical_executive_briefing() -> Dict[str, Any]:
         "top_15_overall_universe": (brain_v4.get("top_15_overall_universe") or [])[:10],
         "bottom_risk_traps": (brain_v4.get("bottom_10_avoid") or [])[:5],
         "empirical_backtest": {
+            "pit_availability_method": pit_method,
             "v4_sector_alpha": v4_cal,
             "v3_asymmetric": v3_cal,
         },
         "freshness_sla": freshness_sla,
         "trong_audit_seal": trong_seal,
+        "standby_mode": sb_cfg,
         "executive_markdown": executive_markdown,
     }
 

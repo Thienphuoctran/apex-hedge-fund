@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "standby_active": true,
+  "mode_code": "MARKET_HIBERNATION_RECOVERY_RADAR",
+  "activated_at_ict": "2026-11-26 21:25:00 ICT",
+  "activated_by": "Chủ tịch Trần Quốc Thiên Phước",
+  "reason": "Thị trường VN đang suy yếu diện rộng (VNI 1,629.68, Br20 6.5%, Buy-Up 38.3%); tạm dừng giao dịch & báo cáo intraday để bảo toàn vốn, duy trì cào dữ liệu, báo cáo cuối ngày James + Palmer và Victor 24/7 rà đáy/phục hồi.",
+  "keep_data_crawlers": true,
+  "telegram_policy": {
+    "eod_only_james_palmer": true,
+    "allow_victor_recovery_radar": true,
+    "allow_interactive_copilot_replies": true,
+    "allow_critical_stop_alerts": false
+  },
+  "victor_recovery_radar": {
+    "enabled": true,
+    "repeat_interval_seconds": 300,
+    "require_active_trading_session": true,
+    "session_start_hm": "09:15",
+    "session_end_hm": "14:45",
+    "min_vni_change_pct": 0.35,
+    "min_breadth_advance_ratio_pct": 52.0,
+    "min_breadth_ma20_pct": 23.0,
+    "min_buy_up_pct": 58.0,
+    "ftd_min_vni_change_pct": 1.20,
+    "ftd_min_advance_ratio_pct": 60.0,
+    "ftd_min_vol_pace_ratio": 1.05,
+    "ftd_min_buy_up_pct": 62.0
+  }
+}

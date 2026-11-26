@@ -89,18 +89,15 @@ def load_telegram_credentials() -> tuple[str, str]:
 
 
 def send_telegram_alert(text: str) -> bool:
-    bot_token, chat_id = load_telegram_credentials()
-    if not bot_token or not chat_id:
-        return False
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    payload = {"chat_id": chat_id, "text": text, "parse_mode": "Markdown", "disable_web_page_preview": True}
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            return json.loads(resp.read().decode("utf-8")).get("ok", False)
-    except Exception as e:
-        print(f"  [!] Lỗi gửi Telegram: {e}")
+        from scripts.telegram_dispatcher import dispatch_message, should_block_outbound_telegram
+        blocked, reason = should_block_outbound_telegram(topic_key="radar_filings", priority="NORMAL")
+        if blocked:
+            print(f"  [Telegram Guard] Bỏ qua CBTT Telegram alert ({reason}).")
+            return False
+        return dispatch_message(topic_key="radar_filings", text=text, mirror_to_reports_vault=False)
+    except Exception as e_imp:
+        print(f"  [Telegram Guard] Không nạp được dispatcher ({e_imp}), từ chối gửi thẳng để chống spam.")
         return False
 
 

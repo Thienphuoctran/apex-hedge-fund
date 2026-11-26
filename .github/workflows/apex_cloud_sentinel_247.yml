@@ -96,7 +96,10 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: |
-          if [ "${{ github.event.schedule }}" = "30 16 * * *" ] || [ "${{ github.event.inputs.action }}" = "full-audit" ]; then
+          IS_SB=$(python3 -c "import json; print('true' if json.load(open('data/system_standby_mode.json', encoding='utf-8')).get('standby_active') else 'false')" 2>/dev/null || echo "false")
+          if [ "$IS_SB" = "true" ]; then
+            python scripts/apex_inspector_trong.py --health-sweep
+          elif [ "${{ github.event.schedule }}" = "30 16 * * *" ] || [ "${{ github.event.inputs.action }}" = "full-audit" ]; then
             python scripts/apex_inspector_trong.py --run-23h30-audit
           else
             python scripts/apex_inspector_trong.py --health-sweep

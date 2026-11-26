@@ -360,13 +360,29 @@ def should_block_outbound_telegram(
     priority: str = "NORMAL",
     topic_key: Optional[str] = None,
     room_id: Optional[str] = None,
+    event_key: Optional[str] = None,
+    is_interactive_reply: bool = False,
 ) -> Tuple[bool, str]:
     """
-    [OUTBOUND GUARD] Chống gửi trùng giữa Cloud & PC, chặn tin ngày nghỉ lễ và tôn trọng nút Tắt Telegram từng phòng.
+    [OUTBOUND GUARD] Chống gửi trùng giữa Cloud & PC, chặn tin ngày nghỉ lễ, tôn trọng nút Tắt Telegram từng phòng
+    và chế độ Ngủ Đông (chỉ cho phép EOD James+Palmer & Radar Phục Hồi Victor 5 phút/lần).
     """
     prio = str(priority or "NORMAL").upper()
-    if prio == "CRITICAL_STOP":
-        return False, "CRITICAL_OVERRIDE"
+    try:
+        from scripts.apex_standby_controller import is_telegram_allowed_in_standby
+        allowed_sb, sb_reason = is_telegram_allowed_in_standby(
+            event_key=event_key,
+            priority=prio,
+            topic_key=topic_key,
+            is_interactive_reply=is_interactive_reply,
+        )
+        if not allowed_sb:
+            return True, sb_reason
+    except Exception:
+        pass
+
+    if prio in ("CRITICAL_STOP", "RECOVERY_ALERT"):
+        return False, f"{prio}_OVERRIDE"
 
     target_room = room_id or _resolve_room_id_for_topic(topic_key)
     if target_room:
@@ -462,7 +478,7 @@ def is_duplicate_message(
         day_ts = list(q_rec.get("timestamps") or [])
         hour_ts = [t for t in day_ts if (now_ts - float(t)) < 3600]
 
-        if prio != "CRITICAL_STOP":
+        if prio not in ("CRITICAL_STOP", "RECOVERY_ALERT"):
             if len(hour_ts) >= 6:
                 print(f"[!] [QUOTA BREAKER] Topic {q_key} đã đạt trần 6 tin/giờ ({len(hour_ts)}). Tự động chặn chống spam!")
                 return True
@@ -531,6 +547,7 @@ def send_raw_telegram(
     cooldown_seconds: int = 1800,
     is_intraday_alert: bool = False,
     priority: str = "NORMAL",
+    is_interactive_reply: bool = False,
 ) -> bool:
     """Gửi tin nhắn Telegram có 4 lớp khiên chống spam + HTML/Markdown an toàn."""
     if not bot_token or not chat_id:
@@ -540,6 +557,8 @@ def send_raw_telegram(
         is_intraday_alert=is_intraday_alert,
         priority=priority,
         topic_key=getattr(send_raw_telegram, "_current_topic_key", None),
+        event_key=event_key,
+        is_interactive_reply=is_interactive_reply,
     )
     if blocked:
         print(f"[Telegram Guard] Chặn gửi tin tự động ({reason}).")
@@ -700,6 +719,7 @@ def dispatch_message(
         is_intraday_alert=is_intraday_alert,
         priority=priority,
         topic_key=topic_key,
+        event_key=event_key,
     )
     if blocked:
         print(f"[Telegram Guard] Bỏ qua gửi tin topic '{topic_key}' ({reason}).")
@@ -925,7 +945,7 @@ def send_single_eod_digest(force: bool = False) -> bool:
         event_key=f"EOD_SINGLE_DIGEST_{today_str}",
         cooldown_seconds=(60 if force else 43200),
         is_intraday_alert=False,
-        priority="HIGH_CONVICTION",
+        priority="EOD_JAMES_PALMER",
     )
 
 

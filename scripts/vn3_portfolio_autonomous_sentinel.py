@@ -55,13 +55,20 @@ except ImportError:
     winsound = None
 
 from scripts.telegram_dispatcher import dispatch_message
-from scripts.vietnam_realtime_feed import fetch_vps_quotes
+from scripts.vietnam_realtime_feed import (
+    VN30_BASKET,
+    fetch_stock_indicators_live,
+    fetch_vn_market_indices_live,
+    fetch_vps_quotes,
+)
 from scripts.vn_market_calendar import get_vn_market_session_state
+from scripts.apex_standby_controller import is_standby_mode_active, load_standby_config
 
 SENTINEL_DIR = BASE_DIR / "09_Realtime_Portfolio_Sentinel"
 TELEMETRY_JSON = SENTINEL_DIR / "vn3_live_telemetry.json"
 TELEMETRY_MD = SENTINEL_DIR / "vn3_live_telemetry.md"
 VICTOR_TRAILING_FILE = BASE_DIR / "data" / "victor_trailing_state.json"
+VICTOR_RECOVERY_STATE_FILE = BASE_DIR / "data" / "victor_recovery_radar_state.json"
 
 
 def _load_victor_trailing_state() -> Dict[str, Any]:
@@ -318,6 +325,10 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
     trailing_state = _load_victor_trailing_state()
     trailing_state["updated_at"] = f"{date_str} {now_str}"
     triggered_events: List[Dict[str, Any]] = []
+    standby_active = is_standby_mode_active()
+    sb_policy = (load_standby_config().get("telegram_policy") or {}) if standby_active else {}
+    allow_normal_tg = notify_telegram and (not standby_active)
+    allow_stop_tg = notify_telegram and ((not standby_active) or bool(sb_policy.get("allow_critical_stop_alerts", False)))
 
     for sym, cfg in cfg_map.items():
         q = quotes.get(sym, {})
@@ -364,7 +375,7 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
                         push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg_ui, role="sentinel", alert_key=key, date_str=date_str)
                     except Exception:
                         pass
-                    if notify_telegram and in_market_hours:
+                    if allow_normal_tg and in_market_hours:
                         dispatch_message("daily_warroom", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=key, cooldown_seconds=14400, is_intraday_alert=True)
 
             elif eff_stop > 0 and price <= eff_stop:
@@ -388,7 +399,7 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
                         push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg_ui, role="sentinel", alert_key=key, date_str=date_str)
                     except Exception:
                         pass
-                    if notify_telegram and in_market_hours:
+                    if allow_stop_tg and in_market_hours:
                         dispatch_message("daily_warroom", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=key, cooldown_seconds=14400, is_intraday_alert=True, priority="CRITICAL_STOP")
                         dispatch_message("james_hq", msg_tg, parse_mode="HTML", mirror_to_reports_vault=False, event_key=f"{key}_JAMES", cooldown_seconds=14400, is_intraday_alert=True, priority="CRITICAL_STOP")
 
@@ -424,7 +435,7 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
                         push_external_war_room_alert("Victor (Ban 9 Live Sentinel)", "sentinel_alert", msg_ui, role="sentinel", alert_key=key, date_str=date_str)
                     except Exception:
                         pass
-                    if notify_telegram and in_market_hours and (13 * 60 + 45 <= hm <= 14 * 60 + 25):
+                    if allow_normal_tg and in_market_hours and (13 * 60 + 45 <= hm <= 14 * 60 + 25):
                         msg_tg = (
                             f"🟢 <b>CỔ PHIẾU ĐẠT MỨC MUA — {sym}</b> ({now_str})\n"
                             f"• Giá hiện tại: <b>{price:,.0f} đ</b> (sát mục tiêu gom {probe_p:,.0f} đ • BuyUp {buy_up:.1f}%)\n"
@@ -445,7 +456,319 @@ def check_triggers_and_alert(quotes: Dict[str, Dict[str, Any]], notify_telegram:
     return triggered_events
 
 
-def update_telemetry(quotes: Dict[str, Dict[str, Any]]) -> None:
+def _load_victor_recovery_state() -> Dict[str, Any]:
+    if VICTOR_RECOVERY_STATE_FILE.exists():
+        try:
+            data = json.loads(VICTOR_RECOVERY_STATE_FILE.read_text(encoding="utf-8-sig"))
+            if isinstance(data, dict):
+                return data
+        except Exception:
+            pass
+    return {
+        "version": "1.0",
+        "status": "WATCHING",
+        "recovery_triggered": False,
+        "active_repeating": False,
+        "last_checked_ict": "",
+        "last_alert_ts": 0.0,
+        "last_alert_ict": "",
+        "alert_date": "",
+        "alerts_sent_today": 0,
+    }
+
+
+def _save_victor_recovery_state(payload: Dict[str, Any]) -> None:
+    try:
+        VICTOR_RECOVERY_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        tmp = VICTOR_RECOVERY_STATE_FILE.with_suffix(".tmp")
+        tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp.replace(VICTOR_RECOVERY_STATE_FILE)
+    except Exception:
+        pass
+
+
+def _read_cached_breadth_ma20_pct() -> float:
+    for rel in ("data/apex_brain_v4_latest.json", "VN_Market/data/vn_full_market_scan.json"):
+        fp = BASE_DIR / rel
+        if fp.exists():
+            try:
+                raw = json.loads(fp.read_text(encoding="utf-8-sig"))
+                if "market_regime" in raw and isinstance(raw["market_regime"], dict):
+                    val = raw["market_regime"].get("breadth_above_ma20_pct")
+                    if val is not None:
+                        return float(val)
+                if "breadth_above_ma20_pct" in raw and raw.get("breadth_above_ma20_pct") is not None:
+                    return float(raw["breadth_above_ma20_pct"])
+            except Exception:
+                pass
+    return 0.0
+
+
+def _compute_live_recovery_breadth(
+    quotes_override: Optional[Dict[str, Dict[str, Any]]] = None,
+    compute_ma20_live: bool = False,
+) -> Dict[str, Any]:
+    """Tính Buy-Up % trung bình & ước lượng Breadth MA20 sống trên rổ thanh khoản VN30."""
+    basket = VN30_BASKET[:15]
+    q_map = dict(quotes_override) if quotes_override is not None else fetch_vps_quotes(basket)
+    buy_ups: List[float] = []
+    leaders: List[Dict[str, Any]] = []
+    above_ma20 = 0
+    ma20_counted = 0
+
+    for sym, q in q_map.items():
+        px = float(q.get("price") or 0.0)
+        if px <= 0:
+            continue
+        bu = float(q.get("active_buy_pct") or 50.0)
+        chg = float(q.get("change_pct") or 0.0)
+        buy_ups.append(bu)
+        leaders.append({"symbol": sym, "price": px, "change_pct": chg, "buy_up_pct": bu})
+        if compute_ma20_live and sym in VN30_BASKET:
+            try:
+                ind = fetch_stock_indicators_live(sym, ttl_seconds=300)
+                ma20 = float(ind.get("ma20") or 0.0)
+                if ma20 > 0:
+                    ma20_counted += 1
+                    if px >= ma20:
+                        above_ma20 += 1
+            except Exception:
+                pass
+
+    avg_buy_up = round(sum(buy_ups) / len(buy_ups), 1) if buy_ups else 50.0
+    leaders.sort(key=lambda x: (x["buy_up_pct"], x["change_pct"]), reverse=True)
+    live_br20 = (
+        round((above_ma20 / ma20_counted) * 100.0, 1)
+        if ma20_counted >= 5
+        else _read_cached_breadth_ma20_pct()
+    )
+    return {
+        "sample_count": len(buy_ups),
+        "avg_buy_up_pct": avg_buy_up,
+        "live_breadth_ma20_pct": live_br20,
+        "ma20_sample_count": ma20_counted,
+        "top_leaders": leaders[:3],
+    }
+
+
+def evaluate_market_recovery_signal(
+    now_ict: Optional[datetime.datetime] = None,
+    indices_override: Optional[Dict[str, Any]] = None,
+    quotes_override: Optional[Dict[str, Dict[str, Any]]] = None,
+    br20_override: Optional[float] = None,
+) -> Dict[str, Any]:
+    """
+    Đánh giá liệu thị trường VN đã XANH trở lại & đạt ngưỡng đáy/quay lại đầu tư hay chưa.
+    Chỉ trả recovery_triggered=True KHI:
+      - Đang trong phiên giao dịch hợp lệ (09:15 - 14:45 ICT, không phải ngày nghỉ/stale),
+      - VN-Index XANH (>= min_vni_change_pct) & độ rộng tăng áp đảo (>= min_breadth_advance_ratio_pct),
+      - Dòng tiền mua chủ động Buy-Up >= min_buy_up_pct,
+      - VÀ đạt Path A (Br20 >= min_breadth_ma20_pct hoặc VNI >= MA20) HOẶC Path B (Follow-Through Day Đảo Chiều Đáy).
+    """
+    sb_cfg = load_standby_config()
+    radar_cfg = sb_cfg.get("victor_recovery_radar") or {}
+    now = now_ict or _ict_now()
+    date_str = now.strftime("%Y-%m-%d")
+    hm_str = now.strftime("%H:%M")
+
+    msess = get_vn_market_session_state(now_ict=now)
+    is_trading_day = bool(msess.get("is_trading_day", True)) and not bool(msess.get("stale_feed_detected", False))
+    start_hm = str(radar_cfg.get("session_start_hm") or "09:15")
+    end_hm = str(radar_cfg.get("session_end_hm") or "14:45")
+    in_session_window = is_trading_day and (now.weekday() < 5) and (start_hm <= hm_str <= end_hm)
+    if not bool(radar_cfg.get("require_active_trading_session", True)):
+        in_session_window = True
+
+    idx = indices_override if indices_override is not None else fetch_vn_market_indices_live(ttl_seconds=10)
+    vni = idx.get("vn_index") or {}
+    br = idx.get("market_breadth") or {}
+    vni_val = float(vni.get("value") or 0.0)
+    vni_chg = float(vni.get("change_pct") or 0.0)
+    vni_ma20 = float(vni.get("ma20") or 0.0)
+    vol_pace = float(vni.get("volume_pace_ratio") or 1.0)
+    advancers = int(br.get("advancers") or 0)
+    decliners = int(br.get("decliners") or 0)
+    adv_ratio = float(br.get("advance_ratio_pct") or 50.0)
+
+    min_vni_chg = float(radar_cfg.get("min_vni_change_pct", 0.35))
+    min_adv_ratio = float(radar_cfg.get("min_breadth_advance_ratio_pct", 52.0))
+    min_br20 = float(radar_cfg.get("min_breadth_ma20_pct", 23.0))
+    min_buy_up = float(radar_cfg.get("min_buy_up_pct", 58.0))
+    ftd_vni = float(radar_cfg.get("ftd_min_vni_change_pct", 1.20))
+    ftd_adv = float(radar_cfg.get("ftd_min_advance_ratio_pct", 60.0))
+    ftd_pace = float(radar_cfg.get("ftd_min_vol_pace_ratio", 1.05))
+    ftd_buy = float(radar_cfg.get("ftd_min_buy_up_pct", 62.0))
+
+    should_sample_live = (in_session_window and vni_chg > 0) or (quotes_override is not None)
+    breadth_live = _compute_live_recovery_breadth(
+        quotes_override=quotes_override,
+        compute_ma20_live=(in_session_window and vni_chg >= min_vni_chg and br20_override is None),
+    ) if should_sample_live else {
+        "sample_count": 0,
+        "avg_buy_up_pct": 50.0,
+        "live_breadth_ma20_pct": _read_cached_breadth_ma20_pct(),
+        "ma20_sample_count": 0,
+        "top_leaders": [],
+    }
+
+    avg_buy_up = float(breadth_live.get("avg_buy_up_pct") or 50.0)
+    live_br20 = float(br20_override) if br20_override is not None else float(breadth_live.get("live_breadth_ma20_pct") or 0.0)
+
+    is_green = (vni_val > 0) and (vni_chg >= min_vni_chg) and (adv_ratio >= min_adv_ratio)
+    is_buyup_ok = avg_buy_up >= min_buy_up
+    path_a = (live_br20 >= min_br20) or (vni_ma20 > 0 and vni_val >= vni_ma20)
+    path_b = (vni_chg >= ftd_vni) and (adv_ratio >= ftd_adv) and (vol_pace >= ftd_pace) and (avg_buy_up >= ftd_buy)
+
+    recovery_triggered = bool(in_session_window and is_green and is_buyup_ok and (path_a or path_b))
+
+    if not in_session_window:
+        reason = f"Ngoài giờ/Ngày nghỉ ({hm_str} ICT, {msess.get('status_code', 'CLOSED')})"
+        trigger_type = "SESSION_CLOSED"
+    elif not is_green:
+        reason = f"Thị trường chưa xanh đủ ngưỡng (VNI {vni_chg:+.2f}% vs >={min_vni_chg:+.2f}%, Tăng {adv_ratio:.1f}% vs >={min_adv_ratio:.0f}%)"
+        trigger_type = "BEAR_OR_WEAK_MARKET"
+    elif not is_buyup_ok:
+        reason = f"Mua chủ động chưa đạt ngưỡng ({avg_buy_up:.1f}% vs >={min_buy_up:.0f}%)"
+        trigger_type = "LOW_BUY_UP"
+    elif path_b and not path_a:
+        reason = f"BÙNG NỔ ĐẢO CHIỀU ĐÁY (VNI {vni_chg:+.2f}%, Tăng {adv_ratio:.1f}%, VolPace {vol_pace:.2f}x, BuyUp {avg_buy_up:.1f}%)"
+        trigger_type = "BOTTOM_REVERSAL_FTD"
+    elif path_a:
+        reason = f"XÁC NHẬN PHỤC HỒI QUAY LẠI ĐẦU TƯ (VNI {vni_chg:+.2f}%, Br20 {live_br20:.1f}%, BuyUp {avg_buy_up:.1f}%)"
+        trigger_type = "INVESTABLE_RECOVERY_CONFIRMED"
+    else:
+        reason = f"Xanh nhẹ nhưng chưa đủ Br20 ({live_br20:.1f}% < {min_br20:.0f}%) hoặc FTD đảo chiều"
+        trigger_type = "WAITING_CONFIRMATION"
+
+    return {
+        "checked_at_ict": now.strftime("%Y-%m-%d %H:%M:%S ICT"),
+        "date": date_str,
+        "standby_active": bool(sb_cfg.get("standby_active", False)),
+        "radar_enabled": bool(radar_cfg.get("enabled", True)),
+        "repeat_interval_seconds": int(radar_cfg.get("repeat_interval_seconds", 300) or 300),
+        "in_session_window": in_session_window,
+        "recovery_triggered": recovery_triggered,
+        "trigger_type": trigger_type,
+        "reason": reason,
+        "metrics": {
+            "vni_value": round(vni_val, 2),
+            "vni_change_pct": round(vni_chg, 2),
+            "vni_ma20": round(vni_ma20, 2),
+            "advancers": advancers,
+            "decliners": decliners,
+            "advance_ratio_pct": round(adv_ratio, 1),
+            "live_breadth_ma20_pct": round(live_br20, 1),
+            "avg_buy_up_pct": round(avg_buy_up, 1),
+            "volume_pace_ratio": round(vol_pace, 2),
+            "top_leaders": breadth_live.get("top_leaders") or [],
+        },
+    }
+
+
+def run_victor_recovery_radar(
+    notify_telegram: bool = True,
+    now_ict: Optional[datetime.datetime] = None,
+    now_ts_override: Optional[float] = None,
+    indices_override: Optional[Dict[str, Any]] = None,
+    quotes_override: Optional[Dict[str, Dict[str, Any]]] = None,
+    br20_override: Optional[float] = None,
+    dry_run: bool = False,
+) -> Dict[str, Any]:
+    """
+    Chạy Radar Rà Đáy & Phục Hồi 24/7 của Victor:
+    - Nếu standby_active=True và thị trường XANH + Đạt Ngưỡng Đầu Tư:
+      Gửi ngay lập tức lên Telegram và lặp lại đúng mỗi 5 phút (300s) chừng nào thị trường còn giữ xanh & đạt ngưỡng.
+    - Nếu thị trường ĐỎ / chưa đạt ngưỡng / đóng cửa: NGỪNG lặp & giữ im lặng tuyệt đối.
+    """
+    eval_res = evaluate_market_recovery_signal(
+        now_ict=now_ict,
+        indices_override=indices_override,
+        quotes_override=quotes_override,
+        br20_override=br20_override,
+    )
+    state = _load_victor_recovery_state()
+    date_str = eval_res["date"]
+    now_ts = float(now_ts_override) if now_ts_override is not None else time.time()
+    repeat_sec = max(60, int(eval_res["repeat_interval_seconds"] or 300))
+
+    if state.get("alert_date") != date_str:
+        state["alert_date"] = date_str
+        state["alerts_sent_today"] = 0
+
+    dispatched_now = False
+    should_send = bool(
+        eval_res["standby_active"]
+        and eval_res["radar_enabled"]
+        and eval_res["recovery_triggered"]
+    )
+    elapsed_since_last = now_ts - float(state.get("last_alert_ts") or 0.0)
+
+    if should_send and notify_telegram and elapsed_since_last >= repeat_sec:
+        next_num = int(state.get("alerts_sent_today") or 0) + 1
+        m = eval_res["metrics"]
+        leaders_lines = [
+            f"  • <b>{x['symbol']}</b>: {x['price']:,.0f} đ ({x['change_pct']:+.2f}% • BuyUp {x['buy_up_pct']:.1f}%)"
+            for x in (m.get("top_leaders") or [])[:3]
+        ]
+        leaders_block = "\n".join(leaders_lines) if leaders_lines else "  • Đang tổng hợp rổ dẫn dắt VN30..."
+        msg_tg = (
+            f"🚨🟢 <b>[VICTOR BAN 9] THỊ TRƯỜNG ĐẠT NGƯỠNG PHỤC HỒI — QUAY LẠI ĐẦU TƯ (#{next_num})</b>\n"
+            f"⏱️ <b>Thời điểm:</b> {eval_res['checked_at_ict']} | <b>Chu kỳ nhắc:</b> mỗi {repeat_sec // 60} phút (khi thị trường còn XANH)\n"
+            f"📈 <b>Tín hiệu:</b> {eval_res['trigger_type']} — {eval_res['reason']}\n\n"
+            f"• <b>VN-Index:</b> {m['vni_value']:,.2f} (<b>{m['vni_change_pct']:+.2f}%</b>) | MA20: {m['vni_ma20']:,.2f}\n"
+            f"• <b>Độ rộng:</b> {m['advancers']} Tăng / {m['decliners']} Giảm (<b>{m['advance_ratio_pct']:.1f}%</b>) | <b>Br20 sống:</b> {m['live_breadth_ma20_pct']:.1f}%\n"
+            f"• <b>Mua chủ động (Buy-Up):</b> <b>{m['avg_buy_up_pct']:.1f}%</b> | <b>Vol Pace:</b> {m['volume_pace_ratio']:.2f}x\n\n"
+            f"🔥 <b>Nhóm dẫn dắt nổi bật:</b>\n{leaders_block}\n\n"
+            f"👉 <i>Chủ tịch có thể mở lại toàn bộ hệ thống tác chiến bằng lệnh:</i> <code>python -X utf8 scripts/apex_standby_controller.py --resume</code>"
+        )
+        if dry_run:
+            dispatched_now = True
+        else:
+            dispatched_now = dispatch_message(
+                "daily_warroom",
+                msg_tg,
+                parse_mode="HTML",
+                mirror_to_reports_vault=False,
+                event_key=f"VICTOR_MARKET_RECOVERY_{date_str}",
+                cooldown_seconds=max(60, repeat_sec - 10),
+                is_intraday_alert=True,
+                priority="RECOVERY_ALERT",
+            )
+        if dispatched_now:
+            sound_beep(1850, 350, 3)
+            state["last_alert_ts"] = now_ts
+            state["last_alert_ict"] = eval_res["checked_at_ict"]
+            state["alerts_sent_today"] = next_num
+            try:
+                from scripts.apex_tactical_war_room_engine import push_external_war_room_alert
+                push_external_war_room_alert(
+                    "Victor (Ban 9 Recovery Radar)",
+                    "recovery_alert",
+                    f"🟢 {eval_res['reason']}",
+                    role="sentinel",
+                    alert_key=f"VICTOR_RECOVERY_{date_str}_{next_num}",
+                    date_str=date_str,
+                )
+            except Exception:
+                pass
+
+    state.update({
+        "status": "RECOVERY_ALERTING_5M" if should_send else ("HIBERNATION_WATCHING" if eval_res["standby_active"] else "NORMAL_MONITORING"),
+        "standby_active": eval_res["standby_active"],
+        "recovery_triggered": eval_res["recovery_triggered"],
+        "active_repeating": should_send,
+        "trigger_type": eval_res["trigger_type"],
+        "reason": eval_res["reason"],
+        "last_checked_ict": eval_res["checked_at_ict"],
+        "repeat_interval_seconds": repeat_sec,
+        "metrics": eval_res["metrics"],
+        "dispatched_this_cycle": dispatched_now,
+    })
+    _save_victor_recovery_state(state)
+    return state
+
+
+def update_telemetry(quotes: Dict[str, Dict[str, Any]], recovery_state: Optional[Dict[str, Any]] = None) -> None:
     now_dt = _ict_now().strftime("%Y-%m-%d %H:%M:%S")
     ssot_state = load_dynamic_ssot_state()
     cfg_map = ssot_state["config"]
@@ -526,11 +849,12 @@ def update_telemetry(quotes: Dict[str, Dict[str, Any]]) -> None:
     total_pnl_pct = (total_unrealized_pnl / total_cost) * 100.0 if total_cost > 0 else 0.0
     total_nav = total_market_val + cash_vnd
 
+    rec = recovery_state or _load_victor_recovery_state()
     telemetry_data = {
         "timestamp": now_dt,
         "account_id": "105C307855",
         "chairman": "Trần Quốc Thiên Phước",
-        "mode": "ALL_CASH_STANDDOWN" if len(positions_summary) == 0 else "REALTIME_VPS_DIRECT_FEED",
+        "mode": "HIBERNATION_STANDBY_WATCH" if is_standby_mode_active() else ("ALL_CASH_STANDDOWN" if len(positions_summary) == 0 else "REALTIME_VPS_DIRECT_FEED"),
         "mandate": "VICTOR 24/7 CONTINUOUS SURVEILLANCE ACROSS ALL SESSIONS",
         "total_cost": total_cost,
         "total_market_val": total_market_val,
@@ -539,6 +863,8 @@ def update_telemetry(quotes: Dict[str, Dict[str, Any]]) -> None:
         "dry_powder": cash_vnd,
         "total_nav": total_nav,
         "realized_pnl_vnd": realized_pnl,
+        "standby_hibernation_active": is_standby_mode_active(),
+        "recovery_radar": rec,
         "positions": positions_summary,
     }
     _save_victor_trailing_state(trailing_state)
@@ -548,8 +874,10 @@ def update_telemetry(quotes: Dict[str, Dict[str, Any]]) -> None:
 
     held_md = "\n".join(held_rows) if held_rows else "| -- | 100% Tiền mặt | 0 | -- | -- | -- | -- | -- | -- | Standdown |"
     watch_md = "\n".join(watch_rows)
+    rec_status = str(rec.get("status") or "WATCHING")
+    rec_reason = str(rec.get("reason") or "Đang theo dõi...")
     md_content = f"""# BẢNG ĐIỀU KHIỂN TELEMETRY THỜI GIAN THỰC — VICTOR SENTINEL 24/7 (BAN 9)
-**Thời gian cập nhật**: `{now_dt} ICT` | **Chu kỳ quét**: `15 giây/lần` (VPS Direct Feed)  
+**Thời gian cập nhật**: `{now_dt} ICT` | **Chu kỳ quét**: `15 giây/lần` (VPS Direct Feed) | **Radar Phục Hồi 5p**: `{rec_status}` ({rec_reason})  
 **Tài khoản giám sát**: Chủ tịch **Trần Quốc Thiên Phước** | **TCBS**: `105C307855`  
 **Tiền mặt thật (Cash)**: `{cash_vnd:,.0f} VNĐ` | **Cổ phiếu Live**: `{total_market_val:,.0f} VNĐ` (`{total_unrealized_pnl:+,.0f} VNĐ` / `{total_pnl_pct:+.2f}%`) | **Tổng NAV Live**: **`{total_nav:,.0f} VNĐ`**
 
@@ -601,9 +929,15 @@ def main():
     parser.add_argument("--scan-once", action="store_true", help="Quét rà soát 1 lần, cập nhật telemetry và thoát")
     parser.add_argument("--interval", type=int, default=15, help="Chu kỳ quét (giây), mặc định 15s")
     parser.add_argument("--broadcast-status", action="store_true", help="Bắn báo cáo trạng thái tức thời lên Telegram")
+    parser.add_argument("--check-recovery", action="store_true", help="Kiểm tra Radar Phục Hồi / Ngưỡng Đáy (không gửi Telegram)")
 
     args = parser.parse_args()
     SENTINEL_DIR.mkdir(parents=True, exist_ok=True)
+
+    if args.check_recovery:
+        rec = run_victor_recovery_radar(notify_telegram=False, dry_run=True)
+        print(json.dumps(rec, ensure_ascii=False, indent=2))
+        return
 
     if args.broadcast_status:
         quotes = fetch_live_quotes()
@@ -614,15 +948,16 @@ def main():
     if args.scan_once:
         quotes = fetch_live_quotes()
         events = check_triggers_and_alert(quotes, notify_telegram=False)
-        update_telemetry(quotes)
+        rec = run_victor_recovery_radar(notify_telegram=False)
+        update_telemetry(quotes, recovery_state=rec)
         now_str = _ict_now().strftime("%H:%M:%S")
-        print(f"[{now_str}] Quét Victor 24/7 hoàn tất ({len(quotes)} mã, {len(events)} trigger).")
+        print(f"[{now_str}] Quét Victor 24/7 hoàn tất ({len(quotes)} mã, {len(events)} trigger, radar={rec.get('trigger_type')}).")
         return
 
     interval = args.interval or 15
     print("=" * 85)
     print("  APEX SENTINEL (VICTOR BAN 9) — GIÁM SÁT REALTIME 24/7 XUYÊN MỌI PHIÊN")
-    print(f"  Chu kỳ quét: mỗi {interval}s qua VPS Live Datafeed | Đồng bộ War-Room & Vault")
+    print(f"  Chu kỳ quét: mỗi {interval}s qua VPS Live Datafeed | Đồng bộ War-Room & Radar Phục Hồi 5p")
     print("=" * 85)
 
     iteration = 0
@@ -631,7 +966,8 @@ def main():
             iteration += 1
             quotes = fetch_live_quotes()
             events = check_triggers_and_alert(quotes, notify_telegram=True)
-            update_telemetry(quotes)
+            rec = run_victor_recovery_radar(notify_telegram=True)
+            update_telemetry(quotes, recovery_state=rec)
 
             now_dt = _ict_now()
             now_str = now_dt.strftime("%H:%M:%S")
@@ -641,7 +977,7 @@ def main():
             hdb_p = float(quotes.get("HDB", {}).get("price") or 0)
             msh_p = float(quotes.get("MSH", {}).get("price") or 0)
             baf_p = float(quotes.get("BAF", {}).get("price") or 0)
-            print(f"[{now_str}] #{iteration} Triggers={len(events)} | HDB={hdb_p:,.0f} MSH={msh_p:,.0f} BAF={baf_p:,.0f}")
+            print(f"[{now_str}] #{iteration} Triggers={len(events)} Radar={rec.get('status')} | HDB={hdb_p:,.0f} MSH={msh_p:,.0f} BAF={baf_p:,.0f}")
             time.sleep(current_interval)
     except KeyboardInterrupt:
         print("[*] Đã dừng tiến trình giám sát Sentinel an toàn.")

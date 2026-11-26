@@ -33,25 +33,37 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check Standby Hibernation Mode
+        id: standby
+        run: |
+          IS_SB=$(python3 -c "import json; print('true' if json.load(open('data/system_standby_mode.json', encoding='utf-8')).get('standby_active') else 'false')" 2>/dev/null || echo "false")
+          echo "active=$IS_SB" >> "$GITHUB_OUTPUT"
+          echo "Standby Hibernation active = $IS_SB"
+
       - name: Set up Python 3.11
+        if: steps.standby.outputs.active != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
       - name: Install Quantitative Dependencies
+        if: steps.standby.outputs.active != 'true'
         run: |
           python -m pip install --upgrade pip
           pip install yfinance pandas requests numpy
 
       - name: "Run Overnight Autonomous Master Fund Pipeline"
+        if: steps.standby.outputs.active != 'true'
         env:
           PYTHONIOENCODING: utf-8
+          TZ: Asia/Ho_Chi_Minh
           CAPITAL_VND: ${{ github.event.inputs.capital_vnd || '20000000' }}
         run: |
           python scripts/run_master_unified_fund.py --capital-vnd $CAPITAL_VND
 
       - name: "Commit & Push Updated Research, BCTC Reports & Blotters"
+        if: steps.standby.outputs.active != 'true'
         run: |
           git config --global user.name "Apex CIO Autonomous Agent"
           git config --global user.email "autonomous-bot@apex-fund.internal"

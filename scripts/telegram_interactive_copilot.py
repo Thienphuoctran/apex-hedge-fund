@@ -391,55 +391,19 @@ def handle_wave_hunter_radar() -> str:
 
 
 def handle_10dept_council_command(ticker: str = "") -> str:
-    """Triệu tập 10 Phòng Ban họp và tranh biện thực chất trên số liệu sống (`/hop` hoặc `/hop <MÃ>`)."""
+    """Xem hồ sơ bàn giao BCTC qua lệnh `/hop` hoặc `/hop <MÃ>`."""
     try:
         from scripts.apex_full_council_orchestrator import (
+            run_full_10_department_council,
             run_single_stock_10dept_debate,
-            run_full_10_department_council
         )
-        ticker = ticker.upper().strip()
-        if ticker and len(ticker) == 3:
-            res = run_single_stock_10dept_debate(ticker)
-            if isinstance(res, str):
-                return res
-            if isinstance(res, dict):
-                return res.get("formatted_message", res.get("error", str(res)))
-            return str(res)
 
-        council = run_full_10_department_council(force_rescan=False)
-        approved = council.get("approved_round2_picks", [])
-        downgraded = council.get("downgraded_familiar_stocks", [])
-
-        lines = [
-            "🏛️ *[NGHỊ QUYẾT HỘI NGHỊ THƯỢNG ĐỈNH 10 PHÒNG BAN — LÀM THẬT VIỆC THẬT]*",
-            f"🕒 *Thời điểm họp:* `{council.get('timestamp_vn')}`",
-            f"📡 *Phạm vi rà soát:* `{council.get('universe_scanned')} mã cổ phiếu / {council.get('sectors_covered')} nhóm ngành`",
-            f"💰 *Vốn thực tế TCBS (`105C307855`):* `{council.get('cash_balance_vnd', 20167119):,.0f} ₫` (**100% Tiền mặt**)",
-            "━━━━━━━━━━━━━━━━━━━",
-            "✅ *1. TOP 6 CỔ PHIẾU ĐA NGÀNH ĐƯỢC 10 PHÒNG BAN PHÊ DUYỆT CHO VÒNG 2:*"
-        ]
-        for idx, p in enumerate(approved, 1):
-            lines.append(
-                f"{idx}. *{p['code']}* ({p['sector_name']}) — Giá `{p['price']:,.0f} ₫` | RS `{p['rs_rating']}/99` | "
-                f"10 Danh Thủ `{p['legends_10_score']}/100 ({p['bctc_tier']})` | 1 lô = `{p['lot_100_nav_pct']}% NAV` | "
-                f"Canh mua LO: `{p['buy_zone_lo']:,.0f} ₫` (Stop `{p['stop_loss_2atr']:,.0f} ₫`, TP1 `{p['target_tp1']:,.0f} ₫`)"
-            )
-
-        if downgraded:
-            lines.append("\n🛑 *2. CÁC MÃ LỚN QUEN THUỘC BỊ BAN 3 & BAN 4 PHỦ QUYẾT / HẠ BẬC:*")
-            for d in downgraded[:4]:
-                lines.append(
-                    f"• *{d['code']}* (`{d['price']:,.0f} ₫`, RS `{d['rs_rating']}/99`, 1 lô = `{d['lot_100_nav_pct']}% NAV`): {d['reason']}"
-                )
-
-        lines.extend([
-            "\n🧠 *3. LƯU TRỮ TRÍ NHỚ LIÊN NGÀY BẤT BIẾN:*",
-            "• Đã khóa Sổ cái Liên Ngày (`apex_daily_continuity_ledger.json`) kèm mã kiểm chứng SHA-256 để ngày mai nối tiếp 100% mạch công việc!",
-            "👉 *Gõ `/hop <MÃ>` (VD: `/hop MSH`, `/hop PVT`, `/hop FPT`) để xem biên bản tranh biện của 10 Phòng Ban cho từng mã!*"
-        ])
-        return "\n".join(lines)
+        ticker = ticker.strip().upper()
+        if ticker:
+            return run_single_stock_10dept_debate(ticker)
+        return run_full_10_department_council()["formatted_message"]
     except Exception as e:
-        return f"⚠️ Lỗi triệu tập Hội đồng 10 Phòng Ban: {e}"
+        return f"⚠️ Không thể làm mới hồ sơ bàn giao BCTC ({type(e).__name__})."
 
 
 def handle_handover_continuity_command() -> str:
@@ -932,7 +896,8 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                             send_raw_telegram(
                                 bot_token=bot_token,
                                 chat_id=new_cid,
-                                text=f"📑 *[ĐÃ LIÊN KẾT PHÒNG BÁO CÁO ĐỘC QUYỀN]*\nNhóm/Kênh `{chat_title}` (`{new_cid}`) từ nay chỉ nhận các Báo cáo chuẩn hóa gắn #hashtag!"
+                                text=f"📑 *[ĐÃ LIÊN KẾT PHÒNG BÁO CÁO ĐỘC QUYỀN]*\nNhóm/Kênh `{chat_title}` (`{new_cid}`) từ nay chỉ nhận các Báo cáo chuẩn hóa gắn #hashtag!",
+                                is_interactive_reply=True,
                             )
 
                 # 2. Xử lý tin nhắn văn bản hoặc channel_post từ Chủ tịch
@@ -960,7 +925,8 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                             f"• Cơ chế: Từ nay toàn bộ Thẻ Báo Cáo chuẩn hóa & Thông báo tác chiến sẽ tập trung 100% về phòng này, không bị loãng!\n\n"
                             + build_daily_reports_index()
                         ),
-                        message_thread_id=thread_id
+                        message_thread_id=thread_id,
+                        is_interactive_reply=True,
                     )
                     continue
 
@@ -984,7 +950,8 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                         chat_id=chat_id,
                         text=welcome,
                         message_thread_id=thread_id,
-                        reply_markup=get_interactive_keyboard()
+                        reply_markup=get_interactive_keyboard(),
+                        is_interactive_reply=True,
                     )
                     continue
 
@@ -1020,7 +987,8 @@ def poll_and_respond_once(bot_token: str, offset: int) -> int:
                     chat_id=chat_id,
                     text=reply_text,
                     message_thread_id=thread_id,
-                    reply_markup=get_interactive_keyboard()
+                    reply_markup=get_interactive_keyboard(),
+                    is_interactive_reply=True,
                 )
 
     except urllib.error.HTTPError as e:

@@ -941,8 +941,12 @@ def main():
 
     if args.daemon:
         print(f"[*] Khởi động Apex Live Intraday Brain Daemon (chu kỳ {args.interval}s)...")
+        from scripts.apex_standby_controller import is_standby_mode_active
         while True:
             try:
+                if is_standby_mode_active():
+                    time.sleep(max(args.interval, 60))
+                    continue
                 now_ict = get_ict_now()
                 if is_vn_trading_hours(now_ict):
                     snap = compute_live_war_room_snapshot(force_refresh=True)

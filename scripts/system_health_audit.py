@@ -476,15 +476,15 @@ def send_telegram_audit(report_date: str, total_score: int, details: str) -> boo
     )
 
     try:
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-        payload = {
-            "chat_id": TELEGRAM_CHAT_ID,
-            "text": message
-        }
-        data = urllib.parse.urlencode(payload).encode("utf-8")
-        req = urllib.request.Request(url, data=data, method="POST")
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            return resp.status == 200
+        root_dir = Path(__file__).resolve().parent.parent
+        if str(root_dir) not in sys.path:
+            sys.path.insert(0, str(root_dir))
+        from scripts.telegram_dispatcher import dispatch_message, should_block_outbound_telegram
+        blocked, reason = should_block_outbound_telegram(topic_key="daily_warroom", priority="NORMAL")
+        if blocked:
+            print(f"[Telegram Guard] Bỏ qua system_health_audit Telegram ({reason}).")
+            return False
+        return dispatch_message(topic_key="daily_warroom", text=message, parse_mode=None)
     except Exception as e:
         print(f"[CẢNH BÁO] Không thể gửi tin nhắn Telegram: {e}")
         return False
