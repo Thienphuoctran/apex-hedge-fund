@@ -1,6 +1,6 @@
 {
-  "audit_timestamp": "2026-11-27 12:34:24",
-  "audit_duration_seconds": 0.26,
+  "audit_timestamp": "2026-11-27 16:31:23",
+  "audit_duration_seconds": 0.39,
   "overall_infrastructure_health_score": 80,
   "health_verdict": "CẦN LƯU Ý",
   "appointed_officers": {
@@ -46,14 +46,14 @@
   "check_3_disk_and_storage_footprint": {
     "total_active_files": 1685,
     "total_project_size_mb": 61.51,
-    "data_directory_size_mb": 28.97,
+    "data_directory_size_mb": 28.98,
     "github_quota_limit_mb": 1000.0,
     "github_quota_used_pct": "6.15%",
     "capacity_runway": "Cực kỳ dồi dào (> 5 năm vận hành an toàn)",
     "status": "HEALTHY"
   },
   "check_4_git_repository_health": {
-    "git_directory_size_mb": 55.69,
+    "git_directory_size_mb": 55.72,
     "uncommitted_files_count": 16,
     "active_branch": "main",
     "status": "HEALTHY"
@@ -66,8 +66,8 @@
     "status": "HEALTHY"
   },
   "check_6_io_performance_latency": {
-    "json_directory_scan_latency_ms": 3.38,
-    "ssot_load_latency_ms": 0.19,
+    "json_directory_scan_latency_ms": 6.63,
+    "ssot_load_latency_ms": 0.21,
     "benchmark_passed": true,
     "status": "FAST_RESPONSIVE (<150ms)"
   },
@@ -105,7 +105,7 @@
           "SSOT_Portfolio: độ tươi đạt chuẩn (0.0h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-27 12:34:25"
+        "verified_at": "2026-11-27 16:31:23"
       },
       "cbtt_gate": {
         "source": "CBTT_Radar",
@@ -116,7 +116,7 @@
           "CBTT_Radar: độ tươi đạt chuẩn (0.0h)"
         ],
         "failures": [],
-        "verified_at": "2026-11-27 12:34:25"
+        "verified_at": "2026-11-27 16:31:23"
       },
       "diagnostics_logged_events": 0,
       "overall_ok": false

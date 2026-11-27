@@ -91,5 +91,5 @@
   "enforced_strategy": "RISK_PARITY_STOP_2XATR",
   "realized_cash_vnd": 15541117.0,
   "realized_pnl_vnd": 51117.0,
-  "audit_timestamp": "2026-11-27_12h34_dynamic_sync"
+  "audit_timestamp": "2026-11-27_16h31_dynamic_sync"
 }
