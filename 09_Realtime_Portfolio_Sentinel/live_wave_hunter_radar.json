@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27 17:46:06",
+  "generated_at": "2026-11-28 04:55:57",
   "system_name": "Palmer Always-On Apex Sentinel & Realtime Wave Radar 24/7",
   "quality_guarantee": "100% BCTC Real Data • Zero Junk Stocks • OCF/LNST >= 1.0x • Beneish M Safe",
   "vn_total_scanned": 54,
@@ -312,73 +312,73 @@
     {
       "market": "US_SEC_EDGAR",
       "symbol": "AAPL",
-      "form_or_type": "SEC Form 4",
-      "date": "2026-11-25",
+      "form_or_type": "SEC Form 144",
+      "date": "2026-11-27",
       "headline": "Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100%",
       "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
-      "form_or_type": "TIN_DOANH_NGHIEP",
+      "symbol": "VNM",
+      "form_or_type": "CO_TUC",
       "date": "Fri, 27 Nov 26 1",
-      "headline": "Từ câu chuyện Long Châu, Chủ tịch FPT Retail nói về cách chọn đối tác đầu tư",
-      "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "MSB",
-      "form_or_type": "ESOP_PHAT_HANH",
-      "date": "Fri, 27 Nov 26 1",
-      "headline": "MSB thông báo ngày chốt quyền mua cổ phiếu phát hành  963 triệu cổ phiếu cho cổ đông hiện hữu",
+      "headline": "Vinamilk thông báo tạm ứng cổ tức đợt 2 năm 2026 và kế hoạch tổ chức Đại hội đồng cổ đông bất thường",
       "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "FPT",
+      "symbol": "GMD",
       "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 27 Nov 26 1",
-      "headline": "FPT muốn đưa taxi bay 12 cánh quạt, tốc độ 100 km/h không cần đường băng đến Quảng Ninh: Dự kiến thử nghiệm giữa năm 2027",
-      "is_portfolio_holding": true
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "BSR",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Fri, 27 Nov 26 1",
-      "headline": "Hơn một thập niên bền bỉ kiến tạo \"lá chắn\" an toàn tại BSR",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "VIC",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Fri, 27 Nov 26 1",
-      "headline": "Một doanh nhân Việt khởi nghiệp từ nước ngoài giàu thêm 40.000 tỷ đồng trong sáng 27/11",
-      "is_portfolio_holding": false
-    },
-    {
-      "market": "VIETNAM_CBTT",
-      "symbol": "BSR",
-      "form_or_type": "TIN_DOANH_NGHIEP",
-      "date": "Fri, 27 Nov 26 1",
-      "headline": "BSR kiến tạo tương lai bằng khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số",
+      "headline": "Khối ngoại bất ngờ mua ròng hơn 600 tỷ đồng trong ngày kỷ niệm 30 năm chứng khoán Việt Nam, cổ phiếu nào được “gom” mạnh nhất?",
       "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
       "symbol": "HCM",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
-      "date": "Fri, 27 Nov 26 0",
-      "headline": "Lotte và Phát Đạt: Siêu DA khu phức hợp thông minh 60.000 tỷ đồng ở Thủ Thiêm có thể phải nộp thêm hơn 3.600 tỷ đồng tiền sử dụng đất",
+      "form_or_type": "ESOP_PHAT_HANH",
+      "date": "Fri, 27 Nov 26 1",
+      "headline": "Vừa huy động 5.218 tỷ đồng trái phiếu với lãi suất lên tới 14,5%/năm, CII bất ngờ đổi phương án phân bổ vốn",
       "is_portfolio_holding": false
     },
     {
       "market": "VIETNAM_CBTT",
-      "symbol": "MCH",
-      "form_or_type": "BCTC_KET_QUA_KINH_DOANH",
+      "symbol": "SSI",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 27 Nov 26 1",
+      "headline": "Ông Thomas Nguyễn: Chưa bao giờ tôi hào hứng với chứng khoán Việt Nam như lúc này",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "PNJ",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 27 Nov 26 1",
+      "headline": "Giá vàng hôm nay 27/11: PNJ tiếp tục mua vàng nhẫn thấp nhất thị trường",
+      "is_portfolio_holding": false
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "FPT",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Fri, 27 Nov 26 1",
+      "headline": "FPT muốn đưa taxi bay tốc độ 100km/h về Quảng Ninh, dự kiến thử nghiệm từ giữa năm 2027",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "BID,FPT,VCB",
+      "form_or_type": "TIN_DOANH_NGHIEP",
       "date": "Fri, 27 Nov 26 0",
-      "headline": "Masan Consumer vượt 27.000 tỷ đồng doanh thu, sức bật từ các thương hiệu chủ lực",
+      "headline": "Hiện tượng đáng chú ý tại FPT, VCB và BID sau phiên VN-Index giảm sâu gần 60 điểm",
+      "is_portfolio_holding": true
+    },
+    {
+      "market": "VIETNAM_CBTT",
+      "symbol": "CTD",
+      "form_or_type": "TIN_DOANH_NGHIEP",
+      "date": "Thu, 26 Nov 26 2",
+      "headline": "Chủ tịch Coteccons mua thành công cổ phiếu CTD như đăng ký",
       "is_portfolio_holding": false
     }
   ],
@@ -391,7 +391,7 @@
     {
       "dept": "Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC",
       "status": "🟢 ACTIVE 24/7",
-      "note": "Đã xác thực 54/54 BCTC VN, 381 hồ sơ SEC & 53 tin CBTT"
+      "note": "Đã xác thực 54/54 BCTC VN, 383 hồ sơ SEC & 36 tin CBTT"
     },
     {
       "dept": "Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff",

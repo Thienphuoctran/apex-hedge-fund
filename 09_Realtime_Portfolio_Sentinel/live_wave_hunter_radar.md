@@ -1,5 +1,5 @@
 # 📡 RADAR SĂN SÓNG TỰ ĐỘNG 24/7 & ĐỒNG BỘ 9 PHÒNG BAN (PALMER ALWAYS-ON RADAR)
-*Cập nhật thời gian thực*: `2026-11-27 17:46:06`  
+*Cập nhật thời gian thực*: `2026-11-28 04:55:57`  
 *Điều hành tối cao*: **Palmer (Phòng Tổng Hệ Thống)** • **Tổng Tư Lệnh James (Ban 8)** • **Victor (Ban 9)**  
 *Chuyên viên săn sóng trực chiến*: **Minh Quân (54 Mã VN)** & **Alex (35 Mã Mỹ)**  
 *Cam kết chất lượng*: **100% cổ phiếu lọt vào Radar đều đạt chuẩn BCTC Hạng AAA/AA/A, Tiền thật OCF/LNST >= 1.0x, Beneish M-Score An Toàn Tuyệt Đối!**
@@ -10,7 +10,7 @@
 | Phòng Ban Chuyên Trách | Trạng Thái Hoạt Động | Báo Cáo Tác Chiến Thời Gian Thực |
 | :--- | :---: | :--- |
 | **Ban 1 (Global & VN) — Vĩ Mô & Tiền Tệ SBV/Fed** | **🟢 ACTIVE 24/7** | Giám sát DXY, VIX, Lãi suất SBV & Tỷ giá USD/VND |
-| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 381 hồ sơ SEC & 53 tin CBTT |
+| **Ban 2 (Global & VN) — Thẩm Định BCTC & Radar CBTT/SEC** | **🟢 ACTIVE 24/7** | Đã xác thực 54/54 BCTC VN, 383 hồ sơ SEC & 36 tin CBTT |
 | **Ban 3 (Global & VN) — Đọc Vị VSA & Sàng Lọc Wyckoff** | **🟢 ACTIVE 24/7** | Phát hiện 8 sóng cổ phiếu VN & 6 sóng cổ phiếu Mỹ đạt chuẩn AAA/AA |
 | **Ban 4 (Global & VN) — Hội Đồng Rủi Ro Định Lượng ATR** | **🟢 ACTIVE 24/7** | Khóa chặt Stop 2xATR <= 7.5% & R:R >= 1:2.0 |
 | **Ban 5 (Global & VN) — Tự Học Thích Nghi & Kiểm Định 4 Ngày** | **🟢 ACTIVE 24/7** | Điểm sức khỏe hệ thống đạt 100/100 (Zero Drift) |
@@ -59,8 +59,8 @@
 | `US_SEC_EDGAR` | **`TSM`** ⭐ **(ĐANG THEO DÕI)** | `SEC Form 6-K` | `2026-11-25` | Hồ sơ SEC MATERIAL_EVENT_8K đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`GOOGL`** ⭐ **(ĐANG THEO DÕI)** | `SEC Form 8-K` | `2026-11-24` | Hồ sơ SEC MATERIAL_EVENT_8K đã kiểm chứng 100% |
 | `US_SEC_EDGAR` | **`MSFT`** | `SEC Form PX14A6G` | `2026-11-25` | Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100% |
-| `US_SEC_EDGAR` | **`AAPL`** | `SEC Form 4` | `2026-11-25` | Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100% |
-| `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Fri, 27 Nov 26 1` | Từ câu chuyện Long Châu, Chủ tịch FPT Retail nói về cách chọn đối tác đầu tư |
-| `VIETNAM_CBTT` | **`MSB`** | `ESOP_PHAT_HANH` | `Fri, 27 Nov 26 1` | MSB thông báo ngày chốt quyền mua cổ phiếu phát hành  963 triệu cổ phiếu cho cổ đông hiện hữu |
-| `VIETNAM_CBTT` | **`FPT`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Fri, 27 Nov 26 1` | FPT muốn đưa taxi bay 12 cánh quạt, tốc độ 100 km/h không cần đường băng đến Quảng Ninh: Dự kiến thử nghiệm giữa năm 2027 |
-| `VIETNAM_CBTT` | **`BSR`** | `TIN_DOANH_NGHIEP` | `Fri, 27 Nov 26 1` | Hơn một thập niên bền bỉ kiến tạo "lá chắn" an toàn tại BSR |
+| `US_SEC_EDGAR` | **`AAPL`** | `SEC Form 144` | `2026-11-27` | Hồ sơ SEC INSIDER_TRADING đã kiểm chứng 100% |
+| `VIETNAM_CBTT` | **`VNM`** | `CO_TUC` | `Fri, 27 Nov 26 1` | Vinamilk thông báo tạm ứng cổ tức đợt 2 năm 2026 và kế hoạch tổ chức Đại hội đồng cổ đông bất thường |
+| `VIETNAM_CBTT` | **`GMD`** | `TIN_DOANH_NGHIEP` | `Fri, 27 Nov 26 1` | Khối ngoại bất ngờ mua ròng hơn 600 tỷ đồng trong ngày kỷ niệm 30 năm chứng khoán Việt Nam, cổ phiếu nào được “gom” mạnh nhất? |
+| `VIETNAM_CBTT` | **`HCM`** | `ESOP_PHAT_HANH` | `Fri, 27 Nov 26 1` | Vừa huy động 5.218 tỷ đồng trái phiếu với lãi suất lên tới 14,5%/năm, CII bất ngờ đổi phương án phân bổ vốn |
+| `VIETNAM_CBTT` | **`SSI`** ⭐ **(ĐANG THEO DÕI)** | `TIN_DOANH_NGHIEP` | `Fri, 27 Nov 26 1` | Ông Thomas Nguyễn: Chưa bao giờ tôi hào hứng với chứng khoán Việt Nam như lúc này |
