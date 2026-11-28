@@ -1,6 +1,6 @@
 {
   "report_title": "Apex Master CIO Final Investment Decision & Execution Blotter",
-  "generated_at_utc": "2026-11-28T00:08:48.649786+00:00",
+  "generated_at_utc": "2026-11-28T05:10:56.957238+00:00",
   "trading_date": "2026-11-28",
   "cio_desk_verdict": "ĐANG NẮM GIỮ 2 MÃ CỔ PHIẾU — GIÁM SÁT STOP 2XATR & TP1/TP2",
   "active_market_regime": {
@@ -1023,13 +1023,13 @@
     "timestamp": "2026-11-26 18:26:26 UTC"
   },
   "temporal_context": {
-    "timestamp_iso": "2026-11-28T07:08:48.647156",
+    "timestamp_iso": "2026-11-28T12:10:56.956328",
     "date_str": "2026-11-28",
     "date_vn": "28/11/2026",
-    "time_vn": "07:08:48",
+    "time_vn": "12:10:56",
     "weekday_index": 5,
     "weekday_vn": "Thứ Bảy",
-    "full_time_label_vn": "07:08:48 Thứ Bảy, ngày 28/11/2026",
+    "full_time_label_vn": "12:10:56 Thứ Bảy, ngày 28/11/2026",
     "market_phase": "WEEKEND_CLOSED",
     "market_phase_vn": "Nghỉ cuối tuần (Thứ Bảy) — Sàn HOSE/HNX đóng cửa, 0% rủi ro biến động",
     "is_trading_hours": false,

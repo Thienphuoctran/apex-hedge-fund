@@ -3,7 +3,7 @@
   "account_id": "105C307855",
   "chairman": "Trần Quốc Thiên Phước",
   "created_at": "2026-11-07 16:06:36",
-  "last_updated": "2026-11-28 07:08:49",
+  "last_updated": "2026-11-28 12:10:56",
   "historical_campaigns_completed": [
     {
       "campaign_id": "CAMPAIGN-VN-ROUND-01",
@@ -2980,7 +2980,7 @@
     },
     "2026-11-28": {
       "session_date": "2026-11-28",
-      "recorded_at": "2026-11-28 07:08:49",
+      "recorded_at": "2026-11-28 12:10:56",
       "total_stocks_scanned": 145,
       "total_sectors_scanned": 18,
       "market_breadth": {
@@ -3342,8 +3342,8 @@
   },
   "active_council_resolutions": {
     "resolution_id": "APEX-COUNCIL-11DEPT-ADAPTIVE-2026-11-28",
-    "generated_at": "07:08:29 Thứ Bảy, ngày 28/11/2026",
-    "execution_time_seconds": 18.67,
+    "generated_at": "12:10:46 Thứ Bảy, ngày 28/11/2026",
+    "execution_time_seconds": 10.47,
     "account_id": "105C307855",
     "account_cash_vnd": 15541117.0,
     "account_nav_vnd": 20051117.0,
@@ -3771,8 +3771,8 @@
     },
     "previous_session_continuity": {
       "has_previous_memory": true,
-      "last_session_date": "2026-11-27",
-      "what_we_did_last_session": "Phiên 2026-11-27: Hệ thống đã quét toàn diện 145 cổ phiếu thuộc 18 nhóm ngành trên 3 sàn HOSE/HNX/UPCoM. 10 Phòng ban đã họp tranh biện trực tiếp, loại bỏ thói quen chỉ nhìn vào 4 mã cũ (hạ bậc FPT do RS=18 gãy MA20, hạ bậc DGC do RS=22 yếu, loại MWG/FRT khỏi danh mục mua trực tiếp do 1 lô 100 CP chiếm >35% vốn 20M). Đã tuyển chọn bộ Tầm ngắm Vòng 2 đa ngành có RS 81-96 và BCTC hạng AAA/AA vừa khít quy mô vốn 20.16 triệu VNĐ.",
+      "last_session_date": "2026-11-28",
+      "what_we_did_last_session": "Phiên 2026-11-28: Hệ thống đã quét toàn diện 145 cổ phiếu thuộc 18 nhóm ngành trên 3 sàn HOSE/HNX/UPCoM. 10 Phòng ban đã họp tranh biện trực tiếp, loại bỏ thói quen chỉ nhìn vào 4 mã cũ (hạ bậc FPT do RS=18 gãy MA20, hạ bậc DGC do RS=22 yếu, loại MWG/FRT khỏi danh mục mua trực tiếp do 1 lô 100 CP chiếm >35% vốn 20M). Đã tuyển chọn bộ Tầm ngắm Vòng 2 đa ngành có RS 81-96 và BCTC hạng AAA/AA vừa khít quy mô vốn 20.16 triệu VNĐ.",
       "priority_watchlist": [
         {
           "code": "NT2",
@@ -4397,7 +4397,7 @@
   },
   "handover_briefing_for_next_session": {
     "generated_from_session": "2026-11-28",
-    "generated_at": "2026-11-28 07:08:49",
+    "generated_at": "2026-11-28 12:10:56",
     "account_cash_vnd": 15541117.0,
     "portfolio_status": "ACTIVE_HOLDINGS_FRIDAY_LIQUIDATION_PLANNED",
     "what_we_did_last_session": "Phiên 2026-11-28: Hệ thống đã quét toàn diện 145 cổ phiếu thuộc 18 nhóm ngành trên 3 sàn HOSE/HNX/UPCoM. 10 Phòng ban đã họp tranh biện trực tiếp, loại bỏ thói quen chỉ nhìn vào 4 mã cũ (hạ bậc FPT do RS=18 gãy MA20, hạ bậc DGC do RS=22 yếu, loại MWG/FRT khỏi danh mục mua trực tiếp do 1 lô 100 CP chiếm >35% vốn 20M). Đã tuyển chọn bộ Tầm ngắm Vòng 2 đa ngành có RS 81-96 và BCTC hạng AAA/AA vừa khít quy mô vốn 20.16 triệu VNĐ.",

@@ -1,6 +1,6 @@
 # BIÊN BẢN HỌP THƯỢNG ĐỈNH 11 ĐƠN VỊ ĐỘC LẬP & QUÉT TOÀN THỊ TRƯỜNG (145 MÃ / 18 NGÀNH)
 **Mã Nghị Quyết:** `APEX-COUNCIL-11DEPT-ADAPTIVE-2026-11-28`  
-**Thời điểm thực thi:** `07:08:29 Thứ Bảy, ngày 28/11/2026` *(Thời gian xử lý: `18.67s`)*  
+**Thời điểm thực thi:** `12:10:46 Thứ Bảy, ngày 28/11/2026` *(Thời gian xử lý: `10.47s`)*  
 **Tài khoản Chủ tịch:** TCBS `105C307855` — **NAV live:** `20,051,117 ₫` | **Tiền mặt:** `15,541,117 ₫` | **Đang giữ:** `200 CP TPB, 100 CP HPG`  
 **Chế độ Thị trường sống:** `BEAR_WITH_SPRING_WATCH` (`VNI 1,688.79`, `Breadth>MA20 = 23.0%`)  
 
